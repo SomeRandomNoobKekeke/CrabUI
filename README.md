@@ -26,7 +26,7 @@ Some documentation is [here](https://somerandomnoobkekeke.github.io/CrabUI/index
 ## Instalation
 
 Currently luatrauma workshop dependency system is broken  
-When IFactory fixes it using CUI will be as simple as subscribing to a mod  
+When IFactory fixes it, using CUI will be as simple as subscribing to a mod  
 But here's hacky install steps if you want to try it now:
 - Download main branch of this repository
 - Copy CSharp folder into your mod

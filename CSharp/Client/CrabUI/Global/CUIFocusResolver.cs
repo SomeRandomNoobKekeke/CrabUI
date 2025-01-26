@@ -1,0 +1,105 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Diagnostics;
+
+using Barotrauma;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Graphics;
+using System.IO;
+using EventInput;
+
+namespace CrabUI
+{
+  public class CUIFocusResolver
+  {
+    private CUIComponent focusedCUIComponent;
+    public CUIComponent FocusedCUIComponent
+    {
+      get => focusedCUIComponent;
+      set
+      {
+        CUIComponent oldFocused = focusedCUIComponent;
+        CUIComponent newFocused = value;
+
+        if (oldFocused == newFocused) return;
+
+        if (oldFocused != null)
+        {
+          oldFocused.InvokeOnFocusLost();
+          oldFocused.Focused = false;
+        }
+
+        if (newFocused != null)
+        {
+          newFocused.InvokeOnFocus();
+          newFocused.Focused = true;
+        }
+
+        if (oldFocused is IKeyboardSubscriber || newFocused is null)
+        {
+          OnVanillaIKeyboardSubscriberSet(null, true);
+        }
+
+        if (newFocused is IKeyboardSubscriber)
+        {
+          OnVanillaIKeyboardSubscriberSet((IKeyboardSubscriber)newFocused, true);
+        }
+
+        focusedCUIComponent = value;
+      }
+    }
+
+    public void OnVanillaIKeyboardSubscriberSet(IKeyboardSubscriber value, bool callFromCUI = false)
+    {
+      KeyboardDispatcher _ = GUI.KeyboardDispatcher;
+
+      IKeyboardSubscriber oldSubscriber = _._subscriber;
+      IKeyboardSubscriber newSubscriber = value;
+
+      if (newSubscriber == oldSubscriber) { return; }
+
+      // this case should be handled in CUI
+      if (!callFromCUI && oldSubscriber is CUIComponent && newSubscriber is null) { return; }
+
+      //CUI.Log($"new IKeyboardSubscriber {oldSubscriber} -> {newSubscriber}");
+
+      if (oldSubscriber != null)
+      {
+        TextInput.StopTextInput();
+        oldSubscriber.Selected = false;
+      }
+
+      if (oldSubscriber is CUIComponent component1 && newSubscriber is GUITextBox)
+      {
+        component1.InvokeOnFocusLost();
+        component1.Focused = false;
+        focusedCUIComponent = null;
+      }
+
+      if (newSubscriber != null)
+      {
+        if (newSubscriber is GUITextBox box)
+        {
+          TextInput.SetTextInputRect(box.MouseRect);
+          TextInput.StartTextInput();
+          TextInput.SetTextInputRect(box.MouseRect);
+        }
+
+        if (newSubscriber is CUIComponent component)
+        {
+          TextInput.StartTextInput();
+        }
+
+        newSubscriber.Selected = true;
+      }
+
+      _._subscriber = value;
+    }
+
+
+
+  }
+}

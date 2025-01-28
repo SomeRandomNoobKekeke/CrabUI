@@ -181,11 +181,11 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_input_8cs_source.html#l00126">126</a> of file <a class="el" href="_c_u_i_input_8cs_source.html">CUIInput.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  127</span>    {</div>
-<div class="line"><span class="lineno">  128</span>      CUI.OnWindowKeyDown += (e) =&gt; WindowKeyDownQueue.Enqueue(e);</div>
-<div class="line"><span class="lineno">  129</span>      CUI.OnWindowTextInput += (e) =&gt; WindowTextInputQueue.Enqueue(e);</div>
-<div class="line"><span class="lineno">  130</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_input_8cs_source.html#l00130">130</a> of file <a class="el" href="_c_u_i_input_8cs_source.html">CUIInput.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  131</span>    {</div>
+<div class="line"><span class="lineno">  132</span>      CUI.OnWindowKeyDown += (e) =&gt; WindowKeyDownQueue.Enqueue(e);</div>
+<div class="line"><span class="lineno">  133</span>      CUI.OnWindowTextInput += (e) =&gt; WindowTextInputQueue.Enqueue(e);</div>
+<div class="line"><span class="lineno">  134</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -205,11 +205,12 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_input_8cs_source.html#l00060">60</a> of file <a class="el" href="_c_u_i_input_8cs_source.html">CUIInput.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   61</span>    {</div>
-<div class="line"><span class="lineno">   62</span>      ScanMouse(totalTime);</div>
-<div class="line"><span class="lineno">   63</span>      ScanKeyboard(totalTime);</div>
-<div class="line"><span class="lineno">   64</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_input_8cs_source.html#l00063">63</a> of file <a class="el" href="_c_u_i_input_8cs_source.html">CUIInput.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>    {</div>
+<div class="line"><span class="lineno">   65</span>      MouseInputHandled = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   66</span>      ScanMouse(totalTime);</div>
+<div class="line"><span class="lineno">   67</span>      ScanKeyboard(totalTime);</div>
+<div class="line"><span class="lineno">   68</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>

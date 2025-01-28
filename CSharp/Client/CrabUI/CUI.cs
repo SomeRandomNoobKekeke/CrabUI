@@ -38,9 +38,27 @@ namespace CrabUI
     /// A singleton
     /// </summary>
     public static CUI Instance;
+    /// <summary>
+    /// Orchestrates Drawing and updates, there could be only one
+    /// CUI.Main is located under vanilla GUI
+    /// </summary>
     public static CUIMainComponent Main => Instance?.main;
+    /// <summary>
+    /// Orchestrates Drawing and updates, there could be only one
+    /// CUI.TopMain is located above vanilla GUI
+    /// </summary>
+    public static CUIMainComponent TopMain => Instance?.topMain;
+    /// <summary>
+    /// Snapshot of mouse and keyboard state
+    /// </summary>
     public static CUIInput Input => Instance?.input;
+    /// <summary>
+    /// Safe texture manager
+    /// </summary>
     public static CUITextureManager TextureManager => Instance?.textureManager;
+    /// <summary>
+    /// Adapter to vanilla focus system, don't use
+    /// </summary>
     public static CUIFocusResolver FocusResolver => Instance?.focusResolver;
 
     public static CUIComponent FocusedComponent
@@ -49,6 +67,9 @@ namespace CrabUI
       set => FocusResolver.FocusedCUIComponent = value;
     }
 
+    /// <summary>
+    /// This affects logging
+    /// </summary>
     public static bool Debug;
     public static Harmony harmony = new Harmony("crabui");
     public static Random Random = new Random();
@@ -75,10 +96,8 @@ namespace CrabUI
     /// It scans states at the start on Main.Update
     /// </summary>
     private CUIInput input = new CUIInput();
-    /// <summary>
-    /// Orchestrates Drawing and updates, there could be only one
-    /// </summary>
-    private CUIMainComponent main = new CUIMainComponent();
+    private CUIMainComponent main = new CUIMainComponent() { AKA = "Main Component" };
+    private CUIMainComponent topMain = new CUIMainComponent() { AKA = "Top Main Component" };
     private CUITextureManager textureManager = new CUITextureManager();
     private CUIFocusResolver focusResolver = new CUIFocusResolver();
     private CUILuaRegistrar LuaRegistrar = new CUILuaRegistrar();

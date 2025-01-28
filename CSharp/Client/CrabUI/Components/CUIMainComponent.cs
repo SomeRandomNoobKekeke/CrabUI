@@ -33,9 +33,6 @@ namespace CrabUI
       public Action<CUIInput> OnKeyUp; public void InvokeOnKeyUp(CUIInput e) => OnKeyUp?.Invoke(e);
     }
 
-
-    public static CUIMainComponent Main => CUI.Main;
-
     /// <summary>
     /// Frozen window doesn't update
     /// </summary>
@@ -112,9 +109,9 @@ namespace CrabUI
     /// </summary>
     public void Step()
     {
-      Update(LastUpdateTime + UpdateInterval, true);
+      Update(LastUpdateTime + UpdateInterval, true, true);
     }
-    public void Update(double totalTime, bool force = false)
+    public void Update(double totalTime, bool force = false, bool noInput = false)
     {
       if (!force)
       {
@@ -132,7 +129,8 @@ namespace CrabUI
         TreeChanged = false;
       }
 
-      HandleInput(totalTime);
+      if (!noInput) HandleInput(totalTime);
+
 
 
       if (CalculateUntilResolved)
@@ -240,8 +238,6 @@ namespace CrabUI
 
     private void HandleInput(double totalTime)
     {
-      CUI.Input.Scan(totalTime);
-
       HandleGlobal(totalTime);
       HandleMouse(totalTime);
       HandleKeyboard(totalTime);
@@ -287,6 +283,11 @@ namespace CrabUI
         GrabbedSwipeHandle?.Swipe(CUI.Input);
       }
 
+      if (CUI.Input.MouseInputHandled) return;
+
+      //HACK
+      //if (CUI.Input.ClickConsumed) return;
+
       //TODO think where should i put it?
       if (GrabbedResizeHandle != null || GrabbedDragHandle != null || GrabbedSwipeHandle != null) return;
 
@@ -294,6 +295,8 @@ namespace CrabUI
 
       CUIComponent CurrentMouseOn = null;
       MouseOnList.Clear();
+
+
 
       // form MouseOnList
       // Note: including main component
@@ -314,6 +317,11 @@ namespace CrabUI
       }
 
       MouseOn = MouseOnList.LastOrDefault();
+
+      //HACK
+      if (MouseOn != this) CUI.Input.MouseInputHandled = true;
+
+
 
       //if (CurrentMouseOn != null) GUI.MouseOn = dummyComponent;
 

@@ -35,7 +35,7 @@ namespace CrabUI
     public void EndDrag()
     {
       Grabbed = false;
-      CUI.Main.OnDragEnd(this);
+      Host.MainComponent?.OnDragEnd(this);
     }
 
     //TODO test in 3d child offset

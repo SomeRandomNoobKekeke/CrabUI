@@ -35,7 +35,7 @@ namespace CrabUI
     public void EndSwipe()
     {
       Grabbed = false;
-      CUI.Main.OnSwipeEnd(this);
+      Host.MainComponent?.OnSwipeEnd(this);
     }
 
     public void Swipe(CUIInput input)

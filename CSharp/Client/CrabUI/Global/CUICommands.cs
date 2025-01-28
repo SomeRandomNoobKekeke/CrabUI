@@ -31,9 +31,12 @@ namespace CrabUI
         }
       }));
 
-      AddedCommands.Add(new DebugConsole.Command("guh", "", (string[] args) =>
+      AddedCommands.Add(new DebugConsole.Command("printsprites", "", (string[] args) =>
       {
-        CUI.Main.Frozen = !CUI.Main.Frozen;
+        foreach (GUIComponentStyle style in GUIStyle.ComponentStyles)
+        {
+          CUI.Log($"{style.Name} {style.Sprites.Count}");
+        }
       }));
 
       AddedCommands.Add(new DebugConsole.Command("printkeys", "", (string[] args) =>

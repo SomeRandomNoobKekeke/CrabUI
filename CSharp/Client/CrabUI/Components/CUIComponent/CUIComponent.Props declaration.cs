@@ -145,6 +145,9 @@ namespace CrabUI
       get => disabled;
       set => disabled = value;
     }
+    /// <summary>
+    /// In pixels
+    /// </summary>
     [CUISerializable]
     public float BorderThickness { get; set; } = 1f;
 
@@ -157,6 +160,9 @@ namespace CrabUI
       get => CUIProps.Padding.Value;
       set => CUIProps.Padding.SetValue(value);
     }
+    /// <summary>
+    /// Color.Transparent = don't draw
+    /// </summary>
     [CUISerializable]
     public Color BorderColor
     {

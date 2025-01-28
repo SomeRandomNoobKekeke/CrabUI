@@ -50,7 +50,7 @@ namespace CrabUI
     public void EndResize()
     {
       Grabbed = false;
-      CUI.Main.OnResizeEnd(this);
+      Host.MainComponent?.OnResizeEnd(this);
     }
 
     public void Resize(Vector2 cursorPos)

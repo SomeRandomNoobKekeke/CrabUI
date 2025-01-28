@@ -57,8 +57,12 @@ namespace CrabUI
     private Queue<TextInputEventArgs> WindowTextInputQueue = new Queue<TextInputEventArgs>(10);
     private Queue<TextInputEventArgs> WindowKeyDownQueue = new Queue<TextInputEventArgs>(10);
 
+    //HACK super hacky solution to block input from one CUIMainComponent to another
+    internal bool MouseInputHandled;
+
     public void Scan(double totalTime)
     {
+      MouseInputHandled = false;
       ScanMouse(totalTime);
       ScanKeyboard(totalTime);
     }

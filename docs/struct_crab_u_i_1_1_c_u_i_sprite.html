@@ -117,6 +117,13 @@ override string&#160;</td><td class="memItemRight" valign="bottom"><b>ToString</
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ac939725816d07c09e11858a96a80b84e" id="r_ac939725816d07c09e11858a96a80b84e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_crab_u_i_1_1_c_u_i_sprite.html">CUISprite</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac939725816d07c09e11858a96a80b84e">FromVanilla</a> (Sprite sprite)</td></tr>
 <tr class="separator:ac939725816d07c09e11858a96a80b84e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d8bb18eae80e7fef994d68737990ae0" id="r_a6d8bb18eae80e7fef994d68737990ae0"><td class="memItemLeft" align="right" valign="top"><a id="a6d8bb18eae80e7fef994d68737990ae0" name="a6d8bb18eae80e7fef994d68737990ae0"></a>
+static <a class="el" href="struct_crab_u_i_1_1_c_u_i_sprite.html">CUISprite</a>&#160;</td><td class="memItemRight" valign="bottom"><b>FromName</b> (string name)</td></tr>
+<tr class="separator:a6d8bb18eae80e7fef994d68737990ae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fd2d217acb665f9ec74080b6e63c877" id="r_a3fd2d217acb665f9ec74080b6e63c877"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_crab_u_i_1_1_c_u_i_sprite.html">CUISprite</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3fd2d217acb665f9ec74080b6e63c877">FromId</a> (Identifier id)</td></tr>
+<tr class="separator:a3fd2d217acb665f9ec74080b6e63c877"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72309a66d96e98989845865fd224d20a" id="r_a72309a66d96e98989845865fd224d20a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_crab_u_i_1_1_c_u_i_sprite.html">CUISprite</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a72309a66d96e98989845865fd224d20a">FromComponentStyle</a> (GUIComponentStyle style, GUIComponent.ComponentState state=GUIComponent.ComponentState.None)</td></tr>
+<tr class="separator:a72309a66d96e98989845865fd224d20a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b0b9411c70102ed3628d60a5b2125d4" id="r_a0b0b9411c70102ed3628d60a5b2125d4"><td class="memItemLeft" align="right" valign="top"><a id="a0b0b9411c70102ed3628d60a5b2125d4" name="a0b0b9411c70102ed3628d60a5b2125d4"></a>
 static <a class="el" href="struct_crab_u_i_1_1_c_u_i_sprite.html">CUISprite</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Parse</b> (string path)</td></tr>
 <tr class="separator:a0b0b9411c70102ed3628d60a5b2125d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -159,13 +166,13 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00042">42</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   43</span>    {</div>
-<div class="line"><span class="lineno">   44</span>      Path = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><span class="lineno">   45</span>      DrawMode = CUISpriteDrawMode.Resize;</div>
-<div class="line"><span class="lineno">   46</span>      Texture = BackupTexture;</div>
-<div class="line"><span class="lineno">   47</span>      SourceRect = <span class="keyword">new</span> Rectangle(0, 0, Texture.Width, Texture.Height);</div>
-<div class="line"><span class="lineno">   48</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00058">58</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   59</span>    {</div>
+<div class="line"><span class="lineno">   60</span>      Path = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">   61</span>      DrawMode = CUISpriteDrawMode.Resize;</div>
+<div class="line"><span class="lineno">   62</span>      Texture = BackupTexture;</div>
+<div class="line"><span class="lineno">   63</span>      SourceRect = <span class="keyword">new</span> Rectangle(0, 0, Texture.Width, Texture.Height);</div>
+<div class="line"><span class="lineno">   64</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -188,20 +195,20 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00049">49</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   50</span>    {</div>
-<div class="line"><span class="lineno">   51</span>      DrawMode = CUISpriteDrawMode.Resize;</div>
-<div class="line"><span class="lineno">   52</span>      Path = path;</div>
-<div class="line"><span class="lineno">   53</span>      Texture = CUI.TextureManager.GetTexture(path);</div>
-<div class="line"><span class="lineno">   54</span>      <span class="keywordflow">if</span> (sourceRect.HasValue)</div>
-<div class="line"><span class="lineno">   55</span>      {</div>
-<div class="line"><span class="lineno">   56</span>        SourceRect = sourceRect.Value;</div>
-<div class="line"><span class="lineno">   57</span>      }</div>
-<div class="line"><span class="lineno">   58</span>      <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   59</span>      {</div>
-<div class="line"><span class="lineno">   60</span>        SourceRect = <span class="keyword">new</span> Rectangle(0, 0, Texture.Width, Texture.Height);</div>
-<div class="line"><span class="lineno">   61</span>      }</div>
-<div class="line"><span class="lineno">   62</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00065">65</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>    {</div>
+<div class="line"><span class="lineno">   67</span>      DrawMode = CUISpriteDrawMode.Resize;</div>
+<div class="line"><span class="lineno">   68</span>      Path = path;</div>
+<div class="line"><span class="lineno">   69</span>      Texture = CUI.TextureManager.GetTexture(path);</div>
+<div class="line"><span class="lineno">   70</span>      <span class="keywordflow">if</span> (sourceRect.HasValue)</div>
+<div class="line"><span class="lineno">   71</span>      {</div>
+<div class="line"><span class="lineno">   72</span>        SourceRect = sourceRect.Value;</div>
+<div class="line"><span class="lineno">   73</span>      }</div>
+<div class="line"><span class="lineno">   74</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   75</span>      {</div>
+<div class="line"><span class="lineno">   76</span>        SourceRect = <span class="keyword">new</span> Rectangle(0, 0, Texture.Width, Texture.Height);</div>
+<div class="line"><span class="lineno">   77</span>      }</div>
+<div class="line"><span class="lineno">   78</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -224,24 +231,91 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00063">63</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   64</span>    {</div>
-<div class="line"><span class="lineno">   65</span>      Path = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><span class="lineno">   66</span>      DrawMode = CUISpriteDrawMode.Resize;</div>
-<div class="line"><span class="lineno">   67</span>      Texture = texture ?? BackupTexture;</div>
-<div class="line"><span class="lineno">   68</span>      <span class="keywordflow">if</span> (sourceRect.HasValue)</div>
-<div class="line"><span class="lineno">   69</span>      {</div>
-<div class="line"><span class="lineno">   70</span>        SourceRect = sourceRect.Value;</div>
-<div class="line"><span class="lineno">   71</span>      }</div>
-<div class="line"><span class="lineno">   72</span>      <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   73</span>      {</div>
-<div class="line"><span class="lineno">   74</span>        SourceRect = <span class="keyword">new</span> Rectangle(0, 0, Texture.Width, Texture.Height);</div>
-<div class="line"><span class="lineno">   75</span>      }</div>
-<div class="line"><span class="lineno">   76</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00079">79</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   80</span>    {</div>
+<div class="line"><span class="lineno">   81</span>      Path = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">   82</span>      DrawMode = CUISpriteDrawMode.Resize;</div>
+<div class="line"><span class="lineno">   83</span>      Texture = texture ?? BackupTexture;</div>
+<div class="line"><span class="lineno">   84</span>      <span class="keywordflow">if</span> (sourceRect.HasValue)</div>
+<div class="line"><span class="lineno">   85</span>      {</div>
+<div class="line"><span class="lineno">   86</span>        SourceRect = sourceRect.Value;</div>
+<div class="line"><span class="lineno">   87</span>      }</div>
+<div class="line"><span class="lineno">   88</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   89</span>      {</div>
+<div class="line"><span class="lineno">   90</span>        SourceRect = <span class="keyword">new</span> Rectangle(0, 0, Texture.Width, Texture.Height);</div>
+<div class="line"><span class="lineno">   91</span>      }</div>
+<div class="line"><span class="lineno">   92</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a72309a66d96e98989845865fd224d20a" name="a72309a66d96e98989845865fd224d20a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72309a66d96e98989845865fd224d20a">&#9670;&#160;</a></span>FromComponentStyle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="struct_crab_u_i_1_1_c_u_i_sprite.html">CUISprite</a> CrabUI.CUISprite.FromComponentStyle </td>
+          <td>(</td>
+          <td class="paramtype">GUIComponentStyle</td>          <td class="paramname"><span class="paramname"><em>style</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GUIComponent.ComponentState</td>          <td class="paramname"><span class="paramname"><em>state</em></span><span class="paramdefsep"> = </span><span class="paramdefval">GUIComponent::ComponentState::None</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00052">52</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>    {</div>
+<div class="line"><span class="lineno">   54</span>      <span class="keywordflow">return</span> FromVanilla(style.Sprites[state].FirstOrDefault()?.Sprite);</div>
+<div class="line"><span class="lineno">   55</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3fd2d217acb665f9ec74080b6e63c877" name="a3fd2d217acb665f9ec74080b6e63c877"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fd2d217acb665f9ec74080b6e63c877">&#9670;&#160;</a></span>FromId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="struct_crab_u_i_1_1_c_u_i_sprite.html">CUISprite</a> CrabUI.CUISprite.FromId </td>
+          <td>(</td>
+          <td class="paramtype">Identifier</td>          <td class="paramname"><span class="paramname"><em>id</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00044">44</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   45</span>    {</div>
+<div class="line"><span class="lineno">   46</span>      GUIComponentStyle? style = GUIStyle.ComponentStyles[id];</div>
+<div class="line"><span class="lineno">   47</span>      <span class="keywordflow">if</span> (style == <span class="keyword">null</span>) <span class="keywordflow">return</span> Default;</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>      <span class="keywordflow">return</span> FromComponentStyle(style);</div>
+<div class="line"><span class="lineno">   50</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="ac939725816d07c09e11858a96a80b84e" name="ac939725816d07c09e11858a96a80b84e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac939725816d07c09e11858a96a80b84e">&#9670;&#160;</a></span>FromVanilla()</h2>
 
@@ -267,11 +341,13 @@ Properties</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00033">33</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   34</span>    {</div>
-<div class="line"><span class="lineno">   35</span>      <span class="keywordflow">return</span> <span class="keyword">new</span> CUISprite(sprite.Texture, sprite.SourceRect)</div>
-<div class="line"><span class="lineno">   36</span>      {</div>
-<div class="line"><span class="lineno">   37</span>        Path = sprite.FullPath,</div>
-<div class="line"><span class="lineno">   38</span>      };</div>
-<div class="line"><span class="lineno">   39</span>    }</div>
+<div class="line"><span class="lineno">   35</span>      <span class="keywordflow">if</span> (sprite == <span class="keyword">null</span>) <span class="keywordflow">return</span> Default;</div>
+<div class="line"><span class="lineno">   36</span> </div>
+<div class="line"><span class="lineno">   37</span>      <span class="keywordflow">return</span> <span class="keyword">new</span> CUISprite(sprite.Texture, sprite.SourceRect)</div>
+<div class="line"><span class="lineno">   38</span>      {</div>
+<div class="line"><span class="lineno">   39</span>        Path = sprite.FullPath,</div>
+<div class="line"><span class="lineno">   40</span>      };</div>
+<div class="line"><span class="lineno">   41</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -32,10 +32,26 @@ namespace CrabUI
 
     public static CUISprite FromVanilla(Sprite sprite)
     {
+      if (sprite == null) return Default;
+
       return new CUISprite(sprite.Texture, sprite.SourceRect)
       {
         Path = sprite.FullPath,
       };
+    }
+
+    public static CUISprite FromName(string name) => FromId(new Identifier(name));
+    public static CUISprite FromId(Identifier id)
+    {
+      GUIComponentStyle? style = GUIStyle.ComponentStyles[id];
+      if (style == null) return Default;
+
+      return FromComponentStyle(style);
+    }
+
+    public static CUISprite FromComponentStyle(GUIComponentStyle style, GUIComponent.ComponentState state = GUIComponent.ComponentState.None)
+    {
+      return FromVanilla(style.Sprites[state].FirstOrDefault()?.Sprite);
     }
 
 

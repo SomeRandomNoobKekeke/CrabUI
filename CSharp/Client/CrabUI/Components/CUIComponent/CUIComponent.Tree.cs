@@ -46,6 +46,9 @@ namespace CrabUI
 
       if (parent != null)
       {
+        if (parent is CUIMainComponent main) MainComponent = main;
+        if (parent?.MainComponent != null) MainComponent = parent.MainComponent;
+
         parent.Children.Add(this);
         TreeChanged = true;
         parent.PassPropsToChild(this);
@@ -101,6 +104,9 @@ namespace CrabUI
 
       if (this != null) // kek
       {
+        if (this is CUIMainComponent main) child.MainComponent = main;
+        if (this.MainComponent != null) child.MainComponent = this.MainComponent;
+
         Children.Add(child);
         child.TreeChanged = true;
         if (name != null) Remember(child, name);
@@ -138,6 +144,9 @@ namespace CrabUI
 
       if (this != null) // kek
       {
+        if (this is CUIMainComponent main) child.MainComponent = main;
+        if (this.MainComponent != null) child.MainComponent = this.MainComponent;
+
         Children.Insert(0, child);
         child.TreeChanged = true;
         if (name != null) Remember(child, name);
@@ -202,11 +211,6 @@ namespace CrabUI
     /// <param name="child"></param>
     protected virtual void PassPropsToChild(CUIComponent child)
     {
-      if (this is CUIMainComponent main)
-      {
-        child.MainComponent = main;
-      }
-
       if (!ShouldPassPropsToChildren) return;
 
       if (ZIndex.HasValue && !child.IgnoreParentZIndex) child.ZIndex = ZIndex.Value + 1;

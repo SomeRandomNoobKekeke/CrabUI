@@ -123,6 +123,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a69707d867462ebcc980efb3fa8b67318" id="r_a69707d867462ebcc980efb3fa8b67318"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69707d867462ebcc980efb3fa8b67318">SetData</a> ()</td></tr>
 <tr class="memdesc:a69707d867462ebcc980efb3fa8b67318"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call this method to transfer values from Data array into texture.  <br /></td></tr>
 <tr class="separator:a69707d867462ebcc980efb3fa8b67318"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a596270393c3a96ccd77b1f117fbdba70" id="r_a596270393c3a96ccd77b1f117fbdba70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a596270393c3a96ccd77b1f117fbdba70">Render</a> (Action&lt; SpriteBatch &gt; renderFunc)</td></tr>
+<tr class="memdesc:a596270393c3a96ccd77b1f117fbdba70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses renderFunc to render stuff directy onto Canvas.Texture You can for example use GUI "Draw" methods with provided spriteBatch <br  />
+  <br /></td></tr>
+<tr class="separator:a596270393c3a96ccd77b1f117fbdba70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adbc62c2d76cff54cc78dc75de071de12" id="r_adbc62c2d76cff54cc78dc75de071de12"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adbc62c2d76cff54cc78dc75de071de12">CUICanvas</a> (int x, int y)</td></tr>
 <tr class="separator:adbc62c2d76cff54cc78dc75de071de12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55a05bc6c0f75baf5d15a10e61e0fb4e" id="r_a55a05bc6c0f75baf5d15a10e61e0fb4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55a05bc6c0f75baf5d15a10e61e0fb4e">Dispose</a> ()</td></tr>
@@ -226,8 +230,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>RemoveSelf</b> ()</td
 Public Attributes</h2></td></tr>
 <tr class="memitem:a38412693a94801ad36fbc49f0d65ded0" id="r_a38412693a94801ad36fbc49f0d65ded0"><td class="memItemLeft" align="right" valign="top">Color[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38412693a94801ad36fbc49f0d65ded0">Data</a></td></tr>
 <tr class="separator:a38412693a94801ad36fbc49f0d65ded0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b8248b00f6f3f76e8f6a3c9dc65be8f" id="r_a4b8248b00f6f3f76e8f6a3c9dc65be8f"><td class="memItemLeft" align="right" valign="top">Texture2D&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b8248b00f6f3f76e8f6a3c9dc65be8f">Texture</a></td></tr>
-<tr class="separator:a4b8248b00f6f3f76e8f6a3c9dc65be8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63d7dfb12f1b7df03c08595f33922eb3" id="r_a63d7dfb12f1b7df03c08595f33922eb3"><td class="memItemLeft" align="right" valign="top">RenderTarget2D&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63d7dfb12f1b7df03c08595f33922eb3">Texture</a></td></tr>
+<tr class="separator:a63d7dfb12f1b7df03c08595f33922eb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e95a1b170113ebb6d6eb1ff26230da9" id="r_a5e95a1b170113ebb6d6eb1ff26230da9"><td class="memItemLeft" align="right" valign="top">SpriteBatch&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e95a1b170113ebb6d6eb1ff26230da9">spriteBatch</a></td></tr>
+<tr class="separator:a5e95a1b170113ebb6d6eb1ff26230da9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
@@ -569,13 +575,14 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_crab_u_i_2_components_2_c_u_i_canvas_8cs_source.html#l00071">71</a> of file <a class="el" href="_crab_u_i_2_components_2_c_u_i_canvas_8cs_source.html">CUICanvas.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   71</span>                                   : base()</div>
-<div class="line"><span class="lineno">   72</span>    {</div>
-<div class="line"><span class="lineno">   73</span>      <a class="code hl_property" href="#aa9ae1b2cc9e65e9ed7a20dbbf5dbe4d2">Size</a> = <span class="keyword">new</span> Point(x, y);</div>
-<div class="line"><span class="lineno">   74</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a7db80658c26d4041f54ce3aa469854af">BackgroundColor</a> = Color.White;</div>
-<div class="line"><span class="lineno">   75</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#aa65f90b50fc3c8aaad18b0604d6760bf">BorderColor</a> = Color.Black;</div>
-<div class="line"><span class="lineno">   76</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_crab_u_i_2_components_2_c_u_i_canvas_8cs_source.html#l00092">92</a> of file <a class="el" href="_crab_u_i_2_components_2_c_u_i_canvas_8cs_source.html">CUICanvas.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   92</span>                                   : base()</div>
+<div class="line"><span class="lineno">   93</span>    {</div>
+<div class="line"><span class="lineno">   94</span>      <a class="code hl_property" href="#aa9ae1b2cc9e65e9ed7a20dbbf5dbe4d2">Size</a> = <span class="keyword">new</span> Point(x, y);</div>
+<div class="line"><span class="lineno">   95</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a7db80658c26d4041f54ce3aa469854af">BackgroundColor</a> = Color.White;</div>
+<div class="line"><span class="lineno">   96</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#aa65f90b50fc3c8aaad18b0604d6760bf">BorderColor</a> = Color.Black;</div>
+<div class="line"><span class="lineno">   97</span>      spriteBatch = <span class="keyword">new</span> SpriteBatch(GameMain.Instance.GraphicsDevice);</div>
+<div class="line"><span class="lineno">   98</span>    }</div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_canvas_html_aa9ae1b2cc9e65e9ed7a20dbbf5dbe4d2"><div class="ttname"><a href="#aa9ae1b2cc9e65e9ed7a20dbbf5dbe4d2">CrabUI.CUICanvas.Size</a></div><div class="ttdeci">virtual Point Size</div><div class="ttdoc">Size of the internal texture Will automatically resize the texture and data array of set.</div><div class="ttdef"><b>Definition</b> <a href="_crab_u_i_2_components_2_c_u_i_canvas_8cs_source.html#l00027">CUICanvas.cs:28</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a7db80658c26d4041f54ce3aa469854af"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a7db80658c26d4041f54ce3aa469854af">CrabUI.CUIComponent.BackgroundColor</a></div><div class="ttdeci">Color BackgroundColor</div><div class="ttdoc">Too lazy to implement sore.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00228">CUIComponent.Props declaration.cs:229</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_aa65f90b50fc3c8aaad18b0604d6760bf"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#aa65f90b50fc3c8aaad18b0604d6760bf">CrabUI.CUIComponent.BorderColor</a></div><div class="ttdeci">Color BorderColor</div><div class="ttdoc">Color.Transparent = don't draw.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00167">CUIComponent.Props declaration.cs:168</a></div></div>
@@ -597,11 +604,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_crab_u_i_2_components_2_c_u_i_canvas_8cs_source.html#l00078">78</a> of file <a class="el" href="_crab_u_i_2_components_2_c_u_i_canvas_8cs_source.html">CUICanvas.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   78</span>                       : <span class="keyword">this</span>(100, 100)</div>
-<div class="line"><span class="lineno">   79</span>    {</div>
-<div class="line"><span class="lineno">   80</span> </div>
-<div class="line"><span class="lineno">   81</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_crab_u_i_2_components_2_c_u_i_canvas_8cs_source.html#l00100">100</a> of file <a class="el" href="_crab_u_i_2_components_2_c_u_i_canvas_8cs_source.html">CUICanvas.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  100</span>                       : <span class="keyword">this</span>(100, 100)</div>
+<div class="line"><span class="lineno">  101</span>    {</div>
+<div class="line"><span class="lineno">  102</span> </div>
+<div class="line"><span class="lineno">  103</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -650,10 +657,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_crab_u_i_2_components_2_c_u_i_canvas_8cs_source.html#l00083">83</a> of file <a class="el" href="_crab_u_i_2_components_2_c_u_i_canvas_8cs_source.html">CUICanvas.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   84</span>    {</div>
-<div class="line"><span class="lineno">   85</span>      Texture?.Dispose();</div>
-<div class="line"><span class="lineno">   86</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_crab_u_i_2_components_2_c_u_i_canvas_8cs_source.html#l00105">105</a> of file <a class="el" href="_crab_u_i_2_components_2_c_u_i_canvas_8cs_source.html">CUICanvas.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  106</span>    {</div>
+<div class="line"><span class="lineno">  107</span>      Texture?.Dispose();</div>
+<div class="line"><span class="lineno">  108</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -680,6 +687,46 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   54</span>    {</div>
 <div class="line"><span class="lineno">   55</span>      <span class="keywordflow">return</span> Data[y * Texture.Width + x];</div>
 <div class="line"><span class="lineno">   56</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a596270393c3a96ccd77b1f117fbdba70" name="a596270393c3a96ccd77b1f117fbdba70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a596270393c3a96ccd77b1f117fbdba70">&#9670;&#160;</a></span>Render()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CrabUI.CUICanvas.Render </td>
+          <td>(</td>
+          <td class="paramtype">Action&lt; SpriteBatch &gt;</td>          <td class="paramname"><span class="paramname"><em>renderFunc</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Uses renderFunc to render stuff directy onto Canvas.Texture You can for example use GUI "Draw" methods with provided spriteBatch <br  />
+ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">renderFunc</td><td>Action&lt;SpriteBatch&gt; where you can draw whatever you want </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_crab_u_i_2_components_2_c_u_i_canvas_8cs_source.html#l00076">76</a> of file <a class="el" href="_crab_u_i_2_components_2_c_u_i_canvas_8cs_source.html">CUICanvas.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>    {</div>
+<div class="line"><span class="lineno">   78</span>      GameMain.Instance.GraphicsDevice.SetRenderTarget(Texture);</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>      <span class="comment">//TODO save and restore scissor rect</span></div>
+<div class="line"><span class="lineno">   81</span>      spriteBatch.Begin(SpriteSortMode.Deferred, <span class="keyword">null</span>, GUI.SamplerState, <span class="keyword">null</span>, GameMain.ScissorTestEnable);</div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span>      renderFunc(spriteBatch);</div>
+<div class="line"><span class="lineno">   84</span> </div>
+<div class="line"><span class="lineno">   85</span>      spriteBatch.End();</div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>      GameMain.Instance.GraphicsDevice.SetRenderTarget(<span class="keyword">null</span>);</div>
+<div class="line"><span class="lineno">   88</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -755,14 +802,30 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a4b8248b00f6f3f76e8f6a3c9dc65be8f" name="a4b8248b00f6f3f76e8f6a3c9dc65be8f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b8248b00f6f3f76e8f6a3c9dc65be8f">&#9670;&#160;</a></span>Texture</h2>
+<a id="a5e95a1b170113ebb6d6eb1ff26230da9" name="a5e95a1b170113ebb6d6eb1ff26230da9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e95a1b170113ebb6d6eb1ff26230da9">&#9670;&#160;</a></span>spriteBatch</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Texture2D CrabUI.CUICanvas.Texture</td>
+          <td class="memname">SpriteBatch CrabUI.CUICanvas.spriteBatch</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_crab_u_i_2_components_2_c_u_i_canvas_8cs_source.html#l00090">90</a> of file <a class="el" href="_crab_u_i_2_components_2_c_u_i_canvas_8cs_source.html">CUICanvas.cs</a>.</p>
+
+</div>
+</div>
+<a id="a63d7dfb12f1b7df03c08595f33922eb3" name="a63d7dfb12f1b7df03c08595f33922eb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63d7dfb12f1b7df03c08595f33922eb3">&#9670;&#160;</a></span>Texture</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RenderTarget2D CrabUI.CUICanvas.Texture</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -801,8 +864,8 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="lineno">   31</span>      {</div>
 <div class="line"><span class="lineno">   32</span>        <span class="keywordflow">if</span> (value.X == Texture?.Width &amp;&amp; value.Y == Texture?.Height) <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">   33</span> </div>
-<div class="line"><span class="lineno">   34</span>        Texture2D oldTexture = Texture;</div>
-<div class="line"><span class="lineno">   35</span>        Texture = <span class="keyword">new</span> Texture2D(GameMain.Instance.GraphicsDevice, value.X, value.Y);</div>
+<div class="line"><span class="lineno">   34</span>        RenderTarget2D oldTexture = Texture;</div>
+<div class="line"><span class="lineno">   35</span>        Texture = <span class="keyword">new</span> RenderTarget2D(GameMain.Instance.GraphicsDevice, value.X, value.Y);</div>
 <div class="line"><span class="lineno">   36</span>        Data = <span class="keyword">new</span> Color[Texture.Width * Texture.Height];</div>
 <div class="line"><span class="lineno">   37</span>        <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#afb4fa6ba38747f13e2f962a2b5462ef4">BackgroundSprite</a> = <span class="keyword">new</span> CUISprite(Texture);</div>
 <div class="line"><span class="lineno">   38</span>        oldTexture?.Dispose();</div>

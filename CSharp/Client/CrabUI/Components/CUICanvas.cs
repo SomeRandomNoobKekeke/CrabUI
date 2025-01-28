@@ -17,7 +17,7 @@ namespace CrabUI
   {
     public Color[] Data;
 
-    public Texture2D Texture;
+    public RenderTarget2D Texture;
 
 
     /// <summary>
@@ -31,8 +31,8 @@ namespace CrabUI
       {
         if (value.X == Texture?.Width && value.Y == Texture?.Height) return;
 
-        Texture2D oldTexture = Texture;
-        Texture = new Texture2D(GameMain.Instance.GraphicsDevice, value.X, value.Y);
+        RenderTarget2D oldTexture = Texture;
+        Texture = new RenderTarget2D(GameMain.Instance.GraphicsDevice, value.X, value.Y);
         Data = new Color[Texture.Width * Texture.Height];
         BackgroundSprite = new CUISprite(Texture);
         oldTexture?.Dispose();
@@ -68,11 +68,33 @@ namespace CrabUI
       Texture.SetData<Color>(Data);
     }
 
+    /// <summary>
+    /// Uses renderFunc to render stuff directy onto Canvas.Texture
+    /// You can for example use GUI "Draw" methods with provided spriteBatch  
+    /// </summary>
+    /// <param name="renderFunc"> Action<SpriteBatch> where you can draw whatever you want </param>
+    public void Render(Action<SpriteBatch> renderFunc)
+    {
+      GameMain.Instance.GraphicsDevice.SetRenderTarget(Texture);
+
+      //TODO save and restore scissor rect
+      spriteBatch.Begin(SpriteSortMode.Deferred, null, GUI.SamplerState, null, GameMain.ScissorTestEnable);
+
+      renderFunc(spriteBatch);
+
+      spriteBatch.End();
+
+      GameMain.Instance.GraphicsDevice.SetRenderTarget(null);
+    }
+
+    public SpriteBatch spriteBatch;
+
     public CUICanvas(int x, int y) : base()
     {
       Size = new Point(x, y);
       BackgroundColor = Color.White;
       BorderColor = Color.Black;
+      spriteBatch = new SpriteBatch(GameMain.Instance.GraphicsDevice);
     }
 
     public CUICanvas() : this(100, 100)

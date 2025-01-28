@@ -1,10 +1,16 @@
 var searchData=
 [
-  ['backgroundcolor_0',['BackgroundColor',['../class_crab_u_i_1_1_c_u_i_button.html#a5f412956a63b2dd8eae92c1f8a0855ed',1,'CrabUI.CUIButton.BackgroundColor'],['../class_crab_u_i_1_1_c_u_i_component.html#a7db80658c26d4041f54ce3aa469854af',1,'CrabUI.CUIComponent.BackgroundColor']]],
-  ['backgroundsprite_1',['BackgroundSprite',['../class_crab_u_i_1_1_c_u_i_component.html#afb4fa6ba38747f13e2f962a2b5462ef4',1,'CrabUI::CUIComponent']]],
-  ['backgroundvisible_2',['BackgroundVisible',['../class_crab_u_i_1_1_c_u_i_component.html#a79af0dd39d3bbf5a1b93067626bde64f',1,'CrabUI::CUIComponent']]],
-  ['borderbox_3',['BorderBox',['../class_crab_u_i_1_1_c_u_i_component.html#a51ef3d2adf35a7a47672cd54b75ffcbe',1,'CrabUI::CUIComponent']]],
-  ['bordercolor_4',['BorderColor',['../class_crab_u_i_1_1_c_u_i_component.html#aa65f90b50fc3c8aaad18b0604d6760bf',1,'CrabUI::CUIComponent']]],
-  ['borderthickness_5',['BorderThickness',['../class_crab_u_i_1_1_c_u_i_component.html#aa2566202d389966284d77b3c3d0b27e7',1,'CrabUI::CUIComponent']]],
-  ['bordervisible_6',['BorderVisible',['../class_crab_u_i_1_1_c_u_i_component.html#ad95ce16416873369a8e0d98b6cc92ab6',1,'CrabUI::CUIComponent']]]
+  ['a_20tree_0',['Creating a tree',['../_creatingatree.html',1,'index']]],
+  ['absolute_1',['Absolute',['../class_crab_u_i_1_1_c_u_i_component.html#af5fd8b560d8752337777edb44aa2faab',1,'CrabUI::CUIComponent']]],
+  ['addchildren_2',['AddChildren',['../class_crab_u_i_1_1_c_u_i_component.html#a73d8ce798b79f1cac728cb514c3e81a8',1,'CrabUI::CUIComponent']]],
+  ['addcommand_3',['AddCommand',['../class_crab_u_i_1_1_c_u_i_component.html#a6dd0fb51c40240e285b04e3b53ad5e5d',1,'CrabUI::CUIComponent']]],
+  ['addcommands_4',['AddCommands',['../class_crab_u_i_1_1_c_u_i_component.html#a9bf2a7e83fb2f882bb9a5508354472c5',1,'CrabUI::CUIComponent']]],
+  ['aka_5',['AKA',['../class_crab_u_i_1_1_c_u_i_component.html#a7bd52e276817a724f0526b2b1c31ad2d',1,'CrabUI::CUIComponent']]],
+  ['also_20you_20can_20memorize_20and_20restore_20state_20of_20component_6',['Also you can memorize and restore state of component',['../_serialization.html#autotoc_md19',1,'']]],
+  ['anchor_7',['Anchor',['../class_crab_u_i_1_1_c_u_i_component.html#a7fae3cdaeecaf5bc24120cddfb4b2af2',1,'CrabUI::CUIComponent']]],
+  ['and_20restore_20state_20of_20component_8',['Also you can memorize and restore state of component',['../_serialization.html#autotoc_md19',1,'']]],
+  ['another_20with_3a_9',['You can attach one component to another with:',['../_creatingatree.html#autotoc_md8',1,'']]],
+  ['append_10',['Append',['../class_crab_u_i_1_1_c_u_i_component.html#a5d05673fa79fb7a41985c46ca88ab647',1,'CrabUI::CUIComponent']]],
+  ['arraytostring_11',['ArrayToString',['../class_crab_u_i_1_1_c_u_i.html#aa9e0675b00d0d7b740542d83f77e2d23',1,'CrabUI::CUI']]],
+  ['attach_20one_20component_20to_20another_20with_3a_12',['You can attach one component to another with:',['../_creatingatree.html#autotoc_md8',1,'']]]
 ];

@@ -1,10 +1,11 @@
 var searchData=
 [
-  ['padding_0',['Padding',['../class_crab_u_i_1_1_c_u_i_component.html#a5186e13b2faee5dd2b9b919cbb8c3618',1,'CrabUI::CUIComponent']]],
-  ['parentanchor_1',['ParentAnchor',['../class_crab_u_i_1_1_c_u_i_component.html#aa7f771ddc058dc8b160caf4d9243a763',1,'CrabUI::CUIComponent']]],
-  ['passpropstochild_2',['PassPropsToChild',['../class_crab_u_i_1_1_c_u_i_component.html#a4fbc3126e7d56a17c69227c6b9d14ccf',1,'CrabUI::CUIComponent']]],
-  ['prepend_3',['Prepend',['../class_crab_u_i_1_1_c_u_i_component.html#a21431d1bcb98626c736124039177b6c7',1,'CrabUI::CUIComponent']]],
-  ['props_4',['Props',['../_graphic_props.html',1,'Graphic Props'],['../_layout_props.html',1,'Layout Props']]],
-  ['props_3a_5',['Props:',['../index.html#autotoc_md4',1,'']]],
-  ['proptest_6',['PropTest',['../class_crab_u_i_test_1_1_prop_test.html',1,'CrabUITest']]]
+  ['of_20component_0',['Also you can memorize and restore state of component',['../_serialization.html#autotoc_md19',1,'']]],
+  ['ondispose_1',['OnDispose',['../class_crab_u_i_1_1_c_u_i.html#a094cb2f85756ccf7fdf601df178d2dcb',1,'CrabUI::CUI']]],
+  ['one_20component_20to_20another_20with_3a_2',['You can attach one component to another with:',['../_creatingatree.html#autotoc_md8',1,'']]],
+  ['oninit_3',['OnInit',['../class_crab_u_i_1_1_c_u_i.html#a29fdc0441733f6fde0d3bc29a458078c',1,'CrabUI::CUI']]],
+  ['onslide_4',['OnSlide',['../class_crab_u_i_1_1_c_u_i_slider.html#a47cb8f2e0955b0f9566d2031d1f77d02',1,'CrabUI::CUISlider']]],
+  ['open_5',['Open',['../class_crab_u_i_1_1_c_u_i_frame.html#a3e91acd1f55a74bc1a4c45677f050fec',1,'CrabUI.CUIFrame.Open()'],['../class_crab_u_i_1_1_c_u_i_pages.html#ac9ac0d7b2273d35846dc22afdbe41872',1,'CrabUI.CUIPages.Open()']]],
+  ['options_6',['Options',['../class_crab_u_i_1_1_c_u_i_drop_down.html#a4ed50a8547204388ed041edd116d2ad3',1,'CrabUI.CUIDropDown.Options'],['../class_crab_u_i_1_1_c_u_i_multi_button.html#a6cf37012e52970ea4b9b5cb9d37bee9e',1,'CrabUI.CUIMultiButton.Options']]],
+  ['overview_7',['Overview',['../index.html#autotoc_md2',1,'\subpage Overview'],['../_overview.html',1,'Overview']]]
 ];

@@ -27,8 +27,8 @@ namespace CrabUI
 
 
     // Without wrappers they will throw FieldAccessException
-    public event Action OnUpdate; internal void InvokeOnUpdate() => OnUpdate?.Invoke();
-    public Action AddOnUpdate { set { OnUpdate += value; } }
+    public event Action<double> OnUpdate; internal void InvokeOnUpdate(double totalTime) => OnUpdate?.Invoke(totalTime);
+    public Action<double> AddOnUpdate { set { OnUpdate += value; } }
     public event Action<CUIInput> OnMouseLeave; internal void InvokeOnMouseLeave(CUIInput e) => OnMouseLeave?.Invoke(e);
     public Action<CUIInput> AddOnMouseLeave { set { OnMouseLeave += value; } }
     public event Action<CUIInput> OnMouseEnter; internal void InvokeOnMouseEnter(CUIInput e) => OnMouseEnter?.Invoke(e);
@@ -39,6 +39,8 @@ namespace CrabUI
     public Action<CUIInput> AddOnMouseUp { set { OnMouseUp += value; } }
     public event Action<CUIInput> OnMouseMove; internal void InvokeOnMouseMove(CUIInput e) => OnMouseMove?.Invoke(e);
     public Action<CUIInput> AddOnMouseMove { set { OnMouseMove += value; } }
+    public event Action<CUIInput> OnMouseOn; internal void InvokeOnMouseOn(CUIInput e) => OnMouseOn?.Invoke(e);
+    public Action<CUIInput> AddOnMouseOn { set { OnMouseOn += value; } }
     public event Action<CUIInput> OnClick; internal void InvokeOnClick(CUIInput e) => OnClick?.Invoke(e);
     public Action<CUIInput> AddOnClick { set { OnClick += value; } }
     public event Action<CUIInput> OnDClick; internal void InvokeOnDClick(CUIInput e) => OnDClick?.Invoke(e);

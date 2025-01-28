@@ -94,7 +94,7 @@ namespace CrabUI
         PrevMouseDownTiming = totalTime;
       }
 
-      SomethingHappened = MouseUp || MouseDown || MouseMoved || Scrolled;
+      SomethingHappened = MouseHeld || MouseUp || MouseDown || MouseMoved || Scrolled;
 
       PrevMouseState = Mouse;
     }

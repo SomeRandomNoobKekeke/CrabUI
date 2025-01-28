@@ -33,6 +33,11 @@ namespace CrabUI
 
       CUI.OnDispose += () =>
       {
+        foreach (CUIComponent c in ComponentsById.Values)
+        {
+          c.Dispose();
+        }
+
         ComponentsById.Clear();
         dummyComponent = null;
       };
@@ -177,12 +182,9 @@ namespace CrabUI
       Relative = new CUINullRect(x, y, w, h);
     }
 
-    /// <summary>
-    /// Will just RemoveSelf()
-    /// </summary>
     public void Dispose()
     {
-      RemoveSelf();
+
     }
 
     public override string ToString() => $"{this.GetType().Name}:{ID}:{AKA}";

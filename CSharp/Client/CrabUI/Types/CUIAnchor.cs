@@ -40,6 +40,11 @@ namespace CrabUI
       );
     }
 
+    public static Vector2 AnchorFromPos(CUIRect rect, Vector2 pos)
+    {
+      return (pos - rect.Position) / rect.Size;
+    }
+
     public static Vector2 GetChildPos(CUIRect parent, Vector2 anchor, Vector2 offset, Vector2 childSize)
     {
       return PosIn(parent, anchor) + offset - PosIn(new CUIRect(childSize), anchor);

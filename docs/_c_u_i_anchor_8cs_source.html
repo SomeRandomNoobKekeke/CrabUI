@@ -136,18 +136,23 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      );</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    }</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keyword">public</span> <span class="keyword">static</span> Vector2 GetChildPos(<a class="code hl_struct" href="struct_crab_u_i_1_1_c_u_i_rect.html">CUIRect</a> parent, Vector2 anchor, Vector2 offset, Vector2 childSize)</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keyword">public</span> <span class="keyword">static</span> Vector2 AnchorFromPos(<a class="code hl_struct" href="struct_crab_u_i_1_1_c_u_i_rect.html">CUIRect</a> rect, Vector2 pos)</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    {</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>      <span class="keywordflow">return</span> PosIn(parent, anchor) + offset - PosIn(<span class="keyword">new</span> <a class="code hl_struct" href="struct_crab_u_i_1_1_c_u_i_rect.html">CUIRect</a>(childSize), anchor);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>      <span class="keywordflow">return</span> (pos - rect.Position) / rect.Size;</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    }</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">public</span> <span class="keyword">static</span> Vector2 GetChildPos(<a class="code hl_struct" href="struct_crab_u_i_1_1_c_u_i_rect.html">CUIRect</a> parent, Vector2 parentAnchor, Vector2 offset, Vector2 childSize, Vector2 anchor)</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">public</span> <span class="keyword">static</span> Vector2 GetChildPos(<a class="code hl_struct" href="struct_crab_u_i_1_1_c_u_i_rect.html">CUIRect</a> parent, Vector2 anchor, Vector2 offset, Vector2 childSize)</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    {</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>      <span class="keywordflow">return</span> PosIn(parent, parentAnchor) + offset - PosIn(<span class="keyword">new</span> <a class="code hl_struct" href="struct_crab_u_i_1_1_c_u_i_rect.html">CUIRect</a>(childSize), anchor);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>      <span class="keywordflow">return</span> PosIn(parent, anchor) + offset - PosIn(<span class="keyword">new</span> <a class="code hl_struct" href="struct_crab_u_i_1_1_c_u_i_rect.html">CUIRect</a>(childSize), anchor);</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keyword">public</span> <span class="keyword">static</span> Vector2 GetChildPos(<a class="code hl_struct" href="struct_crab_u_i_1_1_c_u_i_rect.html">CUIRect</a> parent, Vector2 parentAnchor, Vector2 offset, Vector2 childSize, Vector2 anchor)</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>      <span class="keywordflow">return</span> PosIn(parent, parentAnchor) + offset - PosIn(<span class="keyword">new</span> <a class="code hl_struct" href="struct_crab_u_i_1_1_c_u_i_rect.html">CUIRect</a>(childSize), anchor);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  }</div>
 </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>}</div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_anchor_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_anchor.html">CrabUI.CUIAnchor</a></div><div class="ttdoc">CUIAnchor is just a Vector2   This is a static class containing some helper methods.</div><div class="ttdef"><b>Definition</b> <a href="#l00017">CUIAnchor.cs:18</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html">CrabUI.CUIComponent</a></div><div class="ttdoc">Base class for all components.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_tree_8cs_source.html#l00019">CUIComponent.Tree.cs:20</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a7fae3cdaeecaf5bc24120cddfb4b2af2"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a7fae3cdaeecaf5bc24120cddfb4b2af2">CrabUI.CUIComponent.Anchor</a></div><div class="ttdeci">Vector2 Anchor</div><div class="ttdoc">this point of this component</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00070">CUIComponent.Props declaration.cs:70</a></div></div>

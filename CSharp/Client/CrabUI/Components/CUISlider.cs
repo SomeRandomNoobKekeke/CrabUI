@@ -9,14 +9,25 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CrabUI
 {
-
+  /// <summary>
+  /// Aka range input, aka scrollbar
+  /// has draggable handle and outputs its relative pos in the slider [0..1]
+  /// </summary>
   public class CUISlider : CUIComponent
   {
+    /// <summary>
+    /// Happens when handle is dragged, value is [0..1]
+    /// </summary>
     public event Action<float> OnSlide;
 
     private float? pendingLambda;
 
-    private float lambda; public float Lambda
+
+    private float lambda;
+    /// <summary>
+    /// Relative handle position [0..1]
+    /// </summary>
+    public float Lambda
     {
       get => lambda;
       set
@@ -26,10 +37,13 @@ namespace CrabUI
       }
     }
 
+    /// <summary>
+    /// The handle
+    /// </summary>
     public CUIComponent Slider;
-    public bool Vertical;
+    private bool Vertical;
 
-    public void HandleSlide()
+    private void HandleSlide()
     {
       if (Vertical)
       {

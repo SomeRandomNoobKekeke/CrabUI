@@ -124,8 +124,6 @@ namespace CrabUI
 
       CUIDebug.Flush();
 
-
-
       if (TreeChanged)
       {
         OnTreeChanged?.Invoke();
@@ -181,7 +179,7 @@ namespace CrabUI
         });
       }
 
-      RunStraigth(c => c.InvokeOnUpdate());
+      RunStraigth(c => c.InvokeOnUpdate(totalTime));
 
       LastUpdateTime = totalTime;
     }
@@ -330,6 +328,7 @@ namespace CrabUI
       {
         c.MousePressed = CUI.Input.MouseHeld;
         c.MouseOver = true;
+        c.InvokeOnMouseOn(CUI.Input);
       }
 
       // Mouse enter / leave

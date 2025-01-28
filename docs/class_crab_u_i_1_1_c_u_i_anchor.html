@@ -111,6 +111,8 @@ static Vector2&#160;</td><td class="memItemRight" valign="bottom"><b>PosIn</b> (
 <tr class="separator:ad03008cfb40bf149b083dcaa4e95ab5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2426f81f98f8984657f3cda9dec54e6d" id="r_a2426f81f98f8984657f3cda9dec54e6d"><td class="memItemLeft" align="right" valign="top">static Vector2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2426f81f98f8984657f3cda9dec54e6d">PosIn</a> (<a class="el" href="struct_crab_u_i_1_1_c_u_i_rect.html">CUIRect</a> rect, Vector2 anchor)</td></tr>
 <tr class="separator:a2426f81f98f8984657f3cda9dec54e6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93001e3511d6d0032cb8a9e528d4a5e4" id="r_a93001e3511d6d0032cb8a9e528d4a5e4"><td class="memItemLeft" align="right" valign="top">static Vector2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93001e3511d6d0032cb8a9e528d4a5e4">AnchorFromPos</a> (<a class="el" href="struct_crab_u_i_1_1_c_u_i_rect.html">CUIRect</a> rect, Vector2 pos)</td></tr>
+<tr class="separator:a93001e3511d6d0032cb8a9e528d4a5e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6620a9379c1bff283aacedba31392ae" id="r_aa6620a9379c1bff283aacedba31392ae"><td class="memItemLeft" align="right" valign="top">static Vector2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6620a9379c1bff283aacedba31392ae">GetChildPos</a> (<a class="el" href="struct_crab_u_i_1_1_c_u_i_rect.html">CUIRect</a> parent, Vector2 anchor, Vector2 offset, Vector2 childSize)</td></tr>
 <tr class="separator:aa6620a9379c1bff283aacedba31392ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad070c03b4bea1c78bd86796b37d56b9" id="r_aad070c03b4bea1c78bd86796b37d56b9"><td class="memItemLeft" align="right" valign="top">static Vector2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad070c03b4bea1c78bd86796b37d56b9">GetChildPos</a> (<a class="el" href="struct_crab_u_i_1_1_c_u_i_rect.html">CUIRect</a> parent, Vector2 parentAnchor, Vector2 offset, Vector2 childSize, Vector2 anchor)</td></tr>
@@ -143,6 +145,40 @@ Static Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_c_u_i_anchor_8cs_source.html#l00017">17</a> of file <a class="el" href="_c_u_i_anchor_8cs_source.html">CUIAnchor.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a93001e3511d6d0032cb8a9e528d4a5e4" name="a93001e3511d6d0032cb8a9e528d4a5e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93001e3511d6d0032cb8a9e528d4a5e4">&#9670;&#160;</a></span>AnchorFromPos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Vector2 CrabUI.CUIAnchor.AnchorFromPos </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_crab_u_i_1_1_c_u_i_rect.html">CUIRect</a></td>          <td class="paramname"><span class="paramname"><em>rect</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector2</td>          <td class="paramname"><span class="paramname"><em>pos</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_anchor_8cs_source.html#l00043">43</a> of file <a class="el" href="_c_u_i_anchor_8cs_source.html">CUIAnchor.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>    {</div>
+<div class="line"><span class="lineno">   45</span>      <span class="keywordflow">return</span> (pos - rect.Position) / rect.Size;</div>
+<div class="line"><span class="lineno">   46</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="ae09466d4d9c1f241526bae752b387138" name="ae09466d4d9c1f241526bae752b387138"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae09466d4d9c1f241526bae752b387138">&#9670;&#160;</a></span>Direction()</h2>
 
@@ -210,10 +246,10 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_anchor_8cs_source.html#l00043">43</a> of file <a class="el" href="_c_u_i_anchor_8cs_source.html">CUIAnchor.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   44</span>    {</div>
-<div class="line"><span class="lineno">   45</span>      <span class="keywordflow">return</span> PosIn(parent, anchor) + offset - PosIn(<span class="keyword">new</span> CUIRect(childSize), anchor);</div>
-<div class="line"><span class="lineno">   46</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_anchor_8cs_source.html#l00048">48</a> of file <a class="el" href="_c_u_i_anchor_8cs_source.html">CUIAnchor.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   49</span>    {</div>
+<div class="line"><span class="lineno">   50</span>      <span class="keywordflow">return</span> PosIn(parent, anchor) + offset - PosIn(<span class="keyword">new</span> CUIRect(childSize), anchor);</div>
+<div class="line"><span class="lineno">   51</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -259,10 +295,10 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_anchor_8cs_source.html#l00048">48</a> of file <a class="el" href="_c_u_i_anchor_8cs_source.html">CUIAnchor.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   49</span>    {</div>
-<div class="line"><span class="lineno">   50</span>      <span class="keywordflow">return</span> PosIn(parent, parentAnchor) + offset - PosIn(<span class="keyword">new</span> CUIRect(childSize), anchor);</div>
-<div class="line"><span class="lineno">   51</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_anchor_8cs_source.html#l00053">53</a> of file <a class="el" href="_c_u_i_anchor_8cs_source.html">CUIAnchor.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   54</span>    {</div>
+<div class="line"><span class="lineno">   55</span>      <span class="keywordflow">return</span> PosIn(parent, parentAnchor) + offset - PosIn(<span class="keyword">new</span> CUIRect(childSize), anchor);</div>
+<div class="line"><span class="lineno">   56</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>

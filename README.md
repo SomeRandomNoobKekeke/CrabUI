@@ -23,6 +23,8 @@ CUI.Main.Append(frame);
 
 Some documentation is [here](https://somerandomnoobkekeke.github.io/CrabUI/index.html)
 
+Changelog is [here](https://github.com/SomeRandomNoobKekeke/CrabUI/blob/main/CSharp/Client/CrabUI/Changelog.md) 
+
 ## Instalation
 
 Currently luatrauma workshop dependency system is broken  

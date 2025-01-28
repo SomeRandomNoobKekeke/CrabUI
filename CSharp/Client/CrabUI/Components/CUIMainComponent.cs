@@ -165,8 +165,7 @@ namespace CrabUI
           }
         }
         while (GlobalLayoutChanged);
-
-
+        //CUI.Log($"UpdateLoopCount: {UpdateLoopCount}");
       }
       else
       {

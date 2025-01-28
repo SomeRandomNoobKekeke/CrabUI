@@ -26,6 +26,9 @@ namespace CrabUI
       set { layout = value; layout.Host = this; }
     }
 
+    public event Action OnLayoutUpdated;
+    public void InvokeOnLayoutUpdated() => OnLayoutUpdated?.Invoke();
+
     /// <summary>
     /// Triggers recalculation of layouts from parent and below
     /// </summary>

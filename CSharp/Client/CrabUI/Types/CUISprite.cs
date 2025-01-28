@@ -21,38 +21,58 @@ namespace CrabUI
   /// <summary>
   /// Wrapper, containing link to texture, source rect, path, draw mode
   /// </summary>
-  public class CUISprite
+  public struct CUISprite
   {
     public static Texture2D BackupTexture => GUI.WhiteTexture;
-    private string path = ""; public string Path
+    public static CUISprite Default => new CUISprite();
+    public string Path;
+    public Texture2D Texture;
+    public CUISpriteDrawMode DrawMode;
+    public Rectangle SourceRect;
+
+    public static CUISprite FromVanilla(Sprite sprite)
     {
-      get => path;
-      set
+      return new CUISprite(sprite.Texture, sprite.SourceRect)
       {
-        path = value;
-        Texture = CUI.TextureManager.GetTexture(value);
-      }
+        Path = sprite.FullPath,
+      };
     }
 
-    public Texture2D Texture { get; set; }
-    public CUISpriteDrawMode DrawMode { get; set; } = CUISpriteDrawMode.Resize;
-
-    public Rectangle? SourceRect { get; set; }
 
     public CUISprite()
     {
+      Path = "";
+      DrawMode = CUISpriteDrawMode.Resize;
       Texture = BackupTexture;
-      this.path = "";
+      SourceRect = new Rectangle(0, 0, Texture.Width, Texture.Height);
     }
-    public CUISprite(string path)
+    public CUISprite(string path, Rectangle? sourceRect = null)
     {
-      this.path = path;
+      DrawMode = CUISpriteDrawMode.Resize;
+      Path = path;
       Texture = CUI.TextureManager.GetTexture(path);
+      if (sourceRect.HasValue)
+      {
+        SourceRect = sourceRect.Value;
+      }
+      else
+      {
+        SourceRect = new Rectangle(0, 0, Texture.Width, Texture.Height);
+      }
     }
-    public CUISprite(Texture2D texture, string path)
+    public CUISprite(Texture2D texture, Rectangle? sourceRect = null)
     {
+      Path = "";
+      DrawMode = CUISpriteDrawMode.Resize;
       Texture = texture ?? BackupTexture;
-      this.path = path ?? "";
+      if (sourceRect.HasValue)
+      {
+        SourceRect = sourceRect.Value;
+      }
+      else
+      {
+        SourceRect = new Rectangle(0, 0, Texture.Width, Texture.Height);
+      }
     }
 
     public override string ToString() => Path;

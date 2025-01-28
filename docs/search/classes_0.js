@@ -35,7 +35,7 @@ var searchData=
   ['cuiprop_3c_20int_3f_3e_32',['CUIProp&lt; int?&gt;',['../class_crab_u_i_1_1_c_u_i_prop.html',1,'CrabUI']]],
   ['cuiprop_3c_20vector2_20_3e_33',['CUIProp&lt; Vector2 &gt;',['../class_crab_u_i_1_1_c_u_i_prop.html',1,'CrabUI']]],
   ['cuirect_34',['CUIRect',['../struct_crab_u_i_1_1_c_u_i_rect.html',1,'CrabUI']]],
-  ['cuisprite_35',['CUISprite',['../class_crab_u_i_1_1_c_u_i_sprite.html',1,'CrabUI']]],
+  ['cuisprite_35',['CUISprite',['../struct_crab_u_i_1_1_c_u_i_sprite.html',1,'CrabUI']]],
   ['cuitextblock_36',['CUITextBlock',['../class_crab_u_i_1_1_c_u_i_text_block.html',1,'CrabUI']]],
   ['cuitextinput_37',['CUITextInput',['../class_crab_u_i_1_1_c_u_i_text_input.html',1,'CrabUI']]],
   ['cuitexturemanager_38',['CUITextureManager',['../class_crab_u_i_1_1_c_u_i_texture_manager.html',1,'CrabUI']]],

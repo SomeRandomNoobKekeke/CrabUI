@@ -32,7 +32,10 @@ namespace CrabUI
 
     public CUISprite GetSprite(string path)
     {
-      return new CUISprite(GetTexture(path), path);
+      return new CUISprite(GetTexture(path))
+      {
+        Path = path,
+      };
     }
 
     public Texture2D GetTexture(string path)

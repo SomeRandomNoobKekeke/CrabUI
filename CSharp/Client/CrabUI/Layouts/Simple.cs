@@ -19,6 +19,7 @@ namespace CrabUI
     {
       if (Changed && Host.Children.Count > 0)
       {
+        Host.InvokeOnLayoutUpdated();
 
         CUI3DOffset offset = Host.ChildOffsetBounds.Check(Host.ChildrenOffset);
 

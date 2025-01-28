@@ -38,6 +38,8 @@ namespace CrabUI
     {
       if (Changed)
       {
+        Host.InvokeOnLayoutUpdated();
+
         Sizes.Clear();
         Resizible.Clear();
 

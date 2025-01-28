@@ -126,65 +126,68 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>      <span class="keywordflow">return</span> path; <span class="comment">//TODO</span></div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    }</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">public</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_sprite.html">CUISprite</a> GetSprite(<span class="keywordtype">string</span> path)</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">public</span> <a class="code hl_struct" href="struct_crab_u_i_1_1_c_u_i_sprite.html">CUISprite</a> GetSprite(<span class="keywordtype">string</span> path)</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    {</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>      <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_sprite.html">CUISprite</a>(GetTexture(path), path);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    }</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">public</span> Texture2D GetTexture(<span class="keywordtype">string</span> path)</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      path = NormalizePath(path);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>      <span class="keywordflow">if</span> (LoadedTextures.ContainsKey(path)) <span class="keywordflow">return</span> LoadedTextures[path];</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>      <span class="keywordflow">try</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>      {</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">if</span> (!File.Exists(path))</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        {</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>          <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i.html">CUI</a>.<a class="code hl_function" href="class_crab_u_i_1_1_c_u_i.html#a417520a09577dd59b1e24415d60df724">Error</a>($<span class="stringliteral">&quot;{path} texture file not found&quot;</span>);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>          <span class="keywordflow">return</span> BackupTexture;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        }</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        Texture2D loaded = <span class="keyword">null</span>;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keyword">using</span> (FileStream fs = File.OpenRead(path))</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        {</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>          loaded = Texture2D.FromStream(GameMain.Instance.GraphicsDevice, fs);</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        }</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keywordflow">if</span> (loaded == <span class="keyword">null</span>)</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        {</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>          <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i.html">CUI</a>.<a class="code hl_function" href="class_crab_u_i_1_1_c_u_i.html#a417520a09577dd59b1e24415d60df724">Error</a>($<span class="stringliteral">&quot;{path} loaded texture is null&quot;</span>);</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>          <span class="keywordflow">return</span> BackupTexture;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        }</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        LoadedTextures[path] = loaded;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keywordflow">return</span> loaded;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>      }</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      <span class="keywordflow">catch</span> (Exception e)</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      {</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i.html">CUI</a>.<a class="code hl_function" href="class_crab_u_i_1_1_c_u_i.html#a417520a09577dd59b1e24415d60df724">Error</a>(e);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>      }</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>      <span class="keywordflow">return</span> BackupTexture;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    }</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>      <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_struct" href="struct_crab_u_i_1_1_c_u_i_sprite.html">CUISprite</a>(GetTexture(path))</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        Path = path,</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      };</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">public</span> Texture2D GetTexture(<span class="keywordtype">string</span> path)</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      path = NormalizePath(path);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>      <span class="keywordflow">if</span> (LoadedTextures.ContainsKey(path)) <span class="keywordflow">return</span> LoadedTextures[path];</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>      <span class="keywordflow">try</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>      {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">if</span> (!File.Exists(path))</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>          <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i.html">CUI</a>.<a class="code hl_function" href="class_crab_u_i_1_1_c_u_i.html#a417520a09577dd59b1e24415d60df724">Error</a>($<span class="stringliteral">&quot;{path} texture file not found&quot;</span>);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>          <span class="keywordflow">return</span> BackupTexture;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        Texture2D loaded = <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keyword">using</span> (FileStream fs = File.OpenRead(path))</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>          loaded = Texture2D.FromStream(GameMain.Instance.GraphicsDevice, fs);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordflow">if</span> (loaded == <span class="keyword">null</span>)</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>          <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i.html">CUI</a>.<a class="code hl_function" href="class_crab_u_i_1_1_c_u_i.html#a417520a09577dd59b1e24415d60df724">Error</a>($<span class="stringliteral">&quot;{path} loaded texture is null&quot;</span>);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>          <span class="keywordflow">return</span> BackupTexture;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        LoadedTextures[path] = loaded;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keywordflow">return</span> loaded;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>      }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>      <span class="keywordflow">catch</span> (Exception e)</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i.html">CUI</a>.<a class="code hl_function" href="class_crab_u_i_1_1_c_u_i.html#a417520a09577dd59b1e24415d60df724">Error</a>(e);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      }</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keyword">public</span> <span class="keywordtype">void</span> Dispose()</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    {</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>      DisposeAllTextures();</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>      LoadedTextures.Clear();</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>      LoadedTextures = <span class="keyword">null</span>;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    }</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>      <span class="keywordflow">return</span> BackupTexture;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keyword">public</span> <span class="keywordtype">void</span> Dispose()</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>      DisposeAllTextures();</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>      LoadedTextures.Clear();</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>      LoadedTextures = <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  }</div>
 </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>}</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>}</div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html">CrabUI.CUI</a></div><div class="ttdoc">In fact a static class managing static things.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_drawing_8cs_source.html#l00015">CUIDrawing.cs:16</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a417520a09577dd59b1e24415d60df724"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#a417520a09577dd59b1e24415d60df724">CrabUI.CUI.Error</a></div><div class="ttdeci">static void Error(object msg, [CallerFilePath] string source=&quot;&quot;, [CallerLineNumber] int lineNumber=0)</div><div class="ttdoc">Prints debug error message with source path Works only if debug is true.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_01_logging_8cs_source.html#l00082">CUI Logging.cs:82</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_sprite_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_sprite.html">CrabUI.CUISprite</a></div><div class="ttdoc">Wrapper, containing link to texture, source rect, path, draw mode.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_sprite_8cs_source.html#l00024">CUISprite.cs:25</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_texture_manager_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_texture_manager.html">CrabUI.CUITextureManager</a></div><div class="ttdoc">Allowing you to load textures safely   With texture caching, BackupTexture, and automatic Dispose.</div><div class="ttdef"><b>Definition</b> <a href="#l00019">CUITextureManager.cs:20</a></div></div>
 <div class="ttc" id="anamespace_crab_u_i_html"><div class="ttname"><a href="namespace_crab_u_i.html">CrabUI</a></div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_button_8cs_source.html#l00012">CUIButton.cs:13</a></div></div>
+<div class="ttc" id="astruct_crab_u_i_1_1_c_u_i_sprite_html"><div class="ttname"><a href="struct_crab_u_i_1_1_c_u_i_sprite.html">CrabUI.CUISprite</a></div><div class="ttdoc">Wrapper, containing link to texture, source rect, path, draw mode.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_sprite_8cs_source.html#l00024">CUISprite.cs:25</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

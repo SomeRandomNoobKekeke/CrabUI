@@ -12,7 +12,7 @@ var searchData=
   ['resizetocontent2_9',['ResizeToContent2',['../class_crab_u_i_test_1_1_prop_test.html#a2a52688dbc4437b3fc4af58b0dc80543',1,'CrabUITest::PropTest']]],
   ['resizetocontent3_10',['ResizeToContent3',['../class_crab_u_i_test_1_1_prop_test.html#a7528e029d964d9a6d1ce2cbc6679bcf5',1,'CrabUITest::PropTest']]],
   ['resizetosprite_11',['ResizeToSprite',['../class_crab_u_i_1_1_c_u_i_component.html#a45d77f03b0be05a9c7c4798f8bf713a4',1,'CrabUI::CUIComponent']]],
-  ['restore_20state_20of_20component_12',['Also you can memorize and restore state of component',['../_serialization.html#autotoc_md18',1,'']]],
+  ['restore_20state_20of_20component_12',['Also you can memorize and restore state of component',['../_serialization.html#autotoc_md17',1,'']]],
   ['revealed_13',['Revealed',['../class_crab_u_i_1_1_c_u_i_component.html#a2b39e97b6c2c219efbb25cd176e0f16b',1,'CrabUI::CUIComponent']]],
   ['rightgap_14',['RightGap',['../class_crab_u_i_1_1_c_u_i_horizontal_list.html#aa5158b8c0780d2c538c8db55bd2ac1b6',1,'CrabUI::CUIHorizontalList']]],
   ['runrecursiveon_15',['RunRecursiveOn',['../class_crab_u_i_1_1_c_u_i_component.html#a93263210f578005db68357069bc3243e',1,'CrabUI::CUIComponent']]]

@@ -22,23 +22,23 @@ namespace CrabUI
     public class CommandAttribute : System.Attribute { }
 
     /// <summary>
-    /// Just an experiment, inspired by WPF commands, not very usefull
+    /// Just an experiment, inspired by WPF commands
     /// </summary>
     /// <param name="Name"></param>
-    public record Command(string Name);
+    public record Command(string Name, object data);
 
 
     /// <summary>
     /// All commands
     /// </summary>
-    public Dictionary<string, Action> Commands { get; set; } = new();
+    public Dictionary<string, Action<object>> Commands { get; set; } = new();
 
     /// <summary>
     /// Manually adds command
     /// </summary>
     /// <param name="name"></param>
     /// <param name="action"></param>
-    public void AddCommad(string name, Action action) => Commands.Add(name, action);
+    public void AddCommand(string name, Action<object> action) => Commands.Add(name, action);
     public void RemoveCommand(string name) => Commands.Remove(name);
 
     /// <summary>
@@ -57,7 +57,7 @@ namespace CrabUI
             {
               name = name.Substring(0, name.Length - "Command".Length);
             }
-            AddCommad(name, mi.CreateDelegate<Action>(this));
+            AddCommand(name, mi.CreateDelegate<Action<object>>(this));
           }
           catch (Exception e)
           {
@@ -81,7 +81,6 @@ namespace CrabUI
     /// Will execute action corresponding to this command
     /// </summary>
     /// <param name="commandName"></param>
-    public void Execute(string commandName) => Commands.GetValueOrDefault(commandName)?.Invoke();
-    public void Execute(Command command) => Commands.GetValueOrDefault(command.Name)?.Invoke();
+    public void Execute(Command command) => Commands.GetValueOrDefault(command.Name)?.Invoke(command.data);
   }
 }

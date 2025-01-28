@@ -164,14 +164,13 @@ namespace CrabUI
       set => CUIProps.BorderColor.SetValue(value);
     }
 
-    // HACK mess, it shouldn't be here
     private void TryResizeToSprite()
     {
-      if (!resizeToSprite || backgroundSprite == null) return;
+      if (!resizeToSprite) return;
       Absolute = Absolute with
       {
-        Width = backgroundSprite.Texture.Width,
-        Height = backgroundSprite.Texture.Height
+        Width = backgroundSprite.SourceRect.Width,
+        Height = backgroundSprite.SourceRect.Height,
       };
     }
 
@@ -190,11 +189,12 @@ namespace CrabUI
       }
     }
 
-    private CUISprite backgroundSprite;
+    private CUISprite backgroundSprite = CUISprite.Default;
     /// <summary>
     /// Will be drawn in background with BackgroundColor  
     /// Default is solid white 1x1 texture
     /// </summary>
+    //TODO i think if all components will have backup sprite by default it'll simplify many things
     [CUISerializable]
     public CUISprite BackgroundSprite
     {
@@ -207,45 +207,10 @@ namespace CrabUI
     }
 
     /// <summary>
-    /// Ez accessor for BackgroundSprite.Path
-    /// Should be preffered because it takes into account ResizeToSprite
-    /// </summary>
-    public string BackgroundSpritePath
-    {
-      get => BackgroundSprite?.Path;
-      set
-      {
-        if (BackgroundSprite == null)
-        {
-          BackgroundSprite = new CUISprite(value);
-        }
-        else
-        {
-          BackgroundSprite.Path = value;
-        }
-        TryResizeToSprite();
-      }
-    }
-
-    /// <summary>
     /// Too lazy to implement sore
     /// </summary>
-    [CUISerializable] public CUISprite BorderSprite { get; set; }
-    public string BorderSpritePath
-    {
-      get => BorderSprite?.Path;
-      set
-      {
-        if (BorderSprite == null)
-        {
-          BorderSprite = new CUISprite(value);
-        }
-        else
-        {
-          BorderSprite.Path = value;
-        }
-      }
-    }
+    //[CUISerializable] public CUISprite BorderSprite { get; set; }
+
 
     //TODO i think those colors could be stored inside sprites
     // But then it'll be much harder to apply side effects, think about it

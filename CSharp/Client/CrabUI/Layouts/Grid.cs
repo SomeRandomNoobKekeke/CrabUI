@@ -131,6 +131,8 @@ namespace CrabUI
     {
       if (Changed && Host.Children.Count > 0)
       {
+        Host.InvokeOnLayoutUpdated();
+
         CalculateTracks();
 
         foreach (CUIComponent c in Host.Children)

@@ -261,9 +261,9 @@ namespace CrabUI
     //[CUISerializable] public bool PreventOverflow { get; set; } = false;
 
     public event Action<string> OnTextChanged;
-    public void AddOnTextChanged(Action<string> action) => OnTextChanged += action;
+    public Action<string> AddOnTextChanged { set => OnTextChanged += value; }
     public event Action<string> OnTextAdded;
-    public void AddOnTextAdded(Action<string> action) => OnTextAdded += action;
+    public Action<string> AddOnTextAdded { set => OnTextAdded += value; }
 
     public override void Draw(SpriteBatch spriteBatch)
     {
@@ -290,21 +290,27 @@ namespace CrabUI
       this["TextComponent"] = TextComponent = new CUITextBlock()
       {
         Text = "text",
-        Padding = new Vector2(2, 2),
+        Style = new CUIStyle(){
+          {"Padding", "[2,2]"},
+        },
       };
 
       this["SelectionOverlay"] = SelectionOverlay = new CUIComponent()
       {
-        BackgroundColor = new Color(0, 255, 255, 128),
-        BorderColor = Color.Transparent,
+        Style = new CUIStyle(){
+          {"BackgroundColor", "0,255,255,128"},
+          {"BorderColor", "Transparent"},
+        },
         Relative = new CUINullRect(h: 1),
         Ghost = new CUIBool2(true, true),
       };
 
       this["CaretIndicator"] = CaretIndicator = new CUIComponent()
       {
-        BackgroundColor = new Color(255, 255, 255, 150),
-        BorderColor = Color.Transparent,
+        Style = new CUIStyle(){
+          {"BackgroundColor", "255,255,255,150"},
+          {"BorderColor", "Transparent"},
+        },
         Relative = new CUINullRect(h: 1),
         Absolute = new CUINullRect(w: 1),
         Ghost = new CUIBool2(true, true),
@@ -342,7 +348,10 @@ namespace CrabUI
 
       OnDClick += (e) => SelectAll();
 
-      CUI.Main.Global.OnMouseUp += (e) => selectionHandle.Grabbed = false;
+      if (CUI.Main is not null)
+      {
+        CUI.Main.Global.OnMouseUp += (e) => selectionHandle.Grabbed = false;
+      }
     }
   }
 

@@ -156,14 +156,7 @@ namespace CrabUI
       Font.Value.DrawString(spriteBatch, WrappedText, TextDrawPos, TextColor, rotation: 0, origin: Vector2.Zero, TextScale / Scale, se: SpriteEffects.None, layerDepth: 0.1f);
     }
 
-    public CUITextBlock()
-    {
-      Padding = new Vector2(4, 0);
-
-      BackgroundColor = Color.Transparent;
-      BorderColor = Color.Transparent;
-      TextColor = CUIPallete.Default.Secondary.Text;
-    }
+    public CUITextBlock() { }
 
     public CUITextBlock(string text) : this()
     {

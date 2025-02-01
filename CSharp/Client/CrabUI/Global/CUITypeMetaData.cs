@@ -28,26 +28,73 @@ namespace CrabUI
   {
     internal static void InitStatic()
     {
-      CUI.OnInit += () => TypeMetaData = new Dictionary<Type, CUITypeMetaData>();
-      CUI.OnDispose += () => TypeMetaData.Clear();
+      CUI.OnInit += () =>
+      {
+        TypeMetaData = new Dictionary<Type, CUITypeMetaData>();
+      };
+      CUI.OnDispose += () =>
+      {
+        TypeMetaData.Clear();
+      };
     }
 
     public static Dictionary<Type, CUITypeMetaData> TypeMetaData;
 
     public static CUITypeMetaData Get(Type type)
     {
-      if (!TypeMetaData.ContainsKey(type)) TypeMetaData[type] = new CUITypeMetaData(type);
+      if (!TypeMetaData.ContainsKey(type)) new CUITypeMetaData(type);
       return TypeMetaData[type];
     }
 
+    public Type CUIType;
+
     public object Default;
+
+    private CUIStyle defaultStyle; public CUIStyle DefaultStyle
+    {
+      get => defaultStyle;
+      set
+      {
+        if (defaultStyle == value) return;
+
+        if (defaultStyle != null)
+        {
+          defaultStyle.OnUse -= HandleStyleChange;
+          defaultStyle.OnPropChanged -= HandleStylePropChange;
+        }
+
+        defaultStyle = value;
+
+        if (defaultStyle != null)
+        {
+          defaultStyle.OnUse += HandleStyleChange;
+          defaultStyle.OnPropChanged += HandleStylePropChange;
+        }
+
+        HandleStyleChange(defaultStyle);
+      }
+    }
+
+    private void HandleStylePropChange(string key, string value)
+    {
+      CUIGlobalStyleResolver.OnDefaultStylePropChanged(CUIType, key);
+    }
+    private void HandleStyleChange(CUIStyle s)
+    {
+      CUIGlobalStyleResolver.OnDefaultStyleChanged(CUIType);
+    }
+
+    public CUIStyle ResolvedDefaultStyle { get; set; }
+
 
     public SortedDictionary<string, PropertyInfo> Serializable = new();
     public SortedDictionary<string, PropertyInfo> Calculated = new();
+    public SortedDictionary<string, PropertyInfo> Assignable = new();
 
     public CUITypeMetaData(Type type)
     {
-      Default = Activator.CreateInstance(type);
+      TypeMetaData[type] = this; // !!!
+      CUIType = type;
 
       foreach (PropertyInfo pi in type.GetProperties(AccessTools.all))
       {
@@ -55,16 +102,30 @@ namespace CrabUI
         {
           Serializable[pi.Name] = pi;
         }
-      }
 
-      foreach (PropertyInfo pi in type.GetProperties(AccessTools.all))
-      {
         if (Attribute.IsDefined(pi, typeof(CalculatedAttribute)))
         {
           Calculated[pi.Name] = pi;
         }
+
+        if (pi.CanWrite)
+        {
+          Assignable[pi.Name] = pi;
+        }
       }
 
+      DefaultStyle = new CUIStyle();
+
+      try
+      {
+        Default = Activator.CreateInstance(type);
+      }
+      catch (Exception e)
+      {
+        if (e is System.MissingMethodException) return;
+
+        CUI.Warning($"In CUITypeMetaData {type}\n{e}\n");
+      }
     }
   }
 

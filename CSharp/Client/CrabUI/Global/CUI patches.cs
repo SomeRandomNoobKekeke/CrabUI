@@ -63,19 +63,19 @@ namespace CrabUI
         TopMain?.Update(gameTime.TotalGameTime.TotalSeconds);
         Main?.Update(gameTime.TotalGameTime.TotalSeconds);
       }
-      catch (Exception e) { CUI.Log($"CUI: {e}", Color.Yellow); }
+      catch (Exception e) { CUI.Warning($"CUI: {e}"); }
     }
 
     private static void GUI_Draw_Prefix(SpriteBatch spriteBatch)
     {
       try { Main?.Draw(spriteBatch); }
-      catch (Exception e) { CUI.Log($"CUI: {e}", Color.Yellow); }
+      catch (Exception e) { CUI.Warning($"CUI: {e}"); }
     }
 
     private static void GUI_DrawCursor_Prefix(SpriteBatch spriteBatch)
     {
       try { TopMain?.Draw(spriteBatch); }
-      catch (Exception e) { CUI.Log($"CUI: {e}", Color.Yellow); }
+      catch (Exception e) { CUI.Warning($"CUI: {e}"); }
     }
 
     private static void GUI_UpdateMouseOn_Prefix(ref GUIComponent __result)

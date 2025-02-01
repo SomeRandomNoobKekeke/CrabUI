@@ -67,10 +67,13 @@ namespace CrabUI
 
       List<CUIComponent> l = new List<CUIComponent>();
 
-      RunRecursiveOn(CUI.Main, (component, depth) =>
+      if (CUI.Main is not null)
       {
-        l.Add(component);
-      });
+        RunRecursiveOn(CUI.Main, (component, depth) =>
+        {
+          l.Add(component);
+        });
+      }
 
       foreach (CUIComponent c in l)
       {
@@ -78,7 +81,9 @@ namespace CrabUI
         {
           State = c.Debug,
           IgnoreDebug = true,
-          TextAlign = new Vector2(0, 0),
+          Style = new CUIStyle(){
+            {"TextAlign", "[0,0]"}
+          },
           AddOnMouseDown = (m) =>
           {
             c.Debug = !c.Debug;
@@ -107,9 +112,9 @@ namespace CrabUI
       this["handle"]["closebutton"] = new CUIButton("X")
       {
         Anchor = new Vector2(1, 0.5f),
-        InactiveColor = new Color(32, 0, 0),
-        MouseOverColor = new Color(64, 0, 0),
-        MousePressedColor = new Color(128, 0, 0),
+        Style = new CUIStyle(){
+          {"MasterColor", "Red"}
+        },
         AddOnMouseDown = (e) =>
         {
           CUIDebugWindow.Close();
@@ -137,8 +142,10 @@ namespace CrabUI
       this["controls"].Append(PickIDButton = new CUIMultiButton()
       {
         Relative = new CUINullRect(0.5f, 0, 0.5f, null),
-        InactiveColor = new Color(0, 0, 0, 128),
-        MousePressedColor = new Color(0, 255, 255, 64),
+        Style = new CUIStyle(){
+          {"InactiveColor", "0,0,0,128"},
+          {"MousePressedColor", "0,255,255,64"}
+        },
         ConsumeDragAndDrop = false,
 
         Options = new string[]{
@@ -149,7 +156,9 @@ namespace CrabUI
       Append(Pages = new CUIPages()
       {
         FillEmptySpace = new CUIBool2(false, true),
-        BackgroundColor = new Color(0, 0, 32, 128),
+        Style = new CUIStyle(){
+          {"BackgroundColor", "0,0,32,128"}
+        },
         IgnoreDebug = true,
       });
 

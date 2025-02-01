@@ -63,10 +63,6 @@ namespace CrabUI
       Layout = listLayout;
 
       OnScroll += (m) => Scroll += m.Scroll;
-
-      BackgroundColor = Color.Transparent;
-      // BorderColor = Color.Transparent;
-
       ChildrenBoundaries = CUIBoundaries.HorizontalTube;
     }
   }

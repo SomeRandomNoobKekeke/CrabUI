@@ -171,31 +171,21 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      ConsumeDragAndDrop = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      ConsumeSwipe = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>      InactiveColor = CUIPallete.Default.Secondary.Off;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      MouseOverColor = CUIPallete.Default.Secondary.OffHover;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>      MousePressedColor = CUIPallete.Default.Secondary.On;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#aa65f90b50fc3c8aaad18b0604d6760bf">BorderColor</a> = CUIPallete.Default.Secondary.Border;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>      DisabledColor = CUIPallete.Default.Secondary.Disabled;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_button.html#a5f412956a63b2dd8eae92c1f8a0855ed">BackgroundColor</a> = InactiveColor;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>      TextAlign = <span class="keyword">new</span> Vector2(0.5f, 0.5f);</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a5186e13b2faee5dd2b9b919cbb8c3618">Padding</a> = <span class="keyword">new</span> Vector2(4, 2);</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>      OnMouseDown += (e) =&gt;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>      {</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keywordflow">if</span> (!<a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a297a5a80b39078fc8e9fed2c64f0cce4">Disabled</a>) SoundPlayer.PlayUISound(ClickSound);</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>      };</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    }</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keyword">public</span> CUIButton(<span class="keywordtype">string</span> text) : this()</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    {</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>      Text = text;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    }</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>      OnMouseDown += (e) =&gt;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="keywordflow">if</span> (!<a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a297a5a80b39078fc8e9fed2c64f0cce4">Disabled</a>) SoundPlayer.PlayUISound(ClickSound);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      };</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keyword">public</span> CUIButton(<span class="keywordtype">string</span> text) : this()</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    {</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>      Text = text;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    }</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  }</div>
 </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>}</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>}</div>
 </div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_button_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_button.html">CrabUI.CUIButton</a></div><div class="ttdoc">A button   It's derived from CUITextBlock and has all its props.</div><div class="ttdef"><b>Definition</b> <a href="#l00018">CUIButton.cs:19</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_button_html_a5cfbd4cc44541f142cd5d8c0b239bf04"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_button.html#a5cfbd4cc44541f142cd5d8c0b239bf04">CrabUI.CUIButton.Draw</a></div><div class="ttdeci">override void Draw(SpriteBatch spriteBatch)</div><div class="ttdoc">Here component should be drawn.</div><div class="ttdef"><b>Definition</b> <a href="#l00050">CUIButton.cs:50</a></div></div>
@@ -203,8 +193,6 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_button_html_a8515bf15714813df5c417debaa8b0aee"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_button.html#a8515bf15714813df5c417debaa8b0aee">CrabUI.CUIButton.MasterColor</a></div><div class="ttdeci">Color MasterColor</div><div class="ttdoc">Convenient prop to set all colors at once.</div><div class="ttdef"><b>Definition</b> <a href="#l00030">CUIButton.cs:31</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a297a5a80b39078fc8e9fed2c64f0cce4"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a297a5a80b39078fc8e9fed2c64f0cce4">CrabUI.CUIComponent.Disabled</a></div><div class="ttdeci">virtual bool Disabled</div><div class="ttdoc">Usually means - non interactable, e.g. unclickable gray button.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00143">CUIComponent.Props declaration.cs:144</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a497c55d90b7953b88ebddfee51423479"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a497c55d90b7953b88ebddfee51423479">CrabUI.CUIComponent.CUIProps</a></div><div class="ttdeci">CUIComponentProps CUIProps</div><div class="ttdoc">Just a wrapper for CUIProps idk how to separate them better.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01implementation_8cs_source.html#l00027">CUIComponent.Props implementation.cs:27</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a5186e13b2faee5dd2b9b919cbb8c3618"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a5186e13b2faee5dd2b9b919cbb8c3618">CrabUI.CUIComponent.Padding</a></div><div class="ttdeci">Vector2 Padding</div><div class="ttdoc">Used for text.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00158">CUIComponent.Props declaration.cs:159</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_aa65f90b50fc3c8aaad18b0604d6760bf"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#aa65f90b50fc3c8aaad18b0604d6760bf">CrabUI.CUIComponent.BorderColor</a></div><div class="ttdeci">Color BorderColor</div><div class="ttdoc">Color.Transparent = don't draw.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00167">CUIComponent.Props declaration.cs:168</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_text_block_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_text_block.html">CrabUI.CUITextBlock</a></div><div class="ttdoc">Passive block of text.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_text_block_8cs_source.html#l00015">CUITextBlock.cs:16</a></div></div>
 <div class="ttc" id="anamespace_crab_u_i_html"><div class="ttname"><a href="namespace_crab_u_i.html">CrabUI</a></div><div class="ttdef"><b>Definition</b> <a href="#l00012">CUIButton.cs:13</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

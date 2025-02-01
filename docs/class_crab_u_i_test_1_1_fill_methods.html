@@ -127,7 +127,10 @@ Inheritance diagram for CrabUITest.FillMethods:</div>
 <area href="class_crab_u_i_test_1_1_random_test.html" title="Random tests." alt="CrabUITest.RandomTest" shape="rect" coords="180,1008,350,1032"/>
 <area href="class_crab_u_i_test_1_1_random_test.html" title="Random tests." alt="CrabUITest.RandomTest" shape="rect" coords="180,1064,350,1088"/>
 <area href="class_crab_u_i_test_1_1_random_test.html" title="Random tests." alt="CrabUITest.RandomTest" shape="rect" coords="180,1120,350,1144"/>
-<area href="class_crab_u_i_test_1_1_serialization_test.html" title="Testing Serialization." alt="CrabUITest.SerializationTest" shape="rect" coords="180,1176,350,1200"/>
+<area href="class_crab_u_i_test_1_1_random_test.html" title="Random tests." alt="CrabUITest.RandomTest" shape="rect" coords="180,1176,350,1200"/>
+<area href="class_crab_u_i_test_1_1_random_test.html" title="Random tests." alt="CrabUITest.RandomTest" shape="rect" coords="180,1232,350,1256"/>
+<area href="class_crab_u_i_test_1_1_random_test.html" title="Random tests." alt="CrabUITest.RandomTest" shape="rect" coords="180,1288,350,1312"/>
+<area href="class_crab_u_i_test_1_1_serialization_test.html" title="Testing Serialization." alt="CrabUITest.SerializationTest" shape="rect" coords="180,1344,350,1368"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -170,9 +173,10 @@ Static Public Member Functions</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   26</span>    {</div>
 <div class="line"><span class="lineno">   27</span>      ParameterInfo[] args = mi.GetParameters();</div>
 <div class="line"><span class="lineno">   28</span>      <span class="keywordtype">bool</span> correctSignature = args.Length == 1 &amp;&amp; args[0].ParameterType == typeof(<a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>);</div>
-<div class="line"><span class="lineno">   29</span> </div>
-<div class="line"><span class="lineno">   30</span>      <span class="keywordflow">return</span> mi.IsStatic &amp;&amp; mi.IsPublic &amp;&amp; correctSignature;</div>
-<div class="line"><span class="lineno">   31</span>    }</div>
+<div class="line"><span class="lineno">   29</span>      <span class="keywordtype">bool</span> shoudIgnore = Attribute.IsDefined(mi, typeof(IgnoreAttribute));</div>
+<div class="line"><span class="lineno">   30</span> </div>
+<div class="line"><span class="lineno">   31</span>      <span class="keywordflow">return</span> mi.IsStatic &amp;&amp; mi.IsPublic &amp;&amp; correctSignature &amp;&amp; !shoudIgnore;</div>
+<div class="line"><span class="lineno">   32</span>    }</div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html">CrabUI.CUIComponent</a></div><div class="ttdoc">Base class for all components.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_tree_8cs_source.html#l00019">CUIComponent.Tree.cs:20</a></div></div>
 </div><!-- fragment -->
 </div>

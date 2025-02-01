@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['slider_0',['Slider',['../class_crab_u_i_1_1_c_u_i_slider.html#aa4596ea574c6c56ced2a6c4acbf9beb2',1,'CrabUI::CUISlider']]]
+  ['rightgap_0',['RightGap',['../class_crab_u_i_1_1_c_u_i_horizontal_list.html#aa5158b8c0780d2c538c8db55bd2ac1b6',1,'CrabUI::CUIHorizontalList']]]
 ];

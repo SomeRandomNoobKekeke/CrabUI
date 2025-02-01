@@ -68,16 +68,6 @@ namespace CrabUI
       ConsumeDragAndDrop = true;
       ConsumeSwipe = true;
 
-      InactiveColor = CUIPallete.Default.Secondary.Off;
-      MouseOverColor = CUIPallete.Default.Secondary.OffHover;
-      MousePressedColor = CUIPallete.Default.Secondary.On;
-      BorderColor = CUIPallete.Default.Secondary.Border;
-      DisabledColor = CUIPallete.Default.Secondary.Disabled;
-      BackgroundColor = InactiveColor;
-
-      TextAlign = new Vector2(0.5f, 0.5f);
-      Padding = new Vector2(4, 2);
-
       OnMouseDown += (e) =>
       {
         if (!Disabled) SoundPlayer.PlayUISound(ClickSound);

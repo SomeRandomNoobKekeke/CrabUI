@@ -148,63 +148,69 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    }</div>
 </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment"></span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">    /// &lt;summary&gt;</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">    /// xd</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment">    /// &lt;/summary&gt;</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment">    /// &lt;param name=&quot;source&quot;&gt; This should be injected by compiler, don&#39;t set &lt;/param&gt;</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">    /// &lt;returns&gt;&lt;/returns&gt;</span></div>
-<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="class_crab_u_i_1_1_c_u_i.html#a44681bb9a39a8c371228429cdc87dfb2">   56</a></span><span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code hl_function" href="class_crab_u_i_1_1_c_u_i.html#a44681bb9a39a8c371228429cdc87dfb2">GetCallerFolderPath</a>([CallerFilePath] <span class="keywordtype">string</span> source = <span class="stringliteral">&quot;&quot;</span>)</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>      <span class="keywordflow">return</span> Path.GetDirectoryName(source);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> Warning(<span class="keywordtype">object</span> msg, Color? color = <span class="keyword">null</span>)</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>      color ??= Color.Yellow;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>      LuaCsLogger.LogMessage($<span class="stringliteral">&quot;{msg ?? &quot;</span><span class="keyword">null</span><span class="stringliteral">&quot;}&quot;</span>, color * 0.8f, color);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment"></span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">    /// &lt;summary&gt;</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">    /// xd</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">    /// &lt;/summary&gt;</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">    /// &lt;param name=&quot;source&quot;&gt; This should be injected by compiler, don&#39;t set &lt;/param&gt;</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">    /// &lt;returns&gt;&lt;/returns&gt;</span></div>
+<div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="class_crab_u_i_1_1_c_u_i.html#a44681bb9a39a8c371228429cdc87dfb2">   62</a></span><span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code hl_function" href="class_crab_u_i_1_1_c_u_i.html#a44681bb9a39a8c371228429cdc87dfb2">GetCallerFolderPath</a>([CallerFilePath] <span class="keywordtype">string</span> source = <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>      <span class="keywordflow">return</span> Path.GetDirectoryName(source);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    }</div>
 </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment"></span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">    /// &lt;summary&gt;</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">    /// Prints debug message with source path</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">    /// Works only if debug is true</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">    /// &lt;/summary&gt;</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">    /// &lt;param name=&quot;msg&quot;&gt;&lt;/param&gt;</span></div>
-<div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="class_crab_u_i_1_1_c_u_i.html#acbc36774391662ec37d19f6532ea7940">   66</a></span><span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_crab_u_i_1_1_c_u_i.html#acbc36774391662ec37d19f6532ea7940">Info</a>(<span class="keywordtype">object</span> msg, [CallerFilePath] <span class="keywordtype">string</span> source = <span class="stringliteral">&quot;&quot;</span>, [CallerLineNumber] <span class="keywordtype">int</span> lineNumber = 0)</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    {</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_crab_u_i_1_1_c_u_i.html#a1c6aff01098e74d01c9d84b833860c22">Debug</a> == <span class="keyword">true</span>)</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      {</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        var fi = <span class="keyword">new</span> FileInfo(source);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <a class="code hl_function" href="class_crab_u_i_1_1_c_u_i.html#a2b97112f36caf3daeb5c0312b1282e7c">Log</a>($<span class="stringliteral">&quot;{fi.Directory.Name}/{fi.Name}:{lineNumber}&quot;</span>, Color.Yellow * 0.5f);</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <a class="code hl_function" href="class_crab_u_i_1_1_c_u_i.html#a2b97112f36caf3daeb5c0312b1282e7c">Log</a>(msg, Color.Yellow);</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      }</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    }</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment"></span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment">    /// &lt;summary&gt;</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment">    /// Prints debug message with source path</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment">    /// Works only if debug is true</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment">    /// &lt;/summary&gt;</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="comment">    /// &lt;param name=&quot;msg&quot;&gt;&lt;/param&gt;</span></div>
+<div class="foldopen" id="foldopen00072" data-start="{" data-end="}">
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_crab_u_i_1_1_c_u_i.html#acbc36774391662ec37d19f6532ea7940">   72</a></span><span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_crab_u_i_1_1_c_u_i.html#acbc36774391662ec37d19f6532ea7940">Info</a>(<span class="keywordtype">object</span> msg, [CallerFilePath] <span class="keywordtype">string</span> source = <span class="stringliteral">&quot;&quot;</span>, [CallerLineNumber] <span class="keywordtype">int</span> lineNumber = 0)</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_crab_u_i_1_1_c_u_i.html#a1c6aff01098e74d01c9d84b833860c22">Debug</a> == <span class="keyword">true</span>)</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>      {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        var fi = <span class="keyword">new</span> FileInfo(source);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <a class="code hl_function" href="class_crab_u_i_1_1_c_u_i.html#a2b97112f36caf3daeb5c0312b1282e7c">Log</a>($<span class="stringliteral">&quot;{fi.Directory.Name}/{fi.Name}:{lineNumber}&quot;</span>, Color.Yellow * 0.5f);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <a class="code hl_function" href="class_crab_u_i_1_1_c_u_i.html#a2b97112f36caf3daeb5c0312b1282e7c">Log</a>(msg, Color.Yellow);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>      }</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    }</div>
 </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment"></span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="comment">    /// &lt;summary&gt;</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="comment">    /// Prints debug error message with source path</span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="comment">    /// Works only if debug is true</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment">    /// &lt;/summary&gt;</span></div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="comment">    /// &lt;param name=&quot;msg&quot;&gt;&lt;/param&gt;</span></div>
-<div class="foldopen" id="foldopen00082" data-start="{" data-end="}">
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="class_crab_u_i_1_1_c_u_i.html#a417520a09577dd59b1e24415d60df724">   82</a></span><span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_crab_u_i_1_1_c_u_i.html#a417520a09577dd59b1e24415d60df724">Error</a>(<span class="keywordtype">object</span> msg, [CallerFilePath] <span class="keywordtype">string</span> source = <span class="stringliteral">&quot;&quot;</span>, [CallerLineNumber] <span class="keywordtype">int</span> lineNumber = 0)</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    {</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_crab_u_i_1_1_c_u_i.html#a1c6aff01098e74d01c9d84b833860c22">Debug</a> == <span class="keyword">true</span>)</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>      {</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        var fi = <span class="keyword">new</span> FileInfo(source);</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <a class="code hl_function" href="class_crab_u_i_1_1_c_u_i.html#a2b97112f36caf3daeb5c0312b1282e7c">Log</a>($<span class="stringliteral">&quot;{fi.Directory.Name}/{fi.Name}:{lineNumber}&quot;</span>, Color.Orange * 0.5f);</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <a class="code hl_function" href="class_crab_u_i_1_1_c_u_i.html#a2b97112f36caf3daeb5c0312b1282e7c">Log</a>(msg, Color.Orange);</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>      }</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="comment"></span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="comment">    /// &lt;summary&gt;</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="comment">    /// Prints debug error message with source path</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="comment">    /// Works only if debug is true</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="comment">    /// &lt;/summary&gt;</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment">    /// &lt;param name=&quot;msg&quot;&gt;&lt;/param&gt;</span></div>
+<div class="foldopen" id="foldopen00088" data-start="{" data-end="}">
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="class_crab_u_i_1_1_c_u_i.html#a417520a09577dd59b1e24415d60df724">   88</a></span><span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_crab_u_i_1_1_c_u_i.html#a417520a09577dd59b1e24415d60df724">Error</a>(<span class="keywordtype">object</span> msg, [CallerFilePath] <span class="keywordtype">string</span> source = <span class="stringliteral">&quot;&quot;</span>, [CallerLineNumber] <span class="keywordtype">int</span> lineNumber = 0)</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_crab_u_i_1_1_c_u_i.html#a1c6aff01098e74d01c9d84b833860c22">Debug</a> == <span class="keyword">true</span>)</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>      {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        var fi = <span class="keyword">new</span> FileInfo(source);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <a class="code hl_function" href="class_crab_u_i_1_1_c_u_i.html#a2b97112f36caf3daeb5c0312b1282e7c">Log</a>($<span class="stringliteral">&quot;{fi.Directory.Name}/{fi.Name}:{lineNumber}&quot;</span>, Color.Orange * 0.5f);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <a class="code hl_function" href="class_crab_u_i_1_1_c_u_i.html#a2b97112f36caf3daeb5c0312b1282e7c">Log</a>(msg, Color.Orange);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>      }</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    }</div>
 </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  }</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>}</div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a1c6aff01098e74d01c9d84b833860c22"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#a1c6aff01098e74d01c9d84b833860c22">CrabUI.CUI.Debug</a></div><div class="ttdeci">static bool Debug</div><div class="ttdoc">This affects logging.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00073">CUI.cs:73</a></div></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>}</div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a1c6aff01098e74d01c9d84b833860c22"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#a1c6aff01098e74d01c9d84b833860c22">CrabUI.CUI.Debug</a></div><div class="ttdeci">static bool Debug</div><div class="ttdoc">This affects logging.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00075">CUI.cs:75</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a2b97112f36caf3daeb5c0312b1282e7c"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#a2b97112f36caf3daeb5c0312b1282e7c">CrabUI.CUI.Log</a></div><div class="ttdeci">static void Log(object msg, Color? color=null)</div><div class="ttdoc">Prints a message to console.</div><div class="ttdef"><b>Definition</b> <a href="#l00044">CUI Logging.cs:44</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a417520a09577dd59b1e24415d60df724"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#a417520a09577dd59b1e24415d60df724">CrabUI.CUI.Error</a></div><div class="ttdeci">static void Error(object msg, [CallerFilePath] string source=&quot;&quot;, [CallerLineNumber] int lineNumber=0)</div><div class="ttdoc">Prints debug error message with source path Works only if debug is true.</div><div class="ttdef"><b>Definition</b> <a href="#l00082">CUI Logging.cs:82</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a44681bb9a39a8c371228429cdc87dfb2"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#a44681bb9a39a8c371228429cdc87dfb2">CrabUI.CUI.GetCallerFolderPath</a></div><div class="ttdeci">static string GetCallerFolderPath([CallerFilePath] string source=&quot;&quot;)</div><div class="ttdoc">xd</div><div class="ttdef"><b>Definition</b> <a href="#l00056">CUI Logging.cs:56</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a417520a09577dd59b1e24415d60df724"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#a417520a09577dd59b1e24415d60df724">CrabUI.CUI.Error</a></div><div class="ttdeci">static void Error(object msg, [CallerFilePath] string source=&quot;&quot;, [CallerLineNumber] int lineNumber=0)</div><div class="ttdoc">Prints debug error message with source path Works only if debug is true.</div><div class="ttdef"><b>Definition</b> <a href="#l00088">CUI Logging.cs:88</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a44681bb9a39a8c371228429cdc87dfb2"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#a44681bb9a39a8c371228429cdc87dfb2">CrabUI.CUI.GetCallerFolderPath</a></div><div class="ttdeci">static string GetCallerFolderPath([CallerFilePath] string source=&quot;&quot;)</div><div class="ttdoc">xd</div><div class="ttdef"><b>Definition</b> <a href="#l00062">CUI Logging.cs:62</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_aa9e0675b00d0d7b740542d83f77e2d23"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#aa9e0675b00d0d7b740542d83f77e2d23">CrabUI.CUI.ArrayToString</a></div><div class="ttdeci">static string ArrayToString(IEnumerable&lt; object &gt; array)</div><div class="ttdoc">Serializes the array.</div><div class="ttdef"><b>Definition</b> <a href="#l00034">CUI Logging.cs:34</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_ac185df6007e348c2f31d1e86e07ca623"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#ac185df6007e348c2f31d1e86e07ca623">CrabUI.CUI.WrapInColor</a></div><div class="ttdeci">static string WrapInColor(object msg, string color)</div><div class="ttdoc">$&quot;‖color:{color}‖{msg}‖end‖&quot;</div><div class="ttdef"><b>Definition</b> <a href="#l00023">CUI Logging.cs:23</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_acbc36774391662ec37d19f6532ea7940"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#acbc36774391662ec37d19f6532ea7940">CrabUI.CUI.Info</a></div><div class="ttdeci">static void Info(object msg, [CallerFilePath] string source=&quot;&quot;, [CallerLineNumber] int lineNumber=0)</div><div class="ttdoc">Prints debug message with source path Works only if debug is true.</div><div class="ttdef"><b>Definition</b> <a href="#l00066">CUI Logging.cs:66</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_acbc36774391662ec37d19f6532ea7940"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#acbc36774391662ec37d19f6532ea7940">CrabUI.CUI.Info</a></div><div class="ttdeci">static void Info(object msg, [CallerFilePath] string source=&quot;&quot;, [CallerLineNumber] int lineNumber=0)</div><div class="ttdoc">Prints debug message with source path Works only if debug is true.</div><div class="ttdef"><b>Definition</b> <a href="#l00072">CUI Logging.cs:72</a></div></div>
 <div class="ttc" id="anamespace_crab_u_i_html"><div class="ttname"><a href="namespace_crab_u_i.html">CrabUI</a></div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_button_8cs_source.html#l00012">CUIButton.cs:13</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

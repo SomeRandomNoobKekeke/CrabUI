@@ -31,6 +31,7 @@ namespace CrabUI
     public static string ModDir = "";
     public static string LuaFolder => Path.Combine(ModDir, @"Lua");
     public static string CUIPath => GetCallerFolderPath();
+    public static string CUIAssetsPath => Path.Combine(CUIPath, @"CUIAssets");
     public static string CUITexturePath => Path.Combine(CUIPath, @"CUIAssets\CUI.png");
 
 
@@ -55,7 +56,8 @@ namespace CrabUI
     /// <summary>
     /// Safe texture manager
     /// </summary>
-    public static CUITextureManager TextureManager => Instance?.textureManager;
+    public static CUITextureManager TextureManager = new CUITextureManager();
+    //public static CUITextureManager TextureManager => Instance?.textureManager;
     /// <summary>
     /// Adapter to vanilla focus system, don't use
     /// </summary>
@@ -98,7 +100,7 @@ namespace CrabUI
     private CUIInput input = new CUIInput();
     private CUIMainComponent main = new CUIMainComponent() { AKA = "Main Component" };
     private CUIMainComponent topMain = new CUIMainComponent() { AKA = "Top Main Component" };
-    private CUITextureManager textureManager = new CUITextureManager();
+    //private CUITextureManager textureManager = new CUITextureManager();
     private CUIFocusResolver focusResolver = new CUIFocusResolver();
     private CUILuaRegistrar LuaRegistrar = new CUILuaRegistrar();
 
@@ -179,6 +181,7 @@ namespace CrabUI
       CUIMap.CUIMapLink.InitStatic();
       CUIComponent.InitStatic();
       CUITypeMetaData.InitStatic();
+      CUIStyleLoader.InitStatic();
     }
   }
 }

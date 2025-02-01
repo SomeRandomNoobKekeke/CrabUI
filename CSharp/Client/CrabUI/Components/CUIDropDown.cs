@@ -19,15 +19,7 @@ namespace CrabUI
     internal class DDOption : CUIButton
     {
       public DDOption() : this("") { }
-      public DDOption(string text) : base(text)
-      {
-        TextAlign = new Vector2(0.0f, 0.0f);
-        Padding = new Vector2(4, 0);
-        MouseOverColor = CUIPallete.Default.Tertiary.OffHover;
-        TextColor = CUIPallete.Default.Tertiary.Text;
-        InactiveColor = Color.Transparent;
-        BorderColor = Color.Transparent;
-      }
+      public DDOption(string text) : base(text) { }
     }
     private CUIButton MainButton;
     private CUIVerticalList OptionBox;
@@ -99,9 +91,11 @@ namespace CrabUI
         Ghost = new CUIBool2(false, true),
         Anchor = CUIAnchor.TopLeft,
         ParentAnchor = CUIAnchor.BottomLeft,
-        BackgroundColor = CUIPallete.Default.Tertiary.Off,
-        BorderColor = CUIPallete.Default.Tertiary.Border,
         ZIndex = 500,
+        Style = new CUIStyle(){
+          {"BackgroundColor", "CUIPalette.Current.Tertiary.Off"},
+          {"BorderColor", "CUIPalette.Current.Tertiary.Border"},
+        },
       };
 
       MainButton = new CUIButton()
@@ -115,7 +109,10 @@ namespace CrabUI
       Append(OptionBox);
 
       FitContent = new CUIBool2(true, true);
-      CUI.Main.OnMouseDown += (e) => Close();
+
+      //HACK Why this main is hardcoded?
+      //in static constructor CUI.Main is null and this won't work
+      if (CUI.Main is not null) CUI.Main.OnMouseDown += (e) => Close();
     }
   }
 }

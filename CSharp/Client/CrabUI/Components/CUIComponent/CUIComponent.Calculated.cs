@@ -57,6 +57,9 @@ namespace CrabUI
     /// </summary>
     protected bool BorderVisible { get; set; }
 
+    // This is for state clones, to protect them from style changes
+    internal bool Unreal { get; set; }
+
     public bool MouseOver { get; set; }
     public bool MousePressed { get; set; }
 

@@ -16,18 +16,16 @@ using System.Xml.Linq;
 
 namespace CrabUI
 {
+
+  public class CommandAttribute : System.Attribute { }
+
+  /// <summary>
+  /// Just an experiment, inspired by WPF commands
+  /// </summary>
+  /// <param name="Name"></param>
+  public record CUICommand(string Name, object data = null);
   public partial class CUIComponent
   {
-
-    public class CommandAttribute : System.Attribute { }
-
-    /// <summary>
-    /// Just an experiment, inspired by WPF commands
-    /// </summary>
-    /// <param name="Name"></param>
-    public record Command(string Name, object data);
-
-
     /// <summary>
     /// All commands
     /// </summary>
@@ -71,7 +69,7 @@ namespace CrabUI
     /// Dispathes command up the component tree until someone consumes it
     /// </summary>
     /// <param name="command"></param>
-    public void Dispatch(Command command)
+    public void Dispatch(CUICommand command)
     {
       if (Commands.ContainsKey(command.Name)) Execute(command);
       else Parent?.Dispatch(command);
@@ -81,6 +79,6 @@ namespace CrabUI
     /// Will execute action corresponding to this command
     /// </summary>
     /// <param name="commandName"></param>
-    public void Execute(Command command) => Commands.GetValueOrDefault(command.Name)?.Invoke(command.data);
+    public void Execute(CUICommand command) => Commands.GetValueOrDefault(command.Name)?.Invoke(command.data);
   }
 }

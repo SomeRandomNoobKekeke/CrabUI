@@ -11,19 +11,96 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
 using HarmonyLib;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace CrabUI
 {
+
+  public class TypeTreeNode
+  {
+    public Type T;
+    public TypeTreeNode Parent;
+    public List<TypeTreeNode> Children = new();
+    public CUITypeMetaData Meta => CUITypeMetaData.Get(T);
+    public void Add(TypeTreeNode child)
+    {
+      child.Parent = this;
+      Children.Add(child);
+    }
+    public TypeTreeNode(Type t) => T = t;
+    public override string ToString() => T?.ToString() ?? "null";
+    public void RunRecursive(Action<TypeTreeNode> action)
+    {
+      action(this);
+      foreach (TypeTreeNode child in Children)
+      {
+        child.RunRecursive(action);
+      }
+    }
+
+  }
   [CUIInternal]
   public class CUIReflection
   {
     internal static void InitStatic()
     {
-      CUI.OnInit += () => FindCUITypes();
-      CUI.OnDispose += () => CUITypes.Clear();
+      CUI.OnInit += () =>
+      {
+        FindCUITypes();
+        FormCUITypeTree();
+      };
+      CUI.OnDispose += () =>
+      {
+        CUITypes.Clear();
+        CUITypeTree.Clear();
+      };
     }
 
+
+
+    public record TypePair(Type type, Type baseType);
+
+    public static Dictionary<Type, TypeTreeNode> CUITypeTree = new();
+
     public static Dictionary<string, Type> CUITypes;
+
+    // lol, i don't need this
+    public static void FormCUITypeTree()
+    {
+      List<TypePair> Pustoe = CUITypes.Values.Select(t => new TypePair(t, t.BaseType)).ToList();
+      List<TypePair> Porojnee = new List<TypePair>();
+
+      while (Pustoe.Count > 0)
+      {
+        Porojnee = new List<TypePair>();
+        foreach (TypePair pair in Pustoe)
+        {
+          // Tree root CUIComponent
+          if (pair.baseType == typeof(object))
+          {
+            CUITypeTree[pair.type] = new TypeTreeNode(pair.type);
+            continue;
+          }
+
+          // Derived class
+          if (CUITypeTree.ContainsKey(pair.baseType))
+          {
+            CUITypeTree[pair.type] = new TypeTreeNode(pair.type);
+            CUITypeTree[pair.baseType].Add(CUITypeTree[pair.type]);
+            continue;
+          }
+
+          // Base class not in tree yet
+          Porojnee.Add(pair);
+        }
+
+        Pustoe.Clear();
+        Pustoe = Porojnee;
+      }
+
+      //foreach (TypeTreeNode node in CUITypeTree.Values) CUI.Log(node);
+    }
 
     public static void FindCUITypes()
     {

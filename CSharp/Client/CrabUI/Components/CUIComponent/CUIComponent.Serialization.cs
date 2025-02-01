@@ -27,7 +27,10 @@ namespace CrabUI
     public Dictionary<string, CUIComponent> States { get; set; } = new();
     public CUIComponent Clone()
     {
-      CUIComponent clone = new CUIComponent();
+      CUIComponent clone = new CUIComponent()
+      {
+        Unreal = true,
+      };
       clone.ApplyState(this);
       return clone;
     }

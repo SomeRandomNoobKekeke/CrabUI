@@ -88,7 +88,8 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">CrabUI Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -127,6 +128,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_frame.html">CUIFrame</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draggable and resizable container for other components.  <a href="class_crab_u_i_1_1_c_u_i_frame.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_global_style_resolver.html">CUIGlobalStyleResolver</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains all logic for resolving styles in the framework.  <a href="class_crab_u_i_1_1_c_u_i_global_style_resolver.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_grid.html">CUIGrid</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A Grid containing children in its cells.  <a href="class_crab_u_i_1_1_c_u_i_grid.html#details">More...</a><br /></td></tr>
@@ -176,6 +180,10 @@ Classes</h2></td></tr>
  Can have only 1 child <br  />
  Sets component as it's only child when you open it (as a page)  <a href="class_crab_u_i_1_1_c_u_i_pages.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_palette.html">CUIPalette</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains some predefined values for components, mostly for colors <br  />
+ <a class="el" href="class_crab_u_i_1_1_c_u_i_palette.html#a949bc4275dc6ef1a0e76b2bf7b7cf754" title="Palette used by style resolver.">CUIPalette.Current</a> is selected palette used by style resolver If you change it all components will recalculate their props There's just one palette for now :( , more to come.  <a href="class_crab_u_i_1_1_c_u_i_palette.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_prop.html">CUIProp</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper object for prop value, setters, side effects, metadata etc.  <a href="class_crab_u_i_1_1_c_u_i_prop.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -187,6 +195,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_crab_u_i_1_1_c_u_i_sprite.html">CUISprite</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper, containing link to texture, source rect, path, draw mode.  <a href="struct_crab_u_i_1_1_c_u_i_sprite.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_style.html">CUIStyle</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">In Fact just an observable dict.  <a href="class_crab_u_i_1_1_c_u_i_style.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_text_block.html">CUITextBlock</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Passive block of text.  <a href="class_crab_u_i_1_1_c_u_i_text_block.html#details">More...</a><br /></td></tr>
@@ -244,6 +255,12 @@ Enumerations</h2></td></tr>
 , <b>StaticDeep</b>
  }</td></tr>
 <tr class="separator:a8aced627f3a4e71f54fef1ef30ef0e52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:aada5e995437d9c99a38882d830798b6c" id="r_aada5e995437d9c99a38882d830798b6c"><td class="memItemLeft" align="right" valign="top">record&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aada5e995437d9c99a38882d830798b6c">CUICommand</a> (string Name, object data=null)</td></tr>
+<tr class="memdesc:aada5e995437d9c99a38882d830798b6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Just an experiment, inspired by WPF commands.  <br /></td></tr>
+<tr class="separator:aada5e995437d9c99a38882d830798b6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a63adb7acbadd61275a4fa171f781d459" name="a63adb7acbadd61275a4fa171f781d459"></a>
@@ -347,6 +364,36 @@ Enumerations</h2></td></tr>
 <div class="line"><span class="lineno">   18</span>    End,</div>
 <div class="line"><span class="lineno">   19</span>  }</div>
 </div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="aada5e995437d9c99a38882d830798b6c" name="aada5e995437d9c99a38882d830798b6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aada5e995437d9c99a38882d830798b6c">&#9670;&#160;</a></span>CUICommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">record CrabUI.CUICommand </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>Name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>data</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Just an experiment, inspired by WPF commands. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Name</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 </div><!-- contents -->

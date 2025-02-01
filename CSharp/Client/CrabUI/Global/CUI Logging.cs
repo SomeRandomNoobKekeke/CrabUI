@@ -47,6 +47,12 @@ namespace CrabUI
       LuaCsLogger.LogMessage($"{msg ?? "null"}", color * 0.8f, color);
     }
 
+    public static void Warning(object msg, Color? color = null)
+    {
+      color ??= Color.Yellow;
+      LuaCsLogger.LogMessage($"{msg ?? "null"}", color * 0.8f, color);
+    }
+
 
     /// <summary>
     /// xd

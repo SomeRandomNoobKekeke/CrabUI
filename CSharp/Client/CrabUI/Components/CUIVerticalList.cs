@@ -75,9 +75,6 @@ namespace CrabUI
         Scroll += m.Scroll;
       };
 
-      BackgroundColor = Color.Transparent;
-      // BorderColor = Color.Transparent;
-
       ChildrenBoundaries = CUIBoundaries.VerticalTube;
     }
 

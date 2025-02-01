@@ -14,6 +14,7 @@ using Microsoft.Xna.Framework.Graphics;
 using System.Xml;
 using System.Xml.Linq;
 using HarmonyLib;
+using System.Threading;
 
 namespace CrabUI
 {
@@ -28,17 +29,21 @@ namespace CrabUI
       CUI.OnInit += () =>
       {
         MaxID = 0;
-        ComponentsById = new Dictionary<int, CUIComponent>();
       };
 
       CUI.OnDispose += () =>
       {
-        foreach (CUIComponent c in ComponentsById.Values)
+        foreach (int id in ComponentsById.Keys)
         {
-          c.Dispose();
+          CUIComponent component = null;
+          ComponentsById[id].TryGetTarget(out component);
+          component?.Dispose();
         }
 
         ComponentsById.Clear();
+        ComponentsByType.Clear();
+
+
         dummyComponent = null;
       };
     }
@@ -46,7 +51,8 @@ namespace CrabUI
 
 
     internal static int MaxID;
-    public static Dictionary<int, CUIComponent> ComponentsById;
+    public static Dictionary<int, WeakReference<CUIComponent>> ComponentsById = new();
+    public static WeakCatalog<Type, CUIComponent> ComponentsByType = new();
 
     /// <summary>
     /// This is used to trick vanilla GUI into believing that 
@@ -64,6 +70,28 @@ namespace CrabUI
         RunRecursiveOn(child, action, depth + 1);
       }
     }
+
+    public static void ForEach(Action<CUIComponent> action)
+    {
+      foreach (int id in ComponentsById.Keys)
+      {
+        CUIComponent component = null;
+        ComponentsById[id].TryGetTarget(out component);
+        if (component is not null) action(component);
+      }
+    }
+
+    public static IEnumerable<Type> GetClassHierarchy(Type type)
+    {
+      while (type != typeof(Object) && type != null)
+      {
+        yield return type;
+        type = type.BaseType;
+      }
+    }
+
+    public static IEnumerable<Type> GetReverseClassHierarchy(Type type)
+      => CUIComponent.GetClassHierarchy(type).Reverse<Type>();
 
     #endregion
     #region Virtual --------------------------------------------------------
@@ -125,6 +153,8 @@ namespace CrabUI
 
     #endregion
     #region Constructors --------------------------------------------------------
+
+
     internal void Vitalize()
     {
       foreach (FieldInfo fi in this.GetType().GetFields(AccessTools.all))
@@ -165,16 +195,16 @@ namespace CrabUI
     public CUIComponent()
     {
       ID = MaxID++;
-      ComponentsById[ID] = this;
+      ComponentsById[ID] = new WeakReference<CUIComponent>(this);
+      ComponentsByType.Add(this.GetType(), this);
 
       Vitalize();
       VitalizeProps();
       AddCommands();
 
-      BackgroundColor = CUIPallete.Default.Primary.Off;
-      BorderColor = CUIPallete.Default.Primary.Border;
-
       Layout = new CUILayoutSimple();
+
+      SetupStyles();
     }
 
     public CUIComponent(float? x = null, float? y = null, float? w = null, float? h = null) : this()
@@ -182,10 +212,16 @@ namespace CrabUI
       Relative = new CUINullRect(x, y, w, h);
     }
 
+    private bool disposed;
     public void Dispose()
     {
-
+      if (disposed) return;
+      CleanUp();
+      disposed = true;
     }
+    public virtual void CleanUp() { }
+
+    ~CUIComponent() => Dispose();
 
     public override string ToString() => $"{this.GetType().Name}:{ID}:{AKA}";
     #endregion

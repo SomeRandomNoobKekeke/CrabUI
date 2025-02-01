@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DefaultStyles>
+  <CUIComponent>
+    <BackgroundColor>CUIPalette.Current.Primary.Off</BackgroundColor>
+    <BorderColor>CUIPalette.Current.Primary.Border</BorderColor>
+  </CUIComponent>
+
+  <CUITextBlock>
+    <TextColor>CUIPalette.Current.Secondary.Text</TextColor>
+    <BorderColor>Transparent</BorderColor>
+    <BackgroundColor>Transparent</BackgroundColor>
+    <Padding>[4,0]</Padding>
+  </CUITextBlock>
+
+  <CUIButton>
+    <InactiveColor>CUIPalette.Current.Secondary.Off</InactiveColor>
+    <MouseOverColor>CUIPalette.Current.Secondary.OffHover</MouseOverColor>
+    <MousePressedColor>CUIPalette.Current.Secondary.On</MousePressedColor>
+    <BorderColor>CUIPalette.Current.Secondary.Border</BorderColor>
+    <DisabledColor>CUIPalette.Current.Secondary.Disabled</DisabledColor>
+    <Padding>[4,2]</Padding>
+    <TextAlign>[0.5,0.5]</TextAlign>
+  </CUIButton>
+
+  <CUIDropDown>
+    <BackgroundColor>CUIPalette.Current.Tertiary.Off</BackgroundColor>
+    <BorderColor>CUIPalette.Current.Tertiary.Border</BorderColor>
+  </CUIDropDown>
+
+  <DDOption>
+    <MouseOverColor>CUIPalette.Current.Tertiary.OffHover</MouseOverColor>
+    <TextColor>CUIPalette.Current.Tertiary.Text</TextColor>
+    <TextAlign>[0,0]</TextAlign>
+    <Padding>[4,0]</Padding>
+    <InactiveColor>Transparent</InactiveColor>
+    <BorderColor>Transparent</BorderColor>
+  </DDOption>
+
+  <CUIToggleButton>
+    <OnColor>CUIPalette.Current.Secondary.On</OnColor>
+    <OffColor>CUIPalette.Current.Secondary.Off</OffColor>
+    <OnHoverColor>CUIPalette.Current.Secondary.OnHover</OnHoverColor>
+    <OffHoverColor>CUIPalette.Current.Secondary.OffHover</OffHoverColor>
+    <BorderColor>CUIPalette.Current.Secondary.Border</BorderColor>
+    <DisabledColor>CUIPalette.Current.Secondary.Disabled</DisabledColor>
+    <TextColor>CUIPalette.Current.Secondary.Text</TextColor>
+  </CUIToggleButton>
+
+  <CUICanvas>
+    <BackgroundColor>White</BackgroundColor>
+    <BorderColor>Black</BorderColor>
+  </CUICanvas>
+
+  <CUIHorizontalList>
+    <BackgroundColor>Transparent</BackgroundColor>
+  </CUIHorizontalList>
+
+  <CUIVerticalList>
+    <BackgroundColor>Transparent</BackgroundColor>
+  </CUIVerticalList>
+
+  <CUIPages>
+    <BackgroundColor>Transparent</BackgroundColor>
+    <BorderColor>Transparent</BorderColor>
+  </CUIPages>
+</DefaultStyles>

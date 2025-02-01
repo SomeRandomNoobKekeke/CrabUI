@@ -92,17 +92,12 @@ namespace CrabUI
     public CUICanvas(int x, int y) : base()
     {
       Size = new Point(x, y);
-      BackgroundColor = Color.White;
-      BorderColor = Color.Black;
       spriteBatch = new SpriteBatch(GameMain.Instance.GraphicsDevice);
     }
 
-    public CUICanvas() : this(100, 100)
-    {
+    public CUICanvas() : this(100, 100) { }
 
-    }
-
-    public void Dispose()
+    public override void CleanUp()
     {
       Texture?.Dispose();
     }

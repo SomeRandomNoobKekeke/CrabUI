@@ -93,8 +93,9 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">Serialization</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md__docs_2_freestyle_2_sub_pages_2_serialization"></a></p>
-<p>All components are serializable</p>
+<div class="textblock"><p><a class="anchor" id="md__docs_2_freestyle_2_sub_pages_2_misc_2_serialization"></a></p>
+<p>All components are serializable <br  />
+ Every property marked with [CUISerializable] is serializable</p>
 <p>You can save and load them to / from file like this: </p><pre class="fragment">ComponentA.SaveToFile(path)
 CUIComponent.LoadFromFile(path)
 CUIComponent.LoadFromFile&lt;T&gt;(path)
@@ -102,7 +103,7 @@ CUIComponent.LoadFromFile&lt;T&gt;(path)
 CUIComponent.Deserialize(string)
 </pre><p>Or convert them to / from xml: </p><pre class="fragment">ComponentA.ToXML()
 ComponentA.FromXML(XElement)
-</pre><h3><a class="anchor" id="autotoc_md19"></a>
+</pre><h3><a class="anchor" id="autotoc_md10"></a>
 Also you can memorize and restore state of component</h3>
 <p>States are just shalow clones of component <br  />
  They are stored in <br  />

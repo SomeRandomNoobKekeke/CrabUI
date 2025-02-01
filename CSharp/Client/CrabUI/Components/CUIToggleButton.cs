@@ -98,13 +98,7 @@ namespace CrabUI
       ConsumeDragAndDrop = true;
       ConsumeSwipe = true;
 
-      OnColor = CUIPallete.Default.Secondary.On;
-      OnHoverColor = CUIPallete.Default.Secondary.OnHover;
-      OffColor = CUIPallete.Default.Secondary.Off;
-      OffHoverColor = CUIPallete.Default.Secondary.OffHover;
-      BorderColor = CUIPallete.Default.Secondary.Border;
-      DisabledColor = CUIPallete.Default.Secondary.Disabled;
-      BackgroundColor = OffColor;
+      //BackgroundColor = OffColor;
 
       TextAlign = new Vector2(0.5f, 0.5f);
       Padding = new Vector2(4, 2);

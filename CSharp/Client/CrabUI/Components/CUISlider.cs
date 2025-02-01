@@ -63,7 +63,9 @@ namespace CrabUI
       this["slider"] = Slider = new CUIComponent()
       {
         BackgroundColor = Color.Blue,
-        BorderColor = Color.Transparent,
+        Style = new CUIStyle(){
+          {"BorderColor", "Transparent"}
+        },
         Draggable = true,
         AddOnDrag = (x, y) => HandleSlide(),
       };

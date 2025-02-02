@@ -7,7 +7,7 @@ using Barotrauma;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
-
+using Barotrauma.Extensions;
 namespace CrabUI
 {
   /// <summary>
@@ -24,6 +24,28 @@ namespace CrabUI
     [CUISerializable] public Color OnHoverColor { get; set; }
     [CUISerializable] public Color OffColor { get; set; }
     [CUISerializable] public Color OffHoverColor { get; set; }
+
+    public Color MasterColor
+    {
+      set
+      {
+        OffColor = value.Multiply(0.3f);
+        OffHoverColor = value;
+        OnColor = value.Multiply(0.9f);
+        OnHoverColor = value;
+      }
+    }
+
+    public Color MasterColorOpaque
+    {
+      set
+      {
+        OffColor = value.Multiply(0.3f).Opaque();
+        OffHoverColor = value.Opaque();
+        OnColor = value.Multiply(0.9f).Opaque();
+        OnHoverColor = value.Opaque();
+      }
+    }
 
     // BackgroundColor is used in base.Draw, but here it's calculated from OnColor/OffColor
     // so it's not a prop anymore, and i don't want to serialize it
@@ -57,16 +79,10 @@ namespace CrabUI
       get => state;
       set
       {
-        SetState(value);
-        OnStateChange?.Invoke(state);
+        state = value;
+        if (state && OnText != null) Text = OnText;
+        if (!state && OffText != null) Text = OffText;
       }
-    }
-    // To let you set state silently
-    public void SetState(bool value)
-    {
-      state = value;
-      if (state && OnText != null) Text = OnText;
-      if (!state && OffText != null) Text = OffText;
     }
 
     public override void Draw(SpriteBatch spriteBatch)
@@ -109,6 +125,7 @@ namespace CrabUI
         {
           State = !State;
           SoundPlayer.PlayUISound(ClickSound);
+          OnStateChange?.Invoke(State);
         }
       };
     }

@@ -117,6 +117,7 @@ namespace CrabUI
       }
 
       RealTextSize = Font.MeasureString(WrappedText) * TextScale;
+      RealTextSize = new Vector2((float)Math.Round(RealTextSize.X), (float)Math.Round(RealTextSize.Y));
 
       Vector2 minSize = RealTextSize + Padding * 2;
 

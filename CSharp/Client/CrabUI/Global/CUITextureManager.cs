@@ -30,12 +30,17 @@ namespace CrabUI
       return path; //TODO
     }
 
-    public CUISprite GetSprite(string path)
+    public CUISprite GetSprite(string path, Rectangle? sourceRect = null, SpriteEffects? effects = null)
     {
-      return new CUISprite(GetTexture(path))
+      CUISprite sprite = new CUISprite(GetTexture(path))
       {
         Path = path,
       };
+
+      if (sourceRect.HasValue) sprite.SourceRect = sourceRect.Value;
+      if (effects.HasValue) sprite.Effects = effects.Value;
+
+      return sprite;
     }
 
     public Texture2D GetTexture(string path)

@@ -29,6 +29,7 @@ namespace CrabUI
     public Texture2D Texture;
     public CUISpriteDrawMode DrawMode;
     public Rectangle SourceRect;
+    public SpriteEffects Effects;
 
     public static CUISprite FromVanilla(Sprite sprite)
     {
@@ -58,6 +59,7 @@ namespace CrabUI
     public CUISprite()
     {
       Path = "";
+      Effects = SpriteEffects.None;
       DrawMode = CUISpriteDrawMode.Resize;
       Texture = BackupTexture;
       SourceRect = new Rectangle(0, 0, Texture.Width, Texture.Height);
@@ -65,6 +67,7 @@ namespace CrabUI
     public CUISprite(string path, Rectangle? sourceRect = null)
     {
       DrawMode = CUISpriteDrawMode.Resize;
+      Effects = SpriteEffects.None;
       Path = path;
       Texture = CUI.TextureManager.GetTexture(path);
       if (sourceRect.HasValue)
@@ -79,6 +82,7 @@ namespace CrabUI
     public CUISprite(Texture2D texture, Rectangle? sourceRect = null)
     {
       Path = "";
+      Effects = SpriteEffects.None;
       DrawMode = CUISpriteDrawMode.Resize;
       Texture = texture ?? BackupTexture;
       if (sourceRect.HasValue)

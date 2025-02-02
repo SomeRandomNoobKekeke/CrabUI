@@ -109,8 +109,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8892fa8032b0cc42c4245f16e2ff00cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a152432f022c10102a1f06e523ffcfdd8" id="r_a152432f022c10102a1f06e523ffcfdd8"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a152432f022c10102a1f06e523ffcfdd8">NormalizePath</a> (string path)</td></tr>
 <tr class="separator:a152432f022c10102a1f06e523ffcfdd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83298198d58f7c5170462d02bd088292" id="r_a83298198d58f7c5170462d02bd088292"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_crab_u_i_1_1_c_u_i_sprite.html">CUISprite</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a83298198d58f7c5170462d02bd088292">GetSprite</a> (string path)</td></tr>
-<tr class="separator:a83298198d58f7c5170462d02bd088292"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f763abad74674b5dba0fae9eeebacdf" id="r_a6f763abad74674b5dba0fae9eeebacdf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_crab_u_i_1_1_c_u_i_sprite.html">CUISprite</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f763abad74674b5dba0fae9eeebacdf">GetSprite</a> (string path, Rectangle? sourceRect=null, SpriteEffects? effects=null)</td></tr>
+<tr class="separator:a6f763abad74674b5dba0fae9eeebacdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0afec84177d32a58389cb489ee477615" id="r_a0afec84177d32a58389cb489ee477615"><td class="memItemLeft" align="right" valign="top">Texture2D&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0afec84177d32a58389cb489ee477615">GetTexture</a> (string path)</td></tr>
 <tr class="separator:a0afec84177d32a58389cb489ee477615"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8266beac5bc0dff86d1b5fafd01f51c" id="r_ac8266beac5bc0dff86d1b5fafd01f51c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac8266beac5bc0dff86d1b5fafd01f51c">Dispose</a> ()</td></tr>
@@ -147,13 +147,13 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_texture_manager_8cs_source.html#l00079">79</a> of file <a class="el" href="_c_u_i_texture_manager_8cs_source.html">CUITextureManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   80</span>    {</div>
-<div class="line"><span class="lineno">   81</span>      DisposeAllTextures();</div>
-<div class="line"><span class="lineno">   82</span> </div>
-<div class="line"><span class="lineno">   83</span>      LoadedTextures.Clear();</div>
-<div class="line"><span class="lineno">   84</span>      LoadedTextures = <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">   85</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_texture_manager_8cs_source.html#l00084">84</a> of file <a class="el" href="_c_u_i_texture_manager_8cs_source.html">CUITextureManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   85</span>    {</div>
+<div class="line"><span class="lineno">   86</span>      DisposeAllTextures();</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>      LoadedTextures.Clear();</div>
+<div class="line"><span class="lineno">   89</span>      LoadedTextures = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">   90</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -179,8 +179,8 @@ Properties</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a83298198d58f7c5170462d02bd088292" name="a83298198d58f7c5170462d02bd088292"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a83298198d58f7c5170462d02bd088292">&#9670;&#160;</a></span>GetSprite()</h2>
+<a id="a6f763abad74674b5dba0fae9eeebacdf" name="a6f763abad74674b5dba0fae9eeebacdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f763abad74674b5dba0fae9eeebacdf">&#9670;&#160;</a></span>GetSprite()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -188,19 +188,33 @@ Properties</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="struct_crab_u_i_1_1_c_u_i_sprite.html">CUISprite</a> CrabUI.CUITextureManager.GetSprite </td>
           <td>(</td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>path</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">Rectangle?</td>          <td class="paramname"><span class="paramname"><em>sourceRect</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SpriteEffects?</td>          <td class="paramname"><span class="paramname"><em>effects</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_c_u_i_texture_manager_8cs_source.html#l00033">33</a> of file <a class="el" href="_c_u_i_texture_manager_8cs_source.html">CUITextureManager.cs</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   34</span>    {</div>
-<div class="line"><span class="lineno">   35</span>      <span class="keywordflow">return</span> <span class="keyword">new</span> CUISprite(GetTexture(path))</div>
+<div class="line"><span class="lineno">   35</span>      CUISprite sprite = <span class="keyword">new</span> CUISprite(GetTexture(path))</div>
 <div class="line"><span class="lineno">   36</span>      {</div>
 <div class="line"><span class="lineno">   37</span>        Path = path,</div>
 <div class="line"><span class="lineno">   38</span>      };</div>
-<div class="line"><span class="lineno">   39</span>    }</div>
+<div class="line"><span class="lineno">   39</span> </div>
+<div class="line"><span class="lineno">   40</span>      <span class="keywordflow">if</span> (sourceRect.HasValue) sprite.SourceRect = sourceRect.Value;</div>
+<div class="line"><span class="lineno">   41</span>      <span class="keywordflow">if</span> (effects.HasValue) sprite.Effects = effects.Value;</div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span>      <span class="keywordflow">return</span> sprite;</div>
+<div class="line"><span class="lineno">   44</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -219,43 +233,43 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_texture_manager_8cs_source.html#l00041">41</a> of file <a class="el" href="_c_u_i_texture_manager_8cs_source.html">CUITextureManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   42</span>    {</div>
-<div class="line"><span class="lineno">   43</span>      path = NormalizePath(path);</div>
-<div class="line"><span class="lineno">   44</span> </div>
-<div class="line"><span class="lineno">   45</span>      <span class="keywordflow">if</span> (LoadedTextures.ContainsKey(path)) <span class="keywordflow">return</span> LoadedTextures[path];</div>
-<div class="line"><span class="lineno">   46</span> </div>
-<div class="line"><span class="lineno">   47</span>      <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">   48</span>      {</div>
-<div class="line"><span class="lineno">   49</span>        <span class="keywordflow">if</span> (!File.Exists(path))</div>
-<div class="line"><span class="lineno">   50</span>        {</div>
-<div class="line"><span class="lineno">   51</span>          CUI.Error($<span class="stringliteral">&quot;{path} texture file not found&quot;</span>);</div>
-<div class="line"><span class="lineno">   52</span>          <span class="keywordflow">return</span> BackupTexture;</div>
-<div class="line"><span class="lineno">   53</span>        }</div>
-<div class="line"><span class="lineno">   54</span> </div>
-<div class="line"><span class="lineno">   55</span>        Texture2D loaded = <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">   56</span> </div>
-<div class="line"><span class="lineno">   57</span>        <span class="keyword">using</span> (FileStream fs = File.OpenRead(path))</div>
-<div class="line"><span class="lineno">   58</span>        {</div>
-<div class="line"><span class="lineno">   59</span>          loaded = Texture2D.FromStream(GameMain.Instance.GraphicsDevice, fs);</div>
-<div class="line"><span class="lineno">   60</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_texture_manager_8cs_source.html#l00046">46</a> of file <a class="el" href="_c_u_i_texture_manager_8cs_source.html">CUITextureManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   47</span>    {</div>
+<div class="line"><span class="lineno">   48</span>      path = NormalizePath(path);</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>      <span class="keywordflow">if</span> (LoadedTextures.ContainsKey(path)) <span class="keywordflow">return</span> LoadedTextures[path];</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>      <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">   53</span>      {</div>
+<div class="line"><span class="lineno">   54</span>        <span class="keywordflow">if</span> (!File.Exists(path))</div>
+<div class="line"><span class="lineno">   55</span>        {</div>
+<div class="line"><span class="lineno">   56</span>          CUI.Error($<span class="stringliteral">&quot;{path} texture file not found&quot;</span>);</div>
+<div class="line"><span class="lineno">   57</span>          <span class="keywordflow">return</span> BackupTexture;</div>
+<div class="line"><span class="lineno">   58</span>        }</div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>        Texture2D loaded = <span class="keyword">null</span>;</div>
 <div class="line"><span class="lineno">   61</span> </div>
-<div class="line"><span class="lineno">   62</span>        <span class="keywordflow">if</span> (loaded == <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   62</span>        <span class="keyword">using</span> (FileStream fs = File.OpenRead(path))</div>
 <div class="line"><span class="lineno">   63</span>        {</div>
-<div class="line"><span class="lineno">   64</span>          CUI.Error($<span class="stringliteral">&quot;{path} loaded texture is null&quot;</span>);</div>
-<div class="line"><span class="lineno">   65</span>          <span class="keywordflow">return</span> BackupTexture;</div>
-<div class="line"><span class="lineno">   66</span>        }</div>
-<div class="line"><span class="lineno">   67</span> </div>
-<div class="line"><span class="lineno">   68</span>        LoadedTextures[path] = loaded;</div>
-<div class="line"><span class="lineno">   69</span>        <span class="keywordflow">return</span> loaded;</div>
-<div class="line"><span class="lineno">   70</span>      }</div>
-<div class="line"><span class="lineno">   71</span>      <span class="keywordflow">catch</span> (Exception e)</div>
-<div class="line"><span class="lineno">   72</span>      {</div>
-<div class="line"><span class="lineno">   73</span>        CUI.Error(e);</div>
-<div class="line"><span class="lineno">   74</span>      }</div>
-<div class="line"><span class="lineno">   75</span> </div>
-<div class="line"><span class="lineno">   76</span>      <span class="keywordflow">return</span> BackupTexture;</div>
-<div class="line"><span class="lineno">   77</span>    }</div>
+<div class="line"><span class="lineno">   64</span>          loaded = Texture2D.FromStream(GameMain.Instance.GraphicsDevice, fs);</div>
+<div class="line"><span class="lineno">   65</span>        }</div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>        <span class="keywordflow">if</span> (loaded == <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   68</span>        {</div>
+<div class="line"><span class="lineno">   69</span>          CUI.Error($<span class="stringliteral">&quot;{path} loaded texture is null&quot;</span>);</div>
+<div class="line"><span class="lineno">   70</span>          <span class="keywordflow">return</span> BackupTexture;</div>
+<div class="line"><span class="lineno">   71</span>        }</div>
+<div class="line"><span class="lineno">   72</span> </div>
+<div class="line"><span class="lineno">   73</span>        LoadedTextures[path] = loaded;</div>
+<div class="line"><span class="lineno">   74</span>        <span class="keywordflow">return</span> loaded;</div>
+<div class="line"><span class="lineno">   75</span>      }</div>
+<div class="line"><span class="lineno">   76</span>      <span class="keywordflow">catch</span> (Exception e)</div>
+<div class="line"><span class="lineno">   77</span>      {</div>
+<div class="line"><span class="lineno">   78</span>        CUI.Error(e);</div>
+<div class="line"><span class="lineno">   79</span>      }</div>
+<div class="line"><span class="lineno">   80</span> </div>
+<div class="line"><span class="lineno">   81</span>      <span class="keywordflow">return</span> BackupTexture;</div>
+<div class="line"><span class="lineno">   82</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>

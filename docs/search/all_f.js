@@ -1,11 +1,10 @@
 var searchData=
 [
-  ['of_20component_0',['Also you can memorize and restore state of component',['../_serialization.html#autotoc_md10',1,'']]],
-  ['ondispose_1',['OnDispose',['../class_crab_u_i_1_1_c_u_i.html#a094cb2f85756ccf7fdf601df178d2dcb',1,'CrabUI::CUI']]],
-  ['one_20component_20to_20another_20with_3a_2',['You can attach one component to another with:',['../_creatingatree.html#autotoc_md9',1,'']]],
-  ['oninit_3',['OnInit',['../class_crab_u_i_1_1_c_u_i.html#a29fdc0441733f6fde0d3bc29a458078c',1,'CrabUI::CUI']]],
-  ['onslide_4',['OnSlide',['../class_crab_u_i_1_1_c_u_i_slider.html#a47cb8f2e0955b0f9566d2031d1f77d02',1,'CrabUI::CUISlider']]],
-  ['open_5',['Open',['../class_crab_u_i_1_1_c_u_i_frame.html#a3e91acd1f55a74bc1a4c45677f050fec',1,'CrabUI.CUIFrame.Open()'],['../class_crab_u_i_1_1_c_u_i_pages.html#ac9ac0d7b2273d35846dc22afdbe41872',1,'CrabUI.CUIPages.Open()']]],
-  ['options_6',['Options',['../class_crab_u_i_1_1_c_u_i_drop_down.html#a4ed50a8547204388ed041edd116d2ad3',1,'CrabUI.CUIDropDown.Options'],['../class_crab_u_i_1_1_c_u_i_multi_button.html#a6cf37012e52970ea4b9b5cb9d37bee9e',1,'CrabUI.CUIMultiButton.Options']]],
-  ['overview_7',['Overview',['../index.html#autotoc_md2',1,'\subpage Overview'],['../_overview.html',1,'Overview']]]
+  ['main_0',['Main',['../class_crab_u_i_1_1_c_u_i.html#a956496be0b79f5c540c246c5f600dc05',1,'CrabUI::CUI']]],
+  ['main_20component_20endlink_1',['@link CrabUI.CUIMainComponent Main Component @endlink',['../_overview.html#autotoc_md15',1,'']]],
+  ['maincomponent_2',['MainComponent',['../class_crab_u_i_1_1_c_u_i_component.html#a53398faf0ced67dcf9acee3b70036d88',1,'CrabUI::CUIComponent']]],
+  ['mastercolor_3',['MasterColor',['../class_crab_u_i_1_1_c_u_i_button.html#a8515bf15714813df5c417debaa8b0aee',1,'CrabUI::CUIButton']]],
+  ['maxlayoutrecalcloopsperupdate_4',['MaxLayoutRecalcLoopsPerUpdate',['../class_crab_u_i_1_1_c_u_i_main_component.html#a9b2ad5be37c88c938fe490359d57d882',1,'CrabUI::CUIMainComponent']]],
+  ['memorize_20and_20restore_20state_20of_20component_5',['Also you can memorize and restore state of component',['../_serialization.html#autotoc_md12',1,'']]],
+  ['more_20examples_6',['More examples',['../_overview.html#autotoc_md17',1,'']]]
 ];

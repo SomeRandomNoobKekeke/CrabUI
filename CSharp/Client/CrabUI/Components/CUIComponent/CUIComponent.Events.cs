@@ -86,13 +86,26 @@ namespace CrabUI
       get => FocusHandle.Focusable;
       set => FocusHandle.Focusable = value;
     }
-    internal CUIResizeHandle LeftResizeHandle = new CUIResizeHandle(new Vector2(0, 1));
-    internal CUIResizeHandle RightResizeHandle = new CUIResizeHandle(new Vector2(1, 1));
-    [CUISerializable]
+    public CUIResizeHandle LeftResizeHandle = new CUIResizeHandle(new Vector2(0, 1), new CUIBool2(false, false));
+    public CUIResizeHandle RightResizeHandle = new CUIResizeHandle(new Vector2(1, 1), new CUIBool2(true, false));
     public bool Resizible
     {
-      get => LeftResizeHandle.Visible || RightResizeHandle.Visible;
-      set { LeftResizeHandle.Visible = value; RightResizeHandle.Visible = value; }
+      get => ResizibleLeft || ResizibleRight;
+      set { ResizibleLeft = value; ResizibleRight = value; }
+    }
+
+    [CUISerializable]
+    public bool ResizibleLeft
+    {
+      get => LeftResizeHandle.Visible;
+      set => LeftResizeHandle.Visible = value;
+    }
+
+    [CUISerializable]
+    public bool ResizibleRight
+    {
+      get => RightResizeHandle.Visible;
+      set => RightResizeHandle.Visible = value;
     }
 
     internal CUISwipeHandle SwipeHandle = new CUISwipeHandle();

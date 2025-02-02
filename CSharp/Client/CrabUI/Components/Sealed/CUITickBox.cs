@@ -48,7 +48,7 @@ namespace CrabUI
       }
     }
 
-    public void ChangeSprite()
+    public virtual void ChangeSprite()
     {
       if (Disabled)
       {
@@ -83,21 +83,21 @@ namespace CrabUI
 
       OnSprite = new CUISprite(CUI.CUITexturePath)
       {
-        SourceRect = new Rectangle(33, 0, 32, 32),
+        SourceRect = new Rectangle(32, 0, 32, 32),
       };
 
       HoverOffSprite = new CUISprite(CUI.CUITexturePath)
       {
-        SourceRect = new Rectangle(66, 0, 32, 32),
+        SourceRect = new Rectangle(64, 0, 32, 32),
       };
       HoverOnSprite = new CUISprite(CUI.CUITexturePath)
       {
-        SourceRect = new Rectangle(99, 0, 32, 32),
+        SourceRect = new Rectangle(96, 0, 32, 32),
       };
 
       DisabledSprite = new CUISprite(CUI.CUITexturePath)
       {
-        SourceRect = new Rectangle(132, 0, 32, 32),
+        SourceRect = new Rectangle(128, 0, 32, 32),
       };
 
       ChangeSprite();

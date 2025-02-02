@@ -13,9 +13,12 @@
   </CUITextBlock>
 
   <CUIButton>
+    <!-- 
     <InactiveColor>CUIPalette.Current.Secondary.Off</InactiveColor>
     <MouseOverColor>CUIPalette.Current.Secondary.OffHover</MouseOverColor>
-    <MousePressedColor>CUIPalette.Current.Secondary.On</MousePressedColor>
+    <MousePressedColor>CUIPalette.Current.Secondary.On</MousePressedColor> 
+    -->
+    <MasterColor>CUIPalette.Current.Secondary.On</MasterColor>
     <BorderColor>CUIPalette.Current.Secondary.Border</BorderColor>
     <DisabledColor>CUIPalette.Current.Secondary.Disabled</DisabledColor>
     <Padding>[4,2]</Padding>
@@ -37,10 +40,13 @@
   </DDOption>
 
   <CUIToggleButton>
+    <!-- 
     <OnColor>CUIPalette.Current.Secondary.On</OnColor>
     <OffColor>CUIPalette.Current.Secondary.Off</OffColor>
     <OnHoverColor>CUIPalette.Current.Secondary.OnHover</OnHoverColor>
-    <OffHoverColor>CUIPalette.Current.Secondary.OffHover</OffHoverColor>
+    <OffHoverColor>CUIPalette.Current.Secondary.OffHover</OffHoverColor> 
+    -->
+    <MasterColor>CUIPalette.Current.Secondary.On</MasterColor>
     <BorderColor>CUIPalette.Current.Secondary.Border</BorderColor>
     <DisabledColor>CUIPalette.Current.Secondary.Disabled</DisabledColor>
     <TextColor>CUIPalette.Current.Secondary.Text</TextColor>

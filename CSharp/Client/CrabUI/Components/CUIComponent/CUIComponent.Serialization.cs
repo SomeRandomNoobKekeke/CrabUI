@@ -59,20 +59,28 @@ namespace CrabUI
 
     public virtual XElement ToXML(CUIAttribute propAttribute = CUIAttribute.CUISerializable)
     {
-      if (Unserializable) return null;
-
-      Type type = GetType();
-
-      XElement e = new XElement(type.Name);
-
-      PackProps(e, propAttribute);
-
-      foreach (CUIComponent child in Children)
+      try
       {
-        e.Add(child.ToXML(propAttribute));
-      }
+        if (Unserializable) return null;
 
-      return e;
+        Type type = GetType();
+
+        XElement e = new XElement(type.Name);
+
+        PackProps(e, propAttribute);
+
+        foreach (CUIComponent child in Children)
+        {
+          e.Add(child.ToXML(propAttribute));
+        }
+
+        return e;
+      }
+      catch (Exception e)
+      {
+        CUI.Warning(e);
+        return new XElement("Error", e.Message);
+      }
     }
 
 
@@ -86,7 +94,7 @@ namespace CrabUI
         CUIComponent child = (CUIComponent)Activator.CreateInstance(childType);
         child.FromXML(childElement);
 
-        //CUI.log($"{this}[{child.AKA}] = {child} ");
+        //CUI.Log($"{this}[{child.AKA}] = {child} ");
         this.Append(child, child.AKA);
       }
 
@@ -154,28 +162,34 @@ namespace CrabUI
 
       foreach (string key in props.Keys)
       {
-
-
-        //Note: GetNestedValue is some cryptic guh from first versions, i prob don't need it
-        object value = CUIReflection.GetNestedValue(this, key);
-
-        //Info($"{props[key]} {value}");
-
-        // it's default value for this prop
-        if (meta.Default != null && Object.Equals(value, CUIReflection.GetNestedValue(meta.Default, key)))
+        try
         {
-          continue;
+          //Note: GetNestedValue is some cryptic guh from first versions, i prob don't need it
+          object value = CUIReflection.GetNestedValue(this, key);
+
+          //Info($"{props[key]} {value}");
+
+          // it's default value for this prop
+          if (meta.Default != null && Object.Equals(value, CUIReflection.GetNestedValue(meta.Default, key)))
+          {
+            continue;
+          }
+
+          MethodInfo customToString = CUIExtensions.CustomToString.GetValueOrDefault(value.GetType());
+
+          if (customToString != null)
+          {
+            element?.SetAttributeValue(key, customToString.Invoke(null, new object[] { value }));
+          }
+          else
+          {
+            element?.SetAttributeValue(key, value);
+          }
         }
-
-        MethodInfo customToString = CUIExtensions.CustomToString.GetValueOrDefault(value.GetType());
-
-        if (customToString != null)
+        catch (Exception e)
         {
-          element?.SetAttributeValue(key, customToString.Invoke(value, new object[] { }));
-        }
-        else
-        {
-          element?.SetAttributeValue(key, value);
+          CUI.Warning($"Failed to serialize prop: {e.Message}");
+          CUI.Warning($"{key} in {this}");
         }
       }
     }
@@ -248,9 +262,16 @@ namespace CrabUI
     }
     public void SaveToFile(string path, CUIAttribute propAttribute = CUIAttribute.CUISerializable)
     {
-      XDocument xdoc = new XDocument();
-      xdoc.Add(this.ToXML(propAttribute));
-      xdoc.Save(path);
+      try
+      {
+        XDocument xdoc = new XDocument();
+        xdoc.Add(this.ToXML(propAttribute));
+        xdoc.Save(path);
+      }
+      catch (Exception e)
+      {
+        CUI.Warning(e);
+      }
     }
 
     #endregion

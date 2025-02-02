@@ -23,11 +23,22 @@ namespace CrabUI
     [CUISerializable] public Color InactiveColor { get; set; }
     [CUISerializable] public Color MouseOverColor { get; set; }
     [CUISerializable] public Color MousePressedColor { get; set; }
+    [CUISerializable] public string Command { get; set; }
 
     /// <summary>
     /// Convenient prop to set all colors at once
     /// </summary>
     public Color MasterColor
+    {
+      set
+      {
+        InactiveColor = value.Multiply(0.5f);
+        MouseOverColor = value.Multiply(0.8f);
+        MousePressedColor = value;
+      }
+    }
+
+    public Color MasterColorOpaque
     {
       set
       {
@@ -70,7 +81,14 @@ namespace CrabUI
 
       OnMouseDown += (e) =>
       {
-        if (!Disabled) SoundPlayer.PlayUISound(ClickSound);
+        if (!Disabled)
+        {
+          SoundPlayer.PlayUISound(ClickSound);
+          if (Command != null && Command != "")
+          {
+            Dispatch(new CUICommand(Command));
+          }
+        }
       };
     }
 

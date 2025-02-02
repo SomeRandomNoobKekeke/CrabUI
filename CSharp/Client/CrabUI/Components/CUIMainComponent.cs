@@ -300,7 +300,7 @@ namespace CrabUI
 
       // form MouseOnList
       // Note: including main component
-      if (GUI.MouseOn == null || GUI.MouseOn == dummyComponent)
+      if (GUI.MouseOn == null || (GUI.MouseOn is GUIButton btn && btn.Text == "DUMMY"))
       {
         RunStraigth(c =>
         {
@@ -319,9 +319,11 @@ namespace CrabUI
       MouseOn = MouseOnList.LastOrDefault();
 
       //HACK
-      if (MouseOn != this) CUI.Input.MouseInputHandled = true;
-
-
+      if (MouseOn != this)
+      {
+        CUI.Input.MouseInputHandled = true;
+        CUIMultiModResolver.MarkOtherInputsAsHandled();
+      }
 
       //if (CurrentMouseOn != null) GUI.MouseOn = dummyComponent;
 

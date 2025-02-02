@@ -58,7 +58,10 @@ namespace CrabUI
     /// This is used to trick vanilla GUI into believing that 
     /// mouse is hovering some component and block clicks
     /// </summary>
-    public static GUIButton dummyComponent = new GUIButton(new RectTransform(new Point(0, 0)));
+    public static GUIButton dummyComponent = new GUIButton(new RectTransform(new Point(0, 0)))
+    {
+      Text = "DUMMY",
+    };
     /// <summary>
     ///  designed to be versatile, in fact never used
     /// </summary>

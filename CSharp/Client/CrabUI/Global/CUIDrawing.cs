@@ -31,7 +31,7 @@ namespace CrabUI
         _ => sprite.SourceRect,
       };
 
-      sb.Draw(sprite.Texture, cuirect.Box, sourceRect, cl, 0.0f, Vector2.Zero, SpriteEffects.None, depth);
+      sb.Draw(sprite.Texture, cuirect.Box, sourceRect, cl, 0.0f, Vector2.Zero, sprite.Effects, depth);
     }
 
     /*

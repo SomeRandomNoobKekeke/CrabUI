@@ -54,7 +54,7 @@ namespace CrabUI
         CUITypeMetaData.Get(T).DefaultStyle = DefaultStyles[T];
       }
       sw.Stop();
-      CUI.Log(sw.ElapsedMilliseconds);
+      //CUI.Log(sw.ElapsedMilliseconds);
     }
   }
 

@@ -113,11 +113,9 @@ namespace CrabUI
           Assignable[pi.Name] = pi;
         }
       }
-
-      DefaultStyle = new CUIStyle();
-
       try
       {
+        DefaultStyle = new CUIStyle();
         Default = Activator.CreateInstance(type);
       }
       catch (Exception e)

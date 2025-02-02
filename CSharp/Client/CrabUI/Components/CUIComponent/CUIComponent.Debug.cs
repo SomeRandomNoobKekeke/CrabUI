@@ -140,7 +140,7 @@ namespace CrabUI
 
       return component;
     }
-    public T Get<T>(string name) where T : CUIComponent => NamedComponents.GetValueOrDefault(name) as T;
+    public T Get<T>(string name) where T : CUIComponent => (T)Get(name);
 
     #endregion
   }

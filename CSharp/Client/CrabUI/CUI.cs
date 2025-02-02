@@ -141,6 +141,13 @@ namespace CrabUI
       UserCount++;
     }
 
+    public static void OnLoadCompleted()
+    {
+      //Idk doesn't work
+      //CUIMultiModResolver.FindOtherInputs();
+    }
+
+
     /// <summary>
     /// Should be called in IAssemblyPlugin.Dispose
     /// </summary>
@@ -178,6 +185,7 @@ namespace CrabUI
     {
       CUIExtensions.InitStatic();
       CUIReflection.InitStatic();
+      CUIMultiModResolver.InitStatic();
       CUIMap.CUIMapLink.InitStatic();
       CUIComponent.InitStatic();
       CUITypeMetaData.InitStatic();

@@ -94,7 +94,7 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md__docs_2_freestyle_2_sub_pages_2_misc_2_creating_01a_01tree"></a></p>
-<h3><a class="anchor" id="autotoc_md9"></a>
+<h3><a class="anchor" id="autotoc_md11"></a>
 You can attach one component to another with:</h3>
 <pre class="fragment">ComponentA.Append(ComponentB)
 ComponentA.Prepend(ComponentB)
@@ -111,6 +111,7 @@ ComponentA.AddChildren = List&lt;CUIComponent&gt;
 </pre><p>this </p><pre class="fragment">ComponentA["some name"] = ComponentB 
 </pre><p> is the same as this </p><pre class="fragment">ComponentA.Append(ComponentB)
 ComponentA.Remember(ComponentB, "some name")
+</pre><p>Also you can use Get(string name) method, it's like ComponentA["some name"] but it can give you nested component, and Get&lt; T &gt; version can also cast it for you </p><pre class="fragment">Header = Frame.Get&lt;CUIHorizontalList&gt;("layout.content.header");
 </pre> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->

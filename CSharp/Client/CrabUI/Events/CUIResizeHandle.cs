@@ -23,8 +23,9 @@ namespace CrabUI
     public CUINullRect Absolute;
 
     //TODO unhardcode these colors
-    public Color BackgroundColor = Color.White * 0.25f;
-    public Color GrabbedColor = Color.Cyan * 0.5f;
+    public CUISprite Sprite;
+    public Color BackgroundColor = Color.White;
+    public Color GrabbedColor = Color.Cyan;
     public Vector2 MemoStaticPoint;
 
 
@@ -110,10 +111,10 @@ namespace CrabUI
     public void Draw(SpriteBatch spriteBatch)
     {
       if (!Visible) return;
-      GUI.DrawRectangle(spriteBatch, Real.Position, Real.Size, Grabbed ? GrabbedColor : BackgroundColor, isFilled: true);
+      CUI.DrawRectangle(spriteBatch, Real, Grabbed ? GrabbedColor : BackgroundColor, Sprite);
     }
 
-    public CUIResizeHandle(Vector2 anchor)
+    public CUIResizeHandle(Vector2 anchor, CUIBool2 flipped)
     {
       if (anchor == CUIAnchor.Center)
       {
@@ -124,25 +125,11 @@ namespace CrabUI
       StaticPointAnchor = Vector2.One - Anchor;
       AnchorDif = StaticPointAnchor - Anchor;
 
-      Absolute = new CUINullRect(0, 0, 15, 10);
-      //Host.AbsoluteMin = Host.AbsoluteMin with { Size = Absolute.Size };
-    }
-
-    public CUIResizeHandle(CUIComponent host, Vector2 anchor)
-    {
-      Host = host;
-
-      if (anchor == CUIAnchor.Center)
-      {
-        Host.Info($"Pls don't use CUIAnchor.Center for CUIResizeHandle, it makes no sense:\nThe StaticPointAnchor is symetric to Anchor and in this edge case == Anchor");
-      }
-
-      Anchor = anchor;
-      StaticPointAnchor = Vector2.One - Anchor;
-      AnchorDif = StaticPointAnchor - Anchor;
-
-      Absolute = new CUINullRect(0, 0, 15, 10);
-      //Host.AbsoluteMin = Host.AbsoluteMin with { Size = Absolute.Size };
+      Absolute = new CUINullRect(0, 0, 15, 15);
+      Sprite = CUI.TextureManager.GetSprite(CUI.CUITexturePath);
+      Sprite.SourceRect = new Rectangle(0, 32, 32, 32);
+      if (flipped.X) Sprite.Effects |= SpriteEffects.FlipHorizontally;
+      if (flipped.Y) Sprite.Effects |= SpriteEffects.FlipVertically;
     }
   }
 }

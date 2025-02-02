@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CrabUI: 0.0.4.0</title>
+<title>CrabUI: 0.0.5.1</title>
 <link rel="icon" href="BaroModder (small).png" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -86,12 +86,34 @@ $(function(){ initResizable(false); });
 </div><!-- top -->
 <div id="doc-content">
 <div><div class="header">
-  <div class="headertitle"><div class="title">0.0.4.0</div></div>
+  <div class="headertitle"><div class="title">0.0.5.1</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="autotoc_md0"></a></p>
-<p>Added CUICanvas.Render(Action&lt; SpriteBatch &gt; renderFunc) method that allows you to render anything you want onto the canvas texture</p>
+<p>Added "[CUISerializable] public string Command { get; set; }"" to CUIButton so you could define command that is called on click in xml</p>
+<p>Splitted MasterColor into MasterColor and MasterColorOpaque</p>
+<p>CUITextBlock RealTextSize is now rounded because 2.199999 is prone to floating-point errors</p>
+<p>Added MasterColor to CUIToggleButton</p>
+<p>Buttons now will folow a pattern: if state is changed by user input then it'll invoke StateChanged event <br  />
+ If state is changed from code then it won't invoke the event</p>
+<p>When you change state from code you already know about that so you don't need an event <br  />
+ And on the other side if event is always fired it will create un-untangleable loops when you try to sync state between two buttons</p>
+<p>Fixed CUIComponent.Get&lt; T &gt; method, i forgot to add it to docs, it gives you memorized component by its name, so it's same as frame["header"], but it can also give you nested components like that <code>Header = Frame.Get&lt;CUIHorizontalList&gt;("layout.content.header");</code></p>
+<p>Exposed ResizeHandles, you can hide them separately</p>
+<p>Fixed crash when serializing a Vector2, added more try-catches and warnings there</p>
+<p>Fixed Sprites in CUI.png being 33x33, i just created a wrong first rectangle and then copy-pasted it, guh</p>
+<p>Added sprites to resize handles, and gradient sprite that's not used yet</p>
+<p>Added <code>public SpriteEffects Effects;</code> to CUISprite, it controls texture flipping</p>
+<p>More params in CUITextureManager.GetSprite</p>
 <h1><a class="anchor" id="autotoc_md1"></a>
+0.0.5.0</h1>
+<p>Added Styles</p>
+<p>Every component has a Style and every Type has a DefaultStyle</p>
+<p>Styles are observable dicts with pairs { "prop name", "prop value" } and can be used to assign any parsable string to any prop or reference some value from CUIPalette</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+0.0.4.0</h1>
+<p>Added CUICanvas.Render(Action&lt; SpriteBatch &gt; renderFunc) method that allows you to render anything you want onto the canvas texture</p>
+<h1><a class="anchor" id="autotoc_md3"></a>
 0.0.3.0</h1>
 <p>Added Changelog.md :BaroDev:</p>
 <p>Added CUI.TopMain, it's the second CUIMainComponent which exists above vanilla GUI</p>

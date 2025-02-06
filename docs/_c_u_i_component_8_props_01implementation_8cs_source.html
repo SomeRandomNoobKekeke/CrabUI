@@ -237,38 +237,42 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>      {</div>
 <div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        LayoutProp = <span class="keyword">true</span>,</div>
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>      };</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="preprocessor">      #region Graphic Props --------------------------------------------------------</span></div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="preprocessor">      #endregion</span></div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>      <span class="keyword">public</span> CUIProp&lt;Color&gt; BackgroundColor = <span class="keyword">new</span> CUIProp&lt;Color&gt;()</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>      {</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        ShowInDebug = <span class="keyword">false</span>,</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        OnSet = (v, host) =&gt;</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>          {</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            host.BackgroundVisible = v != Color.Transparent;</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>          },</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>      };</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>      <span class="keyword">public</span> CUIProp&lt;Color&gt; BorderColor = <span class="keyword">new</span> CUIProp&lt;Color&gt;()</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>      {</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        ShowInDebug = <span class="keyword">false</span>,</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        OnSet = (v, host) =&gt;</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        {</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>          host.BorderVisible = v != Color.Transparent;</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        },</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>      };</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>      <span class="keyword">public</span> CUIProp&lt;Vector2&gt; Padding = <span class="keyword">new</span> CUIProp&lt;Vector2&gt;()</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>      {</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        Value = <span class="keyword">new</span> Vector2(2, 2),</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        DecorProp = <span class="keyword">true</span>,</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>      };</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    }</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>  }</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>}</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>      <span class="keyword">public</span> CUIProp&lt;CUINullRect&gt; CrossRelative = <span class="keyword">new</span> CUIProp&lt;CUINullRect&gt;()</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>      {</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        LayoutProp = <span class="keyword">true</span>,</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>      };</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="preprocessor">      #region Graphic Props --------------------------------------------------------</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="preprocessor">      #endregion</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>      <span class="keyword">public</span> CUIProp&lt;Color&gt; BackgroundColor = <span class="keyword">new</span> CUIProp&lt;Color&gt;()</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>      {</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        ShowInDebug = <span class="keyword">false</span>,</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        OnSet = (v, host) =&gt;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>          {</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            host.BackgroundVisible = v != Color.Transparent;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>          },</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>      };</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>      <span class="keyword">public</span> CUIProp&lt;Color&gt; BorderColor = <span class="keyword">new</span> CUIProp&lt;Color&gt;()</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>      {</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        ShowInDebug = <span class="keyword">false</span>,</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        OnSet = (v, host) =&gt;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        {</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>          host.BorderVisible = v != Color.Transparent;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        },</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>      };</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>      <span class="keyword">public</span> CUIProp&lt;Vector2&gt; Padding = <span class="keyword">new</span> CUIProp&lt;Vector2&gt;()</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>      {</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        Value = <span class="keyword">new</span> Vector2(2, 2),</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        DecorProp = <span class="keyword">true</span>,</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>      };</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    }</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>  }</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>}</div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a497c55d90b7953b88ebddfee51423479"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a497c55d90b7953b88ebddfee51423479">CrabUI.CUIComponent.CUIProps</a></div><div class="ttdeci">CUIComponentProps CUIProps</div><div class="ttdoc">Just a wrapper for CUIProps idk how to separate them better.</div><div class="ttdef"><b>Definition</b> <a href="#l00027">CUIComponent.Props implementation.cs:27</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_prop_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_prop.html">CrabUI.CUIProp</a></div><div class="ttdoc">Wrapper object for prop value, setters, side effects, metadata etc.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_prop_8cs_source.html#l00023">CUIProp.cs:24</a></div></div>
 <div class="ttc" id="anamespace_crab_u_i_html"><div class="ttname"><a href="namespace_crab_u_i.html">CrabUI</a></div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_button_8cs_source.html#l00012">CUIButton.cs:13</a></div></div>

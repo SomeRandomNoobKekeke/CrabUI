@@ -77,14 +77,14 @@ namespace CrabUI
     {
       Primary = new CUIColorPreset()
       {
-        Border = new Color(128, 128, 128, 255),
+        Border = new Color(64, 64, 64, 255),
         Text = new Color(255, 255, 255, 255),
         Off = new Color(0, 0, 0, 128),
         Disabled = new Color(128, 128, 128, 255),
       },
       Secondary = new CUIColorPreset()
       {
-        Border = new Color(100, 100, 100, 255),
+        Border = new Color(16, 16, 16, 255),
         Text = new Color(255, 255, 255, 255),
         Off = new Color(0, 0, 32, 255),
         OffHover = new Color(0, 0, 64, 255),

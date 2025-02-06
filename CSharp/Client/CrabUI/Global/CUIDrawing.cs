@@ -18,7 +18,9 @@ namespace CrabUI
 
     public static void DrawTexture(SpriteBatch sb, CUIRect cuirect, Color cl, Texture2D texture, float depth = 0.0f)
     {
-      sb.Draw(texture, cuirect.Box, null, cl, 0.0f, Vector2.Zero, SpriteEffects.None, depth);
+      Rectangle sourceRect = new Rectangle(0, 0, (int)cuirect.Width, (int)cuirect.Height);
+
+      sb.Draw(texture, cuirect.Box, sourceRect, cl, 0.0f, Vector2.Zero, SpriteEffects.None, depth);
     }
     public static void DrawRectangle(SpriteBatch sb, CUIRect cuirect, Color cl, CUISprite sprite, float depth = 0.0f)
     {

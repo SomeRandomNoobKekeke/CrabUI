@@ -40,10 +40,10 @@ namespace CrabUI
     {
       set
       {
-        OffColor = value.Multiply(0.3f).Opaque();
-        OffHoverColor = value.Opaque();
-        OnColor = value.Multiply(0.9f).Opaque();
-        OnHoverColor = value.Opaque();
+        OffColor = new Color((int)(value.R * 0.3f), (int)(value.G * 0.3f), (int)(value.B * 0.3f), value.A);
+        OffHoverColor = value;
+        OnColor = new Color((int)(value.R * 0.9f), (int)(value.G * 0.9f), (int)(value.B * 0.9f), value.A); ;
+        OnHoverColor = value;
       }
     }
 

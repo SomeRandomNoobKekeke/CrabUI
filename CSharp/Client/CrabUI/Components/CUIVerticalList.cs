@@ -15,6 +15,7 @@ namespace CrabUI
   public class CUIVerticalList : CUIComponent
   {
     [CUISerializable] public bool Scrollable { get; set; }
+    [CUISerializable] public float ScrollSpeed { get; set; } = 1.0f;
 
     public float TopGap = 0;
     public float BottomGap = 10f;
@@ -31,13 +32,14 @@ namespace CrabUI
     public CUILayoutVerticalList ListLayout => (CUILayoutVerticalList)Layout;
 
 
-    //TODO should be serializable
+    [CUISerializable]
     public CUIDirection Direction
     {
       get => ListLayout.Direction;
       set => ListLayout.Direction = value;
     }
 
+    [CUISerializable]
     public bool ResizeToHostWidth
     {
       get => ListLayout.ResizeToHostWidth;
@@ -68,12 +70,8 @@ namespace CrabUI
     {
       CullChildren = true;
 
-      //Layout = new CUILayoutVerticalList();
 
-      OnScroll += (m) =>
-      {
-        Scroll += m.Scroll;
-      };
+      OnScroll += (m) => Scroll += m.Scroll * ScrollSpeed;
 
       ChildrenBoundaries = CUIBoundaries.VerticalTube;
     }

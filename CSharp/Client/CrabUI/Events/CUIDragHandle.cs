@@ -18,6 +18,10 @@ namespace CrabUI
     public bool Grabbed;
     public bool Draggable;
     public CUIMouseEvent Trigger = CUIMouseEvent.Down;
+    /// <summary>
+    /// If true, will change relative prop instead of Absolute
+    /// </summary>
+    public bool DragRelative { get; set; } = false;
 
     public bool ShouldStart(CUIInput input)
     {
@@ -45,8 +49,20 @@ namespace CrabUI
         to - GrabOffset - CUIAnchor.PosIn(Host.Parent.Real, Host.ParentAnchor ?? Host.Anchor)
       );
 
-      Host.CUIProps.Absolute.SetValue(Host.Absolute with { Position = pos });
-      Host.InvokeOnDrag(pos.X, pos.Y);
+      if (DragRelative)
+      {
+        Vector2 newRelPos = new Vector2(
+          pos.X / Host.Parent.Real.Width,
+          pos.Y / Host.Parent.Real.Height
+        );
+        Host.CUIProps.Relative.SetValue(Host.Relative with { Position = newRelPos });
+        Host.InvokeOnDrag(newRelPos.X, newRelPos.Y);
+      }
+      else
+      {
+        Host.CUIProps.Absolute.SetValue(Host.Absolute with { Position = pos });
+        Host.InvokeOnDrag(pos.X, pos.Y);
+      }
     }
 
     public CUIDragHandle() { }

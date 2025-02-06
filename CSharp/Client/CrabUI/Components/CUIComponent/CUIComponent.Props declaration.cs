@@ -27,6 +27,13 @@ namespace CrabUI
     /// Will prevent serialization to xml if true
     /// </summary>
     public bool Unserializable { get; set; }
+
+    /// <summary>
+    /// Is this a serialization cutoff point  
+    /// Parent will serialize children down to this component
+    /// Further serialization should be hadled by this component
+    /// </summary>
+    [CUISerializable] public bool BreakSerialization { get; set; }
     /// <summary>
     /// Should children be cut off by scissor rect, this is just visual, it's not the same as culling
     /// </summary>
@@ -289,6 +296,12 @@ namespace CrabUI
     {
       get => CUIProps.RelativeMax.Value;
       set => CUIProps.RelativeMax.SetValue(value);
+    }
+    [CUISerializable]
+    public CUINullRect CrossRelative
+    {
+      get => CUIProps.CrossRelative.Value;
+      set => CUIProps.CrossRelative.SetValue(value);
     }
 
     /// <summary>

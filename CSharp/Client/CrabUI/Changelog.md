@@ -1,3 +1,36 @@
+## 0.1.0.0
+
+You can now use relative paths for sprite textures  
+You can set CUI.PGNAssets to the folder with your assets, CUI will also search for textures there
+
+Reworked MasterColorOpaque, it now just uses base color alpha
+
+Synced vertical and horizontal lists, added ScrollSpeed
+
+OnUpdate event now invoked before layout calcs, Also added OnLayoutUpdated event, it's invoked before recalc of children layouts
+
+"Fixed" imprecise rects that e.g. caused sprite overlap and gaps
+
+Added CrossRelative prop, it's like Relative but values are relative to the oposite value, e.g. CrossRelative.Width = Host.Real.Height, convinient for making square things
+
+Reworked slider component
+
+DragHandle can now DragRelative to the parent 
+
+#### Serialization 
+
+Added BreakSerialization prop, if true serrialization will stop on this component
+
+Added LoadSelfFromFile, SaveToTheSamePath methods
+
+Added Hydrate method, it will run right after deserizlization, allowing you to access children with Get<> and e.g. save them to local vars
+
+Added SaveAfterLoad prop, it's mostly for serialization debugging
+
+Added more Custom ToString and parsed methods to CUIExtensions, Added native enum serialization, Vector2 and Rectangle is now serialized into [ x, y ], be carefull
+
+Sprite is now fully serializable
+
 ## 0.0.5.1
 
 Added "[CUISerializable] public string Command { get; set; }"" to CUIButton so you could define command that is called on click in xml

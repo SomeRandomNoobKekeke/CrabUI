@@ -29,6 +29,7 @@ namespace CrabUI
     public Texture2D Texture;
     public CUISpriteDrawMode DrawMode;
     public Rectangle SourceRect;
+    //TODO serialize
     public SpriteEffects Effects;
 
     public static CUISprite FromVanilla(Sprite sprite)
@@ -95,7 +96,29 @@ namespace CrabUI
       }
     }
 
-    public override string ToString() => Path;
-    public static CUISprite Parse(string path) => CUI.TextureManager.GetSprite(path);
+    public override string ToString() => $"{{ Path: {Path}, Mode: {DrawMode}, SourceRect: {CUIExtensions.RectangleToString(SourceRect)}, Effects: {CUIExtensions.SpriteEffectsToString(Effects)} }}";
+    public static CUISprite Parse(string raw)
+    {
+      Dictionary<string, string> props = CUIExtensions.ParseKVPairs(raw);
+
+      if (!props.ContainsKey("path")) return new CUISprite();
+
+      CUISprite sprite = CUI.TextureManager.GetSprite(props["path"]);
+      if (props.ContainsKey("mode"))
+      {
+        sprite.DrawMode = Enum.Parse<CUISpriteDrawMode>(props["mode"]);
+      }
+      if (props.ContainsKey("sourcerect"))
+      {
+        sprite.SourceRect = CUIExtensions.ParseRectangle(props["sourcerect"]);
+      }
+      if (props.ContainsKey("effects"))
+      {
+        sprite.Effects = CUIExtensions.ParseSpriteEffects(props["effects"]);
+      }
+
+
+      return sprite;
+    }
   }
 }

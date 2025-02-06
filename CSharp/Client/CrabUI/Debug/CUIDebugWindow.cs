@@ -71,7 +71,7 @@ namespace CrabUI
       {
         RunRecursiveOn(CUI.Main, (component, depth) =>
         {
-          l.Add(component);
+          if (!component.IgnoreDebug) l.Add(component);
         });
       }
 

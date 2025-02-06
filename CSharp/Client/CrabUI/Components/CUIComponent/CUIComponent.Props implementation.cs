@@ -142,6 +142,10 @@ namespace CrabUI
       {
         LayoutProp = true,
       };
+      public CUIProp<CUINullRect> CrossRelative = new CUIProp<CUINullRect>()
+      {
+        LayoutProp = true,
+      };
 
       #region Graphic Props --------------------------------------------------------
       #endregion

@@ -15,6 +15,5 @@ var searchData=
   ['resizetosprite_12',['ResizeToSprite',['../class_crab_u_i_1_1_c_u_i_component.html#a45d77f03b0be05a9c7c4798f8bf713a4',1,'CrabUI::CUIComponent']]],
   ['restore_20state_20of_20component_13',['Also you can memorize and restore state of component',['../_serialization.html#autotoc_md12',1,'']]],
   ['revealed_14',['Revealed',['../class_crab_u_i_1_1_c_u_i_component.html#a2b39e97b6c2c219efbb25cd176e0f16b',1,'CrabUI::CUIComponent']]],
-  ['rightgap_15',['RightGap',['../class_crab_u_i_1_1_c_u_i_horizontal_list.html#aa5158b8c0780d2c538c8db55bd2ac1b6',1,'CrabUI::CUIHorizontalList']]],
-  ['runrecursiveon_16',['RunRecursiveOn',['../class_crab_u_i_1_1_c_u_i_component.html#a93263210f578005db68357069bc3243e',1,'CrabUI::CUIComponent']]]
+  ['runrecursiveon_15',['RunRecursiveOn',['../class_crab_u_i_1_1_c_u_i_component.html#a93263210f578005db68357069bc3243e',1,'CrabUI::CUIComponent']]]
 ];

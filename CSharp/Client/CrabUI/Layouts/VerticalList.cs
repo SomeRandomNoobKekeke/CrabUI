@@ -46,7 +46,6 @@ namespace CrabUI
         TotalHeight = 0;
 
 
-
         foreach (CUIComponent c in Host.Children)
         {
           float h = 0;
@@ -59,6 +58,7 @@ namespace CrabUI
           else
           {
             if (c.Relative.Width.HasValue) w = c.Relative.Width.Value * Host.Real.Width;
+            if (c.CrossRelative.Width.HasValue) w = c.CrossRelative.Width.Value * Host.Real.Height;
             if (c.Absolute.Width.HasValue) w = c.Absolute.Width.Value;
 
             if (c.RelativeMin.Width.HasValue) w = Math.Max(w, c.RelativeMin.Width.Value * Host.Real.Width);
@@ -82,6 +82,11 @@ namespace CrabUI
             {
               h = c.Relative.Height.Value * Host.Real.Height;
               CUIDebug.Capture(Host, c, "VerticalList.Update", "Relative.Height", "h", h.ToString());
+            }
+            if (c.CrossRelative.Height.HasValue)
+            {
+              h = c.CrossRelative.Height.Value * Host.Real.Width;
+              CUIDebug.Capture(Host, c, "VerticalList.Update", "CrossRelative.Height", "h", h.ToString());
             }
             if (c.Absolute.Height.HasValue)
             {
@@ -137,25 +142,13 @@ namespace CrabUI
 
         float dif = Math.Max(0, Host.Real.Height - TotalHeight);
 
-
-        // if (Host.Debug)
-        // {
-        //   Host.Info($"dif{dif} Host.Real.Height{Host.Real.Height} TotalHeight{TotalHeight}");
-        // }
-
-
         Resizible.ForEach(c =>
         {
-          //TODO how is this supposed to work?
-          // Why it cares about it's size if it's set to FillEmptySpace?
-          // and what would happen if it's not ok?
-          //c.Size = c.Component.AmIOkWithThisSize(new Vector2(c.Size.X, dif / Resizible.Count));
-          c.Size = new Vector2(c.Size.X, dif / Resizible.Count);
+          c.Size = c.Component.AmIOkWithThisSize(new Vector2(c.Size.X, (float)Math.Round(dif / Resizible.Count)));
+          //c.Size = new Vector2(c.Size.X, dif / Resizible.Count);
 
           CUIDebug.Capture(Host, c.Component, "VerticalList.Update", "Resizible.ForEach", "c.Size", c.Size.ToString());
         });
-
-        //Host.ChildrenSizeCalculated();
 
 
         CUI3DOffset offset = Host.ChildOffsetBounds.Check(Host.ChildrenOffset);

@@ -32,8 +32,15 @@ namespace CrabUI
     public static string LuaFolder => Path.Combine(ModDir, @"Lua");
     public static string CUIPath => GetCallerFolderPath();
     public static string CUIAssetsPath => Path.Combine(CUIPath, @"CUIAssets");
-    public static string CUITexturePath => Path.Combine(CUIPath, @"CUIAssets\CUI.png");
-
+    public static string CUITexturePath => "CUI.png";
+    /// <summary>
+    /// If set CUI will also check this folder when loading textures
+    /// </summary>
+    public static string PGNAssets
+    {
+      get => TextureManager.PGNAssets;
+      set => TextureManager.PGNAssets = value;
+    }
 
     /// <summary>
     /// A singleton

@@ -115,13 +115,13 @@ namespace CrabUI
     private CUIRect real; internal void SetReal(CUIRect value, [CallerMemberName] string memberName = "")
     {
       //HACK idk if i need it
-      // real = new CUIRect(
-      //   (float)Math.Round(value.Left),
-      //   (float)Math.Round(value.Top),
-      //   (float)Math.Round(value.Width),
-      //   (float)Math.Round(value.Height)
-      // );
-      real = value;
+      real = new CUIRect(
+        (float)Math.Round(value.Left),
+        (float)Math.Round(value.Top),
+        (float)Math.Round(value.Width),
+        (float)Math.Round(value.Height)
+      );
+      // real = value;
       CUIDebug.Capture(null, this, "SetReal", memberName, "real", real.ToString());
 
       BorderBox = new CUIRect(

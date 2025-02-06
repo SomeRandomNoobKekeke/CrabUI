@@ -91,6 +91,7 @@ $(function(){ initResizable(false); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#properties">Properties</a> &#124;
 <a href="#events">Events</a> &#124;
@@ -99,7 +100,7 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 
-<p>Aka range input, aka scrollbar has draggable handle and outputs its relative pos in the slider [0..1].  
+<p>Horizontal range input.  
  <a href="#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for CrabUI.CUISlider:</div>
@@ -111,11 +112,122 @@ Inheritance diagram for CrabUI.CUISlider:</div>
   </map>
 </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ae505467d9bb85035e2379af7d1d5f976" id="r_ae505467d9bb85035e2379af7d1d5f976"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae505467d9bb85035e2379af7d1d5f976">Draw</a> (SpriteBatch spriteBatch)</td></tr>
+<tr class="memdesc:ae505467d9bb85035e2379af7d1d5f976"><td class="mdescLeft">&#160;</td><td class="mdescRight">Here component should be drawn.  <br /></td></tr>
+<tr class="separator:ae505467d9bb85035e2379af7d1d5f976"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_crab_u_i_1_1_c_u_i_component"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_crab_u_i_1_1_c_u_i_component')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CrabUI.CUIComponent</a></td></tr>
+<tr class="memitem:a6dd0fb51c40240e285b04e3b53ad5e5d inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a6dd0fb51c40240e285b04e3b53ad5e5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a6dd0fb51c40240e285b04e3b53ad5e5d">AddCommand</a> (string name, Action&lt; object &gt; action)</td></tr>
+<tr class="memdesc:a6dd0fb51c40240e285b04e3b53ad5e5d inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manually adds command.  <br /></td></tr>
+<tr class="separator:a6dd0fb51c40240e285b04e3b53ad5e5d inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a934c0179dcfc37c1577190351acaf165 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a934c0179dcfc37c1577190351acaf165"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><b>RemoveCommand</b> (string name)</td></tr>
+<tr class="separator:a934c0179dcfc37c1577190351acaf165 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bf2a7e83fb2f882bb9a5508354472c5 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a9bf2a7e83fb2f882bb9a5508354472c5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a9bf2a7e83fb2f882bb9a5508354472c5">AddCommands</a> ()</td></tr>
+<tr class="memdesc:a9bf2a7e83fb2f882bb9a5508354472c5 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Methods ending in "Command" will be added as commands.  <br /></td></tr>
+<tr class="separator:a9bf2a7e83fb2f882bb9a5508354472c5 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef3c99c80fd81413eb3df1bc9d15f708 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_aef3c99c80fd81413eb3df1bc9d15f708"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#aef3c99c80fd81413eb3df1bc9d15f708">Dispatch</a> (<a class="el" href="namespace_crab_u_i.html#aada5e995437d9c99a38882d830798b6c">CUICommand</a> command)</td></tr>
+<tr class="memdesc:aef3c99c80fd81413eb3df1bc9d15f708 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dispathes command up the component tree until someone consumes it.  <br /></td></tr>
+<tr class="separator:aef3c99c80fd81413eb3df1bc9d15f708 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fd6b3feb575819e48a406063f3756ce inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a6fd6b3feb575819e48a406063f3756ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a6fd6b3feb575819e48a406063f3756ce">Execute</a> (<a class="el" href="namespace_crab_u_i.html#aada5e995437d9c99a38882d830798b6c">CUICommand</a> command)</td></tr>
+<tr class="memdesc:a6fd6b3feb575819e48a406063f3756ce inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will execute action corresponding to this command.  <br /></td></tr>
+<tr class="separator:a6fd6b3feb575819e48a406063f3756ce inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46040e771578a8da3b6d8f311a3aa649 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a46040e771578a8da3b6d8f311a3aa649"><td class="memItemLeft" align="right" valign="top">virtual partial void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a46040e771578a8da3b6d8f311a3aa649">DrawFront</a> (SpriteBatch spriteBatch)</td></tr>
+<tr class="memdesc:a46040e771578a8da3b6d8f311a3aa649 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method for drawing something that should always be on top, e.g. resize handles.  <br /></td></tr>
+<tr class="separator:a46040e771578a8da3b6d8f311a3aa649 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46040e771578a8da3b6d8f311a3aa649 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a46040e771578a8da3b6d8f311a3aa649"><td class="memItemLeft" align="right" valign="top">virtual partial void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a46040e771578a8da3b6d8f311a3aa649">DrawFront</a> (SpriteBatch spriteBatch)</td></tr>
+<tr class="separator:a46040e771578a8da3b6d8f311a3aa649 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2c5a6878e104520fee74fa89646724e inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_ae2c5a6878e104520fee74fa89646724e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#ae2c5a6878e104520fee74fa89646724e">CUIComponent</a> (float? x=null, float? y=null, float? w=null, float? h=null)</td></tr>
+<tr class="separator:ae2c5a6878e104520fee74fa89646724e inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10c015b99d612ae165d754e03f37b70c inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a10c015b99d612ae165d754e03f37b70c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a10c015b99d612ae165d754e03f37b70c">Dispose</a> ()</td></tr>
+<tr class="separator:a10c015b99d612ae165d754e03f37b70c inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a455359a5e62d621d9cb51e1c2d349291 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a455359a5e62d621d9cb51e1c2d349291"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a455359a5e62d621d9cb51e1c2d349291">CleanUp</a> ()</td></tr>
+<tr class="separator:a455359a5e62d621d9cb51e1c2d349291 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b858e5ad7c74ea8845ae392111b5ee5 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a8b858e5ad7c74ea8845ae392111b5ee5"><td class="memItemLeft" align="right" valign="top">
+override string&#160;</td><td class="memItemRight" valign="bottom"><b>ToString</b> ()</td></tr>
+<tr class="separator:a8b858e5ad7c74ea8845ae392111b5ee5 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89030ca0a394eda8e2d4c96afeb932e4 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a89030ca0a394eda8e2d4c96afeb932e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a89030ca0a394eda8e2d4c96afeb932e4">Info</a> (object msg, [CallerFilePath] string source=&quot;&quot;, [CallerLineNumber] int lineNumber=0)</td></tr>
+<tr class="memdesc:a89030ca0a394eda8e2d4c96afeb932e4 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints component and then message.  <br /></td></tr>
+<tr class="separator:a89030ca0a394eda8e2d4c96afeb932e4 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48e093d1698f4c4ae59848a060779319 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a48e093d1698f4c4ae59848a060779319"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a48e093d1698f4c4ae59848a060779319">Remember</a> (<a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a> c, string name)</td></tr>
+<tr class="separator:a48e093d1698f4c4ae59848a060779319 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7390cc3452581c0d36d476920c214c5 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_ad7390cc3452581c0d36d476920c214c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#ad7390cc3452581c0d36d476920c214c5">Remember</a> (<a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a> c)</td></tr>
+<tr class="memdesc:ad7390cc3452581c0d36d476920c214c5 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">If it already has AKA.  <br /></td></tr>
+<tr class="separator:ad7390cc3452581c0d36d476920c214c5 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2969cacdbbf7946f5a8e901256b09530 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a2969cacdbbf7946f5a8e901256b09530"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a2969cacdbbf7946f5a8e901256b09530">Forget</a> (string name)</td></tr>
+<tr class="separator:a2969cacdbbf7946f5a8e901256b09530 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6705c92f70004b2401268c0968c842e9 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a6705c92f70004b2401268c0968c842e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a6705c92f70004b2401268c0968c842e9">Forget</a> (<a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a> c)</td></tr>
+<tr class="memdesc:a6705c92f70004b2401268c0968c842e9 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">If it already has AKA.  <br /></td></tr>
+<tr class="separator:a6705c92f70004b2401268c0968c842e9 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22317c977b5e65a61eca908118af236a inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a22317c977b5e65a61eca908118af236a"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a22317c977b5e65a61eca908118af236a">Get</a> (string name)</td></tr>
+<tr class="memdesc:a22317c977b5e65a61eca908118af236a inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns memorized component by name.  <br /></td></tr>
+<tr class="separator:a22317c977b5e65a61eca908118af236a inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61f6afeeae534deb327b8aed7ffcb6f8 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a61f6afeeae534deb327b8aed7ffcb6f8"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a61f6afeeae534deb327b8aed7ffcb6f8">Get&lt; T &gt;</a> (string name)</td></tr>
+<tr class="separator:a61f6afeeae534deb327b8aed7ffcb6f8 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ac0f246c9cd4da4b36c434cc75d9154 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a3ac0f246c9cd4da4b36c434cc75d9154"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a3ac0f246c9cd4da4b36c434cc75d9154">Click</a> ()</td></tr>
+<tr class="memdesc:a3ac0f246c9cd4da4b36c434cc75d9154 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulates Click.  <br /></td></tr>
+<tr class="separator:a3ac0f246c9cd4da4b36c434cc75d9154 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31f9d36b65e7b430c8d29e1a648b6401 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a31f9d36b65e7b430c8d29e1a648b6401"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><b>InvokeOnLayoutUpdated</b> ()</td></tr>
+<tr class="separator:a31f9d36b65e7b430c8d29e1a648b6401 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e4bd39431c9fcf17410f956d2462ca9 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a1e4bd39431c9fcf17410f956d2462ca9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a1e4bd39431c9fcf17410f956d2462ca9">Clone</a> ()</td></tr>
+<tr class="separator:a1e4bd39431c9fcf17410f956d2462ca9 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bae07e6a923991602fede9550777bb8 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a2bae07e6a923991602fede9550777bb8"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SaveStateAs</b> (string name)</td></tr>
+<tr class="separator:a2bae07e6a923991602fede9550777bb8 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b4c3434b6ae351d714559bc68cfe1dd inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a0b4c3434b6ae351d714559bc68cfe1dd"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><b>LoadState</b> (string name)</td></tr>
+<tr class="separator:a0b4c3434b6ae351d714559bc68cfe1dd inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8558b493c9b5289f2fb59c842173781 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_ab8558b493c9b5289f2fb59c842173781"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ForgetState</b> (string name)</td></tr>
+<tr class="separator:ab8558b493c9b5289f2fb59c842173781 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96250256fd9401fe2e97dbb80b67f07a inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a96250256fd9401fe2e97dbb80b67f07a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a96250256fd9401fe2e97dbb80b67f07a">ApplyState</a> (<a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a> state)</td></tr>
+<tr class="separator:a96250256fd9401fe2e97dbb80b67f07a inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7eddcfc996ff05a21919bcea5cae71f6 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a7eddcfc996ff05a21919bcea5cae71f6"><td class="memItemLeft" align="right" valign="top">virtual XElement&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a7eddcfc996ff05a21919bcea5cae71f6">ToXML</a> (CUIAttribute propAttribute=CUIAttribute.CUISerializable)</td></tr>
+<tr class="separator:a7eddcfc996ff05a21919bcea5cae71f6 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd709a82e04dbc0a5877d1bb4dba586a inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_abd709a82e04dbc0a5877d1bb4dba586a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#abd709a82e04dbc0a5877d1bb4dba586a">FromXML</a> (XElement element)</td></tr>
+<tr class="separator:abd709a82e04dbc0a5877d1bb4dba586a inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabf904d0894b16875e5f3a30dd2915b4 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_aabf904d0894b16875e5f3a30dd2915b4"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#aabf904d0894b16875e5f3a30dd2915b4">Serialize</a> (CUIAttribute propAttribute=CUIAttribute.CUISerializable)</td></tr>
+<tr class="separator:aabf904d0894b16875e5f3a30dd2915b4 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62097ffe320d2e8e287407c27387b022 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a62097ffe320d2e8e287407c27387b022"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a62097ffe320d2e8e287407c27387b022">LoadSelfFromFile</a> (string path, bool saveAfterLoad=false)</td></tr>
+<tr class="separator:a62097ffe320d2e8e287407c27387b022 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebd8d91645cfd45a7432cc70dc9c8804 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_aebd8d91645cfd45a7432cc70dc9c8804"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#aebd8d91645cfd45a7432cc70dc9c8804">SaveToTheSamePath</a> ()</td></tr>
+<tr class="separator:aebd8d91645cfd45a7432cc70dc9c8804 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a506562a431758ef188f372ebf21c6858 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a506562a431758ef188f372ebf21c6858"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a506562a431758ef188f372ebf21c6858">SaveToFile</a> (string path, CUIAttribute propAttribute=CUIAttribute.CUISerializable)</td></tr>
+<tr class="separator:a506562a431758ef188f372ebf21c6858 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ea833cc01691fd22bd719bd9a2f4aac inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a5ea833cc01691fd22bd719bd9a2f4aac"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a5ea833cc01691fd22bd719bd9a2f4aac">Hydrate</a> ()</td></tr>
+<tr class="memdesc:a5ea833cc01691fd22bd719bd9a2f4aac inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Experimental method <br  />
+ Here you can add data/ callbacks/ save stuff to variables <br  />
+ after loading a xml skeletom.  <br /></td></tr>
+<tr class="separator:a5ea833cc01691fd22bd719bd9a2f4aac inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d05673fa79fb7a41985c46ca88ab647 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a5d05673fa79fb7a41985c46ca88ab647"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a5d05673fa79fb7a41985c46ca88ab647">Append</a> (<a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a> child, string name=null, [CallerMemberName] string memberName=&quot;&quot;)</td></tr>
+<tr class="memdesc:a5d05673fa79fb7a41985c46ca88ab647 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds children to the end of the list.  <br /></td></tr>
+<tr class="separator:a5d05673fa79fb7a41985c46ca88ab647 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21431d1bcb98626c736124039177b6c7 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a21431d1bcb98626c736124039177b6c7"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a21431d1bcb98626c736124039177b6c7">Prepend</a> (<a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a> child, string name=null, [CallerMemberName] string memberName=&quot;&quot;)</td></tr>
+<tr class="memdesc:a21431d1bcb98626c736124039177b6c7 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds children to the begining of the list.  <br /></td></tr>
+<tr class="separator:a21431d1bcb98626c736124039177b6c7 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d9c6c3f81adeb28c662464e41cb1fef inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a4d9c6c3f81adeb28c662464e41cb1fef"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><b>RemoveSelf</b> ()</td></tr>
+<tr class="separator:a4d9c6c3f81adeb28c662464e41cb1fef inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c53e0eb9359c60af1111d4dcabccede inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a9c53e0eb9359c60af1111d4dcabccede"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a9c53e0eb9359c60af1111d4dcabccede">RemoveChild</a> (<a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a> child, [CallerMemberName] string memberName=&quot;&quot;)</td></tr>
+<tr class="separator:a9c53e0eb9359c60af1111d4dcabccede inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a657e903b85c2720e5990a644bd415183 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a657e903b85c2720e5990a644bd415183"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a657e903b85c2720e5990a644bd415183">RemoveAllChildren</a> ([CallerMemberName] string memberName=&quot;&quot;)</td></tr>
+<tr class="separator:a657e903b85c2720e5990a644bd415183 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:aa4596ea574c6c56ced2a6c4acbf9beb2" id="r_aa4596ea574c6c56ced2a6c4acbf9beb2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4596ea574c6c56ced2a6c4acbf9beb2">Slider</a></td></tr>
-<tr class="memdesc:aa4596ea574c6c56ced2a6c4acbf9beb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The handle.  <br /></td></tr>
-<tr class="separator:aa4596ea574c6c56ced2a6c4acbf9beb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cf1635561b9e4c32a7c542552e06a9b" id="r_a6cf1635561b9e4c32a7c542552e06a9b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6cf1635561b9e4c32a7c542552e06a9b">Handle</a></td></tr>
+<tr class="memdesc:a6cf1635561b9e4c32a7c542552e06a9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The handle.  <br /></td></tr>
+<tr class="separator:a6cf1635561b9e4c32a7c542552e06a9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb3ce9a76756b85c0b82fc7adb916c7e" id="r_acb3ce9a76756b85c0b82fc7adb916c7e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb3ce9a76756b85c0b82fc7adb916c7e">LeftEnding</a></td></tr>
+<tr class="separator:acb3ce9a76756b85c0b82fc7adb916c7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26e4c30e7ee4c61d454edbba41ded061" id="r_a26e4c30e7ee4c61d454edbba41ded061"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26e4c30e7ee4c61d454edbba41ded061">RightEnding</a></td></tr>
+<tr class="separator:a26e4c30e7ee4c61d454edbba41ded061"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a393a2f14af6f7083d24662215fc17e5c" id="r_a393a2f14af6f7083d24662215fc17e5c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_crab_u_i_1_1_c_u_i_sprite.html">CUISprite</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a393a2f14af6f7083d24662215fc17e5c">MiddleSprite</a></td></tr>
+<tr class="separator:a393a2f14af6f7083d24662215fc17e5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69b9bf54d861373caeb74b23f8735c2c" id="r_a69b9bf54d861373caeb74b23f8735c2c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_crab_u_i_1_1_c_u_i_rect.html">CUIRect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69b9bf54d861373caeb74b23f8735c2c">MiddleRect</a></td></tr>
+<tr class="separator:a69b9bf54d861373caeb74b23f8735c2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_class_crab_u_i_1_1_c_u_i_component"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_attribs_class_crab_u_i_1_1_c_u_i_component')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CrabUI.CUIComponent</a></td></tr>
 <tr class="memitem:a032faa3763d2d8ab01247793fd030e56 inherit pub_attribs_class_crab_u_i_1_1_c_u_i_component" id="r_a032faa3763d2d8ab01247793fd030e56"><td class="memItemLeft" align="right" valign="top">CUIResizeHandle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a032faa3763d2d8ab01247793fd030e56">LeftResizeHandle</a> = new CUIResizeHandle(new Vector2(0, 1), new <a class="el" href="struct_crab_u_i_1_1_c_u_i_bool2.html">CUIBool2</a>(false, false))</td></tr>
 <tr class="separator:a032faa3763d2d8ab01247793fd030e56 inherit pub_attribs_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -124,9 +236,14 @@ Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
+<tr class="memitem:a82b565380026a965dd827bc5e6119283" id="r_a82b565380026a965dd827bc5e6119283"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a82b565380026a965dd827bc5e6119283">Command</a><code> [get, set]</code></td></tr>
+<tr class="separator:a82b565380026a965dd827bc5e6119283"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81b86211403291dc8fe1d593fa534d08" id="r_a81b86211403291dc8fe1d593fa534d08"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81b86211403291dc8fe1d593fa534d08">InOutMult</a><code> [get]</code></td></tr>
+<tr class="separator:a81b86211403291dc8fe1d593fa534d08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94e9eb09a89783b4cfafbbdaccbe4668" id="r_a94e9eb09a89783b4cfafbbdaccbe4668"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94e9eb09a89783b4cfafbbdaccbe4668">Lambda</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a94e9eb09a89783b4cfafbbdaccbe4668"><td class="mdescLeft">&#160;</td><td class="mdescRight">Relative handle position [0..1].  <br /></td></tr>
 <tr class="separator:a94e9eb09a89783b4cfafbbdaccbe4668"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98ad60a28cee64b6794343c548bae9f3" id="r_a98ad60a28cee64b6794343c548bae9f3"><td class="memItemLeft" align="right" valign="top">Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98ad60a28cee64b6794343c548bae9f3">MasterColor</a><code> [set]</code></td></tr>
+<tr class="separator:a98ad60a28cee64b6794343c548bae9f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header properties_class_crab_u_i_1_1_c_u_i_component"><td colspan="2" onclick="javascript:dynsection.toggleInherit('properties_class_crab_u_i_1_1_c_u_i_component')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CrabUI.CUIComponent</a></td></tr>
 <tr class="memitem:a97bacc49652d724c7ff474aeddd4b97d inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a97bacc49652d724c7ff474aeddd4b97d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a97bacc49652d724c7ff474aeddd4b97d">ID</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a97bacc49652d724c7ff474aeddd4b97d inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global ID, unique for component.  <br /></td></tr>
@@ -236,6 +353,10 @@ Properties</h2></td></tr>
 <tr class="memitem:a155615a8a7e4c8d2721fbb1d155bd395 inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a155615a8a7e4c8d2721fbb1d155bd395"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a155615a8a7e4c8d2721fbb1d155bd395">Unserializable</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a155615a8a7e4c8d2721fbb1d155bd395 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will prevent serialization to xml if true.  <br /></td></tr>
 <tr class="separator:a155615a8a7e4c8d2721fbb1d155bd395 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a879f6b36b8694084f6d34443e980a8f9 inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a879f6b36b8694084f6d34443e980a8f9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a879f6b36b8694084f6d34443e980a8f9">BreakSerialization</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a879f6b36b8694084f6d34443e980a8f9 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is this a serialization cutoff point <br  />
+ Parent will serialize children down to this component Further serialization should be hadled by this component.  <br /></td></tr>
+<tr class="separator:a879f6b36b8694084f6d34443e980a8f9 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a809e2ca8b575f4532ebf47285fd4760e inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a809e2ca8b575f4532ebf47285fd4760e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a809e2ca8b575f4532ebf47285fd4760e">HideChildrenOutsideFrame</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a809e2ca8b575f4532ebf47285fd4760e inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Should children be cut off by scissor rect, this is just visual, it's not the same as culling.  <br /></td></tr>
 <tr class="separator:a809e2ca8b575f4532ebf47285fd4760e inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -330,6 +451,8 @@ Properties</h2></td></tr>
 <tr class="separator:a99c123dfdbfe8bae62dc2f699f0d465d inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a235844250dd02510cd50e5b44ac48f52 inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a235844250dd02510cd50e5b44ac48f52"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_crab_u_i_1_1_c_u_i_null_rect.html">CUINullRect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a235844250dd02510cd50e5b44ac48f52">RelativeMax</a><code> [get, set]</code></td></tr>
 <tr class="separator:a235844250dd02510cd50e5b44ac48f52 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9594fa13baf8acb34d1c6c4347d9313d inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a9594fa13baf8acb34d1c6c4347d9313d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_crab_u_i_1_1_c_u_i_null_rect.html">CUINullRect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a9594fa13baf8acb34d1c6c4347d9313d">CrossRelative</a><code> [get, set]</code></td></tr>
+<tr class="separator:a9594fa13baf8acb34d1c6c4347d9313d inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89d735333ca5c9f218c69ec79ad9ae39 inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a89d735333ca5c9f218c69ec79ad9ae39"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a89d735333ca5c9f218c69ec79ad9ae39">GridTemplateRows</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a89d735333ca5c9f218c69ec79ad9ae39 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used in Grid, space separated Row sizes, either in pixels (123) or in % (123%)  <br /></td></tr>
 <tr class="separator:a89d735333ca5c9f218c69ec79ad9ae39 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -351,6 +474,10 @@ Properties</h2></td></tr>
 <tr class="memitem:aa615f83c1e38c1ea74eb4854cce4ed3c inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_aa615f83c1e38c1ea74eb4854cce4ed3c"><td class="memItemLeft" align="right" valign="top">Dictionary&lt; string, <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#aa615f83c1e38c1ea74eb4854cce4ed3c">States</a> = new()<code> [get, set]</code></td></tr>
 <tr class="memdesc:aa615f83c1e38c1ea74eb4854cce4ed3c inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">State is just a clone component with copies of all props.  <br /></td></tr>
 <tr class="separator:aa615f83c1e38c1ea74eb4854cce4ed3c inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d8af39a0926bdde5557b58d78cdfd61 inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a6d8af39a0926bdde5557b58d78cdfd61"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a6d8af39a0926bdde5557b58d78cdfd61">SaveAfterLoad</a> = true<code> [get, set]</code></td></tr>
+<tr class="separator:a6d8af39a0926bdde5557b58d78cdfd61 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb07791aeb0b4a7f8c2c086526067f5c inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_acb07791aeb0b4a7f8c2c086526067f5c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#acb07791aeb0b4a7f8c2c086526067f5c">SavePath</a><code> [get, set]</code></td></tr>
+<tr class="separator:acb07791aeb0b4a7f8c2c086526067f5c inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a729c73296986b0fdb3d820c8d92858eb inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a729c73296986b0fdb3d820c8d92858eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crab_u_i_1_1_c_u_i_style.html">CUIStyle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a729c73296986b0fdb3d820c8d92858eb">Style</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a729c73296986b0fdb3d820c8d92858eb inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows you to assing parsable string or link to <a class="el" href="class_crab_u_i_1_1_c_u_i_palette.html" title="Contains some predefined values for components, mostly for colors   CUIPalette.Current is selected pa...">CUIPalette</a> to any prop <br  />
  It's indexable, so you can access it like this: component.Style["BackgroundColor"] = "cyan" <br  />
@@ -417,99 +544,6 @@ Events</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_methods_class_crab_u_i_1_1_c_u_i_component"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_crab_u_i_1_1_c_u_i_component')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CrabUI.CUIComponent</a></td></tr>
-<tr class="memitem:a6dd0fb51c40240e285b04e3b53ad5e5d inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a6dd0fb51c40240e285b04e3b53ad5e5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a6dd0fb51c40240e285b04e3b53ad5e5d">AddCommand</a> (string name, Action&lt; object &gt; action)</td></tr>
-<tr class="memdesc:a6dd0fb51c40240e285b04e3b53ad5e5d inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manually adds command.  <br /></td></tr>
-<tr class="separator:a6dd0fb51c40240e285b04e3b53ad5e5d inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a934c0179dcfc37c1577190351acaf165 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a934c0179dcfc37c1577190351acaf165"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><b>RemoveCommand</b> (string name)</td></tr>
-<tr class="separator:a934c0179dcfc37c1577190351acaf165 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9bf2a7e83fb2f882bb9a5508354472c5 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a9bf2a7e83fb2f882bb9a5508354472c5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a9bf2a7e83fb2f882bb9a5508354472c5">AddCommands</a> ()</td></tr>
-<tr class="memdesc:a9bf2a7e83fb2f882bb9a5508354472c5 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Methods ending in "Command" will be added as commands.  <br /></td></tr>
-<tr class="separator:a9bf2a7e83fb2f882bb9a5508354472c5 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef3c99c80fd81413eb3df1bc9d15f708 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_aef3c99c80fd81413eb3df1bc9d15f708"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#aef3c99c80fd81413eb3df1bc9d15f708">Dispatch</a> (<a class="el" href="namespace_crab_u_i.html#aada5e995437d9c99a38882d830798b6c">CUICommand</a> command)</td></tr>
-<tr class="memdesc:aef3c99c80fd81413eb3df1bc9d15f708 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dispathes command up the component tree until someone consumes it.  <br /></td></tr>
-<tr class="separator:aef3c99c80fd81413eb3df1bc9d15f708 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fd6b3feb575819e48a406063f3756ce inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a6fd6b3feb575819e48a406063f3756ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a6fd6b3feb575819e48a406063f3756ce">Execute</a> (<a class="el" href="namespace_crab_u_i.html#aada5e995437d9c99a38882d830798b6c">CUICommand</a> command)</td></tr>
-<tr class="memdesc:a6fd6b3feb575819e48a406063f3756ce inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will execute action corresponding to this command.  <br /></td></tr>
-<tr class="separator:a6fd6b3feb575819e48a406063f3756ce inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a913a8f80e413a68d204dc74506c5576d inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a913a8f80e413a68d204dc74506c5576d"><td class="memItemLeft" align="right" valign="top">virtual partial void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a913a8f80e413a68d204dc74506c5576d">Draw</a> (SpriteBatch spriteBatch)</td></tr>
-<tr class="memdesc:a913a8f80e413a68d204dc74506c5576d inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Here component should be drawn.  <br /></td></tr>
-<tr class="separator:a913a8f80e413a68d204dc74506c5576d inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46040e771578a8da3b6d8f311a3aa649 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a46040e771578a8da3b6d8f311a3aa649"><td class="memItemLeft" align="right" valign="top">virtual partial void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a46040e771578a8da3b6d8f311a3aa649">DrawFront</a> (SpriteBatch spriteBatch)</td></tr>
-<tr class="memdesc:a46040e771578a8da3b6d8f311a3aa649 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method for drawing something that should always be on top, e.g. resize handles.  <br /></td></tr>
-<tr class="separator:a46040e771578a8da3b6d8f311a3aa649 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a913a8f80e413a68d204dc74506c5576d inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a913a8f80e413a68d204dc74506c5576d"><td class="memItemLeft" align="right" valign="top">virtual partial void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a913a8f80e413a68d204dc74506c5576d">Draw</a> (SpriteBatch spriteBatch)</td></tr>
-<tr class="separator:a913a8f80e413a68d204dc74506c5576d inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46040e771578a8da3b6d8f311a3aa649 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a46040e771578a8da3b6d8f311a3aa649"><td class="memItemLeft" align="right" valign="top">virtual partial void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a46040e771578a8da3b6d8f311a3aa649">DrawFront</a> (SpriteBatch spriteBatch)</td></tr>
-<tr class="separator:a46040e771578a8da3b6d8f311a3aa649 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2c5a6878e104520fee74fa89646724e inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_ae2c5a6878e104520fee74fa89646724e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#ae2c5a6878e104520fee74fa89646724e">CUIComponent</a> (float? x=null, float? y=null, float? w=null, float? h=null)</td></tr>
-<tr class="separator:ae2c5a6878e104520fee74fa89646724e inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10c015b99d612ae165d754e03f37b70c inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a10c015b99d612ae165d754e03f37b70c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a10c015b99d612ae165d754e03f37b70c">Dispose</a> ()</td></tr>
-<tr class="separator:a10c015b99d612ae165d754e03f37b70c inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a455359a5e62d621d9cb51e1c2d349291 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a455359a5e62d621d9cb51e1c2d349291"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a455359a5e62d621d9cb51e1c2d349291">CleanUp</a> ()</td></tr>
-<tr class="separator:a455359a5e62d621d9cb51e1c2d349291 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b858e5ad7c74ea8845ae392111b5ee5 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a8b858e5ad7c74ea8845ae392111b5ee5"><td class="memItemLeft" align="right" valign="top">
-override string&#160;</td><td class="memItemRight" valign="bottom"><b>ToString</b> ()</td></tr>
-<tr class="separator:a8b858e5ad7c74ea8845ae392111b5ee5 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89030ca0a394eda8e2d4c96afeb932e4 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a89030ca0a394eda8e2d4c96afeb932e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a89030ca0a394eda8e2d4c96afeb932e4">Info</a> (object msg, [CallerFilePath] string source=&quot;&quot;, [CallerLineNumber] int lineNumber=0)</td></tr>
-<tr class="memdesc:a89030ca0a394eda8e2d4c96afeb932e4 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints component and then message.  <br /></td></tr>
-<tr class="separator:a89030ca0a394eda8e2d4c96afeb932e4 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48e093d1698f4c4ae59848a060779319 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a48e093d1698f4c4ae59848a060779319"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a48e093d1698f4c4ae59848a060779319">Remember</a> (<a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a> c, string name)</td></tr>
-<tr class="separator:a48e093d1698f4c4ae59848a060779319 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7390cc3452581c0d36d476920c214c5 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_ad7390cc3452581c0d36d476920c214c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#ad7390cc3452581c0d36d476920c214c5">Remember</a> (<a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a> c)</td></tr>
-<tr class="memdesc:ad7390cc3452581c0d36d476920c214c5 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">If it already has AKA.  <br /></td></tr>
-<tr class="separator:ad7390cc3452581c0d36d476920c214c5 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2969cacdbbf7946f5a8e901256b09530 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a2969cacdbbf7946f5a8e901256b09530"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a2969cacdbbf7946f5a8e901256b09530">Forget</a> (string name)</td></tr>
-<tr class="separator:a2969cacdbbf7946f5a8e901256b09530 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6705c92f70004b2401268c0968c842e9 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a6705c92f70004b2401268c0968c842e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a6705c92f70004b2401268c0968c842e9">Forget</a> (<a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a> c)</td></tr>
-<tr class="memdesc:a6705c92f70004b2401268c0968c842e9 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">If it already has AKA.  <br /></td></tr>
-<tr class="separator:a6705c92f70004b2401268c0968c842e9 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22317c977b5e65a61eca908118af236a inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a22317c977b5e65a61eca908118af236a"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a22317c977b5e65a61eca908118af236a">Get</a> (string name)</td></tr>
-<tr class="memdesc:a22317c977b5e65a61eca908118af236a inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns memorized component by name.  <br /></td></tr>
-<tr class="separator:a22317c977b5e65a61eca908118af236a inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61f6afeeae534deb327b8aed7ffcb6f8 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a61f6afeeae534deb327b8aed7ffcb6f8"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a61f6afeeae534deb327b8aed7ffcb6f8">Get&lt; T &gt;</a> (string name)</td></tr>
-<tr class="separator:a61f6afeeae534deb327b8aed7ffcb6f8 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ac0f246c9cd4da4b36c434cc75d9154 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a3ac0f246c9cd4da4b36c434cc75d9154"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a3ac0f246c9cd4da4b36c434cc75d9154">Click</a> ()</td></tr>
-<tr class="memdesc:a3ac0f246c9cd4da4b36c434cc75d9154 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulates Click.  <br /></td></tr>
-<tr class="separator:a3ac0f246c9cd4da4b36c434cc75d9154 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31f9d36b65e7b430c8d29e1a648b6401 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a31f9d36b65e7b430c8d29e1a648b6401"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><b>InvokeOnLayoutUpdated</b> ()</td></tr>
-<tr class="separator:a31f9d36b65e7b430c8d29e1a648b6401 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e4bd39431c9fcf17410f956d2462ca9 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a1e4bd39431c9fcf17410f956d2462ca9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a1e4bd39431c9fcf17410f956d2462ca9">Clone</a> ()</td></tr>
-<tr class="separator:a1e4bd39431c9fcf17410f956d2462ca9 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bae07e6a923991602fede9550777bb8 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a2bae07e6a923991602fede9550777bb8"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SaveStateAs</b> (string name)</td></tr>
-<tr class="separator:a2bae07e6a923991602fede9550777bb8 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b4c3434b6ae351d714559bc68cfe1dd inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a0b4c3434b6ae351d714559bc68cfe1dd"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LoadState</b> (string name)</td></tr>
-<tr class="separator:a0b4c3434b6ae351d714559bc68cfe1dd inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8558b493c9b5289f2fb59c842173781 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_ab8558b493c9b5289f2fb59c842173781"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ForgetState</b> (string name)</td></tr>
-<tr class="separator:ab8558b493c9b5289f2fb59c842173781 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96250256fd9401fe2e97dbb80b67f07a inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a96250256fd9401fe2e97dbb80b67f07a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a96250256fd9401fe2e97dbb80b67f07a">ApplyState</a> (<a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a> state)</td></tr>
-<tr class="separator:a96250256fd9401fe2e97dbb80b67f07a inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7eddcfc996ff05a21919bcea5cae71f6 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a7eddcfc996ff05a21919bcea5cae71f6"><td class="memItemLeft" align="right" valign="top">virtual XElement&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a7eddcfc996ff05a21919bcea5cae71f6">ToXML</a> (CUIAttribute propAttribute=CUIAttribute.CUISerializable)</td></tr>
-<tr class="separator:a7eddcfc996ff05a21919bcea5cae71f6 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd709a82e04dbc0a5877d1bb4dba586a inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_abd709a82e04dbc0a5877d1bb4dba586a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#abd709a82e04dbc0a5877d1bb4dba586a">FromXML</a> (XElement element)</td></tr>
-<tr class="separator:abd709a82e04dbc0a5877d1bb4dba586a inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aabf904d0894b16875e5f3a30dd2915b4 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_aabf904d0894b16875e5f3a30dd2915b4"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#aabf904d0894b16875e5f3a30dd2915b4">Serialize</a> (CUIAttribute propAttribute=CUIAttribute.CUISerializable)</td></tr>
-<tr class="separator:aabf904d0894b16875e5f3a30dd2915b4 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a506562a431758ef188f372ebf21c6858 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a506562a431758ef188f372ebf21c6858"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a506562a431758ef188f372ebf21c6858">SaveToFile</a> (string path, CUIAttribute propAttribute=CUIAttribute.CUISerializable)</td></tr>
-<tr class="separator:a506562a431758ef188f372ebf21c6858 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d05673fa79fb7a41985c46ca88ab647 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a5d05673fa79fb7a41985c46ca88ab647"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a5d05673fa79fb7a41985c46ca88ab647">Append</a> (<a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a> child, string name=null, [CallerMemberName] string memberName=&quot;&quot;)</td></tr>
-<tr class="memdesc:a5d05673fa79fb7a41985c46ca88ab647 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds children to the end of the list.  <br /></td></tr>
-<tr class="separator:a5d05673fa79fb7a41985c46ca88ab647 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21431d1bcb98626c736124039177b6c7 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a21431d1bcb98626c736124039177b6c7"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a21431d1bcb98626c736124039177b6c7">Prepend</a> (<a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a> child, string name=null, [CallerMemberName] string memberName=&quot;&quot;)</td></tr>
-<tr class="memdesc:a21431d1bcb98626c736124039177b6c7 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds children to the begining of the list.  <br /></td></tr>
-<tr class="separator:a21431d1bcb98626c736124039177b6c7 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d9c6c3f81adeb28c662464e41cb1fef inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a4d9c6c3f81adeb28c662464e41cb1fef"><td class="memItemLeft" align="right" valign="top">
-void&#160;</td><td class="memItemRight" valign="bottom"><b>RemoveSelf</b> ()</td></tr>
-<tr class="separator:a4d9c6c3f81adeb28c662464e41cb1fef inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c53e0eb9359c60af1111d4dcabccede inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a9c53e0eb9359c60af1111d4dcabccede"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a9c53e0eb9359c60af1111d4dcabccede">RemoveChild</a> (<a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a> child, [CallerMemberName] string memberName=&quot;&quot;)</td></tr>
-<tr class="separator:a9c53e0eb9359c60af1111d4dcabccede inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a657e903b85c2720e5990a644bd415183 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a657e903b85c2720e5990a644bd415183"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a657e903b85c2720e5990a644bd415183">RemoveAllChildren</a> ([CallerMemberName] string memberName=&quot;&quot;)</td></tr>
-<tr class="separator:a657e903b85c2720e5990a644bd415183 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_class_crab_u_i_1_1_c_u_i_component"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_class_crab_u_i_1_1_c_u_i_component')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CrabUI.CUIComponent</a></td></tr>
 <tr class="memitem:a93263210f578005db68357069bc3243e inherit pub_static_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a93263210f578005db68357069bc3243e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a93263210f578005db68357069bc3243e">RunRecursiveOn</a> (<a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a> component, Action&lt; <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>, int &gt; action, int depth=0)</td></tr>
 <tr class="memdesc:a93263210f578005db68357069bc3243e inherit pub_static_methods_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">designed to be versatile, in fact never used  <br /></td></tr>
@@ -525,10 +559,10 @@ static IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bott
 <tr class="separator:add6c440435c6397b9aa4941671be9ee1 inherit pub_static_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93398a0d83865aaadc2659e354efee6d inherit pub_static_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a93398a0d83865aaadc2659e354efee6d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a93398a0d83865aaadc2659e354efee6d">Deserialize</a> (XElement e)</td></tr>
 <tr class="separator:a93398a0d83865aaadc2659e354efee6d inherit pub_static_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b1d202067483fa421e8bbf36bfff751 inherit pub_static_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a3b1d202067483fa421e8bbf36bfff751"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a3b1d202067483fa421e8bbf36bfff751">LoadFromFile</a> (string path)</td></tr>
-<tr class="separator:a3b1d202067483fa421e8bbf36bfff751 inherit pub_static_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acae4363de0d28ebfa262538e58bb9908 inherit pub_static_methods_class_crab_u_i_1_1_c_u_i_component" id="r_acae4363de0d28ebfa262538e58bb9908"><td class="memItemLeft" align="right" valign="top">static T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#acae4363de0d28ebfa262538e58bb9908">LoadFromFile&lt; T &gt;</a> (string path)</td></tr>
-<tr class="separator:acae4363de0d28ebfa262538e58bb9908 inherit pub_static_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c16614058845c91454a59b2e0ccafd2 inherit pub_static_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a3c16614058845c91454a59b2e0ccafd2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a3c16614058845c91454a59b2e0ccafd2">LoadFromFile</a> (string path, bool saveAfterLoad=false)</td></tr>
+<tr class="separator:a3c16614058845c91454a59b2e0ccafd2 inherit pub_static_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab194e2d770a23947ecc81effe241c9e5 inherit pub_static_methods_class_crab_u_i_1_1_c_u_i_component" id="r_ab194e2d770a23947ecc81effe241c9e5"><td class="memItemLeft" align="right" valign="top">static T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#ab194e2d770a23947ecc81effe241c9e5">LoadFromFile&lt; T &gt;</a> (string path, bool saveAfterLoad=false)</td></tr>
+<tr class="separator:ab194e2d770a23947ecc81effe241c9e5 inherit pub_static_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_attribs_class_crab_u_i_1_1_c_u_i_component"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_attribs_class_crab_u_i_1_1_c_u_i_component')"><img src="closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CrabUI.CUIComponent</a></td></tr>
 <tr class="memitem:a793be20d19190029a5a478c756709ca8 inherit pub_static_attribs_class_crab_u_i_1_1_c_u_i_component" id="r_a793be20d19190029a5a478c756709ca8"><td class="memItemLeft" align="right" valign="top">static Dictionary&lt; int, WeakReference&lt; <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a793be20d19190029a5a478c756709ca8">ComponentsById</a> = new()</td></tr>
 <tr class="separator:a793be20d19190029a5a478c756709ca8 inherit pub_static_attribs_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -560,9 +594,9 @@ static IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bott
 <tr class="inherit_header pac_static_attribs_class_crab_u_i_1_1_c_u_i_component"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pac_static_attribs_class_crab_u_i_1_1_c_u_i_component')"><img src="closed.png" alt="-"/>&#160;Static Package Attributes inherited from <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CrabUI.CUIComponent</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Aka range input, aka scrollbar has draggable handle and outputs its relative pos in the slider [0..1]. </p>
+<div class="textblock"><p>Horizontal range input. </p>
 
-<p class="definition">Definition at line <a class="el" href="_crab_u_i_2_components_2_c_u_i_slider_8cs_source.html#l00016">16</a> of file <a class="el" href="_crab_u_i_2_components_2_c_u_i_slider_8cs_source.html">CUISlider.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_crab_u_i_2_components_2_sealed_2_c_u_i_slider_8cs_source.html#l00015">15</a> of file <a class="el" href="_crab_u_i_2_components_2_sealed_2_c_u_i_slider_8cs_source.html">CUISlider.cs</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa7615d3acdd558a6d37be476b4e6b292" name="aa7615d3acdd558a6d37be476b4e6b292"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa7615d3acdd558a6d37be476b4e6b292">&#9670;&#160;</a></span>CUISlider()</h2>
@@ -579,78 +613,265 @@ static IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bott
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_crab_u_i_2_components_2_c_u_i_slider_8cs_source.html#l00059">59</a> of file <a class="el" href="_crab_u_i_2_components_2_c_u_i_slider_8cs_source.html">CUISlider.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   59</span>                       : base()</div>
-<div class="line"><span class="lineno">   60</span>    {</div>
-<div class="line"><span class="lineno">   61</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#aa2ac25c8acbca42acf29f3bcfb947f59">ChildrenBoundaries</a> = CUIBoundaries.Box;</div>
-<div class="line"><span class="lineno">   62</span> </div>
-<div class="line"><span class="lineno">   63</span>      <span class="keyword">this</span>[<span class="stringliteral">&quot;slider&quot;</span>] = <a class="code hl_variable" href="#aa4596ea574c6c56ced2a6c4acbf9beb2">Slider</a> = <span class="keyword">new</span> CUIComponent()</div>
-<div class="line"><span class="lineno">   64</span>      {</div>
-<div class="line"><span class="lineno">   65</span>        <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a7db80658c26d4041f54ce3aa469854af">BackgroundColor</a> = Color.Blue,</div>
-<div class="line"><span class="lineno">   66</span>        <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a729c73296986b0fdb3d820c8d92858eb">Style</a> = <span class="keyword">new</span> CUIStyle(){</div>
-<div class="line"><span class="lineno">   67</span>          {<span class="stringliteral">&quot;BorderColor&quot;</span>, <span class="stringliteral">&quot;Transparent&quot;</span>}</div>
-<div class="line"><span class="lineno">   68</span>        },</div>
-<div class="line"><span class="lineno">   69</span>        Draggable = <span class="keyword">true</span>,</div>
-<div class="line"><span class="lineno">   70</span>        AddOnDrag = (x, y) =&gt; HandleSlide(),</div>
-<div class="line"><span class="lineno">   71</span>      };</div>
-<div class="line"><span class="lineno">   72</span> </div>
-<div class="line"><span class="lineno">   73</span>      OnLayoutUpdated += () =&gt;</div>
-<div class="line"><span class="lineno">   74</span>      {</div>
-<div class="line"><span class="lineno">   75</span>        Vertical = Real.Height &gt;= <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a8d064e18e047cd1aec85a4bb6349966a">Real</a>.Width;</div>
-<div class="line"><span class="lineno">   76</span> </div>
-<div class="line"><span class="lineno">   77</span>        <span class="keywordtype">float</span> minDimension = Math.Min(<a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a8d064e18e047cd1aec85a4bb6349966a">Real</a>.Width, <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a8d064e18e047cd1aec85a4bb6349966a">Real</a>.Height);</div>
-<div class="line"><span class="lineno">   78</span>        Slider.Absolute = Slider.Absolute with { Size = <span class="keyword">new</span> Vector2(minDimension, minDimension) };</div>
-<div class="line"><span class="lineno">   79</span> </div>
-<div class="line"><span class="lineno">   80</span>        <span class="keywordflow">if</span> (pendingLambda != <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">   81</span>        {</div>
-<div class="line"><span class="lineno">   82</span>          <span class="keywordflow">if</span> (Vertical)</div>
-<div class="line"><span class="lineno">   83</span>          {</div>
-<div class="line"><span class="lineno">   84</span>            Slider.Absolute = Slider.Absolute with</div>
-<div class="line"><span class="lineno">   85</span>            {</div>
-<div class="line"><span class="lineno">   86</span>              Top = pendingLambda * (Real.Height - <a class="code hl_variable" href="#aa4596ea574c6c56ced2a6c4acbf9beb2">Slider</a>.<a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#af5fd8b560d8752337777edb44aa2faab">Absolute</a>.Height)</div>
-<div class="line"><span class="lineno">   87</span>            };</div>
-<div class="line"><span class="lineno">   88</span>          }</div>
-<div class="line"><span class="lineno">   89</span>          <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   90</span>          {</div>
-<div class="line"><span class="lineno">   91</span>            Slider.Absolute = Slider.Absolute with</div>
-<div class="line"><span class="lineno">   92</span>            {</div>
-<div class="line"><span class="lineno">   93</span>              Left = pendingLambda * (Real.Width - <a class="code hl_variable" href="#aa4596ea574c6c56ced2a6c4acbf9beb2">Slider</a>.<a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#af5fd8b560d8752337777edb44aa2faab">Absolute</a>.Width)</div>
-<div class="line"><span class="lineno">   94</span>            };</div>
-<div class="line"><span class="lineno">   95</span>          }</div>
+<p class="definition">Definition at line <a class="el" href="_crab_u_i_2_components_2_sealed_2_c_u_i_slider_8cs_source.html#l00071">71</a> of file <a class="el" href="_crab_u_i_2_components_2_sealed_2_c_u_i_slider_8cs_source.html">CUISlider.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   71</span>                       : base()</div>
+<div class="line"><span class="lineno">   72</span>    {</div>
+<div class="line"><span class="lineno">   73</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#aa2ac25c8acbca42acf29f3bcfb947f59">ChildrenBoundaries</a> = CUIBoundaries.Box;</div>
+<div class="line"><span class="lineno">   74</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a729c73296986b0fdb3d820c8d92858eb">Style</a> = <span class="keyword">new</span> CUIStyle(){</div>
+<div class="line"><span class="lineno">   75</span>        {<span class="stringliteral">&quot;BackgroundColor&quot;</span>, <span class="stringliteral">&quot;Transparent&quot;</span>},</div>
+<div class="line"><span class="lineno">   76</span>        {<span class="stringliteral">&quot;BorderColor&quot;</span>, <span class="stringliteral">&quot;Transparent&quot;</span>},</div>
+<div class="line"><span class="lineno">   77</span>      };</div>
+<div class="line"><span class="lineno">   78</span> </div>
+<div class="line"><span class="lineno">   79</span>      <span class="keyword">this</span>[<span class="stringliteral">&quot;LeftEnding&quot;</span>] = LeftEnding = <span class="keyword">new</span> CUIComponent()</div>
+<div class="line"><span class="lineno">   80</span>      {</div>
+<div class="line"><span class="lineno">   81</span>        <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a7fae3cdaeecaf5bc24120cddfb4b2af2">Anchor</a> = CUIAnchor.CenterLeft,</div>
+<div class="line"><span class="lineno">   82</span>        <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a3bf46498c5f0dae185b27ebb3a452c98">Relative</a> = <span class="keyword">new</span> CUINullRect(h: 1),</div>
+<div class="line"><span class="lineno">   83</span>        CrossRelative = <span class="keyword">new</span> CUINullRect(w: 1),</div>
+<div class="line"><span class="lineno">   84</span>        <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#afb4fa6ba38747f13e2f962a2b5462ef4">BackgroundSprite</a> = CUI.TextureManager.GetCUISprite(2, 2, CUISpriteDrawMode.Resize, SpriteEffects.FlipHorizontally),</div>
+<div class="line"><span class="lineno">   85</span>        <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a729c73296986b0fdb3d820c8d92858eb">Style</a> = <span class="keyword">new</span> CUIStyle() { { <span class="stringliteral">&quot;BorderColor&quot;</span>, <span class="stringliteral">&quot;Transparent&quot;</span> } },</div>
+<div class="line"><span class="lineno">   86</span>      };</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>      <span class="keyword">this</span>[<span class="stringliteral">&quot;RightEnding&quot;</span>] = RightEnding = <span class="keyword">new</span> CUIComponent()</div>
+<div class="line"><span class="lineno">   89</span>      {</div>
+<div class="line"><span class="lineno">   90</span>        <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a7fae3cdaeecaf5bc24120cddfb4b2af2">Anchor</a> = CUIAnchor.CenterRight,</div>
+<div class="line"><span class="lineno">   91</span>        <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a3bf46498c5f0dae185b27ebb3a452c98">Relative</a> = <span class="keyword">new</span> CUINullRect(h: 1),</div>
+<div class="line"><span class="lineno">   92</span>        CrossRelative = <span class="keyword">new</span> CUINullRect(w: 1),</div>
+<div class="line"><span class="lineno">   93</span>        <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#afb4fa6ba38747f13e2f962a2b5462ef4">BackgroundSprite</a> = CUI.TextureManager.GetCUISprite(2, 2),</div>
+<div class="line"><span class="lineno">   94</span>        <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a729c73296986b0fdb3d820c8d92858eb">Style</a> = <span class="keyword">new</span> CUIStyle() { { <span class="stringliteral">&quot;BorderColor&quot;</span>, <span class="stringliteral">&quot;Transparent&quot;</span> } },</div>
+<div class="line"><span class="lineno">   95</span>      };</div>
 <div class="line"><span class="lineno">   96</span> </div>
-<div class="line"><span class="lineno">   97</span>          pendingLambda = <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">   98</span>        }</div>
-<div class="line"><span class="lineno">   99</span>      };</div>
-<div class="line"><span class="lineno">  100</span>    }</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>      <span class="keyword">this</span>[<span class="stringliteral">&quot;handle&quot;</span>] = <a class="code hl_variable" href="#a6cf1635561b9e4c32a7c542552e06a9b">Handle</a> = <span class="keyword">new</span> CUIComponent()</div>
+<div class="line"><span class="lineno">   99</span>      {</div>
+<div class="line"><span class="lineno">  100</span>        <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a729c73296986b0fdb3d820c8d92858eb">Style</a> = <span class="keyword">new</span> CUIStyle() { { <span class="stringliteral">&quot;BorderColor&quot;</span>, <span class="stringliteral">&quot;Transparent&quot;</span> } },</div>
+<div class="line"><span class="lineno">  101</span>        Draggable = <span class="keyword">true</span>,</div>
+<div class="line"><span class="lineno">  102</span>        <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#afb4fa6ba38747f13e2f962a2b5462ef4">BackgroundSprite</a> = CUI.TextureManager.GetCUISprite(0, 2),</div>
+<div class="line"><span class="lineno">  103</span>        <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a3bf46498c5f0dae185b27ebb3a452c98">Relative</a> = <span class="keyword">new</span> CUINullRect(h: 1),</div>
+<div class="line"><span class="lineno">  104</span>        CrossRelative = <span class="keyword">new</span> CUINullRect(w: 1),</div>
+<div class="line"><span class="lineno">  105</span>        AddOnDrag = (x, y) =&gt;</div>
+<div class="line"><span class="lineno">  106</span>        {</div>
+<div class="line"><span class="lineno">  107</span>          lambda = AdaptLambda(x);</div>
+<div class="line"><span class="lineno">  108</span>          <a class="code hl_event" href="#a47cb8f2e0955b0f9566d2031d1f77d02">OnSlide</a>?.Invoke(lambda);</div>
+<div class="line"><span class="lineno">  109</span>          <span class="keywordflow">if</span> (Command != <span class="keyword">null</span>) <a class="code hl_function" href="class_crab_u_i_1_1_c_u_i_component.html#aef3c99c80fd81413eb3df1bc9d15f708">Dispatch</a>(<span class="keyword">new</span> <a class="code hl_function" href="namespace_crab_u_i.html#aada5e995437d9c99a38882d830798b6c">CUICommand</a>(Command, lambda));</div>
+<div class="line"><span class="lineno">  110</span>        },</div>
+<div class="line"><span class="lineno">  111</span>      };</div>
+<div class="line"><span class="lineno">  112</span> </div>
+<div class="line"><span class="lineno">  113</span>      MasterColor = Color.White;</div>
+<div class="line"><span class="lineno">  114</span> </div>
+<div class="line"><span class="lineno">  115</span>      Handle.DragHandle.DragRelative = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  116</span> </div>
+<div class="line"><span class="lineno">  117</span>      MiddleSprite = CUI.TextureManager.GetSprite(<span class="stringliteral">&quot;CUI.png&quot;</span>, <span class="keyword">new</span> Rectangle(44, 64, 6, 32));</div>
+<div class="line"><span class="lineno">  118</span> </div>
+<div class="line"><span class="lineno">  119</span>      OnLayoutUpdated += () =&gt;</div>
+<div class="line"><span class="lineno">  120</span>      {</div>
+<div class="line"><span class="lineno">  121</span>        MiddleRect = <span class="keyword">new</span> CUIRect(</div>
+<div class="line"><span class="lineno">  122</span>          <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a8d064e18e047cd1aec85a4bb6349966a">Real</a>.Left + <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a8d064e18e047cd1aec85a4bb6349966a">Real</a>.Height,</div>
+<div class="line"><span class="lineno">  123</span>          <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a8d064e18e047cd1aec85a4bb6349966a">Real</a>.Top,</div>
+<div class="line"><span class="lineno">  124</span>          <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a8d064e18e047cd1aec85a4bb6349966a">Real</a>.Width - 2 * <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a8d064e18e047cd1aec85a4bb6349966a">Real</a>.Height,</div>
+<div class="line"><span class="lineno">  125</span>          <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a8d064e18e047cd1aec85a4bb6349966a">Real</a>.Height</div>
+<div class="line"><span class="lineno">  126</span>        );</div>
+<div class="line"><span class="lineno">  127</span> </div>
+<div class="line"><span class="lineno">  128</span>        <span class="keywordflow">if</span> (pendingLambda.HasValue)</div>
+<div class="line"><span class="lineno">  129</span>        {</div>
+<div class="line"><span class="lineno">  130</span>          Handle.Relative = Handle.Relative with</div>
+<div class="line"><span class="lineno">  131</span>          {</div>
+<div class="line"><span class="lineno">  132</span>            Left = Math.Clamp(pendingLambda.Value, 0, 1) * InOutMult,</div>
+<div class="line"><span class="lineno">  133</span>          };</div>
+<div class="line"><span class="lineno">  134</span>          pendingLambda = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  135</span>        }</div>
+<div class="line"><span class="lineno">  136</span>      };</div>
+<div class="line"><span class="lineno">  137</span> </div>
+<div class="line"><span class="lineno">  138</span> </div>
+<div class="line"><span class="lineno">  139</span>    }</div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a3bf46498c5f0dae185b27ebb3a452c98"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a3bf46498c5f0dae185b27ebb3a452c98">CrabUI.CUIComponent.Relative</a></div><div class="ttdeci">CUINullRect Relative</div><div class="ttdoc">Relative to parent size and position, [0..1].</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00283">CUIComponent.Props declaration.cs:284</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a729c73296986b0fdb3d820c8d92858eb"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a729c73296986b0fdb3d820c8d92858eb">CrabUI.CUIComponent.Style</a></div><div class="ttdeci">CUIStyle Style</div><div class="ttdoc">Allows you to assing parsable string or link to CUIPalette to any prop   It's indexable,...</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_style_8cs_source.html#l00043">CUIComponent.Style.cs:44</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a7db80658c26d4041f54ce3aa469854af"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a7db80658c26d4041f54ce3aa469854af">CrabUI.CUIComponent.BackgroundColor</a></div><div class="ttdeci">Color BackgroundColor</div><div class="ttdoc">Too lazy to implement sore.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00228">CUIComponent.Props declaration.cs:229</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a7fae3cdaeecaf5bc24120cddfb4b2af2"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a7fae3cdaeecaf5bc24120cddfb4b2af2">CrabUI.CUIComponent.Anchor</a></div><div class="ttdeci">Vector2 Anchor</div><div class="ttdoc">this point of this component</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00077">CUIComponent.Props declaration.cs:77</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a8d064e18e047cd1aec85a4bb6349966a"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a8d064e18e047cd1aec85a4bb6349966a">CrabUI.CUIComponent.Real</a></div><div class="ttdeci">CUIRect Real</div><div class="ttdoc">Calculated prop, position on real screen in pixels Should be fully calculated after CUIMainComponent....</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_calculated_8cs_source.html#l00109">CUIComponent.Calculated.cs:110</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_aa2ac25c8acbca42acf29f3bcfb947f59"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#aa2ac25c8acbca42acf29f3bcfb947f59">CrabUI.CUIComponent.ChildrenBoundaries</a></div><div class="ttdeci">Func&lt; CUIRect, CUIBoundaries &gt; ChildrenBoundaries</div><div class="ttdoc">Limits to children positions.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00061">CUIComponent.Props declaration.cs:61</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_af5fd8b560d8752337777edb44aa2faab"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#af5fd8b560d8752337777edb44aa2faab">CrabUI.CUIComponent.Absolute</a></div><div class="ttdeci">CUINullRect Absolute</div><div class="ttdoc">Absolute size and position in pixels.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00255">CUIComponent.Props declaration.cs:256</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_slider_html_aa4596ea574c6c56ced2a6c4acbf9beb2"><div class="ttname"><a href="#aa4596ea574c6c56ced2a6c4acbf9beb2">CrabUI.CUISlider.Slider</a></div><div class="ttdeci">CUIComponent Slider</div><div class="ttdoc">The handle.</div><div class="ttdef"><b>Definition</b> <a href="_crab_u_i_2_components_2_c_u_i_slider_8cs_source.html#l00043">CUISlider.cs:43</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_aa2ac25c8acbca42acf29f3bcfb947f59"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#aa2ac25c8acbca42acf29f3bcfb947f59">CrabUI.CUIComponent.ChildrenBoundaries</a></div><div class="ttdeci">Func&lt; CUIRect, CUIBoundaries &gt; ChildrenBoundaries</div><div class="ttdoc">Limits to children positions.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00068">CUIComponent.Props declaration.cs:68</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_aef3c99c80fd81413eb3df1bc9d15f708"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#aef3c99c80fd81413eb3df1bc9d15f708">CrabUI.CUIComponent.Dispatch</a></div><div class="ttdeci">void Dispatch(CUICommand command)</div><div class="ttdoc">Dispathes command up the component tree until someone consumes it.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_commands_8cs_source.html#l00072">CUIComponent.Commands.cs:72</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_afb4fa6ba38747f13e2f962a2b5462ef4"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#afb4fa6ba38747f13e2f962a2b5462ef4">CrabUI.CUIComponent.BackgroundSprite</a></div><div class="ttdeci">CUISprite BackgroundSprite</div><div class="ttdoc">Will be drawn in background with BackgroundColor   Default is solid white 1x1 texture.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00212">CUIComponent.Props declaration.cs:213</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_slider_html_a47cb8f2e0955b0f9566d2031d1f77d02"><div class="ttname"><a href="#a47cb8f2e0955b0f9566d2031d1f77d02">CrabUI.CUISlider.OnSlide</a></div><div class="ttdeci">Action&lt; float &gt; OnSlide</div><div class="ttdoc">Happens when handle is dragged, value is [0..1].</div><div class="ttdef"><b>Definition</b> <a href="_crab_u_i_2_components_2_sealed_2_c_u_i_slider_8cs_source.html#l00020">CUISlider.cs:20</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_slider_html_a6cf1635561b9e4c32a7c542552e06a9b"><div class="ttname"><a href="#a6cf1635561b9e4c32a7c542552e06a9b">CrabUI.CUISlider.Handle</a></div><div class="ttdeci">CUIComponent Handle</div><div class="ttdoc">The handle.</div><div class="ttdef"><b>Definition</b> <a href="_crab_u_i_2_components_2_sealed_2_c_u_i_slider_8cs_source.html#l00047">CUISlider.cs:47</a></div></div>
+<div class="ttc" id="anamespace_crab_u_i_html_aada5e995437d9c99a38882d830798b6c"><div class="ttname"><a href="namespace_crab_u_i.html#aada5e995437d9c99a38882d830798b6c">CrabUI.CUICommand</a></div><div class="ttdeci">record CUICommand(string Name, object data=null)</div><div class="ttdoc">Just an experiment, inspired by WPF commands.</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae505467d9bb85035e2379af7d1d5f976" name="ae505467d9bb85035e2379af7d1d5f976"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae505467d9bb85035e2379af7d1d5f976">&#9670;&#160;</a></span>Draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void CrabUI.CUISlider.Draw </td>
+          <td>(</td>
+          <td class="paramtype">SpriteBatch</td>          <td class="paramname"><span class="paramname"><em>spriteBatch</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Here component should be drawn. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">spriteBatch</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a913a8f80e413a68d204dc74506c5576d">CrabUI.CUIComponent</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_crab_u_i_2_components_2_sealed_2_c_u_i_slider_8cs_source.html#l00065">65</a> of file <a class="el" href="_crab_u_i_2_components_2_sealed_2_c_u_i_slider_8cs_source.html">CUISlider.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>    {</div>
+<div class="line"><span class="lineno">   67</span>      base.Draw(spriteBatch);</div>
+<div class="line"><span class="lineno">   68</span>      CUI.DrawRectangle(spriteBatch, MiddleRect, LeftEnding.<a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a7db80658c26d4041f54ce3aa469854af">BackgroundColor</a>, MiddleSprite);</div>
+<div class="line"><span class="lineno">   69</span>    }</div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a7db80658c26d4041f54ce3aa469854af"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a7db80658c26d4041f54ce3aa469854af">CrabUI.CUIComponent.BackgroundColor</a></div><div class="ttdeci">Color BackgroundColor</div><div class="ttdoc">Too lazy to implement sore.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00235">CUIComponent.Props declaration.cs:236</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="aa4596ea574c6c56ced2a6c4acbf9beb2" name="aa4596ea574c6c56ced2a6c4acbf9beb2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa4596ea574c6c56ced2a6c4acbf9beb2">&#9670;&#160;</a></span>Slider</h2>
+<a id="a6cf1635561b9e4c32a7c542552e06a9b" name="a6cf1635561b9e4c32a7c542552e06a9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cf1635561b9e4c32a7c542552e06a9b">&#9670;&#160;</a></span>Handle</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a> CrabUI.CUISlider.Slider</td>
+          <td class="memname"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a> CrabUI.CUISlider.Handle</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>The handle. </p>
 
-<p class="definition">Definition at line <a class="el" href="_crab_u_i_2_components_2_c_u_i_slider_8cs_source.html#l00043">43</a> of file <a class="el" href="_crab_u_i_2_components_2_c_u_i_slider_8cs_source.html">CUISlider.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_crab_u_i_2_components_2_sealed_2_c_u_i_slider_8cs_source.html#l00047">47</a> of file <a class="el" href="_crab_u_i_2_components_2_sealed_2_c_u_i_slider_8cs_source.html">CUISlider.cs</a>.</p>
+
+</div>
+</div>
+<a id="acb3ce9a76756b85c0b82fc7adb916c7e" name="acb3ce9a76756b85c0b82fc7adb916c7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb3ce9a76756b85c0b82fc7adb916c7e">&#9670;&#160;</a></span>LeftEnding</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a> CrabUI.CUISlider.LeftEnding</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_crab_u_i_2_components_2_sealed_2_c_u_i_slider_8cs_source.html#l00049">49</a> of file <a class="el" href="_crab_u_i_2_components_2_sealed_2_c_u_i_slider_8cs_source.html">CUISlider.cs</a>.</p>
+
+</div>
+</div>
+<a id="a69b9bf54d861373caeb74b23f8735c2c" name="a69b9bf54d861373caeb74b23f8735c2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69b9bf54d861373caeb74b23f8735c2c">&#9670;&#160;</a></span>MiddleRect</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_crab_u_i_1_1_c_u_i_rect.html">CUIRect</a> CrabUI.CUISlider.MiddleRect</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_crab_u_i_2_components_2_sealed_2_c_u_i_slider_8cs_source.html#l00053">53</a> of file <a class="el" href="_crab_u_i_2_components_2_sealed_2_c_u_i_slider_8cs_source.html">CUISlider.cs</a>.</p>
+
+</div>
+</div>
+<a id="a393a2f14af6f7083d24662215fc17e5c" name="a393a2f14af6f7083d24662215fc17e5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a393a2f14af6f7083d24662215fc17e5c">&#9670;&#160;</a></span>MiddleSprite</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_crab_u_i_1_1_c_u_i_sprite.html">CUISprite</a> CrabUI.CUISlider.MiddleSprite</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_crab_u_i_2_components_2_sealed_2_c_u_i_slider_8cs_source.html#l00051">51</a> of file <a class="el" href="_crab_u_i_2_components_2_sealed_2_c_u_i_slider_8cs_source.html">CUISlider.cs</a>.</p>
+
+</div>
+</div>
+<a id="a26e4c30e7ee4c61d454edbba41ded061" name="a26e4c30e7ee4c61d454edbba41ded061"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26e4c30e7ee4c61d454edbba41ded061">&#9670;&#160;</a></span>RightEnding</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a> CrabUI.CUISlider.RightEnding</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_crab_u_i_2_components_2_sealed_2_c_u_i_slider_8cs_source.html#l00050">50</a> of file <a class="el" href="_crab_u_i_2_components_2_sealed_2_c_u_i_slider_8cs_source.html">CUISlider.cs</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
+<a id="a82b565380026a965dd827bc5e6119283" name="a82b565380026a965dd827bc5e6119283"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82b565380026a965dd827bc5e6119283">&#9670;&#160;</a></span>Command</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string CrabUI.CUISlider.Command</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_crab_u_i_2_components_2_sealed_2_c_u_i_slider_8cs_source.html#l00021">21</a> of file <a class="el" href="_crab_u_i_2_components_2_sealed_2_c_u_i_slider_8cs_source.html">CUISlider.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   21</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a81b86211403291dc8fe1d593fa534d08" name="a81b86211403291dc8fe1d593fa534d08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81b86211403291dc8fe1d593fa534d08">&#9670;&#160;</a></span>InOutMult</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float CrabUI.CUISlider.InOutMult</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_crab_u_i_2_components_2_sealed_2_c_u_i_slider_8cs_source.html#l00024">24</a> of file <a class="el" href="_crab_u_i_2_components_2_sealed_2_c_u_i_slider_8cs_source.html">CUISlider.cs</a>.</p>
+
+</div>
+</div>
 <a id="a94e9eb09a89783b4cfafbbdaccbe4668" name="a94e9eb09a89783b4cfafbbdaccbe4668"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a94e9eb09a89783b4cfafbbdaccbe4668">&#9670;&#160;</a></span>Lambda</h2>
 
@@ -671,17 +892,47 @@ static IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bott
 </table>
 </div><div class="memdoc">
 
-<p>Relative handle position [0..1]. </p>
+<p class="definition">Definition at line <a class="el" href="_crab_u_i_2_components_2_sealed_2_c_u_i_slider_8cs_source.html#l00028">28</a> of file <a class="el" href="_crab_u_i_2_components_2_sealed_2_c_u_i_slider_8cs_source.html">CUISlider.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   29</span>    {</div>
+<div class="line"><span class="lineno">   30</span>      <span class="keyword">get</span> =&gt; lambda;</div>
+<div class="line"><span class="lineno">   31</span>      <span class="keyword">set</span></div>
+<div class="line"><span class="lineno">   32</span>      {</div>
+<div class="line"><span class="lineno">   33</span>        lambda = AdaptLambda(value);</div>
+<div class="line"><span class="lineno">   34</span>        pendingLambda = lambda;</div>
+<div class="line"><span class="lineno">   35</span>      }</div>
+<div class="line"><span class="lineno">   36</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a98ad60a28cee64b6794343c548bae9f3" name="a98ad60a28cee64b6794343c548bae9f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98ad60a28cee64b6794343c548bae9f3">&#9670;&#160;</a></span>MasterColor</h2>
 
-<p class="definition">Definition at line <a class="el" href="_crab_u_i_2_components_2_c_u_i_slider_8cs_source.html#l00030">30</a> of file <a class="el" href="_crab_u_i_2_components_2_c_u_i_slider_8cs_source.html">CUISlider.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   31</span>    {</div>
-<div class="line"><span class="lineno">   32</span>      <span class="keyword">get</span> =&gt; lambda;</div>
-<div class="line"><span class="lineno">   33</span>      <span class="keyword">set</span></div>
-<div class="line"><span class="lineno">   34</span>      {</div>
-<div class="line"><span class="lineno">   35</span>        lambda = value;</div>
-<div class="line"><span class="lineno">   36</span>        pendingLambda = value;</div>
-<div class="line"><span class="lineno">   37</span>      }</div>
-<div class="line"><span class="lineno">   38</span>    }</div>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Color CrabUI.CUISlider.MasterColor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_crab_u_i_2_components_2_sealed_2_c_u_i_slider_8cs_source.html#l00055">55</a> of file <a class="el" href="_crab_u_i_2_components_2_sealed_2_c_u_i_slider_8cs_source.html">CUISlider.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   56</span>    {</div>
+<div class="line"><span class="lineno">   57</span>      <span class="keyword">set</span></div>
+<div class="line"><span class="lineno">   58</span>      {</div>
+<div class="line"><span class="lineno">   59</span>        LeftEnding.BackgroundColor = value;</div>
+<div class="line"><span class="lineno">   60</span>        RightEnding.BackgroundColor = value;</div>
+<div class="line"><span class="lineno">   61</span>        Handle.BackgroundColor = value;</div>
+<div class="line"><span class="lineno">   62</span>      }</div>
+<div class="line"><span class="lineno">   63</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -700,12 +951,12 @@ static IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bott
 
 <p>Happens when handle is dragged, value is [0..1]. </p>
 
-<p class="definition">Definition at line <a class="el" href="_crab_u_i_2_components_2_c_u_i_slider_8cs_source.html#l00021">21</a> of file <a class="el" href="_crab_u_i_2_components_2_c_u_i_slider_8cs_source.html">CUISlider.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_crab_u_i_2_components_2_sealed_2_c_u_i_slider_8cs_source.html#l00020">20</a> of file <a class="el" href="_crab_u_i_2_components_2_sealed_2_c_u_i_slider_8cs_source.html">CUISlider.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>CSharp/Client/CrabUI/Components/<a class="el" href="_crab_u_i_2_components_2_c_u_i_slider_8cs_source.html">CUISlider.cs</a></li>
+<li>CSharp/Client/CrabUI/Components/Sealed/<a class="el" href="_crab_u_i_2_components_2_sealed_2_c_u_i_slider_8cs_source.html">CUISlider.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

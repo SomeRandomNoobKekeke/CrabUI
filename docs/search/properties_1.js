@@ -6,5 +6,6 @@ var searchData=
   ['borderbox_3',['BorderBox',['../class_crab_u_i_1_1_c_u_i_component.html#a51ef3d2adf35a7a47672cd54b75ffcbe',1,'CrabUI::CUIComponent']]],
   ['bordercolor_4',['BorderColor',['../class_crab_u_i_1_1_c_u_i_component.html#aa65f90b50fc3c8aaad18b0604d6760bf',1,'CrabUI::CUIComponent']]],
   ['borderthickness_5',['BorderThickness',['../class_crab_u_i_1_1_c_u_i_component.html#aa2566202d389966284d77b3c3d0b27e7',1,'CrabUI::CUIComponent']]],
-  ['bordervisible_6',['BorderVisible',['../class_crab_u_i_1_1_c_u_i_component.html#ad95ce16416873369a8e0d98b6cc92ab6',1,'CrabUI::CUIComponent']]]
+  ['bordervisible_6',['BorderVisible',['../class_crab_u_i_1_1_c_u_i_component.html#ad95ce16416873369a8e0d98b6cc92ab6',1,'CrabUI::CUIComponent']]],
+  ['breakserialization_7',['BreakSerialization',['../class_crab_u_i_1_1_c_u_i_component.html#a879f6b36b8694084f6d34443e980a8f9',1,'CrabUI::CUIComponent']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['load_0',['Load',['../class_crab_u_i_1_1_c_u_i_main_component.html#a8364f7e94fb25d5717f8125ce2df1d75',1,'CrabUI::CUIMainComponent']]],
-  ['log_1',['Log',['../class_crab_u_i_1_1_c_u_i.html#a2b97112f36caf3daeb5c0312b1282e7c',1,'CrabUI::CUI']]]
+  ['info_0',['Info',['../class_crab_u_i_1_1_c_u_i_component.html#a89030ca0a394eda8e2d4c96afeb932e4',1,'CrabUI.CUIComponent.Info()'],['../class_crab_u_i_1_1_c_u_i.html#acbc36774391662ec37d19f6532ea7940',1,'CrabUI.CUI.Info(object msg, [CallerFilePath] string source=&quot;&quot;, [CallerLineNumber] int lineNumber=0)']]],
+  ['initialize_1',['Initialize',['../class_crab_u_i_1_1_c_u_i.html#af3b7572fc0a25f689e8bdcf718ec3827',1,'CrabUI::CUI']]]
 ];

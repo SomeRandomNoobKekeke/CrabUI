@@ -42,9 +42,9 @@ namespace CrabUI
     {
       set
       {
-        InactiveColor = value.Multiply(0.5f).Opaque();
-        MouseOverColor = value.Multiply(0.8f).Opaque();
-        MousePressedColor = value.Opaque();
+        InactiveColor = new Color((int)(value.R * 0.5f), (int)(value.G * 0.5f), (int)(value.B * 0.5f), value.A);
+        MouseOverColor = new Color((int)(value.R * 0.8f), (int)(value.G * 0.8f), (int)(value.B * 0.8f), value.A);
+        MousePressedColor = value;
       }
     }
 

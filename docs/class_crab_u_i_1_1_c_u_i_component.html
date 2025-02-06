@@ -120,7 +120,7 @@ Inheritance diagram for CrabUI.CUIComponent:</div>
 <area href="class_crab_u_i_1_1_c_u_i_main_component.html" title="Orchestrating drawing and updating of it&#39;s children   Also a CUIComponent, but it&#39;s draw and update m..." alt="CrabUI.CUIMainComponent" shape="rect" coords="176,336,342,360"/>
 <area href="class_crab_u_i_1_1_c_u_i_map.html" title="Swipable and zoomable plane   Allows you to place components in a plane and connect them with lines l..." alt="CrabUI.CUIMap" shape="rect" coords="176,392,342,416"/>
 <area href="class_crab_u_i_1_1_c_u_i_pages.html" title="Container for other components   Can have only 1 child   Sets component as it&#39;s only child when you o..." alt="CrabUI.CUIPages" shape="rect" coords="176,448,342,472"/>
-<area href="class_crab_u_i_1_1_c_u_i_slider.html" title="Aka range input, aka scrollbar has draggable handle and outputs its relative pos in the slider [0...." alt="CrabUI.CUISlider" shape="rect" coords="176,504,342,528"/>
+<area href="class_crab_u_i_1_1_c_u_i_slider.html" title="Horizontal range input." alt="CrabUI.CUISlider" shape="rect" coords="176,504,342,528"/>
 <area href="class_crab_u_i_1_1_c_u_i_text_block.html" title="Passive block of text." alt="CrabUI.CUITextBlock" shape="rect" coords="176,560,342,584"/>
 <area href="class_crab_u_i_1_1_c_u_i_text_input.html" title="Text input." alt="CrabUI.CUITextInput" shape="rect" coords="176,616,342,640"/>
 <area href="class_crab_u_i_1_1_c_u_i_tick_box.html" title="Just a tick box." alt="CrabUI.CUITickBox" shape="rect" coords="176,672,342,696"/>
@@ -207,8 +207,17 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ForgetState</b> (stri
 <tr class="separator:abd709a82e04dbc0a5877d1bb4dba586a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabf904d0894b16875e5f3a30dd2915b4" id="r_aabf904d0894b16875e5f3a30dd2915b4"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aabf904d0894b16875e5f3a30dd2915b4">Serialize</a> (CUIAttribute propAttribute=CUIAttribute.CUISerializable)</td></tr>
 <tr class="separator:aabf904d0894b16875e5f3a30dd2915b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62097ffe320d2e8e287407c27387b022" id="r_a62097ffe320d2e8e287407c27387b022"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62097ffe320d2e8e287407c27387b022">LoadSelfFromFile</a> (string path, bool saveAfterLoad=false)</td></tr>
+<tr class="separator:a62097ffe320d2e8e287407c27387b022"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebd8d91645cfd45a7432cc70dc9c8804" id="r_aebd8d91645cfd45a7432cc70dc9c8804"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebd8d91645cfd45a7432cc70dc9c8804">SaveToTheSamePath</a> ()</td></tr>
+<tr class="separator:aebd8d91645cfd45a7432cc70dc9c8804"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a506562a431758ef188f372ebf21c6858" id="r_a506562a431758ef188f372ebf21c6858"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a506562a431758ef188f372ebf21c6858">SaveToFile</a> (string path, CUIAttribute propAttribute=CUIAttribute.CUISerializable)</td></tr>
 <tr class="separator:a506562a431758ef188f372ebf21c6858"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ea833cc01691fd22bd719bd9a2f4aac" id="r_a5ea833cc01691fd22bd719bd9a2f4aac"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ea833cc01691fd22bd719bd9a2f4aac">Hydrate</a> ()</td></tr>
+<tr class="memdesc:a5ea833cc01691fd22bd719bd9a2f4aac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Experimental method <br  />
+ Here you can add data/ callbacks/ save stuff to variables <br  />
+ after loading a xml skeletom.  <br /></td></tr>
+<tr class="separator:a5ea833cc01691fd22bd719bd9a2f4aac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d05673fa79fb7a41985c46ca88ab647" id="r_a5d05673fa79fb7a41985c46ca88ab647"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d05673fa79fb7a41985c46ca88ab647">Append</a> (<a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a> child, string name=null, [CallerMemberName] string memberName=&quot;&quot;)</td></tr>
 <tr class="memdesc:a5d05673fa79fb7a41985c46ca88ab647"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds children to the end of the list.  <br /></td></tr>
 <tr class="separator:a5d05673fa79fb7a41985c46ca88ab647"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -239,10 +248,10 @@ static IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bott
 <tr class="separator:add6c440435c6397b9aa4941671be9ee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93398a0d83865aaadc2659e354efee6d" id="r_a93398a0d83865aaadc2659e354efee6d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93398a0d83865aaadc2659e354efee6d">Deserialize</a> (XElement e)</td></tr>
 <tr class="separator:a93398a0d83865aaadc2659e354efee6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b1d202067483fa421e8bbf36bfff751" id="r_a3b1d202067483fa421e8bbf36bfff751"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b1d202067483fa421e8bbf36bfff751">LoadFromFile</a> (string path)</td></tr>
-<tr class="separator:a3b1d202067483fa421e8bbf36bfff751"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acae4363de0d28ebfa262538e58bb9908" id="r_acae4363de0d28ebfa262538e58bb9908"><td class="memItemLeft" align="right" valign="top">static T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acae4363de0d28ebfa262538e58bb9908">LoadFromFile&lt; T &gt;</a> (string path)</td></tr>
-<tr class="separator:acae4363de0d28ebfa262538e58bb9908"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c16614058845c91454a59b2e0ccafd2" id="r_a3c16614058845c91454a59b2e0ccafd2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c16614058845c91454a59b2e0ccafd2">LoadFromFile</a> (string path, bool saveAfterLoad=false)</td></tr>
+<tr class="separator:a3c16614058845c91454a59b2e0ccafd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab194e2d770a23947ecc81effe241c9e5" id="r_ab194e2d770a23947ecc81effe241c9e5"><td class="memItemLeft" align="right" valign="top">static T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab194e2d770a23947ecc81effe241c9e5">LoadFromFile&lt; T &gt;</a> (string path, bool saveAfterLoad=false)</td></tr>
+<tr class="separator:ab194e2d770a23947ecc81effe241c9e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -392,6 +401,10 @@ Properties</h2></td></tr>
 <tr class="memitem:a155615a8a7e4c8d2721fbb1d155bd395" id="r_a155615a8a7e4c8d2721fbb1d155bd395"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a155615a8a7e4c8d2721fbb1d155bd395">Unserializable</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a155615a8a7e4c8d2721fbb1d155bd395"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will prevent serialization to xml if true.  <br /></td></tr>
 <tr class="separator:a155615a8a7e4c8d2721fbb1d155bd395"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a879f6b36b8694084f6d34443e980a8f9" id="r_a879f6b36b8694084f6d34443e980a8f9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a879f6b36b8694084f6d34443e980a8f9">BreakSerialization</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a879f6b36b8694084f6d34443e980a8f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is this a serialization cutoff point <br  />
+ Parent will serialize children down to this component Further serialization should be hadled by this component.  <br /></td></tr>
+<tr class="separator:a879f6b36b8694084f6d34443e980a8f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a809e2ca8b575f4532ebf47285fd4760e" id="r_a809e2ca8b575f4532ebf47285fd4760e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a809e2ca8b575f4532ebf47285fd4760e">HideChildrenOutsideFrame</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a809e2ca8b575f4532ebf47285fd4760e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Should children be cut off by scissor rect, this is just visual, it's not the same as culling.  <br /></td></tr>
 <tr class="separator:a809e2ca8b575f4532ebf47285fd4760e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -486,6 +499,8 @@ Properties</h2></td></tr>
 <tr class="separator:a99c123dfdbfe8bae62dc2f699f0d465d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a235844250dd02510cd50e5b44ac48f52" id="r_a235844250dd02510cd50e5b44ac48f52"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_crab_u_i_1_1_c_u_i_null_rect.html">CUINullRect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a235844250dd02510cd50e5b44ac48f52">RelativeMax</a><code> [get, set]</code></td></tr>
 <tr class="separator:a235844250dd02510cd50e5b44ac48f52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9594fa13baf8acb34d1c6c4347d9313d" id="r_a9594fa13baf8acb34d1c6c4347d9313d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_crab_u_i_1_1_c_u_i_null_rect.html">CUINullRect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9594fa13baf8acb34d1c6c4347d9313d">CrossRelative</a><code> [get, set]</code></td></tr>
+<tr class="separator:a9594fa13baf8acb34d1c6c4347d9313d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89d735333ca5c9f218c69ec79ad9ae39" id="r_a89d735333ca5c9f218c69ec79ad9ae39"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89d735333ca5c9f218c69ec79ad9ae39">GridTemplateRows</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a89d735333ca5c9f218c69ec79ad9ae39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used in Grid, space separated Row sizes, either in pixels (123) or in % (123%)  <br /></td></tr>
 <tr class="separator:a89d735333ca5c9f218c69ec79ad9ae39"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -507,6 +522,10 @@ Properties</h2></td></tr>
 <tr class="memitem:aa615f83c1e38c1ea74eb4854cce4ed3c" id="r_aa615f83c1e38c1ea74eb4854cce4ed3c"><td class="memItemLeft" align="right" valign="top">Dictionary&lt; string, <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa615f83c1e38c1ea74eb4854cce4ed3c">States</a> = new()<code> [get, set]</code></td></tr>
 <tr class="memdesc:aa615f83c1e38c1ea74eb4854cce4ed3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">State is just a clone component with copies of all props.  <br /></td></tr>
 <tr class="separator:aa615f83c1e38c1ea74eb4854cce4ed3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d8af39a0926bdde5557b58d78cdfd61" id="r_a6d8af39a0926bdde5557b58d78cdfd61"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d8af39a0926bdde5557b58d78cdfd61">SaveAfterLoad</a> = true<code> [get, set]</code></td></tr>
+<tr class="separator:a6d8af39a0926bdde5557b58d78cdfd61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb07791aeb0b4a7f8c2c086526067f5c" id="r_acb07791aeb0b4a7f8c2c086526067f5c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb07791aeb0b4a7f8c2c086526067f5c">SavePath</a><code> [get, set]</code></td></tr>
+<tr class="separator:acb07791aeb0b4a7f8c2c086526067f5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a729c73296986b0fdb3d820c8d92858eb" id="r_a729c73296986b0fdb3d820c8d92858eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crab_u_i_1_1_c_u_i_style.html">CUIStyle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a729c73296986b0fdb3d820c8d92858eb">Style</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a729c73296986b0fdb3d820c8d92858eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows you to assing parsable string or link to <a class="el" href="class_crab_u_i_1_1_c_u_i_palette.html" title="Contains some predefined values for components, mostly for colors   CUIPalette.Current is selected pa...">CUIPalette</a> to any prop <br  />
  It's indexable, so you can access it like this: component.Style["BackgroundColor"] = "cyan" <br  />
@@ -640,7 +659,7 @@ Events</h2></td></tr>
 <div class="line"><span class="lineno">  214</span>    {</div>
 <div class="line"><span class="lineno">  215</span>      <a class="code hl_property" href="#a3bf46498c5f0dae185b27ebb3a452c98">Relative</a> = <span class="keyword">new</span> CUINullRect(x, y, w, h);</div>
 <div class="line"><span class="lineno">  216</span>    }</div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a3bf46498c5f0dae185b27ebb3a452c98"><div class="ttname"><a href="#a3bf46498c5f0dae185b27ebb3a452c98">CrabUI.CUIComponent.Relative</a></div><div class="ttdeci">CUINullRect Relative</div><div class="ttdoc">Relative to parent size and position, [0..1].</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00276">CUIComponent.Props declaration.cs:277</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a3bf46498c5f0dae185b27ebb3a452c98"><div class="ttname"><a href="#a3bf46498c5f0dae185b27ebb3a452c98">CrabUI.CUIComponent.Relative</a></div><div class="ttdeci">CUINullRect Relative</div><div class="ttdoc">Relative to parent size and position, [0..1].</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00283">CUIComponent.Props declaration.cs:284</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -937,10 +956,10 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html#l00211">211</a> of file <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html">CUIComponent.Serialization.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  212</span>    {</div>
-<div class="line"><span class="lineno">  213</span>      <span class="keywordflow">return</span> Deserialize(XElement.Parse(raw));</div>
-<div class="line"><span class="lineno">  214</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html#l00229">229</a> of file <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html">CUIComponent.Serialization.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  230</span>    {</div>
+<div class="line"><span class="lineno">  231</span>      <span class="keywordflow">return</span> Deserialize(XElement.Parse(raw));</div>
+<div class="line"><span class="lineno">  232</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -967,25 +986,26 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html#l00216">216</a> of file <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html">CUIComponent.Serialization.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  217</span>    {</div>
-<div class="line"><span class="lineno">  218</span>      <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">  219</span>      {</div>
-<div class="line"><span class="lineno">  220</span>        Type type = CUIReflection.GetComponentTypeByName(e.Name.ToString());</div>
-<div class="line"><span class="lineno">  221</span>        <span class="keywordflow">if</span> (type == <span class="keyword">null</span>) <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  222</span> </div>
-<div class="line"><span class="lineno">  223</span>        CUIComponent c = (CUIComponent)Activator.CreateInstance(type);</div>
-<div class="line"><span class="lineno">  224</span>        <span class="comment">// c.RemoveAllChildren();</span></div>
-<div class="line"><span class="lineno">  225</span>        c.FromXML(e);</div>
-<div class="line"><span class="lineno">  226</span> </div>
-<div class="line"><span class="lineno">  227</span>        <span class="keywordflow">return</span> c;</div>
-<div class="line"><span class="lineno">  228</span>      }</div>
-<div class="line"><span class="lineno">  229</span>      <span class="keywordflow">catch</span> (Exception ex)</div>
-<div class="line"><span class="lineno">  230</span>      {</div>
-<div class="line"><span class="lineno">  231</span>        CUIDebug.Error(ex);</div>
-<div class="line"><span class="lineno">  232</span>        <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  233</span>      }</div>
-<div class="line"><span class="lineno">  234</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html#l00234">234</a> of file <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html">CUIComponent.Serialization.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  235</span>    {</div>
+<div class="line"><span class="lineno">  236</span>      <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  237</span>      {</div>
+<div class="line"><span class="lineno">  238</span>        Type type = CUIReflection.GetComponentTypeByName(e.Name.ToString());</div>
+<div class="line"><span class="lineno">  239</span>        <span class="keywordflow">if</span> (type == <span class="keyword">null</span>) <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  240</span> </div>
+<div class="line"><span class="lineno">  241</span>        CUIComponent c = (CUIComponent)Activator.CreateInstance(type);</div>
+<div class="line"><span class="lineno">  242</span>        <span class="comment">// c.RemoveAllChildren();</span></div>
+<div class="line"><span class="lineno">  243</span>        c.FromXML(e);</div>
+<div class="line"><span class="lineno">  244</span>        CUIComponent.RunRecursiveOn(c, (component, i) =&gt; component.Hydrate());</div>
+<div class="line"><span class="lineno">  245</span> </div>
+<div class="line"><span class="lineno">  246</span>        <span class="keywordflow">return</span> c;</div>
+<div class="line"><span class="lineno">  247</span>      }</div>
+<div class="line"><span class="lineno">  248</span>      <span class="keywordflow">catch</span> (Exception ex)</div>
+<div class="line"><span class="lineno">  249</span>      {</div>
+<div class="line"><span class="lineno">  250</span>        CUIDebug.Error(ex);</div>
+<div class="line"><span class="lineno">  251</span>        <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  252</span>      }</div>
+<div class="line"><span class="lineno">  253</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1078,7 +1098,7 @@ Events</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="class_crab_u_i_1_1_c_u_i_button.html#a5cfbd4cc44541f142cd5d8c0b239bf04">CrabUI.CUIButton</a>, <a class="el" href="class_crab_u_i_1_1_c_u_i_frame.html#aa17c7f144ea5aefe220dac2f691987e8">CrabUI.CUIFrame</a>, <a class="el" href="class_crab_u_i_1_1_c_u_i_main_component.html#a03a2ee9937069d5bc66bfbafe425e71e">CrabUI.CUIMainComponent</a>, <a class="el" href="class_crab_u_i_1_1_c_u_i_text_block.html#a3c2320167e19158c7344661cea48d1be">CrabUI.CUITextBlock</a>, <a class="el" href="class_crab_u_i_1_1_c_u_i_text_input.html#a42c149b417c9029ce910c3234fc8bfbb">CrabUI.CUITextInput</a>, and <a class="el" href="class_crab_u_i_1_1_c_u_i_toggle_button.html#a83b1802d842e23962aa4778098946d3a">CrabUI.CUIToggleButton</a>.</p>
+<p>Reimplemented in <a class="el" href="class_crab_u_i_1_1_c_u_i_button.html#a5cfbd4cc44541f142cd5d8c0b239bf04">CrabUI.CUIButton</a>, <a class="el" href="class_crab_u_i_1_1_c_u_i_frame.html#aa17c7f144ea5aefe220dac2f691987e8">CrabUI.CUIFrame</a>, <a class="el" href="class_crab_u_i_1_1_c_u_i_main_component.html#a03a2ee9937069d5bc66bfbafe425e71e">CrabUI.CUIMainComponent</a>, <a class="el" href="class_crab_u_i_1_1_c_u_i_slider.html#ae505467d9bb85035e2379af7d1d5f976">CrabUI.CUISlider</a>, <a class="el" href="class_crab_u_i_1_1_c_u_i_text_block.html#a3c2320167e19158c7344661cea48d1be">CrabUI.CUITextBlock</a>, <a class="el" href="class_crab_u_i_1_1_c_u_i_text_input.html#a42c149b417c9029ce910c3234fc8bfbb">CrabUI.CUITextInput</a>, and <a class="el" href="class_crab_u_i_1_1_c_u_i_toggle_button.html#a83b1802d842e23962aa4778098946d3a">CrabUI.CUIToggleButton</a>.</p>
 
 </div>
 </div>
@@ -1105,7 +1125,7 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="class_crab_u_i_1_1_c_u_i_button.html#a5cfbd4cc44541f142cd5d8c0b239bf04">CrabUI.CUIButton</a>, <a class="el" href="class_crab_u_i_1_1_c_u_i_frame.html#aa17c7f144ea5aefe220dac2f691987e8">CrabUI.CUIFrame</a>, <a class="el" href="class_crab_u_i_1_1_c_u_i_main_component.html#a03a2ee9937069d5bc66bfbafe425e71e">CrabUI.CUIMainComponent</a>, <a class="el" href="class_crab_u_i_1_1_c_u_i_text_block.html#a3c2320167e19158c7344661cea48d1be">CrabUI.CUITextBlock</a>, <a class="el" href="class_crab_u_i_1_1_c_u_i_text_input.html#a42c149b417c9029ce910c3234fc8bfbb">CrabUI.CUITextInput</a>, and <a class="el" href="class_crab_u_i_1_1_c_u_i_toggle_button.html#a83b1802d842e23962aa4778098946d3a">CrabUI.CUIToggleButton</a>.</p>
+<p>Reimplemented in <a class="el" href="class_crab_u_i_1_1_c_u_i_button.html#a5cfbd4cc44541f142cd5d8c0b239bf04">CrabUI.CUIButton</a>, <a class="el" href="class_crab_u_i_1_1_c_u_i_frame.html#aa17c7f144ea5aefe220dac2f691987e8">CrabUI.CUIFrame</a>, <a class="el" href="class_crab_u_i_1_1_c_u_i_main_component.html#a03a2ee9937069d5bc66bfbafe425e71e">CrabUI.CUIMainComponent</a>, <a class="el" href="class_crab_u_i_1_1_c_u_i_slider.html#ae505467d9bb85035e2379af7d1d5f976">CrabUI.CUISlider</a>, <a class="el" href="class_crab_u_i_1_1_c_u_i_text_block.html#a3c2320167e19158c7344661cea48d1be">CrabUI.CUITextBlock</a>, <a class="el" href="class_crab_u_i_1_1_c_u_i_text_input.html#a42c149b417c9029ce910c3234fc8bfbb">CrabUI.CUITextInput</a>, and <a class="el" href="class_crab_u_i_1_1_c_u_i_toggle_button.html#a83b1802d842e23962aa4778098946d3a">CrabUI.CUIToggleButton</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="_c_u_i_component_8cs_source.html#l00138">138</a> of file <a class="el" href="_c_u_i_component_8cs_source.html">CUIComponent.cs</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  139</span>    {</div>
@@ -1118,12 +1138,12 @@ Events</h2></td></tr>
 <div class="line"><span class="lineno">  146</span>    }</div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a51ef3d2adf35a7a47672cd54b75ffcbe"><div class="ttname"><a href="#a51ef3d2adf35a7a47672cd54b75ffcbe">CrabUI.CUIComponent.BorderBox</a></div><div class="ttdeci">CUIRect BorderBox</div><div class="ttdoc">Calculated Prop, Real + BorderThickness.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_calculated_8cs_source.html#l00102">CUIComponent.Calculated.cs:102</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a79af0dd39d3bbf5a1b93067626bde64f"><div class="ttname"><a href="#a79af0dd39d3bbf5a1b93067626bde64f">CrabUI.CUIComponent.BackgroundVisible</a></div><div class="ttdeci">bool BackgroundVisible</div><div class="ttdoc">BackgroundColor != Color.Transparent.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_calculated_8cs_source.html#l00054">CUIComponent.Calculated.cs:54</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a7db80658c26d4041f54ce3aa469854af"><div class="ttname"><a href="#a7db80658c26d4041f54ce3aa469854af">CrabUI.CUIComponent.BackgroundColor</a></div><div class="ttdeci">Color BackgroundColor</div><div class="ttdoc">Too lazy to implement sore.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00228">CUIComponent.Props declaration.cs:229</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a7db80658c26d4041f54ce3aa469854af"><div class="ttname"><a href="#a7db80658c26d4041f54ce3aa469854af">CrabUI.CUIComponent.BackgroundColor</a></div><div class="ttdeci">Color BackgroundColor</div><div class="ttdoc">Too lazy to implement sore.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00235">CUIComponent.Props declaration.cs:236</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a8d064e18e047cd1aec85a4bb6349966a"><div class="ttname"><a href="#a8d064e18e047cd1aec85a4bb6349966a">CrabUI.CUIComponent.Real</a></div><div class="ttdeci">CUIRect Real</div><div class="ttdoc">Calculated prop, position on real screen in pixels Should be fully calculated after CUIMainComponent....</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_calculated_8cs_source.html#l00109">CUIComponent.Calculated.cs:110</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_aa2566202d389966284d77b3c3d0b27e7"><div class="ttname"><a href="#aa2566202d389966284d77b3c3d0b27e7">CrabUI.CUIComponent.BorderThickness</a></div><div class="ttdeci">float BorderThickness</div><div class="ttdoc">In pixels.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00152">CUIComponent.Props declaration.cs:152</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_aa65f90b50fc3c8aaad18b0604d6760bf"><div class="ttname"><a href="#aa65f90b50fc3c8aaad18b0604d6760bf">CrabUI.CUIComponent.BorderColor</a></div><div class="ttdeci">Color BorderColor</div><div class="ttdoc">Color.Transparent = don't draw.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00167">CUIComponent.Props declaration.cs:168</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_aa2566202d389966284d77b3c3d0b27e7"><div class="ttname"><a href="#aa2566202d389966284d77b3c3d0b27e7">CrabUI.CUIComponent.BorderThickness</a></div><div class="ttdeci">float BorderThickness</div><div class="ttdoc">In pixels.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00159">CUIComponent.Props declaration.cs:159</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_aa65f90b50fc3c8aaad18b0604d6760bf"><div class="ttname"><a href="#aa65f90b50fc3c8aaad18b0604d6760bf">CrabUI.CUIComponent.BorderColor</a></div><div class="ttdeci">Color BorderColor</div><div class="ttdoc">Color.Transparent = don't draw.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00174">CUIComponent.Props declaration.cs:175</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_ad95ce16416873369a8e0d98b6cc92ab6"><div class="ttname"><a href="#ad95ce16416873369a8e0d98b6cc92ab6">CrabUI.CUIComponent.BorderVisible</a></div><div class="ttdeci">bool BorderVisible</div><div class="ttdoc">BorderColor != Color.Transparent.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_calculated_8cs_source.html#l00058">CUIComponent.Calculated.cs:58</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_afb4fa6ba38747f13e2f962a2b5462ef4"><div class="ttname"><a href="#afb4fa6ba38747f13e2f962a2b5462ef4">CrabUI.CUIComponent.BackgroundSprite</a></div><div class="ttdeci">CUISprite BackgroundSprite</div><div class="ttdoc">Will be drawn in background with BackgroundColor   Default is solid white 1x1 texture.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00205">CUIComponent.Props declaration.cs:206</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_afb4fa6ba38747f13e2f962a2b5462ef4"><div class="ttname"><a href="#afb4fa6ba38747f13e2f962a2b5462ef4">CrabUI.CUIComponent.BackgroundSprite</a></div><div class="ttdeci">CUISprite BackgroundSprite</div><div class="ttdoc">Will be drawn in background with BackgroundColor   Default is solid white 1x1 texture.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00212">CUIComponent.Props declaration.cs:213</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1245,52 +1265,67 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html#l00104">104</a> of file <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html">CUIComponent.Serialization.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  105</span>    {</div>
-<div class="line"><span class="lineno">  106</span>      Type type = GetType();</div>
-<div class="line"><span class="lineno">  107</span> </div>
-<div class="line"><span class="lineno">  108</span>      CUITypeMetaData meta = CUITypeMetaData.Get(type);</div>
-<div class="line"><span class="lineno">  109</span> </div>
-<div class="line"><span class="lineno">  110</span>      <span class="keywordflow">foreach</span> (XAttribute attribute <span class="keywordflow">in</span> element.Attributes())</div>
-<div class="line"><span class="lineno">  111</span>      {</div>
-<div class="line"><span class="lineno">  112</span>        <span class="keywordflow">if</span> (!meta.Serializable.ContainsKey(attribute.Name.ToString()))</div>
-<div class="line"><span class="lineno">  113</span>        {</div>
-<div class="line"><span class="lineno">  114</span>          CUIDebug.Error($<span class="stringliteral">&quot;Can&#39;t parse prop {attribute.Name} in {type.Name} because type metadata doesn&#39;t contain that prop (is it a property? fields aren&#39;t supported yet)&quot;</span>);</div>
-<div class="line"><span class="lineno">  115</span>          <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  116</span>        }</div>
-<div class="line"><span class="lineno">  117</span> </div>
-<div class="line"><span class="lineno">  118</span>        PropertyInfo prop = meta.Serializable[attribute.Name.ToString()];</div>
-<div class="line"><span class="lineno">  119</span> </div>
-<div class="line"><span class="lineno">  120</span>        MethodInfo parse = <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  121</span>        <span class="keywordflow">if</span> (CUIExtensions.Parse.ContainsKey(prop.PropertyType))</div>
-<div class="line"><span class="lineno">  122</span>        {</div>
-<div class="line"><span class="lineno">  123</span>          parse = CUIExtensions.Parse[prop.PropertyType];</div>
-<div class="line"><span class="lineno">  124</span>        }</div>
-<div class="line"><span class="lineno">  125</span> </div>
-<div class="line"><span class="lineno">  126</span>        parse ??= prop.PropertyType.GetMethod(</div>
-<div class="line"><span class="lineno">  127</span>          <span class="stringliteral">&quot;Parse&quot;</span>,</div>
-<div class="line"><span class="lineno">  128</span>          BindingFlags.Public | BindingFlags.Static,</div>
-<div class="line"><span class="lineno">  129</span>          <span class="keyword">new</span> Type[] { typeof(string) }</div>
-<div class="line"><span class="lineno">  130</span>        );</div>
-<div class="line"><span class="lineno">  131</span> </div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html#l00111">111</a> of file <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html">CUIComponent.Serialization.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  112</span>    {</div>
+<div class="line"><span class="lineno">  113</span>      Type type = GetType();</div>
+<div class="line"><span class="lineno">  114</span> </div>
+<div class="line"><span class="lineno">  115</span>      CUITypeMetaData meta = CUITypeMetaData.Get(type);</div>
+<div class="line"><span class="lineno">  116</span> </div>
+<div class="line"><span class="lineno">  117</span>      <span class="keywordflow">foreach</span> (XAttribute attribute <span class="keywordflow">in</span> element.Attributes())</div>
+<div class="line"><span class="lineno">  118</span>      {</div>
+<div class="line"><span class="lineno">  119</span>        <span class="keywordflow">if</span> (!meta.Serializable.ContainsKey(attribute.Name.ToString()))</div>
+<div class="line"><span class="lineno">  120</span>        {</div>
+<div class="line"><span class="lineno">  121</span>          CUIDebug.Error($<span class="stringliteral">&quot;Can&#39;t parse prop {attribute.Name} in {type.Name} because type metadata doesn&#39;t contain that prop (is it a property? fields aren&#39;t supported yet)&quot;</span>);</div>
+<div class="line"><span class="lineno">  122</span>          <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  123</span>        }</div>
+<div class="line"><span class="lineno">  124</span> </div>
+<div class="line"><span class="lineno">  125</span>        PropertyInfo prop = meta.Serializable[attribute.Name.ToString()];</div>
+<div class="line"><span class="lineno">  126</span> </div>
+<div class="line"><span class="lineno">  127</span>        MethodInfo parse = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  128</span>        <span class="keywordflow">if</span> (CUIExtensions.Parse.ContainsKey(prop.PropertyType))</div>
+<div class="line"><span class="lineno">  129</span>        {</div>
+<div class="line"><span class="lineno">  130</span>          parse = CUIExtensions.Parse[prop.PropertyType];</div>
+<div class="line"><span class="lineno">  131</span>        }</div>
 <div class="line"><span class="lineno">  132</span> </div>
-<div class="line"><span class="lineno">  133</span>        <span class="keywordflow">if</span> (parse == <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">  134</span>        {</div>
-<div class="line"><span class="lineno">  135</span>          CUIDebug.Error($<span class="stringliteral">&quot;Can&#39;t parse prop {prop.Name} in {type.Name} because it&#39;s type {prop.PropertyType.Name} is missing Parse method&quot;</span>);</div>
-<div class="line"><span class="lineno">  136</span>          <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  137</span>        }</div>
+<div class="line"><span class="lineno">  133</span>        parse ??= prop.PropertyType.GetMethod(</div>
+<div class="line"><span class="lineno">  134</span>          <span class="stringliteral">&quot;Parse&quot;</span>,</div>
+<div class="line"><span class="lineno">  135</span>          BindingFlags.Public | BindingFlags.Static,</div>
+<div class="line"><span class="lineno">  136</span>          <span class="keyword">new</span> Type[] { typeof(string) }</div>
+<div class="line"><span class="lineno">  137</span>        );</div>
 <div class="line"><span class="lineno">  138</span> </div>
-<div class="line"><span class="lineno">  139</span>        <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">  140</span>        {</div>
-<div class="line"><span class="lineno">  141</span>          <span class="keywordtype">object</span> result = parse.Invoke(<span class="keyword">null</span>, <span class="keyword">new</span> <span class="keywordtype">object</span>[] { attribute.Value });</div>
-<div class="line"><span class="lineno">  142</span>          prop.SetValue(<span class="keyword">this</span>, result);</div>
-<div class="line"><span class="lineno">  143</span>        }</div>
-<div class="line"><span class="lineno">  144</span>        <span class="keywordflow">catch</span> (Exception e)</div>
-<div class="line"><span class="lineno">  145</span>        {</div>
-<div class="line"><span class="lineno">  146</span>          CUIDebug.Error($<span class="stringliteral">&quot;Can&#39;t parse {attribute.Value} into {prop.PropertyType.Name}\n{e}&quot;</span>);</div>
-<div class="line"><span class="lineno">  147</span>        }</div>
-<div class="line"><span class="lineno">  148</span>      }</div>
-<div class="line"><span class="lineno">  149</span>    }</div>
+<div class="line"><span class="lineno">  139</span> </div>
+<div class="line"><span class="lineno">  140</span>        <span class="keywordflow">if</span> (parse == <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">  141</span>        {</div>
+<div class="line"><span class="lineno">  142</span>          <span class="keywordflow">if</span> (prop.PropertyType.IsEnum)</div>
+<div class="line"><span class="lineno">  143</span>          {</div>
+<div class="line"><span class="lineno">  144</span>            <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  145</span>            {</div>
+<div class="line"><span class="lineno">  146</span>              prop.SetValue(<span class="keyword">this</span>, Enum.Parse(prop.PropertyType, attribute.Value));</div>
+<div class="line"><span class="lineno">  147</span>            }</div>
+<div class="line"><span class="lineno">  148</span>            <span class="keywordflow">catch</span> (Exception e)</div>
+<div class="line"><span class="lineno">  149</span>            {</div>
+<div class="line"><span class="lineno">  150</span>              CUIDebug.Error($<span class="stringliteral">&quot;Can&#39;t parse {attribute.Value} into {prop.PropertyType.Name}\n{e}&quot;</span>);</div>
+<div class="line"><span class="lineno">  151</span>            }</div>
+<div class="line"><span class="lineno">  152</span>          }</div>
+<div class="line"><span class="lineno">  153</span>          <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  154</span>          {</div>
+<div class="line"><span class="lineno">  155</span>            CUIDebug.Error($<span class="stringliteral">&quot;Can&#39;t parse prop {prop.Name} in {type.Name} because it&#39;s type {prop.PropertyType.Name} is missing Parse method&quot;</span>);</div>
+<div class="line"><span class="lineno">  156</span>          }</div>
+<div class="line"><span class="lineno">  157</span>        }</div>
+<div class="line"><span class="lineno">  158</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  159</span>        {</div>
+<div class="line"><span class="lineno">  160</span>          <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  161</span>          {</div>
+<div class="line"><span class="lineno">  162</span>            <span class="keywordtype">object</span> result = parse.Invoke(<span class="keyword">null</span>, <span class="keyword">new</span> <span class="keywordtype">object</span>[] { attribute.Value });</div>
+<div class="line"><span class="lineno">  163</span>            prop.SetValue(<span class="keyword">this</span>, result);</div>
+<div class="line"><span class="lineno">  164</span>          }</div>
+<div class="line"><span class="lineno">  165</span>          <span class="keywordflow">catch</span> (Exception e)</div>
+<div class="line"><span class="lineno">  166</span>          {</div>
+<div class="line"><span class="lineno">  167</span>            CUIDebug.Error($<span class="stringliteral">&quot;Can&#39;t parse {attribute.Value} into {prop.PropertyType.Name}\n{e}&quot;</span>);</div>
+<div class="line"><span class="lineno">  168</span>          }</div>
+<div class="line"><span class="lineno">  169</span>        }</div>
+<div class="line"><span class="lineno">  170</span>      }</div>
+<div class="line"><span class="lineno">  171</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1404,22 +1439,22 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html#l00087">87</a> of file <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html">CUIComponent.Serialization.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   88</span>    {</div>
-<div class="line"><span class="lineno">   89</span>      <span class="keywordflow">foreach</span> (XElement childElement <span class="keywordflow">in</span> element.Elements())</div>
-<div class="line"><span class="lineno">   90</span>      {</div>
-<div class="line"><span class="lineno">   91</span>        Type childType = CUIReflection.GetComponentTypeByName(childElement.Name.ToString());</div>
-<div class="line"><span class="lineno">   92</span>        <span class="keywordflow">if</span> (childType == <span class="keyword">null</span>) <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">   93</span> </div>
-<div class="line"><span class="lineno">   94</span>        CUIComponent child = (CUIComponent)Activator.CreateInstance(childType);</div>
-<div class="line"><span class="lineno">   95</span>        child.FromXML(childElement);</div>
-<div class="line"><span class="lineno">   96</span> </div>
-<div class="line"><span class="lineno">   97</span>        <span class="comment">//CUI.Log($&quot;{this}[{child.AKA}] = {child} &quot;);</span></div>
-<div class="line"><span class="lineno">   98</span>        this.<a class="code hl_function" href="#a5d05673fa79fb7a41985c46ca88ab647">Append</a>(child, child.AKA);</div>
-<div class="line"><span class="lineno">   99</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html#l00094">94</a> of file <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html">CUIComponent.Serialization.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   95</span>    {</div>
+<div class="line"><span class="lineno">   96</span>      <span class="keywordflow">foreach</span> (XElement childElement <span class="keywordflow">in</span> element.Elements())</div>
+<div class="line"><span class="lineno">   97</span>      {</div>
+<div class="line"><span class="lineno">   98</span>        Type childType = CUIReflection.GetComponentTypeByName(childElement.Name.ToString());</div>
+<div class="line"><span class="lineno">   99</span>        <span class="keywordflow">if</span> (childType == <span class="keyword">null</span>) <span class="keywordflow">continue</span>;</div>
 <div class="line"><span class="lineno">  100</span> </div>
-<div class="line"><span class="lineno">  101</span>      ExtractProps(element);</div>
-<div class="line"><span class="lineno">  102</span>    }</div>
+<div class="line"><span class="lineno">  101</span>        CUIComponent child = (CUIComponent)Activator.CreateInstance(childType);</div>
+<div class="line"><span class="lineno">  102</span>        child.FromXML(childElement);</div>
+<div class="line"><span class="lineno">  103</span> </div>
+<div class="line"><span class="lineno">  104</span>        <span class="comment">//CUI.Log($&quot;{this}[{child.AKA}] = {child} &quot;);</span></div>
+<div class="line"><span class="lineno">  105</span>        this.<a class="code hl_function" href="#a5d05673fa79fb7a41985c46ca88ab647">Append</a>(child, child.AKA);</div>
+<div class="line"><span class="lineno">  106</span>      }</div>
+<div class="line"><span class="lineno">  107</span> </div>
+<div class="line"><span class="lineno">  108</span>      ExtractProps(element);</div>
+<div class="line"><span class="lineno">  109</span>    }</div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a5d05673fa79fb7a41985c46ca88ab647"><div class="ttname"><a href="#a5d05673fa79fb7a41985c46ca88ab647">CrabUI.CUIComponent.Append</a></div><div class="ttdeci">virtual CUIComponent Append(CUIComponent child, string name=null, [CallerMemberName] string memberName=&quot;&quot;)</div><div class="ttdoc">Adds children to the end of the list.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_tree_8cs_source.html#l00088">CUIComponent.Tree.cs:88</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -1535,6 +1570,40 @@ Events</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="a5ea833cc01691fd22bd719bd9a2f4aac" name="a5ea833cc01691fd22bd719bd9a2f4aac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ea833cc01691fd22bd719bd9a2f4aac">&#9670;&#160;</a></span>Hydrate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void CrabUI.CUIComponent.Hydrate </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Experimental method <br  />
+ Here you can add data/ callbacks/ save stuff to variables <br  />
+ after loading a xml skeletom. </p>
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html#l00341">341</a> of file <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html">CUIComponent.Serialization.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  342</span>    {</div>
+<div class="line"><span class="lineno">  343</span> </div>
+<div class="line"><span class="lineno">  344</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a89030ca0a394eda8e2d4c96afeb932e4" name="a89030ca0a394eda8e2d4c96afeb932e4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a89030ca0a394eda8e2d4c96afeb932e4">&#9670;&#160;</a></span>Info()</h2>
 
@@ -1579,8 +1648,8 @@ Events</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a3b1d202067483fa421e8bbf36bfff751" name="a3b1d202067483fa421e8bbf36bfff751"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b1d202067483fa421e8bbf36bfff751">&#9670;&#160;</a></span>LoadFromFile()</h2>
+<a id="a3c16614058845c91454a59b2e0ccafd2" name="a3c16614058845c91454a59b2e0ccafd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c16614058845c91454a59b2e0ccafd2">&#9670;&#160;</a></span>LoadFromFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1591,8 +1660,12 @@ Events</h2></td></tr>
         <tr>
           <td class="memname">static <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a> CrabUI.CUIComponent.LoadFromFile </td>
           <td>(</td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>path</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>saveAfterLoad</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -1602,24 +1675,29 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html#l00236">236</a> of file <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html">CUIComponent.Serialization.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  237</span>    {</div>
-<div class="line"><span class="lineno">  238</span>      <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">  239</span>      {</div>
-<div class="line"><span class="lineno">  240</span>        XDocument xdoc = XDocument.Load(path);</div>
-<div class="line"><span class="lineno">  241</span>        <span class="keywordflow">return</span> Deserialize(xdoc.Root);</div>
-<div class="line"><span class="lineno">  242</span>      }</div>
-<div class="line"><span class="lineno">  243</span>      <span class="keywordflow">catch</span> (Exception ex)</div>
-<div class="line"><span class="lineno">  244</span>      {</div>
-<div class="line"><span class="lineno">  245</span>        CUIDebug.Error(ex);</div>
-<div class="line"><span class="lineno">  246</span>        <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  247</span>      }</div>
-<div class="line"><span class="lineno">  248</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html#l00274">274</a> of file <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html">CUIComponent.Serialization.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  275</span>    {</div>
+<div class="line"><span class="lineno">  276</span>      <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  277</span>      {</div>
+<div class="line"><span class="lineno">  278</span>        XDocument xdoc = XDocument.Load(path);</div>
+<div class="line"><span class="lineno">  279</span>        CUIComponent result = Deserialize(xdoc.Root);</div>
+<div class="line"><span class="lineno">  280</span>        result.SavePath = path;</div>
+<div class="line"><span class="lineno">  281</span> </div>
+<div class="line"><span class="lineno">  282</span>        <span class="keywordflow">if</span> (SaveAfterLoad &amp;&amp; saveAfterLoad) result.SaveToTheSamePath();</div>
+<div class="line"><span class="lineno">  283</span> </div>
+<div class="line"><span class="lineno">  284</span>        <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  285</span>      }</div>
+<div class="line"><span class="lineno">  286</span>      <span class="keywordflow">catch</span> (Exception ex)</div>
+<div class="line"><span class="lineno">  287</span>      {</div>
+<div class="line"><span class="lineno">  288</span>        CUIDebug.Error(ex);</div>
+<div class="line"><span class="lineno">  289</span>        <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  290</span>      }</div>
+<div class="line"><span class="lineno">  291</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="acae4363de0d28ebfa262538e58bb9908" name="acae4363de0d28ebfa262538e58bb9908"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acae4363de0d28ebfa262538e58bb9908">&#9670;&#160;</a></span>LoadFromFile&lt; T &gt;()</h2>
+<a id="ab194e2d770a23947ecc81effe241c9e5" name="ab194e2d770a23947ecc81effe241c9e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab194e2d770a23947ecc81effe241c9e5">&#9670;&#160;</a></span>LoadFromFile&lt; T &gt;()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1630,8 +1708,12 @@ Events</h2></td></tr>
         <tr>
           <td class="memname">static T CrabUI.CUIComponent.LoadFromFile&lt; T &gt; </td>
           <td>(</td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>path</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>saveAfterLoad</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -1649,20 +1731,65 @@ Events</h2></td></tr>
 </dl>
 </div>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html#l00250">250</a> of file <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html">CUIComponent.Serialization.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  250</span>                                                         : CUIComponent</div>
-<div class="line"><span class="lineno">  251</span>    {</div>
-<div class="line"><span class="lineno">  252</span>      <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">  253</span>      {</div>
-<div class="line"><span class="lineno">  254</span>        XDocument xdoc = XDocument.Load(path);</div>
-<div class="line"><span class="lineno">  255</span>        <span class="keywordflow">return</span> (T)Deserialize(xdoc.Root);</div>
-<div class="line"><span class="lineno">  256</span>      }</div>
-<div class="line"><span class="lineno">  257</span>      <span class="keywordflow">catch</span> (Exception ex)</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html#l00293">293</a> of file <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html">CUIComponent.Serialization.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  293</span>                                                                                     : CUIComponent</div>
+<div class="line"><span class="lineno">  294</span>    {</div>
+<div class="line"><span class="lineno">  295</span>      <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  296</span>      {</div>
+<div class="line"><span class="lineno">  297</span>        XDocument xdoc = XDocument.Load(path);</div>
+<div class="line"><span class="lineno">  298</span>        T result = (T)Deserialize(xdoc.Root);</div>
+<div class="line"><span class="lineno">  299</span>        result.SavePath = path;</div>
+<div class="line"><span class="lineno">  300</span> </div>
+<div class="line"><span class="lineno">  301</span>        <span class="keywordflow">if</span> (SaveAfterLoad &amp;&amp; saveAfterLoad) result.SaveToTheSamePath();</div>
+<div class="line"><span class="lineno">  302</span> </div>
+<div class="line"><span class="lineno">  303</span>        <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  304</span>      }</div>
+<div class="line"><span class="lineno">  305</span>      <span class="keywordflow">catch</span> (Exception ex)</div>
+<div class="line"><span class="lineno">  306</span>      {</div>
+<div class="line"><span class="lineno">  307</span>        CUIDebug.Error(ex);</div>
+<div class="line"><span class="lineno">  308</span>        <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  309</span>      }</div>
+<div class="line"><span class="lineno">  310</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a62097ffe320d2e8e287407c27387b022" name="a62097ffe320d2e8e287407c27387b022"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62097ffe320d2e8e287407c27387b022">&#9670;&#160;</a></span>LoadSelfFromFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CrabUI.CUIComponent.LoadSelfFromFile </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>path</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>saveAfterLoad</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html#l00255">255</a> of file <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html">CUIComponent.Serialization.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  256</span>    {</div>
+<div class="line"><span class="lineno">  257</span>      <span class="keywordflow">try</span></div>
 <div class="line"><span class="lineno">  258</span>      {</div>
-<div class="line"><span class="lineno">  259</span>        CUIDebug.Error(ex);</div>
-<div class="line"><span class="lineno">  260</span>        <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  261</span>      }</div>
-<div class="line"><span class="lineno">  262</span>    }</div>
+<div class="line"><span class="lineno">  259</span>        XDocument xdoc = XDocument.Load(path);</div>
+<div class="line"><span class="lineno">  260</span> </div>
+<div class="line"><span class="lineno">  261</span>        RemoveAllChildren();</div>
+<div class="line"><span class="lineno">  262</span>        FromXML(xdoc.Root);</div>
+<div class="line"><span class="lineno">  263</span>        CUIComponent.RunRecursiveOn(<span class="keyword">this</span>, (component, i) =&gt; component.Hydrate());</div>
+<div class="line"><span class="lineno">  264</span>        SavePath = path;</div>
+<div class="line"><span class="lineno">  265</span> </div>
+<div class="line"><span class="lineno">  266</span>        <span class="keywordflow">if</span> (SaveAfterLoad &amp;&amp; saveAfterLoad) SaveToTheSamePath();</div>
+<div class="line"><span class="lineno">  267</span>      }</div>
+<div class="line"><span class="lineno">  268</span>      <span class="keywordflow">catch</span> (Exception ex)</div>
+<div class="line"><span class="lineno">  269</span>      {</div>
+<div class="line"><span class="lineno">  270</span>        CUI.Warning(ex);</div>
+<div class="line"><span class="lineno">  271</span>      }</div>
+<div class="line"><span class="lineno">  272</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1693,51 +1820,47 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html#l00151">151</a> of file <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html">CUIComponent.Serialization.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  152</span>    {</div>
-<div class="line"><span class="lineno">  153</span>      Type type = GetType();</div>
-<div class="line"><span class="lineno">  154</span>      CUITypeMetaData meta = CUITypeMetaData.Get(type);</div>
-<div class="line"><span class="lineno">  155</span> </div>
-<div class="line"><span class="lineno">  156</span>      SortedDictionary&lt;string, PropertyInfo&gt; props = propAttribute <span class="keywordflow">switch</span></div>
-<div class="line"><span class="lineno">  157</span>      {</div>
-<div class="line"><span class="lineno">  158</span>        CUIAttribute.CUISerializable =&gt; meta.Serializable,</div>
-<div class="line"><span class="lineno">  159</span>        CUIAttribute.Calculated =&gt; meta.Calculated,</div>
-<div class="line"><span class="lineno">  160</span>        _ =&gt; meta.Serializable,</div>
-<div class="line"><span class="lineno">  161</span>      };</div>
-<div class="line"><span class="lineno">  162</span> </div>
-<div class="line"><span class="lineno">  163</span>      <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> key <span class="keywordflow">in</span> props.Keys)</div>
-<div class="line"><span class="lineno">  164</span>      {</div>
-<div class="line"><span class="lineno">  165</span>        <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">  166</span>        {</div>
-<div class="line"><span class="lineno">  167</span>          <span class="comment">//Note: GetNestedValue is some cryptic guh from first versions, i prob don&#39;t need it</span></div>
-<div class="line"><span class="lineno">  168</span>          <span class="keywordtype">object</span> value = CUIReflection.GetNestedValue(<span class="keyword">this</span>, key);</div>
-<div class="line"><span class="lineno">  169</span> </div>
-<div class="line"><span class="lineno">  170</span>          <span class="comment">//Info($&quot;{props[key]} {value}&quot;);</span></div>
-<div class="line"><span class="lineno">  171</span> </div>
-<div class="line"><span class="lineno">  172</span>          <span class="comment">// it&#39;s default value for this prop</span></div>
-<div class="line"><span class="lineno">  173</span>          <span class="keywordflow">if</span> (meta.Default != <span class="keyword">null</span> &amp;&amp; Object.Equals(value, CUIReflection.GetNestedValue(meta.Default, key)))</div>
-<div class="line"><span class="lineno">  174</span>          {</div>
-<div class="line"><span class="lineno">  175</span>            <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  176</span>          }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html#l00173">173</a> of file <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html">CUIComponent.Serialization.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  174</span>    {</div>
+<div class="line"><span class="lineno">  175</span>      Type type = GetType();</div>
+<div class="line"><span class="lineno">  176</span>      CUITypeMetaData meta = CUITypeMetaData.Get(type);</div>
 <div class="line"><span class="lineno">  177</span> </div>
-<div class="line"><span class="lineno">  178</span>          MethodInfo customToString = CUIExtensions.CustomToString.GetValueOrDefault(value.GetType());</div>
-<div class="line"><span class="lineno">  179</span> </div>
-<div class="line"><span class="lineno">  180</span>          <span class="keywordflow">if</span> (customToString != <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">  181</span>          {</div>
-<div class="line"><span class="lineno">  182</span>            element?.SetAttributeValue(key, customToString.Invoke(<span class="keyword">null</span>, <span class="keyword">new</span> <span class="keywordtype">object</span>[] { value }));</div>
-<div class="line"><span class="lineno">  183</span>          }</div>
-<div class="line"><span class="lineno">  184</span>          <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  185</span>          {</div>
-<div class="line"><span class="lineno">  186</span>            element?.SetAttributeValue(key, value);</div>
-<div class="line"><span class="lineno">  187</span>          }</div>
-<div class="line"><span class="lineno">  188</span>        }</div>
-<div class="line"><span class="lineno">  189</span>        <span class="keywordflow">catch</span> (Exception e)</div>
-<div class="line"><span class="lineno">  190</span>        {</div>
-<div class="line"><span class="lineno">  191</span>          CUI.Warning($<span class="stringliteral">&quot;Failed to serialize prop: {e.Message}&quot;</span>);</div>
-<div class="line"><span class="lineno">  192</span>          CUI.Warning($<span class="stringliteral">&quot;{key} in {this}&quot;</span>);</div>
-<div class="line"><span class="lineno">  193</span>        }</div>
-<div class="line"><span class="lineno">  194</span>      }</div>
-<div class="line"><span class="lineno">  195</span>    }</div>
+<div class="line"><span class="lineno">  178</span>      SortedDictionary&lt;string, PropertyInfo&gt; props = propAttribute <span class="keywordflow">switch</span></div>
+<div class="line"><span class="lineno">  179</span>      {</div>
+<div class="line"><span class="lineno">  180</span>        CUIAttribute.CUISerializable =&gt; meta.Serializable,</div>
+<div class="line"><span class="lineno">  181</span>        CUIAttribute.Calculated =&gt; meta.Calculated,</div>
+<div class="line"><span class="lineno">  182</span>        _ =&gt; meta.Serializable,</div>
+<div class="line"><span class="lineno">  183</span>      };</div>
+<div class="line"><span class="lineno">  184</span> </div>
+<div class="line"><span class="lineno">  185</span>      <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> key <span class="keywordflow">in</span> props.Keys)</div>
+<div class="line"><span class="lineno">  186</span>      {</div>
+<div class="line"><span class="lineno">  187</span>        <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  188</span>        {</div>
+<div class="line"><span class="lineno">  189</span>          <span class="keywordtype">object</span> value = props[key].GetValue(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  190</span>          <span class="comment">// it&#39;s default value for this prop</span></div>
+<div class="line"><span class="lineno">  191</span>          <span class="keywordflow">if</span> (meta.Default != <span class="keyword">null</span> &amp;&amp; Object.Equals(value, CUIReflection.GetNestedValue(meta.Default, key)))</div>
+<div class="line"><span class="lineno">  192</span>          {</div>
+<div class="line"><span class="lineno">  193</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  194</span>          }</div>
+<div class="line"><span class="lineno">  195</span> </div>
+<div class="line"><span class="lineno">  196</span>          MethodInfo customToString = CUIExtensions.CustomToString.GetValueOrDefault(props[key].PropertyType);</div>
+<div class="line"><span class="lineno">  197</span> </div>
+<div class="line"><span class="lineno">  198</span>          <span class="keywordflow">if</span> (customToString != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">  199</span>          {</div>
+<div class="line"><span class="lineno">  200</span>            element?.SetAttributeValue(key, customToString.Invoke(<span class="keyword">null</span>, <span class="keyword">new</span> <span class="keywordtype">object</span>[] { value }));</div>
+<div class="line"><span class="lineno">  201</span>          }</div>
+<div class="line"><span class="lineno">  202</span>          <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  203</span>          {</div>
+<div class="line"><span class="lineno">  204</span>            element?.SetAttributeValue(key, value);</div>
+<div class="line"><span class="lineno">  205</span>          }</div>
+<div class="line"><span class="lineno">  206</span>        }</div>
+<div class="line"><span class="lineno">  207</span>        <span class="keywordflow">catch</span> (Exception e)</div>
+<div class="line"><span class="lineno">  208</span>        {</div>
+<div class="line"><span class="lineno">  209</span>          CUI.Warning($<span class="stringliteral">&quot;Failed to serialize prop: {e.Message}&quot;</span>);</div>
+<div class="line"><span class="lineno">  210</span>          CUI.Warning($<span class="stringliteral">&quot;{key} in {this}&quot;</span>);</div>
+<div class="line"><span class="lineno">  211</span>        }</div>
+<div class="line"><span class="lineno">  212</span>      }</div>
+<div class="line"><span class="lineno">  213</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1780,10 +1903,10 @@ Events</h2></td></tr>
 <div class="line"><span class="lineno">  217</span>      <span class="keywordflow">if</span> (<a class="code hl_property" href="#ae7d8d8c989ce888630d1822d2216215f">IgnoreEvents</a> &amp;&amp; !child.IgnoreParentEventIgnorance) child.IgnoreEvents = <span class="keyword">true</span>;</div>
 <div class="line"><span class="lineno">  218</span>      <span class="keywordflow">if</span> (!<a class="code hl_property" href="#ae7637e97c252e9da5149640712a6ce49">Visible</a> &amp;&amp; !child.IgnoreParentVisibility) child.Visible = <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">  219</span>    }</div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_ad98fab5ffcba1bac9a46a724cbdb676d"><div class="ttname"><a href="#ad98fab5ffcba1bac9a46a724cbdb676d">CrabUI.CUIComponent.ZIndex</a></div><div class="ttdeci">int? ZIndex</div><div class="ttdoc">Components are drawn in order of their ZIndex   Normally it's derived from component position in the ...</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00105">CUIComponent.Props declaration.cs:106</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_ae7637e97c252e9da5149640712a6ce49"><div class="ttname"><a href="#ae7637e97c252e9da5149640712a6ce49">CrabUI.CUIComponent.Visible</a></div><div class="ttdeci">bool Visible</div><div class="ttdoc">Invisible components are not drawn, but still can be interacted with.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00123">CUIComponent.Props declaration.cs:124</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_ae7d8d8c989ce888630d1822d2216215f"><div class="ttname"><a href="#ae7d8d8c989ce888630d1822d2216215f">CrabUI.CUIComponent.IgnoreEvents</a></div><div class="ttdeci">bool IgnoreEvents</div><div class="ttdoc">Won't react to mouse events.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00114">CUIComponent.Props declaration.cs:115</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_af7242f152258307bb0ae34964bd5de1f"><div class="ttname"><a href="#af7242f152258307bb0ae34964bd5de1f">CrabUI.CUIComponent.ShouldPassPropsToChildren</a></div><div class="ttdeci">bool ShouldPassPropsToChildren</div><div class="ttdoc">Some props (like visible) are autopassed to all new childs see PassPropsToChild.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00080">CUIComponent.Props declaration.cs:80</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_ad98fab5ffcba1bac9a46a724cbdb676d"><div class="ttname"><a href="#ad98fab5ffcba1bac9a46a724cbdb676d">CrabUI.CUIComponent.ZIndex</a></div><div class="ttdeci">int? ZIndex</div><div class="ttdoc">Components are drawn in order of their ZIndex   Normally it's derived from component position in the ...</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00112">CUIComponent.Props declaration.cs:113</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_ae7637e97c252e9da5149640712a6ce49"><div class="ttname"><a href="#ae7637e97c252e9da5149640712a6ce49">CrabUI.CUIComponent.Visible</a></div><div class="ttdeci">bool Visible</div><div class="ttdoc">Invisible components are not drawn, but still can be interacted with.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00130">CUIComponent.Props declaration.cs:131</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_ae7d8d8c989ce888630d1822d2216215f"><div class="ttname"><a href="#ae7d8d8c989ce888630d1822d2216215f">CrabUI.CUIComponent.IgnoreEvents</a></div><div class="ttdeci">bool IgnoreEvents</div><div class="ttdoc">Won't react to mouse events.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00121">CUIComponent.Props declaration.cs:122</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_af7242f152258307bb0ae34964bd5de1f"><div class="ttname"><a href="#af7242f152258307bb0ae34964bd5de1f">CrabUI.CUIComponent.ShouldPassPropsToChildren</a></div><div class="ttdeci">bool ShouldPassPropsToChildren</div><div class="ttdoc">Some props (like visible) are autopassed to all new childs see PassPropsToChild.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00087">CUIComponent.Props declaration.cs:87</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2062,19 +2185,46 @@ Events</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html#l00263">263</a> of file <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html">CUIComponent.Serialization.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  264</span>    {</div>
-<div class="line"><span class="lineno">  265</span>      <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">  266</span>      {</div>
-<div class="line"><span class="lineno">  267</span>        XDocument xdoc = <span class="keyword">new</span> XDocument();</div>
-<div class="line"><span class="lineno">  268</span>        xdoc.Add(this.ToXML(propAttribute));</div>
-<div class="line"><span class="lineno">  269</span>        xdoc.Save(path);</div>
-<div class="line"><span class="lineno">  270</span>      }</div>
-<div class="line"><span class="lineno">  271</span>      <span class="keywordflow">catch</span> (Exception e)</div>
-<div class="line"><span class="lineno">  272</span>      {</div>
-<div class="line"><span class="lineno">  273</span>        CUI.Warning(e);</div>
-<div class="line"><span class="lineno">  274</span>      }</div>
-<div class="line"><span class="lineno">  275</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html#l00322">322</a> of file <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html">CUIComponent.Serialization.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  323</span>    {</div>
+<div class="line"><span class="lineno">  324</span>      <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  325</span>      {</div>
+<div class="line"><span class="lineno">  326</span>        XDocument xdoc = <span class="keyword">new</span> XDocument();</div>
+<div class="line"><span class="lineno">  327</span>        xdoc.Add(this.ToXML(propAttribute));</div>
+<div class="line"><span class="lineno">  328</span>        xdoc.Save(path);</div>
+<div class="line"><span class="lineno">  329</span>      }</div>
+<div class="line"><span class="lineno">  330</span>      <span class="keywordflow">catch</span> (Exception e)</div>
+<div class="line"><span class="lineno">  331</span>      {</div>
+<div class="line"><span class="lineno">  332</span>        CUI.Warning(e);</div>
+<div class="line"><span class="lineno">  333</span>      }</div>
+<div class="line"><span class="lineno">  334</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aebd8d91645cfd45a7432cc70dc9c8804" name="aebd8d91645cfd45a7432cc70dc9c8804"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebd8d91645cfd45a7432cc70dc9c8804">&#9670;&#160;</a></span>SaveToTheSamePath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CrabUI.CUIComponent.SaveToTheSamePath </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html#l00312">312</a> of file <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html">CUIComponent.Serialization.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  313</span>    {</div>
+<div class="line"><span class="lineno">  314</span>      <span class="keywordflow">if</span> (SavePath == <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">  315</span>      {</div>
+<div class="line"><span class="lineno">  316</span>        CUI.Warning($<span class="stringliteral">&quot;Can&#39;t save {this} To The Same Path, SavePath is null&quot;</span>);</div>
+<div class="line"><span class="lineno">  317</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  318</span>      }</div>
+<div class="line"><span class="lineno">  319</span>      SaveToFile(SavePath);</div>
+<div class="line"><span class="lineno">  320</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2093,19 +2243,19 @@ Events</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html#l00198">198</a> of file <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html">CUIComponent.Serialization.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  199</span>    {</div>
-<div class="line"><span class="lineno">  200</span>      <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">  201</span>      {</div>
-<div class="line"><span class="lineno">  202</span>        XElement e = this.ToXML(propAttribute);</div>
-<div class="line"><span class="lineno">  203</span>        <span class="keywordflow">return</span> e.ToString();</div>
-<div class="line"><span class="lineno">  204</span>      }</div>
-<div class="line"><span class="lineno">  205</span>      <span class="keywordflow">catch</span> (Exception e)</div>
-<div class="line"><span class="lineno">  206</span>      {</div>
-<div class="line"><span class="lineno">  207</span>        CUI.Error(e);</div>
-<div class="line"><span class="lineno">  208</span>        <span class="keywordflow">return</span> e.Message;</div>
-<div class="line"><span class="lineno">  209</span>      }</div>
-<div class="line"><span class="lineno">  210</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html#l00216">216</a> of file <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html">CUIComponent.Serialization.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  217</span>    {</div>
+<div class="line"><span class="lineno">  218</span>      <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  219</span>      {</div>
+<div class="line"><span class="lineno">  220</span>        XElement e = this.ToXML(propAttribute);</div>
+<div class="line"><span class="lineno">  221</span>        <span class="keywordflow">return</span> e.ToString();</div>
+<div class="line"><span class="lineno">  222</span>      }</div>
+<div class="line"><span class="lineno">  223</span>      <span class="keywordflow">catch</span> (Exception e)</div>
+<div class="line"><span class="lineno">  224</span>      {</div>
+<div class="line"><span class="lineno">  225</span>        CUI.Error(e);</div>
+<div class="line"><span class="lineno">  226</span>        <span class="keywordflow">return</span> e.Message;</div>
+<div class="line"><span class="lineno">  227</span>      }</div>
+<div class="line"><span class="lineno">  228</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2132,31 +2282,34 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html#l00060">60</a> of file <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html">CUIComponent.Serialization.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   61</span>    {</div>
-<div class="line"><span class="lineno">   62</span>      <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">   63</span>      {</div>
-<div class="line"><span class="lineno">   64</span>        <span class="keywordflow">if</span> (<a class="code hl_property" href="#a155615a8a7e4c8d2721fbb1d155bd395">Unserializable</a>) <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">   65</span> </div>
-<div class="line"><span class="lineno">   66</span>        Type type = GetType();</div>
-<div class="line"><span class="lineno">   67</span> </div>
-<div class="line"><span class="lineno">   68</span>        XElement e = <span class="keyword">new</span> XElement(type.Name);</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html#l00064">64</a> of file <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html">CUIComponent.Serialization.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   65</span>    {</div>
+<div class="line"><span class="lineno">   66</span>      <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">   67</span>      {</div>
+<div class="line"><span class="lineno">   68</span>        <span class="keywordflow">if</span> (<a class="code hl_property" href="#a155615a8a7e4c8d2721fbb1d155bd395">Unserializable</a>) <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
 <div class="line"><span class="lineno">   69</span> </div>
-<div class="line"><span class="lineno">   70</span>        PackProps(e, propAttribute);</div>
+<div class="line"><span class="lineno">   70</span>        Type type = GetType();</div>
 <div class="line"><span class="lineno">   71</span> </div>
-<div class="line"><span class="lineno">   72</span>        <span class="keywordflow">foreach</span> (CUIComponent child <span class="keywordflow">in</span> Children)</div>
-<div class="line"><span class="lineno">   73</span>        {</div>
-<div class="line"><span class="lineno">   74</span>          e.Add(child.ToXML(propAttribute));</div>
-<div class="line"><span class="lineno">   75</span>        }</div>
-<div class="line"><span class="lineno">   76</span> </div>
-<div class="line"><span class="lineno">   77</span>        <span class="keywordflow">return</span> e;</div>
-<div class="line"><span class="lineno">   78</span>      }</div>
-<div class="line"><span class="lineno">   79</span>      <span class="keywordflow">catch</span> (Exception e)</div>
-<div class="line"><span class="lineno">   80</span>      {</div>
-<div class="line"><span class="lineno">   81</span>        CUI.Warning(e);</div>
-<div class="line"><span class="lineno">   82</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> XElement(<span class="stringliteral">&quot;Error&quot;</span>, e.Message);</div>
-<div class="line"><span class="lineno">   83</span>      }</div>
-<div class="line"><span class="lineno">   84</span>    }</div>
+<div class="line"><span class="lineno">   72</span>        XElement e = <span class="keyword">new</span> XElement(type.Name);</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>        PackProps(e, propAttribute);</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>        <span class="keywordflow">foreach</span> (CUIComponent child <span class="keywordflow">in</span> Children)</div>
+<div class="line"><span class="lineno">   77</span>        {</div>
+<div class="line"><span class="lineno">   78</span>          <span class="keywordflow">if</span> (!child.BreakSerialization)</div>
+<div class="line"><span class="lineno">   79</span>          {</div>
+<div class="line"><span class="lineno">   80</span>            e.Add(child.ToXML(propAttribute));</div>
+<div class="line"><span class="lineno">   81</span>          }</div>
+<div class="line"><span class="lineno">   82</span>        }</div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>        <span class="keywordflow">return</span> e;</div>
+<div class="line"><span class="lineno">   85</span>      }</div>
+<div class="line"><span class="lineno">   86</span>      <span class="keywordflow">catch</span> (Exception e)</div>
+<div class="line"><span class="lineno">   87</span>      {</div>
+<div class="line"><span class="lineno">   88</span>        CUI.Warning(e);</div>
+<div class="line"><span class="lineno">   89</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> XElement(<span class="stringliteral">&quot;Error&quot;</span>, e.Message);</div>
+<div class="line"><span class="lineno">   90</span>      }</div>
+<div class="line"><span class="lineno">   91</span>    }</div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a155615a8a7e4c8d2721fbb1d155bd395"><div class="ttname"><a href="#a155615a8a7e4c8d2721fbb1d155bd395">CrabUI.CUIComponent.Unserializable</a></div><div class="ttdeci">bool Unserializable</div><div class="ttdoc">Will prevent serialization to xml if true.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00029">CUIComponent.Props declaration.cs:29</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -2230,7 +2383,7 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00138">138</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00145">145</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
 
 </div>
 </div>
@@ -2394,11 +2547,11 @@ Events</h2></td></tr>
 
 <p>Absolute size and position in pixels. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00255">255</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  256</span>    {</div>
-<div class="line"><span class="lineno">  257</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.Absolute.Value;</div>
-<div class="line"><span class="lineno">  258</span>      <span class="keyword">set</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.Absolute.SetValue(value);</div>
-<div class="line"><span class="lineno">  259</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00262">262</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  263</span>    {</div>
+<div class="line"><span class="lineno">  264</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.Absolute.Value;</div>
+<div class="line"><span class="lineno">  265</span>      <span class="keyword">set</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.Absolute.SetValue(value);</div>
+<div class="line"><span class="lineno">  266</span>    }</div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a497c55d90b7953b88ebddfee51423479"><div class="ttname"><a href="#a497c55d90b7953b88ebddfee51423479">CrabUI.CUIComponent.CUIProps</a></div><div class="ttdeci">CUIComponentProps CUIProps</div><div class="ttdoc">Just a wrapper for CUIProps idk how to separate them better.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01implementation_8cs_source.html#l00027">CUIComponent.Props implementation.cs:27</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -2423,11 +2576,11 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00267">267</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  268</span>    {</div>
-<div class="line"><span class="lineno">  269</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.AbsoluteMax.Value;</div>
-<div class="line"><span class="lineno">  270</span>      <span class="keyword">set</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.AbsoluteMax.SetValue(value);</div>
-<div class="line"><span class="lineno">  271</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00274">274</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  275</span>    {</div>
+<div class="line"><span class="lineno">  276</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.AbsoluteMax.Value;</div>
+<div class="line"><span class="lineno">  277</span>      <span class="keyword">set</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.AbsoluteMax.SetValue(value);</div>
+<div class="line"><span class="lineno">  278</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2451,11 +2604,11 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00261">261</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  262</span>    {</div>
-<div class="line"><span class="lineno">  263</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.AbsoluteMin.Value;</div>
-<div class="line"><span class="lineno">  264</span>      <span class="keyword">set</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.AbsoluteMin.SetValue(value);</div>
-<div class="line"><span class="lineno">  265</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00268">268</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  269</span>    {</div>
+<div class="line"><span class="lineno">  270</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.AbsoluteMin.Value;</div>
+<div class="line"><span class="lineno">  271</span>      <span class="keyword">set</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.AbsoluteMin.SetValue(value);</div>
+<div class="line"><span class="lineno">  272</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2965,8 +3118,8 @@ Events</h2></td></tr>
 
 <p>this point of this component </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00070">70</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   70</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00077">77</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2994,11 +3147,11 @@ Events</h2></td></tr>
 <p>Color of BackgroundSprite, default is black <br  />
  If you're using custom sprite and don't see it make sure this color is not black </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00228">228</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  229</span>    {</div>
-<div class="line"><span class="lineno">  230</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.BackgroundColor.Value;</div>
-<div class="line"><span class="lineno">  231</span>      <span class="keyword">set</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.BackgroundColor.SetValue(value);</div>
-<div class="line"><span class="lineno">  232</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00235">235</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  236</span>    {</div>
+<div class="line"><span class="lineno">  237</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.BackgroundColor.Value;</div>
+<div class="line"><span class="lineno">  238</span>      <span class="keyword">set</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.BackgroundColor.SetValue(value);</div>
+<div class="line"><span class="lineno">  239</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -3025,15 +3178,15 @@ Events</h2></td></tr>
 <p>Will be drawn in background with BackgroundColor <br  />
  Default is solid white 1x1 texture. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00205">205</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  206</span>    {</div>
-<div class="line"><span class="lineno">  207</span>      <span class="keyword">get</span> =&gt; backgroundSprite;</div>
-<div class="line"><span class="lineno">  208</span>      <span class="keyword">set</span></div>
-<div class="line"><span class="lineno">  209</span>      {</div>
-<div class="line"><span class="lineno">  210</span>        backgroundSprite = value;</div>
-<div class="line"><span class="lineno">  211</span>        TryResizeToSprite();</div>
-<div class="line"><span class="lineno">  212</span>      }</div>
-<div class="line"><span class="lineno">  213</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00212">212</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  213</span>    {</div>
+<div class="line"><span class="lineno">  214</span>      <span class="keyword">get</span> =&gt; backgroundSprite;</div>
+<div class="line"><span class="lineno">  215</span>      <span class="keyword">set</span></div>
+<div class="line"><span class="lineno">  216</span>      {</div>
+<div class="line"><span class="lineno">  217</span>        backgroundSprite = value;</div>
+<div class="line"><span class="lineno">  218</span>        TryResizeToSprite();</div>
+<div class="line"><span class="lineno">  219</span>      }</div>
+<div class="line"><span class="lineno">  220</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -3113,11 +3266,11 @@ Events</h2></td></tr>
 
 <p>Color.Transparent = don't draw. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00167">167</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  168</span>    {</div>
-<div class="line"><span class="lineno">  169</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.BorderColor.Value;</div>
-<div class="line"><span class="lineno">  170</span>      <span class="keyword">set</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.BorderColor.SetValue(value);</div>
-<div class="line"><span class="lineno">  171</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00174">174</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  175</span>    {</div>
+<div class="line"><span class="lineno">  176</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.BorderColor.Value;</div>
+<div class="line"><span class="lineno">  177</span>      <span class="keyword">set</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.BorderColor.SetValue(value);</div>
+<div class="line"><span class="lineno">  178</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -3143,8 +3296,8 @@ Events</h2></td></tr>
 
 <p>In pixels. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00152">152</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  152</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; } = 1f;</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00159">159</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  159</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; } = 1f;</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -3172,6 +3325,34 @@ Events</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_calculated_8cs_source.html#l00058">58</a> of file <a class="el" href="_c_u_i_component_8_calculated_8cs_source.html">CUIComponent.Calculated.cs</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   58</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a879f6b36b8694084f6d34443e980a8f9" name="a879f6b36b8694084f6d34443e980a8f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a879f6b36b8694084f6d34443e980a8f9">&#9670;&#160;</a></span>BreakSerialization</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CrabUI.CUIComponent.BreakSerialization</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Is this a serialization cutoff point <br  />
+ Parent will serialize children down to this component Further serialization should be hadled by this component. </p>
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00036">36</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   36</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -3222,8 +3403,8 @@ Events</h2></td></tr>
 
 <p>Limits to children positions. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00061">61</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   61</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00068">68</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   68</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -3249,11 +3430,11 @@ Events</h2></td></tr>
 
 <p>Will shift all children by this much, e.g. this is how scroll works It's also 3D. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00052">52</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   53</span>    {</div>
-<div class="line"><span class="lineno">   54</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.ChildrenOffset.Value;</div>
-<div class="line"><span class="lineno">   55</span>      <span class="keyword">set</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.ChildrenOffset.SetValue(value);</div>
-<div class="line"><span class="lineno">   56</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00059">59</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   60</span>    {</div>
+<div class="line"><span class="lineno">   61</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.ChildrenOffset.Value;</div>
+<div class="line"><span class="lineno">   62</span>      <span class="keyword">set</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.ChildrenOffset.SetValue(value);</div>
+<div class="line"><span class="lineno">   63</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -3384,6 +3565,34 @@ Events</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="a9594fa13baf8acb34d1c6c4347d9313d" name="a9594fa13baf8acb34d1c6c4347d9313d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9594fa13baf8acb34d1c6c4347d9313d">&#9670;&#160;</a></span>CrossRelative</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_crab_u_i_1_1_c_u_i_null_rect.html">CUINullRect</a> CrabUI.CUIComponent.CrossRelative</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00301">301</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  302</span>    {</div>
+<div class="line"><span class="lineno">  303</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.CrossRelative.Value;</div>
+<div class="line"><span class="lineno">  304</span>      <span class="keyword">set</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.CrossRelative.SetValue(value);</div>
+<div class="line"><span class="lineno">  305</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a497c55d90b7953b88ebddfee51423479" name="a497c55d90b7953b88ebddfee51423479"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a497c55d90b7953b88ebddfee51423479">&#9670;&#160;</a></span>CUIProps</h2>
 
@@ -3433,11 +3642,11 @@ Events</h2></td></tr>
 
 <p>if child rect doesn't intersect with parent it won't be drawn and won't consume fps </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00038">38</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   39</span>    {</div>
-<div class="line"><span class="lineno">   40</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.CullChildren.Value;</div>
-<div class="line"><span class="lineno">   41</span>      <span class="keyword">set</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.CullChildren.SetValue(value);</div>
-<div class="line"><span class="lineno">   42</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00045">45</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>    {</div>
+<div class="line"><span class="lineno">   47</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.CullChildren.Value;</div>
+<div class="line"><span class="lineno">   48</span>      <span class="keyword">set</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.CullChildren.SetValue(value);</div>
+<div class="line"><span class="lineno">   49</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -3522,11 +3731,11 @@ Events</h2></td></tr>
 
 <p>Usually means - non interactable, e.g. unclickable gray button. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00143">143</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  144</span>    {</div>
-<div class="line"><span class="lineno">  145</span>      <span class="keyword">get</span> =&gt; disabled;</div>
-<div class="line"><span class="lineno">  146</span>      <span class="keyword">set</span> =&gt; disabled = value;</div>
-<div class="line"><span class="lineno">  147</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00150">150</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  151</span>    {</div>
+<div class="line"><span class="lineno">  152</span>      <span class="keyword">get</span> =&gt; disabled;</div>
+<div class="line"><span class="lineno">  153</span>      <span class="keyword">set</span> =&gt; disabled = value;</div>
+<div class="line"><span class="lineno">  154</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -3580,11 +3789,11 @@ Events</h2></td></tr>
 
 <p>Will be resized to fill empty space in list components. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00237">237</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  238</span>    {</div>
-<div class="line"><span class="lineno">  239</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.FillEmptySpace.Value;</div>
-<div class="line"><span class="lineno">  240</span>      <span class="keyword">set</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.FillEmptySpace.SetValue(value);</div>
-<div class="line"><span class="lineno">  241</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00244">244</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  245</span>    {</div>
+<div class="line"><span class="lineno">  246</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.FillEmptySpace.Value;</div>
+<div class="line"><span class="lineno">  247</span>      <span class="keyword">set</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.FillEmptySpace.SetValue(value);</div>
+<div class="line"><span class="lineno">  248</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -3610,11 +3819,11 @@ Events</h2></td></tr>
 
 <p>Will resize itself to fit components with absolute size, e.g. text. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00246">246</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  247</span>    {</div>
-<div class="line"><span class="lineno">  248</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.FitContent.Value;</div>
-<div class="line"><span class="lineno">  249</span>      <span class="keyword">set</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.FitContent.SetValue(value);</div>
-<div class="line"><span class="lineno">  250</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00253">253</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  254</span>    {</div>
+<div class="line"><span class="lineno">  255</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.FitContent.Value;</div>
+<div class="line"><span class="lineno">  256</span>      <span class="keyword">set</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.FitContent.SetValue(value);</div>
+<div class="line"><span class="lineno">  257</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -3640,8 +3849,8 @@ Events</h2></td></tr>
 
 <p>Should it ignore child offset? </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00066">66</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   66</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00073">73</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   73</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -3750,8 +3959,8 @@ Events</h2></td></tr>
 
 <p>Ghost components don't affect layout. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00084">84</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   84</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00091">91</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   91</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -3777,17 +3986,17 @@ Events</h2></td></tr>
 
 <p>Sets both GridStartCell and GridEndCell at once. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00313">313</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  314</span>    {</div>
-<div class="line"><span class="lineno">  315</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a95fbc2f203c931b4869cbd78bce7be22">GridStartCell</a>;</div>
-<div class="line"><span class="lineno">  316</span>      <span class="keyword">set</span></div>
-<div class="line"><span class="lineno">  317</span>      {</div>
-<div class="line"><span class="lineno">  318</span>        <a class="code hl_property" href="#a95fbc2f203c931b4869cbd78bce7be22">GridStartCell</a> = value;</div>
-<div class="line"><span class="lineno">  319</span>        <a class="code hl_property" href="#ac98c431e12ed374aa45246608e6cdc42">GridEndCell</a> = value;</div>
-<div class="line"><span class="lineno">  320</span>      }</div>
-<div class="line"><span class="lineno">  321</span>    }</div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a95fbc2f203c931b4869cbd78bce7be22"><div class="ttname"><a href="#a95fbc2f203c931b4869cbd78bce7be22">CrabUI.CUIComponent.GridStartCell</a></div><div class="ttdeci">Point? GridStartCell</div><div class="ttdoc">Component will be placed in this cell in the grid component.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00305">CUIComponent.Props declaration.cs:305</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_ac98c431e12ed374aa45246608e6cdc42"><div class="ttname"><a href="#ac98c431e12ed374aa45246608e6cdc42">CrabUI.CUIComponent.GridEndCell</a></div><div class="ttdeci">Point? GridEndCell</div><div class="ttdoc">And resized to fit cells from GridStartCell to GridEndCell.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00309">CUIComponent.Props declaration.cs:309</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00326">326</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  327</span>    {</div>
+<div class="line"><span class="lineno">  328</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a95fbc2f203c931b4869cbd78bce7be22">GridStartCell</a>;</div>
+<div class="line"><span class="lineno">  329</span>      <span class="keyword">set</span></div>
+<div class="line"><span class="lineno">  330</span>      {</div>
+<div class="line"><span class="lineno">  331</span>        <a class="code hl_property" href="#a95fbc2f203c931b4869cbd78bce7be22">GridStartCell</a> = value;</div>
+<div class="line"><span class="lineno">  332</span>        <a class="code hl_property" href="#ac98c431e12ed374aa45246608e6cdc42">GridEndCell</a> = value;</div>
+<div class="line"><span class="lineno">  333</span>      }</div>
+<div class="line"><span class="lineno">  334</span>    }</div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a95fbc2f203c931b4869cbd78bce7be22"><div class="ttname"><a href="#a95fbc2f203c931b4869cbd78bce7be22">CrabUI.CUIComponent.GridStartCell</a></div><div class="ttdeci">Point? GridStartCell</div><div class="ttdoc">Component will be placed in this cell in the grid component.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00318">CUIComponent.Props declaration.cs:318</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_ac98c431e12ed374aa45246608e6cdc42"><div class="ttname"><a href="#ac98c431e12ed374aa45246608e6cdc42">CrabUI.CUIComponent.GridEndCell</a></div><div class="ttdeci">Point? GridEndCell</div><div class="ttdoc">And resized to fit cells from GridStartCell to GridEndCell.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00322">CUIComponent.Props declaration.cs:322</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -3813,8 +4022,8 @@ Events</h2></td></tr>
 
 <p>And resized to fit cells from GridStartCell to GridEndCell. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00309">309</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  309</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00322">322</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  322</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -3840,8 +4049,8 @@ Events</h2></td></tr>
 
 <p>Component will be placed in this cell in the grid component. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00305">305</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  305</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00318">318</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  318</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -3867,8 +4076,8 @@ Events</h2></td></tr>
 
 <p>Used in Grid, space separated Columns sizes, either in pixels (123) or in % (123%) </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00301">301</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  301</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00314">314</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  314</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -3894,8 +4103,8 @@ Events</h2></td></tr>
 
 <p>Used in Grid, space separated Row sizes, either in pixels (123) or in % (123%) </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00297">297</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  297</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00310">310</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  310</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -3921,8 +4130,8 @@ Events</h2></td></tr>
 
 <p>Should children be cut off by scissor rect, this is just visual, it's not the same as culling. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00033">33</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   33</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00040">40</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -4007,11 +4216,11 @@ Events</h2></td></tr>
 
 <p>Won't react to mouse events. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00114">114</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  115</span>    {</div>
-<div class="line"><span class="lineno">  116</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.IgnoreEvents.Value;</div>
-<div class="line"><span class="lineno">  117</span>      <span class="keyword">set</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.IgnoreEvents.SetValue(value);</div>
-<div class="line"><span class="lineno">  118</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00121">121</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  122</span>    {</div>
+<div class="line"><span class="lineno">  123</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.IgnoreEvents.Value;</div>
+<div class="line"><span class="lineno">  124</span>      <span class="keyword">set</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.IgnoreEvents.SetValue(value);</div>
+<div class="line"><span class="lineno">  125</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -4037,8 +4246,8 @@ Events</h2></td></tr>
 
 <p>Don't inherit parent IgnoreEvents. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00093">93</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   93</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00100">100</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  100</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -4064,8 +4273,8 @@ Events</h2></td></tr>
 
 <p>Don't inherit parent Visibility. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00089">89</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   89</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00096">96</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   96</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -4091,8 +4300,8 @@ Events</h2></td></tr>
 
 <p>Don't inherit parent ZIndex. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00097">97</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   97</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00104">104</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  104</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -4257,11 +4466,11 @@ Events</h2></td></tr>
 
 <p>Used for text. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00158">158</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  159</span>    {</div>
-<div class="line"><span class="lineno">  160</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.Padding.Value;</div>
-<div class="line"><span class="lineno">  161</span>      <span class="keyword">set</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.Padding.SetValue(value);</div>
-<div class="line"><span class="lineno">  162</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00165">165</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  166</span>    {</div>
+<div class="line"><span class="lineno">  167</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.Padding.Value;</div>
+<div class="line"><span class="lineno">  168</span>      <span class="keyword">set</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.Padding.SetValue(value);</div>
+<div class="line"><span class="lineno">  169</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -4315,8 +4524,8 @@ Events</h2></td></tr>
 
 <p>will be attached to this point of parent </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00074">74</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   74</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00081">81</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -4372,11 +4581,11 @@ Events</h2></td></tr>
 
 <p>Relative to parent size and position, [0..1]. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00276">276</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  277</span>    {</div>
-<div class="line"><span class="lineno">  278</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.Relative.Value;</div>
-<div class="line"><span class="lineno">  279</span>      <span class="keyword">set</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.Relative.SetValue(value);</div>
-<div class="line"><span class="lineno">  280</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00283">283</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  284</span>    {</div>
+<div class="line"><span class="lineno">  285</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.Relative.Value;</div>
+<div class="line"><span class="lineno">  286</span>      <span class="keyword">set</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.Relative.SetValue(value);</div>
+<div class="line"><span class="lineno">  287</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -4400,11 +4609,11 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00288">288</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  289</span>    {</div>
-<div class="line"><span class="lineno">  290</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.RelativeMax.Value;</div>
-<div class="line"><span class="lineno">  291</span>      <span class="keyword">set</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.RelativeMax.SetValue(value);</div>
-<div class="line"><span class="lineno">  292</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00295">295</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  296</span>    {</div>
+<div class="line"><span class="lineno">  297</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.RelativeMax.Value;</div>
+<div class="line"><span class="lineno">  298</span>      <span class="keyword">set</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.RelativeMax.SetValue(value);</div>
+<div class="line"><span class="lineno">  299</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -4428,11 +4637,11 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00282">282</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  283</span>    {</div>
-<div class="line"><span class="lineno">  284</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.RelativeMin.Value;</div>
-<div class="line"><span class="lineno">  285</span>      <span class="keyword">set</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.RelativeMin.SetValue(value);</div>
-<div class="line"><span class="lineno">  286</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00289">289</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  290</span>    {</div>
+<div class="line"><span class="lineno">  291</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.RelativeMin.Value;</div>
+<div class="line"><span class="lineno">  292</span>      <span class="keyword">set</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.RelativeMin.SetValue(value);</div>
+<div class="line"><span class="lineno">  293</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -4458,15 +4667,15 @@ Events</h2></td></tr>
 
 <p>If true component will set it's Absolute size to sprite texture size. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00188">188</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  189</span>    {</div>
-<div class="line"><span class="lineno">  190</span>      <span class="keyword">get</span> =&gt; resizeToSprite;</div>
-<div class="line"><span class="lineno">  191</span>      <span class="keyword">set</span></div>
-<div class="line"><span class="lineno">  192</span>      {</div>
-<div class="line"><span class="lineno">  193</span>        resizeToSprite = value;</div>
-<div class="line"><span class="lineno">  194</span>        TryResizeToSprite();</div>
-<div class="line"><span class="lineno">  195</span>      }</div>
-<div class="line"><span class="lineno">  196</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00195">195</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  196</span>    {</div>
+<div class="line"><span class="lineno">  197</span>      <span class="keyword">get</span> =&gt; resizeToSprite;</div>
+<div class="line"><span class="lineno">  198</span>      <span class="keyword">set</span></div>
+<div class="line"><span class="lineno">  199</span>      {</div>
+<div class="line"><span class="lineno">  200</span>        resizeToSprite = value;</div>
+<div class="line"><span class="lineno">  201</span>        TryResizeToSprite();</div>
+<div class="line"><span class="lineno">  202</span>      }</div>
+<div class="line"><span class="lineno">  203</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -4601,11 +4810,61 @@ Events</h2></td></tr>
 
 <p>Visible + !IgnoreEvents. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00132">132</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  133</span>    {</div>
-<div class="line"><span class="lineno">  134</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.Revealed.Value;</div>
-<div class="line"><span class="lineno">  135</span>      <span class="keyword">set</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.Revealed.SetValue(value);</div>
-<div class="line"><span class="lineno">  136</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00139">139</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  140</span>    {</div>
+<div class="line"><span class="lineno">  141</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.Revealed.Value;</div>
+<div class="line"><span class="lineno">  142</span>      <span class="keyword">set</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.Revealed.SetValue(value);</div>
+<div class="line"><span class="lineno">  143</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a6d8af39a0926bdde5557b58d78cdfd61" name="a6d8af39a0926bdde5557b58d78cdfd61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d8af39a0926bdde5557b58d78cdfd61">&#9670;&#160;</a></span>SaveAfterLoad</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CrabUI.CUIComponent.SaveAfterLoad = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html#l00060">60</a> of file <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html">CUIComponent.Serialization.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   60</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; } = <span class="keyword">true</span>;</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="acb07791aeb0b4a7f8c2c086526067f5c" name="acb07791aeb0b4a7f8c2c086526067f5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb07791aeb0b4a7f8c2c086526067f5c">&#9670;&#160;</a></span>SavePath</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string CrabUI.CUIComponent.SavePath</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html#l00062">62</a> of file <a class="el" href="_c_u_i_component_8_serialization_8cs_source.html">CUIComponent.Serialization.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   62</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -4661,8 +4920,8 @@ Events</h2></td></tr>
 
 <p>Some props (like visible) are autopassed to all new childs see PassPropsToChild. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00080">80</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   80</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; } = <span class="keyword">true</span>;</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00087">87</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   87</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; } = <span class="keyword">true</span>;</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -4838,8 +5097,8 @@ Events</h2></td></tr>
 
 <p>It shouldn't be culled off even outside of parent bounds and even if parent demands so. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00046">46</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   46</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00053">53</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -4892,11 +5151,11 @@ Events</h2></td></tr>
 
 <p>Invisible components are not drawn, but still can be interacted with. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00123">123</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  124</span>    {</div>
-<div class="line"><span class="lineno">  125</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.Visible.Value;</div>
-<div class="line"><span class="lineno">  126</span>      <span class="keyword">set</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.Visible.SetValue(value);</div>
-<div class="line"><span class="lineno">  127</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00130">130</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  131</span>    {</div>
+<div class="line"><span class="lineno">  132</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.Visible.Value;</div>
+<div class="line"><span class="lineno">  133</span>      <span class="keyword">set</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.Visible.SetValue(value);</div>
+<div class="line"><span class="lineno">  134</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -4923,11 +5182,11 @@ Events</h2></td></tr>
 <p>Components are drawn in order of their ZIndex <br  />
  Normally it's derived from component position in the tree, but this will override it. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00105">105</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  106</span>    {</div>
-<div class="line"><span class="lineno">  107</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.ZIndex.Value;</div>
-<div class="line"><span class="lineno">  108</span>      <span class="keyword">set</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.ZIndex.SetValue(value);</div>
-<div class="line"><span class="lineno">  109</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html#l00112">112</a> of file <a class="el" href="_c_u_i_component_8_props_01declaration_8cs_source.html">CUIComponent.Props declaration.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  113</span>    {</div>
+<div class="line"><span class="lineno">  114</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.ZIndex.Value;</div>
+<div class="line"><span class="lineno">  115</span>      <span class="keyword">set</span> =&gt; <a class="code hl_property" href="#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.ZIndex.SetValue(value);</div>
+<div class="line"><span class="lineno">  116</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>

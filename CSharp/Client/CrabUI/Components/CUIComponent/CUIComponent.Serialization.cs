@@ -57,6 +57,10 @@ namespace CrabUI
     #endregion
     #region XML --------------------------------------------------------
 
+    public static bool SaveAfterLoad { get; set; } = true;
+
+    public string SavePath { get; set; }
+
     public virtual XElement ToXML(CUIAttribute propAttribute = CUIAttribute.CUISerializable)
     {
       try
@@ -71,7 +75,10 @@ namespace CrabUI
 
         foreach (CUIComponent child in Children)
         {
-          e.Add(child.ToXML(propAttribute));
+          if (!child.BreakSerialization)
+          {
+            e.Add(child.ToXML(propAttribute));
+          }
         }
 
         return e;
@@ -132,18 +139,33 @@ namespace CrabUI
 
         if (parse == null)
         {
-          CUIDebug.Error($"Can't parse prop {prop.Name} in {type.Name} because it's type {prop.PropertyType.Name} is missing Parse method");
-          continue;
+          if (prop.PropertyType.IsEnum)
+          {
+            try
+            {
+              prop.SetValue(this, Enum.Parse(prop.PropertyType, attribute.Value));
+            }
+            catch (Exception e)
+            {
+              CUIDebug.Error($"Can't parse {attribute.Value} into {prop.PropertyType.Name}\n{e}");
+            }
+          }
+          else
+          {
+            CUIDebug.Error($"Can't parse prop {prop.Name} in {type.Name} because it's type {prop.PropertyType.Name} is missing Parse method");
+          }
         }
-
-        try
+        else
         {
-          object result = parse.Invoke(null, new object[] { attribute.Value });
-          prop.SetValue(this, result);
-        }
-        catch (Exception e)
-        {
-          CUIDebug.Error($"Can't parse {attribute.Value} into {prop.PropertyType.Name}\n{e}");
+          try
+          {
+            object result = parse.Invoke(null, new object[] { attribute.Value });
+            prop.SetValue(this, result);
+          }
+          catch (Exception e)
+          {
+            CUIDebug.Error($"Can't parse {attribute.Value} into {prop.PropertyType.Name}\n{e}");
+          }
         }
       }
     }
@@ -164,18 +186,14 @@ namespace CrabUI
       {
         try
         {
-          //Note: GetNestedValue is some cryptic guh from first versions, i prob don't need it
-          object value = CUIReflection.GetNestedValue(this, key);
-
-          //Info($"{props[key]} {value}");
-
+          object value = props[key].GetValue(this);
           // it's default value for this prop
           if (meta.Default != null && Object.Equals(value, CUIReflection.GetNestedValue(meta.Default, key)))
           {
             continue;
           }
 
-          MethodInfo customToString = CUIExtensions.CustomToString.GetValueOrDefault(value.GetType());
+          MethodInfo customToString = CUIExtensions.CustomToString.GetValueOrDefault(props[key].PropertyType);
 
           if (customToString != null)
           {
@@ -223,6 +241,7 @@ namespace CrabUI
         CUIComponent c = (CUIComponent)Activator.CreateInstance(type);
         // c.RemoveAllChildren();
         c.FromXML(e);
+        CUIComponent.RunRecursiveOn(c, (component, i) => component.Hydrate());
 
         return c;
       }
@@ -233,12 +252,36 @@ namespace CrabUI
       }
     }
 
-    public static CUIComponent LoadFromFile(string path)
+    public void LoadSelfFromFile(string path, bool saveAfterLoad = false)
     {
       try
       {
         XDocument xdoc = XDocument.Load(path);
-        return Deserialize(xdoc.Root);
+
+        RemoveAllChildren();
+        FromXML(xdoc.Root);
+        CUIComponent.RunRecursiveOn(this, (component, i) => component.Hydrate());
+        SavePath = path;
+
+        if (SaveAfterLoad && saveAfterLoad) SaveToTheSamePath();
+      }
+      catch (Exception ex)
+      {
+        CUI.Warning(ex);
+      }
+    }
+
+    public static CUIComponent LoadFromFile(string path, bool saveAfterLoad = false)
+    {
+      try
+      {
+        XDocument xdoc = XDocument.Load(path);
+        CUIComponent result = Deserialize(xdoc.Root);
+        result.SavePath = path;
+
+        if (SaveAfterLoad && saveAfterLoad) result.SaveToTheSamePath();
+
+        return result;
       }
       catch (Exception ex)
       {
@@ -247,12 +290,17 @@ namespace CrabUI
       }
     }
 
-    public static T LoadFromFile<T>(string path) where T : CUIComponent
+    public static T LoadFromFile<T>(string path, bool saveAfterLoad = false) where T : CUIComponent
     {
       try
       {
         XDocument xdoc = XDocument.Load(path);
-        return (T)Deserialize(xdoc.Root);
+        T result = (T)Deserialize(xdoc.Root);
+        result.SavePath = path;
+
+        if (SaveAfterLoad && saveAfterLoad) result.SaveToTheSamePath();
+
+        return result;
       }
       catch (Exception ex)
       {
@@ -260,6 +308,17 @@ namespace CrabUI
         return null;
       }
     }
+
+    public void SaveToTheSamePath()
+    {
+      if (SavePath == null)
+      {
+        CUI.Warning($"Can't save {this} To The Same Path, SavePath is null");
+        return;
+      }
+      SaveToFile(SavePath);
+    }
+
     public void SaveToFile(string path, CUIAttribute propAttribute = CUIAttribute.CUISerializable)
     {
       try
@@ -272,6 +331,16 @@ namespace CrabUI
       {
         CUI.Warning(e);
       }
+    }
+
+    /// <summary>
+    /// Experimental method  
+    /// Here you can add data/ callbacks/ save stuff to variables  
+    /// after loading a xml skeletom
+    /// </summary>
+    public virtual void Hydrate()
+    {
+
     }
 
     #endregion

@@ -131,17 +131,24 @@ namespace CrabUI
 
       if (!noInput) HandleInput(totalTime);
 
+      RunStraigth(c => c.InvokeOnUpdate(totalTime));
 
 
       if (CalculateUntilResolved)
       {
-        //TODO investigate, for some reason i need to run it at least once
-        // even if GlobalLayoutChanged == false or text position will break
-
         UpdateLoopCount = 0;
         do
         {
           GlobalLayoutChanged = false;
+
+          if (TreeChanged)
+          {
+            OnTreeChanged?.Invoke();
+
+            FlattenTree();
+            TreeChanged = false;
+          }
+
           RunReverse(c =>
           {
             c.Layout.ResizeToContent();
@@ -177,7 +184,8 @@ namespace CrabUI
         });
       }
 
-      RunStraigth(c => c.InvokeOnUpdate(totalTime));
+      //TODO do i need 2 updates?
+      //RunStraigth(c => c.InvokeOnUpdate(totalTime));
 
       LastUpdateTime = totalTime;
     }

@@ -14,29 +14,37 @@ namespace CrabUI
   /// </summary>
   public class CUIHorizontalList : CUIComponent
   {
-    public bool Scrollable { get; set; }
+    [CUISerializable] public bool Scrollable { get; set; }
+    [CUISerializable] public float ScrollSpeed { get; set; } = 1.0f;
 
-    /// <summary>
-    /// How far you can scroll beyond the edge
-    /// </summary>
     public float LeftGap = 0f;
-    /// <summary>
-    /// How far you can scroll beyond the edge
-    /// </summary>
     public float RightGap = 0f;
 
-    private CUILayoutHorizontalList listLayout;
+    public override CUILayout Layout
+    {
+      get => layout;
+      set
+      {
+        layout = new CUILayoutHorizontalList();
+        layout.Host = this;
+      }
+    }
+    public CUILayoutHorizontalList ListLayout => (CUILayoutHorizontalList)Layout;
 
+    [CUISerializable]
     public CUIDirection Direction
     {
-      get => listLayout.Direction;
-      set => listLayout.Direction = value;
+      get => ListLayout.Direction;
+      set => ListLayout.Direction = value;
     }
 
+    [CUISerializable]
+    public bool ResizeToHostHeight
+    {
+      get => ListLayout.ResizeToHostHeight;
+      set => ListLayout.ResizeToHostHeight = value;
+    }
 
-    /// <summary>
-    /// Uses ChildrenOffset internally
-    /// </summary>
     public float Scroll
     {
       get => ChildrenOffset.X;
@@ -53,16 +61,14 @@ namespace CrabUI
       minY: 0,
       maxY: 0,
       minX: LeftGap,
-      maxX: Math.Min(Real.Width - listLayout.TotalWidth - RightGap, 0)
+      maxX: Math.Min(Real.Width - ListLayout.TotalWidth - RightGap, 0)
     );
     public CUIHorizontalList() : base()
     {
       CullChildren = true;
 
-      listLayout = new CUILayoutHorizontalList();
-      Layout = listLayout;
 
-      OnScroll += (m) => Scroll += m.Scroll;
+      OnScroll += (m) => Scroll += m.Scroll * ScrollSpeed;
       ChildrenBoundaries = CUIBoundaries.HorizontalTube;
     }
   }

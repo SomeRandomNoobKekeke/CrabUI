@@ -1,3 +1,7 @@
+## 0.1.0.1
+
+guh
+
 ## 0.1.0.0
 
 You can now use relative paths for sprite textures  

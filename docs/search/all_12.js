@@ -1,13 +1,16 @@
 var searchData=
 [
-  ['padding_0',['Padding',['../class_crab_u_i_1_1_c_u_i_component.html#a5186e13b2faee5dd2b9b919cbb8c3618',1,'CrabUI::CUIComponent']]],
-  ['palette_1',['Palette',['../class_crab_u_i_1_1_c_u_i_component.html#a00e17a5180c0ea7ccfc2af14149f1e85',1,'CrabUI::CUIComponent']]],
-  ['palettes_2',['Palettes',['../_stylespalettes.html#autotoc_md18',1,'Palettes'],['../_stylespalettes.html',1,'Styles, Palettes']]],
-  ['parentanchor_3',['ParentAnchor',['../class_crab_u_i_1_1_c_u_i_component.html#aa7f771ddc058dc8b160caf4d9243a763',1,'CrabUI::CUIComponent']]],
-  ['passpropstochild_4',['PassPropsToChild',['../class_crab_u_i_1_1_c_u_i_component.html#a4fbc3126e7d56a17c69227c6b9d14ccf',1,'CrabUI::CUIComponent']]],
-  ['pgnassets_5',['PGNAssets',['../class_crab_u_i_1_1_c_u_i.html#a7ad58022298f051fe199bca6ab39df77',1,'CrabUI.CUI.PGNAssets'],['../class_crab_u_i_1_1_c_u_i_texture_manager.html#a5953b2ea87c5b61f01b025d5ee0ff97b',1,'CrabUI.CUITextureManager.PGNAssets']]],
-  ['prepend_6',['Prepend',['../class_crab_u_i_1_1_c_u_i_component.html#a21431d1bcb98626c736124039177b6c7',1,'CrabUI::CUIComponent']]],
-  ['props_7',['Props',['../_graphic_props.html',1,'Graphic Props'],['../_layout_props.html',1,'Layout Props'],['../_other_props.html',1,'Other Props'],['../class_crab_u_i_1_1_c_u_i_style.html#a49074c884e6c899040314e3386115bb5',1,'CrabUI.CUIStyle.Props']]],
-  ['props_3a_8',['Props:',['../index.html#autotoc_md9',1,'']]],
-  ['proptest_9',['PropTest',['../class_crab_u_i_test_1_1_prop_test.html',1,'CrabUITest']]]
+  ['of_20component_0',['Also you can memorize and restore state of component',['../_serialization.html#autotoc_md17',1,'']]],
+  ['onanycommand_1',['OnAnyCommand',['../class_crab_u_i_1_1_c_u_i_component.html#a4d0a31dd7deea9a7460abc52e2e38afe',1,'CrabUI::CUIComponent']]],
+  ['onanydata_2',['OnAnyData',['../class_crab_u_i_1_1_c_u_i_component.html#aff51996f690530cfe6550e226bb2af18',1,'CrabUI::CUIComponent']]],
+  ['onconsume_3',['OnConsume',['../class_crab_u_i_1_1_c_u_i_component.html#ab6e6cbdea1cb400ea9b5f9072a44aa37',1,'CrabUI::CUIComponent']]],
+  ['ondispose_4',['OnDispose',['../class_crab_u_i_1_1_c_u_i.html#a094cb2f85756ccf7fdf601df178d2dcb',1,'CrabUI::CUI']]],
+  ['one_20component_20to_20another_20with_3a_5',['You can attach one component to another with:',['../_creatingatree.html#autotoc_md15',1,'']]],
+  ['oninit_6',['OnInit',['../class_crab_u_i_1_1_c_u_i.html#a29fdc0441733f6fde0d3bc29a458078c',1,'CrabUI::CUI']]],
+  ['onslide_7',['OnSlide',['../class_crab_u_i_1_1_c_u_i_slider.html#a47cb8f2e0955b0f9566d2031d1f77d02',1,'CrabUI::CUISlider']]],
+  ['open_8',['Open',['../class_crab_u_i_1_1_c_u_i_frame.html#a3e91acd1f55a74bc1a4c45677f050fec',1,'CrabUI.CUIFrame.Open()'],['../class_crab_u_i_1_1_c_u_i_pages.html#ac9ac0d7b2273d35846dc22afdbe41872',1,'CrabUI.CUIPages.Open()']]],
+  ['options_9',['Options',['../class_crab_u_i_1_1_c_u_i_drop_down.html#a4ed50a8547204388ed041edd116d2ad3',1,'CrabUI.CUIDropDown.Options'],['../class_crab_u_i_1_1_c_u_i_multi_button.html#a6cf37012e52970ea4b9b5cb9d37bee9e',1,'CrabUI.CUIMultiButton.Options']]],
+  ['other_20props_10',['Other Props',['../_other_props.html',1,'index']]],
+  ['outlinecolor_11',['OutlineColor',['../class_crab_u_i_1_1_c_u_i_component.html#af448f2eed9d166a9966d516725c6ad77',1,'CrabUI::CUIComponent']]],
+  ['overview_12',['Overview',['../index.html#autotoc_md7',1,'\subpage Overview'],['../_overview.html',1,'Overview']]]
 ];

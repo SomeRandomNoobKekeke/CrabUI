@@ -1,17 +1,8 @@
 var searchData=
 [
-  ['icuivitalizable_0',['ICUIVitalizable',['../interface_crab_u_i_1_1_i_c_u_i_vitalizable.html',1,'CrabUI']]],
-  ['id_1',['ID',['../class_crab_u_i_1_1_c_u_i_component.html#a97bacc49652d724c7ff474aeddd4b97d',1,'CrabUI::CUIComponent']]],
-  ['ignoreevents_2',['IgnoreEvents',['../class_crab_u_i_1_1_c_u_i_component.html#ae7d8d8c989ce888630d1822d2216215f',1,'CrabUI::CUIComponent']]],
-  ['ignoreparenteventignorance_3',['IgnoreParentEventIgnorance',['../class_crab_u_i_1_1_c_u_i_component.html#a104859293f40b371c90c071ec393a559',1,'CrabUI::CUIComponent']]],
-  ['ignoreparentvisibility_4',['IgnoreParentVisibility',['../class_crab_u_i_1_1_c_u_i_component.html#a98010c71cc2795330274a80f469bac46',1,'CrabUI::CUIComponent']]],
-  ['ignoreparentzindex_5',['IgnoreParentZIndex',['../class_crab_u_i_1_1_c_u_i_component.html#a7b3911049a14244a6fc035d9769a759c',1,'CrabUI::CUIComponent']]],
-  ['in_20lua_6',['Usage in Lua',['../_usagein_lua.html',1,'']]],
-  ['in_20lua_7',['Same example in lua',['../_usagein_lua.html#autotoc_md28',1,'']]],
-  ['info_8',['Info',['../class_crab_u_i_1_1_c_u_i_component.html#a89030ca0a394eda8e2d4c96afeb932e4',1,'CrabUI.CUIComponent.Info()'],['../class_crab_u_i_1_1_c_u_i.html#acbc36774391662ec37d19f6532ea7940',1,'CrabUI.CUI.Info(object msg, [CallerFilePath] string source=&quot;&quot;, [CallerLineNumber] int lineNumber=0)']]],
-  ['initialize_9',['Initialize',['../class_crab_u_i_1_1_c_u_i.html#af3b7572fc0a25f689e8bdcf718ec3827',1,'CrabUI::CUI']]],
-  ['input_10',['Input',['../class_crab_u_i_1_1_c_u_i.html#afd300611df504efa231d26319c2b8da7',1,'CrabUI::CUI']]],
-  ['instance_11',['Instance',['../class_crab_u_i_1_1_c_u_i.html#aba21eb0f5f823b3c2c876dc31a3b4a43',1,'CrabUI::CUI']]],
-  ['intrange_12',['IntRange',['../struct_crab_u_i_1_1_int_range.html',1,'CrabUI']]],
-  ['is_20calculated_13',['How layout is calculated',['../_howlayoutiscalculated.html',1,'index']]]
+  ['handle_0',['Handle',['../class_crab_u_i_1_1_c_u_i_slider.html#a6cf1635561b9e4c32a7c542552e06a9b',1,'CrabUI::CUISlider']]],
+  ['hidechildrenoutsideframe_1',['HideChildrenOutsideFrame',['../class_crab_u_i_1_1_c_u_i_component.html#a809e2ca8b575f4532ebf47285fd4760e',1,'CrabUI::CUIComponent']]],
+  ['how_20layout_20is_20calculated_2',['How layout is calculated',['../_howlayoutiscalculated.html',1,'index']]],
+  ['how_20to_20use_20them_3',['How to use them',['../_data_flow.html#autotoc_md16',1,'']]],
+  ['hydrate_4',['Hydrate',['../class_crab_u_i_1_1_c_u_i_component.html#a5ea833cc01691fd22bd719bd9a2f4aac',1,'CrabUI::CUIComponent']]]
 ];

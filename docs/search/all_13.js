@@ -1,20 +1,13 @@
 var searchData=
 [
-  ['randomtest_0',['RandomTest',['../class_crab_u_i_test_1_1_random_test.html',1,'CrabUITest']]],
-  ['real_1',['Real',['../class_crab_u_i_1_1_c_u_i_component.html#a8d064e18e047cd1aec85a4bb6349966a',1,'CrabUI::CUIComponent']]],
-  ['receivecommandinput_2',['ReceiveCommandInput',['../class_crab_u_i_1_1_c_u_i_text_input.html#aa31d9daefc1d29dae19b0fa4b2253093',1,'CrabUI::CUITextInput']]],
-  ['receiveeditinginput_3',['ReceiveEditingInput',['../class_crab_u_i_1_1_c_u_i_text_input.html#aa9590792463cb6826d146ee64417cd94',1,'CrabUI::CUITextInput']]],
-  ['receivespecialinput_4',['ReceiveSpecialInput',['../class_crab_u_i_1_1_c_u_i_text_input.html#a19fb99f9466954c22f5cabac724ece18',1,'CrabUI::CUITextInput']]],
-  ['receivetextinput_5',['ReceiveTextInput',['../class_crab_u_i_1_1_c_u_i_text_input.html#a39379c48f9ff1402f71466747ebc950c',1,'CrabUI.CUITextInput.ReceiveTextInput(char inputChar)'],['../class_crab_u_i_1_1_c_u_i_text_input.html#ae2eab26c9902a0fa6a5c57d64d8f406a',1,'CrabUI.CUITextInput.ReceiveTextInput(string text)']]],
-  ['relative_6',['Relative',['../class_crab_u_i_1_1_c_u_i_component.html#a3bf46498c5f0dae185b27ebb3a452c98',1,'CrabUI::CUIComponent']]],
-  ['remember_7',['Remember',['../class_crab_u_i_1_1_c_u_i_component.html#ad7390cc3452581c0d36d476920c214c5',1,'CrabUI::CUIComponent']]],
-  ['render_8',['Render',['../class_crab_u_i_1_1_c_u_i_canvas.html#a596270393c3a96ccd77b1f117fbdba70',1,'CrabUI::CUICanvas']]],
-  ['resizehandlecolor_9',['ResizeHandleColor',['../class_crab_u_i_1_1_c_u_i_component.html#af9d69ebdc610869021a352c97d10e3c2',1,'CrabUI::CUIComponent']]],
-  ['resizetocontent_10',['ResizeToContent',['../class_crab_u_i_test_1_1_prop_test.html#abab9eca5578e0306079bd6b6bb3377f2',1,'CrabUITest::PropTest']]],
-  ['resizetocontent2_11',['ResizeToContent2',['../class_crab_u_i_test_1_1_prop_test.html#a2a52688dbc4437b3fc4af58b0dc80543',1,'CrabUITest::PropTest']]],
-  ['resizetocontent3_12',['ResizeToContent3',['../class_crab_u_i_test_1_1_prop_test.html#a7528e029d964d9a6d1ce2cbc6679bcf5',1,'CrabUITest::PropTest']]],
-  ['resizetosprite_13',['ResizeToSprite',['../class_crab_u_i_1_1_c_u_i_component.html#a45d77f03b0be05a9c7c4798f8bf713a4',1,'CrabUI::CUIComponent']]],
-  ['restore_20state_20of_20component_14',['Also you can memorize and restore state of component',['../_serialization.html#autotoc_md16',1,'']]],
-  ['revealed_15',['Revealed',['../class_crab_u_i_1_1_c_u_i_component.html#a2b39e97b6c2c219efbb25cd176e0f16b',1,'CrabUI::CUIComponent']]],
-  ['runrecursiveon_16',['RunRecursiveOn',['../class_crab_u_i_1_1_c_u_i_component.html#af8348cdd67cd0b1a66a4a944f9f5da1d',1,'CrabUI::CUIComponent']]]
+  ['padding_0',['Padding',['../class_crab_u_i_1_1_c_u_i_component.html#a5186e13b2faee5dd2b9b919cbb8c3618',1,'CrabUI::CUIComponent']]],
+  ['palette_1',['Palette',['../class_crab_u_i_1_1_c_u_i_component.html#a00e17a5180c0ea7ccfc2af14149f1e85',1,'CrabUI::CUIComponent']]],
+  ['palettes_2',['Palettes',['../_stylespalettes.html#autotoc_md19',1,'Palettes'],['../_stylespalettes.html',1,'Styles, Palettes']]],
+  ['parentanchor_3',['ParentAnchor',['../class_crab_u_i_1_1_c_u_i_component.html#aa7f771ddc058dc8b160caf4d9243a763',1,'CrabUI::CUIComponent']]],
+  ['passpropstochild_4',['PassPropsToChild',['../class_crab_u_i_1_1_c_u_i_component.html#a4fbc3126e7d56a17c69227c6b9d14ccf',1,'CrabUI::CUIComponent']]],
+  ['pgnassets_5',['PGNAssets',['../class_crab_u_i_1_1_c_u_i.html#a7ad58022298f051fe199bca6ab39df77',1,'CrabUI.CUI.PGNAssets'],['../class_crab_u_i_1_1_c_u_i_texture_manager.html#a5953b2ea87c5b61f01b025d5ee0ff97b',1,'CrabUI.CUITextureManager.PGNAssets']]],
+  ['prepend_6',['Prepend',['../class_crab_u_i_1_1_c_u_i_component.html#a21431d1bcb98626c736124039177b6c7',1,'CrabUI::CUIComponent']]],
+  ['props_7',['Props',['../_graphic_props.html',1,'Graphic Props'],['../_layout_props.html',1,'Layout Props'],['../_other_props.html',1,'Other Props'],['../class_crab_u_i_1_1_c_u_i_style.html#a49074c884e6c899040314e3386115bb5',1,'CrabUI.CUIStyle.Props']]],
+  ['props_3a_8',['Props:',['../index.html#autotoc_md10',1,'']]],
+  ['proptest_9',['PropTest',['../class_crab_u_i_test_1_1_prop_test.html',1,'CrabUITest']]]
 ];

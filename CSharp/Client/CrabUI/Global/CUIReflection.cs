@@ -53,6 +53,7 @@ namespace CrabUI
       CUI.OnDispose += () =>
       {
         CUITypes.Clear();
+        CUILayoutTypes.Clear();
         CUITypeTree.Clear();
       };
     }
@@ -63,9 +64,9 @@ namespace CrabUI
 
     public static Dictionary<Type, TypeTreeNode> CUITypeTree = new();
 
-    public static Dictionary<string, Type> CUITypes;
+    public static Dictionary<string, Type> CUILayoutTypes = new();
+    public static Dictionary<string, Type> CUITypes = new Dictionary<string, Type>();
 
-    // lol, i don't need this
     public static void FormCUITypeTree()
     {
       List<TypePair> Pustoe = CUITypes.Values.Select(t => new TypePair(t, t.BaseType)).ToList();
@@ -104,27 +105,22 @@ namespace CrabUI
 
     public static void FindCUITypes()
     {
-      CUITypes = new Dictionary<string, Type>();
-
       Assembly CUIAssembly = Assembly.GetAssembly(typeof(CUI));
       Assembly CallingAssembly = Assembly.GetCallingAssembly();
 
       CUITypes["CUIComponent"] = typeof(CUIComponent);
+      CUILayoutTypes["CUILayout"] = typeof(CUILayout);
 
       foreach (Type t in CallingAssembly.GetTypes())
       {
-        if (t.IsSubclassOf(typeof(CUIComponent)))
-        {
-          CUITypes[t.Name] = t;
-        }
+        if (t.IsSubclassOf(typeof(CUIComponent))) CUITypes[t.Name] = t;
+        if (t.IsSubclassOf(typeof(CUILayout))) CUILayoutTypes[t.Name] = t;
       }
 
       foreach (Type t in CUIAssembly.GetTypes())
       {
-        if (t.IsSubclassOf(typeof(CUIComponent)))
-        {
-          CUITypes[t.Name] = t;
-        }
+        if (t.IsSubclassOf(typeof(CUIComponent))) CUITypes[t.Name] = t;
+        if (t.IsSubclassOf(typeof(CUILayout))) CUILayoutTypes[t.Name] = t;
       }
     }
 

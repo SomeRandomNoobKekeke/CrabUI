@@ -46,6 +46,15 @@ namespace CrabUI
       }
     }
 
+    public void PrintTree(string offset = "")
+    {
+      CUI.Log($"{offset}{this}");
+      foreach (CUIComponent child in Children)
+      {
+        child.PrintTree(offset + "|    ");
+      }
+    }
+
     /// <summary>
     /// Prints component and then message
     /// </summary>
@@ -135,7 +144,11 @@ namespace CrabUI
       {
         component = component.NamedComponents.GetValueOrDefault(n);
 
-        if (component == null) break;
+        if (component == null)
+        {
+          CUI.Warning($"Failed to Get {name} from {this}, there's no {n}");
+          break;
+        }
       }
 
       return component;

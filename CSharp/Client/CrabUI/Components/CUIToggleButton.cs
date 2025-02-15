@@ -29,7 +29,7 @@ namespace CrabUI
     {
       set
       {
-        OffColor = value.Multiply(0.3f);
+        OffColor = value.Multiply(0.5f);
         OffHoverColor = value;
         OnColor = value.Multiply(0.9f);
         OnHoverColor = value;
@@ -40,7 +40,7 @@ namespace CrabUI
     {
       set
       {
-        OffColor = new Color((int)(value.R * 0.3f), (int)(value.G * 0.3f), (int)(value.B * 0.3f), value.A);
+        OffColor = new Color((int)(value.R * 0.5f), (int)(value.G * 0.5f), (int)(value.B * 0.5f), value.A);
         OffHoverColor = value;
         OnColor = new Color((int)(value.R * 0.9f), (int)(value.G * 0.9f), (int)(value.B * 0.9f), value.A); ;
         OnHoverColor = value;
@@ -118,6 +118,8 @@ namespace CrabUI
 
       TextAlign = new Vector2(0.5f, 0.5f);
       Padding = new Vector2(4, 2);
+
+      Text = nameof(CUIToggleButton);
 
       OnMouseDown += (e) =>
       {

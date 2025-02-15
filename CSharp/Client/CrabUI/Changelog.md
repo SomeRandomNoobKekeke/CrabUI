@@ -1,6 +1,19 @@
-## 0.1.0.1
+## 0.2.0.0
 
-guh
+Reworked CUIPalette, and CUICommand, check docs
+
+Reworked border, added separate borders for each side, border sprite, outline
+
+Changed how zindex is calculated, now every next child will have higher zindex -> everything in one frame will be above or below everything in the other
+
+optimized CUITextBlock measurements, added some validation to CUITextInput
+
+Added CUIPresets with... presets. Which you can use to reduce boilerplate code 
+
+Made more stuff parseable and serializble
+
+And tons of other things i'm too lazy to write down, compare commits if you're curious
+
 
 ## 0.1.0.0
 

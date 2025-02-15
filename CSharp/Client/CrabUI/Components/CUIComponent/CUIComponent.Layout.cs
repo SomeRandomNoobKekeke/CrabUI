@@ -20,7 +20,9 @@ namespace CrabUI
   {
     #region Layout --------------------------------------------------------
 
-    protected CUILayout layout; public virtual CUILayout Layout
+    protected CUILayout layout;
+    //[CUISerializable]
+    public virtual CUILayout Layout
     {
       get => layout;
       set { layout = value; layout.Host = this; }
@@ -38,6 +40,13 @@ namespace CrabUI
       CUIDebug.Capture(null, this, "OnPropChanged", memberName, "Layout.Changed", "true");
       MainComponent?.LayoutChanged();
     }
+    internal void OnSelfAndParentChanged([CallerMemberName] string memberName = "")
+    {
+      Layout.SelfAndParentChanged = true;
+      CUIDebug.Capture(null, this, "OnSelfAndParentChanged", memberName, "Layout.SelfAndParentChanged", "true");
+      MainComponent?.LayoutChanged();
+    }
+
     /// <summary>
     /// Triggers recalc of own pseudo components and nothing else
     /// </summary>

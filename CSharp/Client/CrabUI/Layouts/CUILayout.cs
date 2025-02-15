@@ -61,6 +61,35 @@ namespace CrabUI
       }
     }
 
+    private void propagateDecorChangedDown()
+    {
+      DecorChanged = true;
+      foreach (CUIComponent child in Host.Children)
+      {
+        child.Layout.propagateDecorChangedDown();
+      }
+    }
+
+    /// <summary>
+    /// It doesn't optimize anything
+    /// </summary>
+    public bool SelfAndParentChanged
+    {
+      set
+      {
+        if (value)
+        {
+          changed = true;
+          DecorChanged = true;
+          if (Host.Parent != null)
+          {
+            Host.Parent.Layout.changed = true;
+            Host.Parent.Layout.propagateDecorChangedDown();
+          }
+        }
+      }
+    }
+
     public bool ChildChanged
     {
       set
@@ -127,9 +156,24 @@ namespace CrabUI
       AbsoluteChanged = false;
     }
 
-    public CUILayout(CUIComponent host = null)
+    public CUILayout() { }
+    public CUILayout(CUIComponent host)
     {
       Host = host;
+    }
+
+    public override string ToString() => this.GetType().Name;
+    public static CUILayout Parse(string raw)
+    {
+      if (raw != null)
+      {
+        raw = raw.Trim();
+        if (CUIReflection.CUILayoutTypes.ContainsKey(raw))
+        {
+          return (CUILayout)Activator.CreateInstance(CUIReflection.CUILayoutTypes[raw]);
+        }
+      }
+      return new CUILayoutSimple();
     }
   }
 }

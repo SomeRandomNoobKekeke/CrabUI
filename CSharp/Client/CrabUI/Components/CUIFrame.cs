@@ -22,12 +22,15 @@ namespace CrabUI
     public override void DrawFront(SpriteBatch spriteBatch)
     {
       //if (BorderVisible) CUI.DrawBorders(spriteBatch, Real, BorderColor, BorderSprite, BorderThickness);
-      GUI.DrawRectangle(spriteBatch, BorderBox.Position, BorderBox.Size, BorderColor, thickness: BorderThickness);
+      // GUI.DrawRectangle(spriteBatch, BorderBox.Position, BorderBox.Size, BorderColor, thickness: BorderThickness);
+      CUI.DrawBorders(spriteBatch, this);
+
+      if (OutlineVisible) GUI.DrawRectangle(spriteBatch, OutlineBox.Position, OutlineBox.Size, OutlineColor, thickness: OutlineThickness);
 
       LeftResizeHandle.Draw(spriteBatch);
       RightResizeHandle.Draw(spriteBatch);
 
-      base.DrawFront(spriteBatch);
+      //base.DrawFront(spriteBatch);
     }
 
     public event Action OnOpen;

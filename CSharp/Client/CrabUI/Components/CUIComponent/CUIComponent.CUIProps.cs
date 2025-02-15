@@ -101,6 +101,23 @@ namespace CrabUI
         },
       };
 
+      public CUIProp<bool> ResizeToSprite = new CUIProp<bool>()
+      {
+        LayoutProp = true,
+        OnSet = (v, host) =>
+        {
+          if (v)
+          {
+            host.Absolute = host.Absolute with
+            {
+              Width = host.BackgroundSprite.SourceRect.Width,
+              Height = host.BackgroundSprite.SourceRect.Height,
+            };
+          }
+        },
+      };
+
+
       public CUIProp<CUIBool2> FillEmptySpace = new CUIProp<CUIBool2>()
       {
         LayoutProp = true,
@@ -150,21 +167,52 @@ namespace CrabUI
       #region Graphic Props --------------------------------------------------------
       #endregion
 
-      public CUIProp<Color> BackgroundColor = new CUIProp<Color>()
-      {
-        ShowInDebug = false,
-        OnSet = (v, host) =>
-          {
-            host.BackgroundVisible = v != Color.Transparent;
-          },
-      };
 
-      public CUIProp<Color> BorderColor = new CUIProp<Color>()
+      public CUIProp<PaletteOrder> Palette = new CUIProp<PaletteOrder>()
       {
         ShowInDebug = false,
         OnSet = (v, host) =>
         {
-          host.BorderVisible = v != Color.Transparent;
+          CUIGlobalStyleResolver.OnComponentStyleChanged(host);
+          foreach (var child in host.Children)
+          {
+            child.Palette = v;
+          }
+        },
+      };
+
+      public CUIProp<CUISprite> BackgroundSprite = new CUIProp<CUISprite>()
+      {
+        Value = CUISprite.Default,
+        ShowInDebug = false,
+        OnSet = (v, host) =>
+        {
+          if (host.ResizeToSprite)
+          {
+            host.Absolute = host.Absolute with
+            {
+              Width = v.SourceRect.Width,
+              Height = v.SourceRect.Height,
+            };
+          }
+        },
+      };
+
+      public CUIProp<Color> BackgroundColor = new CUIProp<Color>()
+      {
+        ShowInDebug = false,
+        OnSet = (v, host) =>
+        {
+          host.BackgroundVisible = v != Color.Transparent;
+        },
+      };
+
+      public CUIProp<Color> OutlineColor = new CUIProp<Color>()
+      {
+        ShowInDebug = false,
+        OnSet = (v, host) =>
+        {
+          host.OutlineVisible = v != Color.Transparent;
         },
       };
 

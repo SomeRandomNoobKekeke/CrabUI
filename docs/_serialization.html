@@ -96,14 +96,20 @@ $(function(){ initResizable(false); });
 <div class="textblock"><p><a class="anchor" id="md__docs_2_freestyle_2_sub_pages_2_misc_2_serialization"></a></p>
 <p>All components are serializable <br  />
  Every property marked with [CUISerializable] is serializable</p>
-<p>You can save and load them to / from file like this: </p><pre class="fragment">ComponentA.SaveToFile(path)
-CUIComponent.LoadFromFile(path)
-CUIComponent.LoadFromFile&lt;T&gt;(path)
-</pre><p>Or just convert them to / from xml string: </p><pre class="fragment">ComponentA.Serialize()
-CUIComponent.Deserialize(string)
-</pre><p>Or convert them to / from xml: </p><pre class="fragment">ComponentA.ToXML()
-ComponentA.FromXML(XElement)
-</pre><h3><a class="anchor" id="autotoc_md12"></a>
+<p>Every type that have Parse and ToString methods can be serialized <br  />
+ For types that doesn't have them methods from <a class="el" href="">CUIExtensions </a> will be used <br  />
+ You can also use them as you want</p>
+<p>You can save and load them to / from file like this: </p><pre class="fragment">public void SaveToFile(string path, CUIAttribute propAttribute = CUIAttribute.CUISerializable)
+public static CUIComponent LoadFromFile(string path, bool saveAfterLoad = false)
+public static T LoadFromFile&lt;T&gt;(string path, bool saveAfterLoad = false)
+public void LoadFromTheSameFile()
+public void SaveToTheSamePath()
+</pre><p>Right after the component is loaded, its Hydrate method is called <br  />
+ You can try to use it to add callbacks to stuff or save childs to local vars on a custom components</p>
+<p>If you don't want Component to be serialized set its Unserializable to true</p>
+<p>If you don't want parent to serialize set BreakSerialization to true <br  />
+ E.g. if you want to load parent from a file, but parent contains a list of components that is filled dynamically and you don't want to save them to the parent template</p>
+<h3><a class="anchor" id="autotoc_md16"></a>
 Also you can memorize and restore state of component</h3>
 <p>States are just shalow clones of component <br  />
  They are stored in <br  />

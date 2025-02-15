@@ -28,14 +28,14 @@ namespace CrabUI
 
         if (oldFocused != null)
         {
-          oldFocused.InvokeOnFocusLost();
           oldFocused.Focused = false;
+          oldFocused.InvokeOnFocusLost();
         }
 
         if (newFocused != null)
         {
-          newFocused.InvokeOnFocus();
           newFocused.Focused = true;
+          newFocused.InvokeOnFocus();
         }
 
         if (oldFocused is IKeyboardSubscriber || newFocused is null)
@@ -74,6 +74,7 @@ namespace CrabUI
 
       if (oldSubscriber is CUIComponent component1 && newSubscriber is GUITextBox)
       {
+        //TODO for some season TextInput doesn't loose focus here
         component1.InvokeOnFocusLost();
         component1.Focused = false;
         focusedCUIComponent = null;

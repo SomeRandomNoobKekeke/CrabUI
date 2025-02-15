@@ -244,8 +244,8 @@ namespace CrabUI
 
       base.ResizeToContent();
     }
-
-    public CUILayoutHorizontalList(CUIDirection d = CUIDirection.Straight, CUIComponent host = null) : base(host)
+    public CUILayoutHorizontalList() : base() { }
+    public CUILayoutHorizontalList(CUIDirection d, CUIComponent host = null) : base(host)
     {
       Direction = d;
     }

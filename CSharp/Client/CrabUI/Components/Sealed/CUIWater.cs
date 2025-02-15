@@ -72,11 +72,16 @@ namespace CrabUI
     public void Update(double totalTime)
     {
       if (totalTime - lastUpdateTime < UpdateInterval) return;
-
+      UpdateSelf();
       Step();
       lastUpdateTime = totalTime;
 
       TransferData();
+    }
+
+    public virtual void UpdateSelf()
+    {
+
     }
 
     private void TransferData()
@@ -107,8 +112,8 @@ namespace CrabUI
     public float DropSize = 16.0f;
     public void Drop(float x, float y)
     {
-      int i = (int)Math.Clamp(Math.Round(x * Texture.Width), 1, Texture.Width - 1);
-      int j = (int)Math.Clamp(Math.Round(y * Texture.Height), 1, Texture.Height - 1);
+      int i = (int)Math.Clamp(Math.Round(x * Texture.Width), 1, Texture.Width - 2);
+      int j = (int)Math.Clamp(Math.Round(y * Texture.Height), 1, Texture.Height - 2);
 
       Pool1[i, j] = DropSize;
     }
@@ -117,20 +122,20 @@ namespace CrabUI
 
     public CUIWater(int x, int y) : base(x, y)
     {
-      ConsumeDragAndDrop = true;
+      //ConsumeDragAndDrop = true;
 
-      OnUpdate += Update;
+      //OnUpdate += Update;
       Pool1 = new float[Texture.Width, Texture.Height];
       Pool2 = new float[Texture.Width, Texture.Height];
       DensityMap = new float[Texture.Width, Texture.Height];
       RandomizeDensityMap();
 
-      OnMouseOn += (e) =>
-      {
-        if (!MousePressed) return;
-        Vector2 v = CUIAnchor.AnchorFromPos(Real, e.MousePosition);
-        Drop(v.X, v.Y);
-      };
+      // OnMouseOn += (e) =>
+      // {
+      //   if (!MousePressed) return;
+      //   Vector2 v = CUIAnchor.AnchorFromPos(Real, e.MousePosition);
+      //   Drop(v.X, v.Y);
+      // };
     }
 
     public CUIWater() : this(256, 256)

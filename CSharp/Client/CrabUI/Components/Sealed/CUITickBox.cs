@@ -72,7 +72,7 @@ namespace CrabUI
     {
       Absolute = new CUINullRect(w: 20, h: 20);
       BackgroundColor = Color.Cyan;
-      BorderColor = Color.Transparent;
+      Border.Color = Color.Transparent;
       ConsumeMouseClicks = true;
       ConsumeDragAndDrop = true;
       ConsumeSwipe = true;
@@ -111,6 +111,7 @@ namespace CrabUI
         SoundPlayer.PlayUISound(ClickSound);
         State = !State;
         OnStateChange?.Invoke(State);
+        if (Command != null) DispatchUp(new CUICommand(Command, State));
       };
 
       OnMouseEnter += (e) => ChangeSprite();

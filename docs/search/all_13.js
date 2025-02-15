@@ -9,11 +9,12 @@ var searchData=
   ['relative_6',['Relative',['../class_crab_u_i_1_1_c_u_i_component.html#a3bf46498c5f0dae185b27ebb3a452c98',1,'CrabUI::CUIComponent']]],
   ['remember_7',['Remember',['../class_crab_u_i_1_1_c_u_i_component.html#ad7390cc3452581c0d36d476920c214c5',1,'CrabUI::CUIComponent']]],
   ['render_8',['Render',['../class_crab_u_i_1_1_c_u_i_canvas.html#a596270393c3a96ccd77b1f117fbdba70',1,'CrabUI::CUICanvas']]],
-  ['resizetocontent_9',['ResizeToContent',['../class_crab_u_i_test_1_1_prop_test.html#abab9eca5578e0306079bd6b6bb3377f2',1,'CrabUITest::PropTest']]],
-  ['resizetocontent2_10',['ResizeToContent2',['../class_crab_u_i_test_1_1_prop_test.html#a2a52688dbc4437b3fc4af58b0dc80543',1,'CrabUITest::PropTest']]],
-  ['resizetocontent3_11',['ResizeToContent3',['../class_crab_u_i_test_1_1_prop_test.html#a7528e029d964d9a6d1ce2cbc6679bcf5',1,'CrabUITest::PropTest']]],
-  ['resizetosprite_12',['ResizeToSprite',['../class_crab_u_i_1_1_c_u_i_component.html#a45d77f03b0be05a9c7c4798f8bf713a4',1,'CrabUI::CUIComponent']]],
-  ['restore_20state_20of_20component_13',['Also you can memorize and restore state of component',['../_serialization.html#autotoc_md12',1,'']]],
-  ['revealed_14',['Revealed',['../class_crab_u_i_1_1_c_u_i_component.html#a2b39e97b6c2c219efbb25cd176e0f16b',1,'CrabUI::CUIComponent']]],
-  ['runrecursiveon_15',['RunRecursiveOn',['../class_crab_u_i_1_1_c_u_i_component.html#a93263210f578005db68357069bc3243e',1,'CrabUI::CUIComponent']]]
+  ['resizehandlecolor_9',['ResizeHandleColor',['../class_crab_u_i_1_1_c_u_i_component.html#af9d69ebdc610869021a352c97d10e3c2',1,'CrabUI::CUIComponent']]],
+  ['resizetocontent_10',['ResizeToContent',['../class_crab_u_i_test_1_1_prop_test.html#abab9eca5578e0306079bd6b6bb3377f2',1,'CrabUITest::PropTest']]],
+  ['resizetocontent2_11',['ResizeToContent2',['../class_crab_u_i_test_1_1_prop_test.html#a2a52688dbc4437b3fc4af58b0dc80543',1,'CrabUITest::PropTest']]],
+  ['resizetocontent3_12',['ResizeToContent3',['../class_crab_u_i_test_1_1_prop_test.html#a7528e029d964d9a6d1ce2cbc6679bcf5',1,'CrabUITest::PropTest']]],
+  ['resizetosprite_13',['ResizeToSprite',['../class_crab_u_i_1_1_c_u_i_component.html#a45d77f03b0be05a9c7c4798f8bf713a4',1,'CrabUI::CUIComponent']]],
+  ['restore_20state_20of_20component_14',['Also you can memorize and restore state of component',['../_serialization.html#autotoc_md16',1,'']]],
+  ['revealed_15',['Revealed',['../class_crab_u_i_1_1_c_u_i_component.html#a2b39e97b6c2c219efbb25cd176e0f16b',1,'CrabUI::CUIComponent']]],
+  ['runrecursiveon_16',['RunRecursiveOn',['../class_crab_u_i_1_1_c_u_i_component.html#af8348cdd67cd0b1a66a4a944f9f5da1d',1,'CrabUI::CUIComponent']]]
 ];

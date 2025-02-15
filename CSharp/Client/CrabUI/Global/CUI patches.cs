@@ -53,6 +53,26 @@ namespace CrabUI
         original: typeof(KeyboardDispatcher).GetMethod("set_Subscriber", AccessTools.all),
         prefix: new HarmonyMethod(typeof(CUI).GetMethod("KeyboardDispatcher_set_Subscriber_Replace", AccessTools.all))
       );
+
+      harmony.Patch(
+        original: typeof(GUI).GetMethod("TogglePauseMenu", AccessTools.all, new Type[] { }),
+        postfix: new HarmonyMethod(typeof(CUI).GetMethod("GUI_TogglePauseMenu_Postfix", AccessTools.all))
+      );
+
+      harmony.Patch(
+        original: typeof(GUI).GetMethod("get_InputBlockingMenuOpen", AccessTools.all),
+        postfix: new HarmonyMethod(typeof(CUI).GetMethod("GUI_InputBlockingMenuOpen_Postfix", AccessTools.all))
+      );
+    }
+
+    public static void GUI_InputBlockingMenuOpen_Postfix(ref bool __result)
+    {
+      __result = __result || CUI.InputBlockingMenuOpen;
+    }
+
+    public static void GUI_TogglePauseMenu_Postfix()
+    {
+      CUI.InvokeOnPauseMenuToggled();
     }
 
     private static void CUIUpdate(GameTime gameTime)

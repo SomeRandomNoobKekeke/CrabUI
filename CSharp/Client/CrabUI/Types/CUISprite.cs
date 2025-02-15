@@ -96,7 +96,14 @@ namespace CrabUI
       }
     }
 
-    public override string ToString() => $"{{ Path: {Path}, Mode: {DrawMode}, SourceRect: {CUIExtensions.RectangleToString(SourceRect)}, Effects: {CUIExtensions.SpriteEffectsToString(Effects)} }}";
+    public override string ToString()
+    {
+      string mode = DrawMode != CUISpriteDrawMode.Resize ? $", Mode: {DrawMode}" : "";
+      string rect = SourceRect != Texture.Bounds ? $", SourceRect: {CUIExtensions.RectangleToString(SourceRect)}" : "";
+      string effect = Effects != SpriteEffects.None ? $", Effects: {CUIExtensions.SpriteEffectsToString(Effects)}" : "";
+
+      return $"{{ Path: {Path}{mode}{rect}{effect} }}";
+    }
     public static CUISprite Parse(string raw)
     {
       Dictionary<string, string> props = CUIExtensions.ParseKVPairs(raw);
@@ -111,6 +118,10 @@ namespace CrabUI
       if (props.ContainsKey("sourcerect"))
       {
         sprite.SourceRect = CUIExtensions.ParseRectangle(props["sourcerect"]);
+      }
+      else
+      {
+        sprite.SourceRect = new Rectangle(0, 0, sprite.Texture.Width, sprite.Texture.Height);
       }
       if (props.ContainsKey("effects"))
       {

@@ -28,6 +28,7 @@ namespace CrabUI
     /// List of options  
     /// Options are just strings
     /// </summary>
+    [CUISerializable]
     public IEnumerable<string> Options
     {
       get => OptionBox.Children.Cast<DDOption>().Select(o => o.Text);
@@ -37,6 +38,7 @@ namespace CrabUI
         foreach (string option in value) { Add(option); }
       }
     }
+    [CUISerializable]
     public string Selected
     {
       get => MainButton.Text;
@@ -45,6 +47,7 @@ namespace CrabUI
 
     public event Action<string> OnSelect;
     public Action<string> AddOnSelect { set { OnSelect += value; } }
+
 
     public void Open() => OptionBox.Revealed = true;
     public void Close() => OptionBox.Revealed = false;
@@ -85,23 +88,25 @@ namespace CrabUI
 
     public CUIDropDown() : base()
     {
+      BreakSerialization = true;
       OptionBox = new CUIVerticalList()
       {
+        Relative = new CUINullRect(w: 1),
         FitContent = new CUIBool2(true, true),
         Ghost = new CUIBool2(false, true),
         Anchor = CUIAnchor.TopLeft,
         ParentAnchor = CUIAnchor.BottomLeft,
         ZIndex = 500,
         Style = new CUIStyle(){
-          {"BackgroundColor", "CUIPalette.Current.Tertiary.Off"},
-          {"BorderColor", "CUIPalette.Current.Tertiary.Border"},
+          {"BackgroundColor", "CUIPalette.DDOption.Background"},
+          {"Border", "CUIPalette.DDOption.Border"},
         },
       };
 
       MainButton = new CUIButton()
       {
         Text = "CUIDropDown",
-        Relative = new CUINullRect(w: 1),
+        Relative = new CUINullRect(w: 1, h: 1),
         AddOnMouseDown = (e) => OptionBox.Revealed = !OptionBox.Revealed,
       };
 

@@ -19,6 +19,47 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
+    public record CompareResult(bool equal, string firstMismatch = "")
+    {
+      public static implicit operator bool(CompareResult r) => r.equal;
+    }
+
+    public static bool DeepCompareVerbose(CUIComponent a, CUIComponent b)
+    {
+      CompareResult result = DeepCompare(a, b);
+      if (result.equal) CUI.Log($"{a} == {b}");
+      else CUI.Log($"{result.firstMismatch}");
+      return result.equal;
+    }
+    public static CompareResult DeepCompare(CUIComponent a, CUIComponent b)
+    {
+      if (a.GetType() != b.GetType()) return new CompareResult(false, $"type mismatch: {a} | {b}");
+
+      Type T = a.GetType();
+      CUITypeMetaData meta = CUITypeMetaData.Get(T);
+
+      foreach (var (key, pi) in meta.Serializable)
+      {
+        if (!object.Equals(pi.GetValue(a), pi.GetValue(b)))
+        {
+          return new CompareResult(false, $"{pi}: {a}{pi.GetValue(a)} | {b}{pi.GetValue(b)}");
+        }
+      }
+
+      if (a.Children.Count != b.Children.Count)
+      {
+        return new CompareResult(false, $"child count mismatch: {a}{CUI.ArrayToString(a.Children)} | {b}{CUI.ArrayToString(b.Children)}");
+      }
+
+      for (int i = 0; i < a.Children.Count; i++)
+      {
+        CompareResult sub = DeepCompare(a.Children[i], b.Children[i]);
+        if (!sub.equal) return sub;
+      }
+
+      return new CompareResult(true);
+    }
+
     #region State --------------------------------------------------------
 
     /// <summary>
@@ -57,6 +98,7 @@ namespace CrabUI
     #endregion
     #region XML --------------------------------------------------------
 
+    public static bool ForceSaveAllProps { get; set; } = false;
     public static bool SaveAfterLoad { get; set; } = true;
 
     public string SavePath { get; set; }
@@ -75,7 +117,7 @@ namespace CrabUI
 
         foreach (CUIComponent child in Children)
         {
-          if (!child.BreakSerialization)
+          if (!this.BreakSerialization)
           {
             e.Add(child.ToXML(propAttribute));
           }
@@ -188,7 +230,7 @@ namespace CrabUI
         {
           object value = props[key].GetValue(this);
           // it's default value for this prop
-          if (meta.Default != null && Object.Equals(value, CUIReflection.GetNestedValue(meta.Default, key)))
+          if (!ForceSaveAllProps && meta.Default != null && Object.Equals(value, CUIReflection.GetNestedValue(meta.Default, key)))
           {
             continue;
           }
@@ -241,7 +283,7 @@ namespace CrabUI
         CUIComponent c = (CUIComponent)Activator.CreateInstance(type);
         // c.RemoveAllChildren();
         c.FromXML(e);
-        CUIComponent.RunRecursiveOn(c, (component, i) => component.Hydrate());
+        CUIComponent.RunRecursiveOn(c, (component) => component.Hydrate());
 
         return c;
       }
@@ -260,7 +302,7 @@ namespace CrabUI
 
         RemoveAllChildren();
         FromXML(xdoc.Root);
-        CUIComponent.RunRecursiveOn(this, (component, i) => component.Hydrate());
+        CUIComponent.RunRecursiveOn(this, (component) => component.Hydrate());
         SavePath = path;
 
         if (SaveAfterLoad && saveAfterLoad) SaveToTheSamePath();
@@ -309,6 +351,16 @@ namespace CrabUI
       }
     }
 
+    public void LoadFromTheSameFile()
+    {
+      if (SavePath == null)
+      {
+        CUI.Warning($"Can't load {this} from The Same Path, SavePath is null");
+        return;
+      }
+      LoadSelfFromFile(SavePath);
+    }
+
     public void SaveToTheSamePath()
     {
       if (SavePath == null)
@@ -326,6 +378,7 @@ namespace CrabUI
         XDocument xdoc = new XDocument();
         xdoc.Add(this.ToXML(propAttribute));
         xdoc.Save(path);
+        SavePath = path;
       }
       catch (Exception e)
       {

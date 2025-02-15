@@ -1,60 +1,61 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DefaultStyles>
   <CUIComponent>
-    <BackgroundColor>CUIPalette.Current.Primary.Off</BackgroundColor>
-    <BorderColor>CUIPalette.Current.Primary.Border</BorderColor>
+    <BackgroundColor>CUIPalette.Component.Background</BackgroundColor>
+    <Border>CUIPalette.Component.Border</Border>
+    <ResizeHandleColor>CUIPalette.Handle.Background</ResizeHandleColor>
+    <ResizeHandleGrabbedColor>CUIPalette.Handle.Grabbed</ResizeHandleGrabbedColor>
   </CUIComponent>
 
+  <CUIFrame>
+    <BackgroundColor>CUIPalette.Frame.Background</BackgroundColor>
+    <OutlineColor>CUIPalette.Frame.Border</OutlineColor>
+  </CUIFrame>
+
   <CUITextBlock>
-    <TextColor>CUIPalette.Current.Secondary.Text</TextColor>
-    <BorderColor>Transparent</BorderColor>
+    <TextColor>CUIPalette.Component.Text</TextColor>
+    <Border>Transparent</Border>
     <BackgroundColor>Transparent</BackgroundColor>
     <Padding>[4,0]</Padding>
   </CUITextBlock>
 
+  <CUITextInput>
+    <TextColor>CUIPalette.Input.Text</TextColor>
+    <Border>CUIPalette.Input.Border</Border>
+    <BackgroundColor>CUIPalette.Input.Background</BackgroundColor>
+  </CUITextInput>
+
   <CUIButton>
-    <!-- 
-    <InactiveColor>CUIPalette.Current.Secondary.Off</InactiveColor>
-    <MouseOverColor>CUIPalette.Current.Secondary.OffHover</MouseOverColor>
-    <MousePressedColor>CUIPalette.Current.Secondary.On</MousePressedColor> 
-    -->
-    <MasterColor>CUIPalette.Current.Secondary.On</MasterColor>
-    <BorderColor>CUIPalette.Current.Secondary.Border</BorderColor>
-    <DisabledColor>CUIPalette.Current.Secondary.Disabled</DisabledColor>
+    <MasterColorOpaque>CUIPalette.Button.Background</MasterColorOpaque>
+    <Border>CUIPalette.Button.Border</Border>
+    <DisabledColor>CUIPalette.Button.Disabled</DisabledColor>
     <Padding>[4,2]</Padding>
     <TextAlign>[0.5,0.5]</TextAlign>
   </CUIButton>
 
-  <CUIDropDown>
-    <BackgroundColor>CUIPalette.Current.Tertiary.Off</BackgroundColor>
-    <BorderColor>CUIPalette.Current.Tertiary.Border</BorderColor>
-  </CUIDropDown>
+  <CUIToggleButton>
+    <MasterColorOpaque>CUIPalette.Button.Background</MasterColorOpaque>
+    <Border>CUIPalette.Button.Border</Border>
+    <DisabledColor>CUIPalette.Button.Background</DisabledColor>
+  </CUIToggleButton>
+
+  <CUICloseButton>
+    <MasterColorOpaque>CUIPalette.CloseButton.Background</MasterColorOpaque>
+    <Border>Transparent</Border>
+  </CUICloseButton>
 
   <DDOption>
-    <MouseOverColor>CUIPalette.Current.Tertiary.OffHover</MouseOverColor>
-    <TextColor>CUIPalette.Current.Tertiary.Text</TextColor>
+    <InactiveColor>Transparent</InactiveColor>
+    <Border>Transparent</Border>
+    <MouseOverColor>CUIPalette.DDOption.Hover</MouseOverColor>
+    <TextColor>CUIPalette.DDOption.Text</TextColor>
     <TextAlign>[0,0]</TextAlign>
     <Padding>[4,0]</Padding>
-    <InactiveColor>Transparent</InactiveColor>
-    <BorderColor>Transparent</BorderColor>
   </DDOption>
-
-  <CUIToggleButton>
-    <!-- 
-    <OnColor>CUIPalette.Current.Secondary.On</OnColor>
-    <OffColor>CUIPalette.Current.Secondary.Off</OffColor>
-    <OnHoverColor>CUIPalette.Current.Secondary.OnHover</OnHoverColor>
-    <OffHoverColor>CUIPalette.Current.Secondary.OffHover</OffHoverColor> 
-    -->
-    <MasterColor>CUIPalette.Current.Secondary.On</MasterColor>
-    <BorderColor>CUIPalette.Current.Secondary.Border</BorderColor>
-    <DisabledColor>CUIPalette.Current.Secondary.Disabled</DisabledColor>
-    <TextColor>CUIPalette.Current.Secondary.Text</TextColor>
-  </CUIToggleButton>
 
   <CUICanvas>
     <BackgroundColor>White</BackgroundColor>
-    <BorderColor>Black</BorderColor>
+    <Border>Black</Border>
   </CUICanvas>
 
   <CUIHorizontalList>
@@ -67,6 +68,6 @@
 
   <CUIPages>
     <BackgroundColor>Transparent</BackgroundColor>
-    <BorderColor>Transparent</BorderColor>
+    <Border>Transparent</Border>
   </CUIPages>
 </DefaultStyles>

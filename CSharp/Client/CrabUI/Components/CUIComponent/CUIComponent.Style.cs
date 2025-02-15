@@ -40,6 +40,7 @@ namespace CrabUI
     /// if value starts with "CUIPalette." it will extract the value from palette  
     /// e.g. component.Style["BackgroundColor"] = "CUIPalette.DarkBlue.Secondary.On"  
     /// </summary>
+    [CUISerializable]
     public CUIStyle Style
     {
       get => style;

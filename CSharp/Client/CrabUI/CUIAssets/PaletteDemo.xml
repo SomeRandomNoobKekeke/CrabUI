@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CUIFrame Absolute="[0,0,180,500]" Anchor="[0.5,0.5]">
+  <CUIVerticalList AKA="list" Relative="[0,0,1,1]">
+    <CUIHorizontalList AKA="caption" BackgroundColor="127,0,0,255" Border="127,0,0,255" Direction="Reverse" FitContent="[False,True]" Style="{ BackgroundColor : CUIPalette.Frame.Border, Border : CUIPalette.Frame.Border, TextColor : CUIPalette.Frame.Text }">
+      <CUICloseButton AKA="close" />
+      <CUITextBlock AKA="text" BackgroundColor="127,0,0,255" Border="127,0,0,255" FillEmptySpace="[True,False]" Text="caption" TextAlign="[0,0.5]" TextColor="255,229,229,255" />
+    </CUIHorizontalList>
+    <CUIHorizontalList AKA="header" BackgroundColor="76,0,0,255" Border="102,0,0,255" Direction="Reverse" FitContent="[False,True]" Style="{ BackgroundColor : CUIPalette.Header.Background, Border : CUIPalette.Header.Border, TextColor : CUIPalette.Header.Text }">
+      <CUITextBlock AKA="text" BackgroundColor="76,0,0,255" Border="102,0,0,255" FillEmptySpace="[True,False]" Style="{ BackgroundColor : CUIPalette.Header.Background, Border : CUIPalette.Header.Border, TextColor : CUIPalette.Header.Text }" Text="Header" TextAlign="[0,0.5]" TextColor="255,229,229,255" />
+    </CUIHorizontalList>
+    <CUIHorizontalList AKA="nav" BackgroundColor="51,0,0,255" Border="76,0,0,255" Direction="Reverse" FitContent="[False,True]" Style="{ BackgroundColor : CUIPalette.Nav.Background, Border : CUIPalette.Nav.Border, TextColor : CUIPalette.Nav.Text }">
+      <CUITextBlock AKA="text" BackgroundColor="51,0,0,255" Border="76,0,0,255" FillEmptySpace="[True,False]" Style="{ BackgroundColor : CUIPalette.Nav.Background, Border : CUIPalette.Nav.Border, TextColor : CUIPalette.Nav.Text }" Text="Nav" TextAlign="[0,0.5]" />
+    </CUIHorizontalList>
+    <CUIVerticalList AKA="main" BackgroundColor="25,0,0,255" Border="51,0,0,255" FillEmptySpace="[False,True]" Style="{ BackgroundColor : CUIPalette.Main.Background, Border : CUIPalette.Main.Border, TextColor : CUIPalette.Main.Text }">
+      <CUITextBlock AKA="text" BackgroundColor="25,0,0,255" Border="51,0,0,255" Style="{ BackgroundColor : CUIPalette.Main.Background, Border : CUIPalette.Main.Border, TextColor : CUIPalette.Main.Text }" Text="Main" TextAlign="[0,0.5]" />
+      <CUIButton Text="button" />
+      <CUIToggleButton Text="button" />
+      <CUITextInput Absolute="[,,,22]" />
+      <CUIDropDown Options="[123,321,weqwerqwe]" Selected="123" />
+    </CUIVerticalList>
+    <CUIComponent AKA="filler" Absolute="[,,,30]" />
+  </CUIVerticalList>
+</CUIFrame>

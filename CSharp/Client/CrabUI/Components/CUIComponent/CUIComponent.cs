@@ -65,12 +65,12 @@ namespace CrabUI
     /// <summary>
     ///  designed to be versatile, in fact never used
     /// </summary>
-    public static void RunRecursiveOn(CUIComponent component, Action<CUIComponent, int> action, int depth = 0)
+    public static void RunRecursiveOn(CUIComponent component, Action<CUIComponent> action)
     {
-      action(component, depth);
+      action(component);
       foreach (CUIComponent child in component.Children)
       {
-        RunRecursiveOn(child, action, depth + 1);
+        RunRecursiveOn(child, action);
       }
     }
 
@@ -139,7 +139,10 @@ namespace CrabUI
     {
       if (BackgroundVisible) CUI.DrawRectangle(spriteBatch, Real, BackgroundColor, BackgroundSprite);
 
-      if (BorderVisible) GUI.DrawRectangle(spriteBatch, BorderBox.Position, BorderBox.Size, BorderColor, thickness: BorderThickness);
+      CUI.DrawBorders(spriteBatch, this);
+      // if (Border.Visible) GUI.DrawRectangle(spriteBatch, BorderBox.Position, BorderBox.Size, Border.Color, thickness: Border.Thickness);
+
+      if (OutlineVisible) GUI.DrawRectangle(spriteBatch, OutlineBox.Position, OutlineBox.Size, OutlineColor, thickness: OutlineThickness);
 
       LeftResizeHandle.Draw(spriteBatch);
       RightResizeHandle.Draw(spriteBatch);
@@ -203,7 +206,7 @@ namespace CrabUI
 
       Vitalize();
       VitalizeProps();
-      AddCommands();
+      SetupCommands();
 
       Layout = new CUILayoutSimple();
 

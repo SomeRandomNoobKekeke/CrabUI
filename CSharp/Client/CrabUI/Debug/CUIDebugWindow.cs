@@ -69,7 +69,7 @@ namespace CrabUI
 
       if (CUI.Main is not null)
       {
-        RunRecursiveOn(CUI.Main, (component, depth) =>
+        RunRecursiveOn(CUI.Main, (component) =>
         {
           if (!component.IgnoreDebug) l.Add(component);
         });
@@ -102,7 +102,7 @@ namespace CrabUI
     public CUIDebugWindow() : base()
     {
       this.ZIndex = 1000;
-      this.Layout = new CUILayoutVerticalList(host: this);
+      this.Layout = new CUILayoutVerticalList();
 
       this["handle"] = new CUIComponent()
       {

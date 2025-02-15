@@ -15,13 +15,8 @@ using HarmonyLib;
 namespace CrabUI
 {
   [CUIInternal]
-  public static class CUIExtensions
+  public static partial class CUIExtensions
   {
-    public static Color RandomColor() => new Color(CUI.Random.Next(256), CUI.Random.Next(256), CUI.Random.Next(256));
-
-    public static Color GrayScale(int v) => new Color(v, v, v);
-
-
     public static int Fit(this int i, int bottom, int top) => Math.Max(bottom, Math.Min(i, top));
 
     public static string SubstringSafe(this string s, int start)
@@ -86,8 +81,10 @@ namespace CrabUI
       return props;
     }
 
-
+    public static string ColorToString(Color c) => $"{c.R},{c.G},{c.B},{c.A}";
     public static string Vector2ToString(Vector2 v) => $"[{v.X},{v.Y}]";
+    public static string NullVector2ToString(Vector2? v) => v.HasValue ? $"[{v.Value.X},{v.Value.Y}]" : "null";
+    public static string NullIntToString(int? i) => i.HasValue ? $"{i}" : "null";
     public static string RectangleToString(Rectangle r) => $"[{r.X},{r.Y},{r.Width},{r.Height}]";
     public static string GUIFontToString(GUIFont f) => f.Identifier.Value;
     public static string SpriteEffectsToString(SpriteEffects e)
@@ -96,8 +93,17 @@ namespace CrabUI
       else return e.ToString();
     }
 
+    public static string IEnumerableStringToString(IEnumerable<string> e) => $"[{string.Join(',', e.ToArray())}]";
+
+    public static IEnumerable<string> ParseIEnumerableString(string raw)
+    {
+      if (raw == null || raw == "") return new List<string>();
+      string content = raw.Split('[', ']')[1];
+      return content.Split(',');
+    }
+
     public static string ParseString(string s) => s; // BaroDev (wide)
-    public static GUISoundType ParseGUISoundType(string s) => Enum.Parse<GUISoundType>(s);
+    //public static GUISoundType ParseGUISoundType(string s) => Enum.Parse<GUISoundType>(s);
 
     public static GUIFont ParseGUIFont(string raw)
     {
@@ -112,6 +118,17 @@ namespace CrabUI
       else return Enum.Parse<SpriteEffects>(raw);
     }
 
+
+    public static int? ParseNullInt(string raw)
+    {
+      if (raw == "null") return null;
+      return int.Parse(raw);
+    }
+    public static Vector2? ParseNullVector2(string raw)
+    {
+      if (raw == "null") return null;
+      return ParseVector2(raw);
+    }
 
     public static Vector2 ParseVector2(string raw)
     {
@@ -166,18 +183,26 @@ namespace CrabUI
         CustomToString = new Dictionary<Type, MethodInfo>();
 
         Parse[typeof(string)] = typeof(CUIExtensions).GetMethod("ParseString");
-        Parse[typeof(GUISoundType)] = typeof(CUIExtensions).GetMethod("ParseGUISoundType");
-        Parse[typeof(Color)] = typeof(CUIExtensions).GetMethod("ParseColor");
-        Parse[typeof(Vector2)] = typeof(CUIExtensions).GetMethod("ParseVector2");
+        //Parse[typeof(GUISoundType)] = typeof(CUIExtensions).GetMethod("ParseGUISoundType");
+
         Parse[typeof(Rectangle)] = typeof(CUIExtensions).GetMethod("ParseRectangle");
         Parse[typeof(GUIFont)] = typeof(CUIExtensions).GetMethod("ParseGUIFont");
+        Parse[typeof(Vector2?)] = typeof(CUIExtensions).GetMethod("ParseNullVector2");
+        Parse[typeof(Vector2)] = typeof(CUIExtensions).GetMethod("ParseVector2");
         Parse[typeof(SpriteEffects)] = typeof(CUIExtensions).GetMethod("ParseSpriteEffects");
+        Parse[typeof(Color)] = typeof(CUIExtensions).GetMethod("ParseColor");
+        Parse[typeof(int?)] = typeof(CUIExtensions).GetMethod("ParseNullInt");
+        Parse[typeof(IEnumerable<string>)] = typeof(CUIExtensions).GetMethod("ParseIEnumerableString");
 
 
+        CustomToString[typeof(IEnumerable<string>)] = typeof(CUIExtensions).GetMethod("IEnumerableStringToString");
+        CustomToString[typeof(int?)] = typeof(CUIExtensions).GetMethod("NullIntToString");
+        CustomToString[typeof(Color)] = typeof(CUIExtensions).GetMethod("ColorToString");
         CustomToString[typeof(SpriteEffects)] = typeof(CUIExtensions).GetMethod("SpriteEffectsToString");
         CustomToString[typeof(Vector2)] = typeof(CUIExtensions).GetMethod("Vector2ToString");
-        CustomToString[typeof(Rectangle)] = typeof(CUIExtensions).GetMethod("RectangleToString");
+        CustomToString[typeof(Vector2?)] = typeof(CUIExtensions).GetMethod("NullVector2ToString");
         CustomToString[typeof(GUIFont)] = typeof(CUIExtensions).GetMethod("GUIFontToString");
+        CustomToString[typeof(Rectangle)] = typeof(CUIExtensions).GetMethod("RectangleToString");
       };
 
       CUI.OnDispose += () =>

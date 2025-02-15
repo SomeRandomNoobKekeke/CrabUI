@@ -94,7 +94,7 @@ namespace CrabUI
       {
         UnCullable = true;
         BackgroundColor = Color.Transparent;
-        BorderColor = Color.Transparent;
+        Border.Color = Color.Transparent;
       }
     }
 

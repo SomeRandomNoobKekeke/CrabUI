@@ -18,28 +18,13 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-    //HACK This is potentially cursed
-    /// <summary>
-    /// Arbitrary data
-    /// </summary>
-    public object Data { get; set; }
-    /// <summary>
-    /// Will prevent serialization to xml if true
-    /// </summary>
-    public bool Unserializable { get; set; }
-
-    /// <summary>
-    /// Is this a serialization cutoff point  
-    /// Parent will serialize children down to this component
-    /// Further serialization should be hadled by this component
-    /// </summary>
-    [CUISerializable] public bool BreakSerialization { get; set; }
     /// <summary>
     /// Should children be cut off by scissor rect, this is just visual, it's not the same as culling
     /// </summary>
     [CUISerializable] public bool HideChildrenOutsideFrame { get; set; }
     /// <summary>
-    /// if child rect doesn't intersect with parent it won't be drawn and won't consume fps
+    /// if child rect doesn't intersect with parent it won't be drawn and won't consume fps  
+    /// It also sets HideChildrenOutsideFrame
     /// </summary>
     [CUISerializable]
     public bool CullChildren
@@ -47,6 +32,7 @@ namespace CrabUI
       get => CUIProps.CullChildren.Value;
       set => CUIProps.CullChildren.SetValue(value);
     }
+
     /// <summary>
     /// It shouldn't be culled off even outside of parent bounds and even if parent demands so 
     /// </summary>
@@ -81,28 +67,9 @@ namespace CrabUI
     [CUISerializable] public Vector2? ParentAnchor { get; set; }
 
     /// <summary>
-    /// Some props (like visible) are autopassed to all new childs
-    /// see PassPropsToChild
-    /// </summary>
-    [CUISerializable] public bool ShouldPassPropsToChildren { get; set; } = true;
-    /// <summary>
     /// Ghost components don't affect layout
     /// </summary>
     [CUISerializable] public CUIBool2 Ghost { get; set; }
-
-    /// <summary>
-    /// Don't inherit parent Visibility
-    /// </summary>
-    [CUISerializable] public bool IgnoreParentVisibility { get; set; }
-    /// <summary>
-    /// Don't inherit parent IgnoreEvents
-    /// </summary>
-    [CUISerializable] public bool IgnoreParentEventIgnorance { get; set; }
-    /// <summary>
-    /// Don't inherit parent ZIndex
-    /// </summary>
-    [CUISerializable] public bool IgnoreParentZIndex { get; set; }
-
     /// <summary>
     /// Components are drawn in order of their ZIndex  
     /// Normally it's derived from component position in the tree, 
@@ -114,129 +81,18 @@ namespace CrabUI
       get => CUIProps.ZIndex.Value;
       set => CUIProps.ZIndex.SetValue(value);
     }
-    /// <summary>
-    /// Won't react to mouse events
-    /// </summary>
-    [CUISerializable]
-    public bool IgnoreEvents
-    {
-      get => CUIProps.IgnoreEvents.Value;
-      set => CUIProps.IgnoreEvents.SetValue(value);
-    }
-    /// <summary>
-    /// Invisible components are not drawn, but still can be interacted with
-    /// </summary>
-    [CUISerializable]
-    public bool Visible
-    {
-      get => CUIProps.Visible.Value;
-      set => CUIProps.Visible.SetValue(value);
-    }
 
-    /// <summary>
-    /// Visible + !IgnoreEvents
-    /// </summary>
-    public bool Revealed
-    {
-      get => CUIProps.Revealed.Value;
-      set => CUIProps.Revealed.SetValue(value);
-    }
-    //HACK this is meant for buttons, but i want to access it on generic components in CUIMap
-    protected bool disabled;
-    /// <summary>
-    /// Usually means - non interactable, e.g. unclickable gray button
-    /// </summary>
-    [CUISerializable]
-    public virtual bool Disabled
-    {
-      get => disabled;
-      set => disabled = value;
-    }
-    /// <summary>
-    /// In pixels
-    /// </summary>
-    [CUISerializable]
-    public float BorderThickness { get; set; } = 1f;
 
-    /// <summary>
-    /// Used for text
-    /// </summary>
-    [CUISerializable]
-    public Vector2 Padding
-    {
-      get => CUIProps.Padding.Value;
-      set => CUIProps.Padding.SetValue(value);
-    }
-    /// <summary>
-    /// Color.Transparent = don't draw
-    /// </summary>
-    [CUISerializable]
-    public Color BorderColor
-    {
-      get => CUIProps.BorderColor.Value;
-      set => CUIProps.BorderColor.SetValue(value);
-    }
-
-    private void TryResizeToSprite()
-    {
-      if (!resizeToSprite) return;
-      Absolute = Absolute with
-      {
-        Width = backgroundSprite.SourceRect.Width,
-        Height = backgroundSprite.SourceRect.Height,
-      };
-    }
-
-    private bool resizeToSprite;
     /// <summary>
     /// If true component will set it's Absolute size to sprite texture size
     /// </summary>
     [CUISerializable]
     public bool ResizeToSprite
     {
-      get => resizeToSprite;
-      set
-      {
-        resizeToSprite = value;
-        TryResizeToSprite();
-      }
+      get => CUIProps.ResizeToSprite.Value;
+      set => CUIProps.ResizeToSprite.SetValue(value);
     }
 
-    private CUISprite backgroundSprite = CUISprite.Default;
-    /// <summary>
-    /// Will be drawn in background with BackgroundColor  
-    /// Default is solid white 1x1 texture
-    /// </summary>
-    //TODO i think if all components will have backup sprite by default it'll simplify many things
-    [CUISerializable]
-    public CUISprite BackgroundSprite
-    {
-      get => backgroundSprite;
-      set
-      {
-        backgroundSprite = value;
-        TryResizeToSprite();
-      }
-    }
-
-    /// <summary>
-    /// Too lazy to implement sore
-    /// </summary>
-    //[CUISerializable] public CUISprite BorderSprite { get; set; }
-
-
-    //TODO i think those colors could be stored inside sprites
-    // But then it'll be much harder to apply side effects, think about it
-    /// <summary>
-    /// Color of BackgroundSprite, default is black  
-    /// If you're using custom sprite and don't see it make sure this color is not black
-    /// </summary>
-    [CUISerializable]
-    public Color BackgroundColor
-    {
-      get => CUIProps.BackgroundColor.Value;
-      set => CUIProps.BackgroundColor.SetValue(value);
-    }
     /// <summary>
     /// Will be resized to fill empty space in list components
     /// </summary>
@@ -297,6 +153,11 @@ namespace CrabUI
       get => CUIProps.RelativeMax.Value;
       set => CUIProps.RelativeMax.SetValue(value);
     }
+    /// <summary>
+    /// It's like Relative, but to the opposite dimension  
+    /// E.g. Real.Width = CrossRelative.Width * Parent.Real.Height  
+    /// Handy for creating square things
+    /// </summary>
     [CUISerializable]
     public CUINullRect CrossRelative
     {
@@ -332,5 +193,7 @@ namespace CrabUI
         GridEndCell = value;
       }
     }
+
+
   }
 }

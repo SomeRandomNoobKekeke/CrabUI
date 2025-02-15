@@ -41,15 +41,21 @@ namespace CrabUI
     /// </summary>
     /// <param name="msg"></param>
     /// <param name="color"></param>
-    public static void Log(object msg, Color? color = null)
+    public static void Log(object msg, Color? color = null, [CallerFilePath] string source = "", [CallerLineNumber] int lineNumber = 0)
     {
       color ??= Color.Cyan;
+
+      // var fi = new FileInfo(source);
+      // LuaCsLogger.LogMessage($"{fi.Directory.Name}/{fi.Name}:{lineNumber}", color * 0.6f, color * 0.6f);
+
       LuaCsLogger.LogMessage($"{msg ?? "null"}", color * 0.8f, color);
     }
 
-    public static void Warning(object msg, Color? color = null)
+    public static void Warning(object msg, Color? color = null, [CallerFilePath] string source = "", [CallerLineNumber] int lineNumber = 0)
     {
       color ??= Color.Yellow;
+      // var fi = new FileInfo(source);
+      // LuaCsLogger.LogMessage($"{fi.Directory.Name}/{fi.Name}:{lineNumber}", color * 0.6f, color * 0.6f);
       LuaCsLogger.LogMessage($"{msg ?? "null"}", color * 0.8f, color);
     }
 
@@ -59,10 +65,7 @@ namespace CrabUI
     /// </summary>
     /// <param name="source"> This should be injected by compiler, don't set </param>
     /// <returns></returns>
-    public static string GetCallerFolderPath([CallerFilePath] string source = "")
-    {
-      return Path.GetDirectoryName(source);
-    }
+    public static string GetCallerFolderPath([CallerFilePath] string source = "") => Path.GetDirectoryName(source);
 
     /// <summary>
     /// Prints debug message with source path

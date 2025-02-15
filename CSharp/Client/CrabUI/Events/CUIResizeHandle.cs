@@ -22,12 +22,8 @@ namespace CrabUI
 
     public CUINullRect Absolute;
 
-    //TODO unhardcode these colors
     public CUISprite Sprite;
-    public Color BackgroundColor = Color.White;
-    public Color GrabbedColor = Color.Cyan;
     public Vector2 MemoStaticPoint;
-
 
     public bool Grabbed;
     public bool Visible = false;
@@ -111,7 +107,7 @@ namespace CrabUI
     public void Draw(SpriteBatch spriteBatch)
     {
       if (!Visible) return;
-      CUI.DrawRectangle(spriteBatch, Real, Grabbed ? GrabbedColor : BackgroundColor, Sprite);
+      CUI.DrawRectangle(spriteBatch, Real, Grabbed ? Host.ResizeHandleGrabbedColor : Host.ResizeHandleColor, Sprite);
     }
 
     public CUIResizeHandle(Vector2 anchor, CUIBool2 flipped)

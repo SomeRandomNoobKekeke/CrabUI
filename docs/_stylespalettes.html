@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CrabUI: Styles, palettes</title>
+<title>CrabUI: Styles, Palettes</title>
 <link rel="icon" href="BaroModder (small).png" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -90,28 +90,47 @@ $(function(){ initResizable(false); });
 </div><!-- top -->
 <div id="doc-content">
 <div><div class="header">
-  <div class="headertitle"><div class="title">Styles, palettes</div></div>
+  <div class="headertitle"><div class="title">Styles, Palettes</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md__docs_2_freestyle_2_sub_pages_2_misc_2_styles"></a></p>
-<p>CUIStyle is just an observable Dictionary&lt;string, string&gt;</p>
-<p>Every CUIComponent has a <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a729c73296986b0fdb3d820c8d92858eb">Style </a>, and every subclass of CUIComponent has a DefaultStyle</p>
-<p>Styles contain pairs { "Prop name", "Prop value" } and are used by <a class="el" href="class_crab_u_i_1_1_c_u_i_global_style_resolver.html">CUIGlobalStyleResolver </a> to assign values to Component props</p>
-<p>"Prop name" can be any prop with a setter, "Prop value" is either a string that can be parsed to that prop, or a path to some prop in <a class="el" href="class_crab_u_i_1_1_c_u_i_palette.html">CUIPalette </a></p>
-<p>Examples: </p><pre class="fragment">MainFrame["list"]["header"]["closebutton"] = new CUIButton("X")
-{
-  Style = new CUIStyle() { { "MasterColor", "Red" } },
-  AddOnMouseDown = (e) =&gt; Opened = false,
-  Font = GUIStyle.MonospacedFont,
-};
-
-CUIComponent c = new CUIComponent();
-c.Style["BackgroundColor"] = "CUIPalette.Current.Tertiary.Off"
-</pre><p>Component Style takes presidence over DefaultStyle</p>
-<p>if you change the style of the component it will overwrite that prop of that component <br  />
- if you change DefaultStyle all components of that type will be affected <br  />
- if component has some prop in its style and you change default value for that prop nothing will happen <br  />
- Also default styles are inherited </p>
+<p><img src="Pepe_Silvia.jpg" alt="" class="inline"/></p>
+<p>How would you define how components should look?</p>
+<p>Componenets have graphical props, you can just set them and change the appearance of the component</p>
+<p>But there's couple of problems with this approach: <br  />
+</p><ul>
+<li>It's hard to stick to some palette when hardcoding those values</li>
+<li>If you decide to change them you'll have to manually replace every hardcoded value throughout the codebase</li>
+<li>It's hard to swap values on e.g. all components of some type at runtime</li>
+<li>there's no way to change only the values inherited from parent at runtime because they are already combined on creation</li>
+</ul>
+<p>Styles and Palettes are designed to address that</p>
+<h2><a class="anchor" id="autotoc_md17"></a>
+Style</h2>
+<p>Every CUIComponent has a personal <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a729c73296986b0fdb3d820c8d92858eb">Style </a></p>
+<p>Style is an observable Dictionary&lt;string, string&gt; containing mapping { "Prop name", "Value" }</p>
+<p>Value can be either a string that can be parsed to that prop, or a path to some prop in <a class="el" href="">CUIPalette </a> <br  />
+ "Prop name" can be any prop of any type with a setter</p>
+<p>Also every component type has a DefaultStyle, so you don't need to set all the values every time</p>
+<p>Default styles are defined in "CSharp\Client\CrabUI\CUIAssets\Default Styles.xml", you can add more there or just set them in type metadata</p>
+<p>Default styles are auto combined for derived types</p>
+<p>Both default style and personal style overwrite the props, personal style takes presidence over default style <br  />
+ </p><pre class="fragment">Props &lt; parent default style &lt; child default style &lt; child personal style
+</pre><p>All this stuff is observable so any change to any style will trigger recalculation of affected props</p>
+<p>changing default style will recombine them and affect all component of that and derived types</p>
+<p>Swapping the palette will affect anything that references it</p>
+<h2><a class="anchor" id="autotoc_md18"></a>
+Palettes</h2>
+<p>CUIPalette object contains Values, it's just a Dictionary&lt;string, string&gt; of {"some random name", "parseable value"}</p>
+<p>CUIPalette class has 4 static palettes: Primary, Secondary, Tertiary, Quaternary</p>
+<p>Palettes are not observable, but setting static var will trigger recalculation</p>
+<p>You can reference them in a style like this: "CUIPalette.[name of the value]" <br  />
+ Which palette to use is controlled by a separate prop CUIComponent.Palette of a type <a class="el" href="">PaletteOrder </a> <br  />
+ So you could swap component order without changing the style</p>
+<p>I've made a method for creating palettes from 2 colors, testing them and packing them in a sets</p>
+<p>You can use them with commands: cuicreatepalette cuicreatepaletteset cuipalettedemo cuipalette</p>
+<p>palettes are serializable to xml and nested values can be accessed by . like this button.background</p>
+<p>I've premade some here "CSharp\Client\CrabUI\CUIAssets\Palettes" there are values for key components + values for layout stuff like Header Nav Main, hope that's enough </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->

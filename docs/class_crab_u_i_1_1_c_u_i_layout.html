@@ -92,6 +92,7 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#properties">Properties</a> &#124;
@@ -120,8 +121,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0259afb4509fb35948761b0b06a40be5" id="r_a0259afb4509fb35948761b0b06a40be5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0259afb4509fb35948761b0b06a40be5">ForceMarkUnchanged</a> ()</td></tr>
 <tr class="memdesc:a0259afb4509fb35948761b0b06a40be5"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is just for debug, don't use it.  <br /></td></tr>
 <tr class="separator:a0259afb4509fb35948761b0b06a40be5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78a29cc39f62bbf2e6483681560b2a32" id="r_a78a29cc39f62bbf2e6483681560b2a32"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78a29cc39f62bbf2e6483681560b2a32">CUILayout</a> (<a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a> host=null)</td></tr>
-<tr class="separator:a78a29cc39f62bbf2e6483681560b2a32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef09520119cd7deeb0414dcb563e5374" id="r_aef09520119cd7deeb0414dcb563e5374"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef09520119cd7deeb0414dcb563e5374">CUILayout</a> (<a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a> host)</td></tr>
+<tr class="separator:aef09520119cd7deeb0414dcb563e5374"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4deaece17553c5ae49c72b6fd2c33895" id="r_a4deaece17553c5ae49c72b6fd2c33895"><td class="memItemLeft" align="right" valign="top"><a id="a4deaece17553c5ae49c72b6fd2c33895" name="a4deaece17553c5ae49c72b6fd2c33895"></a>
+override string&#160;</td><td class="memItemRight" valign="bottom"><b>ToString</b> ()</td></tr>
+<tr class="separator:a4deaece17553c5ae49c72b6fd2c33895"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a9cc349c1592c3183ed1a837691535fc6" id="r_a9cc349c1592c3183ed1a837691535fc6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_crab_u_i_1_1_c_u_i_layout.html">CUILayout</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9cc349c1592c3183ed1a837691535fc6">Parse</a> (string raw)</td></tr>
+<tr class="separator:a9cc349c1592c3183ed1a837691535fc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -141,6 +150,9 @@ Protected Attributes</h2></td></tr>
 Properties</h2></td></tr>
 <tr class="memitem:abfe1ce191e5c47ae9979e9c19ceecb1a" id="r_abfe1ce191e5c47ae9979e9c19ceecb1a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abfe1ce191e5c47ae9979e9c19ceecb1a">Changed</a><code> [get, set]</code></td></tr>
 <tr class="separator:abfe1ce191e5c47ae9979e9c19ceecb1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6eee3b582e93265c2d7c87bd3fe1ea8" id="r_ad6eee3b582e93265c2d7c87bd3fe1ea8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6eee3b582e93265c2d7c87bd3fe1ea8">SelfAndParentChanged</a><code> [set]</code></td></tr>
+<tr class="memdesc:ad6eee3b582e93265c2d7c87bd3fe1ea8"><td class="mdescLeft">&#160;</td><td class="mdescRight">It doesn't optimize anything.  <br /></td></tr>
+<tr class="separator:ad6eee3b582e93265c2d7c87bd3fe1ea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e90fd1591622a421c3058374ed86e88" id="r_a4e90fd1591622a421c3058374ed86e88"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e90fd1591622a421c3058374ed86e88">ChildChanged</a><code> [set]</code></td></tr>
 <tr class="separator:a4e90fd1591622a421c3058374ed86e88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a120fd390e79552d9356de5a25c4e7e02" id="r_a120fd390e79552d9356de5a25c4e7e02"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a120fd390e79552d9356de5a25c4e7e02">AbsoluteChanged</a><code> [get, set]</code></td></tr>
@@ -151,10 +163,10 @@ Properties</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base class for all layouts. </p>
 
-<p class="definition">Definition at line <a class="el" href="_layout_8cs_source.html#l00017">17</a> of file <a class="el" href="_layout_8cs_source.html">Layout.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_layout_8cs_source.html#l00017">17</a> of file <a class="el" href="_c_u_i_layout_8cs_source.html">CUILayout.cs</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a78a29cc39f62bbf2e6483681560b2a32" name="a78a29cc39f62bbf2e6483681560b2a32"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a78a29cc39f62bbf2e6483681560b2a32">&#9670;&#160;</a></span>CUILayout()</h2>
+<a id="a506570965980b4a7e714b5b9fa7c1848" name="a506570965980b4a7e714b5b9fa7c1848"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a506570965980b4a7e714b5b9fa7c1848">&#9670;&#160;</a></span>CUILayout() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -162,16 +174,36 @@ Properties</h2></td></tr>
         <tr>
           <td class="memname">CrabUI.CUILayout.CUILayout </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a></td>          <td class="paramname"><span class="paramname"><em>host</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_layout_8cs_source.html#l00130">130</a> of file <a class="el" href="_layout_8cs_source.html">Layout.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  131</span>    {</div>
-<div class="line"><span class="lineno">  132</span>      Host = host;</div>
-<div class="line"><span class="lineno">  133</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_layout_8cs_source.html#l00159">159</a> of file <a class="el" href="_c_u_i_layout_8cs_source.html">CUILayout.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  159</span>{ }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aef09520119cd7deeb0414dcb563e5374" name="aef09520119cd7deeb0414dcb563e5374"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef09520119cd7deeb0414dcb563e5374">&#9670;&#160;</a></span>CUILayout() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CrabUI.CUILayout.CUILayout </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a></td>          <td class="paramname"><span class="paramname"><em>host</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_layout_8cs_source.html#l00160">160</a> of file <a class="el" href="_c_u_i_layout_8cs_source.html">CUILayout.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  161</span>    {</div>
+<div class="line"><span class="lineno">  162</span>      Host = host;</div>
+<div class="line"><span class="lineno">  163</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -193,7 +225,7 @@ Properties</h2></td></tr>
 
 <p>This is just for debug, don't use it. </p>
 
-<p class="definition">Definition at line <a class="el" href="_layout_8cs_source.html#l00029">29</a> of file <a class="el" href="_layout_8cs_source.html">Layout.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_layout_8cs_source.html#l00029">29</a> of file <a class="el" href="_c_u_i_layout_8cs_source.html">CUILayout.cs</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   30</span>    {</div>
 <div class="line"><span class="lineno">   31</span>      decorChanged = <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">   32</span>      changed = <span class="keyword">false</span>;</div>
@@ -204,6 +236,44 @@ Properties</h2></td></tr>
 <div class="line"><span class="lineno">   37</span>        child.Layout.ForceMarkUnchanged();</div>
 <div class="line"><span class="lineno">   38</span>      }</div>
 <div class="line"><span class="lineno">   39</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9cc349c1592c3183ed1a837691535fc6" name="a9cc349c1592c3183ed1a837691535fc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cc349c1592c3183ed1a837691535fc6">&#9670;&#160;</a></span>Parse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_crab_u_i_1_1_c_u_i_layout.html">CUILayout</a> CrabUI.CUILayout.Parse </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>raw</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_layout_8cs_source.html#l00166">166</a> of file <a class="el" href="_c_u_i_layout_8cs_source.html">CUILayout.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  167</span>    {</div>
+<div class="line"><span class="lineno">  168</span>      <span class="keywordflow">if</span> (raw != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">  169</span>      {</div>
+<div class="line"><span class="lineno">  170</span>        raw = raw.Trim();</div>
+<div class="line"><span class="lineno">  171</span>        <span class="keywordflow">if</span> (CUIReflection.CUILayoutTypes.ContainsKey(raw))</div>
+<div class="line"><span class="lineno">  172</span>        {</div>
+<div class="line"><span class="lineno">  173</span>          <span class="keywordflow">return</span> (CUILayout)Activator.CreateInstance(CUIReflection.CUILayoutTypes[raw]);</div>
+<div class="line"><span class="lineno">  174</span>        }</div>
+<div class="line"><span class="lineno">  175</span>      }</div>
+<div class="line"><span class="lineno">  176</span>      <span class="keywordflow">return</span> <span class="keyword">new</span> CUILayoutSimple();</div>
+<div class="line"><span class="lineno">  177</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -228,7 +298,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_layout_8cs_source.html#l00077">77</a> of file <a class="el" href="_layout_8cs_source.html">Layout.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_layout_8cs_source.html#l00106">106</a> of file <a class="el" href="_c_u_i_layout_8cs_source.html">CUILayout.cs</a>.</p>
 
 </div>
 </div>
@@ -252,7 +322,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_layout_8cs_source.html#l00050">50</a> of file <a class="el" href="_layout_8cs_source.html">Layout.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_layout_8cs_source.html#l00050">50</a> of file <a class="el" href="_c_u_i_layout_8cs_source.html">CUILayout.cs</a>.</p>
 
 </div>
 </div>
@@ -276,7 +346,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_layout_8cs_source.html#l00086">86</a> of file <a class="el" href="_layout_8cs_source.html">Layout.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_layout_8cs_source.html#l00115">115</a> of file <a class="el" href="_c_u_i_layout_8cs_source.html">CUILayout.cs</a>.</p>
 
 </div>
 </div>
@@ -292,7 +362,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_layout_8cs_source.html#l00019">19</a> of file <a class="el" href="_layout_8cs_source.html">Layout.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_layout_8cs_source.html#l00019">19</a> of file <a class="el" href="_c_u_i_layout_8cs_source.html">CUILayout.cs</a>.</p>
 
 </div>
 </div>
@@ -317,15 +387,15 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_layout_8cs_source.html#l00077">77</a> of file <a class="el" href="_layout_8cs_source.html">Layout.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   78</span>    {</div>
-<div class="line"><span class="lineno">   79</span>      <span class="keyword">get</span> =&gt; absoluteChanged;</div>
-<div class="line"><span class="lineno">   80</span>      <span class="keyword">set</span></div>
-<div class="line"><span class="lineno">   81</span>      {</div>
-<div class="line"><span class="lineno">   82</span>        <span class="keywordflow">if</span> (!value) absoluteChanged = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   83</span>        <span class="keywordflow">if</span> (value &amp;&amp; Host.Parent != <span class="keyword">null</span>) Host.Parent.Layout.absoluteChanged = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   84</span>      }</div>
-<div class="line"><span class="lineno">   85</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_layout_8cs_source.html#l00106">106</a> of file <a class="el" href="_c_u_i_layout_8cs_source.html">CUILayout.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  107</span>    {</div>
+<div class="line"><span class="lineno">  108</span>      <span class="keyword">get</span> =&gt; absoluteChanged;</div>
+<div class="line"><span class="lineno">  109</span>      <span class="keyword">set</span></div>
+<div class="line"><span class="lineno">  110</span>      {</div>
+<div class="line"><span class="lineno">  111</span>        <span class="keywordflow">if</span> (!value) absoluteChanged = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  112</span>        <span class="keywordflow">if</span> (value &amp;&amp; Host.Parent != <span class="keyword">null</span>) Host.Parent.Layout.absoluteChanged = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  113</span>      }</div>
+<div class="line"><span class="lineno">  114</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -349,7 +419,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_layout_8cs_source.html#l00050">50</a> of file <a class="el" href="_layout_8cs_source.html">Layout.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_layout_8cs_source.html#l00050">50</a> of file <a class="el" href="_c_u_i_layout_8cs_source.html">CUILayout.cs</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   51</span>    {</div>
 <div class="line"><span class="lineno">   52</span>      <span class="keyword">get</span> =&gt; changed;</div>
 <div class="line"><span class="lineno">   53</span>      <span class="keyword">set</span></div>
@@ -385,13 +455,13 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_layout_8cs_source.html#l00064">64</a> of file <a class="el" href="_layout_8cs_source.html">Layout.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   65</span>    {</div>
-<div class="line"><span class="lineno">   66</span>      <span class="keyword">set</span></div>
-<div class="line"><span class="lineno">   67</span>      {</div>
-<div class="line"><span class="lineno">   68</span>        <span class="keywordflow">if</span> (value) propagateChangedDown();</div>
-<div class="line"><span class="lineno">   69</span>      }</div>
-<div class="line"><span class="lineno">   70</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_layout_8cs_source.html#l00093">93</a> of file <a class="el" href="_c_u_i_layout_8cs_source.html">CUILayout.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   94</span>    {</div>
+<div class="line"><span class="lineno">   95</span>      <span class="keyword">set</span></div>
+<div class="line"><span class="lineno">   96</span>      {</div>
+<div class="line"><span class="lineno">   97</span>        <span class="keywordflow">if</span> (value) propagateChangedDown();</div>
+<div class="line"><span class="lineno">   98</span>      }</div>
+<div class="line"><span class="lineno">   99</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -415,19 +485,60 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_layout_8cs_source.html#l00086">86</a> of file <a class="el" href="_layout_8cs_source.html">Layout.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   87</span>    {</div>
-<div class="line"><span class="lineno">   88</span>      <span class="keyword">get</span> =&gt; decorChanged;</div>
-<div class="line"><span class="lineno">   89</span>      <span class="keyword">set</span></div>
-<div class="line"><span class="lineno">   90</span>      {</div>
-<div class="line"><span class="lineno">   91</span>        decorChanged = value;</div>
-<div class="line"><span class="lineno">   92</span>      }</div>
-<div class="line"><span class="lineno">   93</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_layout_8cs_source.html#l00115">115</a> of file <a class="el" href="_c_u_i_layout_8cs_source.html">CUILayout.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  116</span>    {</div>
+<div class="line"><span class="lineno">  117</span>      <span class="keyword">get</span> =&gt; decorChanged;</div>
+<div class="line"><span class="lineno">  118</span>      <span class="keyword">set</span></div>
+<div class="line"><span class="lineno">  119</span>      {</div>
+<div class="line"><span class="lineno">  120</span>        decorChanged = value;</div>
+<div class="line"><span class="lineno">  121</span>      }</div>
+<div class="line"><span class="lineno">  122</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad6eee3b582e93265c2d7c87bd3fe1ea8" name="ad6eee3b582e93265c2d7c87bd3fe1ea8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6eee3b582e93265c2d7c87bd3fe1ea8">&#9670;&#160;</a></span>SelfAndParentChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CrabUI.CUILayout.SelfAndParentChanged</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>It doesn't optimize anything. </p>
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_layout_8cs_source.html#l00076">76</a> of file <a class="el" href="_c_u_i_layout_8cs_source.html">CUILayout.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>    {</div>
+<div class="line"><span class="lineno">   78</span>      <span class="keyword">set</span></div>
+<div class="line"><span class="lineno">   79</span>      {</div>
+<div class="line"><span class="lineno">   80</span>        <span class="keywordflow">if</span> (value)</div>
+<div class="line"><span class="lineno">   81</span>        {</div>
+<div class="line"><span class="lineno">   82</span>          changed = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   83</span>          DecorChanged = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   84</span>          <span class="keywordflow">if</span> (Host.Parent != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   85</span>          {</div>
+<div class="line"><span class="lineno">   86</span>            Host.Parent.Layout.changed = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   87</span>            Host.Parent.Layout.propagateDecorChangedDown();</div>
+<div class="line"><span class="lineno">   88</span>          }</div>
+<div class="line"><span class="lineno">   89</span>        }</div>
+<div class="line"><span class="lineno">   90</span>      }</div>
+<div class="line"><span class="lineno">   91</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>CSharp/Client/CrabUI/Layouts/<a class="el" href="_layout_8cs_source.html">Layout.cs</a></li>
+<li>CSharp/Client/CrabUI/Layouts/<a class="el" href="_c_u_i_layout_8cs_source.html">CUILayout.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

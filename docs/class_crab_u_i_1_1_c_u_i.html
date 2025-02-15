@@ -105,6 +105,9 @@ $(function(){ initResizable(false); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="memitem:afcb086e0d7ac3596e96e0ecc72f71b33" id="r_afcb086e0d7ac3596e96e0ecc72f71b33"><td class="memItemLeft" align="right" valign="top"><a id="afcb086e0d7ac3596e96e0ecc72f71b33" name="afcb086e0d7ac3596e96e0ecc72f71b33"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>InvokeOnPauseMenuToggled</b> ()</td></tr>
+<tr class="separator:afcb086e0d7ac3596e96e0ecc72f71b33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab65f64a59debf4da67b619389263ec37" id="r_ab65f64a59debf4da67b619389263ec37"><td class="memItemLeft" align="right" valign="top"><a id="ab65f64a59debf4da67b619389263ec37" name="ab65f64a59debf4da67b619389263ec37"></a>
 static void&#160;</td><td class="memItemRight" valign="bottom"><b>ReEmitWindowTextInput</b> (object sender, TextInputEventArgs e)</td></tr>
 <tr class="separator:ab65f64a59debf4da67b619389263ec37"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -127,11 +130,11 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>ReEmitWindowKe
 <tr class="memitem:aa9e0675b00d0d7b740542d83f77e2d23" id="r_aa9e0675b00d0d7b740542d83f77e2d23"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa9e0675b00d0d7b740542d83f77e2d23">ArrayToString</a> (IEnumerable&lt; object &gt; array)</td></tr>
 <tr class="memdesc:aa9e0675b00d0d7b740542d83f77e2d23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serializes the array.  <br /></td></tr>
 <tr class="separator:aa9e0675b00d0d7b740542d83f77e2d23"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b97112f36caf3daeb5c0312b1282e7c" id="r_a2b97112f36caf3daeb5c0312b1282e7c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b97112f36caf3daeb5c0312b1282e7c">Log</a> (object msg, Color? color=null)</td></tr>
-<tr class="memdesc:a2b97112f36caf3daeb5c0312b1282e7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a message to console.  <br /></td></tr>
-<tr class="separator:a2b97112f36caf3daeb5c0312b1282e7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0e72d2f15376908957d01deb5b6c5aa" id="r_ac0e72d2f15376908957d01deb5b6c5aa"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac0e72d2f15376908957d01deb5b6c5aa">Warning</a> (object msg, Color? color=null)</td></tr>
-<tr class="separator:ac0e72d2f15376908957d01deb5b6c5aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0ce4751fde5325adf2675c44a320b73" id="r_aa0ce4751fde5325adf2675c44a320b73"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa0ce4751fde5325adf2675c44a320b73">Log</a> (object msg, Color? color=null, [CallerFilePath] string source=&quot;&quot;, [CallerLineNumber] int lineNumber=0)</td></tr>
+<tr class="memdesc:aa0ce4751fde5325adf2675c44a320b73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a message to console.  <br /></td></tr>
+<tr class="separator:aa0ce4751fde5325adf2675c44a320b73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d16ddf254a2fadfee3bd67aae5c49af" id="r_a8d16ddf254a2fadfee3bd67aae5c49af"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d16ddf254a2fadfee3bd67aae5c49af">Warning</a> (object msg, Color? color=null, [CallerFilePath] string source=&quot;&quot;, [CallerLineNumber] int lineNumber=0)</td></tr>
+<tr class="separator:a8d16ddf254a2fadfee3bd67aae5c49af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44681bb9a39a8c371228429cdc87dfb2" id="r_a44681bb9a39a8c371228429cdc87dfb2"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44681bb9a39a8c371228429cdc87dfb2">GetCallerFolderPath</a> ([CallerFilePath] string source=&quot;&quot;)</td></tr>
 <tr class="memdesc:a44681bb9a39a8c371228429cdc87dfb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">xd  <br /></td></tr>
 <tr class="separator:a44681bb9a39a8c371228429cdc87dfb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -141,13 +144,40 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>ReEmitWindowKe
 <tr class="memitem:a417520a09577dd59b1e24415d60df724" id="r_a417520a09577dd59b1e24415d60df724"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a417520a09577dd59b1e24415d60df724">Error</a> (object msg, [CallerFilePath] string source=&quot;&quot;, [CallerLineNumber] int lineNumber=0)</td></tr>
 <tr class="memdesc:a417520a09577dd59b1e24415d60df724"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints debug error message with source path Works only if debug is true.  <br /></td></tr>
 <tr class="separator:a417520a09577dd59b1e24415d60df724"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3d07d3d678d96f419080ff9a3e96953" id="r_ad3d07d3d678d96f419080ff9a3e96953"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3d07d3d678d96f419080ff9a3e96953">GUI_InputBlockingMenuOpen_Postfix</a> (ref bool __result)</td></tr>
+<tr class="separator:ad3d07d3d678d96f419080ff9a3e96953"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1abbd49e73b96af768a6de1c4d75d7c1" id="r_a1abbd49e73b96af768a6de1c4d75d7c1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1abbd49e73b96af768a6de1c4d75d7c1">GUI_TogglePauseMenu_Postfix</a> ()</td></tr>
+<tr class="separator:a1abbd49e73b96af768a6de1c4d75d7c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a821dabaf2c3417fa6d23e4e9ccd5a635" id="r_a821dabaf2c3417fa6d23e4e9ccd5a635"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a821dabaf2c3417fa6d23e4e9ccd5a635">Create</a> (string componentName)</td></tr>
 <tr class="memdesc:a821dabaf2c3417fa6d23e4e9ccd5a635"><td class="mdescLeft">&#160;</td><td class="mdescRight">Just an experimant Creates empty <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html" title="Base class for all components.">CUIComponent</a> from class name.  <br /></td></tr>
 <tr class="separator:a821dabaf2c3417fa6d23e4e9ccd5a635"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1ade28bd21b654aac13af1bfd548280" id="r_af1ade28bd21b654aac13af1bfd548280"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1ade28bd21b654aac13af1bfd548280">CUIDebug_Command</a> (string[] args)</td></tr>
+<tr class="separator:af1ade28bd21b654aac13af1bfd548280"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ac5e10e2a8dafe6b304de7c0d427815" id="r_a5ac5e10e2a8dafe6b304de7c0d427815"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ac5e10e2a8dafe6b304de7c0d427815">CUIDrawOrder_Command</a> (string[] args)</td></tr>
+<tr class="separator:a5ac5e10e2a8dafe6b304de7c0d427815"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dfd223a13656539c3e8fb3801badce0" id="r_a3dfd223a13656539c3e8fb3801badce0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3dfd223a13656539c3e8fb3801badce0">CUICreatePalette_Command</a> (string[] args)</td></tr>
+<tr class="separator:a3dfd223a13656539c3e8fb3801badce0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a550e040449585b9fdbafa02452090992" id="r_a550e040449585b9fdbafa02452090992"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a550e040449585b9fdbafa02452090992">CUICreatePaletteSet_Command</a> (string[] args)</td></tr>
+<tr class="separator:a550e040449585b9fdbafa02452090992"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15c70584d19a7b2363f7aaf5f7c0fd36" id="r_a15c70584d19a7b2363f7aaf5f7c0fd36"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15c70584d19a7b2363f7aaf5f7c0fd36">CUILoadPaletteSet_Command</a> (string[] args)</td></tr>
+<tr class="separator:a15c70584d19a7b2363f7aaf5f7c0fd36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a987f39b691d02ba6c1cb7fae114bb92e" id="r_a987f39b691d02ba6c1cb7fae114bb92e"><td class="memItemLeft" align="right" valign="top"><a id="a987f39b691d02ba6c1cb7fae114bb92e" name="a987f39b691d02ba6c1cb7fae114bb92e"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>CUIMG_Command</b> (string[] args)</td></tr>
+<tr class="separator:a987f39b691d02ba6c1cb7fae114bb92e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66e78380869453c09f9b9a65034ee9ed" id="r_a66e78380869453c09f9b9a65034ee9ed"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a66e78380869453c09f9b9a65034ee9ed">PrintSprites_Command</a> (string[] args)</td></tr>
+<tr class="separator:a66e78380869453c09f9b9a65034ee9ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc9e6aaa9026f03299fb31eed42c3c17" id="r_abc9e6aaa9026f03299fb31eed42c3c17"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc9e6aaa9026f03299fb31eed42c3c17">PrintKeysCommand</a> (string[] args)</td></tr>
+<tr class="separator:abc9e6aaa9026f03299fb31eed42c3c17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f3afcd74bdaeccfc955a9d87e480228" id="r_a8f3afcd74bdaeccfc955a9d87e480228"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f3afcd74bdaeccfc955a9d87e480228">PaletteDemo_Command</a> (string[] args)</td></tr>
+<tr class="separator:a8f3afcd74bdaeccfc955a9d87e480228"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a895b1579e4db4be7ac44d0134f7e78de" id="r_a895b1579e4db4be7ac44d0134f7e78de"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a895b1579e4db4be7ac44d0134f7e78de">Palette_Command</a> (string[] args)</td></tr>
+<tr class="separator:a895b1579e4db4be7ac44d0134f7e78de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79c47ff25830bc481dd84627dc6be306" id="r_a79c47ff25830bc481dd84627dc6be306"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a79c47ff25830bc481dd84627dc6be306">DrawTexture</a> (SpriteBatch sb, <a class="el" href="struct_crab_u_i_1_1_c_u_i_rect.html">CUIRect</a> cuirect, Color cl, Texture2D texture, float depth=0.0f)</td></tr>
 <tr class="separator:a79c47ff25830bc481dd84627dc6be306"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04d70ca33eb230382c3ba9d38f1a5faa" id="r_a04d70ca33eb230382c3ba9d38f1a5faa"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04d70ca33eb230382c3ba9d38f1a5faa">DrawRectangle</a> (SpriteBatch sb, <a class="el" href="struct_crab_u_i_1_1_c_u_i_rect.html">CUIRect</a> cuirect, Color cl, <a class="el" href="struct_crab_u_i_1_1_c_u_i_sprite.html">CUISprite</a> sprite, float depth=0.0f)</td></tr>
 <tr class="separator:a04d70ca33eb230382c3ba9d38f1a5faa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03a2a6b1c0958ff2be54e34c1f3df97d" id="r_a03a2a6b1c0958ff2be54e34c1f3df97d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03a2a6b1c0958ff2be54e34c1f3df97d">DrawBorders</a> (SpriteBatch sb, <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a> component, float depth=0.0f)</td></tr>
+<tr class="separator:a03a2a6b1c0958ff2be54e34c1f3df97d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -169,8 +199,10 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:a1b53d62d642c767e10ee9044d458ff50" id="r_a1b53d62d642c767e10ee9044d458ff50"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b53d62d642c767e10ee9044d458ff50">UserCount</a> = 0</td></tr>
 <tr class="memdesc:a1b53d62d642c767e10ee9044d458ff50"><td class="mdescLeft">&#160;</td><td class="mdescRight">In theory multiple mods could use same <a class="el" href="class_crab_u_i_1_1_c_u_i.html" title="In fact a static class managing static things.">CUI</a> instance, i clean it up when UserCount drops to 0.  <br /></td></tr>
 <tr class="separator:a1b53d62d642c767e10ee9044d458ff50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f3ea30c4c9251eab87a73b51369c0ea" id="r_a1f3ea30c4c9251eab87a73b51369c0ea"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f3ea30c4c9251eab87a73b51369c0ea">Pi2</a> = (float)Math.PI / 2</td></tr>
+<tr class="memitem:a1f3ea30c4c9251eab87a73b51369c0ea" id="r_a1f3ea30c4c9251eab87a73b51369c0ea"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f3ea30c4c9251eab87a73b51369c0ea">Pi2</a> = (float)(Math.PI / 2.0)</td></tr>
 <tr class="separator:a1f3ea30c4c9251eab87a73b51369c0ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4b3df1b05941d0afe5041930023f144" id="r_ac4b3df1b05941d0afe5041930023f144"><td class="memItemLeft" align="right" valign="top">static SamplerState&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4b3df1b05941d0afe5041930023f144">NoSmoothing</a></td></tr>
+<tr class="separator:ac4b3df1b05941d0afe5041930023f144"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
@@ -186,6 +218,8 @@ Properties</h2></td></tr>
 <tr class="separator:ae15623c2f321c848495db5c8291a4dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16f6695f5c595e4c33268e22c968946f" id="r_a16f6695f5c595e4c33268e22c968946f"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16f6695f5c595e4c33268e22c968946f">CUITexturePath</a><code> [get]</code></td></tr>
 <tr class="separator:a16f6695f5c595e4c33268e22c968946f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0002c6d4067c185a99d7a7a0cf69e21e" id="r_a0002c6d4067c185a99d7a7a0cf69e21e"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0002c6d4067c185a99d7a7a0cf69e21e">CUIPalettesPath</a><code> [get]</code></td></tr>
+<tr class="separator:a0002c6d4067c185a99d7a7a0cf69e21e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ad58022298f051fe199bca6ab39df77" id="r_a7ad58022298f051fe199bca6ab39df77"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ad58022298f051fe199bca6ab39df77">PGNAssets</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a7ad58022298f051fe199bca6ab39df77"><td class="mdescLeft">&#160;</td><td class="mdescRight">If set <a class="el" href="class_crab_u_i_1_1_c_u_i.html" title="In fact a static class managing static things.">CUI</a> will also check this folder when loading textures.  <br /></td></tr>
 <tr class="separator:a7ad58022298f051fe199bca6ab39df77"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -203,6 +237,10 @@ Properties</h2></td></tr>
 <tr class="separator:ac0b69a613489f61c35b5529432f51929"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83a1fc90a9f5d4f8473237bcca4a617e" id="r_a83a1fc90a9f5d4f8473237bcca4a617e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a83a1fc90a9f5d4f8473237bcca4a617e">FocusedComponent</a><code> [get, set]</code></td></tr>
 <tr class="separator:a83a1fc90a9f5d4f8473237bcca4a617e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a680f0121642831be583d8648425a15" id="r_a7a680f0121642831be583d8648425a15"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a680f0121642831be583d8648425a15">InputBlockingMenuOpen</a><code> [get]</code></td></tr>
+<tr class="separator:a7a680f0121642831be583d8648425a15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a900fcff390a19832aa254d5bb5efa998" id="r_a900fcff390a19832aa254d5bb5efa998"><td class="memItemLeft" align="right" valign="top">static List&lt; Func&lt; bool &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a900fcff390a19832aa254d5bb5efa998">IsBlockingPredicates</a><code> [get]</code></td></tr>
+<tr class="separator:a900fcff390a19832aa254d5bb5efa998"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="events" name="events"></a>
 Events</h2></td></tr>
@@ -216,6 +254,8 @@ Events</h2></td></tr>
 <tr class="separator:a962adca47b445a6d712bff2731a34f19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeeb991dd2809476892c1ea3639ff9e79" id="r_aeeb991dd2809476892c1ea3639ff9e79"><td class="memItemLeft" align="right" valign="top">static Action&lt; TextInputEventArgs &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeeb991dd2809476892c1ea3639ff9e79">OnWindowKeyDown</a></td></tr>
 <tr class="separator:aeeb991dd2809476892c1ea3639ff9e79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4590b1d429bb0ed16aa0c07228e6bf4" id="r_ac4590b1d429bb0ed16aa0c07228e6bf4"><td class="memItemLeft" align="right" valign="top">static Action&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4590b1d429bb0ed16aa0c07228e6bf4">OnPauseMenuToggled</a></td></tr>
+<tr class="separator:ac4590b1d429bb0ed16aa0c07228e6bf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>In fact a static class managing static things. </p>
@@ -300,6 +340,176 @@ Events</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="a3dfd223a13656539c3e8fb3801badce0" name="a3dfd223a13656539c3e8fb3801badce0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dfd223a13656539c3e8fb3801badce0">&#9670;&#160;</a></span>CUICreatePalette_Command()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void CrabUI.CUI.CUICreatePalette_Command </td>
+          <td>(</td>
+          <td class="paramtype">string[]</td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_commands_8cs_source.html#l00063">63</a> of file <a class="el" href="_c_u_i_commands_8cs_source.html">CUICommands.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>    {</div>
+<div class="line"><span class="lineno">   65</span>      <span class="keywordtype">string</span> name = args.ElementAtOrDefault(0);</div>
+<div class="line"><span class="lineno">   66</span>      Color colorA = CUIExtensions.ParseColor((args.ElementAtOrDefault(1) ?? <span class="stringliteral">&quot;white&quot;</span>));</div>
+<div class="line"><span class="lineno">   67</span>      Color colorB = CUIExtensions.ParseColor((args.ElementAtOrDefault(2) ?? <span class="stringliteral">&quot;black&quot;</span>));</div>
+<div class="line"><span class="lineno">   68</span>      CUIPalette palette = CUIPalette.CreatePaletteFromColors(name, colorA, colorB);</div>
+<div class="line"><span class="lineno">   69</span>      CUIPalette.Primary = palette;</div>
+<div class="line"><span class="lineno">   70</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a550e040449585b9fdbafa02452090992" name="a550e040449585b9fdbafa02452090992"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a550e040449585b9fdbafa02452090992">&#9670;&#160;</a></span>CUICreatePaletteSet_Command()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void CrabUI.CUI.CUICreatePaletteSet_Command </td>
+          <td>(</td>
+          <td class="paramtype">string[]</td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_commands_8cs_source.html#l00072">72</a> of file <a class="el" href="_c_u_i_commands_8cs_source.html">CUICommands.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   73</span>    {</div>
+<div class="line"><span class="lineno">   74</span>      CUIPalette.SaveSet(</div>
+<div class="line"><span class="lineno">   75</span>        args.ElementAtOrDefault(0),</div>
+<div class="line"><span class="lineno">   76</span>        args.ElementAtOrDefault(1),</div>
+<div class="line"><span class="lineno">   77</span>        args.ElementAtOrDefault(2),</div>
+<div class="line"><span class="lineno">   78</span>        args.ElementAtOrDefault(3),</div>
+<div class="line"><span class="lineno">   79</span>        args.ElementAtOrDefault(4)</div>
+<div class="line"><span class="lineno">   80</span>      );</div>
+<div class="line"><span class="lineno">   81</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af1ade28bd21b654aac13af1bfd548280" name="af1ade28bd21b654aac13af1bfd548280"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1ade28bd21b654aac13af1bfd548280">&#9670;&#160;</a></span>CUIDebug_Command()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void CrabUI.CUI.CUIDebug_Command </td>
+          <td>(</td>
+          <td class="paramtype">string[]</td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_commands_8cs_source.html#l00043">43</a> of file <a class="el" href="_c_u_i_commands_8cs_source.html">CUICommands.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>    {</div>
+<div class="line"><span class="lineno">   45</span>      <span class="keywordflow">if</span> (CUIDebugWindow.Main == <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   46</span>      {</div>
+<div class="line"><span class="lineno">   47</span>        CUIDebugWindow.Open();</div>
+<div class="line"><span class="lineno">   48</span>      }</div>
+<div class="line"><span class="lineno">   49</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   50</span>      {</div>
+<div class="line"><span class="lineno">   51</span>        CUIDebugWindow.Close();</div>
+<div class="line"><span class="lineno">   52</span>      }</div>
+<div class="line"><span class="lineno">   53</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a5ac5e10e2a8dafe6b304de7c0d427815" name="a5ac5e10e2a8dafe6b304de7c0d427815"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ac5e10e2a8dafe6b304de7c0d427815">&#9670;&#160;</a></span>CUIDrawOrder_Command()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void CrabUI.CUI.CUIDrawOrder_Command </td>
+          <td>(</td>
+          <td class="paramtype">string[]</td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_commands_8cs_source.html#l00055">55</a> of file <a class="el" href="_c_u_i_commands_8cs_source.html">CUICommands.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   56</span>    {</div>
+<div class="line"><span class="lineno">   57</span>      <span class="keywordflow">foreach</span> (CUIComponent c <span class="keywordflow">in</span> CUI.Main.Flat)</div>
+<div class="line"><span class="lineno">   58</span>      {</div>
+<div class="line"><span class="lineno">   59</span>        CUI.Log(c);</div>
+<div class="line"><span class="lineno">   60</span>      }</div>
+<div class="line"><span class="lineno">   61</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a15c70584d19a7b2363f7aaf5f7c0fd36" name="a15c70584d19a7b2363f7aaf5f7c0fd36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15c70584d19a7b2363f7aaf5f7c0fd36">&#9670;&#160;</a></span>CUILoadPaletteSet_Command()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void CrabUI.CUI.CUILoadPaletteSet_Command </td>
+          <td>(</td>
+          <td class="paramtype">string[]</td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_commands_8cs_source.html#l00083">83</a> of file <a class="el" href="_c_u_i_commands_8cs_source.html">CUICommands.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   84</span>    {</div>
+<div class="line"><span class="lineno">   85</span>      CUIPalette.LoadSet(Path.Combine(CUIPalette.PaletteSetsPath, args.ElementAtOrDefault(0)));</div>
+<div class="line"><span class="lineno">   86</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a7410428e33ba390ea32993e3987cf942" name="a7410428e33ba390ea32993e3987cf942"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7410428e33ba390ea32993e3987cf942">&#9670;&#160;</a></span>Dispose()</h2>
 
@@ -325,33 +535,154 @@ Events</h2></td></tr>
 
 <p>Should be called in IAssemblyPlugin.Dispose. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00161">161</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  162</span>    {</div>
-<div class="line"><span class="lineno">  163</span>      <a class="code hl_variable" href="#a1b53d62d642c767e10ee9044d458ff50">UserCount</a>--;</div>
-<div class="line"><span class="lineno">  164</span> </div>
-<div class="line"><span class="lineno">  165</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1b53d62d642c767e10ee9044d458ff50">UserCount</a> &lt;= 0)</div>
-<div class="line"><span class="lineno">  166</span>      {</div>
-<div class="line"><span class="lineno">  167</span>        RemoveCommands();</div>
-<div class="line"><span class="lineno">  168</span>        harmony.UnpatchAll(harmony.Id);</div>
-<div class="line"><span class="lineno">  169</span> </div>
-<div class="line"><span class="lineno">  170</span>        <a class="code hl_variable" href="#a35714b44c421730281bb8f7d1814f226">TextureManager</a>.Dispose();</div>
-<div class="line"><span class="lineno">  171</span>        CUIDebugEventComponent.CapturedIDs.Clear();</div>
-<div class="line"><span class="lineno">  172</span>        <a class="code hl_event" href="#a094cb2f85756ccf7fdf601df178d2dcb">OnDispose</a>?.Invoke();</div>
-<div class="line"><span class="lineno">  173</span> </div>
-<div class="line"><span class="lineno">  174</span>        <a class="code hl_variable" href="#aba21eb0f5f823b3c2c876dc31a3b4a43">Instance</a>.LuaRegistrar.Deregister();</div>
-<div class="line"><span class="lineno">  175</span> </div>
-<div class="line"><span class="lineno">  176</span>        <a class="code hl_variable" href="#aba21eb0f5f823b3c2c876dc31a3b4a43">Instance</a> = <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  177</span>        <a class="code hl_variable" href="#a1b53d62d642c767e10ee9044d458ff50">UserCount</a> = 0;</div>
-<div class="line"><span class="lineno">  178</span>      }</div>
-<div class="line"><span class="lineno">  179</span> </div>
-<div class="line"><span class="lineno">  180</span>      GameMain.Instance.Window.TextInput -= ReEmitWindowTextInput;</div>
-<div class="line"><span class="lineno">  181</span>      GameMain.Instance.Window.KeyDown -= ReEmitWindowKeyDown;</div>
-<div class="line"><span class="lineno">  182</span>      <span class="comment">//GameMain.Instance.Window.KeyUp -= ReEmitWindowKeyUp;</span></div>
-<div class="line"><span class="lineno">  183</span>    }</div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a094cb2f85756ccf7fdf601df178d2dcb"><div class="ttname"><a href="#a094cb2f85756ccf7fdf601df178d2dcb">CrabUI.CUI.OnDispose</a></div><div class="ttdeci">static Action OnDispose</div><div class="ttdoc">Called on last Dispose.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00093">CUI.cs:93</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a1b53d62d642c767e10ee9044d458ff50"><div class="ttname"><a href="#a1b53d62d642c767e10ee9044d458ff50">CrabUI.CUI.UserCount</a></div><div class="ttdeci">static int UserCount</div><div class="ttdoc">In theory multiple mods could use same CUI instance, i clean it up when UserCount drops to 0.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00101">CUI.cs:101</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a35714b44c421730281bb8f7d1814f226"><div class="ttname"><a href="#a35714b44c421730281bb8f7d1814f226">CrabUI.CUI.TextureManager</a></div><div class="ttdeci">static CUITextureManager TextureManager</div><div class="ttdoc">Safe texture manager.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00066">CUI.cs:66</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_aba21eb0f5f823b3c2c876dc31a3b4a43"><div class="ttname"><a href="#aba21eb0f5f823b3c2c876dc31a3b4a43">CrabUI.CUI.Instance</a></div><div class="ttdeci">static CUI Instance</div><div class="ttdoc">A singleton.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00048">CUI.cs:48</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00179">179</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  180</span>    {</div>
+<div class="line"><span class="lineno">  181</span>      <a class="code hl_variable" href="#a1b53d62d642c767e10ee9044d458ff50">UserCount</a>--;</div>
+<div class="line"><span class="lineno">  182</span> </div>
+<div class="line"><span class="lineno">  183</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1b53d62d642c767e10ee9044d458ff50">UserCount</a> &lt;= 0)</div>
+<div class="line"><span class="lineno">  184</span>      {</div>
+<div class="line"><span class="lineno">  185</span>        RemoveCommands();</div>
+<div class="line"><span class="lineno">  186</span>        harmony.UnpatchAll(harmony.Id);</div>
+<div class="line"><span class="lineno">  187</span> </div>
+<div class="line"><span class="lineno">  188</span>        <a class="code hl_variable" href="#a35714b44c421730281bb8f7d1814f226">TextureManager</a>.Dispose();</div>
+<div class="line"><span class="lineno">  189</span>        CUIDebugEventComponent.CapturedIDs.Clear();</div>
+<div class="line"><span class="lineno">  190</span>        <a class="code hl_event" href="#a094cb2f85756ccf7fdf601df178d2dcb">OnDispose</a>?.Invoke();</div>
+<div class="line"><span class="lineno">  191</span> </div>
+<div class="line"><span class="lineno">  192</span>        <a class="code hl_variable" href="#aba21eb0f5f823b3c2c876dc31a3b4a43">Instance</a>.isBlockingPredicates.Clear();</div>
+<div class="line"><span class="lineno">  193</span> </div>
+<div class="line"><span class="lineno">  194</span>        <a class="code hl_variable" href="#aba21eb0f5f823b3c2c876dc31a3b4a43">Instance</a>.LuaRegistrar.Deregister();</div>
+<div class="line"><span class="lineno">  195</span> </div>
+<div class="line"><span class="lineno">  196</span>        <a class="code hl_variable" href="#aba21eb0f5f823b3c2c876dc31a3b4a43">Instance</a> = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  197</span>        <a class="code hl_variable" href="#a1b53d62d642c767e10ee9044d458ff50">UserCount</a> = 0;</div>
+<div class="line"><span class="lineno">  198</span>      }</div>
+<div class="line"><span class="lineno">  199</span> </div>
+<div class="line"><span class="lineno">  200</span>      GameMain.Instance.Window.TextInput -= ReEmitWindowTextInput;</div>
+<div class="line"><span class="lineno">  201</span>      GameMain.Instance.Window.KeyDown -= ReEmitWindowKeyDown;</div>
+<div class="line"><span class="lineno">  202</span>      <span class="comment">//GameMain.Instance.Window.KeyUp -= ReEmitWindowKeyUp;</span></div>
+<div class="line"><span class="lineno">  203</span>    }</div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a094cb2f85756ccf7fdf601df178d2dcb"><div class="ttname"><a href="#a094cb2f85756ccf7fdf601df178d2dcb">CrabUI.CUI.OnDispose</a></div><div class="ttdeci">static Action OnDispose</div><div class="ttdoc">Called on last Dispose.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00094">CUI.cs:94</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a1b53d62d642c767e10ee9044d458ff50"><div class="ttname"><a href="#a1b53d62d642c767e10ee9044d458ff50">CrabUI.CUI.UserCount</a></div><div class="ttdeci">static int UserCount</div><div class="ttdoc">In theory multiple mods could use same CUI instance, i clean it up when UserCount drops to 0.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00117">CUI.cs:117</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a35714b44c421730281bb8f7d1814f226"><div class="ttname"><a href="#a35714b44c421730281bb8f7d1814f226">CrabUI.CUI.TextureManager</a></div><div class="ttdeci">static CUITextureManager TextureManager</div><div class="ttdoc">Safe texture manager.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00067">CUI.cs:67</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_aba21eb0f5f823b3c2c876dc31a3b4a43"><div class="ttname"><a href="#aba21eb0f5f823b3c2c876dc31a3b4a43">CrabUI.CUI.Instance</a></div><div class="ttdeci">static CUI Instance</div><div class="ttdoc">A singleton.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00049">CUI.cs:49</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a03a2a6b1c0958ff2be54e34c1f3df97d" name="a03a2a6b1c0958ff2be54e34c1f3df97d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03a2a6b1c0958ff2be54e34c1f3df97d">&#9670;&#160;</a></span>DrawBorders()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void CrabUI.CUI.DrawBorders </td>
+          <td>(</td>
+          <td class="paramtype">SpriteBatch</td>          <td class="paramname"><span class="paramname"><em>sb</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a></td>          <td class="paramname"><span class="paramname"><em>component</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>depth</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0::0f</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_drawing_8cs_source.html#l00055">55</a> of file <a class="el" href="_c_u_i_drawing_8cs_source.html">CUIDrawing.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   56</span>    {</div>
+<div class="line"><span class="lineno">   57</span>      Texture2D texture = component.BorderSprite.Texture;</div>
+<div class="line"><span class="lineno">   58</span>      Rectangle sourceRect = texture.Bounds;</div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>      Rectangle targetRect;</div>
+<div class="line"><span class="lineno">   61</span>      Color cl;</div>
+<div class="line"><span class="lineno">   62</span>      <span class="keywordtype">float</span> rotation = 0.0f;</div>
+<div class="line"><span class="lineno">   63</span>      <span class="keywordtype">float</span> thickness = 1.0f;</div>
+<div class="line"><span class="lineno">   64</span>      <span class="keywordtype">bool</span> visible = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   65</span> </div>
+<div class="line"><span class="lineno">   66</span>      <span class="comment">// Right</span></div>
+<div class="line"><span class="lineno">   67</span>      visible = component.RigthBorder?.Visible ?? component.Border.Visible;</div>
+<div class="line"><span class="lineno">   68</span>      thickness = component.RigthBorder?.Thickness ?? component.Border.Thickness;</div>
+<div class="line"><span class="lineno">   69</span>      cl = component.RigthBorder?.Color ?? component.Border.Color;</div>
+<div class="line"><span class="lineno">   70</span>      targetRect = CUIRect.CreateRect(</div>
+<div class="line"><span class="lineno">   71</span>        component.Real.Left + component.Real.Width,</div>
+<div class="line"><span class="lineno">   72</span>        component.Real.Top,</div>
+<div class="line"><span class="lineno">   73</span>        component.Real.Height,</div>
+<div class="line"><span class="lineno">   74</span>        thickness</div>
+<div class="line"><span class="lineno">   75</span>      );</div>
+<div class="line"><span class="lineno">   76</span>      sourceRect = CUIRect.CreateRect(</div>
+<div class="line"><span class="lineno">   77</span>        0, 0,</div>
+<div class="line"><span class="lineno">   78</span>        targetRect.Width, texture.Height</div>
+<div class="line"><span class="lineno">   79</span>      );</div>
+<div class="line"><span class="lineno">   80</span>      rotation = Pi2;</div>
+<div class="line"><span class="lineno">   81</span>      sb.Draw(texture, targetRect, sourceRect, cl, rotation, Vector2.Zero, SpriteEffects.None, depth);</div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span>      <span class="comment">//Left</span></div>
+<div class="line"><span class="lineno">   84</span>      visible = component.LeftBorder?.Visible ?? component.Border.Visible;</div>
+<div class="line"><span class="lineno">   85</span>      thickness = component.LeftBorder?.Thickness ?? component.Border.Thickness;</div>
+<div class="line"><span class="lineno">   86</span>      cl = component.LeftBorder?.Color ?? component.Border.Color;</div>
+<div class="line"><span class="lineno">   87</span>      targetRect = CUIRect.CreateRect(</div>
+<div class="line"><span class="lineno">   88</span>        component.Real.Left + thickness,</div>
+<div class="line"><span class="lineno">   89</span>        component.Real.Top,</div>
+<div class="line"><span class="lineno">   90</span>        component.Real.Height,</div>
+<div class="line"><span class="lineno">   91</span>        thickness</div>
+<div class="line"><span class="lineno">   92</span>      );</div>
+<div class="line"><span class="lineno">   93</span>      sourceRect = CUIRect.CreateRect(</div>
+<div class="line"><span class="lineno">   94</span>        0, 0,</div>
+<div class="line"><span class="lineno">   95</span>        targetRect.Width, texture.Height</div>
+<div class="line"><span class="lineno">   96</span>      );</div>
+<div class="line"><span class="lineno">   97</span>      rotation = Pi2;</div>
+<div class="line"><span class="lineno">   98</span>      sb.Draw(texture, targetRect, sourceRect, cl, rotation, Vector2.Zero, SpriteEffects.FlipVertically, depth);</div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span> </div>
+<div class="line"><span class="lineno">  101</span>      <span class="comment">//Top</span></div>
+<div class="line"><span class="lineno">  102</span>      visible = component.TopBorder?.Visible ?? component.Border.Visible;</div>
+<div class="line"><span class="lineno">  103</span>      thickness = component.TopBorder?.Thickness ?? component.Border.Thickness;</div>
+<div class="line"><span class="lineno">  104</span>      cl = component.TopBorder?.Color ?? component.Border.Color;</div>
+<div class="line"><span class="lineno">  105</span>      targetRect = CUIRect.CreateRect(</div>
+<div class="line"><span class="lineno">  106</span>        component.Real.Left,</div>
+<div class="line"><span class="lineno">  107</span>        component.Real.Top,</div>
+<div class="line"><span class="lineno">  108</span>        component.Real.Width,</div>
+<div class="line"><span class="lineno">  109</span>        thickness</div>
+<div class="line"><span class="lineno">  110</span>      );</div>
+<div class="line"><span class="lineno">  111</span>      sourceRect = CUIRect.CreateRect(</div>
+<div class="line"><span class="lineno">  112</span>        0, 0,</div>
+<div class="line"><span class="lineno">  113</span>        targetRect.Width, texture.Height</div>
+<div class="line"><span class="lineno">  114</span>      );</div>
+<div class="line"><span class="lineno">  115</span>      rotation = 0.0f;</div>
+<div class="line"><span class="lineno">  116</span>      sb.Draw(texture, targetRect, sourceRect, cl, rotation, Vector2.Zero, SpriteEffects.None, depth);</div>
+<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  118</span> </div>
+<div class="line"><span class="lineno">  119</span> </div>
+<div class="line"><span class="lineno">  120</span>      <span class="comment">//Bottom</span></div>
+<div class="line"><span class="lineno">  121</span>      visible = component.BottomBorder?.Visible ?? component.Border.Visible;</div>
+<div class="line"><span class="lineno">  122</span>      thickness = component.BottomBorder?.Thickness ?? component.Border.Thickness;</div>
+<div class="line"><span class="lineno">  123</span>      cl = component.BottomBorder?.Color ?? component.Border.Color;</div>
+<div class="line"><span class="lineno">  124</span>      targetRect = CUIRect.CreateRect(</div>
+<div class="line"><span class="lineno">  125</span>        component.Real.Left,</div>
+<div class="line"><span class="lineno">  126</span>        component.Real.Bottom - thickness,</div>
+<div class="line"><span class="lineno">  127</span>        component.Real.Width,</div>
+<div class="line"><span class="lineno">  128</span>        thickness</div>
+<div class="line"><span class="lineno">  129</span>      );</div>
+<div class="line"><span class="lineno">  130</span>      sourceRect = CUIRect.CreateRect(</div>
+<div class="line"><span class="lineno">  131</span>        0, 0,</div>
+<div class="line"><span class="lineno">  132</span>        targetRect.Width, texture.Height</div>
+<div class="line"><span class="lineno">  133</span>      );</div>
+<div class="line"><span class="lineno">  134</span>      rotation = 0;</div>
+<div class="line"><span class="lineno">  135</span>      sb.Draw(texture, targetRect, sourceRect, cl, rotation, Vector2.Zero, SpriteEffects.FlipVertically, depth);</div>
+<div class="line"><span class="lineno">  136</span> </div>
+<div class="line"><span class="lineno">  137</span> </div>
+<div class="line"><span class="lineno">  138</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -397,19 +728,19 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_drawing_8cs_source.html#l00025">25</a> of file <a class="el" href="_c_u_i_drawing_8cs_source.html">CUIDrawing.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   26</span>    {</div>
-<div class="line"><span class="lineno">   27</span>      Rectangle sourceRect = sprite.DrawMode <span class="keywordflow">switch</span></div>
-<div class="line"><span class="lineno">   28</span>      {</div>
-<div class="line"><span class="lineno">   29</span>        CUISpriteDrawMode.Resize =&gt; sprite.SourceRect,</div>
-<div class="line"><span class="lineno">   30</span>        CUISpriteDrawMode.Wrap =&gt; <span class="keyword">new</span> Rectangle(0, 0, (<span class="keywordtype">int</span>)cuirect.Width, (<span class="keywordtype">int</span>)cuirect.Height),</div>
-<div class="line"><span class="lineno">   31</span>        CUISpriteDrawMode.Static =&gt; cuirect.Box,</div>
-<div class="line"><span class="lineno">   32</span>        CUISpriteDrawMode.StaticDeep =&gt; cuirect.Zoom(0.9f),</div>
-<div class="line"><span class="lineno">   33</span>        _ =&gt; sprite.SourceRect,</div>
-<div class="line"><span class="lineno">   34</span>      };</div>
-<div class="line"><span class="lineno">   35</span> </div>
-<div class="line"><span class="lineno">   36</span>      sb.Draw(sprite.Texture, cuirect.Box, sourceRect, cl, 0.0f, Vector2.Zero, sprite.Effects, depth);</div>
-<div class="line"><span class="lineno">   37</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_drawing_8cs_source.html#l00040">40</a> of file <a class="el" href="_c_u_i_drawing_8cs_source.html">CUIDrawing.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   41</span>    {</div>
+<div class="line"><span class="lineno">   42</span>      Rectangle sourceRect = sprite.DrawMode <span class="keywordflow">switch</span></div>
+<div class="line"><span class="lineno">   43</span>      {</div>
+<div class="line"><span class="lineno">   44</span>        CUISpriteDrawMode.Resize =&gt; sprite.SourceRect,</div>
+<div class="line"><span class="lineno">   45</span>        CUISpriteDrawMode.Wrap =&gt; <span class="keyword">new</span> Rectangle(0, 0, (<span class="keywordtype">int</span>)cuirect.Width, (<span class="keywordtype">int</span>)cuirect.Height),</div>
+<div class="line"><span class="lineno">   46</span>        CUISpriteDrawMode.Static =&gt; cuirect.Box,</div>
+<div class="line"><span class="lineno">   47</span>        CUISpriteDrawMode.StaticDeep =&gt; cuirect.Zoom(0.9f),</div>
+<div class="line"><span class="lineno">   48</span>        _ =&gt; sprite.SourceRect,</div>
+<div class="line"><span class="lineno">   49</span>      };</div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>      sb.Draw(sprite.Texture, cuirect.Box, sourceRect, cl, 0.0f, Vector2.Zero, sprite.Effects, depth);</div>
+<div class="line"><span class="lineno">   52</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -455,12 +786,12 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_drawing_8cs_source.html#l00019">19</a> of file <a class="el" href="_c_u_i_drawing_8cs_source.html">CUIDrawing.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   20</span>    {</div>
-<div class="line"><span class="lineno">   21</span>      Rectangle sourceRect = <span class="keyword">new</span> Rectangle(0, 0, (<span class="keywordtype">int</span>)cuirect.Width, (<span class="keywordtype">int</span>)cuirect.Height);</div>
-<div class="line"><span class="lineno">   22</span> </div>
-<div class="line"><span class="lineno">   23</span>      sb.Draw(texture, cuirect.Box, sourceRect, cl, 0.0f, Vector2.Zero, SpriteEffects.None, depth);</div>
-<div class="line"><span class="lineno">   24</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_drawing_8cs_source.html#l00034">34</a> of file <a class="el" href="_c_u_i_drawing_8cs_source.html">CUIDrawing.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   35</span>    {</div>
+<div class="line"><span class="lineno">   36</span>      Rectangle sourceRect = <span class="keyword">new</span> Rectangle(0, 0, (<span class="keywordtype">int</span>)cuirect.Width, (<span class="keywordtype">int</span>)cuirect.Height);</div>
+<div class="line"><span class="lineno">   37</span> </div>
+<div class="line"><span class="lineno">   38</span>      sb.Draw(texture, cuirect.Box, sourceRect, cl, 0.0f, Vector2.Zero, SpriteEffects.None, depth);</div>
+<div class="line"><span class="lineno">   39</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -504,18 +835,18 @@ Events</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_01_logging_8cs_source.html#l00088">88</a> of file <a class="el" href="_c_u_i_01_logging_8cs_source.html">CUI Logging.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   89</span>    {</div>
-<div class="line"><span class="lineno">   90</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1c6aff01098e74d01c9d84b833860c22">Debug</a> == <span class="keyword">true</span>)</div>
-<div class="line"><span class="lineno">   91</span>      {</div>
-<div class="line"><span class="lineno">   92</span>        var fi = <span class="keyword">new</span> FileInfo(source);</div>
-<div class="line"><span class="lineno">   93</span> </div>
-<div class="line"><span class="lineno">   94</span>        <a class="code hl_function" href="#a2b97112f36caf3daeb5c0312b1282e7c">Log</a>($<span class="stringliteral">&quot;{fi.Directory.Name}/{fi.Name}:{lineNumber}&quot;</span>, Color.Orange * 0.5f);</div>
-<div class="line"><span class="lineno">   95</span>        <a class="code hl_function" href="#a2b97112f36caf3daeb5c0312b1282e7c">Log</a>(msg, Color.Orange);</div>
-<div class="line"><span class="lineno">   96</span>      }</div>
-<div class="line"><span class="lineno">   97</span>    }</div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a1c6aff01098e74d01c9d84b833860c22"><div class="ttname"><a href="#a1c6aff01098e74d01c9d84b833860c22">CrabUI.CUI.Debug</a></div><div class="ttdeci">static bool Debug</div><div class="ttdoc">This affects logging.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00082">CUI.cs:82</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a2b97112f36caf3daeb5c0312b1282e7c"><div class="ttname"><a href="#a2b97112f36caf3daeb5c0312b1282e7c">CrabUI.CUI.Log</a></div><div class="ttdeci">static void Log(object msg, Color? color=null)</div><div class="ttdoc">Prints a message to console.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_01_logging_8cs_source.html#l00044">CUI Logging.cs:44</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_01_logging_8cs_source.html#l00091">91</a> of file <a class="el" href="_c_u_i_01_logging_8cs_source.html">CUI Logging.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   92</span>    {</div>
+<div class="line"><span class="lineno">   93</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1c6aff01098e74d01c9d84b833860c22">Debug</a> == <span class="keyword">true</span>)</div>
+<div class="line"><span class="lineno">   94</span>      {</div>
+<div class="line"><span class="lineno">   95</span>        var fi = <span class="keyword">new</span> FileInfo(source);</div>
+<div class="line"><span class="lineno">   96</span> </div>
+<div class="line"><span class="lineno">   97</span>        <a class="code hl_function" href="#aa0ce4751fde5325adf2675c44a320b73">Log</a>($<span class="stringliteral">&quot;{fi.Directory.Name}/{fi.Name}:{lineNumber}&quot;</span>, Color.Orange * 0.5f);</div>
+<div class="line"><span class="lineno">   98</span>        <a class="code hl_function" href="#aa0ce4751fde5325adf2675c44a320b73">Log</a>(msg, Color.Orange);</div>
+<div class="line"><span class="lineno">   99</span>      }</div>
+<div class="line"><span class="lineno">  100</span>    }</div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a1c6aff01098e74d01c9d84b833860c22"><div class="ttname"><a href="#a1c6aff01098e74d01c9d84b833860c22">CrabUI.CUI.Debug</a></div><div class="ttdeci">static bool Debug</div><div class="ttdoc">This affects logging.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00083">CUI.cs:83</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_aa0ce4751fde5325adf2675c44a320b73"><div class="ttname"><a href="#aa0ce4751fde5325adf2675c44a320b73">CrabUI.CUI.Log</a></div><div class="ttdeci">static void Log(object msg, Color? color=null, [CallerFilePath] string source=&quot;&quot;, [CallerLineNumber] int lineNumber=0)</div><div class="ttdoc">Prints a message to console.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_01_logging_8cs_source.html#l00044">CUI Logging.cs:44</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -542,10 +873,10 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00186">186</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  187</span>    {</div>
-<div class="line"><span class="lineno">  188</span>      ModDir = CUIPath.Substring(0, CUIPath.IndexOf(<span class="stringliteral">&quot;CSharp&quot;</span>));</div>
-<div class="line"><span class="lineno">  189</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00206">206</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  207</span>    {</div>
+<div class="line"><span class="lineno">  208</span>      ModDir = CUIPath.Substring(0, CUIPath.IndexOf(<span class="stringliteral">&quot;CSharp&quot;</span>));</div>
+<div class="line"><span class="lineno">  209</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -581,10 +912,65 @@ Events</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_01_logging_8cs_source.html#l00062">62</a> of file <a class="el" href="_c_u_i_01_logging_8cs_source.html">CUI Logging.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   63</span>    {</div>
-<div class="line"><span class="lineno">   64</span>      <span class="keywordflow">return</span> Path.GetDirectoryName(source);</div>
-<div class="line"><span class="lineno">   65</span>    }</div>
+</div>
+</div>
+<a id="ad3d07d3d678d96f419080ff9a3e96953" name="ad3d07d3d678d96f419080ff9a3e96953"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3d07d3d678d96f419080ff9a3e96953">&#9670;&#160;</a></span>GUI_InputBlockingMenuOpen_Postfix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void CrabUI.CUI.GUI_InputBlockingMenuOpen_Postfix </td>
+          <td>(</td>
+          <td class="paramtype">ref bool</td>          <td class="paramname"><span class="paramname"><em>__result</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_01patches_8cs_source.html#l00068">68</a> of file <a class="el" href="_c_u_i_01patches_8cs_source.html">CUI patches.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>    {</div>
+<div class="line"><span class="lineno">   70</span>      __result = __result || CUI.InputBlockingMenuOpen;</div>
+<div class="line"><span class="lineno">   71</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a1abbd49e73b96af768a6de1c4d75d7c1" name="a1abbd49e73b96af768a6de1c4d75d7c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1abbd49e73b96af768a6de1c4d75d7c1">&#9670;&#160;</a></span>GUI_TogglePauseMenu_Postfix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void CrabUI.CUI.GUI_TogglePauseMenu_Postfix </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_01patches_8cs_source.html#l00073">73</a> of file <a class="el" href="_c_u_i_01patches_8cs_source.html">CUI patches.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   74</span>    {</div>
+<div class="line"><span class="lineno">   75</span>      CUI.InvokeOnPauseMenuToggled();</div>
+<div class="line"><span class="lineno">   76</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -628,16 +1014,16 @@ Events</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_01_logging_8cs_source.html#l00072">72</a> of file <a class="el" href="_c_u_i_01_logging_8cs_source.html">CUI Logging.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   73</span>    {</div>
-<div class="line"><span class="lineno">   74</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1c6aff01098e74d01c9d84b833860c22">Debug</a> == <span class="keyword">true</span>)</div>
-<div class="line"><span class="lineno">   75</span>      {</div>
-<div class="line"><span class="lineno">   76</span>        var fi = <span class="keyword">new</span> FileInfo(source);</div>
-<div class="line"><span class="lineno">   77</span> </div>
-<div class="line"><span class="lineno">   78</span>        <a class="code hl_function" href="#a2b97112f36caf3daeb5c0312b1282e7c">Log</a>($<span class="stringliteral">&quot;{fi.Directory.Name}/{fi.Name}:{lineNumber}&quot;</span>, Color.Yellow * 0.5f);</div>
-<div class="line"><span class="lineno">   79</span>        <a class="code hl_function" href="#a2b97112f36caf3daeb5c0312b1282e7c">Log</a>(msg, Color.Yellow);</div>
-<div class="line"><span class="lineno">   80</span>      }</div>
-<div class="line"><span class="lineno">   81</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_01_logging_8cs_source.html#l00075">75</a> of file <a class="el" href="_c_u_i_01_logging_8cs_source.html">CUI Logging.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   76</span>    {</div>
+<div class="line"><span class="lineno">   77</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1c6aff01098e74d01c9d84b833860c22">Debug</a> == <span class="keyword">true</span>)</div>
+<div class="line"><span class="lineno">   78</span>      {</div>
+<div class="line"><span class="lineno">   79</span>        var fi = <span class="keyword">new</span> FileInfo(source);</div>
+<div class="line"><span class="lineno">   80</span> </div>
+<div class="line"><span class="lineno">   81</span>        <a class="code hl_function" href="#aa0ce4751fde5325adf2675c44a320b73">Log</a>($<span class="stringliteral">&quot;{fi.Directory.Name}/{fi.Name}:{lineNumber}&quot;</span>, Color.Yellow * 0.5f);</div>
+<div class="line"><span class="lineno">   82</span>        <a class="code hl_function" href="#aa0ce4751fde5325adf2675c44a320b73">Log</a>(msg, Color.Yellow);</div>
+<div class="line"><span class="lineno">   83</span>      }</div>
+<div class="line"><span class="lineno">   84</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -666,40 +1052,42 @@ Events</h2></td></tr>
 
 <p>Should be called in IAssemblyPlugin.Initialize. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00122">122</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  123</span>    {</div>
-<div class="line"><span class="lineno">  124</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aba21eb0f5f823b3c2c876dc31a3b4a43">Instance</a> == <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">  125</span>      {</div>
-<div class="line"><span class="lineno">  126</span>        <span class="comment">// this should init only static stuff that doesn&#39;t depend on instance</span></div>
-<div class="line"><span class="lineno">  127</span>        <a class="code hl_event" href="#a29fdc0441733f6fde0d3bc29a458078c">OnInit</a>?.Invoke();</div>
-<div class="line"><span class="lineno">  128</span> </div>
-<div class="line"><span class="lineno">  129</span>        <a class="code hl_variable" href="#aba21eb0f5f823b3c2c876dc31a3b4a43">Instance</a> = <span class="keyword">new</span> CUI();</div>
-<div class="line"><span class="lineno">  130</span> </div>
-<div class="line"><span class="lineno">  131</span>        FindModFolder();</div>
-<div class="line"><span class="lineno">  132</span> </div>
-<div class="line"><span class="lineno">  133</span>        GameMain.Instance.Window.TextInput += ReEmitWindowTextInput;</div>
-<div class="line"><span class="lineno">  134</span>        GameMain.Instance.Window.KeyDown += ReEmitWindowKeyDown;</div>
-<div class="line"><span class="lineno">  135</span>        <span class="comment">//GameMain.Instance.Window.KeyUp += ReEmitWindowKeyUp;</span></div>
-<div class="line"><span class="lineno">  136</span> </div>
-<div class="line"><span class="lineno">  137</span>        PatchAll();</div>
-<div class="line"><span class="lineno">  138</span>        AddCommands();</div>
-<div class="line"><span class="lineno">  139</span>        <a class="code hl_variable" href="#aba21eb0f5f823b3c2c876dc31a3b4a43">Instance</a>.LuaRegistrar.Register();</div>
-<div class="line"><span class="lineno">  140</span> </div>
-<div class="line"><span class="lineno">  141</span>        <span class="comment">//HACK this works, but i still think that i shouldn&#39;t make aby assumptions about</span></div>
-<div class="line"><span class="lineno">  142</span>        <span class="comment">// file layout outside of CSharp folder, and i shouldn&#39;t store pngs in CSharp</span></div>
-<div class="line"><span class="lineno">  143</span>        <span class="comment">// perhaps i should generate default textures at runtime</span></div>
-<div class="line"><span class="lineno">  144</span>        <span class="comment">// or pack them with dll when plugin system settles</span></div>
-<div class="line"><span class="lineno">  145</span>        <span class="comment">//Log(GetCallerFilePath());</span></div>
-<div class="line"><span class="lineno">  146</span>      }</div>
-<div class="line"><span class="lineno">  147</span> </div>
-<div class="line"><span class="lineno">  148</span>      <a class="code hl_variable" href="#a1b53d62d642c767e10ee9044d458ff50">UserCount</a>++;</div>
-<div class="line"><span class="lineno">  149</span>    }</div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a29fdc0441733f6fde0d3bc29a458078c"><div class="ttname"><a href="#a29fdc0441733f6fde0d3bc29a458078c">CrabUI.CUI.OnInit</a></div><div class="ttdeci">static Action OnInit</div><div class="ttdoc">Called on first Initialize.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00089">CUI.cs:89</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00138">138</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  139</span>    {</div>
+<div class="line"><span class="lineno">  140</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aba21eb0f5f823b3c2c876dc31a3b4a43">Instance</a> == <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">  141</span>      {</div>
+<div class="line"><span class="lineno">  142</span>        <span class="comment">// this should init only static stuff that doesn&#39;t depend on instance</span></div>
+<div class="line"><span class="lineno">  143</span>        <a class="code hl_event" href="#a29fdc0441733f6fde0d3bc29a458078c">OnInit</a>?.Invoke();</div>
+<div class="line"><span class="lineno">  144</span> </div>
+<div class="line"><span class="lineno">  145</span>        <a class="code hl_variable" href="#aba21eb0f5f823b3c2c876dc31a3b4a43">Instance</a> = <span class="keyword">new</span> CUI();</div>
+<div class="line"><span class="lineno">  146</span> </div>
+<div class="line"><span class="lineno">  147</span>        FindModFolder();</div>
+<div class="line"><span class="lineno">  148</span> </div>
+<div class="line"><span class="lineno">  149</span>        GameMain.Instance.Window.TextInput += ReEmitWindowTextInput;</div>
+<div class="line"><span class="lineno">  150</span>        GameMain.Instance.Window.KeyDown += ReEmitWindowKeyDown;</div>
+<div class="line"><span class="lineno">  151</span>        <span class="comment">//GameMain.Instance.Window.KeyUp += ReEmitWindowKeyUp;</span></div>
+<div class="line"><span class="lineno">  152</span> </div>
+<div class="line"><span class="lineno">  153</span>        PatchAll();</div>
+<div class="line"><span class="lineno">  154</span>        AddCommands();</div>
+<div class="line"><span class="lineno">  155</span>        <a class="code hl_variable" href="#aba21eb0f5f823b3c2c876dc31a3b4a43">Instance</a>.LuaRegistrar.Register();</div>
+<div class="line"><span class="lineno">  156</span> </div>
+<div class="line"><span class="lineno">  157</span>        <span class="comment">//CUIPalette.PaletteDemo();</span></div>
+<div class="line"><span class="lineno">  158</span> </div>
+<div class="line"><span class="lineno">  159</span>        <span class="comment">//HACK this works, but i still think that i shouldn&#39;t make aby assumptions about</span></div>
+<div class="line"><span class="lineno">  160</span>        <span class="comment">// file layout outside of CSharp folder, and i shouldn&#39;t store pngs in CSharp</span></div>
+<div class="line"><span class="lineno">  161</span>        <span class="comment">// perhaps i should generate default textures at runtime</span></div>
+<div class="line"><span class="lineno">  162</span>        <span class="comment">// or pack them with dll when plugin system settles</span></div>
+<div class="line"><span class="lineno">  163</span>        <span class="comment">//Log(GetCallerFilePath());</span></div>
+<div class="line"><span class="lineno">  164</span>      }</div>
+<div class="line"><span class="lineno">  165</span> </div>
+<div class="line"><span class="lineno">  166</span>      <a class="code hl_variable" href="#a1b53d62d642c767e10ee9044d458ff50">UserCount</a>++;</div>
+<div class="line"><span class="lineno">  167</span>    }</div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a29fdc0441733f6fde0d3bc29a458078c"><div class="ttname"><a href="#a29fdc0441733f6fde0d3bc29a458078c">CrabUI.CUI.OnInit</a></div><div class="ttdeci">static Action OnInit</div><div class="ttdoc">Called on first Initialize.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00090">CUI.cs:90</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a2b97112f36caf3daeb5c0312b1282e7c" name="a2b97112f36caf3daeb5c0312b1282e7c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b97112f36caf3daeb5c0312b1282e7c">&#9670;&#160;</a></span>Log()</h2>
+<a id="aa0ce4751fde5325adf2675c44a320b73" name="aa0ce4751fde5325adf2675c44a320b73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0ce4751fde5325adf2675c44a320b73">&#9670;&#160;</a></span>Log()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -715,7 +1103,17 @@ Events</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Color?</td>          <td class="paramname"><span class="paramname"><em>color</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>&#160;)</td>
+          <td class="paramtype">Color?</td>          <td class="paramname"><span class="paramname"><em>color</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">[CallerFilePath] string</td>          <td class="paramname"><span class="paramname"><em>source</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">[CallerLineNumber] int</td>          <td class="paramname"><span class="paramname"><em>lineNumber</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -737,8 +1135,12 @@ Events</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="_c_u_i_01_logging_8cs_source.html#l00044">44</a> of file <a class="el" href="_c_u_i_01_logging_8cs_source.html">CUI Logging.cs</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   45</span>    {</div>
 <div class="line"><span class="lineno">   46</span>      color ??= Color.Cyan;</div>
-<div class="line"><span class="lineno">   47</span>      LuaCsLogger.LogMessage($<span class="stringliteral">&quot;{msg ?? &quot;</span><span class="keyword">null</span><span class="stringliteral">&quot;}&quot;</span>, color * 0.8f, color);</div>
-<div class="line"><span class="lineno">   48</span>    }</div>
+<div class="line"><span class="lineno">   47</span> </div>
+<div class="line"><span class="lineno">   48</span>      <span class="comment">// var fi = new FileInfo(source);</span></div>
+<div class="line"><span class="lineno">   49</span>      <span class="comment">// LuaCsLogger.LogMessage($&quot;{fi.Directory.Name}/{fi.Name}:{lineNumber}&quot;, color * 0.6f, color * 0.6f);</span></div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>      LuaCsLogger.LogMessage($<span class="stringliteral">&quot;{msg ?? &quot;</span><span class="keyword">null</span><span class="stringliteral">&quot;}&quot;</span>, color * 0.8f, color);</div>
+<div class="line"><span class="lineno">   52</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -765,16 +1167,150 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00151">151</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  152</span>    {</div>
-<div class="line"><span class="lineno">  153</span>      <span class="comment">//Idk doesn&#39;t work</span></div>
-<div class="line"><span class="lineno">  154</span>      <span class="comment">//CUIMultiModResolver.FindOtherInputs();</span></div>
-<div class="line"><span class="lineno">  155</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00169">169</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  170</span>    {</div>
+<div class="line"><span class="lineno">  171</span>      <span class="comment">//Idk doesn&#39;t work</span></div>
+<div class="line"><span class="lineno">  172</span>      <span class="comment">//CUIMultiModResolver.FindOtherInputs();</span></div>
+<div class="line"><span class="lineno">  173</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="ac0e72d2f15376908957d01deb5b6c5aa" name="ac0e72d2f15376908957d01deb5b6c5aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0e72d2f15376908957d01deb5b6c5aa">&#9670;&#160;</a></span>Warning()</h2>
+<a id="a895b1579e4db4be7ac44d0134f7e78de" name="a895b1579e4db4be7ac44d0134f7e78de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a895b1579e4db4be7ac44d0134f7e78de">&#9670;&#160;</a></span>Palette_Command()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void CrabUI.CUI.Palette_Command </td>
+          <td>(</td>
+          <td class="paramtype">string[]</td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_commands_8cs_source.html#l00118">118</a> of file <a class="el" href="_c_u_i_commands_8cs_source.html">CUICommands.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  119</span>    {</div>
+<div class="line"><span class="lineno">  120</span>      CUIPalette palette = CUIPalette.LoadedPalettes.GetValueOrDefault(args.ElementAtOrDefault(0));</div>
+<div class="line"><span class="lineno">  121</span>      <span class="keywordflow">if</span> (palette != <span class="keyword">null</span>) CUIPalette.Primary = palette;</div>
+<div class="line"><span class="lineno">  122</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8f3afcd74bdaeccfc955a9d87e480228" name="a8f3afcd74bdaeccfc955a9d87e480228"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f3afcd74bdaeccfc955a9d87e480228">&#9670;&#160;</a></span>PaletteDemo_Command()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void CrabUI.CUI.PaletteDemo_Command </td>
+          <td>(</td>
+          <td class="paramtype">string[]</td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_commands_8cs_source.html#l00113">113</a> of file <a class="el" href="_c_u_i_commands_8cs_source.html">CUICommands.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  114</span>    {</div>
+<div class="line"><span class="lineno">  115</span>      <span class="keywordflow">try</span> { CUIPalette.PaletteDemo(); } <span class="keywordflow">catch</span> (Exception e) { CUI.Warning(e); }</div>
+<div class="line"><span class="lineno">  116</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="abc9e6aaa9026f03299fb31eed42c3c17" name="abc9e6aaa9026f03299fb31eed42c3c17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc9e6aaa9026f03299fb31eed42c3c17">&#9670;&#160;</a></span>PrintKeysCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void CrabUI.CUI.PrintKeysCommand </td>
+          <td>(</td>
+          <td class="paramtype">string[]</td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_commands_8cs_source.html#l00098">98</a> of file <a class="el" href="_c_u_i_commands_8cs_source.html">CUICommands.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   99</span>    {</div>
+<div class="line"><span class="lineno">  100</span>      CUIDebug.PrintKeys = !CUIDebug.PrintKeys;</div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span>      <span class="keywordflow">if</span> (CUIDebug.PrintKeys)</div>
+<div class="line"><span class="lineno">  103</span>      {</div>
+<div class="line"><span class="lineno">  104</span>        var values = typeof(Keys).GetEnumValues();</div>
+<div class="line"><span class="lineno">  105</span>        <span class="keywordflow">foreach</span> (var v <span class="keywordflow">in</span> values)</div>
+<div class="line"><span class="lineno">  106</span>        {</div>
+<div class="line"><span class="lineno">  107</span>          <a class="code hl_function" href="#aa0ce4751fde5325adf2675c44a320b73">Log</a>($<span class="stringliteral">&quot;{(int)v} {v}&quot;</span>);</div>
+<div class="line"><span class="lineno">  108</span>        }</div>
+<div class="line"><span class="lineno">  109</span>        <a class="code hl_function" href="#aa0ce4751fde5325adf2675c44a320b73">Log</a>(<span class="stringliteral">&quot;---------------------------&quot;</span>);</div>
+<div class="line"><span class="lineno">  110</span>      }</div>
+<div class="line"><span class="lineno">  111</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a66e78380869453c09f9b9a65034ee9ed" name="a66e78380869453c09f9b9a65034ee9ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66e78380869453c09f9b9a65034ee9ed">&#9670;&#160;</a></span>PrintSprites_Command()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void CrabUI.CUI.PrintSprites_Command </td>
+          <td>(</td>
+          <td class="paramtype">string[]</td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_commands_8cs_source.html#l00090">90</a> of file <a class="el" href="_c_u_i_commands_8cs_source.html">CUICommands.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   91</span>    {</div>
+<div class="line"><span class="lineno">   92</span>      <span class="keywordflow">foreach</span> (GUIComponentStyle style <span class="keywordflow">in</span> GUIStyle.ComponentStyles)</div>
+<div class="line"><span class="lineno">   93</span>      {</div>
+<div class="line"><span class="lineno">   94</span>        CUI.Log($<span class="stringliteral">&quot;{style.Name} {style.Sprites.Count}&quot;</span>);</div>
+<div class="line"><span class="lineno">   95</span>      }</div>
+<div class="line"><span class="lineno">   96</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8d16ddf254a2fadfee3bd67aae5c49af" name="a8d16ddf254a2fadfee3bd67aae5c49af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d16ddf254a2fadfee3bd67aae5c49af">&#9670;&#160;</a></span>Warning()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -790,7 +1326,17 @@ Events</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Color?</td>          <td class="paramname"><span class="paramname"><em>color</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>&#160;)</td>
+          <td class="paramtype">Color?</td>          <td class="paramname"><span class="paramname"><em>color</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">[CallerFilePath] string</td>          <td class="paramname"><span class="paramname"><em>source</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">[CallerLineNumber] int</td>          <td class="paramname"><span class="paramname"><em>lineNumber</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -800,11 +1346,13 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_01_logging_8cs_source.html#l00050">50</a> of file <a class="el" href="_c_u_i_01_logging_8cs_source.html">CUI Logging.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   51</span>    {</div>
-<div class="line"><span class="lineno">   52</span>      color ??= Color.Yellow;</div>
-<div class="line"><span class="lineno">   53</span>      LuaCsLogger.LogMessage($<span class="stringliteral">&quot;{msg ?? &quot;</span><span class="keyword">null</span><span class="stringliteral">&quot;}&quot;</span>, color * 0.8f, color);</div>
-<div class="line"><span class="lineno">   54</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_01_logging_8cs_source.html#l00054">54</a> of file <a class="el" href="_c_u_i_01_logging_8cs_source.html">CUI Logging.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   55</span>    {</div>
+<div class="line"><span class="lineno">   56</span>      color ??= Color.Yellow;</div>
+<div class="line"><span class="lineno">   57</span>      <span class="comment">// var fi = new FileInfo(source);</span></div>
+<div class="line"><span class="lineno">   58</span>      <span class="comment">// LuaCsLogger.LogMessage($&quot;{fi.Directory.Name}/{fi.Name}:{lineNumber}&quot;, color * 0.6f, color * 0.6f);</span></div>
+<div class="line"><span class="lineno">   59</span>      LuaCsLogger.LogMessage($<span class="stringliteral">&quot;{msg ?? &quot;</span><span class="keyword">null</span><span class="stringliteral">&quot;}&quot;</span>, color * 0.8f, color);</div>
+<div class="line"><span class="lineno">   60</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -875,7 +1423,7 @@ Events</h2></td></tr>
 
 <p>This affects logging. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00082">82</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00083">83</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
 
 </div>
 </div>
@@ -899,7 +1447,7 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00083">83</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00084">84</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
 
 </div>
 </div>
@@ -925,7 +1473,7 @@ Events</h2></td></tr>
 
 <p>A singleton. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00048">48</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00049">49</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
 
 </div>
 </div>
@@ -953,6 +1501,55 @@ Events</h2></td></tr>
 
 </div>
 </div>
+<a id="ac4b3df1b05941d0afe5041930023f144" name="ac4b3df1b05941d0afe5041930023f144"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4b3df1b05941d0afe5041930023f144">&#9670;&#160;</a></span>NoSmoothing</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SamplerState CrabUI.CUI.NoSmoothing</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= <span class="keyword">new</span> SamplerState()</div>
+<div class="line">    {</div>
+<div class="line">      Filter = TextureFilter.Point,</div>
+<div class="line">      AddressU = TextureAddressMode.Clamp,</div>
+<div class="line">      AddressV = TextureAddressMode.Clamp,</div>
+<div class="line">      AddressW = TextureAddressMode.Clamp,</div>
+<div class="line">      BorderColor = Color.White,</div>
+<div class="line">      MaxAnisotropy = 4,</div>
+<div class="line">      MaxMipLevel = 0,</div>
+<div class="line">      MipMapLevelOfDetailBias = -0.8f,</div>
+<div class="line">      ComparisonFunction = CompareFunction.Never,</div>
+<div class="line">      FilterMode = TextureFilterMode.Default,</div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="_c_u_i_drawing_8cs_source.html#l00020">20</a> of file <a class="el" href="_c_u_i_drawing_8cs_source.html">CUIDrawing.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   21</span>    {</div>
+<div class="line"><span class="lineno">   22</span>      Filter = TextureFilter.Point,</div>
+<div class="line"><span class="lineno">   23</span>      AddressU = TextureAddressMode.Clamp,</div>
+<div class="line"><span class="lineno">   24</span>      AddressV = TextureAddressMode.Clamp,</div>
+<div class="line"><span class="lineno">   25</span>      AddressW = TextureAddressMode.Clamp,</div>
+<div class="line"><span class="lineno">   26</span>      BorderColor = Color.White,</div>
+<div class="line"><span class="lineno">   27</span>      MaxAnisotropy = 4,</div>
+<div class="line"><span class="lineno">   28</span>      MaxMipLevel = 0,</div>
+<div class="line"><span class="lineno">   29</span>      MipMapLevelOfDetailBias = -0.8f,</div>
+<div class="line"><span class="lineno">   30</span>      ComparisonFunction = CompareFunction.Never,</div>
+<div class="line"><span class="lineno">   31</span>      FilterMode = TextureFilterMode.Default,</div>
+<div class="line"><span class="lineno">   32</span>    };</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a1f3ea30c4c9251eab87a73b51369c0ea" name="a1f3ea30c4c9251eab87a73b51369c0ea"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1f3ea30c4c9251eab87a73b51369c0ea">&#9670;&#160;</a></span>Pi2</h2>
 
@@ -963,7 +1560,7 @@ Events</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const float CrabUI.CUI.Pi2 = (float)Math.PI / 2</td>
+          <td class="memname">const float CrabUI.CUI.Pi2 = (float)(Math.PI / 2.0)</td>
         </tr>
       </table>
   </td>
@@ -997,7 +1594,7 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00084">84</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00085">85</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
 
 </div>
 </div>
@@ -1023,7 +1620,7 @@ Events</h2></td></tr>
 
 <p>Safe texture manager. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00066">66</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00067">67</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
 
 </div>
 </div>
@@ -1049,7 +1646,7 @@ Events</h2></td></tr>
 
 <p>In theory multiple mods could use same <a class="el" href="class_crab_u_i_1_1_c_u_i.html" title="In fact a static class managing static things.">CUI</a> instance, i clean it up when UserCount drops to 0. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00101">101</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00117">117</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
 
 </div>
 </div>
@@ -1075,6 +1672,30 @@ Events</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00034">34</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+
+</div>
+</div>
+<a id="a0002c6d4067c185a99d7a7a0cf69e21e" name="a0002c6d4067c185a99d7a7a0cf69e21e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0002c6d4067c185a99d7a7a0cf69e21e">&#9670;&#160;</a></span>CUIPalettesPath</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string CrabUI.CUI.CUIPalettesPath</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00036">36</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
 
 </div>
 </div>
@@ -1146,12 +1767,12 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00073">73</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   74</span>    {</div>
-<div class="line"><span class="lineno">   75</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#ac0b69a613489f61c35b5529432f51929">FocusResolver</a>.FocusedCUIComponent;</div>
-<div class="line"><span class="lineno">   76</span>      <span class="keyword">set</span> =&gt; FocusResolver.FocusedCUIComponent = value;</div>
-<div class="line"><span class="lineno">   77</span>    }</div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_ac0b69a613489f61c35b5529432f51929"><div class="ttname"><a href="#ac0b69a613489f61c35b5529432f51929">CrabUI.CUI.FocusResolver</a></div><div class="ttdeci">static CUIFocusResolver FocusResolver</div><div class="ttdoc">Adapter to vanilla focus system, don't use.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00071">CUI.cs:71</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00074">74</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   75</span>    {</div>
+<div class="line"><span class="lineno">   76</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#ac0b69a613489f61c35b5529432f51929">FocusResolver</a>.FocusedCUIComponent;</div>
+<div class="line"><span class="lineno">   77</span>      <span class="keyword">set</span> =&gt; FocusResolver.FocusedCUIComponent = value;</div>
+<div class="line"><span class="lineno">   78</span>    }</div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_ac0b69a613489f61c35b5529432f51929"><div class="ttname"><a href="#ac0b69a613489f61c35b5529432f51929">CrabUI.CUI.FocusResolver</a></div><div class="ttdeci">static CUIFocusResolver FocusResolver</div><div class="ttdoc">Adapter to vanilla focus system, don't use.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00072">CUI.cs:72</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1177,7 +1798,7 @@ Events</h2></td></tr>
 
 <p>Adapter to vanilla focus system, don't use. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00071">71</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00072">72</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
 
 </div>
 </div>
@@ -1251,7 +1872,62 @@ Events</h2></td></tr>
 
 <p>Snapshot of mouse and keyboard state. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00062">62</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00063">63</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+
+</div>
+</div>
+<a id="a7a680f0121642831be583d8648425a15" name="a7a680f0121642831be583d8648425a15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a680f0121642831be583d8648425a15">&#9670;&#160;</a></span>InputBlockingMenuOpen</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CrabUI.CUI.InputBlockingMenuOpen</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00103">103</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  104</span>    {</div>
+<div class="line"><span class="lineno">  105</span>      <span class="keyword">get</span></div>
+<div class="line"><span class="lineno">  106</span>      {</div>
+<div class="line"><span class="lineno">  107</span>        <span class="keywordflow">if</span> (IsBlockingPredicates == <span class="keyword">null</span>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  108</span>        <span class="keywordflow">return</span> IsBlockingPredicates.Any(p =&gt; p());</div>
+<div class="line"><span class="lineno">  109</span>      }</div>
+<div class="line"><span class="lineno">  110</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a900fcff390a19832aa254d5bb5efa998" name="a900fcff390a19832aa254d5bb5efa998"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a900fcff390a19832aa254d5bb5efa998">&#9670;&#160;</a></span>IsBlockingPredicates</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;Func&lt;bool&gt; &gt; CrabUI.CUI.IsBlockingPredicates</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00111">111</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
 
 </div>
 </div>
@@ -1301,7 +1977,7 @@ Events</h2></td></tr>
 
 <p>Orchestrates Drawing and updates, there could be only one <a class="el" href="#a956496be0b79f5c540c246c5f600dc05" title="Orchestrates Drawing and updates, there could be only one CUI.Main is located under vanilla GUI.">CUI.Main</a> is located under vanilla GUI. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00053">53</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00054">54</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
 
 </div>
 </div>
@@ -1327,11 +2003,11 @@ Events</h2></td></tr>
 
 <p>If set <a class="el" href="class_crab_u_i_1_1_c_u_i.html" title="In fact a static class managing static things.">CUI</a> will also check this folder when loading textures. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00039">39</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   40</span>    {</div>
-<div class="line"><span class="lineno">   41</span>      <span class="keyword">get</span> =&gt; <a class="code hl_variable" href="#a35714b44c421730281bb8f7d1814f226">TextureManager</a>.<a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_texture_manager.html#a5953b2ea87c5b61f01b025d5ee0ff97b">PGNAssets</a>;</div>
-<div class="line"><span class="lineno">   42</span>      <span class="keyword">set</span> =&gt; TextureManager.PGNAssets = value;</div>
-<div class="line"><span class="lineno">   43</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00040">40</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   41</span>    {</div>
+<div class="line"><span class="lineno">   42</span>      <span class="keyword">get</span> =&gt; <a class="code hl_variable" href="#a35714b44c421730281bb8f7d1814f226">TextureManager</a>.<a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_texture_manager.html#a5953b2ea87c5b61f01b025d5ee0ff97b">PGNAssets</a>;</div>
+<div class="line"><span class="lineno">   43</span>      <span class="keyword">set</span> =&gt; TextureManager.PGNAssets = value;</div>
+<div class="line"><span class="lineno">   44</span>    }</div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_texture_manager_html_a5953b2ea87c5b61f01b025d5ee0ff97b"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_texture_manager.html#a5953b2ea87c5b61f01b025d5ee0ff97b">CrabUI.CUITextureManager.PGNAssets</a></div><div class="ttdeci">string PGNAssets</div><div class="ttdoc">Path to mod assets.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_texture_manager_8cs_source.html#l00038">CUITextureManager.cs:38</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -1358,7 +2034,7 @@ Events</h2></td></tr>
 
 <p>Orchestrates Drawing and updates, there could be only one <a class="el" href="#a31ba5b36859d8affa5aad82c49297667" title="Orchestrates Drawing and updates, there could be only one CUI.TopMain is located above vanilla GUI.">CUI.TopMain</a> is located above vanilla GUI. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00058">58</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00059">59</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
 
 </div>
 </div>
@@ -1385,7 +2061,7 @@ Events</h2></td></tr>
 
 <p>Called on last Dispose. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00093">93</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00094">94</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
 
 </div>
 </div>
@@ -1411,7 +2087,31 @@ Events</h2></td></tr>
 
 <p>Called on first Initialize. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00089">89</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00090">90</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+
+</div>
+</div>
+<a id="ac4590b1d429bb0ed16aa0c07228e6bf4" name="ac4590b1d429bb0ed16aa0c07228e6bf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4590b1d429bb0ed16aa0c07228e6bf4">&#9670;&#160;</a></span>OnPauseMenuToggled</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Action CrabUI.CUI.OnPauseMenuToggled</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00100">100</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
 
 </div>
 </div>
@@ -1435,7 +2135,7 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00095">95</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00096">96</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
 
 </div>
 </div>
@@ -1459,7 +2159,7 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00094">94</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00095">95</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
 
 </div>
 </div>

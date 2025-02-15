@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CrabUI: 0.0.5.1</title>
+<title>CrabUI: 0.1.0.0</title>
 <link rel="icon" href="BaroModder (small).png" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -86,10 +86,29 @@ $(function(){ initResizable(false); });
 </div><!-- top -->
 <div id="doc-content">
 <div><div class="header">
-  <div class="headertitle"><div class="title">0.0.5.1</div></div>
+  <div class="headertitle"><div class="title">0.1.0.0</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="autotoc_md0"></a></p>
+<p>You can now use relative paths for sprite textures <br  />
+ You can set CUI.PGNAssets to the folder with your assets, CUI will also search for textures there</p>
+<p>Reworked MasterColorOpaque, it now just uses base color alpha</p>
+<p>Synced vertical and horizontal lists, added ScrollSpeed</p>
+<p>OnUpdate event now invoked before layout calcs, Also added OnLayoutUpdated event, it's invoked before recalc of children layouts</p>
+<p>"Fixed" imprecise rects that e.g. caused sprite overlap and gaps</p>
+<p>Added CrossRelative prop, it's like Relative but values are relative to the oposite value, e.g. CrossRelative.Width = Host.Real.Height, convinient for making square things</p>
+<p>Reworked slider component</p>
+<p>DragHandle can now DragRelative to the parent</p>
+<h3><a class="anchor" id="autotoc_md1"></a>
+Serialization</h3>
+<p>Added BreakSerialization prop, if true serrialization will stop on this component</p>
+<p>Added LoadSelfFromFile, SaveToTheSamePath methods</p>
+<p>Added Hydrate method, it will run right after deserizlization, allowing you to access children with Get&lt;&gt; and e.g. save them to local vars</p>
+<p>Added SaveAfterLoad prop, it's mostly for serialization debugging</p>
+<p>Added more Custom ToString and parsed methods to CUIExtensions, Added native enum serialization, Vector2 and Rectangle is now serialized into [ x, y ], be carefull</p>
+<p>Sprite is now fully serializable</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+0.0.5.1</h1>
 <p>Added "[CUISerializable] public string Command { get; set; }"" to CUIButton so you could define command that is called on click in xml</p>
 <p>Splitted MasterColor into MasterColor and MasterColorOpaque</p>
 <p>CUITextBlock RealTextSize is now rounded because 2.199999 is prone to floating-point errors</p>
@@ -105,15 +124,15 @@ $(function(){ initResizable(false); });
 <p>Added sprites to resize handles, and gradient sprite that's not used yet</p>
 <p>Added <code>public SpriteEffects Effects;</code> to CUISprite, it controls texture flipping</p>
 <p>More params in CUITextureManager.GetSprite</p>
-<h1><a class="anchor" id="autotoc_md1"></a>
+<h1><a class="anchor" id="autotoc_md3"></a>
 0.0.5.0</h1>
 <p>Added Styles</p>
 <p>Every component has a Style and every Type has a DefaultStyle</p>
 <p>Styles are observable dicts with pairs { "prop name", "prop value" } and can be used to assign any parsable string to any prop or reference some value from CUIPalette</p>
-<h1><a class="anchor" id="autotoc_md2"></a>
+<h1><a class="anchor" id="autotoc_md4"></a>
 0.0.4.0</h1>
 <p>Added CUICanvas.Render(Action&lt; SpriteBatch &gt; renderFunc) method that allows you to render anything you want onto the canvas texture</p>
-<h1><a class="anchor" id="autotoc_md3"></a>
+<h1><a class="anchor" id="autotoc_md5"></a>
 0.0.3.0</h1>
 <p>Added Changelog.md :BaroDev:</p>
 <p>Added CUI.TopMain, it's the second CUIMainComponent which exists above vanilla GUI</p>

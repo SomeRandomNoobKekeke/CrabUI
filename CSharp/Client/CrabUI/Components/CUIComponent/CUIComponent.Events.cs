@@ -26,7 +26,7 @@ namespace CrabUI
     [CUISerializable] public bool ConsumeMouseScroll { get; set; }
 
 
-    // Without wrappers they will throw FieldAccessException
+    public event Action OnTreeChanged;
     public event Action<double> OnUpdate; internal void InvokeOnUpdate(double totalTime) => OnUpdate?.Invoke(totalTime);
     public Action<double> AddOnUpdate { set { OnUpdate += value; } }
     public event Action<CUIInput> OnMouseLeave; internal void InvokeOnMouseLeave(CUIInput e) => OnMouseLeave?.Invoke(e);

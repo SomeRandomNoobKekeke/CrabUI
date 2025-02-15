@@ -33,6 +33,7 @@ namespace CrabUI
     public static string CUIPath => GetCallerFolderPath();
     public static string CUIAssetsPath => Path.Combine(CUIPath, @"CUIAssets");
     public static string CUITexturePath => "CUI.png";
+    public static string CUIPalettesPath => Path.Combine(CUIAssetsPath, @"Palettes");
     /// <summary>
     /// If set CUI will also check this folder when loading textures
     /// </summary>
@@ -94,6 +95,21 @@ namespace CrabUI
     public static event Action<TextInputEventArgs> OnWindowTextInput;
     public static event Action<TextInputEventArgs> OnWindowKeyDown;
     //public static event Action<TextInputEventArgs> OnWindowKeyUp;
+
+    //TODO this doesn't trigger when you press menu button, i need to go inside thet method
+    public static event Action OnPauseMenuToggled;
+    public static void InvokeOnPauseMenuToggled() => OnPauseMenuToggled?.Invoke();
+
+    public static bool InputBlockingMenuOpen
+    {
+      get
+      {
+        if (IsBlockingPredicates == null) return false;
+        return IsBlockingPredicates.Any(p => p());
+      }
+    }
+    public static List<Func<bool>> IsBlockingPredicates => Instance?.isBlockingPredicates;
+    private List<Func<bool>> isBlockingPredicates = new List<Func<bool>>();
     /// <summary>
     /// In theory multiple mods could use same CUI instance, 
     /// i clean it up when UserCount drops to 0
@@ -138,6 +154,8 @@ namespace CrabUI
         AddCommands();
         Instance.LuaRegistrar.Register();
 
+        //CUIPalette.PaletteDemo();
+
         //HACK this works, but i still think that i shouldn't make aby assumptions about
         // file layout outside of CSharp folder, and i shouldn't store pngs in CSharp
         // perhaps i should generate default textures at runtime
@@ -171,6 +189,8 @@ namespace CrabUI
         CUIDebugEventComponent.CapturedIDs.Clear();
         OnDispose?.Invoke();
 
+        Instance.isBlockingPredicates.Clear();
+
         Instance.LuaRegistrar.Deregister();
 
         Instance = null;
@@ -193,6 +213,7 @@ namespace CrabUI
       CUIExtensions.InitStatic();
       CUIReflection.InitStatic();
       CUIMultiModResolver.InitStatic();
+      CUIPalette.InitStatic();
       CUIMap.CUIMapLink.InitStatic();
       CUIComponent.InitStatic();
       CUITypeMetaData.InitStatic();

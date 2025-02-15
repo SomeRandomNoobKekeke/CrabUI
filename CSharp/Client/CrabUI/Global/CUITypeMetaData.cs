@@ -16,6 +16,7 @@ namespace CrabUI
   public class CUISerializableAttribute : System.Attribute { }
   public class DontSerializeAttribute : System.Attribute { }
   public class CalculatedAttribute : System.Attribute { }
+  public class NoDefaultAttribute : System.Attribute { }
 
   public enum CUIAttribute
   {
@@ -48,7 +49,7 @@ namespace CrabUI
 
     public Type CUIType;
 
-    public object Default;
+    public CUIComponent Default;
 
     private CUIStyle defaultStyle; public CUIStyle DefaultStyle
     {
@@ -116,7 +117,10 @@ namespace CrabUI
       try
       {
         DefaultStyle = new CUIStyle();
-        Default = Activator.CreateInstance(type);
+        if (!Attribute.IsDefined(type, typeof(NoDefaultAttribute)))
+        {
+          Default = (CUIComponent)Activator.CreateInstance(type);
+        }
       }
       catch (Exception e)
       {

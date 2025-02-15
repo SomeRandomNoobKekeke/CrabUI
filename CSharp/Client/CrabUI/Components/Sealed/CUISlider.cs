@@ -18,9 +18,7 @@ namespace CrabUI
     /// Happens when handle is dragged, value is [0..1]
     /// </summary>
     public event Action<float> OnSlide;
-    [CUISerializable] public string Command { get; set; }
-
-
+    public Action<float> AddOnSlide { set { OnSlide += value; } }
     public float InOutMult => (Real.Width - Real.Height) / Real.Width;
 
     private float lambda;
@@ -30,14 +28,9 @@ namespace CrabUI
       get => lambda;
       set
       {
-        lambda = AdaptLambda(value);
+        lambda = Math.Clamp(value, 0, 1);
         pendingLambda = lambda;
       }
-    }
-
-    private float AdaptLambda(float l)
-    {
-      return Math.Clamp(l, 0, 1);
     }
 
 
@@ -73,7 +66,7 @@ namespace CrabUI
       ChildrenBoundaries = CUIBoundaries.Box;
       Style = new CUIStyle(){
         {"BackgroundColor", "Transparent"},
-        {"BorderColor", "Transparent"},
+        {"Border", "Transparent"},
       };
 
       this["LeftEnding"] = LeftEnding = new CUIComponent()
@@ -82,7 +75,7 @@ namespace CrabUI
         Relative = new CUINullRect(h: 1),
         CrossRelative = new CUINullRect(w: 1),
         BackgroundSprite = CUI.TextureManager.GetCUISprite(2, 2, CUISpriteDrawMode.Resize, SpriteEffects.FlipHorizontally),
-        Style = new CUIStyle() { { "BorderColor", "Transparent" } },
+        Style = new CUIStyle() { { "Border", "Transparent" } },
       };
 
       this["RightEnding"] = RightEnding = new CUIComponent()
@@ -91,22 +84,22 @@ namespace CrabUI
         Relative = new CUINullRect(h: 1),
         CrossRelative = new CUINullRect(w: 1),
         BackgroundSprite = CUI.TextureManager.GetCUISprite(2, 2),
-        Style = new CUIStyle() { { "BorderColor", "Transparent" } },
+        Style = new CUIStyle() { { "Border", "Transparent" } },
       };
 
 
       this["handle"] = Handle = new CUIComponent()
       {
-        Style = new CUIStyle() { { "BorderColor", "Transparent" } },
+        Style = new CUIStyle() { { "Border", "Transparent" } },
         Draggable = true,
         BackgroundSprite = CUI.TextureManager.GetCUISprite(0, 2),
         Relative = new CUINullRect(h: 1),
         CrossRelative = new CUINullRect(w: 1),
         AddOnDrag = (x, y) =>
         {
-          lambda = AdaptLambda(x);
+          lambda = Math.Clamp(x / InOutMult, 0, 1);
           OnSlide?.Invoke(lambda);
-          if (Command != null) Dispatch(new CUICommand(Command, lambda));
+          if (Command != null) DispatchUp(new CUICommand(Command, lambda));
         },
       };
 

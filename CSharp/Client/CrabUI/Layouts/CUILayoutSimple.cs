@@ -168,10 +168,7 @@ namespace CrabUI
       base.ResizeToContent();
     }
 
-
-    public CUILayoutSimple(CUIComponent host = null) : base(host)
-    {
-
-    }
+    public CUILayoutSimple() : base() { }
+    public CUILayoutSimple(CUIComponent host) : base(host) { }
   }
 }

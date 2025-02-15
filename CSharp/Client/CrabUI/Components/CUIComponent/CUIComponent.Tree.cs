@@ -61,7 +61,15 @@ namespace CrabUI
     private bool treeChanged = true; internal bool TreeChanged
     {
       get => treeChanged;
-      set { treeChanged = value; if (value && Parent != null) Parent.TreeChanged = true; }
+      set
+      {
+        treeChanged = value;
+        if (value)
+        {
+          OnTreeChanged?.Invoke();
+          if (Parent != null) Parent.TreeChanged = true;
+        }
+      }
     }
 
     /// <summary>
@@ -110,6 +118,7 @@ namespace CrabUI
         Children.Add(child);
         child.TreeChanged = true;
         if (name != null) Remember(child, name);
+        else if (child.AKA != null) Remember(child, child.AKA);
         PassPropsToChild(child);
         child.OnPropChanged();
         OnChildAdded?.Invoke(child);
@@ -213,6 +222,7 @@ namespace CrabUI
     {
       if (!ShouldPassPropsToChildren) return;
 
+      //child.Palette = Palette;
       if (ZIndex.HasValue && !child.IgnoreParentZIndex) child.ZIndex = ZIndex.Value + 1;
       if (IgnoreEvents && !child.IgnoreParentEventIgnorance) child.IgnoreEvents = true;
       if (!Visible && !child.IgnoreParentVisibility) child.Visible = false;

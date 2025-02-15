@@ -20,6 +20,7 @@ namespace CrabUI
     /// <summary>
     /// Options are just strings
     /// </summary>
+    [CUISerializable]
     public IEnumerable<string> Options
     {
       get => options;
@@ -44,6 +45,7 @@ namespace CrabUI
         }
       }
     }
+    [CUISerializable]
     public string Selected
     {
       get => Text;
@@ -78,10 +80,11 @@ namespace CrabUI
     /// </summary>
     /// <param name="size"></param>
     /// <returns></returns>
-    protected new Vector2 DoWrapFor(Vector2 size)
+    protected override Vector2 DoWrapFor(Vector2 size)
     {
-      if ((!WrappedForThisSize.HasValue || size == WrappedForThisSize.Value) && !NeedReWrapping) return WrappedSize;
+      if ((!WrappedForThisSize.HasValue || size == WrappedForThisSize.Value) && !TextPropChanged) return WrappedSize;
 
+      TextPropChanged = false;
       WrappedForThisSize = size;
 
       if (Vertical) size = new Vector2(0, size.Y);
@@ -113,6 +116,9 @@ namespace CrabUI
 
       RealTextSize = Font.MeasureString(WrappedText) * TextScale;
 
+      if (WrappedText == "") RealTextSize = new Vector2(0, 0);
+      RealTextSize = new Vector2((float)Math.Round(RealTextSize.X), (float)Math.Round(RealTextSize.Y));
+
       Vector2 minSize = MaxTextSize + Padding * 2;
 
       if (!Wrap || Vertical)
@@ -121,7 +127,6 @@ namespace CrabUI
       }
 
       WrappedSize = new Vector2(Math.Max(size.X, minSize.X), Math.Max(size.Y, minSize.Y));
-      NeedReWrapping = false;
 
       return WrappedSize;
     }

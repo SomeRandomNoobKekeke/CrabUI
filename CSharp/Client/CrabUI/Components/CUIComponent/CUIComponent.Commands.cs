@@ -5,6 +5,8 @@ using System.Reflection;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.IO;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 
 using Barotrauma;
 using Microsoft.Xna.Framework;
@@ -20,12 +22,88 @@ namespace CrabUI
   public class CommandAttribute : System.Attribute { }
 
   /// <summary>
-  /// Just an experiment, inspired by WPF commands
+  /// Can be dispatched up the component tree to notify parent about something 
+  /// add pass some event data without creating a hard link
   /// </summary>
   /// <param name="Name"></param>
   public record CUICommand(string Name, object data = null);
+
+  /// <summary>
+  /// Can be dispatched down the component tree to pass some data to the children
+  /// without creating a hard link
+  /// </summary>
+  public record CUIData(string Name, object data = null);
   public partial class CUIComponent
   {
+    private void SetupCommands()
+    {
+      AddCommands();
+      OnTreeChanged += UpdateDataTargets;
+    }
+
+
+    /// <summary>
+    /// This command will be dispatched up when some component specific event happens
+    /// </summary>
+    [CUISerializable] public string Command { get; set; }
+    /// <summary>
+    /// this will be executed on any command
+    /// </summary>
+    public Action<CUICommand> OnAnyCommand { get; set; }
+    /// <summary>
+    /// Will be executed when receiving any data
+    /// </summary>
+    public Action<CUIData> OnAnyData { get; set; }
+    /// <summary>
+    /// Happens when appropriate data is received
+    /// </summary>
+    public Action<Object> OnConsume { get; set; }
+    /// <summary>
+    /// Will consume data with this name
+    /// </summary>
+    [CUISerializable] public string Consumes { get; set; }
+
+    /// <summary>
+    /// Optimization to data flow  
+    /// If not empty component will search for consumers of the data
+    /// and pass it directly to them instead of broadcasting it
+    /// </summary>
+    //[CUISerializable]
+    public ObservableCollection<string> Emits
+    {
+      get => emits;
+      set
+      {
+        emits = value;
+        emits.CollectionChanged += (o, e) => UpdateDataTargets();
+        UpdateDataTargets();
+      }
+    }
+    private ObservableCollection<string> emits = new();
+
+    private void UpdateDataTargets()
+    {
+      if (Emits.Count > 0)
+      {
+        DataTargets.Clear();
+
+        RunRecursiveOn(this, (c) =>
+        {
+          if (Emits.Contains(c.Consumes))
+          {
+            if (!DataTargets.ContainsKey(c.Consumes)) DataTargets[c.Consumes] = new();
+            DataTargets[c.Consumes].Add(c);
+          }
+        });
+      }
+    }
+
+    /// <summary>
+    /// Consumers of emmited data, updates on tree change
+    /// </summary>
+    public Dictionary<string, List<CUIComponent>> DataTargets = new();
+
+
     /// <summary>
     /// All commands
     /// </summary>
@@ -40,9 +118,10 @@ namespace CrabUI
     public void RemoveCommand(string name) => Commands.Remove(name);
 
     /// <summary>
+    /// Executed autpmatically on component creation
     /// Methods ending in "Command" will be added as commands
     /// </summary>
-    public virtual void AddCommands()
+    private void AddCommands()
     {
       foreach (MethodInfo mi in this.GetType().GetMethods())
       {
@@ -69,16 +148,46 @@ namespace CrabUI
     /// Dispathes command up the component tree until someone consumes it
     /// </summary>
     /// <param name="command"></param>
-    public void Dispatch(CUICommand command)
+    public void DispatchUp(CUICommand command)
     {
-      if (Commands.ContainsKey(command.Name)) Execute(command);
-      else Parent?.Dispatch(command);
+      if (OnAnyCommand != null) OnAnyCommand?.Invoke(command);
+      else if (Commands.ContainsKey(command.Name)) Execute(command);
+      else Parent?.DispatchUp(command);
+    }
+
+    /// <summary>
+    /// Dispathes command down the component tree until someone consumes it
+    /// </summary>
+    public void DispatchDown(CUIData data)
+    {
+      if (Emits.Contains(data.Name))
+      {
+        if (DataTargets.ContainsKey(data.Name))
+        {
+          foreach (CUIComponent target in DataTargets[data.Name])
+          {
+            target.OnConsume?.Invoke(data.data);
+          }
+        }
+      }
+      else
+      {
+        if (Consumes == data.Name) OnConsume?.Invoke(data.data);
+        else if (OnAnyData != null) OnAnyData.Invoke(data);
+        else
+        {
+          foreach (CUIComponent child in Children) child.DispatchDown(data);
+        }
+      }
     }
 
     /// <summary>
     /// Will execute action corresponding to this command
     /// </summary>
     /// <param name="commandName"></param>
-    public void Execute(CUICommand command) => Commands.GetValueOrDefault(command.Name)?.Invoke(command.data);
+    public void Execute(CUICommand command)
+    {
+      Commands.GetValueOrDefault(command.Name)?.Invoke(command.data);
+    }
   }
 }

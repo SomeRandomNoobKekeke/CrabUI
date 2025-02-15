@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Diagnostics;
 
 using Barotrauma;
 using Microsoft.Xna.Framework;
@@ -36,6 +37,8 @@ namespace CrabUI
 
     internal override void Update()
     {
+      Stopwatch sw = new Stopwatch();
+
       if (Changed)
       {
         Host.InvokeOnLayoutUpdated();
@@ -45,7 +48,7 @@ namespace CrabUI
 
         TotalHeight = 0;
 
-
+        sw.Restart();
         foreach (CUIComponent c in Host.Children)
         {
           float h = 0;
@@ -137,8 +140,8 @@ namespace CrabUI
 
           if (c.FillEmptySpace.Y) Resizible.Add(size);
         }
-
-
+        sw.Stop();
+        //CUI.Log($"{Host} vlist measuring {sw.ElapsedMilliseconds}");
 
         float dif = Math.Max(0, Host.Real.Height - TotalHeight);
 
@@ -242,9 +245,9 @@ namespace CrabUI
       base.ResizeToContent();
     }
 
+    public CUILayoutVerticalList() : base() { }
 
-
-    public CUILayoutVerticalList(CUIDirection d = CUIDirection.Straight, CUIComponent host = null) : base(host)
+    public CUILayoutVerticalList(CUIDirection d, CUIComponent host = null) : base(host)
     {
       Direction = d;
     }

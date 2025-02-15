@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Palette Name="blue4">
+  <Frame Background="0,0,0,200" Border="0,32,127,227" Text="229,235,255,255" />
+  <Header Background="0,19,76,216" Border="0,25,102,222" Text="229,235,255,255" />
+  <Nav Background="0,12,51,211" Border="0,19,76,216" Text="204,216,255,255" />
+  <Main Background="0,6,25,205" Border="0,12,51,211" Text="204,216,255,255" />
+  <Component Background="0,0,0,0" Border="0,0,0,0" Text="204,216,255,255" />
+  <Button Background="0,64,255,255" Border="0,32,127,227" Disabled="12,25,63,255" />
+  <CloseButton Background="51,102,255,255" />
+  <DDOption Background="0,19,76,216" Border="0,12,51,211" Hover="0,32,127,227" Text="204,216,255,255" />
+  <Handle Background="51,76,152,232" Grabbed="51,102,255,255" />
+  <Input Background="0,12,51,211" Border="0,19,76,216" Text="204,216,255,255" Focused="0,64,255,255" Invalid="255,0,0,255" Valid="0,255,0,255" Selection="178,197,255,127" Caret="178,197,255,127" />
+</Palette>

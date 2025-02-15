@@ -148,60 +148,80 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        original: typeof(KeyboardDispatcher).GetMethod(<span class="stringliteral">&quot;set_Subscriber&quot;</span>, AccessTools.all),</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        prefix: <span class="keyword">new</span> HarmonyMethod(typeof(CUI).GetMethod(<span class="stringliteral">&quot;KeyboardDispatcher_set_Subscriber_Replace&quot;</span>, AccessTools.all))</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>      );</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> CUIUpdate(GameTime gameTime)</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    {</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      <span class="keywordflow">try</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>      {</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        CUI.Input?.Scan(gameTime.TotalGameTime.TotalSeconds);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#a31ba5b36859d8affa5aad82c49297667">TopMain</a>?.Update(gameTime.TotalGameTime.TotalSeconds);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#a956496be0b79f5c540c246c5f600dc05">Main</a>?.Update(gameTime.TotalGameTime.TotalSeconds);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>      }</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>      <span class="keywordflow">catch</span> (Exception e) { CUI.Warning($<span class="stringliteral">&quot;CUI: {e}&quot;</span>); }</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    }</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> GUI_Draw_Prefix(SpriteBatch spriteBatch)</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    {</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>      <span class="keywordflow">try</span> { <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#a956496be0b79f5c540c246c5f600dc05">Main</a>?.<a class="code hl_function" href="class_crab_u_i_1_1_c_u_i_main_component.html#a03a2ee9937069d5bc66bfbafe425e71e">Draw</a>(spriteBatch); }</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      <span class="keywordflow">catch</span> (Exception e) { CUI.Warning($<span class="stringliteral">&quot;CUI: {e}&quot;</span>); }</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    }</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> GUI_DrawCursor_Prefix(SpriteBatch spriteBatch)</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    {</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>      <span class="keywordflow">try</span> { <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#a31ba5b36859d8affa5aad82c49297667">TopMain</a>?.<a class="code hl_function" href="class_crab_u_i_1_1_c_u_i_main_component.html#a03a2ee9937069d5bc66bfbafe425e71e">Draw</a>(spriteBatch); }</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>      <span class="keywordflow">catch</span> (Exception e) { CUI.Warning($<span class="stringliteral">&quot;CUI: {e}&quot;</span>); }</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    }</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> GUI_UpdateMouseOn_Prefix(ref GUIComponent __result)</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    {</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>      <span class="comment">//if (TopMain.MouseOn != null &amp;&amp; TopMain.MouseOn != TopMain) GUI.MouseOn = CUIComponent.dummyComponent;</span></div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    }</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> GUI_UpdateMouseOn_Postfix(ref GUIComponent __result)</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    {</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>      <span class="keywordflow">if</span> (GUI.MouseOn == <span class="keyword">null</span> &amp;&amp; <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#a956496be0b79f5c540c246c5f600dc05">Main</a>.MouseOn != <span class="keyword">null</span> &amp;&amp; <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#a956496be0b79f5c540c246c5f600dc05">Main</a>.MouseOn != <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#a956496be0b79f5c540c246c5f600dc05">Main</a>) GUI.MouseOn = CUIComponent.dummyComponent;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>      <span class="keywordflow">if</span> (<a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#a31ba5b36859d8affa5aad82c49297667">TopMain</a>.MouseOn != <span class="keyword">null</span> &amp;&amp; <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#a31ba5b36859d8affa5aad82c49297667">TopMain</a>.MouseOn != <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#a31ba5b36859d8affa5aad82c49297667">TopMain</a>) GUI.MouseOn = CUIComponent.dummyComponent;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    }</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> CUIBlockScroll(<span class="keywordtype">float</span> deltaTime, ref <span class="keywordtype">bool</span> allowMove, ref <span class="keywordtype">bool</span> allowZoom, <span class="keywordtype">bool</span> allowInput, <span class="keywordtype">bool</span>? followSub)</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    {</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>      <span class="keywordflow">if</span> (GUI.MouseOn == CUIComponent.dummyComponent) allowZoom = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    }</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> KeyboardDispatcher_set_Subscriber_Replace(IKeyboardSubscriber value, KeyboardDispatcher __instance)</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    {</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#ac0b69a613489f61c35b5529432f51929">FocusResolver</a>.OnVanillaIKeyboardSubscriberSet(value);</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    }</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  }</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>}</div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a31ba5b36859d8affa5aad82c49297667"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#a31ba5b36859d8affa5aad82c49297667">CrabUI.CUI.TopMain</a></div><div class="ttdeci">static CUIMainComponent TopMain</div><div class="ttdoc">Orchestrates Drawing and updates, there could be only one CUI.TopMain is located above vanilla GUI.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00058">CUI.cs:58</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a956496be0b79f5c540c246c5f600dc05"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#a956496be0b79f5c540c246c5f600dc05">CrabUI.CUI.Main</a></div><div class="ttdeci">static CUIMainComponent Main</div><div class="ttdoc">Orchestrates Drawing and updates, there could be only one CUI.Main is located under vanilla GUI.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00053">CUI.cs:53</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_ac0b69a613489f61c35b5529432f51929"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#ac0b69a613489f61c35b5529432f51929">CrabUI.CUI.FocusResolver</a></div><div class="ttdeci">static CUIFocusResolver FocusResolver</div><div class="ttdoc">Adapter to vanilla focus system, don't use.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00071">CUI.cs:71</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_main_component_html_a03a2ee9937069d5bc66bfbafe425e71e"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_main_component.html#a03a2ee9937069d5bc66bfbafe425e71e">CrabUI.CUIMainComponent.Draw</a></div><div class="ttdeci">new void Draw(SpriteBatch spriteBatch)</div><div class="ttdoc">Here component should be drawn.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_main_component_8cs_source.html#l00203">CUIMainComponent.cs:203</a></div></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>      harmony.Patch(</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        original: typeof(GUI).GetMethod(<span class="stringliteral">&quot;TogglePauseMenu&quot;</span>, AccessTools.all, <span class="keyword">new</span> Type[] { }),</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        postfix: <span class="keyword">new</span> HarmonyMethod(typeof(CUI).GetMethod(<span class="stringliteral">&quot;GUI_TogglePauseMenu_Postfix&quot;</span>, AccessTools.all))</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      );</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>      harmony.Patch(</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        original: typeof(GUI).GetMethod(<span class="stringliteral">&quot;get_InputBlockingMenuOpen&quot;</span>, AccessTools.all),</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        postfix: <span class="keyword">new</span> HarmonyMethod(typeof(CUI).GetMethod(<span class="stringliteral">&quot;GUI_InputBlockingMenuOpen_Postfix&quot;</span>, AccessTools.all))</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>      );</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> GUI_InputBlockingMenuOpen_Postfix(ref <span class="keywordtype">bool</span> __result)</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>      __result = __result || CUI.InputBlockingMenuOpen;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    }</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> GUI_TogglePauseMenu_Postfix()</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>      CUI.InvokeOnPauseMenuToggled();</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    }</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> CUIUpdate(GameTime gameTime)</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>      <span class="keywordflow">try</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>      {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        CUI.Input?.Scan(gameTime.TotalGameTime.TotalSeconds);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#a31ba5b36859d8affa5aad82c49297667">TopMain</a>?.Update(gameTime.TotalGameTime.TotalSeconds);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#a956496be0b79f5c540c246c5f600dc05">Main</a>?.Update(gameTime.TotalGameTime.TotalSeconds);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>      }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>      <span class="keywordflow">catch</span> (Exception e) { CUI.Warning($<span class="stringliteral">&quot;CUI: {e}&quot;</span>); }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> GUI_Draw_Prefix(SpriteBatch spriteBatch)</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>      <span class="keywordflow">try</span> { <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#a956496be0b79f5c540c246c5f600dc05">Main</a>?.<a class="code hl_function" href="class_crab_u_i_1_1_c_u_i_main_component.html#a03a2ee9937069d5bc66bfbafe425e71e">Draw</a>(spriteBatch); }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>      <span class="keywordflow">catch</span> (Exception e) { CUI.Warning($<span class="stringliteral">&quot;CUI: {e}&quot;</span>); }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> GUI_DrawCursor_Prefix(SpriteBatch spriteBatch)</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>      <span class="keywordflow">try</span> { <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#a31ba5b36859d8affa5aad82c49297667">TopMain</a>?.<a class="code hl_function" href="class_crab_u_i_1_1_c_u_i_main_component.html#a03a2ee9937069d5bc66bfbafe425e71e">Draw</a>(spriteBatch); }</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>      <span class="keywordflow">catch</span> (Exception e) { CUI.Warning($<span class="stringliteral">&quot;CUI: {e}&quot;</span>); }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> GUI_UpdateMouseOn_Prefix(ref GUIComponent __result)</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    {</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>      <span class="comment">//if (TopMain.MouseOn != null &amp;&amp; TopMain.MouseOn != TopMain) GUI.MouseOn = CUIComponent.dummyComponent;</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    }</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> GUI_UpdateMouseOn_Postfix(ref GUIComponent __result)</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>      <span class="keywordflow">if</span> (GUI.MouseOn == <span class="keyword">null</span> &amp;&amp; <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#a956496be0b79f5c540c246c5f600dc05">Main</a>.MouseOn != <span class="keyword">null</span> &amp;&amp; <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#a956496be0b79f5c540c246c5f600dc05">Main</a>.MouseOn != <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#a956496be0b79f5c540c246c5f600dc05">Main</a>) GUI.MouseOn = CUIComponent.dummyComponent;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>      <span class="keywordflow">if</span> (<a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#a31ba5b36859d8affa5aad82c49297667">TopMain</a>.MouseOn != <span class="keyword">null</span> &amp;&amp; <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#a31ba5b36859d8affa5aad82c49297667">TopMain</a>.MouseOn != <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#a31ba5b36859d8affa5aad82c49297667">TopMain</a>) GUI.MouseOn = CUIComponent.dummyComponent;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">void</span> CUIBlockScroll(<span class="keywordtype">float</span> deltaTime, ref <span class="keywordtype">bool</span> allowMove, ref <span class="keywordtype">bool</span> allowZoom, <span class="keywordtype">bool</span> allowInput, <span class="keywordtype">bool</span>? followSub)</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    {</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>      <span class="keywordflow">if</span> (GUI.MouseOn == CUIComponent.dummyComponent) allowZoom = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    }</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> KeyboardDispatcher_set_Subscriber_Replace(IKeyboardSubscriber value, KeyboardDispatcher __instance)</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    {</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#ac0b69a613489f61c35b5529432f51929">FocusResolver</a>.OnVanillaIKeyboardSubscriberSet(value);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    }</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  }</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>}</div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a31ba5b36859d8affa5aad82c49297667"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#a31ba5b36859d8affa5aad82c49297667">CrabUI.CUI.TopMain</a></div><div class="ttdeci">static CUIMainComponent TopMain</div><div class="ttdoc">Orchestrates Drawing and updates, there could be only one CUI.TopMain is located above vanilla GUI.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00059">CUI.cs:59</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a956496be0b79f5c540c246c5f600dc05"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#a956496be0b79f5c540c246c5f600dc05">CrabUI.CUI.Main</a></div><div class="ttdeci">static CUIMainComponent Main</div><div class="ttdoc">Orchestrates Drawing and updates, there could be only one CUI.Main is located under vanilla GUI.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00054">CUI.cs:54</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_ac0b69a613489f61c35b5529432f51929"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#ac0b69a613489f61c35b5529432f51929">CrabUI.CUI.FocusResolver</a></div><div class="ttdeci">static CUIFocusResolver FocusResolver</div><div class="ttdoc">Adapter to vanilla focus system, don't use.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00072">CUI.cs:72</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_main_component_html_a03a2ee9937069d5bc66bfbafe425e71e"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_main_component.html#a03a2ee9937069d5bc66bfbafe425e71e">CrabUI.CUIMainComponent.Draw</a></div><div class="ttdeci">new void Draw(SpriteBatch spriteBatch)</div><div class="ttdoc">Here component should be drawn.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_main_component_8cs_source.html#l00221">CUIMainComponent.cs:221</a></div></div>
 <div class="ttc" id="anamespace_crab_u_i_html"><div class="ttname"><a href="namespace_crab_u_i.html">CrabUI</a></div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_button_8cs_source.html#l00012">CUIButton.cs:13</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

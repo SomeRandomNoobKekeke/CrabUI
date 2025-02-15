@@ -176,9 +176,7 @@ namespace CrabUI
       base.Update();
     }
 
-    public CUILayoutGrid(CUIComponent host = null) : base(host)
-    {
-
-    }
+    public CUILayoutGrid() : base() { }
+    public CUILayoutGrid(CUIComponent host) : base(host) { }
   }
 }

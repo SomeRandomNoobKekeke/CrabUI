@@ -16,6 +16,8 @@ namespace CrabUI
   /// </summary>
   public static class CUIGlobalStyleResolver
   {
+
+
     public static void OnComponentStyleChanged(CUIComponent host)
     {
       CUITypeMetaData meta = CUITypeMetaData.Get(host.GetType());
@@ -53,52 +55,66 @@ namespace CrabUI
 
     public static void OnDefaultStyleChanged(Type CUIType)
     {
-      // Merge default styles
-      CUIReflection.CUITypeTree[CUIType].RunRecursive((node) =>
+      try
       {
-        node.Meta.ResolvedDefaultStyle = CUIStyle.Merge(
-          node.Parent?.Meta.ResolvedDefaultStyle,
-          node.Meta.DefaultStyle
-        );
-      });
-
-      // Apply default styles
-      CUIReflection.CUITypeTree[CUIType].RunRecursive((node) =>
-      {
-        foreach (CUIComponent c in CUIComponent.ComponentsByType.GetPage(node.T))
+        // Merge default styles
+        CUIReflection.CUITypeTree[CUIType].RunRecursive((node) =>
         {
-          OnComponentStyleChanged(c);
-        }
-      });
+          node.Meta.ResolvedDefaultStyle = CUIStyle.Merge(
+            node.Parent?.Meta.ResolvedDefaultStyle,
+            node.Meta.DefaultStyle
+          );
+        });
+
+        // Apply default styles
+        CUIReflection.CUITypeTree[CUIType].RunRecursive((node) =>
+        {
+          foreach (CUIComponent c in CUIComponent.ComponentsByType.GetPage(node.T))
+          {
+            OnComponentStyleChanged(c);
+          }
+        });
+      }
+      catch (Exception e)
+      {
+        CUI.Warning(e);
+      }
     }
 
     public static void OnDefaultStylePropChanged(Type CUIType, string key)
     {
-      // Merge default styles
-      CUIReflection.CUITypeTree[CUIType].RunRecursive((node) =>
+      try
       {
-        if (node.Parent != null)
+        // Merge default styles
+        CUIReflection.CUITypeTree[CUIType].RunRecursive((node) =>
         {
-          if (node.Parent.Meta.ResolvedDefaultStyle.Props.ContainsKey(key))
+          if (node.Parent != null)
           {
-            node.Meta.ResolvedDefaultStyle[key] = node.Parent.Meta.ResolvedDefaultStyle[key];
+            if (node.Parent.Meta.ResolvedDefaultStyle.Props.ContainsKey(key))
+            {
+              node.Meta.ResolvedDefaultStyle[key] = node.Parent.Meta.ResolvedDefaultStyle[key];
+            }
           }
-        }
 
-        if (node.Meta.DefaultStyle.Props.ContainsKey(key))
+          if (node.Meta.DefaultStyle.Props.ContainsKey(key))
+          {
+            node.Meta.ResolvedDefaultStyle[key] = node.Meta.DefaultStyle[key];
+          }
+        });
+
+        // Apply default styles
+        CUIReflection.CUITypeTree[CUIType].RunRecursive((node) =>
         {
-          node.Meta.ResolvedDefaultStyle[key] = node.Meta.DefaultStyle[key];
-        }
-      });
-
-      // Apply default styles
-      CUIReflection.CUITypeTree[CUIType].RunRecursive((node) =>
+          foreach (CUIComponent c in CUIComponent.ComponentsByType.GetPage(node.T))
+          {
+            OnComponentStylePropChanged(c, key);
+          }
+        });
+      }
+      catch (Exception e)
       {
-        foreach (CUIComponent c in CUIComponent.ComponentsByType.GetPage(node.T))
-        {
-          OnComponentStylePropChanged(c, key);
-        }
-      });
+        CUI.Warning(e);
+      }
     }
 
 
@@ -129,64 +145,60 @@ namespace CrabUI
     {
       if (target.Unreal) return;
 
-      if (target == null)
-      {
-        CUI.Warning($"Style target is null");
-        return;
-      }
+      if (target == null) { CUI.Warning($"Style target is null"); return; }
 
       meta ??= CUITypeMetaData.Get(target.GetType());
 
       PropertyInfo pi = meta.Assignable.GetValueOrDefault(name);
 
-      if (pi == null) return;
+      if (pi == null)
+      {
+        if (CUIPalette.NotifyExcessivePropStyles) CUI.Warning($"Can't apply style: Couldn't find {name} prop in {target}");
 
+        return;
+      }
 
       string raw = style[name];
 
-      object value = null;
       if (raw.StartsWith(CUIPalettePrefix))
       {
-        value = CUIPalette.Extract(raw.Substring(CUIPalettePrefix.Length));
-        if (value == null)
+        PaletteExtractResult result = CUIPalette.Extract(raw.Substring(CUIPalettePrefix.Length), target.Palette);
+        if (result.Ok)
         {
-          CUI.Warning($"Can't find {raw.Substring(CUIPalettePrefix.Length)} in palette");
+          raw = result.Value;
+        }
+        else
+        {
+          if (CUIPalette.NotifiMissingPropStyles)
+          {
+            CUI.Warning($"Can't find {raw.Substring(CUIPalettePrefix.Length)} palette style for {target}");
+          }
           return;
         }
       }
-      else
+
+      MethodInfo parse = CUIExtensions.Parse.GetValueOrDefault(pi.PropertyType);
+
+      parse ??= pi.PropertyType.GetMethod(
+        "Parse",
+        BindingFlags.Public | BindingFlags.Static,
+        new Type[] { typeof(string) }
+      );
+
+      if (parse == null)
       {
-        MethodInfo parse = CUIExtensions.Parse.GetValueOrDefault(pi.PropertyType);
-
-        parse ??= pi.PropertyType.GetMethod(
-          "Parse",
-          BindingFlags.Public | BindingFlags.Static,
-          new Type[] { typeof(string) }
-        );
-
-        if (parse == null)
-        {
-          CUI.Warning($"Can't parse style prop {name} for {target} because it's type {pi.PropertyType.Name} is missing Parse method");
-          return;
-        }
-
-        try
-        {
-          value = parse.Invoke(null, new object[] { raw });
-        }
-        catch (Exception e)
-        {
-          CUI.Warning($"Can't parse {raw} into {pi.PropertyType.Name} for {target}");
-        }
+        CUI.Warning($"Can't parse style prop {name} for {target} because it's type {pi.PropertyType.Name} is missing Parse method");
+        return;
       }
 
       try
       {
-        pi.SetValue(target, value);
+        pi.SetValue(target, parse.Invoke(null, new object[] { raw }));
       }
       catch (Exception e)
       {
-        CUI.Warning($"Can't set style prop {name} with value {value} on {target}");
+        CUI.Warning($"Can't parse {raw} into {pi.PropertyType.Name} for {target}");
+        CUI.Warning(e);
       }
     }
   }

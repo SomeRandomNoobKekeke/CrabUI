@@ -28,11 +28,18 @@ namespace CrabUI
     /// </summary>
     public void ReceiveSpecialInput(Keys key)
     {
-      pressedKey = key;
-      if (key == Keys.Back) Back();
-      if (key == Keys.Delete) Delete();
-      if (key == Keys.Left) MoveLeft();
-      if (key == Keys.Right) MoveRight();
+      try
+      {
+        pressedKey = key;
+        if (key == Keys.Back) Back();
+        if (key == Keys.Delete) Delete();
+        if (key == Keys.Left) MoveLeft();
+        if (key == Keys.Right) MoveRight();
+      }
+      catch (Exception e)
+      {
+        CUI.Warning(e);
+      }
     }
     /// <summary>
     /// From IKeyboardSubscriber, don't use it directly
@@ -49,6 +56,7 @@ namespace CrabUI
         Text = Text.Insert(CaretPos, text);
         CaretPos = CaretPos + 1;
         OnTextAdded?.Invoke(text);
+        //CUI.Log($"ReceiveTextInput {text}");
       }
       catch (Exception e)
       {
@@ -61,9 +69,17 @@ namespace CrabUI
     /// </summary>
     public void ReceiveCommandInput(char command)
     {
-      if (pressedKey == Keys.A) SelectAll();
-      if (pressedKey == Keys.C) Copy();
-      if (pressedKey == Keys.V) Paste();
+      try
+      {
+        if (pressedKey == Keys.A) SelectAll();
+        if (pressedKey == Keys.C) Copy();
+        if (pressedKey == Keys.V) Paste();
+      }
+      catch (Exception e)
+      {
+        CUI.Warning(e);
+      }
+      //CUI.Log($"ReceiveCommandInput {command}");
     }
 
     //Alt+tab?
@@ -226,6 +242,42 @@ namespace CrabUI
       };
     }
 
+
+
+    private bool valid = true; public bool Valid
+    {
+      get => valid;
+      set
+      {
+        if (valid == value) return;
+        valid = value;
+        UpdateBorderColor();
+      }
+    }
+
+    public Type VatidationType { get; set; }
+    public bool IsValidText(string text)
+    {
+      if (VatidationType == null) return true;
+
+      if (VatidationType == typeof(string)) return true;
+      if (VatidationType == typeof(Color)) return true;
+      if (VatidationType == typeof(bool)) return bool.TryParse(text, out _);
+      if (VatidationType == typeof(int)) return int.TryParse(text, out _);
+      if (VatidationType == typeof(float)) return float.TryParse(text, out _);
+      if (VatidationType == typeof(double)) return double.TryParse(text, out _);
+
+      return false;
+    }
+
+    //TODO this is cringe
+    // public override void Consume(object o)
+    // {
+    //   string value = (string)o;
+    //   State = new TextInputState(value, State.Selection, State.CaretPos);
+    //   Valid = IsValidText(value);
+    // }
+
     internal CUITextBlock TextComponent;
     public string Text
     {
@@ -233,8 +285,17 @@ namespace CrabUI
       set
       {
         if (Disabled) return;
+
         State = new TextInputState(value, State.Selection, State.CaretPos);
-        OnTextChanged?.Invoke(State.Text);
+
+        bool isvalid = IsValidText(value);
+        if (isvalid)
+        {
+          OnTextChanged?.Invoke(State.Text);
+          if (Command != null) DispatchUp(new CUICommand(Command, State.Text));
+        }
+        Valid = isvalid;
+
       }
     }
 
@@ -256,9 +317,45 @@ namespace CrabUI
       set => State = new TextInputState(State.Text, State.Selection, value);
     }
 
-    [CUISerializable] public Color FocusedBorderColor { get; set; } = Color.Aqua;
+
     //TODO
     //[CUISerializable] public bool PreventOverflow { get; set; } = false;
+
+    public void UpdateBorderColor()
+    {
+      if (Valid)
+      {
+        if (Focused)
+        {
+          Style["Border"] = "CUIPalette.Input.Focused";
+        }
+        else
+        {
+          Style["Border"] = "CUIPalette.Input.Border";
+        }
+      }
+      else
+      {
+        Style["Border"] = "CUIPalette.Input.Invalid";
+      }
+    }
+    [CUISerializable]
+    public float TextScale
+    {
+      get => TextComponent?.TextScale ?? 0;
+      set => TextComponent.TextScale = value;
+    }
+    public Color TextColor
+    {
+      get => TextComponent?.TextColor ?? Color.White;
+      set
+      {
+        if (TextComponent != null)
+        {
+          TextComponent.TextColor = value;
+        }
+      }
+    }
 
     public event Action<string> OnTextChanged;
     public Action<string> AddOnTextChanged { set => OnTextChanged += value; }
@@ -267,7 +364,11 @@ namespace CrabUI
 
     public override void Draw(SpriteBatch spriteBatch)
     {
-      CaretIndicator.Visible = Focused && CaretIndicatorVisible && Timing.TotalTime % CaretBlinkInterval > CaretBlinkInterval / 2;
+      if (Focused)
+      {
+        CaretIndicator.Visible = CaretIndicatorVisible && Timing.TotalTime % CaretBlinkInterval > CaretBlinkInterval / 2;
+      }
+
 
       base.Draw(spriteBatch);
     }
@@ -278,28 +379,32 @@ namespace CrabUI
     }
     public CUITextInput() : base()
     {
-      AbsoluteMin = new CUINullRect(w: 50);
+      AbsoluteMin = new CUINullRect(w: 50, h: 22);
       FitContent = new CUIBool2(true, true);
       Focusable = true;
-      BorderThickness = 2;
+      Border.Thickness = 2;
       HideChildrenOutsideFrame = true;
       ConsumeMouseClicks = true;
       ConsumeDragAndDrop = true;
       ConsumeSwipe = true;
+      BreakSerialization = true;
 
       this["TextComponent"] = TextComponent = new CUITextBlock()
       {
-        Text = "text",
+        Text = "",
+        Relative = new CUINullRect(0, 0, 1, 1),
+        TextAlign = CUIAnchor.CenterLeft,
         Style = new CUIStyle(){
           {"Padding", "[2,2]"},
+          {"TextColor", "CUIPalette.Input.Text"},
         },
       };
 
       this["SelectionOverlay"] = SelectionOverlay = new CUIComponent()
       {
         Style = new CUIStyle(){
-          {"BackgroundColor", "0,255,255,128"},
-          {"BorderColor", "Transparent"},
+          {"BackgroundColor", "CUIPalette.Input.Selection"},
+          {"Border", "Transparent"},
         },
         Relative = new CUINullRect(h: 1),
         Ghost = new CUIBool2(true, true),
@@ -308,25 +413,27 @@ namespace CrabUI
       this["CaretIndicator"] = CaretIndicator = new CUIComponent()
       {
         Style = new CUIStyle(){
-          {"BackgroundColor", "255,255,255,150"},
-          {"BorderColor", "Transparent"},
+          {"BackgroundColor", "CUIPalette.Input.Caret"},
+          {"Border", "Transparent"},
         },
         Relative = new CUINullRect(h: 1),
         Absolute = new CUINullRect(w: 1),
         Ghost = new CUIBool2(true, true),
+        Visible = false,
       };
 
 
-      //TODO unhardcode
+
       OnFocus += () =>
       {
-        BorderColor = FocusedBorderColor;
+        UpdateBorderColor();
       };
 
       OnFocusLost += () =>
       {
-        BorderColor = Color.Transparent;
+        UpdateBorderColor();
         Selection = IntRange.Zero;
+        CaretIndicator.Visible = false;
       };
 
       OnMouseDown += (e) =>

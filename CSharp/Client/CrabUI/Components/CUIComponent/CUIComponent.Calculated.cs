@@ -40,6 +40,8 @@ namespace CrabUI
       }
     }
 
+    internal int positionalZIndex;
+    internal int addedZIndex;
 
     [Calculated] public bool Focused { get; set; }
 
@@ -52,10 +54,8 @@ namespace CrabUI
     /// BackgroundColor != Color.Transparent
     /// </summary>
     protected bool BackgroundVisible { get; set; }
-    /// <summary>
-    /// BorderColor != Color.Transparent
-    /// </summary>
-    protected bool BorderVisible { get; set; }
+
+    protected bool OutlineVisible { get; set; }
 
     // This is for state clones, to protect them from style changes
     internal bool Unreal { get; set; }
@@ -77,7 +77,9 @@ namespace CrabUI
     {
       forsedSize = value;
       CUIDebug.Capture(null, this, "SetForcedMinSize", memberName, "ForcedMinSize", ForcedMinSize.ToString());
-      OnPropChanged(); OnAbsolutePropChanged();
+      OnPropChanged();//TODO this is the reason why lists with a lot of children lag
+      //OnSelfAndParentChanged();
+      OnAbsolutePropChanged();
     }
 
     /// <summary>
@@ -100,6 +102,7 @@ namespace CrabUI
     /// Calculated Prop, Real + BorderThickness
     /// </summary>
     protected CUIRect BorderBox { get; set; }
+    protected CUIRect OutlineBox { get; set; }
     internal Rectangle? ScissorRect { get; set; }
     /// <summary>
     /// Calculated prop, position on real screen in pixels
@@ -124,22 +127,33 @@ namespace CrabUI
       // real = value;
       CUIDebug.Capture(null, this, "SetReal", memberName, "real", real.ToString());
 
-      BorderBox = new CUIRect(
-        real.Left - BorderThickness,
-        real.Top - BorderThickness,
-        real.Width + BorderThickness * 2,
-        real.Height + BorderThickness * 2
+
+      BorderBox = real;
+      // BorderBox = new CUIRect(
+      //   real.Left - BorderThickness,
+      //   real.Top - BorderThickness,
+      //   real.Width + 2 * BorderThickness,
+      //   real.Height + 2 * BorderThickness
+      // );
+
+      OutlineBox = new CUIRect(
+        real.Left - OutlineThickness,
+        real.Top - OutlineThickness,
+        real.Width + 2 * OutlineThickness,
+        real.Height + 2 * OutlineThickness
       );
 
       if (HideChildrenOutsideFrame)
       {
-        //HACK Remove these + 1
-        Rectangle SRect = new Rectangle(
-          (int)real.Left + 1,
-          (int)real.Top + 1,
-          (int)real.Width - 2,
-          (int)real.Height - 2
-        );
+        Rectangle SRect = real.Box;
+
+        // //HACK Remove these + 1
+        // Rectangle SRect = new Rectangle(
+        //   (int)real.Left + 1,
+        //   (int)real.Top + 1,
+        //   (int)real.Width - 2,
+        //   (int)real.Height - 2
+        // );
 
         if (Parent?.ScissorRect != null)
         {

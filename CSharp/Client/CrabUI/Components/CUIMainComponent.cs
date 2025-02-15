@@ -68,34 +68,51 @@ namespace CrabUI
 
     private Stopwatch sw = new Stopwatch();
 
-    private List<CUIComponent> Flat = new List<CUIComponent>();
-    private List<CUIComponent> Leaves = new List<CUIComponent>();
-    private SortedList<int, List<CUIComponent>> Layers = new SortedList<int, List<CUIComponent>>();
+    internal List<CUIComponent> Flat = new List<CUIComponent>();
+    internal List<CUIComponent> Leaves = new List<CUIComponent>();
+    internal SortedList<int, List<CUIComponent>> Layers = new SortedList<int, List<CUIComponent>>();
     private List<CUIComponent> MouseOnList = new List<CUIComponent>();
     private Vector2 GrabbedOffset;
 
     private void RunStraigth(Action<CUIComponent> a) { for (int i = 0; i < Flat.Count; i++) a(Flat[i]); }
     private void RunReverse(Action<CUIComponent> a) { for (int i = Flat.Count - 1; i >= 0; i--) a(Flat[i]); }
 
+
+
+
     private void FlattenTree()
     {
       Flat.Clear();
       Layers.Clear();
 
-      RunRecursiveOn(this, (component, depth) =>
-      {
-        int d = component.ZIndex ?? depth;
 
-        if (!Layers.ContainsKey(d)) Layers[d] = new List<CUIComponent>();
-        Layers[d].Add(component);
+
+      int globalIndex = 0;
+      void CalcZIndexRec(CUIComponent component, int added = 0)
+      {
+        component.positionalZIndex = globalIndex;
+        globalIndex += 1;
+        component.addedZIndex = added;
+        if (component.ZIndex.HasValue) component.addedZIndex += component.ZIndex.Value;
+
+        foreach (CUIComponent child in component.Children)
+        {
+          CalcZIndexRec(child, component.addedZIndex);
+        }
+      }
+
+      CalcZIndexRec(this, 0);
+      RunRecursiveOn(this, (c) =>
+      {
+        int i = c.positionalZIndex + c.addedZIndex;
+        if (!Layers.ContainsKey(i)) Layers[i] = new List<CUIComponent>();
+        Layers[i].Add(c);
       });
 
       foreach (var layer in Layers)
       {
         Flat.AddRange(layer.Value);
       }
-
-      //RunRecursiveOn(this, (component, depth) => Flat.Add(component));
     }
 
     #region Update
@@ -193,11 +210,12 @@ namespace CrabUI
     #endregion
     #region Draw
 
-    private void StopStart(SpriteBatch spriteBatch, Rectangle SRect)
+    private void StopStart(SpriteBatch spriteBatch, Rectangle SRect, SamplerState? samplerState = null)
     {
+      samplerState ??= GUI.SamplerState;
       spriteBatch.End();
       spriteBatch.GraphicsDevice.ScissorRectangle = SRect;
-      spriteBatch.Begin(SpriteSortMode.Deferred, samplerState: GUI.SamplerState, rasterizerState: GameMain.ScissorTestEnable);
+      spriteBatch.Begin(SpriteSortMode.Deferred, samplerState: samplerState, rasterizerState: GameMain.ScissorTestEnable);
     }
 
     public new void Draw(SpriteBatch spriteBatch)
@@ -215,7 +233,7 @@ namespace CrabUI
           if (c.Parent != null && c.Parent.ScissorRect.HasValue && SRect != c.Parent.ScissorRect.Value)
           {
             SRect = c.Parent.ScissorRect.Value;
-            StopStart(spriteBatch, SRect);
+            StopStart(spriteBatch, SRect, c.SamplerState);
           }
           c.Draw(spriteBatch);
         });
@@ -308,7 +326,10 @@ namespace CrabUI
 
       // form MouseOnList
       // Note: including main component
-      if (GUI.MouseOn == null || (GUI.MouseOn is GUIButton btn && btn.Text == "DUMMY"))
+      if (
+        GUI.MouseOn == null || (GUI.MouseOn is GUIButton btn && btn.Text == "DUMMY")
+        || (this == CUI.TopMain) //TODO guh
+      )
       {
         RunStraigth(c =>
         {

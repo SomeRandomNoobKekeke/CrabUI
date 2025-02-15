@@ -14,7 +14,22 @@ namespace CrabUI
 {
   public partial class CUI
   {
-    public const float Pi2 = (float)Math.PI / 2;
+    public const float Pi2 = (float)(Math.PI / 2.0);
+
+
+    public static SamplerState NoSmoothing = new SamplerState()
+    {
+      Filter = TextureFilter.Point,
+      AddressU = TextureAddressMode.Clamp,
+      AddressV = TextureAddressMode.Clamp,
+      AddressW = TextureAddressMode.Clamp,
+      BorderColor = Color.White,
+      MaxAnisotropy = 4,
+      MaxMipLevel = 0,
+      MipMapLevelOfDetailBias = -0.8f,
+      ComparisonFunction = CompareFunction.Never,
+      FilterMode = TextureFilterMode.Default,
+    };
 
     public static void DrawTexture(SpriteBatch sb, CUIRect cuirect, Color cl, Texture2D texture, float depth = 0.0f)
     {
@@ -36,48 +51,90 @@ namespace CrabUI
       sb.Draw(sprite.Texture, cuirect.Box, sourceRect, cl, 0.0f, Vector2.Zero, sprite.Effects, depth);
     }
 
-    /*
-        public static void DrawBorders(SpriteBatch sb, CUIRect cuirect, Color cl, CUISprite sprite, float thickness, float depth = 0.0f)
-        {
-          Texture2D texture = sprite?.Texture ?? CUISprite.BackupTexture;
+    //TODO i can calculate those rects in advance
+    public static void DrawBorders(SpriteBatch sb, CUIComponent component, float depth = 0.0f)
+    {
+      Texture2D texture = component.BorderSprite.Texture;
+      Rectangle sourceRect = texture.Bounds;
 
-          Rectangle rect;
-          Rectangle source;
+      Rectangle targetRect;
+      Color cl;
+      float rotation = 0.0f;
+      float thickness = 1.0f;
+      bool visible = false;
 
-          // top
-          rect = CUIRect.CreateRect(
-            cuirect.Left - thickness - 1, cuirect.Top - thickness - 1,
-            cuirect.Width + 2 * thickness, thickness
-          );
-          source = new Rectangle(0, 0, rect.Width, rect.Height);
-          sb.Draw(texture, rect, source, cl, 0.0f, Vector2.Zero, SpriteEffects.None, depth);
+      // Right
+      visible = component.RigthBorder?.Visible ?? component.Border.Visible;
+      thickness = component.RigthBorder?.Thickness ?? component.Border.Thickness;
+      cl = component.RigthBorder?.Color ?? component.Border.Color;
+      targetRect = CUIRect.CreateRect(
+        component.Real.Left + component.Real.Width,
+        component.Real.Top,
+        component.Real.Height,
+        thickness
+      );
+      sourceRect = CUIRect.CreateRect(
+        0, 0,
+        targetRect.Width, texture.Height
+      );
+      rotation = Pi2;
+      sb.Draw(texture, targetRect, sourceRect, cl, rotation, Vector2.Zero, SpriteEffects.None, depth);
 
-          // right
-          rect = CUIRect.CreateRect(
-            cuirect.Right, cuirect.Top - 1,
-            thickness, cuirect.Height
-          );
-          source = new Rectangle(0, 0, rect.Width, rect.Height);
-          sb.Draw(texture, rect, source, cl, 0.0f, Vector2.Zero, SpriteEffects.None, depth);
+      //Left
+      visible = component.LeftBorder?.Visible ?? component.Border.Visible;
+      thickness = component.LeftBorder?.Thickness ?? component.Border.Thickness;
+      cl = component.LeftBorder?.Color ?? component.Border.Color;
+      targetRect = CUIRect.CreateRect(
+        component.Real.Left + thickness,
+        component.Real.Top,
+        component.Real.Height,
+        thickness
+      );
+      sourceRect = CUIRect.CreateRect(
+        0, 0,
+        targetRect.Width, texture.Height
+      );
+      rotation = Pi2;
+      sb.Draw(texture, targetRect, sourceRect, cl, rotation, Vector2.Zero, SpriteEffects.FlipVertically, depth);
 
-          // bottom
-          rect = CUIRect.CreateRect(
-            cuirect.Left - thickness - 1, cuirect.Bottom - 1,
-            cuirect.Width + 2 * thickness, thickness
-          );
-          source = new Rectangle(0, 0, rect.Width, rect.Height);
-          sb.Draw(texture, rect, source, cl, 0.0f, Vector2.Zero, SpriteEffects.None, depth);
 
-          // left
-          rect = CUIRect.CreateRect(
-            cuirect.Left - thickness - 1, cuirect.Top - 1,
-            thickness + 1, cuirect.Height
-          );
-          source = new Rectangle(0, 0, rect.Width, rect.Height);
-          sb.Draw(texture, rect, source, cl, 0.0f, Vector2.Zero, SpriteEffects.None, depth);
+      //Top
+      visible = component.TopBorder?.Visible ?? component.Border.Visible;
+      thickness = component.TopBorder?.Thickness ?? component.Border.Thickness;
+      cl = component.TopBorder?.Color ?? component.Border.Color;
+      targetRect = CUIRect.CreateRect(
+        component.Real.Left,
+        component.Real.Top,
+        component.Real.Width,
+        thickness
+      );
+      sourceRect = CUIRect.CreateRect(
+        0, 0,
+        targetRect.Width, texture.Height
+      );
+      rotation = 0.0f;
+      sb.Draw(texture, targetRect, sourceRect, cl, rotation, Vector2.Zero, SpriteEffects.None, depth);
 
-        }
-    */
 
+
+      //Bottom
+      visible = component.BottomBorder?.Visible ?? component.Border.Visible;
+      thickness = component.BottomBorder?.Thickness ?? component.Border.Thickness;
+      cl = component.BottomBorder?.Color ?? component.Border.Color;
+      targetRect = CUIRect.CreateRect(
+        component.Real.Left,
+        component.Real.Bottom - thickness,
+        component.Real.Width,
+        thickness
+      );
+      sourceRect = CUIRect.CreateRect(
+        0, 0,
+        targetRect.Width, texture.Height
+      );
+      rotation = 0;
+      sb.Draw(texture, targetRect, sourceRect, cl, rotation, Vector2.Zero, SpriteEffects.FlipVertically, depth);
+
+
+    }
   }
 }

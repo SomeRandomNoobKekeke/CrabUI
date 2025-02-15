@@ -34,7 +34,7 @@ namespace CrabUI
     public CUIPages() : base()
     {
       BackgroundColor = Color.Transparent;
-      BorderColor = Color.Transparent;
+      Border.Color = Color.Transparent;
       CullChildren = false;
     }
   }

@@ -20,7 +20,7 @@ optimized CUITextBlock measurements, added some validation to CUITextInput
 
 Added CUIPresets with... presets. Which you can use to reduce boilerplate code 
 
-Made more stuff parseable and serializble
+Made more stuff parsable and serializble
 
 And tons of other things i'm too lazy to write down, compare commits if you're curious
 

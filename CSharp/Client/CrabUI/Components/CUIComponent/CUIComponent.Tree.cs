@@ -28,7 +28,6 @@ namespace CrabUI
       set => SetParent(value);
     }
 
-    //TODO DRY
     internal void SetParent(CUIComponent? value, [CallerMemberName] string memberName = "")
     {
       if (parent != null)
@@ -49,8 +48,9 @@ namespace CrabUI
         if (parent is CUIMainComponent main) MainComponent = main;
         if (parent?.MainComponent != null) MainComponent = parent.MainComponent;
 
-        parent.Children.Add(this);
+        //parent.Children.Add(this);
         TreeChanged = true;
+        if (AKA != null) parent.Remember(this, AKA);
         parent.PassPropsToChild(this);
         OnPropChanged();
         parent.OnChildAdded?.Invoke(this);
@@ -79,14 +79,13 @@ namespace CrabUI
     {
       set
       {
-        foreach (CUIComponent c in value) { Append(c, c.AKA); }
+        foreach (CUIComponent c in value) { Append(c); }
       }
     }
 
     public event Action<CUIComponent> OnChildAdded;
     public event Action<CUIComponent> OnChildRemoved;
 
-    //TODO DRY
     /// <summary>
     /// Adds children to the end of the list
     /// </summary>
@@ -97,37 +96,13 @@ namespace CrabUI
     {
       if (child == null) return child;
 
-      if (child.parent != null)
-      {
-        child.TreeChanged = true;
-        child.OnPropChanged();
-        child.parent.Forget(child);
-        child.parent.Children.Remove(child);
-        child.parent.OnChildRemoved?.Invoke(child);
-      }
-
-      child.parent = this;
-
-      CUIDebug.Capture(null, this, "Append", memberName, "child", $"{child}");
-
-      if (this != null) // kek
-      {
-        if (this is CUIMainComponent main) child.MainComponent = main;
-        if (this.MainComponent != null) child.MainComponent = this.MainComponent;
-
-        Children.Add(child);
-        child.TreeChanged = true;
-        if (name != null) Remember(child, name);
-        else if (child.AKA != null) Remember(child, child.AKA);
-        PassPropsToChild(child);
-        child.OnPropChanged();
-        OnChildAdded?.Invoke(child);
-      }
+      child.Parent = this;
+      Children.Add(child);
+      if (name != null) Remember(child, name);
 
       return child;
     }
 
-    //TODO DRY
     /// <summary>
     /// Adds children to the begining of the list
     /// </summary>
@@ -138,31 +113,21 @@ namespace CrabUI
     {
       if (child == null) return child;
 
-      if (child.parent != null)
-      {
-        child.TreeChanged = true;
-        child.OnPropChanged();
-        child.parent.Forget(child);
-        child.parent.Children.Remove(child);
-        child.parent.OnChildRemoved?.Invoke(child);
-      }
+      child.Parent = this;
+      Children.Insert(0, child);
+      if (name != null) Remember(child, name);
 
-      child.parent = this;
+      return child;
+    }
 
-      CUIDebug.Capture(null, this, "Prepend", memberName, "child", $"{child}");
+    public virtual CUIComponent Insert(CUIComponent child, int index, string name = null, [CallerMemberName] string memberName = "")
+    {
+      if (child == null) return child;
 
-      if (this != null) // kek
-      {
-        if (this is CUIMainComponent main) child.MainComponent = main;
-        if (this.MainComponent != null) child.MainComponent = this.MainComponent;
-
-        Children.Insert(0, child);
-        child.TreeChanged = true;
-        if (name != null) Remember(child, name);
-        PassPropsToChild(child);
-        child.OnPropChanged();
-        OnChildAdded?.Invoke(child);
-      }
+      child.Parent = this;
+      index = Math.Clamp(index, 0, Children.Count);
+      Children.Insert(index, child);
+      if (name != null) Remember(child, name);
 
       return child;
     }

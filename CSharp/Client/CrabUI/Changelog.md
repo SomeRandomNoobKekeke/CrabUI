@@ -1,3 +1,9 @@
+## 0.2.1.0
+
+Dried tree building methods, added tests for them
+
+Added insert method along with append and prepend, unlike List.Insert it won't throw on "index out of bounds"
+
 ## 0.2.0.1
 
 .nojekyll moment

@@ -14,7 +14,7 @@ var searchData=
   ['resizetocontent2_11',['ResizeToContent2',['../class_crab_u_i_test_1_1_prop_test.html#a2a52688dbc4437b3fc4af58b0dc80543',1,'CrabUITest::PropTest']]],
   ['resizetocontent3_12',['ResizeToContent3',['../class_crab_u_i_test_1_1_prop_test.html#a7528e029d964d9a6d1ce2cbc6679bcf5',1,'CrabUITest::PropTest']]],
   ['resizetosprite_13',['ResizeToSprite',['../class_crab_u_i_1_1_c_u_i_component.html#a45d77f03b0be05a9c7c4798f8bf713a4',1,'CrabUI::CUIComponent']]],
-  ['restore_20state_20of_20component_14',['Also you can memorize and restore state of component',['../_serialization.html#autotoc_md17',1,'']]],
+  ['restore_20state_20of_20component_14',['Also you can memorize and restore state of component',['../_serialization.html#autotoc_md19',1,'']]],
   ['revealed_15',['Revealed',['../class_crab_u_i_1_1_c_u_i_component.html#a2b39e97b6c2c219efbb25cd176e0f16b',1,'CrabUI::CUIComponent']]],
   ['runrecursiveon_16',['RunRecursiveOn',['../class_crab_u_i_1_1_c_u_i_component.html#af8348cdd67cd0b1a66a4a944f9f5da1d',1,'CrabUI::CUIComponent']]]
 ];

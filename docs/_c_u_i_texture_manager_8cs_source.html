@@ -191,7 +191,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>      Texture2D loaded = <span class="keyword">null</span>;</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>      loaded ??= TryLoad(Path.Combine(CUI.CUIAssetsPath, path));</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>      <span class="keywordflow">if</span> (CUI.AssetsPath != <span class="keyword">null</span>) loaded ??= TryLoad(Path.Combine(CUI.AssetsPath, path));</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>      <span class="keywordflow">if</span> (<a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_texture_manager.html#a5953b2ea87c5b61f01b025d5ee0ff97b">PGNAssets</a> != <span class="keyword">null</span>) loaded ??= TryLoad(Path.Combine(<a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_texture_manager.html#a5953b2ea87c5b61f01b025d5ee0ff97b">PGNAssets</a>, path));</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>      loaded ??= TryLoad(path);</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>      <span class="keywordflow">if</span> (loaded == <span class="keyword">null</span>)</div>

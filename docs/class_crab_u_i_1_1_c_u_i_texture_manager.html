@@ -292,7 +292,7 @@ Properties</h2></td></tr>
 <div class="line"><span class="lineno">   95</span> </div>
 <div class="line"><span class="lineno">   96</span>      Texture2D loaded = <span class="keyword">null</span>;</div>
 <div class="line"><span class="lineno">   97</span> </div>
-<div class="line"><span class="lineno">   98</span>      loaded ??= TryLoad(Path.Combine(CUI.CUIAssetsPath, path));</div>
+<div class="line"><span class="lineno">   98</span>      <span class="keywordflow">if</span> (CUI.AssetsPath != <span class="keyword">null</span>) loaded ??= TryLoad(Path.Combine(CUI.AssetsPath, path));</div>
 <div class="line"><span class="lineno">   99</span>      <span class="keywordflow">if</span> (<a class="code hl_property" href="#a5953b2ea87c5b61f01b025d5ee0ff97b">PGNAssets</a> != <span class="keyword">null</span>) loaded ??= TryLoad(Path.Combine(<a class="code hl_property" href="#a5953b2ea87c5b61f01b025d5ee0ff97b">PGNAssets</a>, path));</div>
 <div class="line"><span class="lineno">  100</span>      loaded ??= TryLoad(path);</div>
 <div class="line"><span class="lineno">  101</span>      <span class="keywordflow">if</span> (loaded == <span class="keyword">null</span>)</div>

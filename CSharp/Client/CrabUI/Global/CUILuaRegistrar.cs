@@ -42,6 +42,8 @@ namespace CrabUI
 #endif
     public void Register()
     {
+      if (CUI.LuaFolder == null) return;
+
       Assembly thisAssembly = Assembly.GetAssembly(typeof(CUILuaRegistrar));
 
       foreach (Type T in thisAssembly.GetTypes().Where(IsRealCUIType))

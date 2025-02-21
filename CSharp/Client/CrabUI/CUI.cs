@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using System.IO;
 
 using Barotrauma;
@@ -11,6 +10,11 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
 using HarmonyLib;
+
+using System.Runtime.CompilerServices;
+[assembly: IgnoresAccessChecksTo("Barotrauma")]
+[assembly: IgnoresAccessChecksTo("DedicatedServer")]
+[assembly: IgnoresAccessChecksTo("BarotraumaCore")]
 
 namespace CrabUI
 {
@@ -28,12 +32,35 @@ namespace CrabUI
     public static Vector2 GameScreenSize => new Vector2(GameMain.GraphicsWidth, GameMain.GraphicsHeight);
     public static Rectangle GameScreenRect => new Rectangle(0, 0, GameMain.GraphicsWidth, GameMain.GraphicsHeight);
 
-    public static string ModDir = "";
-    public static string LuaFolder => Path.Combine(ModDir, @"Lua");
-    public static string CUIPath => GetCallerFolderPath();
-    public static string CUIAssetsPath => Path.Combine(CUIPath, @"CUIAssets");
-    public static string CUITexturePath => "CUI.png";
-    public static string CUIPalettesPath => Path.Combine(CUIAssetsPath, @"Palettes");
+
+    private static string modDir;
+    public static string ModDir
+    {
+      get => modDir;
+      set
+      {
+        modDir = value;
+        LuaFolder = Path.Combine(value, @"Lua");
+      }
+    }
+
+    public static string LuaFolder { get; set; }
+
+    private static string assetsPath;
+    public static string AssetsPath
+    {
+      get => assetsPath;
+      set
+      {
+        assetsPath = value;
+        PalettesPath = Path.Combine(value, @"Palettes");
+      }
+    }
+    public static string CUITexturePath = "CUI.png";
+    public static string PalettesPath { get; set; }
+
+
+
     /// <summary>
     /// If set CUI will also check this folder when loading textures
     /// </summary>
@@ -144,8 +171,6 @@ namespace CrabUI
 
         Instance = new CUI();
 
-        FindModFolder();
-
         GameMain.Instance.Window.TextInput += ReEmitWindowTextInput;
         GameMain.Instance.Window.KeyDown += ReEmitWindowKeyDown;
         //GameMain.Instance.Window.KeyUp += ReEmitWindowKeyUp;
@@ -200,12 +225,6 @@ namespace CrabUI
       GameMain.Instance.Window.TextInput -= ReEmitWindowTextInput;
       GameMain.Instance.Window.KeyDown -= ReEmitWindowKeyDown;
       //GameMain.Instance.Window.KeyUp -= ReEmitWindowKeyUp;
-    }
-
-    // This is a hacky solution that won't work in compiled version
-    public static void FindModFolder()
-    {
-      ModDir = CUIPath.Substring(0, CUIPath.IndexOf("CSharp"));
     }
 
     internal static void InitStatic()

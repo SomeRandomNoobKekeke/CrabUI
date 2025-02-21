@@ -109,19 +109,19 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">using </span>System.Diagnostics;</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_crab_u_i.html">CrabUI</a></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="keyword">public</span> <span class="keyword">class </span>CUIStyleLoader</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">internal</span> <span class="keyword">static</span> <span class="keywordtype">void</span> InitStatic()</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>      CUI.OnInit += () =&gt; LoadDefaultStyles();</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    }</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> DefaultStylesPath =&gt; Path.Combine(CUI.CUIAssetsPath, <span class="stringliteral">&quot;Default Styles.xml&quot;</span>);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keyword">public</span> <span class="keyword">class </span>CUIStyleLoader</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">internal</span> <span class="keyword">static</span> <span class="keywordtype">void</span> InitStatic()</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>      CUI.OnInit += () =&gt; LoadDefaultStyles();</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    }</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> DefaultStylesPath =&gt; Path.Combine(CUI.AssetsPath, <span class="stringliteral">&quot;Default Styles.xml&quot;</span>);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> LoadDefaultStyles()</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> LoadDefaultStyles()</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>      <span class="keywordflow">if</span> (CUI.AssetsPath == <span class="keyword">null</span>) <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>      <span class="keywordflow">if</span> (!File.Exists(DefaultStylesPath)) <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>

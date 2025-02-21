@@ -17,8 +17,17 @@ namespace SomeNamespace
 {
   public partial class Mod : IAssemblyPlugin
   {
+    public static string PackageName = "CrabUI";
+    public static string ModDir;
+    public static string AssetsPath => Path.Combine(ModDir, "Assets");
+
     public void Initialize()
     {
+      FindModFolder();
+
+      CUI.ModDir = ModDir;
+      CUI.AssetsPath = AssetsPath;
+
       CUI.Initialize();
 
       CUIFrame frame = new CUIFrame()
@@ -48,6 +57,22 @@ namespace SomeNamespace
     {
       cl ??= Color.Cyan;
       LuaCsLogger.LogMessage($"{msg ?? "null"}", cl * 0.8f, cl);
+    }
+
+    public static void FindModFolder()
+    {
+      ContentPackage package = ContentPackageManager.EnabledPackages.All.ToList().Find(
+        p => p.Name.Contains(PackageName)
+      );
+
+      if (package != null)
+      {
+        ModDir = Path.GetFullPath(package.Dir);
+      }
+      else
+      {
+        Log($"Couldn't find {PackageName} mod folder", Color.Orange);
+      }
     }
   }
 }

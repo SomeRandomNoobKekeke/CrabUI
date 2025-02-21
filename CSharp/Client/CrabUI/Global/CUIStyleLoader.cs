@@ -14,7 +14,6 @@ using System.IO;
 using System.Diagnostics;
 namespace CrabUI
 {
-
   public class CUIStyleLoader
   {
     internal static void InitStatic()
@@ -22,11 +21,12 @@ namespace CrabUI
       CUI.OnInit += () => LoadDefaultStyles();
     }
 
-    public static string DefaultStylesPath => Path.Combine(CUI.CUIAssetsPath, "Default Styles.xml");
+    public static string DefaultStylesPath => Path.Combine(CUI.AssetsPath, "Default Styles.xml");
 
 
     public static void LoadDefaultStyles()
     {
+      if (CUI.AssetsPath == null) return;
       if (!File.Exists(DefaultStylesPath)) return;
 
 

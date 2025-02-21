@@ -38,7 +38,7 @@ namespace CrabUI
     }
 
     public override string ToString() => $"CUIPalette {Name}";
-    public static string PaletteSetsPath => Path.Combine(CUI.CUIPalettesPath, "Sets");
+    public static string PaletteSetsPath => Path.Combine(CUI.PalettesPath, "Sets");
 
 
     //TODO why is it here? how could sane person find these?
@@ -120,6 +120,10 @@ namespace CrabUI
 
     public static void Initialize()
     {
+      if (CUI.PalettesPath == null) return;
+
+      LoadedPalettes.Clear();
+
       LoadPalettes();
 
       LoadSet(Path.Combine(PaletteSetsPath, "Default.xml"));
@@ -131,7 +135,7 @@ namespace CrabUI
 
     public static void LoadPalettes()
     {
-      foreach (string file in Directory.GetFiles(CUI.CUIPalettesPath, "*.xml"))
+      foreach (string file in Directory.GetFiles(CUI.PalettesPath, "*.xml"))
       {
         CUIPalette palette = LoadFrom(file);
         LoadedPalettes[palette.Name] = palette;
@@ -221,20 +225,18 @@ namespace CrabUI
       }
     }
 
-    public static void PaletteDemo2()
-    {
-      CUIFrame frame;
-      frame = CUIComponent.LoadFromFile<CUIFrame>(Path.Combine(CUI.CUIAssetsPath, "PaletteDemo.xml"));
-      frame.AddCommand("Close", (o) => frame.RemoveSelf());
-      CUI.TopMain.Append(frame);
-    }
-
 
     public static void PaletteDemo()
     {
+      if (CUI.AssetsPath == null)
+      {
+        CUI.Warning($"Can't load PaletteDemo, CUI.AssetsPath is null");
+        return;
+      }
+
       void loadFrame(Vector2 offset, PaletteOrder order)
       {
-        CUIFrame frame = CUIComponent.LoadFromFile<CUIFrame>(Path.Combine(CUI.CUIAssetsPath, $"PaletteDemo.xml"));
+        CUIFrame frame = CUIComponent.LoadFromFile<CUIFrame>(Path.Combine(CUI.AssetsPath, $"PaletteDemo.xml"));
         frame.Palette = order;
         frame.Absolute = frame.Absolute with { Position = offset };
         frame.AddCommand("Close", (o) => frame.RemoveSelf());
@@ -303,9 +305,9 @@ namespace CrabUI
         palette.Values[key] = CUIExtensions.ColorToString(cl);
       }
 
-      palette.SaveTo(Path.Combine(CUI.CUIPalettesPath, $"{name}.xml"));
+      palette.SaveTo(Path.Combine(CUI.PalettesPath, $"{name}.xml"));
       LoadedPalettes[name] = palette;
-      CUI.Log($"Created {name} palette and saved it to {Path.Combine(CUI.CUIPalettesPath, $"{name}.xml")}");
+      CUI.Log($"Created {name} palette and saved it to {Path.Combine(CUI.PalettesPath, $"{name}.xml")}");
 
       return palette;
     }

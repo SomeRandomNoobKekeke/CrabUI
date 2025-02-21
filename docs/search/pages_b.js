@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['other_20props_0',['Other Props',['../_other_props.html',1,'index']]],
-  ['overview_1',['Overview',['../_overview.html',1,'']]]
+  ['palettes_0',['Styles, Palettes',['../_stylespalettes.html',1,'index']]],
+  ['props_1',['Props',['../_graphic_props.html',1,'Graphic Props'],['../_layout_props.html',1,'Layout Props'],['../_other_props.html',1,'Other Props']]]
 ];

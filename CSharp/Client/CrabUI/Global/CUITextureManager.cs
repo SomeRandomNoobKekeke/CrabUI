@@ -95,7 +95,7 @@ namespace CrabUI
 
       Texture2D loaded = null;
 
-      loaded ??= TryLoad(Path.Combine(CUI.CUIAssetsPath, path));
+      if (CUI.AssetsPath != null) loaded ??= TryLoad(Path.Combine(CUI.AssetsPath, path));
       if (PGNAssets != null) loaded ??= TryLoad(Path.Combine(PGNAssets, path));
       loaded ??= TryLoad(path);
       if (loaded == null)

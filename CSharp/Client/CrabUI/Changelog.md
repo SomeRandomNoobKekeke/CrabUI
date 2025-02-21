@@ -1,3 +1,25 @@
+## 0.2.2.0
+
+Added to CUI.cs
+```
+using System.Runtime.CompilerServices;
+[assembly: IgnoresAccessChecksTo("Barotrauma")]
+[assembly: IgnoresAccessChecksTo("DedicatedServer")]
+[assembly: IgnoresAccessChecksTo("BarotraumaCore")]
+```
+So it could be compiled
+
+#### Temporary solution to pathing:
+
+Now mod won't automatially find its folders
+
+If you want to use lua you need to set CUI.ModDir to the mod folder path
+
+Also you need to place Assets folder with CUI stuff somewhere in your mod and set CUI.AssetsPath to it  
+You can rename it, just set the path
+
+All this needs to be done before CUI.Initialize()
+
 ## 0.2.1.0
 
 Dried tree building methods, added tests for them

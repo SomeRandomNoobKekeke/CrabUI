@@ -43,6 +43,7 @@ namespace CrabUI
     };
   }
 
+  //TODO all this stuff is too specific, there should be more flexible way
   public static class CUIPrefab
   {
     public static CUIFrame ListFrame()
@@ -50,6 +51,81 @@ namespace CrabUI
       CUIFrame frame = new CUIFrame();
       frame["list"] = new CUIVerticalList() { Relative = new CUINullRect(0, 0, 1, 1), };
       return frame;
+    }
+
+
+    public static CUIComponent WrapInGroup(string name, CUIComponent content)
+    {
+      CUIVerticalList group = new CUIVerticalList() { FitContent = new CUIBool2(false, true), };
+      group["header"] = new CUITextBlock(name)
+      {
+        TextScale = 1.0f,
+        TextAlign = CUIAnchor.Center,
+      };
+      group["content"] = content;
+      return group;
+    }
+
+    public static CUIComponent Group(string name)
+    {
+      CUIVerticalList group = new CUIVerticalList()
+      {
+        FitContent = new CUIBool2(false, true),
+      };
+
+      group["header"] = new CUITextBlock(name)
+      {
+        TextScale = 1.0f,
+        TextAlign = CUIAnchor.Center,
+      };
+
+      group["content"] = new CUIVerticalList()
+      {
+        FitContent = new CUIBool2(false, true),
+      };
+
+      return group;
+    }
+
+    public static CUIComponent TextAndSliderWithLabel(string name, string command, FloatRange? range = null)
+    {
+      CUIComponent wrapper = new CUIVerticalList()
+      {
+        FitContent = new CUIBool2(false, true),
+        Style = CUIStylePrefab.Main,
+      };
+
+      wrapper["label"] = new CUITextBlock(name);
+      wrapper["controls"] = TextAndSlider(command, range);
+
+      return wrapper;
+    }
+
+    public static CUIComponent TextAndSlider(string command, FloatRange? range = null)
+    {
+      CUIHorizontalList controls = new CUIHorizontalList()
+      {
+        FitContent = new CUIBool2(false, true),
+        RetranslateCommands = true,
+        ReflectCommands = true,
+      };
+
+      controls["text"] = new CUITextInput()
+      {
+        Absolute = new CUINullRect(w: 20.0f),
+        Consumes = command,
+        Command = command,
+      };
+      controls["slider"] = new CUISlider()
+      {
+        Relative = new CUINullRect(h: 1.0f),
+        FillEmptySpace = new CUIBool2(true, false),
+        Consumes = command,
+        Command = command,
+        Range = range ?? new FloatRange(0, 1),
+      };
+
+      return controls;
     }
 
     public static CUIFrame ListFrameWithHeader()
@@ -91,18 +167,18 @@ namespace CrabUI
 
 
 
-    public static CUIHorizontalList TickboxWithLabel(float tickboxSize, string text)
+    public static CUIHorizontalList TickboxWithLabel(string text, string command, float tickboxSize = 22.0f)
     {
       CUIHorizontalList list = new CUIHorizontalList()
       {
         FitContent = new CUIBool2(true, true),
-        Border = new CUIBorder(),
       };
 
       list["tickbox"] = new CUITickBox()
       {
         Absolute = new CUINullRect(w: tickboxSize, h: tickboxSize),
-        Command = text,
+        Command = command,
+        Consumes = command,
       };
 
       list["text"] = new CUITextBlock()

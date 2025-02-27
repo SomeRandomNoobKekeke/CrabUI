@@ -66,8 +66,8 @@ namespace CrabUI
     [Calculated] protected string WrappedText { get; set; } = "";
     protected Vector2? WrappedForThisSize;
     [Calculated] protected Vector2 WrappedSize { get; set; }
-    protected Vector2 UnwrappedTextSize { get; set; }
-    protected Vector2 UnwrappedMinSize { get; set; }
+    public Vector2 UnwrappedTextSize { get; set; }
+    public Vector2 UnwrappedMinSize { get; set; }
     protected bool TextPropChanged;
     #endregion
 

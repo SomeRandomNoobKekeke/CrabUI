@@ -173,11 +173,12 @@ namespace CrabUI
         ShowInDebug = false,
         OnSet = (v, host) =>
         {
+          //TODO should this be called in deserialize?
           CUIGlobalStyleResolver.OnComponentStyleChanged(host);
-          foreach (var child in host.Children)
-          {
-            child.Palette = v;
-          }
+          // foreach (var child in host.Children)
+          // {
+          //   child.Palette = v;
+          // }
         },
       };
 

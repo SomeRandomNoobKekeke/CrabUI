@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['tree_0',['Creating a tree',['../_creatingatree.html',1,'index']]]
+  ['serialization_0',['Serialization',['../_serialization.html',1,'index']]],
+  ['styles_20palettes_1',['Styles, Palettes',['../_stylespalettes.html',1,'index']]]
 ];

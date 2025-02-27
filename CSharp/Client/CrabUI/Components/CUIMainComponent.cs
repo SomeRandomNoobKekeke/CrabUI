@@ -82,37 +82,51 @@ namespace CrabUI
 
     private void FlattenTree()
     {
-      Flat.Clear();
-      Layers.Clear();
-
-
-
-      int globalIndex = 0;
-      void CalcZIndexRec(CUIComponent component, int added = 0)
+      int retries = 0;
+      bool done = false;
+      do
       {
-        component.positionalZIndex = globalIndex;
-        globalIndex += 1;
-        component.addedZIndex = added;
-        if (component.ZIndex.HasValue) component.addedZIndex += component.ZIndex.Value;
-
-        foreach (CUIComponent child in component.Children)
+        retries++;
+        if (retries > 10) break;
+        try
         {
-          CalcZIndexRec(child, component.addedZIndex);
+          Flat.Clear();
+          Layers.Clear();
+
+          int globalIndex = 0;
+          void CalcZIndexRec(CUIComponent component, int added = 0)
+          {
+            component.positionalZIndex = globalIndex;
+            globalIndex += 1;
+            component.addedZIndex = added;
+            if (component.ZIndex.HasValue) component.addedZIndex += component.ZIndex.Value;
+
+            foreach (CUIComponent child in component.Children)
+            {
+              CalcZIndexRec(child, component.addedZIndex);
+            }
+          }
+
+          CalcZIndexRec(this, 0);
+          RunRecursiveOn(this, (c) =>
+          {
+            int i = c.positionalZIndex + c.addedZIndex;
+            if (!Layers.ContainsKey(i)) Layers[i] = new List<CUIComponent>();
+            Layers[i].Add(c);
+          });
+
+          foreach (var layer in Layers)
+          {
+            Flat.AddRange(layer.Value);
+          }
+
+          done = true;
         }
-      }
-
-      CalcZIndexRec(this, 0);
-      RunRecursiveOn(this, (c) =>
-      {
-        int i = c.positionalZIndex + c.addedZIndex;
-        if (!Layers.ContainsKey(i)) Layers[i] = new List<CUIComponent>();
-        Layers[i].Add(c);
-      });
-
-      foreach (var layer in Layers)
-      {
-        Flat.AddRange(layer.Value);
-      }
+        catch (Exception e)
+        {
+          CUI.Warning($"Couldn't Flatten component tree: {e.Message}");
+        }
+      } while (!done);
     }
 
     #region Update

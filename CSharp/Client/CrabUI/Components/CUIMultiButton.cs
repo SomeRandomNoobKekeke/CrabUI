@@ -71,7 +71,14 @@ namespace CrabUI
     public CUIMultiButton() : base()
     {
       Text = "MultiButton";
-      OnMouseDown += (e) => { if (CycleOnClick) SelectNext(); };
+      OnMouseDown += (e) =>
+      {
+        if (CycleOnClick)
+        {
+          SelectNext();
+          if (Command != null) DispatchUp(new CUICommand(Command, Selected));
+        }
+      };
     }
 
 

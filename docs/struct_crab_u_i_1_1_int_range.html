@@ -108,6 +108,9 @@ $(function(){ initResizable(false); });
 Public Member Functions</h2></td></tr>
 <tr class="memitem:abc4fa2cd8edc00e1c2a8f28e30457b05" id="r_abc4fa2cd8edc00e1c2a8f28e30457b05"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc4fa2cd8edc00e1c2a8f28e30457b05">IntRange</a> (int start, int end)</td></tr>
 <tr class="separator:abc4fa2cd8edc00e1c2a8f28e30457b05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05a56d0f2630cfa44605b389d3a16d83" id="r_a05a56d0f2630cfa44605b389d3a16d83"><td class="memItemLeft" align="right" valign="top"><a id="a05a56d0f2630cfa44605b389d3a16d83" name="a05a56d0f2630cfa44605b389d3a16d83"></a>
+override string&#160;</td><td class="memItemRight" valign="bottom"><b>ToString</b> ()</td></tr>
+<tr class="separator:a05a56d0f2630cfa44605b389d3a16d83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -117,6 +120,8 @@ static bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b>
 <tr class="memitem:a494109dca67dacc8ad76295b9c15b03d" id="r_a494109dca67dacc8ad76295b9c15b03d"><td class="memItemLeft" align="right" valign="top"><a id="a494109dca67dacc8ad76295b9c15b03d" name="a494109dca67dacc8ad76295b9c15b03d"></a>
 static bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (<a class="el" href="struct_crab_u_i_1_1_int_range.html">IntRange</a> a, <a class="el" href="struct_crab_u_i_1_1_int_range.html">IntRange</a> b)</td></tr>
 <tr class="separator:a494109dca67dacc8ad76295b9c15b03d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a850a7cfa8c69e5972184cff491775950" id="r_a850a7cfa8c69e5972184cff491775950"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_crab_u_i_1_1_int_range.html">IntRange</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a850a7cfa8c69e5972184cff491775950">Parse</a> (string raw)</td></tr>
+<tr class="separator:a850a7cfa8c69e5972184cff491775950"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -140,7 +145,7 @@ Properties</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Same as Range but with normal ints. </p>
 
-<p class="definition">Definition at line <a class="el" href="_int_range_8cs_source.html#l00016">16</a> of file <a class="el" href="_int_range_8cs_source.html">IntRange.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ranges_8cs_source.html#l00016">16</a> of file <a class="el" href="_ranges_8cs_source.html">Ranges.cs</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abc4fa2cd8edc00e1c2a8f28e30457b05" name="abc4fa2cd8edc00e1c2a8f28e30457b05"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abc4fa2cd8edc00e1c2a8f28e30457b05">&#9670;&#160;</a></span>IntRange()</h2>
@@ -161,11 +166,54 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_int_range_8cs_source.html#l00023">23</a> of file <a class="el" href="_int_range_8cs_source.html">IntRange.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ranges_8cs_source.html#l00023">23</a> of file <a class="el" href="_ranges_8cs_source.html">Ranges.cs</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   24</span>    {</div>
 <div class="line"><span class="lineno">   25</span>      <span class="keywordflow">if</span> (end &gt;= start) (Start, End) = (start, end);</div>
 <div class="line"><span class="lineno">   26</span>      <span class="keywordflow">else</span> (End, Start) = (start, end);</div>
 <div class="line"><span class="lineno">   27</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a850a7cfa8c69e5972184cff491775950" name="a850a7cfa8c69e5972184cff491775950"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a850a7cfa8c69e5972184cff491775950">&#9670;&#160;</a></span>Parse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="struct_crab_u_i_1_1_int_range.html">IntRange</a> CrabUI.IntRange.Parse </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>raw</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_ranges_8cs_source.html#l00032">32</a> of file <a class="el" href="_ranges_8cs_source.html">Ranges.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   33</span>    {</div>
+<div class="line"><span class="lineno">   34</span>      <span class="keywordflow">if</span> (raw == <span class="keyword">null</span> || raw == <span class="stringliteral">&quot;&quot;</span>) <span class="keywordflow">return</span> <span class="keyword">new</span> IntRange(0, 0);</div>
+<div class="line"><span class="lineno">   35</span> </div>
+<div class="line"><span class="lineno">   36</span>      <span class="keywordtype">string</span> content = raw.Split(<span class="charliteral">&#39;[&#39;</span>, <span class="charliteral">&#39;]&#39;</span>)[1];</div>
+<div class="line"><span class="lineno">   37</span> </div>
+<div class="line"><span class="lineno">   38</span>      List&lt;string&gt; coords = content.Split(<span class="charliteral">&#39;,&#39;</span>).Select(s =&gt; s.Trim()).ToList();</div>
+<div class="line"><span class="lineno">   39</span> </div>
+<div class="line"><span class="lineno">   40</span>      <span class="keywordtype">int</span> start;</div>
+<div class="line"><span class="lineno">   41</span>      <span class="keywordtype">int</span> end;</div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span>      <span class="keywordtype">int</span>.TryParse(coords.ElementAtOrDefault(0), out start);</div>
+<div class="line"><span class="lineno">   44</span>      <span class="keywordtype">int</span>.TryParse(coords.ElementAtOrDefault(1), out end);</div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>      <span class="keywordflow">return</span> <span class="keyword">new</span> IntRange(start, end);</div>
+<div class="line"><span class="lineno">   47</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -182,7 +230,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_int_range_8cs_source.html#l00020">20</a> of file <a class="el" href="_int_range_8cs_source.html">IntRange.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ranges_8cs_source.html#l00020">20</a> of file <a class="el" href="_ranges_8cs_source.html">Ranges.cs</a>.</p>
 
 </div>
 </div>
@@ -198,7 +246,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_int_range_8cs_source.html#l00019">19</a> of file <a class="el" href="_int_range_8cs_source.html">IntRange.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ranges_8cs_source.html#l00019">19</a> of file <a class="el" href="_ranges_8cs_source.html">Ranges.cs</a>.</p>
 
 </div>
 </div>
@@ -222,7 +270,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_int_range_8cs_source.html#l00018">18</a> of file <a class="el" href="_int_range_8cs_source.html">IntRange.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ranges_8cs_source.html#l00018">18</a> of file <a class="el" href="_ranges_8cs_source.html">Ranges.cs</a>.</p>
 
 </div>
 </div>
@@ -247,7 +295,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_int_range_8cs_source.html#l00022">22</a> of file <a class="el" href="_int_range_8cs_source.html">IntRange.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ranges_8cs_source.html#l00022">22</a> of file <a class="el" href="_ranges_8cs_source.html">Ranges.cs</a>.</p>
 
 </div>
 </div>
@@ -271,12 +319,12 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_int_range_8cs_source.html#l00021">21</a> of file <a class="el" href="_int_range_8cs_source.html">IntRange.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_ranges_8cs_source.html#l00021">21</a> of file <a class="el" href="_ranges_8cs_source.html">Ranges.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>CSharp/Client/CrabUI/Types/<a class="el" href="_int_range_8cs_source.html">IntRange.cs</a></li>
+<li>CSharp/Client/CrabUI/Types/<a class="el" href="_ranges_8cs_source.html">Ranges.cs</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

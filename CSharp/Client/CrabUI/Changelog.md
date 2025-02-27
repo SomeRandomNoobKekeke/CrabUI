@@ -1,3 +1,36 @@
+## 0.2.3.0
+
+Made CUITextInput, CUITickBox and CUISlider use commands and consume data
+
+Added Gap to CUIVerticalList
+
+Made OnAnyCommand,OnAnyData,OnConsume events instead of delegates
+
+added ReflectCommands and RetranslateCommands props, so you could define in xml that a wrapper should sync state between its children
+
+Setting a Palette prop now won't automatically set palette for all children because it doesn't work as intended on deserialized components, use DeepPalette instead
+
+CUISlider now have Range and Precision
+
+CUI.OnPauseMenuToggled will now trigger even when resume button in pause menu is pressed
+
+You can no just set CUIPalette.DefaultPalette before CUI.Initialize instead of manually loading it
+
+Palettes now remember their BaseColor so you could replicate them
+
+Added more useless CUIPrefabs, i think they are too specific and need some redesign, perhaps i need to create some builder 
+
+Added FloatRange alongside with IntRange
+
+fixed crash in KeyboardDispatcher_set_Subscriber_Replace in compiled mods
+
+## 0.2.2.1
+
+Minor stuff: multibutton dispatches the command, CUIPages resizes page to [0,0,1,1], maincomponent flatten tree is a bit more thread safe
+
+Added IRefreshable interface and CUIComponent.CascadeRefresh
+CascadeRefresh will recursivelly call Refresh on every child that implements IRefreshable
+
 ## 0.2.2.0
 
 Added to CUI.cs

@@ -39,6 +39,7 @@ namespace CrabUI
 
     public override string ToString() => $"CUIPalette {Name}";
     public static string PaletteSetsPath => Path.Combine(CUI.PalettesPath, "Sets");
+    public static string DefaultPalette = "Blue";
 
 
     //TODO why is it here? how could sane person find these?
@@ -115,6 +116,7 @@ namespace CrabUI
 
     public Dictionary<string, string> Values = new();
     public string Name = "???";
+    public string BaseColor { get; set; } = "";
 
 
 
@@ -126,7 +128,7 @@ namespace CrabUI
 
       LoadPalettes();
 
-      LoadSet(Path.Combine(PaletteSetsPath, "Default.xml"));
+      LoadSet(Path.Combine(PaletteSetsPath, DefaultPalette + ".xml"));
       // Primary = LoadedPalettes.GetValueOrDefault("red");
       // Secondary = LoadedPalettes.GetValueOrDefault("purple");
       // Tertiary = LoadedPalettes.GetValueOrDefault("blue");
@@ -189,6 +191,7 @@ namespace CrabUI
     {
       XElement root = new XElement("Palette");
       root.Add(new XAttribute("Name", Name));
+      root.Add(new XAttribute("BaseColor", BaseColor));
 
       foreach (string key in Values.Keys)
       {
@@ -237,7 +240,7 @@ namespace CrabUI
       void loadFrame(Vector2 offset, PaletteOrder order)
       {
         CUIFrame frame = CUIComponent.LoadFromFile<CUIFrame>(Path.Combine(CUI.AssetsPath, $"PaletteDemo.xml"));
-        frame.Palette = order;
+        frame.DeepPalette = order;
         frame.Absolute = frame.Absolute with { Position = offset };
         frame.AddCommand("Close", (o) => frame.RemoveSelf());
         CUI.TopMain.Append(frame);
@@ -257,6 +260,7 @@ namespace CrabUI
       CUIPalette palette = new CUIPalette()
       {
         Name = name,
+        BaseColor = CUIExtensions.ColorToString(colorA),
       };
 
       Color colorB = colorb ?? Color.Black;
@@ -291,6 +295,7 @@ namespace CrabUI
       colors["DDOption.Text"] = colors["Main.Text"];
       colors["Handle.Background"] = colorA.To(colorB, 0.5f).To(Color.White, 0.2f);
       colors["Handle.Grabbed"] = colorA.To(colorB, 0.0f).To(Color.White, 0.2f);
+      colors["Slider"] = colorA.To(Color.White, 0.7f);
       colors["Input.Background"] = colors["Nav.Background"];
       colors["Input.Border"] = colors["Nav.Border"];
       colors["Input.Text"] = colors["Main.Text"];

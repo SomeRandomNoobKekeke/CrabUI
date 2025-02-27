@@ -54,50 +54,57 @@ namespace CrabUI
 
     public void OnVanillaIKeyboardSubscriberSet(IKeyboardSubscriber value, bool callFromCUI = false)
     {
-      KeyboardDispatcher _ = GUI.KeyboardDispatcher;
-
-      IKeyboardSubscriber oldSubscriber = _._subscriber;
-      IKeyboardSubscriber newSubscriber = value;
-
-      if (newSubscriber == oldSubscriber) { return; }
-
-      // this case should be handled in CUI
-      if (!callFromCUI && oldSubscriber is CUIComponent && newSubscriber is null) { return; }
-
-      //CUI.Log($"new IKeyboardSubscriber {oldSubscriber} -> {newSubscriber}");
-
-      if (oldSubscriber != null)
+      try
       {
-        TextInput.StopTextInput();
-        oldSubscriber.Selected = false;
-      }
+        KeyboardDispatcher _ = GUI.KeyboardDispatcher;
 
-      if (oldSubscriber is CUIComponent component1 && newSubscriber is GUITextBox)
-      {
-        //TODO for some season TextInput doesn't loose focus here
-        component1.InvokeOnFocusLost();
-        component1.Focused = false;
-        focusedCUIComponent = null;
-      }
+        IKeyboardSubscriber oldSubscriber = _._subscriber;
+        IKeyboardSubscriber newSubscriber = value;
 
-      if (newSubscriber != null)
-      {
-        if (newSubscriber is GUITextBox box)
+        if (newSubscriber == oldSubscriber) { return; }
+
+        // this case should be handled in CUI
+        if (!callFromCUI && oldSubscriber is CUIComponent && newSubscriber is null) { return; }
+
+        //CUI.Log($"new IKeyboardSubscriber {oldSubscriber} -> {newSubscriber}");
+
+        if (oldSubscriber != null)
         {
-          TextInput.SetTextInputRect(box.MouseRect);
-          TextInput.StartTextInput();
-          TextInput.SetTextInputRect(box.MouseRect);
+          TextInput.StopTextInput();
+          oldSubscriber.Selected = false;
         }
 
-        if (newSubscriber is CUIComponent component)
+        if (oldSubscriber is CUIComponent component1 && newSubscriber is GUITextBox)
         {
-          TextInput.StartTextInput();
+          //TODO for some season TextInput doesn't loose focus here
+          component1.InvokeOnFocusLost();
+          component1.Focused = false;
+          focusedCUIComponent = null;
         }
 
-        newSubscriber.Selected = true;
-      }
+        if (newSubscriber != null)
+        {
+          if (newSubscriber is GUITextBox box)
+          {
+            TextInput.SetTextInputRect(box.MouseRect);
+            TextInput.StartTextInput();
+            TextInput.SetTextInputRect(box.MouseRect);
+          }
 
-      _._subscriber = value;
+          if (newSubscriber is CUIComponent component)
+          {
+            TextInput.StartTextInput();
+          }
+
+          newSubscriber.Selected = true;
+        }
+
+        _._subscriber = value;
+      }
+      catch (Exception e)
+      {
+        CUI.Error(e);
+      }
     }
 
 

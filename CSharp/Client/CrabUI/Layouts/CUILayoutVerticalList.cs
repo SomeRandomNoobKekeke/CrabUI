@@ -19,6 +19,8 @@ namespace CrabUI
     internal float TotalHeight;
     public CUIDirection Direction;
 
+    public float Gap { get; set; }
+
     public bool ResizeToHostWidth { get; set; } = true;
 
 
@@ -140,6 +142,9 @@ namespace CrabUI
 
           if (c.FillEmptySpace.Y) Resizible.Add(size);
         }
+
+        TotalHeight += Math.Max(0, Host.Children.Count - 1) * Gap;
+
         sw.Stop();
         //CUI.Log($"{Host} vlist measuring {sw.ElapsedMilliseconds}");
 
@@ -173,7 +178,7 @@ namespace CrabUI
 
             c.Component.SetReal(real, "VerticalList.Update");
 
-            y += c.Size.Y;
+            y += c.Size.Y + Gap;
           }
         }
 
@@ -182,7 +187,7 @@ namespace CrabUI
           float y = Host.Real.Height;
           foreach (CUIComponentSize c in Sizes)
           {
-            y -= c.Size.Y;
+            y -= c.Size.Y + Gap;
             CUIRect real;
             if (Host.ChildrenBoundaries != null) real = Host.ChildrenBoundaries(Host.Real).Check(0, y, c.Size.X, c.Size.Y);
             else real = new CUIRect(0, y, c.Size.X, c.Size.Y);

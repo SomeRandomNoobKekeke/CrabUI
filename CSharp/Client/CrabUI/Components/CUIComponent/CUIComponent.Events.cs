@@ -25,6 +25,12 @@ namespace CrabUI
     [CUISerializable] public bool ConsumeSwipe { get; set; }
     [CUISerializable] public bool ConsumeMouseScroll { get; set; }
 
+    //HACK no one will ever find it, hehehe
+    public void CascadeRefresh()
+    {
+      if (this is IRefreshable refreshable) refreshable.Refresh();
+      Children.ForEach(c => c.CascadeRefresh());
+    }
 
     public event Action OnTreeChanged;
     public event Action<double> OnUpdate; internal void InvokeOnUpdate(double totalTime) => OnUpdate?.Invoke(totalTime);

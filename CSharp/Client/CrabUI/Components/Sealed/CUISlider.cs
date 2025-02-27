@@ -33,6 +33,9 @@ namespace CrabUI
       }
     }
 
+    [CUISerializable] public FloatRange Range { get; set; } = new FloatRange(0, 1);
+    [CUISerializable] public int? Precision { get; set; } = 2;
+
 
     /// <summary>
     /// The handle
@@ -49,9 +52,9 @@ namespace CrabUI
     {
       set
       {
-        LeftEnding.BackgroundColor = value;
-        RightEnding.BackgroundColor = value;
-        Handle.BackgroundColor = value;
+        if (LeftEnding != null) LeftEnding.BackgroundColor = value;
+        if (RightEnding != null) RightEnding.BackgroundColor = value;
+        if (Handle != null) Handle.BackgroundColor = value;
       }
     }
 
@@ -64,10 +67,7 @@ namespace CrabUI
     public CUISlider() : base()
     {
       ChildrenBoundaries = CUIBoundaries.Box;
-      Style = new CUIStyle(){
-        {"BackgroundColor", "Transparent"},
-        {"Border", "Transparent"},
-      };
+      BreakSerialization = true;
 
       this["LeftEnding"] = LeftEnding = new CUIComponent()
       {
@@ -75,7 +75,11 @@ namespace CrabUI
         Relative = new CUINullRect(h: 1),
         CrossRelative = new CUINullRect(w: 1),
         BackgroundSprite = CUI.TextureManager.GetCUISprite(2, 2, CUISpriteDrawMode.Resize, SpriteEffects.FlipHorizontally),
-        Style = new CUIStyle() { { "Border", "Transparent" } },
+        Style = new CUIStyle()
+        {
+          ["Border"] = "Transparent",
+          ["BackgroundColor"] = "CUIPalette.Slider",
+        },
       };
 
       this["RightEnding"] = RightEnding = new CUIComponent()
@@ -84,13 +88,21 @@ namespace CrabUI
         Relative = new CUINullRect(h: 1),
         CrossRelative = new CUINullRect(w: 1),
         BackgroundSprite = CUI.TextureManager.GetCUISprite(2, 2),
-        Style = new CUIStyle() { { "Border", "Transparent" } },
+        Style = new CUIStyle()
+        {
+          ["Border"] = "Transparent",
+          ["BackgroundColor"] = "CUIPalette.Slider",
+        },
       };
 
 
       this["handle"] = Handle = new CUIComponent()
       {
-        Style = new CUIStyle() { { "Border", "Transparent" } },
+        Style = new CUIStyle()
+        {
+          ["Border"] = "Transparent",
+          ["BackgroundColor"] = "CUIPalette.Slider",
+        },
         Draggable = true,
         BackgroundSprite = CUI.TextureManager.GetCUISprite(0, 2),
         Relative = new CUINullRect(h: 1),
@@ -99,11 +111,16 @@ namespace CrabUI
         {
           lambda = Math.Clamp(x / InOutMult, 0, 1);
           OnSlide?.Invoke(lambda);
-          if (Command != null) DispatchUp(new CUICommand(Command, lambda));
+          if (Command != null)
+          {
+            float value = Range.PosOf(lambda);
+            if (Precision.HasValue) value = (float)Math.Round(value, Precision.Value);
+            DispatchUp(new CUICommand(Command, value));
+          }
+
+
         },
       };
-
-      MasterColor = Color.White;
 
       Handle.DragHandle.DragRelative = true;
 
@@ -125,6 +142,14 @@ namespace CrabUI
             Left = Math.Clamp(pendingLambda.Value, 0, 1) * InOutMult,
           };
           pendingLambda = null;
+        }
+      };
+
+      OnConsume += (o) =>
+      {
+        if (float.TryParse(o.ToString(), out float value))
+        {
+          Lambda = Range.LambdaOf(value);
         }
       };
 

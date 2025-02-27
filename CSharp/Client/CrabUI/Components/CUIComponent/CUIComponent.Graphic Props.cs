@@ -90,6 +90,17 @@ namespace CrabUI
       get => CUIProps.Palette.Value;
       set => CUIProps.Palette.SetValue(value);
     }
+    public PaletteOrder DeepPalette
+    {
+      set
+      {
+        Palette = value;
+        foreach (var child in Children)
+        {
+          child.DeepPalette = value;
+        }
+      }
+    }
     /// <summary>
     /// Had to expose resize handle props, because it's not a real component
     /// and can't really use styles

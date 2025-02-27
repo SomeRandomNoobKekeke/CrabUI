@@ -26,13 +26,13 @@ namespace CrabUI
   /// add pass some event data without creating a hard link
   /// </summary>
   /// <param name="Name"></param>
-  public record CUICommand(string Name, object data = null);
+  public record CUICommand(string Name, object Data = null);
 
   /// <summary>
   /// Can be dispatched down the component tree to pass some data to the children
   /// without creating a hard link
   /// </summary>
-  public record CUIData(string Name, object data = null);
+  public record CUIData(string Name, object Data = null);
   public partial class CUIComponent
   {
     private void SetupCommands()
@@ -49,19 +49,52 @@ namespace CrabUI
     /// <summary>
     /// this will be executed on any command
     /// </summary>
-    public Action<CUICommand> OnAnyCommand { get; set; }
+    public event Action<CUICommand> OnAnyCommand;
     /// <summary>
     /// Will be executed when receiving any data
     /// </summary>
-    public Action<CUIData> OnAnyData { get; set; }
+    public event Action<CUIData> OnAnyData;
     /// <summary>
     /// Happens when appropriate data is received
     /// </summary>
-    public Action<Object> OnConsume { get; set; }
+    public event Action<Object> OnConsume;
     /// <summary>
     /// Will consume data with this name
     /// </summary>
     [CUISerializable] public string Consumes { get; set; }
+
+    private bool reflectCommands;
+    [CUISerializable]
+    public bool ReflectCommands
+    {
+      get => reflectCommands;
+      set
+      {
+        reflectCommands = value;
+        OnAnyCommand += (command) =>
+        {
+          foreach (CUIComponent child in Children)
+          {
+            child.DispatchDown(new CUIData(command.Name, command.Data));
+          }
+        };
+      }
+    }
+
+    private bool retranslateCommands;
+    [CUISerializable]
+    public bool RetranslateCommands
+    {
+      get => retranslateCommands;
+      set
+      {
+        retranslateCommands = value;
+        OnAnyCommand += (command) =>
+        {
+          Parent?.DispatchUp(command);
+        };
+      }
+    }
 
     /// <summary>
     /// Optimization to data flow  
@@ -166,13 +199,13 @@ namespace CrabUI
         {
           foreach (CUIComponent target in DataTargets[data.Name])
           {
-            target.OnConsume?.Invoke(data.data);
+            target.OnConsume?.Invoke(data.Data);
           }
         }
       }
       else
       {
-        if (Consumes == data.Name) OnConsume?.Invoke(data.data);
+        if (Consumes == data.Name) OnConsume?.Invoke(data.Data);
         else if (OnAnyData != null) OnAnyData.Invoke(data);
         else
         {
@@ -187,7 +220,7 @@ namespace CrabUI
     /// <param name="commandName"></param>
     public void Execute(CUICommand command)
     {
-      Commands.GetValueOrDefault(command.Name)?.Invoke(command.data);
+      Commands.GetValueOrDefault(command.Name)?.Invoke(command.Data);
     }
   }
 }

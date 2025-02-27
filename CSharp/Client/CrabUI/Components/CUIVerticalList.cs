@@ -39,6 +39,14 @@ namespace CrabUI
       set => ListLayout.Direction = value;
     }
 
+    //TODO test, sync with hlist
+    [CUISerializable]
+    public float Gap
+    {
+      get => ListLayout.Gap;
+      set => ListLayout.Gap = value;
+    }
+
     [CUISerializable]
     public bool ResizeToHostWidth
     {

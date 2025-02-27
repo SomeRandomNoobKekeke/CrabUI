@@ -53,6 +53,15 @@
     <Padding>[4,0]</Padding>
   </DDOption>
 
+  <CUISlider>
+    <BackgroundColor>Transparent</BackgroundColor>
+    <Border>Transparent</Border>
+  </CUISlider>
+
+  <CUITickBox>
+    <BackgroundColor>CUIPalette.Main.Text</BackgroundColor>
+  </CUITickBox>
+
   <CUICanvas>
     <BackgroundColor>White</BackgroundColor>
     <Border>Black</Border>

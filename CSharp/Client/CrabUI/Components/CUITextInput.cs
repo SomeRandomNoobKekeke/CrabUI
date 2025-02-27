@@ -56,6 +56,7 @@ namespace CrabUI
         Text = Text.Insert(CaretPos, text);
         CaretPos = CaretPos + 1;
         OnTextAdded?.Invoke(text);
+        if (Command != null) DispatchUp(new CUICommand(Command, State.Text));
         //CUI.Log($"ReceiveTextInput {text}");
       }
       catch (Exception e)
@@ -147,6 +148,7 @@ namespace CrabUI
         string s2 = oldState.Text.SubstringSafe(oldState.CaretPos);
         Text = s1 + s2;
         CaretPos = oldState.CaretPos - 1;
+        if (Command != null) DispatchUp(new CUICommand(Command, State.Text));
       }
     }
 
@@ -159,6 +161,7 @@ namespace CrabUI
         string s1 = oldState.Text.SubstringSafe(0, oldState.CaretPos);
         string s2 = oldState.Text.SubstringSafe(oldState.CaretPos + 1);
         Text = s1 + s2;
+        if (Command != null) DispatchUp(new CUICommand(Command, State.Text));
         //CaretPos = oldState.CaretPos;
       }
     }
@@ -172,6 +175,7 @@ namespace CrabUI
       Text = s1 + s2;
       CaretPos = Selection.Start;
       Selection = IntRange.Zero;
+      if (Command != null) DispatchUp(new CUICommand(Command, State.Text));
     }
 
     internal int SetCaretPos(Vector2 v)
@@ -225,7 +229,7 @@ namespace CrabUI
       TextComponent.Text = state.Text;
 
       SelectionOverlay.Visible = !state.Selection.IsEmpty;
-      CaretIndicatorVisible = !SelectionOverlay.Visible;
+      CaretIndicatorVisible = Focused && !SelectionOverlay.Visible;
 
       if (!state.Selection.IsEmpty)
       {
@@ -292,10 +296,8 @@ namespace CrabUI
         if (isvalid)
         {
           OnTextChanged?.Invoke(State.Text);
-          if (Command != null) DispatchUp(new CUICommand(Command, State.Text));
         }
         Valid = isvalid;
-
       }
     }
 
@@ -373,6 +375,8 @@ namespace CrabUI
       base.Draw(spriteBatch);
     }
 
+
+
     public CUITextInput(string text) : this()
     {
       Text = text;
@@ -408,6 +412,7 @@ namespace CrabUI
         },
         Relative = new CUINullRect(h: 1),
         Ghost = new CUIBool2(true, true),
+        IgnoreParentVisibility = true,
       };
 
       this["CaretIndicator"] = CaretIndicator = new CUIComponent()
@@ -416,10 +421,18 @@ namespace CrabUI
           {"BackgroundColor", "CUIPalette.Input.Caret"},
           {"Border", "Transparent"},
         },
-        Relative = new CUINullRect(h: 1),
+        Relative = new CUINullRect(y: 0.1f, h: 0.8f),
         Absolute = new CUINullRect(w: 1),
         Ghost = new CUIBool2(true, true),
         Visible = false,
+        IgnoreParentVisibility = true,
+      };
+
+      OnConsume += (o) =>
+      {
+        string value = o.ToString();
+        State = new TextInputState(value, State.Selection, State.CaretPos);
+        Valid = IsValidText(value);
       };
 
 
@@ -427,6 +440,7 @@ namespace CrabUI
       OnFocus += () =>
       {
         UpdateBorderColor();
+        CaretIndicator.Visible = true;
       };
 
       OnFocusLost += () =>

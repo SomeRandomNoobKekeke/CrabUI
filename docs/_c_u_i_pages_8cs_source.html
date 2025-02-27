@@ -125,19 +125,20 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    {</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>      RemoveAllChildren();</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>      <a class="code hl_function" href="class_crab_u_i_1_1_c_u_i_component.html#a5d05673fa79fb7a41985c46ca88ab647">Append</a>(page);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>      OpenedPage = page;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>      page.Relative = <span class="keyword">new</span> <a class="code hl_struct" href="struct_crab_u_i_1_1_c_u_i_null_rect.html">CUINullRect</a>(0, 0, 1, 1);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>      OpenedPage = page;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    }</div>
 </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">public</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_pages.html">CUIPages</a>() : base()</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    {</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a7db80658c26d4041f54ce3aa469854af">BackgroundColor</a> = Color.Transparent;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      Border.Color = Color.Transparent;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#ac7bcbf63c1c4df9be444656ad4ef393e">CullChildren</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">public</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_pages.html">CUIPages</a>() : base()</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a7db80658c26d4041f54ce3aa469854af">BackgroundColor</a> = Color.Transparent;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      Border.Color = Color.Transparent;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#ac7bcbf63c1c4df9be444656ad4ef393e">CullChildren</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  }</div>
 </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>}</div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html">CrabUI.CUIComponent</a></div><div class="ttdoc">Base class for all components.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_tree_8cs_source.html#l00019">CUIComponent.Tree.cs:20</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a5d05673fa79fb7a41985c46ca88ab647"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a5d05673fa79fb7a41985c46ca88ab647">CrabUI.CUIComponent.Append</a></div><div class="ttdeci">virtual CUIComponent Append(CUIComponent child, string name=null, [CallerMemberName] string memberName=&quot;&quot;)</div><div class="ttdoc">Adds children to the end of the list.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_tree_8cs_source.html#l00095">CUIComponent.Tree.cs:95</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a7db80658c26d4041f54ce3aa469854af"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a7db80658c26d4041f54ce3aa469854af">CrabUI.CUIComponent.BackgroundColor</a></div><div class="ttdeci">Color BackgroundColor</div><div class="ttdoc">Color of BackgroundSprite, default is black   If you're using custom sprite and don't see it make sur...</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_graphic_01_props_8cs_source.html#l00078">CUIComponent.Graphic Props.cs:79</a></div></div>
@@ -145,6 +146,7 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_pages_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_pages.html">CrabUI.CUIPages</a></div><div class="ttdoc">Container for other components   Can have only 1 child   Sets component as it's only child when you o...</div><div class="ttdef"><b>Definition</b> <a href="#l00017">CUIPages.cs:18</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_pages_html_ac9ac0d7b2273d35846dc22afdbe41872"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_pages.html#ac9ac0d7b2273d35846dc22afdbe41872">CrabUI.CUIPages.Open</a></div><div class="ttdeci">void Open(CUIComponent page)</div><div class="ttdoc">Adds page as its only child.</div><div class="ttdef"><b>Definition</b> <a href="#l00027">CUIPages.cs:27</a></div></div>
 <div class="ttc" id="anamespace_crab_u_i_html"><div class="ttname"><a href="namespace_crab_u_i.html">CrabUI</a></div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_button_8cs_source.html#l00012">CUIButton.cs:13</a></div></div>
+<div class="ttc" id="astruct_crab_u_i_1_1_c_u_i_null_rect_html"><div class="ttname"><a href="struct_crab_u_i_1_1_c_u_i_null_rect.html">CrabUI.CUINullRect</a></div><div class="ttdoc">Rectangle with float?</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_rect_8cs_source.html#l00103">CUIRect.cs:104</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

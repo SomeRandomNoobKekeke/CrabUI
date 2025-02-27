@@ -28,6 +28,7 @@ namespace CrabUI
     {
       RemoveAllChildren();
       Append(page);
+      page.Relative = new CUINullRect(0, 0, 1, 1);
       OpenedPage = page;
     }
 

@@ -935,8 +935,29 @@ Events</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_c_u_i_01patches_8cs_source.html#l00073">73</a> of file <a class="el" href="_c_u_i_01patches_8cs_source.html">CUI patches.cs</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   74</span>    {</div>
-<div class="line"><span class="lineno">   75</span>      CUI.InvokeOnPauseMenuToggled();</div>
-<div class="line"><span class="lineno">   76</span>    }</div>
+<div class="line"><span class="lineno">   75</span>      <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">   76</span>      {</div>
+<div class="line"><span class="lineno">   77</span>        <span class="keywordflow">if</span> (GUI.PauseMenu != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   78</span>        {</div>
+<div class="line"><span class="lineno">   79</span>          GUIFrame frame = GUI.PauseMenu;</div>
+<div class="line"><span class="lineno">   80</span>          GUIComponent pauseMenuInner = frame.GetChild(1);</div>
+<div class="line"><span class="lineno">   81</span>          GUIComponent list = frame.GetChild(1).GetChild(0);</div>
+<div class="line"><span class="lineno">   82</span>          GUIButton resumeButton = (GUIButton)list.GetChild(0);</div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>          GUIButton.OnClickedHandler oldHandler = resumeButton.OnClicked;</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>          resumeButton.OnClicked = (GUIButton button, <span class="keywordtype">object</span> obj) =&gt;</div>
+<div class="line"><span class="lineno">   87</span>          {</div>
+<div class="line"><span class="lineno">   88</span>            <span class="keywordtype">bool</span> guh = oldHandler(button, obj);</div>
+<div class="line"><span class="lineno">   89</span>            CUI.InvokeOnPauseMenuToggled();</div>
+<div class="line"><span class="lineno">   90</span>            <span class="keywordflow">return</span> guh;</div>
+<div class="line"><span class="lineno">   91</span>          };</div>
+<div class="line"><span class="lineno">   92</span>        }</div>
+<div class="line"><span class="lineno">   93</span>      }</div>
+<div class="line"><span class="lineno">   94</span>      <span class="keywordflow">catch</span> (Exception e) { CUI.Warning(e); }</div>
+<div class="line"><span class="lineno">   95</span> </div>
+<div class="line"><span class="lineno">   96</span>      CUI.InvokeOnPauseMenuToggled();</div>
+<div class="line"><span class="lineno">   97</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -225,11 +225,19 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_water.html">CUIWater</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Just an example of what <a class="el" href="class_crab_u_i_1_1_c_u_i_canvas.html" title="Allows you to manipulate pixel data of its texture.">CUICanvas</a> can be used for.  <a href="class_crab_u_i_1_1_c_u_i_water.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_crab_u_i_1_1_float_range.html">FloatRange</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as Range but with normal floats.  <a href="struct_crab_u_i_1_1_float_range.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_crab_u_i_1_1_i_c_u_i_vitalizable.html">ICUIVitalizable</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Props implementing this will be bound to their host with reflection after creation of the host.  <a href="interface_crab_u_i_1_1_i_c_u_i_vitalizable.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_crab_u_i_1_1_int_range.html">IntRange</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as Range but with normal ints.  <a href="struct_crab_u_i_1_1_int_range.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_crab_u_i_1_1_i_refreshable.html">IRefreshable</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">For stuff that should be in some way refreshed <br  />
+ This method appears way too many times <br  />
+ There are also secret public void CascadeRefresh() method in CUIComponent.Events that refreshes all childs recursivelly.  <a href="interface_crab_u_i_1_1_i_refreshable.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
@@ -267,13 +275,13 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aada5e995437d9c99a38882d830798b6c" id="r_aada5e995437d9c99a38882d830798b6c"><td class="memItemLeft" align="right" valign="top">record&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aada5e995437d9c99a38882d830798b6c">CUICommand</a> (string Name, object data=null)</td></tr>
-<tr class="memdesc:aada5e995437d9c99a38882d830798b6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Can be dispatched up the component tree to notify parent about something add pass some event data without creating a hard link.  <br /></td></tr>
-<tr class="separator:aada5e995437d9c99a38882d830798b6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e6d9d3ec38c60059a9d83c511ed55d5" id="r_a7e6d9d3ec38c60059a9d83c511ed55d5"><td class="memItemLeft" align="right" valign="top"><a id="a7e6d9d3ec38c60059a9d83c511ed55d5" name="a7e6d9d3ec38c60059a9d83c511ed55d5"></a>
-record&#160;</td><td class="memItemRight" valign="bottom"><b>CUIData</b> (string Name, object data=null)</td></tr>
-<tr class="memdesc:a7e6d9d3ec38c60059a9d83c511ed55d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Can be dispatched down the component tree to pass some data to the children without creating a hard link. <br /></td></tr>
-<tr class="separator:a7e6d9d3ec38c60059a9d83c511ed55d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae80ee6c0b67ee19b6bda93e94e05ae7f" id="r_ae80ee6c0b67ee19b6bda93e94e05ae7f"><td class="memItemLeft" align="right" valign="top">record&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae80ee6c0b67ee19b6bda93e94e05ae7f">CUICommand</a> (string Name, object Data=null)</td></tr>
+<tr class="memdesc:ae80ee6c0b67ee19b6bda93e94e05ae7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Can be dispatched up the component tree to notify parent about something add pass some event data without creating a hard link.  <br /></td></tr>
+<tr class="separator:ae80ee6c0b67ee19b6bda93e94e05ae7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2fdbe4aeef0d6025f1d1d5c23f852d0" id="r_ac2fdbe4aeef0d6025f1d1d5c23f852d0"><td class="memItemLeft" align="right" valign="top"><a id="ac2fdbe4aeef0d6025f1d1d5c23f852d0" name="ac2fdbe4aeef0d6025f1d1d5c23f852d0"></a>
+record&#160;</td><td class="memItemRight" valign="bottom"><b>CUIData</b> (string Name, object Data=null)</td></tr>
+<tr class="memdesc:ac2fdbe4aeef0d6025f1d1d5c23f852d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Can be dispatched down the component tree to pass some data to the children without creating a hard link. <br /></td></tr>
+<tr class="separator:ac2fdbe4aeef0d6025f1d1d5c23f852d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a63adb7acbadd61275a4fa171f781d459" name="a63adb7acbadd61275a4fa171f781d459"></a>
@@ -388,8 +396,8 @@ record&#160;</td><td class="memItemRight" valign="bottom"><b>CUIData</b> (string
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="aada5e995437d9c99a38882d830798b6c" name="aada5e995437d9c99a38882d830798b6c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aada5e995437d9c99a38882d830798b6c">&#9670;&#160;</a></span>CUICommand()</h2>
+<a id="ae80ee6c0b67ee19b6bda93e94e05ae7f" name="ae80ee6c0b67ee19b6bda93e94e05ae7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae80ee6c0b67ee19b6bda93e94e05ae7f">&#9670;&#160;</a></span>CUICommand()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -402,7 +410,7 @@ record&#160;</td><td class="memItemRight" valign="bottom"><b>CUIData</b> (string
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>data</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>&#160;)</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>Data</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">

@@ -19,7 +19,7 @@ frame["guh button"] = new CUIButton("Press me")
 
 CUI.Main.Append(frame);
 ```
-![Screenshot_1](https://github.com/user-attachments/assets/91791edd-5b3d-48b0-a6f4-46f60d86f95f)
+![Screenshot_7](https://github.com/user-attachments/assets/816f304d-5295-4551-a66d-dc3548829c93)
 
 Some documentation is [here](https://somerandomnoobkekeke.github.io/CrabUI/index.html)
 

@@ -375,6 +375,7 @@ namespace CrabUI
       {
         c.MousePressed = false;
         c.MouseOver = false;
+        c.InvokeOnMouseOff(CUI.Input);
       }
 
       foreach (CUIComponent c in MouseOnList)

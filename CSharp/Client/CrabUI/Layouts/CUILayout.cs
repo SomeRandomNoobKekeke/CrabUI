@@ -110,6 +110,7 @@ namespace CrabUI
       {
         if (!value) absoluteChanged = false;
         if (value && Host.Parent != null) Host.Parent.Layout.absoluteChanged = true;
+        //if (value && Host.Parent != null) Host.Parent.Layout.propagateAbsoluteChangedUp();
       }
     }
     protected bool decorChanged = true; public bool DecorChanged

@@ -69,7 +69,12 @@ namespace CrabUI
     /// <summary>
     /// Ghost components don't affect layout
     /// </summary>
-    [CUISerializable] public CUIBool2 Ghost { get; set; }
+    [CUISerializable]
+    public CUIBool2 Ghost
+    {
+      get => CUIProps.Ghost.Value;
+      set => CUIProps.Ghost.SetValue(value);
+    }
     /// <summary>
     /// Components are drawn in order of their ZIndex  
     /// Normally it's derived from component position in the tree, 

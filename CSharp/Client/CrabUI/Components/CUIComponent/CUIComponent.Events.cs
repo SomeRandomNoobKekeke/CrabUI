@@ -47,6 +47,8 @@ namespace CrabUI
     public Action<CUIInput> AddOnMouseMove { set { OnMouseMove += value; } }
     public event Action<CUIInput> OnMouseOn; internal void InvokeOnMouseOn(CUIInput e) => OnMouseOn?.Invoke(e);
     public Action<CUIInput> AddOnMouseOn { set { OnMouseOn += value; } }
+    public event Action<CUIInput> OnMouseOff; internal void InvokeOnMouseOff(CUIInput e) => OnMouseOff?.Invoke(e);
+    public Action<CUIInput> AddOnMouseOff { set { OnMouseOff += value; } }
     public event Action<CUIInput> OnClick; internal void InvokeOnClick(CUIInput e) => OnClick?.Invoke(e);
     public Action<CUIInput> AddOnClick { set { OnClick += value; } }
     public event Action<CUIInput> OnDClick; internal void InvokeOnDClick(CUIInput e) => OnDClick?.Invoke(e);
@@ -112,6 +114,17 @@ namespace CrabUI
     {
       get => RightResizeHandle.Visible;
       set => RightResizeHandle.Visible = value;
+    }
+
+    [CUISerializable]
+    public CUIBool2 ResizeDirection
+    {
+      get => RightResizeHandle.Direction;
+      set
+      {
+        LeftResizeHandle.Direction = value;
+        RightResizeHandle.Direction = value;
+      }
     }
 
     internal CUISwipeHandle SwipeHandle = new CUISwipeHandle();

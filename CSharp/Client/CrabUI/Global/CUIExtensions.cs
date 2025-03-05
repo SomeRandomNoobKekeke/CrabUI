@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Diagnostics;
@@ -179,6 +180,8 @@ namespace CrabUI
     {
       CUI.OnInit += () =>
       {
+        Stopwatch sw = Stopwatch.StartNew();
+
         Parse = new Dictionary<Type, MethodInfo>();
         CustomToString = new Dictionary<Type, MethodInfo>();
 
@@ -203,6 +206,8 @@ namespace CrabUI
         CustomToString[typeof(Vector2?)] = typeof(CUIExtensions).GetMethod("NullVector2ToString");
         CustomToString[typeof(GUIFont)] = typeof(CUIExtensions).GetMethod("GUIFontToString");
         CustomToString[typeof(Rectangle)] = typeof(CUIExtensions).GetMethod("RectangleToString");
+
+        CUIDebug.Log($"CUIExtensions.Initialize took {sw.ElapsedMilliseconds}ms");
       };
 
       CUI.OnDispose += () =>

@@ -24,6 +24,12 @@ namespace CrabUI
       Style = new CUIStyle();
     }
 
+    /// <summary>
+    /// Use it to e.g. update component color
+    /// </summary>
+    public event Action OnStyleApplied;
+    internal void InvokeOnStyleApplied() => OnStyleApplied?.Invoke();
+
     private void HandleStylePropChange(string key, string value)
     {
       CUIGlobalStyleResolver.OnComponentStylePropChanged(this, key);

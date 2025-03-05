@@ -23,6 +23,7 @@ namespace CrabUI
       AddedCommands.Add(new DebugConsole.Command("cuicreatepalette", "cuicreatepalette name frontcolor [backcolor]", CUICreatePalette_Command));
       AddedCommands.Add(new DebugConsole.Command("cuimg", "", CUIMG_Command));
       AddedCommands.Add(new DebugConsole.Command("cuidraworder", "", CUIDrawOrder_Command));
+      AddedCommands.Add(new DebugConsole.Command("cuiprinttree", "", CUIPrintTree_Command));
       AddedCommands.Add(new DebugConsole.Command("printsprites", "", PrintSprites_Command));
       AddedCommands.Add(new DebugConsole.Command("printkeys", "", PrintSprites_Command));
       AddedCommands.Add(new DebugConsole.Command("cuipalette", "load palette as primary", Palette_Command, () => new string[][] { CUIPalette.LoadedPalettes.Keys.ToArray() }));
@@ -59,6 +60,14 @@ namespace CrabUI
         CUI.Log(c);
       }
     }
+
+    public static void CUIPrintTree_Command(string[] args)
+    {
+      CUI.Main?.PrintTree();
+      CUI.TopMain?.PrintTree();
+    }
+
+
 
     public static void CUICreatePalette_Command(string[] args)
     {

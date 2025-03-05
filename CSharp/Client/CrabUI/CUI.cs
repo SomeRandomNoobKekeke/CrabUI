@@ -23,11 +23,9 @@ namespace CrabUI
   /// </summary>
   public partial class CUI
   {
-    /// <summary>
-    /// I need to init all reflction stuff at once, and not one by one when i touch it
-    /// </summary>
-    [CUIInternal]
-    static CUI() { InitStatic(); }
+    // bruh
+    //[CUIInternal]
+    //static CUI() { InitStatic(); }
 
     public static Vector2 GameScreenSize => new Vector2(GameMain.GraphicsWidth, GameMain.GraphicsHeight);
     public static Rectangle GameScreenRect => new Rectangle(0, 0, GameMain.GraphicsWidth, GameMain.GraphicsHeight);
@@ -108,6 +106,10 @@ namespace CrabUI
     /// This affects logging
     /// </summary>
     public static bool Debug;
+    /// <summary>
+    /// Will break the mod if it's compiled
+    /// </summary>
+    public static bool UseCursedPatches { get; set; } = false;
     public static Harmony harmony = new Harmony("crabui");
     public static Random Random = new Random();
 
@@ -166,6 +168,9 @@ namespace CrabUI
     {
       if (Instance == null)
       {
+        Stopwatch sw = Stopwatch.StartNew();
+
+        InitStatic();
         // this should init only static stuff that doesn't depend on instance
         OnInit?.Invoke();
 
@@ -174,18 +179,17 @@ namespace CrabUI
         GameMain.Instance.Window.TextInput += ReEmitWindowTextInput;
         GameMain.Instance.Window.KeyDown += ReEmitWindowKeyDown;
         //GameMain.Instance.Window.KeyUp += ReEmitWindowKeyUp;
+        CUIDebug.Log($"CUI.OnInit?.Invoke took {sw.ElapsedMilliseconds}ms");
 
+        sw.Restart();
         PatchAll();
+        CUIDebug.Log($"CUI.PatchAll took {sw.ElapsedMilliseconds}ms");
+
         AddCommands();
+
+        sw.Restart();
         Instance.LuaRegistrar.Register();
-
-        //CUIPalette.PaletteDemo();
-
-        //HACK this works, but i still think that i shouldn't make aby assumptions about
-        // file layout outside of CSharp folder, and i shouldn't store pngs in CSharp
-        // perhaps i should generate default textures at runtime
-        // or pack them with dll when plugin system settles
-        //Log(GetCallerFilePath());
+        CUIDebug.Log($"CUI.LuaRegistrar.Register took {sw.ElapsedMilliseconds}ms");
       }
 
       UserCount++;
@@ -209,7 +213,6 @@ namespace CrabUI
       {
         RemoveCommands();
         harmony.UnpatchAll(harmony.Id);
-
         TextureManager.Dispose();
         CUIDebugEventComponent.CapturedIDs.Clear();
         OnDispose?.Invoke();
@@ -227,6 +230,8 @@ namespace CrabUI
       //GameMain.Instance.Window.KeyUp -= ReEmitWindowKeyUp;
     }
 
+    //HACK Why it's set to run in static constructor?
+    // it runs perfectly fine in CUI.Initialize
     internal static void InitStatic()
     {
       CUIExtensions.InitStatic();

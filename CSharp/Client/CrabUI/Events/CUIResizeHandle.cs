@@ -28,6 +28,8 @@ namespace CrabUI
     public bool Grabbed;
     public bool Visible = false;
 
+    public CUIBool2 Direction { get; set; } = new CUIBool2(true, true);
+
     public CUIMouseEvent Trigger = CUIMouseEvent.Down;
 
     public bool ShouldStart(CUIInput input)
@@ -86,7 +88,8 @@ namespace CrabUI
 
       Vector2 newPos = TopLeft - CUIAnchor.PosIn(Host.Parent.Real, Host.ParentAnchor ?? Host.Anchor) + CUIAnchor.PosIn(new CUIRect(newSize), Host.Anchor);
 
-      Host.CUIProps.Absolute.SetValue(new CUINullRect(newPos, newSize));
+      if (Direction.X) Host.CUIProps.Absolute.SetValue(new CUINullRect(newPos.X, Host.Absolute.Top, newSize.X, Host.Absolute.Height));
+      if (Direction.Y) Host.CUIProps.Absolute.SetValue(new CUINullRect(Host.Absolute.Left, newPos.Y, Host.Absolute.Width, newSize.Y));
     }
     public void Update()
     {

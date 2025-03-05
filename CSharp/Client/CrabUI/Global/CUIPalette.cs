@@ -122,6 +122,7 @@ namespace CrabUI
 
     public static void Initialize()
     {
+      Stopwatch sw = Stopwatch.StartNew();
       if (CUI.PalettesPath == null) return;
 
       LoadedPalettes.Clear();
@@ -133,6 +134,8 @@ namespace CrabUI
       // Secondary = LoadedPalettes.GetValueOrDefault("purple");
       // Tertiary = LoadedPalettes.GetValueOrDefault("blue");
       // Quaternary = LoadedPalettes.GetValueOrDefault("cyan");
+
+      CUIDebug.Log($"CUIPalette.Initialize took {sw.ElapsedMilliseconds}ms");
     }
 
     public static void LoadPalettes()

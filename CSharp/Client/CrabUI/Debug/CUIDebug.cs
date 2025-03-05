@@ -24,8 +24,9 @@ namespace CrabUI
 #if !CUIDEBUG
     [Conditional("DONT")]
 #endif
-    public static void log(object msg, Color? cl = null)
+    public static void Log(object msg, Color? cl = null)
     {
+      if (!CUI.Debug) return;
       cl ??= Color.Yellow;
       LuaCsLogger.LogMessage($"{msg ?? "null"}", cl * 0.8f, cl);
     }
@@ -36,6 +37,7 @@ namespace CrabUI
 #endif
     public static void Info(object msg, Color? cl = null, [CallerFilePath] string source = "", [CallerLineNumber] int lineNumber = 0)
     {
+      if (!CUI.Debug) return;
       cl ??= Color.Cyan;
       var fi = new FileInfo(source);
 
@@ -48,6 +50,7 @@ namespace CrabUI
 #endif
     public static void Error(object msg, Color? cl = null, [CallerFilePath] string source = "", [CallerLineNumber] int lineNumber = 0)
     {
+      if (!CUI.Debug) return;
       cl ??= Color.Orange;
       var fi = new FileInfo(source);
 

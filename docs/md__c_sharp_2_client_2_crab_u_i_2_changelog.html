@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CrabUI: 0.2.3.0</title>
+<title>CrabUI: 0.2.4.0</title>
 <link rel="icon" href="BaroModder (small).png" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -86,10 +86,19 @@ $(function(){ initResizable(false); });
 </div><!-- top -->
 <div id="doc-content">
 <div><div class="header">
-  <div class="headertitle"><div class="title">0.2.3.0</div></div>
+  <div class="headertitle"><div class="title">0.2.4.0</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="autotoc_md0"></a></p>
+<p>"Fixed" cursed bug that made MainComponents become in GameMain.Update patch after multiple lobbies in compiled version But this "fix" seems to decrease update smoothness, so i might rethink later Set CUI.UseCursedPatches to true if you're not affraid</p>
+<p>Added more performance measurements, shortcutted dumb class scanning in CUILuaRegistrar that happened even if you didn't use lua</p>
+<p>Buttons now update their color only on events and not in draw cycle, added AutoUpdateColor to prevent this color change in case you want to control it manually (why?)</p>
+<p>Added confusing event InvokeOnMouseOff which is symmetrical to InvokeOnMouseOn but happens on previous MouseOn list, and it turned out to be essential to e.g. switch color when mouse leaves a button</p>
+<p>You can now limit resize directions with CUIComponent.ResizeDirection</p>
+<p>Fixed forsed size not reseting after removing a textblock</p>
+<p>Added cuiprinttree command along with cuidraworder</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+0.2.3.0</h1>
 <p>Made CUITextInput, CUITickBox and CUISlider use commands and consume data</p>
 <p>Added Gap to CUIVerticalList</p>
 <p>Made OnAnyCommand,OnAnyData,OnConsume events instead of delegates</p>
@@ -102,32 +111,32 @@ $(function(){ initResizable(false); });
 <p>Added more useless CUIPrefabs, i think they are too specific and need some redesign, perhaps i need to create some builder</p>
 <p>Added FloatRange alongside with IntRange</p>
 <p>fixed crash in KeyboardDispatcher_set_Subscriber_Replace in compiled mods</p>
-<h1><a class="anchor" id="autotoc_md1"></a>
+<h1><a class="anchor" id="autotoc_md2"></a>
 0.2.2.1</h1>
 <p>Minor stuff: multibutton dispatches the command, CUIPages resizes page to [0,0,1,1], maincomponent flatten tree is a bit more thread safe</p>
 <p>Added IRefreshable interface and CUIComponent.CascadeRefresh CascadeRefresh will recursivelly call Refresh on every child that implements IRefreshable</p>
-<h1><a class="anchor" id="autotoc_md2"></a>
+<h1><a class="anchor" id="autotoc_md3"></a>
 0.2.2.0</h1>
 <p>Added to <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a> </p><div class="fragment"><div class="line">using System.Runtime.CompilerServices;</div>
 <div class="line">[assembly: IgnoresAccessChecksTo(&quot;Barotrauma&quot;)]</div>
 <div class="line">[assembly: IgnoresAccessChecksTo(&quot;DedicatedServer&quot;)]</div>
 <div class="line">[assembly: IgnoresAccessChecksTo(&quot;BarotraumaCore&quot;)]</div>
 </div><!-- fragment --><p> So it could be compiled</p>
-<h3><a class="anchor" id="autotoc_md3"></a>
+<h3><a class="anchor" id="autotoc_md4"></a>
 Temporary solution to pathing:</h3>
 <p>Now mod won't automatially find its folders</p>
 <p>If you want to use lua you need to set CUI.ModDir to the mod folder path</p>
 <p>Also you need to place Assets folder with CUI stuff somewhere in your mod and set CUI.AssetsPath to it <br  />
  You can rename it, just set the path</p>
 <p>All this needs to be done before CUI.Initialize()</p>
-<h1><a class="anchor" id="autotoc_md4"></a>
+<h1><a class="anchor" id="autotoc_md5"></a>
 0.2.1.0</h1>
 <p>Dried tree building methods, added tests for them</p>
 <p>Added insert method along with append and prepend, unlike List.Insert it won't throw on "index out of bounds"</p>
-<h1><a class="anchor" id="autotoc_md5"></a>
+<h1><a class="anchor" id="autotoc_md6"></a>
 0.2.0.1</h1>
 <p>.nojekyll moment</p>
-<h1><a class="anchor" id="autotoc_md6"></a>
+<h1><a class="anchor" id="autotoc_md7"></a>
 0.2.0.0</h1>
 <p>Reworked CUIPalette, and CUICommand, check docs</p>
 <p>Reworked border, added separate borders for each side, border sprite, outline</p>
@@ -136,7 +145,7 @@ Temporary solution to pathing:</h3>
 <p>Added CUIPresets with... presets. Which you can use to reduce boilerplate code</p>
 <p>Made more stuff parsable and serializble</p>
 <p>And tons of other things i'm too lazy to write down, compare commits if you're curious</p>
-<h1><a class="anchor" id="autotoc_md7"></a>
+<h1><a class="anchor" id="autotoc_md8"></a>
 0.1.0.0</h1>
 <p>You can now use relative paths for sprite textures <br  />
  You can set CUI.PGNAssets to the folder with your assets, CUI will also search for textures there</p>
@@ -147,7 +156,7 @@ Temporary solution to pathing:</h3>
 <p>Added CrossRelative prop, it's like Relative but values are relative to the oposite value, e.g. CrossRelative.Width = Host.Real.Height, convinient for making square things</p>
 <p>Reworked slider component</p>
 <p>DragHandle can now DragRelative to the parent</p>
-<h3><a class="anchor" id="autotoc_md8"></a>
+<h3><a class="anchor" id="autotoc_md9"></a>
 Serialization</h3>
 <p>Added BreakSerialization prop, if true serrialization will stop on this component</p>
 <p>Added LoadSelfFromFile, SaveToTheSamePath methods</p>
@@ -155,7 +164,7 @@ Serialization</h3>
 <p>Added SaveAfterLoad prop, it's mostly for serialization debugging</p>
 <p>Added more Custom ToString and parsed methods to CUIExtensions, Added native enum serialization, Vector2 and Rectangle is now serialized into [ x, y ], be carefull</p>
 <p>Sprite is now fully serializable</p>
-<h1><a class="anchor" id="autotoc_md9"></a>
+<h1><a class="anchor" id="autotoc_md10"></a>
 0.0.5.1</h1>
 <p>Added "[CUISerializable] public string Command { get; set; }"" to CUIButton so you could define command that is called on click in xml</p>
 <p>Splitted MasterColor into MasterColor and MasterColorOpaque</p>
@@ -172,15 +181,15 @@ Serialization</h3>
 <p>Added sprites to resize handles, and gradient sprite that's not used yet</p>
 <p>Added <code>public SpriteEffects Effects;</code> to CUISprite, it controls texture flipping</p>
 <p>More params in CUITextureManager.GetSprite</p>
-<h1><a class="anchor" id="autotoc_md10"></a>
+<h1><a class="anchor" id="autotoc_md11"></a>
 0.0.5.0</h1>
 <p>Added Styles</p>
 <p>Every component has a Style and every Type has a DefaultStyle</p>
 <p>Styles are observable dicts with pairs { "prop name", "prop value" } and can be used to assign any parsable string to any prop or reference some value from CUIPalette</p>
-<h1><a class="anchor" id="autotoc_md11"></a>
+<h1><a class="anchor" id="autotoc_md12"></a>
 0.0.4.0</h1>
 <p>Added CUICanvas.Render(Action&lt; SpriteBatch &gt; renderFunc) method that allows you to render anything you want onto the canvas texture</p>
-<h1><a class="anchor" id="autotoc_md12"></a>
+<h1><a class="anchor" id="autotoc_md13"></a>
 0.0.3.0</h1>
 <p>Added Changelog.md :BaroDev:</p>
 <p>Added CUI.TopMain, it's the second CUIMainComponent which exists above vanilla GUI</p>

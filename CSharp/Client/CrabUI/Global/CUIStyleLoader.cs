@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Diagnostics;
 
 using Barotrauma;
 using Microsoft.Xna.Framework;
@@ -26,12 +27,13 @@ namespace CrabUI
 
     public static void LoadDefaultStyles()
     {
+      Stopwatch sw = Stopwatch.StartNew();
+
       if (CUI.AssetsPath == null) return;
       if (!File.Exists(DefaultStylesPath)) return;
 
 
       Dictionary<Type, CUIStyle> DefaultStyles = new();
-
 
       XDocument xdoc = XDocument.Load(DefaultStylesPath);
       XElement root = xdoc.Element("DefaultStyles");
@@ -46,15 +48,18 @@ namespace CrabUI
 
         DefaultStyles[componentType] = CUIStyle.FromXML(componentStyle);
       }
+      sw.Stop();
+      CUIDebug.Log($"Parsing default styles took {sw.ElapsedMilliseconds}ms");
+      sw.Restart();
 
-      Stopwatch sw = new Stopwatch();
-      sw.Start();
+      // It's heavy because CUITypeMetaData.Get creates defaults here
       foreach (Type T in DefaultStyles.Keys)
       {
         CUITypeMetaData.Get(T).DefaultStyle = DefaultStyles[T];
       }
+
       sw.Stop();
-      //CUI.Log(sw.ElapsedMilliseconds);
+      CUIDebug.Log($"Applying default styles took {sw.ElapsedMilliseconds}ms");
     }
   }
 

@@ -47,8 +47,10 @@ namespace CrabUI
     {
       CUI.OnInit += () =>
       {
+        Stopwatch sw = Stopwatch.StartNew();
         FindCUITypes();
         FormCUITypeTree();
+        CUIDebug.Log($"CUIReflection.Initialize took {sw.ElapsedMilliseconds}ms");
       };
       CUI.OnDispose += () =>
       {

@@ -1,3 +1,22 @@
+## 0.2.4.0
+
+"Fixed" cursed bug that made MainComponents become in GameMain.Update patch after multiple lobbies in compiled version
+But this "fix" seems to decrease update smoothness, so i might rethink later
+Set CUI.UseCursedPatches to true if you're not affraid
+
+Added more performance measurements, shortcutted dumb class scanning in CUILuaRegistrar that happened even if you didn't use lua
+
+Buttons now update their color only on events and not in draw cycle, added AutoUpdateColor to prevent this color change in case you want to control it manually (why?)
+
+Added confusing event InvokeOnMouseOff which is symmetrical to InvokeOnMouseOn but happens on previous MouseOn list, and it turned out to be essential to e.g. switch color when mouse leaves a button
+
+You can now limit resize directions with CUIComponent.ResizeDirection
+
+Fixed forsed size not reseting after removing a textblock
+
+Added cuiprinttree command along with cuidraworder
+
+
 ## 0.2.3.0
 
 Made CUITextInput, CUITickBox and CUISlider use commands and consume data

@@ -23,6 +23,7 @@ namespace CrabUI
     [CUISerializable] public Color InactiveColor { get; set; }
     [CUISerializable] public Color MouseOverColor { get; set; }
     [CUISerializable] public Color MousePressedColor { get; set; }
+    [CUISerializable] public bool AutoUpdateColor { get; set; } = true;
 
     /// <summary>
     /// Convenient prop to set all colors at once
@@ -34,6 +35,7 @@ namespace CrabUI
         InactiveColor = value.Multiply(0.7f);
         MouseOverColor = value.Multiply(0.9f);
         MousePressedColor = value;
+        DetermineColor();
       }
     }
 
@@ -44,6 +46,7 @@ namespace CrabUI
         InactiveColor = new Color((int)(value.R * 0.7f), (int)(value.G * 0.7f), (int)(value.B * 0.7f), value.A);
         MouseOverColor = new Color((int)(value.R * 0.9f), (int)(value.G * 0.9f), (int)(value.B * 0.9f), value.A);
         MousePressedColor = value;
+        DetermineColor();
       }
     }
 
@@ -57,8 +60,9 @@ namespace CrabUI
       set => CUIProps.BackgroundColor.SetValue(value);
     }
 
-    public override void Draw(SpriteBatch spriteBatch)
+    public void DetermineColor()
     {
+      if (!AutoUpdateColor) return;
       if (Disabled)
       {
         BackgroundColor = DisabledColor;
@@ -69,6 +73,11 @@ namespace CrabUI
         if (MouseOver) BackgroundColor = MouseOverColor;
         if (MousePressed) BackgroundColor = MousePressedColor;
       }
+    }
+
+    public override void Draw(SpriteBatch spriteBatch)
+    {
+      //DetermineColor();
       base.Draw(spriteBatch);
     }
     public CUIButton() : base()
@@ -89,6 +98,11 @@ namespace CrabUI
           }
         }
       };
+
+      OnMouseOff += (e) => DetermineColor();
+      OnMouseOn += (e) => DetermineColor();
+      OnStyleApplied += DetermineColor;
+      DetermineColor();
     }
 
     public CUIButton(string text) : this()

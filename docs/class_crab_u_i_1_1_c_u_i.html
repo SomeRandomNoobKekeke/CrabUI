@@ -153,6 +153,8 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>ReEmitWindowKe
 <tr class="separator:af1ade28bd21b654aac13af1bfd548280"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ac5e10e2a8dafe6b304de7c0d427815" id="r_a5ac5e10e2a8dafe6b304de7c0d427815"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ac5e10e2a8dafe6b304de7c0d427815">CUIDrawOrder_Command</a> (string[] args)</td></tr>
 <tr class="separator:a5ac5e10e2a8dafe6b304de7c0d427815"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e991cac9c46f5d4ef6da91888377ba5" id="r_a0e991cac9c46f5d4ef6da91888377ba5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e991cac9c46f5d4ef6da91888377ba5">CUIPrintTree_Command</a> (string[] args)</td></tr>
+<tr class="separator:a0e991cac9c46f5d4ef6da91888377ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3dfd223a13656539c3e8fb3801badce0" id="r_a3dfd223a13656539c3e8fb3801badce0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3dfd223a13656539c3e8fb3801badce0">CUICreatePalette_Command</a> (string[] args)</td></tr>
 <tr class="separator:a3dfd223a13656539c3e8fb3801badce0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a550e040449585b9fdbafa02452090992" id="r_a550e040449585b9fdbafa02452090992"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a550e040449585b9fdbafa02452090992">CUICreatePaletteSet_Command</a> (string[] args)</td></tr>
@@ -233,6 +235,9 @@ Properties</h2></td></tr>
 <tr class="separator:ac0b69a613489f61c35b5529432f51929"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83a1fc90a9f5d4f8473237bcca4a617e" id="r_a83a1fc90a9f5d4f8473237bcca4a617e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a83a1fc90a9f5d4f8473237bcca4a617e">FocusedComponent</a><code> [get, set]</code></td></tr>
 <tr class="separator:a83a1fc90a9f5d4f8473237bcca4a617e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3004d84ad742213352fb8e90f60e970" id="r_ab3004d84ad742213352fb8e90f60e970"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab3004d84ad742213352fb8e90f60e970">UseCursedPatches</a> = false<code> [get, set]</code></td></tr>
+<tr class="memdesc:ab3004d84ad742213352fb8e90f60e970"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will break the mod if it's compiled.  <br /></td></tr>
+<tr class="separator:ab3004d84ad742213352fb8e90f60e970"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a680f0121642831be583d8648425a15" id="r_a7a680f0121642831be583d8648425a15"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a680f0121642831be583d8648425a15">InputBlockingMenuOpen</a><code> [get]</code></td></tr>
 <tr class="separator:a7a680f0121642831be583d8648425a15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a900fcff390a19832aa254d5bb5efa998" id="r_a900fcff390a19832aa254d5bb5efa998"><td class="memItemLeft" align="right" valign="top">static List&lt; Func&lt; bool &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a900fcff390a19832aa254d5bb5efa998">IsBlockingPredicates</a><code> [get]</code></td></tr>
@@ -359,14 +364,14 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_commands_8cs_source.html#l00063">63</a> of file <a class="el" href="_c_u_i_commands_8cs_source.html">CUICommands.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   64</span>    {</div>
-<div class="line"><span class="lineno">   65</span>      <span class="keywordtype">string</span> name = args.ElementAtOrDefault(0);</div>
-<div class="line"><span class="lineno">   66</span>      Color colorA = CUIExtensions.ParseColor((args.ElementAtOrDefault(1) ?? <span class="stringliteral">&quot;white&quot;</span>));</div>
-<div class="line"><span class="lineno">   67</span>      Color colorB = CUIExtensions.ParseColor((args.ElementAtOrDefault(2) ?? <span class="stringliteral">&quot;black&quot;</span>));</div>
-<div class="line"><span class="lineno">   68</span>      CUIPalette palette = CUIPalette.CreatePaletteFromColors(name, colorA, colorB);</div>
-<div class="line"><span class="lineno">   69</span>      CUIPalette.Primary = palette;</div>
-<div class="line"><span class="lineno">   70</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_commands_8cs_source.html#l00072">72</a> of file <a class="el" href="_c_u_i_commands_8cs_source.html">CUICommands.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   73</span>    {</div>
+<div class="line"><span class="lineno">   74</span>      <span class="keywordtype">string</span> name = args.ElementAtOrDefault(0);</div>
+<div class="line"><span class="lineno">   75</span>      Color colorA = CUIExtensions.ParseColor((args.ElementAtOrDefault(1) ?? <span class="stringliteral">&quot;white&quot;</span>));</div>
+<div class="line"><span class="lineno">   76</span>      Color colorB = CUIExtensions.ParseColor((args.ElementAtOrDefault(2) ?? <span class="stringliteral">&quot;black&quot;</span>));</div>
+<div class="line"><span class="lineno">   77</span>      CUIPalette palette = CUIPalette.CreatePaletteFromColors(name, colorA, colorB);</div>
+<div class="line"><span class="lineno">   78</span>      CUIPalette.Primary = palette;</div>
+<div class="line"><span class="lineno">   79</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -393,16 +398,16 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_commands_8cs_source.html#l00072">72</a> of file <a class="el" href="_c_u_i_commands_8cs_source.html">CUICommands.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   73</span>    {</div>
-<div class="line"><span class="lineno">   74</span>      CUIPalette.SaveSet(</div>
-<div class="line"><span class="lineno">   75</span>        args.ElementAtOrDefault(0),</div>
-<div class="line"><span class="lineno">   76</span>        args.ElementAtOrDefault(1),</div>
-<div class="line"><span class="lineno">   77</span>        args.ElementAtOrDefault(2),</div>
-<div class="line"><span class="lineno">   78</span>        args.ElementAtOrDefault(3),</div>
-<div class="line"><span class="lineno">   79</span>        args.ElementAtOrDefault(4)</div>
-<div class="line"><span class="lineno">   80</span>      );</div>
-<div class="line"><span class="lineno">   81</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_commands_8cs_source.html#l00081">81</a> of file <a class="el" href="_c_u_i_commands_8cs_source.html">CUICommands.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   82</span>    {</div>
+<div class="line"><span class="lineno">   83</span>      CUIPalette.SaveSet(</div>
+<div class="line"><span class="lineno">   84</span>        args.ElementAtOrDefault(0),</div>
+<div class="line"><span class="lineno">   85</span>        args.ElementAtOrDefault(1),</div>
+<div class="line"><span class="lineno">   86</span>        args.ElementAtOrDefault(2),</div>
+<div class="line"><span class="lineno">   87</span>        args.ElementAtOrDefault(3),</div>
+<div class="line"><span class="lineno">   88</span>        args.ElementAtOrDefault(4)</div>
+<div class="line"><span class="lineno">   89</span>      );</div>
+<div class="line"><span class="lineno">   90</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -429,17 +434,17 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_commands_8cs_source.html#l00043">43</a> of file <a class="el" href="_c_u_i_commands_8cs_source.html">CUICommands.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   44</span>    {</div>
-<div class="line"><span class="lineno">   45</span>      <span class="keywordflow">if</span> (CUIDebugWindow.Main == <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">   46</span>      {</div>
-<div class="line"><span class="lineno">   47</span>        CUIDebugWindow.Open();</div>
-<div class="line"><span class="lineno">   48</span>      }</div>
-<div class="line"><span class="lineno">   49</span>      <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   50</span>      {</div>
-<div class="line"><span class="lineno">   51</span>        CUIDebugWindow.Close();</div>
-<div class="line"><span class="lineno">   52</span>      }</div>
-<div class="line"><span class="lineno">   53</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_commands_8cs_source.html#l00044">44</a> of file <a class="el" href="_c_u_i_commands_8cs_source.html">CUICommands.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   45</span>    {</div>
+<div class="line"><span class="lineno">   46</span>      <span class="keywordflow">if</span> (CUIDebugWindow.Main == <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   47</span>      {</div>
+<div class="line"><span class="lineno">   48</span>        CUIDebugWindow.Open();</div>
+<div class="line"><span class="lineno">   49</span>      }</div>
+<div class="line"><span class="lineno">   50</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   51</span>      {</div>
+<div class="line"><span class="lineno">   52</span>        CUIDebugWindow.Close();</div>
+<div class="line"><span class="lineno">   53</span>      }</div>
+<div class="line"><span class="lineno">   54</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -466,13 +471,13 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_commands_8cs_source.html#l00055">55</a> of file <a class="el" href="_c_u_i_commands_8cs_source.html">CUICommands.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   56</span>    {</div>
-<div class="line"><span class="lineno">   57</span>      <span class="keywordflow">foreach</span> (CUIComponent c <span class="keywordflow">in</span> CUI.Main.Flat)</div>
-<div class="line"><span class="lineno">   58</span>      {</div>
-<div class="line"><span class="lineno">   59</span>        CUI.Log(c);</div>
-<div class="line"><span class="lineno">   60</span>      }</div>
-<div class="line"><span class="lineno">   61</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_commands_8cs_source.html#l00056">56</a> of file <a class="el" href="_c_u_i_commands_8cs_source.html">CUICommands.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   57</span>    {</div>
+<div class="line"><span class="lineno">   58</span>      <span class="keywordflow">foreach</span> (CUIComponent c <span class="keywordflow">in</span> CUI.Main.Flat)</div>
+<div class="line"><span class="lineno">   59</span>      {</div>
+<div class="line"><span class="lineno">   60</span>        CUI.Log(c);</div>
+<div class="line"><span class="lineno">   61</span>      }</div>
+<div class="line"><span class="lineno">   62</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -499,10 +504,41 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_commands_8cs_source.html#l00083">83</a> of file <a class="el" href="_c_u_i_commands_8cs_source.html">CUICommands.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   84</span>    {</div>
-<div class="line"><span class="lineno">   85</span>      CUIPalette.LoadSet(Path.Combine(CUIPalette.PaletteSetsPath, args.ElementAtOrDefault(0)));</div>
-<div class="line"><span class="lineno">   86</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_commands_8cs_source.html#l00092">92</a> of file <a class="el" href="_c_u_i_commands_8cs_source.html">CUICommands.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   93</span>    {</div>
+<div class="line"><span class="lineno">   94</span>      CUIPalette.LoadSet(Path.Combine(CUIPalette.PaletteSetsPath, args.ElementAtOrDefault(0)));</div>
+<div class="line"><span class="lineno">   95</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0e991cac9c46f5d4ef6da91888377ba5" name="a0e991cac9c46f5d4ef6da91888377ba5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e991cac9c46f5d4ef6da91888377ba5">&#9670;&#160;</a></span>CUIPrintTree_Command()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void CrabUI.CUI.CUIPrintTree_Command </td>
+          <td>(</td>
+          <td class="paramtype">string[]</td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_commands_8cs_source.html#l00064">64</a> of file <a class="el" href="_c_u_i_commands_8cs_source.html">CUICommands.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   65</span>    {</div>
+<div class="line"><span class="lineno">   66</span>      CUI.Main?.PrintTree();</div>
+<div class="line"><span class="lineno">   67</span>      CUI.TopMain?.PrintTree();</div>
+<div class="line"><span class="lineno">   68</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -531,35 +567,34 @@ Events</h2></td></tr>
 
 <p>Should be called in IAssemblyPlugin.Dispose. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00204">204</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  205</span>    {</div>
-<div class="line"><span class="lineno">  206</span>      <a class="code hl_variable" href="#a1b53d62d642c767e10ee9044d458ff50">UserCount</a>--;</div>
-<div class="line"><span class="lineno">  207</span> </div>
-<div class="line"><span class="lineno">  208</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1b53d62d642c767e10ee9044d458ff50">UserCount</a> &lt;= 0)</div>
-<div class="line"><span class="lineno">  209</span>      {</div>
-<div class="line"><span class="lineno">  210</span>        RemoveCommands();</div>
-<div class="line"><span class="lineno">  211</span>        harmony.UnpatchAll(harmony.Id);</div>
-<div class="line"><span class="lineno">  212</span> </div>
-<div class="line"><span class="lineno">  213</span>        <a class="code hl_variable" href="#a35714b44c421730281bb8f7d1814f226">TextureManager</a>.Dispose();</div>
-<div class="line"><span class="lineno">  214</span>        CUIDebugEventComponent.CapturedIDs.Clear();</div>
-<div class="line"><span class="lineno">  215</span>        <a class="code hl_event" href="#a094cb2f85756ccf7fdf601df178d2dcb">OnDispose</a>?.Invoke();</div>
-<div class="line"><span class="lineno">  216</span> </div>
-<div class="line"><span class="lineno">  217</span>        <a class="code hl_variable" href="#aba21eb0f5f823b3c2c876dc31a3b4a43">Instance</a>.isBlockingPredicates.Clear();</div>
-<div class="line"><span class="lineno">  218</span> </div>
-<div class="line"><span class="lineno">  219</span>        <a class="code hl_variable" href="#aba21eb0f5f823b3c2c876dc31a3b4a43">Instance</a>.LuaRegistrar.Deregister();</div>
-<div class="line"><span class="lineno">  220</span> </div>
-<div class="line"><span class="lineno">  221</span>        <a class="code hl_variable" href="#aba21eb0f5f823b3c2c876dc31a3b4a43">Instance</a> = <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  222</span>        <a class="code hl_variable" href="#a1b53d62d642c767e10ee9044d458ff50">UserCount</a> = 0;</div>
-<div class="line"><span class="lineno">  223</span>      }</div>
-<div class="line"><span class="lineno">  224</span> </div>
-<div class="line"><span class="lineno">  225</span>      GameMain.Instance.Window.TextInput -= ReEmitWindowTextInput;</div>
-<div class="line"><span class="lineno">  226</span>      GameMain.Instance.Window.KeyDown -= ReEmitWindowKeyDown;</div>
-<div class="line"><span class="lineno">  227</span>      <span class="comment">//GameMain.Instance.Window.KeyUp -= ReEmitWindowKeyUp;</span></div>
-<div class="line"><span class="lineno">  228</span>    }</div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a094cb2f85756ccf7fdf601df178d2dcb"><div class="ttname"><a href="#a094cb2f85756ccf7fdf601df178d2dcb">CrabUI.CUI.OnDispose</a></div><div class="ttdeci">static Action OnDispose</div><div class="ttdoc">Called on last Dispose.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00121">CUI.cs:121</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a1b53d62d642c767e10ee9044d458ff50"><div class="ttname"><a href="#a1b53d62d642c767e10ee9044d458ff50">CrabUI.CUI.UserCount</a></div><div class="ttdeci">static int UserCount</div><div class="ttdoc">In theory multiple mods could use same CUI instance, i clean it up when UserCount drops to 0.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00144">CUI.cs:144</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a35714b44c421730281bb8f7d1814f226"><div class="ttname"><a href="#a35714b44c421730281bb8f7d1814f226">CrabUI.CUI.TextureManager</a></div><div class="ttdeci">static CUITextureManager TextureManager</div><div class="ttdoc">Safe texture manager.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00094">CUI.cs:94</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_aba21eb0f5f823b3c2c876dc31a3b4a43"><div class="ttname"><a href="#aba21eb0f5f823b3c2c876dc31a3b4a43">CrabUI.CUI.Instance</a></div><div class="ttdeci">static CUI Instance</div><div class="ttdoc">A singleton.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00076">CUI.cs:76</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00208">208</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  209</span>    {</div>
+<div class="line"><span class="lineno">  210</span>      <a class="code hl_variable" href="#a1b53d62d642c767e10ee9044d458ff50">UserCount</a>--;</div>
+<div class="line"><span class="lineno">  211</span> </div>
+<div class="line"><span class="lineno">  212</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1b53d62d642c767e10ee9044d458ff50">UserCount</a> &lt;= 0)</div>
+<div class="line"><span class="lineno">  213</span>      {</div>
+<div class="line"><span class="lineno">  214</span>        RemoveCommands();</div>
+<div class="line"><span class="lineno">  215</span>        harmony.UnpatchAll(harmony.Id);</div>
+<div class="line"><span class="lineno">  216</span>        <a class="code hl_variable" href="#a35714b44c421730281bb8f7d1814f226">TextureManager</a>.Dispose();</div>
+<div class="line"><span class="lineno">  217</span>        CUIDebugEventComponent.CapturedIDs.Clear();</div>
+<div class="line"><span class="lineno">  218</span>        <a class="code hl_event" href="#a094cb2f85756ccf7fdf601df178d2dcb">OnDispose</a>?.Invoke();</div>
+<div class="line"><span class="lineno">  219</span> </div>
+<div class="line"><span class="lineno">  220</span>        <a class="code hl_variable" href="#aba21eb0f5f823b3c2c876dc31a3b4a43">Instance</a>.isBlockingPredicates.Clear();</div>
+<div class="line"><span class="lineno">  221</span> </div>
+<div class="line"><span class="lineno">  222</span>        <a class="code hl_variable" href="#aba21eb0f5f823b3c2c876dc31a3b4a43">Instance</a>.LuaRegistrar.Deregister();</div>
+<div class="line"><span class="lineno">  223</span> </div>
+<div class="line"><span class="lineno">  224</span>        <a class="code hl_variable" href="#aba21eb0f5f823b3c2c876dc31a3b4a43">Instance</a> = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  225</span>        <a class="code hl_variable" href="#a1b53d62d642c767e10ee9044d458ff50">UserCount</a> = 0;</div>
+<div class="line"><span class="lineno">  226</span>      }</div>
+<div class="line"><span class="lineno">  227</span> </div>
+<div class="line"><span class="lineno">  228</span>      GameMain.Instance.Window.TextInput -= ReEmitWindowTextInput;</div>
+<div class="line"><span class="lineno">  229</span>      GameMain.Instance.Window.KeyDown -= ReEmitWindowKeyDown;</div>
+<div class="line"><span class="lineno">  230</span>      <span class="comment">//GameMain.Instance.Window.KeyUp -= ReEmitWindowKeyUp;</span></div>
+<div class="line"><span class="lineno">  231</span>    }</div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a094cb2f85756ccf7fdf601df178d2dcb"><div class="ttname"><a href="#a094cb2f85756ccf7fdf601df178d2dcb">CrabUI.CUI.OnDispose</a></div><div class="ttdeci">static Action OnDispose</div><div class="ttdoc">Called on last Dispose.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00123">CUI.cs:123</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a1b53d62d642c767e10ee9044d458ff50"><div class="ttname"><a href="#a1b53d62d642c767e10ee9044d458ff50">CrabUI.CUI.UserCount</a></div><div class="ttdeci">static int UserCount</div><div class="ttdoc">In theory multiple mods could use same CUI instance, i clean it up when UserCount drops to 0.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00146">CUI.cs:146</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a35714b44c421730281bb8f7d1814f226"><div class="ttname"><a href="#a35714b44c421730281bb8f7d1814f226">CrabUI.CUI.TextureManager</a></div><div class="ttdeci">static CUITextureManager TextureManager</div><div class="ttdoc">Safe texture manager.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00092">CUI.cs:92</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_aba21eb0f5f823b3c2c876dc31a3b4a43"><div class="ttname"><a href="#aba21eb0f5f823b3c2c876dc31a3b4a43">CrabUI.CUI.Instance</a></div><div class="ttdeci">static CUI Instance</div><div class="ttdoc">A singleton.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00074">CUI.cs:74</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -841,7 +876,7 @@ Events</h2></td></tr>
 <div class="line"><span class="lineno">   98</span>        <a class="code hl_function" href="#aa0ce4751fde5325adf2675c44a320b73">Log</a>(msg, Color.Orange);</div>
 <div class="line"><span class="lineno">   99</span>      }</div>
 <div class="line"><span class="lineno">  100</span>    }</div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a1c6aff01098e74d01c9d84b833860c22"><div class="ttname"><a href="#a1c6aff01098e74d01c9d84b833860c22">CrabUI.CUI.Debug</a></div><div class="ttdeci">static bool Debug</div><div class="ttdoc">This affects logging.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00110">CUI.cs:110</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a1c6aff01098e74d01c9d84b833860c22"><div class="ttname"><a href="#a1c6aff01098e74d01c9d84b833860c22">CrabUI.CUI.Debug</a></div><div class="ttdeci">static bool Debug</div><div class="ttdoc">This affects logging.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00108">CUI.cs:108</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_aa0ce4751fde5325adf2675c44a320b73"><div class="ttname"><a href="#aa0ce4751fde5325adf2675c44a320b73">CrabUI.CUI.Log</a></div><div class="ttdeci">static void Log(object msg, Color? color=null, [CallerFilePath] string source=&quot;&quot;, [CallerLineNumber] int lineNumber=0)</div><div class="ttdoc">Prints a message to console.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_01_logging_8cs_source.html#l00044">CUI Logging.cs:44</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -903,10 +938,10 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_01patches_8cs_source.html#l00068">68</a> of file <a class="el" href="_c_u_i_01patches_8cs_source.html">CUI patches.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   69</span>    {</div>
-<div class="line"><span class="lineno">   70</span>      __result = __result || CUI.InputBlockingMenuOpen;</div>
-<div class="line"><span class="lineno">   71</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_01patches_8cs_source.html#l00081">81</a> of file <a class="el" href="_c_u_i_01patches_8cs_source.html">CUI patches.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   82</span>    {</div>
+<div class="line"><span class="lineno">   83</span>      __result = __result || CUI.InputBlockingMenuOpen;</div>
+<div class="line"><span class="lineno">   84</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -933,31 +968,31 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_01patches_8cs_source.html#l00073">73</a> of file <a class="el" href="_c_u_i_01patches_8cs_source.html">CUI patches.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   74</span>    {</div>
-<div class="line"><span class="lineno">   75</span>      <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">   76</span>      {</div>
-<div class="line"><span class="lineno">   77</span>        <span class="keywordflow">if</span> (GUI.PauseMenu != <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">   78</span>        {</div>
-<div class="line"><span class="lineno">   79</span>          GUIFrame frame = GUI.PauseMenu;</div>
-<div class="line"><span class="lineno">   80</span>          GUIComponent pauseMenuInner = frame.GetChild(1);</div>
-<div class="line"><span class="lineno">   81</span>          GUIComponent list = frame.GetChild(1).GetChild(0);</div>
-<div class="line"><span class="lineno">   82</span>          GUIButton resumeButton = (GUIButton)list.GetChild(0);</div>
-<div class="line"><span class="lineno">   83</span> </div>
-<div class="line"><span class="lineno">   84</span>          GUIButton.OnClickedHandler oldHandler = resumeButton.OnClicked;</div>
-<div class="line"><span class="lineno">   85</span> </div>
-<div class="line"><span class="lineno">   86</span>          resumeButton.OnClicked = (GUIButton button, <span class="keywordtype">object</span> obj) =&gt;</div>
-<div class="line"><span class="lineno">   87</span>          {</div>
-<div class="line"><span class="lineno">   88</span>            <span class="keywordtype">bool</span> guh = oldHandler(button, obj);</div>
-<div class="line"><span class="lineno">   89</span>            CUI.InvokeOnPauseMenuToggled();</div>
-<div class="line"><span class="lineno">   90</span>            <span class="keywordflow">return</span> guh;</div>
-<div class="line"><span class="lineno">   91</span>          };</div>
-<div class="line"><span class="lineno">   92</span>        }</div>
-<div class="line"><span class="lineno">   93</span>      }</div>
-<div class="line"><span class="lineno">   94</span>      <span class="keywordflow">catch</span> (Exception e) { CUI.Warning(e); }</div>
-<div class="line"><span class="lineno">   95</span> </div>
-<div class="line"><span class="lineno">   96</span>      CUI.InvokeOnPauseMenuToggled();</div>
-<div class="line"><span class="lineno">   97</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_01patches_8cs_source.html#l00086">86</a> of file <a class="el" href="_c_u_i_01patches_8cs_source.html">CUI patches.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   87</span>    {</div>
+<div class="line"><span class="lineno">   88</span>      <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">   89</span>      {</div>
+<div class="line"><span class="lineno">   90</span>        <span class="keywordflow">if</span> (GUI.PauseMenu != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   91</span>        {</div>
+<div class="line"><span class="lineno">   92</span>          GUIFrame frame = GUI.PauseMenu;</div>
+<div class="line"><span class="lineno">   93</span>          GUIComponent pauseMenuInner = frame.GetChild(1);</div>
+<div class="line"><span class="lineno">   94</span>          GUIComponent list = frame.GetChild(1).GetChild(0);</div>
+<div class="line"><span class="lineno">   95</span>          GUIButton resumeButton = (GUIButton)list.GetChild(0);</div>
+<div class="line"><span class="lineno">   96</span> </div>
+<div class="line"><span class="lineno">   97</span>          GUIButton.OnClickedHandler oldHandler = resumeButton.OnClicked;</div>
+<div class="line"><span class="lineno">   98</span> </div>
+<div class="line"><span class="lineno">   99</span>          resumeButton.OnClicked = (GUIButton button, <span class="keywordtype">object</span> obj) =&gt;</div>
+<div class="line"><span class="lineno">  100</span>          {</div>
+<div class="line"><span class="lineno">  101</span>            <span class="keywordtype">bool</span> guh = oldHandler(button, obj);</div>
+<div class="line"><span class="lineno">  102</span>            CUI.InvokeOnPauseMenuToggled();</div>
+<div class="line"><span class="lineno">  103</span>            <span class="keywordflow">return</span> guh;</div>
+<div class="line"><span class="lineno">  104</span>          };</div>
+<div class="line"><span class="lineno">  105</span>        }</div>
+<div class="line"><span class="lineno">  106</span>      }</div>
+<div class="line"><span class="lineno">  107</span>      <span class="keywordflow">catch</span> (Exception e) { CUI.Warning(e); }</div>
+<div class="line"><span class="lineno">  108</span> </div>
+<div class="line"><span class="lineno">  109</span>      CUI.InvokeOnPauseMenuToggled();</div>
+<div class="line"><span class="lineno">  110</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1039,35 +1074,37 @@ Events</h2></td></tr>
 
 <p>Should be called in IAssemblyPlugin.Initialize. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00165">165</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  166</span>    {</div>
-<div class="line"><span class="lineno">  167</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aba21eb0f5f823b3c2c876dc31a3b4a43">Instance</a> == <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">  168</span>      {</div>
-<div class="line"><span class="lineno">  169</span>        <span class="comment">// this should init only static stuff that doesn&#39;t depend on instance</span></div>
-<div class="line"><span class="lineno">  170</span>        <a class="code hl_event" href="#a29fdc0441733f6fde0d3bc29a458078c">OnInit</a>?.Invoke();</div>
-<div class="line"><span class="lineno">  171</span> </div>
-<div class="line"><span class="lineno">  172</span>        <a class="code hl_variable" href="#aba21eb0f5f823b3c2c876dc31a3b4a43">Instance</a> = <span class="keyword">new</span> CUI();</div>
-<div class="line"><span class="lineno">  173</span> </div>
-<div class="line"><span class="lineno">  174</span>        GameMain.Instance.Window.TextInput += ReEmitWindowTextInput;</div>
-<div class="line"><span class="lineno">  175</span>        GameMain.Instance.Window.KeyDown += ReEmitWindowKeyDown;</div>
-<div class="line"><span class="lineno">  176</span>        <span class="comment">//GameMain.Instance.Window.KeyUp += ReEmitWindowKeyUp;</span></div>
-<div class="line"><span class="lineno">  177</span> </div>
-<div class="line"><span class="lineno">  178</span>        PatchAll();</div>
-<div class="line"><span class="lineno">  179</span>        AddCommands();</div>
-<div class="line"><span class="lineno">  180</span>        <a class="code hl_variable" href="#aba21eb0f5f823b3c2c876dc31a3b4a43">Instance</a>.LuaRegistrar.Register();</div>
-<div class="line"><span class="lineno">  181</span> </div>
-<div class="line"><span class="lineno">  182</span>        <span class="comment">//CUIPalette.PaletteDemo();</span></div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00167">167</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  168</span>    {</div>
+<div class="line"><span class="lineno">  169</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aba21eb0f5f823b3c2c876dc31a3b4a43">Instance</a> == <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">  170</span>      {</div>
+<div class="line"><span class="lineno">  171</span>        Stopwatch sw = Stopwatch.StartNew();</div>
+<div class="line"><span class="lineno">  172</span> </div>
+<div class="line"><span class="lineno">  173</span>        InitStatic();</div>
+<div class="line"><span class="lineno">  174</span>        <span class="comment">// this should init only static stuff that doesn&#39;t depend on instance</span></div>
+<div class="line"><span class="lineno">  175</span>        <a class="code hl_event" href="#a29fdc0441733f6fde0d3bc29a458078c">OnInit</a>?.Invoke();</div>
+<div class="line"><span class="lineno">  176</span> </div>
+<div class="line"><span class="lineno">  177</span>        <a class="code hl_variable" href="#aba21eb0f5f823b3c2c876dc31a3b4a43">Instance</a> = <span class="keyword">new</span> CUI();</div>
+<div class="line"><span class="lineno">  178</span> </div>
+<div class="line"><span class="lineno">  179</span>        GameMain.Instance.Window.TextInput += ReEmitWindowTextInput;</div>
+<div class="line"><span class="lineno">  180</span>        GameMain.Instance.Window.KeyDown += ReEmitWindowKeyDown;</div>
+<div class="line"><span class="lineno">  181</span>        <span class="comment">//GameMain.Instance.Window.KeyUp += ReEmitWindowKeyUp;</span></div>
+<div class="line"><span class="lineno">  182</span>        CUIDebug.Log($<span class="stringliteral">&quot;CUI.OnInit?.Invoke took {sw.ElapsedMilliseconds}ms&quot;</span>);</div>
 <div class="line"><span class="lineno">  183</span> </div>
-<div class="line"><span class="lineno">  184</span>        <span class="comment">//HACK this works, but i still think that i shouldn&#39;t make aby assumptions about</span></div>
-<div class="line"><span class="lineno">  185</span>        <span class="comment">// file layout outside of CSharp folder, and i shouldn&#39;t store pngs in CSharp</span></div>
-<div class="line"><span class="lineno">  186</span>        <span class="comment">// perhaps i should generate default textures at runtime</span></div>
-<div class="line"><span class="lineno">  187</span>        <span class="comment">// or pack them with dll when plugin system settles</span></div>
-<div class="line"><span class="lineno">  188</span>        <span class="comment">//Log(GetCallerFilePath());</span></div>
-<div class="line"><span class="lineno">  189</span>      }</div>
-<div class="line"><span class="lineno">  190</span> </div>
-<div class="line"><span class="lineno">  191</span>      <a class="code hl_variable" href="#a1b53d62d642c767e10ee9044d458ff50">UserCount</a>++;</div>
-<div class="line"><span class="lineno">  192</span>    }</div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a29fdc0441733f6fde0d3bc29a458078c"><div class="ttname"><a href="#a29fdc0441733f6fde0d3bc29a458078c">CrabUI.CUI.OnInit</a></div><div class="ttdeci">static Action OnInit</div><div class="ttdoc">Called on first Initialize.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00117">CUI.cs:117</a></div></div>
+<div class="line"><span class="lineno">  184</span>        sw.Restart();</div>
+<div class="line"><span class="lineno">  185</span>        PatchAll();</div>
+<div class="line"><span class="lineno">  186</span>        CUIDebug.Log($<span class="stringliteral">&quot;CUI.PatchAll took {sw.ElapsedMilliseconds}ms&quot;</span>);</div>
+<div class="line"><span class="lineno">  187</span> </div>
+<div class="line"><span class="lineno">  188</span>        AddCommands();</div>
+<div class="line"><span class="lineno">  189</span> </div>
+<div class="line"><span class="lineno">  190</span>        sw.Restart();</div>
+<div class="line"><span class="lineno">  191</span>        <a class="code hl_variable" href="#aba21eb0f5f823b3c2c876dc31a3b4a43">Instance</a>.LuaRegistrar.Register();</div>
+<div class="line"><span class="lineno">  192</span>        CUIDebug.Log($<span class="stringliteral">&quot;CUI.LuaRegistrar.Register took {sw.ElapsedMilliseconds}ms&quot;</span>);</div>
+<div class="line"><span class="lineno">  193</span>      }</div>
+<div class="line"><span class="lineno">  194</span> </div>
+<div class="line"><span class="lineno">  195</span>      <a class="code hl_variable" href="#a1b53d62d642c767e10ee9044d458ff50">UserCount</a>++;</div>
+<div class="line"><span class="lineno">  196</span>    }</div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a29fdc0441733f6fde0d3bc29a458078c"><div class="ttname"><a href="#a29fdc0441733f6fde0d3bc29a458078c">CrabUI.CUI.OnInit</a></div><div class="ttdeci">static Action OnInit</div><div class="ttdoc">Called on first Initialize.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00119">CUI.cs:119</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1152,11 +1189,11 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00194">194</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  195</span>    {</div>
-<div class="line"><span class="lineno">  196</span>      <span class="comment">//Idk doesn&#39;t work</span></div>
-<div class="line"><span class="lineno">  197</span>      <span class="comment">//CUIMultiModResolver.FindOtherInputs();</span></div>
-<div class="line"><span class="lineno">  198</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00198">198</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  199</span>    {</div>
+<div class="line"><span class="lineno">  200</span>      <span class="comment">//Idk doesn&#39;t work</span></div>
+<div class="line"><span class="lineno">  201</span>      <span class="comment">//CUIMultiModResolver.FindOtherInputs();</span></div>
+<div class="line"><span class="lineno">  202</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1183,11 +1220,11 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_commands_8cs_source.html#l00118">118</a> of file <a class="el" href="_c_u_i_commands_8cs_source.html">CUICommands.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  119</span>    {</div>
-<div class="line"><span class="lineno">  120</span>      CUIPalette palette = CUIPalette.LoadedPalettes.GetValueOrDefault(args.ElementAtOrDefault(0));</div>
-<div class="line"><span class="lineno">  121</span>      <span class="keywordflow">if</span> (palette != <span class="keyword">null</span>) CUIPalette.Primary = palette;</div>
-<div class="line"><span class="lineno">  122</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_commands_8cs_source.html#l00127">127</a> of file <a class="el" href="_c_u_i_commands_8cs_source.html">CUICommands.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  128</span>    {</div>
+<div class="line"><span class="lineno">  129</span>      CUIPalette palette = CUIPalette.LoadedPalettes.GetValueOrDefault(args.ElementAtOrDefault(0));</div>
+<div class="line"><span class="lineno">  130</span>      <span class="keywordflow">if</span> (palette != <span class="keyword">null</span>) CUIPalette.Primary = palette;</div>
+<div class="line"><span class="lineno">  131</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1214,10 +1251,10 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_commands_8cs_source.html#l00113">113</a> of file <a class="el" href="_c_u_i_commands_8cs_source.html">CUICommands.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  114</span>    {</div>
-<div class="line"><span class="lineno">  115</span>      <span class="keywordflow">try</span> { CUIPalette.PaletteDemo(); } <span class="keywordflow">catch</span> (Exception e) { CUI.Warning(e); }</div>
-<div class="line"><span class="lineno">  116</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_commands_8cs_source.html#l00122">122</a> of file <a class="el" href="_c_u_i_commands_8cs_source.html">CUICommands.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  123</span>    {</div>
+<div class="line"><span class="lineno">  124</span>      <span class="keywordflow">try</span> { CUIPalette.PaletteDemo(); } <span class="keywordflow">catch</span> (Exception e) { CUI.Warning(e); }</div>
+<div class="line"><span class="lineno">  125</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1244,20 +1281,20 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_commands_8cs_source.html#l00098">98</a> of file <a class="el" href="_c_u_i_commands_8cs_source.html">CUICommands.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   99</span>    {</div>
-<div class="line"><span class="lineno">  100</span>      CUIDebug.PrintKeys = !CUIDebug.PrintKeys;</div>
-<div class="line"><span class="lineno">  101</span> </div>
-<div class="line"><span class="lineno">  102</span>      <span class="keywordflow">if</span> (CUIDebug.PrintKeys)</div>
-<div class="line"><span class="lineno">  103</span>      {</div>
-<div class="line"><span class="lineno">  104</span>        var values = typeof(Keys).GetEnumValues();</div>
-<div class="line"><span class="lineno">  105</span>        <span class="keywordflow">foreach</span> (var v <span class="keywordflow">in</span> values)</div>
-<div class="line"><span class="lineno">  106</span>        {</div>
-<div class="line"><span class="lineno">  107</span>          <a class="code hl_function" href="#aa0ce4751fde5325adf2675c44a320b73">Log</a>($<span class="stringliteral">&quot;{(int)v} {v}&quot;</span>);</div>
-<div class="line"><span class="lineno">  108</span>        }</div>
-<div class="line"><span class="lineno">  109</span>        <a class="code hl_function" href="#aa0ce4751fde5325adf2675c44a320b73">Log</a>(<span class="stringliteral">&quot;---------------------------&quot;</span>);</div>
-<div class="line"><span class="lineno">  110</span>      }</div>
-<div class="line"><span class="lineno">  111</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_commands_8cs_source.html#l00107">107</a> of file <a class="el" href="_c_u_i_commands_8cs_source.html">CUICommands.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  108</span>    {</div>
+<div class="line"><span class="lineno">  109</span>      CUIDebug.PrintKeys = !CUIDebug.PrintKeys;</div>
+<div class="line"><span class="lineno">  110</span> </div>
+<div class="line"><span class="lineno">  111</span>      <span class="keywordflow">if</span> (CUIDebug.PrintKeys)</div>
+<div class="line"><span class="lineno">  112</span>      {</div>
+<div class="line"><span class="lineno">  113</span>        var values = typeof(Keys).GetEnumValues();</div>
+<div class="line"><span class="lineno">  114</span>        <span class="keywordflow">foreach</span> (var v <span class="keywordflow">in</span> values)</div>
+<div class="line"><span class="lineno">  115</span>        {</div>
+<div class="line"><span class="lineno">  116</span>          <a class="code hl_function" href="#aa0ce4751fde5325adf2675c44a320b73">Log</a>($<span class="stringliteral">&quot;{(int)v} {v}&quot;</span>);</div>
+<div class="line"><span class="lineno">  117</span>        }</div>
+<div class="line"><span class="lineno">  118</span>        <a class="code hl_function" href="#aa0ce4751fde5325adf2675c44a320b73">Log</a>(<span class="stringliteral">&quot;---------------------------&quot;</span>);</div>
+<div class="line"><span class="lineno">  119</span>      }</div>
+<div class="line"><span class="lineno">  120</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1284,13 +1321,13 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_commands_8cs_source.html#l00090">90</a> of file <a class="el" href="_c_u_i_commands_8cs_source.html">CUICommands.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   91</span>    {</div>
-<div class="line"><span class="lineno">   92</span>      <span class="keywordflow">foreach</span> (GUIComponentStyle style <span class="keywordflow">in</span> GUIStyle.ComponentStyles)</div>
-<div class="line"><span class="lineno">   93</span>      {</div>
-<div class="line"><span class="lineno">   94</span>        CUI.Log($<span class="stringliteral">&quot;{style.Name} {style.Sprites.Count}&quot;</span>);</div>
-<div class="line"><span class="lineno">   95</span>      }</div>
-<div class="line"><span class="lineno">   96</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_commands_8cs_source.html#l00099">99</a> of file <a class="el" href="_c_u_i_commands_8cs_source.html">CUICommands.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  100</span>    {</div>
+<div class="line"><span class="lineno">  101</span>      <span class="keywordflow">foreach</span> (GUIComponentStyle style <span class="keywordflow">in</span> GUIStyle.ComponentStyles)</div>
+<div class="line"><span class="lineno">  102</span>      {</div>
+<div class="line"><span class="lineno">  103</span>        CUI.Log($<span class="stringliteral">&quot;{style.Name} {style.Sprites.Count}&quot;</span>);</div>
+<div class="line"><span class="lineno">  104</span>      }</div>
+<div class="line"><span class="lineno">  105</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1406,7 +1443,7 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00059">59</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00057">57</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
 
 </div>
 </div>
@@ -1432,7 +1469,7 @@ Events</h2></td></tr>
 
 <p>This affects logging. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00110">110</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00108">108</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
 
 </div>
 </div>
@@ -1456,7 +1493,7 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00111">111</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00113">113</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
 
 </div>
 </div>
@@ -1482,7 +1519,7 @@ Events</h2></td></tr>
 
 <p>A singleton. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00076">76</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00074">74</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
 
 </div>
 </div>
@@ -1579,7 +1616,7 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00112">112</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00114">114</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
 
 </div>
 </div>
@@ -1605,7 +1642,7 @@ Events</h2></td></tr>
 
 <p>Safe texture manager. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00094">94</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00092">92</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
 
 </div>
 </div>
@@ -1631,7 +1668,7 @@ Events</h2></td></tr>
 
 <p>In theory multiple mods could use same <a class="el" href="class_crab_u_i_1_1_c_u_i.html" title="In fact a static class managing static things.">CUI</a> instance, i clean it up when UserCount drops to 0. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00144">144</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00146">146</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
 
 </div>
 </div>
@@ -1656,15 +1693,15 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00050">50</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   51</span>    {</div>
-<div class="line"><span class="lineno">   52</span>      <span class="keyword">get</span> =&gt; assetsPath;</div>
-<div class="line"><span class="lineno">   53</span>      <span class="keyword">set</span></div>
-<div class="line"><span class="lineno">   54</span>      {</div>
-<div class="line"><span class="lineno">   55</span>        assetsPath = value;</div>
-<div class="line"><span class="lineno">   56</span>        PalettesPath = Path.Combine(value, <span class="stringliteral">@&quot;Palettes&quot;</span>);</div>
-<div class="line"><span class="lineno">   57</span>      }</div>
-<div class="line"><span class="lineno">   58</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00048">48</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   49</span>    {</div>
+<div class="line"><span class="lineno">   50</span>      <span class="keyword">get</span> =&gt; assetsPath;</div>
+<div class="line"><span class="lineno">   51</span>      <span class="keyword">set</span></div>
+<div class="line"><span class="lineno">   52</span>      {</div>
+<div class="line"><span class="lineno">   53</span>        assetsPath = value;</div>
+<div class="line"><span class="lineno">   54</span>        PalettesPath = Path.Combine(value, <span class="stringliteral">@&quot;Palettes&quot;</span>);</div>
+<div class="line"><span class="lineno">   55</span>      }</div>
+<div class="line"><span class="lineno">   56</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1688,12 +1725,12 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00101">101</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  102</span>    {</div>
-<div class="line"><span class="lineno">  103</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#ac0b69a613489f61c35b5529432f51929">FocusResolver</a>.FocusedCUIComponent;</div>
-<div class="line"><span class="lineno">  104</span>      <span class="keyword">set</span> =&gt; FocusResolver.FocusedCUIComponent = value;</div>
-<div class="line"><span class="lineno">  105</span>    }</div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_ac0b69a613489f61c35b5529432f51929"><div class="ttname"><a href="#ac0b69a613489f61c35b5529432f51929">CrabUI.CUI.FocusResolver</a></div><div class="ttdeci">static CUIFocusResolver FocusResolver</div><div class="ttdoc">Adapter to vanilla focus system, don't use.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00099">CUI.cs:99</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00099">99</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  100</span>    {</div>
+<div class="line"><span class="lineno">  101</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="#ac0b69a613489f61c35b5529432f51929">FocusResolver</a>.FocusedCUIComponent;</div>
+<div class="line"><span class="lineno">  102</span>      <span class="keyword">set</span> =&gt; FocusResolver.FocusedCUIComponent = value;</div>
+<div class="line"><span class="lineno">  103</span>    }</div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_ac0b69a613489f61c35b5529432f51929"><div class="ttname"><a href="#ac0b69a613489f61c35b5529432f51929">CrabUI.CUI.FocusResolver</a></div><div class="ttdeci">static CUIFocusResolver FocusResolver</div><div class="ttdoc">Adapter to vanilla focus system, don't use.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00097">CUI.cs:97</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1719,7 +1756,7 @@ Events</h2></td></tr>
 
 <p>Adapter to vanilla focus system, don't use. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00099">99</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00097">97</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
 
 </div>
 </div>
@@ -1743,7 +1780,7 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00033">33</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00031">31</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
 
 </div>
 </div>
@@ -1767,7 +1804,7 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00032">32</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00030">30</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
 
 </div>
 </div>
@@ -1793,7 +1830,7 @@ Events</h2></td></tr>
 
 <p>Snapshot of mouse and keyboard state. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00090">90</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00088">88</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
 
 </div>
 </div>
@@ -1817,14 +1854,14 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00130">130</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  131</span>    {</div>
-<div class="line"><span class="lineno">  132</span>      <span class="keyword">get</span></div>
-<div class="line"><span class="lineno">  133</span>      {</div>
-<div class="line"><span class="lineno">  134</span>        <span class="keywordflow">if</span> (IsBlockingPredicates == <span class="keyword">null</span>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  135</span>        <span class="keywordflow">return</span> IsBlockingPredicates.Any(p =&gt; p());</div>
-<div class="line"><span class="lineno">  136</span>      }</div>
-<div class="line"><span class="lineno">  137</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00132">132</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  133</span>    {</div>
+<div class="line"><span class="lineno">  134</span>      <span class="keyword">get</span></div>
+<div class="line"><span class="lineno">  135</span>      {</div>
+<div class="line"><span class="lineno">  136</span>        <span class="keywordflow">if</span> (IsBlockingPredicates == <span class="keyword">null</span>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  137</span>        <span class="keywordflow">return</span> IsBlockingPredicates.Any(p =&gt; p());</div>
+<div class="line"><span class="lineno">  138</span>      }</div>
+<div class="line"><span class="lineno">  139</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1848,7 +1885,7 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00138">138</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00140">140</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
 
 </div>
 </div>
@@ -1872,8 +1909,8 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00047">47</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   47</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00045">45</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   45</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1899,7 +1936,7 @@ Events</h2></td></tr>
 
 <p>Orchestrates Drawing and updates, there could be only one <a class="el" href="#a956496be0b79f5c540c246c5f600dc05" title="Orchestrates Drawing and updates, there could be only one CUI.Main is located under vanilla GUI.">CUI.Main</a> is located under vanilla GUI. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00081">81</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00079">79</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
 
 </div>
 </div>
@@ -1923,15 +1960,15 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00037">37</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   38</span>    {</div>
-<div class="line"><span class="lineno">   39</span>      <span class="keyword">get</span> =&gt; modDir;</div>
-<div class="line"><span class="lineno">   40</span>      <span class="keyword">set</span></div>
-<div class="line"><span class="lineno">   41</span>      {</div>
-<div class="line"><span class="lineno">   42</span>        modDir = value;</div>
-<div class="line"><span class="lineno">   43</span>        LuaFolder = Path.Combine(value, <span class="stringliteral">@&quot;Lua&quot;</span>);</div>
-<div class="line"><span class="lineno">   44</span>      }</div>
-<div class="line"><span class="lineno">   45</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00035">35</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   36</span>    {</div>
+<div class="line"><span class="lineno">   37</span>      <span class="keyword">get</span> =&gt; modDir;</div>
+<div class="line"><span class="lineno">   38</span>      <span class="keyword">set</span></div>
+<div class="line"><span class="lineno">   39</span>      {</div>
+<div class="line"><span class="lineno">   40</span>        modDir = value;</div>
+<div class="line"><span class="lineno">   41</span>        LuaFolder = Path.Combine(value, <span class="stringliteral">@&quot;Lua&quot;</span>);</div>
+<div class="line"><span class="lineno">   42</span>      }</div>
+<div class="line"><span class="lineno">   43</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1955,8 +1992,8 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00060">60</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   60</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00058">58</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   58</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1982,11 +2019,11 @@ Events</h2></td></tr>
 
 <p>If set <a class="el" href="class_crab_u_i_1_1_c_u_i.html" title="In fact a static class managing static things.">CUI</a> will also check this folder when loading textures. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00067">67</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   68</span>    {</div>
-<div class="line"><span class="lineno">   69</span>      <span class="keyword">get</span> =&gt; <a class="code hl_variable" href="#a35714b44c421730281bb8f7d1814f226">TextureManager</a>.<a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_texture_manager.html#a5953b2ea87c5b61f01b025d5ee0ff97b">PGNAssets</a>;</div>
-<div class="line"><span class="lineno">   70</span>      <span class="keyword">set</span> =&gt; TextureManager.PGNAssets = value;</div>
-<div class="line"><span class="lineno">   71</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00065">65</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>    {</div>
+<div class="line"><span class="lineno">   67</span>      <span class="keyword">get</span> =&gt; <a class="code hl_variable" href="#a35714b44c421730281bb8f7d1814f226">TextureManager</a>.<a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_texture_manager.html#a5953b2ea87c5b61f01b025d5ee0ff97b">PGNAssets</a>;</div>
+<div class="line"><span class="lineno">   68</span>      <span class="keyword">set</span> =&gt; TextureManager.PGNAssets = value;</div>
+<div class="line"><span class="lineno">   69</span>    }</div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_texture_manager_html_a5953b2ea87c5b61f01b025d5ee0ff97b"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_texture_manager.html#a5953b2ea87c5b61f01b025d5ee0ff97b">CrabUI.CUITextureManager.PGNAssets</a></div><div class="ttdeci">string PGNAssets</div><div class="ttdoc">Path to mod assets.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_texture_manager_8cs_source.html#l00038">CUITextureManager.cs:38</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -2013,8 +2050,35 @@ Events</h2></td></tr>
 
 <p>Orchestrates Drawing and updates, there could be only one <a class="el" href="#a31ba5b36859d8affa5aad82c49297667" title="Orchestrates Drawing and updates, there could be only one CUI.TopMain is located above vanilla GUI.">CUI.TopMain</a> is located above vanilla GUI. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00086">86</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00084">84</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
 
+</div>
+</div>
+<a id="ab3004d84ad742213352fb8e90f60e970" name="ab3004d84ad742213352fb8e90f60e970"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3004d84ad742213352fb8e90f60e970">&#9670;&#160;</a></span>UseCursedPatches</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CrabUI.CUI.UseCursedPatches = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Will break the mod if it's compiled. </p>
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00112">112</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  112</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; } = <span class="keyword">false</span>;</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Event Documentation</h2>
@@ -2040,7 +2104,7 @@ Events</h2></td></tr>
 
 <p>Called on last Dispose. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00121">121</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00123">123</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
 
 </div>
 </div>
@@ -2066,7 +2130,7 @@ Events</h2></td></tr>
 
 <p>Called on first Initialize. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00117">117</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00119">119</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
 
 </div>
 </div>
@@ -2090,7 +2154,7 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00127">127</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00129">129</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
 
 </div>
 </div>
@@ -2114,7 +2178,7 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00123">123</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00125">125</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
 
 </div>
 </div>
@@ -2138,7 +2202,7 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00122">122</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_8cs_source.html#l00124">124</a> of file <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a>.</p>
 
 </div>
 </div>

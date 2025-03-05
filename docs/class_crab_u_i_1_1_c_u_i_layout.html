@@ -180,8 +180,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_layout_8cs_source.html#l00159">159</a> of file <a class="el" href="_c_u_i_layout_8cs_source.html">CUILayout.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  159</span>{ }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_layout_8cs_source.html#l00160">160</a> of file <a class="el" href="_c_u_i_layout_8cs_source.html">CUILayout.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  160</span>{ }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -200,10 +200,10 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_layout_8cs_source.html#l00160">160</a> of file <a class="el" href="_c_u_i_layout_8cs_source.html">CUILayout.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  161</span>    {</div>
-<div class="line"><span class="lineno">  162</span>      Host = host;</div>
-<div class="line"><span class="lineno">  163</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_layout_8cs_source.html#l00161">161</a> of file <a class="el" href="_c_u_i_layout_8cs_source.html">CUILayout.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  162</span>    {</div>
+<div class="line"><span class="lineno">  163</span>      Host = host;</div>
+<div class="line"><span class="lineno">  164</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -262,18 +262,18 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_layout_8cs_source.html#l00166">166</a> of file <a class="el" href="_c_u_i_layout_8cs_source.html">CUILayout.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  167</span>    {</div>
-<div class="line"><span class="lineno">  168</span>      <span class="keywordflow">if</span> (raw != <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">  169</span>      {</div>
-<div class="line"><span class="lineno">  170</span>        raw = raw.Trim();</div>
-<div class="line"><span class="lineno">  171</span>        <span class="keywordflow">if</span> (CUIReflection.CUILayoutTypes.ContainsKey(raw))</div>
-<div class="line"><span class="lineno">  172</span>        {</div>
-<div class="line"><span class="lineno">  173</span>          <span class="keywordflow">return</span> (CUILayout)Activator.CreateInstance(CUIReflection.CUILayoutTypes[raw]);</div>
-<div class="line"><span class="lineno">  174</span>        }</div>
-<div class="line"><span class="lineno">  175</span>      }</div>
-<div class="line"><span class="lineno">  176</span>      <span class="keywordflow">return</span> <span class="keyword">new</span> CUILayoutSimple();</div>
-<div class="line"><span class="lineno">  177</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_layout_8cs_source.html#l00167">167</a> of file <a class="el" href="_c_u_i_layout_8cs_source.html">CUILayout.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  168</span>    {</div>
+<div class="line"><span class="lineno">  169</span>      <span class="keywordflow">if</span> (raw != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">  170</span>      {</div>
+<div class="line"><span class="lineno">  171</span>        raw = raw.Trim();</div>
+<div class="line"><span class="lineno">  172</span>        <span class="keywordflow">if</span> (CUIReflection.CUILayoutTypes.ContainsKey(raw))</div>
+<div class="line"><span class="lineno">  173</span>        {</div>
+<div class="line"><span class="lineno">  174</span>          <span class="keywordflow">return</span> (CUILayout)Activator.CreateInstance(CUIReflection.CUILayoutTypes[raw]);</div>
+<div class="line"><span class="lineno">  175</span>        }</div>
+<div class="line"><span class="lineno">  176</span>      }</div>
+<div class="line"><span class="lineno">  177</span>      <span class="keywordflow">return</span> <span class="keyword">new</span> CUILayoutSimple();</div>
+<div class="line"><span class="lineno">  178</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -346,7 +346,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_layout_8cs_source.html#l00115">115</a> of file <a class="el" href="_c_u_i_layout_8cs_source.html">CUILayout.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_layout_8cs_source.html#l00116">116</a> of file <a class="el" href="_c_u_i_layout_8cs_source.html">CUILayout.cs</a>.</p>
 
 </div>
 </div>
@@ -394,8 +394,9 @@ Properties</h2></td></tr>
 <div class="line"><span class="lineno">  110</span>      {</div>
 <div class="line"><span class="lineno">  111</span>        <span class="keywordflow">if</span> (!value) absoluteChanged = <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">  112</span>        <span class="keywordflow">if</span> (value &amp;&amp; Host.Parent != <span class="keyword">null</span>) Host.Parent.Layout.absoluteChanged = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  113</span>      }</div>
-<div class="line"><span class="lineno">  114</span>    }</div>
+<div class="line"><span class="lineno">  113</span>        <span class="comment">//if (value &amp;&amp; Host.Parent != null) Host.Parent.Layout.propagateAbsoluteChangedUp();</span></div>
+<div class="line"><span class="lineno">  114</span>      }</div>
+<div class="line"><span class="lineno">  115</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -485,14 +486,14 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_layout_8cs_source.html#l00115">115</a> of file <a class="el" href="_c_u_i_layout_8cs_source.html">CUILayout.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  116</span>    {</div>
-<div class="line"><span class="lineno">  117</span>      <span class="keyword">get</span> =&gt; decorChanged;</div>
-<div class="line"><span class="lineno">  118</span>      <span class="keyword">set</span></div>
-<div class="line"><span class="lineno">  119</span>      {</div>
-<div class="line"><span class="lineno">  120</span>        decorChanged = value;</div>
-<div class="line"><span class="lineno">  121</span>      }</div>
-<div class="line"><span class="lineno">  122</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_layout_8cs_source.html#l00116">116</a> of file <a class="el" href="_c_u_i_layout_8cs_source.html">CUILayout.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  117</span>    {</div>
+<div class="line"><span class="lineno">  118</span>      <span class="keyword">get</span> =&gt; decorChanged;</div>
+<div class="line"><span class="lineno">  119</span>      <span class="keyword">set</span></div>
+<div class="line"><span class="lineno">  120</span>      {</div>
+<div class="line"><span class="lineno">  121</span>        decorChanged = value;</div>
+<div class="line"><span class="lineno">  122</span>      }</div>
+<div class="line"><span class="lineno">  123</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>

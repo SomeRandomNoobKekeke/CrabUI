@@ -51,7 +51,7 @@ namespace CrabUI
 
     public CUIComponent Default;
 
-    private CUIStyle defaultStyle; public CUIStyle DefaultStyle
+    public CUIStyle defaultStyle; public CUIStyle DefaultStyle
     {
       get => defaultStyle;
       set

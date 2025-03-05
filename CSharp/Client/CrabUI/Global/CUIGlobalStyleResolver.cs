@@ -23,6 +23,7 @@ namespace CrabUI
       CUITypeMetaData meta = CUITypeMetaData.Get(host.GetType());
       host.ResolvedStyle = CUIStyle.Merge(meta.ResolvedDefaultStyle, host.Style);
       ApplyStyleOn(host.ResolvedStyle, host);
+      host.InvokeOnStyleApplied();
     }
 
     public static void OnComponentStylePropChanged(CUIComponent host, string key)
@@ -40,6 +41,7 @@ namespace CrabUI
       }
 
       ApplyStylePropOn(host.ResolvedStyle, key, host, meta);
+      host.InvokeOnStyleApplied();
     }
 
     public static void OnPaletteChange(CUIPalette palette)

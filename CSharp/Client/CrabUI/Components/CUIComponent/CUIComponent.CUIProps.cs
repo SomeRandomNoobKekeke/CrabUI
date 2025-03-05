@@ -79,6 +79,12 @@ namespace CrabUI
         },
       };
 
+      public CUIProp<CUIBool2> Ghost = new CUIProp<CUIBool2>()
+      {
+        LayoutProp = true,
+        AbsoluteProp = true,
+      };
+
       public CUIProp<bool> CullChildren = new CUIProp<bool>()
       {
         OnSet = (v, host) =>

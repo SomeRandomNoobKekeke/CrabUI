@@ -29,10 +29,23 @@ namespace CrabUI
         prefix: new HarmonyMethod(typeof(CUI).GetMethod("GUI_DrawCursor_Prefix", AccessTools.all))
       );
 
-      harmony.Patch(
-        original: typeof(GameMain).GetMethod("Update", AccessTools.all),
-        postfix: new HarmonyMethod(typeof(CUI).GetMethod("CUIUpdate", AccessTools.all))
-      );
+
+      if (UseCursedPatches)
+      {
+        // This is cursed
+        harmony.Patch(
+          original: typeof(GameMain).GetMethod("Update", AccessTools.all),
+          postfix: new HarmonyMethod(typeof(CUI).GetMethod("GameMain_Update_Postfix", AccessTools.all))
+        );
+      }
+      else
+      {
+        GameMain.LuaCs.Hook.Add("think", (object[] args) =>
+        {
+          CUIUpdate(Timing.TotalTime);
+          return null;
+        });
+      }
 
       harmony.Patch(
         original: typeof(GUI).GetMethod("UpdateMouseOn", AccessTools.all),
@@ -96,13 +109,18 @@ namespace CrabUI
       CUI.InvokeOnPauseMenuToggled();
     }
 
-    private static void CUIUpdate(GameTime gameTime)
+
+    private static void GameMain_Update_Postfix(GameTime gameTime)
+    {
+      CUIUpdate(gameTime.TotalGameTime.TotalSeconds);
+    }
+    private static void CUIUpdate(double time)
     {
       try
       {
-        CUI.Input?.Scan(gameTime.TotalGameTime.TotalSeconds);
-        TopMain?.Update(gameTime.TotalGameTime.TotalSeconds);
-        Main?.Update(gameTime.TotalGameTime.TotalSeconds);
+        CUI.Input?.Scan(time);
+        TopMain?.Update(time);
+        Main?.Update(time);
       }
       catch (Exception e) { CUI.Warning($"CUI: {e}"); }
     }

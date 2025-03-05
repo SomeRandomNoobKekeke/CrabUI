@@ -142,7 +142,10 @@ namespace CrabUI
       {
         child.TreeChanged = true;
         child.OnPropChanged();
-        Forget(child);
+        //HACK i'm sure it doesn't belong here, find a better place
+        forsedSize = new CUINullVector2();
+        OnAbsolutePropChanged();
+        // Forget(child);
         Children.Remove(child);
         OnChildRemoved?.Invoke(child);
       }

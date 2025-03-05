@@ -43,6 +43,7 @@ namespace CrabUI
     public void Register()
     {
       if (CUI.LuaFolder == null) return;
+      if (!Directory.Exists(CUI.LuaFolder)) return;
 
       Assembly thisAssembly = Assembly.GetAssembly(typeof(CUILuaRegistrar));
 
@@ -65,11 +66,7 @@ namespace CrabUI
       LuaUserData.RegisterType(typeof(CUI).FullName);
       GameMain.LuaCs.Lua.Globals[nameof(CUI)] = UserData.CreateStatic(typeof(CUI));
 
-      //HACK
-      if (Directory.Exists(CUI.LuaFolder))
-      {
-        ConstructLuaStaticsFile();
-      }
+      ConstructLuaStaticsFile();
     }
 
 #if !USELUA

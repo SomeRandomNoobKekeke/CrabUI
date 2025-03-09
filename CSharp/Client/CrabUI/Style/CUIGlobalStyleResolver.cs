@@ -79,7 +79,7 @@ namespace CrabUI
       }
       catch (Exception e)
       {
-        CUI.Warning(e);
+        CUI.Warning($"OnDefaultStyleChanged| {e}");
       }
     }
 

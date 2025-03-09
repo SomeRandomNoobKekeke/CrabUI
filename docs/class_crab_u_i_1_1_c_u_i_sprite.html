@@ -93,48 +93,109 @@ $(function(){ initResizable(false); });
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#properties">Properties</a> &#124;
 <a href="class_crab_u_i_1_1_c_u_i_sprite-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">CrabUI.CUISprite Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Wrapper, containing link to texture, source rect, path, draw mode.  
+<p>Wrapper Containing link to texture and drawing settings, <br  />
+ like SourceRedt, DrawMode, Effects, Rotation... <br  />
+ Multiple sprites can use the same texture.  
  <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab7740b58f738c0f69e5ceebd87c0a578" id="r_ab7740b58f738c0f69e5ceebd87c0a578"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7740b58f738c0f69e5ceebd87c0a578">CUISprite</a> (string path)</td></tr>
-<tr class="separator:ab7740b58f738c0f69e5ceebd87c0a578"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af71f49fba90a14cfebe40febd2ace626" id="r_af71f49fba90a14cfebe40febd2ace626"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af71f49fba90a14cfebe40febd2ace626">CUISprite</a> (Texture2D texture, string path)</td></tr>
-<tr class="separator:af71f49fba90a14cfebe40febd2ace626"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab87fe2b13c22da9ed41e830ca5f00282" id="r_ab87fe2b13c22da9ed41e830ca5f00282"><td class="memItemLeft" align="right" valign="top"><a id="ab87fe2b13c22da9ed41e830ca5f00282" name="ab87fe2b13c22da9ed41e830ca5f00282"></a>
-override string&#160;</td><td class="memItemRight" valign="bottom"><b>ToString</b> ()</td></tr>
+<tr class="memitem:a8fc2f9293817c8425e5457cce1e16c65" id="r_a8fc2f9293817c8425e5457cce1e16c65"><td class="memItemLeft" align="right" valign="top">override bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8fc2f9293817c8425e5457cce1e16c65">Equals</a> (object obj)</td></tr>
+<tr class="separator:a8fc2f9293817c8425e5457cce1e16c65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a509b3f16874aaae51a83a2213822af55" id="r_a509b3f16874aaae51a83a2213822af55"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a509b3f16874aaae51a83a2213822af55">CUISprite</a> ()</td></tr>
+<tr class="memdesc:a509b3f16874aaae51a83a2213822af55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default 1x1 white sprite.  <br /></td></tr>
+<tr class="separator:a509b3f16874aaae51a83a2213822af55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d3f887acc198dca891ccf73ff777cc3" id="r_a2d3f887acc198dca891ccf73ff777cc3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d3f887acc198dca891ccf73ff777cc3">CUISprite</a> (string path, Rectangle? sourceRect=null, string baseFolder=null)</td></tr>
+<tr class="separator:a2d3f887acc198dca891ccf73ff777cc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb9543eb2273d5ce5a700d310c92a374" id="r_aeb9543eb2273d5ce5a700d310c92a374"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb9543eb2273d5ce5a700d310c92a374">CUISprite</a> (Texture2D texture, Rectangle? sourceRect=null)</td></tr>
+<tr class="separator:aeb9543eb2273d5ce5a700d310c92a374"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6149dd6220579b3502fc0f1ae3d0ce37" id="r_a6149dd6220579b3502fc0f1ae3d0ce37"><td class="memItemLeft" align="right" valign="top">object&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6149dd6220579b3502fc0f1ae3d0ce37">Clone</a> ()</td></tr>
+<tr class="separator:a6149dd6220579b3502fc0f1ae3d0ce37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab87fe2b13c22da9ed41e830ca5f00282" id="r_ab87fe2b13c22da9ed41e830ca5f00282"><td class="memItemLeft" align="right" valign="top">override string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab87fe2b13c22da9ed41e830ca5f00282">ToString</a> ()</td></tr>
 <tr class="separator:ab87fe2b13c22da9ed41e830ca5f00282"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a0b0b9411c70102ed3628d60a5b2125d4" id="r_a0b0b9411c70102ed3628d60a5b2125d4"><td class="memItemLeft" align="right" valign="top"><a id="a0b0b9411c70102ed3628d60a5b2125d4" name="a0b0b9411c70102ed3628d60a5b2125d4"></a>
-static <a class="el" href="class_crab_u_i_1_1_c_u_i_sprite.html">CUISprite</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Parse</b> (string path)</td></tr>
-<tr class="separator:a0b0b9411c70102ed3628d60a5b2125d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac939725816d07c09e11858a96a80b84e" id="r_ac939725816d07c09e11858a96a80b84e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_crab_u_i_1_1_c_u_i_sprite.html">CUISprite</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac939725816d07c09e11858a96a80b84e">FromVanilla</a> (Sprite sprite)</td></tr>
+<tr class="memdesc:ac939725816d07c09e11858a96a80b84e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="class_crab_u_i_1_1_c_u_i_sprite.html" title="Wrapper Containing link to texture and drawing settings,   like SourceRedt, DrawMode,...">CUISprite</a> from vanilla Sprite.  <br /></td></tr>
+<tr class="separator:ac939725816d07c09e11858a96a80b84e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d8bb18eae80e7fef994d68737990ae0" id="r_a6d8bb18eae80e7fef994d68737990ae0"><td class="memItemLeft" align="right" valign="top"><a id="a6d8bb18eae80e7fef994d68737990ae0" name="a6d8bb18eae80e7fef994d68737990ae0"></a>
+static <a class="el" href="class_crab_u_i_1_1_c_u_i_sprite.html">CUISprite</a>&#160;</td><td class="memItemRight" valign="bottom"><b>FromName</b> (string name)</td></tr>
+<tr class="memdesc:a6d8bb18eae80e7fef994d68737990ae0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses vanilla GUI sprite from GUIStyle.ComponentStyles with this name. <br /></td></tr>
+<tr class="separator:a6d8bb18eae80e7fef994d68737990ae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fd2d217acb665f9ec74080b6e63c877" id="r_a3fd2d217acb665f9ec74080b6e63c877"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_crab_u_i_1_1_c_u_i_sprite.html">CUISprite</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3fd2d217acb665f9ec74080b6e63c877">FromId</a> (Identifier id)</td></tr>
+<tr class="separator:a3fd2d217acb665f9ec74080b6e63c877"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72309a66d96e98989845865fd224d20a" id="r_a72309a66d96e98989845865fd224d20a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_crab_u_i_1_1_c_u_i_sprite.html">CUISprite</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a72309a66d96e98989845865fd224d20a">FromComponentStyle</a> (GUIComponentStyle style, GUIComponent.ComponentState state=GUIComponent.ComponentState.None)</td></tr>
+<tr class="separator:a72309a66d96e98989845865fd224d20a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a6274b85bb882e89361f5203a52a3a2" id="r_a5a6274b85bb882e89361f5203a52a3a2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_crab_u_i_1_1_c_u_i_sprite.html">CUISprite</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a6274b85bb882e89361f5203a52a3a2">Parse</a> (string raw)</td></tr>
+<tr class="separator:a5a6274b85bb882e89361f5203a52a3a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d0f4709d4f9038f837bd1748210ba6c" id="r_a2d0f4709d4f9038f837bd1748210ba6c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_crab_u_i_1_1_c_u_i_sprite.html">CUISprite</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d0f4709d4f9038f837bd1748210ba6c">ParseWithContext</a> (string raw, string baseFolder=null)</td></tr>
+<tr class="separator:a2d0f4709d4f9038f837bd1748210ba6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:aaddf69d1e21a3f82a081a6ba333b2b9f" id="r_aaddf69d1e21a3f82a081a6ba333b2b9f"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaddf69d1e21a3f82a081a6ba333b2b9f">Path</a> = &quot;&quot;</td></tr>
+<tr class="memdesc:aaddf69d1e21a3f82a081a6ba333b2b9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set when you load it from some path.  <br /></td></tr>
+<tr class="separator:aaddf69d1e21a3f82a081a6ba333b2b9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acab50833440c3ba19a3997056354dea4" id="r_acab50833440c3ba19a3997056354dea4"><td class="memItemLeft" align="right" valign="top">SpriteEffects&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acab50833440c3ba19a3997056354dea4">Effects</a></td></tr>
+<tr class="memdesc:acab50833440c3ba19a3997056354dea4"><td class="mdescLeft">&#160;</td><td class="mdescRight">None, FlipHorizontally, FlipVertically.  <br /></td></tr>
+<tr class="separator:acab50833440c3ba19a3997056354dea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52765469150f1243347349acd741b1f0" id="r_a52765469150f1243347349acd741b1f0"><td class="memItemLeft" align="right" valign="top">CUISpriteDrawMode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a52765469150f1243347349acd741b1f0">DrawMode</a></td></tr>
+<tr class="memdesc:a52765469150f1243347349acd741b1f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resize - will resize the sprite to component <br  />
+ Wrap - will loop the texture <br  />
+ Static - sprite ignores component position.  <br /></td></tr>
+<tr class="separator:a52765469150f1243347349acd741b1f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4595d178167f676828fa9dfdfdfeec0d" id="r_a4595d178167f676828fa9dfdfdfeec0d"><td class="memItemLeft" align="right" valign="top">Rectangle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4595d178167f676828fa9dfdfdfeec0d">SourceRect</a></td></tr>
+<tr class="memdesc:a4595d178167f676828fa9dfdfdfeec0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Part of the texture that is drawn <br  />
+ Won't work in Wrap mode becase it will loop the whole texture.  <br /></td></tr>
+<tr class="separator:a4595d178167f676828fa9dfdfdfeec0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1794982622a9cf9be6dc403e6e345947" id="r_a1794982622a9cf9be6dc403e6e345947"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1794982622a9cf9be6dc403e6e345947">Rotation</a></td></tr>
+<tr class="memdesc:a1794982622a9cf9be6dc403e6e345947"><td class="mdescLeft">&#160;</td><td class="mdescRight">In radians.  <br /></td></tr>
+<tr class="separator:a1794982622a9cf9be6dc403e6e345947"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a885d6ea54b1379e126dcd867e953d9ad" id="r_a885d6ea54b1379e126dcd867e953d9ad"><td class="memItemLeft" align="right" valign="top">Vector2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a885d6ea54b1379e126dcd867e953d9ad">Origin</a></td></tr>
+<tr class="memdesc:a885d6ea54b1379e126dcd867e953d9ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Origin of rotation in pixels.  <br /></td></tr>
+<tr class="separator:a885d6ea54b1379e126dcd867e953d9ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:ae2cd17031a0e7a3113e9599f2e7df559" id="r_ae2cd17031a0e7a3113e9599f2e7df559"><td class="memItemLeft" align="right" valign="top">static Texture2D&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2cd17031a0e7a3113e9599f2e7df559">BackupTexture</a><code> [get]</code></td></tr>
+<tr class="memdesc:ae2cd17031a0e7a3113e9599f2e7df559"><td class="mdescLeft">&#160;</td><td class="mdescRight">1x1 white texture  <br /></td></tr>
 <tr class="separator:ae2cd17031a0e7a3113e9599f2e7df559"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaddf69d1e21a3f82a081a6ba333b2b9f" id="r_aaddf69d1e21a3f82a081a6ba333b2b9f"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaddf69d1e21a3f82a081a6ba333b2b9f">Path</a><code> [get, set]</code></td></tr>
-<tr class="separator:aaddf69d1e21a3f82a081a6ba333b2b9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abae19bf6de348a22cfb9c690de365361" id="r_abae19bf6de348a22cfb9c690de365361"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_crab_u_i_1_1_c_u_i_sprite.html">CUISprite</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abae19bf6de348a22cfb9c690de365361">Default</a><code> [get]</code></td></tr>
+<tr class="memdesc:abae19bf6de348a22cfb9c690de365361"><td class="mdescLeft">&#160;</td><td class="mdescRight">new Sprite that uses 1x1 default texture  <br /></td></tr>
+<tr class="separator:abae19bf6de348a22cfb9c690de365361"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1f26de016b457a60183f6a66fc7cf20" id="r_ab1f26de016b457a60183f6a66fc7cf20"><td class="memItemLeft" align="right" valign="top">Texture2D&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab1f26de016b457a60183f6a66fc7cf20">Texture</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ab1f26de016b457a60183f6a66fc7cf20"><td class="mdescLeft">&#160;</td><td class="mdescRight">The link to the texture <br  />
+ Multiple sprites can use the same texture.  <br /></td></tr>
 <tr class="separator:ab1f26de016b457a60183f6a66fc7cf20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52765469150f1243347349acd741b1f0" id="r_a52765469150f1243347349acd741b1f0"><td class="memItemLeft" align="right" valign="top">CUISpriteDrawMode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a52765469150f1243347349acd741b1f0">DrawMode</a> = CUISpriteDrawMode.Resize<code> [get, set]</code></td></tr>
-<tr class="separator:a52765469150f1243347349acd741b1f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a891e083682dd97d1fe32c5c46221a007" id="r_a891e083682dd97d1fe32c5c46221a007"><td class="memItemLeft" align="right" valign="top">Rectangle?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a891e083682dd97d1fe32c5c46221a007">SourceRect</a><code> [get, set]</code></td></tr>
-<tr class="separator:a891e083682dd97d1fe32c5c46221a007"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0107ee3dc911c86f52758b3bde69f43f" id="r_a0107ee3dc911c86f52758b3bde69f43f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0107ee3dc911c86f52758b3bde69f43f">RotationAngle</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a0107ee3dc911c86f52758b3bde69f43f"><td class="mdescLeft">&#160;</td><td class="mdescRight">In degree.  <br /></td></tr>
+<tr class="separator:a0107ee3dc911c86f52758b3bde69f43f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3aa62f03d1a7ec529197f5948d37c92" id="r_ae3aa62f03d1a7ec529197f5948d37c92"><td class="memItemLeft" align="right" valign="top">Vector2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3aa62f03d1a7ec529197f5948d37c92">RelativeOrigin</a><code> [set]</code></td></tr>
+<tr class="memdesc:ae3aa62f03d1a7ec529197f5948d37c92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Origin of rotation in [0..1] of texture size.  <br /></td></tr>
+<tr class="separator:ae3aa62f03d1a7ec529197f5948d37c92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03304539feca05d4c115f5b4a8d1a6ad" id="r_a03304539feca05d4c115f5b4a8d1a6ad"><td class="memItemLeft" align="right" valign="top">Vector2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03304539feca05d4c115f5b4a8d1a6ad">Offset</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a03304539feca05d4c115f5b4a8d1a6ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw offset from <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html" title="Base class for all components.">CUIComponent</a> Position <br  />
+ For your convenience also sets origin.  <br /></td></tr>
+<tr class="separator:a03304539feca05d4c115f5b4a8d1a6ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10d7bd80212f5494c3fcaf7a61c4afec" id="r_a10d7bd80212f5494c3fcaf7a61c4afec"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10d7bd80212f5494c3fcaf7a61c4afec">BaseFolder</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a10d7bd80212f5494c3fcaf7a61c4afec"><td class="mdescLeft">&#160;</td><td class="mdescRight">When you load sprite from file, relative paths are considered relative to barotrauma folder <br  />
+ if BaseFolder != null sprite will check files in BaseFolder first Don't forget to set it back to null.  <br /></td></tr>
+<tr class="separator:a10d7bd80212f5494c3fcaf7a61c4afec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Wrapper, containing link to texture, source rect, path, draw mode. </p>
+<div class="textblock"><p>Wrapper Containing link to texture and drawing settings, <br  />
+ like SourceRedt, DrawMode, Effects, Rotation... <br  />
+ Multiple sprites can use the same texture. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00024">24</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00026">26</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a509b3f16874aaae51a83a2213822af55" name="a509b3f16874aaae51a83a2213822af55"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a509b3f16874aaae51a83a2213822af55">&#9670;&#160;</a></span>CUISprite() <span class="overload">[1/3]</span></h2>
@@ -151,16 +212,21 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00042">42</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   43</span>    {</div>
-<div class="line"><span class="lineno">   44</span>      Texture = BackupTexture;</div>
-<div class="line"><span class="lineno">   45</span>      this.path = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><span class="lineno">   46</span>    }</div>
+<p>Default 1x1 white sprite. </p>
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00166">166</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  167</span>    {</div>
+<div class="line"><span class="lineno">  168</span>      <a class="code hl_property" href="#ab1f26de016b457a60183f6a66fc7cf20">Texture</a> = <a class="code hl_property" href="#ae2cd17031a0e7a3113e9599f2e7df559">BackupTexture</a>;</div>
+<div class="line"><span class="lineno">  169</span>      <a class="code hl_variable" href="#a4595d178167f676828fa9dfdfdfeec0d">SourceRect</a> = <span class="keyword">new</span> Rectangle(0, 0, <a class="code hl_property" href="#ab1f26de016b457a60183f6a66fc7cf20">Texture</a>.Width, <a class="code hl_property" href="#ab1f26de016b457a60183f6a66fc7cf20">Texture</a>.Height);</div>
+<div class="line"><span class="lineno">  170</span>    }</div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_sprite_html_a4595d178167f676828fa9dfdfdfeec0d"><div class="ttname"><a href="#a4595d178167f676828fa9dfdfdfeec0d">CrabUI.CUISprite.SourceRect</a></div><div class="ttdeci">Rectangle SourceRect</div><div class="ttdoc">Part of the texture that is drawn   Won't work in Wrap mode becase it will loop the whole texture.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_sprite_8cs_source.html#l00055">CUISprite.cs:55</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_sprite_html_ab1f26de016b457a60183f6a66fc7cf20"><div class="ttname"><a href="#ab1f26de016b457a60183f6a66fc7cf20">CrabUI.CUISprite.Texture</a></div><div class="ttdeci">Texture2D Texture</div><div class="ttdoc">The link to the texture   Multiple sprites can use the same texture.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_sprite_8cs_source.html#l00061">CUISprite.cs:62</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_sprite_html_ae2cd17031a0e7a3113e9599f2e7df559"><div class="ttname"><a href="#ae2cd17031a0e7a3113e9599f2e7df559">CrabUI.CUISprite.BackupTexture</a></div><div class="ttdeci">static Texture2D BackupTexture</div><div class="ttdoc">1x1 white texture</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_sprite_8cs_source.html#l00031">CUISprite.cs:31</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="ab7740b58f738c0f69e5ceebd87c0a578" name="ab7740b58f738c0f69e5ceebd87c0a578"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7740b58f738c0f69e5ceebd87c0a578">&#9670;&#160;</a></span>CUISprite() <span class="overload">[2/3]</span></h2>
+<a id="a2d3f887acc198dca891ccf73ff777cc3" name="a2d3f887acc198dca891ccf73ff777cc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d3f887acc198dca891ccf73ff777cc3">&#9670;&#160;</a></span>CUISprite() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -168,22 +234,43 @@ Properties</h2></td></tr>
         <tr>
           <td class="memname">CrabUI.CUISprite.CUISprite </td>
           <td>(</td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>path</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">Rectangle?</td>          <td class="paramname"><span class="paramname"><em>sourceRect</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>baseFolder</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00047">47</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   48</span>    {</div>
-<div class="line"><span class="lineno">   49</span>      this.path = path;</div>
-<div class="line"><span class="lineno">   50</span>      Texture = CUI.TextureManager.GetTexture(path);</div>
-<div class="line"><span class="lineno">   51</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00171">171</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  172</span>    {</div>
+<div class="line"><span class="lineno">  173</span>      baseFolder ??= <a class="code hl_property" href="#a10d7bd80212f5494c3fcaf7a61c4afec">BaseFolder</a>;</div>
+<div class="line"><span class="lineno">  174</span>      <span class="keywordtype">string</span> realpath = path;</div>
+<div class="line"><span class="lineno">  175</span> </div>
+<div class="line"><span class="lineno">  176</span>      <span class="keywordflow">if</span> (!System.IO.Path.IsPathRooted(path) &amp;&amp; baseFolder != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">  177</span>      {</div>
+<div class="line"><span class="lineno">  178</span>        <span class="keywordtype">string</span> localPath = System.IO.Path.Combine(baseFolder, path);</div>
+<div class="line"><span class="lineno">  179</span>        <span class="keywordflow">if</span> (File.Exists(localPath)) realpath = localPath;</div>
+<div class="line"><span class="lineno">  180</span>      }</div>
+<div class="line"><span class="lineno">  181</span> </div>
+<div class="line"><span class="lineno">  182</span>      <a class="code hl_variable" href="#aaddf69d1e21a3f82a081a6ba333b2b9f">Path</a> = path;</div>
+<div class="line"><span class="lineno">  183</span>      <a class="code hl_property" href="#ab1f26de016b457a60183f6a66fc7cf20">Texture</a> = CUI.TextureManager.GetTexture(realpath);</div>
+<div class="line"><span class="lineno">  184</span>      <span class="keywordflow">if</span> (sourceRect.HasValue) <a class="code hl_variable" href="#a4595d178167f676828fa9dfdfdfeec0d">SourceRect</a> = sourceRect.Value;</div>
+<div class="line"><span class="lineno">  185</span>    }</div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_sprite_html_a10d7bd80212f5494c3fcaf7a61c4afec"><div class="ttname"><a href="#a10d7bd80212f5494c3fcaf7a61c4afec">CrabUI.CUISprite.BaseFolder</a></div><div class="ttdeci">static string BaseFolder</div><div class="ttdoc">When you load sprite from file, relative paths are considered relative to barotrauma folder   if Base...</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_sprite_8cs_source.html#l00161">CUISprite.cs:161</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_sprite_html_aaddf69d1e21a3f82a081a6ba333b2b9f"><div class="ttname"><a href="#aaddf69d1e21a3f82a081a6ba333b2b9f">CrabUI.CUISprite.Path</a></div><div class="ttdeci">string Path</div><div class="ttdoc">Set when you load it from some path.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_sprite_8cs_source.html#l00040">CUISprite.cs:40</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="af71f49fba90a14cfebe40febd2ace626" name="af71f49fba90a14cfebe40febd2ace626"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af71f49fba90a14cfebe40febd2ace626">&#9670;&#160;</a></span>CUISprite() <span class="overload">[3/3]</span></h2>
+<a id="aeb9543eb2273d5ce5a700d310c92a374" name="aeb9543eb2273d5ce5a700d310c92a374"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb9543eb2273d5ce5a700d310c92a374">&#9670;&#160;</a></span>CUISprite() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -196,17 +283,483 @@ Properties</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>path</em></span>&#160;)</td>
+          <td class="paramtype">Rectangle?</td>          <td class="paramname"><span class="paramname"><em>sourceRect</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00052">52</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   53</span>    {</div>
-<div class="line"><span class="lineno">   54</span>      Texture = texture ?? BackupTexture;</div>
-<div class="line"><span class="lineno">   55</span>      this.path = path ?? <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><span class="lineno">   56</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00186">186</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  187</span>    {</div>
+<div class="line"><span class="lineno">  188</span>      <a class="code hl_property" href="#ab1f26de016b457a60183f6a66fc7cf20">Texture</a> = texture ?? <a class="code hl_property" href="#ae2cd17031a0e7a3113e9599f2e7df559">BackupTexture</a>;</div>
+<div class="line"><span class="lineno">  189</span>      <span class="keywordflow">if</span> (sourceRect.HasValue) <a class="code hl_variable" href="#a4595d178167f676828fa9dfdfdfeec0d">SourceRect</a> = sourceRect.Value;</div>
+<div class="line"><span class="lineno">  190</span>    }</div>
 </div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6149dd6220579b3502fc0f1ae3d0ce37" name="a6149dd6220579b3502fc0f1ae3d0ce37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6149dd6220579b3502fc0f1ae3d0ce37">&#9670;&#160;</a></span>Clone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">object CrabUI.CUISprite.Clone </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00192">192</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  193</span>    {</div>
+<div class="line"><span class="lineno">  194</span>      <a class="code hl_function" href="#a509b3f16874aaae51a83a2213822af55">CUISprite</a> sprite = <span class="keyword">new</span> <a class="code hl_function" href="#a509b3f16874aaae51a83a2213822af55">CUISprite</a>(<a class="code hl_property" href="#ab1f26de016b457a60183f6a66fc7cf20">Texture</a>, <a class="code hl_variable" href="#a4595d178167f676828fa9dfdfdfeec0d">SourceRect</a>)</div>
+<div class="line"><span class="lineno">  195</span>      {</div>
+<div class="line"><span class="lineno">  196</span>        <a class="code hl_variable" href="#aaddf69d1e21a3f82a081a6ba333b2b9f">Path</a> = this.<a class="code hl_variable" href="#aaddf69d1e21a3f82a081a6ba333b2b9f">Path</a>,</div>
+<div class="line"><span class="lineno">  197</span>        <a class="code hl_variable" href="#a1794982622a9cf9be6dc403e6e345947">Rotation</a> = this.<a class="code hl_variable" href="#a1794982622a9cf9be6dc403e6e345947">Rotation</a>,</div>
+<div class="line"><span class="lineno">  198</span>        <a class="code hl_property" href="#a03304539feca05d4c115f5b4a8d1a6ad">Offset</a> = this.<a class="code hl_property" href="#a03304539feca05d4c115f5b4a8d1a6ad">Offset</a>,</div>
+<div class="line"><span class="lineno">  199</span>        <a class="code hl_variable" href="#a885d6ea54b1379e126dcd867e953d9ad">Origin</a> = this.<a class="code hl_variable" href="#a885d6ea54b1379e126dcd867e953d9ad">Origin</a>,</div>
+<div class="line"><span class="lineno">  200</span>        <a class="code hl_variable" href="#acab50833440c3ba19a3997056354dea4">Effects</a> = this.<a class="code hl_variable" href="#acab50833440c3ba19a3997056354dea4">Effects</a>,</div>
+<div class="line"><span class="lineno">  201</span>        <a class="code hl_variable" href="#a52765469150f1243347349acd741b1f0">DrawMode</a> = this.<a class="code hl_variable" href="#a52765469150f1243347349acd741b1f0">DrawMode</a>,</div>
+<div class="line"><span class="lineno">  202</span>      };</div>
+<div class="line"><span class="lineno">  203</span> </div>
+<div class="line"><span class="lineno">  204</span>      <span class="keywordflow">return</span> sprite;</div>
+<div class="line"><span class="lineno">  205</span>    }</div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_sprite_html_a03304539feca05d4c115f5b4a8d1a6ad"><div class="ttname"><a href="#a03304539feca05d4c115f5b4a8d1a6ad">CrabUI.CUISprite.Offset</a></div><div class="ttdeci">Vector2 Offset</div><div class="ttdoc">Draw offset from CUIComponent Position   For your convenience also sets origin.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_sprite_8cs_source.html#l00102">CUISprite.cs:103</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_sprite_html_a1794982622a9cf9be6dc403e6e345947"><div class="ttname"><a href="#a1794982622a9cf9be6dc403e6e345947">CrabUI.CUISprite.Rotation</a></div><div class="ttdeci">float Rotation</div><div class="ttdoc">In radians.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_sprite_8cs_source.html#l00073">CUISprite.cs:73</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_sprite_html_a509b3f16874aaae51a83a2213822af55"><div class="ttname"><a href="#a509b3f16874aaae51a83a2213822af55">CrabUI.CUISprite.CUISprite</a></div><div class="ttdeci">CUISprite()</div><div class="ttdoc">Default 1x1 white sprite.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_sprite_8cs_source.html#l00166">CUISprite.cs:166</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_sprite_html_a52765469150f1243347349acd741b1f0"><div class="ttname"><a href="#a52765469150f1243347349acd741b1f0">CrabUI.CUISprite.DrawMode</a></div><div class="ttdeci">CUISpriteDrawMode DrawMode</div><div class="ttdoc">Resize - will resize the sprite to component   Wrap - will loop the texture   Static - sprite ignores...</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_sprite_8cs_source.html#l00050">CUISprite.cs:50</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_sprite_html_a885d6ea54b1379e126dcd867e953d9ad"><div class="ttname"><a href="#a885d6ea54b1379e126dcd867e953d9ad">CrabUI.CUISprite.Origin</a></div><div class="ttdeci">Vector2 Origin</div><div class="ttdoc">Origin of rotation in pixels.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_sprite_8cs_source.html#l00085">CUISprite.cs:85</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_sprite_html_acab50833440c3ba19a3997056354dea4"><div class="ttname"><a href="#acab50833440c3ba19a3997056354dea4">CrabUI.CUISprite.Effects</a></div><div class="ttdeci">SpriteEffects Effects</div><div class="ttdoc">None, FlipHorizontally, FlipVertically.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_sprite_8cs_source.html#l00044">CUISprite.cs:44</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8fc2f9293817c8425e5457cce1e16c65" name="a8fc2f9293817c8425e5457cce1e16c65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fc2f9293817c8425e5457cce1e16c65">&#9670;&#160;</a></span>Equals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override bool CrabUI.CUISprite.Equals </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00112">112</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  113</span>    {</div>
+<div class="line"><span class="lineno">  114</span>      <span class="keywordflow">if</span> (obj is not <a class="code hl_function" href="#a509b3f16874aaae51a83a2213822af55">CUISprite</a> b) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  115</span> </div>
+<div class="line"><span class="lineno">  116</span>      <span class="keywordflow">return</span> <a class="code hl_property" href="#ab1f26de016b457a60183f6a66fc7cf20">Texture</a> == b.Texture &amp;&amp;</div>
+<div class="line"><span class="lineno">  117</span>        <a class="code hl_variable" href="#a4595d178167f676828fa9dfdfdfeec0d">SourceRect</a> == b.SourceRect &amp;&amp;</div>
+<div class="line"><span class="lineno">  118</span>        <a class="code hl_variable" href="#a52765469150f1243347349acd741b1f0">DrawMode</a> == b.DrawMode &amp;&amp;</div>
+<div class="line"><span class="lineno">  119</span>        <a class="code hl_variable" href="#acab50833440c3ba19a3997056354dea4">Effects</a> == b.Effects &amp;&amp;</div>
+<div class="line"><span class="lineno">  120</span>        <a class="code hl_variable" href="#a1794982622a9cf9be6dc403e6e345947">Rotation</a> == b.Rotation &amp;&amp;</div>
+<div class="line"><span class="lineno">  121</span>        <a class="code hl_variable" href="#a885d6ea54b1379e126dcd867e953d9ad">Origin</a> == b.Origin &amp;&amp;</div>
+<div class="line"><span class="lineno">  122</span>        <a class="code hl_property" href="#a03304539feca05d4c115f5b4a8d1a6ad">Offset</a> == b.Offset;</div>
+<div class="line"><span class="lineno">  123</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a72309a66d96e98989845865fd224d20a" name="a72309a66d96e98989845865fd224d20a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72309a66d96e98989845865fd224d20a">&#9670;&#160;</a></span>FromComponentStyle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_crab_u_i_1_1_c_u_i_sprite.html">CUISprite</a> CrabUI.CUISprite.FromComponentStyle </td>
+          <td>(</td>
+          <td class="paramtype">GUIComponentStyle</td>          <td class="paramname"><span class="paramname"><em>style</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GUIComponent.ComponentState</td>          <td class="paramname"><span class="paramname"><em>state</em></span><span class="paramdefsep"> = </span><span class="paramdefval">GUIComponent::ComponentState::None</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00150">150</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  151</span>    {</div>
+<div class="line"><span class="lineno">  152</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="#ac939725816d07c09e11858a96a80b84e">FromVanilla</a>(style.Sprites[state].FirstOrDefault()?.Sprite);</div>
+<div class="line"><span class="lineno">  153</span>    }</div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_sprite_html_ac939725816d07c09e11858a96a80b84e"><div class="ttname"><a href="#ac939725816d07c09e11858a96a80b84e">CrabUI.CUISprite.FromVanilla</a></div><div class="ttdeci">static CUISprite FromVanilla(Sprite sprite)</div><div class="ttdoc">Creates a CUISprite from vanilla Sprite.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_sprite_8cs_source.html#l00128">CUISprite.cs:128</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3fd2d217acb665f9ec74080b6e63c877" name="a3fd2d217acb665f9ec74080b6e63c877"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fd2d217acb665f9ec74080b6e63c877">&#9670;&#160;</a></span>FromId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_crab_u_i_1_1_c_u_i_sprite.html">CUISprite</a> CrabUI.CUISprite.FromId </td>
+          <td>(</td>
+          <td class="paramtype">Identifier</td>          <td class="paramname"><span class="paramname"><em>id</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00142">142</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  143</span>    {</div>
+<div class="line"><span class="lineno">  144</span>      GUIComponentStyle? style = GUIStyle.ComponentStyles[id];</div>
+<div class="line"><span class="lineno">  145</span>      <span class="keywordflow">if</span> (style == <span class="keyword">null</span>) <span class="keywordflow">return</span> <a class="code hl_property" href="#abae19bf6de348a22cfb9c690de365361">Default</a>;</div>
+<div class="line"><span class="lineno">  146</span> </div>
+<div class="line"><span class="lineno">  147</span>      <span class="keywordflow">return</span> FromComponentStyle(style);</div>
+<div class="line"><span class="lineno">  148</span>    }</div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_sprite_html_abae19bf6de348a22cfb9c690de365361"><div class="ttname"><a href="#abae19bf6de348a22cfb9c690de365361">CrabUI.CUISprite.Default</a></div><div class="ttdeci">static CUISprite Default</div><div class="ttdoc">new Sprite that uses 1x1 default texture</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_sprite_8cs_source.html#l00035">CUISprite.cs:35</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac939725816d07c09e11858a96a80b84e" name="ac939725816d07c09e11858a96a80b84e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac939725816d07c09e11858a96a80b84e">&#9670;&#160;</a></span>FromVanilla()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_crab_u_i_1_1_c_u_i_sprite.html">CUISprite</a> CrabUI.CUISprite.FromVanilla </td>
+          <td>(</td>
+          <td class="paramtype">Sprite</td>          <td class="paramname"><span class="paramname"><em>sprite</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a <a class="el" href="class_crab_u_i_1_1_c_u_i_sprite.html" title="Wrapper Containing link to texture and drawing settings,   like SourceRedt, DrawMode,...">CUISprite</a> from vanilla Sprite. </p>
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00128">128</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  129</span>    {</div>
+<div class="line"><span class="lineno">  130</span>      <span class="keywordflow">if</span> (sprite == <span class="keyword">null</span>) <span class="keywordflow">return</span> <a class="code hl_property" href="#abae19bf6de348a22cfb9c690de365361">Default</a>;</div>
+<div class="line"><span class="lineno">  131</span> </div>
+<div class="line"><span class="lineno">  132</span>      <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_function" href="#a509b3f16874aaae51a83a2213822af55">CUISprite</a>(sprite.Texture, sprite.SourceRect)</div>
+<div class="line"><span class="lineno">  133</span>      {</div>
+<div class="line"><span class="lineno">  134</span>        <a class="code hl_variable" href="#aaddf69d1e21a3f82a081a6ba333b2b9f">Path</a> = sprite.FullPath,</div>
+<div class="line"><span class="lineno">  135</span>      };</div>
+<div class="line"><span class="lineno">  136</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a5a6274b85bb882e89361f5203a52a3a2" name="a5a6274b85bb882e89361f5203a52a3a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a6274b85bb882e89361f5203a52a3a2">&#9670;&#160;</a></span>Parse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_crab_u_i_1_1_c_u_i_sprite.html">CUISprite</a> CrabUI.CUISprite.Parse </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>raw</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00221">221</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  222</span>    {</div>
+<div class="line"><span class="lineno">  223</span>      Dictionary&lt;string, string&gt; props = CUIExtensions.ParseKVPairs(raw);</div>
+<div class="line"><span class="lineno">  224</span> </div>
+<div class="line"><span class="lineno">  225</span>      <span class="keywordflow">if</span> (!props.ContainsKey(<span class="stringliteral">&quot;path&quot;</span>)) <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_function" href="#a509b3f16874aaae51a83a2213822af55">CUISprite</a>();</div>
+<div class="line"><span class="lineno">  226</span> </div>
+<div class="line"><span class="lineno">  227</span>      <a class="code hl_function" href="#a509b3f16874aaae51a83a2213822af55">CUISprite</a> sprite = CUI.TextureManager.GetSprite(props[<span class="stringliteral">&quot;path&quot;</span>]);</div>
+<div class="line"><span class="lineno">  228</span>      <span class="keywordflow">if</span> (props.ContainsKey(<span class="stringliteral">&quot;mode&quot;</span>))</div>
+<div class="line"><span class="lineno">  229</span>      {</div>
+<div class="line"><span class="lineno">  230</span>        sprite.DrawMode = Enum.Parse&lt;CUISpriteDrawMode&gt;(props[<span class="stringliteral">&quot;mode&quot;</span>]);</div>
+<div class="line"><span class="lineno">  231</span>      }</div>
+<div class="line"><span class="lineno">  232</span>      <span class="keywordflow">if</span> (props.ContainsKey(<span class="stringliteral">&quot;sourcerect&quot;</span>))</div>
+<div class="line"><span class="lineno">  233</span>      {</div>
+<div class="line"><span class="lineno">  234</span>        sprite.SourceRect = CUIExtensions.ParseRectangle(props[<span class="stringliteral">&quot;sourcerect&quot;</span>]);</div>
+<div class="line"><span class="lineno">  235</span>      }</div>
+<div class="line"><span class="lineno">  236</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  237</span>      {</div>
+<div class="line"><span class="lineno">  238</span>        sprite.SourceRect = <span class="keyword">new</span> Rectangle(0, 0, sprite.Texture.Width, sprite.Texture.Height);</div>
+<div class="line"><span class="lineno">  239</span>      }</div>
+<div class="line"><span class="lineno">  240</span>      <span class="keywordflow">if</span> (props.ContainsKey(<span class="stringliteral">&quot;effects&quot;</span>))</div>
+<div class="line"><span class="lineno">  241</span>      {</div>
+<div class="line"><span class="lineno">  242</span>        sprite.Effects = CUIExtensions.ParseSpriteEffects(props[<span class="stringliteral">&quot;effects&quot;</span>]);</div>
+<div class="line"><span class="lineno">  243</span>      }</div>
+<div class="line"><span class="lineno">  244</span> </div>
+<div class="line"><span class="lineno">  245</span>      <span class="keywordflow">if</span> (props.ContainsKey(<span class="stringliteral">&quot;rotation&quot;</span>))</div>
+<div class="line"><span class="lineno">  246</span>      {</div>
+<div class="line"><span class="lineno">  247</span>        <span class="keywordtype">float</span> r;</div>
+<div class="line"><span class="lineno">  248</span>        <span class="keywordtype">float</span>.TryParse(props[<span class="stringliteral">&quot;rotation&quot;</span>], out r);</div>
+<div class="line"><span class="lineno">  249</span>        sprite.Rotation = r;</div>
+<div class="line"><span class="lineno">  250</span>      }</div>
+<div class="line"><span class="lineno">  251</span> </div>
+<div class="line"><span class="lineno">  252</span>      <span class="keywordflow">if</span> (props.ContainsKey(<span class="stringliteral">&quot;offset&quot;</span>))</div>
+<div class="line"><span class="lineno">  253</span>      {</div>
+<div class="line"><span class="lineno">  254</span>        sprite.Offset = CUIExtensions.ParseVector2(props[<span class="stringliteral">&quot;offset&quot;</span>]);</div>
+<div class="line"><span class="lineno">  255</span>      }</div>
+<div class="line"><span class="lineno">  256</span> </div>
+<div class="line"><span class="lineno">  257</span>      <span class="keywordflow">if</span> (props.ContainsKey(<span class="stringliteral">&quot;origin&quot;</span>))</div>
+<div class="line"><span class="lineno">  258</span>      {</div>
+<div class="line"><span class="lineno">  259</span>        sprite.Origin = CUIExtensions.ParseVector2(props[<span class="stringliteral">&quot;origin&quot;</span>]);</div>
+<div class="line"><span class="lineno">  260</span>      }</div>
+<div class="line"><span class="lineno">  261</span> </div>
+<div class="line"><span class="lineno">  262</span>      <span class="keywordflow">return</span> sprite;</div>
+<div class="line"><span class="lineno">  263</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2d0f4709d4f9038f837bd1748210ba6c" name="a2d0f4709d4f9038f837bd1748210ba6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d0f4709d4f9038f837bd1748210ba6c">&#9670;&#160;</a></span>ParseWithContext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="class_crab_u_i_1_1_c_u_i_sprite.html">CUISprite</a> CrabUI.CUISprite.ParseWithContext </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>raw</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>baseFolder</em></span><span class="paramdefsep"> = </span><span class="paramdefval">null</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00266">266</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  267</span>    {</div>
+<div class="line"><span class="lineno">  268</span>      Dictionary&lt;string, string&gt; props = CUIExtensions.ParseKVPairs(raw);</div>
+<div class="line"><span class="lineno">  269</span> </div>
+<div class="line"><span class="lineno">  270</span>      <span class="keywordflow">if</span> (!props.ContainsKey(<span class="stringliteral">&quot;path&quot;</span>)) <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_function" href="#a509b3f16874aaae51a83a2213822af55">CUISprite</a>();</div>
+<div class="line"><span class="lineno">  271</span> </div>
+<div class="line"><span class="lineno">  272</span>      <span class="keywordflow">if</span> (!System.IO.Path.IsPathRooted(props[<span class="stringliteral">&quot;path&quot;</span>]) &amp;&amp; baseFolder != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">  273</span>      {</div>
+<div class="line"><span class="lineno">  274</span>        <span class="keywordtype">string</span> localPath = System.IO.Path.Combine(baseFolder, props[<span class="stringliteral">&quot;path&quot;</span>]);</div>
+<div class="line"><span class="lineno">  275</span> </div>
+<div class="line"><span class="lineno">  276</span>        <span class="keywordflow">if</span> (File.Exists(localPath)) props[<span class="stringliteral">&quot;path&quot;</span>] = localPath;</div>
+<div class="line"><span class="lineno">  277</span>      }</div>
+<div class="line"><span class="lineno">  278</span> </div>
+<div class="line"><span class="lineno">  279</span>      <a class="code hl_function" href="#a509b3f16874aaae51a83a2213822af55">CUISprite</a> sprite = CUI.TextureManager.GetSprite(props[<span class="stringliteral">&quot;path&quot;</span>]);</div>
+<div class="line"><span class="lineno">  280</span>      <span class="keywordflow">if</span> (props.ContainsKey(<span class="stringliteral">&quot;mode&quot;</span>))</div>
+<div class="line"><span class="lineno">  281</span>      {</div>
+<div class="line"><span class="lineno">  282</span>        sprite.DrawMode = Enum.Parse&lt;CUISpriteDrawMode&gt;(props[<span class="stringliteral">&quot;mode&quot;</span>]);</div>
+<div class="line"><span class="lineno">  283</span>      }</div>
+<div class="line"><span class="lineno">  284</span>      <span class="keywordflow">if</span> (props.ContainsKey(<span class="stringliteral">&quot;sourcerect&quot;</span>))</div>
+<div class="line"><span class="lineno">  285</span>      {</div>
+<div class="line"><span class="lineno">  286</span>        sprite.SourceRect = CUIExtensions.ParseRectangle(props[<span class="stringliteral">&quot;sourcerect&quot;</span>]);</div>
+<div class="line"><span class="lineno">  287</span>      }</div>
+<div class="line"><span class="lineno">  288</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  289</span>      {</div>
+<div class="line"><span class="lineno">  290</span>        sprite.SourceRect = <span class="keyword">new</span> Rectangle(0, 0, sprite.Texture.Width, sprite.Texture.Height);</div>
+<div class="line"><span class="lineno">  291</span>      }</div>
+<div class="line"><span class="lineno">  292</span>      <span class="keywordflow">if</span> (props.ContainsKey(<span class="stringliteral">&quot;effects&quot;</span>))</div>
+<div class="line"><span class="lineno">  293</span>      {</div>
+<div class="line"><span class="lineno">  294</span>        sprite.Effects = CUIExtensions.ParseSpriteEffects(props[<span class="stringliteral">&quot;effects&quot;</span>]);</div>
+<div class="line"><span class="lineno">  295</span>      }</div>
+<div class="line"><span class="lineno">  296</span> </div>
+<div class="line"><span class="lineno">  297</span>      <span class="keywordflow">if</span> (props.ContainsKey(<span class="stringliteral">&quot;rotation&quot;</span>))</div>
+<div class="line"><span class="lineno">  298</span>      {</div>
+<div class="line"><span class="lineno">  299</span>        <span class="keywordtype">float</span> r;</div>
+<div class="line"><span class="lineno">  300</span>        <span class="keywordtype">float</span>.TryParse(props[<span class="stringliteral">&quot;rotation&quot;</span>], out r);</div>
+<div class="line"><span class="lineno">  301</span>        sprite.Rotation = r;</div>
+<div class="line"><span class="lineno">  302</span>      }</div>
+<div class="line"><span class="lineno">  303</span> </div>
+<div class="line"><span class="lineno">  304</span>      <span class="keywordflow">if</span> (props.ContainsKey(<span class="stringliteral">&quot;offset&quot;</span>))</div>
+<div class="line"><span class="lineno">  305</span>      {</div>
+<div class="line"><span class="lineno">  306</span>        sprite.Offset = CUIExtensions.ParseVector2(props[<span class="stringliteral">&quot;offset&quot;</span>]);</div>
+<div class="line"><span class="lineno">  307</span>      }</div>
+<div class="line"><span class="lineno">  308</span> </div>
+<div class="line"><span class="lineno">  309</span>      <span class="keywordflow">if</span> (props.ContainsKey(<span class="stringliteral">&quot;origin&quot;</span>))</div>
+<div class="line"><span class="lineno">  310</span>      {</div>
+<div class="line"><span class="lineno">  311</span>        sprite.Origin = CUIExtensions.ParseVector2(props[<span class="stringliteral">&quot;origin&quot;</span>]);</div>
+<div class="line"><span class="lineno">  312</span>      }</div>
+<div class="line"><span class="lineno">  313</span> </div>
+<div class="line"><span class="lineno">  314</span>      <span class="keywordflow">return</span> sprite;</div>
+<div class="line"><span class="lineno">  315</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab87fe2b13c22da9ed41e830ca5f00282" name="ab87fe2b13c22da9ed41e830ca5f00282"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab87fe2b13c22da9ed41e830ca5f00282">&#9670;&#160;</a></span>ToString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override string CrabUI.CUISprite.ToString </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00207">207</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  208</span>    {</div>
+<div class="line"><span class="lineno">  209</span>      <span class="keywordtype">string</span> mode = <a class="code hl_variable" href="#a52765469150f1243347349acd741b1f0">DrawMode</a> != CUISpriteDrawMode.Resize ? $<span class="stringliteral">&quot;, Mode: {DrawMode}&quot;</span> : <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  210</span>      <span class="keywordtype">string</span> rect = <a class="code hl_variable" href="#a4595d178167f676828fa9dfdfdfeec0d">SourceRect</a> != Texture.Bounds ? $<span class="stringliteral">&quot;, SourceRect: {CUIExtensions.RectangleToString(SourceRect)}&quot;</span> : <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  211</span>      <span class="keywordtype">string</span> effect = <a class="code hl_variable" href="#acab50833440c3ba19a3997056354dea4">Effects</a> != SpriteEffects.None ? $<span class="stringliteral">&quot;, Effects: {CUIExtensions.SpriteEffectsToString(Effects)}&quot;</span> : <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  212</span> </div>
+<div class="line"><span class="lineno">  213</span>      <span class="keywordtype">string</span> rotation = <a class="code hl_variable" href="#a1794982622a9cf9be6dc403e6e345947">Rotation</a> != 0.0f ? $<span class="stringliteral">&quot;, Rotation: {Rotation}&quot;</span> : <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  214</span>      <span class="keywordtype">string</span> offset = <a class="code hl_property" href="#a03304539feca05d4c115f5b4a8d1a6ad">Offset</a> != Vector2.Zero ? $<span class="stringliteral">&quot;, Offset: {CUIExtensions.Vector2ToString(Offset)}&quot;</span> : <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  215</span>      <span class="keywordtype">string</span> origin = <a class="code hl_variable" href="#a885d6ea54b1379e126dcd867e953d9ad">Origin</a> != Vector2.Zero ? $<span class="stringliteral">&quot;, Origin: {CUIExtensions.Vector2ToString(Origin)}&quot;</span> : <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  216</span> </div>
+<div class="line"><span class="lineno">  217</span>      <span class="keywordflow">return</span> $<span class="stringliteral">&quot;{{ Path: {Path}{mode}{rect}{effect}{rotation}{offset}{origin} }}&quot;</span>;</div>
+<div class="line"><span class="lineno">  218</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a52765469150f1243347349acd741b1f0" name="a52765469150f1243347349acd741b1f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52765469150f1243347349acd741b1f0">&#9670;&#160;</a></span>DrawMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CUISpriteDrawMode CrabUI.CUISprite.DrawMode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resize - will resize the sprite to component <br  />
+ Wrap - will loop the texture <br  />
+ Static - sprite ignores component position. </p>
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00050">50</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
+
+</div>
+</div>
+<a id="acab50833440c3ba19a3997056354dea4" name="acab50833440c3ba19a3997056354dea4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acab50833440c3ba19a3997056354dea4">&#9670;&#160;</a></span>Effects</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SpriteEffects CrabUI.CUISprite.Effects</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>None, FlipHorizontally, FlipVertically. </p>
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00044">44</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
+
+</div>
+</div>
+<a id="a885d6ea54b1379e126dcd867e953d9ad" name="a885d6ea54b1379e126dcd867e953d9ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a885d6ea54b1379e126dcd867e953d9ad">&#9670;&#160;</a></span>Origin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector2 CrabUI.CUISprite.Origin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Origin of rotation in pixels. </p>
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00085">85</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
+
+</div>
+</div>
+<a id="aaddf69d1e21a3f82a081a6ba333b2b9f" name="aaddf69d1e21a3f82a081a6ba333b2b9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaddf69d1e21a3f82a081a6ba333b2b9f">&#9670;&#160;</a></span>Path</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string CrabUI.CUISprite.Path = &quot;&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set when you load it from some path. </p>
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00040">40</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
+
+</div>
+</div>
+<a id="a1794982622a9cf9be6dc403e6e345947" name="a1794982622a9cf9be6dc403e6e345947"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1794982622a9cf9be6dc403e6e345947">&#9670;&#160;</a></span>Rotation</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float CrabUI.CUISprite.Rotation</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>In radians. </p>
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00073">73</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
+
+</div>
+</div>
+<a id="a4595d178167f676828fa9dfdfdfeec0d" name="a4595d178167f676828fa9dfdfdfeec0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4595d178167f676828fa9dfdfdfeec0d">&#9670;&#160;</a></span>SourceRect</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Rectangle CrabUI.CUISprite.SourceRect</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Part of the texture that is drawn <br  />
+ Won't work in Wrap mode becase it will loop the whole texture. </p>
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00055">55</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
@@ -230,12 +783,14 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00026">26</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
+<p>1x1 white texture </p>
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00031">31</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
 
 </div>
 </div>
-<a id="a52765469150f1243347349acd741b1f0" name="a52765469150f1243347349acd741b1f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a52765469150f1243347349acd741b1f0">&#9670;&#160;</a></span>DrawMode</h2>
+<a id="a10d7bd80212f5494c3fcaf7a61c4afec" name="a10d7bd80212f5494c3fcaf7a61c4afec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10d7bd80212f5494c3fcaf7a61c4afec">&#9670;&#160;</a></span>BaseFolder</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -244,23 +799,26 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">CUISpriteDrawMode CrabUI.CUISprite.DrawMode = CUISpriteDrawMode.Resize</td>
+          <td class="memname">string CrabUI.CUISprite.BaseFolder</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00038">38</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   38</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; } = CUISpriteDrawMode.Resize;</div>
+<p>When you load sprite from file, relative paths are considered relative to barotrauma folder <br  />
+ if BaseFolder != null sprite will check files in BaseFolder first Don't forget to set it back to null. </p>
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00161">161</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  161</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="aaddf69d1e21a3f82a081a6ba333b2b9f" name="aaddf69d1e21a3f82a081a6ba333b2b9f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaddf69d1e21a3f82a081a6ba333b2b9f">&#9670;&#160;</a></span>Path</h2>
+<a id="abae19bf6de348a22cfb9c690de365361" name="abae19bf6de348a22cfb9c690de365361"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abae19bf6de348a22cfb9c690de365361">&#9670;&#160;</a></span>Default</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -269,7 +827,33 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string CrabUI.CUISprite.Path</td>
+          <td class="memname"><a class="el" href="class_crab_u_i_1_1_c_u_i_sprite.html">CUISprite</a> CrabUI.CUISprite.Default</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>new Sprite that uses 1x1 default texture </p>
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00035">35</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
+
+</div>
+</div>
+<a id="a03304539feca05d4c115f5b4a8d1a6ad" name="a03304539feca05d4c115f5b4a8d1a6ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03304539feca05d4c115f5b4a8d1a6ad">&#9670;&#160;</a></span>Offset</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector2 CrabUI.CUISprite.Offset</td>
         </tr>
       </table>
   </td>
@@ -279,20 +863,24 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00027">27</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   28</span>    {</div>
-<div class="line"><span class="lineno">   29</span>      <span class="keyword">get</span> =&gt; path;</div>
-<div class="line"><span class="lineno">   30</span>      <span class="keyword">set</span></div>
-<div class="line"><span class="lineno">   31</span>      {</div>
-<div class="line"><span class="lineno">   32</span>        path = value;</div>
-<div class="line"><span class="lineno">   33</span>        Texture = CUI.TextureManager.GetTexture(value);</div>
-<div class="line"><span class="lineno">   34</span>      }</div>
-<div class="line"><span class="lineno">   35</span>    }</div>
+<p>Draw offset from <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html" title="Base class for all components.">CUIComponent</a> Position <br  />
+ For your convenience also sets origin. </p>
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00102">102</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  103</span>    {</div>
+<div class="line"><span class="lineno">  104</span>      <span class="keyword">get</span> =&gt; offset;</div>
+<div class="line"><span class="lineno">  105</span>      <span class="keyword">set</span></div>
+<div class="line"><span class="lineno">  106</span>      {</div>
+<div class="line"><span class="lineno">  107</span>        offset = value;</div>
+<div class="line"><span class="lineno">  108</span>        <a class="code hl_property" href="#ae3aa62f03d1a7ec529197f5948d37c92">RelativeOrigin</a> = value;</div>
+<div class="line"><span class="lineno">  109</span>      }</div>
+<div class="line"><span class="lineno">  110</span>    }</div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_sprite_html_ae3aa62f03d1a7ec529197f5948d37c92"><div class="ttname"><a href="#ae3aa62f03d1a7ec529197f5948d37c92">CrabUI.CUISprite.RelativeOrigin</a></div><div class="ttdeci">Vector2 RelativeOrigin</div><div class="ttdoc">Origin of rotation in [0..1] of texture size.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_sprite_8cs_source.html#l00089">CUISprite.cs:90</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a891e083682dd97d1fe32c5c46221a007" name="a891e083682dd97d1fe32c5c46221a007"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a891e083682dd97d1fe32c5c46221a007">&#9670;&#160;</a></span>SourceRect</h2>
+<a id="ae3aa62f03d1a7ec529197f5948d37c92" name="ae3aa62f03d1a7ec529197f5948d37c92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3aa62f03d1a7ec529197f5948d37c92">&#9670;&#160;</a></span>RelativeOrigin</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -301,7 +889,40 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Rectangle? CrabUI.CUISprite.SourceRect</td>
+          <td class="memname">Vector2 CrabUI.CUISprite.RelativeOrigin</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Origin of rotation in [0..1] of texture size. </p>
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00089">89</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   90</span>    {</div>
+<div class="line"><span class="lineno">   91</span>      <span class="keyword">set</span></div>
+<div class="line"><span class="lineno">   92</span>      {</div>
+<div class="line"><span class="lineno">   93</span>        <span class="keywordflow">if</span> (<a class="code hl_property" href="#ab1f26de016b457a60183f6a66fc7cf20">Texture</a> == <span class="keyword">null</span>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   94</span>        <a class="code hl_variable" href="#a885d6ea54b1379e126dcd867e953d9ad">Origin</a> = <span class="keyword">new</span> Vector2(value.X * <a class="code hl_property" href="#ab1f26de016b457a60183f6a66fc7cf20">Texture</a>.Width, value.Y * <a class="code hl_property" href="#ab1f26de016b457a60183f6a66fc7cf20">Texture</a>.Height);</div>
+<div class="line"><span class="lineno">   95</span>      }</div>
+<div class="line"><span class="lineno">   96</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0107ee3dc911c86f52758b3bde69f43f" name="a0107ee3dc911c86f52758b3bde69f43f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0107ee3dc911c86f52758b3bde69f43f">&#9670;&#160;</a></span>RotationAngle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float CrabUI.CUISprite.RotationAngle</td>
         </tr>
       </table>
   </td>
@@ -311,8 +932,13 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00040">40</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   40</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p>In degree. </p>
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00077">77</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   78</span>    {</div>
+<div class="line"><span class="lineno">   79</span>      <span class="keyword">get</span> =&gt; (float)(<a class="code hl_variable" href="#a1794982622a9cf9be6dc403e6e345947">Rotation</a> * 180 / Math.PI);</div>
+<div class="line"><span class="lineno">   80</span>      <span class="keyword">set</span> =&gt; <a class="code hl_variable" href="#a1794982622a9cf9be6dc403e6e345947">Rotation</a> = (float)(value * Math.PI / 180);</div>
+<div class="line"><span class="lineno">   81</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -336,8 +962,18 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00037">37</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   37</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p>The link to the texture <br  />
+ Multiple sprites can use the same texture. </p>
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_sprite_8cs_source.html#l00061">61</a> of file <a class="el" href="_c_u_i_sprite_8cs_source.html">CUISprite.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   62</span>    {</div>
+<div class="line"><span class="lineno">   63</span>      <span class="keyword">get</span> =&gt; texture;</div>
+<div class="line"><span class="lineno">   64</span>      <span class="keyword">set</span></div>
+<div class="line"><span class="lineno">   65</span>      {</div>
+<div class="line"><span class="lineno">   66</span>        texture = value;</div>
+<div class="line"><span class="lineno">   67</span>        <a class="code hl_variable" href="#a4595d178167f676828fa9dfdfdfeec0d">SourceRect</a> = <span class="keyword">new</span> Rectangle(0, 0, texture.Width, texture.Height);</div>
+<div class="line"><span class="lineno">   68</span>      }</div>
+<div class="line"><span class="lineno">   69</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>

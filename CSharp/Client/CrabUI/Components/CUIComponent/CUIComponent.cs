@@ -137,7 +137,7 @@ namespace CrabUI
 
     public virtual partial void Draw(SpriteBatch spriteBatch)
     {
-      if (BackgroundVisible) CUI.DrawRectangle(spriteBatch, Real, BackgroundColor, BackgroundSprite);
+      if (BackgroundVisible) CUI.DrawRectangle(spriteBatch, Real, BackgroundColor * Transparency, BackgroundSprite);
 
       CUI.DrawBorders(spriteBatch, this);
       // if (Border.Visible) GUI.DrawRectangle(spriteBatch, BorderBox.Position, BorderBox.Size, Border.Color, thickness: Border.Thickness);
@@ -211,6 +211,7 @@ namespace CrabUI
       Layout = new CUILayoutSimple();
 
       SetupStyles();
+      SetupAnimations();
     }
 
     public CUIComponent(float? x = null, float? y = null, float? w = null, float? h = null) : this()

@@ -40,7 +40,7 @@ namespace CrabUI
       }
       else
       {
-        GameMain.LuaCs.Hook.Add("think", (object[] args) =>
+        GameMain.LuaCs.Hook.Add("think", CUI.UpdateHookIdentifier, (object[] args) =>
         {
           CUIUpdate(Timing.TotalTime);
           return null;
@@ -118,6 +118,7 @@ namespace CrabUI
     {
       try
       {
+        CUIAnimation.UpdateAllAnimations(time);
         CUI.Input?.Scan(time);
         TopMain?.Update(time);
         Main?.Update(time);

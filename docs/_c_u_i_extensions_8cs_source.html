@@ -114,7 +114,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">partial class </span>CUIExtensions</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  {</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">int</span> Fit(<span class="keyword">this</span> <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> bottom, <span class="keywordtype">int</span> top) =&gt; Math.Max(bottom, Math.Min(i, top));</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">public</span> <span class="keyword">static</span> Vector2 Rotate(<span class="keyword">this</span> Vector2 v, <span class="keywordtype">float</span> angle) =&gt; Vector2.Transform(v, Matrix.CreateRotationZ(angle));</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> SubstringSafe(<span class="keyword">this</span> <span class="keywordtype">string</span> s, <span class="keywordtype">int</span> start)</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    {</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>      <span class="keywordflow">try</span></div>
@@ -313,7 +313,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    }</div>
 <div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>  }</div>
 <div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>}</div>
-<div class="ttc" id="anamespace_crab_u_i_html"><div class="ttname"><a href="namespace_crab_u_i.html">CrabUI</a></div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_button_8cs_source.html#l00012">CUIButton.cs:13</a></div></div>
+<div class="ttc" id="anamespace_crab_u_i_html"><div class="ttname"><a href="namespace_crab_u_i.html">CrabUI</a></div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_animation_8cs_source.html#l00011">CUIAnimation.cs:12</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

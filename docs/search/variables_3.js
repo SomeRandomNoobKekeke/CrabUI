@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['handle_0',['Handle',['../class_crab_u_i_1_1_c_u_i_slider.html#a6cf1635561b9e4c32a7c542552e06a9b',1,'CrabUI::CUISlider']]]
+  ['global_0',['Global',['../class_crab_u_i_1_1_c_u_i_main_component.html#a6b0d9da0aee41fa3865f6f1d3b5ee9fe',1,'CrabUI::CUIMainComponent']]]
 ];

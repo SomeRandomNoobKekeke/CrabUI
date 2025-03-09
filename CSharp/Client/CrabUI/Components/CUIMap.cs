@@ -187,7 +187,7 @@ namespace CrabUI
     }
 
 
-    public override void FromXML(XElement element)
+    public override void FromXML(XElement element, string baseFolder = null)
     {
       foreach (XElement childElement in element.Element("Children").Elements())
       {

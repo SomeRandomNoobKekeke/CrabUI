@@ -347,7 +347,7 @@ namespace CrabUI
       {
         RunStraigth(c =>
         {
-          bool ok = !c.IgnoreEvents && c.Real.Contains(CUI.Input.MousePosition);
+          bool ok = !c.IgnoreEvents && c.Real.Contains(CUI.Input.MousePosition) && c.ShouldInvoke(CUI.Input);
 
           if (c.Parent != null && c.Parent.ScissorRect.HasValue &&
               !c.Parent.ScissorRect.Value.Contains(CUI.Input.Mouse.Position))

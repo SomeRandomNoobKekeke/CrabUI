@@ -1,3 +1,18 @@
+## 0.2.5.0
+Added CUI.UpdateHookIdentifier it will be set as identifier to CUI think hook, it very important to set it or hooks from different CUIs will conflict
+
+Added CUIAnimation
+Added IgnoreTransparent prop, if true mouse events will work only on not transparent sprites
+Added Transparency prop, it multiplies BackgroundColor.A and is propagated to Children
+
+Made CUISpite an object... again
+Added Rotation, Origin and Offset to CUISprite
+Added option to load CUISprites with base folder, which allows deserialized components to load sprites from the same folder with relative paths
+
+Added CUIMenu, check "Custom Menus" mod, CUIRadialMenu (the ugly brother of CUIMenu)
+
+Added more docs
+
 ## 0.2.4.0
 
 "Fixed" cursed bug that made MainComponents become in GameMain.Update patch after multiple lobbies in compiled version

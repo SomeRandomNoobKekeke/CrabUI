@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['texturemanager_0',['TextureManager',['../class_crab_u_i_1_1_c_u_i.html#a35714b44c421730281bb8f7d1814f226',1,'CrabUI::CUI']]]
+  ['origin_0',['Origin',['../class_crab_u_i_1_1_c_u_i_sprite.html#a885d6ea54b1379e126dcd867e953d9ad',1,'CrabUI::CUISprite']]]
 ];

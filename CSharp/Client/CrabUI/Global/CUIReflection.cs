@@ -113,6 +113,12 @@ namespace CrabUI
       CUITypes["CUIComponent"] = typeof(CUIComponent);
       CUILayoutTypes["CUILayout"] = typeof(CUILayout);
 
+
+      //TODO Nested types might have same name, think how to separate them
+      // lua and style resolver uses them
+      // string name = t.Name;
+      // if (t.DeclaringType != null) name = $"{t.DeclaringType.Name}.{t.Name}";
+      // CUITypes[name] = t;
       foreach (Type t in CallingAssembly.GetTypes())
       {
         if (t.IsSubclassOf(typeof(CUIComponent))) CUITypes[t.Name] = t;

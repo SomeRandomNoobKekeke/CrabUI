@@ -11,7 +11,8 @@ using Microsoft.Xna.Framework.Graphics;
 namespace CrabUI
 {
 
-  public class CUIBorder
+  //TODO why is this mutable?
+  public class CUIBorder : ICloneable
   {
     private Color color; public Color Color
     {
@@ -57,6 +58,10 @@ namespace CrabUI
       return false;
     }
 
+    public object Clone()
+    {
+      return new CUIBorder(Color, Thickness);
+    }
 
 
     public override string ToString() => $"[{CUIExtensions.ColorToString(Color)},{Thickness}]";

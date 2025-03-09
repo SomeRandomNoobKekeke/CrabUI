@@ -110,7 +110,11 @@ namespace CrabUI
     /// Will break the mod if it's compiled
     /// </summary>
     public static bool UseCursedPatches { get; set; } = false;
-    public static Harmony harmony = new Harmony("crabui");
+    /// <summary>
+    /// It's important to set it, if 2 CUIs try to add a hook with same id one won't be added
+    /// </summary>
+    public static string UpdateHookIdentifier { get; set; } = "CUI";
+    public static Harmony harmony = new Harmony("CrabUI");
     public static Random Random = new Random();
 
     /// <summary>
@@ -232,13 +236,18 @@ namespace CrabUI
 
     //HACK Why it's set to run in static constructor?
     // it runs perfectly fine in CUI.Initialize
+    //TODO component inits doesn't depend on the order
+    // why am i responsible for initing them here?
     internal static void InitStatic()
     {
       CUIExtensions.InitStatic();
+      CUIInterpolate.InitStatic();
+      CUIAnimation.InitStatic();
       CUIReflection.InitStatic();
       CUIMultiModResolver.InitStatic();
       CUIPalette.InitStatic();
       CUIMap.CUIMapLink.InitStatic();
+      CUIMenu.InitStatic();
       CUIComponent.InitStatic();
       CUITypeMetaData.InitStatic();
       CUIStyleLoader.InitStatic();

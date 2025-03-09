@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CrabUI: CSharp/Client/CrabUI/Global/CUIGlobalStyleResolver.cs Source File</title>
+<title>CrabUI: CSharp/Client/CrabUI/Style/CUIGlobalStyleResolver.cs Source File</title>
 <link rel="icon" href="BaroModder (small).png" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -85,7 +85,7 @@ $(function(){ initResizable(false); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_2358508cf2cd3f735687a956f2da4c3a.html">CSharp</a></li><li class="navelem"><a class="el" href="dir_3e3041ae236a960906be8d0346149e4c.html">Client</a></li><li class="navelem"><a class="el" href="dir_4c3768cc1e8e77d1e3ee609583c33bab.html">CrabUI</a></li><li class="navelem"><a class="el" href="dir_0f4dda98c5997a20f6b30cd5d7ece680.html">Global</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_2358508cf2cd3f735687a956f2da4c3a.html">CSharp</a></li><li class="navelem"><a class="el" href="dir_3e3041ae236a960906be8d0346149e4c.html">Client</a></li><li class="navelem"><a class="el" href="dir_4c3768cc1e8e77d1e3ee609583c33bab.html">CrabUI</a></li><li class="navelem"><a class="el" href="dir_319ee17d894b3222432b2b41697e9ac0.html">Style</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
@@ -175,7 +175,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>      }</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>      <span class="keywordflow">catch</span> (Exception e)</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>      {</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i.html">CUI</a>.Warning(e);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i.html">CUI</a>.Warning($<span class="stringliteral">&quot;OnDefaultStyleChanged| {e}&quot;</span>);</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>      }</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    }</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
@@ -308,14 +308,14 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
 <div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>}</div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html">CrabUI.CUIComponent</a></div><div class="ttdoc">Base class for all components.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_tree_8cs_source.html#l00019">CUIComponent.Tree.cs:20</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a00e17a5180c0ea7ccfc2af14149f1e85"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a00e17a5180c0ea7ccfc2af14149f1e85">CrabUI.CUIComponent.Palette</a></div><div class="ttdeci">PaletteOrder Palette</div><div class="ttdoc">This palette will be used to resolve palette styles   Primary, Secondary, Tertiary,...</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_graphic_01_props_8cs_source.html#l00088">CUIComponent.Graphic Props.cs:89</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a00e17a5180c0ea7ccfc2af14149f1e85"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a00e17a5180c0ea7ccfc2af14149f1e85">CrabUI.CUIComponent.Palette</a></div><div class="ttdeci">PaletteOrder Palette</div><div class="ttdoc">This palette will be used to resolve palette styles   Primary, Secondary, Tertiary,...</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_graphic_01_props_8cs_source.html#l00113">CUIComponent.Graphic Props.cs:114</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a729c73296986b0fdb3d820c8d92858eb"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a729c73296986b0fdb3d820c8d92858eb">CrabUI.CUIComponent.Style</a></div><div class="ttdeci">CUIStyle Style</div><div class="ttdoc">Allows you to assing parsable string or link to CUIPalette to any prop   It's indexable,...</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_style_8cs_source.html#l00050">CUIComponent.Style.cs:51</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_global_style_resolver_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_global_style_resolver.html">CrabUI.CUIGlobalStyleResolver</a></div><div class="ttdoc">Contains all logic for resolving styles in the framework.</div><div class="ttdef"><b>Definition</b> <a href="#l00017">CUIGlobalStyleResolver.cs:18</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_global_style_resolver_html_ab4e0548f1b832fa8f7945a0839fcd7f7"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_global_style_resolver.html#ab4e0548f1b832fa8f7945a0839fcd7f7">CrabUI.CUIGlobalStyleResolver.ApplyStylePropOn</a></div><div class="ttdeci">static void ApplyStylePropOn(CUIStyle style, string name, CUIComponent target, CUITypeMetaData meta=null)</div><div class="ttdoc">Applies 1 prop with name on the target.</div><div class="ttdef"><b>Definition</b> <a href="#l00146">CUIGlobalStyleResolver.cs:146</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html">CrabUI.CUI</a></div><div class="ttdoc">In fact a static class managing static things.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_drawing_8cs_source.html#l00015">CUIDrawing.cs:16</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_style_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_style.html">CrabUI.CUIStyle</a></div><div class="ttdoc">In Fact just an observable dict.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_style_8cs_source.html#l00020">CUIStyle.cs:21</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_style_html_a49074c884e6c899040314e3386115bb5"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_style.html#a49074c884e6c899040314e3386115bb5">CrabUI.CUIStyle.Props</a></div><div class="ttdeci">Dictionary&lt; string, string &gt; Props</div><div class="ttdoc">Prop name -&gt; value.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_style_8cs_source.html#l00042">CUIStyle.cs:42</a></div></div>
-<div class="ttc" id="anamespace_crab_u_i_html"><div class="ttname"><a href="namespace_crab_u_i.html">CrabUI</a></div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_button_8cs_source.html#l00012">CUIButton.cs:13</a></div></div>
+<div class="ttc" id="anamespace_crab_u_i_html"><div class="ttname"><a href="namespace_crab_u_i.html">CrabUI</a></div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_animation_8cs_source.html#l00011">CUIAnimation.cs:12</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

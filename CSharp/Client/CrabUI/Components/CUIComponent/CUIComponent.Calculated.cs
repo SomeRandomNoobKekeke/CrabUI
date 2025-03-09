@@ -105,6 +105,10 @@ namespace CrabUI
     protected CUIRect OutlineBox { get; set; }
     internal Rectangle? ScissorRect { get; set; }
     /// <summary>
+    /// Buffer for texture data, for IgnoreTransparent checks
+    /// </summary>
+    protected Color[] TextureData;
+    /// <summary>
     /// Calculated prop, position on real screen in pixels
     /// Should be fully calculated after CUIMainComponent.Update
     /// </summary>
@@ -114,6 +118,8 @@ namespace CrabUI
       get => real;
       set => SetReal(value);
     }
+
+
 
     private CUIRect real; internal void SetReal(CUIRect value, [CallerMemberName] string memberName = "")
     {

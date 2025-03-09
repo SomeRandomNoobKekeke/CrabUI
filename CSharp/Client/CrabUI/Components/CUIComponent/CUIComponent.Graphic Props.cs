@@ -68,6 +68,17 @@ namespace CrabUI
       get => CUIProps.BackgroundSprite.Value;
       set => CUIProps.BackgroundSprite.SetValue(value);
     }
+    /// <summary>
+    /// If true, mouse events on transparent pixels will be ignored  
+    /// Note: this will buffer texture data and potentially consume a lot of memory
+    /// so use wisely
+    /// </summary>
+    [CUISerializable]
+    public bool IgnoreTransparent
+    {
+      get => CUIProps.IgnoreTransparent.Value;
+      set => CUIProps.IgnoreTransparent.SetValue(value);
+    }
     //TODO i think those colors could be stored inside sprites
     // But then it'll be much harder to apply side effects, think about it
     /// <summary>
@@ -79,6 +90,20 @@ namespace CrabUI
     {
       get => CUIProps.BackgroundColor.Value;
       set => CUIProps.BackgroundColor.SetValue(value);
+    }
+
+    private float transparency = 1.0f;
+    public float Transparency
+    {
+      get => transparency;
+      set
+      {
+        transparency = value;
+        foreach (CUIComponent child in Children)
+        {
+          if (!child.IgnoreParentTransparency) child.Transparency = value;
+        }
+      }
     }
     /// <summary>
     /// This palette will be used to resolve palette styles  

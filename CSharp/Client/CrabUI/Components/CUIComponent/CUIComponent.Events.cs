@@ -33,48 +33,104 @@ namespace CrabUI
     }
 
     public event Action OnTreeChanged;
-    public event Action<double> OnUpdate; internal void InvokeOnUpdate(double totalTime) => OnUpdate?.Invoke(totalTime);
+    public event Action<double> OnUpdate;
+    public event Action<CUIInput> OnMouseLeave;
+    public event Action<CUIInput> OnMouseEnter;
+    public event Action<CUIInput> OnMouseDown;
+    public event Action<CUIInput> OnMouseUp;
+    public event Action<CUIInput> OnMouseMove;
+    public event Action<CUIInput> OnMouseOn;
+    public event Action<CUIInput> OnMouseOff;
+    public event Action<CUIInput> OnClick;
+    public event Action<CUIInput> OnDClick;
+    public event Action<CUIInput> OnScroll;
+    public event Action<float, float> OnDrag;
+    public event Action<float, float> OnSwipe;
+    public event Action<CUIInput> OnKeyDown;
+    public event Action<CUIInput> OnKeyUp;
+    public event Action<CUIInput> OnTextInput;
+    public event Action OnFocus;
+    public event Action OnFocusLost;
+
+
     public Action<double> AddOnUpdate { set { OnUpdate += value; } }
-    public event Action<CUIInput> OnMouseLeave; internal void InvokeOnMouseLeave(CUIInput e) => OnMouseLeave?.Invoke(e);
     public Action<CUIInput> AddOnMouseLeave { set { OnMouseLeave += value; } }
-    public event Action<CUIInput> OnMouseEnter; internal void InvokeOnMouseEnter(CUIInput e) => OnMouseEnter?.Invoke(e);
     public Action<CUIInput> AddOnMouseEnter { set { OnMouseEnter += value; } }
-    public event Action<CUIInput> OnMouseDown; internal void InvokeOnMouseDown(CUIInput e) => OnMouseDown?.Invoke(e);
     public Action<CUIInput> AddOnMouseDown { set { OnMouseDown += value; } }
-    public event Action<CUIInput> OnMouseUp; internal void InvokeOnMouseUp(CUIInput e) => OnMouseUp?.Invoke(e);
     public Action<CUIInput> AddOnMouseUp { set { OnMouseUp += value; } }
-    public event Action<CUIInput> OnMouseMove; internal void InvokeOnMouseMove(CUIInput e) => OnMouseMove?.Invoke(e);
     public Action<CUIInput> AddOnMouseMove { set { OnMouseMove += value; } }
-    public event Action<CUIInput> OnMouseOn; internal void InvokeOnMouseOn(CUIInput e) => OnMouseOn?.Invoke(e);
     public Action<CUIInput> AddOnMouseOn { set { OnMouseOn += value; } }
-    public event Action<CUIInput> OnMouseOff; internal void InvokeOnMouseOff(CUIInput e) => OnMouseOff?.Invoke(e);
     public Action<CUIInput> AddOnMouseOff { set { OnMouseOff += value; } }
-    public event Action<CUIInput> OnClick; internal void InvokeOnClick(CUIInput e) => OnClick?.Invoke(e);
     public Action<CUIInput> AddOnClick { set { OnClick += value; } }
-    public event Action<CUIInput> OnDClick; internal void InvokeOnDClick(CUIInput e) => OnDClick?.Invoke(e);
     public Action<CUIInput> AddOnDClick { set { OnDClick += value; } }
-    public event Action<CUIInput> OnScroll; internal void InvokeOnScroll(CUIInput e) => OnScroll?.Invoke(e);
     public Action<CUIInput> AddOnScroll { set { OnScroll += value; } }
-    public event Action<float, float> OnDrag; internal void InvokeOnDrag(float x, float y) => OnDrag?.Invoke(x, y);
     public Action<float, float> AddOnDrag { set { OnDrag += value; } }
-    public event Action<float, float> OnSwipe; internal void InvokeOnSwipe(float x, float y) => OnSwipe?.Invoke(x, y);
     public Action<float, float> AddOnSwipe { set { OnSwipe += value; } }
-    public event Action<CUIInput> OnKeyDown; internal void InvokeOnKeyDown(CUIInput e) => OnKeyDown?.Invoke(e);
     public Action<CUIInput> AddOnKeyDown { set { OnKeyDown += value; } }
-    public event Action<CUIInput> OnKeyUp; internal void InvokeOnKeyUp(CUIInput e) => OnKeyUp?.Invoke(e);
     public Action<CUIInput> AddOnKeyUp { set { OnKeyUp += value; } }
-    public event Action<CUIInput> OnTextInput; internal void InvokeOnTextInput(CUIInput e) => OnTextInput?.Invoke(e);
     public Action<CUIInput> AddOnTextInput { set { OnTextInput += value; } }
-    public event Action OnFocus; internal void InvokeOnFocus() => OnFocus?.Invoke();
     public Action AddOnFocus { set { OnFocus += value; } }
-    public event Action OnFocusLost; internal void InvokeOnFocusLost() => OnFocusLost?.Invoke();
     public Action AddOnFocusLost { set { OnFocusLost += value; } }
 
-    /// <summary>
-    /// Simulates Click
-    /// </summary>
-    public void Click()
-    { OnMouseDown?.Invoke(CUI.Input); }
+    //TODO add more CUISpriteDrawModes
+    public virtual bool IsPointOnTransparentPixel(Vector2 point)
+    {
+      if (BackgroundSprite.DrawMode != CUISpriteDrawMode.Resize) return true;
+
+      //TODO hangle case where offset != sprite.origin
+      Vector2 RotationCenter = new Vector2(
+        BackgroundSprite.Offset.X * Real.Width,
+        BackgroundSprite.Offset.Y * Real.Height
+      );
+
+      Vector2 v = (point - Real.Position - RotationCenter).Rotate(-BackgroundSprite.Rotation) + RotationCenter;
+
+      float x = v.X / Real.Width;
+      float y = v.Y / Real.Height;
+
+      Rectangle bounds = BackgroundSprite.Texture.Bounds;
+      Rectangle SourceRect = BackgroundSprite.SourceRect;
+
+      int textureX = (int)Math.Round(SourceRect.X + x * SourceRect.Width);
+      int textureY = (int)Math.Round(SourceRect.Y + y * SourceRect.Height);
+
+      if (textureX < SourceRect.X || (SourceRect.X + SourceRect.Width - 1) < textureX) return true;
+      if (textureY < SourceRect.Y || (SourceRect.Y + SourceRect.Height - 1) < textureY) return true;
+
+      Color cl = TextureData[textureY * bounds.Width + textureX];
+
+      return cl.A == 0;
+    }
+
+
+    public virtual bool ShouldInvoke(CUIInput e)
+    {
+      if (IgnoreTransparent)
+      {
+        return !IsPointOnTransparentPixel(e.MousePosition);
+      }
+
+      return true;
+    }
+
+    internal void InvokeOnUpdate(double totalTime) => OnUpdate?.Invoke(totalTime);
+    internal void InvokeOnMouseLeave(CUIInput e) { OnMouseLeave?.Invoke(e); }
+    internal void InvokeOnMouseEnter(CUIInput e) { if (ShouldInvoke(e)) OnMouseEnter?.Invoke(e); }
+    internal void InvokeOnMouseDown(CUIInput e) { if (ShouldInvoke(e)) OnMouseDown?.Invoke(e); }
+    internal void InvokeOnMouseUp(CUIInput e) { if (ShouldInvoke(e)) OnMouseUp?.Invoke(e); }
+    internal void InvokeOnMouseMove(CUIInput e) { if (ShouldInvoke(e)) OnMouseMove?.Invoke(e); }
+    internal void InvokeOnMouseOn(CUIInput e) { if (ShouldInvoke(e)) OnMouseOn?.Invoke(e); }
+    internal void InvokeOnMouseOff(CUIInput e) { if (ShouldInvoke(e)) OnMouseOff?.Invoke(e); }
+    internal void InvokeOnClick(CUIInput e) { if (ShouldInvoke(e)) OnClick?.Invoke(e); }
+    internal void InvokeOnDClick(CUIInput e) { if (ShouldInvoke(e)) OnDClick?.Invoke(e); }
+    internal void InvokeOnScroll(CUIInput e) { if (ShouldInvoke(e)) OnScroll?.Invoke(e); }
+    internal void InvokeOnDrag(float x, float y) => OnDrag?.Invoke(x, y);
+    internal void InvokeOnSwipe(float x, float y) => OnSwipe?.Invoke(x, y);
+    internal void InvokeOnKeyDown(CUIInput e) { if (ShouldInvoke(e)) OnKeyDown?.Invoke(e); }
+    internal void InvokeOnKeyUp(CUIInput e) { if (ShouldInvoke(e)) OnKeyUp?.Invoke(e); }
+    internal void InvokeOnTextInput(CUIInput e) { if (ShouldInvoke(e)) OnTextInput?.Invoke(e); }
+    internal void InvokeOnFocus() => OnFocus?.Invoke();
+    internal void InvokeOnFocusLost() => OnFocusLost?.Invoke();
 
     #endregion
     #region Handles --------------------------------------------------------

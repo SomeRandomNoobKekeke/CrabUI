@@ -10,5 +10,8 @@ var searchData=
   ['forcedminsize_7',['ForcedMinSize',['../class_crab_u_i_1_1_c_u_i_component.html#a4382d3fe1d70af02943be4f464a06502',1,'CrabUI::CUIComponent']]],
   ['forcemarkunchanged_8',['ForceMarkUnchanged',['../class_crab_u_i_1_1_c_u_i_layout.html#a0259afb4509fb35948761b0b06a40be5',1,'CrabUI::CUILayout']]],
   ['forget_9',['Forget',['../class_crab_u_i_1_1_c_u_i_component.html#a6705c92f70004b2401268c0968c842e9',1,'CrabUI::CUIComponent']]],
-  ['frozen_10',['Frozen',['../class_crab_u_i_1_1_c_u_i_main_component.html#a818766ed3e726ac4fb5f9b4c2ae82c89',1,'CrabUI::CUIMainComponent']]]
+  ['forward_10',['Forward',['../class_crab_u_i_1_1_c_u_i_animation.html#ac2201b3a83665a48f6ae08938599a9f0',1,'CrabUI::CUIAnimation']]],
+  ['fromname_11',['FromName',['../class_crab_u_i_1_1_c_u_i_sprite.html#a6d8bb18eae80e7fef994d68737990ae0',1,'CrabUI::CUISprite']]],
+  ['fromvanilla_12',['FromVanilla',['../class_crab_u_i_1_1_c_u_i_sprite.html#ac939725816d07c09e11858a96a80b84e',1,'CrabUI::CUISprite']]],
+  ['frozen_13',['Frozen',['../class_crab_u_i_1_1_c_u_i_main_component.html#a818766ed3e726ac4fb5f9b4c2ae82c89',1,'CrabUI::CUIMainComponent']]]
 ];

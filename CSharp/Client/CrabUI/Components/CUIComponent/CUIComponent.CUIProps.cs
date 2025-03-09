@@ -192,6 +192,7 @@ namespace CrabUI
       {
         Value = CUISprite.Default,
         ShowInDebug = false,
+        Validate = (v, host) => v ?? CUISprite.Default,
         OnSet = (v, host) =>
         {
           if (host.ResizeToSprite)
@@ -201,6 +202,30 @@ namespace CrabUI
               Width = v.SourceRect.Width,
               Height = v.SourceRect.Height,
             };
+          }
+
+          if (host.IgnoreTransparent)
+          {
+            Rectangle bounds = host.BackgroundSprite.Texture.Bounds;
+            host.TextureData = new Color[bounds.Width * bounds.Height];
+            host.BackgroundSprite.Texture.GetData<Color>(host.TextureData);
+          }
+        },
+      };
+
+      public CUIProp<bool> IgnoreTransparent = new CUIProp<bool>()
+      {
+        OnSet = (v, host) =>
+        {
+          if (v)
+          {
+            Rectangle bounds = host.BackgroundSprite.Texture.Bounds;
+            host.TextureData = new Color[bounds.Width * bounds.Height];
+            host.BackgroundSprite.Texture.GetData<Color>(host.TextureData);
+          }
+          else
+          {
+            host.TextureData = null;
           }
         },
       };

@@ -52,6 +52,7 @@ namespace CrabUI
     /// Don't inherit parent ZIndex
     /// </summary>
     [CUISerializable] public bool IgnoreParentZIndex { get; set; }
+    [CUISerializable] public bool IgnoreParentTransparency { get; set; }
 
     /// <summary>
     /// Invisible components are not drawn, but still can be interacted with

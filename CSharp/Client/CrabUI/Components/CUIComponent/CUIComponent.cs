@@ -200,12 +200,20 @@ namespace CrabUI
 
     public CUIComponent()
     {
+      if (CUI.Disposed)
+      {
+        Disposed = true;
+        return;
+      }
+
       ID = MaxID++;
+
       ComponentsById[ID] = new WeakReference<CUIComponent>(this);
       ComponentsByType.Add(this.GetType(), this);
 
       Vitalize();
       VitalizeProps();
+
       SetupCommands();
 
       Layout = new CUILayoutSimple();
@@ -219,12 +227,12 @@ namespace CrabUI
       Relative = new CUINullRect(x, y, w, h);
     }
 
-    private bool disposed;
+    public bool Disposed;
     public void Dispose()
     {
-      if (disposed) return;
+      if (Disposed) return;
       CleanUp();
-      disposed = true;
+      Disposed = true;
     }
     public virtual void CleanUp() { }
 

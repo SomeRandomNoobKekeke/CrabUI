@@ -44,6 +44,10 @@ But here's hacky install steps if you want to try it now:
 
 Check `CSharp\Client\Mod.cs` for example
 
+#### Also in assembly mods
+I highly recommend you to set CUI.UseCursedPatches to false and then set CUI.HookIdentifier to some name and add AdditionalHooks.lua to Lua/Autorun to avoid [curse](https://github.com/evilfactory/LuaCsForBarotrauma/issues/245)
+
+
 ### For lua mods
 - Copy entire `CSharp` folder into your mod folder
 - Copy `Assets` folder into your mod folder

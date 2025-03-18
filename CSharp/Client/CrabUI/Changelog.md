@@ -1,3 +1,24 @@
+## 0.2.6.0
+Found one ugly solution to the curse (https://github.com/evilfactory/LuaCsForBarotrauma/issues/245), i think it's the only way to bypass it  
+If you find a better way let me know  
+
+So, the problem is harmony patches in assembly mods are bugged and generally don't work  
+
+Solution: Add lua script that adds patches and calls hooks, and then add hooks from assembly
+
+If you set CUI.UseCursedPatches to true it'll use harmony and be potentially bugged  
+If you set CUI.UseCursedPatches to false it won't be bugged, but you'll also have to set CUI.HookIdentifier to some name or hooks from different CUIs will conflict and add AdditionalHooks.lua to Lua/Autorun
+
+## 0.2.5.1
+Experimenting with the way multiple CUIs resolve conflicts
+Renamed CUI.UpdateHookIdentifier => CUI.HookIdentifier
+now i'm using it in harmony patches to
+
+added warning if it's not set
+
+fixed crash in GUI_UpdateMouseOn_Postfix
+Added null checks in GUI_UpdateMouseOn_Postfix
+
 ## 0.2.5.0
 Added CUI.UpdateHookIdentifier it will be set as identifier to CUI think hook, it very important to set it or hooks from different CUIs will conflict
 

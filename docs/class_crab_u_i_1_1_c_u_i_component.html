@@ -282,6 +282,8 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a68c79918dc6868f7536b1e9fb3fb7c95" id="r_a68c79918dc6868f7536b1e9fb3fb7c95"><td class="memItemLeft" align="right" valign="top">Dictionary&lt; string, List&lt; <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68c79918dc6868f7536b1e9fb3fb7c95">DataTargets</a> = new()</td></tr>
 <tr class="memdesc:a68c79918dc6868f7536b1e9fb3fb7c95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Consumers of emmited data, updates on tree change.  <br /></td></tr>
 <tr class="separator:a68c79918dc6868f7536b1e9fb3fb7c95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1924ce1e1d753c0c1f49f09a46f33e6b" id="r_a1924ce1e1d753c0c1f49f09a46f33e6b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1924ce1e1d753c0c1f49f09a46f33e6b">Disposed</a></td></tr>
+<tr class="separator:a1924ce1e1d753c0c1f49f09a46f33e6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a032faa3763d2d8ab01247793fd030e56" id="r_a032faa3763d2d8ab01247793fd030e56"><td class="memItemLeft" align="right" valign="top">CUIResizeHandle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a032faa3763d2d8ab01247793fd030e56">LeftResizeHandle</a> = new CUIResizeHandle(new Vector2(0, 1), new <a class="el" href="struct_crab_u_i_1_1_c_u_i_bool2.html">CUIBool2</a>(false, false))</td></tr>
 <tr class="separator:a032faa3763d2d8ab01247793fd030e56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad43ccac695aae80340a7948e5e61aebc" id="r_ad43ccac695aae80340a7948e5e61aebc"><td class="memItemLeft" align="right" valign="top">CUIResizeHandle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad43ccac695aae80340a7948e5e61aebc">RightResizeHandle</a> = new CUIResizeHandle(new Vector2(1, 1), new <a class="el" href="struct_crab_u_i_1_1_c_u_i_bool2.html">CUIBool2</a>(true, false))</td></tr>
@@ -719,19 +721,27 @@ Events</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_c_u_i_component_8cs_source.html#l00201">201</a> of file <a class="el" href="_c_u_i_component_8cs_source.html">CUIComponent.cs</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  202</span>    {</div>
-<div class="line"><span class="lineno">  203</span>      <a class="code hl_property" href="#a97bacc49652d724c7ff474aeddd4b97d">ID</a> = MaxID++;</div>
-<div class="line"><span class="lineno">  204</span>      ComponentsById[<a class="code hl_property" href="#a97bacc49652d724c7ff474aeddd4b97d">ID</a>] = <span class="keyword">new</span> WeakReference&lt;CUIComponent&gt;(<span class="keyword">this</span>);</div>
-<div class="line"><span class="lineno">  205</span>      ComponentsByType.Add(this.GetType(), <span class="keyword">this</span>);</div>
-<div class="line"><span class="lineno">  206</span> </div>
-<div class="line"><span class="lineno">  207</span>      Vitalize();</div>
-<div class="line"><span class="lineno">  208</span>      VitalizeProps();</div>
-<div class="line"><span class="lineno">  209</span>      SetupCommands();</div>
+<div class="line"><span class="lineno">  203</span>      <span class="keywordflow">if</span> (CUI.Disposed)</div>
+<div class="line"><span class="lineno">  204</span>      {</div>
+<div class="line"><span class="lineno">  205</span>        Disposed = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  206</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  207</span>      }</div>
+<div class="line"><span class="lineno">  208</span> </div>
+<div class="line"><span class="lineno">  209</span>      <a class="code hl_property" href="#a97bacc49652d724c7ff474aeddd4b97d">ID</a> = MaxID++;</div>
 <div class="line"><span class="lineno">  210</span> </div>
-<div class="line"><span class="lineno">  211</span>      Layout = <span class="keyword">new</span> CUILayoutSimple();</div>
-<div class="line"><span class="lineno">  212</span> </div>
-<div class="line"><span class="lineno">  213</span>      SetupStyles();</div>
-<div class="line"><span class="lineno">  214</span>      SetupAnimations();</div>
-<div class="line"><span class="lineno">  215</span>    }</div>
+<div class="line"><span class="lineno">  211</span>      ComponentsById[<a class="code hl_property" href="#a97bacc49652d724c7ff474aeddd4b97d">ID</a>] = <span class="keyword">new</span> WeakReference&lt;CUIComponent&gt;(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  212</span>      ComponentsByType.Add(this.GetType(), <span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  213</span> </div>
+<div class="line"><span class="lineno">  214</span>      Vitalize();</div>
+<div class="line"><span class="lineno">  215</span>      VitalizeProps();</div>
+<div class="line"><span class="lineno">  216</span> </div>
+<div class="line"><span class="lineno">  217</span>      SetupCommands();</div>
+<div class="line"><span class="lineno">  218</span> </div>
+<div class="line"><span class="lineno">  219</span>      Layout = <span class="keyword">new</span> CUILayoutSimple();</div>
+<div class="line"><span class="lineno">  220</span> </div>
+<div class="line"><span class="lineno">  221</span>      SetupStyles();</div>
+<div class="line"><span class="lineno">  222</span>      SetupAnimations();</div>
+<div class="line"><span class="lineno">  223</span>    }</div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a97bacc49652d724c7ff474aeddd4b97d"><div class="ttname"><a href="#a97bacc49652d724c7ff474aeddd4b97d">CrabUI.CUIComponent.ID</a></div><div class="ttdeci">int ID</div><div class="ttdoc">Global ID, unique for component.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_calculated_8cs_source.html#l00025">CUIComponent.Calculated.cs:25</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -765,11 +775,11 @@ Events</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8cs_source.html#l00217">217</a> of file <a class="el" href="_c_u_i_component_8cs_source.html">CUIComponent.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  217</span>                                                                                            : <span class="keyword">this</span>()</div>
-<div class="line"><span class="lineno">  218</span>    {</div>
-<div class="line"><span class="lineno">  219</span>      <a class="code hl_property" href="#a3bf46498c5f0dae185b27ebb3a452c98">Relative</a> = <span class="keyword">new</span> CUINullRect(x, y, w, h);</div>
-<div class="line"><span class="lineno">  220</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8cs_source.html#l00225">225</a> of file <a class="el" href="_c_u_i_component_8cs_source.html">CUIComponent.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  225</span>                                                                                            : <span class="keyword">this</span>()</div>
+<div class="line"><span class="lineno">  226</span>    {</div>
+<div class="line"><span class="lineno">  227</span>      <a class="code hl_property" href="#a3bf46498c5f0dae185b27ebb3a452c98">Relative</a> = <span class="keyword">new</span> CUINullRect(x, y, w, h);</div>
+<div class="line"><span class="lineno">  228</span>    }</div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a3bf46498c5f0dae185b27ebb3a452c98"><div class="ttname"><a href="#a3bf46498c5f0dae185b27ebb3a452c98">CrabUI.CUIComponent.Relative</a></div><div class="ttdeci">CUINullRect Relative</div><div class="ttdoc">Relative to parent size and position, [0..1].</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_layout_01_props_8cs_source.html#l00144">CUIComponent.Layout Props.cs:145</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -1030,8 +1040,8 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8cs_source.html#l00229">229</a> of file <a class="el" href="_c_u_i_component_8cs_source.html">CUIComponent.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  229</span>{ }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8cs_source.html#l00237">237</a> of file <a class="el" href="_c_u_i_component_8cs_source.html">CUIComponent.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  237</span>{ }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1284,33 +1294,33 @@ Events</h2></td></tr>
 
 <p>Dispathes command down the component tree until someone consumes it. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_commands_8cs_source.html#l00194">194</a> of file <a class="el" href="_c_u_i_component_8_commands_8cs_source.html">CUIComponent.Commands.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  195</span>    {</div>
-<div class="line"><span class="lineno">  196</span>      <span class="keywordflow">if</span> (<a class="code hl_property" href="#a76e56b17d4434e6f9b508de003ffdf1b">Emits</a>.Contains(data.Name))</div>
-<div class="line"><span class="lineno">  197</span>      {</div>
-<div class="line"><span class="lineno">  198</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a68c79918dc6868f7536b1e9fb3fb7c95">DataTargets</a>.ContainsKey(data.Name))</div>
-<div class="line"><span class="lineno">  199</span>        {</div>
-<div class="line"><span class="lineno">  200</span>          <span class="keywordflow">foreach</span> (CUIComponent target <span class="keywordflow">in</span> <a class="code hl_variable" href="#a68c79918dc6868f7536b1e9fb3fb7c95">DataTargets</a>[data.Name])</div>
-<div class="line"><span class="lineno">  201</span>          {</div>
-<div class="line"><span class="lineno">  202</span>            target.OnConsume?.Invoke(data.Data);</div>
-<div class="line"><span class="lineno">  203</span>          }</div>
-<div class="line"><span class="lineno">  204</span>        }</div>
-<div class="line"><span class="lineno">  205</span>      }</div>
-<div class="line"><span class="lineno">  206</span>      <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  207</span>      {</div>
-<div class="line"><span class="lineno">  208</span>        <span class="keywordflow">if</span> (<a class="code hl_property" href="#a4116590ef4a775a88134fc4e4c44c3ab">Consumes</a> == data.Name) <a class="code hl_event" href="#ab6e6cbdea1cb400ea9b5f9072a44aa37">OnConsume</a>?.Invoke(data.Data);</div>
-<div class="line"><span class="lineno">  209</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_event" href="#aff51996f690530cfe6550e226bb2af18">OnAnyData</a> != <span class="keyword">null</span>) <a class="code hl_event" href="#aff51996f690530cfe6550e226bb2af18">OnAnyData</a>.Invoke(data);</div>
-<div class="line"><span class="lineno">  210</span>        <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  211</span>        {</div>
-<div class="line"><span class="lineno">  212</span>          <span class="keywordflow">foreach</span> (CUIComponent child <span class="keywordflow">in</span> Children) child.DispatchDown(data);</div>
-<div class="line"><span class="lineno">  213</span>        }</div>
-<div class="line"><span class="lineno">  214</span>      }</div>
-<div class="line"><span class="lineno">  215</span>    }</div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a4116590ef4a775a88134fc4e4c44c3ab"><div class="ttname"><a href="#a4116590ef4a775a88134fc4e4c44c3ab">CrabUI.CUIComponent.Consumes</a></div><div class="ttdeci">string Consumes</div><div class="ttdoc">Will consume data with this name.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_commands_8cs_source.html#l00064">CUIComponent.Commands.cs:64</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a68c79918dc6868f7536b1e9fb3fb7c95"><div class="ttname"><a href="#a68c79918dc6868f7536b1e9fb3fb7c95">CrabUI.CUIComponent.DataTargets</a></div><div class="ttdeci">Dictionary&lt; string, List&lt; CUIComponent &gt; &gt; DataTargets</div><div class="ttdoc">Consumers of emmited data, updates on tree change.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_commands_8cs_source.html#l00137">CUIComponent.Commands.cs:137</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a76e56b17d4434e6f9b508de003ffdf1b"><div class="ttname"><a href="#a76e56b17d4434e6f9b508de003ffdf1b">CrabUI.CUIComponent.Emits</a></div><div class="ttdeci">ObservableCollection&lt; string &gt; Emits</div><div class="ttdoc">Optimization to data flow   If not empty component will search for consumers of the data and pass it ...</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_commands_8cs_source.html#l00105">CUIComponent.Commands.cs:106</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_ab6e6cbdea1cb400ea9b5f9072a44aa37"><div class="ttname"><a href="#ab6e6cbdea1cb400ea9b5f9072a44aa37">CrabUI.CUIComponent.OnConsume</a></div><div class="ttdeci">Action&lt; Object &gt; OnConsume</div><div class="ttdoc">Happens when appropriate data is received.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_commands_8cs_source.html#l00060">CUIComponent.Commands.cs:60</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_aff51996f690530cfe6550e226bb2af18"><div class="ttname"><a href="#aff51996f690530cfe6550e226bb2af18">CrabUI.CUIComponent.OnAnyData</a></div><div class="ttdeci">Action&lt; CUIData &gt; OnAnyData</div><div class="ttdoc">Will be executed when receiving any data.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_commands_8cs_source.html#l00056">CUIComponent.Commands.cs:56</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_commands_8cs_source.html#l00195">195</a> of file <a class="el" href="_c_u_i_component_8_commands_8cs_source.html">CUIComponent.Commands.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  196</span>    {</div>
+<div class="line"><span class="lineno">  197</span>      <span class="keywordflow">if</span> (<a class="code hl_property" href="#a76e56b17d4434e6f9b508de003ffdf1b">Emits</a>.Contains(data.Name))</div>
+<div class="line"><span class="lineno">  198</span>      {</div>
+<div class="line"><span class="lineno">  199</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a68c79918dc6868f7536b1e9fb3fb7c95">DataTargets</a>.ContainsKey(data.Name))</div>
+<div class="line"><span class="lineno">  200</span>        {</div>
+<div class="line"><span class="lineno">  201</span>          <span class="keywordflow">foreach</span> (CUIComponent target <span class="keywordflow">in</span> <a class="code hl_variable" href="#a68c79918dc6868f7536b1e9fb3fb7c95">DataTargets</a>[data.Name])</div>
+<div class="line"><span class="lineno">  202</span>          {</div>
+<div class="line"><span class="lineno">  203</span>            target.OnConsume?.Invoke(data.Data);</div>
+<div class="line"><span class="lineno">  204</span>          }</div>
+<div class="line"><span class="lineno">  205</span>        }</div>
+<div class="line"><span class="lineno">  206</span>      }</div>
+<div class="line"><span class="lineno">  207</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  208</span>      {</div>
+<div class="line"><span class="lineno">  209</span>        <span class="keywordflow">if</span> (<a class="code hl_property" href="#a4116590ef4a775a88134fc4e4c44c3ab">Consumes</a> == data.Name) <a class="code hl_event" href="#ab6e6cbdea1cb400ea9b5f9072a44aa37">OnConsume</a>?.Invoke(data.Data);</div>
+<div class="line"><span class="lineno">  210</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_event" href="#aff51996f690530cfe6550e226bb2af18">OnAnyData</a> != <span class="keyword">null</span>) <a class="code hl_event" href="#aff51996f690530cfe6550e226bb2af18">OnAnyData</a>.Invoke(data);</div>
+<div class="line"><span class="lineno">  211</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  212</span>        {</div>
+<div class="line"><span class="lineno">  213</span>          <span class="keywordflow">foreach</span> (CUIComponent child <span class="keywordflow">in</span> Children) child.DispatchDown(data);</div>
+<div class="line"><span class="lineno">  214</span>        }</div>
+<div class="line"><span class="lineno">  215</span>      }</div>
+<div class="line"><span class="lineno">  216</span>    }</div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a4116590ef4a775a88134fc4e4c44c3ab"><div class="ttname"><a href="#a4116590ef4a775a88134fc4e4c44c3ab">CrabUI.CUIComponent.Consumes</a></div><div class="ttdeci">string Consumes</div><div class="ttdoc">Will consume data with this name.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_commands_8cs_source.html#l00065">CUIComponent.Commands.cs:65</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a68c79918dc6868f7536b1e9fb3fb7c95"><div class="ttname"><a href="#a68c79918dc6868f7536b1e9fb3fb7c95">CrabUI.CUIComponent.DataTargets</a></div><div class="ttdeci">Dictionary&lt; string, List&lt; CUIComponent &gt; &gt; DataTargets</div><div class="ttdoc">Consumers of emmited data, updates on tree change.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_commands_8cs_source.html#l00138">CUIComponent.Commands.cs:138</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a76e56b17d4434e6f9b508de003ffdf1b"><div class="ttname"><a href="#a76e56b17d4434e6f9b508de003ffdf1b">CrabUI.CUIComponent.Emits</a></div><div class="ttdeci">ObservableCollection&lt; string &gt; Emits</div><div class="ttdoc">Optimization to data flow   If not empty component will search for consumers of the data and pass it ...</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_commands_8cs_source.html#l00106">CUIComponent.Commands.cs:107</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_ab6e6cbdea1cb400ea9b5f9072a44aa37"><div class="ttname"><a href="#ab6e6cbdea1cb400ea9b5f9072a44aa37">CrabUI.CUIComponent.OnConsume</a></div><div class="ttdeci">Action&lt; Object &gt; OnConsume</div><div class="ttdoc">Happens when appropriate data is received.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_commands_8cs_source.html#l00061">CUIComponent.Commands.cs:61</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_aff51996f690530cfe6550e226bb2af18"><div class="ttname"><a href="#aff51996f690530cfe6550e226bb2af18">CrabUI.CUIComponent.OnAnyData</a></div><div class="ttdeci">Action&lt; CUIData &gt; OnAnyData</div><div class="ttdoc">Will be executed when receiving any data.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_commands_8cs_source.html#l00057">CUIComponent.Commands.cs:57</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1337,16 +1347,16 @@ Events</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_commands_8cs_source.html#l00184">184</a> of file <a class="el" href="_c_u_i_component_8_commands_8cs_source.html">CUIComponent.Commands.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  185</span>    {</div>
-<div class="line"><span class="lineno">  186</span>      <span class="keywordflow">if</span> (<a class="code hl_event" href="#a4d0a31dd7deea9a7460abc52e2e38afe">OnAnyCommand</a> != <span class="keyword">null</span>) <a class="code hl_event" href="#a4d0a31dd7deea9a7460abc52e2e38afe">OnAnyCommand</a>?.Invoke(command);</div>
-<div class="line"><span class="lineno">  187</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_property" href="#a033b6c6555df4478ff72bd132b1f512b">Commands</a>.ContainsKey(command.Name)) <a class="code hl_function" href="#a6fd6b3feb575819e48a406063f3756ce">Execute</a>(command);</div>
-<div class="line"><span class="lineno">  188</span>      <span class="keywordflow">else</span> Parent?.<a class="code hl_function" href="#acb37137eb2072cfa30632a4c83655052">DispatchUp</a>(command);</div>
-<div class="line"><span class="lineno">  189</span>    }</div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a033b6c6555df4478ff72bd132b1f512b"><div class="ttname"><a href="#a033b6c6555df4478ff72bd132b1f512b">CrabUI.CUIComponent.Commands</a></div><div class="ttdeci">Dictionary&lt; string, Action&lt; object &gt; &gt; Commands</div><div class="ttdoc">All commands.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_commands_8cs_source.html#l00143">CUIComponent.Commands.cs:143</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a4d0a31dd7deea9a7460abc52e2e38afe"><div class="ttname"><a href="#a4d0a31dd7deea9a7460abc52e2e38afe">CrabUI.CUIComponent.OnAnyCommand</a></div><div class="ttdeci">Action&lt; CUICommand &gt; OnAnyCommand</div><div class="ttdoc">this will be executed on any command</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_commands_8cs_source.html#l00052">CUIComponent.Commands.cs:52</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a6fd6b3feb575819e48a406063f3756ce"><div class="ttname"><a href="#a6fd6b3feb575819e48a406063f3756ce">CrabUI.CUIComponent.Execute</a></div><div class="ttdeci">void Execute(CUICommand command)</div><div class="ttdoc">Will execute action corresponding to this command.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_commands_8cs_source.html#l00221">CUIComponent.Commands.cs:221</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_acb37137eb2072cfa30632a4c83655052"><div class="ttname"><a href="#acb37137eb2072cfa30632a4c83655052">CrabUI.CUIComponent.DispatchUp</a></div><div class="ttdeci">void DispatchUp(CUICommand command)</div><div class="ttdoc">Dispathes command up the component tree until someone consumes it.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_commands_8cs_source.html#l00184">CUIComponent.Commands.cs:184</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_commands_8cs_source.html#l00185">185</a> of file <a class="el" href="_c_u_i_component_8_commands_8cs_source.html">CUIComponent.Commands.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  186</span>    {</div>
+<div class="line"><span class="lineno">  187</span>      <span class="keywordflow">if</span> (<a class="code hl_event" href="#a4d0a31dd7deea9a7460abc52e2e38afe">OnAnyCommand</a> != <span class="keyword">null</span>) <a class="code hl_event" href="#a4d0a31dd7deea9a7460abc52e2e38afe">OnAnyCommand</a>?.Invoke(command);</div>
+<div class="line"><span class="lineno">  188</span>      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_property" href="#a033b6c6555df4478ff72bd132b1f512b">Commands</a>.ContainsKey(command.Name)) <a class="code hl_function" href="#a6fd6b3feb575819e48a406063f3756ce">Execute</a>(command);</div>
+<div class="line"><span class="lineno">  189</span>      <span class="keywordflow">else</span> Parent?.<a class="code hl_function" href="#acb37137eb2072cfa30632a4c83655052">DispatchUp</a>(command);</div>
+<div class="line"><span class="lineno">  190</span>    }</div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a033b6c6555df4478ff72bd132b1f512b"><div class="ttname"><a href="#a033b6c6555df4478ff72bd132b1f512b">CrabUI.CUIComponent.Commands</a></div><div class="ttdeci">Dictionary&lt; string, Action&lt; object &gt; &gt; Commands</div><div class="ttdoc">All commands.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_commands_8cs_source.html#l00144">CUIComponent.Commands.cs:144</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a4d0a31dd7deea9a7460abc52e2e38afe"><div class="ttname"><a href="#a4d0a31dd7deea9a7460abc52e2e38afe">CrabUI.CUIComponent.OnAnyCommand</a></div><div class="ttdeci">Action&lt; CUICommand &gt; OnAnyCommand</div><div class="ttdoc">this will be executed on any command</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_commands_8cs_source.html#l00053">CUIComponent.Commands.cs:53</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a6fd6b3feb575819e48a406063f3756ce"><div class="ttname"><a href="#a6fd6b3feb575819e48a406063f3756ce">CrabUI.CUIComponent.Execute</a></div><div class="ttdeci">void Execute(CUICommand command)</div><div class="ttdoc">Will execute action corresponding to this command.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_commands_8cs_source.html#l00222">CUIComponent.Commands.cs:222</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_acb37137eb2072cfa30632a4c83655052"><div class="ttname"><a href="#acb37137eb2072cfa30632a4c83655052">CrabUI.CUIComponent.DispatchUp</a></div><div class="ttdeci">void DispatchUp(CUICommand command)</div><div class="ttdoc">Dispathes command up the component tree until someone consumes it.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_commands_8cs_source.html#l00185">CUIComponent.Commands.cs:185</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1365,12 +1375,12 @@ Events</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8cs_source.html#l00223">223</a> of file <a class="el" href="_c_u_i_component_8cs_source.html">CUIComponent.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  224</span>    {</div>
-<div class="line"><span class="lineno">  225</span>      <span class="keywordflow">if</span> (disposed) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  226</span>      CleanUp();</div>
-<div class="line"><span class="lineno">  227</span>      disposed = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  228</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8cs_source.html#l00231">231</a> of file <a class="el" href="_c_u_i_component_8cs_source.html">CUIComponent.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  232</span>    {</div>
+<div class="line"><span class="lineno">  233</span>      <span class="keywordflow">if</span> (Disposed) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  234</span>      CleanUp();</div>
+<div class="line"><span class="lineno">  235</span>      Disposed = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  236</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1547,10 +1557,10 @@ Events</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_commands_8cs_source.html#l00221">221</a> of file <a class="el" href="_c_u_i_component_8_commands_8cs_source.html">CUIComponent.Commands.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  222</span>    {</div>
-<div class="line"><span class="lineno">  223</span>      <a class="code hl_property" href="#a033b6c6555df4478ff72bd132b1f512b">Commands</a>.GetValueOrDefault(command.Name)?.Invoke(command.Data);</div>
-<div class="line"><span class="lineno">  224</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_commands_8cs_source.html#l00222">222</a> of file <a class="el" href="_c_u_i_component_8_commands_8cs_source.html">CUIComponent.Commands.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  223</span>    {</div>
+<div class="line"><span class="lineno">  224</span>      <a class="code hl_property" href="#a033b6c6555df4478ff72bd132b1f512b">Commands</a>.GetValueOrDefault(command.Name)?.Invoke(command.Data);</div>
+<div class="line"><span class="lineno">  225</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2941,7 +2951,7 @@ Events</h2></td></tr>
 
 <p>Consumers of emmited data, updates on tree change. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_commands_8cs_source.html#l00137">137</a> of file <a class="el" href="_c_u_i_component_8_commands_8cs_source.html">CUIComponent.Commands.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_commands_8cs_source.html#l00138">138</a> of file <a class="el" href="_c_u_i_component_8_commands_8cs_source.html">CUIComponent.Commands.cs</a>.</p>
 
 </div>
 </div>
@@ -2966,6 +2976,22 @@ Events</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_props_8cs_source.html#l00087">87</a> of file <a class="el" href="_c_u_i_component_8_props_8cs_source.html">CUIComponent.Props.cs</a>.</p>
+
+</div>
+</div>
+<a id="a1924ce1e1d753c0c1f49f09a46f33e6b" name="a1924ce1e1d753c0c1f49f09a46f33e6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1924ce1e1d753c0c1f49f09a46f33e6b">&#9670;&#160;</a></span>Disposed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CrabUI.CUIComponent.Disposed</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8cs_source.html#l00230">230</a> of file <a class="el" href="_c_u_i_component_8cs_source.html">CUIComponent.cs</a>.</p>
 
 </div>
 </div>
@@ -4087,8 +4113,8 @@ Events</h2></td></tr>
 
 <p>This command will be dispatched up when some component specific event happens. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_commands_8cs_source.html#l00048">48</a> of file <a class="el" href="_c_u_i_component_8_commands_8cs_source.html">CUIComponent.Commands.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   48</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_commands_8cs_source.html#l00049">49</a> of file <a class="el" href="_c_u_i_component_8_commands_8cs_source.html">CUIComponent.Commands.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   49</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -4114,8 +4140,8 @@ Events</h2></td></tr>
 
 <p>All commands. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_commands_8cs_source.html#l00143">143</a> of file <a class="el" href="_c_u_i_component_8_commands_8cs_source.html">CUIComponent.Commands.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  143</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; } = <span class="keyword">new</span>();</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_commands_8cs_source.html#l00144">144</a> of file <a class="el" href="_c_u_i_component_8_commands_8cs_source.html">CUIComponent.Commands.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  144</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; } = <span class="keyword">new</span>();</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -4216,8 +4242,8 @@ Events</h2></td></tr>
 
 <p>Will consume data with this name. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_commands_8cs_source.html#l00064">64</a> of file <a class="el" href="_c_u_i_component_8_commands_8cs_source.html">CUIComponent.Commands.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   64</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_commands_8cs_source.html#l00065">65</a> of file <a class="el" href="_c_u_i_component_8_commands_8cs_source.html">CUIComponent.Commands.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   65</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -4511,16 +4537,16 @@ Events</h2></td></tr>
 <p>Optimization to data flow <br  />
  If not empty component will search for consumers of the data and pass it directly to them instead of broadcasting it. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_commands_8cs_source.html#l00105">105</a> of file <a class="el" href="_c_u_i_component_8_commands_8cs_source.html">CUIComponent.Commands.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  106</span>    {</div>
-<div class="line"><span class="lineno">  107</span>      <span class="keyword">get</span> =&gt; emits;</div>
-<div class="line"><span class="lineno">  108</span>      <span class="keyword">set</span></div>
-<div class="line"><span class="lineno">  109</span>      {</div>
-<div class="line"><span class="lineno">  110</span>        emits = value;</div>
-<div class="line"><span class="lineno">  111</span>        emits.CollectionChanged += (o, e) =&gt; UpdateDataTargets();</div>
-<div class="line"><span class="lineno">  112</span>        UpdateDataTargets();</div>
-<div class="line"><span class="lineno">  113</span>      }</div>
-<div class="line"><span class="lineno">  114</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_commands_8cs_source.html#l00106">106</a> of file <a class="el" href="_c_u_i_component_8_commands_8cs_source.html">CUIComponent.Commands.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  107</span>    {</div>
+<div class="line"><span class="lineno">  108</span>      <span class="keyword">get</span> =&gt; emits;</div>
+<div class="line"><span class="lineno">  109</span>      <span class="keyword">set</span></div>
+<div class="line"><span class="lineno">  110</span>      {</div>
+<div class="line"><span class="lineno">  111</span>        emits = value;</div>
+<div class="line"><span class="lineno">  112</span>        emits.CollectionChanged += (o, e) =&gt; UpdateDataTargets();</div>
+<div class="line"><span class="lineno">  113</span>        UpdateDataTargets();</div>
+<div class="line"><span class="lineno">  114</span>      }</div>
+<div class="line"><span class="lineno">  115</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -5581,21 +5607,21 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_commands_8cs_source.html#l00068">68</a> of file <a class="el" href="_c_u_i_component_8_commands_8cs_source.html">CUIComponent.Commands.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   69</span>    {</div>
-<div class="line"><span class="lineno">   70</span>      <span class="keyword">get</span> =&gt; reflectCommands;</div>
-<div class="line"><span class="lineno">   71</span>      <span class="keyword">set</span></div>
-<div class="line"><span class="lineno">   72</span>      {</div>
-<div class="line"><span class="lineno">   73</span>        reflectCommands = value;</div>
-<div class="line"><span class="lineno">   74</span>        <a class="code hl_event" href="#a4d0a31dd7deea9a7460abc52e2e38afe">OnAnyCommand</a> += (command) =&gt;</div>
-<div class="line"><span class="lineno">   75</span>        {</div>
-<div class="line"><span class="lineno">   76</span>          <span class="keywordflow">foreach</span> (CUIComponent child <span class="keywordflow">in</span> Children)</div>
-<div class="line"><span class="lineno">   77</span>          {</div>
-<div class="line"><span class="lineno">   78</span>            child.DispatchDown(<span class="keyword">new</span> <a class="code hl_function" href="namespace_crab_u_i.html#ac2fdbe4aeef0d6025f1d1d5c23f852d0">CUIData</a>(command.Name, command.Data));</div>
-<div class="line"><span class="lineno">   79</span>          }</div>
-<div class="line"><span class="lineno">   80</span>        };</div>
-<div class="line"><span class="lineno">   81</span>      }</div>
-<div class="line"><span class="lineno">   82</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_commands_8cs_source.html#l00069">69</a> of file <a class="el" href="_c_u_i_component_8_commands_8cs_source.html">CUIComponent.Commands.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   70</span>    {</div>
+<div class="line"><span class="lineno">   71</span>      <span class="keyword">get</span> =&gt; reflectCommands;</div>
+<div class="line"><span class="lineno">   72</span>      <span class="keyword">set</span></div>
+<div class="line"><span class="lineno">   73</span>      {</div>
+<div class="line"><span class="lineno">   74</span>        reflectCommands = value;</div>
+<div class="line"><span class="lineno">   75</span>        <a class="code hl_event" href="#a4d0a31dd7deea9a7460abc52e2e38afe">OnAnyCommand</a> += (command) =&gt;</div>
+<div class="line"><span class="lineno">   76</span>        {</div>
+<div class="line"><span class="lineno">   77</span>          <span class="keywordflow">foreach</span> (CUIComponent child <span class="keywordflow">in</span> Children)</div>
+<div class="line"><span class="lineno">   78</span>          {</div>
+<div class="line"><span class="lineno">   79</span>            child.DispatchDown(<span class="keyword">new</span> <a class="code hl_function" href="namespace_crab_u_i.html#ac2fdbe4aeef0d6025f1d1d5c23f852d0">CUIData</a>(command.Name, command.Data));</div>
+<div class="line"><span class="lineno">   80</span>          }</div>
+<div class="line"><span class="lineno">   81</span>        };</div>
+<div class="line"><span class="lineno">   82</span>      }</div>
+<div class="line"><span class="lineno">   83</span>    }</div>
 <div class="ttc" id="anamespace_crab_u_i_html_ac2fdbe4aeef0d6025f1d1d5c23f852d0"><div class="ttname"><a href="namespace_crab_u_i.html#ac2fdbe4aeef0d6025f1d1d5c23f852d0">CrabUI.CUIData</a></div><div class="ttdeci">record CUIData(string Name, object Data=null)</div><div class="ttdoc">Can be dispatched down the component tree to pass some data to the children without creating a hard l...</div></div>
 </div><!-- fragment -->
 </div>
@@ -5929,18 +5955,18 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_commands_8cs_source.html#l00086">86</a> of file <a class="el" href="_c_u_i_component_8_commands_8cs_source.html">CUIComponent.Commands.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   87</span>    {</div>
-<div class="line"><span class="lineno">   88</span>      <span class="keyword">get</span> =&gt; retranslateCommands;</div>
-<div class="line"><span class="lineno">   89</span>      <span class="keyword">set</span></div>
-<div class="line"><span class="lineno">   90</span>      {</div>
-<div class="line"><span class="lineno">   91</span>        retranslateCommands = value;</div>
-<div class="line"><span class="lineno">   92</span>        <a class="code hl_event" href="#a4d0a31dd7deea9a7460abc52e2e38afe">OnAnyCommand</a> += (command) =&gt;</div>
-<div class="line"><span class="lineno">   93</span>        {</div>
-<div class="line"><span class="lineno">   94</span>          Parent?.<a class="code hl_function" href="#acb37137eb2072cfa30632a4c83655052">DispatchUp</a>(command);</div>
-<div class="line"><span class="lineno">   95</span>        };</div>
-<div class="line"><span class="lineno">   96</span>      }</div>
-<div class="line"><span class="lineno">   97</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_commands_8cs_source.html#l00087">87</a> of file <a class="el" href="_c_u_i_component_8_commands_8cs_source.html">CUIComponent.Commands.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   88</span>    {</div>
+<div class="line"><span class="lineno">   89</span>      <span class="keyword">get</span> =&gt; retranslateCommands;</div>
+<div class="line"><span class="lineno">   90</span>      <span class="keyword">set</span></div>
+<div class="line"><span class="lineno">   91</span>      {</div>
+<div class="line"><span class="lineno">   92</span>        retranslateCommands = value;</div>
+<div class="line"><span class="lineno">   93</span>        <a class="code hl_event" href="#a4d0a31dd7deea9a7460abc52e2e38afe">OnAnyCommand</a> += (command) =&gt;</div>
+<div class="line"><span class="lineno">   94</span>        {</div>
+<div class="line"><span class="lineno">   95</span>          Parent?.<a class="code hl_function" href="#acb37137eb2072cfa30632a4c83655052">DispatchUp</a>(command);</div>
+<div class="line"><span class="lineno">   96</span>        };</div>
+<div class="line"><span class="lineno">   97</span>      }</div>
+<div class="line"><span class="lineno">   98</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -6473,7 +6499,7 @@ Events</h2></td></tr>
 
 <p>this will be executed on any command </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_commands_8cs_source.html#l00052">52</a> of file <a class="el" href="_c_u_i_component_8_commands_8cs_source.html">CUIComponent.Commands.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_commands_8cs_source.html#l00053">53</a> of file <a class="el" href="_c_u_i_component_8_commands_8cs_source.html">CUIComponent.Commands.cs</a>.</p>
 
 </div>
 </div>
@@ -6491,7 +6517,7 @@ Events</h2></td></tr>
 
 <p>Will be executed when receiving any data. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_commands_8cs_source.html#l00056">56</a> of file <a class="el" href="_c_u_i_component_8_commands_8cs_source.html">CUIComponent.Commands.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_commands_8cs_source.html#l00057">57</a> of file <a class="el" href="_c_u_i_component_8_commands_8cs_source.html">CUIComponent.Commands.cs</a>.</p>
 
 </div>
 </div>
@@ -6557,7 +6583,7 @@ Events</h2></td></tr>
 
 <p>Happens when appropriate data is received. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_commands_8cs_source.html#l00060">60</a> of file <a class="el" href="_c_u_i_component_8_commands_8cs_source.html">CUIComponent.Commands.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_commands_8cs_source.html#l00061">61</a> of file <a class="el" href="_c_u_i_component_8_commands_8cs_source.html">CUIComponent.Commands.cs</a>.</p>
 
 </div>
 </div>

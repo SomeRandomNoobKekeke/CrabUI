@@ -98,7 +98,7 @@ $(function(){ initResizable(false); });
 <p>Multiple sprites can have same texture</p>
 <p>CUISprite constructors use CUITextureManager to retrieve textures without duplicates, so creating new sprites doesn't create copies of textures</p>
 <p>CUISprites are very similar to vanilla Sprites, but i don't use vanilla Sprites because they has a lot of side effects</p>
-<h2><a class="anchor" id="autotoc_md27"></a>
+<h2><a class="anchor" id="autotoc_md29"></a>
 CUISprite Properties</h2>
 <ul>
 <li>CUISptite.BaseFolder - if not null the used for relative paths, set it before creating sprites</li>
@@ -118,7 +118,7 @@ CUISprite Properties</h2>
 <li>RelativeOrigin - Accessor for Origin with Vector2(0..1,0..1)</li>
 <li>Offset - Draw offset relative to CUIComponent Position, it compensates Origin</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md28"></a>
+<h2><a class="anchor" id="autotoc_md30"></a>
 How to create them</h2>
 <ul>
 <li>new CUISprite() - 1x1 white sprite</li>
@@ -129,7 +129,7 @@ How to create them</h2>
 <li>CUI.TextureManager.GetSprite(string path, Rectangle? sourceRect = null, CUISpriteDrawMode? drawMode = null, SpriteEffects? effects = null) - Also creates new CUISprite</li>
 <li>CUI.TextureManager.GetCUISprite(int x, int y, CUISpriteDrawMode? drawMode = null, SpriteEffects? effects = null) - Creates a sprite from 32x32 square in CUI.png with (x,y) coordinates</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md29"></a>
+<h2><a class="anchor" id="autotoc_md31"></a>
 How texture paths are resolved</h2>
 <p>TextureManager first tries to load texture from CUI.AssetsPath, then from CUI.PGNAssets, then directly from path</p>
 <p>If not found it will return default texture</p>

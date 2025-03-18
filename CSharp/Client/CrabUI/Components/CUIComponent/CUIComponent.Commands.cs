@@ -37,7 +37,8 @@ namespace CrabUI
   {
     private void SetupCommands()
     {
-      AddCommands();
+      // This is actually expensive
+      //AddCommands();
       OnTreeChanged += UpdateDataTargets;
     }
 

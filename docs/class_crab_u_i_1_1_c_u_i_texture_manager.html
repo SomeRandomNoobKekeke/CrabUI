@@ -126,10 +126,8 @@ Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a5953b2ea87c5b61f01b025d5ee0ff97b" id="r_a5953b2ea87c5b61f01b025d5ee0ff97b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5953b2ea87c5b61f01b025d5ee0ff97b">PGNAssets</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a5953b2ea87c5b61f01b025d5ee0ff97b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Path to additional PNGs, it can be set in <a class="el" href="class_crab_u_i_1_1_c_u_i.html" title="In fact a static class managing static things.">CUI</a>.  <br /></td></tr>
-<tr class="separator:a5953b2ea87c5b61f01b025d5ee0ff97b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79d9427b0870d626efb89844edebbfdc" id="r_a79d9427b0870d626efb89844edebbfdc"><td class="memItemLeft" align="right" valign="top">static Texture2D&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a79d9427b0870d626efb89844edebbfdc">BackupTexture</a><code> [get]</code></td></tr>
+<tr class="memdesc:a79d9427b0870d626efb89844edebbfdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Path to additional PNGs, it can be set in <a class="el" href="class_crab_u_i_1_1_c_u_i.html" title="In fact a static class managing static things.">CUI</a>.  <br /></td></tr>
 <tr class="separator:a79d9427b0870d626efb89844edebbfdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -153,13 +151,13 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_texture_manager_8cs_source.html#l00118">118</a> of file <a class="el" href="_c_u_i_texture_manager_8cs_source.html">CUITextureManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  119</span>    {</div>
-<div class="line"><span class="lineno">  120</span>      DisposeAllTextures();</div>
-<div class="line"><span class="lineno">  121</span> </div>
-<div class="line"><span class="lineno">  122</span>      LoadedTextures.Clear();</div>
-<div class="line"><span class="lineno">  123</span>      LoadedTextures = <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  124</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_texture_manager_8cs_source.html#l00123">123</a> of file <a class="el" href="_c_u_i_texture_manager_8cs_source.html">CUITextureManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  124</span>    {</div>
+<div class="line"><span class="lineno">  125</span>      DisposeAllTextures();</div>
+<div class="line"><span class="lineno">  126</span> </div>
+<div class="line"><span class="lineno">  127</span>      LoadedTextures.Clear();</div>
+<div class="line"><span class="lineno">  128</span>      LoadedTextures = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  129</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -178,14 +176,15 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_texture_manager_8cs_source.html#l00042">42</a> of file <a class="el" href="_c_u_i_texture_manager_8cs_source.html">CUITextureManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   43</span>    {</div>
-<div class="line"><span class="lineno">   44</span>      <span class="keywordflow">foreach</span> (Texture2D texture <span class="keywordflow">in</span> LoadedTextures.Values)</div>
-<div class="line"><span class="lineno">   45</span>      {</div>
-<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">if</span> (texture == BackupTexture) <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">   47</span>        texture.Dispose();</div>
-<div class="line"><span class="lineno">   48</span>      }</div>
-<div class="line"><span class="lineno">   49</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_texture_manager_8cs_source.html#l00041">41</a> of file <a class="el" href="_c_u_i_texture_manager_8cs_source.html">CUITextureManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>    {</div>
+<div class="line"><span class="lineno">   43</span>      <span class="keywordflow">foreach</span> (Texture2D texture <span class="keywordflow">in</span> LoadedTextures.Values)</div>
+<div class="line"><span class="lineno">   44</span>      {</div>
+<div class="line"><span class="lineno">   45</span>        <span class="keywordflow">if</span> (texture == <a class="code hl_property" href="#a79d9427b0870d626efb89844edebbfdc">BackupTexture</a>) <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   46</span>        texture.Dispose();</div>
+<div class="line"><span class="lineno">   47</span>      }</div>
+<div class="line"><span class="lineno">   48</span>    }</div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_texture_manager_html_a79d9427b0870d626efb89844edebbfdc"><div class="ttname"><a href="#a79d9427b0870d626efb89844edebbfdc">CrabUI.CUITextureManager.BackupTexture</a></div><div class="ttdeci">static Texture2D BackupTexture</div><div class="ttdoc">Path to additional PNGs, it can be set in CUI.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_texture_manager_8cs_source.html#l00039">CUITextureManager.cs:39</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -220,10 +219,10 @@ Properties</h2></td></tr>
 
 <p>32x32 square on (x,y) position from CUI.png </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_texture_manager_8cs_source.html#l00073">73</a> of file <a class="el" href="_c_u_i_texture_manager_8cs_source.html">CUITextureManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   74</span>    {</div>
-<div class="line"><span class="lineno">   75</span>      <span class="keywordflow">return</span> GetSprite(CUI.CUITexturePath, <span class="keyword">new</span> Rectangle(x * 32, y * 32, 32, 32), drawMode, effects);</div>
-<div class="line"><span class="lineno">   76</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_texture_manager_8cs_source.html#l00072">72</a> of file <a class="el" href="_c_u_i_texture_manager_8cs_source.html">CUITextureManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   73</span>    {</div>
+<div class="line"><span class="lineno">   74</span>      <span class="keywordflow">return</span> GetSprite(CUI.CUITexturePath, <span class="keyword">new</span> Rectangle(x * 32, y * 32, 32, 32), drawMode, effects);</div>
+<div class="line"><span class="lineno">   75</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -256,19 +255,19 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_texture_manager_8cs_source.html#l00056">56</a> of file <a class="el" href="_c_u_i_texture_manager_8cs_source.html">CUITextureManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   57</span>    {</div>
-<div class="line"><span class="lineno">   58</span>      CUISprite sprite = <span class="keyword">new</span> CUISprite(GetTexture(path))</div>
-<div class="line"><span class="lineno">   59</span>      {</div>
-<div class="line"><span class="lineno">   60</span>        Path = path,</div>
-<div class="line"><span class="lineno">   61</span>      };</div>
-<div class="line"><span class="lineno">   62</span> </div>
-<div class="line"><span class="lineno">   63</span>      <span class="keywordflow">if</span> (sourceRect.HasValue) sprite.SourceRect = sourceRect.Value;</div>
-<div class="line"><span class="lineno">   64</span>      <span class="keywordflow">if</span> (drawMode.HasValue) sprite.DrawMode = drawMode.Value;</div>
-<div class="line"><span class="lineno">   65</span>      <span class="keywordflow">if</span> (effects.HasValue) sprite.Effects = effects.Value;</div>
-<div class="line"><span class="lineno">   66</span> </div>
-<div class="line"><span class="lineno">   67</span>      <span class="keywordflow">return</span> sprite;</div>
-<div class="line"><span class="lineno">   68</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_texture_manager_8cs_source.html#l00055">55</a> of file <a class="el" href="_c_u_i_texture_manager_8cs_source.html">CUITextureManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   56</span>    {</div>
+<div class="line"><span class="lineno">   57</span>      CUISprite sprite = <span class="keyword">new</span> CUISprite(GetTexture(path))</div>
+<div class="line"><span class="lineno">   58</span>      {</div>
+<div class="line"><span class="lineno">   59</span>        Path = path,</div>
+<div class="line"><span class="lineno">   60</span>      };</div>
+<div class="line"><span class="lineno">   61</span> </div>
+<div class="line"><span class="lineno">   62</span>      <span class="keywordflow">if</span> (sourceRect.HasValue) sprite.SourceRect = sourceRect.Value;</div>
+<div class="line"><span class="lineno">   63</span>      <span class="keywordflow">if</span> (drawMode.HasValue) sprite.DrawMode = drawMode.Value;</div>
+<div class="line"><span class="lineno">   64</span>      <span class="keywordflow">if</span> (effects.HasValue) sprite.Effects = effects.Value;</div>
+<div class="line"><span class="lineno">   65</span> </div>
+<div class="line"><span class="lineno">   66</span>      <span class="keywordflow">return</span> sprite;</div>
+<div class="line"><span class="lineno">   67</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -287,29 +286,34 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_texture_manager_8cs_source.html#l00095">95</a> of file <a class="el" href="_c_u_i_texture_manager_8cs_source.html">CUITextureManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   96</span>    {</div>
-<div class="line"><span class="lineno">   97</span>      <span class="keywordflow">if</span> (LoadedTextures.ContainsKey(path)) <span class="keywordflow">return</span> LoadedTextures[path];</div>
-<div class="line"><span class="lineno">   98</span> </div>
-<div class="line"><span class="lineno">   99</span>      Texture2D loaded = <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  100</span> </div>
-<div class="line"><span class="lineno">  101</span>      <span class="keywordflow">if</span> (CUI.AssetsPath != <span class="keyword">null</span>) loaded ??= TryLoad(Path.Combine(CUI.AssetsPath, path));</div>
-<div class="line"><span class="lineno">  102</span>      <span class="keywordflow">if</span> (<a class="code hl_property" href="#a5953b2ea87c5b61f01b025d5ee0ff97b">PGNAssets</a> != <span class="keyword">null</span>) loaded ??= TryLoad(Path.Combine(<a class="code hl_property" href="#a5953b2ea87c5b61f01b025d5ee0ff97b">PGNAssets</a>, path));</div>
-<div class="line"><span class="lineno">  103</span>      loaded ??= TryLoad(path);</div>
-<div class="line"><span class="lineno">  104</span>      <span class="keywordflow">if</span> (loaded == <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">  105</span>      {</div>
-<div class="line"><span class="lineno">  106</span>        CUI.Warning($<span class="stringliteral">&quot;Coudn&#39;t find {path} texture, setting it to backup texture&quot;</span>);</div>
-<div class="line"><span class="lineno">  107</span>        loaded ??= BackupTexture;</div>
-<div class="line"><span class="lineno">  108</span>        <span class="keywordflow">if</span> (<a class="code hl_property" href="#a5953b2ea87c5b61f01b025d5ee0ff97b">PGNAssets</a> == <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">  109</span>        {</div>
-<div class="line"><span class="lineno">  110</span>          CUI.Warning($<span class="stringliteral">&quot;Note: It was loaded before CUI.PGNAssets was set&quot;</span>);</div>
-<div class="line"><span class="lineno">  111</span>        }</div>
-<div class="line"><span class="lineno">  112</span>      }</div>
-<div class="line"><span class="lineno">  113</span> </div>
-<div class="line"><span class="lineno">  114</span>      LoadedTextures[path] = loaded;</div>
-<div class="line"><span class="lineno">  115</span>      <span class="keywordflow">return</span> loaded;</div>
-<div class="line"><span class="lineno">  116</span>    }</div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_texture_manager_html_a5953b2ea87c5b61f01b025d5ee0ff97b"><div class="ttname"><a href="#a5953b2ea87c5b61f01b025d5ee0ff97b">CrabUI.CUITextureManager.PGNAssets</a></div><div class="ttdeci">string PGNAssets</div><div class="ttdoc">Path to additional PNGs, it can be set in CUI.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_texture_manager_8cs_source.html#l00038">CUITextureManager.cs:38</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_texture_manager_8cs_source.html#l00094">94</a> of file <a class="el" href="_c_u_i_texture_manager_8cs_source.html">CUITextureManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   95</span>    {</div>
+<div class="line"><span class="lineno">   96</span>      <span class="keywordflow">if</span> (LoadedTextures == <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   97</span>      {</div>
+<div class="line"><span class="lineno">   98</span>        CUI.Error($<span class="stringliteral">&quot;LoadedTextures was null&quot;</span>);</div>
+<div class="line"><span class="lineno">   99</span>        <span class="keywordflow">return</span> <a class="code hl_property" href="#a79d9427b0870d626efb89844edebbfdc">BackupTexture</a>;</div>
+<div class="line"><span class="lineno">  100</span>      }</div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span>      <span class="keywordflow">if</span> (LoadedTextures.ContainsKey(path)) <span class="keywordflow">return</span> LoadedTextures[path];</div>
+<div class="line"><span class="lineno">  103</span> </div>
+<div class="line"><span class="lineno">  104</span>      Texture2D loaded = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  105</span> </div>
+<div class="line"><span class="lineno">  106</span>      <span class="keywordflow">if</span> (CUI.AssetsPath != <span class="keyword">null</span>) loaded ??= TryLoad(Path.Combine(CUI.AssetsPath, path));</div>
+<div class="line"><span class="lineno">  107</span>      <span class="keywordflow">if</span> (CUI.PGNAssets != <span class="keyword">null</span>) loaded ??= TryLoad(Path.Combine(CUI.PGNAssets, path));</div>
+<div class="line"><span class="lineno">  108</span>      loaded ??= TryLoad(path);</div>
+<div class="line"><span class="lineno">  109</span>      <span class="keywordflow">if</span> (loaded == <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">  110</span>      {</div>
+<div class="line"><span class="lineno">  111</span>        CUI.Warning($<span class="stringliteral">&quot;Coudn&#39;t find {path} texture, setting it to backup texture&quot;</span>);</div>
+<div class="line"><span class="lineno">  112</span>        loaded ??= <a class="code hl_property" href="#a79d9427b0870d626efb89844edebbfdc">BackupTexture</a>;</div>
+<div class="line"><span class="lineno">  113</span>        <span class="keywordflow">if</span> (CUI.PGNAssets == <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">  114</span>        {</div>
+<div class="line"><span class="lineno">  115</span>          CUI.Warning($<span class="stringliteral">&quot;Note: It was loaded before CUI.PGNAssets was set&quot;</span>);</div>
+<div class="line"><span class="lineno">  116</span>        }</div>
+<div class="line"><span class="lineno">  117</span>      }</div>
+<div class="line"><span class="lineno">  118</span> </div>
+<div class="line"><span class="lineno">  119</span>      LoadedTextures[path] = loaded;</div>
+<div class="line"><span class="lineno">  120</span>      <span class="keywordflow">return</span> loaded;</div>
+<div class="line"><span class="lineno">  121</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -328,10 +332,10 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_texture_manager_8cs_source.html#l00051">51</a> of file <a class="el" href="_c_u_i_texture_manager_8cs_source.html">CUITextureManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   52</span>    {</div>
-<div class="line"><span class="lineno">   53</span>      <span class="keywordflow">return</span> path; <span class="comment">//TODO</span></div>
-<div class="line"><span class="lineno">   54</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_texture_manager_8cs_source.html#l00050">50</a> of file <a class="el" href="_c_u_i_texture_manager_8cs_source.html">CUITextureManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>    {</div>
+<div class="line"><span class="lineno">   52</span>      <span class="keywordflow">return</span> path; <span class="comment">//TODO</span></div>
+<div class="line"><span class="lineno">   53</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -348,7 +352,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_texture_manager_8cs_source.html#l00041">41</a> of file <a class="el" href="_c_u_i_texture_manager_8cs_source.html">CUITextureManager.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_texture_manager_8cs_source.html#l00040">40</a> of file <a class="el" href="_c_u_i_texture_manager_8cs_source.html">CUITextureManager.cs</a>.</p>
 
 </div>
 </div>
@@ -373,35 +377,10 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_texture_manager_8cs_source.html#l00040">40</a> of file <a class="el" href="_c_u_i_texture_manager_8cs_source.html">CUITextureManager.cs</a>.</p>
-
-</div>
-</div>
-<a id="a5953b2ea87c5b61f01b025d5ee0ff97b" name="a5953b2ea87c5b61f01b025d5ee0ff97b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5953b2ea87c5b61f01b025d5ee0ff97b">&#9670;&#160;</a></span>PGNAssets</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">string CrabUI.CUITextureManager.PGNAssets</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
 <p>Path to additional PNGs, it can be set in <a class="el" href="class_crab_u_i_1_1_c_u_i.html" title="In fact a static class managing static things.">CUI</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_texture_manager_8cs_source.html#l00038">38</a> of file <a class="el" href="_c_u_i_texture_manager_8cs_source.html">CUITextureManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   38</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
-</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="_c_u_i_texture_manager_8cs_source.html#l00039">39</a> of file <a class="el" href="_c_u_i_texture_manager_8cs_source.html">CUITextureManager.cs</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

@@ -74,11 +74,11 @@ namespace CrabUI
           oldSubscriber.Selected = false;
         }
 
-        if (oldSubscriber is CUIComponent component1 && newSubscriber is GUITextBox)
+        if (oldSubscriber is CUIComponent component && newSubscriber is GUITextBox)
         {
           //TODO for some season TextInput doesn't loose focus here
-          component1.InvokeOnFocusLost();
-          component1.Focused = false;
+          component.InvokeOnFocusLost();
+          component.Focused = false;
           focusedCUIComponent = null;
         }
 
@@ -91,7 +91,7 @@ namespace CrabUI
             TextInput.SetTextInputRect(box.MouseRect);
           }
 
-          if (newSubscriber is CUIComponent component)
+          if (newSubscriber is CUIComponent)
           {
             TextInput.StartTextInput();
           }

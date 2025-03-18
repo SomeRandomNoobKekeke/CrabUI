@@ -35,7 +35,6 @@ namespace CrabUI
     /// <summary>
     /// Path to additional PNGs, it can be set in CUI
     /// </summary>
-    public string PGNAssets { get; set; }
 
     public static Texture2D BackupTexture => GUI.WhiteTexture;
     public Dictionary<string, Texture2D> LoadedTextures = new();
@@ -94,18 +93,24 @@ namespace CrabUI
 
     public Texture2D GetTexture(string path)
     {
+      if (LoadedTextures == null)
+      {
+        CUI.Error($"LoadedTextures was null");
+        return BackupTexture;
+      }
+
       if (LoadedTextures.ContainsKey(path)) return LoadedTextures[path];
 
       Texture2D loaded = null;
 
       if (CUI.AssetsPath != null) loaded ??= TryLoad(Path.Combine(CUI.AssetsPath, path));
-      if (PGNAssets != null) loaded ??= TryLoad(Path.Combine(PGNAssets, path));
+      if (CUI.PGNAssets != null) loaded ??= TryLoad(Path.Combine(CUI.PGNAssets, path));
       loaded ??= TryLoad(path);
       if (loaded == null)
       {
         CUI.Warning($"Coudn't find {path} texture, setting it to backup texture");
         loaded ??= BackupTexture;
-        if (PGNAssets == null)
+        if (CUI.PGNAssets == null)
         {
           CUI.Warning($"Note: It was loaded before CUI.PGNAssets was set");
         }

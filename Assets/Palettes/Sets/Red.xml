@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PaletteSet Name="Red">
+  <Palette Name="red1" BaseColor="255,0,0,255">
+    <Frame Background="0,0,0,255" Border="127,0,0,255" Text="255,229,229,255" />
+    <Header Background="76,0,0,255" Border="102,0,0,255" Text="255,229,229,255" />
+    <Nav Background="51,0,0,255" Border="76,0,0,255" Text="255,204,204,255" />
+    <Main Background="25,0,0,255" Border="51,0,0,255" Text="255,204,204,255" />
+    <Component Background="0,0,0,0" Border="0,0,0,0" Text="255,204,204,255" />
+    <Button Background="255,0,0,255" Border="127,0,0,255" Disabled="63,12,12,255" />
+    <CloseButton Background="255,51,51,255" />
+    <DDOption Background="76,0,0,255" Border="51,0,0,255" Hover="127,0,0,255" Text="255,204,204,255" />
+    <Handle Background="152,51,51,255" Grabbed="255,51,51,255" />
+    <Slider>255,178,178,255</Slider>
+    <Input Background="51,0,0,255" Border="76,0,0,255" Text="255,204,204,255" Focused="255,0,0,255" Invalid="255,0,0,255" Valid="0,255,0,255" Selection="255,178,178,127" Caret="255,178,178,127" />
+  </Palette>
+  <Palette Name="red2" BaseColor="255,0,64,255">
+    <Frame Background="0,0,0,255" Border="127,0,32,255" Text="255,229,235,255" />
+    <Header Background="76,0,19,255" Border="102,0,25,255" Text="255,229,235,255" />
+    <Nav Background="51,0,12,255" Border="76,0,19,255" Text="255,204,216,255" />
+    <Main Background="25,0,6,255" Border="51,0,12,255" Text="255,204,216,255" />
+    <Component Background="0,0,0,0" Border="0,0,0,0" Text="255,204,216,255" />
+    <Button Background="255,0,64,255" Border="127,0,32,255" Disabled="63,12,25,255" />
+    <CloseButton Background="255,51,102,255" />
+    <DDOption Background="76,0,19,255" Border="51,0,12,255" Hover="127,0,32,255" Text="255,204,216,255" />
+    <Handle Background="152,51,76,255" Grabbed="255,51,102,255" />
+    <Slider>255,178,197,255</Slider>
+    <Input Background="51,0,12,255" Border="76,0,19,255" Text="255,204,216,255" Focused="255,0,64,255" Invalid="255,0,0,255" Valid="0,255,0,255" Selection="255,178,197,127" Caret="255,178,197,127" />
+  </Palette>
+  <Palette Name="red3" BaseColor="">
+    <Frame Background="0,0,0,255" Border="64,0,16,255" Text="242,229,232,255" />
+    <Header Background="38,0,9,255" Border="51,0,12,255" Text="242,229,232,255" />
+    <Nav Background="25,0,6,255" Border="38,0,9,255" Text="229,204,210,255" />
+    <Main Background="12,0,3,255" Border="25,0,6,255" Text="229,204,210,255" />
+    <Component Background="0,0,0,0" Border="0,0,0,0" Text="229,204,210,255" />
+    <Button Background="128,0,32,255" Border="64,0,16,255" Disabled="38,12,19,255" />
+    <CloseButton Background="153,51,76,255" />
+    <DDOption Background="38,0,9,255" Border="25,0,6,255" Hover="64,0,16,255" Text="229,204,210,255" />
+    <Handle Background="102,51,63,255" Grabbed="153,51,76,255" />
+    <Slider>216,178,188,255</Slider>
+    <Input Background="25,0,6,255" Border="38,0,9,255" Text="229,204,210,255" Focused="128,0,32,255" Invalid="255,0,0,255" Valid="0,255,0,255" Selection="216,178,188,127" Caret="216,178,188,127" />
+  </Palette>
+  <Palette Name="red4" BaseColor="">
+    <Frame Background="0,0,0,255" Border="100,0,64,255" Text="249,229,242,255" />
+    <Header Background="60,0,38,255" Border="79,0,51,255" Text="249,229,242,255" />
+    <Nav Background="40,0,25,255" Border="60,0,38,255" Text="244,204,229,255" />
+    <Main Background="20,0,12,255" Border="40,0,25,255" Text="244,204,229,255" />
+    <Component Background="0,0,0,0" Border="0,0,0,0" Text="244,204,229,255" />
+    <Button Background="200,0,128,255" Border="100,0,64,255" Disabled="52,12,38,255" />
+    <CloseButton Background="211,51,153,255" />
+    <DDOption Background="60,0,38,255" Border="40,0,25,255" Hover="100,0,64,255" Text="244,204,229,255" />
+    <Handle Background="131,51,102,255" Grabbed="211,51,153,255" />
+    <Slider>238,178,216,255</Slider>
+    <Input Background="40,0,25,255" Border="60,0,38,255" Text="244,204,229,255" Focused="200,0,128,255" Invalid="255,0,0,255" Valid="0,255,0,255" Selection="238,178,216,127" Caret="238,178,216,127" />
+  </Palette>
+</PaletteSet>

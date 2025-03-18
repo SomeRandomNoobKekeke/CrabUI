@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['serialization_0',['Serialization',['../_serialization.html',1,'index']]],
-  ['sprites_1',['Sprites',['../_sprites.html',1,'index']]],
-  ['styles_20palettes_2',['Styles, Palettes',['../_stylespalettes.html',1,'index']]]
+  ['palettes_0',['Styles, Palettes',['../_stylespalettes.html',1,'index']]],
+  ['props_1',['Props',['../_graphic_props.html',1,'Graphic Props'],['../_layout_props.html',1,'Layout Props'],['../_other_props.html',1,'Other Props']]]
 ];

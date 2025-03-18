@@ -63,7 +63,6 @@ namespace CrabUI
     public static CUIPalette Empty => new CUIPalette();
 
     public static Dictionary<string, CUIPalette> LoadedPalettes = new();
-    public static string Default = "Blue";
 
     private static CUIPalette primary = new CUIPalette();
     public static CUIPalette Primary

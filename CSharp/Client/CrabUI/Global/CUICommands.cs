@@ -36,9 +36,15 @@ namespace CrabUI
         CUIPalette.LoadedPalettes.Keys.ToArray(),
       }));
       AddedCommands.Add(new DebugConsole.Command("cuiloadpaletteset", "", CUILoadPaletteSet_Command));
+      AddedCommands.Add(new DebugConsole.Command("cuicreateluatypesfile", "", CUICreateLuaTypesFile_Command));
 
 
       DebugConsole.Commands.InsertRange(0, AddedCommands);
+    }
+
+    public static void CUICreateLuaTypesFile_Command(string[] args)
+    {
+      CUI.LuaRegistrar.ConstructLuaStaticsFile();
     }
 
     public static void CUIDebug_Command(string[] args)
@@ -126,8 +132,12 @@ namespace CrabUI
 
     public static void Palette_Command(string[] args)
     {
-      CUIPalette palette = CUIPalette.LoadedPalettes.GetValueOrDefault(args.ElementAtOrDefault(0));
-      if (palette != null) CUIPalette.Primary = palette;
+      try
+      {
+        CUIPalette palette = CUIPalette.LoadedPalettes?.GetValueOrDefault(args.ElementAtOrDefault(0) ?? "");
+        if (palette != null) CUIPalette.Primary = palette;
+      }
+      catch (Exception e) { CUI.Warning(e); }
     }
 
 

@@ -15,6 +15,7 @@ namespace CrabUI
   /// </summary>
   public class CUILayoutHorizontalList : CUILayout
   {
+    //public CUIComponent Host;
     internal float TotalWidth;
     public CUIDirection Direction;
     public bool ResizeToHostHeight { get; set; } = true;
@@ -210,6 +211,8 @@ namespace CrabUI
         float tw = 0;
         foreach (CUIComponent c in Host.Children)
         {
+          if (c.Ghost.X) continue;
+
           float w = 0;
           if (!c.FillEmptySpace.X)
           {
@@ -230,6 +233,8 @@ namespace CrabUI
         float th = 0;
         foreach (CUIComponent c in Host.Children)
         {
+          if (c.Ghost.Y) continue;
+
           float h = 0;
           if (c.Absolute.Height.HasValue) h = c.Absolute.Height.Value;
           if (c.AbsoluteMin.Height.HasValue) h = Math.Max(h, c.AbsoluteMin.Height.Value);

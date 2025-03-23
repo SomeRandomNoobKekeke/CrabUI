@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tree_0',['Creating a tree',['../_creatingatree.html',1,'index']]]
+  ['usage_20in_20lua_0',['Usage in Lua',['../_usagein_lua.html',1,'']]]
 ];

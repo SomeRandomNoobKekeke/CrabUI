@@ -112,12 +112,14 @@ namespace CrabUI
     /// </summary>
     public static bool Debug;
     /// <summary>
-    /// Will break the mod if it's compiled  
-    /// But if false you have to use lua file to setup hooks
+    /// If true other compiled mods that use CUI will break 
+    /// But if false then you'll have to setup hooks with lua or separate compiled plugin
     /// </summary>
-    public static bool UseCursedPatches { get; set; } = false;
+    public static bool UseCursedPatches { get; set; } = true;
     /// <summary>
-    /// It's important to set it, if 2 CUIs try to add a hook with same id one won't be added
+    /// It's used as harmony id and lua hooks id, it's deduced automatically from calling assembly name  
+    /// It's should be unique per mod or there will be conflicts  
+    /// You can set it to any string if you want
     /// </summary>
     public static string HookIdentifier
     {
@@ -127,7 +129,7 @@ namespace CrabUI
         hookIdentifier = value?.Replace(' ', '_');
       }
     }
-    private static string hookIdentifier = "";
+    private static string hookIdentifier;
     public static string CUIHookID => $"CrabUI.{HookIdentifier}";
     public static Harmony harmony;
     public static Random Random = new Random();
@@ -196,7 +198,10 @@ namespace CrabUI
       CUIDebug.Log($"CUI.Initialize {HookIdentifier} Instance:[{Instance?.GetHashCode()}] UserCount:{UserCount}", Color.Lime);
       if (Instance == null)
       {
+        GhostDetector.Activate();
         Disposed = false;
+        HookIdentifier ??= Assembly.GetCallingAssembly().GetName().Name ?? "";
+
         Instance = new CUI();
 
         Stopwatch sw = Stopwatch.StartNew();
@@ -220,6 +225,7 @@ namespace CrabUI
         CUIDebug.Log($"CUI.PatchAll took {sw.ElapsedMilliseconds}ms");
 
         AddCommands();
+        AddDebugCommands();
 
         sw.Restart();
         LuaRegistrar.Register();
@@ -243,6 +249,7 @@ namespace CrabUI
     /// </summary>
     public static void Dispose()
     {
+      GhostDetector.Deactivate();
       CUIDebug.Log($"CUI.Dispose {HookIdentifier} Instance:[{Instance?.GetHashCode()}] UserCount:{UserCount}", Color.Lime);
 
       UserCount--;
@@ -279,7 +286,6 @@ namespace CrabUI
     // why am i responsible for initing them here?
     internal static void InitStatic()
     {
-      CUIExtensions.InitStatic();
       CUIInterpolate.InitStatic();
       CUIAnimation.InitStatic();
       CUIReflection.InitStatic();

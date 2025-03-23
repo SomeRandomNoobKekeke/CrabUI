@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['1_0',['0.2.5.1',['../md__c_sharp_2_client_2_crab_u_i_2_changelog.html',1,'']]]
+  ['2_206_200_0',['0.2.6.0',['../md__c_sharp_2_client_2_crab_u_i_2_changelog.html',1,'']]]
 ];

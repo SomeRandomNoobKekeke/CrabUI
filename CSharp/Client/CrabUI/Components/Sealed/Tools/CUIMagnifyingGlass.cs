@@ -16,8 +16,6 @@ namespace CrabUI
   [NoDefault]
   public class CUIMagnifyingGlass : CUICanvas
   {
-
-
     public static CUIFrame GlassFrame;
 
     public static void AddToggleButton()
@@ -78,16 +76,11 @@ namespace CrabUI
         SetData();
       }
 
-
-
-
       base.Draw(spriteBatch);
     }
 
     public CUIMagnifyingGlass() : base()
     {
-
-
       Size = new Point(40, 40);
       SamplerState = CUI.NoSmoothing;
       Relative = new CUINullRect(0, 0, 1, 1);
@@ -98,7 +91,6 @@ namespace CrabUI
       backBuffer = new Color[w * h];
 
       texture = new Texture2D(GameMain.Instance.GraphicsDevice, w, h, false, GameMain.Instance.GraphicsDevice.PresentationParameters.BackBufferFormat);
-
     }
   }
 

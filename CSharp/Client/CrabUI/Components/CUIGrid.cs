@@ -19,8 +19,7 @@ namespace CrabUI
       get => layout;
       set
       {
-        layout = new CUILayoutGrid();
-        layout.Host = this;
+        layout = new CUILayoutGrid(this);
       }
     }
 

@@ -1,3 +1,13 @@
+## 0.2.6.1
+
+Set UseCursedPatches to true by default because that way it's easier to make mod running  
+
+Added Ghost Detector, it will notify you if something cursed happenes with the patches
+
+Added CUIButton.PlaySound prop, you can prevent it from playing click sound 
+
+Rearranged files to confuse you even more
+
 ## 0.2.6.0
 Found one ugly solution to the curse (https://github.com/evilfactory/LuaCsForBarotrauma/issues/245), i think it's the only way to bypass it  
 If you find a better way let me know  

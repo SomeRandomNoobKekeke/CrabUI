@@ -18,6 +18,7 @@ namespace CrabUI
   {
     [CUISerializable]
     public GUISoundType ClickSound { get; set; } = GUISoundType.Select;
+    [CUISerializable] public bool PlaySound { get; set; } = true;
 
     [CUISerializable] public Color DisabledColor { get; set; }
     [CUISerializable] public Color OnColor { get; set; }
@@ -126,7 +127,7 @@ namespace CrabUI
         if (!Disabled)
         {
           State = !State;
-          SoundPlayer.PlayUISound(ClickSound);
+          if (PlaySound) SoundPlayer.PlayUISound(ClickSound);
           OnStateChange?.Invoke(State);
         }
       };

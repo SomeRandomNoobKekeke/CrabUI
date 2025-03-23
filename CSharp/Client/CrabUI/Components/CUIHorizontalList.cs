@@ -17,8 +17,8 @@ namespace CrabUI
     [CUISerializable] public bool Scrollable { get; set; }
     [CUISerializable] public float ScrollSpeed { get; set; } = 1.0f;
 
-    public float LeftGap = 0f;
-    public float RightGap = 0f;
+    [CUISerializable] public float LeftGap { get; set; } = 0f;
+    [CUISerializable] public float RightGap { get; set; } = 0f;
 
     public override CUILayout Layout
     {

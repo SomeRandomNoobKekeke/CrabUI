@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CrabUI: CSharp/Client/CrabUI/Components/Sealed/CUIMagnifyingGlass.cs Source File</title>
+<title>CrabUI: CSharp/Client/CrabUI/Components/Sealed/Tools/CUIMagnifyingGlass.cs Source File</title>
 <link rel="icon" href="BaroModder (small).png" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -85,7 +85,7 @@ $(function(){ initResizable(false); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_2358508cf2cd3f735687a956f2da4c3a.html">CSharp</a></li><li class="navelem"><a class="el" href="dir_3e3041ae236a960906be8d0346149e4c.html">Client</a></li><li class="navelem"><a class="el" href="dir_4c3768cc1e8e77d1e3ee609583c33bab.html">CrabUI</a></li><li class="navelem"><a class="el" href="dir_3f79002fea38a77fe4223a4437176249.html">Components</a></li><li class="navelem"><a class="el" href="dir_2e7851ed2cecf0c2865cf5409436387d.html">Sealed</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_2358508cf2cd3f735687a956f2da4c3a.html">CSharp</a></li><li class="navelem"><a class="el" href="dir_3e3041ae236a960906be8d0346149e4c.html">Client</a></li><li class="navelem"><a class="el" href="dir_4c3768cc1e8e77d1e3ee609583c33bab.html">CrabUI</a></li><li class="navelem"><a class="el" href="dir_3f79002fea38a77fe4223a4437176249.html">Components</a></li><li class="navelem"><a class="el" href="dir_2e7851ed2cecf0c2865cf5409436387d.html">Sealed</a></li><li class="navelem"><a class="el" href="dir_7eb0e19732c31555b591f31bb98faad6.html">Tools</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
@@ -112,114 +112,106 @@ $(function(){ initResizable(false); });
 <div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_crab_u_i_1_1_c_u_i_magnifying_glass.html">   17</a></span>  <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_magnifying_glass.html">CUIMagnifyingGlass</a> : <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_canvas.html">CUICanvas</a></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">public</span> <span class="keyword">static</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_frame.html">CUIFrame</a> GlassFrame;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">public</span> <span class="keyword">static</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_frame.html">CUIFrame</a> GlassFrame;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> AddToggleButton()</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>      <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i.html">CUI</a>.<a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#a31ba5b36859d8affa5aad82c49297667">TopMain</a>[<span class="stringliteral">&quot;ToggleMagnifyingGlass&quot;</span>] = <span class="keyword">new</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_button.html">CUIButton</a>(<span class="stringliteral">&quot;MG&quot;</span>)</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>      {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#af5fd8b560d8752337777edb44aa2faab">Absolute</a> = <span class="keyword">new</span> <a class="code hl_struct" href="struct_crab_u_i_1_1_c_u_i_null_rect.html">CUINullRect</a>(0, 0, 20, 20),</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a7fae3cdaeecaf5bc24120cddfb4b2af2">Anchor</a> = <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_anchor.html">CUIAnchor</a>.CenterLeft,</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        AddOnMouseDown = (e) =&gt; ToggleEquip(),</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>      };</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    }</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> ToggleEquip()</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    {</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>      <span class="keywordflow">if</span> (GlassFrame != <span class="keyword">null</span>)</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        GlassFrame.RemoveSelf();</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        GlassFrame = <span class="keyword">null</span>;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      }</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      {</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        GlassFrame = <span class="keyword">new</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_frame.html">CUIFrame</a>()</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        {</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>          <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#ad98fab5ffcba1bac9a46a724cbdb676d">ZIndex</a> = 100000,</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>          <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a7db80658c26d4041f54ce3aa469854af">BackgroundColor</a> = Color.Transparent,</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>          <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a7bf61a705793c065e96506dd2685ff90">Border</a> = <span class="keyword">new</span> CUIBorder(Color.Cyan, 5),</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>          <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a7fae3cdaeecaf5bc24120cddfb4b2af2">Anchor</a> = <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_anchor.html">CUIAnchor</a>.Center,</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>          <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#af5fd8b560d8752337777edb44aa2faab">Absolute</a> = <span class="keyword">new</span> <a class="code hl_struct" href="struct_crab_u_i_1_1_c_u_i_null_rect.html">CUINullRect</a>(w: 200, h: 200),</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        };</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        GlassFrame[<span class="stringliteral">&quot;glass&quot;</span>] = <span class="keyword">new</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_magnifying_glass.html">CUIMagnifyingGlass</a>();</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i.html">CUI</a>.<a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#a31ba5b36859d8affa5aad82c49297667">TopMain</a>[<span class="stringliteral">&quot;MagnifyingGlass&quot;</span>] = GlassFrame;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>      }</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">void</span> CleanUp()</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>      texture.Dispose();</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      base.CleanUp();</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    }</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    Texture2D texture;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    Color[] backBuffer;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">double</span> lastDrawn;</div>
-<div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="class_crab_u_i_1_1_c_u_i_magnifying_glass.html#a5a603962e89f6f9967fd3393a66855c4">   66</a></span>    <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_crab_u_i_1_1_c_u_i_magnifying_glass.html#a5a603962e89f6f9967fd3393a66855c4">Draw</a>(SpriteBatch spriteBatch)</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    {</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      <span class="keywordflow">if</span> (Timing.TotalTime - lastDrawn &gt; 0.05)</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      {</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        lastDrawn = Timing.TotalTime;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        GameMain.Instance.GraphicsDevice.GetBackBufferData&lt;Color&gt;(backBuffer);</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        texture.SetData(backBuffer);</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        texture.GetData&lt;Color&gt;(</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>          0, <span class="keyword">new</span> Rectangle((<span class="keywordtype">int</span>)<a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a8d064e18e047cd1aec85a4bb6349966a">Real</a>.Left, (<span class="keywordtype">int</span>)<a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a8d064e18e047cd1aec85a4bb6349966a">Real</a>.Top, 40, 40), Data, 0, Data.Length</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        );</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <a class="code hl_function" href="class_crab_u_i_1_1_c_u_i_canvas.html#a69707d867462ebcc980efb3fa8b67318">SetData</a>();</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>      }</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> AddToggleButton()</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>      <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i.html">CUI</a>.<a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#a31ba5b36859d8affa5aad82c49297667">TopMain</a>[<span class="stringliteral">&quot;ToggleMagnifyingGlass&quot;</span>] = <span class="keyword">new</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_button.html">CUIButton</a>(<span class="stringliteral">&quot;MG&quot;</span>)</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>      {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#af5fd8b560d8752337777edb44aa2faab">Absolute</a> = <span class="keyword">new</span> <a class="code hl_struct" href="struct_crab_u_i_1_1_c_u_i_null_rect.html">CUINullRect</a>(0, 0, 20, 20),</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a7fae3cdaeecaf5bc24120cddfb4b2af2">Anchor</a> = <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_anchor.html">CUIAnchor</a>.CenterLeft,</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        AddOnMouseDown = (e) =&gt; ToggleEquip(),</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>      };</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> ToggleEquip()</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>      <span class="keywordflow">if</span> (GlassFrame != <span class="keyword">null</span>)</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>      {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        GlassFrame.RemoveSelf();</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        GlassFrame = <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        GlassFrame = <span class="keyword">new</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_frame.html">CUIFrame</a>()</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>          <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#ad98fab5ffcba1bac9a46a724cbdb676d">ZIndex</a> = 100000,</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>          <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a7db80658c26d4041f54ce3aa469854af">BackgroundColor</a> = Color.Transparent,</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>          <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a7bf61a705793c065e96506dd2685ff90">Border</a> = <span class="keyword">new</span> CUIBorder(Color.Cyan, 5),</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>          <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a7fae3cdaeecaf5bc24120cddfb4b2af2">Anchor</a> = <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_anchor.html">CUIAnchor</a>.Center,</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>          <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#af5fd8b560d8752337777edb44aa2faab">Absolute</a> = <span class="keyword">new</span> <a class="code hl_struct" href="struct_crab_u_i_1_1_c_u_i_null_rect.html">CUINullRect</a>(w: 200, h: 200),</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        };</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        GlassFrame[<span class="stringliteral">&quot;glass&quot;</span>] = <span class="keyword">new</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_magnifying_glass.html">CUIMagnifyingGlass</a>();</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i.html">CUI</a>.<a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#a31ba5b36859d8affa5aad82c49297667">TopMain</a>[<span class="stringliteral">&quot;MagnifyingGlass&quot;</span>] = GlassFrame;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>      }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">void</span> CleanUp()</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>      texture.Dispose();</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>      base.CleanUp();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    Texture2D texture;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    Color[] backBuffer;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordtype">double</span> lastDrawn;</div>
+<div class="foldopen" id="foldopen00064" data-start="{" data-end="}">
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_crab_u_i_1_1_c_u_i_magnifying_glass.html#a5a603962e89f6f9967fd3393a66855c4">   64</a></span>    <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_crab_u_i_1_1_c_u_i_magnifying_glass.html#a5a603962e89f6f9967fd3393a66855c4">Draw</a>(SpriteBatch spriteBatch)</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>      <span class="keywordflow">if</span> (Timing.TotalTime - lastDrawn &gt; 0.05)</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>      {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        lastDrawn = Timing.TotalTime;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        GameMain.Instance.GraphicsDevice.GetBackBufferData&lt;Color&gt;(backBuffer);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        texture.SetData(backBuffer);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        texture.GetData&lt;Color&gt;(</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>          0, <span class="keyword">new</span> Rectangle((<span class="keywordtype">int</span>)<a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a8d064e18e047cd1aec85a4bb6349966a">Real</a>.Left, (<span class="keywordtype">int</span>)<a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a8d064e18e047cd1aec85a4bb6349966a">Real</a>.Top, 40, 40), Data, 0, Data.Length</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        );</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <a class="code hl_function" href="class_crab_u_i_1_1_c_u_i_canvas.html#a69707d867462ebcc980efb3fa8b67318">SetData</a>();</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>      }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>      base.Draw(spriteBatch);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    }</div>
+</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>      base.Draw(spriteBatch);</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    }</div>
-</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keyword">public</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_magnifying_glass.html">CUIMagnifyingGlass</a>() : base()</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    {</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keyword">public</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_magnifying_glass.html">CUIMagnifyingGlass</a>() : base()</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_canvas.html#aa9ae1b2cc9e65e9ed7a20dbbf5dbe4d2">Size</a> = <span class="keyword">new</span> Point(40, 40);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a348910e1e1ceee3050459cc76576e3dc">SamplerState</a> = <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i.html">CUI</a>.NoSmoothing;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a3bf46498c5f0dae185b27ebb3a452c98">Relative</a> = <span class="keyword">new</span> <a class="code hl_struct" href="struct_crab_u_i_1_1_c_u_i_null_rect.html">CUINullRect</a>(0, 0, 1, 1);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>      <span class="keywordtype">int</span> w = GameMain.Instance.GraphicsDevice.PresentationParameters.BackBufferWidth;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>      <span class="keywordtype">int</span> h = GameMain.Instance.GraphicsDevice.PresentationParameters.BackBufferHeight;</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_canvas.html#aa9ae1b2cc9e65e9ed7a20dbbf5dbe4d2">Size</a> = <span class="keyword">new</span> Point(40, 40);</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a348910e1e1ceee3050459cc76576e3dc">SamplerState</a> = <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i.html">CUI</a>.NoSmoothing;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a3bf46498c5f0dae185b27ebb3a452c98">Relative</a> = <span class="keyword">new</span> <a class="code hl_struct" href="struct_crab_u_i_1_1_c_u_i_null_rect.html">CUINullRect</a>(0, 0, 1, 1);</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>      <span class="keywordtype">int</span> w = GameMain.Instance.GraphicsDevice.PresentationParameters.BackBufferWidth;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>      <span class="keywordtype">int</span> h = GameMain.Instance.GraphicsDevice.PresentationParameters.BackBufferHeight;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>      backBuffer = <span class="keyword">new</span> Color[w * h];</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>      texture = <span class="keyword">new</span> Texture2D(GameMain.Instance.GraphicsDevice, w, h, <span class="keyword">false</span>, GameMain.Instance.GraphicsDevice.PresentationParameters.BackBufferFormat);</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    }</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>      backBuffer = <span class="keyword">new</span> Color[w * h];</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>      texture = <span class="keyword">new</span> Texture2D(GameMain.Instance.GraphicsDevice, w, h, <span class="keyword">false</span>, GameMain.Instance.GraphicsDevice.PresentationParameters.BackBufferFormat);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    }</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  }</div>
 </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>}</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>}</div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_anchor_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_anchor.html">CrabUI.CUIAnchor</a></div><div class="ttdoc">CUIAnchor is just a Vector2   This is a static class containing some helper methods.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_anchor_8cs_source.html#l00017">CUIAnchor.cs:18</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_button_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_button.html">CrabUI.CUIButton</a></div><div class="ttdoc">A button   It's derived from CUITextBlock and has all its props.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_button_8cs_source.html#l00018">CUIButton.cs:19</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_canvas_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_canvas.html">CrabUI.CUICanvas</a></div><div class="ttdoc">Allows you to manipulate pixel data of its texture.</div><div class="ttdef"><b>Definition</b> <a href="_crab_u_i_2_components_2_c_u_i_canvas_8cs_source.html#l00016">CUICanvas.cs:17</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_canvas_html_a69707d867462ebcc980efb3fa8b67318"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_canvas.html#a69707d867462ebcc980efb3fa8b67318">CrabUI.CUICanvas.SetData</a></div><div class="ttdeci">void SetData()</div><div class="ttdoc">Call this method to transfer values from Data array into texture.</div><div class="ttdef"><b>Definition</b> <a href="_crab_u_i_2_components_2_c_u_i_canvas_8cs_source.html#l00066">CUICanvas.cs:66</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_canvas_html_aa9ae1b2cc9e65e9ed7a20dbbf5dbe4d2"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_canvas.html#aa9ae1b2cc9e65e9ed7a20dbbf5dbe4d2">CrabUI.CUICanvas.Size</a></div><div class="ttdeci">virtual Point Size</div><div class="ttdoc">Size of the internal texture Will automatically resize the texture and data array of set.</div><div class="ttdef"><b>Definition</b> <a href="_crab_u_i_2_components_2_c_u_i_canvas_8cs_source.html#l00027">CUICanvas.cs:28</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a348910e1e1ceee3050459cc76576e3dc"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a348910e1e1ceee3050459cc76576e3dc">CrabUI.CUIComponent.SamplerState</a></div><div class="ttdeci">SamplerState SamplerState</div><div class="ttdoc">don't</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_graphic_01_props_8cs_source.html#l00141">CUIComponent.Graphic Props.cs:141</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a3bf46498c5f0dae185b27ebb3a452c98"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a3bf46498c5f0dae185b27ebb3a452c98">CrabUI.CUIComponent.Relative</a></div><div class="ttdeci">CUINullRect Relative</div><div class="ttdoc">Relative to parent size and position, [0..1].</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_layout_01_props_8cs_source.html#l00144">CUIComponent.Layout Props.cs:145</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a7bf61a705793c065e96506dd2685ff90"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a7bf61a705793c065e96506dd2685ff90">CrabUI.CUIComponent.Border</a></div><div class="ttdeci">CUIBorder Border</div><div class="ttdoc">Container for Color and Thickness   Border is drawn inside the component and will eat space from cont...</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_graphic_01_props_8cs_source.html#l00043">CUIComponent.Graphic Props.cs:43</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a7db80658c26d4041f54ce3aa469854af"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a7db80658c26d4041f54ce3aa469854af">CrabUI.CUIComponent.BackgroundColor</a></div><div class="ttdeci">Color BackgroundColor</div><div class="ttdoc">Color of BackgroundSprite, default is black   If you're using custom sprite and don't see it make sur...</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_graphic_01_props_8cs_source.html#l00089">CUIComponent.Graphic Props.cs:90</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a7fae3cdaeecaf5bc24120cddfb4b2af2"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a7fae3cdaeecaf5bc24120cddfb4b2af2">CrabUI.CUIComponent.Anchor</a></div><div class="ttdeci">Vector2 Anchor</div><div class="ttdoc">this point of this component</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_layout_01_props_8cs_source.html#l00063">CUIComponent.Layout Props.cs:63</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a8d064e18e047cd1aec85a4bb6349966a"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a8d064e18e047cd1aec85a4bb6349966a">CrabUI.CUIComponent.Real</a></div><div class="ttdeci">CUIRect Real</div><div class="ttdoc">Calculated prop, position on real screen in pixels Should be fully calculated after CUIMainComponent....</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_calculated_8cs_source.html#l00116">CUIComponent.Calculated.cs:117</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_ad98fab5ffcba1bac9a46a724cbdb676d"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#ad98fab5ffcba1bac9a46a724cbdb676d">CrabUI.CUIComponent.ZIndex</a></div><div class="ttdeci">int? ZIndex</div><div class="ttdoc">Components are drawn in order of their ZIndex   Normally it's derived from component position in the ...</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_layout_01_props_8cs_source.html#l00084">CUIComponent.Layout Props.cs:85</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_af5fd8b560d8752337777edb44aa2faab"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#af5fd8b560d8752337777edb44aa2faab">CrabUI.CUIComponent.Absolute</a></div><div class="ttdeci">CUINullRect Absolute</div><div class="ttdoc">Absolute size and position in pixels.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_layout_01_props_8cs_source.html#l00123">CUIComponent.Layout Props.cs:124</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a348910e1e1ceee3050459cc76576e3dc"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a348910e1e1ceee3050459cc76576e3dc">CrabUI.CUIComponent.SamplerState</a></div><div class="ttdeci">SamplerState SamplerState</div><div class="ttdoc">don't</div><div class="ttdef"><b>Definition</b> <a href="_graphic_01_props_8cs_source.html#l00141">Graphic Props.cs:141</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a3bf46498c5f0dae185b27ebb3a452c98"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a3bf46498c5f0dae185b27ebb3a452c98">CrabUI.CUIComponent.Relative</a></div><div class="ttdeci">CUINullRect Relative</div><div class="ttdoc">Relative to parent size and position, [0..1].</div><div class="ttdef"><b>Definition</b> <a href="_layout_01_props_8cs_source.html#l00144">Layout Props.cs:145</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a7bf61a705793c065e96506dd2685ff90"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a7bf61a705793c065e96506dd2685ff90">CrabUI.CUIComponent.Border</a></div><div class="ttdeci">CUIBorder Border</div><div class="ttdoc">Container for Color and Thickness   Border is drawn inside the component and will eat space from cont...</div><div class="ttdef"><b>Definition</b> <a href="_graphic_01_props_8cs_source.html#l00043">Graphic Props.cs:43</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a7db80658c26d4041f54ce3aa469854af"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a7db80658c26d4041f54ce3aa469854af">CrabUI.CUIComponent.BackgroundColor</a></div><div class="ttdeci">Color BackgroundColor</div><div class="ttdoc">Color of BackgroundSprite, default is black   If you're using custom sprite and don't see it make sur...</div><div class="ttdef"><b>Definition</b> <a href="_graphic_01_props_8cs_source.html#l00089">Graphic Props.cs:90</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a7fae3cdaeecaf5bc24120cddfb4b2af2"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a7fae3cdaeecaf5bc24120cddfb4b2af2">CrabUI.CUIComponent.Anchor</a></div><div class="ttdeci">Vector2 Anchor</div><div class="ttdoc">this point of this component</div><div class="ttdef"><b>Definition</b> <a href="_layout_01_props_8cs_source.html#l00063">Layout Props.cs:63</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a8d064e18e047cd1aec85a4bb6349966a"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a8d064e18e047cd1aec85a4bb6349966a">CrabUI.CUIComponent.Real</a></div><div class="ttdeci">CUIRect Real</div><div class="ttdoc">Calculated prop, position on real screen in pixels Should be fully calculated after CUIMainComponent....</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_state_8cs_source.html#l00116">CUIComponent.State.cs:117</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_ad98fab5ffcba1bac9a46a724cbdb676d"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#ad98fab5ffcba1bac9a46a724cbdb676d">CrabUI.CUIComponent.ZIndex</a></div><div class="ttdeci">int? ZIndex</div><div class="ttdoc">Components are drawn in order of their ZIndex   Normally it's derived from component position in the ...</div><div class="ttdef"><b>Definition</b> <a href="_layout_01_props_8cs_source.html#l00084">Layout Props.cs:85</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_af5fd8b560d8752337777edb44aa2faab"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#af5fd8b560d8752337777edb44aa2faab">CrabUI.CUIComponent.Absolute</a></div><div class="ttdeci">CUINullRect Absolute</div><div class="ttdoc">Absolute size and position in pixels.</div><div class="ttdef"><b>Definition</b> <a href="_layout_01_props_8cs_source.html#l00123">Layout Props.cs:124</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_frame_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_frame.html">CrabUI.CUIFrame</a></div><div class="ttdoc">Draggable and resizable container for other components.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_frame_8cs_source.html#l00015">CUIFrame.cs:16</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html">CrabUI.CUI</a></div><div class="ttdoc">In fact a static class managing static things.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_errors_8cs_source.html#l00015">CUIErrors.cs:16</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a31ba5b36859d8affa5aad82c49297667"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#a31ba5b36859d8affa5aad82c49297667">CrabUI.CUI.TopMain</a></div><div class="ttdeci">static CUIMainComponent TopMain</div><div class="ttdoc">Orchestrates Drawing and updates, there could be only one CUI.TopMain is located above vanilla GUI.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_8cs_source.html#l00089">CUI.cs:89</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_magnifying_glass_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_magnifying_glass.html">CrabUI.CUIMagnifyingGlass</a></div><div class="ttdoc">It's a debug tool, you can use it with cuimg command, it's very fps comsuming.</div><div class="ttdef"><b>Definition</b> <a href="#l00017">CUIMagnifyingGlass.cs:18</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_magnifying_glass_html_a5a603962e89f6f9967fd3393a66855c4"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_magnifying_glass.html#a5a603962e89f6f9967fd3393a66855c4">CrabUI.CUIMagnifyingGlass.Draw</a></div><div class="ttdeci">override void Draw(SpriteBatch spriteBatch)</div><div class="ttdoc">Here component should be drawn.</div><div class="ttdef"><b>Definition</b> <a href="#l00066">CUIMagnifyingGlass.cs:66</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_magnifying_glass_html_a5a603962e89f6f9967fd3393a66855c4"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_magnifying_glass.html#a5a603962e89f6f9967fd3393a66855c4">CrabUI.CUIMagnifyingGlass.Draw</a></div><div class="ttdeci">override void Draw(SpriteBatch spriteBatch)</div><div class="ttdoc">Here component should be drawn.</div><div class="ttdef"><b>Definition</b> <a href="#l00064">CUIMagnifyingGlass.cs:64</a></div></div>
 <div class="ttc" id="anamespace_crab_u_i_html"><div class="ttname"><a href="namespace_crab_u_i.html">CrabUI</a></div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_animation_8cs_source.html#l00011">CUIAnimation.cs:12</a></div></div>
 <div class="ttc" id="astruct_crab_u_i_1_1_c_u_i_null_rect_html"><div class="ttname"><a href="struct_crab_u_i_1_1_c_u_i_null_rect.html">CrabUI.CUINullRect</a></div><div class="ttdoc">Rectangle with float?</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_rect_8cs_source.html#l00103">CUIRect.cs:104</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

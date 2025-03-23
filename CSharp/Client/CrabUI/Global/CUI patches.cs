@@ -171,6 +171,7 @@ namespace CrabUI
 
     private static void GameMain_Update_Postfix(GameTime gameTime)
     {
+      if (GhostDetector.Check()) return;
       CUIUpdate(gameTime.TotalGameTime.TotalSeconds);
     }
     private static void CUIUpdate(double time)
@@ -191,18 +192,21 @@ namespace CrabUI
 
     private static void GUI_Draw_Prefix(SpriteBatch spriteBatch)
     {
+      if (GhostDetector.Check()) return;
       try { Main?.Draw(spriteBatch); }
       catch (Exception e) { CUI.Warning($"CUI: {e}"); }
     }
 
     private static void GUI_DrawCursor_Prefix(SpriteBatch spriteBatch)
     {
+      if (GhostDetector.Check()) return;
       try { TopMain?.Draw(spriteBatch); }
       catch (Exception e) { CUI.Warning($"CUI: {e}"); }
     }
 
     private static void GUI_UpdateMouseOn_Postfix(ref GUIComponent __result)
     {
+      if (GhostDetector.Check()) return;
       CUIUpdateMouseOn();
     }
 
@@ -225,21 +229,25 @@ namespace CrabUI
 
     private static void Camera_MoveCamera_Prefix(float deltaTime, ref bool allowMove, ref bool allowZoom, bool allowInput, bool? followSub)
     {
+      if (GhostDetector.Check()) return;
       if (GUI.MouseOn == CUIComponent.dummyComponent) allowZoom = false;
     }
 
     private static void KeyboardDispatcher_set_Subscriber_Prefix(KeyboardDispatcher __instance, IKeyboardSubscriber value)
     {
+      if (GhostDetector.Check()) return;
       FocusResolver?.OnVanillaIKeyboardSubscriberSet(value);
     }
 
     public static void GUI_InputBlockingMenuOpen_Postfix(ref bool __result)
     {
+      if (GhostDetector.Check()) return;
       __result = __result || CUI.InputBlockingMenuOpen;
     }
 
     public static void GUI_TogglePauseMenu_Postfix()
     {
+      if (GhostDetector.Check()) return;
       try
       {
         if (GUI.PauseMenu != null)

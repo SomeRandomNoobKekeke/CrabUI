@@ -19,12 +19,7 @@ namespace CrabUI
     internal static List<DebugConsole.Command> AddedCommands = new List<DebugConsole.Command>();
     internal static void AddCommands()
     {
-      AddedCommands.Add(new DebugConsole.Command("cuidebug", "", CUIDebug_Command));
       AddedCommands.Add(new DebugConsole.Command("cuicreatepalette", "cuicreatepalette name frontcolor [backcolor]", CUICreatePalette_Command));
-      AddedCommands.Add(new DebugConsole.Command("cuimg", "", CUIMG_Command));
-      AddedCommands.Add(new DebugConsole.Command("cuidraworder", "", CUIDrawOrder_Command));
-      AddedCommands.Add(new DebugConsole.Command("cuiprinttree", "", CUIPrintTree_Command));
-      AddedCommands.Add(new DebugConsole.Command("printsprites", "", PrintSprites_Command));
       AddedCommands.Add(new DebugConsole.Command("printkeys", "", PrintSprites_Command));
       AddedCommands.Add(new DebugConsole.Command("cuipalette", "load palette as primary", Palette_Command, () => new string[][] { CUIPalette.LoadedPalettes.Keys.ToArray() }));
       AddedCommands.Add(new DebugConsole.Command("cuipalettedemo", "", PaletteDemo_Command));
@@ -46,33 +41,6 @@ namespace CrabUI
     {
       CUI.LuaRegistrar.ConstructLuaStaticsFile();
     }
-
-    public static void CUIDebug_Command(string[] args)
-    {
-      if (CUIDebugWindow.Main == null)
-      {
-        CUIDebugWindow.Open();
-      }
-      else
-      {
-        CUIDebugWindow.Close();
-      }
-    }
-
-    public static void CUIDrawOrder_Command(string[] args)
-    {
-      foreach (CUIComponent c in CUI.Main.Flat)
-      {
-        CUI.Log(c);
-      }
-    }
-
-    public static void CUIPrintTree_Command(string[] args)
-    {
-      CUI.Main?.PrintTree();
-      CUI.TopMain?.PrintTree();
-    }
-
 
 
     public static void CUICreatePalette_Command(string[] args)
@@ -98,16 +66,6 @@ namespace CrabUI
     public static void CUILoadPaletteSet_Command(string[] args)
     {
       CUIPalette.LoadSet(Path.Combine(CUIPalette.PaletteSetsPath, args.ElementAtOrDefault(0)));
-    }
-
-    public static void CUIMG_Command(string[] args) => CUIMagnifyingGlass.ToggleEquip();
-
-    public static void PrintSprites_Command(string[] args)
-    {
-      foreach (GUIComponentStyle style in GUIStyle.ComponentStyles)
-      {
-        CUI.Log($"{style.Name} {style.Sprites.Count}");
-      }
     }
 
     public static void PrintKeysCommand(string[] args)

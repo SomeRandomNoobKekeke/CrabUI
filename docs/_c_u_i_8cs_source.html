@@ -211,215 +211,221 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="comment">    /// &lt;/summary&gt;</span></div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="class_crab_u_i_1_1_c_u_i.html#a1c6aff01098e74d01c9d84b833860c22">  113</a></span><span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_crab_u_i_1_1_c_u_i.html#a1c6aff01098e74d01c9d84b833860c22">Debug</a>;<span class="comment"></span></div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="comment">    /// &lt;summary&gt;</span></div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="comment">    /// Will break the mod if it&#39;s compiled  </span></div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="comment">    /// But if false you have to use lua file to setup hooks</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="comment">    /// If true other compiled mods that use CUI will break </span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="comment">    /// But if false then you&#39;ll have to setup hooks with lua or separate compiled plugin</span></div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="comment">    /// &lt;/summary&gt;</span></div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="class_crab_u_i_1_1_c_u_i.html#ab3004d84ad742213352fb8e90f60e970">  118</a></span><span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#ab3004d84ad742213352fb8e90f60e970">UseCursedPatches</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; } = <span class="keyword">false</span>;<span class="comment"></span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="class_crab_u_i_1_1_c_u_i.html#ab3004d84ad742213352fb8e90f60e970">  118</a></span><span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#ab3004d84ad742213352fb8e90f60e970">UseCursedPatches</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; } = <span class="keyword">true</span>;<span class="comment"></span></div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="comment">    /// &lt;summary&gt;</span></div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="comment">    /// It&#39;s important to set it, if 2 CUIs try to add a hook with same id one won&#39;t be added</span></div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="comment">    /// &lt;/summary&gt;</span></div>
-<div class="foldopen" id="foldopen00122" data-start="{" data-end="};">
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="class_crab_u_i_1_1_c_u_i.html#a28c6bd4fd0122e1e62aee0154283f4b0">  122</a></span><span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#a28c6bd4fd0122e1e62aee0154283f4b0">HookIdentifier</a></div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    {</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>      <span class="keyword">get</span> =&gt; hookIdentifier;</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>      <span class="keyword">set</span></div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>      {</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        hookIdentifier = value?.Replace(<span class="charliteral">&#39; &#39;</span>, <span class="charliteral">&#39;_&#39;</span>);</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>      }</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    }</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="comment">    /// It&#39;s used as harmony id and lua hooks id, it&#39;s deduced automatically from calling assembly name  </span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="comment">    /// It&#39;s should be unique per mod or there will be conflicts  </span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="comment">    /// You can set it to any string if you want</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="comment">    /// &lt;/summary&gt;</span></div>
+<div class="foldopen" id="foldopen00124" data-start="{" data-end="};">
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="class_crab_u_i_1_1_c_u_i.html#a28c6bd4fd0122e1e62aee0154283f4b0">  124</a></span><span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#a28c6bd4fd0122e1e62aee0154283f4b0">HookIdentifier</a></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>      <span class="keyword">get</span> =&gt; hookIdentifier;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>      <span class="keyword">set</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>      {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        hookIdentifier = value?.Replace(<span class="charliteral">&#39; &#39;</span>, <span class="charliteral">&#39;_&#39;</span>);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>      }</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    }</div>
 </div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">string</span> hookIdentifier = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> CUIHookID =&gt; $<span class="stringliteral">&quot;CrabUI.{HookIdentifier}&quot;</span>;</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keyword">public</span> <span class="keyword">static</span> Harmony harmony;</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keyword">public</span> <span class="keyword">static</span> Random Random = <span class="keyword">new</span> Random();</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="comment"></span> </div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="comment">    /// &lt;summary&gt;</span></div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="comment">    /// Called on first Initialize</span></div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="comment">    /// &lt;/summary&gt;</span></div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="class_crab_u_i_1_1_c_u_i.html#a29fdc0441733f6fde0d3bc29a458078c">  138</a></span><span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">event</span> Action <a class="code hl_event" href="class_crab_u_i_1_1_c_u_i.html#a29fdc0441733f6fde0d3bc29a458078c">OnInit</a>;<span class="comment"></span></div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="comment">    /// &lt;summary&gt;</span></div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="comment">    /// Called on last Dispose</span></div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="comment">    /// &lt;/summary&gt;</span></div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="class_crab_u_i_1_1_c_u_i.html#a094cb2f85756ccf7fdf601df178d2dcb">  142</a></span><span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">event</span> Action <a class="code hl_event" href="class_crab_u_i_1_1_c_u_i.html#a094cb2f85756ccf7fdf601df178d2dcb">OnDispose</a>;</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> Disposed { <span class="keyword">get</span>; <span class="keyword">set</span>; } = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">event</span> Action&lt;TextInputEventArgs&gt; OnWindowTextInput;</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">event</span> Action&lt;TextInputEventArgs&gt; OnWindowKeyDown;</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="comment">//public static event Action&lt;TextInputEventArgs&gt; OnWindowKeyUp;</span></div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="comment">//TODO Still doesn&#39;t trigger when someone ends round in multiplayer</span></div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">event</span> Action OnPauseMenuToggled;</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> InvokeOnPauseMenuToggled() =&gt; OnPauseMenuToggled?.Invoke();</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> InputBlockingMenuOpen</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    {</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>      <span class="keyword">get</span></div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>      {</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        <span class="keywordflow">if</span> (IsBlockingPredicates == <span class="keyword">null</span>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <span class="keywordflow">return</span> IsBlockingPredicates.Any(p =&gt; p());</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>      }</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    }</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keyword">public</span> <span class="keyword">static</span> List&lt;Func&lt;bool&gt;&gt; IsBlockingPredicates =&gt; <a class="code hl_variable" href="class_crab_u_i_1_1_c_u_i.html#aba21eb0f5f823b3c2c876dc31a3b4a43">Instance</a>?.isBlockingPredicates;</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <span class="keyword">private</span> List&lt;Func&lt;bool&gt;&gt; isBlockingPredicates = <span class="keyword">new</span> List&lt;Func&lt;bool&gt;&gt;();<span class="comment"></span></div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="comment">    /// &lt;summary&gt;</span></div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span><span class="comment">    /// In theory multiple mods could use same CUI instance, </span></div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="comment">    /// i clean it up when UserCount drops to 0</span></div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="comment">    /// &lt;/summary&gt;</span></div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="class_crab_u_i_1_1_c_u_i.html#a1b53d62d642c767e10ee9044d458ff50">  166</a></span><span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_crab_u_i_1_1_c_u_i.html#a1b53d62d642c767e10ee9044d458ff50">UserCount</a> = 0;</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="comment"></span> </div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span><span class="comment">    /// &lt;summary&gt;</span></div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span><span class="comment">    /// An object that contains current mouse and keyboard states</span></div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span><span class="comment">    /// It scans states at the start on Main.Update</span></div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span><span class="comment">    /// &lt;/summary&gt;</span></div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span><span class="comment"></span>    <span class="keyword">private</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_input.html">CUIInput</a> input = <span class="keyword">new</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_input.html">CUIInput</a>();</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="keyword">private</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_main_component.html">CUIMainComponent</a> main;</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    <span class="keyword">private</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_main_component.html">CUIMainComponent</a> topMain;</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    <span class="keyword">private</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_texture_manager.html">CUITextureManager</a> textureManager = <span class="keyword">new</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_texture_manager.html">CUITextureManager</a>();</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <span class="keyword">private</span> CUIFocusResolver focusResolver = <span class="keyword">new</span> CUIFocusResolver();</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <span class="keyword">private</span> CUILuaRegistrar luaRegistrar = <span class="keyword">new</span> CUILuaRegistrar();</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> ReEmitWindowTextInput(<span class="keywordtype">object</span> sender, TextInputEventArgs e) =&gt; OnWindowTextInput?.Invoke(e);</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> ReEmitWindowKeyDown(<span class="keywordtype">object</span> sender, TextInputEventArgs e) =&gt; OnWindowKeyDown?.Invoke(e);</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <span class="comment">//public static void ReEmitWindowKeyUp(object sender, TextInputEventArgs e) =&gt; OnWindowKeyUp?.Invoke(e);</span></div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <span class="keyword">private</span> <span class="keywordtype">void</span> CreateMains()</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    {</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>      main = <span class="keyword">new</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_main_component.html">CUIMainComponent</a>() { AKA = <span class="stringliteral">&quot;Main Component&quot;</span> };</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>      topMain = <span class="keyword">new</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_main_component.html">CUIMainComponent</a>() { AKA = <span class="stringliteral">&quot;Top Main Component&quot;</span> };</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    }</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="comment"></span> </div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span><span class="comment">    /// &lt;summary&gt;</span></div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="comment">    /// Should be called in IAssemblyPlugin.Initialize </span></div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span><span class="comment">    /// \todo make it CUI instance member when plugin system settle</span></div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="comment">    /// &lt;/summary&gt;</span></div>
-<div class="foldopen" id="foldopen00194" data-start="{" data-end="}">
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno"><a class="line" href="class_crab_u_i_1_1_c_u_i.html#af3b7572fc0a25f689e8bdcf718ec3827">  194</a></span><span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_crab_u_i_1_1_c_u_i.html#af3b7572fc0a25f689e8bdcf718ec3827">Initialize</a>()</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    {</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>      CUIDebug.Log($<span class="stringliteral">&quot;CUI.Initialize {HookIdentifier} Instance:[{Instance?.GetHashCode()}] UserCount:{UserCount}&quot;</span>, Color.Lime);</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_crab_u_i_1_1_c_u_i.html#aba21eb0f5f823b3c2c876dc31a3b4a43">Instance</a> == <span class="keyword">null</span>)</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>      {</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        Disposed = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        <a class="code hl_variable" href="class_crab_u_i_1_1_c_u_i.html#aba21eb0f5f823b3c2c876dc31a3b4a43">Instance</a> = <span class="keyword">new</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i.html">CUI</a>();</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        Stopwatch sw = Stopwatch.StartNew();</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        <span class="keywordflow">if</span> (<a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#a28c6bd4fd0122e1e62aee0154283f4b0">HookIdentifier</a> == <span class="keyword">null</span> || <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#a28c6bd4fd0122e1e62aee0154283f4b0">HookIdentifier</a> == <span class="stringliteral">&quot;&quot;</span>) <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i.html">CUI</a>.Warning($<span class="stringliteral">&quot;Warning: CUI.HookIdentifier is not set, this mod may conflict with other mods that use CUI&quot;</span>);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">string</span> hookIdentifier;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> CUIHookID =&gt; $<span class="stringliteral">&quot;CrabUI.{HookIdentifier}&quot;</span>;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keyword">public</span> <span class="keyword">static</span> Harmony harmony;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keyword">public</span> <span class="keyword">static</span> Random Random = <span class="keyword">new</span> Random();</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="comment"></span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="comment">    /// &lt;summary&gt;</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="comment">    /// Called on first Initialize</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="comment">    /// &lt;/summary&gt;</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="class_crab_u_i_1_1_c_u_i.html#a29fdc0441733f6fde0d3bc29a458078c">  140</a></span><span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">event</span> Action <a class="code hl_event" href="class_crab_u_i_1_1_c_u_i.html#a29fdc0441733f6fde0d3bc29a458078c">OnInit</a>;<span class="comment"></span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="comment">    /// &lt;summary&gt;</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="comment">    /// Called on last Dispose</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="comment">    /// &lt;/summary&gt;</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="class_crab_u_i_1_1_c_u_i.html#a094cb2f85756ccf7fdf601df178d2dcb">  144</a></span><span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">event</span> Action <a class="code hl_event" href="class_crab_u_i_1_1_c_u_i.html#a094cb2f85756ccf7fdf601df178d2dcb">OnDispose</a>;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> Disposed { <span class="keyword">get</span>; <span class="keyword">set</span>; } = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">event</span> Action&lt;TextInputEventArgs&gt; OnWindowTextInput;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">event</span> Action&lt;TextInputEventArgs&gt; OnWindowKeyDown;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="comment">//public static event Action&lt;TextInputEventArgs&gt; OnWindowKeyUp;</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="comment">//TODO Still doesn&#39;t trigger when someone ends round in multiplayer</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">event</span> Action OnPauseMenuToggled;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> InvokeOnPauseMenuToggled() =&gt; OnPauseMenuToggled?.Invoke();</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> InputBlockingMenuOpen</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    {</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>      <span class="keyword">get</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>      {</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        <span class="keywordflow">if</span> (IsBlockingPredicates == <span class="keyword">null</span>) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        <span class="keywordflow">return</span> IsBlockingPredicates.Any(p =&gt; p());</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>      }</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    }</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="keyword">public</span> <span class="keyword">static</span> List&lt;Func&lt;bool&gt;&gt; IsBlockingPredicates =&gt; <a class="code hl_variable" href="class_crab_u_i_1_1_c_u_i.html#aba21eb0f5f823b3c2c876dc31a3b4a43">Instance</a>?.isBlockingPredicates;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keyword">private</span> List&lt;Func&lt;bool&gt;&gt; isBlockingPredicates = <span class="keyword">new</span> List&lt;Func&lt;bool&gt;&gt;();<span class="comment"></span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="comment">    /// &lt;summary&gt;</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="comment">    /// In theory multiple mods could use same CUI instance, </span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span><span class="comment">    /// i clean it up when UserCount drops to 0</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="comment">    /// &lt;/summary&gt;</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno"><a class="line" href="class_crab_u_i_1_1_c_u_i.html#a1b53d62d642c767e10ee9044d458ff50">  168</a></span><span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_crab_u_i_1_1_c_u_i.html#a1b53d62d642c767e10ee9044d458ff50">UserCount</a> = 0;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span><span class="comment"></span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span><span class="comment">    /// &lt;summary&gt;</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span><span class="comment">    /// An object that contains current mouse and keyboard states</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span><span class="comment">    /// It scans states at the start on Main.Update</span></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span><span class="comment">    /// &lt;/summary&gt;</span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="comment"></span>    <span class="keyword">private</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_input.html">CUIInput</a> input = <span class="keyword">new</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_input.html">CUIInput</a>();</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    <span class="keyword">private</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_main_component.html">CUIMainComponent</a> main;</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <span class="keyword">private</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_main_component.html">CUIMainComponent</a> topMain;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <span class="keyword">private</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_texture_manager.html">CUITextureManager</a> textureManager = <span class="keyword">new</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_texture_manager.html">CUITextureManager</a>();</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <span class="keyword">private</span> CUIFocusResolver focusResolver = <span class="keyword">new</span> CUIFocusResolver();</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="keyword">private</span> CUILuaRegistrar luaRegistrar = <span class="keyword">new</span> CUILuaRegistrar();</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> ReEmitWindowTextInput(<span class="keywordtype">object</span> sender, TextInputEventArgs e) =&gt; OnWindowTextInput?.Invoke(e);</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> ReEmitWindowKeyDown(<span class="keywordtype">object</span> sender, TextInputEventArgs e) =&gt; OnWindowKeyDown?.Invoke(e);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    <span class="comment">//public static void ReEmitWindowKeyUp(object sender, TextInputEventArgs e) =&gt; OnWindowKeyUp?.Invoke(e);</span></div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    <span class="keyword">private</span> <span class="keywordtype">void</span> CreateMains()</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    {</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>      main = <span class="keyword">new</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_main_component.html">CUIMainComponent</a>() { AKA = <span class="stringliteral">&quot;Main Component&quot;</span> };</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>      topMain = <span class="keyword">new</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_main_component.html">CUIMainComponent</a>() { AKA = <span class="stringliteral">&quot;Top Main Component&quot;</span> };</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    }</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="comment"></span> </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span><span class="comment">    /// &lt;summary&gt;</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="comment">    /// Should be called in IAssemblyPlugin.Initialize </span></div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="comment">    /// \todo make it CUI instance member when plugin system settle</span></div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span><span class="comment">    /// &lt;/summary&gt;</span></div>
+<div class="foldopen" id="foldopen00196" data-start="{" data-end="}">
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno"><a class="line" href="class_crab_u_i_1_1_c_u_i.html#af3b7572fc0a25f689e8bdcf718ec3827">  196</a></span><span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_crab_u_i_1_1_c_u_i.html#af3b7572fc0a25f689e8bdcf718ec3827">Initialize</a>()</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    {</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>      CUIDebug.Log($<span class="stringliteral">&quot;CUI.Initialize {HookIdentifier} Instance:[{Instance?.GetHashCode()}] UserCount:{UserCount}&quot;</span>, Color.Lime);</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_crab_u_i_1_1_c_u_i.html#aba21eb0f5f823b3c2c876dc31a3b4a43">Instance</a> == <span class="keyword">null</span>)</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>      {</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        GhostDetector.Activate();</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        Disposed = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#a28c6bd4fd0122e1e62aee0154283f4b0">HookIdentifier</a> ??= Assembly.GetCallingAssembly().GetName().Name ?? <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        InitStatic();</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        <span class="comment">// this should init only static stuff that doesn&#39;t depend on instance</span></div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        <a class="code hl_event" href="class_crab_u_i_1_1_c_u_i.html#a29fdc0441733f6fde0d3bc29a458078c">OnInit</a>?.Invoke();</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        <a class="code hl_variable" href="class_crab_u_i_1_1_c_u_i.html#aba21eb0f5f823b3c2c876dc31a3b4a43">Instance</a>.CreateMains();</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        GameMain.Instance.Window.TextInput += ReEmitWindowTextInput;</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>        GameMain.Instance.Window.KeyDown += ReEmitWindowKeyDown;</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        <span class="comment">//GameMain.Instance.Window.KeyUp += ReEmitWindowKeyUp;</span></div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        CUIDebug.Log($<span class="stringliteral">&quot;CUI.OnInit?.Invoke took {sw.ElapsedMilliseconds}ms&quot;</span>);</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        <a class="code hl_variable" href="class_crab_u_i_1_1_c_u_i.html#aba21eb0f5f823b3c2c876dc31a3b4a43">Instance</a> = <span class="keyword">new</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i.html">CUI</a>();</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        Stopwatch sw = Stopwatch.StartNew();</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        <span class="keywordflow">if</span> (<a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#a28c6bd4fd0122e1e62aee0154283f4b0">HookIdentifier</a> == <span class="keyword">null</span> || <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#a28c6bd4fd0122e1e62aee0154283f4b0">HookIdentifier</a> == <span class="stringliteral">&quot;&quot;</span>) <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i.html">CUI</a>.Warning($<span class="stringliteral">&quot;Warning: CUI.HookIdentifier is not set, this mod may conflict with other mods that use CUI&quot;</span>);</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>        InitStatic();</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        <span class="comment">// this should init only static stuff that doesn&#39;t depend on instance</span></div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>        <a class="code hl_event" href="class_crab_u_i_1_1_c_u_i.html#a29fdc0441733f6fde0d3bc29a458078c">OnInit</a>?.Invoke();</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        <a class="code hl_variable" href="class_crab_u_i_1_1_c_u_i.html#aba21eb0f5f823b3c2c876dc31a3b4a43">Instance</a>.CreateMains();</div>
 <div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        sw.Restart();</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        harmony = <span class="keyword">new</span> Harmony(CUIHookID);</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>        PatchAll();</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>        CUIDebug.Log($<span class="stringliteral">&quot;CUI.PatchAll took {sw.ElapsedMilliseconds}ms&quot;</span>);</div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>        AddCommands();</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        sw.Restart();</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        LuaRegistrar.Register();</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>        CUIDebug.Log($<span class="stringliteral">&quot;CUI.LuaRegistrar.Register took {sw.ElapsedMilliseconds}ms&quot;</span>);</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>      }</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> </div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>      <a class="code hl_variable" href="class_crab_u_i_1_1_c_u_i.html#a1b53d62d642c767e10ee9044d458ff50">UserCount</a>++;</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>      CUIDebug.Log($<span class="stringliteral">&quot;CUI.Initialized {HookIdentifier} Instance:[{Instance?.GetHashCode()}] UserCount:{UserCount}&quot;</span>, Color.Lime);</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    }</div>
-</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> OnLoadCompleted()</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    {</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>      <span class="comment">//Idk doesn&#39;t work</span></div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>      <span class="comment">//CUIMultiModResolver.FindOtherInputs();</span></div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        GameMain.Instance.Window.TextInput += ReEmitWindowTextInput;</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        GameMain.Instance.Window.KeyDown += ReEmitWindowKeyDown;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        <span class="comment">//GameMain.Instance.Window.KeyUp += ReEmitWindowKeyUp;</span></div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>        CUIDebug.Log($<span class="stringliteral">&quot;CUI.OnInit?.Invoke took {sw.ElapsedMilliseconds}ms&quot;</span>);</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>        sw.Restart();</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>        harmony = <span class="keyword">new</span> Harmony(CUIHookID);</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        PatchAll();</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        CUIDebug.Log($<span class="stringliteral">&quot;CUI.PatchAll took {sw.ElapsedMilliseconds}ms&quot;</span>);</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        AddCommands();</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        AddDebugCommands();</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        sw.Restart();</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>        LuaRegistrar.Register();</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>        CUIDebug.Log($<span class="stringliteral">&quot;CUI.LuaRegistrar.Register took {sw.ElapsedMilliseconds}ms&quot;</span>);</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>      }</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>      <a class="code hl_variable" href="class_crab_u_i_1_1_c_u_i.html#a1b53d62d642c767e10ee9044d458ff50">UserCount</a>++;</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>      CUIDebug.Log($<span class="stringliteral">&quot;CUI.Initialized {HookIdentifier} Instance:[{Instance?.GetHashCode()}] UserCount:{UserCount}&quot;</span>, Color.Lime);</div>
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    }</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span> </div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span><span class="comment"></span> </div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span><span class="comment">    /// &lt;summary&gt;</span></div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span><span class="comment">    /// Should be called in IAssemblyPlugin.Dispose</span></div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span><span class="comment">    /// &lt;/summary&gt;</span></div>
-<div class="foldopen" id="foldopen00244" data-start="{" data-end="}">
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno"><a class="line" href="class_crab_u_i_1_1_c_u_i.html#a7410428e33ba390ea32993e3987cf942">  244</a></span><span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_crab_u_i_1_1_c_u_i.html#a7410428e33ba390ea32993e3987cf942">Dispose</a>()</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    {</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>      CUIDebug.Log($<span class="stringliteral">&quot;CUI.Dispose {HookIdentifier} Instance:[{Instance?.GetHashCode()}] UserCount:{UserCount}&quot;</span>, Color.Lime);</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>      <a class="code hl_variable" href="class_crab_u_i_1_1_c_u_i.html#a1b53d62d642c767e10ee9044d458ff50">UserCount</a>--;</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span> </div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_crab_u_i_1_1_c_u_i.html#a1b53d62d642c767e10ee9044d458ff50">UserCount</a> &lt;= 0)</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>      {</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>        RemoveCommands();</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        <span class="comment">// harmony.UnpatchAll(harmony.Id);</span></div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>        harmony.UnpatchAll();</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>        <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#a35714b44c421730281bb8f7d1814f226">TextureManager</a>.Dispose();</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>        CUIDebugEventComponent.CapturedIDs.Clear();</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>        <a class="code hl_event" href="class_crab_u_i_1_1_c_u_i.html#a094cb2f85756ccf7fdf601df178d2dcb">OnDispose</a>?.Invoke();</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>        Disposed = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span> </div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>        <a class="code hl_variable" href="class_crab_u_i_1_1_c_u_i.html#aba21eb0f5f823b3c2c876dc31a3b4a43">Instance</a>.isBlockingPredicates.Clear();</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        Errors.Clear();</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span> </div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>        LuaRegistrar.Deregister();</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span> </div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        <a class="code hl_variable" href="class_crab_u_i_1_1_c_u_i.html#aba21eb0f5f823b3c2c876dc31a3b4a43">Instance</a> = <span class="keyword">null</span>;</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>        <a class="code hl_variable" href="class_crab_u_i_1_1_c_u_i.html#a1b53d62d642c767e10ee9044d458ff50">UserCount</a> = 0;</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span> </div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        CUIDebug.<a class="code hl_function" href="class_crab_u_i_1_1_c_u_i.html#aa0ce4751fde5325adf2675c44a320b73">Log</a>($<span class="stringliteral">&quot;CUI.Disposed {HookIdentifier} Instance:[{Instance?.GetHashCode()}] UserCount:{UserCount}&quot;</span>, Color.Lime);</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>      }</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>      GameMain.Instance.Window.TextInput -= ReEmitWindowTextInput;</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>      GameMain.Instance.Window.KeyDown -= ReEmitWindowKeyDown;</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>      <span class="comment">//GameMain.Instance.Window.KeyUp -= ReEmitWindowKeyUp;</span></div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    }</div>
 </div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span> </div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    <span class="comment">//HACK Why it&#39;s set to run in static constructor?</span></div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    <span class="comment">// it runs perfectly fine in CUI.Initialize</span></div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    <span class="comment">//TODO component inits doesn&#39;t depend on the order</span></div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    <span class="comment">// why am i responsible for initing them here?</span></div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    <span class="keyword">internal</span> <span class="keyword">static</span> <span class="keywordtype">void</span> InitStatic()</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    {</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>      CUIExtensions.InitStatic();</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>      <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_interpolate.html">CUIInterpolate</a>.InitStatic();</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>      <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_animation.html">CUIAnimation</a>.InitStatic();</div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>      CUIReflection.InitStatic();</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>      CUIMultiModResolver.InitStatic();</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>      CUIPalette.InitStatic();</div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>      <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_map.html">CUIMap</a>.<a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_map_1_1_c_u_i_map_link.html">CUIMapLink</a>.InitStatic();</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>      CUIMenu.InitStatic();</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>      <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>.InitStatic();</div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>      CUITypeMetaData.InitStatic();</div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>      CUIStyleLoader.InitStatic();</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    }</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>  }</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>}</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span> </div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> OnLoadCompleted()</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    {</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>      <span class="comment">//Idk doesn&#39;t work</span></div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>      <span class="comment">//CUIMultiModResolver.FindOtherInputs();</span></div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    }</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span><span class="comment"></span> </div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span><span class="comment">    /// &lt;summary&gt;</span></div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span><span class="comment">    /// Should be called in IAssemblyPlugin.Dispose</span></div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span><span class="comment">    /// &lt;/summary&gt;</span></div>
+<div class="foldopen" id="foldopen00250" data-start="{" data-end="}">
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno"><a class="line" href="class_crab_u_i_1_1_c_u_i.html#a7410428e33ba390ea32993e3987cf942">  250</a></span><span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_crab_u_i_1_1_c_u_i.html#a7410428e33ba390ea32993e3987cf942">Dispose</a>()</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    {</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>      GhostDetector.Deactivate();</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>      CUIDebug.Log($<span class="stringliteral">&quot;CUI.Dispose {HookIdentifier} Instance:[{Instance?.GetHashCode()}] UserCount:{UserCount}&quot;</span>, Color.Lime);</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>      <a class="code hl_variable" href="class_crab_u_i_1_1_c_u_i.html#a1b53d62d642c767e10ee9044d458ff50">UserCount</a>--;</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span> </div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_crab_u_i_1_1_c_u_i.html#a1b53d62d642c767e10ee9044d458ff50">UserCount</a> &lt;= 0)</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>      {</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>        RemoveCommands();</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>        <span class="comment">// harmony.UnpatchAll(harmony.Id);</span></div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        harmony.UnpatchAll();</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>        <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i.html#a35714b44c421730281bb8f7d1814f226">TextureManager</a>.Dispose();</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>        CUIDebugEventComponent.CapturedIDs.Clear();</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>        <a class="code hl_event" href="class_crab_u_i_1_1_c_u_i.html#a094cb2f85756ccf7fdf601df178d2dcb">OnDispose</a>?.Invoke();</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        Disposed = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>        <a class="code hl_variable" href="class_crab_u_i_1_1_c_u_i.html#aba21eb0f5f823b3c2c876dc31a3b4a43">Instance</a>.isBlockingPredicates.Clear();</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        Errors.Clear();</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span> </div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>        LuaRegistrar.Deregister();</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span> </div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>        <a class="code hl_variable" href="class_crab_u_i_1_1_c_u_i.html#aba21eb0f5f823b3c2c876dc31a3b4a43">Instance</a> = <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>        <a class="code hl_variable" href="class_crab_u_i_1_1_c_u_i.html#a1b53d62d642c767e10ee9044d458ff50">UserCount</a> = 0;</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span> </div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>        CUIDebug.<a class="code hl_function" href="class_crab_u_i_1_1_c_u_i.html#aa0ce4751fde5325adf2675c44a320b73">Log</a>($<span class="stringliteral">&quot;CUI.Disposed {HookIdentifier} Instance:[{Instance?.GetHashCode()}] UserCount:{UserCount}&quot;</span>, Color.Lime);</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>      }</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span> </div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>      GameMain.Instance.Window.TextInput -= ReEmitWindowTextInput;</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>      GameMain.Instance.Window.KeyDown -= ReEmitWindowKeyDown;</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>      <span class="comment">//GameMain.Instance.Window.KeyUp -= ReEmitWindowKeyUp;</span></div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    }</div>
+</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span> </div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    <span class="comment">//HACK Why it&#39;s set to run in static constructor?</span></div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    <span class="comment">// it runs perfectly fine in CUI.Initialize</span></div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    <span class="comment">//TODO component inits doesn&#39;t depend on the order</span></div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    <span class="comment">// why am i responsible for initing them here?</span></div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    <span class="keyword">internal</span> <span class="keyword">static</span> <span class="keywordtype">void</span> InitStatic()</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    {</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>      <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_interpolate.html">CUIInterpolate</a>.InitStatic();</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>      <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_animation.html">CUIAnimation</a>.InitStatic();</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>      CUIReflection.InitStatic();</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>      CUIMultiModResolver.InitStatic();</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>      CUIPalette.InitStatic();</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>      <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_map.html">CUIMap</a>.<a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_map_1_1_c_u_i_map_link.html">CUIMapLink</a>.InitStatic();</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>      CUIMenu.InitStatic();</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>      <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>.InitStatic();</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>      CUITypeMetaData.InitStatic();</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>      CUIStyleLoader.InitStatic();</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    }</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>  }</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>}</div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_animation_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_animation.html">CrabUI.CUIAnimation</a></div><div class="ttdoc">WIP, can animate any property on any object Can run back and forth in [0..1] interval and interpolate...</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_animation_8cs_source.html#l00018">CUIAnimation.cs:19</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html">CrabUI.CUIComponent</a></div><div class="ttdoc">Base class for all components.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_tree_8cs_source.html#l00019">CUIComponent.Tree.cs:20</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html">CrabUI.CUIComponent</a></div><div class="ttdoc">Base class for all components.</div><div class="ttdef"><b>Definition</b> <a href="_other_01_props_8cs_source.html#l00019">Other Props.cs:20</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html">CrabUI.CUI</a></div><div class="ttdoc">In fact a static class managing static things.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_errors_8cs_source.html#l00015">CUIErrors.cs:16</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a094cb2f85756ccf7fdf601df178d2dcb"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#a094cb2f85756ccf7fdf601df178d2dcb">CrabUI.CUI.OnDispose</a></div><div class="ttdeci">static Action OnDispose</div><div class="ttdoc">Called on last Dispose.</div><div class="ttdef"><b>Definition</b> <a href="#l00142">CUI.cs:142</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a1b53d62d642c767e10ee9044d458ff50"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#a1b53d62d642c767e10ee9044d458ff50">CrabUI.CUI.UserCount</a></div><div class="ttdeci">static int UserCount</div><div class="ttdoc">In theory multiple mods could use same CUI instance, i clean it up when UserCount drops to 0.</div><div class="ttdef"><b>Definition</b> <a href="#l00166">CUI.cs:166</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a094cb2f85756ccf7fdf601df178d2dcb"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#a094cb2f85756ccf7fdf601df178d2dcb">CrabUI.CUI.OnDispose</a></div><div class="ttdeci">static Action OnDispose</div><div class="ttdoc">Called on last Dispose.</div><div class="ttdef"><b>Definition</b> <a href="#l00144">CUI.cs:144</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a1b53d62d642c767e10ee9044d458ff50"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#a1b53d62d642c767e10ee9044d458ff50">CrabUI.CUI.UserCount</a></div><div class="ttdeci">static int UserCount</div><div class="ttdoc">In theory multiple mods could use same CUI instance, i clean it up when UserCount drops to 0.</div><div class="ttdef"><b>Definition</b> <a href="#l00168">CUI.cs:168</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a1c6aff01098e74d01c9d84b833860c22"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#a1c6aff01098e74d01c9d84b833860c22">CrabUI.CUI.Debug</a></div><div class="ttdeci">static bool Debug</div><div class="ttdoc">This affects logging.</div><div class="ttdef"><b>Definition</b> <a href="#l00113">CUI.cs:113</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a28c6bd4fd0122e1e62aee0154283f4b0"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#a28c6bd4fd0122e1e62aee0154283f4b0">CrabUI.CUI.HookIdentifier</a></div><div class="ttdeci">static string HookIdentifier</div><div class="ttdoc">It's important to set it, if 2 CUIs try to add a hook with same id one won't be added.</div><div class="ttdef"><b>Definition</b> <a href="#l00122">CUI.cs:123</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a29fdc0441733f6fde0d3bc29a458078c"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#a29fdc0441733f6fde0d3bc29a458078c">CrabUI.CUI.OnInit</a></div><div class="ttdeci">static Action OnInit</div><div class="ttdoc">Called on first Initialize.</div><div class="ttdef"><b>Definition</b> <a href="#l00138">CUI.cs:138</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a28c6bd4fd0122e1e62aee0154283f4b0"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#a28c6bd4fd0122e1e62aee0154283f4b0">CrabUI.CUI.HookIdentifier</a></div><div class="ttdeci">static string HookIdentifier</div><div class="ttdoc">It's used as harmony id and lua hooks id, it's deduced automatically from calling assembly name   It'...</div><div class="ttdef"><b>Definition</b> <a href="#l00124">CUI.cs:125</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a29fdc0441733f6fde0d3bc29a458078c"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#a29fdc0441733f6fde0d3bc29a458078c">CrabUI.CUI.OnInit</a></div><div class="ttdeci">static Action OnInit</div><div class="ttdoc">Called on first Initialize.</div><div class="ttdef"><b>Definition</b> <a href="#l00140">CUI.cs:140</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a31ba5b36859d8affa5aad82c49297667"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#a31ba5b36859d8affa5aad82c49297667">CrabUI.CUI.TopMain</a></div><div class="ttdeci">static CUIMainComponent TopMain</div><div class="ttdoc">Orchestrates Drawing and updates, there could be only one CUI.TopMain is located above vanilla GUI.</div><div class="ttdef"><b>Definition</b> <a href="#l00089">CUI.cs:89</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a35714b44c421730281bb8f7d1814f226"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#a35714b44c421730281bb8f7d1814f226">CrabUI.CUI.TextureManager</a></div><div class="ttdeci">static CUITextureManager TextureManager</div><div class="ttdoc">Safe texture manager &lt;/summary.</div><div class="ttdef"><b>Definition</b> <a href="#l00097">CUI.cs:97</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a7410428e33ba390ea32993e3987cf942"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#a7410428e33ba390ea32993e3987cf942">CrabUI.CUI.Dispose</a></div><div class="ttdeci">static void Dispose()</div><div class="ttdoc">Should be called in IAssemblyPlugin.Dispose.</div><div class="ttdef"><b>Definition</b> <a href="#l00244">CUI.cs:244</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a7410428e33ba390ea32993e3987cf942"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#a7410428e33ba390ea32993e3987cf942">CrabUI.CUI.Dispose</a></div><div class="ttdeci">static void Dispose()</div><div class="ttdoc">Should be called in IAssemblyPlugin.Dispose.</div><div class="ttdef"><b>Definition</b> <a href="#l00250">CUI.cs:250</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a7ad58022298f051fe199bca6ab39df77"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#a7ad58022298f051fe199bca6ab39df77">CrabUI.CUI.PGNAssets</a></div><div class="ttdeci">static string PGNAssets</div><div class="ttdoc">If set CUI will also check this folder when loading textures.</div><div class="ttdef"><b>Definition</b> <a href="#l00074">CUI.cs:74</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a860fbe7198b206dd8d0704d2133e9c25"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#a860fbe7198b206dd8d0704d2133e9c25">CrabUI.CUI.AssetsPath</a></div><div class="ttdeci">static string AssetsPath</div><div class="ttdoc">Path to assets folder with all CUI stuff.</div><div class="ttdef"><b>Definition</b> <a href="#l00057">CUI.cs:58</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a94a393e8a3e3b9785b54414335ac9aa4"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#a94a393e8a3e3b9785b54414335ac9aa4">CrabUI.CUI.ModDir</a></div><div class="ttdeci">static string ModDir</div><div class="ttdoc">Root folder of the mod, used to deduce lua folder location.</div><div class="ttdef"><b>Definition</b> <a href="#l00034">CUI.cs:35</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a956496be0b79f5c540c246c5f600dc05"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#a956496be0b79f5c540c246c5f600dc05">CrabUI.CUI.Main</a></div><div class="ttdeci">static CUIMainComponent Main</div><div class="ttdoc">Orchestrates Drawing and updates, there could be only one CUI.Main is located under vanilla GUI.</div><div class="ttdef"><b>Definition</b> <a href="#l00084">CUI.cs:84</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_a9c89efd0af2f1b8c183700621b0eb876"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#a9c89efd0af2f1b8c183700621b0eb876">CrabUI.CUI.LuaFolder</a></div><div class="ttdeci">static string LuaFolder</div><div class="ttdoc">Should point to lua folder, if you want lua types file.</div><div class="ttdef"><b>Definition</b> <a href="#l00051">CUI.cs:51</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_aa0ce4751fde5325adf2675c44a320b73"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#aa0ce4751fde5325adf2675c44a320b73">CrabUI.CUI.Log</a></div><div class="ttdeci">static void Log(object msg, Color? color=null, [CallerFilePath] string source=&quot;&quot;, [CallerLineNumber] int lineNumber=0)</div><div class="ttdoc">Prints a message to console.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_01_logging_8cs_source.html#l00044">CUI Logging.cs:44</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_ab3004d84ad742213352fb8e90f60e970"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#ab3004d84ad742213352fb8e90f60e970">CrabUI.CUI.UseCursedPatches</a></div><div class="ttdeci">static bool UseCursedPatches</div><div class="ttdoc">Will break the mod if it's compiled   But if false you have to use lua file to setup hooks.</div><div class="ttdef"><b>Definition</b> <a href="#l00118">CUI.cs:118</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_ab3004d84ad742213352fb8e90f60e970"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#ab3004d84ad742213352fb8e90f60e970">CrabUI.CUI.UseCursedPatches</a></div><div class="ttdeci">static bool UseCursedPatches</div><div class="ttdoc">If true other compiled mods that use CUI will break But if false then you'll have to setup hooks with...</div><div class="ttdef"><b>Definition</b> <a href="#l00118">CUI.cs:118</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_aba21eb0f5f823b3c2c876dc31a3b4a43"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#aba21eb0f5f823b3c2c876dc31a3b4a43">CrabUI.CUI.Instance</a></div><div class="ttdeci">static CUI Instance</div><div class="ttdoc">A singleton.</div><div class="ttdef"><b>Definition</b> <a href="#l00079">CUI.cs:79</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_ac0b69a613489f61c35b5529432f51929"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#ac0b69a613489f61c35b5529432f51929">CrabUI.CUI.FocusResolver</a></div><div class="ttdeci">static CUIFocusResolver FocusResolver</div><div class="ttdoc">Adapter to vanilla focus system, don't use.</div><div class="ttdef"><b>Definition</b> <a href="#l00101">CUI.cs:101</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_aec65d70ea2f4c24e104164c08e010945"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#aec65d70ea2f4c24e104164c08e010945">CrabUI.CUI.UseLua</a></div><div class="ttdeci">static bool UseLua</div><div class="ttdoc">If false CUI won't waste time on registering lua types and creating types file.</div><div class="ttdef"><b>Definition</b> <a href="#l00047">CUI.cs:47</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_af3b7572fc0a25f689e8bdcf718ec3827"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#af3b7572fc0a25f689e8bdcf718ec3827">CrabUI.CUI.Initialize</a></div><div class="ttdeci">static void Initialize()</div><div class="ttdoc">Should be called in IAssemblyPlugin.Initialize.</div><div class="ttdef"><b>Definition</b> <a href="#l00194">CUI.cs:194</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_html_af3b7572fc0a25f689e8bdcf718ec3827"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i.html#af3b7572fc0a25f689e8bdcf718ec3827">CrabUI.CUI.Initialize</a></div><div class="ttdeci">static void Initialize()</div><div class="ttdoc">Should be called in IAssemblyPlugin.Initialize.</div><div class="ttdef"><b>Definition</b> <a href="#l00196">CUI.cs:196</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_input_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_input.html">CrabUI.CUIInput</a></div><div class="ttdoc">Containing a snapshot of current mouse and keyboard state.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_input_8cs_source.html#l00016">CUIInput.cs:17</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_interpolate_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_interpolate.html">CrabUI.CUIInterpolate</a></div><div class="ttdoc">Class containing a few interpolate functions for CUIAnimation.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_interpolate_8cs_source.html#l00016">CUIInterpolate.cs:17</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_main_component_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_main_component.html">CrabUI.CUIMainComponent</a></div><div class="ttdoc">Orchestrating drawing and updating of it's children   Also a CUIComponent, but it's draw and update m...</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_main_component_8cs_source.html#l00021">CUIMainComponent.cs:22</a></div></div>

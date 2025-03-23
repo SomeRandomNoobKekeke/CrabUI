@@ -15,6 +15,7 @@ namespace CrabUI
   /// </summary>
   public class CUILayoutSimple : CUILayout
   {
+    //public CUIComponent Host;
     internal override void Update()
     {
       if (Changed && Host.Children.Count > 0)

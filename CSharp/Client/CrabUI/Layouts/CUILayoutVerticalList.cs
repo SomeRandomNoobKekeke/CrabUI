@@ -16,6 +16,7 @@ namespace CrabUI
   /// </summary>
   public class CUILayoutVerticalList : CUILayout
   {
+    // public CUIComponent Host;
     internal float TotalHeight;
     public CUIDirection Direction;
 

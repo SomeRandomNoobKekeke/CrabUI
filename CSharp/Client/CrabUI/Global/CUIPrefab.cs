@@ -128,9 +128,15 @@ namespace CrabUI
       return controls;
     }
 
-    public static CUIFrame ListFrameWithHeader()
+    public static CUIFrame NewListFrameWithHeader()
     {
-      CUIFrame frame = new CUIFrame() { };
+      CUIFrame frame = new CUIFrame();
+      ListFrameWithHeader(frame);
+      return frame;
+    }
+
+    public static void ListFrameWithHeader(CUIFrame frame)
+    {
       frame["layout"] = new CUIVerticalList() { Relative = new CUINullRect(0, 0, 1, 1), };
       frame["layout"]["handle"] = new CUIHorizontalList()
       {
@@ -162,7 +168,6 @@ namespace CrabUI
       frame["header"] = frame["layout"]["header"];
       frame["content"] = frame["layout"]["content"];
       frame["caption"] = frame["layout"]["handle"]["caption"];
-      return frame;
     }
 
 

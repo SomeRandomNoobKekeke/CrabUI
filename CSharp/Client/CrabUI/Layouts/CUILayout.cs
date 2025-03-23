@@ -14,7 +14,7 @@ namespace CrabUI
   /// <summary>
   /// Base class for all layouts
   /// </summary>
-  public class CUILayout
+  public abstract class CUILayout
   {
     public CUIComponent Host;
 

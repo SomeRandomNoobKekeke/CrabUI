@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CrabUI: Sprites</title>
+<title>CrabUI: CSharp/Client/CUI Test/FillMethods/Complex Directory Reference</title>
 <link rel="icon" href="BaroModder (small).png" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -85,57 +85,21 @@ $(function(){ initResizable(false); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="index.html">CUI</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_2358508cf2cd3f735687a956f2da4c3a.html">CSharp</a></li><li class="navelem"><a class="el" href="dir_3e3041ae236a960906be8d0346149e4c.html">Client</a></li><li class="navelem"><a class="el" href="dir_27750fb606bc1a3b3db1228aee313405.html">CUI Test</a></li><li class="navelem"><a class="el" href="dir_9a45ace4d501d21e140bff977978c207.html">FillMethods</a></li><li class="navelem"><a class="el" href="dir_8743a5f576454c439449718e71b84755.html">Complex</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
-<div><div class="header">
-  <div class="headertitle"><div class="title">Sprites</div></div>
+<div class="header">
+  <div class="headertitle"><div class="title">Complex Directory Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md__docs_2_freestyle_2_sub_pages_2_misc_2_sprites"></a></p>
-<p><a class="el" href="class_crab_u_i_1_1_c_u_i_sprite.html">CUISprite </a> is a wrapper for monogame Texture2D and additional props like SourceRect, Rotation, DrawMode etc</p>
-<p>Multiple sprites can have same texture</p>
-<p>CUISprite constructors use CUITextureManager to retrieve textures without duplicates, so creating new sprites doesn't create copies of textures</p>
-<p>CUISprites are very similar to vanilla Sprites, but i don't use vanilla Sprites because they has a lot of side effects</p>
-<h2><a class="anchor" id="autotoc_md33"></a>
-CUISprite Properties</h2>
-<ul>
-<li>CUISptite.BaseFolder - if not null the used for relative paths, set it before creating sprites</li>
-<li>Effects - enum, controlls sprite flipping [None, FlipHorizontally, FlipVertically]</li>
-<li>DrawMode:<ul>
-<li>Resize - Sprite is resized to CUIComponent</li>
-<li>Wrap - Texture is looped</li>
-<li>Static - Sprite ignores CUIComponent position, like it's drawn on background</li>
-<li>DeepStatic - ???</li>
-</ul>
-</li>
-<li>SourceRect - Part of the texture that is drawn, doesn't work in Wrap mode because it'll loop the whole texture</li>
-<li>Texture - the texture</li>
-<li>Rotation - Sprite Rotation around Origin in radians</li>
-<li>RotationAngle - Accessor for Rotation in degrees</li>
-<li>Origin - Origin of rotation on the texture in pixels</li>
-<li>RelativeOrigin - Accessor for Origin with Vector2(0..1,0..1)</li>
-<li>Offset - Draw offset relative to CUIComponent Position, it compensates Origin</li>
-</ul>
-<h2><a class="anchor" id="autotoc_md34"></a>
-How to create them</h2>
-<ul>
-<li>new CUISprite() - 1x1 white sprite</li>
-<li>new CUISprite(string path, Rectangle? sourceRect = null, string baseFolder = null) - Loads sprite from a file</li>
-<li>new CUISprite(Texture2D texture, Rectangle? sourceRect = null) - Creates with existing texture</li>
-<li>CUISprite.FromVanilla(Sprite sprite) - Creates CUISprite from vanilla Sprite</li>
-<li>CUISprite.FromName(string name) - Creates CUISprite from vanilla GUI Sprite in GUIStyle.ComponentStyles</li>
-<li>CUI.TextureManager.GetSprite(string path, Rectangle? sourceRect = null, CUISpriteDrawMode? drawMode = null, SpriteEffects? effects = null) - Also creates new CUISprite</li>
-<li>CUI.TextureManager.GetCUISprite(int x, int y, CUISpriteDrawMode? drawMode = null, SpriteEffects? effects = null) - Creates a sprite from 32x32 square in CUI.png with (x,y) coordinates</li>
-</ul>
-<h2><a class="anchor" id="autotoc_md35"></a>
-How texture paths are resolved</h2>
-<p>TextureManager first tries to load texture from CUI.AssetsPath, then from CUI.PGNAssets, then directly from path</p>
-<p>If not found it will return default texture</p>
-<p>If sprite is created with CUISprite constructor, CUISptite.BaseFolder is set and that file actually exists in BaseFolder then CUISprite will pass path relative to BaseFolder into TextureManager.GetSprite </p>
-</div></div><!-- contents -->
-</div><!-- PageDoc -->
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="_piano_8cs_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><b>Piano.cs</b></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0

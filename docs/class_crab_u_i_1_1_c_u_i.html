@@ -827,90 +827,90 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_drawing_8cs_source.html#l00064">64</a> of file <a class="el" href="_c_u_i_drawing_8cs_source.html">CUIDrawing.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   65</span>    {</div>
-<div class="line"><span class="lineno">   66</span>      Texture2D texture = component.BorderSprite.Texture;</div>
-<div class="line"><span class="lineno">   67</span>      Rectangle sourceRect = texture.Bounds;</div>
-<div class="line"><span class="lineno">   68</span> </div>
-<div class="line"><span class="lineno">   69</span>      Rectangle targetRect;</div>
-<div class="line"><span class="lineno">   70</span>      Color cl;</div>
-<div class="line"><span class="lineno">   71</span>      <span class="keywordtype">float</span> rotation = 0.0f;</div>
-<div class="line"><span class="lineno">   72</span>      <span class="keywordtype">float</span> thickness = 1.0f;</div>
-<div class="line"><span class="lineno">   73</span>      <span class="keywordtype">bool</span> visible = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   74</span> </div>
-<div class="line"><span class="lineno">   75</span>      <span class="comment">// Right</span></div>
-<div class="line"><span class="lineno">   76</span>      visible = component.RigthBorder?.Visible ?? component.Border.Visible;</div>
-<div class="line"><span class="lineno">   77</span>      thickness = component.RigthBorder?.Thickness ?? component.Border.Thickness;</div>
-<div class="line"><span class="lineno">   78</span>      cl = component.RigthBorder?.Color ?? component.Border.Color;</div>
-<div class="line"><span class="lineno">   79</span>      targetRect = CUIRect.CreateRect(</div>
-<div class="line"><span class="lineno">   80</span>        component.Real.Left + component.Real.Width,</div>
-<div class="line"><span class="lineno">   81</span>        component.Real.Top,</div>
-<div class="line"><span class="lineno">   82</span>        component.Real.Height,</div>
-<div class="line"><span class="lineno">   83</span>        thickness</div>
-<div class="line"><span class="lineno">   84</span>      );</div>
-<div class="line"><span class="lineno">   85</span>      sourceRect = CUIRect.CreateRect(</div>
-<div class="line"><span class="lineno">   86</span>        0, 0,</div>
-<div class="line"><span class="lineno">   87</span>        targetRect.Width, texture.Height</div>
-<div class="line"><span class="lineno">   88</span>      );</div>
-<div class="line"><span class="lineno">   89</span>      rotation = Pi2;</div>
-<div class="line"><span class="lineno">   90</span>      sb.Draw(texture, targetRect, sourceRect, cl, rotation, Vector2.Zero, SpriteEffects.None, depth);</div>
-<div class="line"><span class="lineno">   91</span> </div>
-<div class="line"><span class="lineno">   92</span>      <span class="comment">//Left</span></div>
-<div class="line"><span class="lineno">   93</span>      visible = component.LeftBorder?.Visible ?? component.Border.Visible;</div>
-<div class="line"><span class="lineno">   94</span>      thickness = component.LeftBorder?.Thickness ?? component.Border.Thickness;</div>
-<div class="line"><span class="lineno">   95</span>      cl = component.LeftBorder?.Color ?? component.Border.Color;</div>
-<div class="line"><span class="lineno">   96</span>      targetRect = CUIRect.CreateRect(</div>
-<div class="line"><span class="lineno">   97</span>        component.Real.Left + thickness,</div>
-<div class="line"><span class="lineno">   98</span>        component.Real.Top,</div>
-<div class="line"><span class="lineno">   99</span>        component.Real.Height,</div>
-<div class="line"><span class="lineno">  100</span>        thickness</div>
-<div class="line"><span class="lineno">  101</span>      );</div>
-<div class="line"><span class="lineno">  102</span>      sourceRect = CUIRect.CreateRect(</div>
-<div class="line"><span class="lineno">  103</span>        0, 0,</div>
-<div class="line"><span class="lineno">  104</span>        targetRect.Width, texture.Height</div>
-<div class="line"><span class="lineno">  105</span>      );</div>
-<div class="line"><span class="lineno">  106</span>      rotation = Pi2;</div>
-<div class="line"><span class="lineno">  107</span>      sb.Draw(texture, targetRect, sourceRect, cl, rotation, Vector2.Zero, SpriteEffects.FlipVertically, depth);</div>
-<div class="line"><span class="lineno">  108</span> </div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_drawing_8cs_source.html#l00065">65</a> of file <a class="el" href="_c_u_i_drawing_8cs_source.html">CUIDrawing.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>    {</div>
+<div class="line"><span class="lineno">   67</span>      Texture2D texture = component.BorderSprite.Texture;</div>
+<div class="line"><span class="lineno">   68</span>      Rectangle sourceRect = texture.Bounds;</div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>      Rectangle targetRect;</div>
+<div class="line"><span class="lineno">   71</span>      Color cl;</div>
+<div class="line"><span class="lineno">   72</span>      <span class="keywordtype">float</span> rotation = 0.0f;</div>
+<div class="line"><span class="lineno">   73</span>      <span class="keywordtype">float</span> thickness = 1.0f;</div>
+<div class="line"><span class="lineno">   74</span>      <span class="keywordtype">bool</span> visible = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>      <span class="comment">// Right</span></div>
+<div class="line"><span class="lineno">   77</span>      visible = component.RigthBorder?.Visible ?? component.Border?.Visible ?? <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   78</span>      thickness = component.RigthBorder?.Thickness ?? component.Border?.Thickness ?? 0;</div>
+<div class="line"><span class="lineno">   79</span>      cl = component.RigthBorder?.Color ?? component.Border?.Color ?? Color.Transparent;</div>
+<div class="line"><span class="lineno">   80</span>      targetRect = CUIRect.CreateRect(</div>
+<div class="line"><span class="lineno">   81</span>        component.Real.Left + component.Real.Width,</div>
+<div class="line"><span class="lineno">   82</span>        component.Real.Top,</div>
+<div class="line"><span class="lineno">   83</span>        component.Real.Height,</div>
+<div class="line"><span class="lineno">   84</span>        thickness</div>
+<div class="line"><span class="lineno">   85</span>      );</div>
+<div class="line"><span class="lineno">   86</span>      sourceRect = CUIRect.CreateRect(</div>
+<div class="line"><span class="lineno">   87</span>        0, 0,</div>
+<div class="line"><span class="lineno">   88</span>        targetRect.Width, texture.Height</div>
+<div class="line"><span class="lineno">   89</span>      );</div>
+<div class="line"><span class="lineno">   90</span>      rotation = Pi2;</div>
+<div class="line"><span class="lineno">   91</span>      sb.Draw(texture, targetRect, sourceRect, cl, rotation, Vector2.Zero, SpriteEffects.None, depth);</div>
+<div class="line"><span class="lineno">   92</span> </div>
+<div class="line"><span class="lineno">   93</span>      <span class="comment">//Left</span></div>
+<div class="line"><span class="lineno">   94</span>      visible = component.LeftBorder?.Visible ?? component.Border?.Visible ?? <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   95</span>      thickness = component.LeftBorder?.Thickness ?? component.Border?.Thickness ?? 0;</div>
+<div class="line"><span class="lineno">   96</span>      cl = component.LeftBorder?.Color ?? component.Border?.Color ?? Color.Transparent;</div>
+<div class="line"><span class="lineno">   97</span>      targetRect = CUIRect.CreateRect(</div>
+<div class="line"><span class="lineno">   98</span>        component.Real.Left + thickness,</div>
+<div class="line"><span class="lineno">   99</span>        component.Real.Top,</div>
+<div class="line"><span class="lineno">  100</span>        component.Real.Height,</div>
+<div class="line"><span class="lineno">  101</span>        thickness</div>
+<div class="line"><span class="lineno">  102</span>      );</div>
+<div class="line"><span class="lineno">  103</span>      sourceRect = CUIRect.CreateRect(</div>
+<div class="line"><span class="lineno">  104</span>        0, 0,</div>
+<div class="line"><span class="lineno">  105</span>        targetRect.Width, texture.Height</div>
+<div class="line"><span class="lineno">  106</span>      );</div>
+<div class="line"><span class="lineno">  107</span>      rotation = Pi2;</div>
+<div class="line"><span class="lineno">  108</span>      sb.Draw(texture, targetRect, sourceRect, cl, rotation, Vector2.Zero, SpriteEffects.FlipVertically, depth);</div>
 <div class="line"><span class="lineno">  109</span> </div>
-<div class="line"><span class="lineno">  110</span>      <span class="comment">//Top</span></div>
-<div class="line"><span class="lineno">  111</span>      visible = component.TopBorder?.Visible ?? component.Border.Visible;</div>
-<div class="line"><span class="lineno">  112</span>      thickness = component.TopBorder?.Thickness ?? component.Border.Thickness;</div>
-<div class="line"><span class="lineno">  113</span>      cl = component.TopBorder?.Color ?? component.Border.Color;</div>
-<div class="line"><span class="lineno">  114</span>      targetRect = CUIRect.CreateRect(</div>
-<div class="line"><span class="lineno">  115</span>        component.Real.Left,</div>
-<div class="line"><span class="lineno">  116</span>        component.Real.Top,</div>
-<div class="line"><span class="lineno">  117</span>        component.Real.Width,</div>
-<div class="line"><span class="lineno">  118</span>        thickness</div>
-<div class="line"><span class="lineno">  119</span>      );</div>
-<div class="line"><span class="lineno">  120</span>      sourceRect = CUIRect.CreateRect(</div>
-<div class="line"><span class="lineno">  121</span>        0, 0,</div>
-<div class="line"><span class="lineno">  122</span>        targetRect.Width, texture.Height</div>
-<div class="line"><span class="lineno">  123</span>      );</div>
-<div class="line"><span class="lineno">  124</span>      rotation = 0.0f;</div>
-<div class="line"><span class="lineno">  125</span>      sb.Draw(texture, targetRect, sourceRect, cl, rotation, Vector2.Zero, SpriteEffects.None, depth);</div>
-<div class="line"><span class="lineno">  126</span> </div>
+<div class="line"><span class="lineno">  110</span> </div>
+<div class="line"><span class="lineno">  111</span>      <span class="comment">//Top</span></div>
+<div class="line"><span class="lineno">  112</span>      visible = component.TopBorder?.Visible ?? component.Border?.Visible ?? <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  113</span>      thickness = component.TopBorder?.Thickness ?? component.Border?.Thickness ?? 0;</div>
+<div class="line"><span class="lineno">  114</span>      cl = component.TopBorder?.Color ?? component.Border?.Color ?? Color.Transparent;</div>
+<div class="line"><span class="lineno">  115</span>      targetRect = CUIRect.CreateRect(</div>
+<div class="line"><span class="lineno">  116</span>        component.Real.Left,</div>
+<div class="line"><span class="lineno">  117</span>        component.Real.Top,</div>
+<div class="line"><span class="lineno">  118</span>        component.Real.Width,</div>
+<div class="line"><span class="lineno">  119</span>        thickness</div>
+<div class="line"><span class="lineno">  120</span>      );</div>
+<div class="line"><span class="lineno">  121</span>      sourceRect = CUIRect.CreateRect(</div>
+<div class="line"><span class="lineno">  122</span>        0, 0,</div>
+<div class="line"><span class="lineno">  123</span>        targetRect.Width, texture.Height</div>
+<div class="line"><span class="lineno">  124</span>      );</div>
+<div class="line"><span class="lineno">  125</span>      rotation = 0.0f;</div>
+<div class="line"><span class="lineno">  126</span>      sb.Draw(texture, targetRect, sourceRect, cl, rotation, Vector2.Zero, SpriteEffects.None, depth);</div>
 <div class="line"><span class="lineno">  127</span> </div>
 <div class="line"><span class="lineno">  128</span> </div>
-<div class="line"><span class="lineno">  129</span>      <span class="comment">//Bottom</span></div>
-<div class="line"><span class="lineno">  130</span>      visible = component.BottomBorder?.Visible ?? component.Border.Visible;</div>
-<div class="line"><span class="lineno">  131</span>      thickness = component.BottomBorder?.Thickness ?? component.Border.Thickness;</div>
-<div class="line"><span class="lineno">  132</span>      cl = component.BottomBorder?.Color ?? component.Border.Color;</div>
-<div class="line"><span class="lineno">  133</span>      targetRect = CUIRect.CreateRect(</div>
-<div class="line"><span class="lineno">  134</span>        component.Real.Left,</div>
-<div class="line"><span class="lineno">  135</span>        component.Real.Bottom - thickness,</div>
-<div class="line"><span class="lineno">  136</span>        component.Real.Width,</div>
-<div class="line"><span class="lineno">  137</span>        thickness</div>
-<div class="line"><span class="lineno">  138</span>      );</div>
-<div class="line"><span class="lineno">  139</span>      sourceRect = CUIRect.CreateRect(</div>
-<div class="line"><span class="lineno">  140</span>        0, 0,</div>
-<div class="line"><span class="lineno">  141</span>        targetRect.Width, texture.Height</div>
-<div class="line"><span class="lineno">  142</span>      );</div>
-<div class="line"><span class="lineno">  143</span>      rotation = 0;</div>
-<div class="line"><span class="lineno">  144</span>      sb.Draw(texture, targetRect, sourceRect, cl, rotation, Vector2.Zero, SpriteEffects.FlipVertically, depth);</div>
-<div class="line"><span class="lineno">  145</span> </div>
+<div class="line"><span class="lineno">  129</span> </div>
+<div class="line"><span class="lineno">  130</span>      <span class="comment">//Bottom</span></div>
+<div class="line"><span class="lineno">  131</span>      visible = component.BottomBorder?.Visible ?? component.Border?.Visible ?? <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  132</span>      thickness = component.BottomBorder?.Thickness ?? component.Border?.Thickness ?? 0;</div>
+<div class="line"><span class="lineno">  133</span>      cl = component.BottomBorder?.Color ?? component.Border?.Color ?? Color.Transparent;</div>
+<div class="line"><span class="lineno">  134</span>      targetRect = CUIRect.CreateRect(</div>
+<div class="line"><span class="lineno">  135</span>        component.Real.Left,</div>
+<div class="line"><span class="lineno">  136</span>        component.Real.Bottom - thickness,</div>
+<div class="line"><span class="lineno">  137</span>        component.Real.Width,</div>
+<div class="line"><span class="lineno">  138</span>        thickness</div>
+<div class="line"><span class="lineno">  139</span>      );</div>
+<div class="line"><span class="lineno">  140</span>      sourceRect = CUIRect.CreateRect(</div>
+<div class="line"><span class="lineno">  141</span>        0, 0,</div>
+<div class="line"><span class="lineno">  142</span>        targetRect.Width, texture.Height</div>
+<div class="line"><span class="lineno">  143</span>      );</div>
+<div class="line"><span class="lineno">  144</span>      rotation = 0;</div>
+<div class="line"><span class="lineno">  145</span>      sb.Draw(texture, targetRect, sourceRect, cl, rotation, Vector2.Zero, SpriteEffects.FlipVertically, depth);</div>
 <div class="line"><span class="lineno">  146</span> </div>
-<div class="line"><span class="lineno">  147</span>    }</div>
+<div class="line"><span class="lineno">  147</span> </div>
+<div class="line"><span class="lineno">  148</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>

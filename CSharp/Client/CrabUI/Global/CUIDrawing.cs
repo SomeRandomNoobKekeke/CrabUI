@@ -61,6 +61,7 @@ namespace CrabUI
     }
 
     //TODO i can calculate those rects in advance
+    // perhaps i should check nulls on border set and not in draw
     public static void DrawBorders(SpriteBatch sb, CUIComponent component, float depth = 0.0f)
     {
       Texture2D texture = component.BorderSprite.Texture;
@@ -73,9 +74,9 @@ namespace CrabUI
       bool visible = false;
 
       // Right
-      visible = component.RigthBorder?.Visible ?? component.Border.Visible;
-      thickness = component.RigthBorder?.Thickness ?? component.Border.Thickness;
-      cl = component.RigthBorder?.Color ?? component.Border.Color;
+      visible = component.RigthBorder?.Visible ?? component.Border?.Visible ?? false;
+      thickness = component.RigthBorder?.Thickness ?? component.Border?.Thickness ?? 0;
+      cl = component.RigthBorder?.Color ?? component.Border?.Color ?? Color.Transparent;
       targetRect = CUIRect.CreateRect(
         component.Real.Left + component.Real.Width,
         component.Real.Top,
@@ -90,9 +91,9 @@ namespace CrabUI
       sb.Draw(texture, targetRect, sourceRect, cl, rotation, Vector2.Zero, SpriteEffects.None, depth);
 
       //Left
-      visible = component.LeftBorder?.Visible ?? component.Border.Visible;
-      thickness = component.LeftBorder?.Thickness ?? component.Border.Thickness;
-      cl = component.LeftBorder?.Color ?? component.Border.Color;
+      visible = component.LeftBorder?.Visible ?? component.Border?.Visible ?? false;
+      thickness = component.LeftBorder?.Thickness ?? component.Border?.Thickness ?? 0;
+      cl = component.LeftBorder?.Color ?? component.Border?.Color ?? Color.Transparent;
       targetRect = CUIRect.CreateRect(
         component.Real.Left + thickness,
         component.Real.Top,
@@ -108,9 +109,9 @@ namespace CrabUI
 
 
       //Top
-      visible = component.TopBorder?.Visible ?? component.Border.Visible;
-      thickness = component.TopBorder?.Thickness ?? component.Border.Thickness;
-      cl = component.TopBorder?.Color ?? component.Border.Color;
+      visible = component.TopBorder?.Visible ?? component.Border?.Visible ?? false;
+      thickness = component.TopBorder?.Thickness ?? component.Border?.Thickness ?? 0;
+      cl = component.TopBorder?.Color ?? component.Border?.Color ?? Color.Transparent;
       targetRect = CUIRect.CreateRect(
         component.Real.Left,
         component.Real.Top,
@@ -127,9 +128,9 @@ namespace CrabUI
 
 
       //Bottom
-      visible = component.BottomBorder?.Visible ?? component.Border.Visible;
-      thickness = component.BottomBorder?.Thickness ?? component.Border.Thickness;
-      cl = component.BottomBorder?.Color ?? component.Border.Color;
+      visible = component.BottomBorder?.Visible ?? component.Border?.Visible ?? false;
+      thickness = component.BottomBorder?.Thickness ?? component.Border?.Thickness ?? 0;
+      cl = component.BottomBorder?.Color ?? component.Border?.Color ?? Color.Transparent;
       targetRect = CUIRect.CreateRect(
         component.Real.Left,
         component.Real.Bottom - thickness,

@@ -25,7 +25,17 @@ namespace SomeNamespace
     {
       FindModFolder();
 
+      // This is necessary to find lua folder, if you want to use lua
       CUI.ModDir = ModDir;
+
+      // Small optimization, if false CUI won't generate CUITypes.lua for you
+      CUI.UseLua = false;
+
+      // CUI can use Harmony patches or lua hooks
+      // If true (default) CUI will use Harmony, but there might be mod conflicts with compiled mods, it will notify you if it happens
+      // If false it will try to use lua hooks, but you'll need to set them up with provided lua script or a separate "in memory" plugin
+      CUI.UseCursedPatches = true;
+
       CUI.AssetsPath = AssetsPath;
 
       CUI.Initialize();

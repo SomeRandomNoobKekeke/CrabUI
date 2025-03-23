@@ -18,6 +18,7 @@ namespace CrabUI
     //public CUIComponent Host;
     internal float TotalWidth;
     public CUIDirection Direction;
+    public float Gap { get; set; }
     public bool ResizeToHostHeight { get; set; } = true;
 
     private class CUIComponentSize
@@ -137,7 +138,7 @@ namespace CrabUI
           if (c.FillEmptySpace.X) Resizible.Add(size);
         }
 
-
+        TotalWidth += Math.Max(0, Host.Children.Count - 1) * Gap;
 
         float dif = Math.Max(0, Host.Real.Width - TotalWidth);
 
@@ -171,7 +172,7 @@ namespace CrabUI
 
             c.Component.SetReal(real, "HorizontalList layout update");
 
-            x += c.Size.X;
+            x += c.Size.X + Gap;
           }
         }
 
@@ -180,7 +181,7 @@ namespace CrabUI
           float x = Host.Real.Width;
           foreach (CUIComponentSize c in Sizes)
           {
-            x -= c.Size.X;
+            x -= c.Size.X + Gap;
 
             CUIRect real;
             if (Host.ChildrenBoundaries != null)
@@ -223,6 +224,8 @@ namespace CrabUI
             tw += w;
           }
         }
+
+        tw += Math.Max(0, Host.Children.Count - 1) * Gap;
 
         CUIDebug.Capture(null, Host, "HorizontalList ResizeToContent", "tw", "ForcedMinSize.X", tw.ToString());
         Host.SetForcedMinSize(Host.ForcedMinSize with { X = tw });

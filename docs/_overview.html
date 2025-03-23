@@ -91,20 +91,20 @@ $(function(){ initResizable(false); });
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md__docs_2_freestyle_2_sub_pages_2_overview"></a></p>
 <p>It consists of 3 parts:</p>
-<h3><a class="anchor" id="autotoc_md35"></a>
+<h3><a class="anchor" id="autotoc_md37"></a>
 <a class="el" href="_components.html">Components</a></h3>
 <p>They are just passive containers with props <br  />
  They can have Parent, Children and can be assemblied in a tree like structure <br  />
  They don't do anything by themselves, their drawing and positioning is orchestrated by CUIMainComponent</p>
-<h3><a class="anchor" id="autotoc_md36"></a>
+<h3><a class="anchor" id="autotoc_md38"></a>
 <a class="el" href="_layouts.html">Layouts</a></h3>
 <p>Every component has attached layout, layouts have logic for positioning children of the component</p>
-<h3><a class="anchor" id="autotoc_md37"></a>
+<h3><a class="anchor" id="autotoc_md39"></a>
 <a class="el" href="class_crab_u_i_1_1_c_u_i_main_component.html">Main Component </a></h3>
 <p>It's a regular component that attaches its draw and update methods to game life cycle methods and instead of drawing and updating itself it's orchestrating draw and update of its children <br  />
  You don't have to create it, CUI will create one and setup it on initialization</p>
 <p>Note: there are now 2 maincomponents: CUI.Main is located under vanilla GUI, and CUI.TopMain is located above vanilla GUI</p>
-<h1><a class="anchor" id="autotoc_md38"></a>
+<h1><a class="anchor" id="autotoc_md40"></a>
 Small Example</h1>
 <pre class="fragment">CUIFrame frame = new CUIFrame()
 {
@@ -121,7 +121,7 @@ frame["guh button"] = new CUIButton("Press me")
 CUI.Main.Append(frame);
 </pre><p>Result:</p>
 <p><img src="Screenshot_2.jpg" alt="" class="inline"/> <img src="Screenshot_1.jpg" alt="" class="inline"/></p>
-<h1><a class="anchor" id="autotoc_md39"></a>
+<h1><a class="anchor" id="autotoc_md41"></a>
 More examples</h1>
 <p>I'm too lazy to make more examples <br  />
  But you can use my tests from <a class="el" href="namespace_crab_u_i_test.html">CrabUITest</a> as examples </p>

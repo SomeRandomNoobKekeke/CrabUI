@@ -125,6 +125,8 @@ Properties</h2></td></tr>
 <tr class="separator:ac98b8df791c16842c5f99b0bfcf333f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6095d8d83e620d501572e96308a0e6ec" id="r_a6095d8d83e620d501572e96308a0e6ec"><td class="memItemLeft" align="right" valign="top">CUIDirection&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6095d8d83e620d501572e96308a0e6ec">Direction</a><code> [get, set]</code></td></tr>
 <tr class="separator:a6095d8d83e620d501572e96308a0e6ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a999bebfa14f8634bf1ef319582fd9a35" id="r_a999bebfa14f8634bf1ef319582fd9a35"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a999bebfa14f8634bf1ef319582fd9a35">Gap</a><code> [get, set]</code></td></tr>
+<tr class="separator:a999bebfa14f8634bf1ef319582fd9a35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a137fb7b87b94127802823e3d26ca2d1d" id="r_a137fb7b87b94127802823e3d26ca2d1d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a137fb7b87b94127802823e3d26ca2d1d">ResizeToHostHeight</a><code> [get, set]</code></td></tr>
 <tr class="separator:a137fb7b87b94127802823e3d26ca2d1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2cd4b72305788eab00e44de4b68a222b" id="r_a2cd4b72305788eab00e44de4b68a222b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2cd4b72305788eab00e44de4b68a222b">Scroll</a><code> [get, set]</code></td></tr>
@@ -709,15 +711,15 @@ static IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bott
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_horizontal_list_8cs_source.html#l00066">66</a> of file <a class="el" href="_c_u_i_horizontal_list_8cs_source.html">CUIHorizontalList.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   66</span>                               : base()</div>
-<div class="line"><span class="lineno">   67</span>    {</div>
-<div class="line"><span class="lineno">   68</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#ac7bcbf63c1c4df9be444656ad4ef393e">CullChildren</a> = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   69</span> </div>
-<div class="line"><span class="lineno">   70</span> </div>
-<div class="line"><span class="lineno">   71</span>      OnScroll += (m) =&gt; Scroll += m.Scroll * ScrollSpeed;</div>
-<div class="line"><span class="lineno">   72</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#aa2ac25c8acbca42acf29f3bcfb947f59">ChildrenBoundaries</a> = CUIBoundaries.HorizontalTube;</div>
-<div class="line"><span class="lineno">   73</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_horizontal_list_8cs_source.html#l00074">74</a> of file <a class="el" href="_c_u_i_horizontal_list_8cs_source.html">CUIHorizontalList.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   74</span>                               : base()</div>
+<div class="line"><span class="lineno">   75</span>    {</div>
+<div class="line"><span class="lineno">   76</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#ac7bcbf63c1c4df9be444656ad4ef393e">CullChildren</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   77</span> </div>
+<div class="line"><span class="lineno">   78</span> </div>
+<div class="line"><span class="lineno">   79</span>      OnScroll += (m) =&gt; Scroll += m.Scroll * ScrollSpeed;</div>
+<div class="line"><span class="lineno">   80</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#aa2ac25c8acbca42acf29f3bcfb947f59">ChildrenBoundaries</a> = CUIBoundaries.HorizontalTube;</div>
+<div class="line"><span class="lineno">   81</span>    }</div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_aa2ac25c8acbca42acf29f3bcfb947f59"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#aa2ac25c8acbca42acf29f3bcfb947f59">CrabUI.CUIComponent.ChildrenBoundaries</a></div><div class="ttdeci">Func&lt; CUIRect, CUIBoundaries &gt; ChildrenBoundaries</div><div class="ttdoc">Limits to children positions.</div><div class="ttdef"><b>Definition</b> <a href="_layout_01_props_8cs_source.html#l00054">Layout Props.cs:54</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_ac7bcbf63c1c4df9be444656ad4ef393e"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#ac7bcbf63c1c4df9be444656ad4ef393e">CrabUI.CUIComponent.CullChildren</a></div><div class="ttdeci">bool CullChildren</div><div class="ttdoc">if child rect doesn't intersect with parent it won't be drawn and won't consume fps   It also sets Hi...</div><div class="ttdef"><b>Definition</b> <a href="_layout_01_props_8cs_source.html#l00030">Layout Props.cs:31</a></div></div>
 </div><!-- fragment -->
@@ -749,6 +751,34 @@ static IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bott
 <div class="line"><span class="lineno">   37</span>      <span class="keyword">get</span> =&gt; ListLayout.Direction;</div>
 <div class="line"><span class="lineno">   38</span>      <span class="keyword">set</span> =&gt; ListLayout.Direction = value;</div>
 <div class="line"><span class="lineno">   39</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a999bebfa14f8634bf1ef319582fd9a35" name="a999bebfa14f8634bf1ef319582fd9a35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a999bebfa14f8634bf1ef319582fd9a35">&#9670;&#160;</a></span>Gap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float CrabUI.CUIHorizontalList.Gap</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_horizontal_list_8cs_source.html#l00043">43</a> of file <a class="el" href="_c_u_i_horizontal_list_8cs_source.html">CUIHorizontalList.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>    {</div>
+<div class="line"><span class="lineno">   45</span>      <span class="keyword">get</span> =&gt; ListLayout.Gap;</div>
+<div class="line"><span class="lineno">   46</span>      <span class="keyword">set</span> =&gt; ListLayout.Gap = value;</div>
+<div class="line"><span class="lineno">   47</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -853,11 +883,11 @@ static IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bott
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_horizontal_list_8cs_source.html#l00042">42</a> of file <a class="el" href="_c_u_i_horizontal_list_8cs_source.html">CUIHorizontalList.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   43</span>    {</div>
-<div class="line"><span class="lineno">   44</span>      <span class="keyword">get</span> =&gt; ListLayout.ResizeToHostHeight;</div>
-<div class="line"><span class="lineno">   45</span>      <span class="keyword">set</span> =&gt; ListLayout.ResizeToHostHeight = value;</div>
-<div class="line"><span class="lineno">   46</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_horizontal_list_8cs_source.html#l00050">50</a> of file <a class="el" href="_c_u_i_horizontal_list_8cs_source.html">CUIHorizontalList.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>    {</div>
+<div class="line"><span class="lineno">   52</span>      <span class="keyword">get</span> =&gt; ListLayout.ResizeToHostHeight;</div>
+<div class="line"><span class="lineno">   53</span>      <span class="keyword">set</span> =&gt; ListLayout.ResizeToHostHeight = value;</div>
+<div class="line"><span class="lineno">   54</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -906,17 +936,17 @@ static IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bott
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_horizontal_list_8cs_source.html#l00048">48</a> of file <a class="el" href="_c_u_i_horizontal_list_8cs_source.html">CUIHorizontalList.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   49</span>    {</div>
-<div class="line"><span class="lineno">   50</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a40a940bf1d6a4f500268afd66c883314">ChildrenOffset</a>.X;</div>
-<div class="line"><span class="lineno">   51</span>      <span class="keyword">set</span></div>
-<div class="line"><span class="lineno">   52</span>      {</div>
-<div class="line"><span class="lineno">   53</span>        <span class="keywordflow">if</span> (!Scrollable) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   54</span>        <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.ChildrenOffset.SetValue(</div>
-<div class="line"><span class="lineno">   55</span>          <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a40a940bf1d6a4f500268afd66c883314">ChildrenOffset</a> with { X = value }</div>
-<div class="line"><span class="lineno">   56</span>        );</div>
-<div class="line"><span class="lineno">   57</span>      }</div>
-<div class="line"><span class="lineno">   58</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_horizontal_list_8cs_source.html#l00056">56</a> of file <a class="el" href="_c_u_i_horizontal_list_8cs_source.html">CUIHorizontalList.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   57</span>    {</div>
+<div class="line"><span class="lineno">   58</span>      <span class="keyword">get</span> =&gt; <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a40a940bf1d6a4f500268afd66c883314">ChildrenOffset</a>.X;</div>
+<div class="line"><span class="lineno">   59</span>      <span class="keyword">set</span></div>
+<div class="line"><span class="lineno">   60</span>      {</div>
+<div class="line"><span class="lineno">   61</span>        <span class="keywordflow">if</span> (!Scrollable) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   62</span>        <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a497c55d90b7953b88ebddfee51423479">CUIProps</a>.ChildrenOffset.SetValue(</div>
+<div class="line"><span class="lineno">   63</span>          <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a40a940bf1d6a4f500268afd66c883314">ChildrenOffset</a> with { X = value }</div>
+<div class="line"><span class="lineno">   64</span>        );</div>
+<div class="line"><span class="lineno">   65</span>      }</div>
+<div class="line"><span class="lineno">   66</span>    }</div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a40a940bf1d6a4f500268afd66c883314"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a40a940bf1d6a4f500268afd66c883314">CrabUI.CUIComponent.ChildrenOffset</a></div><div class="ttdeci">CUI3DOffset ChildrenOffset</div><div class="ttdoc">Will shift all children by this much, e.g. this is how scroll works It's also 3D.</div><div class="ttdef"><b>Definition</b> <a href="_layout_01_props_8cs_source.html#l00045">Layout Props.cs:46</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a497c55d90b7953b88ebddfee51423479"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a497c55d90b7953b88ebddfee51423479">CrabUI.CUIComponent.CUIProps</a></div><div class="ttdeci">CUIComponentProps CUIProps</div><div class="ttdoc">Just a wrapper for CUIProps idk how to separate them better.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_props_8cs_source.html#l00027">CUIProps.cs:27</a></div></div>
 </div><!-- fragment -->

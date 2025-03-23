@@ -1,3 +1,7 @@
+## 0.2.6.2
+
+Added Gap prop for CUIHorizontalList
+
 ## 0.2.6.1
 
 Set UseCursedPatches to true by default because that way it's easier to make mod running  

@@ -244,6 +244,8 @@ namespace CrabUI
           }
         }
 
+        th += Math.Max(0, Host.Children.Count - 1) * Gap;
+
         CUIDebug.Capture(null, Host, "VerticalList.ResizeToContent", "th", "ForcedMinSize.Y", th.ToString());
         Host.SetForcedMinSize(Host.ForcedMinSize with { Y = th });
       }

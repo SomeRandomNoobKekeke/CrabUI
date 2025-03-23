@@ -39,6 +39,13 @@ namespace CrabUI
     }
 
     [CUISerializable]
+    public float Gap
+    {
+      get => ListLayout.Gap;
+      set => ListLayout.Gap = value;
+    }
+
+    [CUISerializable]
     public bool ResizeToHostHeight
     {
       get => ListLayout.ResizeToHostHeight;

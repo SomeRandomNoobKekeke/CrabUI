@@ -1,3 +1,7 @@
+## 0.2.6.4
+
+"Fixed" buttons still changing colors behind components with ConsumeMouseClicks
+
 ## 0.2.6.3
 
 Added Piano test

@@ -336,8 +336,6 @@ namespace CrabUI
       CUIComponent CurrentMouseOn = null;
       MouseOnList.Clear();
 
-
-
       // form MouseOnList
       // Note: including main component
       if (
@@ -378,11 +376,14 @@ namespace CrabUI
         c.InvokeOnMouseOff(CUI.Input);
       }
 
-      foreach (CUIComponent c in MouseOnList)
+      //TODO Should i use ConsumeMouseClicks here?
+      for (int i = MouseOnList.Count - 1; i >= 0; i--)
       {
-        c.MousePressed = CUI.Input.MouseHeld;
-        c.MouseOver = true;
-        c.InvokeOnMouseOn(CUI.Input);
+        MouseOnList[i].MousePressed = CUI.Input.MouseHeld;
+        MouseOnList[i].MouseOver = true;
+        MouseOnList[i].InvokeOnMouseOn(CUI.Input);
+
+        if (MouseOnList[i].ConsumeMouseClicks) break;
       }
 
       // Mouse enter / leave

@@ -107,6 +107,7 @@ namespace CrabUI
     /// If true animation won't stop when reaching end, it will change direction
     /// </summary>
     public bool Bounce { get; set; }
+    public bool Repeat { get; set; }
     /// <summary>
     /// Straight, Reverse
     /// </summary>
@@ -228,6 +229,7 @@ namespace CrabUI
       {
         Lambda = EndLambda;
         if (Bounce) Direction = CUIDirection.Reverse;
+        else if (Repeat) SetToStart();
         else Stop();
       }
 
@@ -235,6 +237,7 @@ namespace CrabUI
       {
         Lambda = StartLambda;
         if (Bounce) Direction = CUIDirection.Straight;
+        else if (Repeat) SetToEnd();
         else Stop();
       }
     }

@@ -1,13 +1,14 @@
 var searchData=
 [
-  ['main_0',['Main',['../class_crab_u_i_1_1_c_u_i.html#a956496be0b79f5c540c246c5f600dc05',1,'CrabUI::CUI']]],
-  ['main_20component_20endlink_1',['@link CrabUI.CUIMainComponent Main Component @endlink',['../_overview.html#autotoc_md41',1,'']]],
-  ['maincomponent_2',['MainComponent',['../class_crab_u_i_1_1_c_u_i_component.html#a53398faf0ced67dcf9acee3b70036d88',1,'CrabUI::CUIComponent']]],
-  ['mastercolor_3',['MasterColor',['../class_crab_u_i_1_1_c_u_i_button.html#a8515bf15714813df5c417debaa8b0aee',1,'CrabUI::CUIButton']]],
-  ['maxlayoutrecalcloopsperupdate_4',['MaxLayoutRecalcLoopsPerUpdate',['../class_crab_u_i_1_1_c_u_i_main_component.html#a9b2ad5be37c88c938fe490359d57d882',1,'CrabUI::CUIMainComponent']]],
-  ['memorize_20and_20restore_20state_20of_20component_5',['Also you can memorize and restore state of component',['../_serialization.html#autotoc_md33',1,'']]],
-  ['methods_3a_6',['Methods:',['../_animations.html#autotoc_md30',1,'']]],
-  ['moddir_7',['ModDir',['../class_crab_u_i_1_1_c_u_i.html#a94a393e8a3e3b9785b54414335ac9aa4',1,'CrabUI::CUI']]],
-  ['modstorage_8',['ModStorage',['../class_crab_u_i_1_1_mod_storage.html',1,'CrabUI']]],
-  ['more_20examples_9',['More examples',['../_overview.html#autotoc_md43',1,'']]]
+  ['lambda_0',['Lambda',['../class_crab_u_i_1_1_c_u_i_animation.html#a90bbf411ae4d037cf1508d04630e9bfe',1,'CrabUI::CUIAnimation']]],
+  ['layout_20is_20calculated_1',['How layout is calculated',['../_howlayoutiscalculated.html',1,'index']]],
+  ['layout_20props_2',['Layout Props',['../_layout_props.html',1,'index']]],
+  ['layouts_3',['Layouts',['../_overview.html#autotoc_md50',1,'\subpage Layouts'],['../_layouts.html',1,'Layouts']]],
+  ['layouttest_4',['LayoutTest',['../class_crab_u_i_test_1_1_layout_test.html',1,'CrabUITest']]],
+  ['link_20crabui_20cuimaincomponent_20main_20component_20endlink_5',['@link CrabUI.CUIMainComponent Main Component @endlink',['../_overview.html#autotoc_md51',1,'']]],
+  ['load_6',['Load',['../class_crab_u_i_1_1_c_u_i_main_component.html#a8364f7e94fb25d5717f8125ce2df1d75',1,'CrabUI::CUIMainComponent']]],
+  ['log_7',['Log',['../class_crab_u_i_1_1_c_u_i.html#aa0ce4751fde5325adf2675c44a320b73',1,'CrabUI::CUI']]],
+  ['lua_8',['Usage in Lua',['../_usagein_lua.html',1,'']]],
+  ['lua_9',['Same example in lua',['../_usagein_lua.html#autotoc_md58',1,'']]],
+  ['luafolder_10',['LuaFolder',['../class_crab_u_i_1_1_c_u_i.html#a9c89efd0af2f1b8c183700621b0eb876',1,'CrabUI::CUI']]]
 ];

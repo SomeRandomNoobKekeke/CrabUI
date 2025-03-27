@@ -391,7 +391,7 @@ namespace CrabUI
       ConsumeMouseClicks = true;
       ConsumeDragAndDrop = true;
       ConsumeSwipe = true;
-      BreakSerialization = true;
+      SerializeChildren = false;
 
       this["TextComponent"] = TextComponent = new CUITextBlock()
       {

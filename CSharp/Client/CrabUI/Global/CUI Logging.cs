@@ -17,9 +17,6 @@ namespace CrabUI
     /// <summary>
     /// $"‖color:{color}‖{msg}‖end‖"
     /// </summary>
-    /// <param name="msg"></param>
-    /// <param name="color"></param>
-    /// <returns></returns>
     public static string WrapInColor(object msg, string color)
     {
       return $"‖color:{color}‖{msg}‖end‖";
@@ -29,8 +26,6 @@ namespace CrabUI
     /// <summary>
     /// Serializes the array
     /// </summary>
-    /// <param name="array"></param>
-    /// <returns></returns>
     public static string ArrayToString(IEnumerable<object> array)
     {
       return $"[{String.Join(", ", array.Select(o => o.ToString()))}]";
@@ -39,8 +34,6 @@ namespace CrabUI
     /// <summary>
     /// Prints a message to console
     /// </summary>
-    /// <param name="msg"></param>
-    /// <param name="color"></param>
     public static void Log(object msg, Color? color = null, [CallerFilePath] string source = "", [CallerLineNumber] int lineNumber = 0)
     {
       color ??= Color.Cyan;
@@ -64,14 +57,12 @@ namespace CrabUI
     /// xd
     /// </summary>
     /// <param name="source"> This should be injected by compiler, don't set </param>
-    /// <returns></returns>
     public static string GetCallerFolderPath([CallerFilePath] string source = "") => Path.GetDirectoryName(source);
 
     /// <summary>
     /// Prints debug message with source path
     /// Works only if debug is true
     /// </summary>
-    /// <param name="msg"></param>
     public static void Info(object msg, [CallerFilePath] string source = "", [CallerLineNumber] int lineNumber = 0)
     {
       if (Debug == true)

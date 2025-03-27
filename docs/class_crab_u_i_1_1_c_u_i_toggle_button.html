@@ -109,8 +109,12 @@ Inheritance diagram for CrabUI.CUIToggleButton:</div>
  <div class="center">
   <img src="class_crab_u_i_1_1_c_u_i_toggle_button.png" usemap="#CrabUI.CUIToggleButton_map" alt=""/>
   <map id="CrabUI.CUIToggleButton_map" name="CrabUI.CUIToggleButton_map">
-<area href="class_crab_u_i_1_1_c_u_i_text_block.html" title="Passive block of text." alt="CrabUI.CUITextBlock" shape="rect" coords="0,56,148,80"/>
-<area href="class_crab_u_i_1_1_c_u_i_component.html" title="Base class for all components." alt="CrabUI.CUIComponent" shape="rect" coords="0,0,148,24"/>
+<area href="class_crab_u_i_1_1_c_u_i_text_block.html" title="Passive block of text." alt="CrabUI.CUITextBlock" shape="rect" coords="170,168,330,192"/>
+<area href="class_crab_u_i_1_1_c_u_i_component.html" title="Base class for all components." alt="CrabUI.CUIComponent" shape="rect" coords="170,112,330,136"/>
+<area href="interface_crab_u_i_1_1_i_c_u_i_component.html" title="Ignore this, i&#39;m just thinking how to organize props, this is getting out of hand." alt="CrabUI.ICUIComponent" shape="rect" coords="170,56,330,80"/>
+<area href="interface_crab_u_i_1_1_i_simple_props.html" title="Props used in simple layout." alt="CrabUI.ISimpleProps" shape="rect" coords="0,0,160,24"/>
+<area href="interface_crab_u_i_1_1_i_list_props.html" title="Props used in list layouts." alt="CrabUI.IListProps" shape="rect" coords="170,0,330,24"/>
+<area href="interface_crab_u_i_1_1_i_serialization_props.html" title="Props used in serialization." alt="CrabUI.ISerializationProps" shape="rect" coords="340,0,500,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -137,6 +141,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac10de8f802d50e57a95c127503ad877a inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad151cc14ce3cca77af87eef25562acc8 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_ad151cc14ce3cca77af87eef25562acc8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#ad151cc14ce3cca77af87eef25562acc8">BlockChildrenAnimations</a> ()</td></tr>
 <tr class="separator:ad151cc14ce3cca77af87eef25562acc8 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af026f93b1e5add2aaf313cec1c9d344b inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_af026f93b1e5add2aaf313cec1c9d344b"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><b>AttachTo</b> (Item item, Action&lt; Item, <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a> &gt; callback=null)</td></tr>
+<tr class="separator:af026f93b1e5add2aaf313cec1c9d344b inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6dd0fb51c40240e285b04e3b53ad5e5d inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a6dd0fb51c40240e285b04e3b53ad5e5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a6dd0fb51c40240e285b04e3b53ad5e5d">AddCommand</a> (string name, Action&lt; object &gt; action)</td></tr>
 <tr class="memdesc:a6dd0fb51c40240e285b04e3b53ad5e5d inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manually adds command.  <br /></td></tr>
 <tr class="separator:a6dd0fb51c40240e285b04e3b53ad5e5d inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -244,6 +251,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>RemoveSelf</b> ()</td
 <tr class="separator:a9c53e0eb9359c60af1111d4dcabccede inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a657e903b85c2720e5990a644bd415183 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a657e903b85c2720e5990a644bd415183"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a657e903b85c2720e5990a644bd415183">RemoveAllChildren</a> ([CallerMemberName] string memberName=&quot;&quot;)</td></tr>
 <tr class="separator:a657e903b85c2720e5990a644bd415183 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11f36fe0b75c9497d16dcaba22081348 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a11f36fe0b75c9497d16dcaba22081348"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a11f36fe0b75c9497d16dcaba22081348">MoveToFront</a> ()</td></tr>
+<tr class="memdesc:a11f36fe0b75c9497d16dcaba22081348 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves component to front in Parent.Children which makes it render after other childs.  <br /></td></tr>
+<tr class="separator:a11f36fe0b75c9497d16dcaba22081348 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -301,6 +311,8 @@ Properties</h2></td></tr>
 <tr class="separator:ae65e0bb9a06540c864422be99b27d74e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51c038b4deb4ae37f4cd8b67256d1a62" id="r_a51c038b4deb4ae37f4cd8b67256d1a62"><td class="memItemLeft" align="right" valign="top">Action&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51c038b4deb4ae37f4cd8b67256d1a62">AddOnStateChange</a><code> [set]</code></td></tr>
 <tr class="separator:a51c038b4deb4ae37f4cd8b67256d1a62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a934004d4481be30a1dc5f69d759f0d52" id="r_a934004d4481be30a1dc5f69d759f0d52"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a934004d4481be30a1dc5f69d759f0d52">ToggleOnClick</a> = true<code> [get, set]</code></td></tr>
+<tr class="separator:a934004d4481be30a1dc5f69d759f0d52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3f800436d0dcdc37995404508fc0ed9" id="r_ad3f800436d0dcdc37995404508fc0ed9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3f800436d0dcdc37995404508fc0ed9">State</a><code> [get, set]</code></td></tr>
 <tr class="separator:ad3f800436d0dcdc37995404508fc0ed9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header properties_class_crab_u_i_1_1_c_u_i_text_block"><td colspan="2" onclick="javascript:dynsection.toggleInherit('properties_class_crab_u_i_1_1_c_u_i_text_block')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_crab_u_i_1_1_c_u_i_text_block.html">CrabUI.CUITextBlock</a></td></tr>
@@ -336,6 +348,8 @@ Properties</h2></td></tr>
 <tr class="memitem:aa888b2a762eaa7ceb650c92b38b50099 inherit properties_class_crab_u_i_1_1_c_u_i_text_block" id="r_aa888b2a762eaa7ceb650c92b38b50099"><td class="memItemLeft" align="right" valign="top">Vector2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_text_block.html#aa888b2a762eaa7ceb650c92b38b50099">UnwrappedMinSize</a><code> [get, set]</code></td></tr>
 <tr class="separator:aa888b2a762eaa7ceb650c92b38b50099 inherit properties_class_crab_u_i_1_1_c_u_i_text_block"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header properties_class_crab_u_i_1_1_c_u_i_component"><td colspan="2" onclick="javascript:dynsection.toggleInherit('properties_class_crab_u_i_1_1_c_u_i_component')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CrabUI.CUIComponent</a></td></tr>
+<tr class="memitem:a17b761d3901d7fda46fba253f2d76d7d inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a17b761d3901d7fda46fba253f2d76d7d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crab_u_i_1_1_attached_item_handle.html">AttachedItemHandle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a17b761d3901d7fda46fba253f2d76d7d">AttachedItemHandle</a><code> [get, set]</code></td></tr>
+<tr class="separator:a17b761d3901d7fda46fba253f2d76d7d inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69d80d5710b2fa7abf2c2a20d035f0ac inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a69d80d5710b2fa7abf2c2a20d035f0ac"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a69d80d5710b2fa7abf2c2a20d035f0ac">Command</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a69d80d5710b2fa7abf2c2a20d035f0ac inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">This command will be dispatched up when some component specific event happens.  <br /></td></tr>
 <tr class="separator:a69d80d5710b2fa7abf2c2a20d035f0ac inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -353,6 +367,8 @@ Properties</h2></td></tr>
 <tr class="memitem:a033b6c6555df4478ff72bd132b1f512b inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a033b6c6555df4478ff72bd132b1f512b"><td class="memItemLeft" align="right" valign="top">Dictionary&lt; string, Action&lt; object &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a033b6c6555df4478ff72bd132b1f512b">Commands</a> = new()<code> [get, set]</code></td></tr>
 <tr class="memdesc:a033b6c6555df4478ff72bd132b1f512b inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">All commands.  <br /></td></tr>
 <tr class="separator:a033b6c6555df4478ff72bd132b1f512b inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f9af5acf9814d285db01ae807266d06 inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a8f9af5acf9814d285db01ae807266d06"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a8f9af5acf9814d285db01ae807266d06">AllComponents</a><code> [get]</code></td></tr>
+<tr class="separator:a8f9af5acf9814d285db01ae807266d06 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d500c1375149e82e80f484969d630f7 inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a5d500c1375149e82e80f484969d630f7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a5d500c1375149e82e80f484969d630f7">Debug</a><code> [get, set]</code></td></tr>
 <tr class="separator:a5d500c1375149e82e80f484969d630f7 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6bad721c7c5e53fc88c718cb1f95d999 inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a6bad721c7c5e53fc88c718cb1f95d999"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a6bad721c7c5e53fc88c718cb1f95d999">IgnoreDebug</a><code> [get, set]</code></td></tr>
@@ -429,10 +445,6 @@ Properties</h2></td></tr>
 <tr class="memitem:aa615f83c1e38c1ea74eb4854cce4ed3c inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_aa615f83c1e38c1ea74eb4854cce4ed3c"><td class="memItemLeft" align="right" valign="top">Dictionary&lt; string, <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#aa615f83c1e38c1ea74eb4854cce4ed3c">States</a> = new()<code> [get, set]</code></td></tr>
 <tr class="memdesc:aa615f83c1e38c1ea74eb4854cce4ed3c inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">State is just a clone component with copies of all props.  <br /></td></tr>
 <tr class="separator:aa615f83c1e38c1ea74eb4854cce4ed3c inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f7e3fb2b0a5f0807f0663f57b7d948b inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a0f7e3fb2b0a5f0807f0663f57b7d948b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a0f7e3fb2b0a5f0807f0663f57b7d948b">ForceSaveAllProps</a> = false<code> [get, set]</code></td></tr>
-<tr class="separator:a0f7e3fb2b0a5f0807f0663f57b7d948b inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d8af39a0926bdde5557b58d78cdfd61 inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a6d8af39a0926bdde5557b58d78cdfd61"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a6d8af39a0926bdde5557b58d78cdfd61">SaveAfterLoad</a> = true<code> [get, set]</code></td></tr>
-<tr class="separator:a6d8af39a0926bdde5557b58d78cdfd61 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb07791aeb0b4a7f8c2c086526067f5c inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_acb07791aeb0b4a7f8c2c086526067f5c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#acb07791aeb0b4a7f8c2c086526067f5c">SavePath</a><code> [get, set]</code></td></tr>
 <tr class="separator:acb07791aeb0b4a7f8c2c086526067f5c inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97bacc49652d724c7ff474aeddd4b97d inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a97bacc49652d724c7ff474aeddd4b97d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a97bacc49652d724c7ff474aeddd4b97d">ID</a><code> [get, set]</code></td></tr>
@@ -617,13 +629,9 @@ Properties</h2></td></tr>
 <tr class="memitem:aba96dc7eb81dcd1f46a3decd7305c55a inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_aba96dc7eb81dcd1f46a3decd7305c55a"><td class="memItemLeft" align="right" valign="top">object&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#aba96dc7eb81dcd1f46a3decd7305c55a">Data</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:aba96dc7eb81dcd1f46a3decd7305c55a inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Arbitrary data.  <br /></td></tr>
 <tr class="separator:aba96dc7eb81dcd1f46a3decd7305c55a inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a155615a8a7e4c8d2721fbb1d155bd395 inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a155615a8a7e4c8d2721fbb1d155bd395"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a155615a8a7e4c8d2721fbb1d155bd395">Unserializable</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a155615a8a7e4c8d2721fbb1d155bd395 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will prevent serialization to xml if true.  <br /></td></tr>
-<tr class="separator:a155615a8a7e4c8d2721fbb1d155bd395 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a879f6b36b8694084f6d34443e980a8f9 inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a879f6b36b8694084f6d34443e980a8f9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a879f6b36b8694084f6d34443e980a8f9">BreakSerialization</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a879f6b36b8694084f6d34443e980a8f9 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is this a serialization cutoff point <br  />
- Parent will serialize children down to this component Further serialization should be hadled by this component.  <br /></td></tr>
-<tr class="separator:a879f6b36b8694084f6d34443e980a8f9 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a297a5a80b39078fc8e9fed2c64f0cce4 inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a297a5a80b39078fc8e9fed2c64f0cce4"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a297a5a80b39078fc8e9fed2c64f0cce4">Disabled</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a297a5a80b39078fc8e9fed2c64f0cce4 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usually means - non interactable, e.g. unclickable gray button.  <br /></td></tr>
+<tr class="separator:a297a5a80b39078fc8e9fed2c64f0cce4 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7242f152258307bb0ae34964bd5de1f inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_af7242f152258307bb0ae34964bd5de1f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#af7242f152258307bb0ae34964bd5de1f">ShouldPassPropsToChildren</a> = true<code> [get, set]</code></td></tr>
 <tr class="memdesc:af7242f152258307bb0ae34964bd5de1f inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Some props (like visible) are autopassed to all new childs see PassPropsToChild.  <br /></td></tr>
 <tr class="separator:af7242f152258307bb0ae34964bd5de1f inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -647,9 +655,25 @@ Properties</h2></td></tr>
 <tr class="memitem:a2b39e97b6c2c219efbb25cd176e0f16b inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a2b39e97b6c2c219efbb25cd176e0f16b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a2b39e97b6c2c219efbb25cd176e0f16b">Revealed</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a2b39e97b6c2c219efbb25cd176e0f16b inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visible + !IgnoreEvents.  <br /></td></tr>
 <tr class="separator:a2b39e97b6c2c219efbb25cd176e0f16b inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a297a5a80b39078fc8e9fed2c64f0cce4 inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a297a5a80b39078fc8e9fed2c64f0cce4"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a297a5a80b39078fc8e9fed2c64f0cce4">Disabled</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a297a5a80b39078fc8e9fed2c64f0cce4 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usually means - non interactable, e.g. unclickable gray button.  <br /></td></tr>
-<tr class="separator:a297a5a80b39078fc8e9fed2c64f0cce4 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac809b22336545d5265ce8d1d38383ad7 inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_ac809b22336545d5265ce8d1d38383ad7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#ac809b22336545d5265ce8d1d38383ad7">Serializable</a> = true<code> [get, set]</code></td></tr>
+<tr class="memdesc:ac809b22336545d5265ce8d1d38383ad7 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">If false then this component and its children won't be serialized.  <br /></td></tr>
+<tr class="separator:ac809b22336545d5265ce8d1d38383ad7 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91a75297d4ff09a0bc769eff8360a4bd inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a91a75297d4ff09a0bc769eff8360a4bd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a91a75297d4ff09a0bc769eff8360a4bd">SerializeChildren</a> = true<code> [get, set]</code></td></tr>
+<tr class="memdesc:a91a75297d4ff09a0bc769eff8360a4bd inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is this a serialization cutoff point <br  />
+ Parent will serialize children down to this component and stop.  <br /></td></tr>
+<tr class="separator:a91a75297d4ff09a0bc769eff8360a4bd inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf54f37e9499eb6ddb25361600c8d67f inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_abf54f37e9499eb6ddb25361600c8d67f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#abf54f37e9499eb6ddb25361600c8d67f">MergeSerialization</a> = false<code> [get, set]</code></td></tr>
+<tr class="memdesc:abf54f37e9499eb6ddb25361600c8d67f inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">If true it won't be deserialized, <br  />
+ Instead its children will be detached and attached to the component with matching AKA on the parent.  <br /></td></tr>
+<tr class="separator:abf54f37e9499eb6ddb25361600c8d67f inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c67a42bcb1e6d9478f1333d89fb32d3 inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a4c67a42bcb1e6d9478f1333d89fb32d3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a4c67a42bcb1e6d9478f1333d89fb32d3">ReplaceSerialization</a> = false<code> [get, set]</code></td></tr>
+<tr class="memdesc:a4c67a42bcb1e6d9478f1333d89fb32d3 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">If true, deserialized component will replace existing component with the same AKA instead of creating a duplicate.  <br /></td></tr>
+<tr class="separator:a4c67a42bcb1e6d9478f1333d89fb32d3 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f7e3fb2b0a5f0807f0663f57b7d948b inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a0f7e3fb2b0a5f0807f0663f57b7d948b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a0f7e3fb2b0a5f0807f0663f57b7d948b">ForceSaveAllProps</a> = false<code> [get, set]</code></td></tr>
+<tr class="separator:a0f7e3fb2b0a5f0807f0663f57b7d948b inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header properties_interface_crab_u_i_1_1_i_simple_props"><td colspan="2" onclick="javascript:dynsection.toggleInherit('properties_interface_crab_u_i_1_1_i_simple_props')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="interface_crab_u_i_1_1_i_simple_props.html">CrabUI.ISimpleProps</a></td></tr>
+<tr class="inherit_header properties_interface_crab_u_i_1_1_i_list_props"><td colspan="2" onclick="javascript:dynsection.toggleInherit('properties_interface_crab_u_i_1_1_i_list_props')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="interface_crab_u_i_1_1_i_list_props.html">CrabUI.IListProps</a></td></tr>
+<tr class="inherit_header properties_interface_crab_u_i_1_1_i_serialization_props"><td colspan="2" onclick="javascript:dynsection.toggleInherit('properties_interface_crab_u_i_1_1_i_serialization_props')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="interface_crab_u_i_1_1_i_serialization_props.html">CrabUI.ISerializationProps</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="events" name="events"></a>
 Events</h2></td></tr>
@@ -749,6 +773,9 @@ static IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bott
 <tr class="separator:a68c79918dc6868f7536b1e9fb3fb7c95 inherit pub_attribs_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1924ce1e1d753c0c1f49f09a46f33e6b inherit pub_attribs_class_crab_u_i_1_1_c_u_i_component" id="r_a1924ce1e1d753c0c1f49f09a46f33e6b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a1924ce1e1d753c0c1f49f09a46f33e6b">Disposed</a></td></tr>
 <tr class="separator:a1924ce1e1d753c0c1f49f09a46f33e6b inherit pub_attribs_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47c9af0cf7922f2284c4832a45fe04a2 inherit pub_attribs_class_crab_u_i_1_1_c_u_i_component" id="r_a47c9af0cf7922f2284c4832a45fe04a2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a47c9af0cf7922f2284c4832a45fe04a2">ignoreDebug</a></td></tr>
+<tr class="memdesc:a47c9af0cf7922f2284c4832a45fe04a2 inherit pub_attribs_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">For debug frame itself.  <br /></td></tr>
+<tr class="separator:a47c9af0cf7922f2284c4832a45fe04a2 inherit pub_attribs_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a032faa3763d2d8ab01247793fd030e56 inherit pub_attribs_class_crab_u_i_1_1_c_u_i_component" id="r_a032faa3763d2d8ab01247793fd030e56"><td class="memItemLeft" align="right" valign="top">CUIResizeHandle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a032faa3763d2d8ab01247793fd030e56">LeftResizeHandle</a> = new CUIResizeHandle(new Vector2(0, 1), new <a class="el" href="struct_crab_u_i_1_1_c_u_i_bool2.html">CUIBool2</a>(false, false))</td></tr>
 <tr class="separator:a032faa3763d2d8ab01247793fd030e56 inherit pub_attribs_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad43ccac695aae80340a7948e5e61aebc inherit pub_attribs_class_crab_u_i_1_1_c_u_i_component" id="r_ad43ccac695aae80340a7948e5e61aebc"><td class="memItemLeft" align="right" valign="top">CUIResizeHandle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#ad43ccac695aae80340a7948e5e61aebc">RightResizeHandle</a> = new CUIResizeHandle(new Vector2(1, 1), new <a class="el" href="struct_crab_u_i_1_1_c_u_i_bool2.html">CUIBool2</a>(true, false))</td></tr>
@@ -819,13 +846,16 @@ static IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bott
 <div class="line"><span class="lineno">  126</span>      {</div>
 <div class="line"><span class="lineno">  127</span>        <span class="keywordflow">if</span> (!<a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a297a5a80b39078fc8e9fed2c64f0cce4">Disabled</a>)</div>
 <div class="line"><span class="lineno">  128</span>        {</div>
-<div class="line"><span class="lineno">  129</span>          State = !State;</div>
-<div class="line"><span class="lineno">  130</span>          <span class="keywordflow">if</span> (PlaySound) SoundPlayer.PlayUISound(ClickSound);</div>
-<div class="line"><span class="lineno">  131</span>          OnStateChange?.Invoke(State);</div>
-<div class="line"><span class="lineno">  132</span>        }</div>
-<div class="line"><span class="lineno">  133</span>      };</div>
-<div class="line"><span class="lineno">  134</span>    }</div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a297a5a80b39078fc8e9fed2c64f0cce4"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a297a5a80b39078fc8e9fed2c64f0cce4">CrabUI.CUIComponent.Disabled</a></div><div class="ttdeci">virtual bool Disabled</div><div class="ttdoc">Usually means - non interactable, e.g. unclickable gray button.</div><div class="ttdef"><b>Definition</b> <a href="_other_01_props_8cs_source.html#l00092">Other Props.cs:93</a></div></div>
+<div class="line"><span class="lineno">  129</span>          <span class="keywordflow">if</span> (PlaySound) SoundPlayer.PlayUISound(ClickSound);</div>
+<div class="line"><span class="lineno">  130</span>          <span class="keywordflow">if</span> (ToggleOnClick)</div>
+<div class="line"><span class="lineno">  131</span>          {</div>
+<div class="line"><span class="lineno">  132</span>            State = !State;</div>
+<div class="line"><span class="lineno">  133</span>            OnStateChange?.Invoke(State);</div>
+<div class="line"><span class="lineno">  134</span>          }</div>
+<div class="line"><span class="lineno">  135</span>        }</div>
+<div class="line"><span class="lineno">  136</span>      };</div>
+<div class="line"><span class="lineno">  137</span>    }</div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a297a5a80b39078fc8e9fed2c64f0cce4"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a297a5a80b39078fc8e9fed2c64f0cce4">CrabUI.CUIComponent.Disabled</a></div><div class="ttdeci">virtual bool Disabled</div><div class="ttdoc">Usually means - non interactable, e.g. unclickable gray button.</div><div class="ttdef"><b>Definition</b> <a href="_other_01_props_8cs_source.html#l00031">Other Props.cs:32</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a5186e13b2faee5dd2b9b919cbb8c3618"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a5186e13b2faee5dd2b9b919cbb8c3618">CrabUI.CUIComponent.Padding</a></div><div class="ttdeci">Vector2 Padding</div><div class="ttdoc">Used for text, should be in CUITextBlock really.</div><div class="ttdef"><b>Definition</b> <a href="_graphic_01_props_8cs_source.html#l00025">Graphic Props.cs:26</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_text_block_html_acab408184ca869b332958bc1960515f3"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_text_block.html#acab408184ca869b332958bc1960515f3">CrabUI.CUITextBlock.TextAlign</a></div><div class="ttdeci">Vector2 TextAlign</div><div class="ttdoc">A Vector2 ([0..1],[0..1])</div><div class="ttdef"><b>Definition</b> <a href="_crab_u_i_2_components_2_c_u_i_text_block_8cs_source.html#l00050">CUITextBlock.cs:50</a></div></div>
 </div><!-- fragment -->
@@ -846,11 +876,11 @@ static IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bott
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_toggle_button_8cs_source.html#l00136">136</a> of file <a class="el" href="_c_u_i_toggle_button_8cs_source.html">CUIToggleButton.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  136</span>                                        : <span class="keyword">this</span>()</div>
-<div class="line"><span class="lineno">  137</span>    {</div>
-<div class="line"><span class="lineno">  138</span>      Text = text;</div>
-<div class="line"><span class="lineno">  139</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_toggle_button_8cs_source.html#l00139">139</a> of file <a class="el" href="_c_u_i_toggle_button_8cs_source.html">CUIToggleButton.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  139</span>                                        : <span class="keyword">this</span>()</div>
+<div class="line"><span class="lineno">  140</span>    {</div>
+<div class="line"><span class="lineno">  141</span>      Text = text;</div>
+<div class="line"><span class="lineno">  142</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1317,6 +1347,31 @@ static IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bott
 <div class="line"><span class="lineno">   85</span>        <span class="keywordflow">if</span> (!state &amp;&amp; OffText != <span class="keyword">null</span>) Text = OffText;</div>
 <div class="line"><span class="lineno">   86</span>      }</div>
 <div class="line"><span class="lineno">   87</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a934004d4481be30a1dc5f69d759f0d52" name="a934004d4481be30a1dc5f69d759f0d52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a934004d4481be30a1dc5f69d759f0d52">&#9670;&#160;</a></span>ToggleOnClick</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CrabUI.CUIToggleButton.ToggleOnClick = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_toggle_button_8cs_source.html#l00075">75</a> of file <a class="el" href="_c_u_i_toggle_button_8cs_source.html">CUIToggleButton.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   75</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; } = <span class="keyword">true</span>;</div>
 </div><!-- fragment -->
 </div>
 </div>

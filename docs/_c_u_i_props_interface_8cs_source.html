@@ -129,24 +129,29 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>      <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> key <span class="keywordflow">in</span> meta.Serializable.Keys)</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        Props.<a class="code hl_function" href="class_crab_u_i_1_1_c_u_i_component.html#a5d05673fa79fb7a41985c46ca88ab647">Append</a>(<span class="keyword">new</span> CUITextBlock($<span class="stringliteral">&quot;{key} - {meta.Serializable[key].GetValue(Target)}&quot;</span>));</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      }</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">public</span> CUIPropsInterface() : base()</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    {</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a879f6b36b8694084f6d34443e980a8f9">BreakSerialization</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>      <span class="keyword">this</span>[<span class="stringliteral">&quot;Props&quot;</span>] = Props = <span class="keyword">new</span> CUIVerticalList()</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>      {</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a3bf46498c5f0dae185b27ebb3a452c98">Relative</a> = <span class="keyword">new</span> CUINullRect(0, 0, 1, 1),</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        Scrollable = <span class="keyword">true</span>,</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>      };</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  }</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        Props.<a class="code hl_function" href="class_crab_u_i_1_1_c_u_i_component.html#a5d05673fa79fb7a41985c46ca88ab647">Append</a>(<span class="keyword">new</span> CUITextBlock($<span class="stringliteral">&quot;{key} - {meta.Serializable[key].GetValue(Target)}&quot;</span>)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>          IgnoreDebug = <span class="keyword">true</span>,</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        });</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      }</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">public</span> CUIPropsInterface() : base()</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a91a75297d4ff09a0bc769eff8360a4bd">SerializeChildren</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>      <span class="keyword">this</span>[<span class="stringliteral">&quot;Props&quot;</span>] = Props = <span class="keyword">new</span> CUIVerticalList()</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>      {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a3bf46498c5f0dae185b27ebb3a452c98">Relative</a> = <span class="keyword">new</span> CUINullRect(0, 0, 1, 1),</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        Scrollable = <span class="keyword">true</span>,</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>      };</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>      IgnoreDebug = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}</div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a3bf46498c5f0dae185b27ebb3a452c98"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a3bf46498c5f0dae185b27ebb3a452c98">CrabUI.CUIComponent.Relative</a></div><div class="ttdeci">CUINullRect Relative</div><div class="ttdoc">Relative to parent size and position, [0..1].</div><div class="ttdef"><b>Definition</b> <a href="_layout_01_props_8cs_source.html#l00144">Layout Props.cs:145</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a5d05673fa79fb7a41985c46ca88ab647"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a5d05673fa79fb7a41985c46ca88ab647">CrabUI.CUIComponent.Append</a></div><div class="ttdeci">virtual CUIComponent Append(CUIComponent child, string name=null, [CallerMemberName] string memberName=&quot;&quot;)</div><div class="ttdoc">Adds children to the end of the list.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_tree_8cs_source.html#l00095">CUIComponent.Tree.cs:95</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a879f6b36b8694084f6d34443e980a8f9"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a879f6b36b8694084f6d34443e980a8f9">CrabUI.CUIComponent.BreakSerialization</a></div><div class="ttdeci">bool BreakSerialization</div><div class="ttdoc">Is this a serialization cutoff point   Parent will serialize children down to this component Further ...</div><div class="ttdef"><b>Definition</b> <a href="_other_01_props_8cs_source.html#l00037">Other Props.cs:37</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a5d05673fa79fb7a41985c46ca88ab647"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a5d05673fa79fb7a41985c46ca88ab647">CrabUI.CUIComponent.Append</a></div><div class="ttdeci">virtual CUIComponent Append(CUIComponent child, string name=null, [CallerMemberName] string memberName=&quot;&quot;)</div><div class="ttdoc">Adds children to the end of the list.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_tree_8cs_source.html#l00093">CUIComponent.Tree.cs:93</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a91a75297d4ff09a0bc769eff8360a4bd"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a91a75297d4ff09a0bc769eff8360a4bd">CrabUI.CUIComponent.SerializeChildren</a></div><div class="ttdeci">bool SerializeChildren</div><div class="ttdoc">Is this a serialization cutoff point   Parent will serialize children down to this component and stop...</div><div class="ttdef"><b>Definition</b> <a href="_serialization_01_props_8cs_source.html#l00029">Serialization Props.cs:29</a></div></div>
 <div class="ttc" id="anamespace_crab_u_i_html"><div class="ttname"><a href="namespace_crab_u_i.html">CrabUI</a></div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_animation_8cs_source.html#l00011">CUIAnimation.cs:12</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

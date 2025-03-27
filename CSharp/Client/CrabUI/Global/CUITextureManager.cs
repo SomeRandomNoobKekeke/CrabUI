@@ -18,6 +18,35 @@ namespace CrabUI
   /// </summary>
   public class CUITextureManager : IDisposable
   {
+    public static void CreateCheckers()
+    {
+      int w = 8;
+      int h = 8;
+      Checkers = new Texture2D(GameMain.Instance.GraphicsDevice, w, h);
+
+      Color[] data = new Color[w * h];
+
+      for (int y = 0; y < h; y++)
+      {
+        for (int x = 0; x < w; x++)
+        {
+          data[y * w + x] = (x < w / 2) ^ (y < h / 2) ? Color.White : Color.Black;
+        }
+      }
+
+      Checkers.SetData(0, new Rectangle(0, 0, w, h), data, 0, w * h);
+    }
+    public static void InitStatic()
+    {
+      CreateCheckers();
+
+      CUI.OnDispose += () =>
+      {
+        Checkers.Dispose();
+        Checkers = null;
+      };
+    }
+
     // private static Texture2D backupTexture;
     // public static Texture2D BackupTexture
     // {
@@ -35,7 +64,8 @@ namespace CrabUI
     /// <summary>
     /// Path to additional PNGs, it can be set in CUI
     /// </summary>
-
+    /// 
+    public static Texture2D Checkers;
     public static Texture2D BackupTexture => GUI.WhiteTexture;
     public Dictionary<string, Texture2D> LoadedTextures = new();
     public void DisposeAllTextures()

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['icuivitalizable_0',['ICUIVitalizable',['../interface_crab_u_i_1_1_i_c_u_i_vitalizable.html',1,'CrabUI']]],
-  ['intrange_1',['IntRange',['../struct_crab_u_i_1_1_int_range.html',1,'CrabUI']]],
-  ['irefreshable_2',['IRefreshable',['../interface_crab_u_i_1_1_i_refreshable.html',1,'CrabUI']]]
+  ['fillmethods_0',['FillMethods',['../class_crab_u_i_test_1_1_fill_methods.html',1,'CrabUITest']]],
+  ['floatrange_1',['FloatRange',['../struct_crab_u_i_1_1_float_range.html',1,'CrabUI']]]
 ];

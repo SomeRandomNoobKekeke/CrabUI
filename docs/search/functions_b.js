@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['passpropstochild_0',['PassPropsToChild',['../class_crab_u_i_1_1_c_u_i_component.html#a4fbc3126e7d56a17c69227c6b9d14ccf',1,'CrabUI::CUIComponent']]],
-  ['prepend_1',['Prepend',['../class_crab_u_i_1_1_c_u_i_component.html#a21431d1bcb98626c736124039177b6c7',1,'CrabUI::CUIComponent']]]
+  ['open_0',['Open',['../class_crab_u_i_1_1_c_u_i_frame.html#a03bd93641938df6c419cd1170f135976',1,'CrabUI.CUIFrame.Open()'],['../class_crab_u_i_1_1_c_u_i_pages.html#ac9ac0d7b2273d35846dc22afdbe41872',1,'CrabUI.CUIPages.Open()']]]
 ];

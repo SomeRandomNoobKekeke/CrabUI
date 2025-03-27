@@ -58,7 +58,16 @@ namespace CrabUI
     protected bool OutlineVisible { get; set; }
 
     // This is for state clones, to protect them from style changes
-    internal bool Unreal { get; set; }
+    private bool unreal;
+    internal bool Unreal
+    {
+      get => unreal;
+      set
+      {
+        unreal = value;
+        foreach (var child in Children) { child.Unreal = value; }
+      }
+    }
 
     public bool MouseOver { get; set; }
     public bool MousePressed { get; set; }

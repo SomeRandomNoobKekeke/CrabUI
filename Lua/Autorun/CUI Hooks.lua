@@ -35,6 +35,6 @@ EnsurePatch("Barotrauma.GUI", "TogglePauseMenu",{},  function(instance, ptable)
 end, Hook.HookMethodType.After)
 
 EnsurePatch("Barotrauma.GUI", "get_InputBlockingMenuOpen", function(instance, ptable)
-  local isBlocking = Hook.Call("GUI_InputBlockingMenuOpen_Postfix")
+  local isBlocking = Hook.Call("GUI_InputBlockingMenuOpen_Postfix") or false
   return ptable.ReturnValue or isBlocking
 end, Hook.HookMethodType.After)

@@ -96,6 +96,9 @@ $(function(){ initResizable(false); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_attached_item_handle.html">AttachedItemHandle</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Link between Item and <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html" title="Base class for all components.">CUIComponent</a>.  <a href="class_crab_u_i_1_1_attached_item_handle.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i.html">CUI</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">In fact a static class managing static things.  <a href="class_crab_u_i_1_1_c_u_i.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -199,6 +202,9 @@ Classes</h2></td></tr>
  Can have only 1 child <br  />
  Sets component as it's only child when you open it (as a page)  <a href="class_crab_u_i_1_1_c_u_i_pages.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_parser.html">CUIParser</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class for easy parsing and serialization of anything.  <a href="class_crab_u_i_1_1_c_u_i_parser.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_prop.html">CUIProp</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper object for prop value, setters, side effects, metadata etc.  <a href="class_crab_u_i_1_1_c_u_i_prop.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -248,8 +254,14 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_crab_u_i_1_1_float_range.html">FloatRange</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as Range but with normal floats.  <a href="struct_crab_u_i_1_1_float_range.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_crab_u_i_1_1_i_c_u_i_component.html">ICUIComponent</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ignore this, i'm just thinking how to organize props, this is getting out of hand.  <a href="interface_crab_u_i_1_1_i_c_u_i_component.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_crab_u_i_1_1_i_c_u_i_vitalizable.html">ICUIVitalizable</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Props implementing this will be bound to their host with reflection after creation of the host.  <a href="interface_crab_u_i_1_1_i_c_u_i_vitalizable.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_crab_u_i_1_1_i_list_props.html">IListProps</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Props used in list layouts.  <a href="interface_crab_u_i_1_1_i_list_props.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_crab_u_i_1_1_int_range.html">IntRange</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as Range but with normal ints.  <a href="struct_crab_u_i_1_1_int_range.html#details">More...</a><br /></td></tr>
@@ -258,6 +270,12 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">For stuff that should be in some way refreshed <br  />
  This method appears way too many times <br  />
  There are also secret public void CascadeRefresh() method in CUIComponent.Events that refreshes all childs recursivelly.  <a href="interface_crab_u_i_1_1_i_refreshable.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_crab_u_i_1_1_i_serialization_props.html">ISerializationProps</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Props used in serialization.  <a href="interface_crab_u_i_1_1_i_serialization_props.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_crab_u_i_1_1_i_simple_props.html">ISimpleProps</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Props used in simple layout.  <a href="interface_crab_u_i_1_1_i_simple_props.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_mod_storage.html">ModStorage</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global data repository <br  />

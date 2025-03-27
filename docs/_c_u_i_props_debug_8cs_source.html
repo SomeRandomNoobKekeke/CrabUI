@@ -121,27 +121,52 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>      <span class="keywordflow">return</span> Instance;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    }</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">public</span> CUIPropsInterface Props;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">public</span> CUIPropsDebug() : base()</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#af5fd8b560d8752337777edb44aa2faab">Absolute</a> = <span class="keyword">new</span> CUINullRect(0, 0, 200, 400);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a7fae3cdaeecaf5bc24120cddfb4b2af2">Anchor</a> = <span class="keyword">new</span> Vector2(0.2f, 0.5f);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      CUIPrefab.ListFrameWithHeader(<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      <span class="keyword">this</span>[<span class="stringliteral">&quot;content&quot;</span>][<span class="stringliteral">&quot;props&quot;</span>] = Props = <span class="keyword">new</span> CUIPropsInterface()</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">public</span> CUIComponentSelector Selector;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">public</span> CUIPropsInterface Props;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">public</span> CUIPropsDebug() : base()</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#af5fd8b560d8752337777edb44aa2faab">Absolute</a> = <span class="keyword">new</span> CUINullRect(w: 600, h: 400);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a7fae3cdaeecaf5bc24120cddfb4b2af2">Anchor</a> = <span class="keyword">new</span> Vector2(0.3f, 0.5f);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      <span class="keyword">this</span>[<span class="stringliteral">&quot;layout&quot;</span>] = <span class="keyword">new</span> CUIVerticalList()</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      {</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a3bf46498c5f0dae185b27ebb3a452c98">Relative</a> = <span class="keyword">new</span> CUINullRect(0, 0, 1, 1)</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a3bf46498c5f0dae185b27ebb3a452c98">Relative</a> = <span class="keyword">new</span> CUINullRect(0, 0, 1, 1),</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      };</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      Props.Target = <span class="keyword">this</span>;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      <a class="code hl_function" href="class_crab_u_i_1_1_c_u_i_component.html#a6dd0fb51c40240e285b04e3b53ad5e5d">AddCommand</a>(<span class="stringliteral">&quot;close frame&quot;</span>, (o) =&gt; RemoveSelf());</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  }</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      <span class="keyword">this</span>[<span class="stringliteral">&quot;layout&quot;</span>][<span class="stringliteral">&quot;handle&quot;</span>] = CUIPrefab.FormHandle(<span class="stringliteral">&quot;Prop Debug&quot;</span>);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>      <span class="keyword">this</span>[<span class="stringliteral">&quot;layout&quot;</span>][<span class="stringliteral">&quot;main&quot;</span>] = <span class="keyword">new</span> CUIHorizontalList()</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a00637fe15f2c5dcd2cbcfea8bbde8911">FillEmptySpace</a> = <span class="keyword">new</span> CUIBool2(<span class="keyword">false</span>, <span class="keyword">true</span>),</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        ConsumeDragAndDrop = <span class="keyword">true</span>,</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>      };</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>      <span class="keyword">this</span>[<span class="stringliteral">&quot;layout&quot;</span>][<span class="stringliteral">&quot;main&quot;</span>][<span class="stringliteral">&quot;select&quot;</span>] = Selector = <span class="keyword">new</span> CUIComponentSelector()</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>      {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a80a8a2f6fe26a69ba6f9aaad453f38fb">FitContent</a> = <span class="keyword">new</span> CUIBool2(<span class="keyword">true</span>, <span class="keyword">false</span>),</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        DeepPalette = PaletteOrder.Secondary,</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a7db80658c26d4041f54ce3aa469854af">BackgroundColor</a> = <span class="keyword">new</span> Color(0, 0, 0),</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>      };</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>      <span class="keyword">this</span>[<span class="stringliteral">&quot;layout&quot;</span>][<span class="stringliteral">&quot;main&quot;</span>][<span class="stringliteral">&quot;props&quot;</span>] = Props = <span class="keyword">new</span> CUIPropsInterface()</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>      {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a00637fe15f2c5dcd2cbcfea8bbde8911">FillEmptySpace</a> = <span class="keyword">new</span> CUIBool2(<span class="keyword">true</span>, <span class="keyword">false</span>),</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        DeepPalette = PaletteOrder.Secondary,</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>      };</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      Selector.OnSelect += (c) =&gt; Props.Target = c;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>      Props.Target = <span class="keyword">this</span>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>      IgnoreDebug = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>      Selector.Refresh();</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}</div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a00637fe15f2c5dcd2cbcfea8bbde8911"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a00637fe15f2c5dcd2cbcfea8bbde8911">CrabUI.CUIComponent.FillEmptySpace</a></div><div class="ttdeci">CUIBool2 FillEmptySpace</div><div class="ttdoc">Will be resized to fill empty space in list components.</div><div class="ttdef"><b>Definition</b> <a href="_layout_01_props_8cs_source.html#l00105">Layout Props.cs:106</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a3bf46498c5f0dae185b27ebb3a452c98"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a3bf46498c5f0dae185b27ebb3a452c98">CrabUI.CUIComponent.Relative</a></div><div class="ttdeci">CUINullRect Relative</div><div class="ttdoc">Relative to parent size and position, [0..1].</div><div class="ttdef"><b>Definition</b> <a href="_layout_01_props_8cs_source.html#l00144">Layout Props.cs:145</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a6dd0fb51c40240e285b04e3b53ad5e5d"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a6dd0fb51c40240e285b04e3b53ad5e5d">CrabUI.CUIComponent.AddCommand</a></div><div class="ttdeci">void AddCommand(string name, Action&lt; object &gt; action)</div><div class="ttdoc">Manually adds command.</div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a7db80658c26d4041f54ce3aa469854af"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a7db80658c26d4041f54ce3aa469854af">CrabUI.CUIComponent.BackgroundColor</a></div><div class="ttdeci">Color BackgroundColor</div><div class="ttdoc">Color of BackgroundSprite, default is black   If you're using custom sprite and don't see it make sur...</div><div class="ttdef"><b>Definition</b> <a href="_graphic_01_props_8cs_source.html#l00089">Graphic Props.cs:90</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a7fae3cdaeecaf5bc24120cddfb4b2af2"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a7fae3cdaeecaf5bc24120cddfb4b2af2">CrabUI.CUIComponent.Anchor</a></div><div class="ttdeci">Vector2 Anchor</div><div class="ttdoc">this point of this component</div><div class="ttdef"><b>Definition</b> <a href="_layout_01_props_8cs_source.html#l00063">Layout Props.cs:63</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a80a8a2f6fe26a69ba6f9aaad453f38fb"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a80a8a2f6fe26a69ba6f9aaad453f38fb">CrabUI.CUIComponent.FitContent</a></div><div class="ttdeci">CUIBool2 FitContent</div><div class="ttdoc">Will resize itself to fit components with absolute size, e.g. text.</div><div class="ttdef"><b>Definition</b> <a href="_layout_01_props_8cs_source.html#l00114">Layout Props.cs:115</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_af5fd8b560d8752337777edb44aa2faab"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#af5fd8b560d8752337777edb44aa2faab">CrabUI.CUIComponent.Absolute</a></div><div class="ttdeci">CUINullRect Absolute</div><div class="ttdoc">Absolute size and position in pixels.</div><div class="ttdef"><b>Definition</b> <a href="_layout_01_props_8cs_source.html#l00123">Layout Props.cs:124</a></div></div>
 <div class="ttc" id="anamespace_crab_u_i_html"><div class="ttname"><a href="namespace_crab_u_i.html">CrabUI</a></div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_animation_8cs_source.html#l00011">CUIAnimation.cs:12</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

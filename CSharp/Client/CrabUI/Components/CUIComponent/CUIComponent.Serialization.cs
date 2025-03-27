@@ -135,16 +135,13 @@ namespace CrabUI
     #endregion
     #region XML --------------------------------------------------------
 
-    public static bool ForceSaveAllProps { get; set; } = false;
-    public static bool SaveAfterLoad { get; set; } = true;
-
     public string SavePath { get; set; }
 
     public virtual XElement ToXML(CUIAttribute propAttribute = CUIAttribute.CUISerializable)
     {
       try
       {
-        if (Unserializable) return null;
+        if (!Serializable) return null;
 
         Type type = GetType();
 
@@ -154,7 +151,7 @@ namespace CrabUI
 
         foreach (CUIComponent child in Children)
         {
-          if (!this.BreakSerialization)
+          if (this.SerializeChildren)
           {
             e.Add(child.ToXML(propAttribute));
           }
@@ -172,6 +169,8 @@ namespace CrabUI
 
     public virtual void FromXML(XElement element, string baseFolder = null)
     {
+      //RemoveAllChildren();
+
       foreach (XElement childElement in element.Elements())
       {
         Type childType = CUIReflection.GetComponentTypeByName(childElement.Name.ToString());
@@ -180,8 +179,49 @@ namespace CrabUI
         CUIComponent child = (CUIComponent)Activator.CreateInstance(childType);
         child.FromXML(childElement, baseFolder);
 
+        if (child.MergeSerialization)
+        {
+          try
+          {
+            if (child.AKA == null || !this.NamedComponents.ContainsKey(child.AKA))
+            {
+              CUI.Warning($"Can't merge {child} into {this}");
+              CUI.Warning($"Merge deserialization requre matching AKA");
+              this.Append(child, child.AKA);
+            }
+            else
+            {
+              List<CUIComponent> children = new List<CUIComponent>(child.Children);
+              foreach (CUIComponent c in children)
+              {
+                this[child.AKA].Append(c);
+              }
+            }
+          }
+          catch (Exception e)
+          {
+            CUI.Warning($"Merge deserialization of {child} into {this}[{child.AKA}] failed");
+            CUI.Warning(e.Message);
+          }
+        }
+        else
+        {
+          if (child.AKA != null && this.NamedComponents.ContainsKey(child.AKA))
+          {
+            if (child.ReplaceSerialization)
+            {
+              this.RemoveChild(this[child.AKA]);
+            }
+            else
+            {
+              CUI.Warning($"{this} already contains {child.AKA}, so deserialization will create a duplicate\nTry using ReplaceSerialization or MergeSerialization");
+            }
+          }
+
+          this.Append(child, child.AKA);
+        }
+
         //CUI.Log($"{this}[{child.AKA}] = {child} ");
-        this.Append(child, child.AKA);
       }
 
       ExtractProps(element, baseFolder);
@@ -197,73 +237,30 @@ namespace CrabUI
       {
         if (!meta.Serializable.ContainsKey(attribute.Name.ToString()))
         {
-          CUIDebug.Error($"Can't parse prop {attribute.Name} in {type.Name} because type metadata doesn't contain that prop (is it a property? fields aren't supported yet)");
+          CUI.Warning($"Can't parse prop {attribute.Name} in {type.Name} because type metadata doesn't contain that prop (is it a property? fields aren't supported yet)");
           continue;
         }
 
         PropertyInfo prop = meta.Serializable[attribute.Name.ToString()];
 
-        MethodInfo parse = null;
-        if (CUIExtensions.Parse.ContainsKey(prop.PropertyType))
+        try
         {
-          parse = CUIExtensions.Parse[prop.PropertyType];
-        }
-
-        parse ??= prop.PropertyType.GetMethod(
-          "Parse",
-          BindingFlags.Public | BindingFlags.Static,
-          new Type[] { typeof(string) }
-        );
-
-
-        Func<string, object> ParseWithContext = null;
-        //HACK
-        if (prop.PropertyType == typeof(CUISprite) && baseFolder != null)
-        {
-          ParseWithContext = (raw) => CUISprite.ParseWithContext(raw, baseFolder);
-        }
-
-
-        if (parse == null)
-        {
-          if (prop.PropertyType.IsEnum)
+          if (prop.PropertyType == typeof(CUISprite) && baseFolder != null)
           {
-            try
-            {
-              prop.SetValue(this, Enum.Parse(prop.PropertyType, attribute.Value));
-            }
-            catch (Exception e)
-            {
-              CUIDebug.Error($"Can't parse {attribute.Value} into {prop.PropertyType.Name}\n{e}");
-            }
+            prop.SetValue(this, CUISprite.ParseWithContext(attribute.Value, baseFolder));
           }
           else
           {
-            CUIDebug.Error($"Can't parse prop {prop.Name} in {type.Name} because it's type {prop.PropertyType.Name} is missing Parse method");
+            prop.SetValue(this, CUIParser.Parse(attribute.Value, prop.PropertyType, false));
           }
         }
-        else
+        catch (Exception e)
         {
-          try
-          {
-            object result = null;
-            if (ParseWithContext != null)
-            {
-              result = ParseWithContext(attribute.Value);
-            }
-            else
-            {
-              result = parse.Invoke(null, new object[] { attribute.Value });
-            }
-            prop.SetValue(this, result);
-          }
-          catch (Exception e)
-          {
-            CUIDebug.Error($"Can't parse {attribute.Value} into {prop.PropertyType.Name}\n{e}");
-          }
+          CUI.Warning($"Can't parse {attribute.Value} into {prop.PropertyType.Name}\n{e}");
         }
       }
     }
+
 
     protected void PackProps(XElement element, CUIAttribute propAttribute = CUIAttribute.CUISerializable)
     {
@@ -288,16 +285,7 @@ namespace CrabUI
             continue;
           }
 
-          MethodInfo customToString = CUIExtensions.CustomToString.GetValueOrDefault(props[key].PropertyType);
-
-          if (customToString != null)
-          {
-            element?.SetAttributeValue(key, customToString.Invoke(null, new object[] { value }));
-          }
-          else
-          {
-            element?.SetAttributeValue(key, value);
-          }
+          element?.SetAttributeValue(key, CUIParser.Serialize(value, false));
         }
         catch (Exception e)
         {
@@ -360,7 +348,7 @@ namespace CrabUI
         CUIComponent.RunRecursiveOn(this, (component) => component.Hydrate());
         SavePath = path;
 
-        if (SaveAfterLoad && saveAfterLoad) SaveToTheSamePath();
+        if (saveAfterLoad) SaveToTheSamePath();
       }
       catch (Exception ex)
       {
@@ -382,7 +370,7 @@ namespace CrabUI
 
         result.SavePath = path;
 
-        if (SaveAfterLoad && saveAfterLoad) result.SaveToTheSamePath();
+        if (saveAfterLoad) result.SaveToTheSamePath();
 
         return result;
       }
@@ -407,7 +395,7 @@ namespace CrabUI
 
         result.SavePath = path;
 
-        if (SaveAfterLoad && saveAfterLoad) result.SaveToTheSamePath();
+        if (saveAfterLoad) result.SaveToTheSamePath();
 
         return result;
       }

@@ -27,7 +27,7 @@ namespace CrabUI
     public static void Log(object msg, Color? cl = null)
     {
       if (!CUI.Debug) return;
-      cl ??= Color.Yellow;
+      cl ??= new Color(255, 64, 255);
       LuaCsLogger.LogMessage($"{msg ?? "null"}", cl * 0.8f, cl);
     }
 

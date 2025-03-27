@@ -72,7 +72,7 @@ namespace CrabUI
     public event Action<bool> OnStateChange;
     public Action<bool> AddOnStateChange { set { OnStateChange += value; } }
 
-
+    [CUISerializable] public bool ToggleOnClick { get; set; } = true;
     protected bool state;
     [CUISerializable]
     public bool State
@@ -126,9 +126,12 @@ namespace CrabUI
       {
         if (!Disabled)
         {
-          State = !State;
           if (PlaySound) SoundPlayer.PlayUISound(ClickSound);
-          OnStateChange?.Invoke(State);
+          if (ToggleOnClick)
+          {
+            State = !State;
+            OnStateChange?.Invoke(State);
+          }
         }
       };
     }

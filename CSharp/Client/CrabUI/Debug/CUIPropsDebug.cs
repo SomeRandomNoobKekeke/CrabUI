@@ -26,21 +26,44 @@ namespace CrabUI
       return Instance;
     }
 
+    public CUIComponentSelector Selector;
     public CUIPropsInterface Props;
 
     public CUIPropsDebug() : base()
     {
-      Absolute = new CUINullRect(0, 0, 200, 400);
-      Anchor = new Vector2(0.2f, 0.5f);
+      Absolute = new CUINullRect(w: 600, h: 400);
+      Anchor = new Vector2(0.3f, 0.5f);
 
-      CUIPrefab.ListFrameWithHeader(this);
-      this["content"]["props"] = Props = new CUIPropsInterface()
+      this["layout"] = new CUIVerticalList()
       {
-        Relative = new CUINullRect(0, 0, 1, 1)
+        Relative = new CUINullRect(0, 0, 1, 1),
       };
-      Props.Target = this;
+      this["layout"]["handle"] = CUIPrefab.FormHandle("Prop Debug");
+      this["layout"]["main"] = new CUIHorizontalList()
+      {
+        FillEmptySpace = new CUIBool2(false, true),
+        ConsumeDragAndDrop = true,
+      };
 
-      AddCommand("close frame", (o) => RemoveSelf());
+      this["layout"]["main"]["select"] = Selector = new CUIComponentSelector()
+      {
+        FitContent = new CUIBool2(true, false),
+        DeepPalette = PaletteOrder.Secondary,
+        BackgroundColor = new Color(0, 0, 0),
+      };
+      this["layout"]["main"]["props"] = Props = new CUIPropsInterface()
+      {
+        FillEmptySpace = new CUIBool2(true, false),
+        DeepPalette = PaletteOrder.Secondary,
+      };
+
+      Selector.OnSelect += (c) => Props.Target = c;
+
+      Props.Target = this;
+      IgnoreDebug = true;
+
+
+      Selector.Refresh();
     }
   }
 }

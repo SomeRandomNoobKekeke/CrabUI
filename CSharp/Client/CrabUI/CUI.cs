@@ -259,6 +259,7 @@ namespace CrabUI
         RemoveCommands();
         // harmony.UnpatchAll(harmony.Id);
         harmony.UnpatchAll();
+
         TextureManager.Dispose();
         CUIDebugEventComponent.CapturedIDs.Clear();
         OnDispose?.Invoke();
@@ -286,6 +287,7 @@ namespace CrabUI
     // why am i responsible for initing them here?
     internal static void InitStatic()
     {
+      CUITextureManager.InitStatic();
       CUIInterpolate.InitStatic();
       CUIAnimation.InitStatic();
       CUIReflection.InitStatic();
@@ -296,6 +298,7 @@ namespace CrabUI
       CUIComponent.InitStatic();
       CUITypeMetaData.InitStatic();
       CUIStyleLoader.InitStatic();
+      AttachedItems.InitStatic();
     }
   }
 }

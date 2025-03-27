@@ -172,6 +172,8 @@ Properties</h2></td></tr>
 <tr class="memitem:abb4dd6d39aeba843e526244b80477722" id="r_abb4dd6d39aeba843e526244b80477722"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb4dd6d39aeba843e526244b80477722">Bounce</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:abb4dd6d39aeba843e526244b80477722"><td class="mdescLeft">&#160;</td><td class="mdescRight">If true animation won't stop when reaching end, it will change direction.  <br /></td></tr>
 <tr class="separator:abb4dd6d39aeba843e526244b80477722"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a691f429a5d70297d2355b75ea9d418b8" id="r_a691f429a5d70297d2355b75ea9d418b8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a691f429a5d70297d2355b75ea9d418b8">Repeat</a><code> [get, set]</code></td></tr>
+<tr class="separator:a691f429a5d70297d2355b75ea9d418b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadfa660a48ec9ed5e7bb6ac157fe2f43" id="r_aadfa660a48ec9ed5e7bb6ac157fe2f43"><td class="memItemLeft" align="right" valign="top">CUIDirection&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aadfa660a48ec9ed5e7bb6ac157fe2f43">Direction</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:aadfa660a48ec9ed5e7bb6ac157fe2f43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Straight, Reverse.  <br /></td></tr>
 <tr class="separator:aadfa660a48ec9ed5e7bb6ac157fe2f43"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -212,12 +214,12 @@ Events</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_animation_8cs_source.html#l00242">242</a> of file <a class="el" href="_c_u_i_animation_8cs_source.html">CUIAnimation.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  243</span>    {</div>
-<div class="line"><span class="lineno">  244</span>      <span class="keywordflow">if</span> (interpolate == <span class="keyword">null</span>) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  245</span>      <span class="keywordtype">object</span> value = interpolate.Invoke((<span class="keywordtype">float</span>)<a class="code hl_property" href="#a90bbf411ae4d037cf1508d04630e9bfe">Lambda</a>);</div>
-<div class="line"><span class="lineno">  246</span>      setter?.Invoke(value);</div>
-<div class="line"><span class="lineno">  247</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_animation_8cs_source.html#l00245">245</a> of file <a class="el" href="_c_u_i_animation_8cs_source.html">CUIAnimation.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  246</span>    {</div>
+<div class="line"><span class="lineno">  247</span>      <span class="keywordflow">if</span> (interpolate == <span class="keyword">null</span>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  248</span>      <span class="keywordtype">object</span> value = interpolate.Invoke((<span class="keywordtype">float</span>)<a class="code hl_property" href="#a90bbf411ae4d037cf1508d04630e9bfe">Lambda</a>);</div>
+<div class="line"><span class="lineno">  249</span>      setter?.Invoke(value);</div>
+<div class="line"><span class="lineno">  250</span>    }</div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_animation_html_a90bbf411ae4d037cf1508d04630e9bfe"><div class="ttname"><a href="#a90bbf411ae4d037cf1508d04630e9bfe">CrabUI.CUIAnimation.Lambda</a></div><div class="ttdeci">double Lambda</div><div class="ttdoc">Progress of animation [0..1].</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_animation_8cs_source.html#l00100">CUIAnimation.cs:100</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -239,12 +241,12 @@ Events</h2></td></tr>
 
 <p>Set Direction to Reverse and Start. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_animation_8cs_source.html#l00209">209</a> of file <a class="el" href="_c_u_i_animation_8cs_source.html">CUIAnimation.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  210</span>    {</div>
-<div class="line"><span class="lineno">  211</span>      <a class="code hl_property" href="#aadfa660a48ec9ed5e7bb6ac157fe2f43">Direction</a> = CUIDirection.Reverse;</div>
-<div class="line"><span class="lineno">  212</span>      Active = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  213</span>    }</div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_animation_html_aadfa660a48ec9ed5e7bb6ac157fe2f43"><div class="ttname"><a href="#aadfa660a48ec9ed5e7bb6ac157fe2f43">CrabUI.CUIAnimation.Direction</a></div><div class="ttdeci">CUIDirection Direction</div><div class="ttdoc">Straight, Reverse.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_animation_8cs_source.html#l00113">CUIAnimation.cs:113</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_animation_8cs_source.html#l00210">210</a> of file <a class="el" href="_c_u_i_animation_8cs_source.html">CUIAnimation.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  211</span>    {</div>
+<div class="line"><span class="lineno">  212</span>      <a class="code hl_property" href="#aadfa660a48ec9ed5e7bb6ac157fe2f43">Direction</a> = CUIDirection.Reverse;</div>
+<div class="line"><span class="lineno">  213</span>      Active = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  214</span>    }</div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_animation_html_aadfa660a48ec9ed5e7bb6ac157fe2f43"><div class="ttname"><a href="#aadfa660a48ec9ed5e7bb6ac157fe2f43">CrabUI.CUIAnimation.Direction</a></div><div class="ttdeci">CUIDirection Direction</div><div class="ttdoc">Straight, Reverse.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_animation_8cs_source.html#l00114">CUIAnimation.cs:114</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -263,11 +265,11 @@ Events</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_animation_8cs_source.html#l00152">152</a> of file <a class="el" href="_c_u_i_animation_8cs_source.html">CUIAnimation.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  153</span>    {</div>
-<div class="line"><span class="lineno">  154</span>      <span class="keywordflow">if</span> (myActionT == <span class="keyword">null</span>) <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">  155</span>      <span class="keywordflow">else</span> <span class="keywordflow">return</span> <span class="keyword">new</span> Action&lt;object&gt;(o =&gt; myActionT((T)o));</div>
-<div class="line"><span class="lineno">  156</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_animation_8cs_source.html#l00153">153</a> of file <a class="el" href="_c_u_i_animation_8cs_source.html">CUIAnimation.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  154</span>    {</div>
+<div class="line"><span class="lineno">  155</span>      <span class="keywordflow">if</span> (myActionT == <span class="keyword">null</span>) <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  156</span>      <span class="keywordflow">else</span> <span class="keywordflow">return</span> <span class="keyword">new</span> Action&lt;object&gt;(o =&gt; myActionT((T)o));</div>
+<div class="line"><span class="lineno">  157</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -288,11 +290,11 @@ Events</h2></td></tr>
 
 <p>Set Direction to Straight and Start. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_animation_8cs_source.html#l00201">201</a> of file <a class="el" href="_c_u_i_animation_8cs_source.html">CUIAnimation.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  202</span>    {</div>
-<div class="line"><span class="lineno">  203</span>      <a class="code hl_property" href="#aadfa660a48ec9ed5e7bb6ac157fe2f43">Direction</a> = CUIDirection.Straight;</div>
-<div class="line"><span class="lineno">  204</span>      Active = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  205</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_animation_8cs_source.html#l00202">202</a> of file <a class="el" href="_c_u_i_animation_8cs_source.html">CUIAnimation.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  203</span>    {</div>
+<div class="line"><span class="lineno">  204</span>      <a class="code hl_property" href="#aadfa660a48ec9ed5e7bb6ac157fe2f43">Direction</a> = CUIDirection.Straight;</div>
+<div class="line"><span class="lineno">  205</span>      Active = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  206</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -311,13 +313,13 @@ Events</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_animation_8cs_source.html#l00249">249</a> of file <a class="el" href="_c_u_i_animation_8cs_source.html">CUIAnimation.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  250</span>    {</div>
-<div class="line"><span class="lineno">  251</span>      UpdateState();</div>
-<div class="line"><span class="lineno">  252</span>      ApplyValue();</div>
-<div class="line"><span class="lineno">  253</span>      <a class="code hl_property" href="#a90bbf411ae4d037cf1508d04630e9bfe">Lambda</a> += <a class="code hl_property" href="#aadfa660a48ec9ed5e7bb6ac157fe2f43">Direction</a> == CUIDirection.Straight ? <a class="code hl_property" href="#a1e739e24ef2e7cbbb1cdb912e9509af0">Speed</a> : -(BackSpeed ?? <a class="code hl_property" href="#a1e739e24ef2e7cbbb1cdb912e9509af0">Speed</a>);</div>
-<div class="line"><span class="lineno">  254</span>      <span class="keywordflow">if</span> (Debug) LogStatus();</div>
-<div class="line"><span class="lineno">  255</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_animation_8cs_source.html#l00252">252</a> of file <a class="el" href="_c_u_i_animation_8cs_source.html">CUIAnimation.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  253</span>    {</div>
+<div class="line"><span class="lineno">  254</span>      UpdateState();</div>
+<div class="line"><span class="lineno">  255</span>      ApplyValue();</div>
+<div class="line"><span class="lineno">  256</span>      <a class="code hl_property" href="#a90bbf411ae4d037cf1508d04630e9bfe">Lambda</a> += <a class="code hl_property" href="#aadfa660a48ec9ed5e7bb6ac157fe2f43">Direction</a> == CUIDirection.Straight ? <a class="code hl_property" href="#a1e739e24ef2e7cbbb1cdb912e9509af0">Speed</a> : -(BackSpeed ?? <a class="code hl_property" href="#a1e739e24ef2e7cbbb1cdb912e9509af0">Speed</a>);</div>
+<div class="line"><span class="lineno">  257</span>      <span class="keywordflow">if</span> (Debug) LogStatus();</div>
+<div class="line"><span class="lineno">  258</span>    }</div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_animation_html_a1e739e24ef2e7cbbb1cdb912e9509af0"><div class="ttname"><a href="#a1e739e24ef2e7cbbb1cdb912e9509af0">CrabUI.CUIAnimation.Speed</a></div><div class="ttdeci">double Speed</div><div class="ttdoc">Lambda increase per update step, calculated when you set Duration.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_animation_8cs_source.html#l00104">CUIAnimation.cs:104</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -337,11 +339,11 @@ Events</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_animation_8cs_source.html#l00193">193</a> of file <a class="el" href="_c_u_i_animation_8cs_source.html">CUIAnimation.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  194</span>    {</div>
-<div class="line"><span class="lineno">  195</span>      Active = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  196</span>      OnStop?.Invoke(<a class="code hl_property" href="#aadfa660a48ec9ed5e7bb6ac157fe2f43">Direction</a>);</div>
-<div class="line"><span class="lineno">  197</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_animation_8cs_source.html#l00194">194</a> of file <a class="el" href="_c_u_i_animation_8cs_source.html">CUIAnimation.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  195</span>    {</div>
+<div class="line"><span class="lineno">  196</span>      Active = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  197</span>      OnStop?.Invoke(<a class="code hl_property" href="#aadfa660a48ec9ed5e7bb6ac157fe2f43">Direction</a>);</div>
+<div class="line"><span class="lineno">  198</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -582,8 +584,8 @@ Events</h2></td></tr>
 
 <p>Straight, Reverse. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_animation_8cs_source.html#l00113">113</a> of file <a class="el" href="_c_u_i_animation_8cs_source.html">CUIAnimation.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  113</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_animation_8cs_source.html#l00114">114</a> of file <a class="el" href="_c_u_i_animation_8cs_source.html">CUIAnimation.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  114</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -641,8 +643,8 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_animation_8cs_source.html#l00118">118</a> of file <a class="el" href="_c_u_i_animation_8cs_source.html">CUIAnimation.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  118</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_animation_8cs_source.html#l00119">119</a> of file <a class="el" href="_c_u_i_animation_8cs_source.html">CUIAnimation.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  119</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -668,15 +670,15 @@ Events</h2></td></tr>
 
 <p>You can set custon Interpolate function. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_animation_8cs_source.html#l00140">140</a> of file <a class="el" href="_c_u_i_animation_8cs_source.html">CUIAnimation.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  141</span>    {</div>
-<div class="line"><span class="lineno">  142</span>      <span class="keyword">get</span> =&gt; interpolate;</div>
-<div class="line"><span class="lineno">  143</span>      <span class="keyword">set</span></div>
-<div class="line"><span class="lineno">  144</span>      {</div>
-<div class="line"><span class="lineno">  145</span>        customInterpolate = value;</div>
-<div class="line"><span class="lineno">  146</span>        UpdateSetter();</div>
-<div class="line"><span class="lineno">  147</span>      }</div>
-<div class="line"><span class="lineno">  148</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_animation_8cs_source.html#l00141">141</a> of file <a class="el" href="_c_u_i_animation_8cs_source.html">CUIAnimation.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  142</span>    {</div>
+<div class="line"><span class="lineno">  143</span>      <span class="keyword">get</span> =&gt; interpolate;</div>
+<div class="line"><span class="lineno">  144</span>      <span class="keyword">set</span></div>
+<div class="line"><span class="lineno">  145</span>      {</div>
+<div class="line"><span class="lineno">  146</span>        customInterpolate = value;</div>
+<div class="line"><span class="lineno">  147</span>        UpdateSetter();</div>
+<div class="line"><span class="lineno">  148</span>      }</div>
+<div class="line"><span class="lineno">  149</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -729,15 +731,40 @@ Events</h2></td></tr>
 
 <p>Property name that is animated. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_animation_8cs_source.html#l00126">126</a> of file <a class="el" href="_c_u_i_animation_8cs_source.html">CUIAnimation.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  127</span>    {</div>
-<div class="line"><span class="lineno">  128</span>      <span class="keyword">get</span> =&gt; property;</div>
-<div class="line"><span class="lineno">  129</span>      <span class="keyword">set</span></div>
-<div class="line"><span class="lineno">  130</span>      {</div>
-<div class="line"><span class="lineno">  131</span>        <span class="keyword">property</span> = value;</div>
-<div class="line"><span class="lineno">  132</span>        UpdateSetter();</div>
-<div class="line"><span class="lineno">  133</span>      }</div>
-<div class="line"><span class="lineno">  134</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_animation_8cs_source.html#l00127">127</a> of file <a class="el" href="_c_u_i_animation_8cs_source.html">CUIAnimation.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  128</span>    {</div>
+<div class="line"><span class="lineno">  129</span>      <span class="keyword">get</span> =&gt; property;</div>
+<div class="line"><span class="lineno">  130</span>      <span class="keyword">set</span></div>
+<div class="line"><span class="lineno">  131</span>      {</div>
+<div class="line"><span class="lineno">  132</span>        <span class="keyword">property</span> = value;</div>
+<div class="line"><span class="lineno">  133</span>        UpdateSetter();</div>
+<div class="line"><span class="lineno">  134</span>      }</div>
+<div class="line"><span class="lineno">  135</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a691f429a5d70297d2355b75ea9d418b8" name="a691f429a5d70297d2355b75ea9d418b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a691f429a5d70297d2355b75ea9d418b8">&#9670;&#160;</a></span>Repeat</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CrabUI.CUIAnimation.Repeat</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_animation_8cs_source.html#l00110">110</a> of file <a class="el" href="_c_u_i_animation_8cs_source.html">CUIAnimation.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  110</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -822,8 +849,8 @@ Events</h2></td></tr>
 
 <p>Value will be interpolated between these values. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_animation_8cs_source.html#l00117">117</a> of file <a class="el" href="_c_u_i_animation_8cs_source.html">CUIAnimation.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  117</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_animation_8cs_source.html#l00118">118</a> of file <a class="el" href="_c_u_i_animation_8cs_source.html">CUIAnimation.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  118</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -874,7 +901,7 @@ Events</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_animation_8cs_source.html#l00136">136</a> of file <a class="el" href="_c_u_i_animation_8cs_source.html">CUIAnimation.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_animation_8cs_source.html#l00137">137</a> of file <a class="el" href="_c_u_i_animation_8cs_source.html">CUIAnimation.cs</a>.</p>
 
 </div>
 </div>

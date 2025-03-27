@@ -29,7 +29,7 @@ namespace CrabUI
     public event Action<string> OnSelect;
     public Action<string> AddOnSelect { set { OnSelect += value; } }
 
-    public bool CycleOnClick { get; set; } = true;
+    [CUISerializable] public bool CycleOnClick { get; set; } = true;
     public int SelectedIndex
     {
       get => options.IndexOf(Selected);

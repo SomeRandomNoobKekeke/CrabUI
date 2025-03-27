@@ -120,6 +120,7 @@ namespace CrabUI
         if (!Attribute.IsDefined(type, typeof(NoDefaultAttribute)))
         {
           Default = (CUIComponent)Activator.CreateInstance(type);
+          Default.Unreal = true;
         }
       }
       catch (Exception e)

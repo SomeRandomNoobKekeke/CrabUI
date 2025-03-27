@@ -87,12 +87,6 @@ namespace CrabUI
         return null;
       });
 
-      GameMain.LuaCs.Hook.Add("think", CUIHookID, (object[] args) =>
-      {
-        CUIUpdateMouseOn();
-        CUIUpdate(Timing.TotalTime);
-        return null;
-      });
 
       // this hook seems to do nothing
       // GameMain.LuaCs.Hook.Add("Camera_MoveCamera_Prefix", CUIHookID, (object[] args) =>
@@ -130,15 +124,15 @@ namespace CrabUI
         prefix: new HarmonyMethod(typeof(CUI).GetMethod("GUI_DrawCursor_Prefix", AccessTools.all))
       );
 
-      harmony.Patch(
-        original: typeof(GameMain).GetMethod("Update", AccessTools.all),
-        postfix: new HarmonyMethod(typeof(CUI).GetMethod("GameMain_Update_Postfix", AccessTools.all))
-      );
+      // harmony.Patch(
+      //   original: typeof(GameMain).GetMethod("Update", AccessTools.all),
+      //   postfix: new HarmonyMethod(typeof(CUI).GetMethod("GameMain_Update_Postfix", AccessTools.all))
+      // );
 
-      harmony.Patch(
-        original: typeof(GUI).GetMethod("UpdateMouseOn", AccessTools.all),
-        postfix: new HarmonyMethod(typeof(CUI).GetMethod("GUI_UpdateMouseOn_Postfix", AccessTools.all))
-      );
+      // harmony.Patch(
+      //   original: typeof(GUI).GetMethod("UpdateMouseOn", AccessTools.all),
+      //   postfix: new HarmonyMethod(typeof(CUI).GetMethod("GUI_UpdateMouseOn_Postfix", AccessTools.all))
+      // );
 
       harmony.Patch(
         original: typeof(Camera).GetMethod("MoveCamera", AccessTools.all),
@@ -161,11 +155,36 @@ namespace CrabUI
       );
     }
 
+    private static void AddAnyway()
+    {
+      GameMain.LuaCs.Hook.Add("think", CUIHookID, (object[] args) =>
+      {
+        CUIUpdateMouseOn();
+        CUIUpdate(Timing.TotalTime);
+        return null;
+      });
+
+      GameMain.LuaCs.Hook.Add("item.created", CUIHookID, (object[] args) =>
+      {
+        Item item = args.ElementAtOrDefault(0) as Item;
+        AttachedItems.ConnectIfMapped(item);
+        return null;
+      });
+
+      GameMain.LuaCs.Hook.Add("roundStart", CUIHookID, (object[] args) =>
+      {
+        AttachedItems.ShakeTheRefs();
+        return null;
+      });
+    }
+
 
     private static void PatchAll()
     {
       if (UseCursedPatches) AddHarmonyPatches();
       else AddHooks();
+
+      AddAnyway();
     }
 
 
@@ -179,6 +198,7 @@ namespace CrabUI
       if (Main == null) CUI.Error($"CUIUpdate: CUI.Main in {HookIdentifier} was null, tell the dev", 20, 5);
       try
       {
+        AttachedItems.UpdateAll();
         CUIAnimation.UpdateAllAnimations(time);
         CUI.Input?.Scan(time);
         TopMain?.Update(time);

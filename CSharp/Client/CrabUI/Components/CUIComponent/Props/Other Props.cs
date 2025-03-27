@@ -23,18 +23,16 @@ namespace CrabUI
     /// Arbitrary data
     /// </summary>
     public object Data { get; set; }
-
+    protected bool disabled;
     /// <summary>
-    /// Will prevent serialization to xml if true
+    /// Usually means - non interactable, e.g. unclickable gray button
     /// </summary>
-    public bool Unserializable { get; set; }
-
-    /// <summary>
-    /// Is this a serialization cutoff point  
-    /// Parent will serialize children down to this component
-    /// Further serialization should be hadled by this component
-    /// </summary>
-    [CUISerializable] public bool BreakSerialization { get; set; }
+    [CUISerializable]
+    public virtual bool Disabled
+    {
+      get => disabled;
+      set => disabled = value;
+    }
     /// <summary>
     /// Some props (like visible) are autopassed to all new childs
     /// see PassPropsToChild
@@ -80,19 +78,6 @@ namespace CrabUI
     {
       get => CUIProps.Revealed.Value;
       set => CUIProps.Revealed.SetValue(value);
-    }
-
-
-    //HACK this is meant for buttons, but i want to access it on generic components in CUIMap
-    protected bool disabled;
-    /// <summary>
-    /// Usually means - non interactable, e.g. unclickable gray button
-    /// </summary>
-    [CUISerializable]
-    public virtual bool Disabled
-    {
-      get => disabled;
-      set => disabled = value;
     }
   }
 }

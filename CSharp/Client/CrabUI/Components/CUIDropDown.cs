@@ -88,7 +88,7 @@ namespace CrabUI
 
     public CUIDropDown() : base()
     {
-      BreakSerialization = true;
+      SerializeChildren = false;
       OptionBox = new CUIVerticalList()
       {
         Relative = new CUINullRect(w: 1),

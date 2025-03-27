@@ -18,9 +18,8 @@ namespace CrabUI
   {
     public CUICloseButton() : base()
     {
-      Command = "Close";
+      Command = "Close Frame";
       Text = "";
-      ZIndex = 10;
       BackgroundSprite = CUI.TextureManager.GetCUISprite(3, 1);
       Absolute = new CUINullRect(0, 0, 15, 15);
     }

@@ -19,11 +19,14 @@ namespace CrabUI
     internal static List<DebugConsole.Command> AddedCommands = new List<DebugConsole.Command>();
     internal static void AddCommands()
     {
-      AddedCommands.Add(new DebugConsole.Command("cuicreatepalette", "cuicreatepalette name frontcolor [backcolor]", CUICreatePalette_Command));
+      AddedCommands.Add(new DebugConsole.Command("cuicreatepalette",
+      "cuicreatepalette name frontcolor [backcolor]", CUICreatePalette_Command)
+      );
       AddedCommands.Add(new DebugConsole.Command("printkeys", "", PrintSprites_Command));
+      AddedCommands.Add(new DebugConsole.Command("printcolors", "", PrintColors_Command));
       AddedCommands.Add(new DebugConsole.Command("cuipalette", "load palette as primary", Palette_Command, () => new string[][] { CUIPalette.LoadedPalettes.Keys.ToArray() }));
       AddedCommands.Add(new DebugConsole.Command("cuipalettedemo", "", PaletteDemo_Command));
-      AddedCommands.Add(new DebugConsole.Command("cuicreatepaletteset", "name primaty secondary tertiary quaternary", CUICreatePaletteSet_Command, () => new string[][] {
+      AddedCommands.Add(new DebugConsole.Command("cuicreatepaletteset", "cuicreatepaletteset name primaty secondary tertiary quaternary", CUICreatePaletteSet_Command, () => new string[][] {
         new string[]{},
         CUIPalette.LoadedPalettes.Keys.ToArray(),
         CUIPalette.LoadedPalettes.Keys.ToArray(),
@@ -33,8 +36,15 @@ namespace CrabUI
       AddedCommands.Add(new DebugConsole.Command("cuiloadpaletteset", "", CUILoadPaletteSet_Command));
       AddedCommands.Add(new DebugConsole.Command("cuicreateluatypesfile", "", CUICreateLuaTypesFile_Command));
 
-
       DebugConsole.Commands.InsertRange(0, AddedCommands);
+    }
+
+    public static void PrintColors_Command(string[] args)
+    {
+      foreach (PropertyInfo prop in typeof(Color).GetProperties(BindingFlags.Static | BindingFlags.Public))
+      {
+        CUI.Log($"{prop} {prop.GetValue(null)}", (Color)prop.GetValue(null));
+      }
     }
 
     public static void CUICreateLuaTypesFile_Command(string[] args)

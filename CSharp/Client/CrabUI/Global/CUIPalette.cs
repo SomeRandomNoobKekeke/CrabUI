@@ -15,10 +15,8 @@ using System.Xml.Linq;
 
 namespace CrabUI
 {
-  public enum PaletteOrder
-  {
-    Primary, Secondary, Tertiary, Quaternary
-  }
+  public enum PaletteOrder { Primary, Secondary, Tertiary, Quaternary }
+
   public record PaletteExtractResult(bool Ok, string Value = null);
   /// <summary>
   /// Contains abstract values that could be referenced in Styles
@@ -27,42 +25,72 @@ namespace CrabUI
   {
     internal static void InitStatic()
     {
-      CUI.OnInit += () =>
-      {
-        Initialize();
-      };
-      CUI.OnDispose += () =>
-      {
-        LoadedPalettes.Clear();
-      };
+      CUI.OnInit += () => Initialize();
+      CUI.OnDispose += () => LoadedPalettes.Clear();
     }
 
     public override string ToString() => $"CUIPalette {Name}";
     public static string PaletteSetsPath => Path.Combine(CUI.PalettesPath, "Sets");
+    /// <summary>
+    /// This palette set will be loadead on CUI.Initialize
+    /// </summary>
     public static string DefaultPalette = "Blue";
 
-
-    //TODO why is it here? how could sane person find these?
+    //TODO why are they here? how could sane person find these?
+    /// <summary>
+    /// Notifies when you try to set a style to a prop that doesn't exist
+    /// </summary>
     public static bool NotifyExcessivePropStyles { get; set; } = false;
+    /// <summary>
+    /// Notifies when prop asks for style that is missing in palette
+    /// </summary>
     public static bool NotifiMissingPropStyles { get; set; } = true;
 
-    public static PaletteExtractResult Extract(string nestedName, PaletteOrder order)
-    {
-      CUIPalette palette = order switch
-      {
-        PaletteOrder.Primary => Primary,
-        PaletteOrder.Secondary => Secondary,
-        PaletteOrder.Tertiary => Tertiary,
-        PaletteOrder.Quaternary => Quaternary,
-        _ => Empty,
-      };
-      if (!palette.Values.ContainsKey(nestedName)) return new PaletteExtractResult(false);
-      return new PaletteExtractResult(true, palette.Values[nestedName]);
-    }
+    public Dictionary<string, string> Values = BackupPalette;
 
-    public static CUIPalette Empty => new CUIPalette();
+    public string Name = "???";
+    public string BaseColor { get; set; } = "";
 
     public static Dictionary<string, CUIPalette> LoadedPalettes = new();
+    public static CUIPalette Empty => new CUIPalette();
+    public static Dictionary<string, string> BackupPalette => new Dictionary<string, string>()
+    {
+      ["Frame.Background"] = "0,0,0,200",
+      ["Frame.Border"] = "0,0,127,227",
+      ["Frame.Text"] = "229,229,255,255",
+      ["Header.Background"] = "0,0,76,216",
+      ["Header.Border"] = "0,0,102,222",
+      ["Header.Text"] = "229,229,255,255",
+      ["Nav.Background"] = "0,0,51,211",
+      ["Nav.Border"] = "0,0,76,216",
+      ["Nav.Text"] = "204,204,255,255",
+      ["Main.Background"] = "0,0,25,205",
+      ["Main.Border"] = "0,0,51,211",
+      ["Main.Text"] = "204,204,255,255",
+      ["Component.Background"] = "0,0,0,0",
+      ["Component.Border"] = "0,0,0,0",
+      ["Component.Text"] = "204,204,255,255",
+      ["Button.Background"] = "0,0,255,255",
+      ["Button.Border"] = "0,0,127,227",
+      ["Button.Disabled"] = "12,12,63,255",
+      ["CloseButton.Background"] = "51,51,255,255",
+      ["DDOption.Background"] = "0,0,76,216",
+      ["DDOption.Border"] = "0,0,51,211",
+      ["DDOption.Hover"] = "0,0,127,227",
+      ["DDOption.Text"] = "204,204,255,255",
+      ["Handle.Background"] = "51,51,152,232",
+      ["Handle.Grabbed"] = "51,51,255,255",
+      ["Slider"] = "178,178,255,255",
+      ["Input.Background"] = "0,0,51,211",
+      ["Input.Border"] = "0,0,76,216",
+      ["Input.Text"] = "204,204,255,255",
+      ["Input.Focused"] = "0,0,255,255",
+      ["Input.Invalid"] = "255,0,0,255",
+      ["Input.Valid"] = "0,255,0,255",
+      ["Input.Selection"] = "178,178,255,127",
+      ["Input.Caret"] = "178,178,255,127",
+    };
+
 
     private static CUIPalette primary = new CUIPalette();
     public static CUIPalette Primary
@@ -113,33 +141,42 @@ namespace CrabUI
     }
 
 
-    public Dictionary<string, string> Values = new();
-    public string Name = "???";
-    public string BaseColor { get; set; } = "";
-
-
 
     public static void Initialize()
     {
-      Stopwatch sw = Stopwatch.StartNew();
       if (CUI.PalettesPath == null) return;
+      Stopwatch sw = Stopwatch.StartNew();
 
-      LoadedPalettes.Clear();
+      try
+      {
+        LoadedPalettes.Clear();
+        LoadPalettes(CUI.PalettesPath);
+        LoadSet(Path.Combine(PaletteSetsPath, DefaultPalette + ".xml"));
 
-      LoadPalettes();
-
-      LoadSet(Path.Combine(PaletteSetsPath, DefaultPalette + ".xml"));
-      // Primary = LoadedPalettes.GetValueOrDefault("red");
-      // Secondary = LoadedPalettes.GetValueOrDefault("purple");
-      // Tertiary = LoadedPalettes.GetValueOrDefault("blue");
-      // Quaternary = LoadedPalettes.GetValueOrDefault("cyan");
+        //TransformToBackup(Primary);
+      }
+      catch (Exception e) { CUI.Warning(e); }
 
       CUIDebug.Log($"CUIPalette.Initialize took {sw.ElapsedMilliseconds}ms");
     }
 
-    public static void LoadPalettes()
+    public static PaletteExtractResult Extract(string nestedName, PaletteOrder order)
     {
-      foreach (string file in Directory.GetFiles(CUI.PalettesPath, "*.xml"))
+      CUIPalette palette = order switch
+      {
+        PaletteOrder.Primary => Primary,
+        PaletteOrder.Secondary => Secondary,
+        PaletteOrder.Tertiary => Tertiary,
+        PaletteOrder.Quaternary => Quaternary,
+        _ => Empty,
+      };
+      if (!palette.Values.ContainsKey(nestedName)) return new PaletteExtractResult(false);
+      return new PaletteExtractResult(true, palette.Values[nestedName]);
+    }
+
+    public static void LoadPalettes(string path)
+    {
+      foreach (string file in Directory.GetFiles(path, "*.xml"))
       {
         CUIPalette palette = LoadFrom(file);
         LoadedPalettes[palette.Name] = palette;
@@ -187,7 +224,6 @@ namespace CrabUI
 
       return palette;
     }
-
 
     public XElement ToXML()
     {
@@ -254,9 +290,6 @@ namespace CrabUI
       loadFrame(new Vector2(540, 0), PaletteOrder.Quaternary);
     }
 
-
-
-
     public static CUIPalette CreatePaletteFromColors(string name, Color colorA, Color? colorb = null)
     {
       CUIPalette palette = new CUIPalette()
@@ -322,11 +355,6 @@ namespace CrabUI
     /// <summary>
     /// Packs 4 palettes into 1 set
     /// </summary>
-    /// <param name="setName"></param>
-    /// <param name="primary"></param>
-    /// <param name="secondary"></param>
-    /// <param name="tertiary"></param>
-    /// <param name="quaternary"></param>
     public static void SaveSet(string setName, string primary = "", string secondary = "", string tertiary = "", string quaternary = "")
     {
       if (setName == null || setName == "") return;
@@ -359,7 +387,17 @@ namespace CrabUI
 
     public static void LoadSet(string path)
     {
-      if (path == null || path == "") return;
+      if (path == null || path == "")
+      {
+        CUI.Warning($"Can't load CUIPalette set: path is empty");
+        return;
+      }
+      if (!File.Exists(path))
+      {
+        CUI.Warning($"Couldn't find {Path.GetFileName(path)} CUIPalette set");
+        return;
+      }
+
       try
       {
         XDocument xdoc = XDocument.Load(path);
@@ -381,6 +419,22 @@ namespace CrabUI
       {
         CUI.Warning($"Failed to load palette set from {path}");
         CUI.Warning(e);
+      }
+    }
+
+    /// <summary>
+    /// I used it once to transform xml palette to hardcoded backup palette
+    /// </summary>
+    public static void TransformToBackup(CUIPalette palette)
+    {
+      using (StreamWriter writer = new StreamWriter(Path.Combine(CUI.PalettesPath, "backup.txt"), false))
+      {
+        writer.WriteLine("{");
+        foreach (var (key, value) in palette.Values)
+        {
+          writer.WriteLine($"  [\"{key}\"] = \"{value}\",");
+        }
+        writer.WriteLine("}");
       }
     }
 

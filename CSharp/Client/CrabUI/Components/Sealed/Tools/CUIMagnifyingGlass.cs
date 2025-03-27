@@ -42,7 +42,8 @@ namespace CrabUI
           ZIndex = 100000,
 
           BackgroundColor = Color.Transparent,
-          Border = new CUIBorder(Color.Cyan, 5),
+          OutlineColor = Color.Cyan,
+          OutlineThickness = 5,
           Anchor = CUIAnchor.Center,
           Absolute = new CUINullRect(w: 200, h: 200),
         };

@@ -144,7 +144,27 @@ namespace CrabUI
 
         Resizible.ForEach(c =>
         {
-          c.Size = c.Component.AmIOkWithThisSize(new Vector2((float)Math.Round(dif / Resizible.Count), c.Size.Y));
+          float available = dif / Resizible.Count;
+          //TODO
+          // if (c.Component.RelativeMin.Width.HasValue)
+          // {
+          //   available = Math.Max(available, c.Component.RelativeMin.Width.Value * Host.Real.Width);
+          // }
+          // if (c.Component.AbsoluteMin.Width.HasValue)
+          // {
+          //   available = Math.Max(available, c.Component.AbsoluteMin.Width.Value);
+          // }
+
+          // if (c.Component.RelativeMax.Width.HasValue)
+          // {
+          //   available = Math.Min(available, c.Component.RelativeMax.Width.Value * Host.Real.Width);
+          // }
+          // if (c.Component.AbsoluteMax.Width.HasValue)
+          // {
+          //   available = Math.Min(available, c.Component.AbsoluteMax.Width.Value);
+          // }
+
+          c.Size = c.Component.AmIOkWithThisSize(new Vector2((float)Math.Round(available), c.Size.Y));
           //c.Size = new Vector2(dif / Resizible.Count, c.Size.Y);
           CUIDebug.Capture(Host, c.Component, "HorizontalList.Update", "Resizible.ForEach", "c.Size", c.Size.ToString());
         });
@@ -215,14 +235,16 @@ namespace CrabUI
           if (c.Ghost.X) continue;
 
           float w = 0;
+          //TODO mb i should let FillEmptySpace components have min size, mb in different layout
           if (!c.FillEmptySpace.X)
           {
             if (c.Absolute.Width.HasValue) w = c.Absolute.Width.Value;
             if (c.AbsoluteMin.Width.HasValue) w = Math.Max(w, c.AbsoluteMin.Width.Value);
             else if (c.ForcedMinSize.X.HasValue) w = Math.Max(w, c.ForcedMinSize.X.Value);
             if (c.AbsoluteMax.Width.HasValue) w = Math.Min(w, c.AbsoluteMax.Width.Value);
-            tw += w;
           }
+
+          tw += w;
         }
 
         tw += Math.Max(0, Host.Children.Count - 1) * Gap;

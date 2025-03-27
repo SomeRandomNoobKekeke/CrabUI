@@ -28,6 +28,8 @@ namespace CrabUI
       set => SetParent(value);
     }
 
+
+
     internal void SetParent(CUIComponent? value, [CallerMemberName] string memberName = "")
     {
       if (parent != null)
@@ -75,16 +77,12 @@ namespace CrabUI
     /// <summary>
     /// Allows you to add array of children
     /// </summary>
-    public IEnumerable<CUIComponent> AddChildren
-    {
-      set
-      {
-        foreach (CUIComponent c in value) { Append(c); }
-      }
-    }
+    public IEnumerable<CUIComponent> AddChildren { set { foreach (CUIComponent c in value) { Append(c); } } }
 
     public event Action<CUIComponent> OnChildAdded;
     public event Action<CUIComponent> OnChildRemoved;
+
+
 
     /// <summary>
     /// Adds children to the end of the list
@@ -194,6 +192,19 @@ namespace CrabUI
       if (ZIndex.HasValue && !child.IgnoreParentZIndex) child.ZIndex = ZIndex.Value + 1;
       if (IgnoreEvents && !child.IgnoreParentEventIgnorance) child.IgnoreEvents = true;
       if (!Visible && !child.IgnoreParentVisibility) child.Visible = false;
+    }
+
+    /// <summary>
+    /// Moves component to front in Parent.Children
+    /// which makes it render after other childs
+    /// </summary>
+    public void MoveToFront()
+    {
+      if (Parent == null) return;
+
+      Parent.Children.Remove(this);
+      Parent.Children.Add(this);
+      TreeChanged = true;
     }
 
     #endregion

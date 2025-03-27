@@ -128,14 +128,33 @@ namespace CrabUI
       return controls;
     }
 
-    public static CUIFrame NewListFrameWithHeader()
+    public static CUIFrame NewFrame()
     {
       CUIFrame frame = new CUIFrame();
-      ListFrameWithHeader(frame);
+      Frame(frame);
       return frame;
     }
 
-    public static void ListFrameWithHeader(CUIFrame frame)
+
+    public static CUIVerticalList ListLayout() => new CUIVerticalList() { Relative = new CUINullRect(0, 0, 1, 1) };
+
+    public static CUIHorizontalList FormHandle(string caption = "Caption")
+    {
+      CUIHorizontalList handle = new CUIHorizontalList()
+      {
+        FitContent = new CUIBool2(false, true),
+        Direction = CUIDirection.Reverse,
+        Style = CUIStylePrefab.FrameCaption,
+      };
+
+      handle["close"] = new CUICloseButton();
+
+      handle["caption"] = new CUITextBlock(caption) { FillEmptySpace = new CUIBool2(true, false) };
+
+      return handle;
+    }
+
+    public static void Frame(CUIFrame frame)
     {
       frame["layout"] = new CUIVerticalList() { Relative = new CUINullRect(0, 0, 1, 1), };
       frame["layout"]["handle"] = new CUIHorizontalList()
@@ -145,28 +164,18 @@ namespace CrabUI
         Style = CUIStylePrefab.FrameCaption,
       };
 
-      frame["layout"]["handle"]["close"] = new CUICloseButton()
-      {
-        Absolute = new CUINullRect(0, 0, 15, 15),
-        Command = "close frame",
-      };
+      frame["layout"]["handle"]["close"] = new CUICloseButton();
+
       frame["layout"]["handle"]["caption"] = new CUITextBlock("Caption") { FillEmptySpace = new CUIBool2(true, false) };
-      frame["layout"]["header"] = new CUIHorizontalList()
-      {
-        FitContent = new CUIBool2(false, true),
-        Style = CUIStylePrefab.Header,
-      };
-      frame["layout"]["content"] = new CUIVerticalList()
+
+      frame["layout"]["main"] = new CUIComponent()
       {
         FillEmptySpace = new CUIBool2(false, true),
         Style = CUIStylePrefab.Main,
-        Scrollable = true,
         ConsumeDragAndDrop = true,
-        ConsumeMouseClicks = true,
       };
 
-      frame["header"] = frame["layout"]["header"];
-      frame["content"] = frame["layout"]["content"];
+      frame["main"] = frame["layout"]["main"];
       frame["caption"] = frame["layout"]["handle"]["caption"];
     }
 

@@ -36,9 +36,9 @@ namespace CrabUI
     /// <summary>
     /// For debug frame itself
     /// </summary>
-    private bool ignoreDebug; public bool IgnoreDebug
+    public bool ignoreDebug; public bool IgnoreDebug
     {
-      get => ignoreDebug;
+      get => ignoreDebug || Unreal;
       set
       {
         ignoreDebug = value;

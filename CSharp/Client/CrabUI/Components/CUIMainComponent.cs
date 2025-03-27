@@ -20,6 +20,8 @@ namespace CrabUI
   /// </summary>
   public class CUIMainComponent : CUIComponent
   {
+    public record DrawEvent(CUIComponent Target, bool front = false);
+
     /// <summary>
     /// Wrapper for global events
     /// </summary>
@@ -68,10 +70,11 @@ namespace CrabUI
 
     private Stopwatch sw = new Stopwatch();
 
-    internal List<CUIComponent> Flat = new List<CUIComponent>();
-    internal List<CUIComponent> Leaves = new List<CUIComponent>();
-    internal SortedList<int, List<CUIComponent>> Layers = new SortedList<int, List<CUIComponent>>();
-    private List<CUIComponent> MouseOnList = new List<CUIComponent>();
+    internal List<CUIComponent> Flat = new();
+    internal List<CUIComponent> Leaves = new();
+    internal List<DrawEvent> DrawEvents = new();
+    internal SortedList<int, List<CUIComponent>> Layers = new();
+    private List<CUIComponent> MouseOnList = new();
     private Vector2 GrabbedOffset;
 
     private void RunStraigth(Action<CUIComponent> a) { for (int i = 0; i < Flat.Count; i++) a(Flat[i]); }
@@ -92,6 +95,7 @@ namespace CrabUI
         {
           Flat.Clear();
           Layers.Clear();
+          // DrawEvents.Clear();
 
           int globalIndex = 0;
           void CalcZIndexRec(CUIComponent component, int added = 0)

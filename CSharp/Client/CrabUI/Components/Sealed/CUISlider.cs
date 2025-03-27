@@ -67,7 +67,7 @@ namespace CrabUI
     public CUISlider() : base()
     {
       ChildrenBoundaries = CUIBoundaries.Box;
-      BreakSerialization = true;
+      SerializeChildren = false;
 
       this["LeftEnding"] = LeftEnding = new CUIComponent()
       {

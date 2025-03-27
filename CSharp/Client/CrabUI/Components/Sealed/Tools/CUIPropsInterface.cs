@@ -34,18 +34,23 @@ namespace CrabUI
 
       foreach (string key in meta.Serializable.Keys)
       {
-        Props.Append(new CUITextBlock($"{key} - {meta.Serializable[key].GetValue(Target)}"));
+        Props.Append(new CUITextBlock($"{key} - {meta.Serializable[key].GetValue(Target)}")
+        {
+          IgnoreDebug = true,
+        });
       }
     }
 
     public CUIPropsInterface() : base()
     {
-      BreakSerialization = true;
+      SerializeChildren = false;
       this["Props"] = Props = new CUIVerticalList()
       {
         Relative = new CUINullRect(0, 0, 1, 1),
         Scrollable = true,
       };
+
+      IgnoreDebug = true;
     }
   }
 }

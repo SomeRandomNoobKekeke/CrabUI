@@ -110,7 +110,11 @@ Inheritance diagram for CrabUI.CUIMainComponent:</div>
  <div class="center">
   <img src="class_crab_u_i_1_1_c_u_i_main_component.png" usemap="#CrabUI.CUIMainComponent_map" alt=""/>
   <map id="CrabUI.CUIMainComponent_map" name="CrabUI.CUIMainComponent_map">
-<area href="class_crab_u_i_1_1_c_u_i_component.html" title="Base class for all components." alt="CrabUI.CUIComponent" shape="rect" coords="0,0,166,24"/>
+<area href="class_crab_u_i_1_1_c_u_i_component.html" title="Base class for all components." alt="CrabUI.CUIComponent" shape="rect" coords="176,112,342,136"/>
+<area href="interface_crab_u_i_1_1_i_c_u_i_component.html" title="Ignore this, i&#39;m just thinking how to organize props, this is getting out of hand." alt="CrabUI.ICUIComponent" shape="rect" coords="176,56,342,80"/>
+<area href="interface_crab_u_i_1_1_i_simple_props.html" title="Props used in simple layout." alt="CrabUI.ISimpleProps" shape="rect" coords="0,0,166,24"/>
+<area href="interface_crab_u_i_1_1_i_list_props.html" title="Props used in list layouts." alt="CrabUI.IListProps" shape="rect" coords="176,0,342,24"/>
+<area href="interface_crab_u_i_1_1_i_serialization_props.html" title="Props used in serialization." alt="CrabUI.ISerializationProps" shape="rect" coords="352,0,518,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -122,6 +126,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:ad24191729cc7c03475e4f6cfba2621ee" id="r_ad24191729cc7c03475e4f6cfba2621ee"><td class="memItemLeft" align="right" valign="top"><a id="ad24191729cc7c03475e4f6cfba2621ee" name="ad24191729cc7c03475e4f6cfba2621ee"></a>
+record&#160;</td><td class="memItemRight" valign="bottom"><b>DrawEvent</b> (<a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a> Target, bool front=false)</td></tr>
+<tr class="separator:ad24191729cc7c03475e4f6cfba2621ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb14a143527202a37495c1e486243c07" id="r_abb14a143527202a37495c1e486243c07"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb14a143527202a37495c1e486243c07">Step</a> ()</td></tr>
 <tr class="memdesc:abb14a143527202a37495c1e486243c07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forses 1 layout update step, even when Frozen.  <br /></td></tr>
 <tr class="separator:abb14a143527202a37495c1e486243c07"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -147,6 +154,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac10de8f802d50e57a95c127503ad877a inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad151cc14ce3cca77af87eef25562acc8 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_ad151cc14ce3cca77af87eef25562acc8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#ad151cc14ce3cca77af87eef25562acc8">BlockChildrenAnimations</a> ()</td></tr>
 <tr class="separator:ad151cc14ce3cca77af87eef25562acc8 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af026f93b1e5add2aaf313cec1c9d344b inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_af026f93b1e5add2aaf313cec1c9d344b"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><b>AttachTo</b> (Item item, Action&lt; Item, <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a> &gt; callback=null)</td></tr>
+<tr class="separator:af026f93b1e5add2aaf313cec1c9d344b inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6dd0fb51c40240e285b04e3b53ad5e5d inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a6dd0fb51c40240e285b04e3b53ad5e5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a6dd0fb51c40240e285b04e3b53ad5e5d">AddCommand</a> (string name, Action&lt; object &gt; action)</td></tr>
 <tr class="memdesc:a6dd0fb51c40240e285b04e3b53ad5e5d inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manually adds command.  <br /></td></tr>
 <tr class="separator:a6dd0fb51c40240e285b04e3b53ad5e5d inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -254,6 +264,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>RemoveSelf</b> ()</td
 <tr class="separator:a9c53e0eb9359c60af1111d4dcabccede inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a657e903b85c2720e5990a644bd415183 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a657e903b85c2720e5990a644bd415183"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a657e903b85c2720e5990a644bd415183">RemoveAllChildren</a> ([CallerMemberName] string memberName=&quot;&quot;)</td></tr>
 <tr class="separator:a657e903b85c2720e5990a644bd415183 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11f36fe0b75c9497d16dcaba22081348 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component" id="r_a11f36fe0b75c9497d16dcaba22081348"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a11f36fe0b75c9497d16dcaba22081348">MoveToFront</a> ()</td></tr>
+<tr class="memdesc:a11f36fe0b75c9497d16dcaba22081348 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves component to front in Parent.Children which makes it render after other childs.  <br /></td></tr>
+<tr class="separator:a11f36fe0b75c9497d16dcaba22081348 inherit pub_methods_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -284,6 +297,9 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a68c79918dc6868f7536b1e9fb3fb7c95 inherit pub_attribs_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1924ce1e1d753c0c1f49f09a46f33e6b inherit pub_attribs_class_crab_u_i_1_1_c_u_i_component" id="r_a1924ce1e1d753c0c1f49f09a46f33e6b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a1924ce1e1d753c0c1f49f09a46f33e6b">Disposed</a></td></tr>
 <tr class="separator:a1924ce1e1d753c0c1f49f09a46f33e6b inherit pub_attribs_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47c9af0cf7922f2284c4832a45fe04a2 inherit pub_attribs_class_crab_u_i_1_1_c_u_i_component" id="r_a47c9af0cf7922f2284c4832a45fe04a2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a47c9af0cf7922f2284c4832a45fe04a2">ignoreDebug</a></td></tr>
+<tr class="memdesc:a47c9af0cf7922f2284c4832a45fe04a2 inherit pub_attribs_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">For debug frame itself.  <br /></td></tr>
+<tr class="separator:a47c9af0cf7922f2284c4832a45fe04a2 inherit pub_attribs_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a032faa3763d2d8ab01247793fd030e56 inherit pub_attribs_class_crab_u_i_1_1_c_u_i_component" id="r_a032faa3763d2d8ab01247793fd030e56"><td class="memItemLeft" align="right" valign="top">CUIResizeHandle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a032faa3763d2d8ab01247793fd030e56">LeftResizeHandle</a> = new CUIResizeHandle(new Vector2(0, 1), new <a class="el" href="struct_crab_u_i_1_1_c_u_i_bool2.html">CUIBool2</a>(false, false))</td></tr>
 <tr class="separator:a032faa3763d2d8ab01247793fd030e56 inherit pub_attribs_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad43ccac695aae80340a7948e5e61aebc inherit pub_attribs_class_crab_u_i_1_1_c_u_i_component" id="r_ad43ccac695aae80340a7948e5e61aebc"><td class="memItemLeft" align="right" valign="top">CUIResizeHandle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#ad43ccac695aae80340a7948e5e61aebc">RightResizeHandle</a> = new CUIResizeHandle(new Vector2(1, 1), new <a class="el" href="struct_crab_u_i_1_1_c_u_i_bool2.html">CUIBool2</a>(true, false))</td></tr>
@@ -299,6 +315,8 @@ Properties</h2></td></tr>
 <tr class="memitem:a64b1322d42789e79633026c3e660735f" id="r_a64b1322d42789e79633026c3e660735f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64b1322d42789e79633026c3e660735f">FocusedComponent</a><code> [get, set]</code></td></tr>
 <tr class="separator:a64b1322d42789e79633026c3e660735f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header properties_class_crab_u_i_1_1_c_u_i_component"><td colspan="2" onclick="javascript:dynsection.toggleInherit('properties_class_crab_u_i_1_1_c_u_i_component')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CrabUI.CUIComponent</a></td></tr>
+<tr class="memitem:a17b761d3901d7fda46fba253f2d76d7d inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a17b761d3901d7fda46fba253f2d76d7d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_crab_u_i_1_1_attached_item_handle.html">AttachedItemHandle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a17b761d3901d7fda46fba253f2d76d7d">AttachedItemHandle</a><code> [get, set]</code></td></tr>
+<tr class="separator:a17b761d3901d7fda46fba253f2d76d7d inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69d80d5710b2fa7abf2c2a20d035f0ac inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a69d80d5710b2fa7abf2c2a20d035f0ac"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a69d80d5710b2fa7abf2c2a20d035f0ac">Command</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a69d80d5710b2fa7abf2c2a20d035f0ac inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">This command will be dispatched up when some component specific event happens.  <br /></td></tr>
 <tr class="separator:a69d80d5710b2fa7abf2c2a20d035f0ac inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -316,6 +334,8 @@ Properties</h2></td></tr>
 <tr class="memitem:a033b6c6555df4478ff72bd132b1f512b inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a033b6c6555df4478ff72bd132b1f512b"><td class="memItemLeft" align="right" valign="top">Dictionary&lt; string, Action&lt; object &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a033b6c6555df4478ff72bd132b1f512b">Commands</a> = new()<code> [get, set]</code></td></tr>
 <tr class="memdesc:a033b6c6555df4478ff72bd132b1f512b inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">All commands.  <br /></td></tr>
 <tr class="separator:a033b6c6555df4478ff72bd132b1f512b inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f9af5acf9814d285db01ae807266d06 inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a8f9af5acf9814d285db01ae807266d06"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a8f9af5acf9814d285db01ae807266d06">AllComponents</a><code> [get]</code></td></tr>
+<tr class="separator:a8f9af5acf9814d285db01ae807266d06 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d500c1375149e82e80f484969d630f7 inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a5d500c1375149e82e80f484969d630f7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a5d500c1375149e82e80f484969d630f7">Debug</a><code> [get, set]</code></td></tr>
 <tr class="separator:a5d500c1375149e82e80f484969d630f7 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6bad721c7c5e53fc88c718cb1f95d999 inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a6bad721c7c5e53fc88c718cb1f95d999"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a6bad721c7c5e53fc88c718cb1f95d999">IgnoreDebug</a><code> [get, set]</code></td></tr>
@@ -392,10 +412,6 @@ Properties</h2></td></tr>
 <tr class="memitem:aa615f83c1e38c1ea74eb4854cce4ed3c inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_aa615f83c1e38c1ea74eb4854cce4ed3c"><td class="memItemLeft" align="right" valign="top">Dictionary&lt; string, <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#aa615f83c1e38c1ea74eb4854cce4ed3c">States</a> = new()<code> [get, set]</code></td></tr>
 <tr class="memdesc:aa615f83c1e38c1ea74eb4854cce4ed3c inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">State is just a clone component with copies of all props.  <br /></td></tr>
 <tr class="separator:aa615f83c1e38c1ea74eb4854cce4ed3c inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f7e3fb2b0a5f0807f0663f57b7d948b inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a0f7e3fb2b0a5f0807f0663f57b7d948b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a0f7e3fb2b0a5f0807f0663f57b7d948b">ForceSaveAllProps</a> = false<code> [get, set]</code></td></tr>
-<tr class="separator:a0f7e3fb2b0a5f0807f0663f57b7d948b inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d8af39a0926bdde5557b58d78cdfd61 inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a6d8af39a0926bdde5557b58d78cdfd61"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a6d8af39a0926bdde5557b58d78cdfd61">SaveAfterLoad</a> = true<code> [get, set]</code></td></tr>
-<tr class="separator:a6d8af39a0926bdde5557b58d78cdfd61 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb07791aeb0b4a7f8c2c086526067f5c inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_acb07791aeb0b4a7f8c2c086526067f5c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#acb07791aeb0b4a7f8c2c086526067f5c">SavePath</a><code> [get, set]</code></td></tr>
 <tr class="separator:acb07791aeb0b4a7f8c2c086526067f5c inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97bacc49652d724c7ff474aeddd4b97d inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a97bacc49652d724c7ff474aeddd4b97d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a97bacc49652d724c7ff474aeddd4b97d">ID</a><code> [get, set]</code></td></tr>
@@ -580,13 +596,9 @@ Properties</h2></td></tr>
 <tr class="memitem:aba96dc7eb81dcd1f46a3decd7305c55a inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_aba96dc7eb81dcd1f46a3decd7305c55a"><td class="memItemLeft" align="right" valign="top">object&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#aba96dc7eb81dcd1f46a3decd7305c55a">Data</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:aba96dc7eb81dcd1f46a3decd7305c55a inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Arbitrary data.  <br /></td></tr>
 <tr class="separator:aba96dc7eb81dcd1f46a3decd7305c55a inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a155615a8a7e4c8d2721fbb1d155bd395 inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a155615a8a7e4c8d2721fbb1d155bd395"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a155615a8a7e4c8d2721fbb1d155bd395">Unserializable</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a155615a8a7e4c8d2721fbb1d155bd395 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will prevent serialization to xml if true.  <br /></td></tr>
-<tr class="separator:a155615a8a7e4c8d2721fbb1d155bd395 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a879f6b36b8694084f6d34443e980a8f9 inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a879f6b36b8694084f6d34443e980a8f9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a879f6b36b8694084f6d34443e980a8f9">BreakSerialization</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a879f6b36b8694084f6d34443e980a8f9 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is this a serialization cutoff point <br  />
- Parent will serialize children down to this component Further serialization should be hadled by this component.  <br /></td></tr>
-<tr class="separator:a879f6b36b8694084f6d34443e980a8f9 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a297a5a80b39078fc8e9fed2c64f0cce4 inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a297a5a80b39078fc8e9fed2c64f0cce4"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a297a5a80b39078fc8e9fed2c64f0cce4">Disabled</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a297a5a80b39078fc8e9fed2c64f0cce4 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usually means - non interactable, e.g. unclickable gray button.  <br /></td></tr>
+<tr class="separator:a297a5a80b39078fc8e9fed2c64f0cce4 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7242f152258307bb0ae34964bd5de1f inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_af7242f152258307bb0ae34964bd5de1f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#af7242f152258307bb0ae34964bd5de1f">ShouldPassPropsToChildren</a> = true<code> [get, set]</code></td></tr>
 <tr class="memdesc:af7242f152258307bb0ae34964bd5de1f inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Some props (like visible) are autopassed to all new childs see PassPropsToChild.  <br /></td></tr>
 <tr class="separator:af7242f152258307bb0ae34964bd5de1f inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -610,9 +622,25 @@ Properties</h2></td></tr>
 <tr class="memitem:a2b39e97b6c2c219efbb25cd176e0f16b inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a2b39e97b6c2c219efbb25cd176e0f16b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a2b39e97b6c2c219efbb25cd176e0f16b">Revealed</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a2b39e97b6c2c219efbb25cd176e0f16b inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visible + !IgnoreEvents.  <br /></td></tr>
 <tr class="separator:a2b39e97b6c2c219efbb25cd176e0f16b inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a297a5a80b39078fc8e9fed2c64f0cce4 inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a297a5a80b39078fc8e9fed2c64f0cce4"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a297a5a80b39078fc8e9fed2c64f0cce4">Disabled</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a297a5a80b39078fc8e9fed2c64f0cce4 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usually means - non interactable, e.g. unclickable gray button.  <br /></td></tr>
-<tr class="separator:a297a5a80b39078fc8e9fed2c64f0cce4 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac809b22336545d5265ce8d1d38383ad7 inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_ac809b22336545d5265ce8d1d38383ad7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#ac809b22336545d5265ce8d1d38383ad7">Serializable</a> = true<code> [get, set]</code></td></tr>
+<tr class="memdesc:ac809b22336545d5265ce8d1d38383ad7 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">If false then this component and its children won't be serialized.  <br /></td></tr>
+<tr class="separator:ac809b22336545d5265ce8d1d38383ad7 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91a75297d4ff09a0bc769eff8360a4bd inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a91a75297d4ff09a0bc769eff8360a4bd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a91a75297d4ff09a0bc769eff8360a4bd">SerializeChildren</a> = true<code> [get, set]</code></td></tr>
+<tr class="memdesc:a91a75297d4ff09a0bc769eff8360a4bd inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is this a serialization cutoff point <br  />
+ Parent will serialize children down to this component and stop.  <br /></td></tr>
+<tr class="separator:a91a75297d4ff09a0bc769eff8360a4bd inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf54f37e9499eb6ddb25361600c8d67f inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_abf54f37e9499eb6ddb25361600c8d67f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#abf54f37e9499eb6ddb25361600c8d67f">MergeSerialization</a> = false<code> [get, set]</code></td></tr>
+<tr class="memdesc:abf54f37e9499eb6ddb25361600c8d67f inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">If true it won't be deserialized, <br  />
+ Instead its children will be detached and attached to the component with matching AKA on the parent.  <br /></td></tr>
+<tr class="separator:abf54f37e9499eb6ddb25361600c8d67f inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c67a42bcb1e6d9478f1333d89fb32d3 inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a4c67a42bcb1e6d9478f1333d89fb32d3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a4c67a42bcb1e6d9478f1333d89fb32d3">ReplaceSerialization</a> = false<code> [get, set]</code></td></tr>
+<tr class="memdesc:a4c67a42bcb1e6d9478f1333d89fb32d3 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">If true, deserialized component will replace existing component with the same AKA instead of creating a duplicate.  <br /></td></tr>
+<tr class="separator:a4c67a42bcb1e6d9478f1333d89fb32d3 inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f7e3fb2b0a5f0807f0663f57b7d948b inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a0f7e3fb2b0a5f0807f0663f57b7d948b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a0f7e3fb2b0a5f0807f0663f57b7d948b">ForceSaveAllProps</a> = false<code> [get, set]</code></td></tr>
+<tr class="separator:a0f7e3fb2b0a5f0807f0663f57b7d948b inherit properties_class_crab_u_i_1_1_c_u_i_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header properties_interface_crab_u_i_1_1_i_simple_props"><td colspan="2" onclick="javascript:dynsection.toggleInherit('properties_interface_crab_u_i_1_1_i_simple_props')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="interface_crab_u_i_1_1_i_simple_props.html">CrabUI.ISimpleProps</a></td></tr>
+<tr class="inherit_header properties_interface_crab_u_i_1_1_i_list_props"><td colspan="2" onclick="javascript:dynsection.toggleInherit('properties_interface_crab_u_i_1_1_i_list_props')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="interface_crab_u_i_1_1_i_list_props.html">CrabUI.IListProps</a></td></tr>
+<tr class="inherit_header properties_interface_crab_u_i_1_1_i_serialization_props"><td colspan="2" onclick="javascript:dynsection.toggleInherit('properties_interface_crab_u_i_1_1_i_serialization_props')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="interface_crab_u_i_1_1_i_serialization_props.html">CrabUI.ISerializationProps</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="events" name="events"></a>
 Events</h2></td></tr>
@@ -755,24 +783,24 @@ static IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bott
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00505">505</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  505</span>                              : base()</div>
-<div class="line"><span class="lineno">  506</span>    {</div>
-<div class="line"><span class="lineno">  507</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#ac7bcbf63c1c4df9be444656ad4ef393e">CullChildren</a> = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  508</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a8d064e18e047cd1aec85a4bb6349966a">Real</a> = <span class="keyword">new</span> CUIRect(0, 0, GameMain.GraphicsWidth, GameMain.GraphicsHeight);</div>
-<div class="line"><span class="lineno">  509</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#ae7637e97c252e9da5149640712a6ce49">Visible</a> = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  510</span>      <span class="comment">//IgnoreEvents = true;</span></div>
-<div class="line"><span class="lineno">  511</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#af7242f152258307bb0ae34964bd5de1f">ShouldPassPropsToChildren</a> = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  512</span> </div>
-<div class="line"><span class="lineno">  513</span> </div>
-<div class="line"><span class="lineno">  514</span>      Debug = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  515</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#aa2ac25c8acbca42acf29f3bcfb947f59">ChildrenBoundaries</a> = CUIBoundaries.Box;</div>
-<div class="line"><span class="lineno">  516</span>    }</div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a8d064e18e047cd1aec85a4bb6349966a"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a8d064e18e047cd1aec85a4bb6349966a">CrabUI.CUIComponent.Real</a></div><div class="ttdeci">CUIRect Real</div><div class="ttdoc">Calculated prop, position on real screen in pixels Should be fully calculated after CUIMainComponent....</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_state_8cs_source.html#l00116">CUIComponent.State.cs:117</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00509">509</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  509</span>                              : base()</div>
+<div class="line"><span class="lineno">  510</span>    {</div>
+<div class="line"><span class="lineno">  511</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#ac7bcbf63c1c4df9be444656ad4ef393e">CullChildren</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  512</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#a8d064e18e047cd1aec85a4bb6349966a">Real</a> = <span class="keyword">new</span> CUIRect(0, 0, GameMain.GraphicsWidth, GameMain.GraphicsHeight);</div>
+<div class="line"><span class="lineno">  513</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#ae7637e97c252e9da5149640712a6ce49">Visible</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  514</span>      <span class="comment">//IgnoreEvents = true;</span></div>
+<div class="line"><span class="lineno">  515</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#af7242f152258307bb0ae34964bd5de1f">ShouldPassPropsToChildren</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  516</span> </div>
+<div class="line"><span class="lineno">  517</span> </div>
+<div class="line"><span class="lineno">  518</span>      Debug = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  519</span>      <a class="code hl_property" href="class_crab_u_i_1_1_c_u_i_component.html#aa2ac25c8acbca42acf29f3bcfb947f59">ChildrenBoundaries</a> = CUIBoundaries.Box;</div>
+<div class="line"><span class="lineno">  520</span>    }</div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_a8d064e18e047cd1aec85a4bb6349966a"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#a8d064e18e047cd1aec85a4bb6349966a">CrabUI.CUIComponent.Real</a></div><div class="ttdeci">CUIRect Real</div><div class="ttdoc">Calculated prop, position on real screen in pixels Should be fully calculated after CUIMainComponent....</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_component_8_state_8cs_source.html#l00125">CUIComponent.State.cs:126</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_aa2ac25c8acbca42acf29f3bcfb947f59"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#aa2ac25c8acbca42acf29f3bcfb947f59">CrabUI.CUIComponent.ChildrenBoundaries</a></div><div class="ttdeci">Func&lt; CUIRect, CUIBoundaries &gt; ChildrenBoundaries</div><div class="ttdoc">Limits to children positions.</div><div class="ttdef"><b>Definition</b> <a href="_layout_01_props_8cs_source.html#l00054">Layout Props.cs:54</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_ac7bcbf63c1c4df9be444656ad4ef393e"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#ac7bcbf63c1c4df9be444656ad4ef393e">CrabUI.CUIComponent.CullChildren</a></div><div class="ttdeci">bool CullChildren</div><div class="ttdoc">if child rect doesn't intersect with parent it won't be drawn and won't consume fps   It also sets Hi...</div><div class="ttdef"><b>Definition</b> <a href="_layout_01_props_8cs_source.html#l00030">Layout Props.cs:31</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_ae7637e97c252e9da5149640712a6ce49"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#ae7637e97c252e9da5149640712a6ce49">CrabUI.CUIComponent.Visible</a></div><div class="ttdeci">bool Visible</div><div class="ttdoc">Invisible components are not drawn, but still can be interacted with.</div><div class="ttdef"><b>Definition</b> <a href="_other_01_props_8cs_source.html#l00061">Other Props.cs:62</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_af7242f152258307bb0ae34964bd5de1f"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#af7242f152258307bb0ae34964bd5de1f">CrabUI.CUIComponent.ShouldPassPropsToChildren</a></div><div class="ttdeci">bool ShouldPassPropsToChildren</div><div class="ttdoc">Some props (like visible) are autopassed to all new childs see PassPropsToChild.</div><div class="ttdef"><b>Definition</b> <a href="_other_01_props_8cs_source.html#l00042">Other Props.cs:42</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_ae7637e97c252e9da5149640712a6ce49"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#ae7637e97c252e9da5149640712a6ce49">CrabUI.CUIComponent.Visible</a></div><div class="ttdeci">bool Visible</div><div class="ttdoc">Invisible components are not drawn, but still can be interacted with.</div><div class="ttdef"><b>Definition</b> <a href="_other_01_props_8cs_source.html#l00059">Other Props.cs:60</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html_af7242f152258307bb0ae34964bd5de1f"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html#af7242f152258307bb0ae34964bd5de1f">CrabUI.CUIComponent.ShouldPassPropsToChildren</a></div><div class="ttdeci">bool ShouldPassPropsToChildren</div><div class="ttdoc">Some props (like visible) are autopassed to all new childs see PassPropsToChild.</div><div class="ttdef"><b>Definition</b> <a href="_other_01_props_8cs_source.html#l00040">Other Props.cs:40</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -810,41 +838,41 @@ static IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bott
 
 <p>Reimplemented from <a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a913a8f80e413a68d204dc74506c5576d">CrabUI.CUIComponent</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00235">235</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  236</span>    {</div>
-<div class="line"><span class="lineno">  237</span>      sw.Restart();</div>
-<div class="line"><span class="lineno">  238</span> </div>
-<div class="line"><span class="lineno">  239</span>      Rectangle OriginalSRect = spriteBatch.GraphicsDevice.ScissorRectangle;</div>
-<div class="line"><span class="lineno">  240</span>      Rectangle SRect = OriginalSRect;</div>
-<div class="line"><span class="lineno">  241</span> </div>
-<div class="line"><span class="lineno">  242</span>      <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">  243</span>      {</div>
-<div class="line"><span class="lineno">  244</span>        RunStraigth(c =&gt;</div>
-<div class="line"><span class="lineno">  245</span>        {</div>
-<div class="line"><span class="lineno">  246</span>          <span class="keywordflow">if</span> (!c.Visible || c.CulledOut) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  247</span>          <span class="keywordflow">if</span> (c.Parent != <span class="keyword">null</span> &amp;&amp; c.Parent.ScissorRect.HasValue &amp;&amp; SRect != c.Parent.ScissorRect.Value)</div>
-<div class="line"><span class="lineno">  248</span>          {</div>
-<div class="line"><span class="lineno">  249</span>            SRect = c.Parent.ScissorRect.Value;</div>
-<div class="line"><span class="lineno">  250</span>            StopStart(spriteBatch, SRect, c.SamplerState);</div>
-<div class="line"><span class="lineno">  251</span>          }</div>
-<div class="line"><span class="lineno">  252</span>          c.Draw(spriteBatch);</div>
-<div class="line"><span class="lineno">  253</span>        });</div>
-<div class="line"><span class="lineno">  254</span>      }</div>
-<div class="line"><span class="lineno">  255</span>      <span class="keywordflow">finally</span></div>
-<div class="line"><span class="lineno">  256</span>      {</div>
-<div class="line"><span class="lineno">  257</span>        <span class="keywordflow">if</span> (spriteBatch.GraphicsDevice.ScissorRectangle != OriginalSRect) StopStart(spriteBatch, OriginalSRect);</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00239">239</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  240</span>    {</div>
+<div class="line"><span class="lineno">  241</span>      sw.Restart();</div>
+<div class="line"><span class="lineno">  242</span> </div>
+<div class="line"><span class="lineno">  243</span>      Rectangle OriginalSRect = spriteBatch.GraphicsDevice.ScissorRectangle;</div>
+<div class="line"><span class="lineno">  244</span>      Rectangle SRect = OriginalSRect;</div>
+<div class="line"><span class="lineno">  245</span> </div>
+<div class="line"><span class="lineno">  246</span>      <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  247</span>      {</div>
+<div class="line"><span class="lineno">  248</span>        RunStraigth(c =&gt;</div>
+<div class="line"><span class="lineno">  249</span>        {</div>
+<div class="line"><span class="lineno">  250</span>          <span class="keywordflow">if</span> (!c.Visible || c.CulledOut) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  251</span>          <span class="keywordflow">if</span> (c.Parent != <span class="keyword">null</span> &amp;&amp; c.Parent.ScissorRect.HasValue &amp;&amp; SRect != c.Parent.ScissorRect.Value)</div>
+<div class="line"><span class="lineno">  252</span>          {</div>
+<div class="line"><span class="lineno">  253</span>            SRect = c.Parent.ScissorRect.Value;</div>
+<div class="line"><span class="lineno">  254</span>            StopStart(spriteBatch, SRect, c.SamplerState);</div>
+<div class="line"><span class="lineno">  255</span>          }</div>
+<div class="line"><span class="lineno">  256</span>          c.Draw(spriteBatch);</div>
+<div class="line"><span class="lineno">  257</span>        });</div>
 <div class="line"><span class="lineno">  258</span>      }</div>
-<div class="line"><span class="lineno">  259</span> </div>
-<div class="line"><span class="lineno">  260</span>      RunStraigth(c =&gt;</div>
-<div class="line"><span class="lineno">  261</span>      {</div>
-<div class="line"><span class="lineno">  262</span>        <span class="keywordflow">if</span> (!c.Visible || c.CulledOut) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  263</span>        c.DrawFront(spriteBatch);</div>
-<div class="line"><span class="lineno">  264</span>      });</div>
-<div class="line"><span class="lineno">  265</span> </div>
-<div class="line"><span class="lineno">  266</span>      sw.Stop();</div>
-<div class="line"><span class="lineno">  267</span>      <span class="comment">// CUIDebug.EnsureCategory();</span></div>
-<div class="line"><span class="lineno">  268</span>      <span class="comment">// CUIDebug.CaptureTicks(sw.ElapsedTicks, &quot;CUI.Draw&quot;);</span></div>
-<div class="line"><span class="lineno">  269</span>    }</div>
+<div class="line"><span class="lineno">  259</span>      <span class="keywordflow">finally</span></div>
+<div class="line"><span class="lineno">  260</span>      {</div>
+<div class="line"><span class="lineno">  261</span>        <span class="keywordflow">if</span> (spriteBatch.GraphicsDevice.ScissorRectangle != OriginalSRect) StopStart(spriteBatch, OriginalSRect);</div>
+<div class="line"><span class="lineno">  262</span>      }</div>
+<div class="line"><span class="lineno">  263</span> </div>
+<div class="line"><span class="lineno">  264</span>      RunStraigth(c =&gt;</div>
+<div class="line"><span class="lineno">  265</span>      {</div>
+<div class="line"><span class="lineno">  266</span>        <span class="keywordflow">if</span> (!c.Visible || c.CulledOut) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  267</span>        c.DrawFront(spriteBatch);</div>
+<div class="line"><span class="lineno">  268</span>      });</div>
+<div class="line"><span class="lineno">  269</span> </div>
+<div class="line"><span class="lineno">  270</span>      sw.Stop();</div>
+<div class="line"><span class="lineno">  271</span>      <span class="comment">// CUIDebug.EnsureCategory();</span></div>
+<div class="line"><span class="lineno">  272</span>      <span class="comment">// CUIDebug.CaptureTicks(sw.ElapsedTicks, &quot;CUI.Draw&quot;);</span></div>
+<div class="line"><span class="lineno">  273</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -872,11 +900,11 @@ static IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bott
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00499">499</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  500</span>    {</div>
-<div class="line"><span class="lineno">  501</span>      RemoveAllChildren();</div>
-<div class="line"><span class="lineno">  502</span>      initFunc(<span class="keyword">this</span>);</div>
-<div class="line"><span class="lineno">  503</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00503">503</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  504</span>    {</div>
+<div class="line"><span class="lineno">  505</span>      RemoveAllChildren();</div>
+<div class="line"><span class="lineno">  506</span>      initFunc(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  507</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -895,8 +923,8 @@ static IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bott
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00274">274</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  274</span>{ <span class="keywordflow">if</span> (h == GrabbedDragHandle) GrabbedDragHandle = <span class="keyword">null</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00278">278</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  278</span>{ <span class="keywordflow">if</span> (h == GrabbedDragHandle) GrabbedDragHandle = <span class="keyword">null</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -915,8 +943,8 @@ static IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bott
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00275">275</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  275</span>{ <span class="keywordflow">if</span> (h == GrabbedResizeHandle) GrabbedResizeHandle = <span class="keyword">null</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00279">279</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  279</span>{ <span class="keywordflow">if</span> (h == GrabbedResizeHandle) GrabbedResizeHandle = <span class="keyword">null</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -935,8 +963,8 @@ static IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bott
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00276">276</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  276</span>{ <span class="keywordflow">if</span> (h == GrabbedSwipeHandle) GrabbedSwipeHandle = <span class="keyword">null</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00280">280</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  280</span>{ <span class="keywordflow">if</span> (h == GrabbedSwipeHandle) GrabbedSwipeHandle = <span class="keyword">null</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -955,10 +983,10 @@ static IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bott
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00518">518</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  519</span>    {</div>
-<div class="line"><span class="lineno">  520</span>      CUI.Log($<span class="stringliteral">&quot;Warning: Your GUI code requires {MaxLayoutRecalcLoopsPerUpdate} layout update loops to fully resolve (which is cringe). Optimize it!&quot;</span>, Color.Orange);</div>
-<div class="line"><span class="lineno">  521</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00522">522</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  523</span>    {</div>
+<div class="line"><span class="lineno">  524</span>      CUI.Log($<span class="stringliteral">&quot;Warning: Your GUI code requires {MaxLayoutRecalcLoopsPerUpdate} layout update loops to fully resolve (which is cringe). Optimize it!&quot;</span>, Color.Orange);</div>
+<div class="line"><span class="lineno">  525</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -979,10 +1007,10 @@ static IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bott
 
 <p>Forses 1 layout update step, even when Frozen. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00141">141</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  142</span>    {</div>
-<div class="line"><span class="lineno">  143</span>      Update(LastUpdateTime + UpdateInterval, <span class="keyword">true</span>, <span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">  144</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00145">145</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  146</span>    {</div>
+<div class="line"><span class="lineno">  147</span>      Update(LastUpdateTime + UpdateInterval, <span class="keyword">true</span>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  148</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1010,87 +1038,87 @@ static IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bott
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00145">145</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  146</span>    {</div>
-<div class="line"><span class="lineno">  147</span>      <span class="keywordflow">if</span> (!force)</div>
-<div class="line"><span class="lineno">  148</span>      {</div>
-<div class="line"><span class="lineno">  149</span>        <span class="keywordflow">if</span> (<a class="code hl_property" href="#a818766ed3e726ac4fb5f9b4c2ae82c89">Frozen</a>) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  150</span>        <span class="keywordflow">if</span> (totalTime - LastUpdateTime &lt;= UpdateInterval) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  151</span>      }</div>
-<div class="line"><span class="lineno">  152</span> </div>
-<div class="line"><span class="lineno">  153</span>      CUIDebug.Flush();</div>
-<div class="line"><span class="lineno">  154</span> </div>
-<div class="line"><span class="lineno">  155</span>      <span class="keywordflow">if</span> (TreeChanged)</div>
-<div class="line"><span class="lineno">  156</span>      {</div>
-<div class="line"><span class="lineno">  157</span>        OnTreeChanged?.Invoke();</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00149">149</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  150</span>    {</div>
+<div class="line"><span class="lineno">  151</span>      <span class="keywordflow">if</span> (!force)</div>
+<div class="line"><span class="lineno">  152</span>      {</div>
+<div class="line"><span class="lineno">  153</span>        <span class="keywordflow">if</span> (<a class="code hl_property" href="#a818766ed3e726ac4fb5f9b4c2ae82c89">Frozen</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  154</span>        <span class="keywordflow">if</span> (totalTime - LastUpdateTime &lt;= UpdateInterval) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  155</span>      }</div>
+<div class="line"><span class="lineno">  156</span> </div>
+<div class="line"><span class="lineno">  157</span>      CUIDebug.Flush();</div>
 <div class="line"><span class="lineno">  158</span> </div>
-<div class="line"><span class="lineno">  159</span>        FlattenTree();</div>
-<div class="line"><span class="lineno">  160</span>        TreeChanged = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  161</span>      }</div>
+<div class="line"><span class="lineno">  159</span>      <span class="keywordflow">if</span> (TreeChanged)</div>
+<div class="line"><span class="lineno">  160</span>      {</div>
+<div class="line"><span class="lineno">  161</span>        OnTreeChanged?.Invoke();</div>
 <div class="line"><span class="lineno">  162</span> </div>
-<div class="line"><span class="lineno">  163</span>      <span class="keywordflow">if</span> (!noInput) HandleInput(totalTime);</div>
-<div class="line"><span class="lineno">  164</span> </div>
-<div class="line"><span class="lineno">  165</span>      RunStraigth(c =&gt; c.InvokeOnUpdate(totalTime));</div>
+<div class="line"><span class="lineno">  163</span>        FlattenTree();</div>
+<div class="line"><span class="lineno">  164</span>        TreeChanged = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  165</span>      }</div>
 <div class="line"><span class="lineno">  166</span> </div>
-<div class="line"><span class="lineno">  167</span> </div>
-<div class="line"><span class="lineno">  168</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a732d4cd06ae8386f66dc6111309661d4">CalculateUntilResolved</a>)</div>
-<div class="line"><span class="lineno">  169</span>      {</div>
-<div class="line"><span class="lineno">  170</span>        UpdateLoopCount = 0;</div>
-<div class="line"><span class="lineno">  171</span>        <span class="keywordflow">do</span></div>
-<div class="line"><span class="lineno">  172</span>        {</div>
-<div class="line"><span class="lineno">  173</span>          GlobalLayoutChanged = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  174</span> </div>
-<div class="line"><span class="lineno">  175</span>          <span class="keywordflow">if</span> (TreeChanged)</div>
-<div class="line"><span class="lineno">  176</span>          {</div>
-<div class="line"><span class="lineno">  177</span>            OnTreeChanged?.Invoke();</div>
+<div class="line"><span class="lineno">  167</span>      <span class="keywordflow">if</span> (!noInput) HandleInput(totalTime);</div>
+<div class="line"><span class="lineno">  168</span> </div>
+<div class="line"><span class="lineno">  169</span>      RunStraigth(c =&gt; c.InvokeOnUpdate(totalTime));</div>
+<div class="line"><span class="lineno">  170</span> </div>
+<div class="line"><span class="lineno">  171</span> </div>
+<div class="line"><span class="lineno">  172</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a732d4cd06ae8386f66dc6111309661d4">CalculateUntilResolved</a>)</div>
+<div class="line"><span class="lineno">  173</span>      {</div>
+<div class="line"><span class="lineno">  174</span>        UpdateLoopCount = 0;</div>
+<div class="line"><span class="lineno">  175</span>        <span class="keywordflow">do</span></div>
+<div class="line"><span class="lineno">  176</span>        {</div>
+<div class="line"><span class="lineno">  177</span>          GlobalLayoutChanged = <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">  178</span> </div>
-<div class="line"><span class="lineno">  179</span>            FlattenTree();</div>
-<div class="line"><span class="lineno">  180</span>            TreeChanged = <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  181</span>          }</div>
+<div class="line"><span class="lineno">  179</span>          <span class="keywordflow">if</span> (TreeChanged)</div>
+<div class="line"><span class="lineno">  180</span>          {</div>
+<div class="line"><span class="lineno">  181</span>            OnTreeChanged?.Invoke();</div>
 <div class="line"><span class="lineno">  182</span> </div>
-<div class="line"><span class="lineno">  183</span>          RunReverse(c =&gt;</div>
-<div class="line"><span class="lineno">  184</span>          {</div>
-<div class="line"><span class="lineno">  185</span>            c.Layout.ResizeToContent();</div>
-<div class="line"><span class="lineno">  186</span>          });</div>
-<div class="line"><span class="lineno">  187</span> </div>
-<div class="line"><span class="lineno">  188</span>          RunStraigth(c =&gt;</div>
-<div class="line"><span class="lineno">  189</span>          {</div>
-<div class="line"><span class="lineno">  190</span>            c.Layout.Update();</div>
-<div class="line"><span class="lineno">  191</span>            c.Layout.UpdateDecor();</div>
-<div class="line"><span class="lineno">  192</span>          });</div>
-<div class="line"><span class="lineno">  193</span> </div>
-<div class="line"><span class="lineno">  194</span>          UpdateLoopCount++;</div>
-<div class="line"><span class="lineno">  195</span>          <span class="keywordflow">if</span> (UpdateLoopCount &gt;= <a class="code hl_variable" href="#a9b2ad5be37c88c938fe490359d57d882">MaxLayoutRecalcLoopsPerUpdate</a>)</div>
-<div class="line"><span class="lineno">  196</span>          {</div>
-<div class="line"><span class="lineno">  197</span>            PrintRecalLimitWarning();</div>
-<div class="line"><span class="lineno">  198</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  199</span>          }</div>
-<div class="line"><span class="lineno">  200</span>        }</div>
-<div class="line"><span class="lineno">  201</span>        <span class="keywordflow">while</span> (GlobalLayoutChanged);</div>
-<div class="line"><span class="lineno">  202</span>        <span class="comment">//CUI.Log($&quot;UpdateLoopCount: {UpdateLoopCount}&quot;);</span></div>
-<div class="line"><span class="lineno">  203</span>      }</div>
-<div class="line"><span class="lineno">  204</span>      <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  205</span>      {</div>
-<div class="line"><span class="lineno">  206</span>        RunReverse(c =&gt;</div>
-<div class="line"><span class="lineno">  207</span>        {</div>
-<div class="line"><span class="lineno">  208</span>          c.Layout.ResizeToContent();</div>
-<div class="line"><span class="lineno">  209</span>        });</div>
-<div class="line"><span class="lineno">  210</span> </div>
-<div class="line"><span class="lineno">  211</span>        RunStraigth(c =&gt;</div>
-<div class="line"><span class="lineno">  212</span>        {</div>
-<div class="line"><span class="lineno">  213</span>          c.Layout.Update();</div>
-<div class="line"><span class="lineno">  214</span>          c.Layout.UpdateDecor();</div>
-<div class="line"><span class="lineno">  215</span>        });</div>
-<div class="line"><span class="lineno">  216</span>      }</div>
-<div class="line"><span class="lineno">  217</span> </div>
-<div class="line"><span class="lineno">  218</span>      <span class="comment">//TODO do i need 2 updates?</span></div>
-<div class="line"><span class="lineno">  219</span>      <span class="comment">//RunStraigth(c =&gt; c.InvokeOnUpdate(totalTime));</span></div>
-<div class="line"><span class="lineno">  220</span> </div>
-<div class="line"><span class="lineno">  221</span>      LastUpdateTime = totalTime;</div>
-<div class="line"><span class="lineno">  222</span>    }</div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_main_component_html_a732d4cd06ae8386f66dc6111309661d4"><div class="ttname"><a href="#a732d4cd06ae8386f66dc6111309661d4">CrabUI.CUIMainComponent.CalculateUntilResolved</a></div><div class="ttdeci">bool CalculateUntilResolved</div><div class="ttdoc">If true will update layout until it settles to prevent blinking.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_main_component_8cs_source.html#l00044">CUIMainComponent.cs:44</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_main_component_html_a818766ed3e726ac4fb5f9b4c2ae82c89"><div class="ttname"><a href="#a818766ed3e726ac4fb5f9b4c2ae82c89">CrabUI.CUIMainComponent.Frozen</a></div><div class="ttdeci">bool Frozen</div><div class="ttdoc">Frozen window doesn't update.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_main_component_8cs_source.html#l00039">CUIMainComponent.cs:39</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_main_component_html_a9b2ad5be37c88c938fe490359d57d882"><div class="ttname"><a href="#a9b2ad5be37c88c938fe490359d57d882">CrabUI.CUIMainComponent.MaxLayoutRecalcLoopsPerUpdate</a></div><div class="ttdeci">int MaxLayoutRecalcLoopsPerUpdate</div><div class="ttdoc">If your GUI needs more than this steps of layout update you will get a warning.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_main_component_8cs_source.html#l00049">CUIMainComponent.cs:49</a></div></div>
+<div class="line"><span class="lineno">  183</span>            FlattenTree();</div>
+<div class="line"><span class="lineno">  184</span>            TreeChanged = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  185</span>          }</div>
+<div class="line"><span class="lineno">  186</span> </div>
+<div class="line"><span class="lineno">  187</span>          RunReverse(c =&gt;</div>
+<div class="line"><span class="lineno">  188</span>          {</div>
+<div class="line"><span class="lineno">  189</span>            c.Layout.ResizeToContent();</div>
+<div class="line"><span class="lineno">  190</span>          });</div>
+<div class="line"><span class="lineno">  191</span> </div>
+<div class="line"><span class="lineno">  192</span>          RunStraigth(c =&gt;</div>
+<div class="line"><span class="lineno">  193</span>          {</div>
+<div class="line"><span class="lineno">  194</span>            c.Layout.Update();</div>
+<div class="line"><span class="lineno">  195</span>            c.Layout.UpdateDecor();</div>
+<div class="line"><span class="lineno">  196</span>          });</div>
+<div class="line"><span class="lineno">  197</span> </div>
+<div class="line"><span class="lineno">  198</span>          UpdateLoopCount++;</div>
+<div class="line"><span class="lineno">  199</span>          <span class="keywordflow">if</span> (UpdateLoopCount &gt;= <a class="code hl_variable" href="#a9b2ad5be37c88c938fe490359d57d882">MaxLayoutRecalcLoopsPerUpdate</a>)</div>
+<div class="line"><span class="lineno">  200</span>          {</div>
+<div class="line"><span class="lineno">  201</span>            PrintRecalLimitWarning();</div>
+<div class="line"><span class="lineno">  202</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  203</span>          }</div>
+<div class="line"><span class="lineno">  204</span>        }</div>
+<div class="line"><span class="lineno">  205</span>        <span class="keywordflow">while</span> (GlobalLayoutChanged);</div>
+<div class="line"><span class="lineno">  206</span>        <span class="comment">//CUI.Log($&quot;UpdateLoopCount: {UpdateLoopCount}&quot;);</span></div>
+<div class="line"><span class="lineno">  207</span>      }</div>
+<div class="line"><span class="lineno">  208</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  209</span>      {</div>
+<div class="line"><span class="lineno">  210</span>        RunReverse(c =&gt;</div>
+<div class="line"><span class="lineno">  211</span>        {</div>
+<div class="line"><span class="lineno">  212</span>          c.Layout.ResizeToContent();</div>
+<div class="line"><span class="lineno">  213</span>        });</div>
+<div class="line"><span class="lineno">  214</span> </div>
+<div class="line"><span class="lineno">  215</span>        RunStraigth(c =&gt;</div>
+<div class="line"><span class="lineno">  216</span>        {</div>
+<div class="line"><span class="lineno">  217</span>          c.Layout.Update();</div>
+<div class="line"><span class="lineno">  218</span>          c.Layout.UpdateDecor();</div>
+<div class="line"><span class="lineno">  219</span>        });</div>
+<div class="line"><span class="lineno">  220</span>      }</div>
+<div class="line"><span class="lineno">  221</span> </div>
+<div class="line"><span class="lineno">  222</span>      <span class="comment">//TODO do i need 2 updates?</span></div>
+<div class="line"><span class="lineno">  223</span>      <span class="comment">//RunStraigth(c =&gt; c.InvokeOnUpdate(totalTime));</span></div>
+<div class="line"><span class="lineno">  224</span> </div>
+<div class="line"><span class="lineno">  225</span>      LastUpdateTime = totalTime;</div>
+<div class="line"><span class="lineno">  226</span>    }</div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_main_component_html_a732d4cd06ae8386f66dc6111309661d4"><div class="ttname"><a href="#a732d4cd06ae8386f66dc6111309661d4">CrabUI.CUIMainComponent.CalculateUntilResolved</a></div><div class="ttdeci">bool CalculateUntilResolved</div><div class="ttdoc">If true will update layout until it settles to prevent blinking.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_main_component_8cs_source.html#l00046">CUIMainComponent.cs:46</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_main_component_html_a818766ed3e726ac4fb5f9b4c2ae82c89"><div class="ttname"><a href="#a818766ed3e726ac4fb5f9b4c2ae82c89">CrabUI.CUIMainComponent.Frozen</a></div><div class="ttdeci">bool Frozen</div><div class="ttdoc">Frozen window doesn't update.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_main_component_8cs_source.html#l00041">CUIMainComponent.cs:41</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_main_component_html_a9b2ad5be37c88c938fe490359d57d882"><div class="ttname"><a href="#a9b2ad5be37c88c938fe490359d57d882">CrabUI.CUIMainComponent.MaxLayoutRecalcLoopsPerUpdate</a></div><div class="ttdeci">int MaxLayoutRecalcLoopsPerUpdate</div><div class="ttdoc">If your GUI needs more than this steps of layout update you will get a warning.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_main_component_8cs_source.html#l00051">CUIMainComponent.cs:51</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1109,7 +1137,7 @@ static IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bott
 
 <p>If true will update layout until it settles to prevent blinking. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00044">44</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00046">46</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
 
 </div>
 </div>
@@ -1127,7 +1155,7 @@ static IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bott
 
 <p>Container for true global events <a class="el" href="class_crab_u_i_1_1_c_u_i_main_component.html" title="Orchestrating drawing and updating of it&#39;s children   Also a CUIComponent, but it&#39;s draw and update m...">CUIMainComponent</a> itself can react to events and you can listen for those, but e.g. mouse events may be consumed before they reach Main. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00067">67</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00069">69</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
 
 </div>
 </div>
@@ -1143,7 +1171,7 @@ static IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bott
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00053">53</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00055">55</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
 
 </div>
 </div>
@@ -1159,7 +1187,7 @@ static IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bott
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00054">54</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00056">56</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
 
 </div>
 </div>
@@ -1175,7 +1203,7 @@ static IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bott
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00055">55</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00057">57</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
 
 </div>
 </div>
@@ -1193,7 +1221,7 @@ static IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bott
 
 <p>If your GUI needs more than this steps of layout update you will get a warning. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00049">49</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00051">51</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
 
 </div>
 </div>
@@ -1209,7 +1237,7 @@ static IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bott
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00056">56</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00058">58</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
 
 </div>
 </div>
@@ -1225,7 +1253,7 @@ static IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bott
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00040">40</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00042">42</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
 
 </div>
 </div>
@@ -1250,8 +1278,8 @@ static IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bott
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00051">51</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   51</span>{ <span class="keyword">set</span> { OnTreeChanged += value; } }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00053">53</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>{ <span class="keyword">set</span> { OnTreeChanged += value; } }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1275,11 +1303,11 @@ static IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bott
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00057">57</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   58</span>    {</div>
-<div class="line"><span class="lineno">   59</span>      <span class="keyword">get</span> =&gt; CUI.FocusedComponent;</div>
-<div class="line"><span class="lineno">   60</span>      <span class="keyword">set</span> =&gt; CUI.FocusedComponent = value;</div>
-<div class="line"><span class="lineno">   61</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00059">59</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   60</span>    {</div>
+<div class="line"><span class="lineno">   61</span>      <span class="keyword">get</span> =&gt; CUI.FocusedComponent;</div>
+<div class="line"><span class="lineno">   62</span>      <span class="keyword">set</span> =&gt; CUI.FocusedComponent = value;</div>
+<div class="line"><span class="lineno">   63</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1305,8 +1333,8 @@ static IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bott
 
 <p>Frozen window doesn't update. </p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00039">39</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   39</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00041">41</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   41</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1323,7 +1351,7 @@ static IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight" valign="bott
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00050">50</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_main_component_8cs_source.html#l00052">52</a> of file <a class="el" href="_c_u_i_main_component_8cs_source.html">CUIMainComponent.cs</a>.</p>
 
 </div>
 </div>

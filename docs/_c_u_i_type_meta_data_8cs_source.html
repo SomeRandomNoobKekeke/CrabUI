@@ -215,18 +215,19 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        <span class="keywordflow">if</span> (!Attribute.IsDefined(type, typeof(NoDefaultAttribute)))</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        {</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>          Default = (CUIComponent)Activator.CreateInstance(type);</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        }</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>      }</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>      <span class="keywordflow">catch</span> (Exception e)</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>      {</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        <span class="keywordflow">if</span> (e is System.MissingMethodException) <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        CUI.Warning($<span class="stringliteral">&quot;In CUITypeMetaData {type}\n{e}\n&quot;</span>);</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>      }</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    }</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  }</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>}</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>          Default.Unreal = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        }</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>      }</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>      <span class="keywordflow">catch</span> (Exception e)</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>      {</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <span class="keywordflow">if</span> (e is System.MissingMethodException) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        CUI.Warning($<span class="stringliteral">&quot;In CUITypeMetaData {type}\n{e}\n&quot;</span>);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>      }</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    }</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  }</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>}</div>
 <div class="ttc" id="anamespace_crab_u_i_html"><div class="ttname"><a href="namespace_crab_u_i.html">CrabUI</a></div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_animation_8cs_source.html#l00011">CUIAnimation.cs:12</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

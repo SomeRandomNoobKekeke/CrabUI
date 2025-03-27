@@ -31,11 +31,18 @@ namespace CrabUI
       FilterMode = TextureFilterMode.Default,
     };
 
-    public static void DrawTexture(SpriteBatch sb, CUIRect cuirect, Color cl, Texture2D texture, float depth = 0.0f)
+    public static void DrawTexture(SpriteBatch sb, CUIRect cuirect, Texture2D texture, Color cl, CUISpriteDrawMode drawMode = CUISpriteDrawMode.Resize)
     {
-      Rectangle sourceRect = new Rectangle(0, 0, (int)cuirect.Width, (int)cuirect.Height);
+      Rectangle sourceRect = drawMode switch
+      {
+        CUISpriteDrawMode.Resize => texture.Bounds,
+        CUISpriteDrawMode.Wrap => new Rectangle(0, 0, (int)cuirect.Width, (int)cuirect.Height),
+        CUISpriteDrawMode.Static => cuirect.Box,
+        CUISpriteDrawMode.StaticDeep => cuirect.Zoom(0.9f),
+        _ => texture.Bounds,
+      };
 
-      sb.Draw(texture, cuirect.Box, sourceRect, cl, 0.0f, Vector2.Zero, SpriteEffects.None, depth);
+      sb.Draw(texture, cuirect.Box, sourceRect, cl, 0.0f, Vector2.Zero, SpriteEffects.None, 0);
     }
     public static void DrawRectangle(SpriteBatch sb, CUIRect cuirect, Color cl, CUISprite sprite, float depth = 0.0f)
     {

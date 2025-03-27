@@ -21,7 +21,7 @@ namespace CrabUI
   /// <summary>
   /// Base class for all components
   /// </summary>
-  public partial class CUIComponent : IDisposable
+  public partial class CUIComponent : ICUIComponent, IDisposable
   {
     #region Static --------------------------------------------------------
     internal static void InitStatic()
@@ -48,10 +48,16 @@ namespace CrabUI
       };
     }
 
-
-
     internal static int MaxID;
     public static Dictionary<int, WeakReference<CUIComponent>> ComponentsById = new();
+    public static IEnumerable<CUIComponent> AllComponents => ComponentsById.Values
+      .Select(wr =>
+      {
+        CUIComponent component = null;
+        wr.TryGetTarget(out component);
+        return component;
+      })
+      .Where(c => c != null);
     public static WeakCatalog<Type, CUIComponent> ComponentsByType = new();
 
     /// <summary>
@@ -73,6 +79,7 @@ namespace CrabUI
         RunRecursiveOn(child, action);
       }
     }
+
 
     public static void ForEach(Action<CUIComponent> action)
     {
@@ -143,16 +150,16 @@ namespace CrabUI
       // if (Border.Visible) GUI.DrawRectangle(spriteBatch, BorderBox.Position, BorderBox.Size, Border.Color, thickness: Border.Thickness);
 
       if (OutlineVisible) GUI.DrawRectangle(spriteBatch, OutlineBox.Position, OutlineBox.Size, OutlineColor, thickness: OutlineThickness);
-
-      LeftResizeHandle.Draw(spriteBatch);
-      RightResizeHandle.Draw(spriteBatch);
     }
 
     public virtual partial void DrawFront(SpriteBatch spriteBatch)
     {
+      LeftResizeHandle.Draw(spriteBatch);
+      RightResizeHandle.Draw(spriteBatch);
+
       if (DebugHighlight)
       {
-        GUI.DrawRectangle(spriteBatch, Real.Position, Real.Size, Color.Cyan * 0.5f, isFilled: true);
+        CUI.DrawTexture(spriteBatch, Real, CUITextureManager.Checkers, Color.White * 0.5f, CUISpriteDrawMode.Static);
       }
     }
 

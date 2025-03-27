@@ -1,3 +1,47 @@
+# Changelog
+
+## 0.2.7.0
+
+Removed CUIFrame outline from DrawFront, but not ResizeHandle yet, it's a bit harder  
+Now Frame outlines won't be visible through other components
+
+Added MoveToFront method to CUIComponent, made CUIFrames MoveToFront on click by default
+
+Also CUIFrames now closes on "Close Frame" command by default so you don't need to set it, and i matches CloseButton command
+
+CUIToggleButton.ToggleOnClick CUIMultiButton.CycleOnClick props
+
+Added Repeat prop for CUIAnimation
+
+Made CUIPalette a bit more resistant to missing files and misuse  
+Added hardcoded backup palette so you could see something even if you could't load it for some reason
+
+#### added AttachedItems
+You can now attach CUIComponent to Barotrauma.Item and track when it's get selected, deselected and when its UpdateHUD is called  
+Check docs
+
+#### Serialization changes:
+
+Separated serialization and parsing logic  
+All parsing is now done in CUIParser, it can parse anything, you can also use it
+
+Renamed:  
+- Unserializable -> Serializable, should this component be serialized
+- BreakSerialization -> SerializeChildren, should children of this component be serialized
+
+Added:
+- MergeSerialization - Children of deserialized component will be moved to existing component
+- ReplaceSerialization - Deserialized component will replace existing component
+
+#### Debug
+Added
+- CUIPropsInterface component
+- CUIComponentSelector component
+- cuidebugprops console command
+- printcolors console command
+
+Added checkers texture for debug
+
 ## 0.2.6.4
 
 "Fixed" buttons still changing colors behind components with ConsumeMouseClicks

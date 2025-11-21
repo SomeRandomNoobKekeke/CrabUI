@@ -13,7 +13,7 @@ namespace CrabUIUser
   {
     public void Experiment()
     {
-      PropMigrationExperiment experiment = new();
+      PropAccessSpeedExperiment experiment = new();
       experiment.Run();
     }
   }

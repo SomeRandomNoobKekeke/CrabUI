@@ -10,6 +10,10 @@ using System.Diagnostics;
 
 namespace CrabUIUser
 {
+  /// <summary>
+  /// Accessing dict is 45 times slower that accessing prop
+  /// accessing field = accessing prop
+  /// </summary>
   public class PropAccessSpeedExperiment : Experiment
   {
     public class Bebebe

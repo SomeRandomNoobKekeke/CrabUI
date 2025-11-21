@@ -13,7 +13,7 @@ namespace CrabUIUser
   {
     public void Experiment()
     {
-      PropAccessSpeedExperiment experiment = new();
+      ItteratingCustomIEnumerable experiment = new();
       experiment.Run();
     }
   }

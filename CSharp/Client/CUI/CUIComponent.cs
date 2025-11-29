@@ -7,8 +7,29 @@ using Barotrauma;
 
 namespace CrabUI
 {
-  public class CUIComponent : ComponentCore
+  public partial class CUIComponent : CUIComponentCore, IVisibleTreeNode
   {
+    public List<IVisibleTreeNode> TopChildren { get; } = new();
+    public List<IVisibleTreeNode> Children { get; } = new();
 
+
+
+    public void Draw()
+    {
+
+    }
+
+    private void InitModules()
+    {
+
+    }
+
+    public CUIComponent()
+    {
+
+    }
+
+
+    public override string ToString() => $"{this.GetType().Name} [{this.ID}]";
   }
 }

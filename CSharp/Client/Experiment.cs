@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Barotrauma;
 using BaroJunk;
+using CrabUI;
 
 namespace CrabUIUser
 {
@@ -13,8 +14,7 @@ namespace CrabUIUser
   {
     public void Experiment()
     {
-      // PrivateRoom experiment = new();
-      // experiment.Run();
+
     }
   }
 }

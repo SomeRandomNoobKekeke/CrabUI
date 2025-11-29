@@ -7,16 +7,16 @@ using Barotrauma;
 
 namespace CrabUI
 {
-  public class ComponentCore
+  public partial class CUIComponentCore
   {
+    // protected CUIEnvironment Environment { get; set; }
     public static int MaxID { get; private set; }
-
     public int ID { get; set; }
 
-
-    public ComponentCore()
+    public CUIComponentCore()
     {
       ID = MaxID++;
+      // Environment = CUI.Environment;
     }
   }
 }

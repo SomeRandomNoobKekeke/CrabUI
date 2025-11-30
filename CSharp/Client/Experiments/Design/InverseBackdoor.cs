@@ -29,7 +29,7 @@ namespace CrabUIUser
           set => fullHost.SuperPublic = value;
         }
 
-        public Host(FullHost host) => fullHosts = host;
+        public Host(FullHost host) => fullHost = host;
       }
 
       public class Backdoor

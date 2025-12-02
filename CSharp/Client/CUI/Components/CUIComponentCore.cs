@@ -9,14 +9,12 @@ namespace CrabUI
 {
   public partial class CUIComponentCore
   {
-    // protected CUIEnvironment Environment { get; set; }
     public static int MaxID { get; private set; }
     public int ID { get; set; }
 
     public CUIComponentCore()
     {
       ID = MaxID++;
-      // Environment = CUI.Environment;
     }
   }
 }

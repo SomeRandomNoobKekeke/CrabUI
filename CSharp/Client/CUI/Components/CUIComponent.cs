@@ -7,14 +7,11 @@ using Barotrauma;
 
 namespace CrabUI
 {
-  public partial class CUIComponent : CUIComponentCore, IVisibleTreeNode
+  public partial class CUIComponent : CUIStructuralComponent, IDrawable
   {
-    public List<IVisibleTreeNode> TopChildren { get; } = new();
-    public List<IVisibleTreeNode> Children { get; } = new();
 
 
-
-    public void Draw()
+    public void Draw(CUISpriteBatch spriteBatch)
     {
 
     }
@@ -26,7 +23,7 @@ namespace CrabUI
 
     public CUIComponent()
     {
-
+      InitModules();
     }
 
 

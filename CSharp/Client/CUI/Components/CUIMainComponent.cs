@@ -7,7 +7,7 @@ using Barotrauma;
 
 namespace CrabUI
 {
-  public class CUIMainComponent : CUIStructuralComponent
+  public class CUIMainComponent : CUIComponent
   {
     public void DrawChildren(CUISpriteBatch spriteBatch)
     {

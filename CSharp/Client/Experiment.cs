@@ -14,8 +14,7 @@ namespace CrabUIUser
   {
     public void Experiment()
     {
-      // new StructuralTreeRefactor().Run();
-      // Mod.Logger.Log(CUI.Environment.GetID());
+
     }
   }
 }

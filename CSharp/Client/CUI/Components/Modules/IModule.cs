@@ -1,5 +1,3 @@
-
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +9,6 @@ namespace CrabUI
 {
   public interface IModule
   {
+    // public Object Host { get; set; }
   }
 }

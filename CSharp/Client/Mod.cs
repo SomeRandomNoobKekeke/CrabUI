@@ -6,6 +6,8 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Barotrauma;
 using BaroJunk;
+using CrabUI;
+using Microsoft.Xna.Framework;
 
 namespace CrabUIUser
 {
@@ -18,6 +20,17 @@ namespace CrabUIUser
     public void Initialize()
     {
       Instance = this;
+
+      CUI.Instance.Connect();
+
+      CUIComponent component = new CUIComponent()
+      {
+        Rect = new Rectangle(100, 100, 200, 200),
+      };
+
+      component.Drawer.Color = Color.Cyan;
+
+      CUI.Instance.Main.Children.Add(component);
 
       Experiment();
     }

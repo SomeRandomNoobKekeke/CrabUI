@@ -8,14 +8,35 @@ using BaroJunk;
 
 namespace CrabUI
 {
-  public static class CUI
+  public class CUI : IDisposable
   {
-    public static CUIEnvironment Environment { get; set; } = new();
-    private static CUIEnvironmentConnector Connector = new CUIEnvironmentConnector(Environment);
+    private static CUI instance; public static CUI Instance
+    {
+      get
+      {
+        instance ??= new CUI();
+        return instance;
+      }
+    }
 
-    public static void Connect() => Connector.Connect();
-    public static void Disconnect() => Connector.Disconnect();
+    public CUIEnvironment Environment { get; }
+    private CUIEnvironmentConnector Connector { get; }
 
-    public static CUIMainComponent Main = new CUIMainComponent();
+    public void Connect() => Connector.Connect();
+    public void Disconnect() => Connector.Disconnect();
+
+    public CUIMainComponent Main;
+
+    public CUI()
+    {
+      Environment = new CUIEnvironment();
+      Connector = new CUIEnvironmentConnector(Environment);
+
+      Main = new CUIMainComponent();
+      Environment.LifeCycle.AfterDraw += Main.DrawChildren;
+    }
+
+
+    public void Dispose() { instance = null; }
   }
 }

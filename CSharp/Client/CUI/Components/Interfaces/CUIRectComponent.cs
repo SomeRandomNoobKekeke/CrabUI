@@ -4,14 +4,12 @@ using System.Linq;
 using System.Reflection;
 using System.Diagnostics;
 using Barotrauma;
-using BaroJunk;
+using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public class CUIEnvironment
+  public interface CUIRectComponent
   {
-    public CUILifeCycle LifeCycle { get; set; } = new CUILifeCycle();
-
-    public string GetID() => ModInfo.HookId;
+    public Rectangle Rect { get; set; }
   }
 }

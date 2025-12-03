@@ -8,7 +8,7 @@ using Barotrauma;
 
 namespace CrabUI
 {
-  public interface ICUISpriteBatch
+  public interface ICUITexture
   {
 
   }

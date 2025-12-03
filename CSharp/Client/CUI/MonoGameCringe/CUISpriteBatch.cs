@@ -13,6 +13,16 @@ namespace CrabUI
   {
     public SpriteBatch SpriteBatch;
 
-    public void Use(SpriteBatch spriteBatch) => this.SpriteBatch = spriteBatch;
+    public void Draw(ICUITexture texture, Rectangle destinationRectangle, Color color)
+    {
+      if (texture is CUITexture t)
+      {
+        SpriteBatch.Draw(t.Texture, destinationRectangle, color);
+      }
+    }
+
+    public void Use(SpriteBatch spriteBatch) => SpriteBatch = spriteBatch;
+    public CUISpriteBatch() { }
+    public CUISpriteBatch(SpriteBatch spriteBatch) => SpriteBatch = spriteBatch;
   }
 }

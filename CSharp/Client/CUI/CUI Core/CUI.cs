@@ -20,17 +20,18 @@ namespace CrabUI
     }
 
     public CUIEnvironment Environment { get; }
-    private CUIEnvironmentConnector Connector { get; }
 
-    public void Connect() => Connector.Connect();
-    public void Disconnect() => Connector.Disconnect();
+    private DefaultGameAdapter GameAdapter { get; }
+
+    public void Connect() => GameAdapter.Connect();
+    public void Disconnect() => GameAdapter.Disconnect();
 
     public CUIMainComponent Main;
 
     public CUI()
     {
       Environment = new CUIEnvironment();
-      Connector = new CUIEnvironmentConnector(Environment);
+      GameAdapter = new DefaultGameAdapter(Environment);
 
       Main = new CUIMainComponent();
       Environment.LifeCycle.BeforeDraw += Main.DrawChildren;

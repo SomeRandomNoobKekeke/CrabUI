@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Graphics;
 namespace CrabUI
 {
   //TODO i should probably make a version with harmony, i don't like all that casting
-  public class CUIEnvironmentConnector
+  public class DefaultGameAdapter
   {
     private string BeforeDrawHook => $"{ModInfo.HookId}_CUI_BeforeDraw";
     private string AfterDrawHook => $"{ModInfo.HookId}_CUI_AfterDraw";
@@ -54,7 +54,7 @@ namespace CrabUI
       }, LuaCsHook.HookMethodType.After);
     }
 
-    public CUIEnvironmentConnector(CUIEnvironment environment)
+    public DefaultGameAdapter(CUIEnvironment environment)
     {
       ArgumentNullException.ThrowIfNull(environment);
       Environment = environment;

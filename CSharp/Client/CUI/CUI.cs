@@ -33,7 +33,7 @@ namespace CrabUI
       Connector = new CUIEnvironmentConnector(Environment);
 
       Main = new CUIMainComponent();
-      Environment.LifeCycle.AfterDraw += Main.DrawChildren;
+      Environment.LifeCycle.BeforeDraw += Main.DrawChildren;
     }
 
 

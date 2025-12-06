@@ -158,7 +158,7 @@ namespace CrabUIUser
 
 
 
-    public int repeats = 100000000;
+    public int repeats = 100_000_000;
 
     public override void Run()
     {

@@ -9,27 +9,40 @@ namespace CrabUI
 {
   public class CUIMainComponent : CUIComponent
   {
+
+    public TreeFlattenerModule TreeFlattenerModule;
+
+    protected override void InitModules()
+    {
+      base.InitModules();
+
+      TreeFlattenerModule = new TreeFlattenerModule(this);
+    }
+
     public void DrawChildren(CUISpriteBatch spriteBatch)
     {
-      void DrawChildrenRec(CUISpriteBatch spriteBatch, CUIStructuralComponent component)
+      foreach (var component in TreeFlattenerModule.Flat)
       {
         if (component is IDrawable drawable)
         {
           drawable.Draw(spriteBatch);
         }
-
-        foreach (CUIStructuralComponent child in component.Children)
-        {
-          DrawChildrenRec(spriteBatch, child);
-        }
-
-        foreach (CUIStructuralComponent child in component.TopChildren)
-        {
-          DrawChildrenRec(spriteBatch, child);
-        }
       }
+    }
 
-      DrawChildrenRec(spriteBatch, this);
+    public void Update()
+    {
+      if (TreeNodeModule.TreeChanged)
+      {
+        TreeFlattenerModule.Flatten();
+        TreeNodeModule.TreeChanged = false;
+      }
+    }
+
+    public void AttachToEnvironment(CUIEnvironment environment)
+    {
+      environment.LifeCycle.DrawBeforeGUI += DrawChildren;
+      environment.LifeCycle.Update += Update;
     }
   }
 }

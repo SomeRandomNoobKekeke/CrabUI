@@ -12,6 +12,8 @@ namespace CrabUI
   {
     public CUILifeCycle LifeCycle { get; set; } = new CUILifeCycle();
 
+    public InputScanner InputScanner { get; set; } = new InputScanner();
+
     public string GetID() => ModInfo.HookId;
   }
 }

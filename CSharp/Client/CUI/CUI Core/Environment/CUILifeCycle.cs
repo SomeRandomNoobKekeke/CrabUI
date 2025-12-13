@@ -9,10 +9,13 @@ namespace CrabUI
 {
   public class CUILifeCycle
   {
-    public event Action<CUISpriteBatch> BeforeDraw;
-    public event Action<CUISpriteBatch> AfterDraw;
+    public event Action<CUISpriteBatch> DrawBeforeGUI;
+    public event Action<CUISpriteBatch> DrawAfterGUI;
+    public event Action Update;
 
-    public void RaiseBeforeDraw(CUISpriteBatch spriteBatch) => BeforeDraw?.Invoke(spriteBatch);
-    public void RaiseAfterDraw(CUISpriteBatch spriteBatch) => AfterDraw?.Invoke(spriteBatch);
+
+    public void RaiseDrawBeforeGUI(CUISpriteBatch spriteBatch) => DrawBeforeGUI?.Invoke(spriteBatch);
+    public void RaiseDrawAfterGUI(CUISpriteBatch spriteBatch) => DrawAfterGUI?.Invoke(spriteBatch);
+    public void RaiseUpdate() => Update?.Invoke();
   }
 }

@@ -7,10 +7,10 @@ using Barotrauma;
 using Microsoft.Xna.Framework;
 namespace CrabUI
 {
-  public partial class CUIComponent : CUIComponentCore, CUIStructuralComponent, CUIRectComponent, IDrawable
+  public partial class CUIComponent : CUIComponentCore, CUIRectComponent, IDrawable, IComponentTreeNode
   {
-    public List<CUIStructuralComponent> TopChildren { get; } = new();
-    public List<CUIStructuralComponent> Children { get; } = new();
+    public TreeNodeModule TreeNodeModule { get; set; }
+
     public Rectangle Rect { get; set; }
 
     public SimpleDrawer Drawer { get; set; }
@@ -20,9 +20,10 @@ namespace CrabUI
       Drawer.Draw(spriteBatch);
     }
 
-    private void InitModules()
+    protected virtual void InitModules()
     {
       Drawer = new SimpleDrawer(this);
+      TreeNodeModule = new TreeNodeModule(this);
     }
 
     public CUIComponent()

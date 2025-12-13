@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Diagnostics;
 using Barotrauma;
-using BaroJunk;
+
 
 namespace CrabUI
 {
@@ -20,10 +20,9 @@ namespace CrabUI
     }
 
     public CUIEnvironment Environment { get; }
+    public DefaultGameAdapter GameAdapter { get; }
 
-    private DefaultGameAdapter GameAdapter { get; }
-
-    public void Connect() => GameAdapter.Connect();
+    public void Connect() => GameAdapter.Connect(Environment);
     public void Disconnect() => GameAdapter.Disconnect();
 
     public CUIMainComponent Main;
@@ -31,10 +30,10 @@ namespace CrabUI
     public CUI()
     {
       Environment = new CUIEnvironment();
-      GameAdapter = new DefaultGameAdapter(Environment);
+      GameAdapter = new DefaultGameAdapter();
 
       Main = new CUIMainComponent();
-      Environment.LifeCycle.BeforeDraw += Main.DrawChildren;
+      Main.AttachToEnvironment(Environment);
     }
 
 

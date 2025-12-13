@@ -28,9 +28,16 @@ namespace CrabUIUser
         Rect = new Rectangle(100, 100, 200, 200),
       };
 
-      component.Drawer.Color = Color.Cyan;
+      CUIComponent component2 = new CUIComponent()
+      {
+        Rect = new Rectangle(200, 200, 200, 200),
+      };
 
-      CUI.Instance.Main.Children.Add(component);
+      component.Drawer.Color = Color.Cyan;
+      component2.Drawer.Color = Color.Red;
+
+      CUI.Instance.Main.AddChild(component);
+      CUI.Instance.Main.AddChild(component2);
 
       Experiment();
     }

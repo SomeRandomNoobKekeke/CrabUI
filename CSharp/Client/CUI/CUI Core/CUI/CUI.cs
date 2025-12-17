@@ -22,15 +22,22 @@ namespace CrabUI
     public CUIEnvironment Environment { get; }
     public DefaultGameAdapter GameAdapter { get; }
 
+    public CUIInput Input { get; }
+
     public void Connect() => GameAdapter.Connect(Environment);
     public void Disconnect() => GameAdapter.Disconnect();
 
     public CUIMainComponent Main;
 
+
     public CUI()
     {
       Environment = new CUIEnvironment();
       GameAdapter = new DefaultGameAdapter();
+
+      Input = new CUIInput();
+      Input.AttachToEnvironment(Environment);
+
 
       Main = new CUIMainComponent();
       Main.AttachToEnvironment(Environment);

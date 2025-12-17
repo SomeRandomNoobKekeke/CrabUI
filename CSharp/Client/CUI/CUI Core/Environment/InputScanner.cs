@@ -15,7 +15,7 @@ namespace CrabUI
     public KeyboardState ScanKeyboard();
   }
 
-  public class InputScanner
+  public class InputScanner : IInputProvider
   {
     public IInputProvider InputProvider;
 

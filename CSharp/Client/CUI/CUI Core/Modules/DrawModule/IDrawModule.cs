@@ -8,8 +8,9 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public interface CUIRectComponent
+  public interface IDrawModule : IModule
   {
-    public Rectangle Rect { get; set; }
+    public Rectangle DrawRect { get; set; }
+    public void Draw(CUISpriteBatch spriteBatch);
   }
 }

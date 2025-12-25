@@ -23,23 +23,9 @@ namespace CrabUIUser
 
       CUI.Instance.Connect();
 
-      CUIComponent component = new CUIComponent()
-      {
-        Rect = new Rectangle(100, 100, 200, 200),
-      };
-
-      CUIComponent component2 = new CUIComponent()
-      {
-        Rect = new Rectangle(200, 200, 200, 200),
-      };
-
-      component.Drawer.Color = Color.Cyan;
-      component2.Drawer.Color = Color.Red;
-
-      CUI.Instance.Main.AddChild(component);
-      CUI.Instance.Main.AddChild(component2);
 
       Experiment();
+      Logger.Log($"Compiled somehow");
     }
 
     public void OnLoadCompleted() { }

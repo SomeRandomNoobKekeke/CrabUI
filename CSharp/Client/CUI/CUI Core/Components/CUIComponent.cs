@@ -1,37 +1,54 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
 using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
+
 namespace CrabUI
 {
-  public partial class CUIComponent : CUIComponentCore, CUIRectComponent, IDrawable, IComponentTreeNode
+  public partial class CUIComponent : CUIComponentCore, IDrawable, IComponentTreeNode
   {
-    public TreeNodeModule TreeNodeModule { get; set; }
 
-    public Rectangle Rect { get; set; }
+    public TreeNodeModule TreeNodeModule { get; private set; }
+    public SimpleDrawModule DrawModule { get; private set; }
 
-    public SimpleDrawer Drawer { get; set; }
-
-    public void Draw(CUISpriteBatch spriteBatch)
+    protected override void InitModules()
     {
-      Drawer.Draw(spriteBatch);
-    }
-
-    protected virtual void InitModules()
-    {
-      Drawer = new SimpleDrawer(this);
+      DrawModule = new SimpleDrawModule();
       TreeNodeModule = new TreeNodeModule(this);
     }
 
-    public CUIComponent()
+    public void Draw(CUISpriteBatch spriteBatch)
     {
-      InitModules();
+      DrawModule.Draw(spriteBatch);
     }
 
+    #region Forwarded Props
+    #endregion
+    public Rectangle DrawRect
+    {
+      get => DrawModule.DrawRect;
+      set => DrawModule.DrawRect = value;
+    }
 
-    public override string ToString() => $"{this.GetType().Name} [{this.ID}]";
+    public event Action OnTreeChanged
+    {
+      add => TreeNodeModule.OnTreeChanged += value;
+      remove => TreeNodeModule.OnTreeChanged -= value;
+    }
+
+    public IComponentTreeNode Parent
+    {
+      get => TreeNodeModule.Parent;
+      set => TreeNodeModule.Parent = value;
+    }
+    public ReadOnlyCollection<IComponentTreeNode> Children => TreeNodeModule.Children;
+
+    public void AddChild(IComponentTreeNode child) => TreeNodeModule.RemoveChild(child);
+    public void RemoveChild(IComponentTreeNode child) => TreeNodeModule.RemoveChild(child);
+
   }
 }

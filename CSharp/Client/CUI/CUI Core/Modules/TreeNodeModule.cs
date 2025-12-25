@@ -18,11 +18,7 @@ namespace CrabUI
 
     public IComponentTreeNode Parent { get; set; }
 
-
-    private List<IComponentTreeNode> _topChildren { get; set; } = new();
     private List<IComponentTreeNode> _children { get; set; } = new();
-
-    public ReadOnlyCollection<IComponentTreeNode> TopChildren => _topChildren.AsReadOnly();
     public ReadOnlyCollection<IComponentTreeNode> Children => _children.AsReadOnly();
 
     public void AddChild(IComponentTreeNode child)

@@ -35,6 +35,7 @@ namespace CrabUI
       Environment = new CUIEnvironment();
       GameAdapter = new DefaultGameAdapter();
 
+      //TODO order of callbacks should be defined somewhere separately
       Input = new CUIInput();
       Input.AttachToEnvironment(Environment);
 

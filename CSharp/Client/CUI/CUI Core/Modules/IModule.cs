@@ -9,6 +9,6 @@ namespace CrabUI
 {
   public interface IModule
   {
-    // public Object Host { get; set; }
+
   }
 }

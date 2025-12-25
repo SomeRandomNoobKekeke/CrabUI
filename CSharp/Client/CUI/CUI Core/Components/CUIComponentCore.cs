@@ -12,9 +12,15 @@ namespace CrabUI
     public static int MaxID { get; private set; }
     public int ID { get; set; }
 
+    protected virtual void InitModules() { }
+
     public CUIComponentCore()
     {
       ID = MaxID++;
+
+      InitModules();
     }
+
+    public override string ToString() => $"{this.GetType().Name} [{this.ID}]";
   }
 }

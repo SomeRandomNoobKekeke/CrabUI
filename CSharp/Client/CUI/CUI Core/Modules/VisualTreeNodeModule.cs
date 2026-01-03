@@ -9,28 +9,32 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public class TreeNodeModule : IModule
+  public class VisualTreeNodeModule : IModule
   {
-    public IComponentTreeNode Host { get; }
+    public IVisualComponent Host { get; }
 
     public bool TreeChanged { get; set; }
     public event Action OnTreeChanged;
 
-    public IComponentTreeNode Parent { get; set; }
-
-    private List<IComponentTreeNode> _children { get; set; } = new();
-    public ReadOnlyCollection<IComponentTreeNode> Children => _children.AsReadOnly();
-
-    public void AddChild(IComponentTreeNode child)
+    public IVisualComponent Parent
     {
-      _children.Add(child);
+      get => Host.Parent;
+      set => Host.Parent = value;
+    }
+
+    private List<IVisualComponent> children = new List<IVisualComponent>();
+    public ReadOnlyCollection<IVisualComponent> Children => children.AsReadOnly();
+
+    public void AddChild(IVisualComponent child)
+    {
+      children.Add(child);
       child.TreeNodeModule.Parent = Host;
       PropogateTreeChanged();
     }
 
-    public void RemoveChild(IComponentTreeNode child)
+    public void RemoveChild(IVisualComponent child)
     {
-      _children.Remove(child);
+      children.Remove(child);
       child.TreeNodeModule.Parent = null;
       PropogateTreeChanged();
     }

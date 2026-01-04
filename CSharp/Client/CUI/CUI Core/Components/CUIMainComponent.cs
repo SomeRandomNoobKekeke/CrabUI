@@ -10,21 +10,23 @@ namespace CrabUI
   public class CUIMainComponent : CUIComponent
   {
 
+    public CUIVisualFlattener Flattener = new CUIVisualFlattener();
+    public CUIVisualDrawer Drawer = new CUIVisualDrawer();
 
 
-    protected override void InitModules()
-    {
-
-    }
 
     public void DrawChildren(CUISpriteBatch spriteBatch)
     {
-
+      Drawer.Draw(spriteBatch, Flattener.Flat);
     }
 
     public void Update()
     {
-
+      if (TreeChanged)
+      {
+        TreeChanged = false;
+        Flattener.Flatten(this);
+      }
     }
 
     public void AttachToEnvironment(CUIEnvironment environment)

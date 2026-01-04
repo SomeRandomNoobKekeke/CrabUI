@@ -9,46 +9,26 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public partial class CUIComponent : CUIComponentCore, IDrawable, IComponentTreeNode
+  public partial class CUIComponent : CUIVisualComponent
   {
-
-    public TreeNodeModule TreeNodeModule { get; private set; }
-    public SimpleDrawModule DrawModule { get; private set; }
+    public SimpleRectTexture SimpleRectTexture { get; private set; }
 
     protected override void InitModules()
     {
-      DrawModule = new SimpleDrawModule();
-      TreeNodeModule = new TreeNodeModule(this);
+      SimpleRectTexture = new();
     }
 
-    public void Draw(CUISpriteBatch spriteBatch)
+    public override IEnumerable<VI.VisualFlattenerInstruction> VisualSplit()
     {
-      DrawModule.Draw(spriteBatch);
+      yield return new VI.PrimitiveVisualElement(SimpleRectTexture);
+      yield return new VI.LeftContextBound();
+      foreach (CUIVisualComponent child in children)
+      {
+        yield return new VI.NestedVisualComponent(child);
+      }
+      yield return new VI.RightContextBound();
     }
 
-    #region Forwarded Props
-    #endregion
-    public Rectangle DrawRect
-    {
-      get => DrawModule.DrawRect;
-      set => DrawModule.DrawRect = value;
-    }
-
-    public event Action OnTreeChanged
-    {
-      add => TreeNodeModule.OnTreeChanged += value;
-      remove => TreeNodeModule.OnTreeChanged -= value;
-    }
-
-    public IComponentTreeNode Parent
-    {
-      get => TreeNodeModule.Parent;
-      set => TreeNodeModule.Parent = value;
-    }
-    public ReadOnlyCollection<IComponentTreeNode> Children => TreeNodeModule.Children;
-
-    public void AddChild(IComponentTreeNode child) => TreeNodeModule.RemoveChild(child);
-    public void RemoveChild(IComponentTreeNode child) => TreeNodeModule.RemoveChild(child);
 
   }
 }

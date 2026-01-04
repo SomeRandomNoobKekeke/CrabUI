@@ -8,8 +8,8 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public interface IComponentTreeNode
-  {
-    public TreeNodeModule TreeNodeModule { get; }
-  }
+  // public interface IComponentTreeNode
+  // {
+  //   public TreeNodeModule TreeNodeModule { get; }
+  // }
 }

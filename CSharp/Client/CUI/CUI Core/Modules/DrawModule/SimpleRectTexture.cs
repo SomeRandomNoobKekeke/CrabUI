@@ -8,15 +8,15 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public class SimpleDrawModule : IDrawModule
+  public class SimpleRectTexture : IVisualElement
   {
-    public Rectangle DrawRect { get; set; }
+    public Rectangle Rect { get; set; }
     public CUITexture Texture { get; set; } = CUITexture.White;
     public Color Color { get; set; }
 
     public void Draw(CUISpriteBatch spriteBatch)
     {
-      spriteBatch.Draw(Texture, DrawRect, Color);
+      spriteBatch.Draw(Texture, Rect, Color);
     }
   }
 }

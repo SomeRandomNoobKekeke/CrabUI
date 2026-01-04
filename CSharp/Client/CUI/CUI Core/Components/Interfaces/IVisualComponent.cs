@@ -11,10 +11,6 @@ namespace CrabUI
 {
   public interface IVisualComponent
   {
-    public ReadOnlyCollection<IVisualComponent> Children { get; }
-    public IVisualComponent Parent { get; }
-
-    public void Draw();
-    public void HandleMouse();
+    public IEnumerable<VI.VisualFlattenerInstruction> VisualSplit();
   }
 }

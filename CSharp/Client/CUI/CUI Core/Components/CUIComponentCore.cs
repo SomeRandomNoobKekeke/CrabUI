@@ -7,7 +7,7 @@ using Barotrauma;
 
 namespace CrabUI
 {
-  public partial class CUIComponentCore
+  public abstract partial class CUIComponentCore
   {
     public static int MaxID { get; private set; }
     public int ID { get; set; }

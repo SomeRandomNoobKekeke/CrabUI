@@ -8,36 +8,26 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public class VI
+  public interface VisualUnit
   {
-    public interface VisualFlattenerInstruction
-    {
-
-    }
-
-    public interface VisualUnit
-    {
-
-    }
-
-    public class PrimitiveVisualElement : VisualFlattenerInstruction, VisualUnit
+    public class PrimitiveVisualElement : VisualUnit
     {
       public IVisualElement Element;
       public PrimitiveVisualElement(IVisualElement element) => Element = element;
     }
 
-    public class NestedVisualComponent : VisualFlattenerInstruction
+    public class NestedVisualComponent : VisualUnit
     {
       public IVisualComponent Component;
       public NestedVisualComponent(IVisualComponent component) => Component = component;
     }
 
-    public class LeftContextBound : VisualFlattenerInstruction, VisualUnit
+    public class LeftContextBound : VisualUnit
     {
 
     }
 
-    public class RightContextBound : VisualFlattenerInstruction, VisualUnit
+    public class RightContextBound : VisualUnit
     {
 
     }

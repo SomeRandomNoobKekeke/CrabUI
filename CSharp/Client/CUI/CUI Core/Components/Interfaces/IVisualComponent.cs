@@ -11,6 +11,6 @@ namespace CrabUI
 {
   public interface IVisualComponent
   {
-    public IEnumerable<VI.VisualFlattenerInstruction> VisualSplit();
+    public IEnumerable<VisualUnit> VisualSplit();
   }
 }

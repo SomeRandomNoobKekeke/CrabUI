@@ -8,23 +8,21 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public partial class CUIVisualDrawer : IModule
+  public partial class ChainDrawer : IModule
   {
-    public void Draw(CUISpriteBatch spriteBatch, List<VI.VisualUnit> flat)
+    public void Draw(CUISpriteBatch spriteBatch, List<VisualUnit> flat)
     {
-
-
-      foreach (VI.VisualUnit unit in flat)
+      foreach (VisualUnit unit in flat)
       {
         switch (unit)
         {
-          case VI.PrimitiveVisualElement primitive:
+          case VisualUnit.PrimitiveVisualElement primitive:
             primitive.Element.Draw(spriteBatch);
             break;
-          case VI.LeftContextBound left:
+          case VisualUnit.LeftContextBound left:
             // enter context
             break;
-          case VI.RightContextBound right:
+          case VisualUnit.RightContextBound right:
             // leave context
             break;
           default:

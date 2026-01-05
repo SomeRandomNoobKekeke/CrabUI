@@ -10,7 +10,7 @@ namespace CrabUI
 {
   public abstract class CUIVisualComponent : CUIComponentCore, IVisualComponent
   {
-    public abstract IEnumerable<VI.VisualFlattenerInstruction> VisualSplit();
+    public abstract IEnumerable<VisualUnit> VisualSplit();
 
 
     public bool TreeChanged { get; set; }

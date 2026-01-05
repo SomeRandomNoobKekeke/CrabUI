@@ -10,8 +10,8 @@ namespace CrabUI
   public class CUIMainComponent : CUIComponent
   {
 
-    public CUIVisualFlattener Flattener = new CUIVisualFlattener();
-    public CUIVisualDrawer Drawer = new CUIVisualDrawer();
+    public VisualFlattener Flattener = new VisualFlattener();
+    public ChainDrawer Drawer = new ChainDrawer();
 
 
 

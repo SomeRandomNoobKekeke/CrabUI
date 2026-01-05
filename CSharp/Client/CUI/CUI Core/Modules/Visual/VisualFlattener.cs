@@ -8,9 +8,9 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public partial class CUIVisualFlattener : IModule
+  public partial class VisualFlattener : IModule
   {
-    public List<VI.VisualUnit> Flat { get; } = new();
+    public List<VisualUnit> Flat { get; } = new();
 
     public void Flatten(IVisualComponent root)
     {
@@ -18,20 +18,20 @@ namespace CrabUI
 
       void FlattenRec(IVisualComponent component)
       {
-        foreach (VI.VisualFlattenerInstruction instruction in component.VisualSplit())
+        foreach (VisualUnit unit in component.VisualSplit())
         {
-          switch (instruction)
+          switch (unit)
           {
-            case VI.PrimitiveVisualElement primitive:
+            case VisualUnit.PrimitiveVisualElement primitive:
               Flat.Add(primitive);
               break;
-            case VI.LeftContextBound left:
+            case VisualUnit.LeftContextBound left:
               Flat.Add(left);
               break;
-            case VI.RightContextBound right:
+            case VisualUnit.RightContextBound right:
               Flat.Add(right);
               break;
-            case VI.NestedVisualComponent nested:
+            case VisualUnit.NestedVisualComponent nested:
               FlattenRec(nested.Component);
               break;
             default:

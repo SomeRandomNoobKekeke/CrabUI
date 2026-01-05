@@ -11,22 +11,17 @@ namespace CrabUI
 {
   public partial class CUIComponent : CUIVisualComponent
   {
-    public SimpleRectTexture SimpleRectTexture { get; private set; }
+    public SimpleRectTexture SimpleRectTexture { get; } = new();
 
-    protected override void InitModules()
+    public override IEnumerable<VisualUnit> VisualSplit()
     {
-      SimpleRectTexture = new();
-    }
-
-    public override IEnumerable<VI.VisualFlattenerInstruction> VisualSplit()
-    {
-      yield return new VI.PrimitiveVisualElement(SimpleRectTexture);
-      yield return new VI.LeftContextBound();
+      yield return new VisualUnit.PrimitiveVisualElement(SimpleRectTexture);
+      yield return new VisualUnit.LeftContextBound();
       foreach (CUIVisualComponent child in children)
       {
-        yield return new VI.NestedVisualComponent(child);
+        yield return new VisualUnit.NestedVisualComponent(child);
       }
-      yield return new VI.RightContextBound();
+      yield return new VisualUnit.RightContextBound();
     }
 
 

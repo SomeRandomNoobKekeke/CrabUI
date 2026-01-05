@@ -11,11 +11,23 @@ namespace CrabUI
 {
   public partial class CUIComponent : CUIVisualComponent
   {
-    public SimpleRectTexture SimpleRectTexture { get; } = new();
+    protected SimpleTexture Background { get; } = new();
+
+    public Color BackgroundColor
+    {
+      get => Background.Color;
+      set => Background.Color = value;
+    }
+
+    public Rectangle Rect
+    {
+      get => Background.Rect;
+      set => Background.Rect = value;
+    }
 
     public override IEnumerable<VisualUnit> VisualSplit()
     {
-      yield return new VisualUnit.PrimitiveVisualElement(SimpleRectTexture);
+      yield return new VisualUnit.PrimitiveVisualElement(Background);
       yield return new VisualUnit.LeftContextBound();
       foreach (CUIVisualComponent child in children)
       {

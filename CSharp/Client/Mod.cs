@@ -24,8 +24,8 @@ namespace CrabUIUser
       CUI.Instance.Connect();
 
       CUIComponent component = new CUIComponent();
-      component.SimpleRectTexture.Color = Color.Aqua;
-      component.SimpleRectTexture.Rect = new Rectangle(100, 100, 200, 200);
+      component.BackgroundColor = new Color(255, 0, 0);
+      component.Rect = new Rectangle(100, 100, 200, 200);
       CUI.Instance.Main.AddChild(component);
 
 

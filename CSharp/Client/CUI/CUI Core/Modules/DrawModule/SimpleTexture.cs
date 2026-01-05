@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public class SimpleRectTexture : IVisualElement
+  public class SimpleTexture : IVisualElement
   {
     public Rectangle Rect { get; set; }
     public CUITexture Texture { get; set; } = CUITexture.White;

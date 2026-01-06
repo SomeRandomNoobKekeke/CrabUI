@@ -11,6 +11,27 @@ namespace CrabUI
 {
   public partial class CUIComponent : CUIVisualComponent
   {
+    public class Access
+    {
+      public CUIComponent Component;
+
+      public Rectangle Rect
+      {
+        get => Component.Rect;
+        set => Component.Rect = value;
+      }
+
+
+      public Access(CUIComponent component) => Component = component;
+    }
+
+
+    public event Action OnClick
+    {
+      add => Background.OnClick += value;
+      remove => Background.OnClick -= value;
+    }
+
     protected SimpleTexture Background { get; } = new();
 
     public Color BackgroundColor
@@ -22,7 +43,17 @@ namespace CrabUI
     public Rectangle Rect
     {
       get => Background.Rect;
-      set => Background.Rect = value;
+      protected set => Background.Rect = value;
+    }
+
+
+    protected Rectangle? absolute; public Rectangle? Absolute
+    {
+      set
+      {
+        absolute = value;
+        if (absolute.HasValue) Rect = absolute.Value;
+      }
     }
 
     public override IEnumerable<VisualUnit> VisualSplit()

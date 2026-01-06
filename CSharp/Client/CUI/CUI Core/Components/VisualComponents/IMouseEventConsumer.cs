@@ -9,10 +9,8 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public interface IVisualElement
+  public interface IMouseEventConsumer
   {
-    public Rectangle Rect { get; set; }
-    public void Draw(CUISpriteBatch spriteBatch);
-    public void HandleInput(CUIInput input);
+    public event Action OnClick;
   }
 }

@@ -12,6 +12,7 @@ namespace CrabUI
 
     public VisualFlattener Flattener = new VisualFlattener();
     public ChainDrawer Drawer = new ChainDrawer();
+    public EventDispatcher EventDispatcher = new();
 
 
 
@@ -27,6 +28,8 @@ namespace CrabUI
         TreeChanged = false;
         Flattener.Flatten(this);
       }
+
+      EventDispatcher.Dispatch(Flattener.Flat, CUI.Instance.Input);
     }
 
     public void AttachToEnvironment(CUIEnvironment environment)

@@ -15,6 +15,7 @@ namespace CrabUI
     public MouseState Current;
     public MouseState Previous;
 
+    public Vector2 MousePosition;
 
     public bool M1Down;
 
@@ -24,6 +25,7 @@ namespace CrabUI
       Previous = Current;
       Current = Environment.InputScanner.ScanMouse();
 
+      MousePosition = new Vector2(Current.Position.X, Current.Position.Y);
 
       M1Down = Previous.LeftButton == ButtonState.Released && Current.LeftButton == ButtonState.Pressed;
     }

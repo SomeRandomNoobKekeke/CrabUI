@@ -25,7 +25,16 @@ namespace CrabUIUser
 
       CUIComponent component = new CUIComponent();
       component.BackgroundColor = new Color(255, 0, 0);
-      component.Rect = new Rectangle(100, 100, 200, 200);
+      // component.Rect = new Rectangle(100, 100, 200, 200);
+      component.OnClick += () =>
+      {
+        component.BackgroundColor = component.BackgroundColor == Color.Green ?
+          Color.Red : Color.Green;
+      };
+
+      CUIComponent.Access access = new CUIComponent.Access(component);
+      access.Rect = new Rectangle(300, 100, 200, 200);
+
       CUI.Instance.Main.AddChild(component);
 
 

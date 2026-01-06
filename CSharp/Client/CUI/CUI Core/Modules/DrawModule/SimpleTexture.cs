@@ -14,9 +14,18 @@ namespace CrabUI
     public CUITexture Texture { get; set; } = CUITexture.White;
     public Color Color { get; set; }
 
+    public event Action OnClick;
+
+
     public void Draw(CUISpriteBatch spriteBatch)
     {
       spriteBatch.Draw(Texture, Rect, Color);
+    }
+
+    //TODO this is massive code duplication, why every visual element has to define that m1down should trigger onclick?
+    public void HandleInput(CUIInput input)
+    {
+      if (input.M1Down) OnClick?.Invoke();
     }
   }
 }

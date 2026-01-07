@@ -23,6 +23,7 @@ namespace CrabUI
     public DefaultGameAdapter GameAdapter { get; } = new();
     public CUIInput Input { get; }
     public CUIMainComponent Main { get; } = new();
+    public InputSettings InputSettings { get; }
 
     public void Connect() => GameAdapter.Connect(Environment);
     public void Disconnect() => GameAdapter.Disconnect();
@@ -32,7 +33,8 @@ namespace CrabUI
 
     public CUI()
     {
-      Input = new CUIInput(Environment);
+      InputSettings = new InputSettings();
+      Input = new CUIInput(Environment, InputSettings);
       SetupUpdateOrder();
     }
 
@@ -42,7 +44,7 @@ namespace CrabUI
       {
         try
         {
-          Input.Update();
+          Input.Update(Environment.TotalTime);
           Main.Update();
         }
         catch (Exception e)

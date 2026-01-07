@@ -10,15 +10,10 @@ using Microsoft.Xna.Framework.Input;
 
 namespace CrabUI
 {
-  public partial class CUIInput
+  public class InputSettings
   {
-    private CUIEnvironment Environment;
-
-    public void Update()
-    {
-      UpdateMouse();
-    }
-
-    public CUIInput(CUIEnvironment environment) => Environment = environment;
+    public double DoubleClickInterval = 0.2;
+    public float ScrollSpeed = 0.6f;
+    public double ClickInterval = 0.2;
   }
 }

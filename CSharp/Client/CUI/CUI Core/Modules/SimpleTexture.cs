@@ -25,7 +25,7 @@ namespace CrabUI
     //TODO this is massive code duplication, why every visual element has to define that m1down should trigger onclick?
     public void HandleInput(CUIInput input)
     {
-      if (input.M1Down) OnClick?.Invoke();
+      // if (input.M1Down) OnClick?.Invoke();
     }
   }
 }

@@ -14,6 +14,9 @@ namespace CrabUI
 
     public InputScanner InputScanner { get; set; } = new InputScanner();
 
+    //BRUH
+    public double TotalTime => Timing.TotalTime;
+
     public string GetID() => ModInfo.HookId;
   }
 }

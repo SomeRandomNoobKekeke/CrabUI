@@ -12,10 +12,10 @@ namespace CrabUI
   {
     private void NotifyElement(IVisualElement element, CUIInput input)
     {
-      if (element.Rect.Contains(input.MousePosition))
-      {
-        element.HandleInput(input);
-      }
+      // if (element.Rect.Contains(input.Mouse.Pos))
+      // {
+      //   element.HandleInput(input);
+      // }
     }
 
 

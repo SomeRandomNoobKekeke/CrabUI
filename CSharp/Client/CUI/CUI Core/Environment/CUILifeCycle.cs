@@ -13,7 +13,7 @@ namespace CrabUI
     public event Action<CUISpriteBatch> DrawAfterGUI;
     public event Action Update;
 
-
+    //THINK should i can't unhandled exceptions here?
     public void RaiseDrawBeforeGUI(CUISpriteBatch spriteBatch) => DrawBeforeGUI?.Invoke(spriteBatch);
     public void RaiseDrawAfterGUI(CUISpriteBatch spriteBatch) => DrawAfterGUI?.Invoke(spriteBatch);
     public void RaiseUpdate() => Update?.Invoke();

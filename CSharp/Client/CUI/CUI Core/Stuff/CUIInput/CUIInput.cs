@@ -19,10 +19,6 @@ namespace CrabUI
       UpdateMouse();
     }
 
-    public void AttachToEnvironment(CUIEnvironment environment)
-    {
-      Environment = environment;
-      Environment.LifeCycle.Update += Update;
-    }
+    public CUIInput(CUIEnvironment environment) => Environment = environment;
   }
 }

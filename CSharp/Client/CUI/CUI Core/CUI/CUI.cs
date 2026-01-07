@@ -19,29 +19,42 @@ namespace CrabUI
       }
     }
 
-    public CUIEnvironment Environment { get; }
-    public DefaultGameAdapter GameAdapter { get; }
-
+    public CUIEnvironment Environment { get; } = new();
+    public DefaultGameAdapter GameAdapter { get; } = new();
     public CUIInput Input { get; }
+    public CUIMainComponent Main { get; } = new();
 
     public void Connect() => GameAdapter.Connect(Environment);
     public void Disconnect() => GameAdapter.Disconnect();
 
-    public CUIMainComponent Main;
+
 
 
     public CUI()
     {
-      Environment = new CUIEnvironment();
-      GameAdapter = new DefaultGameAdapter();
+      Input = new CUIInput(Environment);
+      SetupUpdateOrder();
+    }
 
-      //TODO order of callbacks should be defined somewhere separately
-      Input = new CUIInput();
-      Input.AttachToEnvironment(Environment);
+    private void SetupUpdateOrder()
+    {
+      Environment.LifeCycle.Update += () =>
+      {
+        try
+        {
+          Input.Update();
+          Main.Update();
+        }
+        catch (Exception e)
+        {
+          Logger.Default.Error(e);
+        }
+      };
 
-
-      Main = new CUIMainComponent();
-      Main.AttachToEnvironment(Environment);
+      Environment.LifeCycle.DrawBeforeGUI += (spritebatch) =>
+      {
+        Main.DrawChildren(spritebatch);
+      };
     }
 
 

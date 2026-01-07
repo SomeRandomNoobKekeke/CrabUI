@@ -31,11 +31,5 @@ namespace CrabUI
 
       EventDispatcher.Dispatch(Flattener.Flat, CUI.Instance.Input);
     }
-
-    public void AttachToEnvironment(CUIEnvironment environment)
-    {
-      environment.LifeCycle.DrawBeforeGUI += DrawChildren;
-      environment.LifeCycle.Update += Update;
-    }
   }
 }

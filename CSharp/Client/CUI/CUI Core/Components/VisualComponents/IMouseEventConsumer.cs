@@ -9,8 +9,12 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public interface IMouseEventConsumer
+  public interface IMouseEventConsumer : IEventConsumer
   {
-    public event Action OnClick;
+    public CUIEvent<CUIMouseDownEvent> MouseDown { get; }
+    public CUIEvent<CUIMouseUpEvent> MouseUp { get; }
+    public CUIEvent<CUIMouseClickEvent> MouseClick { get; }
+    public CUIEvent<CUIMouseDoubleClickEvent> MouseDoubleClick { get; }
+    public CUIEvent<CUIMouseMovedEvent> MouseMoved { get; }
   }
 }

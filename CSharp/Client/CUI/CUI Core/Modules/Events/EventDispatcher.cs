@@ -10,36 +10,15 @@ namespace CrabUI
 {
   public partial class EventDispatcher : IModule
   {
-    private void NotifyElement(IVisualElement element, CUIInput input)
+    public void Dispatch(List<IEventConsumer> targets, List<InputEvent> events)
     {
-      // if (element.Rect.Contains(input.Mouse.Pos))
-      // {
-      //   element.HandleInput(input);
-      // }
+      foreach (IEventConsumer target in targets)
+      {
+        foreach (InputEvent e in events)
+        {
+          e.Dispatch(target);
+        }
+      }
     }
-
-    public void Dispatch(List<VisualUnit> flat, List<CUIEvent> events)
-    {
-      // for (int i = flat.Count - 1; i >= 0; i--)
-      // {
-      //   switch (flat[i])
-      //   {
-      //     case VisualUnit.PrimitiveVisualElement primitive:
-      //       NotifyElement(primitive.Element, input);
-      //       break;
-      //     case VisualUnit.LeftContextBound left:
-      //       // leave context
-      //       break;
-      //     case VisualUnit.RightContextBound right:
-      //       // enter context
-      //       break;
-      //     default:
-      //       throw new Exception("Unexpected VisualUnit");
-      //       break;
-      //   }
-      // }
-    }
-
-    // public EventDispatcher(CUIInput input) => Input = input;
   }
 }

@@ -8,13 +8,18 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public class SimpleTexture : IVisualElement
+  public class SimpleTexture : IVisualElement, IMouseEventConsumer
   {
     public Rectangle Rect { get; set; }
     public CUITexture Texture { get; set; } = CUITexture.White;
     public Color Color { get; set; }
 
-    public event Action OnClick;
+
+    public CUIEvent<CUIMouseDownEvent> MouseDown { get; set; } = new();
+    public CUIEvent<CUIMouseUpEvent> MouseUp { get; set; } = new();
+    public CUIEvent<CUIMouseClickEvent> MouseClick { get; set; } = new();
+    public CUIEvent<CUIMouseDoubleClickEvent> MouseDoubleClick { get; set; } = new();
+    public CUIEvent<CUIMouseMovedEvent> MouseMoved { get; set; } = new();
 
 
     public void Draw(CUISpriteBatch spriteBatch)

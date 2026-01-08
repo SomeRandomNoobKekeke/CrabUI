@@ -15,6 +15,7 @@ namespace CrabUI
     private CUIEnvironment Environment;
 
     public MouseInput Mouse { get; }
+    public bool SomethingHappened => Mouse.SomethingHappened;
 
     public void Update(double totalTime)
     {

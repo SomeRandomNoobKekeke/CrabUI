@@ -10,7 +10,7 @@ namespace CrabUI
 {
   public partial class EventConstructor : IModule
   {
-    public IEnumerable<CUIEvent> ConstructEvents(CUIInput input)
+    public IEnumerable<InputEvent> ConstructEvents(CUIInput input)
     {
       foreach (var button in input.Mouse.Buttons)
       {

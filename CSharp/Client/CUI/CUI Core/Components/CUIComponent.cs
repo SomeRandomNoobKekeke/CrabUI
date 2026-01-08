@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public partial class CUIComponent : CUIVisualComponent
+  public partial class CUIComponent : CUIVisualComponent, IMouseEventConsumer
   {
     public class Access
     {
@@ -26,11 +26,37 @@ namespace CrabUI
     }
 
 
-    public event Action OnClick
+    public CUIEvent<CUIMouseDownEvent> MouseDown
     {
-      add => Background.OnClick += value;
-      remove => Background.OnClick -= value;
+      get => Background.MouseDown;
+      set => Background.MouseDown = value;
     }
+    public CUIEvent<CUIMouseUpEvent> MouseUp
+    {
+      get => Background.MouseUp;
+      set => Background.MouseUp = value;
+    }
+    public CUIEvent<CUIMouseClickEvent> MouseClick
+    {
+      get => Background.MouseClick;
+      set => Background.MouseClick = value;
+    }
+    public CUIEvent<CUIMouseDoubleClickEvent> MouseDoubleClick
+    {
+      get => Background.MouseDoubleClick;
+      set => Background.MouseDoubleClick = value;
+    }
+    public CUIEvent<CUIMouseMovedEvent> MouseMoved
+    {
+      get => Background.MouseMoved;
+      set => Background.MouseMoved = value;
+    }
+
+    // public event Action OnClick
+    // {
+    //   add => Background.OnClick += value;
+    //   remove => Background.OnClick -= value;
+    // }
 
     protected SimpleTexture Background { get; } = new();
 

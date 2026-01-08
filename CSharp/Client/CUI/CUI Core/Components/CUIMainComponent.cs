@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Diagnostics;
 using Barotrauma;
-
+using BaroJunk;
 namespace CrabUI
 {
   public class CUIMainComponent : CUIComponent
@@ -16,6 +16,7 @@ namespace CrabUI
     public ChainDrawer Drawer = new ChainDrawer();
     public EventDispatcher EventDispatcher = new();
     public EventConstructor EventConstructor = new();
+    public EventTargetFinder EventTargetFinder = new();
 
     public void DrawChildren(CUISpriteBatch spriteBatch)
     {
@@ -30,15 +31,31 @@ namespace CrabUI
         Flattener.Flatten(this);
       }
 
-      List<CUIEvent> events = EventConstructor.ConstructEvents(CUI.Instance.Input).ToList();
-
-      foreach (CUIEvent e in events)
+      if (CUI.Instance.Input.SomethingHappened)
       {
-        CUI.Logger.Log($"{e}");
+        HandleInput();
       }
 
 
-      // EventDispatcher.Dispatch(Flattener.Flat, events);
+    }
+
+    //TODO reuse lists
+    private void HandleInput()
+    {
+      List<IEventConsumer> targets = EventTargetFinder.FindTargets(Flattener.Flat, CUI.Instance.Input.Mouse.Pos).ToList();
+
+      List<InputEvent> events = EventConstructor.ConstructEvents(CUI.Instance.Input).ToList();
+
+      //TODO This should be a real debug log
+
+
+      foreach (IEventConsumer target in targets)
+      {
+        CUI.Logger.Log($"{target} {Logger.Wrap.IEnumerable(events)}");
+      }
+
+
+      EventDispatcher.Dispatch(targets, events);
     }
   }
 }

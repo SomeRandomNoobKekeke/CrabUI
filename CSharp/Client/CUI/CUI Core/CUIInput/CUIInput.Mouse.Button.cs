@@ -24,7 +24,7 @@ namespace CrabUI
 
         public bool Down;
         public bool Up;
-        public bool Held;
+        public bool Pressed;
         public bool Click;
         public bool DoubleClick;
         public bool Changed;
@@ -42,7 +42,7 @@ namespace CrabUI
 
           Down = PrevState == ButtonState.Released && State == ButtonState.Pressed;
           Up = PrevState == ButtonState.Pressed && State == ButtonState.Released;
-          Held = State == ButtonState.Pressed;
+          Pressed = State == ButtonState.Pressed;
 
           Click = Up && totalTime - lastDownTime < Settings.ClickInterval;
           DoubleClick = Click && totalTime - lastClickTime < Settings.DoubleClickInterval;

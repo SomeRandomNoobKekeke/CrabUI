@@ -21,7 +21,7 @@ namespace CrabUI
       set => Background.Rect = value;
     }
 
-    public override IEnumerable<VisualUnit> VisualSplit()
+    protected override IEnumerable<VisualUnit> VisualSplit()
     {
       yield return new VisualUnit.PrimitiveVisualElement(Background);
       yield return new VisualUnit.LeftContextBound();

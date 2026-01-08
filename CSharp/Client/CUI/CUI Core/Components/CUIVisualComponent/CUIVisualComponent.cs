@@ -11,7 +11,9 @@ namespace CrabUI
 {
   public abstract partial class CUIVisualComponent : CUIComponentCore, IVisualComponent
   {
-    public abstract IEnumerable<VisualUnit> VisualSplit();
+
+    IEnumerable<VisualUnit> IVisualComponent.VisualSplit() => VisualSplit();
+    protected abstract IEnumerable<VisualUnit> VisualSplit();
 
     protected abstract Rectangle Rect { get; set; }
   }

@@ -47,12 +47,10 @@ namespace CrabUI
       List<InputEvent> events = EventConstructor.ConstructEvents(CUI.Instance.Input).ToList();
 
       //TODO This should be a real debug log
-
-
-      foreach (IEventConsumer target in targets)
-      {
-        CUI.Logger.Log($"{target} {Logger.Wrap.IEnumerable(events)}");
-      }
+      // foreach (IEventConsumer target in targets)
+      // {
+      //   CUI.Logger.Log($"{target} {Logger.Wrap.IEnumerable(events)}");
+      // }
 
 
       EventDispatcher.Dispatch(targets, events);

@@ -11,6 +11,26 @@ namespace CrabUI
 {
   public class Layout
   {
+    public CUIVisualComponent Host;
+    public IEnumerable<CUIVisualComponent> Children => Host.Children;
 
+
+    public bool RequireChildrenUpdate { get; set; }
+    public bool RequireParentUpdate { get; set; }
+
+
+
+
+    public virtual void UpdateChildren()
+    {
+      RequireChildrenUpdate = false;
+    }
+
+    public virtual void UpdateParent()
+    {
+      RequireParentUpdate = false;
+    }
+
+    public Layout(CUIVisualComponent host) => Host = host;
   }
 }

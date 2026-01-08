@@ -8,11 +8,8 @@ using Barotrauma;
 
 namespace CrabUI
 {
-  public abstract class CUIVisualComponent : CUIComponentCore, IVisualComponent
+  public abstract partial class CUIVisualComponent : CUIComponentCore, IVisualComponent
   {
-    public abstract IEnumerable<VisualUnit> VisualSplit();
-
-
     public bool TreeChanged { get; set; }
     public event Action OnTreeChanged;
 

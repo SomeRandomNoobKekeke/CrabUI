@@ -7,6 +7,7 @@ using Barotrauma;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using HarmonyLib;
+using BaroJunk;
 
 namespace CrabUI
 {

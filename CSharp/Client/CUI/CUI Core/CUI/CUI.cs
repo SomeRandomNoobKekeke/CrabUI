@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Diagnostics;
 using Barotrauma;
-
+using BaroJunk;
 
 namespace CrabUI
 {
@@ -18,6 +18,8 @@ namespace CrabUI
         return instance;
       }
     }
+
+    public static Logger Logger { get; } = new();
 
     public CUIEnvironment Environment { get; } = new();
     public DefaultGameAdapter GameAdapter { get; } = new();

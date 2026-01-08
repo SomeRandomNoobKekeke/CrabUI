@@ -10,11 +10,12 @@ namespace CrabUI
   public class CUIMainComponent : CUIComponent
   {
 
+    public CUIInput Input;//TODO
+
     public VisualFlattener Flattener = new VisualFlattener();
     public ChainDrawer Drawer = new ChainDrawer();
     public EventDispatcher EventDispatcher = new();
-
-
+    public EventConstructor EventConstructor = new();
 
     public void DrawChildren(CUISpriteBatch spriteBatch)
     {
@@ -29,7 +30,15 @@ namespace CrabUI
         Flattener.Flatten(this);
       }
 
-      EventDispatcher.Dispatch(Flattener.Flat, CUI.Instance.Input);
+      List<CUIEvent> events = EventConstructor.ConstructEvents(CUI.Instance.Input).ToList();
+
+      foreach (CUIEvent e in events)
+      {
+        CUI.Logger.Log($"{e}");
+      }
+
+
+      // EventDispatcher.Dispatch(Flattener.Flat, events);
     }
   }
 }

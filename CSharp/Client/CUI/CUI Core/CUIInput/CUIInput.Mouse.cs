@@ -14,15 +14,16 @@ namespace CrabUI
   {
     public partial class MouseInput
     {
-      public MouseState State;
-      public MouseState PrevState; // not used?
+      public MouseState State { get; private set; }
+      public MouseState PrevState { get; private set; } // not used?
 
-      public Vector2 Pos;
-      public Vector2 PosDiff;
-      public bool Moved;
-      public bool SomethingHappened;
+      public Vector2 Pos { get; private set; }
+      public Vector2 PosDiff { get; private set; }
+      public bool Moved { get; private set; }
+      public bool SomethingHappened { get; private set; }
       public MouseButtonInput M1 { get; }
       public MouseButtonInput M2 { get; }
+      public List<MouseButtonInput> Buttons { get; }
 
 
       private Vector2 PrevPos;
@@ -47,8 +48,11 @@ namespace CrabUI
 
       public MouseInput(InputSettings settings)
       {
-        M1 = new MouseButtonInput(settings);
-        M2 = new MouseButtonInput(settings);
+        M1 = new MouseButtonInput(settings, CUIMouseButton.LeftButton);
+        M2 = new MouseButtonInput(settings, CUIMouseButton.RightButton);
+        Buttons = new List<MouseButtonInput>(){
+          M1,M2
+        };
       }
     }
   }

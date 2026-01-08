@@ -17,6 +17,7 @@ namespace CrabUI
       public class MouseButtonInput
       {
         private InputSettings Settings;
+        public CUIMouseButton Type { get; }
 
         public ButtonState State;
         public ButtonState PrevState;
@@ -50,9 +51,10 @@ namespace CrabUI
           if (Click) lastClickTime = totalTime;
         }
 
-        public MouseButtonInput(InputSettings settings)
+        public MouseButtonInput(InputSettings settings, CUIMouseButton type)
         {
           Settings = settings;
+          Type = type;
         }
       }
     }

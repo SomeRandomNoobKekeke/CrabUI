@@ -15,6 +15,12 @@ namespace CrabUI
     IEnumerable<VisualUnit> IVisualComponent.VisualSplit() => VisualSplit();
     protected abstract IEnumerable<VisualUnit> VisualSplit();
 
+
+    Rectangle IVisualComponent.Rect
+    {
+      get => Rect;
+      set => Rect = value;
+    }
     protected abstract Rectangle Rect { get; set; }
   }
 }

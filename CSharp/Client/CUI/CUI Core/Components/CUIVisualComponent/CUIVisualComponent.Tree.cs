@@ -8,7 +8,7 @@ using Barotrauma;
 
 namespace CrabUI
 {
-  public abstract partial class CUIVisualComponent : CUIComponentCore, IVisualComponent
+  public abstract partial class CUIVisualComponent
   {
     public bool TreeChanged { get; set; }
     public event Action OnTreeChanged;

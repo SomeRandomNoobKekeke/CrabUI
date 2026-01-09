@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public partial class CUIComponent : CUIVisualComponent, IMouseEventConsumer
+  public partial class CUIComponent
   {
     public CUIEvent<CUIMouseDownEvent> MouseDown
     {

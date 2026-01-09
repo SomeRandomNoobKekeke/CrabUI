@@ -12,5 +12,6 @@ namespace CrabUI
   public interface IVisualComponent
   {
     public IEnumerable<VisualUnit> VisualSplit();
+    public Rectangle Rect { get; set; }
   }
 }

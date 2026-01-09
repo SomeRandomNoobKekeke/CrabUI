@@ -21,6 +21,8 @@ namespace CrabUIUser
     {
       Instance = this;
 
+      UTestCommands.AddCommands();
+
       CUI.Instance.Connect();
 
       CUIComponent component = new CUIComponent();

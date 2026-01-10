@@ -12,15 +12,20 @@ namespace CrabUI
 
     public CUIInput Input;//TODO
 
-    public VisualFlattener Flattener = new VisualFlattener();
+    public VisualFlattener VisualFlattener = new();
+    public LayoutFlattener LayoutFlattener = new();
+
     public ChainDrawer Drawer = new ChainDrawer();
     public EventDispatcher EventDispatcher = new();
     public EventConstructor EventConstructor = new();
     public EventTargetFinder EventTargetFinder = new();
 
+    private bool GlobalLayoutChanged;
+    public void LayoutChanged() => GlobalLayoutChanged = true;
+
     public void DrawChildren(CUISpriteBatch spriteBatch)
     {
-      Drawer.Draw(spriteBatch, Flattener.Flat);
+      Drawer.Draw(spriteBatch, VisualFlattener.Flat);
     }
 
     public void Update()
@@ -28,7 +33,9 @@ namespace CrabUI
       if (TreeChanged)
       {
         TreeChanged = false;
-        Flattener.Flatten(this);
+        GlobalLayoutChanged = true;
+        VisualFlattener.Flatten(this);
+        LayoutFlattener.Flatten(this);
       }
 
       if (CUI.Instance.Input.SomethingHappened)
@@ -36,13 +43,17 @@ namespace CrabUI
         HandleInput();
       }
 
-
+      if (GlobalLayoutChanged)
+      {
+        GlobalLayoutChanged = false;
+        UpdateLayout();
+      }
     }
 
     //TODO reuse lists
     private void HandleInput()
     {
-      List<IEventConsumer> targets = EventTargetFinder.FindTargets(Flattener.Flat, CUI.Instance.Input.Mouse.Pos).ToList();
+      List<IEventConsumer> targets = EventTargetFinder.FindTargets(VisualFlattener.Flat, CUI.Instance.Input.Mouse.Pos).ToList();
 
       List<InputEvent> events = EventConstructor.ConstructEvents(CUI.Instance.Input).ToList();
 
@@ -54,6 +65,14 @@ namespace CrabUI
 
 
       EventDispatcher.Dispatch(targets, events);
+    }
+
+    private void UpdateLayout()
+    {
+      foreach (CUIComponent component in LayoutFlattener.Flat)
+      {
+        component.Layout.UpdateChildren();
+      }
     }
   }
 }

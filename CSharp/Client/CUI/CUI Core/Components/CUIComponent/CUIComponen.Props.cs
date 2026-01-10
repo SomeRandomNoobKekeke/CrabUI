@@ -11,28 +11,26 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-
-
     public Color BackgroundColor
     {
       get => Background.Color;
       set => Background.Color = value;
     }
 
-
-
-
-    protected Rectangle? absolute; public Rectangle? Absolute
+    private Rectangle? _absolute;
+    public Rectangle? Absolute
     {
+      get => _absolute;
       set
       {
-        absolute = value;
-        if (absolute.HasValue) Rect = absolute.Value;
+        _absolute = value;
+        MainComponent?.LayoutChanged();
       }
     }
-
-
-
-
+    public Rectangle? Relative
+    {
+      get;
+      set;
+    }
   }
 }

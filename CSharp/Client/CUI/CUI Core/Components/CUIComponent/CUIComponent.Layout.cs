@@ -9,15 +9,8 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public abstract partial class CUIVisualComponent
+  public partial class CUIComponent
   {
-    public class Access
-    {
-
-      public Access(CUIVisualComponent component)
-      {
-
-      }
-    }
+    public Layout Layout { get; set; }
   }
 }

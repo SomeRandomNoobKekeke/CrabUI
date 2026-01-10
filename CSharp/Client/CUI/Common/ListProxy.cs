@@ -29,8 +29,7 @@ namespace CrabUI
 
     public ProxyEnumerator GetEnumerator() => new ProxyEnumerator(Source.GetEnumerator());
 
-    IEnumerator<T> IEnumerable<T>.GetEnumerator() => Count == 0 ?
-      SZGenericArrayEnumerator<T>.Empty : GetEnumerator();
+    IEnumerator<T> IEnumerable<T>.GetEnumerator() => GetEnumerator();
 
     IEnumerator IEnumerable.GetEnumerator() => ((IEnumerable<T>)this).GetEnumerator();
 

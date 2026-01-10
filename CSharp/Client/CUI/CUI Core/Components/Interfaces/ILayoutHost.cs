@@ -9,8 +9,8 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public interface IVisualComponent
+  public interface ILayoutHost
   {
-    public IEnumerable<VisualUnit> VisualSplit();
+
   }
 }

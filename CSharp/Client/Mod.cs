@@ -33,11 +33,11 @@ namespace CrabUIUser
         component.BackgroundColor = component.BackgroundColor == Color.Green ?
           Color.Red : Color.Green;
       };
+      component.Absolute = new Rectangle(300, 100, 200, 200);
 
 
 
-      CUIComponent.Access access = new CUIComponent.Access(component);
-      access.Rect = new Rectangle(300, 100, 200, 200);
+
 
       CUI.Instance.Main.AddChild(component);
 

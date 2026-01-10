@@ -9,14 +9,14 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public class Layout
+  public abstract class Layout
   {
-    public CUIVisualComponent Host;
-    public IEnumerable<CUIVisualComponent> Children => Host.Children;
+    public IBasicLayoutElement Host;
+    public IReadOnlyList<IBasicLayoutElement> Children;
 
 
-    public bool RequireChildrenUpdate { get; set; }
-    public bool RequireParentUpdate { get; set; }
+    public bool RequireChildrenUpdate { get; set; } = true;
+    public bool RequireParentUpdate { get; set; } = true;
 
 
 
@@ -31,6 +31,10 @@ namespace CrabUI
       RequireParentUpdate = false;
     }
 
-    public Layout(CUIVisualComponent host) => Host = host;
+    public Layout(IBasicLayoutElement host, IReadOnlyList<IBasicLayoutElement> children)
+    {
+      Host = host;
+      Children = children;
+    }
   }
 }

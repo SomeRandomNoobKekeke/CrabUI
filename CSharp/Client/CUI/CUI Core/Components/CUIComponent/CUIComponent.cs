@@ -9,29 +9,31 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public partial class CUIComponent : CUIVisualComponent, IMouseEventConsumer
+  public partial class CUIComponent : IVisualComponent, IBasicLayoutElement, IMouseEventConsumer
   {
+    public CUIMainComponent MainComponent { get; private set; }
 
 
     protected SimpleTexture Background { get; } = new();
 
-    protected override Rectangle Rect
+
+    Rectangle IRectElement.Rect { get => Rect; set => Rect = value; }
+    protected virtual Rectangle Rect
     {
       get => Background.Rect;
       set => Background.Rect = value;
     }
 
-    protected override IEnumerable<VisualUnit> VisualSplit()
+    IEnumerable<VisualUnit> IVisualComponent.VisualSplit() => VisualSplit();
+    protected virtual IEnumerable<VisualUnit> VisualSplit()
     {
       yield return new VisualUnit.PrimitiveVisualElement(Background);
       yield return new VisualUnit.LeftContextBound();
-      foreach (CUIVisualComponent child in children)
+      foreach (CUIComponent child in children)
       {
         yield return new VisualUnit.NestedVisualComponent(child);
       }
       yield return new VisualUnit.RightContextBound();
     }
-
-
   }
 }

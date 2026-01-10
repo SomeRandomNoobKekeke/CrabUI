@@ -9,8 +9,9 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public interface IVisualComponent
+  public interface IBasicLayoutElement : IRectElement
   {
-    public IEnumerable<VisualUnit> VisualSplit();
+    public Rectangle? Absolute { get; set; }
+    public Rectangle? Relative { get; set; }
   }
 }

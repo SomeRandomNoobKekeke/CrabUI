@@ -15,9 +15,19 @@ namespace CrabUI
 
     public override void UpdateChildren()
     {
+      foreach (IBasicLayoutElement child in Children)
+      {
+        // if (child.Relative.HasValue)
+        // {
+        //   child.Rect = child.Absolute;
+        // }
 
-
-
+        if (child.Absolute.HasValue)
+        {
+          child.Rect = child.Absolute.Value;
+          CUI.Logger.Log($"{child}.Rect = {child.Rect}");
+        }
+      }
 
 
       RequireChildrenUpdate = false;
@@ -28,6 +38,7 @@ namespace CrabUI
       RequireParentUpdate = false;
     }
 
-    public PlainLayout(CUIVisualComponent host) : base(host) { }
+    public PlainLayout(IBasicLayoutElement host, IReadOnlyList<IBasicLayoutElement> children) : base(host, children) { }
+
   }
 }

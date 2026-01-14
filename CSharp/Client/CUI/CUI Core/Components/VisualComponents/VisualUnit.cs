@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public interface VisualUnit
+  public abstract class VisualUnit
   {
     public class PrimitiveVisualElement : VisualUnit
     {

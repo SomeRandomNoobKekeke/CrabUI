@@ -25,7 +25,6 @@ namespace CrabUI
         if (child.Absolute.HasValue)
         {
           child.Rect = child.Absolute.Value;
-          CUI.Logger.Log($"{child}.Rect = {child.Rect}");
         }
       }
 

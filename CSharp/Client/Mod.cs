@@ -27,7 +27,7 @@ namespace CrabUIUser
 
       CUIComponent component = new CUIComponent();
       component.BackgroundColor = new Color(255, 0, 0);
-      // component.Rect = new Rectangle(100, 100, 200, 200);
+
       component.MouseDown += (e) =>
       {
         component.BackgroundColor = component.BackgroundColor == Color.Green ?

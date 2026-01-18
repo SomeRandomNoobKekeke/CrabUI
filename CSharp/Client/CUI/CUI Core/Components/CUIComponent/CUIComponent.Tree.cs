@@ -6,10 +6,11 @@ using System.Reflection;
 using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
+using System.Collections;
 
 namespace CrabUI
 {
-  public partial class CUIComponent
+  public partial class CUIComponent : ITreeNode
   {
     public bool TreeChanged { get; set; }
     public event Action OnTreeChanged;
@@ -18,6 +19,9 @@ namespace CrabUI
 
     protected List<CUIComponent> children = new();
     public ReadOnlyCollection<CUIComponent> Children => children.AsReadOnly();
+
+    object ITreeNode.Parent => Parent;
+    IList ITreeNode.Children => Children;
 
     protected virtual void OnChildAdded(CUIComponent child) { }
     protected virtual void OnChildRemoved(CUIComponent child) { }

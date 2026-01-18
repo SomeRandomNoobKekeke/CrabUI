@@ -9,8 +9,20 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public partial class CUIComponent
+  public partial class CUIComponent : ILayoutHost
   {
     public Layout Layout { get; set; }
+    protected LayoutMarker LayoutMarker { get; }
+
+    void ILayoutHost.MarkLayout(LayoutMarkPattern pattern)
+    {
+      if (pattern.Empty) return;
+      this.MainComponent?.LayoutChanged();
+      LayoutMarker.Mark(pattern);
+    }
+    void ILayoutHost.UpdateChildren() => Layout.UpdateChildren();
+    void ILayoutHost.UpdateParent() => Layout.UpdateParent();
+    void ILayoutHost.MarkAsRequireChildrenUpdate() => Layout.RequireChildrenUpdate = true;
+    void ILayoutHost.MarkAsRequireParentUpdate() => Layout.RequireParentUpdate = true;
   }
 }

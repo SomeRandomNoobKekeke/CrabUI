@@ -22,6 +22,8 @@ namespace CrabUI
       Layout = new PlainLayout(this, new ListProxy<IBasicLayoutElement>(Children));
 
       InitModules();
+      InjectProps();
+      LayoutMarker = new LayoutMarker(this);
     }
 
     public override string ToString() => $"{this.GetType().Name} [{this.ID}]";

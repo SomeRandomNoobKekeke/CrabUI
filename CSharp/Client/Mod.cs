@@ -25,25 +25,39 @@ namespace CrabUIUser
 
       CUI.Instance.Connect();
 
+      try
+      {
+        Init();
+      }
+      catch (Exception e)
+      {
+        Logger.Error(e);
+      }
+      Experiment();
+      Logger.Log($"Compiled somehow");
+    }
+
+    public void Init()
+    {
       CUIComponent component = new CUIComponent();
       component.BackgroundColor = new Color(255, 0, 0);
+
 
       component.MouseDown += (e) =>
       {
         component.BackgroundColor = component.BackgroundColor == Color.Green ?
           Color.Red : Color.Green;
+        component.Absolute = new Rectangle(
+          component.Absolute.Value.X + 10,
+          component.Absolute.Value.Y,
+          component.Absolute.Value.Width,
+          component.Absolute.Value.Height
+        );
       };
       component.Absolute = new Rectangle(300, 100, 200, 200);
 
 
-
-
-
       CUI.Instance.Main.AddChild(component);
-
-
-      Experiment();
-      Logger.Log($"Compiled somehow");
     }
 
     public void OnLoadCompleted() { }

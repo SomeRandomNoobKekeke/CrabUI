@@ -15,13 +15,10 @@ namespace CrabUI
 
     public override void UpdateChildren()
     {
+      if (!RequireChildrenUpdate) return;
+
       foreach (IBasicLayoutElement child in Children)
       {
-        // if (child.Relative.HasValue)
-        // {
-        //   child.Rect = child.Absolute;
-        // }
-
         if (child.Absolute.HasValue)
         {
           child.Rect = child.Absolute.Value;

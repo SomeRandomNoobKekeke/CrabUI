@@ -10,8 +10,10 @@ namespace CrabUI
 {
   public partial class CUI : IDisposable
   {
-    public static Logger Logger => Instance.logger;
-    private Logger logger = new();
+    public static Logger Logger = new()
+    {
+      PrintFilePath = true,
+    };
 
     public static LoggingClass Logging => Instance.logging;
     private LoggingClass logging;
@@ -34,7 +36,7 @@ namespace CrabUI
 
       public void LogProp(object host, string name, object value)
       {
-        CUI.Logger.LogVars(host, name, value);
+        CUI.Logger.Log($"CUIProp set {host}.{name} = [{Logger.WrapInColor(value, "white")}]");
       }
 
       private void MapChannels()
@@ -49,6 +51,8 @@ namespace CrabUI
       public LoggingClass()
       {
         MapChannels();
+
+        LogCUIProps = false;
       }
     }
   }

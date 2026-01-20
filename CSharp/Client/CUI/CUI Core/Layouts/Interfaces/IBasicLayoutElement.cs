@@ -11,7 +11,7 @@ namespace CrabUI
 {
   public interface IBasicLayoutElement : IRectElement
   {
-    public Rectangle? Absolute { get; set; }
-    public Rectangle? Relative { get; set; }
+    public CUINullRect Absolute { get; set; }
+    public CUINullRect Relative { get; set; }
   }
 }

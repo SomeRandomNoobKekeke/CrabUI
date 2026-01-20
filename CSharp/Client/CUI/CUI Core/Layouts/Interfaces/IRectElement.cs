@@ -11,6 +11,6 @@ namespace CrabUI
 {
   public interface IRectElement
   {
-    public Rectangle Rect { get; set; }
+    public CUIRect Rect { get; set; }
   }
 }

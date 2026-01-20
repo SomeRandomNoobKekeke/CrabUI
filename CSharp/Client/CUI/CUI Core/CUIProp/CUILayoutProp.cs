@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public class CUILayoutProp<T> : CUIReactiveProp<T>
+  public class CUILayoutProp<T> : CUIReactiveProp<T>, ICUILayoutProp
   {
     public LayoutMarkPattern Pattern { get; set; } = LayoutMarkPattern.None;
     public ILayoutHost LayoutHost { get; set; }

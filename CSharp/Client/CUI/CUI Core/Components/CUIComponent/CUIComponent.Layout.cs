@@ -22,7 +22,15 @@ namespace CrabUI
     }
     void ILayoutHost.UpdateChildren() => Layout.UpdateChildren();
     void ILayoutHost.UpdateParent() => Layout.UpdateParent();
-    void ILayoutHost.MarkAsRequireChildrenUpdate() => Layout.RequireChildrenUpdate = true;
-    void ILayoutHost.MarkAsRequireParentUpdate() => Layout.RequireParentUpdate = true;
+    void ILayoutHost.MarkAsRequireChildrenUpdate()
+    {
+      this.MainComponent?.LayoutChanged();
+      Layout.RequireChildrenUpdate = true;
+    }
+    void ILayoutHost.MarkAsRequireParentUpdate()
+    {
+      this.MainComponent?.LayoutChanged();
+      Layout.RequireParentUpdate = true;
+    }
   }
 }

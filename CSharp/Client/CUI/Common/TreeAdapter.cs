@@ -21,5 +21,7 @@ namespace CrabUI
       Node = node;
       Children = new ListProxy<T>(node.Children);
     }
+
+    public override string ToString() => $"TreeAdapter over [{Node}]";
   }
 }

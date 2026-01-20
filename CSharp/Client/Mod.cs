@@ -49,14 +49,13 @@ namespace CrabUIUser
       {
         component.BackgroundColor = component.BackgroundColor == Color.Green ?
           Color.Red : Color.Green;
-        component.Absolute = new Rectangle(
-          component.Absolute.Value.X + 10,
-          component.Absolute.Value.Y,
-          component.Absolute.Value.Width,
-          component.Absolute.Value.Height
-        );
+
+        component.Absolute = component.Absolute with
+        {
+          Left = (component.Absolute.Left ?? 0) + 10
+        };
       };
-      component.Absolute = new Rectangle(300, 100, 200, 200);
+      component.Absolute = new CUINullRect(300, 100, 200, 200);
 
 
       CUI.Instance.Main.AddChild(component);

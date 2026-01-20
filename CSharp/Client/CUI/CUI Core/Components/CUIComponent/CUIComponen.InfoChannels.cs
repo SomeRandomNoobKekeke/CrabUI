@@ -11,20 +11,6 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-    public class Access
-    {
-      public CUIComponent Component;
-
-      public Rectangle Rect
-      {
-        get => Component.Rect;
-        set => Component.Rect = value;
-      }
-
-
-      public Access(CUIComponent component) => Component = component;
-    }
-
 
   }
 }

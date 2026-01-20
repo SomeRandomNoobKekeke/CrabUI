@@ -69,8 +69,6 @@ namespace CrabUI
 
     private void UpdateLayout()
     {
-
-      CUI.Logger.Log("Upadte layout");
       foreach (CUIComponent component in LayoutFlattener.Flat)
       {
         component.Layout.UpdateChildren();

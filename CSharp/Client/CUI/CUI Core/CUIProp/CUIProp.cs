@@ -9,18 +9,8 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  /// <summary>
-  /// Just a wrapper around prop
-  /// </summary>
-  public class CUIProp<T>
+  public abstract class CUIProp
   {
-    public static InfoChannel<object, string, T> OnSet = new()
-    {
-      MapList = new List<Action<object, string, T>>(){
-        (host, name, value) => CUI.InfoChannels.CUIPropSet.Send(host, name, value)
-      },
-    };
-
     /// <summary>
     /// Object that contains the prop
     /// </summary>
@@ -30,6 +20,19 @@ namespace CrabUI
     /// Prop name in containing object
     /// </summary>
     public string Name { get; set; }
+  }
+
+  /// <summary>
+  /// Just a wrapper around prop
+  /// </summary>
+  public class CUIProp<T> : CUIProp
+  {
+    public static InfoChannel<object, string, T> OnSet = new()
+    {
+      MapList = new List<Action<object, string, T>>(){
+        (host, name, value) => CUI.InfoChannels.CUIPropSet.Send(host, name, value)
+      },
+    };
 
     protected T _value;
     public virtual T Value

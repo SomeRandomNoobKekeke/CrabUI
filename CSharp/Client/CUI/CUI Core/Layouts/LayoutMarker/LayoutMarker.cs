@@ -13,15 +13,18 @@ namespace CrabUI
   {
     private TreeAdapter<ILayoutHost> Host;
 
-
     public void Mark(LayoutMarkPattern pattern)
     {
       if (pattern.Empty) return;
+
+
+
 
       if (pattern.UpdateChildrenOnParent)
       {
         Host.Parent?.MarkAsRequireChildrenUpdate();
       }
+
       if (pattern.UpdateChildrenHere)
       {
         Host.Self.MarkAsRequireChildrenUpdate();

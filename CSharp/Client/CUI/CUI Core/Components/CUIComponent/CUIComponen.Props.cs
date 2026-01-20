@@ -24,11 +24,6 @@ namespace CrabUI
       CUIProps.Absolute.Host = this;
 
       CUIProps.Absolute.LayoutHost = this;
-
-      CUIProps.Absolute.OnValueSet = (value) =>
-      {
-
-      };
     }
 
     public Color BackgroundColor

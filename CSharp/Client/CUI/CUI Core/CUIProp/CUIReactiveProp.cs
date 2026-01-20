@@ -17,11 +17,11 @@ namespace CrabUI
 
     public override T Value
     {
-      get => _value;
+      get => base.Value;
       set
       {
-        _value = value;
-        ValueSet?.Invoke(_value);
+        base.Value = value;
+        ValueSet?.Invoke(value);
       }
     }
 

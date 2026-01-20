@@ -8,7 +8,7 @@ using BaroJunk;
 
 namespace CrabUI
 {
-  public class CUI : IDisposable
+  public partial class CUI : IDisposable
   {
     private static CUI instance; public static CUI Instance
     {
@@ -19,7 +19,9 @@ namespace CrabUI
       }
     }
 
-    public static Logger Logger { get; } = new();
+    public static Logger Logger => Instance.logger;
+    private Logger logger = new();
+
 
     public CUIEnvironment Environment { get; } = new();
     public DefaultGameAdapter GameAdapter { get; } = new();

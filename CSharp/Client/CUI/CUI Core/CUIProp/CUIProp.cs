@@ -14,6 +14,13 @@ namespace CrabUI
   /// </summary>
   public class CUIProp<T>
   {
+    public static InfoChannel<object, string, T> OnSet = new()
+    {
+      MapList = new List<Action<object, string, T>>(){
+        (host, name, value) => CUI.InfoChannels.CUIPropSet.Send(host, name, value)
+      },
+    };
+
     /// <summary>
     /// Object that contains the prop
     /// </summary>
@@ -28,7 +35,11 @@ namespace CrabUI
     public virtual T Value
     {
       get => _value;
-      set => _value = value;
+      set
+      {
+        _value = value;
+        OnSet.Send(Host, Name, value);
+      }
     }
   }
 }

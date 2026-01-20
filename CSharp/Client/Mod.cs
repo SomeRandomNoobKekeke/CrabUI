@@ -23,10 +23,12 @@ namespace CrabUIUser
 
       UTestCommands.AddCommands();
 
-      CUI.Instance.Connect();
+
 
       try
       {
+        CUI.Instance.Connect();
+
         Init();
       }
       catch (Exception e)

@@ -14,12 +14,13 @@ namespace CrabUI
     private InfoChannelsWrapper infoChannels = new();
 
 
+    /// <summary>
+    /// Aggregate channels, always open
+    /// </summary>
     public class InfoChannelsWrapper
     {
-      public InfoChannel<object, string, object> CUIPropSet = new()
-      {
-        OnSend = (host, name, value) => CUI.Logger.LogVars(host, name, value),
-      };
+      public InfoChannel<object, string, object> CUIPropSet = new();
+      public InfoChannel<object, string, object> CUILayoutPropSet = new();
     }
   }
 }

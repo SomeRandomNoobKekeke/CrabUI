@@ -10,35 +10,46 @@ namespace CrabUI
 {
   public partial class CUI : IDisposable
   {
+    private static bool creatingInstance;
     private static CUI instance; public static CUI Instance
     {
       get
       {
-        instance ??= new CUI();
+        if (creatingInstance) throw new Exception("Attempt to access CUI instance during creation");
+
+        if (instance is null)
+        {
+          creatingInstance = true;
+          instance ??= new CUI();
+          creatingInstance = false;
+          instance.Initialize();
+        }
+
         return instance;
       }
     }
 
-    public static Logger Logger => Instance.logger;
-    private Logger logger = new();
 
 
-    public CUIEnvironment Environment { get; } = new();
-    public DefaultGameAdapter GameAdapter { get; } = new();
-    public CUIInput Input { get; }
-    public CUIMainComponent Main { get; } = new();
-    public InputSettings InputSettings { get; }
+
+    public CUIEnvironment Environment { get; private set; } = new();
+    public DefaultGameAdapter GameAdapter { get; private set; } = new();
+    public CUIInput Input { get; private set; }
+    public CUIMainComponent Main { get; private set; } = new();
+    public InputSettings InputSettings { get; private set; }
 
     public void Connect() => GameAdapter.Connect(Environment);
     public void Disconnect() => GameAdapter.Disconnect();
 
-
-
-
     public CUI()
+    {
+
+    }
+    private void Initialize()
     {
       InputSettings = new InputSettings();
       Input = new CUIInput(Environment, InputSettings);
+      logging = new LoggingClass();
       SetupUpdateOrder();
     }
 

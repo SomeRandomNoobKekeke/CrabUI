@@ -1,0 +1,22 @@
+Types = T1, T2, T3, T4, T5
+Args = arg1, arg2, arg3, arg4, arg5
+ArgDefs = T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5
+
+
+public abstract class InfoChannelBase<Types> : InfoChannelCore
+{
+  public Action<InfoChannelBase<Types>> OnInstall { set { value?.Invoke(this); } }
+  public Func<Types, bool> Condition { get; set; }
+  public Action<Types> OnSend { set { AddCallback(value); } }
+  public void AddCallback(Action<Types> callback) => SendEvent += callback;
+  public void Map(Action<Types> callback) => SendEvent += callback;
+  public IEnumerable<Action<Types>> MapList { set { foreach (var map in value) Map(map); } }
+  public void Map(InfoChannelBase<Types> channel) => AddCallback((Args) => channel.Send(Args));
+  public void Route(InfoChannelBase<Types> channel) => channel.AddCallback(Send);
+  public void RemoveCallback(Action<Types> callback) => SendEvent -= callback;
+  protected event Action<Types> SendEvent;
+  protected void Send(ArgDefs)
+  {
+    if (Open && (Condition is null || Condition.Invoke(Args))) SendEvent?.Invoke(Args);
+  }
+}

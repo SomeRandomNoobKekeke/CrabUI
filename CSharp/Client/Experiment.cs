@@ -13,12 +13,8 @@ namespace CrabUIUser
   public partial class Mod : IAssemblyPlugin
   {
 
-
-
-
     public void Experiment()
     {
-
 
     }
   }

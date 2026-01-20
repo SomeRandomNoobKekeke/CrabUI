@@ -57,6 +57,12 @@ namespace CrabUIUser
       };
       component.Absolute = new CUINullRect(300, 100, 200, 200);
 
+      component.AddChild(new CUIComponent()
+      {
+        Relative = new CUINullRect(0.1f, 0.1f, 0.8f, 0.8f),
+        BackgroundColor = Color.White,
+      });
+
 
       CUI.Instance.Main.AddChild(component);
     }

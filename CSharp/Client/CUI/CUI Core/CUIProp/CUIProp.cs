@@ -22,9 +22,7 @@ namespace CrabUI
     public string Name { get; set; }
   }
 
-  /// <summary>
-  /// Just a wrapper around prop
-  /// </summary>
+
   public class CUIProp<T> : CUIProp
   {
     public static InfoChannel<object, string, T> OnSet = new()

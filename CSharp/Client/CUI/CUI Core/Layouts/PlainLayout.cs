@@ -17,14 +17,16 @@ namespace CrabUI
     {
       if (!RequireChildrenUpdate) return;
 
+      DebugLog.Send($"UpdateChildren of {Host}");
+
       foreach (IBasicLayoutElement c in Children)
       {
         float x, y, w, h;
 
         x = 0;
-        if (c.Relative.Left.HasValue) x = c.Relative.Left.Value * Host.Rect.Width;
+        if (c.Relative.Left.HasValue) x = Host.Rect.Left + c.Relative.Left.Value * Host.Rect.Width;
         // if (c.CrossRelative.Left.HasValue) x = c.CrossRelative.Left.Value * Host.Rect.Height;
-        if (c.Absolute.Left.HasValue) x = c.Absolute.Left.Value;
+        if (c.Absolute.Left.HasValue) x = Host.Rect.Left + c.Absolute.Left.Value;
 
         // if (c.RelativeMin.Left.HasValue) x = Math.Max(x, c.RelativeMin.Left.Value * Host.Rect.Width);
         // if (c.AbsoluteMin.Left.HasValue) x = Math.Max(x, c.AbsoluteMin.Left.Value);
@@ -33,9 +35,9 @@ namespace CrabUI
 
 
         y = 0;
-        if (c.Relative.Top.HasValue) y = c.Relative.Top.Value * Host.Rect.Height;
+        if (c.Relative.Top.HasValue) y = Host.Rect.Top + c.Relative.Top.Value * Host.Rect.Height;
         // if (c.CrossRelative.Top.HasValue) y = c.CrossRelative.Top.Value * Host.Rect.Width;
-        if (c.Absolute.Top.HasValue) y = c.Absolute.Top.Value;
+        if (c.Absolute.Top.HasValue) y = Host.Rect.Top + c.Absolute.Top.Value;
 
         // if (c.RelativeMin.Top.HasValue) y = Math.Max(y, c.RelativeMin.Top.Value * Host.Rect.Height);
         // if (c.AbsoluteMin.Top.HasValue) y = Math.Max(y, c.AbsoluteMin.Top.Value);
@@ -67,6 +69,7 @@ namespace CrabUI
         // if (c.AbsoluteMax.Height.HasValue) h = Math.Min(h, c.AbsoluteMax.Height.Value);
 
         c.Rect = new CUIRect(x, y, w, h);
+        DebugLog.Send($"{c}.Rect = {c.Rect}");
       }
 
 

@@ -11,6 +11,13 @@ namespace CrabUI
 {
   public abstract class Layout
   {
+    public static InfoChannel<string> DebugLog = new()
+    {
+      Mapping = (msg) => CUI.Logger.Log(msg)
+    };
+
+
+
     public IBasicLayoutElement Host;
     public IReadOnlyList<IBasicLayoutElement> Children;
 

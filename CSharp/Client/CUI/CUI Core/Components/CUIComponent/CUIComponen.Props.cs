@@ -27,15 +27,15 @@ namespace CrabUI
     {
       public CUILayoutProp<CUINullRect> Absolute { get; set; } = new()
       {
-        Pattern = LayoutMarkPattern.ParentChanged,
+        Pattern = LayoutMarkPattern.FromParentAndDown,
       };
       public CUILayoutProp<CUINullRect> Relative { get; set; } = new()
       {
-        Pattern = LayoutMarkPattern.ParentChanged,
+        Pattern = LayoutMarkPattern.FromParentAndDown,
       };
       public CUILayoutProp<CUIRect> Rect { get; set; } = new()
       {
-        Pattern = LayoutMarkPattern.ParentChanged,
+        Pattern = LayoutMarkPattern.FromParentAndDown,
       };
     }
   }

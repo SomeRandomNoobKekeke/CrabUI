@@ -13,6 +13,7 @@ namespace CrabUI
     public Action OnSend { set { AddCallback(value); } }
     public void AddCallback(Action callback) => SendEvent += callback;
     public void Map(Action callback) => SendEvent += callback;
+    public Action Mapping { set { Map(value); } }
     public IEnumerable<Action> MapList { set { foreach (var map in value) Map(map); } }
     public void Map(InfoChannelBase channel) => AddCallback(() => channel.Send());
     public void Route(InfoChannelBase channel) => channel.AddCallback(Send);
@@ -32,6 +33,7 @@ namespace CrabUI
     public Action<T1> OnSend { set { AddCallback(value); } }
     public void AddCallback(Action<T1> callback) => SendEvent += callback;
     public void Map(Action<T1> callback) => SendEvent += callback;
+    public Action<T1> Mapping { set { Map(value); } }
     public IEnumerable<Action<T1>> MapList { set { foreach (var map in value) Map(map); } }
     public void Map(InfoChannelBase<T1> channel) => AddCallback((arg1) => channel.Send(arg1));
     public void Route(InfoChannelBase<T1> channel) => channel.AddCallback(Send);
@@ -51,6 +53,7 @@ namespace CrabUI
     public Action<T1, T2> OnSend { set { AddCallback(value); } }
     public void AddCallback(Action<T1, T2> callback) => SendEvent += callback;
     public void Map(Action<T1, T2> callback) => SendEvent += callback;
+    public Action<T1, T2> Mapping { set { Map(value); } }
     public IEnumerable<Action<T1, T2>> MapList { set { foreach (var map in value) Map(map); } }
     public void Map(InfoChannelBase<T1, T2> channel) => AddCallback((arg1, arg2) => channel.Send(arg1, arg2));
     public void Route(InfoChannelBase<T1, T2> channel) => channel.AddCallback(Send);
@@ -70,6 +73,7 @@ namespace CrabUI
     public Action<T1, T2, T3> OnSend { set { AddCallback(value); } }
     public void AddCallback(Action<T1, T2, T3> callback) => SendEvent += callback;
     public void Map(Action<T1, T2, T3> callback) => SendEvent += callback;
+    public Action<T1, T2, T3> Mapping { set { Map(value); } }
     public IEnumerable<Action<T1, T2, T3>> MapList { set { foreach (var map in value) Map(map); } }
     public void Map(InfoChannelBase<T1, T2, T3> channel) => AddCallback((arg1, arg2, arg3) => channel.Send(arg1, arg2, arg3));
     public void Route(InfoChannelBase<T1, T2, T3> channel) => channel.AddCallback(Send);
@@ -90,6 +94,7 @@ namespace CrabUI
     public Action<T1, T2, T3, T4> OnSend { set { AddCallback(value); } }
     public void AddCallback(Action<T1, T2, T3, T4> callback) => SendEvent += callback;
     public void Map(Action<T1, T2, T3, T4> callback) => SendEvent += callback;
+    public Action<T1, T2, T3, T4> Mapping { set { Map(value); } }
     public IEnumerable<Action<T1, T2, T3, T4>> MapList { set { foreach (var map in value) Map(map); } }
     public void Map(InfoChannelBase<T1, T2, T3, T4> channel) => AddCallback((arg1, arg2, arg3, arg4) => channel.Send(arg1, arg2, arg3, arg4));
     public void Route(InfoChannelBase<T1, T2, T3, T4> channel) => channel.AddCallback(Send);
@@ -109,6 +114,7 @@ namespace CrabUI
     public Action<T1, T2, T3, T4, T5> OnSend { set { AddCallback(value); } }
     public void AddCallback(Action<T1, T2, T3, T4, T5> callback) => SendEvent += callback;
     public void Map(Action<T1, T2, T3, T4, T5> callback) => SendEvent += callback;
+    public Action<T1, T2, T3, T4, T5> Mapping { set { Map(value); } }
     public IEnumerable<Action<T1, T2, T3, T4, T5>> MapList { set { foreach (var map in value) Map(map); } }
     public void Map(InfoChannelBase<T1, T2, T3, T4, T5> channel) => AddCallback((arg1, arg2, arg3, arg4, arg5) => channel.Send(arg1, arg2, arg3, arg4, arg5));
     public void Route(InfoChannelBase<T1, T2, T3, T4, T5> channel) => channel.AddCallback(Send);

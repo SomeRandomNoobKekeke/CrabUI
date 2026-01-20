@@ -19,7 +19,11 @@ namespace BaroJunk
       Name = "Logger",
       Version = new Version(0, 0, 0)
       {
-        Branch = "BaroJunk",
+        Branch = "CrabUI",
+        BasedOn = new Version(0, 0, 0)
+        {
+          Branch = "BaroJunk",
+        },
       },
     });
 
@@ -89,7 +93,7 @@ namespace BaroJunk
     /// </summary>
     public void Print(object msg, Color color, [CallerFilePath] string source = "", [CallerLineNumber] int lineNumber = 0)
     {
-      if (PrintFilePath) _PrintFilePath(color, source, lineNumber);
+      if (PrintFilePath) _PrintFilePath(color * 0.8f, source, lineNumber);
       _Print(msg, color);
     }
 

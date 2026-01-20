@@ -12,7 +12,7 @@ namespace CrabUI
   {
     public static Logger Logger = new()
     {
-      PrintFilePath = true,
+      PrintFilePath = false,
     };
 
     public static LoggingClass Logging => Instance.logging;

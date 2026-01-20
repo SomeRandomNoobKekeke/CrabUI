@@ -16,19 +16,7 @@ namespace CrabUI
     public void Mark(LayoutMarkPattern pattern)
     {
       if (pattern.Empty) return;
-
-
-
-
-      if (pattern.UpdateChildrenOnParent)
-      {
-        Host.Parent?.MarkAsRequireChildrenUpdate();
-      }
-
-      if (pattern.UpdateChildrenHere)
-      {
-        Host.Self.MarkAsRequireChildrenUpdate();
-      }
+      pattern.MarkFunc.Invoke();
     }
 
     public LayoutMarker(ITreeNode host)

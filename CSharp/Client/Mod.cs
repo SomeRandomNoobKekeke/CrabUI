@@ -64,6 +64,7 @@ namespace CrabUIUser
       });
 
 
+
       CUI.Instance.Main.AddChild(component);
     }
 

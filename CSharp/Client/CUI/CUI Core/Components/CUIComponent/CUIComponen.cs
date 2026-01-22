@@ -26,7 +26,6 @@ namespace CrabUI
       InitModules();
       InjectProps();
       WireUpProps();
-      LayoutMarker = new LayoutMarker(this);
     }
 
     //CRINGE

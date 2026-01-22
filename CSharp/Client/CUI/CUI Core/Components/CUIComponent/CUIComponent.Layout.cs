@@ -12,13 +12,12 @@ namespace CrabUI
   public partial class CUIComponent : ILayoutHost
   {
     public Layout Layout { get; set; }
-    protected LayoutMarker LayoutMarker { get; }
 
     void ILayoutHost.MarkLayout(LayoutMarkPattern pattern)
     {
       if (pattern.Empty) return;
       this.MainComponent?.LayoutChanged();
-      LayoutMarker.Mark(pattern);
+      pattern.MarkFunc(this);
     }
     void ILayoutHost.UpdateChildren() => Layout.UpdateChildren();
     void ILayoutHost.UpdateParent() => Layout.UpdateParent();

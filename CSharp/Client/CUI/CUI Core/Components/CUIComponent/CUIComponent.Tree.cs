@@ -20,8 +20,8 @@ namespace CrabUI
     protected List<CUIComponent> children = new();
     public ReadOnlyCollection<CUIComponent> Children => children.AsReadOnly();
 
-    object ITreeNode.Parent => Parent;
-    IList ITreeNode.Children => Children;
+    ITreeNode ITreeNode.Parent => Parent;
+    IReadOnlyList<ITreeNode> ITreeNode.Children => new ListProxy<ITreeNode>(Children);
 
     protected virtual void OnChildAdded(CUIComponent child) { }
     protected virtual void OnChildRemoved(CUIComponent child) { }

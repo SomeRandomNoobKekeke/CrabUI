@@ -11,22 +11,11 @@ namespace CrabUI
 {
   public partial class LayoutMarkPattern
   {
-    public class FromParentAndDownPattern : LayoutMarkPattern
+    public class OnlyParentPattern : LayoutMarkPattern
     {
       public override void MarkFunc(CUIComponent host)
       {
-
-        void MarkRec(CUIComponent component)
-        {
-          ((ILayoutHost)component).MarkAsRequireChildrenUpdate();
-          foreach (CUIComponent child in component.Children)
-          {
-            MarkRec(child);
-          }
-        }
-
         ((ILayoutHost)host.Parent)?.MarkAsRequireChildrenUpdate();
-        MarkRec(host);
       }
     }
   }

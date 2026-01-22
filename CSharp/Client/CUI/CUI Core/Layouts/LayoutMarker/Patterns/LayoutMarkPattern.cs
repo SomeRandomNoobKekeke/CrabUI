@@ -9,11 +9,16 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
+  // It's too hard to decouple from CUIComponent, i will just pretend that it's not a problem
   public partial class LayoutMarkPattern
   {
-    public static LayoutMarkPattern None = new LayoutMarkPattern();
+    public static LayoutMarkPattern None = new LayoutMarkPattern() { Empty = true };
     public static LayoutMarkPattern FromParentAndDown = new FromParentAndDownPattern();
+    public static LayoutMarkPattern OnlyParent = new OnlyParentPattern();
 
-    public virtual void MarkFunc(TreeAdapter<ILayoutHost> host) { }
+
+    public bool Empty { get; set; }
+
+    public virtual void MarkFunc(CUIComponent host) { }
   }
 }

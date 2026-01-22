@@ -35,7 +35,7 @@ namespace CrabUI
       };
       public CUILayoutProp<CUIRect> Rect { get; set; } = new()
       {
-        Pattern = LayoutMarkPattern.FromParentAndDown,
+        Pattern = LayoutMarkPattern.None,
       };
     }
   }

@@ -10,7 +10,7 @@ namespace CrabUI
 
   public interface ITreeNode
   {
-    public object Parent { get; }
-    public IList Children { get; }
+    public ITreeNode Parent { get; }
+    public IReadOnlyList<ITreeNode> Children { get; }
   }
 }

@@ -12,8 +12,8 @@ namespace CrabUI
   {
     public class Subscription
     {
-      private CUIEventHandler Callback { get; private set; }
-      private CUIEvent Target { get; private set; }
+      private CUIEventHandler Callback;
+      private CUIEvent Target;
 
       public void Cancel()
       {
@@ -36,6 +36,18 @@ namespace CrabUI
       TheEvent += callback;
       return new Subscription(callback, this);
     }
+    public void Once(CUIEventHandler callback)
+    {
+      CUIEventHandler once = null;
+      once = () =>
+      {
+        callback.Invoke();
+        TheEvent -= once;
+      };
+
+      TheEvent += once;
+    }
+
     public void Remove(CUIEventHandler callback) => TheEvent -= callback;
     public void Raise() { TheEvent?.Invoke(); }
 

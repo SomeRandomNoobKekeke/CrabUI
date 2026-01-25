@@ -53,7 +53,6 @@ namespace CrabUI
       }
     }
 
-    //TODO reuse lists
     private void HandleInput()
     {
       EventTargets.Find(VisualFlattener.Flat, CUI.Instance.Input.Mouse.Pos);

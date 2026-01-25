@@ -10,6 +10,7 @@ namespace CrabUI
 {
   public abstract class InputEvent
   {
+    public bool Consumed { get; set; } = false;
     public abstract void Dispatch(IEventConsumer consumer);
   }
 
@@ -21,10 +22,19 @@ namespace CrabUI
     public CUIMouseEvent(CUIInput.MouseInput mouse) => Mouse = mouse;
   }
 
-  public class CUIMouseDownEvent : CUIMouseEvent
-  {
-    CUIMouseButton Button { get; }
 
+
+
+  public abstract class CUIMouseButtonEvent : CUIMouseEvent
+  {
+    public CUIMouseButton Button { get; }
+
+    public CUIMouseButtonEvent(CUIMouseButton button, CUIInput.MouseInput mouse) : base(mouse)
+       => Button = button;
+  }
+
+  public class CUIMouseDownEvent : CUIMouseButtonEvent
+  {
     public override void Dispatch(IEventConsumer consumer)
     {
       if (consumer is IMouseEventConsumer MEConsumer)
@@ -33,18 +43,12 @@ namespace CrabUI
       }
     }
 
-    public CUIMouseDownEvent(CUIMouseButton button, CUIInput.MouseInput mouse) : base(mouse)
-    {
-      Button = button;
-    }
-
+    public CUIMouseDownEvent(CUIMouseButton button, CUIInput.MouseInput mouse) : base(button, mouse) { }
     public override string ToString() => $"{Button} Down";
   }
 
-  public class CUIMouseUpEvent : CUIMouseEvent
+  public class CUIMouseUpEvent : CUIMouseButtonEvent
   {
-    CUIMouseButton Button { get; }
-
     public override void Dispatch(IEventConsumer consumer)
     {
       if (consumer is IMouseEventConsumer MEConsumer)
@@ -53,18 +57,12 @@ namespace CrabUI
       }
     }
 
-    public CUIMouseUpEvent(CUIMouseButton button, CUIInput.MouseInput mouse) : base(mouse)
-    {
-      Button = button;
-    }
-
+    public CUIMouseUpEvent(CUIMouseButton button, CUIInput.MouseInput mouse) : base(button, mouse) { }
     public override string ToString() => $"{Button} Up";
   }
 
-  public class CUIMouseClickEvent : CUIMouseEvent
+  public class CUIMouseClickEvent : CUIMouseButtonEvent
   {
-    CUIMouseButton Button { get; }
-
     public override void Dispatch(IEventConsumer consumer)
     {
       if (consumer is IMouseEventConsumer MEConsumer)
@@ -73,19 +71,13 @@ namespace CrabUI
       }
     }
 
-    public CUIMouseClickEvent(CUIMouseButton button, CUIInput.MouseInput mouse) : base(mouse)
-    {
-      Button = button;
-    }
-
+    public CUIMouseClickEvent(CUIMouseButton button, CUIInput.MouseInput mouse) : base(button, mouse) { }
     public override string ToString() => $"{Button} Click";
   }
 
 
-  public class CUIMouseDoubleClickEvent : CUIMouseEvent
+  public class CUIMouseDoubleClickEvent : CUIMouseButtonEvent
   {
-    CUIMouseButton Button { get; }
-
     public override void Dispatch(IEventConsumer consumer)
     {
       if (consumer is IMouseEventConsumer MEConsumer)
@@ -93,10 +85,8 @@ namespace CrabUI
         MEConsumer.MouseDoubleClick.Raise(this);
       }
     }
-    public CUIMouseDoubleClickEvent(CUIMouseButton button, CUIInput.MouseInput mouse) : base(mouse)
-    {
-      Button = button;
-    }
+
+    public CUIMouseDoubleClickEvent(CUIMouseButton button, CUIInput.MouseInput mouse) : base(button, mouse) { }
 
     public override string ToString() => $"{Button} Double Click";
   }
@@ -113,10 +103,7 @@ namespace CrabUI
       }
     }
 
-    public CUIMouseMovedEvent(CUIInput.MouseInput mouse) : base(mouse)
-    {
-
-    }
+    public CUIMouseMovedEvent(CUIInput.MouseInput mouse) : base(mouse) { }
 
     public override string ToString() => $"Mouse Moved {Pos}";
   }

@@ -8,12 +8,16 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public partial class EventTargetFinder : IModule
+  public partial class EventTargets : IModule
   {
-    public IEnumerable<IEventConsumer> FindTargets(List<VisualUnit> flat, Vector2 mousePos)
-    {
-      Vector2 pos = mousePos;
+    public List<IEventConsumer> Targets { get; } = new();
+    public IEventConsumer TopTarget { get; private set; }
 
+    public void Find(List<VisualUnit> flat, Vector2 mousePos)
+    {
+      Targets.Clear();
+
+      Vector2 pos = mousePos;
 
       for (int i = flat.Count - 1; i >= 0; i--)
       {
@@ -22,7 +26,7 @@ namespace CrabUI
           case VisualUnit.PrimitiveVisualElement primitive:
             if (primitive.Element is IEventConsumer && primitive.Element.Rect.Contains(pos))
             {
-              yield return primitive.Element as IEventConsumer;
+              Targets.Add(primitive.Element as IEventConsumer);
             }
 
             break;
@@ -37,6 +41,9 @@ namespace CrabUI
             break;
         }
       }
+
+      TopTarget = Targets.ElementAtOrDefault(0);
     }
+
   }
 }

@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public partial class CUIComponent : IVisualComponent, IBasicLayoutElement, IMouseEventConsumer
+  public partial class CUIComponent : IVisualComponent, IBasicLayoutElement
   {
     protected SimpleTexture Background { get; } = new();
 

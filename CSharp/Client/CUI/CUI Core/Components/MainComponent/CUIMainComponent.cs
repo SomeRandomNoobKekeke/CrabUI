@@ -7,7 +7,7 @@ using Barotrauma;
 using BaroJunk;
 namespace CrabUI
 {
-  public class CUIMainComponent : CUIComponent
+  public partial class CUIMainComponent : CUIComponent
   {
 
     public CUIInput Input;//TODO
@@ -18,7 +18,10 @@ namespace CrabUI
     public ChainDrawer Drawer = new ChainDrawer();
     public EventDispatcher EventDispatcher = new();
     public EventConstructor EventConstructor = new();
-    public EventTargetFinder EventTargetFinder = new();
+    public EventTargets EventTargets = new();
+
+    public GlobalEventsWrapper GlobalEvents = new();
+
 
     private bool GlobalLayoutChanged;
     public void LayoutChanged() => GlobalLayoutChanged = true;
@@ -53,9 +56,8 @@ namespace CrabUI
     //TODO reuse lists
     private void HandleInput()
     {
-      List<IEventConsumer> targets = EventTargetFinder.FindTargets(VisualFlattener.Flat, CUI.Instance.Input.Mouse.Pos).ToList();
-
-      List<InputEvent> events = EventConstructor.ConstructEvents(CUI.Instance.Input).ToList();
+      EventTargets.Find(VisualFlattener.Flat, CUI.Instance.Input.Mouse.Pos);
+      EventConstructor.Construct(CUI.Instance.Input);
 
       //TODO This should be a real debug log
       // foreach (IEventConsumer target in targets)
@@ -63,8 +65,8 @@ namespace CrabUI
       //   CUI.Logger.Log($"{target} {Logger.Wrap.IEnumerable(events)}");
       // }
 
-
-      EventDispatcher.Dispatch(targets, events);
+      EventDispatcher.Dispatch(GlobalEvents, EventConstructor.Events);
+      EventDispatcher.Dispatch(EventTargets, EventConstructor);
     }
 
     private void UpdateLayout()
@@ -73,6 +75,11 @@ namespace CrabUI
       {
         component.Layout.UpdateChildren();
       }
+    }
+
+    public CUIMainComponent()
+    {
+
     }
   }
 }

@@ -14,9 +14,30 @@ namespace CrabUI
     public static int MaxID { get; private set; }
     public int ID { get; set; }
 
-    public CUIMainComponent MainComponent { get; private set; }
+
+
+    private CUIMainComponent _mainComponent;
+    public CUIMainComponent MainComponent
+    {
+      get => _mainComponent;
+      private set
+      {
+        void setRec(CUIComponent component)
+        {
+          component._mainComponent = value;
+          foreach (CUIComponent child in component.children)
+          {
+            setRec(child);
+          }
+        }
+
+        setRec(this);
+      }
+    }
 
     protected virtual void InitModules() { }
+
+    public DragHandle DragHandle;
 
     public CUIComponent()
     {
@@ -26,6 +47,12 @@ namespace CrabUI
       InitModules();
       InjectProps();
       WireUpProps();
+
+      DragHandle = new DragHandle()
+      {
+        Host = this,
+        Active = true,
+      };
     }
 
     //CRINGE

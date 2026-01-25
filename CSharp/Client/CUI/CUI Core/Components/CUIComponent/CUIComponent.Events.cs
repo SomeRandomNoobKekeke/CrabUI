@@ -9,13 +9,16 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public partial class CUIComponent
+  public partial class CUIComponent : IMouseEventConsumer
   {
     public CUIEvent<CUIMouseDownEvent> MouseDown
     {
       get => Background.MouseDown;
       set => Background.MouseDown = value;
     }
+
+    public CUIEventHandler<CUIMouseDownEvent> OnMouseDown { set { MouseDown += value; } }
+
     public CUIEvent<CUIMouseUpEvent> MouseUp
     {
       get => Background.MouseUp;
@@ -36,5 +39,7 @@ namespace CrabUI
       get => Background.MouseMoved;
       set => Background.MouseMoved = value;
     }
+
+    public CUIEvent Updated { get; set; } = new CUIEvent();
   }
 }

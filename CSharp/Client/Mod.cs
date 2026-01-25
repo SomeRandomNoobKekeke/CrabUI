@@ -49,11 +49,6 @@ namespace CrabUIUser
       {
         component.BackgroundColor = component.BackgroundColor == Color.Green ?
           Color.Red : Color.Green;
-
-        component.Absolute = component.Absolute with
-        {
-          Left = (component.Absolute.Left ?? 0) + 10
-        };
       };
       component.Absolute = new CUINullRect(300, 100, 200, 200);
 
@@ -61,6 +56,7 @@ namespace CrabUIUser
       {
         Relative = new CUINullRect(0.1f, 0.1f, 0.8f, 0.8f),
         BackgroundColor = Color.White,
+        OnMouseDown = (e) => e.Consumed = true,
       });
 
 

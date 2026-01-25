@@ -14,10 +14,7 @@ namespace CrabUI
 
     public void Add(CUIEventHandler callback) => TheEvent += callback;
     public void Remove(CUIEventHandler callback) => TheEvent -= callback;
-    public void Raise()
-    {
-      TheEvent?.Invoke();
-    }
+    public void Raise() { TheEvent?.Invoke(); }
 
     public static CUIEvent operator +(CUIEvent e, CUIEventHandler callback)
     {

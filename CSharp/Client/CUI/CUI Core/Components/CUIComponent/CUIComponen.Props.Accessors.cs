@@ -11,10 +11,10 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-    protected CUIRect Rect
+    public CUIRect Rect
     {
       get => CUIProps.Rect.Value;
-      set => CUIProps.Rect.Value = value;
+      protected set => CUIProps.Rect.Value = value;
     }
 
     public Color BackgroundColor

@@ -23,8 +23,6 @@ namespace CrabUIUser
 
       UTestCommands.AddCommands();
 
-
-
       try
       {
         CUI.Instance.Connect();

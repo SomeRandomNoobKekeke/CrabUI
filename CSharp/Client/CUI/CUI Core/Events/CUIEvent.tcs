@@ -6,90 +6,62 @@ using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
 
+/*JS
+//eh, whatever, i'll just copy paste this 
+Template.TransformAndSave(
+  thisFile.text,
+  { 
+    '<T>' : '<T1>',
+    'argDefs' : 'T1 arg1',
+    'args' : 'arg1',
+  },
+  `${thisFile.dir}/Generated/CUIEvent1.cs`,
+)
+
+Template.TransformAndSave(
+  thisFile.text,
+  { 
+    '<T>' : '<T1, T2>',
+    'argDefs' : 'T1 arg1, T2 arg2',
+    'args' : 'arg1, arg2',
+  },
+  `${thisFile.dir}/Generated/CUIEvent2.cs`,
+)
+
+Template.TransformAndSave(
+  thisFile.text,
+  { 
+    '<T>' : '<T1, T2, T3>',
+    'argDefs' : 'T1 arg1, T2 arg2, T3 arg3',
+    'args' : 'arg1, arg2, arg3',
+  },
+  `${thisFile.dir}/Generated/CUIEvent3.cs`,
+)
+*/
 namespace CrabUI
 {
-  public class CUIEvent
+  public class CUIEvent<T>
   {
+    private event CUIEventHandler<T> TheEvent;
 
-    public class Subscription
+    public void Add(CUIEventHandler<T> callback) => TheEvent += callback;
+    public void Remove(CUIEventHandler<T> callback) => TheEvent -= callback;
+    public void Raise(argDefs)
     {
-      private CUIEventHandler Callback;
-      private CUIEvent Target;
-
-      public void Cancel()
-      {
-        Target.Remove(Callback);
-        Callback = null;
-        Target = null;
-      }
-
-      public Subscription(CUIEventHandler callback, CUIEvent target)
-      {
-        Callback = callback;
-        Target = target;
-      }
+      TheEvent?.Invoke(args);
     }
 
-    private event CUIEventHandler TheEvent;
-
-    public Subscription Add(CUIEventHandler callback)
-    {
-      TheEvent += callback;
-      return new Subscription(callback, this);
-    }
-    public void Once(CUIEventHandler callback)
-    {
-      CUIEventHandler once = null;
-      once = () =>
-      {
-        callback.Invoke();
-        TheEvent -= once;
-      };
-
-      TheEvent += once;
-    }
-
-    public void Remove(CUIEventHandler callback) => TheEvent -= callback;
-    public void Raise() { TheEvent?.Invoke(); }
-
-    public static CUIEvent operator +(CUIEvent e, CUIEventHandler callback)
+    public static CUIEvent<T> operator +(CUIEvent<T> e, CUIEventHandler<T> callback)
     {
       e.Add(callback);
       return e;
     }
 
-    public static CUIEvent operator -(CUIEvent e, CUIEventHandler callback)
+    public static CUIEvent<T> operator -(CUIEvent<T> e, CUIEventHandler<T> callback)
     {
       e.Remove(callback);
       return e;
     }
     public CUIEvent() { }
   }
-
-  public class CUIEvent<T1>
-  {
-    private event CUIEventHandler<T1> TheEvent;
-
-    public void Add(CUIEventHandler<T1> callback) => TheEvent += callback;
-    public void Remove(CUIEventHandler<T1> callback) => TheEvent -= callback;
-    public void Raise(T1 arg1)
-    {
-      TheEvent?.Invoke(arg1);
-    }
-
-    public static CUIEvent<T1> operator +(CUIEvent<T1> e, CUIEventHandler<T1> callback)
-    {
-      e.Add(callback);
-      return e;
-    }
-
-    public static CUIEvent<T1> operator -(CUIEvent<T1> e, CUIEventHandler<T1> callback)
-    {
-      e.Remove(callback);
-      return e;
-    }
-    public CUIEvent() { }
-  }
-
-
 }

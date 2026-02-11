@@ -15,7 +15,7 @@ namespace CrabUIUser
 
     public void Experiment()
     {
-      new Cringe().Run();
+      new ModuleAccessors().Run();
     }
   }
 }

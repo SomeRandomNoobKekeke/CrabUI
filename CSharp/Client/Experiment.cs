@@ -15,7 +15,7 @@ namespace CrabUIUser
 
     public void Experiment()
     {
-      new ModuleAccessors().Run();
+      new GodAccessorExperiment().Run();
     }
   }
 }

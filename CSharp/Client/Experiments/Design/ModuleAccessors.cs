@@ -12,19 +12,22 @@ namespace CrabUIUser
 
 
   public class ModuleAccessors : Experiment
+
   {
+
+
     public class Component
     {
-      static Component()
+      public interface IModuleA_Access { public ModuleA Get(Component host); }
+      private class ModuleA_Access : IModuleA_Access
       {
-        ModuleA_Accessor.Inject();
+        public ModuleA Get(Component host) => host.ModuleA;
       }
-      private static ModuleA_Accessor ModuleA_accessor;
-      public class ModuleA_Accessor
+
+      public interface IComponentTreeModule_Access { public ComponentTreeModule Get(Component host); }
+      private class ComponentTreeModule_Access : IComponentTreeModule_Access
       {
-        public static void Inject() => ModuleA_accessor = new();
-        public ModuleA Get(Component c) => c.ModuleA;
-        private ModuleA_Accessor() { }
+        public ComponentTreeModule Get(Component host) => host.ComponentTreeModule;
       }
 
       private ModuleA ModuleA { get; } = new();
@@ -33,8 +36,9 @@ namespace CrabUIUser
 
       public void InjectModules()
       {
+        ComponentTreeModule.Accessor = new ComponentTreeModule_Access();
+        ModuleA.ExternalModuleA = new ModuleA_Access();
         ModuleA.ComponentTreeModule = ComponentTreeModule;
-        ModuleA.ModuleA_Accessor = ModuleA_accessor;
         ComponentTreeModule.Host = this;
       }
 
@@ -61,28 +65,29 @@ namespace CrabUIUser
     public class ModuleA
     {
       public ComponentTreeModule ComponentTreeModule { get; set; }
-      public Component.ModuleA_Accessor ModuleA_Accessor { get; set; }
+      public Component.IModuleA_Access ExternalModuleA { get; set; }
 
       public string Prop { get; set; } = "bruh";
 
       public void SetPropRecursive(string value)
       {
         Prop = value;
-        foreach (Component component in ComponentTreeModule.Children)
+        foreach (Component child in ComponentTreeModule.Children)
         {
-          ModuleA_Accessor.Get(component).SetPropRecursive(value);
+          ExternalModuleA.Get(child).SetPropRecursive(value);
         }
       }
     }
 
     public class ComponentTreeModule
     {
+      public Component.IComponentTreeModule_Access Accessor { get; set; }
       public Component Host { get; set; }
       public Component Parent { get; set; }
       public List<Component> Children { get; } = new();
       public void AddChild(Component child)
       {
-        child.Parent = Host;
+        Accessor.Get(child).Parent = Host;
         Children.Add(child);
       }
     }

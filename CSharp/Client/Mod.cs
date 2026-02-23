@@ -25,15 +25,14 @@ namespace CrabUIUser
 
       try
       {
-        CUI.Instance.Connect();
-
         Init();
+        Experiment();
       }
       catch (Exception e)
       {
         Logger.Error(e);
       }
-      Experiment();
+
       Logger.Log($"Compiled somehow");
     }
 
@@ -59,7 +58,7 @@ namespace CrabUIUser
 
 
 
-      CUI.Instance.Main.AddChild(component);
+      CUI.Main.AddChild(component);
     }
 
     public void OnLoadCompleted() { }

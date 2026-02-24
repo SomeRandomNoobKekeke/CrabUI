@@ -12,7 +12,7 @@ namespace CrabUI
   {
     public static Logger Logger = new()
     {
-      PrintFilePath = false,
+      PrintFilePath = true,
     };
 
     private static CUIRunner _CUIRunner;

@@ -9,24 +9,31 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public partial class LayoutMarkPattern
+  public partial class LayoutMarker
   {
-    public class FromParentAndDownPattern : LayoutMarkPattern
+    public partial class Pattern
     {
-      public override void MarkFunc(CUIComponent host)
+      public class FromParentAndDownPattern : Pattern
       {
-
-        void MarkRec(CUIComponent component)
+        public override void MarkFunc(IMarkableLayoutContainer host)
         {
-          ((ILayoutHost)component).MarkAsRequireChildrenUpdate();
-          foreach (CUIComponent child in component.Children)
+          void MarkRec(IMarkableLayoutContainer container)
           {
-            MarkRec(child);
-          }
-        }
+            container.Layout.RequireChildrenUpdate = true;
 
-        ((ILayoutHost)host.Parent)?.MarkAsRequireChildrenUpdate();
-        MarkRec(host);
+            foreach (IMarkableLayoutContainer child in container.Children)
+            {
+              MarkRec(child);
+            }
+          }
+
+          if (host.Parent is not null)
+          {
+            host.Parent.Layout.RequireChildrenUpdate = true;
+          }
+
+          MarkRec(host);
+        }
       }
     }
   }

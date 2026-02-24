@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -11,22 +12,20 @@ namespace CrabUI
 {
   public abstract class Layout
   {
+    public interface ILayoutHost : IRectElement
+    {
+      public IList Children { get; }
+    }
+
     public static InfoChannel<string> DebugLog = new()
     {
       Mapping = (msg) => CUI.Logger.Log(msg)
     };
 
-
-
-    public IBasicLayoutElement Host;
-    public IReadOnlyList<IBasicLayoutElement> Children;
-
+    public virtual ILayoutHost AbstractHost { get; set; }
 
     public bool RequireChildrenUpdate { get; set; } = true;
     public bool RequireParentUpdate { get; set; } = true;
-
-
-
 
     public virtual void UpdateChildren()
     {
@@ -36,12 +35,6 @@ namespace CrabUI
     public virtual void UpdateParent()
     {
       RequireParentUpdate = false;
-    }
-
-    public Layout(IBasicLayoutElement host, IReadOnlyList<IBasicLayoutElement> children)
-    {
-      Host = host;
-      Children = children;
     }
   }
 }

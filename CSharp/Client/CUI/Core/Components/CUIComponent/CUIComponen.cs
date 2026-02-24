@@ -35,18 +35,20 @@ namespace CrabUI
       }
     }
 
-    protected virtual void InitModules() { }
+
 
     public DragHandle DragHandle;
 
     public CUIComponent()
     {
       ID = MaxID++;
-      Layout = new PlainLayout(this, new ListProxy<IBasicLayoutElement>(Children));
 
-      InitModules();
+      Access = new ComponentAccess(this);
+
       InjectProps();
       WireUpProps();
+
+      Layout = new PlainLayout();
 
       DragHandle = new DragHandle()
       {
@@ -55,25 +57,16 @@ namespace CrabUI
       };
     }
 
-    //CRINGE
     private void InjectProps()
     {
-      AllCUIProps.Clear();
-      foreach (PropertyInfo pi in typeof(CUIPropsWrapper).GetProperties())
-      {
-        CUIProp prop = (CUIProp)pi.GetValue(CUIProps);
-        AllCUIProps.Add(prop);
-        prop.Host = this;
-        prop.Name = pi.Name;
-
-        if (prop is ICUILayoutProp layoutProp)
-        {
-          layoutProp.LayoutHost = this;
-
-        }
+      LayoutSlot.Host = Access;
+      LayoutMarker.Host = Access;
 
 
-      }
+      CUIProps.Absolute.Host = Access; CUIProps.Absolute.Name = "Absolute";
+      CUIProps.Relative.Host = Access; CUIProps.Relative.Name = "Relative";
+      CUIProps.Rect.Host = Access; CUIProps.Rect.Name = "Rect";
+
     }
 
     public override string ToString() => $"{this.GetType().Name} [{this.ID}]";

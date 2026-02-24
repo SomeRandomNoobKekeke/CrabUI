@@ -11,8 +11,6 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-    public List<CUIProp> AllCUIProps = new();
-
     public CUIPropsWrapper CUIProps = new();
 
     private void WireUpProps()
@@ -27,15 +25,15 @@ namespace CrabUI
     {
       public CUILayoutProp<CUINullRect> Absolute { get; set; } = new()
       {
-        Pattern = LayoutMarkPattern.FromParentAndDown,
+        Pattern = LayoutMarker.Pattern.FromParentAndDown,
       };
       public CUILayoutProp<CUINullRect> Relative { get; set; } = new()
       {
-        Pattern = LayoutMarkPattern.FromParentAndDown,
+        Pattern = LayoutMarker.Pattern.FromParentAndDown,
       };
       public CUILayoutProp<CUIRect> Rect { get; set; } = new()
       {
-        Pattern = LayoutMarkPattern.None,
+        Pattern = LayoutMarker.Pattern.None,
       };
     }
   }

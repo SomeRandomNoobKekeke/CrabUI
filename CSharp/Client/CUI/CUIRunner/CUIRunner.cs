@@ -29,21 +29,45 @@ namespace CrabUI
 
       GameMain.LuaCs.Hook.Patch(BeforeDrawHook, GUIDrawMethod, (instance, ptable) =>
       {
-        CUISpriteBatch.Use((SpriteBatch)ptable["spriteBatch"]);
-        CUICore.LifeCycle.DrawBeforeGUI(CUISpriteBatch);
+        try
+        {
+          CUISpriteBatch.Use((SpriteBatch)ptable["spriteBatch"]);
+          CUICore.LifeCycle.DrawBeforeGUI(CUISpriteBatch);
+        }
+        catch (Exception e)
+        {
+          CUI.Logger.Error(e);
+        }
+
         return null;
       }, LuaCsHook.HookMethodType.Before);
 
       GameMain.LuaCs.Hook.Patch(AfterDrawHook, GUIDrawMethod, (instance, ptable) =>
       {
-        CUISpriteBatch.Use((SpriteBatch)ptable["spriteBatch"]);
-        CUICore.LifeCycle.DrawAfterGUI(CUISpriteBatch);
+        try
+        {
+          CUISpriteBatch.Use((SpriteBatch)ptable["spriteBatch"]);
+          CUICore.LifeCycle.DrawAfterGUI(CUISpriteBatch);
+        }
+        catch (Exception e)
+        {
+          CUI.Logger.Error(e);
+        }
+
         return null;
       }, LuaCsHook.HookMethodType.After);
 
       GameMain.LuaCs.Hook.Patch(UpdateHook, UpdateMethod, (instance, ptable) =>
       {
-        CUICore.LifeCycle.Update(Timing.TotalTime);
+        try
+        {
+          CUICore.LifeCycle.Update(Timing.TotalTime);
+        }
+        catch (Exception e)
+        {
+          CUI.Logger.Error(e);
+        }
+
         return null;
       }, LuaCsHook.HookMethodType.After);
     }

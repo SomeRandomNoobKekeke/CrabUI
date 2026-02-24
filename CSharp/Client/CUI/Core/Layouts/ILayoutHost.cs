@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -9,9 +10,5 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public interface IBasicLayoutElement : IRectElement
-  {
-    public CUINullRect Absolute { get; set; }
-    public CUINullRect Relative { get; set; }
-  }
+
 }

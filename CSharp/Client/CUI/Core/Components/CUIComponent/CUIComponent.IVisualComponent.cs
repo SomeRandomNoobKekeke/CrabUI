@@ -9,12 +9,9 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public partial class CUIComponent : IVisualComponent, IBasicLayoutElement
+  public partial class CUIComponent : IVisualComponent
   {
     protected SimpleTexture Background { get; } = new();
-
-
-    CUIRect IRectElement.Rect { get => Rect; set => Rect = value; }
 
 
     IEnumerable<VisualUnit> IVisualComponent.VisualSplit() => VisualSplit();

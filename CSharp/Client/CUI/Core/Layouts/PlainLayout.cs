@@ -6,20 +6,46 @@ using System.Reflection;
 using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
+using BaroJunk;
 
 namespace CrabUI
 {
   public class PlainLayout : Layout
   {
 
+    public interface IPlainLayoutHost : ILayoutHost
+    {
+
+    }
+
+    public interface IPlainLayoutElement : IRectElement
+    {
+      public CUINullRect Absolute { get; }
+      public CUINullRect Relative { get; }
+    }
+
+    public override ILayoutHost AbstractHost
+    {
+      get => Host as ILayoutHost;
+      set
+      {
+        Host = value as IPlainLayoutHost;
+        Children = new ListProxy<IPlainLayoutElement>(value.Children);
+      }
+    }
+
+    public IPlainLayoutHost Host { get; set; }
+    public IReadOnlyList<IPlainLayoutElement> Children { get; set; }
+
 
     public override void UpdateChildren()
     {
+      if (Host is null) return;
       if (!RequireChildrenUpdate) return;
 
       DebugLog.Send($"UpdateChildren of {Host}");
 
-      foreach (IBasicLayoutElement c in Children)
+      foreach (IPlainLayoutElement c in Children)
       {
         float x, y, w, h;
 
@@ -80,8 +106,5 @@ namespace CrabUI
     {
       RequireParentUpdate = false;
     }
-
-    public PlainLayout(IBasicLayoutElement host, IReadOnlyList<IBasicLayoutElement> children) : base(host, children) { }
-
   }
 }

@@ -9,10 +9,24 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public class CUILayoutProp<T> : CUIReactiveProp<T>, ICUILayoutProp
+  public class CUILayoutProp<T> : CUIReactiveProp<T>
   {
-    public LayoutMarkPattern Pattern { get; set; } = LayoutMarkPattern.None;
-    public ILayoutHost LayoutHost { get; set; }
+    public LayoutMarker.Pattern Pattern { get; set; } = LayoutMarker.Pattern.None;
+    public LayoutMarker.ILayoutMarkable LayoutHost { get; set; }
+
+    public override object Host
+    {
+      get => base.Host;
+      set
+      {
+        base.Host = value;
+
+        if (Host is LayoutMarker.ILayoutMarkable)
+        {
+          LayoutHost = Host as LayoutMarker.ILayoutMarkable;
+        }
+      }
+    }
 
     public override T Value
     {
@@ -20,14 +34,7 @@ namespace CrabUI
       set
       {
         base.Value = value;
-        if (LayoutHost == null)
-        {
-          CUI.Logger.Log($"Warning: CUILayoutProp isn't linked to ILayoutHost [{Host}] [{Name}]");
-        }
-        else
-        {
-          LayoutHost.MarkLayout(Pattern);
-        }
+        LayoutHost.Mark(Pattern);
       }
     }
   }

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Diagnostics;
 
-namespace CrabUI
+namespace BaroJunk
 {
   /// <summary>
   /// Provides access to List<Derrived> as List<Base> without creating a new list
@@ -24,7 +24,24 @@ namespace CrabUI
     }
 
 
-    public T this[int i] { get => (T)Source[i]; }
+    public T this[int i]
+    {
+      get
+      {
+        T result = default;
+        try
+        {
+          result = (T)Source[i];
+        }
+        catch (Exception e)
+        {
+          Logger.Default.Error($"Source: [{Source}]");
+          Logger.Default.Error($"Source[i]: [{Source[i]}]");
+          throw;
+        }
+        return result;
+      }
+    }
     public int Count => Source.Count;
 
     public ProxyEnumerator GetEnumerator() => new ProxyEnumerator(Source.GetEnumerator());

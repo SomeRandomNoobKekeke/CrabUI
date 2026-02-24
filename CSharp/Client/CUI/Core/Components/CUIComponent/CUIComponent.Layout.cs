@@ -9,27 +9,26 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public partial class CUIComponent : ILayoutHost
+  public partial class CUIComponent
   {
-    public Layout Layout { get; set; }
+    public interface ILayoutContainer
+    {
+      public Layout Layout { get; }
+    }
 
-    void ILayoutHost.MarkLayout(LayoutMarkPattern pattern)
+    public interface ILayoutContainerAccess
     {
-      if (pattern.Empty) return;
-      this.MainComponent?.LayoutChanged();
-      pattern.MarkFunc(this);
+      public Layout GetLayout(CUIComponent host);
     }
-    void ILayoutHost.UpdateChildren() => Layout.UpdateChildren();
-    void ILayoutHost.UpdateParent() => Layout.UpdateParent();
-    void ILayoutHost.MarkAsRequireChildrenUpdate()
+
+    private LayoutSlot LayoutSlot { get; } = new();
+    private LayoutMarker LayoutMarker { get; } = new();
+    public Layout Layout
     {
-      this.MainComponent?.LayoutChanged();
-      Layout.RequireChildrenUpdate = true;
+      get => LayoutSlot?.Layout;
+      set => LayoutSlot.Layout = value;
     }
-    void ILayoutHost.MarkAsRequireParentUpdate()
-    {
-      this.MainComponent?.LayoutChanged();
-      Layout.RequireParentUpdate = true;
-    }
+
+
   }
 }

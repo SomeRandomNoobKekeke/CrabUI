@@ -11,10 +11,6 @@ namespace CrabUI
 {
   public class CUIReactiveProp<T> : CUIProp<T>
   {
-    public object Host { get; set; }
-    public string Name { get; set; }
-
-
     public override T Value
     {
       get => base.Value;

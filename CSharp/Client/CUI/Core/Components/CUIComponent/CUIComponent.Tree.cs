@@ -10,7 +10,7 @@ using System.Collections;
 
 namespace CrabUI
 {
-  public partial class CUIComponent : ITreeNode
+  public partial class CUIComponent
   {
     public bool TreeChanged { get; set; }
     public event Action OnTreeChanged;
@@ -20,8 +20,6 @@ namespace CrabUI
     protected List<CUIComponent> children = new();
     public ReadOnlyCollection<CUIComponent> Children => children.AsReadOnly();
 
-    ITreeNode ITreeNode.Parent => Parent;
-    IReadOnlyList<ITreeNode> ITreeNode.Children => new ListProxy<ITreeNode>(Children);
 
     protected virtual void OnChildAdded(CUIComponent child) { }
     protected virtual void OnChildRemoved(CUIComponent child) { }

@@ -9,6 +9,8 @@ namespace CrabUI
 {
   public partial class CUIMainComponent : CUIComponent
   {
+
+
     public CUICore CUICore { get; }
     public CUIInput Input => CUICore.Input;
 

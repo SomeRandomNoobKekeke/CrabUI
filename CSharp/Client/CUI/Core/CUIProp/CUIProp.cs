@@ -11,10 +11,15 @@ namespace CrabUI
 {
   public abstract class CUIProp
   {
+    protected object host;
     /// <summary>
     /// Object that contains the prop
     /// </summary>
-    public object Host { get; set; }
+    public virtual object Host
+    {
+      get => host;
+      set => host = value;
+    }
 
     /// <summary>
     /// Prop name in containing object
@@ -39,7 +44,7 @@ namespace CrabUI
       set
       {
         _value = value;
-        OnSet.Send(Host, Name, value);
+        // OnSet.Send(Host, Name, value);
       }
     }
   }

@@ -9,15 +9,20 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public partial class LayoutMarkPattern
+  public partial class LayoutMarker
   {
-    public class OnlyParentPattern : LayoutMarkPattern
+    public partial class Pattern
     {
-      public override void MarkFunc(CUIComponent host)
+      public class OnlyParentPattern : Pattern
       {
-        ((ILayoutHost)host.Parent)?.MarkAsRequireChildrenUpdate();
+        public override void MarkFunc(IMarkableLayoutContainer host)
+        {
+          host.Parent.Layout.RequireChildrenUpdate = true;
+        }
       }
     }
   }
+
+
 
 }

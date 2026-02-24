@@ -15,24 +15,13 @@ namespace CrabUI
     public int ID { get; set; }
 
 
+    private MainComponentTracker MainComponentTracker { get; } = new();
 
-    private CUIMainComponent _mainComponent;
+
     public CUIMainComponent MainComponent
     {
-      get => _mainComponent;
-      private set
-      {
-        void setRec(CUIComponent component)
-        {
-          component._mainComponent = value;
-          foreach (CUIComponent child in component.children)
-          {
-            setRec(child);
-          }
-        }
-
-        setRec(this);
-      }
+      get => MainComponentTracker.MainComponent;
+      private set => MainComponentTracker.MainComponent = value;
     }
 
 
@@ -61,7 +50,7 @@ namespace CrabUI
     {
       LayoutSlot.Host = Access;
       LayoutMarker.Host = Access;
-
+      MainComponentTracker.Host = Access;
 
       CUIProps.Absolute.Host = Access; CUIProps.Absolute.Name = "Absolute";
       CUIProps.Relative.Host = Access; CUIProps.Relative.Name = "Relative";

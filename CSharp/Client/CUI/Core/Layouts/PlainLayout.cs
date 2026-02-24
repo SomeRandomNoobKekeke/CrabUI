@@ -43,7 +43,9 @@ namespace CrabUI
       if (Host is null) return;
       if (!RequireChildrenUpdate) return;
 
-      DebugLog.Send($"UpdateChildren of {Host}");
+      DebugLog.Send($"UpdateChildren of {Host}]");
+
+
 
       foreach (IPlainLayoutElement c in Children)
       {
@@ -95,6 +97,7 @@ namespace CrabUI
         // if (c.AbsoluteMax.Height.HasValue) h = Math.Min(h, c.AbsoluteMax.Height.Value);
 
         c.Rect = new CUIRect(x, y, w, h);
+
         DebugLog.Send($"{c}.Rect = {c.Rect}");
       }
 

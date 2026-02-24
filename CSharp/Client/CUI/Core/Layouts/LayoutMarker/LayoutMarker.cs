@@ -16,6 +16,7 @@ namespace CrabUI
       public IMarkableLayoutContainer Parent { get; }
       public Layout Layout { get; }
       public IReadOnlyList<IMarkableLayoutContainer> Children { get; }
+      public void NotifyMainComponent();// BRUH temporary
     }
 
     public interface ILayoutMarkable
@@ -31,6 +32,7 @@ namespace CrabUI
     {
       if (pattern.Empty) return;
       pattern.MarkFunc(Host);
+      Host.NotifyMainComponent();
     }
   }
 }

@@ -60,11 +60,25 @@ namespace CrabUI
       Layout LayoutMarker.IMarkableLayoutContainer.Layout => Host.Layout;
 
       IReadOnlyList<LayoutMarker.IMarkableLayoutContainer> LayoutMarker.IMarkableLayoutContainer.Children => new ListProxy<CUIComponent, LayoutMarker.IMarkableLayoutContainer>(Host.Children, child => child.Access);
+
+      void LayoutMarker.IMarkableLayoutContainer.NotifyMainComponent()
+      {
+        Host.MainComponentTracker.MainComponent?.LayoutChanged();
+      }
     }
 
     private partial class ComponentAccess : LayoutMarker.ILayoutMarkable
     {
       void LayoutMarker.ILayoutMarkable.Mark(LayoutMarker.Pattern pattern) => Host.LayoutMarker.Mark(pattern);
+    }
+
+    private partial class ComponentAccess : MainComponentTracker.IMainComponentTrackerContainer, MainComponentTracker.IMainComponentTrackersParent
+    {
+      MainComponentTracker MainComponentTracker.IMainComponentTrackerContainer.Tracker => Host.MainComponentTracker;
+
+      IReadOnlyList<MainComponentTracker.IMainComponentTrackerContainer> MainComponentTracker.IMainComponentTrackersParent.Children => new ListProxy<CUIComponent, MainComponentTracker.IMainComponentTrackerContainer>(Host.Children, c => c.Access);
+
+
     }
 
   }

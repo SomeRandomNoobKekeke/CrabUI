@@ -12,7 +12,7 @@ namespace CrabUI
   public class CUILayoutProp<T> : CUIReactiveProp<T>
   {
     public LayoutMarker.Pattern Pattern { get; set; } = LayoutMarker.Pattern.None;
-    public LayoutMarker.ILayoutMarkable LayoutHost { get; set; }
+    public LayoutMarker.ILayoutMarkable MarkableHost { get; set; }
 
     public override object Host
     {
@@ -23,7 +23,7 @@ namespace CrabUI
 
         if (Host is LayoutMarker.ILayoutMarkable)
         {
-          LayoutHost = Host as LayoutMarker.ILayoutMarkable;
+          MarkableHost = Host as LayoutMarker.ILayoutMarkable;
         }
       }
     }
@@ -34,7 +34,7 @@ namespace CrabUI
       set
       {
         base.Value = value;
-        LayoutHost.Mark(Pattern);
+        MarkableHost.Mark(Pattern);
       }
     }
   }

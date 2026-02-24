@@ -25,20 +25,12 @@ namespace CrabUI
     protected virtual void OnChildRemoved(CUIComponent child) { }
     protected virtual void OnAttachToParent(CUIComponent parent)
     {
-      if (parent is CUIMainComponent)
-      {
-        this.MainComponent = parent as CUIMainComponent;
-      }
-
-      if (parent.MainComponent != null)
-      {
-        this.MainComponent = parent.MainComponent;
-      }
+      MainComponentTracker.OnAttachedTo(parent);
     }
 
     protected virtual void OnDetachFromParent(CUIComponent parent)
     {
-      this.MainComponent = null;
+      MainComponentTracker.OnDetached();
     }
 
     public void AddChild(CUIComponent child)

@@ -35,6 +35,12 @@ namespace CrabUI
       set => CUIProps.Absolute.Value = value;
     }
 
+    public CUIMainComponent MainComponent
+    {
+      get => Internal.MainComponentTracker.MainComponent;
+      private set => Internal.MainComponentTracker.MainComponent = value;
+    }
+
 
   }
 }

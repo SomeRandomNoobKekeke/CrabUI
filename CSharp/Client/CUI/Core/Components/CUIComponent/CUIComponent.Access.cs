@@ -21,33 +21,34 @@ namespace CrabUI
       public override string ToString() => Host.ToString();
     }
 
-    private partial class ComponentAccess : IRectElement
+
+    private partial class ComponentAccess : Layout.Access
     {
-      CUIRect IRectElement.Rect
+      CUIRect Layout.Access.Rect
       {
         get => Host.CUIProps.Rect.Value;
         set => Host.CUIProps.Rect.Value = value;
       }
+
+      IList Layout.Access.Children
+        => new ListProxy<CUIComponent, ComponentAccess>(Host.Children, c => c.Access);
     }
 
-    private partial class ComponentAccess : Layout.ILayoutHost
+    private partial class ComponentAccess : PlainLayout.IPlainLayoutHost
     {
-      IList Layout.ILayoutHost.Children => new ListProxy<CUIComponent, ComponentAccess>(Host.Children, c => c.Access);
-    }
 
-    private partial class ComponentAccess : PlainLayout.IPlainLayoutHost { }
+    }
 
     private partial class ComponentAccess : PlainLayout.IPlainLayoutElement
     {
+      CUIRect PlainLayout.IPlainLayoutElement.Rect
+      {
+        get => Host.CUIProps.Rect.Value;
+        set => Host.CUIProps.Rect.Value = value;
+      }
       CUINullRect PlainLayout.IPlainLayoutElement.Absolute => Host.CUIProps.Absolute.Value;
       CUINullRect PlainLayout.IPlainLayoutElement.Relative => Host.CUIProps.Relative.Value;
     }
-
-    private partial class ComponentAccess : ILayoutContainer
-    {
-      Layout ILayoutContainer.Layout => Host.Layout;
-    }
-
     private partial class ComponentAccess : ILayoutContainerAccess
     {
       Layout ILayoutContainerAccess.GetLayout(CUIComponent host) => host.Layout;
@@ -63,7 +64,7 @@ namespace CrabUI
 
       void LayoutMarker.IMarkableLayoutContainer.NotifyMainComponent()
       {
-        Host.MainComponentTracker.MainComponent?.LayoutChanged();
+        Host.Internal.MainComponentTracker.MainComponent?.LayoutChanged();
       }
     }
 
@@ -74,7 +75,7 @@ namespace CrabUI
 
     private partial class ComponentAccess : MainComponentTracker.IMainComponentTrackerContainer, MainComponentTracker.IMainComponentTrackersParent
     {
-      MainComponentTracker MainComponentTracker.IMainComponentTrackerContainer.Tracker => Host.MainComponentTracker;
+      MainComponentTracker MainComponentTracker.IMainComponentTrackerContainer.Tracker => Host.Internal.MainComponentTracker;
 
       IReadOnlyList<MainComponentTracker.IMainComponentTrackerContainer> MainComponentTracker.IMainComponentTrackersParent.Children => new ListProxy<CUIComponent, MainComponentTracker.IMainComponentTrackerContainer>(Host.Children, c => c.Access);
 

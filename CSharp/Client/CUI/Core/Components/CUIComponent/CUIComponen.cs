@@ -15,17 +15,6 @@ namespace CrabUI
     public int ID { get; set; }
 
 
-    private MainComponentTracker MainComponentTracker { get; } = new();
-
-
-    public CUIMainComponent MainComponent
-    {
-      get => MainComponentTracker.MainComponent;
-      private set => MainComponentTracker.MainComponent = value;
-    }
-
-
-
     public DragHandle DragHandle;
 
     public CUIComponent()
@@ -50,7 +39,7 @@ namespace CrabUI
     {
       LayoutSlot.Host = Access;
       LayoutMarker.Host = Access;
-      MainComponentTracker.Host = Access;
+      Internal.MainComponentTracker.Host = Access;
 
       CUIProps.Absolute.Host = Access; CUIProps.Absolute.Name = "Absolute";
       CUIProps.Relative.Host = Access; CUIProps.Relative.Name = "Relative";

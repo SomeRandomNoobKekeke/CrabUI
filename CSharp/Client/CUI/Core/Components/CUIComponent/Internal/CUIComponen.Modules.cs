@@ -9,8 +9,13 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public interface IRectElement
+  public partial class CUIComponent
   {
-    public CUIRect Rect { get; set; }
+    protected class Internals
+    {
+      public MainComponentTracker MainComponentTracker { get; } = new();
+    }
+
+    private Internals Internal { get; } = new();
   }
 }

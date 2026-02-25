@@ -13,20 +13,21 @@ namespace CrabUI
   public class PlainLayout : Layout
   {
 
-    public interface IPlainLayoutHost : ILayoutHost
+    public interface IPlainLayoutHost : Access
     {
 
     }
 
-    public interface IPlainLayoutElement : IRectElement
+    public interface IPlainLayoutElement
     {
+      public CUIRect Rect { get; set; }
       public CUINullRect Absolute { get; }
       public CUINullRect Relative { get; }
     }
 
-    public override ILayoutHost AbstractHost
+    public override Access AbstractHost
     {
-      get => Host as ILayoutHost;
+      get => Host as Access;
       set
       {
         Host = value as IPlainLayoutHost;

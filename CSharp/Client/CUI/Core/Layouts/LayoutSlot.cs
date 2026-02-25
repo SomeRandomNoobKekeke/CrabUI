@@ -11,7 +11,7 @@ namespace CrabUI
 {
   public class LayoutSlot
   {
-    public Layout.ILayoutHost Host { get; set; }
+    public Layout.Access Host { get; set; }
 
     private Layout layout;
     public Layout Layout

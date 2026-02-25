@@ -49,7 +49,7 @@ namespace CrabUI
       IReadOnlyList<LayoutMarker.Target> LayoutMarker.Target.Children
         => new ListProxy<CUIComponent, LayoutMarker.Target>(Host.Children, child => child.ProtectedAccess);
 
-      void LayoutMarker.Target.NotifyMainComponent() => Host.Protected.NotifyMainComponent();
+      void LayoutMarker.Target.NotifyMainComponent() => Host.NotifyMainComponent();
     }
 
     protected partial class ProtectedLayerAccess : CUILayoutProp.Target
@@ -59,7 +59,7 @@ namespace CrabUI
 
     protected partial class ProtectedLayerAccess : MainComponentTracker.Target
     {
-      MainComponentTracker MainComponentTracker.Target.Tracker => Host.Protected.MainComponentTracker;
+      MainComponentTracker MainComponentTracker.Target.Tracker => Host.MainComponentTracker;
 
       IReadOnlyList<MainComponentTracker.Target> MainComponentTracker.Target.Children
         => new ListProxy<CUIComponent, MainComponentTracker.Target>(Host.Children, c => c.ProtectedAccess);

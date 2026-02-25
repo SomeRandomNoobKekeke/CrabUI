@@ -11,19 +11,13 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-    protected class ProtectedLayer
+    protected MainComponentTracker MainComponentTracker { get; } = new();
+    protected LayoutSlot LayoutSlot { get; } = new();
+    protected LayoutMarker LayoutMarker { get; } = new();
+
+    protected void NotifyMainComponent()
     {
-      public MainComponentTracker MainComponentTracker { get; } = new();
-
-      public void NotifyMainComponent()
-      {
-        MainComponentTracker.MainComponent?.LayoutChanged();
-      }
-
-      public CUIComponent Host { get; }
-      public ProtectedLayer(CUIComponent host) => Host = host;
+      MainComponentTracker.MainComponent?.LayoutChanged();
     }
-
-    protected ProtectedLayer Protected { get; }
   }
 }

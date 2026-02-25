@@ -30,10 +30,7 @@ namespace BaroJunk
     }
 
 
-    public TResult this[int i]
-    {
-      get => Transform(Source[i]);
-    }
+    public TResult this[int i] => Transform(Source[i]);
     public int Count => Source.Count;
 
     public ProxyEnumerator GetEnumerator() => new ProxyEnumerator(Source.GetEnumerator(), Transform);

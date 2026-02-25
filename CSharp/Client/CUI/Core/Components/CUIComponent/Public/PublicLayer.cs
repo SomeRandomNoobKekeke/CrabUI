@@ -37,8 +37,13 @@ namespace CrabUI
 
     public CUIMainComponent MainComponent
     {
-      get => Protected.MainComponentTracker.MainComponent;
-      private set => Protected.MainComponentTracker.MainComponent = value;
+      get => MainComponentTracker.MainComponent;
+    }
+
+    public Layout Layout
+    {
+      get => LayoutSlot.Layout;
+      set => LayoutSlot.Layout = value;
     }
 
 

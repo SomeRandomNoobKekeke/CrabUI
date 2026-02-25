@@ -10,7 +10,8 @@ namespace CrabUIUser
   /// <summary>
   /// So i want to hide all internal stuff in some internal object
   /// But then i'll have a name collision with the same object in derived classes
-  /// Of i can generate InternalAccess objects, but it still looks like cringe
+  /// Ofc i can generate InternalAccess objects, but it still looks like cringe
+  /// This is 100 times harder than just protected prop at component level
   /// </summary>
   public class InternalsInDerived : Experiment
   {

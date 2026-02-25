@@ -24,24 +24,7 @@ namespace BaroJunk
     }
 
 
-    public T this[int i]
-    {
-      get
-      {
-        T result = default;
-        try
-        {
-          result = (T)Source[i];
-        }
-        catch (Exception e)
-        {
-          Logger.Default.Error($"Source: [{Source}]");
-          Logger.Default.Error($"Source[i]: [{Source[i]}]");
-          throw;
-        }
-        return result;
-      }
-    }
+    public T this[int i] => (T)Source[i];
     public int Count => Source.Count;
 
     public ProxyEnumerator GetEnumerator() => new ProxyEnumerator(Source.GetEnumerator());

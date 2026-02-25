@@ -16,7 +16,7 @@ namespace CrabUI
       public Target Parent { get; }
       public Layout Layout { get; }
       public IReadOnlyList<Target> Children { get; }
-      public void NotifyMainComponent();// BRUH temporary
+      public void NotifyMainComponent();
     }
 
 

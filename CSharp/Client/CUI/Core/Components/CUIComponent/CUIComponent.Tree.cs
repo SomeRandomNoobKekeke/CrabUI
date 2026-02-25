@@ -25,12 +25,12 @@ namespace CrabUI
     protected virtual void OnChildRemoved(CUIComponent child) { }
     protected virtual void OnAttachToParent(CUIComponent parent)
     {
-      Protected.MainComponentTracker.OnAttachedTo(parent);
+      MainComponentTracker.OnAttachedTo(parent);
     }
 
     protected virtual void OnDetachFromParent(CUIComponent parent)
     {
-      Protected.MainComponentTracker.OnDetached();
+      MainComponentTracker.OnDetached();
     }
 
     public void AddChild(CUIComponent child)

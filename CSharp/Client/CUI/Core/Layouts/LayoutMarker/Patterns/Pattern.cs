@@ -19,7 +19,7 @@ namespace CrabUI
 
       public bool Empty { get; set; }
 
-      public virtual void MarkFunc(IMarkableLayoutContainer Host) { }
+      public virtual void MarkFunc(Target Host) { }
     }
   }
 

@@ -12,31 +12,25 @@ namespace CrabUI
 {
   public class PlainLayout : Layout
   {
-
-    public interface IPlainLayoutHost : Access
+    public interface Target : Layout.Target
     {
-
-    }
-
-    public interface IPlainLayoutElement
-    {
-      public CUIRect Rect { get; set; }
+      // public CUIRect Rect { get; set; }
       public CUINullRect Absolute { get; }
       public CUINullRect Relative { get; }
     }
 
-    public override Access AbstractHost
+    public override Layout.Target AbstractHost
     {
-      get => Host as Access;
+      get => Host as Layout.Target;
       set
       {
-        Host = value as IPlainLayoutHost;
-        Children = new ListProxy<IPlainLayoutElement>(value.Children);
+        Host = value as Target;
+        Children = new ListProxy<Target>(value.Children);
       }
     }
 
-    public IPlainLayoutHost Host { get; set; }
-    public IReadOnlyList<IPlainLayoutElement> Children { get; set; }
+    public Target Host { get; set; }
+    public IReadOnlyList<Target> Children { get; set; }
 
 
     public override void UpdateChildren()
@@ -48,7 +42,7 @@ namespace CrabUI
 
 
 
-      foreach (IPlainLayoutElement c in Children)
+      foreach (Target c in Children)
       {
         float x, y, w, h;
 

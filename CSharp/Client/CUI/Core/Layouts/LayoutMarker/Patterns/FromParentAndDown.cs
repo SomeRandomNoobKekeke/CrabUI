@@ -15,13 +15,13 @@ namespace CrabUI
     {
       public class FromParentAndDownPattern : Pattern
       {
-        public override void MarkFunc(IMarkableLayoutContainer host)
+        public override void MarkFunc(Target host)
         {
-          void MarkRec(IMarkableLayoutContainer container)
+          void MarkRec(Target container)
           {
             container.Layout.RequireChildrenUpdate = true;
 
-            foreach (IMarkableLayoutContainer child in container.Children)
+            foreach (Target child in container.Children)
             {
               MarkRec(child);
             }

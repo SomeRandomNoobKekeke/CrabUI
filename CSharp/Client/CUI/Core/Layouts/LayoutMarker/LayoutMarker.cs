@@ -11,11 +11,11 @@ namespace CrabUI
 {
   public partial class LayoutMarker
   {
-    public interface IMarkableLayoutContainer
+    public interface Target
     {
-      public IMarkableLayoutContainer Parent { get; }
+      public Target Parent { get; }
       public Layout Layout { get; }
-      public IReadOnlyList<IMarkableLayoutContainer> Children { get; }
+      public IReadOnlyList<Target> Children { get; }
       public void NotifyMainComponent();// BRUH temporary
     }
 
@@ -25,7 +25,7 @@ namespace CrabUI
 
 
 
-    public IMarkableLayoutContainer Host { get; set; }
+    public Target Host { get; set; }
 
     public void Mark(Pattern pattern)
     {

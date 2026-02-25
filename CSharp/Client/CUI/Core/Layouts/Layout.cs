@@ -12,7 +12,7 @@ namespace CrabUI
 {
   public abstract class Layout
   {
-    public interface Access
+    public interface Target
     {
       public CUIRect Rect { get; set; }
       public IList Children { get; }
@@ -23,7 +23,7 @@ namespace CrabUI
       Mapping = (msg) => CUI.Logger.Log(msg)
     };
 
-    public virtual Access AbstractHost { get; set; }
+    public virtual Target AbstractHost { get; set; }
 
     public bool RequireChildrenUpdate { get; set; } = true;
     public bool RequireParentUpdate { get; set; } = true;

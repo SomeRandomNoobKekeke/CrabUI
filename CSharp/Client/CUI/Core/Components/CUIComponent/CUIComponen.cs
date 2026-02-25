@@ -21,7 +21,8 @@ namespace CrabUI
     {
       ID = MaxID++;
 
-      Access = new ComponentAccess(this);
+      Protected = new ProtectedLayer(this);
+      ProtectedAccess = new ProtectedLayerAccess(this);
 
       InjectProps();
       WireUpProps();
@@ -37,13 +38,13 @@ namespace CrabUI
 
     private void InjectProps()
     {
-      LayoutSlot.Host = Access;
-      LayoutMarker.Host = Access;
-      Internal.MainComponentTracker.Host = Access;
+      LayoutSlot.Host = ProtectedAccess;
+      LayoutMarker.Host = ProtectedAccess;
+      Protected.MainComponentTracker.Host = ProtectedAccess;
 
-      CUIProps.Absolute.Host = Access; CUIProps.Absolute.Name = "Absolute";
-      CUIProps.Relative.Host = Access; CUIProps.Relative.Name = "Relative";
-      CUIProps.Rect.Host = Access; CUIProps.Rect.Name = "Rect";
+      CUIProps.Absolute.Host = ProtectedAccess; CUIProps.Absolute.Name = "Absolute";
+      CUIProps.Relative.Host = ProtectedAccess; CUIProps.Relative.Name = "Relative";
+      CUIProps.Rect.Host = ProtectedAccess; CUIProps.Rect.Name = "Rect";
 
     }
 

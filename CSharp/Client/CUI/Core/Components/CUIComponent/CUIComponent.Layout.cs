@@ -11,11 +11,6 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-    public interface ILayoutContainerAccess
-    {
-      public Layout GetLayout(CUIComponent host);
-    }
-
     private LayoutSlot LayoutSlot { get; } = new();
     private LayoutMarker LayoutMarker { get; } = new();
     public Layout Layout

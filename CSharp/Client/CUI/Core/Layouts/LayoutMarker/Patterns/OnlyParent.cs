@@ -15,7 +15,7 @@ namespace CrabUI
     {
       public class OnlyParentPattern : Pattern
       {
-        public override void MarkFunc(IMarkableLayoutContainer host)
+        public override void MarkFunc(Target host)
         {
           host.Parent.Layout.RequireChildrenUpdate = true;
         }

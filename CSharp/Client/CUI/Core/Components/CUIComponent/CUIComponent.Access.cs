@@ -68,18 +68,17 @@ namespace CrabUI
       }
     }
 
-    private partial class ComponentAccess : LayoutMarker.ILayoutMarkable
+    private partial class ComponentAccess : CUILayoutProp.Target
     {
-      void LayoutMarker.ILayoutMarkable.Mark(LayoutMarker.Pattern pattern) => Host.LayoutMarker.Mark(pattern);
+      void CUILayoutProp.Target.Mark(LayoutMarker.Pattern pattern) => Host.LayoutMarker.Mark(pattern);
     }
 
-    private partial class ComponentAccess : MainComponentTracker.IMainComponentTrackerContainer, MainComponentTracker.IMainComponentTrackersParent
+    private partial class ComponentAccess : MainComponentTracker.Target
     {
-      MainComponentTracker MainComponentTracker.IMainComponentTrackerContainer.Tracker => Host.Internal.MainComponentTracker;
+      MainComponentTracker MainComponentTracker.Target.Tracker => Host.Internal.MainComponentTracker;
 
-      IReadOnlyList<MainComponentTracker.IMainComponentTrackerContainer> MainComponentTracker.IMainComponentTrackersParent.Children => new ListProxy<CUIComponent, MainComponentTracker.IMainComponentTrackerContainer>(Host.Children, c => c.Access);
-
-
+      IReadOnlyList<MainComponentTracker.Target> MainComponentTracker.Target.Children
+        => new ListProxy<CUIComponent, MainComponentTracker.Target>(Host.Children, c => c.Access);
     }
 
   }

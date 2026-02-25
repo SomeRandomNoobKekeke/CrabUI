@@ -11,17 +11,14 @@ namespace CrabUI
 {
   public class MainComponentTracker : IModule
   {
-    public interface IMainComponentTrackersParent //BRUH
+    public interface Target
     {
-      public IReadOnlyList<IMainComponentTrackerContainer> Children { get; }
-    }
-
-    public interface IMainComponentTrackerContainer
-    {
+      public IReadOnlyList<Target> Children { get; }
       public MainComponentTracker Tracker { get; }
     }
 
-    public IMainComponentTrackersParent Host { get; set; }
+
+    public Target Host { get; set; }
 
     public CUIMainComponent MainComponent { get; set; }
 
@@ -40,7 +37,7 @@ namespace CrabUI
     {
       MainComponent = mainComponent;
 
-      foreach (IMainComponentTrackerContainer child in Host.Children)
+      foreach (Target child in Host.Children)
       {
         child.Tracker.SetRec(mainComponent);
       }

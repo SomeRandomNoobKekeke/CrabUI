@@ -9,10 +9,18 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public class CUILayoutProp<T> : CUIReactiveProp<T>
+  public interface CUILayoutProp
+  {
+    public interface Target
+    {
+      public void Mark(LayoutMarker.Pattern pattern);
+    }
+  }
+
+  public class CUILayoutProp<T> : CUIReactiveProp<T>, CUILayoutProp
   {
     public LayoutMarker.Pattern Pattern { get; set; } = LayoutMarker.Pattern.None;
-    public LayoutMarker.ILayoutMarkable MarkableHost { get; set; }
+    public CUILayoutProp.Target MarkableHost { get; set; }
 
     public override object Host
     {
@@ -21,9 +29,9 @@ namespace CrabUI
       {
         base.Host = value;
 
-        if (Host is LayoutMarker.ILayoutMarkable)
+        if (Host is CUILayoutProp.Target)
         {
-          MarkableHost = Host as LayoutMarker.ILayoutMarkable;
+          MarkableHost = Host as CUILayoutProp.Target;
         }
       }
     }

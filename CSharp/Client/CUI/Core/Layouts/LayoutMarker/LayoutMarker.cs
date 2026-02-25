@@ -19,10 +19,9 @@ namespace CrabUI
       public void NotifyMainComponent();// BRUH temporary
     }
 
-    public interface ILayoutMarkable
-    {
-      public void Mark(Pattern pattern);
-    }
+
+
+
 
 
 

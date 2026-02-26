@@ -24,7 +24,7 @@ namespace CrabUIUser
       Instance = this;
 
       UTestCommands.AddCommands();
-      CodeAnalizer.Analyze("CrabUI");
+      // CodeAnalizer.Analyze("CrabUI");
 
 
       try

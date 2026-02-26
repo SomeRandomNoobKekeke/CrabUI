@@ -15,7 +15,7 @@ namespace CrabUIUser
 
     public void Experiment()
     {
-      new GodAccessorExperiment().Run();
+      new OverridePropWithoutGetter().Run();
     }
   }
 }

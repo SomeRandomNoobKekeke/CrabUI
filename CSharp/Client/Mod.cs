@@ -17,11 +17,15 @@ namespace CrabUIUser
 
     public static Logger Logger { get; set; } = new();
 
+    public CodeAnalizer CodeAnalizer { get; } = new();
+
     public void Initialize()
     {
       Instance = this;
 
       UTestCommands.AddCommands();
+      CodeAnalizer.Analyze("CrabUI");
+
 
       try
       {

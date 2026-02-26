@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public abstract class CUIProp
+  public abstract class CUIProp : IModule
   {
     protected object host;
     /// <summary>

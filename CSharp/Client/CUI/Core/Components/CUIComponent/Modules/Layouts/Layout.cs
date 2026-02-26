@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public abstract class Layout
+  public abstract class Layout : IModule
   {
     public interface Target
     {
@@ -23,7 +23,7 @@ namespace CrabUI
       Mapping = (msg) => CUI.Logger.Log(msg)
     };
 
-    public virtual Target AbstractHost { get; set; }
+    public virtual void InjectHost(Target host) { }
 
     public bool RequireChildrenUpdate { get; set; } = true;
     public bool RequireParentUpdate { get; set; } = true;

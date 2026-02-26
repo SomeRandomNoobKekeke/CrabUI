@@ -38,6 +38,8 @@ namespace CrabUI
     {
       CUINullRect PlainLayout.Target.Absolute => Host.CUIProps.Absolute.Value;
       CUINullRect PlainLayout.Target.Relative => Host.CUIProps.Relative.Value;
+      IReadOnlyList<PlainLayout.Target> PlainLayout.Target.Children
+        => new ListProxy<CUIComponent, PlainLayout.Target>(Host.Children, c => c.ProtectedAccess);
     }
 
 

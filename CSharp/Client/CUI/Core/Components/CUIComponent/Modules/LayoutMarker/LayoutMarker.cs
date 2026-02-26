@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public partial class LayoutMarker
+  public partial class LayoutMarker : IModule
   {
     public interface Target
     {

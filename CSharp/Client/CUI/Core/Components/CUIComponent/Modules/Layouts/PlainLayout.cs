@@ -14,35 +14,26 @@ namespace CrabUI
   {
     public interface Target : Layout.Target
     {
-      // public CUIRect Rect { get; set; }
       public CUINullRect Absolute { get; }
       public CUINullRect Relative { get; }
+      public IReadOnlyList<Target> Children { get; }
     }
 
-    public override Layout.Target AbstractHost
-    {
-      get => Host as Layout.Target;
-      set
-      {
-        Host = value as Target;
-        Children = new ListProxy<Target>(value.Children);
-      }
-    }
 
-    public Target Host { get; set; }
-    public IReadOnlyList<Target> Children { get; set; }
+    public override void InjectHost(Layout.Target host) { Host = host as Target; }
 
+    public Target Host { get; private set; }
 
     public override void UpdateChildren()
     {
       if (Host is null) return;
       if (!RequireChildrenUpdate) return;
 
-      DebugLog.Send($"UpdateChildren of {Host}]");
+      DebugLog.Send($"UpdateChildren of [{Host}]");
 
 
 
-      foreach (Target c in Children)
+      foreach (Target c in Host.Children)
       {
         float x, y, w, h;
 

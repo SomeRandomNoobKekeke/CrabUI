@@ -11,7 +11,7 @@ namespace CrabUI
 
   //TODO this seems working, but i need to ensure unsubscribing
   // perhaps CUIEvent should return subscription object, or support one time callbacks
-  public class DragHandle
+  public class DragHandle : IModule
   {
     private CUIComponent _host;
     public CUIComponent Host

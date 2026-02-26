@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public partial class CUIComponent
+  public partial class CUIComponent : IComponent
   {
     public static int MaxID { get; private set; }
     public int ID { get; set; }

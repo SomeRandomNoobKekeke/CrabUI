@@ -10,10 +10,9 @@ using Microsoft.Xna.Framework;
 using System.IO;
 using System.Text;
 
-namespace BaroJunk
+namespace CrabUI
 {
-  public record ModuleDependencyInfo(Type Type, string Name, PropertyInfo Property)
-  {
-    public override string ToString() => $"{Type.Name} {Name}";
-  }
+  public interface IModule { }
+  public interface IModuleContainer { }
+  public interface IComponent : IModuleContainer { }
 }

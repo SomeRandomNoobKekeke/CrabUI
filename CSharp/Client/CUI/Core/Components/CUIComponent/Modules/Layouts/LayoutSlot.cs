@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public class LayoutSlot
+  public class LayoutSlot : IModule
   {
     public Layout.Target Host { get; set; }
 
@@ -19,9 +19,9 @@ namespace CrabUI
       get => layout;
       set
       {
-        if (layout is not null) layout.AbstractHost = null;
+        if (layout is not null) layout.InjectHost(null);
         layout = value;
-        if (layout is not null) layout.AbstractHost = Host;
+        if (layout is not null) layout.InjectHost(Host);
       }
     }
   }

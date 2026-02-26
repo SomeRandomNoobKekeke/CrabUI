@@ -21,17 +21,12 @@ namespace CrabUI
 
 
     public override void InjectHost(Layout.Target host) { Host = host as Target; }
-
     public Target Host { get; private set; }
 
     public override void UpdateChildren()
     {
       if (Host is null) return;
       if (!RequireChildrenUpdate) return;
-
-      DebugLog.Send($"UpdateChildren of [{Host}]");
-
-
 
       foreach (Target c in Host.Children)
       {
@@ -83,8 +78,6 @@ namespace CrabUI
         // if (c.AbsoluteMax.Height.HasValue) h = Math.Min(h, c.AbsoluteMax.Height.Value);
 
         c.Rect = new CUIRect(x, y, w, h);
-
-        DebugLog.Send($"{c}.Rect = {c.Rect}");
       }
 
 

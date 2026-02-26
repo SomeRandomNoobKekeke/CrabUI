@@ -18,11 +18,6 @@ namespace CrabUI
       public IList Children { get; }
     }
 
-    public static InfoChannel<string> DebugLog = new()
-    {
-      Mapping = (msg) => CUI.Logger.Log(msg)
-    };
-
     public virtual void InjectHost(Target host) { }
 
     public bool RequireChildrenUpdate { get; set; } = true;

@@ -30,13 +30,6 @@ namespace CrabUI
 
   public class CUIProp<T> : CUIProp
   {
-    public static InfoChannel<object, string, T> OnSet = new()
-    {
-      // MapList = new List<Action<object, string, T>>(){
-      //   (host, name, value) => CUI.InfoChannels.CUIPropSet.Send(host, name, value)
-      // },
-    };
-
     protected T _value;
     public virtual T Value
     {

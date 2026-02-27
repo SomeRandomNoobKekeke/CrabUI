@@ -67,9 +67,20 @@ namespace BaroJunk
 
 
 
-    private IList<TSource> Source;
+    private IReadOnlyList<TSource> Source;
     private Func<TSource, TResult> Transform;
-    public ListProxy(IList<TSource> source, Func<TSource, TResult> transform)
+
+    //TODO Add
+    // public ListProxy(IList<TSource> source, Func<TSource, TResult> transform)
+    // {
+    //   ArgumentNullException.ThrowIfNull(source);
+    //   ArgumentNullException.ThrowIfNull(transform);
+
+    //   Source = source.AsReadOnly(); //TODO don't create new wrapper here
+    //   Transform = transform;
+    // }
+
+    public ListProxy(IReadOnlyList<TSource> source, Func<TSource, TResult> transform)
     {
       ArgumentNullException.ThrowIfNull(source);
       ArgumentNullException.ThrowIfNull(transform);

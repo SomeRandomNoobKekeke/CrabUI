@@ -19,7 +19,7 @@ namespace CrabUI
     {
       yield return new VisualUnit.PrimitiveVisualElement(Background);
       yield return new VisualUnit.LeftContextBound();
-      foreach (CUIComponent child in children)
+      foreach (CUIComponent child in Children)
       {
         yield return new VisualUnit.NestedVisualComponent(child);
       }

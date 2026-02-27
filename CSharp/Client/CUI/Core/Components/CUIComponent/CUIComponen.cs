@@ -40,6 +40,7 @@ namespace CrabUI
       LayoutSlot.Host = ProtectedAccess;
       LayoutMarker.Host = ProtectedAccess;
       MainComponentTracker.Host = ProtectedAccess;
+      Tree.Host = this;
 
       CUIProps.Absolute.Host = ProtectedAccess; CUIProps.Absolute.Name = "Absolute";
       CUIProps.Relative.Host = ProtectedAccess; CUIProps.Relative.Name = "Relative";

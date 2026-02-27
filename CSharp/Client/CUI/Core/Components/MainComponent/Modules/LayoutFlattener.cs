@@ -10,8 +10,14 @@ using BaroJunk;
 
 namespace CrabUI
 {
+  //TODO decouple
   public partial class LayoutFlattener : IModule
   {
+    public interface Target
+    {
+
+    }
+
     public List<CUIComponent> Flat { get; } = new();
 
     public void Flatten(CUIComponent root)

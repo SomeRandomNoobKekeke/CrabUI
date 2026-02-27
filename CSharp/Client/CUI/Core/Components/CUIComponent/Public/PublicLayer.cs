@@ -11,6 +11,12 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
+    public IReadOnlyList<CUIComponent> Children => Tree.Children;
+    public CUIComponent Parent => Tree.Parent;
+    public void AddChild(CUIComponent child) => Tree.AddChild(child);
+    public void RemoveChild(CUIComponent child) => Tree.RemoveChild(child);
+
+
     public CUIRect Rect
     {
       get => CUIProps.Rect.Value;

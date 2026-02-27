@@ -22,6 +22,7 @@ namespace CrabUI
     }
 
 
+
     protected partial class ProtectedLayerAccess : Layout.Target
     {
       CUIRect Layout.Target.Rect
@@ -31,7 +32,7 @@ namespace CrabUI
       }
 
       IList Layout.Target.Children
-        => new ListProxy<CUIComponent, ProtectedLayerAccess>(Host.Children, c => c.ProtectedAccess);
+        => new ListProxy<CUIComponent, ProtectedLayerAccess>(Host.Tree.Children, c => c.ProtectedAccess);
     }
 
     protected partial class ProtectedLayerAccess : PlainLayout.Target
@@ -39,7 +40,7 @@ namespace CrabUI
       CUINullRect PlainLayout.Target.Absolute => Host.CUIProps.Absolute.Value;
       CUINullRect PlainLayout.Target.Relative => Host.CUIProps.Relative.Value;
       IReadOnlyList<PlainLayout.Target> PlainLayout.Target.Children
-        => new ListProxy<CUIComponent, PlainLayout.Target>(Host.Children, c => c.ProtectedAccess);
+        => new ListProxy<CUIComponent, PlainLayout.Target>(Host.Tree.Children, c => c.ProtectedAccess);
     }
 
 
@@ -49,7 +50,7 @@ namespace CrabUI
       Layout LayoutMarker.Target.Layout => Host.Layout;
 
       IReadOnlyList<LayoutMarker.Target> LayoutMarker.Target.Children
-        => new ListProxy<CUIComponent, LayoutMarker.Target>(Host.Children, child => child.ProtectedAccess);
+        => new ListProxy<CUIComponent, LayoutMarker.Target>(Host.Tree.Children, child => child.ProtectedAccess);
 
       void LayoutMarker.Target.NotifyMainComponent() => Host.NotifyMainComponent();
     }
@@ -64,7 +65,7 @@ namespace CrabUI
       MainComponentTracker MainComponentTracker.Target.Tracker => Host.MainComponentTracker;
 
       IReadOnlyList<MainComponentTracker.Target> MainComponentTracker.Target.Children
-        => new ListProxy<CUIComponent, MainComponentTracker.Target>(Host.Children, c => c.ProtectedAccess);
+        => new ListProxy<CUIComponent, MainComponentTracker.Target>(Host.Tree.Children, c => c.ProtectedAccess);
     }
 
   }

@@ -14,6 +14,13 @@ namespace CrabUI
     protected MainComponentTracker MainComponentTracker { get; } = new();
     protected LayoutSlot LayoutSlot { get; } = new();
     protected LayoutMarker LayoutMarker { get; } = new();
+    protected TreeModule Tree { get; } = new();
+
+    protected bool TreeChanged
+    {
+      get => Tree.TreeChanged;
+      set => Tree.TreeChanged = value;
+    }
 
     protected void NotifyMainComponent()
     {

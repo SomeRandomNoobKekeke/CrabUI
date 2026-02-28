@@ -24,7 +24,8 @@ namespace CrabUIUser
       Instance = this;
 
       UTestCommands.AddCommands();
-      // CodeAnalizer.Analyze("CrabUI");
+
+
 
 
       try
@@ -71,6 +72,7 @@ namespace CrabUIUser
     public void Dispose()
     {
       Instance = null;
+      CodeAnalizer.ClearCache();
     }
   }
 }

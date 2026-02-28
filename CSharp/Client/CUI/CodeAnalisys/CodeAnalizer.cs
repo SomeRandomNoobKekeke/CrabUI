@@ -14,17 +14,15 @@ namespace CrabUI
 
   public class CodeAnalizer
   {
-    // public string OutputDir => Path.Combine(ModInfo.ModDir<Mod>(), "Ignore", "Trash");
+    public static event Action OnClearCache;
+    public static void ClearCache() => OnClearCache?.Invoke();
+    public Dictionary<Type, CAComponentModel> Components = new();
 
-    public void Analyze(string @namespace)
+
+    public CAComponentModel AnalyzeComponent(Type componentType)
     {
-      foreach (Type T in Assembly.GetExecutingAssembly().GetTypes())
-      {
-        if (T.Namespace != @namespace) continue;
-        if (!T.IsAssignableTo(typeof(IModule))) continue;
-
-        Logger.Default.Log(T);
-      }
+      Components[componentType] = new CAComponentModel(componentType);
+      return Components[componentType];
     }
   }
 }

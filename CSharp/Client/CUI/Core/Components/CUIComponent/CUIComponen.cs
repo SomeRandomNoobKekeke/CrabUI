@@ -15,7 +15,7 @@ namespace CrabUI
     public int ID { get; set; }
 
 
-    public DragHandle DragHandle;
+    public DragHandle DragHandle { get; }
 
     public CUIComponent()
     {

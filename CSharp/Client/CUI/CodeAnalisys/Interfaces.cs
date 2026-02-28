@@ -14,5 +14,5 @@ namespace CrabUI
 {
   public interface IModule { }
   public interface IModuleContainer { }
-  public interface IComponent : IModuleContainer { }
+  public interface IComponent { }
 }

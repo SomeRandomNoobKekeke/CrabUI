@@ -32,7 +32,7 @@ namespace CrabUI
 
     private void FillRec(
       Dictionary<Type, Dictionary<string, CAPropertyModel>> props,
-      Func<CATypeModel, List<PropertyInfo>> target
+      Func<CATypeModel, List<PropertyInfo>> getTargetProps
     )
     {
       void HandleCollision(CAPropertyModel propertyModel)
@@ -45,6 +45,11 @@ namespace CrabUI
         {
           Logger.Default.Warning($"Component prop collision: [{props[propertyModel.Type][propertyModel.Name].StringPath}] [{propertyModel.StringPath}]");
         }
+      }
+
+      void HandleDuplicateModule(CAPropertyModel propertyModel)
+      {
+        Logger.Default.Warning($"Component duplicate module: [{propertyModel.Type.n} {propertyModel.StringPath}]");
       }
 
       bool AlreadyExist(CAPropertyModel propertyModel)
@@ -60,18 +65,20 @@ namespace CrabUI
 
       bool ShouldBeDugInto(Type T) => T.IsAssignableTo(typeof(IModuleContainer)) || T.IsAssignableTo(typeof(IModule));
 
-      HashSet<Type> AnalyzedContainers = new();
+
+
 
       void GoDeeper(Type container, IEnumerable<PropertyInfo> path)
       {
         BreakTheLoop.After(100);
-        AnalyzedContainers.Add(container);
 
         CATypeModel typeModel = CATypeModel.For(container);
 
-        foreach (PropertyInfo pi in target(typeModel))
+        foreach (PropertyInfo pi in getTargetProps(typeModel))
         {
           CAPropertyModel propertyModel = new CAPropertyModel(pi, path);
+
+
 
           if (AlreadyExist(propertyModel))
           {
@@ -79,8 +86,9 @@ namespace CrabUI
           }
           else
           {
-            if (ShouldBeDugInto(propertyModel.Type) && !AnalyzedContainers.Contains(propertyModel.Type))
+            if (ShouldBeDugInto(propertyModel.Type))
             {
+
               GoDeeper(propertyModel.Type, path.Append(pi));
             }
             else

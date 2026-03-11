@@ -1,2 +1,2 @@
-// global using BaroJunk;
+// global using ComponentInjector;
 

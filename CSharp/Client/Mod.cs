@@ -17,12 +17,10 @@ namespace CrabUIUser
 
     public static Logger Logger { get; set; } = new();
 
-    public CodeAnalizer CodeAnalizer { get; } = new();
-
     public void Initialize()
     {
       Instance = this;
-
+      Logger.Log($"Compiled somehow");
       UTestCommands.AddCommands();
 
 
@@ -33,37 +31,32 @@ namespace CrabUIUser
         Init();
         Experiment();
       }
-      catch (Exception e)
-      {
-        Logger.Error(e);
-      }
+      catch (Exception e) { Logger.Error(e); }
 
-      Logger.Log($"Compiled somehow");
+
     }
 
     public void Init()
     {
-      CUIComponent component = new CUIComponent();
-      component.BackgroundColor = new Color(255, 0, 0);
+      // CUIComponent component = new CUIComponent();
+      // component.BackgroundColor = new Color(255, 0, 0);
 
 
-      component.MouseDown += (e) =>
-      {
-        component.BackgroundColor = component.BackgroundColor == Color.Green ?
-          Color.Red : Color.Green;
-      };
-      component.Absolute = new CUINullRect(300, 100, 200, 200);
+      // component.MouseDown += (e) =>
+      // {
+      //   component.BackgroundColor = component.BackgroundColor == Color.Green ?
+      //     Color.Red : Color.Green;
+      // };
+      // component.Absolute = new CUINullRect(300, 100, 200, 200);
 
-      component.AddChild(new CUIComponent()
-      {
-        Relative = new CUINullRect(0.1f, 0.1f, 0.8f, 0.8f),
-        BackgroundColor = Color.White,
-        OnMouseDown = (e) => e.Consumed = true,
-      });
+      // component.AddChild(new CUIComponent()
+      // {
+      //   Relative = new CUINullRect(0.1f, 0.1f, 0.8f, 0.8f),
+      //   BackgroundColor = Color.White,
+      //   OnMouseDown = (e) => e.Consumed = true,
+      // });
 
-
-
-      CUI.Main.AddChild(component);
+      // CUI.Main.AddChild(component);
     }
 
     public void OnLoadCompleted() { }
@@ -72,7 +65,6 @@ namespace CrabUIUser
     public void Dispose()
     {
       Instance = null;
-      CodeAnalizer.ClearCache();
     }
   }
 }

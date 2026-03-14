@@ -22,14 +22,7 @@ namespace CrabUI
       public NestedVisualComponent(IVisualComponent component) => Component = component;
     }
 
-    public class LeftContextBound : VisualUnit
-    {
-
-    }
-
-    public class RightContextBound : VisualUnit
-    {
-
-    }
+    public class LeftContextBound : VisualUnit { }
+    public class RightContextBound : VisualUnit { }
   }
 }

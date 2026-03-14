@@ -15,7 +15,7 @@ namespace CrabUIUser
 
     public void Experiment()
     {
-      new OverridePropWithoutGetter().Run();
+      // new OverridePropWithoutGetter().Run();
     }
   }
 }

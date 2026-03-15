@@ -17,7 +17,7 @@ namespace CrabUI
     {
       foreach (Delegate callback in Event.GetInvocationList())
       {
-        Event -= callback;
+        Event -= (Action)callback;
       }
     }
   }
@@ -32,7 +32,7 @@ namespace CrabUI
     {
       foreach (Delegate callback in Event.GetInvocationList())
       {
-        Event -= callback;
+        Event -= (Action<T1>)callback;
       }
     }
   }
@@ -47,7 +47,7 @@ namespace CrabUI
     {
       foreach (Delegate callback in Event.GetInvocationList())
       {
-        Event -= callback;
+        Event -= (Action<T1, T2>)callback;
       }
     }
   }

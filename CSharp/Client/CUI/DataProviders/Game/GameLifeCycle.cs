@@ -35,9 +35,9 @@ namespace CrabUI
 
     public void ConnectToGame()
     {
-      PluginLifeCycle.BeforeGUIDraw += (spritebatch) => BeforeGUIDraw(spritebatch);
-      PluginLifeCycle.AfterGUIDraw += (spritebatch) => AfterGUIDraw(spritebatch);
-      PluginLifeCycle.AfterUpdate += () => Update?.Invoke();
+      PluginLifeCycle.BeforeGUIDraw += (spritebatch) => _BeforeGUIDraw.Raise(spritebatch);
+      PluginLifeCycle.AfterGUIDraw += (spritebatch) => _AfterGUIDraw.Raise(spritebatch);
+      PluginLifeCycle.AfterUpdate += () => _Update.Raise();
     }
 
     public void UnsubEvents()

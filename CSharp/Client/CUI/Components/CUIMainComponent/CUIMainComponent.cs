@@ -11,17 +11,8 @@ using ComponentInjector;
 namespace CrabUI
 {
 
-  public partial class CUIMainComponent : CUIComponent
+  public partial class CUIMainComponent : CUIComponent, IComponent
   {
-    public override CUIComponent.Tree_Part Tree { get; } = new Tree_Part();
-    public class Tree_Part : CUIComponent.Tree_Part
-    {
-      public override string Name => "CUIMainComponent";
-      public override void OnChildAdded(CUIComponent child)
-      {
-        CUI.Logger.Log($"OnChildAdded {child}");
-      }
 
-    }
   }
 }

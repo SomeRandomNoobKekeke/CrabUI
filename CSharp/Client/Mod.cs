@@ -40,17 +40,15 @@ namespace CrabUIUser
     {
       CUI.Start();
 
-      CUIComponent component = new();
-      CUIMainComponent mainComponent = new CUIMainComponent();
+      // CUIComponent component1 = new();
+      // CUIComponent component2 = new();
+      // component1.AddChild(component2);
 
-      CUI.Logger.Log(component.Tree.Name);
-      CUI.Logger.Log((mainComponent as CUIComponent).Tree.Name);
-      CUI.Logger.Log(mainComponent.Tree.Name);
+      // CUIMainComponent mainComponent = new CUIMainComponent();
 
-      foreach (PropertyInfo pi in typeof(CUIMainComponent).GetProperties())
-      {
-        CUI.Logger.Log($"{pi} {pi.PropertyType}");
-      }
+      // component1.MainComponentTracker.OnAttachedTo(mainComponent);
+
+      // Logger.Default.Log(component2.MainComponentTracker.MainComponent);
     }
 
     public void OnLoadCompleted() { }
@@ -59,6 +57,7 @@ namespace CrabUIUser
     public void Dispose()
     {
       Instance = null;
+
     }
   }
 }

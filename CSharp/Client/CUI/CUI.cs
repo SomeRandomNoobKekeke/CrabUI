@@ -27,6 +27,7 @@ namespace CrabUI
 
     public static void Dispose()
     {
+      Setup.Stop();
       Setup = null;
     }
   }

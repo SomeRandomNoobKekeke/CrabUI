@@ -19,11 +19,14 @@ namespace CrabUI
     public int ID { get; set; }
 
 
-
+    public IReadOnlyList<CUIComponent> Children { get; }
+    public void AddChild(CUIComponent child) => Tree.AddChild(child);
 
     public CUIComponent()
     {
       ID = MaxID++;
+      this.Inject();
+      Children = Tree.Children.AsReadOnly();
     }
 
 

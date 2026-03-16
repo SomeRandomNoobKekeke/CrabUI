@@ -13,6 +13,8 @@ namespace CrabUI
   [GeneratedComponent]
   public partial class CUIComponent : IComponent
   {
+    public class Part : IPart { public CUIComponent Self { get; set; } }
+
     public static int MaxID { get; private set; }
     public int ID { get; set; }
 

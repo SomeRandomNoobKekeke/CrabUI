@@ -18,11 +18,6 @@ namespace CrabUI
     IInputProvider ICUIRunnerDataSources.Input => Input;
     IGameLifeCycleTracker ICUIRunnerDataSources.LifeCycle => LifeCycle;
 
-    public void UnsubFromEvents()
-    {
-      LifeCycle.UnsubEvents();
-    }
-
     public GameDataSources()
     {
       LifeCycle.ConnectToGame();

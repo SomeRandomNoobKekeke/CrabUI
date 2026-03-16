@@ -38,27 +38,19 @@ namespace CrabUIUser
 
     public void Init()
     {
-      CUI.Setup = CUISetup.Default();
+      CUI.Start();
 
-      // CUIComponent component = new CUIComponent();
-      // component.BackgroundColor = new Color(255, 0, 0);
+      CUIComponent component = new();
+      CUIMainComponent mainComponent = new CUIMainComponent();
 
+      CUI.Logger.Log(component.Tree.Name);
+      CUI.Logger.Log((mainComponent as CUIComponent).Tree.Name);
+      CUI.Logger.Log(mainComponent.Tree.Name);
 
-      // component.MouseDown += (e) =>
-      // {
-      //   component.BackgroundColor = component.BackgroundColor == Color.Green ?
-      //     Color.Red : Color.Green;
-      // };
-      // component.Absolute = new CUINullRect(300, 100, 200, 200);
-
-      // component.AddChild(new CUIComponent()
-      // {
-      //   Relative = new CUINullRect(0.1f, 0.1f, 0.8f, 0.8f),
-      //   BackgroundColor = Color.White,
-      //   OnMouseDown = (e) => e.Consumed = true,
-      // });
-
-      // CUI.Main.AddChild(component);
+      foreach (PropertyInfo pi in typeof(CUIMainComponent).GetProperties())
+      {
+        CUI.Logger.Log($"{pi} {pi.PropertyType}");
+      }
     }
 
     public void OnLoadCompleted() { }

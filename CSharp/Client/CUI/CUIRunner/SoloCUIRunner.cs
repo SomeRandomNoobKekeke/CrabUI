@@ -36,5 +36,10 @@ namespace CrabUI
         Core.UpdateHandle.Update();
       };
     }
+
+    public void Disconnect()
+    {
+      DataSources.LifeCycle.UnsubEvents();
+    }
   }
 }

@@ -14,17 +14,17 @@ namespace CrabUI
     {
       public void Update()
       {
-        CUI.Logger.Log("Update");
+
       }
 
       public void DrawAfterGUI(ICUISpriteBatch spriteBatch)
       {
-        CUI.Logger.Log("DrawAfterGUI");
+
       }
 
       public void DrawBeforeGUI(ICUISpriteBatch spriteBatch)
       {
-        CUI.Logger.Log("DrawBeforeGUI");
+
       }
     }
 

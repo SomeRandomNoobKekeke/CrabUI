@@ -1,2 +1,2 @@
-// global using ComponentInjector;
+// they are evil actually
 

@@ -16,6 +16,7 @@ using Microsoft.Xna.Framework.Graphics;
 namespace BaroJunk
 {
 
+  //TODO restore, there's some il errors that i'm too lazy to debug rn
   public class PluginLifeCycle
   {
     static PluginLifeCycle()

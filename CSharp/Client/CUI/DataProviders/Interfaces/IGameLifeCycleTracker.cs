@@ -15,5 +15,7 @@ namespace CrabUI
     public event Action<SpriteBatch> BeforeGUIDraw;
     public event Action<SpriteBatch> AfterGUIDraw;
     public event Action Update;
+
+    public void UnsubEvents();
   }
 }

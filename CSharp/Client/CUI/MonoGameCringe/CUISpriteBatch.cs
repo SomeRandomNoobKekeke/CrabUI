@@ -15,7 +15,7 @@ namespace CrabUI
 
     public void Draw(CUITexture2D texture, Rectangle destinationRectangle, Color color)
     {
-      if (texture.HasData)
+      if (texture.XNATexture != null)
       {
         XNASpriteBatch.Draw(texture.XNATexture, destinationRectangle, color);
       }

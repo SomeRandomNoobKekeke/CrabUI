@@ -12,5 +12,6 @@ namespace CrabUI
     public CUICore Core { get; set; }
     public ICUIRunnerDataSources DataSources { get; set; }
     public void Connect();
+    public void Disconnect();
   }
 }

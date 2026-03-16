@@ -9,9 +9,11 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CrabUI
 {
-  public class PTexture(Texture2D texture)
+  public class CUITexture2D(Texture2D texture)
   {
-    public Texture2D Texture { get; } = texture;
-    public static PTexture White { get; } = new PTexture(GUI.WhiteTexture);
+    public static CUITexture2D White { get; } = new CUITexture2D(GUI.WhiteTexture);
+    public Texture2D XNATexture { get; } = texture;
+
+    public bool HasData => XNATexture != null;
   }
 }

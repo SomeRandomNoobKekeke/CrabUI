@@ -7,8 +7,17 @@ using BaroJunk;
 
 namespace CrabUI
 {
-  public class CUISetup
+  public partial class CUISetup
   {
+    public ICUIRunnerDataSources DataSources { get; set; }
+    public ICUIRunner Runner { get; set; }
+    public CUICore Core { get; set; }
 
+    public void WireUp()
+    {
+      Runner.Core = Core;
+      Runner.DataSources = DataSources;
+      Runner.Connect();
+    }
   }
 }

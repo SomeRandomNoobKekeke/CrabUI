@@ -7,6 +7,8 @@ using BaroJunk;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using HarmonyLib;
+using Barotrauma;
 
 namespace CrabUI
 {
@@ -33,11 +35,32 @@ namespace CrabUI
       remove => _Update.Remove(value);
     }
 
+
+    private static MethodBase GUIDrawMethod => typeof(GUI).GetMethod("Draw");
+    private static MethodBase UpdateMethod => typeof(GameMain).GetMethod("Update", AccessTools.all);
+
+    private static string BeforeDrawHook => $"{ModInfo.HookId}_CUI_BeforeDraw";
+    private static string AfterDrawHook => $"{ModInfo.HookId}_CUI_AfterDraw";
+    private static string UpdateHook => $"{ModInfo.HookId}_CUI_Update";
     public void ConnectToGame()
     {
-      PluginLifeCycle.BeforeGUIDraw += (spritebatch) => _BeforeGUIDraw.Raise(spritebatch);
-      PluginLifeCycle.AfterGUIDraw += (spritebatch) => _AfterGUIDraw.Raise(spritebatch);
-      PluginLifeCycle.AfterUpdate += () => _Update.Raise();
+      GameMain.LuaCs.Hook.Patch(BeforeDrawHook, GUIDrawMethod, (instance, ptable) =>
+      {
+        _BeforeGUIDraw.Raise((SpriteBatch)ptable["spriteBatch"]);
+        return null;
+      }, LuaCsHook.HookMethodType.Before);
+
+      GameMain.LuaCs.Hook.Patch(AfterDrawHook, GUIDrawMethod, (instance, ptable) =>
+      {
+        _AfterGUIDraw.Raise((SpriteBatch)ptable["spriteBatch"]);
+        return null;
+      }, LuaCsHook.HookMethodType.After);
+
+      GameMain.LuaCs.Hook.Patch(UpdateHook, UpdateMethod, (instance, ptable) =>
+      {
+        _Update.Raise();
+        return null;
+      }, LuaCsHook.HookMethodType.After);
     }
 
     public void UnsubEvents()

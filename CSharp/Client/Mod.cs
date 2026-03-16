@@ -38,6 +38,8 @@ namespace CrabUIUser
 
     public void Init()
     {
+      CUI.Setup = CUISetup.Default();
+
       // CUIComponent component = new CUIComponent();
       // component.BackgroundColor = new Color(255, 0, 0);
 

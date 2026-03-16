@@ -15,6 +15,9 @@ namespace CrabUI
     {
       PluginLifeCycle.Stop += Dispose;
     }
+
+    public static CUISetup Setup { get; set; }
+
     public static Logger Logger = new()
     {
       PrintFilePath = false,
@@ -22,7 +25,7 @@ namespace CrabUI
 
     public static void Dispose()
     {
-
+      Setup = null;
     }
   }
 }

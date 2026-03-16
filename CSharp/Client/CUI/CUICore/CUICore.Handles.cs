@@ -17,12 +17,12 @@ namespace CrabUI
 
     public class DrawBeforeGUIConnectionHandle : Part
     {
-      public void Draw() => Self.LifeCycle.DrawBeforeGUI();
+      public void Draw(ICUISpriteBatch spriteBatch) => Self.LifeCycle.DrawBeforeGUI(spriteBatch);
     }
 
     public class DrawAfterGUIConnectionHandle : Part
     {
-      public void Draw() => Self.LifeCycle.DrawAfterGUI();
+      public void Draw(ICUISpriteBatch spriteBatch) => Self.LifeCycle.DrawAfterGUI(spriteBatch);
     }
 
     public UpdateConnectionHandle UpdateHandle { get; } = new();

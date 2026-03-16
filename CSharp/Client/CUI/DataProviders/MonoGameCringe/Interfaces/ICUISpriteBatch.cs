@@ -6,13 +6,12 @@ using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using static CrabUI.PolyGame;
 
 namespace CrabUI
 {
   public interface ICUISpriteBatch
   {
-    public void Draw(ICUITexture texture, Rectangle destinationRectangle, Color color);
+    public void Draw(CUITexture2D texture, Rectangle destinationRectangle, Color color);
   }
 
 }

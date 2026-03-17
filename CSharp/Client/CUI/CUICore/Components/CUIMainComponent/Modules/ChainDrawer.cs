@@ -12,7 +12,7 @@ namespace CrabUI
 {
   public partial class ChainDrawer : IModule
   {
-    public void Draw(CUISpriteBatch spriteBatch, List<VisualUnit> flat)
+    public void Draw(ICUISpriteBatch spriteBatch, List<VisualUnit> flat)
     {
       foreach (VisualUnit unit in flat)
       {

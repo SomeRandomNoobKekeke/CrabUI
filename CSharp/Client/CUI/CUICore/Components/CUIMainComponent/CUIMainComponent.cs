@@ -36,7 +36,7 @@ namespace CrabUI
       {
         Tree.Changed = false;
         GlobalLayoutChanged = true;
-        VisualFlattener.Flatten(this.AsVisualComponent);
+        VisualFlattener.Flatten(this.Visual);
         LayoutFlattener.Flatten(this);
       }
 

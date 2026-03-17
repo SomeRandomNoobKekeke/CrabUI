@@ -15,8 +15,10 @@ namespace CrabUI
 
     void IComponent.InjectParts()
     {
-      MainComponentTracker.Self = this;
-      Tree.Self = this;
+      (this as CrabUI.CUIMainComponent).LayoutFlattener.Self = this;
+      (this as CrabUI.CUIMainComponent).Visual.Self = this;
+      (this as CrabUI.CUIComponent).MainComponentTracker.Self = this;
+      (this as CrabUI.CUIComponent).Tree.Self = this;
     }
   }
 }

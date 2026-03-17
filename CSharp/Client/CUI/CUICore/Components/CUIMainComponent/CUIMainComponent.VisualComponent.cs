@@ -10,11 +10,10 @@ namespace CrabUI
 {
   public partial class CUIMainComponent
   {
-    protected override IVisualComponent AsVisualComponent => VisualRepresentation;
-    protected VisualRepresentation_Part VisualRepresentation { get; } = new();
-    public class VisualRepresentation_Part : Part, IVisualComponent
+    protected override CUIComponent.Visual_Part Visual { get; } = new Visual_Part();
+    public class Visual_Part : CUIComponent.Visual_Part
     {
-      public IEnumerable<VisualUnit> VisualSplit()
+      public override IEnumerable<VisualUnit> VisualSplit()
       {
         yield break;
       }

@@ -15,6 +15,8 @@ namespace BaroJunk
     public void Raise() => Event?.Invoke();
     public void Clear()
     {
+      if (Event is null) return;
+
       foreach (Delegate callback in Event.GetInvocationList())
       {
         Event -= (Action)callback;
@@ -30,6 +32,8 @@ namespace BaroJunk
     public void Raise(T1 arg1) => Event?.Invoke(arg1);
     public void Clear()
     {
+      if (Event is null) return;
+
       foreach (Delegate callback in Event.GetInvocationList())
       {
         Event -= (Action<T1>)callback;
@@ -45,6 +49,8 @@ namespace BaroJunk
     public void Raise(T1 arg1, T2 arg2) => Event?.Invoke(arg1, arg2);
     public void Clear()
     {
+      if (Event is null) return;
+
       foreach (Delegate callback in Event.GetInvocationList())
       {
         Event -= (Action<T1, T2>)callback;

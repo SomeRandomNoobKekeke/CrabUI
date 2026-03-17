@@ -10,13 +10,13 @@ namespace CrabUI
   {
     void IComponent.InjectModules()
     {
+      Tree.MainComponentTracker = MainComponentTracker;
     }
 
     void IComponent.InjectParts()
     {
+      MainComponentTracker.Self = this;
       Tree.Self = this;
-      Protected.Self = this;
-      Protected.MainComponentTracker.Self = this;
     }
   }
 }

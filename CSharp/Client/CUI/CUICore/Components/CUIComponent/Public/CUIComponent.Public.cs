@@ -10,27 +10,14 @@ using ComponentInjector;
 
 namespace CrabUI
 {
-  [GeneratedComponent]
   public partial class CUIComponent : IComponent
   {
-    public class Part : IPart { public CUIComponent Self { get; set; } }
-
-    public static int MaxID { get; private set; }
-    public int ID { get; set; }
+    public CUIMainComponent MainComponent => MainComponentTracker.MainComponent;
+    public CUIComponent Parent => Tree.Parent;
 
 
     public IReadOnlyList<CUIComponent> Children { get; }
     public void AddChild(CUIComponent child) => Tree.AddChild(child);
-
-    public CUIComponent()
-    {
-      ID = MaxID++;
-      this.Inject();
-      Children = Tree.Children.AsReadOnly();
-    }
-
-
-
-    public override string ToString() => $"{this.GetType().Name} [{this.ID}]";
+    public void RemoveChild(CUIComponent child) => Tree.RemoveChild(child);
   }
 }

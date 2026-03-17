@@ -12,18 +12,12 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-    public Protected_Part Protected { get; set; } = new();
-    public class Protected_Part : Part
-    {
-      public MainComponentTracker_Part MainComponentTracker { get; set; } = new();
-    }
-
-
-    public class MainComponentTracker_Part : Part
+    protected MainComponentTracker_Part MainComponentTracker { get; set; } = new();
+    public class MainComponentTracker_Part : Part, IModule
     {
       public CUIMainComponent MainComponent { get; set; }
 
-      public void OnAttachedTo(object component)
+      public void OnAttachedTo(CUIComponent component)
       {
         if (component is not CUIMainComponent mainComponent) return;
         SetRec(mainComponent);
@@ -40,7 +34,7 @@ namespace CrabUI
 
         foreach (CUIComponent child in Self.Children)
         {
-          child.Protected.MainComponentTracker.SetRec(mainComponent);
+          child.MainComponentTracker.SetRec(mainComponent);
         }
       }
 

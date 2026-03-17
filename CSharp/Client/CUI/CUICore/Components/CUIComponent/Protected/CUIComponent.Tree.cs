@@ -13,10 +13,12 @@ namespace CrabUI
   public partial class CUIComponent
   {
     protected virtual Tree_Part Tree { get; } = new();
-    public class Tree_Part : Part
+    public class Tree_Part : Part, IModule
     {
-      public bool TreeChanged { get; set; }
-      public event Action OnTreeChanged;
+      [In] public MainComponentTracker_Part MainComponentTracker { get; set; }
+
+      public bool Changed { get; set; }
+      public event Action OnChanged;
 
       public CUIComponent Parent { get; set; }
       public List<CUIComponent> Children { get; } = new();
@@ -25,12 +27,12 @@ namespace CrabUI
       public virtual void OnChildRemoved(CUIComponent child) { }
       public virtual void OnAttachToParent(CUIComponent parent)
       {
-        // Host.MainComponentTracker.OnAttachedTo(parent);
+        MainComponentTracker.OnAttachedTo(parent);
       }
 
       public virtual void OnDetachFromParent(CUIComponent parent)
       {
-        // Host.MainComponentTracker.OnDetached();
+        MainComponentTracker.OnDetached();
       }
 
       public void AddChild(CUIComponent child)
@@ -55,8 +57,8 @@ namespace CrabUI
 
       private void PropogateTreeChanged()
       {
-        TreeChanged = true;
-        OnTreeChanged?.Invoke();
+        Changed = true;
+        OnChanged?.Invoke();
         Parent?.Tree.PropogateTreeChanged();
       }
 

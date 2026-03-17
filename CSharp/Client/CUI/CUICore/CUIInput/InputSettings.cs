@@ -6,13 +6,14 @@ using System.Reflection;
 using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
-using ComponentInjector;
+using Microsoft.Xna.Framework.Input;
 
 namespace CrabUI
 {
-
-  public partial class CUIMainComponent : CUIComponent, IComponent
+  public class InputSettings
   {
-
+    public double DoubleClickInterval = 0.2;
+    public float ScrollSpeed = 0.6f;
+    public double ClickInterval = 0.2;
   }
 }

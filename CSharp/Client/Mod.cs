@@ -20,6 +20,12 @@ namespace CrabUIUser
     public void Initialize()
     {
       Instance = this;
+      if (ModStorage.Has("ReloadRequest"))
+      {
+        Logger.Log($"Reload requested, exiting");
+        return;
+      }
+
       Logger.Log($"Compiled somehow");
       UTestCommands.AddCommands();
 
@@ -40,15 +46,9 @@ namespace CrabUIUser
     {
       CUI.Start();
 
-      // CUIComponent component1 = new();
-      // CUIComponent component2 = new();
-      // component1.AddChild(component2);
+      CUIComponent component1 = new();
+      CUIComponent component2 = new();
 
-      // CUIMainComponent mainComponent = new CUIMainComponent();
-
-      // component1.MainComponentTracker.OnAttachedTo(mainComponent);
-
-      // Logger.Default.Log(component2.MainComponentTracker.MainComponent);
     }
 
     public void OnLoadCompleted() { }
@@ -56,8 +56,9 @@ namespace CrabUIUser
 
     public void Dispose()
     {
-      Instance = null;
 
+      CUI.Stop();
+      Instance = null;
     }
   }
 }

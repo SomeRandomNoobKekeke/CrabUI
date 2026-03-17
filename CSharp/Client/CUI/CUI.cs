@@ -16,14 +16,15 @@ namespace CrabUI
       PluginLifeCycle.Stop += Dispose;
     }
 
+    public static Logger Logger = new() { PrintFilePath = false, };
+
     public static CUISetup Setup { get; set; } = CUISetup.Default();
     public static void Start() => Setup.Start();
     public static void Stop() => Setup.Stop();
 
-    public static Logger Logger = new()
-    {
-      PrintFilePath = false,
-    };
+    public static CUIMainComponent Main => Setup?.Core?.Main;
+
+
 
     public static void Dispose()
     {

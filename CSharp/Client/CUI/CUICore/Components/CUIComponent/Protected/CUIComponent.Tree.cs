@@ -22,6 +22,12 @@ namespace CrabUI
 
       public CUIComponent Parent { get; set; }
       public List<CUIComponent> Children { get; } = new();
+      public IReadOnlyList<CUIComponent> ReadOnlyChildren { get; }
+
+      public Tree_Part()
+      {
+        ReadOnlyChildren = Children.AsReadOnly();
+      }
 
       public virtual void OnChildAdded(CUIComponent child) { }
       public virtual void OnChildRemoved(CUIComponent child) { }

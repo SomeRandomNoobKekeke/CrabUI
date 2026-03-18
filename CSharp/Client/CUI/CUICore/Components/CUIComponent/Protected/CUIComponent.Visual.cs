@@ -16,6 +16,12 @@ namespace CrabUI
     {
       public SimpleTexture Background { get; } = new();
 
+      //TODO shouldn't this be in the interface?
+      public void UpdateRect(CUIRect rect)
+      {
+        Background.Rect = rect.Box;
+      }
+
       public virtual IEnumerable<VisualUnit> VisualSplit()
       {
         yield return new VisualUnit.PrimitiveVisualElement(Background);

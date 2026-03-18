@@ -13,17 +13,18 @@ namespace CrabUI
   {
     public class Part : IPart { public CUIComponent Self { get; set; } }
 
-    public VisualFlattener VisualFlattener { get; } = new();
-    public LayoutFlattener LayoutFlattener { get; } = new();
-    public ChainDrawer Drawer { get; } = new();
-    public EventDispatcher EventDispatcher { get; } = new();
-    public EventConstructor EventConstructor { get; } = new();
-    public EventTargets EventTargets { get; } = new();
-    public GlobalEventsWrapper GlobalEvents { get; } = new();
+
+    protected VisualFlattener VisualFlattener { get; } = new();
+    protected LayoutFlattener LayoutFlattener { get; } = new();
+    protected ChainDrawer Drawer { get; } = new();
+    protected EventDispatcher EventDispatcher { get; } = new();
+    protected EventConstructor EventConstructor { get; } = new();
+    protected EventTargets EventTargets { get; } = new();
+
 
 
     private bool GlobalLayoutChanged;
-    public void LayoutChanged() => GlobalLayoutChanged = true;
+    protected override void NotifyThatLayoutHasChanged() => GlobalLayoutChanged = true;
 
     public void DrawChildren(ICUISpriteBatch spriteBatch)
     {

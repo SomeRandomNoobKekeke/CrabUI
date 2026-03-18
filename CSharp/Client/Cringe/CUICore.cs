@@ -19,5 +19,13 @@ namespace CrabUI
       (this as CrabUI.CUICore).DrawAfterGUIHandle.Self = this;
       (this as CrabUI.CUICore).LifeCycle.Self = this;
     }
+
+    void IComponent.InitParts()
+    {
+    }
+
+    void IComponent.InjectProps()
+    {
+    }
   }
 }

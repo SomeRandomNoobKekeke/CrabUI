@@ -13,12 +13,20 @@ namespace ComponentInjector
   {
     public void InjectModules() { }
     public void InjectParts() { }
+    public void InitParts() { }
+    public void InjectProps() { }
+
     public void Inject()
     {
       InjectParts();
       InjectModules();
+      InitParts();
+      InjectProps();
     }
   }
+
+  public interface IPropContainer { }
+  public interface IProp { }
 
   public static class IComponentExtensions
   {

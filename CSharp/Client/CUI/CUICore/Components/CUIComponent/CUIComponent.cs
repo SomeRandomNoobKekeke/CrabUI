@@ -23,7 +23,8 @@ namespace CrabUI
     {
       ID = MaxID++;
       this.Inject();
-      Children = Tree.Children.AsReadOnly(); //TODO find a place to put it
+
+      Layout = new PlainLayout();
     }
 
     public override string ToString() => $"{this.GetType().Name} [{this.ID}]";

@@ -16,8 +16,8 @@ namespace CrabUI
   {
     public partial class Access_Part : Part
     {
-      protected Layout_Access Layout { get; } = new();
-      public partial class Layout_Access : Part, Layout.Target
+      public Layout_Access Layout { get; } = new();
+      public partial class Layout_Access : Part, IAccess, Layout.Target
       {
         public void Init()
         {

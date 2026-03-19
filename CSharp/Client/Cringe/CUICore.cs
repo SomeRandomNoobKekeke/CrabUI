@@ -14,10 +14,10 @@ namespace CrabUI
 
     void IComponent.InjectParts()
     {
-      (this as CrabUI.CUICore).UpdateHandle.Self = this;
-      (this as CrabUI.CUICore).DrawBeforeGUIHandle.Self = this;
-      (this as CrabUI.CUICore).DrawAfterGUIHandle.Self = this;
-      (this as CrabUI.CUICore).LifeCycle.Self = this;
+      UpdateHandle.Self = this;
+      DrawBeforeGUIHandle.Self = this;
+      DrawAfterGUIHandle.Self = this;
+      LifeCycle.Self = this;
     }
 
     void IComponent.InitParts()

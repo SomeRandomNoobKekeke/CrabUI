@@ -16,8 +16,8 @@ namespace CrabUI
   {
     public partial class Access_Part : Part
     {
-      protected LayoutMarker_Access LayoutMarker { get; } = new();
-      public class LayoutMarker_Access : Part, LayoutMarker.Target
+      public LayoutMarker_Access LayoutMarker { get; } = new();
+      public class LayoutMarker_Access : Part, IAccess, LayoutMarker.Target
       {
         public void Init()
         {

@@ -27,7 +27,7 @@ namespace CrabUIUser
       }
 
       Logger.Log($"Compiled somehow");
-      UTestCommands.AddCommands();
+      // UTestCommands.AddCommands();
 
 
 
@@ -59,6 +59,7 @@ namespace CrabUIUser
 
       CUI.Stop();
       Instance = null;
+      UTestCommands.RemoveCommands();
     }
   }
 }

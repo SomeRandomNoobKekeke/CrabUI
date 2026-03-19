@@ -12,22 +12,7 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-    protected LayoutSlot_Part LayoutSlot { get; } = new();
-    public class LayoutSlot_Part : Part, IModule
-    {
-      [In] public Layout.Target Host { get; set; }
-
-      private Layout layout;
-      public Layout Layout
-      {
-        get => layout;
-        set
-        {
-          if (layout is not null) layout.InjectHost(null);
-          layout = value;
-          if (layout is not null) layout.InjectHost(Host);
-        }
-      }
-    }
+    protected LayoutSlot LayoutSlot { get; set; } = new();
+    protected LayoutMarker LayoutMarker { get; set; } = new();
   }
 }

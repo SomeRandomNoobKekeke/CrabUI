@@ -8,6 +8,7 @@ using System.Diagnostics;
 namespace ComponentInjector
 {
   public interface IPart { }
+  public interface IAccess { }
   public interface IModule { }
   public interface IComponent
   {
@@ -19,8 +20,8 @@ namespace ComponentInjector
     public void Inject()
     {
       InjectParts();
-      InjectModules();
       InitParts();
+      InjectModules();
       InjectProps();
     }
   }

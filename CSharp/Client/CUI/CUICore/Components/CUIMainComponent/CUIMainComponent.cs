@@ -55,25 +55,25 @@ namespace CrabUI
 
     private void HandleInput(CUIInput Input)
     {
-      // EventTargets.Find(VisualFlattener.Flat, Input.Mouse.Pos);
-      // EventConstructor.Construct(Input);
+      EventTargets.Find(VisualFlattener.Flat, Input.Mouse.Pos);
+      EventConstructor.Construct(Input);
 
-      // //TODO This should be a real debug log
-      // // foreach (IEventConsumer target in targets)
-      // // {
-      // //   CUI.Logger.Log($"{target} {Logger.Wrap.IEnumerable(events)}");
-      // // }
+      //TODO This should be a real debug log
+      // foreach (IEventConsumer target in targets)
+      // {
+      //   CUI.Logger.Log($"{target} {Logger.Wrap.IEnumerable(events)}");
+      // }
 
-      // EventDispatcher.Dispatch(GlobalEvents, EventConstructor.Events);
-      // EventDispatcher.Dispatch(EventTargets, EventConstructor);
+      EventDispatcher.Dispatch(GlobalEvents, EventConstructor.Events);
+      EventDispatcher.Dispatch(EventTargets, EventConstructor);
     }
 
     private void UpdateLayout()
     {
-      // foreach (CUIComponent component in LayoutFlattener.Flat)
-      // {
-      //   component.Layout.UpdateChildren();
-      // }
+      foreach (CUIComponent component in LayoutFlattener.Flat)
+      {
+        component.Layout.UpdateChildren();
+      }
     }
   }
 }

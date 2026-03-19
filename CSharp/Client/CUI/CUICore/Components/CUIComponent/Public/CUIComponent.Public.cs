@@ -25,5 +25,23 @@ namespace CrabUI
       get => LayoutSlot.Layout;
       set => LayoutSlot.Layout = value;
     }
+
+    public Color BackgroundColor
+    {
+      get => Visual.Background.Color;
+      set => Visual.Background.Color = value;
+    }
+
+    public CUINullRect Absolute
+    {
+      get => LayoutProps.Absolute.Value;
+      set => LayoutProps.Absolute.Value = value;
+    }
+
+    public CUINullRect Relative
+    {
+      get => LayoutProps.Relative.Value;
+      set => LayoutProps.Relative.Value = value;
+    }
   }
 }

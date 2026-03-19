@@ -29,26 +29,25 @@ namespace CrabUIUser
       Logger.Log($"Compiled somehow");
       // UTestCommands.AddCommands();
 
-
-
-
       try
       {
         Init();
         Experiment();
       }
       catch (Exception e) { Logger.Error(e); }
-
-
     }
 
     public void Init()
     {
       CUI.Start();
 
-      CUIComponent component1 = new();
-      CUIComponent component2 = new();
+      CUIComponent component = new CUIComponent()
+      {
+        BackgroundColor = Color.Red,
+        Absolute = new CUINullRect(100, 100, 100, 100),
+      };
 
+      CUI.Main.AddChild(component);
     }
 
     public void OnLoadCompleted() { }

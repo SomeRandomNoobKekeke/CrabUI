@@ -13,7 +13,7 @@ namespace CrabUI
 
   public partial class CUIComponent
   {
-    //TODO feels mega dumb
+    //TODO It's just for CUIMaincomponent, feels mega dumb
     protected virtual void NotifyThatLayoutHasChanged() { }
   }
 }

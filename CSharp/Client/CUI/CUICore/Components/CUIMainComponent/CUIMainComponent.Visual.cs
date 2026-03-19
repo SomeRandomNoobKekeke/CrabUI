@@ -15,7 +15,10 @@ namespace CrabUI
     {
       public override IEnumerable<VisualUnit> VisualSplit()
       {
-        yield break;
+        foreach (CUIComponent child in Self.Tree.Children)
+        {
+          yield return new VisualUnit.NestedVisualComponent(child.Visual);
+        }
       }
     }
   }

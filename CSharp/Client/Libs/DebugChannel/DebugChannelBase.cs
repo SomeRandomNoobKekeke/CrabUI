@@ -8,26 +8,14 @@ namespace BaroJunk
 {
   public abstract class DebugChannelBase : IDisposable
   {
-    private string name; public required string Name
-    {
-      get => name;
-      set
-      {
-        name = value;
-        Register();
-      }
-    }
+    public DebugLevel DebugLevel { get; set; } = DebugLevel.Normal;
+    public required string Name { get; set; }
     public bool Open { get; set; }
 
     public abstract string Msg { get; }
     public abstract object[] Args { get; }
 
     public ClearableEvent<DebugChannelBase> OnMsg { get; } = new();
-
-    private void Register()
-    {
-      DebugHub.Register(this);
-    }
 
     public virtual void Dispose()
     {

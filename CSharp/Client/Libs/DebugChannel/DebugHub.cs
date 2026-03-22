@@ -13,6 +13,13 @@ namespace BaroJunk
       PluginLifeCycle.Stop += Clear;
     }
 
+    public static DebugLevel DebugLevel { get; set; } = DebugLevel.Normal;
+
+    public static void RegisterChannel(DebugChannelBase channel)
+    {
+      Channels[channel.Name] = channel;
+      channel.OnMsg.Add((c) => OnMsg?.Raise(c));
+    }
 
     public static ClearableEvent<DebugChannelBase> OnMsg { get; } = new();
     public static Dictionary<string, DebugChannelBase> Channels { get; } = new();
@@ -28,12 +35,5 @@ namespace BaroJunk
 
       Channels.Clear();
     }
-
-    public static void Register(DebugChannelBase channel)
-    {
-      Channels[channel.Name] = channel;
-      channel.OnMsg.Add((c) => OnMsg?.Raise(c));
-    }
-
   }
 }

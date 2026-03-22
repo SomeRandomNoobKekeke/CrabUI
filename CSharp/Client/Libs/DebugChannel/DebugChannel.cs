@@ -26,7 +26,7 @@ namespace BaroJunk
 
     public void Send(T1 arg1)
     {
-      if (Open && (Condition == null || Condition.Invoke(arg1)))
+      if (Open && (DebugLevel >= DebugHub.DebugLevel) && (Condition == null || Condition.Invoke(arg1)))
       {
         Last.Update(arg1);
         Event.Raise(arg1);
@@ -66,7 +66,7 @@ namespace BaroJunk
 
     public void Send(T1 arg1, T2 arg2)
     {
-      if (Open && (Condition == null || Condition.Invoke(arg1, arg2)))
+      if (Open && (DebugLevel >= DebugHub.DebugLevel) && (Condition == null || Condition.Invoke(arg1, arg2)))
       {
         Last.Update(arg1, arg2);
         Event.Raise(arg1, arg2);
@@ -108,7 +108,7 @@ namespace BaroJunk
 
     public void Send(T1 arg1, T2 arg2, T3 arg3)
     {
-      if (Open && (Condition == null || Condition.Invoke(arg1, arg2, arg3)))
+      if (Open && (DebugLevel >= DebugHub.DebugLevel) && (Condition == null || Condition.Invoke(arg1, arg2, arg3)))
       {
         Last.Update(arg1, arg2, arg3);
         Event.Raise(arg1, arg2, arg3);
@@ -152,7 +152,7 @@ namespace BaroJunk
 
     public void Send(T1 arg1, T2 arg2, T3 arg3, T4 arg4)
     {
-      if (Open && (Condition == null || Condition.Invoke(arg1, arg2, arg3, arg4)))
+      if (Open && (DebugLevel >= DebugHub.DebugLevel) && (Condition == null || Condition.Invoke(arg1, arg2, arg3, arg4)))
       {
         Last.Update(arg1, arg2, arg3, arg4);
         Event.Raise(arg1, arg2, arg3, arg4);

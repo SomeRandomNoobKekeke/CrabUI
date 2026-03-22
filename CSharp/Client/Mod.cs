@@ -40,6 +40,7 @@ namespace CrabUIUser
     public void Init()
     {
       CUI.Start();
+      CUI.Debug.Open();
 
       CUIComponent component = new CUIComponent()
       {

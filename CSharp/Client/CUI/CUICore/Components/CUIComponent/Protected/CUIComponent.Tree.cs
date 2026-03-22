@@ -7,7 +7,7 @@ using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
 using ComponentInjector;
-
+using BaroJunk;
 namespace CrabUI
 {
   public partial class CUIComponent
@@ -15,6 +15,15 @@ namespace CrabUI
     protected virtual Tree_Part Tree { get; } = new();
     public class Tree_Part : Part, IModule
     {
+      public static DebugChannel<CUIComponent, CUIComponent> Debug_ChildAdded = new()
+      {
+        Name = "Tree.ChildAdded",
+      };
+      public static DebugChannel<CUIComponent, CUIComponent> Debug_ChildRemoved = new()
+      {
+        Name = "Tree.ChildRemoved",
+      };
+
       [In] public MainComponentTracker_Part MainComponentTracker { get; set; }
 
       public bool Changed { get; set; }
@@ -49,6 +58,7 @@ namespace CrabUI
 
         OnChildAdded(child);
         child.Tree.OnAttachToParent(Self);
+        Debug_ChildAdded.Send(Self, child);
       }
 
       public void RemoveChild(CUIComponent child)
@@ -59,6 +69,7 @@ namespace CrabUI
 
         OnChildRemoved(child);
         child.Tree.OnDetachFromParent(Self);
+        Debug_ChildRemoved.Send(Self, child);
       }
 
       private void PropogateTreeChanged()

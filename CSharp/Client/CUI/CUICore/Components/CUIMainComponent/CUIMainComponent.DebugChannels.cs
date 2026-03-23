@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Reflection;
+using System.Diagnostics;
+using Barotrauma;
+using Microsoft.Xna.Framework;
+using ComponentInjector;
+using BaroJunk;
+
+namespace CrabUI
+{
+  public partial class CUIMainComponent
+  {
+    //THINK how to resolve name conflicts?
+    public new DebugChannels_Part CUIMainComponent_DebugChannel { get; } = new();
+
+    public class DebugChannels_Part : Part
+    {
+      public DebugRouter<CUIComponent, CUIComponent> ChildAdded = new()
+      {
+        Name = "Child Added",
+      };
+      public DebugRouter<CUIComponent, CUIComponent> ChildRemoved = new();
+
+      public void RouteComponent(CUIComponent component)
+      {
+        ChildAdded.Route(component.DebugChannel.ChildAdded);
+        ChildRemoved.Route(component.DebugChannel.ChildRemoved);
+      }
+    }
+  }
+}

@@ -12,10 +12,10 @@ namespace CrabUIUser
 {
   public partial class Mod : IAssemblyPlugin
   {
-
+    public event Action bruh;
     public void Experiment()
     {
-      // new HowReimplementingInterfaceWorks().Run();
+      // new HashCodeExperiment().Run();
     }
   }
 }

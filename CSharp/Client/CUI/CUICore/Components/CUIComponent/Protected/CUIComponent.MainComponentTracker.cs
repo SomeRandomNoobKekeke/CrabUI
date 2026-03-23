@@ -12,7 +12,7 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-    protected MainComponentTracker_Part MainComponentTracker { get; set; } = new();
+    protected virtual MainComponentTracker_Part MainComponentTracker { get; set; } = new();
     public class MainComponentTracker_Part : Part, IModule
     {
       public CUIMainComponent MainComponent { get; set; }
@@ -21,6 +21,8 @@ namespace CrabUI
       {
         if (component is not CUIMainComponent mainComponent) return;
         SetRec(mainComponent);
+
+        mainComponent.OnComponentAttached(Self);
       }
 
       public void OnDetached()
@@ -32,7 +34,7 @@ namespace CrabUI
       {
         MainComponent = mainComponent;
 
-        foreach (CUIComponent child in Self.Children)
+        foreach (CUIComponent child in Self.Tree.Children)
         {
           child.MainComponentTracker.SetRec(mainComponent);
         }

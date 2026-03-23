@@ -23,6 +23,7 @@ namespace CrabUI
       MainComponentTracker.Self = this;
       Tree.Self = this;
       Visual.Self = this;
+      DebugChannel.Self = this;
       FunnyProps.Self = this;
       LayoutProps.Self = this;
     }

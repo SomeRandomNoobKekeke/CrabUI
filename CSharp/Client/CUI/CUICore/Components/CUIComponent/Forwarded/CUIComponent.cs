@@ -10,10 +10,10 @@ using ComponentInjector;
 
 namespace CrabUI
 {
-
+  //CRINGE (mega cringe)
   public partial class CUIComponent
   {
-    //TODO It's just for CUIMaincomponent, feels mega dumb
+
     protected virtual void NotifyThatLayoutHasChanged() { }
   }
 }

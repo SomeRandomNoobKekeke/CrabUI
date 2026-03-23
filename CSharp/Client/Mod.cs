@@ -27,7 +27,7 @@ namespace CrabUIUser
       }
 
       Logger.Log($"Compiled somehow");
-      // UTestCommands.AddCommands();
+      UTestCommands.AddCommands();
 
       try
       {
@@ -40,13 +40,14 @@ namespace CrabUIUser
     public void Init()
     {
       CUI.Start();
-      CUI.Debug.Open();
 
       CUIComponent component = new CUIComponent()
       {
         BackgroundColor = Color.Red,
         Absolute = new CUINullRect(100, 100, 100, 100),
       };
+
+      // component.DebugChannel.ChildAdded.Map((c1, c2) => Logger.LogVars(c1, c2));
 
       CUI.Main.AddChild(component);
     }

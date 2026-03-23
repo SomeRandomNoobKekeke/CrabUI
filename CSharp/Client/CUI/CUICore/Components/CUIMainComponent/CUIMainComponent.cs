@@ -22,13 +22,19 @@ namespace CrabUI
     protected EventTargets EventTargets { get; } = new();
 
 
+    //BRUH this is not supposed to be public
+    public void OnComponentAttached(CUIComponent component)
+    {
+      CUIMainComponent_DebugChannel.RouteComponent(component);
+    }
+
 
     private bool GlobalLayoutChanged;
     protected override void NotifyThatLayoutHasChanged() => GlobalLayoutChanged = true;
 
     public void DrawChildren(ICUISpriteBatch spriteBatch)
     {
-      // Drawer.Draw(spriteBatch, VisualFlattener.Flat);
+      Drawer.Draw(spriteBatch, VisualFlattener.Flat);
     }
 
     public void Update(double totalTime, CUIInput Input)
@@ -74,6 +80,12 @@ namespace CrabUI
       {
         component.Layout.UpdateChildren();
       }
+    }
+
+    public CUIMainComponent() : base()
+    {
+      //LOL
+      CUIMainComponent_DebugChannel.RouteComponent(this);
     }
   }
 }

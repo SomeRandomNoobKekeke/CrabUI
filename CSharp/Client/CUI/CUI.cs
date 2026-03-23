@@ -18,13 +18,14 @@ namespace CrabUI
 
     public static Logger Logger = new() { PrintFilePath = false, };
 
+
     public static CUIDebug Debug { get; private set; } = new();
     public static CUISetup Setup { get; set; } = CUISetup.Default();
     public static void Start() => Setup.Start();
     public static void Stop() => Setup.Stop();
 
     public static CUIMainComponent Main => Setup?.Core?.Main;
-
+    public static CUICore.DebugChannels_Part DebugChannels => Setup?.Core?.DebugChannel;
 
 
     public static void Dispose()

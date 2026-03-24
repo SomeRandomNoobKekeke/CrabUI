@@ -26,12 +26,12 @@ namespace CrabUI
 
       private void Attach()
       {
-        Self.DebugChannel.ChildAdded.Pin.Add(Output);
+        Self.DebugChannel.Pomoyka.Pin.Add(Output);
       }
 
       private void Detach()
       {
-        Self.DebugChannel.ChildAdded.Pin.Remove(Output);
+        Self.DebugChannel.Pomoyka.Pin.Remove(Output);
       }
     }
   }

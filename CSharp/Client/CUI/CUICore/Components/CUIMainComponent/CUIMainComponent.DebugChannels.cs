@@ -13,10 +13,15 @@ namespace CrabUI
 {
   public partial class CUIMainComponent
   {
-    public new DebugChannels_Part CUIMainComponent_DebugChannel { get; } = new();
+    public new DebugChannels_Part DebugChannel { get; } = new();
 
     public class DebugChannels_Part : Part
     {
+      public void Init()
+      {
+        (Self as CUIComponent).DebugChannel.AttachToMainComponent(Self);
+      }
+
       public DebugNode<CUIComponent, CUIComponent> ChildAdded { get; } = new();
     }
   }

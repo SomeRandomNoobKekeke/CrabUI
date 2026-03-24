@@ -11,7 +11,7 @@ namespace CrabUI
 {
   public partial class CUIMainComponent : CUIComponent, IComponent
   {
-    public class Part : IPart { public CUIComponent Self { get; set; } }
+    public class Part : IPart { public CUIMainComponent Self { get; set; } }
 
 
     protected VisualFlattener VisualFlattener { get; } = new();
@@ -78,6 +78,7 @@ namespace CrabUI
 
     public CUIMainComponent() : base()
     {
+
     }
   }
 }

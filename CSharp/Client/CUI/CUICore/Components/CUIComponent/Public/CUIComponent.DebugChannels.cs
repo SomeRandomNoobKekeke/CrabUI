@@ -16,17 +16,19 @@ namespace CrabUI
 
     public class DebugChannels_Part : Part
     {
+      public void AttachToMainComponent(CUIMainComponent mainComponent)
+      {
+        ChildAdded.Map(mainComponent.DebugChannel.ChildAdded);
+      }
+
+      public void DetachFromMainComponent(CUIMainComponent mainComponent)
+      {
+        ChildAdded.Unmap(mainComponent.DebugChannel.ChildAdded);
+      }
+
+
+
       public DebugNode<CUIComponent, CUIComponent> ChildAdded { get; } = new();
-
-      public void AttachToMainComponent()
-      {
-        ChildAdded.Map(Self.MainComponent.DebugChannel.ChildAdded);
-      }
-
-      public void DetachFromMainComponent()
-      {
-        ChildAdded.Unmap(Self.MainComponent.DebugChannel.ChildAdded);
-      }
     }
   }
 }

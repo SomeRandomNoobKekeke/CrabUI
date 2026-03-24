@@ -14,7 +14,18 @@ namespace CrabUI
 
     public class DebugChannels_Part : Part
     {
-      public void Init() => RouteMainComponents();
+      public void Init()
+      {
+        RouteMainComponents();
+
+        Pomoyka.Route(ChildAdded, (CUIComponent c1, CUIComponent c2) => Pomoyka.Send(c1, c2));
+      }
+      public void RouteMainComponents()
+      {
+        ChildAdded.Route(Self.Main.DebugChannel.ChildAdded);
+      }
+
+      public DebugNode<object, object> Pomoyka { get; } = new();
 
       public DebugNode<CUIComponent, CUIComponent> ChildAdded { get; } = new()
       {
@@ -24,10 +35,7 @@ namespace CrabUI
         }
       };
 
-      public void RouteMainComponents()
-      {
-        ChildAdded.Route(Self.Main.DebugChannel.ChildAdded);
-      }
+
     }
   }
 }

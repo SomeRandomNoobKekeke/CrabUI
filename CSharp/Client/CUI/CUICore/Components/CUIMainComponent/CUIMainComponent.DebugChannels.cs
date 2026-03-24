@@ -18,17 +18,7 @@ namespace CrabUI
 
     public class DebugChannels_Part : Part
     {
-      public DebugRouter<CUIComponent, CUIComponent> ChildAdded = new()
-      {
-        Name = "Child Added",
-      };
-      public DebugRouter<CUIComponent, CUIComponent> ChildRemoved = new();
 
-      public void RouteComponent(CUIComponent component)
-      {
-        ChildAdded.Route(component.DebugChannel.ChildAdded);
-        ChildRemoved.Route(component.DebugChannel.ChildRemoved);
-      }
     }
   }
 }

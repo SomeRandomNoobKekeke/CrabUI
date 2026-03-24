@@ -16,30 +16,7 @@ namespace CrabUI
     {
       public DebugChannels_Part()
       {
-        Probe.Connect(ChildAdded);
-        Probe.Connect(ChildRemoved);
 
-        //TODO unhardcode
-        Probe.Read.Add(e => CUI.Logger.Log(e));
-      }
-
-      public DebugProbe Probe { get; } = new();
-
-
-
-      public DebugRouter<CUIComponent, CUIComponent> ChildAdded = new()
-      {
-        Name = "Child Added",
-        ToText = (parent, child) => $"{parent} <- {child}",
-      };
-      public DebugRouter<CUIComponent, CUIComponent> ChildRemoved = new();
-
-      public void RouteMainComponent(CUIMainComponent mainComponent)
-      {
-        ChildAdded.Route(mainComponent.CUIMainComponent_DebugChannel.ChildAdded);
-        ChildRemoved.Route(mainComponent.CUIMainComponent_DebugChannel.ChildRemoved);
-
-        // ChildAdded.Map((c1, c2) => CUI.Logger.LogVars(c1, c2));
       }
     }
   }

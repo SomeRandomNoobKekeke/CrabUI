@@ -21,8 +21,6 @@ namespace CrabUI
       {
         if (component is not CUIMainComponent mainComponent) return;
         SetRec(mainComponent);
-
-        mainComponent.OnComponentAttached(Self);
       }
 
       public void OnDetached()

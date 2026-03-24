@@ -16,11 +16,7 @@ namespace CrabUI
 
     public class DebugChannels_Part : Part
     {
-      public DebugGate<CUIComponent, CUIComponent> ChildAdded = new()
-      {
-        Name = "Child Added",
-      };
-      public DebugGate<CUIComponent, CUIComponent> ChildRemoved = new();
+
     }
   }
 }

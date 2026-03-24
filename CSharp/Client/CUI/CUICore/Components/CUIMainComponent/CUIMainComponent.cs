@@ -22,12 +22,6 @@ namespace CrabUI
     protected EventTargets EventTargets { get; } = new();
 
 
-    //BRUH this is not supposed to be public
-    public void OnComponentAttached(CUIComponent component)
-    {
-      CUIMainComponent_DebugChannel.RouteComponent(component);
-    }
-
 
     private bool GlobalLayoutChanged;
     protected override void NotifyThatLayoutHasChanged() => GlobalLayoutChanged = true;
@@ -84,8 +78,6 @@ namespace CrabUI
 
     public CUIMainComponent() : base()
     {
-      //LOL
-      CUIMainComponent_DebugChannel.RouteComponent(this);
     }
   }
 }

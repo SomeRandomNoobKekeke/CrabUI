@@ -10,12 +10,25 @@ namespace BaroJunk
   {
     private event Action Event;
     public bool Empty => Event == null;
+
+    public event Action<Action> OnSubscribed;
+    public event Action<Action> OnUnSubscribed;
+
     public EventSubscription Add(Action callback)
     {
       Event += callback;
-      return new EventSubscription(() => Event -= callback);
+      OnSubscribed?.Invoke(callback);
+      return new EventSubscription(() =>
+      {
+        Event -= callback;
+        OnUnSubscribed?.Invoke(callback);
+      });
     }
-    public void Remove(Action callback) => Event -= callback;
+    public void Remove(Action callback)
+    {
+      Event -= callback;
+      OnUnSubscribed?.Invoke(callback);
+    }
     public void Raise() => Event?.Invoke();
     public void Clear()
     {

@@ -1,0 +1,81 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Diagnostics;
+using BaroJunk;
+
+// @types = T1, T2
+// @argDefs = T1 arg1, T2 arg2
+// @argsPassed = arg1, arg2
+
+namespace CrabUI
+{
+  public class DebugNode<@types> : DebugNode
+  {
+    private Func<@types, DebugEvent> factory;
+    public Func<@types, DebugEvent> Factory
+    {
+      get => factory;
+      set
+      {
+        factory = value;
+        Event_Pin.Action = factory is null ? DefaultBringeAction : CustomBringeAction;
+      }
+    }
+
+    public Dictionary<DebugNode, EventSubscription> Mapping = new();
+
+    private void DefaultBringeAction(@argDefs)
+    {
+      Pin.Raise(new DebugEvent()
+      {
+        Args = new object[] { @argsPassed },
+      });
+    }
+    private void CustomBringeAction(@argDefs)
+    {
+      Pin.Raise(Factory.Invoke(@argsPassed));
+    }
+
+    private EventBridge<@types> Event_Pin;
+    public ClearableEvent<@types> Event { get; } = new();
+
+    public void Send(@argDefs) => Event.Raise(@argsPassed);
+    public EventSubscription Map(DebugNode next, Action<@types> callback)
+    {
+      EventSubscription subscription = Event.Add(callback);
+      Mapping[next] = subscription; //TODO handle dublicates
+      return subscription;
+    }
+
+    public override EventSubscription Map(DebugNode next, Delegate callback) => Map(next, (Action<@types>)callback);
+    public EventSubscription Map(DebugNode<@types> next)
+    {
+      return Map(next, (@argDefs) => next.Event.Raise(@argsPassed));
+    }
+    public EventSubscription Route(DebugNode<@types> prev) => prev.Map(this);
+
+
+    public override void Unmap(DebugNode node)
+    {
+      Mapping[node].Cancel();
+      Mapping.Remove(node);
+    }
+
+    public DebugNode()
+    {
+      Event_Pin = Event.CreateBridge(DefaultBringeAction);
+
+      Pin.OnSubscribed += (_) =>
+      {
+        if (!Pin.Empty && !Event_Pin.Opened) Event_Pin.Open();
+      };
+
+      Pin.OnUnSubscribed += (_) =>
+      {
+        if (Pin.Empty && Event_Pin.Opened) Event_Pin.Close();
+      };
+    }
+  }
+}

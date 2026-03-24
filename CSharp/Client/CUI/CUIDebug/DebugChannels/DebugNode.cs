@@ -7,51 +7,32 @@ using BaroJunk;
 
 namespace CrabUI
 {
-  public class DebugNode
+  public abstract class DebugNode
   {
-    private Func<object, object, DebugEvent> factory;
-    public Func<object, object, DebugEvent> Factory
-    {
-      get => factory;
-      set
-      {
-        factory = value;
-        Event_Pin.Action = factory is null ? DefaultBringeAction : CustomBringeAction;
-      }
-    }
+    public static int MaxID { get; private set; } = 0;
+    public int ID { get; }
 
-    private void DefaultBringeAction(object arg1, object arg2)
-    {
-      Pin.Raise(new DebugEvent()
-      {
-        Args = new object[] { arg1, arg2 },
-      });
-    }
-    private void CustomBringeAction(object arg1, object arg2)
-    {
-      Pin.Raise(Factory.Invoke(arg1, arg2));
-    }
+    public string Name { get; set; }
 
-    private EventBridge<object, object> Event_Pin;
     public ClearableEvent<DebugEvent> Pin { get; } = new();
-    public ClearableEvent<object, object> Event { get; } = new();
 
-    public void Send(object arg1, object arg2) => Event.Raise(arg1, arg2);
+    public EventSubscription Route(DebugNode prev, Delegate callback) => prev.Map(this, callback);
+    public abstract EventSubscription Map(DebugNode next, Delegate callback);
 
+    public abstract void Unmap(DebugNode node);
+    public void Unroute(DebugNode node) => node.Unmap(this);
 
     public DebugNode()
     {
-      Event_Pin = Event.CreateBridge(DefaultBringeAction);
+      ID = MaxID++;
+    }
 
-      Pin.OnSubscribed += (_) =>
-      {
-        if (!Pin.Empty && !Event_Pin.Opened) Event_Pin.Open();
-      };
+    public override int GetHashCode() => ID;
 
-      Pin.OnUnSubscribed += (_) =>
-      {
-        if (Pin.Empty && Event_Pin.Opened) Event_Pin.Close();
-      };
+    public override bool Equals(object obj)
+    {
+      if (obj is not DebugNode other) return false;
+      return other.ID == ID;
     }
   }
 }

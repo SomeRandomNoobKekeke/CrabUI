@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Diagnostics;
+
+// @types = T1, T2
+// @argDefs = T1 arg1, T2 arg2
+// @argsPassed = arg1, arg2
+
+namespace BaroJunk
+{
+ public class ClearableEvent<@types>
+  {
+    private event Action<@types> Event;
+    public bool Empty => Event == null;
+    public event Action<Action<@types>> OnSubscribed;
+    public event Action<Action<@types>> OnUnSubscribed;
+    public EventSubscription Add(Action<@types> callback)
+    {
+      Event += callback;
+      OnSubscribed?.Invoke(callback);
+      return new EventSubscription(() =>
+      {
+        Event -= callback;
+        OnUnSubscribed?.Invoke(callback);
+      });
+    }
+    public void Remove(Action<@types> callback)
+    {
+      Event -= callback;
+      OnUnSubscribed?.Invoke(callback);
+    }
+    public void Raise(@argDefs) => Event?.Invoke(@argsPassed);
+    public void Clear()
+    {
+      if (Event is null) return;
+
+      foreach (Delegate callback in Event.GetInvocationList())
+      {
+        Event -= (Action<@types>)callback;
+      }
+    }
+
+    public EventBridge<@types> CreateBridge(Action<@types> action)
+    {
+      return new EventBridge<@types>(this)
+      {
+        Action = action
+      };
+    }
+  }
+}

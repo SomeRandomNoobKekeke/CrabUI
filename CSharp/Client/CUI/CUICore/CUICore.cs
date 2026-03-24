@@ -15,6 +15,7 @@ namespace CrabUI
 
     public CUIMainComponent Main { get; } = new();
 
+
     public CUICore()
     {
       this.Inject();

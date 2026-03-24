@@ -49,7 +49,7 @@ namespace CrabUI
 
         OnChildAdded(child);
         child.Tree.OnAttachToParent(Self);
-
+        Self.DebugChannel.ChildAdded.Send(Self, child);
       }
 
       public void RemoveChild(CUIComponent child)

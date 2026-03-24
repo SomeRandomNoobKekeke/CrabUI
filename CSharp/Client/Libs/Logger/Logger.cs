@@ -30,6 +30,7 @@ namespace BaroJunk
     public static Logger Default = new Logger();
 
     public static string WrapInColor(object msg, string color) => $"‖color:{color}‖{msg}‖end‖";
+    public static string White(object msg) => $"‖color:white‖{msg}‖end‖";
 
     public interface ISerializer { public string Serialize(object o); }
     public class MicroSerializer : ISerializer

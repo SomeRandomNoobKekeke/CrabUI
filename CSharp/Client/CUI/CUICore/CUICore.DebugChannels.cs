@@ -14,9 +14,19 @@ namespace CrabUI
 
     public class DebugChannels_Part : Part
     {
-      public DebugChannels_Part()
-      {
+      public void Init() => RouteMainComponents();
 
+      public DebugNode<CUIComponent, CUIComponent> ChildAdded { get; } = new()
+      {
+        Factory = (parent, child) => new DebugEvent()
+        {
+          Msg = $"{Logger.White(child)} attached to {Logger.White(parent)}",
+        }
+      };
+
+      public void RouteMainComponents()
+      {
+        ChildAdded.Route(Self.Main.DebugChannel.ChildAdded);
       }
     }
   }

@@ -19,7 +19,7 @@ namespace CrabUI
     public static Logger Logger = new() { PrintFilePath = false, };
 
 
-    public static CUIDebug Debug { get; private set; } = new();
+
     public static CUISetup Setup { get; set; } = CUISetup.Default();
     public static void Start() => Setup.Start();
     public static void Stop() => Setup.Stop();
@@ -32,7 +32,6 @@ namespace CrabUI
     {
       Setup.Stop();
       Setup = null;
-      Debug = null;
     }
   }
 }

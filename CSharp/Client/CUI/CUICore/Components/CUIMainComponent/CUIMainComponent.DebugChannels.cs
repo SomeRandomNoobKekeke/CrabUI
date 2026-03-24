@@ -13,12 +13,11 @@ namespace CrabUI
 {
   public partial class CUIMainComponent
   {
-    //THINK how to resolve name conflicts?
     public new DebugChannels_Part CUIMainComponent_DebugChannel { get; } = new();
 
     public class DebugChannels_Part : Part
     {
-
+      public DebugNode<CUIComponent, CUIComponent> ChildAdded { get; } = new();
     }
   }
 }

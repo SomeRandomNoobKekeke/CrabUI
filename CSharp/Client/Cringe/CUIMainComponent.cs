@@ -18,7 +18,7 @@ namespace CrabUI
     void IComponent.InjectParts()
     {
       LayoutFlattener.Self = this;
-      DebugChannel.Self = this;
+      CUIMainComponent_DebugChannel.Self = this;
       Visual.Self = this;
       GlobalEvents.Self = this;
       (this as CrabUI.CUIComponent).Access.Self = this;

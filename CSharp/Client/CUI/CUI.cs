@@ -25,7 +25,7 @@ namespace CrabUI
     public static void Stop() => Setup.Stop();
 
     public static CUIMainComponent Main => Setup?.Core?.Main;
-    public static CUICore.DebugChannels_Part DebugChannels => Setup?.Core?.DebugChannel;
+
 
 
     public static void Dispose()

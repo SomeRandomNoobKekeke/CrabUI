@@ -18,6 +18,11 @@ namespace CrabUI
 
     public EventSubscription Route(DebugNode prev, Delegate callback) => prev.Map(this, callback);
     public abstract EventSubscription Map(DebugNode next, Delegate callback);
+    public abstract EventSubscription Map(DebugNode next);
+
+    public abstract EventSubscription Map(DebugNode<object> next);
+    public abstract EventSubscription Map(DebugNode<object, object> next);
+    public abstract EventSubscription Map(DebugNode<object, object, object> next);
 
     public abstract void Unmap(DebugNode node);
     public void Unroute(DebugNode node) => node.Unmap(this);

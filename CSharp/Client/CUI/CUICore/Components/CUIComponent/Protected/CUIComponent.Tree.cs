@@ -15,6 +15,17 @@ namespace CrabUI
     protected Tree_Part Tree { get; } = new();
     public class Tree_Part : Part, IModule
     {
+      public void Init()
+      {
+        ReadOnlyChildren = Children.AsReadOnly();
+
+        Debug_ChildAdded.Map(Self.DebugChannels["Child Added"]);
+        // ChildAdded.Map(Self.DebugChannels["Child Removed"]);
+      }
+
+      public DebugNode<CUIComponent, CUIComponent> Debug_ChildAdded = new();
+      public DebugNode<CUIComponent, CUIComponent> Debug_ChildRemoved = new();
+
       [In] public MainComponentTracker_Part MainComponentTracker { get; set; }
 
       public bool Changed { get; set; }
@@ -22,12 +33,9 @@ namespace CrabUI
 
       public CUIComponent Parent { get; set; }
       public List<CUIComponent> Children { get; } = new();
-      public IReadOnlyList<CUIComponent> ReadOnlyChildren { get; }
+      public IReadOnlyList<CUIComponent> ReadOnlyChildren { get; private set; }
 
-      public Tree_Part()
-      {
-        ReadOnlyChildren = Children.AsReadOnly();
-      }
+
 
       public virtual void OnChildAdded(CUIComponent child) { }
       public virtual void OnChildRemoved(CUIComponent child) { }
@@ -49,7 +57,7 @@ namespace CrabUI
 
         OnChildAdded(child);
         child.Tree.OnAttachToParent(Self);
-        Self.DebugChannel.ChildAdded.Send(Self, child);
+        Debug_ChildAdded.Send(Self, child);
       }
 
       public void RemoveChild(CUIComponent child)

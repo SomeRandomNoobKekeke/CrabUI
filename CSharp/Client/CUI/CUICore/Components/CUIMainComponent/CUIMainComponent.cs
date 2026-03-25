@@ -78,7 +78,8 @@ namespace CrabUI
 
     public CUIMainComponent() : base()
     {
-
+      //TODO move somewhere else
+      (this as CUIComponent).DebugChannels.Map((this as CUIMainComponent).DebugChannels);
     }
   }
 }

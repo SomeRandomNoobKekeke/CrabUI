@@ -23,7 +23,6 @@ namespace CrabUI
       MainComponentTracker.Self = this;
       Tree.Self = this;
       Visual.Self = this;
-      DebugChannel.Self = this;
       FunnyProps.Self = this;
       LayoutProps.Self = this;
     }
@@ -32,6 +31,7 @@ namespace CrabUI
     {
       Access.LayoutMarker.Init();
       Access.Layout.Init();
+      Tree.Init();
       FunnyProps.Init();
     }
 

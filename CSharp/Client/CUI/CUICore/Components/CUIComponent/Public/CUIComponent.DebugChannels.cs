@@ -12,23 +12,9 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-    public DebugChannels_Part DebugChannel { get; } = new();
-
-    public class DebugChannels_Part : Part
+    public DebugChannelsDict DebugChannels { get; } = new()
     {
-      public void AttachToMainComponent(CUIMainComponent mainComponent)
-      {
-        ChildAdded.Map(mainComponent.DebugChannel.ChildAdded);
-      }
-
-      public void DetachFromMainComponent(CUIMainComponent mainComponent)
-      {
-        ChildAdded.Unmap(mainComponent.DebugChannel.ChildAdded);
-      }
-
-
-
-      public DebugNode<CUIComponent, CUIComponent> ChildAdded { get; } = new();
-    }
+      ["Child Added"] = new DebugNode<CUIComponent, CUIComponent>(),
+    };
   }
 }

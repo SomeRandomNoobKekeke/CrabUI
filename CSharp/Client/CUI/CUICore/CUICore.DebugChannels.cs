@@ -10,32 +10,32 @@ namespace CrabUI
 {
   public partial class CUICore
   {
-    public DebugChannels_Part DebugChannel { get; } = new();
+    //BRUH stupid part just for Init
+    protected DebugChannels_Part DebugChannelsPart { get; } = new();
 
     public class DebugChannels_Part : Part
     {
       public void Init()
       {
-        RouteMainComponents();
+        DebugChannels.Route(Self.Main.DebugChannels);
 
-        Pomoyka.Route(ChildAdded, (CUIComponent c1, CUIComponent c2) => Pomoyka.Send(c1, c2));
-      }
-      public void RouteMainComponents()
-      {
-        ChildAdded.Route(Self.Main.DebugChannel.ChildAdded);
-      }
-
-      public DebugNode<object, object> Pomoyka { get; } = new();
-
-      public DebugNode<CUIComponent, CUIComponent> ChildAdded { get; } = new()
-      {
-        Factory = (parent, child) => new DebugEvent()
+        foreach (DebugNode node in DebugChannels.Values)
         {
-          Msg = $"{Logger.White(child)} attached to {Logger.White(parent)}",
+          node.Map(Pomoyka);
         }
+      }
+
+      public DebugNode<object, object, object> Pomoyka { get; } = new();
+      public new DebugChannelsDict DebugChannels { get; } = new()
+      {
+        ["Child Added"] = new DebugNode<CUIComponent, CUIComponent>()
+        {
+          Factory = (parent, child) => new DebugEvent()
+          {
+            Msg = $"{Logger.White(child)} attached to {Logger.White(parent)}",
+          },
+        },
       };
-
-
     }
   }
 }

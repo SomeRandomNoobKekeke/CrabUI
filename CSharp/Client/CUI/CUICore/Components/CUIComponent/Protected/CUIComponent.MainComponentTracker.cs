@@ -21,12 +21,12 @@ namespace CrabUI
       {
         if (component is not CUIMainComponent mainComponent) return;
         SetRec(mainComponent);
-        Self.DebugChannel.AttachToMainComponent(mainComponent);
+        Self.DebugChannels.Map(mainComponent.DebugChannels);
       }
 
       public void OnDetached()
       {
-        Self.DebugChannel.DetachFromMainComponent(MainComponent);
+        Self.DebugChannels.Unmap(MainComponent.DebugChannels);
         SetRec(null);
       }
 

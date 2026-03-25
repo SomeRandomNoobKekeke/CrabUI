@@ -46,6 +46,7 @@ namespace CrabUI
     }
 
     public override EventSubscription Map(DebugNode next, Delegate callback) => Map(next, (Action<T1, T2, T3>)callback);
+    public override EventSubscription Map(DebugNode next) => Map((DebugNode<T1, T2, T3>)next);
     public EventSubscription Map(DebugNode<T1, T2, T3> next)
     {
       return Map(next, (T1 arg1, T2 arg2, T3 arg3) => next.Event.Raise(arg1, arg2, arg3));
@@ -58,6 +59,13 @@ namespace CrabUI
       Mapping[node].Cancel();
       Mapping.Remove(node);
     }
+
+    public override EventSubscription Map(DebugNode<object> next)
+      => Map(next, (arg1, arg2, arg3) => next.Event.Raise(arg1));
+    public override EventSubscription Map(DebugNode<object, object> next)
+      => Map(next, (arg1, arg2, arg3) => next.Event.Raise(arg1, arg2));
+    public override EventSubscription Map(DebugNode<object, object, object> next)
+      => Map(next, (arg1, arg2, arg3) => next.Event.Raise(arg1, arg2, arg3));
 
     public DebugNode()
     {

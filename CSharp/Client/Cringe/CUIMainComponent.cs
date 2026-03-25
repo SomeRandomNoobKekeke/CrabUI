@@ -18,7 +18,6 @@ namespace CrabUI
     void IComponent.InjectParts()
     {
       LayoutFlattener.Self = this;
-      DebugChannel.Self = this;
       Visual.Self = this;
       GlobalEvents.Self = this;
       (this as CrabUI.CUIComponent).Access.Self = this;
@@ -26,16 +25,15 @@ namespace CrabUI
       Access.Layout.Self = this;
       (this as CrabUI.CUIComponent).MainComponentTracker.Self = this;
       (this as CrabUI.CUIComponent).Tree.Self = this;
-      (this as CrabUI.CUIComponent).DebugChannel.Self = this;
       (this as CrabUI.CUIComponent).FunnyProps.Self = this;
       (this as CrabUI.CUIComponent).LayoutProps.Self = this;
     }
 
     void IComponent.InitParts()
     {
-      DebugChannel.Init();
       Access.LayoutMarker.Init();
       Access.Layout.Init();
+      (this as CrabUI.CUIComponent).Tree.Init();
       (this as CrabUI.CUIComponent).FunnyProps.Init();
     }
 

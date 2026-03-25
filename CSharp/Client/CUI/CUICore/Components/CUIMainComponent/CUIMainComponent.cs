@@ -24,6 +24,8 @@ namespace CrabUI
 
 
     private bool GlobalLayoutChanged;
+
+    //CRINGE forwarded from CUIComponent
     protected override void NotifyThatLayoutHasChanged() => GlobalLayoutChanged = true;
 
     public void DrawChildren(ICUISpriteBatch spriteBatch)

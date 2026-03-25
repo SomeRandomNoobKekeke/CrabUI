@@ -13,6 +13,8 @@ namespace CrabUI
 
     public class Debugger_Part : Part
     {
+      private List<EventSubscription> AttachedPins = new();
+
       public void Init()
       {
         Attach();
@@ -21,17 +23,23 @@ namespace CrabUI
 
       private void Output(DebugEvent e)
       {
+        //TODO implement text channel handle in CUIRunner
         CUI.Logger.Log(e);
       }
 
       private void Attach()
       {
-        Self.DebugChannelsPart.Pomoyka.Pin.Add(Output);
+        AttachedPins.Add(Self.DebugChannels["Child Added"].Pin.Add(Output));
       }
 
       private void Detach()
       {
-        Self.DebugChannelsPart.Pomoyka.Pin.Remove(Output);
+        foreach (EventSubscription subscription in AttachedPins)
+        {
+          subscription.Cancel();
+        }
+
+        AttachedPins.Clear();
       }
     }
   }

@@ -15,7 +15,7 @@ namespace CrabUI
     void IComponent.InjectParts()
     {
       Debugger.Self = this;
-      DebugChannelsPart.Self = this;
+      InitDebugChannels.Self = this;
       UpdateHandle.Self = this;
       DrawBeforeGUIHandle.Self = this;
       DrawAfterGUIHandle.Self = this;
@@ -25,7 +25,7 @@ namespace CrabUI
     void IComponent.InitParts()
     {
       Debugger.Init();
-      DebugChannelsPart.Init();
+      InitDebugChannels.Init();
     }
 
     void IComponent.InjectProps()

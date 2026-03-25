@@ -13,7 +13,8 @@ namespace CrabUI
   public partial class CUIInput
   {
 
-    private InputSettings InputSettings;
+    //TODO idk, are InputSettings part of CUIInput? Should they be created here or passed from CUICore?
+    public InputSettings InputSettings { get; } = new();
 
     public MouseInput Mouse { get; }
     public bool SomethingHappened => Mouse.SomethingHappened;
@@ -23,10 +24,9 @@ namespace CrabUI
       Mouse.Update(totalTime, mouse);
     }
 
-    public CUIInput(InputSettings inputSettings)
+    public CUIInput()
     {
-      InputSettings = inputSettings;
-      Mouse = new MouseInput(inputSettings);
+      Mouse = new MouseInput(InputSettings);
     }
   }
 }

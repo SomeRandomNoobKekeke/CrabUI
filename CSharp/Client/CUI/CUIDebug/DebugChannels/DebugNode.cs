@@ -9,6 +9,16 @@ namespace CrabUI
 {
   public abstract class DebugNode
   {
+    public class FakeEvent
+    {
+      public DebugNode Self { get; set; }
+
+      public EventSubscription Add(Delegate callback) => Self.AddToEvent(callback);
+    }
+
+    //TODO it's implemented in a most stupid way possible, make Clearable event accept delegate, juggle interfaces idk
+    public FakeEvent Event { get; } = new();
+
     public static int MaxID { get; private set; } = 0;
     public int ID { get; }
 
@@ -16,6 +26,7 @@ namespace CrabUI
 
     public ClearableEvent<DebugEvent> Pin { get; } = new();
 
+    protected abstract EventSubscription AddToEvent(Delegate callback);
     public EventSubscription Route(DebugNode prev, Delegate callback) => prev.Map(this, callback);
     public abstract EventSubscription Map(DebugNode next, Delegate callback);
     public abstract EventSubscription Map(DebugNode next);
@@ -30,6 +41,7 @@ namespace CrabUI
     public DebugNode()
     {
       ID = MaxID++;
+      Event.Self = this;
     }
 
     public override int GetHashCode() => ID;

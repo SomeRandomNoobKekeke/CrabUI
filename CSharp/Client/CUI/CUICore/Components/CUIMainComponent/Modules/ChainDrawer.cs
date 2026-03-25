@@ -10,12 +10,16 @@ using ComponentInjector;
 
 namespace CrabUI
 {
-  public partial class ChainDrawer : IModule
+  public class ChainDrawer : IModule
   {
+    public DebugNode<VisualUnit> Debug_DrawVisualUnit = new();
+
     public void Draw(ICUISpriteBatch spriteBatch, List<VisualUnit> flat)
     {
       foreach (VisualUnit unit in flat)
       {
+        Debug_DrawVisualUnit.Send(unit);
+
         switch (unit)
         {
           case VisualUnit.PrimitiveVisualElement primitive:

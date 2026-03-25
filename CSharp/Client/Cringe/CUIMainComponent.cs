@@ -18,6 +18,7 @@ namespace CrabUI
     void IComponent.InjectParts()
     {
       LayoutFlattener.Self = this;
+      InitDebugChannels.Self = this;
       Visual.Self = this;
       GlobalEvents.Self = this;
       (this as CrabUI.CUIComponent).Access.Self = this;
@@ -31,6 +32,7 @@ namespace CrabUI
 
     void IComponent.InitParts()
     {
+      InitDebugChannels.Init();
       Access.LayoutMarker.Init();
       Access.Layout.Init();
       (this as CrabUI.CUIComponent).Tree.Init();

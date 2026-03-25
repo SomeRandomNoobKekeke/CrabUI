@@ -6,13 +6,16 @@ using System.Diagnostics;
 using BaroJunk;
 using ComponentInjector;
 
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
+
 namespace CrabUI
 {
   public partial class CUICore
   {
     public class UpdateConnectionHandle : Part
     {
-      public void Update() => Self.LifeCycle.Update();
+      public void Update(double totalTime, MouseState mouse) => Self.LifeCycle.Update(totalTime, mouse);
     }
 
     public class DrawBeforeGUIConnectionHandle : Part

@@ -16,7 +16,7 @@ namespace CrabUI
   {
     private ClearableEvent<SpriteBatch> _BeforeGUIDraw = new();
     private ClearableEvent<SpriteBatch> _AfterGUIDraw = new();
-    private ClearableEvent _Update = new();
+    private ClearableEvent<GameTime> _Update = new();
 
 
     public event Action<SpriteBatch> BeforeGUIDraw
@@ -29,7 +29,7 @@ namespace CrabUI
       add => _AfterGUIDraw.Add(value);
       remove => _AfterGUIDraw.Remove(value);
     }
-    public event Action Update
+    public event Action<GameTime> Update
     {
       add => _Update.Add(value);
       remove => _Update.Remove(value);
@@ -58,7 +58,7 @@ namespace CrabUI
 
       GameMain.LuaCs.Hook.Patch(UpdateHook, UpdateMethod, (instance, ptable) =>
       {
-        _Update.Raise();
+        _Update.Raise((GameTime)ptable["gameTime"]);
         return null;
       }, LuaCsHook.HookMethodType.After);
     }

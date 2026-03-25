@@ -29,6 +29,11 @@ namespace CrabUI
           Msg = $"{Logger.White(child)} attached to {Logger.White(parent)}",
         },
       },
+      ["Draw Visual Unit"] = new DebugNode<VisualUnit>()
+      {
+        Factory = (u) => new DebugEvent() { Msg = $"Unit Drawn [{u}]" },
+      },
+      ["Visual Unit Flattened"] = new DebugNode<VisualUnit>(),
     };
 
 

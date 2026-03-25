@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Diagnostics;
 using BaroJunk;
-
+using Barotrauma;
 namespace CrabUI
 {
   public class SoloCUIRunner : ICUIRunner
@@ -47,11 +47,12 @@ namespace CrabUI
         }
       };
 
-      DataSources.LifeCycle.Update += () =>
+      DataSources.LifeCycle.Update += (gameTime) =>
       {
         try
         {
-          Core.UpdateHandle.Update();
+          //TODO extract real totalTime from gameTime
+          Core.UpdateHandle.Update(Timing.TotalTime, DataSources.Input.ScanMouse());
         }
         catch (Exception e)
         {

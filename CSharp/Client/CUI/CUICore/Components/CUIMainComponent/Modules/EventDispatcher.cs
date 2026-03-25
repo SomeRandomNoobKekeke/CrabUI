@@ -10,7 +10,7 @@ using ComponentInjector;
 
 namespace CrabUI
 {
-  public partial class EventDispatcher : IModule
+  public class EventDispatcher : IModule
   {
     public void Dispatch(IEventConsumer consumer, IEnumerable<InputEvent> events)
     {

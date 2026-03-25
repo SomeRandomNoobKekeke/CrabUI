@@ -12,7 +12,7 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-    public partial class LayoutFlattener : CUIComponent.Part, IModule
+    public class LayoutFlattener : CUIComponent.Part, IModule
     {
       public List<CUIComponent> Flat { get; } = new();
 

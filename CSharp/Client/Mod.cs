@@ -44,10 +44,8 @@ namespace CrabUIUser
       CUIComponent component = new CUIComponent()
       {
         BackgroundColor = Color.Red,
-        Absolute = new CUINullRect(100, 100, 100, 100),
+        Absolute = new CUINullRect(300, 300, 200, 100),
       };
-
-      // component.DebugChannel.ChildAdded.Map((c1, c2) => Logger.LogVars(c1, c2));
 
       CUI.Main.AddChild(component);
     }
@@ -57,7 +55,6 @@ namespace CrabUIUser
 
     public void Dispose()
     {
-
       CUI.Stop();
       Instance = null;
       UTestCommands.RemoveCommands();

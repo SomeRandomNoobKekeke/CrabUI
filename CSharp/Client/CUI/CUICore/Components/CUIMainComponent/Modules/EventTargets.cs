@@ -10,7 +10,7 @@ using ComponentInjector;
 
 namespace CrabUI
 {
-  public partial class EventTargets : IModule
+  public class EventTargets : IModule
   {
     public List<IEventConsumer> Targets { get; } = new();
     public IEventConsumer TopTarget { get; private set; }

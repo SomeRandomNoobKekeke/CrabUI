@@ -14,7 +14,7 @@ namespace CrabUI
     public class Part : IPart { public CUICore Self { get; set; } }
 
     public CUIMainComponent Main { get; } = new();
-
+    public CUIInput Input { get; } = new();
 
     public CUICore()
     {

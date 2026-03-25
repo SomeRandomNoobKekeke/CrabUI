@@ -14,12 +14,14 @@ namespace CrabUI
     {
       public IVisualElement Element;
       public PrimitiveVisualElement(IVisualElement element) => Element = element;
+      public override string ToString() => Element.ToString();
     }
 
     public class NestedVisualComponent : VisualUnit
     {
       public IVisualComponent Component;
       public NestedVisualComponent(IVisualComponent component) => Component = component;
+      public override string ToString() => Component.ToString();
     }
 
     public class LeftContextBound : VisualUnit { }

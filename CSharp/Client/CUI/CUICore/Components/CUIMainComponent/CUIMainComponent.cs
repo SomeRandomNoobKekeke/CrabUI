@@ -16,7 +16,7 @@ namespace CrabUI
 
     protected VisualFlattener VisualFlattener { get; } = new();
     protected LayoutFlattener LayoutFlattener { get; } = new();
-    protected ChainDrawer Drawer { get; } = new();
+    protected ChainDrawer ChainDrawer { get; } = new();
     protected EventDispatcher EventDispatcher { get; } = new();
     protected EventConstructor EventConstructor { get; } = new();
     protected EventTargets EventTargets { get; } = new();
@@ -30,11 +30,14 @@ namespace CrabUI
 
     public void DrawChildren(ICUISpriteBatch spriteBatch)
     {
-      Drawer.Draw(spriteBatch, VisualFlattener.Flat);
+
+      ChainDrawer.Draw(spriteBatch, VisualFlattener.Flat);
     }
 
     public void Update(double totalTime, CUIInput Input)
     {
+
+
       if (Tree.Changed)
       {
         Tree.Changed = false;

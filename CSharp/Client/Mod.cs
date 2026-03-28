@@ -43,9 +43,14 @@ namespace CrabUIUser
 
       CUIComponent component = new CUIComponent()
       {
-        BackgroundColor = Color.Red,
-        Absolute = new CUINullRect(300, 300, 200, 100),
+        BackgroundColor = Color.Lime,
+        Absolute = new CUINullRect(1400, 300, 200, 100),
       };
+
+      // component.onclick += (e) =>
+      // {
+      //   component.BackgroundColor = Color.Red;
+      // };
 
       CUI.Main.AddChild(component);
     }

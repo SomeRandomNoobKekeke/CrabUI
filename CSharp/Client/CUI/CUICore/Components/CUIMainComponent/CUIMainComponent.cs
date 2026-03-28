@@ -69,7 +69,7 @@ namespace CrabUI
       //   CUI.Logger.Log($"{target} {Logger.Wrap.IEnumerable(events)}");
       // }
 
-      EventDispatcher.Dispatch(GlobalEvents, EventConstructor.Events);
+      // EventDispatcher.Dispatch(GlobalEvents, EventConstructor.Events);
       EventDispatcher.Dispatch(EventTargets, EventConstructor);
     }
 

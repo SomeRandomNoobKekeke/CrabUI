@@ -1,19 +1,19 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
 using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
-using BaroJunk;
 using ComponentInjector;
-
+using BaroJunk;
 namespace CrabUI
 {
-  public partial class CUIMainComponent
+  public partial class CUIComponent
   {
-    protected GlobalEvents_Part GlobalEvents { get; } = new();
-    public class GlobalEvents_Part : Part, IMouseEventConsumer
+    protected Events_Part Events { get; } = new();
+    public class Events_Part : Part, IModule, IMouseEventConsumer
     {
       public ClearableEvent<CUIMouseDownEvent> MouseDown { get; } = new();
       public ClearableEvent<CUIMouseUpEvent> MouseUp { get; } = new();

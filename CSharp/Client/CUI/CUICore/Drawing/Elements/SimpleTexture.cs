@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
+using BaroJunk;
 
 namespace CrabUI
 {
@@ -15,11 +16,11 @@ namespace CrabUI
     public Color Color { get; set; }
 
 
-    public CUIEvent<CUIMouseDownEvent> MouseDown { get; set; } = new();
-    public CUIEvent<CUIMouseUpEvent> MouseUp { get; set; } = new();
-    public CUIEvent<CUIMouseClickEvent> MouseClick { get; set; } = new();
-    public CUIEvent<CUIMouseDoubleClickEvent> MouseDoubleClick { get; set; } = new();
-    public CUIEvent<CUIMouseMovedEvent> MouseMoved { get; set; } = new();
+    public ClearableEvent<CUIMouseDownEvent> MouseDown { get; } = new();
+    public ClearableEvent<CUIMouseUpEvent> MouseUp { get; } = new();
+    public ClearableEvent<CUIMouseClickEvent> MouseClick { get; } = new();
+    public ClearableEvent<CUIMouseDoubleClickEvent> MouseDoubleClick { get; } = new();
+    public ClearableEvent<CUIMouseMovedEvent> MouseMoved { get; } = new();
 
 
     public void Draw(ICUISpriteBatch spriteBatch)

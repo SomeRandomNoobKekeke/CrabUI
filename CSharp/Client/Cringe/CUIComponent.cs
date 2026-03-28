@@ -20,6 +20,7 @@ namespace CrabUI
       Access.Self = this;
       Access.LayoutMarker.Self = this;
       Access.Layout.Self = this;
+      Events.Self = this;
       MainComponentTracker.Self = this;
       Tree.Self = this;
       Visual.Self = this;
@@ -31,6 +32,7 @@ namespace CrabUI
     {
       Access.LayoutMarker.Init();
       Access.Layout.Init();
+      Events.Init();
       Tree.Init();
       FunnyProps.Init();
     }

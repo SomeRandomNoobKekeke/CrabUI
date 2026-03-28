@@ -24,6 +24,7 @@ namespace CrabUI
       (this as CrabUI.CUIComponent).Access.Self = this;
       Access.LayoutMarker.Self = this;
       Access.Layout.Self = this;
+      (this as CrabUI.CUIComponent).Events.Self = this;
       (this as CrabUI.CUIComponent).MainComponentTracker.Self = this;
       (this as CrabUI.CUIComponent).Tree.Self = this;
       (this as CrabUI.CUIComponent).FunnyProps.Self = this;
@@ -35,6 +36,7 @@ namespace CrabUI
       InitDebugChannels.Init();
       Access.LayoutMarker.Init();
       Access.Layout.Init();
+      (this as CrabUI.CUIComponent).Events.Init();
       (this as CrabUI.CUIComponent).Tree.Init();
       (this as CrabUI.CUIComponent).FunnyProps.Init();
     }

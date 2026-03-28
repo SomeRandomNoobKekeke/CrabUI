@@ -47,10 +47,10 @@ namespace CrabUIUser
         Absolute = new CUINullRect(1400, 300, 200, 100),
       };
 
-      // component.onclick += (e) =>
-      // {
-      //   component.BackgroundColor = Color.Red;
-      // };
+      component.MouseDown += (e) =>
+      {
+        component.BackgroundColor = component.BackgroundColor == Color.Red ? Color.Lime : Color.Red;
+      };
 
       CUI.Main.AddChild(component);
     }

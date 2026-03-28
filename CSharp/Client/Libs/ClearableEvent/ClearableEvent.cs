@@ -39,5 +39,30 @@ namespace BaroJunk
         Event -= (Action)callback;
       }
     }
+
+
+    public Dictionary<ClearableEvent, EventSubscription> Subscriptions = new();
+    public void Map(ClearableEvent e)
+    {
+      Subscriptions[e] = this.Add(() => e.Raise());
+    }
+
+    public void Unmap(ClearableEvent e)
+    {
+      Subscriptions[e].Cancel();
+      Subscriptions.Remove(e);
+    }
+
+    public void Route(ClearableEvent source) => source.Map(this);
+    public void Unroute(ClearableEvent source) => source.Map(this);
+
+    public void ClearMappings()
+    {
+      foreach (EventSubscription subscription in Subscriptions.Values)
+      {
+        subscription.Cancel();
+      }
+      Subscriptions.Clear();
+    }
   }
 }

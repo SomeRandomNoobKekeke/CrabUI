@@ -12,7 +12,7 @@ namespace CrabUI
 {
   public partial class CUIMainComponent
   {
-    protected GlobalEvents_Part GlobalEvents { get; } = new();
+    public GlobalEvents_Part GlobalEvents { get; } = new();
     public class GlobalEvents_Part : Part, IMouseEventConsumer
     {
       public ClearableEvent<CUIMouseDownEvent> MouseDown { get; } = new();

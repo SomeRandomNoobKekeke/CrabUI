@@ -16,6 +16,8 @@ namespace CrabUI
     public CUIComponent Parent => Tree.Parent;
 
 
+    public DragHandle DragHandle { get; } = new();
+
     public IReadOnlyList<CUIComponent> Children => Tree.ReadOnlyChildren;
     public void AddChild(CUIComponent child) => Tree.AddChild(child);
     public void RemoveChild(CUIComponent child) => Tree.RemoveChild(child);

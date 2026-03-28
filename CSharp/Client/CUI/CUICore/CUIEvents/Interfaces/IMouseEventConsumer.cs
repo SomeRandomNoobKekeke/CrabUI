@@ -17,4 +17,28 @@ namespace CrabUI
     public ClearableEvent<CUIMouseDoubleClickEvent> MouseDoubleClick { get; }
     public ClearableEvent<CUIMouseMovedEvent> MouseMoved { get; }
   }
+
+  public static class IMouseEventConsumer_Extensions
+  {
+    public static void Map(this IMouseEventConsumer self, IMouseEventConsumer target)
+    {
+      self.MouseDown.Map(target.MouseDown);
+      self.MouseUp.Map(target.MouseUp);
+      self.MouseClick.Map(target.MouseClick);
+      self.MouseDoubleClick.Map(target.MouseDoubleClick);
+      self.MouseMoved.Map(target.MouseMoved);
+    }
+
+    public static void Unmap(this IMouseEventConsumer self, IMouseEventConsumer target)
+    {
+      self.MouseDown.Unmap(target.MouseDown);
+      self.MouseUp.Unmap(target.MouseUp);
+      self.MouseClick.Unmap(target.MouseClick);
+      self.MouseDoubleClick.Unmap(target.MouseDoubleClick);
+      self.MouseMoved.Unmap(target.MouseMoved);
+    }
+
+    public static void Route(this IMouseEventConsumer self, IMouseEventConsumer source) => source.Map(self);
+    public static void Unroute(this IMouseEventConsumer self, IMouseEventConsumer source) => source.Unmap(self);
+  }
 }

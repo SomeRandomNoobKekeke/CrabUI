@@ -13,8 +13,6 @@ namespace CrabUI
       LayoutSlot.Host = Access.Layout;
       LayoutMarker.Host = Access.LayoutMarker;
       Tree.MainComponentTracker = MainComponentTracker;
-      DragHandle.Host = Access.IDraggable;
-      DragHandle.Hub = Access.IDragHandleHub;
     }
 
     void IComponent.InjectParts()

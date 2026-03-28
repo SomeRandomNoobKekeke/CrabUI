@@ -6,9 +6,9 @@ using System.Diagnostics;
 
 namespace BaroJunk
 {
-  public class ClearableEvent
+  public class ClearableEvent : ClearableEventBase
   {
-    private event Action Event;
+    protected event Action Event;
     public bool Empty => Event == null;
 
     public event Action<Action> OnSubscribed;

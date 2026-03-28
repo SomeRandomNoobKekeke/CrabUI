@@ -41,13 +41,5 @@ namespace BaroJunk
         Event -= (Action<@types>)callback;
       }
     }
-
-    public EventBridge<@types> CreateBridge(Action<@types> action)
-    {
-      return new EventBridge<@types>(this)
-      {
-        Action = action
-      };
-    }
   }
 }

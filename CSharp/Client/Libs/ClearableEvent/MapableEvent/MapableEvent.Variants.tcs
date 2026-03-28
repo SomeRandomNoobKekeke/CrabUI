@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Diagnostics;
+
+// @types = T1, T2
+// @argsPassed = arg1, arg2
+
+namespace BaroJunk
+{
+
+  public class MapableEvent<@types> : ClearableEvent<@types>
+  {
+    public Dictionary<ClearableEvent<@types>, EventSubscription> Subscriptions = new();
+
+    public void Map(ClearableEvent<@types> e)
+    {
+      Subscriptions[e] = this.Add((@argsPassed) => e.Raise(@argsPassed));
+    }
+
+    public void Unmap(ClearableEvent<@types> e)
+    {
+      Subscriptions[e].Cancel();
+      Subscriptions.Remove(e);
+    }
+
+    public void ClearMappings()
+    {
+      foreach (EventSubscription subscription in Subscriptions.Values)
+      {
+        subscription.Cancel();
+      }
+      Subscriptions.Clear();
+    }
+  }
+
+  public static partial class ClearableEvent_Extensions
+  {
+    public static void Route<@types>(this ClearableEvent<@types> target, MapableEvent<@types> source) => source.Map(target);
+    public static void Unroute<@types>(this ClearableEvent<@types> target, MapableEvent<@types> source) => source.Map(target);
+  }
+}

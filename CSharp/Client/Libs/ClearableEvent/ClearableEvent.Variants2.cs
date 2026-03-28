@@ -6,7 +6,7 @@ using System.Diagnostics;
 
 namespace BaroJunk
 {
-  public class ClearableEvent<T1, T2>
+  public class ClearableEvent<T1, T2> : ClearableEventBase
   {
     private event Action<T1, T2> Event;
     public bool Empty => Event == null;
@@ -36,14 +36,6 @@ namespace BaroJunk
       {
         Event -= (Action<T1, T2>)callback;
       }
-    }
-
-    public EventBridge<T1, T2> CreateBridge(Action<T1, T2> action)
-    {
-      return new EventBridge<T1, T2>(this)
-      {
-        Action = action
-      };
     }
   }
 }

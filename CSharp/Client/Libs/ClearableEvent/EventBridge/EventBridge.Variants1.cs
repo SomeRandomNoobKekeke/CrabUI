@@ -30,4 +30,12 @@ namespace BaroJunk
       SourceEvent = source;
     }
   }
+
+  public static partial class ClearableEvent_Extensions
+  {
+    public static EventBridge<T1> CreateBridge<T1>(this ClearableEvent<T1> self, Action<T1> action)
+    {
+      return new EventBridge<T1>(self) { Action = action };
+    }
+  }
 }

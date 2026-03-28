@@ -16,7 +16,7 @@ namespace CrabUI
       public EventSubscription Add(Delegate callback) => Self.AddToEvent(callback);
     }
 
-    //TODO it's implemented in a most stupid way possible, make Clearable event accept delegate, juggle interfaces idk
+    //CRINGE it's implemented in a most stupid way possible, make Clearable event accept delegate, juggle interfaces idk
     public FakeEvent Event { get; } = new();
 
     public static int MaxID { get; private set; } = 0;

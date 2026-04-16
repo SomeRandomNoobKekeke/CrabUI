@@ -10,6 +10,7 @@ namespace CrabUI
   {
     void IComponent.InjectModules()
     {
+      Visual.Tree = Tree;
       LayoutSlot.Host = Access_CUIComponent.Layout;
       LayoutMarker.Host = Access_CUIComponent.LayoutMarker;
       Tree.MainComponentTracker = MainComponentTracker;

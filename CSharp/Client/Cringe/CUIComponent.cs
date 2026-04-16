@@ -13,6 +13,7 @@ namespace CrabUI
       LayoutSlot.Host = Access_CUIComponent.Layout;
       LayoutMarker.Host = Access_CUIComponent.LayoutMarker;
       Tree.MainComponentTracker = MainComponentTracker;
+      Visual.Tree = Tree;
     }
 
     void IComponent.InjectParts()

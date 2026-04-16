@@ -25,7 +25,7 @@ namespace CrabUI
 
     public static CUISetup Setup { get; set; } = CUISetup.Default();
     public static void Start() => Setup.Start();
-    public static void Stop() => Setup.Stop();
+    public static void Stop() => Setup?.Stop();
 
     public static CUIMainComponent Main => Setup?.Core?.Main;
 
@@ -33,7 +33,7 @@ namespace CrabUI
 
     public static void Dispose()
     {
-      Setup.Stop();
+      Setup?.Stop();
       Setup = null;
     }
   }

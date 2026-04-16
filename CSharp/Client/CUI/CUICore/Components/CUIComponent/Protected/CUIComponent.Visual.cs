@@ -6,14 +6,17 @@ using System.Reflection;
 using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
+using ComponentInjector;
 
 namespace CrabUI
 {
   public partial class CUIComponent
   {
-    protected virtual Visual_Part Visual { get; } = new();
-    public class Visual_Part : Part, IVisualComponent
+    public virtual Visual_Part Visual { get; } = new();
+    public class Visual_Part : Part, IModule, IVisualComponent
     {
+      [In] public Tree_Part Tree { get; set; }
+
       public SimpleTexture Background { get; } = new();
 
       //TODO shouldn't this be in the interface?
@@ -26,7 +29,7 @@ namespace CrabUI
       {
         yield return new VisualUnit.PrimitiveVisualElement(Background);
         yield return new VisualUnit.LeftContextBound();
-        foreach (CUIComponent child in Self.Tree.Children)
+        foreach (CUIComponent child in Tree.Children)
         {
           yield return new VisualUnit.NestedVisualComponent(child.Visual);
         }

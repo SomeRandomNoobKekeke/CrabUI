@@ -34,8 +34,8 @@ namespace CrabUIUser
 
       try
       {
+        Init();
         Experiment();
-        // Init();
       }
       catch (Exception e) { Logger.Error(e); }
     }
@@ -63,7 +63,6 @@ namespace CrabUIUser
 
     public void Dispose()
     {
-      CUI.Stop();
       Instance = null;
       UTestCommands.RemoveCommands();
     }

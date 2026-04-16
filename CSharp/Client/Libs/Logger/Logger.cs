@@ -27,7 +27,10 @@ namespace BaroJunk
       },
     });
 
-    public static Logger Default = new Logger();
+    public static Logger Default = new Logger()
+    {
+      PrintFilePath = false,
+    };
 
     public static string WrapInColor(object msg, string color) => $"‖color:{color}‖{msg}‖end‖";
     public static string White(object msg) => $"‖color:white‖{msg}‖end‖";

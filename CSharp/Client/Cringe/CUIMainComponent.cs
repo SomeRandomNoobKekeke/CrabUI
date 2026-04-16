@@ -10,8 +10,8 @@ namespace CrabUI
   {
     void IComponent.InjectModules()
     {
-      LayoutSlot.Host = Access.Layout;
-      LayoutMarker.Host = Access.LayoutMarker;
+      LayoutSlot.Host = Access_CUIComponent.Layout;
+      LayoutMarker.Host = Access_CUIComponent.LayoutMarker;
       Tree.MainComponentTracker = MainComponentTracker;
     }
 
@@ -20,28 +20,28 @@ namespace CrabUI
       LayoutFlattener.Self = this;
       InitDebugChannels.Self = this;
       Visual.Self = this;
-      Access.Self = this;
+      Access_CUIMainComponent.Self = this;
       GlobalEvents.Self = this;
-      (this as CrabUI.CUIComponent).Access.Self = this;
-      Access.IDragHandleHub.Self = this;
-      Access.IDraggable.Self = this;
-      Access.LayoutMarker.Self = this;
-      Access.Layout.Self = this;
-      (this as CrabUI.CUIComponent).Events.Self = this;
-      (this as CrabUI.CUIComponent).MainComponentTracker.Self = this;
-      (this as CrabUI.CUIComponent).Tree.Self = this;
-      (this as CrabUI.CUIComponent).FunnyProps.Self = this;
-      (this as CrabUI.CUIComponent).LayoutProps.Self = this;
+      Access_CUIComponent.Self = this;
+      Access_CUIComponent.IDragHandleHub.Self = this;
+      Access_CUIComponent.IDraggable.Self = this;
+      Access_CUIComponent.LayoutMarker.Self = this;
+      Access_CUIComponent.Layout.Self = this;
+      Events.Self = this;
+      MainComponentTracker.Self = this;
+      Tree.Self = this;
+      FunnyProps.Self = this;
+      LayoutProps.Self = this;
     }
 
     void IComponent.InitParts()
     {
       InitDebugChannels.Init();
-      Access.LayoutMarker.Init();
-      Access.Layout.Init();
-      (this as CrabUI.CUIComponent).Events.Init();
-      (this as CrabUI.CUIComponent).Tree.Init();
-      (this as CrabUI.CUIComponent).FunnyProps.Init();
+      Access_CUIComponent.LayoutMarker.Init();
+      Access_CUIComponent.Layout.Init();
+      Events.Init();
+      Tree.Init();
+      FunnyProps.Init();
     }
 
     void IComponent.InjectProps()

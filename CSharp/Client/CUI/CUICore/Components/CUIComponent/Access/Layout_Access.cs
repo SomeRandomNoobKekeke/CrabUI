@@ -37,7 +37,7 @@ namespace CrabUI
         {
           //CRINGE i can't target ReadOnlyChildren because IReadOnlyList doesn't implement IList
           PlainLayout_Children = new ListProxy<CUIComponent, PlainLayout.Target>(
-            Self.Tree.Children, c => c.Access.Layout
+            Self.Tree.Children, c => c.Access_CUIComponent.Layout
           );
         }
         CUINullRect PlainLayout.Target.Absolute => Self.LayoutProps.Absolute.Value;

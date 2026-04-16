@@ -20,35 +20,50 @@ namespace BaroJunk
       AddHooks();
     }
 
+    public static string AssemblyName => Assembly.GetCallingAssembly().GetName().Name;
+
     public static List<DebugConsole.Command> AddedCommands = new List<DebugConsole.Command>();
 
     private static void AddHooks()
     {
-      GameMain.LuaCs.Hook.Add("stop", $"[{ModInfo.AssemblyName}].RemoveCommands", (object[] args) =>
+      LuaCsSetup.Instance.Hook.Add("stop", $"[{AssemblyName}].RemoveCommands", (object[] args) =>
       {
         RemoveCommands();
         return null;
       });
 
-      GameMain.LuaCs.Hook.Patch(
-        $"{ModInfo.AssemblyName}.PermitCommands",
-        typeof(DebugConsole).GetMethod("IsCommandPermitted", BindingFlags.NonPublic | BindingFlags.Static),
-        (object instance, LuaCsHook.ParameterTable ptable) =>
-        {
-          if (AddedCommands.Any(c => c.Names.Contains(((Identifier)ptable["command"]).Value)))
-          {
-            ptable.ReturnValue = true;
-            ptable.PreventExecution = true;
-          }
+      ((LuaCsSetup.Instance.EventService as EventService)
+           ._luaPatcher as LuaPatcherService)
+           .Patch($"{AssemblyName}.PermitCommands",
+              typeof(DebugConsole).GetMethod("IsCommandPermitted", BindingFlags.NonPublic | BindingFlags.Static),
+              (object instance, LuaPatcherService.ParameterTable ptable) =>
+              {
+                if (AddedCommands.Any(c => c.Names.Contains(((Identifier)ptable["command"]))))
+                {
+                  ptable.ReturnValue = true;
+                  ptable.PreventExecution = true;
+                }
 
-          return null;
-        }
-      );
+                return null;
+              }
+        );
+
+
     }
 
-    public static void Add(string name, Action<object[]> callback, Func<string[][]> hints = null, string help = "", bool addToStart = true)
+    public static void Add(string name, Action<string[]> callback, Func<string[][]> hints = null, string help = "", bool addToStart = true)
     {
-      DebugConsole.Command command = new DebugConsole.Command(name, help, callback, hints);
+      DebugConsole.Command command = new DebugConsole.Command(name, help, (string[] args) =>
+      {
+        try
+        {
+          callback(args);
+        }
+        catch (Exception e)
+        {
+          Logger.Default.Error(e.Message);
+        }
+      }, hints);
       AddedCommands.Add(command);
 
       if (addToStart)
@@ -67,16 +82,6 @@ namespace BaroJunk
       {
         Logger.Default.Log(command.Names[0]);
       }
-    }
-
-    public static void PrintHooks()
-    {
-      Logger.Default.Log(Logger.Wrap.IDictionary(
-        GameMain.LuaCs.Hook.hookFunctions.ToDictionary(
-          kvp => kvp.Key,
-          kvp => Logger.Wrap.IEnumerable(kvp.Value.Keys)
-        )
-      ));
     }
 
     public static void RemoveCommands()

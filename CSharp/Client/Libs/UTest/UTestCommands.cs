@@ -38,19 +38,21 @@ namespace BaroJunk
 #if CLIENT
     private static void PermitCommands()
     {
-      GameMain.LuaCs.Hook.Patch(
-        "permit utest",
-        typeof(DebugConsole).GetMethod("IsCommandPermitted", BindingFlags.NonPublic | BindingFlags.Static),
-        (object instance, LuaCsHook.ParameterTable ptable) =>
-        {
-          if (AddedCommands.Any(command => ((Identifier)ptable["command"]).Value == command.Names[0]))
-          {
-            ptable.ReturnValue = true;
-            ptable.PreventExecution = true;
-          }
-
-          return null;
-        }
+      ((LuaCsSetup.Instance.EventService as EventService)
+           ._luaPatcher as LuaPatcherService)
+           .Patch(
+              "permit utest",
+              typeof(DebugConsole).GetMethod("IsCommandPermitted", BindingFlags.NonPublic | BindingFlags.Static),
+              (object instance, LuaPatcherService.ParameterTable ptable) =>
+              {
+                if (AddedCommands.Any(command => ((Identifier)ptable["command"]).Value == command.Names[0]))
+                {
+                  ptable.ReturnValue = true;
+                  ptable.PreventExecution = true;
+                }
+      
+                return null;
+              }
       );
     }
 #endif

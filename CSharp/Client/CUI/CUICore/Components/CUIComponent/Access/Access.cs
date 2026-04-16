@@ -14,6 +14,6 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-    protected Access_Part Access { get; } = new();
+    protected Access_Part Access_CUIComponent { get; } = new();
   }
 }

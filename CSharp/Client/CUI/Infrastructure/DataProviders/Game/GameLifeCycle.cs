@@ -42,21 +42,32 @@ namespace CrabUI
     private static string BeforeDrawHook => $"{ModInfo.HookId}_CUI_BeforeDraw";
     private static string AfterDrawHook => $"{ModInfo.HookId}_CUI_AfterDraw";
     private static string UpdateHook => $"{ModInfo.HookId}_CUI_Update";
+
+
+    public void Patch(
+      string identifier,
+      MethodBase method,
+      LuaCsPatchFunc patch,
+      LuaCsHook.HookMethodType hookType = LuaCsHook.HookMethodType.Before
+    ) => ((LuaCsSetup.Instance.EventService as EventService)
+           ._luaPatcher as LuaPatcherService)
+           .Patch(identifier, method, patch, hookType);
+
     public void ConnectToGame()
     {
-      GameMain.LuaCs.Hook.Patch(BeforeDrawHook, GUIDrawMethod, (instance, ptable) =>
+      Patch(BeforeDrawHook, GUIDrawMethod, (instance, ptable) =>
       {
         _BeforeGUIDraw.Raise((SpriteBatch)ptable["spriteBatch"]);
         return null;
       }, LuaCsHook.HookMethodType.Before);
 
-      GameMain.LuaCs.Hook.Patch(AfterDrawHook, GUIDrawMethod, (instance, ptable) =>
+      Patch(AfterDrawHook, GUIDrawMethod, (instance, ptable) =>
       {
         _AfterGUIDraw.Raise((SpriteBatch)ptable["spriteBatch"]);
         return null;
       }, LuaCsHook.HookMethodType.After);
 
-      GameMain.LuaCs.Hook.Patch(UpdateHook, UpdateMethod, (instance, ptable) =>
+      Patch(UpdateHook, UpdateMethod, (instance, ptable) =>
       {
         _Update.Raise((GameTime)ptable["gameTime"]);
         return null;

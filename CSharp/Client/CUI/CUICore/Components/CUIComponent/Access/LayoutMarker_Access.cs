@@ -24,13 +24,13 @@ namespace CrabUI
           //TODO init Children here
         }
 
-        LayoutMarker.Target LayoutMarker.Target.Parent => Self.Tree.Parent?.Access.LayoutMarker;
+        LayoutMarker.Target LayoutMarker.Target.Parent => Self.Tree.Parent?.Access_CUIComponent.LayoutMarker;
         Layout LayoutMarker.Target.Layout => Self.LayoutSlot.Layout;
 
         IReadOnlyList<LayoutMarker.Target> LayoutMarker.Target.Children
           => new ListProxy<CUIComponent, LayoutMarker.Target>(
             Self.Tree.Children,
-            child => child.Access.LayoutMarker
+            child => child.Access_CUIComponent.LayoutMarker
           );
 
         void LayoutMarker.Target.NotifyMainComponent()

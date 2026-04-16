@@ -15,7 +15,10 @@ namespace CrabUIUser
   {
     public static Mod Instance;
 
-    public static Logger Logger { get; set; } = new();
+    public static Logger Logger { get; set; } = new()
+    {
+      PrintFilePath = false,
+    };
 
     public void Initialize()
     {
@@ -31,8 +34,8 @@ namespace CrabUIUser
 
       try
       {
-        Init();
         Experiment();
+        // Init();
       }
       catch (Exception e) { Logger.Error(e); }
     }

@@ -16,7 +16,10 @@ namespace CrabUI
       PluginLifeCycle.Stop += Dispose;
     }
 
-    public static Logger Logger = new() { PrintFilePath = false, };
+    public static Logger Logger = new()
+    {
+      PrintFilePath = false,
+    };
 
 
 

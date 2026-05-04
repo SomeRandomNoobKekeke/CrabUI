@@ -22,7 +22,6 @@ namespace CrabUI
         if (host is not null) DisconnectFromHost(host);
 
         host = value;
-        CUI.Logger.LogVars(host);
         if (host is not null) ConnectToHost(host);
       }
     }

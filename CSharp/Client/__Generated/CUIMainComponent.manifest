@@ -1,76 +1,83 @@
 ComponentInfo for CUIMainComponent
 Parts:
- - CUIMainComponent 
- - CUIMainComponent.InitDebugChannels_Part InitDebugChannels
- - CUIComponent.Visual_Part Visual
- - CUIMainComponent.Adapters_Part Adapters
- - CUIMainComponent.Adapters_Part.IDragHandleHub_Adapter Adapters.IDragHandleHub
- - CUIMainComponent.GlobalEvents_Part GlobalEvents
- - CUIComponent.Adapters_Part Adapters
- - CUIComponent.Adapters_Part.IDraggable_Adapter Adapters.IDraggable
- - CUIComponent.Adapters_Part.IDragHandleHub_Adapter Adapters.IDragHandleHub
- - CUIComponent.Adapters_Part.Layout_Adapter Adapters.Layout
- - CUIComponent.Adapters_Part.LayoutMarker_Adapter Adapters.LayoutMarker
- - CUIComponent.Events_Part Events
- - CUIComponent.MainComponentTracker_Part MainComponentTracker
- - CUIComponent.Tree_Part Tree
- - CUIComponent.FunnyProps_Part FunnyProps
- - CUIComponent.LayoutProps_Part LayoutProps
+ - Part   :  CUIMainComponent
+ - Part InitDebugChannels  :  CUIMainComponent.InitDebugChannels_Part
+ - Part Visual  :  CUIComponent.Visual_Part
+ - Part Adapters  :  CUIMainComponent.Adapters_Part
+ - Part Adapters.IDragHandleHub  :  CUIMainComponent.Adapters_Part.IDragHandleHub_Adapter
+ - Part GlobalEvents  :  CUIMainComponent.GlobalEvents_Part
+ - Part Adapters  :  CUIComponent.Adapters_Part
+ - Part Adapters.IDraggable  :  CUIComponent.Adapters_Part.IDraggable_Adapter
+ - Part Adapters.IDragHandleHub  :  CUIComponent.Adapters_Part.IDragHandleHub_Adapter
+ - Part Adapters.Layout  :  CUIComponent.Adapters_Part.Layout_Adapter
+ - Part Adapters.LayoutMarker  :  CUIComponent.Adapters_Part.LayoutMarker_Adapter
+ - Part Events  :  CUIComponent.Events_Part
+ - Part MainComponentTracker  :  CUIComponent.MainComponentTracker_Part
+ - Part Tree  :  CUIComponent.Tree_Part
+ - Part FunnyProps  :  CUIComponent.FunnyProps_Part
+ - Part LayoutProps  :  CUIComponent.LayoutProps_Part
 Modules:
- - VisualFlattener VisualFlattener
- - LayoutFlattener LayoutFlattener
- - ChainDrawer ChainDrawer
- - EventDispatcher EventDispatcher
- - EventConstructor EventConstructor
- - EventTargets EventTargets
- - CUIComponent.Visual_Part Visual
- - LayoutSlot LayoutSlot
- - LayoutMarker LayoutMarker
- - CUIComponent.Events_Part Events
- - CUIComponent.MainComponentTracker_Part MainComponentTracker
- - CUIComponent.Tree_Part Tree
- - DragHandle DragHandle
- - Layout Layout
- - CUIMainComponent.Adapters_Part.IDragHandleHub_Adapter Adapters.IDragHandleHub
- - CUIComponent.Adapters_Part.IDraggable_Adapter Adapters.IDraggable
- - CUIComponent.Adapters_Part.IDragHandleHub_Adapter Adapters.IDragHandleHub
- - CUIComponent.Adapters_Part.Layout_Adapter Adapters.Layout
- - CUIComponent.Adapters_Part.LayoutMarker_Adapter Adapters.LayoutMarker
+ - Module VisualFlattener  :  VisualFlattener
+ - Module LayoutFlattener  :  LayoutFlattener
+ - Module ChainDrawer  :  ChainDrawer
+ - Module EventDispatcher  :  EventDispatcher
+ - Module EventConstructor  :  EventConstructor
+ - Module EventTargets  :  EventTargets
+ - Module Visual  :  CUIComponent.Visual_Part
+ - Module LayoutSlot  :  LayoutSlot
+ - Module LayoutMarker  :  LayoutMarker
+ - Module Events  :  CUIComponent.Events_Part
+ - Module MainComponentTracker  :  CUIComponent.MainComponentTracker_Part
+ - Module Tree  :  CUIComponent.Tree_Part
+ - Module DragHandle  :  DragHandle
+ - Module Layout  :  Layout
+ - Module Adapters.IDragHandleHub  :  CUIMainComponent.Adapters_Part.IDragHandleHub_Adapter
+ - Module Adapters.IDraggable  :  CUIComponent.Adapters_Part.IDraggable_Adapter
+ - Module Adapters.IDragHandleHub  :  CUIComponent.Adapters_Part.IDragHandleHub_Adapter
+ - Module Adapters.Layout  :  CUIComponent.Adapters_Part.Layout_Adapter
+ - Module Adapters.LayoutMarker  :  CUIComponent.Adapters_Part.LayoutMarker_Adapter
+Injectables:
+ - CUIMainComponent : 
+ - CUIMainComponent.InitDebugChannels_Part : InitDebugChannels
+ - CUIMainComponent.Adapters_Part : Adapters
+ - CUIMainComponent.GlobalEvents_Part : GlobalEvents
+ - IMouseEventConsumer : GlobalEvents
+ - IEventConsumer : GlobalEvents
+ - CUIComponent.Adapters_Part : Adapters
+ - CUIComponent.FunnyProps_Part : FunnyProps
+ - CUIComponent.LayoutProps_Part : LayoutProps
+ - ICUILayoutProp.IContainer : LayoutProps
+ - VisualFlattener : VisualFlattener
+ - LayoutFlattener : LayoutFlattener
+ - ChainDrawer : ChainDrawer
+ - EventDispatcher : EventDispatcher
+ - EventConstructor : EventConstructor
+ - EventTargets : EventTargets
+ - CUIComponent.Visual_Part : Visual
+ - IVisualComponent : Visual
+ - LayoutSlot : LayoutSlot
+ - LayoutMarker : LayoutMarker
+ - CUIComponent.Events_Part : Events
+ - CUIComponent.MainComponentTracker_Part : MainComponentTracker
+ - CUIComponent.Tree_Part : Tree
+ - DragHandle : DragHandle
+ - Layout : Layout
+ - CUIMainComponent.Adapters_Part.IDragHandleHub_Adapter : Adapters.IDragHandleHub
+ - IDragHandleHub : Adapters.IDragHandleHub
+ - CUIComponent.Adapters_Part.IDraggable_Adapter : Adapters.IDraggable
+ - IDraggable : Adapters.IDraggable
+ - CUIComponent.Adapters_Part.IDragHandleHub_Adapter : Adapters.IDragHandleHub
+ - CUIComponent.Adapters_Part.Layout_Adapter : Adapters.Layout
+ - Layout.Target : Adapters.Layout
+ - PlainLayout.Target : Adapters.Layout
+ - CUIComponent.Adapters_Part.LayoutMarker_Adapter : Adapters.LayoutMarker
+ - LayoutMarker.Target : Adapters.LayoutMarker
 Dependencies:
- - CUIComponent.Tree_Part => CUIComponent.Visual_Part Visual.Tree
- - CUIComponent.MainComponentTracker_Part => CUIComponent.Tree_Part Tree.MainComponentTracker
- - Layout.Target => LayoutSlot LayoutSlot.Host
- - LayoutMarker.Target => LayoutMarker LayoutMarker.Host
- - IDragHandleHub => DragHandle DragHandle.Hub
- - IDraggable => DragHandle DragHandle.Host
+ - CUIComponent.Tree_Part => CUIMainComponent.Visual.Tree
+ - CUIComponent.MainComponentTracker_Part => CUIMainComponent.Tree.MainComponentTracker
+ - Layout.Target => CUIMainComponent.LayoutSlot.Host
+ - LayoutMarker.Target => CUIMainComponent.LayoutMarker.Host
+ - IDragHandleHub => CUIMainComponent.DragHandle.Hub
+ - IDraggable => CUIMainComponent.DragHandle.Host
 Errors:
- - Ambiguous dependency [IEndPart]: [Adapters.IDraggable] - [Adapters.IDraggable]
- - Ambiguous dependency [IEndPart]: [Adapters.IDragHandleHub] - [Adapters.IDragHandleHub]
- - Ambiguous dependency [IDragHandleHub]: [Adapters.IDragHandleHub] - [Adapters.IDragHandleHub]
- - Ambiguous dependency [IEndPart]: [Adapters.Layout] - [Adapters.Layout]
- - Ambiguous dependency [IEndPart]: [Adapters.LayoutMarker] - [Adapters.LayoutMarker]
- - Ambiguous dependency [IMouseEventConsumer]: [Events] - [Events]
- - Ambiguous dependency [IEventConsumer]: [Events] - [Events]
- - Ambiguous dependency [CUIComponent.Visual_Part]: [Visual] - [Visual]
- - Ambiguous dependency [IVisualComponent]: [Visual] - [Visual]
- - Ambiguous dependency [CUIComponent.Events_Part]: [Events] - [Events]
- - Ambiguous dependency [IMouseEventConsumer]: [Events] - [Events]
- - Ambiguous dependency [IEventConsumer]: [Events] - [Events]
- - Ambiguous dependency [CUIComponent.MainComponentTracker_Part]: [MainComponentTracker] - [MainComponentTracker]
- - Ambiguous dependency [CUIComponent.Tree_Part]: [Tree] - [Tree]
- - Ambiguous dependency [CUIMainComponent.Adapters_Part.IDragHandleHub_Adapter]: [Adapters.IDragHandleHub] - [Adapters.IDragHandleHub]
- - Ambiguous dependency [IEndPart]: [Adapters.IDragHandleHub] - [Adapters.IDragHandleHub]
- - Ambiguous dependency [IDragHandleHub]: [Adapters.IDragHandleHub] - [Adapters.IDragHandleHub]
- - Ambiguous dependency [CUIComponent.Adapters_Part.IDraggable_Adapter]: [Adapters.IDraggable] - [Adapters.IDraggable]
- - Ambiguous dependency [IEndPart]: [Adapters.IDraggable] - [Adapters.IDraggable]
- - Ambiguous dependency [IDraggable]: [Adapters.IDraggable] - [Adapters.IDraggable]
- - Ambiguous dependency [CUIComponent.Adapters_Part.IDragHandleHub_Adapter]: [Adapters.IDragHandleHub] - [Adapters.IDragHandleHub]
- - Ambiguous dependency [IEndPart]: [Adapters.IDragHandleHub] - [Adapters.IDragHandleHub]
- - Ambiguous dependency [IDragHandleHub]: [Adapters.IDragHandleHub] - [Adapters.IDragHandleHub]
- - Ambiguous dependency [CUIComponent.Adapters_Part.Layout_Adapter]: [Adapters.Layout] - [Adapters.Layout]
- - Ambiguous dependency [IEndPart]: [Adapters.Layout] - [Adapters.Layout]
- - Ambiguous dependency [Layout.Target]: [Adapters.Layout] - [Adapters.Layout]
- - Ambiguous dependency [PlainLayout.Target]: [Adapters.Layout] - [Adapters.Layout]
- - Ambiguous dependency [CUIComponent.Adapters_Part.LayoutMarker_Adapter]: [Adapters.LayoutMarker] - [Adapters.LayoutMarker]
- - Ambiguous dependency [IEndPart]: [Adapters.LayoutMarker] - [Adapters.LayoutMarker]
- - Ambiguous dependency [LayoutMarker.Target]: [Adapters.LayoutMarker] - [Adapters.LayoutMarker]
+ - Ambiguous dependency [IDragHandleHub]: [CUIComponent.Adapters.IDragHandleHub] - [CUIMainComponent.Adapters.IDragHandleHub]

@@ -23,11 +23,7 @@ namespace CrabUIUser
     public void Initialize()
     {
       Instance = this;
-      if (ModStorage.Has("ReloadRequest"))
-      {
-        Logger.Log($"Reload requested, exiting");
-        return;
-      }
+      if (ModStorage.Has("ReloadRequest")) { return; }
 
       Logger.Log($"Compiled somehow");
       // UTestCommands.AddCommands();

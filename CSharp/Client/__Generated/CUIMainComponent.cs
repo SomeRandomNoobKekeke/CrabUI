@@ -12,8 +12,8 @@ namespace CrabUI
     protected Self_As_CUIMainComponent As_CUIMainComponent { get; } = new();
     void IComponent.InjectModules()
     {
-      As_CUIComponent.Visual.Tree = As_CUIComponent.Tree;
-      As_CUIComponent.Tree.MainComponentTracker = As_CUIComponent.MainComponentTracker;
+      As_CUIComponent.Visual.Tree = As_CUIMainComponent.Tree;
+      As_CUIComponent.Tree.MainComponentTracker = As_CUIMainComponent.MainComponentTracker;
       As_CUIMainComponent.LayoutSlot.Host = As_CUIComponent.Adapters.Layout;
       As_CUIMainComponent.LayoutMarker.Host = As_CUIComponent.Adapters.LayoutMarker;
       As_CUIMainComponent.DragHandle.Hub = As_CUIMainComponent.Adapters.IDragHandleHub;

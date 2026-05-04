@@ -24,12 +24,12 @@ namespace CrabUI
     {
       As_CUIComponent.Self = this;
       As_CUIMainComponent.Self = this;
-
+      
       As_CUIMainComponent.InitDebugChannels.Self = this;
+      As_CUIMainComponent.GlobalEvents.Self = this;
       As_CUIComponent.Visual.Self = this;
       As_CUIMainComponent.Adapters.Self = this;
       As_CUIMainComponent.Adapters.IDragHandleHub.Self = this;
-      As_CUIMainComponent.GlobalEvents.Self = this;
       As_CUIComponent.Adapters.Self = this;
       As_CUIComponent.Adapters.IDraggable.Self = this;
       As_CUIComponent.Adapters.IDragHandleHub.Self = this;
@@ -66,26 +66,26 @@ namespace CrabUI
       As_CUIComponent.LayoutProps.Relative.Container = As_CUIComponent.LayoutProps;
     }
 
-    protected class Self_As_CUIMainComponent : IAdapterPart
-    {
-      public CUIMainComponent.InitDebugChannels_Part InitDebugChannels => Self.InitDebugChannels;
-      public CUIMainComponent.Adapters_Part Adapters => Self.Adapters;
-      public CUIMainComponent.GlobalEvents_Part GlobalEvents => Self.GlobalEvents;
-      public VisualFlattener VisualFlattener => Self.VisualFlattener;
-      public LayoutFlattener LayoutFlattener => Self.LayoutFlattener;
-      public ChainDrawer ChainDrawer => Self.ChainDrawer;
-      public EventDispatcher EventDispatcher => Self.EventDispatcher;
-      public EventConstructor EventConstructor => Self.EventConstructor;
-      public EventTargets EventTargets => Self.EventTargets;
-      public CUIComponent.Visual_Part Visual => Self.Visual;
-      public LayoutSlot LayoutSlot => Self.LayoutSlot;
-      public LayoutMarker LayoutMarker => Self.LayoutMarker;
-      public CUIComponent.Events_Part Events => Self.Events;
-      public CUIComponent.MainComponentTracker_Part MainComponentTracker => Self.MainComponentTracker;
-      public CUIComponent.Tree_Part Tree => Self.Tree;
-      public DragHandle DragHandle => Self.DragHandle;
-      public Layout Layout => Self.Layout;
-      public CUIMainComponent Self { get; set; }
-    }
+  protected class Self_As_CUIMainComponent : IAdapterPart
+  {
+    public CUIMainComponent.InitDebugChannels_Part InitDebugChannels => Self.InitDebugChannels;
+    public CUIMainComponent.GlobalEvents_Part GlobalEvents => Self.GlobalEvents;
+    public CUIMainComponent.Adapters_Part Adapters => Self.Adapters;
+    public VisualFlattener VisualFlattener => Self.VisualFlattener;
+    public LayoutFlattener LayoutFlattener => Self.LayoutFlattener;
+    public ChainDrawer ChainDrawer => Self.ChainDrawer;
+    public EventDispatcher EventDispatcher => Self.EventDispatcher;
+    public EventConstructor EventConstructor => Self.EventConstructor;
+    public EventTargets EventTargets => Self.EventTargets;
+    public CUIComponent.Visual_Part Visual => Self.Visual;
+    public LayoutSlot LayoutSlot => Self.LayoutSlot;
+    public LayoutMarker LayoutMarker => Self.LayoutMarker;
+    public CUIComponent.Events_Part Events => Self.Events;
+    public CUIComponent.MainComponentTracker_Part MainComponentTracker => Self.MainComponentTracker;
+    public CUIComponent.Tree_Part Tree => Self.Tree;
+    public DragHandle DragHandle => Self.DragHandle;
+    public Layout Layout => Self.Layout;
+    public CUIMainComponent Self { get; set; }
+  }
   }
 }

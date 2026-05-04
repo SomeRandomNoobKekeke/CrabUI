@@ -3,18 +3,14 @@ Parts:
  -   :  CUICore
  - Debugger  :  CUICore.Debugger_Part
  - InitDebugChannels  :  CUICore.InitDebugChannels_Part
- - UpdateHandle  :  CUICore.UpdateConnectionHandle
- - DrawBeforeGUIHandle  :  CUICore.DrawBeforeGUIConnectionHandle
- - DrawAfterGUIHandle  :  CUICore.DrawAfterGUIConnectionHandle
+ - CUIRunnerHandle  :  CUICore.CUIRunnerHandle_Part
  - LifeCycle  :  CUICore.LifeCycle_Part
 Modules:
 Injectables:
- - CUICore : 
- - CUICore.Debugger_Part : Debugger
- - CUICore.InitDebugChannels_Part : InitDebugChannels
- - CUICore.UpdateConnectionHandle : UpdateHandle
- - CUICore.DrawBeforeGUIConnectionHandle : DrawBeforeGUIHandle
- - CUICore.DrawAfterGUIConnectionHandle : DrawAfterGUIHandle
- - CUICore.LifeCycle_Part : LifeCycle
+ - CUICore  :  
+ - CUICore.Debugger_Part  :  Debugger
+ - CUICore.InitDebugChannels_Part  :  InitDebugChannels
+ - CUICore.CUIRunnerHandle_Part  :  CUIRunnerHandle
+ - CUICore.LifeCycle_Part  :  LifeCycle
 Dependencies:
 Errors:

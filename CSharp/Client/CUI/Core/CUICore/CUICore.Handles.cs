@@ -13,23 +13,13 @@ namespace CrabUI
 {
   public partial class CUICore
   {
-    public class UpdateConnectionHandle : Part
+    public class CUIRunnerHandle_Part : Part
     {
       public void Update(double totalTime, MouseState mouse) => Self.LifeCycle.Update(totalTime, mouse);
+      public void DrawBeforeGUI(ICUISpriteBatch spriteBatch) => Self.LifeCycle.DrawBeforeGUI(spriteBatch);
+      public void DrawAfterGUI(ICUISpriteBatch spriteBatch) => Self.LifeCycle.DrawAfterGUI(spriteBatch);
     }
 
-    public class DrawBeforeGUIConnectionHandle : Part
-    {
-      public void Draw(ICUISpriteBatch spriteBatch) => Self.LifeCycle.DrawBeforeGUI(spriteBatch);
-    }
-
-    public class DrawAfterGUIConnectionHandle : Part
-    {
-      public void Draw(ICUISpriteBatch spriteBatch) => Self.LifeCycle.DrawAfterGUI(spriteBatch);
-    }
-
-    public UpdateConnectionHandle UpdateHandle { get; } = new();
-    public DrawBeforeGUIConnectionHandle DrawBeforeGUIHandle { get; } = new();
-    public DrawAfterGUIConnectionHandle DrawAfterGUIHandle { get; } = new();
+    public CUIRunnerHandle_Part CUIRunnerHandle { get; } = new();
   }
 }

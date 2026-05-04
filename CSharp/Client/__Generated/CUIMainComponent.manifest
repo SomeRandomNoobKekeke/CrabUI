@@ -2,10 +2,10 @@ ComponentInfo for CUIMainComponent
 Parts:
  -   :  CUIMainComponent
  - InitDebugChannels  :  CUIMainComponent.InitDebugChannels_Part
+ - GlobalEvents  :  CUIMainComponent.GlobalEvents_Part
  - Visual  :  CUIComponent.Visual_Part
  - Adapters  :  CUIMainComponent.Adapters_Part
  - Adapters.IDragHandleHub  :  CUIMainComponent.Adapters_Part.IDragHandleHub_Adapter
- - GlobalEvents  :  CUIMainComponent.GlobalEvents_Part
  - Adapters  :  CUIComponent.Adapters_Part
  - Adapters.IDraggable  :  CUIComponent.Adapters_Part.IDraggable_Adapter
  - Adapters.IDragHandleHub  :  CUIComponent.Adapters_Part.IDragHandleHub_Adapter
@@ -37,41 +37,41 @@ Modules:
  - Adapters.Layout  :  CUIComponent.Adapters_Part.Layout_Adapter
  - Adapters.LayoutMarker  :  CUIComponent.Adapters_Part.LayoutMarker_Adapter
 Injectables:
- - CUIMainComponent : 
- - CUIMainComponent.InitDebugChannels_Part : InitDebugChannels
- - CUIMainComponent.Adapters_Part : Adapters
- - CUIMainComponent.GlobalEvents_Part : GlobalEvents
- - IMouseEventConsumer : GlobalEvents
- - IEventConsumer : GlobalEvents
- - CUIComponent.Adapters_Part : Adapters
- - CUIComponent.FunnyProps_Part : FunnyProps
- - CUIComponent.LayoutProps_Part : LayoutProps
- - ICUILayoutProp.IContainer : LayoutProps
- - VisualFlattener : VisualFlattener
- - LayoutFlattener : LayoutFlattener
- - ChainDrawer : ChainDrawer
- - EventDispatcher : EventDispatcher
- - EventConstructor : EventConstructor
- - EventTargets : EventTargets
- - CUIComponent.Visual_Part : Visual
- - IVisualComponent : Visual
- - LayoutSlot : LayoutSlot
- - LayoutMarker : LayoutMarker
- - CUIComponent.Events_Part : Events
- - CUIComponent.MainComponentTracker_Part : MainComponentTracker
- - CUIComponent.Tree_Part : Tree
- - DragHandle : DragHandle
- - Layout : Layout
- - CUIMainComponent.Adapters_Part.IDragHandleHub_Adapter : Adapters.IDragHandleHub
- - IDragHandleHub : Adapters.IDragHandleHub
- - CUIComponent.Adapters_Part.IDraggable_Adapter : Adapters.IDraggable
- - IDraggable : Adapters.IDraggable
- - CUIComponent.Adapters_Part.IDragHandleHub_Adapter : Adapters.IDragHandleHub
- - CUIComponent.Adapters_Part.Layout_Adapter : Adapters.Layout
- - Layout.Target : Adapters.Layout
- - PlainLayout.Target : Adapters.Layout
- - CUIComponent.Adapters_Part.LayoutMarker_Adapter : Adapters.LayoutMarker
- - LayoutMarker.Target : Adapters.LayoutMarker
+ - CUIMainComponent  :  
+ - CUIMainComponent.InitDebugChannels_Part  :  InitDebugChannels
+ - CUIMainComponent.GlobalEvents_Part  :  GlobalEvents
+ - IMouseEventConsumer  :  GlobalEvents
+ - IEventConsumer  :  GlobalEvents
+ - CUIMainComponent.Adapters_Part  :  Adapters
+ - CUIComponent.Adapters_Part  :  Adapters
+ - CUIComponent.FunnyProps_Part  :  FunnyProps
+ - CUIComponent.LayoutProps_Part  :  LayoutProps
+ - ICUILayoutProp.IContainer  :  LayoutProps
+ - VisualFlattener  :  VisualFlattener
+ - LayoutFlattener  :  LayoutFlattener
+ - ChainDrawer  :  ChainDrawer
+ - EventDispatcher  :  EventDispatcher
+ - EventConstructor  :  EventConstructor
+ - EventTargets  :  EventTargets
+ - CUIComponent.Visual_Part  :  Visual
+ - IVisualComponent  :  Visual
+ - LayoutSlot  :  LayoutSlot
+ - LayoutMarker  :  LayoutMarker
+ - CUIComponent.Events_Part  :  Events
+ - CUIComponent.MainComponentTracker_Part  :  MainComponentTracker
+ - CUIComponent.Tree_Part  :  Tree
+ - DragHandle  :  DragHandle
+ - Layout  :  Layout
+ - CUIMainComponent.Adapters_Part.IDragHandleHub_Adapter  :  Adapters.IDragHandleHub
+ - IDragHandleHub  :  Adapters.IDragHandleHub
+ - CUIComponent.Adapters_Part.IDraggable_Adapter  :  Adapters.IDraggable
+ - IDraggable  :  Adapters.IDraggable
+ - CUIComponent.Adapters_Part.IDragHandleHub_Adapter  :  Adapters.IDragHandleHub
+ - CUIComponent.Adapters_Part.Layout_Adapter  :  Adapters.Layout
+ - Layout.Target  :  Adapters.Layout
+ - PlainLayout.Target  :  Adapters.Layout
+ - CUIComponent.Adapters_Part.LayoutMarker_Adapter  :  Adapters.LayoutMarker
+ - LayoutMarker.Target  :  Adapters.LayoutMarker
 Dependencies:
  - CUIComponent.Tree_Part => CUIMainComponent.Visual.Tree
  - CUIComponent.MainComponentTracker_Part => CUIMainComponent.Tree.MainComponentTracker

@@ -24,7 +24,7 @@ namespace CrabUI
         try
         {
           SpriteBatch.XNASpriteBatch = spritebatch;
-          Core.DrawAfterGUIHandle.Draw(SpriteBatch);
+          Core.CUIRunnerHandle.DrawAfterGUI(SpriteBatch);
         }
         catch (Exception e)
         {
@@ -38,7 +38,7 @@ namespace CrabUI
         try
         {
           SpriteBatch.XNASpriteBatch = spritebatch;
-          Core.DrawBeforeGUIHandle.Draw(SpriteBatch);
+          Core.CUIRunnerHandle.DrawBeforeGUI(SpriteBatch);
         }
         catch (Exception e)
         {
@@ -52,7 +52,7 @@ namespace CrabUI
         try
         {
           //TODO extract real totalTime from gameTime
-          Core.UpdateHandle.Update(Timing.TotalTime, DataSources.Input.ScanMouse());
+          Core.CUIRunnerHandle.Update(Timing.TotalTime, DataSources.Input.ScanMouse());
         }
         catch (Exception e)
         {

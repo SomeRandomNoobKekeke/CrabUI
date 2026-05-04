@@ -17,12 +17,10 @@ namespace CrabUI
     void IComponent.InjectParts()
     {
       As_CUICore.Self = this;
-
+      
       As_CUICore.Debugger.Self = this;
       As_CUICore.InitDebugChannels.Self = this;
-      As_CUICore.UpdateHandle.Self = this;
-      As_CUICore.DrawBeforeGUIHandle.Self = this;
-      As_CUICore.DrawAfterGUIHandle.Self = this;
+      As_CUICore.CUIRunnerHandle.Self = this;
       As_CUICore.LifeCycle.Self = this;
     }
 
@@ -40,15 +38,13 @@ namespace CrabUI
     {
     }
 
-    protected class Self_As_CUICore : IAdapterPart
-    {
-      public CUICore.Debugger_Part Debugger => Self.Debugger;
-      public CUICore.InitDebugChannels_Part InitDebugChannels => Self.InitDebugChannels;
-      public CUICore.UpdateConnectionHandle UpdateHandle => Self.UpdateHandle;
-      public CUICore.DrawBeforeGUIConnectionHandle DrawBeforeGUIHandle => Self.DrawBeforeGUIHandle;
-      public CUICore.DrawAfterGUIConnectionHandle DrawAfterGUIHandle => Self.DrawAfterGUIHandle;
-      public CUICore.LifeCycle_Part LifeCycle => Self.LifeCycle;
-      public CUICore Self { get; set; }
-    }
+  protected class Self_As_CUICore : IAdapterPart
+  {
+    public CUICore.Debugger_Part Debugger => Self.Debugger;
+    public CUICore.InitDebugChannels_Part InitDebugChannels => Self.InitDebugChannels;
+    public CUICore.CUIRunnerHandle_Part CUIRunnerHandle => Self.CUIRunnerHandle;
+    public CUICore.LifeCycle_Part LifeCycle => Self.LifeCycle;
+    public CUICore Self { get; set; }
+  }
   }
 }

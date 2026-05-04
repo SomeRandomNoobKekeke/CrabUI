@@ -23,7 +23,7 @@ namespace CrabUI
     void IComponent.InjectParts()
     {
       As_CUIComponent.Self = this;
-
+      
       As_CUIComponent.Adapters.Self = this;
       As_CUIComponent.Adapters.IDraggable.Self = this;
       As_CUIComponent.Adapters.IDragHandleHub.Self = this;
@@ -60,20 +60,20 @@ namespace CrabUI
       As_CUIComponent.LayoutProps.Relative.Container = As_CUIComponent.LayoutProps;
     }
 
-    protected class Self_As_CUIComponent : IAdapterPart
-    {
-      public CUIComponent.Adapters_Part Adapters => Self.Adapters;
-      public CUIComponent.FunnyProps_Part FunnyProps => Self.FunnyProps;
-      public CUIComponent.LayoutProps_Part LayoutProps => Self.LayoutProps;
-      public LayoutSlot LayoutSlot => Self.LayoutSlot;
-      public LayoutMarker LayoutMarker => Self.LayoutMarker;
-      public CUIComponent.Events_Part Events => Self.Events;
-      public CUIComponent.MainComponentTracker_Part MainComponentTracker => Self.MainComponentTracker;
-      public CUIComponent.Tree_Part Tree => Self.Tree;
-      public CUIComponent.Visual_Part Visual => Self.Visual;
-      public DragHandle DragHandle => Self.DragHandle;
-      public Layout Layout => Self.Layout;
-      public CUIComponent Self { get; set; }
-    }
+  protected class Self_As_CUIComponent : IAdapterPart
+  {
+    public CUIComponent.Adapters_Part Adapters => Self.Adapters;
+    public CUIComponent.FunnyProps_Part FunnyProps => Self.FunnyProps;
+    public CUIComponent.LayoutProps_Part LayoutProps => Self.LayoutProps;
+    public LayoutSlot LayoutSlot => Self.LayoutSlot;
+    public LayoutMarker LayoutMarker => Self.LayoutMarker;
+    public CUIComponent.Events_Part Events => Self.Events;
+    public CUIComponent.MainComponentTracker_Part MainComponentTracker => Self.MainComponentTracker;
+    public CUIComponent.Tree_Part Tree => Self.Tree;
+    public CUIComponent.Visual_Part Visual => Self.Visual;
+    public DragHandle DragHandle => Self.DragHandle;
+    public Layout Layout => Self.Layout;
+    public CUIComponent Self { get; set; }
+  }
   }
 }

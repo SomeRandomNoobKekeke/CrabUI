@@ -26,31 +26,31 @@ Modules:
  - Adapters.Layout  :  CUIComponent.Adapters_Part.Layout_Adapter
  - Adapters.LayoutMarker  :  CUIComponent.Adapters_Part.LayoutMarker_Adapter
 Injectables:
- - CUIComponent : 
- - CUIComponent.Adapters_Part : Adapters
- - CUIComponent.FunnyProps_Part : FunnyProps
- - CUIComponent.LayoutProps_Part : LayoutProps
- - ICUILayoutProp.IContainer : LayoutProps
- - LayoutSlot : LayoutSlot
- - LayoutMarker : LayoutMarker
- - CUIComponent.Events_Part : Events
- - IMouseEventConsumer : Events
- - IEventConsumer : Events
- - CUIComponent.MainComponentTracker_Part : MainComponentTracker
- - CUIComponent.Tree_Part : Tree
- - CUIComponent.Visual_Part : Visual
- - IVisualComponent : Visual
- - DragHandle : DragHandle
- - Layout : Layout
- - CUIComponent.Adapters_Part.IDraggable_Adapter : Adapters.IDraggable
- - IDraggable : Adapters.IDraggable
- - CUIComponent.Adapters_Part.IDragHandleHub_Adapter : Adapters.IDragHandleHub
- - IDragHandleHub : Adapters.IDragHandleHub
- - CUIComponent.Adapters_Part.Layout_Adapter : Adapters.Layout
- - Layout.Target : Adapters.Layout
- - PlainLayout.Target : Adapters.Layout
- - CUIComponent.Adapters_Part.LayoutMarker_Adapter : Adapters.LayoutMarker
- - LayoutMarker.Target : Adapters.LayoutMarker
+ - CUIComponent  :  
+ - CUIComponent.Adapters_Part  :  Adapters
+ - CUIComponent.FunnyProps_Part  :  FunnyProps
+ - CUIComponent.LayoutProps_Part  :  LayoutProps
+ - ICUILayoutProp.IContainer  :  LayoutProps
+ - LayoutSlot  :  LayoutSlot
+ - LayoutMarker  :  LayoutMarker
+ - CUIComponent.Events_Part  :  Events
+ - IMouseEventConsumer  :  Events
+ - IEventConsumer  :  Events
+ - CUIComponent.MainComponentTracker_Part  :  MainComponentTracker
+ - CUIComponent.Tree_Part  :  Tree
+ - CUIComponent.Visual_Part  :  Visual
+ - IVisualComponent  :  Visual
+ - DragHandle  :  DragHandle
+ - Layout  :  Layout
+ - CUIComponent.Adapters_Part.IDraggable_Adapter  :  Adapters.IDraggable
+ - IDraggable  :  Adapters.IDraggable
+ - CUIComponent.Adapters_Part.IDragHandleHub_Adapter  :  Adapters.IDragHandleHub
+ - IDragHandleHub  :  Adapters.IDragHandleHub
+ - CUIComponent.Adapters_Part.Layout_Adapter  :  Adapters.Layout
+ - Layout.Target  :  Adapters.Layout
+ - PlainLayout.Target  :  Adapters.Layout
+ - CUIComponent.Adapters_Part.LayoutMarker_Adapter  :  Adapters.LayoutMarker
+ - LayoutMarker.Target  :  Adapters.LayoutMarker
 Dependencies:
  - CUIComponent.MainComponentTracker_Part => CUIComponent.Tree.MainComponentTracker
  - CUIComponent.Tree_Part => CUIComponent.Visual.Tree

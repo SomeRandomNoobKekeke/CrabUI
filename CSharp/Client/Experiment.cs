@@ -14,7 +14,7 @@ namespace CrabUIUser
   {
     public void Experiment()
     {
-      // new HowToAccessProtectedInGrandParent().Run();
+      // new InjectingInheritedParts().Run();
     }
   }
 }

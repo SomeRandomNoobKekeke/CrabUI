@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
-using ComponentInjector;
+using ComponentGenerator;
 
 namespace CrabUI
 {
@@ -22,7 +22,7 @@ namespace CrabUI
         if (host is not null) DisconnectFromHost(host);
 
         host = value;
-
+        CUI.Logger.LogVars(host);
         if (host is not null) ConnectToHost(host);
       }
     }

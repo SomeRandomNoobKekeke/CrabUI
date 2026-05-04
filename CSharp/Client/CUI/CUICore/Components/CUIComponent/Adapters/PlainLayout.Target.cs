@@ -8,36 +8,21 @@ using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
 using BaroJunk;
-using ComponentInjector;
+using ComponentGenerator;
 
 namespace CrabUI
 {
   public partial class CUIComponent
   {
-    public partial class Access_Part : Part
+    protected partial class Adapters_Part : Part
     {
-      public Layout_Access Layout { get; } = new();
-      public partial class Layout_Access : Part, IAccess, Layout.Target
-      {
-        public void Init()
-        {
-          PlainLayout_Init();
-        }
-
-        CUIRect Layout.Target.Rect
-        {
-          get => Self.FunnyProps.Rect.Value;
-          set => Self.FunnyProps.Rect.Value = value;
-        }
-      }
-
-      public partial class Layout_Access : PlainLayout.Target
+      public partial class Layout_Adapter : PlainLayout.Target
       {
         public void PlainLayout_Init()
         {
           //CRINGE i can't target ReadOnlyChildren because IReadOnlyList doesn't implement IList
           PlainLayout_Children = new ListProxy<CUIComponent, PlainLayout.Target>(
-            Self.Tree.Children, c => c.Access_CUIComponent.Layout
+            Self.Tree.Children, c => c.Adapters.Layout
           );
         }
         CUINullRect PlainLayout.Target.Absolute => Self.LayoutProps.Absolute.Value;

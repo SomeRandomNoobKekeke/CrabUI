@@ -1,0 +1,12 @@
+ComponentInfo for CUICore
+Parts:
+ - CUICore 
+ - CUICore.Debugger_Part Debugger
+ - CUICore.InitDebugChannels_Part InitDebugChannels
+ - CUICore.UpdateConnectionHandle UpdateHandle
+ - CUICore.DrawBeforeGUIConnectionHandle DrawBeforeGUIHandle
+ - CUICore.DrawAfterGUIConnectionHandle DrawAfterGUIHandle
+ - CUICore.LifeCycle_Part LifeCycle
+Modules:
+Dependencies:
+Errors:

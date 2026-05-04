@@ -6,7 +6,7 @@ using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
 using BaroJunk;
-using ComponentInjector;
+using ComponentGenerator;
 
 namespace CrabUI
 {
@@ -14,7 +14,7 @@ namespace CrabUI
   {
     public VisualFlattener()
     {
-      Debug_UnitFlattened.Event.Add(u => CUI.Logger.Log(u));
+      // Debug_UnitFlattened.Event.Add(u => CUI.Logger.Log(u));
     }
 
     public DebugNode<VisualUnit> Debug_UnitFlattened = new();

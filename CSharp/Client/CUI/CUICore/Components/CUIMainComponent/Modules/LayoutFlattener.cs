@@ -6,32 +6,30 @@ using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
 using BaroJunk;
-using ComponentInjector;
+using ComponentGenerator;
 
 namespace CrabUI
 {
-  public partial class CUIComponent
+  //TODO untangle from CUIComponent?
+  public class LayoutFlattener : IModule
   {
-    public class LayoutFlattener : CUIComponent.Part, IModule
+    public List<CUIComponent> Flat { get; } = new();
+
+    public void Flatten(CUIComponent root)
     {
-      public List<CUIComponent> Flat { get; } = new();
+      Flat.Clear();
 
-      public void Flatten(CUIComponent root)
+      void FlattenRec(CUIComponent component)
       {
-        Flat.Clear();
+        Flat.Add(component);
 
-        void FlattenRec(CUIComponent component)
+        foreach (CUIComponent child in component.Children)
         {
-          Flat.Add(component);
-
-          foreach (CUIComponent child in component.Tree.Children)
-          {
-            FlattenRec(child);
-          }
+          FlattenRec(child);
         }
-
-        FlattenRec(root);
       }
+
+      FlattenRec(root);
     }
   }
 

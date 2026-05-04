@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Diagnostics;
 using BaroJunk;
-using ComponentInjector;
+using ComponentGenerator;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;

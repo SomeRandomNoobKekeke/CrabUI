@@ -5,16 +5,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Diagnostics;
 
-namespace ComponentInjector
+namespace ComponentGenerator
 {
   public class InAttribute : Attribute { }
-  public class OutAttribute : Attribute { }
-
-  public class ThisIsAlsoAttribute : Attribute
-  {
-    public Type Type { get; }
-    public ThisIsAlsoAttribute(Type type) => Type = type;
-  }
+  public class LocalAttribute : Attribute { }
 
   public class GeneratedComponentAttribute : Attribute
   {
@@ -25,6 +19,4 @@ namespace ComponentInjector
       FilePath = filePath;
     }
   }
-
-  public class GeneratorTargetAttribute : Attribute { }
 }

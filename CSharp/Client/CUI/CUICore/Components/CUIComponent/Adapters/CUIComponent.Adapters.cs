@@ -8,12 +8,17 @@ using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
 using BaroJunk;
-using ComponentInjector;
+using ComponentGenerator;
 
 namespace CrabUI
 {
-  public partial class CUIMainComponent
+  public partial class CUIComponent
   {
-    protected Access_Part Access_CUIMainComponent { get; } = new();
+    protected Adapters_Part Adapters { get; } = new();
+
+    protected partial class Adapters_Part : Part
+    {
+
+    }
   }
 }

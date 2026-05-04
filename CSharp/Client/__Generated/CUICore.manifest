@@ -1,12 +1,12 @@
 ComponentInfo for CUICore
 Parts:
- - Part   :  CUICore
- - Part Debugger  :  CUICore.Debugger_Part
- - Part InitDebugChannels  :  CUICore.InitDebugChannels_Part
- - Part UpdateHandle  :  CUICore.UpdateConnectionHandle
- - Part DrawBeforeGUIHandle  :  CUICore.DrawBeforeGUIConnectionHandle
- - Part DrawAfterGUIHandle  :  CUICore.DrawAfterGUIConnectionHandle
- - Part LifeCycle  :  CUICore.LifeCycle_Part
+ -   :  CUICore
+ - Debugger  :  CUICore.Debugger_Part
+ - InitDebugChannels  :  CUICore.InitDebugChannels_Part
+ - UpdateHandle  :  CUICore.UpdateConnectionHandle
+ - DrawBeforeGUIHandle  :  CUICore.DrawBeforeGUIConnectionHandle
+ - DrawAfterGUIHandle  :  CUICore.DrawAfterGUIConnectionHandle
+ - LifeCycle  :  CUICore.LifeCycle_Part
 Modules:
 Injectables:
  - CUICore : 

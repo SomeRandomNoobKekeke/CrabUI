@@ -16,9 +16,6 @@ namespace CrabUI
   {
     protected Adapters_Part Adapters { get; } = new();
 
-    protected partial class Adapters_Part : Part
-    {
-
-    }
+    protected partial class Adapters_Part : Part { }
   }
 }

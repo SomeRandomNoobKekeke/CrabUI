@@ -1,41 +1,41 @@
 ComponentInfo for CUIMainComponent
 Parts:
- - Part   :  CUIMainComponent
- - Part InitDebugChannels  :  CUIMainComponent.InitDebugChannels_Part
- - Part Visual  :  CUIComponent.Visual_Part
- - Part Adapters  :  CUIMainComponent.Adapters_Part
- - Part Adapters.IDragHandleHub  :  CUIMainComponent.Adapters_Part.IDragHandleHub_Adapter
- - Part GlobalEvents  :  CUIMainComponent.GlobalEvents_Part
- - Part Adapters  :  CUIComponent.Adapters_Part
- - Part Adapters.IDraggable  :  CUIComponent.Adapters_Part.IDraggable_Adapter
- - Part Adapters.IDragHandleHub  :  CUIComponent.Adapters_Part.IDragHandleHub_Adapter
- - Part Adapters.Layout  :  CUIComponent.Adapters_Part.Layout_Adapter
- - Part Adapters.LayoutMarker  :  CUIComponent.Adapters_Part.LayoutMarker_Adapter
- - Part Events  :  CUIComponent.Events_Part
- - Part MainComponentTracker  :  CUIComponent.MainComponentTracker_Part
- - Part Tree  :  CUIComponent.Tree_Part
- - Part FunnyProps  :  CUIComponent.FunnyProps_Part
- - Part LayoutProps  :  CUIComponent.LayoutProps_Part
+ -   :  CUIMainComponent
+ - InitDebugChannels  :  CUIMainComponent.InitDebugChannels_Part
+ - Visual  :  CUIComponent.Visual_Part
+ - Adapters  :  CUIMainComponent.Adapters_Part
+ - Adapters.IDragHandleHub  :  CUIMainComponent.Adapters_Part.IDragHandleHub_Adapter
+ - GlobalEvents  :  CUIMainComponent.GlobalEvents_Part
+ - Adapters  :  CUIComponent.Adapters_Part
+ - Adapters.IDraggable  :  CUIComponent.Adapters_Part.IDraggable_Adapter
+ - Adapters.IDragHandleHub  :  CUIComponent.Adapters_Part.IDragHandleHub_Adapter
+ - Adapters.Layout  :  CUIComponent.Adapters_Part.Layout_Adapter
+ - Adapters.LayoutMarker  :  CUIComponent.Adapters_Part.LayoutMarker_Adapter
+ - Events  :  CUIComponent.Events_Part
+ - MainComponentTracker  :  CUIComponent.MainComponentTracker_Part
+ - Tree  :  CUIComponent.Tree_Part
+ - FunnyProps  :  CUIComponent.FunnyProps_Part
+ - LayoutProps  :  CUIComponent.LayoutProps_Part
 Modules:
- - Module VisualFlattener  :  VisualFlattener
- - Module LayoutFlattener  :  LayoutFlattener
- - Module ChainDrawer  :  ChainDrawer
- - Module EventDispatcher  :  EventDispatcher
- - Module EventConstructor  :  EventConstructor
- - Module EventTargets  :  EventTargets
- - Module Visual  :  CUIComponent.Visual_Part
- - Module LayoutSlot  :  LayoutSlot
- - Module LayoutMarker  :  LayoutMarker
- - Module Events  :  CUIComponent.Events_Part
- - Module MainComponentTracker  :  CUIComponent.MainComponentTracker_Part
- - Module Tree  :  CUIComponent.Tree_Part
- - Module DragHandle  :  DragHandle
- - Module Layout  :  Layout
- - Module Adapters.IDragHandleHub  :  CUIMainComponent.Adapters_Part.IDragHandleHub_Adapter
- - Module Adapters.IDraggable  :  CUIComponent.Adapters_Part.IDraggable_Adapter
- - Module Adapters.IDragHandleHub  :  CUIComponent.Adapters_Part.IDragHandleHub_Adapter
- - Module Adapters.Layout  :  CUIComponent.Adapters_Part.Layout_Adapter
- - Module Adapters.LayoutMarker  :  CUIComponent.Adapters_Part.LayoutMarker_Adapter
+ - VisualFlattener  :  VisualFlattener
+ - LayoutFlattener  :  LayoutFlattener
+ - ChainDrawer  :  ChainDrawer
+ - EventDispatcher  :  EventDispatcher
+ - EventConstructor  :  EventConstructor
+ - EventTargets  :  EventTargets
+ - Visual  :  CUIComponent.Visual_Part
+ - LayoutSlot  :  LayoutSlot
+ - LayoutMarker  :  LayoutMarker
+ - Events  :  CUIComponent.Events_Part
+ - MainComponentTracker  :  CUIComponent.MainComponentTracker_Part
+ - Tree  :  CUIComponent.Tree_Part
+ - DragHandle  :  DragHandle
+ - Layout  :  Layout
+ - Adapters.IDragHandleHub  :  CUIMainComponent.Adapters_Part.IDragHandleHub_Adapter
+ - Adapters.IDraggable  :  CUIComponent.Adapters_Part.IDraggable_Adapter
+ - Adapters.IDragHandleHub  :  CUIComponent.Adapters_Part.IDragHandleHub_Adapter
+ - Adapters.Layout  :  CUIComponent.Adapters_Part.Layout_Adapter
+ - Adapters.LayoutMarker  :  CUIComponent.Adapters_Part.LayoutMarker_Adapter
 Injectables:
  - CUIMainComponent : 
  - CUIMainComponent.InitDebugChannels_Part : InitDebugChannels

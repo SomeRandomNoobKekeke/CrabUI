@@ -1,30 +1,30 @@
 ComponentInfo for CUIComponent
 Parts:
- - Part   :  CUIComponent
- - Part Adapters  :  CUIComponent.Adapters_Part
- - Part Adapters.IDraggable  :  CUIComponent.Adapters_Part.IDraggable_Adapter
- - Part Adapters.IDragHandleHub  :  CUIComponent.Adapters_Part.IDragHandleHub_Adapter
- - Part Adapters.Layout  :  CUIComponent.Adapters_Part.Layout_Adapter
- - Part Adapters.LayoutMarker  :  CUIComponent.Adapters_Part.LayoutMarker_Adapter
- - Part Events  :  CUIComponent.Events_Part
- - Part MainComponentTracker  :  CUIComponent.MainComponentTracker_Part
- - Part Tree  :  CUIComponent.Tree_Part
- - Part Visual  :  CUIComponent.Visual_Part
- - Part FunnyProps  :  CUIComponent.FunnyProps_Part
- - Part LayoutProps  :  CUIComponent.LayoutProps_Part
+ -   :  CUIComponent
+ - Adapters  :  CUIComponent.Adapters_Part
+ - Adapters.IDraggable  :  CUIComponent.Adapters_Part.IDraggable_Adapter
+ - Adapters.IDragHandleHub  :  CUIComponent.Adapters_Part.IDragHandleHub_Adapter
+ - Adapters.Layout  :  CUIComponent.Adapters_Part.Layout_Adapter
+ - Adapters.LayoutMarker  :  CUIComponent.Adapters_Part.LayoutMarker_Adapter
+ - Events  :  CUIComponent.Events_Part
+ - MainComponentTracker  :  CUIComponent.MainComponentTracker_Part
+ - Tree  :  CUIComponent.Tree_Part
+ - Visual  :  CUIComponent.Visual_Part
+ - FunnyProps  :  CUIComponent.FunnyProps_Part
+ - LayoutProps  :  CUIComponent.LayoutProps_Part
 Modules:
- - Module LayoutSlot  :  LayoutSlot
- - Module LayoutMarker  :  LayoutMarker
- - Module Events  :  CUIComponent.Events_Part
- - Module MainComponentTracker  :  CUIComponent.MainComponentTracker_Part
- - Module Tree  :  CUIComponent.Tree_Part
- - Module Visual  :  CUIComponent.Visual_Part
- - Module DragHandle  :  DragHandle
- - Module Layout  :  Layout
- - Module Adapters.IDraggable  :  CUIComponent.Adapters_Part.IDraggable_Adapter
- - Module Adapters.IDragHandleHub  :  CUIComponent.Adapters_Part.IDragHandleHub_Adapter
- - Module Adapters.Layout  :  CUIComponent.Adapters_Part.Layout_Adapter
- - Module Adapters.LayoutMarker  :  CUIComponent.Adapters_Part.LayoutMarker_Adapter
+ - LayoutSlot  :  LayoutSlot
+ - LayoutMarker  :  LayoutMarker
+ - Events  :  CUIComponent.Events_Part
+ - MainComponentTracker  :  CUIComponent.MainComponentTracker_Part
+ - Tree  :  CUIComponent.Tree_Part
+ - Visual  :  CUIComponent.Visual_Part
+ - DragHandle  :  DragHandle
+ - Layout  :  Layout
+ - Adapters.IDraggable  :  CUIComponent.Adapters_Part.IDraggable_Adapter
+ - Adapters.IDragHandleHub  :  CUIComponent.Adapters_Part.IDragHandleHub_Adapter
+ - Adapters.Layout  :  CUIComponent.Adapters_Part.Layout_Adapter
+ - Adapters.LayoutMarker  :  CUIComponent.Adapters_Part.LayoutMarker_Adapter
 Injectables:
  - CUIComponent : 
  - CUIComponent.Adapters_Part : Adapters

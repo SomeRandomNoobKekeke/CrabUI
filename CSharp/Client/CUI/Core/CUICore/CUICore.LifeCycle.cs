@@ -15,12 +15,17 @@ namespace CrabUI
   {
     public class LifeCycle_Part : Part
     {
+      public ClearableEvent<double> OnUpdate = new();
+      public ClearableEvent<ICUISpriteBatch> OnDrawAfterGUI = new();
+      public ClearableEvent<ICUISpriteBatch> OnDrawBeforeGUI = new();
+
       public void Update(double totalTime, MouseState mouse)
       {
         try
         {
           Self.Input.Update(totalTime, mouse);
           Self.Main.Update(totalTime, Self.Input);
+          OnUpdate.Raise(totalTime);
         }
         catch (Exception e)
         {
@@ -30,15 +35,16 @@ namespace CrabUI
 
       public void DrawAfterGUI(ICUISpriteBatch spriteBatch)
       {
-
+        OnDrawAfterGUI.Raise(spriteBatch);
       }
 
       public void DrawBeforeGUI(ICUISpriteBatch spriteBatch)
       {
         Self.Main.DrawChildren(spriteBatch);
+        OnDrawBeforeGUI.Raise(spriteBatch);
       }
     }
 
-    private LifeCycle_Part LifeCycle { get; } = new();
+    public LifeCycle_Part LifeCycle { get; } = new();
   }
 }

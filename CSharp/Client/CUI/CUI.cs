@@ -30,6 +30,23 @@ namespace CrabUI
     public static CUIMainComponent Main => Setup?.Core?.Main;
 
 
+    public static event Action<double> OnUpdate
+    {
+      add => Setup.Core.LifeCycle.OnUpdate.Add(value);
+      remove => Setup.Core.LifeCycle.OnUpdate.Remove(value);
+    }
+
+    public static event Action<ICUISpriteBatch> OnDrawAfterGUI
+    {
+      add => Setup.Core.LifeCycle.OnDrawAfterGUI.Add(value);
+      remove => Setup.Core.LifeCycle.OnDrawAfterGUI.Remove(value);
+    }
+
+    public static event Action<ICUISpriteBatch> OnDrawBeforeGUI
+    {
+      add => Setup.Core.LifeCycle.OnDrawBeforeGUI.Add(value);
+      remove => Setup.Core.LifeCycle.OnDrawBeforeGUI.Remove(value);
+    }
 
     public static void Dispose()
     {

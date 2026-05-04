@@ -11,7 +11,7 @@ using ComponentGenerator;
 namespace CrabUI
 {
   [GeneratedComponent]
-  public partial class CUIVisualComponent : IComponent
+  public abstract partial class CUIVisualComponent : IComponent
   {
     public class Part : IPart { public CUIVisualComponent Self { get; set; } }
 

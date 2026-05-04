@@ -52,6 +52,22 @@ namespace CrabUIUser
       };
 
       CUI.Main.AddChild(component);
+
+      SimpleTexture texture = new SimpleTexture()
+      {
+        Color = Color.Red,
+        Rect = new Rectangle(100, 100, 300, 300)
+      };
+
+      Random random = new Random();
+
+      CUI.OnDrawAfterGUI += (spriteBatch) =>
+      {
+        if (random.NextSingle() > 0.1f)
+        {
+          texture.Draw(spriteBatch);
+        }
+      };
     }
 
     public void OnLoadCompleted() { }

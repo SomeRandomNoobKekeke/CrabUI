@@ -1,8 +1,0 @@
-ComponentInfo for CUIVisualComponent
-Parts:
- -   :  CUIVisualComponent
-Modules:
-Injectables:
- - CUIVisualComponent  :  
-Dependencies:
-Errors:

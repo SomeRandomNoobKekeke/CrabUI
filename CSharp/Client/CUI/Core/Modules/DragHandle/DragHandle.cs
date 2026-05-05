@@ -11,7 +11,7 @@ namespace CrabUI
 {
   public class DragHandle : IModule
   {
-    [In] public IDragHandleHub Hub { get; set; }
+    [In] public IDragHandleHubSubscriber Hub { get; set; }
 
     [In]
     public IDraggable Host

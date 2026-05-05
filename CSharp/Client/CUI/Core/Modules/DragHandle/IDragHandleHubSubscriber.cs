@@ -10,9 +10,9 @@ using ComponentGenerator;
 namespace CrabUI
 {
   /// <summary>
-  /// This is the hub that orchestrates all DragHandles
+  /// This is a component that has access to the hub
   /// </summary>
-  public interface IDragHandleHub
+  public interface IDragHandleHubSubscriber
   {
     public event Action<CUIMouseUpEvent> MouseUp;
     public event Action<CUIMouseMovedEvent> MouseMoved;

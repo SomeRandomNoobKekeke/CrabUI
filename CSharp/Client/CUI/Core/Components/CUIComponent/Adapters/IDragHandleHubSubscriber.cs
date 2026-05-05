@@ -17,7 +17,7 @@ namespace CrabUI
     protected partial class Adapters_Part
     {
       public IDragHandleHub_Adapter IDragHandleHub { get; } = new();
-      public partial class IDragHandleHub_Adapter : Part, IAdapterPart, IDragHandleHub
+      public partial class IDragHandleHub_Adapter : Part, IAdapterPart, IDragHandleHubSubscriber
       {
         public event Action<CUIMouseUpEvent> MouseUp
         {

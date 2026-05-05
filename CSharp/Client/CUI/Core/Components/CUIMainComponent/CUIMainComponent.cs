@@ -28,7 +28,7 @@ namespace CrabUI
 
     public void NotifyThatLayoutHasChanged() => GlobalLayoutChanged = true;
 
-    public void DrawChildren(ICUISpriteBatch spriteBatch)
+    public void DrawChildren(CUISpriteBatch spriteBatch)
     {
 
       ChainDrawer.Draw(spriteBatch, VisualFlattener.Flat);

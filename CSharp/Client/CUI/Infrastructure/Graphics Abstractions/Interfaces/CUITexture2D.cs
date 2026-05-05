@@ -9,9 +9,9 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CrabUI
 {
-  public interface ICUIFont
+  public interface CUITexture2D
   {
-    public void DrawString(ICUISpriteBatch sb, string text, Vector2 position, Color color);
+    public static CUITexture2D White => __CUITexture2D.White;
   }
 
 }

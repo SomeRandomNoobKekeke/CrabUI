@@ -36,13 +36,13 @@ namespace CrabUI
       remove => Setup.Core.LifeCycle.OnUpdate.Remove(value);
     }
 
-    public static event Action<ICUISpriteBatch> OnDrawAfterGUI
+    public static event Action<CUISpriteBatch> OnDrawAfterGUI
     {
       add => Setup.Core.LifeCycle.OnDrawAfterGUI.Add(value);
       remove => Setup.Core.LifeCycle.OnDrawAfterGUI.Remove(value);
     }
 
-    public static event Action<ICUISpriteBatch> OnDrawBeforeGUI
+    public static event Action<CUISpriteBatch> OnDrawBeforeGUI
     {
       add => Setup.Core.LifeCycle.OnDrawBeforeGUI.Add(value);
       remove => Setup.Core.LifeCycle.OnDrawBeforeGUI.Remove(value);

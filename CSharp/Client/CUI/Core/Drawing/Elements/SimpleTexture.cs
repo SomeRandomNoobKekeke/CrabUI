@@ -23,7 +23,7 @@ namespace CrabUI
     public ClearableEvent<CUIMouseMovedEvent> MouseMoved { get; } = new();
 
 
-    public void Draw(ICUISpriteBatch spriteBatch)
+    public void Draw(CUISpriteBatch spriteBatch)
     {
       spriteBatch.Draw(Texture, Rect.Box, Color);
     }

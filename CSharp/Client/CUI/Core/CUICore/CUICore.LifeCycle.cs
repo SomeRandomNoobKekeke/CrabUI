@@ -16,8 +16,8 @@ namespace CrabUI
     public class LifeCycle_Part : Part
     {
       public ClearableEvent<double> OnUpdate = new();
-      public ClearableEvent<ICUISpriteBatch> OnDrawAfterGUI = new();
-      public ClearableEvent<ICUISpriteBatch> OnDrawBeforeGUI = new();
+      public ClearableEvent<CUISpriteBatch> OnDrawAfterGUI = new();
+      public ClearableEvent<CUISpriteBatch> OnDrawBeforeGUI = new();
 
       public void Update(double totalTime, MouseState mouse)
       {
@@ -33,12 +33,12 @@ namespace CrabUI
         }
       }
 
-      public void DrawAfterGUI(ICUISpriteBatch spriteBatch)
+      public void DrawAfterGUI(CUISpriteBatch spriteBatch)
       {
         OnDrawAfterGUI.Raise(spriteBatch);
       }
 
-      public void DrawBeforeGUI(ICUISpriteBatch spriteBatch)
+      public void DrawBeforeGUI(CUISpriteBatch spriteBatch)
       {
         Self.Main.DrawChildren(spriteBatch);
         OnDrawBeforeGUI.Raise(spriteBatch);

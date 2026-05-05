@@ -9,9 +9,9 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CrabUI
 {
-  public interface ICUISpriteBatch
+  public interface CUISpriteBatch
   {
-    public void Draw(ICUITexture2D texture, Rectangle destinationRectangle, Color color);
+    public void Draw(CUITexture2D texture, Rectangle destinationRectangle, Color color);
   }
 
 }

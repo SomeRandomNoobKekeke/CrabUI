@@ -12,7 +12,7 @@ namespace CrabUI
     public CUICore Core { get; set; }
     public ICUIRunnerDataSources DataSources { get; set; }
 
-    private CUISpriteBatch SpriteBatch { get; } = new();
+    private __CUISpriteBatch SpriteBatch { get; } = new();
 
     public void Connect()
     {

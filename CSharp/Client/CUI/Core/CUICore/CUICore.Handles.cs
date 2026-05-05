@@ -16,8 +16,8 @@ namespace CrabUI
     public class CUIRunnerHandle_Part : Part
     {
       public void Update(double totalTime, MouseState mouse) => Self.LifeCycle.Update(totalTime, mouse);
-      public void DrawBeforeGUI(ICUISpriteBatch spriteBatch) => Self.LifeCycle.DrawBeforeGUI(spriteBatch);
-      public void DrawAfterGUI(ICUISpriteBatch spriteBatch) => Self.LifeCycle.DrawAfterGUI(spriteBatch);
+      public void DrawBeforeGUI(CUISpriteBatch spriteBatch) => Self.LifeCycle.DrawBeforeGUI(spriteBatch);
+      public void DrawAfterGUI(CUISpriteBatch spriteBatch) => Self.LifeCycle.DrawAfterGUI(spriteBatch);
     }
 
     public CUIRunnerHandle_Part CUIRunnerHandle { get; } = new();

@@ -34,6 +34,18 @@ namespace CrabUI
             Top = y,
           };
         }
+
+
+        public event Action<CUIMouseUpEvent> HubMouseUp
+        {
+          add => Self.MainComponentTracker.MainComponent?.GlobalEvents.MouseUp.Add(value);
+          remove => Self.MainComponentTracker.MainComponent?.GlobalEvents.MouseUp.Remove(value);
+        }
+        public event Action<CUIMouseMovedEvent> HubMouseMoved
+        {
+          add => Self.MainComponentTracker.MainComponent?.GlobalEvents.MouseMoved.Add(value);
+          remove => Self.MainComponentTracker.MainComponent?.GlobalEvents.MouseMoved.Remove(value);
+        }
       }
     }
   }

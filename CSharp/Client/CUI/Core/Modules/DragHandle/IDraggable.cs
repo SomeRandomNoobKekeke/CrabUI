@@ -15,5 +15,8 @@ namespace CrabUI
     public CUIRect Rect { get; }
     public CUIRect? ParentRect { get; }
     public void SetAbsolutePos(float x, float y);
+
+    public event Action<CUIMouseUpEvent> HubMouseUp;
+    public event Action<CUIMouseMovedEvent> HubMouseMoved;
   }
 }

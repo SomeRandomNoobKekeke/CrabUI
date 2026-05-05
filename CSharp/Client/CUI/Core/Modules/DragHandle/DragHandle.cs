@@ -11,8 +11,6 @@ namespace CrabUI
 {
   public class DragHandle : IModule
   {
-    [In] public IDragHandleHubSubscriber Hub { get; set; }
-
     [In]
     public IDraggable Host
     {
@@ -46,15 +44,15 @@ namespace CrabUI
     {
       Grabbed = true;
       GrabOffset = Host.Rect.LeftTop - e.Pos;
-      Hub.MouseMoved += Update;
-      Hub.MouseUp += Release;
+      host.HubMouseMoved += Update;
+      host.HubMouseUp += Release;
     }
 
     private void Release(CUIMouseEvent e)
     {
       Grabbed = false;
-      Hub.MouseMoved -= Update;
-      Hub.MouseUp -= Release;
+      host.HubMouseMoved -= Update;
+      host.HubMouseUp -= Release;
     }
 
     public void Update(CUIMouseEvent e)

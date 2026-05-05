@@ -40,29 +40,21 @@ namespace CrabUIUser
     {
       CUI.Start();
 
-      CUIButton button = new()
+      CUIComponent frame = new()
       {
-        BackgroundColor = Color.Lime,
+        BackgroundColor = Color.White,
         Absolute = new CUINullRect(1400, 300, 200, 100),
       };
 
-      button.MouseDown += (e) =>
+      frame.AddChild(new CUIComponent()
       {
-        button.BackgroundColor = button.BackgroundColor == Color.Red ? Color.Lime : Color.Red;
-      };
+        BackgroundColor = Color.Yellow,
+        Absolute = new CUINullRect(0, 0, 100, 100),
+      });
 
-      CUI.Main.AddChild(button);
 
-      TextBlock tb = new TextBlock()
-      {
-        Text = "bruh",
-        Rect = new CUIRect(300, 200, 0, 0),
-      };
 
-      CUI.OnDrawAfterGUI += (sb) =>
-      {
-        tb.Draw(sb);
-      };
+      CUI.Main.AddChild(frame);
     }
 
     public void OnLoadCompleted() { }

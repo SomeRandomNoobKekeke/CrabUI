@@ -11,7 +11,7 @@ namespace CrabUI
 {
   public class __CUITexture2D(Texture2D texture) : CUITexture2D
   {
-    public static __CUITexture2D White => new __CUITexture2D(GUI.WhiteTexture);
+    public static __CUITexture2D White = new __CUITexture2D(GUI.WhiteTexture);
     public Texture2D XNATexture { get; set; } = texture;
 
 

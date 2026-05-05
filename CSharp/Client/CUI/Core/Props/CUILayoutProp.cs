@@ -31,6 +31,7 @@ namespace CrabUI
       {
         base.Value = value;
         Container.Mark(Pattern);
+        CUI.Logger.Log($"CUILayoutProp[{typeof(T).Name}] {HostPropName} on {HostComponent} set with {value}");
       }
     }
   }

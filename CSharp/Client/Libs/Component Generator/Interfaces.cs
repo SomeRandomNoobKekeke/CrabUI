@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 using System.Collections.Generic;
 using System.Linq;
 using System.Diagnostics;
-
+using BaroJunk;
 namespace ComponentGenerator
 {
 
@@ -15,14 +15,23 @@ namespace ComponentGenerator
     public void InitParts() { }
     public void InitModules() { }
     public void InjectProps() { }
+    public void NotifyAwareObjects() { }
 
     public void Inject()
     {
-      InjectParts();
-      InjectModules();
-      InjectProps();
-      InitParts();
-      InitModules();
+      try
+      {
+        InjectParts();
+        InjectModules();
+        InjectProps();
+        NotifyAwareObjects();
+        InitParts();
+        InitModules();
+      }
+      catch (Exception e)
+      {
+        Logger.Default.Error($"CI| failed to inject [{this}]\n{e}");
+      }
     }
   }
 
@@ -34,6 +43,12 @@ namespace ComponentGenerator
 
   public interface IPropContainer { }
   public interface IProp { }
+
+  public interface IAware
+  {
+    public object HostComponent { get; set; }
+    public string HostPropName { get; set; }
+  }
 
   public static class IComponent_Extensions
   {

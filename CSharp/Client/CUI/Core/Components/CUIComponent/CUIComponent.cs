@@ -14,18 +14,9 @@ namespace CrabUI
   {
     public class Part : IPart { public CUIComponent Self { get; set; } }
 
-    public static int MaxID { get; private set; }
-    public int ID { get; set; }
-
-
-    public CUIComponent()
+    public CUIComponent() : base()
     {
-      ID = MaxID++;
-      this.Inject();
-
       Layout = new PlainLayout();
     }
-
-    public override string ToString() => $"{this.GetType().Name} [{this.ID}]";
   }
 }

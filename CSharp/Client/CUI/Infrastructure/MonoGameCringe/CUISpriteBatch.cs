@@ -13,13 +13,16 @@ namespace CrabUI
   {
     public SpriteBatch XNASpriteBatch { get; set; }
 
-    public void Draw(CUITexture2D texture, Rectangle destinationRectangle, Color color)
+    public void Draw(ICUITexture2D texture, Rectangle destinationRectangle, Color color)
     {
-      if (texture.XNATexture != null)
+      if (texture is CUITexture2D)
       {
-        XNASpriteBatch.Draw(texture.XNATexture, destinationRectangle, color);
+        XNASpriteBatch.Draw(((CUITexture2D)texture).XNATexture, destinationRectangle, color);
       }
+
     }
+
+
 
     public CUISpriteBatch() { }
     public CUISpriteBatch(SpriteBatch spriteBatch) => XNASpriteBatch = spriteBatch;

@@ -16,7 +16,7 @@ namespace CrabUI
 
     public void UpdateRect(CUIRect rect)
     {
-      Background.Rect = rect.Box;
+      Background.Rect = rect;
     }
 
     public override IEnumerable<VisualUnit> VisualSplit()

@@ -11,9 +11,11 @@ namespace CrabUI
 {
   public class TextBlock : IVisualElement, IMouseEventConsumer
   {
-    public Rectangle Rect { get; set; }
-    public Color TextColor { get; set; }
-    public string Text { get; set; }
+    public CUIRect Rect { get; set; }
+    public Color TextColor { get; set; } = Color.White;
+    public string Text { get; set; } = "";
+
+    public CUIFont Font { get; set; } = CUIFont.Font;
 
 
     public ClearableEvent<CUIMouseDownEvent> MouseDown { get; } = new();
@@ -25,7 +27,7 @@ namespace CrabUI
 
     public void Draw(ICUISpriteBatch spriteBatch)
     {
-      // spriteBatch.Draw(Texture, Rect, Color);
+      Font.DrawString(spriteBatch, Text, Rect.LeftTop, TextColor);
     }
   }
 }

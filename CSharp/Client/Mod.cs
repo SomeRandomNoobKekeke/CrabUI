@@ -52,6 +52,17 @@ namespace CrabUIUser
       };
 
       CUI.Main.AddChild(button);
+
+      TextBlock tb = new TextBlock()
+      {
+        Text = "bruh",
+        Rect = new CUIRect(300, 200, 0, 0),
+      };
+
+      CUI.OnDrawAfterGUI += (sb) =>
+      {
+        tb.Draw(sb);
+      };
     }
 
     public void OnLoadCompleted() { }

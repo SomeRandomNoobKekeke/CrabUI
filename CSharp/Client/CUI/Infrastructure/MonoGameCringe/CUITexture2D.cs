@@ -9,10 +9,10 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CrabUI
 {
-  public class CUITexture2D(Texture2D texture)
+  public class CUITexture2D(Texture2D texture) : ICUITexture2D
   {
     public static CUITexture2D White { get; } = new CUITexture2D(GUI.WhiteTexture);
-    public Texture2D? XNATexture { get; set; } = texture;
+    public Texture2D XNATexture { get; set; } = texture;
 
 
   }

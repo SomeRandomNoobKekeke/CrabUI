@@ -11,7 +11,7 @@ namespace CrabUI
 {
   public class SimpleTexture : IVisualElement, IMouseEventConsumer
   {
-    public Rectangle Rect { get; set; }
+    public CUIRect Rect { get; set; }
     public CUITexture2D Texture { get; set; } = CUITexture2D.White;
     public Color Color { get; set; }
 
@@ -25,7 +25,7 @@ namespace CrabUI
 
     public void Draw(ICUISpriteBatch spriteBatch)
     {
-      spriteBatch.Draw(Texture, Rect, Color);
+      spriteBatch.Draw(Texture, Rect.Box, Color);
     }
   }
 }

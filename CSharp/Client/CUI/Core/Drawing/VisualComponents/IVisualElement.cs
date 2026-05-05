@@ -11,7 +11,7 @@ namespace CrabUI
 {
   public interface IVisualElement
   {
-    public Rectangle Rect { get; set; }
+    public CUIRect Rect { get; set; }
     public void Draw(ICUISpriteBatch spriteBatch);
   }
 }

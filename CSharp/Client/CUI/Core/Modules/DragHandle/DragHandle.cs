@@ -42,6 +42,8 @@ namespace CrabUI
 
     private void Grab(CUIMouseEvent e)
     {
+      if (!Active) return;
+
       Grabbed = true;
       GrabOffset = Host.Rect.LeftTop - e.Pos;
       host.HubMouseMoved += Update;
@@ -50,6 +52,8 @@ namespace CrabUI
 
     private void Release(CUIMouseEvent e)
     {
+      Vector2 origin = e.Pos + GrabOffset - (Host.ParentRect?.LeftTop ?? Vector2.Zero);
+      Host.SetAbsolutePos(origin.X, origin.Y);
       Grabbed = false;
       host.HubMouseMoved -= Update;
       host.HubMouseUp -= Release;

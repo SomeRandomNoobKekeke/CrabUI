@@ -15,8 +15,12 @@ namespace CrabUI
     public CUIMainComponent MainComponent => MainComponentTracker.MainComponent;
     public CUIComponent Parent => Tree.Parent;
 
+    public bool Draggable
+    {
+      get => DragHandle.Active;
+      set => DragHandle.Active = value;
+    }
 
-    public DragHandle DragHandle { get; } = new();
 
     public IReadOnlyList<CUIComponent> Children => Tree.ReadOnlyChildren;
     public void AddChild(CUIComponent child) => Tree.AddChild(child);

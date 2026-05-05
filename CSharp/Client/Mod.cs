@@ -43,6 +43,7 @@ namespace CrabUIUser
       CUIComponent frame = new()
       {
         BackgroundColor = Color.White,
+        Draggable = true,
         Absolute = new CUINullRect(1400, 300, 200, 100),
       };
 

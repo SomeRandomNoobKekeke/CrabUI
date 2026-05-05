@@ -16,6 +16,7 @@ namespace CrabUI
 
     protected LayoutSlot LayoutSlot { get; set; } = new();
     protected LayoutMarker LayoutMarker { get; set; } = new();
+    public DragHandle DragHandle { get; } = new();
 
     public CUIComponent() : base()
     {

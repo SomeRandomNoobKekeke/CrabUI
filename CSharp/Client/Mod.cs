@@ -40,18 +40,18 @@ namespace CrabUIUser
     {
       CUI.Start();
 
-      CUIComponent component = new CUIComponent()
+      CUIButton button = new()
       {
         BackgroundColor = Color.Lime,
         Absolute = new CUINullRect(1400, 300, 200, 100),
       };
 
-      component.MouseDown += (e) =>
+      button.MouseDown += (e) =>
       {
-        component.BackgroundColor = component.BackgroundColor == Color.Red ? Color.Lime : Color.Red;
+        button.BackgroundColor = button.BackgroundColor == Color.Red ? Color.Lime : Color.Red;
       };
 
-      CUI.Main.AddChild(component);
+      CUI.Main.AddChild(button);
     }
 
     public void OnLoadCompleted() { }

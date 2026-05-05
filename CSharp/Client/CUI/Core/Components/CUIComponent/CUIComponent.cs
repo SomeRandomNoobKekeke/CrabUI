@@ -14,6 +14,9 @@ namespace CrabUI
   {
     public class Part : IPart { public CUIComponent Self { get; set; } }
 
+    protected LayoutSlot LayoutSlot { get; set; } = new();
+    protected LayoutMarker LayoutMarker { get; set; } = new();
+
     public CUIComponent() : base()
     {
       Layout = new PlainLayout();

@@ -10,9 +10,9 @@ using ComponentGenerator;
 
 namespace CrabUI
 {
-  public partial class CUIComponent
+  public partial class CUIButton : CUIComponent, IComponent
   {
-    protected LayoutSlot LayoutSlot { get; set; } = new();
-    protected LayoutMarker LayoutMarker { get; set; } = new();
+
+
   }
 }

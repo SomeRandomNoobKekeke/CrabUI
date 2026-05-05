@@ -42,7 +42,7 @@ namespace CrabUI
       {
         Tree.Changed = false;
         GlobalLayoutChanged = true;
-        VisualFlattener.Flatten(this.Visual);
+        VisualFlattener.Flatten(this);
         LayoutFlattener.Flatten(this);
       }
 

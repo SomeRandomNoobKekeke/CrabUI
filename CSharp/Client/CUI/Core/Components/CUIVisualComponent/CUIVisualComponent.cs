@@ -11,12 +11,14 @@ using ComponentGenerator;
 namespace CrabUI
 {
   [GeneratedComponent]
-  public abstract partial class CUIVisualComponent : IComponent
+  public abstract partial class CUIVisualComponent : IVisualComponent, IComponent
   {
     public class Part : IPart { public CUIVisualComponent Self { get; set; } }
 
     public static int MaxID { get; private set; }
     public int ID { get; set; }
+
+    public abstract IEnumerable<VisualUnit> VisualSplit();
 
 
     public CUIVisualComponent()

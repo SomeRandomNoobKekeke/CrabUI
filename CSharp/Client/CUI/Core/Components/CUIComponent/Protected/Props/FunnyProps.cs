@@ -19,7 +19,7 @@ namespace CrabUI
       {
         Rect.OnValueSet = (rect) =>
         {
-          Self.Visual.UpdateRect(rect);
+          Self.UpdateRect(rect);
         };
       }
 

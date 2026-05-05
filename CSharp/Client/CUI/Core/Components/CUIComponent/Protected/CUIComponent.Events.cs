@@ -17,7 +17,7 @@ namespace CrabUI
     {
       public void Init()
       {
-        this.Route(Self.Visual.Background);
+        this.Route(Self.Background);
       }
 
       public ClearableEvent<CUIMouseDownEvent> MouseDown { get; } = new();

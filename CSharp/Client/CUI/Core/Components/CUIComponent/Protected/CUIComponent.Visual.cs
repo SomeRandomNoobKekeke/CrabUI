@@ -12,29 +12,22 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-    public virtual Visual_Part Visual { get; } = new();
-    public class Visual_Part : Part, IModule, IVisualComponent
+    public SimpleTexture Background { get; } = new();
+
+    public void UpdateRect(CUIRect rect)
     {
-      [In] public Tree_Part Tree { get; set; }
+      Background.Rect = rect.Box;
+    }
 
-      public SimpleTexture Background { get; } = new();
-
-      //TODO shouldn't this be in the interface?
-      public void UpdateRect(CUIRect rect)
+    public override IEnumerable<VisualUnit> VisualSplit()
+    {
+      yield return new VisualUnit.PrimitiveVisualElement(Background);
+      yield return new VisualUnit.LeftContextBound();
+      foreach (CUIComponent child in Tree.Children)
       {
-        Background.Rect = rect.Box;
+        yield return new VisualUnit.NestedVisualComponent(child);
       }
-
-      public virtual IEnumerable<VisualUnit> VisualSplit()
-      {
-        yield return new VisualUnit.PrimitiveVisualElement(Background);
-        yield return new VisualUnit.LeftContextBound();
-        foreach (CUIComponent child in Tree.Children)
-        {
-          yield return new VisualUnit.NestedVisualComponent(child.Visual);
-        }
-        yield return new VisualUnit.RightContextBound();
-      }
+      yield return new VisualUnit.RightContextBound();
     }
   }
 }

@@ -30,8 +30,8 @@ namespace CrabUI
 
     public Color BackgroundColor
     {
-      get => Visual.Background.Color;
-      set => Visual.Background.Color = value;
+      get => Background.Color;
+      set => Background.Color = value;
     }
 
     public CUINullRect Absolute

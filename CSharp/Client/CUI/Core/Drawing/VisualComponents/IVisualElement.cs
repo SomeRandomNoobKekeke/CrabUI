@@ -13,6 +13,5 @@ namespace CrabUI
   {
     public Rectangle Rect { get; set; }
     public void Draw(ICUISpriteBatch spriteBatch);
-    public void HandleInput(CUIInput input);
   }
 }

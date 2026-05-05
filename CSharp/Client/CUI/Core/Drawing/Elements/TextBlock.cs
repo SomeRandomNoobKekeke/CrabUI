@@ -9,11 +9,11 @@ using BaroJunk;
 
 namespace CrabUI
 {
-  public class SimpleTexture : IVisualElement, IMouseEventConsumer
+  public class TextBlock : IVisualElement, IMouseEventConsumer
   {
     public Rectangle Rect { get; set; }
-    public CUITexture2D Texture { get; set; } = CUITexture2D.White;
-    public Color Color { get; set; }
+    public Color TextColor { get; set; }
+    public string Text { get; set; }
 
 
     public ClearableEvent<CUIMouseDownEvent> MouseDown { get; } = new();
@@ -25,7 +25,7 @@ namespace CrabUI
 
     public void Draw(ICUISpriteBatch spriteBatch)
     {
-      spriteBatch.Draw(Texture, Rect, Color);
+      // spriteBatch.Draw(Texture, Rect, Color);
     }
   }
 }

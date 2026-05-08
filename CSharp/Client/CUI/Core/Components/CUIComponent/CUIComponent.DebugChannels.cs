@@ -15,6 +15,7 @@ namespace CrabUI
     public DebugChannelsDict DebugChannels { get; } = new()
     {
       ["Child Added"] = new DebugNode<CUIComponent, CUIComponent>(),
+      ["Prop Set"] = new DebugNode<CUIComponent, string, object>(),
     };
   }
 }

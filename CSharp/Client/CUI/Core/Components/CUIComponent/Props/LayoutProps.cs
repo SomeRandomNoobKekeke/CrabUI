@@ -7,6 +7,7 @@ using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
 using ComponentGenerator;
+using BaroJunk;
 
 namespace CrabUI
 {
@@ -15,6 +16,15 @@ namespace CrabUI
     protected LayoutProps_Part LayoutProps { get; } = new();
     public class LayoutProps_Part : Part, ICUILayoutProp.IContainer
     {
+
+
+      public void Init()
+      {
+        Absolute.DebugValueSet.Map(Self.DebugChannels["Prop Set"],
+          () =>
+        );
+      }
+
       void ICUILayoutProp.IContainer.Mark(LayoutMarker.Pattern pattern)
       {
         Self.LayoutMarker.Mark(pattern);

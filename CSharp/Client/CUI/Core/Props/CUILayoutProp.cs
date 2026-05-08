@@ -7,6 +7,8 @@ using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
 using ComponentGenerator;
+using BaroJunk;
+
 
 namespace CrabUI
 {
@@ -14,12 +16,15 @@ namespace CrabUI
   {
     public interface IContainer : IPropContainer
     {
+
       public void Mark(LayoutMarker.Pattern Pattern);
     }
   }
 
   public class CUILayoutProp<T> : CUIProp<T>, ICUILayoutProp
   {
+    public DebugNode<object, string, object> DebugValueSet { get; } = new();
+
     public LayoutMarker.Pattern Pattern { get; set; } = LayoutMarker.Pattern.None;
 
     [In] public ICUILayoutProp.IContainer Container { get; set; }
@@ -31,7 +36,8 @@ namespace CrabUI
       {
         base.Value = value;
         Container.Mark(Pattern);
-        CUI.Logger.Log($"CUILayoutProp[{typeof(T).Name}] {HostPropName} on {HostComponent} set with {value}");
+        DebugValueSet.Send(HostComponent, HostPropName, value);
+        // CUI.Logger.Log($"CUILayoutProp[{typeof(T).Name}] {HostPropName} on {HostComponent} set with {value}");
       }
     }
   }

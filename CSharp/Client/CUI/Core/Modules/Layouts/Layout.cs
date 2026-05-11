@@ -15,7 +15,7 @@ namespace CrabUI
   {
     public interface Target : IModule
     {
-      public CUIRect Rect { get; set; }
+
     }
 
     public virtual void InjectHost(Target host) { }

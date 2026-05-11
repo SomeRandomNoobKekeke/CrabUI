@@ -24,18 +24,26 @@ namespace CrabUI
       ["Prop Set"] = new DebugNode<CUIComponent, Type, string, object>()
       {
         MsgFactory = (component, propType, propName, value)
-         => $"{component} {propType} {propName} {value}",
+         => $"{propType.Name} {component}.{propName} = {value}",
       },
       ["Child Added"] = new DebugNode<CUIComponent, CUIComponent>()
       {
         MsgFactory = (parent, child)
           => $"{Logger.White(child)} attached to {Logger.White(parent)}",
       },
-      ["Draw Visual Unit"] = new DebugNode<VisualUnit>()
+      // ["Draw Visual Unit"] = new DebugNode<VisualUnit>()
+      // {
+      //   MsgFactory = (u) => $"Unit Drawn [{u}]",
+      // },
+      // ["Visual Unit Flattened"] = new DebugNode<VisualUnit>()
+      // {
+
+      // },
+      ["Layout Updated"] = new DebugNode<CUIMainComponent>()
       {
-        MsgFactory = (u) => $"Unit Drawn [{u}]",
+        Name = "Layout Updated",
+        MsgFactory = (main) => $"{main}",
       },
-      ["Visual Unit Flattened"] = new DebugNode<VisualUnit>(),
     };
 
 

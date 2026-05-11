@@ -22,8 +22,6 @@ namespace CrabUI
       {
         var PropSetChannel = Self.DebugChannels.Get<DebugNode<CUIComponent, Type, string, object>>("Prop Set");
 
-
-
         LayoutPropSet.Map(
           PropSetChannel,
           (Type t, string s, object o) => PropSetChannel.Send(Self, t, s, o)
@@ -38,11 +36,17 @@ namespace CrabUI
         Self.LayoutMarker.Mark(pattern);
       }
 
-      public CUILayoutProp<CUINullRect> Absolute { get; set; } = new()
+      public CUILayoutProp<CUINullRect> Absolute { get; } = new()
       {
         Pattern = LayoutMarker.Pattern.FromParentAndDown,
       };
-      public CUILayoutProp<CUINullRect> Relative { get; set; } = new()
+
+      public CUILayoutProp<CUINullRect> Relative { get; } = new()
+      {
+        Pattern = LayoutMarker.Pattern.FromParentAndDown,
+      };
+
+      public CUILayoutProp<CUIDirection> Direction { get; } = new()
       {
         Pattern = LayoutMarker.Pattern.FromParentAndDown,
       };

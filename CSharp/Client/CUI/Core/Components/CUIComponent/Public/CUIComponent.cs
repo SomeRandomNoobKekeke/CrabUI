@@ -25,6 +25,8 @@ namespace CrabUI
     public IReadOnlyList<CUIComponent> Children => Tree.ReadOnlyChildren;
     public void AddChild(CUIComponent child) => Tree.AddChild(child);
     public void RemoveChild(CUIComponent child) => Tree.RemoveChild(child);
+    public void RemoveAllChildren() => Tree.RemoveAllChildren();
+
 
     public Layout Layout
     {

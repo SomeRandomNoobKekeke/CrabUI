@@ -14,6 +14,7 @@ namespace CrabUIUser
   public partial class Mod : IAssemblyPlugin
   {
     public static Mod Instance;
+    public CUITest CUITest { get; } = new();
 
     public static Logger Logger { get; set; } = new()
     {
@@ -42,9 +43,9 @@ namespace CrabUIUser
 
       CUIComponent frame = new()
       {
-        BackgroundColor = Color.White,
+        BackgroundColor = Color.Gray,
         Draggable = true,
-        Absolute = new CUINullRect(1400, 300, 200, 100),
+        Absolute = new CUINullRect(300, 300, 400, 600),
       };
 
       frame.AddChild(new CUIComponent()

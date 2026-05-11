@@ -79,6 +79,8 @@ namespace CrabUI
       {
         component.Layout.UpdateChildren();
       }
+
+      DebugChannels["Layout Updated"].Send(this);
     }
 
     public CUIMainComponent() : base()

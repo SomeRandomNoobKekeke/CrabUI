@@ -29,6 +29,7 @@ namespace CrabUI
     public new Dictionary<string, IDebugNode> DebugChannels { get; } = new()
     {
       ["Prop Set"] = new DebugNode<CUIComponent, Type, string, object>(),
+      ["Layout Updated"] = new DebugNode<CUIMainComponent>(),
       ["Child Added"] = new DebugNode<CUIComponent, CUIComponent>(),
       ["Draw Visual Unit"] = new DebugNode<VisualUnit>(),
       ["Visual Unit Flattened"] = new DebugNode<VisualUnit>(),

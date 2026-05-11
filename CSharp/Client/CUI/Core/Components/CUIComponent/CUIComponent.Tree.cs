@@ -36,7 +36,6 @@ namespace CrabUI
       public IReadOnlyList<CUIComponent> ReadOnlyChildren { get; private set; }
 
 
-
       public virtual void OnChildAdded(CUIComponent child) { }
       public virtual void OnChildRemoved(CUIComponent child) { }
       public virtual void OnAttachToParent(CUIComponent parent)
@@ -54,6 +53,7 @@ namespace CrabUI
         Children.Add(child);
         child.Tree.Parent = Self;
         PropogateTreeChanged();
+        Self.Layout.RequireChildrenUpdate = true;
 
         OnChildAdded(child);
         child.Tree.OnAttachToParent(Self);
@@ -65,11 +65,27 @@ namespace CrabUI
         Children.Remove(child);
         child.Tree.Parent = null;
         PropogateTreeChanged();
+        Self.Layout.RequireChildrenUpdate = true;
 
         OnChildRemoved(child);
         child.Tree.OnDetachFromParent(Self);
 
       }
+
+      public void RemoveAllChildren()
+      {
+        foreach (CUIComponent child in Children)
+        {
+          child.Tree.Parent = null;
+          OnChildRemoved(child);
+          child.Tree.OnDetachFromParent(Self);
+        }
+
+        PropogateTreeChanged();
+        Self.Layout.RequireChildrenUpdate = true;
+        Children.Clear();
+      }
+
 
       private void PropogateTreeChanged()
       {

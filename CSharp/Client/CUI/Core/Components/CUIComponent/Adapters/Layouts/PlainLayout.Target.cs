@@ -16,19 +16,21 @@ namespace CrabUI
   {
     protected partial class Adapters_Part : Part
     {
-      public Layout_Adapter Layout { get; } = new();
-      public partial class Layout_Adapter : Part, IAdapterPart, Layout.Target
+      public partial class Layout_Adapter : PlainLayout.Target
       {
-        public void Init()
-        {
-          PlainLayout_Init();
-        }
-
-        CUIRect Layout.Target.Rect
+        CUIRect PlainLayout.Target.Rect
         {
           get => Self.FunnyProps.Rect.Value;
           set => Self.FunnyProps.Rect.Value = value;
         }
+
+        CUINullRect PlainLayout.Target.Absolute => Self.LayoutProps.Absolute.Value;
+        CUINullRect PlainLayout.Target.Relative => Self.LayoutProps.Relative.Value;
+
+        IReadOnlyList<PlainLayout.Target> PlainLayout.Target.Children
+          => new ListProxy<CUIComponent, PlainLayout.Target>(
+            Self.Tree.Children, c => c.Adapters.Layout
+          );
       }
     }
   }

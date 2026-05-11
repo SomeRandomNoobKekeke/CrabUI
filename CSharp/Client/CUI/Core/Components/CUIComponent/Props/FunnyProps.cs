@@ -20,6 +20,7 @@ namespace CrabUI
         Rect.OnValueSet = (rect) =>
         {
           Self.UpdateRect(rect);
+          Self.DebugChannels["Prop Set"].Send(Self, typeof(CUIRect), "Rect", rect);
         };
       }
 

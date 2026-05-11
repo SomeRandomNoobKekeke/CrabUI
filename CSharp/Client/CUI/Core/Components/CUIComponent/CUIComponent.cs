@@ -14,13 +14,15 @@ namespace CrabUI
   {
     public class Part : IPart { public CUIComponent Self { get; set; } }
 
+
+
     protected LayoutSlot LayoutSlot { get; set; } = new();
     protected LayoutMarker LayoutMarker { get; set; } = new();
     public DragHandle DragHandle { get; } = new();
 
     public CUIComponent() : base()
     {
-      Layout = new PlainLayout();
+      LayoutSlot.Layout = new PlainLayout();
     }
   }
 }

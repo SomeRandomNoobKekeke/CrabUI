@@ -18,14 +18,17 @@ namespace CrabUI
     {
       public void Init()
       {
+        (Self as CUIComponent).DebugChannels.Map((Self as CUIMainComponent).DebugChannels);
+
         Self.ChainDrawer.Debug_DrawVisualUnit.Map(Self.DebugChannels["Draw Visual Unit"]);
         Self.VisualFlattener.Debug_UnitFlattened.Map(Self.DebugChannels["Visual Unit Flattened"]);
       }
     }
 
 
-    public new DebugChannelsDict DebugChannels { get; } = new()
+    public new Dictionary<string, IDebugNode> DebugChannels { get; } = new()
     {
+      ["Prop Set"] = new DebugNode<CUIComponent, Type, string, object>(),
       ["Child Added"] = new DebugNode<CUIComponent, CUIComponent>(),
       ["Draw Visual Unit"] = new DebugNode<VisualUnit>(),
       ["Visual Unit Flattened"] = new DebugNode<VisualUnit>(),

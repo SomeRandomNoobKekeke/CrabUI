@@ -29,7 +29,7 @@ namespace CrabUI
 
       private void Attach()
       {
-        // AttachedPins.Add(Self.DebugChannels["Child Added"].Pin.Add(Output));
+        AttachedPins.Add(Self.DebugChannels["Prop Set"].Pin.Add(Output));
         // AttachedPins.Add(Self.DebugChannels["Draw Visual Unit"].Pin.Add(Output));
         // AttachedPins.Add(Self.DebugChannels["Visual Unit Flattened"].Pin.Add(Output));
       }

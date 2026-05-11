@@ -10,7 +10,6 @@ namespace CrabUI
 {
   public partial class CUICore
   {
-    //BRUH stupid part just for Init
     protected InitDebugChannels_Part InitDebugChannels { get; } = new();
     public class InitDebugChannels_Part : Part
     {
@@ -20,18 +19,21 @@ namespace CrabUI
       }
     }
 
-    public DebugChannelsDict DebugChannels { get; } = new()
+    public Dictionary<string, IDebugNode> DebugChannels { get; } = new()
     {
+      ["Prop Set"] = new DebugNode<CUIComponent, Type, string, object>()
+      {
+        MsgFactory = (component, propType, propName, value)
+         => $"{component} {propType} {propName} {value}",
+      },
       ["Child Added"] = new DebugNode<CUIComponent, CUIComponent>()
       {
-        Factory = (parent, child) => new DebugEvent()
-        {
-          Msg = $"{Logger.White(child)} attached to {Logger.White(parent)}",
-        },
+        MsgFactory = (parent, child)
+          => $"{Logger.White(child)} attached to {Logger.White(parent)}",
       },
       ["Draw Visual Unit"] = new DebugNode<VisualUnit>()
       {
-        Factory = (u) => new DebugEvent() { Msg = $"Unit Drawn [{u}]" },
+        MsgFactory = (u) => $"Unit Drawn [{u}]",
       },
       ["Visual Unit Flattened"] = new DebugNode<VisualUnit>(),
     };

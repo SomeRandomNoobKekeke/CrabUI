@@ -53,8 +53,6 @@ namespace CrabUIUser
         Absolute = new CUINullRect(0, 0, 100, 100),
       });
 
-
-
       CUI.Main.AddChild(frame);
     }
 

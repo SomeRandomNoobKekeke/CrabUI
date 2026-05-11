@@ -6,13 +6,14 @@ using System.Diagnostics;
 
 namespace BaroJunk
 {
-  public class EventBridge<T1, T2>
+  public class EventBridge<T1, T2> : IEventBridge
   {
     private EventSubscription BridgeSubscription;
     public bool Opened => BridgeSubscription != null;
 
     public ClearableEvent<T1, T2> SourceEvent { get; set; }
     public Action<T1, T2> Action { get; set; }
+
 
     public void Open()
     {
@@ -33,9 +34,7 @@ namespace BaroJunk
 
   public static partial class ClearableEvent_Extensions
   {
-    public static EventBridge<T1, T2> CreateBridge<T1, T2>(this ClearableEvent<T1, T2> self, Action<T1, T2> action)
-    {
-      return new EventBridge<T1, T2>(self) { Action = action };
-    }
+    public static EventBridge<T1, T2> CreateBridge<T1, T2>(this ClearableEvent<T1, T2> self)
+      => new EventBridge<T1, T2>(self);
   }
 }

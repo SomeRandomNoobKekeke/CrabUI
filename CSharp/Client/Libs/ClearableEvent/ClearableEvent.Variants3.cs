@@ -14,6 +14,7 @@ namespace BaroJunk
     public event Action<Action<T1, T2, T3>> OnUnSubscribed;
     public EventSubscription Add(Action<T1, T2, T3> callback)
     {
+      ArgumentNullException.ThrowIfNull(callback);
       Event += callback;
       OnSubscribed?.Invoke(callback);
       return new EventSubscription(() =>
@@ -27,6 +28,9 @@ namespace BaroJunk
       Event -= callback;
       OnUnSubscribed?.Invoke(callback);
     }
+
+    public override void Raise(object arg1, object arg2, object arg3)
+      => Raise((T1)arg1, (T2)arg2, (T3)arg3);
     public void Raise(T1 arg1, T2 arg2, T3 arg3) => Event?.Invoke(arg1, arg2, arg3);
     public void Clear()
     {
@@ -38,30 +42,9 @@ namespace BaroJunk
       }
     }
 
-
-    public Dictionary<ClearableEvent<T1, T2, T3>, EventSubscription> Subscriptions = new();
-
-    public void Map(ClearableEvent<T1, T2, T3> e)
-    {
-      Subscriptions[e] = this.Add((arg1, arg2, arg3) => e.Raise(arg1, arg2, arg3));
-    }
-
-    public void Unmap(ClearableEvent<T1, T2, T3> e)
-    {
-      Subscriptions[e].Cancel();
-      Subscriptions.Remove(e);
-    }
-
-    public void Route(ClearableEvent<T1, T2, T3> source) => source.Map(this);
-    public void Unroute(ClearableEvent<T1, T2, T3> source) => source.Map(this);
-
-    public void ClearMappings()
-    {
-      foreach (EventSubscription subscription in Subscriptions.Values)
-      {
-        subscription.Cancel();
-      }
-      Subscriptions.Clear();
-    }
+    public override EventSubscription Add(Delegate callback) => Add((Action<T1, T2, T3>)callback);
+    protected override Delegate DefaultMapping(IClearableEvent next) => DefaultMapping((ClearableEvent<T1, T2, T3>)next);
+    private Action<T1, T2, T3> DefaultMapping(ClearableEvent<T1, T2, T3> next)
+      => (T1 arg1, T2 arg2, T3 arg3) => next.Raise(arg1, arg2, arg3);
   }
 }

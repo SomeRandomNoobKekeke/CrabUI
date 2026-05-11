@@ -12,10 +12,10 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-    public DebugChannelsDict DebugChannels { get; } = new()
+    public Dictionary<string, IDebugNode> DebugChannels { get; } = new()
     {
       ["Child Added"] = new DebugNode<CUIComponent, CUIComponent>(),
-      ["Prop Set"] = new DebugNode<CUIComponent, string, object>(),
+      ["Prop Set"] = new DebugNode<CUIComponent, Type, string, object>(),
     };
   }
 }

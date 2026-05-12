@@ -38,6 +38,9 @@ namespace BaroJunk
     public EventSubscription Route(IClearableEvent prev) => prev.Map(this);
 
 
+    public bool IsMapped(IClearableEvent next) => Mapping.ContainsKey(next);
+    public bool IsRouted(IClearableEvent prev) => prev.IsMapped(this);
+
     public virtual void Raise() { }
     public virtual void Raise(object arg1) { }
     public virtual void Raise(object arg1, object arg2) { }

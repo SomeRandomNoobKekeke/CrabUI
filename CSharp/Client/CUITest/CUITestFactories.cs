@@ -11,12 +11,12 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUIUser
 {
-  public static class CUIFactories
+  public static class CUITestFactories
   {
     public static bool IsFactoryMethod(MethodInfo mi)
       => mi.ReturnType == typeof(CUIComponent) && mi.GetParameters().Length == 0;
     public static IEnumerable<MethodInfo> AllFactoryMethods()
-      => typeof(CUIFactories).GetMethods(BindingFlags.Public | BindingFlags.Static)
+      => typeof(CUITestFactories).GetMethods(BindingFlags.Public | BindingFlags.Static)
          .Where(mi => IsFactoryMethod(mi));
 
 

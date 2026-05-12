@@ -20,15 +20,6 @@ namespace BaroJunk
   /// </summary>
   public static class ModStorage
   {
-    static ModStorage() => ProjectInfo.Add(new PackageInfo()
-    {
-      Name = "ModStorage",
-      Version = new Version(0, 0, 0)
-      {
-        Branch = "BaroJunk"
-      }
-    });
-
     public static TValue Get<TValue>(string key) => (TValue)Get(key);
 
     public static object Get(string key)
@@ -47,6 +38,12 @@ namespace BaroJunk
     {
       Dictionary<string, object> repo = GetOrCreateRepo();
       return repo.ContainsKey(key);
+    }
+
+    public static void Remove(string key)
+    {
+      Dictionary<string, object> repo = GetOrCreateRepo();
+      repo.Remove(key);
     }
 
 

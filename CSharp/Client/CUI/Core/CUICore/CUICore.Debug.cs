@@ -13,41 +13,46 @@ namespace CrabUI
 
     public class Debugger_Part : Part
     {
-      private List<EventSubscription> AttachedPins = new();
-
       public void Init()
       {
-        Attach();
+        Output.Add(e => CUI.Logger.Log(e));
+      }
+      public ClearableEvent<DebugEvent> Output { get; } = new();
+
+      public IEnumerable<string> ChannelNames => Self.DebugChannels.Keys;
+      public void Open(string name)
+      {
+        if (!Self.DebugChannels.ContainsKey(name)) return;
+        if (Output.IsRouted(Self.DebugChannels[name].Pin)) return;
+        Output.Route(Self.DebugChannels[name].Pin);
       }
 
-
-      private void Output(DebugEvent e)
+      public void Close(string name)
       {
-        //TODO implement text channel handle in CUIRunner
-        CUI.Logger.Log(e);
+        if (!Self.DebugChannels.ContainsKey(name)) return;
+        if (!Output.IsRouted(Self.DebugChannels[name].Pin)) return;
+        Output.Unroute(Self.DebugChannels[name].Pin);
       }
 
-      private void Attach()
+      public void Toggle(string name)
       {
-        foreach (IDebugNode node in Self.DebugChannels.Values)
+        if (!Self.DebugChannels.ContainsKey(name)) return;
+        if (Output.IsRouted(Self.DebugChannels[name].Pin))
         {
-          AttachedPins.Add(node.Pin.Add(Output));
+          Output.Unroute(Self.DebugChannels[name].Pin);
         }
-
-        // AttachedPins.Add(Self.DebugChannels["Prop Set"].Pin.Add(Output));
-        // AttachedPins.Add(Self.DebugChannels["Draw Visual Unit"].Pin.Add(Output));
-        // AttachedPins.Add(Self.DebugChannels["Visual Unit Flattened"].Pin.Add(Output));
-      }
-
-      private void Detach()
-      {
-        foreach (EventSubscription subscription in AttachedPins)
+        else
         {
-          subscription.Cancel();
+          Output.Route(Self.DebugChannels[name].Pin);
         }
-
-        AttachedPins.Clear();
       }
+
+      public bool IsOpen(string name)
+      {
+        if (!Self.DebugChannels.ContainsKey(name)) return false;
+        return Output.IsRouted(Self.DebugChannels[name].Pin);
+      }
+
     }
   }
 }

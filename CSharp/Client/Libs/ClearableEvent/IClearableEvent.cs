@@ -19,6 +19,9 @@ namespace BaroJunk
     public EventSubscription Map(IClearableEvent next);
     public EventSubscription Route(IClearableEvent prev);
 
+    public bool IsMapped(IClearableEvent next);
+    public bool IsRouted(IClearableEvent prev);
+
     public void Raise() { }
     public void Raise(object arg1) { }
     public void Raise(object arg1, object arg2) { }

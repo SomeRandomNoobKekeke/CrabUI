@@ -14,12 +14,15 @@ namespace CrabUIUser
   public partial class Mod : IAssemblyPlugin
   {
     public static Mod Instance;
-    public CUITest CUITest { get; } = new();
-
     public static Logger Logger { get; set; } = new()
     {
       PrintFilePath = false,
     };
+
+    public CUIDebugConsoleInterface CUIDebugConsoleInterface { get; } = new();
+    public CUITestConsoleInterface CUITestConsoleInterface { get; } = new();
+    // Dictionary<string, MethodInfo> factories = CUIFactories.AllFactoryMethods()
+    //   .ToDictionary(mi => mi.Name, mi => mi);
 
     public void Initialize()
     {
@@ -31,31 +34,19 @@ namespace CrabUIUser
 
       try
       {
-        Init();
+        CUI.Start();
+        CUIDebugConsoleInterface.Init();
+
+        CUITestConsoleInterface.Add(CUITestFactories.AllFactoryMethods());
+        CUITestConsoleInterface.Init();
         Experiment();
       }
       catch (Exception e) { Logger.Error(e); }
+
+
     }
 
-    public void Init()
-    {
-      CUI.Start();
 
-      CUIComponent frame = new()
-      {
-        BackgroundColor = Color.Gray,
-        Draggable = true,
-        Absolute = new CUINullRect(300, 300, 400, 600),
-      };
-
-      frame.AddChild(new CUIComponent()
-      {
-        BackgroundColor = Color.Yellow,
-        Absolute = new CUINullRect(0, 0, 100, 100),
-      });
-
-      CUI.Main.AddChild(frame);
-    }
 
     public void OnLoadCompleted() { }
     public void PreInitPatching() { }

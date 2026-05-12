@@ -10,10 +10,10 @@ using ComponentGenerator;
 
 namespace CrabUI
 {
-  public partial class CUIVerticallist : CUIComponent, IComponent
+  public partial class CUIVerticalList : CUIComponent, IComponent
   {
 
-    public CUIVerticallist() : base()
+    public CUIVerticalList() : base()
     {
       LayoutSlot.Layout = new CUIVerticalListLayout();
     }

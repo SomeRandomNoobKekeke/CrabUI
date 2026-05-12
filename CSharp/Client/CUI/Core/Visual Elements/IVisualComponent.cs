@@ -11,6 +11,7 @@ namespace CrabUI
 {
   public interface IVisualComponent
   {
+    public void UpdateRect(CUIRect rect);
     public IEnumerable<VisualUnit> VisualSplit();
   }
 }

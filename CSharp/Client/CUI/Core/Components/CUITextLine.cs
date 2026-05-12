@@ -10,18 +10,27 @@ using ComponentGenerator;
 
 namespace CrabUI
 {
-  public partial class CUIComponent
+  public partial class CUITextLine : CUIComponent, IComponent
   {
-    public SimpleTexture Background { get; } = new();
+    public TextLine TextLine { get; } = new();
+    public string Text
+    {
+      get => TextLine.Text;
+      set => TextLine.Text = value;
+    }
+
+
 
     public override void UpdateRect(CUIRect rect)
     {
-      Background.Rect = rect;
+      base.UpdateRect(rect);
+      TextLine.Position = rect.LeftTop;
     }
 
     public override IEnumerable<VisualUnit> VisualSplit()
     {
       yield return new VisualUnit.PrimitiveVisualElement(Background);
+      yield return new VisualUnit.PrimitiveVisualElement(TextLine);
       yield return new VisualUnit.LeftContextBound();
       foreach (CUIComponent child in Tree.Children)
       {
@@ -29,5 +38,6 @@ namespace CrabUI
       }
       yield return new VisualUnit.RightContextBound();
     }
+
   }
 }

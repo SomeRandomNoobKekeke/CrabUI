@@ -42,8 +42,9 @@ namespace CrabUIUser
         Absolute = new CUINullRect(30, 0, 350, 100),
       });
 
-      list.AddChild(new CUIComponent()
+      list.AddChild(new CUITextLine()
       {
+        Text = "123",
         BackgroundColor = Color.Green,
         Absolute = new CUINullRect(0, 0, 300, 100),
       });

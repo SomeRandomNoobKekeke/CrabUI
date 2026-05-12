@@ -42,8 +42,6 @@ namespace CrabUIUser
         Experiment();
       }
       catch (Exception e) { Logger.Error(e); }
-
-
     }
 
 

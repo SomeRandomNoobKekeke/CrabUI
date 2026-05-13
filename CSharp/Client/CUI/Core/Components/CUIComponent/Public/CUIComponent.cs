@@ -51,5 +51,11 @@ namespace CrabUI
       get => LayoutProps.Relative.Value;
       set => LayoutProps.Relative.Value = value;
     }
+
+    public Vector2 Anchor
+    {
+      get => LayoutProps.Anchor.Value;
+      set => LayoutProps.Anchor.Value = value;
+    }
   }
 }

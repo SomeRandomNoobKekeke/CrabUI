@@ -30,7 +30,7 @@ namespace CrabUIUser
       if (ModStorage.Has("ReloadRequest")) { return; }
 
       Logger.Log($"Compiled somehow");
-      // UTestCommands.AddCommands();
+      UTestCommands.AddCommands();
 
       try
       {

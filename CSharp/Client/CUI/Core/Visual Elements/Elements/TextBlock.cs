@@ -22,10 +22,6 @@ namespace CrabUI
 
     public CUIFont Font { get; set; } = CUIFont.Font;
 
-
-
-
-
     public void Draw(CUISpriteBatch spriteBatch)
     {
       // Font.DrawString(

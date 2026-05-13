@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Diagnostics;
 using BaroJunk;
+using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
@@ -15,7 +16,10 @@ namespace CrabUI
 
       setup.DataSources = new GameDataSources();
       setup.Runner = new SoloCUIRunner();
-      setup.Core = new CUICore();
+      setup.Core = new CUICore()
+      {
+        GameScreenRect = new Rectangle(0, 0, GameMain.GraphicsWidth, GameMain.GraphicsHeight)
+      };
       setup.WireUp();
 
       return setup;

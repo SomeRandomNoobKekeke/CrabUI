@@ -17,7 +17,8 @@ namespace CrabUIUser
     {
       return new CUIButton()
       {
-        Absolute = new CUINullRect(1000, 300, 200, 100),
+        Anchor = CUIAnchor.Center,
+        Absolute = new CUINullRect(0, 0, 200, 100),
         BackgroundColor = Color.White,
       };
     }

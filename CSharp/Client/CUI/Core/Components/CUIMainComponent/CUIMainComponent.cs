@@ -13,6 +13,11 @@ namespace CrabUI
   {
     public class Part : IPart { public CUIMainComponent Self { get; set; } }
 
+    public CUIRect Rect
+    {
+      get => FunnyProps.Rect.Value;
+      set => FunnyProps.Rect.Value = value;
+    }
 
     protected VisualFlattener VisualFlattener { get; } = new();
     protected LayoutFlattener LayoutFlattener { get; } = new();

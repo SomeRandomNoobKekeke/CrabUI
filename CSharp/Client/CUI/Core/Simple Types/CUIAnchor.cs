@@ -53,12 +53,22 @@ namespace CrabUI
       return AnchorPosIn(parent, anchor) - AnchorPosIn(childSize, anchor);
     }
 
+    public static Vector2 ChildPosIn(Vector2 parentSize, Vector2 anchor, Vector2 childSize)
+    {
+      return AnchorPosIn(parentSize, anchor) - AnchorPosIn(childSize, anchor);
+    }
+
     /// <summary>
     /// childAnchor point in child is attached to parentAnchor point in parent
     /// </summary>
     public static Vector2 ChildPosIn(CUIRect parent, Vector2 parentAnchor, Vector2 childSize, Vector2 childAnchor)
     {
       return AnchorPosIn(parent, parentAnchor) - AnchorPosIn(new CUIRect(childSize), childAnchor);
+    }
+
+    public static Vector2 ChildPosIn(Vector2 parentSize, Vector2 parentAnchor, Vector2 childSize, Vector2 childAnchor)
+    {
+      return AnchorPosIn(parentSize, parentAnchor) - AnchorPosIn(new CUIRect(childSize), childAnchor);
     }
   }
 }

@@ -21,5 +21,7 @@ namespace CrabUI
       get => _value;
       set => _value = value;
     }
+
+    public T DefaultValue { set { _value = value; } }
   }
 }

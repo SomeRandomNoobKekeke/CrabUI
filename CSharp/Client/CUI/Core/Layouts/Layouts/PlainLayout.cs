@@ -19,6 +19,8 @@ namespace CrabUI
       public CUINullRect Absolute { get; }
       public CUINullRect Relative { get; }
       public IReadOnlyList<Target> Children { get; }
+      public Vector2 Anchor { get; }
+      public Vector2? ParentAnchor { get; }
     }
 
     public override void InjectHost(Layout.Target host) { Host = host as Target; }
@@ -31,15 +33,16 @@ namespace CrabUI
 
       foreach (Target c in Host.Children)
       {
+        // Offset to anchor pos
         float x, y, w, h;
 
         x = 0;
-        if (c.Relative.Left.HasValue) x = Host.Rect.Left + c.Relative.Left.Value * Host.Rect.Width;
-        if (c.Absolute.Left.HasValue) x = Host.Rect.Left + c.Absolute.Left.Value;
+        if (c.Relative.Left.HasValue) x = c.Relative.Left.Value * Host.Rect.Width;
+        if (c.Absolute.Left.HasValue) x = c.Absolute.Left.Value;
 
         y = 0;
-        if (c.Relative.Top.HasValue) y = Host.Rect.Top + c.Relative.Top.Value * Host.Rect.Height;
-        if (c.Absolute.Top.HasValue) y = Host.Rect.Top + c.Absolute.Top.Value;
+        if (c.Relative.Top.HasValue) y = c.Relative.Top.Value * Host.Rect.Height;
+        if (c.Absolute.Top.HasValue) y = c.Absolute.Top.Value;
 
         w = 0;
         if (c.Relative.Width.HasValue) w = c.Relative.Width.Value * Host.Rect.Width;
@@ -50,7 +53,18 @@ namespace CrabUI
         if (c.Absolute.Height.HasValue) h = c.Absolute.Height.Value;
 
 
-        c.Rect = new CUIRect(x, y, w, h);
+
+        Vector2 anchorPos = CUIAnchor.ChildPosIn(
+          Host.Rect.Size,
+          c.ParentAnchor ?? c.Anchor,
+          new Vector2(w, h),
+          c.Anchor
+        );
+
+        c.Rect = new CUIRect(
+          anchorPos + new Vector2(x, y) + Host.Rect.LeftTop,
+          new Vector2(w, h)
+        );
       }
 
 

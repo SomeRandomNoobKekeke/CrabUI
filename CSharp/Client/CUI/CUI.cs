@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Diagnostics;
 using BaroJunk;
-
+using Microsoft.Xna.Framework;
 
 
 namespace CrabUI
@@ -21,9 +21,10 @@ namespace CrabUI
       PrintFilePath = false,
     };
 
-
+    public static Rectangle GameScreenRect => Core.GameScreenRect;
 
     public static CUISetup Setup { get; set; } = CUISetup.Default();
+    public static CUICore Core => Setup.Core;
     public static void Start() => Setup.Start();
     public static void Stop() => Setup?.Stop();
 

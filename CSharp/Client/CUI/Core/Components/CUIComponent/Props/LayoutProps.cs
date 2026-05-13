@@ -49,6 +49,12 @@ namespace CrabUI
       public CUILayoutProp<Vector2> Anchor { get; } = new()
       {
         Pattern = LayoutMarker.Pattern.FromParentAndDown,
+        DefaultValue = Vector2.Zero,
+      };
+
+      public CUILayoutProp<Vector2?> ParentAnchor { get; } = new()
+      {
+        Pattern = LayoutMarker.Pattern.FromParentAndDown,
       };
 
       public CUILayoutProp<CUIDirection> Direction { get; } = new()

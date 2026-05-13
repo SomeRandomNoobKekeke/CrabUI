@@ -48,7 +48,7 @@ namespace CrabUIUser
       }
       catch (Exception e)
       {
-        CUI.Logger.Warning($"Error in CUITest [{name}]: {e.Message}");
+        CUI.Logger.Warning($"Error in CUITest [{name}]: {e.Message} {e.InnerException}");
       }
     }
 

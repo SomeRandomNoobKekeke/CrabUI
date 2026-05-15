@@ -20,7 +20,7 @@ namespace BaroJunk
 
       hub.Gates["cringe"].Open();
       hub.Output.Add((e) => result = e.ToString());
-      hub.DefaultIsOpen = false;
+      hub.IsOpen = false;
 
       DebugRelay relay1 = new();
       DebugRelay relay2 = new();

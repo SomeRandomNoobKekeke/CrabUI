@@ -6,30 +6,24 @@ using System.Diagnostics;
 
 namespace BaroJunk
 {
-  public class DebugHub : DebugRelayBase
+  public class DebugRelay : DebugRelayBase, IDebugRelayTarget
   {
-    public ClearableEvent<DebugEvent> Output { get; } = new();
-    public DebugGateDict Gates { get; } = new();
-    public bool IsOpen { get; set; } = true;
+    public void Map(DebugRelayBase next) => next.Route(this);
 
     public void Open()
     {
-      IsOpen = true;
       foreach (DebugNodeBase node in GetNodes()) { node.Open(); }
     }
     public void Open(string type)
     {
-      IsOpen = true;
       foreach (DebugNodeBase node in GetNodes(type)) { node.Open(); }
     }
     public void Close()
     {
-      IsOpen = false;
       foreach (DebugNodeBase node in GetNodes()) { node.Close(); }
     }
     public void Close(string type)
     {
-      IsOpen = false;
       foreach (DebugNodeBase node in GetNodes(type)) { node.Close(); }
     }
     public void Toggle()

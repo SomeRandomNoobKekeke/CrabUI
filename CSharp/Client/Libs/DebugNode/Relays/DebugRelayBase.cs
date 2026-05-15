@@ -6,11 +6,18 @@ using System.Diagnostics;
 
 namespace BaroJunk
 {
+  /// <summary>
+  /// DebugRelay or DebugHub
+  /// </summary>
   public abstract class DebugRelayBase
   {
     protected List<IDebugRelayTarget> Children = new();
 
     public void Route(IDebugRelayTarget prev) => this.Children.Add(prev);
+
+    public void Route(DebugNodeDict nodes) => nodes.Map(this);
+    public void Route(DebugRelayDict relays) => relays.Map(this);
+
 
     public IEnumerable<DebugNodeBase> GetNodes(string type)
       => GetNodes().Where(node => node.Type == type);

@@ -6,12 +6,11 @@ using System.Diagnostics;
 
 namespace BaroJunk
 {
+  /// <summary>
+  /// DebugNode or DebugRelay
+  /// </summary>
   public interface IDebugRelayTarget
   {
-    public bool IsOpen { get; set; }
 
-    public void Open() => IsOpen = true;
-    public void Close() => IsOpen = false;
-    public void Toggle() => IsOpen = !IsOpen;
   }
 }

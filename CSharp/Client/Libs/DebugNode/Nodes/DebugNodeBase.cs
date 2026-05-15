@@ -24,7 +24,7 @@ namespace BaroJunk
       Type = type;
       Hub = hub;
       GlobalGate = Hub.Gates[Type];
-      IsOpen = Hub.DefaultIsOpen;
+      IsOpen = Hub.IsOpen;
     }
   }
 }

@@ -8,7 +8,7 @@ namespace BaroJunk
 {
   public class DebugGate
   {
-    public bool IsOpen { get; set; } = false;
+    public bool IsOpen { get; set; }
 
     public void Open() => IsOpen = true;
     public void Close() => IsOpen = false;

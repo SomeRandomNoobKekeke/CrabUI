@@ -45,6 +45,11 @@ namespace CrabUI
       return (pos - rect.Position) / rect.Size;
     }
 
+    public static Vector2 GetOffset(CUIRect parentRect, Vector2 parentAnchor, CUIRect childRect, Vector2 childAnchor)
+    {
+      return AnchorPosIn(childRect, childAnchor) - AnchorPosIn(parentRect, parentAnchor);
+    }
+
     /// <summary>
     /// E.g. bottom right child vertex is attached to bottom right parent vertex
     /// </summary>

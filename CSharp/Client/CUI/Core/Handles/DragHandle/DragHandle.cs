@@ -53,7 +53,7 @@ namespace CrabUI
     private void Release(CUIMouseEvent e)
     {
       Vector2 origin = e.Pos + GrabOffset - (Host.ParentRect?.LeftTop ?? Vector2.Zero);
-      Host.SetAbsolutePos(origin.X, origin.Y);
+      Host.SetLeftTopPos(origin.X, origin.Y);
       Grabbed = false;
       host.HubMouseMoved -= Update;
       host.HubMouseUp -= Release;
@@ -62,7 +62,7 @@ namespace CrabUI
     public void Update(CUIMouseEvent e)
     {
       Vector2 origin = e.Pos + GrabOffset - (Host.ParentRect?.LeftTop ?? Vector2.Zero);
-      Host.SetAbsolutePos(origin.X, origin.Y);
+      Host.SetLeftTopPos(origin.X, origin.Y);
     }
 
 

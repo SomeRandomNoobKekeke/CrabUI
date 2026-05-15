@@ -23,6 +23,7 @@ namespace CrabUIUser
         BackgroundColor = Color.Blue,
         Text = "bruh",
         Scale = 10,
+        Draggable = true,
       };
     }
   }

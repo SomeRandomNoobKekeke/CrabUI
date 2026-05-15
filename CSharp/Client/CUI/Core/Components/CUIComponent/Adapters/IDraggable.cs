@@ -26,12 +26,22 @@ namespace CrabUI
         }
         public CUIRect Rect => Self.FunnyProps.Rect.Value;
         public CUIRect? ParentRect => Self.Parent?.FunnyProps.Rect.Value;
-        public void SetAbsolutePos(float x, float y)
+
+        // Note: DragHandle doesn't know and doesn't care about anchors
+        public void SetLeftTopPos(float x, float y)
         {
+          Vector2 offset = CUIAnchor.GetOffset(
+            ParentRect ?? CUIRect.Zero,
+            Self.LayoutProps.ParentAnchor.Value ?? Self.LayoutProps.Anchor.Value,
+            new CUIRect(x, y, Rect.Width, Rect.Height),
+            Self.LayoutProps.Anchor.Value
+          );
+
+          //TODO add Relative drag
           Self.LayoutProps.Absolute.Value = Self.LayoutProps.Absolute.Value with
           {
-            Left = x,
-            Top = y,
+            Left = offset.X,
+            Top = offset.Y,
           };
         }
 

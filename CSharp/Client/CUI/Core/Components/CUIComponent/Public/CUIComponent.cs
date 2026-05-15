@@ -63,5 +63,11 @@ namespace CrabUI
       get => LayoutProps.ParentAnchor.Value;
       set => LayoutProps.ParentAnchor.Value = value;
     }
+
+    public float? Flex
+    {
+      get => LayoutProps.Flex.Value;
+      set => LayoutProps.Flex.Value = value;
+    }
   }
 }

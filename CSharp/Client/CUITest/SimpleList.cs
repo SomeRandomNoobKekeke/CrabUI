@@ -15,11 +15,11 @@ namespace CrabUIUser
   {
     public static CUIComponent SimpleList()
     {
-      CUIComponent frame = new()
+      CUIFrame frame = new()
       {
         BackgroundColor = Color.Gray,
-        Draggable = true,
-        Absolute = new CUINullRect(300, 300, 400, 600),
+        Anchor = CUIAnchor.Center,
+        Absolute = new CUINullRect(0, 0, 400, 600),
       };
 
       CUIVerticalList list = new CUIVerticalList()
@@ -46,7 +46,14 @@ namespace CrabUIUser
       {
         Text = "123",
         BackgroundColor = Color.Green,
-        Absolute = new CUINullRect(0, 0, 300, 100),
+        Flex = 1,
+      });
+
+      list.AddChild(new CUITextLine()
+      {
+        Text = "321",
+        BackgroundColor = Color.Pink,
+        Flex = 3,
       });
 
       return frame;

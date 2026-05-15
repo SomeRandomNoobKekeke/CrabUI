@@ -22,7 +22,7 @@ namespace CrabUIUser
         Absolute = new CUINullRect(0, 0, 200, 100),
         BackgroundColor = Color.Blue,
         Text = "bruh",
-        Scale = 10,
+        Scale = 2,
         Draggable = true,
       };
     }

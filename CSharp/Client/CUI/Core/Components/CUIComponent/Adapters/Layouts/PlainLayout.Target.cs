@@ -29,11 +29,12 @@ namespace CrabUI
 
         Vector2 PlainLayout.Target.Anchor => Self.LayoutProps.Anchor.Value;
         Vector2? PlainLayout.Target.ParentAnchor => Self.LayoutProps.ParentAnchor.Value;
-
         IReadOnlyList<PlainLayout.Target> PlainLayout.Target.Children
           => new ListProxy<CUIComponent, PlainLayout.Target>(
             Self.Tree.Children, c => c.Adapters.Layout
           );
+
+
       }
     }
   }

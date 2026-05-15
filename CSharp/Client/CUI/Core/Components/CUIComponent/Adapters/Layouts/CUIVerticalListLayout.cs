@@ -30,6 +30,8 @@ namespace CrabUI
         CUIDirection CUIVerticalListLayout.Target.Direction
           => Self.LayoutProps.Direction.Value;
 
+        float? CUIVerticalListLayout.Target.Flex => Self.LayoutProps.Flex.Value;
+
         IReadOnlyList<CUIVerticalListLayout.Target> CUIVerticalListLayout.Target.Children
           => new ListProxy<CUIComponent, CUIVerticalListLayout.Target>(
             Self.Tree.Children, c => c.Adapters.Layout

@@ -15,7 +15,7 @@ namespace CrabUI
 
     public CUIFrame() : base()
     {
-
+      this.Draggable = true;
     }
   }
 }

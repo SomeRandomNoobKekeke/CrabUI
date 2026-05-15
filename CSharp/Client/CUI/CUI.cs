@@ -71,8 +71,15 @@ namespace CrabUI
 
     public static void Dispose()
     {
-      Setup?.Stop();
-      Setup = null;
+      try
+      {
+        Setup?.Stop();
+        Setup = null;
+      }
+      catch (Exception e)
+      {
+        CUI.Logger.Error($"Error in CUI Dispose: {e}");
+      }
     }
   }
 }

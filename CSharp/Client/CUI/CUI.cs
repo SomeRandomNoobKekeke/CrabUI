@@ -41,7 +41,7 @@ namespace CrabUI
       set
       {
         _Setup = value;
-        _Setup.Activate();
+        _Setup?.Activate();
       }
     }
     public static CUICore Core => Setup.Core;

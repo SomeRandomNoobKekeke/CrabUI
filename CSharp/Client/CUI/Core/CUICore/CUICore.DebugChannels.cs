@@ -16,7 +16,5 @@ namespace CrabUI
       ["Child Added"] = new DebugRelay(),
       ["Layout Updated"] = new DebugRelay(),
     };
-
-
   }
 }

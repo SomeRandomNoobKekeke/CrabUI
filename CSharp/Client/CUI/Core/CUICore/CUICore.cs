@@ -48,6 +48,8 @@ namespace CrabUI
 
       DebugRelays.Route(Main.DebugRelays);
       DebugRelays.Map(DebugHub);
+
+      DebugHub.Output.Add((e) => CUI.Logger.Log(e));
     }
   }
 }

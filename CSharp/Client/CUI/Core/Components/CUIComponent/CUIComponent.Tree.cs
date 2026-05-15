@@ -15,11 +15,6 @@ namespace CrabUI
     protected Tree_Part Tree { get; } = new();
     public class Tree_Part : Part, IModule
     {
-      public Tree_Part()
-      {
-        CUI.Logger.LogVars(CUI.DebugHub);
-      }
-
       public void Init()
       {
         ReadOnlyChildren = Children.AsReadOnly();

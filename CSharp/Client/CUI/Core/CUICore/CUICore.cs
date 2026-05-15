@@ -13,18 +13,17 @@ namespace CrabUI
   {
     public class Part : IPart { public CUICore Self { get; set; } }
 
-    private Rectangle _GameScreenRect;
-    public Rectangle GameScreenRect
+    private Rectangle _GameScreenRect; public Rectangle GameScreenRect
     {
       get => _GameScreenRect;
       set
       {
         _GameScreenRect = value;
-        UpdateGameScreenRect();
+        if (_Activated) UpdateGameScreenRect();
       }
     }
 
-    public CUIMainComponent Main { get; } = new();
+    public CUIMainComponent Main { get; private set; }
     public CUIInput Input { get; } = new();
 
     private void UpdateGameScreenRect()
@@ -35,6 +34,20 @@ namespace CrabUI
     public CUICore()
     {
       this.Inject();
+    }
+
+    private bool _Activated;
+    internal void Activate()
+    {
+      if (_Activated) return;
+      _Activated = true;
+
+      Main = new();
+
+      UpdateGameScreenRect();
+
+      DebugRelays.Route(Main.DebugRelays);
+      DebugRelays.Map(DebugHub);
     }
   }
 }

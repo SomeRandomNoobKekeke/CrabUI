@@ -28,6 +28,9 @@ namespace BaroJunk
 
     public DebugNodeBase(string type, DebugHub hub)
     {
+      ArgumentNullException.ThrowIfNull(type);
+      ArgumentNullException.ThrowIfNull(hub);
+
       Type = type;
       Hub = hub;
       GlobalGate = Hub.Gates[Type];

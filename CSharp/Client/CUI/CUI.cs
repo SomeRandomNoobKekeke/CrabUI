@@ -14,6 +14,8 @@ namespace CrabUI
     static CUI()
     {
       PluginLifeCycle.Stop += Dispose;
+
+      Setup = CUISetup.Default();
     }
 
     public static Logger Logger = new()
@@ -23,12 +25,30 @@ namespace CrabUI
 
     public static Rectangle GameScreenRect => Core.GameScreenRect;
 
-    public static CUISetup Setup { get; set; } = CUISetup.Default();
+
+    private static CUISetup _Setup; public static CUISetup Setup
+    {
+      get
+      {
+        if (_Setup is null)
+        {
+          CUI.Logger.Error($"Attempt to access CUI.Setup before it was set");
+          CUI.Logger.PrintStackTrace();
+        }
+
+        return _Setup;
+      }
+      set
+      {
+        _Setup = value;
+        _Setup.Activate();
+      }
+    }
     public static CUICore Core => Setup.Core;
     public static void Start() => Setup.Start();
     public static void Stop() => Setup?.Stop();
 
-    public static CUIMainComponent Main => Setup?.Core?.Main;
+    public static CUIMainComponent Main => Setup.Core.Main;
     public static DebugHub DebugHub => Core.DebugHub;
 
     public static event Action<double> OnUpdate

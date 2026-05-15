@@ -9,13 +9,6 @@ namespace CrabUI
 {
   public partial class CUICore
   {
-    private DebugHub _DebugHub; public DebugHub DebugHub
-    {
-      get
-      {
-        if (_DebugHub is null) _DebugHub = new();
-        return _DebugHub;
-      }
-    }
+    public DebugHub DebugHub { get; } = new();
   }
 }

@@ -28,5 +28,10 @@ namespace CrabUI
       Runner.Core = Core;
       Runner.DataSources = DataSources;
     }
+
+    public void Activate()
+    {
+      Core.Activate();
+    }
   }
 }

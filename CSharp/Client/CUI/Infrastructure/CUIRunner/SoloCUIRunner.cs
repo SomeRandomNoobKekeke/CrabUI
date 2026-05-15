@@ -51,8 +51,10 @@ namespace CrabUI
       {
         try
         {
+
           //TODO extract real totalTime from gameTime
           Core.CUIRunnerHandle.Update(Timing.TotalTime, DataSources.Input.ScanMouse());
+          UpdateMouseOn();
         }
         catch (Exception e)
         {
@@ -60,6 +62,14 @@ namespace CrabUI
           Disconnect();
         }
       };
+    }
+
+    private void UpdateMouseOn()
+    {
+      if (GUI.MouseOn == null && Core.CUIRunnerHandle.IsMouseOnSomeCUIComponent())
+      {
+        GUI.MouseOn = CUI.DummyComponent;
+      }
     }
 
     public void Disconnect()

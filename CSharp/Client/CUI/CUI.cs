@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Diagnostics;
 using BaroJunk;
 using Microsoft.Xna.Framework;
-
+using Barotrauma;
 
 namespace CrabUI
 {
@@ -17,6 +17,11 @@ namespace CrabUI
 
       Setup = CUISetup.Default();
     }
+
+    public static GUIButton DummyComponent = new GUIButton(new RectTransform(new Point(0, 0)))
+    {
+      Text = "DUMMY",
+    };
 
     public static Logger Logger = new()
     {

@@ -26,16 +26,13 @@ namespace CrabUI
     protected EventConstructor EventConstructor { get; } = new();
     protected EventTargets EventTargets { get; } = new();
 
-
-
     private bool GlobalLayoutChanged;
 
-
+    public bool MouseOverSomeElement => EventTargets.TopTarget != null;
     public void NotifyThatLayoutHasChanged() => GlobalLayoutChanged = true;
 
     public void DrawChildren(CUISpriteBatch spriteBatch)
     {
-
       ChainDrawer.Draw(spriteBatch, VisualFlattener.Flat);
     }
 

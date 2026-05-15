@@ -19,7 +19,8 @@ namespace CrabUIUser
       {
         Anchor = CUIAnchor.Center,
         Absolute = new CUINullRect(0, 0, 200, 100),
-        BackgroundColor = Color.White,
+        Text = "Don't",
+        BackgroundColor = new Color(32, 32, 32),
       };
     }
   }

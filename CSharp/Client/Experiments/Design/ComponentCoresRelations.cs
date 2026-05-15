@@ -24,13 +24,13 @@ namespace CrabUIUser
 
         // this also has to be pubilc, event tho it shouldn't
         public List<ComponentCore> Children = new();
-        public void AddChild(ComponentCore child) => Children.Add(child);
+        public void Append(ComponentCore child) => Children.Add(child);
 
         public ComponentCore(Component component) => Component = component; // (component)
       }
 
       public IEnumerable<Component> Children => Core.Children.Select(core => core.Component);
-      public void AddChild(Component child) => Core.AddChild(child.Core);
+      public void Append(Component child) => Core.Append(child.Core);
 
       protected virtual ComponentCore Core { get; }
 
@@ -46,7 +46,7 @@ namespace CrabUIUser
       Component component1 = new();
       Component component2 = new();
 
-      component1.AddChild(component2);
+      component1.Append(component2);
 
       foreach (Component child in component1.Children)
       {

@@ -13,7 +13,7 @@ namespace BaroJunk
     public UTestTreeNode Parent;
     public List<UTestTreeNode> Children = new();
     public bool IsLeave => Children.Count == 0;
-    public void AddChild(UTestTreeNode child)
+    public void Append(UTestTreeNode child)
     {
       child.Parent = this;
       Children.Add(child);
@@ -131,7 +131,7 @@ namespace BaroJunk
 
         if (Nodes.ContainsKey(parentType))
         {
-          Nodes[parentType].AddChild(node);
+          Nodes[parentType].Append(node);
         }
       }
 

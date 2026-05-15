@@ -47,7 +47,7 @@ namespace CrabUIUser
         get => ModuleA.Prop;
         set => ModuleA.SetPropRecursive(value);
       }
-      public void AddChild(Component child) => ComponentTreeModule.AddChild(child);
+      public void Append(Component child) => ComponentTreeModule.Append(child);
 
       public Component Parent
       {
@@ -85,7 +85,7 @@ namespace CrabUIUser
       public Component Host { get; set; }
       public Component Parent { get; set; }
       public List<Component> Children { get; } = new();
-      public void AddChild(Component child)
+      public void Append(Component child)
       {
         Accessor.Get(child).Parent = Host;
         Children.Add(child);
@@ -102,8 +102,8 @@ namespace CrabUIUser
       Component component2 = new();
       Component component3 = new();
 
-      component1.AddChild(component2);
-      component2.AddChild(component3);
+      component1.Append(component2);
+      component2.Append(component3);
 
       component1.Prop = "123";
 

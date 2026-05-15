@@ -15,18 +15,37 @@ namespace CrabUIUser
   {
     public static CUIComponent SimpleForm()
     {
-      CUIComponent frame = new()
+      CUIFrame frame = new()
       {
-        BackgroundColor = Color.Gray,
-        Draggable = true,
-        Absolute = new CUINullRect(300, 300, 400, 600),
+        BackgroundColor = new Color(32, 32, 32),
+        Absolute = new CUINullRect(0, 0, 400, 600),
+        Anchor = CUIAnchor.Center,
       };
 
-      frame.AddChild(new CUIComponent()
+      frame["layout"] = new CUIVerticalList()
       {
-        BackgroundColor = Color.Red,
-        Absolute = new CUINullRect(0, 0, 100, 100),
-      });
+        Relative = new CUINullRect(0, 0, 1, 1)
+      };
+
+      frame["layout"]["header"] = new CUITextBlock()
+      {
+        Text = "Header",
+        BackgroundColor = Color.Brown,
+        Absolute = new CUINullRect(h: 100),
+      };
+
+      frame["layout"]["main"] = new CUIComponent()
+      {
+        BackgroundColor = new Color(0, 0, 32),
+        Flex = 1,
+      };
+
+      frame["layout"]["main"]["box"] = new CUIComponent()
+      {
+        BackgroundColor = new Color(32, 64, 0),
+        Absolute = new CUINullRect(w: 100, h: 100),
+        Anchor = CUIAnchor.Center,
+      };
 
       return frame;
     }

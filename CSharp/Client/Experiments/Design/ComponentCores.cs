@@ -27,17 +27,17 @@ namespace CrabUIUser
       public class ComponentCore
       {
         protected List<ComponentCore> Children = new();
-        public void AddChild(ComponentCore child) => Children.Add(child);
+        public void Append(ComponentCore child) => Children.Add(child);
       }
 
       public List<Component> Children = new();
       // I can't forward stuff like this
       // having 2 lists is beyond cringe
       // I can't forward any relation between components that should be mirrored in cores
-      public void AddChild(Component child)
+      public void Append(Component child)
       {
         Children.Add(child);
-        Core.AddChild(child.Core);
+        Core.Append(child.Core);
       }
 
       public virtual ComponentCore Core { get; } = new();

@@ -44,7 +44,7 @@ namespace CrabUIUser
         CUIComponent child = (CUIComponent)TestFactories[name].Invoke(null, new object[] { });
 
         CUI.Main.RemoveAllChildren();
-        CUI.Main.AddChild(child);
+        CUI.Main.Append(child);
       }
       catch (Exception e)
       {

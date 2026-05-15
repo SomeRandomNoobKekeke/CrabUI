@@ -15,35 +15,16 @@ namespace CrabUI
     {
       public void Init()
       {
-        Self.DebugChannels.Route(Self.Main.DebugChannels);
+        Self.DebugRelays.Route(Self.Main.DebugRelays);
+        Self.DebugRelays.Map(Self.DebugHub);
       }
     }
 
-    public Dictionary<string, IDebugNode> DebugChannels { get; } = new()
+    public DebugRelayDict DebugRelays { get; } = new()
     {
-      ["Prop Set"] = new DebugNode<CUIComponent, Type, string, object>()
-      {
-        MsgFactory = (component, propType, propName, value)
-         => $"{propType.Name} {component}.{propName} = {value}",
-      },
-      ["Child Added"] = new DebugNode<CUIComponent, CUIComponent>()
-      {
-        MsgFactory = (parent, child)
-          => $"{Logger.White(child)} attached to {Logger.White(parent)}",
-      },
-      // ["Draw Visual Unit"] = new DebugNode<VisualUnit>()
-      // {
-      //   MsgFactory = (u) => $"Unit Drawn [{u}]",
-      // },
-      // ["Visual Unit Flattened"] = new DebugNode<VisualUnit>()
-      // {
-
-      // },
-      ["Layout Updated"] = new DebugNode<CUIMainComponent>()
-      {
-        Name = "Layout Updated",
-        MsgFactory = (main) => $"{main}",
-      },
+      ["Prop Set"] = new DebugRelay(),
+      ["Child Added"] = new DebugRelay(),
+      ["Layout Updated"] = new DebugRelay(),
     };
 
 

@@ -20,6 +20,7 @@ namespace BaroJunk
       };
     }
 
+    public override void Send(object arg1, object arg2, object arg3) => Send((T1)arg1, (T2)arg2, (T3)arg3);
     public void Send(T1 arg1, T2 arg2, T3 arg3)
     {
       if (GlobalGate.IsOpen && IsOpen)

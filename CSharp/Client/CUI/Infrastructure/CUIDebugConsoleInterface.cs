@@ -15,15 +15,15 @@ namespace CrabUIUser
   {
     public void Init()
     {
-      PluginCommands.Add("cuidebug", CUIDebug_Command, () => new string[][] { CUI.Setup.Core.Debugger.ChannelNames.ToArray() });
+      PluginCommands.Add("cuidebug", CUIDebug_Command, () => new string[][] { CUI.DebugHub.Gates.Names.ToArray() });
     }
 
     public static void CUIDebug_Command(string[] args)
     {
       if (args.Length == 0) return;
 
-      string channel = String.Join(' ', args);
-      CUI.Setup.Core.Debugger.Toggle(channel);
+      string gate = String.Join(' ', args);
+      CUI.DebugHub.Gates[gate].Toggle();
     }
   }
 }

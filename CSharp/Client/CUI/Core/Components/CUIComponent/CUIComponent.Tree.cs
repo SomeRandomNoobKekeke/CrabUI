@@ -15,17 +15,27 @@ namespace CrabUI
     protected Tree_Part Tree { get; } = new();
     public class Tree_Part : Part, IModule
     {
+      public Tree_Part()
+      {
+        CUI.Logger.LogVars(CUI.DebugHub);
+      }
+
       public void Init()
       {
         ReadOnlyChildren = Children.AsReadOnly();
 
-        Debug_ChildAdded.Map(Self.DebugChannels["Child Added"]);
-        // ChildAdded.Map(Self.DebugChannels["Child Removed"]);
+        Debug_ChildAdded.Map(Self.DebugRelays["Child Added"]);
+        Debug_ChildRemoved.Map(Self.DebugRelays["Child Removed"]);
       }
 
-      public DebugNode<CUIComponent, CUIComponent> Debug_ChildAdded = new();
-      public DebugNode<CUIComponent, CUIComponent> Debug_ChildRemoved = new();
-
+      public DebugNode<CUIComponent, CUIComponent> Debug_ChildAdded = new(
+        "Tree Changed", CUI.DebugHub,
+        (parent, child) => $"{parent} <- {child}"
+      );
+      public DebugNode<CUIComponent, CUIComponent> Debug_ChildRemoved = new(
+        "Tree Changed", CUI.DebugHub,
+        (parent, child) => $"{parent} => {child}"
+      );
       [In] public MainComponentTracker_Part MainComponentTracker { get; set; }
 
       public bool Changed { get; set; }

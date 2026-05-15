@@ -35,7 +35,6 @@ namespace CrabUI
     public CUICore()
     {
       this.Inject();
-
     }
   }
 }

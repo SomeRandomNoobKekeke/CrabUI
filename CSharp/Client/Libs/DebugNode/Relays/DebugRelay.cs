@@ -9,6 +9,7 @@ namespace BaroJunk
   public class DebugRelay : DebugRelayBase, IDebugRelayTarget
   {
     public void Map(DebugRelayBase next) => next.Route(this);
+    public void Unmap(DebugRelayBase next) => next.Unroute(this);
 
     public void Open()
     {

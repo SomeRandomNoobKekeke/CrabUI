@@ -29,7 +29,7 @@ namespace CrabUI
     public static void Stop() => Setup?.Stop();
 
     public static CUIMainComponent Main => Setup?.Core?.Main;
-
+    public static DebugHub DebugHub => Core.DebugHub;
 
     public static event Action<double> OnUpdate
     {

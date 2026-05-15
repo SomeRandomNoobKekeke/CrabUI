@@ -43,6 +43,38 @@ namespace BaroJunk
       }
     }
 
+
+    public static void Unmap(this Dictionary<string, DebugRelay> self, Dictionary<string, DebugRelay> next)
+    {
+      foreach (string key in next.Keys)
+      {
+        if (self.ContainsKey(key))
+        {
+          next[key].Unroute(self[key]);
+        }
+      }
+    }
+
+    public static void Unroute(this Dictionary<string, DebugRelay> self, Dictionary<string, DebugRelay> prev)
+    {
+      foreach (string key in self.Keys)
+      {
+        if (prev.ContainsKey(key))
+        {
+          self[key].Unroute(prev[key]);
+        }
+      }
+    }
+
+    public static void Unmap(this Dictionary<string, DebugRelay> self, DebugRelayBase next)
+    {
+      foreach (DebugRelay node in self.Values)
+      {
+        next.Unroute(node);
+      }
+    }
+
+
     public static void Open(this Dictionary<string, DebugRelay> self)
     {
       foreach (DebugRelay relay in self.Values) { relay.Open(); }

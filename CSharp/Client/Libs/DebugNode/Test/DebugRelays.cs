@@ -56,6 +56,13 @@ namespace BaroJunk
       }
       node1.Send("kek", 123);
       Tests.Add(new UTest(result, $"cringe| bruh kek 123"));
+
+
+      relay2.Unroute(node3);
+      Tests.Add(new UListTest(
+        hub.GetNodes("bruh"),
+        new List<DebugNodeBase>() { }
+      ));
     }
   }
 }

@@ -16,19 +16,10 @@ namespace CrabUI
     protected LayoutProps_Part LayoutProps { get; } = new();
     public class LayoutProps_Part : Part, ICUILayoutProp.IContainer
     {
-      public DebugNode<Type, string, object> LayoutPropSet { get; } = new();
-
       public void Init()
       {
-        var PropSetChannel = Self.DebugChannels.Get<DebugNode<CUIComponent, Type, string, object>>("Prop Set");
-
-        LayoutPropSet.Map(
-          PropSetChannel,
-          (Type t, string s, object o) => PropSetChannel.Send(Self, t, s, o)
-        );
-
-        Absolute.DebugValueSet.Map(LayoutPropSet);
-        Relative.DebugValueSet.Map(LayoutPropSet);
+        Absolute.Debug_ValueSet.Map(Self.DebugRelays["Prop Set"]);
+        Relative.Debug_ValueSet.Map(Self.DebugRelays["Prop Set"]);
       }
 
       void ICUILayoutProp.IContainer.Mark(LayoutMarker.Pattern pattern)

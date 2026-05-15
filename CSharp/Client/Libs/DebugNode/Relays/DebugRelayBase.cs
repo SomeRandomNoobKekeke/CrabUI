@@ -14,9 +14,13 @@ namespace BaroJunk
     protected List<IDebugRelayTarget> Children = new();
 
     public void Route(IDebugRelayTarget prev) => this.Children.Add(prev);
+    public void Unroute(IDebugRelayTarget prev) => this.Children.Remove(prev);
 
     public void Route(DebugNodeDict nodes) => nodes.Map(this);
     public void Route(DebugRelayDict relays) => relays.Map(this);
+    public void Unroute(DebugNodeDict nodes) => nodes.Unmap(this);
+    public void Unroute(DebugRelayDict relays) => relays.Unmap(this);
+
 
 
     public IEnumerable<DebugNodeBase> GetNodes(string type)

@@ -12,13 +12,6 @@ namespace CrabUI
 {
   public class VisualFlattener : IModule
   {
-    public VisualFlattener()
-    {
-      // Debug_UnitFlattened.Event.Add(u => CUI.Logger.Log(u));
-    }
-
-    public DebugNode<VisualUnit> Debug_UnitFlattened = new();
-
     public List<VisualUnit> Flat { get; } = new();
 
     public void Flatten(IVisualComponent root)
@@ -33,15 +26,12 @@ namespace CrabUI
           {
             case VisualUnit.PrimitiveVisualElement primitive:
               Flat.Add(primitive);
-              Debug_UnitFlattened.Send(primitive);
               break;
             case VisualUnit.LeftContextBound left:
               Flat.Add(left);
-              Debug_UnitFlattened.Send(left);
               break;
             case VisualUnit.RightContextBound right:
               Flat.Add(right);
-              Debug_UnitFlattened.Send(right);
               break;
             case VisualUnit.NestedVisualComponent nested:
               FlattenRec(nested.Component);

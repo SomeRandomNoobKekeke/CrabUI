@@ -42,6 +42,13 @@ namespace BaroJunk
         hub.GetNodes("bruh"),
         new List<DebugNodeBase>() { nodes["bruh"] }
       ));
+
+
+      dict1.Unroute(dict2);
+      Tests.Add(new UListTest(
+        hub.GetNodes("bruh"),
+        new List<DebugNodeBase>() { }
+      ));
     }
   }
 }

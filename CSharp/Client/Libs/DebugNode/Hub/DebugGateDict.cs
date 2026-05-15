@@ -20,5 +20,7 @@ namespace BaroJunk
       if (!Switches.ContainsKey(type)) Switches[type] = new();
       return Switches[type];
     }
+
+    public IEnumerable<string> Names => Switches.Keys;
   }
 }

@@ -9,24 +9,15 @@ using BaroJunk;
 
 namespace CrabUI
 {
-  public class SimpleTexture : IVisualElement, IMouseEventConsumer
+  public class SimpleTexture : VisualElementBase, IVisualElement
   {
     public CUIRect Rect { get; set; }
     public CUITexture2D Texture { get; set; } = CUITexture2D.White;
     public Color Color { get; set; }
 
-
     public void Draw(CUISpriteBatch spriteBatch)
     {
       spriteBatch.Draw(Texture, Rect.Box, Color);
     }
-
-    public ClearableEvent<CUIMouseDownEvent> MouseDown { get; } = new();
-    public ClearableEvent<CUIMouseUpEvent> MouseUp { get; } = new();
-    public ClearableEvent<CUIMouseClickEvent> MouseClick { get; } = new();
-    public ClearableEvent<CUIMouseDoubleClickEvent> MouseDoubleClick { get; } = new();
-    public ClearableEvent<CUIMouseMovedEvent> MouseMoved { get; } = new();
-    public ClearableEvent<CUIMouseEnterEvent> MouseEnter { get; } = new();
-    public ClearableEvent<CUIMouseLeaveEvent> MouseLeave { get; } = new();
   }
 }

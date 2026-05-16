@@ -13,7 +13,7 @@ namespace CrabUI
   /// <summary>
   /// This is just raw unleashed line of text
   /// </summary>
-  public class TextLine : IVisualElement, IMouseEventConsumer
+  public class TextLine : VisualElementBase, IVisualElement
   {
     public CUIRect Rect => new CUIRect(Position, Font.MeasureString(Text));
 
@@ -46,13 +46,5 @@ namespace CrabUI
         ForceUpperCase
       );
     }
-
-    public ClearableEvent<CUIMouseDownEvent> MouseDown { get; } = new();
-    public ClearableEvent<CUIMouseUpEvent> MouseUp { get; } = new();
-    public ClearableEvent<CUIMouseClickEvent> MouseClick { get; } = new();
-    public ClearableEvent<CUIMouseDoubleClickEvent> MouseDoubleClick { get; } = new();
-    public ClearableEvent<CUIMouseMovedEvent> MouseMoved { get; } = new();
-    public ClearableEvent<CUIMouseEnterEvent> MouseEnter { get; } = new();
-    public ClearableEvent<CUIMouseLeaveEvent> MouseLeave { get; } = new();
   }
 }

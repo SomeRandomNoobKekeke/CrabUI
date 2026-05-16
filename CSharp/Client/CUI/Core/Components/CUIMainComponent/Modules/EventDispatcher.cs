@@ -12,6 +12,12 @@ namespace CrabUI
 {
   public class EventDispatcher : IModule
   {
+    public void Dispatch(IEventConsumer consumer, InputEvent inputEvent)
+    {
+      if (inputEvent.Consumed) return;
+      inputEvent.Dispatch(consumer);
+    }
+
     public void Dispatch(IEventConsumer consumer, IEnumerable<InputEvent> events)
     {
       foreach (InputEvent e in events)

@@ -37,6 +37,8 @@ namespace CrabUI
       self.MouseClick.Map(target.MouseClick);
       self.MouseDoubleClick.Map(target.MouseDoubleClick);
       self.MouseMoved.Map(target.MouseMoved);
+      self.MouseEnter.Map(target.MouseEnter);
+      self.MouseLeave.Map(target.MouseLeave);
     }
 
     public static void Unmap(this IMouseEventConsumer self, IMouseEventConsumer target)
@@ -46,6 +48,8 @@ namespace CrabUI
       self.MouseClick.Unmap(target.MouseClick);
       self.MouseDoubleClick.Unmap(target.MouseDoubleClick);
       self.MouseMoved.Unmap(target.MouseMoved);
+      self.MouseEnter.Unmap(target.MouseEnter);
+      self.MouseLeave.Unmap(target.MouseLeave);
     }
 
     public static void Route(this IMouseEventConsumer self, IMouseEventConsumer source) => source.Map(self);

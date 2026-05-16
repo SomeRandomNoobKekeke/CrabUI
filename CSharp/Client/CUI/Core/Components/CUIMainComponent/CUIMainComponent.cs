@@ -71,6 +71,21 @@ namespace CrabUI
       //   CUI.Logger.Log($"{target} {Logger.Wrap.IEnumerable(events)}");
       // }
 
+      // Mouse enter / leave
+      IEnumerable<IEventConsumer> entered = EventTargets.Targets.Except(EventTargets.PrevTargets);
+      IEnumerable<IEventConsumer> leaved = EventTargets.PrevTargets.Except(EventTargets.Targets);
+      foreach (IEventConsumer c in leaved)
+      {
+        EventDispatcher.Dispatch(c, new CUIMouseLeaveEvent(Input.Mouse));
+      }
+      foreach (IEventConsumer c in entered)
+      {
+        EventDispatcher.Dispatch(c, new CUIMouseEnterEvent(Input.Mouse));
+      }
+
+      Debug_MouseEnter.Send(entered);
+      Debug_MouseLeave.Send(leaved);
+
       EventDispatcher.Dispatch(GlobalEvents, EventConstructor.Events);
       EventDispatcher.Dispatch(EventTargets, EventConstructor.Events);
     }

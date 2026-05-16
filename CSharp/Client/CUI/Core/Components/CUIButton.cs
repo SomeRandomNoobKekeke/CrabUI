@@ -19,7 +19,7 @@ namespace CrabUI
 
     public static void ApplyHoveredStyle(CUIButton button)
     {
-      button.Background.Color = Color.Yellow;
+      button.Background.Color = button.MouseHoverColor;
     }
     public static void ApplyMouseDownStyle(CUIButton button)
     {
@@ -30,8 +30,8 @@ namespace CrabUI
       button.Background.Color = button.PassiveColor;
     }
 
-    public Color MouseHoverColor { get; set; } = new Color(0, 0, 128);
-    public Color MouseDownColor { get; set; } = new Color(0, 0, 180);
+    public Color MouseHoverColor { get; set; } = new Color(0, 0, 140);
+    public Color MouseDownColor { get; set; } = new Color(0, 0, 200);
     public Color PassiveColor { get; set; } = new Color(0, 0, 100);
 
 
@@ -83,7 +83,7 @@ namespace CrabUI
 
     public CUIButton() : base()
     {
-
+      MouseEnter += (e) => HoveredStyle.Apply(this);
       MouseDown += (e) => MouseDownStyle.Apply(this);
       MouseUp += (e) => MouseUpStyle.Apply(this);
     }

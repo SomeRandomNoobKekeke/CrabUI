@@ -12,12 +12,14 @@ namespace CrabUI
 {
   public class EventTargets : IModule
   {
-    public List<IEventConsumer> Targets { get; } = new();
+    public List<IEventConsumer> PrevTargets { get; private set; } = new();
+    public List<IEventConsumer> Targets { get; private set; } = new();
     public IEventConsumer TopTarget { get; private set; }
 
     public void Find(List<VisualUnit> flat, Vector2 mousePos)
     {
-      Targets.Clear();
+      PrevTargets = Targets;
+      Targets = new List<IEventConsumer>();
 
       Vector2 pos = mousePos;
 

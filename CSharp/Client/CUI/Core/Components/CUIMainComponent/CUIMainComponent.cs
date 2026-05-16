@@ -13,6 +13,9 @@ namespace CrabUI
   {
     public class Part : IPart { public CUIMainComponent Self { get; set; } }
 
+    public bool Frozen { get; set; }
+    public double UpdateInterval = 1.0 / 60.0;
+
     public CUIRect Rect
     {
       get => FunnyProps.Rect.Value;
@@ -36,10 +39,14 @@ namespace CrabUI
       ChainDrawer.Draw(spriteBatch, VisualFlattener.Flat);
     }
 
+    public void Step()
+    {
+      Update(LastUpdateTime + UpdateInterval, null);
+    }
+
+    private double LastUpdateTime;
     public void Update(double totalTime, CUIInput Input)
     {
-
-
       if (Tree.Changed)
       {
         Tree.Changed = false;
@@ -48,7 +55,7 @@ namespace CrabUI
         LayoutFlattener.Flatten(this);
       }
 
-      if (Input.SomethingHappened)
+      if (Input is not null && Input.SomethingHappened)
       {
         HandleInput(Input);
       }
@@ -58,6 +65,8 @@ namespace CrabUI
         GlobalLayoutChanged = false;
         UpdateLayout();
       }
+
+      LastUpdateTime = totalTime;
     }
 
     private void HandleInput(CUIInput Input)

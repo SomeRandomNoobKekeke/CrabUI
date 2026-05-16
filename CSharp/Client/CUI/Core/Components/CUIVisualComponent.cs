@@ -18,6 +18,8 @@ namespace CrabUI
     public static int MaxID { get; private set; }
     public int ID { get; set; }
 
+    public string TypeName => this.GetType().Name;
+
     public abstract void UpdateRect(CUIRect rect);
     public abstract IEnumerable<VisualUnit> VisualSplit();
 

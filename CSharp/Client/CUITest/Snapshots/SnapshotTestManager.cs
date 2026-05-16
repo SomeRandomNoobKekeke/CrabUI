@@ -9,6 +9,7 @@ using BaroJunk;
 using CrabUI;
 using Microsoft.Xna.Framework;
 using System.Text;
+using System.IO;
 
 namespace CrabUIUser
 {
@@ -32,8 +33,12 @@ namespace CrabUIUser
       return string.Join('.', parts);
     }
 
+    public string SnaphotsFolder { get; set; }
+
     public Dictionary<string, SnapshotTest> Tests { get; } = new();
     public SnapshotTest CurrentTest { get; private set; }
+    public CUIComponent TestSubject { get; private set; }
+    public ComponentSnapshot CurrentSnapshot { get; private set; }
 
     public CUIComponent TestBox { get; } = new CUIComponent()
     {
@@ -42,6 +47,31 @@ namespace CrabUIUser
     };
 
     public bool IsSetup => TestBox.Parent is CUIMainComponent;
+
+
+    public event Action<CUIComponent> OnSetup;
+    public event Action<CUIComponent> OnDismantle;
+    public event Action<SnapshotTest> OnTestRunning;
+    public event Action<SnapshotTest, ComponentSnapshot> OnTestPassed;
+    public event Action<SnapshotTest, ComponentSnapshot> OnAccepted;
+    public event Action<SnapshotTest, ComponentSnapshot, ComponentSnapshot> OnTestFailed;
+
+    private void OnPass(SnapshotTest currentTest, ComponentSnapshot currentSnapshot)
+    {
+      OnTestPassed?.Invoke(CurrentTest, CurrentSnapshot);
+    }
+
+    private void OnFail(SnapshotTest currentTest, ComponentSnapshot actual, ComponentSnapshot stored)
+    {
+      OnTestPassed?.Invoke(CurrentTest, CurrentSnapshot);
+    }
+
+    public void AcceptCurrent()
+    {
+      string savePath = Path.Combine(SnaphotsFolder, $"{CurrentTest.Name}.xml");
+      CurrentSnapshot.Save(savePath);
+      OnAccepted?.Invoke(CurrentTest, CurrentSnapshot);
+    }
 
     public void Add(SnapshotTest test) => Tests[test.Name] = test;
     public void Add(Func<CUIComponent> TestFunc, string Name) => Add(new SnapshotTest(TestFunc, Name));
@@ -78,31 +108,70 @@ namespace CrabUIUser
     {
       if (!IsSetup) Setup();
 
+      OnTestRunning?.Invoke(test);
+
       CurrentTest = test;
       try
       {
-        CUIComponent child = (CUIComponent)test.TestFunc();
+        TestSubject = (CUIComponent)test.TestFunc();
 
         TestBox.RemoveAllChildren();
-        TestBox.Append(child);
+        TestBox.Append(TestSubject);
+
+        CUI.Main.Step();
+        CurrentSnapshot = ComponentSnapshot.Take(TestSubject, CurrentTest.Name);
+
+        Compare();
       }
       catch (Exception e)
       {
-        CUI.Logger.Warning($"Error in CUISnapshotTest [{test.Name}]: {e.Message} {e.InnerException} {e.StackTrace}");
+        CUI.Logger.Warning($"Error in CUISnapshotTest [{test.Name}]: {e.Message} {e.InnerException}\n{e.StackTrace}");
       }
     }
+
+    private void Compare()
+    {
+      string savePath = Path.Combine(SnaphotsFolder, $"{CurrentTest.Name}.xml");
+      ComponentSnapshot stored = ComponentSnapshot.LoadSnapshot(savePath);
+
+      if (stored == null)
+      {
+        AcceptCurrent();
+      }
+      else
+      {
+        if (stored.ToString() != CurrentSnapshot.ToString())
+        {
+          OnTestFailed?.Invoke(CurrentTest, CurrentSnapshot, stored);
+        }
+        else
+        {
+          OnTestPassed(CurrentTest, CurrentSnapshot);
+        }
+      }
+    }
+
+
 
     public void Setup()
     {
       if (TestBox.Parent is CUIMainComponent) return;
       CUI.Main["Snapshot Testings TextBox"] = TestBox;
       CurrentTest = null;
+      TestSubject = null;
+      CurrentSnapshot = null;
+
+      OnSetup?.Invoke(TestBox);
     }
 
     public void Dismantle()
     {
       if (TestBox.Parent != null) TestBox.RemoveSelf();
       CurrentTest = null;
+      TestSubject = null;
+      CurrentSnapshot = null;
+
+      OnDismantle?.Invoke(TestBox);
     }
 
     public void Init()
@@ -138,5 +207,7 @@ namespace CrabUIUser
       Run(args[0]);
       ModStorage.Set("CUITest", args[0]);
     }
+
+
   }
 }

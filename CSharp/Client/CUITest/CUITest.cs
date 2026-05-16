@@ -8,15 +8,21 @@ using Barotrauma;
 using BaroJunk;
 using CrabUI;
 using Microsoft.Xna.Framework;
+using System.IO;
 
 namespace CrabUIUser
 {
   public class CUITest
   {
     public SnapshotTestManager SnapshotTestManager { get; } = new();
+    public SnapshotConsoleInterface SnapshotConsoleInterface { get; } = new();
 
     public void Init()
     {
+      SnapshotConsoleInterface.Init();
+      SnapshotConsoleInterface.AttachTo(SnapshotTestManager);
+
+      SnapshotTestManager.SnaphotsFolder = Path.Combine(ModInfo.Dir, "Test Data", "Snapshots");
       SnapshotTestManager.Add(typeof(SnapshotTests));
       SnapshotTestManager.Init();
     }

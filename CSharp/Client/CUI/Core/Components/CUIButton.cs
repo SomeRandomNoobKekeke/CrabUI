@@ -23,14 +23,20 @@ namespace CrabUI
     }
     public static void ApplyMouseDownStyle(CUIButton button)
     {
-      button.Background.Color = Color.Blue;
+      button.Background.Color = button.MouseDownColor;
     }
     public static void ApplyMouseUpStyle(CUIButton button)
     {
-      button.Background.Color = Color.Green;
+      button.Background.Color = button.PassiveColor;
     }
 
+    public Color MouseHoverColor { get; set; } = new Color(0, 0, 128);
+    public Color MouseDownColor { get; set; } = new Color(0, 0, 180);
+    public Color PassiveColor { get; set; } = new Color(0, 0, 100);
 
+
+    #region TextBlock
+    #endregion
     public TextBlock TextBlock { get; } = new();
     public string Text
     {
@@ -77,6 +83,7 @@ namespace CrabUI
 
     public CUIButton() : base()
     {
+
       MouseDown += (e) => MouseDownStyle.Apply(this);
       MouseUp += (e) => MouseUpStyle.Apply(this);
     }

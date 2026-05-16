@@ -21,11 +21,11 @@ namespace CrabUI
       }
     }
 
-    public void Dispatch(EventTargets targets, EventConstructor eventConstructor)
+    public void Dispatch(EventTargets targets, List<InputEvent> events)
     {
       for (int i = 0; i < targets.Targets.Count; i++)
       {
-        Dispatch(targets.Targets[i], eventConstructor.Events);
+        Dispatch(targets.Targets[i], events);
       }
     }
 

@@ -10,7 +10,7 @@ using ComponentGenerator;
 
 namespace CrabUI
 {
-  public class CUIProp<T> : IAware
+  public class CUIProp<T>
   {
     public object HostComponent { get; set; }
     public string HostPropName { get; set; }

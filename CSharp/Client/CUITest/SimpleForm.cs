@@ -40,11 +40,12 @@ namespace CrabUIUser
         Flex = 1,
       };
 
-      frame["layout"]["main"]["box"] = new CUIComponent()
+      frame["layout"]["main"]["box"] = new CUIButton()
       {
         BackgroundColor = new Color(32, 64, 0),
         Absolute = new CUINullRect(w: 100, h: 100),
         Anchor = CUIAnchor.Center,
+        Text = "Don't",
       };
 
       return frame;

@@ -72,7 +72,7 @@ namespace CrabUI
       // }
 
       EventDispatcher.Dispatch(GlobalEvents, EventConstructor.Events);
-      EventDispatcher.Dispatch(EventTargets, EventConstructor);
+      EventDispatcher.Dispatch(EventTargets, EventConstructor.Events);
     }
 
     private void UpdateLayout()

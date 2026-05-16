@@ -13,26 +13,26 @@ namespace CrabUI
 {
   public partial class CUIButton : CUIComponent, IComponent
   {
-    public ICUIStyle HoveredStyle = new CUICodeStyle<CUIButton>() { ApplyAction = ApplyHoveredStyle };
-    public ICUIStyle MouseDownStyle = new CUICodeStyle<CUIButton>() { ApplyAction = ApplyMouseDownStyle };
-    public ICUIStyle MouseUpStyle = new CUICodeStyle<CUIButton>() { ApplyAction = ApplyMouseUpStyle };
+    // public ICUIStyle HoveredStyle = new CUICodeStyle<CUIButton>() { ApplyAction = ApplyHoveredStyle };
+    // public ICUIStyle MouseDownStyle = new CUICodeStyle<CUIButton>() { ApplyAction = ApplyMouseDownStyle };
+    // public ICUIStyle MouseUpStyle = new CUICodeStyle<CUIButton>() { ApplyAction = ApplyMouseUpStyle };
 
-    public static void ApplyHoveredStyle(CUIButton button)
-    {
-      button.Background.Color = button.MouseHoverColor;
-    }
-    public static void ApplyMouseDownStyle(CUIButton button)
-    {
-      button.Background.Color = button.MouseDownColor;
-    }
-    public static void ApplyMouseUpStyle(CUIButton button)
-    {
-      button.Background.Color = button.PassiveColor;
-    }
+    // public static void ApplyHoveredStyle(CUIButton button)
+    // {
+    //   button.Background.Color = button.MouseOverColor;
+    // }
+    // public static void ApplyMouseDownStyle(CUIButton button)
+    // {
+    //   button.Background.Color = button.MousePressedColor;
+    // }
+    // public static void ApplyMouseUpStyle(CUIButton button)
+    // {
+    //   button.Background.Color = button.InactiveColor;
+    // }
 
-    public Color MouseHoverColor { get; set; } = new Color(0, 0, 140);
-    public Color MouseDownColor { get; set; } = new Color(0, 0, 200);
-    public Color PassiveColor { get; set; } = new Color(0, 0, 100);
+    public Color MouseOverColor { get; set; } = new Color(0, 0, 140);
+    public Color MousePressedColor { get; set; } = new Color(0, 0, 200);
+    public Color InactiveColor { get; set; } = new Color(0, 0, 100);
 
 
     #region TextBlock
@@ -80,12 +80,18 @@ namespace CrabUI
       set => TextBlock.Font = value;
     }
 
+    public void DetermineColor()
+    {
+      BackgroundColor = InactiveColor;
+      if (MouseOver) BackgroundColor = MouseOverColor;
+      if (MousePressed) BackgroundColor = MousePressedColor;
+    }
 
     public CUIButton() : base()
     {
-      MouseEnter += (e) => HoveredStyle.Apply(this);
-      MouseDown += (e) => MouseDownStyle.Apply(this);
-      MouseUp += (e) => MouseUpStyle.Apply(this);
+      MouseOff += (e) => DetermineColor();
+      MouseOn += (e) => DetermineColor();
+      DetermineColor();
     }
 
     public override void UpdateRect(CUIRect rect)

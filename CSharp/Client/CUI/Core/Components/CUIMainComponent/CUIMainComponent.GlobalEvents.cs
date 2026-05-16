@@ -15,6 +15,9 @@ namespace CrabUI
     public GlobalEvents_Part GlobalEvents { get; } = new();
     public class GlobalEvents_Part : Part, IMouseEventConsumer
     {
+      public bool MouseOver { get; set; } // BRUH
+      public bool MousePressed { get; set; }
+
       public ClearableEvent<CUIMouseDownEvent> MouseDown { get; } = new();
       public ClearableEvent<CUIMouseUpEvent> MouseUp { get; } = new();
       public ClearableEvent<CUIMouseClickEvent> MouseClick { get; } = new();
@@ -22,6 +25,8 @@ namespace CrabUI
       public ClearableEvent<CUIMouseMovedEvent> MouseMoved { get; } = new();
       public ClearableEvent<CUIMouseEnterEvent> MouseEnter { get; } = new(); // BRUH
       public ClearableEvent<CUIMouseLeaveEvent> MouseLeave { get; } = new(); // BRUH
+      public ClearableEvent<CUIMouseOnEvent> MouseOn { get; } = new(); // BRUH
+      public ClearableEvent<CUIMouseOffEvent> MouseOff { get; } = new(); // BRUH
     }
   }
 }

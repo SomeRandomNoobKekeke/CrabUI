@@ -20,6 +20,18 @@ namespace CrabUI
         this.Route(Self.Background);
       }
 
+      public bool MouseOver
+      {
+        get => Self.Background.MouseOver;
+        set => Self.Background.MouseOver = value;
+      }
+      public bool MousePressed
+      {
+        get => Self.Background.MousePressed;
+        set => Self.Background.MousePressed = value;
+      }
+
+
       public ClearableEvent<CUIMouseDownEvent> MouseDown { get; } = new();
       public ClearableEvent<CUIMouseUpEvent> MouseUp { get; } = new();
       public ClearableEvent<CUIMouseClickEvent> MouseClick { get; } = new();
@@ -27,6 +39,8 @@ namespace CrabUI
       public ClearableEvent<CUIMouseMovedEvent> MouseMoved { get; } = new();
       public ClearableEvent<CUIMouseEnterEvent> MouseEnter { get; } = new();
       public ClearableEvent<CUIMouseLeaveEvent> MouseLeave { get; } = new();
+      public ClearableEvent<CUIMouseOnEvent> MouseOn { get; } = new();
+      public ClearableEvent<CUIMouseOffEvent> MouseOff { get; } = new();
     }
   }
 }

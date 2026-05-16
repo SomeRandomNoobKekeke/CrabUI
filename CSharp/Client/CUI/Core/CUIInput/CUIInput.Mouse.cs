@@ -19,6 +19,7 @@ namespace CrabUI
 
       public Vector2 Pos { get; private set; }
       public Vector2 PosDiff { get; private set; }
+      public bool Pressed { get; private set; }
       public bool Moved { get; private set; }
       public bool SomethingHappened { get; private set; }
       public MouseButtonInput M1 { get; }
@@ -40,6 +41,8 @@ namespace CrabUI
         Pos = new Vector2(State.X, State.Y);
         PosDiff = Pos - PrevPos;
         Moved = PosDiff != Vector2.Zero;
+
+        Pressed = M1.Pressed; //BRUH why only m1?
 
         SomethingHappened = M1.Changed || M2.Changed || Moved;
 

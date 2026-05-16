@@ -27,11 +27,20 @@ namespace CrabUI
       }
     }
 
-    public void Dispatch(EventTargets targets, List<InputEvent> events)
+    public void Dispatch(IEnumerable<IEventConsumer> targets, List<InputEvent> events)
     {
-      for (int i = 0; i < targets.Targets.Count; i++)
+      foreach (IEventConsumer consumer in targets)
       {
-        Dispatch(targets.Targets[i], events);
+        Dispatch(consumer, events);
+      }
+    }
+
+    public void Dispatch(IEnumerable<IEventConsumer> targets, InputEvent inputEvent)
+    {
+      foreach (IEventConsumer consumer in targets)
+      {
+        if (inputEvent.Consumed) return;
+        inputEvent.Dispatch(consumer);
       }
     }
 

@@ -14,9 +14,19 @@ namespace CrabUI
   {
     public List<InputEvent> Events { get; } = new();
 
+    public CUIMouseLeaveEvent MouseLeaveEvent { get; private set; }
+    public CUIMouseEnterEvent MouseEnterEvent { get; private set; }
+    public CUIMouseOnEvent MouseOnEvent { get; private set; }
+    public CUIMouseOffEvent MouseOffEvent { get; private set; }
+
     public void Construct(CUIInput input)
     {
       Events.Clear();
+
+      MouseLeaveEvent = new(input.Mouse);
+      MouseEnterEvent = new(input.Mouse);
+      MouseOnEvent = new(input.Mouse);
+      MouseOffEvent = new(input.Mouse);
 
       foreach (var button in input.Mouse.Buttons)
       {

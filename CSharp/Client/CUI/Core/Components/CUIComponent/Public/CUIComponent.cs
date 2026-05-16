@@ -21,6 +21,9 @@ namespace CrabUI
       set => DragHandle.Active = value;
     }
 
+    public bool MouseOver => Events.MouseOver;
+    public bool MousePressed => Events.MousePressed;
+
 
     public IReadOnlyList<CUIComponent> Children => Tree.ReadOnlyChildren;
     public void Append(CUIComponent child, string name = null) => Tree.Append(child, name);

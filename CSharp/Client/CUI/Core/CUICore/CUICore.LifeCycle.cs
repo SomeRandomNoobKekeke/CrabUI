@@ -35,13 +35,28 @@ namespace CrabUI
 
       public void DrawAfterGUI(CUISpriteBatch spriteBatch)
       {
-        OnDrawAfterGUI.Raise(spriteBatch);
+        try
+        {
+          OnDrawAfterGUI.Raise(spriteBatch);
+        }
+        catch (Exception e)
+        {
+          CUI.Logger.Error($"Error in CUICore.DrawAfterGUI: {e}\n");
+        }
+
       }
 
       public void DrawBeforeGUI(CUISpriteBatch spriteBatch)
       {
-        Self.Main.DrawChildren(spriteBatch);
-        OnDrawBeforeGUI.Raise(spriteBatch);
+        try
+        {
+          Self.Main.DrawChildren(spriteBatch);
+          OnDrawBeforeGUI.Raise(spriteBatch);
+        }
+        catch (Exception e)
+        {
+          CUI.Logger.Error($"Error in CUICore.DrawBeforeGUI: {e}\n");
+        }
       }
 
       public bool IsMouseOnSomeCUIComponent()

@@ -29,12 +29,25 @@ namespace CrabUIUser
           Relative = new CUINullRect(0, 0, 1, 1)
         };
 
-        frame["layout"]["header"] = new CUITextBlock()
+        frame["layout"]["header"] = new CUIHorizontalList()
         {
-          Text = "Header",
-          BackgroundColor = Color.Brown,
+          BackgroundColor = Color.Blue,
           Absolute = new CUINullRect(h: 100),
         };
+
+        frame["layout"]["header"]["caption"] = new CUITextBlock()
+        {
+          Text = "header",
+          Flex = 1
+        };
+
+        frame["layout"]["header"]["close"] = new CUIButton()
+        {
+          Absolute = new CUINullRect(w: 100, h: 100),
+          MasterColor = Color.Red,
+          Text = "X",
+        };
+
 
         frame["layout"]["main"] = new CUIComponent()
         {

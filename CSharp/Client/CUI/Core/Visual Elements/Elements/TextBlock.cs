@@ -61,7 +61,7 @@ namespace CrabUI
 
     public Vector2 RawTextSize { get; private set; }
 
-    private string RealText;
+    private string RealText = "";
     private Vector2 ReadTextDrawPosition;
     private float RealTextScale;
     public void Draw(CUISpriteBatch spriteBatch)

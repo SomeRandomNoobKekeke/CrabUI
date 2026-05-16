@@ -23,6 +23,30 @@ namespace CrabUIUser
       {
         PluginCommands.Add("cuitest_accept", (args) => Manager.AcceptCurrent());
       }
+
+      PluginCommands.Add("cuitest", CUITest_Command, () => new string[][]{
+        Manager.Tests.Keys.Append("").Append("none").ToArray()
+      });
+    }
+
+    public void CUITest_Command(string[] args)
+    {
+      if (args.Length == 0)
+      {
+        ModStorage.Remove("CUITest");
+        Manager.Dismantle();
+        return;
+      }
+
+      if (args[0].Trim() == "" || args[0] == "none")
+      {
+        ModStorage.Remove("CUITest");
+        Manager.Dismantle();
+        return;
+      }
+
+      Manager.Run(args[0]);
+      ModStorage.Set("CUITest", args[0]);
     }
 
     public void AttachTo(SnapshotTestManager manager)

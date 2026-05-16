@@ -15,7 +15,6 @@ namespace CrabUIUser
 {
   public class SnapshotTestManager
   {
-    public static string TestCommandName = "cuitest";
     public static bool IsSnapshotTestFunc(MethodInfo mi)
       => mi.ReturnType.IsAssignableTo(typeof(CUIComponent)) && mi.GetParameters().Length == 0;
 
@@ -89,10 +88,6 @@ namespace CrabUIUser
         Relative = new CUINullRect(0, 0, 1, 1),
         BackgroundColor = Color.Transparent,
       };
-
-      PluginCommands.Add(TestCommandName, CUITest_Command, () => new string[][]{
-        Tests.Keys.Append("").Append("none").ToArray()
-      });
 
       if (ModStorage.Has("CUITest"))
       {
@@ -207,25 +202,7 @@ namespace CrabUIUser
 
 
 
-    public void CUITest_Command(string[] args)
-    {
-      if (args.Length == 0)
-      {
-        ModStorage.Remove("CUITest");
-        Dismantle();
-        return;
-      }
 
-      if (args[0].Trim() == "" || args[0] == "none")
-      {
-        ModStorage.Remove("CUITest");
-        Dismantle();
-        return;
-      }
-
-      Run(args[0]);
-      ModStorage.Set("CUITest", args[0]);
-    }
 
 
   }

@@ -12,12 +12,14 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
+    public Action<CUIMouseDownEvent> AddMouseDown { set { MouseDown += value; } }
     public event Action<CUIMouseDownEvent> MouseDown
     {
       add => this.Events.MouseDown.Add(value);
       remove => this.Events.MouseDown.Remove(value);
     }
 
+    public Action<CUIMouseUpEvent> AddMouseUp { set { MouseUp += value; } }
     public event Action<CUIMouseUpEvent> MouseUp
     {
       add => this.Events.MouseUp.Add(value);

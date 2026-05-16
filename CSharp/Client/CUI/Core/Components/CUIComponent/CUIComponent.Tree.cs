@@ -70,7 +70,7 @@ namespace CrabUI
           PropogateTreeChanged();
           if (Self.AKA != null) _Parent.AKAPart.Remember(Self);
           // parent.PassPropsToChild(this);
-          Self.Layout.RequireChildrenUpdate = true;
+          _Parent.Layout.RequireChildrenUpdate = true;
           _Parent.Tree.OnChildAdded(Self);
           Self.Tree.OnAttachToParent(_Parent);
         }

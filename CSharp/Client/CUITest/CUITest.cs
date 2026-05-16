@@ -23,12 +23,13 @@ namespace CrabUIUser
       SnapshotConsoleInterface.Init();
       SnapshotConsoleInterface.AttachTo(SnapshotTestManager);
 
-      SnapshotGUI.Init();
-      SnapshotGUI.AttachTo(SnapshotTestManager);
-
       SnapshotTestManager.SnaphotsFolder = Path.Combine(ModInfo.Dir, "Test Data", "Snapshots");
       SnapshotTestManager.Add(typeof(SnapshotTests));
       SnapshotTestManager.Init();
+
+      SnapshotGUI.AttachTo(SnapshotTestManager);
+      SnapshotGUI.Init();
+
     }
   }
 }

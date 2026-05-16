@@ -8,6 +8,7 @@ using Barotrauma;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ComponentGenerator;
+using Barotrauma.Extensions;
 
 namespace CrabUI
 {
@@ -33,6 +34,17 @@ namespace CrabUI
     public Color MouseOverColor { get; set; } = new Color(0, 0, 140);
     public Color MousePressedColor { get; set; } = new Color(0, 0, 200);
     public Color InactiveColor { get; set; } = new Color(0, 0, 100);
+
+    public Color MasterColor
+    {
+      set
+      {
+        InactiveColor = value.Multiply(0.7f);
+        MouseOverColor = value.Multiply(0.9f);
+        MousePressedColor = value;
+        DetermineColor();
+      }
+    }
 
 
     #region TextBlock

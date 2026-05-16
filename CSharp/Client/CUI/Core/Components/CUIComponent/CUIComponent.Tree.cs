@@ -119,7 +119,7 @@ namespace CrabUI
         if (name != null) Self.AKAPart.Remember(child, name);
         return child;
       }
-
+      public void RemoveSelf() => Parent?.RemoveChild(Self);
       public void RemoveChild(CUIComponent child)
       {
         Children.Remove(child);

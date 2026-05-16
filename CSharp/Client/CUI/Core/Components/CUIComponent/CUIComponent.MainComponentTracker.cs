@@ -19,14 +19,28 @@ namespace CrabUI
 
       public void OnAttachedTo(CUIComponent component)
       {
-        if (component is not CUIMainComponent mainComponent) return;
-        SetRec(mainComponent);
-        Self.DebugRelays.Map(mainComponent.DebugRelays);
+        if (component is CUIMainComponent mainComponent)
+        {
+          SetRec(mainComponent);
+        }
+        else
+        {
+          SetRec(component.MainComponent);
+        }
+
+        if (MainComponent is not null)
+        {
+          Self.DebugRelays.Map(MainComponent.DebugRelays);
+        }
       }
 
       public void OnDetached()
       {
-        Self.DebugRelays.Unmap(MainComponent.DebugRelays);
+        if (MainComponent is not null)
+        {
+          Self.DebugRelays.Unmap(MainComponent.DebugRelays);
+        }
+
         SetRec(null);
       }
 

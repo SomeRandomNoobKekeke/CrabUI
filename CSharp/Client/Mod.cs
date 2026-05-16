@@ -20,9 +20,7 @@ namespace CrabUIUser
     };
 
     public CUIDebugConsoleInterface CUIDebugConsoleInterface { get; } = new();
-    public CUITestConsoleInterface CUITestConsoleInterface { get; } = new();
-    // Dictionary<string, MethodInfo> factories = CUIFactories.AllFactoryMethods()
-    //   .ToDictionary(mi => mi.Name, mi => mi);
+    public CUITest CUITest { get; } = new();
 
     public void Initialize()
     {
@@ -31,14 +29,13 @@ namespace CrabUIUser
 
       Logger.Log($"Compiled somehow");
       UTestCommands.AddCommands();
+      CUITest.Init();
 
       try
       {
         CUI.Start();
         CUIDebugConsoleInterface.Init();
 
-        CUITestConsoleInterface.Add(CUITestFactories.AllFactoryMethods());
-        CUITestConsoleInterface.Init();
         Experiment();
       }
       catch (Exception e) { Logger.Error(e); }

@@ -11,8 +11,14 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUIUser
 {
-  public static partial class CUITestFactories
+  public class CUITest
   {
+    public SnapshotTestManager SnapshotTestManager { get; } = new();
 
+    public void Init()
+    {
+      SnapshotTestManager.Add(typeof(SnapshotTests));
+      SnapshotTestManager.Init();
+    }
   }
 }

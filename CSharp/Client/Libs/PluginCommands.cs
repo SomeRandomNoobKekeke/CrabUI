@@ -20,13 +20,11 @@ namespace BaroJunk
       AddHooks();
     }
 
-    public static string AssemblyName => Assembly.GetCallingAssembly().GetName().Name;
-
     public static List<DebugConsole.Command> AddedCommands = new List<DebugConsole.Command>();
 
     private static void AddHooks()
     {
-      LuaCsSetup.Instance.Hook.Add("stop", $"[{AssemblyName}].RemoveCommands", (object[] args) =>
+      LuaCsSetup.Instance.Hook.Add("stop", $"[{ModInfo.HookId}].RemoveCommands", (object[] args) =>
       {
         RemoveCommands();
         return null;
@@ -34,7 +32,7 @@ namespace BaroJunk
 
       ((LuaCsSetup.Instance.EventService as EventService)
            ._luaPatcher as LuaPatcherService)
-           .Patch($"{AssemblyName}.PermitCommands",
+           .Patch($"{ModInfo.HookId}.PermitCommands",
               typeof(DebugConsole).GetMethod("IsCommandPermitted", BindingFlags.NonPublic | BindingFlags.Static),
               (object instance, LuaPatcherService.ParameterTable ptable) =>
               {
@@ -75,6 +73,9 @@ namespace BaroJunk
         DebugConsole.Commands.Add(command);
       }
     }
+
+    public static bool Exist(string name)
+      => DebugConsole.Commands.Any(command => command.Names[0].Value == name);
 
     public static void PrintCommands()
     {

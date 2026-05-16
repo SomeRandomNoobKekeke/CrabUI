@@ -19,17 +19,31 @@ namespace BaroJunk
   /// </summary>
   public static class ModInfo
   {
-    public static string AssemblyName => Assembly.GetExecutingAssembly().GetName().Name;
-    public static string HookId => Assembly.GetExecutingAssembly().GetName().Name;
+    public static ContentPackage Package
+    {
+      get
+      {
+        PluginManagementService pluginManagement = LuaCsSetup.Instance.PluginManagementService as PluginManagementService;
+
+        foreach (var (package, asmLoader) in pluginManagement._assemblyLoaders)
+        {
+          if (asmLoader.Assemblies.Any(asm => asm == Assembly.GetExecutingAssembly()))
+          {
+            return package;
+          }
+        }
+
+        throw new UnreachableException();
+      }
+    }
+
+    // public static string AssemblyName => Assembly.GetExecutingAssembly().GetName().Name;
+    public static string HookId => Package.Name;
     public static string BarotraumaPath => Path.GetFullPath("./");
 
-    public static ContentPackage ModPackage<PluginType>() where PluginType : IAssemblyPlugin
-    {
-      GameMain.LuaCs.PluginPackageManager.TryGetPackageForPlugin<PluginType>(out ContentPackage package);
-      return package;
-    }
-    public static string ModDir<PluginType>() where PluginType : IAssemblyPlugin => ModPackage<PluginType>().Dir;
-    public static string ModVersion<PluginType>() where PluginType : IAssemblyPlugin => ModPackage<PluginType>().ModVersion;
-    public static string ModName<PluginType>() where PluginType : IAssemblyPlugin => ModPackage<PluginType>().Name;
+
+    public static string Dir => Package.Dir;
+    public static string Version => Package.ModVersion;
+    public static string Name => Package.Name;
   }
 }

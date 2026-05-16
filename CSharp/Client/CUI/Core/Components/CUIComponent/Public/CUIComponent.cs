@@ -29,6 +29,7 @@ namespace CrabUI
     public void Append(CUIComponent child, string name = null) => Tree.Append(child, name);
     public void Prepend(CUIComponent child, string name = null) => Tree.Prepend(child, name);
     public void Insert(CUIComponent child, int index, string name = null) => Tree.Insert(child, index, name);
+    public void RemoveSelf() => Tree.RemoveSelf();
     public void RemoveChild(CUIComponent child) => Tree.RemoveChild(child);
     public void RemoveAllChildren() => Tree.RemoveAllChildren();
 

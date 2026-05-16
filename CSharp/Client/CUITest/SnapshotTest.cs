@@ -11,8 +11,5 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUIUser
 {
-  public static partial class CUITestFactories
-  {
-
-  }
+  public record SnapshotTest(Func<CUIComponent> TestFunc, string Name);
 }

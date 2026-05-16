@@ -65,12 +65,6 @@ namespace CrabUI
       EventTargets.Find(VisualFlattener.Flat, Input.Mouse.Pos);
       EventConstructor.Construct(Input);
 
-      //TODO This should be a real debug log
-      // foreach (IEventConsumer target in targets)
-      // {
-      //   CUI.Logger.Log($"{target} {Logger.Wrap.IEnumerable(events)}");
-      // }
-
 
       EventDispatcher.Dispatch(EventTargets.PrevTargets, EventConstructor.MouseOffEvent);
       EventDispatcher.Dispatch(EventTargets.Targets, EventConstructor.MouseOnEvent);

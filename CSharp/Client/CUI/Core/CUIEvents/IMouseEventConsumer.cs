@@ -16,6 +16,16 @@ namespace CrabUI
     public ClearableEvent<CUIMouseClickEvent> MouseClick { get; }
     public ClearableEvent<CUIMouseDoubleClickEvent> MouseDoubleClick { get; }
     public ClearableEvent<CUIMouseMovedEvent> MouseMoved { get; }
+    public ClearableEvent<CUIMouseEnterEvent> MouseEnter { get; }
+    public ClearableEvent<CUIMouseLeaveEvent> MouseLeave { get; }
+
+    // public CUIEvent<CUIInput> OnMouseLeave = new();
+    // public CUIEvent<CUIInput> OnMouseEnter = new() { ShouldRise = ShouldInvoke };
+    // public CUIEvent<CUIInput> OnMouseOn = new() { ShouldRise = ShouldInvoke };
+    // public CUIEvent<CUIInput> OnMouseOff = new() { ShouldRise = ShouldInvoke };
+    // public CUIEvent<CUIInput> OnClick = new() { ShouldRise = ShouldInvoke };
+    // public CUIEvent<CUIInput> OnDClick = new() { ShouldRise = ShouldInvoke };
+    // public CUIEvent<CUIInput> OnScroll = new() { ShouldRise = ShouldInvoke };
   }
 
   public static class IMouseEventConsumer_Extensions

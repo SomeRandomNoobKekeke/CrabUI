@@ -13,14 +13,18 @@ namespace CrabUI
     public ICUIRunner Runner { get; set; }
     public CUICore Core { get; set; }
 
+    public bool Started { get; private set; }
+
     public void Start()
     {
       Runner.Connect();
+      Started = true;
     }
 
     public void Stop()
     {
       Runner.Disconnect();
+      Started = false;
     }
 
     public void WireUp()

@@ -40,15 +40,11 @@ namespace CrabUIUser
     public CUIComponent TestSubject { get; private set; }
     public ComponentSnapshot CurrentSnapshot { get; private set; }
 
-    public CUIComponent TestBox { get; } = new CUIComponent()
-    {
-      Relative = new CUINullRect(0, 0, 1, 1),
-      BackgroundColor = Color.Blue,
-    };
+    public CUIComponent TestBox { get; private set; }
 
     public bool IsSetup => TestBox.Parent is CUIMainComponent;
 
-
+    public event Action<SnapshotTestManager> OnInit;
     public event Action<CUIComponent> OnSetup;
     public event Action<CUIComponent> OnDismantle;
     public event Action<SnapshotTest> OnTestRunning;
@@ -71,6 +67,39 @@ namespace CrabUIUser
       string savePath = Path.Combine(SnaphotsFolder, $"{CurrentTest.Name}.xml");
       CurrentSnapshot.Save(savePath);
       OnAccepted?.Invoke(CurrentTest, CurrentSnapshot);
+    }
+
+    public void Init()
+    {
+      TestBox = new CUIComponent()
+      {
+        Relative = new CUINullRect(0, 0, 1, 1),
+        BackgroundColor = new Color(16, 0, 32),
+        AKA = "TestBox",
+      };
+
+      TestBox["overlay"] = new CUIComponent()
+      {
+        Relative = new CUINullRect(0, 0, 1, 1),
+        BackgroundColor = Color.Transparent,
+      };
+
+      TestBox["main"] = new CUIComponent()
+      {
+        Relative = new CUINullRect(0, 0, 1, 1),
+        BackgroundColor = Color.Transparent,
+      };
+
+      PluginCommands.Add(TestCommandName, CUITest_Command, () => new string[][]{
+        Tests.Keys.Append("").Append("none").ToArray()
+      });
+
+      if (ModStorage.Has("CUITest"))
+      {
+        Run((string)ModStorage.Get("CUITest"));
+      }
+
+      OnInit?.Invoke(this);
     }
 
     public void Add(SnapshotTest test) => Tests[test.Name] = test;
@@ -115,11 +144,13 @@ namespace CrabUIUser
       {
         TestSubject = (CUIComponent)test.TestFunc();
 
-        TestBox.RemoveAllChildren();
-        TestBox.Append(TestSubject);
+        TestBox["main"].RemoveAllChildren();
+        TestBox["main"].Append(TestSubject);
 
         CUI.Main.Step();
         CurrentSnapshot = ComponentSnapshot.Take(TestSubject, CurrentTest.Name);
+
+        TestBox["main"].Debug.PrintTree();
 
         Compare();
       }
@@ -156,7 +187,7 @@ namespace CrabUIUser
     public void Setup()
     {
       if (TestBox.Parent is CUIMainComponent) return;
-      CUI.Main["Snapshot Testings TextBox"] = TestBox;
+      CUI.Main["Snapshot Testings TestBox"] = TestBox;
       CurrentTest = null;
       TestSubject = null;
       CurrentSnapshot = null;
@@ -174,19 +205,7 @@ namespace CrabUIUser
       OnDismantle?.Invoke(TestBox);
     }
 
-    public void Init()
-    {
-      if (PluginCommands.Exist(TestCommandName)) return;
 
-      PluginCommands.Add(TestCommandName, CUITest_Command, () => new string[][]{
-        Tests.Keys.Append("").Append("none").ToArray()
-      });
-
-      if (ModStorage.Has("CUITest"))
-      {
-        Run((string)ModStorage.Get("CUITest"));
-      }
-    }
 
     public void CUITest_Command(string[] args)
     {

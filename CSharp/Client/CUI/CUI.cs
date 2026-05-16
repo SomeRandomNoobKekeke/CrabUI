@@ -35,12 +35,6 @@ namespace CrabUI
     {
       get
       {
-        if (_Setup is null)
-        {
-          CUI.Logger.Error($"Attempt to access CUI.Setup before it was set");
-          CUI.Logger.PrintStackTrace();
-        }
-
         return _Setup;
       }
       set

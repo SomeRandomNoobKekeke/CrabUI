@@ -23,5 +23,7 @@ namespace CrabUI
     {
       LayoutSlot.Layout = new PlainLayout();
     }
+
+    public override string ToString() => $"{this.GetType().Name}:{ID}:{AKA}";
   }
 }

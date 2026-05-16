@@ -29,11 +29,14 @@ namespace CrabUIUser
 
       Logger.Log($"Compiled somehow");
       UTestCommands.AddCommands();
+
       CUITest.Init();
 
       try
       {
         CUI.Start();
+
+
         CUIDebugConsoleInterface.Init();
 
         Experiment();

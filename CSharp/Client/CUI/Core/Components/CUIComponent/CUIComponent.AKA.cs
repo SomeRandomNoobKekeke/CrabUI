@@ -25,6 +25,8 @@ namespace CrabUI
       get => AKAPart.Get(name);
       set
       {
+        if (value is null) return;
+
         if (value.Parent != null)
         {
           AKAPart.Remember(value, name);

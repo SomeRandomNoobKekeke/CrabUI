@@ -12,7 +12,35 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-    public Tree_Part Tree { get; } = new();
+    #region Public
+    #endregion
+    public CUIComponent Parent => Tree.Parent;
+    public IReadOnlyList<CUIComponent> Children => Tree.ReadOnlyChildren;
+    public void Append(CUIComponent child, string name = null) => Tree.Append(child, name);
+    public void Prepend(CUIComponent child, string name = null) => Tree.Prepend(child, name);
+    public void Insert(CUIComponent child, int index, string name = null) => Tree.Insert(child, index, name);
+    public void RemoveSelf() => Tree.RemoveSelf();
+    public void RemoveChild(CUIComponent child) => Tree.RemoveChild(child);
+    public void RemoveAllChildren() => Tree.RemoveAllChildren();
+
+    public IEnumerable<CUIComponent> DeepChildren
+    {
+      get
+      {
+        foreach (CUIComponent child in Tree.Children)
+        {
+          yield return child;
+          foreach (CUIComponent deepChild in child.DeepChildren)
+          {
+            yield return deepChild;
+          }
+        }
+      }
+    }
+
+    #region Protected
+    #endregion
+    protected Tree_Part Tree { get; } = new();
     public class Tree_Part : Part, IModule
     {
       public void Init()
@@ -33,6 +61,8 @@ namespace CrabUI
       );
 
       [In] public MainComponentTracker_Part MainComponentTracker { get; set; }
+
+      public LayoutMarker.Pattern MarkPattern { get; } = LayoutMarker.Pattern.FromParentAndDown;
 
       public bool Changed { get; set; }
       public event Action OnChanged;
@@ -55,10 +85,10 @@ namespace CrabUI
         {
           PropogateTreeChanged();
 
-          _Parent.AKAPart.Forget(Self);
+          _Parent.Forget(Self);
           _Parent.Tree.Children.Remove(Self);
 
-          _Parent.Layout.RequireChildrenUpdate = true;
+          _Parent.LayoutMarker.Mark(MarkPattern);
           _Parent.Tree.OnChildRemoved(Self);
           Self.Tree.OnDetachFromParent(_Parent);
         }
@@ -68,9 +98,10 @@ namespace CrabUI
         if (_Parent != null)
         {
           PropogateTreeChanged();
-          if (Self.AKA != null) _Parent.AKAPart.Remember(Self);
+          if (Self.AKA != null) _Parent.Remember(Self);
           // parent.PassPropsToChild(this);
-          _Parent.Layout.RequireChildrenUpdate = true;
+
+          _Parent.LayoutMarker.Mark(MarkPattern);
           _Parent.Tree.OnChildAdded(Self);
           Self.Tree.OnAttachToParent(_Parent);
         }
@@ -95,7 +126,7 @@ namespace CrabUI
 
         Children.Add(child);
         child.Tree.Parent = Self;
-        if (name != null) Self.AKAPart.Remember(child, name);
+        if (name != null) Self.Remember(child, name);
         return child;
       }
 
@@ -105,7 +136,7 @@ namespace CrabUI
 
         Children.Insert(0, child);
         child.Tree.Parent = Self;
-        if (name != null) Self.AKAPart.Remember(child, name);
+        if (name != null) Self.Remember(child, name);
         return child;
       }
 
@@ -116,7 +147,7 @@ namespace CrabUI
         index = Math.Clamp(index, 0, Children.Count);
         Children.Insert(index, child);
         child.Tree.Parent = Self;
-        if (name != null) Self.AKAPart.Remember(child, name);
+        if (name != null) Self.Remember(child, name);
         return child;
       }
       public void RemoveSelf() => Parent?.RemoveChild(Self);

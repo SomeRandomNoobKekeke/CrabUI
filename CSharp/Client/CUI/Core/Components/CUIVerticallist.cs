@@ -13,6 +13,8 @@ namespace CrabUI
   public partial class CUIVerticalList : CUIComponent, IComponent
   {
 
+    public void Clear() => RemoveAllChildren();
+
     public CUIVerticalList() : base()
     {
       LayoutSlot.Layout = new CUIVerticalListLayout();

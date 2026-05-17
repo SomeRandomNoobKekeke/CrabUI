@@ -14,6 +14,14 @@ namespace CrabUI
   {
     public class Part : IPart { public CUIComponent Self { get; set; } }
 
+    public static Dictionary<int, WeakReference<CUIComponent>> ComponentsById = new();
+    public static IEnumerable<CUIComponent> AllComponents => ComponentsById.Values
+      .Select(wr =>
+      {
+        wr.TryGetTarget(out CUIComponent component);
+        return component;
+      }).Where(c => c != null);
+
 
     protected LayoutSlot LayoutSlot { get; set; } = new();
     protected LayoutMarker LayoutMarker { get; set; } = new();

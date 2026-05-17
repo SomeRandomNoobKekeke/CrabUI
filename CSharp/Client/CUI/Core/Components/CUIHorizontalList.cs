@@ -12,6 +12,8 @@ namespace CrabUI
 {
   public partial class CUIHorizontalList : CUIComponent, IComponent
   {
+    public void Clear() => RemoveAllChildren();
+
     public CUIHorizontalList() : base()
     {
       LayoutSlot.Layout = new CUIHorizontalListLayout();

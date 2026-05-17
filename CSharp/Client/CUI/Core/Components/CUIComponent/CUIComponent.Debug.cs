@@ -23,6 +23,20 @@ namespace CrabUI
       }
     }
 
+    public bool DebugRec
+    {
+      get => Debug;
+      set
+      {
+        Debug = value;
+
+        foreach (CUIComponent child in Tree.Children)
+        {
+          child.DebugRec = value;
+        }
+      }
+    }
+
 
     public void PrintTree(string offset = "")
     {

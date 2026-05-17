@@ -46,6 +46,17 @@ namespace CrabUI
       }
     }
 
+    public Color MasterColorOpaque
+    {
+      set
+      {
+        InactiveColor = new Color((int)(value.R * 0.7f), (int)(value.G * 0.7f), (int)(value.B * 0.7f), value.A);
+        MouseOverColor = new Color((int)(value.R * 0.9f), (int)(value.G * 0.9f), (int)(value.B * 0.9f), value.A);
+        MousePressedColor = value;
+        DetermineColor();
+      }
+    }
+
 
     #region TextBlock
     #endregion

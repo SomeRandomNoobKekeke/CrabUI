@@ -9,6 +9,9 @@ namespace CrabUI
 {
   public partial class CUICore
   {
-    public DebugHub DebugHub { get; } = new();
+    public DebugHub DebugHub { get; } = new()
+    {
+      IsOpen = false,
+    };
   }
 }

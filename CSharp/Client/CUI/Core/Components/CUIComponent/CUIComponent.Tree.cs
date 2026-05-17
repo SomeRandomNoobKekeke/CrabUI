@@ -12,7 +12,7 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-    protected Tree_Part Tree { get; } = new();
+    public Tree_Part Tree { get; } = new();
     public class Tree_Part : Part, IModule
     {
       public void Init()
@@ -58,7 +58,7 @@ namespace CrabUI
           _Parent.AKAPart.Forget(Self);
           _Parent.Tree.Children.Remove(Self);
 
-          Self.Layout.RequireChildrenUpdate = true;
+          _Parent.Layout.RequireChildrenUpdate = true;
           _Parent.Tree.OnChildRemoved(Self);
           Self.Tree.OnDetachFromParent(_Parent);
         }

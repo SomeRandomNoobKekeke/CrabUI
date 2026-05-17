@@ -19,7 +19,7 @@ namespace CrabUIUser
       PrintFilePath = false,
     };
 
-    public CUIDebugConsoleInterface CUIDebugConsoleInterface { get; } = new();
+    public CUIDebugger CUIDebugger { get; } = new();
     public CUITest CUITest { get; } = new();
 
     public void Initialize()
@@ -37,7 +37,7 @@ namespace CrabUIUser
         CUI.Start();
 
 
-        CUIDebugConsoleInterface.Init();
+        CUIDebugger.Init();
 
         Experiment();
       }

@@ -145,7 +145,7 @@ namespace CrabUIUser
         CUI.Main.Step();
         CurrentSnapshot = ComponentSnapshot.Take(TestSubject, CurrentTest.Name);
 
-        TestBox["main"].Debug.PrintTree();
+        TestBox["main"].PrintTree();
 
         Compare();
       }

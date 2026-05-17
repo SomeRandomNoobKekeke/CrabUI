@@ -12,16 +12,24 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-    public Debug_Part Debug { get; } = new();
-    public class Debug_Part : Part
+    private bool _Debug; public bool Debug
     {
-      public void PrintTree(string offset = "")
+      get => _Debug;
+      set
       {
-        CUI.Logger.Log($"{offset}{Self}");
-        foreach (CUIComponent child in Self.Children)
-        {
-          child.Debug.PrintTree(offset + "|    ");
-        }
+        _Debug = value;
+
+        if (value) DebugRelays.Open(); else DebugRelays.Close();
+      }
+    }
+
+
+    public void PrintTree(string offset = "")
+    {
+      CUI.Logger.Log($"{offset}{this}");
+      foreach (CUIComponent child in this.Tree.Children)
+      {
+        child.PrintTree(offset + "|    ");
       }
     }
   }

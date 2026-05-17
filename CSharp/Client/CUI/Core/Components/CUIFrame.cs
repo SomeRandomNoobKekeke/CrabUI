@@ -12,6 +12,21 @@ namespace CrabUI
 {
   public partial class CUIFrame : CUIComponent, IComponent
   {
+    public bool IsOpen => Parent != null;
+
+    public void Open(CUIComponent Host = null)
+    {
+      Host ??= CUI.Main;
+      if (Host == null || Parent == Host) return;
+
+      Host.Append(this);
+    }
+
+
+    public void Close()
+    {
+      RemoveSelf();
+    }
 
     public CUIFrame() : base()
     {

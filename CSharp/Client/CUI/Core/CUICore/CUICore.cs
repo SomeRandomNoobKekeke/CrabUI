@@ -24,11 +24,18 @@ namespace CrabUI
     }
 
     public CUIMainComponent Main { get; private set; }
+
+
+    /// <summary>
+    ///  Temporary half-assed
+    /// </summary>
+    public CUIMainComponent TopMain { get; private set; }
     public CUIInput Input { get; } = new();
 
     private void UpdateGameScreenRect()
     {
       Main.Rect = new CUIRect(GameScreenRect.Left, GameScreenRect.Top, GameScreenRect.Width, GameScreenRect.Height);
+      TopMain.Rect = new CUIRect(GameScreenRect.Left, GameScreenRect.Top, GameScreenRect.Width, GameScreenRect.Height);
     }
 
     public CUICore()
@@ -43,6 +50,7 @@ namespace CrabUI
       _Activated = true;
 
       Main = new();
+      TopMain = new();
 
       UpdateGameScreenRect();
 

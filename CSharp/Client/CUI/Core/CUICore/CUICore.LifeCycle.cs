@@ -25,6 +25,7 @@ namespace CrabUI
         {
           Self.Input.Update(totalTime, mouse);
           Self.Main.Update(totalTime, Self.Input);
+          Self.TopMain.Update(totalTime, Self.Input);
           OnUpdate.Raise(totalTime);
         }
         catch (Exception e)
@@ -37,6 +38,7 @@ namespace CrabUI
       {
         try
         {
+          Self.TopMain.DrawChildren(spriteBatch);
           OnDrawAfterGUI.Raise(spriteBatch);
         }
         catch (Exception e)

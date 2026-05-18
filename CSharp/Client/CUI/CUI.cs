@@ -48,6 +48,7 @@ namespace CrabUI
     public static void Stop() => Setup?.Stop();
 
     public static CUIMainComponent Main => Setup.Core.Main;
+    public static CUIMainComponent TopMain => Setup.Core.TopMain;
     public static DebugHub DebugHub => Core.DebugHub;
 
     public static event Action<double> OnUpdate

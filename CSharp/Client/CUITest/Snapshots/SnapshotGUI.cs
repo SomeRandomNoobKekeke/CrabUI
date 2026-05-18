@@ -30,7 +30,7 @@ namespace CrabUIUser
         AddMouseDown = (e) => Manager.Setup(),
       };
 
-      CUI.Main["open control panel"] = OpenButton;
+      CUI.TopMain["open control panel"] = OpenButton;
 
       ControlPannel = new CUIFrame()
       {
@@ -93,14 +93,14 @@ namespace CrabUIUser
     public void OnSetup(CUIComponent testBox)
     {
       OpenButton.RemoveSelf();
-      testBox["overlay"]["control panel"] = ControlPannel;
+      CUI.TopMain["control panel"] = ControlPannel;
       UpdateTests();
     }
 
     public void OnDismantle(CUIComponent testBox)
     {
       ControlPannel.RemoveSelf();
-      CUI.Main["open control panel"] = OpenButton;
+      CUI.TopMain["open control panel"] = OpenButton;
     }
 
     public void OnTestRunning(SnapshotTest currentTest)

@@ -17,6 +17,8 @@ namespace CrabUIUser
     public ClearableEvent<DebugEvent> Input { get; } = new();
     public ClearableEvent<double> OnUpdate { get; } = new();
 
+    public CUIButton OpenButton { get; private set; }
+
     public CUIFrame DebugFrame { get; private set; }
     public CUIPages Pages { get; private set; }
     public CUIPage EventsPage { get; private set; }
@@ -34,12 +36,26 @@ namespace CrabUIUser
 
       CreateGUI();
 
+
       Input.Add(HandleDebugEvent);
       OnUpdate.Add((d) => UpdateFrameEnded = true);
+
+      Close();
     }
 
     public void CreateGUI()
     {
+      OpenButton = new CUIButton()
+      {
+        Text = "Debug",
+        Anchor = CUIAnchor.LeftCenter,
+        BackgroundColor = Color.Blue,
+        TextAnchor = CUIAnchor.LeftCenter,
+        Absolute = new CUINullRect(w: 50, h: 20),
+        AddMouseDown = (e) => Open(),
+      };
+
+
       DebugFrame = new CUIFrame()
       {
         Absolute = new CUINullRect(w: 400, h: 300),
@@ -226,13 +242,16 @@ namespace CrabUIUser
     public void Open()
     {
       IsOpen = true;
-      DebugFrame.Open();
+      OpenButton.RemoveSelf();
+      DebugFrame.Open(CUI.TopMain);
       CUI.DebugHub.Output.Map(Input);
       CUI.Core.LifeCycle.OnUpdate.Map(OnUpdate);
     }
     public void Close()
     {
       IsOpen = false;
+      CUI.TopMain["open debug button"] = OpenButton;
+
       DebugFrame.Close();
       CUI.DebugHub.Output.Unmap(Input);
       CUI.Core.LifeCycle.OnUpdate.Unmap(OnUpdate);

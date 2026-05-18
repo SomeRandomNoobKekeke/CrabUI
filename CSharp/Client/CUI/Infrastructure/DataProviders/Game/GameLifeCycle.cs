@@ -38,6 +38,8 @@ namespace CrabUI
 
     private static MethodBase GUIDrawMethod => typeof(GUI).GetMethod("Draw");
     private static MethodBase UpdateMethod => typeof(GameMain).GetMethod("Update", AccessTools.all);
+    private static MethodBase GUI_DrawCursor_Method => typeof(GUI).GetMethod("DrawCursor", AccessTools.all);
+
 
     private static string BeforeDrawHook => $"{ModInfo.HookId}_CUI_BeforeDraw";
     private static string AfterDrawHook => $"{ModInfo.HookId}_CUI_AfterDraw";
@@ -61,11 +63,11 @@ namespace CrabUI
         return null;
       }, LuaCsHook.HookMethodType.Before);
 
-      Patch(AfterDrawHook, GUIDrawMethod, (instance, ptable) =>
+      Patch(AfterDrawHook, GUI_DrawCursor_Method, (instance, ptable) =>
       {
         _AfterGUIDraw.Raise((SpriteBatch)ptable["spriteBatch"]);
         return null;
-      }, LuaCsHook.HookMethodType.After);
+      }, LuaCsHook.HookMethodType.Before);
 
       Patch(UpdateHook, UpdateMethod, (instance, ptable) =>
       {

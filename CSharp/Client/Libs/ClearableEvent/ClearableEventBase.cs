@@ -26,6 +26,7 @@ namespace BaroJunk
     }
     public void Unmap(IClearableEvent node)
     {
+      if (!Mapping.ContainsKey(node)) return;
       Mapping[node].Cancel();
       Mapping.Remove(node);
     }

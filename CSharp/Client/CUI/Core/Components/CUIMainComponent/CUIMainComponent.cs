@@ -9,6 +9,7 @@ using ComponentGenerator;
 
 namespace CrabUI
 {
+  [GeneratedComponent]
   public partial class CUIMainComponent : CUIComponent, IComponent
   {
     public class Part : IPart { public CUIMainComponent Self { get; set; } }
@@ -83,8 +84,9 @@ namespace CrabUI
       EventDispatcher.Dispatch(leaved, EventConstructor.MouseLeaveEvent);
       EventDispatcher.Dispatch(entered, EventConstructor.MouseEnterEvent);
 
-      Debug_MouseEnter.Send(entered);
-      Debug_MouseLeave.Send(leaved);
+
+      foreach (var element in entered) Debug_MouseEnter.Send(element);
+      foreach (var element in leaved) { Debug_MouseLeave.Send(element); }
 
 
       EventDispatcher.Dispatch(GlobalEvents, EventConstructor.Events);

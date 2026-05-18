@@ -10,6 +10,7 @@ using ComponentGenerator;
 
 namespace CrabUI
 {
+  [GeneratedComponent]
   public partial class CUIComponent : CUIVisualComponent, IComponent
   {
     public class Part : IPart { public CUIComponent Self { get; set; } }
@@ -23,8 +24,7 @@ namespace CrabUI
       }).Where(c => c != null);
 
 
-    protected LayoutSlot LayoutSlot { get; set; } = new();
-    protected LayoutMarker LayoutMarker { get; set; } = new();
+
     public DragHandle DragHandle { get; } = new();
 
     public CUIComponent() : base()

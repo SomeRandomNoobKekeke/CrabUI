@@ -12,6 +12,9 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
+    protected event Action OnDebugOn;
+    protected event Action OnDebugOff;
+
     private bool _Debug; public bool Debug
     {
       get => _Debug;
@@ -19,7 +22,7 @@ namespace CrabUI
       {
         _Debug = value;
 
-        if (value) DebugRelays.Open(); else DebugRelays.Close();
+        if (value) OnDebugOn?.Invoke(); else OnDebugOff?.Invoke();
       }
     }
 

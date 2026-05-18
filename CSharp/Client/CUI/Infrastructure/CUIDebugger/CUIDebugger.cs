@@ -188,7 +188,7 @@ namespace CrabUIUser
     {
       ComponentsPage.Get<CUIVerticalList>("list").Clear();
 
-      foreach (CUIComponent child in CUI.Main.DeepChildren.ToList())
+      foreach (CUIComponent child in CUI.Main.DeepChildren.Append(CUI.Main).ToList())
       {
         CUITextBlock node = new CUITextBlock()
         {

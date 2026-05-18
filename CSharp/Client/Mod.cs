@@ -36,8 +36,6 @@ namespace CrabUIUser
       {
         CUI.Start();
 
-        CUI.DebugHub.Gates["Funny Prop Set"].Open();
-
         CUIDebugger.Init();
 
         Experiment();

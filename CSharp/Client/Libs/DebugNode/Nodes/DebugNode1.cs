@@ -23,6 +23,7 @@ namespace BaroJunk
     public override void Send(object arg1) => Send((T1)arg1);
     public void Send(T1 arg1)
     {
+      // Logger.Default.LogVars(Type, GlobalGate.IsOpen, IsOpen);
       if (GlobalGate.IsOpen && IsOpen)
       {
         Hub.Output.Raise(EventFactory(arg1));

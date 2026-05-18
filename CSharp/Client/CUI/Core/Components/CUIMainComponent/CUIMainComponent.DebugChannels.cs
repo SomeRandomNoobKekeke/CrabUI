@@ -22,16 +22,19 @@ namespace CrabUI
 
         Self.Debug_MouseEnter.Map(Self.DebugRelays["Mouse Enter / Leave"]);
         Self.Debug_MouseLeave.Map(Self.DebugRelays["Mouse Enter / Leave"]);
+
+        Self.OnDebugOn += () => Self.DebugRelays.Open();
+        Self.OnDebugOff += () => Self.DebugRelays.Close();
       }
     }
 
-    public DebugNode<IEnumerable<IEventConsumer>> Debug_MouseEnter { get; } = new(
+    public DebugNode<IEventConsumer> Debug_MouseEnter { get; } = new(
       "Mouse Enter / Leave", CUI.DebugHub,
-      (list) => $"Mouse Enter: {Logger.Wrap.IEnumerable(list)}"
+      (element) => $"Mouse Enter: {element}"
     );
-    public DebugNode<IEnumerable<IEventConsumer>> Debug_MouseLeave { get; } = new(
+    public DebugNode<IEventConsumer> Debug_MouseLeave { get; } = new(
       "Mouse Enter / Leave", CUI.DebugHub,
-      (list) => $"Mouse Leave: {Logger.Wrap.IEnumerable(list)}"
+      (element) => $"Mouse Leave: {element}"
     );
 
     public DebugRelayDict DebugRelays { get; } = new()

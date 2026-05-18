@@ -12,6 +12,16 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
+    protected InitDebugChannels_Part InitDebugChannels { get; } = new();
+    public class InitDebugChannels_Part : Part
+    {
+      public void Init()
+      {
+        Self.OnDebugOn += () => Self.DebugRelays.Open();
+        Self.OnDebugOff += () => Self.DebugRelays.Close();
+      }
+    }
+
     public DebugRelayDict DebugRelays { get; } = new()
     {
       ["Prop Set"] = new DebugRelay(),

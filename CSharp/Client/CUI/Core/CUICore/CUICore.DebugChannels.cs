@@ -12,7 +12,6 @@ namespace CrabUI
   {
     public DebugRelayDict DebugRelays { get; } = new()
     {
-      ["Mouse Enter / Leave"] = new DebugRelay(),
       ["Prop Set"] = new DebugRelay(),
       ["Child Added"] = new DebugRelay(),
       ["Layout Updated"] = new DebugRelay(),

@@ -22,6 +22,14 @@ namespace CrabUI
       }
     }
 
+    public DebugNode<Type, object, CUIComponent, string> Debug_PropSet { get; } = new(
+      "Funny Prop Set", CUI.DebugHub,
+      (propType, value, host, propName) => $"{host}.{propName} = {value}"
+    )
+    {
+      IsOpen = true,
+    };
+
     public DebugRelayDict DebugRelays { get; } = new()
     {
       ["Prop Set"] = new DebugRelay(),

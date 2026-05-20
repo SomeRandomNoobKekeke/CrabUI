@@ -20,7 +20,6 @@ namespace CrabUI
 
       public partial class Layout_Adapter : Part, IAdapterPart, Layout.Target
       {
-
       }
     }
   }

@@ -14,8 +14,19 @@ namespace CrabUI
   {
     public SimpleTexture Background { get; } = new();
 
-    public override void UpdateRect(CUIRect rect)
+    protected CUIRect _Rect;
+    public override CUIRect Rect
     {
+      get => _Rect;
+      set
+      {
+        _Rect = value;
+        UpdateRect(value);
+      }
+    }
+    protected virtual void UpdateRect(CUIRect rect)
+    {
+      Debug_PropSet.Send(typeof(CUIRect), rect, this, "Rect");
       Background.Rect = rect;
     }
 

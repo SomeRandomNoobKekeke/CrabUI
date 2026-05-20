@@ -20,8 +20,8 @@ namespace CrabUI
       {
         CUIRect CUIVerticalListLayout.Target.Rect
         {
-          get => Self.FunnyProps.Rect.Value;
-          set => Self.FunnyProps.Rect.Value = value;
+          get => Self.Rect;
+          set => Self.Rect = value;
         }
         CUINullRect CUIVerticalListLayout.Target.Absolute
           => Self.LayoutProps.Absolute.Value;

@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
 using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
+using ComponentGenerator;
 
 namespace CrabUI
 {
-  public interface IVisualComponent
+  public interface IResizeHandleHub
   {
-    public CUIRect Rect { get; set; }
-    public IEnumerable<VisualUnit> VisualSplit();
+    public event Action<CUIMouseUpEvent> MouseUp;
+    public event Action<CUIMouseMovedEvent> MouseMoved;
   }
 }

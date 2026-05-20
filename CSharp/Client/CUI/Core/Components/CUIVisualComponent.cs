@@ -10,24 +10,22 @@ using ComponentGenerator;
 
 namespace CrabUI
 {
-  [GeneratedComponent]
-  public abstract partial class CUIVisualComponent : IVisualComponent, IComponent
+  public abstract partial class CUIVisualComponent : IVisualComponent
   {
-    public class Part : IPart { public CUIVisualComponent Self { get; set; } }
-
     public static int MaxID { get; private set; }
     public int ID { get; set; }
 
     public string TypeName => this.GetType().Name;
 
-    public abstract void UpdateRect(CUIRect rect);
+
+
+    public abstract CUIRect Rect { get; set; }
     public abstract IEnumerable<VisualUnit> VisualSplit();
 
 
     public CUIVisualComponent()
     {
       ID = MaxID++;
-      this.Inject();
     }
 
     public override string ToString() => $"{this.GetType().Name} [{this.ID}]";

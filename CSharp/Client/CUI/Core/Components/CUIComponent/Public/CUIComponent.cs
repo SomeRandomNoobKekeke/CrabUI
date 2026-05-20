@@ -14,9 +14,6 @@ namespace CrabUI
   {
     public CUIMainComponent MainComponent => MainComponentTracker.MainComponent;
 
-
-    public CUIRect Rect => FunnyProps.Rect.Value;
-
     public bool Draggable
     {
       get => DragHandle.Active;

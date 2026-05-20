@@ -57,8 +57,6 @@ namespace CrabUI
     public Vector2 RightCenter => new Vector2(Left + Width, Top + Height / 2);
     public Vector2 RightBottom => new Vector2(Left + Width, Top + Height);
 
-
-
     public CUIRect Shift(Vector2 shift)
     {
       return new CUIRect(Left + shift.X, Top + shift.Y, Width, Height);
@@ -90,4 +88,6 @@ namespace CrabUI
 
     public override string ToString() => $"[{Left},{Top},{Width},{Height}]";
   }
+
+
 }

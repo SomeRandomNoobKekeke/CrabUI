@@ -17,12 +17,6 @@ namespace CrabUI
     public bool Frozen { get; set; }
     public double UpdateInterval = 1.0 / 60.0;
 
-    public CUIRect Rect
-    {
-      get => FunnyProps.Rect.Value;
-      set => FunnyProps.Rect.Value = value;
-    }
-
     protected VisualFlattener VisualFlattener { get; } = new();
     protected LayoutFlattener LayoutFlattener { get; } = new();
     protected ChainDrawer ChainDrawer { get; } = new();
@@ -83,11 +77,6 @@ namespace CrabUI
       IEnumerable<IEventConsumer> leaved = EventTargets.PrevTargets.Except(EventTargets.Targets);
       EventDispatcher.Dispatch(leaved, EventConstructor.MouseLeaveEvent);
       EventDispatcher.Dispatch(entered, EventConstructor.MouseEnterEvent);
-
-
-      foreach (var element in entered) Debug_MouseEnter.Send(element);
-      foreach (var element in leaved) { Debug_MouseLeave.Send(element); }
-
 
       EventDispatcher.Dispatch(GlobalEvents, EventConstructor.Events);
       EventDispatcher.Dispatch(EventTargets.Targets, EventConstructor.Events);

@@ -10,6 +10,7 @@ using ComponentGenerator;
 
 namespace CrabUI
 {
+
   [GeneratedComponent]
   public partial class CUIComponent : CUIVisualComponent, IComponent
   {
@@ -23,13 +24,14 @@ namespace CrabUI
         return component;
       }).Where(c => c != null);
 
-
-
     public DragHandle DragHandle { get; } = new();
 
     public CUIComponent() : base()
     {
+      this.Inject();
       LayoutSlot.Layout = new PlainLayout();
+
+      Debug = true;
     }
 
     public override string ToString() => $"{this.GetType().Name}:{ID}:{AKA}";

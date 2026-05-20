@@ -40,7 +40,6 @@ namespace ComponentGenerator
   public interface IEndPart : IPart { }
   public interface IChimeraPart : IEndPart, IModule { }
   public interface IAdapterPart : IEndPart, IModule { }
-
   public interface IPropContainer { }
   public interface IProp { }
 

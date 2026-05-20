@@ -57,7 +57,7 @@ namespace CrabUI
     }
 
 
-    public override void UpdateRect(CUIRect rect)
+    protected override void UpdateRect(CUIRect rect)
     {
       base.UpdateRect(rect);
       TextBlock.Rect = rect;

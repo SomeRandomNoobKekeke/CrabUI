@@ -24,6 +24,8 @@ namespace CrabUI
     protected EventConstructor EventConstructor { get; } = new();
     protected EventTargets EventTargets { get; } = new();
 
+    public GrabbedHandleTracker GrabbedHandleTracker { get; } = new();
+
     private bool GlobalLayoutChanged;
 
     public bool MouseOverSomeElement => EventTargets.TopTarget != null;

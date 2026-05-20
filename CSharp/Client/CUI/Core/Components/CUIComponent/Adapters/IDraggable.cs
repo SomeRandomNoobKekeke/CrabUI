@@ -57,6 +57,11 @@ namespace CrabUI
           add => Self.MainComponentTracker.MainComponent?.GlobalEvents.MouseMoved.Add(value);
           remove => Self.MainComponentTracker.MainComponent?.GlobalEvents.MouseMoved.Remove(value);
         }
+
+        public bool TryGrab(object handle)
+          => Self.MainComponentTracker.MainComponent.GrabbedHandleTracker.TryGrab(handle);
+        public void Release(object handle)
+          => Self.MainComponentTracker.MainComponent.GrabbedHandleTracker.Release(handle);
       }
     }
   }

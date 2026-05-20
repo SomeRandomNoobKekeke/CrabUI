@@ -18,5 +18,8 @@ namespace CrabUI
 
     public event Action<CUIMouseUpEvent> HubMouseUp;
     public event Action<CUIMouseMovedEvent> HubMouseMoved;
+
+    public bool TryGrab(object handle);
+    public void Release(object handle);
   }
 }

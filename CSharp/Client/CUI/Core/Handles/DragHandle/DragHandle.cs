@@ -9,8 +9,11 @@ using ComponentGenerator;
 
 namespace CrabUI
 {
-  public class DragHandle : IModule
+  public class DragHandle : IModule, IAware
   {
+    public object HostComponent { get; set; }
+    public string HostPropName { get; set; }
+
     private IDraggable host;
     [In]
     public IDraggable Host
@@ -44,6 +47,7 @@ namespace CrabUI
     private void Grab(CUIMouseEvent e)
     {
       if (!Active) return;
+      if (!Host.TryGrab(this)) return;
 
       Grabbed = true;
       GrabOffset = Host.Rect.LeftTop - e.Pos;
@@ -58,6 +62,7 @@ namespace CrabUI
       Grabbed = false;
       host.HubMouseMoved -= Update;
       host.HubMouseUp -= Release;
+      host.Release(this);
     }
 
     public void Update(CUIMouseEvent e)

@@ -12,6 +12,7 @@ namespace CrabUI
   {
     public DebugRelayDict DebugRelays { get; } = new()
     {
+      ["Handle Grab"] = new DebugRelay(),
       ["Prop Set"] = new DebugRelay(),
       ["Child Added"] = new DebugRelay(),
       ["Layout Updated"] = new DebugRelay(),

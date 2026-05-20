@@ -20,7 +20,7 @@ namespace CrabUI
       {
         (Self as CUIComponent).DebugRelays.Map(Self.DebugRelays);
 
-
+        Self.GrabbedHandleTracker.DebugRelay.Map(Self.DebugRelays["Handle Grab"]);
 
         Self.OnDebugOn += () => Self.DebugRelays.Open();
         Self.OnDebugOff += () => Self.DebugRelays.Close();
@@ -29,6 +29,7 @@ namespace CrabUI
 
     public DebugRelayDict DebugRelays { get; } = new()
     {
+      ["Handle Grab"] = new DebugRelay(),
       ["Prop Set"] = new DebugRelay(),
       ["Child Added"] = new DebugRelay(),
       ["Layout Updated"] = new DebugRelay(),

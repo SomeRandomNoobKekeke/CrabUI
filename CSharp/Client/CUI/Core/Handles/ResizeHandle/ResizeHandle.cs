@@ -9,8 +9,11 @@ using ComponentGenerator;
 
 namespace CrabUI
 {
-  public class ResizeHandle : CUIVisualComponent, IModule
+  public class ResizeHandle : CUIVisualComponent, IModule, IAware
   {
+    public object HostComponent { get; set; }
+    public string HostPropName { get; set; }
+
     private IResizable host;
     [In]
     public IResizable Host
@@ -69,6 +72,7 @@ namespace CrabUI
     private void Grab(CUIMouseEvent e)
     {
       if (!Active) return;
+      if (!Host.TryGrab(this)) return;
 
       Grabbed = true;
       GrabOffset = Rect.LeftTop - e.Pos;
@@ -87,6 +91,7 @@ namespace CrabUI
       Grabbed = false;
       host.HubMouseMoved -= Update;
       host.HubMouseUp -= Release;
+      host.Release(this);
     }
 
     public override IEnumerable<VisualUnit> VisualSplit()

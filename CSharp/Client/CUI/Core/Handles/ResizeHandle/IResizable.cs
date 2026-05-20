@@ -16,5 +16,7 @@ namespace CrabUI
     public void SetSize(Vector2 size);
     public event Action<CUIMouseUpEvent> HubMouseUp;
     public event Action<CUIMouseMovedEvent> HubMouseMoved;
+    public bool TryGrab(object handle);
+    public void Release(object handle);
   }
 }

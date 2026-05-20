@@ -15,12 +15,12 @@ namespace CrabUI
     public DebugRelay DebugRelay { get; } = new();
 
     public DebugNode<object> Debug_HandleGrabbed { get; } = new(
-      "Handle Grab", CUI.DebugHub,
+      DebugCategory.HandleGrab, CUI.DebugHub,
       (handle) => $"{handle.GetType().Name} on {(handle as IAware).HostComponent} Grabbed"
     );
 
     public DebugNode<object> Debug_HandleReleased { get; } = new(
-      "Handle Grab", CUI.DebugHub,
+      DebugCategory.HandleGrab, CUI.DebugHub,
       (handle) => $"{handle.GetType().Name} on {(handle as IAware).HostComponent} Released"
     );
 

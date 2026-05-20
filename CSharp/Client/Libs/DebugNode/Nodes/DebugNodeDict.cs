@@ -15,11 +15,15 @@ namespace BaroJunk
   {
     public static void Map(this Dictionary<string, DebugNodeBase> self, Dictionary<string, DebugRelay> next)
     {
-      foreach (string key in next.Keys)
+      foreach (string key in self.Keys)
       {
-        if (self.ContainsKey(key))
+        if (next.ContainsKey(key))
         {
           next[key].Route(self[key]);
+        }
+        else
+        {
+          DebugNodeSetup.Logger.Warning($"DebugNodeDict can't be fully mapped, next doesn't have [{key}]");
         }
       }
     }

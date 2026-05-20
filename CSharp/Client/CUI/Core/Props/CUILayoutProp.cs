@@ -24,7 +24,7 @@ namespace CrabUI
   public class CUILayoutProp<T> : CUIAwareProp<T>, ICUILayoutProp
   {
     public DebugNode<Type, object, object, string> Debug_ValueSet { get; } = new(
-      "Layout", CUI.DebugHub,
+      DebugCategory.Layout, CUI.DebugHub,
       (propType, value, host, propName) => $"{host}.{propName} = {value}"
     );
 

@@ -17,25 +17,23 @@ namespace CrabUI
     {
       public void Init()
       {
+        Self.Tree.DebugRelay.Map(Self.DebugRelays[DebugCategory.TreeChanged]);
+
         Self.OnDebugOn += () => Self.DebugRelays.Open();
         Self.OnDebugOff += () => Self.DebugRelays.Close();
       }
     }
 
     public DebugNode<Type, object, CUIComponent, string> Debug_PropSet { get; } = new(
-      "Funny Prop Set", CUI.DebugHub,
+      DebugCategory.FunnyPropSet, CUI.DebugHub,
       (propType, value, host, propName) => $"{host}.{propName} = {value}"
-    )
-    {
-      IsOpen = true,
-    };
+    );
 
     public DebugRelayDict DebugRelays { get; } = new()
     {
-      ["Prop Set"] = new DebugRelay(),
-      ["Child Added"] = new DebugRelay(),
-      ["Child Removed"] = new DebugRelay(),
-      ["Layout Updated"] = new DebugRelay(),
+      [DebugCategory.PropSet] = new DebugRelay(),
+      [DebugCategory.TreeChanged] = new DebugRelay(),
+      [DebugCategory.LayoutUpdated] = new DebugRelay(),
     };
   }
 }

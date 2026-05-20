@@ -33,7 +33,7 @@ namespace CrabUI
     // public Vector2 ParentAnchor { get; set; }
     public Vector2 Size { get; set; } = new Vector2(15, 10);
 
-    public bool Active { get; set; } = true;
+    public bool Visible { get; set; }
     public bool Grabbed { get; private set; }
     public Vector2 GrabOffset { get; private set; }
 
@@ -71,7 +71,6 @@ namespace CrabUI
 
     private void Grab(CUIMouseEvent e)
     {
-      if (!Active) return;
       if (!Host.TryGrab(this)) return;
 
       Grabbed = true;
@@ -96,7 +95,7 @@ namespace CrabUI
 
     public override IEnumerable<VisualUnit> VisualSplit()
     {
-      yield return new VisualUnit.PrimitiveVisualElement(Background);
+      if (Visible) yield return new VisualUnit.PrimitiveVisualElement(Background);
     }
 
     public ResizeHandle()

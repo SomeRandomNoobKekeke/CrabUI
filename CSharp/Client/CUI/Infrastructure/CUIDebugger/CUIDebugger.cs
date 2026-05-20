@@ -61,6 +61,7 @@ namespace CrabUIUser
         Absolute = new CUINullRect(w: 400, h: 300),
         Anchor = CUIAnchor.LeftCenter,
         BackgroundColor = Color.Black,
+        Resizable = true,
       };
 
       DebugFrame["layout"] = new CUIVerticalList()
@@ -195,13 +196,13 @@ namespace CrabUIUser
           Text = child.ToString(),
           Absolute = new CUINullRect(h: 20),
           TextAnchor = new Vector2(0, 0.5f),
-          BackgroundColor = child.Debug ? Color.Lime : Color.Blue,
+          BackgroundColor = child.Debug ? new Color(0, 200, 0) : Color.Blue,
         };
 
         node.MouseDown += (e) =>
         {
           child.Debug = !child.Debug;
-          node.BackgroundColor = child.Debug ? Color.Lime : Color.Blue;
+          node.BackgroundColor = child.Debug ? new Color(0, 200, 0) : Color.Blue;
         };
 
         ComponentsPage["list"].Append(node);
@@ -220,13 +221,13 @@ namespace CrabUIUser
           Text = name,
           Absolute = new CUINullRect(h: 20),
           TextAnchor = new Vector2(0, 0.5f),
-          BackgroundColor = CUI.DebugHub.Gates[name].IsOpen ? Color.Lime : Color.Blue,
+          BackgroundColor = CUI.DebugHub.Gates[name].IsOpen ? new Color(0, 200, 0) : Color.Blue,
         };
 
         node.MouseDown += (e) =>
         {
           CUI.DebugHub.Gates[name].Toggle();
-          node.BackgroundColor = CUI.DebugHub.Gates[name].IsOpen ? Color.Lime : Color.Blue;
+          node.BackgroundColor = CUI.DebugHub.Gates[name].IsOpen ? new Color(0, 200, 0) : Color.Blue;
         };
 
         GatesPage["list"].Append(node);

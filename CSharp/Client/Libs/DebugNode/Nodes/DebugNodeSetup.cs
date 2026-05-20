@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Diagnostics;
-using BaroJunk;
 
-namespace CrabUI
+namespace BaroJunk
 {
-  public class CUIDebugger
+  public static class DebugNodeSetup
   {
-    public bool Debug { get; set; } = false;
+    public static Logger Logger => Logger.Default;
   }
 }

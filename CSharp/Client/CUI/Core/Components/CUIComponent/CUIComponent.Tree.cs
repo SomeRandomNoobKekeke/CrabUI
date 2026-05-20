@@ -47,16 +47,18 @@ namespace CrabUI
       {
         ReadOnlyChildren = Children.AsReadOnly();
 
-        Debug_ChildAdded.Map(Self.DebugRelays["Child Added"]);
-        Debug_ChildRemoved.Map(Self.DebugRelays["Child Removed"]);
+        DebugRelay.Route(Debug_ChildAdded);
+        DebugRelay.Route(Debug_ChildRemoved);
       }
 
+      public DebugRelay DebugRelay { get; } = new();
+
       public DebugNode<CUIComponent, CUIComponent> Debug_ChildAdded = new(
-        "Tree Changed", CUI.DebugHub,
-        (parent, child) => $"{parent} <- {child}"
+        DebugCategory.TreeChanged, CUI.DebugHub,
+        (parent, child) => $"{parent} <= {child}"
       );
       public DebugNode<CUIComponent, CUIComponent> Debug_ChildRemoved = new(
-        "Tree Changed", CUI.DebugHub,
+        DebugCategory.TreeChanged, CUI.DebugHub,
         (parent, child) => $"{parent} => {child}"
       );
 
@@ -91,6 +93,8 @@ namespace CrabUI
           _Parent.LayoutMarker.Mark(MarkPattern);
           _Parent.Tree.OnChildRemoved(Self);
           Self.Tree.OnDetachFromParent(_Parent);
+
+          _Parent.Tree.Debug_ChildRemoved.Send(_Parent, Self);
         }
 
         _Parent = value;
@@ -104,6 +108,8 @@ namespace CrabUI
           _Parent.LayoutMarker.Mark(MarkPattern);
           _Parent.Tree.OnChildAdded(Self);
           Self.Tree.OnAttachToParent(_Parent);
+
+          _Parent.Tree.Debug_ChildAdded.Send(_Parent, Self);
         }
       }
 

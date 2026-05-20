@@ -12,6 +12,15 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
+    #region public
+    #endregion
+    public CUIMainComponent MainComponent => MainComponentTracker.MainComponent;
+
+
+
+
+    #region protected
+    #endregion
     protected virtual MainComponentTracker_Part MainComponentTracker { get; set; } = new();
     public class MainComponentTracker_Part : Part, IModule
     {

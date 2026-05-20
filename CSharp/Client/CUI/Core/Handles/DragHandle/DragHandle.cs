@@ -11,6 +11,7 @@ namespace CrabUI
 {
   public class DragHandle : IModule
   {
+    private IDraggable host;
     [In]
     public IDraggable Host
     {
@@ -23,7 +24,7 @@ namespace CrabUI
         if (host is not null) ConnectToHost(host);
       }
     }
-    private IDraggable host;
+
 
     private void ConnectToHost(IDraggable host)
     {

@@ -11,12 +11,6 @@ namespace CrabUI
 {
   public interface IResizable
   {
-    public event Action<CUIMouseDownEvent> MouseDown;
     public CUIRect Rect { get; }
-    public CUIRect? ParentRect { get; }
-    public void SetLeftTopPos(float x, float y);
-
-    public event Action<CUIMouseUpEvent> HubMouseUp;
-    public event Action<CUIMouseMovedEvent> HubMouseMoved;
   }
 }

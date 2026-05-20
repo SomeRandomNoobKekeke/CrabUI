@@ -25,6 +25,7 @@ namespace CrabUI
       }).Where(c => c != null);
 
     public DragHandle DragHandle { get; } = new();
+    public ResizeHandle RightResizeHandle { get; } = new();
 
     public CUIComponent() : base()
     {

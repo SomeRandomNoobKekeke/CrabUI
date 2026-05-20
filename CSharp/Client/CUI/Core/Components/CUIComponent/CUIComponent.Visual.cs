@@ -28,6 +28,7 @@ namespace CrabUI
     {
       Debug_PropSet.Send(typeof(CUIRect), rect, this, "Rect");
       Background.Rect = rect;
+      RightResizeHandle.UpdateRect();
     }
 
     public override IEnumerable<VisualUnit> VisualSplit()
@@ -39,6 +40,7 @@ namespace CrabUI
         yield return new VisualUnit.NestedVisualComponent(child);
       }
       yield return new VisualUnit.RightContextBound();
+      yield return new VisualUnit.NestedVisualComponent(RightResizeHandle);
     }
   }
 }

@@ -30,6 +30,10 @@ namespace CrabUI
     // public Vector2 ParentAnchor { get; set; }
     public Vector2 Size { get; set; } = new Vector2(15, 10);
 
+    public bool Active { get; set; } = true;
+    public bool Grabbed { get; private set; }
+    public Vector2 GrabOffset { get; private set; }
+
 
     public override CUIRect Rect
     {
@@ -44,7 +48,6 @@ namespace CrabUI
 
     private void DisconnectFromHost(IResizable host)
     {
-
     }
 
     public void UpdateRect()
@@ -62,6 +65,30 @@ namespace CrabUI
       }
     }
 
+
+    private void Grab(CUIMouseEvent e)
+    {
+      if (!Active) return;
+
+      Grabbed = true;
+      GrabOffset = Rect.LeftTop - e.Pos;
+      host.HubMouseMoved += Update;
+      host.HubMouseUp += Release;
+    }
+
+    public void Update(CUIMouseEvent e)
+    {
+      Host.SetSize(e.Pos - Host.Rect.LeftTop);
+    }
+
+    private void Release(CUIMouseEvent e)
+    {
+      Host.SetSize(e.Pos - Host.Rect.LeftTop);
+      Grabbed = false;
+      host.HubMouseMoved -= Update;
+      host.HubMouseUp -= Release;
+    }
+
     public override IEnumerable<VisualUnit> VisualSplit()
     {
       yield return new VisualUnit.PrimitiveVisualElement(Background);
@@ -70,6 +97,8 @@ namespace CrabUI
     public ResizeHandle()
     {
       Background.Color = Color.Yellow;
+
+      Background.MouseDown.Add(Grab);
     }
   }
 }

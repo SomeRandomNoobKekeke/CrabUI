@@ -20,6 +20,31 @@ namespace CrabUI
       public partial class IResizable_Adapter : Part, IAdapterPart, IResizable
       {
         public CUIRect Rect => Self.Rect;
+
+        public void SetSize(Vector2 size)
+        {
+          Self.LayoutProps.Absolute.Value = Self.LayoutProps.Absolute.Value with
+          {
+            Size = size,
+          };
+        }
+
+        public event Action<CUIMouseDownEvent> MouseDown
+        {
+          add => Self.Events.MouseDown.Add(value);
+          remove => Self.Events.MouseDown.Remove(value);
+        }
+
+        public event Action<CUIMouseUpEvent> HubMouseUp
+        {
+          add => Self.MainComponentTracker.MainComponent?.GlobalEvents.MouseUp.Add(value);
+          remove => Self.MainComponentTracker.MainComponent?.GlobalEvents.MouseUp.Remove(value);
+        }
+        public event Action<CUIMouseMovedEvent> HubMouseMoved
+        {
+          add => Self.MainComponentTracker.MainComponent?.GlobalEvents.MouseMoved.Add(value);
+          remove => Self.MainComponentTracker.MainComponent?.GlobalEvents.MouseMoved.Remove(value);
+        }
       }
     }
   }

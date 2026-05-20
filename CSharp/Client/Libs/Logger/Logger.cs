@@ -65,18 +65,25 @@ namespace BaroJunk
     /// <summary>
     /// Log with LogColor
     /// </summary>
-    public void Log(object msg, [CallerFilePath] string source = "", [CallerLineNumber] int lineNumber = 0)
-    { if (PrintLogs) Print(msg, LogColor, source, lineNumber); }
+    public void Log(object msg1, [CallerFilePath] string source = "", [CallerLineNumber] int lineNumber = 0)
+    {
+      _Log(msg1, source, lineNumber);
+    }
     public void Log(object msg1, object msg2, [CallerFilePath] string source = "", [CallerLineNumber] int lineNumber = 0)
     {
-      Log(msg1, LogColor, source, lineNumber);
-      Log(msg2, LogColor, source, lineNumber);
+      _Log(msg1, source, lineNumber);
+      _Log(msg2, source, lineNumber);
     }
     public void Log(object msg1, object msg2, object msg3, [CallerFilePath] string source = "", [CallerLineNumber] int lineNumber = 0)
     {
-      Log(msg1, LogColor, source, lineNumber);
-      Log(msg2, LogColor, source, lineNumber);
-      Log(msg3, LogColor, source, lineNumber);
+      _Log(msg1, source, lineNumber);
+      _Log(msg2, source, lineNumber);
+      _Log(msg3, source, lineNumber);
+    }
+
+    private void _Log(object msg, string source = "", int lineNumber = 0)
+    {
+      if (PrintLogs) Print(msg, LogColor, source, lineNumber);
     }
 
     /// <summary>

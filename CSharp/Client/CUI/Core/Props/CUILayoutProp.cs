@@ -16,12 +16,11 @@ namespace CrabUI
   {
     public interface IContainer : IPropContainer
     {
-
       public void Mark(LayoutMarker.Pattern Pattern);
     }
   }
 
-  public class CUILayoutProp<T> : CUIAwareProp<T>, ICUILayoutProp
+  public class CUILayoutProp<T> : CUIReactiveProp<T>, ICUILayoutProp
   {
     public DebugNode<Type, object, object, string> Debug_ValueSet { get; } = new(
       DebugCategory.Layout, CUI.DebugHub,
@@ -39,7 +38,7 @@ namespace CrabUI
       {
         base.Value = value;
         Container.Mark(Pattern);
-        Debug_ValueSet.Send(typeof(T), value, HostComponent, HostPropName);
+        Debug_ValueSet.Send(typeof(T), Value, HostComponent, HostPropName);
       }
     }
   }

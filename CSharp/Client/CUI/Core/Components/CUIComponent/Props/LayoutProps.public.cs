@@ -48,5 +48,11 @@ namespace CrabUI
       get => LayoutProps.ChildrenOffset.Value;
       set => LayoutProps.ChildrenOffset.Value = value;
     }
+
+    public CUIBoundaries ChildrenOffsetBounds
+    {
+      get => LayoutProps.ChildrenOffsetBounds.Value;
+      set => LayoutProps.ChildrenOffsetBounds.Value = value;
+    }
   }
 }

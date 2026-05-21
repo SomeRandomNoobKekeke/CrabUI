@@ -36,6 +36,7 @@ namespace CrabUI
           => new ListProxy<CUIComponent, CUIVerticalListLayout.Target>(
             Self.Tree.Children, c => c.Adapters.Layout
           );
+        Vector2 CUIVerticalListLayout.Target.ChildrenOffset => Self.LayoutProps.RealChildrenOffset;
       }
     }
   }

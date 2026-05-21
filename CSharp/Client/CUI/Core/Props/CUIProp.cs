@@ -15,11 +15,16 @@ namespace CrabUI
     public object HostComponent { get; set; }
     public string HostPropName { get; set; }
 
+    public Func<T, T> Validate { get; set; }
+
     protected T _value;
     public virtual T Value
     {
       get => _value;
-      set => _value = value;
+      set
+      {
+        _value = Validate is null ? value : Validate(value);
+      }
     }
 
     public T DefaultValue { set { _value = value; } }

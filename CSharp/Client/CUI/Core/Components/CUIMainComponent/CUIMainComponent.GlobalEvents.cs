@@ -27,6 +27,7 @@ namespace CrabUI
       public ClearableEvent<CUIMouseLeaveEvent> MouseLeave { get; } = new(); // BRUH
       public ClearableEvent<CUIMouseOnEvent> MouseOn { get; } = new(); // BRUH
       public ClearableEvent<CUIMouseOffEvent> MouseOff { get; } = new(); // BRUH
+      public ClearableEvent<CUIMouseScrollEvent> MouseScroll { get; } = new();
     }
   }
 }

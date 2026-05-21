@@ -10,8 +10,5 @@ using ComponentGenerator;
 
 namespace CrabUI
 {
-  public class CUIAwareProp<T> : CUIProp<T>, IAware
-  {
-
-  }
+  public class CUIAwareProp<T> : CUIProp<T>, IAware { }
 }

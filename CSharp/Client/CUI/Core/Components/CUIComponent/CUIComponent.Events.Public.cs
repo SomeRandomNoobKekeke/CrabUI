@@ -67,5 +67,12 @@ namespace CrabUI
       add => this.Events.MouseOff.Add(value);
       remove => this.Events.MouseOff.Remove(value);
     }
+
+    public Action<CUIMouseScrollEvent> AddMouseScroll { set { MouseScroll += value; } }
+    public event Action<CUIMouseScrollEvent> MouseScroll
+    {
+      add => this.Events.MouseScroll.Add(value);
+      remove => this.Events.MouseScroll.Remove(value);
+    }
   }
 }

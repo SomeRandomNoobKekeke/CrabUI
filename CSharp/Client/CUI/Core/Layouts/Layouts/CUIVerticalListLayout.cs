@@ -20,7 +20,7 @@ namespace CrabUI
       public CUIDirection Direction { get; }
       public float? Flex { get; }
       public IReadOnlyList<Target> Children { get; }
-
+      public Vector2 ChildrenOffset { get; }
     }
 
     public class ChildSize
@@ -87,8 +87,8 @@ namespace CrabUI
         foreach (ChildSize c in sizes)
         {
           c.Child.Rect = new CUIRect(
-            Host.Rect.Left + 0,
-            Host.Rect.Top + y,
+            Host.Rect.Left + 0 + Host.ChildrenOffset.X,
+            Host.Rect.Top + y + Host.ChildrenOffset.Y,
             c.Width,
             c.Height
           );

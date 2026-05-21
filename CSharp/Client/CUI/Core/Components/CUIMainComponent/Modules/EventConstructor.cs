@@ -41,6 +41,11 @@ namespace CrabUI
       {
         Events.Add(new CUIMouseMovedEvent(input.Mouse));
       }
+
+      if (input.Mouse.Scrolled)
+      {
+        Events.Add(new CUIMouseScrollEvent(input.Mouse));
+      }
     }
   }
 }

@@ -23,15 +23,7 @@ namespace CrabUI
     public ClearableEvent<CUIMouseLeaveEvent> MouseLeave { get; }
     public ClearableEvent<CUIMouseOnEvent> MouseOn { get; }
     public ClearableEvent<CUIMouseOffEvent> MouseOff { get; }
-
-
-    // public CUIEvent<CUIInput> OnMouseLeave = new();
-    // public CUIEvent<CUIInput> OnMouseEnter = new() { ShouldRise = ShouldInvoke };
-    // public CUIEvent<CUIInput> OnMouseOn = new() { ShouldRise = ShouldInvoke };
-    // public CUIEvent<CUIInput> OnMouseOff = new() { ShouldRise = ShouldInvoke };
-    // public CUIEvent<CUIInput> OnClick = new() { ShouldRise = ShouldInvoke };
-    // public CUIEvent<CUIInput> OnDClick = new() { ShouldRise = ShouldInvoke };
-    // public CUIEvent<CUIInput> OnScroll = new() { ShouldRise = ShouldInvoke };
+    public ClearableEvent<CUIMouseScrollEvent> MouseScroll { get; }
   }
 
   public static class IMouseEventConsumer_Extensions
@@ -47,6 +39,7 @@ namespace CrabUI
       self.MouseLeave.Map(target.MouseLeave);
       self.MouseOn.Map(target.MouseOn);
       self.MouseOff.Map(target.MouseOff);
+      self.MouseScroll.Map(target.MouseScroll);
     }
 
     public static void Unmap(this IMouseEventConsumer self, IMouseEventConsumer target)
@@ -60,6 +53,7 @@ namespace CrabUI
       self.MouseLeave.Unmap(target.MouseLeave);
       self.MouseOn.Unmap(target.MouseOn);
       self.MouseOff.Unmap(target.MouseOff);
+      self.MouseScroll.Unmap(target.MouseScroll);
     }
 
     public static void Route(this IMouseEventConsumer self, IMouseEventConsumer source) => source.Map(self);

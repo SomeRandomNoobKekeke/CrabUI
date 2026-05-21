@@ -10,7 +10,7 @@ using ComponentGenerator;
 
 namespace CrabUI
 {
-  public class CUIReactiveProp<T> : CUIProp<T>
+  public class CUIReactiveProp<T> : CUIAwareProp<T>
   {
     public override T Value
     {
@@ -18,11 +18,11 @@ namespace CrabUI
       set
       {
         base.Value = value;
-        ValueSet?.Invoke(value);
+        ValueSet?.Invoke(Value);
       }
     }
 
-    public Action<T> OnValueSet { set => ValueSet += value; }
+    public Action<T> DoOnValueSet { set => ValueSet += value; }
     public event Action<T> ValueSet;
   }
 }

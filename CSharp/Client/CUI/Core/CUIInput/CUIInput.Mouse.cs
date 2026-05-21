@@ -14,6 +14,8 @@ namespace CrabUI
   {
     public partial class MouseInput
     {
+      private InputSettings Settings;
+
       public MouseState State { get; private set; }
       public MouseState PrevState { get; private set; } // not used?
 
@@ -25,6 +27,11 @@ namespace CrabUI
       public MouseButtonInput M1 { get; }
       public MouseButtonInput M2 { get; }
       public List<MouseButtonInput> Buttons { get; }
+
+      public float Scroll { get; private set; }
+      public bool Scrolled { get; private set; }
+
+      private int PrevScrollWheelValue;
 
 
       private Vector2 PrevPos;
@@ -44,13 +51,16 @@ namespace CrabUI
 
         Pressed = M1.Pressed; //BRUH why only m1?
 
-        SomethingHappened = M1.Changed || M2.Changed || Moved;
+        Scroll = (State.ScrollWheelValue - PrevScrollWheelValue) * Settings.ScrollSpeed;
+        PrevScrollWheelValue = State.ScrollWheelValue;
+        Scrolled = Scroll != 0;
 
-        //TODO Scroll
+        SomethingHappened = M1.Changed || M2.Changed || Moved || Scrolled;
       }
 
       public MouseInput(InputSettings settings)
       {
+        Settings = settings;
         M1 = new MouseButtonInput(settings, CUIMouseButton.LeftButton);
         M2 = new MouseButtonInput(settings, CUIMouseButton.RightButton);
         Buttons = new List<MouseButtonInput>(){

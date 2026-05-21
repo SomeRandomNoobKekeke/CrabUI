@@ -18,6 +18,11 @@ namespace CrabUI
     {
       public void Init()
       {
+        ChildrenOffset.ValueSet += (value) => RecalcRealChildrenOffset();
+        ChildrenOffsetBounds.ValueSet += (value) => RecalcRealChildrenOffset();
+
+        ChildrenOffset.Validate = ValidateChildrenOffset;
+
         Absolute.Debug_ValueSet.Map(Self.DebugRelays[DebugCategory.PropSet]);
         Relative.Debug_ValueSet.Map(Self.DebugRelays[DebugCategory.PropSet]);
       }
@@ -62,6 +67,19 @@ namespace CrabUI
       {
         Pattern = LayoutMarker.Pattern.FromParentAndDown,
       };
+
+      public CUILayoutProp<CUIBoundaries> ChildrenOffsetBounds { get; } = new()
+      {
+        Pattern = LayoutMarker.Pattern.FromParentAndDown,
+      };
+
+      public Vector2 RealChildrenOffset { get; private set; }
+      private Vector2 ValidateChildrenOffset(Vector2 offset)
+        => ChildrenOffsetBounds.Value.Check(offset);
+      private void RecalcRealChildrenOffset()
+      {
+        RealChildrenOffset = ChildrenOffsetBounds.Value.Check(ChildrenOffset.Value);
+      }
     }
   }
 }

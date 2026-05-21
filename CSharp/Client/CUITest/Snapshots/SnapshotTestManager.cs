@@ -138,7 +138,7 @@ namespace CrabUIUser
       try
       {
         TestSubject = (CUIComponent)test.TestFunc();
-        TestSubject.DebugRec = true;
+        TestSubject.DeepDebug = true;
 
         TestBox["main"].RemoveAllChildren();
         TestBox["main"].Append(TestSubject);

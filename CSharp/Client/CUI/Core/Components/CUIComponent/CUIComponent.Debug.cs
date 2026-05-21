@@ -15,27 +15,44 @@ namespace CrabUI
     protected event Action OnDebugOn;
     protected event Action OnDebugOff;
 
+    private bool _IsDebugTool; public bool IsDebugTool
+    {
+      get => _IsDebugTool;
+      set
+      {
+        _IsDebugTool = value;
+        foreach (CUIComponent child in Tree.Children)
+        {
+          child.IsDebugTool = value;
+        }
+      }
+    }
+
+
     private bool _Debug; public bool Debug
     {
       get => _Debug;
       set
       {
+        if (IsDebugTool) return;
         _Debug = value;
 
         if (value) OnDebugOn?.Invoke(); else OnDebugOff?.Invoke();
       }
     }
 
-    public bool DebugRec
+    public bool DeepDebug
     {
       get => Debug;
       set
       {
+        if (IsDebugTool) return;
+
         Debug = value;
 
         foreach (CUIComponent child in Tree.Children)
         {
-          child.DebugRec = value;
+          child.DeepDebug = value;
         }
       }
     }

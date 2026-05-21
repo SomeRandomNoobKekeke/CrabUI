@@ -53,6 +53,7 @@ namespace CrabUIUser
         TextAnchor = CUIAnchor.LeftCenter,
         Absolute = new CUINullRect(w: 50, h: 20),
         AddMouseDown = (e) => Open(),
+        IsDebugTool = true,
       };
 
 
@@ -159,6 +160,8 @@ namespace CrabUIUser
 
       // frame["layout"]["main"].Get<CUIPages>("main").Open()
 
+      DebugFrame.IsDebugTool = true;
+
       Pages.Open(EventsPage);
     }
 
@@ -197,12 +200,13 @@ namespace CrabUIUser
           Absolute = new CUINullRect(h: 20),
           TextAnchor = new Vector2(0, 0.5f),
           BackgroundColor = child.Debug ? new Color(0, 200, 0) : Color.Blue,
+          IsDebugTool = true,
         };
 
         node.MouseDown += (e) =>
         {
-          child.Debug = !child.Debug;
-          node.BackgroundColor = child.Debug ? new Color(0, 200, 0) : Color.Blue;
+          child.DeepDebug = !child.DeepDebug;
+          OnComponentsPageOpen();
         };
 
         ComponentsPage["list"].Append(node);

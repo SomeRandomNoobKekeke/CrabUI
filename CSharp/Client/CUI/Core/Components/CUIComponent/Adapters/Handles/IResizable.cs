@@ -19,6 +19,11 @@ namespace CrabUI
       public IResizable_Adapter IResizable { get; } = new();
       public partial class IResizable_Adapter : Part, IAdapterPart, IResizable
       {
+        public void Init()
+        {
+          Self.MouseDown += (CUIComponent c, CUIMouseDownEvent e) => MouseDown?.Invoke(e);
+        }
+
         public CUIRect Rect => Self.Rect;
 
         public void SetSize(Vector2 size)
@@ -29,11 +34,7 @@ namespace CrabUI
           };
         }
 
-        public event Action<CUIMouseDownEvent> MouseDown
-        {
-          add => Self.Events.MouseDown.Add(value);
-          remove => Self.Events.MouseDown.Remove(value);
-        }
+        public event Action<CUIMouseDownEvent> MouseDown;
 
         public event Action<CUIMouseUpEvent> HubMouseUp
         {

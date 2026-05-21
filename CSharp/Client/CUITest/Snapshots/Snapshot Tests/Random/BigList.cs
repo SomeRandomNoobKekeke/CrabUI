@@ -28,10 +28,10 @@ namespace CrabUIUser
         {
           BackgroundColor = Color.Blue,
           Relative = new CUINullRect(0, 0, 1, 1),
-          AddMouseScroll = (e) =>
+          AddMouseScroll = (c, e) =>
           {
-            frame["list"].ChildrenOffset += new Vector2(0, e.Scroll);
-            CUI.Logger.Log(frame["list"].ChildrenOffset);
+            c.ChildrenOffset += new Vector2(0, e.Scroll);
+            CUI.Logger.Log(c.ChildrenOffset);
           },
           ChildrenOffsetBounds = new CUIBoundaries(minY: 0),
         };

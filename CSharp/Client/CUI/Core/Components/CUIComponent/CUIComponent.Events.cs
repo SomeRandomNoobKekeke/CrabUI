@@ -13,12 +13,14 @@ namespace CrabUI
   public partial class CUIComponent
   {
     protected Events_Part Events { get; } = new();
-    public class Events_Part : Part, IModule, IMouseEventConsumer
+    public class Events_Part : Part, IModule, IMouseEventConsumingComponent
     {
       public void Init()
       {
         this.Route(Self.Background);
       }
+
+      public CUIComponent Component => Self;
 
       public bool MouseOver
       {
@@ -32,16 +34,16 @@ namespace CrabUI
       }
 
 
-      public ClearableEvent<CUIMouseDownEvent> MouseDown { get; } = new();
-      public ClearableEvent<CUIMouseUpEvent> MouseUp { get; } = new();
-      public ClearableEvent<CUIMouseClickEvent> MouseClick { get; } = new();
-      public ClearableEvent<CUIMouseDoubleClickEvent> MouseDoubleClick { get; } = new();
-      public ClearableEvent<CUIMouseMovedEvent> MouseMoved { get; } = new();
-      public ClearableEvent<CUIMouseEnterEvent> MouseEnter { get; } = new();
-      public ClearableEvent<CUIMouseLeaveEvent> MouseLeave { get; } = new();
-      public ClearableEvent<CUIMouseOnEvent> MouseOn { get; } = new();
-      public ClearableEvent<CUIMouseOffEvent> MouseOff { get; } = new();
-      public ClearableEvent<CUIMouseScrollEvent> MouseScroll { get; } = new();
+      public ClearableEvent<CUIComponent, CUIMouseDownEvent> MouseDown { get; } = new();
+      public ClearableEvent<CUIComponent, CUIMouseUpEvent> MouseUp { get; } = new();
+      public ClearableEvent<CUIComponent, CUIMouseClickEvent> MouseClick { get; } = new();
+      public ClearableEvent<CUIComponent, CUIMouseDoubleClickEvent> MouseDoubleClick { get; } = new();
+      public ClearableEvent<CUIComponent, CUIMouseMovedEvent> MouseMoved { get; } = new();
+      public ClearableEvent<CUIComponent, CUIMouseEnterEvent> MouseEnter { get; } = new();
+      public ClearableEvent<CUIComponent, CUIMouseLeaveEvent> MouseLeave { get; } = new();
+      public ClearableEvent<CUIComponent, CUIMouseOnEvent> MouseOn { get; } = new();
+      public ClearableEvent<CUIComponent, CUIMouseOffEvent> MouseOff { get; } = new();
+      public ClearableEvent<CUIComponent, CUIMouseScrollEvent> MouseScroll { get; } = new();
     }
   }
 }

@@ -27,7 +27,7 @@ namespace CrabUIUser
         Text = "Test",
         Absolute = new CUINullRect(0, 0, 30, 20),
         Anchor = CUIAnchor.RightCenter,
-        AddMouseDown = (e) => Manager.Setup(),
+        AddMouseDown = (c, e) => Manager.Setup(),
       };
 
       CUI.TopMain["open control panel"] = OpenButton;
@@ -66,13 +66,13 @@ namespace CrabUIUser
       {
         Text = "Accept",
         Relative = new CUINullRect(0, 0, 0.5f, 1),
-        AddMouseDown = (e) => Manager.AcceptCurrent(),
+        AddMouseDown = (c, e) => Manager.AcceptCurrent(),
       };
       ControlPannel["layout"]["header"]["close"] = new CUIButton()
       {
         Text = "Close",
         Relative = new CUINullRect(0.5f, 0, 0.5f, 1),
-        AddMouseDown = (e) => Manager.Dismantle(),
+        AddMouseDown = (c, e) => Manager.Dismantle(),
       };
 
       if (Manager.IsSetup) OnSetup(Manager.TestBox);
@@ -137,7 +137,7 @@ namespace CrabUIUser
         {
           Text = key,
           Absolute = new CUINullRect(h: 30),
-          AddMouseDown = (e) => Manager.Run(key),
+          AddMouseDown = (c, e) => Manager.Run(key),
           MasterColor = Color.Cyan,
         });
       }

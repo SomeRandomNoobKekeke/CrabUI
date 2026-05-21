@@ -12,64 +12,64 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-    public Action<CUIMouseDownEvent> AddMouseDown { set { MouseDown += value; } }
-    public event Action<CUIMouseDownEvent> MouseDown
+    public Action<CUIComponent, CUIMouseDownEvent> AddMouseDown { set { MouseDown += value; } }
+    public event Action<CUIComponent, CUIMouseDownEvent> MouseDown
     {
       add => this.Events.MouseDown.Add(value);
       remove => this.Events.MouseDown.Remove(value);
     }
 
-    public Action<CUIMouseUpEvent> AddMouseUp { set { MouseUp += value; } }
-    public event Action<CUIMouseUpEvent> MouseUp
+    public Action<CUIComponent, CUIMouseUpEvent> AddMouseUp { set { MouseUp += value; } }
+    public event Action<CUIComponent, CUIMouseUpEvent> MouseUp
     {
       add => this.Events.MouseUp.Add(value);
       remove => this.Events.MouseUp.Remove(value);
     }
 
-    public event Action<CUIMouseClickEvent> MouseClick
+    public event Action<CUIComponent, CUIMouseClickEvent> MouseClick
     {
       add => this.Events.MouseClick.Add(value);
       remove => this.Events.MouseClick.Remove(value);
     }
 
-    public event Action<CUIMouseDoubleClickEvent> MouseDoubleClick
+    public event Action<CUIComponent, CUIMouseDoubleClickEvent> MouseDoubleClick
     {
       add => this.Events.MouseDoubleClick.Add(value);
       remove => this.Events.MouseDoubleClick.Remove(value);
     }
 
-    public event Action<CUIMouseMovedEvent> MouseMoved
+    public event Action<CUIComponent, CUIMouseMovedEvent> MouseMoved
     {
       add => this.Events.MouseMoved.Add(value);
       remove => this.Events.MouseMoved.Remove(value);
     }
 
-    public event Action<CUIMouseEnterEvent> MouseEnter
+    public event Action<CUIComponent, CUIMouseEnterEvent> MouseEnter
     {
       add => this.Events.MouseEnter.Add(value);
       remove => this.Events.MouseEnter.Remove(value);
     }
 
-    public event Action<CUIMouseLeaveEvent> MouseLeave
+    public event Action<CUIComponent, CUIMouseLeaveEvent> MouseLeave
     {
       add => this.Events.MouseLeave.Add(value);
       remove => this.Events.MouseLeave.Remove(value);
     }
 
-    public event Action<CUIMouseOnEvent> MouseOn
+    public event Action<CUIComponent, CUIMouseOnEvent> MouseOn
     {
       add => this.Events.MouseOn.Add(value);
       remove => this.Events.MouseOn.Remove(value);
     }
 
-    public event Action<CUIMouseOffEvent> MouseOff
+    public event Action<CUIComponent, CUIMouseOffEvent> MouseOff
     {
       add => this.Events.MouseOff.Add(value);
       remove => this.Events.MouseOff.Remove(value);
     }
 
-    public Action<CUIMouseScrollEvent> AddMouseScroll { set { MouseScroll += value; } }
-    public event Action<CUIMouseScrollEvent> MouseScroll
+    public Action<CUIComponent, CUIMouseScrollEvent> AddMouseScroll { set { MouseScroll += value; } }
+    public event Action<CUIComponent, CUIMouseScrollEvent> MouseScroll
     {
       add => this.Events.MouseScroll.Add(value);
       remove => this.Events.MouseScroll.Remove(value);

@@ -112,8 +112,8 @@ namespace CrabUI
 
     public CUIButton() : base()
     {
-      MouseOff += (e) => DetermineColor();
-      MouseOn += (e) => DetermineColor();
+      MouseOff += (c, e) => DetermineColor();
+      MouseOn += (c, e) => DetermineColor();
       DetermineColor();
     }
 

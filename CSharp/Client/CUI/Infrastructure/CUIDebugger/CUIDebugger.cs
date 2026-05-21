@@ -52,7 +52,7 @@ namespace CrabUIUser
         BackgroundColor = Color.Blue,
         TextAnchor = CUIAnchor.LeftCenter,
         Absolute = new CUINullRect(w: 50, h: 20),
-        AddMouseDown = (e) => Open(),
+        AddMouseDown = (c, e) => Open(),
         IsDebugTool = true,
       };
 
@@ -86,7 +86,7 @@ namespace CrabUIUser
         Text = "X",
         Absolute = new CUINullRect(w: 20, h: 20),
         MasterColorOpaque = Color.Red,
-        AddMouseDown = (e) => Close(),
+        AddMouseDown = (c, e) => Close(),
       };
 
 
@@ -100,7 +100,7 @@ namespace CrabUIUser
         Text = "Events",
         Flex = 1,
         MasterColorOpaque = Color.Blue,
-        AddMouseDown = (e) => Pages.Open(EventsPage),
+        AddMouseDown = (c, e) => Pages.Open(EventsPage),
       };
 
       DebugFrame["layout"]["header"]["components"] = new CUIButton()
@@ -108,7 +108,7 @@ namespace CrabUIUser
         Text = "Components",
         Flex = 1,
         MasterColorOpaque = Color.Blue,
-        AddMouseDown = (e) => Pages.Open(ComponentsPage),
+        AddMouseDown = (c, e) => Pages.Open(ComponentsPage),
       };
 
       DebugFrame["layout"]["header"]["gates"] = new CUIButton()
@@ -116,7 +116,7 @@ namespace CrabUIUser
         Text = "Gates",
         Flex = 1,
         MasterColorOpaque = Color.Blue,
-        AddMouseDown = (e) => Pages.Open(GatesPage),
+        AddMouseDown = (c, e) => Pages.Open(GatesPage),
       };
 
 
@@ -203,7 +203,7 @@ namespace CrabUIUser
           IsDebugTool = true,
         };
 
-        node.MouseDown += (e) =>
+        node.MouseDown += (c, e) =>
         {
           child.DeepDebug = !child.DeepDebug;
           OnComponentsPageOpen();
@@ -228,7 +228,7 @@ namespace CrabUIUser
           BackgroundColor = CUI.DebugHub.Gates[name].IsOpen ? new Color(0, 200, 0) : Color.Blue,
         };
 
-        node.MouseDown += (e) =>
+        node.MouseDown += (c, e) =>
         {
           CUI.DebugHub.Gates[name].Toggle();
           node.BackgroundColor = CUI.DebugHub.Gates[name].IsOpen ? new Color(0, 200, 0) : Color.Blue;

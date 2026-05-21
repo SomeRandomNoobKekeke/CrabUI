@@ -19,12 +19,12 @@ namespace CrabUI
       public IDraggable_Adapter IDraggable { get; } = new();
       public partial class IDraggable_Adapter : Part, IAdapterPart, IDraggable
       {
-
-        public event Action<CUIMouseDownEvent> MouseDown
+        public void Init()
         {
-          add => Self.Events.MouseDown.Add(value);
-          remove => Self.Events.MouseDown.Remove(value);
+          Self.MouseDown += (CUIComponent c, CUIMouseDownEvent e) => MouseDown?.Invoke(e);
         }
+
+        public event Action<CUIMouseDownEvent> MouseDown;
         public CUIRect Rect => Self.Rect;
         public CUIRect? ParentRect => Self.Parent?.Rect;
 

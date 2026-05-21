@@ -57,6 +57,11 @@ namespace CrabUI
       {
         Pattern = LayoutMarker.Pattern.FromParentAndDown,
       };
+
+      public CUILayoutProp<Vector2> ChildrenOffset { get; } = new()
+      {
+        Pattern = LayoutMarker.Pattern.FromParentAndDown,
+      };
     }
   }
 }

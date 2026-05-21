@@ -42,5 +42,11 @@ namespace CrabUI
       get => LayoutProps.Flex.Value;
       set => LayoutProps.Flex.Value = value;
     }
+
+    public Vector2 ChildrenOffset
+    {
+      get => LayoutProps.ChildrenOffset.Value;
+      set => LayoutProps.ChildrenOffset.Value = value;
+    }
   }
 }

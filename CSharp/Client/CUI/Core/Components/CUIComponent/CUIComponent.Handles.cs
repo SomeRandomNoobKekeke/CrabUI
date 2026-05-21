@@ -18,6 +18,12 @@ namespace CrabUI
       set => DragHandle.Active = value;
     }
 
+    public bool Swipeable
+    {
+      get => SwipeHandle.Active;
+      set => SwipeHandle.Active = value;
+    }
+
     public bool Resizable
     {
       get => RightResizeHandle.Visible;
@@ -26,5 +32,6 @@ namespace CrabUI
 
     public DragHandle DragHandle { get; } = new();
     public ResizeHandle RightResizeHandle { get; } = new();
+    public SwipeHandle SwipeHandle { get; } = new();
   }
 }

@@ -21,6 +21,7 @@ namespace CrabUI
       public IReadOnlyList<Target> Children { get; }
       public Vector2 Anchor { get; }
       public Vector2? ParentAnchor { get; }
+      public Vector2 ChildrenOffset { get; }
     }
 
     public override void InjectHost(Layout.Target host) { Host = host as Target; }
@@ -62,7 +63,7 @@ namespace CrabUI
         );
 
         c.Rect = new CUIRect(
-          anchorPos + new Vector2(x, y) + Host.Rect.LeftTop,
+          anchorPos + new Vector2(x, y) + Host.Rect.LeftTop + Host.ChildrenOffset,
           new Vector2(w, h)
         );
       }

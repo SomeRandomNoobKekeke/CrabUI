@@ -24,8 +24,6 @@ namespace CrabUI
         return component;
       }).Where(c => c != null);
 
-
-
     public CUIComponent() : base()
     {
       this.Inject();

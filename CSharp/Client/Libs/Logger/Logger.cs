@@ -14,19 +14,6 @@ namespace BaroJunk
 {
   public partial class Logger
   {
-    static Logger() => ProjectInfo.Add(new PackageInfo()
-    {
-      Name = "Logger",
-      Version = new Version(0, 0, 0)
-      {
-        Branch = "CrabUI",
-        BasedOn = new Version(0, 0, 0)
-        {
-          Branch = "BaroJunk",
-        },
-      },
-    });
-
     public static Logger Default = new Logger()
     {
       PrintFilePath = false,

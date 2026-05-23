@@ -17,11 +17,11 @@ namespace BaroJunk
     private HashSet<Type> AlreadyTriedRegisterParse = new();
     public Dictionary<Type, Func<string, object>> ExtraParsingMethods { get; } = new();
 
-    public bool HasParsingMethod(Type T) => ExtraParsingMethods.ContainsKey(T);
-    public void SetParsingMethod(Type T, Func<string, object> func) => ExtraParsingMethods[T] = func;
-    public Func<string, object> GetParsingMethod(Type T) => ExtraParsingMethods.GetValueOrDefault(T);
+    public bool HasParse(Type T) => ExtraParsingMethods.ContainsKey(T);
+    public void AddParse(Type T, Func<string, object> func) => ExtraParsingMethods[T] = func;
+    public Func<string, object> GetParse(Type T) => ExtraParsingMethods.GetValueOrDefault(T);
 
-    public bool TryRegisterParse(Type T)
+    public bool ExtractParse(Type T)
     {
       AlreadyTriedRegisterParse.Add(T);
 
@@ -35,7 +35,7 @@ namespace BaroJunk
 
       try
       {
-        SetParsingMethod(T, (Func<string, object>)Delegate.CreateDelegate(typeof(Func<string, object>), parse));
+        AddParse(T, (Func<string, object>)Delegate.CreateDelegate(typeof(Func<string, object>), parse));
         return true;
       }
       catch (Exception e)
@@ -45,17 +45,27 @@ namespace BaroJunk
         );
         return false;
       }
-
     }
+
+    public void AddParse(Dictionary<Type, Func<string, object>> funcDict)
+    {
+      foreach (var (type, func) in funcDict)
+      {
+        AddParse(type, func);
+      }
+    }
+
+
+
 
     private HashSet<Type> AlreadyTriedRegisterSerialize = new();
     public Dictionary<Type, Func<object, string>> ExtraSerializingMethods { get; } = new();
 
-    public bool HasSerializingMethod(Type T) => ExtraSerializingMethods.ContainsKey(T);
-    public void SetSerializingMethod(Type T, Func<object, string> func) => ExtraSerializingMethods[T] = func;
-    public Func<object, string> GetSerializingMethod(Type T) => ExtraSerializingMethods.GetValueOrDefault(T);
+    public bool HasSerialize(Type T) => ExtraSerializingMethods.ContainsKey(T);
+    public void AddSerialize(Type T, Func<object, string> func) => ExtraSerializingMethods[T] = func;
+    public Func<object, string> GetSerialize(Type T) => ExtraSerializingMethods.GetValueOrDefault(T);
 
-    public bool TryRegisterSerialize(Type T)
+    public bool ExtractSerialize(Type T)
     {
       AlreadyTriedRegisterSerialize.Add(T);
 
@@ -66,8 +76,17 @@ namespace BaroJunk
 
       if (serialize is null) return false;
 
-      SetSerializingMethod(T, (o) => (string)serialize.Invoke(null, new object[] { o }));
+      AddSerialize(T, (o) => (string)serialize.Invoke(null, new object[] { o }));
       return true;
     }
+
+    public void AddSerialize(Dictionary<Type, Func<object, string>> funcDict)
+    {
+      foreach (var (type, func) in funcDict)
+      {
+        AddSerialize(type, func);
+      }
+    }
+
   }
 }

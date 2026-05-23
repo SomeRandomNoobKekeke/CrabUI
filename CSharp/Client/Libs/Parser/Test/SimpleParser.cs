@@ -39,6 +39,9 @@ namespace BaroJunk
       Tests.Add(new UTest(parser.Serialize(123.1f), "123.1"));
 
       Tests.Add(new UTest(parser.Parse<BindingFlags>("Instance"), BindingFlags.Instance));
+
+      Tests.Add(new UTest(parser.Serialize(new Vector2(3, 5)), "[3,5]"));
+      Tests.Add(new UTest(parser.Parse<Vector2>("[3,5]"), new Vector2(3, 5)));
     }
   }
 }

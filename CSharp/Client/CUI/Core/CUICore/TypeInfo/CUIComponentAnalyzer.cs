@@ -11,6 +11,9 @@ namespace CrabUI
 {
   public class CUIComponentAnalyzer
   {
+    public bool IsComponentType(Type T)
+      => T.IsAssignableTo(typeof(CUIComponent));
+
     public CUIComponentInfo Analyze(Type componentType)
     {
       CUIComponentInfo info = new()
@@ -29,5 +32,18 @@ namespace CrabUI
 
       return info;
     }
+
+    public IEnumerable<Type> FindAllComponentTypesInAssembly(Assembly assembly)
+      => assembly.GetTypes().Where(T => IsComponentType(T));
+
+    public IEnumerable<CUIComponentInfo> AnalyzeAssembly(Assembly assembly)
+    {
+      foreach (Type T in FindAllComponentTypesInAssembly(assembly))
+      {
+        yield return Analyze(T);
+      }
+    }
+
+
   }
 }

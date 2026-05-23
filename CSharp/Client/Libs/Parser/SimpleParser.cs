@@ -82,14 +82,14 @@ namespace BaroJunk
 
     private object ParseComplex(string raw, Type T)
     {
-      if (!HasParsingMethod(T))
+      if (!HasParse(T))
       {
         if (AlreadyTriedRegisterParse.Contains(T))
         {
           return null;
         }
 
-        if (!TryRegisterParse(T))
+        if (!ExtractParse(T))
         {
           OnError.Raise($"[{T}] doesn't have a parse method");
           return null;
@@ -98,7 +98,7 @@ namespace BaroJunk
 
       try
       {
-        return GetParsingMethod(T).Invoke(raw);
+        return GetParse(T).Invoke(raw);
       }
       catch (Exception e)
       {
@@ -115,14 +115,14 @@ namespace BaroJunk
       if (T == typeof(string)) return (string)o;
       if (T.IsPrimitive) return o.ToString();
 
-      if (!HasSerializingMethod(T))
+      if (!HasSerialize(T))
       {
         if (AlreadyTriedRegisterSerialize.Contains(T))
         {
           return o.ToString();
         }
 
-        if (!TryRegisterSerialize(T))
+        if (!ExtractSerialize(T))
         {
           OnError.Raise($"[{T}] doesn't have a Serialize method");
           return o.ToString();
@@ -131,7 +131,7 @@ namespace BaroJunk
 
       try
       {
-        return GetSerializingMethod(T).Invoke(o);
+        return GetSerialize(T).Invoke(o);
       }
       catch (Exception e)
       {
@@ -141,5 +141,11 @@ namespace BaroJunk
     }
 
 
+
+    public SimpleParser()
+    {
+      AddParse(SimpleParserDefaultMethods.Parse);
+      AddSerialize(SimpleParserDefaultMethods.Serialize);
+    }
   }
 }

@@ -53,6 +53,7 @@ namespace CrabUIUser
     {
       Instance = null;
       UTestCommands.RemoveCommands();
+      CUITest.Dispose();
     }
   }
 }

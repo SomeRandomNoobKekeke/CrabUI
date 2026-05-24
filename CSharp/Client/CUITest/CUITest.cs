@@ -22,6 +22,8 @@ namespace CrabUIUser
     public string SnaphotsFolder => Path.Combine(TestDataFolder, "Snapshots");
     public string SnaphotsTempFolder => Path.Combine(TestDataFolder, "Temp");
 
+    public VirtualFileSystem VirtualFileSystem { get; } = new();
+
     public void Init()
     {
       SnapshotConsoleInterface.Init();
@@ -33,6 +35,11 @@ namespace CrabUIUser
 
       SnapshotGUI.AttachTo(SnapshotTestManager);
       SnapshotGUI.Init();
+
+    }
+
+    public void Dispose()
+    {
 
     }
   }

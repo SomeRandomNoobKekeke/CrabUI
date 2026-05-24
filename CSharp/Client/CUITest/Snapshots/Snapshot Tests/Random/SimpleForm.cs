@@ -48,7 +48,6 @@ namespace CrabUIUser
           Text = "X",
         };
 
-
         frame["layout"]["main"] = new CUIComponent()
         {
           BackgroundColor = new Color(0, 0, 32),
@@ -62,8 +61,12 @@ namespace CrabUIUser
           Text = "Don't",
         };
 
-        frame.SaveTo($"{TempFolder}/{nameof(SimpleForm)}.xml");
+        frame.DebugSaveTo(
+          $"Snapshots/Temp/{nameof(SimpleForm)}.xml",
+          VirtualFileSystem
+        );
 
+        CUI.Logger.Log(VirtualFileSystem);
 
         CUIComponent bruh = CUIComponent.CreateFromXML(frame.ToXML());
 

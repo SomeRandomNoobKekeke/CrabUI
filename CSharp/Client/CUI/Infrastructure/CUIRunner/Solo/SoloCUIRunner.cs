@@ -7,18 +7,29 @@ using BaroJunk;
 using Barotrauma;
 namespace CrabUI
 {
-  public class SoloCUIRunner : ICUIRunner
+  public partial class SoloCUIRunner : ICUIRunner
   {
     public CUICore Core { get; set; }
     public ICUIRunnerDataSources DataSources { get; set; }
+    public CUICore.CUICoreHandles CUICoreHandles { get; private set; }
+      = new SoloCUIRunner.CUICoreHandlesImp(ModInfo.Dir);
+
 
     private __CUISpriteBatch SpriteBatch { get; } = new();
+
 
     public void Connect()
     {
       ArgumentNullException.ThrowIfNull(Core);
       ArgumentNullException.ThrowIfNull(DataSources);
 
+      Core.Handles = CUICoreHandles;
+
+      AttachLifeCycleHooks();
+    }
+
+    private void AttachLifeCycleHooks()
+    {
       DataSources.LifeCycle.AfterGUIDraw += (spritebatch) =>
       {
         try
@@ -76,6 +87,7 @@ namespace CrabUI
     {
       DataSources.LifeCycle.UnsubEvents();
       SpriteBatch.XNASpriteBatch = null;
+      Core.Handles = null;
     }
   }
 }

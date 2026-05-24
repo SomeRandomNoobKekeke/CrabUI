@@ -8,11 +8,25 @@ using ComponentGenerator;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using System.IO;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace CrabUI
 {
   public partial class CUICore
   {
+
+    public interface CUICoreIOHandle
+    {
+      public void SaveXDoc(XDocument xDoc, string path);
+      public XDocument LoadXDoc(string path);
+    }
+
+    public interface CUICoreHandles : CUICoreIOHandle
+    {
+    }
+
     public class CUIRunnerHandle_Part : Part
     {
       public void Update(double totalTime, MouseState mouse) => Self.LifeCycle.Update(totalTime, mouse);
@@ -21,6 +35,10 @@ namespace CrabUI
       public bool IsMouseOnSomeCUIComponent() => Self.LifeCycle.IsMouseOnSomeCUIComponent();
     }
 
+    /// <summary>
+    /// This must be set by CUIRunner
+    /// </summary>
+    public CUICoreHandles Handles { get; set; }
     public CUIRunnerHandle_Part CUIRunnerHandle { get; } = new();
   }
 }

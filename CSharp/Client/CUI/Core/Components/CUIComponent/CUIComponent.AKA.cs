@@ -15,7 +15,8 @@ namespace CrabUI
     /// <summary>
     /// Parent can memorize its children by their names, AKA
     /// </summary>
-    public string AKA { get; set; }
+    [CUISerializable]
+    public string AKA { get; set; } = "";
 
     /// <summary>
     /// You can access NamedComponents with this indexer
@@ -67,7 +68,7 @@ namespace CrabUI
     /// </summary>
     public CUIComponent Remember(CUIComponent c)
     {
-      if (c.AKA != null) NamedComponents[c.AKA] = c;
+      if (!String.IsNullOrEmpty(c.AKA)) NamedComponents[c.AKA] = c;
       return c;
     }
 
@@ -84,7 +85,7 @@ namespace CrabUI
     /// </summary>
     public CUIComponent Forget(CUIComponent c)
     {
-      if (c?.AKA != null) NamedComponents.Remove(c.AKA);
+      if (!String.IsNullOrEmpty(c?.AKA)) NamedComponents.Remove(c.AKA);
       return c;
     }
 

@@ -116,7 +116,11 @@ namespace BaroJunk
     public string Serialize(object o) => Serialize(o, o.GetType());
     public string Serialize(object o, Type T)
     {
-      if (T == typeof(string)) return (string)o;
+      if (T == typeof(string))
+      {
+        if (o is null) return NullTerm;
+        return (string)o;
+      }
       if (T.IsPrimitive) return o.ToString();
       if (T.IsEnum) return o.ToString();
       if (IsNullable(T))

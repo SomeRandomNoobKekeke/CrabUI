@@ -14,6 +14,8 @@ namespace BaroJunk
 {
   public class SimpleParserDefaultMethods
   {
+    public static string NullTerm => SimpleParser.NullTerm;
+
     public static Dictionary<Type, Func<string, object>> Parse { get; set; } = new()
     {
       [typeof(Vector2)] = (raw) => ParseVector2(raw),

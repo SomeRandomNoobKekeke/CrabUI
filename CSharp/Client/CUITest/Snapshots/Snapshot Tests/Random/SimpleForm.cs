@@ -62,10 +62,16 @@ namespace CrabUIUser
           Text = "Don't",
         };
 
+        frame.SaveTo($"{TempFolder}/{nameof(SimpleForm)}.xml");
 
-        CUIComponent bruh = CUIComponent.CreateFromXML(frame.ToXML());
+        frame = (CUIFrame)CUIComponent.CreateFromXML(frame.ToXML());
 
-        return bruh;
+        // CUIComponent component = CUIComponent.LoadFrom($"{TempFolder}/{nameof(SimpleForm)}.xml");
+
+
+        // CUI.Logger.LogVars(component.Absolute);
+
+        return frame;
       }
     }
   }

@@ -36,15 +36,15 @@ namespace CrabUI
     }
 
 
-    public void ApplyXML(XElement element)
-    {
-      ApplyXMLAttributes(element);
+    // public void ApplyXML(XElement element)
+    // {
+    //   ApplyXMLAttributes(element);
 
-      foreach (XElement childElement in element.Elements())
-      {
+    //   foreach (XElement childElement in element.Elements())
+    //   {
 
-      }
-    }
+    //   }
+    // }
 
     public void ApplyXMLAttributes(XElement element)
     {

@@ -14,29 +14,28 @@ namespace BaroJunk
 {
   public partial class SimpleParser
   {
+    public static string NullTerm = "{{null}}";
     public static object DefaultFor(Type T)
     {
       if (T == typeof(string)) return null;
-      return Activator.CreateInstance(T);
+      if (T.IsValueType) return Activator.CreateInstance(T);
+      return null;
     }
 
+    static bool IsNullable(Type type) => Nullable.GetUnderlyingType(type) != null;
+
+
     public ClearableEvent<string> OnError { get; } = new();
-
-
-
-    /// <summary>
-    /// Null is serialized into this, so you could distinguish null and empty string
-    /// </summary>
-    public string NullTerm = "{{null}}";
 
     public T Parse<T>(string raw) => (T)Parse(raw, typeof(T));
     public object Parse(string raw, Type T)
     {
-      if (raw == null || raw == NullTerm) return null;
+      if (raw == null) return null;
       if (T == typeof(string)) return raw;
 
       if (T.IsPrimitive) return ParsePrimitive(raw, T);
       if (T.IsEnum) return ParseEnum(raw, T);
+      if (IsNullable(T)) return ParseNullable(raw, T);
       if (!T.IsPrimitive) return ParseComplex(raw, T);
 
       return DefaultFor(T);
@@ -80,6 +79,12 @@ namespace BaroJunk
       return DefaultFor(T);
     }
 
+    private object ParseNullable(string raw, Type T)
+    {
+      if (raw == NullTerm) return null;
+      return Parse(raw, Nullable.GetUnderlyingType(T));
+    }
+
     private object ParseComplex(string raw, Type T)
     {
       if (!HasParse(T))
@@ -107,13 +112,18 @@ namespace BaroJunk
       }
     }
 
-    public string Serialize(object o)
+    // There's no way to Serialize null correctly
+    public string Serialize(object o) => Serialize(o, o.GetType());
+    public string Serialize(object o, Type T)
     {
-      if (o is null) return NullTerm;
-      Type T = o.GetType();
-
       if (T == typeof(string)) return (string)o;
       if (T.IsPrimitive) return o.ToString();
+      if (T.IsEnum) return o.ToString();
+      if (IsNullable(T))
+      {
+        if (o is null) return NullTerm;
+        return Serialize(o, Nullable.GetUnderlyingType(T));
+      }
 
       if (!HasSerialize(T))
       {

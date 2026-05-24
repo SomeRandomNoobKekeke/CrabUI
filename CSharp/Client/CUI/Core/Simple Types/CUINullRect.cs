@@ -16,7 +16,39 @@ namespace CrabUI
   /// </summary>
   public struct CUINullRect
   {
-    // Guh...
+    public float? Left;
+    public float? Top;
+    public float? Width;
+    public float? Height;
+
+    public Vector2 Size
+    {
+      get => new Vector2(Width ?? 0, Height ?? 0);
+      set { Width = value.X; Height = value.Y; }
+    }
+    public Vector2 Position
+    {
+      get => new Vector2(Left ?? 0, Top ?? 0);
+      set { Left = value.X; Top = value.Y; }
+    }
+
+    public Vector2 Center => new Vector2(
+      (Left ?? 0) + (Width ?? 0) / 2,
+      (Top ?? 0) + (Height ?? 0) / 2
+    );
+
+    public CUINullRect(Vector2 position, Vector2 size) : this(position.X, position.Y, size.X, size.Y) { }
+
+    public CUINullRect(float? x = null, float? y = null, float? w = null, float? h = null)
+    {
+      Left = x;
+      Top = y;
+      Width = w;
+      Height = h;
+    }
+
+    public override string ToString() => $"[{Left},{Top},{Width},{Height}]";
+    public static string Serialize(CUINullRect rect) => rect.ToString();
     public static CUINullRect Parse(string s)
     {
       string content = s.Substring(
@@ -50,39 +82,6 @@ namespace CrabUI
 
       return new CUINullRect(x, y, w, h);
     }
-
-    public float? Left;
-    public float? Top;
-    public float? Width;
-    public float? Height;
-
-    public Vector2 Size
-    {
-      get => new Vector2(Width ?? 0, Height ?? 0);
-      set { Width = value.X; Height = value.Y; }
-    }
-    public Vector2 Position
-    {
-      get => new Vector2(Left ?? 0, Top ?? 0);
-      set { Left = value.X; Top = value.Y; }
-    }
-
-    public Vector2 Center => new Vector2(
-      (Left ?? 0) + (Width ?? 0) / 2,
-      (Top ?? 0) + (Height ?? 0) / 2
-    );
-
-    public CUINullRect(Vector2 position, Vector2 size) : this(position.X, position.Y, size.X, size.Y) { }
-
-    public CUINullRect(float? x = null, float? y = null, float? w = null, float? h = null)
-    {
-      Left = x;
-      Top = y;
-      Width = w;
-      Height = h;
-    }
-
-    public override string ToString() => $"[{Left},{Top},{Width},{Height}]";
 
   }
 }

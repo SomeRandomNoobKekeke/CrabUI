@@ -30,7 +30,11 @@ namespace CrabUI
 
       public string this[string key]
       {
-        get => Parser.Serialize(Info.SerializableProps[key].GetValue(Self));
+        get
+        {
+          PropertyInfo pi = Info.SerializableProps[key];
+          return Parser.Serialize(pi.GetValue(Self), pi.PropertyType);
+        }
         set => Info.SerializableProps[key].SetValue(
           Self,
           Parser.Parse(value, Info.SerializableProps[key].PropertyType)

@@ -14,6 +14,10 @@ namespace BaroJunk
 {
   public partial class SimpleParser
   {
+    // public static T Parse(string raw);
+    // public static string Serialize(T value);
+
+
     private HashSet<Type> AlreadyTriedRegisterParse = new();
     public Dictionary<Type, Func<string, object>> ExtraParsingMethods { get; } = new();
 
@@ -35,7 +39,7 @@ namespace BaroJunk
 
       try
       {
-        AddParse(T, (Func<string, object>)Delegate.CreateDelegate(typeof(Func<string, object>), parse));
+        AddParse(T, (string raw) => parse.Invoke(null, new object[] { raw }));
         return true;
       }
       catch (Exception e)

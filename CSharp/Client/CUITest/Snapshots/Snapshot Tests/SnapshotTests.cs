@@ -13,6 +13,6 @@ namespace CrabUIUser
 {
   public partial class SnapshotTests
   {
-
+    public static string TempFolder => Mod.Instance.CUITest.SnaphotsTempFolder;
   }
 }

@@ -18,12 +18,16 @@ namespace CrabUIUser
     public SnapshotConsoleInterface SnapshotConsoleInterface { get; } = new();
     public SnapshotGUI SnapshotGUI { get; } = new();
 
+    public string TestDataFolder => Path.Combine(ModInfo.Dir, "Test Data");
+    public string SnaphotsFolder => Path.Combine(TestDataFolder, "Snapshots");
+    public string SnaphotsTempFolder => Path.Combine(TestDataFolder, "Temp");
+
     public void Init()
     {
       SnapshotConsoleInterface.Init();
       SnapshotConsoleInterface.AttachTo(SnapshotTestManager);
 
-      SnapshotTestManager.SnaphotsFolder = Path.Combine(ModInfo.Dir, "Test Data", "Snapshots");
+      SnapshotTestManager.SnaphotsFolder = SnaphotsFolder;
       SnapshotTestManager.Add(typeof(SnapshotTests));
       SnapshotTestManager.Init();
 

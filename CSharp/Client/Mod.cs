@@ -28,13 +28,14 @@ namespace CrabUIUser
       if (ModStorage.Has("ReloadRequest")) { return; }
 
       Logger.Log($"Compiled somehow");
-      UTestCommands.AddCommands();
 
-      CUITest.Init();
 
       try
       {
         CUI.Start();
+
+        UTestCommands.AddCommands();
+        CUITest.Init();
 
         CUIDebugger.Init();
 

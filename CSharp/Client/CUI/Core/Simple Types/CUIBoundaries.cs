@@ -64,5 +64,32 @@ namespace CrabUI
     }
 
     public override string ToString() => $"[{MinX},{MaxX},{MinY},{MaxY}]";
+    public static string Serialize(CUIBoundaries boundaries) => boundaries.ToString();
+    public static CUIBoundaries Parse(string s)
+    {
+      string content = s.Substring(
+        s.IndexOf('[') + 1,
+        s.IndexOf(']') - s.IndexOf('[') - 1
+      );
+
+      var parts = content.Split(',').Select(a => a.Trim());
+
+      string minXPart = parts.ElementAtOrDefault(0);
+      string maxXPart = parts.ElementAtOrDefault(1);
+      string minYPart = parts.ElementAtOrDefault(2);
+      string maxYPart = parts.ElementAtOrDefault(3);
+
+      float? minX = null;
+      float? maxX = null;
+      float? minY = null;
+      float? maxY = null;
+
+      if (!String.IsNullOrEmpty(minXPart)) minX = float.Parse(minXPart);
+      if (!String.IsNullOrEmpty(maxXPart)) maxX = float.Parse(maxXPart);
+      if (!String.IsNullOrEmpty(minYPart)) minY = float.Parse(minYPart);
+      if (!String.IsNullOrEmpty(maxYPart)) maxY = float.Parse(maxYPart);
+
+      return new CUIBoundaries(minX, maxX, minY, maxY);
+    }
   }
 }

@@ -45,6 +45,8 @@ namespace CrabUI
     {
       this.Inject();
 
+      Parser.OnError.Add(e => CUI.Logger.Warning(e));
+
       CUITypes.AnalyzeAssembly(Assembly.GetExecutingAssembly());
     }
 

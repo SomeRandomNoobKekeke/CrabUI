@@ -25,7 +25,7 @@ namespace CrabUI
       get => LayoutSlot.Layout;
       set => LayoutSlot.Layout = value;
     }
-
+    [CUISerializable]
     public Color BackgroundColor
     {
       get => Background.Color;

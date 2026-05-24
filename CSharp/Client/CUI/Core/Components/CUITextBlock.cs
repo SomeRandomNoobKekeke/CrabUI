@@ -14,6 +14,8 @@ namespace CrabUI
   public partial class CUITextBlock : CUIComponent, IComponent
   {
     public TextBlock TextBlock { get; } = new();
+
+    [CUISerializable]
     public string Text
     {
       get => TextBlock.Text;

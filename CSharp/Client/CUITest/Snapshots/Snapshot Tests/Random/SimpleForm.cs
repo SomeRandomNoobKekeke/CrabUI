@@ -64,14 +64,12 @@ namespace CrabUIUser
 
         frame.SaveTo($"{TempFolder}/{nameof(SimpleForm)}.xml");
 
-        frame = (CUIFrame)CUIComponent.CreateFromXML(frame.ToXML());
 
-        // CUIComponent component = CUIComponent.LoadFrom($"{TempFolder}/{nameof(SimpleForm)}.xml");
+        CUIComponent bruh = CUIComponent.CreateFromXML(frame.ToXML());
 
+        CUI.Logger.LogVars(frame.IsEqualTo(bruh));
 
-        // CUI.Logger.LogVars(component.Absolute);
-
-        return frame;
+        return bruh;
       }
     }
   }

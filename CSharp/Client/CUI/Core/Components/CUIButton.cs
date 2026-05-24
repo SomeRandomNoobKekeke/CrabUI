@@ -31,8 +31,11 @@ namespace CrabUI
     //   button.Background.Color = button.InactiveColor;
     // }
 
+    [CUISerializable]
     public Color MouseOverColor { get; set; } = new Color(0, 0, 140);
+    [CUISerializable]
     public Color MousePressedColor { get; set; } = new Color(0, 0, 200);
+    [CUISerializable]
     public Color InactiveColor { get; set; } = new Color(0, 0, 100);
 
     public Color MasterColor
@@ -61,6 +64,8 @@ namespace CrabUI
     #region TextBlock
     #endregion
     public TextBlock TextBlock { get; } = new();
+
+    [CUISerializable]
     public string Text
     {
       get => TextBlock.Text;

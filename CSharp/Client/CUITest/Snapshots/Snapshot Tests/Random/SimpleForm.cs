@@ -61,16 +61,7 @@ namespace CrabUIUser
           Text = "Don't",
         };
 
-        frame.DebugSaveTo(
-          $"Snapshots/Temp/{nameof(SimpleForm)}.xml",
-          VirtualFileSystem
-        );
-
-        CUI.Logger.Log(VirtualFileSystem);
-
         CUIComponent bruh = CUIComponent.CreateFromXML(frame.ToXML());
-
-        CUI.Logger.LogVars(frame.IsEqualTo(bruh));
 
         return bruh;
       }

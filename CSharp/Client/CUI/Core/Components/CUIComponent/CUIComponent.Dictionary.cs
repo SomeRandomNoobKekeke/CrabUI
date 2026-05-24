@@ -17,7 +17,7 @@ namespace CrabUI
     {
       get
       {
-        if (_Info is null) _Info = CUI.TypeInfos.Get(this.GetType());
+        if (_Info is null) _Info = CUI.CUITypes.Get(this.GetType());
         return _Info;
       }
     }

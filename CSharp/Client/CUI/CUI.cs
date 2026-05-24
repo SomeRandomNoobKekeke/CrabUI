@@ -52,7 +52,7 @@ namespace CrabUI
     public static DebugHub DebugHub => Core.DebugHub;
     public static SimpleParser Parser => Core.Parser;
 
-    public static CUIComponentTypeManager TypeInfos => Core.TypeInfos;
+    public static CUIComponentTypeManager CUITypes => Core.CUITypes;
 
     public static event Action<double> OnUpdate
     {

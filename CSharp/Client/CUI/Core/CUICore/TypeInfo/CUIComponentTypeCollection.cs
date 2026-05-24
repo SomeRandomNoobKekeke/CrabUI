@@ -12,11 +12,18 @@ namespace CrabUI
   public class CUIComponentTypeCollection
   {
     private Dictionary<Type, CUIComponentInfo> Infos = new();
+    private Dictionary<string, Type> TypesByName = new();
+
+    public Type ByName(string name) => TypesByName[name];
 
     public bool Has(Type T) => Infos.ContainsKey(T);
     public CUIComponentInfo Get(Type T) => Infos.GetValueOrDefault(T);
 
-    public void Add(CUIComponentInfo info) => Infos.Add(info.ComponentType, info);
+    public void Add(CUIComponentInfo info)
+    {
+      Infos.Add(info.ComponentType, info);
+      TypesByName.Add(info.ComponentType.Name, info.ComponentType);
+    }
     public void AddRange(IEnumerable<CUIComponentInfo> infos)
     {
       foreach (CUIComponentInfo info in infos)
@@ -25,6 +32,10 @@ namespace CrabUI
       }
     }
 
-    public void Clear() => Infos.Clear();
+    public void Clear()
+    {
+      Infos.Clear();
+      TypesByName.Clear();
+    }
   }
 }

@@ -14,7 +14,7 @@ namespace CrabUI
     public class Part : IPart { public CUICore Self { get; set; } }
 
     public SimpleParser Parser { get; } = new();
-    public CUIComponentTypeManager TypeInfos { get; } = new();
+    public CUIComponentTypeManager CUITypes { get; } = new();
 
     private Rectangle _GameScreenRect; public Rectangle GameScreenRect
     {
@@ -45,7 +45,7 @@ namespace CrabUI
     {
       this.Inject();
 
-      TypeInfos.AnalyzeAssembly(Assembly.GetExecutingAssembly());
+      CUITypes.AnalyzeAssembly(Assembly.GetExecutingAssembly());
     }
 
     private bool _Activated;

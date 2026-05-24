@@ -18,6 +18,7 @@ namespace CrabUI
     public void AddRange(IEnumerable<CUIComponentInfo> infos) => Infos.AddRange(infos);
     public void Clear() => Infos.Clear();
 
+    public Type ByName(string name) => Infos.ByName(name);
     public CUIComponentInfo Get(Type T)
     {
       if (!Infos.Has(T)) Infos.Add(Analyzer.Analyze(T));

@@ -23,8 +23,14 @@ namespace CrabUI
       public XDocument LoadXDoc(string path);
     }
 
-    public interface CUICoreHandles : CUICoreIOHandle
+    public interface CUICoreTextureHandle
     {
+      public CUITexture2D GetTexture(string path);
+    }
+
+    public interface CUICoreHandles : CUICoreIOHandle, CUICoreTextureHandle
+    {
+
     }
 
     public class CUIRunnerHandle_Part : Part

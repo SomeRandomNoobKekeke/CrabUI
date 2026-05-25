@@ -12,10 +12,10 @@ namespace CrabUI
     public CUICore Core { get; set; }
     public ICUIRunnerDataSources DataSources { get; set; }
     public CUICore.CUICoreHandles CUICoreHandles { get; private set; }
-      = new SoloCUIRunner.CUICoreHandlesImp(ModInfo.Dir);
 
-
-    private __CUISpriteBatch SpriteBatch { get; } = new();
+    public string ModDir { get; private set; } = ModInfo.Dir;
+    public __CUISpriteBatch SpriteBatch { get; } = new();
+    public TextureManager TextureManager { get; } = new();
 
 
     public void Connect()
@@ -88,6 +88,15 @@ namespace CrabUI
       DataSources.LifeCycle.UnsubEvents();
       SpriteBatch.XNASpriteBatch = null;
       Core.Handles = null;
+      TextureManager.Clear();
+    }
+
+    public SoloCUIRunner()
+    {
+      CUICoreHandles = new SoloCUIRunner.CUICoreHandles_Part()
+      {
+        Self = this
+      };
     }
   }
 }

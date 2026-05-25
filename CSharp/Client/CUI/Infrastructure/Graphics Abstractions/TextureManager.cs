@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Diagnostics;
+using Barotrauma;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using System.IO;
+
+namespace CrabUI
+{
+  public class TextureManager : IDisposable
+  {
+    public CUITexture2D BackupTexture => __CUITexture2D.White;
+    public Dictionary<string, CUITexture2D> LoadedTextures { get; } = new();
+
+    public void AddTexture(CUITexture2D texture, string path)
+    {
+      LoadedTextures[path] = texture;
+    }
+    public CUITexture2D GetTexture(string path)
+    {
+      if (LoadedTextures.ContainsKey(path)) return LoadedTextures[path];
+      if (!File.Exists(path)) return BackupTexture;
+
+      using (FileStream fs = File.OpenRead(path))
+      {
+        return new __CUITexture2D(
+          Texture2D.FromStream(GameMain.Instance.GraphicsDevice, fs)
+        );
+      }
+    }
+
+    public bool Has(string path) => LoadedTextures.ContainsKey(path);
+
+    public void Forget(string path)
+    {
+      LoadedTextures[path].Dispose();
+      LoadedTextures.Remove(path);
+    }
+
+    public void Clear()
+    {
+      foreach (CUITexture2D texture in LoadedTextures.Values)
+      {
+        texture.Dispose();
+      }
+      LoadedTextures.Clear();
+    }
+
+    public void Dispose() => Clear();
+  }
+}

@@ -32,6 +32,12 @@ namespace CrabUI
       set => Background.Color = value;
     }
 
+    public CUITexture2D BackgroundTexture
+    {
+      get => Background.Texture;
+      set => Background.Texture = value;
+    }
+
 
   }
 }

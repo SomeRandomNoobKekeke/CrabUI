@@ -13,9 +13,11 @@ namespace CrabUI
 {
   public partial class SoloCUIRunner
   {
-    public class CUICoreHandlesImp(string modDir) : CUICore.CUICoreHandles
+    public partial class CUICoreHandles_Part() : CUICore.CUICoreHandles
     {
-      public string ModDir { get; set; } = modDir;
+      public SoloCUIRunner Self { get; set; }
+
+      public string ModDir => Self.ModDir;
 
       public string NormalizePath(string path)
         => Path.IsPathFullyQualified(path) ? path : Path.Combine(ModDir, path);
@@ -28,6 +30,11 @@ namespace CrabUI
       public XDocument LoadXDoc(string path)
       {
         return XDocument.Load(NormalizePath(path));
+      }
+
+      public CUITexture2D GetTexture(string path)
+      {
+        return Self.TextureManager.GetTexture(NormalizePath(path));
       }
     }
   }

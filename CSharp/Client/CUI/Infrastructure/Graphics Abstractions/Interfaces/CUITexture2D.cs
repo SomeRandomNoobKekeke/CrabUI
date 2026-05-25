@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CrabUI
 {
-  public interface CUITexture2D
+  public interface CUITexture2D : IDisposable
   {
     public static CUITexture2D White => __CUITexture2D.White;
   }

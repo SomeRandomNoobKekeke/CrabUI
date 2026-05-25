@@ -7,24 +7,12 @@ using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
 using ComponentGenerator;
+using BaroJunk;
 
 namespace CrabUI
 {
-  public partial class CUIComponent : IComponent
+  public partial class CUIComponent
   {
-
-
-
-
-    public bool MouseOver => Events.MouseOver;
-    public bool MousePressed => Events.MousePressed;
-
-
-    public Layout Layout
-    {
-      get => LayoutSlot.Layout;
-      set => LayoutSlot.Layout = value;
-    }
     [CUISerializable]
     public Color BackgroundColor
     {
@@ -37,7 +25,5 @@ namespace CrabUI
       get => Background.Texture;
       set => Background.Texture = value;
     }
-
-
   }
 }

@@ -15,6 +15,7 @@ using System.Xml.Linq;
 
 namespace CrabUIUser
 {
+  //Unused
   public class VirtualFileSystem : CUICore.CUICoreIOHandle
   {
     public Dictionary<string, string> Files { get; } = new();

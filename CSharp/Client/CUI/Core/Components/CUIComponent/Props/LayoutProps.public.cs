@@ -20,10 +20,42 @@ namespace CrabUI
       set => LayoutProps.Absolute.Value = value;
     }
     [CUISerializable]
+    public CUINullRect AbsoluteMin
+    {
+      get => LayoutProps.AbsoluteMin.Value;
+      set => LayoutProps.AbsoluteMin.Value = value;
+    }
+
+    [CUISerializable]
+    public CUINullRect AbsoluteMax
+    {
+      get => LayoutProps.AbsoluteMax.Value;
+      set => LayoutProps.AbsoluteMax.Value = value;
+    }
+
+    [CUISerializable]
     public CUINullRect Relative
     {
       get => LayoutProps.Relative.Value;
       set => LayoutProps.Relative.Value = value;
+    }
+    [CUISerializable]
+    public CUINullRect RelativeMin
+    {
+      get => LayoutProps.RelativeMin.Value;
+      set => LayoutProps.RelativeMin.Value = value;
+    }
+    [CUISerializable]
+    public CUINullRect RelativeMax
+    {
+      get => LayoutProps.RelativeMax.Value;
+      set => LayoutProps.RelativeMax.Value = value;
+    }
+    [CUISerializable]
+    public CUINullRect CrossRelative
+    {
+      get => LayoutProps.CrossRelative.Value;
+      set => LayoutProps.CrossRelative.Value = value;
     }
     [CUISerializable]
     public Vector2 Anchor

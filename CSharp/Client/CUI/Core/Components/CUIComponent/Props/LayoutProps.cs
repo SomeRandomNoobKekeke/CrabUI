@@ -13,6 +13,11 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
+    //TODO mb it should be a NullVector2 or CUINullRect
+    protected virtual float? ForcedMinWidth => null;
+    protected virtual float? ForcedMinHeight => null;
+
+
     protected LayoutProps_Part LayoutProps { get; } = new();
     public class LayoutProps_Part : Part, ICUILayoutProp.IContainer
     {
@@ -37,7 +42,32 @@ namespace CrabUI
         Pattern = LayoutMarker.Pattern.FromParentAndDown,
       };
 
+      public CUILayoutProp<CUINullRect> AbsoluteMin { get; } = new()
+      {
+        Pattern = LayoutMarker.Pattern.FromParentAndDown,
+      };
+
+      public CUILayoutProp<CUINullRect> AbsoluteMax { get; } = new()
+      {
+        Pattern = LayoutMarker.Pattern.FromParentAndDown,
+      };
+
       public CUILayoutProp<CUINullRect> Relative { get; } = new()
+      {
+        Pattern = LayoutMarker.Pattern.FromParentAndDown,
+      };
+
+      public CUILayoutProp<CUINullRect> RelativeMin { get; } = new()
+      {
+        Pattern = LayoutMarker.Pattern.FromParentAndDown,
+      };
+
+      public CUILayoutProp<CUINullRect> RelativeMax { get; } = new()
+      {
+        Pattern = LayoutMarker.Pattern.FromParentAndDown,
+      };
+
+      public CUILayoutProp<CUINullRect> CrossRelative { get; } = new()
       {
         Pattern = LayoutMarker.Pattern.FromParentAndDown,
       };

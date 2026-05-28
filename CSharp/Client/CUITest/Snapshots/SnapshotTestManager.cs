@@ -119,6 +119,8 @@ namespace CrabUIUser
 
     public void Run(string name)
     {
+      ModStorage.Set("CUITest", name);
+
       if (!Tests.ContainsKey(name))
       {
         CUI.Logger.Warning($"Can't find snapshot test: [{name}]");
@@ -199,6 +201,8 @@ namespace CrabUIUser
       CurrentSnapshot = null;
 
       OnDismantle?.Invoke(TestBox);
+
+      ModStorage.Remove("CUITest");
     }
 
 

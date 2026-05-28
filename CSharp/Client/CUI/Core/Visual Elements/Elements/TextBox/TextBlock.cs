@@ -12,7 +12,7 @@ namespace CrabUI
 {
   public enum OversizeBehaviour
   {
-    Ignore, Rescale, Wrap
+    Ignore, Resist, Rescale, Wrap
   }
 
   public class TextBlock : VisualElementBase, IVisualElement
@@ -50,6 +50,8 @@ namespace CrabUI
 
     public Vector2 Anchor { get; set; } = new Vector2(0.5f, 0.5f);
 
+    public float? ForcedMinWidth { get; private set; }
+    public float? ForcedMinHeight { get; private set; }
 
 
     public Color TextColor { get; set; } = Color.White;
@@ -62,18 +64,18 @@ namespace CrabUI
     public Vector2 RawTextSize { get; private set; }
 
     private string RealText = "";
-    private Vector2 ReadTextDrawPosition;
+    private Vector2 TextDrawPosition;
     private float RealTextScale;
     public void Draw(CUISpriteBatch spriteBatch)
     {
       Font.DrawString(
         spriteBatch,
-        RealText,
-        ReadTextDrawPosition,
+        Text,
+        TextDrawPosition,
         TextColor,
         rotation: 0,
         origin: Vector2.Zero,
-        RealTextScale,
+        Scale,
         SpriteEffects,
         LayerDepth
       );
@@ -86,11 +88,9 @@ namespace CrabUI
 
     private void RecalcReal()
     {
-      RealText = Text;
-      RealTextScale = Scale;
-      Vector2 RealTextSize = RawTextSize * RealTextScale;
+      Vector2 RealTextSize = RawTextSize * Scale;
 
-      ReadTextDrawPosition = CUIAnchor.ChildPosIn(Rect, Anchor, RealTextSize);
+      TextDrawPosition = CUIAnchor.ChildPosIn(Rect, Anchor, RealTextSize);
     }
   }
 }

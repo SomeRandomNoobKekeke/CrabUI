@@ -24,7 +24,7 @@ namespace CrabUI
       return (Center - anchor) * 2;
     }
 
-    public static Vector2 AnchorPosIn(CUIRect rect, Vector2 anchor)
+    public static Vector2 PosFromAnchor(CUIRect rect, Vector2 anchor)
     {
       return new Vector2(
         rect.Left + rect.Width * anchor.X,
@@ -32,7 +32,7 @@ namespace CrabUI
       );
     }
 
-    public static Vector2 AnchorPosIn(Vector2 parentSize, Vector2 anchor)
+    public static Vector2 PosFromAnchor(Vector2 parentSize, Vector2 anchor)
     {
       return new Vector2(
         parentSize.X * anchor.X,
@@ -47,7 +47,7 @@ namespace CrabUI
 
     public static Vector2 GetOffset(CUIRect parentRect, Vector2 parentAnchor, CUIRect childRect, Vector2 childAnchor)
     {
-      return AnchorPosIn(childRect, childAnchor) - AnchorPosIn(parentRect, parentAnchor);
+      return PosFromAnchor(childRect, childAnchor) - PosFromAnchor(parentRect, parentAnchor);
     }
 
     /// <summary>
@@ -55,12 +55,12 @@ namespace CrabUI
     /// </summary>
     public static Vector2 ChildPosIn(CUIRect parent, Vector2 anchor, Vector2 childSize)
     {
-      return AnchorPosIn(parent, anchor) - AnchorPosIn(childSize, anchor);
+      return PosFromAnchor(parent, anchor) - PosFromAnchor(childSize, anchor);
     }
 
     public static Vector2 ChildPosIn(Vector2 parentSize, Vector2 anchor, Vector2 childSize)
     {
-      return AnchorPosIn(parentSize, anchor) - AnchorPosIn(childSize, anchor);
+      return PosFromAnchor(parentSize, anchor) - PosFromAnchor(childSize, anchor);
     }
 
     /// <summary>
@@ -68,12 +68,37 @@ namespace CrabUI
     /// </summary>
     public static Vector2 ChildPosIn(CUIRect parent, Vector2 parentAnchor, Vector2 childSize, Vector2 childAnchor)
     {
-      return AnchorPosIn(parent, parentAnchor) - AnchorPosIn(new CUIRect(childSize), childAnchor);
+      return PosFromAnchor(parent, parentAnchor) - PosFromAnchor(new CUIRect(childSize), childAnchor);
     }
 
     public static Vector2 ChildPosIn(Vector2 parentSize, Vector2 parentAnchor, Vector2 childSize, Vector2 childAnchor)
     {
-      return AnchorPosIn(parentSize, parentAnchor) - AnchorPosIn(new CUIRect(childSize), childAnchor);
+      return PosFromAnchor(parentSize, parentAnchor) - PosFromAnchor(new CUIRect(childSize), childAnchor);
+    }
+
+    public static CUIRect RectFrom2PointsWithAnchors(Vector2 point1, Vector2 anchor1, Vector2 point2, Vector2 anchor2)
+    {
+      // point1 = position + size * anchor1;
+      // point2 = position + size * anchor2;
+
+      // position = point1 - size * anchor1;
+      // position = point2 - size * anchor2;
+
+      // point1 - size * anchor1 = point2 - size * anchor2
+      // size * (anchor1  -  anchor2) = point1 - point2
+
+      Vector2 size = (point1 - point2) / (anchor1 - anchor2);
+      Vector2 position = point1 - size * anchor1;
+
+      return new CUIRect(position, size);
+    }
+
+    public static CUIRect AbsoluteRectToAchored(CUIRect rect, CUIRect parentRect, Vector2 anchor)
+    {
+      return new CUIRect(
+        GetOffset(parentRect, anchor, rect, anchor),
+        rect.Size
+      );
     }
   }
 }

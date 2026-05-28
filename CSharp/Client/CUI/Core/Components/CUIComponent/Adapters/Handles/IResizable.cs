@@ -26,12 +26,23 @@ namespace CrabUI
 
         public CUIRect Rect => Self.Rect;
 
-        public void SetSize(Vector2 size)
+        public void ResizeFrom2Points(Vector2 point1, Vector2 anchor1, Vector2 point2, Vector2 anchor2)
         {
-          Self.LayoutProps.Absolute.Value = Self.LayoutProps.Absolute.Value with
-          {
-            Size = size,
-          };
+          CUIRect rect = CUIAnchor.RectFrom2PointsWithAnchors(
+            point1, anchor1, point2, anchor2
+          );
+
+          CUI.Logger.Log(
+            CUIAnchor.AbsoluteRectToAchored(
+              rect, Self.Parent.Rect, Self.Anchor
+            )
+          );
+
+          Self.LayoutProps.Absolute.Value = new CUINullRect(
+            CUIAnchor.AbsoluteRectToAchored(
+              rect, Self.Parent.Rect, Self.Anchor
+            )
+          );
         }
 
         public event Action<CUIMouseDownEvent> MouseDown;

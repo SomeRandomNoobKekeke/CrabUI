@@ -29,14 +29,29 @@ namespace CrabUI
 
     public SimpleTexture Background { get; } = new();
 
-    public Vector2 Anchor { get; set; } = new Vector2(1, 1);
-    // public Vector2 ParentAnchor { get; set; }
+    public Vector2 Anchor
+    {
+      get => SelfAnchor;
+      set
+      {
+        SelfAnchor = value;
+        ParentAnchor = value;
+        StaticPointAnchor = Vector2.One - value;
+      }
+    }
+    public Vector2 ParentAnchor { get; set; }
+    public Vector2 StaticPointAnchor { get; set; }
+    public Vector2 SelfAnchor { get; set; } = new Vector2(1, 1);
+
+
     public Vector2 Size { get; set; } = new Vector2(15, 10);
 
     public bool Visible { get; set; }
     public bool Grabbed { get; private set; }
-    public Vector2 GrabOffset { get; private set; }
 
+    public Vector2 GrabPoint { get; private set; }
+    public Vector2 GrabOffset { get; private set; }
+    public Vector2 StartSelfAnchorPoint { get; private set; }
 
     public override CUIRect Rect
     {
@@ -75,18 +90,34 @@ namespace CrabUI
 
       Grabbed = true;
       GrabOffset = Rect.LeftTop - e.Pos;
+      GrabPoint = e.Pos;
+      StartSelfAnchorPoint = CUIAnchor.PosFromAnchor(Rect, SelfAnchor);
       host.HubMouseMoved += Update;
       host.HubMouseUp += Release;
     }
 
     public void Update(CUIMouseEvent e)
     {
-      Host.SetSize(e.Pos - Host.Rect.LeftTop);
+      Vector2 delta = e.Pos - GrabPoint;
+      Vector2 SelfAnchorPoint = StartSelfAnchorPoint + delta;
+
+      Host.ResizeFrom2Points(
+        CUIAnchor.PosFromAnchor(Host.Rect, StaticPointAnchor), StaticPointAnchor,
+        SelfAnchorPoint, ParentAnchor
+      );
     }
 
     private void Release(CUIMouseEvent e)
     {
-      Host.SetSize(e.Pos - Host.Rect.LeftTop);
+      Vector2 delta = e.Pos - GrabPoint;
+      Vector2 SelfAnchorPoint = StartSelfAnchorPoint + delta;
+
+      Host.ResizeFrom2Points(
+        CUIAnchor.PosFromAnchor(Host.Rect, StaticPointAnchor), StaticPointAnchor,
+        SelfAnchorPoint, ParentAnchor
+      );
+
+
       Grabbed = false;
       host.HubMouseMoved -= Update;
       host.HubMouseUp -= Release;
@@ -101,6 +132,8 @@ namespace CrabUI
     public ResizeHandle()
     {
       Background.Color = Color.Yellow;
+
+      Anchor = new Vector2(1, 1);
 
       Background.MouseDown.Add(Grab);
     }

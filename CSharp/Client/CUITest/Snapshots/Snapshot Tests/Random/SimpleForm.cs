@@ -22,6 +22,7 @@ namespace CrabUIUser
           BackgroundColor = new Color(32, 32, 32),
           Absolute = new CUINullRect(0, 0, 400, 600),
           Anchor = CUIAnchor.Center,
+          Resizable = true,
         };
 
         frame["layout"] = new CUIVerticalList()

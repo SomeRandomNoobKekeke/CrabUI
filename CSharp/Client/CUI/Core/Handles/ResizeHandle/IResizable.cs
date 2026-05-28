@@ -13,7 +13,7 @@ namespace CrabUI
   {
     public event Action<CUIMouseDownEvent> MouseDown;
     public CUIRect Rect { get; }
-    public void SetSize(Vector2 size);
+    public void ResizeFrom2Points(Vector2 point1, Vector2 anchor1, Vector2 point2, Vector2 anchor2);
     public event Action<CUIMouseUpEvent> HubMouseUp;
     public event Action<CUIMouseMovedEvent> HubMouseMoved;
     public bool TryGrab(object handle);

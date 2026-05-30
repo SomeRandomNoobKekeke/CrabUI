@@ -10,20 +10,23 @@ using BaroJunk;
 
 namespace CrabUI
 {
-
-  public class TextBlockWrapOversizeStrategy : TextBlockOversizeStrategy
+  public partial class TextBlock
   {
-    public override void MeasureRawTextSize(string text, float scale, CUIFont font)
+    public class WrapStrategy : ResizeStrategyBase
     {
-      RawTextSize = font.MeasureString(text);
-      ForcedSize = new CUINullVector2(RawTextSize);
-    }
+      public override void MeasureRawTextSize(string text, float scale, CUIFont font)
+      {
+        RawTextSize = font.MeasureString(text);
+        ForcedSize = new CUINullVector2(RawTextSize);
+      }
 
-    public override void MeasureRealTextSize(CUIRect rect, Vector2 anchor, string text, float scale)
-    {
-      Vector2 RealTextSize = RawTextSize * scale;
+      public override void MeasureRealTextSize(CUIRect rect, Vector2 anchor, string text, float scale)
+      {
+        Vector2 RealTextSize = RawTextSize * scale;
 
-      TextDrawPosition = CUIAnchor.ChildPosIn(rect, anchor, RealTextSize);
+        TextDrawPosition = CUIAnchor.ChildPosIn(rect, anchor, RealTextSize);
+      }
     }
   }
+
 }

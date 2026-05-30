@@ -12,12 +12,11 @@ namespace CrabUI
 {
   public partial class TextBlock
   {
-    public class ResistStrategy : ResizeStrategyBase
+    public class PassiveStrategy : ResizeStrategyBase
     {
       public override void MeasureRawTextSize(string text, float scale, CUIFont font)
       {
         RawTextSize = font.MeasureString(text);
-        ForcedSize = new CUINullVector2(RawTextSize);
       }
 
       public override void MeasureRealTextSize(CUIRect rect, Vector2 anchor, string text, float scale)
@@ -26,6 +25,8 @@ namespace CrabUI
 
         TextDrawPosition = CUIAnchor.ChildPosIn(rect, anchor, RealTextSize);
       }
+
+
     }
   }
 

@@ -10,12 +10,7 @@ using BaroJunk;
 
 namespace CrabUI
 {
-  public enum OversizeBehaviour
-  {
-    Ignore, Resist, Rescale, Wrap
-  }
-
-  public class TextBlock : VisualElementBase, IVisualElement
+  public partial class TextBlock : VisualElementBase, IVisualElement
   {
     private CUIRect _Rect; public CUIRect Rect
     {
@@ -47,6 +42,12 @@ namespace CrabUI
       }
     }
 
+    private ResizeStrategyBase _ResizeStrategy = ResizeStrategyBase.PassiveStrategy;
+    public ResizeStrategy ResizeStrategy
+    {
+      get => ResizeStrategyBase.ToEnum(_ResizeStrategy);
+      set => _ResizeStrategy = ResizeStrategyBase.FromEnum(value);
+    }
 
     public Vector2 Anchor { get; set; } = new Vector2(0.5f, 0.5f);
 

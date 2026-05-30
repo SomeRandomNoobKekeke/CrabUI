@@ -1,0 +1,56 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Diagnostics;
+using Barotrauma;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using BaroJunk;
+
+namespace CrabUI
+{
+
+  public enum ResizeStrategy
+  {
+    Passive, Rescale, Resist, Wrap
+  }
+
+  public partial class TextBlock
+  {
+    //TODO should this be public?
+    public abstract class ResizeStrategyBase
+    {
+      public static PassiveStrategy PassiveStrategy { get; } = new();
+      public static RescaleStrategy RescaleStrategy { get; } = new();
+      public static ResistStrategy ResistStrategy { get; } = new();
+      public static WrapStrategy WrapStrategy { get; } = new();
+
+
+      public abstract void MeasureRawTextSize(string text, float scale, CUIFont font);
+      public abstract void MeasureRealTextSize(CUIRect rect, Vector2 anchor, string text, float scale);
+
+      public Vector2 RawTextSize { get; private set; }
+      public Vector2 TextDrawPosition { get; private set; }
+      public CUINullVector2 ForcedSize { get; private set; }
+
+      public static ResizeStrategyBase FromEnum(ResizeStrategy strategy)
+        => strategy switch
+        {
+          ResizeStrategy.Passive => PassiveStrategy,
+          ResizeStrategy.Rescale => RescaleStrategy,
+          ResizeStrategy.Resist => ResistStrategy,
+          ResizeStrategy.Wrap => WrapStrategy,
+        };
+      public static ResizeStrategy ToEnum(ResizeStrategyBase strategyBase)
+        => strategyBase switch
+        {
+          TextBlock.PassiveStrategy => ResizeStrategy.Passive,
+          TextBlock.RescaleStrategy => ResizeStrategy.Rescale,
+          TextBlock.ResistStrategy => ResizeStrategy.Resist,
+          TextBlock.WrapStrategy => ResizeStrategy.Wrap
+        };
+    }
+  }
+
+}

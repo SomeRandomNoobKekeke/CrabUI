@@ -10,29 +10,32 @@ using BaroJunk;
 
 namespace CrabUI
 {
-
-  public class TextBlockRescaleOversizeStrategy : TextBlockOversizeStrategy
+  public partial class TextBlock
   {
-    public override void MeasureRawTextSize(string text, float scale, CUIFont font)
+    public class RescaleStrategy : ResizeStrategyBase
     {
-      RawTextSize = font.MeasureString(text);
-    }
-
-    public override void MeasureRealTextSize(CUIRect rect, Vector2 anchor, string text, float scale)
-    {
-      float RealScale = scale;
-
-      Vector2 RealTextSize = RawTextSize * RealScale;
-
-
-      if (RealTextSize.X > rect.Width || RealTextSize.Y > rect.Height)
+      public override void MeasureRawTextSize(string text, float scale, CUIFont font)
       {
-        RealScale = Math.Min(RealScale, rect.Width / RealTextSize.X);
-        RealScale = Math.Min(RealScale, rect.Height / RealTextSize.Y);
-        RealTextSize = RawTextSize * RealScale;
+        RawTextSize = font.MeasureString(text);
       }
 
-      TextDrawPosition = CUIAnchor.ChildPosIn(rect, anchor, RealTextSize);
+      public override void MeasureRealTextSize(CUIRect rect, Vector2 anchor, string text, float scale)
+      {
+        float RealScale = scale;
+
+        Vector2 RealTextSize = RawTextSize * RealScale;
+
+
+        if (RealTextSize.X > rect.Width || RealTextSize.Y > rect.Height)
+        {
+          RealScale = Math.Min(RealScale, rect.Width / RealTextSize.X);
+          RealScale = Math.Min(RealScale, rect.Height / RealTextSize.Y);
+          RealTextSize = RawTextSize * RealScale;
+        }
+
+        TextDrawPosition = CUIAnchor.ChildPosIn(rect, anchor, RealTextSize);
+      }
     }
   }
+
 }

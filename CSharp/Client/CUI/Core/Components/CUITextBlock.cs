@@ -58,6 +58,14 @@ namespace CrabUI
       set => TextBlock.Font = value;
     }
 
+    public ResizeStrategy ResizeStrategy
+    {
+      get => TextBlock.ResizeStrategy;
+      set => TextBlock.ResizeStrategy = value;
+    }
+
+
+
 
     protected override float? ForcedMinWidth => TextBlock.ForcedMinWidth;
     protected override float? ForcedMinHeight => TextBlock.ForcedMinHeight;

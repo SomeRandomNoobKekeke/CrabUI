@@ -16,6 +16,8 @@ namespace CrabUI
   /// </summary>
   public struct CUINullVector2
   {
+    public static CUINullVector2 Null => new CUINullVector2(null, null);
+
     public float? X;
     public float? Y;
 

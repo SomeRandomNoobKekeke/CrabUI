@@ -23,6 +23,7 @@ namespace CrabUI
       public override void MeasureRealTextSize(CUIRect rect, Vector2 anchor, string text, float scale)
       {
         Vector2 RealTextSize = RawTextSize * scale;
+        RealScale = scale;
 
         TextDrawPosition = CUIAnchor.ChildPosIn(rect, anchor, RealTextSize);
       }

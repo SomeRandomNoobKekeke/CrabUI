@@ -21,7 +21,7 @@ namespace CrabUI
 
       public override void MeasureRealTextSize(CUIRect rect, Vector2 anchor, string text, float scale)
       {
-        float RealScale = scale;
+        RealScale = scale;
 
         Vector2 RealTextSize = RawTextSize * RealScale;
 

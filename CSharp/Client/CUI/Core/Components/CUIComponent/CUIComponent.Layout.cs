@@ -12,6 +12,8 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
+    protected virtual CUINullVector2 ForcedSize => CUINullVector2.Null;
+
     public Layout Layout
     {
       get => LayoutSlot.Layout;

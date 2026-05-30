@@ -18,7 +18,7 @@ namespace CrabUI
       set
       {
         _Rect = value;
-        RecalcReal();
+        _ResizeStrategy.MeasureRealTextSize(Rect, Anchor, Text, Scale);
       }
     }
 
@@ -28,7 +28,7 @@ namespace CrabUI
       set
       {
         _Text = value;
-        MeasureText();
+        _ResizeStrategy.MeasureRawTextSize(Text, Scale, Font);
       }
     }
 
@@ -38,7 +38,7 @@ namespace CrabUI
       set
       {
         _Scale = Math.Max(0, value);
-        MeasureText();
+        _ResizeStrategy.MeasureRawTextSize(Text, Scale, Font);
       }
     }
 
@@ -46,13 +46,14 @@ namespace CrabUI
     public ResizeStrategy ResizeStrategy
     {
       get => ResizeStrategyBase.ToEnum(_ResizeStrategy);
-      set => _ResizeStrategy = ResizeStrategyBase.FromEnum(value);
+      set
+      {
+        _ResizeStrategy = ResizeStrategyBase.FromEnum(value);
+        _ResizeStrategy.MeasureRawTextSize(Text, Scale, Font);
+      }
     }
 
     public Vector2 Anchor { get; set; } = new Vector2(0.5f, 0.5f);
-
-    public float? ForcedMinWidth { get; private set; }
-    public float? ForcedMinHeight { get; private set; }
 
 
     public Color TextColor { get; set; } = Color.White;
@@ -62,11 +63,13 @@ namespace CrabUI
 
     public CUIFont Font { get; set; } = CUIFont.Font;
 
-    public Vector2 RawTextSize { get; private set; }
 
-    private string RealText = "";
-    private Vector2 TextDrawPosition;
-    private float RealTextScale;
+    public Vector2 RawTextSize => _ResizeStrategy.RawTextSize;
+    public Vector2 TextDrawPosition => _ResizeStrategy.TextDrawPosition;
+    public CUINullVector2 ForcedSize => _ResizeStrategy.ForcedSize;
+    public float RealScale => _ResizeStrategy.RealScale;
+
+
     public void Draw(CUISpriteBatch spriteBatch)
     {
       Font.DrawString(
@@ -76,22 +79,10 @@ namespace CrabUI
         TextColor,
         rotation: 0,
         origin: Vector2.Zero,
-        Scale,
+        RealScale,
         SpriteEffects,
         LayerDepth
       );
-    }
-
-    private void MeasureText()
-    {
-      RawTextSize = Font.MeasureString(Text);
-    }
-
-    private void RecalcReal()
-    {
-      Vector2 RealTextSize = RawTextSize * Scale;
-
-      TextDrawPosition = CUIAnchor.ChildPosIn(Rect, Anchor, RealTextSize);
     }
   }
 }

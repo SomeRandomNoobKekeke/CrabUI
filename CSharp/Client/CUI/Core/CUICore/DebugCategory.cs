@@ -17,5 +17,6 @@ namespace CrabUI
     public static string TreeChanged = "Tree Changed";
     public static string HandleGrab = "Handle Grab";
     public static string Layout = "Layout";
+    public static string TextMeasurements = "TextMeasurements";
   }
 }

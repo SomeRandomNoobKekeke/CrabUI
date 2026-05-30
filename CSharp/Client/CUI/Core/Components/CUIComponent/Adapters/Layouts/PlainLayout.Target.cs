@@ -31,8 +31,7 @@ namespace CrabUI
         CUINullRect PlainLayout.Target.RelativeMin => Self.LayoutProps.RelativeMin.Value;
         CUINullRect PlainLayout.Target.RelativeMax => Self.LayoutProps.RelativeMax.Value;
         CUINullRect PlainLayout.Target.CrossRelative => Self.LayoutProps.CrossRelative.Value;
-        float? PlainLayout.Target.ForcedMinWidth => Self.ForcedMinWidth;
-        float? PlainLayout.Target.ForcedMinHeight => Self.ForcedMinHeight;
+        CUINullVector2 PlainLayout.Target.ForcedSize => Self.ForcedSize;
 
         Vector2 PlainLayout.Target.Anchor => Self.LayoutProps.Anchor.Value;
         Vector2? PlainLayout.Target.ParentAnchor => Self.LayoutProps.ParentAnchor.Value;

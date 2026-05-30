@@ -21,18 +21,19 @@ namespace CrabUI
     //TODO should this be public?
     public abstract class ResizeStrategyBase
     {
-      public static PassiveStrategy PassiveStrategy { get; } = new();
-      public static RescaleStrategy RescaleStrategy { get; } = new();
-      public static ResistStrategy ResistStrategy { get; } = new();
-      public static WrapStrategy WrapStrategy { get; } = new();
+      public static PassiveStrategy PassiveStrategy => new();
+      public static RescaleStrategy RescaleStrategy => new();
+      public static ResistStrategy ResistStrategy => new();
+      public static WrapStrategy WrapStrategy => new();
 
 
       public abstract void MeasureRawTextSize(string text, float scale, CUIFont font);
       public abstract void MeasureRealTextSize(CUIRect rect, Vector2 anchor, string text, float scale);
 
-      public Vector2 RawTextSize { get; private set; }
-      public Vector2 TextDrawPosition { get; private set; }
-      public CUINullVector2 ForcedSize { get; private set; }
+      public Vector2 RawTextSize { get; protected set; }
+      public Vector2 TextDrawPosition { get; protected set; }
+      public CUINullVector2 ForcedSize { get; protected set; }
+      public float RealScale { get; protected set; }
 
       public static ResizeStrategyBase FromEnum(ResizeStrategy strategy)
         => strategy switch

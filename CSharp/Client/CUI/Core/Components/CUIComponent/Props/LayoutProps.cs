@@ -105,6 +105,12 @@ namespace CrabUI
       {
         RealChildrenOffset = ChildrenOffsetBounds.Value.Check(ChildrenOffset.Value);
       }
+
+
+      public CUILayoutProp<CUIBool2> FitContent { get; } = new()
+      {
+        Pattern = LayoutMarker.Pattern.AbsoluteProp,
+      };
     }
   }
 }

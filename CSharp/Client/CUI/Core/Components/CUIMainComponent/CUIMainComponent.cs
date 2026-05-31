@@ -88,10 +88,16 @@ namespace CrabUI
 
     private void UpdateLayout()
     {
-      foreach (CUIComponent component in LayoutFlattener.Flat)
+      for (int i = LayoutFlattener.Flat.Count - 1; i >= 0; i--)
       {
-        component.Layout.UpdateChildren();
+        LayoutFlattener.Flat[i].Layout.UpdateParent();
       }
+
+      for (int i = 0; i < LayoutFlattener.Flat.Count; i++)
+      {
+        LayoutFlattener.Flat[i].Layout.UpdateChildren();
+      }
+
 
       // DebugChannels["Layout Updated"].Send(this);
     }

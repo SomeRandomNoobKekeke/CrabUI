@@ -25,6 +25,8 @@ namespace CrabUI
       public CUINullRect CrossRelative { get; }
 
       public CUINullVector2 ForcedSize { get; }
+      public CUINullVector2 MinSize { get; set; }
+      public CUIBool2 FitContent { get; }
 
       public IReadOnlyList<Target> Children { get; }
       public Vector2 Anchor { get; }
@@ -80,7 +82,6 @@ namespace CrabUI
         if (c.RelativeMax.Width.HasValue) w = Math.Min(w, c.RelativeMax.Width.Value * Host.Rect.Width);
         if (c.AbsoluteMax.Width.HasValue) w = Math.Min(w, c.AbsoluteMax.Width.Value);
 
-
         h = 0;
         if (c.Relative.Height.HasValue) h = c.Relative.Height.Value * Host.Rect.Height;
         if (c.CrossRelative.Height.HasValue) h = c.CrossRelative.Height.Value * Host.Rect.Width;
@@ -92,7 +93,6 @@ namespace CrabUI
 
         if (c.RelativeMax.Height.HasValue) h = Math.Min(h, c.RelativeMax.Height.Value * Host.Rect.Height);
         if (c.AbsoluteMax.Height.HasValue) h = Math.Min(h, c.AbsoluteMax.Height.Value);
-
 
 
         Vector2 anchorPos = CUIAnchor.ChildPosIn(
@@ -108,12 +108,57 @@ namespace CrabUI
         );
       }
 
-
       RequireChildrenUpdate = false;
     }
 
     public override void UpdateParent()
     {
+      if (Host.FitContent.X)
+      {
+        float rightmostRight = 0;
+        foreach (Target c in Host.Children)
+        {
+          float x = 0;
+          float w = 0;
+
+          if (c.Absolute.Left.HasValue) x = c.Absolute.Left.Value;
+          if (c.AbsoluteMin.Left.HasValue) x = Math.Max(x, c.AbsoluteMin.Left.Value);
+          if (c.AbsoluteMax.Left.HasValue) x = Math.Min(x, c.AbsoluteMax.Left.Value);
+
+          if (c.Absolute.Width.HasValue) w = c.Absolute.Width.Value;
+          if (c.AbsoluteMin.Width.HasValue) w = Math.Max(w, c.AbsoluteMin.Width.Value);
+          if (c.AbsoluteMax.Width.HasValue) w = Math.Min(w, c.AbsoluteMax.Width.Value);
+          if (c.ForcedSize.X.HasValue) w = Math.Max(w, c.ForcedSize.X.Value);
+
+          rightmostRight = Math.Max(rightmostRight, x + w);
+        }
+
+        Host.MinSize = Host.MinSize with { X = rightmostRight };
+      }
+
+      if (Host.FitContent.Y)
+      {
+        float bottommostBottom = 0;
+        foreach (Target c in Host.Children)
+        {
+          float y = 0;
+          float h = 0;
+
+          if (c.Absolute.Top.HasValue) y = c.Absolute.Top.Value;
+          if (c.AbsoluteMin.Top.HasValue) y = Math.Max(y, c.AbsoluteMin.Top.Value);
+          if (c.AbsoluteMax.Top.HasValue) y = Math.Min(y, c.AbsoluteMax.Top.Value);
+
+          if (c.Absolute.Height.HasValue) h = c.Absolute.Height.Value;
+          if (c.AbsoluteMin.Height.HasValue) h = Math.Max(h, c.AbsoluteMin.Height.Value);
+          if (c.AbsoluteMax.Height.HasValue) h = Math.Min(h, c.AbsoluteMax.Height.Value);
+          if (c.ForcedSize.Y.HasValue) h = Math.Max(h, c.ForcedSize.Y.Value);
+
+          bottommostBottom = Math.Max(bottommostBottom, y + h);
+        }
+
+        Host.MinSize = Host.MinSize with { Y = bottommostBottom };
+      }
+
       RequireParentUpdate = false;
     }
   }

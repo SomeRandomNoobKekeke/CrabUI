@@ -87,5 +87,12 @@ namespace CrabUI
       get => LayoutProps.ChildrenOffsetBounds.Value;
       set => LayoutProps.ChildrenOffsetBounds.Value = value;
     }
+
+    [CUISerializable]
+    public CUIBool2 FitContent
+    {
+      get => LayoutProps.FitContent.Value;
+      set => LayoutProps.FitContent.Value = value;
+    }
   }
 }

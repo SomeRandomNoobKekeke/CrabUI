@@ -64,7 +64,7 @@ namespace CrabUI
 
       [In] public MainComponentTracker_Part MainComponentTracker { get; set; }
 
-      public LayoutMarker.Pattern MarkPattern { get; } = LayoutMarker.Pattern.FromParentAndDown;
+      public LayoutMarker.Pattern MarkPattern { get; } = LayoutMarker.Pattern.UpAndDown;
 
       public bool Changed { get; set; }
       public event Action OnChanged;

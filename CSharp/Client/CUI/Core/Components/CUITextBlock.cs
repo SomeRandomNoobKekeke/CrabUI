@@ -64,7 +64,7 @@ namespace CrabUI
       set => TextBlock.ResizeStrategy = value;
     }
 
-    protected override CUINullVector2 ForcedSize => TextBlock.ForcedSize;
+    protected override CUINullVector2 MinSize => TextBlock.ForcedSize;
 
     protected override void UpdateRect(CUIRect rect)
     {

@@ -31,11 +31,16 @@ namespace CrabUI
         CUINullRect PlainLayout.Target.RelativeMin => Self.LayoutProps.RelativeMin.Value;
         CUINullRect PlainLayout.Target.RelativeMax => Self.LayoutProps.RelativeMax.Value;
         CUINullRect PlainLayout.Target.CrossRelative => Self.LayoutProps.CrossRelative.Value;
-        CUINullVector2 PlainLayout.Target.ForcedSize => Self.ForcedSize;
+
         CUINullVector2 PlainLayout.Target.MinSize
         {
           get => Self.MinSize;
-          set => Self.MinSize = value;
+        }
+
+        CUINullVector2 PlainLayout.Target.MaxSize
+        {
+          get => Self.MaxSize;
+          set => Self.MaxSize = value;
         }
 
         CUIBool2 PlainLayout.Target.FitContent => Self.FitContent;

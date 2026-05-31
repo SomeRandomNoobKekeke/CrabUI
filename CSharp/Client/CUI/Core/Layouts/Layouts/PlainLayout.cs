@@ -24,9 +24,9 @@ namespace CrabUI
       public CUINullRect RelativeMax { get; }
       public CUINullRect CrossRelative { get; }
 
-      public CUINullVector2 ForcedSize { get; }
-      public CUINullVector2 MinSize { get; set; }
       public CUIBool2 FitContent { get; }
+      public CUINullVector2 MinSize { get; }
+      public CUINullVector2 MaxSize { get; set; }
 
       public IReadOnlyList<Target> Children { get; }
       public Vector2 Anchor { get; }
@@ -77,10 +77,11 @@ namespace CrabUI
 
         if (c.RelativeMin.Width.HasValue) w = Math.Max(w, c.RelativeMin.Width.Value * Host.Rect.Width);
         if (c.AbsoluteMin.Width.HasValue) w = Math.Max(w, c.AbsoluteMin.Width.Value);
-        if (c.ForcedSize.X.HasValue) w = Math.Max(w, c.ForcedSize.X.Value);
+        if (c.MinSize.X.HasValue) w = Math.Max(w, c.MinSize.X.Value);
 
         if (c.RelativeMax.Width.HasValue) w = Math.Min(w, c.RelativeMax.Width.Value * Host.Rect.Width);
         if (c.AbsoluteMax.Width.HasValue) w = Math.Min(w, c.AbsoluteMax.Width.Value);
+        if (c.MaxSize.X.HasValue) w = Math.Min(w, c.MaxSize.X.Value);
 
         h = 0;
         if (c.Relative.Height.HasValue) h = c.Relative.Height.Value * Host.Rect.Height;
@@ -89,10 +90,11 @@ namespace CrabUI
 
         if (c.RelativeMin.Height.HasValue) h = Math.Max(h, c.RelativeMin.Height.Value * Host.Rect.Height);
         if (c.AbsoluteMin.Height.HasValue) h = Math.Max(h, c.AbsoluteMin.Height.Value);
-        if (c.ForcedSize.Y.HasValue) h = Math.Max(h, c.ForcedSize.Y.Value);
+        if (c.MinSize.Y.HasValue) h = Math.Max(h, c.MinSize.Y.Value);
 
         if (c.RelativeMax.Height.HasValue) h = Math.Min(h, c.RelativeMax.Height.Value * Host.Rect.Height);
         if (c.AbsoluteMax.Height.HasValue) h = Math.Min(h, c.AbsoluteMax.Height.Value);
+        if (c.MaxSize.Y.HasValue) h = Math.Min(h, c.MaxSize.Y.Value);
 
 
         Vector2 anchorPos = CUIAnchor.ChildPosIn(
@@ -128,12 +130,13 @@ namespace CrabUI
           if (c.Absolute.Width.HasValue) w = c.Absolute.Width.Value;
           if (c.AbsoluteMin.Width.HasValue) w = Math.Max(w, c.AbsoluteMin.Width.Value);
           if (c.AbsoluteMax.Width.HasValue) w = Math.Min(w, c.AbsoluteMax.Width.Value);
-          if (c.ForcedSize.X.HasValue) w = Math.Max(w, c.ForcedSize.X.Value);
+          if (c.MinSize.X.HasValue) w = Math.Max(w, c.MinSize.X.Value);
+          if (c.MaxSize.X.HasValue) w = Math.Min(w, c.MaxSize.X.Value);
 
           rightmostRight = Math.Max(rightmostRight, x + w);
         }
 
-        Host.MinSize = Host.MinSize with { X = rightmostRight };
+        Host.MaxSize = Host.MaxSize with { X = rightmostRight };
       }
 
       if (Host.FitContent.Y)
@@ -151,12 +154,13 @@ namespace CrabUI
           if (c.Absolute.Height.HasValue) h = c.Absolute.Height.Value;
           if (c.AbsoluteMin.Height.HasValue) h = Math.Max(h, c.AbsoluteMin.Height.Value);
           if (c.AbsoluteMax.Height.HasValue) h = Math.Min(h, c.AbsoluteMax.Height.Value);
-          if (c.ForcedSize.Y.HasValue) h = Math.Max(h, c.ForcedSize.Y.Value);
+          if (c.MinSize.Y.HasValue) h = Math.Max(h, c.MinSize.Y.Value);
+          if (c.MaxSize.Y.HasValue) h = Math.Min(h, c.MaxSize.Y.Value);
 
           bottommostBottom = Math.Max(bottommostBottom, y + h);
         }
 
-        Host.MinSize = Host.MinSize with { Y = bottommostBottom };
+        Host.MaxSize = Host.MaxSize with { Y = bottommostBottom };
       }
 
       RequireParentUpdate = false;

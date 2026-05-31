@@ -12,8 +12,9 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-    protected CUINullVector2 MinSize { get; set; } = CUINullVector2.Null;
-    protected virtual CUINullVector2 ForcedSize => MinSize;
+    //TODO these props should be separated, currently they can be set by component and by layout
+    protected virtual CUINullVector2 MinSize => CUINullVector2.Null;
+    protected CUINullVector2 MaxSize { get; set; } = CUINullVector2.Null;
 
     public Layout Layout
     {

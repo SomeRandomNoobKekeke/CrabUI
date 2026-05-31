@@ -12,7 +12,7 @@ using System.Text;
 
 namespace BaroJunk
 {
-  public partial class Logger
+  public partial class Logger : ILogger
   {
     public static Logger Default = new Logger()
     {

@@ -14,6 +14,11 @@ namespace CrabUIUser
 {
   public class CUITest
   {
+    public static Logger Logger { get; } = new()
+    {
+      PrintFilePath = false
+    };
+
     public SnapshotTestManager SnapshotTestManager { get; } = new();
     public SnapshotConsoleInterface SnapshotConsoleInterface { get; } = new();
     public SnapshotGUI SnapshotGUI { get; } = new();

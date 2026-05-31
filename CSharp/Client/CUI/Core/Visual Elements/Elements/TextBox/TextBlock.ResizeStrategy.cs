@@ -28,8 +28,9 @@ namespace CrabUI
 
 
       public abstract void MeasureRawTextSize(string text, float scale, CUIFont font);
-      public abstract void MeasureRealTextSize(CUIRect rect, Vector2 anchor, string text, float scale);
+      public abstract void MeasureRealTextSize(CUIRect rect, Vector2 anchor, string text, float scale, CUIFont font);
 
+      public string RealText { get; protected set; }
       public Vector2 RawTextSize { get; protected set; }
       public Vector2 TextDrawPosition { get; protected set; }
       public CUINullVector2 ForcedSize { get; protected set; }

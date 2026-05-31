@@ -18,7 +18,7 @@ namespace CrabUI
       set
       {
         _Rect = value;
-        _ResizeStrategy.MeasureRealTextSize(Rect, Anchor, Text, Scale);
+        _ResizeStrategy.MeasureRealTextSize(Rect, Anchor, Text, Scale, Font);
       }
     }
 
@@ -63,7 +63,7 @@ namespace CrabUI
 
     public CUIFont Font { get; set; } = CUIFont.Font;
 
-
+    public string RealText => _ResizeStrategy.RealText;
     public Vector2 RawTextSize => _ResizeStrategy.RawTextSize;
     public Vector2 TextDrawPosition => _ResizeStrategy.TextDrawPosition;
     public CUINullVector2 ForcedSize => _ResizeStrategy.ForcedSize;
@@ -74,7 +74,7 @@ namespace CrabUI
     {
       Font.DrawString(
         spriteBatch,
-        Text,
+        RealText,
         TextDrawPosition,
         TextColor,
         rotation: 0,

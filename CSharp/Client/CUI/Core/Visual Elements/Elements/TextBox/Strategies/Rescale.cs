@@ -19,7 +19,7 @@ namespace CrabUI
         RawTextSize = font.MeasureString(text);
       }
 
-      public override void MeasureRealTextSize(CUIRect rect, Vector2 anchor, string text, float scale)
+      public override void MeasureRealTextSize(CUIRect rect, Vector2 anchor, string text, float scale, CUIFont font)
       {
         RealScale = scale;
 
@@ -33,6 +33,7 @@ namespace CrabUI
           RealTextSize = RawTextSize * RealScale;
         }
 
+        RealText = text;
         TextDrawPosition = CUIAnchor.ChildPosIn(rect, anchor, RealTextSize);
       }
     }

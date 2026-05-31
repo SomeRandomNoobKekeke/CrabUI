@@ -17,12 +17,20 @@ namespace CrabUI
       public override void MeasureRawTextSize(string text, float scale, CUIFont font)
       {
         RawTextSize = font.MeasureString(text);
-        ForcedSize = new CUINullVector2(RawTextSize);
       }
 
-      public override void MeasureRealTextSize(CUIRect rect, Vector2 anchor, string text, float scale)
+      public override void MeasureRealTextSize(CUIRect rect, Vector2 anchor, string text, float scale, CUIFont font)
       {
         Vector2 RealTextSize = RawTextSize * scale;
+        RealText = text;
+        RealScale = scale;
+
+
+        if (RealTextSize.X > rect.Width)
+        {
+          RealText = font.WrapText(text, rect.Width);
+          RealTextSize = font.MeasureString(RealText) * scale;
+        }
 
         TextDrawPosition = CUIAnchor.ChildPosIn(rect, anchor, RealTextSize);
       }

@@ -1,0 +1,3 @@
+<ModConfig>
+  <Assembly Folder="%ModDir%/CSharp/Client" Target="Client" IsScript="true" UseInternalAccessName="false" />
+</ModConfig>

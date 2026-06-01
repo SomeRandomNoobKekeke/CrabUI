@@ -12,27 +12,27 @@ namespace CrabUI
 {
   public partial class TextBlock
   {
-    public class PassiveStrategy : ResizeStrategyBase
+    public class WrapStrategy : ResizeStrategyBase
     {
-      // public DebugNode<CUIRect, Vector2, string, float, Vector2> Debug_MeasureRealTextSize { get; } = new(
-      //   DebugCategory.TextMeasurements, CUI.DebugHub,
-      //   (rect, anchor, text, scale, textDrawPosition) => $"rect:[{rect}] anchor:[{anchor}] text:[{text}] scale:[{scale}]  = [{textDrawPosition}]"
-      // )
-      // { IsOpen = true };
-
-
-
       public override void MeasureRawTextSize(string text, float scale, CUIFont font)
       {
         RawTextSize = font.MeasureString(text);
+        RealText = text;
       }
 
       public override void MeasureRealTextSize(CUIRect rect, Vector2 anchor, string text, float scale, CUIFont font)
       {
         Vector2 RealTextSize = RawTextSize * scale;
+        RealText = text;
         RealScale = scale;
 
-        RealText = text;
+
+        if (RealTextSize.X > rect.Width)
+        {
+          RealText = font.WrapText(text, rect.Width);
+          RealTextSize = font.MeasureString(RealText) * scale;
+        }
+
         TextDrawPosition = CUIAnchor.ChildPosIn(rect, anchor, RealTextSize);
       }
     }

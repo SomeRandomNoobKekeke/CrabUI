@@ -70,11 +70,21 @@ namespace CrabUI
       set => LayoutProps.ParentAnchor.Value = value;
     }
     [CUISerializable]
+    public CUIDirection Direction
+    {
+      get => LayoutProps.Direction.Value;
+      set => LayoutProps.Direction.Value = value;
+    }
+    [CUISerializable]
     public float? Flex
     {
       get => LayoutProps.Flex.Value;
       set => LayoutProps.Flex.Value = value;
     }
+
+
+
+
     [CUISerializable]
     public Vector2 ChildrenOffset
     {

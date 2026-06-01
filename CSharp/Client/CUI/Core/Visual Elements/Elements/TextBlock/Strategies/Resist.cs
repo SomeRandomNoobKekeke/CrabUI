@@ -18,6 +18,7 @@ namespace CrabUI
       {
         RawTextSize = font.MeasureString(text);
         ForcedSize = new CUINullVector2(RawTextSize);
+        RealText = text;
       }
 
       public override void MeasureRealTextSize(CUIRect rect, Vector2 anchor, string text, float scale, CUIFont font)

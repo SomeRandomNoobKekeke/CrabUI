@@ -23,6 +23,8 @@ namespace CrabUI
 
     public void DrawString(CUISpriteBatch sb, string text, Vector2 position, Color color, ForceUpperCase forceUpperCase = Barotrauma.ForceUpperCase.Inherit, bool italics = false)
     {
+      if (text is null) return;
+
       if (sb is __CUISpriteBatch)
       {
         GUIFont.DrawString(((__CUISpriteBatch)sb).XNASpriteBatch, text, position, color, forceUpperCase, italics);
@@ -31,6 +33,8 @@ namespace CrabUI
 
     public void DrawString(CUISpriteBatch sb, string text, Vector2 position, Color color, float rotation, Vector2 origin, float scale, SpriteEffects spriteEffects, float layerDepth, Alignment alignment = Alignment.TopLeft, ForceUpperCase forceUpperCase = Barotrauma.ForceUpperCase.Inherit)
     {
+      if (text is null) return;
+
       if (sb is __CUISpriteBatch)
       {
         GUIFont.DrawString(((__CUISpriteBatch)sb).XNASpriteBatch, text, position, color, rotation, origin, scale, spriteEffects, layerDepth, alignment, forceUpperCase);

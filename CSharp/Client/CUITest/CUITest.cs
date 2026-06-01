@@ -19,6 +19,7 @@ namespace CrabUIUser
       PrintFilePath = false
     };
 
+    public TestManagerGUI TestManagerGUI { get; } = new();
 
     public string TestDataFolder => Path.Combine(ModInfo.Dir, "Test Data");
     public string SnaphotsFolder => Path.Combine(TestDataFolder, "Snapshots");
@@ -28,7 +29,7 @@ namespace CrabUIUser
 
     public void Init()
     {
-
+      TestManagerGUI.Init();
     }
 
     public void Dispose()

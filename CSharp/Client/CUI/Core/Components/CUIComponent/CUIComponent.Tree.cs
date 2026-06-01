@@ -23,6 +23,17 @@ namespace CrabUI
     public void RemoveChild(CUIComponent child) => Tree.RemoveChild(child);
     public void RemoveAllChildren() => Tree.RemoveAllChildren();
 
+    public Dictionary<string, CUIComponent> NamedChildren
+    {
+      set
+      {
+        foreach (var (name, component) in value)
+        {
+          this[name] = component;
+        }
+      }
+    }
+
     public IEnumerable<CUIComponent> DeepChildren
     {
       get

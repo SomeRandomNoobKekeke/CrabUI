@@ -19,9 +19,6 @@ namespace CrabUIUser
       PrintFilePath = false
     };
 
-    public SnapshotTestManager SnapshotTestManager { get; } = new();
-    public SnapshotConsoleInterface SnapshotConsoleInterface { get; } = new();
-    public SnapshotGUI SnapshotGUI { get; } = new();
 
     public string TestDataFolder => Path.Combine(ModInfo.Dir, "Test Data");
     public string SnaphotsFolder => Path.Combine(TestDataFolder, "Snapshots");
@@ -31,15 +28,6 @@ namespace CrabUIUser
 
     public void Init()
     {
-      SnapshotConsoleInterface.Init();
-      SnapshotConsoleInterface.AttachTo(SnapshotTestManager);
-
-      SnapshotTestManager.SnaphotsFolder = SnaphotsFolder;
-      SnapshotTestManager.Add(typeof(SnapshotTests));
-      SnapshotTestManager.Init();
-
-      SnapshotGUI.AttachTo(SnapshotTestManager);
-      SnapshotGUI.Init();
 
     }
 

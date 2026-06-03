@@ -17,7 +17,7 @@ namespace CrabUIUser
     public CUIButton OpenButton { get; } = new CUIButton()
     {
       Absolute = new CUINullRect(w: 50, h: 30),
-      MasterColorOpaque = new Color(0, 0, 128),
+      MasterColor = new Color(0, 0, 128),
       Anchor = CUIAnchor.RightCenter,
       Text = "Test",
       TextColor = Color.White,
@@ -54,7 +54,7 @@ namespace CrabUIUser
       this["layout"]["header"]["close"] = new CUIButton()
       {
         Text = "X",
-        MasterColorOpaque = new Color(255, 0, 0),
+        MasterColor = new Color(255, 0, 0),
         Absolute = new CUINullRect(w: 30, h: 30),
         AddMouseDown = (c, e) => IsOpen = false,
       };

@@ -35,13 +35,13 @@ namespace CrabUIUser
       if (e.Name == "passed")
       {
         CUIButton btn = (CUIButton)ButtonList.Children.First(c => (c as CUIButton).Text == e.Test.Name);
-        btn.MasterColorOpaque = Color.Lime;
+        btn.MasterColor = Color.Lime;
       }
 
       if (e.Name == "failed")
       {
         CUIButton btn = (CUIButton)ButtonList.Children.First(c => (c as CUIButton).Text == e.Test.Name);
-        btn.MasterColorOpaque = Color.Red;
+        btn.MasterColor = Color.Red;
       }
     }
 
@@ -58,7 +58,7 @@ namespace CrabUIUser
           {
             Text = test.Name,
             Absolute = new CUINullRect(h: 30),
-            MasterColorOpaque = new Color(64, 64, 64),
+            MasterColor = new Color(64, 64, 64),
             AddMouseDown = (c, e) => Manager.Run(test.Name),
           });
         }
@@ -83,14 +83,14 @@ namespace CrabUIUser
       {
         Text = "Run All",
         Flex = 1,
-        MasterColorOpaque = new Color(64, 0, 64),
+        MasterColor = new Color(64, 0, 64),
         AddMouseDown = (c, e) => Manager.RunAll(),
       };
       this["layout"]["header"]["accept"] = new CUIButton()
       {
         Text = "Accept",
         Flex = 1,
-        MasterColorOpaque = new Color(64, 0, 64),
+        MasterColor = new Color(64, 0, 64),
         AddMouseDown = (c, e) => Manager.AcceptCurrent()
       };
       this["layout"]["btnlist"] = ButtonList = new CUIVerticalList()

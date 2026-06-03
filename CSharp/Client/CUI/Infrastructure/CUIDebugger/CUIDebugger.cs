@@ -85,7 +85,7 @@ namespace CrabUIUser
       {
         Text = "X",
         Absolute = new CUINullRect(w: 20, h: 20),
-        MasterColorOpaque = Color.Red,
+        MasterColor = Color.Red,
         AddMouseDown = (c, e) => Close(),
       };
 
@@ -99,7 +99,7 @@ namespace CrabUIUser
       {
         Text = "Events",
         Flex = 1,
-        MasterColorOpaque = Color.Blue,
+        MasterColor = Color.Blue,
         AddMouseDown = (c, e) => Pages.Open(EventsPage),
       };
 
@@ -107,7 +107,7 @@ namespace CrabUIUser
       {
         Text = "Components",
         Flex = 1,
-        MasterColorOpaque = Color.Blue,
+        MasterColor = Color.Blue,
         AddMouseDown = (c, e) => Pages.Open(ComponentsPage),
       };
 
@@ -115,7 +115,7 @@ namespace CrabUIUser
       {
         Text = "Gates",
         Flex = 1,
-        MasterColorOpaque = Color.Blue,
+        MasterColor = Color.Blue,
         AddMouseDown = (c, e) => Pages.Open(GatesPage),
       };
 

@@ -42,17 +42,6 @@ namespace CrabUI
     {
       set
       {
-        InactiveColor = value.Multiply(0.7f);
-        MouseOverColor = value.Multiply(0.9f);
-        MousePressedColor = value;
-        DetermineColor();
-      }
-    }
-
-    public Color MasterColorOpaque
-    {
-      set
-      {
         InactiveColor = new Color((int)(value.R * 0.7f), (int)(value.G * 0.7f), (int)(value.B * 0.7f), value.A);
         MouseOverColor = new Color((int)(value.R * 0.9f), (int)(value.G * 0.9f), (int)(value.B * 0.9f), value.A);
         MousePressedColor = value;
@@ -123,7 +112,7 @@ namespace CrabUI
 
     public CUIButton() : base()
     {
-      MasterColorOpaque = Color.Blue;//TODO Remove
+      MasterColor = Color.Blue;//TODO Remove
 
       MouseOff += (c, e) => DetermineColor();
       MouseOn += (c, e) => DetermineColor();

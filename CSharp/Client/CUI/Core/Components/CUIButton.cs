@@ -108,6 +108,12 @@ namespace CrabUI
       set => TextBlock.Font = value;
     }
 
+    public ResizeStrategy ResizeStrategy
+    {
+      get => TextBlock.ResizeStrategy;
+      set => TextBlock.ResizeStrategy = value;
+    }
+
     public void DetermineColor()
     {
       BackgroundColor = InactiveColor;
@@ -117,6 +123,8 @@ namespace CrabUI
 
     public CUIButton() : base()
     {
+      MasterColorOpaque = Color.Blue;//TODO Remove
+
       MouseOff += (c, e) => DetermineColor();
       MouseOn += (c, e) => DetermineColor();
       DetermineColor();

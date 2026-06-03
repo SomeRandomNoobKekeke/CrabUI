@@ -97,7 +97,18 @@ namespace CrabUI
       }
       else
       {
-        //TODO implement
+        float x = Host.Rect.Width;
+        foreach (ChildSize c in sizes)
+        {
+          x -= c.Width;
+
+          c.Child.Rect = new CUIRect(
+            Host.Rect.Left + x,
+            Host.Rect.Top + 0,
+            c.Width,
+            c.Height
+          );
+        }
       }
 
       RequireChildrenUpdate = false;

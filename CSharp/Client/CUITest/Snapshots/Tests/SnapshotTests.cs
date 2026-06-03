@@ -8,19 +8,13 @@ using Barotrauma;
 using BaroJunk;
 using CrabUI;
 using Microsoft.Xna.Framework;
-using System.IO;
 
 namespace CrabUIUser
 {
-  public class SnapshotTestManagerGUI : CUIPage
+  public partial class SnapshotTests
   {
-    public SnapshotTestManagerGUI()
-    {
-      this["burh"] = new CUITextBlock()
-      {
-        Text = "bruh",
-        Absolute = new CUINullRect(0, 0, 100, 20),
-      };
-    }
+    // public static string TempFolder => Mod.Instance.CUITest.SnaphotsTempFolder;
+
+    public static VirtualFileSystem VirtualFileSystem => Mod.Instance.CUITest.VirtualFileSystem;
   }
 }

@@ -1,0 +1,110 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using Barotrauma;
+using BaroJunk;
+using CrabUI;
+using Microsoft.Xna.Framework;
+using System.IO;
+
+namespace CrabUIUser
+{
+  public partial class TestManager : CUIFrame
+  {
+    public CUIButton OpenButton { get; } = new CUIButton()
+    {
+      Absolute = new CUINullRect(w: 50, h: 30),
+      MasterColorOpaque = new Color(0, 0, 128),
+      Anchor = CUIAnchor.RightCenter,
+      Text = "Test",
+      TextColor = Color.White,
+    };
+
+
+    public CUIPages Pages { get; private set; }
+
+
+
+    public void CreateUI()
+    {
+      OpenButton.MouseDown += (c, e) => IsOpen = true;
+
+
+      Absolute = new CUINullRect(w: 300, h: 400);
+      BackgroundColor = new Color(32, 32, 32);
+      Anchor = CUIAnchor.RightCenter;
+      Draggable = false;
+
+      this["layout"] = new CUIVerticalList()
+      {
+        Relative = new CUINullRect(0, 0, 1, 1),
+      };
+
+      this["layout"]["header"] = new CUIHorizontalList()
+      {
+        Direction = CUIDirection.Reverse,
+        Absolute = new CUINullRect(h: 30),
+        BackgroundColor = new Color(32, 32, 32),
+
+      };
+
+      this["layout"]["header"]["close"] = new CUIButton()
+      {
+        Text = "X",
+        MasterColorOpaque = new Color(255, 0, 0),
+        Absolute = new CUINullRect(w: 30, h: 30),
+        AddMouseDown = (c, e) => IsOpen = false,
+      };
+
+      this["layout"]["header"]["caption"] = new CUIComponent()
+      {
+        Flex = 1,
+      };
+
+      this["layout"]["header"]["bruh"] = new CUIButton()
+      {
+        Text = "bruh",
+        // ResizeStrategy = ResizeStrategy.Resist,
+        Absolute = new CUINullRect(w: 90),
+
+      };
+
+      this["layout"]["header"]["snapshots"] = new CUIButton()
+      {
+        Text = "Snapshots",
+        // ResizeStrategy = ResizeStrategy.Resist,
+        Absolute = new CUINullRect(w: 90),
+        AddMouseDown = (c, e) => Pages.Open(SnapshotTestManager.UI),
+      };
+
+      this["layout"]["main"] = Pages = new CUIPages()
+      {
+        Flex = 1,
+      };
+    }
+
+    public bool IsOpen
+    {
+      get => this.Parent != null;
+      set
+      {
+        if (value)
+        {
+          OpenButton.RemoveSelf();
+          this.Open();
+          Pages.Open(SnapshotTestManager.UI);
+        }
+        else
+        {
+          CUI.TopMain.Append(OpenButton);
+          this.Close();
+          Pages.RemoveAllChildren();
+          ModStorage.Remove("CUITest");
+        }
+      }
+    }
+  }
+}

@@ -19,17 +19,18 @@ namespace CrabUIUser
       PrintFilePath = false
     };
 
-    public TestManagerGUI TestManagerGUI { get; } = new();
+    public TestManager TestManager { get; } = new();
 
-    public string TestDataFolder => Path.Combine(ModInfo.Dir, "Test Data");
-    public string SnaphotsFolder => Path.Combine(TestDataFolder, "Snapshots");
-    public string SnaphotsTempFolder => Path.Combine(TestDataFolder, "Temp");
+    public static string TestDataFolder => Path.Combine(ModInfo.Dir, "Test Data");
+    public static string SnaphotsFolder => Path.Combine(TestDataFolder, "Snapshots");
+    public static string SnaphotsTempFolder => Path.Combine(TestDataFolder, "Temp");
 
     public VirtualFileSystem VirtualFileSystem { get; } = new();
 
     public void Init()
     {
-      TestManagerGUI.Init();
+      TestManager.SnapshotTestManager.Repo.Add(typeof(SnapshotTests));
+      TestManager.Init();
     }
 
     public void Dispose()

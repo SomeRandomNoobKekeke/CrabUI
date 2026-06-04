@@ -15,22 +15,29 @@ namespace CrabUIUser
   public partial class TestManager
   {
     public SnapshotTestManager SnapshotTestManager { get; } = new();
+    public E2ETestManager E2ETestManager { get; } = new();
+
 
 
     public void Init()
     {
-      IsOpen = false;
+
 
       if (ModStorage.Has("CUITest"))
       {
+        IsOpen = true;
+
         string name = (string)ModStorage.Get("CUITest");
 
         if (SnapshotTestManager.Repo.Tests.ContainsKey(name))
         {
-          IsOpen = true;
           Pages.Open(SnapshotTestManager.UI);
           SnapshotTestManager.Run(name);
         }
+      }
+      else
+      {
+        IsOpen = false;
       }
     }
 

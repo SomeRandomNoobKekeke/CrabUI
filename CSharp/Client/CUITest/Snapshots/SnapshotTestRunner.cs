@@ -20,8 +20,6 @@ namespace CrabUIUser
 
     public ComponentSnapshot Run(SnapshotTest test)
     {
-      if (!Chamber.IsSetup) Chamber.Setup();
-
       try
       {
         CUIComponent TestSubject = (CUIComponent)test.TestFunc();

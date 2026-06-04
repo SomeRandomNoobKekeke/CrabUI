@@ -20,7 +20,7 @@ namespace CrabUIUser
     };
 
     public CUIDebugger CUIDebugger { get; } = new();
-    public CUITest CUITest { get; } = new();
+    public CUITest CUITest { get; set; }
 
     public void Initialize()
     {
@@ -35,6 +35,7 @@ namespace CrabUIUser
         CUI.Start();
 
         UTestCommands.AddCommands();
+        CUITest = new CUITest();
         CUITest.Init();
 
         CUIDebugger.Init();

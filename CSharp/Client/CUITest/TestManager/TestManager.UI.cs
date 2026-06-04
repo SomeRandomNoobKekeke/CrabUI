@@ -64,12 +64,12 @@ namespace CrabUIUser
         Flex = 1,
       };
 
-      this["layout"]["header"]["bruh"] = new CUIButton()
+      this["layout"]["header"]["E2E"] = new CUIButton()
       {
-        Text = "bruh",
+        Text = "E2E",
         // ResizeStrategy = ResizeStrategy.Resist,
         Absolute = new CUINullRect(w: 90),
-
+        AddMouseDown = (c, e) => Pages.Open(E2ETestManager.UI),
       };
 
       this["layout"]["header"]["snapshots"] = new CUIButton()
@@ -101,7 +101,7 @@ namespace CrabUIUser
         {
           CUI.TopMain.Append(OpenButton);
           this.Close();
-          Pages.RemoveAllChildren();
+          Pages.Dismantle(); // This should trigger dismantle on concrete page
           ModStorage.Remove("CUITest");
         }
       }

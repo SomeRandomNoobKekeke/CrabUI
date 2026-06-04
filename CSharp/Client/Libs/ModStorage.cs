@@ -20,7 +20,7 @@ namespace BaroJunk
   /// </summary>
   public static class ModStorage
   {
-    public static bool Debug { get; set; } = true;
+    public static bool Debug { get; set; } = false;
 
     public static TValue Get<TValue>(string key) => (TValue)Get(key);
 

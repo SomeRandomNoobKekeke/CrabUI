@@ -30,6 +30,10 @@ namespace CrabUIUser
     public void Init()
     {
       TestManager.SnapshotTestManager.Repo.Add(typeof(SnapshotTests));
+      TestManager.E2ETestManager.Repo.AddPack(typeof(E2ETestPack));
+
+      CUI.Logger.Log(Logger.Wrap.IDictionary(TestManager.E2ETestManager.Repo.Tests));
+
       TestManager.Init();
     }
 

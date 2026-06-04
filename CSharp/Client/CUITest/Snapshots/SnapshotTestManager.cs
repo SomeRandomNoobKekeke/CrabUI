@@ -55,6 +55,8 @@ namespace CrabUIUser
 
       ModStorage.Set("CUITest", name);
 
+      if (!Chamber.IsSetup) Chamber.Setup();
+
       CurrentTest = Repo.Tests[name];
       CurrentSnapshot = Runner.Run(CurrentTest);
       ComponentSnapshot stored = GetStoredSnapshot(CurrentTest);
@@ -76,14 +78,12 @@ namespace CrabUIUser
       }
     }
 
-    public void Dismantle()
-    {
-      Chamber.Dismantle();
-      ModStorage.Remove("CUITest");
-    }
+    public void Setup() => Chamber.Setup();
+    public void Dismantle() => Chamber.Dismantle();
 
     public void AcceptCurrent()
     {
+      if (CurrentTest is null) return;
       Accept(CurrentTest, CurrentSnapshot);
       Events.Raise(new Event("passed", CurrentTest));
     }

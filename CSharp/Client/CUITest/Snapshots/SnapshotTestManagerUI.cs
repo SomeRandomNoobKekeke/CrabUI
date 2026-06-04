@@ -27,6 +27,7 @@ namespace CrabUIUser
     public void UpdateTests()
     {
       RemoveAllChildren();
+      Manager.Dismantle();
     }
 
 
@@ -51,6 +52,7 @@ namespace CrabUIUser
 
       OnOpen.Add(() =>
       {
+        Manager.Setup();
         ButtonList.RemoveAllChildren();
         foreach (SnapshotTest test in Manager.Repo.Tests.Values)
         {
@@ -67,6 +69,7 @@ namespace CrabUIUser
       OnClose.Add(() =>
       {
         ButtonList.RemoveAllChildren();
+        Manager.Dismantle();
       });
 
       BackgroundColor = new Color(32, 32, 32);

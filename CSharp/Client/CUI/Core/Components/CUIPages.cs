@@ -15,11 +15,7 @@ namespace CrabUI
     public CUIComponent OpenedPage;
 
     public bool IsOpened(CUIComponent p) => OpenedPage == p;
-
-    /// <summary>
-    /// Adds page as its only child
-    /// </summary>
-    public void Open(CUIComponent page)
+    public void Dismantle()
     {
       if (Children.Count > 0 && Children[0] is CUIPage)
       {
@@ -27,6 +23,14 @@ namespace CrabUI
       }
 
       RemoveAllChildren();
+    }
+
+    /// <summary>
+    /// Adds page as its only child
+    /// </summary>
+    public void Open(CUIComponent page)
+    {
+      Dismantle();
 
       Append(page);
       page.Relative = new CUINullRect(0, 0, 1, 1);

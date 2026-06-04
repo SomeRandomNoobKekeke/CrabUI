@@ -84,5 +84,8 @@ namespace CrabUI
       yield return new VisualUnit.RightContextBound();
     }
 
+    public CUITextBlock() : base() { }
+    public CUITextBlock(string text) : base() => Text = text;
+
   }
 }

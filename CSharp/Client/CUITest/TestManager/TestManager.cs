@@ -34,6 +34,12 @@ namespace CrabUIUser
           Pages.Open(SnapshotTestManager.UI);
           SnapshotTestManager.Run(name);
         }
+
+        if (E2ETestManager.Repo.Tests.ContainsKey(name))
+        {
+          Pages.Open(E2ETestManager.UI);
+          E2ETestManager.Run(name);
+        }
       }
       else
       {

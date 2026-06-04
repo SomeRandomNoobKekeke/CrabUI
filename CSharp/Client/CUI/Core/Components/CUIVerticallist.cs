@@ -12,8 +12,8 @@ namespace CrabUI
 {
   public partial class CUIVerticalList : CUIComponent, IComponent
   {
-
     public void Clear() => RemoveAllChildren();
+    public void Add(CUIComponent child) => Append(child);
 
     public CUIVerticalList() : base()
     {

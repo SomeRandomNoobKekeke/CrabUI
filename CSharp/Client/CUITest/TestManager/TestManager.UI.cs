@@ -94,7 +94,7 @@ namespace CrabUIUser
         if (value)
         {
           OpenButton.RemoveSelf();
-          this.Open();
+          this.Open(CUI.TopMain);
           Pages.Open(SnapshotTestManager.UI);
         }
         else

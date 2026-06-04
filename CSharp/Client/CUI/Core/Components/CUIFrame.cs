@@ -23,14 +23,11 @@ namespace CrabUI
     }
 
 
-    public void Close()
-    {
-      RemoveSelf();
-    }
+    public void Close() => RemoveSelf();
 
     public CUIFrame() : base()
     {
-      this.Draggable = true;
+      this.Draggable = true; // This should be in style
     }
   }
 }

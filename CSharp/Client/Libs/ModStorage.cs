@@ -20,6 +20,8 @@ namespace BaroJunk
   /// </summary>
   public static class ModStorage
   {
+    public static bool Debug { get; set; } = true;
+
     public static TValue Get<TValue>(string key) => (TValue)Get(key);
 
     public static object Get(string key)
@@ -30,6 +32,12 @@ namespace BaroJunk
 
     public static void Set(string key, object value)
     {
+      if (Debug)
+      {
+        Logger.Default.Log($"\n\nModStorage| [{Logger.WrapInColor(key, "white")}] = {Logger.WrapInColor(value, "white")}");
+        Logger.Default.PrintStackTrace();
+      }
+
       Dictionary<string, object> repo = GetOrCreateRepo();
       repo[key] = value;
     }
@@ -42,6 +50,12 @@ namespace BaroJunk
 
     public static void Remove(string key)
     {
+      if (Debug)
+      {
+        Logger.Default.Log($"\n\nModStorage| [{Logger.WrapInColor(key, "white")}] removed");
+        Logger.Default.PrintStackTrace();
+      }
+
       Dictionary<string, object> repo = GetOrCreateRepo();
       repo.Remove(key);
     }

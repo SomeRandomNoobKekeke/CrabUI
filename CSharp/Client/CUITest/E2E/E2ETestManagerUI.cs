@@ -32,17 +32,7 @@ namespace CrabUIUser
 
     public void HandleManagerEvent(E2ETestManager.Event e)
     {
-      // if (e.Name == "passed")
-      // {
-      //   CUIButton btn = (CUIButton)ButtonList.Children.First(c => (c as CUIButton).Text == e.Test.Name);
-      //   btn.MasterColor = Color.Lime;
-      // }
 
-      // if (e.Name == "failed")
-      // {
-      //   CUIButton btn = (CUIButton)ButtonList.Children.First(c => (c as CUIButton).Text == e.Test.Name);
-      //   btn.MasterColor = Color.Red;
-      // }
     }
 
     public void CreateUI()
@@ -67,6 +57,7 @@ namespace CrabUIUser
       OnClose.Add(() =>
       {
         ButtonList.RemoveAllChildren();
+        Manager.CleanUp();
       });
 
       BackgroundColor = new Color(32, 32, 32);

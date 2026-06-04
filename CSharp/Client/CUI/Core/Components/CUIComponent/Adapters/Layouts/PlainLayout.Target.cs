@@ -34,12 +34,13 @@ namespace CrabUI
 
         CUINullVector2 PlainLayout.Target.MinSize
         {
-          get => Self.MinSize;
+          get => Self.MinSizeOverride;
+          set => Self.MinSize = value;
         }
 
         CUINullVector2 PlainLayout.Target.MaxSize
         {
-          get => Self.MaxSize;
+          get => Self.MaxSizeOverride;
           set => Self.MaxSize = value;
         }
 

@@ -25,7 +25,7 @@ namespace CrabUI
       public CUINullRect CrossRelative { get; }
 
       public CUIBool2 FitContent { get; }
-      public CUINullVector2 MinSize { get; }
+      public CUINullVector2 MinSize { get; set; }
       public CUINullVector2 MaxSize { get; set; }
 
       public IReadOnlyList<Target> Children { get; }
@@ -136,6 +136,7 @@ namespace CrabUI
           rightmostRight = Math.Max(rightmostRight, x + w);
         }
 
+        Host.MinSize = Host.MinSize with { X = rightmostRight };
         Host.MaxSize = Host.MaxSize with { X = rightmostRight };
       }
 
@@ -160,6 +161,7 @@ namespace CrabUI
           bottommostBottom = Math.Max(bottommostBottom, y + h);
         }
 
+        Host.MinSize = Host.MinSize with { Y = bottommostBottom };
         Host.MaxSize = Host.MaxSize with { Y = bottommostBottom };
       }
 

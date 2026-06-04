@@ -29,6 +29,17 @@ namespace CrabUIUser
 
     public ClearableEvent<Event> Events { get; } = new();
 
+    public void CleanUp()
+    {
+      if (CurrentTest != null)
+      {
+        CurrentTest.Dispose();
+        CurrentTest = null;
+      }
+
+      CUI.Main.RemoveAllChildren();
+    }
+
     public void RunAll()
     {
       foreach (string name in Repo.Tests.Keys)
@@ -52,9 +63,7 @@ namespace CrabUIUser
     {
       try
       {
-        if (CurrentTest != null) CurrentTest.Dispose();
-
-        CUI.Main.RemoveAllChildren();
+        CleanUp();
 
         CurrentTest = (IE2ETest)Activator.CreateInstance(testType);
         CurrentTest.Initialize();

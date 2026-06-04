@@ -23,10 +23,29 @@ namespace CrabUI
           get => Self.Rect;
           set => Self.Rect = value;
         }
-        CUINullRect CUIVerticalListLayout.Target.Absolute
-          => Self.LayoutProps.Absolute.Value;
-        CUINullRect CUIVerticalListLayout.Target.Relative
-          => Self.LayoutProps.Relative.Value;
+        CUINullRect CUIVerticalListLayout.Target.Absolute => Self.LayoutProps.Absolute.Value;
+        CUINullRect CUIVerticalListLayout.Target.AbsoluteMin => Self.LayoutProps.AbsoluteMin.Value;
+        CUINullRect CUIVerticalListLayout.Target.AbsoluteMax => Self.LayoutProps.AbsoluteMax.Value;
+        CUINullRect CUIVerticalListLayout.Target.Relative => Self.LayoutProps.Relative.Value;
+        CUINullRect CUIVerticalListLayout.Target.RelativeMin => Self.LayoutProps.RelativeMin.Value;
+        CUINullRect CUIVerticalListLayout.Target.RelativeMax => Self.LayoutProps.RelativeMax.Value;
+        CUINullRect CUIVerticalListLayout.Target.CrossRelative => Self.LayoutProps.CrossRelative.Value;
+
+        CUINullVector2 CUIVerticalListLayout.Target.MinSize
+        {
+          get => Self.MinSizeOverride;
+          set => Self.MinSize = value;
+        }
+
+        CUINullVector2 CUIVerticalListLayout.Target.MaxSize
+        {
+          get => Self.MaxSizeOverride;
+          set => Self.MaxSize = value;
+        }
+
+        CUIBool2 CUIVerticalListLayout.Target.FitContent => Self.FitContent;
+
+
         CUIDirection CUIVerticalListLayout.Target.Direction
           => Self.LayoutProps.Direction.Value;
 

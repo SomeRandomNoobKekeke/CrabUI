@@ -10,7 +10,7 @@ using CrabUI;
 using Microsoft.Xna.Framework;
 
 
-namespace CrabUIUser
+namespace CrabUI
 {
   public class CUIDebugger
   {

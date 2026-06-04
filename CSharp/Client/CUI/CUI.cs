@@ -13,6 +13,7 @@ namespace CrabUI
   {
     static CUI()
     {
+      CUICommands.Add();
       PluginLifeCycle.Stop += Dispose;
 
       Setup = CUISetup.Default();

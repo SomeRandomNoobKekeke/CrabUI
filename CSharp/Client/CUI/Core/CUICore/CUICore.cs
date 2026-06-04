@@ -27,11 +27,6 @@ namespace CrabUI
     }
 
     public CUIMainComponent Main { get; private set; }
-
-
-    /// <summary>
-    ///  Temporary half-assed
-    /// </summary>
     public CUIMainComponent TopMain { get; private set; }
     public CUIInput Input { get; } = new();
 

@@ -94,8 +94,8 @@ namespace CrabUI
     [CUISerializable]
     public CUIBoundaries ChildrenOffsetBounds
     {
-      get => LayoutProps.ChildrenOffsetBounds.Value;
-      set => LayoutProps.ChildrenOffsetBounds.Value = value;
+      get => LayoutProps.ChildrenOffset.Bounds;
+      set => LayoutProps.ChildrenOffset.Bounds = value;
     }
 
     [CUISerializable]

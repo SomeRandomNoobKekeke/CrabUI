@@ -127,14 +127,14 @@ namespace CrabUI
 
     public override IEnumerable<VisualUnit> VisualSplit()
     {
-      yield return new VisualUnit.PrimitiveVisualElement(Background);
+      if (!Visible || CulledOut) yield break;
+
+      yield return VisualWrappers.BackgroundWrapper;
       yield return new VisualUnit.PrimitiveVisualElement(TextBlock);
-      yield return new VisualUnit.LeftContextBound();
       foreach (CUIComponent child in Tree.Children)
       {
-        yield return new VisualUnit.NestedVisualComponent(child);
+        yield return child.VisualWrappers.SelfWrapper;
       }
-      yield return new VisualUnit.RightContextBound();
     }
 
   }

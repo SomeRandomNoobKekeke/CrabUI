@@ -129,8 +129,11 @@ namespace CrabUI
       if (Visible) yield return new VisualUnit.PrimitiveVisualElement(Background);
     }
 
+    public VisualUnit.NestedVisualComponent SelfWrapper { get; }
+
     public ResizeHandle()
     {
+      SelfWrapper = new VisualUnit.NestedVisualComponent(this);
       Background.Color = Color.Yellow;
 
       Anchor = new Vector2(1, 1);

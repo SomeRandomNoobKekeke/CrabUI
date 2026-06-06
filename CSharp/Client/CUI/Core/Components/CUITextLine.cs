@@ -33,12 +33,10 @@ namespace CrabUI
 
       yield return new VisualUnit.PrimitiveVisualElement(Background);
       yield return new VisualUnit.PrimitiveVisualElement(TextLine);
-      yield return new VisualUnit.LeftContextBound();
       foreach (CUIComponent child in Tree.Children)
       {
         yield return new VisualUnit.NestedVisualComponent(child);
       }
-      yield return new VisualUnit.RightContextBound();
     }
 
   }

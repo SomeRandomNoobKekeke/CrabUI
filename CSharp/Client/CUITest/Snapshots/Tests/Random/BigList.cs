@@ -37,6 +37,8 @@ namespace CrabUIUser
           CullChildren = true,
         };
 
+        frame["list"].ScissorRect = new Rectangle(300, 300, 500, 500);
+
         for (int i = 1; i < 100; i++)
         {
           frame["list"].Append(new CUITextBlock()

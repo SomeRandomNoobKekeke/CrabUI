@@ -27,10 +27,10 @@ namespace CrabUI
             case VisualUnit.PrimitiveVisualElement primitive:
               Flat.Add(primitive);
               break;
-            case VisualUnit.LeftContextBound left:
+            case VisualBounds.LeftContextBound left:
               Flat.Add(left);
               break;
-            case VisualUnit.RightContextBound right:
+            case VisualBounds.RightContextBound right:
               Flat.Add(right);
               break;
             case VisualUnit.NestedVisualComponent nested:

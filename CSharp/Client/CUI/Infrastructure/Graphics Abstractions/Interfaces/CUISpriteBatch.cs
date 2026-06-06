@@ -12,6 +12,8 @@ namespace CrabUI
   public interface CUISpriteBatch
   {
     public void Draw(CUITexture2D texture, Rectangle destinationRectangle, Color color);
+    public Rectangle ScissorRect { get; }
+    public void StopStart(Rectangle ScissorRect);
   }
 
 }

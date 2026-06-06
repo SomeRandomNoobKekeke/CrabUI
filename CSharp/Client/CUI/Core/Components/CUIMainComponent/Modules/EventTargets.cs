@@ -34,10 +34,10 @@ namespace CrabUI
             }
 
             break;
-          case VisualUnit.LeftContextBound left:
+          case VisualBounds.LeftContextBound left:
             // leave context
             break;
-          case VisualUnit.RightContextBound right:
+          case VisualBounds.RightContextBound right:
             // enter context
             break;
           default:

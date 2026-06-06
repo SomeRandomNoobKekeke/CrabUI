@@ -37,18 +37,48 @@ namespace CrabUI
       RightResizeHandle.UpdateRect();
     }
 
+    public Rectangle? ScissorRect
+    {
+      get => VisualBounds.ScissorRect;
+      set => VisualBounds.ScissorRect = value;
+    }
+    protected VisualBounds VisualBounds { get; } = new();
+
+
     public override IEnumerable<VisualUnit> VisualSplit()
     {
       if (!Visible || CulledOut) yield break;
 
-      yield return new VisualUnit.PrimitiveVisualElement(Background);
-      yield return new VisualUnit.LeftContextBound();
+      yield return VisualWrappers.BackgroundWrapper;
+      yield return VisualBounds.LeftBound;
       foreach (CUIComponent child in Tree.Children)
       {
-        yield return new VisualUnit.NestedVisualComponent(child);
+        yield return child.VisualWrappers.SelfWrapper;
       }
-      yield return new VisualUnit.RightContextBound();
-      yield return new VisualUnit.NestedVisualComponent(RightResizeHandle);
+      yield return VisualBounds.RightBound;
+      yield return RightResizeHandle.SelfWrapper;
     }
+
+
+
+
+    //Just optimization to not create new Wrappers every Frame
+    protected VisualWrappers_Part VisualWrappers { get; } = new();
+    public class VisualWrappers_Part : Part
+    {
+      public void Init()
+      {
+        BackgroundWrapper = new VisualUnit.PrimitiveVisualElement(Self.Background);
+        SelfWrapper = new VisualUnit.NestedVisualComponent(Self);
+      }
+      public VisualUnit.NestedVisualComponent SelfWrapper { get; private set; }
+      public VisualUnit.PrimitiveVisualElement BackgroundWrapper { get; private set; }
+    }
+
+
+
+
+
+
   }
 }

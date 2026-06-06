@@ -23,8 +23,5 @@ namespace CrabUI
       public NestedVisualComponent(IVisualComponent component) => Component = component;
       public override string ToString() => Component.ToString();
     }
-
-    public class LeftContextBound : VisualUnit { }
-    public class RightContextBound : VisualUnit { }
   }
 }

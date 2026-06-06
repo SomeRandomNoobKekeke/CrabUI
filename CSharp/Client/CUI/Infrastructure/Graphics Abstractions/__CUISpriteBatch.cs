@@ -12,6 +12,14 @@ namespace CrabUI
   public class __CUISpriteBatch : CUISpriteBatch
   {
     public SpriteBatch XNASpriteBatch { get; set; }
+    public Rectangle ScissorRect => XNASpriteBatch.GraphicsDevice.ScissorRectangle;
+
+    public void StopStart(Rectangle ScissorRect)
+    {
+      XNASpriteBatch.End();
+      XNASpriteBatch.GraphicsDevice.ScissorRectangle = ScissorRect;
+      XNASpriteBatch.Begin(SpriteSortMode.Deferred, rasterizerState: GameMain.ScissorTestEnable);
+    }
 
     public void Draw(CUITexture2D texture, Rectangle destinationRectangle, Color color)
     {

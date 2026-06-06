@@ -36,6 +36,8 @@ namespace CrabUI
         IReadOnlyList<Layout.Target> Layout.Target.Children => new ListProxy<CUIComponent, Layout.Target>(
           Self.Tree.Children, c => c.Adapters.Layout
         );
+
+        void Layout.Target.NotifyVisualsRestructured() => Self.VisualRestructureNotifier.Notify();
       }
     }
   }

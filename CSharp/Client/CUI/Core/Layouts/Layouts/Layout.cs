@@ -19,6 +19,8 @@ namespace CrabUI
       public IReadOnlyList<Target> Children { get; }
       public bool CullChildren { get; }
       public bool CulledOut { get; set; }
+
+      void NotifyVisualsRestructured();
     }
 
     public virtual void InjectHost(Target host) => Host = host;
@@ -35,6 +37,8 @@ namespace CrabUI
         {
           child.CulledOut = !child.Rect.Intersect(Host.Rect);
         }
+
+        Host.NotifyVisualsRestructured();
       }
 
       RequireChildrenUpdate = false;

@@ -26,10 +26,7 @@ namespace CrabUI
 
     public GrabbedHandleTracker GrabbedHandleTracker { get; } = new();
 
-    private bool GlobalLayoutChanged;
-
     public bool MouseOverSomeElement => EventTargets.TopTarget != null;
-    public void NotifyThatLayoutHasChanged() => GlobalLayoutChanged = true;
 
     public void DrawChildren(CUISpriteBatch spriteBatch)
     {
@@ -41,21 +38,25 @@ namespace CrabUI
       Update(LastUpdateTime + UpdateInterval, null);
     }
 
-    private bool VisualChanged; //CRINGE
+
+    public bool RequireLayoutUpdate { get; set; }
+    public bool RequireVisualRestructure { get; set; }
+
+
     private double LastUpdateTime;
     public void Update(double totalTime, CUIInput Input)
     {
       if (Tree.Changed)
       {
         Tree.Changed = false;
-        VisualChanged = true;
-        GlobalLayoutChanged = true;
+        RequireVisualRestructure = true;
+        RequireLayoutUpdate = true;
         LayoutFlattener.Flatten(this);
       }
 
-      if (GlobalLayoutChanged)
+      if (RequireLayoutUpdate)
       {
-        GlobalLayoutChanged = false;
+        RequireLayoutUpdate = false;
         UpdateLayout();
       }
 
@@ -64,9 +65,9 @@ namespace CrabUI
         HandleInput(Input);
       }
 
-      if (VisualChanged)
+      if (RequireVisualRestructure)
       {
-        VisualChanged = false;
+        RequireVisualRestructure = false;
         VisualFlattener.Flatten(this);
       }
 

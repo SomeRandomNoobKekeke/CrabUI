@@ -33,8 +33,7 @@ namespace CrabUI
             child => child.Adapters.LayoutMarker
           );
 
-        void LayoutMarker.Target.NotifyMainComponent()
-          => Self.MainComponentTracker.MainComponent?.NotifyThatLayoutHasChanged();
+        void LayoutMarker.Target.NotifyLayoutUpdated() => Self.LayoutUpdateNotifier.Notify();
       }
     }
   }

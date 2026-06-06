@@ -17,7 +17,7 @@ namespace CrabUI
       public Target Parent { get; }
       public Layout Layout { get; }
       public IReadOnlyList<Target> Children { get; }
-      public void NotifyMainComponent();
+      public void NotifyLayoutUpdated();
     }
 
     [In] public Target Host { get; set; }
@@ -26,7 +26,7 @@ namespace CrabUI
     {
       if (pattern.Empty) return;
       pattern.MarkFunc(Host);
-      Host.NotifyMainComponent();
+      Host.NotifyLayoutUpdated();
     }
   }
 }

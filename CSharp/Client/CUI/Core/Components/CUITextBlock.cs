@@ -74,6 +74,8 @@ namespace CrabUI
 
     public override IEnumerable<VisualUnit> VisualSplit()
     {
+      if (!Visible || CulledOut) yield break;
+
       yield return new VisualUnit.PrimitiveVisualElement(Background);
       yield return new VisualUnit.PrimitiveVisualElement(TextBlock);
       yield return new VisualUnit.LeftContextBound();

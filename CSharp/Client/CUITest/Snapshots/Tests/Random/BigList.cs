@@ -34,6 +34,7 @@ namespace CrabUIUser
             CUI.Logger.Log(c.ChildrenOffset);
           },
           ChildrenOffsetBounds = new CUIBoundaries(minY: 0),
+          CullChildren = true,
         };
 
         for (int i = 1; i < 100; i++)

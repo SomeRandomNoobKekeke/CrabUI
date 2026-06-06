@@ -18,11 +18,6 @@ namespace CrabUI
     {
       public partial class Layout_Adapter : CUIVerticalListLayout.Target
       {
-        CUIRect CUIVerticalListLayout.Target.Rect
-        {
-          get => Self.Rect;
-          set => Self.Rect = value;
-        }
         CUINullRect CUIVerticalListLayout.Target.Absolute => Self.LayoutProps.Absolute.Value;
         CUINullRect CUIVerticalListLayout.Target.AbsoluteMin => Self.LayoutProps.AbsoluteMin.Value;
         CUINullRect CUIVerticalListLayout.Target.AbsoluteMax => Self.LayoutProps.AbsoluteMax.Value;

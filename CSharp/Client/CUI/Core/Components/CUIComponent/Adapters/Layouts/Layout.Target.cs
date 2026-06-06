@@ -20,6 +20,22 @@ namespace CrabUI
 
       public partial class Layout_Adapter : Part, IAdapterPart, Layout.Target
       {
+        CUIRect Layout.Target.Rect
+        {
+          get => Self.Rect;
+          set => Self.Rect = value;
+        }
+
+        bool Layout.Target.CullChildren => Self.CullChildren;
+        bool Layout.Target.CulledOut
+        {
+          get => Self.CulledOut;
+          set => Self.CulledOut = value;
+        }
+
+        IReadOnlyList<Layout.Target> Layout.Target.Children => new ListProxy<CUIComponent, Layout.Target>(
+          Self.Tree.Children, c => c.Adapters.Layout
+        );
       }
     }
   }

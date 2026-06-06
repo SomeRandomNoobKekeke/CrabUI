@@ -15,16 +15,28 @@ namespace CrabUI
   {
     public interface Target : IModule
     {
-
+      public CUIRect Rect { get; set; }
+      public IReadOnlyList<Target> Children { get; }
+      public bool CullChildren { get; }
+      public bool CulledOut { get; set; }
     }
 
-    public virtual void InjectHost(Target host) { }
+    public virtual void InjectHost(Target host) => Host = host;
+    public Target Host { get; private set; }
 
     public bool RequireChildrenUpdate { get; set; } = true;
     public bool RequireParentUpdate { get; set; } = true;
 
     public virtual void UpdateChildren()
     {
+      if (Host.CullChildren)
+      {
+        foreach (Target child in Host.Children)
+        {
+          child.CulledOut = !child.Rect.Intersect(Host.Rect);
+        }
+      }
+
       RequireChildrenUpdate = false;
     }
 

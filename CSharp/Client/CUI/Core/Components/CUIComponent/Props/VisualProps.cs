@@ -25,5 +25,8 @@ namespace CrabUI
       get => Background.Texture;
       set => Background.Texture = value;
     }
+
+    [CUISerializable]
+    public bool CullChildren { get; set; }
   }
 }

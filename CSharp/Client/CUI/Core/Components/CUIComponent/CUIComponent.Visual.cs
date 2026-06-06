@@ -24,6 +24,12 @@ namespace CrabUI
         UpdateRect(value);
       }
     }
+
+    [CUISerializable]
+    public bool Visible { get; set; } = true;
+    protected bool CulledOut { get; set; }
+
+
     protected virtual void UpdateRect(CUIRect rect)
     {
       Debug_PropSet.Send(typeof(CUIRect), rect, this, "Rect");
@@ -33,6 +39,8 @@ namespace CrabUI
 
     public override IEnumerable<VisualUnit> VisualSplit()
     {
+      if (!Visible || CulledOut) yield break;
+
       yield return new VisualUnit.PrimitiveVisualElement(Background);
       yield return new VisualUnit.LeftContextBound();
       foreach (CUIComponent child in Tree.Children)

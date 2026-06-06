@@ -18,12 +18,6 @@ namespace CrabUI
     {
       public partial class Layout_Adapter : PlainLayout.Target
       {
-        CUIRect PlainLayout.Target.Rect
-        {
-          get => Self.Rect;
-          set => Self.Rect = value;
-        }
-
         CUINullRect PlainLayout.Target.Absolute => Self.LayoutProps.Absolute.Value;
         CUINullRect PlainLayout.Target.AbsoluteMin => Self.LayoutProps.AbsoluteMin.Value;
         CUINullRect PlainLayout.Target.AbsoluteMax => Self.LayoutProps.AbsoluteMax.Value;
@@ -53,7 +47,6 @@ namespace CrabUI
           => new ListProxy<CUIComponent, PlainLayout.Target>(
             Self.Tree.Children, c => c.Adapters.Layout
           );
-
 
       }
     }

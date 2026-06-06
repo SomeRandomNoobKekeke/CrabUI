@@ -18,11 +18,6 @@ namespace CrabUI
     {
       public partial class Layout_Adapter : CUIHorizontalListLayout.Target
       {
-        CUIRect CUIHorizontalListLayout.Target.Rect
-        {
-          get => Self.Rect;
-          set => Self.Rect = value;
-        }
         CUINullRect CUIHorizontalListLayout.Target.Absolute
           => Self.LayoutProps.Absolute.Value;
         CUINullRect CUIHorizontalListLayout.Target.Relative

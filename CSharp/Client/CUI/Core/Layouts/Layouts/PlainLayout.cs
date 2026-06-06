@@ -15,7 +15,6 @@ namespace CrabUI
   {
     public interface Target : Layout.Target
     {
-      public CUIRect Rect { get; set; }
       public CUINullRect Absolute { get; }
       public CUINullRect AbsoluteMin { get; }
       public CUINullRect AbsoluteMax { get; }
@@ -34,8 +33,12 @@ namespace CrabUI
       public Vector2 ChildrenOffset { get; }
     }
 
-    public override void InjectHost(Layout.Target host) { Host = host as Target; }
-    public Target Host { get; private set; }
+    public override void InjectHost(Layout.Target host)
+    {
+      Host = host as Target;
+      base.InjectHost(host);
+    }
+    public new Target Host { get; private set; }
 
     public override void UpdateChildren()
     {
@@ -110,7 +113,7 @@ namespace CrabUI
         );
       }
 
-      RequireChildrenUpdate = false;
+      base.UpdateChildren();
     }
 
     public override void UpdateParent()

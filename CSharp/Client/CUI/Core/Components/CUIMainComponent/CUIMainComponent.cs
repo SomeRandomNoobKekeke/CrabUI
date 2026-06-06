@@ -41,15 +41,22 @@ namespace CrabUI
       Update(LastUpdateTime + UpdateInterval, null);
     }
 
+    private bool VisualChanged; //CRINGE
     private double LastUpdateTime;
     public void Update(double totalTime, CUIInput Input)
     {
       if (Tree.Changed)
       {
         Tree.Changed = false;
+        VisualChanged = true;
         GlobalLayoutChanged = true;
-        VisualFlattener.Flatten(this);
         LayoutFlattener.Flatten(this);
+      }
+
+      if (GlobalLayoutChanged)
+      {
+        GlobalLayoutChanged = false;
+        UpdateLayout();
       }
 
       if (Input is not null && Input.SomethingHappened)
@@ -57,10 +64,10 @@ namespace CrabUI
         HandleInput(Input);
       }
 
-      if (GlobalLayoutChanged)
+      if (VisualChanged)
       {
-        GlobalLayoutChanged = false;
-        UpdateLayout();
+        VisualChanged = false;
+        VisualFlattener.Flatten(this);
       }
 
       LastUpdateTime = totalTime;

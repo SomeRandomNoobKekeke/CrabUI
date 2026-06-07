@@ -28,5 +28,12 @@ namespace CrabUI
 
     [CUISerializable]
     public bool CullChildren { get; set; }
+
+
+    public bool ConsumeMouseClicks
+    {
+      get => Background.ConsumeMouseClicks;
+      set => Background.ConsumeMouseClicks = value;
+    }
   }
 }

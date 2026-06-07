@@ -15,6 +15,7 @@ namespace CrabUI
       if (consumer is IMouseEventConsumer MEConsumer)
       {
         MEConsumer.MouseDoubleClick.Raise(this);
+        Consumed = MEConsumer.ConsumeMouseClicks || Consumed;
       }
     }
 

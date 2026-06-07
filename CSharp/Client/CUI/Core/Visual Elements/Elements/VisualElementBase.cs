@@ -14,6 +14,8 @@ namespace CrabUI
     public bool MouseOver { get; set; }
     public bool MousePressed { get; set; }
 
+    public bool ConsumeMouseClicks { get; set; }
+
     public ClearableEvent<CUIMouseDownEvent> MouseDown { get; } = new();
     public ClearableEvent<CUIMouseUpEvent> MouseUp { get; } = new();
     public ClearableEvent<CUIMouseClickEvent> MouseClick { get; } = new();

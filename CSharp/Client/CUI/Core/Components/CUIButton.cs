@@ -113,6 +113,7 @@ namespace CrabUI
     public CUIButton() : base()
     {
       MasterColor = Color.Blue;//TODO Remove
+      ConsumeMouseClicks = true;
 
       MouseOff += (c, e) => DetermineColor();
       MouseOn += (c, e) => DetermineColor();

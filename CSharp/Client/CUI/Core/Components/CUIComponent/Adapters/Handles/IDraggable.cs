@@ -59,9 +59,11 @@ namespace CrabUI
         }
 
         public bool TryGrab(object handle)
-          => Self.MainComponentTracker.MainComponent.GrabbedHandleTracker.TryGrab(handle);
+          => Self.MainComponentTracker.MainComponent?.GrabbedHandleTracker.TryGrab(handle) ?? false;
+
+        //TODO How to release grab handle when component is detached?
         public void Release(object handle)
-          => Self.MainComponentTracker.MainComponent.GrabbedHandleTracker.Release(handle);
+          => Self.MainComponentTracker.MainComponent?.GrabbedHandleTracker.Release(handle);
       }
     }
   }

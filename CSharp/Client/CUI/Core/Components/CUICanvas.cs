@@ -12,9 +12,17 @@ namespace CrabUI
   /// </summary>
   public class CUICanvas : CUIComponent, IDisposable
   {
-    public Color[] Data;
-    public CUIRenderTarget2D Texture;
-    public CUISpriteBatch SpriteBatch;
+    private Color[] _Data; public Color[] Data
+    {
+      get => _Data;
+      set
+      {
+        _Data = value;
+        Texture.SetData(_Data);
+      }
+    }
+    public CUIRenderTarget2D Texture { get; private set; }
+    public CUISpriteBatch SpriteBatch { get; private set; }
 
 
     public virtual Point Size
@@ -38,17 +46,17 @@ namespace CrabUI
     public void Clear(Color? color = null)
     {
       Color cl = color ?? Color.Transparent;
-      for (int i = 0; i < Data.Length; i++)
+      for (int i = 0; i < _Data.Length; i++)
       {
-        Data[i] = cl;
+        _Data[i] = cl;
       }
 
-      SetData();
+      Texture.SetData(_Data);
     }
 
     public Color GetPixel(int x, int y) => Data[y * Texture.Width + x];
-    public void SetPixel(int x, int y, Color cl) => Data[y * Texture.Width + x] = cl;
-    public void SetData() => Texture.SetData(Data);
+    public void SetPixel(int x, int y, Color cl) => _Data[y * Texture.Width + x] = cl;
+    public void ApplyData() => Texture.SetData(_Data);
 
     public void Render(Action<CUISpriteBatch> renderFunc)
     {

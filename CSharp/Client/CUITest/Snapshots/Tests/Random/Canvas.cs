@@ -27,13 +27,10 @@ namespace CrabUIUser
         CUICanvas canvas = new CUICanvas(2, 2)
         {
           Relative = new(0, 0, 1, 1),
+          Data = new Color[]{
+            Color.Red, Color.Yellow, Color.Green, Color.Blue
+          },
         };
-
-        // canvas.Clear(Color.Red);
-        canvas.Data = new Color[]{
-          Color.Red,Color.Yellow,Color.Green,Color.Blue
-        };
-        canvas.SetData();
 
         frame["canvas"] = canvas;
 

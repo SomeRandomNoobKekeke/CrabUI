@@ -6,6 +6,7 @@ using System.Diagnostics;
 using BaroJunk;
 using ComponentGenerator;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 using System.IO;
 using System.Xml;
@@ -24,5 +25,9 @@ namespace CrabUI
       => Instance.Handles.LoadXDoc(path);
     public static CUITexture2D GetTexture(string path)
       => Instance.Handles.GetTexture(path);
+
+    public static CUIGraphicsDevice GraphicsDevice => Instance.Handles.GraphicsDevice;
+    public static SamplerState SamplerState => Instance.Handles.GUI.SamplerState;
+    public static RasterizerState RasterizerState => Instance.Handles.GUI.RasterizerState;
   }
 }

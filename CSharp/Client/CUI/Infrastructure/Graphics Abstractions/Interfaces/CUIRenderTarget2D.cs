@@ -9,13 +9,11 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CrabUI
 {
-  public interface CUITexture2D : IDisposable
+  public interface CUIRenderTarget2D : CUITexture2D
   {
-    public static CUITexture2D White => __CUITexture2D.White;
-    public void SetData(Color[] data);
-
-    public int Width { get; }
-    public int Height { get; }
+    //TODO there should be an abstract factory for this
+    public static CUIRenderTarget2D Create(int width, int height)
+      => __CUIRenderTarget2D.Create(width, height);
   }
 
 }

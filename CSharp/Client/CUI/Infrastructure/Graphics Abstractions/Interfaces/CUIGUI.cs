@@ -9,13 +9,12 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CrabUI
 {
-  public interface CUITexture2D : IDisposable
+  public interface CUIGUI
   {
-    public static CUITexture2D White => __CUITexture2D.White;
-    public void SetData(Color[] data);
+    public SamplerState SamplerState { get; }
 
-    public int Width { get; }
-    public int Height { get; }
+    //TODO It's actually in GameMain
+    public RasterizerState RasterizerState { get; }
+
   }
-
 }

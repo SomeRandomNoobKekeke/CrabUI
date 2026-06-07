@@ -9,13 +9,9 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CrabUI
 {
-  public interface CUITexture2D : IDisposable
+  public class __CUIGUI : CUIGUI // :BaroDev:
   {
-    public static CUITexture2D White => __CUITexture2D.White;
-    public void SetData(Color[] data);
-
-    public int Width { get; }
-    public int Height { get; }
+    public SamplerState SamplerState => GUI.SamplerState;
+    public RasterizerState RasterizerState => GameMain.ScissorTestEnable;
   }
-
 }

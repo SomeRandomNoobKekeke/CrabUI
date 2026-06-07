@@ -14,6 +14,11 @@ namespace CrabUI
     public static __CUITexture2D White = new __CUITexture2D(GUI.WhiteTexture);
     public Texture2D XNATexture { get; set; } = texture;
 
+    public int Width => XNATexture.Width;
+    public int Height => XNATexture.Height;
+
+    public void SetData(Color[] data) => XNATexture.SetData<Color>(data);
+
     public void Dispose()
     {
       XNATexture.Dispose();

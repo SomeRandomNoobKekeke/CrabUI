@@ -7,6 +7,7 @@ using BaroJunk;
 using ComponentGenerator;
 
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.IO;
 using System.Xml;
@@ -30,7 +31,8 @@ namespace CrabUI
 
     public interface CUICoreHandles : CUICoreIOHandle, CUICoreTextureHandle
     {
-
+      public CUIGraphicsDevice GraphicsDevice { get; }
+      public CUIGUI GUI { get; }
     }
 
     public class CUIRunnerHandle_Part : Part

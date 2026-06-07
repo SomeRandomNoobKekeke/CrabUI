@@ -19,6 +19,9 @@ namespace CrabUI
 
       public string ModDir => Self.ModDir;
 
+      public CUIGraphicsDevice GraphicsDevice => Self.GraphicsDevice;
+      public CUIGUI GUI => Self.CUIGUI;
+
       public string NormalizePath(string path)
         => Path.IsPathFullyQualified(path) ? path : Path.Combine(ModDir, path);
 

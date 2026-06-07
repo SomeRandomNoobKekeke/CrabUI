@@ -15,6 +15,9 @@ namespace CrabUI
 
     public string ModDir { get; private set; } = ModInfo.Dir;
     public __CUISpriteBatch SpriteBatch { get; } = new();
+    public __CUIGraphicsDevice GraphicsDevice { get; } = new();
+    public __CUIGUI CUIGUI { get; } = new();
+
     public TextureManager TextureManager { get; } = new();
 
 

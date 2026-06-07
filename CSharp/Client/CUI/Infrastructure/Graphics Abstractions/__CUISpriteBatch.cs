@@ -31,10 +31,6 @@ namespace CrabUI
       {
         XNASpriteBatch.Draw(((__CUITexture2D)texture).XNATexture, destinationRectangle, color);
       }
-      if (texture is __CUIRenderTarget2D)
-      {
-        XNASpriteBatch.Draw(((__CUIRenderTarget2D)texture).XNARenderTarget2D, destinationRectangle, color);
-      }
     }
 
     public void Begin(

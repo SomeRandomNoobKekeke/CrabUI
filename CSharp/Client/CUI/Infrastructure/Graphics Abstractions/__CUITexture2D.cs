@@ -9,19 +9,19 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CrabUI
 {
-  public class __CUITexture2D(Texture2D texture) : CUITexture2D
+  public class __CUITexture2D : CUITexture2D, IDisposable
   {
     public static __CUITexture2D White = new __CUITexture2D(GUI.WhiteTexture);
-    public Texture2D XNATexture { get; set; } = texture;
+    public Texture2D XNATexture { get; set; }
 
     public int Width => XNATexture.Width;
     public int Height => XNATexture.Height;
 
     public void SetData(Color[] data) => XNATexture.SetData<Color>(data);
 
-    public void Dispose()
-    {
-      XNATexture.Dispose();
-    }
+    public __CUITexture2D(Texture2D texture) => XNATexture = texture;
+    public __CUITexture2D() { }
+
+    public void Dispose() => XNATexture.Dispose();
   }
 }

@@ -11,6 +11,18 @@ namespace CrabUI
 {
   public class CUIComponentAnalyzer
   {
+    public static IEnumerable<Type> GetCUIComponentTypeChain(Type T) // where T : CUIComponent
+    {
+      yield return T;
+
+      Type baseType = T.BaseType;
+      while (baseType != null && baseType.IsAssignableTo(typeof(CUIComponent)))
+      {
+        yield return baseType;
+        baseType = baseType.BaseType;
+      }
+    }
+
     public bool IsComponentType(Type T)
       => T.IsAssignableTo(typeof(CUIComponent));
 

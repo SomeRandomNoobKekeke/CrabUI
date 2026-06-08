@@ -14,6 +14,8 @@ namespace CrabUI
     private Dictionary<Type, CUIComponentInfo> Infos = new();
     private Dictionary<string, Type> TypesByName = new();
 
+
+    //BRUH Why it returns type and not CUIComponentInfo?
     public Type ByName(string name) => TypesByName[name];
 
     public bool Has(Type T) => Infos.ContainsKey(T);

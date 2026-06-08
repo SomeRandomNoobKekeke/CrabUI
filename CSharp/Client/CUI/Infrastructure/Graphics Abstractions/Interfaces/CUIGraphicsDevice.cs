@@ -12,6 +12,12 @@ namespace CrabUI
   public interface CUIGraphicsDevice
   {
     public void SetRenderTarget(CUIRenderTarget2D target);
+    public void GetBackBufferData(Color[] buffer);
+
+    public int BackBufferWidth { get; }
+    public int BackBufferHeight { get; }
+
+    public SurfaceFormat BackBufferFormat { get; }
   }
 
 }

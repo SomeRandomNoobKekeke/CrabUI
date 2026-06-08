@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Diagnostics;
 using BaroJunk;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Barotrauma;
 
 namespace CrabUI
@@ -18,6 +19,21 @@ namespace CrabUI
 
       Setup = CUISetup.Default();
     }
+
+    //BRUH why is it here?
+    public static SamplerState NoSmoothing = new SamplerState()
+    {
+      Filter = TextureFilter.Point,
+      AddressU = TextureAddressMode.Clamp,
+      AddressV = TextureAddressMode.Clamp,
+      AddressW = TextureAddressMode.Clamp,
+      BorderColor = Color.White,
+      MaxAnisotropy = 4,
+      MaxMipLevel = 0,
+      MipMapLevelOfDetailBias = -0.8f,
+      ComparisonFunction = CompareFunction.Never,
+      FilterMode = TextureFilterMode.Default,
+    };
 
     public static GUIButton DummyComponent = new GUIButton(new RectTransform(new Point(0, 0)))
     {

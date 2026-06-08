@@ -41,7 +41,7 @@ namespace CrabUIUser
 
     private static void ExtractAttributes(XElement element, CUIComponent component)
     {
-      element.Add(new XAttribute("Real", component.Rect.ToString()));
+      element.Add(new XAttribute("Rect", component.Rect.ToString()));
       element.Add(new XAttribute("AKA", component.AKA ?? ""));
     }
 

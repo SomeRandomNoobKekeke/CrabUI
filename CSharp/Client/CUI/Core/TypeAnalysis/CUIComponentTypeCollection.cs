@@ -16,6 +16,7 @@ namespace CrabUI
 
 
     //BRUH Why it returns type and not CUIComponentInfo?
+    //TODO because it's doing 2 jobs, tracking types and infos, it should be 2 different classes
     public Type ByName(string name) => TypesByName[name];
 
     public bool Has(Type T) => Infos.ContainsKey(T);

@@ -29,6 +29,7 @@ namespace CrabUI
     public CUIMainComponent Main { get; private set; }
     public CUIMainComponent TopMain { get; private set; }
     public CUIInput Input { get; } = new();
+    public EventConstructor EventConstructor { get; } = new();
 
     private void UpdateGameScreenRect()
     {
@@ -51,8 +52,8 @@ namespace CrabUI
       if (_Activated) return;
       _Activated = true;
 
-      Main = new();
-      TopMain = new();
+      Main = new() { EventConstructor = EventConstructor };
+      TopMain = new() { EventConstructor = EventConstructor };
 
       UpdateGameScreenRect();
 

@@ -21,9 +21,10 @@ namespace CrabUI
     protected LayoutFlattener LayoutFlattener { get; } = new();
     protected ChainDrawer ChainDrawer { get; } = new();
     protected EventDispatcher EventDispatcher { get; } = new();
-    protected EventConstructor EventConstructor { get; } = new();
     protected EventTargets EventTargets { get; } = new();
 
+
+    public EventConstructor EventConstructor { get; set; } // Injected from CUICore //TODO use ComponentGenerator
     public GrabbedHandleTracker GrabbedHandleTracker { get; } = new();
 
     public bool MouseOverSomeElement => EventTargets.TopTarget != null;
@@ -77,8 +78,6 @@ namespace CrabUI
     private void HandleInput(CUIInput Input)
     {
       EventTargets.Find(VisualFlattener.Flat, Input.Mouse.Pos);
-      EventConstructor.Construct(Input);
-
 
       EventDispatcher.Dispatch(EventTargets.PrevTargets, EventConstructor.MouseOffEvent);
       EventDispatcher.Dispatch(EventTargets.Targets, EventConstructor.MouseOnEvent);

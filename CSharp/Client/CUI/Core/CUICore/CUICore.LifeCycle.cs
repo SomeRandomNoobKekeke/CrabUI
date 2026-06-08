@@ -24,8 +24,11 @@ namespace CrabUI
         try
         {
           Self.Input.Update(totalTime, mouse);
-          Self.Main.Update(totalTime, Self.Input);
+          Self.EventConstructor.Construct(Self.Input);
+
           Self.TopMain.Update(totalTime, Self.Input);
+          Self.Main.Update(totalTime, Self.Input);
+
           OnUpdate.Raise(totalTime);
         }
         catch (Exception e)

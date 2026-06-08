@@ -50,7 +50,7 @@ namespace CrabUI
       if (!Visible || CulledOut) yield break;
 
       yield return VisualWrappers.BackgroundWrapper;
-      yield return VisualBounds.LeftBound;
+      yield return VisualBounds.LeftBound; //TODO bounds should be yielded only if there's something non standart
       foreach (CUIComponent child in Tree.Children)
       {
         yield return child.VisualWrappers.SelfWrapper;

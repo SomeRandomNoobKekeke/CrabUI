@@ -16,13 +16,15 @@ namespace CrabUI
     );
 
     public SpriteBatch XNASpriteBatch { get; set; }
-    public Rectangle ScissorRect => XNASpriteBatch.GraphicsDevice.ScissorRectangle;
-
-    public void StopStart(Rectangle ScissorRect)
+    public void StopStart(Rectangle scissorRect, SamplerState samplerState)
     {
       XNASpriteBatch.End();
-      XNASpriteBatch.GraphicsDevice.ScissorRectangle = ScissorRect;
-      XNASpriteBatch.Begin(SpriteSortMode.Deferred, rasterizerState: GameMain.ScissorTestEnable);
+      XNASpriteBatch.GraphicsDevice.ScissorRectangle = scissorRect;
+      XNASpriteBatch.Begin(
+        SpriteSortMode.Deferred,
+        samplerState: samplerState,
+        rasterizerState: GameMain.ScissorTestEnable
+      );
     }
 
     public void Draw(CUITexture2D texture, Rectangle destinationRectangle, Color color)

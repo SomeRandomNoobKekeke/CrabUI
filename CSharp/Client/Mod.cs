@@ -20,6 +20,7 @@ namespace CrabUIUser
     };
 
     public CUIDebugger CUIDebugger { get; } = new();
+    public MGDebugTool MGDebugTool { get; } = new();
     public CUITest CUITest { get; set; }
 
     public void Initialize()
@@ -39,6 +40,7 @@ namespace CrabUIUser
         CUITest.Init();
 
         CUIDebugger.Init();
+        MGDebugTool.Init();
 
 
 
@@ -56,6 +58,8 @@ namespace CrabUIUser
     {
       Instance = null;
       UTestCommands.RemoveCommands();
+      CUIDebugger.Dispose();
+      MGDebugTool.Dispose();
       CUITest.Dispose();
     }
   }

@@ -38,8 +38,8 @@ namespace CrabUI
       {
         try
         {
-          Self.TopMain.DrawChildren(spriteBatch);
           OnDrawAfterGUI.Raise(spriteBatch);
+          Self.TopMain.DrawChildren(spriteBatch);
         }
         catch (Exception e)
         {

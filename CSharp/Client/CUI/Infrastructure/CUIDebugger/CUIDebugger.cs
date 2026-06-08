@@ -43,6 +43,8 @@ namespace CrabUI
       Close();
     }
 
+    public void Dispose() { }
+
     public void CreateGUI()
     {
       OpenButton = new CUIButton()

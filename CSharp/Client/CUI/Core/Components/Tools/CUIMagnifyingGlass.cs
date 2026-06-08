@@ -12,16 +12,19 @@ namespace CrabUI
 {
   public class CUIMagnifyingGlass : CUICanvas
   {
+    public bool Active { get; set; }
     CUITexture2D texture;
     Color[] backBuffer;
 
-    public SamplerState SamplerState { get; set; }
 
-    public double UpdateInterval { get; set; } = 1.0 / 10.0f;
+
+    public double UpdateInterval { get; set; } = 1.0 / 20.0f;
     double lastUpdate;
 
     public void Update()
     {
+      if (!Active) return;
+
       if (Timing.TotalTime - lastUpdate > UpdateInterval)
       {
         lastUpdate = Timing.TotalTime;
@@ -29,16 +32,31 @@ namespace CrabUI
         CUICore.GraphicsDevice.GetBackBufferData(backBuffer);
         texture.SetData(backBuffer);
 
-        texture.GetData(
-          0, new Rectangle((int)Rect.Left, (int)Rect.Top, Size.X, Size.Y), Data, 0, Data.Length
-        );
-        ApplyData();
+        //TODO
+        // Rectangle rect = new Rectangle(
+        //   (int)Math.Max(0, Rect.Left),
+        //   (int)Math.Max(0, Rect.Top),
+        //   (int)Math.Min(CUICore.GraphicsDevice.BackBufferWidth, Rect.Left + Size.X),
+        //   (int)Math.Min(CUICore.GraphicsDevice.BackBufferHeight, Rect.Top + Size.Y)
+        // );
+
+        try
+        {
+          texture.GetData(
+           0, new Rectangle((int)Rect.Left, (int)Rect.Top, Size.X, Size.Y), Data, 0, Data.Length
+          );
+          ApplyData();
+        }
+        catch (Exception e)
+        {
+          CUI.Logger.Warning($"CUIMG: {e.Message}");
+        }
       }
     }
 
     public CUIMagnifyingGlass() : base()
     {
-      SamplerState = CUI.NoSmoothing;
+      VisualBounds.SamplerState = CUI.NoSmoothing;
 
       int w = CUICore.GraphicsDevice.BackBufferWidth;
       int h = CUICore.GraphicsDevice.BackBufferHeight;
@@ -54,6 +72,15 @@ namespace CrabUI
     {
       texture.Dispose();
       base.Dispose();
+    }
+
+    public override IEnumerable<VisualUnit> VisualSplit()
+    {
+      if (!Visible || CulledOut) yield break;
+
+      yield return VisualBounds.LeftBound;
+      yield return VisualWrappers.BackgroundWrapper;
+      yield return VisualBounds.RightBound;
     }
   }
 

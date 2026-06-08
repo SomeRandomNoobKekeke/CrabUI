@@ -15,6 +15,8 @@ namespace CrabUI
     public int BackBufferHeight => GameMain.Instance.GraphicsDevice.PresentationParameters.BackBufferHeight;
     public SurfaceFormat BackBufferFormat => GameMain.Instance.GraphicsDevice.PresentationParameters.BackBufferFormat;
 
+    public Rectangle ScissorRect => GameMain.Instance.GraphicsDevice.ScissorRectangle;
+
     public void GetBackBufferData(Color[] buffer)
     {
       GameMain.Instance.GraphicsDevice.GetBackBufferData<Color>(buffer);

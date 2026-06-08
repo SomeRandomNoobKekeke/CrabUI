@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace CrabUI
 {
@@ -14,7 +15,6 @@ namespace CrabUI
     {
       public LeftContextBound(VisualBounds bounds) => Bounds = bounds;
       public VisualBounds Bounds { get; }
-      public void Enter(CUISpriteBatch spriteBatch, Rectangle? scissorRect) => Bounds.Enter(spriteBatch, scissorRect);
     }
 
 
@@ -22,7 +22,6 @@ namespace CrabUI
     {
       public RightContextBound(VisualBounds bounds) => Bounds = bounds;
       public VisualBounds Bounds { get; }
-      public Rectangle? Exit(CUISpriteBatch spriteBatch) => Bounds.Exit(spriteBatch);
     }
 
     public VisualBounds()
@@ -34,30 +33,8 @@ namespace CrabUI
     public LeftContextBound LeftBound { get; }
     public RightContextBound RightBound { get; }
 
-    public Rectangle? PrevState { get; set; }
+    public SamplerState? SamplerState { get; set; }
     public Rectangle? ScissorRect { get; set; }
-
-    public void Enter(CUISpriteBatch spriteBatch, Rectangle? prevState)
-    {
-      PrevState = prevState;
-      if (ScissorRect.HasValue)
-      {
-        spriteBatch.StopStart(ScissorRect.Value);
-      }
-    }
-    public Rectangle? Exit(CUISpriteBatch spriteBatch)
-    {
-      if (ScissorRect.HasValue && PrevState.HasValue)
-      {
-        spriteBatch.StopStart(PrevState.Value);
-      }
-
-      return PrevState;
-    }
-
-
-
-
   }
 
 

@@ -15,8 +15,7 @@ namespace CrabUI
     public static CUISpriteBatch Create() => __CUISpriteBatch.Create();
 
     public void Draw(CUITexture2D texture, Rectangle destinationRectangle, Color color);
-    public Rectangle ScissorRect { get; }
-    public void StopStart(Rectangle ScissorRect);
+    public void StopStart(Rectangle ScissorRect, SamplerState SamplerState);
 
     public void Begin(
       SpriteSortMode sortMode = SpriteSortMode.Deferred,

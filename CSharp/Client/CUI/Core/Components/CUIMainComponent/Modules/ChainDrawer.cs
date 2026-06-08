@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using BaroJunk;
 using ComponentGenerator;
 
@@ -12,17 +13,11 @@ namespace CrabUI
 {
   public class ChainDrawer : IModule
   {
-    public void StopStartSpritebatch(CUISpriteBatch spriteBatch, Rectangle ScissorRect)
-    {
-      spriteBatch.StopStart(ScissorRect);
-    }
-
+    public ChainDrawerStateMachine StateMachine { get; } = new();
 
     public void Draw(CUISpriteBatch spriteBatch, List<VisualUnit> flat)
     {
-
-      Rectangle OriginalSRect = spriteBatch.ScissorRect;
-      Rectangle? CurrentState = OriginalSRect;
+      StateMachine.Init(spriteBatch);
 
       try
       {
@@ -35,11 +30,11 @@ namespace CrabUI
               break;
             case VisualBounds.LeftContextBound left:
               // enter context
-              left.Enter(spriteBatch, CurrentState);
+              StateMachine.Enter(spriteBatch, left.Bounds);
               break;
             case VisualBounds.RightContextBound right:
               // leave context
-              CurrentState = right.Exit(spriteBatch);
+              StateMachine.Exit(spriteBatch, right.Bounds);
               break;
             default:
               throw new Exception("Unexpected VisualUnit");
@@ -49,10 +44,7 @@ namespace CrabUI
       }
       finally
       {
-        if (spriteBatch.ScissorRect != OriginalSRect)
-        {
-          spriteBatch.StopStart(OriginalSRect);
-        }
+        StateMachine.Finalize(spriteBatch);
       }
     }
   }

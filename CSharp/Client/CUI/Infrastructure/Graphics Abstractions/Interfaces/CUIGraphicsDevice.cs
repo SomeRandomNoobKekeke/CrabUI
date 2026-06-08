@@ -16,8 +16,9 @@ namespace CrabUI
 
     public int BackBufferWidth { get; }
     public int BackBufferHeight { get; }
-
     public SurfaceFormat BackBufferFormat { get; }
+
+    public Rectangle ScissorRect { get; }
   }
 
 }

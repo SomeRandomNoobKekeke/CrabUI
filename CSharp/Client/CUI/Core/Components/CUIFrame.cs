@@ -12,6 +12,11 @@ namespace CrabUI
 {
   public partial class CUIFrame : CUIComponent, IComponent
   {
+    public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIFrame>((frame) =>
+    {
+      frame.Draggable = true;
+    });
+
     public CUIComponent TargetMainComponent { get; set; }
 
     public bool IsOpen
@@ -33,10 +38,5 @@ namespace CrabUI
 
 
     public void Close() => RemoveSelf();
-
-    public CUIFrame() : base()
-    {
-      this.Draggable = true; // This should be in style
-    }
   }
 }

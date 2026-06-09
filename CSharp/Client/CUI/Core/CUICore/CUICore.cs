@@ -14,7 +14,8 @@ namespace CrabUI
     public class Part : IPart { public CUICore Self { get; set; } }
 
     public SimpleParser Parser { get; } = new();
-    public CUIComponentTypeManager CUIComponentTypeManager { get; } = new();
+    public CUIComponentTypeManager CUIComponentTypeManager { get; }
+    public CUIStyleManager CUIStyleManager { get; }
 
     private Rectangle _GameScreenRect; public Rectangle GameScreenRect
     {
@@ -43,7 +44,19 @@ namespace CrabUI
 
       Parser.OnError.Add(e => CUI.Logger.Warning(e));
 
+      CUIComponentTypeManager = new();
       CUIComponentTypeManager.AnalyzeAssembly(Assembly.GetExecutingAssembly());
+
+      CUIStyleManager = new(CUIComponentTypeManager);
+
+      //TODO i probably want to go in base->derived order here
+      foreach (CUIComponentInfo info in CUIComponentTypeManager.Infos.Values)
+      {
+        if (info.DefaultStyle is not null)
+        {
+          CUIStyleManager.AddStyle(info.DefaultStyle);
+        }
+      }
     }
 
     private bool _Activated;

@@ -31,6 +31,7 @@ namespace CrabUI
     public static RasterizerState RasterizerState => Instance.Handles.GUI.RasterizerState;
 
     public static CUIComponentTypeManager CUITypes => Instance.CUIComponentTypeManager;
+    public static CUIStyleManager Styles => Instance.CUIStyleManager;
 
   }
 }

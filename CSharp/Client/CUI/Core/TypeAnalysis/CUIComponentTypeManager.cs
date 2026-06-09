@@ -14,6 +14,10 @@ namespace CrabUI
   /// </summary>
   public class CUIComponentTypeManager
   {
+    public Dictionary<Type, CUIComponentInfo> Infos { get; } = new();
+    public CUIComponentAnalyzer Analyzer { get; } = new();
+    public CUITypeTree TypeTree { get; } = new();
+
     public bool IsComponentType(Type T) => Analyzer.IsComponentType(T);
 
     public Type GetType(string name) => TypeTree.TypesByName.GetValueOrDefault(name);
@@ -36,10 +40,5 @@ namespace CrabUI
 
       TypeTree.Add(types);
     }
-
-
-    private CUIComponentAnalyzer Analyzer { get; } = new();
-    private Dictionary<Type, CUIComponentInfo> Infos { get; } = new();
-    private CUITypeTree TypeTree { get; } = new();
   }
 }

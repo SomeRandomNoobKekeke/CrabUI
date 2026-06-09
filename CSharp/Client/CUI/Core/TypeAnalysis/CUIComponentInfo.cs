@@ -15,7 +15,8 @@ namespace CrabUI
   public class CUIComponentInfo
   {
     public Type ComponentType { get; set; }
-    public Dictionary<string, PropertyInfo> SerializableProps { get; set; }
+    public Dictionary<string, PropertyInfo> SerializableProps { get; set; } = new();
+    public ICUIStyle DefaultStyle { get; set; }
 
     public override string ToString()
       => $"{ComponentType.Name}:{{\n{Logger.Wrap.IEnumerable(SerializableProps.Keys, true)}\n}}";

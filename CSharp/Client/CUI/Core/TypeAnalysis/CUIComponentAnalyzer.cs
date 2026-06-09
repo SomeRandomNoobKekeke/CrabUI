@@ -14,6 +14,8 @@ namespace CrabUI
   /// </summary>
   public class CUIComponentAnalyzer
   {
+    public static string DefaultStylePropName { get; } = "DefaultStyle";
+
     public static IEnumerable<Type> GetCUIComponentTypeChain(Type T) // where T : CUIComponent
     {
       yield return T;
@@ -29,12 +31,12 @@ namespace CrabUI
     public bool IsComponentType(Type T)
       => T.IsAssignableTo(typeof(CUIComponent));
 
+    //TODO add a way to use pregenerated infos
     public CUIComponentInfo Analyze(Type componentType)
     {
       CUIComponentInfo info = new()
       {
         ComponentType = componentType,
-        SerializableProps = new Dictionary<string, PropertyInfo>(),
       };
 
       foreach (PropertyInfo pi in componentType.GetProperties(BindingFlags.Public | BindingFlags.Instance))
@@ -43,6 +45,16 @@ namespace CrabUI
         {
           info.SerializableProps[pi.Name] = pi;
         }
+      }
+
+      PropertyInfo defaultStyleProp = componentType.GetProperty(
+        DefaultStylePropName,
+        BindingFlags.Static | BindingFlags.Public
+      );
+
+      if (defaultStyleProp != null)
+      {
+        info.DefaultStyle = (ICUIStyle)defaultStyleProp.GetValue(null);
       }
 
       return info;

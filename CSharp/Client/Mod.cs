@@ -30,10 +30,14 @@ namespace CrabUIUser
 
       Logger.Log($"Compiled somehow");
 
-
       try
       {
         CUI.Start();
+
+        CUICore.Styles.AddStyle(new CUIActionStyle<CUIButton>("bruh", (c) =>
+        {
+          c.MasterColor = Color.Yellow;
+        }));
 
         UTestCommands.AddCommands();
         CUITest = new CUITest();

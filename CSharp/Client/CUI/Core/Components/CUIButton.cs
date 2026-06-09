@@ -14,6 +14,11 @@ namespace CrabUI
 {
   public partial class CUIButton : CUIComponent, IComponent
   {
+    public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIButton>((btn) =>
+    {
+      btn.MasterColor = Color.Red;
+      btn.ConsumeMouseClicks = true;
+    });
     // public ICUIStyle HoveredStyle = new CUICodeStyle<CUIButton>() { ApplyAction = ApplyHoveredStyle };
     // public ICUIStyle MouseDownStyle = new CUICodeStyle<CUIButton>() { ApplyAction = ApplyMouseDownStyle };
     // public ICUIStyle MouseUpStyle = new CUICodeStyle<CUIButton>() { ApplyAction = ApplyMouseUpStyle };
@@ -112,9 +117,6 @@ namespace CrabUI
 
     public CUIButton() : base()
     {
-      MasterColor = Color.Blue;//TODO Remove
-      ConsumeMouseClicks = true;//TODO Remove
-
       MouseOff += (c, e) => DetermineColor();
       MouseOn += (c, e) => DetermineColor();
       DetermineColor();

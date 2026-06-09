@@ -28,6 +28,14 @@ namespace CrabUI
     {
       this.Inject();
       LayoutSlot.Layout = new PlainLayout();
+
+      if (CUICore.Styles.HasStylesFor(this.GetType()))
+      {
+        foreach (ICUIStyle style in CUICore.Styles.GetAllStylesFor(this.GetType()))
+        {
+          style.Apply(this);
+        }
+      }
     }
 
     public override string ToString() => $"{this.GetType().Name}:{ID}:{AKA}";

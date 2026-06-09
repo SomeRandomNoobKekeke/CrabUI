@@ -5,11 +5,10 @@ using System.Reflection;
 
 namespace CrabUI
 {
-
   //TODO
-  public class CUIStyleManager
+  public class CUIStyleManager(CUIComponentTypeManager typeManager)
   {
-
+    public CUIComponentTypeManager TypeManager { get; } = typeManager;
 
 
     public Dictionary<Type, List<ICUIStyle>> Styles { get; } = new();
@@ -17,18 +16,25 @@ namespace CrabUI
     public List<ICUIStyle> GetAllStylesFor(Type targetType)
       => Styles.ContainsKey(targetType) ? Styles[targetType] : new List<ICUIStyle>();
 
+    public bool HasStylesFor(Type T) => Styles.ContainsKey(T);
     public void AddStyle(ICUIStyle style)
     {
-      //TODO atyatya, no, the styles should be applied to derived classes, not base, i need type tree first
-      // foreach (Type T in CUIComponentAnalyzer.GetCUIComponentTypeChain(style.TargetType))
-      // {
-      //   if (!Styles.ContainsKey(T)) Styles[T] = new List<ICUIStyle>();
-      //   Styles[T].Add(style);
-      // }
+      foreach (Type T in TypeManager.GetDerivedTypes(style.TargetType))
+      {
+        if (!Styles.ContainsKey(T)) Styles[T] = new List<ICUIStyle>();
+        Styles[T].Add(style);
+      }
     }
 
-    public void RemoveStyle(ICUIStyle style) { }
-    public void RemoveStyle(string id) { }
+    public void RemoveStyle(ICUIStyle style)
+    {
+      foreach (var list in Styles.Values) { list.Remove(style); }
+    }
+
+    public void RemoveStyle(string id)
+    {
+      foreach (var list in Styles.Values) { list.RemoveAll(style => style.ID == id); }
+    }
 
   }
 

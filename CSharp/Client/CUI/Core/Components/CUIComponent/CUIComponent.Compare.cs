@@ -16,10 +16,10 @@ namespace CrabUI
     {
       if (GetType() != other.GetType()) return false;
 
-      foreach (string key in this.As_Dictionary.Keys)
+      foreach (string key in this.As_StringDictionary.Keys)
       {
-        if (!other.As_Dictionary.ContainsKey(key)) return false;
-        if (other.As_Dictionary[key] != this.As_Dictionary[key]) return false;
+        if (!other.As_StringDictionary.ContainsKey(key)) return false;
+        if (other.As_StringDictionary[key] != this.As_StringDictionary[key]) return false;
       }
 
       return true;

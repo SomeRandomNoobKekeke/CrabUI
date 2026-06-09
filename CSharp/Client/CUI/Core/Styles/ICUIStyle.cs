@@ -7,6 +7,8 @@ namespace CrabUI
 {
   public interface ICUIStyle
   {
+    public static int DefaultPriority = 100;
+
     public string ID { get; }
     public Type TargetType { get; }
     public int Priority { get; }

@@ -34,11 +34,6 @@ namespace CrabUIUser
       {
         CUI.Start();
 
-        CUICore.Styles.AddStyle(new CUIActionStyle<CUIButton>("bruh", (c) =>
-        {
-          c.MasterColor = Color.Yellow;
-        }));
-
         UTestCommands.AddCommands();
         CUITest = new CUITest();
         CUITest.Init();

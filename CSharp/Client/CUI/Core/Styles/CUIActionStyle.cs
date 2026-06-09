@@ -9,7 +9,7 @@ namespace CrabUI
   {
     public string ID { get; set; }
     public Type TargetType { get; set; }
-    public int Priority { get; set; } = 100;
+    public int Priority { get; set; } = ICUIStyle.DefaultPriority;
 
     public abstract void Apply(CUIComponent component);
 

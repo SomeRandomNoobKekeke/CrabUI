@@ -50,7 +50,7 @@ namespace CrabUI
     {
       foreach (XAttribute attribute in element.Attributes())
       {
-        this.As_Dictionary[attribute.Name.ToString()] = attribute.Value;
+        this.As_StringDictionary[attribute.Name.ToString()] = attribute.Value;
       }
     }
 
@@ -59,7 +59,7 @@ namespace CrabUI
     {
       XElement element = new XElement(this.GetType().Name);
 
-      foreach (var (key, value) in this.As_Dictionary)
+      foreach (var (key, value) in this.As_StringDictionary)
       {
         element.Add(new XAttribute(key, value));
       }

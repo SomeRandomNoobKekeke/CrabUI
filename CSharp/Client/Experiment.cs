@@ -16,7 +16,8 @@ namespace CrabUIUser
     {
       // new InjectingInheritedParts().Run();
 
-
+      CUIButton button = new();
+      CUI.Logger.Log(CUIDictStyle.FromComponent("bruh", button));
     }
   }
 }

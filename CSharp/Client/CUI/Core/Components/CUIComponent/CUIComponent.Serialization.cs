@@ -18,7 +18,7 @@ namespace CrabUI
 
     public static CUIComponent CreateByName(string name)
     {
-      return (CUIComponent)Activator.CreateInstance(CUI.CUITypes.ByName(name));
+      return (CUIComponent)Activator.CreateInstance(CUI.CUITypes.GetType(name));
     }
 
     public static CUIComponent CreateFromXML(XElement element)

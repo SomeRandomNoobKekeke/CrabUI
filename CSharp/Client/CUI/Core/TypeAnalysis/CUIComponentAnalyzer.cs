@@ -9,6 +9,9 @@ using BaroJunk;
 
 namespace CrabUI
 {
+  /// <summary>
+  /// This thing creating CUIComponentInfo from types
+  /// </summary>
   public class CUIComponentAnalyzer
   {
     public static IEnumerable<Type> GetCUIComponentTypeChain(Type T) // where T : CUIComponent

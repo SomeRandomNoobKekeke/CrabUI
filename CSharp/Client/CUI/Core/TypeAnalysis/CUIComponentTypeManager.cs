@@ -9,31 +9,37 @@ using BaroJunk;
 
 namespace CrabUI
 {
+  /// <summary>
+  /// Exposes all you need to know about CUI types
+  /// </summary>
   public class CUIComponentTypeManager
   {
-    public CUIComponentAnalyzer Analyzer { get; } = new();
-    public CUIComponentTypeCollection Infos { get; } = new();
-
-    public void Add(CUIComponentInfo info) => Infos.Add(info);
-    public void AddRange(IEnumerable<CUIComponentInfo> infos) => Infos.AddRange(infos);
-    public void Clear() => Infos.Clear();
-
-    public Type ByName(string name) => Infos.ByName(name);
-    public CUIComponentInfo Get(Type T)
-    {
-      if (!Infos.Has(T)) Infos.Add(Analyzer.Analyze(T));
-      return Infos.Get(T);
-    }
-
     public bool IsComponentType(Type T) => Analyzer.IsComponentType(T);
 
-    public CUIComponentInfo Analyze(Type componentType)
-      => Analyzer.Analyze(componentType);
+    public Type GetType(string name) => TypeTree.TypesByName.GetValueOrDefault(name);
+    public CUIComponentInfo GetInfo(Type T)
+    {
+      if (!Infos.ContainsKey(T)) Infos[T] = Analyzer.Analyze(T);
+      return Infos[T];
+    }
 
-    public IEnumerable<Type> FindAllComponentTypesInAssembly(Assembly assembly)
-      => Analyzer.FindAllComponentTypesInAssembly(assembly);
+    public IEnumerable<Type> GetDerivedTypes(Type T) => TypeTree.GetDerivedTypes(T);
 
     public void AnalyzeAssembly(Assembly assembly)
-      => Infos.AddRange(Analyzer.AnalyzeAssembly(assembly));
+    {
+      IEnumerable<Type> types = Analyzer.FindAllComponentTypesInAssembly(assembly);
+
+      foreach (Type T in types)
+      {
+        Infos[T] = Analyzer.Analyze(T);
+      }
+
+      TypeTree.Add(types);
+    }
+
+
+    private CUIComponentAnalyzer Analyzer { get; } = new();
+    private Dictionary<Type, CUIComponentInfo> Infos { get; } = new();
+    private CUITypeTree TypeTree { get; } = new();
   }
 }

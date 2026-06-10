@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Barotrauma;
+using Barotrauma.LuaCs;
 using BaroJunk;
 using CrabUI;
 using Microsoft.Xna.Framework;

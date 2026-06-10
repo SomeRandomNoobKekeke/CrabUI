@@ -16,7 +16,7 @@ namespace CrabUI
   {
     public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIButton>((btn) =>
     {
-      btn.MasterColor = Color.Red;
+      btn.MasterColor = Color.Blue;
       btn.ConsumeMouseClicks = true;
     });
     // public ICUIStyle HoveredStyle = new CUICodeStyle<CUIButton>() { ApplyAction = ApplyHoveredStyle };

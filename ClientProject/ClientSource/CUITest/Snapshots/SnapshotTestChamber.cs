@@ -17,8 +17,11 @@ namespace CrabUIUser
     public SnapshotTestChamber()
     {
       Relative = new CUINullRect(0, 0, 1, 1);
-      BackgroundColor = new Color(64, 0, 64, 64);
-      BackgroundSprite = new CUISprite(CUICore.GetTexture("Assets/dev.png"));
+
+      BackgroundSprite = new CUISprite(CUICore.GetTexture("Assets/dev.png"))
+      {
+        Color = new Color(64, 0, 64, 64),
+      };
     }
 
     public bool IsSetup => Parent != null;

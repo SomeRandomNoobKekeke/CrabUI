@@ -35,6 +35,23 @@ namespace CrabUI
       }
     }
 
+    public void Draw(CUITexture2D texture, Rectangle destinationRectangle, Rectangle? sourceRectangle, Color color)
+    {
+      if (texture is __CUITexture2D)
+      {
+        XNASpriteBatch.Draw(((__CUITexture2D)texture).XNATexture, destinationRectangle, sourceRectangle, color);
+      }
+    }
+
+    public void Draw(CUITexture2D texture, Rectangle destinationRectangle, Rectangle? sourceRectangle, Color color, float rotation, Vector2 origin, SpriteEffects effects, float layerDepth)
+    {
+      if (texture is __CUITexture2D)
+      {
+        XNASpriteBatch.Draw(((__CUITexture2D)texture).XNATexture, destinationRectangle, sourceRectangle, color, rotation, origin, effects, layerDepth);
+      }
+    }
+
+
     public void Begin(
       SpriteSortMode sortMode = SpriteSortMode.Deferred,
       BlendState blendState = null,

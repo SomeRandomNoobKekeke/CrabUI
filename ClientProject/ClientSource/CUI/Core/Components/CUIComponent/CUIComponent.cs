@@ -1,10 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using System.Reflection;
-using System.Diagnostics;
-using Barotrauma;
 using Microsoft.Xna.Framework;
 using ComponentGenerator;
 
@@ -23,6 +19,11 @@ namespace CrabUI
         wr.TryGetTarget(out CUIComponent component);
         return component;
       }).Where(c => c != null);
+
+    public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIComponent>((c) =>
+    {
+      c.Background.Color = Color.Transparent;
+    });
 
 
     private CUIComponentInfo _Info; public CUIComponentInfo Info

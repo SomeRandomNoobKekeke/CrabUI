@@ -134,7 +134,7 @@ namespace CrabUI
     public ResizeHandle()
     {
       SelfWrapper = new VisualUnit.NestedVisualComponent(this);
-      Background.Color = Color.Yellow;
+      Background.Sprite.Color = Color.Yellow;
 
       Anchor = new Vector2(1, 1);
 

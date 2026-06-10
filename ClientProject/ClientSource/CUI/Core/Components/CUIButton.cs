@@ -134,10 +134,6 @@ namespace CrabUI
 
       yield return VisualWrappers.BackgroundWrapper;
       yield return new VisualUnit.PrimitiveVisualElement(TextBlock);
-      foreach (CUIComponent child in Tree.Children)
-      {
-        yield return child.VisualWrappers.SelfWrapper;
-      }
     }
 
   }

@@ -36,8 +36,7 @@ namespace CrabUI
         Texture = CUIRenderTarget2D.Create(value.X, value.Y);
         Data = new Color[Texture.Width * Texture.Height];
 
-        //TODO use sprite
-        Background.Texture = Texture;
+        Background.Sprite.Texture = Texture;
 
         oldTexture?.Dispose();
       }

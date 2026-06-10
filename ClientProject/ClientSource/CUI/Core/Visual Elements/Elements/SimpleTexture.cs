@@ -12,12 +12,13 @@ namespace CrabUI
   public class SimpleTexture : VisualElementBase, IVisualElement
   {
     public CUIRect Rect { get; set; }
-    public CUITexture2D Texture { get; set; } = CUITexture2D.White;
+    // public CUITexture2D Texture { get; set; } = CUITexture2D.White;
+    public CUISprite Sprite { get; set; } = CUISprite.White;
     public Color Color { get; set; }
 
     public void Draw(CUISpriteBatch spriteBatch)
     {
-      spriteBatch.Draw(Texture, Rect.Box, Color);
+      Sprite.Draw(spriteBatch, Rect.Box, Color);
     }
   }
 }

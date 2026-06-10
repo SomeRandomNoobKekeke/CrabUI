@@ -18,7 +18,7 @@ namespace CrabUIUser
     {
       Relative = new CUINullRect(0, 0, 1, 1);
       BackgroundColor = new Color(64, 0, 64, 64);
-      BackgroundTexture = CUICore.GetTexture("Assets/dev.png");
+      BackgroundSprite = new CUISprite(CUICore.GetTexture("Assets/dev.png"));
     }
 
     public bool IsSetup => Parent != null;

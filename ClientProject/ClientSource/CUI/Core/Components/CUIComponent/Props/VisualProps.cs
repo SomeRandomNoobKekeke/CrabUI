@@ -20,10 +20,10 @@ namespace CrabUI
       set => Background.Color = value;
     }
 
-    public CUITexture2D BackgroundTexture
+    public CUISprite BackgroundSprite
     {
-      get => Background.Texture;
-      set => Background.Texture = value;
+      get => Background.Sprite;
+      set => Background.Sprite = value;
     }
 
     [CUISerializable]

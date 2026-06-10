@@ -23,7 +23,7 @@ namespace CrabUIUser
           Absolute = new CUINullRect(0, 0, 400, 600),
           Anchor = CUIAnchor.Center,
           Resizable = true,
-          BackgroundTexture = CUICore.GetTexture("Assets/dev.png"),
+          BackgroundSprite = new CUISprite(CUICore.GetTexture("Assets/dev.png")),
         };
 
         return frame;

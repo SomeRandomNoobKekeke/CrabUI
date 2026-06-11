@@ -8,6 +8,7 @@ using Barotrauma;
 using BaroJunk;
 using CrabUI;
 using System.Xml.Linq;
+using Barotrauma.LuaCs;
 namespace CrabUIUser
 {
   public partial class Mod : IAssemblyPlugin

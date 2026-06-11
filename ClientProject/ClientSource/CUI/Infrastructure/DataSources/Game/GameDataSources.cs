@@ -21,6 +21,13 @@ namespace CrabUI
     public GameDataSources()
     {
       LifeCycle.ConnectToGame();
+      Input.ConnectToGame();
+    }
+
+    public void DisconnectFromGame()
+    {
+      LifeCycle.DisconnectFromGame();
+      Input.DisconnectFromGame();
     }
   }
 }

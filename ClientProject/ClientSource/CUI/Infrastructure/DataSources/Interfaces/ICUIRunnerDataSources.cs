@@ -13,5 +13,7 @@ namespace CrabUI
   {
     public IInputProvider Input { get; }
     public IGameLifeCycleTracker LifeCycle { get; }
+
+    public void DisconnectFromGame();
   }
 }

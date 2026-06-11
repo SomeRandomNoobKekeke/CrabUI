@@ -28,7 +28,11 @@ namespace CrabUI
       public bool IsKeyDown(Keys key) => State.IsKeyDown(key);
       public bool IsKeyUp(Keys key) => State.IsKeyUp(key);
 
-      public void Update(double totalTime, KeyboardState newState)
+
+      public TextInputEventArgs[] TextInputEvents { get; private set; } = [];
+      public TextInputEventArgs[] KeyDownEvents { get; private set; } = [];
+
+      public void Update(double totalTime, KeyboardState newState, TextInputEventPack textInput)
       {
         PrevState = State;
         State = newState;
@@ -40,7 +44,13 @@ namespace CrabUI
 
         PrevPressedKeys = pressedKeys;
 
-        SomethingHappened = PressedKeys.Length != 0 || ReleasedKeys.Length != 0;
+        TextInputEvents = textInput.TextInputEvents;
+        KeyDownEvents = textInput.KeyDownEvents;
+
+        SomethingHappened =
+          PressedKeys.Length != 0 ||
+          ReleasedKeys.Length != 0 ||
+          TextInputEvents.Length != 0;
       }
     }
   }

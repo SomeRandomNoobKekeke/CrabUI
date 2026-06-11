@@ -57,6 +57,11 @@ namespace CrabUI
       {
         Events.Add(new CUIKeyReleasedEvent(key, input.Keyboard));
       }
+
+      foreach (TextInputEventArgs args in input.Keyboard.TextInputEvents)
+      {
+        Events.Add(new CUITextInputEvent(args, input.Keyboard));
+      }
     }
   }
 }

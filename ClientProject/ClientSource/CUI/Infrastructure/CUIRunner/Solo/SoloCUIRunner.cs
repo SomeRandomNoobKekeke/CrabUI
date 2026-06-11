@@ -70,7 +70,8 @@ namespace CrabUI
           Core.CUIRunnerHandle.Update(
             Timing.TotalTime,
             DataSources.Input.ScanMouse(),
-            DataSources.Input.ScanKeyboard()
+            DataSources.Input.ScanKeyboard(),
+            DataSources.Input.ScanTextInput()
           );
           UpdateMouseOn();
         }
@@ -92,7 +93,7 @@ namespace CrabUI
 
     public void Disconnect()
     {
-      DataSources.LifeCycle.UnsubEvents();
+      DataSources.DisconnectFromGame();
       SpriteBatch.XNASpriteBatch = null;
       Core.Handles = null;
       TextureManager.Clear();

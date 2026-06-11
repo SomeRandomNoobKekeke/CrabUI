@@ -7,12 +7,40 @@ using BaroJunk;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using Barotrauma;
 
 namespace CrabUI
 {
   public class GameInputProvider : IInputProvider
   {
+    TextInputEventPackBuilder TextInputBuilder = new();
+
+
     public MouseState ScanMouse() => Mouse.GetState();
     public KeyboardState ScanKeyboard() => Keyboard.GetState();
+    public TextInputEventPack ScanTextInput() => TextInputBuilder.Build();
+
+    private void CaptureWindowTextInput(object sender, TextInputEventArgs args)
+    {
+      TextInputBuilder.TextInputEvents.Add(args);
+    }
+
+    private void CaptureWindowKeyDown(object sender, TextInputEventArgs args)
+    {
+      TextInputBuilder.KeyDownEvents.Add(args);
+    }
+
+
+    internal void DisconnectFromGame()
+    {
+      GameMain.Instance.Window.TextInput -= CaptureWindowTextInput;
+      GameMain.Instance.Window.KeyDown -= CaptureWindowKeyDown;
+    }
+
+    internal void ConnectToGame()
+    {
+      GameMain.Instance.Window.TextInput += CaptureWindowTextInput;
+      GameMain.Instance.Window.KeyDown += CaptureWindowKeyDown;
+    }
   }
 }

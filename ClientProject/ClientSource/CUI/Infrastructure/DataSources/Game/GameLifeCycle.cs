@@ -9,6 +9,8 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using HarmonyLib;
 using Barotrauma;
+using Barotrauma.LuaCs.Compatibility;
+using Barotrauma.LuaCs;
 
 namespace CrabUI
 {
@@ -50,7 +52,7 @@ namespace CrabUI
       string identifier,
       MethodBase method,
       LuaCsPatchFunc patch,
-      LuaCsHook.HookMethodType hookType = LuaCsHook.HookMethodType.Before
+      ILuaCsHook.HookMethodType hookType = ILuaCsHook.HookMethodType.Before
     ) => ((LuaCsSetup.Instance.EventService as EventService)
            ._luaPatcher as LuaPatcherService)
            .Patch(identifier, method, patch, hookType);
@@ -61,22 +63,22 @@ namespace CrabUI
       {
         _BeforeGUIDraw.Raise((SpriteBatch)ptable["spriteBatch"]);
         return null;
-      }, LuaCsHook.HookMethodType.Before);
+      }, ILuaCsHook.HookMethodType.Before);
 
       Patch(AfterDrawHook, GUI_DrawCursor_Method, (instance, ptable) =>
       {
         _AfterGUIDraw.Raise((SpriteBatch)ptable["spriteBatch"]);
         return null;
-      }, LuaCsHook.HookMethodType.Before);
+      }, ILuaCsHook.HookMethodType.Before);
 
       Patch(UpdateHook, UpdateMethod, (instance, ptable) =>
       {
         _Update.Raise((GameTime)ptable["gameTime"]);
         return null;
-      }, LuaCsHook.HookMethodType.After);
+      }, ILuaCsHook.HookMethodType.After);
     }
 
-    public void UnsubEvents()
+    public void DisconnectFromGame()
     {
       _BeforeGUIDraw.Clear();
       _AfterGUIDraw.Clear();

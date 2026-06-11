@@ -13,5 +13,6 @@ namespace CrabUI
   {
     public MouseState ScanMouse();
     public KeyboardState ScanKeyboard();
+    public TextInputEventPack ScanTextInput();
   }
 }

@@ -33,6 +33,7 @@ namespace CrabUI
 
       public ClearableEvent<CUIKeyPressedEvent> KeyPressed { get; } = new();
       public ClearableEvent<CUIKeyReleasedEvent> KeyReleased { get; } = new();
+      public ClearableEvent<CUITextInputEvent> TextInput { get; } = new();
     }
   }
 }

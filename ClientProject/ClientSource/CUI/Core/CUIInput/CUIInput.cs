@@ -19,10 +19,10 @@ namespace CrabUI
     public MouseInput Mouse { get; }
     public bool SomethingHappened => Mouse.SomethingHappened || Keyboard.SomethingHappened;
 
-    public void Update(double totalTime, MouseState mouse, KeyboardState keyboard)
+    public void Update(double totalTime, MouseState mouse, KeyboardState keyboard, TextInputEventPack textInput)
     {
       Mouse.Update(totalTime, mouse);
-      Keyboard.Update(totalTime, keyboard);
+      Keyboard.Update(totalTime, keyboard, textInput);
     }
 
     public CUIInput()

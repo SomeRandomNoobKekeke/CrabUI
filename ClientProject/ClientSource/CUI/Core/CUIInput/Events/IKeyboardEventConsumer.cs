@@ -13,5 +13,9 @@ namespace CrabUI
   {
     public ClearableEvent<CUIKeyPressedEvent> KeyPressed { get; }
     public ClearableEvent<CUIKeyReleasedEvent> KeyReleased { get; }
+    public ClearableEvent<CUITextInputEvent> TextInput { get; }
+
+    //TODO does anyone need this?
+    // public ClearableEvent<CUITextInputEvent> WindowKeyDown { get; }
   }
 }

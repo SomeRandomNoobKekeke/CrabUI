@@ -19,11 +19,11 @@ namespace CrabUI
       public ClearableEvent<CUISpriteBatch> OnDrawAfterGUI = new();
       public ClearableEvent<CUISpriteBatch> OnDrawBeforeGUI = new();
 
-      public void Update(double totalTime, MouseState mouse)
+      public void Update(double totalTime, MouseState mouse, KeyboardState keyboard)
       {
         try
         {
-          Self.Input.Update(totalTime, mouse);
+          Self.Input.Update(totalTime, mouse, keyboard);
           Self.EventConstructor.Construct(Self.Input);
 
           Self.TopMain.Update(totalTime, Self.Input);

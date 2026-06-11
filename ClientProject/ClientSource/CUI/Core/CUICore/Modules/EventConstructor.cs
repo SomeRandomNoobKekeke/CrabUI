@@ -7,6 +7,7 @@ using Barotrauma;
 using Microsoft.Xna.Framework;
 using BaroJunk;
 using ComponentGenerator;
+using Microsoft.Xna.Framework.Input;
 
 namespace CrabUI
 {
@@ -45,6 +46,16 @@ namespace CrabUI
       if (input.Mouse.Scrolled)
       {
         Events.Add(new CUIMouseScrollEvent(input.Mouse));
+      }
+
+      foreach (Keys key in input.Keyboard.PressedKeys)
+      {
+        Events.Add(new CUIKeyPressedEvent(key, input.Keyboard));
+      }
+
+      foreach (Keys key in input.Keyboard.ReleasedKeys)
+      {
+        Events.Add(new CUIKeyReleasedEvent(key, input.Keyboard));
       }
     }
   }

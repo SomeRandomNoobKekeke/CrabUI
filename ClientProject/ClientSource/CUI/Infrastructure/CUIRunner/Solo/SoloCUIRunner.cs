@@ -67,7 +67,11 @@ namespace CrabUI
         {
 
           //TODO extract real totalTime from gameTime
-          Core.CUIRunnerHandle.Update(Timing.TotalTime, DataSources.Input.ScanMouse());
+          Core.CUIRunnerHandle.Update(
+            Timing.TotalTime,
+            DataSources.Input.ScanMouse(),
+            DataSources.Input.ScanKeyboard()
+          );
           UpdateMouseOn();
         }
         catch (Exception e)

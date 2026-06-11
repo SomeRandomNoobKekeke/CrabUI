@@ -13,7 +13,7 @@ namespace CrabUI
   public partial class CUIMainComponent
   {
     public GlobalEvents_Part GlobalEvents { get; } = new();
-    public class GlobalEvents_Part : Part, IMouseEventConsumer
+    public class GlobalEvents_Part : Part, IMouseEventConsumer, IKeyboardEventConsumer
     {
       public bool MouseOver { get; set; } // BRUH
       public bool MousePressed { get; set; }
@@ -30,6 +30,9 @@ namespace CrabUI
       public ClearableEvent<CUIMouseOnEvent> MouseOn { get; } = new(); // BRUH
       public ClearableEvent<CUIMouseOffEvent> MouseOff { get; } = new(); // BRUH
       public ClearableEvent<CUIMouseScrollEvent> MouseScroll { get; } = new();
+
+      public ClearableEvent<CUIKeyPressedEvent> KeyPressed { get; } = new();
+      public ClearableEvent<CUIKeyReleasedEvent> KeyReleased { get; } = new();
     }
   }
 }

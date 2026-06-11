@@ -13,6 +13,13 @@ namespace CrabUI
 {
   public partial class CUITextInput : CUIComponent, IComponent
   {
-
+    protected override void OnAttachedToMainComponent(CUIMainComponent mainComponent)
+    {
+      base.OnAttachedToMainComponent(mainComponent);
+    }
+    protected override void OnDetachedFromMainComponent(CUIMainComponent mainComponent)
+    {
+      base.OnDetachedFromMainComponent(mainComponent);
+    }
   }
 }

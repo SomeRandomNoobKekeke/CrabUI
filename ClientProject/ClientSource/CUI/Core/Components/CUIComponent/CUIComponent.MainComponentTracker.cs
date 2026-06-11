@@ -12,15 +12,18 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-    #region public
-    #endregion
     public CUIMainComponent MainComponent => MainComponentTracker.MainComponent;
 
+    protected virtual void OnAttachedToMainComponent(CUIMainComponent mainComponent)
+    {
+      DebugRelays.Map(MainComponent.DebugRelays);
+    }
+    protected virtual void OnDetachedFromMainComponent(CUIMainComponent mainComponent)
+    {
+      DebugRelays.Unmap(MainComponent.DebugRelays);
+    }
 
 
-
-    #region protected
-    #endregion
     protected virtual MainComponentTracker_Part MainComponentTracker { get; set; } = new();
     public class MainComponentTracker_Part : Part, IModule
     {
@@ -39,7 +42,7 @@ namespace CrabUI
 
         if (MainComponent is not null)
         {
-          Self.DebugRelays.Map(MainComponent.DebugRelays);
+          Self.OnAttachedToMainComponent(MainComponent);
         }
       }
 
@@ -47,7 +50,7 @@ namespace CrabUI
       {
         if (MainComponent is not null)
         {
-          Self.DebugRelays.Unmap(MainComponent.DebugRelays);
+          Self.OnDetachedFromMainComponent(MainComponent);
         }
 
         SetRec(null);

@@ -85,10 +85,6 @@ namespace CrabUI
 
       yield return new VisualUnit.PrimitiveVisualElement(Background);
       yield return new VisualUnit.PrimitiveVisualElement(TextBlock);
-      foreach (CUIComponent child in Tree.Children)
-      {
-        yield return new VisualUnit.NestedVisualComponent(child);
-      }
     }
 
     public CUITextBlock() : base() { }

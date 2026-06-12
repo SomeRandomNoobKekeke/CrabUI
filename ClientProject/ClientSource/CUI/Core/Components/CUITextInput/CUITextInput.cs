@@ -13,13 +13,43 @@ namespace CrabUI
 {
   public partial class CUITextInput : CUIComponent, IComponent
   {
+    public TextBlock TextBlock { get; } = new();
+
+    public string Text
+    {
+      get => TextBlock.Text;
+      set => TextBlock.Text = value;
+    }
+
+
+    private void HandleTextInput(CUITextInputEvent e)
+    {
+      Text += e.Args.Character;
+    }
+
     protected override void OnAttachedToMainComponent(CUIMainComponent mainComponent)
     {
       base.OnAttachedToMainComponent(mainComponent);
+      mainComponent.GlobalEvents.TextInput.Add(HandleTextInput);
     }
     protected override void OnDetachedFromMainComponent(CUIMainComponent mainComponent)
     {
       base.OnDetachedFromMainComponent(mainComponent);
+      mainComponent.GlobalEvents.TextInput.Remove(HandleTextInput);
+    }
+
+    protected override void UpdateRect(CUIRect rect)
+    {
+      base.UpdateRect(rect);
+      TextBlock.Rect = rect;
+    }
+
+    public override IEnumerable<VisualUnit> VisualSplit()
+    {
+      if (!Visible || CulledOut) yield break;
+
+      yield return new VisualUnit.PrimitiveVisualElement(Background);
+      yield return new VisualUnit.PrimitiveVisualElement(TextBlock);
     }
   }
 }

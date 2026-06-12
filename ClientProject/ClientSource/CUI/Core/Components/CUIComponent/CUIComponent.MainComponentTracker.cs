@@ -27,7 +27,17 @@ namespace CrabUI
     protected virtual MainComponentTracker_Part MainComponentTracker { get; set; } = new();
     public class MainComponentTracker_Part : Part, IModule
     {
-      public CUIMainComponent MainComponent { get; set; }
+      private CUIMainComponent _MainComponent;
+      public CUIMainComponent MainComponent
+      {
+        get => _MainComponent;
+        set
+        {
+          if (MainComponent is not null) Self.OnDetachedFromMainComponent(MainComponent);
+          _MainComponent = value;
+          if (MainComponent is not null) Self.OnAttachedToMainComponent(MainComponent);
+        }
+      }
 
       public void OnAttachedTo(CUIComponent component)
       {
@@ -39,20 +49,10 @@ namespace CrabUI
         {
           SetRec(component.MainComponent);
         }
-
-        if (MainComponent is not null)
-        {
-          Self.OnAttachedToMainComponent(MainComponent);
-        }
       }
 
       public void OnDetached()
       {
-        if (MainComponent is not null)
-        {
-          Self.OnDetachedFromMainComponent(MainComponent);
-        }
-
         SetRec(null);
       }
 

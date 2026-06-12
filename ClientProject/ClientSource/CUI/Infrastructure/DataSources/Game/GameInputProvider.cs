@@ -44,9 +44,27 @@ namespace CrabUI
 
       Harmony.Patch(
         original: typeof(KeyboardDispatcher).GetMethod("set_Subscriber", AccessTools.all),
-        prefix: new HarmonyMethod(KeyboardDispatcher_set_Subscriber_Replace)
+        prefix: new HarmonyMethod(typeof(GameInputProvider).GetMethod("KeyboardDispatcher_set_Subscriber_Replace"))
+      );
+
+      Harmony.Patch(
+        original: typeof(KeyboardDispatcher).GetMethod("EventInput_TextEditing", AccessTools.all),
+        prefix: new HarmonyMethod(typeof(GameInputProvider).GetMethod("KeyboardDispatcher_EventInput_TextEditing"))
+      );
+
+      Harmony.Patch(
+        original: typeof(KeyboardDispatcher).GetMethod("EventInput_KeyDown", AccessTools.all),
+        prefix: new HarmonyMethod(typeof(GameInputProvider).GetMethod("KeyboardDispatcher_EventInput_KeyDown"))
+      );
+
+      Harmony.Patch(
+        original: typeof(KeyboardDispatcher).GetMethod("EventInput_CharEntered", AccessTools.all),
+        prefix: new HarmonyMethod(typeof(GameInputProvider).GetMethod("KeyboardDispatcher_EventInput_CharEntered"))
       );
     }
+
+
+
     public void DisconnectFromGame()
     {
       Instance = null;
@@ -54,6 +72,37 @@ namespace CrabUI
       GameMain.Instance.Window.KeyDown -= CaptureWindowKeyDown;
 
       Harmony.UnpatchSelf();
+    }
+
+    // instead of app wide TextInput.StopTextInput();
+    public static bool InputBlocked { get; set; }
+
+    public static bool KeyboardDispatcher_EventInput_TextEditing(KeyboardDispatcher __instance, object sender, TextEditingEventArgs e)
+    {
+      if (InputBlocked) return false;
+
+      __instance._subscriber?.ReceiveEditingInput(e.Text, e.Start, e.Length);
+      return false;
+    }
+
+    public static bool KeyboardDispatcher_EventInput_KeyDown(KeyboardDispatcher __instance, object sender, KeyEventArgs e)
+    {
+      if (InputBlocked) return false;
+
+      __instance._subscriber?.ReceiveSpecialInput(e.KeyCode);
+      if (char.IsControl(e.Character))
+      {
+        __instance._subscriber?.ReceiveCommandInput(e.Character);
+      }
+      return false;
+    }
+
+    public static bool KeyboardDispatcher_EventInput_CharEntered(KeyboardDispatcher __instance, object sender, CharacterEventArgs e)
+    {
+      if (InputBlocked) return false;
+
+      __instance._subscriber?.ReceiveTextInput(e.Character);
+      return false;
     }
 
 
@@ -66,14 +115,17 @@ namespace CrabUI
 
       if (_._subscriber is GUITextBox)
       {
-        TextInput.StopTextInput();
+        // TextInput.StopTextInput();
+        InputBlocked = true;
+
         _._subscriber.Selected = false;
       }
 
       if (value is GUITextBox box)
       {
         TextInput.SetTextInputRect(box.MouseRect);
-        TextInput.StartTextInput();
+        // TextInput.StartTextInput();
+        InputBlocked = false;
         TextInput.SetTextInputRect(box.MouseRect);
       }
 

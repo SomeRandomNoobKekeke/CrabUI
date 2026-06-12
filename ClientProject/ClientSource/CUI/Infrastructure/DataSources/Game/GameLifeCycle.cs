@@ -64,17 +64,17 @@ namespace CrabUI
 
       Harmony.Patch(
         original: typeof(GUI).GetMethod("Draw"),
-        prefix: new HarmonyMethod(BeforeGUIDrawHandler)
+        prefix: new HarmonyMethod(typeof(GameLifeCycle).GetMethod("BeforeGUIDrawHandler"))
       );
 
       Harmony.Patch(
         original: typeof(GUI).GetMethod("DrawCursor", AccessTools.all),
-        prefix: new HarmonyMethod(AfterGUIDrawHandler)
+        prefix: new HarmonyMethod(typeof(GameLifeCycle).GetMethod("AfterGUIDrawHandler"))
       );
 
       Harmony.Patch(
         original: typeof(GameMain).GetMethod("Update", AccessTools.all),
-        postfix: new HarmonyMethod(UpdateHandler)
+        postfix: new HarmonyMethod(typeof(GameLifeCycle).GetMethod("UpdateHandler"))
       );
     }
 

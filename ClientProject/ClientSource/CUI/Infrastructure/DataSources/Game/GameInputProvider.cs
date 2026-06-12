@@ -8,11 +8,14 @@ using BaroJunk;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Barotrauma;
+using HarmonyLib;
 
 namespace CrabUI
 {
   public class GameInputProvider : IInputProvider
   {
+    public Harmony Harmony { get; } = new Harmony($"{ModInfo.HookId}.CUI.Input");
+
     TextInputEventPackBuilder TextInputBuilder = new();
 
 

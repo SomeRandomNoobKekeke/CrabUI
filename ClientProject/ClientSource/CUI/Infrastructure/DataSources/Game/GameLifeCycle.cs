@@ -16,6 +16,8 @@ namespace CrabUI
 {
   public class GameLifeCycle : IGameLifeCycleTracker
   {
+    public Harmony Harmony { get; } = new Harmony($"{ModInfo.HookId}.CUI.LifeCycle");
+
     private ClearableEvent<SpriteBatch> _BeforeGUIDraw = new();
     private ClearableEvent<SpriteBatch> _AfterGUIDraw = new();
     private ClearableEvent<GameTime> _Update = new();
@@ -38,51 +40,48 @@ namespace CrabUI
     }
 
 
-    private static MethodBase GUIDrawMethod => typeof(GUI).GetMethod("Draw");
-    private static MethodBase UpdateMethod => typeof(GameMain).GetMethod("Update", AccessTools.all);
-    private static MethodBase GUI_DrawCursor_Method => typeof(GUI).GetMethod("DrawCursor", AccessTools.all);
 
+    public static GameLifeCycle Instance;
 
-    private static string BeforeDrawHook => $"{ModInfo.HookId}_CUI_BeforeDraw";
-    private static string AfterDrawHook => $"{ModInfo.HookId}_CUI_AfterDraw";
-    private static string UpdateHook => $"{ModInfo.HookId}_CUI_Update";
+    public static void BeforeGUIDrawHandler(Camera cam, SpriteBatch spriteBatch)
+    {
+      Instance?._BeforeGUIDraw.Raise(spriteBatch);
+    }
 
+    public static void AfterGUIDrawHandler(SpriteBatch spriteBatch)
+    {
+      Instance?._AfterGUIDraw.Raise(spriteBatch);
+    }
 
-    public void Patch(
-      string identifier,
-      MethodBase method,
-      LuaCsPatchFunc patch,
-      ILuaCsHook.HookMethodType hookType = ILuaCsHook.HookMethodType.Before
-    ) => ((LuaCsSetup.Instance.EventService as EventService)
-           ._luaPatcher as LuaPatcherService)
-           .Patch(identifier, method, patch, hookType);
+    public static void UpdateHandler(GameTime gameTime)
+    {
+      Instance?._Update.Raise(gameTime);
+    }
 
     public void ConnectToGame()
     {
-      Patch(BeforeDrawHook, GUIDrawMethod, (instance, ptable) =>
-      {
-        _BeforeGUIDraw.Raise((SpriteBatch)ptable["spriteBatch"]);
-        return null;
-      }, ILuaCsHook.HookMethodType.Before);
+      Instance = this;
 
-      Patch(AfterDrawHook, GUI_DrawCursor_Method, (instance, ptable) =>
-      {
-        _AfterGUIDraw.Raise((SpriteBatch)ptable["spriteBatch"]);
-        return null;
-      }, ILuaCsHook.HookMethodType.Before);
+      Harmony.Patch(
+        original: typeof(GUI).GetMethod("Draw"),
+        prefix: new HarmonyMethod(BeforeGUIDrawHandler)
+      );
 
-      Patch(UpdateHook, UpdateMethod, (instance, ptable) =>
-      {
-        _Update.Raise((GameTime)ptable["gameTime"]);
-        return null;
-      }, ILuaCsHook.HookMethodType.After);
+      Harmony.Patch(
+        original: typeof(GUI).GetMethod("DrawCursor", AccessTools.all),
+        prefix: new HarmonyMethod(AfterGUIDrawHandler)
+      );
+
+      Harmony.Patch(
+        original: typeof(GameMain).GetMethod("Update", AccessTools.all),
+        postfix: new HarmonyMethod(UpdateHandler)
+      );
     }
 
     public void DisconnectFromGame()
     {
-      _BeforeGUIDraw.Clear();
-      _AfterGUIDraw.Clear();
-      _Update.Clear();
+      Instance = null;
+      Harmony.UnpatchSelf();
     }
   }
 }

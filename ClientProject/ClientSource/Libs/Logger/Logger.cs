@@ -122,13 +122,9 @@ namespace BaroJunk
       for (int i = 0; i < st.FrameCount; i++)
       {
         StackFrame sf = st.GetFrame(i);
-        if (sf.GetMethod().DeclaringType is null)
-        {
-          Log($"-> {sf.GetMethod().DeclaringType?.Name}.{sf.GetMethod()}");
-          break;
-        }
         Log($"-> {sf.GetMethod().DeclaringType?.Name}.{sf.GetMethod()}");
       }
+      Log($"\n");
     }
 
     private void _Print(object msg, Color color)

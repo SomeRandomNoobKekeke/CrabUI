@@ -31,6 +31,8 @@ namespace CrabUIUser
 
       Logger.Log($"Compiled somehow");
 
+
+
       try
       {
         CUI.Start();
@@ -42,7 +44,7 @@ namespace CrabUIUser
         CUIDebugger.Init();
         MGDebugTool.Init();
 
-
+        // Utils.PrintAllHarmonyPatches();
 
         Experiment();
       }

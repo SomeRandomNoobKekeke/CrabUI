@@ -34,6 +34,7 @@ namespace CrabUI
       TextInputBuilder.KeyDownEvents.Add(args);
     }
 
+
     public static GameInputProvider Instance;
 
     public void ConnectToGame()
@@ -61,8 +62,17 @@ namespace CrabUI
         original: typeof(KeyboardDispatcher).GetMethod("EventInput_CharEntered", AccessTools.all),
         prefix: new HarmonyMethod(typeof(GameInputProvider).GetMethod("KeyboardDispatcher_EventInput_CharEntered"))
       );
+
+      Harmony.Patch(
+        original: typeof(GUITextBox).GetMethod("ReceiveCommandInput", AccessTools.all),
+        prefix: new HarmonyMethod(typeof(GameInputProvider).GetMethod("ReceiveCommandInput"))
+      );
     }
 
+    public static void ReceiveCommandInput(char command)
+    {
+      // CUI.Logger.PrintStackTrace();
+    }
 
 
     public void DisconnectFromGame()
@@ -72,6 +82,8 @@ namespace CrabUI
       GameMain.Instance.Window.KeyDown -= CaptureWindowKeyDown;
 
       Harmony.UnpatchSelf();
+
+      CUI.Logger.Log($"Harmony [{Harmony.Id}] detached");
     }
 
     // instead of app wide TextInput.StopTextInput();
@@ -79,6 +91,7 @@ namespace CrabUI
 
     public static bool KeyboardDispatcher_EventInput_TextEditing(KeyboardDispatcher __instance, object sender, TextEditingEventArgs e)
     {
+      if (__instance is null) return true;
       if (InputBlocked) return false;
 
       __instance._subscriber?.ReceiveEditingInput(e.Text, e.Start, e.Length);
@@ -87,6 +100,7 @@ namespace CrabUI
 
     public static bool KeyboardDispatcher_EventInput_KeyDown(KeyboardDispatcher __instance, object sender, KeyEventArgs e)
     {
+      if (__instance is null) return true;
       if (InputBlocked) return false;
 
       __instance._subscriber?.ReceiveSpecialInput(e.KeyCode);
@@ -99,6 +113,7 @@ namespace CrabUI
 
     public static bool KeyboardDispatcher_EventInput_CharEntered(KeyboardDispatcher __instance, object sender, CharacterEventArgs e)
     {
+      if (__instance is null) return true;
       if (InputBlocked) return false;
 
       __instance._subscriber?.ReceiveTextInput(e.Character);
@@ -109,7 +124,7 @@ namespace CrabUI
     public static bool KeyboardDispatcher_set_Subscriber_Replace(KeyboardDispatcher __instance, IKeyboardSubscriber value)
     {
       KeyboardDispatcher _ = __instance;
-
+      TextInput.StartTextInput();
 
       if (_._subscriber == value) { return false; }
 

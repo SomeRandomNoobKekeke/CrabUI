@@ -50,7 +50,8 @@ namespace CrabUI
         SomethingHappened =
           PressedKeys.Length != 0 ||
           ReleasedKeys.Length != 0 ||
-          TextInputEvents.Length != 0;
+          TextInputEvents.Length != 0 ||
+          KeyDownEvents.Length != 0;
       }
     }
   }

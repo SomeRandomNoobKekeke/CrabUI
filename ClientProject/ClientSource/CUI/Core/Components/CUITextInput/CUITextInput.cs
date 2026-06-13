@@ -25,7 +25,6 @@ namespace CrabUI
 
     private void HandleTextInput(CUITextInputEvent e)
     {
-
       Text += e.Args.Character;
     }
 

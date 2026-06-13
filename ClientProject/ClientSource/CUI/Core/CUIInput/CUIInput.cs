@@ -17,12 +17,17 @@ namespace CrabUI
 
     public KeyboardInput Keyboard { get; }
     public MouseInput Mouse { get; }
-    public bool SomethingHappened => Mouse.SomethingHappened || Keyboard.SomethingHappened;
+    public bool FocusStolen { get; private set; }
+    public bool SomethingHappened => Mouse.SomethingHappened || Keyboard.SomethingHappened;// || FocusStolen;
+
+
 
     public void Update(double totalTime, MouseState mouse, KeyboardState keyboard, TextInputEventPack textInput)
     {
       Mouse.Update(totalTime, mouse);
       Keyboard.Update(totalTime, keyboard, textInput);
+
+      FocusStolen = textInput.FocusStolen;
     }
 
     public CUIInput()

@@ -5,10 +5,10 @@ using System.Reflection;
 using System.Diagnostics;
 using Barotrauma;
 
+
 using System.IO;
 using System.Xml;
 using System.Xml.Linq;
-
 namespace CrabUI
 {
   public partial class SoloCUIRunner
@@ -38,6 +38,11 @@ namespace CrabUI
       public CUITexture2D GetTexture(string path)
       {
         return Self.TextureManager.GetTexture(NormalizePath(path));
+      }
+
+      public void GrabFocus()
+      {
+        Barotrauma.GUI.KeyboardDispatcher.Subscriber = null;
       }
     }
   }

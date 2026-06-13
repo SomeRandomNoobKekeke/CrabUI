@@ -15,11 +15,17 @@ namespace CrabUI
     public List<TextInputEventArgs> TextInputEvents { get; } = new();
     public List<TextInputEventArgs> KeyDownEvents { get; } = new();
 
+    private bool FocusStolen;
+
+    //It doesn't belong here but i don't want to create 100 wrappers for some bool flags
+    public void StealFocus() => FocusStolen = true;
+
     public TextInputEventPack Build()
     {
       TextInputEventPack pack = new TextInputEventPack(
         TextInputEvents.ToArray(),
-        KeyDownEvents.ToArray()
+        KeyDownEvents.ToArray(),
+        FocusStolen
       );
 
       TextInputEvents.Clear();

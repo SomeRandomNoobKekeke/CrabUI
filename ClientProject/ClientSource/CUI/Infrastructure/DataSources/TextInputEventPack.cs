@@ -12,6 +12,7 @@ namespace CrabUI
 {
   public record TextInputEventPack(
     TextInputEventArgs[] TextInputEvents,
-    TextInputEventArgs[] KeyDownEvents
+    TextInputEventArgs[] KeyDownEvents,
+    bool FocusStolen
   );
 }

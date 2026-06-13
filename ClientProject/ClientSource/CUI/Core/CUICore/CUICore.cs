@@ -32,6 +32,8 @@ namespace CrabUI
     public CUIInput Input { get; } = new();
     public EventConstructor EventConstructor { get; private set; }
 
+    public CUIComponent FocusedComponent { get; private set; }
+
     private void UpdateGameScreenRect()
     {
       Main.Rect = new CUIRect(GameScreenRect.Left, GameScreenRect.Top, GameScreenRect.Width, GameScreenRect.Height);

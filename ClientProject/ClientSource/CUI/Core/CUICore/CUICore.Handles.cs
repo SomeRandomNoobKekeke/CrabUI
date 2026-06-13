@@ -33,6 +33,11 @@ namespace CrabUI
     {
       public CUIGraphicsDevice GraphicsDevice { get; }
       public CUIGUI GUI { get; }
+
+      /// <summary>
+      /// Should steal focus from other GUI Components
+      /// </summary>
+      public void GrabFocus();
     }
 
     public class CUIRunnerHandle_Part : Part

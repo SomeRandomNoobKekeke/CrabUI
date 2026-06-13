@@ -26,6 +26,13 @@ namespace CrabUI
           Self.Input.Update(totalTime, mouse, keyboard, textInput);
           Self.EventConstructor.Construct(Self.Input);
 
+          //BRUH idk where to put it, this event is kinda special
+          if (Self.Input.FocusStolen)
+          {
+            Self.FocusedComponent;
+            Self.FocusedComponent = null;
+          }
+
           Self.TopMain.Update(totalTime, Self.Input);
           Self.Main.Update(totalTime, Self.Input);
 

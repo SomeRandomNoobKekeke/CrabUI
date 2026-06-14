@@ -32,16 +32,6 @@ namespace CrabUIUser
           Text = "bebebe",
         };
 
-        frame["textinput"].OnFocus += () =>
-        {
-          frame["textinput"].BackgroundColor = Color.Lime;
-        };
-
-        frame["textinput"].OnFocusLost += () =>
-        {
-          frame["textinput"].BackgroundColor = Color.Red;
-        };
-
         return frame;
       }
     }

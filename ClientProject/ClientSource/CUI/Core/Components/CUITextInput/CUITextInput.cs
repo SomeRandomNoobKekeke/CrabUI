@@ -17,27 +17,25 @@ namespace CrabUI
     public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUITextInput>((c) =>
     {
       c.Focusable = true;
+      c.CaretTexture.Color = Color.Cyan;
+      c.TextBlock.Anchor = CUIAnchor.LeftCenter;
     });
-
-    public TextBlock TextBlock { get; } = new();
-
-    public string Text
-    {
-      get => TextBlock.Text;
-      set => TextBlock.Text = value;
-    }
 
 
     private void HandleTextInput(CUITextInputEvent e)
     {
-      Text += e.Args.Character;
+      if (!Focused) return;
+      HandleCharacter(e.Args.Character);
     }
 
     private void HandleKeyDownInput(CUIKeyDownInputEvent e)
     {
-      if (e.Args.Key == Keys.Back)
+      if (!Focused) return;
+
+      HandleKey(e.Args.Key);
+      if (char.IsControl(e.Args.Character)) //HACK somehow it works
       {
-        Text = Text.Substring(0, Math.Max(0, Text.Length - 1));
+        HandleCommand(e.Args.Key);
       }
     }
 
@@ -56,18 +54,10 @@ namespace CrabUI
       mainComponent.GlobalEvents.KeyDownInput.Remove(HandleKeyDownInput);
     }
 
-    protected override void UpdateRect(CUIRect rect)
+    public CUITextInput() : base()
     {
-      base.UpdateRect(rect);
-      TextBlock.Rect = rect;
-    }
-
-    public override IEnumerable<VisualUnit> VisualSplit()
-    {
-      if (!Visible || CulledOut) yield break;
-
-      yield return new VisualUnit.PrimitiveVisualElement(Background);
-      yield return new VisualUnit.PrimitiveVisualElement(TextBlock);
+      OnFocus += HandleFocus;
+      OnFocusLost += HandleFocusLost;
     }
   }
 }

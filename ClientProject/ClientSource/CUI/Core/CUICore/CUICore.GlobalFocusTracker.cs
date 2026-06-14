@@ -19,14 +19,13 @@ namespace CrabUI
       public IFocusable ShouldBeFocused { get; set; }
 
 
-      private IFocusable _FocusedComponent;
-      public IFocusable FocusedComponent
+      private IFocusable? _FocusedComponent;
+      public IFocusable? FocusedComponent
       {
         get => _FocusedComponent;
         private set
         {
           if (_FocusedComponent == value) return;
-          CUI.Logger.LogVars(_FocusedComponent, value);
 
           if (_FocusedComponent != null) _FocusedComponent.Focused = false;
           _FocusedComponent = value;
@@ -59,7 +58,7 @@ namespace CrabUI
           return;
         }
 
-        IFocusable next = null;
+        IFocusable? next = null;
         next ??= Self.Main.FocusTracker.ShouldBeFocused;
         next ??= Self.TopMain.FocusTracker.ShouldBeFocused;
 

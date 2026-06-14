@@ -18,14 +18,20 @@ namespace CrabUI
     public SimpleTexture CaretTexture { get; } = new();
     public SimpleTexture SelectionOverlay { get; } = new();
 
-    private VisualStateStruct _VisualState;
-    public VisualStateStruct VisualState
+    public TextMeasurementsStruct TextMeasurements;
+
+    public void UpdaTextMeasurements()
     {
-      get => _VisualState;
-      set
+      float MeasureX(string s) => TextBlock.Font.MeasureString(s).X;
+
+      float caretLeft = MeasureX(State.Text.Substring(0, State.CaretPos));
+      float caretRight = MeasureX(State.Text.Substring(0, State.CaretPos + 1));
+
+      TextMeasurements = TextMeasurements with
       {
-        _VisualState = value;
-      }
+        CaretOffsetX = caretLeft,
+        CaretWidth = Math.Max(5, caretRight - caretLeft),
+      };
     }
 
     private void UpdateVisualState()
@@ -35,17 +41,19 @@ namespace CrabUI
       Background.Color = Focused ? new Color(0, 255, 0, 64) : new Color(255, 0, 0, 64);
 
       CaretTexture.Color = Focused ? new Color(0, 255, 255, 64) : Color.Transparent;
+
+
       CaretTexture.Rect = Rect with
       {
-        Width = 10,
+        Left = Rect.Left + TextMeasurements.CaretOffsetX,
+        Width = TextMeasurements.CaretWidth,
       };
 
-
-      VisualState = VisualState with
-      {
-        CaretVisible = Focused,
-        SelectionVisible = Focused && !State.SelectionEmpty
-      };
+      // VisualState = VisualState with
+      // {
+      //   CaretVisible = Focused,
+      //   SelectionVisible = Focused && !State.SelectionEmpty
+      // };
     }
 
 
@@ -55,10 +63,7 @@ namespace CrabUI
       base.UpdateRect(rect);
       TextBlock.Rect = rect;
 
-      CaretTexture.Rect = Rect with
-      {
-        Width = 10,
-      };
+      UpdateVisualState();
     }
 
     public override IEnumerable<VisualUnit> VisualSplit()

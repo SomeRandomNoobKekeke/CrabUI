@@ -21,6 +21,7 @@ namespace CrabUI
       set
       {
         _State = value;
+        UpdaTextMeasurements();
         UpdateVisualState();
       }
     }

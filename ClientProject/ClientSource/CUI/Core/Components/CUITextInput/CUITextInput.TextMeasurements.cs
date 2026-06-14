@@ -14,12 +14,12 @@ namespace CrabUI
 {
   public partial class CUITextInput
   {
-    public struct VisualStateStruct
+    public struct TextMeasurementsStruct
     {
-
-
-      public bool CaretVisible;
-      public bool SelectionVisible;
+      public float CaretOffsetX;
+      public float CaretWidth;
+      public float SelectionOffsetX;
+      public float SelectionWidth;
     }
   }
 }

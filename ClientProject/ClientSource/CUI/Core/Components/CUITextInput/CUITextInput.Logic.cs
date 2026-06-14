@@ -32,8 +32,6 @@ namespace CrabUI
       {
         CaretPos = State.Text.Length - 1,
       };
-
-      UpdateVisualState();
     }
 
     private void HandleFocusLost()
@@ -49,12 +47,6 @@ namespace CrabUI
         CaretPos = State.CaretPos + 1,
       };
     }
-
-
-
-
-
-
 
     private void HandleCommand(Keys key)
     {
@@ -76,6 +68,14 @@ namespace CrabUI
         {
           RemoveSelection();
         }
+      }
+
+      if (key == Keys.Left)
+      {
+        State = State with
+        {
+          CaretPos = State.CaretPos - 1,
+        };
       }
     }
 

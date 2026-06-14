@@ -24,13 +24,11 @@ namespace CrabUI
     {
       float MeasureX(string s) => TextBlock.Font.MeasureString(s).X;
 
-      float caretLeft = MeasureX(State.Text.Substring(0, State.CaretPos));
-      float caretRight = MeasureX(State.Text.Substring(0, State.CaretPos + 1));
-
       TextMeasurements = TextMeasurements with
       {
-        CaretOffsetX = caretLeft,
-        CaretWidth = Math.Max(5, caretRight - caretLeft),
+        CaretLeft = MeasureX(State.Text.Substring(0, State.CaretPos + 1)),
+        SelectionLeft = MeasureX(State.Text.Substring(0, State.SelectionStart)),
+        SelectionRight = MeasureX(State.Text.Substring(0, State.SelectionEnd)),
       };
     }
 
@@ -40,13 +38,19 @@ namespace CrabUI
 
       Background.Color = Focused ? new Color(0, 255, 0, 64) : new Color(255, 0, 0, 64);
 
-      CaretTexture.Color = Focused ? new Color(0, 255, 255, 64) : Color.Transparent;
+      CaretTexture.Color = Focused ? new Color(0, 255, 255, 127) : Color.Transparent;
 
 
       CaretTexture.Rect = Rect with
       {
-        Left = Rect.Left + TextMeasurements.CaretOffsetX,
-        Width = TextMeasurements.CaretWidth,
+        Left = Rect.Left + TextMeasurements.CaretLeft,
+        Width = 3,
+      };
+
+      SelectionOverlay.Rect = Rect with
+      {
+        Left = Rect.Left + TextMeasurements.SelectionLeft,
+        Width = TextMeasurements.SelectionWidth,
       };
 
       // VisualState = VisualState with

@@ -22,7 +22,7 @@ namespace CrabUIUser
         {
           BackgroundColor = new Color(0, 0, 64),
           Absolute = new CUINullRect(0, 0, 300, 400),
-          Anchor = CUIAnchor.Center,
+          Anchor = new Vector2(0.7f, 0.5f),
           Resizable = true,
         };
 

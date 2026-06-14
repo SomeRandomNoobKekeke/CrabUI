@@ -18,6 +18,7 @@ namespace CrabUI
     {
       c.Focusable = true;
       c.CaretTexture.Color = Color.Cyan;
+      c.SelectionOverlay.Color = Color.Cyan;
       c.TextBlock.Anchor = CUIAnchor.LeftCenter;
     });
 
@@ -33,6 +34,8 @@ namespace CrabUI
       if (!Focused) return;
 
       HandleKey(e.Args.Key);
+
+      //TODO i should just use CUIInput and check ctrl and shift states, they might have different actions
       if (char.IsControl(e.Args.Character)) //HACK somehow it works
       {
         HandleCommand(e.Args.Key);

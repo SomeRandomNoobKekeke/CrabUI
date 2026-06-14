@@ -16,10 +16,10 @@ namespace CrabUI
   {
     public struct TextMeasurementsStruct
     {
-      public float CaretOffsetX;
-      public float CaretWidth;
-      public float SelectionOffsetX;
-      public float SelectionWidth;
+      public float CaretLeft;
+      public float SelectionLeft;
+      public float SelectionRight;
+      public float SelectionWidth => SelectionRight - SelectionLeft;
     }
   }
 }

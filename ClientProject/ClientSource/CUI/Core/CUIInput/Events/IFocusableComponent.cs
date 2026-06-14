@@ -11,7 +11,9 @@ namespace CrabUI
 {
   public interface IFocusableComponent
   {
-    public void Focus();
+    public bool Focused { get; }
+    public bool Focusable { get; }
+
     public ClearableEvent FocusLost { get; }
   }
 }

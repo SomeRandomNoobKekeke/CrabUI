@@ -25,6 +25,7 @@ namespace CrabUI
 
 
     public EventConstructor EventConstructor { get; set; } // Injected from CUICore //TODO use ComponentGenerator
+    public FocusTracker FocusTracker { get; } = new();
     public GrabbedHandleTracker GrabbedHandleTracker { get; } = new();
 
     public bool MouseOverSomeElement => EventTargets.TopTarget != null;
@@ -77,6 +78,8 @@ namespace CrabUI
 
     private void HandleInput(CUIInput Input)
     {
+      FocusTracker.Reset();
+
       EventTargets.Find(VisualFlattener.Flat, Input.Mouse.Pos);
 
       EventDispatcher.Dispatch(EventTargets.PrevTargets, EventConstructor.MouseOffEvent);
@@ -89,6 +92,8 @@ namespace CrabUI
 
       EventDispatcher.Dispatch(GlobalEvents, EventConstructor.Events);
       EventDispatcher.Dispatch(EventTargets.Targets, EventConstructor.Events);
+
+      FocusTracker.Resolve(Input, EventTargets);
     }
 
 

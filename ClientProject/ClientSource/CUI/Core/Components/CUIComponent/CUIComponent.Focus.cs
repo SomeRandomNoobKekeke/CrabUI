@@ -10,9 +10,11 @@ using ComponentGenerator;
 using BaroJunk;
 namespace CrabUI
 {
-  public partial class CUIComponent
+  public partial class CUIComponent : IFocusableComponent
   {
-    public bool Focused { get; private set; }
-
+    public bool Focused { get; set; }
+    public bool Focusable { get; set; }
+    public void Focus() => Focused = true;
+    public ClearableEvent FocusLost { get; }
   }
 }

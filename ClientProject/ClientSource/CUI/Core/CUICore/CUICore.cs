@@ -31,6 +31,8 @@ namespace CrabUI
     public CUIMainComponent TopMain { get; private set; }
     public CUIInput Input { get; } = new();
     public EventConstructor EventConstructor { get; private set; }
+    public GlobalFocusTracker GlobalFocusTracker { get; private set; }
+
 
     public CUIComponent FocusedComponent { get; private set; }
 
@@ -62,12 +64,14 @@ namespace CrabUI
     }
 
     private bool _Activated;
+    //Note: this exists primerely because DebugNodes may call DebugHub on creation
     internal void Activate()
     {
       if (_Activated) return;
       _Activated = true;
 
       EventConstructor = new();
+      GlobalFocusTracker = new();
 
       Main = new() { EventConstructor = EventConstructor };
       TopMain = new() { EventConstructor = EventConstructor };

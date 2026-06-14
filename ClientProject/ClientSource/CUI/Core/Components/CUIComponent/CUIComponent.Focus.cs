@@ -10,11 +10,35 @@ using ComponentGenerator;
 using BaroJunk;
 namespace CrabUI
 {
-  public partial class CUIComponent : IFocusableComponent
+  public partial class CUIComponent
   {
-    public bool Focused { get; set; }
-    public bool Focusable { get; set; }
-    public void Focus() => Focused = true;
-    public ClearableEvent FocusLost { get; }
+    public FocusHandle FocusHandle { get; } = new();
+
+    public bool Focused
+    {
+      get => FocusHandle.Focused;
+      set => FocusHandle.Focused = value;
+    }
+
+    public bool Focusable
+    {
+      get => FocusHandle.Focusable;
+      set => FocusHandle.Focusable = value;
+    }
+
+    //TODO should these take this CUIComponent as first arg?
+    public Action AddOnFocus { set { OnFocus += value; } }
+    public event Action OnFocus
+    {
+      add => FocusHandle.OnFocus.Add(value);
+      remove => FocusHandle.OnFocus.Remove(value);
+    }
+
+    public Action AddOnFocusLost { set { OnFocusLost += value; } }
+    public event Action OnFocusLost
+    {
+      add => FocusHandle.OnFocusLost.Add(value);
+      remove => FocusHandle.OnFocusLost.Remove(value);
+    }
   }
 }

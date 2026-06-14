@@ -31,10 +31,8 @@ namespace CrabUI
     public CUIMainComponent TopMain { get; private set; }
     public CUIInput Input { get; } = new();
     public EventConstructor EventConstructor { get; private set; }
-    public GlobalFocusTracker GlobalFocusTracker { get; private set; }
 
 
-    public CUIComponent FocusedComponent { get; private set; }
 
     private void UpdateGameScreenRect()
     {
@@ -71,7 +69,6 @@ namespace CrabUI
       _Activated = true;
 
       EventConstructor = new();
-      GlobalFocusTracker = new();
 
       Main = new() { EventConstructor = EventConstructor };
       TopMain = new() { EventConstructor = EventConstructor };

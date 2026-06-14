@@ -74,5 +74,9 @@ namespace CrabUI
       add => this.Events.MouseScroll.Add(value);
       remove => this.Events.MouseScroll.Remove(value);
     }
+
+
+
+
   }
 }

@@ -11,13 +11,11 @@ using Microsoft.Xna.Framework.Input;
 
 namespace CrabUI
 {
-  /// <summary>
-  /// This thing contains logic for finding focused component in just one CUIMainComponent
-  /// </summary>
+
   public class FocusTracker : IModule
   {
     public bool FocusShouldBeLost { get; set; }
-    public IEventConsumer ShouldBeFocused { get; set; }
+    public IFocusable ShouldBeFocused { get; set; }
 
     public void Reset()
     {
@@ -25,20 +23,17 @@ namespace CrabUI
       ShouldBeFocused = null;
     }
 
-    public void Resolve(CUIInput Input, EventTargets targets)
+    public void RequestFocus(IFocusable c) => ShouldBeFocused = c;
+
+    public void CheckFocusLost(CUIInput input, EventTargets targets)
     {
-      if (targets.TopTarget is null)
+      //TODO why only on click?
+      //There was a click but no one wants to be focused
+      if (ShouldBeFocused is null)
       {
-        if (Input.Mouse.M1.Down)
+        if (input.Mouse.M1.Down)
         {
           FocusShouldBeLost = true;
-        }
-      }
-      else
-      {
-        if (Input.Mouse.M1.Down)
-        {
-          ShouldBeFocused = targets.TopTarget;
         }
       }
     }

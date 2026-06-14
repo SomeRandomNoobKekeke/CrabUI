@@ -14,6 +14,11 @@ namespace CrabUI
 {
   public partial class CUITextInput : CUIComponent, IComponent
   {
+    public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUITextInput>((c) =>
+    {
+      c.Focusable = true;
+    });
+
     public TextBlock TextBlock { get; } = new();
 
     public string Text

@@ -30,6 +30,7 @@ namespace CrabUI
 
       TextInputEvents.Clear();
       KeyDownEvents.Clear();
+      SomethingFocusedElsewhere = false;
 
       return pack;
     }

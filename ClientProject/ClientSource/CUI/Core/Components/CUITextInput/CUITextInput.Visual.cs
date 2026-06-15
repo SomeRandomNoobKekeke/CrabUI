@@ -26,7 +26,7 @@ namespace CrabUI
 
       TextMeasurements = TextMeasurements with
       {
-        CaretLeft = MeasureX(State.Text.Substring(0, State.CaretPos + 1)),
+        CaretLeft = MeasureX(State.Text.Substring(0, State.CaretPos)),
         SelectionLeft = MeasureX(State.Text.Substring(0, State.SelectionStart)),
         SelectionRight = MeasureX(State.Text.Substring(0, State.SelectionEnd)),
       };
@@ -34,17 +34,24 @@ namespace CrabUI
 
     private void UpdateVisualState()
     {
-      TextBlock.Text = State.Text;
+      UpdateRects();
 
       Background.Color = Focused ? new Color(0, 255, 0, 64) : new Color(255, 0, 0, 64);
-
       CaretTexture.Color = Focused ? new Color(0, 255, 255, 127) : Color.Transparent;
+    }
+
+    private void UpdateRects()
+    {
+      TextBlock.Rect = Rect;
+      TextBlock.Text = State.Text;
 
 
       CaretTexture.Rect = Rect with
       {
         Left = Rect.Left + TextMeasurements.CaretLeft,
-        Width = 3,
+        Width = 2,
+        Top = Rect.Top + Rect.Height * 0.1f,
+        Height = Rect.Height * 0.8f,
       };
 
       SelectionOverlay.Rect = Rect with
@@ -52,12 +59,6 @@ namespace CrabUI
         Left = Rect.Left + TextMeasurements.SelectionLeft,
         Width = TextMeasurements.SelectionWidth,
       };
-
-      // VisualState = VisualState with
-      // {
-      //   CaretVisible = Focused,
-      //   SelectionVisible = Focused && !State.SelectionEmpty
-      // };
     }
 
 
@@ -65,7 +66,6 @@ namespace CrabUI
     protected override void UpdateRect(CUIRect rect)
     {
       base.UpdateRect(rect);
-      TextBlock.Rect = rect;
 
       UpdateVisualState();
     }
@@ -75,8 +75,8 @@ namespace CrabUI
       if (!Visible || CulledOut) yield break;
 
       yield return new VisualUnit.PrimitiveVisualElement(Background);
-      yield return new VisualUnit.PrimitiveVisualElement(TextBlock);
       yield return new VisualUnit.PrimitiveVisualElement(SelectionOverlay);
+      yield return new VisualUnit.PrimitiveVisualElement(TextBlock);
       yield return new VisualUnit.PrimitiveVisualElement(CaretTexture);
     }
   }

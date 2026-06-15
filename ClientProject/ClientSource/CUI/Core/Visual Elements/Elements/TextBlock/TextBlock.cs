@@ -12,6 +12,33 @@ namespace CrabUI
 {
   public partial class TextBlock : VisualElementBase, IVisualElement
   {
+    public float CaretOffset(int i)
+      => Font.MeasureString(Text.SubstringSafe(i)).X * Scale;
+
+    //Evil from old cui
+    public int CaretIndex(Vector2 clickPos)
+    {
+      if (!Rect.Contains(clickPos)) return 0;
+
+      float x = clickPos.X - Rect.Left;
+      int Aprox = (int)Math.Round(x / Font.MeasureString(Text).X * Text.Length);
+
+      int closestCaretPos = Aprox;
+      float smallestDif = Math.Abs(x - CaretOffset(Aprox));
+
+      for (int i = Aprox - 2; i <= Aprox + 2; i++)
+      {
+        float dif = Math.Abs(x - CaretOffset(i));
+        if (dif < smallestDif)
+        {
+          closestCaretPos = i;
+          smallestDif = dif;
+        }
+      }
+
+      return closestCaretPos;
+    }
+
     private CUIRect _Rect; public CUIRect Rect
     {
       get => _Rect;

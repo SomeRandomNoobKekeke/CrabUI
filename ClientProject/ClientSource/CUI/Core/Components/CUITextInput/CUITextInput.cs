@@ -18,29 +18,11 @@ namespace CrabUI
     {
       c.Focusable = true;
       c.CaretTexture.Color = Color.Cyan;
-      c.SelectionOverlay.Color = Color.Cyan;
+      c.SelectionOverlay.Color = new Color(0, 255, 255, 64);
       c.TextBlock.Anchor = CUIAnchor.LeftCenter;
+      c.Background.ConsumeMouseClicks = true;
     });
 
-
-    private void HandleTextInput(CUITextInputEvent e)
-    {
-      if (!Focused) return;
-      HandleCharacter(e.Args.Character);
-    }
-
-    private void HandleKeyDownInput(CUIKeyDownInputEvent e)
-    {
-      if (!Focused) return;
-
-      HandleKey(e.Args.Key);
-
-      //TODO i should just use CUIInput and check ctrl and shift states, they might have different actions
-      if (char.IsControl(e.Args.Character)) //HACK somehow it works
-      {
-        HandleCommand(e.Args.Key);
-      }
-    }
 
     protected override void OnAttachedToMainComponent(CUIMainComponent mainComponent)
     {
@@ -57,10 +39,20 @@ namespace CrabUI
       mainComponent.GlobalEvents.KeyDownInput.Remove(HandleKeyDownInput);
     }
 
+
+
     public CUITextInput() : base()
     {
       OnFocus += HandleFocus;
       OnFocusLost += HandleFocusLost;
+
+      State.Changed += HandleStateChanged;
+      MouseDown += HandleMouseDown;
     }
+
+
+
+
+
   }
 }

@@ -17,7 +17,28 @@ namespace CrabUI
     public string Text
     {
       get => State.Text;
-      set => State = State with { Text = value };
+      set => State.SetText(value);
     }
+
+    public int SelectionStart
+    {
+      get => State.SelectionStart;
+      set => State.SetSelectionStart(value);
+    }
+
+    public int SelectionEnd
+    {
+      get => State.SelectionEnd;
+      set => State.SetSelectionEnd(value);
+    }
+
+    public int CaretPos
+    {
+      get => State.CaretPos;
+      set => State.SetCaretPos(value);
+    }
+
+    public int SelectionLength => State.SelectionLength;
+    public bool SelectionEmpty => State.SelectionEmpty;
   }
 }

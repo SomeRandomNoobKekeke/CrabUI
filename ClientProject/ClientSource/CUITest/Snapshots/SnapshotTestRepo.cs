@@ -17,21 +17,6 @@ namespace CrabUIUser
     public static bool IsSnapshotTestFunc(MethodInfo mi)
           => mi.ReturnType.IsAssignableTo(typeof(CUIComponent)) && mi.GetParameters().Length == 0;
 
-    //Mb should be in some util class
-    public static string GetFullMethodName(MethodInfo mi)
-    {
-      List<string> parts = new List<string>() { mi.Name };
-      Type declaringType = mi.DeclaringType;
-      while (declaringType != null)
-      {
-        parts.Add(declaringType.Name);
-        declaringType = declaringType.DeclaringType;
-      }
-      parts.Reverse();
-
-      return string.Join('.', parts);
-    }
-
     public Dictionary<string, SnapshotTest> Tests { get; } = new();
 
 
@@ -39,7 +24,7 @@ namespace CrabUIUser
     public void Add(Func<CUIComponent> TestFunc, string Name) => Add(new SnapshotTest(TestFunc, Name));
     public void Add(MethodInfo mi) => Add(
       (Func<CUIComponent>)Delegate.CreateDelegate(typeof(Func<CUIComponent>), mi),
-      GetFullMethodName(mi)
+      mi.GetFullMethodName()
     );
 
     public void Add(Type testPack)

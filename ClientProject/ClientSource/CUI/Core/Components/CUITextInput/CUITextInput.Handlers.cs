@@ -39,17 +39,19 @@ namespace CrabUI
       {
         if (!Focused) return;
 
-        HandleKey(e.Args.Key);
-
         if (CUICore.Instance.Input.Keyboard.IsKeyDown(Keys.LeftControl))
         {
           HandleCtrlCommand(e.Args.Key);
+          return;
         }
 
         if (CUICore.Instance.Input.Keyboard.IsKeyDown(Keys.LeftShift))
         {
           HandleShiftCommand(e.Args.Key);
+          return;
         }
+
+        HandleKey(e.Args.Key);
       }
       catch (Exception ex)
       {
@@ -84,8 +86,8 @@ namespace CrabUI
 
     private void HandleCharacter(char c)
     {
-      Text = State.Text + c;
-      CaretPos = State.CaretPos + 1;
+      Text = Text.Insert(CaretPos, c.ToString());
+      CaretPos++;
     }
 
     private void HandleCtrlCommand(Keys key)
@@ -96,11 +98,81 @@ namespace CrabUI
       }
     }
 
+    //
     private void HandleShiftCommand(Keys key)
     {
-      if (key == Keys.A)
+      if (key == Keys.Left)
       {
-        SelectAll();
+        HandleSelectionExpansionLeft();
+      }
+
+      if (key == Keys.Right)
+      {
+        HandleSelectionExpansionRight();
+      }
+    }
+
+    private void HandleSelectionExpansionLeft()
+    {
+      if (!SomethingSelected) SetSelection(CaretPos, CaretPos);
+
+      if (SelectionStart == CaretPos && CaretPos == SelectionEnd)
+      {
+        CaretPos--;
+        SelectionStart = CaretPos;
+        return;
+      }
+
+      if (CaretPos > SelectionEnd)
+      {
+        CaretPos--;
+        return;
+      }
+
+      if (CaretPos == SelectionEnd)
+      {
+        CaretPos--;
+        SelectionEnd = CaretPos;
+        return;
+      }
+
+      if (CaretPos < SelectionEnd)
+      {
+        CaretPos--;
+        SelectionStart = Math.Min(CaretPos, SelectionStart);
+        return;
+      }
+    }
+
+    private void HandleSelectionExpansionRight()
+    {
+      if (!SomethingSelected) SetSelection(CaretPos, CaretPos);
+
+      if (SelectionStart == CaretPos && CaretPos == SelectionEnd)
+      {
+        CaretPos++;
+        SelectionEnd = CaretPos;
+        return;
+      }
+
+      if (CaretPos < SelectionStart)
+      {
+        CaretPos++;
+        return;
+      }
+
+      if (CaretPos == SelectionStart)
+      {
+        CaretPos++;
+        SelectionStart = CaretPos;
+        return;
+      }
+
+      if (CaretPos > SelectionStart)
+      {
+        CaretPos++;
+        SelectionEnd = Math.Max(CaretPos, SelectionEnd);
+        return;
       }
     }
 
@@ -108,7 +180,7 @@ namespace CrabUI
     {
       if (key == Keys.Back)
       {
-        if (State.SelectionEmpty)
+        if (!SomethingSelected)
         {
           RemoveLeftChar();
         }
@@ -120,7 +192,7 @@ namespace CrabUI
 
       if (key == Keys.Delete)
       {
-        if (State.SelectionEmpty)
+        if (!SomethingSelected)
         {
           RemoveRightChar();
         }
@@ -130,8 +202,16 @@ namespace CrabUI
         }
       }
 
-      if (key == Keys.Left) CaretPos--;
-      if (key == Keys.Right) CaretPos++;
+      if (key == Keys.Left)
+      {
+        CaretPos--;
+        ClearSelection();
+      }
+      if (key == Keys.Right)
+      {
+        CaretPos++;
+        ClearSelection();
+      }
     }
 
     private void SelectAll()
@@ -158,6 +238,7 @@ namespace CrabUI
     {
       Text = Text.Remove(SelectionStart, SelectionLength);
       CaretPos = SelectionStart;
+      ClearSelection();
     }
 
   }

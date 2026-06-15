@@ -23,6 +23,9 @@ namespace CrabUI
       public int SelectionEnd { get; private set; }
       public int CaretPos { get; private set; }
 
+      public bool SomethingSelected => SelectionStart != SelectionEnd;
+
+      public bool IsInsideSelection(int value) => SelectionStart <= value && value <= SelectionEnd;
 
       public int SelectionLength => SelectionEnd - SelectionStart;
       public bool SelectionEmpty => SelectionLength <= 0;
@@ -40,7 +43,6 @@ namespace CrabUI
 
       public void SetSelectionStart(int value) => SetSelection(value, SelectionEnd);
       public void SetSelectionEnd(int value) => SetSelection(SelectionStart, value);
-
       public void SetSelection(int start, int end)
       {
         end = Math.Max(start, end);
@@ -51,6 +53,13 @@ namespace CrabUI
         SelectionStart = start;
         SelectionEnd = end;
 
+        Changed?.Invoke();
+      }
+
+      public void ClearSelection()
+      {
+        SelectionStart = 0;
+        SelectionEnd = 0;
         Changed?.Invoke();
       }
 

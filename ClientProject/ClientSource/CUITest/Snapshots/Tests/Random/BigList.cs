@@ -31,7 +31,6 @@ namespace CrabUIUser
           AddMouseScroll = (c, e) =>
           {
             c.ChildrenOffset += new Vector2(0, e.Scroll);
-            CUI.Logger.Log(c.ChildrenOffset);
           },
           ChildrenOffsetBounds = new CUIBoundaries(minY: 0),
           CullChildren = true,

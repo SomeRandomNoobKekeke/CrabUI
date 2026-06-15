@@ -15,9 +15,44 @@ namespace CrabUI
     public void Clear() => RemoveAllChildren();
     public void Add(CUIComponent child) => Append(child);
 
+    [CUISerializable]
+    public bool Scrollable { get; set; }
+    [CUISerializable]
+    public float TopGap { get; set; }
+    public float BottomGap { get; set; }
+
+    public float Scroll
+    {
+      get => ChildrenOffset.Y;
+      set
+      {
+        if (!Scrollable) return;
+        ChildrenOffset = ChildrenOffset with { Y = value };
+      }
+    }
+
+    protected override void UpdateRect(CUIRect rect)
+    {
+      base.UpdateRect(rect);
+
+      //TODO
+      // LayoutProps.ChildrenOffset.Bounds = new CUIBoundaries(
+      //   minX: 0,
+      //   maxX: 0,
+      //   maxY: TopGap,
+      //   minY: Math.Min(Rect.Height - ListLayout.TotalHeight - BottomGap, 0)
+      // );
+    }
+
+    private void ScrollHandle(CUIComponent c, CUIMouseScrollEvent e)
+    {
+      Scroll += e.Scroll;
+    }
+
     public CUIVerticalList() : base()
     {
       LayoutSlot.Layout = new CUIVerticalListLayout();
+      MouseScroll += ScrollHandle;
     }
   }
 }

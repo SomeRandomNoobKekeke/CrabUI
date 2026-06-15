@@ -7,6 +7,7 @@ using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
 using ComponentGenerator;
+using BaroJunk;
 
 namespace CrabUI
 {
@@ -18,6 +19,8 @@ namespace CrabUI
     });
 
     public CUIComponent TargetMainComponent { get; set; }
+
+
 
     public bool IsOpen
     {
@@ -34,9 +37,13 @@ namespace CrabUI
       if (Host == null || Parent == Host) return;
 
       Host.Append(this);
+      OnOpen?.Invoke(this);
     }
 
 
     public void Close() => RemoveSelf();
+
+
+    public event Action<CUIFrame> OnOpen;
   }
 }

@@ -12,8 +12,8 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-    protected event Action OnDebugOn;
-    protected event Action OnDebugOff;
+    protected event Action OnDebugOn; //CRINGE
+    protected event Action OnDebugOff;//CRINGE
 
     private bool _IsDebugTool; public bool IsDebugTool
     {

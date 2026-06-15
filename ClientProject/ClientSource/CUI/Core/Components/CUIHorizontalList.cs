@@ -13,6 +13,7 @@ namespace CrabUI
   public partial class CUIHorizontalList : CUIComponent, IComponent
   {
     public void Clear() => RemoveAllChildren();
+    public void Add(CUIComponent child) => Append(child);
 
     public CUIHorizontalList() : base()
     {

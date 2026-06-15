@@ -31,6 +31,26 @@ namespace CrabUI
           => new ListProxy<CUIComponent, CUIHorizontalListLayout.Target>(
             Self.Tree.Children, c => c.Adapters.Layout
           );
+
+        CUINullRect CUIHorizontalListLayout.Target.AbsoluteMin => Self.LayoutProps.AbsoluteMin.Value;
+        CUINullRect CUIHorizontalListLayout.Target.AbsoluteMax => Self.LayoutProps.AbsoluteMax.Value;
+        CUINullRect CUIHorizontalListLayout.Target.RelativeMin => Self.LayoutProps.RelativeMin.Value;
+        CUINullRect CUIHorizontalListLayout.Target.RelativeMax => Self.LayoutProps.RelativeMax.Value;
+        CUINullRect CUIHorizontalListLayout.Target.CrossRelative => Self.LayoutProps.CrossRelative.Value;
+        CUIBool2 CUIHorizontalListLayout.Target.FitContent => Self.LayoutProps.FitContent.Value;
+        Vector2 CUIHorizontalListLayout.Target.ChildrenOffset => Self.LayoutProps.ChildrenOffset.Value;
+
+        CUINullVector2 CUIHorizontalListLayout.Target.MinSize
+        {
+          get => Self.MinSizeOverride;
+          set => Self.MinSize = value;
+        }
+
+        CUINullVector2 CUIHorizontalListLayout.Target.MaxSize
+        {
+          get => Self.MaxSizeOverride;
+          set => Self.MaxSize = value;
+        }
       }
     }
   }

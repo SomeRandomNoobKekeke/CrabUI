@@ -10,7 +10,7 @@ using ComponentGenerator;
 
 namespace CrabUI
 {
-  public partial class CUIVerticalList : CUIComponent, IComponent
+  public partial class CUIHorizontalList : CUIComponent, IComponent
   {
     public void Clear() => RemoveAllChildren();
     public void Add(CUIComponent child) => Append(child);
@@ -23,15 +23,15 @@ namespace CrabUI
 
     public float Scroll
     {
-      get => ChildrenOffset.Y;
+      get => ChildrenOffset.X;
       set
       {
         if (!Scrollable) return;
-        ChildrenOffset = ChildrenOffset with { Y = value };
+        ChildrenOffset = ChildrenOffset with { X = value };
       }
     }
 
-    protected CUIVerticalListLayout ListLayout;
+    protected CUIHorizontalListLayout ListLayout;
 
     protected override void UpdateRect(CUIRect rect)
     {
@@ -52,12 +52,12 @@ namespace CrabUI
 
     protected override void SetupLayout()
     {
-      ListLayout = new CUIVerticalListLayout();
+      ListLayout = new CUIHorizontalListLayout();
       Layout = ListLayout;
-      Layout.ConnectTo(new CUIVerticalListLayout_Host_Adapter_Part() { Self = this });
+      Layout.ConnectTo(new CUIHorizontalListLayout_Host_Adapter_Part() { Self = this });
     }
 
-    public CUIVerticalList() : base()
+    public CUIHorizontalList() : base()
     {
       MouseScroll += ScrollHandle;
     }

@@ -12,80 +12,71 @@ namespace CrabUI
 {
   public class CUIHorizontalListLayout : Layout
   {
-    public interface Target : Layout.Target
+    public interface Host : Layout.Host
     {
-      public CUINullRect Absolute { get; }
-      public CUINullRect AbsoluteMin { get; }
-      public CUINullRect AbsoluteMax { get; }
-      public CUINullRect Relative { get; }
-      public CUINullRect RelativeMin { get; }
-      public CUINullRect RelativeMax { get; }
-      public CUINullRect CrossRelative { get; }
-
-      public CUIBool2 FitContent { get; }
-      public CUINullVector2 MinSize { get; set; }
-      public CUINullVector2 MaxSize { get; set; }
-
-
-
       public CUIDirection Direction { get; }
-      public float? Flex { get; }
-      public IReadOnlyList<Target> Children { get; }
-      public Vector2 ChildrenOffset { get; }
     }
+    public interface Child : Layout.ChildBase
+    {
+      public float? Flex { get; }
+    }
+
+    private Host Parent;
+    public override void ConnectTo(Layout.Host host)
+    {
+      base.ConnectTo(host);
+      Parent = host as Host;
+    }
+
+
+
+
+
 
     public class ChildSize
     {
-      public Target Child { get; set; }
+      public Layout.Child Child { get; set; }
       public float Width { get; set; }
       public float Height { get; set; }
     }
 
-
-    public override void InjectHost(Layout.Target host)
-    {
-      Host = host as Target;
-      base.InjectHost(host);
-    }
-    public new Target Host { get; private set; }
-
     public override void UpdateChildren()
     {
-      if (Host is null) return;
+      if (Parent is null) return;
       if (!RequireChildrenUpdate) return;
 
       List<ChildSize> sizes = new();
       List<ChildSize> resizables = new();
 
       float TotalWidth = 0;
-      foreach (Target c in Host.Children)
+      foreach (Layout.Child c in Parent.Children)
       {
         float w = 0;
-        float h = Host.Rect.Height; // Resize to host Height by default
+        float h = Parent.Rect.Height; // Resize to host Height by default
 
 
-        if (c.Relative.Width.HasValue) w = c.Relative.Width.Value * Host.Rect.Width;
-        if (c.CrossRelative.Width.HasValue) w = c.CrossRelative.Width.Value * Host.Rect.Height;
+        if (c.Relative.Width.HasValue) w = c.Relative.Width.Value * Parent.Rect.Width;
+        if (c.CrossRelative.Width.HasValue) w = c.CrossRelative.Width.Value * Parent.Rect.Height;
         if (c.Absolute.Width.HasValue) w = c.Absolute.Width.Value;
 
-        if (c.RelativeMin.Width.HasValue) w = Math.Max(w, c.RelativeMin.Width.Value * Host.Rect.Width);
+        if (c.RelativeMin.Width.HasValue) w = Math.Max(w, c.RelativeMin.Width.Value * Parent.Rect.Width);
         if (c.AbsoluteMin.Width.HasValue) w = Math.Max(w, c.AbsoluteMin.Width.Value);
         if (c.MinSize.X.HasValue) w = Math.Max(w, c.MinSize.X.Value);
 
-        if (c.RelativeMax.Width.HasValue) w = Math.Min(w, c.RelativeMax.Width.Value * Host.Rect.Width);
+        if (c.RelativeMax.Width.HasValue) w = Math.Min(w, c.RelativeMax.Width.Value * Parent.Rect.Width);
         if (c.AbsoluteMax.Width.HasValue) w = Math.Min(w, c.AbsoluteMax.Width.Value);
         if (c.MaxSize.X.HasValue) w = Math.Min(w, c.MaxSize.X.Value);
 
 
-        if (c.Relative.Height.HasValue) h = c.Relative.Height.Value * Host.Rect.Height;
-        if (c.CrossRelative.Height.HasValue) h = c.CrossRelative.Height.Value * Host.Rect.Width;
+        if (c.Relative.Height.HasValue) h = c.Relative.Height.Value * Parent.Rect.Height;
+        if (c.CrossRelative.Height.HasValue) h = c.CrossRelative.Height.Value * Parent.Rect.Width;
         if (c.Absolute.Height.HasValue) h = c.Absolute.Height.Value;
 
-        if (c.RelativeMin.Height.HasValue) h = Math.Max(h, c.RelativeMin.Height.Value * Host.Rect.Height);
+        if (c.RelativeMin.Height.HasValue) h = Math.Max(h, c.RelativeMin.Height.Value * Parent.Rect.Height);
         if (c.AbsoluteMin.Height.HasValue) h = Math.Max(h, c.AbsoluteMin.Height.Value);
         if (c.MinSize.Y.HasValue) h = Math.Max(h, c.MinSize.Y.Value);
 
-        if (c.RelativeMax.Height.HasValue) h = Math.Min(h, c.RelativeMax.Height.Value * Host.Rect.Height);
+        if (c.RelativeMax.Height.HasValue) h = Math.Min(h, c.RelativeMax.Height.Value * Parent.Rect.Height);
         if (c.AbsoluteMax.Height.HasValue) h = Math.Min(h, c.AbsoluteMax.Height.Value);
         if (c.MaxSize.Y.HasValue) h = Math.Min(h, c.MaxSize.Y.Value);
 
@@ -107,7 +98,7 @@ namespace CrabUI
         }
       }
 
-      float emptySpace = Host.Rect.Width - TotalWidth;
+      float emptySpace = Parent.Rect.Width - TotalWidth;
       float totalFlex = resizables.Sum(size => size.Child.Flex.Value);
       foreach (ChildSize size in resizables)
       {
@@ -115,14 +106,14 @@ namespace CrabUI
       }
 
 
-      if (Host.Direction == CUIDirection.Straight)
+      if (Parent.Direction == CUIDirection.Straight)
       {
         float x = 0;
         foreach (ChildSize c in sizes)
         {
           c.Child.Rect = new CUIRect(
-            Host.Rect.Left + x + Host.ChildrenOffset.X,
-            Host.Rect.Top + 0 + Host.ChildrenOffset.Y,
+            Parent.Rect.Left + x + Parent.ChildrenOffset.X,
+            Parent.Rect.Top + 0 + Parent.ChildrenOffset.Y,
             c.Width,
             c.Height
           );
@@ -131,16 +122,16 @@ namespace CrabUI
         }
       }
 
-      if (Host.Direction == CUIDirection.Reverse)
+      if (Parent.Direction == CUIDirection.Reverse)
       {
-        float x = Host.Rect.Width;
+        float x = Parent.Rect.Width;
         foreach (ChildSize c in sizes)
         {
           x -= c.Width;
 
           c.Child.Rect = new CUIRect(
-            Host.Rect.Left + x + Host.ChildrenOffset.X,
-            Host.Rect.Top + 0 + Host.ChildrenOffset.Y,
+            Parent.Rect.Left + x + Parent.ChildrenOffset.X,
+            Parent.Rect.Top + 0 + Parent.ChildrenOffset.Y,
             c.Width,
             c.Height
           );
@@ -152,10 +143,10 @@ namespace CrabUI
 
     public override void UpdateParent()
     {
-      if (Host.FitContent.X)
+      if (Parent.FitContent.X)
       {
         float maxWidth = 0;
-        foreach (Target c in Host.Children)
+        foreach (Layout.Child c in Parent.Children)
         {
           float w = 0;
 
@@ -168,14 +159,14 @@ namespace CrabUI
           maxWidth = Math.Max(maxWidth, w);
         }
 
-        Host.MinSize = Host.MinSize with { X = maxWidth };
-        Host.MaxSize = Host.MaxSize with { X = maxWidth };
+        Parent.MinSize = Parent.MinSize with { X = maxWidth };
+        Parent.MaxSize = Parent.MaxSize with { X = maxWidth };
       }
 
-      if (Host.FitContent.Y)
+      if (Parent.FitContent.Y)
       {
         float maxHeight = 0;
-        foreach (Target c in Host.Children)
+        foreach (Layout.Child c in Parent.Children)
         {
           if (c.Flex != null) continue;
 
@@ -190,8 +181,8 @@ namespace CrabUI
           maxHeight = Math.Max(maxHeight, h);
         }
 
-        Host.MinSize = Host.MinSize with { Y = maxHeight };
-        Host.MaxSize = Host.MaxSize with { Y = maxHeight };
+        Parent.MinSize = Parent.MinSize with { Y = maxHeight };
+        Parent.MaxSize = Parent.MaxSize with { Y = maxHeight };
       }
       RequireParentUpdate = false;
     }

@@ -23,7 +23,7 @@ namespace CrabUI
     protected virtual void SetupLayout()
     {
       Layout = new PlainLayout();
-      Layout.InjectHost(this.Adapters.LayoutAdapter);
+      Layout.ConnectTo(new Adapters_Part.PlainLayout_Host_Part() { Self = this });
     }
 
     protected LayoutMarker LayoutMarker { get; set; } = new();

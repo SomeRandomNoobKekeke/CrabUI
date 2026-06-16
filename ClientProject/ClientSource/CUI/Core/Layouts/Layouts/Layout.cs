@@ -11,22 +11,41 @@ using ComponentGenerator;
 
 namespace CrabUI
 {
+
   public abstract class Layout
   {
-    public interface TargetParent
+    public interface Host
     {
-      public CUIRect Rect { get; set; }
-      public IReadOnlyList<TargetChild> Children { get; }
+      public IReadOnlyList<Child> Children { get; }
+      public Vector2 ChildrenOffset { get; }
       public bool CullChildren { get; }
+      public CUIRect Rect { get; set; }
+      public CUIBool2 FitContent { get; }
+
+      public CUINullVector2 MinSize { get; set; }
+      public CUINullVector2 MaxSize { get; set; }
 
       void NotifyVisualsRestructured();
     }
-
-    public interface TargetChild
+    public interface ChildBase
     {
       public CUIRect Rect { get; set; }
       public bool CulledOut { get; set; }
+
+      public CUINullVector2 MinSize { get; set; }
+      public CUINullVector2 MaxSize { get; set; }
     }
+    public interface Child : ChildBase, CUIVerticalListLayout.Child, PlainLayout.Child
+    {
+
+    }
+
+    private Host Parent;
+    public virtual void ConnectTo(Host host)
+    {
+      Parent = host;
+    }
+
 
 
 
@@ -35,14 +54,14 @@ namespace CrabUI
 
     public virtual void UpdateChildren()
     {
-      if (Host.CullChildren)
+      if (Parent.CullChildren)
       {
-        foreach (Target child in Host.Children)
+        foreach (Child child in Parent.Children)
         {
-          child.CulledOut = !child.Rect.Intersect(Host.Rect);
+          child.CulledOut = !child.Rect.Intersect(Parent.Rect);
         }
 
-        Host.NotifyVisualsRestructured();
+        Parent.NotifyVisualsRestructured();
       }
 
       RequireChildrenUpdate = false;

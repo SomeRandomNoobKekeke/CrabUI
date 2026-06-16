@@ -42,12 +42,12 @@ namespace CrabUI
         }
         CUINullVector2 Layout.ChildBase.MinSize
         {
-          get => Self.MinSize;
+          get => Self.MinSizeOverride;
           set => Self.MinSize = value;
         }
         CUINullVector2 Layout.ChildBase.MaxSize
         {
-          get => Self.MaxSize;
+          get => Self.MaxSizeOverride;
           set => Self.MaxSize = value;
         }
       }

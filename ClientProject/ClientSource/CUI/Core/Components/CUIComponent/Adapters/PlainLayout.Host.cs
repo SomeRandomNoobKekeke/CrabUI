@@ -34,12 +34,12 @@ namespace CrabUI
         CUIBool2 Layout.Host.FitContent => Self.LayoutProps.FitContent.Value;
         CUINullVector2 Layout.Host.MinSize
         {
-          get => Self.MinSize;
+          get => Self.MinSizeOverride;
           set => Self.MinSize = value;
         }
         CUINullVector2 Layout.Host.MaxSize
         {
-          get => Self.MaxSize;
+          get => Self.MaxSizeOverride;
           set => Self.MaxSize = value;
         }
 

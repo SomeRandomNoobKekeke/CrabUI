@@ -38,7 +38,7 @@ namespace CrabUI
     public CUIComponent() : base()
     {
       this.Inject();
-      LayoutSlot.Layout = new PlainLayout();
+      SetupLayout();
 
       if (CUICore.Styles.HasStylesFor(this.GetType()))
       {

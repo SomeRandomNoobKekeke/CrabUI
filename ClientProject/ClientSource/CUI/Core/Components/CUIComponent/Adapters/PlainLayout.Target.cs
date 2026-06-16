@@ -16,8 +16,30 @@ namespace CrabUI
   {
     protected partial class Adapters_Part : Part
     {
-      public partial class Layout_Adapter : PlainLayout.Target
+      public Layout_Adapter_Part LayoutAdapter { get; } = new();
+
+      public partial class Layout_Adapter_Part : Part, IAdapterPart, PlainLayout.Target
       {
+        CUIRect Layout.Target.Rect
+        {
+          get => Self.Rect;
+          set => Self.Rect = value;
+        }
+
+        bool Layout.Target.CullChildren => Self.CullChildren;
+        bool Layout.Target.CulledOut
+        {
+          get => Self.CulledOut;
+          set => Self.CulledOut = value;
+        }
+
+        IReadOnlyList<Layout.Target> Layout.Target.Children => new ListProxy<CUIComponent, Layout.Target>(
+          Self.Tree.Children, c => c.Adapters.LayoutAdapter
+        );
+
+        void Layout.Target.NotifyVisualsRestructured() => Self.VisualRestructureNotifier.Notify();
+
+
         CUINullRect PlainLayout.Target.Absolute => Self.LayoutProps.Absolute.Value;
         CUINullRect PlainLayout.Target.AbsoluteMin => Self.LayoutProps.AbsoluteMin.Value;
         CUINullRect PlainLayout.Target.AbsoluteMax => Self.LayoutProps.AbsoluteMax.Value;
@@ -45,7 +67,7 @@ namespace CrabUI
         Vector2 PlainLayout.Target.ChildrenOffset => Self.LayoutProps.ChildrenOffset.Value;
         IReadOnlyList<PlainLayout.Target> PlainLayout.Target.Children
           => new ListProxy<CUIComponent, PlainLayout.Target>(
-            Self.Tree.Children, c => c.Adapters.Layout
+            Self.Tree.Children, c => c.Adapters.LayoutAdapter
           );
 
       }

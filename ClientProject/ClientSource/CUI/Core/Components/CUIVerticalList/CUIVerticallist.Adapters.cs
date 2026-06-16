@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -7,17 +6,41 @@ using System.Reflection;
 using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
-using BaroJunk;
 using ComponentGenerator;
+using BaroJunk;
 
 namespace CrabUI
 {
-  public partial class CUIComponent
+  public partial class CUIVerticalList : CUIComponent, IComponent
   {
+    protected Adapters_Part Adapters { get; } = new();
+
     protected partial class Adapters_Part : Part
     {
-      public partial class Layout_Adapter : CUIVerticalListLayout.Target
+      public Layout_Adapter_Part LayoutAdapter { get; } = new();
+      public partial class Layout_Adapter_Part : Part, CUIVerticalListLayout.Target
       {
+        CUIRect Layout.Target.Rect
+        {
+          get => Self.Rect;
+          set => Self.Rect = value;
+        }
+
+        bool Layout.Target.CullChildren => Self.CullChildren;
+        bool Layout.Target.CulledOut
+        {
+          get => Self.CulledOut;
+          set => Self.CulledOut = value;
+        }
+
+        IReadOnlyList<Layout.Target> Layout.Target.Children => new ListProxy<CUIComponent, Layout.Target>(
+          Self.Tree.Children, c => c.Adapters.Layout
+        );
+
+        void Layout.Target.NotifyVisualsRestructured() => Self.VisualRestructureNotifier.Notify();
+
+
+
         CUINullRect CUIVerticalListLayout.Target.Absolute => Self.LayoutProps.Absolute.Value;
         CUINullRect CUIVerticalListLayout.Target.AbsoluteMin => Self.LayoutProps.AbsoluteMin.Value;
         CUINullRect CUIVerticalListLayout.Target.AbsoluteMax => Self.LayoutProps.AbsoluteMax.Value;
@@ -54,5 +77,10 @@ namespace CrabUI
         Vector2 CUIVerticalListLayout.Target.ChildrenOffset => Self.LayoutProps.ChildrenOffset.Value;
       }
     }
+
+
+
+
+
   }
 }

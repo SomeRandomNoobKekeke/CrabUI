@@ -11,20 +11,24 @@ using ComponentGenerator;
 
 namespace CrabUI
 {
-  public abstract class Layout : IModule
+  public abstract class Layout
   {
-    public interface Target : IModule
+    public interface TargetParent
     {
       public CUIRect Rect { get; set; }
-      public IReadOnlyList<Target> Children { get; }
+      public IReadOnlyList<TargetChild> Children { get; }
       public bool CullChildren { get; }
-      public bool CulledOut { get; set; }
 
       void NotifyVisualsRestructured();
     }
 
-    public virtual void InjectHost(Target host) => Host = host;
-    public Target Host { get; private set; }
+    public interface TargetChild
+    {
+      public CUIRect Rect { get; set; }
+      public bool CulledOut { get; set; }
+    }
+
+
 
     public bool RequireChildrenUpdate { get; set; } = true;
     public bool RequireParentUpdate { get; set; } = true;

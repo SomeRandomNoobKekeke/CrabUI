@@ -19,14 +19,13 @@ namespace CrabUI
     protected virtual CUINullVector2 MinSizeOverride => MinSize;
     protected virtual CUINullVector2 MaxSizeOverride => MaxSize;
 
-    public Layout Layout
+    public Layout Layout { get; protected set; }
+    protected virtual void SetupLayout()
     {
-      get => LayoutSlot.Layout;
-      set => LayoutSlot.Layout = value;
+      Layout = new PlainLayout();
+      Layout.InjectHost(this.Adapters.LayoutAdapter);
     }
 
-    //CRINGE, i never actually swap layouts, and some components require specific layouts
-    protected LayoutSlot LayoutSlot { get; set; } = new();
     protected LayoutMarker LayoutMarker { get; set; } = new();
   }
 }

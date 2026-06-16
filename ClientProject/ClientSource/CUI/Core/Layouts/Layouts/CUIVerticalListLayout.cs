@@ -41,6 +41,7 @@ namespace CrabUI
       public float Height { get; set; }
     }
 
+    public float TotalHeight { get; private set; }
 
     public override void InjectHost(Layout.Target host)
     {
@@ -57,7 +58,7 @@ namespace CrabUI
       List<ChildSize> sizes = new();
       List<ChildSize> resizables = new();
 
-      float TotalHeight = 0;
+      TotalHeight = 0;
       foreach (Target c in Host.Children)
       {
         float w = Host.Rect.Width;// Resize to host width by default

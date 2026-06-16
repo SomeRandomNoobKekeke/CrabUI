@@ -25,6 +25,7 @@ namespace CrabUI
       set => LayoutSlot.Layout = value;
     }
 
+    //CRINGE, i never actually swap layouts, and some components require specific layouts
     protected LayoutSlot LayoutSlot { get; set; } = new();
     protected LayoutMarker LayoutMarker { get; set; } = new();
   }

@@ -16,8 +16,10 @@ namespace CrabUI
   {
     protected partial class Adapters_Part : Part
     {
-      public partial class PlainLayout_Host_Part : Part, IAdapterPart, PlainLayout.Host
+      public partial class PlainLayout_Host_Part : PlainLayout.Host
       {
+        public CUIComponent Self { get; set; }
+
         IReadOnlyList<Layout.Child> Layout.Host.Children
           => new ListProxy<CUIComponent, Layout.Child>(
             Self.Tree.Children,

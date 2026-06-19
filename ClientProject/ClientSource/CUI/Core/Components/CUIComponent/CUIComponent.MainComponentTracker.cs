@@ -27,6 +27,15 @@ namespace CrabUI
     protected virtual MainComponentTracker_Part MainComponentTracker { get; set; } = new();
     public class MainComponentTracker_Part : Part, IModule
     {
+      [In] public Tree_Part Tree { get; set; }
+
+
+      public void Init()
+      {
+        Tree.OnAttachToParent.Add(OnAttachToParentHandler);
+        Tree.OnDetachFromParent.Add(OnDetachFromParentHandler);
+      }
+
       private CUIMainComponent _MainComponent;
       public CUIMainComponent MainComponent
       {
@@ -39,19 +48,19 @@ namespace CrabUI
         }
       }
 
-      public void OnAttachedTo(CUIComponent component)
+      public void OnAttachToParentHandler(CUIComponent parent)
       {
-        if (component is CUIMainComponent mainComponent)
+        if (parent is CUIMainComponent mainComponent)
         {
           SetRec(mainComponent);
         }
         else
         {
-          SetRec(component.MainComponent);
+          SetRec(parent.MainComponent);
         }
       }
 
-      public void OnDetached()
+      public void OnDetachFromParentHandler(CUIComponent parent)
       {
         SetRec(null);
       }

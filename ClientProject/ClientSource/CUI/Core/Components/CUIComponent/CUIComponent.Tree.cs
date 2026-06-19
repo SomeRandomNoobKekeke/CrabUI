@@ -73,12 +73,9 @@ namespace CrabUI
         (parent, child) => $"{parent} => {child}"
       );
 
-      [In] public MainComponentTracker_Part MainComponentTracker { get; set; }
-
       public LayoutMarker.Pattern MarkPattern { get; } = LayoutMarker.Pattern.UpAndDown;
 
-      public bool Changed { get; set; }
-      public event Action OnChanged;
+
 
 
       public List<CUIComponent> Children { get; } = new();
@@ -89,6 +86,13 @@ namespace CrabUI
         get => _Parent;
         set => SetParent(value);
       }
+
+      public bool Changed { get; set; }
+      public ClearableEvent OnChanged { get; } = new();
+      public ClearableEvent<CUIComponent> OnChildAdded { get; } = new();
+      public ClearableEvent<CUIComponent> OnChildRemoved { get; } = new();
+      public ClearableEvent<CUIComponent> OnAttachToParent { get; } = new();
+      public ClearableEvent<CUIComponent> OnDetachFromParent { get; } = new();
 
       private void SetParent(CUIComponent value)
       {
@@ -102,8 +106,8 @@ namespace CrabUI
           _Parent.Tree.Children.Remove(Self);
 
           _Parent.LayoutMarker.Mark(MarkPattern);
-          _Parent.Tree.OnChildRemoved(Self);
-          Self.Tree.OnDetachFromParent(_Parent);
+          _Parent.Tree.OnChildRemoved.Raise(Self);
+          Self.Tree.OnDetachFromParent.Raise(_Parent);
 
           _Parent.Tree.Debug_ChildRemoved.Send(_Parent, Self);
         }
@@ -117,24 +121,11 @@ namespace CrabUI
           // parent.PassPropsToChild(this);
 
           _Parent.LayoutMarker.Mark(MarkPattern);
-          _Parent.Tree.OnChildAdded(Self);
-          Self.Tree.OnAttachToParent(_Parent);
+          _Parent.Tree.OnChildAdded.Raise(Self);
+          Self.Tree.OnAttachToParent.Raise(_Parent);
 
           _Parent.Tree.Debug_ChildAdded.Send(_Parent, Self);
         }
-      }
-
-
-      public virtual void OnChildAdded(CUIComponent child) { }
-      public virtual void OnChildRemoved(CUIComponent child) { }
-      public virtual void OnAttachToParent(CUIComponent parent)
-      {
-        MainComponentTracker.OnAttachedTo(parent);
-      }
-
-      public virtual void OnDetachFromParent(CUIComponent parent)
-      {
-        MainComponentTracker.OnDetached();
       }
 
       public CUIComponent Append(CUIComponent child, string name = null)
@@ -179,8 +170,8 @@ namespace CrabUI
         foreach (CUIComponent child in Children)
         {
           child.Tree._Parent = null;
-          OnChildRemoved(child);
-          child.Tree.OnDetachFromParent(Self);
+          OnChildRemoved.Raise(child);
+          child.Tree.OnDetachFromParent.Raise(Self);
         }
 
         PropogateTreeChanged();
@@ -192,7 +183,7 @@ namespace CrabUI
       private void PropogateTreeChanged()
       {
         Changed = true;
-        OnChanged?.Invoke();
+        OnChanged.Raise();
         Parent?.Tree.PropogateTreeChanged();
       }
 

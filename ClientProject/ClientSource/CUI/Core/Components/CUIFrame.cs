@@ -42,8 +42,11 @@ namespace CrabUI
 
 
     public void Close() => RemoveSelf();
-
-
     public event Action<CUIFrame> OnOpen;
+
+    public CUIFrame() : base()
+    {
+      Commands.ListenFor("close", (_) => Close());
+    }
   }
 }

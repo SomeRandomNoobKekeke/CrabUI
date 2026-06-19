@@ -42,10 +42,9 @@ namespace CrabUIUser
           Flex = 1
         };
 
-        frame["layout"]["header"]["close"] = new CUIButton()
+        frame["layout"]["header"]["close"] = new CUICloseButton()
         {
           Absolute = new CUINullRect(w: 100, h: 100),
-          MasterColor = Color.Red,
           Text = "X",
         };
 

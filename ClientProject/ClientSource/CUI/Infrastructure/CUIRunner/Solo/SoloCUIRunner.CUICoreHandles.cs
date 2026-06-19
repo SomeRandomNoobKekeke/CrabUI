@@ -17,27 +17,18 @@ namespace CrabUI
     {
       public SoloCUIRunner Self { get; set; }
 
-      public string ModDir => Self.ModDir;
-
       public CUIGraphicsDevice GraphicsDevice => Self.GraphicsDevice;
       public CUIGUI GUI => Self.CUIGUI;
 
-      public string NormalizePath(string path)
-        => Path.IsPathFullyQualified(path) ? path : Path.Combine(ModDir, path);
-
+      public CUITextureManager CUITextureManager => Self.CUITextureManager;
 
       public void SaveXDoc(XDocument xDoc, string path)
       {
-        xDoc.Save(NormalizePath(path));
+        xDoc.Save(Self.PathManager.Normalize(path));
       }
       public XDocument LoadXDoc(string path)
       {
-        return XDocument.Load(NormalizePath(path));
-      }
-
-      public CUITexture2D GetTexture(string path)
-      {
-        return Self.TextureManager.GetTexture(NormalizePath(path));
+        return XDocument.Load(Self.PathManager.Normalize(path));
       }
 
       public void GrabFocus()

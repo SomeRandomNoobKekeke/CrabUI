@@ -13,12 +13,12 @@ namespace CrabUI
     public ICUIRunnerDataSources DataSources { get; set; }
     public CUICore.CUICoreHandles CUICoreHandles { get; private set; }
 
-    public string ModDir { get; private set; } = ModInfo.Dir;
     public __CUISpriteBatch SpriteBatch { get; } = new();
     public __CUIGraphicsDevice GraphicsDevice { get; } = new();
     public __CUIGUI CUIGUI { get; } = new();
 
-    public TextureManager TextureManager { get; } = new();
+    public CUITextureManager CUITextureManager { get; private set; }
+    public PathManager PathManager { get; private set; }
 
 
     public void Connect()
@@ -93,10 +93,22 @@ namespace CrabUI
 
     public void Disconnect()
     {
-      DataSources.DisconnectFromGame();
-      SpriteBatch.XNASpriteBatch = null;
-      Core.Handles = null;
-      TextureManager.Clear();
+      try
+      {
+        DataSources.DisconnectFromGame();
+        SpriteBatch.XNASpriteBatch = null;
+        Core.Handles = null;
+        CUITextureManager.Dispose();
+      }
+      catch (Exception e)
+      {
+        CUI.Logger.Error(e);
+      }
+    }
+
+    private void LoadDefaultResources()
+    {
+      CUITextureManager.Load("Assets/dev.png", "BaroDev");
     }
 
     public SoloCUIRunner()
@@ -105,6 +117,15 @@ namespace CrabUI
       {
         Self = this
       };
+
+      PathManager = new PathManager() { ModDir = ModInfo.Dir };
+
+      CUITextureManager = new CUITextureManagerProxy(
+        new __CUITextureManager(),
+        PathManager
+      );
+
+      LoadDefaultResources();
     }
   }
 }

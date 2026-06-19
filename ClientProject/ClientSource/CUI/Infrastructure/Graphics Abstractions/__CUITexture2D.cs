@@ -16,11 +16,16 @@ namespace CrabUI
     public static __CUITexture2D Create(int width, int height)
       => new __CUITexture2D(width, height, false, GameMain.Instance.GraphicsDevice.PresentationParameters.BackBufferFormat);
 
-    public static __CUITexture2D White = new __CUITexture2D(GUI.WhiteTexture);
+    public static __CUITexture2D White = new __CUITexture2D(GUI.WhiteTexture)
+    {
+      ShouldBeDisposed = false,
+    };
     public Texture2D XNATexture { get; set; }
 
     public int Width => XNATexture.Width;
     public int Height => XNATexture.Height;
+
+    public bool ShouldBeDisposed { get; set; } = true; //BRUH sneaky
 
     public void SetData(Color[] data) => XNATexture.SetData<Color>(data);
     public void SetData(int level, int arraySlice, Rectangle? rect, Color[] data, int startIndex, int elementCount)
@@ -47,6 +52,9 @@ namespace CrabUI
     public __CUITexture2D(Texture2D texture) => XNATexture = texture;
     public __CUITexture2D() { }
 
-    public void Dispose() => XNATexture.Dispose();
+    public void Dispose()
+    {
+      if (ShouldBeDisposed) XNATexture.Dispose();
+    }
   }
 }

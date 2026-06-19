@@ -23,8 +23,6 @@ namespace CrabUI
       => Instance.Handles.SaveXDoc(xDoc, path);
     public static XDocument LoadXDoc(string path)
       => Instance.Handles.LoadXDoc(path);
-    public static CUITexture2D GetTexture(string path)
-      => Instance.Handles.GetTexture(path);
 
     public static CUIGraphicsDevice GraphicsDevice => Instance.Handles.GraphicsDevice;
     public static SamplerState SamplerState => Instance.Handles.GUI.SamplerState;
@@ -33,5 +31,6 @@ namespace CrabUI
     public static CUIComponentTypeManager CUITypes => Instance.CUIComponentTypeManager;
     public static CUIStyleManager Styles => Instance.CUIStyleManager;
 
+    public static CUITextureManager CUITextureManager => Instance.Handles.CUITextureManager;
   }
 }

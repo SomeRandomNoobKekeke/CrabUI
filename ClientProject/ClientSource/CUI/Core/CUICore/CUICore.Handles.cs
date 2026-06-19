@@ -17,22 +17,16 @@ namespace CrabUI
 {
   public partial class CUICore
   {
-
     public interface CUICoreIOHandle
     {
       public void SaveXDoc(XDocument xDoc, string path);
       public XDocument LoadXDoc(string path);
     }
-
-    public interface CUICoreTextureHandle
-    {
-      public CUITexture2D GetTexture(string path);
-    }
-
-    public interface CUICoreHandles : CUICoreIOHandle, CUICoreTextureHandle
+    public interface CUICoreHandles : CUICoreIOHandle
     {
       public CUIGraphicsDevice GraphicsDevice { get; }
       public CUIGUI GUI { get; }
+      public CUITextureManager CUITextureManager { get; }
 
       /// <summary>
       /// Should steal focus from other GUI Components

@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Diagnostics;
 using BaroJunk;
 using Microsoft.Xna.Framework;
+using Barotrauma;
 
 namespace CrabUI
 {

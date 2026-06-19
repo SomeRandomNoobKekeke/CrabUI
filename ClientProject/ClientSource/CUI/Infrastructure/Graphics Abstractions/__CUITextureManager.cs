@@ -10,26 +10,33 @@ using System.IO;
 
 namespace CrabUI
 {
-  public class TextureManager : IDisposable
+
+
+  public class __CUITextureManager : IDisposable, CUITextureManager
   {
     public CUITexture2D BackupTexture => __CUITexture2D.White;
     public Dictionary<string, CUITexture2D> LoadedTextures { get; } = new();
 
-    public void AddTexture(CUITexture2D texture, string path)
+    public CUITexture2D Add(CUITexture2D texture, string path)
     {
-      LoadedTextures[path] = texture;
+      return LoadedTextures[path] = texture;
     }
-    public CUITexture2D GetTexture(string path)
+    public CUITexture2D Load(string path, string name = null)
     {
-      if (LoadedTextures.ContainsKey(path)) return LoadedTextures[path];
       if (!File.Exists(path)) return BackupTexture;
 
       using (FileStream fs = File.OpenRead(path))
       {
-        return new __CUITexture2D(
+        return Add(new __CUITexture2D(
           Texture2D.FromStream(GameMain.Instance.GraphicsDevice, fs)
-        );
+        ), name ?? path);
       }
+    }
+
+    public CUITexture2D Get(string path)
+    {
+      if (LoadedTextures.ContainsKey(path)) return LoadedTextures[path];
+      return BackupTexture;
     }
 
     public bool Has(string path) => LoadedTextures.ContainsKey(path);

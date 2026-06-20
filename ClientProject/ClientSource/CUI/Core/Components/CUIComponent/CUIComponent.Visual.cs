@@ -69,8 +69,16 @@ namespace CrabUI
     {
       public void Init()
       {
-        BackgroundWrapper = new VisualUnit.PrimitiveVisualElement(Self.Background);
-        SelfWrapper = new VisualUnit.NestedVisualComponent(Self);
+        BackgroundWrapper = new VisualUnit.PrimitiveVisualElement(Self.Background)
+        {
+          HostComponent = Self,
+        };
+        SelfWrapper = new VisualUnit.NestedVisualComponent(Self)
+        {
+          HostComponent = Self,
+        };
+
+        Self.VisualBounds.HostComponent = Self;
       }
       public VisualUnit.NestedVisualComponent SelfWrapper { get; private set; }
       public VisualUnit.PrimitiveVisualElement BackgroundWrapper { get; private set; }

@@ -19,5 +19,7 @@ namespace CrabUI
     public static string Layout = "Layout";
     public static string TextMeasurements = "TextMeasurements";
     public static string Events = "Events";
+    public static string ScissorRectSet = "Scissor Rect Set";
+    public static string VisualUnitProcessed = "VisualUnitProcessed";
   }
 }

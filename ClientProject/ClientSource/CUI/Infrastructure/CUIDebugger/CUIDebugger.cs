@@ -137,6 +137,7 @@ namespace CrabUI
       EventsPage["list"] = EventList = new CUIVerticalList()
       {
         Relative = new CUINullRect(0, 0, 1, 1),
+        Scrollable = true,
       };
 
       ComponentsPage = new CUIPage()
@@ -148,6 +149,7 @@ namespace CrabUI
       ComponentsPage["list"] = new CUIVerticalList()
       {
         Relative = new CUINullRect(0, 0, 1, 1),
+        Scrollable = true,
       };
 
       GatesPage = new CUIPage()
@@ -158,6 +160,7 @@ namespace CrabUI
       GatesPage["list"] = new CUIVerticalList()
       {
         Relative = new CUINullRect(0, 0, 1, 1),
+        Scrollable = true,
       };
 
       // frame["layout"]["main"].Get<CUIPages>("main").Open()

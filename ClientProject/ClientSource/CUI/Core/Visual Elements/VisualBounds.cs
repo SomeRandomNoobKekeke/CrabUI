@@ -6,11 +6,31 @@ using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using ComponentGenerator;
 
 namespace CrabUI
 {
   public class VisualBounds
   {
+    public object HostComponent
+    {
+      get => LeftBound.HostComponent;
+      set
+      {
+        LeftBound.HostComponent = value;
+        RightBound.HostComponent = value;
+      }
+    }
+    public string HostPropName
+    {
+      get => LeftBound.HostPropName;
+      set
+      {
+        LeftBound.HostPropName = value;
+        RightBound.HostPropName = value;
+      }
+    }
+
     public class LeftContextBound : VisualUnit
     {
       public LeftContextBound(VisualBounds bounds) => Bounds = bounds;

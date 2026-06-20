@@ -5,11 +5,15 @@ using System.Reflection;
 using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
+using ComponentGenerator;
 
 namespace CrabUI
 {
   public abstract class VisualUnit
   {
+    public object HostComponent { get; set; }
+    public string HostPropName { get; set; }
+
     public class PrimitiveVisualElement : VisualUnit
     {
       public IVisualElement Element;

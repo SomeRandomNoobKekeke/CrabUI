@@ -66,5 +66,12 @@ namespace CrabUI
         child.PrintTree(offset + "|    ");
       }
     }
+
+    public void PrintVisualSplit()
+    {
+      VisualFlattener flattener = new VisualFlattener();
+      flattener.Flatten(this);
+      CUI.Logger.Log(Logger.Wrap.IEnumerable(flattener.Flat, true));
+    }
   }
 }

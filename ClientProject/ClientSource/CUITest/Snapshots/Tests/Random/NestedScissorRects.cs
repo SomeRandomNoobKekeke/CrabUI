@@ -15,7 +15,7 @@ namespace CrabUIUser
   {
     public static partial class Random
     {
-      public static CUIComponent BigList()
+      public static CUIComponent NestedScissorRects()
       {
         CUIFrame frame = new()
         {
@@ -25,24 +25,24 @@ namespace CrabUIUser
           Resizable = true,
         };
 
-        frame["list"] = new CUIVerticalList()
+        frame["layout"] = new CUIVerticalList()
         {
-          BackgroundColor = Color.Blue,
           Relative = new CUINullRect(0, 0, 1, 1),
-          Scrollable = true,
         };
 
-        for (int i = 1; i < 100; i++)
+        frame["layout"]["a"] = new CUIVerticalList()
         {
-          frame["list"].Append(new CUITextBlock()
-          {
-            Text = $"child {i}",
-            TextAnchor = CUIAnchor.LeftTop,
-            Absolute = new CUINullRect(h: 30),
-          });
-        }
+          BackgroundColor = Color.Blue,
+          Flex = 1,
+        };
 
+        frame["layout"]["b"] = new CUIVerticalList()
+        {
+          BackgroundColor = Color.Red,
+          Flex = 1,
+        };
 
+        frame.PrintVisualSplit();
 
         return frame;
       }

@@ -32,7 +32,7 @@ namespace CrabUI
             point1, anchor1, point2, anchor2
           );
 
-          Self.LayoutProps.Absolute.Value = new CUINullRect(
+          Self.Absolute = new CUINullRect(
             CUIAnchor.AbsoluteRectToAchored(
               rect, Self.Parent.Rect, Self.Anchor
             )

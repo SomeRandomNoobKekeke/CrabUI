@@ -15,6 +15,7 @@ namespace CrabUI
   {
     public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIFrame>((frame) =>
     {
+      frame.AbsoluteMin = new CUINullRect(w: 15, h: 10);
       frame.Draggable = true;
     });
 

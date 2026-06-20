@@ -33,10 +33,7 @@ namespace CrabUIUser
             c.ChildrenOffset += new Vector2(0, e.Scroll);
           },
           ChildrenOffsetBounds = new CUIBoundaries(minY: 0),
-          CullChildren = true,
         };
-
-        frame["list"].ScissorRect = new Rectangle(300, 300, 500, 500);
 
         for (int i = 1; i < 100; i++)
         {

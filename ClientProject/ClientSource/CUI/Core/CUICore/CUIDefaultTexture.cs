@@ -13,6 +13,9 @@ namespace CrabUI
   //TODO mb a separate folder for static accessors?
   public static class CUIDefaultSprite
   {
+    /// <summary>
+    /// 64x64 textures separated by 2px transparent lines to avoid sampler artifacts
+    /// </summary>
     public static CUISprite AtPos(int x, int y)
       => new CUISprite(CUICore.TextureManager.Get("CUI"))
       {

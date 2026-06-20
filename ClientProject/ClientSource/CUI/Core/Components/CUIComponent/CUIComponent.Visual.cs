@@ -31,9 +31,14 @@ namespace CrabUI
       Debug_PropSet.Send(typeof(CUIRect), rect, this, "Rect");
       Background.Rect = rect;
       RightResizeHandle.UpdateRect();
+
+      if (CullChildren)
+      {
+        ScissorRect = rect.Box;
+      }
     }
 
-    public Rectangle? ScissorRect
+    protected Rectangle? ScissorRect
     {
       get => VisualBounds.ScissorRect;
       set => VisualBounds.ScissorRect = value;

@@ -12,6 +12,11 @@ namespace CrabUI
 {
   public partial class CUIVerticalList : CUIComponent, IComponent
   {
+    public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIVerticalList>((c) =>
+    {
+      c.CullChildren = true;
+    });
+
     public void Clear() => RemoveAllChildren();
     public void Add(CUIComponent child) => Append(child);
 

@@ -10,9 +10,9 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CrabUI
 {
-  public class SimpleTexture : VisualElementBase, IVisualElement
+  public class SimpleTexture : VisualElementBase
   {
-    public CUIRect Rect { get; set; }
+    public override CUIRect Rect { get; set; }
     // public CUITexture2D Texture { get; set; } = CUITexture2D.White;
     public CUISprite Sprite { get; set; } = CUISprite.White;
 
@@ -27,7 +27,7 @@ namespace CrabUI
     public float LayerDepth { get => Sprite.LayerDepth; set => Sprite.LayerDepth = value; }
     #endregion
 
-    public void Draw(CUISpriteBatch spriteBatch)
+    public override void Draw(CUISpriteBatch spriteBatch)
     {
       Sprite.Draw(spriteBatch, Rect.Box);
     }

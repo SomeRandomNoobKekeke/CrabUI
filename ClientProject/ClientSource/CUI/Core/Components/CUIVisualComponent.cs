@@ -20,12 +20,15 @@ namespace CrabUI
 
 
     public abstract CUIRect Rect { get; set; }
+    public VisualUnit.NestedVisualComponent VisualWrapper { get; }
+
     public abstract IEnumerable<VisualUnit> VisualSplit();
 
 
     public CUIVisualComponent()
     {
       ID = MaxID++;
+      VisualWrapper = new(this);
     }
 
     public override string ToString() => $"{this.GetType().Name} [{this.ID}]";

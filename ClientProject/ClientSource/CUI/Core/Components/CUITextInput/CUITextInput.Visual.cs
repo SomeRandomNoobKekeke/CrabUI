@@ -74,10 +74,10 @@ namespace CrabUI
     {
       if (!Visible || CulledOut) yield break;
 
-      yield return new VisualUnit.PrimitiveVisualElement(Background);
-      yield return new VisualUnit.PrimitiveVisualElement(SelectionOverlay);
-      yield return new VisualUnit.PrimitiveVisualElement(TextBlock);
-      yield return new VisualUnit.PrimitiveVisualElement(CaretTexture);
+      yield return Background.VisualWrapper;
+      yield return SelectionOverlay.VisualWrapper;
+      yield return TextBlock.VisualWrapper;
+      yield return CaretTexture.VisualWrapper;
     }
   }
 }

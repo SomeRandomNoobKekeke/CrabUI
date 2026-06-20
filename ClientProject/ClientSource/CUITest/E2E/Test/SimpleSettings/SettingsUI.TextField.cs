@@ -33,11 +33,11 @@ namespace CrabUIUser
             FitContent = new CUIBool2(false, true);
             Background.Color = Color.Red;
 
-            this["textbox"] = new CUITextBlock()
+            this["label"] = new CUITextBlock(Property.Name);
+            this["input"] = new CUITextInput()
             {
-              Text = Property.Name,
-              ResizeStrategy = ResizeStrategy.Resist,
-              Relative = new CUINullRect(w: 1),
+              Flex = 1,
+              Text = "123",
             };
           }
         }

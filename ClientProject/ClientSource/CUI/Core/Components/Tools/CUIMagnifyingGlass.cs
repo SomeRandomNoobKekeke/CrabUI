@@ -79,7 +79,7 @@ namespace CrabUI
       if (!Visible || CulledOut) yield break;
 
       yield return VisualBounds.LeftBound;
-      yield return VisualWrappers.BackgroundWrapper;
+      yield return Background.VisualWrapper;
       yield return VisualBounds.RightBound;
     }
   }

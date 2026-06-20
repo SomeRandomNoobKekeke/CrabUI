@@ -10,7 +10,7 @@ using BaroJunk;
 
 namespace CrabUI
 {
-  public partial class TextBlock : VisualElementBase, IVisualElement
+  public partial class TextBlock : VisualElementBase
   {
     public float CaretOffset(int i)
       => Font.MeasureString(Text.SubstringSafe(i)).X * Scale;
@@ -39,7 +39,7 @@ namespace CrabUI
       return closestCaretPos;
     }
 
-    private CUIRect _Rect; public CUIRect Rect
+    private CUIRect _Rect; public override CUIRect Rect
     {
       get => _Rect;
       set
@@ -69,7 +69,7 @@ namespace CrabUI
       }
     }
 
-    private ResizeStrategyBase _ResizeStrategy = ResizeStrategyBase.PassiveStrategy;
+    private ResizeStrategyBase _ResizeStrategy = ResizeStrategyBase.ResistStrategy;
     public ResizeStrategy ResizeStrategy
     {
       get => ResizeStrategyBase.ToEnum(_ResizeStrategy);
@@ -97,7 +97,7 @@ namespace CrabUI
     public float RealScale => _ResizeStrategy.RealScale;
 
 
-    public void Draw(CUISpriteBatch spriteBatch)
+    public override void Draw(CUISpriteBatch spriteBatch)
     {
       Font.DrawString(
         spriteBatch,

@@ -83,8 +83,8 @@ namespace CrabUI
     {
       if (!Visible || CulledOut) yield break;
 
-      yield return new VisualUnit.PrimitiveVisualElement(Background);
-      yield return new VisualUnit.PrimitiveVisualElement(TextBlock);
+      yield return Background.VisualWrapper;
+      yield return TextBlock.VisualWrapper;
     }
 
     public CUITextBlock() : base() { }

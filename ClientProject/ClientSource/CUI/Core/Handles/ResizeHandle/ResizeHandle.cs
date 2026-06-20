@@ -127,7 +127,7 @@ namespace CrabUI
 
     public override IEnumerable<VisualUnit> VisualSplit()
     {
-      if (Visible) yield return new VisualUnit.PrimitiveVisualElement(Background);
+      if (Visible) yield return Background.VisualWrapper;
     }
 
     public VisualUnit.NestedVisualComponent SelfWrapper { get; }

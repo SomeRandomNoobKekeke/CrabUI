@@ -9,8 +9,18 @@ using BaroJunk;
 
 namespace CrabUI
 {
-  public abstract class VisualElementBase : IMouseEventConsumer
+  public abstract class VisualElementBase : IMouseEventConsumer, IVisualElement
   {
+    public VisualElementBase()
+    {
+      VisualWrapper = new(this);
+    }
+
+    public abstract CUIRect Rect { get; set; }
+    public abstract void Draw(CUISpriteBatch spriteBatch);
+
+    public VisualUnit.PrimitiveVisualElement VisualWrapper { get; }
+
     public bool MouseOver { get; set; }
     public bool MousePressed { get; set; }
 
@@ -26,5 +36,6 @@ namespace CrabUI
     public ClearableEvent<CUIMouseOnEvent> MouseOn { get; } = new();
     public ClearableEvent<CUIMouseOffEvent> MouseOff { get; } = new();
     public ClearableEvent<CUIMouseScrollEvent> MouseScroll { get; } = new();
+
   }
 }

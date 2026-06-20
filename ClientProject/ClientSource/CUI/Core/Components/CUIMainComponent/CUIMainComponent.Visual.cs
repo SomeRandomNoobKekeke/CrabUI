@@ -14,7 +14,7 @@ namespace CrabUI
     {
       foreach (CUIComponent child in Tree.Children)
       {
-        yield return new VisualUnit.NestedVisualComponent(child);
+        yield return child.VisualWrapper;
       }
     }
   }

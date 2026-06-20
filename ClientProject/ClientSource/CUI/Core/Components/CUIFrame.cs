@@ -17,6 +17,7 @@ namespace CrabUI
     {
       frame.AbsoluteMin = new CUINullRect(w: 15, h: 10);
       frame.Draggable = true;
+      frame.CullChildren = true;
     });
 
     public CUIComponent TargetMainComponent { get; set; }

@@ -132,8 +132,8 @@ namespace CrabUI
     {
       if (!Visible || CulledOut) yield break;
 
-      yield return VisualWrappers.BackgroundWrapper;
-      yield return new VisualUnit.PrimitiveVisualElement(TextBlock);
+      yield return Background.VisualWrapper;
+      yield return TextBlock.VisualWrapper;
     }
 
   }

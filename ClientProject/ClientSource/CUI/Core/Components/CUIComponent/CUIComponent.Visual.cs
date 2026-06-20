@@ -50,44 +50,14 @@ namespace CrabUI
     {
       if (!Visible || CulledOut) yield break;
 
-      yield return VisualWrappers.BackgroundWrapper;
+      yield return Background.VisualWrapper;
       yield return VisualBounds.LeftBound; //TODO bounds should be yielded only if there's something non standart
       foreach (CUIComponent child in Tree.Children)
       {
-        yield return child.VisualWrappers.SelfWrapper;
+        yield return child.VisualWrapper;
       }
       yield return VisualBounds.RightBound;
-      yield return RightResizeHandle.SelfWrapper;
+      yield return RightResizeHandle.VisualWrapper;
     }
-
-
-
-
-    //Just optimization to not create new Wrappers every Frame
-    protected VisualWrappers_Part VisualWrappers { get; } = new();
-    public class VisualWrappers_Part : Part
-    {
-      public void Init()
-      {
-        BackgroundWrapper = new VisualUnit.PrimitiveVisualElement(Self.Background)
-        {
-          HostComponent = Self,
-        };
-        SelfWrapper = new VisualUnit.NestedVisualComponent(Self)
-        {
-          HostComponent = Self,
-        };
-
-        Self.VisualBounds.HostComponent = Self;
-      }
-      public VisualUnit.NestedVisualComponent SelfWrapper { get; private set; }
-      public VisualUnit.PrimitiveVisualElement BackgroundWrapper { get; private set; }
-    }
-
-
-
-
-
-
   }
 }

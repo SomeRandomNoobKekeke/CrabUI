@@ -13,9 +13,13 @@ namespace CrabUI
   /// <summary>
   /// This is just raw unleashed line of text
   /// </summary>
-  public class TextLine : VisualElementBase, IVisualElement
+  public class TextLine : VisualElementBase
   {
-    public CUIRect Rect => new CUIRect(Position, Font.MeasureString(Text));
+    public override CUIRect Rect
+    {
+      get => new CUIRect(Position, Font.MeasureString(Text));
+      set => Position = value.Position;
+    }
 
     public string Text { get; set; } = "";
     public Vector2 Position { get; set; }
@@ -30,7 +34,7 @@ namespace CrabUI
 
     public CUIFont Font { get; set; } = CUIFont.Font;
 
-    public void Draw(CUISpriteBatch spriteBatch)
+    public override void Draw(CUISpriteBatch spriteBatch)
     {
       Font.DrawString(
         spriteBatch,

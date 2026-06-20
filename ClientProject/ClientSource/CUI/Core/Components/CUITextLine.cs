@@ -31,11 +31,11 @@ namespace CrabUI
     {
       if (!Visible || CulledOut) yield break;
 
-      yield return new VisualUnit.PrimitiveVisualElement(Background);
-      yield return new VisualUnit.PrimitiveVisualElement(TextLine);
+      yield return Background.VisualWrapper;
+      yield return TextLine.VisualWrapper;
       foreach (CUIComponent child in Tree.Children)
       {
-        yield return new VisualUnit.NestedVisualComponent(child);
+        yield return child.VisualWrapper;
       }
     }
 

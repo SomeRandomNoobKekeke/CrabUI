@@ -10,6 +10,12 @@ namespace CrabUI
   [GeneratedComponent]
   public partial class CUIComponent : CUIVisualComponent, IComponent
   {
+    public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIComponent>((c) =>
+    {
+      c.Background.Sprite = CUIDefaultSprite.AtPos(2, 0);
+      c.Background.Color = Color.Transparent;
+    });
+
     public class Part : IPart { public CUIComponent Self { get; set; } }
 
     public static Dictionary<int, WeakReference<CUIComponent>> ComponentsById = new();
@@ -19,12 +25,6 @@ namespace CrabUI
         wr.TryGetTarget(out CUIComponent component);
         return component;
       }).Where(c => c != null);
-
-    public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIComponent>((c) =>
-    {
-      c.Background.Color = Color.Transparent;
-    });
-
 
     private CUIComponentInfo _Info; public CUIComponentInfo Info
     {

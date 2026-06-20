@@ -12,6 +12,11 @@ namespace CrabUI
   /// </summary>
   public class CUICanvas : CUIComponent, IDisposable
   {
+    // public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUICanvas>((c) =>
+    // {
+
+    // });
+
     private Color[] _Data; public Color[] Data
     {
       get => _Data;
@@ -37,6 +42,7 @@ namespace CrabUI
         Data = new Color[Texture.Width * Texture.Height];
 
         Background.Sprite.Texture = Texture;
+        Background.Sprite.SourceRectangle = new Rectangle(0, 0, Texture.Width, Texture.Height);
 
         oldTexture?.Dispose();
       }
@@ -74,8 +80,8 @@ namespace CrabUI
 
     public CUICanvas() : base()
     {
-      BackgroundColor = Color.White;
       Size = new Point(1, 1);
+      BackgroundColor = Color.White;
       SpriteBatch = CUISpriteBatch.Create();
     }
     public CUICanvas(int x, int y) : this()

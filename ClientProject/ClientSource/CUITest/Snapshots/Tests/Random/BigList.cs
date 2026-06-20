@@ -22,6 +22,7 @@ namespace CrabUIUser
           BackgroundColor = Color.Gray,
           Anchor = CUIAnchor.Center,
           Absolute = new CUINullRect(0, 0, 400, 600),
+          Resizable = true,
         };
 
         frame["list"] = new CUIVerticalList()
@@ -32,7 +33,6 @@ namespace CrabUIUser
           {
             c.ChildrenOffset += new Vector2(0, e.Scroll);
           },
-          ChildrenOffsetBounds = new CUIBoundaries(minY: 0),
         };
 
         for (int i = 1; i < 100; i++)

@@ -27,7 +27,8 @@ namespace CrabUIUser
 
         frame["layout"] = new CUIVerticalList()
         {
-          Relative = new CUINullRect(0, 0, 1, 1)
+          Relative = new CUINullRect(0, 0, 1, 1),
+          BackgroundColor = Color.Red,
         };
 
         frame["layout"]["header"] = new CUIHorizontalList()
@@ -45,7 +46,6 @@ namespace CrabUIUser
         frame["layout"]["header"]["close"] = new CUICloseButton()
         {
           Absolute = new CUINullRect(w: 100, h: 100),
-          Text = "X",
         };
 
         frame["layout"]["main"] = new CUIComponent()

@@ -109,6 +109,7 @@ namespace CrabUI
     private void LoadDefaultResources()
     {
       CUITextureManager.Load("Assets/dev.png", "BaroDev");
+      CUITextureManager.Load("Assets/CUI.png", "CUI");
     }
 
     public SoloCUIRunner()

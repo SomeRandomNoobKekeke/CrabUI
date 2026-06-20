@@ -6,6 +6,7 @@ using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
 using ComponentGenerator;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace CrabUI
 {
@@ -134,9 +135,11 @@ namespace CrabUI
     public ResizeHandle()
     {
       SelfWrapper = new VisualUnit.NestedVisualComponent(this);
-      Background.Sprite.Color = Color.Yellow;
+      Background.Sprite = CUIDefaultSprite.Angle;
 
       Anchor = new Vector2(1, 1);
+      Background.Sprite.Effects = SpriteEffects.FlipHorizontally;
+      Background.Color = Color.Cyan;
 
       Background.MouseDown.Add(Grab);
     }

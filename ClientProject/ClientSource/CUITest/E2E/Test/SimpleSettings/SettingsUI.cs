@@ -65,10 +65,8 @@ namespace CrabUIUser
             Absolute = new CUINullRect(h: 30),
           };
 
-          this["layout"]["header"]["close"] = new CUIButton()
+          this["layout"]["header"]["close"] = new CUICloseButton()
           {
-            Text = "X",
-            MasterColor = Color.Red,
             Absolute = new CUINullRect(w: 30, h: 30),
           };
 

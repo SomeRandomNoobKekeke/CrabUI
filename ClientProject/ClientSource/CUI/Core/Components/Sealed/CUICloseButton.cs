@@ -17,6 +17,7 @@ namespace CrabUI
     public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUICloseButton>((c) =>
     {
       c.MasterColor = Color.Red;
+      c.Background.Sprite = CUIDefaultSprite.Cross;
     });
 
     public CUICloseButton() : base()

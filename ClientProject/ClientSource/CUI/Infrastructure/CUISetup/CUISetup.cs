@@ -18,6 +18,7 @@ namespace CrabUI
     public void Start()
     {
       Runner.Connect();
+      Core.Activate();
       Started = true;
     }
 
@@ -31,11 +32,6 @@ namespace CrabUI
     {
       Runner.Core = Core;
       Runner.DataSources = DataSources;
-    }
-
-    public void Activate()
-    {
-      Core.Activate();
     }
   }
 }

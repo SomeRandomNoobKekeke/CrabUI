@@ -31,6 +31,6 @@ namespace CrabUI
     public static CUIComponentTypeManager CUITypes => Instance.CUIComponentTypeManager;
     public static CUIStyleManager Styles => Instance.CUIStyleManager;
 
-    public static CUITextureManager CUITextureManager => Instance.Handles.CUITextureManager;
+    public static CUITextureManager TextureManager => Instance.Handles.CUITextureManager;
   }
 }

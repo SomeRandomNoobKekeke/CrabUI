@@ -16,28 +16,16 @@ namespace CrabUI
     PathManager PathManager
   ) : CUITextureManager
   {
-    public Dictionary<string, CUITexture2D> LoadedTextures
-      => TextureManager.LoadedTextures;
+    public Dictionary<string, CUITexture2D> LoadedTextures => TextureManager.LoadedTextures;
 
-    public CUITexture2D Add(CUITexture2D texture, string path)
-      => TextureManager.Add(texture, PathManager.Normalize(path));
+    public CUITexture2D Add(CUITexture2D texture, string key) => TextureManager.Add(texture, key);
+    public void Clear() => TextureManager.Clear();
+    public void Dispose() => TextureManager.Dispose();
+    public void Forget(string key) => TextureManager.Forget(key);
+    public CUITexture2D Get(string key) => TextureManager.Get(key);
+    public bool Has(string key) => TextureManager.Has(key);
 
-    public void Clear()
-      => TextureManager.Clear();
-
-    public void Dispose()
-      => TextureManager.Dispose();
-
-    public void Forget(string path)
-      => TextureManager.Forget(PathManager.Normalize(path));
-
-    public CUITexture2D Get(string path)
-      => TextureManager.Get(PathManager.Normalize(path));
-
-    public bool Has(string path)
-      => TextureManager.Has(PathManager.Normalize(path));
-
-    public CUITexture2D Load(string path, string name = null)
-      => TextureManager.Load(PathManager.Normalize(path), PathManager.Normalize(name));
+    public CUITexture2D Load(string path, string key)
+      => TextureManager.Load(PathManager.Normalize(path), key);
   }
 }

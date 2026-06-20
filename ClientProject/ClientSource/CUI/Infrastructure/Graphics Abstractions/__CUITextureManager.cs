@@ -17,11 +17,12 @@ namespace CrabUI
     public CUITexture2D BackupTexture => __CUITexture2D.White;
     public Dictionary<string, CUITexture2D> LoadedTextures { get; } = new();
 
-    public CUITexture2D Add(CUITexture2D texture, string path)
+    public CUITexture2D Add(CUITexture2D texture, string key)
     {
-      return LoadedTextures[path] = texture;
+      return LoadedTextures[key] = texture;
     }
-    public CUITexture2D Load(string path, string name = null)
+
+    public CUITexture2D Load(string path, string key)
     {
       if (!File.Exists(path)) return BackupTexture;
 
@@ -29,22 +30,22 @@ namespace CrabUI
       {
         return Add(new __CUITexture2D(
           Texture2D.FromStream(GameMain.Instance.GraphicsDevice, fs)
-        ), name ?? path);
+        ), key);
       }
     }
 
-    public CUITexture2D Get(string path)
+    public CUITexture2D Get(string key)
     {
-      if (LoadedTextures.ContainsKey(path)) return LoadedTextures[path];
+      if (LoadedTextures.ContainsKey(key)) return LoadedTextures[key];
       return BackupTexture;
     }
 
-    public bool Has(string path) => LoadedTextures.ContainsKey(path);
+    public bool Has(string key) => LoadedTextures.ContainsKey(key);
 
-    public void Forget(string path)
+    public void Forget(string key)
     {
-      LoadedTextures[path].Dispose();
-      LoadedTextures.Remove(path);
+      LoadedTextures[key].Dispose();
+      LoadedTextures.Remove(key);
     }
 
     public void Clear()

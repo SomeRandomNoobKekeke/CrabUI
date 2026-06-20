@@ -10,7 +10,7 @@ using ComponentGenerator;
 
 namespace CrabUI
 {
-  public class VisualBounds
+  public class VisualBounds : IAware
   {
     public object HostComponent
     {
@@ -33,6 +33,9 @@ namespace CrabUI
 
     public class LeftContextBound : VisualUnit
     {
+      public override object HostComponent { get; set; }
+      public override string HostPropName { get; set; }
+
       public LeftContextBound(VisualBounds bounds) => Bounds = bounds;
       public VisualBounds Bounds { get; }
     }
@@ -40,6 +43,8 @@ namespace CrabUI
 
     public class RightContextBound : VisualUnit
     {
+      public override object HostComponent { get; set; }
+      public override string HostPropName { get; set; }
       public RightContextBound(VisualBounds bounds) => Bounds = bounds;
       public VisualBounds Bounds { get; }
     }

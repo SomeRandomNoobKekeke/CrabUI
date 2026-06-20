@@ -47,6 +47,8 @@ namespace CrabUI
       CurrentState = OriginalState;
     }
 
+    //TODO these newState != CurrentState are wrong
+    // e.g. if i enter and exit from same component state won't be restored
     public void Enter(CUISpriteBatch spriteBatch, VisualBounds bounds)
     {
       State newState = new State(

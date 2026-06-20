@@ -6,6 +6,7 @@ using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
 using BaroJunk;
+using ComponentGenerator;
 
 namespace CrabUI
 {
@@ -15,6 +16,9 @@ namespace CrabUI
     {
       VisualWrapper = new(this);
     }
+
+    public object HostComponent { get; set; }
+    public string HostPropName { get; set; }
 
     public abstract CUIRect Rect { get; set; }
     public abstract void Draw(CUISpriteBatch spriteBatch);

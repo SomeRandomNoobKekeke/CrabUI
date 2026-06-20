@@ -6,10 +6,11 @@ using System.Reflection;
 using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
+using ComponentGenerator;
 
 namespace CrabUI
 {
-  public interface IVisualElement
+  public interface IVisualElement : IAware
   {
     public CUIRect Rect { get; }
     public void Draw(CUISpriteBatch spriteBatch);

@@ -130,11 +130,9 @@ namespace CrabUI
       if (Visible) yield return Background.VisualWrapper;
     }
 
-    public VisualUnit.NestedVisualComponent SelfWrapper { get; }
-
     public ResizeHandle()
     {
-      SelfWrapper = new VisualUnit.NestedVisualComponent(this);
+      Background.VisualWrapper.HostComponent = this; // :AwareDev:
       Background.Sprite = CUIDefaultSprite.Angle;
 
       Anchor = new Vector2(1, 1);

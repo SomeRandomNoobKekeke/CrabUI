@@ -27,8 +27,8 @@ namespace CrabUI
     [CUISerializable]
     public bool Resizable
     {
-      get => RightResizeHandle.Visible;
-      set => RightResizeHandle.Visible = value;
+      get => RightResizeHandle.Displayed;
+      set => RightResizeHandle.Displayed = value;
     }
 
     public DragHandle DragHandle { get; } = new();

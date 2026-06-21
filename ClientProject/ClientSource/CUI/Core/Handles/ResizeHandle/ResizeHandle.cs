@@ -47,7 +47,7 @@ namespace CrabUI
 
     public Vector2 Size { get; set; } = new Vector2(15, 10);
 
-    public bool Visible { get; set; }
+    public bool Displayed { get; set; }
     public bool Grabbed { get; private set; }
 
     public Vector2 GrabPoint { get; private set; }
@@ -127,7 +127,7 @@ namespace CrabUI
 
     public override IEnumerable<VisualUnit> VisualSplit()
     {
-      if (Visible) yield return Background.VisualWrapper;
+      if (Displayed) yield return Background.VisualWrapper;
     }
 
     public ResizeHandle()

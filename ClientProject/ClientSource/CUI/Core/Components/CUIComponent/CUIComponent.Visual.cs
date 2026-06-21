@@ -22,7 +22,7 @@ namespace CrabUI
     }
 
     [CUISerializable]
-    public bool Visible { get; set; } = true;
+    public bool Displayed { get; set; } = true;
     protected bool CulledOut { get; set; }
 
 
@@ -48,7 +48,7 @@ namespace CrabUI
 
     public override IEnumerable<VisualUnit> VisualSplit()
     {
-      if (!Visible || CulledOut) yield break;
+      if (!Displayed || CulledOut) yield break;
 
       yield return Background.VisualWrapper;
       if (Tree.Children.Count != 0)

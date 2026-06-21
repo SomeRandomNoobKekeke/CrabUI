@@ -15,6 +15,7 @@ namespace CrabUI
     public interface Host : Layout.Host
     {
       public CUIDirection Direction { get; }
+      public float TotalHeight { set; }
     }
     public interface Child : Layout.ChildBase
     {
@@ -134,6 +135,9 @@ namespace CrabUI
           );
         }
       }
+
+
+      Parent.TotalHeight = TotalHeight;//HACK
 
       base.UpdateChildren();
     }

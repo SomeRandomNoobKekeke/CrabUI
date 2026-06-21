@@ -36,18 +36,21 @@ namespace CrabUI
       }
     }
 
+    protected void UpdateChildrenOffsetBounds(float totalChildrenHeight)
+    {
+      LayoutProps.ChildrenOffset.Bounds = new CUIBoundaries(
+        minX: 0,
+        maxX: 0,
+        minY: Math.Min(Rect.Height - totalChildrenHeight - BottomGap, 0),
+        maxY: TopGap
+      );
+    }
+
     protected CUIVerticalListLayout ListLayout;
 
     protected override void UpdateRect(CUIRect rect)
     {
       base.UpdateRect(rect);
-
-      // LayoutProps.ChildrenOffset.Bounds = new CUIBoundaries(
-      //   minX: 0,
-      //   maxX: 0,
-      //   minY: Math.Min(Rect.Height - ListLayout.TotalHeight - BottomGap, 0),
-      //   maxY: TopGap
-      // );
     }
 
     private void ScrollHandle(CUIComponent c, CUIMouseScrollEvent e)

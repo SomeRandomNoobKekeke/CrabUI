@@ -27,6 +27,8 @@ namespace CrabUI
       }
 
       CUIDirection CUIVerticalListLayout.Host.Direction => Self.LayoutProps.Direction.Value;
+
+      float CUIVerticalListLayout.Host.TotalHeight { set => Self.UpdateChildrenOffsetBounds(value); }
     }
   }
 }

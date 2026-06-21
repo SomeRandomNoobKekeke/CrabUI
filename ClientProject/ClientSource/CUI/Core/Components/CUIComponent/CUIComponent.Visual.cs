@@ -23,6 +23,9 @@ namespace CrabUI
 
     [CUISerializable]
     public bool Displayed { get; set; } = true;
+
+
+
     protected bool CulledOut { get; set; }
 
 
@@ -45,6 +48,12 @@ namespace CrabUI
     }
     protected VisualBounds VisualBounds { get; } = new();
 
+    [CUISerializable] //TODO will this just magically work?
+    public virtual bool Visible
+    {
+      get => Background.Visible;
+      set => Background.Visible = value;
+    }
 
     public override IEnumerable<VisualUnit> VisualSplit()
     {

@@ -19,10 +19,13 @@ namespace CrabUI
     public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUITextInput>((c) =>
     {
       c.Focusable = true;
-      c.CaretTexture.Color = Color.Cyan;
-      c.SelectionOverlay.Color = new Color(0, 255, 255, 64);
       c.TextBlock.Anchor = CUIAnchor.LeftCenter;
       c.Background.ConsumeMouseClicks = true;
+
+      c.FocusedColor = new Color(0, 255, 255, 64);
+      c.BluredColor = new Color(255, 255, 255, 32);
+      c.SelectionColor = new Color(0, 255, 255, 64);
+      c.CaretColor = new Color(0, 255, 255, 64);
     });
 
 

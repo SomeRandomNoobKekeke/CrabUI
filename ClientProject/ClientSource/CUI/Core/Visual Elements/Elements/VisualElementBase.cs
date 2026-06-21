@@ -20,6 +20,7 @@ namespace CrabUI
     public object HostComponent { get; set; }
     public string HostPropName { get; set; }
 
+    public bool Visible { get; set; } = true;
     public abstract CUIRect Rect { get; set; }
     public abstract void Draw(CUISpriteBatch spriteBatch);
 

@@ -29,7 +29,10 @@ namespace CrabUI
 
     public override void Draw(CUISpriteBatch spriteBatch)
     {
-      Sprite.Draw(spriteBatch, Rect.Box);
+      if (Visible)
+      {
+        Sprite.Draw(spriteBatch, Rect.Box);
+      }
     }
   }
 }

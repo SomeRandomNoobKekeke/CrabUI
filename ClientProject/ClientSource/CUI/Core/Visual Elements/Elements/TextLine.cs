@@ -36,19 +36,22 @@ namespace CrabUI
 
     public override void Draw(CUISpriteBatch spriteBatch)
     {
-      Font.DrawString(
-        spriteBatch,
-        Text,
-        Position,
-        TextColor,
-        Rotation,
-        Origin,
-        Scale,
-        SpriteEffects,
-        LayerDepth,
-        Alignment,
-        ForceUpperCase
-      );
+      if (Visible)
+      {
+        Font.DrawString(
+          spriteBatch,
+          Text,
+          Position,
+          TextColor,
+          Rotation,
+          Origin,
+          Scale,
+          SpriteEffects,
+          LayerDepth,
+          Alignment,
+          ForceUpperCase
+        );
+      }
     }
   }
 }

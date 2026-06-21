@@ -14,6 +14,15 @@ namespace CrabUI
 {
   public partial class CUITextInput : CUIComponent, IComponent
   {
+    public Color FocusedColor { get; set; }
+    public Color BluredColor { get; set; }
+    public Color SelectionColor { get; set; }
+    public Color CaretColor
+    {
+      get => CaretTexture.Color;
+      set => CaretTexture.Color = value;
+    }
+
     public string Text
     {
       get => State.Text;

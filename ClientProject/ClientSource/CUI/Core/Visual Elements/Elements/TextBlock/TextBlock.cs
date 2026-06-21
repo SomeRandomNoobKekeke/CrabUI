@@ -18,7 +18,11 @@ namespace CrabUI
     //Evil from old cui
     public int CaretIndex(Vector2 clickPos)
     {
-      if (!Rect.Contains(clickPos)) return 0;
+      if (!Rect.Contains(clickPos))
+      {
+        if (clickPos.X < Rect.Left) return 0;
+        if (clickPos.X > Rect.Right) return Text.Length - 1;
+      }
 
       float x = clickPos.X - Rect.Left;
       int Aprox = (int)Math.Round(x / Font.MeasureString(Text).X * Text.Length);
@@ -99,17 +103,20 @@ namespace CrabUI
 
     public override void Draw(CUISpriteBatch spriteBatch)
     {
-      Font.DrawString(
-        spriteBatch,
-        RealText,
-        TextDrawPosition,
-        TextColor,
-        rotation: 0,
-        origin: Vector2.Zero,
-        RealScale,
-        SpriteEffects,
-        LayerDepth
-      );
+      if (Visible)
+      {
+        Font.DrawString(
+          spriteBatch,
+          RealText,
+          TextDrawPosition,
+          TextColor,
+          rotation: 0,
+          origin: Vector2.Zero,
+          RealScale,
+          SpriteEffects,
+          LayerDepth
+        );
+      }
     }
   }
 }

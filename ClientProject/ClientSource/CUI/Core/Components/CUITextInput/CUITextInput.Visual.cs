@@ -36,8 +36,10 @@ namespace CrabUI
     {
       UpdateRects();
 
-      Background.Color = Focused ? new Color(0, 255, 0, 64) : new Color(255, 0, 0, 64);
-      CaretTexture.Color = Focused ? new Color(0, 255, 255, 127) : Color.Transparent;
+      Background.Color = Focused ? FocusedColor : BluredColor;
+      SelectionOverlay.Color = Focused ? SelectionColor : SelectionColor * 0.5f;
+
+      CaretTexture.Visible = Focused && SelectionEmpty;
     }
 
     private void UpdateRects()
@@ -68,6 +70,19 @@ namespace CrabUI
       base.UpdateRect(rect);
 
       UpdateVisualState();
+    }
+
+    [CUISerializable]
+    public virtual bool Visible
+    {
+      get => Background.Visible;
+      set
+      {
+        Background.Visible = value;
+        SelectionOverlay.Visible = value;
+        TextBlock.Visible = value;
+        CaretTexture.Visible = value;
+      }
     }
 
     public override IEnumerable<VisualUnit> VisualSplit()

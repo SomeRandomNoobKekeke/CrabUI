@@ -27,6 +27,17 @@ namespace CrabUI
       TextLine.Position = rect.LeftTop;
     }
 
+    [CUISerializable]
+    public override bool Visible
+    {
+      get => Background.Visible;
+      set
+      {
+        Background.Visible = value;
+        TextLine.Visible = value;
+      }
+    }
+
     public override IEnumerable<VisualUnit> VisualSplit()
     {
       if (!Displayed || CulledOut) yield break;

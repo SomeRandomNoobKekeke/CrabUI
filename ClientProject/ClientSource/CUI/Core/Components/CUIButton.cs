@@ -128,6 +128,17 @@ namespace CrabUI
       TextBlock.Rect = rect;
     }
 
+    [CUISerializable]
+    public override bool Visible
+    {
+      get => Background.Visible;
+      set
+      {
+        Background.Visible = value;
+        TextBlock.Visible = value;
+      }
+    }
+
     public override IEnumerable<VisualUnit> VisualSplit()
     {
       if (!Displayed || CulledOut) yield break;

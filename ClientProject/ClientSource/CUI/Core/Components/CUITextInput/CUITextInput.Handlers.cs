@@ -14,73 +14,9 @@ namespace CrabUI
 {
   public partial class CUITextInput
   {
-
-    public StateClass State { get; } = new();
-
-
-    #region External Events
-    #endregion
-    private void HandleTextInput(CUITextInputEvent e)
-    {
-      try
-      {
-        if (!Focused) return;
-        HandleCharacter(e.Args.Character);
-      }
-      catch (Exception ex)
-      {
-        CUI.Logger.Error($"Error in CUITextInput: {State}\n{ex}");
-      }
-    }
-
-    private void HandleKeyDownInput(CUIKeyDownInputEvent e)
-    {
-      try
-      {
-        if (!Focused) return;
-
-        if (CUICore.Instance.Input.Keyboard.IsKeyDown(Keys.LeftControl))
-        {
-          HandleCtrlCommand(e.Args.Key);
-          return;
-        }
-
-        if (CUICore.Instance.Input.Keyboard.IsKeyDown(Keys.LeftShift))
-        {
-          HandleShiftCommand(e.Args.Key);
-          return;
-        }
-
-        HandleKey(e.Args.Key);
-      }
-      catch (Exception ex)
-      {
-        CUI.Logger.Error($"Error in CUITextInput: State: [{State}] key: [{e.Args.Key}] \n{ex}");
-      }
-    }
-
-    public void HandleMouseDown(CUIComponent c, CUIMouseDownEvent e)
-    {
-      CaretPos = TextBlock.CaretIndex(e.Pos);
-      UpdateVisualState();
-    }
-
-    #region Internal Events
-    #endregion
-
     private void HandleStateChanged()
     {
       UpdaTextMeasurements();
-      UpdateVisualState();
-    }
-
-    private void HandleFocus()
-    {
-      CaretPos = Text.Length - 1;
-    }
-
-    private void HandleFocusLost()
-    {
       UpdateVisualState();
     }
 
@@ -98,7 +34,6 @@ namespace CrabUI
       }
     }
 
-    //
     private void HandleShiftCommand(Keys key)
     {
       if (key == Keys.Left)

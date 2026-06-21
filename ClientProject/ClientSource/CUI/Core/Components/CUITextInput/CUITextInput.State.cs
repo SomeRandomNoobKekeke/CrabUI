@@ -14,6 +14,8 @@ namespace CrabUI
 {
   public partial class CUITextInput
   {
+    public StateClass State { get; } = new();
+
     public class StateClass
     {
       public event Action Changed;

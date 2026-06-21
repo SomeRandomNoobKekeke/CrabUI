@@ -47,7 +47,10 @@ namespace CrabUI
       public void SetSelectionEnd(int value) => SetSelection(SelectionStart, value);
       public void SetSelection(int start, int end)
       {
-        end = Math.Max(start, end);
+        if (start > end)
+        {
+          (start, end) = (end, start);
+        }
 
         start = Math.Clamp(start, 0, Text.Length);
         end = Math.Clamp(end, 0, Text.Length);

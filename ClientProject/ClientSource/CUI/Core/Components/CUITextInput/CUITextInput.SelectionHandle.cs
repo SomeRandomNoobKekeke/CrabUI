@@ -16,15 +16,11 @@ namespace CrabUI
   public partial class CUITextInput
   {
     private SelectionHandle_Part SelectionHandle { get; } = new();
-    public class SelectionHandle_Part : IPart
+    public class SelectionHandle_Part : Part
     {
-      public CUITextInput Self { get; set; }
-
       public void Init()
       {
-        Self.MouseDown += (c, e) => HandleMouseDown(e.Pos);
-        Self.MouseMoved += (c, e) => HandleMouseMove(e.Pos);
-        Self.MouseUp += (c, e) => HandleMouseUp(e.Pos);
+        Self.MouseDown += (c, e) => HandleMouseDown(e);
       }
 
       public bool Selecting;
@@ -33,24 +29,43 @@ namespace CrabUI
       public Vector2 CusorPos;
       public int CusorSelectionIndex;
 
-      public void HandleMouseDown(Vector2 mousePos)
+      public void HandleMouseDown(CUIMouseDownEvent e)
       {
         Selecting = true;
+        InitialClickPos = e.Pos;
+        InitialSelectionIndex = Self.TextBlock.CaretIndex(InitialClickPos);
+        Self.CaretPos = InitialSelectionIndex;
+
+        Self.MainComponent.GlobalEvents.MouseMoved.Add(HandleMouseMove);
+        Self.MainComponent.GlobalEvents.MouseUp.Add(HandleMouseUp);
+
+
       }
 
-      public void HandleMouseMove(Vector2 mousePos)
+      public void HandleMouseMove(CUIMouseMovedEvent e)
       {
+        if (!Selecting) return;
 
+        CusorPos = e.Pos;
+        CusorSelectionIndex = Self.TextBlock.CaretIndex(CusorPos);
+        Self.SetSelection(InitialSelectionIndex, CusorSelectionIndex);
+        Self.CaretPos = CusorSelectionIndex;
+        Self.UpdateVisualState();
       }
 
-      public void HandleMouseUp(Vector2 mousePos)
+      public void HandleMouseUp(CUIMouseUpEvent e)
       {
+        if (!Selecting) return;
+        Selecting = false;
+        Self.MainComponent.GlobalEvents.MouseMoved.Remove(HandleMouseMove);
+        Self.MainComponent.GlobalEvents.MouseUp.Remove(HandleMouseUp);
 
+        CusorPos = e.Pos;
+        CusorSelectionIndex = Self.TextBlock.CaretIndex(CusorPos);
+        Self.SetSelection(InitialSelectionIndex, CusorSelectionIndex);
+        Self.CaretPos = CusorSelectionIndex;
+        Self.UpdateVisualState();
       }
-
-      public ClearableEvent SelectionStart { get; } = new();
-      public ClearableEvent SelectionEnd { get; } = new();
-      public ClearableEvent SelectionUpdated { get; } = new();
     }
 
 

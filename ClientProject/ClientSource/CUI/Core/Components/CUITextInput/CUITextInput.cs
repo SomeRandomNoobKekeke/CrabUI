@@ -12,8 +12,10 @@ using Microsoft.Xna.Framework.Input;
 
 namespace CrabUI
 {
+  [GeneratedComponent]
   public partial class CUITextInput : CUIComponent, IComponent
   {
+    public class Part : IPart { public CUITextInput Self { get; set; } }
     public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUITextInput>((c) =>
     {
       c.Focusable = true;

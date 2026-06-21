@@ -75,7 +75,7 @@ namespace CrabUI
 
     private void HandleFocus()
     {
-      CaretPos = Text.Length - 1;
+      UpdateVisualState();
     }
 
     private void HandleFocusLost()

@@ -31,6 +31,10 @@ namespace CrabUI
 
     public void StopStart(CUISpriteBatch spriteBatch, State state)
     {
+      if (CurrentState == state) return;
+      CurrentState = state;
+
+
       spriteBatch.StopStart(state.ScissorRect, state.SamplerState);
       Debug_ScissorRectChanged.Send(state.ScissorRect);
     }
@@ -47,8 +51,6 @@ namespace CrabUI
       CurrentState = OriginalState;
     }
 
-    //TODO these newState != CurrentState are wrong
-    // e.g. if i enter and exit from same component state won't be restored
     public void Enter(CUISpriteBatch spriteBatch, VisualBounds bounds)
     {
       State newState = new State(
@@ -56,22 +58,19 @@ namespace CrabUI
         bounds.SamplerState is null ? CurrentState.SamplerState : bounds.SamplerState
       );
 
-      if (newState != CurrentState) StopStart(spriteBatch, newState);
-
-      CurrentState = newState;
       States.Push(CurrentState);
+      StopStart(spriteBatch, newState);
     }
 
     public void Exit(CUISpriteBatch spriteBatch, VisualBounds bounds)
     {
       State prevState = States.Pop();
-      if (prevState != CurrentState) StopStart(spriteBatch, prevState);
-      CurrentState = prevState;
+      StopStart(spriteBatch, prevState);
     }
 
     public void Finalize(CUISpriteBatch spriteBatch)
     {
-      if (CurrentState != OriginalState) StopStart(spriteBatch, OriginalState);
+      StopStart(spriteBatch, OriginalState);
     }
 
 

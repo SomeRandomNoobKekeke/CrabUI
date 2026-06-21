@@ -72,15 +72,23 @@ namespace CrabUI
       UpdateVisualState();
     }
 
-
     private void HandleFocus()
     {
+      MainComponent?.GlobalEvents.AfterUpdate.Add(HandleUpdate);
       UpdateVisualState();
+      LastSomethingHappenedTime = Timing.TotalTime;
     }
 
     private void HandleFocusLost()
     {
+      MainComponent?.GlobalEvents.AfterUpdate.Remove(HandleUpdate);
       UpdateVisualState();
+    }
+
+    private void HandleUpdate()
+    {
+      CaretIsHidden = (Timing.TotalTime - LastSomethingHappenedTime) % CaretBlinkInterval > 0.5 * CaretBlinkInterval;
+      CaretTexture.Visible = Focused && SelectionEmpty && !CaretIsHidden;
     }
   }
 }

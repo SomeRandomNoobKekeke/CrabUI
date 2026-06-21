@@ -20,6 +20,9 @@ namespace CrabUI
 
     public TextMeasurementsStruct TextMeasurements;
 
+    protected double LastSomethingHappenedTime;
+    protected bool CaretIsHidden;
+
     public void UpdaTextMeasurements()
     {
       float MeasureX(string s) => TextBlock.Font.MeasureString(s).X;
@@ -39,7 +42,7 @@ namespace CrabUI
       Background.Color = Focused ? FocusedColor : BluredColor;
       SelectionOverlay.Color = Focused ? SelectionColor : SelectionColor * 0.5f;
 
-      CaretTexture.Visible = Focused && SelectionEmpty;
+      CaretTexture.Visible = Focused && SelectionEmpty && !CaretIsHidden;
     }
 
     private void UpdateRects()
@@ -50,7 +53,7 @@ namespace CrabUI
 
       CaretTexture.Rect = Rect with
       {
-        Left = Rect.Left + TextMeasurements.CaretLeft,
+        Left = Rect.Left + TextMeasurements.CaretLeft - 1,
         Width = 2,
         Top = Rect.Top + Rect.Height * 0.1f,
         Height = Rect.Height * 0.8f,
@@ -60,6 +63,8 @@ namespace CrabUI
       {
         Left = Rect.Left + TextMeasurements.SelectionLeft,
         Width = TextMeasurements.SelectionWidth,
+        Top = Rect.Top + Rect.Height * 0.1f,
+        Height = Rect.Height * 0.8f,
       };
     }
 

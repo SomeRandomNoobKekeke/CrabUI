@@ -16,6 +16,7 @@ namespace CrabUI
   {
     private void HandleStateChanged()
     {
+      LastSomethingHappenedTime = Timing.TotalTime;
       UpdaTextMeasurements();
       UpdateVisualState();
     }

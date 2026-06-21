@@ -15,6 +15,10 @@ namespace CrabUI
     public GlobalEvents_Part GlobalEvents { get; } = new();
     public class GlobalEvents_Part : Part, IMouseEventConsumer, IKeyboardEventConsumer
     {
+
+      public ClearableEvent BeforeUpdate { get; } = new();
+      public ClearableEvent AfterUpdate { get; } = new();
+
       public bool MouseOver { get; set; } // BRUH
       public bool MousePressed { get; set; }
 

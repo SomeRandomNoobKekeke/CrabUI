@@ -14,6 +14,8 @@ namespace CrabUI
 {
   public partial class CUITextInput : CUIComponent, IComponent
   {
+    public double CaretBlinkInterval { get; set; } = 1.0;
+
     public Color FocusedColor { get; set; }
     public Color BluredColor { get; set; }
     public Color SelectionColor { get; set; }

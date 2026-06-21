@@ -48,6 +48,8 @@ namespace CrabUI
     private double LastUpdateTime;
     public void Update(double totalTime, CUIInput Input)
     {
+      GlobalEvents.BeforeUpdate.Raise();
+
       if (Tree.Changed)
       {
         Tree.Changed = false;
@@ -74,6 +76,7 @@ namespace CrabUI
       }
 
       LastUpdateTime = totalTime;
+      GlobalEvents.AfterUpdate.Raise();
     }
 
     private void HandleInput(CUIInput Input)

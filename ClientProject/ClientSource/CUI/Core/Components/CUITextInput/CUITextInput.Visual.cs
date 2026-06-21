@@ -95,9 +95,14 @@ namespace CrabUI
       if (!Displayed || CulledOut) yield break;
 
       yield return Background.VisualWrapper;
+
+      yield return VisualBounds.LeftBound;
+
       yield return SelectionOverlay.VisualWrapper;
       yield return TextBlock.VisualWrapper;
       yield return CaretTexture.VisualWrapper;
+
+      yield return VisualBounds.RightBound;
     }
   }
 }

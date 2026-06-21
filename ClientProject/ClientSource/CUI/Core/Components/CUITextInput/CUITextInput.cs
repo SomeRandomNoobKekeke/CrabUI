@@ -21,6 +21,7 @@ namespace CrabUI
       c.Focusable = true;
       c.TextBlock.Anchor = CUIAnchor.LeftCenter;
       c.Background.ConsumeMouseClicks = true;
+      c.CullChildren = true;
 
       c.FocusedColor = new Color(0, 255, 255, 64);
       c.BluredColor = new Color(255, 255, 255, 32);

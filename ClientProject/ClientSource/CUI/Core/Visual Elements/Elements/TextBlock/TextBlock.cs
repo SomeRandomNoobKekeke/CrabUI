@@ -21,7 +21,7 @@ namespace CrabUI
       if (!Rect.Contains(clickPos))
       {
         if (clickPos.X < Rect.Left) return 0;
-        if (clickPos.X > Rect.Right) return Text.Length - 1;
+        if (clickPos.X > Rect.Right) return Text.Length;
       }
 
       float x = clickPos.X - Rect.Left;

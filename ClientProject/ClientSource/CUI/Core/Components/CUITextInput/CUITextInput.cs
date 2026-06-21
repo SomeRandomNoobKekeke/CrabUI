@@ -55,6 +55,7 @@ namespace CrabUI
 
       State.Changed += HandleStateChanged;
       MouseDown += HandleMouseDown;
+      MouseDoubleClick += HandleDoubleClick;
     }
 
 

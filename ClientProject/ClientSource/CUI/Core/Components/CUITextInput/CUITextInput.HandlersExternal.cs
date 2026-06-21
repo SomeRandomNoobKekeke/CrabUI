@@ -59,6 +59,11 @@ namespace CrabUI
       UpdateVisualState();
     }
 
+    public void HandleDoubleClick(CUIComponent c, CUIMouseDoubleClickEvent e)
+    {
+      SelectAll();
+    }
+
     public void HandleMouseMoved(CUIComponent c, CUIMouseMovedEvent e)
     {
 

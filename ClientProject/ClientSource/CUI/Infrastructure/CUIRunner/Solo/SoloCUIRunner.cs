@@ -110,6 +110,8 @@ namespace CrabUI
     {
       CUITextureManager.Load("Assets/dev.png", "BaroDev");
       CUITextureManager.Load("Assets/CUI.png", "CUI");
+      CUITextureManager.Load("Assets/Test Chamber Background.png", "Test Chamber Background");
+
     }
 
     public SoloCUIRunner()

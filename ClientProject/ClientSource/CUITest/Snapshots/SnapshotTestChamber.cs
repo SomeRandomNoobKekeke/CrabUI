@@ -18,9 +18,9 @@ namespace CrabUIUser
     {
       Relative = new CUINullRect(0, 0, 1, 1);
 
-      BackgroundSprite = new CUISprite(CUICore.TextureManager.Get("BaroDev"))
+      BackgroundSprite = new CUISprite(CUICore.TextureManager.Get("Test Chamber Background"))
       {
-        Color = new Color(64, 0, 64, 64),
+        Color = new Color(255, 255, 255, 255),
       };
     }
 

@@ -12,6 +12,9 @@ namespace CrabUI
 {
   public class ResizeHandle : CUIVisualComponent, IModule, IAware
   {
+    public static Vector2 DefaultSize = new Vector2(20, 20);
+
+
     public object HostComponent { get; set; }
     public string HostPropName { get; set; }
 
@@ -45,7 +48,7 @@ namespace CrabUI
     public Vector2 SelfAnchor { get; set; } = new Vector2(1, 1);
 
 
-    public Vector2 Size { get; set; } = new Vector2(15, 10);
+    public Vector2 Size { get; set; } = DefaultSize;
 
     public bool Displayed { get; set; }
     public bool Grabbed { get; private set; }

@@ -18,6 +18,7 @@ namespace CrabUI
       public void Init()
       {
         Self.Tree.DebugRelay.Map(Self.DebugRelays[DebugCategory.TreeChanged]);
+        Self.Debug_RectSet.Map(Self.DebugRelays[DebugCategory.RectSet]);
 
         Self.OnDebugOn += () => Self.DebugRelays.Open();
         Self.OnDebugOff += () => Self.DebugRelays.Close();
@@ -31,9 +32,11 @@ namespace CrabUI
 
     public DebugRelayDict DebugRelays { get; } = new()
     {
-      [DebugCategory.PropSet] = new DebugRelay(),
+      [DebugCategory.LayoutPropSet] = new DebugRelay(),
+      [DebugCategory.RectSet] = new DebugRelay(),
       [DebugCategory.TreeChanged] = new DebugRelay(),
       [DebugCategory.LayoutUpdated] = new DebugRelay(),
+      [DebugCategory.RectSet] = new DebugRelay(),
     };
   }
 }

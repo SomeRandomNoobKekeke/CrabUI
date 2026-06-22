@@ -48,8 +48,15 @@ namespace CrabUI
 
 
 
-
-    public bool RequireChildrenUpdate { get; set; } = true;
+    private bool _RequireChildrenUpdate = true;
+    public bool RequireChildrenUpdate
+    {
+      get => _RequireChildrenUpdate;
+      set
+      {
+        _RequireChildrenUpdate = value;
+      }
+    }
     public bool RequireParentUpdate { get; set; } = true;
 
     public virtual void UpdateChildren()

@@ -18,8 +18,8 @@ namespace CrabUI
     {
       public void Init()
       {
-        Absolute.Debug_ValueSet.Map(Self.DebugRelays[DebugCategory.PropSet]);
-        Relative.Debug_ValueSet.Map(Self.DebugRelays[DebugCategory.PropSet]);
+        Absolute.Debug_ValueSet.Map(Self.DebugRelays[DebugCategory.LayoutPropSet]);
+        Relative.Debug_ValueSet.Map(Self.DebugRelays[DebugCategory.LayoutPropSet]);
       }
 
       void ICUILayoutProp.IContainer.Mark(LayoutMarker.Pattern pattern)

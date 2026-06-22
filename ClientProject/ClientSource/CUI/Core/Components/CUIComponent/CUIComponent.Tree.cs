@@ -21,6 +21,7 @@ namespace CrabUI
     public void Insert(CUIComponent child, int index, string name = null) => Tree.Insert(child, index, name);
     public void RemoveSelf() => Tree.RemoveSelf();
     public void RemoveChild(CUIComponent child) => Tree.RemoveChild(child);
+    public void RemoveAt(int i) => Tree.RemoveAt(i);
     public void RemoveAllChildren() => Tree.RemoveAllChildren();
 
     public Dictionary<string, CUIComponent> NamedChildren
@@ -161,8 +162,13 @@ namespace CrabUI
       public void RemoveSelf() => Parent?.RemoveChild(Self);
       public void RemoveChild(CUIComponent child)
       {
-        Children.Remove(child);
         child.Tree.Parent = null;
+      }
+
+      public void RemoveAt(int i)
+      {
+        if (0 > i || i >= Children.Count) return;
+        Children[i].Tree.Parent = null;
       }
 
       public void RemoveAllChildren()

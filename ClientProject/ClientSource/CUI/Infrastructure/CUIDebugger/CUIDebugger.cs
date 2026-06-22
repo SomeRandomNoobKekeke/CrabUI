@@ -174,18 +174,17 @@ namespace CrabUI
     {
       if (Pages.OpenedPage != EventsPage) return;
 
-      if (UpdateFrameEnded)
+      if (EventList.Children.Count > 10)
       {
-        UpdateFrameEnded = false;
-        EventList.RemoveAllChildren();
+        EventList.RemoveChild(EventList.Children.Last());
       }
 
-      EventList.Append(new CUITextBlock()
+      EventList.Insert(new CUITextBlock()
       {
         Text = e.ToString(),
         Absolute = new CUINullRect(h: 20),
         TextAnchor = new Vector2(0, 0.5f),
-      });
+      }, 0);
     }
 
     public void OnEventsPageOpen()

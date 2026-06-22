@@ -50,6 +50,9 @@ namespace CrabUI
           get => Self.MaxSizeOverride;
           set => Self.MaxSize = value;
         }
+
+
+        public override string ToString() => Self.ToString();
       }
     }
   }

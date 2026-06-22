@@ -99,7 +99,6 @@ namespace CrabUI
         if (c.AbsoluteMax.Height.HasValue) h = Math.Min(h, c.AbsoluteMax.Height.Value);
         if (c.MaxSize.Y.HasValue) h = Math.Min(h, c.MaxSize.Y.Value);
 
-
         Vector2 anchorPos = CUIAnchor.ChildPosIn(
           Parent.Rect.Size,
           c.ParentAnchor ?? c.Anchor,

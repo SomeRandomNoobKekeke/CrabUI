@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-
+using BaroJunk;
 using Microsoft.Xna.Framework;
 
 
@@ -8,6 +8,11 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
+    public DebugNode<CUIComponent, CUIRect> Debug_RectSet { get; } = new(
+      DebugCategory.RectSet, CUI.DebugHub,
+      (component, rect) => $"{component}.Rect = {rect}"
+    );
+
     public SimpleTexture Background { get; } = new();
 
     protected CUIRect _Rect;
@@ -39,6 +44,8 @@ namespace CrabUI
       {
         ScissorRect = rect.Box;
       }
+
+      Debug_RectSet.Send(this, rect);
     }
 
     protected Rectangle? ScissorRect

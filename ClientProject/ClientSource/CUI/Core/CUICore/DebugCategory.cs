@@ -16,7 +16,8 @@ namespace CrabUI
     public static string LayoutUpdated = "Layout Updated";
     public static string TreeChanged = "Tree Changed";
     public static string HandleGrab = "Handle Grab";
-    public static string Layout = "Layout";
+    public static string LayoutPropSet = "Layout Prop Set";
+    public static string RectSet = "Rect Set";
     public static string TextMeasurements = "TextMeasurements";
     public static string Events = "Events";
     public static string ScissorRectSet = "Scissor Rect Set";

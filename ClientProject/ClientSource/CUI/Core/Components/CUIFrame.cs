@@ -42,6 +42,7 @@ namespace CrabUI
 
       Host.Append(this);
       OnOpen?.Invoke(this);
+      SaveState("lastopened");
     }
 
 
@@ -51,6 +52,7 @@ namespace CrabUI
     public CUIFrame() : base()
     {
       Commands.ListenFor("close", (_) => Close());
+      MouseDoubleClick += (c, e) => RestoreState("lastopened");
     }
   }
 }

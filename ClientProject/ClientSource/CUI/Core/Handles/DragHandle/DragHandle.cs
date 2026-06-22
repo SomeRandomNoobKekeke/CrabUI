@@ -65,6 +65,14 @@ namespace CrabUI
       host.Release(this);
     }
 
+    public void ForceRelease()
+    {
+      Grabbed = false;
+      host.HubMouseMoved -= Update;
+      host.HubMouseUp -= Release;
+      host.Release(this);
+    }
+
     public void Update(CUIMouseEvent e)
     {
       Vector2 origin = e.Pos + GrabOffset - (Host.ParentRect?.LeftTop ?? Vector2.Zero);

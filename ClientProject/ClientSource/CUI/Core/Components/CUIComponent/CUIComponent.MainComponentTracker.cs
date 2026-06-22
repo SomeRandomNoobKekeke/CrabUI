@@ -21,6 +21,12 @@ namespace CrabUI
     protected virtual void OnDetachedFromMainComponent(CUIMainComponent mainComponent)
     {
       DebugRelays.Unmap(MainComponent.DebugRelays);
+
+
+      //TODO find better place for these
+      //TODO release all handles
+      RightResizeHandle.ForceRelease();
+      DragHandle.ForceRelease();
     }
 
 

@@ -128,6 +128,14 @@ namespace CrabUI
       host.Release(this);
     }
 
+    public void ForceRelease()
+    {
+      Grabbed = false;
+      host.HubMouseMoved -= Update;
+      host.HubMouseUp -= Release;
+      host.Release(this);
+    }
+
     public override IEnumerable<VisualUnit> VisualSplit()
     {
       if (Displayed) yield return Background.VisualWrapper;
@@ -143,6 +151,8 @@ namespace CrabUI
       Background.Color = Color.Cyan;
 
       Background.MouseDown.Add(Grab);
+
+      Background.ConsumeMouseClicks = true;
     }
   }
 }

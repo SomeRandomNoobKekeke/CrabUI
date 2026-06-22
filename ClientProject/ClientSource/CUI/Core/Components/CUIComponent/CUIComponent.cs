@@ -37,8 +37,8 @@ namespace CrabUI
 
     public CUIComponent() : base()
     {
+      SetupLayout();//HACK 
       this.Inject();
-      SetupLayout();
 
       if (CUICore.Styles.HasStylesFor(this.GetType()))
       {

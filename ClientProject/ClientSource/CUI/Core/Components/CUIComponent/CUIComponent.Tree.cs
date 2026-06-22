@@ -59,11 +59,12 @@ namespace CrabUI
       {
         ReadOnlyChildren = Children.AsReadOnly();
 
-        DebugRelay.Route(Debug_ChildAdded);
-        DebugRelay.Route(Debug_ChildRemoved);
+        Debug_ChildAdded.Map(Self.DebugRelays[DebugCategory.TreeChanged]);
+        Debug_ChildRemoved.Map(Self.DebugRelays[DebugCategory.TreeChanged]);
+
+        Debug_LayoutMarked.Map(Self.DebugRelays[DebugCategory.LayoutMarked]);
       }
 
-      public DebugRelay DebugRelay { get; } = new();
 
       public DebugNode<CUIComponent, CUIComponent> Debug_ChildAdded = new(
         DebugCategory.TreeChanged, CUI.DebugHub,
@@ -72,6 +73,11 @@ namespace CrabUI
       public DebugNode<CUIComponent, CUIComponent> Debug_ChildRemoved = new(
         DebugCategory.TreeChanged, CUI.DebugHub,
         (parent, child) => $"{parent} => {child}"
+      );
+
+      public DebugNode<CUIComponent, LayoutMarker.Pattern, string> Debug_LayoutMarked { get; } = new(
+        DebugCategory.LayoutMarked, CUI.DebugHub,
+        (host, pattern, reason) => $"{host} {reason} {pattern}"
       );
 
       public LayoutMarker.Pattern MarkPattern { get; } = LayoutMarker.Pattern.UpAndDown;
@@ -107,6 +113,8 @@ namespace CrabUI
           _Parent.Tree.Children.Remove(Self);
 
           _Parent.LayoutMarker.Mark(MarkPattern);
+          Debug_LayoutMarked.Send(_Parent, MarkPattern, "Detaching old parent");
+
           _Parent.Tree.OnChildRemoved.Raise(Self);
           Self.Tree.OnDetachFromParent.Raise(_Parent);
 
@@ -122,6 +130,7 @@ namespace CrabUI
           // parent.PassPropsToChild(this);
 
           _Parent.LayoutMarker.Mark(MarkPattern);
+          Debug_LayoutMarked.Send(_Parent, MarkPattern, "Attaching new parent");
           _Parent.Tree.OnChildAdded.Raise(Self);
           Self.Tree.OnAttachToParent.Raise(_Parent);
 

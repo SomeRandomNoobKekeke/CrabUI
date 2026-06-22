@@ -34,6 +34,7 @@ namespace CrabUI
       [DebugCategory.RectSet] = new DebugRelay(),
       [DebugCategory.TreeChanged] = new DebugRelay(),
       [DebugCategory.LayoutUpdated] = new DebugRelay(),
+      [DebugCategory.LayoutMarked] = new DebugRelay(),
     };
   }
 }

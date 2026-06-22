@@ -8,11 +8,12 @@ using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
 using ComponentGenerator;
+using BaroJunk;
 
 namespace CrabUI
 {
 
-  public abstract class Layout
+  public abstract class Layout : IAware
   {
     public interface Host
     {
@@ -40,6 +41,14 @@ namespace CrabUI
 
     }
 
+    public DebugNode<object, string> Debug_LayoutMarked { get; } = new(
+      DebugCategory.LayoutMarked, CUI.DebugHub,
+      (host, propName) => $"{host}.{propName} = true"
+    );
+
+    public object HostComponent { get; set; }
+    public string HostPropName { get; set; }
+
     private Host Parent;
     public virtual void ConnectTo(Host host)
     {
@@ -48,16 +57,26 @@ namespace CrabUI
 
 
 
-    private bool _RequireChildrenUpdate = true;
-    public bool RequireChildrenUpdate
+    private bool _RequireChildrenUpdate = true; public bool RequireChildrenUpdate
     {
       get => _RequireChildrenUpdate;
       set
       {
         _RequireChildrenUpdate = value;
+        Debug_LayoutMarked.Send(HostComponent, "RequireChildrenUpdate");
       }
     }
-    public bool RequireParentUpdate { get; set; } = true;
+
+
+    private bool _RequireParentUpdate = true; public bool RequireParentUpdate
+    {
+      get => _RequireParentUpdate;
+      set
+      {
+        _RequireParentUpdate = value;
+        Debug_LayoutMarked.Send(HostComponent, "RequireParentUpdate");
+      }
+    }
 
     public virtual void UpdateChildren()
     {

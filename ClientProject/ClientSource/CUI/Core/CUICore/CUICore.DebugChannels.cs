@@ -18,6 +18,7 @@ namespace CrabUI
       [DebugCategory.TreeChanged] = new DebugRelay(),
       [DebugCategory.TreeChanged] = new DebugRelay(),
       [DebugCategory.LayoutUpdated] = new DebugRelay(),
+      [DebugCategory.LayoutMarked] = new DebugRelay(),
     };
   }
 }

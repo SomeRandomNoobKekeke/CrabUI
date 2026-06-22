@@ -17,8 +17,8 @@ namespace CrabUI
     {
       public void Init()
       {
-        Self.Tree.DebugRelay.Map(Self.DebugRelays[DebugCategory.TreeChanged]);
         Self.Debug_RectSet.Map(Self.DebugRelays[DebugCategory.RectSet]);
+        Self.DebugRelays[DebugCategory.LayoutMarked].Route(Self.Layout.Debug_LayoutMarked);
 
         Self.OnDebugOn += () => Self.DebugRelays.Open();
         Self.OnDebugOff += () => Self.DebugRelays.Close();
@@ -36,7 +36,7 @@ namespace CrabUI
       [DebugCategory.RectSet] = new DebugRelay(),
       [DebugCategory.TreeChanged] = new DebugRelay(),
       [DebugCategory.LayoutUpdated] = new DebugRelay(),
-      [DebugCategory.RectSet] = new DebugRelay(),
+      [DebugCategory.LayoutMarked] = new DebugRelay(),
     };
   }
 }

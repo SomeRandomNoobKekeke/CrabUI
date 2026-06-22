@@ -30,6 +30,11 @@ namespace CrabUI
 
     private void HandleCharacter(char c)
     {
+      if (SomethingSelected)
+      {
+        RemoveSelection();
+      }
+
       Text = Text.Insert(CaretPos, c.ToString());
       CaretPos++;
     }

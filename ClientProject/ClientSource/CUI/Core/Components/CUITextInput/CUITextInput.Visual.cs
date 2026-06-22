@@ -39,7 +39,11 @@ namespace CrabUI
     {
       UpdateRects();
 
-      Background.Color = Focused ? FocusedColor : BluredColor;
+      Background.Color = Focused ?
+        Valid ?
+          FocusedColor : InvalidColor
+        : BluredColor;
+
       SelectionOverlay.Color = Focused ? SelectionColor : SelectionColor * 0.5f;
 
       CaretTexture.Visible = Focused && SelectionEmpty && !CaretIsHidden;

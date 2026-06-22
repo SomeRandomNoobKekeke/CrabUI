@@ -24,9 +24,10 @@ namespace CrabUI
       c.CullChildren = true;
 
       c.FocusedColor = new Color(0, 255, 255, 64);
-      c.BluredColor = new Color(255, 255, 255, 32);
-      c.SelectionColor = new Color(0, 255, 255, 64);
+      c.BluredColor = new Color(0, 0, 0, 64);
+      c.SelectionColor = new Color(0, 255, 255, 128);
       c.CaretColor = new Color(200, 255, 255, 200);
+      c.InvalidColor = new(255, 0, 0, 200);
     });
 
 
@@ -53,9 +54,11 @@ namespace CrabUI
       OnFocus += HandleFocus;
       OnFocusLost += HandleFocusLost;
 
-      State.Changed += HandleStateChanged;
       MouseDown += HandleMouseDown;
       MouseDoubleClick += HandleDoubleClick;
+
+      State.Changed += HandleStateChanged;
+      State.TextChanged += HandleTextChanged;
     }
 
 

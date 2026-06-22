@@ -19,6 +19,7 @@ namespace CrabUI
     public class StateClass
     {
       public event Action Changed;
+      public event Action<string> TextChanged;
 
       public string Text { get; private set; }
       public int SelectionStart { get; private set; }
@@ -41,6 +42,7 @@ namespace CrabUI
         SelectionEnd = Math.Clamp(SelectionEnd, 0, Text.Length);
 
         Changed?.Invoke();
+        TextChanged?.Invoke(Text);
       }
 
       public void SetSelectionStart(int value) => SetSelection(value, SelectionEnd);

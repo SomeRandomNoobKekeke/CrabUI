@@ -18,6 +18,8 @@ namespace CrabUI
       frame.AbsoluteMin = new CUINullRect(w: ResizeHandle.DefaultSize.X, h: ResizeHandle.DefaultSize.Y);
       frame.Draggable = true;
       frame.CullChildren = true;
+      frame.Resizable = true;
+      frame.Anchor = CUIAnchor.Center;
     });
 
     public CUIComponent TargetMainComponent { get; set; }

@@ -28,9 +28,9 @@ namespace CrabUIUser
 
         public CUIVerticalList FieldList { get; private set; }
 
-        public Dictionary<Type, Func<PropertyInfo, CUIComponent>> FieldCatalog { get; } = new()
+        public Dictionary<Type, Func<string, string, CUIComponent>> FieldCatalog { get; } = new()
         {
-          [typeof(string)] = (pi) => new TextField(pi),
+          [typeof(string)] = (key, value) => new TextField(key, value),
         };
 
         public void Sync()
@@ -41,7 +41,7 @@ namespace CrabUIUser
           {
             if (FieldCatalog.ContainsKey(pi.PropertyType))
             {
-              FieldList.Add(FieldCatalog[pi.PropertyType](pi));
+              FieldList.Add(FieldCatalog[pi.PropertyType](pi.Name, pi.GetValue(Settings).ToString()));
             }
           }
         }
@@ -51,25 +51,40 @@ namespace CrabUIUser
         {
           Absolute = new CUINullRect(w: 300, h: 400);
           BackgroundColor = Color.Brown;
-          Anchor = CUIAnchor.Center;
-          Resizable = true;
 
+          Commands.ListenFor("setvalue", (o) =>
+          {
+            if (o is not string[] args) return;
+            Settings.SetValue(args[0], args[1]);
+          });
 
           this["layout"] = new CUIVerticalList()
           {
             Relative = new CUINullRect(0, 0, 1, 1),
           };
 
-          this["layout"]["header"] = new CUIHorizontalList()
+          this["layout"]["handle"] = new CUIHorizontalList()
           {
             Direction = CUIDirection.Reverse,
             BackgroundColor = new Color(32, 32, 32),
-            Absolute = new CUINullRect(h: 30),
+            FitContent = new CUIBool2(false, true),
           };
 
-          this["layout"]["header"]["close"] = new CUICloseButton()
+          this["layout"]["handle"]["close"] = new CUICloseButton()
           {
             Absolute = new CUINullRect(w: 30, h: 30),
+          };
+
+          this["layout"]["header"] = new CUIHorizontalList()
+          {
+            BackgroundColor = Color.Blue,
+            FitContent = new CUIBool2(false, true),
+          };
+
+          this["layout"]["header"]["printSettings"] = new CUIButton("Print Settings")
+          {
+            MasterColor = Color.Yellow,
+            AddMouseDown = (c, e) => Settings.Print(),
           };
 
           this["layout"]["main"] = FieldList = new CUIVerticalList()

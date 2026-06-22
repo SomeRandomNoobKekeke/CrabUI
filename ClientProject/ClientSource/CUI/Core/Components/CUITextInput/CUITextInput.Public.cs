@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ComponentGenerator;
 using Microsoft.Xna.Framework.Input;
+using BaroJunk;
 
 namespace CrabUI
 {
@@ -16,6 +17,7 @@ namespace CrabUI
   {
     public double CaretBlinkInterval { get; set; } = 1.0;
 
+    public Color InvalidColor { get; set; }
     public Color FocusedColor { get; set; }
     public Color BluredColor { get; set; }
     public Color SelectionColor { get; set; }
@@ -30,6 +32,12 @@ namespace CrabUI
       get => State.Text;
       set => State.SetText(value);
     }
+
+    public Action<string> AddOnInput { set { OnInput += value; } }
+    public event Action<string> OnInput;
+
+    public Action<string> AddOnValidInput { set { OnValidInput += value; } }
+    public event Action<string> OnValidInput;
 
     public bool SomethingSelected => State.SomethingSelected;
     public int SelectionStart

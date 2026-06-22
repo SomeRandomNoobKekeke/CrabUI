@@ -20,24 +20,36 @@ namespace CrabUIUser
       {
         public class TextField : CUIHorizontalList
         {
-          public TextField(PropertyInfo pi)
+          public TextField(string key, string value)
           {
-            Property = pi;
+            Key = key;
+            InitialValue = value;
             CreateUI();
           }
 
-          public PropertyInfo Property { get; }
+          public string Key { get; }
+          public string InitialValue { get; }
 
           public void CreateUI()
           {
             FitContent = new CUIBool2(false, true);
-            Background.Color = Color.Red;
 
-            this["label"] = new CUITextBlock(Property.Name);
+            this["label"] = new CUITextBlock(Key)
+            {
+              Absolute = new CUINullRect(w: 50),
+            };
+
             this["input"] = new CUITextInput()
             {
               Flex = 1,
-              Text = "123",
+              Text = InitialValue,
+              FocusedColor = new Color(0, 255, 255, 128),
+              BluredColor = new Color(0, 32, 0),
+
+              AddOnValidInput = (value) => this["input"].Commands.SendUp("setvalue", new string[]
+              {
+                Key,value,
+              })
             };
           }
         }

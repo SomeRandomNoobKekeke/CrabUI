@@ -108,6 +108,8 @@ namespace CrabUI
       set => TextBlock.ResizeStrategy = value;
     }
 
+    protected override CUINullVector2 MinSizeOverride => TextBlock.ForcedSize;
+
     public void DetermineColor()
     {
       BackgroundColor = InactiveColor;
@@ -115,12 +117,7 @@ namespace CrabUI
       if (MousePressed) BackgroundColor = MousePressedColor;
     }
 
-    public CUIButton() : base()
-    {
-      MouseOff += (c, e) => DetermineColor();
-      MouseOn += (c, e) => DetermineColor();
-      DetermineColor();
-    }
+
 
     protected override void UpdateRect(CUIRect rect)
     {
@@ -147,5 +144,17 @@ namespace CrabUI
       yield return TextBlock.VisualWrapper;
     }
 
+
+    public CUIButton() : base()
+    {
+      MouseOff += (c, e) => DetermineColor();
+      MouseOn += (c, e) => DetermineColor();
+      DetermineColor();
+    }
+
+    public CUIButton(string text) : this()
+    {
+      Text = text;
+    }
   }
 }

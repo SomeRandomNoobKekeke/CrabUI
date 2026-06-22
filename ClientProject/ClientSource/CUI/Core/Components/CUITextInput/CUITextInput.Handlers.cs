@@ -21,6 +21,13 @@ namespace CrabUI
       UpdateVisualState();
     }
 
+    private void HandleTextChanged(string text)
+    {
+      OnInput?.Invoke(text);
+      Validate(text);
+      if (Valid) OnValidInput?.Invoke(text);
+    }
+
     private void HandleCharacter(char c)
     {
       Text = Text.Insert(CaretPos, c.ToString());

@@ -43,6 +43,7 @@ namespace CrabUIUser
         }
 
         public string Name { get; set; } = "bruh";
+        public int Count { get; set; } = 123;
       }
 
     }

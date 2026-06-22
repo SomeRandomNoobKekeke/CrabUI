@@ -31,6 +31,7 @@ namespace CrabUIUser
         public Dictionary<Type, Func<string, string, CUIComponent>> FieldCatalog { get; } = new()
         {
           [typeof(string)] = (key, value) => new TextField(key, value),
+          [typeof(int)] = (key, value) => new IntField(key, value),
         };
 
         public void Sync()

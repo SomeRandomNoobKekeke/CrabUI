@@ -24,5 +24,7 @@ namespace CrabUI
 
     public static CUISprite Cross => AtPos(0, 0);
     public static CUISprite Angle => AtPos(1, 0);
+    public static CUISprite Vignette => AtPos(2, 0);
+    public static CUISprite InnerShadow => AtPos(3, 0);
   }
 }

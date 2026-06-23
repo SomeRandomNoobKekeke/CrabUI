@@ -16,8 +16,13 @@ namespace CrabUI
   {
     public class MainFrameComponent : CUIFrame
     {
-      public void CreateUI()
+      public CUIPages Pages;
+      public EventsPageComponent EventsPage = new();
+      public ComponentsPageComponent ComponentsPage = new();
+
+      public MainFrameComponent() : base()
       {
+        TargetMainComponent = CUI.TopMain;
         Anchor = CUIAnchor.Center;
         Background.Color = new Color(0, 0, 200);
         Absolute = new CUINullRect(w: 400, h: 600);
@@ -45,25 +50,31 @@ namespace CrabUI
           FitContent = new CUIBool2(false, true),
         };
 
-        this["layout"]["header"]["events"] = new CUIButton("Events")
+        this["layout"]["header"]["Events"] = new CUIButton("Events")
+        {
+          Flex = 1,
+          AddMouseDown = (c, e) => Pages!.Open(EventsPage),
+        };
+
+        this["layout"]["header"]["Components"] = new CUIButton("Components")
+        {
+          AddMouseDown = (c, e) => Pages!.Open(ComponentsPage),
+          Flex = 1,
+        };
+
+        this["layout"]["header"]["Gates"] = new CUIButton("Gates")
         {
           Flex = 1,
         };
 
-        this["layout"]["header"]["events"] = new CUIButton("Events")
+
+        this["layout"]["main"] = Pages = new CUIPages()
         {
           Flex = 1,
+          BackgroundColor = Color.Yellow,
         };
 
-        this["layout"]["header"]["events"] = new CUIButton("Events")
-        {
-          Flex = 1,
-        };
-      }
-
-      public MainFrameComponent() : base()
-      {
-        CreateUI();
+        IsDebugTool = true;
       }
     }
   }

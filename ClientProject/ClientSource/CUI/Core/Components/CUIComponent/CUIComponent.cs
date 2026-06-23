@@ -12,7 +12,7 @@ namespace CrabUI
   {
     public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIComponent>((c) =>
     {
-      c.Background.Sprite = CUIDefaultSprite.AtPos(2, 0);
+      c.Background.Sprite = CUIDefaultSprite.Vignette;
       c.Background.Color = Color.Transparent;
     });
 

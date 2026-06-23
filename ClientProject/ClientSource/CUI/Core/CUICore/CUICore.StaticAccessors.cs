@@ -32,5 +32,23 @@ namespace CrabUI
     public static CUIStyleManager Styles => Instance.CUIStyleManager;
 
     public static CUITextureManager TextureManager => Instance.Handles.CUITextureManager;
+
+    public static event Action<double> OnUpdate
+    {
+      add => Instance.LifeCycle.OnUpdate.Add(value);
+      remove => Instance.LifeCycle.OnUpdate.Remove(value);
+    }
+
+    public static event Action<CUISpriteBatch> OnDrawAfterGUI
+    {
+      add => Instance.LifeCycle.OnDrawAfterGUI.Add(value);
+      remove => Instance.LifeCycle.OnDrawAfterGUI.Remove(value);
+    }
+
+    public static event Action<CUISpriteBatch> OnDrawBeforeGUI
+    {
+      add => Instance.LifeCycle.OnDrawBeforeGUI.Add(value);
+      remove => Instance.LifeCycle.OnDrawBeforeGUI.Remove(value);
+    }
   }
 }

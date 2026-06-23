@@ -19,6 +19,7 @@ namespace CrabUI
       public CUIPages Pages;
       public EventsPageComponent EventsPage = new();
       public ComponentsPageComponent ComponentsPage = new();
+      public GatesPageComponent GatesPage = new();
 
       public MainFrameComponent() : base()
       {
@@ -28,6 +29,8 @@ namespace CrabUI
         Absolute = new CUINullRect(w: 400, h: 600);
 
         this["layout"] = new CUIVerticalList() { Relative = new CUINullRect(0, 0, 1, 1) };
+
+
         this["layout"]["handle"] = new CUIHorizontalList()
         {
           Background = { Color = Color.Blue },
@@ -41,7 +44,6 @@ namespace CrabUI
         };
 
         this["layout"]["handle"]["close"] = new CUICloseButton();
-
 
 
         this["layout"]["header"] = new CUIHorizontalList()
@@ -64,6 +66,7 @@ namespace CrabUI
 
         this["layout"]["header"]["Gates"] = new CUIButton("Gates")
         {
+          AddMouseDown = (c, e) => Pages!.Open(GatesPage),
           Flex = 1,
         };
 

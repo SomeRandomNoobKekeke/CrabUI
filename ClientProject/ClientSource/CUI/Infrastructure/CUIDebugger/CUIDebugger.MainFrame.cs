@@ -47,7 +47,17 @@ namespace CrabUI
 
         this["layout"]["header"]["events"] = new CUIButton("Events")
         {
+          Flex = new CUINullVector2(1, 0),
+        };
 
+        this["layout"]["header"]["events"] = new CUIButton("Events")
+        {
+          Flex = new CUINullVector2(1, 0),
+        };
+
+        this["layout"]["header"]["events"] = new CUIButton("Events")
+        {
+          Flex = new CUINullVector2(1, 0),
         };
       }
 

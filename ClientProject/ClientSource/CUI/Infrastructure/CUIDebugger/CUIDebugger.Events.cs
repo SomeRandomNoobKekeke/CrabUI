@@ -56,6 +56,8 @@ namespace CrabUI
         CUI.DebugHub.Output.Map(Input);
         CUICore.OnUpdate += UpdateHook;
         CUICore.OnDrawAfterGUI += DrawHook;
+
+        EventList.Clear();
       }
 
       public void OnCloseHandler()

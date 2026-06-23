@@ -16,6 +16,7 @@ namespace CrabUI
 
     public bool Frozen { get; set; }
     public double UpdateInterval = 1.0 / 60.0;
+    public int MaxLayoutCalcItterations { get; set; } = 10;
 
     protected VisualFlattener VisualFlattener { get; } = new();
     protected LayoutFlattener LayoutFlattener { get; } = new();
@@ -60,7 +61,6 @@ namespace CrabUI
 
       if (RequireLayoutUpdate)
       {
-        RequireLayoutUpdate = false;
         UpdateLayout();
       }
 
@@ -103,14 +103,26 @@ namespace CrabUI
 
     private void UpdateLayout()
     {
-      for (int i = LayoutFlattener.Flat.Count - 1; i >= 0; i--)
+      int repeats = 0;
+      while (RequireLayoutUpdate)
       {
-        LayoutFlattener.Flat[i].Layout.UpdateParent();
-      }
+        RequireLayoutUpdate = false;
 
-      for (int i = 0; i < LayoutFlattener.Flat.Count; i++)
-      {
-        LayoutFlattener.Flat[i].Layout.UpdateChildren();
+        for (int i = LayoutFlattener.Flat.Count - 1; i >= 0; i--)
+        {
+          LayoutFlattener.Flat[i].Layout.UpdateParent();
+        }
+
+        for (int i = 0; i < LayoutFlattener.Flat.Count; i++)
+        {
+          LayoutFlattener.Flat[i].Layout.UpdateChildren();
+        }
+
+        if (repeats++ > MaxLayoutCalcItterations)
+        {
+          CUI.Logger.Warning($"{this} couldn't resolve layout after {MaxLayoutCalcItterations} itterations!");
+          break;
+        }
       }
 
 

@@ -20,7 +20,7 @@ namespace CrabUI
       set
       {
         _Bounds = value;
-        Value = Value;
+        // Value = Value; //TODO rethink, this triggers infinite recalc loop
       }
     }
 

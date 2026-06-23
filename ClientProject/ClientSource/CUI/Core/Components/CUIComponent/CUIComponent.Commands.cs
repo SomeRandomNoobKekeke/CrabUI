@@ -17,6 +17,7 @@ namespace CrabUI
     public class public_Commands_Part : Part, IModule
     {
       public void ListenFor(string name, Action<object> action) => Self.ProtectedCommands.ListenFor(name, action);
+      public void ListenFor<T>(string name, Action<T> action) => Self.ProtectedCommands.ListenFor<T>(name, action);
       public void SendDown(string name, object data = null) => Self.ProtectedCommands.SendDown(name, data);
       public void SendUp(string name, object data = null) => Self.ProtectedCommands.SendUp(name, data);
     }
@@ -47,6 +48,14 @@ namespace CrabUI
         parent.ProtectedCommands.Node.RemoveChild(this.Node);
       }
 
+
+      public void ListenFor<T>(string name, Action<T> action)
+      {
+        Node.Listeners[name] = (o) =>
+        {
+          if (o is T) action((T)o);
+        };
+      }
       public void ListenFor(string name, Action<object> action)
       {
         Node.Listeners[name] = action;

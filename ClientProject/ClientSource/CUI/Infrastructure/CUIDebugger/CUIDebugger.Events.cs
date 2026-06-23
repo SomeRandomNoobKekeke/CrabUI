@@ -16,9 +16,48 @@ namespace CrabUI
   {
     public class EventsPageComponent : CUIPage
     {
+
+      public ClearableEvent<DebugEvent> Input { get; } = new();
+      public CUIVerticalList EventList;
+
+      public void HandleDebugEvent(DebugEvent e)
+      {
+        if (EventList.Children.Count > 10)
+        {
+          EventList.RemoveChild(EventList.Children.Last());
+        }
+
+        EventList.Insert(new CUITextBlock()
+        {
+          Text = e.ToString(),
+          TextAnchor = new Vector2(0, 0.5f),
+        }, 0);
+      }
+
+      public void OnOpenHandler()
+      {
+        CUI.DebugHub.Output.Map(Input);
+      }
+
+      public void OnCloseHandler()
+      {
+        CUI.DebugHub.Output.Unmap(Input);
+      }
+
       public EventsPageComponent() : base()
       {
         Background.Color = new Color(255, 0, 200);
+
+        OnOpen.Add(OnOpenHandler);
+        OnClose.Add(OnCloseHandler);
+
+        Input.Add(HandleDebugEvent);
+
+        this["list"] = EventList = new CUIVerticalList()
+        {
+          Relative = new CUINullRect(0, 0, 1, 1),
+          Scrollable = true,
+        };
       }
     }
   }

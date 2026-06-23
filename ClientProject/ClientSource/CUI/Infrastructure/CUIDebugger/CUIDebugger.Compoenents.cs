@@ -62,7 +62,7 @@ namespace CrabUI
         ComponentList.Clear();
 
         foreach (
-          CUIComponent child in CUI.Main.DeepChildren.Append(CUI.Main).Where(c => !c.IsDebugTool).ToList()
+          CUIComponent child in CUI.Main.DeepChildren.Where(c => !c.IsDebugTool).ToList()
         )
         {
           ComponentList.Append(new ComponentButton(child));

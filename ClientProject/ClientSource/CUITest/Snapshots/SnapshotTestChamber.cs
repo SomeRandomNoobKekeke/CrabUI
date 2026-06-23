@@ -22,6 +22,8 @@ namespace CrabUIUser
       {
         Color = new Color(255, 255, 255, 255),
       };
+
+      IsDebugTool = true;
     }
 
     public bool IsSetup => Parent != null;

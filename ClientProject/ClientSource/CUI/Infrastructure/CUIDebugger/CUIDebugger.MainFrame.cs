@@ -24,7 +24,7 @@ namespace CrabUI
       public MainFrameComponent() : base()
       {
         TargetMainComponent = CUI.TopMain;
-        Anchor = CUIAnchor.Center;
+        Anchor = CUIAnchor.LeftCenter;
         Background.Color = new Color(0, 0, 200);
         Absolute = new CUINullRect(w: 400, h: 600);
 

@@ -33,13 +33,13 @@ namespace CrabUIUser
         frame["layout"]["a"] = new CUIVerticalList()
         {
           BackgroundColor = Color.Blue,
-          Flex = new CUINullVector2(1, 1),
+          Flex = 1,
         };
 
         frame["layout"]["b"] = new CUIVerticalList()
         {
           BackgroundColor = Color.Red,
-          Flex = new CUINullVector2(1, 1),
+          Flex = 1,
         };
 
         frame.PrintVisualSplit();

@@ -40,7 +40,7 @@ namespace CrabUIUser
         frame["layout"]["header"]["caption"] = new CUITextBlock()
         {
           Text = "header",
-          Flex = new CUINullVector2(1, 1),
+          Flex = 1
         };
 
         frame["layout"]["header"]["close"] = new CUICloseButton()
@@ -51,7 +51,7 @@ namespace CrabUIUser
         frame["layout"]["main"] = new CUIComponent()
         {
           BackgroundColor = new Color(0, 0, 32),
-          Flex = new CUINullVector2(1, 1),
+          Flex = 1,
         };
 
         frame["layout"]["main"]["box"] = new CUIButton()

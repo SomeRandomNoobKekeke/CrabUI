@@ -20,7 +20,7 @@ namespace CrabUI
 
       public partial class Layout_Child_Part : Part, IAdapterPart, Layout.Child
       {
-        CUINullVector2 CUIVerticalListLayout.Child.Flex => Self.LayoutProps.Flex.Value;
+        float? CUIVerticalListLayout.Child.Flex => Self.LayoutProps.Flex.Value;
         CUINullRect PlainLayout.Child.Absolute => Self.LayoutProps.Absolute.Value;
         CUINullRect PlainLayout.Child.AbsoluteMin => Self.LayoutProps.AbsoluteMin.Value;
         CUINullRect PlainLayout.Child.AbsoluteMax => Self.LayoutProps.AbsoluteMax.Value;

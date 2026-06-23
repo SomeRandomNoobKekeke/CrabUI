@@ -61,7 +61,7 @@ namespace CrabUIUser
 
       this["layout"]["header"]["caption"] = new CUIComponent()
       {
-        Flex = new CUINullVector2(1, 1),
+        Flex = 1,
       };
 
       this["layout"]["header"]["E2E"] = new CUIButton()
@@ -82,7 +82,7 @@ namespace CrabUIUser
 
       this["layout"]["main"] = Pages = new CUIPages()
       {
-        Flex = new CUINullVector2(1, 1),
+        Flex = 1,
       };
     }
 

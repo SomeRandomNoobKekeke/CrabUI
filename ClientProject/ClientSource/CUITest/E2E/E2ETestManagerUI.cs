@@ -68,7 +68,7 @@ namespace CrabUIUser
       };
       this["layout"]["btnlist"] = ButtonList = new CUIVerticalList()
       {
-        Flex = new CUINullVector2(1, 1),
+        Flex = 1,
       };
     }
   }

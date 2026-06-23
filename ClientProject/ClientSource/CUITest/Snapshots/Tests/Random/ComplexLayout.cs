@@ -46,7 +46,7 @@ namespace CrabUIUser
 
         frame["layout"]["main"] = new CUIComponent()
         {
-          Flex = new CUINullVector2(1, 1),
+          Flex = 1,
           BackgroundColor = Color.Blue,
         };
 

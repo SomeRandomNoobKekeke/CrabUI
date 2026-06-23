@@ -85,20 +85,20 @@ namespace CrabUIUser
       this["layout"]["header"]["runall"] = new CUIButton()
       {
         Text = "Run All",
-        Flex = new CUINullVector2(1, 1),
+        Flex = 1,
         MasterColor = new Color(64, 0, 64),
         AddMouseDown = (c, e) => Manager.RunAll(),
       };
       this["layout"]["header"]["accept"] = new CUIButton()
       {
         Text = "Accept",
-        Flex = new CUINullVector2(1, 1),
+        Flex = 1,
         MasterColor = new Color(64, 0, 64),
         AddMouseDown = (c, e) => Manager.AcceptCurrent()
       };
       this["layout"]["btnlist"] = ButtonList = new CUIVerticalList()
       {
-        Flex = new CUINullVector2(1, 1),
+        Flex = 1,
         Scrollable = true,
       };
     }

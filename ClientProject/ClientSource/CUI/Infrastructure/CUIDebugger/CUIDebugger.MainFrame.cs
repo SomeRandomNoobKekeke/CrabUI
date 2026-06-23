@@ -31,7 +31,7 @@ namespace CrabUI
 
         this["layout"]["handle"]["caption"] = new CUITextBlock("Debug")
         {
-          Flex = new CUINullVector2(1, 1),
+          Flex = 1,
           TextAnchor = CUIAnchor.LeftCenter,
         };
 
@@ -47,17 +47,17 @@ namespace CrabUI
 
         this["layout"]["header"]["events"] = new CUIButton("Events")
         {
-          Flex = new CUINullVector2(1, 0),
+          Flex = 1,
         };
 
         this["layout"]["header"]["events"] = new CUIButton("Events")
         {
-          Flex = new CUINullVector2(1, 0),
+          Flex = 1,
         };
 
         this["layout"]["header"]["events"] = new CUIButton("Events")
         {
-          Flex = new CUINullVector2(1, 0),
+          Flex = 1,
         };
       }
 

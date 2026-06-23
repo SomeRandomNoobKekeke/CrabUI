@@ -148,6 +148,7 @@ namespace CrabUI
         float maxWidth = 0;
         foreach (Layout.Child c in Parent.Children)
         {
+          if (c.Flex != null) continue;
           float w = 0;
 
           if (c.Absolute.Width.HasValue) w = c.Absolute.Width.Value;
@@ -168,8 +169,6 @@ namespace CrabUI
         float maxHeight = 0;
         foreach (Layout.Child c in Parent.Children)
         {
-          if (c.Flex != null) continue;
-
           float h = 0;
 
           if (c.Absolute.Height.HasValue) h = c.Absolute.Height.Value;

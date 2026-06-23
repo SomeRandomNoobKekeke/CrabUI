@@ -90,7 +90,7 @@ namespace CrabUIUser
 
           this["layout"]["main"] = FieldList = new CUIVerticalList()
           {
-            Flex = 1,
+            Flex = new CUINullVector2(1, 1),
             BackgroundColor = Color.Green,
           };
         }

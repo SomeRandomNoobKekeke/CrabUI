@@ -48,14 +48,14 @@ namespace CrabUIUser
         {
           Text = "123",
           BackgroundColor = Color.Green,
-          Flex = 1,
+          Flex = new CUINullVector2(1, 1),
         });
 
         list.Append(new CUITextLine()
         {
           Text = "321",
           BackgroundColor = Color.Pink,
-          Flex = 3,
+          Flex = new CUINullVector2(3, 3),
         });
 
         return frame;

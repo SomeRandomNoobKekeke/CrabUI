@@ -19,7 +19,7 @@ namespace CrabUI
     }
     public interface Child : Layout.ChildBase
     {
-      public float? Flex { get; }
+      public CUINullVector2 Flex { get; }
     }
 
     private Host Parent;
@@ -86,7 +86,7 @@ namespace CrabUI
         };
         sizes.Add(size);
 
-        if (c.Flex.HasValue)
+        if (c.Flex.Y.HasValue)
         {
           resizables.Add(size);
         }
@@ -97,10 +97,10 @@ namespace CrabUI
       }
 
       float emptySpace = Parent.Rect.Height - TotalHeight;
-      float totalFlex = resizables.Sum(size => size.Child.Flex.Value);
+      float totalFlex = resizables.Sum(size => size.Child.Flex.Y.Value);
       foreach (ChildSize size in resizables)
       {
-        size.Height = emptySpace * size.Child.Flex.Value / totalFlex;
+        size.Height = emptySpace * size.Child.Flex.Y.Value / totalFlex;
       }
 
 
@@ -169,7 +169,7 @@ namespace CrabUI
         float maxHeight = 0;
         foreach (Layout.Child c in Parent.Children)
         {
-          if (c.Flex != null) continue;
+          if (c.Flex.Y != null) continue;
 
           float h = 0;
 

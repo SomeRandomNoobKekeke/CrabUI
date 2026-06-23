@@ -76,7 +76,7 @@ namespace CrabUI
       set => LayoutProps.Direction.Value = value;
     }
     [CUISerializable]
-    public float? Flex
+    public CUINullVector2 Flex
     {
       get => LayoutProps.Flex.Value;
       set => LayoutProps.Flex.Value = value;

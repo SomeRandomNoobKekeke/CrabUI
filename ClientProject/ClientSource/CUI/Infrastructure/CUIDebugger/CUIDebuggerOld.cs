@@ -80,7 +80,7 @@ namespace CrabUI
 
       DebugFrame["layout"]["handle"]["spacer"] = new CUIComponent()
       {
-        Flex = 1,
+        Flex = new CUINullVector2(1, 1),
       };
 
       DebugFrame["layout"]["handle"]["close"] = new CUIButton()
@@ -100,7 +100,7 @@ namespace CrabUI
       DebugFrame["layout"]["header"]["events"] = new CUIButton()
       {
         Text = "Events",
-        Flex = 1,
+        Flex = new CUINullVector2(1, 1),
         MasterColor = Color.Blue,
         AddMouseDown = (c, e) => Pages.Open(EventsPage),
       };
@@ -108,7 +108,7 @@ namespace CrabUI
       DebugFrame["layout"]["header"]["components"] = new CUIButton()
       {
         Text = "Components",
-        Flex = 1,
+        Flex = new CUINullVector2(1, 1),
         MasterColor = Color.Blue,
         AddMouseDown = (c, e) => Pages.Open(ComponentsPage),
       };
@@ -116,7 +116,7 @@ namespace CrabUI
       DebugFrame["layout"]["header"]["gates"] = new CUIButton()
       {
         Text = "Gates",
-        Flex = 1,
+        Flex = new CUINullVector2(1, 1),
         MasterColor = Color.Blue,
         AddMouseDown = (c, e) => Pages.Open(GatesPage),
       };
@@ -125,7 +125,7 @@ namespace CrabUI
 
       DebugFrame["layout"]["pages"] = Pages = new CUIPages()
       {
-        Flex = 1,
+        Flex = new CUINullVector2(1, 1),
         BackgroundColor = Color.Green,
       };
 

@@ -43,7 +43,7 @@ namespace CrabUIUser
 
             this["input"] = new CUITextInput()
             {
-              Flex = 1,
+              Flex = new CUINullVector2(1, 1),
               Text = InitialValue,
               FocusedColor = new Color(0, 255, 255, 128),
               BluredColor = new Color(0, 32, 0),

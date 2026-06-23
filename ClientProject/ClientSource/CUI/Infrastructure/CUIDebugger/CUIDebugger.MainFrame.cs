@@ -31,7 +31,7 @@ namespace CrabUI
 
         this["layout"]["handle"]["caption"] = new CUITextBlock("Debug")
         {
-          Flex = 1,
+          Flex = new CUINullVector2(1, 1),
           TextAnchor = CUIAnchor.LeftCenter,
         };
 

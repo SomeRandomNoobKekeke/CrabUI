@@ -84,7 +84,7 @@ namespace CrabUI
         Pattern = LayoutMarker.Pattern.FromParentAndDown,
       };
 
-      public CUILayoutProp<float?> Flex { get; } = new()
+      public CUILayoutProp<CUINullVector2> Flex { get; } = new()
       {
         Pattern = LayoutMarker.Pattern.FromParentAndDown,
       };

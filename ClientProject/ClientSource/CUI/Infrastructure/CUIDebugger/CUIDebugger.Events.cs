@@ -16,15 +16,32 @@ namespace CrabUI
   {
     public class EventsPageComponent : CUIPage
     {
+      public enum ShouldClearEnum
+      {
+        Never, AfterUpdate, AfterDraw, AfterNEvents
+      }
 
       public ClearableEvent<DebugEvent> Input { get; } = new();
       public CUIVerticalList EventList;
 
+      public ShouldClearEnum ShouldClear = ShouldClearEnum.AfterUpdate;
+
+      public bool ClearRequested;
+
       public void HandleDebugEvent(DebugEvent e)
       {
-        if (EventList.Children.Count > 10)
+        if (ClearRequested)
         {
-          EventList.RemoveChild(EventList.Children.Last());
+          EventList.Clear();
+          ClearRequested = false;
+        }
+
+        if (ShouldClear == ShouldClearEnum.AfterNEvents)
+        {
+          if (EventList.Children.Count > 30)
+          {
+            EventList.RemoveChild(EventList.Children.Last());
+          }
         }
 
         EventList.Insert(new CUITextBlock()
@@ -37,11 +54,29 @@ namespace CrabUI
       public void OnOpenHandler()
       {
         CUI.DebugHub.Output.Map(Input);
+        CUICore.OnUpdate += UpdateHook;
+        CUICore.OnDrawAfterGUI += DrawHook;
       }
 
       public void OnCloseHandler()
       {
         CUI.DebugHub.Output.Unmap(Input);
+      }
+
+
+      public void UpdateHook(double totalTime)
+      {
+        if (ShouldClear == ShouldClearEnum.AfterUpdate)
+        {
+          ClearRequested = true;
+        }
+      }
+      public void DrawHook(CUISpriteBatch spriteBatch)
+      {
+        if (ShouldClear == ShouldClearEnum.AfterDraw)
+        {
+          ClearRequested = true;
+        }
       }
 
       public EventsPageComponent() : base()
@@ -53,10 +88,37 @@ namespace CrabUI
 
         Input.Add(HandleDebugEvent);
 
-        this["list"] = EventList = new CUIVerticalList()
+        this["layout"] = new CUIVerticalList() { Relative = new CUINullRect(0, 0, 1, 1) };
+
+        this["layout"]["header"] = new CUIHorizontalList()
+        {
+          FitContent = new CUIBool2(false, true),
+          Background = { Color = Color.Red }
+        };
+
+        this["layout"]["header"]["Update"] = new CUIButton("Update")
+        {
+          AddMouseDown = (c, e) => ShouldClear = ShouldClearEnum.AfterUpdate,
+          Flex = 1,
+        };
+
+        this["layout"]["header"]["Draw"] = new CUIButton("Draw")
+        {
+          AddMouseDown = (c, e) => ShouldClear = ShouldClearEnum.AfterDraw,
+          Flex = 1,
+        };
+
+        this["layout"]["header"]["AfterN"] = new CUIButton("AfterN")
+        {
+          AddMouseDown = (c, e) => ShouldClear = ShouldClearEnum.AfterNEvents,
+          Flex = 1,
+        };
+
+        this["layout"]["list"] = EventList = new CUIVerticalList()
         {
           Relative = new CUINullRect(0, 0, 1, 1),
           Scrollable = true,
+          Flex = 1,
         };
       }
     }

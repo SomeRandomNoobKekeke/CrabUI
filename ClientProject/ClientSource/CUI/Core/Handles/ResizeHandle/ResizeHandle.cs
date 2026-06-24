@@ -104,9 +104,15 @@ namespace CrabUI
     {
       Vector2 delta = e.Pos - GrabPoint;
       Vector2 SelfAnchorPoint = StartSelfAnchorPoint + delta;
+      Resize(SelfAnchorPoint);
+    }
+
+    private void Resize(Vector2 SelfAnchorPoint)
+    {
+      Vector2 staticPoint = CUIAnchor.PosFromAnchor(Host.Rect, StaticPointAnchor);
 
       CUIRect rect = CUIAnchor.RectFrom2PointsWithAnchors(
-        CUIAnchor.PosFromAnchor(Host.Rect, StaticPointAnchor), StaticPointAnchor,
+        staticPoint, StaticPointAnchor,
         SelfAnchorPoint, ParentAnchor
       );
 
@@ -117,8 +123,7 @@ namespace CrabUI
 
       Host.ResizeToAbsoluteRect(
         CUIAnchor.RectFromPointAndSize(
-          CUIAnchor.PosFromAnchor(Host.Rect, StaticPointAnchor), StaticPointAnchor,
-          size
+          staticPoint, StaticPointAnchor, size
         )
       );
     }
@@ -128,23 +133,7 @@ namespace CrabUI
       Vector2 delta = e.Pos - GrabPoint;
       Vector2 SelfAnchorPoint = StartSelfAnchorPoint + delta;
 
-
-      CUIRect rect = CUIAnchor.RectFrom2PointsWithAnchors(
-        CUIAnchor.PosFromAnchor(Host.Rect, StaticPointAnchor), StaticPointAnchor,
-        SelfAnchorPoint, ParentAnchor
-      );
-
-      Vector2 size = new Vector2(
-        Math.Max(rect.Width, Host.MinSize.X),
-        Math.Max(rect.Height, Host.MinSize.Y)
-      );
-
-      Host.ResizeToAbsoluteRect(
-        CUIAnchor.RectFromPointAndSize(
-          CUIAnchor.PosFromAnchor(Host.Rect, StaticPointAnchor), StaticPointAnchor,
-          size
-        )
-      );
+      Resize(SelfAnchorPoint);
 
 
       Grabbed = false;

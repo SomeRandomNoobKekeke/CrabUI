@@ -71,7 +71,7 @@ namespace CrabUIUser
           Text = test.Name,
           TextAnchor = CUIAnchor.LeftCenter,
           MasterColor = new Color(64, 64, 64),
-          AddMouseDown = (c, e) => Manager.Run(test.Name),
+          OnMouseDown = (c, e) => Manager.Run(test.Name),
         });
       }
     }
@@ -89,14 +89,14 @@ namespace CrabUIUser
         Text = "Run All",
         Flex = 1,
         MasterColor = new Color(64, 0, 64),
-        AddMouseDown = (c, e) => Manager.RunAll(),
+        OnMouseDown = (c, e) => Manager.RunAll(),
       };
       this["layout"]["controls"]["accept"] = new CUIButton()
       {
         Text = "Accept",
         Flex = 1,
         MasterColor = new Color(64, 0, 64),
-        AddMouseDown = (c, e) => Manager.AcceptCurrent()
+        OnMouseDown = (c, e) => Manager.AcceptCurrent()
       };
 
       this["layout"]["groups"] = new CUIHorizontalList() { FitContent = new CUIBool2(false, true), };
@@ -104,7 +104,7 @@ namespace CrabUIUser
       {
         this["layout"]["groups"].Append(new CUIButton(group)
         {
-          AddMouseDown = (c, e) => OpenGroup(group),
+          OnMouseDown = (c, e) => OpenGroup(group),
         });
       }
 

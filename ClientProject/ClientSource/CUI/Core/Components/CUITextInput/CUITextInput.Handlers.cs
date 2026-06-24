@@ -23,9 +23,9 @@ namespace CrabUI
 
     private void HandleTextChanged(string text)
     {
-      OnInput?.Invoke(text);
+      Input?.Invoke(text);
       Validate(text);
-      if (Valid) OnValidInput?.Invoke(text);
+      if (Valid) ValidInput?.Invoke(text);
     }
 
     private void HandleCharacter(char c)

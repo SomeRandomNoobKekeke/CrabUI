@@ -12,14 +12,14 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-    public Action<CUIComponent, CUIMouseDownEvent> AddMouseDown { set { MouseDown += value; } }
+    public Action<CUIComponent, CUIMouseDownEvent> OnMouseDown { set { MouseDown += value; } }
     public event Action<CUIComponent, CUIMouseDownEvent> MouseDown
     {
       add => this.Events.MouseDown.Add(value);
       remove => this.Events.MouseDown.Remove(value);
     }
 
-    public Action<CUIComponent, CUIMouseUpEvent> AddMouseUp { set { MouseUp += value; } }
+    public Action<CUIComponent, CUIMouseUpEvent> OnMouseUp { set { MouseUp += value; } }
     public event Action<CUIComponent, CUIMouseUpEvent> MouseUp
     {
       add => this.Events.MouseUp.Add(value);
@@ -68,7 +68,7 @@ namespace CrabUI
       remove => this.Events.MouseOff.Remove(value);
     }
 
-    public Action<CUIComponent, CUIMouseScrollEvent> AddMouseScroll { set { MouseScroll += value; } }
+    public Action<CUIComponent, CUIMouseScrollEvent> OnMouseScroll { set { MouseScroll += value; } }
     public event Action<CUIComponent, CUIMouseScrollEvent> MouseScroll
     {
       add => this.Events.MouseScroll.Add(value);

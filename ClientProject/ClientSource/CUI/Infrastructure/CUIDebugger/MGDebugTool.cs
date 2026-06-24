@@ -54,7 +54,7 @@ namespace CrabUI
         Text = "MG",
         Absolute = new CUINullRect(w: 30, h: 20),
         Anchor = new Vector2(0, 0.54f),
-        AddMouseDown = (c, e) =>
+        OnMouseDown = (c, e) =>
         {
           Frame.IsOpen = !Frame.IsOpen;
           MG.Active = Frame.IsOpen;

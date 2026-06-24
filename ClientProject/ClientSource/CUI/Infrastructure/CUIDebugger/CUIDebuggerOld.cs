@@ -54,7 +54,7 @@ namespace CrabUI
         BackgroundColor = Color.Blue,
         TextAnchor = CUIAnchor.LeftCenter,
         Absolute = new CUINullRect(w: 50, h: 20),
-        AddMouseDown = (c, e) => Open(),
+        OnMouseDown = (c, e) => Open(),
         IsDebugTool = true,
       };
 
@@ -88,7 +88,7 @@ namespace CrabUI
         Text = "X",
         Absolute = new CUINullRect(w: 20, h: 20),
         MasterColor = Color.Red,
-        AddMouseDown = (c, e) => Close(),
+        OnMouseDown = (c, e) => Close(),
       };
 
 
@@ -102,7 +102,7 @@ namespace CrabUI
         Text = "Events",
         Flex = 1,
         MasterColor = Color.Blue,
-        AddMouseDown = (c, e) => Pages.Open(EventsPage),
+        OnMouseDown = (c, e) => Pages.Open(EventsPage),
       };
 
       DebugFrame["layout"]["header"]["components"] = new CUIButton()
@@ -110,7 +110,7 @@ namespace CrabUI
         Text = "Components",
         Flex = 1,
         MasterColor = Color.Blue,
-        AddMouseDown = (c, e) => Pages.Open(ComponentsPage),
+        OnMouseDown = (c, e) => Pages.Open(ComponentsPage),
       };
 
       DebugFrame["layout"]["header"]["gates"] = new CUIButton()
@@ -118,7 +118,7 @@ namespace CrabUI
         Text = "Gates",
         Flex = 1,
         MasterColor = Color.Blue,
-        AddMouseDown = (c, e) => Pages.Open(GatesPage),
+        OnMouseDown = (c, e) => Pages.Open(GatesPage),
       };
 
 

@@ -33,7 +33,7 @@ namespace CrabUI
       OpenButton = new CUIButton("Debug")
       {
         Anchor = CUIAnchor.LeftCenter,
-        AddMouseDown = (c, e) => IsOpen = true,
+        OnMouseDown = (c, e) => IsOpen = true,
       };
 
       MainFrame = new MainFrameComponent();

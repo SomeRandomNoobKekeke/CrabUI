@@ -55,18 +55,18 @@ namespace CrabUI
         this["layout"]["header"]["Events"] = new CUIButton("Events")
         {
           Flex = 1,
-          AddMouseDown = (c, e) => Pages!.Open(EventsPage),
+          OnMouseDown = (c, e) => Pages!.Open(EventsPage),
         };
 
         this["layout"]["header"]["Components"] = new CUIButton("Components")
         {
-          AddMouseDown = (c, e) => Pages!.Open(ComponentsPage),
+          OnMouseDown = (c, e) => Pages!.Open(ComponentsPage),
           Flex = 1,
         };
 
         this["layout"]["header"]["Gates"] = new CUIButton("Gates")
         {
-          AddMouseDown = (c, e) => Pages!.Open(GatesPage),
+          OnMouseDown = (c, e) => Pages!.Open(GatesPage),
           Flex = 1,
         };
 

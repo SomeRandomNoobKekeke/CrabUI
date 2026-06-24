@@ -30,7 +30,7 @@ namespace CrabUIUser
           Text = "Save",
           Absolute = new CUINullRect(w: 40, h: 20),
           Anchor = CUIAnchor.LeftCenter,
-          AddMouseDown = (c, e) => frame.SaveState("bruh"),
+          OnMouseDown = (c, e) => frame.SaveState("bruh"),
         };
 
         frame["load"] = new CUIButton()
@@ -38,7 +38,7 @@ namespace CrabUIUser
           Text = "Load",
           Absolute = new CUINullRect(w: 40, h: 20),
           Anchor = CUIAnchor.RightCenter,
-          AddMouseDown = (c, e) => frame.RestoreState("bruh"),
+          OnMouseDown = (c, e) => frame.RestoreState("bruh"),
         };
 
 

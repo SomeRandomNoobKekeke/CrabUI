@@ -85,7 +85,7 @@ namespace CrabUIUser
           this["layout"]["header"]["printSettings"] = new CUIButton("Print Settings")
           {
             MasterColor = Color.Yellow,
-            AddMouseDown = (c, e) => Settings.Print(),
+            OnMouseDown = (c, e) => Settings.Print(),
           };
 
           this["layout"]["main"] = FieldList = new CUIVerticalList()

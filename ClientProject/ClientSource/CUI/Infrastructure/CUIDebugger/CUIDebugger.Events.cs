@@ -100,19 +100,19 @@ namespace CrabUI
 
         this["layout"]["header"]["Update"] = new CUIButton("Update")
         {
-          AddMouseDown = (c, e) => ShouldClear = ShouldClearEnum.AfterUpdate,
+          OnMouseDown = (c, e) => ShouldClear = ShouldClearEnum.AfterUpdate,
           Flex = 1,
         };
 
         this["layout"]["header"]["Draw"] = new CUIButton("Draw")
         {
-          AddMouseDown = (c, e) => ShouldClear = ShouldClearEnum.AfterDraw,
+          OnMouseDown = (c, e) => ShouldClear = ShouldClearEnum.AfterDraw,
           Flex = 1,
         };
 
         this["layout"]["header"]["AfterN"] = new CUIButton("AfterN")
         {
-          AddMouseDown = (c, e) => ShouldClear = ShouldClearEnum.AfterNEvents,
+          OnMouseDown = (c, e) => ShouldClear = ShouldClearEnum.AfterNEvents,
           Flex = 1,
         };
 

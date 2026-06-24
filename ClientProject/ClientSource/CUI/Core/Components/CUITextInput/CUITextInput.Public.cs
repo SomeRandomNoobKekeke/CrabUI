@@ -33,11 +33,11 @@ namespace CrabUI
       set => State.SetText(value);
     }
 
-    public Action<string> AddOnInput { set { OnInput += value; } }
-    public event Action<string> OnInput;
+    public Action<string> OnInput { set { Input += value; } }
+    public event Action<string> Input;
 
-    public Action<string> AddOnValidInput { set { OnValidInput += value; } }
-    public event Action<string> OnValidInput;
+    public Action<string> OnValidInput { set { ValidInput += value; } }
+    public event Action<string> ValidInput;
 
     public bool SomethingSelected => State.SomethingSelected;
     public int SelectionStart

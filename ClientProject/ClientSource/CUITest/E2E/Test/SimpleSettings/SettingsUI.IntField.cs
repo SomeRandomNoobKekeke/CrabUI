@@ -48,7 +48,7 @@ namespace CrabUIUser
               FocusedColor = new Color(0, 255, 255, 128),
               BluredColor = new Color(0, 32, 0),
               ValidationFunc = (s) => int.TryParse(s, out int _),
-              AddOnValidInput = (value) => this["input"].Commands.SendUp("setvalue", new string[]
+              OnValidInput = (value) => this["input"].Commands.SendUp("setvalue", new string[]
               {
                 Key,value,
               })

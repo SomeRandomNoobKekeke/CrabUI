@@ -55,7 +55,7 @@ namespace CrabUIUser
         Text = "X",
         MasterColor = new Color(255, 0, 0),
         Absolute = new CUINullRect(w: 30, h: 30),
-        AddMouseDown = (c, e) => IsOpen = false,
+        OnMouseDown = (c, e) => IsOpen = false,
       };
 
       this["layout"]["header"]["caption"] = new CUIComponent()
@@ -68,7 +68,7 @@ namespace CrabUIUser
         Text = "E2E",
         // ResizeStrategy = ResizeStrategy.Resist,
         Absolute = new CUINullRect(w: 90),
-        AddMouseDown = (c, e) => Pages.Open(E2ETestManager.UI),
+        OnMouseDown = (c, e) => Pages.Open(E2ETestManager.UI),
       };
 
       this["layout"]["header"]["snapshots"] = new CUIButton()
@@ -76,7 +76,7 @@ namespace CrabUIUser
         Text = "Snapshots",
         // ResizeStrategy = ResizeStrategy.Resist,
         Absolute = new CUINullRect(w: 90),
-        AddMouseDown = (c, e) => Pages.Open(SnapshotTestManager.UI),
+        OnMouseDown = (c, e) => Pages.Open(SnapshotTestManager.UI),
       };
 
       this["layout"]["main"] = Pages = new CUIPages()

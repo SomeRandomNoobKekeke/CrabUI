@@ -21,6 +21,7 @@ namespace CrabUI
 
     public void RestoreState(string name)
     {
+      if (!MemorizedStates.ContainsKey(name)) return;
       MemorizedStates[name].Apply(this);
     }
   }

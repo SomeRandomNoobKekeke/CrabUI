@@ -12,11 +12,6 @@ namespace CrabUI
   /// </summary>
   public class CUICanvas : CUIComponent, IDisposable
   {
-    // public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUICanvas>((c) =>
-    // {
-
-    // });
-
     private Color[] _Data; public Color[] Data
     {
       get => _Data;

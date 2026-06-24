@@ -17,24 +17,7 @@ namespace CrabUI
     public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIButton>((c) =>
     {
       c.MasterColor = Color.Blue;
-      c.ConsumeMouseClicks = true;
     });
-    // public ICUIStyle HoveredStyle = new CUICodeStyle<CUIButton>() { ApplyAction = ApplyHoveredStyle };
-    // public ICUIStyle MouseDownStyle = new CUICodeStyle<CUIButton>() { ApplyAction = ApplyMouseDownStyle };
-    // public ICUIStyle MouseUpStyle = new CUICodeStyle<CUIButton>() { ApplyAction = ApplyMouseUpStyle };
-
-    // public static void ApplyHoveredStyle(CUIButton button)
-    // {
-    //   button.Background.Color = button.MouseOverColor;
-    // }
-    // public static void ApplyMouseDownStyle(CUIButton button)
-    // {
-    //   button.Background.Color = button.MousePressedColor;
-    // }
-    // public static void ApplyMouseUpStyle(CUIButton button)
-    // {
-    //   button.Background.Color = button.InactiveColor;
-    // }
 
     [CUISerializable]
     public Color MouseOverColor { get; set; } = new Color(0, 0, 140);
@@ -150,6 +133,8 @@ namespace CrabUI
       MouseOff += (c, e) => DetermineColor();
       MouseOn += (c, e) => DetermineColor();
       DetermineColor();
+
+      ConsumeMouseClicks = true;
     }
 
     public CUIButton(string text) : this()

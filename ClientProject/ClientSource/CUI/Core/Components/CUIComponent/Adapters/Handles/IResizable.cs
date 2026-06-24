@@ -26,12 +26,27 @@ namespace CrabUI
 
         public CUIRect Rect => Self.Rect;
 
-        public void ResizeFrom2Points(Vector2 point1, Vector2 anchor1, Vector2 point2, Vector2 anchor2)
+        public Vector2 MinSize
         {
-          CUIRect rect = CUIAnchor.RectFrom2PointsWithAnchors(
-            point1, anchor1, point2, anchor2
-          );
+          get
+          {
+            float w = 0;
+            if (Self.RelativeMin.Width.HasValue) w = Math.Max(w, Self.RelativeMin.Width.Value * Self.Parent.Rect.Width);
+            if (Self.AbsoluteMin.Width.HasValue) w = Math.Max(w, Self.AbsoluteMin.Width.Value);
 
+            float h = 0;
+            if (Self.RelativeMin.Height.HasValue) h = Math.Max(h, Self.RelativeMin.Height.Value * Self.Parent.Rect.Height);
+            if (Self.AbsoluteMin.Height.HasValue) h = Math.Max(h, Self.AbsoluteMin.Height.Value);
+
+            return new Vector2(w, h);
+          }
+        }
+        // Vector2 IResizable.MaxSize //TODO
+
+
+
+        public void ResizeToAbsoluteRect(CUIRect rect)
+        {
           Self.Absolute = new CUINullRect(
             CUIAnchor.AbsoluteRectToAchored(
               rect, Self.Parent.Rect, Self.Anchor

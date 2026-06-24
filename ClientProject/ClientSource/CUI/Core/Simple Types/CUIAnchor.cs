@@ -93,6 +93,13 @@ namespace CrabUI
       return new CUIRect(position, size);
     }
 
+    public static CUIRect RectFromPointAndSize(Vector2 point1, Vector2 anchor1, Vector2 size)
+    {
+      Vector2 position = point1 - size * anchor1;
+
+      return new CUIRect(position, size);
+    }
+
     public static CUIRect AbsoluteRectToAchored(CUIRect rect, CUIRect parentRect, Vector2 anchor)
     {
       return new CUIRect(

@@ -26,7 +26,6 @@ namespace CrabUI
     {
       CreateUI();
       CUI.TopMain["open debug"] = OpenButton;
-      IsOpen = true;
     }
 
     public void CreateUI()

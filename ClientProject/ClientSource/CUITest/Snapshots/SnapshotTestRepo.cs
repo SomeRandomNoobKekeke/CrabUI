@@ -17,15 +17,21 @@ namespace CrabUIUser
     public static bool IsSnapshotTestFunc(MethodInfo mi)
           => mi.ReturnType.IsAssignableTo(typeof(CUIComponent)) && mi.GetParameters().Length == 0;
 
+
+
     public Dictionary<string, SnapshotTest> Tests { get; } = new();
+    public Dictionary<string, Dictionary<string, SnapshotTest>> GroupedTests { get; } = new();
 
+    public ICollection<string> Groups => GroupedTests.Keys;
 
-    public void Add(SnapshotTest test) => Tests[test.Name] = test;
-    public void Add(Func<CUIComponent> TestFunc, string Name) => Add(new SnapshotTest(TestFunc, Name));
-    public void Add(MethodInfo mi) => Add(
-      (Func<CUIComponent>)Delegate.CreateDelegate(typeof(Func<CUIComponent>), mi),
-      mi.GetFullMethodName()
-    );
+    public void Add(SnapshotTest test)
+    {
+      Tests[test.Name] = test;
+
+      if (!GroupedTests.ContainsKey(test.Group)) GroupedTests[test.Group] = new();
+      GroupedTests[test.Group][test.Name] = test;
+    }
+    public void Add(MethodInfo mi) => Add(SnapshotTest.FromMethodInfo(mi));
 
     public void Add(Type testPack)
     {

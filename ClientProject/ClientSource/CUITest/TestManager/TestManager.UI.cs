@@ -36,7 +36,6 @@ namespace CrabUIUser
       Absolute = new CUINullRect(w: 300, h: 400);
       BackgroundColor = new Color(32, 32, 32);
       Anchor = CUIAnchor.RightCenter;
-      Draggable = false;
 
       this["layout"] = new CUIVerticalList()
       {

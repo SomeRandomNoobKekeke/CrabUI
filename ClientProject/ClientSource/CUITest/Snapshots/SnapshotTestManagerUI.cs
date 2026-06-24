@@ -46,56 +46,70 @@ namespace CrabUIUser
       }
     }
 
+    public void HandleOpen()
+    {
+      Manager.Setup();
+      Refresh();
+    }
+
+    public void HandleClose()
+    {
+      ButtonList.RemoveAllChildren();
+      Manager.Dismantle();
+    }
+
+    public void Refresh()
+    {
+      ButtonList.RemoveAllChildren();
+      foreach (SnapshotTest test in Manager.Repo.Tests.Values)
+      {
+        ButtonList.Append(new CUIButton()
+        {
+          Text = test.Name,
+          TextAnchor = CUIAnchor.LeftCenter,
+          MasterColor = new Color(64, 64, 64),
+          AddMouseDown = (c, e) => Manager.Run(test.Name),
+        });
+      }
+    }
+
     public void CreateUI()
     {
       Manager.Events.Add(HandleManagerEvent);
 
-      OnOpen.Add(() =>
-      {
-        Manager.Setup();
-        ButtonList.RemoveAllChildren();
-        foreach (SnapshotTest test in Manager.Repo.Tests.Values)
-        {
-          ButtonList.Append(new CUIButton()
-          {
-            Text = test.Name,
-            Absolute = new CUINullRect(h: 30),
-            MasterColor = new Color(64, 64, 64),
-            AddMouseDown = (c, e) => Manager.Run(test.Name),
-          });
-        }
-      });
-
-      OnClose.Add(() =>
-      {
-        ButtonList.RemoveAllChildren();
-        Manager.Dismantle();
-      });
+      OnOpen.Add(HandleOpen);
+      OnClose.Add(HandleClose);
 
       BackgroundColor = new Color(32, 32, 32);
 
-      this["layout"] = new CUIVerticalList()
-      {
-        Relative = new CUINullRect(0, 0, 1, 1),
-      };
-      this["layout"]["header"] = new CUIHorizontalList()
-      {
-        Absolute = new CUINullRect(h: 40),
-      };
-      this["layout"]["header"]["runall"] = new CUIButton()
+      this["layout"] = new CUIVerticalList() { Relative = new CUINullRect(0, 0, 1, 1), };
+
+      this["layout"]["controls"] = new CUIHorizontalList() { FitContent = new CUIBool2(false, true), };
+      this["layout"]["controls"]["runall"] = new CUIButton()
       {
         Text = "Run All",
         Flex = 1,
         MasterColor = new Color(64, 0, 64),
         AddMouseDown = (c, e) => Manager.RunAll(),
       };
-      this["layout"]["header"]["accept"] = new CUIButton()
+      this["layout"]["controls"]["accept"] = new CUIButton()
       {
         Text = "Accept",
         Flex = 1,
         MasterColor = new Color(64, 0, 64),
         AddMouseDown = (c, e) => Manager.AcceptCurrent()
       };
+
+      this["layout"]["groups"] = new CUIHorizontalList() { FitContent = new CUIBool2(false, true), };
+      foreach (string group in Manager.Repo.Groups)
+      {
+        this["layout"]["groups"].Append(new CUIButton(group)
+        {
+          AddMouseDown = (c, e) => Manager.AcceptCurrent()
+        });
+      }
+
+
       this["layout"]["btnlist"] = ButtonList = new CUIVerticalList()
       {
         Flex = 1,

@@ -21,7 +21,7 @@ namespace BaroJunk
   {
     static PluginLifeCycle()
     {
-      GameMain.LuaCs.Hook.Add("stop", $"[{ModInfo.HookId}] PluginLifeCycle.Stop", (object[] args) =>
+      LuaCsSetup.Instance.Hook.Add("stop", $"[{ModInfo.HookId}] PluginLifeCycle.Stop", (object[] args) =>
       {
         Stop?.Invoke();
         foreach (Delegate callback in Stop.GetInvocationList())

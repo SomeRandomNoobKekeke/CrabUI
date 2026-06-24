@@ -21,7 +21,7 @@ namespace CrabUIUser
 
     public void Init()
     {
-
+      CreateUI();
 
       if (ModStorage.Has("CUITest"))
       {
@@ -45,11 +45,6 @@ namespace CrabUIUser
       {
         IsOpen = false;
       }
-    }
-
-    public TestManager()
-    {
-      CreateUI();
     }
   }
 }

@@ -27,13 +27,13 @@ namespace CrabUIUser
     {
       ConsoleInteface = new ConsoleIntefaceClass(this);
       Runner.Chamber = Chamber;
-      UI = new SnapshotTestManagerUI(this);
+      UI = new SnapshotPage(this);
     }
 
     public SnapshotTestChamber Chamber { get; } = new();
     public SnapshotTestRepo Repo { get; } = new();
     public SnapshotTestRunner Runner { get; } = new();
-    public SnapshotTestManagerUI UI { get; }
+    public SnapshotPage UI { get; }
     public ConsoleIntefaceClass ConsoleInteface { get; }
 
     public ClearableEvent<Event> Events { get; } = new();

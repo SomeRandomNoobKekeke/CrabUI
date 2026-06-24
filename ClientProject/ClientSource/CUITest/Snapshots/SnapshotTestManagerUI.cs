@@ -12,12 +12,15 @@ using System.IO;
 
 namespace CrabUIUser
 {
-  public class SnapshotTestManagerUI : CUIPage
+  public class SnapshotPage : CUIPage
   {
-    public SnapshotTestManagerUI(SnapshotTestManager manager)
+    public SnapshotPage(SnapshotTestManager manager)
     {
       Manager = manager;
-      CreateUI();
+      Manager.Events.Add(HandleManagerEvent);
+
+      OnOpen.Add(HandleOpen);
+      OnClose.Add(HandleClose);
     }
 
     public SnapshotTestManager Manager { get; set; }
@@ -35,14 +38,15 @@ namespace CrabUIUser
     {
       if (e.Name == "passed")
       {
-        CUIButton btn = (CUIButton)ButtonList.Children.First(c => (c as CUIButton).Text == e.Test.Name);
-        btn.MasterColor = Color.Lime;
-      }
+        foreach (CUIComponent child in ButtonList.Children)
+        {
+          if (child is not CUIButton button) continue;
 
-      if (e.Name == "failed")
-      {
-        CUIButton btn = (CUIButton)ButtonList.Children.First(c => (c as CUIButton).Text == e.Test.Name);
-        btn.MasterColor = Color.Red;
+          if (button.Text == e.Test.Name)
+          {
+            button.MasterColor = e.Name == "passed" ? Color.Lime : Color.Red;
+          }
+        }
       }
     }
 
@@ -54,14 +58,13 @@ namespace CrabUIUser
 
     public void HandleClose()
     {
-      ButtonList.RemoveAllChildren();
       Manager.Dismantle();
     }
 
-    public void Refresh()
+    public void OpenGroup(string name)
     {
       ButtonList.RemoveAllChildren();
-      foreach (SnapshotTest test in Manager.Repo.Tests.Values)
+      foreach (SnapshotTest test in Manager.Repo.GroupedTests[name].Values)
       {
         ButtonList.Append(new CUIButton()
         {
@@ -73,13 +76,9 @@ namespace CrabUIUser
       }
     }
 
-    public void CreateUI()
+    public void Refresh()
     {
-      Manager.Events.Add(HandleManagerEvent);
-
-      OnOpen.Add(HandleOpen);
-      OnClose.Add(HandleClose);
-
+      RemoveAllChildren();
       BackgroundColor = new Color(32, 32, 32);
 
       this["layout"] = new CUIVerticalList() { Relative = new CUINullRect(0, 0, 1, 1), };
@@ -105,16 +104,17 @@ namespace CrabUIUser
       {
         this["layout"]["groups"].Append(new CUIButton(group)
         {
-          AddMouseDown = (c, e) => Manager.AcceptCurrent()
+          AddMouseDown = (c, e) => OpenGroup(group),
         });
       }
-
 
       this["layout"]["btnlist"] = ButtonList = new CUIVerticalList()
       {
         Flex = 1,
         Scrollable = true,
       };
+
+      OpenGroup(Manager.Repo.Groups.First());
     }
   }
 }

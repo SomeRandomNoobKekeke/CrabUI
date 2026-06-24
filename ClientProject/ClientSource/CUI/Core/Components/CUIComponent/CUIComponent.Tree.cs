@@ -15,6 +15,7 @@ namespace CrabUI
     #region Public
     #endregion
     public CUIComponent Parent => Tree.Parent;
+    //TODO make some As<T> extention to Children
     public IReadOnlyList<CUIComponent> Children => Tree.ReadOnlyChildren;
     public void Append(CUIComponent child, string name = null) => Tree.Append(child, name);
     public void Prepend(CUIComponent child, string name = null) => Tree.Prepend(child, name);

@@ -10,8 +10,10 @@ namespace CrabUI
     public static int DefaultPriority = 100;
 
     public string ID { get; }
-    public Type TargetType { get; }
+    public CUIStyleCategory Category { get; }
     public int Priority { get; }
+
+    public Type TargetType { get; }
 
     public void Apply(CUIComponent component);
   }

@@ -10,6 +10,7 @@ namespace CrabUI
     public string ID { get; set; }
     public Type TargetType { get; set; }
     public int Priority { get; set; } = ICUIStyle.DefaultPriority;
+    public CUIStyleCategory Category { get; set; }
 
     public abstract void Apply(CUIComponent component);
 
@@ -26,8 +27,8 @@ namespace CrabUI
   {
     public Action<ComponentT> Action { get; set; }
 
-    public override void Apply(CUIComponent component) => ApplyComponentSpecific((ComponentT)component);
-    private void ApplyComponentSpecific(ComponentT component) => Action?.Invoke(component);
+    public override void Apply(CUIComponent component) => Action?.Invoke((ComponentT)component);
+
 
     public CUIActionStyle(string id, Action<ComponentT> action) : base(id, typeof(ComponentT))
     {

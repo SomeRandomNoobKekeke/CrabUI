@@ -19,7 +19,8 @@ namespace CrabUI
 
     public string ID { get; }
     public Type TargetType { get; }
-    public int Priority { get; } = ICUIStyle.DefaultPriority;
+    public int Priority { get; set; } = ICUIStyle.DefaultPriority;
+    public CUIStyleCategory Category { get; set; }
 
     public void Apply(CUIComponent component)
     {

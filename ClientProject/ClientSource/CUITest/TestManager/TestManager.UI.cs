@@ -17,10 +17,8 @@ namespace CrabUIUser
     public CUIButton OpenButton { get; } = new CUIButton()
     {
       Absolute = new CUINullRect(w: 50, h: 30),
-      MasterColor = new Color(0, 0, 128),
       Anchor = CUIAnchor.RightCenter,
       Text = "Test",
-      TextColor = Color.White,
     };
 
 

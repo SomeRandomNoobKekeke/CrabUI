@@ -16,6 +16,7 @@ namespace CrabUI
     public SimpleParser Parser { get; } = new();
     public CUIComponentTypeManager CUIComponentTypeManager { get; }
     public CUIStyleManager CUIStyleManager { get; }
+    public CUIPaletteManager CUIPaletteManager { get; }
 
     private Rectangle _GameScreenRect; public Rectangle GameScreenRect
     {
@@ -50,6 +51,7 @@ namespace CrabUI
       CUIComponentTypeManager.AnalyzeAssembly(Assembly.GetExecutingAssembly());
 
       CUIStyleManager = new(CUIComponentTypeManager);
+      CUIPaletteManager = new();
 
       //TODO i probably want to go in base->derived order here
       foreach (CUIComponentInfo info in CUIComponentTypeManager.Infos.Values)

@@ -39,8 +39,6 @@ namespace CrabUI
     {
       SetupLayout();//HACK 
       this.Inject();
-
-      CUICore.Styles.Get(this.GetType()).Apply(this);
     }
 
     public override string ToString() => $"{this.GetType().Name}:{ID}:{AKA}";

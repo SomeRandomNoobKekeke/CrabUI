@@ -12,6 +12,7 @@ namespace CrabUI
 
     public Dictionary<Type, CUIStylePipeline> Styles { get; } = new();
 
+    public CUIStylePipeline Get<T>() => Get(typeof(T));
     public CUIStylePipeline Get(Type T)
     {
       if (!Styles.ContainsKey(T)) Styles[T] = new();

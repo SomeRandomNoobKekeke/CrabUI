@@ -27,7 +27,11 @@ namespace CrabUI
   {
     public Action<ComponentT> Action { get; set; }
 
-    public override void Apply(CUIComponent component) => Action?.Invoke((ComponentT)component);
+    public override void Apply(CUIComponent component)
+    {
+      Action?.Invoke((ComponentT)component);
+      // CUI.Logger.Log($"Applying [{this}] to [{component}]"); // TODO this should be a debug event
+    }
 
 
     public CUIActionStyle(string id, Action<ComponentT> action) : base(id, typeof(ComponentT))

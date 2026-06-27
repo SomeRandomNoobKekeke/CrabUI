@@ -97,6 +97,7 @@ namespace CrabUI
         _PaletteSlot = CUICore.Palettes.Primary;
         TypeSpecificStyles = CUICore.Styles.Get(Self.GetType());
 
+        Self.InitStyle();
         ApplyTypeStyles();
 
         UseReactiveStyles = CUICore.Styles.UseReactiveStyles;

@@ -13,13 +13,6 @@ namespace CrabUI
 {
   public partial class CUITextBlock : CUIComponent, IComponent
   {
-    public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUITextBlock>((c) =>
-    {
-      c.ResizeStrategy = ResizeStrategy.Resist;
-    });
-
-
-
     public TextBlock TextBlock { get; } = new();
 
     [CUISerializable]

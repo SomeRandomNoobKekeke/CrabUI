@@ -12,10 +12,11 @@ namespace CrabUI
 {
   public partial class CUIHorizontalList : CUIComponent, IComponent
   {
-    public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIHorizontalList>((c) =>
+    protected override void InitStyle()
     {
-      c.CullChildren = true;
-    });
+      base.InitStyle();
+      CullChildren = true;
+    }
 
     public void Clear() => RemoveAllChildren();
     public void Add(CUIComponent child) => Append(child);

@@ -15,13 +15,19 @@ namespace CrabUI
   {
     public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIFrame>((c) =>
     {
-      c.AbsoluteMin = new CUINullRect(w: ResizeHandle.DefaultSize.X, h: ResizeHandle.DefaultSize.Y);
-      c.Draggable = true;
-      c.CullChildren = true;
-      c.Resizable = true;
-      c.Anchor = CUIAnchor.Center;
-      c.Background.Sprite = CUIDefaultSprite.Vignette;
+      c.Background.Color = c.Palette.Colors["background"];
     });
+
+    protected override void InitStyle()
+    {
+      base.InitStyle();
+      AbsoluteMin = new CUINullRect(w: ResizeHandle.DefaultSize.X, h: ResizeHandle.DefaultSize.Y);
+      Draggable = true;
+      CullChildren = true;
+      Resizable = true;
+      Anchor = CUIAnchor.Center;
+      Background.Sprite = CUIDefaultSprite.Vignette;
+    }
 
     public CUIComponent TargetMainComponent { get; set; }
 

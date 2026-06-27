@@ -18,17 +18,22 @@ namespace CrabUI
     public class Part : IPart { public CUITextInput Self { get; set; } }
     public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUITextInput>((c) =>
     {
-      c.Focusable = true;
-      c.TextBlock.Anchor = CUIAnchor.LeftCenter;
-      c.Background.ConsumeMouseClicks = true;
-      c.CullChildren = true;
-
+      //TODO use palette colors
       c.FocusedColor = new Color(0, 255, 255, 64);
       c.BluredColor = new Color(0, 0, 0, 64);
       c.SelectionColor = new Color(0, 255, 255, 128);
       c.CaretColor = new Color(200, 255, 255, 200);
       c.InvalidColor = new(255, 0, 0, 200);
     });
+
+    protected override void InitStyle()
+    {
+      base.InitStyle();
+      Focusable = true;
+      TextBlock.Anchor = CUIAnchor.LeftCenter;
+      Background.ConsumeMouseClicks = true;
+      CullChildren = true;
+    }
 
 
     protected override void OnAttachedToMainComponent(CUIMainComponent mainComponent)

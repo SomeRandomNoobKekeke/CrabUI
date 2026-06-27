@@ -10,10 +10,15 @@ namespace CrabUI
   [GeneratedComponent]
   public partial class CUIComponent : CUIVisualComponent, IComponent
   {
-    public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIComponent>((c) =>
+    // public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIComponent>((c) =>
+    // {
+
+    // });
+
+    protected virtual void InitStyle()
     {
-      // c.Background.Color = Color.Transparent;
-    });
+      Background.Color = Color.Transparent;
+    }
 
 
     public class Part : IPart { public CUIComponent Self { get; set; } }

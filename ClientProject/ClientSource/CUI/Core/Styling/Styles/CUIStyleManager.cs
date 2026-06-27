@@ -10,6 +10,12 @@ namespace CrabUI
     public CUIComponentTypeManager TypeManager { get; } = typeManager;
 
 
+    /// <summary>
+    /// Cheap and hacky
+    /// New CUIComponents take this value and subscribe to Style.Changed only if it's true
+    /// </summary>
+    public bool UseReactiveStyles { get; set; } = false;
+
     public Dictionary<Type, CUIStylePipeline> Styles { get; } = new();
 
     public CUIStylePipeline Get<T>() => Get(typeof(T));

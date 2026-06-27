@@ -13,13 +13,14 @@ namespace CrabUI
 {
   public partial class CUIFrame : CUIComponent, IComponent
   {
-    public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIFrame>((frame) =>
+    public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIFrame>((c) =>
     {
-      frame.AbsoluteMin = new CUINullRect(w: ResizeHandle.DefaultSize.X, h: ResizeHandle.DefaultSize.Y);
-      frame.Draggable = true;
-      frame.CullChildren = true;
-      frame.Resizable = true;
-      frame.Anchor = CUIAnchor.Center;
+      c.AbsoluteMin = new CUINullRect(w: ResizeHandle.DefaultSize.X, h: ResizeHandle.DefaultSize.Y);
+      c.Draggable = true;
+      c.CullChildren = true;
+      c.Resizable = true;
+      c.Anchor = CUIAnchor.Center;
+      c.Background.Sprite = CUIDefaultSprite.Vignette;
     });
 
     public CUIComponent TargetMainComponent { get; set; }

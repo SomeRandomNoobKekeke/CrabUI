@@ -16,7 +16,7 @@ namespace CrabUI
 
     public CUITexture2D Texture { get; set; }
     public Rectangle? SourceRectangle { get; set; } = null;
-    public Color Color { get; set; } = Color.White;
+    public Color Color { get; set; } //= Color.White;
     public float Rotation { get; set; } = 0.0f;
     public Vector2 Origin { get; set; } = Vector2.Zero;
     public SpriteEffects Effects { get; set; } = SpriteEffects.None;

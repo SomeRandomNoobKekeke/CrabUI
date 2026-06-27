@@ -26,6 +26,7 @@ namespace CrabUIUser
           Absolute = new CUINullRect(0, 0, 400, 600),
           Anchor = CUIAnchor.Center,
           Resizable = true,
+          UseReactiveStyles = false,
         };
 
         return frame;

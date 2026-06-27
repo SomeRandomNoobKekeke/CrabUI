@@ -38,13 +38,13 @@ namespace CrabUI
         Absolute = new CUINullRect(w: 200, h: 200),
         Anchor = CUIAnchor.Center,
         TargetMainComponent = CUI.TopMain,
-        BackgroundColor = Color.Cyan,
+        Background = { Color = Color.Cyan },
         ConsumeMouseClicks = true,
       };
 
       Frame["mg"] = MG = new CUIMagnifyingGlass()
       {
-        BackgroundColor = Color.White,
+        Background = { Color = Color.White },
         Relative = new CUINullRect(0.05f, 0.05f, 0.9f, 0.9f),
         Size = new Point(40, 40),
       };

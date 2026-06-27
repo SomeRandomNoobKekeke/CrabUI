@@ -51,7 +51,7 @@ namespace CrabUIUser
         public void CreateUI()
         {
           Absolute = new CUINullRect(w: 300, h: 400);
-          BackgroundColor = Color.Brown;
+          Background.Color = Color.Brown;
 
           Commands.ListenFor("setvalue", (o) =>
           {
@@ -67,7 +67,7 @@ namespace CrabUIUser
           this["layout"]["handle"] = new CUIHorizontalList()
           {
             Direction = CUIDirection.Reverse,
-            BackgroundColor = new Color(32, 32, 32),
+            Background = { Color = new Color(32, 32, 32) },
             FitContent = new CUIBool2(false, true),
           };
 
@@ -78,7 +78,7 @@ namespace CrabUIUser
 
           this["layout"]["header"] = new CUIHorizontalList()
           {
-            BackgroundColor = Color.Blue,
+            Background = { Color = Color.Blue },
             FitContent = new CUIBool2(false, true),
           };
 
@@ -91,7 +91,7 @@ namespace CrabUIUser
           this["layout"]["main"] = FieldList = new CUIVerticalList()
           {
             Flex = 1,
-            BackgroundColor = Color.Green,
+            Background = { Color = Color.Green },
           };
         }
 

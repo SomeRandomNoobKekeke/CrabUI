@@ -20,7 +20,7 @@ namespace CrabUIUser
 
         CUIFrame frame = new()
         {
-          BackgroundColor = new Color(0, 0, 64),
+          Background = { Color = new Color(0, 0, 64) },
           Absolute = new CUINullRect(0, 0, 60, 200),
           Anchor = CUIAnchor.Center,
           Resizable = true,
@@ -31,7 +31,7 @@ namespace CrabUIUser
           Text = "Resize Strategy Passive",
           Absolute = new CUINullRect(null, 10, null, 20),
           Relative = new CUINullRect(0.1f, null, 0.8f, null),
-          BackgroundColor = new Color(64, 0, 64),
+          Background = { Color = new Color(64, 0, 64) },
           TextColor = Color.White,
           ResizeStrategy = ResizeStrategy.Passive,
         };
@@ -41,7 +41,7 @@ namespace CrabUIUser
           Text = "Resize Strategy Rescale",
           Absolute = new CUINullRect(null, 40, null, 20),
           Relative = new CUINullRect(0.1f, null, 0.8f, null),
-          BackgroundColor = new Color(64, 0, 64),
+          Background = { Color = new Color(64, 0, 64) },
           TextColor = Color.White,
           ResizeStrategy = ResizeStrategy.Rescale,
         };
@@ -51,7 +51,7 @@ namespace CrabUIUser
           Text = "Resize Strategy Resist",
           Absolute = new CUINullRect(null, 70, null, 20),
           Relative = new CUINullRect(0.1f, null, 0.8f, null),
-          BackgroundColor = new Color(64, 0, 64),
+          Background = { Color = new Color(64, 0, 64) },
           TextColor = Color.White,
           ResizeStrategy = ResizeStrategy.Resist,
         };
@@ -61,7 +61,7 @@ namespace CrabUIUser
           Text = "Resize Strategy Wrap",
           Absolute = new CUINullRect(null, 100, null, 20),
           Relative = new CUINullRect(0.1f, null, 0.8f, null),
-          BackgroundColor = new Color(64, 0, 64),
+          Background = { Color = new Color(64, 0, 64) },
           TextColor = Color.White,
           ResizeStrategy = ResizeStrategy.Wrap,
         };

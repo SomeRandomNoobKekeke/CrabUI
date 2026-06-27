@@ -13,13 +13,6 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-    [CUISerializable]
-    public Color BackgroundColor
-    {
-      get => Background.Color;
-      set => Background.Color = value;
-    }
-
     public CUISprite BackgroundSprite
     {
       get => Background.Sprite;

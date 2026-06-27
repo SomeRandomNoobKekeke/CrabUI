@@ -20,7 +20,7 @@ namespace CrabUIUser
 
         CUIFrame frame = new()
         {
-          BackgroundColor = new Color(0, 0, 64),
+          Background = { Color = new Color(0, 0, 64) },
           Absolute = new CUINullRect(0, 0, 400, 600),
           Anchor = CUIAnchor.Center,
           Resizable = true,
@@ -30,14 +30,14 @@ namespace CrabUIUser
         {
           Absolute = new CUINullRect(100, 100, 30, 30),
           FitContent = new CUIBool2(true, true),
-          BackgroundColor = Color.Yellow,
+          Background = { Color = Color.Yellow },
         };
 
         frame["wrapper1"]["text 1"] = new CUITextBlock()
         {
           Text = "text 1",
           ResizeStrategy = ResizeStrategy.Resist,
-          BackgroundColor = Color.Green,
+          Background = { Color = Color.Green },
           Absolute = new CUINullRect(w: 0),
         };
 
@@ -45,7 +45,7 @@ namespace CrabUIUser
         {
           Text = "super long string of text",
           ResizeStrategy = ResizeStrategy.Resist,
-          BackgroundColor = Color.Orange,
+          Background = { Color = Color.Orange },
         };
 
         return frame;

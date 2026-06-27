@@ -19,7 +19,7 @@ namespace CrabUIUser
       {
         CUIFrame frame = new()
         {
-          BackgroundColor = new Color(32, 32, 32),
+          Background = { Color = new Color(32, 32, 32) },
           Absolute = new CUINullRect(0, 0, 400, 400),
           Anchor = CUIAnchor.Center,
           FitContent = new CUIBool2(true, true),
@@ -27,13 +27,13 @@ namespace CrabUIUser
 
         frame["a"] = new CUIComponent()
         {
-          BackgroundColor = Color.Yellow,
+          Background = { Color = Color.Yellow },
           Absolute = new CUINullRect(20, 20, 30, 30),
         };
 
         frame["b"] = new CUIComponent()
         {
-          BackgroundColor = Color.Red,
+          Background = { Color = Color.Red },
           Absolute = new CUINullRect(300, 300, 30, 30),
         };
 

@@ -60,7 +60,7 @@ namespace CrabUIUser
         Manager.CleanUp();
       });
 
-      BackgroundColor = new Color(32, 32, 32);
+      Background.Color = new Color(32, 32, 32);
 
       this["layout"] = new CUIVerticalList()
       {

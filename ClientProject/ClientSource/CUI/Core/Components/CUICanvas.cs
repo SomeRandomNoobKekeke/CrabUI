@@ -76,7 +76,7 @@ namespace CrabUI
     public CUICanvas() : base()
     {
       Size = new Point(1, 1);
-      BackgroundColor = Color.White;
+      Background.Color = Color.White;
       SpriteBatch = CUISpriteBatch.Create();
     }
     public CUICanvas(int x, int y) : this()

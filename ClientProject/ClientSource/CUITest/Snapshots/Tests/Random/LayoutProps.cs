@@ -20,7 +20,7 @@ namespace CrabUIUser
 
         CUIFrame frame = new()
         {
-          BackgroundColor = new Color(0, 0, 64),
+          Background = { Color = new Color(0, 0, 64) },
           Absolute = new CUINullRect(0, 0, 400, 600),
           Anchor = CUIAnchor.Center,
           Resizable = true,
@@ -32,7 +32,7 @@ namespace CrabUIUser
           Relative = new CUINullRect(null, null, 0.2f, null),
           CrossRelative = new CUINullRect(null, null, null, 0.2f),
           AbsoluteMin = new CUINullRect(null, null, 30, 30),
-          BackgroundColor = Color.Yellow,
+          Background = { Color = Color.Yellow },
         };
 
         return frame;

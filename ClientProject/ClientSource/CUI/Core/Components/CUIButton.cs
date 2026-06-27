@@ -40,9 +40,9 @@ namespace CrabUI
 
     public override void DetermineColor()
     {
-      BackgroundColor = InactiveColor;
-      if (MouseOver) BackgroundColor = MouseOverColor;
-      if (MousePressed) BackgroundColor = MousePressedColor;
+      Background.Color = InactiveColor;
+      if (MouseOver) Background.Color = MouseOverColor;
+      if (MousePressed) Background.Color = MousePressedColor;
     }
 
 

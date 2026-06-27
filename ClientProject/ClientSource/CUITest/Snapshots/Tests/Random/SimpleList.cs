@@ -19,14 +19,14 @@ namespace CrabUIUser
       {
         CUIFrame frame = new()
         {
-          BackgroundColor = Color.Gray,
+          Background = { Color = Color.Gray },
           Anchor = CUIAnchor.Center,
           Absolute = new CUINullRect(0, 0, 400, 600),
         };
 
         CUIVerticalList list = new CUIVerticalList()
         {
-          BackgroundColor = Color.Blue,
+          Background = { Color = Color.Blue },
           Relative = new CUINullRect(0, 0, 1, 1),
         };
 
@@ -34,27 +34,27 @@ namespace CrabUIUser
 
         list.Append(new CUIComponent()
         {
-          BackgroundColor = Color.Red,
+          Background = { Color = Color.Red },
           Absolute = new CUINullRect(0, 0, 300, 100),
         });
 
         list.Append(new CUIComponent()
         {
-          BackgroundColor = Color.Yellow,
+          Background = { Color = Color.Yellow },
           Absolute = new CUINullRect(30, 0, 350, 100),
         });
 
         list.Append(new CUITextLine()
         {
           Text = "123",
-          BackgroundColor = Color.Green,
+          Background = { Color = Color.Green },
           Flex = 1,
         });
 
         list.Append(new CUITextLine()
         {
           Text = "321",
-          BackgroundColor = Color.Pink,
+          Background = { Color = Color.Pink },
           Flex = 3,
         });
 

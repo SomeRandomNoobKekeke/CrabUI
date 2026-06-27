@@ -74,7 +74,7 @@ namespace CrabUI
         this["layout"]["main"] = Pages = new CUIPages()
         {
           Flex = 1,
-          BackgroundColor = Color.Yellow,
+          Background = { Color = Color.Yellow },
         };
 
         IsDebugTool = true;

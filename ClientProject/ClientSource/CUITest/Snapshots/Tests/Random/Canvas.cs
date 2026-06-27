@@ -19,7 +19,7 @@ namespace CrabUIUser
       {
         CUIFrame frame = new()
         {
-          BackgroundColor = new Color(32, 32, 32),
+          Background = { Color = new Color(32, 32, 32) },
           Absolute = new CUINullRect(0, 0, 400, 400),
           Anchor = CUIAnchor.Center,
         };

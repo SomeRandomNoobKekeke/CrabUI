@@ -19,7 +19,7 @@ namespace CrabUIUser
       {
         CUIFrame frame = new()
         {
-          BackgroundColor = new Color(32, 32, 32),
+          Background = { Color = new Color(32, 32, 32) },
           Absolute = new CUINullRect(0, 0, 400, 400),
           Anchor = CUIAnchor.Center,
         };
@@ -27,7 +27,7 @@ namespace CrabUIUser
         frame["layout"] = new CUIVerticalList() { Relative = new CUINullRect(0, 0, 1, 1) };
         var header = frame["layout"]["header"] = new CUIComponent()
         {
-          BackgroundColor = Color.Brown,
+          Background = { Color = Color.Brown },
           FitContent = new CUIBool2(false, true),
         };
 
@@ -35,7 +35,7 @@ namespace CrabUIUser
         {
           Absolute = new CUINullRect(h: 100),
           FitContent = new CUIBool2(true, false),
-          BackgroundColor = Color.Lime,
+          Background = { Color = Color.Lime },
         };
 
         header["wrapper"]["text"] = new CUITextBlock("Text")
@@ -47,14 +47,14 @@ namespace CrabUIUser
         frame["layout"]["main"] = new CUIComponent()
         {
           Flex = 1,
-          BackgroundColor = Color.Blue,
+          Background = { Color = Color.Blue },
         };
 
 
         frame["layout"]["footer"] = new CUIVerticalList()
         {
           FitContent = new CUIBool2(false, true),
-          BackgroundColor = Color.Red,
+          Background = { Color = Color.Red },
         };
 
         frame["layout"]["footer"]["text"] = new CUITextBlock("footer")

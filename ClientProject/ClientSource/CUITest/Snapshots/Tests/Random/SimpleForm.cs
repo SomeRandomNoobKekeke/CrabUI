@@ -19,7 +19,7 @@ namespace CrabUIUser
       {
         CUIFrame frame = new()
         {
-          BackgroundColor = new Color(32, 32, 32),
+          Background = { Color = new Color(32, 32, 32) },
           Absolute = new CUINullRect(0, 0, 400, 600),
           Anchor = CUIAnchor.Center,
           Resizable = true,
@@ -28,12 +28,12 @@ namespace CrabUIUser
         frame["layout"] = new CUIVerticalList()
         {
           Relative = new CUINullRect(0, 0, 1, 1),
-          BackgroundColor = Color.Red,
+          Background = { Color = Color.Red },
         };
 
         frame["layout"]["header"] = new CUIHorizontalList()
         {
-          BackgroundColor = Color.Blue,
+          Background = { Color = Color.Blue },
           Absolute = new CUINullRect(h: 100),
         };
 
@@ -50,7 +50,7 @@ namespace CrabUIUser
 
         frame["layout"]["main"] = new CUIComponent()
         {
-          BackgroundColor = new Color(0, 0, 32),
+          Background = { Color = new Color(0, 0, 32) },
           Flex = 1,
         };
 

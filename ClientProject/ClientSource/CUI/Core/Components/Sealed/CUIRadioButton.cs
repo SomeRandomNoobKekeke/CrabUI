@@ -79,15 +79,15 @@ namespace CrabUI
     {
       if (IsSelected)
       {
-        BackgroundColor = OnColor;
-        if (MouseOver) BackgroundColor = OnColor.Multiply(2.0f);
-        if (MousePressed) BackgroundColor = OnColor.Multiply(3.0f);
+        Background.Color = OnColor;
+        if (MouseOver) Background.Color = OnColor.Multiply(2.0f);
+        if (MousePressed) Background.Color = OnColor.Multiply(3.0f);
       }
       else
       {
-        BackgroundColor = OffColor;
-        if (MouseOver) BackgroundColor = OffColor.Multiply(2.0f);
-        if (MousePressed) BackgroundColor = OffColor.Multiply(3.0f);
+        Background.Color = OffColor;
+        if (MouseOver) Background.Color = OffColor.Multiply(2.0f);
+        if (MousePressed) Background.Color = OffColor.Multiply(3.0f);
       }
     }
 

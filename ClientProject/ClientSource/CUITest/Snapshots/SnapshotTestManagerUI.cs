@@ -79,7 +79,7 @@ namespace CrabUIUser
     public void Refresh()
     {
       RemoveAllChildren();
-      BackgroundColor = new Color(32, 32, 32);
+      Background.Color = new Color(32, 32, 32);
 
       this["layout"] = new CUIVerticalList() { Relative = new CUINullRect(0, 0, 1, 1), };
 

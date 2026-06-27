@@ -32,7 +32,7 @@ namespace CrabUIUser
 
 
       Absolute = new CUINullRect(w: 300, h: 400);
-      BackgroundColor = new Color(32, 32, 32);
+      Background.Color = new Color(32, 32, 32);
       Anchor = CUIAnchor.RightCenter;
 
       this["layout"] = new CUIVerticalList()
@@ -44,8 +44,7 @@ namespace CrabUIUser
       {
         Direction = CUIDirection.Reverse,
         Absolute = new CUINullRect(h: 30),
-        BackgroundColor = new Color(32, 32, 32),
-
+        Background = { Color = new Color(32, 32, 32) },
       };
 
       this["layout"]["header"]["close"] = new CUIButton()

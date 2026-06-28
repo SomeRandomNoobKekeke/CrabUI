@@ -36,16 +36,13 @@ namespace CrabUIUser
 
     public void HandleManagerEvent(SnapshotTestManager.Event e)
     {
-      if (e.Name == "passed")
+      foreach (CUIComponent child in ButtonList.Children)
       {
-        foreach (CUIComponent child in ButtonList.Children)
-        {
-          if (child is not CUIButton button) continue;
+        if (child is not CUIButton button) continue;
 
-          if (button.Text == e.Test.Name)
-          {
-            button.MasterColor = e.Name == "passed" ? Color.Lime : Color.Red;
-          }
+        if (button.Text == e.Test.Name)
+        {
+          button.MasterColor = e.Name == "passed" ? Color.Lime : Color.Red;
         }
       }
     }

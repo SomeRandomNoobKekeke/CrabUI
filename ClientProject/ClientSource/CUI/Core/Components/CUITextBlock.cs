@@ -13,6 +13,12 @@ namespace CrabUI
 {
   public partial class CUITextBlock : CUIComponent, IComponent
   {
+    protected override void InitStyle()
+    {
+      base.InitStyle();
+      Padding = new(2, 0, 2, 0);
+    }
+
     public TextBlock TextBlock { get; } = new();
 
     [CUISerializable]

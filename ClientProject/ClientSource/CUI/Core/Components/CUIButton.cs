@@ -20,6 +20,12 @@ namespace CrabUI
       c.TextColor = c.Palette.Colors["text"];
     });
 
+    protected override void InitStyle()
+    {
+      base.InitStyle();
+      Padding = new(4, 2, 4, 2);
+    }
+
     [CUISerializable]
     public Color MouseOverColor { get; set; } = new Color(0, 0, 140);
     [CUISerializable]

@@ -68,13 +68,16 @@ namespace CrabUI
       set => TextBlock.ResizeStrategy = value;
     }
 
-    protected override CUINullVector2 MinSizeOverride => TextBlock.ForcedSize;
 
+    protected override CUINullVector2 MinSizeOverride => new CUINullVector2(
+      TextBlock.ForcedSize.X + Padding.FullWidth + Border.FullWidth + Margin.FullWidth,
+      TextBlock.ForcedSize.Y + Padding.FullHeigth + Border.FullHeigth + Margin.FullHeigth
+    );
 
     protected override void UpdateRects()
     {
       base.UpdateRects();
-      TextBlock.Rect = Rect;
+      TextBlock.Rect = InnerRect;
     }
 
     [CUISerializable]

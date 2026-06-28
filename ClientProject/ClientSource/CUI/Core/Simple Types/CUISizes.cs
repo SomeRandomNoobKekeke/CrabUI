@@ -21,6 +21,9 @@ namespace CrabUI
     public float Right;
     public float Bottom;
 
+    public float FullWidth => Left + Right;
+    public float FullHeigth => Top + Bottom;
+
     public CUISizes(float left = 0, float top = 0, float right = 0, float bottom = 0)
     {
       Left = left;

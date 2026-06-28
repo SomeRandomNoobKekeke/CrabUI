@@ -42,6 +42,8 @@ namespace CrabUIUser
         {
           Anchor = CUIAnchor.RightCenter,
           TextColor = Color.Black,
+          // Margin = new CUISizes(20, 0, 20, 0),
+          Padding = new CUISizes(20, 0, 20, 0),
         };
 
         frame["layout"]["main"] = new CUIComponent()

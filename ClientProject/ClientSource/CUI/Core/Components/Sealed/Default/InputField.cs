@@ -43,7 +43,10 @@ namespace CrabUI
       {
         FitContent = new CUIBool2(false, true);
 
-        this["label"] = Label = new CUITextBlock();
+        this["label"] = Label = new CUITextBlock()
+        {
+          Padding = new CUISizes(10, 0, 10, 0),
+        };
         this["input"] = Input = new CUITextInput()
         {
           Flex = 1,

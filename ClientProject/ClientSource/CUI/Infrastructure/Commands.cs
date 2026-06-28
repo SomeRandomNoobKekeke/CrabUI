@@ -19,6 +19,8 @@ namespace CrabUI
       PluginCommands.Add("cuiprinttree", CUIPrintTree_Command,
         () => new string[][] { new string[] { "Main", "TopMain" } }
       );
+
+      PluginCommands.Add("cuipalettepreview", CUIPalettePreview_Command);
     }
 
     public static void CUIPrintTree_Command(string[] args)
@@ -31,6 +33,11 @@ namespace CrabUI
       {
         CUI.TopMain.PrintTree();
       }
+    }
+
+    public static void CUIPalettePreview_Command(string[] args)
+    {
+      CUIPalette.Preview();
     }
   }
 }

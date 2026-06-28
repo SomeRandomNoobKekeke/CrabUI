@@ -13,6 +13,11 @@ namespace CrabUI
 {
   public partial class CUITextBlock : CUIComponent, IComponent
   {
+    public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUITextBlock>((c) =>
+    {
+      c.TextColor = c.Palette.Colors["text"];
+    });
+
     protected override void InitStyle()
     {
       base.InitStyle();

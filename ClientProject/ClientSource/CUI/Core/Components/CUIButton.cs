@@ -17,7 +17,7 @@ namespace CrabUI
     public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIButton>((c) =>
     {
       c.MasterColor = c.Palette.Colors["button"];
-      c.TextColor = c.Palette.Colors["buttontext"];
+      c.TextColor = c.Palette.Colors["text"];
     });
 
     protected override void InitStyle()

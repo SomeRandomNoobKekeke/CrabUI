@@ -14,6 +14,17 @@ namespace CrabUI
 {
   public partial class CUICheckBox : CUIComponent, IComponent
   {
+    public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUICheckBox>((c) =>
+    {
+
+    });
+
+    protected override void InitStyle()
+    {
+      base.InitStyle();
+      Absolute = new CUINullRect(w: 30, h: 30);
+    }
+
     public CUISprite OnSprite { get; set; }
     public CUISprite OffSprite { get; set; }
 

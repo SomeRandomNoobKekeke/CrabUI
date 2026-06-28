@@ -23,6 +23,7 @@ namespace CrabUI
       c.SelectionColor = c.Palette.Colors["inputselection"] * 0.4f;
       c.CaretColor = c.Palette.Colors["inputcaret"];
       c.InvalidColor = c.Palette.Colors["inputinvalid"] * 0.5f;
+      c.TextBlock.TextColor = c.Palette.Colors["text"];
     });
 
     protected override void InitStyle()

@@ -46,16 +46,7 @@ namespace CrabUIUser
         MGDebugTool.Init();
 
         // Utils.PrintAllHarmonyPatches();
-        Logger.Log("hehehe");
-        CUICore.Palettes.Primary.Palette = new CUIPalette()
-        {
-          Colors = new()
-          {
-            ["background"] = Color.Yellow,
-            ["border"] = Color.White,
-            ["text"] = Color.White,
-          }
-        };
+
 
         Experiment();
       }

@@ -39,6 +39,7 @@ namespace CrabUI
 
     public CUINullRect(CUIRect rect) : this(rect.Left, rect.Top, rect.Width, rect.Height) { }
 
+    public CUINullRect(Vector2 size) : this(null, null, size.X, size.Y) { }
     public CUINullRect(Vector2 position, Vector2 size) : this(position.X, position.Y, size.X, size.Y) { }
 
     public CUINullRect(float? x = null, float? y = null, float? w = null, float? h = null)

@@ -162,7 +162,7 @@ namespace CrabUI
 
       Anchor = new Vector2(1, 1);
       Background.Sprite.Effects = SpriteEffects.FlipHorizontally;
-      Background.Color = Color.Cyan;
+      Background.Color = Color.White;
 
       Background.MouseDown.Add(Grab);
 

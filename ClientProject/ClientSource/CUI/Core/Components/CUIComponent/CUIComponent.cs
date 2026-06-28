@@ -10,10 +10,10 @@ namespace CrabUI
   [GeneratedComponent]
   public partial class CUIComponent : CUIVisualComponent, IComponent
   {
-    // public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIComponent>((c) =>
-    // {
-
-    // });
+    public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIComponent>((c) =>
+    {
+      c.RightResizeHandle.Background.Color = c.Palette.Colors["accent"];
+    });
 
     protected virtual void InitStyle()
     {

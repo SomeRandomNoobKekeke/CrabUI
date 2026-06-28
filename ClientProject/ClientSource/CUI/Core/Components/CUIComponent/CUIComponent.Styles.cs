@@ -19,16 +19,20 @@ namespace CrabUI
     }
     public CUIPalette Palette => Styles.PaletteSlot.Palette;
 
-    public Action<CUIComponent> Style
+    public virtual Action<CUIComponent> Style
     {
-      get => PersonalStyle.Action;
-      set => PersonalStyle = new("personal", value);
+      set => PersonalStyle = new CUIActionStyle<CUIComponent>("personal", value);
     }
 
-    public CUIActionStyle<CUIComponent> PersonalStyle
+    private ICUIStyle _PersonalStyle;
+    public ICUIStyle PersonalStyle
     {
-      get;
-      set;
+      get => _PersonalStyle;
+      set
+      {
+        _PersonalStyle = value;
+        _PersonalStyle.Apply(this);
+      }
     }
 
     public bool UseReactiveStyles
@@ -106,6 +110,7 @@ namespace CrabUI
       public void ApplyTypeStyles()
       {
         TypeSpecificStyles.Apply(Self);
+        Self.PersonalStyle?.Apply(Self);
       }
     }
   }

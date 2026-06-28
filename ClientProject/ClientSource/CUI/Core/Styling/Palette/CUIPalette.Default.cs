@@ -12,8 +12,10 @@ namespace CrabUI
     {
       Colors = new()
       {
-        ["background"] = Color.Red,
-        ["border"] = Color.White,
+
+        ["background"] = new Color(128, 0, 0),
+        ["border"] = new Color(200, 0, 0),
+        ["accent"] = new Color(255, 255, 0),
         ["text"] = Color.White,
       }
     };

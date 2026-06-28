@@ -12,23 +12,88 @@ using Barotrauma.Extensions;
 
 namespace CrabUI
 {
-  public partial class CUICloseButton : CUIButton, IComponent
+  //TODO this should really be inheried from some CUIIconButton
+  public partial class CUICloseButton : CUIComponent, IComponent
   {
     public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUICloseButton>((c) =>
     {
-      c.MasterColor = Color.Cyan;
+      c.Background.Color = c.Palette.Colors["border"];
+      c.ForeColor = c.Palette.Colors["accent"];
     });
 
     protected override void InitStyle()
     {
       base.InitStyle();
-      Background.Sprite = CUIDefaultSprite.Cross;
-      Absolute = new CUINullRect(w: ResizeHandle.DefaultSize.X, h: ResizeHandle.DefaultSize.Y);
+      Icon.Sprite = CUIDefaultSprite.Cross;
+      Absolute = new CUINullRect(DefaultSize);
+      ConsumeMouseClicks = true;
+    }
+
+    public static Vector2 DefaultSize => ResizeHandle.DefaultSize;
+
+    public SimpleTexture Icon { get; } = new();
+
+    private Color _ForeColor; public Color ForeColor
+    {
+      get => _ForeColor;
+      set
+      {
+        _ForeColor = value;
+        DetermineColor();
+      }
+    }
+
+    public void DetermineColor()
+    {
+      if (MousePressed)
+      {
+        Icon.Color = ForeColor;
+        return;
+      }
+
+      if (MouseOver)
+      {
+        Icon.Color = ForeColor.Multiply(0.9f);
+        return;
+      }
+
+      Icon.Color = ForeColor.Multiply(0.7f);
+    }
+
+    protected override void UpdateRect(CUIRect rect)
+    {
+      base.UpdateRect(rect);
+      Icon.Rect = rect;
+    }
+
+    [CUISerializable]
+    public override bool Visible
+    {
+      get => Background.Visible;
+      set
+      {
+        Background.Visible = value;
+        Icon.Visible = value;
+      }
+    }
+
+    protected override CUINullVector2 MinSizeOverride => new CUINullVector2(DefaultSize);
+
+    public override IEnumerable<VisualUnit> VisualSplit()
+    {
+      if (!Displayed || CulledOut) yield break;
+
+      yield return Background.VisualWrapper;
+      yield return Icon.VisualWrapper;
     }
 
     public CUICloseButton() : base()
     {
       MouseDown += (c, e) => Commands.SendUp("close");
+
+      MouseOff += (c, e) => DetermineColor();
+      MouseOn += (c, e) => DetermineColor();
+      DetermineColor();
     }
   }
 }

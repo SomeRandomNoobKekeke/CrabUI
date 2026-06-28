@@ -8,22 +8,25 @@ namespace CrabUI
 {
   public partial class CUIPalette
   {
+    /// <summary>
+    /// I have no idea how many colors is required, my plan is this:
+    /// I'll create new color for each use case
+    /// If i see that some colors correlate i'll try to generalize them
+    /// </summary>
     public static CUIPalette Default => new()
     {
       Colors = new()
       {
-        ["border"] = new Color(200, 0, 0),
-        ["panel1"] = new Color(180, 0, 0),
-        ["panel2"] = new Color(150, 0, 0),
-        ["panel3"] = new Color(128, 0, 0),
-        ["panel4"] = new Color(80, 0, 0),
-        ["activeinput"] = new Color(80, 0, 0),
-        ["inputbackground"] = new Color(64, 0, 0),
         ["button"] = new Color(255, 0, 0),
-        ["invalid"] = new Color(255, 255, 0),
-        ["highlight"] = new Color(255, 255, 255),
-        ["outercontrols"] = new Color(255, 255, 0),
-        ["text"] = Color.White,
+        ["buttontext"] = new Color(255, 0, 0),
+        ["frame"] = new Color(255, 0, 0),
+        ["outercontrols"] = new Color(255, 0, 0),
+        ["inputfocused"] = new Color(255, 0, 0),
+        ["inputblured"] = new Color(255, 0, 0),
+        ["inputselection"] = new Color(255, 0, 0),
+        ["inputcaret"] = new Color(255, 0, 0),
+        ["inputinvalid"] = new Color(255, 0, 0),
+        ["border"] = new Color(255, 0, 0),
       }
     };
   }

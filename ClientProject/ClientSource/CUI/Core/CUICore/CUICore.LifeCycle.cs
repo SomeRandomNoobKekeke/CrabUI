@@ -23,6 +23,8 @@ namespace CrabUI
       {
         try
         {
+          Stopwatch sw = Stopwatch.StartNew();
+
           Self.Input.Update(totalTime, mouse, keyboard, textInput);
           Self.EventConstructor.Construct(Self.Input);
 
@@ -32,6 +34,9 @@ namespace CrabUI
           Self.GlobalFocusTracker.ResolveFocus(Self.Input.SomethingFocusedElsewhere);
 
           OnUpdate.Raise(totalTime);
+
+          sw.Stop();
+          // CUI.Logger.Log($"Update took {sw.ElapsedTicks}");
         }
         catch (Exception e)
         {

@@ -17,33 +17,17 @@ namespace CrabUIUser
   {
     public partial class SimpleSettings : IE2ETest
     {
+      public class NestedSettings
+      {
+        public string StringProp { get; set; } = "hurb";
+        public int IntProp { get; set; } = 321;
+      }
 
       public class Settings
       {
-        public static object MicroParser(string raw, Type T)
-        {
-          if (T == typeof(string)) return raw;
-          if (T == typeof(int)) return int.Parse(raw);
-          if (T == typeof(float)) return float.Parse(raw);
-
-          return null;
-        }
-
-        public void SetValue(string key, string value)
-        {
-          PropertyInfo pi = typeof(Settings).GetProperty(key);
-          if (pi is null) return;
-
-          pi.SetValue(this, MicroParser(value, pi.PropertyType));
-        }
-
-        public void Print()
-        {
-          Logger.Default.Log(JsonSerializer.Serialize(this));
-        }
-
-        public string Name { get; set; } = "bruh";
-        public int Count { get; set; } = 123;
+        public NestedSettings Nested { get; set; } = new();
+        public string StringProp { get; set; } = "bruh";
+        public int IntProp { get; set; } = 123;
       }
 
     }

@@ -16,14 +16,15 @@ namespace CrabUIUser
   {
     public partial class SimpleSettings : IE2ETest
     {
+      public MicroSettingsManager Manager { get; } = new();
       public SettingsUI UI { get; set; }
-      public Settings ModSettings { get; set; } = new();
+      public Settings ModSettings => Manager.Settings;
 
       public void Initialize()
       {
-        UI = new SettingsUI(ModSettings);
+        UI = new SettingsUI(Manager);
         UI.Open();
-        UI.Sync();
+        UI.Refresh();
       }
 
       public void Dispose()

@@ -45,7 +45,7 @@ namespace CrabUI
 
         this["label"] = Label = new CUITextBlock()
         {
-          Padding = new CUISizes(10, 0, 10, 0),
+          TextAnchor = CUIAnchor.LeftCenter,
         };
         this["input"] = Input = new CUITextInput()
         {

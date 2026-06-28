@@ -15,7 +15,7 @@ namespace CrabUI
   {
     public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIFrame>((c) =>
     {
-      c.Background.Color = c.Palette.Colors["background"];
+      c.Background.Color = c.Palette.Colors["panel3"];
     });
 
     protected override void InitStyle()

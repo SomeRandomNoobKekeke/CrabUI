@@ -18,37 +18,66 @@ namespace CrabUIUser
     {
       public partial class SettingsUI : CUIDefault.Frame
       {
-        public Settings Settings { get; }
+        public MicroSettingsManager Manager { get; }
+        public Settings Settings => Manager.Settings;
+
         public CUIVerticalList FieldList { get; private set; }
 
-        public Dictionary<Type, Func<string, string, CUIComponent>> FieldCatalog { get; } = new()
-        {
-          [typeof(string)] = (key, value) => new CUIDefault.TextField() { Key = key, RawValue = value },
-          [typeof(int)] = (key, value) => new CUIDefault.IntField() { Key = key, RawValue = value },
-        };
 
-        public void Sync()
+        public void Refresh()
         {
           FieldList.Clear();
 
-          foreach (PropertyInfo pi in Settings.GetType().GetProperties())
+          FieldList.Add(new CUIDefault.TextField()
           {
-            if (FieldCatalog.ContainsKey(pi.PropertyType))
+            Key = "String Prop",
+            Value = Settings.StringProp,
+          });
+
+          FieldList.Add(new CUIDefault.IntField()
+          {
+            Key = "Int Prop",
+            Value = Settings.IntProp,
+          });
+
+          CUIVerticalList NestedWrapper = new CUIVerticalList()
+          {
+            FitContent = new CUIBool2(false, true),
+            Padding = new CUISizes(10, 0, 0, 0),
+            Style = (c) =>
             {
-              FieldList.Add(FieldCatalog[pi.PropertyType](pi.Name, pi.GetValue(Settings).ToString()));
-            }
-          }
+              c.Background.Color = c.Palette.Colors["panel3"];
+            },
+          };
+
+          NestedWrapper.Add(new CUITextBlock("123"));
+          NestedWrapper.Add(new CUITextBlock("321"));
+
+          // NestedWrapper.Add(new CUIDefault.TextField()
+          // {
+          //   Key = "Nested String Prop",
+          //   Value = Settings.Nested.StringProp,
+          // });
+
+
+          // NestedWrapper.Add(new CUIDefault.IntField()
+          // {
+          //   Key = "Nested Int Prop",
+          //   Value = Settings.Nested.IntProp,
+          // });
+
+          FieldList.Add(NestedWrapper);
         }
 
-        public SettingsUI(Settings settings) : base()
+        public SettingsUI(MicroSettingsManager manager) : base()
         {
-          Settings = settings;
+          Manager = manager;
 
           Caption.Text = "Some Settings, bruh";
 
           Commands.ListenFor<string[]>(
             "setvalue",
-            (args) => Settings.SetValue(args[0], args[1])
+            (args) => Manager.SetValue(args[0], args[1])
           );
 
           this["layout"]["header"] = new CUIHorizontalList()
@@ -58,7 +87,7 @@ namespace CrabUIUser
 
           this["layout"]["header"]["printSettings"] = new CUIButton("Print Settings")
           {
-            OnMouseDown = (c, e) => Settings.Print(),
+            OnMouseDown = (c, e) => Manager.Print(),
           };
 
           this["layout"]["main"] = FieldList = new CUIVerticalList()

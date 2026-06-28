@@ -18,8 +18,8 @@ namespace CrabUI
     {
       public int Value
       {
-        get => int.TryParse(Label.Text, out int i) ? i : 0;
-        set => Label.Text = value.ToString();
+        get => int.TryParse(Input.Text, out int i) ? i : 0;
+        set => Input.Text = value.ToString();
       }
 
       public IntField() : base()

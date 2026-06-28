@@ -12,7 +12,7 @@ namespace CrabUI
   {
     public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIComponent>((c) =>
     {
-      c.RightResizeHandle.Background.Color = c.Palette.Colors["accent"];
+      c.RightResizeHandle.Background.Color = c.Palette.Colors["outercontrols"];
     });
 
     protected virtual void InitStyle()

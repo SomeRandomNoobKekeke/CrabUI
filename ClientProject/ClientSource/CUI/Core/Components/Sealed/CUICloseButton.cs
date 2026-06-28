@@ -45,19 +45,9 @@ namespace CrabUI
 
     public void DetermineColor()
     {
-      if (MousePressed)
-      {
-        Icon.Color = ForeColor;
-        return;
-      }
-
-      if (MouseOver)
-      {
-        Icon.Color = ForeColor.Multiply(0.9f);
-        return;
-      }
-
-      Icon.Color = ForeColor.Multiply(0.7f);
+      if (MousePressed) Icon.Color = ForeColor;
+      else if (MouseOver) Icon.Color = ForeColor.Multiply(0.9f);
+      else Icon.Color = ForeColor.Multiply(0.7f);
     }
 
     protected override void UpdateRect(CUIRect rect)

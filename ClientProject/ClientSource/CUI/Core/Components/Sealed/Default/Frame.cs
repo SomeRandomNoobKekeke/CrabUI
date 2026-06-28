@@ -16,7 +16,7 @@ namespace CrabUI
   {
     public class Frame : CUIFrame
     {
-      public CUITextBlock Caption { get; set; }
+      public CUITextBlock Caption { get; }
 
       public Frame() : base()
       {
@@ -32,7 +32,6 @@ namespace CrabUI
           {
             c.Background.Color = c.Palette.Colors["border"];
           },
-          // Background = { Color = Palette.Colors["border"] }
         };
         this["layout"]["handle"]["caption"] = Caption = new CUITextBlock()
         {
@@ -44,9 +43,6 @@ namespace CrabUI
           Background = { Color = Palette.Colors["border"] },
         };
         this["layout"]["handle"]["closebutton"]["bruh"] = new CUICloseButton();
-
-
-        this["layout"]["main"] = new CUIComponent();
       }
     }
   }

@@ -16,22 +16,15 @@ namespace CrabUIUser
   {
     public partial class SimpleSettings : IE2ETest
     {
-      public partial class SettingsUI : CUIFrame
+      public partial class SettingsUI : CUIDefault.Frame
       {
         public Settings Settings { get; }
-
-        public SettingsUI(Settings settings) : base()
-        {
-          Settings = settings;
-          CreateUI();
-        }
-
         public CUIVerticalList FieldList { get; private set; }
 
         public Dictionary<Type, Func<string, string, CUIComponent>> FieldCatalog { get; } = new()
         {
-          [typeof(string)] = (key, value) => new TextField(key, value),
-          [typeof(int)] = (key, value) => new IntField(key, value),
+          [typeof(string)] = (key, value) => new CUIDefault.TextField() { Key = key, RawValue = value },
+          [typeof(int)] = (key, value) => new CUIDefault.IntField() { Key = key, RawValue = value },
         };
 
         public void Sync()
@@ -47,53 +40,35 @@ namespace CrabUIUser
           }
         }
 
-
-        public void CreateUI()
+        public SettingsUI(Settings settings) : base()
         {
-          Absolute = new CUINullRect(w: 300, h: 400);
-          Background.Color = Color.Brown;
+          Settings = settings;
 
-          Commands.ListenFor("setvalue", (o) =>
-          {
-            if (o is not string[] args) return;
-            Settings.SetValue(args[0], args[1]);
-          });
+          Caption.Text = "Some Settings, bruh";
 
-          this["layout"] = new CUIVerticalList()
-          {
-            Relative = new CUINullRect(0, 0, 1, 1),
-          };
-
-          this["layout"]["handle"] = new CUIHorizontalList()
-          {
-            Direction = CUIDirection.Reverse,
-            Background = { Color = new Color(32, 32, 32) },
-            FitContent = new CUIBool2(false, true),
-          };
-
-          this["layout"]["handle"]["close"] = new CUICloseButton()
-          {
-            Absolute = new CUINullRect(w: 30, h: 30),
-          };
+          Commands.ListenFor<string[]>(
+            "setvalue",
+            (args) => Settings.SetValue(args[0], args[1])
+          );
 
           this["layout"]["header"] = new CUIHorizontalList()
           {
-            Background = { Color = Color.Blue },
             FitContent = new CUIBool2(false, true),
           };
 
           this["layout"]["header"]["printSettings"] = new CUIButton("Print Settings")
           {
-            MasterColor = Color.Yellow,
             OnMouseDown = (c, e) => Settings.Print(),
           };
 
           this["layout"]["main"] = FieldList = new CUIVerticalList()
           {
             Flex = 1,
-            Background = { Color = Color.Green },
           };
         }
+
+
+
 
       }
 

@@ -46,25 +46,22 @@ namespace CrabUIUser
             Padding = new CUISizes(10, 0, 0, 0),
             Style = (c) =>
             {
-              c.Background.Color = c.Palette.Colors["panel3"];
+              c.Background.Color = c.Palette.Colors["panel4"];
             },
           };
 
-          NestedWrapper.Add(new CUITextBlock("123"));
-          NestedWrapper.Add(new CUITextBlock("321"));
-
-          // NestedWrapper.Add(new CUIDefault.TextField()
-          // {
-          //   Key = "Nested String Prop",
-          //   Value = Settings.Nested.StringProp,
-          // });
+          NestedWrapper.Add(new CUIDefault.TextField()
+          {
+            Key = "Nested String Prop",
+            Value = Settings.Nested.StringProp,
+          });
 
 
-          // NestedWrapper.Add(new CUIDefault.IntField()
-          // {
-          //   Key = "Nested Int Prop",
-          //   Value = Settings.Nested.IntProp,
-          // });
+          NestedWrapper.Add(new CUIDefault.IntField()
+          {
+            Key = "Nested Int Prop",
+            Value = Settings.Nested.IntProp,
+          });
 
           FieldList.Add(NestedWrapper);
         }

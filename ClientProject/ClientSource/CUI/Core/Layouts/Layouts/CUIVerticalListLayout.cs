@@ -50,6 +50,7 @@ namespace CrabUI
       TotalHeight = 0;
       foreach (Layout.Child c in Parent.Children)
       {
+        //TODO add prop for it
         float w = Parent.InnerRect.Width;// Resize to host width by default
         float h = 0;
 
@@ -144,6 +145,7 @@ namespace CrabUI
 
     public override void UpdateParent()
     {
+      //TODO it's probably wrong, iirc it's just copy pasted from plain layout
       if (Parent.FitContent.X)
       {
         float maxWidth = 0;
@@ -166,7 +168,7 @@ namespace CrabUI
 
       if (Parent.FitContent.Y)
       {
-        float maxHeight = 0;
+        float totalHeight = 0;
         foreach (Layout.Child c in Parent.Children)
         {
           if (c.Flex != null) continue;
@@ -179,11 +181,11 @@ namespace CrabUI
           if (c.MinSize.Y.HasValue) h = Math.Max(h, c.MinSize.Y.Value);
           if (c.MaxSize.Y.HasValue) h = Math.Min(h, c.MaxSize.Y.Value);
 
-          maxHeight = Math.Max(maxHeight, h);
+          totalHeight += h;
         }
 
-        Parent.MinSize = Parent.MinSize with { Y = maxHeight };
-        Parent.MaxSize = Parent.MaxSize with { Y = maxHeight };
+        Parent.MinSize = Parent.MinSize with { Y = totalHeight };
+        Parent.MaxSize = Parent.MaxSize with { Y = totalHeight };
       }
 
       RequireParentUpdate = false;

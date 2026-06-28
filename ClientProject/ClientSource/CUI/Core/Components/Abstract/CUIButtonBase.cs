@@ -71,10 +71,10 @@ namespace CrabUI
     protected override CUINullVector2 MinSizeOverride => TextBlock.ForcedSize;
 
 
-    protected override void UpdateRect(CUIRect rect)
+    protected override void UpdateRects()
     {
-      base.UpdateRect(rect);
-      TextBlock.Rect = rect;
+      base.UpdateRects();
+      TextBlock.Rect = Rect;
     }
 
     [CUISerializable]

@@ -21,10 +21,10 @@ namespace CrabUI
 
 
 
-    protected override void UpdateRect(CUIRect rect)
+    protected override void UpdateRects()
     {
-      base.UpdateRect(rect);
-      TextLine.Position = rect.LeftTop;
+      base.UpdateRects();
+      TextLine.Position = Rect.LeftTop;
     }
 
     [CUISerializable]

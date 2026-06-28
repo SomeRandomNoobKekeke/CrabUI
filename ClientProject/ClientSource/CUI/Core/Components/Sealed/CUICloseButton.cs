@@ -50,10 +50,10 @@ namespace CrabUI
       else Icon.Color = ForeColor.Multiply(0.7f);
     }
 
-    protected override void UpdateRect(CUIRect rect)
+    protected override void UpdateRects()
     {
-      base.UpdateRect(rect);
-      Icon.Rect = rect;
+      base.UpdateRects();
+      Icon.Rect = Rect;
     }
 
     [CUISerializable]

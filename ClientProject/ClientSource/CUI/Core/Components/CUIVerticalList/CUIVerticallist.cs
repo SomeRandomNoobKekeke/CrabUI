@@ -49,11 +49,6 @@ namespace CrabUI
 
     protected CUIVerticalListLayout ListLayout;
 
-    protected override void UpdateRect(CUIRect rect)
-    {
-      base.UpdateRect(rect);
-    }
-
     private void ScrollHandle(CUIComponent c, CUIMouseScrollEvent e)
     {
       Scroll += e.Scroll;

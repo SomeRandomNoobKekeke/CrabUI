@@ -15,16 +15,7 @@ namespace CrabUI
 
     public SimpleTexture Background { get; } = new();
 
-    protected CUIRect _Rect;
-    public override CUIRect Rect
-    {
-      get => _Rect;
-      set
-      {
-        _Rect = value;
-        UpdateRect(value);
-      }
-    }
+
 
     [CUISerializable]
     public bool Displayed { get; set; } = true;
@@ -34,18 +25,18 @@ namespace CrabUI
     protected bool CulledOut { get; set; }
 
 
-    protected virtual void UpdateRect(CUIRect rect)
+    protected virtual void UpdateRects()
     {
-      Debug_PropSet.Send(typeof(CUIRect), rect, this, "Rect");
-      Background.Rect = rect;
+      Debug_PropSet.Send(typeof(CUIRect), Rect, this, "Rect");
+      Background.Rect = Rect;
       RightResizeHandle.UpdateRect();
 
       if (CullChildren)
       {
-        ScissorRect = rect.Box;
+        ScissorRect = Rect.Box;
       }
 
-      Debug_RectSet.Send(this, rect);
+      Debug_RectSet.Send(this, Rect);
     }
 
     protected Rectangle? ScissorRect

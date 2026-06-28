@@ -21,6 +21,9 @@ namespace CrabUI
       public Vector2 ChildrenOffset { get; }
       public bool CullChildren { get; }
       public CUIRect Rect { get; set; }
+      public CUIRect OuterRect { get; set; }
+      public CUIRect InnerRect { get; }
+
       public CUIBool2 FitContent { get; }
 
       public CUINullVector2 MinSize { get; set; }
@@ -31,6 +34,9 @@ namespace CrabUI
     public interface ChildBase
     {
       public CUIRect Rect { get; set; }
+      public CUIRect OuterRect { get; set; }
+      public CUIRect InnerRect { get; }
+
       public bool CulledOut { get; set; }
 
       public CUINullVector2 MinSize { get; set; }

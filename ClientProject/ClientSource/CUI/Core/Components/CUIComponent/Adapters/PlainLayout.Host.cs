@@ -33,6 +33,16 @@ namespace CrabUI
           get => Self.Rect;
           set => Self.Rect = value;
         }
+        CUIRect Layout.Host.OuterRect
+        {
+          get => Self.OuterRect;
+          set => Self.OuterRect = value;
+        }
+        CUIRect Layout.Host.InnerRect
+        {
+          get => Self.InnerRect;
+        }
+
         CUIBool2 Layout.Host.FitContent => Self.LayoutProps.FitContent.Value;
         CUINullVector2 Layout.Host.MinSize
         {
@@ -44,6 +54,7 @@ namespace CrabUI
           get => Self.MaxSizeOverride;
           set => Self.MaxSize = value;
         }
+
 
         void Layout.Host.NotifyVisualsRestructured() => Self.VisualRestructureNotifier.Notify();
 

@@ -35,6 +35,16 @@ namespace CrabUI
           get => Self.Rect;
           set => Self.Rect = value;
         }
+        CUIRect Layout.ChildBase.OuterRect
+        {
+          get => Self.OuterRect;
+          set => Self.OuterRect = value;
+        }
+        CUIRect Layout.ChildBase.InnerRect
+        {
+          get => Self.InnerRect;
+        }
+
         bool Layout.ChildBase.CulledOut
         {
           get => Self.CulledOut;

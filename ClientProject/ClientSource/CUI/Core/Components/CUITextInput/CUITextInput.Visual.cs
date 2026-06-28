@@ -37,8 +37,6 @@ namespace CrabUI
 
     private void UpdateVisualState()
     {
-      UpdateRects();
-
       Background.Color = Focused ?
         Valid ?
           FocusedColor : InvalidColor
@@ -49,8 +47,13 @@ namespace CrabUI
       CaretTexture.Visible = Focused && SelectionEmpty && !CaretIsHidden;
     }
 
-    private void UpdateRects()
+
+
+
+    protected override void UpdateRects()
     {
+      base.UpdateRects();
+
       TextBlock.Rect = Rect;
       TextBlock.Text = State.Text;
 
@@ -70,13 +73,8 @@ namespace CrabUI
         Top = Rect.Top + Rect.Height * 0.1f,
         Height = Rect.Height * 0.8f,
       };
-    }
 
 
-
-    protected override void UpdateRect(CUIRect rect)
-    {
-      base.UpdateRect(rect);
 
       UpdateVisualState();
     }

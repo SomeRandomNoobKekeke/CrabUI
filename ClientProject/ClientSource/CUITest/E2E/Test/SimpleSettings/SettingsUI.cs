@@ -70,6 +70,8 @@ namespace CrabUIUser
         {
           Manager = manager;
 
+          OnOpen += (self) => Refresh();
+
           Caption.Text = "Some Settings, bruh";
 
           Commands.ListenFor<string[]>(

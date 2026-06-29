@@ -28,8 +28,6 @@ namespace CrabUI
       Resizable = true;
       Anchor = CUIAnchor.Center;
       Background.Sprite = CUIDefaultSprite.Vignette;
-      Borders.Visible = true;
-      Borders.Sizes = new CUISizes(1, 1, 1, 1);
     }
 
     public CUIComponent TargetMainComponent { get; set; }

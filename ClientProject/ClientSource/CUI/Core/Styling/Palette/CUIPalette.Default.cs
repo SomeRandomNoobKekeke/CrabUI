@@ -26,7 +26,7 @@ namespace CrabUI
         ["inputselection"] = new Color(255, 255, 255),
         ["inputcaret"] = new Color(255, 255, 255),
         ["inputinvalid"] = new Color(255, 255, 0),
-        ["border"] = new Color(150, 0, 0),
+        ["border"] = new Color(100, 0, 0),
       }
     };
   }

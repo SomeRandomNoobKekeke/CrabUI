@@ -12,7 +12,7 @@ namespace CrabUI
     {
       CUIFrame frame = new CUIDefault.Frame()
       {
-        Caption = { Text = "Preview" },
+        Caption = { Text = "Palette Preview" },
       };
 
       frame["layout"]["header"] = new CUIHorizontalList()

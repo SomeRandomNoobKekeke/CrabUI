@@ -108,9 +108,10 @@ namespace CrabUI
 
     private void LoadDefaultResources()
     {
-      CUITextureManager.Load("Assets/dev.png", "BaroDev");
-      CUITextureManager.Load("Assets/CUI.png", "CUI");
-      CUITextureManager.Load("Assets/Test Chamber Background.png", "Test Chamber Background");
+      CUITextureManager.Load("Assets/PNG/dev.png", "BaroDev");
+      CUITextureManager.Load("Assets/PNG/CUI.png", "CUI");
+      CUITextureManager.Load("Assets/PNG/Test Chamber Background.png", "Test Chamber Background");
+      CUITextureManager.Load("Assets/PNG/For testing/Icons.png", "Test Icons");
 
     }
 

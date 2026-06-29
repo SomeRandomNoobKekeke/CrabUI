@@ -10,7 +10,7 @@ using System.IO;
 
 namespace CrabUI
 {
-  //CRINGE or not? i guess i need MasterRunner to see how scales
+  //CRINGE or not? i guess i need MasterRunner to see how it scales
   public class CUITextureManagerProxy(
     __CUITextureManager TextureManager,
     PathManager PathManager

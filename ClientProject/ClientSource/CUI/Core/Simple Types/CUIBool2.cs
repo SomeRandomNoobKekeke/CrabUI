@@ -8,7 +8,6 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
 
-// TODO wtf is this piece of shit
 namespace CrabUI
 {
   /// <summary>

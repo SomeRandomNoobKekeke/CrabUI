@@ -98,6 +98,16 @@ namespace CrabUI
       {
         Pattern = LayoutMarker.Pattern.AbsoluteProp,
       };
+
+      public CUILayoutProp<int> GridRow { get; } = new()
+      {
+        Pattern = LayoutMarker.Pattern.FromParentAndDown,
+      };
+
+      public CUILayoutProp<int> GridColumn { get; } = new()
+      {
+        Pattern = LayoutMarker.Pattern.FromParentAndDown,
+      };
     }
   }
 }

@@ -42,7 +42,7 @@ namespace CrabUI
       public CUINullVector2 MinSize { get; set; }
       public CUINullVector2 MaxSize { get; set; }
     }
-    public interface Child : ChildBase, CUIVerticalListLayout.Child, PlainLayout.Child
+    public interface Child : ChildBase, CUIVerticalListLayout.Child, PlainLayout.Child, CUIGridLayout.Child
     {
 
     }

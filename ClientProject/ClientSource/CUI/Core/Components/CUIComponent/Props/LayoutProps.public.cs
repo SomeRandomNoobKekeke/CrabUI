@@ -104,5 +104,19 @@ namespace CrabUI
       get => LayoutProps.FitContent.Value;
       set => LayoutProps.FitContent.Value = value;
     }
+
+    [CUISerializable]
+    public int GridRow
+    {
+      get => LayoutProps.GridRow.Value;
+      set => LayoutProps.GridRow.Value = value;
+    }
+
+    [CUISerializable]
+    public int GridColumn
+    {
+      get => LayoutProps.GridColumn.Value;
+      set => LayoutProps.GridColumn.Value = value;
+    }
   }
 }

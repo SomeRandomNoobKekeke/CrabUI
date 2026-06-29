@@ -60,8 +60,8 @@ namespace CrabUI
           get => Self.MaxSizeOverride;
           set => Self.MaxSize = value;
         }
-
-
+        int CUIGridLayout.Child.GridRow => Self.GridRow;
+        int CUIGridLayout.Child.GridColumn => Self.GridColumn;
         public override string ToString() => Self.ToString();
       }
     }

@@ -64,31 +64,36 @@ namespace CrabUIUser
           };
 
 
-          CUICore.Styles.EnterContext<CUIButton>(c => c.Emit = "number");
-          this["layout"]["controls"]["1"] = new CUIButton("1") { Grid = (1, 1) };
-          this["layout"]["controls"]["2"] = new CUIButton("2") { Grid = (2, 1) };
-          this["layout"]["controls"]["3"] = new CUIButton("3") { Grid = (3, 1) };
+          using (new CUIContextStyle<CUIButton>(c => c.Emit = "number"))
+          {
+            this["layout"]["controls"]["1"] = new CUIButton("1") { Grid = (1, 1) };
+            this["layout"]["controls"]["2"] = new CUIButton("2") { Grid = (2, 1) };
+            this["layout"]["controls"]["3"] = new CUIButton("3") { Grid = (3, 1) };
 
-          this["layout"]["controls"]["4"] = new CUIButton("4") { Grid = (1, 2) };
-          this["layout"]["controls"]["5"] = new CUIButton("5") { Grid = (2, 2) };
-          this["layout"]["controls"]["6"] = new CUIButton("6") { Grid = (3, 2) };
+            this["layout"]["controls"]["4"] = new CUIButton("4") { Grid = (1, 2) };
+            this["layout"]["controls"]["5"] = new CUIButton("5") { Grid = (2, 2) };
+            this["layout"]["controls"]["6"] = new CUIButton("6") { Grid = (3, 2) };
 
-          this["layout"]["controls"]["7"] = new CUIButton("7") { Grid = (1, 3) };
-          this["layout"]["controls"]["8"] = new CUIButton("8") { Grid = (2, 3) };
-          this["layout"]["controls"]["9"] = new CUIButton("9") { Grid = (3, 3) };
+            this["layout"]["controls"]["7"] = new CUIButton("7") { Grid = (1, 3) };
+            this["layout"]["controls"]["8"] = new CUIButton("8") { Grid = (2, 3) };
+            this["layout"]["controls"]["9"] = new CUIButton("9") { Grid = (3, 3) };
 
-          this["layout"]["controls"]["0"] = new CUIButton("0") { Grid = (2, 4) };
+            this["layout"]["controls"]["0"] = new CUIButton("0") { Grid = (2, 4) };
+          }
 
-          CUICore.Styles.EnterContext<CUIButton>(c => c.Emit = "opp");
-          this["layout"]["controls"]["+"] = new CUIButton("+") { Grid = (4, 2) };
-          this["layout"]["controls"]["-"] = new CUIButton("-") { Grid = (4, 3) };
-          this["layout"]["controls"]["*"] = new CUIButton("*") { Grid = (1, 4) };
-          this["layout"]["controls"]["/"] = new CUIButton("/") { Grid = (3, 4) };
+          using (new CUIContextStyle<CUIButton>(c => c.Emit = "opp"))
+          {
+            this["layout"]["controls"]["+"] = new CUIButton("+") { Grid = (4, 2) };
+            this["layout"]["controls"]["-"] = new CUIButton("-") { Grid = (4, 3) };
+            this["layout"]["controls"]["*"] = new CUIButton("*") { Grid = (1, 4) };
+            this["layout"]["controls"]["/"] = new CUIButton("/") { Grid = (3, 4) };
+          }
 
-          CUICore.Styles.EnterContext<CUIButton>(c => c.Emit = "command");
-          this["layout"]["controls"]["<"] = new CUIButton("<") { Grid = (4, 1) };
-          this["layout"]["controls"]["="] = new CUIButton("=") { Grid = (4, 4) };
-          CUICore.Styles.ExitContext();
+          using (new CUIContextStyle<CUIButton>(c => c.Emit = "command"))
+          {
+            this["layout"]["controls"]["<"] = new CUIButton("<") { Grid = (4, 1) };
+            this["layout"]["controls"]["="] = new CUIButton("=") { Grid = (4, 4) };
+          }
         }
       }
     }

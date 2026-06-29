@@ -18,6 +18,9 @@ namespace CrabUIUser
     {
       public class CalculatorCore
       {
+
+        public Random Random = new Random();
+
         public event Action Changed;
         private string _Text; public string Text
         {
@@ -36,12 +39,21 @@ namespace CrabUIUser
 
         public void AcceptOpperation(string opp)
         {
-          Text += opp;
+          Text += $" {opp} ";
         }
 
         public void AcceptCommand(string command)
         {
-          Text += command;
+          if (command == "<")
+          {
+            if (Text.Length == 0) return;
+            Text = Text.Substring(0, Text.Length - 1);
+          }
+
+          if (command == "=")
+          {
+            Text = $"mb [{Random.NextSingle() * 100}]?";
+          }
         }
       }
     }

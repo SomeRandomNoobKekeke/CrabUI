@@ -72,6 +72,7 @@ namespace CrabUI
     {
     }
 
+    //BRUH Why is this inverted, why not just set Rect from Host.UpdateRect?
     public void UpdateRect()
     {
       if (Host is null)

@@ -46,7 +46,7 @@ namespace CrabUIUser
         MGDebugTool.Init();
 
         // Utils.PrintAllHarmonyPatches();
-        CUIPalette.Preview();
+        // CUIPalette.Preview();
 
         Experiment();
       }

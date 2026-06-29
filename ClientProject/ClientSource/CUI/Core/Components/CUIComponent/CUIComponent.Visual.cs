@@ -14,6 +14,7 @@ namespace CrabUI
     );
 
     public SimpleTexture Background { get; } = new();
+    public Borders Borders { get; } = new();
 
 
 
@@ -29,6 +30,8 @@ namespace CrabUI
     {
       Debug_PropSet.Send(typeof(CUIRect), Rect, this, "Rect");
       Background.Rect = Rect;
+      Borders.Rect = Rect;
+
       RightResizeHandle.UpdateRect();
 
       if (CullChildren)
@@ -68,6 +71,7 @@ namespace CrabUI
         yield return VisualBounds.RightBound;
       }
       yield return RightResizeHandle.VisualWrapper;
+      yield return Borders.VisualWrapper;
     }
   }
 }

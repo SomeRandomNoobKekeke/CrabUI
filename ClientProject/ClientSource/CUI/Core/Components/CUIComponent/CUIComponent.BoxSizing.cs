@@ -14,7 +14,13 @@ namespace CrabUI
   {
     public CUISizes Margin { get; set; }
     public CUISizes Padding { get; set; }
-    public CUISizes Border { get; set; }
+
+
+    public CUISizes BorderSizes
+    {
+      get => Borders.Sizes;
+      set => Borders.Sizes = value;
+    }
 
 
     private CUIRect _OuterRect; public CUIRect OuterRect
@@ -32,10 +38,10 @@ namespace CrabUI
         );
 
         _InnerRect = new CUIRect(
-          _Rect.Left + Border.Left + Padding.Left,
-          _Rect.Top + Border.Top + Padding.Top,
-          Math.Max(0, _Rect.Width - Padding.Left - Border.Left - Border.Right - Padding.Right),
-          Math.Max(0, _Rect.Height - Padding.Top - Border.Top - Border.Bottom - Padding.Bottom)
+          _Rect.Left + BorderSizes.Left + Padding.Left,
+          _Rect.Top + BorderSizes.Top + Padding.Top,
+          Math.Max(0, _Rect.Width - Padding.Left - BorderSizes.Left - BorderSizes.Right - Padding.Right),
+          Math.Max(0, _Rect.Height - Padding.Top - BorderSizes.Top - BorderSizes.Bottom - Padding.Bottom)
         );
 
         UpdateRects();
@@ -50,10 +56,10 @@ namespace CrabUI
         _Rect = value;
 
         _InnerRect = new CUIRect(
-         _Rect.Left + Border.Left + Padding.Left,
-         _Rect.Top + Border.Top + Padding.Top,
-         Math.Max(0, _Rect.Width - Padding.Left - Border.Left - Border.Right - Padding.Right),
-         Math.Max(0, _Rect.Height - Padding.Top - Border.Top - Border.Bottom - Padding.Bottom)
+         _Rect.Left + BorderSizes.Left + Padding.Left,
+         _Rect.Top + BorderSizes.Top + Padding.Top,
+         Math.Max(0, _Rect.Width - Padding.Left - BorderSizes.Left - BorderSizes.Right - Padding.Right),
+         Math.Max(0, _Rect.Height - Padding.Top - BorderSizes.Top - BorderSizes.Bottom - Padding.Bottom)
        );
 
         _OuterRect = new CUIRect(

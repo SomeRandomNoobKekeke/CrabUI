@@ -76,8 +76,8 @@ namespace CrabUI
     }
 
     protected override CUINullVector2 MinSizeOverride => new CUINullVector2(
-      TextBlock.ForcedSize.X + Padding.FullWidth + Border.FullWidth + Margin.FullWidth,
-      TextBlock.ForcedSize.Y + Padding.FullHeigth + Border.FullHeigth + Margin.FullHeigth
+      TextBlock.ForcedSize.X + Padding.FullWidth + BorderSizes.FullWidth + Margin.FullWidth,
+      TextBlock.ForcedSize.Y + Padding.FullHeigth + BorderSizes.FullHeigth + Margin.FullHeigth
     );
 
     protected override void UpdateRects()

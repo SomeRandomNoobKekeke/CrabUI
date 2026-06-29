@@ -16,6 +16,7 @@ namespace CrabUI
     public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIFrame>((c) =>
     {
       c.Background.Color = c.Palette.Colors["frame"];
+      c.Borders.Color = c.Palette.Colors["border"];
     });
 
     protected override void InitStyle()
@@ -27,6 +28,8 @@ namespace CrabUI
       Resizable = true;
       Anchor = CUIAnchor.Center;
       Background.Sprite = CUIDefaultSprite.Vignette;
+      Borders.Visible = true;
+      Borders.Sizes = new CUISizes(1, 1, 1, 1);
     }
 
     public CUIComponent TargetMainComponent { get; set; }

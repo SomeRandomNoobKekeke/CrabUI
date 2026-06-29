@@ -8,6 +8,7 @@ namespace CrabUI
   public class CUIStyleManager(CUIComponentTypeManager typeManager)
   {
     public CUIComponentTypeManager TypeManager { get; } = typeManager;
+    private CUIContextStyleTracker CUIContextStyleTracker { get; } = new();
 
 
     /// <summary>
@@ -40,6 +41,22 @@ namespace CrabUI
         Get(T).Remove(style);
       }
     }
+
+    public void EnterContext<T>(Action<T> action) where T : CUIComponent
+    {
+      ICUIStyle style = CUIContextStyleTracker.EnterContext<T>(action);
+      Styles[typeof(T)].AddSilent(style);
+    }
+
+    public void ExitContext()
+    {
+      (Type, ICUIStyle) result = CUIContextStyleTracker.ExitContext();
+      if (result.Item2 is null) return;
+      Styles[result.Item1].RemoveSilent(result.Item2);
+    }
+
+
+
   }
 
 

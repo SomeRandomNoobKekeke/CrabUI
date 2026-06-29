@@ -59,6 +59,9 @@ namespace CrabUI
       styles.Sort((a, b) => b.Priority - a.Priority);
     }
 
+    public void AddSilent(ICUIStyle style) => styles.Add(style);
+    public void RemoveSilent(ICUIStyle style) => styles.Remove(style);
+
     public void Apply(CUIComponent component)
     {
       foreach (ICUIStyle style in styles)

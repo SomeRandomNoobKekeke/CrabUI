@@ -16,16 +16,19 @@ namespace CrabUIUser
   {
     public partial class Calculator : IE2ETest
     {
-
+      public CalculatorCore Core { get; } = new();
+      public CalculatorUI UI { get; private set; }
 
       public void Initialize()
       {
+        UI = new(Core);
 
+        UI.Open();
       }
 
       public void Dispose()
       {
-
+        UI.Close();
       }
     }
   }

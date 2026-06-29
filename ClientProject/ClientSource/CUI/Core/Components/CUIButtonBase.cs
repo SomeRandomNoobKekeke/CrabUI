@@ -91,6 +91,8 @@ namespace CrabUI
       }
     }
 
+    public string Emit { get; set; }
+
     public override IEnumerable<VisualUnit> VisualSplit()
     {
       if (!Displayed || CulledOut) yield break;
@@ -105,6 +107,11 @@ namespace CrabUI
       MouseOff += (c, e) => DetermineColor();
       MouseOn += (c, e) => DetermineColor();
       DetermineColor();
+
+      MouseDown += (c, e) =>
+      {
+        if (Emit != null) Commands.SendUp(Emit, Text);
+      };
 
       ConsumeMouseClicks = true;
     }

@@ -20,11 +20,13 @@ namespace CrabUI
     {
       public float? AbsoluteSize;
       public float? RelativeSize;
+      public float? Fraction;
 
-      public Line(float? absolute = null, float? relative = null)
+      public Line(float? absolute = null, float? relative = null, float? fraction = null)
       {
         AbsoluteSize = absolute;
         RelativeSize = relative;
+        Fraction = fraction;
       }
     }
 
@@ -54,14 +56,22 @@ namespace CrabUI
       if (Parent is null) return;
       if (!RequireChildrenUpdate) return;
 
+      if (Parent.RowSizes.Count == 0 || Parent.ColumnSizes.Count == 0)
+      {
+        base.UpdateChildren();
+        return;
+      }
+
 
       List<CUISegment> RealRowSizes = new();
       List<CUISegment> RealColumnSizes = new();
 
       float y = Parent.InnerRect.Top;
+      float fry = Parent.InnerRect.Height / Parent.RowSizes.Where(l => l.Fraction.HasValue).Sum(l => l.Fraction.Value);
       foreach (Line line in Parent.RowSizes)
       {
         float size = 0;
+        if (line.Fraction.HasValue) size = fry * line.Fraction.Value;
         if (line.RelativeSize.HasValue) size = Parent.InnerRect.Height * line.RelativeSize.Value;
         if (line.AbsoluteSize.HasValue) size = line.AbsoluteSize.Value;
 
@@ -70,10 +80,13 @@ namespace CrabUI
         y += size;
       }
 
+
       float x = Parent.InnerRect.Left;
+      float frx = Parent.InnerRect.Width / Parent.ColumnSizes.Where(l => l.Fraction.HasValue).Sum(l => l.Fraction.Value);
       foreach (Line line in Parent.ColumnSizes)
       {
         float size = 0;
+        if (line.Fraction.HasValue) size = frx * line.Fraction.Value;
         if (line.RelativeSize.HasValue) size = Parent.InnerRect.Width * line.RelativeSize.Value;
         if (line.AbsoluteSize.HasValue) size = line.AbsoluteSize.Value;
 
@@ -82,11 +95,7 @@ namespace CrabUI
         x += size;
       }
 
-      if (RealColumnSizes.Count == 0 || RealRowSizes.Count == 0)
-      {
-        base.UpdateChildren();
-        return;
-      }
+
 
       foreach (Layout.Child c in Parent.Children)
       {

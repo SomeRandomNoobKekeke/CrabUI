@@ -20,7 +20,7 @@ namespace CrabUI
         ["button"] = new Color(255, 0, 0),
         ["text"] = new Color(255, 255, 255),
         ["frame"] = new Color(32, 0, 0),
-        ["outercontrols"] = new Color(255, 255, 0),
+        ["outercontrols"] = new Color(255, 200, 200),
         ["inputfocused"] = new Color(200, 0, 0),
         ["inputblured"] = new Color(64, 0, 0),
         ["inputselection"] = new Color(255, 255, 255),

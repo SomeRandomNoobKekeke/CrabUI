@@ -118,5 +118,11 @@ namespace CrabUI
       get => LayoutProps.GridColumn.Value;
       set => LayoutProps.GridColumn.Value = value;
     }
+
+    public (int, int) Grid
+    {
+      get => (GridColumn, GridRow);
+      set => (GridColumn, GridRow) = value;
+    }
   }
 }

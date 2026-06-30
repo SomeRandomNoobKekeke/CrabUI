@@ -26,6 +26,11 @@ namespace CrabUI
       public CUINullRect RelativeMin { get; }
       public CUINullRect RelativeMax { get; }
       public CUINullRect CrossRelative { get; }
+      public CUINullRect InnerAbsolute { get; }
+      public CUINullRect InnerAbsoluteMin { get; }
+
+      public CUISizes ChildRectDiff { get; }
+      public CUISizes InnerRectDiff { get; }
 
       public Vector2 Anchor { get; }
       public Vector2? ParentAnchor { get; }
@@ -76,10 +81,12 @@ namespace CrabUI
         w = 0;
         if (c.Relative.Width.HasValue) w = c.Relative.Width.Value * Parent.ChildrenRect.Width;
         if (c.CrossRelative.Width.HasValue) w = c.CrossRelative.Width.Value * Parent.ChildrenRect.Height;
+        if (c.InnerAbsolute.Width.HasValue) w = c.InnerAbsolute.Width.Value + c.InnerRectDiff.FullWidth;
         if (c.Absolute.Width.HasValue) w = c.Absolute.Width.Value;
 
         if (c.RelativeMin.Width.HasValue) w = Math.Max(w, c.RelativeMin.Width.Value * Parent.ChildrenRect.Width);
         if (c.AbsoluteMin.Width.HasValue) w = Math.Max(w, c.AbsoluteMin.Width.Value);
+        if (c.InnerAbsoluteMin.Width.HasValue) w = Math.Max(w, c.InnerAbsoluteMin.Width.Value + c.InnerRectDiff.FullWidth);
         if (c.MinSize.X.HasValue) w = Math.Max(w, c.MinSize.X.Value);
 
         if (c.RelativeMax.Width.HasValue) w = Math.Min(w, c.RelativeMax.Width.Value * Parent.ChildrenRect.Width);
@@ -89,9 +96,11 @@ namespace CrabUI
         h = 0;
         if (c.Relative.Height.HasValue) h = c.Relative.Height.Value * Parent.ChildrenRect.Height;
         if (c.CrossRelative.Height.HasValue) h = c.CrossRelative.Height.Value * Parent.ChildrenRect.Width;
+        if (c.InnerAbsolute.Height.HasValue) h = c.InnerAbsolute.Height.Value + c.InnerRectDiff.FullHeigth;
         if (c.Absolute.Height.HasValue) h = c.Absolute.Height.Value;
 
         if (c.RelativeMin.Height.HasValue) h = Math.Max(h, c.RelativeMin.Height.Value * Parent.ChildrenRect.Height);
+        if (c.InnerAbsoluteMin.Height.HasValue) h = Math.Max(h, c.InnerAbsoluteMin.Height.Value + c.InnerRectDiff.FullHeigth);
         if (c.AbsoluteMin.Height.HasValue) h = Math.Max(h, c.AbsoluteMin.Height.Value);
         if (c.MinSize.Y.HasValue) h = Math.Max(h, c.MinSize.Y.Value);
 

@@ -55,7 +55,6 @@ namespace CrabUI
           set => Self.MaxSize = value;
         }
 
-
         void Layout.Host.NotifyVisualsRestructured() => Self.VisualRestructureNotifier.Notify();
 
         public override string ToString() => Self.ToString();

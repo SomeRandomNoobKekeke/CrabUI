@@ -22,7 +22,7 @@ namespace CrabUI
     protected override void InitStyle()
     {
       base.InitStyle();
-      InnerAbsoluteMin = new CUINullRect(w: ResizeHandle.DefaultSize.X, h: ResizeHandle.DefaultSize.Y);
+      AbsoluteMin = new CUINullRect(w: ResizeHandle.DefaultSize.X, h: ResizeHandle.DefaultSize.Y);
       Draggable = true;
       CullChildren = true;
       Resizable = true;

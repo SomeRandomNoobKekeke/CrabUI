@@ -19,18 +19,28 @@ namespace CrabUI
 
     public CUITexture2D Add(CUITexture2D texture, string key)
     {
+      if (LoadedTextures.ContainsKey(key))
+      {
+        LoadedTextures[key].Dispose();
+      }
       return LoadedTextures[key] = texture;
     }
 
-    public CUITexture2D Load(string path, string key)
+    public CUITexture2D Load(string path, string key = null)
     {
       if (!File.Exists(path)) return BackupTexture;
+      key ??= path;
+
+      if (LoadedTextures.ContainsKey(key))
+      {
+        return LoadedTextures[key];
+      }
 
       using (FileStream fs = File.OpenRead(path))
       {
-        return Add(new __CUITexture2D(
+        return LoadedTextures[key] = new __CUITexture2D(
           Texture2D.FromStream(GameMain.Instance.GraphicsDevice, fs)
-        ), key);
+        );
       }
     }
 

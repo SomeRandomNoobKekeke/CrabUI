@@ -14,6 +14,13 @@ namespace CrabUI
     public static CUISprite White => new CUISprite(CUITexture2D.White);
     public static CUISprite BaroDev => new CUISprite(CUICore.TextureManager.Get("BaroDev"));
 
+    public static CUISprite Load(string path, string key = null)
+    {
+      return new CUISprite(
+        CUICore.TextureManager.Load(path, key)
+      );
+    }
+
     public CUITexture2D Texture { get; set; }
     public Rectangle? SourceRectangle { get; set; } = null;
     public Color Color { get; set; } = Color.White; // !!!

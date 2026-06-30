@@ -33,13 +33,13 @@ namespace CrabUI
       {
         if (!Focused) return;
 
-        if (CUICore.Instance.Input.Keyboard.IsKeyDown(Keys.LeftControl))
+        if (CUICore.Input.Keyboard.IsKeyDown(Keys.LeftControl))
         {
           HandleCtrlCommand(e.Args.Key);
           return;
         }
 
-        if (CUICore.Instance.Input.Keyboard.IsKeyDown(Keys.LeftShift))
+        if (CUICore.Input.Keyboard.IsKeyDown(Keys.LeftShift))
         {
           HandleShiftCommand(e.Args.Key);
           return;

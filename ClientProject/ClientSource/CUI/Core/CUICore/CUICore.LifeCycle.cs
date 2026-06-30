@@ -25,13 +25,13 @@ namespace CrabUI
         {
           Stopwatch sw = Stopwatch.StartNew();
 
-          Self.Input.Update(totalTime, mouse, keyboard, textInput);
-          Self.EventConstructor.Construct(Self.Input);
+          Self._Input.Update(totalTime, mouse, keyboard, textInput);
+          Self.EventConstructor.Construct(Self._Input);
 
-          Self.TopMain.Update(totalTime, Self.Input);
-          Self.Main.Update(totalTime, Self.Input);
+          Self.TopMain.Update(totalTime, Self._Input);
+          Self.Main.Update(totalTime, Self._Input);
 
-          Self.GlobalFocusTracker.ResolveFocus(Self.Input.SomethingFocusedElsewhere);
+          Self.GlobalFocusTracker.ResolveFocus(Self._Input.SomethingFocusedElsewhere);
 
           OnUpdate.Raise(totalTime);
 

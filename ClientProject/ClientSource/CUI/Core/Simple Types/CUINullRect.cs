@@ -16,6 +16,8 @@ namespace CrabUI
   /// </summary>
   public struct CUINullRect
   {
+    public static CUINullRect One => new CUINullRect(0, 0, 1, 1);
+
     public float? Left;
     public float? Top;
     public float? Width;

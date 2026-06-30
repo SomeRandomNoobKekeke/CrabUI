@@ -30,7 +30,7 @@ namespace CrabUI
 
     public CUIMainComponent Main { get; private set; }
     public CUIMainComponent TopMain { get; private set; }
-    public CUIInput Input { get; } = new();
+    public CUIInput _Input { get; } = new();
     public EventConstructor EventConstructor { get; private set; }
 
 

@@ -24,6 +24,22 @@ namespace CrabUI
     public float FullWidth => Left + Right;
     public float FullHeigth => Top + Bottom;
 
+    public static CUISizes operator +(CUISizes a, CUISizes b)
+      => new CUISizes(
+        a.Left + b.Left,
+        a.Top + b.Top,
+        a.Right + b.Right,
+        a.Bottom + b.Bottom
+      );
+
+    public static CUISizes operator -(CUISizes a, CUISizes b)
+      => new CUISizes(
+        a.Left - b.Left,
+        a.Top - b.Top,
+        a.Right - b.Right,
+        a.Bottom - b.Bottom
+      );
+
     public CUISizes(float left = 0, float top = 0, float right = 0, float bottom = 0)
     {
       Left = left;

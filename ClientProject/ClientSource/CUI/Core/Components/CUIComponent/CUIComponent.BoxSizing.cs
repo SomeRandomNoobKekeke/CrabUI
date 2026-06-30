@@ -12,13 +12,45 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-    public CUISizes Margin { get; set; }
-    public CUISizes Padding { get; set; }
-    public CUISizes BorderSizes
+    private CUISizes _Margin; public CUISizes Margin
+    {
+      get => _Margin;
+      set
+      {
+        _Margin = value;
+        UpdateSizeDiffs();
+      }
+    }
+
+    private CUISizes _Padding; public CUISizes Padding
+    {
+      get => _Padding;
+      set
+      {
+        _Padding = value;
+        UpdateSizeDiffs();
+      }
+    }
+
+    public CUISizes Border
     {
       get => Borders.Sizes;
-      set => Borders.Sizes = value;
+      set
+      {
+        Borders.Sizes = value;
+        UpdateSizeDiffs();
+      }
     }
+
+    private void UpdateSizeDiffs()
+    {
+      ChildRectDiff = Margin + Border + Padding;
+      InnerRectDiff = Margin + Border;
+    }
+
+    public CUISizes ChildRectDiff { get; private set; }
+    public CUISizes InnerRectDiff { get; private set; }
+
 
     private CUIRect _OuterRect; public CUIRect OuterRect
     {
@@ -27,7 +59,7 @@ namespace CrabUI
       {
         _OuterRect = value;
         _Rect = _OuterRect - Margin;
-        _InnerRect = _Rect - BorderSizes;
+        _InnerRect = _Rect - Border;
         _ChildrenRect = _InnerRect - Padding;
 
         UpdateRects();
@@ -40,7 +72,7 @@ namespace CrabUI
       set
       {
         _Rect = value;
-        _InnerRect = _Rect - BorderSizes;
+        _InnerRect = _Rect - Border;
         _ChildrenRect = _InnerRect - Padding;
         _OuterRect = _Rect + Margin;
 
@@ -55,7 +87,7 @@ namespace CrabUI
       {
         _InnerRect = value;
         _ChildrenRect = _InnerRect - Padding;
-        _Rect = _InnerRect + BorderSizes;
+        _Rect = _InnerRect + Border;
         _OuterRect = _Rect + Margin;
 
         UpdateRects();
@@ -69,7 +101,7 @@ namespace CrabUI
       {
         _ChildrenRect = value;
         _InnerRect = _ChildrenRect + Padding;
-        _Rect = _InnerRect + BorderSizes;
+        _Rect = _InnerRect + Border;
         _OuterRect = _Rect + Margin;
 
         UpdateRects();

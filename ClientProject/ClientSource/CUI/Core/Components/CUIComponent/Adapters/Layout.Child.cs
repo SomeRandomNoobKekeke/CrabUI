@@ -63,9 +63,7 @@ namespace CrabUI
         int CUIGridLayout.Child.GridRow => Self.GridRow;
         int CUIGridLayout.Child.GridColumn => Self.GridColumn;
 
-        CUISizes PlainLayout.Child.ChildRectDiff => Self.ChildRectDiff;
-        CUISizes PlainLayout.Child.InnerRectDiff => Self.InnerRectDiff;
-
+        CUISizes PlainLayout.Child.OutToChildDiff => Self.OutToChildDiff;
         public override string ToString() => Self.ToString();
       }
     }

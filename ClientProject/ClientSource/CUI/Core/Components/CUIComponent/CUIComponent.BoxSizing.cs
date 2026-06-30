@@ -44,12 +44,11 @@ namespace CrabUI
 
     private void UpdateSizeDiffs()
     {
-      ChildRectDiff = Margin + Border + Padding;
-      InnerRectDiff = Margin + Border;
+      OutToChildDiff = Margin + Border + Padding;
     }
 
-    public CUISizes ChildRectDiff { get; private set; }
-    public CUISizes InnerRectDiff { get; private set; }
+    public CUISizes OutToChildDiff { get; private set; }
+
 
 
     private CUIRect _OuterRect; public CUIRect OuterRect

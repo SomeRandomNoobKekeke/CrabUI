@@ -22,7 +22,7 @@ namespace CrabUIUser
           Caption = { Text = "Borders" },
           Borders = {
             Visible = true,
-            Sizes = new CUISizes(5,5,5,5),
+            Sizes = new CUISizes(1,1,1,1),
           },
         };
 

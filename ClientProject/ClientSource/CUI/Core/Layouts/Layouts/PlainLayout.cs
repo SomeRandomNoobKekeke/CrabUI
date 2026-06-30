@@ -51,63 +51,63 @@ namespace CrabUI
         float x, y, w, h;
 
         x = 0;
-        if (c.Relative.Left.HasValue) x = c.Relative.Left.Value * Parent.InnerRect.Width;
-        if (c.CrossRelative.Left.HasValue) x = c.CrossRelative.Left.Value * Parent.InnerRect.Height;
+        if (c.Relative.Left.HasValue) x = c.Relative.Left.Value * Parent.ChildrenRect.Width;
+        if (c.CrossRelative.Left.HasValue) x = c.CrossRelative.Left.Value * Parent.ChildrenRect.Height;
         if (c.Absolute.Left.HasValue) x = c.Absolute.Left.Value;
 
-        if (c.RelativeMin.Left.HasValue) x = Math.Max(x, c.RelativeMin.Left.Value * Parent.InnerRect.Width);
+        if (c.RelativeMin.Left.HasValue) x = Math.Max(x, c.RelativeMin.Left.Value * Parent.ChildrenRect.Width);
         if (c.AbsoluteMin.Left.HasValue) x = Math.Max(x, c.AbsoluteMin.Left.Value);
 
-        if (c.RelativeMax.Left.HasValue) x = Math.Min(x, c.RelativeMax.Left.Value * Parent.InnerRect.Width);
+        if (c.RelativeMax.Left.HasValue) x = Math.Min(x, c.RelativeMax.Left.Value * Parent.ChildrenRect.Width);
         if (c.AbsoluteMax.Left.HasValue) x = Math.Min(x, c.AbsoluteMax.Left.Value);
 
 
         y = 0;
-        if (c.Relative.Top.HasValue) y = c.Relative.Top.Value * Parent.InnerRect.Height;
-        if (c.CrossRelative.Top.HasValue) y = c.CrossRelative.Top.Value * Parent.InnerRect.Width;
+        if (c.Relative.Top.HasValue) y = c.Relative.Top.Value * Parent.ChildrenRect.Height;
+        if (c.CrossRelative.Top.HasValue) y = c.CrossRelative.Top.Value * Parent.ChildrenRect.Width;
         if (c.Absolute.Top.HasValue) y = c.Absolute.Top.Value;
 
-        if (c.RelativeMin.Top.HasValue) y = Math.Max(y, c.RelativeMin.Top.Value * Parent.InnerRect.Height);
+        if (c.RelativeMin.Top.HasValue) y = Math.Max(y, c.RelativeMin.Top.Value * Parent.ChildrenRect.Height);
         if (c.AbsoluteMin.Top.HasValue) y = Math.Max(y, c.AbsoluteMin.Top.Value);
 
-        if (c.RelativeMax.Top.HasValue) y = Math.Min(y, c.RelativeMax.Top.Value * Parent.InnerRect.Height);
+        if (c.RelativeMax.Top.HasValue) y = Math.Min(y, c.RelativeMax.Top.Value * Parent.ChildrenRect.Height);
         if (c.AbsoluteMax.Top.HasValue) y = Math.Min(y, c.AbsoluteMax.Top.Value);
 
         w = 0;
-        if (c.Relative.Width.HasValue) w = c.Relative.Width.Value * Parent.InnerRect.Width;
-        if (c.CrossRelative.Width.HasValue) w = c.CrossRelative.Width.Value * Parent.InnerRect.Height;
+        if (c.Relative.Width.HasValue) w = c.Relative.Width.Value * Parent.ChildrenRect.Width;
+        if (c.CrossRelative.Width.HasValue) w = c.CrossRelative.Width.Value * Parent.ChildrenRect.Height;
         if (c.Absolute.Width.HasValue) w = c.Absolute.Width.Value;
 
-        if (c.RelativeMin.Width.HasValue) w = Math.Max(w, c.RelativeMin.Width.Value * Parent.InnerRect.Width);
+        if (c.RelativeMin.Width.HasValue) w = Math.Max(w, c.RelativeMin.Width.Value * Parent.ChildrenRect.Width);
         if (c.AbsoluteMin.Width.HasValue) w = Math.Max(w, c.AbsoluteMin.Width.Value);
         if (c.MinSize.X.HasValue) w = Math.Max(w, c.MinSize.X.Value);
 
-        if (c.RelativeMax.Width.HasValue) w = Math.Min(w, c.RelativeMax.Width.Value * Parent.InnerRect.Width);
+        if (c.RelativeMax.Width.HasValue) w = Math.Min(w, c.RelativeMax.Width.Value * Parent.ChildrenRect.Width);
         if (c.AbsoluteMax.Width.HasValue) w = Math.Min(w, c.AbsoluteMax.Width.Value);
         if (c.MaxSize.X.HasValue) w = Math.Min(w, c.MaxSize.X.Value);
 
         h = 0;
-        if (c.Relative.Height.HasValue) h = c.Relative.Height.Value * Parent.InnerRect.Height;
-        if (c.CrossRelative.Height.HasValue) h = c.CrossRelative.Height.Value * Parent.InnerRect.Width;
+        if (c.Relative.Height.HasValue) h = c.Relative.Height.Value * Parent.ChildrenRect.Height;
+        if (c.CrossRelative.Height.HasValue) h = c.CrossRelative.Height.Value * Parent.ChildrenRect.Width;
         if (c.Absolute.Height.HasValue) h = c.Absolute.Height.Value;
 
-        if (c.RelativeMin.Height.HasValue) h = Math.Max(h, c.RelativeMin.Height.Value * Parent.InnerRect.Height);
+        if (c.RelativeMin.Height.HasValue) h = Math.Max(h, c.RelativeMin.Height.Value * Parent.ChildrenRect.Height);
         if (c.AbsoluteMin.Height.HasValue) h = Math.Max(h, c.AbsoluteMin.Height.Value);
         if (c.MinSize.Y.HasValue) h = Math.Max(h, c.MinSize.Y.Value);
 
-        if (c.RelativeMax.Height.HasValue) h = Math.Min(h, c.RelativeMax.Height.Value * Parent.InnerRect.Height);
+        if (c.RelativeMax.Height.HasValue) h = Math.Min(h, c.RelativeMax.Height.Value * Parent.ChildrenRect.Height);
         if (c.AbsoluteMax.Height.HasValue) h = Math.Min(h, c.AbsoluteMax.Height.Value);
         if (c.MaxSize.Y.HasValue) h = Math.Min(h, c.MaxSize.Y.Value);
 
         Vector2 anchorPos = CUIAnchor.ChildPosIn(
-          Parent.InnerRect.Size,
+          Parent.ChildrenRect.Size,
           c.ParentAnchor ?? c.Anchor,
           new Vector2(w, h),
           c.Anchor
         );
 
         c.OuterRect = new CUIRect(
-          anchorPos + new Vector2(x, y) + Parent.InnerRect.LeftTop + Parent.ChildrenOffset,
+          anchorPos + new Vector2(x, y) + Parent.ChildrenRect.LeftTop + Parent.ChildrenOffset,
           new Vector2(w, h)
         );
       }

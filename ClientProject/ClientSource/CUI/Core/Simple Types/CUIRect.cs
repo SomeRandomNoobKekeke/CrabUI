@@ -76,6 +76,22 @@ namespace CrabUI
     }
 
 
+    public static CUIRect operator +(CUIRect rect, CUISizes sizes)
+      => new CUIRect(
+        rect.Left - sizes.Left,
+        rect.Top - sizes.Top,
+        rect.Width + sizes.Left + sizes.Right,
+        rect.Height + sizes.Top + sizes.Bottom
+      );
+
+    public static CUIRect operator -(CUIRect rect, CUISizes sizes)
+      => new CUIRect(
+        rect.Left + sizes.Left,
+        rect.Top + sizes.Top,
+        rect.Width - sizes.Left - sizes.Right,
+        rect.Height - sizes.Top - sizes.Bottom
+      );
+
     public CUIRect(Vector2 size) : this(0, 0, size.X, size.Y) { }
     public CUIRect(Vector2 position, Vector2 size) : this(position.X, position.Y, size.X, size.Y) { }
     public CUIRect(float x, float y, float w, float h)

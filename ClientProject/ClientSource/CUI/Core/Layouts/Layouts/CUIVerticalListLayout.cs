@@ -51,31 +51,31 @@ namespace CrabUI
       foreach (Layout.Child c in Parent.Children)
       {
         //TODO add prop for it
-        float w = Parent.InnerRect.Width;// Resize to host width by default
+        float w = Parent.ChildrenRect.Width;// Resize to host width by default
         float h = 0;
 
-        if (c.Relative.Width.HasValue) w = c.Relative.Width.Value * Parent.InnerRect.Width;
-        if (c.CrossRelative.Width.HasValue) w = c.CrossRelative.Width.Value * Parent.InnerRect.Height;
+        if (c.Relative.Width.HasValue) w = c.Relative.Width.Value * Parent.ChildrenRect.Width;
+        if (c.CrossRelative.Width.HasValue) w = c.CrossRelative.Width.Value * Parent.ChildrenRect.Height;
         if (c.Absolute.Width.HasValue) w = c.Absolute.Width.Value;
 
-        if (c.RelativeMin.Width.HasValue) w = Math.Max(w, c.RelativeMin.Width.Value * Parent.InnerRect.Width);
+        if (c.RelativeMin.Width.HasValue) w = Math.Max(w, c.RelativeMin.Width.Value * Parent.ChildrenRect.Width);
         if (c.AbsoluteMin.Width.HasValue) w = Math.Max(w, c.AbsoluteMin.Width.Value);
         if (c.MinSize.X.HasValue) w = Math.Max(w, c.MinSize.X.Value);
 
-        if (c.RelativeMax.Width.HasValue) w = Math.Min(w, c.RelativeMax.Width.Value * Parent.InnerRect.Width);
+        if (c.RelativeMax.Width.HasValue) w = Math.Min(w, c.RelativeMax.Width.Value * Parent.ChildrenRect.Width);
         if (c.AbsoluteMax.Width.HasValue) w = Math.Min(w, c.AbsoluteMax.Width.Value);
         if (c.MaxSize.X.HasValue) w = Math.Min(w, c.MaxSize.X.Value);
 
 
-        if (c.Relative.Height.HasValue) h = c.Relative.Height.Value * Parent.InnerRect.Height;
-        if (c.CrossRelative.Height.HasValue) h = c.CrossRelative.Height.Value * Parent.InnerRect.Width;
+        if (c.Relative.Height.HasValue) h = c.Relative.Height.Value * Parent.ChildrenRect.Height;
+        if (c.CrossRelative.Height.HasValue) h = c.CrossRelative.Height.Value * Parent.ChildrenRect.Width;
         if (c.Absolute.Height.HasValue) h = c.Absolute.Height.Value;
 
-        if (c.RelativeMin.Height.HasValue) h = Math.Max(h, c.RelativeMin.Height.Value * Parent.InnerRect.Height);
+        if (c.RelativeMin.Height.HasValue) h = Math.Max(h, c.RelativeMin.Height.Value * Parent.ChildrenRect.Height);
         if (c.AbsoluteMin.Height.HasValue) h = Math.Max(h, c.AbsoluteMin.Height.Value);
         if (c.MinSize.Y.HasValue) h = Math.Max(h, c.MinSize.Y.Value);
 
-        if (c.RelativeMax.Height.HasValue) h = Math.Min(h, c.RelativeMax.Height.Value * Parent.InnerRect.Height);
+        if (c.RelativeMax.Height.HasValue) h = Math.Min(h, c.RelativeMax.Height.Value * Parent.ChildrenRect.Height);
         if (c.AbsoluteMax.Height.HasValue) h = Math.Min(h, c.AbsoluteMax.Height.Value);
         if (c.MaxSize.Y.HasValue) h = Math.Min(h, c.MaxSize.Y.Value);
 
@@ -97,7 +97,7 @@ namespace CrabUI
         }
       }
 
-      float emptySpace = Parent.InnerRect.Height - TotalHeight;
+      float emptySpace = Parent.ChildrenRect.Height - TotalHeight;
       float totalFlex = resizables.Sum(size => size.Child.Flex.Value);
       foreach (ChildSize size in resizables)
       {
@@ -111,8 +111,8 @@ namespace CrabUI
         foreach (ChildSize c in sizes)
         {
           c.Child.OuterRect = new CUIRect(
-            Parent.InnerRect.Left + 0 + Parent.ChildrenOffset.X,
-            Parent.InnerRect.Top + y + Parent.ChildrenOffset.Y,
+            Parent.ChildrenRect.Left + 0 + Parent.ChildrenOffset.X,
+            Parent.ChildrenRect.Top + y + Parent.ChildrenOffset.Y,
             c.Width,
             c.Height
           );
@@ -123,14 +123,14 @@ namespace CrabUI
 
       if (Parent.Direction == CUIDirection.Reverse)
       {
-        float y = Parent.InnerRect.Height;
+        float y = Parent.ChildrenRect.Height;
         foreach (ChildSize c in sizes)
         {
           y -= c.Height;
 
           c.Child.OuterRect = new CUIRect(
-            Parent.InnerRect.Left + 0 + Parent.ChildrenOffset.X,
-            Parent.InnerRect.Top + y + Parent.ChildrenOffset.Y,
+            Parent.ChildrenRect.Left + 0 + Parent.ChildrenOffset.X,
+            Parent.ChildrenRect.Top + y + Parent.ChildrenOffset.Y,
             c.Width,
             c.Height
           );

@@ -66,13 +66,13 @@ namespace CrabUI
       List<CUISegment> RealRowSizes = new();
       List<CUISegment> RealColumnSizes = new();
 
-      float y = Parent.InnerRect.Top;
-      float fry = Parent.InnerRect.Height / Parent.RowSizes.Where(l => l.Fraction.HasValue).Sum(l => l.Fraction.Value);
+      float y = Parent.ChildrenRect.Top;
+      float fry = Parent.ChildrenRect.Height / Parent.RowSizes.Where(l => l.Fraction.HasValue).Sum(l => l.Fraction.Value);
       foreach (Line line in Parent.RowSizes)
       {
         float size = 0;
         if (line.Fraction.HasValue) size = fry * line.Fraction.Value;
-        if (line.RelativeSize.HasValue) size = Parent.InnerRect.Height * line.RelativeSize.Value;
+        if (line.RelativeSize.HasValue) size = Parent.ChildrenRect.Height * line.RelativeSize.Value;
         if (line.AbsoluteSize.HasValue) size = line.AbsoluteSize.Value;
 
         RealRowSizes.Add(new CUISegment() { Left = y, Width = size });
@@ -81,13 +81,13 @@ namespace CrabUI
       }
 
 
-      float x = Parent.InnerRect.Left;
-      float frx = Parent.InnerRect.Width / Parent.ColumnSizes.Where(l => l.Fraction.HasValue).Sum(l => l.Fraction.Value);
+      float x = Parent.ChildrenRect.Left;
+      float frx = Parent.ChildrenRect.Width / Parent.ColumnSizes.Where(l => l.Fraction.HasValue).Sum(l => l.Fraction.Value);
       foreach (Line line in Parent.ColumnSizes)
       {
         float size = 0;
         if (line.Fraction.HasValue) size = frx * line.Fraction.Value;
-        if (line.RelativeSize.HasValue) size = Parent.InnerRect.Width * line.RelativeSize.Value;
+        if (line.RelativeSize.HasValue) size = Parent.ChildrenRect.Width * line.RelativeSize.Value;
         if (line.AbsoluteSize.HasValue) size = line.AbsoluteSize.Value;
 
         RealColumnSizes.Add(new CUISegment() { Left = x, Width = size });

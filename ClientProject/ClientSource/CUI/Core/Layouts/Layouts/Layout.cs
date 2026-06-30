@@ -20,9 +20,11 @@ namespace CrabUI
       public IReadOnlyList<Child> Children { get; }
       public Vector2 ChildrenOffset { get; }
       public bool CullChildren { get; }
+
+
       public CUIRect Rect { get; set; }
       public CUIRect OuterRect { get; set; }
-      public CUIRect InnerRect { get; }
+      public CUIRect ChildrenRect { get; }
 
       public CUIBool2 FitContent { get; }
 
@@ -35,7 +37,7 @@ namespace CrabUI
     {
       public CUIRect Rect { get; set; }
       public CUIRect OuterRect { get; set; }
-      public CUIRect InnerRect { get; }
+      public CUIRect ChildrenRect { get; }
 
       public bool CulledOut { get; set; }
 

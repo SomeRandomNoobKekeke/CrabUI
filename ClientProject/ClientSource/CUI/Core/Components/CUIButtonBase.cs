@@ -77,7 +77,7 @@ namespace CrabUI
     protected override void UpdateRects()
     {
       base.UpdateRects();
-      TextBlock.Rect = InnerRect;
+      TextBlock.Rect = ChildrenRect;
     }
 
     [CUISerializable]

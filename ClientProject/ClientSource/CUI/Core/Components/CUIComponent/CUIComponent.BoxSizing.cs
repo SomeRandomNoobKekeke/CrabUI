@@ -14,14 +14,11 @@ namespace CrabUI
   {
     public CUISizes Margin { get; set; }
     public CUISizes Padding { get; set; }
-
-
     public CUISizes BorderSizes
     {
       get => Borders.Sizes;
       set => Borders.Sizes = value;
     }
-
 
     private CUIRect _OuterRect; public CUIRect OuterRect
     {
@@ -29,20 +26,9 @@ namespace CrabUI
       set
       {
         _OuterRect = value;
-
-        _Rect = new CUIRect(
-          _OuterRect.Left + Margin.Left,
-          _OuterRect.Top + Margin.Top,
-          Math.Max(0, _OuterRect.Width - Margin.Left - Margin.Right),
-          Math.Max(0, _OuterRect.Height - Margin.Top - Margin.Bottom)
-        );
-
-        _InnerRect = new CUIRect(
-          _Rect.Left + BorderSizes.Left + Padding.Left,
-          _Rect.Top + BorderSizes.Top + Padding.Top,
-          Math.Max(0, _Rect.Width - Padding.Left - BorderSizes.Left - BorderSizes.Right - Padding.Right),
-          Math.Max(0, _Rect.Height - Padding.Top - BorderSizes.Top - BorderSizes.Bottom - Padding.Bottom)
-        );
+        _Rect = _OuterRect - Margin;
+        _InnerRect = _Rect - BorderSizes;
+        _ChildrenRect = _InnerRect - Padding;
 
         UpdateRects();
       }
@@ -54,20 +40,9 @@ namespace CrabUI
       set
       {
         _Rect = value;
-
-        _InnerRect = new CUIRect(
-         _Rect.Left + BorderSizes.Left + Padding.Left,
-         _Rect.Top + BorderSizes.Top + Padding.Top,
-         Math.Max(0, _Rect.Width - Padding.Left - BorderSizes.Left - BorderSizes.Right - Padding.Right),
-         Math.Max(0, _Rect.Height - Padding.Top - BorderSizes.Top - BorderSizes.Bottom - Padding.Bottom)
-       );
-
-        _OuterRect = new CUIRect(
-          _Rect.Left - Margin.Left,
-          _Rect.Top - Margin.Top,
-          _Rect.Width + Margin.Left + Margin.Right,
-          _Rect.Height + Margin.Top + Margin.Bottom
-        );
+        _InnerRect = _Rect - BorderSizes;
+        _ChildrenRect = _InnerRect - Padding;
+        _OuterRect = _Rect + Margin;
 
         UpdateRects();
       }
@@ -76,7 +51,29 @@ namespace CrabUI
     private CUIRect _InnerRect; public CUIRect InnerRect
     {
       get => _InnerRect;
-      //set;//TODO
+      set
+      {
+        _InnerRect = value;
+        _ChildrenRect = _InnerRect - Padding;
+        _Rect = _InnerRect + BorderSizes;
+        _OuterRect = _Rect + Margin;
+
+        UpdateRects();
+      }
+    }
+
+    private CUIRect _ChildrenRect; public CUIRect ChildrenRect
+    {
+      get => _ChildrenRect;
+      set
+      {
+        _ChildrenRect = value;
+        _InnerRect = _ChildrenRect + Padding;
+        _Rect = _InnerRect + BorderSizes;
+        _OuterRect = _Rect + Margin;
+
+        UpdateRects();
+      }
     }
   }
 }

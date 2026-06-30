@@ -38,9 +38,9 @@ namespace CrabUI
           get => Self.OuterRect;
           set => Self.OuterRect = value;
         }
-        CUIRect Layout.Host.InnerRect
+        CUIRect Layout.Host.ChildrenRect
         {
-          get => Self.InnerRect;
+          get => Self.ChildrenRect;
         }
 
         CUIBool2 Layout.Host.FitContent => Self.LayoutProps.FitContent.Value;

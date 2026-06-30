@@ -68,15 +68,6 @@ namespace CrabUI
         Pattern = LayoutMarker.Pattern.FromParentAndDown,
       };
 
-      public CUILayoutProp<CUINullRect> InnerAbsolute { get; } = new()
-      {
-        Pattern = LayoutMarker.Pattern.FromParentAndDown,
-      };
-
-      public CUILayoutProp<CUINullRect> InnerAbsoluteMin { get; } = new()
-      {
-        Pattern = LayoutMarker.Pattern.FromParentAndDown,
-      };
 
       public CUILayoutProp<Vector2> Anchor { get; } = new()
       {

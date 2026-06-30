@@ -58,18 +58,6 @@ namespace CrabUI
       set => LayoutProps.CrossRelative.Value = value;
     }
     [CUISerializable]
-    public CUINullRect InnerAbsolute
-    {
-      get => LayoutProps.InnerAbsolute.Value;
-      set => LayoutProps.InnerAbsolute.Value = value;
-    }
-    [CUISerializable]
-    public CUINullRect InnerAbsoluteMin
-    {
-      get => LayoutProps.InnerAbsoluteMin.Value;
-      set => LayoutProps.InnerAbsoluteMin.Value = value;
-    }
-    [CUISerializable]
     public Vector2 Anchor
     {
       get => LayoutProps.Anchor.Value;

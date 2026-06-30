@@ -28,8 +28,6 @@ namespace CrabUI
         CUINullRect PlainLayout.Child.RelativeMin => Self.LayoutProps.RelativeMin.Value;
         CUINullRect PlainLayout.Child.RelativeMax => Self.LayoutProps.RelativeMax.Value;
         CUINullRect PlainLayout.Child.CrossRelative => Self.LayoutProps.CrossRelative.Value;
-        CUINullRect PlainLayout.Child.InnerAbsolute => Self.LayoutProps.InnerAbsolute.Value;
-        CUINullRect PlainLayout.Child.InnerAbsoluteMin => Self.LayoutProps.InnerAbsoluteMin.Value;
         Vector2 PlainLayout.Child.Anchor => Self.LayoutProps.Anchor.Value;
         Vector2? PlainLayout.Child.ParentAnchor => Self.LayoutProps.ParentAnchor.Value;
         CUIRect Layout.ChildBase.Rect

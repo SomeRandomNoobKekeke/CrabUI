@@ -26,8 +26,6 @@ namespace CrabUI
       public CUINullRect RelativeMin { get; }
       public CUINullRect RelativeMax { get; }
       public CUINullRect CrossRelative { get; }
-      public CUINullRect InnerAbsolute { get; }
-      public CUINullRect InnerAbsoluteMin { get; }
 
       public CUISizes ChildRectDiff { get; }
       public CUISizes InnerRectDiff { get; }

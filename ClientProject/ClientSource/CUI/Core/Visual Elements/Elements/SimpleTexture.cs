@@ -16,6 +16,17 @@ namespace CrabUI
     // public CUITexture2D Texture { get; set; } = CUITexture2D.White;
     public CUISprite Sprite { get; set; } = CUISprite.White;
 
+    // public bool IgnoretransparentPixels
+    // {
+    //   get;
+    //   set;
+    // }
+
+    // public override bool Contains(Vector2 pos)
+    // {
+    //   return Rect.Contains(pos) && !InnerRect.Contains(pos);
+    // }
+
 
     #region Forwarded to CUISprite
     public CUITexture2D Texture { get => Sprite.Texture; set => Sprite.Texture = value; }

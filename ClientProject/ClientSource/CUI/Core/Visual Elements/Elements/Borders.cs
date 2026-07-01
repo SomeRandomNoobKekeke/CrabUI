@@ -21,6 +21,8 @@ namespace CrabUI
         UpdateRects();
       }
     }
+    public CUIRect InnerRect { get; set; }
+
     public CUISizes Sizes { get; set; }
     public bool Visible { get; set; }
 
@@ -28,9 +30,15 @@ namespace CrabUI
     public CUISprite Sprite { get; set; } = CUISprite.White;
     public Color Color { get => Sprite.Color; set => Sprite.Color = value; }
 
+    public override bool Contains(Vector2 pos)
+    {
+      return Rect.Contains(pos) && !InnerRect.Contains(pos);
+    }
 
     private void UpdateRects()
     {
+      InnerRect = Rect - Sizes;
+
       LeftRect = new Rectangle(
         (int)Rect.Left,
         (int)Rect.Top,

@@ -27,6 +27,18 @@ namespace CrabUI
 
     public bool ShouldBeDisposed { get; set; } = true; //BRUH sneaky
 
+    public Rectangle Bounds => XNATexture.Bounds;
+    public Color[] Data
+    {
+      get
+      {
+        Color[] buff = new Color[Width * Height];
+        GetData(buff);
+        return buff;
+      }
+      set => SetData(value);
+    }
+
     public void SetData(Color[] data) => XNATexture.SetData<Color>(data);
     public void SetData(int level, int arraySlice, Rectangle? rect, Color[] data, int startIndex, int elementCount)
       => XNATexture.SetData<Color>(level, arraySlice, rect, data, startIndex, elementCount);

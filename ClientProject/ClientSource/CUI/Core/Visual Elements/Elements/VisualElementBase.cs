@@ -23,11 +23,16 @@ namespace CrabUI
     public bool Visible { get; set; } = true;
     public abstract CUIRect Rect { get; set; }
     public abstract void Draw(CUISpriteBatch spriteBatch);
+    public virtual bool Contains(Vector2 pos) => Rect.Contains(pos);
 
     public VisualUnit.PrimitiveVisualElement VisualWrapper { get; }
 
     public bool MouseOver { get; set; }
     public bool MousePressed { get; set; }
+
+
+
+    public virtual bool IsPointOnTransparentPixel(Vector2 point) => false;
 
     public bool ConsumeMouseClicks { get; set; }
 

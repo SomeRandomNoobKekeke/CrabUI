@@ -26,6 +26,8 @@ namespace CrabUIUser
           },
         };
 
+        frame.Borders.MouseDown.Add((e) => CUI.Logger.Log("bruh"));
+
         frame["box1"] = new CUIComponent()
         {
           Background = { Color = new Color(0, 0, 255, 255) },

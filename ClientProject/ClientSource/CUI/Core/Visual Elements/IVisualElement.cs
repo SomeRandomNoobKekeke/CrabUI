@@ -13,6 +13,7 @@ namespace CrabUI
   public interface IVisualElement : IAware
   {
     public CUIRect Rect { get; }
+    public bool Contains(Vector2 pos);
     public void Draw(CUISpriteBatch spriteBatch);
   }
 }

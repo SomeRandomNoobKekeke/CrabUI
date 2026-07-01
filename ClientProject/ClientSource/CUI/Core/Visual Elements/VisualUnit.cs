@@ -29,6 +29,8 @@ namespace CrabUI
         set => Element.HostPropName = value;
       }
 
+      public bool Contains(Vector2 pos) => Element.Contains(pos);
+
       public IVisualElement Element;
       public PrimitiveVisualElement(IVisualElement element) => Element = element;
       public override string ToString() => Element.ToString();

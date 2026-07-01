@@ -39,6 +39,8 @@ namespace CrabUI
       public ClearableEvent<CUIKeyReleasedEvent> KeyReleased { get; } = new();
       public ClearableEvent<CUITextInputEvent> TextInput { get; } = new();
       public ClearableEvent<CUIKeyDownInputEvent> KeyDownInput { get; } = new();
+
+      public bool IsPointOnTransparentPixel(Vector2 point) => false;// BRUH
     }
   }
 }

@@ -14,6 +14,7 @@ namespace CrabUI
     public bool MouseOver { get; set; }
     public bool MousePressed { get; set; }
 
+    public bool IsPointOnTransparentPixel(Vector2 point);
 
     public bool ConsumeMouseClicks { get; set; }
 

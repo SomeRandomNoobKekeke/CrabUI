@@ -28,7 +28,7 @@ namespace CrabUI
         switch (flat[i])
         {
           case VisualUnit.PrimitiveVisualElement primitive:
-            if (primitive.Element is IEventConsumer && primitive.Element.Rect.Contains(pos))
+            if (primitive.Element is IEventConsumer && primitive.Element.Contains(pos))
             {
               Targets.Add(primitive.Element as IEventConsumer);
             }

@@ -74,7 +74,10 @@ namespace CrabUI
     {
       return r.Right >= Left && r.Left <= Right && r.Bottom >= Top && r.Top <= Bottom;
     }
-
+    public bool Outside(Vector2 pos)
+    {
+      return pos.X < Left || pos.X > Right || pos.Y < Top || pos.Y > Bottom;
+    }
 
     public static CUIRect operator +(CUIRect rect, CUISizes sizes)
       => new CUIRect(

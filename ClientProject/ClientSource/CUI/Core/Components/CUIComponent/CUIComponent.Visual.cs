@@ -25,6 +25,13 @@ namespace CrabUI
 
     protected bool CulledOut { get; set; }
 
+    [CUISerializable]
+    public bool IgnoretransparentPixels
+    {
+      get => Background.IgnoretransparentPixels;
+      set => Background.IgnoretransparentPixels = value;
+    }
+
 
     protected virtual void UpdateRects()
     {

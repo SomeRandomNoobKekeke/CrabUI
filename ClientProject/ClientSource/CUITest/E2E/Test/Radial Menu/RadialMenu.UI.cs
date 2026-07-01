@@ -39,6 +39,7 @@ namespace CrabUIUser
               Relative = CUINullRect.One,
               Background = { Sprite = CUISprite.Load($"Assets\\PNG\\For testing\\Radial menu\\{i + 1}.png") },
               ConsumeMouseClicks = true,
+              IgnoretransparentPixels = true,
             };
 
             Parts[i].MouseOn += (self, e) => self.Background.Color = Color.Yellow;

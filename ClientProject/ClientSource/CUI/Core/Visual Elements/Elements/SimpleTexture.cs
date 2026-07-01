@@ -13,19 +13,40 @@ namespace CrabUI
   public class SimpleTexture : VisualElementBase
   {
     public override CUIRect Rect { get; set; }
-    // public CUITexture2D Texture { get; set; } = CUITexture2D.White;
-    public CUISprite Sprite { get; set; } = CUISprite.White;
 
-    // public bool IgnoretransparentPixels
-    // {
-    //   get;
-    //   set;
-    // }
+    private CUISprite _Sprite = CUISprite.White; public CUISprite Sprite
+    {
+      get => _Sprite;
+      set
+      {
+        _Sprite = value;
+        _Sprite.ShouldBufferData = IgnoretransparentPixels;
+      }
+    }
 
-    // public override bool Contains(Vector2 pos)
-    // {
-    //   return Rect.Contains(pos) && !InnerRect.Contains(pos);
-    // }
+    /// <summary>
+    /// Source of truth elevated from sprite
+    /// </summary>
+    private bool _IgnoretransparentPixels; public bool IgnoretransparentPixels
+    {
+      get => _IgnoretransparentPixels;
+      set
+      {
+        _IgnoretransparentPixels = value;
+        _Sprite.ShouldBufferData = IgnoretransparentPixels;
+      }
+    }
+
+    public override bool Contains(Vector2 pos)
+    {
+      if (IgnoretransparentPixels)
+      {
+        return !Sprite.IsPointOnTransparentPixel(
+          (pos - Rect.Position) / Rect.Size
+        );
+      }
+      return Rect.Contains(pos);
+    }
 
 
     #region Forwarded to CUISprite

@@ -49,6 +49,7 @@ namespace CrabUI
     {
       DataBuffer = ShouldBufferData ? Texture.Data : [];
     }
+
     public bool _ShouldBufferData; public bool ShouldBufferData
     {
       get => _ShouldBufferData;
@@ -63,7 +64,7 @@ namespace CrabUI
     public Color[] Data => ShouldBufferData ? DataBuffer : Texture.Data;
 
 
-
+    /// <param name="point">([0..1], [0..1])</param>
     public bool IsPointOnTransparentPixel(Vector2 point)
     {
       Rectangle SourceRect = SourceRectangle.HasValue ? SourceRectangle.Value : Texture.Bounds;

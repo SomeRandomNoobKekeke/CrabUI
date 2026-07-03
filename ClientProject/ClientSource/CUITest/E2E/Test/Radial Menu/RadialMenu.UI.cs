@@ -30,7 +30,7 @@ namespace CrabUIUser
         {
           Absolute = new CUINullRect(w: 400, h: 400);
           Anchor = CUIAnchor.Center;
-          Background.Color = Color.Pink;
+          // Background.Color = Color.Pink;
 
           for (int i = 0; i < Parts.Length; i++)
           {

@@ -32,6 +32,7 @@ namespace CrabUI
     public CUIMainComponent TopMain { get; private set; }
     public CUIInput _Input { get; } = new();
     public EventConstructor EventConstructor { get; private set; }
+    public AnimationPlayer _AnimationPlayer { get; private set; }
 
 
 
@@ -71,6 +72,7 @@ namespace CrabUI
       _Activated = true;
 
       EventConstructor = new();
+      _AnimationPlayer = new();
 
       Main = new() { EventConstructor = EventConstructor };
       TopMain = new() { EventConstructor = EventConstructor };

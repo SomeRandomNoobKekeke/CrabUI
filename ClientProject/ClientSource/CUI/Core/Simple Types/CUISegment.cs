@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Graphics;
 namespace CrabUI
 {
 
-  public class CUISegment
+  public struct CUISegment
   {
     private float _Left; public float Left
     {
@@ -43,6 +43,13 @@ namespace CrabUI
       }
     }
 
+
+    public CUISegment(float left, float right)
+    {
+      _Left = left;
+      _Right = right;
+      _Width = Right - Left;
+    }
     public override string ToString() => $"[{Left},{Right}]";
   }
 }

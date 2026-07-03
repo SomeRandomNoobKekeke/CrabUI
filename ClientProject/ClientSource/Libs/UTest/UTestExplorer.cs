@@ -29,6 +29,7 @@ namespace BaroJunk
     {
       get
       {
+        //BRUH it's sneaky, ScanAssembly happens here
         if (testTree is null) testTree = new UTestTree();
         return testTree;
       }

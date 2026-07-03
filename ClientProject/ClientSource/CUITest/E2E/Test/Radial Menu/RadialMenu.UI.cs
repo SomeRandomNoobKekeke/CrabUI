@@ -34,21 +34,32 @@ namespace CrabUIUser
 
           for (int i = 0; i < Parts.Length; i++)
           {
-            Parts[i] = new CUIComponent()
+            CUIComponent part = Parts[i] = new CUIComponent()
             {
               Relative = CUINullRect.One,
-              Background = { Sprite = CUISprite.Load($"Assets\\PNG\\For testing\\Radial menu\\{i + 1}.png") },
+              Background = {
+                Sprite = CUISprite.Load($"Assets\\PNG\\For testing\\Radial menu\\{i + 1}.png"),
+                Color = Color.Gray,
+              },
               ConsumeMouseClicks = true,
               IgnoretransparentPixels = true,
             };
 
-            Parts[i].MouseOn += (self, e) => self.Background.Color = Color.Yellow;
-            Parts[i].MouseOff += (self, e) => self.Background.Color = Color.Pink;
+            TypedAnimation<Color> animation = new TypedAnimation<Color>()
+            {
+              Duration = 1.0,
+              StartValue = Color.Gray,
+              EndValue = Color.White,
+              OnChanged = (cl) => part.Background.Color = cl,
+            };
+
+            part.MouseEnter += (self, e) => animation.RunForward();
+            part.MouseLeave += (self, e) => animation.RunBackward();
 
             int bruh = i + 1;
-            Parts[i].MouseDown += (c, e) => ExecuteCommand($"run script {bruh}");
+            part.MouseDown += (c, e) => ExecuteCommand($"run script {bruh}");
 
-            this[$"part {i + 1}"] = Parts[i];
+            this[$"part {i + 1}"] = part;
           }
 
 

@@ -7,23 +7,26 @@ using BaroJunk;
 
 namespace CrabUI
 {
-  public partial class TypedAnimation<T>
+  public class TypedAnimation<T> : AnimationCore
   {
-    private AnimationCore Core { get; } = new();
-
     public T StartValue { get; set; }
     public T EndValue { get; set; }
 
     private Func<T, T, double, T> LerpFunc;
 
-    public T Value => LerpFunc(StartValue, EndValue, Core.Lambda);
+    public T Value => LerpFunc(StartValue, EndValue, Lambda);
+
+    public Action<T> OnChanged { set { Changed += value; } }
     public event Action<T> Changed;
 
 
     public TypedAnimation()
     {
-      LerpFunc = (Func<T, T, double, T>)ValueLerpFuncs.Mapping[typeof(T)];
-      Core.Updated += (l) => Changed?.Invoke(Value);
+      LerpFunc = ValueLerpFuncs.Get<T>();
+      Updated += (l) =>
+      {
+        Changed?.Invoke(Value);
+      };
     }
   }
 }

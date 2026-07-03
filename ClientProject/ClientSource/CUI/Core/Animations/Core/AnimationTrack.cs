@@ -10,7 +10,7 @@ namespace CrabUI
 {
   public struct AnimationTrack
   {
-    public static double UpdateStep => CUICore.AnimationPlayer.UpdateStep;
+    public static double UpdateStepDuration => CUICore.AnimationPlayer.UpdateStepDuration;
 
     /// <summary>
     /// 0..1 - segment
@@ -20,22 +20,27 @@ namespace CrabUI
     /// </summary>
     public double Duration
     {
-      get => UpdateStep / _Speed;
-      set => _Speed = UpdateStep / Duration;
+      get => UpdateStepDuration / _Speed;
+      set => _Speed = UpdateStepDuration / value;
     }
 
-    private Func<double, double> _Func = f => f; public Func<double, double> Func
+    private Func<double, double> _Func; public Func<double, double> Func
     {
       get => _Func;
       init => _Func = value is not null ? value : throw new ArgumentNullException(nameof(Func));
     }
-    private double _Speed = 0.1f; public double Speed
+    private double _Speed; public double Speed
     {
       get => _Speed;
       init => _Speed = Math.Max(0, value);
     }
-    public ActionOnTrackEnd OnEnd { get; init; } = ActionOnTrackEnd.Stop;
+    public ActionOnTrackEnd OnEnd { get; init; }
 
-    public AnimationTrack() { }
+    public AnimationTrack()
+    {
+      _Func = f => f;
+      _Speed = 0.1f;
+      OnEnd = ActionOnTrackEnd.Stop;
+    }
   }
 }

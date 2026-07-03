@@ -33,6 +33,8 @@ namespace CrabUI
 
           Self.GlobalFocusTracker.ResolveFocus(Self._Input.SomethingFocusedElsewhere);
 
+          Self._AnimationPlayer.Update();
+
           OnUpdate.Raise(totalTime);
 
           sw.Stop();

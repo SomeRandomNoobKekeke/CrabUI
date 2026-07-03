@@ -10,7 +10,7 @@ namespace CrabUI
 {
   public class AnimationPlayer
   {
-    public double UpdateStep { get; set; } = Timing.Step;
+    public double UpdateStepDuration { get; set; } = Timing.Step;
 
     private HashSet<AnimationCore> RunningAnimations = new();
     public void Update()

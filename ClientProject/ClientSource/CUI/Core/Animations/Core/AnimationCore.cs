@@ -15,16 +15,18 @@ namespace CrabUI
     public double Lambda => CurrentTrack.Func(Pointer);
 
     public AnimationDirection Direction { get; set; }
-    public AnimationTrack Forward { get; set; }
-    public AnimationTrack Backward { get; set; }
+    public AnimationTrack Forward { get; set; } = new();
+    public AnimationTrack Backward { get; set; } = new();
 
     public double Duration
     {
       get => Forward.Duration;
       set
       {
+        CUI.Logger.Log($"-> {value}");
         Forward = Forward with { Duration = value };
         Backward = Backward with { Duration = value };
+        CUI.Logger.LogVars(Forward.Duration);
       }
     }
 
@@ -74,19 +76,24 @@ namespace CrabUI
       get => _IsRunning;
       set
       {
-        if (_IsRunning == value) return;
-        _IsRunning = value;
-        if (_IsRunning) Start(); else Stop();
+        if (value) Start(); else Stop();
       }
     }
 
+    public Action OnEnded { set { Ended += value; } }
     public event Action Ended;
+
+    public Action OnStarted { set { Started += value; } }
     public event Action Started;
+
+    public Action<double> OnUpdated { set { Updated += value; } }
     public event Action<double> Updated;
 
     public void Start()
     {
       if (IsRunning) return;
+      _IsRunning = true;
+
       CUICore.AnimationPlayer.AddToRunning(this);
       Started?.Invoke();
     }
@@ -94,9 +101,24 @@ namespace CrabUI
     public void Stop()
     {
       if (!IsRunning) return;
+      _IsRunning = false;
+
       CUICore.AnimationPlayer.RemoveFromRunning(this);
       Ended?.Invoke();
     }
+
+    public void RunForward()
+    {
+      Direction = AnimationDirection.Forward;
+      Start();
+    }
+
+    public void RunBackward()
+    {
+      Direction = AnimationDirection.Backward;
+      Start();
+    }
+
 
     public void Update()
     {
@@ -127,6 +149,7 @@ namespace CrabUI
 
         if (CurrentTrack.OnEnd == ActionOnTrackEnd.Bounce)
         {
+          Pointer = EndPoint;
           Direction = OtherDirection;
         }
       }

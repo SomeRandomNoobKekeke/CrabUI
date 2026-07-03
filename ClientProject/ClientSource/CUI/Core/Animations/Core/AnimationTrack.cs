@@ -8,7 +8,7 @@ using Barotrauma;
 
 namespace CrabUI
 {
-  public struct AnimationTrack
+  public class AnimationTrack
   {
     public static double UpdateStepDuration => CUICore.AnimationPlayer.UpdateStepDuration;
 
@@ -24,23 +24,16 @@ namespace CrabUI
       set => _Speed = UpdateStepDuration / value;
     }
 
-    private Func<double, double> _Func; public Func<double, double> Func
+    private Func<double, double> _Func = f => f; public Func<double, double> Func
     {
       get => _Func;
-      init => _Func = value is not null ? value : throw new ArgumentNullException(nameof(Func));
+      set => _Func = value is not null ? value : throw new ArgumentNullException(nameof(Func));
     }
-    private double _Speed; public double Speed
+    private double _Speed = 0.1f; public double Speed
     {
       get => _Speed;
-      init => _Speed = Math.Max(0, value);
+      set => _Speed = Math.Max(0, value);
     }
-    public ActionOnTrackEnd OnEnd { get; init; }
-
-    public AnimationTrack()
-    {
-      _Func = f => f;
-      _Speed = 0.1f;
-      OnEnd = ActionOnTrackEnd.Stop;
-    }
+    public ActionOnTrackEnd OnEnd { get; set; }
   }
 }

@@ -23,10 +23,8 @@ namespace CrabUI
       get => Forward.Duration;
       set
       {
-        CUI.Logger.Log($"-> {value}");
-        Forward = Forward with { Duration = value };
-        Backward = Backward with { Duration = value };
-        CUI.Logger.LogVars(Forward.Duration);
+        Forward.Duration = value;
+        Backward.Duration = value;
       }
     }
 
@@ -35,8 +33,8 @@ namespace CrabUI
       get => Forward.Func;
       set
       {
-        Forward = Forward with { Func = value };
-        Backward = Backward with { Func = (f) => value(PointerBounds.Right - f) };
+        Forward.Func = value;
+        Backward.Func = (f) => value(PointerBounds.Right - f);
       }
     }
     public double Speed
@@ -44,8 +42,8 @@ namespace CrabUI
       get => Forward.Speed;
       set
       {
-        Forward = Forward with { Speed = value };
-        Backward = Backward with { Speed = value };
+        Forward.Speed = value;
+        Backward.Speed = value;
       }
     }
     public ActionOnTrackEnd OnEnd
@@ -53,8 +51,8 @@ namespace CrabUI
       get => Forward.OnEnd;
       set
       {
-        Forward = Forward with { OnEnd = value };
-        Backward = Backward with { OnEnd = value };
+        Forward.OnEnd = value;
+        Backward.OnEnd = value;
       }
     }
 
@@ -89,6 +87,12 @@ namespace CrabUI
     public Action<double> OnUpdated { set { Updated += value; } }
     public event Action<double> Updated;
 
+    public void Reset()
+    {
+      Pointer = StartPoint;
+      Direction = AnimationDirection.Forward;
+    }
+
     public void Start()
     {
       if (IsRunning) return;
@@ -116,6 +120,20 @@ namespace CrabUI
     public void RunBackward()
     {
       Direction = AnimationDirection.Backward;
+      Start();
+    }
+
+    public void RunFromStart()
+    {
+      Direction = AnimationDirection.Forward;
+      Pointer = StartPoint;
+      Start();
+    }
+
+    public void RunFromEnd()
+    {
+      Direction = AnimationDirection.Backward;
+      Pointer = StartPoint;
       Start();
     }
 

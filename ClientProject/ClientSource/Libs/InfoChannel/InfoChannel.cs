@@ -5,7 +5,9 @@ using System.Reflection;
 using System.Diagnostics;
 namespace CrabUI
 {
-
+  /// <summary>
+  /// unused, one of many DebugNode predecessors
+  /// </summary>
   public class InfoChannel : InfoChannelBase
   {
     new public void Send() => base.Send();

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Diagnostics;
 using Barotrauma;
+using Barotrauma.LuaCs;
 namespace BaroJunk
 {
   public class UTestCommands
@@ -50,7 +51,7 @@ namespace BaroJunk
                   ptable.ReturnValue = true;
                   ptable.PreventExecution = true;
                 }
-      
+
                 return null;
               }
       );

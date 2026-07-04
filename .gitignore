@@ -3,8 +3,8 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
+Docs/Generated
 Ignore
-Docs
 Generated Docs
 __Generated
 Test Data

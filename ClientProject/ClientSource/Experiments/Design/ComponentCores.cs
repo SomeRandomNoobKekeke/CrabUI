@@ -11,7 +11,7 @@ namespace CrabUIUser
 {
 
   /// <summary>
-  /// Testing Component core conceipt
+  /// Testing Component core concept
   /// Idea is to put all the logic in cores and make outer component just a wrapper with forwarded prop for the user
   /// User is not supposed to access the core
   /// 

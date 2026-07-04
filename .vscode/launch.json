@@ -5,12 +5,18 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Attach to ClearScript V8 on port 9222",
-      "type": "node",
-      "request": "attach",
-      "protocol": "inspector",
-      "address": "localhost",
-      "port": 9222
+      "name": "Generate Docs",
+      "type": "f5anything",
+      "request": "launch",
+      "command": "doxygen Doxyfile"
     }
+    // {
+    //   "name": "Attach to ClearScript V8 on port 9222",
+    //   "type": "node",
+    //   "request": "attach",
+    //   "protocol": "inspector",
+    //   "address": "localhost",
+    //   "port": 9222
+    // }
   ]
 }

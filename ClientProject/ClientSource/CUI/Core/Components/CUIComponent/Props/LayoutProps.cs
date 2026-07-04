@@ -80,6 +80,7 @@ namespace CrabUI
         Pattern = LayoutMarker.Pattern.FromParentAndDown,
       };
 
+      //TODO wait, isn't i List specific prop? why is it here?
       public CUILayoutProp<CUIDirection> Direction { get; } = new()
       {
         Pattern = LayoutMarker.Pattern.FromParentAndDown,

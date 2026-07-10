@@ -9,21 +9,18 @@ using BaroJunk;
 
 namespace CrabUI
 {
-  /// <summary>
-  /// Exposes all you need to know about CUI types
-  /// </summary>
-  public class CUIComponentTypeManager
+  public class CUITypeAnalyzer
   {
     public Dictionary<Type, CUIComponentInfo> Infos { get; } = new();
-    public CUIComponentAnalyzer Analyzer { get; } = new();
+    public CUIComponentAnalyzer CUIComponentAnalyzer { get; } = new();
     public CUITypeTree TypeTree { get; } = new();
 
-    public bool IsComponentType(Type T) => Analyzer.IsComponentType(T);
+    public bool IsComponentType(Type T) => CUIComponentAnalyzer.IsComponentType(T);
 
     public Type GetType(string name) => TypeTree.TypesByName.GetValueOrDefault(name);
     public CUIComponentInfo GetInfo(Type T)
     {
-      if (!Infos.ContainsKey(T)) Infos[T] = Analyzer.Analyze(T);
+      if (!Infos.ContainsKey(T)) Infos[T] = CUIComponentAnalyzer.Analyze(T);
       return Infos[T];
     }
 
@@ -32,11 +29,11 @@ namespace CrabUI
     public void AnalyzeAssembly(Assembly assembly)
     {
       Stopwatch sw = Stopwatch.StartNew();
-      IEnumerable<Type> types = Analyzer.FindAllComponentTypesInAssembly(assembly);
+      IEnumerable<Type> types = CUIComponentAnalyzer.FindAllComponentTypesInAssembly(assembly);
 
       foreach (Type T in types)
       {
-        Infos[T] = Analyzer.Analyze(T);
+        Infos[T] = CUIComponentAnalyzer.Analyze(T);
       }
 
       TypeTree.Add(types);

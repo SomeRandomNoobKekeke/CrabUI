@@ -42,5 +42,17 @@ namespace CrabUI
 
       return string.Join('.', parts);
     }
+
+    public static IEnumerable<Type> GetTypeChain(Type T, Type rootType)
+    {
+      yield return T;
+
+      Type baseType = T.BaseType;
+      while (baseType != null && baseType.IsAssignableTo(rootType))
+      {
+        yield return baseType;
+        baseType = baseType.BaseType;
+      }
+    }
   }
 }

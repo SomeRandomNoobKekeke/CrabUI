@@ -9,7 +9,7 @@ using BaroJunk;
 
 namespace CrabUI
 {
-  public class CUITypeAnalyzer
+  public class CUIAssemblyAnalyzer
   {
     public Dictionary<Type, CUIComponentInfo> Infos { get; } = new();
     public CUIComponentAnalyzer CUIComponentAnalyzer { get; } = new();

@@ -5,9 +5,9 @@ using System.Reflection;
 
 namespace CrabUI
 {
-  public class CUIStyleManager(CUITypeAnalyzer typeManager)
+  public class CUIStyleManager(CUIAssemblyAnalyzer typeManager)
   {
-    public CUITypeAnalyzer TypeManager { get; } = typeManager;
+    public CUIAssemblyAnalyzer TypeManager { get; } = typeManager;
 
     /// <summary>
     /// Cheap and hacky

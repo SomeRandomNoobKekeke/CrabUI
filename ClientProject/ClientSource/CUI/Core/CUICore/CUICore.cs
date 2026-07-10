@@ -14,7 +14,7 @@ namespace CrabUI
     public class Part : IPart { public CUICore Self { get; set; } }
 
     public SimpleParser Parser { get; } = new();
-    public CUITypeAnalyzer CUITypeAnalyzer { get; }
+    public CUIAssemblyAnalyzer CUIAssemblyAnalyzer { get; }
     public CUIStyleManager CUIStyleManager { get; }
     public CUIPaletteManager CUIPaletteManager { get; }
 
@@ -48,15 +48,15 @@ namespace CrabUI
 
       Parser.OnError.Add(e => CUI.Logger.Warning(e));
 
-      CUITypeAnalyzer = new();
+      CUIAssemblyAnalyzer = new();
       //TODO different runners should analyze different assemblies, perhaps it doesn't belong here
-      CUITypeAnalyzer.AnalyzeAssembly(Assembly.GetExecutingAssembly());
+      CUIAssemblyAnalyzer.AnalyzeAssembly(Assembly.GetExecutingAssembly());
 
-      CUIStyleManager = new(CUITypeAnalyzer);
+      CUIStyleManager = new(CUIAssemblyAnalyzer);
       CUIPaletteManager = new();
 
       //TODO i probably want to go in base->derived order here
-      foreach (CUIComponentInfo info in CUITypeAnalyzer.Infos.Values)
+      foreach (CUIComponentInfo info in CUIAssemblyAnalyzer.Infos.Values)
       {
         if (info.DefaultStyle is not null)
         {

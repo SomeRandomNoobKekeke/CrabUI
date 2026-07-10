@@ -31,6 +31,7 @@ namespace CrabUI
 
     public void AnalyzeAssembly(Assembly assembly)
     {
+      Stopwatch sw = Stopwatch.StartNew();
       IEnumerable<Type> types = Analyzer.FindAllComponentTypesInAssembly(assembly);
 
       foreach (Type T in types)
@@ -39,6 +40,9 @@ namespace CrabUI
       }
 
       TypeTree.Add(types);
+
+      sw.Stop();
+      // CUI.Logger.Log($"Analyzed in {sw.ElapsedMilliseconds}");
     }
   }
 }

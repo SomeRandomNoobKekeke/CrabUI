@@ -81,7 +81,7 @@ namespace CrabUI
       UpdateVisualState();
     }
 
-    [CUISerializable]
+    [CUISerializableProp]
     public virtual bool Visible
     {
       get => Background.Visible;

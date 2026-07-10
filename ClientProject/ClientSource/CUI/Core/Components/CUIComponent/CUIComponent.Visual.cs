@@ -18,14 +18,14 @@ namespace CrabUI
 
 
 
-    [CUISerializable]
+    [CUISerializableProp]
     public bool Displayed { get; set; } = true;
 
 
 
     protected bool CulledOut { get; set; }
 
-    [CUISerializable]
+    [CUISerializableProp]
     public bool IgnoretransparentPixels
     {
       get => Background.IgnoretransparentPixels;
@@ -56,7 +56,7 @@ namespace CrabUI
     }
     protected VisualBounds VisualBounds { get; } = new();
 
-    [CUISerializable] //TODO will this just magically work?
+    [CUISerializableProp] //TODO will this just magically work?
     public virtual bool Visible
     {
       get => Background.Visible;

@@ -21,9 +21,9 @@ namespace CrabUI
     public void Clear() => RemoveAllChildren();
     public void Add(CUIComponent child) => Append(child);
 
-    [CUISerializable]
+    [CUISerializableProp]
     public bool Scrollable { get; set; }
-    [CUISerializable]
+    [CUISerializableProp]
     public float TopGap { get; set; }
     public float BottomGap { get; set; }
 

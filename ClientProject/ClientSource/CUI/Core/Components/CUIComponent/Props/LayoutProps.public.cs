@@ -13,69 +13,69 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-    [CUISerializable]
+    [CUISerializableProp]
     public CUINullRect Absolute
     {
       get => LayoutProps.Absolute.Value;
       set => LayoutProps.Absolute.Value = value;
     }
-    [CUISerializable]
+    [CUISerializableProp]
     public CUINullRect AbsoluteMin
     {
       get => LayoutProps.AbsoluteMin.Value;
       set => LayoutProps.AbsoluteMin.Value = value;
     }
 
-    [CUISerializable]
+    [CUISerializableProp]
     public CUINullRect AbsoluteMax
     {
       get => LayoutProps.AbsoluteMax.Value;
       set => LayoutProps.AbsoluteMax.Value = value;
     }
 
-    [CUISerializable]
+    [CUISerializableProp]
     public CUINullRect Relative
     {
       get => LayoutProps.Relative.Value;
       set => LayoutProps.Relative.Value = value;
     }
-    [CUISerializable]
+    [CUISerializableProp]
     public CUINullRect RelativeMin
     {
       get => LayoutProps.RelativeMin.Value;
       set => LayoutProps.RelativeMin.Value = value;
     }
-    [CUISerializable]
+    [CUISerializableProp]
     public CUINullRect RelativeMax
     {
       get => LayoutProps.RelativeMax.Value;
       set => LayoutProps.RelativeMax.Value = value;
     }
-    [CUISerializable]
+    [CUISerializableProp]
     public CUINullRect CrossRelative
     {
       get => LayoutProps.CrossRelative.Value;
       set => LayoutProps.CrossRelative.Value = value;
     }
-    [CUISerializable]
+    [CUISerializableProp]
     public Vector2 Anchor
     {
       get => LayoutProps.Anchor.Value;
       set => LayoutProps.Anchor.Value = value;
     }
-    [CUISerializable]
+    [CUISerializableProp]
     public Vector2? ParentAnchor
     {
       get => LayoutProps.ParentAnchor.Value;
       set => LayoutProps.ParentAnchor.Value = value;
     }
-    [CUISerializable]
+    [CUISerializableProp]
     public CUIDirection Direction
     {
       get => LayoutProps.Direction.Value;
       set => LayoutProps.Direction.Value = value;
     }
-    [CUISerializable]
+    [CUISerializableProp]
     public float? Flex
     {
       get => LayoutProps.Flex.Value;
@@ -85,34 +85,34 @@ namespace CrabUI
 
 
 
-    [CUISerializable]
+    [CUISerializableProp]
     public Vector2 ChildrenOffset
     {
       get => LayoutProps.ChildrenOffset.Value;
       set => LayoutProps.ChildrenOffset.Value = value;
     }
-    [CUISerializable]
+    [CUISerializableProp]
     public CUIBoundaries ChildrenOffsetBounds
     {
       get => LayoutProps.ChildrenOffset.Bounds;
       set => LayoutProps.ChildrenOffset.Bounds = value;
     }
 
-    [CUISerializable]
+    [CUISerializableProp]
     public CUIBool2 FitContent
     {
       get => LayoutProps.FitContent.Value;
       set => LayoutProps.FitContent.Value = value;
     }
 
-    [CUISerializable]
+    [CUISerializableProp]
     public int GridRow
     {
       get => LayoutProps.GridRow.Value;
       set => LayoutProps.GridRow.Value = value;
     }
 
-    [CUISerializable]
+    [CUISerializableProp]
     public int GridColumn
     {
       get => LayoutProps.GridColumn.Value;

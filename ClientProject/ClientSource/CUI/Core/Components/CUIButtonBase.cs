@@ -19,7 +19,7 @@ namespace CrabUI
 
     public TextBlock TextBlock { get; } = new();
 
-    [CUISerializable]
+    [CUISerializableProp]
     public string Text
     {
       get => TextBlock.Text;
@@ -80,7 +80,7 @@ namespace CrabUI
       TextBlock.Rect = ChildrenRect;
     }
 
-    [CUISerializable]
+    [CUISerializableProp]
     public override bool Visible
     {
       get => Background.Visible;

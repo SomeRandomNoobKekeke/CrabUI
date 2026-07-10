@@ -9,8 +9,5 @@ using BaroJunk;
 
 namespace CrabUI
 {
-  public interface CUISerializable
-  {
-
-  }
+  public class CUISerializableProp : Attribute { }
 }

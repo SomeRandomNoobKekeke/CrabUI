@@ -12,19 +12,19 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-    [CUISerializable]
+    [CUISerializableProp]
     public bool Draggable
     {
       get => DragHandle.Active;
       set => DragHandle.Active = value;
     }
-    [CUISerializable]
+    [CUISerializableProp]
     public bool Swipeable
     {
       get => SwipeHandle.Active;
       set => SwipeHandle.Active = value;
     }
-    [CUISerializable]
+    [CUISerializableProp]
     public bool Resizable
     {
       get => RightResizeHandle.Displayed;

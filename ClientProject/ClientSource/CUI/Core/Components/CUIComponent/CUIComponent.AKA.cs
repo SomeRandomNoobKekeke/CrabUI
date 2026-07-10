@@ -15,7 +15,7 @@ namespace CrabUI
     /// <summary>
     /// Parent can memorize its children by their names, AKA
     /// </summary>
-    [CUISerializable]
+    [CUISerializableProp]
     public string AKA { get; set; } = "";
 
     /// <summary>

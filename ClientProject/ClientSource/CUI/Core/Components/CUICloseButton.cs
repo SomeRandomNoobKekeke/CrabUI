@@ -55,7 +55,7 @@ namespace CrabUI
       Icon.Rect = Rect;
     }
 
-    [CUISerializable]
+    [CUISerializableProp]
     public override bool Visible
     {
       get => Background.Visible;

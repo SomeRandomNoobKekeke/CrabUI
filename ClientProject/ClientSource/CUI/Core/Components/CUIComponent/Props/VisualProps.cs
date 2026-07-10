@@ -13,7 +13,7 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-    [CUISerializable]
+    [CUISerializableProp]
     public bool CullChildren { get; set; }
 
 

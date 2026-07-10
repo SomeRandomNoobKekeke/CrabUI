@@ -27,7 +27,7 @@ namespace CrabUI
       TextLine.Position = Rect.LeftTop;
     }
 
-    [CUISerializable]
+    [CUISerializableProp]
     public override bool Visible
     {
       get => Background.Visible;

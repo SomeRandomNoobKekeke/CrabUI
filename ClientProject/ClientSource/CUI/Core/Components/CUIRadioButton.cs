@@ -21,10 +21,10 @@ namespace CrabUI
       c.MasterColor = c.Palette.Colors["button"];
     });
 
-    [CUISerializable]
+    [CUISerializableProp]
     public Color OnColor { get; set; } = new Color(0, 255, 255);
 
-    [CUISerializable]
+    [CUISerializableProp]
     public Color OffColor { get; set; } = new Color(0, 0, 255);
 
     private RadioMutex Mutex;

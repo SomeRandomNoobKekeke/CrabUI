@@ -40,7 +40,7 @@ namespace CrabUI
 
       foreach (PropertyInfo pi in componentType.GetProperties(BindingFlags.Public | BindingFlags.Instance))
       {
-        if (pi.GetCustomAttribute<CUISerializable>() != null)
+        if (pi.GetCustomAttribute<CUISerializableProp>() != null)
         {
           info.SerializableProps[pi.Name] = pi;
         }

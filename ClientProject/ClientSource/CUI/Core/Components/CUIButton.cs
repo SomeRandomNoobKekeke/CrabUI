@@ -26,11 +26,11 @@ namespace CrabUI
       Padding = new(4, 2, 4, 2);
     }
 
-    [CUISerializable]
+    [CUISerializableProp]
     public Color MouseOverColor { get; set; } = new Color(0, 0, 140);
-    [CUISerializable]
+    [CUISerializableProp]
     public Color MousePressedColor { get; set; } = new Color(0, 0, 200);
-    [CUISerializable]
+    [CUISerializableProp]
     public Color InactiveColor { get; set; } = new Color(0, 0, 100);
 
     public override Color MasterColor

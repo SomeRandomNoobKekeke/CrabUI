@@ -6,7 +6,7 @@ using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
 using BaroJunk;
-using ComponentGenerator;
+using CUICodeGenerator;
 
 namespace CrabUI
 {

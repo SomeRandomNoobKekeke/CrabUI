@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Diagnostics;
 
-using ComponentGenerator;
+using CUICodeGenerator;
 using BaroJunk;
 
 namespace CrabUI
@@ -28,8 +28,7 @@ namespace CrabUI
       }
     }
 
-    public bool IsComponentType(Type T)
-      => T.IsAssignableTo(typeof(CUIComponent));
+    public bool IsComponentType(Type T) => T.IsAssignableTo(typeof(CUIComponent));
 
     //TODO add a way to use pregenerated infos
     public CUIComponentInfo Analyze(Type componentType)

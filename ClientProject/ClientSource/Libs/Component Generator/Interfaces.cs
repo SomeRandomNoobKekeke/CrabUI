@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Diagnostics;
 using BaroJunk;
-namespace ComponentGenerator
+namespace CUICodeGenerator
 {
 
   public interface IComponent
@@ -30,7 +30,7 @@ namespace ComponentGenerator
       }
       catch (Exception e)
       {
-        Logger.Default.Error($"CI| failed to inject [{this}]\n{e}");
+        Logger.Default.Error($"CG| failed to inject [{this}]\n{e}");
       }
     }
   }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Diagnostics;
 
-using ComponentGenerator;
+using CUICodeGenerator;
 using BaroJunk;
 
 namespace CrabUI
@@ -14,11 +14,11 @@ namespace CrabUI
     public Dictionary<Type, Node> Nodes { get; } = new();
     public Dictionary<string, Type> TypesByName { get; } = new();
 
-    public void Add(Type T)
-    {
-      Nodes[T] = new Node(T);
-      TypesByName[T.Name] = T;
-    }
+    // public void Add(Type T)
+    // {
+    //   Nodes[T] = new Node(T);
+    //   TypesByName[T.Name] = T;
+    // }
     public void Add(IEnumerable<Type> types)
     {
       foreach (Type T in types)

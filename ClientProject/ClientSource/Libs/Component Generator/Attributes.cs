@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Diagnostics;
 
-namespace ComponentGenerator
+namespace CUICodeGenerator
 {
   public class InAttribute : Attribute { }
   public class LocalAttribute : Attribute { }

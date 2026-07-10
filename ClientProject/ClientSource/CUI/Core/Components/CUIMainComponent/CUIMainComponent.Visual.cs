@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Diagnostics;
 using Barotrauma;
 using BaroJunk;
-using ComponentGenerator;
+using CUICodeGenerator;
 namespace CrabUI
 {
   public partial class CUIMainComponent

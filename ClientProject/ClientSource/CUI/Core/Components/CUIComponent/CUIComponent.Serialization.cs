@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
-using ComponentGenerator;
+using CUICodeGenerator;
 using BaroJunk;
 using System.Xml;
 using System.Xml.Linq;

@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Diagnostics;
 using Barotrauma;
 using BaroJunk;
-using ComponentGenerator;
+using CUICodeGenerator;
 
 namespace CrabUI
 {
@@ -25,7 +25,7 @@ namespace CrabUI
     protected EventTargets EventTargets { get; } = new();
 
 
-    public EventConstructor EventConstructor { get; set; } // Injected from CUICore //TODO use ComponentGenerator
+    public EventConstructor EventConstructor { get; set; } // Injected from CUICore //TODO use CUICodeGenerator
     public FocusTracker FocusTracker { get; } = new(); //BRUH should this be public?
     public GrabbedHandleTracker GrabbedHandleTracker { get; } = new();  //BRUH should this be public?
 

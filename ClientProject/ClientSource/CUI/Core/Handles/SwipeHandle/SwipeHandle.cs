@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
-using ComponentGenerator;
+using CUICodeGenerator;
 
 namespace CrabUI
 {

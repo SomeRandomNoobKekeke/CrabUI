@@ -7,7 +7,7 @@ using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using ComponentGenerator;
+using CUICodeGenerator;
 using Barotrauma.Extensions;
 
 namespace CrabUI

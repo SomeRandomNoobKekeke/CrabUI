@@ -18,10 +18,14 @@ namespace CrabUI
   /// </summary>
   public struct CUIBoundaries : IParsable
   {
-    public static Func<CUIRect, CUIBoundaries> Free = (Rect) => new CUIBoundaries(null, null, null, null);
-    public static Func<CUIRect, CUIBoundaries> Box = (Rect) => new CUIBoundaries(0, Rect.Width, 0, Rect.Height);
-    public static Func<CUIRect, CUIBoundaries> HorizontalTube = (Rect) => new CUIBoundaries(null, null, 0, Rect.Height);
-    public static Func<CUIRect, CUIBoundaries> VerticalTube = (Rect) => new CUIBoundaries(0, Rect.Width, null, null);
+    public static Func<CUIRect, CUIBoundaries> Free =
+      (Rect) => new CUIBoundaries(null, null, null, null);
+    public static Func<CUIRect, CUIBoundaries> Box =
+      (Rect) => new CUIBoundaries(Rect.Left, Rect.Left + Rect.Width, Rect.Top, Rect.Top + Rect.Height);
+    public static Func<CUIRect, CUIBoundaries> HorizontalTube =
+      (Rect) => new CUIBoundaries(null, null, Rect.Top, Rect.Top + Rect.Height);
+    public static Func<CUIRect, CUIBoundaries> VerticalTube =
+      (Rect) => new CUIBoundaries(Rect.Left, Rect.Left + Rect.Width, null, null);
 
 
     public float? MinX;
@@ -29,6 +33,7 @@ namespace CrabUI
     public float? MinY;
     public float? MaxY;
 
+    public CUIRect Check(CUIRect rect) => Check(rect.Left, rect.Top, rect.Width, rect.Height);
     public CUIRect Check(float x, float y, float w, float h)
     {
       if (MaxX.HasValue && x + w > MaxX.Value) x = MaxX.Value - w;

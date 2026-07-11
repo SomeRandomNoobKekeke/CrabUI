@@ -25,6 +25,7 @@ namespace CrabUI
       public void Init()
       {
         this.Route(Self.Background);
+        //TODO route borders?
       }
 
       public CUIComponent Component => Self;
@@ -51,6 +52,9 @@ namespace CrabUI
       public ClearableEvent<CUIComponent, CUIMouseOnEvent> MouseOn { get; } = new();
       public ClearableEvent<CUIComponent, CUIMouseOffEvent> MouseOff { get; } = new();
       public ClearableEvent<CUIComponent, CUIMouseScrollEvent> MouseScroll { get; } = new();
+
+      public ClearableEvent<CUIComponent, Vector2> Dragged { get; } = new();
+      public ClearableEvent<CUIComponent, CUIRect> RectSet { get; } = new();
     }
   }
 }

@@ -54,6 +54,7 @@ namespace CrabUI
           get => Self.MaxSizeOverride;
           set => Self.MaxSize = value;
         }
+        Func<CUIRect, CUIBoundaries> PlainLayout.Host.ChildrenBounds => Self.LayoutProps.ChildrenBounds.Value;
 
         void Layout.Host.NotifyVisualsRestructured() => Self.VisualRestructureNotifier.Notify();
 

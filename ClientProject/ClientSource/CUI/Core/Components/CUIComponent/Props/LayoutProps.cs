@@ -96,6 +96,11 @@ namespace CrabUI
         Pattern = LayoutMarker.Pattern.FromParentAndDown,
       };
 
+      public CUILayoutProp<Func<CUIRect, CUIBoundaries>> ChildrenBounds { get; } = new()
+      {
+        Pattern = LayoutMarker.Pattern.FromParentAndDown,
+      };
+
       public CUILayoutProp<CUIBool2> FitContent { get; } = new()
       {
         Pattern = LayoutMarker.Pattern.AbsoluteProp,

@@ -22,7 +22,6 @@ namespace CrabUI
       set
       {
         if (host is not null) DisconnectFromHost(host);
-
         host = value;
         if (host is not null) ConnectToHost(host);
       }
@@ -55,6 +54,12 @@ namespace CrabUI
       host.HubMouseUp += Release;
     }
 
+    public void Update(CUIMouseEvent e)
+    {
+      Vector2 origin = e.Pos + GrabOffset - (Host.ParentRect?.LeftTop ?? Vector2.Zero);
+      Host.SetLeftTopPos(origin.X, origin.Y);
+    }
+
     private void Release(CUIMouseEvent e)
     {
       Vector2 origin = e.Pos + GrabOffset - (Host.ParentRect?.LeftTop ?? Vector2.Zero);
@@ -72,13 +77,5 @@ namespace CrabUI
       host.HubMouseUp -= Release;
       host.Release(this);
     }
-
-    public void Update(CUIMouseEvent e)
-    {
-      Vector2 origin = e.Pos + GrabOffset - (Host.ParentRect?.LeftTop ?? Vector2.Zero);
-      Host.SetLeftTopPos(origin.X, origin.Y);
-    }
-
-
   }
 }

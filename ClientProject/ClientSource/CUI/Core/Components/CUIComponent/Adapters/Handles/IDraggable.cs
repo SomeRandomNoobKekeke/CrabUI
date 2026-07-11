@@ -31,8 +31,10 @@ namespace CrabUI
         // Note: DragHandle doesn't know and doesn't care about anchors
         public void SetLeftTopPos(float x, float y)
         {
+          CUIRect parentRect = ParentRect ?? CUIRect.Zero;
+
           Vector2 offset = CUIAnchor.GetOffset(
-            ParentRect ?? CUIRect.Zero,
+            parentRect,
             Self.LayoutProps.ParentAnchor.Value ?? Self.LayoutProps.Anchor.Value,
             new CUIRect(x, y, Rect.Width, Rect.Height),
             Self.LayoutProps.Anchor.Value
@@ -41,9 +43,11 @@ namespace CrabUI
           //TODO add Relative drag
           Self.LayoutProps.Absolute.Value = Self.LayoutProps.Absolute.Value with
           {
-            Left = offset.X,
-            Top = offset.Y,
+            Left = parentRect.Left + offset.X,
+            Top = parentRect.Top + offset.Y,
           };
+
+          Self.Events.Dragged.Raise(Self, new Vector2(x, y));
         }
 
 

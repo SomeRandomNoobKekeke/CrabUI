@@ -15,7 +15,7 @@ namespace CrabUI
   {
     public interface Host : Layout.Host
     {
-
+      public Func<CUIRect, CUIBoundaries> ChildrenBounds { get; }
     }
     public interface Child : Layout.ChildBase
     {
@@ -108,10 +108,17 @@ namespace CrabUI
           c.Anchor
         );
 
-        c.OuterRect = new CUIRect(
+        CUIRect rect = new CUIRect(
           anchorPos + new Vector2(x, y) + Parent.ChildrenRect.LeftTop + Parent.ChildrenOffset,
           new Vector2(w, h)
         );
+
+        if (Parent.ChildrenBounds != null)
+        {
+          rect = Parent.ChildrenBounds(Parent.ChildrenRect).Check(rect);
+        }
+
+        c.OuterRect = rect;
       }
 
       base.UpdateChildren();

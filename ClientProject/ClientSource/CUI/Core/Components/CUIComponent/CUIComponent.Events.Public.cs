@@ -75,8 +75,18 @@ namespace CrabUI
       remove => this.Events.MouseScroll.Remove(value);
     }
 
+    public Action<CUIComponent, Vector2> OnDragged { set { Dragged += value; } }
+    public event Action<CUIComponent, Vector2> Dragged
+    {
+      add => this.Events.Dragged.Add(value);
+      remove => this.Events.Dragged.Remove(value);
+    }
 
-
-
+    public Action<CUIComponent, CUIRect> OnRectSet { set { RectSet += value; } }
+    public event Action<CUIComponent, CUIRect> RectSet
+    {
+      add => this.Events.RectSet.Add(value);
+      remove => this.Events.RectSet.Remove(value);
+    }
   }
 }

@@ -98,6 +98,13 @@ namespace CrabUI
       set => LayoutProps.ChildrenOffset.Bounds = value;
     }
 
+
+    public Func<CUIRect, CUIBoundaries> ChildrenBounds
+    {
+      get => LayoutProps.ChildrenBounds.Value;
+      set => LayoutProps.ChildrenBounds.Value = value;
+    }
+
     [CUISerializableProp]
     public CUIBool2 FitContent
     {

@@ -16,7 +16,7 @@ namespace CrabUI
   /// Defining Boundaries, not the same as rect  
   /// containing min/max x, y
   /// </summary>
-  public struct CUIBoundaries
+  public struct CUIBoundaries : IParsable
   {
     public static Func<CUIRect, CUIBoundaries> Free = (Rect) => new CUIBoundaries(null, null, null, null);
     public static Func<CUIRect, CUIBoundaries> Box = (Rect) => new CUIBoundaries(0, Rect.Width, 0, Rect.Height);
@@ -64,7 +64,6 @@ namespace CrabUI
     }
 
     public override string ToString() => $"[{MinX},{MaxX},{MinY},{MaxY}]";
-    public static string Serialize(CUIBoundaries boundaries) => boundaries.ToString();
     public static CUIBoundaries Parse(string s)
     {
       string content = s.Substring(
@@ -91,5 +90,8 @@ namespace CrabUI
 
       return new CUIBoundaries(minX, maxX, minY, maxY);
     }
+
+    static object IParsable.Parse(string raw) => Parse(raw);
+    public string ToText() => ToString();
   }
 }

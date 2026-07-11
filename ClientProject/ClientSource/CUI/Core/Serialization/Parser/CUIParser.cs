@@ -22,7 +22,7 @@ namespace CrabUI
       try
       {
         if (o is null) return NullTerm;
-        if (o is IParsable) return ((IParsable)o).Serialize();
+        if (o is IParsable) return ((IParsable)o).ToText();
         if (ExtraSerializeMethods.ContainsKey(o.GetType())) return ExtraSerializeMethods[o.GetType()](o);
         return o.ToString();
       }
@@ -42,14 +42,7 @@ namespace CrabUI
 
         if (T.IsAssignableTo(typeof(IParsable)))
         {
-          MethodInfo? parse = T.GetMethod("Parse", BindingFlags.Static | BindingFlags.Public);
-          if (parse is null)
-          {
-            CUI.Logger.Warning($"Can't parse [{T}]");
-            return T.GetDefaultValue();
-          }
-
-          return parse.Invoke(null, [raw]);
+          return T.GetMethod("Parse", BindingFlags.Static | BindingFlags.Public).Invoke(null, [raw]);
         }
 
         if (ExtraParseMethods.ContainsKey(T)) return ExtraParseMethods[T](raw);
@@ -69,6 +62,7 @@ namespace CrabUI
 
       if (T.IsPrimitive) return Convert.ChangeType(raw, T);
       if (T.IsEnum) return Enum.Parse(T, raw);
+      if (IsNullable(T)) return ParseUnknown(raw, Nullable.GetUnderlyingType(T));
       return T.GetDefaultValue();
     }
   }

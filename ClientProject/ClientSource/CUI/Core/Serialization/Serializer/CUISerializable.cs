@@ -16,7 +16,7 @@ namespace CrabUI
   /// </summary>
   public interface CUISerializable
   {
-    // public static object Deserialize(XElement element);
+    public static abstract object Deserialize(XElement element);
     public XElement Serialize() => new XElement(GetType().Name);
   }
 

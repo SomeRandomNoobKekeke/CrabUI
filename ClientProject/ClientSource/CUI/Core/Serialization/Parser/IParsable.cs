@@ -12,7 +12,7 @@ namespace CrabUI
 {
   public interface IParsable
   {
-    // public static object Parse(string raw);
-    public string Serialize();
+    public static abstract object Parse(string raw);
+    public string ToText();
   }
 }

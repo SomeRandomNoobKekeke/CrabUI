@@ -15,6 +15,7 @@ namespace CrabUI
 {
   public partial class CUIComponent : CUISerializable
   {
+    static object CUISerializable.Deserialize(XElement element) => Deserialize(element);
     public static CUIComponent Deserialize(XElement element)
     {
       CUIComponent component = (CUIComponent)CUIDefaultSerializer.Deserialize(
@@ -29,6 +30,8 @@ namespace CrabUI
 
       return component;
     }
+
+
 
     public virtual XElement Serialize()
     {

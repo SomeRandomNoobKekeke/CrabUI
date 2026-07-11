@@ -33,6 +33,8 @@ namespace CrabUI
       {
         if (IsCUISerializableProp(pi))
         {
+          // CheckCringe(pi.PropertyType);
+
           PropertyPath pp = new PropertyPath(path.Append(pi));
 
           if (IsCUISerializable(pi.PropertyType))
@@ -45,6 +47,24 @@ namespace CrabUI
           }
         }
       }
+    }
+
+    private bool CheckCringe(Type T)
+    {
+      if (T.IsAssignableTo(typeof(IParsable))) return true;
+      if (T.IsPrimitive) return true;
+      if (T == typeof(string)) return true;
+      if (T.IsEnum) return true;
+      if (
+        CUIParser.ExtraParseMethods.ContainsKey(T) &&
+        CUIParser.ExtraSerializeMethods.ContainsKey(T)
+      ) return true;
+
+      if (Nullable.GetUnderlyingType(T) != null && CheckCringe(Nullable.GetUnderlyingType(T))) return true;
+
+      CUI.Logger.Warning($"Khe Khem, {T} can't be serialized properly");
+
+      return false;
     }
   }
 }

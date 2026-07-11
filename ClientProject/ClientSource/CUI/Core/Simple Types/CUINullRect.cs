@@ -14,7 +14,7 @@ namespace CrabUI
   /// <summary>
   /// Rectangle with float?
   /// </summary>
-  public struct CUINullRect
+  public struct CUINullRect : IParsable
   {
     public static CUINullRect One => new CUINullRect(0, 0, 1, 1);
 
@@ -54,6 +54,10 @@ namespace CrabUI
 
     public override string ToString() => $"[{Left},{Top},{Width},{Height}]";
     public static string Serialize(CUINullRect rect) => rect.ToString();
+
+    public string ToText() => ToString();
+
+    static object IParsable.Parse(string raw) => Parse(raw);
     public static CUINullRect Parse(string s)
     {
       string content = s.Substring(
@@ -87,6 +91,7 @@ namespace CrabUI
 
       return new CUINullRect(x, y, w, h);
     }
+
 
   }
 }

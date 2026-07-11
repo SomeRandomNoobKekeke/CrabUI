@@ -8,6 +8,7 @@ using Barotrauma;
 using BaroJunk;
 using CrabUI;
 using Microsoft.Xna.Framework;
+using System.IO;
 
 namespace CrabUIUser
 {
@@ -58,8 +59,6 @@ namespace CrabUIUser
           Anchor = CUIAnchor.Center,
           Text = "Don't",
         };
-
-        CUI.Logger.Log(frame.Serialize());
 
         CUIComponent bruh = CUIComponent.Deserialize(frame.Serialize());
 

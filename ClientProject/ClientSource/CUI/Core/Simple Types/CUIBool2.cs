@@ -13,7 +13,7 @@ namespace CrabUI
   /// <summary>
   /// Vector2 but with bools
   /// </summary>
-  public struct CUIBool2
+  public struct CUIBool2 : IParsable
   {
     public bool X;
     public bool Y;
@@ -45,5 +45,8 @@ namespace CrabUI
 
       return new CUIBool2(x, y);
     }
+
+    static object IParsable.Parse(string raw) => Parse(raw);
+    public string ToText() => ToString();
   }
 }

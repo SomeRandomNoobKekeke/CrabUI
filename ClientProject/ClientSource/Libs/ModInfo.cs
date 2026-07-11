@@ -8,6 +8,7 @@ using System.Xml;
 using System.Xml.Linq;
 using System.IO;
 using System.Runtime.CompilerServices;
+using Barotrauma.LuaCs;
 
 namespace BaroJunk
 {

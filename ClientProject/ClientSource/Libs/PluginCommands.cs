@@ -9,6 +9,7 @@ using Barotrauma;
 using Microsoft.Xna.Framework;
 using System.IO;
 using System.Text;
+using Barotrauma.LuaCs;
 
 namespace BaroJunk
 {

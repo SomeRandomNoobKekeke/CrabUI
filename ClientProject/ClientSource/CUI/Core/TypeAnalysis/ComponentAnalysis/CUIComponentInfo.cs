@@ -12,11 +12,12 @@ namespace CrabUI
   /// <summary>
   /// This is additional info about CUIComponent type
   /// </summary>
-  public class CUIComponentInfo
+  public class CUIComponentInfo(Type T)
   {
-    public Type ComponentType { get; set; }
+    public Type ComponentType { get; set; } = T;
     public Dictionary<string, PropertyPath> SerializableProps { get; set; } = new();
     public ICUIStyle DefaultStyle { get; set; }
+    public CUIComponent DefaultValue { get; set; }
 
     public override string ToString()
       => $"{ComponentType.Name}:{{\n{Logger.Wrap.IEnumerable(SerializableProps.Keys, true)}\n}}";

@@ -9,14 +9,15 @@ using BaroJunk;
 
 namespace CrabUI
 {
+  //BRUH This is a mess, i have no idea what calls and require what
   public class CUIAssemblyAnalyzer
   {
     public Dictionary<Type, CUIComponentInfo> ComponentInfos { get; } = new();
     public Dictionary<Type, CUISerializableInfo> SerializableTypes { get; } = new();
     public CUITypeTree TypeTree { get; } = new();
 
-    private CUIComponentAnalyzer CUIComponentAnalyzer { get; } = new();
-    private CUISerializableAnalyzer CUISerializableAnalyzer { get; } = new();
+    public CUIComponentAnalyzer CUIComponentAnalyzer { get; } = new();
+    public CUISerializableAnalyzer CUISerializableAnalyzer { get; } = new();
 
 
 
@@ -25,8 +26,15 @@ namespace CrabUI
     public Type GetType(string name) => TypeTree.TypesByName.GetValueOrDefault(name);
     public CUIComponentInfo GetInfo(Type T)
     {
-      if (!ComponentInfos.ContainsKey(T)) ComponentInfos[T] = CUIComponentAnalyzer.Analyze(T);
+      if (!ComponentInfos.ContainsKey(T)) CreateInfo(T);
       return ComponentInfos[T];
+    }
+
+    private void CreateInfo(Type T)
+    {
+      ComponentInfos[T] = new CUIComponentInfo(T);
+      CUIComponentAnalyzer.Analyze(ComponentInfos[T]);
+      ComponentInfos[T].SerializableProps = SerializableTypes[T].SerializableProps;
     }
 
     public IEnumerable<Type> GetDerivedTypes(Type T) => TypeTree.GetDerivedTypes(T);
@@ -42,8 +50,7 @@ namespace CrabUI
 
       foreach (Type T in assembly.GetTypes().Where(CUIComponentAnalyzer.IsComponentType))
       {
-        ComponentInfos[T] = CUIComponentAnalyzer.Analyze(T);
-        ComponentInfos[T].SerializableProps = SerializableTypes[T].SerializableProps;
+        CreateInfo(T);
       }
 
       TypeTree.Add(ComponentInfos.Keys);

@@ -19,14 +19,10 @@ namespace CrabUI
     public bool IsComponentType(Type T) => T.IsAssignableTo(typeof(CUIComponent));
 
     //TODO add a way to use pregenerated infos
-    public CUIComponentInfo Analyze(Type componentType)
-    {
-      CUIComponentInfo info = new()
-      {
-        ComponentType = componentType,
-      };
 
-      PropertyInfo defaultStyleProp = componentType.GetProperty(
+    public void Analyze(CUIComponentInfo info)
+    {
+      PropertyInfo defaultStyleProp = info.ComponentType.GetProperty(
         DefaultStylePropName,
         BindingFlags.Static | BindingFlags.Public
       );
@@ -35,8 +31,28 @@ namespace CrabUI
       {
         info.DefaultStyle = (ICUIStyle)defaultStyleProp.GetValue(null);
       }
+    }
 
-      return info;
+    public void CreateDefault(CUIComponentInfo info)
+    {
+      if (info.ComponentType.IsAbstract) return;
+
+      if (info.ComponentType.GetConstructor([]) is null)
+      {
+        // CUI.Logger.Warning($"Failed to create default for [{info.ComponentType.Name}]: {info.ComponentType} doesn't have default constructor");
+        return;
+      }
+
+      if (info.ComponentType.GetCustomAttribute<NoDefaultAttribute>() != null) return;
+
+      try
+      {
+        info.DefaultValue = (CUIComponent)Activator.CreateInstance(info.ComponentType);
+      }
+      catch (Exception e)
+      {
+        CUI.Logger.Warning($"Failed to create default for [{info.ComponentType.Name}]: {e.InnerException?.Message}");
+      }
     }
   }
 }

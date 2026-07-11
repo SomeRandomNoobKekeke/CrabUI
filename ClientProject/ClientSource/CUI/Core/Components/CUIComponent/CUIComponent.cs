@@ -31,17 +31,12 @@ namespace CrabUI
         return component;
       }).Where(c => c != null);
 
-    private CUIComponentInfo _Info; public CUIComponentInfo Info
-    {
-      get
-      {
-        if (_Info is null) _Info = CUI.CUITypes.GetInfo(this.GetType());
-        return _Info;
-      }
-    }
+
+    public CUIComponentInfo Info { get; }
 
     public CUIComponent() : base()
     {
+      Info = CUI.CUITypes.GetInfo(GetType());
       SetupLayout();//HACK 
       this.Inject();
     }

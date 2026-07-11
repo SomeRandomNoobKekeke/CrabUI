@@ -1,0 +1,69 @@
+using System;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Collections.Generic;
+using System.Collections.Immutable;
+using System.Linq;
+
+using Barotrauma;
+using HarmonyLib;
+using Microsoft.Xna.Framework;
+using System.IO;
+using System.Xml.Linq;
+
+namespace CrabUI
+{
+  public static class CUIDefaultSerializer
+  {
+    public static XElement Serialize(CUISerializable o)
+    {
+      XElement element = new(o.GetType().Name);
+
+      if (!CUICore.CUITypes.SerializableTypes.ContainsKey(o.GetType()))
+      {
+        return element;
+      }
+
+      CUISerializableInfo info = CUICore.CUITypes.SerializableTypes[o.GetType()];
+
+      foreach (var (name, pp) in info.SerializableProps)
+      {
+        element.SetAttributeValue(name, CUICore.Parser.Serialize(pp.GetValue(o)));
+      }
+
+      foreach (var (name, pp) in info.NestedSerializable)
+      {
+        element.Add(((CUISerializable)pp.GetValue(o)).Serialize());
+      }
+
+      return element;
+    }
+
+    public static object Deserialize(XElement element, Type T)
+    {
+      object o = Activator.CreateInstance(T);
+
+      if (!CUICore.CUITypes.SerializableTypes.ContainsKey(T))
+      {
+        return o;
+      }
+
+      CUISerializableInfo info = CUICore.CUITypes.SerializableTypes[T];
+
+      foreach (XAttribute attribute in element.Attributes())
+      {
+        PropertyPath pp = info.SerializableProps[attribute.Name.ToString()];
+        pp.SetValue(o, CUICore.Parser.Parse(attribute.Value, pp.Path.Last().PropertyType));
+      }
+
+      //TODO
+      // foreach (XElement child in element.Elements())
+      // {
+      //   PropertyPath pp = info.NestedSerializable[child.Name.ToString()];
+      //   pp.SetValue(o, CUICore.Serializer.Deserialize(child, pp.Path.Last().PropertyType));
+      // }
+
+      return o;
+    }
+  }
+}

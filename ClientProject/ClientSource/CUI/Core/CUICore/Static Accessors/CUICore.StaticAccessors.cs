@@ -24,6 +24,9 @@ namespace CrabUI
     public static XDocument LoadXDoc(string path)
       => Instance.Handles.LoadXDoc(path);
 
+    public static CUIParser Parser => Instance._CUIParser;
+    public static CUISerializer Serializer => Instance._CUISerializer;
+
     public static CUIGraphicsDevice GraphicsDevice => Instance.Handles.GraphicsDevice;
     public static SamplerState SamplerState => Instance.Handles.GUI.SamplerState;
     public static RasterizerState RasterizerState => Instance.Handles.GUI.RasterizerState;

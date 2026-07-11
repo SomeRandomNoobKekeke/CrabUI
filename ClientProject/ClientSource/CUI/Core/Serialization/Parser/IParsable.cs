@@ -6,11 +6,13 @@ using System.Diagnostics;
 
 using CUICodeGenerator;
 using BaroJunk;
+using System.Xml.Linq;
 
 namespace CrabUI
 {
-  public class CUISerializableInfo
+  public interface IParsable
   {
-
+    // public static object Parse(string raw);
+    public string Serialize();
   }
 }

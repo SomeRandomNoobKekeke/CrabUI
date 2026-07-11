@@ -13,7 +13,6 @@ namespace CrabUI
   {
     public class Part : IPart { public CUICore Self { get; set; } }
 
-    public SimpleParser Parser { get; } = new();
     public CUIAssemblyAnalyzer CUIAssemblyAnalyzer { get; }
     public CUIStyleManager CUIStyleManager { get; }
     public CUIPaletteManager CUIPaletteManager { get; }
@@ -34,6 +33,9 @@ namespace CrabUI
     public EventConstructor EventConstructor { get; private set; }
     public AnimationPlayer _AnimationPlayer { get; private set; }
 
+    public CUIParser _CUIParser { get; private set; }
+    public CUISerializer _CUISerializer { get; private set; }
+
 
 
     private void UpdateGameScreenRect()
@@ -45,8 +47,6 @@ namespace CrabUI
     public CUICore()
     {
       this.Inject();
-
-      Parser.OnError.Add(e => CUI.Logger.Warning(e));
 
       CUIAssemblyAnalyzer = new();
       //TODO different runners should analyze different assemblies, perhaps it doesn't belong here

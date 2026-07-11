@@ -10,21 +10,14 @@ using HarmonyLib;
 using Microsoft.Xna.Framework;
 using System.IO;
 
-namespace BaroJunk
+namespace CrabUI
 {
-  public class SimpleParserDefaultMethods
+  public partial class CUIParser
   {
-    public static string NullTerm => SimpleParser.NullTerm;
-
-    public static Dictionary<Type, Func<string, object>> Parse { get; set; } = new()
+    public static Dictionary<Type, Func<string, object>> ExtraParseMethods { get; } = new()
     {
       [typeof(Vector2)] = (raw) => ParseVector2(raw),
       [typeof(Color)] = (raw) => ParseColor(raw),
-    };
-    public static Dictionary<Type, Func<object, string>> Serialize { get; set; } = new()
-    {
-      [typeof(Vector2)] = (o) => Vector2ToString((Vector2)o),
-      [typeof(Color)] = (o) => ColorToString((Color)o),
     };
 
     public static Color ParseColor(string raw) => XMLExtensions.ParseColor(raw);
@@ -44,8 +37,5 @@ namespace BaroJunk
 
       return new Vector2(x, y);
     }
-
-    public static string ColorToString(Color cl) => XMLExtensions.ColorToString(cl);
-    public static string Vector2ToString(Vector2 v) => $"[{v.X},{v.Y}]";
   }
 }

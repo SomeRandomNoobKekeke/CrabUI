@@ -12,7 +12,10 @@ namespace CrabUI
   public class CUIAssemblyAnalyzer
   {
     public Dictionary<Type, CUIComponentInfo> Infos { get; } = new();
+    public Dictionary<Type, CUISerializableInfo> SerializableTypes { get; } = new();
     public CUIComponentAnalyzer CUIComponentAnalyzer { get; } = new();
+    public CUISerializableAnalyzer CUISerializableAnalyzer { get; } = new();
+
     public CUITypeTree TypeTree { get; } = new();
 
     public bool IsComponentType(Type T) => CUIComponentAnalyzer.IsComponentType(T);
@@ -29,6 +32,12 @@ namespace CrabUI
     public void AnalyzeAssembly(Assembly assembly)
     {
       Stopwatch sw = Stopwatch.StartNew();
+
+      foreach (Type T in assembly.GetTypes().Where(CUISerializableAnalyzer.IsCUISerializableContainer))
+      {
+        Infos[T] = CUIComponentAnalyzer.Analyze(T);
+      }
+
       IEnumerable<Type> types = CUIComponentAnalyzer.FindAllComponentTypesInAssembly(assembly);
 
       foreach (Type T in types)
@@ -37,6 +46,8 @@ namespace CrabUI
       }
 
       TypeTree.Add(types);
+
+      // assembly.GetTypes().Where(IsCUISerializable);
 
       sw.Stop();
       // CUI.Logger.Log($"Analyzed in {sw.ElapsedMilliseconds}");

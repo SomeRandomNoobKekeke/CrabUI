@@ -13,7 +13,7 @@ using System.Xml.Linq;
 
 namespace CrabUI
 {
-  public partial class CUIComponent
+  public partial class CUIComponent : CUISerializable
   {
 
     public static CUIComponent CreateByName(string name)
@@ -21,52 +21,13 @@ namespace CrabUI
       return (CUIComponent)Activator.CreateInstance(CUI.CUITypes.GetType(name));
     }
 
-    public static CUIComponent CreateFromXML(XElement element)
+    public virtual XElement Serialize()
     {
-      CUIComponent component = CreateByName(element.Name.ToString());
-
-      component.ApplyXMLAttributes(element);
-
-      foreach (XElement childElement in element.Elements())
-      {
-        component.Append(CreateFromXML(childElement));
-      }
-
-      return component;
-    }
-
-
-    // public void ApplyXML(XElement element)
-    // {
-    //   ApplyXMLAttributes(element);
-
-    //   foreach (XElement childElement in element.Elements())
-    //   {
-
-    //   }
-    // }
-
-    public void ApplyXMLAttributes(XElement element)
-    {
-      foreach (XAttribute attribute in element.Attributes())
-      {
-        this.As_StringDictionary[attribute.Name.ToString()] = attribute.Value;
-      }
-    }
-
-
-    public XElement ToXML()
-    {
-      XElement element = new XElement(this.GetType().Name);
-
-      foreach (var (key, value) in this.As_StringDictionary)
-      {
-        element.Add(new XAttribute(key, value));
-      }
+      XElement element = CUIDefaultSerializer.Serialize(this);
 
       foreach (CUIComponent child in Tree.Children)
       {
-        element.Add(child.ToXML());
+        element.Add(child.Serialize());
       }
 
       return element;

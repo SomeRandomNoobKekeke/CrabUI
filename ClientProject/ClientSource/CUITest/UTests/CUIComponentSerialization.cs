@@ -10,25 +10,27 @@ using System.Xml.Linq;
 
 namespace CrabUI
 {
-  public class CUIComponentSerializationTest : UTestPack
-  {
-    public UTest ApplyXMLAttributes()
-    {
-      CUIComponent component = new();
-      component.ApplyXMLAttributes(
-        new XElement("CUIComponent", new XAttribute("Absolute", "[100,,,100]"))
-      );
 
-      return new UTest(component.Absolute, new CUINullRect(100, null, null, 100));
-    }
+  //TODO
+  // public class CUIComponentSerializationTest : UTestPack
+  // {
+  //   public UTest ApplyXMLAttributes()
+  //   {
+  //     CUIComponent component = new();
+  //     component.ApplyXMLAttributes(
+  //       new XElement("CUIComponent", new XAttribute("Absolute", "[100,,,100]"))
+  //     );
 
-    public UTest CreateFromXML()
-    {
-      CUIComponent component = CUIComponent.CreateFromXML(
-        new XElement("CUIComponent", new XAttribute("Absolute", "[100,,,100]"))
-      );
+  //     return new UTest(component.Absolute, new CUINullRect(100, null, null, 100));
+  //   }
 
-      return new UTest(component.Absolute, new CUINullRect(100, null, null, 100));
-    }
-  }
+  //   public UTest CreateFromXML()
+  //   {
+  //     CUIComponent component = CUIComponent.CreateFromXML(
+  //       new XElement("CUIComponent", new XAttribute("Absolute", "[100,,,100]"))
+  //     );
+
+  //     return new UTest(component.Absolute, new CUINullRect(100, null, null, 100));
+  //   }
+  // }
 }

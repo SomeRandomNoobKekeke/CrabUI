@@ -12,6 +12,5 @@ namespace CrabUI
   public class CUISerializableInfo
   {
     public Dictionary<string, PropertyPath> SerializableProps { get; set; }
-    public Dictionary<string, PropertyPath> NestedSerializable { get; set; }
   }
 }

@@ -12,6 +12,7 @@ namespace CrabUI
   public class PropertyPath
   {
     public List<PropertyInfo> Path { get; set; }
+    public Type Type => Path.Last().PropertyType;
 
     public object GetValue(object target)
     {

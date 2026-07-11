@@ -15,26 +15,25 @@ namespace CrabUI
     public StringDictionary_Part As_StringDictionary { get; } = new();
     public class StringDictionary_Part : Part, IDictionary<string, string>
     {
-      public SimpleParser Parser => CUI.Parser;
       public CUIComponentInfo Info => Self.Info;
 
       public string this[string key]
       {
         get
         {
-          PropertyInfo pi = Info.SerializableProps[key];
-          return Parser.Serialize(pi.GetValue(Self), pi.PropertyType);
+          PropertyPath pp = Info.SerializableProps[key];
+          return CUICore.Parser.Serialize(pp.GetValue(Self));
         }
         set => Info.SerializableProps[key].SetValue(
           Self,
-          Parser.Parse(value, Info.SerializableProps[key].PropertyType)
+          CUICore.Parser.Parse(value, Info.SerializableProps[key].Type)
         );
       }
 
       #region IDictionary<string, string>
       public ICollection<string> Keys => Info.SerializableProps.Keys;
       public ICollection<string> Values => Info.SerializableProps.Values.Select(
-        p => Parser.Serialize(p.GetValue(Self))
+        p => CUICore.Parser.Serialize(p.GetValue(Self))
       ).ToArray();
       public bool ContainsKey(string key) => Info.SerializableProps.ContainsKey(key);
       public void Add(string key, string value) => throw new NotImplementedException();

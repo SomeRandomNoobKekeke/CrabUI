@@ -66,7 +66,7 @@ namespace CrabUI
     public static CUIMainComponent Main => Setup.Core.Main;
     public static CUIMainComponent TopMain => Setup.Core.TopMain;
     public static DebugHub DebugHub => Core.DebugHub;
-    public static SimpleParser Parser => Core.Parser;
+
 
     public static CUIAssemblyAnalyzer CUITypes => CUICore.CUITypes;
 

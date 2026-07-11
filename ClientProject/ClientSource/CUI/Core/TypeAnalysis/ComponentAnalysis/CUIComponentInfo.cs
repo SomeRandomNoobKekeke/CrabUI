@@ -15,7 +15,7 @@ namespace CrabUI
   public class CUIComponentInfo
   {
     public Type ComponentType { get; set; }
-    public Dictionary<string, PropertyInfo> SerializableProps { get; set; } = new();
+    public Dictionary<string, PropertyPath> SerializableProps { get; set; } = new();
     public ICUIStyle DefaultStyle { get; set; }
 
     public override string ToString()

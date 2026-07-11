@@ -31,7 +31,7 @@ namespace CrabUI
     public static SamplerState SamplerState => Instance.Handles.GUI.SamplerState;
     public static RasterizerState RasterizerState => Instance.Handles.GUI.RasterizerState;
 
-    public static CUIAssemblyAnalyzer CUITypes => Instance.CUIAssemblyAnalyzer;
+    public static CUIAssemblyAnalyzer CUITypes => Instance._Analyzer;
     public static CUIStyleManager Styles => Instance.CUIStyleManager;
     public static CUIPaletteManager Palettes => Instance.CUIPaletteManager;
     public static AnimationPlayer AnimationPlayer => Instance._AnimationPlayer;

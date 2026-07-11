@@ -59,7 +59,9 @@ namespace CrabUIUser
           Text = "Don't",
         };
 
-        CUIComponent bruh = CUIComponent.CreateFromXML(frame.ToXML());
+        CUI.Logger.Log(frame.Serialize());
+
+        CUIComponent bruh = CUIComponent.Deserialize(frame.Serialize());
 
         return bruh;
       }

@@ -14,18 +14,10 @@ namespace CrabUI
   /// <summary>
   /// It has Serialize() method
   /// </summary>
-  public interface CUISerializable : CUISerializableContainer
+  public interface CUISerializable
   {
     // public static object Deserialize(XElement element);
-    public XElement Serialize();
-  }
-
-  /// <summary>
-  /// It can contain CUISerializableProp or CUISerializableContainer
-  /// </summary>
-  public interface CUISerializableContainer
-  {
-
+    public XElement Serialize() => new XElement(GetType().Name);
   }
 
   /// <summary>

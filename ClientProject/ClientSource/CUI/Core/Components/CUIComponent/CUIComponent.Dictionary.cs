@@ -21,8 +21,8 @@ namespace CrabUI
       {
         get
         {
-          PropertyInfo pi = Info.SerializableProps[key];
-          return pi.GetValue(Self);
+          PropertyPath pp = Info.SerializableProps[key];
+          return pp.GetValue(Self);
         }
         set => Info.SerializableProps[key].SetValue(Self, value);
       }

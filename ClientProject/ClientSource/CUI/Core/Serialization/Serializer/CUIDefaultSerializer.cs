@@ -19,21 +19,14 @@ namespace CrabUI
     {
       XElement element = new(o.GetType().Name);
 
-      if (!CUICore.CUITypes.SerializableTypes.ContainsKey(o.GetType()))
+      if (CUICore.CUITypes.SerializableTypes.ContainsKey(o.GetType()))
       {
-        return element;
-      }
+        CUISerializableInfo info = CUICore.CUITypes.SerializableTypes[o.GetType()];
 
-      CUISerializableInfo info = CUICore.CUITypes.SerializableTypes[o.GetType()];
-
-      foreach (var (name, pp) in info.SerializableProps)
-      {
-        element.SetAttributeValue(name, CUICore.Parser.Serialize(pp.GetValue(o)));
-      }
-
-      foreach (var (name, pp) in info.NestedSerializable)
-      {
-        element.Add(((CUISerializable)pp.GetValue(o)).Serialize());
+        foreach (var (name, pp) in info.SerializableProps)
+        {
+          element.SetAttributeValue(name, CUICore.Parser.Serialize(pp.GetValue(o)));
+        }
       }
 
       return element;
@@ -43,25 +36,16 @@ namespace CrabUI
     {
       object o = Activator.CreateInstance(T);
 
-      if (!CUICore.CUITypes.SerializableTypes.ContainsKey(T))
+      if (CUICore.CUITypes.SerializableTypes.ContainsKey(T))
       {
-        return o;
+        CUISerializableInfo info = CUICore.CUITypes.SerializableTypes[T];
+
+        foreach (XAttribute attribute in element.Attributes())
+        {
+          PropertyPath pp = info.SerializableProps[attribute.Name.ToString()];
+          pp.SetValue(o, CUICore.Parser.Parse(attribute.Value, pp.Path.Last().PropertyType));
+        }
       }
-
-      CUISerializableInfo info = CUICore.CUITypes.SerializableTypes[T];
-
-      foreach (XAttribute attribute in element.Attributes())
-      {
-        PropertyPath pp = info.SerializableProps[attribute.Name.ToString()];
-        pp.SetValue(o, CUICore.Parser.Parse(attribute.Value, pp.Path.Last().PropertyType));
-      }
-
-      //TODO
-      // foreach (XElement child in element.Elements())
-      // {
-      //   PropertyPath pp = info.NestedSerializable[child.Name.ToString()];
-      //   pp.SetValue(o, CUICore.Serializer.Deserialize(child, pp.Path.Last().PropertyType));
-      // }
 
       return o;
     }

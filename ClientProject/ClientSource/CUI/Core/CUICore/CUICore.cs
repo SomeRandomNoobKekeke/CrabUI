@@ -13,7 +13,7 @@ namespace CrabUI
   {
     public class Part : IPart { public CUICore Self { get; set; } }
 
-    public CUIAssemblyAnalyzer CUIAssemblyAnalyzer { get; }
+    public CUIAssemblyAnalyzer _Analyzer { get; }
     public CUIStyleManager CUIStyleManager { get; }
     public CUIPaletteManager CUIPaletteManager { get; }
 
@@ -33,8 +33,8 @@ namespace CrabUI
     public EventConstructor EventConstructor { get; private set; }
     public AnimationPlayer _AnimationPlayer { get; private set; }
 
-    public CUIParser _CUIParser { get; private set; }
-    public CUISerializer _CUISerializer { get; private set; }
+    public CUIParser _CUIParser { get; private set; } = new();
+    public CUISerializer _CUISerializer { get; private set; } = new();
 
 
 
@@ -48,15 +48,15 @@ namespace CrabUI
     {
       this.Inject();
 
-      CUIAssemblyAnalyzer = new();
+      _Analyzer = new();
       //TODO different runners should analyze different assemblies, perhaps it doesn't belong here
-      CUIAssemblyAnalyzer.AnalyzeAssembly(Assembly.GetExecutingAssembly());
+      _Analyzer.AnalyzeAssembly(Assembly.GetExecutingAssembly());
 
-      CUIStyleManager = new(CUIAssemblyAnalyzer);
+      CUIStyleManager = new(_Analyzer);
       CUIPaletteManager = new();
 
       //TODO i probably want to go in base->derived order here
-      foreach (CUIComponentInfo info in CUIAssemblyAnalyzer.Infos.Values)
+      foreach (CUIComponentInfo info in _Analyzer.ComponentInfos.Values)
       {
         if (info.DefaultStyle is not null)
         {

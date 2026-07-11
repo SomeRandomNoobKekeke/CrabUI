@@ -15,10 +15,19 @@ namespace CrabUI
 {
   public partial class CUIComponent : CUISerializable
   {
-
-    public static CUIComponent CreateByName(string name)
+    public static CUIComponent Deserialize(XElement element)
     {
-      return (CUIComponent)Activator.CreateInstance(CUI.CUITypes.GetType(name));
+      CUIComponent component = (CUIComponent)CUIDefaultSerializer.Deserialize(
+        element,
+        CUI.CUITypes.GetType(element.Name.ToString())
+      );
+
+      foreach (XElement child in element.Elements())
+      {
+        component.Append(Deserialize(child));
+      }
+
+      return component;
     }
 
     public virtual XElement Serialize()

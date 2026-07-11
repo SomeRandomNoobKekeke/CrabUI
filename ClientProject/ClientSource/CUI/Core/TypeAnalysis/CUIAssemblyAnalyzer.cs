@@ -11,20 +11,22 @@ namespace CrabUI
 {
   public class CUIAssemblyAnalyzer
   {
-    public Dictionary<Type, CUIComponentInfo> Infos { get; } = new();
+    public Dictionary<Type, CUIComponentInfo> ComponentInfos { get; } = new();
     public Dictionary<Type, CUISerializableInfo> SerializableTypes { get; } = new();
-    public CUIComponentAnalyzer CUIComponentAnalyzer { get; } = new();
-    public CUISerializableAnalyzer CUISerializableAnalyzer { get; } = new();
-
     public CUITypeTree TypeTree { get; } = new();
+
+    private CUIComponentAnalyzer CUIComponentAnalyzer { get; } = new();
+    private CUISerializableAnalyzer CUISerializableAnalyzer { get; } = new();
+
+
 
     public bool IsComponentType(Type T) => CUIComponentAnalyzer.IsComponentType(T);
 
     public Type GetType(string name) => TypeTree.TypesByName.GetValueOrDefault(name);
     public CUIComponentInfo GetInfo(Type T)
     {
-      if (!Infos.ContainsKey(T)) Infos[T] = CUIComponentAnalyzer.Analyze(T);
-      return Infos[T];
+      if (!ComponentInfos.ContainsKey(T)) ComponentInfos[T] = CUIComponentAnalyzer.Analyze(T);
+      return ComponentInfos[T];
     }
 
     public IEnumerable<Type> GetDerivedTypes(Type T) => TypeTree.GetDerivedTypes(T);
@@ -33,21 +35,18 @@ namespace CrabUI
     {
       Stopwatch sw = Stopwatch.StartNew();
 
-      foreach (Type T in assembly.GetTypes().Where(CUISerializableAnalyzer.IsCUISerializableContainer))
+      foreach (Type T in assembly.GetTypes().Where(CUISerializableAnalyzer.IsCUISerializable))
       {
-        Infos[T] = CUIComponentAnalyzer.Analyze(T);
+        SerializableTypes[T] = CUISerializableAnalyzer.Analyze(T);
       }
 
-      IEnumerable<Type> types = CUIComponentAnalyzer.FindAllComponentTypesInAssembly(assembly);
-
-      foreach (Type T in types)
+      foreach (Type T in assembly.GetTypes().Where(CUIComponentAnalyzer.IsComponentType))
       {
-        Infos[T] = CUIComponentAnalyzer.Analyze(T);
+        ComponentInfos[T] = CUIComponentAnalyzer.Analyze(T);
+        ComponentInfos[T].SerializableProps = SerializableTypes[T].SerializableProps;
       }
 
-      TypeTree.Add(types);
-
-      // assembly.GetTypes().Where(IsCUISerializable);
+      TypeTree.Add(ComponentInfos.Keys);
 
       sw.Stop();
       // CUI.Logger.Log($"Analyzed in {sw.ElapsedMilliseconds}");

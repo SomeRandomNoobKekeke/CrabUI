@@ -12,7 +12,6 @@ namespace CrabUI
   public class CUISerializableAnalyzer
   {
     public bool IsCUISerializable(Type T) => T.IsAssignableTo(typeof(CUISerializable));
-    public bool IsCUISerializableContainer(Type T) => T.IsAssignableTo(typeof(CUISerializableContainer));
     public bool IsCUISerializableProp(PropertyInfo pi)
       => pi.GetCustomAttribute<CUISerializableProp>() != null;
 
@@ -21,7 +20,6 @@ namespace CrabUI
       CUISerializableInfo info = new()
       {
         SerializableProps = new(),
-        NestedSerializable = new(),
       };
 
       AnalyzeContainer(info, T, []);
@@ -33,25 +31,18 @@ namespace CrabUI
     {
       foreach (PropertyInfo pi in T.GetProperties(BindingFlags.Public | BindingFlags.Instance))
       {
-        if (IsCUISerializable(pi.PropertyType))
-        {
-          PropertyPath pp = new PropertyPath(path.Append(pi));
-          info.NestedSerializable[pp.ToString()] = pp;
-          continue;
-        }
-
-        if (IsCUISerializableContainer(pi.PropertyType))
-        {
-          PropertyPath pp = new PropertyPath(path.Append(pi));
-          AnalyzeContainer(info, pi.PropertyType, pp.Path);
-          continue;
-        }
-
         if (IsCUISerializableProp(pi))
         {
           PropertyPath pp = new PropertyPath(path.Append(pi));
-          info.SerializableProps[pp.ToString()] = pp;
-          continue;
+
+          if (IsCUISerializable(pi.PropertyType))
+          {
+            AnalyzeContainer(info, pi.PropertyType, pp.Path);
+          }
+          else
+          {
+            info.SerializableProps[pp.ToString()] = pp;
+          }
         }
       }
     }

@@ -18,9 +18,6 @@ namespace CrabUI
 
     public bool IsComponentType(Type T) => T.IsAssignableTo(typeof(CUIComponent));
 
-    public IEnumerable<Type> FindAllComponentTypesInAssembly(Assembly assembly)
-      => assembly.GetTypes().Where(IsComponentType);
-
     //TODO add a way to use pregenerated infos
     public CUIComponentInfo Analyze(Type componentType)
     {
@@ -28,14 +25,6 @@ namespace CrabUI
       {
         ComponentType = componentType,
       };
-
-      foreach (PropertyInfo pi in componentType.GetProperties(BindingFlags.Public | BindingFlags.Instance))
-      {
-        if (pi.GetCustomAttribute<CUISerializableProp>() != null)
-        {
-          info.SerializableProps[pi.Name] = pi;
-        }
-      }
 
       PropertyInfo defaultStyleProp = componentType.GetProperty(
         DefaultStylePropName,

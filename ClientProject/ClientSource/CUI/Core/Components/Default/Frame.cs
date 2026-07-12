@@ -21,7 +21,8 @@ namespace CrabUI
       public Frame() : base()
       {
         Anchor = CUIAnchor.Center;
-        Absolute = new(w: 400, h: 600);
+
+        // Absolute = new(w: 400, h: 600);
 
 
         this["layout"] = new CUIVerticalList() { Relative = new CUINullRect(0, 0, 1, 1) };

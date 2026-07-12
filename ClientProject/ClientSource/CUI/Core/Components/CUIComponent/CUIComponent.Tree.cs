@@ -24,6 +24,14 @@ namespace CrabUI
     public void RemoveChild(CUIComponent child) => Tree.RemoveChild(child);
     public void RemoveAt(int i) => Tree.RemoveAt(i);
     public void RemoveAllChildren() => Tree.RemoveAllChildren();
+    public void MoveChildTo(CUIComponent child, int i) => Tree.MoveChildTo(child, i);
+
+    public void MoveToTop() => Parent?.MoveChildTo(this, 0);
+    public void MoveToBottom()
+    {
+      if (Parent is null) return;
+      Parent.MoveChildTo(this, Parent.Children.Count - 1);
+    }
 
     public Dictionary<string, CUIComponent> NamedChildren
     {
@@ -193,6 +201,15 @@ namespace CrabUI
         PropogateTreeChanged();
         Self.Layout.RequireChildrenUpdate = true;
         Children.Clear();
+      }
+
+      public void MoveChildTo(CUIComponent child, int i)
+      {
+        Children.Remove(child);
+        Children.Insert(i, child);
+
+        PropogateTreeChanged();
+        Self.LayoutMarker.Mark(MarkPattern);
       }
 
 

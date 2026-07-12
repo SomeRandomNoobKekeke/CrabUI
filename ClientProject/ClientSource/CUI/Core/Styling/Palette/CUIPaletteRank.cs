@@ -7,6 +7,6 @@ namespace CrabUI
 {
   public enum CUIPaletteRank
   {
-    Primary, Secondary
+    Primary, Secondary, Personal
   }
 }

@@ -26,6 +26,8 @@ namespace CrabUI
       Draggable = true;
       CullChildren = true;
       Resizable = true;
+      Focusable = true;
+      ConsumeMouseClicks = true;
       Anchor = CUIAnchor.Center;
       Background.Sprite = CUIDefaultSprite.Vignette;
     }
@@ -61,6 +63,7 @@ namespace CrabUI
     {
       Commands.ListenFor("close", (_) => Close());
       MouseDoubleClick += (c, e) => RestoreState("lastopened");
+      OnFocus += MoveToBottom;
     }
   }
 }

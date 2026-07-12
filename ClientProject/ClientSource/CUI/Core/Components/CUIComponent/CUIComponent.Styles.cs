@@ -17,15 +17,32 @@ namespace CrabUI
       get => Styles.PaletteRank;
       set => Styles.PaletteRank = value;
     }
-    public CUIPalette Palette => Styles.PaletteSlot.Palette;
+    public CUIPalette Palette
+    {
+      get => Styles.PaletteSlot.Palette;
+      set => Styles.PaletteSlot.Palette = value;
+    }
+
+    public CUIPalette DeepPalette
+    {
+      get => Styles.PaletteSlot.Palette;
+      set
+      {
+        Styles.PaletteSlot.Palette = value;
+        foreach (CUIComponent child in Children)
+        {
+          child.DeepPalette = value;
+        }
+      }
+    }
+
 
     public virtual Action<CUIComponent> Style
     {
       set => PersonalStyle = new CUIActionStyle<CUIComponent>("personal", value);
     }
 
-    private ICUIStyle _PersonalStyle;
-    public ICUIStyle PersonalStyle
+    private ICUIStyle _PersonalStyle; public ICUIStyle PersonalStyle
     {
       get => _PersonalStyle;
       set
@@ -66,8 +83,7 @@ namespace CrabUI
         }
       }
 
-      private CUIPaletteRank _PaletteRank;
-      public CUIPaletteRank PaletteRank
+      private CUIPaletteRank _PaletteRank; public CUIPaletteRank PaletteRank
       {
         get => _PaletteRank;
         set
@@ -98,7 +114,7 @@ namespace CrabUI
 
       public void Init()
       {
-        _PaletteSlot = CUICore.Palettes.Primary;
+        _PaletteSlot = new CUIPaletteSlot() { Palette = CUIPalette.Default };//CUICore.Palettes.Primary;
         TypeSpecificStyles = CUICore.Styles.Get(Self.GetType());
 
         Self.InitStyle();

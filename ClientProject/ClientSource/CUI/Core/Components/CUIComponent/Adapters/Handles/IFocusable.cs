@@ -33,7 +33,9 @@ namespace CrabUI
         public event Action<CUIMouseDownEvent> MouseDown;
 
         public void RequestFocus()
-          => Self.MainComponentTracker.MainComponent?.FocusTracker.RequestFocus(this);
+        {
+          Self.MainComponentTracker.MainComponent?.FocusTracker.RequestFocus(this);
+        }
       }
     }
   }

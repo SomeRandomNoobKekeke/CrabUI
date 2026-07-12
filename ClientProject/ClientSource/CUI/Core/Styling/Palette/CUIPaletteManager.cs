@@ -11,6 +11,7 @@ namespace CrabUI
     {
       CUIPaletteRank.Primary => Primary,
       CUIPaletteRank.Secondary => Secondary,
+      CUIPaletteRank.Personal => new CUIPaletteSlot(),
     };
 
     public CUIPaletteSlot Primary { get; } = new();

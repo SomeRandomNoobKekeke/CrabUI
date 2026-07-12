@@ -17,11 +17,14 @@ namespace CrabUI
       get => Styles.PaletteRank;
       set => Styles.PaletteRank = value;
     }
+
+    //TODO mb this should be deep by default
     public CUIPalette Palette
     {
       get => Styles.PaletteSlot.Palette;
       set => Styles.PaletteSlot.Palette = value;
     }
+
 
     public CUIPalette DeepPalette
     {

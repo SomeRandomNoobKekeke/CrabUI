@@ -29,7 +29,6 @@ namespace CrabUIUser
           Caption = { Text = "kekw" },
           DeepPalette = CUIPalette.Blue,
           Absolute = new CUINullRect(0, 0, 100, 100),
-          Focusable = true,
         };
 
         frame["b"] = new CUIDefault.Frame()

@@ -17,9 +17,18 @@ namespace CrabUI
     public Borders Borders { get; } = new();
 
 
-
+    private bool _Displayed = true;
     [CUISerializableProp]
-    public bool Displayed { get; set; } = true;
+    public bool Displayed
+    {
+      get => _Displayed;
+      set
+      {
+        if (_Displayed == value) return;
+        _Displayed = value;
+        VisualRestructureNotifier.Notify();
+      }
+    }
 
 
 

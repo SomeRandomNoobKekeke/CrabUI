@@ -34,7 +34,7 @@ namespace CrabUIUser
 
         for (int i = 1; i < 100; i++)
         {
-          frame["list"].Append(new CUITextBlock()
+          frame["list"].Children.Add(new CUITextBlock()
           {
             Text = $"child {i}",
             TextAnchor = CUIAnchor.LeftTop,

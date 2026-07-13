@@ -75,7 +75,7 @@ namespace CrabUI
       {
         MainComponent = mainComponent;
 
-        foreach (CUIComponent child in Self.Tree.Children)
+        foreach (CUIComponent child in Self.Children)
         {
           child.MainComponentTracker.SetRec(mainComponent);
         }

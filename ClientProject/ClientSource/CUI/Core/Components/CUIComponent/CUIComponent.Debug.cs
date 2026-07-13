@@ -21,7 +21,7 @@ namespace CrabUI
       set
       {
         _IsDebugTool = value;
-        foreach (CUIComponent child in Tree.Children)
+        foreach (CUIComponent child in Children)
         {
           child.IsDebugTool = value;
         }
@@ -50,7 +50,7 @@ namespace CrabUI
 
         Debug = value;
 
-        foreach (CUIComponent child in Tree.Children)
+        foreach (CUIComponent child in Children)
         {
           child.DeepDebug = value;
         }
@@ -61,7 +61,7 @@ namespace CrabUI
     public void PrintTree(string offset = "")
     {
       CUI.Logger.Log($"{offset}{this}");
-      foreach (CUIComponent child in this.Tree.Children)
+      foreach (CUIComponent child in Children)
       {
         child.PrintTree(offset + "|    ");
       }

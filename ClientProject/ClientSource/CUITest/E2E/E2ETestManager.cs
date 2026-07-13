@@ -37,7 +37,7 @@ namespace CrabUIUser
         CurrentTest = null;
       }
 
-      CUI.Main.RemoveAllChildren();
+      CUI.Main.Children.Clear();
     }
 
     public void RunAll()

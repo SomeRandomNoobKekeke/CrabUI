@@ -25,7 +25,7 @@ namespace CrabUI
 
       foreach (XElement child in element.Elements())
       {
-        component.Append(Deserialize(child));
+        component.Children.Add(Deserialize(child));
       }
 
       return component;
@@ -37,7 +37,7 @@ namespace CrabUI
     {
       XElement element = CUIDefaultSerializer.Serialize(this);
 
-      foreach (CUIComponent child in Tree.Children)
+      foreach (CUIComponent child in Children)
       {
         element.Add(child.Serialize());
       }

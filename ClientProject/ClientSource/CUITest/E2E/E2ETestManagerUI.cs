@@ -26,7 +26,7 @@ namespace CrabUIUser
 
     public void UpdateTests()
     {
-      RemoveAllChildren();
+      Children.Clear();
     }
 
 
@@ -41,10 +41,10 @@ namespace CrabUIUser
 
       OnOpen.Add(() =>
       {
-        ButtonList.RemoveAllChildren();
+        ButtonList.Children.Clear();
         foreach (var (name, type) in Manager.Repo.Tests)
         {
-          ButtonList.Append(new CUIButton()
+          ButtonList.Add(new CUIButton()
           {
             Text = type.Name,
             Absolute = new CUINullRect(h: 30),
@@ -56,7 +56,7 @@ namespace CrabUIUser
 
       OnClose.Add(() =>
       {
-        ButtonList.RemoveAllChildren();
+        ButtonList.Children.Clear();
         Manager.CleanUp();
       });
 

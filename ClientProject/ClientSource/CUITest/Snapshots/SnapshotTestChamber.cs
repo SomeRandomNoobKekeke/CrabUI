@@ -29,7 +29,7 @@ namespace CrabUIUser
 
     public void Setup()
     {
-      if (!IsSetup) CUI.Main.Append(this);
+      if (!IsSetup) CUI.Main.Children.Add(this);
     }
 
     public void Dismantle()

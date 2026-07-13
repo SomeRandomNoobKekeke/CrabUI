@@ -29,7 +29,7 @@ namespace CrabUIUser
 
     public void UpdateTests()
     {
-      RemoveAllChildren();
+      Children.Clear();
       Manager.Dismantle();
     }
 
@@ -60,10 +60,10 @@ namespace CrabUIUser
 
     public void OpenGroup(string name)
     {
-      ButtonList.RemoveAllChildren();
+      ButtonList.Children.Clear();
       foreach (SnapshotTest test in Manager.Repo.GroupedTests[name].Values)
       {
-        ButtonList.Append(new CUIButton()
+        ButtonList.Add(new CUIButton()
         {
           Text = test.Name,
           TextAnchor = CUIAnchor.LeftCenter,
@@ -75,7 +75,7 @@ namespace CrabUIUser
 
     public void Refresh()
     {
-      RemoveAllChildren();
+      Children.Clear();
       Background.Color = new Color(32, 32, 32);
 
       this["layout"] = new CUIVerticalList() { Relative = new CUINullRect(0, 0, 1, 1), };
@@ -99,7 +99,7 @@ namespace CrabUIUser
       this["layout"]["groups"] = new CUIHorizontalList() { FitContent = new CUIBool2(false, true), };
       foreach (string group in Manager.Repo.Groups)
       {
-        this["layout"]["groups"].Append(new CUIButton(group)
+        this["layout"]["groups"].Children.Add(new CUIButton(group)
         {
           OnMouseDown = (c, e) => OpenGroup(group),
         });

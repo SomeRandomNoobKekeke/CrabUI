@@ -34,15 +34,16 @@ namespace CrabUI
           return;
         }
 
+        value.AKA = name;
+
         if (NamedComponents.ContainsKey(name))
         {
-          int i = Tree.Children.IndexOf(NamedComponents[name]);
-          Tree.RemoveChild(NamedComponents[name]); //TODO this should be a replace child method
-          Tree.Insert(value, i, name);
+          int i = Children.IndexOf(NamedComponents[name]);
+          Children[i] = value;
           return;
         }
 
-        Tree.Append(value, name);
+        Children.Add(value);
       }
     }
 

@@ -51,7 +51,7 @@ namespace CrabUI
 
         foreach (string name in CUI.DebugHub.Gates.Names)
         {
-          GateList.Append(new GateButton(name));
+          GateList.Add(new GateButton(name));
         }
       }
 

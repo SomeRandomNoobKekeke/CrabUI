@@ -22,7 +22,7 @@ namespace CrabUI
         (Children[0] as CUIPage).OnClose.Raise();
       }
 
-      RemoveAllChildren();
+      Children.Clear();
     }
 
     /// <summary>
@@ -32,7 +32,8 @@ namespace CrabUI
     {
       Dismantle();
 
-      Append(page);
+      Children.Add(page);
+
       page.Relative = new CUINullRect(0, 0, 1, 1);
       OpenedPage = page;
 

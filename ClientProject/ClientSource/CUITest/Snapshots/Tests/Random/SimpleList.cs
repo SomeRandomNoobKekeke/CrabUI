@@ -30,28 +30,28 @@ namespace CrabUIUser
           Relative = new CUINullRect(0, 0, 1, 1),
         };
 
-        frame.Append(list);
+        frame.Children.Add(list);
 
-        list.Append(new CUIComponent()
+        list.Add(new CUIComponent()
         {
           Background = { Color = Color.Red },
           Absolute = new CUINullRect(0, 0, 300, 100),
         });
 
-        list.Append(new CUIComponent()
+        list.Add(new CUIComponent()
         {
           Background = { Color = Color.Yellow },
           Absolute = new CUINullRect(30, 0, 350, 100),
         });
 
-        list.Append(new CUITextLine()
+        list.Add(new CUITextLine()
         {
           Text = "123",
           Background = { Color = Color.Green },
           Flex = 1,
         });
 
-        list.Append(new CUITextLine()
+        list.Add(new CUITextLine()
         {
           Text = "321",
           Background = { Color = Color.Pink },

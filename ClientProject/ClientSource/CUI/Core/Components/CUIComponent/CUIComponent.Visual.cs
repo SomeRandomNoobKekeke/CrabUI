@@ -78,10 +78,10 @@ namespace CrabUI
       if (!Displayed || CulledOut) yield break;
 
       yield return Background.VisualWrapper;
-      if (Tree.Children.Count != 0)
+      if (Children.Count != 0)
       {
         yield return VisualBounds.LeftBound; //TODO bounds should be yielded only if there's something non standart
-        foreach (CUIComponent child in Tree.Children)
+        foreach (CUIComponent child in Children)
         {
           yield return child.VisualWrapper;
         }

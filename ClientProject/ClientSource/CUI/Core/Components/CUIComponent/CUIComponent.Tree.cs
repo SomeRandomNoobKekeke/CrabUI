@@ -13,29 +13,23 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-    #region Public
-    #endregion
     public CUIComponent Parent
     {
       get => Tree.Parent;
       set => Tree.Parent = value;
     }
-    //TODO make some As<T> extention to Children
+    public ChildrenListProxy Children { get; } = new();
 
-    public void Append(CUIComponent child, string name = null) => Tree.Append(child, name);
-    public void Prepend(CUIComponent child, string name = null) => Tree.Prepend(child, name);
-    public void Insert(CUIComponent child, int index, string name = null) => Tree.Insert(child, index, name);
-    public void RemoveSelf() => Tree.RemoveSelf();
-    public void RemoveChild(CUIComponent child) => Tree.RemoveChild(child);
-    public void RemoveAt(int i) => Tree.RemoveAt(i);
-    public void RemoveAllChildren() => Tree.RemoveAllChildren();
-    public void MoveChildTo(CUIComponent child, int i) => Tree.MoveChildTo(child, i);
-
-    public void MoveToTop() => Parent?.MoveChildTo(this, 0);
+    public void RemoveSelf() => Parent?.Children.Remove(this);
+    public void MoveToTop()
+    {
+      if (Parent is null || Parent.Children.Count == 0) return;
+      Parent.Children.MoveChildTo(this, Parent.Children.Count - 1);
+    }
     public void MoveToBottom()
     {
-      if (Parent is null) return;
-      Parent.MoveChildTo(this, Parent.Children.Count - 1);
+      if (Parent is null || Parent.Children.Count == 0) return;
+      Parent.Children.MoveChildTo(this, 0);
     }
 
     public Dictionary<string, CUIComponent> NamedChildren
@@ -53,7 +47,7 @@ namespace CrabUI
     {
       get
       {
-        foreach (CUIComponent child in Tree.Children)
+        foreach (CUIComponent child in Children)
         {
           yield return child;
           foreach (CUIComponent deepChild in child.DeepChildren)
@@ -64,9 +58,9 @@ namespace CrabUI
       }
     }
 
-    public IReadOnlyList<CUIComponent> Children => Tree.ReadOnlyChildren;
-
-    public ChildrenListProxy Children2 { get; } = new();
+    //---------------------------------------------------------------------------
+    #region ChildrenListProxy
+    #endregion
     public class ChildrenListProxy : Part, IList<CUIComponent>
     {
       private List<CUIComponent> _Children = new();
@@ -86,6 +80,13 @@ namespace CrabUI
 
       public int Count => _Children.Count;
       public bool IsReadOnly => false;
+
+      public void MoveChildTo(CUIComponent child, int i)
+      {
+        ArgumentNullException.ThrowIfNull(child);
+        Remove(child);
+        Insert(i, child);
+      }
 
       public void Add(CUIComponent child)
       {
@@ -135,16 +136,15 @@ namespace CrabUI
       IEnumerator IEnumerable.GetEnumerator() => _Children.GetEnumerator();
     }
 
-
-    #region Protected
+    //---------------------------------------------------------------------------
+    #region Tree_Part
     #endregion
+
     protected Tree_Part Tree { get; } = new();
     public class Tree_Part : Part, IModule
     {
       public void Init()
       {
-        ReadOnlyChildren = Children.AsReadOnly();
-
         Debug_ChildAdded.Map(Self.DebugRelays[DebugCategory.TreeChanged]);
         Debug_ChildRemoved.Map(Self.DebugRelays[DebugCategory.TreeChanged]);
 
@@ -169,11 +169,6 @@ namespace CrabUI
       public LayoutMarker.Pattern MarkPattern { get; } = LayoutMarker.Pattern.UpAndDown;
 
 
-
-
-      public List<CUIComponent> Children { get; } = new();
-      public IReadOnlyList<CUIComponent> ReadOnlyChildren { get; private set; }
-
       private CUIComponent _Parent; public CUIComponent Parent
       {
         get => _Parent;
@@ -196,7 +191,7 @@ namespace CrabUI
           PropogateTreeChanged();
 
           _Parent.Forget(Self);
-          _Parent.Tree.Children.Remove(Self);
+          _Parent.Children.Remove(Self);
 
           _Parent.LayoutMarker.Mark(MarkPattern);
           Debug_LayoutMarked.Send(_Parent, MarkPattern, "Detaching old parent");
@@ -223,72 +218,6 @@ namespace CrabUI
           _Parent.Tree.Debug_ChildAdded.Send(_Parent, Self);
         }
       }
-
-      public CUIComponent Append(CUIComponent child, string name = null)
-      {
-        if (child is null) return null;
-
-        Children.Add(child);
-        child.Tree.Parent = Self;
-        if (name != null) Self.Remember(child, name);
-        return child;
-      }
-
-      public CUIComponent Prepend(CUIComponent child, string name = null)
-      {
-        if (child is null) return null;
-
-        Children.Insert(0, child);
-        child.Tree.Parent = Self;
-        if (name != null) Self.Remember(child, name);
-        return child;
-      }
-
-      public CUIComponent Insert(CUIComponent child, int index, string name = null)
-      {
-        if (child is null) return null;
-
-        index = Math.Clamp(index, 0, Children.Count);
-        Children.Insert(index, child);
-        child.Tree.Parent = Self;
-        if (name != null) Self.Remember(child, name);
-        return child;
-      }
-      public void RemoveSelf() => Parent?.RemoveChild(Self);
-      public void RemoveChild(CUIComponent child)
-      {
-        child.Tree.Parent = null;
-      }
-
-      public void RemoveAt(int i)
-      {
-        if (0 > i || i >= Children.Count) return;
-        Children[i].Tree.Parent = null;
-      }
-
-      public void RemoveAllChildren()
-      {
-        foreach (CUIComponent child in Children)
-        {
-          child.Tree._Parent = null;
-          OnChildRemoved.Raise(child);
-          child.Tree.OnDetachFromParent.Raise(Self);
-        }
-
-        PropogateTreeChanged();
-        Self.Layout.RequireChildrenUpdate = true;
-        Children.Clear();
-      }
-
-      public void MoveChildTo(CUIComponent child, int i)
-      {
-        Children.Remove(child);
-        Children.Insert(i, child);
-
-        PropogateTreeChanged();
-        Self.LayoutMarker.Mark(MarkPattern);
-      }
-
 
       private void PropogateTreeChanged()
       {

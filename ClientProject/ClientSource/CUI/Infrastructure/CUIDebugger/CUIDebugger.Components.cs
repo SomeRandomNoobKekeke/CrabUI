@@ -48,7 +48,7 @@ namespace CrabUI
       public void OnOpenHandler()
       {
         Refresh();
-        CUI.TopMain.Insert(HighlightOverlay, 0);
+        CUI.TopMain.Children.Insert(0, HighlightOverlay);
         HighlightOverlay.Rect = new CUIRect(0, 0, 0, 0);
       }
 
@@ -65,7 +65,7 @@ namespace CrabUI
           CUIComponent child in CUI.Main.DeepChildren.Where(c => !c.IsDebugTool).ToList()
         )
         {
-          ComponentList.Append(new ComponentButton(child));
+          ComponentList.Add(new ComponentButton(child));
         }
       }
 

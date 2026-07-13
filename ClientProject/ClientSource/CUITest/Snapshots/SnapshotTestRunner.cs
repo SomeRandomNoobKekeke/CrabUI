@@ -25,8 +25,8 @@ namespace CrabUIUser
         CUIComponent TestSubject = (CUIComponent)test.TestFunc();
         TestSubject.DeepDebug = true;
 
-        Chamber.RemoveAllChildren();
-        Chamber.Append(TestSubject);
+        Chamber.Children.Clear();
+        Chamber.Children.Add(TestSubject);
 
         CUI.Main.Step();
 

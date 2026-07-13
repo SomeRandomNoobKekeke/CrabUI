@@ -40,15 +40,15 @@ namespace CrabUI
         {
           if (EventList.Children.Count > 30)
           {
-            EventList.RemoveChild(EventList.Children.Last());
+            EventList.Children.Remove(EventList.Children.Last());
           }
         }
 
-        EventList.Insert(new CUITextBlock()
+        EventList.Children.Insert(0, new CUITextBlock()
         {
           Text = e.ToString(),
           TextAnchor = new Vector2(0, 0.5f),
-        }, 0);
+        });
       }
 
       public void OnOpenHandler()

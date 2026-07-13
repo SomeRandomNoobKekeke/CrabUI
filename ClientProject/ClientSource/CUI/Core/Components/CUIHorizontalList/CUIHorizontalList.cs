@@ -18,8 +18,8 @@ namespace CrabUI
       CullChildren = true;
     }
 
-    public void Clear() => RemoveAllChildren();
-    public void Add(CUIComponent child) => Append(child);
+    public void Clear() => Children.Clear();
+    public void Add(CUIComponent child) => Children.Add(child);
 
     [CUISerializableProp]
     public bool Scrollable { get; set; }

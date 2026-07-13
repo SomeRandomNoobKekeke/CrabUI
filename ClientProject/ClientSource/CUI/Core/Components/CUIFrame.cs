@@ -50,7 +50,7 @@ namespace CrabUI
       Host ??= TargetMainComponent ?? CUI.Main;
       if (Host == null || Parent == Host) return;
 
-      Host.Append(this);
+      Host.Children.Add(this);
       OnOpen?.Invoke(this);
       SaveState("lastopened");
     }
@@ -63,7 +63,7 @@ namespace CrabUI
     {
       Commands.ListenFor("close", (_) => Close());
       MouseDoubleClick += (c, e) => RestoreState("lastopened");
-      OnFocus += MoveToBottom;
+      OnFocus += MoveToTop;
     }
   }
 }

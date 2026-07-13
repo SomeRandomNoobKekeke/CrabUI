@@ -95,7 +95,7 @@ namespace CrabUIUser
         }
         else
         {
-          CUI.TopMain.Append(OpenButton);
+          CUI.TopMain.Children.Add(OpenButton);
           this.Close();
           Pages.Dismantle(); // This should trigger dismantle on concrete page
           ModStorage.Remove("CUITest");

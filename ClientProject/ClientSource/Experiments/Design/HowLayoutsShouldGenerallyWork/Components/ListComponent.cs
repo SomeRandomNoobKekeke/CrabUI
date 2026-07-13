@@ -28,10 +28,11 @@ namespace CrabUIUser
       public partial class LayoutAdapter_Part : Part, ListLayout.Host
       {
         IReadOnlyList<Layout.Child> Layout.Host.Children
-          => new ListProxy<Component, Layout.Child>(
-              Self.Children,
-              c => c.AsLayoutChild as Layout.Child
-            );
+          => Self.Children.As<Component, Layout.Child>(c => c.AsLayoutChild);
+        // => new ListProxy<Component, Layout.Child>(
+        //     Self.Children,
+        //     c => c.AsLayoutChild as Layout.Child
+        //   );
 
         Rectangle Layout.Host.Rect
         {

@@ -28,7 +28,7 @@ namespace CrabUI
         Layout LayoutMarker.Target.Layout => Self.Layout;
 
         IReadOnlyList<LayoutMarker.Target> LayoutMarker.Target.Children
-          => Self.Tree.Children.As<CUIComponent, LayoutMarker.Target>(child => child.Adapters.LayoutMarker);
+          => Self.Children.ReadOnlyAs<CUIComponent, LayoutMarker.Target>(child => child.Adapters.LayoutMarker);
 
         void LayoutMarker.Target.NotifyLayoutUpdated() => Self.LayoutUpdateNotifier.Notify();
       }

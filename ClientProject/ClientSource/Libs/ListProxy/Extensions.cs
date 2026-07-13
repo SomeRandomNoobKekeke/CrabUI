@@ -18,7 +18,13 @@ namespace BaroJunk
       => new ListProxy_IListT<TSource, TResult>(source);
 
     public static IReadOnlyList<TResult> As<TSource, TResult>(this IReadOnlyList<TSource> source)
-      => new ListProxy_IReadOnlyListT<TSource, TResult>(source);
+      => new ReadOnlyListProxy_IReadOnlyListT<TSource, TResult>(source);
+
+    public static IReadOnlyList<TResult> ReadOnlyAs<TSource, TResult>(this IList source)
+      => new ReadOnlyListProxy_IList<TResult>(source);
+    public static IReadOnlyList<TResult> ReadOnlyAs<TSource, TResult>(this IList<TSource> source)
+      => new ReadOnlyListProxy_IListT<TSource, TResult>(source);
+
 
     //CustomConversion
     public static IList<TResult> As<TResult>(
@@ -36,6 +42,16 @@ namespace BaroJunk
     public static IReadOnlyList<TResult> As<TSource, TResult>(
       this IReadOnlyList<TSource> source,
       Func<TSource, TResult> forward
-    ) => new CustomListProxy_IReadOnlyListT<TSource, TResult>(source, forward);
+    ) => new CustomReadOnlyListProxy_IReadOnlyListT<TSource, TResult>(source, forward);
+
+    public static IReadOnlyList<TResult> ReadOnlyAs<TResult>(
+      this IList source,
+      Func<object, TResult> forward
+    ) => new CustomReadOnlyListProxy_IList<TResult>(source, forward);
+
+    public static IReadOnlyList<TResult> ReadOnlyAs<TSource, TResult>(
+      this IList<TSource> source,
+      Func<TSource, TResult> forward
+    ) => new CustomReadOnlyListProxy_IListT<TSource, TResult>(source, forward);
   }
 }

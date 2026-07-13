@@ -8,9 +8,9 @@ using System.Diagnostics;
 namespace BaroJunk
 {
 
-  public class ListProxy_IReadOnlyListT<TSource, TResult> : IReadOnlyList<TResult>
+  public class ReadOnlyListProxy_IReadOnlyListT<TSource, TResult> : IReadOnlyList<TResult>
   {
-    public ListProxy_IReadOnlyListT(IReadOnlyList<TSource> source) => Source = source;
+    public ReadOnlyListProxy_IReadOnlyListT(IReadOnlyList<TSource> source) => Source = source;
     private IReadOnlyList<TSource> Source;
 
     public int Count => Source.Count;

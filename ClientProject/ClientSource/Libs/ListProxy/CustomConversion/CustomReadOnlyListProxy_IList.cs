@@ -8,15 +8,15 @@ using System.Diagnostics;
 namespace BaroJunk
 {
 
-  public class CustomListProxy_IReadOnlyListT<TSource, TResult> : IReadOnlyList<TResult>
+  public class CustomReadOnlyListProxy_IList<TResult> : IReadOnlyList<TResult>
   {
-    public CustomListProxy_IReadOnlyListT(IReadOnlyList<TSource> source, Func<TSource, TResult> forward)
+    public CustomReadOnlyListProxy_IList(IList source, Func<object, TResult> forward)
     {
       Source = source;
       Forward = forward;
     }
-    private Func<TSource, TResult> Forward;
-    private IReadOnlyList<TSource> Source;
+    private Func<object, TResult> Forward;
+    private IList Source;
 
     public int Count => Source.Count;
 
@@ -24,7 +24,7 @@ namespace BaroJunk
 
     public IEnumerable<TResult> Enumerate()
     {
-      foreach (TSource o in Source)
+      foreach (object o in Source)
       {
         yield return Forward(o);
       }

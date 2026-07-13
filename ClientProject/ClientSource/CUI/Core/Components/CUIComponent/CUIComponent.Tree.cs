@@ -63,7 +63,7 @@ namespace CrabUI
     #endregion
     public class ChildrenListProxy : Part, IList<CUIComponent>
     {
-      private List<CUIComponent> _Children = new();
+      public List<CUIComponent> _Children = new();
 
 
       public CUIComponent this[int i]
@@ -191,7 +191,7 @@ namespace CrabUI
           PropogateTreeChanged();
 
           _Parent.Forget(Self);
-          _Parent.Children.Remove(Self);
+          // _Parent.Children.Remove(Self);
 
           _Parent.LayoutMarker.Mark(MarkPattern);
           Debug_LayoutMarked.Send(_Parent, MarkPattern, "Detaching old parent");

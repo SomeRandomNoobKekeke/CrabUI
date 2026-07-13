@@ -21,7 +21,7 @@ namespace CrabUI
         public CUIComponent Self { get; set; }
 
         IReadOnlyList<Layout.Child> Layout.Host.Children
-          => Self.Tree.Children.As<CUIComponent, Layout.Child>(c => c.Adapters.Layout_Child);
+          => Self.Children.ReadOnlyAs<CUIComponent, Layout.Child>(c => c.Adapters.Layout_Child);
 
         Vector2 Layout.Host.ChildrenOffset => Self.LayoutProps.ChildrenOffset.Value;
         bool Layout.Host.CullChildren => Self.CullChildren;

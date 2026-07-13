@@ -24,7 +24,7 @@ namespace CrabUI
           //TODO init Children here
         }
 
-        LayoutMarker.Target LayoutMarker.Target.Parent => Self.Tree.Parent?.Adapters.LayoutMarker;
+        LayoutMarker.Target LayoutMarker.Target.Parent => Self.Parent?.Adapters.LayoutMarker;
         Layout LayoutMarker.Target.Layout => Self.Layout;
 
         IReadOnlyList<LayoutMarker.Target> LayoutMarker.Target.Children

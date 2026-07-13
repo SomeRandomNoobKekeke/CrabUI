@@ -27,16 +27,7 @@ namespace CrabUI
     protected Protected_Commands_Part ProtectedCommands { get; } = new();
     public class Protected_Commands_Part : Part, IModule
     {
-      [In] public Tree_Part Tree { get; set; }
-
       public RoutableCommandNode Node { get; } = new();
-
-      public void Init()
-      {
-        Tree.OnAttachToParent.Add(OnAttachToParentHandler);
-        Tree.OnDetachFromParent.Add(OnDetachFromParentHandler);
-      }
-
 
       public void OnAttachToParentHandler(CUIComponent parent)
       {

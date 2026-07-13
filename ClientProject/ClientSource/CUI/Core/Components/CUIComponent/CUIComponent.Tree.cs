@@ -8,15 +8,20 @@ using Barotrauma;
 using Microsoft.Xna.Framework;
 using CUICodeGenerator;
 using BaroJunk;
+using System.Collections;
 namespace CrabUI
 {
   public partial class CUIComponent
   {
     #region Public
     #endregion
-    public CUIComponent Parent => Tree.Parent;
+    public CUIComponent Parent
+    {
+      get => Tree.Parent;
+      set => Tree.Parent = value;
+    }
     //TODO make some As<T> extention to Children
-    public IReadOnlyList<CUIComponent> Children => Tree.ReadOnlyChildren;
+
     public void Append(CUIComponent child, string name = null) => Tree.Append(child, name);
     public void Prepend(CUIComponent child, string name = null) => Tree.Prepend(child, name);
     public void Insert(CUIComponent child, int index, string name = null) => Tree.Insert(child, index, name);
@@ -58,6 +63,78 @@ namespace CrabUI
         }
       }
     }
+
+    public IReadOnlyList<CUIComponent> Children => Tree.ReadOnlyChildren;
+
+    public ChildrenListProxy Children2 { get; } = new();
+    public class ChildrenListProxy : Part, IList<CUIComponent>
+    {
+      private List<CUIComponent> _Children = new();
+
+
+      public CUIComponent this[int i]
+      {
+        get => _Children[i];
+        set
+        {
+          if (value is null) return;
+
+          _Children[i] = value;
+          value.Parent = Self;
+        }
+      }
+
+      public int Count => _Children.Count;
+      public bool IsReadOnly => false;
+
+      public void Add(CUIComponent child)
+      {
+        ArgumentNullException.ThrowIfNull(child);
+        _Children.Add(child);
+        child.Parent = Self;
+      }
+
+      //TODO this can be optimized, but not now
+      public void Clear()
+      {
+        foreach (CUIComponent child in _Children)
+        {
+          child.Parent = null;
+        }
+
+        _Children.Clear();
+      }
+
+      public bool Contains(CUIComponent child) => _Children.Contains(child);
+      public void CopyTo(CUIComponent[] array, int arrayIndex) => _Children.CopyTo(array, arrayIndex);
+      public IEnumerator<CUIComponent> GetEnumerator() => _Children.GetEnumerator();
+      public int IndexOf(CUIComponent child) => _Children.IndexOf(child);
+
+      public void Insert(int i, CUIComponent child)
+      {
+        ArgumentNullException.ThrowIfNull(child);
+        _Children.Insert(i, child);
+        child.Parent = Self;
+      }
+
+      public bool Remove(CUIComponent child)
+      {
+        ArgumentNullException.ThrowIfNull(child);
+        bool result = _Children.Remove(child);
+        if (result) child.Parent = null;
+        return result;
+      }
+
+      public void RemoveAt(int i)
+      {
+        CUIComponent child = _Children[i];
+        child.Parent = null;
+        _Children.RemoveAt(i);
+      }
+
+      IEnumerator IEnumerable.GetEnumerator() => _Children.GetEnumerator();
+    }
+
 
     #region Protected
     #endregion

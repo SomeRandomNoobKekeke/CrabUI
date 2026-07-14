@@ -12,6 +12,7 @@ namespace CUICodeGenerator
   {
     public void InjectModules() { }
     public void InjectParts() { }
+    public void RunInitMethods() { }
     public void InitParts() { }
     public void InitModules() { }
     public void InjectProps() { }
@@ -25,6 +26,7 @@ namespace CUICodeGenerator
         InjectModules();
         InjectProps();
         NotifyAwareObjects();
+        RunInitMethods();
         InitParts();
         InitModules();
       }
@@ -40,6 +42,7 @@ namespace CUICodeGenerator
   public interface IEndPart : IPart { }
   public interface IChimeraPart : IEndPart, IModule { }
   public interface IAdapterPart : IEndPart, IModule { }
+
   public interface IPropContainer { }
   public interface IProp { }
 

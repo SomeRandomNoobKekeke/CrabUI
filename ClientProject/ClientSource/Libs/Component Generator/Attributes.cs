@@ -9,6 +9,7 @@ namespace CUICodeGenerator
 {
   public class InAttribute : Attribute { }
   public class LocalAttribute : Attribute { }
+  public class InitMethodAttribute : Attribute { }
 
   public class GeneratedComponentAttribute : Attribute
   {

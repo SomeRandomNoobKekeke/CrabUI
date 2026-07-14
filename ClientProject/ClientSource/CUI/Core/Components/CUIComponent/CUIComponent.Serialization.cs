@@ -35,7 +35,7 @@ namespace CrabUI
 
     public virtual XElement Serialize()
     {
-      XElement element = CUIDefaultSerializer.Serialize(this);
+      XElement element = CUIDefaultSerializer.Serialize(this, Info.DefaultValue.As_Dictionary);
 
       foreach (CUIComponent child in Children)
       {

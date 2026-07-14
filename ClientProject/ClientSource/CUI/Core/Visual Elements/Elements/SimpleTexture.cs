@@ -7,10 +7,11 @@ using Barotrauma;
 using Microsoft.Xna.Framework;
 using BaroJunk;
 using Microsoft.Xna.Framework.Graphics;
+using System.Xml.Linq;
 
 namespace CrabUI
 {
-  public class SimpleTexture : VisualElementBase
+  public class SimpleTexture : VisualElementBase, CUISerializable
   {
     public DebugNode<CUIRect, Rectangle> Debug_RoundedRect { get; } = new(
       DebugCategory.RoundedRect, CUI.DebugHub,
@@ -68,6 +69,7 @@ namespace CrabUI
     #region Forwarded to CUISprite
     public CUITexture2D Texture { get => Sprite.Texture; set => Sprite.Texture = value; }
     public Rectangle? SourceRectangle { get => Sprite.SourceRectangle; set => Sprite.SourceRectangle = value; }
+    [CUISerializableProp]
     public Color Color { get => Sprite.Color; set => Sprite.Color = value; }
     public float Rotation { get => Sprite.Rotation; set => Sprite.Rotation = value; }
     public Vector2 Origin { get => Sprite.Origin; set => Sprite.Origin = value; }
@@ -82,5 +84,11 @@ namespace CrabUI
         Sprite.Draw(spriteBatch, RoundedRect);
       }
     }
+
+    public static object Deserialize(XElement element)
+    {
+      return new SimpleTexture();
+    }
+    public XElement Serialize() => new XElement(GetType().Name);
   }
 }

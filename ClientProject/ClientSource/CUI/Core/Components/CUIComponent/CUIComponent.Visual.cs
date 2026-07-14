@@ -8,6 +8,7 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
+    [CUISerializableProp]
     public SimpleTexture Background { get; } = new();
     public Borders Borders { get; } = new();
 

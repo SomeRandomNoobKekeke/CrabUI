@@ -15,8 +15,10 @@ namespace CrabUI
 {
   public static class CUIDefaultSerializer
   {
-    public static XElement Serialize(CUISerializable o)
+    public static XElement Serialize(CUISerializable o, IDictionary<string, object> defaultValues = null)
     {
+      defaultValues ??= new Dictionary<string, object>();
+
       XElement element = new(o.GetType().Name);
 
       if (CUICore.CUITypes.SerializableTypes.ContainsKey(o.GetType()))
@@ -25,7 +27,10 @@ namespace CrabUI
 
         foreach (var (name, pp) in info.SerializableProps)
         {
-          element.SetAttributeValue(name, CUICore.Parser.Serialize(pp.GetValue(o)));
+          object value = pp.GetValue(o);
+          if (defaultValues.ContainsKey(name) && Equals(value, defaultValues[name])) continue;
+
+          element.SetAttributeValue(name, CUICore.Parser.Serialize(value));
         }
       }
 

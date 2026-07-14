@@ -10,21 +10,24 @@ using CUICodeGenerator;
 using BaroJunk;
 namespace CrabUI
 {
-  public partial class CUIComponent
+  public partial class CUIComponent : IFocusable
   {
-    public FocusHandle FocusHandle { get; } = new();
-
-    public bool Focused
+    protected FocusStuffTemp_Part focusStuffTemp { get; } = new();
+    //TODO another stupid init part, i need init methods now
+    public class FocusStuffTemp_Part : IPart
     {
-      get => FocusHandle.Focused;
-      set => FocusHandle.Focused = value;
+      public void Init()
+      {
+
+      }
     }
 
-    public bool Focusable
-    {
-      get => FocusHandle.Focusable;
-      set => FocusHandle.Focusable = value;
-    }
+
+    public bool Focused { get; set; }
+    public bool Focusable { get; set; }
+
+
+
 
     //TODO should these take this CUIComponent as first arg?
     public Action AddOnFocus { set { OnFocus += value; } }

@@ -17,6 +17,7 @@ namespace CrabUI
     public bool CullChildren { get; set; }
 
 
+    //TODO should i serialize as a prop or as deep prop of Background?
     public bool ConsumeMouseClicks
     {
       get => Background.ConsumeMouseClicks;

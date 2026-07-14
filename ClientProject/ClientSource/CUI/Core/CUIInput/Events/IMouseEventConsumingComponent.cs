@@ -10,7 +10,7 @@ using BaroJunk;
 namespace CrabUI
 {
   //WTF is this? why are there 2 EventConsumers, do i need to maintain them both? Are they synched?
-  //So, i added it when i made all events accept component as firs arg, i guess not every IMouseEventConsuming is actually attached to component
+  //So, i added it when i made all events accept component as firs arg, i guess not every IMouseEventConsumer is actually attached to component
   //Still need somehow make sure that they are synched
   public interface IMouseEventConsumingComponent
   {

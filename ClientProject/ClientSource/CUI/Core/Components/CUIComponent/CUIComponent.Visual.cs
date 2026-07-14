@@ -47,7 +47,7 @@ namespace CrabUI
 
       if (CullChildren)
       {
-        ScissorRect = Rect.Box;
+        ScissorRect = ChildrenRect.Round();
       }
 
       Debug_RectSet.Send(this, Rect);

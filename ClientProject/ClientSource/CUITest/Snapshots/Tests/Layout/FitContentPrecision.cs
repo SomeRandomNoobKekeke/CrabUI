@@ -17,7 +17,7 @@ namespace CrabUIUser
     {
       public static CUIComponent FitContentPrecision()
       {
-        CUIFrame frame = new CUIDefault.Frame("FitContentPrecision")
+        CUIFrame frame = new CUIDefault.Frame("FitLilContent")
         {
           Absolute = new CUINullRect(0, 0, 400, 600),
         };
@@ -26,23 +26,24 @@ namespace CrabUIUser
         {
           FitContent = new CUIBool2(true, true),
           Background = { Color = Color.Yellow },
+          // CullChildren = false,
         };
 
         frame["layout"]["list"]["1"] = new CUIComponent()
         {
-          Absolute = new CUINullRect(w: 50.0f, h: 20.3f),
+          Absolute = new CUINullRect(w: 50.0f, h: 2.3f),
           Background = { Color = Color.Green * 0.5f },
         };
 
         frame["layout"]["list"]["2"] = new CUIComponent()
         {
-          Absolute = new CUINullRect(w: 100.0f, h: 20.3f),
+          Absolute = new CUINullRect(w: 100.0f, h: 2.3f),
           Background = { Color = Color.Red * 0.5f },
         };
 
         frame["layout"]["list"]["3"] = new CUIComponent()
         {
-          Absolute = new CUINullRect(w: 50.0f, h: 20.3f),
+          Absolute = new CUINullRect(w: 50.0f, h: 2.3f),
           Background = { Color = Color.Blue * 0.5f },
         };
 

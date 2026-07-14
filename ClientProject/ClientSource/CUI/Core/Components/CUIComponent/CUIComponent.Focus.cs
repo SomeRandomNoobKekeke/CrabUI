@@ -10,38 +10,55 @@ using CUICodeGenerator;
 using BaroJunk;
 namespace CrabUI
 {
-  public partial class CUIComponent : IFocusable
+  public partial class CUIComponent
   {
-    protected FocusStuffTemp_Part focusStuffTemp { get; } = new();
-    //TODO another stupid init part, i need init methods now
-    public class FocusStuffTemp_Part : IPart
+    public class IFocusableAdapter_Part : Part, IFocusable
     {
-      public void Init()
-      {
+      public bool Focused { get; set; }
+      public ClearableEvent OnFocus { get; } = new();
+      public ClearableEvent OnFocusLost { get; } = new();
+    }
+    protected IFocusableAdapter_Part IFocusableAdapter { get; } = new();
 
+    [InitMethod]
+    public void InitFocusStuff()
+    {
+      Background.FocusProbed.Add(HandleFocusProbe);
+    }
+
+    public bool ConsumeFocus
+    {
+      get => Background.ConsumeFocus;
+      set => Background.ConsumeFocus = value;
+    }
+    public bool Focused => IFocusableAdapter.Focused;
+    public bool Focusable { get; set; }
+
+    public void HandleFocusProbe(CUIFocusRequestEvent e)
+    {
+      if (!Focusable) return;
+
+      if (e.Input.Mouse.M1.Down)
+      {
+        e.Accept(IFocusableAdapter);
       }
     }
 
-
-    public bool Focused { get; set; }
-    public bool Focusable { get; set; }
-
-
-
+    public void Focus() => CUICore.RequestFocus(IFocusableAdapter);
 
     //TODO should these take this CUIComponent as first arg?
     public Action AddOnFocus { set { OnFocus += value; } }
     public event Action OnFocus
     {
-      add => FocusHandle.OnFocus.Add(value);
-      remove => FocusHandle.OnFocus.Remove(value);
+      add => IFocusableAdapter.OnFocus.Add(value);
+      remove => IFocusableAdapter.OnFocus.Remove(value);
     }
 
     public Action AddOnFocusLost { set { OnFocusLost += value; } }
     public event Action OnFocusLost
     {
-      add => FocusHandle.OnFocusLost.Add(value);
-      remove => FocusHandle.OnFocusLost.Remove(value);
+      add => IFocusableAdapter.OnFocusLost.Add(value);
+      remove => IFocusableAdapter.OnFocusLost.Remove(value);
     }
   }
 }

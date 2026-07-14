@@ -56,5 +56,8 @@ namespace CrabUI
       add => Instance.LifeCycle.OnDrawBeforeGUI.Add(value);
       remove => Instance.LifeCycle.OnDrawBeforeGUI.Remove(value);
     }
+
+    public static void RequestFocus(IFocusable focusable)
+      => Instance.GlobalFocusTracker.WantsToBeFocused = focusable;
   }
 }

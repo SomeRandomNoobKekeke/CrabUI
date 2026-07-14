@@ -12,6 +12,6 @@ namespace CrabUI
   public interface IFocusRequestEventConsumer : IEventConsumer
   {
     public bool ConsumeFocus { get; }
-    public ClearableEvent<CUIFocusRequestEvent> FocusRequested { get; }
+    public ClearableEvent<CUIFocusRequestEvent> FocusProbed { get; }
   }
 }

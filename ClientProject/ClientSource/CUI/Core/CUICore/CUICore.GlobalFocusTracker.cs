@@ -15,57 +15,55 @@ namespace CrabUI
   {
     public class GlobalFocusTracker_Part : Part
     {
-      public bool FocusShouldBeLost { get; set; }
-      public IFocusable ShouldBeFocused { get; set; }
-
-
-      private IFocusable? _FocusedComponent;
-      public IFocusable? FocusedComponent
+      private IFocusable? _Focused; public IFocusable? Focused
       {
-        get => _FocusedComponent;
+        get => _Focused;
         private set
         {
-          if (_FocusedComponent == value) return;
+          if (_Focused == value) return;
 
-          if (_FocusedComponent != null) _FocusedComponent.Focused = false;
-          _FocusedComponent = value;
-          if (_FocusedComponent != null) _FocusedComponent.Focused = true;
+          if (_Focused is not null)
+          {
+            _Focused.Focused = false;
+            _Focused.OnFocusLost.Raise();
+
+          }
+
+          _Focused = value;
+
+          if (_Focused is not null)
+          {
+            _Focused.Focused = true;
+            _Focused.OnFocus.Raise();
+          }
         }
       }
+
+      public IFocusable WantsToBeFocused { get; set; }
 
       public void ResolveFocus(bool SomethingFocusedElsewhere)
       {
         if (SomethingFocusedElsewhere)
         {
-          FocusedComponent = null;
+          Focused = null;
           return;
         }
 
-        if (
-          Self.Main.FocusTracker.FocusShouldBeLost &&
-          Self.TopMain.FocusTracker.FocusShouldBeLost
-        )
-        {
-          FocusedComponent = null;
-          return;
-        }
+        IFocusable next = WantsToBeFocused;
+        next ??= Self.Main.WantsToBeFocused;
+        next ??= Self.TopMain.WantsToBeFocused;
 
-        if (
-          Self.Main.FocusTracker.ShouldBeFocused is null &&
-          Self.TopMain.FocusTracker.ShouldBeFocused is null
-        )
-        {
-          return;
-        }
+        if (next is not null) Focused = next; //TODO and GrabFocus()?
+        if (next is null && FocusShouldBeLost()) Focused = null;
 
-        IFocusable? next = null;
-        next ??= Self.Main.FocusTracker.ShouldBeFocused;
-        next ??= Self.TopMain.FocusTracker.ShouldBeFocused;
+        WantsToBeFocused = null;
+      }
 
-        FocusedComponent = next;
+      private bool FocusShouldBeLost()
+      {
+        return Self._Input.Mouse.M1.Down;
       }
     }
-
 
     public GlobalFocusTracker_Part GlobalFocusTracker { get; } = new();
   }

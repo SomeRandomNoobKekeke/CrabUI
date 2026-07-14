@@ -26,11 +26,10 @@ namespace CrabUI
 
 
     public EventConstructor EventConstructor { get; set; } // Injected from CUICore //TODO use CUICodeGenerator
-    public FocusTracker FocusTracker { get; } = new(); //BRUH should this be public?
     public GrabbedHandleTracker GrabbedHandleTracker { get; } = new();  //BRUH should this be public?
 
     public bool MouseOverSomeElement => EventTargets.TopTarget != null;
-
+    public IFocusable WantsToBeFocused { get; private set; }
     public void DrawChildren(CUISpriteBatch spriteBatch)
     {
       ChainDrawer.Draw(spriteBatch, VisualFlattener.Flat);
@@ -81,8 +80,6 @@ namespace CrabUI
 
     private void HandleInput(CUIInput Input)
     {
-      FocusTracker.Reset();
-
       EventTargets.Find(VisualFlattener.Flat, Input.Mouse.Pos);
 
       EventDispatcher.Dispatch(EventTargets.PrevTargets, EventConstructor.MouseOffEvent);
@@ -96,9 +93,16 @@ namespace CrabUI
       EventDispatcher.Dispatch(GlobalEvents, EventConstructor.Events);
       EventDispatcher.Dispatch(EventTargets.Targets, EventConstructor.Events);
 
-      FocusTracker.CheckFocusLost(Input, EventTargets);
+      CheckFocus(Input);
     }
 
+    private void CheckFocus(CUIInput Input)
+    {
+      CUIFocusRequestEvent focusProbe = new CUIFocusRequestEvent(Input);
+      EventDispatcher.Dispatch(EventTargets.Targets, focusProbe);
+
+      WantsToBeFocused = focusProbe.Acceptor;
+    }
 
 
     private void UpdateLayout()

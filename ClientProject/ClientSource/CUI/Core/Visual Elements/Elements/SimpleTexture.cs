@@ -11,12 +11,15 @@ using System.Xml.Linq;
 
 namespace CrabUI
 {
-  public class SimpleTexture : VisualElementBase, CUISerializable
+  public class SimpleTexture : VisualElementBase, CUISerializable, IFocusRequestEventConsumer
   {
     public DebugNode<CUIRect, Rectangle> Debug_RoundedRect { get; } = new(
       DebugCategory.RoundedRect, CUI.DebugHub,
       (rect, rounded) => $"{rect} -> {rounded}"
     );
+
+    public bool ConsumeFocus { get; set; }
+    public ClearableEvent<CUIFocusRequestEvent> FocusProbed { get; } = new();
 
     private Rectangle RoundedRect;
 
@@ -75,6 +78,7 @@ namespace CrabUI
     public Vector2 Origin { get => Sprite.Origin; set => Sprite.Origin = value; }
     public SpriteEffects Effects { get => Sprite.Effects; set => Sprite.Effects = value; }
     public float LayerDepth { get => Sprite.LayerDepth; set => Sprite.LayerDepth = value; }
+
     #endregion
 
     public override void Draw(CUISpriteBatch spriteBatch)
@@ -90,5 +94,7 @@ namespace CrabUI
       return new SimpleTexture();
     }
     public XElement Serialize() => new XElement(GetType().Name);
+
+
   }
 }

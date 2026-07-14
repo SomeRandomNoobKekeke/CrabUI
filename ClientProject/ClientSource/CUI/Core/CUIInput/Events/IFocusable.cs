@@ -6,11 +6,14 @@ using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
 using CUICodeGenerator;
+using BaroJunk;
 
 namespace CrabUI
 {
   public interface IFocusable
   {
     public bool Focused { get; set; }
+    public ClearableEvent OnFocus { get; }
+    public ClearableEvent OnFocusLost { get; }
   }
 }

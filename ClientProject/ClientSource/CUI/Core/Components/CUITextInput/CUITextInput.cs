@@ -31,7 +31,8 @@ namespace CrabUI
       base.InitStyle();
       Focusable = true;
       TextBlock.Anchor = CUIAnchor.LeftCenter;
-      Background.ConsumeMouseClicks = true;
+      ConsumeMouseClicks = true;
+      ConsumeFocus = true;
       CullChildren = true;
     }
 

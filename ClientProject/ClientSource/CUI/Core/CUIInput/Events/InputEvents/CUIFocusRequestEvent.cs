@@ -8,17 +8,22 @@ using Microsoft.Xna.Framework;
 
 namespace CrabUI
 {
-  public class CUIFocusRequestEvent : InputEvent
+  public class CUIFocusRequestEvent(CUIInput input) : InputEvent
   {
-    public void Accept(IFocusable c)
-    {
+    public CUIInput Input { get; } = input;
 
+    public IFocusable Acceptor { get; private set; }
+
+    public void Accept(IFocusable acceptor)
+    {
+      Acceptor = acceptor;
     }
     public override void Dispatch(IEventConsumer consumer)
     {
       if (consumer is IFocusRequestEventConsumer FEConsumer)
       {
-        FEConsumer.FocusRequested.Raise(this);
+        FEConsumer.FocusProbed.Raise(this);
+        Consumed = FEConsumer.ConsumeFocus || Consumed;
       }
     }
   }

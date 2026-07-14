@@ -10,7 +10,7 @@ using CUICodeGenerator;
 
 namespace CrabUI
 {
-  public abstract class VisualElementBase : IMouseEventConsumer, IFocusRequestEventConsumer, IVisualElement
+  public abstract class VisualElementBase : IMouseEventConsumer, IVisualElement
   {
     public VisualElementBase()
     {
@@ -35,10 +35,6 @@ namespace CrabUI
     public virtual bool IsPointOnTransparentPixel(Vector2 point) => false;
 
     public bool ConsumeMouseClicks { get; set; }
-
-    public bool Focusable { get; set; }
-    public bool ConsumeFocus { get; set; }
-    public ClearableEvent<CUIFocusRequestEvent> FocusRequested { get; } = new();
 
     public ClearableEvent<CUIMouseDownEvent> MouseDown { get; } = new();
     public ClearableEvent<CUIMouseUpEvent> MouseUp { get; } = new();

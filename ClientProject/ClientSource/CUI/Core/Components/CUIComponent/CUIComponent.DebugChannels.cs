@@ -12,26 +12,36 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
+    public DebugNode<CUIComponent, CUIRect> Debug_RectSet { get; } = new(
+      DebugCategory.RectSet, CUI.DebugHub,
+      (component, rect) => $"{component}.Rect = {rect}"
+    );
+    public DebugNode<Type, object, CUIComponent, string> Debug_PropSet { get; } = new(
+      DebugCategory.FunnyPropSet, CUI.DebugHub,
+      (propType, value, host, propName) => $"{host}.{propName} = {value}"
+    );
+
     protected InitDebugChannels_Part InitDebugChannels { get; } = new();
     public class InitDebugChannels_Part : Part
     {
       public void Init()
       {
+
         Self.Debug_RectSet.Map(Self.DebugRelays[DebugCategory.RectSet]);
         Self.DebugRelays[DebugCategory.LayoutMarked].Route(Self.Layout.Debug_LayoutMarked);
+
+        Self.DebugRelays[DebugCategory.RoundedRect].Route(Self.Background.Debug_RoundedRect);
 
         Self.OnDebugOn += () => Self.DebugRelays.Open();
         Self.OnDebugOff += () => Self.DebugRelays.Close();
       }
     }
 
-    public DebugNode<Type, object, CUIComponent, string> Debug_PropSet { get; } = new(
-      DebugCategory.FunnyPropSet, CUI.DebugHub,
-      (propType, value, host, propName) => $"{host}.{propName} = {value}"
-    );
+
 
     public DebugRelayDict DebugRelays { get; } = new()
     {
+      [DebugCategory.RoundedRect] = new DebugRelay(),
       [DebugCategory.LayoutPropSet] = new DebugRelay(),
       [DebugCategory.RectSet] = new DebugRelay(),
       [DebugCategory.TreeChanged] = new DebugRelay(),

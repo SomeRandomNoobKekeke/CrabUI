@@ -56,7 +56,7 @@ namespace CrabUI
       public void InsertChild(int i, CUIComponent child)
       {
         ArgumentNullException.ThrowIfNull(child);
-        ValidateI(i); //TODO this validation is obviously wrong, need to test it
+        if (i < 0) throw new ArgumentException($"{Self}| child insert index out of bounds [{i}]");
 
         child._Parent?.TreeOperations.RemoveChild(child);
         child._Parent = Self;

@@ -46,6 +46,20 @@ namespace CrabUI
     }
     public Vector2 Center => new Vector2(Left + Width / 2, Top + Height / 2);
     public Rectangle Box => new Rectangle((int)Left, (int)Top, (int)Width, (int)Height);
+    public Rectangle Round()
+    {
+      Point topLeft = new Point(
+        (int)Math.Round(Left),
+        (int)Math.Round(Top)
+      );
+
+      Point rightBottom = new Point(
+        (int)Math.Round(Left + Width),
+        (int)Math.Round(Top + Height)
+      );
+
+      return new Rectangle(topLeft, rightBottom - topLeft);
+    }
 
     public Vector2 LeftTop => new Vector2(Left, Top);
     public Vector2 LeftCenter => new Vector2(Left, Top + Height / 2);

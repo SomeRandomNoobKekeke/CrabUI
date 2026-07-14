@@ -97,13 +97,20 @@ namespace CrabUI
         }
       }
 
-      float emptySpace = Parent.ChildrenRect.Height - TotalHeight;
-      float totalFlex = resizables.Sum(size => size.Child.Flex.Value);
-      foreach (ChildSize size in resizables)
+      if (resizables.Count > 0)
       {
-        size.Height = emptySpace * size.Child.Flex.Value / totalFlex;
-      }
+        float emptySpace = Parent.ChildrenRect.Height - TotalHeight;
+        float totalFlex = resizables.Sum(size => size.Child.Flex.Value);
 
+        float spaceleft = emptySpace;
+        for (int i = 0; i < resizables.Count - 1; i++)
+        {
+          resizables[i].Height = emptySpace * resizables[i].Child.Flex.Value / totalFlex;
+          spaceleft -= resizables[i].Height;
+        }
+
+        resizables.Last().Height = spaceleft;
+      }
 
       if (Parent.Direction == CUIDirection.Straight)
       {
@@ -145,7 +152,6 @@ namespace CrabUI
 
     public override void UpdateParent()
     {
-      //TODO it's probably wrong, iirc it's just copy pasted from plain layout
       if (Parent.FitContent.X)
       {
         float maxWidth = 0;

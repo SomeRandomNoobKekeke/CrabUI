@@ -12,7 +12,23 @@ namespace CrabUI
 {
   public class SimpleTexture : VisualElementBase
   {
-    public override CUIRect Rect { get; set; }
+    public DebugNode<CUIRect, Rectangle> Debug_RoundedRect { get; } = new(
+      DebugCategory.RoundedRect, CUI.DebugHub,
+      (rect, rounded) => $"{rect} -> {rounded}"
+    );
+
+    private Rectangle RoundedRect;
+
+    private CUIRect _Rect; public override CUIRect Rect
+    {
+      get => _Rect;
+      set
+      {
+        _Rect = value;
+        RoundedRect = _Rect.Round();
+        Debug_RoundedRect.Send(_Rect, RoundedRect);
+      }
+    }
 
     private CUISprite _Sprite = CUISprite.White; public CUISprite Sprite
     {
@@ -63,7 +79,7 @@ namespace CrabUI
     {
       if (Visible)
       {
-        Sprite.Draw(spriteBatch, Rect.Box);
+        Sprite.Draw(spriteBatch, RoundedRect);
       }
     }
   }

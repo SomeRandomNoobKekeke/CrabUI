@@ -12,6 +12,7 @@ namespace CrabUI
   {
     public DebugRelayDict DebugRelays { get; } = new()
     {
+      [DebugCategory.RoundedRect] = new DebugRelay(),
       [DebugCategory.HandleGrab] = new DebugRelay(),
       [DebugCategory.LayoutPropSet] = new DebugRelay(),
       [DebugCategory.RectSet] = new DebugRelay(),

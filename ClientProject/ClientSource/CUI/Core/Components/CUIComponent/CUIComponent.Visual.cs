@@ -8,11 +8,6 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-    public DebugNode<CUIComponent, CUIRect> Debug_RectSet { get; } = new(
-      DebugCategory.RectSet, CUI.DebugHub,
-      (component, rect) => $"{component}.Rect = {rect}"
-    );
-
     public SimpleTexture Background { get; } = new();
     public Borders Borders { get; } = new();
 

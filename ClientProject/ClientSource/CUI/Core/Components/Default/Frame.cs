@@ -38,12 +38,17 @@ namespace CrabUI
         {
           Flex = 1,
         };
-        this["layout"]["handle"]["closebutton"] = new CUIComponent()
+        this["layout"]["handle"]["closebuttonwrapper"] = new CUIComponent()
         {
           FitContent = new(true, true),
           Background = { Color = Palette.Colors["border"] },
         };
-        this["layout"]["handle"]["closebutton"]["bruh"] = new CUICloseButton();
+        this["layout"]["handle"]["closebuttonwrapper"]["closebutton"] = new CUICloseButton();
+      }
+
+      public Frame(string caption) : this()
+      {
+        Caption.Text = caption;
       }
     }
   }

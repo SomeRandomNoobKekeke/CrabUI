@@ -36,7 +36,6 @@ namespace CrabUIUser
         frame["wrapper1"]["text 1"] = new CUITextBlock()
         {
           Text = "text 1",
-          ResizeStrategy = ResizeStrategy.Resist,
           Absolute = new CUINullRect(20, 20),
           Background = { Color = Color.Orange },
         };
@@ -44,7 +43,6 @@ namespace CrabUIUser
         frame["wrapper1"]["text 2"] = new CUITextBlock()
         {
           Text = "text 2",
-          ResizeStrategy = ResizeStrategy.Resist,
           Absolute = new CUINullRect(50, 50),
           Background = { Color = Color.Orange },
         };

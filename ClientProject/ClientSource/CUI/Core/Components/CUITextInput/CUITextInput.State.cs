@@ -21,7 +21,7 @@ namespace CrabUI
       public event Action Changed;
       public event Action<string> TextChanged;
 
-      public string Text { get; private set; }
+      public string Text { get; private set; } = "";
       public int SelectionStart { get; private set; }
       public int SelectionEnd { get; private set; }
       public int CaretPos { get; private set; }

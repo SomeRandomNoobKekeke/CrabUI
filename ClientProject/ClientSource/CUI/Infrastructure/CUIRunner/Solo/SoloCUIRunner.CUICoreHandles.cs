@@ -15,6 +15,9 @@ namespace CrabUI
   {
     public partial class CUICoreHandles_Part() : CUICore.CUICoreHandles
     {
+      private DummyIKeyboardSubscriber DummyIKeyboardSubscriber = new();
+
+
       public SoloCUIRunner Self { get; set; }
 
       public CUIGraphicsDevice GraphicsDevice => Self.GraphicsDevice;
@@ -32,6 +35,11 @@ namespace CrabUI
       }
 
       public void GrabFocus()
+      {
+        Barotrauma.GUI.KeyboardDispatcher.Subscriber = DummyIKeyboardSubscriber;
+      }
+
+      public void ClearFocus()
       {
         Barotrauma.GUI.KeyboardDispatcher.Subscriber = null;
       }

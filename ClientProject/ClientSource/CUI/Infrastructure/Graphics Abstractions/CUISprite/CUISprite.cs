@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CrabUI
 {
-  public class CUISprite
+  public record CUISprite
   {
     public static CUISprite White => new CUISprite(CUITexture2D.White);
     public static CUISprite BaroDev => new CUISprite(CUICore.TextureManager.Get("BaroDev"));

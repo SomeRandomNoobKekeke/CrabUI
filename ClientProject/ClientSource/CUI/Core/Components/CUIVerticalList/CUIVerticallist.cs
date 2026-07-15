@@ -27,6 +27,7 @@ namespace CrabUI
     public float TopGap { get; set; }
     public float BottomGap { get; set; }
 
+    //FIXME doens't work with CUIDirection.Reverse
     public float Scroll
     {
       get => ChildrenOffset.Y;

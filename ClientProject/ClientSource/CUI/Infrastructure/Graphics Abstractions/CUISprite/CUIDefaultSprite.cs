@@ -10,7 +10,6 @@ using System.IO;
 
 namespace CrabUI
 {
-  //TODO why is it here?
   /// <summary>
   /// Note: all of this is cringe, idk which ones i need, what looks good or how to name them
   /// It's volatile, don't rely on this too much
@@ -32,5 +31,7 @@ namespace CrabUI
     public static CUISprite InnerShadow => AtPos(3, 0);
     public static CUISprite Convex => AtPos(4, 0);
     public static CUISprite Outlined => AtPos(4, 0);
+    public static CUISprite HorizontalGradient => AtPos(2, 1);
+    public static CUISprite VerticalGradient => AtPos(3, 1);
   }
 }

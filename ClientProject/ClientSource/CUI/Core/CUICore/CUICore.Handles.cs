@@ -32,6 +32,7 @@ namespace CrabUI
       /// Should steal focus from other GUI Components
       /// </summary>
       public void GrabFocus();
+      public void ClearFocus();
     }
 
     public class CUIRunnerHandle_Part : Part

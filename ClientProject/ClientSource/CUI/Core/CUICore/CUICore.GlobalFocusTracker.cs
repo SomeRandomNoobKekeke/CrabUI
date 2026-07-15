@@ -61,9 +61,13 @@ namespace CrabUI
 
           //TODO there are ton of hardcoded actions in barotrauma that are performed without focus
           // idk, i need a map of them to see how focus can possibly be resolved 
-          // Self.Handles.GrabFocus();
+          Self.Handles.GrabFocus();
         }
-        if (next is null && FocusShouldBeLost()) Focused = null;
+        if (next is null && FocusShouldBeLost())
+        {
+          Focused = null;
+          Self.Handles.ClearFocus();
+        }
 
         WantsToBeFocused = null;
       }

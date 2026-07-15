@@ -14,7 +14,7 @@ namespace CrabUI
 {
   public partial class CUITextInput
   {
-    public bool Valid { get; private set; }
+    public bool Valid { get; private set; } = true;
 
     public Func<string, bool> ValidationFunc { get; set; } = (text) => true;
 

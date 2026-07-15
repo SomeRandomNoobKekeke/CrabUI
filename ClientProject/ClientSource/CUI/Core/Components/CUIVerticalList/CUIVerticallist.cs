@@ -40,12 +40,24 @@ namespace CrabUI
 
     protected void UpdateChildrenOffsetBounds(float totalChildrenHeight)
     {
-      LayoutProps.ChildrenOffset.Bounds = new CUIBoundaries(
-        minX: 0,
-        maxX: 0,
-        minY: Math.Min(Rect.Height - totalChildrenHeight - BottomGap, 0),
-        maxY: TopGap
-      );
+      if (Direction == CUIDirection.Straight)
+      {
+        LayoutProps.ChildrenOffset.Bounds = new CUIBoundaries(
+          minX: 0,
+          maxX: 0,
+          minY: Math.Min(Rect.Height - totalChildrenHeight - BottomGap, 0),
+          maxY: TopGap
+        );
+      }
+      else
+      {
+        LayoutProps.ChildrenOffset.Bounds = new CUIBoundaries(
+          minX: 0,
+          maxX: 0,
+          minY: -TopGap,
+          maxY: -Math.Min(Rect.Height - totalChildrenHeight - BottomGap, 0)
+        );
+      }
     }
 
     protected CUIVerticalListLayout ListLayout;

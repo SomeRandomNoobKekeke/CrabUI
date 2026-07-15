@@ -44,10 +44,6 @@ namespace CrabUI
 
       yield return Background.VisualWrapper;
       yield return TextLine.VisualWrapper;
-      foreach (CUIComponent child in Children)
-      {
-        yield return child.VisualWrapper;
-      }
     }
 
   }

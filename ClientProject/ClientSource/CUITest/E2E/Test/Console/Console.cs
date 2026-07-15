@@ -28,22 +28,22 @@ namespace CrabUIUser
         Absolute = new CUINullRect(w: 600, h: 400);
         Caption.Text = "Console";
 
-        this["layout"]["logwrapper"] = new CUIComponent() { Flex = 1, };
-
-        this["layout"]["logwrapper"]["log"] = LogList = new CUIVerticalList()
+        this["layout"]["logwrapper"] = new CUIVerticalList()
         {
-          Relative = new CUINullRect(0, 0, 1, 1),
-          Scrollable = true,
-        };
-        this["layout"]["logwrapper"]["overlay"] = new CUIComponent()
-        {
-          Relative = new CUINullRect(0, 0, 1, 1),
+          Flex = 1,
           Background = {
             Sprite = CUIDefaultSprite.VerticalGradient with {
               Color = new Color(128,0,255),
               Effects = SpriteEffects.FlipVertically,
             },
           },
+          Scrollable = true,
+          Direction = CUIDirection.Reverse,
+        };
+
+        this["layout"]["logwrapper"]["log"] = LogList = new CUIVerticalList()
+        {
+          FitContent = new CUIBool2(true, true),
         };
 
         this["layout"]["input"] = Input = new CUITextInput()

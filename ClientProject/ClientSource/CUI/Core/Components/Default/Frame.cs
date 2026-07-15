@@ -22,10 +22,15 @@ namespace CrabUI
       {
         Anchor = CUIAnchor.Center;
 
+
         // Absolute = new(w: 400, h: 600);
 
 
-        this["layout"] = new CUIVerticalList() { Relative = new CUINullRect(0, 0, 1, 1) };
+        this["layout"] = new CUIVerticalList()
+        {
+          Relative = new CUINullRect(0, 0, 1, 1),
+          VisualChildrenOrder = CUIDirection.Reverse,
+        };
         this["layout"]["handle"] = new CUIHorizontalList()
         {
           FitContent = new CUIBool2(false, true),

@@ -10,6 +10,7 @@ using CUICodeGenerator;
 
 namespace CrabUI
 {
+  //Note: i usually test fixes and features on CUIVerticalList, so it might get outdated
   public partial class CUIHorizontalList : CUIComponent, IComponent
   {
     protected override void InitStyle()

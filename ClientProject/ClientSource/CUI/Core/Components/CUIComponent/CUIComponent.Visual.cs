@@ -70,6 +70,12 @@ namespace CrabUI
       set => Background.Visible = value;
     }
 
+    /// <summary>
+    /// Half assed substitution for z-index, set to CUIDirection.Reverse to draw children in reverse order
+    /// </summary>
+    [CUISerializableProp]
+    public CUIDirection VisualChildrenOrder { get; set; } = CUIDirection.Straight;
+
     public override IEnumerable<VisualUnit> VisualSplit()
     {
       if (!Displayed || CulledOut) yield break;
@@ -78,9 +84,20 @@ namespace CrabUI
       if (Children.Count != 0)
       {
         yield return VisualBounds.LeftBound; //TODO bounds should be yielded only if there's something non standart
-        foreach (CUIComponent child in Children)
+
+        if (VisualChildrenOrder == CUIDirection.Straight)
         {
-          yield return child.VisualWrapper;
+          for (int i = 0; i < Children.Count; i++)
+          {
+            yield return Children[i].VisualWrapper;
+          }
+        }
+        else
+        {
+          for (int i = Children.Count - 1; i >= 0; i--)
+          {
+            yield return Children[i].VisualWrapper;
+          }
         }
         yield return VisualBounds.RightBound;
       }

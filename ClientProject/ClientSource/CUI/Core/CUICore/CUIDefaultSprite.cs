@@ -10,7 +10,11 @@ using System.IO;
 
 namespace CrabUI
 {
-  //TODO mb a separate folder for static accessors?
+  //TODO why is it here?
+  /// <summary>
+  /// Note: all of this is cringe, idk which ones i need, what looks good or how to name them
+  /// It's volatile, don't rely on this too much
+  /// </summary>
   public static class CUIDefaultSprite
   {
     /// <summary>
@@ -26,5 +30,7 @@ namespace CrabUI
     public static CUISprite Angle => AtPos(1, 0);
     public static CUISprite Vignette => AtPos(2, 0);
     public static CUISprite InnerShadow => AtPos(3, 0);
+    public static CUISprite Convex => AtPos(4, 0);
+    public static CUISprite Outlined => AtPos(4, 0);
   }
 }

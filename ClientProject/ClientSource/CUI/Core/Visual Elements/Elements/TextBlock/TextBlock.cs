@@ -60,6 +60,7 @@ namespace CrabUI
       {
         _Text = value;
         _ResizeStrategy.MeasureRawTextSize(Text, Scale, Font);
+        _ResizeStrategy.MeasureRealTextSize(Rect, Anchor, Text, Scale, Font);
       }
     }
 
@@ -70,6 +71,7 @@ namespace CrabUI
       {
         _Scale = Math.Max(0, value);
         _ResizeStrategy.MeasureRawTextSize(Text, Scale, Font);
+        _ResizeStrategy.MeasureRealTextSize(Rect, Anchor, Text, Scale, Font);
       }
     }
 

@@ -47,23 +47,14 @@ namespace CrabUIUser
 
             TypedAnimation<Color> animation = new TypedAnimation<Color>()
             {
-              Duration = 0.5,
+              Duration = 1.0,
               StartValue = Color.Gray,
               EndValue = Color.White,
               OnChanged = (cl) => part.Background.Color = cl,
             };
 
-            part.MouseEnter += (self, e) =>
-            {
-              animation.OnEnd = ActionOnTrackEnd.Bounce;
-              animation.RunFromStart();
-            };
-
-            part.MouseLeave += (self, e) =>
-            {
-              animation.RunBackward();
-              animation.OnEnd = ActionOnTrackEnd.Stop;
-            };
+            part.MouseEnter += (self, e) => animation.RunForward();
+            part.MouseLeave += (self, e) => animation.RunBackward();
 
             int bruh = i + 1;
             part.MouseDown += (c, e) => ExecuteCommand($"run script {bruh}");

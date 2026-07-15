@@ -14,14 +14,6 @@ namespace CrabUI
   {
     public class PassiveStrategy : ResizeStrategyBase
     {
-      // public DebugNode<CUIRect, Vector2, string, float, Vector2> Debug_MeasureRealTextSize { get; } = new(
-      //   DebugCategory.TextMeasurements, CUI.DebugHub,
-      //   (rect, anchor, text, scale, textDrawPosition) => $"rect:[{rect}] anchor:[{anchor}] text:[{text}] scale:[{scale}]  = [{textDrawPosition}]"
-      // )
-      // { IsOpen = true };
-
-
-
       public override void MeasureRawTextSize(string text, float scale, CUIFont font)
       {
         RawTextSize = font.MeasureString(text);

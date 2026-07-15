@@ -99,6 +99,7 @@ namespace CrabUI
 
       yield return Background.VisualWrapper;
       yield return TextBlock.VisualWrapper;
+      yield return Borders.VisualWrapper;
     }
 
 

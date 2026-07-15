@@ -17,13 +17,13 @@ namespace CrabUIUser
     {
       public static CUIComponent Borders()
       {
-        CUIFrame frame = new CUIDefault.Frame()
+        CUIFrame frame = new CUIDefault.Frame("Borders")
         {
-          Caption = { Text = "Borders" },
           Borders = {
             Visible = true,
             Sizes = new CUISizes(1,1,1,1),
           },
+          Absolute = new CUINullRect(w: 400, h: 600),
         };
 
         frame.Borders.MouseDown.Add((e) => CUI.Logger.Log("bruh"));

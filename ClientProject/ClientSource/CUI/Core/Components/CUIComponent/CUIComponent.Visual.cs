@@ -27,7 +27,8 @@ namespace CrabUI
     }
 
 
-
+    [CUISerializableProp]
+    public bool CullChildren { get; set; }
     protected bool CulledOut { get; set; }
 
     [CUISerializableProp]

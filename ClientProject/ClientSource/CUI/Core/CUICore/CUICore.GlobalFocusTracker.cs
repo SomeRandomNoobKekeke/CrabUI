@@ -55,7 +55,14 @@ namespace CrabUI
         next ??= Self.Main.WantsToBeFocused;
         next ??= Self.TopMain.WantsToBeFocused;
 
-        if (next is not null) Focused = next; //TODO and GrabFocus()?
+        if (next is not null)
+        {
+          Focused = next;
+
+          //TODO there are ton of hardcoded actions in barotrauma that are performed without focus
+          // idk, i need a map of them to see how focus can possibly be resolved 
+          // Self.Handles.GrabFocus();
+        }
         if (next is null && FocusShouldBeLost()) Focused = null;
 
         WantsToBeFocused = null;

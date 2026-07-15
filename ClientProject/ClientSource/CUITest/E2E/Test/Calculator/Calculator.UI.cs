@@ -50,7 +50,10 @@ namespace CrabUIUser
           {
             Absolute = new CUINullRect(h: 50),
           };
-          this["layout"]["header"]["text"] = new CUITextBlock();
+          this["layout"]["header"]["text"] = new CUITextBlock()
+          {
+            TextAnchor = CUIAnchor.LeftCenter,
+          };
 
           this["layout"]["controls"] = new CUIGrid()
           {
@@ -75,6 +78,11 @@ namespace CrabUIUser
 
           using (new CUIContextStyle<CUIButton>(c =>
           {
+            // c.Background.Sprite = CUIDefaultSprite.Outlined;
+            c.Borders.Color = Color.Black * 0.5f;
+            c.Borders.Sizes = new CUISizes(1, 1, 1, 1);
+            c.Borders.Visible = true;
+
             c.Commands.ListenFor<string>("command", (s) =>
             {
               if (c.Text == s) c.Click();

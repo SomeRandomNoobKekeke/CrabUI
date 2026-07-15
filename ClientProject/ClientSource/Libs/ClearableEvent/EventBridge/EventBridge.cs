@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Diagnostics;
 
-namespace BaroJunk
+namespace CUILibs
 {
   public class EventBridge : IEventBridge
   {

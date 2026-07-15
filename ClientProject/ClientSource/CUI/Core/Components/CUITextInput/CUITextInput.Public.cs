@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using CUICodeGenerator;
 using Microsoft.Xna.Framework.Input;
-using BaroJunk;
+using CUILibs;
 
 namespace CrabUI
 {

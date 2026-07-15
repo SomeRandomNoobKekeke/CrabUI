@@ -5,7 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Diagnostics;
 
-namespace BaroJunk
+namespace CUILibs
 {
 
   public class ListProxy_IListT<TSource, TResult> : IList<TResult>

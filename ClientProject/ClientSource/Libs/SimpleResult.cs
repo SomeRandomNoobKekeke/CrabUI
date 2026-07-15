@@ -9,7 +9,7 @@ using System.Xml.Linq;
 using System.IO;
 using System.Text;
 
-namespace BaroJunk
+namespace CUILibs
 {
   /// <summary>
   /// Omg it's so fluent

@@ -11,7 +11,7 @@ using System.IO;
 using System.Text;
 using Barotrauma.LuaCs;
 
-namespace BaroJunk
+namespace CUILibs
 {
 
   public static class PluginCommands

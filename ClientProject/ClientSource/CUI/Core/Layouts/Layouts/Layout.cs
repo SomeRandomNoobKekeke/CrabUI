@@ -8,7 +8,7 @@ using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
 using CUICodeGenerator;
-using BaroJunk;
+using CUILibs;
 
 namespace CrabUI
 {

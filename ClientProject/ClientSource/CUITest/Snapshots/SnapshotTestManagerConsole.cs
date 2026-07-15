@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Barotrauma;
-using BaroJunk;
+using CUILibs;
 using CrabUI;
 using Microsoft.Xna.Framework;
 using System.IO;
@@ -27,12 +27,12 @@ namespace CrabUIUser
       {
         if (e.Name == "passed")
         {
-          Logger.Log($"{BaroJunk.Logger.WrapInColor($"{e.Test.Name} Passed", "lime")}");
+          Logger.Log($"{CUILibs.Logger.WrapInColor($"{e.Test.Name} Passed", "lime")}");
         }
 
         if (e.Name == "failed")
         {
-          Logger.Log($"{BaroJunk.Logger.WrapInColor($"{e.Test.Name} Failed", "red")}");
+          Logger.Log($"{CUILibs.Logger.WrapInColor($"{e.Test.Name} Failed", "red")}");
           Logger.Log(e.Message);
         }
       }

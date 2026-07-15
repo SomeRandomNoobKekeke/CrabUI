@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Diagnostics;
 
-namespace BaroJunk
+namespace CUILibs
 {
   [System.AttributeUsage(System.AttributeTargets.All, Inherited = true, AllowMultiple = true)]
   public class UTestCategory : System.Attribute

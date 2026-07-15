@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Diagnostics;
 using Barotrauma;
-using BaroJunk;
+using CUILibs;
 using CUICodeGenerator;
 
 namespace CrabUI

@@ -7,7 +7,7 @@ using Barotrauma;
 using System.Runtime.CompilerServices;
 using System.IO;
 
-namespace BaroJunk
+namespace CUILibs
 {
 
   /// <summary>

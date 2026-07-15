@@ -13,7 +13,7 @@ namespace CrabUI
     /// Cheap and hacky
     /// New CUIComponents take this value and subscribe to Style.Changed only if it's true
     /// </summary>
-    public bool UseReactiveStyles { get; set; } = false;
+    public bool UseReactiveStyles { get; set; } = true;
 
     public Dictionary<Type, CUIStylePipeline> Styles { get; } = new();
 

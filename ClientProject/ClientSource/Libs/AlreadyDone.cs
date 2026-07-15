@@ -9,7 +9,7 @@ using System.Xml.Linq;
 using System.IO;
 using System.Runtime.CompilerServices;
 
-namespace BaroJunk
+namespace CUILibs
 {
   /// <summary>
   /// Call if(AlreadyDone.Once()) to check if it's already have been done

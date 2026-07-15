@@ -13,7 +13,7 @@ using HarmonyLib;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace BaroJunk
+namespace CUILibs
 {
 
   //TODO restore, there's some il errors that i'm too lazy to debug rn

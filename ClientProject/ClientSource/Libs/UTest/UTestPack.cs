@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Diagnostics;
 using System.Text;
 
-namespace BaroJunk
+namespace CUILibs
 {
   public class UTestPack
   {

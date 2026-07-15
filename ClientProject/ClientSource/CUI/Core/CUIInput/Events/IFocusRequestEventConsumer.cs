@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
-using BaroJunk;
+using CUILibs;
 namespace CrabUI
 {
   public interface IFocusRequestEventConsumer : IEventConsumer

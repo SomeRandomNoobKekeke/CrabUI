@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Diagnostics;
 
-namespace BaroJunk
+namespace CUILibs
 {
   public class ClearableEvent<T1, T2, T3> : ClearableEventBase
   {

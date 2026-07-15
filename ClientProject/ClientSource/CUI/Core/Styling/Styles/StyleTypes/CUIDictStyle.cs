@@ -39,7 +39,7 @@ namespace CrabUI
 
     public override string ToString()
     {
-      return BaroJunk.Logger.Wrap.IDictionary(this);
+      return CUILibs.Logger.Wrap.IDictionary(this);
     }
   }
 

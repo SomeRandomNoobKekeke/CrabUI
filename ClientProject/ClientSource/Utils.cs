@@ -6,7 +6,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Barotrauma;
 using Barotrauma.LuaCs;
-using BaroJunk;
+using CUILibs;
 using CrabUI;
 using Microsoft.Xna.Framework;
 using HarmonyLib;

@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Diagnostics;
 using Barotrauma;
 using Barotrauma.LuaCs;
-namespace BaroJunk
+namespace CUILibs
 {
   public class UTestCommands
   {

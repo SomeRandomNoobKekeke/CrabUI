@@ -7,7 +7,7 @@ using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
 using CUICodeGenerator;
-using BaroJunk;
+using CUILibs;
 using System.Xml;
 using System.Xml.Linq;
 

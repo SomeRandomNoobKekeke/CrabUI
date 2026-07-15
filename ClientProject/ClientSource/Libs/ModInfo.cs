@@ -10,7 +10,7 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using Barotrauma.LuaCs;
 
-namespace BaroJunk
+namespace CUILibs
 {
 
   /// <summary>

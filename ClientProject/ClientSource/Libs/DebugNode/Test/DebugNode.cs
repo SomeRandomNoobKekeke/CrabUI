@@ -8,7 +8,7 @@ using System.Linq;
 using Barotrauma;
 
 
-namespace BaroJunk
+namespace CUILibs
 {
 
   public class DebugNodeTest : UTestPack

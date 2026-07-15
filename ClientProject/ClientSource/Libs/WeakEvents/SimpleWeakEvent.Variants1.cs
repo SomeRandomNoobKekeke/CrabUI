@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-namespace BaroJunk
+namespace CUILibs
 {
   public class SimpleWeakEvent<T1>
   {

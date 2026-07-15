@@ -6,7 +6,7 @@ using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
 
-namespace BaroJunk
+namespace CUILibs
 {
   // useless class that is referenced from all over the place
   public class UTestLogger

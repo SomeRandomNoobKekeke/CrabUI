@@ -9,7 +9,7 @@ using System.Linq;
 using Barotrauma;
 using Microsoft.Xna.Framework;
 
-namespace BaroJunk
+namespace CUILibs
 {
   /// <summary>
   /// Global data repository

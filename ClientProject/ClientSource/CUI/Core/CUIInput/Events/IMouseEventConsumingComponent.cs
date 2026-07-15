@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
-using BaroJunk;
+using CUILibs;
 namespace CrabUI
 {
   //WTF is this? why are there 2 EventConsumers, do i need to maintain them both? Are they synched?

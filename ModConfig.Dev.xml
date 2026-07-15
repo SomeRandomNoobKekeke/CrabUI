@@ -1,3 +1,0 @@
-<ModConfig>
-  <Assembly Folder="%ModDir%/ClientProject/ClientSource" Target="Client" IsScript="true" UseInternalAccessName="false" />
-</ModConfig>

@@ -1,5 +1,0 @@
-<ModConfig>
-  <Assembly Folder="%ModDir%/ClientProject/ClientSource/__Generated" Target="Client" IsScript="true" UseInternalAccessName="false" />
-  <Assembly Folder="%ModDir%/ClientProject/ClientSource/CUI" Target="Client" IsScript="true" UseInternalAccessName="false" />
-  <Assembly Folder="%ModDir%/ClientProject/ClientSource/Libs" Target="Client" IsScript="true" UseInternalAccessName="false" />
-</ModConfig>

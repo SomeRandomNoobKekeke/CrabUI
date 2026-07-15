@@ -37,33 +37,35 @@ namespace CrabUI
 
     private void UpdateRects()
     {
-      InnerRect = Rect - Sizes;
+      InnerRect = Rect - Sizes; //TODO use rounded rect
+
+      Rectangle rounded = Rect.Round();
 
       LeftRect = new Rectangle(
-        (int)Rect.Left,
-        (int)Rect.Top,
+        rounded.X,
+        rounded.Y,
         (int)Sizes.Left,
-        (int)Rect.Height
+        rounded.Height
       );
 
       TopRect = new Rectangle(
-        (int)Rect.Left,
-        (int)Rect.Top,
-        (int)Rect.Width,
+        rounded.X,
+        rounded.Y,
+        rounded.Width,
         (int)Sizes.Top
       );
 
       RightRect = new Rectangle(
-        (int)(Rect.Left + Rect.Width - Sizes.Right),
-        (int)Rect.Top,
+        (int)(rounded.X + rounded.Width - Sizes.Right),
+        rounded.Y,
         (int)Sizes.Right,
-        (int)Rect.Height
+        rounded.Height
       );
 
       BottomRect = new Rectangle(
-        (int)Rect.Left,
-        (int)(Rect.Top + Rect.Height - Sizes.Bottom),
-        (int)Rect.Width,
+        rounded.X,
+        (int)(rounded.Y + rounded.Height - Sizes.Bottom),
+        rounded.Width,
         (int)Sizes.Bottom
       );
     }

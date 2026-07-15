@@ -12,7 +12,6 @@ using Barotrauma.Extensions;
 
 namespace CrabUI
 {
-  //TODO colors are just random 
   public partial class CUIRadioButton : CUIButtonBase, IComponent
   {
     public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIRadioButton>((c) =>

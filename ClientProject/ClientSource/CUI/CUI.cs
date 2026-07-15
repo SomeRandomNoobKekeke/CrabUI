@@ -45,6 +45,8 @@ namespace CrabUI
       PrintFilePath = false,
     };
 
+    public static Random Random { get; } = new();
+
     public static Rectangle GameScreenRect => Core.GameScreenRect;
 
 

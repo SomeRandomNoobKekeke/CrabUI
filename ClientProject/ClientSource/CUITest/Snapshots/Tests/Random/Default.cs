@@ -17,9 +17,9 @@ namespace CrabUIUser
     {
       public static CUIComponent Default()
       {
-        CUIFrame frame = new CUIDefault.Frame()
+        CUIFrame frame = new CUIDefault.Frame("bruh")
         {
-          Caption = { Text = "bruh" },
+          Absolute = new CUINullRect(w: 400, h: 600),
         };
         return frame;
       }

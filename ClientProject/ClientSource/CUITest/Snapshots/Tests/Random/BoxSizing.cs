@@ -20,6 +20,7 @@ namespace CrabUIUser
         CUIFrame frame = new CUIDefault.Frame()
         {
           Caption = { Text = "BoxSizing" },
+          Absolute = new CUINullRect(w: 400, h: 600),
         };
 
         frame["background"] = new CUIComponent()

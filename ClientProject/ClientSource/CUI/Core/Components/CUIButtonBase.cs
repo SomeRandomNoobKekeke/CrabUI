@@ -68,6 +68,9 @@ namespace CrabUI
       set => TextBlock.ResizeStrategy = value;
     }
 
+    public bool PlaySound { get; set; } = true;
+    public GUISoundType ClickSound { get; set; } = GUISoundType.Select;//TODO don't reference it directly? there should be some cui sound manager
+
 
     protected override CUINullVector2 MinSizeOverride => new CUINullVector2(
       TextBlock.ForcedSize.X,
@@ -93,6 +96,14 @@ namespace CrabUI
 
     public string Emit { get; set; }
 
+    public void Click()
+    {
+      Events.MouseDown.Raise(
+        this,
+        new CUIMouseDownEvent(CUIMouseButton.LeftButton, CUICore.Input.Mouse)
+      );
+    }
+
     public override IEnumerable<VisualUnit> VisualSplit()
     {
       if (!Displayed || CulledOut) yield break;
@@ -111,6 +122,7 @@ namespace CrabUI
 
       MouseDown += (c, e) =>
       {
+        if (PlaySound) SoundPlayer.PlayUISound(ClickSound);
         if (Emit != null) Commands.SendUp(Emit, Text);
       };
 

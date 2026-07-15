@@ -83,6 +83,8 @@ namespace CrabUIUser
             c.Borders.Sizes = new CUISizes(1, 1, 1, 1);
             c.Borders.Visible = true;
 
+            c.PlaySound = false;
+
             c.Commands.ListenFor<string>("command", (s) =>
             {
               if (c.Text == s) c.Click();

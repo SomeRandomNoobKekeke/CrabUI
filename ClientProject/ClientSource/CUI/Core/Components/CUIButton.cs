@@ -51,17 +51,6 @@ namespace CrabUI
       if (MousePressed) Background.Color = MousePressedColor;
     }
 
-
-    public void Click()
-    {
-      Events.MouseDown.Raise(
-        this,
-        new CUIMouseDownEvent(CUIMouseButton.LeftButton, CUICore.Input.Mouse)
-      );
-    }
-
-
-
     public CUIButton() : base() { }
     public CUIButton(string text) : base(text) { }
   }

@@ -66,6 +66,9 @@ namespace CrabUI
       }
     }
 
+    public bool PlaySound { get; set; } = true;
+    public GUISoundType ClickSound { get; set; } = GUISoundType.Select;//BRUH check buttonbase
+
     protected override CUINullVector2 MinSizeOverride => new CUINullVector2(DefaultSize);
 
     public override IEnumerable<VisualUnit> VisualSplit()
@@ -78,7 +81,11 @@ namespace CrabUI
 
     public CUICloseButton() : base()
     {
-      MouseDown += (c, e) => Commands.SendUp("close");
+      MouseDown += (c, e) =>
+      {
+        if (PlaySound) SoundPlayer.PlayUISound(ClickSound);
+        Commands.SendUp("close");
+      };
 
       MouseOff += (c, e) => DetermineColor();
       MouseOn += (c, e) => DetermineColor();

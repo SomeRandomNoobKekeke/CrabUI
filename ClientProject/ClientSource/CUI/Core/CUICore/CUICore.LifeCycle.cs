@@ -31,6 +31,7 @@ namespace CrabUI
           Self.TopMain.Update(totalTime, Self._Input);
           Self.Main.Update(totalTime, Self._Input);
 
+          Self.GlobalFocusTracker.DispatchKeyboadEvents();
           Self.GlobalFocusTracker.ResolveFocus(Self._Input.SomethingFocusedElsewhere);
 
           Self._AnimationPlayer.Update();

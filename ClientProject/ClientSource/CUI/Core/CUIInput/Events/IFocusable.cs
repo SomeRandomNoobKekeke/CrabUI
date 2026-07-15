@@ -10,7 +10,7 @@ using BaroJunk;
 
 namespace CrabUI
 {
-  public interface IFocusable
+  public interface IFocusable : IEventConsumer
   {
     public bool Focused { get; set; }
     public ClearableEvent OnFocus { get; }

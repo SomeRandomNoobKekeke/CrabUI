@@ -34,7 +34,9 @@ namespace CrabUI
     public abstract void Process(RoutableCommand command);
     public virtual void SendDown(RoutableCommand command)
     {
-      for (int i = Children.Count - 1; i <= 0; i--)
+      if (Children.Count == 0) return;
+
+      for (int i = Children.Count - 1; i >= 0; i--)
       {
         RoutableCommandNodeBase node = Children[i];
         node.Process(command);

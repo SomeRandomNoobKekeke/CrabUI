@@ -12,11 +12,16 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-    public class IFocusableAdapter_Part : Part, IFocusable
+    public class IFocusableAdapter_Part : Part, IFocusable, IKeyboardEventConsumer
     {
       public bool Focused { get; set; }
       public ClearableEvent OnFocus { get; } = new();
       public ClearableEvent OnFocusLost { get; } = new();
+
+      public ClearableEvent<CUIKeyPressedEvent> KeyPressed { get; } = new();
+      public ClearableEvent<CUIKeyReleasedEvent> KeyReleased { get; } = new();
+      public ClearableEvent<CUITextInputEvent> TextInput { get; } = new();
+      public ClearableEvent<CUIKeyDownInputEvent> KeyDownInput { get; } = new();
     }
     protected IFocusableAdapter_Part IFocusableAdapter { get; } = new();
 
@@ -59,6 +64,35 @@ namespace CrabUI
     {
       add => IFocusableAdapter.OnFocusLost.Add(value);
       remove => IFocusableAdapter.OnFocusLost.Remove(value);
+    }
+
+
+    public Action<CUIKeyPressedEvent> OnKeyPressed { set { KeyPressed += value; } }
+    public event Action<CUIKeyPressedEvent> KeyPressed
+    {
+      add => IFocusableAdapter.KeyPressed.Add(value);
+      remove => IFocusableAdapter.KeyPressed.Remove(value);
+    }
+
+    public Action<CUIKeyReleasedEvent> OnKeyReleased { set { KeyReleased += value; } }
+    public event Action<CUIKeyReleasedEvent> KeyReleased
+    {
+      add => IFocusableAdapter.KeyReleased.Add(value);
+      remove => IFocusableAdapter.KeyReleased.Remove(value);
+    }
+
+    public Action<CUITextInputEvent> OnTextInput { set { TextInput += value; } }
+    public event Action<CUITextInputEvent> TextInput
+    {
+      add => IFocusableAdapter.TextInput.Add(value);
+      remove => IFocusableAdapter.TextInput.Remove(value);
+    }
+
+    public Action<CUIKeyDownInputEvent> OnKeyDownInput { set { KeyDownInput += value; } }
+    public event Action<CUIKeyDownInputEvent> KeyDownInput
+    {
+      add => IFocusableAdapter.KeyDownInput.Add(value);
+      remove => IFocusableAdapter.KeyDownInput.Remove(value);
     }
   }
 }

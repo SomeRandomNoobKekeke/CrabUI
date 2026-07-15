@@ -20,6 +20,7 @@ namespace CrabUI
     { IsOpen = true };
 
     public List<InputEvent> Events { get; } = new();
+    public List<InputEvent> KeyboardEvents { get; } = new();
 
     public CUIMouseLeaveEvent MouseLeaveEvent { get; private set; }
     public CUIMouseEnterEvent MouseEnterEvent { get; private set; }
@@ -29,6 +30,7 @@ namespace CrabUI
     public void Construct(CUIInput input)
     {
       Events.Clear();
+      KeyboardEvents.Clear();
 
       MouseLeaveEvent = new(input.Mouse);
       MouseEnterEvent = new(input.Mouse);
@@ -54,24 +56,25 @@ namespace CrabUI
         Events.Add(new CUIMouseScrollEvent(input.Mouse));
       }
 
+
       foreach (Keys key in input.Keyboard.PressedKeys)
       {
-        Events.Add(new CUIKeyPressedEvent(key, input.Keyboard));
+        KeyboardEvents.Add(new CUIKeyPressedEvent(key, input.Keyboard));
       }
 
       foreach (Keys key in input.Keyboard.ReleasedKeys)
       {
-        Events.Add(new CUIKeyReleasedEvent(key, input.Keyboard));
+        KeyboardEvents.Add(new CUIKeyReleasedEvent(key, input.Keyboard));
       }
 
       foreach (TextInputEventArgs args in input.Keyboard.TextInputEvents)
       {
-        Events.Add(new CUITextInputEvent(args, input.Keyboard));
+        KeyboardEvents.Add(new CUITextInputEvent(args, input.Keyboard));
       }
 
       foreach (TextInputEventArgs args in input.Keyboard.KeyDownEvents)
       {
-        Events.Add(new CUIKeyDownInputEvent(args, input.Keyboard));
+        KeyboardEvents.Add(new CUIKeyDownInputEvent(args, input.Keyboard));
       }
 
       if (Events.Count != 0) Debug_Events.Send(Events);

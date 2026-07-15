@@ -55,6 +55,8 @@ namespace CrabUI
 
       public ClearableEvent<CUIComponent, Vector2> Dragged { get; } = new();
       public ClearableEvent<CUIComponent, CUIRect> RectSet { get; } = new();
+
+
     }
   }
 }

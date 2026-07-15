@@ -15,6 +15,8 @@ namespace CrabUI
   {
     public class GlobalFocusTracker_Part : Part
     {
+      private EventDispatcher EventDispatcher { get; } = new();
+
       private IFocusable? _Focused; public IFocusable? Focused
       {
         get => _Focused;
@@ -62,6 +64,13 @@ namespace CrabUI
       private bool FocusShouldBeLost()
       {
         return Self._Input.Mouse.M1.Down;
+      }
+
+      public void DispatchKeyboadEvents()
+      {
+        if (Focused is null) return;
+
+        EventDispatcher.Dispatch(Focused, Self.EventConstructor.KeyboardEvents);
       }
     }
 

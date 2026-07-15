@@ -31,8 +31,8 @@
         <ModDeployDir>..\Build\</ModDeployDir>
         <!-- IMPORTANT: Avoid the use of special (IE: / : ; , \ < > ?) (periods "." are good) and non-english characters in the AssemblyName and RootNamespace.-->
         <!-- You must also change the assembly.dll name in ModConfig.xml to match the AssemblyName. -->
-        <AssemblyName>MyModName</AssemblyName>
-        <RootNamespace>MyModName</RootNamespace>
+        <AssemblyName>CUI</AssemblyName>
+        <RootNamespace>CrabUI</RootNamespace>
         <GenerateDocumentationFile>False</GenerateDocumentationFile>
         <!-- These two numbers should match under almost all circumstances. -->
         <AssemblyVersion>1.0.0.0</AssemblyVersion>

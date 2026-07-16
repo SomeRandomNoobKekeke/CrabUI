@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-
+using CUILibs;
 namespace CrabUI
 {
   public class CUIStyleManager(CUITypeTree typeTree)

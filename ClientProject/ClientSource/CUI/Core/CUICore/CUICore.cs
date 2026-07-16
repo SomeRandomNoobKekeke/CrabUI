@@ -13,7 +13,6 @@ namespace CrabUI
   {
     public class Part : IPart { public CUICore Self { get; set; } }
 
-    public CUIAssemblyAnalyzer _Analyzer { get; private set; }
     public CUIStyleManager CUIStyleManager { get; private set; }
     public CUIPaletteManager CUIPaletteManager { get; private set; }
 
@@ -35,6 +34,7 @@ namespace CrabUI
 
     public CUIParser _CUIParser { get; private set; } = new();
     public CUISerializer _CUISerializer { get; private set; } = new();
+    public CUIAssemblyAnalyzer CUIAssemblyAnalyzer { get; } = new();
 
 
 
@@ -50,39 +50,22 @@ namespace CrabUI
     }
 
     private bool _Activated;
-    //Note: this exists primerely because DebugNodes may call DebugHub on creation
+    //Note: this exists primarily because DebugNodes may call DebugHub on creation
     internal void Activate()
     {
       if (_Activated) return;
       _Activated = true;
 
-      //TODO this activation is cringe, calls to CUICore should be prohibited, dependencies should be passed explicitly
-
-      _Analyzer = new();
-      //TODO different runners should analyze different assemblies, perhaps it doesn't belong here
-      _Analyzer.AnalyzeAssembly(Assembly.GetExecutingAssembly());
-
-      CUIStyleManager = new(_Analyzer.TypeTree);
+      CUIStyleManager = new(Reflection.TypeTree);
       CUIPaletteManager = new();
 
-      //TODO i probably want to go in base->derived order here
-      foreach (CUIComponentInfo info in _Analyzer.ComponentInfos.Values)
-      {
-        if (info.DefaultStyle is not null)
-        {
-          CUIStyleManager.AddDefaultStyle(info.DefaultStyle);
-        }
-      }
+      //CUICore analyzes itself because it needs infos for MainComponents right here
+      Reflection.AddAssemblyInfo(
+        CUIAssemblyAnalyzer.AnalyzeAssembly(typeof(CUICore).Assembly)
+      );
 
       EventConstructor = new();
       _AnimationPlayer = new();
-
-      //TODO these defaults should somehow be created with dummy resources, textures, sounds etc
-      foreach (CUIComponentInfo info in _Analyzer.ComponentInfos.Values)
-      {
-        _Analyzer.CUIComponentAnalyzer.CreateDefault(info);
-      }
-
 
       Main = new() { EventConstructor = EventConstructor };
       TopMain = new() { EventConstructor = EventConstructor };

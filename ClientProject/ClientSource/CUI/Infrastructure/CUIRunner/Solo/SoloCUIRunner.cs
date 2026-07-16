@@ -20,6 +20,7 @@ namespace CrabUI
     public CUITextureManager CUITextureManager { get; private set; }
     public PathManager PathManager { get; private set; }
 
+    public CUIAssemblyAnalyzer CUIAssemblyAnalyzer { get; } = new();
 
     public void Connect()
     {
@@ -65,7 +66,6 @@ namespace CrabUI
       {
         try
         {
-
           //TODO extract real totalTime from gameTime
           Core.CUIRunnerHandle.Update(
             Timing.TotalTime,
@@ -112,7 +112,13 @@ namespace CrabUI
       CUITextureManager.Load("Assets/PNG/CUI.png", "CUI");
       CUITextureManager.Load("Assets/PNG/Test Chamber Background.png", "Test Chamber Background");
       CUITextureManager.Load("Assets/PNG/For testing/Icons.png", "Test Icons");
+    }
 
+    public void OnStartAttempt(Assembly callingAssembly)
+    {
+      Core.CUIRunnerHandle.AddAssemblyInfo(
+        CUIAssemblyAnalyzer.AnalyzeAssembly(callingAssembly)
+      );
     }
 
     public SoloCUIRunner()

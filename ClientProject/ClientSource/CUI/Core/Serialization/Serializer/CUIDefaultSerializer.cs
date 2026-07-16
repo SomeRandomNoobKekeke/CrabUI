@@ -21,9 +21,9 @@ namespace CrabUI
 
       XElement element = new(o.GetType().Name);
 
-      if (CUICore.CUITypes.SerializableTypes.ContainsKey(o.GetType()))
+      if (CUICore.Reflection.SerializableInfos.ContainsKey(o.GetType()))
       {
-        CUISerializableInfo info = CUICore.CUITypes.SerializableTypes[o.GetType()];
+        CUISerializableInfo info = CUICore.Reflection.GetSerializableInfo(o.GetType());
 
         foreach (var (name, pp) in info.SerializableProps)
         {
@@ -41,9 +41,9 @@ namespace CrabUI
     {
       object o = Activator.CreateInstance(T);
 
-      if (CUICore.CUITypes.SerializableTypes.ContainsKey(T))
+      if (CUICore.Reflection.SerializableInfos.ContainsKey(T))
       {
-        CUISerializableInfo info = CUICore.CUITypes.SerializableTypes[T];
+        CUISerializableInfo info = CUICore.Reflection.GetSerializableInfo(T);
 
         foreach (XAttribute attribute in element.Attributes())
         {

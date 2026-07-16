@@ -15,15 +15,22 @@ namespace CrabUI
 
     public bool Started { get; private set; }
 
-    public void Start()
+    public void Start(Assembly callingAssembly)
     {
-      Runner.Connect();
-      Core.Activate();
-      Started = true;
+      if (!Started)
+      {
+        Runner.Connect();
+        Core.Activate();
+
+        Started = true;
+      }
+
+      Runner.OnStartAttempt(callingAssembly);
     }
 
     public void Stop()
     {
+      if (!Started) return;
       Runner.Disconnect();
       Started = false;
     }

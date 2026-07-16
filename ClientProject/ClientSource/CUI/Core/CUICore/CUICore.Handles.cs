@@ -22,6 +22,10 @@ namespace CrabUI
       public void SaveXDoc(XDocument xDoc, string path);
       public XDocument LoadXDoc(string path);
     }
+
+    /// <summary>
+    /// This is how CUICore interacts with CUIRunner
+    /// </summary>
     public interface CUICoreHandles : CUICoreIOHandle
     {
       public CUIGraphicsDevice GraphicsDevice { get; }
@@ -35,6 +39,9 @@ namespace CrabUI
       public void ClearFocus();
     }
 
+    /// <summary>
+    /// This is how CUIRunner interacts with CUICore
+    /// </summary>
     public class CUIRunnerHandle_Part : Part
     {
       public void Update(double totalTime, MouseState mouse, KeyboardState keyboard, TextInputEventPack textInput)
@@ -43,7 +50,7 @@ namespace CrabUI
       public void DrawAfterGUI(CUISpriteBatch spriteBatch) => Self.LifeCycle.DrawAfterGUI(spriteBatch);
       public bool IsMouseOnSomeCUIComponent() => Self.LifeCycle.IsMouseOnSomeCUIComponent();
 
-
+      public void AddAssemblyInfo(CUIAssemblyInfo assemblyInfo) => Self._Reflection.AddAssemblyInfo(assemblyInfo);
     }
 
     /// <summary>

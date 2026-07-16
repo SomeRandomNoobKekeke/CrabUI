@@ -13,5 +13,7 @@ namespace CrabUI
     public ICUIRunnerDataSources DataSources { get; set; }
     public void Connect();
     public void Disconnect();
+
+    public void OnStartAttempt(Assembly callingAssembly);
   }
 }

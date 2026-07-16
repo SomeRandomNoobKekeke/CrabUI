@@ -13,7 +13,7 @@ namespace CrabUI
     {
       CUI.Logger.Log(
         Logger.Wrap.IDictionary(
-          CUICore.CUITypes.SerializableTypes[typeof(CUIComponent)].SerializableProps
+          CUICore.Reflection.GetComponentInfo(typeof(CUIComponent)).SerializableProps
         )
       );
     }

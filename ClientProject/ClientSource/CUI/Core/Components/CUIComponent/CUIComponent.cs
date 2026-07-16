@@ -37,7 +37,7 @@ namespace CrabUI
 
     public CUIComponent() : base()
     {
-      Info = CUI.CUITypes.GetInfo(GetType());
+      Info = CUICore.Reflection.GetComponentInfo(GetType());
       SetupLayout();//HACK 
       this.Inject();
     }

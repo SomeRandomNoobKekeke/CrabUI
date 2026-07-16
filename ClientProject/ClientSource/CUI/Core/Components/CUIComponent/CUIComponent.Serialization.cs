@@ -20,7 +20,7 @@ namespace CrabUI
     {
       CUIComponent component = (CUIComponent)CUIDefaultSerializer.Deserialize(
         element,
-        CUI.CUITypes.GetType(element.Name.ToString())
+        CUICore.Reflection.GetType(element.Name.ToString())
       );
 
       foreach (XElement child in element.Elements())

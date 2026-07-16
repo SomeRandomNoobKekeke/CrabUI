@@ -62,15 +62,18 @@ namespace CrabUI
       }
     }
     public static CUICore Core => Setup.Core;
-    public static void Start() => Setup.Start();
+
+    //Akshually in MasterRunners calling this 
+    public static void Start()
+    {
+      Setup.Start(Assembly.GetCallingAssembly());
+    }
     public static void Stop() => Setup?.Stop();
 
     public static CUIMainComponent Main => Setup.Core.Main;
     public static CUIMainComponent TopMain => Setup.Core.TopMain;
     public static DebugHub DebugHub => Core.DebugHub;
 
-
-    public static CUIAssemblyAnalyzer CUITypes => CUICore.CUITypes;
 
     public static event Action<double> OnUpdate
     {

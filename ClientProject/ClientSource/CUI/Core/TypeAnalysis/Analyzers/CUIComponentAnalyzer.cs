@@ -19,40 +19,48 @@ namespace CrabUI
     public bool IsComponentType(Type T) => T.IsAssignableTo(typeof(CUIComponent));
 
     //TODO add a way to use pregenerated infos
-
-    public void Analyze(CUIComponentInfo info)
+    public CUIComponentInfo Analyze(Type T)
     {
-      PropertyInfo defaultStyleProp = info.ComponentType.GetProperty(
-        DefaultStylePropName,
-        BindingFlags.Static | BindingFlags.Public
-      );
+      CUIComponentInfo info = new CUIComponentInfo()
+      {
+        ComponentType = T,
+      };
+
+      PropertyInfo? defaultStyleProp = T.GetProperty(DefaultStylePropName, BindingFlags.Static | BindingFlags.Public);
 
       if (defaultStyleProp != null)
       {
         info.DefaultStyle = (ICUIStyle)defaultStyleProp.GetValue(null);
       }
+
+      // CRINGE i have to create defaults from withing CUICore
+      // info.DefaultValue = CreateDefault(T); 
+
+      return info;
     }
 
-    public void CreateDefault(CUIComponentInfo info)
+    public CUIComponent CreateDefault(Type T)
     {
-      if (info.ComponentType.IsAbstract) return;
+      if (T.IsAbstract) return null;
 
-      if (info.ComponentType.GetConstructor([]) is null)
+      if (T.GetConstructor([]) is null)
       {
         // CUI.Logger.Warning($"Failed to create default for [{info.ComponentType.Name}]: {info.ComponentType} doesn't have default constructor");
-        return;
+        return null;
       }
 
-      if (info.ComponentType.GetCustomAttribute<NoDefaultAttribute>() != null) return;
+      if (T.GetCustomAttribute<NoDefaultAttribute>() != null) return null;
 
       try
       {
-        info.DefaultValue = (CUIComponent)Activator.CreateInstance(info.ComponentType);
+        return (CUIComponent)Activator.CreateInstance(T);
       }
       catch (Exception e)
       {
-        CUI.Logger.Warning($"Failed to create default for [{info.ComponentType.Name}]: {e.InnerException?.Message}");
+        CUI.Logger.Warning($"Failed to create default for [{T.Name}]: {e.InnerException?.Message}");
       }
+
+      return null;
     }
   }
 }

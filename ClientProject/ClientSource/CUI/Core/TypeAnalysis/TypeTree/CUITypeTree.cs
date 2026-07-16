@@ -14,11 +14,6 @@ namespace CrabUI
     public Dictionary<Type, Node> Nodes { get; } = new();
     public Dictionary<string, Type> TypesByName { get; } = new();
 
-    // public void Add(Type T)
-    // {
-    //   Nodes[T] = new Node(T);
-    //   TypesByName[T.Name] = T;
-    // }
     public void Add(IEnumerable<Type> types)
     {
       foreach (Type T in types)
@@ -27,6 +22,7 @@ namespace CrabUI
         TypesByName[T.Name] = T;
       }
 
+      //TODO optimize, i just need to check the new types
       Connect();
     }
 

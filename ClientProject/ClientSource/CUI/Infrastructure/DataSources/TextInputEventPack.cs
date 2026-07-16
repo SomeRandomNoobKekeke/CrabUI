@@ -14,5 +14,8 @@ namespace CrabUI
     TextInputEventArgs[] TextInputEvents,
     TextInputEventArgs[] KeyDownEvents,
     bool SomethingFocusedElsewhere
+  // bool MouseOnSomeVanillaGUI 
+  //HACK?
+  //TODO Yes, those flags should be in separate record, there's 2 of them now
   );
 }

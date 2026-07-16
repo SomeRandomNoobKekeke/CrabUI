@@ -30,12 +30,14 @@ namespace CrabUIUser
 
           FieldList.Add(new CUIDefault.TextField()
           {
+            Label = { AbsoluteMin = new CUINullRect(w: 100) },
             Key = "String Prop",
             Value = Settings.StringProp,
           });
 
           FieldList.Add(new CUIDefault.IntField()
           {
+            Label = { AbsoluteMin = new CUINullRect(w: 100) },
             Key = "Int Prop",
             Value = Settings.IntProp,
           });
@@ -43,15 +45,12 @@ namespace CrabUIUser
           CUIVerticalList NestedWrapper = new CUIVerticalList()
           {
             FitContent = new CUIBool2(false, true),
-            Padding = new CUISizes(10, 0, 0, 0),
-            Style = (c) =>
-            {
-              c.Background.Color = c.Palette.Colors["panel4"];
-            },
+            Padding = new CUISizes(30, 0, 0, 0),
           };
 
           NestedWrapper.Add(new CUIDefault.TextField()
           {
+            Label = { AbsoluteMin = new CUINullRect(w: 150) },
             Key = "Nested String Prop",
             Value = Settings.Nested.StringProp,
           });
@@ -59,6 +58,7 @@ namespace CrabUIUser
 
           NestedWrapper.Add(new CUIDefault.IntField()
           {
+            Label = { AbsoluteMin = new CUINullRect(w: 150) },
             Key = "Nested Int Prop",
             Value = Settings.Nested.IntProp,
           });

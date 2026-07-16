@@ -22,7 +22,10 @@ namespace CrabUIUser
 
       public void Initialize()
       {
-        UI = new SettingsUI(Manager);
+        UI = new SettingsUI(Manager)
+        {
+          Absolute = new CUINullRect(w: 400, h: 600),
+        };
         UI.Open();
       }
 

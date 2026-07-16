@@ -62,7 +62,7 @@ namespace CrabUI
       //TODO different runners should analyze different assemblies, perhaps it doesn't belong here
       _Analyzer.AnalyzeAssembly(Assembly.GetExecutingAssembly());
 
-      CUIStyleManager = new(_Analyzer);
+      CUIStyleManager = new(_Analyzer.TypeTree);
       CUIPaletteManager = new();
 
       //TODO i probably want to go in base->derived order here
@@ -70,7 +70,7 @@ namespace CrabUI
       {
         if (info.DefaultStyle is not null)
         {
-          CUIStyleManager.AddStyle(info.DefaultStyle);
+          CUIStyleManager.AddDefaultStyle(info.DefaultStyle);
         }
       }
 

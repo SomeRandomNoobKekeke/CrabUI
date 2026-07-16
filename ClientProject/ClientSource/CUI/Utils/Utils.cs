@@ -47,11 +47,10 @@ namespace CrabUI
     {
       yield return T;
 
-      Type baseType = T.BaseType;
-      while (baseType != null && baseType.IsAssignableTo(rootType))
+      while (T.BaseType != null && T.BaseType.IsAssignableTo(rootType))
       {
-        yield return baseType;
-        baseType = baseType.BaseType;
+        T = T.BaseType;
+        yield return T;
       }
     }
   }

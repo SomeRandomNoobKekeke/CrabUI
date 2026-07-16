@@ -118,7 +118,7 @@ namespace CrabUI
       public void Init()
       {
         _PaletteSlot = new CUIPaletteSlot() { Palette = CUIPalette.Default };//CUICore.Palettes.Primary;
-        TypeSpecificStyles = CUICore.Styles.Get(Self.GetType());
+        TypeSpecificStyles = CUICore.Styles.GetOrCreatePipeline(Self.GetType());
 
         Self.InitStyle();
         ApplyTypeStyles();

@@ -5,38 +5,58 @@ using System.Reflection;
 
 namespace CrabUI
 {
-  public class CUIStyleManager(CUIAssemblyAnalyzer typeManager)
+  public class CUIStyleManager(CUITypeTree typeTree)
   {
-    public CUIAssemblyAnalyzer TypeManager { get; } = typeManager;
-
-    /// <summary>
-    /// Cheap and hacky
-    /// New CUIComponents take this value and subscribe to Style.Changed only if it's true
-    /// </summary>
+    private CUITypeTree TypeTree = typeTree;
     public bool UseReactiveStyles { get; set; } = true;
 
-    public Dictionary<Type, CUIStylePipeline> Styles { get; } = new();
 
-    public CUIStylePipeline Get<T>() => Get(typeof(T));
-    public CUIStylePipeline Get(Type T)
+    private Dictionary<Type, ICUIStyle> DefaultStyles { get; } = new();
+    private Dictionary<Type, CUIStylePipeline> Pipelines { get; } = new();
+
+    public CUIStylePipeline GetOrCreatePipeline<T>() => GetOrCreatePipeline(typeof(T));
+    public CUIStylePipeline GetOrCreatePipeline(Type T)
     {
-      if (!Styles.ContainsKey(T)) Styles[T] = new();
-      return Styles[T];
+      if (!Pipelines.ContainsKey(T)) Pipelines[T] = CreatePipeline(T);
+      return Pipelines[T];
+    }
+
+    public void AddDefaultStyle(ICUIStyle style) => DefaultStyles[style.TargetType] = style;
+
+    /// <summary>
+    /// Note: DefaultStyles for base types should be there before creating the pipeline
+    /// </summary>
+    private CUIStylePipeline CreatePipeline(Type T)
+    {
+      CUIStylePipeline pipeline = new CUIStylePipeline();
+
+      List<Type> typeChain = Utils.GetTypeChain(T, typeof(CUIComponent)).ToList();
+      typeChain.Reverse();
+
+      foreach (Type type in typeChain)
+      {
+        if (DefaultStyles.ContainsKey(type))
+        {
+          pipeline.Add(DefaultStyles[type]);
+        }
+      }
+
+      return pipeline;
     }
 
     public void AddStyle(ICUIStyle style)
     {
-      foreach (Type T in TypeManager.GetDerivedTypes(style.TargetType))
+      foreach (Type T in TypeTree.GetDerivedTypes(style.TargetType))
       {
-        Get(T).Add(style);
+        GetOrCreatePipeline(T).Add(style);
       }
     }
 
     public void RemoveStyle(ICUIStyle style)
     {
-      foreach (Type T in TypeManager.GetDerivedTypes(style.TargetType))
+      foreach (Type T in TypeTree.GetDerivedTypes(style.TargetType))
       {
-        Get(T).Remove(style);
+        GetOrCreatePipeline(T).Remove(style);
       }
     }
 
@@ -44,12 +64,12 @@ namespace CrabUI
 
     public void EnterContextStyle(ICUIStyle style, Type T)
     {
-      Styles[T].AddSilent(style);
+      Pipelines[T].AddSilent(style);
     }
 
     public void ExitContextStyle(ICUIStyle style, Type T)
     {
-      Styles[T].RemoveSilent(style);
+      Pipelines[T].RemoveSilent(style);
     }
 
 

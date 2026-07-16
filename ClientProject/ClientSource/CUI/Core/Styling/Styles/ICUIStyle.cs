@@ -5,6 +5,7 @@ using System.Reflection;
 
 namespace CrabUI
 {
+  //THINK mb make styles aplicable to any object?
   public interface ICUIStyle
   {
     public static int DefaultPriority = 100;

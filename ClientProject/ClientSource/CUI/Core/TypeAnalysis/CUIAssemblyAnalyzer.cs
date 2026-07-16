@@ -9,7 +9,6 @@ using CUILibs;
 
 namespace CrabUI
 {
-  //BRUH This is a mess, i have no idea what calls and require what
   public class CUIAssemblyAnalyzer
   {
     public Dictionary<Type, CUIComponentInfo> ComponentInfos { get; } = new();

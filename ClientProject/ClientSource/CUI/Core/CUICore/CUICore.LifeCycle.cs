@@ -58,17 +58,14 @@ namespace CrabUI
         {
           CUI.Logger.Error($"Error in CUICore.DrawAfterGUI: {e}\n");
         }
-
       }
 
       public void DrawBeforeGUI(CUISpriteBatch spriteBatch)
       {
-        Self.Main.DrawChildren(spriteBatch);
-        OnDrawBeforeGUI.Raise(spriteBatch);
-
         try
         {
-
+          Self.Main.DrawChildren(spriteBatch);
+          OnDrawBeforeGUI.Raise(spriteBatch);
         }
         catch (Exception e)
         {

@@ -10,6 +10,7 @@ namespace CrabUI
 {
   public class AnimationTrack
   {
+    //FIXME It's fragile, if animation is created before animation player it'll break
     public static double UpdateStepDuration => CUICore.AnimationPlayer.UpdateStepDuration;
 
     /// <summary>

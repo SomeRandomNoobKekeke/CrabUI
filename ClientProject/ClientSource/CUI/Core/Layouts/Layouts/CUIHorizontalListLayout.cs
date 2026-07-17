@@ -1,0 +1,189 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Diagnostics;
+using Barotrauma;
+using Microsoft.Xna.Framework;
+using CUILibs;
+using CUICodeGenerator;
+
+namespace CrabUI
+{
+  public class CUIHorizontalListLayout : Layout
+  {
+    public interface Host : Layout.Host
+    {
+      public CUIDirection Direction { get; }
+    }
+    public interface Child : Layout.ChildBase
+    {
+      public float? Flex { get; }
+    }
+
+    private Host Parent;
+    public override void ConnectTo(Layout.Host host)
+    {
+      base.ConnectTo(host);
+      Parent = host as Host;
+    }
+
+
+
+
+
+
+    public class ChildSize
+    {
+      public Layout.Child Child { get; set; }
+      public float Width { get; set; }
+      public float Height { get; set; }
+    }
+
+    public override void UpdateChildren()
+    {
+      if (Parent is null) return;
+      if (!RequireChildrenUpdate) return;
+
+      List<ChildSize> sizes = new();
+      List<ChildSize> resizables = new();
+
+      float TotalWidth = 0;
+      foreach (Layout.Child c in Parent.Children)
+      {
+        float w = 0;
+        float h = Parent.ChildrenRect.Height; // Resize to host Height by default
+
+
+        if (c.Relative.Width.HasValue) w = c.Relative.Width.Value * Parent.ChildrenRect.Width;
+        if (c.CrossRelative.Width.HasValue) w = c.CrossRelative.Width.Value * Parent.ChildrenRect.Height;
+        if (c.Absolute.Width.HasValue) w = c.Absolute.Width.Value;
+
+        if (c.RelativeMin.Width.HasValue) w = Math.Max(w, c.RelativeMin.Width.Value * Parent.ChildrenRect.Width);
+        if (c.AbsoluteMin.Width.HasValue) w = Math.Max(w, c.AbsoluteMin.Width.Value);
+        if (c.MinSize.X.HasValue) w = Math.Max(w, c.MinSize.X.Value + c.OutToChildDiff.FullWidth);
+
+        if (c.RelativeMax.Width.HasValue) w = Math.Min(w, c.RelativeMax.Width.Value * Parent.ChildrenRect.Width);
+        if (c.AbsoluteMax.Width.HasValue) w = Math.Min(w, c.AbsoluteMax.Width.Value);
+        if (c.MaxSize.X.HasValue) w = Math.Min(w, c.MaxSize.X.Value);
+
+
+        if (c.Relative.Height.HasValue) h = c.Relative.Height.Value * Parent.ChildrenRect.Height;
+        if (c.CrossRelative.Height.HasValue) h = c.CrossRelative.Height.Value * Parent.ChildrenRect.Width;
+        if (c.Absolute.Height.HasValue) h = c.Absolute.Height.Value;
+
+        if (c.RelativeMin.Height.HasValue) h = Math.Max(h, c.RelativeMin.Height.Value * Parent.ChildrenRect.Height);
+        if (c.AbsoluteMin.Height.HasValue) h = Math.Max(h, c.AbsoluteMin.Height.Value);
+        if (c.MinSize.Y.HasValue) h = Math.Max(h, c.MinSize.Y.Value + c.OutToChildDiff.FullHeigth);
+
+        if (c.RelativeMax.Height.HasValue) h = Math.Min(h, c.RelativeMax.Height.Value * Parent.ChildrenRect.Height);
+        if (c.AbsoluteMax.Height.HasValue) h = Math.Min(h, c.AbsoluteMax.Height.Value);
+        if (c.MaxSize.Y.HasValue) h = Math.Min(h, c.MaxSize.Y.Value);
+
+        ChildSize size = new ChildSize
+        {
+          Child = c,
+          Width = w,
+          Height = h,
+        };
+        sizes.Add(size);
+
+        if (c.Flex.HasValue)
+        {
+          resizables.Add(size);
+        }
+        else
+        {
+          TotalWidth += w;
+        }
+      }
+
+      float emptySpace = Parent.ChildrenRect.Width - TotalWidth;
+      float totalFlex = resizables.Sum(size => size.Child.Flex.Value);
+      foreach (ChildSize size in resizables)
+      {
+        size.Width = emptySpace * size.Child.Flex.Value / totalFlex;
+      }
+
+
+      if (Parent.Direction == CUIDirection.Straight)
+      {
+        float x = 0;
+        foreach (ChildSize c in sizes)
+        {
+          c.Child.OuterRect = new CUIRect(
+            Parent.ChildrenRect.Left + x + Parent.ChildrenOffset.X,
+            Parent.ChildrenRect.Top + 0 + Parent.ChildrenOffset.Y,
+            c.Width,
+            c.Height
+          );
+
+          x += c.Width;
+        }
+      }
+
+      if (Parent.Direction == CUIDirection.Reverse)
+      {
+        float x = Parent.ChildrenRect.Width;
+        foreach (ChildSize c in sizes)
+        {
+          x -= c.Width;
+
+          c.Child.OuterRect = new CUIRect(
+            Parent.ChildrenRect.Left + x + Parent.ChildrenOffset.X,
+            Parent.ChildrenRect.Top + 0 + Parent.ChildrenOffset.Y,
+            c.Width,
+            c.Height
+          );
+        }
+      }
+
+      base.UpdateChildren();
+    }
+
+    public override void UpdateParent()
+    {
+      if (Parent.FitContent.X)
+      {
+        float maxWidth = 0;
+        foreach (Layout.Child c in Parent.Children)
+        {
+          if (c.Flex != null) continue;
+          float w = 0;
+
+          if (c.Absolute.Width.HasValue) w = c.Absolute.Width.Value;
+          if (c.AbsoluteMin.Width.HasValue) w = Math.Max(w, c.AbsoluteMin.Width.Value);
+          if (c.AbsoluteMax.Width.HasValue) w = Math.Min(w, c.AbsoluteMax.Width.Value);
+          if (c.MinSize.X.HasValue) w = Math.Max(w, c.MinSize.X.Value + c.OutToChildDiff.FullWidth);
+          if (c.MaxSize.X.HasValue) w = Math.Min(w, c.MaxSize.X.Value);
+
+          maxWidth = Math.Max(maxWidth, w);
+        }
+
+        Parent.MinSize = Parent.MinSize with { X = maxWidth };
+        Parent.MaxSize = Parent.MaxSize with { X = maxWidth };
+      }
+
+      if (Parent.FitContent.Y)
+      {
+        float maxHeight = 0;
+        foreach (Layout.Child c in Parent.Children)
+        {
+          float h = 0;
+
+          if (c.Absolute.Height.HasValue) h = c.Absolute.Height.Value;
+          if (c.AbsoluteMin.Height.HasValue) h = Math.Max(h, c.AbsoluteMin.Height.Value);
+          if (c.AbsoluteMax.Height.HasValue) h = Math.Min(h, c.AbsoluteMax.Height.Value);
+          if (c.MinSize.Y.HasValue) h = Math.Max(h, c.MinSize.Y.Value + c.OutToChildDiff.FullHeigth);
+          if (c.MaxSize.Y.HasValue) h = Math.Min(h, c.MaxSize.Y.Value);
+
+          maxHeight = Math.Max(maxHeight, h);
+        }
+
+        Parent.MinSize = Parent.MinSize with { Y = maxHeight };
+        Parent.MaxSize = Parent.MaxSize with { Y = maxHeight };
+      }
+      RequireParentUpdate = false;
+    }
+  }
+}

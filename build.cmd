@@ -1,0 +1,1 @@
+dotnet build .\CUI.sln -c Release /clp:ErrorsOnly -p WarningLevel=0 -maxcpucount:1

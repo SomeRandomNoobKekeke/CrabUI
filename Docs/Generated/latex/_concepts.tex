@@ -1,0 +1,29 @@
+\chapter{Concepts }
+\hypertarget{_concepts}{}\label{_concepts}\index{Concepts@{Concepts}}
+\label{_concepts_md__docs_2_sources_2_overview_2_concepts}%
+\Hypertarget{_concepts_md__docs_2_sources_2_overview_2_concepts}%
+
+
+All functionality is incapsulated in CUICore CUICore is isolated from main game, it\textquotesingle{}s passive state machine, it needs CUIRunner to run it, and CUIRunner needs Data\+Sources to read game data and folow game life cycle
+
+It\textquotesingle{}s all wired up by CUISetup, static CUI class already has one and it will clean it up on plugin unload
+
+Most stuff can be accessed via CUI static class or static members of CUICore, CUI is intended to be used by user and CUICore should be accessed by stuff from inside CUICore but whatever
+
+Main entity in CUICore is CUIComponent, all CUIFrames, CUIButtons are CUIComponents
+
+CUIComponents have parents and children and can be organized in trees
+
+CUIComponents have various props like size, position, anchors, color e.\+t.\+c.
+
+CUIComponents have layouts, they are separate objects that incapsulates all logic for calculating children rects and resizing parent
+
+There\textquotesingle{}s a special master component:\+ CUIMain\+Component, instead of drawing and updating itself it\textquotesingle{}s orchestrating drawing and layout calculations of it\textquotesingle{}s children
+
+CUICore has 2 CUIMain\+Components:\+ CUI.\+Main and CUI.\+Top\+Main, CUI.\+Main is drawn below vanilla GUI and CUI.\+Top\+Main is drawn above
+
+Actually unit of drawing here is not CUIComponent, it\textquotesingle{}s Visual\+Element CUIComponents may have multiple primitive Visual\+Elements like background, text, borders
+
+CUIMain\+Component extracts and flattens them in one big list of draw instructions and plugs it into the chain drawer
+
+Important thing here is that same list is used for event handling, so order of event call is always the opposite of draw order 

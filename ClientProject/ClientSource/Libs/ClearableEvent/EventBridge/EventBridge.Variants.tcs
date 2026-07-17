@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Diagnostics;
+
+// @types - T1, T2, T3
+
+namespace BaroJunk
+{
+  public class EventBridge<@types> : IEventBridge
+  {
+    private EventSubscription BridgeSubscription;
+    public bool Opened => BridgeSubscription != null;
+
+    public ClearableEvent<@types> SourceEvent { get; set; }
+    public Action<@types> Action { get; set; }
+
+    public void Open()
+    {
+      BridgeSubscription = SourceEvent.Add(Action);
+    }
+
+    public void Close()
+    {
+      BridgeSubscription.Cancel();
+      BridgeSubscription = null;
+    }
+
+    public EventBridge(ClearableEvent<@types> source = null)
+    {
+      SourceEvent = source;
+    }
+  }
+
+  public static partial class ClearableEvent_Extensions
+  {
+    public static EventBridge<@types> CreateBridge<@types>(this ClearableEvent<@types> self)
+      => new EventBridge<@types>(self);
+  }
+}

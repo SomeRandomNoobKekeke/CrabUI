@@ -1,0 +1,40 @@
+\chapter{Overview }
+\hypertarget{_overview}{}\label{_overview}\index{Overview@{Overview}}
+\label{_overview_md__docs_2_sources_2_overview_2_overview}%
+\Hypertarget{_overview_md__docs_2_sources_2_overview_2_overview}%
+\hypertarget{_overview_autotoc_md1}{}\doxysection{\texorpdfstring{Lil}{Lil}}\label{_overview_autotoc_md1}
+Main entity here is CUIComponent, all components derive from CUIComponent
+
+CUIComponents have props that controls their drawing and positioning
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{CUIFrame\ frame\ =\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ Background\ =\ \{\ Color\ =\ \textcolor{keyword}{new}\ Color(32,\ 32,\ 32)\ \},}
+\DoxyCodeLine{\ \ Absolute\ =\ \textcolor{keyword}{new}\ CUINullRect(0,\ 0,\ 400,\ 600),}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+
+CUIComponents can have parent and children and can be attached to one another forming a tree
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{frame[\textcolor{stringliteral}{"{}layout"{}}]\ =\ \textcolor{keyword}{new}\ CUIVerticalList()\ \{\ Relative\ =\ \textcolor{keyword}{new}\ CUINullRect(0,\ 0,\ 1,\ 1)\ \};}
+\DoxyCodeLine{frame[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}handle"{}}]\ =\ \textcolor{keyword}{new}\ CUIHorizontalList()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ FitContent\ =\ \textcolor{keyword}{new}\ CUIBool2(\textcolor{keyword}{false},\ \textcolor{keyword}{true}),}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{frame[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}handle"{}}][\textcolor{stringliteral}{"{}caption"{}}]\ =\ Caption\ =\ \textcolor{keyword}{new}\ CUITextBlock(\textcolor{stringliteral}{"{}bruh"{}})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ Flex\ =\ 1,}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+
+There are 2 root CUIMain\+Components CUI.\+Main and CUI.\+Top\+Main, they draw and update layouts oftheir children
+
+To draw your components attach them to one of them\hypertarget{_overview_autotoc_md2}{}\doxysection{\texorpdfstring{\protect\doxysectlink{_concepts}{Concepts}{0}}{{Concepts}}}\label{_overview_autotoc_md2}

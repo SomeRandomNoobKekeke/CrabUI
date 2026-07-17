@@ -1,0 +1,86 @@
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Reflection;
+using System.Diagnostics;
+using Barotrauma;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using CUICodeGenerator;
+using Microsoft.Xna.Framework.Input;
+
+namespace CrabUI
+{
+  public partial class CUITextInput
+  {
+    public StateClass State { get; } = new();
+
+    public class StateClass
+    {
+      public event Action Changed;
+      public event Action<string> TextChanged;
+
+      public string Text { get; private set; } = "";
+      public int SelectionStart { get; private set; }
+      public int SelectionEnd { get; private set; }
+      public int CaretPos { get; private set; }
+
+      public bool SomethingSelected => SelectionStart != SelectionEnd;
+
+      public bool IsInsideSelection(int value) => SelectionStart <= value && value <= SelectionEnd;
+
+      public int SelectionLength => SelectionEnd - SelectionStart;
+      public bool SelectionEmpty => SelectionLength <= 0;
+
+      public void SetText(string value)
+      {
+        Text = value;
+
+        CaretPos = Math.Clamp(CaretPos, 0, Text.Length);
+        SelectionStart = Math.Clamp(SelectionStart, 0, Text.Length);
+        SelectionEnd = Math.Clamp(SelectionEnd, 0, Text.Length);
+
+        Changed?.Invoke();
+        TextChanged?.Invoke(Text);
+      }
+
+      public void SetSelectionStart(int value) => SetSelection(value, SelectionEnd);
+      public void SetSelectionEnd(int value) => SetSelection(SelectionStart, value);
+      public void SetSelection(int start, int end)
+      {
+        if (start > end)
+        {
+          (start, end) = (end, start);
+        }
+
+        start = Math.Clamp(start, 0, Text.Length);
+        end = Math.Clamp(end, 0, Text.Length);
+
+        SelectionStart = start;
+        SelectionEnd = end;
+
+        Changed?.Invoke();
+      }
+
+      public void ClearSelection()
+      {
+        SelectionStart = 0;
+        SelectionEnd = 0;
+        Changed?.Invoke();
+      }
+
+      public void SetCaretPos(int value)
+      {
+        CaretPos = Math.Clamp(value, 0, Text.Length);
+        Changed?.Invoke();
+      }
+
+      public override string ToString() => $"Text: [{Text}] SelectionStart: [{SelectionStart}] SelectionEnd: [{SelectionEnd}] CaretPos: [{CaretPos}]";
+    }
+
+
+
+
+  }
+}

@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Diagnostics;
+using CUILibs;
+
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using HarmonyLib;
+
+namespace CrabUI
+{
+  public class GameDataSources : ICUIRunnerDataSources
+  {
+
+
+    public GameInputProvider Input { get; } = new();
+    public GameLifeCycle LifeCycle { get; } = new();
+
+    IInputProvider ICUIRunnerDataSources.Input => Input;
+    IGameLifeCycleTracker ICUIRunnerDataSources.LifeCycle => LifeCycle;
+
+    public GameDataSources()
+    {
+      LifeCycle.ConnectToGame();
+      Input.ConnectToGame();
+    }
+
+    public void DisconnectFromGame()
+    {
+      LifeCycle.DisconnectFromGame();
+      Input.DisconnectFromGame();
+    }
+  }
+}

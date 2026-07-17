@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Diagnostics;
+
+namespace CUILibs
+{
+  public class DebugNodeDict : Dictionary<string, DebugNodeBase>
+  {
+
+  }
+
+  public static class DebugNodeDict_Exetnsions
+  {
+    public static void Map(this Dictionary<string, DebugNodeBase> self, Dictionary<string, DebugRelay> next)
+    {
+      foreach (string key in self.Keys)
+      {
+        if (next.ContainsKey(key))
+        {
+          next[key].Route(self[key]);
+        }
+        else
+        {
+          DebugNodeSetup.Logger.Warning($"DebugNodeDict can't be fully mapped, next doesn't have [{key}]");
+        }
+      }
+    }
+
+    public static void Map(this Dictionary<string, DebugNodeBase> self, DebugRelayBase next)
+    {
+      foreach (DebugNodeBase node in self.Values)
+      {
+        next.Route(node);
+      }
+    }
+
+
+    public static void Unmap(this Dictionary<string, DebugNodeBase> self, Dictionary<string, DebugRelay> next)
+    {
+      foreach (string key in next.Keys)
+      {
+        if (self.ContainsKey(key))
+        {
+          next[key].Unroute(self[key]);
+        }
+      }
+    }
+
+    public static void Unmap(this Dictionary<string, DebugNodeBase> self, DebugRelayBase next)
+    {
+      foreach (DebugNodeBase node in self.Values)
+      {
+        next.Unroute(node);
+      }
+    }
+  }
+
+}

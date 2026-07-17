@@ -1,0 +1,21 @@
+ComponentInfo for CUICore
+Parts:
+ -   :  CUICore
+ - GlobalFocusTracker  :  CUICore.GlobalFocusTracker_Part
+ - CUIRunnerHandle  :  CUICore.CUIRunnerHandle_Part
+ - LifeCycle  :  CUICore.LifeCycle_Part
+ - _Reflection  :  CUICore.Reflection_Part
+Modules:
+ - EventConstructor  :  EventConstructor
+ - GlobalFocusTracker.EventDispatcher  :  EventDispatcher
+Injectables:
+ - CUICore  :  
+ - CUICore.GlobalFocusTracker_Part  :  GlobalFocusTracker
+ - CUICore.CUIRunnerHandle_Part  :  CUIRunnerHandle
+ - CUICore.LifeCycle_Part  :  LifeCycle
+ - CUICore.Reflection_Part  :  _Reflection
+ - EventConstructor  :  EventConstructor
+ - EventDispatcher  :  GlobalFocusTracker.EventDispatcher
+Dependencies:
+Aware:
+Errors:

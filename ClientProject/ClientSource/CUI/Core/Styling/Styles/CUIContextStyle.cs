@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+
+namespace CrabUI
+{
+
+  public class CUIContextStyle<T> : IDisposable where T : CUIComponent
+  {
+    public CUIActionStyle Style { get; }
+    public Type Type => typeof(T);
+
+    public void Dispose()
+    {
+      CUICore.Styles.ExitContextStyle(Style, Type);
+    }
+
+    public CUIContextStyle(Action<T> action)
+    {
+      Style = new CUIActionStyle<T>("context", action);
+      CUICore.Styles.EnterContextStyle(Style, Type);
+    }
+  }
+
+
+}

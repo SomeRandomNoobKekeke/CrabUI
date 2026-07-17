@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+
+// @types = T1, T2
+// @argdefs = T1 arg1, T2 arg2
+// @args = arg1, arg2
+
+namespace BaroJunk
+{
+  public class SimpleWeakEvent<@types>
+  {
+    private ConditionalWeakTable<object, Action<@types>> Table = new();
+
+    public void Add(object target, Action<@types> callback) => Table.Add(target, callback);
+    public void Remove(object target) => Table.Remove(target);
+
+    public void Raise(@argdefs)
+    {
+      foreach (var (target, action) in Table)
+      {
+        action.Invoke(@args);
+      }
+    }
+  }
+}

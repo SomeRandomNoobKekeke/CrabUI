@@ -1,0 +1,69 @@
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Reflection;
+using System.Diagnostics;
+using Barotrauma;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using CUICodeGenerator;
+using Microsoft.Xna.Framework.Input;
+using CUILibs;
+
+namespace CrabUI
+{
+  public partial class CUITextInput : CUIComponent, IComponent
+  {
+    public double CaretBlinkInterval { get; set; } = 1.0;
+
+    public Color InvalidColor { get; set; }
+    public Color FocusedColor { get; set; }
+    public Color BluredColor { get; set; }
+    public Color SelectionColor { get; set; }
+    public Color CaretColor
+    {
+      get => CaretTexture.Color;
+      set => CaretTexture.Color = value;
+    }
+
+    public string Text
+    {
+      get => State.Text;
+      set => State.SetText(value);
+    }
+
+    public Action<string> OnInput { set { Input += value; } }
+    public event Action<string> Input;
+
+    public Action<string> OnValidInput { set { ValidInput += value; } }
+    public event Action<string> ValidInput;
+
+    public bool SomethingSelected => State.SomethingSelected;
+    public int SelectionStart
+    {
+      get => State.SelectionStart;
+      set => State.SetSelectionStart(value);
+    }
+
+    public void ClearSelection() => State.ClearSelection();
+    public void SetSelection(int start, int end) => State.SetSelection(start, end);
+
+    public int SelectionEnd
+    {
+      get => State.SelectionEnd;
+      set => State.SetSelectionEnd(value);
+    }
+
+    public int CaretPos
+    {
+      get => State.CaretPos;
+      set => State.SetCaretPos(value);
+    }
+
+    public bool IsInsideSelection(int value) => State.IsInsideSelection(value);
+
+    public int SelectionLength => State.SelectionLength;
+    public bool SelectionEmpty => State.SelectionEmpty;
+  }
+}

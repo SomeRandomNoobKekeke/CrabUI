@@ -1,31 +1,9 @@
-This is a project template for making plugin-powered ContentPackages for LuaCsForBarotrauma. For more details,
-visit the Wiki.
+This is C# GUI library in a form of a mod for Barotrauma
 
-Please see the [Luatrauma Docs](https://luatrauma.github.io/Luatrauma.Docs/cs/setup-assembly-csharp/) for detailed instructions.
+It can be used by other Barotrauma mods to make custom gui
 
-Quick Start Steps:
+It's a hybrid mod, it's based on [LuaCsModTemplate](https://github.com/Luatrauma/LuaCsModTemplate) but it has `ModConfig.xml` so it can be both compiled as c# project and loaded in game as any other c# "in-memory" mod
 
-1. Download the Libraries file [luacsforbarotrauma_refs.zip](https://github.com/evilfactory/LuaCsForBarotrauma/releases) from latest release, unzip it, and place the contents in /Refs as shown below.
-
-- The libraries for this project must be downloaded separately. They can be found in the LuaCsForBarotrauma Steam Workshop
-folder under the subfolder "Publicized". Just copy the ones listed below into "/Refs".
-
-You need to edit the "Build.props" file: 
-
-> <ModDeployDir>..\LUATRAMA_DEBUG_LOCALMODS_MYMODDIR\</ModDeployDir>
-
-Replace "..\LUATRAMA_DEBUG_LOCALMODS_MYMODDIR\" with the absolute path of your mod in "Barotrauma\LocalMods\", ie. "Steam\..\Barotrauma\LocalMods\MyModName\"
-
-> <AssemblyName>MyModName</AssemblyName>
-> <RootNamespace>MyModName</RootNamespace>
-
-Replace "MyModName" with a valid assembly name, this should be similar to your mod name but does not need to match. This name should:
-- Not include spaces.
-- Not include special characters, periods are allowed.
-- Use english characters.
-
-
-2. Set the executable directory for the Launch Configurations (Client, Server).
-
-3. Set your details (modname, files, etc) in Assets/Content/filelist.xml
-- Note: All files should be placed under "/Content" and will be copied automatically to "LocalMods/<YourMod>/...".
+To use either:
+- Copy paste sources from `ClientProject\ClientSource`
+- Add workshop dependency to [CUI](https://steamcommunity.com/sharedfiles/filedetails/?id=3765325848) [optionally add project ref to CUI.dll for ide hints]

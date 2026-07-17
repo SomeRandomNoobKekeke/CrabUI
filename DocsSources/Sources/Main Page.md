@@ -1,17 +1,16 @@
 # Intro {#mainpage}
 
-CUI is GUI library wrapped as C# mod for Barotrauma  
-It can be used by other C#/lua/xml mods to create custom GUI
+It's GUI library for Barotrauma, designed to be used by other C#/lua/xml mods to make custom GUI
 
+#### Current state: mvp  
+It's barely working, barely tested, but good enough to try stuff and give feedback  
+Currently can be used only in other c# mods
 
+Also these docs are the source of truth, if something doesn't work as stated here - it's a bug
 
-Shrimplest example:
-~~~~~~~~~~~~~{cs}
-CUIFrame frame = new CUIDefault.Frame("bruh")
-{
-  Absolute = new CUINullRect(w: 400, h: 600),
-};
-~~~~~~~~~~~~~
-
+#### \subpage QuickStart
 #### \subpage Overview
+#### \subpage Details
+#### \subpage NotesForCodeDivers
+
 

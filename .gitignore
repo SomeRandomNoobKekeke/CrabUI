@@ -6,13 +6,14 @@
 /Build
 Ignore
 Test Data
-Assets/PNG/*
-Refs
+Assets/PNG/For testing
+Assets/PNG/Sources
 
-# why README.txt not ignored?
+Refs/*
+!Refs/README.txt
 
-!README.md
-!CUI.png
+# docs/*
+# !docs/.nojekyll
 
 [Ss]pecs.md
 

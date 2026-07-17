@@ -4,16 +4,18 @@
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
 /Build
-Docs/Generated
 Ignore
-Generated Docs
-__Generated
 Test Data
-Assets
+Assets/PNG/For testing
+Assets/PNG/Sources
+
+Refs/*
+!Refs/README.txt
+
+docs/*
+!docs/.nojekyll
+
 [Ss]pecs.md
-
-
-Refs/**/*.dll
 
 *.DotSettings.user
 

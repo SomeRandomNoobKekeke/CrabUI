@@ -7,3 +7,5 @@ It's a hybrid mod, it's based on [LuaCsModTemplate](https://github.com/Luatrauma
 To use either:
 - Copy paste sources from `ClientProject\ClientSource`
 - Add workshop dependency to [CUI](https://steamcommunity.com/sharedfiles/filedetails/?id=3765325848) [optionally add project ref to CUI.dll for ide hints]
+
+[Changelog](https://github.com/SomeRandomNoobKekeke/CrabUI/blob/main/ClientProject/ClientSource/Changelog.md)

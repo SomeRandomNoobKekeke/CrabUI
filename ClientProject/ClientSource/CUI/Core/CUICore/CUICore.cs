@@ -59,13 +59,13 @@ namespace CrabUI
       CUIStyleManager = new(Reflection.TypeTree);
       CUIPaletteManager = new();
 
+      EventConstructor = new();
+      _AnimationPlayer = new();
+
       //CUICore analyzes itself because it needs infos for MainComponents right here
       Reflection.AddAssemblyInfo(
         CUIAssemblyAnalyzer.AnalyzeAssembly(typeof(CUICore).Assembly)
       );
-
-      EventConstructor = new();
-      _AnimationPlayer = new();
 
       Main = new() { EventConstructor = EventConstructor };
       TopMain = new() { EventConstructor = EventConstructor };

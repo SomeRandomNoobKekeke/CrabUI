@@ -10,9 +10,7 @@
         <HintPath>..\Refs\MonoGame.Framework.Linux.NetStandard.dll</HintPath>
       </Reference>
     </ItemGroup>
-    
-    <Import Project="..\SharedProject\SharedProject.projitems" Label="Shared" />
-    <Import Project="../Build.props"/>
+    <Import Project="../Build.props" />
     
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
       <DefineConstants>TRACE;CLIENT;LINUX</DefineConstants>

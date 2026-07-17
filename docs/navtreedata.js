@@ -32,29 +32,26 @@ var NAVTREE =
       [ "<a class=\"el\" href=\"_overview_basics.html\" title=\"Basics\">Basics</a>", "_overview.html#autotoc_md5", null ],
       [ "<a class=\"el\" href=\"_overview_components.html\" title=\"Components\">Components</a>", "_overview.html#autotoc_md6", null ],
       [ "<a class=\"el\" href=\"_overview_layouts.html\" title=\"Layouts\">Layouts</a>", "_overview.html#autotoc_md7", null ],
-      [ "<a class=\"el\" href=\"_overview_props.html\" title=\"Props\">Props</a>", "_overview.html#autotoc_md8", null ],
-      [ "Lil", "_overview.html#autotoc_md10", null ],
-      [ "<a class=\"el\" href=\"_concepts.html\" title=\"Concepts\">Concepts</a>", "_overview.html#autotoc_md11", null ]
+      [ "<a class=\"el\" href=\"_overview_props.html\" title=\"Props\">Props</a>", "_overview.html#autotoc_md8", null ]
     ] ],
     [ "Basics", "_overview_basics.html", null ],
     [ "Components", "_overview_components.html", null ],
-    [ "Concepts", "_concepts.html", null ],
     [ "Layouts", "_overview_layouts.html", null ],
     [ "Props", "_overview_props.html", null ],
     [ "QuickStart", "_quick_start.html", [
-      [ "To include CUI in your mod:", "_quick_start.html#autotoc_md13", [
-        [ "For \"in-memory\" mods", "_quick_start.html#autotoc_md14", null ],
-        [ "For in precompiled mods", "_quick_start.html#autotoc_md15", null ],
-        [ "Hybrid mods", "_quick_start.html#autotoc_md16", null ]
+      [ "To include CUI in your mod:", "_quick_start.html#autotoc_md11", [
+        [ "For \"in-memory\" mods", "_quick_start.html#autotoc_md12", null ],
+        [ "For in precompiled mods", "_quick_start.html#autotoc_md13", null ],
+        [ "Hybrid mods", "_quick_start.html#autotoc_md14", null ]
       ] ],
-      [ "Min example:", "_quick_start.html#autotoc_md17", null ]
+      [ "Min example:", "_quick_start.html#autotoc_md15", null ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"_concepts.html"
+"_details.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

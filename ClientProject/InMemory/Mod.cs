@@ -31,13 +31,6 @@ namespace CrabUIUser
 
       Logger.Log($"Compiled somehow");
 
-      CUIComponent component = new CUIComponent()
-      {
-        OnMouseDown = (c, e) => CUI.Logger.Log(e.Pos),
-      };
-      //Same as
-      component.MouseDown += (c, e) => CUI.Logger.Log(e.Pos);
-
       try
       {
         CUI.Start();

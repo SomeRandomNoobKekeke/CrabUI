@@ -39,7 +39,7 @@ namespace CrabUI
         Anchor = CUIAnchor.Center,
         TargetMainComponent = CUI.TopMain,
         Background = { Color = Color.Cyan },
-        ConsumeMouseClicks = true,
+        ConsumeMouseEvents = true,
       };
 
       Frame["mg"] = MG = new CUIMagnifyingGlass()

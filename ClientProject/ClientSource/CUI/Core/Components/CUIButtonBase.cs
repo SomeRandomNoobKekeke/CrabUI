@@ -126,7 +126,7 @@ namespace CrabUI
         if (Emit != null) Commands.SendUp(Emit, Text);
       };
 
-      ConsumeMouseClicks = true;
+      ConsumeMouseEvents = true;
     }
 
     public CUIButtonBase(string text) : this()

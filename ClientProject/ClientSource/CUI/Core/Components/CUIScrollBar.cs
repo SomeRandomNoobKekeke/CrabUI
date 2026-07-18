@@ -75,7 +75,7 @@ namespace CrabUI
     public CUIScrollBar()
     {
       ChildrenBounds = CUIBoundaries.Box;
-      ConsumeMouseClicks = true;
+      ConsumeMouseEvents = true;
 
       Slider = new CUIComponent()
       {

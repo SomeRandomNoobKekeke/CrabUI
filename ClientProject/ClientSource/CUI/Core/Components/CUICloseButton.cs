@@ -26,7 +26,7 @@ namespace CrabUI
       base.InitStyle();
       Icon.Sprite = CUIDefaultSprite.Cross;
       Absolute = new CUINullRect(DefaultSize);
-      ConsumeMouseClicks = true;
+      ConsumeMouseEvents = true;
     }
 
     public static Vector2 DefaultSize => ResizeHandle.DefaultSize;

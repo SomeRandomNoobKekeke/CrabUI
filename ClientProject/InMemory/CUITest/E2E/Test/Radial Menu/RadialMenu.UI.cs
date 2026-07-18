@@ -41,7 +41,7 @@ namespace CrabUIUser
                 Sprite = CUISprite.Load($"Assets\\PNG\\For testing\\Radial menu\\{i + 1}.png"),
                 Color = Color.Gray,
               },
-              ConsumeMouseClicks = true,
+              ConsumeMouseEvents = true,
               IgnoretransparentPixels = true,
             };
 

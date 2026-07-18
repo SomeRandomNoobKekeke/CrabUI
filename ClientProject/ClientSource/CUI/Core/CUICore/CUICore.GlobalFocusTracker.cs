@@ -13,6 +13,7 @@ namespace CrabUI
 {
   public partial class CUICore
   {
+    public GlobalFocusTracker_Part GlobalFocusTracker { get; } = new();
     public class GlobalFocusTracker_Part : Part
     {
       private EventDispatcher EventDispatcher { get; } = new();
@@ -85,7 +86,7 @@ namespace CrabUI
       }
     }
 
-    public GlobalFocusTracker_Part GlobalFocusTracker { get; } = new();
+
   }
 
 }

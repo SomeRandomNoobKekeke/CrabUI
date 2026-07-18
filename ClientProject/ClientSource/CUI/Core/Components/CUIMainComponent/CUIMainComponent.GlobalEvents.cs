@@ -22,7 +22,7 @@ namespace CrabUI
       public bool MouseOver { get; set; } // BRUH
       public bool MousePressed { get; set; }
 
-      public bool ConsumeMouseClicks { get; set; } // BRUH
+      public bool ConsumeMouseEvents { get; set; } // BRUH
 
       public ClearableEvent<CUIMouseDownEvent> MouseDown { get; } = new();
       public ClearableEvent<CUIMouseUpEvent> MouseUp { get; } = new();

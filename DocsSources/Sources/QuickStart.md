@@ -9,7 +9,7 @@ There's 2 ways:
 
 2 is minimalistic, but you won't have ide hints
 
-### For in precompiled mods
+### For precompiled mods
 Go to CUI mod folder, take CUI.dll from bin and add a reference to it in your project
 
 Or download https://github.com/SomeRandomNoobKekeke/CrabUI, add luatrauma Refs to it and compile

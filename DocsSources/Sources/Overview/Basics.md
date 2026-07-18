@@ -1,6 +1,6 @@
 # Basics {#OverviewBasics}
 
-All GUI elements: frames, buttons, list, textblock are CUIComponents
+All GUI elements: frames, buttons, list, textblocks are CUIComponents
 
 They are C# objects, they all have parameterless constructor so you can just create them
 

@@ -7,7 +7,7 @@
 - CUICheckBox - A checkbox
 - CUICloseButton - Button with a cross that emits "close" event that forces nearest frame to close
 - CUIDropDown - Drop down select (borked)
-- CUIFrame - Draggable and resizable container for other components, can be Opened and closed
+- CUIFrame - Draggable and resizable container for other components, can be Opened and Closed
 - CUIVerticalList - Wrapper with CUIVerticalListLayout
 - CUIGrid - Wrapper with Grid layour (half-assed)
 - CUIPages - Can have only 1 child - opened page, resizes opened page to its size

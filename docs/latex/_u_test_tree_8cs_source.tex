@@ -1,0 +1,182 @@
+\doxysection{UTest\+Tree.\+cs}
+\hypertarget{_u_test_tree_8cs_source}{}\label{_u_test_tree_8cs_source}\index{ClientProject/ClientSource/Libs/UTest/UTestTree.cs@{ClientProject/ClientSource/Libs/UTest/UTestTree.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }System.Text;}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00008}00008\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00010}\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_tree_node}{00010}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }UTestTreeNode}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00011}00011\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{public}\ Type\ Type;}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{public}\ UTestTreeNode\ Parent;}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{public}\ List<UTestTreeNode>\ Children\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ IsLeave\ =>\ Children.Count\ ==\ 0;}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Append(UTestTreeNode\ child)}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00017}00017\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00018}00018\ \ \ \ \ \ \ child.Parent\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00019}00019\ \ \ \ \ \ \ Children.Add(child);}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00020}00020\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00022}00022\ \ \ \ \ \textcolor{comment}{//TODO\ add\ protection\ from\ loops}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{public}\ IEnumerable<UTestTreeNode>\ DeepChildren}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00024}00024\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00025}00025\ \ \ \ \ \ \ \textcolor{keyword}{get}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00026}00026\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (UTestTreeNode\ child\ \textcolor{keywordflow}{in}\ Children)}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ child;}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (UTestTreeNode\ deepChild\ \textcolor{keywordflow}{in}\ child.DeepChildren)}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ deepChild;}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00035}00035\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ StringPath\ =>\ String.Join(\textcolor{charliteral}{'.'},\ Path.Select(node\ =>\ node.Type.Name));}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00039}00039\ \ \ \ \ \textcolor{keyword}{public}\ List<Type>\ TypePath\ =>\ Path.Select(node\ =>\ node.Type).ToList();}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00040}00040\ \ \ \ \ \textcolor{comment}{//TODO\ add\ protection\ from\ loops}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00041}00041\ \ \ \ \ \textcolor{keyword}{public}\ List<UTestTreeNode>\ Path}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00042}00042\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00043}00043\ \ \ \ \ \ \ \textcolor{keyword}{get}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00044}00044\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ List<UTestTreeNode>\ path\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ UTestTreeNode\ node\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ path.Add(node);}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (node.Parent\ is\ not\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ node\ =\ node.Parent;}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ path.Add(node);}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ path.Reverse();}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ path;}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00059}00059\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00064}00064\ \ \ \ \ \textcolor{keyword}{public}\ UTestTreeNode(Type\ T)\ =>\ this.Type\ =\ T;}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00066}00066\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{string}\ ToString()\ =>\ StringPath;}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00067}00067\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00069}\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_tree}{00069}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }UTestTree}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00070}00070\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00071}00071\ \ \ \ \ \textcolor{keyword}{public}\ List<UTestTreeNode>\ Roots\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00072}00072\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_tree_node}{UTestTreeNode}}\ RootNode\ =>\ Roots.Count\ ==\ 1\ ?\ Roots.First()\ :\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00073}00073\ \ \ \ \ \textcolor{keyword}{public}\ Type\ RootType\ =>\ RootNode?.Type;}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00074}00074\ \ \ \ \ \textcolor{keyword}{public}\ Dictionary<Type,\ UTestTreeNode>\ Nodes\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00075}00075\ \ \ \ \ \textcolor{keyword}{public}\ Dictionary<string,\ Type>\ TypeByPath\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00077}00077\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \_RunRecursive(Action<Type>\ action,\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_tree_node}{UTestTreeNode}}\ startNode)}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00078}00078\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00079}00079\ \ \ \ \ \ \ action(startNode.Type);}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00080}00080\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_tree_node}{UTestTreeNode}}\ child\ \textcolor{keywordflow}{in}\ startNode.DeepChildren)}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00081}00081\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ action(child.Type);}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00083}00083\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00084}00084\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00086}00086\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ RunRecursive(Action<Type>\ action,\ Type\ start\ =\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00087}00087\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00088}00088\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (start\ is\ not\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00089}00089\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \_RunRecursive(action,\ Nodes[start]);}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00091}00091\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00092}00092\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00093}00093\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_tree_node}{UTestTreeNode}}\ node\ \textcolor{keywordflow}{in}\ Roots)}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \_RunRecursive(action,\ node);}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00098}00098\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00099}00099\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00101}00101\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ ScanAssembly(Assembly\ assembly)}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00102}00102\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00103}00103\ \ \ \ \ \ \ Nodes.Clear();}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00104}00104\ \ \ \ \ \ \ Roots.Clear();}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00106}00106\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Type\ T\ \textcolor{keywordflow}{in}\ assembly.GetTypes())}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00107}00107\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (T.IsAbstract)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (T\ ==\ typeof(\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack}{UTestPack}}))\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (T.IsAssignableTo(typeof(\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack}{UTestPack}})))}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_category}{UTestCategory}}\ meta\ =\ (\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_category}{UTestCategory}})Attribute.GetCustomAttribute(T,\ typeof(\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_category}{UTestCategory}}));}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (meta?.Category\ !=\ \textcolor{keyword}{null}\ \&\&\ !\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_explorer}{UTestExplorer}}.Categories.Contains(meta.Category))\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ Nodes[T]\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_tree_node}{UTestTreeNode}}(T);}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00118}00118\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00120}00120\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_tree_node}{UTestTreeNode}}\ node\ \textcolor{keywordflow}{in}\ Nodes.Values)}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00121}00121\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ Type\ parentType\ =\ node.Type.BaseType;}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_sub_pack_of}{UTestSubPackOf}}\ meta\ =\ (\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_sub_pack_of}{UTestSubPackOf}})Attribute.GetCustomAttribute(node.Type,\ typeof(\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_sub_pack_of}{UTestSubPackOf}}));}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (meta?.SubPackOf\ is\ not\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ parentType\ =\ meta?.SubPackOf;}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (parentType\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Nodes.ContainsKey(parentType))}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ Nodes[parentType].Append(node);}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00136}00136\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00138}00138\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_tree_node}{UTestTreeNode}}\ node\ \textcolor{keywordflow}{in}\ Nodes.Values)}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00139}00139\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ TypeByPath[node.StringPath]\ =\ node.Type;}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (node.Parent\ is\ \textcolor{keyword}{null})\ Roots.Add(node);}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00143}00143\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00144}00144\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00147}00147\ \ \ \ \ \textcolor{keyword}{public}\ UTestTree()\ =>\ ScanAssembly(Assembly.GetExecutingAssembly());}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00149}00149\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{string}\ ToString()}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00150}00150\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00151}00151\ \ \ \ \ \ \ StringBuilder\ sb\ =\ \textcolor{keyword}{new}\ StringBuilder();}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00153}00153\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ToStringReq(\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_tree_node}{UTestTreeNode}}\ node,\ \textcolor{keywordtype}{string}\ offset)}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00154}00154\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ sb.Append(\$\textcolor{stringliteral}{"{}\{offset\}\{node.Type.Name\}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_tree_node}{UTestTreeNode}}\ child\ \textcolor{keywordflow}{in}\ node.Children)}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ ToStringReq(child,\ offset\ +\ \textcolor{stringliteral}{"{}|\ \ \ \ \ \ \ \ "{}});}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00160}00160\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00162}00162\ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00163}00163\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_tree_node}{UTestTreeNode}}\ node\ \textcolor{keywordflow}{in}\ Roots)}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ ToStringReq(node,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ sb.Append(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00169}00169\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00170}00170\ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)\ \{\ sb.Append(\$\textcolor{stringliteral}{"{}\ >>\ [\{e.Message\}]"{}});\ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00171}00171\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sb.ToString();}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00172}00172\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00173}00173\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{_u_test_tree_8cs_source_l00176}00176\ \}}
+
+\end{DoxyCode}

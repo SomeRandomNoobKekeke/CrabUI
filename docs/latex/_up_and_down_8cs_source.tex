@@ -1,0 +1,64 @@
+\doxysection{Up\+And\+Down.\+cs}
+\hypertarget{_up_and_down_8cs_source}{}\label{_up_and_down_8cs_source}\index{ClientProject/ClientSource/CUI/Core/Layouts/LayoutMarker/Patterns/UpAndDown.cs@{ClientProject/ClientSource/CUI/Core/Layouts/LayoutMarker/Patterns/UpAndDown.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Collections.ObjectModel;}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00010}00010\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00012}00012\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_layout_marker}{LayoutMarker}}}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00013}00013\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_layout_marker_1_1_pattern}{Pattern}}}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00015}00015\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00016}\doxymbox{\hyperlink{class_crab_u_i_1_1_layout_marker_1_1_pattern_1_1_up_and_down_pattern}{00016}}\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_layout_marker_1_1_pattern_1_1_up_and_down_pattern}{UpAndDownPattern}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_1_1_layout_marker_1_1_pattern}{Pattern}}}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00017}00017\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ MarkAsRequireParentUpdate(\doxymbox{\hyperlink{interface_crab_u_i_1_1_layout_marker_1_1_target}{Target}}\ host)}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ host.Layout.RequireParentUpdate\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (host.Parent\ is\ not\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ MarkAsRequireParentUpdate(host.Parent);}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ MarkAsRequireChildrenUpdate(\doxymbox{\hyperlink{interface_crab_u_i_1_1_layout_marker_1_1_target}{Target}}\ host)}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ MarkRec(\doxymbox{\hyperlink{interface_crab_u_i_1_1_layout_marker_1_1_target}{Target}}\ container)}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ container.Layout.RequireChildrenUpdate\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\doxymbox{\hyperlink{interface_crab_u_i_1_1_layout_marker_1_1_target}{Target}}\ child\ \textcolor{keywordflow}{in}\ container.Children)}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MarkRec(child);}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (host.Parent\ is\ not\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ host.Parent.Layout.RequireChildrenUpdate\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ MarkRec(host);}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ MarkFunc(\doxymbox{\hyperlink{interface_crab_u_i_1_1_layout_marker_1_1_target}{Target}}\ host)}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ MarkAsRequireParentUpdate(host);}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ MarkAsRequireChildrenUpdate(host);}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00054}00054\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00055}00055\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00056}00056\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_up_and_down_8cs_source_l00058}00058\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,169 @@
+\doxysection{Crab\+UIUser.\+CUITest Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_c_u_i_test}{}\label{class_crab_u_i_user_1_1_c_u_i_test}\index{CrabUIUser.CUITest@{CrabUIUser.CUITest}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_c_u_i_test_aeae5f2369cf62528959e349ad0362ab7}{Init}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_c_u_i_test_ad80c8ce5e71d48705fe3808b1db3ba7d}{Dispose}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static Logger \doxymbox{\hyperlink{class_crab_u_i_user_1_1_c_u_i_test_a3aa7bc1cc661f3b0eaaafc6a4a780db6}{Logger}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+Test\+Manager \doxymbox{\hyperlink{class_crab_u_i_user_1_1_c_u_i_test_a64fdd61fa2ccce140fdc196aa30f69b9}{Test\+Manager}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+static string \doxymbox{\hyperlink{class_crab_u_i_user_1_1_c_u_i_test_ab3ed11131c8e6c8012e284b1cfa63dd5}{Test\+Data\+Folder}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+static string \doxymbox{\hyperlink{class_crab_u_i_user_1_1_c_u_i_test_a2f26e2c7e8b11d2f33e5ebe19ac13b65}{Snaphots\+Folder}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+static string \doxymbox{\hyperlink{class_crab_u_i_user_1_1_c_u_i_test_a54c6f830baecc13278c62d9ce2c28974}{Snaphots\+Temp\+Folder}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+Virtual\+File\+System \doxymbox{\hyperlink{class_crab_u_i_user_1_1_c_u_i_test_acf585c7b28f3b6807ea2790bb63418cf}{Virtual\+File\+System}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_test_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_c_u_i_test_8cs_source}{CUITest.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_c_u_i_test_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_c_u_i_test_ad80c8ce5e71d48705fe3808b1db3ba7d}\index{CrabUIUser.CUITest@{CrabUIUser.CUITest}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!CrabUIUser.CUITest@{CrabUIUser.CUITest}}
+\doxysubsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_c_u_i_test_ad80c8ce5e71d48705fe3808b1db3ba7d} 
+void Crab\+UIUser.\+CUITest.\+Dispose (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_test_8cs_source_l00038}{38}} of file \doxymbox{\hyperlink{_c_u_i_test_8cs_source}{CUITest.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039\ \ \ \ \ \{}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_c_u_i_test_aeae5f2369cf62528959e349ad0362ab7}\index{CrabUIUser.CUITest@{CrabUIUser.CUITest}!Init@{Init}}
+\index{Init@{Init}!CrabUIUser.CUITest@{CrabUIUser.CUITest}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_c_u_i_test_aeae5f2369cf62528959e349ad0362ab7} 
+void Crab\+UIUser.\+CUITest.\+Init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_test_8cs_source_l00030}{30}} of file \doxymbox{\hyperlink{_c_u_i_test_8cs_source}{CUITest.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ TestManager.SnapshotTestManager.Repo.Add(typeof(SnapshotTests));}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ TestManager.E2ETestManager.Repo.AddPack(typeof(E2ETestPack));}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ TestManager.Init();}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_user_1_1_c_u_i_test_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_c_u_i_test_a3aa7bc1cc661f3b0eaaafc6a4a780db6}\index{CrabUIUser.CUITest@{CrabUIUser.CUITest}!Logger@{Logger}}
+\index{Logger@{Logger}!CrabUIUser.CUITest@{CrabUIUser.CUITest}}
+\doxysubsubsection{\texorpdfstring{Logger}{Logger}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_c_u_i_test_a3aa7bc1cc661f3b0eaaafc6a4a780db6} 
+Logger Crab\+UIUser.\+CUITest.\+Logger\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ PrintFilePath\ =\ \textcolor{keyword}{false}}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_test_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_c_u_i_test_8cs_source}{CUITest.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{00018\ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ PrintFilePath\ =\ \textcolor{keyword}{false}}
+\DoxyCodeLine{00020\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_c_u_i_test_a2f26e2c7e8b11d2f33e5ebe19ac13b65}\index{CrabUIUser.CUITest@{CrabUIUser.CUITest}!SnaphotsFolder@{SnaphotsFolder}}
+\index{SnaphotsFolder@{SnaphotsFolder}!CrabUIUser.CUITest@{CrabUIUser.CUITest}}
+\doxysubsubsection{\texorpdfstring{SnaphotsFolder}{SnaphotsFolder}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_c_u_i_test_a2f26e2c7e8b11d2f33e5ebe19ac13b65} 
+string Crab\+UIUser.\+CUITest.\+Snaphots\+Folder\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_test_8cs_source_l00025}{25}} of file \doxymbox{\hyperlink{_c_u_i_test_8cs_source}{CUITest.\+cs}}.
+
+\Hypertarget{class_crab_u_i_user_1_1_c_u_i_test_a54c6f830baecc13278c62d9ce2c28974}\index{CrabUIUser.CUITest@{CrabUIUser.CUITest}!SnaphotsTempFolder@{SnaphotsTempFolder}}
+\index{SnaphotsTempFolder@{SnaphotsTempFolder}!CrabUIUser.CUITest@{CrabUIUser.CUITest}}
+\doxysubsubsection{\texorpdfstring{SnaphotsTempFolder}{SnaphotsTempFolder}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_c_u_i_test_a54c6f830baecc13278c62d9ce2c28974} 
+string Crab\+UIUser.\+CUITest.\+Snaphots\+Temp\+Folder\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_test_8cs_source_l00026}{26}} of file \doxymbox{\hyperlink{_c_u_i_test_8cs_source}{CUITest.\+cs}}.
+
+\Hypertarget{class_crab_u_i_user_1_1_c_u_i_test_ab3ed11131c8e6c8012e284b1cfa63dd5}\index{CrabUIUser.CUITest@{CrabUIUser.CUITest}!TestDataFolder@{TestDataFolder}}
+\index{TestDataFolder@{TestDataFolder}!CrabUIUser.CUITest@{CrabUIUser.CUITest}}
+\doxysubsubsection{\texorpdfstring{TestDataFolder}{TestDataFolder}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_c_u_i_test_ab3ed11131c8e6c8012e284b1cfa63dd5} 
+string Crab\+UIUser.\+CUITest.\+Test\+Data\+Folder\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_test_8cs_source_l00024}{24}} of file \doxymbox{\hyperlink{_c_u_i_test_8cs_source}{CUITest.\+cs}}.
+
+\Hypertarget{class_crab_u_i_user_1_1_c_u_i_test_a64fdd61fa2ccce140fdc196aa30f69b9}\index{CrabUIUser.CUITest@{CrabUIUser.CUITest}!TestManager@{TestManager}}
+\index{TestManager@{TestManager}!CrabUIUser.CUITest@{CrabUIUser.CUITest}}
+\doxysubsubsection{\texorpdfstring{TestManager}{TestManager}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_c_u_i_test_a64fdd61fa2ccce140fdc196aa30f69b9} 
+Test\+Manager Crab\+UIUser.\+CUITest.\+Test\+Manager = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_test_8cs_source_l00022}{22}} of file \doxymbox{\hyperlink{_c_u_i_test_8cs_source}{CUITest.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_c_u_i_test_acf585c7b28f3b6807ea2790bb63418cf}\index{CrabUIUser.CUITest@{CrabUIUser.CUITest}!VirtualFileSystem@{VirtualFileSystem}}
+\index{VirtualFileSystem@{VirtualFileSystem}!CrabUIUser.CUITest@{CrabUIUser.CUITest}}
+\doxysubsubsection{\texorpdfstring{VirtualFileSystem}{VirtualFileSystem}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_c_u_i_test_acf585c7b28f3b6807ea2790bb63418cf} 
+Virtual\+File\+System Crab\+UIUser.\+CUITest.\+Virtual\+File\+System = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_test_8cs_source_l00028}{28}} of file \doxymbox{\hyperlink{_c_u_i_test_8cs_source}{CUITest.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+CUITest/\+CUITest.\+cs\end{DoxyCompactItemize}

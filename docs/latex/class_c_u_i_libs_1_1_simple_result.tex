@@ -1,0 +1,166 @@
+\doxysection{CUILibs.\+Simple\+Result Class Reference}
+\hypertarget{class_c_u_i_libs_1_1_simple_result}{}\label{class_c_u_i_libs_1_1_simple_result}\index{CUILibs.SimpleResult@{CUILibs.SimpleResult}}
+
+
+Omg it\textquotesingle{}s so fluent.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override string \doxymbox{\hyperlink{class_c_u_i_libs_1_1_simple_result_ad3dd45310d361f343ce7ed21754442c4}{To\+String}} ()
+\item 
+override bool \doxymbox{\hyperlink{class_c_u_i_libs_1_1_simple_result_ad27a95c4bdb3814a6413d4d6be529673}{Equals}} (object obj)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{class_c_u_i_libs_1_1_simple_result}{Simple\+Result}} \doxymbox{\hyperlink{class_c_u_i_libs_1_1_simple_result_ae583c35fd65ae5de398b548751addb80}{Success}} (object result=null)
+\item 
+static \doxymbox{\hyperlink{class_c_u_i_libs_1_1_simple_result}{Simple\+Result}} \doxymbox{\hyperlink{class_c_u_i_libs_1_1_simple_result_a8fe7cdd045639e7091b36d1b3e442cab}{Failure}} (string details=null, Exception ex=null)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{class_c_u_i_libs_1_1_simple_result_a873fcd7ebd3d0625a44d65adb1a807c5}{Ok}}
+\item 
+string \doxymbox{\hyperlink{class_c_u_i_libs_1_1_simple_result_ac338028f40e670f8bc8dc010a05a66f3}{Details}}
+\item 
+object \doxymbox{\hyperlink{class_c_u_i_libs_1_1_simple_result_a6b24136f8cdcd995c073900e1af01183}{Result}}
+\item 
+Exception \doxymbox{\hyperlink{class_c_u_i_libs_1_1_simple_result_a4b3c4bd27b74ecabebca8a43a43260d2}{Exception}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Omg it\textquotesingle{}s so fluent. 
+
+Definition at line \doxymbox{\hyperlink{_simple_result_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_simple_result_8cs_source}{Simple\+Result.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_c_u_i_libs_1_1_simple_result_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_simple_result_ad27a95c4bdb3814a6413d4d6be529673}\index{CUILibs.SimpleResult@{CUILibs.SimpleResult}!Equals@{Equals}}
+\index{Equals@{Equals}!CUILibs.SimpleResult@{CUILibs.SimpleResult}}
+\doxysubsubsection{\texorpdfstring{Equals()}{Equals()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_simple_result_ad27a95c4bdb3814a6413d4d6be529673} 
+override bool CUILibs.\+Simple\+Result.\+Equals (\begin{DoxyParamCaption}\item[{object}]{obj}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_simple_result_8cs_source_l00039}{39}} of file \doxymbox{\hyperlink{_simple_result_8cs_source}{Simple\+Result.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040\ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (obj\ is\ not\ SimpleResult\ other)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok\ ==\ other.Ok\ \&\&\ Object.Equals(Result,\ other.Result);}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_simple_result_a8fe7cdd045639e7091b36d1b3e442cab}\index{CUILibs.SimpleResult@{CUILibs.SimpleResult}!Failure@{Failure}}
+\index{Failure@{Failure}!CUILibs.SimpleResult@{CUILibs.SimpleResult}}
+\doxysubsubsection{\texorpdfstring{Failure()}{Failure()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_simple_result_a8fe7cdd045639e7091b36d1b3e442cab} 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_simple_result}{Simple\+Result}} CUILibs.\+Simple\+Result.\+Failure (\begin{DoxyParamCaption}\item[{string}]{details}{ = {\ttfamily null}, }\item[{Exception}]{ex}{ = {\ttfamily null}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_simple_result_8cs_source_l00026}{26}} of file \doxymbox{\hyperlink{_simple_result_8cs_source}{Simple\+Result.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =>\ \textcolor{keyword}{new}\ SimpleResult() }
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ Ok\ =\ \textcolor{keyword}{false},}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ Details\ =\ details,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ Exception\ =\ ex,}
+\DoxyCodeLine{00031\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_simple_result_ae583c35fd65ae5de398b548751addb80}\index{CUILibs.SimpleResult@{CUILibs.SimpleResult}!Success@{Success}}
+\index{Success@{Success}!CUILibs.SimpleResult@{CUILibs.SimpleResult}}
+\doxysubsubsection{\texorpdfstring{Success()}{Success()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_simple_result_ae583c35fd65ae5de398b548751addb80} 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_simple_result}{Simple\+Result}} CUILibs.\+Simple\+Result.\+Success (\begin{DoxyParamCaption}\item[{object}]{result}{ = {\ttfamily null}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_simple_result_8cs_source_l00021}{21}} of file \doxymbox{\hyperlink{_simple_result_8cs_source}{Simple\+Result.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =>\ \textcolor{keyword}{new}\ SimpleResult() }
+\DoxyCodeLine{00022\ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ Ok\ =\ \textcolor{keyword}{true},}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ Result\ =\ result,}
+\DoxyCodeLine{00025\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_simple_result_ad3dd45310d361f343ce7ed21754442c4}\index{CUILibs.SimpleResult@{CUILibs.SimpleResult}!ToString@{ToString}}
+\index{ToString@{ToString}!CUILibs.SimpleResult@{CUILibs.SimpleResult}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_simple_result_ad3dd45310d361f343ce7ed21754442c4} 
+override string CUILibs.\+Simple\+Result.\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_simple_result_8cs_source_l00038}{38}} of file \doxymbox{\hyperlink{_simple_result_8cs_source}{Simple\+Result.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ =>\ \$\textcolor{stringliteral}{"{}\{(Ok\ ?\ \$"{}}Ok\ \{Result?.GetType().Name\}[\{Result\}]\textcolor{stringliteral}{"{}\ :\ Details)\}"{}};}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_c_u_i_libs_1_1_simple_result_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_simple_result_ac338028f40e670f8bc8dc010a05a66f3}\index{CUILibs.SimpleResult@{CUILibs.SimpleResult}!Details@{Details}}
+\index{Details@{Details}!CUILibs.SimpleResult@{CUILibs.SimpleResult}}
+\doxysubsubsection{\texorpdfstring{Details}{Details}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_simple_result_ac338028f40e670f8bc8dc010a05a66f3} 
+string CUILibs.\+Simple\+Result.\+Details}
+
+
+
+Definition at line \doxymbox{\hyperlink{_simple_result_8cs_source_l00034}{34}} of file \doxymbox{\hyperlink{_simple_result_8cs_source}{Simple\+Result.\+cs}}.
+
+\Hypertarget{class_c_u_i_libs_1_1_simple_result_a4b3c4bd27b74ecabebca8a43a43260d2}\index{CUILibs.SimpleResult@{CUILibs.SimpleResult}!Exception@{Exception}}
+\index{Exception@{Exception}!CUILibs.SimpleResult@{CUILibs.SimpleResult}}
+\doxysubsubsection{\texorpdfstring{Exception}{Exception}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_simple_result_a4b3c4bd27b74ecabebca8a43a43260d2} 
+Exception CUILibs.\+Simple\+Result.\+Exception}
+
+
+
+Definition at line \doxymbox{\hyperlink{_simple_result_8cs_source_l00036}{36}} of file \doxymbox{\hyperlink{_simple_result_8cs_source}{Simple\+Result.\+cs}}.
+
+\Hypertarget{class_c_u_i_libs_1_1_simple_result_a873fcd7ebd3d0625a44d65adb1a807c5}\index{CUILibs.SimpleResult@{CUILibs.SimpleResult}!Ok@{Ok}}
+\index{Ok@{Ok}!CUILibs.SimpleResult@{CUILibs.SimpleResult}}
+\doxysubsubsection{\texorpdfstring{Ok}{Ok}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_simple_result_a873fcd7ebd3d0625a44d65adb1a807c5} 
+bool CUILibs.\+Simple\+Result.\+Ok}
+
+
+
+Definition at line \doxymbox{\hyperlink{_simple_result_8cs_source_l00033}{33}} of file \doxymbox{\hyperlink{_simple_result_8cs_source}{Simple\+Result.\+cs}}.
+
+\Hypertarget{class_c_u_i_libs_1_1_simple_result_a6b24136f8cdcd995c073900e1af01183}\index{CUILibs.SimpleResult@{CUILibs.SimpleResult}!Result@{Result}}
+\index{Result@{Result}!CUILibs.SimpleResult@{CUILibs.SimpleResult}}
+\doxysubsubsection{\texorpdfstring{Result}{Result}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_simple_result_a6b24136f8cdcd995c073900e1af01183} 
+object CUILibs.\+Simple\+Result.\+Result}
+
+
+
+Definition at line \doxymbox{\hyperlink{_simple_result_8cs_source_l00035}{35}} of file \doxymbox{\hyperlink{_simple_result_8cs_source}{Simple\+Result.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+Libs/\+Simple\+Result.\+cs\end{DoxyCompactItemize}

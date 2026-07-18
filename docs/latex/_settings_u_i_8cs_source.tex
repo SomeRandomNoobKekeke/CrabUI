@@ -1,0 +1,112 @@
+\doxysection{Settings\+UI.\+cs}
+\hypertarget{_settings_u_i_8cs_source}{}\label{_settings_u_i_8cs_source}\index{ClientProject/InMemory/CUITest/E2E/Test/SimpleSettings/SettingsUI.cs@{ClientProject/InMemory/CUITest/E2E/Test/SimpleSettings/SettingsUI.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }System.Runtime.CompilerServices;}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}};}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}};}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00010}00010\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00011}00011\ \textcolor{keyword}{using\ }System.IO;}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00013}00013\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i_user}{CrabUIUser}}}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00014}00014\ \{}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00015}00015\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_pack}{E2ETestPack}}}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00016}00016\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_simple_settings}{SimpleSettings}}\ :\ IE2ETest}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00019}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_simple_settings_1_1_settings_u_i}{00019}}\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }SettingsUI\ :\ CUIDefault.Frame}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00020}00020\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_simple_settings_1_1_micro_settings_manager}{MicroSettingsManager}}\ Manager\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Settings\ Settings\ =>\ Manager.Settings;}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_vertical_list}{CUIVerticalList}}\ FieldList\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Refresh()}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ FieldList.Clear();}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ FieldList.Add(\textcolor{keyword}{new}\ CUIDefault.TextField()}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ Label\ =\ \{\ AbsoluteMin\ =\ new\ CUINullRect(w:\ 100)\ \},}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ Key\ =\ \textcolor{stringliteral}{"{}String\ Prop"{}},}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ Value\ =\ Settings.StringProp,}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ FieldList.Add(\textcolor{keyword}{new}\ CUIDefault.IntField()}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ Label\ =\ \{\ AbsoluteMin\ =\ new\ CUINullRect(w:\ 100)\ \},}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ Key\ =\ \textcolor{stringliteral}{"{}Int\ Prop"{}},}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ Value\ =\ Settings.IntProp,}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_vertical_list}{CUIVerticalList}}\ NestedWrapper\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_vertical_list}{CUIVerticalList}}()}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ FitContent\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_bool2}{CUIBool2}}(\textcolor{keyword}{false},\ \textcolor{keyword}{true}),}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ Padding\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_sizes}{CUISizes}}(30,\ 0,\ 0,\ 0),}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ NestedWrapper.Add(\textcolor{keyword}{new}\ CUIDefault.TextField()}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ Label\ =\ \{\ AbsoluteMin\ =\ new\ CUINullRect(w:\ 150)\ \},}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ Key\ =\ \textcolor{stringliteral}{"{}Nested\ String\ Prop"{}},}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ Value\ =\ Settings.Nested.StringProp,}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ NestedWrapper.Add(\textcolor{keyword}{new}\ CUIDefault.IntField()}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ Label\ =\ \{\ AbsoluteMin\ =\ new\ CUINullRect(w:\ 150)\ \},}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ Key\ =\ \textcolor{stringliteral}{"{}Nested\ Int\ Prop"{}},}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ Value\ =\ Settings.Nested.IntProp,}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ FieldList.Add(NestedWrapper);}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ SettingsUI(MicroSettingsManager\ manager)\ :\ base()}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ Manager\ =\ manager;}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ OnOpen\ +=\ (\textcolor{keyword}{self})\ =>\ Refresh();}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ Caption.Text\ =\ \textcolor{stringliteral}{"{}Some\ Settings,\ bruh"{}};}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ Commands.ListenFor<\textcolor{keywordtype}{string}[]>(}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}setvalue"{}},}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ (args)\ =>\ Manager.SetValue(args[0],\ args[1])}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}header"{}}]\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_horizontal_list}{CUIHorizontalList}}()}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ FitContent\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_bool2}{CUIBool2}}(\textcolor{keyword}{false},\ \textcolor{keyword}{true}),}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}header"{}}][\textcolor{stringliteral}{"{}printSettings"{}}]\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_button}{CUIButton}}(\textcolor{stringliteral}{"{}Print\ Settings"{}})}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ OnMouseDown\ =\ (c,\ e)\ =>\ Manager.Print(),}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}main"{}}]\ =\ FieldList\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_vertical_list}{CUIVerticalList}}()}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ Flex\ =\ 1,}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00101}00101\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00104}00104\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00105}00105\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_settings_u_i_8cs_source_l00106}00106\ \}}
+
+\end{DoxyCode}

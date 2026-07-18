@@ -1,0 +1,136 @@
+\doxysection{Crab\+UIUser.\+Itterating\+Over\+Props Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_itterating_over_props}{}\label{class_crab_u_i_user_1_1_itterating_over_props}\index{CrabUIUser.ItteratingOverProps@{CrabUIUser.ItteratingOverProps}}
+
+
+Difference is negligible.  
+
+
+Inheritance diagram for Crab\+UIUser.\+Itterating\+Over\+Props:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_itterating_over_props}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_a}{A}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_b}{B}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_c}{C}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_d}{D}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_settings}{Settings}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_a55fb59920953f2769478d16786953b31}{Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Crab\+UIUser.\+Experiment}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Run} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_ab6d48ee38633b42f4827ad161d2306ff}{repeats}} = 1000000
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Difference is negligible. 
+
+Definition at line \doxymbox{\hyperlink{_itterating_over_props_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_itterating_over_props_8cs_source}{Itterating\+Over\+Props.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_itterating_over_props_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_itterating_over_props_a55fb59920953f2769478d16786953b31}\index{CrabUIUser.ItteratingOverProps@{CrabUIUser.ItteratingOverProps}!Run@{Run}}
+\index{Run@{Run}!CrabUIUser.ItteratingOverProps@{CrabUIUser.ItteratingOverProps}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_itterating_over_props_a55fb59920953f2769478d16786953b31} 
+override void Crab\+UIUser.\+Itterating\+Over\+Props.\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_itterating_over_props_8cs_source_l00055}{55}} of file \doxymbox{\hyperlink{_itterating_over_props_8cs_source}{Itterating\+Over\+Props.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056\ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ Stopwatch\ sw\ =\ \textcolor{keyword}{new}\ Stopwatch();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \textcolor{keywordtype}{object}\ slot1\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \textcolor{keywordtype}{object}\ slot2\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ Settings\ settings\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ sw.Restart();}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (PropertyInfo\ pi\ \textcolor{keywordflow}{in}\ typeof(Settings).GetProperties())}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pi.PropertyType.IsAssignableTo(typeof(A)))}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ slot1\ =\ pi.GetValue(settings);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pi.PropertyType.IsAssignableTo(typeof(C)))}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ slot2\ =\ pi.GetValue(settings);}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}together:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ sw.Restart();}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (PropertyInfo\ pi\ \textcolor{keywordflow}{in}\ typeof(Settings).GetProperties())}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pi.PropertyType.IsAssignableTo(typeof(A)))}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ slot1\ =\ pi.GetValue(settings);}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (PropertyInfo\ pi\ \textcolor{keywordflow}{in}\ typeof(Settings).GetProperties())}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pi.PropertyType.IsAssignableTo(typeof(C)))}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ slot2\ =\ pi.GetValue(settings);}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}separate:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00104\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_crab_u_i_user_1_1_itterating_over_props_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_itterating_over_props_ab6d48ee38633b42f4827ad161d2306ff}\index{CrabUIUser.ItteratingOverProps@{CrabUIUser.ItteratingOverProps}!repeats@{repeats}}
+\index{repeats@{repeats}!CrabUIUser.ItteratingOverProps@{CrabUIUser.ItteratingOverProps}}
+\doxysubsubsection{\texorpdfstring{repeats}{repeats}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_itterating_over_props_ab6d48ee38633b42f4827ad161d2306ff} 
+int Crab\+UIUser.\+Itterating\+Over\+Props.\+repeats = 1000000}
+
+
+
+Definition at line \doxymbox{\hyperlink{_itterating_over_props_8cs_source_l00053}{53}} of file \doxymbox{\hyperlink{_itterating_over_props_8cs_source}{Itterating\+Over\+Props.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Performance/\+Itterating\+Over\+Props.\+cs\end{DoxyCompactItemize}

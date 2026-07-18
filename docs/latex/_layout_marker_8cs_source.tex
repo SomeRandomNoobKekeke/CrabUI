@@ -1,0 +1,38 @@
+\doxysection{Layout\+Marker.\+cs}
+\hypertarget{_layout_marker_8cs_source}{}\label{_layout_marker_8cs_source}\index{ClientProject/ClientSource/CUI/Core/Layouts/LayoutMarker/LayoutMarker.cs@{ClientProject/ClientSource/CUI/Core/Layouts/LayoutMarker/LayoutMarker.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_layout_marker_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_layout_marker_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_layout_marker_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Collections.ObjectModel;}
+\DoxyCodeLine{\Hypertarget{_layout_marker_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_layout_marker_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_layout_marker_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_layout_marker_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_layout_marker_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_layout_marker_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_code_generator}{CUICodeGenerator}};}
+\DoxyCodeLine{\Hypertarget{_layout_marker_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_layout_marker_8cs_source_l00011}00011\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_layout_marker_8cs_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{_layout_marker_8cs_source_l00013}\doxymbox{\hyperlink{class_crab_u_i_1_1_layout_marker}{00013}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_layout_marker}{LayoutMarker}}\ :\ \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_module}{IModule}}}
+\DoxyCodeLine{\Hypertarget{_layout_marker_8cs_source_l00014}00014\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_layout_marker_8cs_source_l00015}\doxymbox{\hyperlink{interface_crab_u_i_1_1_layout_marker_1_1_target}{00015}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{interface\ }\doxymbox{\hyperlink{interface_crab_u_i_1_1_layout_marker_1_1_target}{Target}}\ :\ \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_module}{IModule}}}
+\DoxyCodeLine{\Hypertarget{_layout_marker_8cs_source_l00016}00016\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_layout_marker_8cs_source_l00017}00017\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_layout_marker_1_1_target}{Target}}\ Parent\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{_layout_marker_8cs_source_l00018}00018\ \ \ \ \ \ \ \textcolor{keyword}{public}\ Layout\ Layout\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{_layout_marker_8cs_source_l00019}00019\ \ \ \ \ \ \ \textcolor{keyword}{public}\ IReadOnlyList<Target>\ Children\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{_layout_marker_8cs_source_l00020}00020\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ NotifyLayoutUpdated();}
+\DoxyCodeLine{\Hypertarget{_layout_marker_8cs_source_l00021}00021\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_layout_marker_8cs_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_layout_marker_8cs_source_l00023}00023\ \ \ \ \ [In]\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_layout_marker_1_1_target}{Target}}\ Host\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_layout_marker_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_layout_marker_8cs_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Mark(Pattern\ pattern)}
+\DoxyCodeLine{\Hypertarget{_layout_marker_8cs_source_l00026}00026\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_layout_marker_8cs_source_l00027}00027\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pattern.Empty)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_layout_marker_8cs_source_l00028}00028\ \ \ \ \ \ \ pattern.MarkFunc(Host);}
+\DoxyCodeLine{\Hypertarget{_layout_marker_8cs_source_l00029}00029\ \ \ \ \ \ \ Host.NotifyLayoutUpdated();}
+\DoxyCodeLine{\Hypertarget{_layout_marker_8cs_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_layout_marker_8cs_source_l00031}00031\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_layout_marker_8cs_source_l00032}00032\ \}}
+
+\end{DoxyCode}

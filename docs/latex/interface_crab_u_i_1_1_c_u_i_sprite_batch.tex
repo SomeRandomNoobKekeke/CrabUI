@@ -1,0 +1,66 @@
+\doxysection{Crab\+UI.\+CUISprite\+Batch Interface Reference}
+\hypertarget{interface_crab_u_i_1_1_c_u_i_sprite_batch}{}\label{interface_crab_u_i_1_1_c_u_i_sprite_batch}\index{CrabUI.CUISpriteBatch@{CrabUI.CUISpriteBatch}}
+Inheritance diagram for Crab\+UI.\+CUISprite\+Batch:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_crab_u_i_1_1_c_u_i_sprite_batch}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{interface_crab_u_i_1_1_c_u_i_sprite_batch_ae1efc1f9621cf6c7fcb7e34dad5ad080}\label{interface_crab_u_i_1_1_c_u_i_sprite_batch_ae1efc1f9621cf6c7fcb7e34dad5ad080} 
+void {\bfseries Draw} (\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture2_d}{CUITexture2D}} texture, Rectangle destination\+Rectangle, Color color)
+\item 
+\Hypertarget{interface_crab_u_i_1_1_c_u_i_sprite_batch_ae9817a32fff7dc56c6ceb0c175f676c0}\label{interface_crab_u_i_1_1_c_u_i_sprite_batch_ae9817a32fff7dc56c6ceb0c175f676c0} 
+void {\bfseries Draw} (\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture2_d}{CUITexture2D}} texture, Rectangle destination\+Rectangle, Rectangle? source\+Rectangle, Color color)
+\item 
+\Hypertarget{interface_crab_u_i_1_1_c_u_i_sprite_batch_a46cddc5d4a5d91d902ca319ccf54434d}\label{interface_crab_u_i_1_1_c_u_i_sprite_batch_a46cddc5d4a5d91d902ca319ccf54434d} 
+void {\bfseries Draw} (\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture2_d}{CUITexture2D}} texture, Rectangle destination\+Rectangle, Rectangle? source\+Rectangle, Color color, float rotation, Vector2 origin, Sprite\+Effects effects, float layer\+Depth)
+\item 
+\Hypertarget{interface_crab_u_i_1_1_c_u_i_sprite_batch_a7a26b539990bca0725803f963a78a8e2}\label{interface_crab_u_i_1_1_c_u_i_sprite_batch_a7a26b539990bca0725803f963a78a8e2} 
+void {\bfseries Stop\+Start} (Rectangle Scissor\+Rect, Sampler\+State Sampler\+State)
+\item 
+\Hypertarget{interface_crab_u_i_1_1_c_u_i_sprite_batch_ad594a9584a6be07e6ef90d2938f8b68f}\label{interface_crab_u_i_1_1_c_u_i_sprite_batch_ad594a9584a6be07e6ef90d2938f8b68f} 
+void {\bfseries Begin} (Sprite\+Sort\+Mode sort\+Mode=Sprite\+Sort\+Mode.\+Deferred, Blend\+State blend\+State=null, Sampler\+State sampler\+State=null, Depth\+Stencil\+State depth\+Stencil\+State=null, Rasterizer\+State rasterizer\+State=null, Effect effect=null, Matrix? transform\+Matrix=null)
+\item 
+\Hypertarget{interface_crab_u_i_1_1_c_u_i_sprite_batch_aeac0fb939e2ce2e7bebbd111dc35a486}\label{interface_crab_u_i_1_1_c_u_i_sprite_batch_aeac0fb939e2ce2e7bebbd111dc35a486} 
+void {\bfseries End} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISprite\+Batch}} \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch_ae8658fc579c9ba87d56eb698560fb18b}{Create}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_sprite_batch_8cs_source_l00012}{12}} of file \doxymbox{\hyperlink{_c_u_i_sprite_batch_8cs_source}{CUISprite\+Batch.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{interface_crab_u_i_1_1_c_u_i_sprite_batch_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interface_crab_u_i_1_1_c_u_i_sprite_batch_ae8658fc579c9ba87d56eb698560fb18b}\index{CrabUI.CUISpriteBatch@{CrabUI.CUISpriteBatch}!Create@{Create}}
+\index{Create@{Create}!CrabUI.CUISpriteBatch@{CrabUI.CUISpriteBatch}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily \label{interface_crab_u_i_1_1_c_u_i_sprite_batch_ae8658fc579c9ba87d56eb698560fb18b} 
+\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISprite\+Batch}} Crab\+UI.\+CUISprite\+Batch.\+Create (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_sprite_batch_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_c_u_i_sprite_batch_8cs_source}{CUISprite\+Batch.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ =>\ \_\_CUISpriteBatch.Create();}
+
+\end{DoxyCode}
+
+
+The documentation for this interface was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Infrastructure/\+\+Graphics Abstractions/\+\+Interfaces/\+CUISprite\+Batch.\+cs\end{DoxyCompactItemize}

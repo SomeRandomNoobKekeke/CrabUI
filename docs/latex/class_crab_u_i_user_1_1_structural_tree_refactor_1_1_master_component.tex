@@ -1,0 +1,63 @@
+\doxysection{Crab\+UIUser.\+Structural\+Tree\+Refactor.\+Master\+Component Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_structural_tree_refactor_1_1_master_component}{}\label{class_crab_u_i_user_1_1_structural_tree_refactor_1_1_master_component}\index{CrabUIUser.StructuralTreeRefactor.MasterComponent@{CrabUIUser.StructuralTreeRefactor.MasterComponent}}
+Inheritance diagram for Crab\+UIUser.\+Structural\+Tree\+Refactor.\+Master\+Component:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_structural_tree_refactor_1_1_master_component}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_structural_tree_refactor_1_1_master_component_a0d8dd79bf7f14c157ea6728b95848d73}{Update}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_structural_tree_refactor_1_1_structural_component}{Crab\+UIUser.\+Structural\+Tree\+Refactor.\+Structural\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_structural_tree_refactor_1_1_structural_component}{Structural\+Component}} $>$ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_structural_tree_refactor_1_1_structural_component_a9371daeb9a12c481f753464a9e4c623d}{Children}} = new()
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_structural_tree_refactor_1_1_structural_component}{Crab\+UIUser.\+Structural\+Tree\+Refactor.\+Structural\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+IEnumerable$<$ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_structural_tree_refactor_1_1_structural_component}{Structural\+Component}} $>$ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_structural_tree_refactor_1_1_structural_component_a1e20eddb5243edd18c4a76a285c9b382}{Deep\+Children}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_structural_tree_refactor_8cs_source_l00100}{100}} of file \doxymbox{\hyperlink{_structural_tree_refactor_8cs_source}{Structural\+Tree\+Refactor.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_structural_tree_refactor_1_1_master_component_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_structural_tree_refactor_1_1_master_component_a0d8dd79bf7f14c157ea6728b95848d73}\index{CrabUIUser.StructuralTreeRefactor.MasterComponent@{CrabUIUser.StructuralTreeRefactor.MasterComponent}!Update@{Update}}
+\index{Update@{Update}!CrabUIUser.StructuralTreeRefactor.MasterComponent@{CrabUIUser.StructuralTreeRefactor.MasterComponent}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_structural_tree_refactor_1_1_master_component_a0d8dd79bf7f14c157ea6728b95848d73} 
+void Crab\+UIUser.\+Structural\+Tree\+Refactor.\+Master\+Component.\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_structural_tree_refactor_8cs_source_l00102}{102}} of file \doxymbox{\hyperlink{_structural_tree_refactor_8cs_source}{Structural\+Tree\+Refactor.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (StructuralComponent\ child\ \textcolor{keywordflow}{in}\ DeepChildren)}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (child\ is\ IDrawable\ drawable)\ drawable.Draw();}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (child\ is\ IPlaceable\ placeable)\ placeable.Place();}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (child\ is\ IMouseEventConsumer\ consumer)\ consumer.Consume();}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Design/\+Structural\+Tree\+Refactor.\+cs\end{DoxyCompactItemize}

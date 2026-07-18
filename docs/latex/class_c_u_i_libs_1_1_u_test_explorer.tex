@@ -1,0 +1,152 @@
+\doxysection{CUILibs.\+UTest\+Explorer Class Reference}
+\hypertarget{class_c_u_i_libs_1_1_u_test_explorer}{}\label{class_c_u_i_libs_1_1_u_test_explorer}\index{CUILibs.UTestExplorer@{CUILibs.UTestExplorer}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_explorer_ad37d6f0b154e5b74b51ead02971b9e06}{Scan\+Categories}} (params string\+[$\,$]\+ categories)
+\item 
+static void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_explorer_a998d540c72b7a5c47060036a6a42ab31}{Scan\+Category}} (string category)
+\item 
+static void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_explorer_a262c67524894b62960853164ccf9626c}{Print\+All\+Tests}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Hash\+Set$<$ string $>$ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_explorer_a0ff881f52fa7ac16d3909a7972bbc4d2}{Categories}} = new()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_tree}{UTest\+Tree}} \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_explorer_af73d9ba7015d1c728c623fca325f99d5}{Test\+Tree}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+static IEnumerable$<$ string $>$ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_explorer_af114107348fdc2891d8c52e12f45841e}{Test\+Names}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+static Dictionary$<$ string, Type $>$ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_explorer_a626e317bb4b3c855089a3055e58b766c}{Test\+By\+Name}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_explorer_8cs_source_l00024}{24}} of file \doxymbox{\hyperlink{_u_test_explorer_8cs_source}{UTest\+Explorer.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_explorer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_explorer_a262c67524894b62960853164ccf9626c}\index{CUILibs.UTestExplorer@{CUILibs.UTestExplorer}!PrintAllTests@{PrintAllTests}}
+\index{PrintAllTests@{PrintAllTests}!CUILibs.UTestExplorer@{CUILibs.UTestExplorer}}
+\doxysubsubsection{\texorpdfstring{PrintAllTests()}{PrintAllTests()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_explorer_a262c67524894b62960853164ccf9626c} 
+void CUILibs.\+UTest\+Explorer.\+Print\+All\+Tests (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_explorer_8cs_source_l00046}{46}} of file \doxymbox{\hyperlink{_u_test_explorer_8cs_source}{UTest\+Explorer.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047\ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ UTestLogger.Log(\$\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Available\ UTests:\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}});}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ UTestLogger.Log(TestTree);}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_explorer_ad37d6f0b154e5b74b51ead02971b9e06}\index{CUILibs.UTestExplorer@{CUILibs.UTestExplorer}!ScanCategories@{ScanCategories}}
+\index{ScanCategories@{ScanCategories}!CUILibs.UTestExplorer@{CUILibs.UTestExplorer}}
+\doxysubsubsection{\texorpdfstring{ScanCategories()}{ScanCategories()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_explorer_ad37d6f0b154e5b74b51ead02971b9e06} 
+void CUILibs.\+UTest\+Explorer.\+Scan\+Categories (\begin{DoxyParamCaption}\item[{params string\+[$\,$]\+}]{categories}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_explorer_8cs_source_l00038}{38}} of file \doxymbox{\hyperlink{_u_test_explorer_8cs_source}{UTest\+Explorer.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ =>\ Categories\ =\ \textcolor{keyword}{new}\ HashSet<string>(categories);}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_explorer_a998d540c72b7a5c47060036a6a42ab31}\index{CUILibs.UTestExplorer@{CUILibs.UTestExplorer}!ScanCategory@{ScanCategory}}
+\index{ScanCategory@{ScanCategory}!CUILibs.UTestExplorer@{CUILibs.UTestExplorer}}
+\doxysubsubsection{\texorpdfstring{ScanCategory()}{ScanCategory()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_explorer_a998d540c72b7a5c47060036a6a42ab31} 
+void CUILibs.\+UTest\+Explorer.\+Scan\+Category (\begin{DoxyParamCaption}\item[{string}]{category}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_explorer_8cs_source_l00040}{40}} of file \doxymbox{\hyperlink{_u_test_explorer_8cs_source}{UTest\+Explorer.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ =>\ Categories.Add(category);}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_explorer_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_explorer_a0ff881f52fa7ac16d3909a7972bbc4d2}\index{CUILibs.UTestExplorer@{CUILibs.UTestExplorer}!Categories@{Categories}}
+\index{Categories@{Categories}!CUILibs.UTestExplorer@{CUILibs.UTestExplorer}}
+\doxysubsubsection{\texorpdfstring{Categories}{Categories}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_explorer_a0ff881f52fa7ac16d3909a7972bbc4d2} 
+Hash\+Set$<$string$>$ CUILibs.\+UTest\+Explorer.\+Categories = new()\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_explorer_8cs_source_l00037}{37}} of file \doxymbox{\hyperlink{_u_test_explorer_8cs_source}{UTest\+Explorer.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_explorer_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_explorer_a626e317bb4b3c855089a3055e58b766c}\index{CUILibs.UTestExplorer@{CUILibs.UTestExplorer}!TestByName@{TestByName}}
+\index{TestByName@{TestByName}!CUILibs.UTestExplorer@{CUILibs.UTestExplorer}}
+\doxysubsubsection{\texorpdfstring{TestByName}{TestByName}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_explorer_a626e317bb4b3c855089a3055e58b766c} 
+Dictionary$<$string, Type$>$ CUILibs.\+UTest\+Explorer.\+Test\+By\+Name\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_explorer_8cs_source_l00044}{44}} of file \doxymbox{\hyperlink{_u_test_explorer_8cs_source}{UTest\+Explorer.\+cs}}.
+
+\Hypertarget{class_c_u_i_libs_1_1_u_test_explorer_af114107348fdc2891d8c52e12f45841e}\index{CUILibs.UTestExplorer@{CUILibs.UTestExplorer}!TestNames@{TestNames}}
+\index{TestNames@{TestNames}!CUILibs.UTestExplorer@{CUILibs.UTestExplorer}}
+\doxysubsubsection{\texorpdfstring{TestNames}{TestNames}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_explorer_af114107348fdc2891d8c52e12f45841e} 
+IEnumerable$<$string$>$ CUILibs.\+UTest\+Explorer.\+Test\+Names\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_explorer_8cs_source_l00043}{43}} of file \doxymbox{\hyperlink{_u_test_explorer_8cs_source}{UTest\+Explorer.\+cs}}.
+
+\Hypertarget{class_c_u_i_libs_1_1_u_test_explorer_af73d9ba7015d1c728c623fca325f99d5}\index{CUILibs.UTestExplorer@{CUILibs.UTestExplorer}!TestTree@{TestTree}}
+\index{TestTree@{TestTree}!CUILibs.UTestExplorer@{CUILibs.UTestExplorer}}
+\doxysubsubsection{\texorpdfstring{TestTree}{TestTree}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_explorer_af73d9ba7015d1c728c623fca325f99d5} 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_tree}{UTest\+Tree}} CUILibs.\+UTest\+Explorer.\+Test\+Tree\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_explorer_8cs_source_l00028}{28}} of file \doxymbox{\hyperlink{_u_test_explorer_8cs_source}{UTest\+Explorer.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \textcolor{keyword}{get}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{comment}{//BRUH\ it's\ sneaky,\ ScanAssembly\ happens\ here}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (testTree\ is\ \textcolor{keyword}{null})\ testTree\ =\ \textcolor{keyword}{new}\ UTestTree();}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ testTree;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+Libs/\+\+UTest/\+UTest\+Explorer.\+cs\end{DoxyCompactItemize}

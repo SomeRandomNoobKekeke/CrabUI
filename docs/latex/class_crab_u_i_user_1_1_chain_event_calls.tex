@@ -1,0 +1,202 @@
+\doxysection{Crab\+UIUser.\+Chain\+Event\+Calls Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_chain_event_calls}{}\label{class_crab_u_i_user_1_1_chain_event_calls}\index{CrabUIUser.ChainEventCalls@{CrabUIUser.ChainEventCalls}}
+
+
+Seems cheap.  
+
+
+Inheritance diagram for Crab\+UIUser.\+Chain\+Event\+Calls:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_chain_event_calls}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_chain_event_calls_a490a36708a4db1cd90d21e8eedda2178}{Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Crab\+UIUser.\+Experiment}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Run} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{class_crab_u_i_user_1_1_chain_event_calls_ae7011caf48ed4aabe93f79f67659ce65}{value}}
+\item 
+int \doxymbox{\hyperlink{class_crab_u_i_user_1_1_chain_event_calls_a8d36d166de6ae2f09e4bc3bef32f0d59}{repeats}} = 100\+\_\+000\+\_\+000
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+Action \doxymbox{\hyperlink{class_crab_u_i_user_1_1_chain_event_calls_a3e3eab3f733097f638c68a28a3e7f96a}{event1}}
+\item 
+Action \doxymbox{\hyperlink{class_crab_u_i_user_1_1_chain_event_calls_a46aace6704bbe088910c41fa32ba57ee}{event2}}
+\item 
+Action \doxymbox{\hyperlink{class_crab_u_i_user_1_1_chain_event_calls_a695f6768c8985a738df4df52e30e450e}{event3}}
+\item 
+Action \doxymbox{\hyperlink{class_crab_u_i_user_1_1_chain_event_calls_a07410bb6d91d2149ce79bbb37226f9fb}{event4}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Seems cheap. 
+
+Definition at line \doxymbox{\hyperlink{_chain_event_calls_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_chain_event_calls_8cs_source}{Chain\+Event\+Calls.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_chain_event_calls_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_chain_event_calls_a490a36708a4db1cd90d21e8eedda2178}\index{CrabUIUser.ChainEventCalls@{CrabUIUser.ChainEventCalls}!Run@{Run}}
+\index{Run@{Run}!CrabUIUser.ChainEventCalls@{CrabUIUser.ChainEventCalls}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_chain_event_calls_a490a36708a4db1cd90d21e8eedda2178} 
+override void Crab\+UIUser.\+Chain\+Event\+Calls.\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_chain_event_calls_8cs_source_l00027}{27}} of file \doxymbox{\hyperlink{_chain_event_calls_8cs_source}{Chain\+Event\+Calls.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ Stopwatch\ sw\ =\ \textcolor{keyword}{new}\ Stopwatch();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ Action\ setValue\ =\ ()\ =>\ value\ =\ 2;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ event4\ +=\ setValue;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ event3\ +=\ ()\ =>\ event4.Invoke();}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ event2\ +=\ ()\ =>\ event3.Invoke();}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ event1\ +=\ ()\ =>\ event2.Invoke();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ sw.Start();}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ value\ =\ 2;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}direct\ call:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ sw.Start();}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ setValue.Invoke();}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}lambda:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ sw.Start();}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ event4.Invoke();}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}1\ event:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ sw.Start();}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ event3.Invoke();}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}2\ events:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ sw.Start();}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ event2.Invoke();}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}3\ events:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ sw.Start();}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ event1.Invoke();}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}4\ events:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_crab_u_i_user_1_1_chain_event_calls_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_chain_event_calls_a8d36d166de6ae2f09e4bc3bef32f0d59}\index{CrabUIUser.ChainEventCalls@{CrabUIUser.ChainEventCalls}!repeats@{repeats}}
+\index{repeats@{repeats}!CrabUIUser.ChainEventCalls@{CrabUIUser.ChainEventCalls}}
+\doxysubsubsection{\texorpdfstring{repeats}{repeats}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_chain_event_calls_a8d36d166de6ae2f09e4bc3bef32f0d59} 
+int Crab\+UIUser.\+Chain\+Event\+Calls.\+repeats = 100\+\_\+000\+\_\+000}
+
+
+
+Definition at line \doxymbox{\hyperlink{_chain_event_calls_8cs_source_l00025}{25}} of file \doxymbox{\hyperlink{_chain_event_calls_8cs_source}{Chain\+Event\+Calls.\+cs}}.
+
+\Hypertarget{class_crab_u_i_user_1_1_chain_event_calls_ae7011caf48ed4aabe93f79f67659ce65}\index{CrabUIUser.ChainEventCalls@{CrabUIUser.ChainEventCalls}!value@{value}}
+\index{value@{value}!CrabUIUser.ChainEventCalls@{CrabUIUser.ChainEventCalls}}
+\doxysubsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_chain_event_calls_ae7011caf48ed4aabe93f79f67659ce65} 
+int Crab\+UIUser.\+Chain\+Event\+Calls.\+value}
+
+
+
+Definition at line \doxymbox{\hyperlink{_chain_event_calls_8cs_source_l00024}{24}} of file \doxymbox{\hyperlink{_chain_event_calls_8cs_source}{Chain\+Event\+Calls.\+cs}}.
+
+
+
+\label{doc-event-members}
+\Hypertarget{class_crab_u_i_user_1_1_chain_event_calls_doc-event-members}
+\doxysubsection{Event Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_chain_event_calls_a3e3eab3f733097f638c68a28a3e7f96a}\index{CrabUIUser.ChainEventCalls@{CrabUIUser.ChainEventCalls}!event1@{event1}}
+\index{event1@{event1}!CrabUIUser.ChainEventCalls@{CrabUIUser.ChainEventCalls}}
+\doxysubsubsection{\texorpdfstring{event1}{event1}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_chain_event_calls_a3e3eab3f733097f638c68a28a3e7f96a} 
+Action Crab\+UIUser.\+Chain\+Event\+Calls.\+event1}
+
+
+
+Definition at line \doxymbox{\hyperlink{_chain_event_calls_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_chain_event_calls_8cs_source}{Chain\+Event\+Calls.\+cs}}.
+
+\Hypertarget{class_crab_u_i_user_1_1_chain_event_calls_a46aace6704bbe088910c41fa32ba57ee}\index{CrabUIUser.ChainEventCalls@{CrabUIUser.ChainEventCalls}!event2@{event2}}
+\index{event2@{event2}!CrabUIUser.ChainEventCalls@{CrabUIUser.ChainEventCalls}}
+\doxysubsubsection{\texorpdfstring{event2}{event2}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_chain_event_calls_a46aace6704bbe088910c41fa32ba57ee} 
+Action Crab\+UIUser.\+Chain\+Event\+Calls.\+event2}
+
+
+
+Definition at line \doxymbox{\hyperlink{_chain_event_calls_8cs_source_l00020}{20}} of file \doxymbox{\hyperlink{_chain_event_calls_8cs_source}{Chain\+Event\+Calls.\+cs}}.
+
+\Hypertarget{class_crab_u_i_user_1_1_chain_event_calls_a695f6768c8985a738df4df52e30e450e}\index{CrabUIUser.ChainEventCalls@{CrabUIUser.ChainEventCalls}!event3@{event3}}
+\index{event3@{event3}!CrabUIUser.ChainEventCalls@{CrabUIUser.ChainEventCalls}}
+\doxysubsubsection{\texorpdfstring{event3}{event3}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_chain_event_calls_a695f6768c8985a738df4df52e30e450e} 
+Action Crab\+UIUser.\+Chain\+Event\+Calls.\+event3}
+
+
+
+Definition at line \doxymbox{\hyperlink{_chain_event_calls_8cs_source_l00021}{21}} of file \doxymbox{\hyperlink{_chain_event_calls_8cs_source}{Chain\+Event\+Calls.\+cs}}.
+
+\Hypertarget{class_crab_u_i_user_1_1_chain_event_calls_a07410bb6d91d2149ce79bbb37226f9fb}\index{CrabUIUser.ChainEventCalls@{CrabUIUser.ChainEventCalls}!event4@{event4}}
+\index{event4@{event4}!CrabUIUser.ChainEventCalls@{CrabUIUser.ChainEventCalls}}
+\doxysubsubsection{\texorpdfstring{event4}{event4}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_chain_event_calls_a07410bb6d91d2149ce79bbb37226f9fb} 
+Action Crab\+UIUser.\+Chain\+Event\+Calls.\+event4}
+
+
+
+Definition at line \doxymbox{\hyperlink{_chain_event_calls_8cs_source_l00022}{22}} of file \doxymbox{\hyperlink{_chain_event_calls_8cs_source}{Chain\+Event\+Calls.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Performance/\+Chain\+Event\+Calls.\+cs\end{DoxyCompactItemize}

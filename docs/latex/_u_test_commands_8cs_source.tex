@@ -1,0 +1,129 @@
+\doxysection{UTest\+Commands.\+cs}
+\hypertarget{_u_test_commands_8cs_source}{}\label{_u_test_commands_8cs_source}\index{ClientProject/ClientSource/Libs/UTest/UTestCommands.cs@{ClientProject/ClientSource/Libs/UTest/UTestCommands.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Barotrauma.LuaCs;}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00008}00008\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}}}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00010}\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_commands}{00010}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_commands}{UTestCommands}}}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00011}00011\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ List<DebugConsole.Command>\ AddedCommands\ =\ \textcolor{keyword}{new}\ List<DebugConsole.Command>();}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00013}00013\ \ \ \ \ \textcolor{comment}{//FIXME\ what\ if\ multiple\ mods\ have\ this\ command?}}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00014}00014\ \ \ \ \ \textcolor{comment}{//THINK\ Why\ this\ method\ is\ the\ main\ entry\ point?}}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ AddCommands()}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00016}00016\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00017}00017\ \ \ \ \ \ \ DebugConsole.Command\ utestCommand\ =\ \textcolor{keyword}{new}\ DebugConsole.Command(\textcolor{stringliteral}{"{}utest"{}},\ \textcolor{stringliteral}{"{}"{}},\ UTest\_Command,\ UTest\_Hints);}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00019}00019\ \textcolor{preprocessor}{\#if\ CLIENT}}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00020}00020\ \ \ \ \ \ \ utestCommand.RelayToServer\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00021}00021\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00023}00023\ \ \ \ \ \ \ AddedCommands.Add(utestCommand);}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00024}00024\ \ \ \ \ \ \ DebugConsole.Commands.InsertRange(0,\ AddedCommands);}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00026}00026\ \textcolor{preprocessor}{\#if\ CLIENT}}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00027}00027\ \ \ \ \ \ \ PermitCommands();}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00028}00028\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00031}00031\ \textcolor{preprocessor}{\#if\ CLIENT}}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00032}00032\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ lastCommand\ =\ ModStorage.Get<\textcolor{keywordtype}{string}>(\textcolor{stringliteral}{"{}lastUtestCommand"{}});}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00033}00033\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\textcolor{keywordtype}{string}.IsNullOrEmpty(lastCommand))}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00034}00034\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ DebugConsole.ExecuteCommand(lastCommand);}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00036}00036\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00037}00037\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00038}00038\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00039}00039\ \textcolor{preprocessor}{\#if\ CLIENT}}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ PermitCommands()}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00041}00041\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00042}00042\ \ \ \ \ \ \ ((LuaCsSetup.Instance.EventService\ as\ EventService)}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ .\_luaPatcher\ as\ LuaPatcherService)}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ .Patch(}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}permit\ utest"{}},}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ typeof(DebugConsole).GetMethod(\textcolor{stringliteral}{"{}IsCommandPermitted"{}},\ BindingFlags.NonPublic\ |\ BindingFlags.Static),}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{object}\ instance,\ LuaPatcherService.ParameterTable\ ptable)\ =>}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (AddedCommands.Any(command\ =>\ ((Identifier)ptable[\textcolor{stringliteral}{"{}command"{}}]).Value\ ==\ command.Names[0]))}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ptable.ReturnValue\ =\ true;}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ptable.PreventExecution\ =\ true;}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00057}00057\ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00059}00059\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00060}00060\ \ \ \ \ \textcolor{comment}{//TODO\ remove\ hidden\ test\ from\ hints}}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00061}00061\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}[][]\ UTest\_Hints()}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00062}00062\ \ \ \ \ \ \ =>\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{string}[][]\ \{\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_explorer}{UTestExplorer}}.TestNames.Append(\textcolor{stringliteral}{"{}all"{}}).Append(\textcolor{stringliteral}{"{}none"{}}).OrderBy(s\ =>\ s.Length).ToArray()\ \};}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00064}00064\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ depth\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00065}00065\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ UTest\_Command(\textcolor{keywordtype}{string}[]\ args)}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00066}00066\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00067}00067\ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00068}00068\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00069}00069\ \textcolor{preprocessor}{\#if\ CLIENT}}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ ModStorage.Set(\textcolor{stringliteral}{"{}lastUtestCommand"{}},\ \$\textcolor{stringliteral}{"{}utest\ \{(args.ElementAtOrDefault(0)\ ??\ "{}}none\textcolor{stringliteral}{"{})\}"{}});}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00071}00071\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (args.Length\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ UTestExplorer.PrintAllTests();}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RunTestPack(Type\ T)}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ List<UTestPack>\ results\ =\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_runner}{UTestRunner}}.RunRecursive(T);}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack}{UTestPack}}\ pack\ \textcolor{keywordflow}{in}\ results)}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pack.NotEmpty)\ pack.Log();}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (String.Equals(args[0],\ \textcolor{stringliteral}{"{}none"{}},\ StringComparison.OrdinalIgnoreCase))}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (String.Equals(args[0],\ \textcolor{stringliteral}{"{}all"{}},\ StringComparison.OrdinalIgnoreCase))}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Type\ T\ \textcolor{keywordflow}{in}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_explorer}{UTestExplorer}}.TestTree.Roots.Select(root\ =>\ root.Type))}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ RunTestPack(T);}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ Type\ start\ =\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_explorer}{UTestExplorer}}.TestByName.GetValueOrDefault(args[0]);}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (start\ is\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_logger}{UTestLogger}}.Warning(\$\textcolor{stringliteral}{"{}Can't\ find\ [\{args[0]\}]\ test"{}});}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ RunTestPack(start);}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00113}00113\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00114}00114\ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)\ \{\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_logger}{UTestLogger}}.Warning(\$\textcolor{stringliteral}{"{}utest\ failed\ with:\ \{e.Message\}"{}});\ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00115}00115\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00117}00117\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ RemoveCommands()}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00118}00118\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00119}00119\ \ \ \ \ \ \ AddedCommands.ForEach(c\ =>\ DebugConsole.Commands.Remove(c));}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00120}00120\ \ \ \ \ \ \ AddedCommands.Clear();}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00121}00121\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00122}00122\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_commands_8cs_source_l00123}00123\ \}}
+
+\end{DoxyCode}

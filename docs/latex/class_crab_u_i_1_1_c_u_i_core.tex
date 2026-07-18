@@ -1,0 +1,724 @@
+\doxysection{Crab\+UI.\+CUICore Class Reference}
+\hypertarget{class_crab_u_i_1_1_c_u_i_core}{}\label{class_crab_u_i_1_1_c_u_i_core}\index{CrabUI.CUICore@{CrabUI.CUICore}}
+Inheritance diagram for Crab\+UI.\+CUICore:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_1_1_c_u_i_core}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_self___as___c_u_i_core}{Self\+\_\+\+As\+\_\+\+CUICore}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_part}{Part}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_global_focus_tracker___part}{Global\+Focus\+Tracker\+\_\+\+Part}}
+\item 
+interface \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_core_1_1_c_u_i_core_i_o_handle}{CUICore\+IOHandle}}
+\item 
+interface \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_core_1_1_c_u_i_core_handles}{CUICore\+Handles}}
+\begin{DoxyCompactList}\small\item\em This is how \doxylink{class_crab_u_i_1_1_c_u_i_core}{CUICore} interacts with CUIRunner. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_c_u_i_runner_handle___part}{CUIRunner\+Handle\+\_\+\+Part}}
+\begin{DoxyCompactList}\small\item\em This is how CUIRunner interacts with \doxylink{class_crab_u_i_1_1_c_u_i_core}{CUICore}. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_life_cycle___part}{Life\+Cycle\+\_\+\+Part}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_reflection___part}{Reflection\+\_\+\+Part}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_a4dd26c2555815ba09ffe9ddf8cdf0b2a}{Save\+XDoc}} (XDocument x\+Doc, string path)
+\item 
+static XDocument \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_a21462784f29f91b1e50643e3ecd7ef0a}{Load\+XDoc}} (string path)
+\item 
+static void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_a52e509e70d5d75a58fb80417fa66fc0d}{Request\+Focus}} (\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_focusable}{IFocusable}} focusable)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_self___as___c_u_i_core}{Self\+\_\+\+As\+\_\+\+CUICore}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_a1c84636a43136a2942b3590b380fba32}{As\+\_\+\+CUICore}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+CUIStyle\+Manager \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_a33ed5b25cdde6469079fad0436f3c2ad}{CUIStyle\+Manager}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+CUIPalette\+Manager \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_af2b7eeb7b61912c7a917b1d62b60290b}{CUIPalette\+Manager}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+Rectangle \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_ad1e8e41eba4a97ec59ba963a42e47d1f}{Game\+Screen\+Rect}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_main_component}{CUIMain\+Component}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_a17730af7659d7afb3cd22be8336091e7}{Main}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_main_component}{CUIMain\+Component}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_a6277e9018909005b073232fc47541aaf}{Top\+Main}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_input}{CUIInput}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_aacf56f69dd91f6abcf47a17a47c954d6}{\+\_\+\+Input}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+Event\+Constructor \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_aa844e12b05b9c7274c13984f580c6d87}{Event\+Constructor}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+Animation\+Player \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_a7c11d0b0361551c4e5405ed200574b18}{\+\_\+\+Animation\+Player}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_parser}{CUIParser}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_afed995e24c8f9b9a6a23c5732887873d}{\+\_\+\+CUIParser}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_serializer}{CUISerializer}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_a0f5783b47d80a1a1b8d9cb0866778eef}{\+\_\+\+CUISerializer}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+CUIAssembly\+Analyzer \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_a5275f5b650aa4bd8a6a7d98d8ee4fb62}{CUIAssembly\+Analyzer}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+Debug\+Hub \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_aab3f261fea83411ad67616ed71594143}{Debug\+Hub}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay_dict}{Debug\+Relay\+Dict}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_a318202c5bef0c1957a3d1eb9fb4ea709}{Debug\+Relays}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_global_focus_tracker___part}{Global\+Focus\+Tracker\+\_\+\+Part}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_ac6e47282d18c0360fcedaee4679a98f7}{Global\+Focus\+Tracker}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_core_1_1_c_u_i_core_handles}{CUICore\+Handles}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_a7f81b95923ed9bcfd55ae57d645b9c9f}{Handles}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\begin{DoxyCompactList}\small\item\em This must be set by CUIRunner. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_c_u_i_runner_handle___part}{CUIRunner\+Handle\+\_\+\+Part}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_af35672e4645fb2dc662e8d6e435a3f86}{CUIRunner\+Handle}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_life_cycle___part}{Life\+Cycle\+\_\+\+Part}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_a3738002f69c8807324b72e417deeb2c1}{Life\+Cycle}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_reflection___part}{Reflection\+\_\+\+Part}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_ac783448a877867250786833e46272569}{\+\_\+\+Reflection}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+static CUICore \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_a9e793170784d40774ce926b5f35e7dd4}{Instance}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+static \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_parser}{CUIParser}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_a348321dd15357874a9607e9f0cff1174}{Parser}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+static \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_serializer}{CUISerializer}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_a2852eba096259c451f47e9d77b4dbb9d}{Serializer}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+static \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_graphics_device}{CUIGraphics\+Device}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_a8f7157924171a420153f187119892750}{Graphics\+Device}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+static Sampler\+State \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_a8cd50ca10250caa0521c190ba83e8f00}{Sampler\+State}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+static Rasterizer\+State \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_a5a7b5107f23d5c06ffee17adddaa639d}{Rasterizer\+State}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+static \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_reflection___part}{Reflection\+\_\+\+Part}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_aaf680f0cd86660eb1f06fedc8d00a597}{Reflection}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+static CUIStyle\+Manager \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_ad6608eefaa17bdbcc50725882fa1c423}{Styles}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+static CUIPalette\+Manager \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_ae728c100f51d0e6930990b6999754649}{Palettes}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+static Animation\+Player \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_ac9c543e076f330931ccab41d14b8d5b4}{Animation\+Player}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+static \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_input}{CUIInput}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_a6071e21e013781237847a367ce08ce04}{Input}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+static \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture_manager}{CUITexture\+Manager}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_a8f92e3faf605131675b8196222e55112}{Texture\+Manager}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+static Action$<$ double $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_a73558d7984d3a8669454346bd98deaa9}{On\+Update}}\hspace{0.3cm}{\ttfamily  \+[add, remove]\+}
+\item 
+static Action$<$ \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISprite\+Batch}} $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_a6b645610176051c351d46123235a613f}{On\+Draw\+After\+GUI}}\hspace{0.3cm}{\ttfamily  \+[add, remove]\+}
+\item 
+static Action$<$ \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISprite\+Batch}} $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_a944a9fe058868f40dfc2313655b5236b}{On\+Draw\+Before\+GUI}}\hspace{0.3cm}{\ttfamily  \+[add, remove]\+}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_component}{CUICode\+Generator.\+IComponent}}}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_component_a11e2adbe8c5169077b7dd6f4c0124aa8}{Inject}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_____generated_2_c_u_i_core_8cs_source_l00009}{9}} of file \doxymbox{\hyperlink{_____generated_2_c_u_i_core_8cs_source}{CUICore.\+cs}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_ae81e7e1ee51ea77f7141e134dacdddb2}\index{CrabUI.CUICore@{CrabUI.CUICore}!CUICore@{CUICore}}
+\index{CUICore@{CUICore}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{CUICore()}{CUICore()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_ae81e7e1ee51ea77f7141e134dacdddb2} 
+Crab\+UI.\+CUICore.\+CUICore (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_2_core_2_c_u_i_core_2_c_u_i_core_8cs_source_l00047}{47}} of file \doxymbox{\hyperlink{_c_u_i_2_core_2_c_u_i_core_2_c_u_i_core_8cs_source}{CUICore.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048\ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ this.Inject();}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_a21462784f29f91b1e50643e3ecd7ef0a}\index{CrabUI.CUICore@{CrabUI.CUICore}!LoadXDoc@{LoadXDoc}}
+\index{LoadXDoc@{LoadXDoc}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{LoadXDoc()}{LoadXDoc()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_a21462784f29f91b1e50643e3ecd7ef0a} 
+XDocument Crab\+UI.\+CUICore.\+Load\+XDoc (\begin{DoxyParamCaption}\item[{string}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source_l00024}{24}} of file \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source}{CUICore.\+Static\+Accessors.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ =>\ Instance.Handles.LoadXDoc(path);}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_a52e509e70d5d75a58fb80417fa66fc0d}\index{CrabUI.CUICore@{CrabUI.CUICore}!RequestFocus@{RequestFocus}}
+\index{RequestFocus@{RequestFocus}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{RequestFocus()}{RequestFocus()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_a52e509e70d5d75a58fb80417fa66fc0d} 
+void Crab\+UI.\+CUICore.\+Request\+Focus (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_focusable}{IFocusable}}}]{focusable}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source_l00060}{60}} of file \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source}{CUICore.\+Static\+Accessors.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ =>\ Instance.GlobalFocusTracker.WantsToBeFocused\ =\ focusable;}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_a4dd26c2555815ba09ffe9ddf8cdf0b2a}\index{CrabUI.CUICore@{CrabUI.CUICore}!SaveXDoc@{SaveXDoc}}
+\index{SaveXDoc@{SaveXDoc}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{SaveXDoc()}{SaveXDoc()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_a4dd26c2555815ba09ffe9ddf8cdf0b2a} 
+void Crab\+UI.\+CUICore.\+Save\+XDoc (\begin{DoxyParamCaption}\item[{XDocument}]{x\+Doc}{, }\item[{string}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source_l00022}{22}} of file \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source}{CUICore.\+Static\+Accessors.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ =>\ Instance.Handles.SaveXDoc(xDoc,\ path);}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_a7c11d0b0361551c4e5405ed200574b18}\index{CrabUI.CUICore@{CrabUI.CUICore}!\_AnimationPlayer@{\_AnimationPlayer}}
+\index{\_AnimationPlayer@{\_AnimationPlayer}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{\_AnimationPlayer}{\_AnimationPlayer}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_a7c11d0b0361551c4e5405ed200574b18} 
+Animation\+Player Crab\+UI.\+CUICore.\+\_\+\+Animation\+Player\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_2_core_2_c_u_i_core_2_c_u_i_core_8cs_source_l00033}{33}} of file \doxymbox{\hyperlink{_c_u_i_2_core_2_c_u_i_core_2_c_u_i_core_8cs_source}{CUICore.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_afed995e24c8f9b9a6a23c5732887873d}\index{CrabUI.CUICore@{CrabUI.CUICore}!\_CUIParser@{\_CUIParser}}
+\index{\_CUIParser@{\_CUIParser}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{\_CUIParser}{\_CUIParser}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_afed995e24c8f9b9a6a23c5732887873d} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_parser}{CUIParser}} Crab\+UI.\+CUICore.\+\_\+\+CUIParser = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_2_core_2_c_u_i_core_2_c_u_i_core_8cs_source_l00035}{35}} of file \doxymbox{\hyperlink{_c_u_i_2_core_2_c_u_i_core_2_c_u_i_core_8cs_source}{CUICore.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_a0f5783b47d80a1a1b8d9cb0866778eef}\index{CrabUI.CUICore@{CrabUI.CUICore}!\_CUISerializer@{\_CUISerializer}}
+\index{\_CUISerializer@{\_CUISerializer}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{\_CUISerializer}{\_CUISerializer}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_a0f5783b47d80a1a1b8d9cb0866778eef} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_serializer}{CUISerializer}} Crab\+UI.\+CUICore.\+\_\+\+CUISerializer = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_2_core_2_c_u_i_core_2_c_u_i_core_8cs_source_l00036}{36}} of file \doxymbox{\hyperlink{_c_u_i_2_core_2_c_u_i_core_2_c_u_i_core_8cs_source}{CUICore.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_aacf56f69dd91f6abcf47a17a47c954d6}\index{CrabUI.CUICore@{CrabUI.CUICore}!\_Input@{\_Input}}
+\index{\_Input@{\_Input}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{\_Input}{\_Input}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_aacf56f69dd91f6abcf47a17a47c954d6} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_input}{CUIInput}} Crab\+UI.\+CUICore.\+\_\+\+Input = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_2_core_2_c_u_i_core_2_c_u_i_core_8cs_source_l00031}{31}} of file \doxymbox{\hyperlink{_c_u_i_2_core_2_c_u_i_core_2_c_u_i_core_8cs_source}{CUICore.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_ac783448a877867250786833e46272569}\index{CrabUI.CUICore@{CrabUI.CUICore}!\_Reflection@{\_Reflection}}
+\index{\_Reflection@{\_Reflection}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{\_Reflection}{\_Reflection}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_ac783448a877867250786833e46272569} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_reflection___part}{Reflection\+\_\+\+Part}} Crab\+UI.\+CUICore.\+\_\+\+Reflection = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_reflection_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_c_u_i_core_8_reflection_8cs_source}{CUICore.\+Reflection.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_ac9c543e076f330931ccab41d14b8d5b4}\index{CrabUI.CUICore@{CrabUI.CUICore}!AnimationPlayer@{AnimationPlayer}}
+\index{AnimationPlayer@{AnimationPlayer}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{AnimationPlayer}{AnimationPlayer}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_ac9c543e076f330931ccab41d14b8d5b4} 
+Animation\+Player Crab\+UI.\+CUICore.\+Animation\+Player\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source_l00037}{37}} of file \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source}{CUICore.\+Static\+Accessors.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_a1c84636a43136a2942b3590b380fba32}\index{CrabUI.CUICore@{CrabUI.CUICore}!As\_CUICore@{As\_CUICore}}
+\index{As\_CUICore@{As\_CUICore}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{As\_CUICore}{As\_CUICore}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_a1c84636a43136a2942b3590b380fba32} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_self___as___c_u_i_core}{Self\+\_\+\+As\+\_\+\+CUICore}} Crab\+UI.\+CUICore.\+As\+\_\+\+CUICore = new()\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_____generated_2_c_u_i_core_8cs_source_l00012}{12}} of file \doxymbox{\hyperlink{_____generated_2_c_u_i_core_8cs_source}{CUICore.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_a5275f5b650aa4bd8a6a7d98d8ee4fb62}\index{CrabUI.CUICore@{CrabUI.CUICore}!CUIAssemblyAnalyzer@{CUIAssemblyAnalyzer}}
+\index{CUIAssemblyAnalyzer@{CUIAssemblyAnalyzer}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{CUIAssemblyAnalyzer}{CUIAssemblyAnalyzer}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_a5275f5b650aa4bd8a6a7d98d8ee4fb62} 
+CUIAssembly\+Analyzer Crab\+UI.\+CUICore.\+CUIAssembly\+Analyzer = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_2_core_2_c_u_i_core_2_c_u_i_core_8cs_source_l00037}{37}} of file \doxymbox{\hyperlink{_c_u_i_2_core_2_c_u_i_core_2_c_u_i_core_8cs_source}{CUICore.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_af2b7eeb7b61912c7a917b1d62b60290b}\index{CrabUI.CUICore@{CrabUI.CUICore}!CUIPaletteManager@{CUIPaletteManager}}
+\index{CUIPaletteManager@{CUIPaletteManager}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{CUIPaletteManager}{CUIPaletteManager}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_af2b7eeb7b61912c7a917b1d62b60290b} 
+CUIPalette\+Manager Crab\+UI.\+CUICore.\+CUIPalette\+Manager\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_2_core_2_c_u_i_core_2_c_u_i_core_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_c_u_i_2_core_2_c_u_i_core_2_c_u_i_core_8cs_source}{CUICore.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_af35672e4645fb2dc662e8d6e435a3f86}\index{CrabUI.CUICore@{CrabUI.CUICore}!CUIRunnerHandle@{CUIRunnerHandle}}
+\index{CUIRunnerHandle@{CUIRunnerHandle}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{CUIRunnerHandle}{CUIRunnerHandle}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_af35672e4645fb2dc662e8d6e435a3f86} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_c_u_i_runner_handle___part}{CUIRunner\+Handle\+\_\+\+Part}} Crab\+UI.\+CUICore.\+CUIRunner\+Handle = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_handles_8cs_source_l00060}{60}} of file \doxymbox{\hyperlink{_c_u_i_core_8_handles_8cs_source}{CUICore.\+Handles.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_a33ed5b25cdde6469079fad0436f3c2ad}\index{CrabUI.CUICore@{CrabUI.CUICore}!CUIStyleManager@{CUIStyleManager}}
+\index{CUIStyleManager@{CUIStyleManager}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{CUIStyleManager}{CUIStyleManager}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_a33ed5b25cdde6469079fad0436f3c2ad} 
+CUIStyle\+Manager Crab\+UI.\+CUICore.\+CUIStyle\+Manager\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_2_core_2_c_u_i_core_2_c_u_i_core_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_c_u_i_2_core_2_c_u_i_core_2_c_u_i_core_8cs_source}{CUICore.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_aab3f261fea83411ad67616ed71594143}\index{CrabUI.CUICore@{CrabUI.CUICore}!DebugHub@{DebugHub}}
+\index{DebugHub@{DebugHub}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{DebugHub}{DebugHub}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_aab3f261fea83411ad67616ed71594143} 
+Debug\+Hub Crab\+UI.\+CUICore.\+Debug\+Hub\hspace{0.3cm}{\ttfamily [get]}}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ IsOpen\ =\ \textcolor{keyword}{false},}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_debug_8cs_source_l00012}{12}} of file \doxymbox{\hyperlink{_c_u_i_core_8_debug_8cs_source}{CUICore.\+Debug.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{00013\ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ IsOpen\ =\ \textcolor{keyword}{false},}
+\DoxyCodeLine{00015\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_a318202c5bef0c1957a3d1eb9fb4ea709}\index{CrabUI.CUICore@{CrabUI.CUICore}!DebugRelays@{DebugRelays}}
+\index{DebugRelays@{DebugRelays}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{DebugRelays}{DebugRelays}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_a318202c5bef0c1957a3d1eb9fb4ea709} 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay_dict}{Debug\+Relay\+Dict}} Crab\+UI.\+CUICore.\+Debug\+Relays\hspace{0.3cm}{\ttfamily [get]}}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ [DebugCategory.RoundedRect]\ =\ \textcolor{keyword}{new}\ DebugRelay(),}
+\DoxyCodeLine{\ \ \ \ \ \ [DebugCategory.HandleGrab]\ =\ \textcolor{keyword}{new}\ DebugRelay(),}
+\DoxyCodeLine{\ \ \ \ \ \ [DebugCategory.LayoutPropSet]\ =\ \textcolor{keyword}{new}\ DebugRelay(),}
+\DoxyCodeLine{\ \ \ \ \ \ [DebugCategory.RectSet]\ =\ \textcolor{keyword}{new}\ DebugRelay(),}
+\DoxyCodeLine{\ \ \ \ \ \ [DebugCategory.TreeChanged]\ =\ \textcolor{keyword}{new}\ DebugRelay(),}
+\DoxyCodeLine{\ \ \ \ \ \ [DebugCategory.TreeChanged]\ =\ \textcolor{keyword}{new}\ DebugRelay(),}
+\DoxyCodeLine{\ \ \ \ \ \ [DebugCategory.LayoutUpdated]\ =\ \textcolor{keyword}{new}\ DebugRelay(),}
+\DoxyCodeLine{\ \ \ \ \ \ [DebugCategory.LayoutMarked]\ =\ \textcolor{keyword}{new}\ DebugRelay(),}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_debug_channels_8cs_source_l00013}{13}} of file \doxymbox{\hyperlink{_c_u_i_core_8_debug_channels_8cs_source}{CUICore.\+Debug\+Channels.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{00014\ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ [DebugCategory.RoundedRect]\ =\ \textcolor{keyword}{new}\ DebugRelay(),}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ [DebugCategory.HandleGrab]\ =\ \textcolor{keyword}{new}\ DebugRelay(),}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ [DebugCategory.LayoutPropSet]\ =\ \textcolor{keyword}{new}\ DebugRelay(),}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ [DebugCategory.RectSet]\ =\ \textcolor{keyword}{new}\ DebugRelay(),}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ [DebugCategory.TreeChanged]\ =\ \textcolor{keyword}{new}\ DebugRelay(),}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ [DebugCategory.TreeChanged]\ =\ \textcolor{keyword}{new}\ DebugRelay(),}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ [DebugCategory.LayoutUpdated]\ =\ \textcolor{keyword}{new}\ DebugRelay(),}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ [DebugCategory.LayoutMarked]\ =\ \textcolor{keyword}{new}\ DebugRelay(),}
+\DoxyCodeLine{00023\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_aa844e12b05b9c7274c13984f580c6d87}\index{CrabUI.CUICore@{CrabUI.CUICore}!EventConstructor@{EventConstructor}}
+\index{EventConstructor@{EventConstructor}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{EventConstructor}{EventConstructor}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_aa844e12b05b9c7274c13984f580c6d87} 
+Event\+Constructor Crab\+UI.\+CUICore.\+Event\+Constructor\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_2_core_2_c_u_i_core_2_c_u_i_core_8cs_source_l00032}{32}} of file \doxymbox{\hyperlink{_c_u_i_2_core_2_c_u_i_core_2_c_u_i_core_8cs_source}{CUICore.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_ad1e8e41eba4a97ec59ba963a42e47d1f}\index{CrabUI.CUICore@{CrabUI.CUICore}!GameScreenRect@{GameScreenRect}}
+\index{GameScreenRect@{GameScreenRect}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{GameScreenRect}{GameScreenRect}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_ad1e8e41eba4a97ec59ba963a42e47d1f} 
+Rectangle Crab\+UI.\+CUICore.\+Game\+Screen\+Rect\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_2_core_2_c_u_i_core_2_c_u_i_core_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_c_u_i_2_core_2_c_u_i_core_2_c_u_i_core_8cs_source}{CUICore.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_GameScreenRect;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \_GameScreenRect\ =\ value;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_Activated)\ UpdateGameScreenRect();}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_ac6e47282d18c0360fcedaee4679a98f7}\index{CrabUI.CUICore@{CrabUI.CUICore}!GlobalFocusTracker@{GlobalFocusTracker}}
+\index{GlobalFocusTracker@{GlobalFocusTracker}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{GlobalFocusTracker}{GlobalFocusTracker}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_ac6e47282d18c0360fcedaee4679a98f7} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_global_focus_tracker___part}{Global\+Focus\+Tracker\+\_\+\+Part}} Crab\+UI.\+CUICore.\+Global\+Focus\+Tracker = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_global_focus_tracker_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_c_u_i_core_8_global_focus_tracker_8cs_source}{CUICore.\+Global\+Focus\+Tracker.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_a8f7157924171a420153f187119892750}\index{CrabUI.CUICore@{CrabUI.CUICore}!GraphicsDevice@{GraphicsDevice}}
+\index{GraphicsDevice@{GraphicsDevice}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{GraphicsDevice}{GraphicsDevice}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_a8f7157924171a420153f187119892750} 
+\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_graphics_device}{CUIGraphics\+Device}} Crab\+UI.\+CUICore.\+Graphics\+Device\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source_l00030}{30}} of file \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source}{CUICore.\+Static\+Accessors.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_a7f81b95923ed9bcfd55ae57d645b9c9f}\index{CrabUI.CUICore@{CrabUI.CUICore}!Handles@{Handles}}
+\index{Handles@{Handles}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{Handles}{Handles}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_a7f81b95923ed9bcfd55ae57d645b9c9f} 
+\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_core_1_1_c_u_i_core_handles}{CUICore\+Handles}} Crab\+UI.\+CUICore.\+Handles\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+This must be set by CUIRunner. 
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_handles_8cs_source_l00059}{59}} of file \doxymbox{\hyperlink{_c_u_i_core_8_handles_8cs_source}{CUICore.\+Handles.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00059\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_a6071e21e013781237847a367ce08ce04}\index{CrabUI.CUICore@{CrabUI.CUICore}!Input@{Input}}
+\index{Input@{Input}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{Input}{Input}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_a6071e21e013781237847a367ce08ce04} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_input}{CUIInput}} Crab\+UI.\+CUICore.\+Input\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source_l00038}{38}} of file \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source}{CUICore.\+Static\+Accessors.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_a9e793170784d40774ce926b5f35e7dd4}\index{CrabUI.CUICore@{CrabUI.CUICore}!Instance@{Instance}}
+\index{Instance@{Instance}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{Instance}{Instance}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_a9e793170784d40774ce926b5f35e7dd4} 
+CUICore Crab\+UI.\+CUICore.\+Instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source_l00020}{20}} of file \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source}{CUICore.\+Static\+Accessors.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_a3738002f69c8807324b72e417deeb2c1}\index{CrabUI.CUICore@{CrabUI.CUICore}!LifeCycle@{LifeCycle}}
+\index{LifeCycle@{LifeCycle}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{LifeCycle}{LifeCycle}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_a3738002f69c8807324b72e417deeb2c1} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_life_cycle___part}{Life\+Cycle\+\_\+\+Part}} Crab\+UI.\+CUICore.\+Life\+Cycle = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_life_cycle_8cs_source_l00082}{82}} of file \doxymbox{\hyperlink{_c_u_i_core_8_life_cycle_8cs_source}{CUICore.\+Life\+Cycle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00082\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_a17730af7659d7afb3cd22be8336091e7}\index{CrabUI.CUICore@{CrabUI.CUICore}!Main@{Main}}
+\index{Main@{Main}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{Main}{Main}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_a17730af7659d7afb3cd22be8336091e7} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_main_component}{CUIMain\+Component}} Crab\+UI.\+CUICore.\+Main\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_2_core_2_c_u_i_core_2_c_u_i_core_8cs_source_l00029}{29}} of file \doxymbox{\hyperlink{_c_u_i_2_core_2_c_u_i_core_2_c_u_i_core_8cs_source}{CUICore.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_ae728c100f51d0e6930990b6999754649}\index{CrabUI.CUICore@{CrabUI.CUICore}!Palettes@{Palettes}}
+\index{Palettes@{Palettes}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{Palettes}{Palettes}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_ae728c100f51d0e6930990b6999754649} 
+CUIPalette\+Manager Crab\+UI.\+CUICore.\+Palettes\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source_l00036}{36}} of file \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source}{CUICore.\+Static\+Accessors.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_a348321dd15357874a9607e9f0cff1174}\index{CrabUI.CUICore@{CrabUI.CUICore}!Parser@{Parser}}
+\index{Parser@{Parser}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{Parser}{Parser}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_a348321dd15357874a9607e9f0cff1174} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_parser}{CUIParser}} Crab\+UI.\+CUICore.\+Parser\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source_l00027}{27}} of file \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source}{CUICore.\+Static\+Accessors.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_a5a7b5107f23d5c06ffee17adddaa639d}\index{CrabUI.CUICore@{CrabUI.CUICore}!RasterizerState@{RasterizerState}}
+\index{RasterizerState@{RasterizerState}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{RasterizerState}{RasterizerState}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_a5a7b5107f23d5c06ffee17adddaa639d} 
+Rasterizer\+State Crab\+UI.\+CUICore.\+Rasterizer\+State\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source_l00032}{32}} of file \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source}{CUICore.\+Static\+Accessors.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_aaf680f0cd86660eb1f06fedc8d00a597}\index{CrabUI.CUICore@{CrabUI.CUICore}!Reflection@{Reflection}}
+\index{Reflection@{Reflection}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{Reflection}{Reflection}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_aaf680f0cd86660eb1f06fedc8d00a597} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_reflection___part}{Reflection\+\_\+\+Part}} Crab\+UI.\+CUICore.\+Reflection\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source_l00034}{34}} of file \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source}{CUICore.\+Static\+Accessors.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_a8cd50ca10250caa0521c190ba83e8f00}\index{CrabUI.CUICore@{CrabUI.CUICore}!SamplerState@{SamplerState}}
+\index{SamplerState@{SamplerState}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{SamplerState}{SamplerState}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_a8cd50ca10250caa0521c190ba83e8f00} 
+Sampler\+State Crab\+UI.\+CUICore.\+Sampler\+State\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source_l00031}{31}} of file \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source}{CUICore.\+Static\+Accessors.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_a2852eba096259c451f47e9d77b4dbb9d}\index{CrabUI.CUICore@{CrabUI.CUICore}!Serializer@{Serializer}}
+\index{Serializer@{Serializer}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{Serializer}{Serializer}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_a2852eba096259c451f47e9d77b4dbb9d} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_serializer}{CUISerializer}} Crab\+UI.\+CUICore.\+Serializer\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source_l00028}{28}} of file \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source}{CUICore.\+Static\+Accessors.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_ad6608eefaa17bdbcc50725882fa1c423}\index{CrabUI.CUICore@{CrabUI.CUICore}!Styles@{Styles}}
+\index{Styles@{Styles}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{Styles}{Styles}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_ad6608eefaa17bdbcc50725882fa1c423} 
+CUIStyle\+Manager Crab\+UI.\+CUICore.\+Styles\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source_l00035}{35}} of file \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source}{CUICore.\+Static\+Accessors.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_a8f92e3faf605131675b8196222e55112}\index{CrabUI.CUICore@{CrabUI.CUICore}!TextureManager@{TextureManager}}
+\index{TextureManager@{TextureManager}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{TextureManager}{TextureManager}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_a8f92e3faf605131675b8196222e55112} 
+\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture_manager}{CUITexture\+Manager}} Crab\+UI.\+CUICore.\+Texture\+Manager\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source_l00040}{40}} of file \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source}{CUICore.\+Static\+Accessors.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_a6277e9018909005b073232fc47541aaf}\index{CrabUI.CUICore@{CrabUI.CUICore}!TopMain@{TopMain}}
+\index{TopMain@{TopMain}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{TopMain}{TopMain}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_a6277e9018909005b073232fc47541aaf} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_main_component}{CUIMain\+Component}} Crab\+UI.\+CUICore.\+Top\+Main\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_2_core_2_c_u_i_core_2_c_u_i_core_8cs_source_l00030}{30}} of file \doxymbox{\hyperlink{_c_u_i_2_core_2_c_u_i_core_2_c_u_i_core_8cs_source}{CUICore.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-event-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_doc-event-members}
+\doxysubsection{Event Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_a6b645610176051c351d46123235a613f}\index{CrabUI.CUICore@{CrabUI.CUICore}!OnDrawAfterGUI@{OnDrawAfterGUI}}
+\index{OnDrawAfterGUI@{OnDrawAfterGUI}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{OnDrawAfterGUI}{OnDrawAfterGUI}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_a6b645610176051c351d46123235a613f} 
+Action$<$\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISprite\+Batch}}$>$ Crab\+UI.\+CUICore.\+On\+Draw\+After\+GUI\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [add]}, {\ttfamily [remove]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source_l00048}{48}} of file \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source}{CUICore.\+Static\+Accessors.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00049\ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ add\ =>\ Instance.LifeCycle.OnDrawAfterGUI.Add(value);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ Instance.LifeCycle.OnDrawAfterGUI.Remove(value);}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_a944a9fe058868f40dfc2313655b5236b}\index{CrabUI.CUICore@{CrabUI.CUICore}!OnDrawBeforeGUI@{OnDrawBeforeGUI}}
+\index{OnDrawBeforeGUI@{OnDrawBeforeGUI}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{OnDrawBeforeGUI}{OnDrawBeforeGUI}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_a944a9fe058868f40dfc2313655b5236b} 
+Action$<$\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISprite\+Batch}}$>$ Crab\+UI.\+CUICore.\+On\+Draw\+Before\+GUI\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [add]}, {\ttfamily [remove]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source_l00054}{54}} of file \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source}{CUICore.\+Static\+Accessors.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055\ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ add\ =>\ Instance.LifeCycle.OnDrawBeforeGUI.Add(value);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ Instance.LifeCycle.OnDrawBeforeGUI.Remove(value);}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_a73558d7984d3a8669454346bd98deaa9}\index{CrabUI.CUICore@{CrabUI.CUICore}!OnUpdate@{OnUpdate}}
+\index{OnUpdate@{OnUpdate}!CrabUI.CUICore@{CrabUI.CUICore}}
+\doxysubsubsection{\texorpdfstring{OnUpdate}{OnUpdate}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_a73558d7984d3a8669454346bd98deaa9} 
+Action$<$double$>$ Crab\+UI.\+CUICore.\+On\+Update\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [add]}, {\ttfamily [remove]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source_l00042}{42}} of file \doxymbox{\hyperlink{_c_u_i_core_8_static_accessors_8cs_source}{CUICore.\+Static\+Accessors.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00043\ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ add\ =>\ Instance.LifeCycle.OnUpdate.Add(value);}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ Instance.LifeCycle.OnUpdate.Remove(value);}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+\_\+\+\_\+\+Generated/\+CUICore.\+cs\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+CUICore/\+CUICore.\+cs\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+CUICore/\+CUICore.\+Debug.\+cs\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+CUICore/\+CUICore.\+Debug\+Channels.\+cs\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+CUICore/\+CUICore.\+Global\+Focus\+Tracker.\+cs\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+CUICore/\+CUICore.\+Handles.\+cs\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+CUICore/\+CUICore.\+Life\+Cycle.\+cs\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+CUICore/\+CUICore.\+Reflection.\+cs\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+CUICore/\+CUICore.\+Static\+Accessors.\+cs\end{DoxyCompactItemize}

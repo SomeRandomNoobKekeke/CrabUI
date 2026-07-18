@@ -1,0 +1,139 @@
+\doxysection{CUILibs.\+Prop\+Explorer Class Reference}
+\hypertarget{class_c_u_i_libs_1_1_prop_explorer}{}\label{class_c_u_i_libs_1_1_prop_explorer}\index{CUILibs.PropExplorer@{CUILibs.PropExplorer}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_prop_explorer_adde284d56d03a84521a7389677d04fd2}{For$<$ T $>$}} (object target, Action$<$ T $>$ action, Binding\+Flags flags=Binding\+Flags.\+Public\texorpdfstring{$\vert$}{|}Binding\+Flags.\+Instance)
+\item 
+static void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_prop_explorer_a7355c73177c081924ac6509ad5735039}{For\+Props$<$ T $>$}} (object target, Action$<$ Property\+Info $>$ action, Binding\+Flags flags=Binding\+Flags.\+Public\texorpdfstring{$\vert$}{|}Binding\+Flags.\+Instance)
+\item 
+static void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_prop_explorer_abc23ec2140596d6d9ce8d7845ce897c6}{For\+Props$<$ T $>$}} (Type host, Action$<$ Property\+Info $>$ action, Binding\+Flags flags=Binding\+Flags.\+Public\texorpdfstring{$\vert$}{|}Binding\+Flags.\+Instance)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static Binding\+Flags \doxymbox{\hyperlink{class_c_u_i_libs_1_1_prop_explorer_a22430a2f37eb8043384d1e0d26eb9102}{Pls}} = Binding\+Flags.\+Public \texorpdfstring{$\vert$}{|} Binding\+Flags.\+Instance\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+static Binding\+Flags \doxymbox{\hyperlink{class_c_u_i_libs_1_1_prop_explorer_aea49b78d253f9f63c0f436bc80ce88aa}{All}} = Binding\+Flags.\+Public \texorpdfstring{$\vert$}{|} Binding\+Flags.\+Non\+Public \texorpdfstring{$\vert$}{|} Binding\+Flags.\+Instance\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_prop_explorer_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_prop_explorer_8cs_source}{Prop\+Explorer.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_c_u_i_libs_1_1_prop_explorer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_prop_explorer_adde284d56d03a84521a7389677d04fd2}\index{CUILibs.PropExplorer@{CUILibs.PropExplorer}!For$<$ T $>$@{For$<$ T $>$}}
+\index{For$<$ T $>$@{For$<$ T $>$}!CUILibs.PropExplorer@{CUILibs.PropExplorer}}
+\doxysubsubsection{\texorpdfstring{For$<$ T $>$()}{For< T >()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_prop_explorer_adde284d56d03a84521a7389677d04fd2} 
+void CUILibs.\+Prop\+Explorer.\+For$<$ T $>$ (\begin{DoxyParamCaption}\item[{object}]{target}{, }\item[{Action$<$ T $>$}]{action}{, }\item[{Binding\+Flags}]{flags}{ = {\ttfamily BindingFlags:\+:\+Public~\texorpdfstring{$\vert$}{|}~BindingFlags:\+:\+Instance}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_prop_explorer_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_prop_explorer_8cs_source}{Prop\+Explorer.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (PropertyInfo\ pi\ \textcolor{keywordflow}{in}\ target.GetType().GetProperties(flags))}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pi.PropertyType.IsAssignableTo(typeof(T)))}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ action((T)pi.GetValue(target));}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_prop_explorer_a7355c73177c081924ac6509ad5735039}\index{CUILibs.PropExplorer@{CUILibs.PropExplorer}!ForProps$<$ T $>$@{ForProps$<$ T $>$}}
+\index{ForProps$<$ T $>$@{ForProps$<$ T $>$}!CUILibs.PropExplorer@{CUILibs.PropExplorer}}
+\doxysubsubsection{\texorpdfstring{ForProps$<$ T $>$()}{ForProps< T >()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_prop_explorer_a7355c73177c081924ac6509ad5735039} 
+void CUILibs.\+Prop\+Explorer.\+For\+Props$<$ T $>$ (\begin{DoxyParamCaption}\item[{object}]{target}{, }\item[{Action$<$ Property\+Info $>$}]{action}{, }\item[{Binding\+Flags}]{flags}{ = {\ttfamily BindingFlags:\+:\+Public~\texorpdfstring{$\vert$}{|}~BindingFlags:\+:\+Instance}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_prop_explorer_8cs_source_l00030}{30}} of file \doxymbox{\hyperlink{_prop_explorer_8cs_source}{Prop\+Explorer.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (PropertyInfo\ pi\ \textcolor{keywordflow}{in}\ target.GetType().GetProperties(flags))}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pi.PropertyType.IsAssignableTo(typeof(T)))}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ action(pi);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_prop_explorer_abc23ec2140596d6d9ce8d7845ce897c6}\index{CUILibs.PropExplorer@{CUILibs.PropExplorer}!ForProps$<$ T $>$@{ForProps$<$ T $>$}}
+\index{ForProps$<$ T $>$@{ForProps$<$ T $>$}!CUILibs.PropExplorer@{CUILibs.PropExplorer}}
+\doxysubsubsection{\texorpdfstring{ForProps$<$ T $>$()}{ForProps< T >()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_prop_explorer_abc23ec2140596d6d9ce8d7845ce897c6} 
+void CUILibs.\+Prop\+Explorer.\+For\+Props$<$ T $>$ (\begin{DoxyParamCaption}\item[{Type}]{host}{, }\item[{Action$<$ Property\+Info $>$}]{action}{, }\item[{Binding\+Flags}]{flags}{ = {\ttfamily BindingFlags:\+:\+Public~\texorpdfstring{$\vert$}{|}~BindingFlags:\+:\+Instance}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_prop_explorer_8cs_source_l00041}{41}} of file \doxymbox{\hyperlink{_prop_explorer_8cs_source}{Prop\+Explorer.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042\ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (PropertyInfo\ pi\ \textcolor{keywordflow}{in}\ host.GetProperties(flags))}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pi.PropertyType.IsAssignableTo(typeof(T)))}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ action(pi);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_c_u_i_libs_1_1_prop_explorer_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_prop_explorer_aea49b78d253f9f63c0f436bc80ce88aa}\index{CUILibs.PropExplorer@{CUILibs.PropExplorer}!All@{All}}
+\index{All@{All}!CUILibs.PropExplorer@{CUILibs.PropExplorer}}
+\doxysubsubsection{\texorpdfstring{All}{All}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_prop_explorer_aea49b78d253f9f63c0f436bc80ce88aa} 
+Binding\+Flags CUILibs.\+Prop\+Explorer.\+All = Binding\+Flags.\+Public \texorpdfstring{$\vert$}{|} Binding\+Flags.\+Non\+Public \texorpdfstring{$\vert$}{|} Binding\+Flags.\+Instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_prop_explorer_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_prop_explorer_8cs_source}{Prop\+Explorer.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \{\ \textcolor{keyword}{get};\ \}\ =\ BindingFlags.Public\ |\ BindingFlags.NonPublic\ |\ BindingFlags.Instance;}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_prop_explorer_a22430a2f37eb8043384d1e0d26eb9102}\index{CUILibs.PropExplorer@{CUILibs.PropExplorer}!Pls@{Pls}}
+\index{Pls@{Pls}!CUILibs.PropExplorer@{CUILibs.PropExplorer}}
+\doxysubsubsection{\texorpdfstring{Pls}{Pls}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_prop_explorer_a22430a2f37eb8043384d1e0d26eb9102} 
+Binding\+Flags CUILibs.\+Prop\+Explorer.\+Pls = Binding\+Flags.\+Public \texorpdfstring{$\vert$}{|} Binding\+Flags.\+Instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_prop_explorer_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_prop_explorer_8cs_source}{Prop\+Explorer.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \{\ \textcolor{keyword}{get};\ \}\ =\ BindingFlags.Public\ |\ BindingFlags.Instance;}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+Libs/\+Prop\+Explorer.\+cs\end{DoxyCompactItemize}

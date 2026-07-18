@@ -22,8 +22,8 @@ namespace CrabUI
     public Layout Layout { get; protected set; }
     protected virtual void SetupLayout()
     {
-      Layout = new PlainLayout();
-      Layout.ConnectTo(new Adapters_Part.PlainLayout_Host_Part() { Self = this });
+      Layout = new CUIPlainLayout();
+      Layout.ConnectTo(new Adapters_Part.CUIPlainLayout_Host_Part() { Self = this });
     }
 
     protected LayoutMarker LayoutMarker { get; set; } = new();

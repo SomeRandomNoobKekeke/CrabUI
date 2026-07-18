@@ -12,10 +12,10 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-    public bool ConsumeMouseClicks
+    public bool ConsumeMouseEvents
     {
-      get => Background.ConsumeMouseClicks;
-      set => Background.ConsumeMouseClicks = value;
+      get => Background.ConsumeMouseEvents;
+      set => Background.ConsumeMouseEvents = value;
     }
 
     public Action<CUIComponent, CUIMouseDownEvent> OnMouseDown { set { MouseDown += value; } }

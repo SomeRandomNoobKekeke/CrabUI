@@ -1,0 +1,36 @@
+\doxysection{Safe\+Dict.\+cs}
+\hypertarget{_safe_dict_8cs_source}{}\label{_safe_dict_8cs_source}\index{ClientProject/ClientSource/CUI/Core/Simple Types/SafeDict.cs@{ClientProject/ClientSource/CUI/Core/Simple Types/SafeDict.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_safe_dict_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_safe_dict_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_safe_dict_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_safe_dict_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_safe_dict_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_safe_dict_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_safe_dict_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_safe_dict_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework.Input;}
+\DoxyCodeLine{\Hypertarget{_safe_dict_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework.Graphics;}
+\DoxyCodeLine{\Hypertarget{_safe_dict_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_safe_dict_8cs_source_l00011}00011\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_safe_dict_8cs_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{_safe_dict_8cs_source_l00013}\doxymbox{\hyperlink{class_crab_u_i_1_1_safe_dict-2-g}{00013}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }SafeDict<TKey,\ TValue>\ :\ Dictionary<TKey,\ TValue>}
+\DoxyCodeLine{\Hypertarget{_safe_dict_8cs_source_l00014}00014\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_safe_dict_8cs_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{public}\ TValue\ Default\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_safe_dict_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_safe_dict_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{new}\ TValue\ \textcolor{keyword}{this}[TKey\ key]}
+\DoxyCodeLine{\Hypertarget{_safe_dict_8cs_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_safe_dict_8cs_source_l00019}00019\ \ \ \ \ \ \ \textcolor{keyword}{get}}
+\DoxyCodeLine{\Hypertarget{_safe_dict_8cs_source_l00020}00020\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_safe_dict_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (TryGetValue(key,\ out\ TValue\ value))}
+\DoxyCodeLine{\Hypertarget{_safe_dict_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_safe_dict_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value;}
+\DoxyCodeLine{\Hypertarget{_safe_dict_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_safe_dict_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Default;}
+\DoxyCodeLine{\Hypertarget{_safe_dict_8cs_source_l00026}00026\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_safe_dict_8cs_source_l00027}00027\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ Add(key,\ value);}
+\DoxyCodeLine{\Hypertarget{_safe_dict_8cs_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_safe_dict_8cs_source_l00029}00029\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_safe_dict_8cs_source_l00030}00030\ \}}
+
+\end{DoxyCode}

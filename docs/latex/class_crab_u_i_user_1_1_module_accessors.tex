@@ -1,0 +1,72 @@
+\doxysection{Crab\+UIUser.\+Module\+Accessors Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_module_accessors}{}\label{class_crab_u_i_user_1_1_module_accessors}\index{CrabUIUser.ModuleAccessors@{CrabUIUser.ModuleAccessors}}
+Inheritance diagram for Crab\+UIUser.\+Module\+Accessors:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_module_accessors}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_module_accessors_1_1_component}{Component}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_module_accessors_1_1_module_a}{ModuleA}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_module_accessors_1_1_component_tree_module}{Component\+Tree\+Module}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_module_accessors_a9535a45f682cd6d6f0438d8d583a21ed}{Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Crab\+UIUser.\+Experiment}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Run} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_module_accessors_8cs_source_l00014}{14}} of file \doxymbox{\hyperlink{_module_accessors_8cs_source}{Module\+Accessors.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_module_accessors_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_module_accessors_a9535a45f682cd6d6f0438d8d583a21ed}\index{CrabUIUser.ModuleAccessors@{CrabUIUser.ModuleAccessors}!Run@{Run}}
+\index{Run@{Run}!CrabUIUser.ModuleAccessors@{CrabUIUser.ModuleAccessors}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_module_accessors_a9535a45f682cd6d6f0438d8d583a21ed} 
+override void Crab\+UIUser.\+Module\+Accessors.\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_module_accessors_8cs_source_l00099}{99}} of file \doxymbox{\hyperlink{_module_accessors_8cs_source}{Module\+Accessors.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00100\ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ Component\ component1\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ Component\ component2\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ Component\ component3\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ component1.Append(component2);}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ component2.Append(component3);}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ component1.Prop\ =\ \textcolor{stringliteral}{"{}123"{}};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ Mod.Logger.Log(component1.Prop);}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ Mod.Logger.Log(component2.Prop);}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ Mod.Logger.Log(component3.Prop);}
+\DoxyCodeLine{00113\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Design/\+Module\+Accessors.\+cs\end{DoxyCompactItemize}

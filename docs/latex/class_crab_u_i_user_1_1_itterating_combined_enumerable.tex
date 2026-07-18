@@ -1,0 +1,176 @@
+\doxysection{Crab\+UIUser.\+Itterating\+Combined\+Enumerable Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_itterating_combined_enumerable}{}\label{class_crab_u_i_user_1_1_itterating_combined_enumerable}\index{CrabUIUser.ItteratingCombinedEnumerable@{CrabUIUser.ItteratingCombinedEnumerable}}
+
+
+itterating combined ienumerables is 10 times slower that itterating two lists but itterating combined lits is fast  
+
+
+Inheritance diagram for Crab\+UIUser.\+Itterating\+Combined\+Enumerable:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_itterating_combined_enumerable}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_combined_enumerable_ae854ccbe59d1908c17ac050d7cb822f9}{Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Crab\+UIUser.\+Experiment}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Run} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ int $>$ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_combined_enumerable_af9ff68a6bb156bc6dad581cfbf31c28b}{list1}} = Enumerable.\+Range(0, 10).To\+List()
+\item 
+List$<$ int $>$ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_combined_enumerable_a3c379fd386a9bb551fb91646d833b8bf}{list2}} = Enumerable.\+Range(0, 10).To\+List()
+\item 
+int \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_combined_enumerable_a49b1e0f365144ce622d423f1d768601b}{repeats}} = 1000000
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+IEnumerable$<$ int $>$ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_combined_enumerable_ac9f58665813148ea2ecdca966ca309d8}{Combined}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+itterating combined ienumerables is 10 times slower that itterating two lists but itterating combined lits is fast 
+
+Definition at line \doxymbox{\hyperlink{_itterating_combined_enumerable_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_itterating_combined_enumerable_8cs_source}{Itterating\+Combined\+Enumerable.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_itterating_combined_enumerable_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_itterating_combined_enumerable_ae854ccbe59d1908c17ac050d7cb822f9}\index{CrabUIUser.ItteratingCombinedEnumerable@{CrabUIUser.ItteratingCombinedEnumerable}!Run@{Run}}
+\index{Run@{Run}!CrabUIUser.ItteratingCombinedEnumerable@{CrabUIUser.ItteratingCombinedEnumerable}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_itterating_combined_enumerable_ae854ccbe59d1908c17ac050d7cb822f9} 
+override void Crab\+UIUser.\+Itterating\+Combined\+Enumerable.\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_itterating_combined_enumerable_8cs_source_l00025}{25}} of file \doxymbox{\hyperlink{_itterating_combined_enumerable_8cs_source}{Itterating\+Combined\+Enumerable.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ Stopwatch\ sw\ =\ \textcolor{keyword}{new}\ Stopwatch();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ value\ =\ 0;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ IEnumerable<int>\ preCombined\ =\ list1.Concat(list2);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ List<int>\ preCombinedlist\ =\ \textcolor{keyword}{new}\ List<int>(preCombined);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ sw.Restart();}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keywordtype}{int}\ v\ \textcolor{keywordflow}{in}\ list1)}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ value\ =\ v;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keywordtype}{int}\ v\ \textcolor{keywordflow}{in}\ list2)}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ value\ =\ v;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}itterating\ lists:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ sw.Restart();}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keywordtype}{int}\ v\ \textcolor{keywordflow}{in}\ Combined)}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ value\ =\ v;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}itterating\ combined\ ienumerable:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ sw.Restart();}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keywordtype}{int}\ v\ \textcolor{keywordflow}{in}\ preCombined)}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ value\ =\ v;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}itterating\ precombined\ ienumerable:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ sw.Restart();}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keywordtype}{int}\ v\ \textcolor{keywordflow}{in}\ preCombinedlist)}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ value\ =\ v;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}itterating\ precombined\ list:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00083\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_crab_u_i_user_1_1_itterating_combined_enumerable_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_itterating_combined_enumerable_af9ff68a6bb156bc6dad581cfbf31c28b}\index{CrabUIUser.ItteratingCombinedEnumerable@{CrabUIUser.ItteratingCombinedEnumerable}!list1@{list1}}
+\index{list1@{list1}!CrabUIUser.ItteratingCombinedEnumerable@{CrabUIUser.ItteratingCombinedEnumerable}}
+\doxysubsubsection{\texorpdfstring{list1}{list1}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_itterating_combined_enumerable_af9ff68a6bb156bc6dad581cfbf31c28b} 
+List$<$int$>$ Crab\+UIUser.\+Itterating\+Combined\+Enumerable.\+list1 = Enumerable.\+Range(0, 10).To\+List()}
+
+
+
+Definition at line \doxymbox{\hyperlink{_itterating_combined_enumerable_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_itterating_combined_enumerable_8cs_source}{Itterating\+Combined\+Enumerable.\+cs}}.
+
+\Hypertarget{class_crab_u_i_user_1_1_itterating_combined_enumerable_a3c379fd386a9bb551fb91646d833b8bf}\index{CrabUIUser.ItteratingCombinedEnumerable@{CrabUIUser.ItteratingCombinedEnumerable}!list2@{list2}}
+\index{list2@{list2}!CrabUIUser.ItteratingCombinedEnumerable@{CrabUIUser.ItteratingCombinedEnumerable}}
+\doxysubsubsection{\texorpdfstring{list2}{list2}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_itterating_combined_enumerable_a3c379fd386a9bb551fb91646d833b8bf} 
+List$<$int$>$ Crab\+UIUser.\+Itterating\+Combined\+Enumerable.\+list2 = Enumerable.\+Range(0, 10).To\+List()}
+
+
+
+Definition at line \doxymbox{\hyperlink{_itterating_combined_enumerable_8cs_source_l00020}{20}} of file \doxymbox{\hyperlink{_itterating_combined_enumerable_8cs_source}{Itterating\+Combined\+Enumerable.\+cs}}.
+
+\Hypertarget{class_crab_u_i_user_1_1_itterating_combined_enumerable_a49b1e0f365144ce622d423f1d768601b}\index{CrabUIUser.ItteratingCombinedEnumerable@{CrabUIUser.ItteratingCombinedEnumerable}!repeats@{repeats}}
+\index{repeats@{repeats}!CrabUIUser.ItteratingCombinedEnumerable@{CrabUIUser.ItteratingCombinedEnumerable}}
+\doxysubsubsection{\texorpdfstring{repeats}{repeats}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_itterating_combined_enumerable_a49b1e0f365144ce622d423f1d768601b} 
+int Crab\+UIUser.\+Itterating\+Combined\+Enumerable.\+repeats = 1000000}
+
+
+
+Definition at line \doxymbox{\hyperlink{_itterating_combined_enumerable_8cs_source_l00023}{23}} of file \doxymbox{\hyperlink{_itterating_combined_enumerable_8cs_source}{Itterating\+Combined\+Enumerable.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_user_1_1_itterating_combined_enumerable_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_itterating_combined_enumerable_ac9f58665813148ea2ecdca966ca309d8}\index{CrabUIUser.ItteratingCombinedEnumerable@{CrabUIUser.ItteratingCombinedEnumerable}!Combined@{Combined}}
+\index{Combined@{Combined}!CrabUIUser.ItteratingCombinedEnumerable@{CrabUIUser.ItteratingCombinedEnumerable}}
+\doxysubsubsection{\texorpdfstring{Combined}{Combined}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_itterating_combined_enumerable_ac9f58665813148ea2ecdca966ca309d8} 
+IEnumerable$<$int$>$ Crab\+UIUser.\+Itterating\+Combined\+Enumerable.\+Combined\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_itterating_combined_enumerable_8cs_source_l00021}{21}} of file \doxymbox{\hyperlink{_itterating_combined_enumerable_8cs_source}{Itterating\+Combined\+Enumerable.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Performance/\+Itterating\+Combined\+Enumerable.\+cs\end{DoxyCompactItemize}

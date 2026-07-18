@@ -1,0 +1,166 @@
+\doxysection{Unsubscribing\+From\+Events.\+cs}
+\hypertarget{_unsubscribing_from_events_8cs_source}{}\label{_unsubscribing_from_events_8cs_source}\index{ClientProject/InMemory/Experiments/Design/UnsubscribingFromEvents.cs@{ClientProject/InMemory/Experiments/Design/UnsubscribingFromEvents.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00010}00010\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i_user}{CrabUIUser}}}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00012}00012\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00013}00013\ \textcolor{comment}{\ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00014}00014\ \textcolor{comment}{\ \ ///\ This\ feels\ easy\ to\ fuck\ up}}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00015}00015\ \textcolor{comment}{\ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00016}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_unsubscribing_from_events}{00016}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_unsubscribing_from_events}{UnsubscribingFromEvents}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Experiment}}}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00017}00017\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00019}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_unsubscribing_from_events_1_1_event_wrapper}{00019}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_unsubscribing_from_events_1_1_event_wrapper}{EventWrapper}}}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00020}00020\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00021}00021\ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{event}\ Action\ TheEvent;}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00023}00023\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Raise()\ =>\ TheEvent?.Invoke();}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00024}00024\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_unsubscribing_from_events_1_1_event_wrapper}{EventWrapper}}\ operator\ +(\doxymbox{\hyperlink{class_crab_u_i_user_1_1_unsubscribing_from_events_1_1_event_wrapper}{EventWrapper}}\ e,\ Action\ callback)}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00025}00025\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ e.TheEvent\ +=\ callback;}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ e;}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00028}00028\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00030}00030\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_unsubscribing_from_events_1_1_event_wrapper}{EventWrapper}}\ operator\ -\/(\doxymbox{\hyperlink{class_crab_u_i_user_1_1_unsubscribing_from_events_1_1_event_wrapper}{EventWrapper}}\ e,\ Action\ callback)}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00031}00031\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ e.TheEvent\ -\/=\ callback;}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ e;}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00034}00034\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00035}00035\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00037}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_unsubscribing_from_events_1_1_handle}{00037}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_unsubscribing_from_events_1_1_handle}{Handle}}}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00038}00038\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00039}00039\ \ \ \ \ \ \ \textcolor{keyword}{private}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_unsubscribing_from_events_1_1_component}{Component}}\ \_host;}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00040}00040\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_unsubscribing_from_events_1_1_component}{Component}}\ Host}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00041}00041\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_host;}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \_host\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_mod}{Mod}}.Logger.Print(\$\textcolor{stringliteral}{"{}Handle\ Host\ =\ [\{value\}]"{}},\ Color.Pink);}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ Resubscribe();}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00049}00049\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00051}00051\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Grab()}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00052}00052\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_mod}{Mod}}.Logger.Log(\textcolor{stringliteral}{"{}Handle\ Grabbed"{}});}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00054}00054\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00055}00055\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Release()}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00056}00056\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_mod}{Mod}}.Logger.Log(\textcolor{stringliteral}{"{}Handle\ Release"{}});}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00058}00058\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00060}00060\ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{string}\ \_grabEventName\ =\ \textcolor{stringliteral}{"{}MouseDown"{}};}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00061}00061\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ GrabEventName}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00062}00062\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_grabEventName;}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \_grabEventName\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_mod}{Mod}}.Logger.Print(\$\textcolor{stringliteral}{"{}Handle\ GrabEventName\ =\ [\{value\}]"{}},\ Color.Pink);}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ Resubscribe();}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00070}00070\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00071}00071\ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{string}\ \_releaseEventName\ =\ \textcolor{stringliteral}{"{}MouseUp"{}};}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00072}00072\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ ReleaseEventName}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00073}00073\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_releaseEventName;}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \_releaseEventName\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_mod}{Mod}}.Logger.Print(\$\textcolor{stringliteral}{"{}Handle\ ReleaseEventName\ =\ [\{value\}]"{}},\ Color.Pink);}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ Resubscribe();}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00081}00081\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00083}00083\ \ \ \ \ \ \ \textcolor{keyword}{private}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_unsubscribing_from_events_1_1_event_wrapper}{EventWrapper}}\ PrevGrabEvent;}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00084}00084\ \ \ \ \ \ \ \textcolor{keyword}{private}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_unsubscribing_from_events_1_1_event_wrapper}{EventWrapper}}\ PrevReleaseEvent;}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00087}00087\ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ Resubscribe()}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00088}00088\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (PrevGrabEvent\ is\ not\ \textcolor{keyword}{null})\ PrevGrabEvent\ -\/=\ Grab;}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (PrevReleaseEvent\ is\ not\ \textcolor{keyword}{null})\ PrevReleaseEvent\ -\/=\ Release;}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Host\ is\ not\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Host.Events.ContainsKey(GrabEventName))}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ Host.Events[GrabEventName]\ +=\ Grab;}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ PrevGrabEvent\ =\ Host.Events[GrabEventName];}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Host.Events.ContainsKey(ReleaseEventName))}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ Host.Events[ReleaseEventName]\ +=\ Release;}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ PrevReleaseEvent\ =\ Host.Events[ReleaseEventName];}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00107}00107\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00108}00108\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00110}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_unsubscribing_from_events_1_1_component}{00110}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }Component}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00111}00111\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00112}00112\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_unsubscribing_from_events_1_1_event_wrapper}{EventWrapper}}\ MouseDown\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_unsubscribing_from_events_1_1_event_wrapper}{EventWrapper}}();}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00113}00113\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_unsubscribing_from_events_1_1_event_wrapper}{EventWrapper}}\ MouseUp\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_unsubscribing_from_events_1_1_event_wrapper}{EventWrapper}}();}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00114}00114\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_unsubscribing_from_events_1_1_event_wrapper}{EventWrapper}}\ MouseClick\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_unsubscribing_from_events_1_1_event_wrapper}{EventWrapper}}();}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00116}00116\ \ \ \ \ \ \ \textcolor{keyword}{public}\ Dictionary<string,\ EventWrapper>\ Events;}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00118}00118\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ RaiseEvents()}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00119}00119\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ MouseDown.Raise();}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ MouseUp.Raise();}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ MouseClick.Raise();}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00123}00123\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00126}00126\ \ \ \ \ \ \ \textcolor{keyword}{public}\ Component()}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00127}00127\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ Events\ =\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}MouseDown"{}}]\ =\ MouseDown,}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}MouseUp"{}}]\ =\ MouseUp,}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}MouseClick"{}}]\ =\ MouseClick,}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00134}00134\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00135}00135\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00137}00137\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ Run()}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00138}00138\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00139}00139\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_unsubscribing_from_events_1_1_handle}{Handle}}\ handle\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00140}00140\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_unsubscribing_from_events_1_1_component}{Component}}\ component\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_unsubscribing_from_events_1_1_component}{Component}}();}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00142}00142\ \ \ \ \ \ \ component.MouseDown\ +=\ ()\ =>\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_mod}{Mod}}.Logger.Print(\textcolor{stringliteral}{"{}MouseDown"{}},\ Color.Green);}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00143}00143\ \ \ \ \ \ \ component.MouseUp\ +=\ ()\ =>\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_mod}{Mod}}.Logger.Print(\textcolor{stringliteral}{"{}MouseUp"{}},\ Color.Green);}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00144}00144\ \ \ \ \ \ \ component.MouseClick\ +=\ ()\ =>\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_mod}{Mod}}.Logger.Print(\textcolor{stringliteral}{"{}MouseClick"{}},\ Color.Green);}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00146}00146\ \ \ \ \ \ \ handle.Host\ =\ component;}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00147}00147\ \ \ \ \ \ \ component.RaiseEvents();}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00149}00149\ \ \ \ \ \ \ handle.Host\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00150}00150\ \ \ \ \ \ \ component.RaiseEvents();}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00152}00152\ \ \ \ \ \ \ handle.Host\ =\ component;}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00153}00153\ \ \ \ \ \ \ handle.GrabEventName\ =\ \textcolor{stringliteral}{"{}MouseClick"{}};}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00154}00154\ \ \ \ \ \ \ component.RaiseEvents();}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00156}00156\ \ \ \ \ \ \ handle.Host\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00157}00157\ \ \ \ \ \ \ component.RaiseEvents();}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00158}00158\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00159}00159\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_unsubscribing_from_events_8cs_source_l00160}00160\ \}}
+
+\end{DoxyCode}

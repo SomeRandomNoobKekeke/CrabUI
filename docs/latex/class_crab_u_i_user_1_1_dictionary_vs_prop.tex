@@ -1,0 +1,201 @@
+\doxysection{Crab\+UIUser.\+Dictionary\+Vs\+Prop Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_dictionary_vs_prop}{}\label{class_crab_u_i_user_1_1_dictionary_vs_prop}\index{CrabUIUser.DictionaryVsProp@{CrabUIUser.DictionaryVsProp}}
+
+
+Accessing dict by int key is 16 times slower than prop Accessing dict by str key is at least 48 times slower than prop for 1 char string And even slower for longer strings.  
+
+
+Inheritance diagram for Crab\+UIUser.\+Dictionary\+Vs\+Prop:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_dictionary_vs_prop}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_dictionary_vs_prop_a6c0f45c7bf61d461ff8e92ab5392e4c0}{Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Crab\+UIUser.\+Experiment}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Run} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Dictionary$<$ string, int $>$ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_dictionary_vs_prop_a654e12bca30c06bd21f830591b9eb5cc}{Values}}
+\item 
+Dictionary$<$ int, int $>$ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_dictionary_vs_prop_a460770c0261a7b1a90a6769b1526ffc3}{Int\+Values}}
+\item 
+int \doxymbox{\hyperlink{class_crab_u_i_user_1_1_dictionary_vs_prop_ad8290e1e2c78f35d350f9a3d80b94784}{repeats}} = 100000000
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static string \doxymbox{\hyperlink{class_crab_u_i_user_1_1_dictionary_vs_prop_a06541af8985fe8b91a4bac4d84e30c0f}{key}} = "{}stupidly long string for a dict key"{}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{class_crab_u_i_user_1_1_dictionary_vs_prop_aaab967504726c1b8c028dd383077a214}{Value}} = 321\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Accessing dict by int key is 16 times slower than prop Accessing dict by str key is at least 48 times slower than prop for 1 char string And even slower for longer strings. 
+
+Definition at line \doxymbox{\hyperlink{_dictionary_vs_prop_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_dictionary_vs_prop_8cs_source}{Dictionary\+Vs\+Prop.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_dictionary_vs_prop_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_dictionary_vs_prop_a6c0f45c7bf61d461ff8e92ab5392e4c0}\index{CrabUIUser.DictionaryVsProp@{CrabUIUser.DictionaryVsProp}!Run@{Run}}
+\index{Run@{Run}!CrabUIUser.DictionaryVsProp@{CrabUIUser.DictionaryVsProp}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_dictionary_vs_prop_a6c0f45c7bf61d461ff8e92ab5392e4c0} 
+override void Crab\+UIUser.\+Dictionary\+Vs\+Prop.\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_dictionary_vs_prop_8cs_source_l00036}{36}} of file \doxymbox{\hyperlink{_dictionary_vs_prop_8cs_source}{Dictionary\+Vs\+Prop.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037\ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ Stopwatch\ sw\ =\ \textcolor{keyword}{new}\ Stopwatch();}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ value\ =\ 0;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ sw.Restart();}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ value\ =\ Values[key];}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}access\ string\ dict:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ sw.Restart();}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ value\ =\ IntValues[123];}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}access\ int\ dict:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ sw.Restart();}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ value\ =\ Value;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}access\ prop:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_crab_u_i_user_1_1_dictionary_vs_prop_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_dictionary_vs_prop_a460770c0261a7b1a90a6769b1526ffc3}\index{CrabUIUser.DictionaryVsProp@{CrabUIUser.DictionaryVsProp}!IntValues@{IntValues}}
+\index{IntValues@{IntValues}!CrabUIUser.DictionaryVsProp@{CrabUIUser.DictionaryVsProp}}
+\doxysubsubsection{\texorpdfstring{IntValues}{IntValues}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_dictionary_vs_prop_a460770c0261a7b1a90a6769b1526ffc3} 
+Dictionary$<$int, int$>$ Crab\+UIUser.\+Dictionary\+Vs\+Prop.\+Int\+Values}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ [123]\ =\ 123}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line \doxymbox{\hyperlink{_dictionary_vs_prop_8cs_source_l00028}{28}} of file \doxymbox{\hyperlink{_dictionary_vs_prop_8cs_source}{Dictionary\+Vs\+Prop.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ [123]\ =\ 123}
+\DoxyCodeLine{00031\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_dictionary_vs_prop_a06541af8985fe8b91a4bac4d84e30c0f}\index{CrabUIUser.DictionaryVsProp@{CrabUIUser.DictionaryVsProp}!key@{key}}
+\index{key@{key}!CrabUIUser.DictionaryVsProp@{CrabUIUser.DictionaryVsProp}}
+\doxysubsubsection{\texorpdfstring{key}{key}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_dictionary_vs_prop_a06541af8985fe8b91a4bac4d84e30c0f} 
+string Crab\+UIUser.\+Dictionary\+Vs\+Prop.\+key = "{}stupidly long string for a dict key"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_dictionary_vs_prop_8cs_source_l00021}{21}} of file \doxymbox{\hyperlink{_dictionary_vs_prop_8cs_source}{Dictionary\+Vs\+Prop.\+cs}}.
+
+\Hypertarget{class_crab_u_i_user_1_1_dictionary_vs_prop_ad8290e1e2c78f35d350f9a3d80b94784}\index{CrabUIUser.DictionaryVsProp@{CrabUIUser.DictionaryVsProp}!repeats@{repeats}}
+\index{repeats@{repeats}!CrabUIUser.DictionaryVsProp@{CrabUIUser.DictionaryVsProp}}
+\doxysubsubsection{\texorpdfstring{repeats}{repeats}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_dictionary_vs_prop_ad8290e1e2c78f35d350f9a3d80b94784} 
+int Crab\+UIUser.\+Dictionary\+Vs\+Prop.\+repeats = 100000000}
+
+
+
+Definition at line \doxymbox{\hyperlink{_dictionary_vs_prop_8cs_source_l00034}{34}} of file \doxymbox{\hyperlink{_dictionary_vs_prop_8cs_source}{Dictionary\+Vs\+Prop.\+cs}}.
+
+\Hypertarget{class_crab_u_i_user_1_1_dictionary_vs_prop_a654e12bca30c06bd21f830591b9eb5cc}\index{CrabUIUser.DictionaryVsProp@{CrabUIUser.DictionaryVsProp}!Values@{Values}}
+\index{Values@{Values}!CrabUIUser.DictionaryVsProp@{CrabUIUser.DictionaryVsProp}}
+\doxysubsubsection{\texorpdfstring{Values}{Values}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_dictionary_vs_prop_a654e12bca30c06bd21f830591b9eb5cc} 
+Dictionary$<$string, int$>$ Crab\+UIUser.\+Dictionary\+Vs\+Prop.\+Values}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ [key]\ =\ 123}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line \doxymbox{\hyperlink{_dictionary_vs_prop_8cs_source_l00023}{23}} of file \doxymbox{\hyperlink{_dictionary_vs_prop_8cs_source}{Dictionary\+Vs\+Prop.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ [key]\ =\ 123}
+\DoxyCodeLine{00026\ \ \ \ \ \};}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_user_1_1_dictionary_vs_prop_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_dictionary_vs_prop_aaab967504726c1b8c028dd383077a214}\index{CrabUIUser.DictionaryVsProp@{CrabUIUser.DictionaryVsProp}!Value@{Value}}
+\index{Value@{Value}!CrabUIUser.DictionaryVsProp@{CrabUIUser.DictionaryVsProp}}
+\doxysubsubsection{\texorpdfstring{Value}{Value}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_dictionary_vs_prop_aaab967504726c1b8c028dd383077a214} 
+int Crab\+UIUser.\+Dictionary\+Vs\+Prop.\+Value = 321\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_dictionary_vs_prop_8cs_source_l00032}{32}} of file \doxymbox{\hyperlink{_dictionary_vs_prop_8cs_source}{Dictionary\+Vs\+Prop.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ 321;}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Performance/\+Dictionary\+Vs\+Prop.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,439 @@
+\doxysection{Crab\+UI.\+Text\+Block Class Reference}
+\hypertarget{class_crab_u_i_1_1_text_block}{}\label{class_crab_u_i_1_1_text_block}\index{CrabUI.TextBlock@{CrabUI.TextBlock}}
+Inheritance diagram for Crab\+UI.\+Text\+Block:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_crab_u_i_1_1_text_block}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_1_1_passive_strategy}{Passive\+Strategy}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_1_1_rescale_strategy}{Rescale\+Strategy}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_1_1_resist_strategy}{Resist\+Strategy}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_1_1_wrap_strategy}{Wrap\+Strategy}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base}{Resize\+Strategy\+Base}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_a6ef464f998c861800a1a4d3af4ed9ecf}{Caret\+Offset}} (int i)
+\item 
+int \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_a05358cea26ef51668d14c94b0c2ce0b2}{Caret\+Index}} (Vector2 click\+Pos)
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_a9c39c79ea1a26cfd00eebc5def8bc687}{Draw}} (\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISprite\+Batch}} sprite\+Batch)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_element_base}{Crab\+UI.\+Visual\+Element\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_element_base_ae22b6b4d97f2e2641632412a0793c9b0}{Draw}} (\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISprite\+Batch}} sprite\+Batch)
+\item 
+virtual bool \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_element_base_ab4a7c1528ae47666000a7c8da1eb8c02}{Contains}} (Vector2 pos)
+\item 
+virtual bool \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_element_base_a1d0c8a399ba4f4f7e8a1d3d37b42a303}{Is\+Point\+On\+Transparent\+Pixel}} (Vector2 point)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+override \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}} \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_a59c32f12f8b15fb7792e7e40b9e8eb3c}{Rect}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+string \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_a92debaed79a7f5599524c803b0d750bc}{Text}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+float \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_a72b3449019973631460a81e7a4d9a27c}{Scale}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+Resize\+Strategy \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_a12eb67ef90ba3eb5f9b23dd27d9d3de3}{Resize\+Strategy}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_ad82b9d0111b73cfb89e7edeeaebb17cb}{Anchor}} = new Vector2(0.\+5f, 0.\+5f)\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+Color \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_a100761ce3cc285c2bd513df322796ec0}{Text\+Color}} = Color.\+White\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+Sprite\+Effects \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_ad90f3a61d0a20afe7f7ba7f255a7d060}{Sprite\+Effects}} = Sprite\+Effects.\+None\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+float \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_a0ca393ff68554ef8a7b580e46a707d42}{Layer\+Depth}} = 0.\+1f\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_font}{CUIFont}} \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_ad125e24b9bf8321bbff878af634a0170}{Font}} = CUIFont.\+Font\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+string \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_ad214b41641aec57bc8d1361ee4c69f99}{Real\+Text}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_a4424adaa50228b34dd67de671601a77c}{Raw\+Text\+Size}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_a36c8207d412225b6b6dbd95477d13947}{Text\+Draw\+Position}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_null_vector2}{CUINull\+Vector2}} \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_a1ebca10fb51624d43c78bb676b3e7fdf}{Forced\+Size}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+float \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_aa3f996fca292a9c1b624e126558b7ddc}{Real\+Scale}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_element_base}{Crab\+UI.\+Visual\+Element\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+object \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_element_base_ae616b407985b9ce429b86d37fc9e684e}{Host\+Component}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+string \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_element_base_a817ce0acd53f3c022bce7dc4f14510c6}{Host\+Prop\+Name}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_element_base_a835b7c82ae102428b79969c9c236d068}{Visible}} = true\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}} \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_element_base_a96919d919b98a21658ffda63b9396ec7}{Rect}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_visual_unit_1_1_primitive_visual_element}{Visual\+Unit.\+Primitive\+Visual\+Element}} \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_element_base_afd5665c439bf0ac2e5272f82355b0dfc}{Visual\+Wrapper}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_element_base_abc587632e7a2fb50325c1d82fe77f3f7}{Mouse\+Over}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_element_base_a672ef12d66680185fce91043b104664e}{Mouse\+Pressed}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_element_base_a4f5c943c5ca9e7d9f663e689fbc327d2}{Consume\+Mouse\+Events}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{Clearable\+Event}}$<$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_down_event}{CUIMouse\+Down\+Event}} $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_element_base_abe19cf91f8c88fe64a2224d41b79f8cf}{Mouse\+Down}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{Clearable\+Event}}$<$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_up_event}{CUIMouse\+Up\+Event}} $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_element_base_a2ed47b74d6edabffaed23ed868b4c030}{Mouse\+Up}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{Clearable\+Event}}$<$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_click_event}{CUIMouse\+Click\+Event}} $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_element_base_ac9474cf10413a8cb8bcb8e0113e33b27}{Mouse\+Click}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{Clearable\+Event}}$<$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_double_click_event}{CUIMouse\+Double\+Click\+Event}} $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_element_base_a07dc1ee58706b8b253216c733182cd3a}{Mouse\+Double\+Click}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{Clearable\+Event}}$<$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_moved_event}{CUIMouse\+Moved\+Event}} $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_element_base_aa915ca26490e1b8f5d2eb9f68b79686d}{Mouse\+Moved}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{Clearable\+Event}}$<$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_enter_event}{CUIMouse\+Enter\+Event}} $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_element_base_aae96468f270923df741b6454c8557ff4}{Mouse\+Enter}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{Clearable\+Event}}$<$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_leave_event}{CUIMouse\+Leave\+Event}} $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_element_base_af1b097492ee92eb5d6d24330da7534ec}{Mouse\+Leave}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{Clearable\+Event}}$<$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_on_event}{CUIMouse\+On\+Event}} $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_element_base_a8b0f6b8a8e5c29aa902420b6feb960db}{Mouse\+On}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{Clearable\+Event}}$<$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_off_event}{CUIMouse\+Off\+Event}} $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_element_base_af76e9666ab3058bf4527ecc78185add3}{Mouse\+Off}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{Clearable\+Event}}$<$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_scroll_event}{CUIMouse\+Scroll\+Event}} $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_element_base_a7c4e3f0258e4a4d3840d56d332f58b9d}{Mouse\+Scroll}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_passive_8cs_source_l00013}{13}} of file \doxymbox{\hyperlink{_passive_8cs_source}{Passive.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_text_block_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_text_block_a05358cea26ef51668d14c94b0c2ce0b2}\index{CrabUI.TextBlock@{CrabUI.TextBlock}!CaretIndex@{CaretIndex}}
+\index{CaretIndex@{CaretIndex}!CrabUI.TextBlock@{CrabUI.TextBlock}}
+\doxysubsubsection{\texorpdfstring{CaretIndex()}{CaretIndex()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_text_block_a05358cea26ef51668d14c94b0c2ce0b2} 
+int Crab\+UI.\+Text\+Block.\+Caret\+Index (\begin{DoxyParamCaption}\item[{Vector2}]{click\+Pos}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_text_block_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_text_block_8cs_source}{Text\+Block.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Rect.Contains(clickPos))}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (clickPos.X\ <\ Rect.Left)\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (clickPos.X\ >\ Rect.Right)\ \textcolor{keywordflow}{return}\ Text.Length;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x\ =\ clickPos.X\ -\/\ Rect.Left;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ Aprox\ =\ (int)Math.Round(x\ /\ Font.MeasureString(Text).X\ *\ Text.Length);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ closestCaretPos\ =\ Aprox;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ smallestDif\ =\ Math.Abs(x\ -\/\ CaretOffset(Aprox));}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ Aprox\ -\/\ 2;\ i\ <=\ Aprox\ +\ 2;\ i++)}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ dif\ =\ Math.Abs(x\ -\/\ CaretOffset(i));}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dif\ <\ smallestDif)}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ closestCaretPos\ =\ i;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ smallestDif\ =\ dif;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ closestCaretPos;}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_text_block_a6ef464f998c861800a1a4d3af4ed9ecf}\index{CrabUI.TextBlock@{CrabUI.TextBlock}!CaretOffset@{CaretOffset}}
+\index{CaretOffset@{CaretOffset}!CrabUI.TextBlock@{CrabUI.TextBlock}}
+\doxysubsubsection{\texorpdfstring{CaretOffset()}{CaretOffset()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_text_block_a6ef464f998c861800a1a4d3af4ed9ecf} 
+float Crab\+UI.\+Text\+Block.\+Caret\+Offset (\begin{DoxyParamCaption}\item[{int}]{i}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_text_block_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_text_block_8cs_source}{Text\+Block.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ =>\ Font.MeasureString(Text.SubstringSafe(i)).X\ *\ Scale;}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_text_block_a9c39c79ea1a26cfd00eebc5def8bc687}\index{CrabUI.TextBlock@{CrabUI.TextBlock}!Draw@{Draw}}
+\index{Draw@{Draw}!CrabUI.TextBlock@{CrabUI.TextBlock}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_text_block_a9c39c79ea1a26cfd00eebc5def8bc687} 
+override void Crab\+UI.\+Text\+Block.\+Draw (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISprite\+Batch}}}]{sprite\+Batch}{}\end{DoxyParamCaption})}
+
+
+
+Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_visual_element}{Crab\+UI.\+IVisual\+Element}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_text_block_8cs_source_l00106}{106}} of file \doxymbox{\hyperlink{_text_block_8cs_source}{Text\+Block.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00107\ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Visible)}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ Font.DrawString(}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ spriteBatch,}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ RealText,}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ TextDrawPosition,}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ TextColor,}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ rotation:\ 0,}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ origin:\ Vector2.Zero,}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ RealScale,}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ SpriteEffects,}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ LayerDepth}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00122\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_text_block_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_text_block_ad82b9d0111b73cfb89e7edeeaebb17cb}\index{CrabUI.TextBlock@{CrabUI.TextBlock}!Anchor@{Anchor}}
+\index{Anchor@{Anchor}!CrabUI.TextBlock@{CrabUI.TextBlock}}
+\doxysubsubsection{\texorpdfstring{Anchor}{Anchor}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_text_block_ad82b9d0111b73cfb89e7edeeaebb17cb} 
+Vector2 Crab\+UI.\+Text\+Block.\+Anchor = new Vector2(0.\+5f, 0.\+5f)\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_text_block_8cs_source_l00089}{89}} of file \doxymbox{\hyperlink{_text_block_8cs_source}{Text\+Block.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00089\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}\ Vector2(0.5f,\ 0.5f);}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_text_block_ad125e24b9bf8321bbff878af634a0170}\index{CrabUI.TextBlock@{CrabUI.TextBlock}!Font@{Font}}
+\index{Font@{Font}!CrabUI.TextBlock@{CrabUI.TextBlock}}
+\doxysubsubsection{\texorpdfstring{Font}{Font}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_text_block_ad125e24b9bf8321bbff878af634a0170} 
+\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_font}{CUIFont}} Crab\+UI.\+Text\+Block.\+Font = CUIFont.\+Font\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_text_block_8cs_source_l00097}{97}} of file \doxymbox{\hyperlink{_text_block_8cs_source}{Text\+Block.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00097\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ CUIFont.Font;}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_text_block_a1ebca10fb51624d43c78bb676b3e7fdf}\index{CrabUI.TextBlock@{CrabUI.TextBlock}!ForcedSize@{ForcedSize}}
+\index{ForcedSize@{ForcedSize}!CrabUI.TextBlock@{CrabUI.TextBlock}}
+\doxysubsubsection{\texorpdfstring{ForcedSize}{ForcedSize}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_text_block_a1ebca10fb51624d43c78bb676b3e7fdf} 
+\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_null_vector2}{CUINull\+Vector2}} Crab\+UI.\+Text\+Block.\+Forced\+Size\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_text_block_8cs_source_l00102}{102}} of file \doxymbox{\hyperlink{_text_block_8cs_source}{Text\+Block.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_text_block_a0ca393ff68554ef8a7b580e46a707d42}\index{CrabUI.TextBlock@{CrabUI.TextBlock}!LayerDepth@{LayerDepth}}
+\index{LayerDepth@{LayerDepth}!CrabUI.TextBlock@{CrabUI.TextBlock}}
+\doxysubsubsection{\texorpdfstring{LayerDepth}{LayerDepth}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_text_block_a0ca393ff68554ef8a7b580e46a707d42} 
+float Crab\+UI.\+Text\+Block.\+Layer\+Depth = 0.\+1f\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_text_block_8cs_source_l00094}{94}} of file \doxymbox{\hyperlink{_text_block_8cs_source}{Text\+Block.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00094\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ 0.1f;}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_text_block_a4424adaa50228b34dd67de671601a77c}\index{CrabUI.TextBlock@{CrabUI.TextBlock}!RawTextSize@{RawTextSize}}
+\index{RawTextSize@{RawTextSize}!CrabUI.TextBlock@{CrabUI.TextBlock}}
+\doxysubsubsection{\texorpdfstring{RawTextSize}{RawTextSize}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_text_block_a4424adaa50228b34dd67de671601a77c} 
+Vector2 Crab\+UI.\+Text\+Block.\+Raw\+Text\+Size\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_text_block_8cs_source_l00100}{100}} of file \doxymbox{\hyperlink{_text_block_8cs_source}{Text\+Block.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_text_block_aa3f996fca292a9c1b624e126558b7ddc}\index{CrabUI.TextBlock@{CrabUI.TextBlock}!RealScale@{RealScale}}
+\index{RealScale@{RealScale}!CrabUI.TextBlock@{CrabUI.TextBlock}}
+\doxysubsubsection{\texorpdfstring{RealScale}{RealScale}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_text_block_aa3f996fca292a9c1b624e126558b7ddc} 
+float Crab\+UI.\+Text\+Block.\+Real\+Scale\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_text_block_8cs_source_l00103}{103}} of file \doxymbox{\hyperlink{_text_block_8cs_source}{Text\+Block.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_text_block_ad214b41641aec57bc8d1361ee4c69f99}\index{CrabUI.TextBlock@{CrabUI.TextBlock}!RealText@{RealText}}
+\index{RealText@{RealText}!CrabUI.TextBlock@{CrabUI.TextBlock}}
+\doxysubsubsection{\texorpdfstring{RealText}{RealText}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_text_block_ad214b41641aec57bc8d1361ee4c69f99} 
+string Crab\+UI.\+Text\+Block.\+Real\+Text\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_text_block_8cs_source_l00099}{99}} of file \doxymbox{\hyperlink{_text_block_8cs_source}{Text\+Block.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_text_block_a59c32f12f8b15fb7792e7e40b9e8eb3c}\index{CrabUI.TextBlock@{CrabUI.TextBlock}!Rect@{Rect}}
+\index{Rect@{Rect}!CrabUI.TextBlock@{CrabUI.TextBlock}}
+\doxysubsubsection{\texorpdfstring{Rect}{Rect}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_text_block_a59c32f12f8b15fb7792e7e40b9e8eb3c} 
+override \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}} Crab\+UI.\+Text\+Block.\+Rect\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_visual_element}{Crab\+UI.\+IVisual\+Element}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_text_block_8cs_source_l00046}{46}} of file \doxymbox{\hyperlink{_text_block_8cs_source}{Text\+Block.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047\ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Rect;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \_Rect\ =\ value;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \_ResizeStrategy.MeasureRealTextSize(Rect,\ Anchor,\ Text,\ Scale,\ Font);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_text_block_a12eb67ef90ba3eb5f9b23dd27d9d3de3}\index{CrabUI.TextBlock@{CrabUI.TextBlock}!ResizeStrategy@{ResizeStrategy}}
+\index{ResizeStrategy@{ResizeStrategy}!CrabUI.TextBlock@{CrabUI.TextBlock}}
+\doxysubsubsection{\texorpdfstring{ResizeStrategy}{ResizeStrategy}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_text_block_a12eb67ef90ba3eb5f9b23dd27d9d3de3} 
+Resize\+Strategy Crab\+UI.\+Text\+Block.\+Resize\+Strategy\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_text_block_8cs_source_l00079}{79}} of file \doxymbox{\hyperlink{_text_block_8cs_source}{Text\+Block.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00080\ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ ResizeStrategyBase.ToEnum(\_ResizeStrategy);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \_ResizeStrategy\ =\ ResizeStrategyBase.FromEnum(value);}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \_ResizeStrategy.MeasureRawTextSize(Text,\ Scale,\ Font);}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_text_block_a72b3449019973631460a81e7a4d9a27c}\index{CrabUI.TextBlock@{CrabUI.TextBlock}!Scale@{Scale}}
+\index{Scale@{Scale}!CrabUI.TextBlock@{CrabUI.TextBlock}}
+\doxysubsubsection{\texorpdfstring{Scale}{Scale}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_text_block_a72b3449019973631460a81e7a4d9a27c} 
+float Crab\+UI.\+Text\+Block.\+Scale\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_text_block_8cs_source_l00067}{67}} of file \doxymbox{\hyperlink{_text_block_8cs_source}{Text\+Block.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00068\ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Scale;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \_Scale\ =\ Math.Max(0,\ value);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \_ResizeStrategy.MeasureRawTextSize(Text,\ Scale,\ Font);}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \_ResizeStrategy.MeasureRealTextSize(Rect,\ Anchor,\ Text,\ Scale,\ Font);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_text_block_ad90f3a61d0a20afe7f7ba7f255a7d060}\index{CrabUI.TextBlock@{CrabUI.TextBlock}!SpriteEffects@{SpriteEffects}}
+\index{SpriteEffects@{SpriteEffects}!CrabUI.TextBlock@{CrabUI.TextBlock}}
+\doxysubsubsection{\texorpdfstring{SpriteEffects}{SpriteEffects}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_text_block_ad90f3a61d0a20afe7f7ba7f255a7d060} 
+Sprite\+Effects Crab\+UI.\+Text\+Block.\+Sprite\+Effects = Sprite\+Effects.\+None\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_text_block_8cs_source_l00093}{93}} of file \doxymbox{\hyperlink{_text_block_8cs_source}{Text\+Block.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00093\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ SpriteEffects.None;}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_text_block_a92debaed79a7f5599524c803b0d750bc}\index{CrabUI.TextBlock@{CrabUI.TextBlock}!Text@{Text}}
+\index{Text@{Text}!CrabUI.TextBlock@{CrabUI.TextBlock}}
+\doxysubsubsection{\texorpdfstring{Text}{Text}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_text_block_a92debaed79a7f5599524c803b0d750bc} 
+string Crab\+UI.\+Text\+Block.\+Text\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_text_block_8cs_source_l00056}{56}} of file \doxymbox{\hyperlink{_text_block_8cs_source}{Text\+Block.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057\ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Text;}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \_Text\ =\ value;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \_ResizeStrategy.MeasureRawTextSize(Text,\ Scale,\ Font);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \_ResizeStrategy.MeasureRealTextSize(Rect,\ Anchor,\ Text,\ Scale,\ Font);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_text_block_a100761ce3cc285c2bd513df322796ec0}\index{CrabUI.TextBlock@{CrabUI.TextBlock}!TextColor@{TextColor}}
+\index{TextColor@{TextColor}!CrabUI.TextBlock@{CrabUI.TextBlock}}
+\doxysubsubsection{\texorpdfstring{TextColor}{TextColor}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_text_block_a100761ce3cc285c2bd513df322796ec0} 
+Color Crab\+UI.\+Text\+Block.\+Text\+Color = Color.\+White\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_text_block_8cs_source_l00092}{92}} of file \doxymbox{\hyperlink{_text_block_8cs_source}{Text\+Block.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00092\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ Color.White;}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_text_block_a36c8207d412225b6b6dbd95477d13947}\index{CrabUI.TextBlock@{CrabUI.TextBlock}!TextDrawPosition@{TextDrawPosition}}
+\index{TextDrawPosition@{TextDrawPosition}!CrabUI.TextBlock@{CrabUI.TextBlock}}
+\doxysubsubsection{\texorpdfstring{TextDrawPosition}{TextDrawPosition}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_text_block_a36c8207d412225b6b6dbd95477d13947} 
+Vector2 Crab\+UI.\+Text\+Block.\+Text\+Draw\+Position\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_text_block_8cs_source_l00101}{101}} of file \doxymbox{\hyperlink{_text_block_8cs_source}{Text\+Block.\+cs}}.
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Visual Elements/\+\+Elements/\+\+Text\+Block/\+\+Strategies/\+Passive.\+cs\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Visual Elements/\+\+Elements/\+\+Text\+Block/\+Text\+Block.\+cs\end{DoxyCompactItemize}

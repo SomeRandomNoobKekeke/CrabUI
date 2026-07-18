@@ -1,0 +1,60 @@
+\doxysection{Prop\+Explorer.\+cs}
+\hypertarget{_prop_explorer_8cs_source}{}\label{_prop_explorer_8cs_source}\index{ClientProject/ClientSource/Libs/PropExplorer.cs@{ClientProject/ClientSource/Libs/PropExplorer.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Runtime.CompilerServices;}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00010}00010\ \textcolor{keyword}{using\ }System.IO;}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00011}00011\ \textcolor{keyword}{using\ }System.Text;}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00013}00013\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}}}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00014}00014\ \{}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00015}\doxymbox{\hyperlink{class_c_u_i_libs_1_1_prop_explorer}{00015}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_c_u_i_libs_1_1_prop_explorer}{PropExplorer}}}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00016}00016\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ BindingFlags\ Pls\ \{\ \textcolor{keyword}{get};\ \}\ =\ BindingFlags.Public\ |\ BindingFlags.Instance;}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ BindingFlags\ All\ \{\ \textcolor{keyword}{get};\ \}\ =\ BindingFlags.Public\ |\ BindingFlags.NonPublic\ |\ BindingFlags.Instance;}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ For<T>(\textcolor{keywordtype}{object}\ target,\ Action<T>\ action,\ BindingFlags\ flags\ =\ BindingFlags.Public\ |\ BindingFlags.Instance)}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00020}00020\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00021}00021\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (PropertyInfo\ pi\ \textcolor{keywordflow}{in}\ target.GetType().GetProperties(flags))}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00022}00022\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pi.PropertyType.IsAssignableTo(typeof(T)))}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ action((T)pi.GetValue(target));}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00027}00027\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ ForProps<T>(\textcolor{keywordtype}{object}\ target,\ Action<PropertyInfo>\ action,\ BindingFlags\ flags\ =\ BindingFlags.Public\ |\ BindingFlags.Instance)}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00031}00031\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00032}00032\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (PropertyInfo\ pi\ \textcolor{keywordflow}{in}\ target.GetType().GetProperties(flags))}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00033}00033\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pi.PropertyType.IsAssignableTo(typeof(T)))}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ action(pi);}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00038}00038\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00041}00041\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ ForProps<T>(Type\ host,\ Action<PropertyInfo>\ action,\ BindingFlags\ flags\ =\ BindingFlags.Public\ |\ BindingFlags.Instance)}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00042}00042\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00043}00043\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (PropertyInfo\ pi\ \textcolor{keywordflow}{in}\ host.GetProperties(flags))}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00044}00044\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pi.PropertyType.IsAssignableTo(typeof(T)))}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ action(pi);}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00049}00049\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00050}00050\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00053}00053\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prop_explorer_8cs_source_l00054}00054\ \}}
+
+\end{DoxyCode}

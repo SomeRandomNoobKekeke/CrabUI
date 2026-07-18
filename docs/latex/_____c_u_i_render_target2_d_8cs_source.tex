@@ -1,0 +1,35 @@
+\doxysection{\+\_\+\+\_\+\+CUIRender\+Target2\+D.\+cs}
+\hypertarget{_____c_u_i_render_target2_d_8cs_source}{}\label{_____c_u_i_render_target2_d_8cs_source}\index{ClientProject/ClientSource/CUI/Infrastructure/Graphics Abstractions/\_\_CUIRenderTarget2D.cs@{ClientProject/ClientSource/CUI/Infrastructure/Graphics Abstractions/\_\_CUIRenderTarget2D.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_render_target2_d_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_render_target2_d_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_render_target2_d_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_render_target2_d_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_render_target2_d_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_render_target2_d_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_render_target2_d_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_render_target2_d_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework.Graphics;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_render_target2_d_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_render_target2_d_8cs_source_l00010}00010\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_render_target2_d_8cs_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_render_target2_d_8cs_source_l00012}\doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_render_target2_d}{00012}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\_\_CUIRenderTarget2D\ :\ \_\_CUITexture2D,\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_render_target2_d}{CUIRenderTarget2D}}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_render_target2_d_8cs_source_l00013}00013\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_render_target2_d_8cs_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \_\_CUIRenderTarget2D\ Create(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height)}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_render_target2_d_8cs_source_l00015}00015\ \ \ \ \ \ \ =>\ \textcolor{keyword}{new}\ \_\_CUIRenderTarget2D(width,\ height);}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_render_target2_d_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_render_target2_d_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{public}\ RenderTarget2D\ XNARenderTarget2D\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_render_target2_d_8cs_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_render_target2_d_8cs_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{public}\ \_\_CUIRenderTarget2D(RenderTarget2D\ target)\ :\ base()}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_render_target2_d_8cs_source_l00020}00020\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_render_target2_d_8cs_source_l00021}00021\ \ \ \ \ \ \ XNARenderTarget2D\ =\ target;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_render_target2_d_8cs_source_l00022}00022\ \ \ \ \ \ \ XNATexture\ =\ target;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_render_target2_d_8cs_source_l00023}00023\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_render_target2_d_8cs_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{public}\ \_\_CUIRenderTarget2D(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height)\ :\ \textcolor{keyword}{this}(}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_render_target2_d_8cs_source_l00025}00025\ \ \ \ \ \ \ \textcolor{keyword}{new}\ RenderTarget2D(GameMain.Instance.GraphicsDevice,\ width,\ height)}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_render_target2_d_8cs_source_l00026}00026\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_render_target2_d_8cs_source_l00027}00027\ \ \ \ \ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_render_target2_d_8cs_source_l00028}00028\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_render_target2_d_8cs_source_l00029}00029\ \}}
+
+\end{DoxyCode}

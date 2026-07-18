@@ -1,0 +1,131 @@
+\doxysection{Crab\+UI.\+Chain\+Drawer Class Reference}
+\hypertarget{class_crab_u_i_1_1_chain_drawer}{}\label{class_crab_u_i_1_1_chain_drawer}\index{CrabUI.ChainDrawer@{CrabUI.ChainDrawer}}
+Inheritance diagram for Crab\+UI.\+Chain\+Drawer:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_1_1_chain_drawer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_chain_drawer_ad10b63fa1dd89a8ffcc28e05f9de1123}{Draw}} (\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISprite\+Batch}} sprite\+Batch, List$<$ \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_unit}{Visual\+Unit}} $>$ flat)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_node}{Debug\+Node}}$<$ \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_unit}{Visual\+Unit}} $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_chain_drawer_a028a3575b0ace8db0b3294aad1968819}{Debug\+\_\+\+Visual\+Unit\+Processed}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_chain_drawer_state_machine}{Chain\+Drawer\+State\+Machine}} \doxymbox{\hyperlink{class_crab_u_i_1_1_chain_drawer_a8d310f36719cb4db31a62dc5db982a7f}{State\+Machine}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_chain_drawer_8cs_source_l00014}{14}} of file \doxymbox{\hyperlink{_chain_drawer_8cs_source}{Chain\+Drawer.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_chain_drawer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_chain_drawer_ad10b63fa1dd89a8ffcc28e05f9de1123}\index{CrabUI.ChainDrawer@{CrabUI.ChainDrawer}!Draw@{Draw}}
+\index{Draw@{Draw}!CrabUI.ChainDrawer@{CrabUI.ChainDrawer}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_chain_drawer_ad10b63fa1dd89a8ffcc28e05f9de1123} 
+void Crab\+UI.\+Chain\+Drawer.\+Draw (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISprite\+Batch}}}]{sprite\+Batch}{, }\item[{List$<$ \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_unit}{Visual\+Unit}} $>$}]{flat}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_chain_drawer_8cs_source_l00024}{24}} of file \doxymbox{\hyperlink{_chain_drawer_8cs_source}{Chain\+Drawer.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ StateMachine.Init(spriteBatch);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (VisualUnit\ unit\ \textcolor{keywordflow}{in}\ flat)}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ Debug\_VisualUnitProcessed.Send(unit);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (unit)}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ VisualUnit.PrimitiveVisualElement\ primitive:}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ primitive.Element.Draw(spriteBatch);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ VisualBounds.LeftContextBound\ left:}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ enter\ context}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StateMachine.Enter(spriteBatch,\ left.Bounds);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ VisualBounds.RightContextBound\ right:}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ leave\ context}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StateMachine.Exit(spriteBatch,\ right.Bounds);}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Unexpected\ VisualUnit"{}});}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \textcolor{keywordflow}{finally}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ StateMachine.Finalize(spriteBatch);}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_chain_drawer_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_chain_drawer_a028a3575b0ace8db0b3294aad1968819}\index{CrabUI.ChainDrawer@{CrabUI.ChainDrawer}!Debug\_VisualUnitProcessed@{Debug\_VisualUnitProcessed}}
+\index{Debug\_VisualUnitProcessed@{Debug\_VisualUnitProcessed}!CrabUI.ChainDrawer@{CrabUI.ChainDrawer}}
+\doxysubsubsection{\texorpdfstring{Debug\_VisualUnitProcessed}{Debug\_VisualUnitProcessed}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_chain_drawer_a028a3575b0ace8db0b3294aad1968819} 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_node}{Debug\+Node}}$<$\doxymbox{\hyperlink{class_crab_u_i_1_1_visual_unit}{Visual\+Unit}}$>$ Crab\+UI.\+Chain\+Drawer.\+Debug\+\_\+\+Visual\+Unit\+Processed\hspace{0.3cm}{\ttfamily [get]}}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{new}(}
+\DoxyCodeLine{\ \ \ \ \ \ DebugCategory.VisualUnitProcessed,\ CUI.DebugHub,}
+\DoxyCodeLine{\ \ \ \ \ \ (vu)\ =>\ \$\textcolor{stringliteral}{"{}processing\ [\{vu\}]\ of\ [\{vu.HostComponent\}]"{}}}
+\DoxyCodeLine{\ \ \ \ )}
+\DoxyCodeLine{\ \ \ \ \{\ IsOpen\ =\ \textcolor{keyword}{true},\ \}}
+
+\end{DoxyCode}
+
+
+Definition at line \doxymbox{\hyperlink{_chain_drawer_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_chain_drawer_8cs_source}{Chain\+Drawer.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}(}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ DebugCategory.VisualUnitProcessed,\ CUI.DebugHub,}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ (vu)\ =>\ \$\textcolor{stringliteral}{"{}processing\ [\{vu\}]\ of\ [\{vu.HostComponent\}]"{}}}
+\DoxyCodeLine{00019\ \ \ \ \ )}
+\DoxyCodeLine{00020\ \ \ \ \ \{\ IsOpen\ =\ \textcolor{keyword}{true},\ \};}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_chain_drawer_a8d310f36719cb4db31a62dc5db982a7f}\index{CrabUI.ChainDrawer@{CrabUI.ChainDrawer}!StateMachine@{StateMachine}}
+\index{StateMachine@{StateMachine}!CrabUI.ChainDrawer@{CrabUI.ChainDrawer}}
+\doxysubsubsection{\texorpdfstring{StateMachine}{StateMachine}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_chain_drawer_a8d310f36719cb4db31a62dc5db982a7f} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_chain_drawer_state_machine}{Chain\+Drawer\+State\+Machine}} Crab\+UI.\+Chain\+Drawer.\+State\+Machine = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_chain_drawer_8cs_source_l00022}{22}} of file \doxymbox{\hyperlink{_chain_drawer_8cs_source}{Chain\+Drawer.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Components/\+\+CUIMain\+Component/\+\+Modules/\+Chain\+Drawer.\+cs\end{DoxyCompactItemize}

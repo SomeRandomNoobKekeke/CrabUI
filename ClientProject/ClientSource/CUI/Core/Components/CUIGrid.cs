@@ -13,7 +13,7 @@ namespace CrabUI
   public partial class CUIGrid : CUIComponent, IComponent
   {
 
-    protected partial class CUIGridLayout_Host_Adapter_Part : Adapters_Part.PlainLayout_Host_Part, CUIGridLayout.Host
+    protected partial class CUIGridLayout_Host_Adapter_Part : Adapters_Part.CUIPlainLayout_Host_Part, CUIGridLayout.Host
     {
       private CUIGrid _Self; public new CUIGrid Self
       {

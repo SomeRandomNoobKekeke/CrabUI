@@ -1,0 +1,83 @@
+\doxysection{CUICore.\+Reflection.\+cs}
+\hypertarget{_c_u_i_core_8_reflection_8cs_source}{}\label{_c_u_i_core_8_reflection_8cs_source}\index{ClientProject/ClientSource/CUI/Core/CUICore/CUICore.Reflection.cs@{ClientProject/ClientSource/CUI/Core/CUICore/CUICore.Reflection.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_code_generator}{CUICodeGenerator}};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00010}00010\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework.Input;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00012}00012\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00014}00014\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core}{CUICore}}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00015}00015\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_reflection___part}{Reflection\_Part}}\ \_Reflection\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00017}\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_reflection___part}{00017}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_reflection___part}{Reflection\_Part}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_part}{Part}}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00019}00019\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_type_tree}{CUITypeTree}}\ TypeTree\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00020}00020\ \ \ \ \ \ \ \textcolor{keyword}{public}\ Dictionary<Type,\ CUIComponentInfo>\ ComponentInfos\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00021}00021\ \ \ \ \ \ \ \textcolor{keyword}{public}\ Dictionary<Type,\ CUISerializableInfo>\ SerializableInfos\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00023}00023\ \ \ \ \ \ \ \textcolor{keyword}{public}\ HashSet<Assembly>\ KnownAssemblies\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00026}00026\ \ \ \ \ \ \ \textcolor{keyword}{public}\ Type\ GetType(\textcolor{keywordtype}{string}\ name)\ =>\ TypeTree.TypesByName.GetValueOrDefault(name);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00027}00027\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_info}{CUIComponentInfo}}\ GetComponentInfo(Type\ T)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00028}00028\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!ComponentInfos.ContainsKey(T))\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ Exception(\$\textcolor{stringliteral}{"{}CUIComponentInfo\ for\ [\{T\}]\ is\ missing"{}});}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ComponentInfos[T];}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00031}00031\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00032}00032\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_serializable_info}{CUISerializableInfo}}\ GetSerializableInfo(Type\ T)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00033}00033\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!SerializableInfos.ContainsKey(T))\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ Exception(\$\textcolor{stringliteral}{"{}CUISerializableInfo\ for\ [\{T\}]\ is\ missing"{}});}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ SerializableInfos[T];}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00036}00036\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00039}00039\ \ \ \ \ \ \ \textcolor{keyword}{public}\ IEnumerable<Type>\ GetDerivedTypes(Type\ T)\ =>\ TypeTree.GetDerivedTypes(T);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00041}00041\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ AddAssemblyInfo(\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_assembly_info}{CUIAssemblyInfo}}\ assemblyInfo)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00042}00042\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (KnownAssemblies.Contains(assemblyInfo.Assembly))\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ KnownAssemblies.Add(assemblyInfo.Assembly);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ (type,\ componentInfo)\ in\ assemblyInfo.ComponentInfos)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ ComponentInfos[type]\ =\ componentInfo;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ (type,\ serializableInfo)\ in\ assemblyInfo.SerializableInfos)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ SerializableInfos[type]\ =\ serializableInfo;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ TypeTree.Add(assemblyInfo.ComponentInfos.Keys);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_info}{CUIComponentInfo}}\ info\ \textcolor{keywordflow}{in}\ assemblyInfo.ComponentInfos.Values)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (info.DefaultStyle\ is\ not\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ Self.CUIStyleManager.AddDefaultStyle(info.DefaultStyle);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Note:\ it's\ important\ to\ create\ defaults\ only\ after\ setting\ DefaultStyles\ or\ they'll\ create\ empty\ style\ pipelines}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{comment}{//TODO\ these\ defaults\ should\ somehow\ be\ created\ with\ dummy\ resources,\ textures,\ sounds\ etc}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{comment}{//CRINGE\ why\ here?}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ (T,\ info)\ in\ assemblyInfo.ComponentInfos)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ info.DefaultValue\ =\ Self.CUIAssemblyAnalyzer.CUIComponentAnalyzer.CreateDefault(T);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00074}00074\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00075}00075\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00076}00076\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_reflection_8cs_source_l00077}00077\ \}}
+
+\end{DoxyCode}

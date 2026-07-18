@@ -1,0 +1,108 @@
+\doxysection{Crab\+UI.\+CUIContext\+Style\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_crab_u_i_1_1_c_u_i_context_style-1-g}{}\label{class_crab_u_i_1_1_c_u_i_context_style-1-g}\index{CrabUI.CUIContextStyle$<$ T $>$@{CrabUI.CUIContextStyle$<$ T $>$}}
+Inheritance diagram for Crab\+UI.\+CUIContext\+Style\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_1_1_c_u_i_context_style-1-g}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_context_style-1-g_a6646b0ff701000810400c34a5ec46da1}{Dispose}} ()
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_context_style-1-g_ade8a820d31a236d5782e9e9ee41feede}{CUIContext\+Style}} (Action$<$ T $>$ action)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_action_style}{CUIAction\+Style}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_context_style-1-g_aa0ff7a040d24d237ae98fca55f4e677c}{Style}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+Type \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_context_style-1-g_ae418579148ba9188f9d56de698708a74}{Type}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component}{CUIComponent}}}]\end{description}
+\end{Desc}
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_context_style_8cs_source_l00009}{9}} of file \doxymbox{\hyperlink{_c_u_i_context_style_8cs_source}{CUIContext\+Style.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_context_style-1-g_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_context_style-1-g_ade8a820d31a236d5782e9e9ee41feede}\index{CrabUI.CUIContextStyle$<$ T $>$@{CrabUI.CUIContextStyle$<$ T $>$}!CUIContextStyle@{CUIContextStyle}}
+\index{CUIContextStyle@{CUIContextStyle}!CrabUI.CUIContextStyle$<$ T $>$@{CrabUI.CUIContextStyle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{CUIContextStyle()}{CUIContextStyle()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_context_style-1-g_ade8a820d31a236d5782e9e9ee41feede} 
+Crab\+UI.\+CUIContext\+Style$<$ T $>$.CUIContext\+Style (\begin{DoxyParamCaption}\item[{Action$<$ T $>$}]{action}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_context_style_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_c_u_i_context_style_8cs_source}{CUIContext\+Style.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ Style\ =\ \textcolor{keyword}{new}\ CUIActionStyle<T>(\textcolor{stringliteral}{"{}context"{}},\ action);}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ CUICore.Styles.EnterContextStyle(Style,\ Type);}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_context_style-1-g_a6646b0ff701000810400c34a5ec46da1}\index{CrabUI.CUIContextStyle$<$ T $>$@{CrabUI.CUIContextStyle$<$ T $>$}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!CrabUI.CUIContextStyle$<$ T $>$@{CrabUI.CUIContextStyle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_context_style-1-g_a6646b0ff701000810400c34a5ec46da1} 
+void Crab\+UI.\+CUIContext\+Style$<$ T $>$.Dispose (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_context_style_8cs_source_l00014}{14}} of file \doxymbox{\hyperlink{_c_u_i_context_style_8cs_source}{CUIContext\+Style.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ CUICore.Styles.ExitContextStyle(Style,\ Type);}
+\DoxyCodeLine{00017\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_context_style-1-g_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_context_style-1-g_aa0ff7a040d24d237ae98fca55f4e677c}\index{CrabUI.CUIContextStyle$<$ T $>$@{CrabUI.CUIContextStyle$<$ T $>$}!Style@{Style}}
+\index{Style@{Style}!CrabUI.CUIContextStyle$<$ T $>$@{CrabUI.CUIContextStyle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Style}{Style}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_context_style-1-g_aa0ff7a040d24d237ae98fca55f4e677c} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_action_style}{CUIAction\+Style}} Crab\+UI.\+CUIContext\+Style$<$ T $>$.Style\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_context_style_8cs_source_l00011}{11}} of file \doxymbox{\hyperlink{_c_u_i_context_style_8cs_source}{CUIContext\+Style.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \{\ \textcolor{keyword}{get};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_context_style-1-g_ae418579148ba9188f9d56de698708a74}\index{CrabUI.CUIContextStyle$<$ T $>$@{CrabUI.CUIContextStyle$<$ T $>$}!Type@{Type}}
+\index{Type@{Type}!CrabUI.CUIContextStyle$<$ T $>$@{CrabUI.CUIContextStyle$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_context_style-1-g_ae418579148ba9188f9d56de698708a74} 
+Type Crab\+UI.\+CUIContext\+Style$<$ T $>$.Type\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_context_style_8cs_source_l00012}{12}} of file \doxymbox{\hyperlink{_c_u_i_context_style_8cs_source}{CUIContext\+Style.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Styling/\+\+Styles/\+CUIContext\+Style.\+cs\end{DoxyCompactItemize}

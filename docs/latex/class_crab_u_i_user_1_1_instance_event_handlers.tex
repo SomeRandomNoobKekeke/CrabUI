@@ -1,0 +1,106 @@
+\doxysection{Crab\+UIUser.\+Instance\+Event\+Handlers Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_instance_event_handlers}{}\label{class_crab_u_i_user_1_1_instance_event_handlers}\index{CrabUIUser.InstanceEventHandlers@{CrabUIUser.InstanceEventHandlers}}
+
+
+I just wanna know if i can unsubscribe instance method from event It\textquotesingle{}s easier to just check.  
+
+
+Inheritance diagram for Crab\+UIUser.\+Instance\+Event\+Handlers:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_instance_event_handlers}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_instance_event_handlers_a7d03c996165df7cc9be37b31409a581c}{Bruh\+Response}} ()
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_instance_event_handlers_a1afe64b3e04ab127d6c24a7fc752638c}{Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Crab\+UIUser.\+Experiment}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Run} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+Action \doxymbox{\hyperlink{class_crab_u_i_user_1_1_instance_event_handlers_aee79e8c159d3fa0217110d35c07d00c3}{Bruh}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+I just wanna know if i can unsubscribe instance method from event It\textquotesingle{}s easier to just check. 
+
+Definition at line \doxymbox{\hyperlink{_instance_event_handlers_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_instance_event_handlers_8cs_source}{Instance\+Event\+Handlers.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_instance_event_handlers_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_instance_event_handlers_a7d03c996165df7cc9be37b31409a581c}\index{CrabUIUser.InstanceEventHandlers@{CrabUIUser.InstanceEventHandlers}!BruhResponse@{BruhResponse}}
+\index{BruhResponse@{BruhResponse}!CrabUIUser.InstanceEventHandlers@{CrabUIUser.InstanceEventHandlers}}
+\doxysubsubsection{\texorpdfstring{BruhResponse()}{BruhResponse()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_instance_event_handlers_a7d03c996165df7cc9be37b31409a581c} 
+void Crab\+UIUser.\+Instance\+Event\+Handlers.\+Bruh\+Response (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_instance_event_handlers_8cs_source_l00022}{22}} of file \doxymbox{\hyperlink{_instance_event_handlers_8cs_source}{Instance\+Event\+Handlers.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ Mod.Logger.Log(\textcolor{stringliteral}{"{}Bruh"{}});}
+\DoxyCodeLine{00025\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_instance_event_handlers_a1afe64b3e04ab127d6c24a7fc752638c}\index{CrabUIUser.InstanceEventHandlers@{CrabUIUser.InstanceEventHandlers}!Run@{Run}}
+\index{Run@{Run}!CrabUIUser.InstanceEventHandlers@{CrabUIUser.InstanceEventHandlers}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_instance_event_handlers_a1afe64b3e04ab127d6c24a7fc752638c} 
+override void Crab\+UIUser.\+Instance\+Event\+Handlers.\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_instance_event_handlers_8cs_source_l00027}{27}} of file \doxymbox{\hyperlink{_instance_event_handlers_8cs_source}{Instance\+Event\+Handlers.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \textcolor{comment}{//\ This\ works}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ Bruh\ +=\ BruhResponse;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ Bruh?.Invoke();}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ Bruh\ -\/=\ BruhResponse;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ Bruh?.Invoke();\ \textcolor{comment}{//\ nothing\ here}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{comment}{//\ This\ doesn't}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \textcolor{comment}{//\ Bruh\ +=\ ()\ =>\ BruhResponse();}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \textcolor{comment}{//\ Bruh?.Invoke();}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \textcolor{comment}{//\ Bruh\ -\/=\ ()\ =>\ BruhResponse();}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \textcolor{comment}{//\ Bruh?.Invoke();\ //\ still\ running}}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-event-members}
+\Hypertarget{class_crab_u_i_user_1_1_instance_event_handlers_doc-event-members}
+\doxysubsection{Event Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_instance_event_handlers_aee79e8c159d3fa0217110d35c07d00c3}\index{CrabUIUser.InstanceEventHandlers@{CrabUIUser.InstanceEventHandlers}!Bruh@{Bruh}}
+\index{Bruh@{Bruh}!CrabUIUser.InstanceEventHandlers@{CrabUIUser.InstanceEventHandlers}}
+\doxysubsubsection{\texorpdfstring{Bruh}{Bruh}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_instance_event_handlers_aee79e8c159d3fa0217110d35c07d00c3} 
+Action Crab\+UIUser.\+Instance\+Event\+Handlers.\+Bruh}
+
+
+
+Definition at line \doxymbox{\hyperlink{_instance_event_handlers_8cs_source_l00020}{20}} of file \doxymbox{\hyperlink{_instance_event_handlers_8cs_source}{Instance\+Event\+Handlers.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Design/\+Instance\+Event\+Handlers.\+cs\end{DoxyCompactItemize}

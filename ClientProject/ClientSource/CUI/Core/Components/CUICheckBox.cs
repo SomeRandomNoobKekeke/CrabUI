@@ -51,7 +51,7 @@ namespace CrabUI
 
       State = false;
       MouseDown += (c, e) => Toggle();
-      ConsumeMouseClicks = true;
+      ConsumeMouseEvents = true;
     }
   }
 }

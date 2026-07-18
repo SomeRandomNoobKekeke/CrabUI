@@ -1,0 +1,179 @@
+\doxysection{CUICode\+Generator.\+IComponent Interface Reference}
+\hypertarget{interface_c_u_i_code_generator_1_1_i_component}{}\label{interface_c_u_i_code_generator_1_1_i_component}\index{CUICodeGenerator.IComponent@{CUICodeGenerator.IComponent}}
+Inheritance diagram for CUICode\+Generator.\+IComponent:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{interface_c_u_i_code_generator_1_1_i_component}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_component_adfb52f5666a92a897c30779bacc16457}{Inject\+Modules}} ()
+\item 
+void \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_component_aa421b8a8f1627fecbef7965332a372c1}{Inject\+Parts}} ()
+\item 
+void \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_component_af0cb8220376863ff0d26486e4d294812}{Run\+Init\+Methods}} ()
+\item 
+void \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_component_a76888ca18bb05d2f718bdd48443cde04}{Init\+Parts}} ()
+\item 
+void \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_component_ad9043acb848ae46433e43b3136d1e3d3}{Init\+Modules}} ()
+\item 
+void \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_component_a5833dad7bbb152dd73b4c4831ab1f423}{Inject\+Props}} ()
+\item 
+void \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_component_aff0c037e010cdb9c9c9bd10d86066ae0}{Notify\+Aware\+Objects}} ()
+\item 
+void \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_component_a11e2adbe8c5169077b7dd6f4c0124aa8}{Inject}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_interfaces_8cs_source_l00011}{11}} of file \doxymbox{\hyperlink{_interfaces_8cs_source}{Interfaces.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{interface_c_u_i_code_generator_1_1_i_component_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interface_c_u_i_code_generator_1_1_i_component_ad9043acb848ae46433e43b3136d1e3d3}\index{CUICodeGenerator.IComponent@{CUICodeGenerator.IComponent}!InitModules@{InitModules}}
+\index{InitModules@{InitModules}!CUICodeGenerator.IComponent@{CUICodeGenerator.IComponent}}
+\doxysubsubsection{\texorpdfstring{InitModules()}{InitModules()}}
+{\footnotesize\ttfamily \label{interface_c_u_i_code_generator_1_1_i_component_ad9043acb848ae46433e43b3136d1e3d3} 
+void CUICode\+Generator.\+IComponent.\+Init\+Modules (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_interfaces_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_interfaces_8cs_source}{Interfaces.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \{\ \}}
+
+\end{DoxyCode}
+\Hypertarget{interface_c_u_i_code_generator_1_1_i_component_a76888ca18bb05d2f718bdd48443cde04}\index{CUICodeGenerator.IComponent@{CUICodeGenerator.IComponent}!InitParts@{InitParts}}
+\index{InitParts@{InitParts}!CUICodeGenerator.IComponent@{CUICodeGenerator.IComponent}}
+\doxysubsubsection{\texorpdfstring{InitParts()}{InitParts()}}
+{\footnotesize\ttfamily \label{interface_c_u_i_code_generator_1_1_i_component_a76888ca18bb05d2f718bdd48443cde04} 
+void CUICode\+Generator.\+IComponent.\+Init\+Parts (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_interfaces_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_interfaces_8cs_source}{Interfaces.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{\ \}}
+
+\end{DoxyCode}
+\Hypertarget{interface_c_u_i_code_generator_1_1_i_component_a11e2adbe8c5169077b7dd6f4c0124aa8}\index{CUICodeGenerator.IComponent@{CUICodeGenerator.IComponent}!Inject@{Inject}}
+\index{Inject@{Inject}!CUICodeGenerator.IComponent@{CUICodeGenerator.IComponent}}
+\doxysubsubsection{\texorpdfstring{Inject()}{Inject()}}
+{\footnotesize\ttfamily \label{interface_c_u_i_code_generator_1_1_i_component_a11e2adbe8c5169077b7dd6f4c0124aa8} 
+void CUICode\+Generator.\+IComponent.\+Inject (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_interfaces_8cs_source_l00021}{21}} of file \doxymbox{\hyperlink{_interfaces_8cs_source}{Interfaces.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ InjectParts();}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ InjectModules();}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ InjectProps();}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ NotifyAwareObjects();}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ RunInitMethods();}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ InitParts();}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ InitModules();}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ Logger.Default.Error(\$\textcolor{stringliteral}{"{}CG|\ failed\ to\ inject\ [\{this\}]\(\backslash\)n\{e\}"{}});}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{interface_c_u_i_code_generator_1_1_i_component_adfb52f5666a92a897c30779bacc16457}\index{CUICodeGenerator.IComponent@{CUICodeGenerator.IComponent}!InjectModules@{InjectModules}}
+\index{InjectModules@{InjectModules}!CUICodeGenerator.IComponent@{CUICodeGenerator.IComponent}}
+\doxysubsubsection{\texorpdfstring{InjectModules()}{InjectModules()}}
+{\footnotesize\ttfamily \label{interface_c_u_i_code_generator_1_1_i_component_adfb52f5666a92a897c30779bacc16457} 
+void CUICode\+Generator.\+IComponent.\+Inject\+Modules (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_interfaces_8cs_source_l00013}{13}} of file \doxymbox{\hyperlink{_interfaces_8cs_source}{Interfaces.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \{\ \}}
+
+\end{DoxyCode}
+\Hypertarget{interface_c_u_i_code_generator_1_1_i_component_aa421b8a8f1627fecbef7965332a372c1}\index{CUICodeGenerator.IComponent@{CUICodeGenerator.IComponent}!InjectParts@{InjectParts}}
+\index{InjectParts@{InjectParts}!CUICodeGenerator.IComponent@{CUICodeGenerator.IComponent}}
+\doxysubsubsection{\texorpdfstring{InjectParts()}{InjectParts()}}
+{\footnotesize\ttfamily \label{interface_c_u_i_code_generator_1_1_i_component_aa421b8a8f1627fecbef7965332a372c1} 
+void CUICode\+Generator.\+IComponent.\+Inject\+Parts (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_interfaces_8cs_source_l00014}{14}} of file \doxymbox{\hyperlink{_interfaces_8cs_source}{Interfaces.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \{\ \}}
+
+\end{DoxyCode}
+\Hypertarget{interface_c_u_i_code_generator_1_1_i_component_a5833dad7bbb152dd73b4c4831ab1f423}\index{CUICodeGenerator.IComponent@{CUICodeGenerator.IComponent}!InjectProps@{InjectProps}}
+\index{InjectProps@{InjectProps}!CUICodeGenerator.IComponent@{CUICodeGenerator.IComponent}}
+\doxysubsubsection{\texorpdfstring{InjectProps()}{InjectProps()}}
+{\footnotesize\ttfamily \label{interface_c_u_i_code_generator_1_1_i_component_a5833dad7bbb152dd73b4c4831ab1f423} 
+void CUICode\+Generator.\+IComponent.\+Inject\+Props (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_interfaces_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_interfaces_8cs_source}{Interfaces.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \{\ \}}
+
+\end{DoxyCode}
+\Hypertarget{interface_c_u_i_code_generator_1_1_i_component_aff0c037e010cdb9c9c9bd10d86066ae0}\index{CUICodeGenerator.IComponent@{CUICodeGenerator.IComponent}!NotifyAwareObjects@{NotifyAwareObjects}}
+\index{NotifyAwareObjects@{NotifyAwareObjects}!CUICodeGenerator.IComponent@{CUICodeGenerator.IComponent}}
+\doxysubsubsection{\texorpdfstring{NotifyAwareObjects()}{NotifyAwareObjects()}}
+{\footnotesize\ttfamily \label{interface_c_u_i_code_generator_1_1_i_component_aff0c037e010cdb9c9c9bd10d86066ae0} 
+void CUICode\+Generator.\+IComponent.\+Notify\+Aware\+Objects (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_interfaces_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_interfaces_8cs_source}{Interfaces.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \{\ \}}
+
+\end{DoxyCode}
+\Hypertarget{interface_c_u_i_code_generator_1_1_i_component_af0cb8220376863ff0d26486e4d294812}\index{CUICodeGenerator.IComponent@{CUICodeGenerator.IComponent}!RunInitMethods@{RunInitMethods}}
+\index{RunInitMethods@{RunInitMethods}!CUICodeGenerator.IComponent@{CUICodeGenerator.IComponent}}
+\doxysubsubsection{\texorpdfstring{RunInitMethods()}{RunInitMethods()}}
+{\footnotesize\ttfamily \label{interface_c_u_i_code_generator_1_1_i_component_af0cb8220376863ff0d26486e4d294812} 
+void CUICode\+Generator.\+IComponent.\+Run\+Init\+Methods (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_interfaces_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_interfaces_8cs_source}{Interfaces.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \{\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this interface was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+Libs/\+\+Component Generator/\+Interfaces.\+cs\end{DoxyCompactItemize}

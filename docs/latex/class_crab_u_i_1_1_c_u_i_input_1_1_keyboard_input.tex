@@ -1,0 +1,251 @@
+\doxysection{Crab\+UI.\+CUIInput.\+Keyboard\+Input Class Reference}
+\hypertarget{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input}{}\label{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input}\index{CrabUI.CUIInput.KeyboardInput@{CrabUI.CUIInput.KeyboardInput}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_a9f2c37b7c58ba909275304a16e673536}{Is\+Key\+Pressed}} (Keys key)
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_a646f1e5814536a13538ec4b2871d9df0}{Is\+Key\+Released}} (Keys key)
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_a3dacd4bc3efbf781276815e700d3ff16}{Is\+Key\+Down}} (Keys key)
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_aaead712019ccb265465c3f2f8629b2fd}{Is\+Key\+Up}} (Keys key)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_a30399427cf3c287672ac5a7fa86c8ce1}{Update}} (double total\+Time, Keyboard\+State new\+State, Text\+Input\+Event\+Pack text\+Input)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Keys\+[$\,$]\+ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_a085a1a513bcf551b5ee9d8e02a7cdb8d}{Pressed\+Keys}} = \+[$\,$]\+
+\item 
+Keys\+[$\,$]\+ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_aaa30882bb3ee4b56f67173b599e013c0}{Released\+Keys}} = \+[$\,$]\+
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Keyboard\+State \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_a17dd960b35e00d97bd3a2c81d3bac73c}{State}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+Keyboard\+State \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_ab3a8f4699b86c2d42677bce8568d1635}{Prev\+State}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_a42a9da1482d2c9d92c5bd003f70c3f91}{Something\+Happened}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+Text\+Input\+Event\+Args\+[$\,$]\+ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_aa55a5455942f9a90a5566c1fe5f8305b}{Text\+Input\+Events}} = \+[$\,$]\+\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+Text\+Input\+Event\+Args\+[$\,$]\+ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_a77d7eea777e7b8e02053fd023227462b}{Key\+Down\+Events}} = \+[$\,$]\+\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_input_8_keyboard_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_c_u_i_input_8_keyboard_8cs_source}{CUIInput.\+Keyboard.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_a3dacd4bc3efbf781276815e700d3ff16}\index{CrabUI.CUIInput.KeyboardInput@{CrabUI.CUIInput.KeyboardInput}!IsKeyDown@{IsKeyDown}}
+\index{IsKeyDown@{IsKeyDown}!CrabUI.CUIInput.KeyboardInput@{CrabUI.CUIInput.KeyboardInput}}
+\doxysubsubsection{\texorpdfstring{IsKeyDown()}{IsKeyDown()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_a3dacd4bc3efbf781276815e700d3ff16} 
+bool Crab\+UI.\+CUIInput.\+Keyboard\+Input.\+Is\+Key\+Down (\begin{DoxyParamCaption}\item[{Keys}]{key}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_input_8_keyboard_8cs_source_l00028}{28}} of file \doxymbox{\hyperlink{_c_u_i_input_8_keyboard_8cs_source}{CUIInput.\+Keyboard.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ =>\ State.IsKeyDown(key);}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_a9f2c37b7c58ba909275304a16e673536}\index{CrabUI.CUIInput.KeyboardInput@{CrabUI.CUIInput.KeyboardInput}!IsKeyPressed@{IsKeyPressed}}
+\index{IsKeyPressed@{IsKeyPressed}!CrabUI.CUIInput.KeyboardInput@{CrabUI.CUIInput.KeyboardInput}}
+\doxysubsubsection{\texorpdfstring{IsKeyPressed()}{IsKeyPressed()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_a9f2c37b7c58ba909275304a16e673536} 
+bool Crab\+UI.\+CUIInput.\+Keyboard\+Input.\+Is\+Key\+Pressed (\begin{DoxyParamCaption}\item[{Keys}]{key}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_input_8_keyboard_8cs_source_l00026}{26}} of file \doxymbox{\hyperlink{_c_u_i_input_8_keyboard_8cs_source}{CUIInput.\+Keyboard.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ =>\ PressedKeys.Contains(key);}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_a646f1e5814536a13538ec4b2871d9df0}\index{CrabUI.CUIInput.KeyboardInput@{CrabUI.CUIInput.KeyboardInput}!IsKeyReleased@{IsKeyReleased}}
+\index{IsKeyReleased@{IsKeyReleased}!CrabUI.CUIInput.KeyboardInput@{CrabUI.CUIInput.KeyboardInput}}
+\doxysubsubsection{\texorpdfstring{IsKeyReleased()}{IsKeyReleased()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_a646f1e5814536a13538ec4b2871d9df0} 
+bool Crab\+UI.\+CUIInput.\+Keyboard\+Input.\+Is\+Key\+Released (\begin{DoxyParamCaption}\item[{Keys}]{key}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_input_8_keyboard_8cs_source_l00027}{27}} of file \doxymbox{\hyperlink{_c_u_i_input_8_keyboard_8cs_source}{CUIInput.\+Keyboard.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ =>\ ReleasedKeys.Contains(key);}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_aaead712019ccb265465c3f2f8629b2fd}\index{CrabUI.CUIInput.KeyboardInput@{CrabUI.CUIInput.KeyboardInput}!IsKeyUp@{IsKeyUp}}
+\index{IsKeyUp@{IsKeyUp}!CrabUI.CUIInput.KeyboardInput@{CrabUI.CUIInput.KeyboardInput}}
+\doxysubsubsection{\texorpdfstring{IsKeyUp()}{IsKeyUp()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_aaead712019ccb265465c3f2f8629b2fd} 
+bool Crab\+UI.\+CUIInput.\+Keyboard\+Input.\+Is\+Key\+Up (\begin{DoxyParamCaption}\item[{Keys}]{key}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_input_8_keyboard_8cs_source_l00029}{29}} of file \doxymbox{\hyperlink{_c_u_i_input_8_keyboard_8cs_source}{CUIInput.\+Keyboard.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ =>\ State.IsKeyUp(key);}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_a30399427cf3c287672ac5a7fa86c8ce1}\index{CrabUI.CUIInput.KeyboardInput@{CrabUI.CUIInput.KeyboardInput}!Update@{Update}}
+\index{Update@{Update}!CrabUI.CUIInput.KeyboardInput@{CrabUI.CUIInput.KeyboardInput}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_a30399427cf3c287672ac5a7fa86c8ce1} 
+void Crab\+UI.\+CUIInput.\+Keyboard\+Input.\+Update (\begin{DoxyParamCaption}\item[{double}]{total\+Time}{, }\item[{Keyboard\+State}]{new\+State}{, }\item[{Text\+Input\+Event\+Pack}]{text\+Input}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_input_8_keyboard_8cs_source_l00035}{35}} of file \doxymbox{\hyperlink{_c_u_i_input_8_keyboard_8cs_source}{CUIInput.\+Keyboard.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ PrevState\ =\ State;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ State\ =\ newState;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ Keys[]\ pressedKeys\ =\ State.GetPressedKeys();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ PressedKeys\ =\ pressedKeys.Except(PrevPressedKeys).ToArray();}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ ReleasedKeys\ =\ PrevPressedKeys.Except(pressedKeys).ToArray();}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ PrevPressedKeys\ =\ pressedKeys;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ TextInputEvents\ =\ textInput.TextInputEvents;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ KeyDownEvents\ =\ textInput.KeyDownEvents;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ SomethingHappened\ =}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ PressedKeys.Length\ !=\ 0\ ||}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ ReleasedKeys.Length\ !=\ 0\ ||}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ TextInputEvents.Length\ !=\ 0\ ||}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ KeyDownEvents.Length\ !=\ 0;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_a085a1a513bcf551b5ee9d8e02a7cdb8d}\index{CrabUI.CUIInput.KeyboardInput@{CrabUI.CUIInput.KeyboardInput}!PressedKeys@{PressedKeys}}
+\index{PressedKeys@{PressedKeys}!CrabUI.CUIInput.KeyboardInput@{CrabUI.CUIInput.KeyboardInput}}
+\doxysubsubsection{\texorpdfstring{PressedKeys}{PressedKeys}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_a085a1a513bcf551b5ee9d8e02a7cdb8d} 
+Keys \+[$\,$]\+ Crab\+UI.\+CUIInput.\+Keyboard\+Input.\+Pressed\+Keys = \+[$\,$]\+}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_input_8_keyboard_8cs_source_l00023}{23}} of file \doxymbox{\hyperlink{_c_u_i_input_8_keyboard_8cs_source}{CUIInput.\+Keyboard.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_aaa30882bb3ee4b56f67173b599e013c0}\index{CrabUI.CUIInput.KeyboardInput@{CrabUI.CUIInput.KeyboardInput}!ReleasedKeys@{ReleasedKeys}}
+\index{ReleasedKeys@{ReleasedKeys}!CrabUI.CUIInput.KeyboardInput@{CrabUI.CUIInput.KeyboardInput}}
+\doxysubsubsection{\texorpdfstring{ReleasedKeys}{ReleasedKeys}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_aaa30882bb3ee4b56f67173b599e013c0} 
+Keys \+[$\,$]\+ Crab\+UI.\+CUIInput.\+Keyboard\+Input.\+Released\+Keys = \+[$\,$]\+}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_input_8_keyboard_8cs_source_l00024}{24}} of file \doxymbox{\hyperlink{_c_u_i_input_8_keyboard_8cs_source}{CUIInput.\+Keyboard.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_a77d7eea777e7b8e02053fd023227462b}\index{CrabUI.CUIInput.KeyboardInput@{CrabUI.CUIInput.KeyboardInput}!KeyDownEvents@{KeyDownEvents}}
+\index{KeyDownEvents@{KeyDownEvents}!CrabUI.CUIInput.KeyboardInput@{CrabUI.CUIInput.KeyboardInput}}
+\doxysubsubsection{\texorpdfstring{KeyDownEvents}{KeyDownEvents}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_a77d7eea777e7b8e02053fd023227462b} 
+Text\+Input\+Event\+Args \+[$\,$]\+ Crab\+UI.\+CUIInput.\+Keyboard\+Input.\+Key\+Down\+Events = \+[$\,$]\+\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_input_8_keyboard_8cs_source_l00033}{33}} of file \doxymbox{\hyperlink{_c_u_i_input_8_keyboard_8cs_source}{CUIInput.\+Keyboard.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}\ =\ [];}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_ab3a8f4699b86c2d42677bce8568d1635}\index{CrabUI.CUIInput.KeyboardInput@{CrabUI.CUIInput.KeyboardInput}!PrevState@{PrevState}}
+\index{PrevState@{PrevState}!CrabUI.CUIInput.KeyboardInput@{CrabUI.CUIInput.KeyboardInput}}
+\doxysubsubsection{\texorpdfstring{PrevState}{PrevState}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_ab3a8f4699b86c2d42677bce8568d1635} 
+Keyboard\+State Crab\+UI.\+CUIInput.\+Keyboard\+Input.\+Prev\+State\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_input_8_keyboard_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_c_u_i_input_8_keyboard_8cs_source}{CUIInput.\+Keyboard.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_a42a9da1482d2c9d92c5bd003f70c3f91}\index{CrabUI.CUIInput.KeyboardInput@{CrabUI.CUIInput.KeyboardInput}!SomethingHappened@{SomethingHappened}}
+\index{SomethingHappened@{SomethingHappened}!CrabUI.CUIInput.KeyboardInput@{CrabUI.CUIInput.KeyboardInput}}
+\doxysubsubsection{\texorpdfstring{SomethingHappened}{SomethingHappened}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_a42a9da1482d2c9d92c5bd003f70c3f91} 
+bool Crab\+UI.\+CUIInput.\+Keyboard\+Input.\+Something\+Happened\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_input_8_keyboard_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_c_u_i_input_8_keyboard_8cs_source}{CUIInput.\+Keyboard.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_a17dd960b35e00d97bd3a2c81d3bac73c}\index{CrabUI.CUIInput.KeyboardInput@{CrabUI.CUIInput.KeyboardInput}!State@{State}}
+\index{State@{State}!CrabUI.CUIInput.KeyboardInput@{CrabUI.CUIInput.KeyboardInput}}
+\doxysubsubsection{\texorpdfstring{State}{State}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_a17dd960b35e00d97bd3a2c81d3bac73c} 
+Keyboard\+State Crab\+UI.\+CUIInput.\+Keyboard\+Input.\+State\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_input_8_keyboard_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_c_u_i_input_8_keyboard_8cs_source}{CUIInput.\+Keyboard.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_aa55a5455942f9a90a5566c1fe5f8305b}\index{CrabUI.CUIInput.KeyboardInput@{CrabUI.CUIInput.KeyboardInput}!TextInputEvents@{TextInputEvents}}
+\index{TextInputEvents@{TextInputEvents}!CrabUI.CUIInput.KeyboardInput@{CrabUI.CUIInput.KeyboardInput}}
+\doxysubsubsection{\texorpdfstring{TextInputEvents}{TextInputEvents}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input_aa55a5455942f9a90a5566c1fe5f8305b} 
+Text\+Input\+Event\+Args \+[$\,$]\+ Crab\+UI.\+CUIInput.\+Keyboard\+Input.\+Text\+Input\+Events = \+[$\,$]\+\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_input_8_keyboard_8cs_source_l00032}{32}} of file \doxymbox{\hyperlink{_c_u_i_input_8_keyboard_8cs_source}{CUIInput.\+Keyboard.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}\ =\ [];}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+CUIInput/\+CUIInput.\+Keyboard.\+cs\end{DoxyCompactItemize}

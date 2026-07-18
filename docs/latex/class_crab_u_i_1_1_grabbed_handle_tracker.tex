@@ -1,0 +1,203 @@
+\doxysection{Crab\+UI.\+Grabbed\+Handle\+Tracker Class Reference}
+\hypertarget{class_crab_u_i_1_1_grabbed_handle_tracker}{}\label{class_crab_u_i_1_1_grabbed_handle_tracker}\index{CrabUI.GrabbedHandleTracker@{CrabUI.GrabbedHandleTracker}}
+Inheritance diagram for Crab\+UI.\+Grabbed\+Handle\+Tracker:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_1_1_grabbed_handle_tracker}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_grabbed_handle_tracker_ad60b2fa01669a0ce34b1892ef0a70533}{Try\+Grab}} (object handle)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_grabbed_handle_tracker_a4782103e7b8bcce2e5e1bbea7825b5ec}{Release}} (object handle)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Debug\+Relay \doxymbox{\hyperlink{class_crab_u_i_1_1_grabbed_handle_tracker_ab5b9e302c5d6b30d0c74971d7e6460fb}{Debug\+Relay}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_node}{Debug\+Node}}$<$ object $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_grabbed_handle_tracker_a8f30a39f800244a2cb5bc76dd828aa52}{Debug\+\_\+\+Handle\+Grabbed}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_node}{Debug\+Node}}$<$ object $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_grabbed_handle_tracker_a83aa221352af551080fefe5095f29aa0}{Debug\+\_\+\+Handle\+Released}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+object \doxymbox{\hyperlink{class_crab_u_i_1_1_grabbed_handle_tracker_a94821ad27d1504219d73de0009c7fb6c}{Grabbed\+Handle}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_grabbed_handle_tracker_ad6262273afaa1b112f1e51b1484ce09e}{Something\+Grabbed}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_grabbed_handle_tracker_8cs_source_l00013}{13}} of file \doxymbox{\hyperlink{_grabbed_handle_tracker_8cs_source}{Grabbed\+Handle\+Tracker.\+cs}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_crab_u_i_1_1_grabbed_handle_tracker_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_crab_u_i_1_1_grabbed_handle_tracker_a22d06aa1a1f8b0ceb88d8b1fa8d878d8}\index{CrabUI.GrabbedHandleTracker@{CrabUI.GrabbedHandleTracker}!GrabbedHandleTracker@{GrabbedHandleTracker}}
+\index{GrabbedHandleTracker@{GrabbedHandleTracker}!CrabUI.GrabbedHandleTracker@{CrabUI.GrabbedHandleTracker}}
+\doxysubsubsection{\texorpdfstring{GrabbedHandleTracker()}{GrabbedHandleTracker()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_grabbed_handle_tracker_a22d06aa1a1f8b0ceb88d8b1fa8d878d8} 
+Crab\+UI.\+Grabbed\+Handle\+Tracker.\+Grabbed\+Handle\+Tracker (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_grabbed_handle_tracker_8cs_source_l00051}{51}} of file \doxymbox{\hyperlink{_grabbed_handle_tracker_8cs_source}{Grabbed\+Handle\+Tracker.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052\ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ DebugRelay.Route(Debug\_HandleGrabbed);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ DebugRelay.Route(Debug\_HandleReleased);}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_grabbed_handle_tracker_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_grabbed_handle_tracker_a4782103e7b8bcce2e5e1bbea7825b5ec}\index{CrabUI.GrabbedHandleTracker@{CrabUI.GrabbedHandleTracker}!Release@{Release}}
+\index{Release@{Release}!CrabUI.GrabbedHandleTracker@{CrabUI.GrabbedHandleTracker}}
+\doxysubsubsection{\texorpdfstring{Release()}{Release()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_grabbed_handle_tracker_a4782103e7b8bcce2e5e1bbea7825b5ec} 
+void Crab\+UI.\+Grabbed\+Handle\+Tracker.\+Release (\begin{DoxyParamCaption}\item[{object}]{handle}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_grabbed_handle_tracker_8cs_source_l00045}{45}} of file \doxymbox{\hyperlink{_grabbed_handle_tracker_8cs_source}{Grabbed\+Handle\+Tracker.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ GrabbedHandle\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ Debug\_HandleReleased.Send(handle);}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_grabbed_handle_tracker_ad60b2fa01669a0ce34b1892ef0a70533}\index{CrabUI.GrabbedHandleTracker@{CrabUI.GrabbedHandleTracker}!TryGrab@{TryGrab}}
+\index{TryGrab@{TryGrab}!CrabUI.GrabbedHandleTracker@{CrabUI.GrabbedHandleTracker}}
+\doxysubsubsection{\texorpdfstring{TryGrab()}{TryGrab()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_grabbed_handle_tracker_ad60b2fa01669a0ce34b1892ef0a70533} 
+bool Crab\+UI.\+Grabbed\+Handle\+Tracker.\+Try\+Grab (\begin{DoxyParamCaption}\item[{object}]{handle}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_grabbed_handle_tracker_8cs_source_l00031}{31}} of file \doxymbox{\hyperlink{_grabbed_handle_tracker_8cs_source}{Grabbed\+Handle\+Tracker.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (GrabbedHandle\ is\ not\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ GrabbedHandle\ =\ handle;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ Debug\_HandleGrabbed.Send(handle);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_grabbed_handle_tracker_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_grabbed_handle_tracker_a8f30a39f800244a2cb5bc76dd828aa52}\index{CrabUI.GrabbedHandleTracker@{CrabUI.GrabbedHandleTracker}!Debug\_HandleGrabbed@{Debug\_HandleGrabbed}}
+\index{Debug\_HandleGrabbed@{Debug\_HandleGrabbed}!CrabUI.GrabbedHandleTracker@{CrabUI.GrabbedHandleTracker}}
+\doxysubsubsection{\texorpdfstring{Debug\_HandleGrabbed}{Debug\_HandleGrabbed}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_grabbed_handle_tracker_a8f30a39f800244a2cb5bc76dd828aa52} 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_node}{Debug\+Node}}$<$object$>$ Crab\+UI.\+Grabbed\+Handle\+Tracker.\+Debug\+\_\+\+Handle\+Grabbed\hspace{0.3cm}{\ttfamily [get]}}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{new}(}
+\DoxyCodeLine{\ \ \ \ \ \ DebugCategory.HandleGrab,\ CUI.DebugHub,}
+\DoxyCodeLine{\ \ \ \ \ \ (handle)\ =>\ \$\textcolor{stringliteral}{"{}\{handle.GetType().Name\}\ on\ \{(handle\ as\ IAware).HostComponent\}\ Grabbed"{}}}
+\DoxyCodeLine{\ \ \ \ )}
+
+\end{DoxyCode}
+
+
+Definition at line \doxymbox{\hyperlink{_grabbed_handle_tracker_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_grabbed_handle_tracker_8cs_source}{Grabbed\+Handle\+Tracker.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}(}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_grabbed_handle_tracker_a83aa221352af551080fefe5095f29aa0}\index{CrabUI.GrabbedHandleTracker@{CrabUI.GrabbedHandleTracker}!Debug\_HandleReleased@{Debug\_HandleReleased}}
+\index{Debug\_HandleReleased@{Debug\_HandleReleased}!CrabUI.GrabbedHandleTracker@{CrabUI.GrabbedHandleTracker}}
+\doxysubsubsection{\texorpdfstring{Debug\_HandleReleased}{Debug\_HandleReleased}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_grabbed_handle_tracker_a83aa221352af551080fefe5095f29aa0} 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_node}{Debug\+Node}}$<$object$>$ Crab\+UI.\+Grabbed\+Handle\+Tracker.\+Debug\+\_\+\+Handle\+Released\hspace{0.3cm}{\ttfamily [get]}}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{new}(}
+\DoxyCodeLine{\ \ \ \ \ \ DebugCategory.HandleGrab,\ CUI.DebugHub,}
+\DoxyCodeLine{\ \ \ \ \ \ (handle)\ =>\ \$\textcolor{stringliteral}{"{}\{handle.GetType().Name\}\ on\ \{(handle\ as\ IAware).HostComponent\}\ Released"{}}}
+\DoxyCodeLine{\ \ \ \ )}
+
+\end{DoxyCode}
+
+
+Definition at line \doxymbox{\hyperlink{_grabbed_handle_tracker_8cs_source_l00022}{22}} of file \doxymbox{\hyperlink{_grabbed_handle_tracker_8cs_source}{Grabbed\+Handle\+Tracker.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}(}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_grabbed_handle_tracker_ab5b9e302c5d6b30d0c74971d7e6460fb}\index{CrabUI.GrabbedHandleTracker@{CrabUI.GrabbedHandleTracker}!DebugRelay@{DebugRelay}}
+\index{DebugRelay@{DebugRelay}!CrabUI.GrabbedHandleTracker@{CrabUI.GrabbedHandleTracker}}
+\doxysubsubsection{\texorpdfstring{DebugRelay}{DebugRelay}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_grabbed_handle_tracker_ab5b9e302c5d6b30d0c74971d7e6460fb} 
+Debug\+Relay Crab\+UI.\+Grabbed\+Handle\+Tracker.\+Debug\+Relay = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_grabbed_handle_tracker_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_grabbed_handle_tracker_8cs_source}{Grabbed\+Handle\+Tracker.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_grabbed_handle_tracker_a94821ad27d1504219d73de0009c7fb6c}\index{CrabUI.GrabbedHandleTracker@{CrabUI.GrabbedHandleTracker}!GrabbedHandle@{GrabbedHandle}}
+\index{GrabbedHandle@{GrabbedHandle}!CrabUI.GrabbedHandleTracker@{CrabUI.GrabbedHandleTracker}}
+\doxysubsubsection{\texorpdfstring{GrabbedHandle}{GrabbedHandle}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_grabbed_handle_tracker_a94821ad27d1504219d73de0009c7fb6c} 
+object Crab\+UI.\+Grabbed\+Handle\+Tracker.\+Grabbed\+Handle\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_grabbed_handle_tracker_8cs_source_l00027}{27}} of file \doxymbox{\hyperlink{_grabbed_handle_tracker_8cs_source}{Grabbed\+Handle\+Tracker.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_grabbed_handle_tracker_ad6262273afaa1b112f1e51b1484ce09e}\index{CrabUI.GrabbedHandleTracker@{CrabUI.GrabbedHandleTracker}!SomethingGrabbed@{SomethingGrabbed}}
+\index{SomethingGrabbed@{SomethingGrabbed}!CrabUI.GrabbedHandleTracker@{CrabUI.GrabbedHandleTracker}}
+\doxysubsubsection{\texorpdfstring{SomethingGrabbed}{SomethingGrabbed}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_grabbed_handle_tracker_ad6262273afaa1b112f1e51b1484ce09e} 
+bool Crab\+UI.\+Grabbed\+Handle\+Tracker.\+Something\+Grabbed\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_grabbed_handle_tracker_8cs_source_l00028}{28}} of file \doxymbox{\hyperlink{_grabbed_handle_tracker_8cs_source}{Grabbed\+Handle\+Tracker.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Components/\+\+CUIMain\+Component/\+\+Modules/\+Grabbed\+Handle\+Tracker.\+cs\end{DoxyCompactItemize}

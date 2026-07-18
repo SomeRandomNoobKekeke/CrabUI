@@ -1,0 +1,99 @@
+\doxysection{CUILibs.\+Read\+Only\+List\+Proxy\+\_\+\+IRead\+Only\+ListT\texorpdfstring{$<$}{<} TSource, TResult \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_c_u_i_libs_1_1_read_only_list_proxy___i_read_only_list_t-2-g}{}\label{class_c_u_i_libs_1_1_read_only_list_proxy___i_read_only_list_t-2-g}\index{CUILibs.ReadOnlyListProxy\_IReadOnlyListT$<$ TSource, TResult $>$@{CUILibs.ReadOnlyListProxy\_IReadOnlyListT$<$ TSource, TResult $>$}}
+Inheritance diagram for CUILibs.\+Read\+Only\+List\+Proxy\+\_\+\+IRead\+Only\+ListT\texorpdfstring{$<$}{<} TSource, TResult \texorpdfstring{$>$}{>}:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_u_i_libs_1_1_read_only_list_proxy___i_read_only_list_t-2-g}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_read_only_list_proxy___i_read_only_list_t-2-g_a18ec9c33446f073cb2017f8d241285cc}{Read\+Only\+List\+Proxy\+\_\+\+IRead\+Only\+ListT}} (IRead\+Only\+List$<$ TSource $>$ source)
+\item 
+IEnumerable$<$ TResult $>$ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_read_only_list_proxy___i_read_only_list_t-2-g_a90f4807d04df3f76855b00cca1114706}{Enumerate}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{class_c_u_i_libs_1_1_read_only_list_proxy___i_read_only_list_t-2-g_af3b511fffabbb927b963c42835090446}{Count}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+TResult \doxymbox{\hyperlink{class_c_u_i_libs_1_1_read_only_list_proxy___i_read_only_list_t-2-g_ad4d0c625319d468c4191b9ae6e800cf9}{this\+[int index]\+}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_read_only_list_proxy___i_read_only_list_t_8cs_source_l00011}{11}} of file \doxymbox{\hyperlink{_read_only_list_proxy___i_read_only_list_t_8cs_source}{Read\+Only\+List\+Proxy\+\_\+\+IRead\+Only\+List\+T.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_c_u_i_libs_1_1_read_only_list_proxy___i_read_only_list_t-2-g_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_read_only_list_proxy___i_read_only_list_t-2-g_a90f4807d04df3f76855b00cca1114706}\index{CUILibs.ReadOnlyListProxy\_IReadOnlyListT$<$ TSource, TResult $>$@{CUILibs.ReadOnlyListProxy\_IReadOnlyListT$<$ TSource, TResult $>$}!Enumerate@{Enumerate}}
+\index{Enumerate@{Enumerate}!CUILibs.ReadOnlyListProxy\_IReadOnlyListT$<$ TSource, TResult $>$@{CUILibs.ReadOnlyListProxy\_IReadOnlyListT$<$ TSource, TResult $>$}}
+\doxysubsubsection{\texorpdfstring{Enumerate()}{Enumerate()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_read_only_list_proxy___i_read_only_list_t-2-g_a90f4807d04df3f76855b00cca1114706} 
+IEnumerable$<$ TResult $>$ CUILibs.\+Read\+Only\+List\+Proxy\+\_\+\+IRead\+Only\+ListT$<$ TSource, TResult $>$.Enumerate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_read_only_list_proxy___i_read_only_list_t_8cs_source_l00020}{20}} of file \doxymbox{\hyperlink{_read_only_list_proxy___i_read_only_list_t_8cs_source}{Read\+Only\+List\+Proxy\+\_\+\+IRead\+Only\+List\+T.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (TSource\ o\ \textcolor{keywordflow}{in}\ Source)}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ (TResult)(object)o;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_read_only_list_proxy___i_read_only_list_t-2-g_a18ec9c33446f073cb2017f8d241285cc}\index{CUILibs.ReadOnlyListProxy\_IReadOnlyListT$<$ TSource, TResult $>$@{CUILibs.ReadOnlyListProxy\_IReadOnlyListT$<$ TSource, TResult $>$}!ReadOnlyListProxy\_IReadOnlyListT@{ReadOnlyListProxy\_IReadOnlyListT}}
+\index{ReadOnlyListProxy\_IReadOnlyListT@{ReadOnlyListProxy\_IReadOnlyListT}!CUILibs.ReadOnlyListProxy\_IReadOnlyListT$<$ TSource, TResult $>$@{CUILibs.ReadOnlyListProxy\_IReadOnlyListT$<$ TSource, TResult $>$}}
+\doxysubsubsection{\texorpdfstring{ReadOnlyListProxy\_IReadOnlyListT()}{ReadOnlyListProxy\_IReadOnlyListT()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_read_only_list_proxy___i_read_only_list_t-2-g_a18ec9c33446f073cb2017f8d241285cc} 
+CUILibs.\+Read\+Only\+List\+Proxy\+\_\+\+IRead\+Only\+ListT$<$ TSource, TResult $>$.Read\+Only\+List\+Proxy\+\_\+\+IRead\+Only\+ListT (\begin{DoxyParamCaption}\item[{IRead\+Only\+List$<$ TSource $>$}]{source}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_read_only_list_proxy___i_read_only_list_t_8cs_source_l00013}{13}} of file \doxymbox{\hyperlink{_read_only_list_proxy___i_read_only_list_t_8cs_source}{Read\+Only\+List\+Proxy\+\_\+\+IRead\+Only\+List\+T.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ =>\ Source\ =\ source;}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_c_u_i_libs_1_1_read_only_list_proxy___i_read_only_list_t-2-g_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_read_only_list_proxy___i_read_only_list_t-2-g_af3b511fffabbb927b963c42835090446}\index{CUILibs.ReadOnlyListProxy\_IReadOnlyListT$<$ TSource, TResult $>$@{CUILibs.ReadOnlyListProxy\_IReadOnlyListT$<$ TSource, TResult $>$}!Count@{Count}}
+\index{Count@{Count}!CUILibs.ReadOnlyListProxy\_IReadOnlyListT$<$ TSource, TResult $>$@{CUILibs.ReadOnlyListProxy\_IReadOnlyListT$<$ TSource, TResult $>$}}
+\doxysubsubsection{\texorpdfstring{Count}{Count}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_read_only_list_proxy___i_read_only_list_t-2-g_af3b511fffabbb927b963c42835090446} 
+int CUILibs.\+Read\+Only\+List\+Proxy\+\_\+\+IRead\+Only\+ListT$<$ TSource, TResult $>$.Count\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_read_only_list_proxy___i_read_only_list_t_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_read_only_list_proxy___i_read_only_list_t_8cs_source}{Read\+Only\+List\+Proxy\+\_\+\+IRead\+Only\+List\+T.\+cs}}.
+
+\Hypertarget{class_c_u_i_libs_1_1_read_only_list_proxy___i_read_only_list_t-2-g_ad4d0c625319d468c4191b9ae6e800cf9}\index{CUILibs.ReadOnlyListProxy\_IReadOnlyListT$<$ TSource, TResult $>$@{CUILibs.ReadOnlyListProxy\_IReadOnlyListT$<$ TSource, TResult $>$}!this\+[int index]\+@{this[int index]}}
+\index{this\+[int index]\+@{this[int index]}!CUILibs.ReadOnlyListProxy\_IReadOnlyListT$<$ TSource, TResult $>$@{CUILibs.ReadOnlyListProxy\_IReadOnlyListT$<$ TSource, TResult $>$}}
+\doxysubsubsection{\texorpdfstring{this[int index]}{this[int index]}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_read_only_list_proxy___i_read_only_list_t-2-g_ad4d0c625319d468c4191b9ae6e800cf9} 
+TResult CUILibs.\+Read\+Only\+List\+Proxy\+\_\+\+IRead\+Only\+ListT$<$ TSource, TResult $>$.this\+[int index]\+\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_read_only_list_proxy___i_read_only_list_t_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_read_only_list_proxy___i_read_only_list_t_8cs_source}{Read\+Only\+List\+Proxy\+\_\+\+IRead\+Only\+List\+T.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+Libs/\+\+List\+Proxy/\+\+Simple\+Cast/\+Read\+Only\+List\+Proxy\+\_\+\+IRead\+Only\+List\+T.\+cs\end{DoxyCompactItemize}

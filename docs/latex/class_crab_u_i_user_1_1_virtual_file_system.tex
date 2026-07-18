@@ -1,0 +1,199 @@
+\doxysection{Crab\+UIUser.\+Virtual\+File\+System Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_virtual_file_system}{}\label{class_crab_u_i_user_1_1_virtual_file_system}\index{CrabUIUser.VirtualFileSystem@{CrabUIUser.VirtualFileSystem}}
+Inheritance diagram for Crab\+UIUser.\+Virtual\+File\+System:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_virtual_file_system}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_virtual_file_system_a73f999dd6ee796ae7d7be2b2f8e2b259}{Save\+XDoc}} (XDocument x\+Doc, string path)
+\item 
+XDocument \doxymbox{\hyperlink{class_crab_u_i_user_1_1_virtual_file_system_af2a1753a1ceda3470d5198092b883602}{Load\+XDoc}} (string path)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_virtual_file_system_ab30379ebb8517c099cb304954cb013ef}{Write}} (string data, string path)
+\item 
+string \doxymbox{\hyperlink{class_crab_u_i_user_1_1_virtual_file_system_af534ccaec8815d036d3ef1e0f4c2571a}{Read}} (string path)
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_user_1_1_virtual_file_system_aa4f4ffdc3515e6355144868f946dacd7}{Exist}} (string path)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_virtual_file_system_af7c69be47fc2fcef3ab942ac919396c1}{Delete}} (string path)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_virtual_file_system_a325d71ff6fd1294a40cfe65446fd8fa5}{Clear}} ()
+\item 
+override string \doxymbox{\hyperlink{class_crab_u_i_user_1_1_virtual_file_system_ac399cba5f6f927023b678d69c22a02be}{To\+String}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Dictionary$<$ string, string $>$ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_virtual_file_system_a1799efc9fc24dd1a97a31a0e95e9eb64}{Files}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_virtual_file_system_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_virtual_file_system_8cs_source}{Virtual\+File\+System.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_virtual_file_system_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_virtual_file_system_a325d71ff6fd1294a40cfe65446fd8fa5}\index{CrabUIUser.VirtualFileSystem@{CrabUIUser.VirtualFileSystem}!Clear@{Clear}}
+\index{Clear@{Clear}!CrabUIUser.VirtualFileSystem@{CrabUIUser.VirtualFileSystem}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_virtual_file_system_a325d71ff6fd1294a40cfe65446fd8fa5} 
+void Crab\+UIUser.\+Virtual\+File\+System.\+Clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_virtual_file_system_8cs_source_l00030}{30}} of file \doxymbox{\hyperlink{_virtual_file_system_8cs_source}{Virtual\+File\+System.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ =>\ Files.Clear();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_virtual_file_system_af7c69be47fc2fcef3ab942ac919396c1}\index{CrabUIUser.VirtualFileSystem@{CrabUIUser.VirtualFileSystem}!Delete@{Delete}}
+\index{Delete@{Delete}!CrabUIUser.VirtualFileSystem@{CrabUIUser.VirtualFileSystem}}
+\doxysubsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_virtual_file_system_af7c69be47fc2fcef3ab942ac919396c1} 
+void Crab\+UIUser.\+Virtual\+File\+System.\+Delete (\begin{DoxyParamCaption}\item[{string}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_virtual_file_system_8cs_source_l00029}{29}} of file \doxymbox{\hyperlink{_virtual_file_system_8cs_source}{Virtual\+File\+System.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ =>\ Files.Remove(path);}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_virtual_file_system_aa4f4ffdc3515e6355144868f946dacd7}\index{CrabUIUser.VirtualFileSystem@{CrabUIUser.VirtualFileSystem}!Exist@{Exist}}
+\index{Exist@{Exist}!CrabUIUser.VirtualFileSystem@{CrabUIUser.VirtualFileSystem}}
+\doxysubsubsection{\texorpdfstring{Exist()}{Exist()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_virtual_file_system_aa4f4ffdc3515e6355144868f946dacd7} 
+bool Crab\+UIUser.\+Virtual\+File\+System.\+Exist (\begin{DoxyParamCaption}\item[{string}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_virtual_file_system_8cs_source_l00028}{28}} of file \doxymbox{\hyperlink{_virtual_file_system_8cs_source}{Virtual\+File\+System.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ =>\ Files.ContainsKey(path);}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_virtual_file_system_af2a1753a1ceda3470d5198092b883602}\index{CrabUIUser.VirtualFileSystem@{CrabUIUser.VirtualFileSystem}!LoadXDoc@{LoadXDoc}}
+\index{LoadXDoc@{LoadXDoc}!CrabUIUser.VirtualFileSystem@{CrabUIUser.VirtualFileSystem}}
+\doxysubsubsection{\texorpdfstring{LoadXDoc()}{LoadXDoc()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_virtual_file_system_af2a1753a1ceda3470d5198092b883602} 
+XDocument Crab\+UIUser.\+Virtual\+File\+System.\+Load\+XDoc (\begin{DoxyParamCaption}\item[{string}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_core_1_1_c_u_i_core_i_o_handle}{Crab\+UI.\+CUICore.\+CUICore\+IOHandle}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_virtual_file_system_8cs_source_l00024}{24}} of file \doxymbox{\hyperlink{_virtual_file_system_8cs_source}{Virtual\+File\+System.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ =>\ XDocument.Parse(Files[path]);}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_virtual_file_system_af534ccaec8815d036d3ef1e0f4c2571a}\index{CrabUIUser.VirtualFileSystem@{CrabUIUser.VirtualFileSystem}!Read@{Read}}
+\index{Read@{Read}!CrabUIUser.VirtualFileSystem@{CrabUIUser.VirtualFileSystem}}
+\doxysubsubsection{\texorpdfstring{Read()}{Read()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_virtual_file_system_af534ccaec8815d036d3ef1e0f4c2571a} 
+string Crab\+UIUser.\+Virtual\+File\+System.\+Read (\begin{DoxyParamCaption}\item[{string}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_virtual_file_system_8cs_source_l00027}{27}} of file \doxymbox{\hyperlink{_virtual_file_system_8cs_source}{Virtual\+File\+System.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ =>\ Files[path];}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_virtual_file_system_a73f999dd6ee796ae7d7be2b2f8e2b259}\index{CrabUIUser.VirtualFileSystem@{CrabUIUser.VirtualFileSystem}!SaveXDoc@{SaveXDoc}}
+\index{SaveXDoc@{SaveXDoc}!CrabUIUser.VirtualFileSystem@{CrabUIUser.VirtualFileSystem}}
+\doxysubsubsection{\texorpdfstring{SaveXDoc()}{SaveXDoc()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_virtual_file_system_a73f999dd6ee796ae7d7be2b2f8e2b259} 
+void Crab\+UIUser.\+Virtual\+File\+System.\+Save\+XDoc (\begin{DoxyParamCaption}\item[{XDocument}]{x\+Doc}{, }\item[{string}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_core_1_1_c_u_i_core_i_o_handle}{Crab\+UI.\+CUICore.\+CUICore\+IOHandle}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_virtual_file_system_8cs_source_l00023}{23}} of file \doxymbox{\hyperlink{_virtual_file_system_8cs_source}{Virtual\+File\+System.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ =>\ Files[path]\ =\ xDoc.ToString();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_virtual_file_system_ac399cba5f6f927023b678d69c22a02be}\index{CrabUIUser.VirtualFileSystem@{CrabUIUser.VirtualFileSystem}!ToString@{ToString}}
+\index{ToString@{ToString}!CrabUIUser.VirtualFileSystem@{CrabUIUser.VirtualFileSystem}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_virtual_file_system_ac399cba5f6f927023b678d69c22a02be} 
+override string Crab\+UIUser.\+Virtual\+File\+System.\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_virtual_file_system_8cs_source_l00032}{32}} of file \doxymbox{\hyperlink{_virtual_file_system_8cs_source}{Virtual\+File\+System.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033\ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Logger.Wrap.IDictionary(Files);}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_virtual_file_system_ab30379ebb8517c099cb304954cb013ef}\index{CrabUIUser.VirtualFileSystem@{CrabUIUser.VirtualFileSystem}!Write@{Write}}
+\index{Write@{Write}!CrabUIUser.VirtualFileSystem@{CrabUIUser.VirtualFileSystem}}
+\doxysubsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_virtual_file_system_ab30379ebb8517c099cb304954cb013ef} 
+void Crab\+UIUser.\+Virtual\+File\+System.\+Write (\begin{DoxyParamCaption}\item[{string}]{data}{, }\item[{string}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_virtual_file_system_8cs_source_l00026}{26}} of file \doxymbox{\hyperlink{_virtual_file_system_8cs_source}{Virtual\+File\+System.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ =>\ Files[path]\ =\ data;}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_user_1_1_virtual_file_system_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_virtual_file_system_a1799efc9fc24dd1a97a31a0e95e9eb64}\index{CrabUIUser.VirtualFileSystem@{CrabUIUser.VirtualFileSystem}!Files@{Files}}
+\index{Files@{Files}!CrabUIUser.VirtualFileSystem@{CrabUIUser.VirtualFileSystem}}
+\doxysubsubsection{\texorpdfstring{Files}{Files}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_virtual_file_system_a1799efc9fc24dd1a97a31a0e95e9eb64} 
+Dictionary$<$string, string$>$ Crab\+UIUser.\+Virtual\+File\+System.\+Files = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_virtual_file_system_8cs_source_l00021}{21}} of file \doxymbox{\hyperlink{_virtual_file_system_8cs_source}{Virtual\+File\+System.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+CUITest/\+\+Virtual\+File\+System/\+Virtual\+File\+System.\+cs\end{DoxyCompactItemize}

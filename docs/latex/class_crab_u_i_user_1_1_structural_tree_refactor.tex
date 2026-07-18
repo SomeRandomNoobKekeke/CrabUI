@@ -1,0 +1,85 @@
+\doxysection{Crab\+UIUser.\+Structural\+Tree\+Refactor Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_structural_tree_refactor}{}\label{class_crab_u_i_user_1_1_structural_tree_refactor}\index{CrabUIUser.StructuralTreeRefactor@{CrabUIUser.StructuralTreeRefactor}}
+
+
+So i was a bit conserned if 10000 if(componend is IDrawable) checks will affect performance But it\textquotesingle{}s still faster than running empty functions, so it\textquotesingle{}s not a problem And it\textquotesingle{}s easy to refactor, also i has nothing to do with the tree.  
+
+
+Inheritance diagram for Crab\+UIUser.\+Structural\+Tree\+Refactor:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_structural_tree_refactor}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+interface \doxymbox{\hyperlink{interface_crab_u_i_user_1_1_structural_tree_refactor_1_1_i_drawable}{IDrawable}}
+\item 
+interface \doxymbox{\hyperlink{interface_crab_u_i_user_1_1_structural_tree_refactor_1_1_i_placeable}{IPlaceable}}
+\item 
+interface \doxymbox{\hyperlink{interface_crab_u_i_user_1_1_structural_tree_refactor_1_1_i_mouse_event_consumer}{IMouse\+Event\+Consumer}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_structural_tree_refactor_1_1_structural_component}{Structural\+Component}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_structural_tree_refactor_1_1_component}{Component}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_structural_tree_refactor_1_1_structural_component2}{Structural\+Component2}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_structural_tree_refactor_1_1_master_component}{Master\+Component}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_structural_tree_refactor_aefa1827dce04ca0313c28fd56649070e}{Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Crab\+UIUser.\+Experiment}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Run} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+So i was a bit conserned if 10000 if(componend is IDrawable) checks will affect performance But it\textquotesingle{}s still faster than running empty functions, so it\textquotesingle{}s not a problem And it\textquotesingle{}s easy to refactor, also i has nothing to do with the tree. 
+
+Definition at line \doxymbox{\hyperlink{_structural_tree_refactor_8cs_source_l00020}{20}} of file \doxymbox{\hyperlink{_structural_tree_refactor_8cs_source}{Structural\+Tree\+Refactor.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_structural_tree_refactor_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_structural_tree_refactor_aefa1827dce04ca0313c28fd56649070e}\index{CrabUIUser.StructuralTreeRefactor@{CrabUIUser.StructuralTreeRefactor}!Run@{Run}}
+\index{Run@{Run}!CrabUIUser.StructuralTreeRefactor@{CrabUIUser.StructuralTreeRefactor}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_structural_tree_refactor_aefa1827dce04ca0313c28fd56649070e} 
+override void Crab\+UIUser.\+Structural\+Tree\+Refactor.\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_structural_tree_refactor_8cs_source_l00114}{114}} of file \doxymbox{\hyperlink{_structural_tree_refactor_8cs_source}{Structural\+Tree\+Refactor.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00115\ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ MasterComponent\ Master\ =\ \textcolor{keyword}{new}\ MasterComponent();}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ Component\ componentA\ =\ \textcolor{keyword}{new}(\textcolor{stringliteral}{"{}componentA"{}});}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ Component\ componentB\ =\ \textcolor{keyword}{new}(\textcolor{stringliteral}{"{}componentB"{}});}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ Component\ componentC\ =\ \textcolor{keyword}{new}(\textcolor{stringliteral}{"{}componentC"{}});}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ Master.Children.Add(componentA);}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ componentA.Children.Add(componentB);}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ componentB.Children.Add(componentC);}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \ \ Master.Update();}
+\DoxyCodeLine{00128\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Design/\+Structural\+Tree\+Refactor.\+cs\end{DoxyCompactItemize}

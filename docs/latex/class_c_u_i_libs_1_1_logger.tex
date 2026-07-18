@@ -1,0 +1,602 @@
+\doxysection{CUILibs.\+Logger Class Reference}
+\hypertarget{class_c_u_i_libs_1_1_logger}{}\label{class_c_u_i_libs_1_1_logger}\index{CUILibs.Logger@{CUILibs.Logger}}
+Inheritance diagram for CUILibs.\+Logger:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_u_i_libs_1_1_logger}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+interface \doxymbox{\hyperlink{interface_c_u_i_libs_1_1_logger_1_1_i_serializer}{ISerializer}}
+\item 
+class \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_1_1_micro_serializer}{Micro\+Serializer}}
+\item 
+class \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_1_1_wrap}{Wrap}}
+\begin{DoxyCompactList}\small\item\em Some custom serialization methods, Tooks them from parser, some of them are garbage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_a6ff24cf58c3762cfd88b5b761daeb0d8}{Log}} (object msg1, \+[Caller\+File\+Path]\+ string source="{}"{}, \+[Caller\+Line\+Number]\+ int line\+Number=0)
+\begin{DoxyCompactList}\small\item\em Log with Log\+Color. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_a78591952e2d0191a5738067fb46c6a46}{Log}} (object msg1, object msg2, \+[Caller\+File\+Path]\+ string source="{}"{}, \+[Caller\+Line\+Number]\+ int line\+Number=0)
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_a9f1d69471383ecf71b32dd7ff670881b}{Log}} (object msg1, object msg2, object msg3, \+[Caller\+File\+Path]\+ string source="{}"{}, \+[Caller\+Line\+Number]\+ int line\+Number=0)
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_ad8ecbdf20ae0a9f2c3301ba821230d57}{Warning}} (object msg, \+[Caller\+File\+Path]\+ string source="{}"{}, \+[Caller\+Line\+Number]\+ int line\+Number=0)
+\begin{DoxyCompactList}\small\item\em Log with Warning\+Color. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_a79b61b027b723d0b46119e3f66ed0bef}{Error}} (object msg, \+[Caller\+File\+Path]\+ string source="{}"{}, \+[Caller\+Line\+Number]\+ int line\+Number=0)
+\begin{DoxyCompactList}\small\item\em Log with Error\+Color. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_af1b95cada3210f8137526dcd79c499c5}{Print}} (object msg, Color color, \+[Caller\+File\+Path]\+ string source="{}"{}, \+[Caller\+Line\+Number]\+ int line\+Number=0)
+\begin{DoxyCompactList}\small\item\em Log with Color. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_aff6b9bdb486fe9b9eb0904a9723a04f4}{Info}} (object msg, \+[Caller\+File\+Path]\+ string source="{}"{}, \+[Caller\+Line\+Number]\+ int line\+Number=0)
+\begin{DoxyCompactList}\small\item\em Log with file path. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_a9f64a28ceff0377a6dc80529bdc623e1}{Point}} (\+[Caller\+File\+Path]\+ string source="{}"{}, \+[Caller\+Line\+Number]\+ int line\+Number=0)
+\begin{DoxyCompactList}\small\item\em Print file path and line number with funny color For debuging. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_a7862972936f6ea94e042989127b3be08}{Print\+Stack\+Trace}} ()
+\begin{DoxyCompactList}\small\item\em Print stack trace For debuging. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_a945e16149102b36971071a9d85b87c43}{Log\+Vars}} (object arg1, \+[Caller\+Argument\+Expression("{}arg1"{})]\+ string exp1=null)
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_a6f9f6d80e28ee85662a319109158f75e}{Log\+Vars}} (object arg1, object arg2, \+[Caller\+Argument\+Expression("{}arg1"{})]\+ string exp1=null, \+[Caller\+Argument\+Expression("{}arg2"{})]\+ string exp2=null)
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_a39c0379df3f75483c3c68cf3365208ce}{Log\+Vars}} (object arg1, object arg2, object arg3, \+[Caller\+Argument\+Expression("{}arg1"{})]\+ string exp1=null, \+[Caller\+Argument\+Expression("{}arg2"{})]\+ string exp2=null, \+[Caller\+Argument\+Expression("{}arg3"{})]\+ string exp3=null)
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_a7727da5e11974351488cbcf6c5c7cf5a}{Log\+Vars}} (object arg1, object arg2, object arg3, object arg4, \+[Caller\+Argument\+Expression("{}arg1"{})]\+ string exp1=null, \+[Caller\+Argument\+Expression("{}arg2"{})]\+ string exp2=null, \+[Caller\+Argument\+Expression("{}arg3"{})]\+ string exp3=null, \+[Caller\+Argument\+Expression("{}arg4"{})]\+ string exp4=null)
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_a4fb3bc262fb1402526a489524c969ca1}{Log\+Vars}} (object arg1, object arg2, object arg3, object arg4, object arg5, \+[Caller\+Argument\+Expression("{}arg1"{})]\+ string exp1=null, \+[Caller\+Argument\+Expression("{}arg2"{})]\+ string exp2=null, \+[Caller\+Argument\+Expression("{}arg3"{})]\+ string exp3=null, \+[Caller\+Argument\+Expression("{}arg4"{})]\+ string exp4=null, \+[Caller\+Argument\+Expression("{}arg5"{})]\+ string exp5=null)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static string \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_a06797d9a3aada6fe8fd4af56d5c358cc}{Wrap\+In\+Color}} (object msg, string color)
+\item 
+static string \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_aee89d13feeb882a049bcb6ca755dc037}{White}} (object msg)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger}{Logger}} \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_a4c5f3f87bc57325ee50ab695d6280cca}{Default}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Color \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_ae277a77b75c8c3570d06112416574426}{Log\+Color}} = Color.\+Cyan\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+Color \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_aaf511338e1644db3c4d681897acfbf6f}{Warning\+Color}} = Color.\+Yellow\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+Color \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_a2c867de448f8b16b26dfa0da18aa10cc}{Error\+Color}} = Color.\+Red\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+Color \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_a548ea5d9de5aead49d14541524d3c3c1}{Funny\+Color}} = Color.\+Magenta\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+bool \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_ac57c44da9932d3abbca3ec3ae8dd526c}{Print\+File\+Path}} = false\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\begin{DoxyCompactList}\small\item\em Set this to true to see the source of the logs. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_a6e11fbb0ae8d5ec5ea09fc53a3b540d4}{Print\+Logs}} = true\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+bool \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_a3c4cc077b4ae2677c26de0e065181df7}{Print\+Warnings}} = true\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+bool \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_a2d54df91629bc7b68bf8f271e7e46311}{Print\+Errors}} = true\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+\doxymbox{\hyperlink{interface_c_u_i_libs_1_1_logger_1_1_i_serializer}{ISerializer}} \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_a6898b2aacba46b3a70cd09db7c9f8cc1}{Serializer}} = new \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_1_1_micro_serializer}{Micro\+Serializer}}()\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_logger_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_logger_8cs_source}{Logger.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_c_u_i_libs_1_1_logger_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_logger_a79b61b027b723d0b46119e3f66ed0bef}\index{CUILibs.Logger@{CUILibs.Logger}!Error@{Error}}
+\index{Error@{Error}!CUILibs.Logger@{CUILibs.Logger}}
+\doxysubsubsection{\texorpdfstring{Error()}{Error()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_logger_a79b61b027b723d0b46119e3f66ed0bef} 
+void CUILibs.\+Logger.\+Error (\begin{DoxyParamCaption}\item[{object}]{msg}{, }\item[{\+[\+Caller\+File\+Path]\+ string}]{source}{ = {\ttfamily "{}"{}}, }\item[{\+[\+Caller\+Line\+Number]\+ int}]{line\+Number}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
+
+
+
+Log with Error\+Color. 
+
+
+
+Definition at line \doxymbox{\hyperlink{_logger_8cs_source_l00086}{86}} of file \doxymbox{\hyperlink{_logger_8cs_source}{Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00087\ \ \ \ \ \{\ \textcolor{keywordflow}{if}\ (PrintErrors)\ Print(msg,\ ErrorColor,\ source,\ lineNumber);\ \}}
+
+\end{DoxyCode}
+
+
+References \doxymbox{\hyperlink{_logger_8cs_source_l00092}{Print()}}.
+
+\Hypertarget{class_c_u_i_libs_1_1_logger_aff6b9bdb486fe9b9eb0904a9723a04f4}\index{CUILibs.Logger@{CUILibs.Logger}!Info@{Info}}
+\index{Info@{Info}!CUILibs.Logger@{CUILibs.Logger}}
+\doxysubsubsection{\texorpdfstring{Info()}{Info()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_logger_aff6b9bdb486fe9b9eb0904a9723a04f4} 
+void CUILibs.\+Logger.\+Info (\begin{DoxyParamCaption}\item[{object}]{msg}{, }\item[{\+[\+Caller\+File\+Path]\+ string}]{source}{ = {\ttfamily "{}"{}}, }\item[{\+[\+Caller\+Line\+Number]\+ int}]{line\+Number}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
+
+
+
+Log with file path. 
+
+
+
+Definition at line \doxymbox{\hyperlink{_logger_8cs_source_l00101}{101}} of file \doxymbox{\hyperlink{_logger_8cs_source}{Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00102\ \ \ \ \ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \_PrintFilePath(LogColor\ *\ 0.8f,\ source,\ lineNumber);}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \_Print(msg,\ LogColor);}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_logger_a6ff24cf58c3762cfd88b5b761daeb0d8}\index{CUILibs.Logger@{CUILibs.Logger}!Log@{Log}}
+\index{Log@{Log}!CUILibs.Logger@{CUILibs.Logger}}
+\doxysubsubsection{\texorpdfstring{Log()}{Log()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_logger_a6ff24cf58c3762cfd88b5b761daeb0d8} 
+void CUILibs.\+Logger.\+Log (\begin{DoxyParamCaption}\item[{object}]{msg1}{, }\item[{\+[\+Caller\+File\+Path]\+ string}]{source}{ = {\ttfamily "{}"{}}, }\item[{\+[\+Caller\+Line\+Number]\+ int}]{line\+Number}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
+
+
+
+Log with Log\+Color. 
+
+
+
+Definition at line \doxymbox{\hyperlink{_logger_8cs_source_l00055}{55}} of file \doxymbox{\hyperlink{_logger_8cs_source}{Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056\ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \_Log(msg1,\ source,\ lineNumber);}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \doxymbox{\hyperlink{_logger_8cs_source_l00119}{Print\+Stack\+Trace()}}.
+
+\Hypertarget{class_c_u_i_libs_1_1_logger_a78591952e2d0191a5738067fb46c6a46}\index{CUILibs.Logger@{CUILibs.Logger}!Log@{Log}}
+\index{Log@{Log}!CUILibs.Logger@{CUILibs.Logger}}
+\doxysubsubsection{\texorpdfstring{Log()}{Log()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_logger_a78591952e2d0191a5738067fb46c6a46} 
+void CUILibs.\+Logger.\+Log (\begin{DoxyParamCaption}\item[{object}]{msg1}{, }\item[{object}]{msg2}{, }\item[{\+[\+Caller\+File\+Path]\+ string}]{source}{ = {\ttfamily "{}"{}}, }\item[{\+[\+Caller\+Line\+Number]\+ int}]{line\+Number}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_logger_8cs_source_l00059}{59}} of file \doxymbox{\hyperlink{_logger_8cs_source}{Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060\ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \_Log(msg1,\ source,\ lineNumber);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \_Log(msg2,\ source,\ lineNumber);}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_logger_a9f1d69471383ecf71b32dd7ff670881b}\index{CUILibs.Logger@{CUILibs.Logger}!Log@{Log}}
+\index{Log@{Log}!CUILibs.Logger@{CUILibs.Logger}}
+\doxysubsubsection{\texorpdfstring{Log()}{Log()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_logger_a9f1d69471383ecf71b32dd7ff670881b} 
+void CUILibs.\+Logger.\+Log (\begin{DoxyParamCaption}\item[{object}]{msg1}{, }\item[{object}]{msg2}{, }\item[{object}]{msg3}{, }\item[{\+[\+Caller\+File\+Path]\+ string}]{source}{ = {\ttfamily "{}"{}}, }\item[{\+[\+Caller\+Line\+Number]\+ int}]{line\+Number}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_logger_8cs_source_l00064}{64}} of file \doxymbox{\hyperlink{_logger_8cs_source}{Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065\ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \_Log(msg1,\ source,\ lineNumber);}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \_Log(msg2,\ source,\ lineNumber);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \_Log(msg3,\ source,\ lineNumber);}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_logger_a945e16149102b36971071a9d85b87c43}\index{CUILibs.Logger@{CUILibs.Logger}!LogVars@{LogVars}}
+\index{LogVars@{LogVars}!CUILibs.Logger@{CUILibs.Logger}}
+\doxysubsubsection{\texorpdfstring{LogVars()}{LogVars()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_logger_a945e16149102b36971071a9d85b87c43} 
+void CUILibs.\+Logger.\+Log\+Vars (\begin{DoxyParamCaption}\item[{object}]{arg1}{, }\item[{\+[\+Caller\+Argument\+Expression("{}arg1"{})]\+ string}]{exp1}{ = {\ttfamily null}}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_logger_8cs_source_l00141}{141}} of file \doxymbox{\hyperlink{_logger_8cs_source}{Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00144\ \ \ \ \ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \_Print(\$\textcolor{stringliteral}{"{}\{exp1\}:\ [\{WrapInColor(arg1,\ "{}}white\textcolor{stringliteral}{"{})\}]"{}},\ LogColor);}
+\DoxyCodeLine{00146\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_logger_a6f9f6d80e28ee85662a319109158f75e}\index{CUILibs.Logger@{CUILibs.Logger}!LogVars@{LogVars}}
+\index{LogVars@{LogVars}!CUILibs.Logger@{CUILibs.Logger}}
+\doxysubsubsection{\texorpdfstring{LogVars()}{LogVars()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_logger_a6f9f6d80e28ee85662a319109158f75e} 
+void CUILibs.\+Logger.\+Log\+Vars (\begin{DoxyParamCaption}\item[{object}]{arg1}{, }\item[{object}]{arg2}{, }\item[{\+[\+Caller\+Argument\+Expression("{}arg1"{})]\+ string}]{exp1}{ = {\ttfamily null}, }\item[{\+[\+Caller\+Argument\+Expression("{}arg2"{})]\+ string}]{exp2}{ = {\ttfamily null}}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_logger_8cs_source_l00148}{148}} of file \doxymbox{\hyperlink{_logger_8cs_source}{Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00152\ \ \ \ \ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \_Print(\$\textcolor{stringliteral}{"{}\{exp1\}:\ [\{WrapInColor(arg1,\ "{}}white\textcolor{stringliteral}{"{})\}],\ \{exp2\}:\ [\{WrapInColor(arg2,\ "{}}white\textcolor{stringliteral}{"{})\}]"{}},\ LogColor);}
+\DoxyCodeLine{00154\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_logger_a39c0379df3f75483c3c68cf3365208ce}\index{CUILibs.Logger@{CUILibs.Logger}!LogVars@{LogVars}}
+\index{LogVars@{LogVars}!CUILibs.Logger@{CUILibs.Logger}}
+\doxysubsubsection{\texorpdfstring{LogVars()}{LogVars()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_logger_a39c0379df3f75483c3c68cf3365208ce} 
+void CUILibs.\+Logger.\+Log\+Vars (\begin{DoxyParamCaption}\item[{object}]{arg1}{, }\item[{object}]{arg2}{, }\item[{object}]{arg3}{, }\item[{\+[\+Caller\+Argument\+Expression("{}arg1"{})]\+ string}]{exp1}{ = {\ttfamily null}, }\item[{\+[\+Caller\+Argument\+Expression("{}arg2"{})]\+ string}]{exp2}{ = {\ttfamily null}, }\item[{\+[\+Caller\+Argument\+Expression("{}arg3"{})]\+ string}]{exp3}{ = {\ttfamily null}}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_logger_8cs_source_l00157}{157}} of file \doxymbox{\hyperlink{_logger_8cs_source}{Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00162\ \ \ \ \ \{}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \_Print(\$\textcolor{stringliteral}{"{}\{exp1\}:\ [\{WrapInColor(arg1,\ "{}}white\textcolor{stringliteral}{"{})\}],\ \{exp2\}:\ [\{WrapInColor(arg2,\ "{}}white\textcolor{stringliteral}{"{})\}],\ \{exp3\}:\ [\{WrapInColor(arg3,\ "{}}white\textcolor{stringliteral}{"{})\}]"{}},\ LogColor);}
+\DoxyCodeLine{00164\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_logger_a7727da5e11974351488cbcf6c5c7cf5a}\index{CUILibs.Logger@{CUILibs.Logger}!LogVars@{LogVars}}
+\index{LogVars@{LogVars}!CUILibs.Logger@{CUILibs.Logger}}
+\doxysubsubsection{\texorpdfstring{LogVars()}{LogVars()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_logger_a7727da5e11974351488cbcf6c5c7cf5a} 
+void CUILibs.\+Logger.\+Log\+Vars (\begin{DoxyParamCaption}\item[{object}]{arg1}{, }\item[{object}]{arg2}{, }\item[{object}]{arg3}{, }\item[{object}]{arg4}{, }\item[{\+[\+Caller\+Argument\+Expression("{}arg1"{})]\+ string}]{exp1}{ = {\ttfamily null}, }\item[{\+[\+Caller\+Argument\+Expression("{}arg2"{})]\+ string}]{exp2}{ = {\ttfamily null}, }\item[{\+[\+Caller\+Argument\+Expression("{}arg3"{})]\+ string}]{exp3}{ = {\ttfamily null}, }\item[{\+[\+Caller\+Argument\+Expression("{}arg4"{})]\+ string}]{exp4}{ = {\ttfamily null}}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_logger_8cs_source_l00166}{166}} of file \doxymbox{\hyperlink{_logger_8cs_source}{Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00172\ \ \ \ \ \{}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \_Print(\$\textcolor{stringliteral}{"{}\{exp1\}:\ [\{WrapInColor(arg1,\ "{}}white\textcolor{stringliteral}{"{})\}],\ \{exp2\}:\ [\{WrapInColor(arg2,\ "{}}white\textcolor{stringliteral}{"{})\}],\ \{exp3\}:\ [\{WrapInColor(arg3,\ "{}}white\textcolor{stringliteral}{"{})\}],\ \{exp4\}:\ [\{WrapInColor(arg4,\ "{}}white\textcolor{stringliteral}{"{})\}]"{}},\ LogColor);}
+\DoxyCodeLine{00174\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_logger_a4fb3bc262fb1402526a489524c969ca1}\index{CUILibs.Logger@{CUILibs.Logger}!LogVars@{LogVars}}
+\index{LogVars@{LogVars}!CUILibs.Logger@{CUILibs.Logger}}
+\doxysubsubsection{\texorpdfstring{LogVars()}{LogVars()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_logger_a4fb3bc262fb1402526a489524c969ca1} 
+void CUILibs.\+Logger.\+Log\+Vars (\begin{DoxyParamCaption}\item[{object}]{arg1}{, }\item[{object}]{arg2}{, }\item[{object}]{arg3}{, }\item[{object}]{arg4}{, }\item[{object}]{arg5}{, }\item[{\+[\+Caller\+Argument\+Expression("{}arg1"{})]\+ string}]{exp1}{ = {\ttfamily null}, }\item[{\+[\+Caller\+Argument\+Expression("{}arg2"{})]\+ string}]{exp2}{ = {\ttfamily null}, }\item[{\+[\+Caller\+Argument\+Expression("{}arg3"{})]\+ string}]{exp3}{ = {\ttfamily null}, }\item[{\+[\+Caller\+Argument\+Expression("{}arg4"{})]\+ string}]{exp4}{ = {\ttfamily null}, }\item[{\+[\+Caller\+Argument\+Expression("{}arg5"{})]\+ string}]{exp5}{ = {\ttfamily null}}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_logger_8cs_source_l00176}{176}} of file \doxymbox{\hyperlink{_logger_8cs_source}{Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00183\ \ \ \ \ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \_Print(\$\textcolor{stringliteral}{"{}\{exp1\}:\ [\{WrapInColor(arg1,\ "{}}white\textcolor{stringliteral}{"{})\}],\ \{exp2\}:\ [\{WrapInColor(arg2,\ "{}}white\textcolor{stringliteral}{"{})\}],\ \{exp3\}:\ [\{WrapInColor(arg3,\ "{}}white\textcolor{stringliteral}{"{})\}],\ \{exp4\}:\ [\{WrapInColor(arg4,\ "{}}white\textcolor{stringliteral}{"{})\}],\ \{exp5\}:\ [\{WrapInColor(arg5,\ "{}}white\textcolor{stringliteral}{"{})\}]"{}},\ LogColor);}
+\DoxyCodeLine{00185\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_logger_a9f64a28ceff0377a6dc80529bdc623e1}\index{CUILibs.Logger@{CUILibs.Logger}!Point@{Point}}
+\index{Point@{Point}!CUILibs.Logger@{CUILibs.Logger}}
+\doxysubsubsection{\texorpdfstring{Point()}{Point()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_logger_a9f64a28ceff0377a6dc80529bdc623e1} 
+void CUILibs.\+Logger.\+Point (\begin{DoxyParamCaption}\item[{\+[\+Caller\+File\+Path]\+ string}]{source}{ = {\ttfamily "{}"{}}, }\item[{\+[\+Caller\+Line\+Number]\+ int}]{line\+Number}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
+
+
+
+Print file path and line number with funny color For debuging. 
+
+
+
+Definition at line \doxymbox{\hyperlink{_logger_8cs_source_l00111}{111}} of file \doxymbox{\hyperlink{_logger_8cs_source}{Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ =>\ \_PrintFilePath(FunnyColor,\ source,\ lineNumber);}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_logger_af1b95cada3210f8137526dcd79c499c5}\index{CUILibs.Logger@{CUILibs.Logger}!Print@{Print}}
+\index{Print@{Print}!CUILibs.Logger@{CUILibs.Logger}}
+\doxysubsubsection{\texorpdfstring{Print()}{Print()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_logger_af1b95cada3210f8137526dcd79c499c5} 
+void CUILibs.\+Logger.\+Print (\begin{DoxyParamCaption}\item[{object}]{msg}{, }\item[{Color}]{color}{, }\item[{\+[\+Caller\+File\+Path]\+ string}]{source}{ = {\ttfamily "{}"{}}, }\item[{\+[\+Caller\+Line\+Number]\+ int}]{line\+Number}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
+
+
+
+Log with Color. 
+
+
+
+Definition at line \doxymbox{\hyperlink{_logger_8cs_source_l00092}{92}} of file \doxymbox{\hyperlink{_logger_8cs_source}{Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00093\ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (PrintFilePath)\ \_PrintFilePath(color\ *\ 0.8f,\ source,\ lineNumber);}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \_Print(msg,\ color);}
+\DoxyCodeLine{00096\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \doxymbox{\hyperlink{_logger_8cs_source_l00044}{Print\+File\+Path}}.
+
+
+
+Referenced by \doxymbox{\hyperlink{_logger_8cs_source_l00086}{Error()}}, and \doxymbox{\hyperlink{_logger_8cs_source_l00080}{Warning()}}.
+
+\Hypertarget{class_c_u_i_libs_1_1_logger_a7862972936f6ea94e042989127b3be08}\index{CUILibs.Logger@{CUILibs.Logger}!PrintStackTrace@{PrintStackTrace}}
+\index{PrintStackTrace@{PrintStackTrace}!CUILibs.Logger@{CUILibs.Logger}}
+\doxysubsubsection{\texorpdfstring{PrintStackTrace()}{PrintStackTrace()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_logger_a7862972936f6ea94e042989127b3be08} 
+void CUILibs.\+Logger.\+Print\+Stack\+Trace (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Print stack trace For debuging. 
+
+
+
+Definition at line \doxymbox{\hyperlink{_logger_8cs_source_l00119}{119}} of file \doxymbox{\hyperlink{_logger_8cs_source}{Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00120\ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ StackTrace\ st\ =\ \textcolor{keyword}{new}\ StackTrace(\textcolor{keyword}{true});}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ st.FrameCount;\ i++)}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ StackFrame\ sf\ =\ st.GetFrame(i);}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ Log(\$\textcolor{stringliteral}{"{}-\/>\ \{sf.GetMethod().DeclaringType?.Name\}.\{sf.GetMethod()\}"{}});}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ Log(\$\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00128\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \doxymbox{\hyperlink{_logger_8cs_source_l00055}{Log()}}.
+
+\Hypertarget{class_c_u_i_libs_1_1_logger_ad8ecbdf20ae0a9f2c3301ba821230d57}\index{CUILibs.Logger@{CUILibs.Logger}!Warning@{Warning}}
+\index{Warning@{Warning}!CUILibs.Logger@{CUILibs.Logger}}
+\doxysubsubsection{\texorpdfstring{Warning()}{Warning()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_logger_ad8ecbdf20ae0a9f2c3301ba821230d57} 
+void CUILibs.\+Logger.\+Warning (\begin{DoxyParamCaption}\item[{object}]{msg}{, }\item[{\+[\+Caller\+File\+Path]\+ string}]{source}{ = {\ttfamily "{}"{}}, }\item[{\+[\+Caller\+Line\+Number]\+ int}]{line\+Number}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
+
+
+
+Log with Warning\+Color. 
+
+/\+/\+/\+ 
+
+Definition at line \doxymbox{\hyperlink{_logger_8cs_source_l00080}{80}} of file \doxymbox{\hyperlink{_logger_8cs_source}{Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081\ \ \ \ \ \{\ \textcolor{keywordflow}{if}\ (PrintWarnings)\ Print(msg,\ WarningColor,\ source,\ lineNumber);\ \}}
+
+\end{DoxyCode}
+
+
+References \doxymbox{\hyperlink{_logger_8cs_source_l00092}{Print()}}.
+
+\Hypertarget{class_c_u_i_libs_1_1_logger_aee89d13feeb882a049bcb6ca755dc037}\index{CUILibs.Logger@{CUILibs.Logger}!White@{White}}
+\index{White@{White}!CUILibs.Logger@{CUILibs.Logger}}
+\doxysubsubsection{\texorpdfstring{White()}{White()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_logger_aee89d13feeb882a049bcb6ca755dc037} 
+string CUILibs.\+Logger.\+White (\begin{DoxyParamCaption}\item[{object}]{msg}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_logger_8cs_source_l00023}{23}} of file \doxymbox{\hyperlink{_logger_8cs_source}{Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ =>\ \$\textcolor{stringliteral}{"{}‖color:white‖\{msg\}‖end‖"{}};}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_logger_a06797d9a3aada6fe8fd4af56d5c358cc}\index{CUILibs.Logger@{CUILibs.Logger}!WrapInColor@{WrapInColor}}
+\index{WrapInColor@{WrapInColor}!CUILibs.Logger@{CUILibs.Logger}}
+\doxysubsubsection{\texorpdfstring{WrapInColor()}{WrapInColor()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_logger_a06797d9a3aada6fe8fd4af56d5c358cc} 
+string CUILibs.\+Logger.\+Wrap\+In\+Color (\begin{DoxyParamCaption}\item[{object}]{msg}{, }\item[{string}]{color}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_logger_8cs_source_l00022}{22}} of file \doxymbox{\hyperlink{_logger_8cs_source}{Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ =>\ \$\textcolor{stringliteral}{"{}‖color:\{color\}‖\{msg\}‖end‖"{}};}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_c_u_i_libs_1_1_logger_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_logger_a4c5f3f87bc57325ee50ab695d6280cca}\index{CUILibs.Logger@{CUILibs.Logger}!Default@{Default}}
+\index{Default@{Default}!CUILibs.Logger@{CUILibs.Logger}}
+\doxysubsubsection{\texorpdfstring{Default}{Default}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_logger_a4c5f3f87bc57325ee50ab695d6280cca} 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger}{Logger}} CUILibs.\+Logger.\+Default\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger}{Logger}}()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_ac57c44da9932d3abbca3ec3ae8dd526c}{PrintFilePath}}\ =\ \textcolor{keyword}{false},}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line \doxymbox{\hyperlink{_logger_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_logger_8cs_source}{Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ PrintFilePath\ =\ \textcolor{keyword}{false},}
+\DoxyCodeLine{00020\ \ \ \ \ \};}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_c_u_i_libs_1_1_logger_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_logger_a2c867de448f8b16b26dfa0da18aa10cc}\index{CUILibs.Logger@{CUILibs.Logger}!ErrorColor@{ErrorColor}}
+\index{ErrorColor@{ErrorColor}!CUILibs.Logger@{CUILibs.Logger}}
+\doxysubsubsection{\texorpdfstring{ErrorColor}{ErrorColor}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_logger_a2c867de448f8b16b26dfa0da18aa10cc} 
+Color CUILibs.\+Logger.\+Error\+Color = Color.\+Red\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_logger_8cs_source_l00038}{38}} of file \doxymbox{\hyperlink{_logger_8cs_source}{Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ Color.Red;}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_logger_a548ea5d9de5aead49d14541524d3c3c1}\index{CUILibs.Logger@{CUILibs.Logger}!FunnyColor@{FunnyColor}}
+\index{FunnyColor@{FunnyColor}!CUILibs.Logger@{CUILibs.Logger}}
+\doxysubsubsection{\texorpdfstring{FunnyColor}{FunnyColor}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_logger_a548ea5d9de5aead49d14541524d3c3c1} 
+Color CUILibs.\+Logger.\+Funny\+Color = Color.\+Magenta\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_logger_8cs_source_l00039}{39}} of file \doxymbox{\hyperlink{_logger_8cs_source}{Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ Color.Magenta;}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_logger_ae277a77b75c8c3570d06112416574426}\index{CUILibs.Logger@{CUILibs.Logger}!LogColor@{LogColor}}
+\index{LogColor@{LogColor}!CUILibs.Logger@{CUILibs.Logger}}
+\doxysubsubsection{\texorpdfstring{LogColor}{LogColor}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_logger_ae277a77b75c8c3570d06112416574426} 
+Color CUILibs.\+Logger.\+Log\+Color = Color.\+Cyan\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_logger_8cs_source_l00036}{36}} of file \doxymbox{\hyperlink{_logger_8cs_source}{Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ Color.Cyan;}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_logger_a2d54df91629bc7b68bf8f271e7e46311}\index{CUILibs.Logger@{CUILibs.Logger}!PrintErrors@{PrintErrors}}
+\index{PrintErrors@{PrintErrors}!CUILibs.Logger@{CUILibs.Logger}}
+\doxysubsubsection{\texorpdfstring{PrintErrors}{PrintErrors}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_logger_a2d54df91629bc7b68bf8f271e7e46311} 
+bool CUILibs.\+Logger.\+Print\+Errors = true\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_logger_8cs_source_l00047}{47}} of file \doxymbox{\hyperlink{_logger_8cs_source}{Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{true};}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_logger_ac57c44da9932d3abbca3ec3ae8dd526c}\index{CUILibs.Logger@{CUILibs.Logger}!PrintFilePath@{PrintFilePath}}
+\index{PrintFilePath@{PrintFilePath}!CUILibs.Logger@{CUILibs.Logger}}
+\doxysubsubsection{\texorpdfstring{PrintFilePath}{PrintFilePath}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_logger_ac57c44da9932d3abbca3ec3ae8dd526c} 
+bool CUILibs.\+Logger.\+Print\+File\+Path = false\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Set this to true to see the source of the logs. 
+
+
+
+Definition at line \doxymbox{\hyperlink{_logger_8cs_source_l00044}{44}} of file \doxymbox{\hyperlink{_logger_8cs_source}{Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{false};}
+
+\end{DoxyCode}
+
+
+Referenced by \doxymbox{\hyperlink{_logger_8cs_source_l00092}{Print()}}.
+
+\Hypertarget{class_c_u_i_libs_1_1_logger_a6e11fbb0ae8d5ec5ea09fc53a3b540d4}\index{CUILibs.Logger@{CUILibs.Logger}!PrintLogs@{PrintLogs}}
+\index{PrintLogs@{PrintLogs}!CUILibs.Logger@{CUILibs.Logger}}
+\doxysubsubsection{\texorpdfstring{PrintLogs}{PrintLogs}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_logger_a6e11fbb0ae8d5ec5ea09fc53a3b540d4} 
+bool CUILibs.\+Logger.\+Print\+Logs = true\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_logger_8cs_source_l00045}{45}} of file \doxymbox{\hyperlink{_logger_8cs_source}{Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{true};}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_logger_a3c4cc077b4ae2677c26de0e065181df7}\index{CUILibs.Logger@{CUILibs.Logger}!PrintWarnings@{PrintWarnings}}
+\index{PrintWarnings@{PrintWarnings}!CUILibs.Logger@{CUILibs.Logger}}
+\doxysubsubsection{\texorpdfstring{PrintWarnings}{PrintWarnings}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_logger_a3c4cc077b4ae2677c26de0e065181df7} 
+bool CUILibs.\+Logger.\+Print\+Warnings = true\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_logger_8cs_source_l00046}{46}} of file \doxymbox{\hyperlink{_logger_8cs_source}{Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{true};}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_logger_a6898b2aacba46b3a70cd09db7c9f8cc1}\index{CUILibs.Logger@{CUILibs.Logger}!Serializer@{Serializer}}
+\index{Serializer@{Serializer}!CUILibs.Logger@{CUILibs.Logger}}
+\doxysubsubsection{\texorpdfstring{Serializer}{Serializer}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_logger_a6898b2aacba46b3a70cd09db7c9f8cc1} 
+\doxymbox{\hyperlink{interface_c_u_i_libs_1_1_logger_1_1_i_serializer}{ISerializer}} CUILibs.\+Logger.\+Serializer = new \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_1_1_micro_serializer}{Micro\+Serializer}}()\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_logger_8cs_source_l00049}{49}} of file \doxymbox{\hyperlink{_logger_8cs_source}{Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00049\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}\ MicroSerializer();}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_logger_aaf511338e1644db3c4d681897acfbf6f}\index{CUILibs.Logger@{CUILibs.Logger}!WarningColor@{WarningColor}}
+\index{WarningColor@{WarningColor}!CUILibs.Logger@{CUILibs.Logger}}
+\doxysubsubsection{\texorpdfstring{WarningColor}{WarningColor}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_logger_aaf511338e1644db3c4d681897acfbf6f} 
+Color CUILibs.\+Logger.\+Warning\+Color = Color.\+Yellow\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_logger_8cs_source_l00037}{37}} of file \doxymbox{\hyperlink{_logger_8cs_source}{Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ Color.Yellow;}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+Libs/\+\+Logger/\+Logger.\+cs\item 
+Client\+Project/\+\+Client\+Source/\+\+Libs/\+\+Logger/\+Logger.\+ILogger.\+cs\end{DoxyCompactItemize}

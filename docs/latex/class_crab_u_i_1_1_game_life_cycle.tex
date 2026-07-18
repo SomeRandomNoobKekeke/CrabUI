@@ -1,0 +1,264 @@
+\doxysection{Crab\+UI.\+Game\+Life\+Cycle Class Reference}
+\hypertarget{class_crab_u_i_1_1_game_life_cycle}{}\label{class_crab_u_i_1_1_game_life_cycle}\index{CrabUI.GameLifeCycle@{CrabUI.GameLifeCycle}}
+Inheritance diagram for Crab\+UI.\+Game\+Life\+Cycle:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_1_1_game_life_cycle}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_game_life_cycle_a68f80d121aa8a7b0a20d143a6e17178a}{Connect\+To\+Game}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_game_life_cycle_af0fa38fac252357846526927c7fed66d}{Disconnect\+From\+Game}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \doxymbox{\hyperlink{class_crab_u_i_1_1_game_life_cycle_afa3f994713fca3ff521b350fb9332a8d}{Before\+GUIDraw\+Handler}} (Camera cam, Sprite\+Batch sprite\+Batch)
+\item 
+static void \doxymbox{\hyperlink{class_crab_u_i_1_1_game_life_cycle_ac6d7f32de53fef3fe340a20adeb95dee}{After\+GUIDraw\+Handler}} (Sprite\+Batch sprite\+Batch)
+\item 
+static void \doxymbox{\hyperlink{class_crab_u_i_1_1_game_life_cycle_abe57a46eb0155bbdff307448e335fd39}{Update\+Handler}} (Game\+Time game\+Time)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{class_crab_u_i_1_1_game_life_cycle}{Game\+Life\+Cycle}} \doxymbox{\hyperlink{class_crab_u_i_1_1_game_life_cycle_ab5596cde8c83c3baf21f760ad14a5b24}{Instance}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Harmony \doxymbox{\hyperlink{class_crab_u_i_1_1_game_life_cycle_a8ac751ec9235a756b961a3b32485f08d}{Harmony}} = new Harmony(\$"{}\{Mod\+Info.\+Hook\+Id\}.CUI.\+Life\+Cycle"{})\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+Action$<$ Sprite\+Batch $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_game_life_cycle_acb54bb70eec808711f3e9de18946a9e8}{Before\+GUIDraw}}\hspace{0.3cm}{\ttfamily  \+[add, remove]\+}
+\item 
+Action$<$ Sprite\+Batch $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_game_life_cycle_addcff569e6ddee704805bd8627e2a2d4}{After\+GUIDraw}}\hspace{0.3cm}{\ttfamily  \+[add, remove]\+}
+\item 
+Action$<$ Game\+Time $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_game_life_cycle_a76f83ce77b3d33d64b16470e9730daf8}{Update}}\hspace{0.3cm}{\ttfamily  \+[add, remove]\+}
+\end{DoxyCompactItemize}
+\doxysubsection*{Events inherited from \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_game_life_cycle_tracker}{Crab\+UI.\+IGame\+Life\+Cycle\+Tracker}}}
+\begin{DoxyCompactItemize}
+\item 
+Action$<$ Sprite\+Batch $>$ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_game_life_cycle_tracker_a737e45416ce1ea981bfcad78e35268a3}{Before\+GUIDraw}}
+\item 
+Action$<$ Sprite\+Batch $>$ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_game_life_cycle_tracker_afab877e86ef71bb92afee7d363b0f299}{After\+GUIDraw}}
+\item 
+Action$<$ Game\+Time $>$ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_game_life_cycle_tracker_acfceb6aac4b7d43910581c79b4197c8e}{Update}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_game_life_cycle_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_game_life_cycle_8cs_source}{Game\+Life\+Cycle.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_game_life_cycle_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_game_life_cycle_ac6d7f32de53fef3fe340a20adeb95dee}\index{CrabUI.GameLifeCycle@{CrabUI.GameLifeCycle}!AfterGUIDrawHandler@{AfterGUIDrawHandler}}
+\index{AfterGUIDrawHandler@{AfterGUIDrawHandler}!CrabUI.GameLifeCycle@{CrabUI.GameLifeCycle}}
+\doxysubsubsection{\texorpdfstring{AfterGUIDrawHandler()}{AfterGUIDrawHandler()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_game_life_cycle_ac6d7f32de53fef3fe340a20adeb95dee} 
+void Crab\+UI.\+Game\+Life\+Cycle.\+After\+GUIDraw\+Handler (\begin{DoxyParamCaption}\item[{Sprite\+Batch}]{sprite\+Batch}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_game_life_cycle_8cs_source_l00051}{51}} of file \doxymbox{\hyperlink{_game_life_cycle_8cs_source}{Game\+Life\+Cycle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052\ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ Instance?.\_AfterGUIDraw.Raise(spriteBatch);}
+\DoxyCodeLine{00054\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_game_life_cycle_afa3f994713fca3ff521b350fb9332a8d}\index{CrabUI.GameLifeCycle@{CrabUI.GameLifeCycle}!BeforeGUIDrawHandler@{BeforeGUIDrawHandler}}
+\index{BeforeGUIDrawHandler@{BeforeGUIDrawHandler}!CrabUI.GameLifeCycle@{CrabUI.GameLifeCycle}}
+\doxysubsubsection{\texorpdfstring{BeforeGUIDrawHandler()}{BeforeGUIDrawHandler()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_game_life_cycle_afa3f994713fca3ff521b350fb9332a8d} 
+void Crab\+UI.\+Game\+Life\+Cycle.\+Before\+GUIDraw\+Handler (\begin{DoxyParamCaption}\item[{Camera}]{cam}{, }\item[{Sprite\+Batch}]{sprite\+Batch}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_game_life_cycle_8cs_source_l00046}{46}} of file \doxymbox{\hyperlink{_game_life_cycle_8cs_source}{Game\+Life\+Cycle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047\ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ Instance?.\_BeforeGUIDraw.Raise(spriteBatch);}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_game_life_cycle_a68f80d121aa8a7b0a20d143a6e17178a}\index{CrabUI.GameLifeCycle@{CrabUI.GameLifeCycle}!ConnectToGame@{ConnectToGame}}
+\index{ConnectToGame@{ConnectToGame}!CrabUI.GameLifeCycle@{CrabUI.GameLifeCycle}}
+\doxysubsubsection{\texorpdfstring{ConnectToGame()}{ConnectToGame()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_game_life_cycle_a68f80d121aa8a7b0a20d143a6e17178a} 
+void Crab\+UI.\+Game\+Life\+Cycle.\+Connect\+To\+Game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_game_life_cycle_8cs_source_l00061}{61}} of file \doxymbox{\hyperlink{_game_life_cycle_8cs_source}{Game\+Life\+Cycle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00062\ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ Instance\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ Harmony.Patch(}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ original:\ typeof(GUI).GetMethod(\textcolor{stringliteral}{"{}Draw"{}}),}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ prefix:\ \textcolor{keyword}{new}\ HarmonyMethod(typeof(GameLifeCycle).GetMethod(\textcolor{stringliteral}{"{}BeforeGUIDrawHandler"{}}))}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ );}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ Harmony.Patch(}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ original:\ typeof(GUI).GetMethod(\textcolor{stringliteral}{"{}DrawCursor"{}},\ AccessTools.all),}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ prefix:\ \textcolor{keyword}{new}\ HarmonyMethod(typeof(GameLifeCycle).GetMethod(\textcolor{stringliteral}{"{}AfterGUIDrawHandler"{}}))}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ );}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ Harmony.Patch(}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ original:\ typeof(GameMain).GetMethod(\textcolor{stringliteral}{"{}Update"{}},\ AccessTools.all),}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ postfix:\ \textcolor{keyword}{new}\ HarmonyMethod(typeof(GameLifeCycle).GetMethod(\textcolor{stringliteral}{"{}UpdateHandler"{}}))}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ );}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_game_life_cycle_af0fa38fac252357846526927c7fed66d}\index{CrabUI.GameLifeCycle@{CrabUI.GameLifeCycle}!DisconnectFromGame@{DisconnectFromGame}}
+\index{DisconnectFromGame@{DisconnectFromGame}!CrabUI.GameLifeCycle@{CrabUI.GameLifeCycle}}
+\doxysubsubsection{\texorpdfstring{DisconnectFromGame()}{DisconnectFromGame()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_game_life_cycle_af0fa38fac252357846526927c7fed66d} 
+void Crab\+UI.\+Game\+Life\+Cycle.\+Disconnect\+From\+Game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_game_life_cycle_8cs_source_l00081}{81}} of file \doxymbox{\hyperlink{_game_life_cycle_8cs_source}{Game\+Life\+Cycle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00082\ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ Instance\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ Harmony.UnpatchSelf();}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_game_life_cycle_abe57a46eb0155bbdff307448e335fd39}\index{CrabUI.GameLifeCycle@{CrabUI.GameLifeCycle}!UpdateHandler@{UpdateHandler}}
+\index{UpdateHandler@{UpdateHandler}!CrabUI.GameLifeCycle@{CrabUI.GameLifeCycle}}
+\doxysubsubsection{\texorpdfstring{UpdateHandler()}{UpdateHandler()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_game_life_cycle_abe57a46eb0155bbdff307448e335fd39} 
+void Crab\+UI.\+Game\+Life\+Cycle.\+Update\+Handler (\begin{DoxyParamCaption}\item[{Game\+Time}]{game\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_game_life_cycle_8cs_source_l00056}{56}} of file \doxymbox{\hyperlink{_game_life_cycle_8cs_source}{Game\+Life\+Cycle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057\ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ Instance?.\_Update.Raise(gameTime);}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_crab_u_i_1_1_game_life_cycle_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_crab_u_i_1_1_game_life_cycle_ab5596cde8c83c3baf21f760ad14a5b24}\index{CrabUI.GameLifeCycle@{CrabUI.GameLifeCycle}!Instance@{Instance}}
+\index{Instance@{Instance}!CrabUI.GameLifeCycle@{CrabUI.GameLifeCycle}}
+\doxysubsubsection{\texorpdfstring{Instance}{Instance}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_game_life_cycle_ab5596cde8c83c3baf21f760ad14a5b24} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_game_life_cycle}{Game\+Life\+Cycle}} Crab\+UI.\+Game\+Life\+Cycle.\+Instance\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_game_life_cycle_8cs_source_l00044}{44}} of file \doxymbox{\hyperlink{_game_life_cycle_8cs_source}{Game\+Life\+Cycle.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_game_life_cycle_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_game_life_cycle_a8ac751ec9235a756b961a3b32485f08d}\index{CrabUI.GameLifeCycle@{CrabUI.GameLifeCycle}!Harmony@{Harmony}}
+\index{Harmony@{Harmony}!CrabUI.GameLifeCycle@{CrabUI.GameLifeCycle}}
+\doxysubsubsection{\texorpdfstring{Harmony}{Harmony}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_game_life_cycle_a8ac751ec9235a756b961a3b32485f08d} 
+Harmony Crab\+UI.\+Game\+Life\+Cycle.\+Harmony = new Harmony(\$"{}\{Mod\+Info.\+Hook\+Id\}.CUI.\+Life\+Cycle"{})\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_game_life_cycle_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_game_life_cycle_8cs_source}{Game\+Life\+Cycle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}\ Harmony(\$\textcolor{stringliteral}{"{}\{ModInfo.HookId\}.CUI.LifeCycle"{}});}
+
+\end{DoxyCode}
+
+
+\label{doc-event-members}
+\Hypertarget{class_crab_u_i_1_1_game_life_cycle_doc-event-members}
+\doxysubsection{Event Documentation}
+\Hypertarget{class_crab_u_i_1_1_game_life_cycle_addcff569e6ddee704805bd8627e2a2d4}\index{CrabUI.GameLifeCycle@{CrabUI.GameLifeCycle}!AfterGUIDraw@{AfterGUIDraw}}
+\index{AfterGUIDraw@{AfterGUIDraw}!CrabUI.GameLifeCycle@{CrabUI.GameLifeCycle}}
+\doxysubsubsection{\texorpdfstring{AfterGUIDraw}{AfterGUIDraw}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_game_life_cycle_addcff569e6ddee704805bd8627e2a2d4} 
+Action$<$Sprite\+Batch$>$ Crab\+UI.\+Game\+Life\+Cycle.\+After\+GUIDraw\hspace{0.3cm}{\ttfamily [add]}, {\ttfamily [remove]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_game_life_cycle_8cs_source_l00031}{31}} of file \doxymbox{\hyperlink{_game_life_cycle_8cs_source}{Game\+Life\+Cycle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ add\ =>\ \_AfterGUIDraw.Add(value);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ \_AfterGUIDraw.Remove(value);}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_game_life_cycle_acb54bb70eec808711f3e9de18946a9e8}\index{CrabUI.GameLifeCycle@{CrabUI.GameLifeCycle}!BeforeGUIDraw@{BeforeGUIDraw}}
+\index{BeforeGUIDraw@{BeforeGUIDraw}!CrabUI.GameLifeCycle@{CrabUI.GameLifeCycle}}
+\doxysubsubsection{\texorpdfstring{BeforeGUIDraw}{BeforeGUIDraw}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_game_life_cycle_acb54bb70eec808711f3e9de18946a9e8} 
+Action$<$Sprite\+Batch$>$ Crab\+UI.\+Game\+Life\+Cycle.\+Before\+GUIDraw\hspace{0.3cm}{\ttfamily [add]}, {\ttfamily [remove]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_game_life_cycle_8cs_source_l00026}{26}} of file \doxymbox{\hyperlink{_game_life_cycle_8cs_source}{Game\+Life\+Cycle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ add\ =>\ \_BeforeGUIDraw.Add(value);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ \_BeforeGUIDraw.Remove(value);}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_game_life_cycle_a76f83ce77b3d33d64b16470e9730daf8}\index{CrabUI.GameLifeCycle@{CrabUI.GameLifeCycle}!Update@{Update}}
+\index{Update@{Update}!CrabUI.GameLifeCycle@{CrabUI.GameLifeCycle}}
+\doxysubsubsection{\texorpdfstring{Update}{Update}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_game_life_cycle_a76f83ce77b3d33d64b16470e9730daf8} 
+Action$<$Game\+Time$>$ Crab\+UI.\+Game\+Life\+Cycle.\+Update\hspace{0.3cm}{\ttfamily [add]}, {\ttfamily [remove]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_game_life_cycle_8cs_source_l00036}{36}} of file \doxymbox{\hyperlink{_game_life_cycle_8cs_source}{Game\+Life\+Cycle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037\ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ add\ =>\ \_Update.Add(value);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ \_Update.Remove(value);}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Infrastructure/\+\+Data\+Sources/\+\+Game/\+Game\+Life\+Cycle.\+cs\end{DoxyCompactItemize}

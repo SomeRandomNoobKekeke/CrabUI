@@ -1,0 +1,69 @@
+\doxysection{Internal\+Protected\+Modules.\+cs}
+\hypertarget{_internal_protected_modules_8cs_source}{}\label{_internal_protected_modules_8cs_source}\index{ClientProject/InMemory/Experiments/Design/InternalProtectedModules.cs@{ClientProject/InMemory/Experiments/Design/InternalProtectedModules.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00001}00001\ \textcolor{comment}{//\ using\ System;}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00002}00002\ \textcolor{comment}{//\ using\ System.Collections.Generic;}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00003}00003\ \textcolor{comment}{//\ using\ System.Linq;}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00004}00004\ \textcolor{comment}{//\ using\ System.Reflection;}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00005}00005\ \textcolor{comment}{//\ using\ System.Diagnostics;}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00007}00007\ \textcolor{comment}{//\ using\ Microsoft.Xna.Framework;}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00009}00009\ \textcolor{comment}{//\ using\ System.Diagnostics;}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00011}00011\ \textcolor{comment}{//\ namespace\ CrabUIUser}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00012}00012\ \textcolor{comment}{//\ \{}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00014}00014\ \textcolor{comment}{//\ \ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00015}00015\ \textcolor{comment}{//\ \ \ ///\ Ok,\ so\ not\ only\ internal\ modules\ have\ access\ to\ private\ props}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00016}00016\ \textcolor{comment}{//\ \ \ ///\ But\ also\ internal\ modules\ in\ derived\ classes\ have\ access\ to\ protected\ props}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00017}00017\ \textcolor{comment}{//\ \ \ ///\ ///\ }}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00018}00018\ \textcolor{comment}{//\ \ \ ///\ Also\ throws\ since\ spring\ 2026}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00019}00019\ \textcolor{comment}{//\ \ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00020}00020\ \textcolor{comment}{//\ \ \ public\ class\ InternalProtectedModules\ :\ Experiment}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00021}00021\ \textcolor{comment}{//\ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00022}00022\ \textcolor{comment}{//\ \ \ \ \ public\ class\ HostInternals}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00023}00023\ \textcolor{comment}{//\ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00024}00024\ \textcolor{comment}{//\ \ \ \ \ \ \ public\ int\ InternalProp\ \{\ get;\ set;\ \}\ =\ 123;}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00025}00025\ \textcolor{comment}{//\ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00027}00027\ \textcolor{comment}{//\ \ \ \ \ public\ class\ Host}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00028}00028\ \textcolor{comment}{//\ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00029}00029\ \textcolor{comment}{//\ \ \ \ \ \ \ protected\ HostInternals\ Internals\ \{\ get;\ set;\ \}\ =\ new();}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00030}00030\ \textcolor{comment}{//\ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00032}00032\ \textcolor{comment}{//\ \ \ \ \ public\ class\ HostB\ :\ Host}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00033}00033\ \textcolor{comment}{//\ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00034}00034\ \textcolor{comment}{//\ \ \ \ \ \ \ public\ class\ ModuleAClass}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00035}00035\ \textcolor{comment}{//\ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00036}00036\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ public\ Host\ Host\ \{\ get;\ set;\ \}}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00037}00037\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ protected\ HostInternals\ Internals\ =>\ Host.Internals;}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00039}00039\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ public\ int\ GetInternals()\ =>\ Internals.InternalProp;}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00040}00040\ \textcolor{comment}{//\ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00042}00042\ \textcolor{comment}{//\ \ \ \ \ \ \ public\ ModuleAClass\ ModuleA\ \{\ get;\ set;\ \}\ =\ new();}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00044}00044\ \textcolor{comment}{//\ \ \ \ \ \ \ private\ void\ InjectModules()}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00045}00045\ \textcolor{comment}{//\ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00046}00046\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ ModuleA.Host\ =\ this;}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00047}00047\ \textcolor{comment}{//\ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00049}00049\ \textcolor{comment}{//\ \ \ \ \ \ \ public\ HostB()\ :\ base()}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00050}00050\ \textcolor{comment}{//\ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00051}00051\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ InjectModules();}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00052}00052\ \textcolor{comment}{//\ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00053}00053\ \textcolor{comment}{//\ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00056}00056\ \textcolor{comment}{//\ \ \ \ \ public\ override\ void\ Run()}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00057}00057\ \textcolor{comment}{//\ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00058}00058\ \textcolor{comment}{//\ \ \ \ \ \ \ HostB\ host\ =\ new\ HostB();}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00059}00059\ \textcolor{comment}{//\ \ \ \ \ \ \ Mod.Logger.Log(host.ModuleA.GetInternals());}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00061}00061\ \textcolor{comment}{//\ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00062}00062\ \textcolor{comment}{//\ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_internal_protected_modules_8cs_source_l00063}00063\ \textcolor{comment}{//\ \}}}
+
+\end{DoxyCode}

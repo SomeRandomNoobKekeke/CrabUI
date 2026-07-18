@@ -1,0 +1,108 @@
+\doxysection{Component\+Cores\+Refactor.\+cs}
+\hypertarget{_component_cores_refactor_8cs_source}{}\label{_component_cores_refactor_8cs_source}\index{ClientProject/InMemory/Experiments/Design/ComponentCoresRefactor.cs@{ClientProject/InMemory/Experiments/Design/ComponentCoresRefactor.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00010}00010\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i_user}{CrabUIUser}}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00012}00012\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00013}00013\ \textcolor{comment}{\ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00014}00014\ \textcolor{comment}{\ \ ///\ Testing\ how\ hard\ it\ is\ to\ refactor\ raw\ components\ into\ cores}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00015}00015\ \textcolor{comment}{\ \ ///\ Backward\ refactor\ is\ ctrl+x\ ctrl+v}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00016}00016\ \textcolor{comment}{\ \ ///\ Forward\ refactor\ would\ be\ trivial\ if\ there\ was\ a\ macros\ for\ prop\ mapping}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00017}00017\ \textcolor{comment}{\ \ ///\ Also\ it\ can\ be\ done\ on\ one\ component\ at\ a\ time\ }}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00018}00018\ \textcolor{comment}{\ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00019}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor}{00019}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor}{ComponentCoresRefactor}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Experiment}}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00020}00020\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00021}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_component}{00021}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_component}{Component}}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00022}00022\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00024}00024\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00026}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_square_component}{00026}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_square_component}{SquareComponent}}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00027}00027\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00028}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_square_component_1_1_component_core}{00028}}\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_square_component_1_1_component_core}{ComponentCore}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_component}{Component}}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00029}00029\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Rectangle\ Rect\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00031}00031\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00033}00033\ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{virtual}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_square_component_1_1_component_core}{ComponentCore}}\ Core\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00035}00035\ \ \ \ \ \ \ \textcolor{keyword}{public}\ Rectangle\ Rect}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00036}00036\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Core.Rect;}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ Core.Rect\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00039}00039\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00044}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_button}{00044}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_button}{Button}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_square_component}{SquareComponent}}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00045}00045\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00046}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_button_1_1_component_core}{00046}}\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_button_1_1_component_core}{ComponentCore}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_square_component}{SquareComponent}}.\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_button_1_1_component_core}{ComponentCore}}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00047}00047\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ Unexposed\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action\ OnClick;}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Click()\ =>\ OnClick?.Invoke();}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00053}00053\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00055}00055\ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{override}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_button_1_1_component_core}{ComponentCore}}\ Core\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00057}00057\ \ \ \ \ \ \ \textcolor{comment}{//\ public\ string\ Unexposed\ \{\ get;\ set;\ \}}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00059}00059\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action\ OnClick}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00060}00060\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ add\ =>\ Core.OnClick\ +=\ value;}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ Core.OnClick\ -\/=\ value;}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00063}00063\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00065}00065\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Click()\ =>\ Core.Click();}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00068}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_button_list}{00068}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_button_list}{ButtonList}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_component}{Component}}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00069}00069\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00070}00070\ \ \ \ \ \ \ \textcolor{keyword}{public}\ List<Button>\ Buttons\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00072}00072\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ AddButton(\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_button}{Button}}\ button)\ =>\ Buttons.Add(button);}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00074}00074\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ ClickAll()}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00075}00075\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_button}{Button}}\ button\ \textcolor{keywordflow}{in}\ Buttons)}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ button.Click();}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00080}00080\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00081}00081\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00083}00083\ \ \ \ \ \textcolor{comment}{//\ Works\ now}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00084}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_triangle_component}{00084}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_triangle_component}{TriangleComponent}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_component}{Component}}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00085}00085\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00086}00086\ \ \ \ \ \ \ \textcolor{keyword}{public}\ Point\ A\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00087}00087\ \ \ \ \ \ \ \textcolor{keyword}{public}\ Point\ B\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00088}00088\ \ \ \ \ \ \ \textcolor{keyword}{public}\ Point\ C\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00089}00089\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00092}00092\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ Run()}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00093}00093\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00094}00094\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_button}{Button}}\ button\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_button}{Button}}();}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00095}00095\ \ \ \ \ \ \ button.Rect\ =\ \textcolor{keyword}{new}\ Rectangle(0,\ 0,\ 100,\ 100);}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00096}00096\ \ \ \ \ \ \ button.OnClick\ +=\ ()\ =>\ \{\ \};}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00099}00099\ \ \ \ \ \ \ \textcolor{comment}{//\ button.Unexposed\ =\ "{}ay\ yay\ yay"{};}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00100}00100\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00101}00101\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_refactor_8cs_source_l00102}00102\ \}}
+
+\end{DoxyCode}

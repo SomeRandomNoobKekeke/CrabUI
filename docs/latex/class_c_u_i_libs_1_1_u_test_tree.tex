@@ -1,0 +1,186 @@
+\doxysection{CUILibs.\+UTest\+Tree Class Reference}
+\hypertarget{class_c_u_i_libs_1_1_u_test_tree}{}\label{class_c_u_i_libs_1_1_u_test_tree}\index{CUILibs.UTestTree@{CUILibs.UTestTree}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_tree_ac96965e5e775264dd534483011a7c49d}{Run\+Recursive}} (Action$<$ Type $>$ action, Type start=null)
+\item 
+override string \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_tree_ad6372082ece2acc94c1169cc3d9b2875}{To\+String}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_tree_node}{UTest\+Tree\+Node}} $>$ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_tree_a732b5a433a0dee97faff04add491b11e}{Roots}} = new()
+\item 
+Dictionary$<$ Type, \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_tree_node}{UTest\+Tree\+Node}} $>$ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_tree_af3ce8ac8625f049186a479cae466779b}{Nodes}} = new()
+\item 
+Dictionary$<$ string, Type $>$ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_tree_a5a604a67ddc80222e08bc723d86b89c3}{Type\+By\+Path}} = new()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_tree_node}{UTest\+Tree\+Node}} \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_tree_a493fb185333ef7a70d8949b28754406b}{Root\+Node}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+Type \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_tree_af0a7a2e813448b26f4c0d8c032484c33}{Root\+Type}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_tree_8cs_source_l00069}{69}} of file \doxymbox{\hyperlink{_u_test_tree_8cs_source}{UTest\+Tree.\+cs}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_tree_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_tree_a84c8177f422821436eae51b721bed175}\index{CUILibs.UTestTree@{CUILibs.UTestTree}!UTestTree@{UTestTree}}
+\index{UTestTree@{UTestTree}!CUILibs.UTestTree@{CUILibs.UTestTree}}
+\doxysubsubsection{\texorpdfstring{UTestTree()}{UTestTree()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_tree_a84c8177f422821436eae51b721bed175} 
+CUILibs.\+UTest\+Tree.\+UTest\+Tree (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_tree_8cs_source_l00147}{147}} of file \doxymbox{\hyperlink{_u_test_tree_8cs_source}{UTest\+Tree.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00147\ =>\ ScanAssembly(Assembly.GetExecutingAssembly());}
+
+\end{DoxyCode}
+
+
+\label{doc-func-members}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_tree_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_tree_ac96965e5e775264dd534483011a7c49d}\index{CUILibs.UTestTree@{CUILibs.UTestTree}!RunRecursive@{RunRecursive}}
+\index{RunRecursive@{RunRecursive}!CUILibs.UTestTree@{CUILibs.UTestTree}}
+\doxysubsubsection{\texorpdfstring{RunRecursive()}{RunRecursive()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_tree_ac96965e5e775264dd534483011a7c49d} 
+void CUILibs.\+UTest\+Tree.\+Run\+Recursive (\begin{DoxyParamCaption}\item[{Action$<$ Type $>$}]{action}{, }\item[{Type}]{start}{ = {\ttfamily null}}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_tree_8cs_source_l00086}{86}} of file \doxymbox{\hyperlink{_u_test_tree_8cs_source}{UTest\+Tree.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00087\ \ \ \ \ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (start\ is\ not\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \_RunRecursive(action,\ Nodes[start]);}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (UTestTreeNode\ node\ \textcolor{keywordflow}{in}\ Roots)}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \_RunRecursive(action,\ node);}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_tree_ad6372082ece2acc94c1169cc3d9b2875}\index{CUILibs.UTestTree@{CUILibs.UTestTree}!ToString@{ToString}}
+\index{ToString@{ToString}!CUILibs.UTestTree@{CUILibs.UTestTree}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_tree_ad6372082ece2acc94c1169cc3d9b2875} 
+override string CUILibs.\+UTest\+Tree.\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_tree_8cs_source_l00149}{149}} of file \doxymbox{\hyperlink{_u_test_tree_8cs_source}{UTest\+Tree.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00150\ \ \ \ \ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ StringBuilder\ sb\ =\ \textcolor{keyword}{new}\ StringBuilder();}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ToStringReq(UTestTreeNode\ node,\ \textcolor{keywordtype}{string}\ offset) }
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ sb.Append(\$\textcolor{stringliteral}{"{}\{offset\}\{node.Type.Name\}\(\backslash\)n"{}});}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (UTestTreeNode\ child\ \textcolor{keywordflow}{in}\ node.Children)}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ ToStringReq(child,\ offset\ +\ \textcolor{stringliteral}{"{}|\ \ \ \ \ \ \ \ "{}});}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (UTestTreeNode\ node\ \textcolor{keywordflow}{in}\ Roots)}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ ToStringReq(node,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ sb.Append(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)\ \{\ sb.Append(\$\textcolor{stringliteral}{"{}\ >>\ [\{e.Message\}]"{}});\ \}}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sb.ToString();}
+\DoxyCodeLine{00172\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_tree_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_tree_af3ce8ac8625f049186a479cae466779b}\index{CUILibs.UTestTree@{CUILibs.UTestTree}!Nodes@{Nodes}}
+\index{Nodes@{Nodes}!CUILibs.UTestTree@{CUILibs.UTestTree}}
+\doxysubsubsection{\texorpdfstring{Nodes}{Nodes}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_tree_af3ce8ac8625f049186a479cae466779b} 
+Dictionary$<$Type, \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_tree_node}{UTest\+Tree\+Node}}$>$ CUILibs.\+UTest\+Tree.\+Nodes = new()}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_tree_8cs_source_l00074}{74}} of file \doxymbox{\hyperlink{_u_test_tree_8cs_source}{UTest\+Tree.\+cs}}.
+
+\Hypertarget{class_c_u_i_libs_1_1_u_test_tree_a732b5a433a0dee97faff04add491b11e}\index{CUILibs.UTestTree@{CUILibs.UTestTree}!Roots@{Roots}}
+\index{Roots@{Roots}!CUILibs.UTestTree@{CUILibs.UTestTree}}
+\doxysubsubsection{\texorpdfstring{Roots}{Roots}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_tree_a732b5a433a0dee97faff04add491b11e} 
+List$<$\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_tree_node}{UTest\+Tree\+Node}}$>$ CUILibs.\+UTest\+Tree.\+Roots = new()}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_tree_8cs_source_l00071}{71}} of file \doxymbox{\hyperlink{_u_test_tree_8cs_source}{UTest\+Tree.\+cs}}.
+
+\Hypertarget{class_c_u_i_libs_1_1_u_test_tree_a5a604a67ddc80222e08bc723d86b89c3}\index{CUILibs.UTestTree@{CUILibs.UTestTree}!TypeByPath@{TypeByPath}}
+\index{TypeByPath@{TypeByPath}!CUILibs.UTestTree@{CUILibs.UTestTree}}
+\doxysubsubsection{\texorpdfstring{TypeByPath}{TypeByPath}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_tree_a5a604a67ddc80222e08bc723d86b89c3} 
+Dictionary$<$string, Type$>$ CUILibs.\+UTest\+Tree.\+Type\+By\+Path = new()}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_tree_8cs_source_l00075}{75}} of file \doxymbox{\hyperlink{_u_test_tree_8cs_source}{UTest\+Tree.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_tree_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_tree_a493fb185333ef7a70d8949b28754406b}\index{CUILibs.UTestTree@{CUILibs.UTestTree}!RootNode@{RootNode}}
+\index{RootNode@{RootNode}!CUILibs.UTestTree@{CUILibs.UTestTree}}
+\doxysubsubsection{\texorpdfstring{RootNode}{RootNode}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_tree_a493fb185333ef7a70d8949b28754406b} 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_tree_node}{UTest\+Tree\+Node}} CUILibs.\+UTest\+Tree.\+Root\+Node\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_tree_8cs_source_l00072}{72}} of file \doxymbox{\hyperlink{_u_test_tree_8cs_source}{UTest\+Tree.\+cs}}.
+
+\Hypertarget{class_c_u_i_libs_1_1_u_test_tree_af0a7a2e813448b26f4c0d8c032484c33}\index{CUILibs.UTestTree@{CUILibs.UTestTree}!RootType@{RootType}}
+\index{RootType@{RootType}!CUILibs.UTestTree@{CUILibs.UTestTree}}
+\doxysubsubsection{\texorpdfstring{RootType}{RootType}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_tree_af0a7a2e813448b26f4c0d8c032484c33} 
+Type CUILibs.\+UTest\+Tree.\+Root\+Type\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_tree_8cs_source_l00073}{73}} of file \doxymbox{\hyperlink{_u_test_tree_8cs_source}{UTest\+Tree.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+Libs/\+\+UTest/\+UTest\+Tree.\+cs\end{DoxyCompactItemize}

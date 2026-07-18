@@ -1,0 +1,114 @@
+\doxysection{CUIComponent.\+Visual.\+cs}
+\hypertarget{_c_u_i_component_8_visual_8cs_source}{}\label{_c_u_i_component_8_visual_8cs_source}\index{ClientProject/ClientSource/CUI/Core/Components/CUIComponent/CUIComponent.Visual.cs@{ClientProject/ClientSource/CUI/Core/Components/CUIComponent/CUIComponent.Visual.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00007}00007\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00009}00009\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component}{CUIComponent}}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00010}00010\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00011}00011\ \ \ \ \ [CUISerializableProp]}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{public}\ SimpleTexture\ Background\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{public}\ Borders\ Borders\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ \_Displayed\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00017}00017\ \ \ \ \ [CUISerializableProp]}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ Displayed}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00019}00019\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00020}00020\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Displayed;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00021}00021\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00022}00022\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_Displayed\ ==\ value)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \_Displayed\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ VisualRestructureNotifier.Notify();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00026}00026\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00027}00027\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00030}00030\ \ \ \ \ [CUISerializableProp]}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ CullChildren\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keywordtype}{bool}\ CulledOut\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00034}00034\ \ \ \ \ [CUISerializableProp]}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ IgnoretransparentPixels}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00036}00036\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00037}00037\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Background.IgnoretransparentPixels;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00038}00038\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ Background.IgnoretransparentPixels\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ UpdateRects()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00043}00043\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00044}00044\ \ \ \ \ \ \ Debug\_PropSet.Send(typeof(CUIRect),\ Rect,\ \textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Rect"{}});}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00045}00045\ \ \ \ \ \ \ Background.Rect\ =\ Rect;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00046}00046\ \ \ \ \ \ \ Borders.Rect\ =\ Rect;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00048}00048\ \ \ \ \ \ \ RightResizeHandle.UpdateRect();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00050}00050\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (CullChildren)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00051}00051\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ ScissorRect\ =\ ChildrenRect.Round();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00053}00053\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00055}00055\ \ \ \ \ \ \ Debug\_RectSet.Send(\textcolor{keyword}{this},\ Rect);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00056}00056\ \ \ \ \ \ \ Events.RectSet.Raise(\textcolor{keyword}{this},\ OuterRect);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00057}00057\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00059}00059\ \ \ \ \ \textcolor{keyword}{protected}\ Rectangle?\ ScissorRect}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00060}00060\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00061}00061\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ VisualBounds.ScissorRect;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00062}00062\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ VisualBounds.ScissorRect\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00063}00063\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00064}00064\ \ \ \ \ \textcolor{keyword}{protected}\ VisualBounds\ VisualBounds\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00066}00066\ \ \ \ \ [CUISerializableProp]\ \textcolor{comment}{//TODO\ will\ this\ just\ magically\ work?}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00067}00067\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ Visible}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00068}00068\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00069}00069\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Background.Visible;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00070}00070\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ Background.Visible\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00071}00071\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00072}00072\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00073}00073\ \textcolor{comment}{\ \ \ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00074}00074\ \textcolor{comment}{\ \ \ \ ///\ Half\ assed\ substitution\ for\ z-\/index,\ set\ to\ CUIDirection.Reverse\ to\ draw\ children\ in\ reverse\ order}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00075}00075\ \textcolor{comment}{\ \ \ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00076}00076\ \ \ \ \ [CUISerializableProp]}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00077}\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a82bdc107c51ab5c3c7fcd6d349edb8cc}{00077}}\ \ \ \ \ \textcolor{keyword}{public}\ CUIDirection\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a82bdc107c51ab5c3c7fcd6d349edb8cc}{VisualChildrenOrder}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ CUIDirection.Straight;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00079}00079\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ IEnumerable<VisualUnit>\ VisualSplit()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00080}00080\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00081}00081\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Displayed\ ||\ CulledOut)\ yield\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00083}00083\ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ Background.VisualWrapper;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00084}00084\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Children.Count\ !=\ 0)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00085}00085\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_bounds}{VisualBounds}}.LeftBound;\ \textcolor{comment}{//TODO\ bounds\ should\ be\ yielded\ only\ if\ there's\ something\ non\ standart}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a82bdc107c51ab5c3c7fcd6d349edb8cc}{VisualChildrenOrder}}\ ==\ CUIDirection.Straight)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Children.Count;\ i++)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ Children[i].VisualWrapper;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ Children.Count\ -\/\ 1;\ i\ >=\ 0;\ i-\/-\/)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ Children[i].VisualWrapper;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ VisualBounds.RightBound;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00103}00103\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00104}00104\ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ RightResizeHandle.VisualWrapper;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00105}00105\ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ Borders.VisualWrapper;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00106}00106\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00107}00107\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_visual_8cs_source_l00108}00108\ \}}
+
+\end{DoxyCode}

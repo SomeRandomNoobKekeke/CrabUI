@@ -1,0 +1,71 @@
+\doxysection{Crab\+UIUser.\+Internals\+In\+Derived Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_internals_in_derived}{}\label{class_crab_u_i_user_1_1_internals_in_derived}\index{CrabUIUser.InternalsInDerived@{CrabUIUser.InternalsInDerived}}
+
+
+So i want to hide all internal stuff in some internal object But then i\textquotesingle{}ll have a name collision with the same object in derived classes Ofc i can generate Internal\+Access objects, but it still looks like cringe This is 100 times harder than just protected prop at component level.  
+
+
+Inheritance diagram for Crab\+UIUser.\+Internals\+In\+Derived:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_internals_in_derived}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_internals_in_derived_1_1_component_a}{ComponentA}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_internals_in_derived_1_1_component_b}{ComponentB}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_internals_in_derived_adb76ac9a3ba5092056b2a253fcdc7795}{Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Crab\+UIUser.\+Experiment}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Run} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+So i want to hide all internal stuff in some internal object But then i\textquotesingle{}ll have a name collision with the same object in derived classes Ofc i can generate Internal\+Access objects, but it still looks like cringe This is 100 times harder than just protected prop at component level. 
+
+Definition at line \doxymbox{\hyperlink{_internals_in_derived_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_internals_in_derived_8cs_source}{Internals\+In\+Derived.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_internals_in_derived_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_internals_in_derived_adb76ac9a3ba5092056b2a253fcdc7795}\index{CrabUIUser.InternalsInDerived@{CrabUIUser.InternalsInDerived}!Run@{Run}}
+\index{Run@{Run}!CrabUIUser.InternalsInDerived@{CrabUIUser.InternalsInDerived}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_internals_in_derived_adb76ac9a3ba5092056b2a253fcdc7795} 
+override void Crab\+UIUser.\+Internals\+In\+Derived.\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_internals_in_derived_8cs_source_l00079}{79}} of file \doxymbox{\hyperlink{_internals_in_derived_8cs_source}{Internals\+In\+Derived.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00080\ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ ComponentA\ componentA\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ ComponentB\ componentB\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ Mod.Logger.Log(componentA.Internal.PropA);}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ Mod.Logger.Log(componentB.Internal.PropA);}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ Mod.Logger.Log(componentB.Internal.PropB);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Design/\+Internals\+In\+Derived.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,72 @@
+\doxysection{Crab\+UIUser.\+Component\+Cores\+Relations Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_component_cores_relations}{}\label{class_crab_u_i_user_1_1_component_cores_relations}\index{CrabUIUser.ComponentCoresRelations@{CrabUIUser.ComponentCoresRelations}}
+
+
+Trying to solve that relations problem.  
+
+
+Inheritance diagram for Crab\+UIUser.\+Component\+Cores\+Relations:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_component_cores_relations}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_relations_1_1_component}{Component}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_relations_a1e3e37266faddf868566ef2a42784992}{Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Crab\+UIUser.\+Experiment}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Run} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Trying to solve that relations problem. 
+
+Definition at line \doxymbox{\hyperlink{_component_cores_relations_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_component_cores_relations_8cs_source}{Component\+Cores\+Relations.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_component_cores_relations_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_component_cores_relations_a1e3e37266faddf868566ef2a42784992}\index{CrabUIUser.ComponentCoresRelations@{CrabUIUser.ComponentCoresRelations}!Run@{Run}}
+\index{Run@{Run}!CrabUIUser.ComponentCoresRelations@{CrabUIUser.ComponentCoresRelations}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_component_cores_relations_a1e3e37266faddf868566ef2a42784992} 
+override void Crab\+UIUser.\+Component\+Cores\+Relations.\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_component_cores_relations_8cs_source_l00044}{44}} of file \doxymbox{\hyperlink{_component_cores_relations_8cs_source}{Component\+Cores\+Relations.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045\ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ Component\ component1\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ Component\ component2\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ component1.Append(component2);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Component\ child\ \textcolor{keywordflow}{in}\ component1.Children)}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ Mod.Logger.Log(child);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Design/\+Component\+Cores\+Relations.\+cs\end{DoxyCompactItemize}

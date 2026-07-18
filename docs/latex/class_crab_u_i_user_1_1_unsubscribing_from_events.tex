@@ -1,0 +1,84 @@
+\doxysection{Crab\+UIUser.\+Unsubscribing\+From\+Events Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_unsubscribing_from_events}{}\label{class_crab_u_i_user_1_1_unsubscribing_from_events}\index{CrabUIUser.UnsubscribingFromEvents@{CrabUIUser.UnsubscribingFromEvents}}
+
+
+This feels easy to fuck up.  
+
+
+Inheritance diagram for Crab\+UIUser.\+Unsubscribing\+From\+Events:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_unsubscribing_from_events}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_unsubscribing_from_events_1_1_event_wrapper}{Event\+Wrapper}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_unsubscribing_from_events_1_1_handle}{Handle}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_unsubscribing_from_events_1_1_component}{Component}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_unsubscribing_from_events_a4d1ff74c73691653d7aadb484303df7f}{Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Crab\+UIUser.\+Experiment}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Run} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This feels easy to fuck up. 
+
+Definition at line \doxymbox{\hyperlink{_unsubscribing_from_events_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_unsubscribing_from_events_8cs_source}{Unsubscribing\+From\+Events.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_unsubscribing_from_events_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_unsubscribing_from_events_a4d1ff74c73691653d7aadb484303df7f}\index{CrabUIUser.UnsubscribingFromEvents@{CrabUIUser.UnsubscribingFromEvents}!Run@{Run}}
+\index{Run@{Run}!CrabUIUser.UnsubscribingFromEvents@{CrabUIUser.UnsubscribingFromEvents}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_unsubscribing_from_events_a4d1ff74c73691653d7aadb484303df7f} 
+override void Crab\+UIUser.\+Unsubscribing\+From\+Events.\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_unsubscribing_from_events_8cs_source_l00137}{137}} of file \doxymbox{\hyperlink{_unsubscribing_from_events_8cs_source}{Unsubscribing\+From\+Events.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00138\ \ \ \ \ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ Handle\ handle\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ Component\ component\ =\ \textcolor{keyword}{new}\ Component();}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \ \ component.MouseDown\ +=\ ()\ =>\ Mod.Logger.Print(\textcolor{stringliteral}{"{}MouseDown"{}},\ Color.Green);}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ component.MouseUp\ +=\ ()\ =>\ Mod.Logger.Print(\textcolor{stringliteral}{"{}MouseUp"{}},\ Color.Green);}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ component.MouseClick\ +=\ ()\ =>\ Mod.Logger.Print(\textcolor{stringliteral}{"{}MouseClick"{}},\ Color.Green);}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ handle.Host\ =\ component;}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ component.RaiseEvents();}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \ \ handle.Host\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ component.RaiseEvents();}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \ \ handle.Host\ =\ component;}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ handle.GrabEventName\ =\ \textcolor{stringliteral}{"{}MouseClick"{}};}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ component.RaiseEvents();}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \ \ handle.Host\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ component.RaiseEvents();}
+\DoxyCodeLine{00158\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Design/\+Unsubscribing\+From\+Events.\+cs\end{DoxyCompactItemize}

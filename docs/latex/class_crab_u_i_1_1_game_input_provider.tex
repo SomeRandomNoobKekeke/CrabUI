@@ -1,0 +1,344 @@
+\doxysection{Crab\+UI.\+Game\+Input\+Provider Class Reference}
+\hypertarget{class_crab_u_i_1_1_game_input_provider}{}\label{class_crab_u_i_1_1_game_input_provider}\index{CrabUI.GameInputProvider@{CrabUI.GameInputProvider}}
+Inheritance diagram for Crab\+UI.\+Game\+Input\+Provider:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_1_1_game_input_provider}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Mouse\+State \doxymbox{\hyperlink{class_crab_u_i_1_1_game_input_provider_ae669f3cf41fb94a6628800b6ece3b3a2}{Scan\+Mouse}} ()
+\item 
+Keyboard\+State \doxymbox{\hyperlink{class_crab_u_i_1_1_game_input_provider_a3186c61b95f7e13d9638014458a42636}{Scan\+Keyboard}} ()
+\item 
+Text\+Input\+Event\+Pack \doxymbox{\hyperlink{class_crab_u_i_1_1_game_input_provider_a72ecbd5a1e7314d153c4f1f54829c03f}{Scan\+Text\+Input}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_game_input_provider_afd5671c7705370145a2b8c79e0e1959a}{Connect\+To\+Game}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_game_input_provider_a5604ae425aafc0e2372f8a3d92e2d3a7}{Disconnect\+From\+Game}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \doxymbox{\hyperlink{class_crab_u_i_1_1_game_input_provider_aaefc08e69f6011beded10968295abc48}{Keyboard\+Dispatcher\+\_\+\+Event\+Input\+\_\+\+Text\+Editing}} (Keyboard\+Dispatcher \+\_\+\+\_\+instance, object sender, Text\+Editing\+Event\+Args e)
+\item 
+static bool \doxymbox{\hyperlink{class_crab_u_i_1_1_game_input_provider_aa26022907635ecd665a7936d4b2f74e8}{Keyboard\+Dispatcher\+\_\+\+Event\+Input\+\_\+\+Key\+Down}} (Keyboard\+Dispatcher \+\_\+\+\_\+instance, object sender, Key\+Event\+Args e)
+\item 
+static bool \doxymbox{\hyperlink{class_crab_u_i_1_1_game_input_provider_a2222f3b4a490284e432d73d11aac8833}{Keyboard\+Dispatcher\+\_\+\+Event\+Input\+\_\+\+Char\+Entered}} (Keyboard\+Dispatcher \+\_\+\+\_\+instance, object sender, Character\+Event\+Args e)
+\item 
+static bool \doxymbox{\hyperlink{class_crab_u_i_1_1_game_input_provider_a6ed2f569d96869906a652c7528e6f7a1}{Keyboard\+Dispatcher\+\_\+set\+\_\+\+Subscriber\+\_\+\+Replace}} (Keyboard\+Dispatcher \+\_\+\+\_\+instance, IKeyboard\+Subscriber value)
+\begin{DoxyCompactList}\small\item\em This is where focus resolved. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{class_crab_u_i_1_1_game_input_provider}{Game\+Input\+Provider}} \doxymbox{\hyperlink{class_crab_u_i_1_1_game_input_provider_adf31778bd89df478b32afc7318d53a59}{Instance}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Harmony \doxymbox{\hyperlink{class_crab_u_i_1_1_game_input_provider_ae5076273d50719d3648928e84dd10595}{Harmony}} = new Harmony(\$"{}\{Mod\+Info.\+Hook\+Id\}.CUI.\+Input"{})\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+static bool \doxymbox{\hyperlink{class_crab_u_i_1_1_game_input_provider_a605f683b9995d3db365218f3ab09d5a8}{Input\+Blocked}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_game_input_provider_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_game_input_provider_8cs_source}{Game\+Input\+Provider.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_game_input_provider_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_game_input_provider_afd5671c7705370145a2b8c79e0e1959a}\index{CrabUI.GameInputProvider@{CrabUI.GameInputProvider}!ConnectToGame@{ConnectToGame}}
+\index{ConnectToGame@{ConnectToGame}!CrabUI.GameInputProvider@{CrabUI.GameInputProvider}}
+\doxysubsubsection{\texorpdfstring{ConnectToGame()}{ConnectToGame()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_game_input_provider_afd5671c7705370145a2b8c79e0e1959a} 
+void Crab\+UI.\+Game\+Input\+Provider.\+Connect\+To\+Game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_game_input_provider_8cs_source_l00040}{40}} of file \doxymbox{\hyperlink{_game_input_provider_8cs_source}{Game\+Input\+Provider.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041\ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ Instance\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ GameMain.Instance.Window.TextInput\ +=\ CaptureWindowTextInput;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ GameMain.Instance.Window.KeyDown\ +=\ CaptureWindowKeyDown;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ Harmony.Patch(}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ original:\ typeof(KeyboardDispatcher).GetMethod(\textcolor{stringliteral}{"{}set\_Subscriber"{}},\ AccessTools.all),}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ prefix:\ \textcolor{keyword}{new}\ HarmonyMethod(typeof(GameInputProvider).GetMethod(\textcolor{stringliteral}{"{}KeyboardDispatcher\_set\_Subscriber\_Replace"{}}))}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ );}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ Harmony.Patch(}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ original:\ typeof(KeyboardDispatcher).GetMethod(\textcolor{stringliteral}{"{}EventInput\_TextEditing"{}},\ AccessTools.all),}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ prefix:\ \textcolor{keyword}{new}\ HarmonyMethod(typeof(GameInputProvider).GetMethod(\textcolor{stringliteral}{"{}KeyboardDispatcher\_EventInput\_TextEditing"{}}))}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ );}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ Harmony.Patch(}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ original:\ typeof(KeyboardDispatcher).GetMethod(\textcolor{stringliteral}{"{}EventInput\_KeyDown"{}},\ AccessTools.all),}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ prefix:\ \textcolor{keyword}{new}\ HarmonyMethod(typeof(GameInputProvider).GetMethod(\textcolor{stringliteral}{"{}KeyboardDispatcher\_EventInput\_KeyDown"{}}))}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ );}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ Harmony.Patch(}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ original:\ typeof(KeyboardDispatcher).GetMethod(\textcolor{stringliteral}{"{}EventInput\_CharEntered"{}},\ AccessTools.all),}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ prefix:\ \textcolor{keyword}{new}\ HarmonyMethod(typeof(GameInputProvider).GetMethod(\textcolor{stringliteral}{"{}KeyboardDispatcher\_EventInput\_CharEntered"{}}))}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ );}
+\DoxyCodeLine{00065\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_game_input_provider_a5604ae425aafc0e2372f8a3d92e2d3a7}\index{CrabUI.GameInputProvider@{CrabUI.GameInputProvider}!DisconnectFromGame@{DisconnectFromGame}}
+\index{DisconnectFromGame@{DisconnectFromGame}!CrabUI.GameInputProvider@{CrabUI.GameInputProvider}}
+\doxysubsubsection{\texorpdfstring{DisconnectFromGame()}{DisconnectFromGame()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_game_input_provider_a5604ae425aafc0e2372f8a3d92e2d3a7} 
+void Crab\+UI.\+Game\+Input\+Provider.\+Disconnect\+From\+Game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_game_input_provider_8cs_source_l00067}{67}} of file \doxymbox{\hyperlink{_game_input_provider_8cs_source}{Game\+Input\+Provider.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00068\ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ Instance\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ GameMain.Instance.Window.TextInput\ -\/=\ CaptureWindowTextInput;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ GameMain.Instance.Window.KeyDown\ -\/=\ CaptureWindowKeyDown;}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ Harmony.UnpatchSelf();}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_game_input_provider_a2222f3b4a490284e432d73d11aac8833}\index{CrabUI.GameInputProvider@{CrabUI.GameInputProvider}!KeyboardDispatcher\_EventInput\_CharEntered@{KeyboardDispatcher\_EventInput\_CharEntered}}
+\index{KeyboardDispatcher\_EventInput\_CharEntered@{KeyboardDispatcher\_EventInput\_CharEntered}!CrabUI.GameInputProvider@{CrabUI.GameInputProvider}}
+\doxysubsubsection{\texorpdfstring{KeyboardDispatcher\_EventInput\_CharEntered()}{KeyboardDispatcher\_EventInput\_CharEntered()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_game_input_provider_a2222f3b4a490284e432d73d11aac8833} 
+bool Crab\+UI.\+Game\+Input\+Provider.\+Keyboard\+Dispatcher\+\_\+\+Event\+Input\+\_\+\+Char\+Entered (\begin{DoxyParamCaption}\item[{Keyboard\+Dispatcher}]{\+\_\+\+\_\+instance}{, }\item[{object}]{sender}{, }\item[{Character\+Event\+Args}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_game_input_provider_8cs_source_l00102}{102}} of file \doxymbox{\hyperlink{_game_input_provider_8cs_source}{Game\+Input\+Provider.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00103\ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_\_instance\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (InputBlocked)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \_\_instance.\_subscriber?.ReceiveTextInput(e.Character);}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00109\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_game_input_provider_aa26022907635ecd665a7936d4b2f74e8}\index{CrabUI.GameInputProvider@{CrabUI.GameInputProvider}!KeyboardDispatcher\_EventInput\_KeyDown@{KeyboardDispatcher\_EventInput\_KeyDown}}
+\index{KeyboardDispatcher\_EventInput\_KeyDown@{KeyboardDispatcher\_EventInput\_KeyDown}!CrabUI.GameInputProvider@{CrabUI.GameInputProvider}}
+\doxysubsubsection{\texorpdfstring{KeyboardDispatcher\_EventInput\_KeyDown()}{KeyboardDispatcher\_EventInput\_KeyDown()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_game_input_provider_aa26022907635ecd665a7936d4b2f74e8} 
+bool Crab\+UI.\+Game\+Input\+Provider.\+Keyboard\+Dispatcher\+\_\+\+Event\+Input\+\_\+\+Key\+Down (\begin{DoxyParamCaption}\item[{Keyboard\+Dispatcher}]{\+\_\+\+\_\+instance}{, }\item[{object}]{sender}{, }\item[{Key\+Event\+Args}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_game_input_provider_8cs_source_l00089}{89}} of file \doxymbox{\hyperlink{_game_input_provider_8cs_source}{Game\+Input\+Provider.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00090\ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_\_instance\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (InputBlocked)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \_\_instance.\_subscriber?.ReceiveSpecialInput(e.KeyCode);}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{char}.IsControl(e.Character))}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \_\_instance.\_subscriber?.ReceiveCommandInput(e.Character);}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00100\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_game_input_provider_aaefc08e69f6011beded10968295abc48}\index{CrabUI.GameInputProvider@{CrabUI.GameInputProvider}!KeyboardDispatcher\_EventInput\_TextEditing@{KeyboardDispatcher\_EventInput\_TextEditing}}
+\index{KeyboardDispatcher\_EventInput\_TextEditing@{KeyboardDispatcher\_EventInput\_TextEditing}!CrabUI.GameInputProvider@{CrabUI.GameInputProvider}}
+\doxysubsubsection{\texorpdfstring{KeyboardDispatcher\_EventInput\_TextEditing()}{KeyboardDispatcher\_EventInput\_TextEditing()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_game_input_provider_aaefc08e69f6011beded10968295abc48} 
+bool Crab\+UI.\+Game\+Input\+Provider.\+Keyboard\+Dispatcher\+\_\+\+Event\+Input\+\_\+\+Text\+Editing (\begin{DoxyParamCaption}\item[{Keyboard\+Dispatcher}]{\+\_\+\+\_\+instance}{, }\item[{object}]{sender}{, }\item[{Text\+Editing\+Event\+Args}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_game_input_provider_8cs_source_l00080}{80}} of file \doxymbox{\hyperlink{_game_input_provider_8cs_source}{Game\+Input\+Provider.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_\_instance\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (InputBlocked)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \_\_instance.\_subscriber?.ReceiveEditingInput(e.Text,\ e.Start,\ e.Length);}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_game_input_provider_a6ed2f569d96869906a652c7528e6f7a1}\index{CrabUI.GameInputProvider@{CrabUI.GameInputProvider}!KeyboardDispatcher\_set\_Subscriber\_Replace@{KeyboardDispatcher\_set\_Subscriber\_Replace}}
+\index{KeyboardDispatcher\_set\_Subscriber\_Replace@{KeyboardDispatcher\_set\_Subscriber\_Replace}!CrabUI.GameInputProvider@{CrabUI.GameInputProvider}}
+\doxysubsubsection{\texorpdfstring{KeyboardDispatcher\_set\_Subscriber\_Replace()}{KeyboardDispatcher\_set\_Subscriber\_Replace()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_game_input_provider_a6ed2f569d96869906a652c7528e6f7a1} 
+bool Crab\+UI.\+Game\+Input\+Provider.\+Keyboard\+Dispatcher\+\_\+set\+\_\+\+Subscriber\+\_\+\+Replace (\begin{DoxyParamCaption}\item[{Keyboard\+Dispatcher}]{\+\_\+\+\_\+instance}{, }\item[{IKeyboard\+Subscriber}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This is where focus resolved. 
+
+
+
+Definition at line \doxymbox{\hyperlink{_game_input_provider_8cs_source_l00114}{114}} of file \doxymbox{\hyperlink{_game_input_provider_8cs_source}{Game\+Input\+Provider.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00115\ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ KeyboardDispatcher\ \_\ =\ \_\_instance;}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ TextInput.StartTextInput();}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_.\_subscriber\ ==\ value)\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_.\_subscriber\ is\ GUITextBox)}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TextInput.StopTextInput();}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ InputBlocked\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \_.\_subscriber.Selected\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (value\ is\ GUITextBox\ box)}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ TextInput.SetTextInputRect(box.MouseRect);}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ TextInput.StartTextInput();}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ InputBlocked\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ TextInput.SetTextInputRect(box.MouseRect);}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ Instance?.TextInputBuilder.StealFocus();}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \_.\_subscriber\ =\ value;}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (value\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ value.Selected\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00145\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_game_input_provider_a3186c61b95f7e13d9638014458a42636}\index{CrabUI.GameInputProvider@{CrabUI.GameInputProvider}!ScanKeyboard@{ScanKeyboard}}
+\index{ScanKeyboard@{ScanKeyboard}!CrabUI.GameInputProvider@{CrabUI.GameInputProvider}}
+\doxysubsubsection{\texorpdfstring{ScanKeyboard()}{ScanKeyboard()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_game_input_provider_a3186c61b95f7e13d9638014458a42636} 
+Keyboard\+State Crab\+UI.\+Game\+Input\+Provider.\+Scan\+Keyboard (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_input_provider}{Crab\+UI.\+IInput\+Provider}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_game_input_provider_8cs_source_l00024}{24}} of file \doxymbox{\hyperlink{_game_input_provider_8cs_source}{Game\+Input\+Provider.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ =>\ Keyboard.GetState();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_game_input_provider_ae669f3cf41fb94a6628800b6ece3b3a2}\index{CrabUI.GameInputProvider@{CrabUI.GameInputProvider}!ScanMouse@{ScanMouse}}
+\index{ScanMouse@{ScanMouse}!CrabUI.GameInputProvider@{CrabUI.GameInputProvider}}
+\doxysubsubsection{\texorpdfstring{ScanMouse()}{ScanMouse()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_game_input_provider_ae669f3cf41fb94a6628800b6ece3b3a2} 
+Mouse\+State Crab\+UI.\+Game\+Input\+Provider.\+Scan\+Mouse (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_input_provider}{Crab\+UI.\+IInput\+Provider}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_game_input_provider_8cs_source_l00023}{23}} of file \doxymbox{\hyperlink{_game_input_provider_8cs_source}{Game\+Input\+Provider.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ =>\ Mouse.GetState();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_game_input_provider_a72ecbd5a1e7314d153c4f1f54829c03f}\index{CrabUI.GameInputProvider@{CrabUI.GameInputProvider}!ScanTextInput@{ScanTextInput}}
+\index{ScanTextInput@{ScanTextInput}!CrabUI.GameInputProvider@{CrabUI.GameInputProvider}}
+\doxysubsubsection{\texorpdfstring{ScanTextInput()}{ScanTextInput()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_game_input_provider_a72ecbd5a1e7314d153c4f1f54829c03f} 
+Text\+Input\+Event\+Pack Crab\+UI.\+Game\+Input\+Provider.\+Scan\+Text\+Input (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_input_provider}{Crab\+UI.\+IInput\+Provider}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_game_input_provider_8cs_source_l00025}{25}} of file \doxymbox{\hyperlink{_game_input_provider_8cs_source}{Game\+Input\+Provider.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ =>\ TextInputBuilder.Build();}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_crab_u_i_1_1_game_input_provider_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_crab_u_i_1_1_game_input_provider_adf31778bd89df478b32afc7318d53a59}\index{CrabUI.GameInputProvider@{CrabUI.GameInputProvider}!Instance@{Instance}}
+\index{Instance@{Instance}!CrabUI.GameInputProvider@{CrabUI.GameInputProvider}}
+\doxysubsubsection{\texorpdfstring{Instance}{Instance}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_game_input_provider_adf31778bd89df478b32afc7318d53a59} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_game_input_provider}{Game\+Input\+Provider}} Crab\+UI.\+Game\+Input\+Provider.\+Instance\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_game_input_provider_8cs_source_l00038}{38}} of file \doxymbox{\hyperlink{_game_input_provider_8cs_source}{Game\+Input\+Provider.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_game_input_provider_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_game_input_provider_ae5076273d50719d3648928e84dd10595}\index{CrabUI.GameInputProvider@{CrabUI.GameInputProvider}!Harmony@{Harmony}}
+\index{Harmony@{Harmony}!CrabUI.GameInputProvider@{CrabUI.GameInputProvider}}
+\doxysubsubsection{\texorpdfstring{Harmony}{Harmony}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_game_input_provider_ae5076273d50719d3648928e84dd10595} 
+Harmony Crab\+UI.\+Game\+Input\+Provider.\+Harmony = new Harmony(\$"{}\{Mod\+Info.\+Hook\+Id\}.CUI.\+Input"{})\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_game_input_provider_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_game_input_provider_8cs_source}{Game\+Input\+Provider.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}\ Harmony(\$\textcolor{stringliteral}{"{}\{ModInfo.HookId\}.CUI.Input"{}});}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_game_input_provider_a605f683b9995d3db365218f3ab09d5a8}\index{CrabUI.GameInputProvider@{CrabUI.GameInputProvider}!InputBlocked@{InputBlocked}}
+\index{InputBlocked@{InputBlocked}!CrabUI.GameInputProvider@{CrabUI.GameInputProvider}}
+\doxysubsubsection{\texorpdfstring{InputBlocked}{InputBlocked}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_game_input_provider_a605f683b9995d3db365218f3ab09d5a8} 
+bool Crab\+UI.\+Game\+Input\+Provider.\+Input\+Blocked\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_game_input_provider_8cs_source_l00077}{77}} of file \doxymbox{\hyperlink{_game_input_provider_8cs_source}{Game\+Input\+Provider.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00077\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Infrastructure/\+\+Data\+Sources/\+\+Game/\+Game\+Input\+Provider.\+cs\end{DoxyCompactItemize}

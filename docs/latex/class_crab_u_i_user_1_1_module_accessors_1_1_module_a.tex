@@ -1,0 +1,104 @@
+\doxysection{Crab\+UIUser.\+Module\+Accessors.\+ModuleA Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_module_accessors_1_1_module_a}{}\label{class_crab_u_i_user_1_1_module_accessors_1_1_module_a}\index{CrabUIUser.ModuleAccessors.ModuleA@{CrabUIUser.ModuleAccessors.ModuleA}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_module_accessors_1_1_module_a_a506edeb14eb19c5a621b84d8111cb6de}{Set\+Prop\+Recursive}} (string value)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Component\+Tree\+Module \doxymbox{\hyperlink{class_crab_u_i_user_1_1_module_accessors_1_1_module_a_a3203fa1bd8e973c044cdffa349db8e72}{Component\+Tree\+Module}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+\doxymbox{\hyperlink{interface_crab_u_i_user_1_1_module_accessors_1_1_component_1_1_i_module_a___access}{Component.\+IModule\+A\+\_\+\+Access}} \doxymbox{\hyperlink{class_crab_u_i_user_1_1_module_accessors_1_1_module_a_a3141129178c198f9bb072344526b864e}{External\+ModuleA}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+string \doxymbox{\hyperlink{class_crab_u_i_user_1_1_module_accessors_1_1_module_a_a18eb9cc57018b4f06c3ea077d55ab605}{Prop}} = "{}bruh"{}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_module_accessors_8cs_source_l00065}{65}} of file \doxymbox{\hyperlink{_module_accessors_8cs_source}{Module\+Accessors.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_module_accessors_1_1_module_a_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_module_accessors_1_1_module_a_a506edeb14eb19c5a621b84d8111cb6de}\index{CrabUIUser.ModuleAccessors.ModuleA@{CrabUIUser.ModuleAccessors.ModuleA}!SetPropRecursive@{SetPropRecursive}}
+\index{SetPropRecursive@{SetPropRecursive}!CrabUIUser.ModuleAccessors.ModuleA@{CrabUIUser.ModuleAccessors.ModuleA}}
+\doxysubsubsection{\texorpdfstring{SetPropRecursive()}{SetPropRecursive()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_module_accessors_1_1_module_a_a506edeb14eb19c5a621b84d8111cb6de} 
+void Crab\+UIUser.\+Module\+Accessors.\+Module\+A.\+Set\+Prop\+Recursive (\begin{DoxyParamCaption}\item[{string}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_module_accessors_8cs_source_l00072}{72}} of file \doxymbox{\hyperlink{_module_accessors_8cs_source}{Module\+Accessors.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ Prop\ =\ value;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Component\ child\ \textcolor{keywordflow}{in}\ ComponentTreeModule.Children)}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ ExternalModuleA.Get(child).SetPropRecursive(value);}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_user_1_1_module_accessors_1_1_module_a_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_module_accessors_1_1_module_a_a3203fa1bd8e973c044cdffa349db8e72}\index{CrabUIUser.ModuleAccessors.ModuleA@{CrabUIUser.ModuleAccessors.ModuleA}!ComponentTreeModule@{ComponentTreeModule}}
+\index{ComponentTreeModule@{ComponentTreeModule}!CrabUIUser.ModuleAccessors.ModuleA@{CrabUIUser.ModuleAccessors.ModuleA}}
+\doxysubsubsection{\texorpdfstring{ComponentTreeModule}{ComponentTreeModule}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_module_accessors_1_1_module_a_a3203fa1bd8e973c044cdffa349db8e72} 
+Component\+Tree\+Module Crab\+UIUser.\+Module\+Accessors.\+Module\+A.\+Component\+Tree\+Module\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_module_accessors_8cs_source_l00067}{67}} of file \doxymbox{\hyperlink{_module_accessors_8cs_source}{Module\+Accessors.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00067\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_module_accessors_1_1_module_a_a3141129178c198f9bb072344526b864e}\index{CrabUIUser.ModuleAccessors.ModuleA@{CrabUIUser.ModuleAccessors.ModuleA}!ExternalModuleA@{ExternalModuleA}}
+\index{ExternalModuleA@{ExternalModuleA}!CrabUIUser.ModuleAccessors.ModuleA@{CrabUIUser.ModuleAccessors.ModuleA}}
+\doxysubsubsection{\texorpdfstring{ExternalModuleA}{ExternalModuleA}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_module_accessors_1_1_module_a_a3141129178c198f9bb072344526b864e} 
+\doxymbox{\hyperlink{interface_crab_u_i_user_1_1_module_accessors_1_1_component_1_1_i_module_a___access}{Component.\+IModule\+A\+\_\+\+Access}} Crab\+UIUser.\+Module\+Accessors.\+Module\+A.\+External\+ModuleA\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_module_accessors_8cs_source_l00068}{68}} of file \doxymbox{\hyperlink{_module_accessors_8cs_source}{Module\+Accessors.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00068\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_module_accessors_1_1_module_a_a18eb9cc57018b4f06c3ea077d55ab605}\index{CrabUIUser.ModuleAccessors.ModuleA@{CrabUIUser.ModuleAccessors.ModuleA}!Prop@{Prop}}
+\index{Prop@{Prop}!CrabUIUser.ModuleAccessors.ModuleA@{CrabUIUser.ModuleAccessors.ModuleA}}
+\doxysubsubsection{\texorpdfstring{Prop}{Prop}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_module_accessors_1_1_module_a_a18eb9cc57018b4f06c3ea077d55ab605} 
+string Crab\+UIUser.\+Module\+Accessors.\+Module\+A.\+Prop = "{}bruh"{}\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_module_accessors_8cs_source_l00070}{70}} of file \doxymbox{\hyperlink{_module_accessors_8cs_source}{Module\+Accessors.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00070\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{stringliteral}{"{}bruh"{}};}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Design/\+Module\+Accessors.\+cs\end{DoxyCompactItemize}

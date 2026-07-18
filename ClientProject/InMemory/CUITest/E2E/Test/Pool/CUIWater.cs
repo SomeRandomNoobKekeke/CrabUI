@@ -121,7 +121,7 @@ namespace CrabUI
 
     public CUIWater(int x, int y) : base(x, y)
     {
-      ConsumeMouseClicks = true;
+      ConsumeMouseEvents = true;
       Pool1 = new float[Texture.Width, Texture.Height];
       Pool2 = new float[Texture.Width, Texture.Height];
       DensityMap = new float[Texture.Width, Texture.Height];

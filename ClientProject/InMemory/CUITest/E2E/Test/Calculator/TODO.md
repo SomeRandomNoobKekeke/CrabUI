@@ -1,2 +1,0 @@
-- make grid use min size
-- text should be in readonly textinput

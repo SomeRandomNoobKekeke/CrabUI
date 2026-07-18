@@ -1,0 +1,162 @@
+\doxysection{Crab\+UIUser.\+Snapshot\+Test\+Repo Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_snapshot_test_repo}{}\label{class_crab_u_i_user_1_1_snapshot_test_repo}\index{CrabUIUser.SnapshotTestRepo@{CrabUIUser.SnapshotTestRepo}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_test_repo_afaef017cfeb630d147771ee0a8745d1f}{Add}} (Snapshot\+Test test)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_test_repo_ae3b6d155aa166637bf4aa2c8413d7251}{Add}} (Method\+Info mi)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_test_repo_af0e34c71c19c9468dca2b799f4a0a6fe}{Add}} (Type test\+Pack)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_test_repo_acadc9ef5a012d28fdeefde9e2aa6eb0c}{Is\+Snapshot\+Test\+Func}} (Method\+Info mi)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Dictionary$<$ string, Snapshot\+Test $>$ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_test_repo_a04920bacbda4623b3232501cb4151684}{Tests}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+Dictionary$<$ string, Dictionary$<$ string, Snapshot\+Test $>$ $>$ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_test_repo_a9adc0612f2c42fb9db0a232dbce11044}{Grouped\+Tests}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+ICollection$<$ string $>$ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_test_repo_ae802903b713729dc088f5a95a9c5368a}{Groups}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_snapshot_test_repo_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_snapshot_test_repo_8cs_source}{Snapshot\+Test\+Repo.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_snapshot_test_repo_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_snapshot_test_repo_ae3b6d155aa166637bf4aa2c8413d7251}\index{CrabUIUser.SnapshotTestRepo@{CrabUIUser.SnapshotTestRepo}!Add@{Add}}
+\index{Add@{Add}!CrabUIUser.SnapshotTestRepo@{CrabUIUser.SnapshotTestRepo}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_snapshot_test_repo_ae3b6d155aa166637bf4aa2c8413d7251} 
+void Crab\+UIUser.\+Snapshot\+Test\+Repo.\+Add (\begin{DoxyParamCaption}\item[{Method\+Info}]{mi}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_snapshot_test_repo_8cs_source_l00034}{34}} of file \doxymbox{\hyperlink{_snapshot_test_repo_8cs_source}{Snapshot\+Test\+Repo.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034\ =>\ Add(SnapshotTest.FromMethodInfo(mi));}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_snapshot_test_repo_afaef017cfeb630d147771ee0a8745d1f}\index{CrabUIUser.SnapshotTestRepo@{CrabUIUser.SnapshotTestRepo}!Add@{Add}}
+\index{Add@{Add}!CrabUIUser.SnapshotTestRepo@{CrabUIUser.SnapshotTestRepo}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_snapshot_test_repo_afaef017cfeb630d147771ee0a8745d1f} 
+void Crab\+UIUser.\+Snapshot\+Test\+Repo.\+Add (\begin{DoxyParamCaption}\item[{Snapshot\+Test}]{test}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_snapshot_test_repo_8cs_source_l00027}{27}} of file \doxymbox{\hyperlink{_snapshot_test_repo_8cs_source}{Snapshot\+Test\+Repo.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ Tests[test.Name]\ =\ test;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!GroupedTests.ContainsKey(test.Group))\ GroupedTests[test.Group]\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ GroupedTests[test.Group][test.Name]\ =\ test;}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_snapshot_test_repo_af0e34c71c19c9468dca2b799f4a0a6fe}\index{CrabUIUser.SnapshotTestRepo@{CrabUIUser.SnapshotTestRepo}!Add@{Add}}
+\index{Add@{Add}!CrabUIUser.SnapshotTestRepo@{CrabUIUser.SnapshotTestRepo}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_snapshot_test_repo_af0e34c71c19c9468dca2b799f4a0a6fe} 
+void Crab\+UIUser.\+Snapshot\+Test\+Repo.\+Add (\begin{DoxyParamCaption}\item[{Type}]{test\+Pack}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_snapshot_test_repo_8cs_source_l00036}{36}} of file \doxymbox{\hyperlink{_snapshot_test_repo_8cs_source}{Snapshot\+Test\+Repo.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037\ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (MethodInfo\ mi\ \textcolor{keywordflow}{in}\ testPack.GetMethods(BindingFlags.Public\ |\ BindingFlags.Static))}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsSnapshotTestFunc(mi))\ Add(mi);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Type\ nested\ \textcolor{keywordflow}{in}\ testPack.GetNestedTypes())}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ Add(nested);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_snapshot_test_repo_acadc9ef5a012d28fdeefde9e2aa6eb0c}\index{CrabUIUser.SnapshotTestRepo@{CrabUIUser.SnapshotTestRepo}!IsSnapshotTestFunc@{IsSnapshotTestFunc}}
+\index{IsSnapshotTestFunc@{IsSnapshotTestFunc}!CrabUIUser.SnapshotTestRepo@{CrabUIUser.SnapshotTestRepo}}
+\doxysubsubsection{\texorpdfstring{IsSnapshotTestFunc()}{IsSnapshotTestFunc()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_snapshot_test_repo_acadc9ef5a012d28fdeefde9e2aa6eb0c} 
+bool Crab\+UIUser.\+Snapshot\+Test\+Repo.\+Is\+Snapshot\+Test\+Func (\begin{DoxyParamCaption}\item[{Method\+Info}]{mi}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_snapshot_test_repo_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_snapshot_test_repo_8cs_source}{Snapshot\+Test\+Repo.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ =>\ mi.ReturnType.IsAssignableTo(typeof(CUIComponent))\ \&\&\ mi.GetParameters().Length\ ==\ 0;}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_user_1_1_snapshot_test_repo_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_snapshot_test_repo_a9adc0612f2c42fb9db0a232dbce11044}\index{CrabUIUser.SnapshotTestRepo@{CrabUIUser.SnapshotTestRepo}!GroupedTests@{GroupedTests}}
+\index{GroupedTests@{GroupedTests}!CrabUIUser.SnapshotTestRepo@{CrabUIUser.SnapshotTestRepo}}
+\doxysubsubsection{\texorpdfstring{GroupedTests}{GroupedTests}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_snapshot_test_repo_a9adc0612f2c42fb9db0a232dbce11044} 
+Dictionary$<$string, Dictionary$<$string, Snapshot\+Test$>$ $>$ Crab\+UIUser.\+Snapshot\+Test\+Repo.\+Grouped\+Tests = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_snapshot_test_repo_8cs_source_l00023}{23}} of file \doxymbox{\hyperlink{_snapshot_test_repo_8cs_source}{Snapshot\+Test\+Repo.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_snapshot_test_repo_ae802903b713729dc088f5a95a9c5368a}\index{CrabUIUser.SnapshotTestRepo@{CrabUIUser.SnapshotTestRepo}!Groups@{Groups}}
+\index{Groups@{Groups}!CrabUIUser.SnapshotTestRepo@{CrabUIUser.SnapshotTestRepo}}
+\doxysubsubsection{\texorpdfstring{Groups}{Groups}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_snapshot_test_repo_ae802903b713729dc088f5a95a9c5368a} 
+ICollection$<$string$>$ Crab\+UIUser.\+Snapshot\+Test\+Repo.\+Groups\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_snapshot_test_repo_8cs_source_l00025}{25}} of file \doxymbox{\hyperlink{_snapshot_test_repo_8cs_source}{Snapshot\+Test\+Repo.\+cs}}.
+
+\Hypertarget{class_crab_u_i_user_1_1_snapshot_test_repo_a04920bacbda4623b3232501cb4151684}\index{CrabUIUser.SnapshotTestRepo@{CrabUIUser.SnapshotTestRepo}!Tests@{Tests}}
+\index{Tests@{Tests}!CrabUIUser.SnapshotTestRepo@{CrabUIUser.SnapshotTestRepo}}
+\doxysubsubsection{\texorpdfstring{Tests}{Tests}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_snapshot_test_repo_a04920bacbda4623b3232501cb4151684} 
+Dictionary$<$string, Snapshot\+Test$>$ Crab\+UIUser.\+Snapshot\+Test\+Repo.\+Tests = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_snapshot_test_repo_8cs_source_l00022}{22}} of file \doxymbox{\hyperlink{_snapshot_test_repo_8cs_source}{Snapshot\+Test\+Repo.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+CUITest/\+\+Snapshots/\+Snapshot\+Test\+Repo.\+cs\end{DoxyCompactItemize}

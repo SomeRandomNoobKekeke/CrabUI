@@ -1,0 +1,47 @@
+\doxysection{CUIAssembly\+Analyzer.\+cs}
+\hypertarget{_c_u_i_assembly_analyzer_8cs_source}{}\label{_c_u_i_assembly_analyzer_8cs_source}\index{ClientProject/ClientSource/CUI/Core/TypeAnalysis/Analyzers/CUIAssemblyAnalyzer.cs@{ClientProject/ClientSource/CUI/Core/TypeAnalysis/Analyzers/CUIAssemblyAnalyzer.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_code_generator}{CUICodeGenerator}};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00010}00010\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00012}\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_assembly_analyzer}{00012}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_assembly_analyzer}{CUIAssemblyAnalyzer}}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00013}00013\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{public}\ CUIComponentAnalyzer\ CUIComponentAnalyzer\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{public}\ CUISerializableAnalyzer\ CUISerializableAnalyzer\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_assembly_info}{CUIAssemblyInfo}}\ AnalyzeAssembly(Assembly\ assembly)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00019}00019\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_assembly_info}{CUIAssemblyInfo}}\ info\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_assembly_info}{CUIAssemblyInfo}}();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00021}00021\ \ \ \ \ \ \ info.Assembly\ =\ assembly;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00023}00023\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Type\ T\ \textcolor{keywordflow}{in}\ assembly.GetTypes().Where(CUISerializableAnalyzer.IsCUISerializable))}
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00024}00024\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ info.SerializableInfos[T]\ =\ CUISerializableAnalyzer.Analyze(T);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00026}00026\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00028}00028\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Type\ T\ \textcolor{keywordflow}{in}\ assembly.GetTypes().Where(CUIComponentAnalyzer.IsComponentType))}
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00029}00029\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ info.ComponentInfos[T]\ =\ CUIComponentAnalyzer.Analyze(T);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (info.SerializableInfos.ContainsKey(T))\ \textcolor{comment}{//HACK}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ info.ComponentInfos[T].SerializableProps\ =\ info.SerializableInfos[T].SerializableProps;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00036}00036\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00038}00038\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ info;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00040}00040\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_assembly_analyzer_8cs_source_l00041}00041\ \}}
+
+\end{DoxyCode}

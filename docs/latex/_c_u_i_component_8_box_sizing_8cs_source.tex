@@ -1,0 +1,116 @@
+\doxysection{CUIComponent.\+Box\+Sizing.\+cs}
+\hypertarget{_c_u_i_component_8_box_sizing_8cs_source}{}\label{_c_u_i_component_8_box_sizing_8cs_source}\index{ClientProject/ClientSource/CUI/Core/Components/CUIComponent/CUIComponent.BoxSizing.cs@{ClientProject/ClientSource/CUI/Core/Components/CUIComponent/CUIComponent.BoxSizing.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Collections.ObjectModel;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_code_generator}{CUICodeGenerator}};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00011}00011\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00013}00013\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component}{CUIComponent}}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00014}00014\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{private}\ CUISizes\ \_Margin;\ \textcolor{keyword}{public}\ CUISizes\ Margin}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00016}00016\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00017}00017\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Margin;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00018}00018\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00019}00019\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \_Margin\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ UpdateSizeDiffs();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00022}00022\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00023}00023\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{private}\ CUISizes\ \_Padding;\ \textcolor{keyword}{public}\ CUISizes\ Padding}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00026}00026\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00027}00027\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Padding;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00028}00028\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00029}00029\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \_Padding\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ UpdateSizeDiffs();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00032}00032\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00033}00033\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{public}\ CUISizes\ Border}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00036}00036\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00037}00037\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Borders.Sizes;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00038}00038\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00039}00039\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ Borders.Sizes\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ UpdateSizeDiffs();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00042}00042\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00045}00045\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ UpdateSizeDiffs()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00046}00046\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00047}00047\ \ \ \ \ \ \ OutToChildDiff\ =\ Margin\ +\ Border\ +\ Padding;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00048}00048\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00050}00050\ \ \ \ \ \textcolor{keyword}{public}\ CUISizes\ OutToChildDiff\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00054}00054\ \ \ \ \ \textcolor{keyword}{private}\ CUIRect\ \_OuterRect;\ \textcolor{keyword}{public}\ CUIRect\ OuterRect}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00055}00055\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00056}00056\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_OuterRect;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00057}00057\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00058}00058\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \_OuterRect\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \_Rect\ =\ \_OuterRect\ -\/\ Margin;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \_InnerRect\ =\ \_Rect\ -\/\ Border;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \_ChildrenRect\ =\ \_InnerRect\ -\/\ Padding;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ UpdateRects();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00065}00065\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00068}00068\ \ \ \ \ \textcolor{keyword}{private}\ CUIRect\ \_Rect;\ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ CUIRect\ Rect}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00069}00069\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00070}00070\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Rect;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00071}00071\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00072}00072\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \_Rect\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \_InnerRect\ =\ \_Rect\ -\/\ Border;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \_ChildrenRect\ =\ \_InnerRect\ -\/\ Padding;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \_OuterRect\ =\ \_Rect\ +\ Margin;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ UpdateRects();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00079}00079\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00080}00080\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00082}00082\ \ \ \ \ \textcolor{keyword}{private}\ CUIRect\ \_InnerRect;\ \textcolor{keyword}{public}\ CUIRect\ InnerRect}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00083}00083\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00084}00084\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_InnerRect;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00085}00085\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00086}00086\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \_InnerRect\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \_ChildrenRect\ =\ \_InnerRect\ -\/\ Padding;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \_Rect\ =\ \_InnerRect\ +\ Border;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \_OuterRect\ =\ \_Rect\ +\ Margin;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ UpdateRects();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00093}00093\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00094}00094\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00096}00096\ \ \ \ \ \textcolor{keyword}{private}\ CUIRect\ \_ChildrenRect;\ \textcolor{keyword}{public}\ CUIRect\ ChildrenRect}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00097}00097\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00098}00098\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_ChildrenRect;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00099}00099\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00100}00100\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \_ChildrenRect\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \_InnerRect\ =\ \_ChildrenRect\ +\ Padding;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \_Rect\ =\ \_InnerRect\ +\ Border;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \_OuterRect\ =\ \_Rect\ +\ Margin;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ UpdateRects();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00107}00107\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00108}00108\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00109}00109\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_box_sizing_8cs_source_l00110}00110\ \}}
+
+\end{DoxyCode}

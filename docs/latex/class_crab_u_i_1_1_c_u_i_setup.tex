@@ -1,0 +1,199 @@
+\doxysection{Crab\+UI.\+CUISetup Class Reference}
+\hypertarget{class_crab_u_i_1_1_c_u_i_setup}{}\label{class_crab_u_i_1_1_c_u_i_setup}\index{CrabUI.CUISetup@{CrabUI.CUISetup}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_setup_a262aad1cd9cd808a83831d0fdff2fda6}{Start}} (Assembly calling\+Assembly)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_setup_a16d2986be78c04cf9448108ca2e9a160}{Stop}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_setup_a7e824ce02b4c875945e07086b339fbc1}{Wire\+Up}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_setup}{CUISetup}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_setup_aaa09c60968a35c78a0eb0bb7fcf7ff13}{Default}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_c_u_i_runner_data_sources}{ICUIRunner\+Data\+Sources}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_setup_a29a2708d5137d77d1a2e873612b517d4}{Data\+Sources}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_c_u_i_runner}{ICUIRunner}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_setup_a2ab2f8fe370842188327874056742522}{Runner}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core}{CUICore}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_setup_a988d7d0aa34b46dff0a5616e48b1c91d}{Core}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_setup_a69d605fa419d50c63514672d80c53db2}{Started}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_setup_8cs_source_l00010}{10}} of file \doxymbox{\hyperlink{_c_u_i_setup_8cs_source}{CUISetup.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_setup_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_setup_aaa09c60968a35c78a0eb0bb7fcf7ff13}\index{CrabUI.CUISetup@{CrabUI.CUISetup}!Default@{Default}}
+\index{Default@{Default}!CrabUI.CUISetup@{CrabUI.CUISetup}}
+\doxysubsubsection{\texorpdfstring{Default()}{Default()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_setup_aaa09c60968a35c78a0eb0bb7fcf7ff13} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_setup}{CUISetup}} Crab\+UI.\+CUISetup.\+Default (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_setup_8_factory_8cs_source_l00014}{14}} of file \doxymbox{\hyperlink{_c_u_i_setup_8_factory_8cs_source}{CUISetup.\+Factory.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ CUISetup\ setup\ =\ \textcolor{keyword}{new}\ CUISetup();}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ setup.DataSources\ =\ \textcolor{keyword}{new}\ GameDataSources();}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ setup.Runner\ =\ \textcolor{keyword}{new}\ SoloCUIRunner();}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ setup.Core\ =\ \textcolor{keyword}{new}\ CUICore() }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ GameScreenRect\ =\ \textcolor{keyword}{new}\ Rectangle(0,\ 0,\ GameMain.GraphicsWidth,\ GameMain.GraphicsHeight)}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ setup.WireUp();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ setup;}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_setup_a262aad1cd9cd808a83831d0fdff2fda6}\index{CrabUI.CUISetup@{CrabUI.CUISetup}!Start@{Start}}
+\index{Start@{Start}!CrabUI.CUISetup@{CrabUI.CUISetup}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_setup_a262aad1cd9cd808a83831d0fdff2fda6} 
+void Crab\+UI.\+CUISetup.\+Start (\begin{DoxyParamCaption}\item[{Assembly}]{calling\+Assembly}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_setup_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_c_u_i_setup_8cs_source}{CUISetup.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Started)}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ Runner.Connect();}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ Core.Activate();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ Started\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ Runner.OnStartAttempt(callingAssembly);}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_setup_a16d2986be78c04cf9448108ca2e9a160}\index{CrabUI.CUISetup@{CrabUI.CUISetup}!Stop@{Stop}}
+\index{Stop@{Stop}!CrabUI.CUISetup@{CrabUI.CUISetup}}
+\doxysubsubsection{\texorpdfstring{Stop()}{Stop()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_setup_a16d2986be78c04cf9448108ca2e9a160} 
+void Crab\+UI.\+CUISetup.\+Stop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_setup_8cs_source_l00031}{31}} of file \doxymbox{\hyperlink{_c_u_i_setup_8cs_source}{CUISetup.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Started)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ Runner.Disconnect();}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ Started\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_setup_a7e824ce02b4c875945e07086b339fbc1}\index{CrabUI.CUISetup@{CrabUI.CUISetup}!WireUp@{WireUp}}
+\index{WireUp@{WireUp}!CrabUI.CUISetup@{CrabUI.CUISetup}}
+\doxysubsubsection{\texorpdfstring{WireUp()}{WireUp()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_setup_a7e824ce02b4c875945e07086b339fbc1} 
+void Crab\+UI.\+CUISetup.\+Wire\+Up (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_setup_8cs_source_l00038}{38}} of file \doxymbox{\hyperlink{_c_u_i_setup_8cs_source}{CUISetup.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039\ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ Runner.Core\ =\ Core;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ Runner.DataSources\ =\ DataSources;}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_setup_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_setup_a988d7d0aa34b46dff0a5616e48b1c91d}\index{CrabUI.CUISetup@{CrabUI.CUISetup}!Core@{Core}}
+\index{Core@{Core}!CrabUI.CUISetup@{CrabUI.CUISetup}}
+\doxysubsubsection{\texorpdfstring{Core}{Core}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_setup_a988d7d0aa34b46dff0a5616e48b1c91d} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core}{CUICore}} Crab\+UI.\+CUISetup.\+Core\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_setup_8cs_source_l00014}{14}} of file \doxymbox{\hyperlink{_c_u_i_setup_8cs_source}{CUISetup.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_setup_a29a2708d5137d77d1a2e873612b517d4}\index{CrabUI.CUISetup@{CrabUI.CUISetup}!DataSources@{DataSources}}
+\index{DataSources@{DataSources}!CrabUI.CUISetup@{CrabUI.CUISetup}}
+\doxysubsubsection{\texorpdfstring{DataSources}{DataSources}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_setup_a29a2708d5137d77d1a2e873612b517d4} 
+\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_c_u_i_runner_data_sources}{ICUIRunner\+Data\+Sources}} Crab\+UI.\+CUISetup.\+Data\+Sources\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_setup_8cs_source_l00012}{12}} of file \doxymbox{\hyperlink{_c_u_i_setup_8cs_source}{CUISetup.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_setup_a2ab2f8fe370842188327874056742522}\index{CrabUI.CUISetup@{CrabUI.CUISetup}!Runner@{Runner}}
+\index{Runner@{Runner}!CrabUI.CUISetup@{CrabUI.CUISetup}}
+\doxysubsubsection{\texorpdfstring{Runner}{Runner}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_setup_a2ab2f8fe370842188327874056742522} 
+\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_c_u_i_runner}{ICUIRunner}} Crab\+UI.\+CUISetup.\+Runner\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_setup_8cs_source_l00013}{13}} of file \doxymbox{\hyperlink{_c_u_i_setup_8cs_source}{CUISetup.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_setup_a69d605fa419d50c63514672d80c53db2}\index{CrabUI.CUISetup@{CrabUI.CUISetup}!Started@{Started}}
+\index{Started@{Started}!CrabUI.CUISetup@{CrabUI.CUISetup}}
+\doxysubsubsection{\texorpdfstring{Started}{Started}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_setup_a69d605fa419d50c63514672d80c53db2} 
+bool Crab\+UI.\+CUISetup.\+Started\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_setup_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_c_u_i_setup_8cs_source}{CUISetup.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Infrastructure/\+\+CUISetup/\+CUISetup.\+cs\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Infrastructure/\+\+CUISetup/\+CUISetup.\+Factory.\+cs\end{DoxyCompactItemize}

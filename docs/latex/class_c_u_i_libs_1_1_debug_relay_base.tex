@@ -1,0 +1,213 @@
+\doxysection{CUILibs.\+Debug\+Relay\+Base Class Reference}
+\hypertarget{class_c_u_i_libs_1_1_debug_relay_base}{}\label{class_c_u_i_libs_1_1_debug_relay_base}\index{CUILibs.DebugRelayBase@{CUILibs.DebugRelayBase}}
+
+
+\doxylink{class_c_u_i_libs_1_1_debug_relay}{Debug\+Relay} or \doxylink{class_c_u_i_libs_1_1_debug_hub}{Debug\+Hub}.  
+
+
+Inheritance diagram for CUILibs.\+Debug\+Relay\+Base:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_u_i_libs_1_1_debug_relay_base}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay_base_a5ed58d5fa2bd44d993523de728c8ef4f}{Route}} (\doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_debug_relay_target}{IDebug\+Relay\+Target}} prev)
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay_base_ad3c6876e1518a9c36706b4c92e1255d0}{Unroute}} (\doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_debug_relay_target}{IDebug\+Relay\+Target}} prev)
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay_base_a80703c63e67d4bb1b45acadd78196a56}{Route}} (\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_node_dict}{Debug\+Node\+Dict}} nodes)
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay_base_a93b90c2024b3fd0039b67c72d3a8875e}{Route}} (\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay_dict}{Debug\+Relay\+Dict}} relays)
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay_base_a72c2d628035bc2fad7813276b1691f11}{Unroute}} (\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_node_dict}{Debug\+Node\+Dict}} nodes)
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay_base_add8d44eb22abb29b20f1f08b15c19bdc}{Unroute}} (\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay_dict}{Debug\+Relay\+Dict}} relays)
+\item 
+IEnumerable$<$ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_node_base}{Debug\+Node\+Base}} $>$ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay_base_a2e1d951f984029202e0d055f976bdc4e}{Get\+Nodes}} (string type)
+\item 
+IEnumerable$<$ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_node_base}{Debug\+Node\+Base}} $>$ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay_base_a1180ae3bd4aaf476b6c70feed4886851}{Get\+Nodes}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_debug_relay_target}{IDebug\+Relay\+Target}} $>$ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay_base_a62b9f8b52837fc214640c9042f6c0116}{Children}} = new()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_c_u_i_libs_1_1_debug_relay}{Debug\+Relay} or \doxylink{class_c_u_i_libs_1_1_debug_hub}{Debug\+Hub}. 
+
+Definition at line \doxymbox{\hyperlink{_debug_relay_base_8cs_source_l00012}{12}} of file \doxymbox{\hyperlink{_debug_relay_base_8cs_source}{Debug\+Relay\+Base.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_c_u_i_libs_1_1_debug_relay_base_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_debug_relay_base_a1180ae3bd4aaf476b6c70feed4886851}\index{CUILibs.DebugRelayBase@{CUILibs.DebugRelayBase}!GetNodes@{GetNodes}}
+\index{GetNodes@{GetNodes}!CUILibs.DebugRelayBase@{CUILibs.DebugRelayBase}}
+\doxysubsubsection{\texorpdfstring{GetNodes()}{GetNodes()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_debug_relay_base_a1180ae3bd4aaf476b6c70feed4886851} 
+IEnumerable$<$ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_node_base}{Debug\+Node\+Base}} $>$ CUILibs.\+Debug\+Relay\+Base.\+Get\+Nodes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_debug_relay_base_8cs_source_l00029}{29}} of file \doxymbox{\hyperlink{_debug_relay_base_8cs_source}{Debug\+Relay\+Base.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ IEnumerable<DebugNodeBase>\ GetNodesRec(DebugRelayBase\ relay) }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (IDebugRelayTarget\ target\ \textcolor{keywordflow}{in}\ relay.Children)}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (target\ is\ DebugNodeBase)}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ target\ as\ DebugNodeBase;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (target\ is\ DebugRelayBase)}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (DebugNodeBase\ node\ \textcolor{keywordflow}{in}\ GetNodesRec(target\ as\ DebugRelayBase))}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ node;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (DebugNodeBase\ node\ \textcolor{keywordflow}{in}\ GetNodesRec(\textcolor{keyword}{this}))}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ node;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_debug_relay_base_a2e1d951f984029202e0d055f976bdc4e}\index{CUILibs.DebugRelayBase@{CUILibs.DebugRelayBase}!GetNodes@{GetNodes}}
+\index{GetNodes@{GetNodes}!CUILibs.DebugRelayBase@{CUILibs.DebugRelayBase}}
+\doxysubsubsection{\texorpdfstring{GetNodes()}{GetNodes()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_debug_relay_base_a2e1d951f984029202e0d055f976bdc4e} 
+IEnumerable$<$ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_node_base}{Debug\+Node\+Base}} $>$ CUILibs.\+Debug\+Relay\+Base.\+Get\+Nodes (\begin{DoxyParamCaption}\item[{string}]{type}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_debug_relay_base_8cs_source_l00026}{26}} of file \doxymbox{\hyperlink{_debug_relay_base_8cs_source}{Debug\+Relay\+Base.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ =>\ GetNodes().Where(node\ =>\ node.Type\ ==\ type);}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_debug_relay_base_a80703c63e67d4bb1b45acadd78196a56}\index{CUILibs.DebugRelayBase@{CUILibs.DebugRelayBase}!Route@{Route}}
+\index{Route@{Route}!CUILibs.DebugRelayBase@{CUILibs.DebugRelayBase}}
+\doxysubsubsection{\texorpdfstring{Route()}{Route()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_debug_relay_base_a80703c63e67d4bb1b45acadd78196a56} 
+void CUILibs.\+Debug\+Relay\+Base.\+Route (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_node_dict}{Debug\+Node\+Dict}}}]{nodes}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_debug_relay_base_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_debug_relay_base_8cs_source}{Debug\+Relay\+Base.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ =>\ nodes.Map(\textcolor{keyword}{this});}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_debug_relay_base_a93b90c2024b3fd0039b67c72d3a8875e}\index{CUILibs.DebugRelayBase@{CUILibs.DebugRelayBase}!Route@{Route}}
+\index{Route@{Route}!CUILibs.DebugRelayBase@{CUILibs.DebugRelayBase}}
+\doxysubsubsection{\texorpdfstring{Route()}{Route()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_debug_relay_base_a93b90c2024b3fd0039b67c72d3a8875e} 
+void CUILibs.\+Debug\+Relay\+Base.\+Route (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay_dict}{Debug\+Relay\+Dict}}}]{relays}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_debug_relay_base_8cs_source_l00020}{20}} of file \doxymbox{\hyperlink{_debug_relay_base_8cs_source}{Debug\+Relay\+Base.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ =>\ relays.Map(\textcolor{keyword}{this});}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_debug_relay_base_a5ed58d5fa2bd44d993523de728c8ef4f}\index{CUILibs.DebugRelayBase@{CUILibs.DebugRelayBase}!Route@{Route}}
+\index{Route@{Route}!CUILibs.DebugRelayBase@{CUILibs.DebugRelayBase}}
+\doxysubsubsection{\texorpdfstring{Route()}{Route()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_debug_relay_base_a5ed58d5fa2bd44d993523de728c8ef4f} 
+void CUILibs.\+Debug\+Relay\+Base.\+Route (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_debug_relay_target}{IDebug\+Relay\+Target}}}]{prev}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_debug_relay_base_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_debug_relay_base_8cs_source}{Debug\+Relay\+Base.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ =>\ this.Children.Add(prev);}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_debug_relay_base_a72c2d628035bc2fad7813276b1691f11}\index{CUILibs.DebugRelayBase@{CUILibs.DebugRelayBase}!Unroute@{Unroute}}
+\index{Unroute@{Unroute}!CUILibs.DebugRelayBase@{CUILibs.DebugRelayBase}}
+\doxysubsubsection{\texorpdfstring{Unroute()}{Unroute()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_debug_relay_base_a72c2d628035bc2fad7813276b1691f11} 
+void CUILibs.\+Debug\+Relay\+Base.\+Unroute (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_node_dict}{Debug\+Node\+Dict}}}]{nodes}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_debug_relay_base_8cs_source_l00021}{21}} of file \doxymbox{\hyperlink{_debug_relay_base_8cs_source}{Debug\+Relay\+Base.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ =>\ nodes.Unmap(\textcolor{keyword}{this});}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_debug_relay_base_add8d44eb22abb29b20f1f08b15c19bdc}\index{CUILibs.DebugRelayBase@{CUILibs.DebugRelayBase}!Unroute@{Unroute}}
+\index{Unroute@{Unroute}!CUILibs.DebugRelayBase@{CUILibs.DebugRelayBase}}
+\doxysubsubsection{\texorpdfstring{Unroute()}{Unroute()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_debug_relay_base_add8d44eb22abb29b20f1f08b15c19bdc} 
+void CUILibs.\+Debug\+Relay\+Base.\+Unroute (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay_dict}{Debug\+Relay\+Dict}}}]{relays}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_debug_relay_base_8cs_source_l00022}{22}} of file \doxymbox{\hyperlink{_debug_relay_base_8cs_source}{Debug\+Relay\+Base.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ =>\ relays.Unmap(\textcolor{keyword}{this});}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_debug_relay_base_ad3c6876e1518a9c36706b4c92e1255d0}\index{CUILibs.DebugRelayBase@{CUILibs.DebugRelayBase}!Unroute@{Unroute}}
+\index{Unroute@{Unroute}!CUILibs.DebugRelayBase@{CUILibs.DebugRelayBase}}
+\doxysubsubsection{\texorpdfstring{Unroute()}{Unroute()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_debug_relay_base_ad3c6876e1518a9c36706b4c92e1255d0} 
+void CUILibs.\+Debug\+Relay\+Base.\+Unroute (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_debug_relay_target}{IDebug\+Relay\+Target}}}]{prev}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_debug_relay_base_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_debug_relay_base_8cs_source}{Debug\+Relay\+Base.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ =>\ this.Children.Remove(prev);}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_c_u_i_libs_1_1_debug_relay_base_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_debug_relay_base_a62b9f8b52837fc214640c9042f6c0116}\index{CUILibs.DebugRelayBase@{CUILibs.DebugRelayBase}!Children@{Children}}
+\index{Children@{Children}!CUILibs.DebugRelayBase@{CUILibs.DebugRelayBase}}
+\doxysubsubsection{\texorpdfstring{Children}{Children}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_debug_relay_base_a62b9f8b52837fc214640c9042f6c0116} 
+List$<$\doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_debug_relay_target}{IDebug\+Relay\+Target}}$>$ CUILibs.\+Debug\+Relay\+Base.\+Children = new()\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_debug_relay_base_8cs_source_l00014}{14}} of file \doxymbox{\hyperlink{_debug_relay_base_8cs_source}{Debug\+Relay\+Base.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+Libs/\+\+Debug\+Node/\+\+Relays/\+Debug\+Relay\+Base.\+cs\end{DoxyCompactItemize}

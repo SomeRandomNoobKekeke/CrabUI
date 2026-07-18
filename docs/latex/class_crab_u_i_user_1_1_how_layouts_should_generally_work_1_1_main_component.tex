@@ -1,0 +1,64 @@
+\doxysection{Crab\+UIUser.\+How\+Layouts\+Should\+Generally\+Work.\+Main\+Component Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_main_component}{}\label{class_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_main_component}\index{CrabUIUser.HowLayoutsShouldGenerallyWork.MainComponent@{CrabUIUser.HowLayoutsShouldGenerallyWork.MainComponent}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_main_component_a9dfdc184b00090ea4c0c76640ee6638e}{Update}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_component}{Component}} $>$ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_main_component_ad34215c9d14650e84228e7af7a6c3100}{Children}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_main_component_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_main_component_8cs_source}{Main\+Component.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_main_component_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_main_component_a9dfdc184b00090ea4c0c76640ee6638e}\index{CrabUIUser.HowLayoutsShouldGenerallyWork.MainComponent@{CrabUIUser.HowLayoutsShouldGenerallyWork.MainComponent}!Update@{Update}}
+\index{Update@{Update}!CrabUIUser.HowLayoutsShouldGenerallyWork.MainComponent@{CrabUIUser.HowLayoutsShouldGenerallyWork.MainComponent}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_main_component_a9dfdc184b00090ea4c0c76640ee6638e} 
+void Crab\+UIUser.\+How\+Layouts\+Should\+Generally\+Work.\+Main\+Component.\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_main_component_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_main_component_8cs_source}{Main\+Component.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Component\ child\ \textcolor{keywordflow}{in}\ Children)}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ child.Layout.UpdateChildren();}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_main_component_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_main_component_ad34215c9d14650e84228e7af7a6c3100}\index{CrabUIUser.HowLayoutsShouldGenerallyWork.MainComponent@{CrabUIUser.HowLayoutsShouldGenerallyWork.MainComponent}!Children@{Children}}
+\index{Children@{Children}!CrabUIUser.HowLayoutsShouldGenerallyWork.MainComponent@{CrabUIUser.HowLayoutsShouldGenerallyWork.MainComponent}}
+\doxysubsubsection{\texorpdfstring{Children}{Children}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_main_component_ad34215c9d14650e84228e7af7a6c3100} 
+List$<$\doxymbox{\hyperlink{class_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_component}{Component}}$>$ Crab\+UIUser.\+How\+Layouts\+Should\+Generally\+Work.\+Main\+Component.\+Children}
+
+
+
+Definition at line \doxymbox{\hyperlink{_main_component_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_main_component_8cs_source}{Main\+Component.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Design/\+\+How\+Layouts\+Should\+Generally\+Work/\+\+Components/\+Main\+Component.\+cs\end{DoxyCompactItemize}

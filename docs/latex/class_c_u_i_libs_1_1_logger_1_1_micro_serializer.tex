@@ -1,0 +1,53 @@
+\doxysection{CUILibs.\+Logger.\+Micro\+Serializer Class Reference}
+\hypertarget{class_c_u_i_libs_1_1_logger_1_1_micro_serializer}{}\label{class_c_u_i_libs_1_1_logger_1_1_micro_serializer}\index{CUILibs.Logger.MicroSerializer@{CUILibs.Logger.MicroSerializer}}
+Inheritance diagram for CUILibs.\+Logger.\+Micro\+Serializer:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_u_i_libs_1_1_logger_1_1_micro_serializer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_1_1_micro_serializer_adcb390d392f9862fb91a34157569f507}{Serialize}} (object o)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_logger_8cs_source_l00026}{26}} of file \doxymbox{\hyperlink{_logger_8cs_source}{Logger.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_c_u_i_libs_1_1_logger_1_1_micro_serializer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_logger_1_1_micro_serializer_adcb390d392f9862fb91a34157569f507}\index{CUILibs.Logger.MicroSerializer@{CUILibs.Logger.MicroSerializer}!Serialize@{Serialize}}
+\index{Serialize@{Serialize}!CUILibs.Logger.MicroSerializer@{CUILibs.Logger.MicroSerializer}}
+\doxysubsubsection{\texorpdfstring{Serialize()}{Serialize()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_logger_1_1_micro_serializer_adcb390d392f9862fb91a34157569f507} 
+string CUILibs.\+Logger.\+Micro\+Serializer.\+Serialize (\begin{DoxyParamCaption}\item[{object}]{o}{}\end{DoxyParamCaption})}
+
+
+
+Implements \doxymbox{\hyperlink{interface_c_u_i_libs_1_1_logger_1_1_i_serializer}{CUILibs.\+Logger.\+ISerializer}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_logger_8cs_source_l00028}{28}} of file \doxymbox{\hyperlink{_logger_8cs_source}{Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (o\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}[null]"{}};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (o\ ==\ \textcolor{stringliteral}{"{}"{}})\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}[empty\ string]"{}};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ o.ToString();}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+Libs/\+\+Logger/\+Logger.\+cs\end{DoxyCompactItemize}

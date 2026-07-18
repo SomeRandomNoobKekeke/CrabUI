@@ -1,0 +1,112 @@
+\doxysection{Crab\+UI.\+CUIText\+Input\+Event Class Reference}
+\hypertarget{class_crab_u_i_1_1_c_u_i_text_input_event}{}\label{class_crab_u_i_1_1_c_u_i_text_input_event}\index{CrabUI.CUITextInputEvent@{CrabUI.CUITextInputEvent}}
+Inheritance diagram for Crab\+UI.\+CUIText\+Input\+Event:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_crab_u_i_1_1_c_u_i_text_input_event}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_text_input_event_ac8d09e1c25dfc473ae1385777844c28c}{Dispatch}} (\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_event_consumer}{IEvent\+Consumer}} consumer)
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_text_input_event}{CUIText\+Input\+Event}}(Text\+Input\+Event\+Args args, \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input}{CUIInput.\+Keyboard\+Input}} keyboard) override string \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_text_input_event_a301394087e93bd9e6ffd71274473ee62}{To\+String}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_keyboard_event}{Crab\+UI.\+CUIKeyboard\+Event}}}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_keyboard_event_ada2b41a5f84f36aa955cb68504a627cc}{CUIKeyboard\+Event}} (\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input}{CUIInput.\+Keyboard\+Input}} keyboard)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_1_1_input_event}{Crab\+UI.\+Input\+Event}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Dispatch} (\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_event_consumer}{IEvent\+Consumer}} consumer)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Text\+Input\+Event\+Args \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_text_input_event_a029ff2cc7abab4054836172c94ea5e78}{Args}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_keyboard_event}{Crab\+UI.\+CUIKeyboard\+Event}}}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input}{CUIInput.\+Keyboard\+Input}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_keyboard_event_a9fce1d28c9bd660211d0da681bfd5ba6}{Keyboard}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \doxymbox{\hyperlink{class_crab_u_i_1_1_input_event}{Crab\+UI.\+Input\+Event}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_input_event_a44ee3f16736e04bd0e0170e2cff6f536}{Consumed}} = false\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_event_8cs_source_l00012}{12}} of file \doxymbox{\hyperlink{_c_u_i_text_input_event_8cs_source}{CUIText\+Input\+Event.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_text_input_event_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_text_input_event_ac8d09e1c25dfc473ae1385777844c28c}\index{CrabUI.CUITextInputEvent@{CrabUI.CUITextInputEvent}!Dispatch@{Dispatch}}
+\index{Dispatch@{Dispatch}!CrabUI.CUITextInputEvent@{CrabUI.CUITextInputEvent}}
+\doxysubsubsection{\texorpdfstring{Dispatch()}{Dispatch()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_text_input_event_ac8d09e1c25dfc473ae1385777844c28c} 
+override void Crab\+UI.\+CUIText\+Input\+Event.\+Dispatch (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_event_consumer}{IEvent\+Consumer}}}]{consumer}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_event_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_c_u_i_text_input_event_8cs_source}{CUIText\+Input\+Event.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \ \ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (consumer\ is\ IKeyboardEventConsumer\ KEConsumer)}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ KEConsumer.TextInput.Raise(\textcolor{keyword}{this});}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_text_input_event_a301394087e93bd9e6ffd71274473ee62}\index{CrabUI.CUITextInputEvent@{CrabUI.CUITextInputEvent}!ToString@{ToString}}
+\index{ToString@{ToString}!CrabUI.CUITextInputEvent@{CrabUI.CUITextInputEvent}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_text_input_event_a301394087e93bd9e6ffd71274473ee62} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_text_input_event}{CUIText\+Input\+Event}}(Text\+Input\+Event\+Args args, \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input}{CUIInput.\+Keyboard\+Input}} keyboard) override string Crab\+UI.\+CUIText\+Input\+Event.\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_event_8cs_source_l00026}{26}} of file \doxymbox{\hyperlink{_c_u_i_text_input_event_8cs_source}{CUIText\+Input\+Event.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ =>\ \$\textcolor{stringliteral}{"{}\{Args.Character\}\ text\ input"{}};}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_text_input_event_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_text_input_event_a029ff2cc7abab4054836172c94ea5e78}\index{CrabUI.CUITextInputEvent@{CrabUI.CUITextInputEvent}!Args@{Args}}
+\index{Args@{Args}!CrabUI.CUITextInputEvent@{CrabUI.CUITextInputEvent}}
+\doxysubsubsection{\texorpdfstring{Args}{Args}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_text_input_event_a029ff2cc7abab4054836172c94ea5e78} 
+Text\+Input\+Event\+Args Crab\+UI.\+CUIText\+Input\+Event.\+Args\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_event_8cs_source_l00014}{14}} of file \doxymbox{\hyperlink{_c_u_i_text_input_event_8cs_source}{CUIText\+Input\+Event.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \{\ \textcolor{keyword}{get};\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+CUIInput/\+\+Events/\+\+Input\+Events/\+\+Keyboard\+Events/\+CUIText\+Input\+Event.\+cs\end{DoxyCompactItemize}

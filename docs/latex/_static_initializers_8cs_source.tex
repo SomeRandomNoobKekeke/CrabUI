@@ -1,0 +1,60 @@
+\doxysection{Static\+Initializers.\+cs}
+\hypertarget{_static_initializers_8cs_source}{}\label{_static_initializers_8cs_source}\index{ClientProject/InMemory/Experiments/Design/StaticInitializers.cs@{ClientProject/InMemory/Experiments/Design/StaticInitializers.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00010}00010\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i_user}{CrabUIUser}}}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00012}00012\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00013}00013\ \textcolor{comment}{\ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00014}00014\ \textcolor{comment}{\ \ ///\ I\ was\ sure\ that\ static\ initializers\ are\ running\ in\ the\ order\ they\ appear\ in\ code,\ wtf\ is\ going\ on\ here?}}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00015}00015\ \textcolor{comment}{\ \ ///\ Ok\ nevermind\ they\ actually\ do,\ but\ i\ thought\ that\ i\ should\ get\ compile\ time\ error\ here}}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00016}00016\ \textcolor{comment}{\ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00017}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_static_initializers}{00017}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_static_initializers}{StaticInitializers}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Experiment}}}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00018}00018\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00019}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_static_initializers_1_1_a}{00019}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }A}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00020}00020\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00021}00021\ \ \ \ \ \ \ \textcolor{keyword}{public}\ B\ B\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00022}00022\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ IsValid\ =>\ B\ is\ not\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00023}00023\ \ \ \ \ \ \ \textcolor{keyword}{public}\ A(B\ b)\ =>\ B\ =\ b;}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00024}00024\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00026}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_static_initializers_1_1_b}{00026}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }B}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00027}00027\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00028}00028\ \ \ \ \ \ \ \textcolor{keyword}{public}\ C\ C\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00029}00029\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ IsValid\ =>\ C\ is\ not\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00030}00030\ \ \ \ \ \ \ \textcolor{keyword}{public}\ B(C\ c)\ =>\ C\ =\ c;}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00031}00031\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00033}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_static_initializers_1_1_c}{00033}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }C}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00034}00034\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00035}00035\ \ \ \ \ \ \ \textcolor{keyword}{public}\ A\ A\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00036}00036\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ IsValid\ =>\ A\ is\ not\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00037}00037\ \ \ \ \ \ \ \textcolor{keyword}{public}\ C(A\ a)\ =>\ A\ =\ a;}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00038}00038\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }Bruh}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00041}00041\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00042}00042\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_static_initializers_1_1_a}{A}}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_static_initializers_1_1_a}{A}}\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_static_initializers_1_1_a}{A}}(\doxymbox{\hyperlink{class_crab_u_i_user_1_1_static_initializers_1_1_b}{B}});}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00043}00043\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_static_initializers_1_1_b}{B}}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_static_initializers_1_1_b}{B}}\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_static_initializers_1_1_b}{B}}(\doxymbox{\hyperlink{class_crab_u_i_user_1_1_static_initializers_1_1_c}{C}});}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00044}00044\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_static_initializers_1_1_c}{C}}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_static_initializers_1_1_c}{C}}\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_static_initializers_1_1_c}{C}}(\doxymbox{\hyperlink{class_crab_u_i_user_1_1_static_initializers_1_1_a}{A}});}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00045}00045\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00047}00047\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ Run()}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00048}00048\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00049}00049\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_mod}{Mod}}.Logger.LogVars(Bruh.A.IsValid);}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00050}00050\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_mod}{Mod}}.Logger.LogVars(Bruh.B.IsValid);}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00051}00051\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_mod}{Mod}}.Logger.LogVars(Bruh.C.IsValid);}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00053}00053\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_static_initializers_8cs_source_l00054}00054\ \}}
+
+\end{DoxyCode}

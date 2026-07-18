@@ -1,0 +1,196 @@
+\doxysection{Crab\+UI.\+Drag\+Handle Class Reference}
+\hypertarget{class_crab_u_i_1_1_drag_handle}{}\label{class_crab_u_i_1_1_drag_handle}\index{CrabUI.DragHandle@{CrabUI.DragHandle}}
+Inheritance diagram for Crab\+UI.\+Drag\+Handle:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_1_1_drag_handle}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_drag_handle_a96efb591458f012ad24b0f9fc63a0a2e}{Update}} (\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_event}{CUIMouse\+Event}} e)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_drag_handle_af42d3218ba1f2d1f96d13bdd24ef24a8}{Force\+Release}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+object \doxymbox{\hyperlink{class_crab_u_i_1_1_drag_handle_a9e7c176fe6e8bcea3c228b93277578b9}{Host\+Component}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+string \doxymbox{\hyperlink{class_crab_u_i_1_1_drag_handle_a8c1ecb3b547f7d37429f7f33f15fda91}{Host\+Prop\+Name}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_draggable}{IDraggable}} \doxymbox{\hyperlink{class_crab_u_i_1_1_drag_handle_ab6c4c3b60e580542e4485bdf12a5d735}{Host}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_drag_handle_a5b6630d0e6f644ba8aba1549aa4a012f}{Active}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_drag_handle_a056c6c0660574ce2751a16f8bd291122}{Grabbed}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_drag_handle_aaf330f7ef6afea9af39a5b1c06150ef7}{Grab\+Offset}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_drag_handle_8cs_source_l00012}{12}} of file \doxymbox{\hyperlink{_drag_handle_8cs_source}{Drag\+Handle.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_drag_handle_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_drag_handle_af42d3218ba1f2d1f96d13bdd24ef24a8}\index{CrabUI.DragHandle@{CrabUI.DragHandle}!ForceRelease@{ForceRelease}}
+\index{ForceRelease@{ForceRelease}!CrabUI.DragHandle@{CrabUI.DragHandle}}
+\doxysubsubsection{\texorpdfstring{ForceRelease()}{ForceRelease()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_drag_handle_af42d3218ba1f2d1f96d13bdd24ef24a8} 
+void Crab\+UI.\+Drag\+Handle.\+Force\+Release (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_drag_handle_8cs_source_l00073}{73}} of file \doxymbox{\hyperlink{_drag_handle_8cs_source}{Drag\+Handle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00074\ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ Grabbed\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ host.HubMouseMoved\ -\/=\ Update;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ host.HubMouseUp\ -\/=\ Release;}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ host.Release(\textcolor{keyword}{this});}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_drag_handle_a96efb591458f012ad24b0f9fc63a0a2e}\index{CrabUI.DragHandle@{CrabUI.DragHandle}!Update@{Update}}
+\index{Update@{Update}!CrabUI.DragHandle@{CrabUI.DragHandle}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_drag_handle_a96efb591458f012ad24b0f9fc63a0a2e} 
+void Crab\+UI.\+Drag\+Handle.\+Update (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_event}{CUIMouse\+Event}}}]{e}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_drag_handle_8cs_source_l00057}{57}} of file \doxymbox{\hyperlink{_drag_handle_8cs_source}{Drag\+Handle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00058\ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ Vector2\ origin\ =\ e.Pos\ +\ GrabOffset\ -\/\ (Host.ParentRect?.LeftTop\ ??\ Vector2.Zero);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ Host.SetLeftTopPos(origin.X,\ origin.Y);}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_drag_handle_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_drag_handle_a5b6630d0e6f644ba8aba1549aa4a012f}\index{CrabUI.DragHandle@{CrabUI.DragHandle}!Active@{Active}}
+\index{Active@{Active}!CrabUI.DragHandle@{CrabUI.DragHandle}}
+\doxysubsubsection{\texorpdfstring{Active}{Active}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_drag_handle_a5b6630d0e6f644ba8aba1549aa4a012f} 
+bool Crab\+UI.\+Drag\+Handle.\+Active\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_drag_handle_8cs_source_l00041}{41}} of file \doxymbox{\hyperlink{_drag_handle_8cs_source}{Drag\+Handle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_drag_handle_a056c6c0660574ce2751a16f8bd291122}\index{CrabUI.DragHandle@{CrabUI.DragHandle}!Grabbed@{Grabbed}}
+\index{Grabbed@{Grabbed}!CrabUI.DragHandle@{CrabUI.DragHandle}}
+\doxysubsubsection{\texorpdfstring{Grabbed}{Grabbed}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_drag_handle_a056c6c0660574ce2751a16f8bd291122} 
+bool Crab\+UI.\+Drag\+Handle.\+Grabbed\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_drag_handle_8cs_source_l00042}{42}} of file \doxymbox{\hyperlink{_drag_handle_8cs_source}{Drag\+Handle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_drag_handle_aaf330f7ef6afea9af39a5b1c06150ef7}\index{CrabUI.DragHandle@{CrabUI.DragHandle}!GrabOffset@{GrabOffset}}
+\index{GrabOffset@{GrabOffset}!CrabUI.DragHandle@{CrabUI.DragHandle}}
+\doxysubsubsection{\texorpdfstring{GrabOffset}{GrabOffset}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_drag_handle_aaf330f7ef6afea9af39a5b1c06150ef7} 
+Vector2 Crab\+UI.\+Drag\+Handle.\+Grab\+Offset\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_drag_handle_8cs_source_l00043}{43}} of file \doxymbox{\hyperlink{_drag_handle_8cs_source}{Drag\+Handle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00043\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_drag_handle_ab6c4c3b60e580542e4485bdf12a5d735}\index{CrabUI.DragHandle@{CrabUI.DragHandle}!Host@{Host}}
+\index{Host@{Host}!CrabUI.DragHandle@{CrabUI.DragHandle}}
+\doxysubsubsection{\texorpdfstring{Host}{Host}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_drag_handle_ab6c4c3b60e580542e4485bdf12a5d735} 
+\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_draggable}{IDraggable}} Crab\+UI.\+Drag\+Handle.\+Host\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_drag_handle_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_drag_handle_8cs_source}{Drag\+Handle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ host;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (host\ is\ not\ \textcolor{keyword}{null})\ DisconnectFromHost(host);}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ host\ =\ value;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (host\ is\ not\ \textcolor{keyword}{null})\ ConnectToHost(host);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_drag_handle_a9e7c176fe6e8bcea3c228b93277578b9}\index{CrabUI.DragHandle@{CrabUI.DragHandle}!HostComponent@{HostComponent}}
+\index{HostComponent@{HostComponent}!CrabUI.DragHandle@{CrabUI.DragHandle}}
+\doxysubsubsection{\texorpdfstring{HostComponent}{HostComponent}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_drag_handle_a9e7c176fe6e8bcea3c228b93277578b9} 
+object Crab\+UI.\+Drag\+Handle.\+Host\+Component\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Implements \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_aware}{CUICode\+Generator.\+IAware}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_drag_handle_8cs_source_l00014}{14}} of file \doxymbox{\hyperlink{_drag_handle_8cs_source}{Drag\+Handle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_drag_handle_a8c1ecb3b547f7d37429f7f33f15fda91}\index{CrabUI.DragHandle@{CrabUI.DragHandle}!HostPropName@{HostPropName}}
+\index{HostPropName@{HostPropName}!CrabUI.DragHandle@{CrabUI.DragHandle}}
+\doxysubsubsection{\texorpdfstring{HostPropName}{HostPropName}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_drag_handle_a8c1ecb3b547f7d37429f7f33f15fda91} 
+string Crab\+UI.\+Drag\+Handle.\+Host\+Prop\+Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Implements \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_aware}{CUICode\+Generator.\+IAware}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_drag_handle_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_drag_handle_8cs_source}{Drag\+Handle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Handles/\+\+Drag\+Handle/\+Drag\+Handle.\+cs\end{DoxyCompactItemize}

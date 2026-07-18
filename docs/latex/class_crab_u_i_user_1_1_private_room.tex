@@ -1,0 +1,67 @@
+\doxysection{Crab\+UIUser.\+Private\+Room Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_private_room}{}\label{class_crab_u_i_user_1_1_private_room}\index{CrabUIUser.PrivateRoom@{CrabUIUser.PrivateRoom}}
+
+
+only Module\+AClass and Module\+Blass have access to Private\+Room.\+Private\+Chat  
+
+
+Inheritance diagram for Crab\+UIUser.\+Private\+Room:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_private_room}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_private_room_1_1_host}{Host}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_private_room_a23304de6e1d9ceed5a481ee4b271b577}{Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Crab\+UIUser.\+Experiment}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Run} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+only Module\+AClass and Module\+Blass have access to Private\+Room.\+Private\+Chat 
+
+Definition at line \doxymbox{\hyperlink{_private_room_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_private_room_8cs_source}{Private\+Room.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_private_room_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_private_room_a23304de6e1d9ceed5a481ee4b271b577}\index{CrabUIUser.PrivateRoom@{CrabUIUser.PrivateRoom}!Run@{Run}}
+\index{Run@{Run}!CrabUIUser.PrivateRoom@{CrabUIUser.PrivateRoom}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_private_room_a23304de6e1d9ceed5a481ee4b271b577} 
+override void Crab\+UIUser.\+Private\+Room.\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_private_room_8cs_source_l00067}{67}} of file \doxymbox{\hyperlink{_private_room_8cs_source}{Private\+Room.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00068\ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ Host\ host\ =\ \textcolor{keyword}{new}\ Host();}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ Mod.Logger.Log(host.ModuleB.ReadChat());}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ host.ModuleA.WriteChat();}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ Mod.Logger.Log(host.ModuleB.ReadChat());}
+\DoxyCodeLine{00075\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Design/\+Private\+Room.\+cs\end{DoxyCompactItemize}

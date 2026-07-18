@@ -1,0 +1,130 @@
+\doxysection{Text\+Block.\+cs}
+\hypertarget{_text_block_8cs_source}{}\label{_text_block_8cs_source}\index{ClientProject/ClientSource/CUI/Core/Visual Elements/Elements/TextBlock/TextBlock.cs@{ClientProject/ClientSource/CUI/Core/Visual Elements/Elements/TextBlock/TextBlock.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework.Graphics;}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}};}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00011}00011\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00013}00013\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_text_block}{TextBlock}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_element_base}{VisualElementBase}}}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00014}00014\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ CaretOffset(\textcolor{keywordtype}{int}\ i)}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00016}00016\ \ \ \ \ \ \ =>\ Font.MeasureString(Text.SubstringSafe(i)).X\ *\ Scale;}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00018}00018\ \ \ \ \ \textcolor{comment}{//Evil\ from\ old\ cui}}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ CaretIndex(Vector2\ clickPos)}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00020}00020\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00021}00021\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Rect.Contains(clickPos))}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00022}00022\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (clickPos.X\ <\ Rect.Left)\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (clickPos.X\ >\ Rect.Right)\ \textcolor{keywordflow}{return}\ Text.Length;}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00025}00025\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00027}00027\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x\ =\ clickPos.X\ -\/\ Rect.Left;}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00028}00028\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ Aprox\ =\ (int)Math.Round(x\ /\ Font.MeasureString(Text).X\ *\ Text.Length);}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00030}00030\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ closestCaretPos\ =\ Aprox;}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00031}00031\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ smallestDif\ =\ Math.Abs(x\ -\/\ CaretOffset(Aprox));}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00033}00033\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ Aprox\ -\/\ 2;\ i\ <=\ Aprox\ +\ 2;\ i++)}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00034}00034\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ dif\ =\ Math.Abs(x\ -\/\ CaretOffset(i));}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dif\ <\ smallestDif)}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ closestCaretPos\ =\ i;}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ smallestDif\ =\ dif;}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00041}00041\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00043}00043\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ closestCaretPos;}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{private}\ CUIRect\ \_Rect;\ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ CUIRect\ Rect}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00047}00047\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00048}00048\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Rect;}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00049}00049\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00050}00050\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \_Rect\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \_ResizeStrategy.MeasureRealTextSize(Rect,\ Anchor,\ Text,\ Scale,\ Font);}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00053}00053\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00054}00054\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00056}00056\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{string}\ \_Text\ =\ \textcolor{stringliteral}{"{}"{}};\ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ Text}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00057}00057\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00058}00058\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Text;}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00059}00059\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00060}00060\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \_Text\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \_ResizeStrategy.MeasureRawTextSize(Text,\ Scale,\ Font);}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \_ResizeStrategy.MeasureRealTextSize(Rect,\ Anchor,\ Text,\ Scale,\ Font);}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00064}00064\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00065}00065\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00067}00067\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ \_Scale\ =\ 1.0f;\ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ Scale}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00068}00068\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00069}00069\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Scale;}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00070}00070\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00071}00071\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \_Scale\ =\ Math.Max(0,\ value);}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \_ResizeStrategy.MeasureRawTextSize(Text,\ Scale,\ Font);}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \_ResizeStrategy.MeasureRealTextSize(Rect,\ Anchor,\ Text,\ Scale,\ Font);}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00075}00075\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00076}00076\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00078}00078\ \ \ \ \ \textcolor{keyword}{private}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base}{ResizeStrategyBase}}\ \_ResizeStrategy\ =\ \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base}{ResizeStrategyBase}}.ResistStrategy;}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00079}00079\ \ \ \ \ \textcolor{keyword}{public}\ ResizeStrategy\ ResizeStrategy}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00080}00080\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00081}00081\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base}{ResizeStrategyBase}}.ToEnum(\_ResizeStrategy);}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00082}00082\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00083}00083\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \_ResizeStrategy\ =\ \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base}{ResizeStrategyBase}}.FromEnum(value);}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \_ResizeStrategy.MeasureRawTextSize(Text,\ Scale,\ Font);}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00086}00086\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00087}00087\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00089}00089\ \ \ \ \ \textcolor{keyword}{public}\ Vector2\ Anchor\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}\ Vector2(0.5f,\ 0.5f);}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00092}00092\ \ \ \ \ \textcolor{keyword}{public}\ Color\ TextColor\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ Color.White;}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00093}00093\ \ \ \ \ \textcolor{keyword}{public}\ SpriteEffects\ SpriteEffects\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ SpriteEffects.None;}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00094}00094\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ LayerDepth\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ 0.1f;}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00097}00097\ \ \ \ \ \textcolor{keyword}{public}\ CUIFont\ Font\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ CUIFont.Font;}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00099}00099\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ RealText\ =>\ \_ResizeStrategy.RealText;}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00100}00100\ \ \ \ \ \textcolor{keyword}{public}\ Vector2\ RawTextSize\ =>\ \_ResizeStrategy.RawTextSize;}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00101}00101\ \ \ \ \ \textcolor{keyword}{public}\ Vector2\ TextDrawPosition\ =>\ \_ResizeStrategy.TextDrawPosition;}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00102}00102\ \ \ \ \ \textcolor{keyword}{public}\ CUINullVector2\ ForcedSize\ =>\ \_ResizeStrategy.ForcedSize;}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00103}00103\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ RealScale\ =>\ \_ResizeStrategy.RealScale;}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00106}00106\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ Draw(CUISpriteBatch\ spriteBatch)}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00107}00107\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00108}00108\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Visible)}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00109}00109\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ Font.DrawString(}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ spriteBatch,}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ RealText,}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ TextDrawPosition,}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ TextColor,}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ rotation:\ 0,}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ origin:\ Vector2.Zero,}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ RealScale,}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ SpriteEffects,}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ LayerDepth}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00121}00121\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00122}00122\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00123}00123\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_text_block_8cs_source_l00124}00124\ \}}
+
+\end{DoxyCode}

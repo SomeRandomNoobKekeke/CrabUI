@@ -1,0 +1,195 @@
+\doxysection{Logger.\+cs}
+\hypertarget{_logger_8cs_source}{}\label{_logger_8cs_source}\index{ClientProject/ClientSource/Libs/Logger/Logger.cs@{ClientProject/ClientSource/Libs/Logger/Logger.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Runtime.CompilerServices;}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00010}00010\ \textcolor{keyword}{using\ }System.IO;}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00011}00011\ \textcolor{keyword}{using\ }System.Text;}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00013}00013\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00014}00014\ \{}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00015}\doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger}{00015}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger}{Logger}}\ :\ \doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_logger}{ILogger}}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00016}00016\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger}{Logger}}\ Default\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger}{Logger}}()}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00019}00019\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_ac57c44da9932d3abbca3ec3ae8dd526c}{PrintFilePath}}\ =\ \textcolor{keyword}{false},}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00020}00020\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ WrapInColor(\textcolor{keywordtype}{object}\ msg,\ \textcolor{keywordtype}{string}\ color)\ =>\ \$\textcolor{stringliteral}{"{}‖color:\{color\}‖\{msg\}‖end‖"{}};}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ White(\textcolor{keywordtype}{object}\ msg)\ =>\ \$\textcolor{stringliteral}{"{}‖color:white‖\{msg\}‖end‖"{}};}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00025}\doxymbox{\hyperlink{interface_c_u_i_libs_1_1_logger_1_1_i_serializer}{00025}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{interface\ }\doxymbox{\hyperlink{interface_c_u_i_libs_1_1_logger_1_1_i_serializer}{ISerializer}}\ \{\ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ Serialize(\textcolor{keywordtype}{object}\ o);\ \}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00026}\doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_1_1_micro_serializer}{00026}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_1_1_micro_serializer}{MicroSerializer}}\ :\ \doxymbox{\hyperlink{interface_c_u_i_libs_1_1_logger_1_1_i_serializer}{ISerializer}}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00027}00027\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00028}00028\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ Serialize(\textcolor{keywordtype}{object}\ o)}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00029}00029\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (o\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}[null]"{}};}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (o\ ==\ \textcolor{stringliteral}{"{}"{}})\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}[empty\ string]"{}};}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ o.ToString();}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00033}00033\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00036}00036\ \ \ \ \ \textcolor{keyword}{public}\ Color\ LogColor\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ Color.Cyan;}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{public}\ Color\ WarningColor\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ Color.Yellow;}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{public}\ Color\ ErrorColor\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ Color.Red;}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00039}00039\ \ \ \ \ \textcolor{keyword}{public}\ Color\ FunnyColor\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ Color.Magenta;}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00040}00040\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00041}00041\ \textcolor{comment}{\ \ \ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00042}00042\ \textcolor{comment}{\ \ \ \ ///\ Set\ this\ to\ true\ to\ see\ the\ source\ of\ the\ logs}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00043}00043\ \textcolor{comment}{\ \ \ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00044}\doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_ac57c44da9932d3abbca3ec3ae8dd526c}{00044}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_ac57c44da9932d3abbca3ec3ae8dd526c}{PrintFilePath}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00045}00045\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ PrintLogs\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ PrintWarnings\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00047}00047\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ PrintErrors\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00049}00049\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{interface_c_u_i_libs_1_1_logger_1_1_i_serializer}{ISerializer}}\ Serializer\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_1_1_micro_serializer}{MicroSerializer}}();}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00051}00051\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00052}00052\ \textcolor{comment}{\ \ \ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00053}00053\ \textcolor{comment}{\ \ \ \ ///\ Log\ with\ LogColor}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00054}00054\ \textcolor{comment}{\ \ \ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00055}\doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_a6ff24cf58c3762cfd88b5b761daeb0d8}{00055}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_a6ff24cf58c3762cfd88b5b761daeb0d8}{Log}}(\textcolor{keywordtype}{object}\ msg1,\ [CallerFilePath]\ \textcolor{keywordtype}{string}\ source\ =\ \textcolor{stringliteral}{"{}"{}},\ [CallerLineNumber]\ \textcolor{keywordtype}{int}\ lineNumber\ =\ 0)}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00056}00056\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00057}00057\ \ \ \ \ \ \ \_Log(msg1,\ source,\ lineNumber);}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00059}00059\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_a6ff24cf58c3762cfd88b5b761daeb0d8}{Log}}(\textcolor{keywordtype}{object}\ msg1,\ \textcolor{keywordtype}{object}\ msg2,\ [CallerFilePath]\ \textcolor{keywordtype}{string}\ source\ =\ \textcolor{stringliteral}{"{}"{}},\ [CallerLineNumber]\ \textcolor{keywordtype}{int}\ lineNumber\ =\ 0)}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00060}00060\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00061}00061\ \ \ \ \ \ \ \_Log(msg1,\ source,\ lineNumber);}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00062}00062\ \ \ \ \ \ \ \_Log(msg2,\ source,\ lineNumber);}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00063}00063\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00064}00064\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_a6ff24cf58c3762cfd88b5b761daeb0d8}{Log}}(\textcolor{keywordtype}{object}\ msg1,\ \textcolor{keywordtype}{object}\ msg2,\ \textcolor{keywordtype}{object}\ msg3,\ [CallerFilePath]\ \textcolor{keywordtype}{string}\ source\ =\ \textcolor{stringliteral}{"{}"{}},\ [CallerLineNumber]\ \textcolor{keywordtype}{int}\ lineNumber\ =\ 0)}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00065}00065\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00066}00066\ \ \ \ \ \ \ \_Log(msg1,\ source,\ lineNumber);}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00067}00067\ \ \ \ \ \ \ \_Log(msg2,\ source,\ lineNumber);}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00068}00068\ \ \ \ \ \ \ \_Log(msg3,\ source,\ lineNumber);}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00069}00069\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00071}00071\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \_Log(\textcolor{keywordtype}{object}\ msg,\ \textcolor{keywordtype}{string}\ source\ =\ \textcolor{stringliteral}{"{}"{}},\ \textcolor{keywordtype}{int}\ lineNumber\ =\ 0)}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00072}00072\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00073}00073\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (PrintLogs)\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_af1b95cada3210f8137526dcd79c499c5}{Print}}(msg,\ LogColor,\ source,\ lineNumber);}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00074}00074\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00075}00075\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00076}00076\ \textcolor{comment}{\ \ \ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00077}00077\ \textcolor{comment}{\ \ \ \ ///\ Log\ with\ WarningColor}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00078}00078\ \textcolor{comment}{\ \ \ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00079}00079\ \textcolor{comment}{\ \ \ \ ///\ ///\ }}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00080}\doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_ad8ecbdf20ae0a9f2c3301ba821230d57}{00080}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_ad8ecbdf20ae0a9f2c3301ba821230d57}{Warning}}(\textcolor{keywordtype}{object}\ msg,\ [CallerFilePath]\ \textcolor{keywordtype}{string}\ source\ =\ \textcolor{stringliteral}{"{}"{}},\ [CallerLineNumber]\ \textcolor{keywordtype}{int}\ lineNumber\ =\ 0)}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00081}00081\ \ \ \ \ \{\ \textcolor{keywordflow}{if}\ (PrintWarnings)\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_af1b95cada3210f8137526dcd79c499c5}{Print}}(msg,\ WarningColor,\ source,\ lineNumber);\ \}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00082}00082\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00083}00083\ \textcolor{comment}{\ \ \ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00084}00084\ \textcolor{comment}{\ \ \ \ ///\ Log\ with\ ErrorColor}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00085}00085\ \textcolor{comment}{\ \ \ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00086}\doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_a79b61b027b723d0b46119e3f66ed0bef}{00086}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_a79b61b027b723d0b46119e3f66ed0bef}{Error}}(\textcolor{keywordtype}{object}\ msg,\ [CallerFilePath]\ \textcolor{keywordtype}{string}\ source\ =\ \textcolor{stringliteral}{"{}"{}},\ [CallerLineNumber]\ \textcolor{keywordtype}{int}\ lineNumber\ =\ 0)}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00087}00087\ \ \ \ \ \{\ \textcolor{keywordflow}{if}\ (PrintErrors)\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_af1b95cada3210f8137526dcd79c499c5}{Print}}(msg,\ ErrorColor,\ source,\ lineNumber);\ \}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00088}00088\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00089}00089\ \textcolor{comment}{\ \ \ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00090}00090\ \textcolor{comment}{\ \ \ \ ///\ Log\ with\ Color}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00091}00091\ \textcolor{comment}{\ \ \ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00092}\doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_af1b95cada3210f8137526dcd79c499c5}{00092}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_af1b95cada3210f8137526dcd79c499c5}{Print}}(\textcolor{keywordtype}{object}\ msg,\ Color\ color,\ [CallerFilePath]\ \textcolor{keywordtype}{string}\ source\ =\ \textcolor{stringliteral}{"{}"{}},\ [CallerLineNumber]\ \textcolor{keywordtype}{int}\ lineNumber\ =\ 0)}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00093}00093\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00094}00094\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_ac57c44da9932d3abbca3ec3ae8dd526c}{PrintFilePath}})\ \_PrintFilePath(color\ *\ 0.8f,\ source,\ lineNumber);}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00095}00095\ \ \ \ \ \ \ \_Print(msg,\ color);}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00096}00096\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00097}00097\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00098}00098\ \textcolor{comment}{\ \ \ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00099}00099\ \textcolor{comment}{\ \ \ \ ///\ Log\ with\ file\ path}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00100}00100\ \textcolor{comment}{\ \ \ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00101}\doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_aff6b9bdb486fe9b9eb0904a9723a04f4}{00101}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_aff6b9bdb486fe9b9eb0904a9723a04f4}{Info}}(\textcolor{keywordtype}{object}\ msg,\ [CallerFilePath]\ \textcolor{keywordtype}{string}\ source\ =\ \textcolor{stringliteral}{"{}"{}},\ [CallerLineNumber]\ \textcolor{keywordtype}{int}\ lineNumber\ =\ 0)}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00102}00102\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00103}00103\ \ \ \ \ \ \ \_PrintFilePath(LogColor\ *\ 0.8f,\ source,\ lineNumber);}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00104}00104\ \ \ \ \ \ \ \_Print(msg,\ LogColor);}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00105}00105\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00106}00106\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00107}00107\ \textcolor{comment}{\ \ \ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00108}00108\ \textcolor{comment}{\ \ \ \ ///\ Print\ file\ path\ and\ line\ number\ with\ funny\ color}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00109}00109\ \textcolor{comment}{\ \ \ \ ///\ For\ debuging}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00110}00110\ \textcolor{comment}{\ \ \ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00111}\doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_a9f64a28ceff0377a6dc80529bdc623e1}{00111}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_a9f64a28ceff0377a6dc80529bdc623e1}{Point}}([CallerFilePath]\ \textcolor{keywordtype}{string}\ source\ =\ \textcolor{stringliteral}{"{}"{}},\ [CallerLineNumber]\ \textcolor{keywordtype}{int}\ lineNumber\ =\ 0)}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00112}00112\ \ \ \ \ \ \ =>\ \_PrintFilePath(FunnyColor,\ source,\ lineNumber);}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00114}00114\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00115}00115\ \textcolor{comment}{\ \ \ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00116}00116\ \textcolor{comment}{\ \ \ \ ///\ Print\ stack\ trace}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00117}00117\ \textcolor{comment}{\ \ \ \ ///\ For\ debuging}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00118}00118\ \textcolor{comment}{\ \ \ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00119}\doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_a7862972936f6ea94e042989127b3be08}{00119}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_a7862972936f6ea94e042989127b3be08}{PrintStackTrace}}()}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00120}00120\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00121}00121\ \ \ \ \ \ \ StackTrace\ st\ =\ \textcolor{keyword}{new}\ StackTrace(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00122}00122\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ st.FrameCount;\ i++)}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00123}00123\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ StackFrame\ sf\ =\ st.GetFrame(i);}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_a6ff24cf58c3762cfd88b5b761daeb0d8}{Log}}(\$\textcolor{stringliteral}{"{}-\/>\ \{sf.GetMethod().DeclaringType?.Name\}.\{sf.GetMethod()\}"{}});}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00126}00126\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00127}00127\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_a6ff24cf58c3762cfd88b5b761daeb0d8}{Log}}(\$\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00128}00128\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00130}00130\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \_Print(\textcolor{keywordtype}{object}\ msg,\ Color\ color)}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00131}00131\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00132}00132\ \ \ \ \ \ \ LuaCsLogger.LogMessage(Serializer.Serialize(msg),\ color\ *\ 0.8f,\ color);}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00133}00133\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00135}00135\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ \_PrintFilePath(Color\ color,\ \textcolor{keywordtype}{string}\ source,\ \textcolor{keywordtype}{int}\ lineNumber)}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00136}00136\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00137}00137\ \ \ \ \ \ \ var\ fi\ =\ \textcolor{keyword}{new}\ FileInfo(source);}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00138}00138\ \ \ \ \ \ \ LuaCsLogger.LogMessage(\$\textcolor{stringliteral}{"{}\{fi.Directory.Name\}/\{fi.Name\}:\{lineNumber\}"{}},\ color\ *\ 0.8f,\ color);}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00139}00139\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00141}00141\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ LogVars(\textcolor{keywordtype}{object}\ arg1,}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00142}00142\ \ \ \ \ \ \ [CallerArgumentExpression(\textcolor{stringliteral}{"{}arg1"{}})]\ \textcolor{keywordtype}{string}\ exp1\ =\ \textcolor{keyword}{null}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00143}00143\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00144}00144\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00145}00145\ \ \ \ \ \ \ \_Print(\$\textcolor{stringliteral}{"{}\{exp1\}:\ [\{WrapInColor(arg1,\ "{}}white\textcolor{stringliteral}{"{})\}]"{}},\ LogColor);}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00146}00146\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00148}00148\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ LogVars(\textcolor{keywordtype}{object}\ arg1,\ \textcolor{keywordtype}{object}\ arg2,}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00149}00149\ \ \ \ \ \ \ [CallerArgumentExpression(\textcolor{stringliteral}{"{}arg1"{}})]\ \textcolor{keywordtype}{string}\ exp1\ =\ \textcolor{keyword}{null},}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00150}00150\ \ \ \ \ \ \ [CallerArgumentExpression(\textcolor{stringliteral}{"{}arg2"{}})]\ \textcolor{keywordtype}{string}\ exp2\ =\ \textcolor{keyword}{null}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00151}00151\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00152}00152\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00153}00153\ \ \ \ \ \ \ \_Print(\$\textcolor{stringliteral}{"{}\{exp1\}:\ [\{WrapInColor(arg1,\ "{}}white\textcolor{stringliteral}{"{})\}],\ \{exp2\}:\ [\{WrapInColor(arg2,\ "{}}white\textcolor{stringliteral}{"{})\}]"{}},\ LogColor);}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00154}00154\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00157}00157\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ LogVars(\textcolor{keywordtype}{object}\ arg1,\ \textcolor{keywordtype}{object}\ arg2,\ \textcolor{keywordtype}{object}\ arg3,}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00158}00158\ \ \ \ \ \ \ [CallerArgumentExpression(\textcolor{stringliteral}{"{}arg1"{}})]\ \textcolor{keywordtype}{string}\ exp1\ =\ \textcolor{keyword}{null},}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00159}00159\ \ \ \ \ \ \ [CallerArgumentExpression(\textcolor{stringliteral}{"{}arg2"{}})]\ \textcolor{keywordtype}{string}\ exp2\ =\ \textcolor{keyword}{null},}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00160}00160\ \ \ \ \ \ \ [CallerArgumentExpression(\textcolor{stringliteral}{"{}arg3"{}})]\ \textcolor{keywordtype}{string}\ exp3\ =\ \textcolor{keyword}{null}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00161}00161\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00162}00162\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00163}00163\ \ \ \ \ \ \ \_Print(\$\textcolor{stringliteral}{"{}\{exp1\}:\ [\{WrapInColor(arg1,\ "{}}white\textcolor{stringliteral}{"{})\}],\ \{exp2\}:\ [\{WrapInColor(arg2,\ "{}}white\textcolor{stringliteral}{"{})\}],\ \{exp3\}:\ [\{WrapInColor(arg3,\ "{}}white\textcolor{stringliteral}{"{})\}]"{}},\ LogColor);}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00164}00164\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00166}00166\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ LogVars(\textcolor{keywordtype}{object}\ arg1,\ \textcolor{keywordtype}{object}\ arg2,\ \textcolor{keywordtype}{object}\ arg3,\ \textcolor{keywordtype}{object}\ arg4,}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00167}00167\ \ \ \ \ \ \ [CallerArgumentExpression(\textcolor{stringliteral}{"{}arg1"{}})]\ \textcolor{keywordtype}{string}\ exp1\ =\ \textcolor{keyword}{null},}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00168}00168\ \ \ \ \ \ \ [CallerArgumentExpression(\textcolor{stringliteral}{"{}arg2"{}})]\ \textcolor{keywordtype}{string}\ exp2\ =\ \textcolor{keyword}{null},}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00169}00169\ \ \ \ \ \ \ [CallerArgumentExpression(\textcolor{stringliteral}{"{}arg3"{}})]\ \textcolor{keywordtype}{string}\ exp3\ =\ \textcolor{keyword}{null},}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00170}00170\ \ \ \ \ \ \ [CallerArgumentExpression(\textcolor{stringliteral}{"{}arg4"{}})]\ \textcolor{keywordtype}{string}\ exp4\ =\ \textcolor{keyword}{null}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00171}00171\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00172}00172\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00173}00173\ \ \ \ \ \ \ \_Print(\$\textcolor{stringliteral}{"{}\{exp1\}:\ [\{WrapInColor(arg1,\ "{}}white\textcolor{stringliteral}{"{})\}],\ \{exp2\}:\ [\{WrapInColor(arg2,\ "{}}white\textcolor{stringliteral}{"{})\}],\ \{exp3\}:\ [\{WrapInColor(arg3,\ "{}}white\textcolor{stringliteral}{"{})\}],\ \{exp4\}:\ [\{WrapInColor(arg4,\ "{}}white\textcolor{stringliteral}{"{})\}]"{}},\ LogColor);}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00174}00174\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00176}00176\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ LogVars(\textcolor{keywordtype}{object}\ arg1,\ \textcolor{keywordtype}{object}\ arg2,\ \textcolor{keywordtype}{object}\ arg3,\ \textcolor{keywordtype}{object}\ arg4,\ \textcolor{keywordtype}{object}\ arg5,}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00177}00177\ \ \ \ \ \ \ [CallerArgumentExpression(\textcolor{stringliteral}{"{}arg1"{}})]\ \textcolor{keywordtype}{string}\ exp1\ =\ \textcolor{keyword}{null},}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00178}00178\ \ \ \ \ \ \ [CallerArgumentExpression(\textcolor{stringliteral}{"{}arg2"{}})]\ \textcolor{keywordtype}{string}\ exp2\ =\ \textcolor{keyword}{null},}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00179}00179\ \ \ \ \ \ \ [CallerArgumentExpression(\textcolor{stringliteral}{"{}arg3"{}})]\ \textcolor{keywordtype}{string}\ exp3\ =\ \textcolor{keyword}{null},}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00180}00180\ \ \ \ \ \ \ [CallerArgumentExpression(\textcolor{stringliteral}{"{}arg4"{}})]\ \textcolor{keywordtype}{string}\ exp4\ =\ \textcolor{keyword}{null},}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00181}00181\ \ \ \ \ \ \ [CallerArgumentExpression(\textcolor{stringliteral}{"{}arg5"{}})]\ \textcolor{keywordtype}{string}\ exp5\ =\ \textcolor{keyword}{null}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00182}00182\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00183}00183\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00184}00184\ \ \ \ \ \ \ \_Print(\$\textcolor{stringliteral}{"{}\{exp1\}:\ [\{WrapInColor(arg1,\ "{}}white\textcolor{stringliteral}{"{})\}],\ \{exp2\}:\ [\{WrapInColor(arg2,\ "{}}white\textcolor{stringliteral}{"{})\}],\ \{exp3\}:\ [\{WrapInColor(arg3,\ "{}}white\textcolor{stringliteral}{"{})\}],\ \{exp4\}:\ [\{WrapInColor(arg4,\ "{}}white\textcolor{stringliteral}{"{})\}],\ \{exp5\}:\ [\{WrapInColor(arg5,\ "{}}white\textcolor{stringliteral}{"{})\}]"{}},\ LogColor);}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00185}00185\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00188}00188\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_logger_8cs_source_l00189}00189\ \}}
+
+\end{DoxyCode}

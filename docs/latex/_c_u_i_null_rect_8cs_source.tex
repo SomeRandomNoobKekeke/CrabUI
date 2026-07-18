@@ -1,0 +1,103 @@
+\doxysection{CUINull\+Rect.\+cs}
+\hypertarget{_c_u_i_null_rect_8cs_source}{}\label{_c_u_i_null_rect_8cs_source}\index{ClientProject/ClientSource/CUI/Core/Simple Types/CUINullRect.cs@{ClientProject/ClientSource/CUI/Core/Simple Types/CUINullRect.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework.Input;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework.Graphics;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00012}00012\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00013}00013\ \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00014}00014\ \textcolor{comment}{\ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00015}00015\ \textcolor{comment}{\ \ ///\ Rectangle\ with\ float?}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00016}00016\ \textcolor{comment}{\ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00017}\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_null_rect}{00017}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{struct\ }CUINullRect\ :\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_parsable}{IParsable}}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00018}00018\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUINullRect\ One\ =>\ \textcolor{keyword}{new}\ CUINullRect(0,\ 0,\ 1,\ 1);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}?\ Left;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}?\ Top;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}?\ Width;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}?\ Height;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{public}\ Vector2\ Size}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00027}00027\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00028}00028\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \textcolor{keyword}{new}\ Vector2(Width\ ??\ 0,\ Height\ ??\ 0);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00029}00029\ \ \ \ \ \ \ \textcolor{keyword}{set}\ \{\ Width\ =\ value.X;\ Height\ =\ value.Y;\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{public}\ Vector2\ Position}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00032}00032\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00033}00033\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \textcolor{keyword}{new}\ Vector2(Left\ ??\ 0,\ Top\ ??\ 0);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00034}00034\ \ \ \ \ \ \ \textcolor{keyword}{set}\ \{\ Left\ =\ value.X;\ Top\ =\ value.Y;\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00035}00035\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{public}\ Vector2\ Center\ =>\ \textcolor{keyword}{new}\ Vector2(}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00038}00038\ \ \ \ \ \ \ (Left\ ??\ 0)\ +\ (Width\ ??\ 0)\ /\ 2,}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00039}00039\ \ \ \ \ \ \ (Top\ ??\ 0)\ +\ (Height\ ??\ 0)\ /\ 2}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00040}00040\ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{public}\ CUINullRect(\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}\ rect)\ :\ \textcolor{keyword}{this}(rect.Left,\ rect.Top,\ rect.Width,\ rect.Height)\ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00044}00044\ \ \ \ \ \textcolor{keyword}{public}\ CUINullRect(Vector2\ size)\ :\ \textcolor{keyword}{this}(\textcolor{keyword}{null},\ \textcolor{keyword}{null},\ size.X,\ size.Y)\ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00045}00045\ \ \ \ \ \textcolor{keyword}{public}\ CUINullRect(Vector2\ position,\ Vector2\ size)\ :\ \textcolor{keyword}{this}(position.X,\ position.Y,\ size.X,\ size.Y)\ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00047}00047\ \ \ \ \ \textcolor{keyword}{public}\ CUINullRect(\textcolor{keywordtype}{float}?\ x\ =\ \textcolor{keyword}{null},\ \textcolor{keywordtype}{float}?\ y\ =\ \textcolor{keyword}{null},\ \textcolor{keywordtype}{float}?\ w\ =\ \textcolor{keyword}{null},\ \textcolor{keywordtype}{float}?\ h\ =\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00048}00048\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00049}00049\ \ \ \ \ \ \ Left\ =\ x;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00050}00050\ \ \ \ \ \ \ Top\ =\ y;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00051}00051\ \ \ \ \ \ \ Width\ =\ w;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00052}00052\ \ \ \ \ \ \ Height\ =\ h;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00055}00055\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{string}\ ToString()\ =>\ \$\textcolor{stringliteral}{"{}[\{Left\},\{Top\},\{Width\},\{Height\}]"{}};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00056}00056\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ Serialize(CUINullRect\ rect)\ =>\ rect.ToString();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00058}00058\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ ToText()\ =>\ ToString();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00060}00060\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{object}\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_parsable}{IParsable}}.Parse(\textcolor{keywordtype}{string}\ raw)\ =>\ Parse(raw);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00061}00061\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUINullRect\ Parse(\textcolor{keywordtype}{string}\ s)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00062}00062\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00063}00063\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ content\ =\ s.Substring(}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ s.IndexOf(\textcolor{charliteral}{'['})\ +\ 1,}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ s.IndexOf(\textcolor{charliteral}{']'})\ -\/\ s.IndexOf(\textcolor{charliteral}{'['})\ -\/\ 1}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00066}00066\ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00068}00068\ \ \ \ \ \ \ var\ components\ =\ content.Split(\textcolor{charliteral}{','}).Select(a\ =>\ a.Trim());}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00070}00070\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ sx\ =\ components.ElementAtOrDefault(0);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00071}00071\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ sy\ =\ components.ElementAtOrDefault(1);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00072}00072\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ sw\ =\ components.ElementAtOrDefault(2);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00073}00073\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ sh\ =\ components.ElementAtOrDefault(3);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00075}00075\ \ \ \ \ \ \ \textcolor{keywordtype}{float}?\ x\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00076}00076\ \ \ \ \ \ \ \textcolor{keywordtype}{float}?\ y\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00077}00077\ \ \ \ \ \ \ \textcolor{keywordtype}{float}?\ w\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00078}00078\ \ \ \ \ \ \ \textcolor{keywordtype}{float}?\ h\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00080}00080\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sx\ ==\ \textcolor{keyword}{null}\ ||\ sx\ ==\ \textcolor{stringliteral}{"{}"{}})\ x\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00081}00081\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ x\ =\ \textcolor{keywordtype}{float}.Parse(sx);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00083}00083\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sy\ ==\ \textcolor{keyword}{null}\ ||\ sy\ ==\ \textcolor{stringliteral}{"{}"{}})\ y\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00084}00084\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ y\ =\ \textcolor{keywordtype}{float}.Parse(sy);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00086}00086\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sw\ ==\ \textcolor{keyword}{null}\ ||\ sw\ ==\ \textcolor{stringliteral}{"{}"{}})\ w\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00087}00087\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ w\ =\ \textcolor{keywordtype}{float}.Parse(sw);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00089}00089\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sh\ ==\ \textcolor{keyword}{null}\ ||\ sh\ ==\ \textcolor{stringliteral}{"{}"{}})\ h\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00090}00090\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ h\ =\ \textcolor{keywordtype}{float}.Parse(sh);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00092}00092\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ CUINullRect(x,\ y,\ w,\ h);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00093}00093\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00096}00096\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_null_rect_8cs_source_l00097}00097\ \}}
+
+\end{DoxyCode}

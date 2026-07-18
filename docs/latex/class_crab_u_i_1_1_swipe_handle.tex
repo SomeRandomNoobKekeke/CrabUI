@@ -1,0 +1,174 @@
+\doxysection{Crab\+UI.\+Swipe\+Handle Class Reference}
+\hypertarget{class_crab_u_i_1_1_swipe_handle}{}\label{class_crab_u_i_1_1_swipe_handle}\index{CrabUI.SwipeHandle@{CrabUI.SwipeHandle}}
+Inheritance diagram for Crab\+UI.\+Swipe\+Handle:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_1_1_swipe_handle}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_swipe_handle_a0d49fbd0bbb48b1dd8482dfb3e94e33a}{Update}} (\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_event}{CUIMouse\+Event}} e)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+object \doxymbox{\hyperlink{class_crab_u_i_1_1_swipe_handle_a94fb1d7f902b3b01a1b88fadb89ffd9f}{Host\+Component}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+string \doxymbox{\hyperlink{class_crab_u_i_1_1_swipe_handle_a7080f3323a194ecb9e1d48b5310ddb82}{Host\+Prop\+Name}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_swipeable}{ISwipeable}} \doxymbox{\hyperlink{class_crab_u_i_1_1_swipe_handle_a42b3afd25b5656bf94cdec10a8143d26}{Host}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_swipe_handle_a8c4d739d2261fe0272b6b9363edfdc06}{Active}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_swipe_handle_ade74e5a840b57c8931c887de9dc48d57}{Grabbed}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_swipe_handle_a2a8eaeb9be6a5f70539eef91debf1930}{Prev\+Mouse\+Pos}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_handles_2_swipe_handle_2_swipe_handle_8cs_source_l00012}{12}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_handles_2_swipe_handle_2_swipe_handle_8cs_source}{Swipe\+Handle.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_swipe_handle_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_swipe_handle_a0d49fbd0bbb48b1dd8482dfb3e94e33a}\index{CrabUI.SwipeHandle@{CrabUI.SwipeHandle}!Update@{Update}}
+\index{Update@{Update}!CrabUI.SwipeHandle@{CrabUI.SwipeHandle}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_swipe_handle_a0d49fbd0bbb48b1dd8482dfb3e94e33a} 
+void Crab\+UI.\+Swipe\+Handle.\+Update (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_event}{CUIMouse\+Event}}}]{e}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_handles_2_swipe_handle_2_swipe_handle_8cs_source_l00065}{65}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_handles_2_swipe_handle_2_swipe_handle_8cs_source}{Swipe\+Handle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00066\ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ Host.MoveChildrenOffset(e.Pos\ -\/\ PrevMousePos);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ PrevMousePos\ =\ e.Pos;}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_swipe_handle_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_swipe_handle_a8c4d739d2261fe0272b6b9363edfdc06}\index{CrabUI.SwipeHandle@{CrabUI.SwipeHandle}!Active@{Active}}
+\index{Active@{Active}!CrabUI.SwipeHandle@{CrabUI.SwipeHandle}}
+\doxysubsubsection{\texorpdfstring{Active}{Active}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_swipe_handle_a8c4d739d2261fe0272b6b9363edfdc06} 
+bool Crab\+UI.\+Swipe\+Handle.\+Active\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_handles_2_swipe_handle_2_swipe_handle_8cs_source_l00041}{41}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_handles_2_swipe_handle_2_swipe_handle_8cs_source}{Swipe\+Handle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_swipe_handle_ade74e5a840b57c8931c887de9dc48d57}\index{CrabUI.SwipeHandle@{CrabUI.SwipeHandle}!Grabbed@{Grabbed}}
+\index{Grabbed@{Grabbed}!CrabUI.SwipeHandle@{CrabUI.SwipeHandle}}
+\doxysubsubsection{\texorpdfstring{Grabbed}{Grabbed}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_swipe_handle_ade74e5a840b57c8931c887de9dc48d57} 
+bool Crab\+UI.\+Swipe\+Handle.\+Grabbed\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_handles_2_swipe_handle_2_swipe_handle_8cs_source_l00042}{42}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_handles_2_swipe_handle_2_swipe_handle_8cs_source}{Swipe\+Handle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_swipe_handle_a42b3afd25b5656bf94cdec10a8143d26}\index{CrabUI.SwipeHandle@{CrabUI.SwipeHandle}!Host@{Host}}
+\index{Host@{Host}!CrabUI.SwipeHandle@{CrabUI.SwipeHandle}}
+\doxysubsubsection{\texorpdfstring{Host}{Host}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_swipe_handle_a42b3afd25b5656bf94cdec10a8143d26} 
+\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_swipeable}{ISwipeable}} Crab\+UI.\+Swipe\+Handle.\+Host\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_handles_2_swipe_handle_2_swipe_handle_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_handles_2_swipe_handle_2_swipe_handle_8cs_source}{Swipe\+Handle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ host;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (host\ is\ not\ \textcolor{keyword}{null})\ DisconnectFromHost(host);}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ host\ =\ value;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (host\ is\ not\ \textcolor{keyword}{null})\ ConnectToHost(host);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_swipe_handle_a94fb1d7f902b3b01a1b88fadb89ffd9f}\index{CrabUI.SwipeHandle@{CrabUI.SwipeHandle}!HostComponent@{HostComponent}}
+\index{HostComponent@{HostComponent}!CrabUI.SwipeHandle@{CrabUI.SwipeHandle}}
+\doxysubsubsection{\texorpdfstring{HostComponent}{HostComponent}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_swipe_handle_a94fb1d7f902b3b01a1b88fadb89ffd9f} 
+object Crab\+UI.\+Swipe\+Handle.\+Host\+Component\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Implements \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_aware}{CUICode\+Generator.\+IAware}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_handles_2_swipe_handle_2_swipe_handle_8cs_source_l00014}{14}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_handles_2_swipe_handle_2_swipe_handle_8cs_source}{Swipe\+Handle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_swipe_handle_a7080f3323a194ecb9e1d48b5310ddb82}\index{CrabUI.SwipeHandle@{CrabUI.SwipeHandle}!HostPropName@{HostPropName}}
+\index{HostPropName@{HostPropName}!CrabUI.SwipeHandle@{CrabUI.SwipeHandle}}
+\doxysubsubsection{\texorpdfstring{HostPropName}{HostPropName}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_swipe_handle_a7080f3323a194ecb9e1d48b5310ddb82} 
+string Crab\+UI.\+Swipe\+Handle.\+Host\+Prop\+Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Implements \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_aware}{CUICode\+Generator.\+IAware}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_handles_2_swipe_handle_2_swipe_handle_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_handles_2_swipe_handle_2_swipe_handle_8cs_source}{Swipe\+Handle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_swipe_handle_a2a8eaeb9be6a5f70539eef91debf1930}\index{CrabUI.SwipeHandle@{CrabUI.SwipeHandle}!PrevMousePos@{PrevMousePos}}
+\index{PrevMousePos@{PrevMousePos}!CrabUI.SwipeHandle@{CrabUI.SwipeHandle}}
+\doxysubsubsection{\texorpdfstring{PrevMousePos}{PrevMousePos}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_swipe_handle_a2a8eaeb9be6a5f70539eef91debf1930} 
+Vector2 Crab\+UI.\+Swipe\+Handle.\+Prev\+Mouse\+Pos\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_handles_2_swipe_handle_2_swipe_handle_8cs_source_l00043}{43}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_handles_2_swipe_handle_2_swipe_handle_8cs_source}{Swipe\+Handle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00043\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Handles/\+\+Swipe\+Handle/\+Swipe\+Handle.\+cs\end{DoxyCompactItemize}

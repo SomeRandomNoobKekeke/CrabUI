@@ -1,0 +1,105 @@
+\doxysection{UTest\+Logger.\+cs}
+\hypertarget{_u_test_logger_8cs_source}{}\label{_u_test_logger_8cs_source}\index{ClientProject/ClientSource/Libs/UTest/UTestLogger.cs@{ClientProject/ClientSource/Libs/UTest/UTestLogger.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00009}00009\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}}}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00011}00011\ \ \ \textcolor{comment}{//\ useless\ class\ that\ is\ referenced\ from\ all\ over\ the\ place}}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00012}\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_logger}{00012}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_logger}{UTestLogger}}}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00013}00013\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Color\ SuccessColor\ =\ Color.Lime;}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Color\ NotGreatColor\ =\ Color.Orange;}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Color\ FailureColor\ =\ Color.Red;}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ InnerTextColor\ =\ \textcolor{stringliteral}{"{}128,255,255"{}};}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}\ ColorContrast\ =\ 0.75f;}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ Line\ =\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}};}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00020}00020\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00021}00021\ \textcolor{comment}{\ \ \ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00022}00022\ \textcolor{comment}{\ \ \ \ ///\ sneaky\ var\ that\ no\ one\ will\ ever\ find}}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00023}00023\ \textcolor{comment}{\ \ \ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00024}\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_logger_a5c281deffa035f16aed784667ab4cbcc}{00024}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_logger_a5c281deffa035f16aed784667ab4cbcc}{CollapseTestPackIfSucceed}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Color\ UTestStateColor(\textcolor{keywordtype}{bool}\ state)\ =>\ state\ ?}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00026}00026\ \ \ \ \ \ \ Color.Lerp(Color.White,\ SuccessColor,\ ColorContrast)\ :}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00027}00027\ \ \ \ \ \ \ Color.Lerp(Color.White,\ FailureColor,\ ColorContrast);}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Color\ UTestPackStateColor(\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack}{UTestPack}}.UTestPackState\ state)}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00030}00030\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00031}00031\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ state\ \textcolor{keywordflow}{switch}}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00032}00032\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ UTestPack.UTestPackState.AllPassed\ =>\ Color.Lerp(Color.White,\ SuccessColor,\ ColorContrast),}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ UTestPack.UTestPackState.SomePassed\ =>\ Color.Lerp(Color.White,\ NotGreatColor,\ ColorContrast),}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ UTestPack.UTestPackState.AllFailed\ =>\ Color.Lerp(Color.White,\ FailureColor,\ ColorContrast),}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ UTestPack.UTestPackState.Error\ =>\ Color.Lerp(Color.White,\ FailureColor,\ ColorContrast),}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00037}00037\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00038}00038\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ PrintStackTrace()}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00041}00041\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00042}00042\ \ \ \ \ \ \ StackTrace\ st\ =\ \textcolor{keyword}{new}\ StackTrace(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00043}00043\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ st.FrameCount;\ i++)}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00044}00044\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ StackFrame\ sf\ =\ st.GetFrame(i);}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sf.GetMethod().DeclaringType\ is\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ Log(\$\textcolor{stringliteral}{"{}-\/>\ \{sf.GetMethod().DeclaringType?.Name\}.\{sf.GetMethod()\}"{}});}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ Log(\$\textcolor{stringliteral}{"{}-\/>\ \{sf.GetMethod().DeclaringType?.Name\}.\{sf.GetMethod()\}"{}});}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00052}00052\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00057}00057\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ WrapInColor(\textcolor{keywordtype}{object}\ msg,\ \textcolor{keywordtype}{string}\ color)}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00058}00058\ \ \ \ \ \ \ =>\ \$\textcolor{stringliteral}{"{}‖color:\{color\}‖\{msg\}‖end‖"{}};}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00060}00060\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ AsText(\textcolor{keywordtype}{object}\ msg)\ =>\ WrapInColor(msg,\ InnerTextColor);}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00062}00062\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ Log(\textcolor{keywordtype}{object}\ msg,\ Color?\ cl\ =\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00063}00063\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00064}00064\ \ \ \ \ \ \ cl\ ??=\ Color.Cyan;}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00065}00065\ \ \ \ \ \ \ LuaCsLogger.LogMessage(\$\textcolor{stringliteral}{"{}\{msg\ ??\ "{}}\textcolor{keyword}{null}\textcolor{stringliteral}{"{}\}"{}},\ cl\ *\ 0.8f,\ cl);}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00068}00068\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ Warning(\textcolor{keywordtype}{object}\ msg)\ =>\ Log(msg,\ Color.Yellow);}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00070}00070\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ LogTest(UTest\ test)}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00071}00071\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00072}00072\ \ \ \ \ \ \ Log(test,\ UTestStateColor(test.Passed));}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00073}00073\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00075}00075\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ LogPack(UTestPack\ pack)}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00076}00076\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00077}00077\ \ \ \ \ \ \ Color\ cl\ =\ UTestPackStateColor(pack.State);}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00079}00079\ \ \ \ \ \ \ Log(Line);}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00080}00080\ \ \ \ \ \ \ Log(\$\textcolor{stringliteral}{"{}UTestPack\ \{pack.GetType()\}\ [\{pack.PassedCount\}/\{pack.Tests.Count\}]:"{}},\ cl);}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00082}00082\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pack.Error\ is\ not\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00083}00083\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ Log(\$\textcolor{stringliteral}{"{}Error:\ [\{pack.Error.Message\}]"{}},\ cl);}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00085}00085\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00087}00087\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_logger_a5c281deffa035f16aed784667ab4cbcc}{CollapseTestPackIfSucceed}}\ ||\ pack.PassedCount\ !=\ pack.Tests.Count)}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00088}00088\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (UTest\ test\ \textcolor{keywordflow}{in}\ pack.Tests)}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ test.Log();}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00093}00093\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00095}00095\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00098}00098\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_logger_8cs_source_l00099}00099\ \}}
+
+\end{DoxyCode}

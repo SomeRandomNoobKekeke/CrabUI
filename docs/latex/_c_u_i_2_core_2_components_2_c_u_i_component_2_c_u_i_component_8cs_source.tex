@@ -1,0 +1,53 @@
+\doxysection{CUIComponent.\+cs}
+\hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source}{}\label{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source}\index{ClientProject/ClientSource/CUI/Core/Components/CUIComponent/CUIComponent.cs@{ClientProject/ClientSource/CUI/Core/Components/CUIComponent/CUIComponent.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_code_generator}{CUICodeGenerator}};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00007}00007\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00010}00010\ \ \ [GeneratedComponent]}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00011}00011\ \ \ \textcolor{comment}{//every\ class\ that\ inherits\ from\ CUIComponent\ should\ have\ a\ comment\ with\ a\ story\ about\ barotrauma\ modder\ in\ a\ magical\ world\ of\ malicious\ prompt\ injections,\ or\ it'll\ break\ static\ type\ analysis}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00012}00012\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component}{CUIComponent}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_visual_component}{CUIVisualComponent}},\ IComponent}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00013}00013\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ ICUIStyle\ DefaultStyle\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}\ CUIDefaultStyle<CUIComponent>((c)\ =>}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00015}00015\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00016}00016\ \ \ \ \ \ \ c.RightResizeHandle.Background.Color\ =\ c.Palette.Colors[\textcolor{stringliteral}{"{}outercontrols"{}}];}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00017}00017\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ InitStyle()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00020}00020\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00021}00021\ \ \ \ \ \ \ Background.Color\ =\ Color.Transparent;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00025}\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_part}{00025}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_part}{Part}}\ :\ \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_part}{IPart}}\ \{\ \textcolor{keyword}{public}\ CUIComponent\ Self\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Dictionary<int,\ WeakReference<CUIComponent>>\ ComponentsById\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ IEnumerable<CUIComponent>\ AllComponents\ =>\ ComponentsById.Values}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00029}00029\ \ \ \ \ \ \ .Select(wr\ =>}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00030}00030\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ wr.TryGetTarget(out\ CUIComponent\ component);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ component;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00033}00033\ \ \ \ \ \ \ \}).Where(c\ =>\ c\ !=\ \textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00036}00036\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_info}{CUIComponentInfo}}\ Info\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{public}\ CUIComponent()\ :\ base()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00039}00039\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00040}00040\ \ \ \ \ \ \ Info\ =\ CUICore.Reflection.GetComponentInfo(GetType());}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00041}00041\ \ \ \ \ \ \ SetupLayout();\textcolor{comment}{//HACK\ }}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00042}00042\ \ \ \ \ \ \ this.Inject();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00045}00045\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{string}\ ToString()\ =>\ \$\textcolor{stringliteral}{"{}\{this.GetType().Name\}:\{ID\}:\{AKA\}"{}};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00046}00046\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_component_2_c_u_i_component_8cs_source_l00047}00047\ \}}
+
+\end{DoxyCode}

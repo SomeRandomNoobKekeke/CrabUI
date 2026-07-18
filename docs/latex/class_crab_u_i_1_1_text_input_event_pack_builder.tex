@@ -1,0 +1,110 @@
+\doxysection{Crab\+UI.\+Text\+Input\+Event\+Pack\+Builder Class Reference}
+\hypertarget{class_crab_u_i_1_1_text_input_event_pack_builder}{}\label{class_crab_u_i_1_1_text_input_event_pack_builder}\index{CrabUI.TextInputEventPackBuilder@{CrabUI.TextInputEventPackBuilder}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_text_input_event_pack_builder_ae1bb14d0b171a6e54e14e5958c1ee55a}{Steal\+Focus}} ()
+\item 
+Text\+Input\+Event\+Pack \doxymbox{\hyperlink{class_crab_u_i_1_1_text_input_event_pack_builder_abd17e2909fff64df88e5a7e65da66bd4}{Build}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ Text\+Input\+Event\+Args $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_text_input_event_pack_builder_aa95ffcf232d5cd1459d0990d48544962}{Text\+Input\+Events}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+List$<$ Text\+Input\+Event\+Args $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_text_input_event_pack_builder_ae61272b41d5b8da452120a371c8996bb}{Key\+Down\+Events}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_text_input_event_pack_builder_8cs_source_l00013}{13}} of file \doxymbox{\hyperlink{_text_input_event_pack_builder_8cs_source}{Text\+Input\+Event\+Pack\+Builder.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_text_input_event_pack_builder_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_text_input_event_pack_builder_abd17e2909fff64df88e5a7e65da66bd4}\index{CrabUI.TextInputEventPackBuilder@{CrabUI.TextInputEventPackBuilder}!Build@{Build}}
+\index{Build@{Build}!CrabUI.TextInputEventPackBuilder@{CrabUI.TextInputEventPackBuilder}}
+\doxysubsubsection{\texorpdfstring{Build()}{Build()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_text_input_event_pack_builder_abd17e2909fff64df88e5a7e65da66bd4} 
+Text\+Input\+Event\+Pack Crab\+UI.\+Text\+Input\+Event\+Pack\+Builder.\+Build (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_text_input_event_pack_builder_8cs_source_l00023}{23}} of file \doxymbox{\hyperlink{_text_input_event_pack_builder_8cs_source}{Text\+Input\+Event\+Pack\+Builder.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ TextInputEventPack\ pack\ =\ \textcolor{keyword}{new}\ TextInputEventPack(}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ TextInputEvents.ToArray(),}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ KeyDownEvents.ToArray(),}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ SomethingFocusedElsewhere}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ );}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ TextInputEvents.Clear();}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ KeyDownEvents.Clear();}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ SomethingFocusedElsewhere\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ pack;}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_text_input_event_pack_builder_ae1bb14d0b171a6e54e14e5958c1ee55a}\index{CrabUI.TextInputEventPackBuilder@{CrabUI.TextInputEventPackBuilder}!StealFocus@{StealFocus}}
+\index{StealFocus@{StealFocus}!CrabUI.TextInputEventPackBuilder@{CrabUI.TextInputEventPackBuilder}}
+\doxysubsubsection{\texorpdfstring{StealFocus()}{StealFocus()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_text_input_event_pack_builder_ae1bb14d0b171a6e54e14e5958c1ee55a} 
+void Crab\+UI.\+Text\+Input\+Event\+Pack\+Builder.\+Steal\+Focus (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_text_input_event_pack_builder_8cs_source_l00021}{21}} of file \doxymbox{\hyperlink{_text_input_event_pack_builder_8cs_source}{Text\+Input\+Event\+Pack\+Builder.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ =>\ SomethingFocusedElsewhere\ =\ \textcolor{keyword}{true};}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_text_input_event_pack_builder_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_text_input_event_pack_builder_ae61272b41d5b8da452120a371c8996bb}\index{CrabUI.TextInputEventPackBuilder@{CrabUI.TextInputEventPackBuilder}!KeyDownEvents@{KeyDownEvents}}
+\index{KeyDownEvents@{KeyDownEvents}!CrabUI.TextInputEventPackBuilder@{CrabUI.TextInputEventPackBuilder}}
+\doxysubsubsection{\texorpdfstring{KeyDownEvents}{KeyDownEvents}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_text_input_event_pack_builder_ae61272b41d5b8da452120a371c8996bb} 
+List$<$Text\+Input\+Event\+Args$>$ Crab\+UI.\+Text\+Input\+Event\+Pack\+Builder.\+Key\+Down\+Events = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_text_input_event_pack_builder_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_text_input_event_pack_builder_8cs_source}{Text\+Input\+Event\+Pack\+Builder.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_text_input_event_pack_builder_aa95ffcf232d5cd1459d0990d48544962}\index{CrabUI.TextInputEventPackBuilder@{CrabUI.TextInputEventPackBuilder}!TextInputEvents@{TextInputEvents}}
+\index{TextInputEvents@{TextInputEvents}!CrabUI.TextInputEventPackBuilder@{CrabUI.TextInputEventPackBuilder}}
+\doxysubsubsection{\texorpdfstring{TextInputEvents}{TextInputEvents}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_text_input_event_pack_builder_aa95ffcf232d5cd1459d0990d48544962} 
+List$<$Text\+Input\+Event\+Args$>$ Crab\+UI.\+Text\+Input\+Event\+Pack\+Builder.\+Text\+Input\+Events = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_text_input_event_pack_builder_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_text_input_event_pack_builder_8cs_source}{Text\+Input\+Event\+Pack\+Builder.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Infrastructure/\+\+Data\+Sources/\+Text\+Input\+Event\+Pack\+Builder.\+cs\end{DoxyCompactItemize}

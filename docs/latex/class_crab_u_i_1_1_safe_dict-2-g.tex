@@ -1,0 +1,72 @@
+\doxysection{Crab\+UI.\+Safe\+Dict\texorpdfstring{$<$}{<} TKey, TValue \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_crab_u_i_1_1_safe_dict-2-g}{}\label{class_crab_u_i_1_1_safe_dict-2-g}\index{CrabUI.SafeDict$<$ TKey, TValue $>$@{CrabUI.SafeDict$<$ TKey, TValue $>$}}
+Inheritance diagram for Crab\+UI.\+Safe\+Dict\texorpdfstring{$<$}{<} TKey, TValue \texorpdfstring{$>$}{>}:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_1_1_safe_dict-2-g}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+TValue \doxymbox{\hyperlink{class_crab_u_i_1_1_safe_dict-2-g_a18494a29f602f46df49b466c4e9193e7}{Default}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+new TValue \doxymbox{\hyperlink{class_crab_u_i_1_1_safe_dict-2-g_a295fe433c3fa810020e9a03f8354468d}{this\+[\+TKey key]\+}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_safe_dict_8cs_source_l00013}{13}} of file \doxymbox{\hyperlink{_safe_dict_8cs_source}{Safe\+Dict.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_safe_dict-2-g_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_safe_dict-2-g_a18494a29f602f46df49b466c4e9193e7}\index{CrabUI.SafeDict$<$ TKey, TValue $>$@{CrabUI.SafeDict$<$ TKey, TValue $>$}!Default@{Default}}
+\index{Default@{Default}!CrabUI.SafeDict$<$ TKey, TValue $>$@{CrabUI.SafeDict$<$ TKey, TValue $>$}}
+\doxysubsubsection{\texorpdfstring{Default}{Default}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_safe_dict-2-g_a18494a29f602f46df49b466c4e9193e7} 
+TValue Crab\+UI.\+Safe\+Dict$<$ TKey, TValue $>$.Default\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_safe_dict_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_safe_dict_8cs_source}{Safe\+Dict.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_safe_dict-2-g_a295fe433c3fa810020e9a03f8354468d}\index{CrabUI.SafeDict$<$ TKey, TValue $>$@{CrabUI.SafeDict$<$ TKey, TValue $>$}!this\+[TKey key]\+@{this[TKey key]}}
+\index{this\+[TKey key]\+@{this[TKey key]}!CrabUI.SafeDict$<$ TKey, TValue $>$@{CrabUI.SafeDict$<$ TKey, TValue $>$}}
+\doxysubsubsection{\texorpdfstring{this[TKey key]}{this[TKey key]}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_safe_dict-2-g_a295fe433c3fa810020e9a03f8354468d} 
+new TValue Crab\+UI.\+Safe\+Dict$<$ TKey, TValue $>$.this\+[TKey key]\+\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_safe_dict_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_safe_dict_8cs_source}{Safe\+Dict.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \textcolor{keyword}{get}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (TryGetValue(key,\ out\ TValue\ value))}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Default;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ Add(key,\ value);}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Simple Types/\+Safe\+Dict.\+cs\end{DoxyCompactItemize}

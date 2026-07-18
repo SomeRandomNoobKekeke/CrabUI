@@ -1,0 +1,160 @@
+\doxysection{Crab\+UIUser.\+E2\+ETest\+Pack.\+Calculator.\+Calculator\+Core Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_calculator_1_1_calculator_core}{}\label{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_calculator_1_1_calculator_core}\index{CrabUIUser.E2ETestPack.Calculator.CalculatorCore@{CrabUIUser.E2ETestPack.Calculator.CalculatorCore}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_calculator_1_1_calculator_core_af7eb47d86169154fca0ef343e52156f9}{Accept\+Number}} (string number)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_calculator_1_1_calculator_core_a17031d8bf484313f64cd395d437a441c}{Accept\+Opperation}} (string opp)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_calculator_1_1_calculator_core_ac6077ff8047506954f0ddb5a50518923}{Accept\+Command}} (string command)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Random \doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_calculator_1_1_calculator_core_ad2bef5fdb5481a154cbd53adb85081ad}{Random}} = new Random()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_calculator_1_1_calculator_core_aa60855a503c5859ae6e8cbb350fc6724}{Text}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+Action \doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_calculator_1_1_calculator_core_a1406006e4cc7beabddbbb8861124055f}{Changed}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_calculator_core_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_calculator_core_8cs_source}{Calculator\+Core.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_calculator_1_1_calculator_core_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_calculator_1_1_calculator_core_ac6077ff8047506954f0ddb5a50518923}\index{CrabUIUser.E2ETestPack.Calculator.CalculatorCore@{CrabUIUser.E2ETestPack.Calculator.CalculatorCore}!AcceptCommand@{AcceptCommand}}
+\index{AcceptCommand@{AcceptCommand}!CrabUIUser.E2ETestPack.Calculator.CalculatorCore@{CrabUIUser.E2ETestPack.Calculator.CalculatorCore}}
+\doxysubsubsection{\texorpdfstring{AcceptCommand()}{AcceptCommand()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_calculator_1_1_calculator_core_ac6077ff8047506954f0ddb5a50518923} 
+void Crab\+UIUser.\+E2\+ETest\+Pack.\+Calculator.\+Calculator\+Core.\+Accept\+Command (\begin{DoxyParamCaption}\item[{string}]{command}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_calculator_core_8cs_source_l00045}{45}} of file \doxymbox{\hyperlink{_calculator_core_8cs_source}{Calculator\+Core.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (command\ ==\ \textcolor{stringliteral}{"{}<"{}})}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Text.Length\ ==\ 0)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ Text\ =\ Text.Substring(0,\ Text.Length\ -\/\ 1);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (command\ ==\ \textcolor{stringliteral}{"{}="{}})}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ Text\ =\ \$\textcolor{stringliteral}{"{}mb\ [\{Random.NextSingle()\ *\ 100\}]?"{}};}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_calculator_1_1_calculator_core_af7eb47d86169154fca0ef343e52156f9}\index{CrabUIUser.E2ETestPack.Calculator.CalculatorCore@{CrabUIUser.E2ETestPack.Calculator.CalculatorCore}!AcceptNumber@{AcceptNumber}}
+\index{AcceptNumber@{AcceptNumber}!CrabUIUser.E2ETestPack.Calculator.CalculatorCore@{CrabUIUser.E2ETestPack.Calculator.CalculatorCore}}
+\doxysubsubsection{\texorpdfstring{AcceptNumber()}{AcceptNumber()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_calculator_1_1_calculator_core_af7eb47d86169154fca0ef343e52156f9} 
+void Crab\+UIUser.\+E2\+ETest\+Pack.\+Calculator.\+Calculator\+Core.\+Accept\+Number (\begin{DoxyParamCaption}\item[{string}]{number}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_calculator_core_8cs_source_l00035}{35}} of file \doxymbox{\hyperlink{_calculator_core_8cs_source}{Calculator\+Core.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ Text\ +=\ number;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_calculator_1_1_calculator_core_a17031d8bf484313f64cd395d437a441c}\index{CrabUIUser.E2ETestPack.Calculator.CalculatorCore@{CrabUIUser.E2ETestPack.Calculator.CalculatorCore}!AcceptOpperation@{AcceptOpperation}}
+\index{AcceptOpperation@{AcceptOpperation}!CrabUIUser.E2ETestPack.Calculator.CalculatorCore@{CrabUIUser.E2ETestPack.Calculator.CalculatorCore}}
+\doxysubsubsection{\texorpdfstring{AcceptOpperation()}{AcceptOpperation()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_calculator_1_1_calculator_core_a17031d8bf484313f64cd395d437a441c} 
+void Crab\+UIUser.\+E2\+ETest\+Pack.\+Calculator.\+Calculator\+Core.\+Accept\+Opperation (\begin{DoxyParamCaption}\item[{string}]{opp}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_calculator_core_8cs_source_l00040}{40}} of file \doxymbox{\hyperlink{_calculator_core_8cs_source}{Calculator\+Core.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ Text\ +=\ \$\textcolor{stringliteral}{"{}\ \{opp\}\ "{}};}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_calculator_1_1_calculator_core_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_calculator_1_1_calculator_core_ad2bef5fdb5481a154cbd53adb85081ad}\index{CrabUIUser.E2ETestPack.Calculator.CalculatorCore@{CrabUIUser.E2ETestPack.Calculator.CalculatorCore}!Random@{Random}}
+\index{Random@{Random}!CrabUIUser.E2ETestPack.Calculator.CalculatorCore@{CrabUIUser.E2ETestPack.Calculator.CalculatorCore}}
+\doxysubsubsection{\texorpdfstring{Random}{Random}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_calculator_1_1_calculator_core_ad2bef5fdb5481a154cbd53adb85081ad} 
+Random Crab\+UIUser.\+E2\+ETest\+Pack.\+Calculator.\+Calculator\+Core.\+Random = new Random()}
+
+
+
+Definition at line \doxymbox{\hyperlink{_calculator_core_8cs_source_l00022}{22}} of file \doxymbox{\hyperlink{_calculator_core_8cs_source}{Calculator\+Core.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_calculator_1_1_calculator_core_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_calculator_1_1_calculator_core_aa60855a503c5859ae6e8cbb350fc6724}\index{CrabUIUser.E2ETestPack.Calculator.CalculatorCore@{CrabUIUser.E2ETestPack.Calculator.CalculatorCore}!Text@{Text}}
+\index{Text@{Text}!CrabUIUser.E2ETestPack.Calculator.CalculatorCore@{CrabUIUser.E2ETestPack.Calculator.CalculatorCore}}
+\doxysubsubsection{\texorpdfstring{Text}{Text}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_calculator_1_1_calculator_core_aa60855a503c5859ae6e8cbb350fc6724} 
+string Crab\+UIUser.\+E2\+ETest\+Pack.\+Calculator.\+Calculator\+Core.\+Text\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_calculator_core_8cs_source_l00025}{25}} of file \doxymbox{\hyperlink{_calculator_core_8cs_source}{Calculator\+Core.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Text;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \_Text\ =\ value;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ Changed?.Invoke();}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-event-members}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_calculator_1_1_calculator_core_doc-event-members}
+\doxysubsection{Event Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_calculator_1_1_calculator_core_a1406006e4cc7beabddbbb8861124055f}\index{CrabUIUser.E2ETestPack.Calculator.CalculatorCore@{CrabUIUser.E2ETestPack.Calculator.CalculatorCore}!Changed@{Changed}}
+\index{Changed@{Changed}!CrabUIUser.E2ETestPack.Calculator.CalculatorCore@{CrabUIUser.E2ETestPack.Calculator.CalculatorCore}}
+\doxysubsubsection{\texorpdfstring{Changed}{Changed}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_calculator_1_1_calculator_core_a1406006e4cc7beabddbbb8861124055f} 
+Action Crab\+UIUser.\+E2\+ETest\+Pack.\+Calculator.\+Calculator\+Core.\+Changed}
+
+
+
+Definition at line \doxymbox{\hyperlink{_calculator_core_8cs_source_l00024}{24}} of file \doxymbox{\hyperlink{_calculator_core_8cs_source}{Calculator\+Core.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+CUITest/\+\+E2\+E/\+\+Test/\+\+Calculator/\+Calculator\+Core.\+cs\end{DoxyCompactItemize}

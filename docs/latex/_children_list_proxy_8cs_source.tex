@@ -1,0 +1,58 @@
+\doxysection{Children\+List\+Proxy.\+cs}
+\hypertarget{_children_list_proxy_8cs_source}{}\label{_children_list_proxy_8cs_source}\index{ClientProject/ClientSource/CUI/Core/Components/CUIComponent/Tree/ChildrenListProxy.cs@{ClientProject/ClientSource/CUI/Core/Components/CUIComponent/Tree/ChildrenListProxy.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Collections.ObjectModel;}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_code_generator}{CUICodeGenerator}};}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00010}00010\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}};}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00011}00011\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00012}00012\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00014}00014\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component}{CUIComponent}}}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00015}00015\ \ \ \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00016}00016\ \textcolor{comment}{\ \ \ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00017}00017\ \textcolor{comment}{\ \ \ \ ///\ This\ is\ just\ convenient\ accessor,\ it\ doesn't\ do\ the\ work}}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00018}00018\ \textcolor{comment}{\ \ \ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00019}\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_children_list_proxy}{00019}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_children_list_proxy}{ChildrenListProxy}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_part}{Part}},\ IList<CUIComponent>}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00020}00020\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00021}00021\ \ \ \ \ \ \ \textcolor{keyword}{public}\ List<CUIComponent>\ Children\ =>\ Self.\_Children;}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00022}00022\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_tree_operations___part}{TreeOperations\_Part}}\ Operations\ =>\ Self.TreeOperations;}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00024}00024\ \ \ \ \ \ \ \textcolor{keyword}{public}\ CUIComponent\ \textcolor{keyword}{this}[\textcolor{keywordtype}{int}\ i]}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00025}00025\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Children[i];}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ Operations.SetChild(i,\ value);}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00028}00028\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00030}00030\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ Count\ =>\ Children.Count;}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00031}00031\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ IsReadOnly\ =>\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00033}00033\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ MoveChildTo(CUIComponent\ child,\ \textcolor{keywordtype}{int}\ i)\ =>\ Operations.MoveChildTo(child,\ i);}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00034}00034\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Add(CUIComponent\ child)\ =>\ Operations.AddChild(child);}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00035}00035\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Clear()\ =>\ Operations.RemoveAllChildren();}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00036}00036\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ Contains(CUIComponent\ child)\ =>\ Children.Contains(child);}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00037}00037\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ CopyTo(CUIComponent[]\ array,\ \textcolor{keywordtype}{int}\ arrayIndex)\ =>\ Children.CopyTo(array,\ arrayIndex);}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00038}00038\ \ \ \ \ \ \ \textcolor{keyword}{public}\ IEnumerator<CUIComponent>\ GetEnumerator()\ =>\ Children.GetEnumerator();}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00039}00039\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ IndexOf(CUIComponent\ child)\ =>\ Children.IndexOf(child);}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00041}00041\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Insert(\textcolor{keywordtype}{int}\ i,\ CUIComponent\ child)\ =>\ Operations.InsertChild(i,\ child);}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00042}00042\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ Remove(CUIComponent\ child)}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00043}00043\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ Operations.RemoveChild(child);}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \textcolor{comment}{//BRUH}}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00046}00046\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00047}00047\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ RemoveAt(\textcolor{keywordtype}{int}\ i)\ =>\ Operations.RemoveChildAt(i);}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00049}00049\ \ \ \ \ \ \ IEnumerator\ IEnumerable.GetEnumerator()\ =>\ Children.GetEnumerator();}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00050}00050\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00051}00051\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_children_list_proxy_8cs_source_l00052}00052\ \}}
+
+\end{DoxyCode}

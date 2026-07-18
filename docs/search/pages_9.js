@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['notes_20for_20code_20divers_0',['Notes For Code Divers',['../_notes_for_code_divers.html',1,'']]],
-  ['notesforcodedivers_1',['&lt;a class=&quot;el&quot; href=&quot;_notes_for_code_divers.html&quot; title=&quot;Notes For Code Divers&quot;&gt;Notes For Code Divers&lt;/a&gt;',['../index.html#autotoc_md4',1,'']]]
+  ['barojunk_0',['for examples check Test folder on BaroJunk',['../dir_9cd1d8e27900c8a4332922c888fc7f3f.html#autotoc_md96',1,'']]],
+  ['basics_1',['Basics',['../_overview.html#autotoc_md5',1,'']]],
+  ['borked_2',['borked',['../_other_concepts.html#autotoc_md23',1,'Focus (wip, mostly borked)'],['../_other_concepts.html#autotoc_md21',1,'Serialization (wip, mostly borked)'],['../_other_concepts.html#autotoc_md25',1,'Styles and palettes (wip, mostly borked)']]]
 ];

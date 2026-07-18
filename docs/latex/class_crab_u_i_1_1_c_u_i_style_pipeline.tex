@@ -1,0 +1,270 @@
+\doxysection{Crab\+UI.\+CUIStyle\+Pipeline Class Reference}
+\hypertarget{class_crab_u_i_1_1_c_u_i_style_pipeline}{}\label{class_crab_u_i_1_1_c_u_i_style_pipeline}\index{CrabUI.CUIStylePipeline@{CrabUI.CUIStylePipeline}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_style_pipeline_a9d98fc3ff1cf2a5689b69acfd32d5efb}{Remove}} (\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_c_u_i_style}{ICUIStyle}} style)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_style_pipeline_ae31202908252aa9687e4471b9e273d3f}{Remove}} (string id)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_style_pipeline_ab401f51d15b657112e9540603d2ddfdc}{Remove}} (CUIStyle\+Category category)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_style_pipeline_a2a5093295cf5f4077b6fc84613dcfc6a}{Clear}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_style_pipeline_a1305979738e41df35f039b998f7528cf}{Add}} (\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_c_u_i_style}{ICUIStyle}} style)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_style_pipeline_a0305b86a9aca1489ee8937b40ced90de}{Sort}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_style_pipeline_aa0091fadb05f6d84320989d39c2e9dc6}{Add\+Silent}} (\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_c_u_i_style}{ICUIStyle}} style)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_style_pipeline_a53250ce1cfd53ff0469462abf068d23e}{Remove\+Silent}} (\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_c_u_i_style}{ICUIStyle}} style)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_style_pipeline_a5a1d6fd1fe23c40f6c8cd75843245050}{Apply}} (\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component}{CUIComponent}} component)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+IRead\+Only\+List$<$ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_c_u_i_style}{ICUIStyle}} $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_style_pipeline_a378558f109dff4d872ea6ef1dee92192}{Styles}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_simple_weak_event}{Simple\+Weak\+Event}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_style_pipeline_a049aae93c8809beea944917896d27b3c}{Changed}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_style_pipeline_8cs_source_l00009}{9}} of file \doxymbox{\hyperlink{_c_u_i_style_pipeline_8cs_source}{CUIStyle\+Pipeline.\+cs}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_style_pipeline_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_style_pipeline_a91ceb4a14805a4fa2ddc97ecf25c95e4}\index{CrabUI.CUIStylePipeline@{CrabUI.CUIStylePipeline}!CUIStylePipeline@{CUIStylePipeline}}
+\index{CUIStylePipeline@{CUIStylePipeline}!CrabUI.CUIStylePipeline@{CrabUI.CUIStylePipeline}}
+\doxysubsubsection{\texorpdfstring{CUIStylePipeline()}{CUIStylePipeline()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_style_pipeline_a91ceb4a14805a4fa2ddc97ecf25c95e4} 
+Crab\+UI.\+CUIStyle\+Pipeline.\+CUIStyle\+Pipeline (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_style_pipeline_8cs_source_l00073}{73}} of file \doxymbox{\hyperlink{_c_u_i_style_pipeline_8cs_source}{CUIStyle\+Pipeline.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00074\ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ Styles\ =\ styles.AsReadOnly();}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_style_pipeline_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_style_pipeline_a1305979738e41df35f039b998f7528cf}\index{CrabUI.CUIStylePipeline@{CrabUI.CUIStylePipeline}!Add@{Add}}
+\index{Add@{Add}!CrabUI.CUIStylePipeline@{CrabUI.CUIStylePipeline}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_style_pipeline_a1305979738e41df35f039b998f7528cf} 
+void Crab\+UI.\+CUIStyle\+Pipeline.\+Add (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_c_u_i_style}{ICUIStyle}}}]{style}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_style_pipeline_8cs_source_l00042}{42}} of file \doxymbox{\hyperlink{_c_u_i_style_pipeline_8cs_source}{CUIStyle\+Pipeline.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00043\ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (styles.Count\ ==\ 0\ ||\ styles.Last().Priority\ >=\ style.Priority)}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ styles.Add(style);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ styles.Add(style);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ Sort();}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ Changed.Raise();}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_style_pipeline_aa0091fadb05f6d84320989d39c2e9dc6}\index{CrabUI.CUIStylePipeline@{CrabUI.CUIStylePipeline}!AddSilent@{AddSilent}}
+\index{AddSilent@{AddSilent}!CrabUI.CUIStylePipeline@{CrabUI.CUIStylePipeline}}
+\doxysubsubsection{\texorpdfstring{AddSilent()}{AddSilent()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_style_pipeline_aa0091fadb05f6d84320989d39c2e9dc6} 
+void Crab\+UI.\+CUIStyle\+Pipeline.\+Add\+Silent (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_c_u_i_style}{ICUIStyle}}}]{style}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_style_pipeline_8cs_source_l00062}{62}} of file \doxymbox{\hyperlink{_c_u_i_style_pipeline_8cs_source}{CUIStyle\+Pipeline.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00062\ =>\ styles.Add(style);}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_style_pipeline_a5a1d6fd1fe23c40f6c8cd75843245050}\index{CrabUI.CUIStylePipeline@{CrabUI.CUIStylePipeline}!Apply@{Apply}}
+\index{Apply@{Apply}!CrabUI.CUIStylePipeline@{CrabUI.CUIStylePipeline}}
+\doxysubsubsection{\texorpdfstring{Apply()}{Apply()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_style_pipeline_a5a1d6fd1fe23c40f6c8cd75843245050} 
+void Crab\+UI.\+CUIStyle\+Pipeline.\+Apply (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component}{CUIComponent}}}]{component}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_style_pipeline_8cs_source_l00065}{65}} of file \doxymbox{\hyperlink{_c_u_i_style_pipeline_8cs_source}{CUIStyle\+Pipeline.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00066\ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (ICUIStyle\ style\ \textcolor{keywordflow}{in}\ styles)}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ style.Apply(component);}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_style_pipeline_a2a5093295cf5f4077b6fc84613dcfc6a}\index{CrabUI.CUIStylePipeline@{CrabUI.CUIStylePipeline}!Clear@{Clear}}
+\index{Clear@{Clear}!CrabUI.CUIStylePipeline@{CrabUI.CUIStylePipeline}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_style_pipeline_a2a5093295cf5f4077b6fc84613dcfc6a} 
+void Crab\+UI.\+CUIStyle\+Pipeline.\+Clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_style_pipeline_8cs_source_l00035}{35}} of file \doxymbox{\hyperlink{_c_u_i_style_pipeline_8cs_source}{CUIStyle\+Pipeline.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ styles.Clear();}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ Changed.Raise();}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_style_pipeline_ab401f51d15b657112e9540603d2ddfdc}\index{CrabUI.CUIStylePipeline@{CrabUI.CUIStylePipeline}!Remove@{Remove}}
+\index{Remove@{Remove}!CrabUI.CUIStylePipeline@{CrabUI.CUIStylePipeline}}
+\doxysubsubsection{\texorpdfstring{Remove()}{Remove()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_style_pipeline_ab401f51d15b657112e9540603d2ddfdc} 
+void Crab\+UI.\+CUIStyle\+Pipeline.\+Remove (\begin{DoxyParamCaption}\item[{CUIStyle\+Category}]{category}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_style_pipeline_8cs_source_l00029}{29}} of file \doxymbox{\hyperlink{_c_u_i_style_pipeline_8cs_source}{CUIStyle\+Pipeline.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ styles.RemoveAll(style\ =>\ style.Category\ ==\ category);}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ Changed.Raise();}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_style_pipeline_a9d98fc3ff1cf2a5689b69acfd32d5efb}\index{CrabUI.CUIStylePipeline@{CrabUI.CUIStylePipeline}!Remove@{Remove}}
+\index{Remove@{Remove}!CrabUI.CUIStylePipeline@{CrabUI.CUIStylePipeline}}
+\doxysubsubsection{\texorpdfstring{Remove()}{Remove()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_style_pipeline_a9d98fc3ff1cf2a5689b69acfd32d5efb} 
+void Crab\+UI.\+CUIStyle\+Pipeline.\+Remove (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_c_u_i_style}{ICUIStyle}}}]{style}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_style_pipeline_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_c_u_i_style_pipeline_8cs_source}{CUIStyle\+Pipeline.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ styles.Remove(style);}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ Changed.Raise();}
+\DoxyCodeLine{00021\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_style_pipeline_ae31202908252aa9687e4471b9e273d3f}\index{CrabUI.CUIStylePipeline@{CrabUI.CUIStylePipeline}!Remove@{Remove}}
+\index{Remove@{Remove}!CrabUI.CUIStylePipeline@{CrabUI.CUIStylePipeline}}
+\doxysubsubsection{\texorpdfstring{Remove()}{Remove()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_style_pipeline_ae31202908252aa9687e4471b9e273d3f} 
+void Crab\+UI.\+CUIStyle\+Pipeline.\+Remove (\begin{DoxyParamCaption}\item[{string}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_style_pipeline_8cs_source_l00023}{23}} of file \doxymbox{\hyperlink{_c_u_i_style_pipeline_8cs_source}{CUIStyle\+Pipeline.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ styles.RemoveAll(style\ =>\ style.ID\ ==\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ Changed.Raise();}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_style_pipeline_a53250ce1cfd53ff0469462abf068d23e}\index{CrabUI.CUIStylePipeline@{CrabUI.CUIStylePipeline}!RemoveSilent@{RemoveSilent}}
+\index{RemoveSilent@{RemoveSilent}!CrabUI.CUIStylePipeline@{CrabUI.CUIStylePipeline}}
+\doxysubsubsection{\texorpdfstring{RemoveSilent()}{RemoveSilent()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_style_pipeline_a53250ce1cfd53ff0469462abf068d23e} 
+void Crab\+UI.\+CUIStyle\+Pipeline.\+Remove\+Silent (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_c_u_i_style}{ICUIStyle}}}]{style}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_style_pipeline_8cs_source_l00063}{63}} of file \doxymbox{\hyperlink{_c_u_i_style_pipeline_8cs_source}{CUIStyle\+Pipeline.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00063\ =>\ styles.Remove(style);}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_style_pipeline_a0305b86a9aca1489ee8937b40ced90de}\index{CrabUI.CUIStylePipeline@{CrabUI.CUIStylePipeline}!Sort@{Sort}}
+\index{Sort@{Sort}!CrabUI.CUIStylePipeline@{CrabUI.CUIStylePipeline}}
+\doxysubsubsection{\texorpdfstring{Sort()}{Sort()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_style_pipeline_a0305b86a9aca1489ee8937b40ced90de} 
+void Crab\+UI.\+CUIStyle\+Pipeline.\+Sort (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_style_pipeline_8cs_source_l00057}{57}} of file \doxymbox{\hyperlink{_c_u_i_style_pipeline_8cs_source}{CUIStyle\+Pipeline.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00058\ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ styles.Sort((a,\ b)\ =>\ b.Priority\ -\/\ a.Priority);}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_style_pipeline_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_style_pipeline_a049aae93c8809beea944917896d27b3c}\index{CrabUI.CUIStylePipeline@{CrabUI.CUIStylePipeline}!Changed@{Changed}}
+\index{Changed@{Changed}!CrabUI.CUIStylePipeline@{CrabUI.CUIStylePipeline}}
+\doxysubsubsection{\texorpdfstring{Changed}{Changed}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_style_pipeline_a049aae93c8809beea944917896d27b3c} 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_simple_weak_event}{Simple\+Weak\+Event}} Crab\+UI.\+CUIStyle\+Pipeline.\+Changed = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_style_pipeline_8cs_source_l00014}{14}} of file \doxymbox{\hyperlink{_c_u_i_style_pipeline_8cs_source}{CUIStyle\+Pipeline.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_style_pipeline_a378558f109dff4d872ea6ef1dee92192}\index{CrabUI.CUIStylePipeline@{CrabUI.CUIStylePipeline}!Styles@{Styles}}
+\index{Styles@{Styles}!CrabUI.CUIStylePipeline@{CrabUI.CUIStylePipeline}}
+\doxysubsubsection{\texorpdfstring{Styles}{Styles}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_style_pipeline_a378558f109dff4d872ea6ef1dee92192} 
+IRead\+Only\+List$<$\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_c_u_i_style}{ICUIStyle}}$>$ Crab\+UI.\+CUIStyle\+Pipeline.\+Styles\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_style_pipeline_8cs_source_l00012}{12}} of file \doxymbox{\hyperlink{_c_u_i_style_pipeline_8cs_source}{CUIStyle\+Pipeline.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \{\ \textcolor{keyword}{get};\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Styling/\+\+Styles/\+CUIStyle\+Pipeline.\+cs\end{DoxyCompactItemize}

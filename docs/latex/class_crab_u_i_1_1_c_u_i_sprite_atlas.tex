@@ -1,0 +1,96 @@
+\doxysection{Crab\+UI.\+CUISprite\+Atlas(CUITexture2D texture) Class Reference}
+\hypertarget{class_crab_u_i_1_1_c_u_i_sprite_atlas}{}\label{class_crab_u_i_1_1_c_u_i_sprite_atlas}\index{CrabUI.CUISpriteAtlas@{CrabUI.CUISpriteAtlas}}
+
+
+It\textquotesingle{}s very primitive, it assumes that all sprites are separated by 2px empty lines.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+CUISprite \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_sprite_atlas_aa66b6f9562ae6bdf7df592ed024c1ae7}{Get}} (int x, int y)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Point \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_sprite_atlas_a89cefce9a126af8b0113f57e7aaefa21}{Texture\+Size}} = new Point(64, 64)\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture2_d}{CUITexture2D}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_sprite_atlas_a6cd3afb071629f61817dd256e16941a0}{Texture}} = texture\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+It\textquotesingle{}s very primitive, it assumes that all sprites are separated by 2px empty lines. 
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_sprite_atlas_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_c_u_i_sprite_atlas_8cs_source}{CUISprite\+Atlas.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_sprite_atlas_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_sprite_atlas_aa66b6f9562ae6bdf7df592ed024c1ae7}\index{CrabUI.CUISpriteAtlas@{CrabUI.CUISpriteAtlas}!Get@{Get}}
+\index{Get@{Get}!CrabUI.CUISpriteAtlas@{CrabUI.CUISpriteAtlas}}
+\doxysubsubsection{\texorpdfstring{Get()}{Get()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_sprite_atlas_aa66b6f9562ae6bdf7df592ed024c1ae7} 
+CUISprite Crab\+UI.\+CUISprite\+Atlas.\+Get (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_sprite_atlas_8cs_source_l00020}{20}} of file \doxymbox{\hyperlink{_c_u_i_sprite_atlas_8cs_source}{CUISprite\+Atlas.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ CUISprite(Texture) }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ SourceRectangle\ =\ \textcolor{keyword}{new}\ Rectangle(}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ 1\ +\ TextureSize.X\ *\ x,}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ 1\ +\ TextureSize.Y\ *\ y,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ TextureSize.X,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ TextureSize.Y}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_sprite_atlas_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_sprite_atlas_a6cd3afb071629f61817dd256e16941a0}\index{CrabUI.CUISpriteAtlas@{CrabUI.CUISpriteAtlas}!Texture@{Texture}}
+\index{Texture@{Texture}!CrabUI.CUISpriteAtlas@{CrabUI.CUISpriteAtlas}}
+\doxysubsubsection{\texorpdfstring{Texture}{Texture}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_sprite_atlas_a6cd3afb071629f61817dd256e16941a0} 
+\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture2_d}{CUITexture2D}} Crab\+UI.\+CUISprite\+Atlas.\+Texture = texture\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_sprite_atlas_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_c_u_i_sprite_atlas_8cs_source}{CUISprite\+Atlas.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ texture;}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_sprite_atlas_a89cefce9a126af8b0113f57e7aaefa21}\index{CrabUI.CUISpriteAtlas@{CrabUI.CUISpriteAtlas}!TextureSize@{TextureSize}}
+\index{TextureSize@{TextureSize}!CrabUI.CUISpriteAtlas@{CrabUI.CUISpriteAtlas}}
+\doxysubsubsection{\texorpdfstring{TextureSize}{TextureSize}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_sprite_atlas_a89cefce9a126af8b0113f57e7aaefa21} 
+Point Crab\+UI.\+CUISprite\+Atlas.\+Texture\+Size = new Point(64, 64)\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_sprite_atlas_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_c_u_i_sprite_atlas_8cs_source}{CUISprite\+Atlas.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}\ Point(64,\ 64);}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Infrastructure/\+\+Graphics Abstractions/\+\+CUISprite/\+CUISprite\+Atlas.\+cs\end{DoxyCompactItemize}

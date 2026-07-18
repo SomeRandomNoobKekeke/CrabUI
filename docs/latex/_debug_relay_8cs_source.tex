@@ -1,0 +1,45 @@
+\doxysection{Debug\+Relay.\+cs}
+\hypertarget{_debug_relay_8cs_source}{}\label{_debug_relay_8cs_source}\index{ClientProject/ClientSource/Libs/DebugNode/Relays/DebugRelay.cs@{ClientProject/ClientSource/Libs/DebugNode/Relays/DebugRelay.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00007}00007\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}}}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00009}\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay}{00009}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay}{DebugRelay}}\ :\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay_base}{DebugRelayBase}},\ \doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_debug_relay_target}{IDebugRelayTarget}}}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00010}00010\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Map(\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay_base}{DebugRelayBase}}\ next)\ =>\ next.Route(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Unmap(\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay_base}{DebugRelayBase}}\ next)\ =>\ next.Unroute(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Open()}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00015}00015\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00016}00016\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_node_base}{DebugNodeBase}}\ node\ \textcolor{keywordflow}{in}\ GetNodes())\ \{\ node.Open();\ \}}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00017}00017\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Open(\textcolor{keywordtype}{string}\ type)}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00019}00019\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00020}00020\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_node_base}{DebugNodeBase}}\ node\ \textcolor{keywordflow}{in}\ GetNodes(type))\ \{\ node.Open();\ \}}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00021}00021\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Close()}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00023}00023\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00024}00024\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_node_base}{DebugNodeBase}}\ node\ \textcolor{keywordflow}{in}\ GetNodes())\ \{\ node.Close();\ \}}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00025}00025\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Close(\textcolor{keywordtype}{string}\ type)}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00027}00027\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00028}00028\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_node_base}{DebugNodeBase}}\ node\ \textcolor{keywordflow}{in}\ GetNodes(type))\ \{\ node.Close();\ \}}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Toggle()}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00031}00031\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00032}00032\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_node_base}{DebugNodeBase}}\ node\ \textcolor{keywordflow}{in}\ GetNodes())\ \{\ node.Toggle();\ \}}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00033}00033\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Toggle(\textcolor{keywordtype}{string}\ type)}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00035}00035\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00036}00036\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_node_base}{DebugNodeBase}}\ node\ \textcolor{keywordflow}{in}\ GetNodes(type))\ \{\ node.Toggle();\ \}}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00038}00038\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_debug_relay_8cs_source_l00039}00039\ \}}
+
+\end{DoxyCode}

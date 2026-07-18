@@ -167,7 +167,7 @@ namespace CrabUI
 
       Background.MouseDown.Add(Grab);
 
-      Background.ConsumeMouseClicks = true;
+      Background.ConsumeMouseEvents = true;
     }
   }
 }

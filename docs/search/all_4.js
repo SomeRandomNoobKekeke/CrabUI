@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['for_20code_20divers_0',['Notes For Code Divers',['../_notes_for_code_divers.html',1,'']]],
-  ['for_20in_20memory_20mods_1',['For &quot;in-memory&quot; mods',['../_quick_start.html#autotoc_md12',1,'']]],
-  ['for_20in_20precompiled_20mods_2',['For in precompiled mods',['../_quick_start.html#autotoc_md13',1,'']]]
+  ['4_0',['0.2.6.4',['../md__client_project_2_client_source_2_changelog.html#autotoc_md74',1,'']]],
+  ['4_200_1',['4 0',['../md__client_project_2_client_source_2_changelog.html#autotoc_md93',1,'0.0.4.0'],['../md__client_project_2_client_source_2_changelog.html#autotoc_md81',1,'0.2.4.0']]]
 ];

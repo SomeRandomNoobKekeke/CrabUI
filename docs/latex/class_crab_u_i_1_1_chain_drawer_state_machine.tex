@@ -1,0 +1,230 @@
+\doxysection{Crab\+UI.\+Chain\+Drawer\+State\+Machine Class Reference}
+\hypertarget{class_crab_u_i_1_1_chain_drawer_state_machine}{}\label{class_crab_u_i_1_1_chain_drawer_state_machine}\index{CrabUI.ChainDrawerStateMachine@{CrabUI.ChainDrawerStateMachine}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_crab_u_i_1_1_chain_drawer_state_machine_ae0c9f1f09e881511379b4e611543edb0}\label{class_crab_u_i_1_1_chain_drawer_state_machine_ae0c9f1f09e881511379b4e611543edb0} 
+record {\bfseries State} (Rectangle Scissor\+Rect, Sampler\+State Sampler\+State)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_chain_drawer_state_machine_a9b710cff184809d74d3ebbf683ef4477}{Stop\+Start}} (\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISprite\+Batch}} sprite\+Batch, State state)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_chain_drawer_state_machine_a81bc2e6e41453fe785993dc022e7ba2b}{Init}} (\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISprite\+Batch}} sprite\+Batch)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_chain_drawer_state_machine_aec86a70fc49a22b720596ae81aea44c5}{Enter}} (\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISprite\+Batch}} sprite\+Batch, \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_bounds}{Visual\+Bounds}} bounds)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_chain_drawer_state_machine_a9fcbe2b74caaca07219847572c4b4589}{Exit}} (\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISprite\+Batch}} sprite\+Batch, \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_bounds}{Visual\+Bounds}} bounds)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_chain_drawer_state_machine_a94f14fb861cb186f329dc2bb35df02ae}{Finalize}} (\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISprite\+Batch}} sprite\+Batch)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_node}{Debug\+Node}}$<$ Rectangle $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_chain_drawer_state_machine_a8f626ae70b81af39ec33fbf6487b5430}{Debug\+\_\+\+Scissor\+Rect\+Changed}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+Stack$<$ State $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_chain_drawer_state_machine_a5ad5d7267314ec4f3698cbc0ea584ea1}{States}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+State \doxymbox{\hyperlink{class_crab_u_i_1_1_chain_drawer_state_machine_a8425ee3394ec720e7682d07050fbe033}{Original\+State}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+State \doxymbox{\hyperlink{class_crab_u_i_1_1_chain_drawer_state_machine_a01a240c6e1b176f328697eeda571d666}{Current\+State}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_chain_drawer_state_machine_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_chain_drawer_state_machine_8cs_source}{Chain\+Drawer\+State\+Machine.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_chain_drawer_state_machine_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_chain_drawer_state_machine_aec86a70fc49a22b720596ae81aea44c5}\index{CrabUI.ChainDrawerStateMachine@{CrabUI.ChainDrawerStateMachine}!Enter@{Enter}}
+\index{Enter@{Enter}!CrabUI.ChainDrawerStateMachine@{CrabUI.ChainDrawerStateMachine}}
+\doxysubsubsection{\texorpdfstring{Enter()}{Enter()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_chain_drawer_state_machine_aec86a70fc49a22b720596ae81aea44c5} 
+void Crab\+UI.\+Chain\+Drawer\+State\+Machine.\+Enter (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISprite\+Batch}}}]{sprite\+Batch}{, }\item[{\doxymbox{\hyperlink{class_crab_u_i_1_1_visual_bounds}{Visual\+Bounds}}}]{bounds}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_chain_drawer_state_machine_8cs_source_l00054}{54}} of file \doxymbox{\hyperlink{_chain_drawer_state_machine_8cs_source}{Chain\+Drawer\+State\+Machine.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055\ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ State\ newState\ =\ \textcolor{keyword}{new}\ State(}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ bounds.ScissorRect\ is\ \textcolor{keyword}{null}\ ?}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ CurrentState.ScissorRect\ :}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ Rectangle.Intersect(CurrentState.ScissorRect,\ bounds.ScissorRect.Value),}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ bounds.SamplerState\ is\ \textcolor{keyword}{null}\ ?\ CurrentState.SamplerState\ :\ bounds.SamplerState}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ );}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ States.Push(CurrentState);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ StopStart(spriteBatch,\ newState);}
+\DoxyCodeLine{00065\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_chain_drawer_state_machine_a9fcbe2b74caaca07219847572c4b4589}\index{CrabUI.ChainDrawerStateMachine@{CrabUI.ChainDrawerStateMachine}!Exit@{Exit}}
+\index{Exit@{Exit}!CrabUI.ChainDrawerStateMachine@{CrabUI.ChainDrawerStateMachine}}
+\doxysubsubsection{\texorpdfstring{Exit()}{Exit()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_chain_drawer_state_machine_a9fcbe2b74caaca07219847572c4b4589} 
+void Crab\+UI.\+Chain\+Drawer\+State\+Machine.\+Exit (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISprite\+Batch}}}]{sprite\+Batch}{, }\item[{\doxymbox{\hyperlink{class_crab_u_i_1_1_visual_bounds}{Visual\+Bounds}}}]{bounds}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_chain_drawer_state_machine_8cs_source_l00067}{67}} of file \doxymbox{\hyperlink{_chain_drawer_state_machine_8cs_source}{Chain\+Drawer\+State\+Machine.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00068\ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ State\ prevState\ =\ States.Pop();}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ StopStart(spriteBatch,\ prevState);}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_chain_drawer_state_machine_a94f14fb861cb186f329dc2bb35df02ae}\index{CrabUI.ChainDrawerStateMachine@{CrabUI.ChainDrawerStateMachine}!Finalize@{Finalize}}
+\index{Finalize@{Finalize}!CrabUI.ChainDrawerStateMachine@{CrabUI.ChainDrawerStateMachine}}
+\doxysubsubsection{\texorpdfstring{Finalize()}{Finalize()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_chain_drawer_state_machine_a94f14fb861cb186f329dc2bb35df02ae} 
+void Crab\+UI.\+Chain\+Drawer\+State\+Machine.\+Finalize (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISprite\+Batch}}}]{sprite\+Batch}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_chain_drawer_state_machine_8cs_source_l00073}{73}} of file \doxymbox{\hyperlink{_chain_drawer_state_machine_8cs_source}{Chain\+Drawer\+State\+Machine.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00074\ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ StopStart(spriteBatch,\ OriginalState);}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_chain_drawer_state_machine_a81bc2e6e41453fe785993dc022e7ba2b}\index{CrabUI.ChainDrawerStateMachine@{CrabUI.ChainDrawerStateMachine}!Init@{Init}}
+\index{Init@{Init}!CrabUI.ChainDrawerStateMachine@{CrabUI.ChainDrawerStateMachine}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_chain_drawer_state_machine_a81bc2e6e41453fe785993dc022e7ba2b} 
+void Crab\+UI.\+Chain\+Drawer\+State\+Machine.\+Init (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISprite\+Batch}}}]{sprite\+Batch}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_chain_drawer_state_machine_8cs_source_l00042}{42}} of file \doxymbox{\hyperlink{_chain_drawer_state_machine_8cs_source}{Chain\+Drawer\+State\+Machine.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00043\ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ OriginalState\ =\ \textcolor{keyword}{new}\ State(}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ CUICore.GraphicsDevice.ScissorRect,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ CUICore.SamplerState}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ );}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ States.Clear();}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ States.Push(OriginalState);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ CurrentState\ =\ OriginalState;}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_chain_drawer_state_machine_a9b710cff184809d74d3ebbf683ef4477}\index{CrabUI.ChainDrawerStateMachine@{CrabUI.ChainDrawerStateMachine}!StopStart@{StopStart}}
+\index{StopStart@{StopStart}!CrabUI.ChainDrawerStateMachine@{CrabUI.ChainDrawerStateMachine}}
+\doxysubsubsection{\texorpdfstring{StopStart()}{StopStart()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_chain_drawer_state_machine_a9b710cff184809d74d3ebbf683ef4477} 
+void Crab\+UI.\+Chain\+Drawer\+State\+Machine.\+Stop\+Start (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISprite\+Batch}}}]{sprite\+Batch}{, }\item[{State}]{state}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_chain_drawer_state_machine_8cs_source_l00032}{32}} of file \doxymbox{\hyperlink{_chain_drawer_state_machine_8cs_source}{Chain\+Drawer\+State\+Machine.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033\ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (CurrentState\ ==\ state)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ CurrentState\ =\ state;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ spriteBatch.StopStart(state.ScissorRect,\ state.SamplerState);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ Debug\_ScissorRectChanged.Send(state.ScissorRect);}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_chain_drawer_state_machine_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_chain_drawer_state_machine_a01a240c6e1b176f328697eeda571d666}\index{CrabUI.ChainDrawerStateMachine@{CrabUI.ChainDrawerStateMachine}!CurrentState@{CurrentState}}
+\index{CurrentState@{CurrentState}!CrabUI.ChainDrawerStateMachine@{CrabUI.ChainDrawerStateMachine}}
+\doxysubsubsection{\texorpdfstring{CurrentState}{CurrentState}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_chain_drawer_state_machine_a01a240c6e1b176f328697eeda571d666} 
+State Crab\+UI.\+Chain\+Drawer\+State\+Machine.\+Current\+State\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_chain_drawer_state_machine_8cs_source_l00029}{29}} of file \doxymbox{\hyperlink{_chain_drawer_state_machine_8cs_source}{Chain\+Drawer\+State\+Machine.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_chain_drawer_state_machine_a8f626ae70b81af39ec33fbf6487b5430}\index{CrabUI.ChainDrawerStateMachine@{CrabUI.ChainDrawerStateMachine}!Debug\_ScissorRectChanged@{Debug\_ScissorRectChanged}}
+\index{Debug\_ScissorRectChanged@{Debug\_ScissorRectChanged}!CrabUI.ChainDrawerStateMachine@{CrabUI.ChainDrawerStateMachine}}
+\doxysubsubsection{\texorpdfstring{Debug\_ScissorRectChanged}{Debug\_ScissorRectChanged}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_chain_drawer_state_machine_a8f626ae70b81af39ec33fbf6487b5430} 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_node}{Debug\+Node}}$<$Rectangle$>$ Crab\+UI.\+Chain\+Drawer\+State\+Machine.\+Debug\+\_\+\+Scissor\+Rect\+Changed\hspace{0.3cm}{\ttfamily [get]}}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{new}(}
+\DoxyCodeLine{\ \ \ \ \ \ DebugCategory.ScissorRectSet,\ CUI.DebugHub,}
+\DoxyCodeLine{\ \ \ \ \ \ (rect)\ =>\ \$\textcolor{stringliteral}{"{}ScissorRect\ =\ \{rect\}"{}}}
+\DoxyCodeLine{\ \ \ \ )}
+\DoxyCodeLine{\ \ \ \ \{\ IsOpen\ =\ \textcolor{keyword}{true},\ \}}
+
+\end{DoxyCode}
+
+
+Definition at line \doxymbox{\hyperlink{_chain_drawer_state_machine_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_chain_drawer_state_machine_8cs_source}{Chain\+Drawer\+State\+Machine.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}(}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ DebugCategory.ScissorRectSet,\ CUI.DebugHub,}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ (rect)\ =>\ \$\textcolor{stringliteral}{"{}ScissorRect\ =\ \{rect\}"{}}}
+\DoxyCodeLine{00020\ \ \ \ \ )}
+\DoxyCodeLine{00021\ \ \ \ \ \{\ IsOpen\ =\ \textcolor{keyword}{true},\ \};}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_chain_drawer_state_machine_a8425ee3394ec720e7682d07050fbe033}\index{CrabUI.ChainDrawerStateMachine@{CrabUI.ChainDrawerStateMachine}!OriginalState@{OriginalState}}
+\index{OriginalState@{OriginalState}!CrabUI.ChainDrawerStateMachine@{CrabUI.ChainDrawerStateMachine}}
+\doxysubsubsection{\texorpdfstring{OriginalState}{OriginalState}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_chain_drawer_state_machine_a8425ee3394ec720e7682d07050fbe033} 
+State Crab\+UI.\+Chain\+Drawer\+State\+Machine.\+Original\+State\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_chain_drawer_state_machine_8cs_source_l00027}{27}} of file \doxymbox{\hyperlink{_chain_drawer_state_machine_8cs_source}{Chain\+Drawer\+State\+Machine.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_chain_drawer_state_machine_a5ad5d7267314ec4f3698cbc0ea584ea1}\index{CrabUI.ChainDrawerStateMachine@{CrabUI.ChainDrawerStateMachine}!States@{States}}
+\index{States@{States}!CrabUI.ChainDrawerStateMachine@{CrabUI.ChainDrawerStateMachine}}
+\doxysubsubsection{\texorpdfstring{States}{States}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_chain_drawer_state_machine_a5ad5d7267314ec4f3698cbc0ea584ea1} 
+Stack$<$State$>$ Crab\+UI.\+Chain\+Drawer\+State\+Machine.\+States = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_chain_drawer_state_machine_8cs_source_l00025}{25}} of file \doxymbox{\hyperlink{_chain_drawer_state_machine_8cs_source}{Chain\+Drawer\+State\+Machine.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Components/\+\+CUIMain\+Component/\+\+Modules/\+Chain\+Drawer\+State\+Machine.\+cs\end{DoxyCompactItemize}

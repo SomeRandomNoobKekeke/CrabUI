@@ -1,0 +1,167 @@
+\doxysection{Crab\+UI.\+MGDebug\+Tool Class Reference}
+\hypertarget{class_crab_u_i_1_1_m_g_debug_tool}{}\label{class_crab_u_i_1_1_m_g_debug_tool}\index{CrabUI.MGDebugTool@{CrabUI.MGDebugTool}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_m_g_debug_tool_a78362bc7331d2083efd066778c601d12}{Init}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_m_g_debug_tool_a1b3eb3c51295de55b9ffd6bf6f2470c9}{Dispose}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_m_g_debug_tool_a79b0aaa809b0acd7c721e93d953d3fa1}{Create\+UI}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_frame}{CUIFrame}} \doxymbox{\hyperlink{class_crab_u_i_1_1_m_g_debug_tool_a881871d3a02786168fcc6ff8a326e096}{Frame}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_button}{CUIButton}} \doxymbox{\hyperlink{class_crab_u_i_1_1_m_g_debug_tool_a0df116a783eb2a7b499f23966861eaf1}{Toggle\+Button}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_magnifying_glass}{CUIMagnifying\+Glass}} \doxymbox{\hyperlink{class_crab_u_i_1_1_m_g_debug_tool_a3292c86b83bde1aa012d989a700a33da}{MG}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_m_g_debug_tool_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_m_g_debug_tool_8cs_source}{MGDebug\+Tool.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_m_g_debug_tool_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_m_g_debug_tool_a79b0aaa809b0acd7c721e93d953d3fa1}\index{CrabUI.MGDebugTool@{CrabUI.MGDebugTool}!CreateUI@{CreateUI}}
+\index{CreateUI@{CreateUI}!CrabUI.MGDebugTool@{CrabUI.MGDebugTool}}
+\doxysubsubsection{\texorpdfstring{CreateUI()}{CreateUI()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_m_g_debug_tool_a79b0aaa809b0acd7c721e93d953d3fa1} 
+void Crab\+UI.\+MGDebug\+Tool.\+Create\+UI (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_m_g_debug_tool_8cs_source_l00034}{34}} of file \doxymbox{\hyperlink{_m_g_debug_tool_8cs_source}{MGDebug\+Tool.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ Frame\ =\ \textcolor{keyword}{new}\ CUIFrame() }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ Absolute\ =\ \textcolor{keyword}{new}\ CUINullRect(w:\ 200,\ h:\ 200),}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ Anchor\ =\ CUIAnchor.Center,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ TargetMainComponent\ =\ CUI.TopMain,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ Background\ =\ \{\ Color\ =\ Color.Cyan\ \},}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ ConsumeMouseEvents\ =\ \textcolor{keyword}{true},}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ Frame[\textcolor{stringliteral}{"{}mg"{}}]\ =\ MG\ =\ \textcolor{keyword}{new}\ CUIMagnifyingGlass() }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ Background\ =\ \{\ Color\ =\ Color.White\ \},}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ Relative\ =\ \textcolor{keyword}{new}\ CUINullRect(0.05f,\ 0.05f,\ 0.9f,\ 0.9f),}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ Size\ =\ \textcolor{keyword}{new}\ Point(40,\ 40),}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ ToggleButton\ =\ \textcolor{keyword}{new}\ CUIButton() }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ Text\ =\ \textcolor{stringliteral}{"{}MG"{}},}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ Absolute\ =\ \textcolor{keyword}{new}\ CUINullRect(w:\ 30,\ h:\ 20),}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ Anchor\ =\ \textcolor{keyword}{new}\ Vector2(0,\ 0.54f),}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ OnMouseDown\ =\ (c,\ e)\ =>}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ Frame.IsOpen\ =\ !Frame.IsOpen;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ MG.Active\ =\ Frame.IsOpen;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_m_g_debug_tool_a1b3eb3c51295de55b9ffd6bf6f2470c9}\index{CrabUI.MGDebugTool@{CrabUI.MGDebugTool}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!CrabUI.MGDebugTool@{CrabUI.MGDebugTool}}
+\doxysubsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_m_g_debug_tool_a1b3eb3c51295de55b9ffd6bf6f2470c9} 
+void Crab\+UI.\+MGDebug\+Tool.\+Dispose (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_m_g_debug_tool_8cs_source_l00027}{27}} of file \doxymbox{\hyperlink{_m_g_debug_tool_8cs_source}{MGDebug\+Tool.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ ToggleButton.RemoveSelf();}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ Frame.Close();}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ MG.Dispose();}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_m_g_debug_tool_a78362bc7331d2083efd066778c601d12}\index{CrabUI.MGDebugTool@{CrabUI.MGDebugTool}!Init@{Init}}
+\index{Init@{Init}!CrabUI.MGDebugTool@{CrabUI.MGDebugTool}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_m_g_debug_tool_a78362bc7331d2083efd066778c601d12} 
+void Crab\+UI.\+MGDebug\+Tool.\+Init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_m_g_debug_tool_8cs_source_l00021}{21}} of file \doxymbox{\hyperlink{_m_g_debug_tool_8cs_source}{MGDebug\+Tool.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ CreateUI();}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ CUI.TopMain[\textcolor{stringliteral}{"{}mgbutton"{}}]\ =\ ToggleButton;}
+\DoxyCodeLine{00025\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_m_g_debug_tool_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_m_g_debug_tool_a881871d3a02786168fcc6ff8a326e096}\index{CrabUI.MGDebugTool@{CrabUI.MGDebugTool}!Frame@{Frame}}
+\index{Frame@{Frame}!CrabUI.MGDebugTool@{CrabUI.MGDebugTool}}
+\doxysubsubsection{\texorpdfstring{Frame}{Frame}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_m_g_debug_tool_a881871d3a02786168fcc6ff8a326e096} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_frame}{CUIFrame}} Crab\+UI.\+MGDebug\+Tool.\+Frame\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_m_g_debug_tool_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_m_g_debug_tool_8cs_source}{MGDebug\+Tool.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_m_g_debug_tool_a3292c86b83bde1aa012d989a700a33da}\index{CrabUI.MGDebugTool@{CrabUI.MGDebugTool}!MG@{MG}}
+\index{MG@{MG}!CrabUI.MGDebugTool@{CrabUI.MGDebugTool}}
+\doxysubsubsection{\texorpdfstring{MG}{MG}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_m_g_debug_tool_a3292c86b83bde1aa012d989a700a33da} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_magnifying_glass}{CUIMagnifying\+Glass}} Crab\+UI.\+MGDebug\+Tool.\+MG\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_m_g_debug_tool_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_m_g_debug_tool_8cs_source}{MGDebug\+Tool.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_m_g_debug_tool_a0df116a783eb2a7b499f23966861eaf1}\index{CrabUI.MGDebugTool@{CrabUI.MGDebugTool}!ToggleButton@{ToggleButton}}
+\index{ToggleButton@{ToggleButton}!CrabUI.MGDebugTool@{CrabUI.MGDebugTool}}
+\doxysubsubsection{\texorpdfstring{ToggleButton}{ToggleButton}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_m_g_debug_tool_a0df116a783eb2a7b499f23966861eaf1} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_button}{CUIButton}} Crab\+UI.\+MGDebug\+Tool.\+Toggle\+Button\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_m_g_debug_tool_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_m_g_debug_tool_8cs_source}{MGDebug\+Tool.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Infrastructure/\+\+CUIDebugger/\+MGDebug\+Tool.\+cs\end{DoxyCompactItemize}

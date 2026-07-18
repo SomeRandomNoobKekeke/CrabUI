@@ -1,0 +1,64 @@
+\doxysection{Crab\+UIUser.\+Internal\+Modules Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_internal_modules}{}\label{class_crab_u_i_user_1_1_internal_modules}\index{CrabUIUser.InternalModules@{CrabUIUser.InternalModules}}
+
+
+I want to hide some internal props from users but give some specified modules access to them Internals should be protected in both host and module, so they won\textquotesingle{}t be able to pass them to each other But this setup might work, i think it\textquotesingle{}s actually the only solution Module\+AClass has access to Host.\+Internals because it\textquotesingle{}s a nested class.  
+
+
+Inheritance diagram for Crab\+UIUser.\+Internal\+Modules:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_internal_modules}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_internal_modules_1_1_host}{Host}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_internal_modules_ad698b30792a8e7e3ff2501ab16842311}{Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Crab\+UIUser.\+Experiment}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Run} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+I want to hide some internal props from users but give some specified modules access to them Internals should be protected in both host and module, so they won\textquotesingle{}t be able to pass them to each other But this setup might work, i think it\textquotesingle{}s actually the only solution Module\+AClass has access to Host.\+Internals because it\textquotesingle{}s a nested class. 
+
+Definition at line \doxymbox{\hyperlink{_internal_modules_8cs_source_l00020}{20}} of file \doxymbox{\hyperlink{_internal_modules_8cs_source}{Internal\+Modules.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_internal_modules_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_internal_modules_ad698b30792a8e7e3ff2501ab16842311}\index{CrabUIUser.InternalModules@{CrabUIUser.InternalModules}!Run@{Run}}
+\index{Run@{Run}!CrabUIUser.InternalModules@{CrabUIUser.InternalModules}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_internal_modules_ad698b30792a8e7e3ff2501ab16842311} 
+override void Crab\+UIUser.\+Internal\+Modules.\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_internal_modules_8cs_source_l00055}{55}} of file \doxymbox{\hyperlink{_internal_modules_8cs_source}{Internal\+Modules.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056\ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ Host\ host\ =\ \textcolor{keyword}{new}\ Host();}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ Mod.Logger.Log(host.ModuleA.GetInternals());}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Design/\+Internal\+Modules.\+cs\end{DoxyCompactItemize}

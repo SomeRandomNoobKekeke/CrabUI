@@ -1,0 +1,65 @@
+\doxysection{Crab\+UIUser.\+Override\+Prop\+Without\+Getter Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_override_prop_without_getter}{}\label{class_crab_u_i_user_1_1_override_prop_without_getter}\index{CrabUIUser.OverridePropWithoutGetter@{CrabUIUser.OverridePropWithoutGetter}}
+
+
+It\textquotesingle{}s actually calls base class getter If prop in base class is autoimplemented you\textquotesingle{}ll get the value of backing field in base class Which is sneaky.  
+
+
+Inheritance diagram for Crab\+UIUser.\+Override\+Prop\+Without\+Getter:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_override_prop_without_getter}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_override_prop_without_getter_1_1_a}{A}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_override_prop_without_getter_1_1_b}{B}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_override_prop_without_getter_a9c67021d6e0913d10cc72093e5b45c74}{Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Crab\+UIUser.\+Experiment}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Run} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+It\textquotesingle{}s actually calls base class getter If prop in base class is autoimplemented you\textquotesingle{}ll get the value of backing field in base class Which is sneaky. 
+
+Definition at line \doxymbox{\hyperlink{_override_prop_without_getter_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_override_prop_without_getter_8cs_source}{Override\+Prop\+Without\+Getter.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_override_prop_without_getter_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_override_prop_without_getter_a9c67021d6e0913d10cc72093e5b45c74}\index{CrabUIUser.OverridePropWithoutGetter@{CrabUIUser.OverridePropWithoutGetter}!Run@{Run}}
+\index{Run@{Run}!CrabUIUser.OverridePropWithoutGetter@{CrabUIUser.OverridePropWithoutGetter}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_override_prop_without_getter_a9c67021d6e0913d10cc72093e5b45c74} 
+override void Crab\+UIUser.\+Override\+Prop\+Without\+Getter.\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_override_prop_without_getter_8cs_source_l00054}{54}} of file \doxymbox{\hyperlink{_override_prop_without_getter_8cs_source}{Override\+Prop\+Without\+Getter.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055\ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ B\ b\ =\ \textcolor{keyword}{new}\ B();}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ Mod.Logger.Log(b.Prop);}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Design/\+Override\+Prop\+Without\+Getter.\+cs\end{DoxyCompactItemize}

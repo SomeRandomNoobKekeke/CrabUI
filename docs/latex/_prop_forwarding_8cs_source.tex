@@ -1,0 +1,78 @@
+\doxysection{Prop\+Forwarding.\+cs}
+\hypertarget{_prop_forwarding_8cs_source}{}\label{_prop_forwarding_8cs_source}\index{ClientProject/InMemory/Experiments/Design/PropForwarding.cs@{ClientProject/InMemory/Experiments/Design/PropForwarding.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00011}00011\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i_user}{CrabUIUser}}}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00013}00013\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00014}00014\ \textcolor{comment}{\ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00015}00015\ \textcolor{comment}{\ \ ///\ Idea\ is\ this,\ i\ want\ to\ store\ all\ data\ and\ functionality\ in\ modules}}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00016}00016\ \textcolor{comment}{\ \ ///\ But\ accessing\ modules\ for\ any\ prop\ is\ inconvenient\ +\ if\ i\ decide\ to\ move\ prop\ from\ module\ to\ }}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00017}00017\ \textcolor{comment}{\ \ ///\ component\ then\ all\ code\ using\ that\ prop\ will\ break}}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00018}00018\ \textcolor{comment}{\ \ ///\ It\ won't\ break\ if\ i\ use\ forwarded\ prop\ and\ it's\ also\ easier\ to\ use}}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00019}00019\ \textcolor{comment}{\ \ ///\ But\ it's\ feels\ so\ stupid}}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00020}00020\ \textcolor{comment}{\ \ ///\ What's\ the\ point\ of\ modules\ if\ i\ expose\ every\ prop\ and\ method?}}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00021}00021\ \textcolor{comment}{\ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00022}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_prop_forwarding}{00022}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_prop_forwarding}{PropForwarding}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Experiment}}}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00023}00023\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00024}\doxymbox{\hyperlink{interface_crab_u_i_user_1_1_prop_forwarding_1_1_i_module_b_host}{00024}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{interface\ }\doxymbox{\hyperlink{interface_crab_u_i_user_1_1_prop_forwarding_1_1_i_module_b_host}{IModuleBHost}}}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00025}00025\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00026}00026\ \ \ \ \ \ \ \textcolor{keyword}{public}\ ModuleB\ ModuleB\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00027}00027\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00029}00029\ \ \ \ \ \textcolor{comment}{//\ public\ interface\ IValueContained}}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00030}00030\ \ \ \ \ \textcolor{comment}{//\ \{}}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00031}00031\ \ \ \ \ \textcolor{comment}{//\ \ \ public\ int\ Value\ \{\ get;\ set;\ \}}}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00032}00032\ \ \ \ \ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00034}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_prop_forwarding_1_1_module_b}{00034}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_prop_forwarding_1_1_module_b}{ModuleB}}\ \textcolor{comment}{//:\ IValueContained}}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00035}00035\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00036}00036\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ Value\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ 123;}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00039}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_prop_forwarding_1_1_host}{00039}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_prop_forwarding_1_1_host}{Host}}\ :\ \doxymbox{\hyperlink{interface_crab_u_i_user_1_1_prop_forwarding_1_1_i_module_b_host}{IModuleBHost}}\ \textcolor{comment}{//,\ IValueContained}}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00040}00040\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00041}00041\ \ \ \ \ \ \ \textcolor{keyword}{public}\ ModuleB\ ModuleB\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}\ ModuleB();}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00043}00043\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ Value}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00044}00044\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ ModuleB.Value;}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ ModuleB.Value\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00047}00047\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00048}00048\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00051}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_prop_forwarding_1_1_host_after_refactor}{00051}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_prop_forwarding_1_1_host_after_refactor}{HostAfterRefactor}}\ \textcolor{comment}{//:\ IValueContained}}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00052}00052\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00053}00053\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ Value\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ 123;}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00054}00054\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00058}00058\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ repeats\ =\ 1000000000;}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00060}00060\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ Run()}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00061}00061\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00062}00062\ \ \ \ \ \ \ Stopwatch\ sw\ =\ \textcolor{keyword}{new}\ Stopwatch();}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00063}00063\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ value\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00065}00065\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_prop_forwarding_1_1_host}{Host}}\ host\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00066}00066\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_prop_forwarding_1_1_host_after_refactor}{HostAfterRefactor}}\ hostAfter\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00068}00068\ \ \ \ \ \ \ value\ =\ host.Value;}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00069}00069\ \ \ \ \ \ \ value\ =\ hostAfter.Value;}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00070}00070\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00071}00071\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prop_forwarding_8cs_source_l00072}00072\ \}}
+
+\end{DoxyCode}

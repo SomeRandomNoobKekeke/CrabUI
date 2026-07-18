@@ -1,0 +1,94 @@
+\doxysection{Borders.\+cs}
+\hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source}{}\label{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source}\index{ClientProject/ClientSource/CUI/Core/Visual Elements/Elements/Borders.cs@{ClientProject/ClientSource/CUI/Core/Visual Elements/Elements/Borders.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework.Graphics;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00011}00011\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00013}\doxymbox{\hyperlink{class_crab_u_i_1_1_borders}{00013}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_borders}{Borders}}\ :\ VisualElementBase}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00014}00014\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{private}\ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}\ \_Rect;\ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}\ Rect}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00016}00016\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00017}00017\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Rect;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00018}00018\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00019}00019\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \_Rect\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ UpdateRects();}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00022}00022\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00023}00023\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}\ InnerRect\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_sizes}{CUISizes}}\ Sizes\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{public}\ CUISprite\ Sprite\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ CUISprite.White;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{public}\ Color\ Color\ \{\ \textcolor{keyword}{get}\ =>\ Sprite.Color;\ \textcolor{keyword}{set}\ =>\ Sprite.Color\ =\ value;\ \}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{bool}\ Contains(Vector2\ pos)}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00032}00032\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00033}00033\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Rect.Contains(pos)\ \&\&\ !InnerRect.Contains(pos);}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00036}00036\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ UpdateRects()}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00037}00037\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00038}00038\ \ \ \ \ \ \ InnerRect\ =\ Rect\ -\/\ Sizes;\ \textcolor{comment}{//TODO\ use\ rounded\ rect}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00040}00040\ \ \ \ \ \ \ Rectangle\ rounded\ =\ Rect.Round();}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00042}00042\ \ \ \ \ \ \ LeftRect\ =\ \textcolor{keyword}{new}\ Rectangle(}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ rounded.X,}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ rounded.Y,}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{int})Sizes.Left,}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ rounded.Height}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00047}00047\ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00049}00049\ \ \ \ \ \ \ TopRect\ =\ \textcolor{keyword}{new}\ Rectangle(}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ rounded.X,}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ rounded.Y,}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ rounded.Width,}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{int})Sizes.Top}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00054}00054\ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00056}00056\ \ \ \ \ \ \ RightRect\ =\ \textcolor{keyword}{new}\ Rectangle(}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{int})(rounded.X\ +\ rounded.Width\ -\/\ Sizes.Right),}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ rounded.Y,}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{int})Sizes.Right,}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ rounded.Height}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00061}00061\ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00063}00063\ \ \ \ \ \ \ BottomRect\ =\ \textcolor{keyword}{new}\ Rectangle(}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ rounded.X,}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{int})(rounded.Y\ +\ rounded.Height\ -\/\ Sizes.Bottom),}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ rounded.Width,}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{int})Sizes.Bottom}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00068}00068\ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00069}00069\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00071}00071\ \ \ \ \ \textcolor{keyword}{private}\ Rectangle\ LeftRect;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00072}00072\ \ \ \ \ \textcolor{keyword}{private}\ Rectangle\ TopRect;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00073}00073\ \ \ \ \ \textcolor{keyword}{private}\ Rectangle\ RightRect;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00074}00074\ \ \ \ \ \textcolor{keyword}{private}\ Rectangle\ BottomRect;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00077}00077\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ Draw(\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISpriteBatch}}\ spriteBatch)}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00078}00078\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00079}00079\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Visible)}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00080}00080\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Sizes.Left\ !=\ 0)\ Sprite.Draw(spriteBatch,\ LeftRect);}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Sizes.Top\ !=\ 0)\ Sprite.Draw(spriteBatch,\ TopRect);}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Sizes.Right\ !=\ 0)\ Sprite.Draw(spriteBatch,\ RightRect);}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Sizes.Bottom\ !=\ 0)\ Sprite.Draw(spriteBatch,\ BottomRect);}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00085}00085\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00086}00086\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00087}00087\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00088}00088\ \}}
+
+\end{DoxyCode}

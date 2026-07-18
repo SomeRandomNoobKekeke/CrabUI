@@ -1,0 +1,115 @@
+\doxysection{Crab\+UI.\+Animation\+Track Class Reference}
+\hypertarget{class_crab_u_i_1_1_animation_track}{}\label{class_crab_u_i_1_1_animation_track}\index{CrabUI.AnimationTrack@{CrabUI.AnimationTrack}}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static double \doxymbox{\hyperlink{class_crab_u_i_1_1_animation_track_a1ca0a84c00ca448d14d634e7d4f9001d}{Update\+Step\+Duration}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+double \doxymbox{\hyperlink{class_crab_u_i_1_1_animation_track_a4449cf246fbb5bac96cd89f79c54237b}{Duration}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\begin{DoxyCompactList}\small\item\em 0..1 -\/ segment Speed -\/ 1 step size 1.\+0 /\+ Speed -\/ amount of steps in animation Duration /\+ Update\+Step -\/ amount of steps in animation \end{DoxyCompactList}\item 
+Func$<$ double, double $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_animation_track_a308fed7e1e2e70fc8133463084d670ec}{Func}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+double \doxymbox{\hyperlink{class_crab_u_i_1_1_animation_track_a5db25b6040bda9d062f6513a67bf000c}{Speed}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+Action\+On\+Track\+End \doxymbox{\hyperlink{class_crab_u_i_1_1_animation_track_a971379f489ec78a87de8052a109710e1}{On\+End}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_animation_track_8cs_source_l00011}{11}} of file \doxymbox{\hyperlink{_animation_track_8cs_source}{Animation\+Track.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_animation_track_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_animation_track_a4449cf246fbb5bac96cd89f79c54237b}\index{CrabUI.AnimationTrack@{CrabUI.AnimationTrack}!Duration@{Duration}}
+\index{Duration@{Duration}!CrabUI.AnimationTrack@{CrabUI.AnimationTrack}}
+\doxysubsubsection{\texorpdfstring{Duration}{Duration}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_animation_track_a4449cf246fbb5bac96cd89f79c54237b} 
+double Crab\+UI.\+Animation\+Track.\+Duration\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+0..1 -\/ segment Speed -\/ 1 step size 1.\+0 /\+ Speed -\/ amount of steps in animation Duration /\+ Update\+Step -\/ amount of steps in animation 
+
+
+
+Definition at line \doxymbox{\hyperlink{_animation_track_8cs_source_l00022}{22}} of file \doxymbox{\hyperlink{_animation_track_8cs_source}{Animation\+Track.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ UpdateStepDuration\ /\ \_Speed;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ \_Speed\ =\ UpdateStepDuration\ /\ value;}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_animation_track_a308fed7e1e2e70fc8133463084d670ec}\index{CrabUI.AnimationTrack@{CrabUI.AnimationTrack}!Func@{Func}}
+\index{Func@{Func}!CrabUI.AnimationTrack@{CrabUI.AnimationTrack}}
+\doxysubsubsection{\texorpdfstring{Func}{Func}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_animation_track_a308fed7e1e2e70fc8133463084d670ec} 
+Func$<$double, double$>$ Crab\+UI.\+Animation\+Track.\+Func\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_animation_track_8cs_source_l00028}{28}} of file \doxymbox{\hyperlink{_animation_track_8cs_source}{Animation\+Track.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Func;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ \_Func\ =\ value\ is\ not\ \textcolor{keyword}{null}\ ?\ value\ :\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(nameof(Func));}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_animation_track_a971379f489ec78a87de8052a109710e1}\index{CrabUI.AnimationTrack@{CrabUI.AnimationTrack}!OnEnd@{OnEnd}}
+\index{OnEnd@{OnEnd}!CrabUI.AnimationTrack@{CrabUI.AnimationTrack}}
+\doxysubsubsection{\texorpdfstring{OnEnd}{OnEnd}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_animation_track_a971379f489ec78a87de8052a109710e1} 
+Action\+On\+Track\+End Crab\+UI.\+Animation\+Track.\+On\+End\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_animation_track_8cs_source_l00038}{38}} of file \doxymbox{\hyperlink{_animation_track_8cs_source}{Animation\+Track.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_animation_track_a5db25b6040bda9d062f6513a67bf000c}\index{CrabUI.AnimationTrack@{CrabUI.AnimationTrack}!Speed@{Speed}}
+\index{Speed@{Speed}!CrabUI.AnimationTrack@{CrabUI.AnimationTrack}}
+\doxysubsubsection{\texorpdfstring{Speed}{Speed}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_animation_track_a5db25b6040bda9d062f6513a67bf000c} 
+double Crab\+UI.\+Animation\+Track.\+Speed\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_animation_track_8cs_source_l00033}{33}} of file \doxymbox{\hyperlink{_animation_track_8cs_source}{Animation\+Track.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034\ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Speed;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ \_Speed\ =\ Math.Max(0,\ value);}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_animation_track_a1ca0a84c00ca448d14d634e7d4f9001d}\index{CrabUI.AnimationTrack@{CrabUI.AnimationTrack}!UpdateStepDuration@{UpdateStepDuration}}
+\index{UpdateStepDuration@{UpdateStepDuration}!CrabUI.AnimationTrack@{CrabUI.AnimationTrack}}
+\doxysubsubsection{\texorpdfstring{UpdateStepDuration}{UpdateStepDuration}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_animation_track_a1ca0a84c00ca448d14d634e7d4f9001d} 
+double Crab\+UI.\+Animation\+Track.\+Update\+Step\+Duration\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_animation_track_8cs_source_l00014}{14}} of file \doxymbox{\hyperlink{_animation_track_8cs_source}{Animation\+Track.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Animations/\+\+Core/\+Animation\+Track.\+cs\end{DoxyCompactItemize}

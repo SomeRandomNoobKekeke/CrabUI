@@ -1,0 +1,116 @@
+\doxysection{UTest\+Pack.\+cs}
+\hypertarget{_u_test_pack_8cs_source}{}\label{_u_test_pack_8cs_source}\index{ClientProject/ClientSource/Libs/UTest/UTestPack.cs@{ClientProject/ClientSource/Libs/UTest/UTestPack.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }System.Text;}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00008}00008\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}}}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00010}\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack}{00010}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack}{UTestPack}}}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00011}00011\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{enum}\ UTestPackState\ \{\ AllPassed,\ SomePassed,\ AllFailed,\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack_a22a4b31a080282dec972fb4710982cef}{Error}}\ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ IsTestGenerator(MethodInfo\ mi)}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00015}00015\ \ \ \ \ \ \ =>\ mi.ReturnType.IsAssignableTo(typeof(\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test}{UTest}}))\ \&\&\ mi.GetParameters().Length\ ==\ 0;}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ IsTestListGenerator(MethodInfo\ mi)}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00018}00018\ \ \ \ \ \ \ =>\ mi.ReturnType.IsAssignableTo(typeof(IEnumerable<UTest>))\ \&\&\ mi.GetParameters().Length\ ==\ 0;}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ IsTestCreator(MethodInfo\ mi)}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00020}00020\ \ \ \ \ \ \ =>\ mi.Name.StartsWith(\textcolor{stringliteral}{"{}Create"{}})\ \&\&\ mi.Name\ !=\ \textcolor{stringliteral}{"{}CreateTests"{}};}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ GetNameFromMethodInfo(MethodInfo\ mi)}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00023}00023\ \ \ \ \ \ \ =>\ \$\textcolor{stringliteral}{"{}\{mi.DeclaringType.Name\}.\{mi.Name\}"{}};}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{public}\ List<UTest>\ Tests\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ PassedCount\ =>\ Tests.Count(test\ =>\ test.Passed);}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{public}\ UTestPackState\ State}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00030}00030\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00031}00031\ \ \ \ \ \ \ \textcolor{keyword}{get}}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00032}00032\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack_a22a4b31a080282dec972fb4710982cef}{Error}}\ is\ not\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ UTestPackState.Error;}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ passed\ =\ PassedCount;}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Tests.Count\ ==\ 0)\ \textcolor{keywordflow}{return}\ UTestPackState.AllPassed;}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (passed\ ==\ Tests.Count)\ \textcolor{keywordflow}{return}\ UTestPackState.AllPassed;}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (passed\ ==\ 0)\ \textcolor{keywordflow}{return}\ UTestPackState.AllFailed;}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ UTestPackState.SomePassed;}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00039}00039\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00041}00041\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00042}00042\ \textcolor{comment}{\ \ \ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00043}00043\ \textcolor{comment}{\ \ \ \ ///\ Set\ in\ test\ runner}}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00044}00044\ \textcolor{comment}{\ \ \ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00045}\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack_a22a4b31a080282dec972fb4710982cef}{00045}}\ \ \ \ \ \textcolor{keyword}{public}\ Exception\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack_a22a4b31a080282dec972fb4710982cef}{Error}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ NotEmpty\ =>\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack_a22a4b31a080282dec972fb4710982cef}{Error}}\ !=\ \textcolor{keyword}{null}\ ||\ Tests.Count\ >\ 0;}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test}{UTest}}\ AddTest(\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test}{UTest}}\ test)}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00049}00049\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00050}00050\ \ \ \ \ \ \ Tests.Add(test);}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00051}00051\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ test;}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00054}00054\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ CreateTests()}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00055}00055\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00056}00056\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (MethodInfo\ mi\ \textcolor{keywordflow}{in}\ this.GetType().GetMethods())}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00057}00057\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mi.DeclaringType\ ==\ \textcolor{keyword}{this}.GetType())}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsTestGenerator(mi))}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ UTest\ test\ =\ mi.Invoke(mi.IsStatic\ ?\ \textcolor{keyword}{null}\ :\ \textcolor{keyword}{this},\ \textcolor{keyword}{null})\ as\ UTest;}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ test.Name\ =\ \$\textcolor{stringliteral}{"{}\{mi.Name\}\ |\ \{test.Name\}"{}};}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ Tests.Add(test);}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsTestListGenerator(mi))}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ IEnumerable<UTest>\ list\ =\ mi.Invoke(mi.IsStatic\ ?\ \textcolor{keyword}{null}\ :\ \textcolor{keyword}{this},\ \textcolor{keyword}{null})\ as\ IEnumerable<UTest>;}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (UTest\ test\ \textcolor{keywordflow}{in}\ list)}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ test.Name\ =\ \$\textcolor{stringliteral}{"{}\{mi.Name\}\ |\ \{test.Name\}"{}};}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ Tests.AddRange(list);}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsTestCreator(mi))}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ mi.Invoke(mi.IsStatic\ ?\ \textcolor{keyword}{null}\ :\ \textcolor{keyword}{this},\ \textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00085}00085\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00086}00086\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00088}00088\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{string}\ ToString()}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00089}00089\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00090}00090\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack_a22a4b31a080282dec972fb4710982cef}{Error}}\ is\ not\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack_a22a4b31a080282dec972fb4710982cef}{Error}}.ToString();}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00092}00092\ \ \ \ \ \ \ StringBuilder\ sb\ =\ \textcolor{keyword}{new}\ StringBuilder();}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00094}00094\ \ \ \ \ \ \ sb.Append(\$\textcolor{stringliteral}{"{}UTestPack\ \{this.GetType()\}\ [\{PassedCount\}/\{Tests.Count\}]:\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00095}00095\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (UTest\ test\ \textcolor{keywordflow}{in}\ Tests)}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00096}00096\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ sb.Append(test.ToString());}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ sb.Append(\textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00099}00099\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00100}00100\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sb.ToString();}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00101}00101\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00103}00103\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Log()\ \{\ \textcolor{keywordflow}{if}\ (NotEmpty)\ UTestLogger.LogPack(\textcolor{keyword}{this});\ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00104}00104\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00106}00106\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }UTestPackExtentions}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00107}00107\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00108}00108\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ Log(\textcolor{keyword}{this}\ List<UTestPack>\ packs)\ =>\ packs.ForEach(pack\ =>\ pack.Log());}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00109}00109\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_pack_8cs_source_l00110}00110\ \}}
+
+\end{DoxyCode}

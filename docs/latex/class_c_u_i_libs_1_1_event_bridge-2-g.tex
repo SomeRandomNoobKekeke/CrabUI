@@ -1,0 +1,152 @@
+\doxysection{CUILibs.\+Event\+Bridge\texorpdfstring{$<$}{<} T1, T2 \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_c_u_i_libs_1_1_event_bridge-2-g}{}\label{class_c_u_i_libs_1_1_event_bridge-2-g}\index{CUILibs.EventBridge$<$ T1, T2 $>$@{CUILibs.EventBridge$<$ T1, T2 $>$}}
+Inheritance diagram for CUILibs.\+Event\+Bridge\texorpdfstring{$<$}{<} T1, T2 \texorpdfstring{$>$}{>}:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_u_i_libs_1_1_event_bridge-2-g}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_event_bridge-2-g_a9fd0c3c157cd246850512d3d7752f9bd}{Open}} ()
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_event_bridge-2-g_afc86c0f13d2fa5b8f0e887b78a68f0c0}{Close}} ()
+\item 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_event_bridge-2-g_a32734482fe13ffe3a3980fd0ea1f2804}{Event\+Bridge}} (\doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{Clearable\+Event}}$<$ T1, T2 $>$ source=null)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{class_c_u_i_libs_1_1_event_bridge-2-g_a35264378e6ae322b9e3da4531f7dcd9b}{Opened}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{Clearable\+Event}}$<$ T1, T2 $>$ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_event_bridge-2-g_a72818646912deb87dabd7eaace31091c}{Source\+Event}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+Action$<$ T1, T2 $>$ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_event_bridge-2-g_ad56ca9714f33f4515da06c4bedaadf8b}{Action}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_event_bridge_8_variants2_8cs_source_l00009}{9}} of file \doxymbox{\hyperlink{_event_bridge_8_variants2_8cs_source}{Event\+Bridge.\+Variants2.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_c_u_i_libs_1_1_event_bridge-2-g_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_event_bridge-2-g_afc86c0f13d2fa5b8f0e887b78a68f0c0}\index{CUILibs.EventBridge$<$ T1, T2 $>$@{CUILibs.EventBridge$<$ T1, T2 $>$}!Close@{Close}}
+\index{Close@{Close}!CUILibs.EventBridge$<$ T1, T2 $>$@{CUILibs.EventBridge$<$ T1, T2 $>$}}
+\doxysubsubsection{\texorpdfstring{Close()}{Close()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_event_bridge-2-g_afc86c0f13d2fa5b8f0e887b78a68f0c0} 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_event_bridge}{CUILibs.\+Event\+Bridge}}$<$ T1, T2 $>$.Close (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Implements \doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_event_bridge}{CUILibs.\+IEvent\+Bridge}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_event_bridge_8_variants2_8cs_source_l00023}{23}} of file \doxymbox{\hyperlink{_event_bridge_8_variants2_8cs_source}{Event\+Bridge.\+Variants2.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ BridgeSubscription.Cancel();}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ BridgeSubscription\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_event_bridge-2-g_a32734482fe13ffe3a3980fd0ea1f2804}\index{CUILibs.EventBridge$<$ T1, T2 $>$@{CUILibs.EventBridge$<$ T1, T2 $>$}!EventBridge@{EventBridge}}
+\index{EventBridge@{EventBridge}!CUILibs.EventBridge$<$ T1, T2 $>$@{CUILibs.EventBridge$<$ T1, T2 $>$}}
+\doxysubsubsection{\texorpdfstring{EventBridge()}{EventBridge()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_event_bridge-2-g_a32734482fe13ffe3a3980fd0ea1f2804} 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_event_bridge}{CUILibs.\+Event\+Bridge}}$<$ T1, T2 $>$.Event\+Bridge (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{Clearable\+Event}}$<$ T1, T2 $>$}]{source}{ = {\ttfamily null}}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_event_bridge_8_variants2_8cs_source_l00029}{29}} of file \doxymbox{\hyperlink{_event_bridge_8_variants2_8cs_source}{Event\+Bridge.\+Variants2.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ SourceEvent\ =\ source;}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_event_bridge-2-g_a9fd0c3c157cd246850512d3d7752f9bd}\index{CUILibs.EventBridge$<$ T1, T2 $>$@{CUILibs.EventBridge$<$ T1, T2 $>$}!Open@{Open}}
+\index{Open@{Open}!CUILibs.EventBridge$<$ T1, T2 $>$@{CUILibs.EventBridge$<$ T1, T2 $>$}}
+\doxysubsubsection{\texorpdfstring{Open()}{Open()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_event_bridge-2-g_a9fd0c3c157cd246850512d3d7752f9bd} 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_event_bridge}{CUILibs.\+Event\+Bridge}}$<$ T1, T2 $>$.Open (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Implements \doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_event_bridge}{CUILibs.\+IEvent\+Bridge}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_event_bridge_8_variants2_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_event_bridge_8_variants2_8cs_source}{Event\+Bridge.\+Variants2.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ BridgeSubscription\ =\ SourceEvent.Add(Action);}
+\DoxyCodeLine{00021\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_c_u_i_libs_1_1_event_bridge-2-g_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_event_bridge-2-g_ad56ca9714f33f4515da06c4bedaadf8b}\index{CUILibs.EventBridge$<$ T1, T2 $>$@{CUILibs.EventBridge$<$ T1, T2 $>$}!Action@{Action}}
+\index{Action@{Action}!CUILibs.EventBridge$<$ T1, T2 $>$@{CUILibs.EventBridge$<$ T1, T2 $>$}}
+\doxysubsubsection{\texorpdfstring{Action}{Action}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_event_bridge-2-g_ad56ca9714f33f4515da06c4bedaadf8b} 
+Action$<$T1, T2$>$ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_event_bridge}{CUILibs.\+Event\+Bridge}}$<$ T1, T2 $>$.Action\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_event_bridge_8_variants2_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_event_bridge_8_variants2_8cs_source}{Event\+Bridge.\+Variants2.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_event_bridge-2-g_a35264378e6ae322b9e3da4531f7dcd9b}\index{CUILibs.EventBridge$<$ T1, T2 $>$@{CUILibs.EventBridge$<$ T1, T2 $>$}!Opened@{Opened}}
+\index{Opened@{Opened}!CUILibs.EventBridge$<$ T1, T2 $>$@{CUILibs.EventBridge$<$ T1, T2 $>$}}
+\doxysubsubsection{\texorpdfstring{Opened}{Opened}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_event_bridge-2-g_a35264378e6ae322b9e3da4531f7dcd9b} 
+bool \doxymbox{\hyperlink{class_c_u_i_libs_1_1_event_bridge}{CUILibs.\+Event\+Bridge}}$<$ T1, T2 $>$.Opened\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Implements \doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_event_bridge}{CUILibs.\+IEvent\+Bridge}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_event_bridge_8_variants2_8cs_source_l00012}{12}} of file \doxymbox{\hyperlink{_event_bridge_8_variants2_8cs_source}{Event\+Bridge.\+Variants2.\+cs}}.
+
+\Hypertarget{class_c_u_i_libs_1_1_event_bridge-2-g_a72818646912deb87dabd7eaace31091c}\index{CUILibs.EventBridge$<$ T1, T2 $>$@{CUILibs.EventBridge$<$ T1, T2 $>$}!SourceEvent@{SourceEvent}}
+\index{SourceEvent@{SourceEvent}!CUILibs.EventBridge$<$ T1, T2 $>$@{CUILibs.EventBridge$<$ T1, T2 $>$}}
+\doxysubsubsection{\texorpdfstring{SourceEvent}{SourceEvent}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_event_bridge-2-g_a72818646912deb87dabd7eaace31091c} 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{Clearable\+Event}}$<$T1, T2$>$ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_event_bridge}{CUILibs.\+Event\+Bridge}}$<$ T1, T2 $>$.Source\+Event\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_event_bridge_8_variants2_8cs_source_l00014}{14}} of file \doxymbox{\hyperlink{_event_bridge_8_variants2_8cs_source}{Event\+Bridge.\+Variants2.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+Libs/\+\+Clearable\+Event/\+\+Event\+Bridge/\+Event\+Bridge.\+Variants2.\+cs\end{DoxyCompactItemize}

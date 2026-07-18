@@ -1,0 +1,87 @@
+\doxysection{Crab\+UIUser.\+Component\+Cores\+Refactor.\+Button\+List Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_component_cores_refactor_1_1_button_list}{}\label{class_crab_u_i_user_1_1_component_cores_refactor_1_1_button_list}\index{CrabUIUser.ComponentCoresRefactor.ButtonList@{CrabUIUser.ComponentCoresRefactor.ButtonList}}
+Inheritance diagram for Crab\+UIUser.\+Component\+Cores\+Refactor.\+Button\+List:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_component_cores_refactor_1_1_button_list}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_button_list_a8e2b76a044fcdba5d21130b9dc244c5a}{Add\+Button}} (\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_button}{Button}} button)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_button_list_ac89221fe31b4eb7d733a35eac325c003}{Click\+All}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_button}{Button}} $>$ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_button_list_aaaf5c50a2b1ec7e9363c30229d17ea91}{Buttons}} = new()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_component_cores_refactor_8cs_source_l00068}{68}} of file \doxymbox{\hyperlink{_component_cores_refactor_8cs_source}{Component\+Cores\+Refactor.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_component_cores_refactor_1_1_button_list_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_component_cores_refactor_1_1_button_list_a8e2b76a044fcdba5d21130b9dc244c5a}\index{CrabUIUser.ComponentCoresRefactor.ButtonList@{CrabUIUser.ComponentCoresRefactor.ButtonList}!AddButton@{AddButton}}
+\index{AddButton@{AddButton}!CrabUIUser.ComponentCoresRefactor.ButtonList@{CrabUIUser.ComponentCoresRefactor.ButtonList}}
+\doxysubsubsection{\texorpdfstring{AddButton()}{AddButton()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_component_cores_refactor_1_1_button_list_a8e2b76a044fcdba5d21130b9dc244c5a} 
+void Crab\+UIUser.\+Component\+Cores\+Refactor.\+Button\+List.\+Add\+Button (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_button}{Button}}}]{button}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_component_cores_refactor_8cs_source_l00072}{72}} of file \doxymbox{\hyperlink{_component_cores_refactor_8cs_source}{Component\+Cores\+Refactor.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00072\ =>\ Buttons.Add(button);}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_component_cores_refactor_1_1_button_list_ac89221fe31b4eb7d733a35eac325c003}\index{CrabUIUser.ComponentCoresRefactor.ButtonList@{CrabUIUser.ComponentCoresRefactor.ButtonList}!ClickAll@{ClickAll}}
+\index{ClickAll@{ClickAll}!CrabUIUser.ComponentCoresRefactor.ButtonList@{CrabUIUser.ComponentCoresRefactor.ButtonList}}
+\doxysubsubsection{\texorpdfstring{ClickAll()}{ClickAll()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_component_cores_refactor_1_1_button_list_ac89221fe31b4eb7d733a35eac325c003} 
+void Crab\+UIUser.\+Component\+Cores\+Refactor.\+Button\+List.\+Click\+All (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_component_cores_refactor_8cs_source_l00074}{74}} of file \doxymbox{\hyperlink{_component_cores_refactor_8cs_source}{Component\+Cores\+Refactor.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Button\ button\ \textcolor{keywordflow}{in}\ Buttons)}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ button.Click();}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_crab_u_i_user_1_1_component_cores_refactor_1_1_button_list_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_component_cores_refactor_1_1_button_list_aaaf5c50a2b1ec7e9363c30229d17ea91}\index{CrabUIUser.ComponentCoresRefactor.ButtonList@{CrabUIUser.ComponentCoresRefactor.ButtonList}!Buttons@{Buttons}}
+\index{Buttons@{Buttons}!CrabUIUser.ComponentCoresRefactor.ButtonList@{CrabUIUser.ComponentCoresRefactor.ButtonList}}
+\doxysubsubsection{\texorpdfstring{Buttons}{Buttons}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_component_cores_refactor_1_1_button_list_aaaf5c50a2b1ec7e9363c30229d17ea91} 
+List$<$\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_button}{Button}}$>$ Crab\+UIUser.\+Component\+Cores\+Refactor.\+Button\+List.\+Buttons = new()}
+
+
+
+Definition at line \doxymbox{\hyperlink{_component_cores_refactor_8cs_source_l00070}{70}} of file \doxymbox{\hyperlink{_component_cores_refactor_8cs_source}{Component\+Cores\+Refactor.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Design/\+Component\+Cores\+Refactor.\+cs\end{DoxyCompactItemize}

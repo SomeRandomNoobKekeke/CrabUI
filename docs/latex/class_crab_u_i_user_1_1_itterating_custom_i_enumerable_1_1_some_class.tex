@@ -1,0 +1,103 @@
+\doxysection{Crab\+UIUser.\+Itterating\+Custom\+IEnumerable.\+Some\+Class Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_itterating_custom_i_enumerable_1_1_some_class}{}\label{class_crab_u_i_user_1_1_itterating_custom_i_enumerable_1_1_some_class}\index{CrabUIUser.ItteratingCustomIEnumerable.SomeClass@{CrabUIUser.ItteratingCustomIEnumerable.SomeClass}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+IEnumerable$<$ int $>$ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_custom_i_enumerable_1_1_some_class_a08de15fe4729c26359e1cd0740c5614f}{Get\+Values}} ()
+\item 
+IEnumerable$<$ int $>$ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_custom_i_enumerable_1_1_some_class_ae59452bbb2d87a8fc716743cf0825556}{Get\+Funny\+Values}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ int $>$ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_custom_i_enumerable_1_1_some_class_a4dc1eb6b240de5b9980cf9bde19f176a}{Values}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_itterating_custom_i_enumerable_8cs_source_l00020}{20}} of file \doxymbox{\hyperlink{_itterating_custom_i_enumerable_8cs_source}{Itterating\+Custom\+IEnumerable.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_itterating_custom_i_enumerable_1_1_some_class_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_itterating_custom_i_enumerable_1_1_some_class_ae59452bbb2d87a8fc716743cf0825556}\index{CrabUIUser.ItteratingCustomIEnumerable.SomeClass@{CrabUIUser.ItteratingCustomIEnumerable.SomeClass}!GetFunnyValues@{GetFunnyValues}}
+\index{GetFunnyValues@{GetFunnyValues}!CrabUIUser.ItteratingCustomIEnumerable.SomeClass@{CrabUIUser.ItteratingCustomIEnumerable.SomeClass}}
+\doxysubsubsection{\texorpdfstring{GetFunnyValues()}{GetFunnyValues()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_itterating_custom_i_enumerable_1_1_some_class_ae59452bbb2d87a8fc716743cf0825556} 
+IEnumerable$<$ int $>$ Crab\+UIUser.\+Itterating\+Custom\+IEnumerable.\+Some\+Class.\+Get\+Funny\+Values (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_itterating_custom_i_enumerable_8cs_source_l00035}{35}} of file \doxymbox{\hyperlink{_itterating_custom_i_enumerable_8cs_source}{Itterating\+Custom\+IEnumerable.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ Values[0];}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ Values[1];}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ Values[2];}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ Values[3];}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ Values[4];}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_itterating_custom_i_enumerable_1_1_some_class_a08de15fe4729c26359e1cd0740c5614f}\index{CrabUIUser.ItteratingCustomIEnumerable.SomeClass@{CrabUIUser.ItteratingCustomIEnumerable.SomeClass}!GetValues@{GetValues}}
+\index{GetValues@{GetValues}!CrabUIUser.ItteratingCustomIEnumerable.SomeClass@{CrabUIUser.ItteratingCustomIEnumerable.SomeClass}}
+\doxysubsubsection{\texorpdfstring{GetValues()}{GetValues()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_itterating_custom_i_enumerable_1_1_some_class_a08de15fe4729c26359e1cd0740c5614f} 
+IEnumerable$<$ int $>$ Crab\+UIUser.\+Itterating\+Custom\+IEnumerable.\+Some\+Class.\+Get\+Values (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_itterating_custom_i_enumerable_8cs_source_l00026}{26}} of file \doxymbox{\hyperlink{_itterating_custom_i_enumerable_8cs_source}{Itterating\+Custom\+IEnumerable.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Values.Count;\ i++)}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ Values[i];}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_crab_u_i_user_1_1_itterating_custom_i_enumerable_1_1_some_class_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_itterating_custom_i_enumerable_1_1_some_class_a4dc1eb6b240de5b9980cf9bde19f176a}\index{CrabUIUser.ItteratingCustomIEnumerable.SomeClass@{CrabUIUser.ItteratingCustomIEnumerable.SomeClass}!Values@{Values}}
+\index{Values@{Values}!CrabUIUser.ItteratingCustomIEnumerable.SomeClass@{CrabUIUser.ItteratingCustomIEnumerable.SomeClass}}
+\doxysubsubsection{\texorpdfstring{Values}{Values}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_itterating_custom_i_enumerable_1_1_some_class_a4dc1eb6b240de5b9980cf9bde19f176a} 
+List$<$int$>$ Crab\+UIUser.\+Itterating\+Custom\+IEnumerable.\+Some\+Class.\+Values}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{new}()\{}
+\DoxyCodeLine{\ \ 1,2,3,4,5}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line \doxymbox{\hyperlink{_itterating_custom_i_enumerable_8cs_source_l00022}{22}} of file \doxymbox{\hyperlink{_itterating_custom_i_enumerable_8cs_source}{Itterating\+Custom\+IEnumerable.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ 1,2,3,4,5}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \};}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Performance/\+Itterating\+Custom\+IEnumerable.\+cs\end{DoxyCompactItemize}

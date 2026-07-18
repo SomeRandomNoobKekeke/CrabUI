@@ -1,0 +1,72 @@
+\doxysection{Crab\+UIUser.\+Injecting\+Inherited\+Parts Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_injecting_inherited_parts}{}\label{class_crab_u_i_user_1_1_injecting_inherited_parts}\index{CrabUIUser.InjectingInheritedParts@{CrabUIUser.InjectingInheritedParts}}
+
+
+The problem is:\+ you can\textquotesingle{}t access shadowed protected props in base class, this means you can generate code accessing those parts All solutions resolve naming conflicts one way or another, i think this is the most flexuble one.  
+
+
+Inheritance diagram for Crab\+UIUser.\+Injecting\+Inherited\+Parts:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_injecting_inherited_parts}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_injecting_inherited_parts_1_1_a}{A}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_injecting_inherited_parts_1_1_b}{B}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_injecting_inherited_parts_afe6a02b1c2d6c029780e59bd457182b4}{Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Crab\+UIUser.\+Experiment}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Run} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The problem is:\+ you can\textquotesingle{}t access shadowed protected props in base class, this means you can generate code accessing those parts All solutions resolve naming conflicts one way or another, i think this is the most flexuble one. 
+
+Definition at line \doxymbox{\hyperlink{_injecting_inherited_parts_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_injecting_inherited_parts_8cs_source}{Injecting\+Inherited\+Parts.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_injecting_inherited_parts_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_injecting_inherited_parts_afe6a02b1c2d6c029780e59bd457182b4}\index{CrabUIUser.InjectingInheritedParts@{CrabUIUser.InjectingInheritedParts}!Run@{Run}}
+\index{Run@{Run}!CrabUIUser.InjectingInheritedParts@{CrabUIUser.InjectingInheritedParts}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_injecting_inherited_parts_afe6a02b1c2d6c029780e59bd457182b4} 
+override void Crab\+UIUser.\+Injecting\+Inherited\+Parts.\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_injecting_inherited_parts_8cs_source_l00110}{110}} of file \doxymbox{\hyperlink{_injecting_inherited_parts_8cs_source}{Injecting\+Inherited\+Parts.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00111\ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ A\ a\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ B\ b\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ b.Inject();}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (PropertyInfo\ pi\ \textcolor{keywordflow}{in}\ typeof(B).GetProperties(BindingFlags.Instance\ |\ BindingFlags.NonPublic))}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}\{pi\}\ not\ null:[\{pi.GetValue(b)\ !=\ null\}]"{}});}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00121\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Design/\+\+Part\+Inheritance/\+Injecting\+Inherited\+Parts.\+cs\end{DoxyCompactItemize}

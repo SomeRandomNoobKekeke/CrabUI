@@ -1,0 +1,157 @@
+\doxysection{CUILibs.\+IClearable\+Event Interface Reference}
+\hypertarget{interface_c_u_i_libs_1_1_i_clearable_event}{}\label{interface_c_u_i_libs_1_1_i_clearable_event}\index{CUILibs.IClearableEvent@{CUILibs.IClearableEvent}}
+Inheritance diagram for CUILibs.\+IClearable\+Event:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.985916cm]{interface_c_u_i_libs_1_1_i_clearable_event}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{interface_c_u_i_libs_1_1_i_clearable_event_ae95ae30636093f06b3e084eae99a32e7}\label{interface_c_u_i_libs_1_1_i_clearable_event_ae95ae30636093f06b3e084eae99a32e7} 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_event_subscription}{Event\+Subscription}} {\bfseries Add} (Delegate callback)
+\item 
+\Hypertarget{interface_c_u_i_libs_1_1_i_clearable_event_a7a7fb96255524973a512122f985b1ab8}\label{interface_c_u_i_libs_1_1_i_clearable_event_a7a7fb96255524973a512122f985b1ab8} 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_event_subscription}{Event\+Subscription}} {\bfseries Map} (\doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_clearable_event}{IClearable\+Event}} next, Delegate callback)
+\item 
+\Hypertarget{interface_c_u_i_libs_1_1_i_clearable_event_a0ba4697f9ebb579d315cb4e3328ca756}\label{interface_c_u_i_libs_1_1_i_clearable_event_a0ba4697f9ebb579d315cb4e3328ca756} 
+void {\bfseries Unmap} (\doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_clearable_event}{IClearable\+Event}} node)
+\item 
+\Hypertarget{interface_c_u_i_libs_1_1_i_clearable_event_a27b3662ee769a592f5c0872eff75422c}\label{interface_c_u_i_libs_1_1_i_clearable_event_a27b3662ee769a592f5c0872eff75422c} 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_event_subscription}{Event\+Subscription}} {\bfseries Route} (\doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_clearable_event}{IClearable\+Event}} prev, Delegate callback)
+\item 
+\Hypertarget{interface_c_u_i_libs_1_1_i_clearable_event_a11340efe3490e7ee93002f3cbd6219aa}\label{interface_c_u_i_libs_1_1_i_clearable_event_a11340efe3490e7ee93002f3cbd6219aa} 
+void {\bfseries Unroute} (\doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_clearable_event}{IClearable\+Event}} node)
+\item 
+\Hypertarget{interface_c_u_i_libs_1_1_i_clearable_event_ad9e67b60eb06af954c48ba903dd415f1}\label{interface_c_u_i_libs_1_1_i_clearable_event_ad9e67b60eb06af954c48ba903dd415f1} 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_event_subscription}{Event\+Subscription}} {\bfseries Map} (\doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_clearable_event}{IClearable\+Event}} next)
+\item 
+\Hypertarget{interface_c_u_i_libs_1_1_i_clearable_event_afbb05d02dc68e0a38cd1ee5f8de41ee1}\label{interface_c_u_i_libs_1_1_i_clearable_event_afbb05d02dc68e0a38cd1ee5f8de41ee1} 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_event_subscription}{Event\+Subscription}} {\bfseries Route} (\doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_clearable_event}{IClearable\+Event}} prev)
+\item 
+\Hypertarget{interface_c_u_i_libs_1_1_i_clearable_event_aab566e931374abe43ba9d1d784ffd454}\label{interface_c_u_i_libs_1_1_i_clearable_event_aab566e931374abe43ba9d1d784ffd454} 
+bool {\bfseries Is\+Mapped} (\doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_clearable_event}{IClearable\+Event}} next)
+\item 
+\Hypertarget{interface_c_u_i_libs_1_1_i_clearable_event_a91922fc8bc3f0310634d3d32c6795510}\label{interface_c_u_i_libs_1_1_i_clearable_event_a91922fc8bc3f0310634d3d32c6795510} 
+bool {\bfseries Is\+Routed} (\doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_clearable_event}{IClearable\+Event}} prev)
+\item 
+void \doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_clearable_event_a9163e0e8f1f3b209ccd2af3449ffc91f}{Raise}} ()
+\item 
+void \doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_clearable_event_a54edd15592a5ae5032bc92f84832d99b}{Raise}} (object arg1)
+\item 
+void \doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_clearable_event_a411bbf0ad3b86a932f4329f89711128a}{Raise}} (object arg1, object arg2)
+\item 
+void \doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_clearable_event_a2c5187d70120b577e90bf46adde4eca2}{Raise}} (object arg1, object arg2, object arg3)
+\item 
+void \doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_clearable_event_ad163c4b5e10b847c7ce3efd412a7f946}{Raise}} (object arg1, object arg2, object arg3, object arg4)
+\item 
+void \doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_clearable_event_aa5e30e27ff0c0efc382fea64eca44ee8}{Raise}} (object arg1, object arg2, object arg3, object arg4, object arg5)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_i_clearable_event_8cs_source_l00009}{9}} of file \doxymbox{\hyperlink{_i_clearable_event_8cs_source}{IClearable\+Event.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{interface_c_u_i_libs_1_1_i_clearable_event_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interface_c_u_i_libs_1_1_i_clearable_event_a9163e0e8f1f3b209ccd2af3449ffc91f}\index{CUILibs.IClearableEvent@{CUILibs.IClearableEvent}!Raise@{Raise}}
+\index{Raise@{Raise}!CUILibs.IClearableEvent@{CUILibs.IClearableEvent}}
+\doxysubsubsection{\texorpdfstring{Raise()}{Raise()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily \label{interface_c_u_i_libs_1_1_i_clearable_event_a9163e0e8f1f3b209ccd2af3449ffc91f} 
+void CUILibs.\+IClearable\+Event.\+Raise (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_i_clearable_event_8cs_source_l00025}{25}} of file \doxymbox{\hyperlink{_i_clearable_event_8cs_source}{IClearable\+Event.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \{\ \}}
+
+\end{DoxyCode}
+\Hypertarget{interface_c_u_i_libs_1_1_i_clearable_event_a54edd15592a5ae5032bc92f84832d99b}\index{CUILibs.IClearableEvent@{CUILibs.IClearableEvent}!Raise@{Raise}}
+\index{Raise@{Raise}!CUILibs.IClearableEvent@{CUILibs.IClearableEvent}}
+\doxysubsubsection{\texorpdfstring{Raise()}{Raise()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily \label{interface_c_u_i_libs_1_1_i_clearable_event_a54edd15592a5ae5032bc92f84832d99b} 
+void CUILibs.\+IClearable\+Event.\+Raise (\begin{DoxyParamCaption}\item[{object}]{arg1}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_i_clearable_event_8cs_source_l00026}{26}} of file \doxymbox{\hyperlink{_i_clearable_event_8cs_source}{IClearable\+Event.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \{\ \}}
+
+\end{DoxyCode}
+\Hypertarget{interface_c_u_i_libs_1_1_i_clearable_event_a411bbf0ad3b86a932f4329f89711128a}\index{CUILibs.IClearableEvent@{CUILibs.IClearableEvent}!Raise@{Raise}}
+\index{Raise@{Raise}!CUILibs.IClearableEvent@{CUILibs.IClearableEvent}}
+\doxysubsubsection{\texorpdfstring{Raise()}{Raise()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily \label{interface_c_u_i_libs_1_1_i_clearable_event_a411bbf0ad3b86a932f4329f89711128a} 
+void CUILibs.\+IClearable\+Event.\+Raise (\begin{DoxyParamCaption}\item[{object}]{arg1}{, }\item[{object}]{arg2}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_i_clearable_event_8cs_source_l00027}{27}} of file \doxymbox{\hyperlink{_i_clearable_event_8cs_source}{IClearable\+Event.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \{\ \}}
+
+\end{DoxyCode}
+\Hypertarget{interface_c_u_i_libs_1_1_i_clearable_event_a2c5187d70120b577e90bf46adde4eca2}\index{CUILibs.IClearableEvent@{CUILibs.IClearableEvent}!Raise@{Raise}}
+\index{Raise@{Raise}!CUILibs.IClearableEvent@{CUILibs.IClearableEvent}}
+\doxysubsubsection{\texorpdfstring{Raise()}{Raise()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily \label{interface_c_u_i_libs_1_1_i_clearable_event_a2c5187d70120b577e90bf46adde4eca2} 
+void CUILibs.\+IClearable\+Event.\+Raise (\begin{DoxyParamCaption}\item[{object}]{arg1}{, }\item[{object}]{arg2}{, }\item[{object}]{arg3}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_i_clearable_event_8cs_source_l00028}{28}} of file \doxymbox{\hyperlink{_i_clearable_event_8cs_source}{IClearable\+Event.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \{\ \}}
+
+\end{DoxyCode}
+\Hypertarget{interface_c_u_i_libs_1_1_i_clearable_event_ad163c4b5e10b847c7ce3efd412a7f946}\index{CUILibs.IClearableEvent@{CUILibs.IClearableEvent}!Raise@{Raise}}
+\index{Raise@{Raise}!CUILibs.IClearableEvent@{CUILibs.IClearableEvent}}
+\doxysubsubsection{\texorpdfstring{Raise()}{Raise()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily \label{interface_c_u_i_libs_1_1_i_clearable_event_ad163c4b5e10b847c7ce3efd412a7f946} 
+void CUILibs.\+IClearable\+Event.\+Raise (\begin{DoxyParamCaption}\item[{object}]{arg1}{, }\item[{object}]{arg2}{, }\item[{object}]{arg3}{, }\item[{object}]{arg4}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_i_clearable_event_8cs_source_l00029}{29}} of file \doxymbox{\hyperlink{_i_clearable_event_8cs_source}{IClearable\+Event.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \{\ \}}
+
+\end{DoxyCode}
+\Hypertarget{interface_c_u_i_libs_1_1_i_clearable_event_aa5e30e27ff0c0efc382fea64eca44ee8}\index{CUILibs.IClearableEvent@{CUILibs.IClearableEvent}!Raise@{Raise}}
+\index{Raise@{Raise}!CUILibs.IClearableEvent@{CUILibs.IClearableEvent}}
+\doxysubsubsection{\texorpdfstring{Raise()}{Raise()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily \label{interface_c_u_i_libs_1_1_i_clearable_event_aa5e30e27ff0c0efc382fea64eca44ee8} 
+void CUILibs.\+IClearable\+Event.\+Raise (\begin{DoxyParamCaption}\item[{object}]{arg1}{, }\item[{object}]{arg2}{, }\item[{object}]{arg3}{, }\item[{object}]{arg4}{, }\item[{object}]{arg5}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_i_clearable_event_8cs_source_l00030}{30}} of file \doxymbox{\hyperlink{_i_clearable_event_8cs_source}{IClearable\+Event.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ \{\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this interface was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+Libs/\+\+Clearable\+Event/\+IClearable\+Event.\+cs\end{DoxyCompactItemize}

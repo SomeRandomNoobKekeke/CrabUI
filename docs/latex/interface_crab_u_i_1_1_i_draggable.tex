@@ -1,0 +1,118 @@
+\doxysection{Crab\+UI.\+IDraggable Interface Reference}
+\hypertarget{interface_crab_u_i_1_1_i_draggable}{}\label{interface_crab_u_i_1_1_i_draggable}\index{CrabUI.IDraggable@{CrabUI.IDraggable}}
+Inheritance diagram for Crab\+UI.\+IDraggable:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_crab_u_i_1_1_i_draggable}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{interface_crab_u_i_1_1_i_draggable_a11c50b357ba0433ffde62d8b4154c38b}\label{interface_crab_u_i_1_1_i_draggable_a11c50b357ba0433ffde62d8b4154c38b} 
+void {\bfseries Set\+Left\+Top\+Pos} (float x, float y)
+\item 
+\Hypertarget{interface_crab_u_i_1_1_i_draggable_a6ae8af1959b93b194c7d8a4cf22ed081}\label{interface_crab_u_i_1_1_i_draggable_a6ae8af1959b93b194c7d8a4cf22ed081} 
+bool {\bfseries Try\+Grab} (object handle)
+\item 
+\Hypertarget{interface_crab_u_i_1_1_i_draggable_a9e617f7d830f112dcbf8098a98ab6e56}\label{interface_crab_u_i_1_1_i_draggable_a9e617f7d830f112dcbf8098a98ab6e56} 
+void {\bfseries Release} (object handle)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}} \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_draggable_a4588148c1d5ccb9434538471d095b298}{Rect}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}? \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_draggable_ae4ad566fd17dd29d52bb2d658614214d}{Parent\+Rect}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+Action$<$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_down_event}{CUIMouse\+Down\+Event}} $>$ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_draggable_a5dd8f7f3fec22bbefd29744d93ae31a7}{Mouse\+Down}}
+\item 
+Action$<$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_up_event}{CUIMouse\+Up\+Event}} $>$ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_draggable_acefa7aa7ff0c608028bbf80f50e9cc22}{Hub\+Mouse\+Up}}
+\item 
+Action$<$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_moved_event}{CUIMouse\+Moved\+Event}} $>$ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_draggable_a34b2510342e72e89343fb049d58269ec}{Hub\+Mouse\+Moved}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_handles_2_drag_handle_2_i_draggable_8cs_source_l00012}{12}} of file \doxymbox{\hyperlink{_handles_2_drag_handle_2_i_draggable_8cs_source}{IDraggable.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{interface_crab_u_i_1_1_i_draggable_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{interface_crab_u_i_1_1_i_draggable_ae4ad566fd17dd29d52bb2d658614214d}\index{CrabUI.IDraggable@{CrabUI.IDraggable}!ParentRect@{ParentRect}}
+\index{ParentRect@{ParentRect}!CrabUI.IDraggable@{CrabUI.IDraggable}}
+\doxysubsubsection{\texorpdfstring{ParentRect}{ParentRect}}
+{\footnotesize\ttfamily \label{interface_crab_u_i_1_1_i_draggable_ae4ad566fd17dd29d52bb2d658614214d} 
+\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}? Crab\+UI.\+IDraggable.\+Parent\+Rect\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_handles_2_drag_handle_2_i_draggable_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_handles_2_drag_handle_2_i_draggable_8cs_source}{IDraggable.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{\ \textcolor{keyword}{get};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{interface_crab_u_i_1_1_i_draggable_a4588148c1d5ccb9434538471d095b298}\index{CrabUI.IDraggable@{CrabUI.IDraggable}!Rect@{Rect}}
+\index{Rect@{Rect}!CrabUI.IDraggable@{CrabUI.IDraggable}}
+\doxysubsubsection{\texorpdfstring{Rect}{Rect}}
+{\footnotesize\ttfamily \label{interface_crab_u_i_1_1_i_draggable_a4588148c1d5ccb9434538471d095b298} 
+\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}} Crab\+UI.\+IDraggable.\+Rect\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_handles_2_drag_handle_2_i_draggable_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_handles_2_drag_handle_2_i_draggable_8cs_source}{IDraggable.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \{\ \textcolor{keyword}{get};\ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-event-members}
+\Hypertarget{interface_crab_u_i_1_1_i_draggable_doc-event-members}
+\doxysubsection{Event Documentation}
+\Hypertarget{interface_crab_u_i_1_1_i_draggable_a34b2510342e72e89343fb049d58269ec}\index{CrabUI.IDraggable@{CrabUI.IDraggable}!HubMouseMoved@{HubMouseMoved}}
+\index{HubMouseMoved@{HubMouseMoved}!CrabUI.IDraggable@{CrabUI.IDraggable}}
+\doxysubsubsection{\texorpdfstring{HubMouseMoved}{HubMouseMoved}}
+{\footnotesize\ttfamily \label{interface_crab_u_i_1_1_i_draggable_a34b2510342e72e89343fb049d58269ec} 
+Action$<$\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_moved_event}{CUIMouse\+Moved\+Event}}$>$ Crab\+UI.\+IDraggable.\+Hub\+Mouse\+Moved}
+
+
+
+Definition at line \doxymbox{\hyperlink{_handles_2_drag_handle_2_i_draggable_8cs_source_l00020}{20}} of file \doxymbox{\hyperlink{_handles_2_drag_handle_2_i_draggable_8cs_source}{IDraggable.\+cs}}.
+
+\Hypertarget{interface_crab_u_i_1_1_i_draggable_acefa7aa7ff0c608028bbf80f50e9cc22}\index{CrabUI.IDraggable@{CrabUI.IDraggable}!HubMouseUp@{HubMouseUp}}
+\index{HubMouseUp@{HubMouseUp}!CrabUI.IDraggable@{CrabUI.IDraggable}}
+\doxysubsubsection{\texorpdfstring{HubMouseUp}{HubMouseUp}}
+{\footnotesize\ttfamily \label{interface_crab_u_i_1_1_i_draggable_acefa7aa7ff0c608028bbf80f50e9cc22} 
+Action$<$\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_up_event}{CUIMouse\+Up\+Event}}$>$ Crab\+UI.\+IDraggable.\+Hub\+Mouse\+Up}
+
+
+
+Definition at line \doxymbox{\hyperlink{_handles_2_drag_handle_2_i_draggable_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_handles_2_drag_handle_2_i_draggable_8cs_source}{IDraggable.\+cs}}.
+
+\Hypertarget{interface_crab_u_i_1_1_i_draggable_a5dd8f7f3fec22bbefd29744d93ae31a7}\index{CrabUI.IDraggable@{CrabUI.IDraggable}!MouseDown@{MouseDown}}
+\index{MouseDown@{MouseDown}!CrabUI.IDraggable@{CrabUI.IDraggable}}
+\doxysubsubsection{\texorpdfstring{MouseDown}{MouseDown}}
+{\footnotesize\ttfamily \label{interface_crab_u_i_1_1_i_draggable_a5dd8f7f3fec22bbefd29744d93ae31a7} 
+Action$<$\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_down_event}{CUIMouse\+Down\+Event}}$>$ Crab\+UI.\+IDraggable.\+Mouse\+Down}
+
+
+
+Definition at line \doxymbox{\hyperlink{_handles_2_drag_handle_2_i_draggable_8cs_source_l00014}{14}} of file \doxymbox{\hyperlink{_handles_2_drag_handle_2_i_draggable_8cs_source}{IDraggable.\+cs}}.
+
+
+
+The documentation for this interface was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Handles/\+\+Drag\+Handle/\+IDraggable.\+cs\end{DoxyCompactItemize}

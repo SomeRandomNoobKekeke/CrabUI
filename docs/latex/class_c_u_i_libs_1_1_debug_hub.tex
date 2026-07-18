@@ -1,0 +1,230 @@
+\doxysection{CUILibs.\+Debug\+Hub Class Reference}
+\hypertarget{class_c_u_i_libs_1_1_debug_hub}{}\label{class_c_u_i_libs_1_1_debug_hub}\index{CUILibs.DebugHub@{CUILibs.DebugHub}}
+Inheritance diagram for CUILibs.\+Debug\+Hub:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_u_i_libs_1_1_debug_hub}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_hub_acdd30b7a5668a76b8b6323f94e688384}{Open}} ()
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_hub_a38f2f65b0a463de0ba166564ba640d57}{Open}} (string type)
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_hub_a855a4b3951e78f6886746ca373f2e63f}{Close}} ()
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_hub_afd319b11fa83842f4dabca0fb3dbba4c}{Close}} (string type)
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_hub_a44462fcafa6008659c82a7b1a219e6c2}{Toggle}} ()
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_hub_ad7a7364e93fe1a2ab590386ccfe647dd}{Toggle}} (string type)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay_base}{CUILibs.\+Debug\+Relay\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay_base_a5ed58d5fa2bd44d993523de728c8ef4f}{Route}} (\doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_debug_relay_target}{IDebug\+Relay\+Target}} prev)
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay_base_ad3c6876e1518a9c36706b4c92e1255d0}{Unroute}} (\doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_debug_relay_target}{IDebug\+Relay\+Target}} prev)
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay_base_a80703c63e67d4bb1b45acadd78196a56}{Route}} (\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_node_dict}{Debug\+Node\+Dict}} nodes)
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay_base_a93b90c2024b3fd0039b67c72d3a8875e}{Route}} (\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay_dict}{Debug\+Relay\+Dict}} relays)
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay_base_a72c2d628035bc2fad7813276b1691f11}{Unroute}} (\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_node_dict}{Debug\+Node\+Dict}} nodes)
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay_base_add8d44eb22abb29b20f1f08b15c19bdc}{Unroute}} (\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay_dict}{Debug\+Relay\+Dict}} relays)
+\item 
+IEnumerable$<$ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_node_base}{Debug\+Node\+Base}} $>$ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay_base_a2e1d951f984029202e0d055f976bdc4e}{Get\+Nodes}} (string type)
+\item 
+IEnumerable$<$ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_node_base}{Debug\+Node\+Base}} $>$ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay_base_a1180ae3bd4aaf476b6c70feed4886851}{Get\+Nodes}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{Clearable\+Event}}$<$ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_event}{Debug\+Event}} $>$ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_hub_a36312c08b84b3d4894fdd49f2fb49a27}{Output}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_gate_dict}{Debug\+Gate\+Dict}} \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_hub_a98cf5e9041bbecec0a84f1d6f23580ab}{Gates}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+bool \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_hub_aa7fdb3a3a3204b2e41b5eb965082d3e2}{Is\+Open}} = true\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay_base}{CUILibs.\+Debug\+Relay\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_debug_relay_target}{IDebug\+Relay\+Target}} $>$ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay_base_a62b9f8b52837fc214640c9042f6c0116}{Children}} = new()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_debug_hub_8cs_source_l00009}{9}} of file \doxymbox{\hyperlink{_debug_hub_8cs_source}{Debug\+Hub.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_c_u_i_libs_1_1_debug_hub_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_debug_hub_a855a4b3951e78f6886746ca373f2e63f}\index{CUILibs.DebugHub@{CUILibs.DebugHub}!Close@{Close}}
+\index{Close@{Close}!CUILibs.DebugHub@{CUILibs.DebugHub}}
+\doxysubsubsection{\texorpdfstring{Close()}{Close()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_debug_hub_a855a4b3951e78f6886746ca373f2e63f} 
+void CUILibs.\+Debug\+Hub.\+Close (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_debug_hub_8cs_source_l00025}{25}} of file \doxymbox{\hyperlink{_debug_hub_8cs_source}{Debug\+Hub.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ IsOpen\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (DebugNodeBase\ node\ \textcolor{keywordflow}{in}\ GetNodes())\ \{\ node.Close();\ \}}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_debug_hub_afd319b11fa83842f4dabca0fb3dbba4c}\index{CUILibs.DebugHub@{CUILibs.DebugHub}!Close@{Close}}
+\index{Close@{Close}!CUILibs.DebugHub@{CUILibs.DebugHub}}
+\doxysubsubsection{\texorpdfstring{Close()}{Close()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_debug_hub_afd319b11fa83842f4dabca0fb3dbba4c} 
+void CUILibs.\+Debug\+Hub.\+Close (\begin{DoxyParamCaption}\item[{string}]{type}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_debug_hub_8cs_source_l00030}{30}} of file \doxymbox{\hyperlink{_debug_hub_8cs_source}{Debug\+Hub.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ IsOpen\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (DebugNodeBase\ node\ \textcolor{keywordflow}{in}\ GetNodes(type))\ \{\ node.Close();\ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_debug_hub_acdd30b7a5668a76b8b6323f94e688384}\index{CUILibs.DebugHub@{CUILibs.DebugHub}!Open@{Open}}
+\index{Open@{Open}!CUILibs.DebugHub@{CUILibs.DebugHub}}
+\doxysubsubsection{\texorpdfstring{Open()}{Open()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_debug_hub_acdd30b7a5668a76b8b6323f94e688384} 
+void CUILibs.\+Debug\+Hub.\+Open (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_debug_hub_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_debug_hub_8cs_source}{Debug\+Hub.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ IsOpen\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (DebugNodeBase\ node\ \textcolor{keywordflow}{in}\ GetNodes())\ \{\ node.Open();\ \}}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_debug_hub_a38f2f65b0a463de0ba166564ba640d57}\index{CUILibs.DebugHub@{CUILibs.DebugHub}!Open@{Open}}
+\index{Open@{Open}!CUILibs.DebugHub@{CUILibs.DebugHub}}
+\doxysubsubsection{\texorpdfstring{Open()}{Open()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_debug_hub_a38f2f65b0a463de0ba166564ba640d57} 
+void CUILibs.\+Debug\+Hub.\+Open (\begin{DoxyParamCaption}\item[{string}]{type}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_debug_hub_8cs_source_l00020}{20}} of file \doxymbox{\hyperlink{_debug_hub_8cs_source}{Debug\+Hub.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ IsOpen\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (DebugNodeBase\ node\ \textcolor{keywordflow}{in}\ GetNodes(type))\ \{\ node.Open();\ \}}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_debug_hub_a44462fcafa6008659c82a7b1a219e6c2}\index{CUILibs.DebugHub@{CUILibs.DebugHub}!Toggle@{Toggle}}
+\index{Toggle@{Toggle}!CUILibs.DebugHub@{CUILibs.DebugHub}}
+\doxysubsubsection{\texorpdfstring{Toggle()}{Toggle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_debug_hub_a44462fcafa6008659c82a7b1a219e6c2} 
+void CUILibs.\+Debug\+Hub.\+Toggle (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_debug_hub_8cs_source_l00035}{35}} of file \doxymbox{\hyperlink{_debug_hub_8cs_source}{Debug\+Hub.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (DebugNodeBase\ node\ \textcolor{keywordflow}{in}\ GetNodes())\ \{\ node.Toggle();\ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_debug_hub_ad7a7364e93fe1a2ab590386ccfe647dd}\index{CUILibs.DebugHub@{CUILibs.DebugHub}!Toggle@{Toggle}}
+\index{Toggle@{Toggle}!CUILibs.DebugHub@{CUILibs.DebugHub}}
+\doxysubsubsection{\texorpdfstring{Toggle()}{Toggle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_debug_hub_ad7a7364e93fe1a2ab590386ccfe647dd} 
+void CUILibs.\+Debug\+Hub.\+Toggle (\begin{DoxyParamCaption}\item[{string}]{type}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_debug_hub_8cs_source_l00039}{39}} of file \doxymbox{\hyperlink{_debug_hub_8cs_source}{Debug\+Hub.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040\ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (DebugNodeBase\ node\ \textcolor{keywordflow}{in}\ GetNodes(type))\ \{\ node.Toggle();\ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_c_u_i_libs_1_1_debug_hub_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_debug_hub_a98cf5e9041bbecec0a84f1d6f23580ab}\index{CUILibs.DebugHub@{CUILibs.DebugHub}!Gates@{Gates}}
+\index{Gates@{Gates}!CUILibs.DebugHub@{CUILibs.DebugHub}}
+\doxysubsubsection{\texorpdfstring{Gates}{Gates}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_debug_hub_a98cf5e9041bbecec0a84f1d6f23580ab} 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_gate_dict}{Debug\+Gate\+Dict}} CUILibs.\+Debug\+Hub.\+Gates = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_debug_hub_8cs_source_l00012}{12}} of file \doxymbox{\hyperlink{_debug_hub_8cs_source}{Debug\+Hub.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_debug_hub_aa7fdb3a3a3204b2e41b5eb965082d3e2}\index{CUILibs.DebugHub@{CUILibs.DebugHub}!IsOpen@{IsOpen}}
+\index{IsOpen@{IsOpen}!CUILibs.DebugHub@{CUILibs.DebugHub}}
+\doxysubsubsection{\texorpdfstring{IsOpen}{IsOpen}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_debug_hub_aa7fdb3a3a3204b2e41b5eb965082d3e2} 
+bool CUILibs.\+Debug\+Hub.\+Is\+Open = true\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_debug_hub_8cs_source_l00013}{13}} of file \doxymbox{\hyperlink{_debug_hub_8cs_source}{Debug\+Hub.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{true};}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_debug_hub_a36312c08b84b3d4894fdd49f2fb49a27}\index{CUILibs.DebugHub@{CUILibs.DebugHub}!Output@{Output}}
+\index{Output@{Output}!CUILibs.DebugHub@{CUILibs.DebugHub}}
+\doxysubsubsection{\texorpdfstring{Output}{Output}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_debug_hub_a36312c08b84b3d4894fdd49f2fb49a27} 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{Clearable\+Event}}$<$\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_event}{Debug\+Event}}$>$ CUILibs.\+Debug\+Hub.\+Output = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_debug_hub_8cs_source_l00011}{11}} of file \doxymbox{\hyperlink{_debug_hub_8cs_source}{Debug\+Hub.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+Libs/\+\+Debug\+Node/\+\+Hub/\+Debug\+Hub.\+cs\end{DoxyCompactItemize}

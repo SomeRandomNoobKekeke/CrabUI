@@ -10,7 +10,7 @@ Also these docs are the source of truth, if something doesn't work as stated her
 
 #### \subpage QuickStart
 #### \subpage Overview
-#### \subpage Details
+#### \subpage OtherConcepts
 #### \subpage NotesForCodeDivers
-
-
+#### \subpage RoadMap
+#### \subpage SomeExamples

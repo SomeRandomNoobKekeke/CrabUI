@@ -1,0 +1,176 @@
+\doxysection{Crab\+UI.\+Routable\+Command\+Node\+Base Class Reference}
+\hypertarget{class_crab_u_i_1_1_routable_command_node_base}{}\label{class_crab_u_i_1_1_routable_command_node_base}\index{CrabUI.RoutableCommandNodeBase@{CrabUI.RoutableCommandNodeBase}}
+Inheritance diagram for Crab\+UI.\+Routable\+Command\+Node\+Base:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_1_1_routable_command_node_base}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_routable_command_node_base_a8d9860116c13eb75b88d17d42bd78522}{Add\+Child}} (\doxymbox{\hyperlink{class_crab_u_i_1_1_routable_command_node_base}{Routable\+Command\+Node\+Base}} child)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_routable_command_node_base_a0954f095a8da00ca1f4f2113090b67bd}{Remove\+Child}} (\doxymbox{\hyperlink{class_crab_u_i_1_1_routable_command_node_base}{Routable\+Command\+Node\+Base}} child)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_routable_command_node_base_a39af3e1c40845eadbcedca8e85c9caba}{Remove\+Self}} ()
+\item 
+\Hypertarget{class_crab_u_i_1_1_routable_command_node_base_a13787d54116fcb73dda4bfd6cbe20b76}\label{class_crab_u_i_1_1_routable_command_node_base_a13787d54116fcb73dda4bfd6cbe20b76} 
+void {\bfseries Process} (Routable\+Command command)
+\item 
+virtual void \doxymbox{\hyperlink{class_crab_u_i_1_1_routable_command_node_base_adb561d1e80246a8b12fd497c25bff4e5}{Send\+Down}} (Routable\+Command command)
+\item 
+virtual void \doxymbox{\hyperlink{class_crab_u_i_1_1_routable_command_node_base_a1347c90aaf66f17dfb3c0142c0d090af}{Send\+Up}} (Routable\+Command command)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_routable_command_node_base}{Routable\+Command\+Node\+Base}} \doxymbox{\hyperlink{class_crab_u_i_1_1_routable_command_node_base_afac5b410ca1460d3fe4bcaf4974edd57}{Parent}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+List$<$ \doxymbox{\hyperlink{class_crab_u_i_1_1_routable_command_node_base}{Routable\+Command\+Node\+Base}} $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_routable_command_node_base_a5e8c2ccad2706ddc79419b65b8ca0c24}{Children}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_routable_command_node_base_8cs_source_l00014}{14}} of file \doxymbox{\hyperlink{_routable_command_node_base_8cs_source}{Routable\+Command\+Node\+Base.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_routable_command_node_base_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_routable_command_node_base_a8d9860116c13eb75b88d17d42bd78522}\index{CrabUI.RoutableCommandNodeBase@{CrabUI.RoutableCommandNodeBase}!AddChild@{AddChild}}
+\index{AddChild@{AddChild}!CrabUI.RoutableCommandNodeBase@{CrabUI.RoutableCommandNodeBase}}
+\doxysubsubsection{\texorpdfstring{AddChild()}{AddChild()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_routable_command_node_base_a8d9860116c13eb75b88d17d42bd78522} 
+void Crab\+UI.\+Routable\+Command\+Node\+Base.\+Add\+Child (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_crab_u_i_1_1_routable_command_node_base}{Routable\+Command\+Node\+Base}}}]{child}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_routable_command_node_base_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_routable_command_node_base_8cs_source}{Routable\+Command\+Node\+Base.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ child.Parent\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ Children.Add(child);}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_routable_command_node_base_a0954f095a8da00ca1f4f2113090b67bd}\index{CrabUI.RoutableCommandNodeBase@{CrabUI.RoutableCommandNodeBase}!RemoveChild@{RemoveChild}}
+\index{RemoveChild@{RemoveChild}!CrabUI.RoutableCommandNodeBase@{CrabUI.RoutableCommandNodeBase}}
+\doxysubsubsection{\texorpdfstring{RemoveChild()}{RemoveChild()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_routable_command_node_base_a0954f095a8da00ca1f4f2113090b67bd} 
+void Crab\+UI.\+Routable\+Command\+Node\+Base.\+Remove\+Child (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_crab_u_i_1_1_routable_command_node_base}{Routable\+Command\+Node\+Base}}}]{child}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_routable_command_node_base_8cs_source_l00025}{25}} of file \doxymbox{\hyperlink{_routable_command_node_base_8cs_source}{Routable\+Command\+Node\+Base.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ child.Parent\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ Children.Remove(child);}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_routable_command_node_base_a39af3e1c40845eadbcedca8e85c9caba}\index{CrabUI.RoutableCommandNodeBase@{CrabUI.RoutableCommandNodeBase}!RemoveSelf@{RemoveSelf}}
+\index{RemoveSelf@{RemoveSelf}!CrabUI.RoutableCommandNodeBase@{CrabUI.RoutableCommandNodeBase}}
+\doxysubsubsection{\texorpdfstring{RemoveSelf()}{RemoveSelf()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_routable_command_node_base_a39af3e1c40845eadbcedca8e85c9caba} 
+void Crab\+UI.\+Routable\+Command\+Node\+Base.\+Remove\+Self (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_routable_command_node_base_8cs_source_l00031}{31}} of file \doxymbox{\hyperlink{_routable_command_node_base_8cs_source}{Routable\+Command\+Node\+Base.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031\ =>\ Parent?.RemoveChild(\textcolor{keyword}{this});}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_routable_command_node_base_adb561d1e80246a8b12fd497c25bff4e5}\index{CrabUI.RoutableCommandNodeBase@{CrabUI.RoutableCommandNodeBase}!SendDown@{SendDown}}
+\index{SendDown@{SendDown}!CrabUI.RoutableCommandNodeBase@{CrabUI.RoutableCommandNodeBase}}
+\doxysubsubsection{\texorpdfstring{SendDown()}{SendDown()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_routable_command_node_base_adb561d1e80246a8b12fd497c25bff4e5} 
+virtual void Crab\+UI.\+Routable\+Command\+Node\+Base.\+Send\+Down (\begin{DoxyParamCaption}\item[{Routable\+Command}]{command}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_routable_command_node_base_8cs_source_l00035}{35}} of file \doxymbox{\hyperlink{_routable_command_node_base_8cs_source}{Routable\+Command\+Node\+Base.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Children.Count\ ==\ 0)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ Children.Count\ -\/\ 1;\ i\ >=\ 0;\ i-\/-\/)}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ RoutableCommandNodeBase\ node\ =\ Children[i];}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ node.Process(command);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ node.SendDown(command);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_routable_command_node_base_a1347c90aaf66f17dfb3c0142c0d090af}\index{CrabUI.RoutableCommandNodeBase@{CrabUI.RoutableCommandNodeBase}!SendUp@{SendUp}}
+\index{SendUp@{SendUp}!CrabUI.RoutableCommandNodeBase@{CrabUI.RoutableCommandNodeBase}}
+\doxysubsubsection{\texorpdfstring{SendUp()}{SendUp()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_routable_command_node_base_a1347c90aaf66f17dfb3c0142c0d090af} 
+virtual void Crab\+UI.\+Routable\+Command\+Node\+Base.\+Send\+Up (\begin{DoxyParamCaption}\item[{Routable\+Command}]{command}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_routable_command_node_base_8cs_source_l00047}{47}} of file \doxymbox{\hyperlink{_routable_command_node_base_8cs_source}{Routable\+Command\+Node\+Base.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048\ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ Parent?.Process(command);}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ Parent?.SendUp(command);}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_routable_command_node_base_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_routable_command_node_base_a5e8c2ccad2706ddc79419b65b8ca0c24}\index{CrabUI.RoutableCommandNodeBase@{CrabUI.RoutableCommandNodeBase}!Children@{Children}}
+\index{Children@{Children}!CrabUI.RoutableCommandNodeBase@{CrabUI.RoutableCommandNodeBase}}
+\doxysubsubsection{\texorpdfstring{Children}{Children}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_routable_command_node_base_a5e8c2ccad2706ddc79419b65b8ca0c24} 
+List$<$\doxymbox{\hyperlink{class_crab_u_i_1_1_routable_command_node_base}{Routable\+Command\+Node\+Base}}$>$ Crab\+UI.\+Routable\+Command\+Node\+Base.\+Children = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_routable_command_node_base_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_routable_command_node_base_8cs_source}{Routable\+Command\+Node\+Base.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_routable_command_node_base_afac5b410ca1460d3fe4bcaf4974edd57}\index{CrabUI.RoutableCommandNodeBase@{CrabUI.RoutableCommandNodeBase}!Parent@{Parent}}
+\index{Parent@{Parent}!CrabUI.RoutableCommandNodeBase@{CrabUI.RoutableCommandNodeBase}}
+\doxysubsubsection{\texorpdfstring{Parent}{Parent}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_routable_command_node_base_afac5b410ca1460d3fe4bcaf4974edd57} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_routable_command_node_base}{Routable\+Command\+Node\+Base}} Crab\+UI.\+Routable\+Command\+Node\+Base.\+Parent\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_routable_command_node_base_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_routable_command_node_base_8cs_source}{Routable\+Command\+Node\+Base.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Commands/\+Routable\+Command\+Node\+Base.\+cs\end{DoxyCompactItemize}

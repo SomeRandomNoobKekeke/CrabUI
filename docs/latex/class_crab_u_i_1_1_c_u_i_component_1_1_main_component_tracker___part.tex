@@ -1,0 +1,111 @@
+\doxysection{Crab\+UI.\+CUIComponent.\+Main\+Component\+Tracker\+\_\+\+Part Class Reference}
+\hypertarget{class_crab_u_i_1_1_c_u_i_component_1_1_main_component_tracker___part}{}\label{class_crab_u_i_1_1_c_u_i_component_1_1_main_component_tracker___part}\index{CrabUI.CUIComponent.MainComponentTracker\_Part@{CrabUI.CUIComponent.MainComponentTracker\_Part}}
+Inheritance diagram for Crab\+UI.\+CUIComponent.\+Main\+Component\+Tracker\+\_\+\+Part:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.666667cm]{class_crab_u_i_1_1_c_u_i_component_1_1_main_component_tracker___part}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_main_component_tracker___part_a897da9b3f09b9f3d04202b6171789268}{On\+Attach\+To\+Parent\+Handler}} (CUIComponent parent)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_main_component_tracker___part_a4c8293baa15cfc31f0ef077b02373b58}{On\+Detach\+From\+Parent\+Handler}} (CUIComponent parent)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_main_component}{CUIMain\+Component}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_main_component_tracker___part_abc336dfdc38748421d2dda0f1bc91ac2}{Main\+Component}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_part}{Crab\+UI.\+CUIComponent.\+Part}}}
+\begin{DoxyCompactItemize}
+\item 
+CUIComponent \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_part_ab47f49d90b2cb6709df65c276f06bb56}{Self}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_main_component_tracker_8cs_source_l00034}{34}} of file \doxymbox{\hyperlink{_c_u_i_component_8_main_component_tracker_8cs_source}{CUIComponent.\+Main\+Component\+Tracker.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_1_1_main_component_tracker___part_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_1_1_main_component_tracker___part_a897da9b3f09b9f3d04202b6171789268}\index{CrabUI.CUIComponent.MainComponentTracker\_Part@{CrabUI.CUIComponent.MainComponentTracker\_Part}!OnAttachToParentHandler@{OnAttachToParentHandler}}
+\index{OnAttachToParentHandler@{OnAttachToParentHandler}!CrabUI.CUIComponent.MainComponentTracker\_Part@{CrabUI.CUIComponent.MainComponentTracker\_Part}}
+\doxysubsubsection{\texorpdfstring{OnAttachToParentHandler()}{OnAttachToParentHandler()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_component_1_1_main_component_tracker___part_a897da9b3f09b9f3d04202b6171789268} 
+void Crab\+UI.\+CUIComponent.\+Main\+Component\+Tracker\+\_\+\+Part.\+On\+Attach\+To\+Parent\+Handler (\begin{DoxyParamCaption}\item[{CUIComponent}]{parent}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_main_component_tracker_8cs_source_l00048}{48}} of file \doxymbox{\hyperlink{_c_u_i_component_8_main_component_tracker_8cs_source}{CUIComponent.\+Main\+Component\+Tracker.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (parent\ is\ CUIMainComponent\ mainComponent)}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ SetRec(mainComponent);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ SetRec(parent.MainComponent);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_1_1_main_component_tracker___part_a4c8293baa15cfc31f0ef077b02373b58}\index{CrabUI.CUIComponent.MainComponentTracker\_Part@{CrabUI.CUIComponent.MainComponentTracker\_Part}!OnDetachFromParentHandler@{OnDetachFromParentHandler}}
+\index{OnDetachFromParentHandler@{OnDetachFromParentHandler}!CrabUI.CUIComponent.MainComponentTracker\_Part@{CrabUI.CUIComponent.MainComponentTracker\_Part}}
+\doxysubsubsection{\texorpdfstring{OnDetachFromParentHandler()}{OnDetachFromParentHandler()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_component_1_1_main_component_tracker___part_a4c8293baa15cfc31f0ef077b02373b58} 
+void Crab\+UI.\+CUIComponent.\+Main\+Component\+Tracker\+\_\+\+Part.\+On\+Detach\+From\+Parent\+Handler (\begin{DoxyParamCaption}\item[{CUIComponent}]{parent}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_main_component_tracker_8cs_source_l00060}{60}} of file \doxymbox{\hyperlink{_c_u_i_component_8_main_component_tracker_8cs_source}{CUIComponent.\+Main\+Component\+Tracker.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ SetRec(\textcolor{keyword}{null});}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_1_1_main_component_tracker___part_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_1_1_main_component_tracker___part_abc336dfdc38748421d2dda0f1bc91ac2}\index{CrabUI.CUIComponent.MainComponentTracker\_Part@{CrabUI.CUIComponent.MainComponentTracker\_Part}!MainComponent@{MainComponent}}
+\index{MainComponent@{MainComponent}!CrabUI.CUIComponent.MainComponentTracker\_Part@{CrabUI.CUIComponent.MainComponentTracker\_Part}}
+\doxysubsubsection{\texorpdfstring{MainComponent}{MainComponent}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_component_1_1_main_component_tracker___part_abc336dfdc38748421d2dda0f1bc91ac2} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_main_component}{CUIMain\+Component}} Crab\+UI.\+CUIComponent.\+Main\+Component\+Tracker\+\_\+\+Part.\+Main\+Component\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_main_component_tracker_8cs_source_l00037}{37}} of file \doxymbox{\hyperlink{_c_u_i_component_8_main_component_tracker_8cs_source}{CUIComponent.\+Main\+Component\+Tracker.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_MainComponent;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (MainComponent\ is\ not\ \textcolor{keyword}{null})\ Self.OnDetachedFromMainComponent(MainComponent);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \_MainComponent\ =\ value;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (MainComponent\ is\ not\ \textcolor{keyword}{null})\ Self.OnAttachedToMainComponent(MainComponent);}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Components/\+\+CUIComponent/\+CUIComponent.\+Main\+Component\+Tracker.\+cs\end{DoxyCompactItemize}

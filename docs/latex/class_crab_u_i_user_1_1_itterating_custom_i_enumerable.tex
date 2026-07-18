@@ -1,0 +1,123 @@
+\doxysection{Crab\+UIUser.\+Itterating\+Custom\+IEnumerable Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_itterating_custom_i_enumerable}{}\label{class_crab_u_i_user_1_1_itterating_custom_i_enumerable}\index{CrabUIUser.ItteratingCustomIEnumerable@{CrabUIUser.ItteratingCustomIEnumerable}}
+
+
+Custom IEnumerable is 10 times slower Custom IEnumerable without a nested loop is just as slow.  
+
+
+Inheritance diagram for Crab\+UIUser.\+Itterating\+Custom\+IEnumerable:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_itterating_custom_i_enumerable}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_custom_i_enumerable_1_1_some_class}{Some\+Class}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_custom_i_enumerable_af073a844557f7ac0aa98b3826e38026d}{Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Crab\+UIUser.\+Experiment}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Run} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_custom_i_enumerable_a008d8d7dcc374af4f08001a7250d42f2}{repeats}} = 100000000
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Custom IEnumerable is 10 times slower Custom IEnumerable without a nested loop is just as slow. 
+
+Definition at line \doxymbox{\hyperlink{_itterating_custom_i_enumerable_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_itterating_custom_i_enumerable_8cs_source}{Itterating\+Custom\+IEnumerable.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_itterating_custom_i_enumerable_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_itterating_custom_i_enumerable_af073a844557f7ac0aa98b3826e38026d}\index{CrabUIUser.ItteratingCustomIEnumerable@{CrabUIUser.ItteratingCustomIEnumerable}!Run@{Run}}
+\index{Run@{Run}!CrabUIUser.ItteratingCustomIEnumerable@{CrabUIUser.ItteratingCustomIEnumerable}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_itterating_custom_i_enumerable_af073a844557f7ac0aa98b3826e38026d} 
+override void Crab\+UIUser.\+Itterating\+Custom\+IEnumerable.\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_itterating_custom_i_enumerable_8cs_source_l00048}{48}} of file \doxymbox{\hyperlink{_itterating_custom_i_enumerable_8cs_source}{Itterating\+Custom\+IEnumerable.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00049\ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ Stopwatch\ sw\ =\ \textcolor{keyword}{new}\ Stopwatch();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ SomeClass\ o\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ value\ =\ 0;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ sw.Start();}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keywordtype}{int}\ v\ \textcolor{keywordflow}{in}\ o.Values)}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ value\ =\ v;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}measure\ 1:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ sw.Restart();}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keywordtype}{int}\ v\ \textcolor{keywordflow}{in}\ o.GetFunnyValues())}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ value\ =\ v;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}measure\ 3:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ sw.Restart();}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keywordtype}{int}\ v\ \textcolor{keywordflow}{in}\ o.GetValues())}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ value\ =\ v;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}measure\ 2:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_crab_u_i_user_1_1_itterating_custom_i_enumerable_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_itterating_custom_i_enumerable_a008d8d7dcc374af4f08001a7250d42f2}\index{CrabUIUser.ItteratingCustomIEnumerable@{CrabUIUser.ItteratingCustomIEnumerable}!repeats@{repeats}}
+\index{repeats@{repeats}!CrabUIUser.ItteratingCustomIEnumerable@{CrabUIUser.ItteratingCustomIEnumerable}}
+\doxysubsubsection{\texorpdfstring{repeats}{repeats}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_itterating_custom_i_enumerable_a008d8d7dcc374af4f08001a7250d42f2} 
+int Crab\+UIUser.\+Itterating\+Custom\+IEnumerable.\+repeats = 100000000}
+
+
+
+Definition at line \doxymbox{\hyperlink{_itterating_custom_i_enumerable_8cs_source_l00046}{46}} of file \doxymbox{\hyperlink{_itterating_custom_i_enumerable_8cs_source}{Itterating\+Custom\+IEnumerable.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Performance/\+Itterating\+Custom\+IEnumerable.\+cs\end{DoxyCompactItemize}

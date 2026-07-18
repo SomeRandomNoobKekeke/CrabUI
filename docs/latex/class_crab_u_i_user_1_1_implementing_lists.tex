@@ -1,0 +1,114 @@
+\doxysection{Crab\+UIUser.\+Implementing\+Lists Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_implementing_lists}{}\label{class_crab_u_i_user_1_1_implementing_lists}\index{CrabUIUser.ImplementingLists@{CrabUIUser.ImplementingLists}}
+
+
+Convert\+All is 30 times slower than direct access list.\+Cast$<$\+Prop1$>$().To\+List() is 60 times slower.  
+
+
+Inheritance diagram for Crab\+UIUser.\+Implementing\+Lists:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_implementing_lists}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_implementing_lists_1_1_prop1}{Prop1}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_implementing_lists_1_1_prop2}{Prop2}}
+\item 
+interface \doxymbox{\hyperlink{interface_crab_u_i_user_1_1_implementing_lists_1_1_i_a}{IA}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_implementing_lists_1_1_a}{A}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_implementing_lists_a50044c9c807872025176abce4aaa1ed2}{Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Crab\+UIUser.\+Experiment}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Run} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{class_crab_u_i_user_1_1_implementing_lists_ab6dc766334ba1f35ca0abc9b32239e91}{repeats}} = 3000000
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Convert\+All is 30 times slower than direct access list.\+Cast$<$\+Prop1$>$().To\+List() is 60 times slower. 
+
+Definition at line \doxymbox{\hyperlink{_implementing_lists_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_implementing_lists_8cs_source}{Implementing\+Lists.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_implementing_lists_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_implementing_lists_a50044c9c807872025176abce4aaa1ed2}\index{CrabUIUser.ImplementingLists@{CrabUIUser.ImplementingLists}!Run@{Run}}
+\index{Run@{Run}!CrabUIUser.ImplementingLists@{CrabUIUser.ImplementingLists}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_implementing_lists_a50044c9c807872025176abce4aaa1ed2} 
+override void Crab\+UIUser.\+Implementing\+Lists.\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_implementing_lists_8cs_source_l00040}{40}} of file \doxymbox{\hyperlink{_implementing_lists_8cs_source}{Implementing\+Lists.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041\ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ Stopwatch\ sw\ =\ \textcolor{keyword}{new}\ Stopwatch();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ A\ a\ =\ \textcolor{keyword}{new}\ A();}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ Prop1\ value\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ sw.Start();}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Prop2\ prop\ \textcolor{keywordflow}{in}\ a.list)}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ value\ =\ prop;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}direct:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ sw.Restart();}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Prop1\ prop\ \textcolor{keywordflow}{in}\ (a\ as\ IA).list)}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ value\ =\ prop;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}with\ ConvertAll:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_crab_u_i_user_1_1_implementing_lists_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_implementing_lists_ab6dc766334ba1f35ca0abc9b32239e91}\index{CrabUIUser.ImplementingLists@{CrabUIUser.ImplementingLists}!repeats@{repeats}}
+\index{repeats@{repeats}!CrabUIUser.ImplementingLists@{CrabUIUser.ImplementingLists}}
+\doxysubsubsection{\texorpdfstring{repeats}{repeats}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_implementing_lists_ab6dc766334ba1f35ca0abc9b32239e91} 
+int Crab\+UIUser.\+Implementing\+Lists.\+repeats = 3000000}
+
+
+
+Definition at line \doxymbox{\hyperlink{_implementing_lists_8cs_source_l00038}{38}} of file \doxymbox{\hyperlink{_implementing_lists_8cs_source}{Implementing\+Lists.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Performance/\+Implementing\+Lists.\+cs\end{DoxyCompactItemize}

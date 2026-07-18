@@ -1,0 +1,58 @@
+\doxysection{Crab\+UI.\+CUIMain\+Component.\+Init\+Debug\+Channels\+\_\+\+Part Class Reference}
+\hypertarget{class_crab_u_i_1_1_c_u_i_main_component_1_1_init_debug_channels___part}{}\label{class_crab_u_i_1_1_c_u_i_main_component_1_1_init_debug_channels___part}\index{CrabUI.CUIMainComponent.InitDebugChannels\_Part@{CrabUI.CUIMainComponent.InitDebugChannels\_Part}}
+Inheritance diagram for Crab\+UI.\+CUIMain\+Component.\+Init\+Debug\+Channels\+\_\+\+Part:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_crab_u_i_1_1_c_u_i_main_component_1_1_init_debug_channels___part}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_main_component_1_1_init_debug_channels___part_a07845690d51ea03df52d7ef40fa8fa0f}{Init}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Properties inherited from \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_main_component_1_1_part}{Crab\+UI.\+CUIMain\+Component.\+Part}}}
+\begin{DoxyCompactItemize}
+\item 
+CUIMain\+Component \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_main_component_1_1_part_a359ca9b1b2495be980305e68bdf5cfdc}{Self}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_main_component_8_debug_channels_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_c_u_i_main_component_8_debug_channels_8cs_source}{CUIMain\+Component.\+Debug\+Channels.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_main_component_1_1_init_debug_channels___part_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_main_component_1_1_init_debug_channels___part_a07845690d51ea03df52d7ef40fa8fa0f}\index{CrabUI.CUIMainComponent.InitDebugChannels\_Part@{CrabUI.CUIMainComponent.InitDebugChannels\_Part}!Init@{Init}}
+\index{Init@{Init}!CrabUI.CUIMainComponent.InitDebugChannels\_Part@{CrabUI.CUIMainComponent.InitDebugChannels\_Part}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_main_component_1_1_init_debug_channels___part_a07845690d51ea03df52d7ef40fa8fa0f} 
+void Crab\+UI.\+CUIMain\+Component.\+Init\+Debug\+Channels\+\_\+\+Part.\+Init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_main_component_8_debug_channels_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_c_u_i_main_component_8_debug_channels_8cs_source}{CUIMain\+Component.\+Debug\+Channels.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ (Self\ as\ CUIComponent).DebugRelays.Map(Self.DebugRelays);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ Self.GrabbedHandleTracker.DebugRelay.Map(Self.DebugRelays[DebugCategory.HandleGrab]);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ Self.OnDebugOn\ +=\ ()\ =>\ Self.DebugRelays.Open();}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ Self.OnDebugOff\ +=\ ()\ =>\ Self.DebugRelays.Close();}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Components/\+\+CUIMain\+Component/\+CUIMain\+Component.\+Debug\+Channels.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,78 @@
+\doxysection{Crab\+UIUser.\+Lambda\+Memory\+Usage Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_lambda_memory_usage}{}\label{class_crab_u_i_user_1_1_lambda_memory_usage}\index{CrabUIUser.LambdaMemoryUsage@{CrabUIUser.LambdaMemoryUsage}}
+
+
+it\textquotesingle{}s 0, delegate is cached  
+
+
+Inheritance diagram for Crab\+UIUser.\+Lambda\+Memory\+Usage:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_lambda_memory_usage}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_lambda_memory_usage_1_1_prop}{Prop}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_lambda_memory_usage_a8dc6c3e0b73934f4823bf2a4037aa3d5}{Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Crab\+UIUser.\+Experiment}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Run} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+it\textquotesingle{}s 0, delegate is cached 
+
+Definition at line \doxymbox{\hyperlink{_lambda_memory_usage_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_lambda_memory_usage_8cs_source}{Lambda\+Memory\+Usage.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_lambda_memory_usage_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_lambda_memory_usage_a8dc6c3e0b73934f4823bf2a4037aa3d5}\index{CrabUIUser.LambdaMemoryUsage@{CrabUIUser.LambdaMemoryUsage}!Run@{Run}}
+\index{Run@{Run}!CrabUIUser.LambdaMemoryUsage@{CrabUIUser.LambdaMemoryUsage}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_lambda_memory_usage_a8dc6c3e0b73934f4823bf2a4037aa3d5} 
+override void Crab\+UIUser.\+Lambda\+Memory\+Usage.\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_lambda_memory_usage_8cs_source_l00026}{26}} of file \doxymbox{\hyperlink{_lambda_memory_usage_8cs_source}{Lambda\+Memory\+Usage.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ GC.Collect();}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ 10000000;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ mem1\ =\ LuaCsPerformanceCounter.MemoryUsage;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ List<Prop>\ props\ =\ Enumerable.Range(0,\ count).Select(i\ =>\ \textcolor{keyword}{new}\ Prop()).ToList();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Prop\ prop\ \textcolor{keywordflow}{in}\ props)}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ prop.Log.OnSend\ =\ (msg)\ =>\ Mod.Logger.Log(msg);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ mem2\ =\ LuaCsPerformanceCounter.MemoryUsage;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}count:\ \{count\}\ mem:\ \{mem2\ -\/\ mem1\}MB\ unit:\ \{Math.Round((mem2\ -\/\ mem1)\ *\ 1024\ *\ 1024\ /\ count)\}B"{}});}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ props\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ GC.Collect();}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Performance/\+Lambda\+Memory\+Usage.\+cs\end{DoxyCompactItemize}

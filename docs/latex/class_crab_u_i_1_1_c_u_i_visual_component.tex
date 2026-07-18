@@ -1,0 +1,176 @@
+\doxysection{Crab\+UI.\+CUIVisual\+Component Class Reference}
+\hypertarget{class_crab_u_i_1_1_c_u_i_visual_component}{}\label{class_crab_u_i_1_1_c_u_i_visual_component}\index{CrabUI.CUIVisualComponent@{CrabUI.CUIVisualComponent}}
+Inheritance diagram for Crab\+UI.\+CUIVisual\+Component:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{class_crab_u_i_1_1_c_u_i_visual_component}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+IEnumerable$<$ \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_unit}{Visual\+Unit}} $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_visual_component_a67bc13ad22d62c4655fb775cf6e06c8b}{Visual\+Split}} ()
+\item 
+override string \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_visual_component_a6825a832d3fda7bf8337ad1909b05f02}{To\+String}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static int \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_visual_component_a114f1df2d58591c6c14897a24412d56d}{Max\+ID}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+int \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_visual_component_ad16eab811d16a1eae33d16941f6798fa}{ID}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+string \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_visual_component_aeed60407d44dd66da3fa75551c40303e}{Type\+Name}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_visual_component_a6048aef05d7f978b861988a7d81d0ded}{Rect}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_visual_unit_1_1_nested_visual_component}{Visual\+Unit.\+Nested\+Visual\+Component}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_visual_component_a669634bf22ae041b4a9ea8a2d296895b}{Visual\+Wrapper}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_visual_component_8cs_source_l00013}{13}} of file \doxymbox{\hyperlink{_c_u_i_visual_component_8cs_source}{CUIVisual\+Component.\+cs}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_visual_component_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_visual_component_a8f0bd19299bf72f0211c27f75fac117e}\index{CrabUI.CUIVisualComponent@{CrabUI.CUIVisualComponent}!CUIVisualComponent@{CUIVisualComponent}}
+\index{CUIVisualComponent@{CUIVisualComponent}!CrabUI.CUIVisualComponent@{CrabUI.CUIVisualComponent}}
+\doxysubsubsection{\texorpdfstring{CUIVisualComponent()}{CUIVisualComponent()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_visual_component_a8f0bd19299bf72f0211c27f75fac117e} 
+Crab\+UI.\+CUIVisual\+Component.\+CUIVisual\+Component (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_visual_component_8cs_source_l00028}{28}} of file \doxymbox{\hyperlink{_c_u_i_visual_component_8cs_source}{CUIVisual\+Component.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ ID\ =\ MaxID++;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ VisualWrapper\ =\ \textcolor{keyword}{new}(\textcolor{keyword}{this});}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_visual_component_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_visual_component_a6825a832d3fda7bf8337ad1909b05f02}\index{CrabUI.CUIVisualComponent@{CrabUI.CUIVisualComponent}!ToString@{ToString}}
+\index{ToString@{ToString}!CrabUI.CUIVisualComponent@{CrabUI.CUIVisualComponent}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_visual_component_a6825a832d3fda7bf8337ad1909b05f02} 
+override string Crab\+UI.\+CUIVisual\+Component.\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_visual_component_8cs_source_l00034}{34}} of file \doxymbox{\hyperlink{_c_u_i_visual_component_8cs_source}{CUIVisual\+Component.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034\ =>\ \$\textcolor{stringliteral}{"{}\{this.GetType().Name\}\ [\{this.ID\}]"{}};}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_visual_component_a67bc13ad22d62c4655fb775cf6e06c8b}\index{CrabUI.CUIVisualComponent@{CrabUI.CUIVisualComponent}!VisualSplit@{VisualSplit}}
+\index{VisualSplit@{VisualSplit}!CrabUI.CUIVisualComponent@{CrabUI.CUIVisualComponent}}
+\doxysubsubsection{\texorpdfstring{VisualSplit()}{VisualSplit()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_visual_component_a67bc13ad22d62c4655fb775cf6e06c8b} 
+IEnumerable$<$ \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_unit}{Visual\+Unit}} $>$ Crab\+UI.\+CUIVisual\+Component.\+Visual\+Split (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [abstract]}}
+
+
+
+Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_visual_component}{Crab\+UI.\+IVisual\+Component}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_visual_component_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_visual_component_ad16eab811d16a1eae33d16941f6798fa}\index{CrabUI.CUIVisualComponent@{CrabUI.CUIVisualComponent}!ID@{ID}}
+\index{ID@{ID}!CrabUI.CUIVisualComponent@{CrabUI.CUIVisualComponent}}
+\doxysubsubsection{\texorpdfstring{ID}{ID}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_visual_component_ad16eab811d16a1eae33d16941f6798fa} 
+int Crab\+UI.\+CUIVisual\+Component.\+ID\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_visual_component_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_c_u_i_visual_component_8cs_source}{CUIVisual\+Component.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_visual_component_a114f1df2d58591c6c14897a24412d56d}\index{CrabUI.CUIVisualComponent@{CrabUI.CUIVisualComponent}!MaxID@{MaxID}}
+\index{MaxID@{MaxID}!CrabUI.CUIVisualComponent@{CrabUI.CUIVisualComponent}}
+\doxysubsubsection{\texorpdfstring{MaxID}{MaxID}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_visual_component_a114f1df2d58591c6c14897a24412d56d} 
+int Crab\+UI.\+CUIVisual\+Component.\+Max\+ID\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_visual_component_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_c_u_i_visual_component_8cs_source}{CUIVisual\+Component.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_visual_component_a6048aef05d7f978b861988a7d81d0ded}\index{CrabUI.CUIVisualComponent@{CrabUI.CUIVisualComponent}!Rect@{Rect}}
+\index{Rect@{Rect}!CrabUI.CUIVisualComponent@{CrabUI.CUIVisualComponent}}
+\doxysubsubsection{\texorpdfstring{Rect}{Rect}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_visual_component_a6048aef05d7f978b861988a7d81d0ded} 
+\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}} Crab\+UI.\+CUIVisual\+Component.\+Rect\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [abstract]}}
+
+
+
+Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_visual_component}{Crab\+UI.\+IVisual\+Component}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_visual_component_8cs_source_l00022}{22}} of file \doxymbox{\hyperlink{_c_u_i_visual_component_8cs_source}{CUIVisual\+Component.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_visual_component_aeed60407d44dd66da3fa75551c40303e}\index{CrabUI.CUIVisualComponent@{CrabUI.CUIVisualComponent}!TypeName@{TypeName}}
+\index{TypeName@{TypeName}!CrabUI.CUIVisualComponent@{CrabUI.CUIVisualComponent}}
+\doxysubsubsection{\texorpdfstring{TypeName}{TypeName}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_visual_component_aeed60407d44dd66da3fa75551c40303e} 
+string Crab\+UI.\+CUIVisual\+Component.\+Type\+Name\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_visual_component_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_c_u_i_visual_component_8cs_source}{CUIVisual\+Component.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_c_u_i_visual_component_a669634bf22ae041b4a9ea8a2d296895b}\index{CrabUI.CUIVisualComponent@{CrabUI.CUIVisualComponent}!VisualWrapper@{VisualWrapper}}
+\index{VisualWrapper@{VisualWrapper}!CrabUI.CUIVisualComponent@{CrabUI.CUIVisualComponent}}
+\doxysubsubsection{\texorpdfstring{VisualWrapper}{VisualWrapper}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_visual_component_a669634bf22ae041b4a9ea8a2d296895b} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_visual_unit_1_1_nested_visual_component}{Visual\+Unit.\+Nested\+Visual\+Component}} Crab\+UI.\+CUIVisual\+Component.\+Visual\+Wrapper\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_visual_component}{Crab\+UI.\+IVisual\+Component}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_visual_component_8cs_source_l00023}{23}} of file \doxymbox{\hyperlink{_c_u_i_visual_component_8cs_source}{CUIVisual\+Component.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \{\ \textcolor{keyword}{get};\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Components/\+CUIVisual\+Component.\+cs\end{DoxyCompactItemize}

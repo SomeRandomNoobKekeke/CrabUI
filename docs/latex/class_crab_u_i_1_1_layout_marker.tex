@@ -1,0 +1,81 @@
+\doxysection{Crab\+UI.\+Layout\+Marker Class Reference}
+\hypertarget{class_crab_u_i_1_1_layout_marker}{}\label{class_crab_u_i_1_1_layout_marker}\index{CrabUI.LayoutMarker@{CrabUI.LayoutMarker}}
+Inheritance diagram for Crab\+UI.\+Layout\+Marker:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_1_1_layout_marker}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+interface \doxymbox{\hyperlink{interface_crab_u_i_1_1_layout_marker_1_1_target}{Target}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_1_1_layout_marker_1_1_pattern}{Pattern}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_layout_marker_a320b2ccc7597b24ca502ebdebc25f1c4}{Mark}} (\doxymbox{\hyperlink{class_crab_u_i_1_1_layout_marker_1_1_pattern}{Pattern}} pattern)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{interface_crab_u_i_1_1_layout_marker_1_1_target}{Target}} \doxymbox{\hyperlink{class_crab_u_i_1_1_layout_marker_a97d180dd6186029d61b247c789766a32}{Host}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_layout_marker_8cs_source_l00013}{13}} of file \doxymbox{\hyperlink{_layout_marker_8cs_source}{Layout\+Marker.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_layout_marker_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_layout_marker_a320b2ccc7597b24ca502ebdebc25f1c4}\index{CrabUI.LayoutMarker@{CrabUI.LayoutMarker}!Mark@{Mark}}
+\index{Mark@{Mark}!CrabUI.LayoutMarker@{CrabUI.LayoutMarker}}
+\doxysubsubsection{\texorpdfstring{Mark()}{Mark()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_layout_marker_a320b2ccc7597b24ca502ebdebc25f1c4} 
+void Crab\+UI.\+Layout\+Marker.\+Mark (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_crab_u_i_1_1_layout_marker_1_1_pattern}{Pattern}}}]{pattern}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_layout_marker_8cs_source_l00025}{25}} of file \doxymbox{\hyperlink{_layout_marker_8cs_source}{Layout\+Marker.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pattern.Empty)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ pattern.MarkFunc(Host);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ Host.NotifyLayoutUpdated();}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_layout_marker_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_layout_marker_a97d180dd6186029d61b247c789766a32}\index{CrabUI.LayoutMarker@{CrabUI.LayoutMarker}!Host@{Host}}
+\index{Host@{Host}!CrabUI.LayoutMarker@{CrabUI.LayoutMarker}}
+\doxysubsubsection{\texorpdfstring{Host}{Host}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_layout_marker_a97d180dd6186029d61b247c789766a32} 
+\doxymbox{\hyperlink{interface_crab_u_i_1_1_layout_marker_1_1_target}{Target}} Crab\+UI.\+Layout\+Marker.\+Host\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_layout_marker_8cs_source_l00023}{23}} of file \doxymbox{\hyperlink{_layout_marker_8cs_source}{Layout\+Marker.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Layouts/\+\+Layout\+Marker/\+Layout\+Marker.\+cs\end{DoxyCompactItemize}

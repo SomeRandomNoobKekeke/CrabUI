@@ -1,0 +1,90 @@
+\doxysection{CUIDebugger.\+Main\+Frame.\+cs}
+\hypertarget{_c_u_i_debugger_8_main_frame_8cs_source}{}\label{_c_u_i_debugger_8_main_frame_8cs_source}\index{ClientProject/ClientSource/CUI/Infrastructure/CUIDebugger/CUIDebugger.MainFrame.cs@{ClientProject/ClientSource/CUI/Infrastructure/CUIDebugger/CUIDebugger.MainFrame.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }System.Runtime.CompilerServices;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00010}00010\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00013}00013\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00014}00014\ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00015}00015\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_debugger}{CUIDebugger}}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00016}00016\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00017}\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_debugger_1_1_main_frame_component}{00017}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }MainFrameComponent\ :\ CUIFrame}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00019}00019\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_pages}{CUIPages}}\ Pages;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00020}00020\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_debugger_1_1_events_page_component}{EventsPageComponent}}\ EventsPage\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00021}00021\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_debugger_1_1_components_page_component}{ComponentsPageComponent}}\ ComponentsPage\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00022}00022\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_debugger_1_1_gates_page_component}{GatesPageComponent}}\ GatesPage\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00024}00024\ \ \ \ \ \ \ \textcolor{keyword}{public}\ MainFrameComponent()\ :\ base()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00025}00025\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ TargetMainComponent\ =\ CUI.TopMain;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ Anchor\ =\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_anchor}{CUIAnchor}}.LeftCenter;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ Background.Color\ =\ \textcolor{keyword}{new}\ Color(0,\ 0,\ 200);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ Absolute\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_null_rect}{CUINullRect}}(w:\ 400,\ h:\ 600);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}]\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_vertical_list}{CUIVerticalList}}()\ \{\ Relative\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_null_rect}{CUINullRect}}(0,\ 0,\ 1,\ 1)\ \};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}handle"{}}]\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_horizontal_list}{CUIHorizontalList}}()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ Background\ =\ \{\ Color\ =\ Color.Blue\ \},}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ FitContent\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_bool2}{CUIBool2}}(\textcolor{keyword}{false},\ \textcolor{keyword}{true}),}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}handle"{}}][\textcolor{stringliteral}{"{}caption"{}}]\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_text_block}{CUITextBlock}}(\textcolor{stringliteral}{"{}Debug"{}})}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ Flex\ =\ 1,}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ TextAnchor\ =\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_anchor}{CUIAnchor}}.LeftCenter,}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}handle"{}}][\textcolor{stringliteral}{"{}close"{}}]\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_close_button}{CUICloseButton}}();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}header"{}}]\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_horizontal_list}{CUIHorizontalList}}()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ Background\ =\ \{\ Color\ =\ \textcolor{keyword}{new}\ Color(0,\ 0,\ 220)\ \},}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ FitContent\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_bool2}{CUIBool2}}(\textcolor{keyword}{false},\ \textcolor{keyword}{true}),}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}header"{}}][\textcolor{stringliteral}{"{}Events"{}}]\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_button}{CUIButton}}(\textcolor{stringliteral}{"{}Events"{}})}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ Flex\ =\ 1,}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ OnMouseDown\ =\ (c,\ e)\ =>\ Pages!.Open(EventsPage),}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}header"{}}][\textcolor{stringliteral}{"{}Components"{}}]\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_button}{CUIButton}}(\textcolor{stringliteral}{"{}Components"{}})}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ OnMouseDown\ =\ (c,\ e)\ =>\ Pages!.Open(ComponentsPage),}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ Flex\ =\ 1,}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}header"{}}][\textcolor{stringliteral}{"{}Gates"{}}]\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_button}{CUIButton}}(\textcolor{stringliteral}{"{}Gates"{}})}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ OnMouseDown\ =\ (c,\ e)\ =>\ Pages!.Open(GatesPage),}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ Flex\ =\ 1,}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}main"{}}]\ =\ Pages\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_pages}{CUIPages}}()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ Flex\ =\ 1,}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ Background\ =\ \{\ Color\ =\ Color.Yellow\ \},}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ IsDebugTool\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00081}00081\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00082}00082\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00083}00083\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_debugger_8_main_frame_8cs_source_l00084}00084\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,131 @@
+\doxysection{Crab\+UIUser.\+E2\+ETest\+Pack.\+Simple\+Settings.\+Micro\+Settings\+Manager Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_simple_settings_1_1_micro_settings_manager}{}\label{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_simple_settings_1_1_micro_settings_manager}\index{CrabUIUser.E2ETestPack.SimpleSettings.MicroSettingsManager@{CrabUIUser.E2ETestPack.SimpleSettings.MicroSettingsManager}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_simple_settings_1_1_micro_settings_manager_a921b47872a93f6d2f376e2ead15ae908}{Set\+Value}} (string key, string value)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_simple_settings_1_1_micro_settings_manager_ad1f765cc8b4eecaed3807ce8f0a41e74}{Print}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static T \doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_simple_settings_1_1_micro_settings_manager_a9a2aa112651a70b62e3a467b88e659c1}{Micro\+Parser$<$ T $>$}} (string raw)
+\item 
+static object \doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_simple_settings_1_1_micro_settings_manager_a34241a4de78ccd124f74b1e8c45b7dcf}{Micro\+Parser}} (string raw, Type T)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Settings \doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_simple_settings_1_1_micro_settings_manager_a2b44e7c9c9d39c939eb22b16937b820f}{Settings}} = new()\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_settings_manager_8cs_source_l00021}{21}} of file \doxymbox{\hyperlink{_settings_manager_8cs_source}{Settings\+Manager.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_simple_settings_1_1_micro_settings_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_simple_settings_1_1_micro_settings_manager_a34241a4de78ccd124f74b1e8c45b7dcf}\index{CrabUIUser.E2ETestPack.SimpleSettings.MicroSettingsManager@{CrabUIUser.E2ETestPack.SimpleSettings.MicroSettingsManager}!MicroParser@{MicroParser}}
+\index{MicroParser@{MicroParser}!CrabUIUser.E2ETestPack.SimpleSettings.MicroSettingsManager@{CrabUIUser.E2ETestPack.SimpleSettings.MicroSettingsManager}}
+\doxysubsubsection{\texorpdfstring{MicroParser()}{MicroParser()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_simple_settings_1_1_micro_settings_manager_a34241a4de78ccd124f74b1e8c45b7dcf} 
+object Crab\+UIUser.\+E2\+ETest\+Pack.\+Simple\+Settings.\+Micro\+Settings\+Manager.\+Micro\+Parser (\begin{DoxyParamCaption}\item[{string}]{raw}{, }\item[{Type}]{T}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_settings_manager_8cs_source_l00026}{26}} of file \doxymbox{\hyperlink{_settings_manager_8cs_source}{Settings\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (T\ ==\ typeof(\textcolor{keywordtype}{string}))\ \textcolor{keywordflow}{return}\ raw;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (T\ ==\ typeof(\textcolor{keywordtype}{int}))\ \textcolor{keywordflow}{return}\ \textcolor{keywordtype}{int}.Parse(raw);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (T\ ==\ typeof(\textcolor{keywordtype}{float}))\ \textcolor{keywordflow}{return}\ \textcolor{keywordtype}{float}.Parse(raw);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_simple_settings_1_1_micro_settings_manager_a9a2aa112651a70b62e3a467b88e659c1}\index{CrabUIUser.E2ETestPack.SimpleSettings.MicroSettingsManager@{CrabUIUser.E2ETestPack.SimpleSettings.MicroSettingsManager}!MicroParser$<$ T $>$@{MicroParser$<$ T $>$}}
+\index{MicroParser$<$ T $>$@{MicroParser$<$ T $>$}!CrabUIUser.E2ETestPack.SimpleSettings.MicroSettingsManager@{CrabUIUser.E2ETestPack.SimpleSettings.MicroSettingsManager}}
+\doxysubsubsection{\texorpdfstring{MicroParser$<$ T $>$()}{MicroParser< T >()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_simple_settings_1_1_micro_settings_manager_a9a2aa112651a70b62e3a467b88e659c1} 
+T Crab\+UIUser.\+E2\+ETest\+Pack.\+Simple\+Settings.\+Micro\+Settings\+Manager.\+Micro\+Parser$<$ T $>$ (\begin{DoxyParamCaption}\item[{string}]{raw}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_settings_manager_8cs_source_l00025}{25}} of file \doxymbox{\hyperlink{_settings_manager_8cs_source}{Settings\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ =>\ (T)MicroParser(raw,\ typeof(T));}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_simple_settings_1_1_micro_settings_manager_ad1f765cc8b4eecaed3807ce8f0a41e74}\index{CrabUIUser.E2ETestPack.SimpleSettings.MicroSettingsManager@{CrabUIUser.E2ETestPack.SimpleSettings.MicroSettingsManager}!Print@{Print}}
+\index{Print@{Print}!CrabUIUser.E2ETestPack.SimpleSettings.MicroSettingsManager@{CrabUIUser.E2ETestPack.SimpleSettings.MicroSettingsManager}}
+\doxysubsubsection{\texorpdfstring{Print()}{Print()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_simple_settings_1_1_micro_settings_manager_ad1f765cc8b4eecaed3807ce8f0a41e74} 
+void Crab\+UIUser.\+E2\+ETest\+Pack.\+Simple\+Settings.\+Micro\+Settings\+Manager.\+Print (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_settings_manager_8cs_source_l00043}{43}} of file \doxymbox{\hyperlink{_settings_manager_8cs_source}{Settings\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ Logger.Default.Log(JsonSerializer.Serialize(Settings));}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_simple_settings_1_1_micro_settings_manager_a921b47872a93f6d2f376e2ead15ae908}\index{CrabUIUser.E2ETestPack.SimpleSettings.MicroSettingsManager@{CrabUIUser.E2ETestPack.SimpleSettings.MicroSettingsManager}!SetValue@{SetValue}}
+\index{SetValue@{SetValue}!CrabUIUser.E2ETestPack.SimpleSettings.MicroSettingsManager@{CrabUIUser.E2ETestPack.SimpleSettings.MicroSettingsManager}}
+\doxysubsubsection{\texorpdfstring{SetValue()}{SetValue()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_simple_settings_1_1_micro_settings_manager_a921b47872a93f6d2f376e2ead15ae908} 
+void Crab\+UIUser.\+E2\+ETest\+Pack.\+Simple\+Settings.\+Micro\+Settings\+Manager.\+Set\+Value (\begin{DoxyParamCaption}\item[{string}]{key}{, }\item[{string}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_settings_manager_8cs_source_l00035}{35}} of file \doxymbox{\hyperlink{_settings_manager_8cs_source}{Settings\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (key\ ==\ \textcolor{stringliteral}{"{}String\ Prop"{}})\ Settings.StringProp\ =\ value;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (key\ ==\ \textcolor{stringliteral}{"{}Int\ Prop"{}})\ Settings.IntProp\ =\ MicroParser<int>(value);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (key\ ==\ \textcolor{stringliteral}{"{}Nested\ String\ Prop"{}})\ Settings.Nested.StringProp\ =\ value;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (key\ ==\ \textcolor{stringliteral}{"{}Nested\ Int\ Prop"{}})\ Settings.Nested.IntProp\ =\ MicroParser<int>(value);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_simple_settings_1_1_micro_settings_manager_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_simple_settings_1_1_micro_settings_manager_a2b44e7c9c9d39c939eb22b16937b820f}\index{CrabUIUser.E2ETestPack.SimpleSettings.MicroSettingsManager@{CrabUIUser.E2ETestPack.SimpleSettings.MicroSettingsManager}!Settings@{Settings}}
+\index{Settings@{Settings}!CrabUIUser.E2ETestPack.SimpleSettings.MicroSettingsManager@{CrabUIUser.E2ETestPack.SimpleSettings.MicroSettingsManager}}
+\doxysubsubsection{\texorpdfstring{Settings}{Settings}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_simple_settings_1_1_micro_settings_manager_a2b44e7c9c9d39c939eb22b16937b820f} 
+Settings Crab\+UIUser.\+E2\+ETest\+Pack.\+Simple\+Settings.\+Micro\+Settings\+Manager.\+Settings = new()\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_settings_manager_8cs_source_l00023}{23}} of file \doxymbox{\hyperlink{_settings_manager_8cs_source}{Settings\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+CUITest/\+\+E2\+E/\+\+Test/\+\+Simple\+Settings/\+Settings\+Manager.\+cs\end{DoxyCompactItemize}

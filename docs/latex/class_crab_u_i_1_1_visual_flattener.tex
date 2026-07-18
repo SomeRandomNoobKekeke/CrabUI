@@ -1,0 +1,99 @@
+\doxysection{Crab\+UI.\+Visual\+Flattener Class Reference}
+\hypertarget{class_crab_u_i_1_1_visual_flattener}{}\label{class_crab_u_i_1_1_visual_flattener}\index{CrabUI.VisualFlattener@{CrabUI.VisualFlattener}}
+Inheritance diagram for Crab\+UI.\+Visual\+Flattener:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_1_1_visual_flattener}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_flattener_aab4eef32b8ffe5aa2fea6b4efe88053b}{Flatten}} (\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_visual_component}{IVisual\+Component}} root)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_unit}{Visual\+Unit}} $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_flattener_a9352b8145585f1bf91a7551e47971ef0}{Flat}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_visual_flattener_8cs_source_l00013}{13}} of file \doxymbox{\hyperlink{_visual_flattener_8cs_source}{Visual\+Flattener.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_visual_flattener_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_visual_flattener_aab4eef32b8ffe5aa2fea6b4efe88053b}\index{CrabUI.VisualFlattener@{CrabUI.VisualFlattener}!Flatten@{Flatten}}
+\index{Flatten@{Flatten}!CrabUI.VisualFlattener@{CrabUI.VisualFlattener}}
+\doxysubsubsection{\texorpdfstring{Flatten()}{Flatten()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_visual_flattener_aab4eef32b8ffe5aa2fea6b4efe88053b} 
+void Crab\+UI.\+Visual\+Flattener.\+Flatten (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_visual_component}{IVisual\+Component}}}]{root}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_visual_flattener_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_visual_flattener_8cs_source}{Visual\+Flattener.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ Flat.Clear();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ FlattenRec(IVisualComponent\ component) }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (VisualUnit\ unit\ \textcolor{keywordflow}{in}\ component.VisualSplit())}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (unit)}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ VisualUnit.PrimitiveVisualElement\ primitive:}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Flat.Add(primitive);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ VisualBounds.LeftContextBound\ left:}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Flat.Add(left);}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ VisualBounds.RightContextBound\ right:}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Flat.Add(right);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ VisualUnit.NestedVisualComponent\ nested:}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FlattenRec(nested.Component);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Unexpected\ VisualFlattenerInstruction"{}});}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ FlattenRec(root);}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_visual_flattener_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_visual_flattener_a9352b8145585f1bf91a7551e47971ef0}\index{CrabUI.VisualFlattener@{CrabUI.VisualFlattener}!Flat@{Flat}}
+\index{Flat@{Flat}!CrabUI.VisualFlattener@{CrabUI.VisualFlattener}}
+\doxysubsubsection{\texorpdfstring{Flat}{Flat}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_visual_flattener_a9352b8145585f1bf91a7551e47971ef0} 
+List$<$\doxymbox{\hyperlink{class_crab_u_i_1_1_visual_unit}{Visual\+Unit}}$>$ Crab\+UI.\+Visual\+Flattener.\+Flat = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_visual_flattener_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_visual_flattener_8cs_source}{Visual\+Flattener.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Components/\+\+CUIMain\+Component/\+\+Modules/\+Visual\+Flattener.\+cs\end{DoxyCompactItemize}

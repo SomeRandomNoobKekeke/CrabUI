@@ -1,0 +1,296 @@
+\chapter{Other Concepts }
+\hypertarget{_other_concepts}{}\label{_other_concepts}\index{Other Concepts@{Other Concepts}}
+\label{_other_concepts_md__docs_sources_2_sources_23_01_other_01_concepts}%
+\Hypertarget{_other_concepts_md__docs_sources_2_sources_23_01_other_01_concepts}%
+\hypertarget{_other_concepts_autotoc_md18}{}\doxysection{\texorpdfstring{CUIInfrastructure}{CUIInfrastructure}}\label{_other_concepts_autotoc_md18}
+Most CUI stuff is located in CUICore ~\newline
+ CUICore is passive isolated state machine ~\newline
+ It doesn\textquotesingle{}t know about the game and has to be runned by CUIRunners via handles
+
+There could be various runners, e.\+g. Solo runner runs code in this mod, Master runner scans other mods, test runner can feed it with fake data and concurent runner can run CUICore in a separate thread\hypertarget{_other_concepts_autotoc_md19}{}\doxysubsubsection{\texorpdfstring{Then why are you putting solo runnner in CUI master package?}{Then why are you putting solo runnner in CUI master package?}}\label{_other_concepts_autotoc_md19}
+A eto, bleh.\+gif
+
+Master runner isn\textquotesingle{}t done yet, and there\textquotesingle{}s not much to scan in other packages yet ~\newline
+ Current Solo\+Runner just finds all CUIComponents and ISerializable in assembly that called CUI.\+Start ~\newline
+ Should work from master package too, but it probably won\textquotesingle{}t be able to load textures with relative paths /\+/\+\+TODO
+
+Also data sources are separated from runners
+
+CUICore + CUIRunners + data sources makes CUISetup ~\newline
+ There\textquotesingle{}s one static CUISetup at CUI.\+Setup ~\newline
+ It\textquotesingle{}s initiated at CUI.\+Start() and automatically disposed at plugin.\+Dispose()
+
+CUI.\+Setup is the singleton here, everything else is just pointing to it
+
+CUI and CUICore classes have static members for accessing core and runners ~\newline
+ Why 2? CUI is supposed to be used by you, and CUICore is supposed to be called by stuff from inside CUICore ~\newline
+ Also stuff that calls CUICore assumes that it\textquotesingle{}s already activated\hypertarget{_other_concepts_autotoc_md20}{}\doxysection{\texorpdfstring{Visual\+Components /\+ Visual\+Units}{Visual\+Components /\+ Visual\+Units}}\label{_other_concepts_autotoc_md20}
+Unit of drawing /\+ event handling in CUI is Visual\+Units ~\newline
+
+
+Simple\+Texture, Borders, Text\+Block are Visual\+Units ~\newline
+
+
+Visual\+Components is aggregate for Visual\+Units, it\textquotesingle{}s a base class for CUIComponent and other stuff containing Visual\+Units ~\newline
+ Visual\+Components have Visual\+Split method where they specify how they should be splitted
+
+CUIMain\+Component recursively splits Visual\+Components into a chain of Visual\+Units ~\newline
+ Then it draws them and dispatches events to them ~\newline
+ Host Visual\+Component typically listens to events on its Visual\+Units
+
+Also Visual\+Components can yield Visual\+Bounds in Visual\+Split, they are commands for Chain\+Drawer to change its state e.\+g. change scissor rect, sampler state or apply camera transformation before drawing\hypertarget{_other_concepts_autotoc_md21}{}\doxysection{\texorpdfstring{Serialization (wip, mostly borked)}{Serialization (wip, mostly borked)}}\label{_other_concepts_autotoc_md21}
+All components are serializable to /\+ from xml with 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUIComponent\ CUIComponent.Deserialize(XElement\ element)}
+\DoxyCodeLine{\textcolor{keyword}{public}\ XElement\ Serialize()}
+
+\end{DoxyCode}
+
+
+Also CUIComponents can be accessed as 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ IDictionary<string,\ string>\ As\_StringDictionary\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\textcolor{keyword}{public}\ IDictionary<string,\ object>\ As\_Dictionary\ \{\ \textcolor{keyword}{get};\ \}}
+
+\end{DoxyCode}
+\hypertarget{_other_concepts_autotoc_md22}{}\doxysection{\texorpdfstring{Component States}{Component States}}\label{_other_concepts_autotoc_md22}
+you can save /\+ restore component state with
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ SaveState(\textcolor{keywordtype}{string}\ name)}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ RestoreState(\textcolor{keywordtype}{string}\ name)}
+
+\end{DoxyCode}
+
+
+there\textquotesingle{}s a dict of Memorized\+States behind the scenes and it uses serialization\hypertarget{_other_concepts_autotoc_md23}{}\doxysection{\texorpdfstring{Focus (wip, mostly borked)}{Focus (wip, mostly borked)}}\label{_other_concepts_autotoc_md23}
+In vanilla there\textquotesingle{}s 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ IKeyboardSubscriber\ Barotrauma.GUI.KeyboardDispatcher.Subscriber\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+ new subscriber gains focus, old one loses it
+
+In CUI there\textquotesingle{}s 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ IFocusable?\ CUICore.GlobalFocusTracker.Focused\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+ with the same idea
+
+Focusable components are focused when clicked ~\newline
+ Focused components start recieving keyboard events ~\newline
+
+
+But actually they only request focus ~\newline
+ it\textquotesingle{}s resolved at the end of update cycle because there might be multiple clicked components at once
+
+CUI can steal focus from vanilla Keyboard\+Dispatcher and simulate focus on some dummy IKeyboard\+Subscriber ~\newline
+ It\textquotesingle{}s barely tested and i\textquotesingle{}m sure it\textquotesingle{}s borked ~\newline
+ Also there\textquotesingle{}s a lot of actions in vanilla that just ignores Keyboard\+Dispatcher.\+Subscriber, idk how to block those\hypertarget{_other_concepts_autotoc_md24}{}\doxysection{\texorpdfstring{Sprites /\+ Textures}{Sprites /\+ Textures}}\label{_other_concepts_autotoc_md24}
+CUICore can\textquotesingle{}t load textures on its own, it requests them from CUIRunner ~\newline
+
+
+CUIRunner load them into CUITexture\+Manager, it only loads them once and automatically disposes them later ~\newline
+ All textures have a name, typically a path but you can specify the name you like ~\newline
+ Then you can get them by that name ~\newline
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }CUICore\ \{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUITextureManager\ TextureManager\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{interface\ }CUITextureManager}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ Dictionary<string,\ CUITexture2D>\ LoadedTextures\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\ \ CUITexture2D\ Add(CUITexture2D\ texture,\ \textcolor{keywordtype}{string}\ key);}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{void}\ Clear();}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{void}\ Dispose();}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{void}\ Forget(\textcolor{keywordtype}{string}\ key);}
+\DoxyCodeLine{\ \ CUITexture2D\ Get(\textcolor{keywordtype}{string}\ key);}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ Has(\textcolor{keywordtype}{string}\ key);}
+\DoxyCodeLine{\ \ CUITexture2D\ Load(\textcolor{keywordtype}{string}\ path,\ \textcolor{keywordtype}{string}\ name);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+CUI doesn\textquotesingle{}t use use monogame types directly, CUIRunner wraps them in abstractions, they are mostly similar ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Texture2D\ -\/>\ CUITexture2D}
+\DoxyCodeLine{SpriteBatch\ -\/>\ CUISpriteBatch}
+\DoxyCodeLine{...}
+
+\end{DoxyCode}
+ Why? because now i can intercept draw calls, test them and create textures with no real data
+
+But most stuff uses CUISprites ~\newline
+ CUISprites is another wrapper around CUITexture2D with additional info 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ record\ CUISprite(CUITexture2D\ texture)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUISprite\ White\ =>\ \textcolor{keyword}{new}\ CUISprite(CUITexture2D.White);}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUISprite\ BaroDev\ =>\ \textcolor{keyword}{new}\ CUISprite(CUICore.TextureManager.Get(\textcolor{stringliteral}{"{}BaroDev"{}}));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUISprite\ Load(\textcolor{keywordtype}{string}\ path,\ \textcolor{keywordtype}{string}\ key\ =\ \textcolor{keyword}{null});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ CUITexture2D\ Texture\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ Rectangle?\ SourceRectangle\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ Color\ Color\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ Color.White;\ \textcolor{comment}{//\ !!!}}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ Rotation\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ 0.0f;}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ Vector2\ Origin\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ Vector2.Zero;}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ SpriteEffects\ Effects\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ SpriteEffects.None;}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ LayerDepth\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ 0.0f;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ Color[]\ Data\ =>\ ShouldBufferData\ ?\ DataBuffer\ :\ Texture.Data;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{_other_concepts_autotoc_md25}{}\doxysection{\texorpdfstring{Styles and palettes (wip, mostly borked)}{Styles and palettes (wip, mostly borked)}}\label{_other_concepts_autotoc_md25}
+ICUIStyle is something that can be applied to component and change its state ~\newline
+ It can be a function, a dict of props or xml prefab ~\newline
+
+
+Many CUIComponent types have attached Default\+Styles ~\newline
+ All CUIComponent scanned on CUI.\+Start() and default styles from lineage of CUIComponents are combined in CUIStyle\+Pipelines ~\newline
+ Which then applied on component creation
+
+There\textquotesingle{}s also CUIPalettes, they are dicts of typically used colors, sizes etc ~\newline
+ There\textquotesingle{}s global Primary, Secondary palettes in CUICore.\+Styles and components can have personal palettes
+
+Styles typically use values from component palette ~\newline
+
+
+CUIStyle\+Pipelines and palettes are reactive, so changin styles or palette will reaplly CUIStyle\+Pipelines
+
+So if you need some props to be resistant to palette changes put them in personal styles\hypertarget{_other_concepts_autotoc_md26}{}\doxysection{\texorpdfstring{Animations}{Animations}}\label{_other_concepts_autotoc_md26}
+All animations in CUI are based on objects Animation\+Core
+
+Animation\+Core is passive state machine, it has tons of settings, exposes Lambda \+[0..1]\+ and can be updated manually or by CUICore.\+Animation\+Player
+
+There\textquotesingle{}s tons of props, read api when i make them
+
+There\textquotesingle{}s also yped\+Animation$<$\+T$>$ that can animate typed values 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{class\ }TypedAnimation<T>\ :\ AnimationCore}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ T\ StartValue\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ T\ EndValue\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\ \ \textcolor{keyword}{private}\ Func<T,\ T,\ double,\ T>\ LerpFunc;}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ T\ Value\ =>\ LerpFunc(StartValue,\ EndValue,\ Lambda);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<T>\ Changed;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Currently all animations are external, so you have to animate some value and then manually update some prop on component ~\newline
+ There\textquotesingle{}s no Animated\+Prop yet\hypertarget{_other_concepts_autotoc_md27}{}\doxysection{\texorpdfstring{Routable\+Commands}{Routable\+Commands}}\label{_other_concepts_autotoc_md27}
+All CUIComponents can send such Routable\+Commands up and down component tree to communicate with each other 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ record\ RoutableCommand(\textcolor{keywordtype}{string}\ name,\ \textcolor{keywordtype}{object}\ data);}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }CUIComponent}
+\DoxyCodeLine{\ \ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ public\_Commands\_Part\ Commands\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }public\_Commands\_Part\ :\ Part,\ IModule}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ ListenFor(\textcolor{keywordtype}{string}\ name,\ Action<object>\ action);}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ ListenFor<T>(\textcolor{keywordtype}{string}\ name,\ Action<T>\ action);}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ SendDown(\textcolor{keywordtype}{string}\ name,\ \textcolor{keywordtype}{object}\ data\ =\ \textcolor{keyword}{null});}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ SendUp(\textcolor{keywordtype}{string}\ name,\ \textcolor{keywordtype}{object}\ data\ =\ \textcolor{keyword}{null});}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \}}
+
+\end{DoxyCode}
+
+
+Benefits of Routable\+Commands:\+
+\begin{DoxyItemize}
+\item You don\textquotesingle{}t depend on layout, you can rearrange your components and they will still work
+\item You can develop smaller components independenty instead of hardcoding one to use another
+\end{DoxyItemize}
+
+For example CUIClose\+Button emits "{}close"{} event up to the nearest CUIFrame ~\newline
+ When CUIFrame recieves "{}close"{} event it closes ~\newline
+ It doesn\textquotesingle{}t matter where the close button is and i don\textquotesingle{}t have to pass close button to the frame so it could subscribe to its events\hypertarget{_other_concepts_autotoc_md28}{}\doxysection{\texorpdfstring{Debug}{Debug}}\label{_other_concepts_autotoc_md28}
+Most of the time i debug with just CUI.\+Logger, but if it\textquotesingle{}s too complex or i know i\textquotesingle{}ll need the same data later is add Debug\+Nodes
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{class\ }DebugHub\ :\ DebugRelayBase}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ ClearableEvent<DebugEvent>\ Output;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ IDictionary<string,\ DebugGate>\ Gates;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Open(\textcolor{keywordtype}{string}\ type);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Close(\textcolor{keywordtype}{string}\ type);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{class\ }DebugNode<T1>\ :\ DebugNodeBase}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ IsOpen;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ Func<T1,\ string>\ MsgFactory;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Send(T1\ arg1);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ DebugGate\ GlobalGate;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ DebugHub\ Hub;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{private}\ DebugEvent\ EventFactory(T1\ arg1)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ DebugEvent()}
+\DoxyCodeLine{\ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Type\ =\ Type,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Args\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{object}[]\ \{\ arg1\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ Msg\ =\ MsgFactory.Invoke(arg1),}
+\DoxyCodeLine{\ \ \ \ \ \ \};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{class\ }DebugRelay\ :\ DebugRelayBase,\ IDebugRelayTarget}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Map(DebugRelayBase\ next);}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Unmap(DebugRelayBase\ next);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+They\textquotesingle{}re designed to be fast ~\newline
+ They are generic and can accept various objects without transformations ~\newline
+ Node wraps them into Debug\+Events with the message generated by Msg\+Factory and the send that Debug\+Event directly to CUICore.\+Debug\+Hub.\+Output ~\newline
+ But only when the node is open and Debug\+Hub.\+Debug\+Gate is open
+
+Nodes and Debug\+Relays can be routed, but they don\textquotesingle{}t route the data, they only route open/\+close commands ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{CUICore.DebugHub\ <-\/\ CUICore.Main\ <-\/\ deep\ Component\ attached\ to\ CUICore.Main\ <-\/\ modules\ inside\ that\ component\ \ }
+
+\end{DoxyCode}
+
+
+you can open all gates on component with 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ Debug\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ DeepDebug\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ also\ open\ recursively\ on\ all\ children}}
+
+\end{DoxyCode}
+
+
+Then debuggers can listen for Debug\+Events on CUICore.\+Debug\+Hub, there\textquotesingle{}s one in Infrastructure ~\newline
+ /\+/\+\+TODO i probably should move it to CUICore so you could use it too 

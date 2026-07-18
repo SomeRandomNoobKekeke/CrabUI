@@ -1,0 +1,49 @@
+\doxysection{Value\+Lerp\+Funcs.\+cs}
+\hypertarget{_value_lerp_funcs_8cs_source}{}\label{_value_lerp_funcs_8cs_source}\index{ClientProject/ClientSource/CUI/Core/Animations/TypedAnimation/ValueLerpFuncs.cs@{ClientProject/ClientSource/CUI/Core/Animations/TypedAnimation/ValueLerpFuncs.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}};}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00010}00010\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00012}00012\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }ValueLerpFuncs}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00013}00013\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Func<T,\ T,\ double,\ T>\ Get<T>()}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00015}00015\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00016}00016\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Mapping.ContainsKey(typeof(T)))}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00017}00017\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (Func<T,\ T,\ double,\ T>)Mapping[typeof(T)];}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00019}00019\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00021}00021\ \ \ \ \ \ \ CUI.Logger.Warning(\$\textcolor{stringliteral}{"{}ValueLerpFuncs\ doesn't\ have\ [\{typeof(T).Name\}]\ func,\ backing\ to\ default.."{}});}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00022}00022\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Default<T>;}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00023}00023\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Dictionary<Type,\ Delegate>\ Mapping\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00025}00025\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00026}00026\ \ \ \ \ \ \ [typeof(\textcolor{keywordtype}{int})]\ =\ Int,}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00027}00027\ \ \ \ \ \ \ [typeof(\textcolor{keywordtype}{float})]\ =\ Float,}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00028}00028\ \ \ \ \ \ \ [typeof(Color)]\ =\ Color,}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00029}00029\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ T\ Default<T>(T\ value1,\ T\ value2,\ \textcolor{keywordtype}{double}\ lambda)}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00032}00032\ \ \ \ \ \ \ =>\ lambda\ <\ 0.5\ ?\ value1\ :\ value2;}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}\ Float(\textcolor{keywordtype}{float}\ value1,\ \textcolor{keywordtype}{float}\ value2,\ \textcolor{keywordtype}{double}\ lambda)}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00035}00035\ \ \ \ \ \ \ =>\ (float)(value1\ +\ (value2\ -\/\ value1)\ *\ lambda);}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ Int(\textcolor{keywordtype}{int}\ value1,\ \textcolor{keywordtype}{int}\ value2,\ \textcolor{keywordtype}{double}\ lambda)}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00038}00038\ \ \ \ \ \ \ =>\ (int)Math.Round(value1\ +\ (value2\ -\/\ value1)\ *\ lambda);}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Color\ Color(Color\ value1,\ Color\ value2,\ \textcolor{keywordtype}{double}\ lambda)}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00041}00041\ \ \ \ \ \ \ =>\ Microsoft.Xna.Framework.Color.Lerp(value1,\ value2,\ (\textcolor{keywordtype}{float})lambda);}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00042}00042\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_value_lerp_funcs_8cs_source_l00043}00043\ \}}
+
+\end{DoxyCode}

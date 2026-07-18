@@ -1,0 +1,96 @@
+\doxysection{Crab\+UIUser.\+Reverse\+Event\+Subscription Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_reverse_event_subscription}{}\label{class_crab_u_i_user_1_1_reverse_event_subscription}\index{CrabUIUser.ReverseEventSubscription@{CrabUIUser.ReverseEventSubscription}}
+Inheritance diagram for Crab\+UIUser.\+Reverse\+Event\+Subscription:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_reverse_event_subscription}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_reverse_event_subscription_1_1_event_wrapper_base}{Event\+Wrapper\+Base}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_reverse_event_subscription_1_1_event_wrapper-1-g}{Event\+Wrapper$<$ T $>$}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_reverse_event_subscription_a7565b5c47023daf8ab117f8273d3d484}{Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Crab\+UIUser.\+Experiment}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Run} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Event\+Wrapper$<$ int $>$ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_reverse_event_subscription_ad6789015eb56871a6ff64f0f58332303}{event1}} = new()
+\item 
+Event\+Wrapper$<$ string $>$ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_reverse_event_subscription_ac2a84f87caf529ac6c42ebb8936bb26a}{event2}} = new()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_reverse_event_subscription_8cs_source_l00012}{12}} of file \doxymbox{\hyperlink{_reverse_event_subscription_8cs_source}{Reverse\+Event\+Subscription.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_reverse_event_subscription_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_reverse_event_subscription_a7565b5c47023daf8ab117f8273d3d484}\index{CrabUIUser.ReverseEventSubscription@{CrabUIUser.ReverseEventSubscription}!Run@{Run}}
+\index{Run@{Run}!CrabUIUser.ReverseEventSubscription@{CrabUIUser.ReverseEventSubscription}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_reverse_event_subscription_a7565b5c47023daf8ab117f8273d3d484} 
+override void Crab\+UIUser.\+Reverse\+Event\+Subscription.\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_reverse_event_subscription_8cs_source_l00037}{37}} of file \doxymbox{\hyperlink{_reverse_event_subscription_8cs_source}{Reverse\+Event\+Subscription.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ event2.Map(s\ =>\ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}Routing\ \{s\}"{}}));}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ event1.Map((i)\ =>\ event2.Raise(\$\textcolor{stringliteral}{"{}Direct\ [\{i\}]"{}}));\ \textcolor{comment}{//\ Direct}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ event2.Route(event1,\ (\textcolor{keywordtype}{int}\ i)\ =>\ event2.Raise(\$\textcolor{stringliteral}{"{}Reverse\ [\{i\}]"{}}));\ \textcolor{comment}{//\ Reverse}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ event1.Raise(123);}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_crab_u_i_user_1_1_reverse_event_subscription_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_reverse_event_subscription_ad6789015eb56871a6ff64f0f58332303}\index{CrabUIUser.ReverseEventSubscription@{CrabUIUser.ReverseEventSubscription}!event1@{event1}}
+\index{event1@{event1}!CrabUIUser.ReverseEventSubscription@{CrabUIUser.ReverseEventSubscription}}
+\doxysubsubsection{\texorpdfstring{event1}{event1}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_reverse_event_subscription_ad6789015eb56871a6ff64f0f58332303} 
+Event\+Wrapper$<$int$>$ Crab\+UIUser.\+Reverse\+Event\+Subscription.\+event1 = new()}
+
+
+
+Definition at line \doxymbox{\hyperlink{_reverse_event_subscription_8cs_source_l00034}{34}} of file \doxymbox{\hyperlink{_reverse_event_subscription_8cs_source}{Reverse\+Event\+Subscription.\+cs}}.
+
+\Hypertarget{class_crab_u_i_user_1_1_reverse_event_subscription_ac2a84f87caf529ac6c42ebb8936bb26a}\index{CrabUIUser.ReverseEventSubscription@{CrabUIUser.ReverseEventSubscription}!event2@{event2}}
+\index{event2@{event2}!CrabUIUser.ReverseEventSubscription@{CrabUIUser.ReverseEventSubscription}}
+\doxysubsubsection{\texorpdfstring{event2}{event2}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_reverse_event_subscription_ac2a84f87caf529ac6c42ebb8936bb26a} 
+Event\+Wrapper$<$string$>$ Crab\+UIUser.\+Reverse\+Event\+Subscription.\+event2 = new()}
+
+
+
+Definition at line \doxymbox{\hyperlink{_reverse_event_subscription_8cs_source_l00035}{35}} of file \doxymbox{\hyperlink{_reverse_event_subscription_8cs_source}{Reverse\+Event\+Subscription.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Design/\+Reverse\+Event\+Subscription.\+cs\end{DoxyCompactItemize}

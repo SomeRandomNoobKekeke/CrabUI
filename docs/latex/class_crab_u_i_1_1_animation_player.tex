@@ -1,0 +1,103 @@
+\doxysection{Crab\+UI.\+Animation\+Player Class Reference}
+\hypertarget{class_crab_u_i_1_1_animation_player}{}\label{class_crab_u_i_1_1_animation_player}\index{CrabUI.AnimationPlayer@{CrabUI.AnimationPlayer}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_animation_player_a6154b635cba1b9b35792e72f4e36a6e0}{Update}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_animation_player_a56f07a141fa84c797e8a32cbf64a6f2b}{Add\+To\+Running}} (\doxymbox{\hyperlink{class_crab_u_i_1_1_animation_core}{Animation\+Core}} animation)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_animation_player_ac60313b658977b708972e1ed82499232}{Remove\+From\+Running}} (\doxymbox{\hyperlink{class_crab_u_i_1_1_animation_core}{Animation\+Core}} animation)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+double \doxymbox{\hyperlink{class_crab_u_i_1_1_animation_player_ab0bbc2b336abfba9074bc7c9b139553c}{Update\+Step\+Duration}} = Timing.\+Step\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_animation_player_8cs_source_l00011}{11}} of file \doxymbox{\hyperlink{_animation_player_8cs_source}{Animation\+Player.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_animation_player_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_animation_player_a56f07a141fa84c797e8a32cbf64a6f2b}\index{CrabUI.AnimationPlayer@{CrabUI.AnimationPlayer}!AddToRunning@{AddToRunning}}
+\index{AddToRunning@{AddToRunning}!CrabUI.AnimationPlayer@{CrabUI.AnimationPlayer}}
+\doxysubsubsection{\texorpdfstring{AddToRunning()}{AddToRunning()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_animation_player_a56f07a141fa84c797e8a32cbf64a6f2b} 
+void Crab\+UI.\+Animation\+Player.\+Add\+To\+Running (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_crab_u_i_1_1_animation_core}{Animation\+Core}}}]{animation}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_animation_player_8cs_source_l00024}{24}} of file \doxymbox{\hyperlink{_animation_player_8cs_source}{Animation\+Player.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ =>\ RunningAnimations.Add(animation);}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_animation_player_ac60313b658977b708972e1ed82499232}\index{CrabUI.AnimationPlayer@{CrabUI.AnimationPlayer}!RemoveFromRunning@{RemoveFromRunning}}
+\index{RemoveFromRunning@{RemoveFromRunning}!CrabUI.AnimationPlayer@{CrabUI.AnimationPlayer}}
+\doxysubsubsection{\texorpdfstring{RemoveFromRunning()}{RemoveFromRunning()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_animation_player_ac60313b658977b708972e1ed82499232} 
+void Crab\+UI.\+Animation\+Player.\+Remove\+From\+Running (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_crab_u_i_1_1_animation_core}{Animation\+Core}}}]{animation}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_animation_player_8cs_source_l00025}{25}} of file \doxymbox{\hyperlink{_animation_player_8cs_source}{Animation\+Player.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ =>\ RunningAnimations.Remove(animation);}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_animation_player_a6154b635cba1b9b35792e72f4e36a6e0}\index{CrabUI.AnimationPlayer@{CrabUI.AnimationPlayer}!Update@{Update}}
+\index{Update@{Update}!CrabUI.AnimationPlayer@{CrabUI.AnimationPlayer}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_animation_player_a6154b635cba1b9b35792e72f4e36a6e0} 
+void Crab\+UI.\+Animation\+Player.\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_animation_player_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_animation_player_8cs_source}{Animation\+Player.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \ \ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (AnimationCore\ animation\ \textcolor{keywordflow}{in}\ RunningAnimations)}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ animation.Update();}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_animation_player_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_animation_player_ab0bbc2b336abfba9074bc7c9b139553c}\index{CrabUI.AnimationPlayer@{CrabUI.AnimationPlayer}!UpdateStepDuration@{UpdateStepDuration}}
+\index{UpdateStepDuration@{UpdateStepDuration}!CrabUI.AnimationPlayer@{CrabUI.AnimationPlayer}}
+\doxysubsubsection{\texorpdfstring{UpdateStepDuration}{UpdateStepDuration}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_animation_player_ab0bbc2b336abfba9074bc7c9b139553c} 
+double Crab\+UI.\+Animation\+Player.\+Update\+Step\+Duration = Timing.\+Step\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_animation_player_8cs_source_l00013}{13}} of file \doxymbox{\hyperlink{_animation_player_8cs_source}{Animation\+Player.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ Timing.Step;}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Animations/\+Animation\+Player.\+cs\end{DoxyCompactItemize}

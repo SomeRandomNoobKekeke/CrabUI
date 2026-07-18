@@ -1,0 +1,84 @@
+\doxysection{CUIStyle\+Pipeline.\+cs}
+\hypertarget{_c_u_i_style_pipeline_8cs_source}{}\label{_c_u_i_style_pipeline_8cs_source}\index{ClientProject/ClientSource/CUI/Core/Styling/Styles/CUIStylePipeline.cs@{ClientProject/ClientSource/CUI/Core/Styling/Styles/CUIStylePipeline.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00007}00007\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00009}\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_style_pipeline}{00009}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }CUIStylePipeline}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00010}00010\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{private}\ List<ICUIStyle>\ styles\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{public}\ IReadOnlyList<ICUIStyle>\ Styles\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_simple_weak_event}{SimpleWeakEvent}}\ Changed\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Remove(\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_c_u_i_style}{ICUIStyle}}\ style)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00019}00019\ \ \ \ \ \ \ styles.Remove(style);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00020}00020\ \ \ \ \ \ \ Changed.Raise();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00021}00021\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Remove(\textcolor{keywordtype}{string}\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00024}00024\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00025}00025\ \ \ \ \ \ \ styles.RemoveAll(style\ =>\ style.ID\ ==\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00026}00026\ \ \ \ \ \ \ Changed.Raise();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00027}00027\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Remove(CUIStyleCategory\ category)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00030}00030\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00031}00031\ \ \ \ \ \ \ styles.RemoveAll(style\ =>\ style.Category\ ==\ category);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00032}00032\ \ \ \ \ \ \ Changed.Raise();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00033}00033\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Clear()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00036}00036\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00037}00037\ \ \ \ \ \ \ styles.Clear();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00038}00038\ \ \ \ \ \ \ Changed.Raise();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Add(\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_c_u_i_style}{ICUIStyle}}\ style)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00043}00043\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00044}00044\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (styles.Count\ ==\ 0\ ||\ styles.Last().Priority\ >=\ style.Priority)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00045}00045\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ styles.Add(style);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00047}00047\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00048}00048\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00049}00049\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ styles.Add(style);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ Sort();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00052}00052\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00054}00054\ \ \ \ \ \ \ Changed.Raise();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00055}00055\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00057}00057\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Sort()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00058}00058\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00059}00059\ \ \ \ \ \ \ styles.Sort((a,\ b)\ =>\ b.Priority\ -\/\ a.Priority);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00062}00062\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ AddSilent(\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_c_u_i_style}{ICUIStyle}}\ style)\ =>\ styles.Add(style);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00063}00063\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ RemoveSilent(\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_c_u_i_style}{ICUIStyle}}\ style)\ =>\ styles.Remove(style);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00065}00065\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Apply(\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component}{CUIComponent}}\ component)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00066}00066\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00067}00067\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_c_u_i_style}{ICUIStyle}}\ style\ \textcolor{keywordflow}{in}\ styles)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00068}00068\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ style.Apply(component);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00070}00070\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00071}00071\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00073}00073\ \ \ \ \ \textcolor{keyword}{public}\ CUIStylePipeline()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00074}00074\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00075}00075\ \ \ \ \ \ \ Styles\ =\ styles.AsReadOnly();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00076}00076\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00077}00077\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_style_pipeline_8cs_source_l00078}00078\ \}}
+
+\end{DoxyCode}

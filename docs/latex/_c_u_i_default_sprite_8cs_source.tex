@@ -1,0 +1,43 @@
+\doxysection{CUIDefault\+Sprite.\+cs}
+\hypertarget{_c_u_i_default_sprite_8cs_source}{}\label{_c_u_i_default_sprite_8cs_source}\index{ClientProject/ClientSource/CUI/Infrastructure/Graphics Abstractions/CUISprite/CUIDefaultSprite.cs@{ClientProject/ClientSource/CUI/Infrastructure/Graphics Abstractions/CUISprite/CUIDefaultSprite.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework.Graphics;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }System.IO;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00011}00011\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00012}00012\ \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00013}00013\ \textcolor{comment}{\ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00014}00014\ \textcolor{comment}{\ \ ///\ Note:\ all\ of\ this\ is\ cringe,\ idk\ which\ ones\ i\ need,\ what\ looks\ good\ or\ how\ to\ name\ them}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00015}00015\ \textcolor{comment}{\ \ ///\ It's\ volatile,\ don't\ rely\ on\ this\ too\ much}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00016}00016\ \textcolor{comment}{\ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00017}00017\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }CUIDefaultSprite}
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00018}00018\ \ \ \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00019}00019\ \textcolor{comment}{\ \ \ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00020}00020\ \textcolor{comment}{\ \ \ \ ///\ 64x64\ textures\ separated\ by\ 2px\ transparent\ lines\ to\ avoid\ sampler\ artifacts}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00021}00021\ \textcolor{comment}{\ \ \ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUISprite\ AtPos(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00023}00023\ \ \ \ \ \ \ =>\ \textcolor{keyword}{new}\ CUISprite(CUICore.TextureManager.Get(\textcolor{stringliteral}{"{}CUI"{}}))}
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00024}00024\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ SourceRectangle\ =\ \textcolor{keyword}{new}\ Rectangle(1\ +\ 66\ *\ x,\ 1\ +\ 66\ *\ y,\ 64,\ 64)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00026}00026\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUISprite\ Cross\ =>\ AtPos(0,\ 0);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUISprite\ Angle\ =>\ AtPos(1,\ 0);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUISprite\ Vignette\ =>\ AtPos(2,\ 0);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUISprite\ InnerShadow\ =>\ AtPos(3,\ 0);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUISprite\ Convex\ =>\ AtPos(4,\ 0);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUISprite\ Outlined\ =>\ AtPos(4,\ 0);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUISprite\ HorizontalGradient\ =>\ AtPos(2,\ 1);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUISprite\ VerticalGradient\ =>\ AtPos(3,\ 1);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00036}00036\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_default_sprite_8cs_source_l00037}00037\ \}}
+
+\end{DoxyCode}

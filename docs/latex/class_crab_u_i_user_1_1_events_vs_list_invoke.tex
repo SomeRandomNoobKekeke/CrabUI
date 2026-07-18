@@ -1,0 +1,140 @@
+\doxysection{Crab\+UIUser.\+Events\+Vs\+List\+Invoke Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_events_vs_list_invoke}{}\label{class_crab_u_i_user_1_1_events_vs_list_invoke}\index{CrabUIUser.EventsVsListInvoke@{CrabUIUser.EventsVsListInvoke}}
+
+
+Somehow list calls even a bit faster.  
+
+
+Inheritance diagram for Crab\+UIUser.\+Events\+Vs\+List\+Invoke:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_events_vs_list_invoke}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_events_vs_list_invoke_1_1_event_wrapper}{Event\+Wrapper}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_events_vs_list_invoke_a89867ad6391d5ca3958b2d515692e266}{Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Crab\+UIUser.\+Experiment}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Run} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{class_crab_u_i_user_1_1_events_vs_list_invoke_a482c3895a2a16c35dfa6b960f03fb8ab}{value}}
+\item 
+int \doxymbox{\hyperlink{class_crab_u_i_user_1_1_events_vs_list_invoke_a808cfc9b7896369166a282f25a1e25a6}{repeats}} = 1000000
+\item 
+int \doxymbox{\hyperlink{class_crab_u_i_user_1_1_events_vs_list_invoke_aa1411f4759fdb3007745cea013396d63}{event\+Count}} = 100
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Somehow list calls even a bit faster. 
+
+Definition at line \doxymbox{\hyperlink{_events_vs_list_invoke_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_events_vs_list_invoke_8cs_source}{Events\+Vs\+List\+Invoke.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_events_vs_list_invoke_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_events_vs_list_invoke_a89867ad6391d5ca3958b2d515692e266}\index{CrabUIUser.EventsVsListInvoke@{CrabUIUser.EventsVsListInvoke}!Run@{Run}}
+\index{Run@{Run}!CrabUIUser.EventsVsListInvoke@{CrabUIUser.EventsVsListInvoke}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_events_vs_list_invoke_a89867ad6391d5ca3958b2d515692e266} 
+override void Crab\+UIUser.\+Events\+Vs\+List\+Invoke.\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_events_vs_list_invoke_8cs_source_l00029}{29}} of file \doxymbox{\hyperlink{_events_vs_list_invoke_8cs_source}{Events\+Vs\+List\+Invoke.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ Stopwatch\ sw\ =\ \textcolor{keyword}{new}\ Stopwatch();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ List<Action>\ list\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ eventCount;\ i++)}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ list.Add(()\ =>\ value\ =\ 123);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ EventWrapper\ wrapper\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ eventCount;\ i++)}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ wrapper.DoIt\ +=\ ()\ =>\ value\ =\ 123;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ sw.Restart();}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ list.Count;\ j++)}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ list[j].Invoke();}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}list\ calls:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ sw.Restart();}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ wrapper.Raise();}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}event\ calls:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_crab_u_i_user_1_1_events_vs_list_invoke_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_events_vs_list_invoke_aa1411f4759fdb3007745cea013396d63}\index{CrabUIUser.EventsVsListInvoke@{CrabUIUser.EventsVsListInvoke}!eventCount@{eventCount}}
+\index{eventCount@{eventCount}!CrabUIUser.EventsVsListInvoke@{CrabUIUser.EventsVsListInvoke}}
+\doxysubsubsection{\texorpdfstring{eventCount}{eventCount}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_events_vs_list_invoke_aa1411f4759fdb3007745cea013396d63} 
+int Crab\+UIUser.\+Events\+Vs\+List\+Invoke.\+event\+Count = 100}
+
+
+
+Definition at line \doxymbox{\hyperlink{_events_vs_list_invoke_8cs_source_l00021}{21}} of file \doxymbox{\hyperlink{_events_vs_list_invoke_8cs_source}{Events\+Vs\+List\+Invoke.\+cs}}.
+
+\Hypertarget{class_crab_u_i_user_1_1_events_vs_list_invoke_a808cfc9b7896369166a282f25a1e25a6}\index{CrabUIUser.EventsVsListInvoke@{CrabUIUser.EventsVsListInvoke}!repeats@{repeats}}
+\index{repeats@{repeats}!CrabUIUser.EventsVsListInvoke@{CrabUIUser.EventsVsListInvoke}}
+\doxysubsubsection{\texorpdfstring{repeats}{repeats}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_events_vs_list_invoke_a808cfc9b7896369166a282f25a1e25a6} 
+int Crab\+UIUser.\+Events\+Vs\+List\+Invoke.\+repeats = 1000000}
+
+
+
+Definition at line \doxymbox{\hyperlink{_events_vs_list_invoke_8cs_source_l00020}{20}} of file \doxymbox{\hyperlink{_events_vs_list_invoke_8cs_source}{Events\+Vs\+List\+Invoke.\+cs}}.
+
+\Hypertarget{class_crab_u_i_user_1_1_events_vs_list_invoke_a482c3895a2a16c35dfa6b960f03fb8ab}\index{CrabUIUser.EventsVsListInvoke@{CrabUIUser.EventsVsListInvoke}!value@{value}}
+\index{value@{value}!CrabUIUser.EventsVsListInvoke@{CrabUIUser.EventsVsListInvoke}}
+\doxysubsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_events_vs_list_invoke_a482c3895a2a16c35dfa6b960f03fb8ab} 
+int Crab\+UIUser.\+Events\+Vs\+List\+Invoke.\+value}
+
+
+
+Definition at line \doxymbox{\hyperlink{_events_vs_list_invoke_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_events_vs_list_invoke_8cs_source}{Events\+Vs\+List\+Invoke.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Performance/\+Events\+Vs\+List\+Invoke.\+cs\end{DoxyCompactItemize}

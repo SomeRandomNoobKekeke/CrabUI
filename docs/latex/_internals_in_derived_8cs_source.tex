@@ -1,0 +1,97 @@
+\doxysection{Internals\+In\+Derived.\+cs}
+\hypertarget{_internals_in_derived_8cs_source}{}\label{_internals_in_derived_8cs_source}\index{ClientProject/InMemory/Experiments/Design/InternalsInDerived.cs@{ClientProject/InMemory/Experiments/Design/InternalsInDerived.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00008}00008\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i_user}{CrabUIUser}}}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00009}00009\ \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00010}00010\ \textcolor{comment}{\ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00011}00011\ \textcolor{comment}{\ \ ///\ So\ i\ want\ to\ hide\ all\ internal\ stuff\ in\ some\ internal\ object}}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00012}00012\ \textcolor{comment}{\ \ ///\ But\ then\ i'll\ have\ a\ name\ collision\ with\ the\ same\ object\ in\ derived\ classes}}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00013}00013\ \textcolor{comment}{\ \ ///\ Ofc\ i\ can\ generate\ InternalAccess\ objects,\ but\ it\ still\ looks\ like\ cringe}}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00014}00014\ \textcolor{comment}{\ \ ///\ This\ is\ 100\ times\ harder\ than\ just\ protected\ prop\ at\ component\ level}}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00015}00015\ \textcolor{comment}{\ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00016}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_internals_in_derived}{00016}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_internals_in_derived}{InternalsInDerived}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Experiment}}}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00017}00017\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00018}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_internals_in_derived_1_1_component_a}{00018}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }ComponentA}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00019}00019\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00020}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_internals_in_derived_1_1_component_a_1_1_internals}{00020}}\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_internals_in_derived_1_1_component_a_1_1_internals}{Internals}}}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00021}00021\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ PropA\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{stringliteral}{"{}kek"{}};}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00023}00023\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00025}00025\ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_internals_in_derived_1_1_component_a_1_1_internals}{Internals}}\ Internal\_ComponentA\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00026}00026\ \ \ \ \ \ \ \textcolor{keyword}{public}\ PublicInternalAccess\ Internal\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00028}00028\ \ \ \ \ \ \ \textcolor{keyword}{public}\ ComponentA()}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00029}00029\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ Internal\ =\ \textcolor{keyword}{new}(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00031}00031\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00032}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_internals_in_derived_1_1_component_a_1_1_public_internal_access}{00032}}\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }PublicInternalAccess}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00033}00033\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ ComponentA\ Host;}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ PublicInternalAccess(ComponentA\ host)\ =>\ Host\ =\ host;}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ PropA}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Host.Internal\_ComponentA.PropA;}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ Host.Internal\_ComponentA.PropA\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00042}00042\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00045}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_internals_in_derived_1_1_component_b}{00045}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }ComponentB\ :\ ComponentA}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00046}00046\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00047}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_internals_in_derived_1_1_component_b_1_1_internals}{00047}}\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_internals_in_derived_1_1_component_b_1_1_internals}{Internals}}}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00048}00048\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ PropB\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{stringliteral}{"{}lol"{}};}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00050}00050\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00052}00052\ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_internals_in_derived_1_1_component_b_1_1_internals}{Internals}}\ Internal\_ComponentB\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00053}00053\ \ \ \ \ \ \ \textcolor{keyword}{public}\ PublicInternalAccess\ Internal\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00055}00055\ \ \ \ \ \ \ \textcolor{keyword}{public}\ ComponentB()}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00056}00056\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ Internal\ =\ \textcolor{keyword}{new}(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00058}00058\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00060}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_internals_in_derived_1_1_component_b_1_1_public_internal_access}{00060}}\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }PublicInternalAccess}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00061}00061\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ ComponentB\ Host;}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ PublicInternalAccess(ComponentB\ host)\ =>\ Host\ =\ host;}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ PropA}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Host.Internal\_ComponentA.PropA;}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ Host.Internal\_ComponentA.PropA\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ PropB}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Host.Internal\_ComponentB.PropB;}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ Host.Internal\_ComponentB.PropB\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00076}00076\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00077}00077\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00079}00079\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ Run()}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00080}00080\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00081}00081\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_internals_in_derived_1_1_component_a}{ComponentA}}\ componentA\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00082}00082\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_internals_in_derived_1_1_component_b}{ComponentB}}\ componentB\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00084}00084\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_mod}{Mod}}.Logger.Log(componentA.Internal.PropA);}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00085}00085\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_mod}{Mod}}.Logger.Log(componentB.Internal.PropA);}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00086}00086\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_mod}{Mod}}.Logger.Log(componentB.Internal.PropB);}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00089}00089\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00090}00090\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_internals_in_derived_8cs_source_l00091}00091\ \}}
+
+\end{DoxyCode}

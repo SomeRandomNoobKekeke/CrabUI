@@ -1,0 +1,57 @@
+\doxysection{Visual\+Element\+Base.\+cs}
+\hypertarget{_visual_element_base_8cs_source}{}\label{_visual_element_base_8cs_source}\index{ClientProject/ClientSource/CUI/Core/Visual Elements/Elements/VisualElementBase.cs@{ClientProject/ClientSource/CUI/Core/Visual Elements/Elements/VisualElementBase.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}};}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_code_generator}{CUICodeGenerator}};}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00011}00011\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00013}\doxymbox{\hyperlink{class_crab_u_i_1_1_visual_element_base}{00013}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{abstract}\ \textcolor{keyword}{class\ }VisualElementBase\ :\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_mouse_event_consumer}{IMouseEventConsumer}},\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_visual_element}{IVisualElement}}}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00014}00014\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{public}\ VisualElementBase()}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00016}00016\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00017}00017\ \ \ \ \ \ \ VisualWrapper\ =\ \textcolor{keyword}{new}(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00018}00018\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{object}\ HostComponent\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ HostPropName\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ Visible\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{abstract}\ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}\ Rect\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{abstract}\ \textcolor{keywordtype}{void}\ Draw(\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISpriteBatch}}\ spriteBatch);}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ Contains(Vector2\ pos)\ =>\ Rect.Contains(pos);}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_unit_1_1_primitive_visual_element}{VisualUnit.PrimitiveVisualElement}}\ VisualWrapper\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ MouseOver\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ MousePressed\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ IsPointOnTransparentPixel(Vector2\ point)\ =>\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ ConsumeMouseEvents\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00039}00039\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{ClearableEvent<CUIMouseDownEvent>}}\ MouseDown\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{ClearableEvent<CUIMouseUpEvent>}}\ MouseUp\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00041}00041\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{ClearableEvent<CUIMouseClickEvent>}}\ MouseClick\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{ClearableEvent<CUIMouseDoubleClickEvent>}}\ MouseDoubleClick\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{ClearableEvent<CUIMouseMovedEvent>}}\ MouseMoved\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00044}00044\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{ClearableEvent<CUIMouseEnterEvent>}}\ MouseEnter\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00045}00045\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{ClearableEvent<CUIMouseLeaveEvent>}}\ MouseLeave\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{ClearableEvent<CUIMouseOnEvent>}}\ MouseOn\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00047}00047\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{ClearableEvent<CUIMouseOffEvent>}}\ MouseOff\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{ClearableEvent<CUIMouseScrollEvent>}}\ MouseScroll\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00050}00050\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_visual_element_base_8cs_source_l00051}00051\ \}}
+
+\end{DoxyCode}

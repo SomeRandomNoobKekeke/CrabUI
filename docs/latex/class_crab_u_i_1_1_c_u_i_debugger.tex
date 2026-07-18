@@ -1,0 +1,159 @@
+\doxysection{Crab\+UI.\+CUIDebugger Class Reference}
+\hypertarget{class_crab_u_i_1_1_c_u_i_debugger}{}\label{class_crab_u_i_1_1_c_u_i_debugger}\index{CrabUI.CUIDebugger@{CrabUI.CUIDebugger}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_debugger_1_1_components_page_component}{Components\+Page\+Component}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_debugger_1_1_events_page_component}{Events\+Page\+Component}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_debugger_1_1_gates_page_component}{Gates\+Page\+Component}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_debugger_1_1_main_frame_component}{Main\+Frame\+Component}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_debugger_a9c9924c46ff19eeb309147bfecdc79fb}{Init}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_debugger_a57aaf1b4c3efeff36c788b252027b6ae}{Create\+UI}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_debugger_af5855a6dbcda55abde1f7cbf9010c721}{Dispose}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_button}{CUIButton}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_debugger_ad7e32d309d677fa5f7e9c89250c43b9e}{Open\+Button}}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_debugger_1_1_main_frame_component}{Main\+Frame\+Component}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_debugger_abb5abc911899363e8d7fbc4efae7a46c}{Main\+Frame}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_debugger_a3af90e43b383b2846e67807f0c57768b}{Is\+Open}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_debugger_8_components_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_c_u_i_debugger_8_components_8cs_source}{CUIDebugger.\+Components.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_debugger_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_debugger_a57aaf1b4c3efeff36c788b252027b6ae}\index{CrabUI.CUIDebugger@{CrabUI.CUIDebugger}!CreateUI@{CreateUI}}
+\index{CreateUI@{CreateUI}!CrabUI.CUIDebugger@{CrabUI.CUIDebugger}}
+\doxysubsubsection{\texorpdfstring{CreateUI()}{CreateUI()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_debugger_a57aaf1b4c3efeff36c788b252027b6ae} 
+void Crab\+UI.\+CUIDebugger.\+Create\+UI (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_debugger_8cs_source_l00031}{31}} of file \doxymbox{\hyperlink{_c_u_i_debugger_8cs_source}{CUIDebugger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ OpenButton\ =\ \textcolor{keyword}{new}\ CUIButton(\textcolor{stringliteral}{"{}Debug"{}}) }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ Anchor\ =\ CUIAnchor.LeftCenter,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ OnMouseDown\ =\ (c,\ e)\ =>\ IsOpen\ =\ \textcolor{keyword}{true},}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ MainFrame\ =\ \textcolor{keyword}{new}\ MainFrameComponent();}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_debugger_af5855a6dbcda55abde1f7cbf9010c721}\index{CrabUI.CUIDebugger@{CrabUI.CUIDebugger}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!CrabUI.CUIDebugger@{CrabUI.CUIDebugger}}
+\doxysubsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_debugger_af5855a6dbcda55abde1f7cbf9010c721} 
+void Crab\+UI.\+CUIDebugger.\+Dispose (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_debugger_8cs_source_l00042}{42}} of file \doxymbox{\hyperlink{_c_u_i_debugger_8cs_source}{CUIDebugger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00043\ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ OpenButton.RemoveSelf();}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ MainFrame.Close();}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_debugger_a9c9924c46ff19eeb309147bfecdc79fb}\index{CrabUI.CUIDebugger@{CrabUI.CUIDebugger}!Init@{Init}}
+\index{Init@{Init}!CrabUI.CUIDebugger@{CrabUI.CUIDebugger}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_debugger_a9c9924c46ff19eeb309147bfecdc79fb} 
+void Crab\+UI.\+CUIDebugger.\+Init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_debugger_8cs_source_l00025}{25}} of file \doxymbox{\hyperlink{_c_u_i_debugger_8cs_source}{CUIDebugger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ CreateUI();}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ CUI.TopMain[\textcolor{stringliteral}{"{}open\ debug"{}}]\ =\ OpenButton;}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_debugger_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_debugger_abb5abc911899363e8d7fbc4efae7a46c}\index{CrabUI.CUIDebugger@{CrabUI.CUIDebugger}!MainFrame@{MainFrame}}
+\index{MainFrame@{MainFrame}!CrabUI.CUIDebugger@{CrabUI.CUIDebugger}}
+\doxysubsubsection{\texorpdfstring{MainFrame}{MainFrame}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_debugger_abb5abc911899363e8d7fbc4efae7a46c} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_debugger_1_1_main_frame_component}{Main\+Frame\+Component}} Crab\+UI.\+CUIDebugger.\+Main\+Frame}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_debugger_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_c_u_i_debugger_8cs_source}{CUIDebugger.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_c_u_i_debugger_ad7e32d309d677fa5f7e9c89250c43b9e}\index{CrabUI.CUIDebugger@{CrabUI.CUIDebugger}!OpenButton@{OpenButton}}
+\index{OpenButton@{OpenButton}!CrabUI.CUIDebugger@{CrabUI.CUIDebugger}}
+\doxysubsubsection{\texorpdfstring{OpenButton}{OpenButton}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_debugger_ad7e32d309d677fa5f7e9c89250c43b9e} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_button}{CUIButton}} Crab\+UI.\+CUIDebugger.\+Open\+Button}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_debugger_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_c_u_i_debugger_8cs_source}{CUIDebugger.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_debugger_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_debugger_a3af90e43b383b2846e67807f0c57768b}\index{CrabUI.CUIDebugger@{CrabUI.CUIDebugger}!IsOpen@{IsOpen}}
+\index{IsOpen@{IsOpen}!CrabUI.CUIDebugger@{CrabUI.CUIDebugger}}
+\doxysubsubsection{\texorpdfstring{IsOpen}{IsOpen}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_debugger_a3af90e43b383b2846e67807f0c57768b} 
+bool Crab\+UI.\+CUIDebugger.\+Is\+Open\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_debugger_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_c_u_i_debugger_8cs_source}{CUIDebugger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ MainFrame.IsOpen;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ MainFrame.IsOpen\ =\ value;}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Infrastructure/\+\+CUIDebugger/\+CUIDebugger.\+Components.\+cs\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Infrastructure/\+\+CUIDebugger/\+CUIDebugger.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,253 @@
+\doxysection{Crab\+UI.\+Info\+Channel\+Base Class Reference}
+\hypertarget{class_crab_u_i_1_1_info_channel_base}{}\label{class_crab_u_i_1_1_info_channel_base}\index{CrabUI.InfoChannelBase@{CrabUI.InfoChannelBase}}
+Inheritance diagram for Crab\+UI.\+Info\+Channel\+Base:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_crab_u_i_1_1_info_channel_base}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_info_channel_base_aaaa9ac2e0bf4a807056d8295cfafe348}{Add\+Callback}} (Action callback)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_info_channel_base_a33be6dddbfecc89ac0aceb95e03bebe7}{Map}} (Action callback)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_info_channel_base_aaa8a0bb217706fb20aa1e93d40175ef3}{Map}} (\doxymbox{\hyperlink{class_crab_u_i_1_1_info_channel_base}{Info\+Channel\+Base}} channel)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_info_channel_base_a72004881c4ba15e57607e936809b9454}{Route}} (\doxymbox{\hyperlink{class_crab_u_i_1_1_info_channel_base}{Info\+Channel\+Base}} channel)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_info_channel_base_a907ab9609e534a3cfec86c640108aeb6}{Remove\+Callback}} (Action callback)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_info_channel_base_a3ff25445d49ee5d31aa203f3e8e65776}{Send}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Action$<$ \doxymbox{\hyperlink{class_crab_u_i_1_1_info_channel_base}{Info\+Channel\+Base}} $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_info_channel_base_a695f082aac18170cb5c353a351b44208}{On\+Install}}\hspace{0.3cm}{\ttfamily  \+[set]\+}
+\item 
+Func$<$ bool $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_info_channel_base_ae772b1caf1bf7a87bd2310cab90ad738}{Condition}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+Action \doxymbox{\hyperlink{class_crab_u_i_1_1_info_channel_base_a7b699c878b61c0b66288d6f09c6faca9}{On\+Send}}\hspace{0.3cm}{\ttfamily  \+[set]\+}
+\item 
+Action \doxymbox{\hyperlink{class_crab_u_i_1_1_info_channel_base_a4554d037704598c58c5e1529c942a534}{Mapping}}\hspace{0.3cm}{\ttfamily  \+[set]\+}
+\item 
+IEnumerable$<$ Action $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_info_channel_base_ab5b609e798e58ffa201c2a6969e1502b}{Map\+List}}\hspace{0.3cm}{\ttfamily  \+[set]\+}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \doxymbox{\hyperlink{class_crab_u_i_1_1_info_channel_core}{Crab\+UI.\+Info\+Channel\+Core}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_info_channel_core_a42c5fa6c3af8229f20b900422d644686}{Open}} = true\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+Action \doxymbox{\hyperlink{class_crab_u_i_1_1_info_channel_base_a6f307c3a43be0177f6a5b3f672bc2e55}{Send\+Event}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_info_channel_base_8cs_source_l00009}{9}} of file \doxymbox{\hyperlink{_info_channel_base_8cs_source}{Info\+Channel\+Base.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_info_channel_base_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_info_channel_base_aaaa9ac2e0bf4a807056d8295cfafe348}\index{CrabUI.InfoChannelBase@{CrabUI.InfoChannelBase}!AddCallback@{AddCallback}}
+\index{AddCallback@{AddCallback}!CrabUI.InfoChannelBase@{CrabUI.InfoChannelBase}}
+\doxysubsubsection{\texorpdfstring{AddCallback()}{AddCallback()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_info_channel_base_aaaa9ac2e0bf4a807056d8295cfafe348} 
+void Crab\+UI.\+Info\+Channel\+Base.\+Add\+Callback (\begin{DoxyParamCaption}\item[{Action}]{callback}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_info_channel_base_8cs_source_l00014}{14}} of file \doxymbox{\hyperlink{_info_channel_base_8cs_source}{Info\+Channel\+Base.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ =>\ SendEvent\ +=\ callback;}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_info_channel_base_a33be6dddbfecc89ac0aceb95e03bebe7}\index{CrabUI.InfoChannelBase@{CrabUI.InfoChannelBase}!Map@{Map}}
+\index{Map@{Map}!CrabUI.InfoChannelBase@{CrabUI.InfoChannelBase}}
+\doxysubsubsection{\texorpdfstring{Map()}{Map()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_info_channel_base_a33be6dddbfecc89ac0aceb95e03bebe7} 
+void Crab\+UI.\+Info\+Channel\+Base.\+Map (\begin{DoxyParamCaption}\item[{Action}]{callback}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_info_channel_base_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_info_channel_base_8cs_source}{Info\+Channel\+Base.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ =>\ SendEvent\ +=\ callback;}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_info_channel_base_aaa8a0bb217706fb20aa1e93d40175ef3}\index{CrabUI.InfoChannelBase@{CrabUI.InfoChannelBase}!Map@{Map}}
+\index{Map@{Map}!CrabUI.InfoChannelBase@{CrabUI.InfoChannelBase}}
+\doxysubsubsection{\texorpdfstring{Map()}{Map()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_info_channel_base_aaa8a0bb217706fb20aa1e93d40175ef3} 
+void Crab\+UI.\+Info\+Channel\+Base.\+Map (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_crab_u_i_1_1_info_channel_base}{Info\+Channel\+Base}}}]{channel}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_info_channel_base_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_info_channel_base_8cs_source}{Info\+Channel\+Base.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ =>\ AddCallback(()\ =>\ channel.Send());}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_info_channel_base_a907ab9609e534a3cfec86c640108aeb6}\index{CrabUI.InfoChannelBase@{CrabUI.InfoChannelBase}!RemoveCallback@{RemoveCallback}}
+\index{RemoveCallback@{RemoveCallback}!CrabUI.InfoChannelBase@{CrabUI.InfoChannelBase}}
+\doxysubsubsection{\texorpdfstring{RemoveCallback()}{RemoveCallback()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_info_channel_base_a907ab9609e534a3cfec86c640108aeb6} 
+void Crab\+UI.\+Info\+Channel\+Base.\+Remove\+Callback (\begin{DoxyParamCaption}\item[{Action}]{callback}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_info_channel_base_8cs_source_l00020}{20}} of file \doxymbox{\hyperlink{_info_channel_base_8cs_source}{Info\+Channel\+Base.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ =>\ SendEvent\ -\/=\ callback;}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_info_channel_base_a72004881c4ba15e57607e936809b9454}\index{CrabUI.InfoChannelBase@{CrabUI.InfoChannelBase}!Route@{Route}}
+\index{Route@{Route}!CrabUI.InfoChannelBase@{CrabUI.InfoChannelBase}}
+\doxysubsubsection{\texorpdfstring{Route()}{Route()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_info_channel_base_a72004881c4ba15e57607e936809b9454} 
+void Crab\+UI.\+Info\+Channel\+Base.\+Route (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_crab_u_i_1_1_info_channel_base}{Info\+Channel\+Base}}}]{channel}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_info_channel_base_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_info_channel_base_8cs_source}{Info\+Channel\+Base.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ =>\ channel.AddCallback(Send);}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_info_channel_base_a3ff25445d49ee5d31aa203f3e8e65776}\index{CrabUI.InfoChannelBase@{CrabUI.InfoChannelBase}!Send@{Send}}
+\index{Send@{Send}!CrabUI.InfoChannelBase@{CrabUI.InfoChannelBase}}
+\doxysubsubsection{\texorpdfstring{Send()}{Send()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_info_channel_base_a3ff25445d49ee5d31aa203f3e8e65776} 
+void Crab\+UI.\+Info\+Channel\+Base.\+Send (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_info_channel_base_8cs_source_l00023}{23}} of file \doxymbox{\hyperlink{_info_channel_base_8cs_source}{Info\+Channel\+Base.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Open\ \&\&\ (Condition\ is\ \textcolor{keyword}{null}\ ||\ Condition.Invoke()))\ SendEvent?.Invoke();}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_info_channel_base_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_info_channel_base_ae772b1caf1bf7a87bd2310cab90ad738}\index{CrabUI.InfoChannelBase@{CrabUI.InfoChannelBase}!Condition@{Condition}}
+\index{Condition@{Condition}!CrabUI.InfoChannelBase@{CrabUI.InfoChannelBase}}
+\doxysubsubsection{\texorpdfstring{Condition}{Condition}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_info_channel_base_ae772b1caf1bf7a87bd2310cab90ad738} 
+Func$<$bool$>$ Crab\+UI.\+Info\+Channel\+Base.\+Condition\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_info_channel_base_8cs_source_l00012}{12}} of file \doxymbox{\hyperlink{_info_channel_base_8cs_source}{Info\+Channel\+Base.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_info_channel_base_ab5b609e798e58ffa201c2a6969e1502b}\index{CrabUI.InfoChannelBase@{CrabUI.InfoChannelBase}!MapList@{MapList}}
+\index{MapList@{MapList}!CrabUI.InfoChannelBase@{CrabUI.InfoChannelBase}}
+\doxysubsubsection{\texorpdfstring{MapList}{MapList}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_info_channel_base_ab5b609e798e58ffa201c2a6969e1502b} 
+IEnumerable$<$Action$>$ Crab\+UI.\+Info\+Channel\+Base.\+Map\+List\hspace{0.3cm}{\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_info_channel_base_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_info_channel_base_8cs_source}{Info\+Channel\+Base.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \{\ \textcolor{keyword}{set}\ \{\ \textcolor{keywordflow}{foreach}\ (var\ map\ \textcolor{keywordflow}{in}\ value)\ Map(map);\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_info_channel_base_a4554d037704598c58c5e1529c942a534}\index{CrabUI.InfoChannelBase@{CrabUI.InfoChannelBase}!Mapping@{Mapping}}
+\index{Mapping@{Mapping}!CrabUI.InfoChannelBase@{CrabUI.InfoChannelBase}}
+\doxysubsubsection{\texorpdfstring{Mapping}{Mapping}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_info_channel_base_a4554d037704598c58c5e1529c942a534} 
+Action Crab\+UI.\+Info\+Channel\+Base.\+Mapping\hspace{0.3cm}{\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_info_channel_base_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_info_channel_base_8cs_source}{Info\+Channel\+Base.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{\ \textcolor{keyword}{set}\ \{\ Map(value);\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_info_channel_base_a695f082aac18170cb5c353a351b44208}\index{CrabUI.InfoChannelBase@{CrabUI.InfoChannelBase}!OnInstall@{OnInstall}}
+\index{OnInstall@{OnInstall}!CrabUI.InfoChannelBase@{CrabUI.InfoChannelBase}}
+\doxysubsubsection{\texorpdfstring{OnInstall}{OnInstall}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_info_channel_base_a695f082aac18170cb5c353a351b44208} 
+Action$<$\doxymbox{\hyperlink{class_crab_u_i_1_1_info_channel_base}{Info\+Channel\+Base}}$>$ Crab\+UI.\+Info\+Channel\+Base.\+On\+Install\hspace{0.3cm}{\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_info_channel_base_8cs_source_l00011}{11}} of file \doxymbox{\hyperlink{_info_channel_base_8cs_source}{Info\+Channel\+Base.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \{\ \textcolor{keyword}{set}\ \{\ value?.Invoke(\textcolor{keyword}{this});\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_info_channel_base_a7b699c878b61c0b66288d6f09c6faca9}\index{CrabUI.InfoChannelBase@{CrabUI.InfoChannelBase}!OnSend@{OnSend}}
+\index{OnSend@{OnSend}!CrabUI.InfoChannelBase@{CrabUI.InfoChannelBase}}
+\doxysubsubsection{\texorpdfstring{OnSend}{OnSend}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_info_channel_base_a7b699c878b61c0b66288d6f09c6faca9} 
+Action Crab\+UI.\+Info\+Channel\+Base.\+On\+Send\hspace{0.3cm}{\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_info_channel_base_8cs_source_l00013}{13}} of file \doxymbox{\hyperlink{_info_channel_base_8cs_source}{Info\+Channel\+Base.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \{\ \textcolor{keyword}{set}\ \{\ AddCallback(value);\ \}\ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-event-members}
+\Hypertarget{class_crab_u_i_1_1_info_channel_base_doc-event-members}
+\doxysubsection{Event Documentation}
+\Hypertarget{class_crab_u_i_1_1_info_channel_base_a6f307c3a43be0177f6a5b3f672bc2e55}\index{CrabUI.InfoChannelBase@{CrabUI.InfoChannelBase}!SendEvent@{SendEvent}}
+\index{SendEvent@{SendEvent}!CrabUI.InfoChannelBase@{CrabUI.InfoChannelBase}}
+\doxysubsubsection{\texorpdfstring{SendEvent}{SendEvent}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_info_channel_base_a6f307c3a43be0177f6a5b3f672bc2e55} 
+Action Crab\+UI.\+Info\+Channel\+Base.\+Send\+Event\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_info_channel_base_8cs_source_l00022}{22}} of file \doxymbox{\hyperlink{_info_channel_base_8cs_source}{Info\+Channel\+Base.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+Libs/\+\+Info\+Channel/\+Info\+Channel\+Base.\+cs\end{DoxyCompactItemize}

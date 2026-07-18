@@ -1,0 +1,88 @@
+\doxysection{CUIVerticallist.\+cs}
+\hypertarget{_c_u_i_verticallist_8cs_source}{}\label{_c_u_i_verticallist_8cs_source}\index{ClientProject/ClientSource/CUI/Core/Components/CUIVerticalList/CUIVerticallist.cs@{ClientProject/ClientSource/CUI/Core/Components/CUIVerticalList/CUIVerticallist.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Collections.ObjectModel;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_code_generator}{CUICodeGenerator}};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00011}00011\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00013}00013\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_vertical_list}{CUIVerticalList}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component}{CUIComponent}},\ IComponent}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00014}00014\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ InitStyle()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00016}00016\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00017}00017\ \ \ \ \ \ \ base.InitStyle();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00018}00018\ \ \ \ \ \ \ CullChildren\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00019}00019\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Clear()\ =>\ Children.Clear();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Add(CUIComponent\ child)\ =>\ Children.Add(child);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00024}00024\ \ \ \ \ [CUISerializableProp]}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ Scrollable\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00026}00026\ \ \ \ \ [CUISerializableProp]}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ TopGap\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ BottomGap\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00030}00030\ \ \ \ \ \textcolor{comment}{//FIXME\ doens't\ work\ with\ CUIDirection.Reverse}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ Scroll}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00032}00032\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00033}00033\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ ChildrenOffset.Y;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00034}00034\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00035}00035\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Scrollable)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ ChildrenOffset\ =\ ChildrenOffset\ with\ \{\ Y\ =\ value\ \};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00038}00038\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00041}00041\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keywordtype}{void}\ UpdateChildrenOffsetBounds(\textcolor{keywordtype}{float}\ totalChildrenHeight)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00042}00042\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00043}00043\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Direction\ ==\ CUIDirection.Straight)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00044}00044\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ LayoutProps.ChildrenOffset.Bounds\ =\ \textcolor{keyword}{new}\ CUIBoundaries(}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ minX:\ 0,}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ maxX:\ 0,}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ minY:\ Math.Min(Rect.Height\ -\/\ totalChildrenHeight\ -\/\ BottomGap,\ 0),}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ maxY:\ TopGap}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00051}00051\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00052}00052\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00053}00053\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ LayoutProps.ChildrenOffset.Bounds\ =\ \textcolor{keyword}{new}\ CUIBoundaries(}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ minX:\ 0,}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ maxX:\ 0,}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ minY:\ -\/TopGap,}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ maxY:\ -\/Math.Min(Rect.Height\ -\/\ totalChildrenHeight\ -\/\ BottomGap,\ 0)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00060}00060\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00061}00061\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00063}00063\ \ \ \ \ \textcolor{keyword}{protected}\ CUIVerticalListLayout\ ListLayout;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00065}00065\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ ScrollHandle(CUIComponent\ c,\ CUIMouseScrollEvent\ e)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00066}00066\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00067}00067\ \ \ \ \ \ \ Scroll\ +=\ e.Scroll;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00068}00068\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00070}00070\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ SetupLayout()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00071}00071\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00072}00072\ \ \ \ \ \ \ ListLayout\ =\ \textcolor{keyword}{new}\ CUIVerticalListLayout();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00073}00073\ \ \ \ \ \ \ Layout\ =\ ListLayout;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00074}00074\ \ \ \ \ \ \ Layout.ConnectTo(\textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_vertical_list_1_1_c_u_i_vertical_list_layout___host___adapter___part}{CUIVerticalListLayout\_Host\_Adapter\_Part}}()\ \{\ Self\ =\ \textcolor{keyword}{this}\ \});}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00075}00075\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00077}00077\ \ \ \ \ \textcolor{keyword}{public}\ CUIVerticalList()\ :\ base()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00078}00078\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00079}00079\ \ \ \ \ \ \ MouseScroll\ +=\ ScrollHandle;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00080}00080\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00081}00081\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_verticallist_8cs_source_l00082}00082\ \}}
+
+\end{DoxyCode}

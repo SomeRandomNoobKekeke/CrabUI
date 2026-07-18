@@ -1,0 +1,254 @@
+\doxysection{Crab\+UIUser.\+Mod Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_mod}{}\label{class_crab_u_i_user_1_1_mod}\index{CrabUIUser.Mod@{CrabUIUser.Mod}}
+Inheritance diagram for Crab\+UIUser.\+Mod:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_mod}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_mod_a6066442118c2057c555635c4a6806f23}{Experiment}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_mod_a98a19a3035be281fefdbfe7c53e762b6}{Initialize}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_mod_a1145719acc87aea67d776608a66c2b9f}{On\+Load\+Completed}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_mod_ae0415c6218a4728424372ec11ddb8688}{Pre\+Init\+Patching}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_mod_a67d138f9160e04abea5890d13b348764}{Dispose}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{class_crab_u_i_user_1_1_mod}{Mod}} \doxymbox{\hyperlink{class_crab_u_i_user_1_1_mod_a53dc9138346ff846021dc515c09c97f2}{Instance}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static Logger \doxymbox{\hyperlink{class_crab_u_i_user_1_1_mod_a009686e495e84d77331079a2a0ca339a}{Logger}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+CUIDebugger \doxymbox{\hyperlink{class_crab_u_i_user_1_1_mod_a4873c00f0342231a972c1001c9dc526d}{CUIDebugger}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+MGDebug\+Tool \doxymbox{\hyperlink{class_crab_u_i_user_1_1_mod_aa3e7ec1b60a44105da0c3848c2fd8c77}{MGDebug\+Tool}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+CUITest \doxymbox{\hyperlink{class_crab_u_i_user_1_1_mod_a26f0f3697d9e245b7d2e6bdc81aa7440}{CUITest}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_experiment_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_experiment_8cs_source}{Experiment.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_mod_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_mod_a67d138f9160e04abea5890d13b348764}\index{CrabUIUser.Mod@{CrabUIUser.Mod}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!CrabUIUser.Mod@{CrabUIUser.Mod}}
+\doxysubsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_mod_a67d138f9160e04abea5890d13b348764} 
+void Crab\+UIUser.\+Mod.\+Dispose (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_mod_8cs_source_l00061}{61}} of file \doxymbox{\hyperlink{_mod_8cs_source}{Mod.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00062\ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ Instance\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ UTestCommands.RemoveCommands();}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ CUIDebugger.Dispose();}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ MGDebugTool.Dispose();}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ CUITest.Dispose();}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_mod_a6066442118c2057c555635c4a6806f23}\index{CrabUIUser.Mod@{CrabUIUser.Mod}!Experiment@{Experiment}}
+\index{Experiment@{Experiment}!CrabUIUser.Mod@{CrabUIUser.Mod}}
+\doxysubsubsection{\texorpdfstring{Experiment()}{Experiment()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_mod_a6066442118c2057c555635c4a6806f23} 
+void Crab\+UIUser.\+Mod.\+Experiment (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_experiment_8cs_source_l00021}{21}} of file \doxymbox{\hyperlink{_experiment_8cs_source}{Experiment.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_mod_a98a19a3035be281fefdbfe7c53e762b6}\index{CrabUIUser.Mod@{CrabUIUser.Mod}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!CrabUIUser.Mod@{CrabUIUser.Mod}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_mod_a98a19a3035be281fefdbfe7c53e762b6} 
+void Crab\+UIUser.\+Mod.\+Initialize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_mod_8cs_source_l00027}{27}} of file \doxymbox{\hyperlink{_mod_8cs_source}{Mod.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ Instance\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ModStorage.Has(\textcolor{stringliteral}{"{}ReloadRequest"{}}))\ \{\ \textcolor{keywordflow}{return};\ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ Logger.Log(\$\textcolor{stringliteral}{"{}Compiled\ somehow"{}});}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ CUI.Start();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ CUICore.TextureManager.Load(\textcolor{stringliteral}{"{}Assets/PNG/For\ testing/Test\ Chamber\ Background.png"{}},\ \textcolor{stringliteral}{"{}Test\ Chamber\ Background"{}});}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ CUICore.TextureManager.Load(\textcolor{stringliteral}{"{}Assets/PNG/For\ testing/Icons.png"{}},\ \textcolor{stringliteral}{"{}Test\ Icons"{}});}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ UTestCommands.AddCommands();}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ CUITest\ =\ \textcolor{keyword}{new}\ CUITest();}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ CUITest.Init();}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ CUIDebugger.Init();}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ MGDebugTool.Init();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Utils.PrintAllHarmonyPatches();}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ CUIPalette.Preview();}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ Experiment();}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)\ \{\ Logger.Error(e);\ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_mod_a1145719acc87aea67d776608a66c2b9f}\index{CrabUIUser.Mod@{CrabUIUser.Mod}!OnLoadCompleted@{OnLoadCompleted}}
+\index{OnLoadCompleted@{OnLoadCompleted}!CrabUIUser.Mod@{CrabUIUser.Mod}}
+\doxysubsubsection{\texorpdfstring{OnLoadCompleted()}{OnLoadCompleted()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_mod_a1145719acc87aea67d776608a66c2b9f} 
+void Crab\+UIUser.\+Mod.\+On\+Load\+Completed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_mod_8cs_source_l00058}{58}} of file \doxymbox{\hyperlink{_mod_8cs_source}{Mod.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00058\ \{\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_mod_ae0415c6218a4728424372ec11ddb8688}\index{CrabUIUser.Mod@{CrabUIUser.Mod}!PreInitPatching@{PreInitPatching}}
+\index{PreInitPatching@{PreInitPatching}!CrabUIUser.Mod@{CrabUIUser.Mod}}
+\doxysubsubsection{\texorpdfstring{PreInitPatching()}{PreInitPatching()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_mod_ae0415c6218a4728424372ec11ddb8688} 
+void Crab\+UIUser.\+Mod.\+Pre\+Init\+Patching (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_mod_8cs_source_l00059}{59}} of file \doxymbox{\hyperlink{_mod_8cs_source}{Mod.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00059\ \{\ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_crab_u_i_user_1_1_mod_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_mod_a53dc9138346ff846021dc515c09c97f2}\index{CrabUIUser.Mod@{CrabUIUser.Mod}!Instance@{Instance}}
+\index{Instance@{Instance}!CrabUIUser.Mod@{CrabUIUser.Mod}}
+\doxysubsubsection{\texorpdfstring{Instance}{Instance}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_mod_a53dc9138346ff846021dc515c09c97f2} 
+\doxymbox{\hyperlink{class_crab_u_i_user_1_1_mod}{Mod}} Crab\+UIUser.\+Mod.\+Instance\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_mod_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_mod_8cs_source}{Mod.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_user_1_1_mod_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_mod_a4873c00f0342231a972c1001c9dc526d}\index{CrabUIUser.Mod@{CrabUIUser.Mod}!CUIDebugger@{CUIDebugger}}
+\index{CUIDebugger@{CUIDebugger}!CrabUIUser.Mod@{CrabUIUser.Mod}}
+\doxysubsubsection{\texorpdfstring{CUIDebugger}{CUIDebugger}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_mod_a4873c00f0342231a972c1001c9dc526d} 
+CUIDebugger Crab\+UIUser.\+Mod.\+CUIDebugger = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_mod_8cs_source_l00023}{23}} of file \doxymbox{\hyperlink{_mod_8cs_source}{Mod.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_mod_a26f0f3697d9e245b7d2e6bdc81aa7440}\index{CrabUIUser.Mod@{CrabUIUser.Mod}!CUITest@{CUITest}}
+\index{CUITest@{CUITest}!CrabUIUser.Mod@{CrabUIUser.Mod}}
+\doxysubsubsection{\texorpdfstring{CUITest}{CUITest}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_mod_a26f0f3697d9e245b7d2e6bdc81aa7440} 
+CUITest Crab\+UIUser.\+Mod.\+CUITest\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_mod_8cs_source_l00025}{25}} of file \doxymbox{\hyperlink{_mod_8cs_source}{Mod.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_mod_a009686e495e84d77331079a2a0ca339a}\index{CrabUIUser.Mod@{CrabUIUser.Mod}!Logger@{Logger}}
+\index{Logger@{Logger}!CrabUIUser.Mod@{CrabUIUser.Mod}}
+\doxysubsubsection{\texorpdfstring{Logger}{Logger}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_mod_a009686e495e84d77331079a2a0ca339a} 
+Logger Crab\+UIUser.\+Mod.\+Logger\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}, {\ttfamily [set]}}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ PrintFilePath\ =\ \textcolor{keyword}{false},}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Definition at line \doxymbox{\hyperlink{_mod_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_mod_8cs_source}{Mod.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ PrintFilePath\ =\ \textcolor{keyword}{false},}
+\DoxyCodeLine{00021\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_mod_aa3e7ec1b60a44105da0c3848c2fd8c77}\index{CrabUIUser.Mod@{CrabUIUser.Mod}!MGDebugTool@{MGDebugTool}}
+\index{MGDebugTool@{MGDebugTool}!CrabUIUser.Mod@{CrabUIUser.Mod}}
+\doxysubsubsection{\texorpdfstring{MGDebugTool}{MGDebugTool}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_mod_aa3e7ec1b60a44105da0c3848c2fd8c77} 
+MGDebug\+Tool Crab\+UIUser.\+Mod.\+MGDebug\+Tool = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_mod_8cs_source_l00024}{24}} of file \doxymbox{\hyperlink{_mod_8cs_source}{Mod.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+Experiment.\+cs\item 
+Client\+Project/\+\+In\+Memory/\+Mod.\+cs\end{DoxyCompactItemize}

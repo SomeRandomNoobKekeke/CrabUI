@@ -1,0 +1,126 @@
+\doxysection{Layout\+Props.\+cs}
+\hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source}{}\label{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source}\index{ClientProject/ClientSource/CUI/Core/Components/CUIComponent/Props/LayoutProps.cs@{ClientProject/ClientSource/CUI/Core/Components/CUIComponent/Props/LayoutProps.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Collections.ObjectModel;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_code_generator}{CUICodeGenerator}};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00010}00010\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00012}00012\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00014}00014\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component}{CUIComponent}}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00015}00015\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{protected}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_layout_props___part}{LayoutProps\_Part}}\ LayoutProps\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00017}\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_layout_props___part}{00017}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_layout_props___part}{LayoutProps\_Part}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_part}{Part}},\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_c_u_i_layout_prop}{ICUILayoutProp}}.IContainer}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00019}00019\ \ \ \ \ \ \ \textcolor{comment}{//\ public\ DebugNode<object,\ string>\ Debug\_LayoutMarked\ \{\ get;\ \}\ =\ new(}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00020}00020\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ DebugCategory.LayoutMarked,\ CUI.DebugHub,}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00021}00021\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ (host,\ propName)\ =>\ \$"{}\{host\}.\{propName\}\ =\ true"{}}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00022}00022\ \ \ \ \ \ \ \textcolor{comment}{//\ );}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00025}00025\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Init()}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00026}00026\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ Absolute.Debug\_ValueSet.Map(Self.DebugRelays[DebugCategory.LayoutPropSet]);}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ Relative.Debug\_ValueSet.Map(Self.DebugRelays[DebugCategory.LayoutPropSet]);}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00029}00029\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00031}00031\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_c_u_i_layout_prop}{ICUILayoutProp}}.\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_c_u_i_layout_prop_1_1_i_container}{IContainer}}.Mark(LayoutMarker.Pattern\ pattern)}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00032}00032\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ Self.LayoutMarker.Mark(pattern);}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00034}00034\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00036}00036\ \ \ \ \ \ \ \textcolor{keyword}{public}\ CUILayoutProp<CUINullRect>\ Absolute\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00037}00037\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ Pattern\ =\ LayoutMarker.Pattern.FromParentAndDown,}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00039}00039\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00041}00041\ \ \ \ \ \ \ \textcolor{keyword}{public}\ CUILayoutProp<CUINullRect>\ AbsoluteMin\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00042}00042\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ Pattern\ =\ LayoutMarker.Pattern.FromParentAndDown,}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00044}00044\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00046}00046\ \ \ \ \ \ \ \textcolor{keyword}{public}\ CUILayoutProp<CUINullRect>\ AbsoluteMax\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00047}00047\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ Pattern\ =\ LayoutMarker.Pattern.FromParentAndDown,}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00049}00049\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00051}00051\ \ \ \ \ \ \ \textcolor{keyword}{public}\ CUILayoutProp<CUINullRect>\ Relative\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00052}00052\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ Pattern\ =\ LayoutMarker.Pattern.FromParentAndDown,}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00054}00054\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00056}00056\ \ \ \ \ \ \ \textcolor{keyword}{public}\ CUILayoutProp<CUINullRect>\ RelativeMin\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00057}00057\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ Pattern\ =\ LayoutMarker.Pattern.FromParentAndDown,}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00059}00059\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00061}00061\ \ \ \ \ \ \ \textcolor{keyword}{public}\ CUILayoutProp<CUINullRect>\ RelativeMax\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00062}00062\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ Pattern\ =\ LayoutMarker.Pattern.FromParentAndDown,}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00064}00064\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00066}00066\ \ \ \ \ \ \ \textcolor{keyword}{public}\ CUILayoutProp<CUINullRect>\ CrossRelative\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00067}00067\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ Pattern\ =\ LayoutMarker.Pattern.FromParentAndDown,}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00069}00069\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00072}00072\ \ \ \ \ \ \ \textcolor{keyword}{public}\ CUILayoutProp<Vector2>\ Anchor\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00073}00073\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ Pattern\ =\ LayoutMarker.Pattern.FromParentAndDown,}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ DefaultValue\ =\ Vector2.Zero,}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00076}00076\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00078}00078\ \ \ \ \ \ \ \textcolor{keyword}{public}\ CUILayoutProp<Vector2?>\ ParentAnchor\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00079}00079\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ Pattern\ =\ LayoutMarker.Pattern.FromParentAndDown,}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00081}00081\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00083}00083\ \ \ \ \ \ \ \textcolor{comment}{//TODO\ wait,\ isn't\ i\ List\ specific\ prop?\ why\ is\ it\ here?}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00084}00084\ \ \ \ \ \ \ \textcolor{keyword}{public}\ CUILayoutProp<CUIDirection>\ Direction\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00085}00085\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ Pattern\ =\ LayoutMarker.Pattern.FromParentAndDown,}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00087}00087\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00089}00089\ \ \ \ \ \ \ \textcolor{keyword}{public}\ CUILayoutProp<float?>\ Flex\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00090}00090\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ Pattern\ =\ LayoutMarker.Pattern.FromParentAndDown,}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00092}00092\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00094}00094\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_layout_vector_prop}{CUILayoutVectorProp}}\ ChildrenOffset\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00095}00095\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ Pattern\ =\ LayoutMarker.Pattern.FromParentAndDown,}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00097}00097\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00099}00099\ \ \ \ \ \ \ \textcolor{keyword}{public}\ CUILayoutProp<Func<CUIRect,\ CUIBoundaries>>\ ChildrenBounds\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00100}00100\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ Pattern\ =\ LayoutMarker.Pattern.FromParentAndDown,}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00102}00102\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00104}00104\ \ \ \ \ \ \ \textcolor{keyword}{public}\ CUILayoutProp<CUIBool2>\ FitContent\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00105}00105\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ Pattern\ =\ LayoutMarker.Pattern.AbsoluteProp,}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00107}00107\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00109}00109\ \ \ \ \ \ \ \textcolor{keyword}{public}\ CUILayoutProp<int>\ GridRow\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00110}00110\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ Pattern\ =\ LayoutMarker.Pattern.FromParentAndDown,}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00112}00112\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00114}00114\ \ \ \ \ \ \ \textcolor{keyword}{public}\ CUILayoutProp<int>\ GridColumn\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00115}00115\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ Pattern\ =\ LayoutMarker.Pattern.FromParentAndDown,}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00117}00117\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00118}00118\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00119}00119\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_component_2_props_2_layout_props_8cs_source_l00120}00120\ \}}
+
+\end{DoxyCode}

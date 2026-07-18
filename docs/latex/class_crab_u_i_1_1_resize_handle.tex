@@ -1,0 +1,488 @@
+\doxysection{Crab\+UI.\+Resize\+Handle Class Reference}
+\hypertarget{class_crab_u_i_1_1_resize_handle}{}\label{class_crab_u_i_1_1_resize_handle}\index{CrabUI.ResizeHandle@{CrabUI.ResizeHandle}}
+Inheritance diagram for Crab\+UI.\+Resize\+Handle:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_crab_u_i_1_1_resize_handle}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_resize_handle_ac9f3536b7c9a0c2087c7c2368f1849ca}{Update\+Rect}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_resize_handle_ae95465bcb7d19f0c5ba3a2bbabbf0147}{Update}} (\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_event}{CUIMouse\+Event}} e)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_resize_handle_a657f4cdbfeadefd992a686d7d95965c5}{Force\+Release}} ()
+\item 
+override IEnumerable$<$ \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_unit}{Visual\+Unit}} $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_resize_handle_a00cffc9d217bebdf838e5891ea109a59}{Visual\+Split}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_visual_component}{Crab\+UI.\+CUIVisual\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+IEnumerable$<$ \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_unit}{Visual\+Unit}} $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_visual_component_a67bc13ad22d62c4655fb775cf6e06c8b}{Visual\+Split}} ()
+\item 
+override string \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_visual_component_a6825a832d3fda7bf8337ad1909b05f02}{To\+String}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_resize_handle_a559dc38ecd93e02c3c8f7303874b596e}{Default\+Size}} = new Vector2(20, 20)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+object \doxymbox{\hyperlink{class_crab_u_i_1_1_resize_handle_a7d6f6a469641c1c9e1653c5e9d91b55c}{Host\+Component}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+string \doxymbox{\hyperlink{class_crab_u_i_1_1_resize_handle_a8bcd9d409f7b8cf635872c6c27b66d45}{Host\+Prop\+Name}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_resizable}{IResizable}} \doxymbox{\hyperlink{class_crab_u_i_1_1_resize_handle_abb75afa41d8e7aead59ee6f5227b5d34}{Host}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_simple_texture}{Simple\+Texture}} \doxymbox{\hyperlink{class_crab_u_i_1_1_resize_handle_a8c16cf8207f45f2acd315ee630a5c862}{Background}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_resize_handle_adb4efface04771832f99f05a5f28af64}{Anchor}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_resize_handle_aa617998fc8be61ec447a8caf57789b13}{Parent\+Anchor}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_resize_handle_a1512c29163fe5a5e7c35c210c9ec49e6}{Static\+Point\+Anchor}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_resize_handle_a30e07af928ea36368c188c7eed60d8f2}{Self\+Anchor}} = new Vector2(1, 1)\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_resize_handle_a1d33ab6aceb6263d37c4fb7484afc174}{Size}} = Default\+Size\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_resize_handle_aa2e09bece59288fe7bc7b5eea0c61b0e}{Displayed}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_resize_handle_ad767465da882308f6eef1b22b4fce097}{Grabbed}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_resize_handle_ac03d7c8a2d85cfa23ccca5f136871423}{Grab\+Point}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_resize_handle_a82965936300da59072a6ede603373911}{Grab\+Offset}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_resize_handle_ac43ae05a4a1a16a95ad2337a883f5a17}{Start\+Self\+Anchor\+Point}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+override \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}} \doxymbox{\hyperlink{class_crab_u_i_1_1_resize_handle_a8fb0e1cfb2e0373c0de0094f23434301}{Rect}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_visual_component}{Crab\+UI.\+CUIVisual\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+static int \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_visual_component_a114f1df2d58591c6c14897a24412d56d}{Max\+ID}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+int \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_visual_component_ad16eab811d16a1eae33d16941f6798fa}{ID}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+string \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_visual_component_aeed60407d44dd66da3fa75551c40303e}{Type\+Name}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_visual_component_a6048aef05d7f978b861988a7d81d0ded}{Rect}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_visual_unit_1_1_nested_visual_component}{Visual\+Unit.\+Nested\+Visual\+Component}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_visual_component_a669634bf22ae041b4a9ea8a2d296895b}{Visual\+Wrapper}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_resize_handle_8cs_source_l00013}{13}} of file \doxymbox{\hyperlink{_resize_handle_8cs_source}{Resize\+Handle.\+cs}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_crab_u_i_1_1_resize_handle_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_crab_u_i_1_1_resize_handle_a629729c6ecde6ed1b5cd372a566d234f}\index{CrabUI.ResizeHandle@{CrabUI.ResizeHandle}!ResizeHandle@{ResizeHandle}}
+\index{ResizeHandle@{ResizeHandle}!CrabUI.ResizeHandle@{CrabUI.ResizeHandle}}
+\doxysubsubsection{\texorpdfstring{ResizeHandle()}{ResizeHandle()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_resize_handle_a629729c6ecde6ed1b5cd372a566d234f} 
+Crab\+UI.\+Resize\+Handle.\+Resize\+Handle (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_resize_handle_8cs_source_l00159}{159}} of file \doxymbox{\hyperlink{_resize_handle_8cs_source}{Resize\+Handle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00160\ \ \ \ \ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ Background.VisualWrapper.HostComponent\ =\ \textcolor{keyword}{this};\ \textcolor{comment}{//\ :AwareDev:}}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ Background.Sprite\ =\ CUIDefaultSprite.Angle;}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \ \ Anchor\ =\ \textcolor{keyword}{new}\ Vector2(1,\ 1);}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ Background.Sprite.Effects\ =\ SpriteEffects.FlipHorizontally;}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ Background.Color\ =\ Color.White;}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \ \ Background.MouseDown.Add(Grab);}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \ \ Background.ConsumeMouseEvents\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00171\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_resize_handle_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_resize_handle_a657f4cdbfeadefd992a686d7d95965c5}\index{CrabUI.ResizeHandle@{CrabUI.ResizeHandle}!ForceRelease@{ForceRelease}}
+\index{ForceRelease@{ForceRelease}!CrabUI.ResizeHandle@{CrabUI.ResizeHandle}}
+\doxysubsubsection{\texorpdfstring{ForceRelease()}{ForceRelease()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_resize_handle_a657f4cdbfeadefd992a686d7d95965c5} 
+void Crab\+UI.\+Resize\+Handle.\+Force\+Release (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_resize_handle_8cs_source_l00146}{146}} of file \doxymbox{\hyperlink{_resize_handle_8cs_source}{Resize\+Handle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00147\ \ \ \ \ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ Grabbed\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ host.HubMouseMoved\ -\/=\ Update;}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ host.HubMouseUp\ -\/=\ Release;}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ host.Release(\textcolor{keyword}{this});}
+\DoxyCodeLine{00152\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_resize_handle_ae95465bcb7d19f0c5ba3a2bbabbf0147}\index{CrabUI.ResizeHandle@{CrabUI.ResizeHandle}!Update@{Update}}
+\index{Update@{Update}!CrabUI.ResizeHandle@{CrabUI.ResizeHandle}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_resize_handle_ae95465bcb7d19f0c5ba3a2bbabbf0147} 
+void Crab\+UI.\+Resize\+Handle.\+Update (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_event}{CUIMouse\+Event}}}]{e}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_resize_handle_8cs_source_l00104}{104}} of file \doxymbox{\hyperlink{_resize_handle_8cs_source}{Resize\+Handle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00105\ \ \ \ \ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ Vector2\ delta\ =\ e.Pos\ -\/\ GrabPoint;}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ Vector2\ SelfAnchorPoint\ =\ StartSelfAnchorPoint\ +\ delta;}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ Resize(SelfAnchorPoint);}
+\DoxyCodeLine{00109\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_resize_handle_ac9f3536b7c9a0c2087c7c2368f1849ca}\index{CrabUI.ResizeHandle@{CrabUI.ResizeHandle}!UpdateRect@{UpdateRect}}
+\index{UpdateRect@{UpdateRect}!CrabUI.ResizeHandle@{CrabUI.ResizeHandle}}
+\doxysubsubsection{\texorpdfstring{UpdateRect()}{UpdateRect()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_resize_handle_ac9f3536b7c9a0c2087c7c2368f1849ca} 
+void Crab\+UI.\+Resize\+Handle.\+Update\+Rect (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_resize_handle_8cs_source_l00076}{76}} of file \doxymbox{\hyperlink{_resize_handle_8cs_source}{Resize\+Handle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00077\ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Host\ is\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ Rect\ =\ \textcolor{keyword}{new}\ CUIRect(Vector2.Zero,\ Size);}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ Rect\ =\ \textcolor{keyword}{new}\ CUIRect(}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ CUIAnchor.ChildPosIn(Host.Rect,\ Anchor,\ Size),}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ Size}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_resize_handle_a00cffc9d217bebdf838e5891ea109a59}\index{CrabUI.ResizeHandle@{CrabUI.ResizeHandle}!VisualSplit@{VisualSplit}}
+\index{VisualSplit@{VisualSplit}!CrabUI.ResizeHandle@{CrabUI.ResizeHandle}}
+\doxysubsubsection{\texorpdfstring{VisualSplit()}{VisualSplit()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_resize_handle_a00cffc9d217bebdf838e5891ea109a59} 
+override IEnumerable$<$ \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_unit}{Visual\+Unit}} $>$ Crab\+UI.\+Resize\+Handle.\+Visual\+Split (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_visual_component}{Crab\+UI.\+IVisual\+Component}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_resize_handle_8cs_source_l00154}{154}} of file \doxymbox{\hyperlink{_resize_handle_8cs_source}{Resize\+Handle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00155\ \ \ \ \ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Displayed)\ yield\ \textcolor{keywordflow}{return}\ Background.VisualWrapper;}
+\DoxyCodeLine{00157\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_crab_u_i_1_1_resize_handle_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_crab_u_i_1_1_resize_handle_a559dc38ecd93e02c3c8f7303874b596e}\index{CrabUI.ResizeHandle@{CrabUI.ResizeHandle}!DefaultSize@{DefaultSize}}
+\index{DefaultSize@{DefaultSize}!CrabUI.ResizeHandle@{CrabUI.ResizeHandle}}
+\doxysubsubsection{\texorpdfstring{DefaultSize}{DefaultSize}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_resize_handle_a559dc38ecd93e02c3c8f7303874b596e} 
+Vector2 Crab\+UI.\+Resize\+Handle.\+Default\+Size = new Vector2(20, 20)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_resize_handle_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_resize_handle_8cs_source}{Resize\+Handle.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_resize_handle_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_resize_handle_adb4efface04771832f99f05a5f28af64}\index{CrabUI.ResizeHandle@{CrabUI.ResizeHandle}!Anchor@{Anchor}}
+\index{Anchor@{Anchor}!CrabUI.ResizeHandle@{CrabUI.ResizeHandle}}
+\doxysubsubsection{\texorpdfstring{Anchor}{Anchor}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_resize_handle_adb4efface04771832f99f05a5f28af64} 
+Vector2 Crab\+UI.\+Resize\+Handle.\+Anchor\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_resize_handle_8cs_source_l00036}{36}} of file \doxymbox{\hyperlink{_resize_handle_8cs_source}{Resize\+Handle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037\ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ SelfAnchor;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ SelfAnchor\ =\ value;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ ParentAnchor\ =\ value;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ StaticPointAnchor\ =\ Vector2.One\ -\/\ value;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_resize_handle_a8c16cf8207f45f2acd315ee630a5c862}\index{CrabUI.ResizeHandle@{CrabUI.ResizeHandle}!Background@{Background}}
+\index{Background@{Background}!CrabUI.ResizeHandle@{CrabUI.ResizeHandle}}
+\doxysubsubsection{\texorpdfstring{Background}{Background}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_resize_handle_a8c16cf8207f45f2acd315ee630a5c862} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_simple_texture}{Simple\+Texture}} Crab\+UI.\+Resize\+Handle.\+Background = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_resize_handle_8cs_source_l00034}{34}} of file \doxymbox{\hyperlink{_resize_handle_8cs_source}{Resize\+Handle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_resize_handle_aa2e09bece59288fe7bc7b5eea0c61b0e}\index{CrabUI.ResizeHandle@{CrabUI.ResizeHandle}!Displayed@{Displayed}}
+\index{Displayed@{Displayed}!CrabUI.ResizeHandle@{CrabUI.ResizeHandle}}
+\doxysubsubsection{\texorpdfstring{Displayed}{Displayed}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_resize_handle_aa2e09bece59288fe7bc7b5eea0c61b0e} 
+bool Crab\+UI.\+Resize\+Handle.\+Displayed\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_resize_handle_8cs_source_l00053}{53}} of file \doxymbox{\hyperlink{_resize_handle_8cs_source}{Resize\+Handle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00053\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_resize_handle_ad767465da882308f6eef1b22b4fce097}\index{CrabUI.ResizeHandle@{CrabUI.ResizeHandle}!Grabbed@{Grabbed}}
+\index{Grabbed@{Grabbed}!CrabUI.ResizeHandle@{CrabUI.ResizeHandle}}
+\doxysubsubsection{\texorpdfstring{Grabbed}{Grabbed}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_resize_handle_ad767465da882308f6eef1b22b4fce097} 
+bool Crab\+UI.\+Resize\+Handle.\+Grabbed\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_resize_handle_8cs_source_l00054}{54}} of file \doxymbox{\hyperlink{_resize_handle_8cs_source}{Resize\+Handle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00054\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_resize_handle_a82965936300da59072a6ede603373911}\index{CrabUI.ResizeHandle@{CrabUI.ResizeHandle}!GrabOffset@{GrabOffset}}
+\index{GrabOffset@{GrabOffset}!CrabUI.ResizeHandle@{CrabUI.ResizeHandle}}
+\doxysubsubsection{\texorpdfstring{GrabOffset}{GrabOffset}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_resize_handle_a82965936300da59072a6ede603373911} 
+Vector2 Crab\+UI.\+Resize\+Handle.\+Grab\+Offset\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_resize_handle_8cs_source_l00057}{57}} of file \doxymbox{\hyperlink{_resize_handle_8cs_source}{Resize\+Handle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_resize_handle_ac03d7c8a2d85cfa23ccca5f136871423}\index{CrabUI.ResizeHandle@{CrabUI.ResizeHandle}!GrabPoint@{GrabPoint}}
+\index{GrabPoint@{GrabPoint}!CrabUI.ResizeHandle@{CrabUI.ResizeHandle}}
+\doxysubsubsection{\texorpdfstring{GrabPoint}{GrabPoint}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_resize_handle_ac03d7c8a2d85cfa23ccca5f136871423} 
+Vector2 Crab\+UI.\+Resize\+Handle.\+Grab\+Point\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_resize_handle_8cs_source_l00056}{56}} of file \doxymbox{\hyperlink{_resize_handle_8cs_source}{Resize\+Handle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_resize_handle_abb75afa41d8e7aead59ee6f5227b5d34}\index{CrabUI.ResizeHandle@{CrabUI.ResizeHandle}!Host@{Host}}
+\index{Host@{Host}!CrabUI.ResizeHandle@{CrabUI.ResizeHandle}}
+\doxysubsubsection{\texorpdfstring{Host}{Host}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_resize_handle_abb75afa41d8e7aead59ee6f5227b5d34} 
+\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_resizable}{IResizable}} Crab\+UI.\+Resize\+Handle.\+Host\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_resize_handle_8cs_source_l00023}{23}} of file \doxymbox{\hyperlink{_resize_handle_8cs_source}{Resize\+Handle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ host;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (host\ is\ not\ \textcolor{keyword}{null})\ DisconnectFromHost(host);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ host\ =\ value;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (host\ is\ not\ \textcolor{keyword}{null})\ ConnectToHost(host);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_resize_handle_a7d6f6a469641c1c9e1653c5e9d91b55c}\index{CrabUI.ResizeHandle@{CrabUI.ResizeHandle}!HostComponent@{HostComponent}}
+\index{HostComponent@{HostComponent}!CrabUI.ResizeHandle@{CrabUI.ResizeHandle}}
+\doxysubsubsection{\texorpdfstring{HostComponent}{HostComponent}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_resize_handle_a7d6f6a469641c1c9e1653c5e9d91b55c} 
+object Crab\+UI.\+Resize\+Handle.\+Host\+Component\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Implements \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_aware}{CUICode\+Generator.\+IAware}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_resize_handle_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_resize_handle_8cs_source}{Resize\+Handle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_resize_handle_a8bcd9d409f7b8cf635872c6c27b66d45}\index{CrabUI.ResizeHandle@{CrabUI.ResizeHandle}!HostPropName@{HostPropName}}
+\index{HostPropName@{HostPropName}!CrabUI.ResizeHandle@{CrabUI.ResizeHandle}}
+\doxysubsubsection{\texorpdfstring{HostPropName}{HostPropName}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_resize_handle_a8bcd9d409f7b8cf635872c6c27b66d45} 
+string Crab\+UI.\+Resize\+Handle.\+Host\+Prop\+Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Implements \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_aware}{CUICode\+Generator.\+IAware}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_resize_handle_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_resize_handle_8cs_source}{Resize\+Handle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_resize_handle_aa617998fc8be61ec447a8caf57789b13}\index{CrabUI.ResizeHandle@{CrabUI.ResizeHandle}!ParentAnchor@{ParentAnchor}}
+\index{ParentAnchor@{ParentAnchor}!CrabUI.ResizeHandle@{CrabUI.ResizeHandle}}
+\doxysubsubsection{\texorpdfstring{ParentAnchor}{ParentAnchor}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_resize_handle_aa617998fc8be61ec447a8caf57789b13} 
+Vector2 Crab\+UI.\+Resize\+Handle.\+Parent\+Anchor\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_resize_handle_8cs_source_l00046}{46}} of file \doxymbox{\hyperlink{_resize_handle_8cs_source}{Resize\+Handle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_resize_handle_a8fb0e1cfb2e0373c0de0094f23434301}\index{CrabUI.ResizeHandle@{CrabUI.ResizeHandle}!Rect@{Rect}}
+\index{Rect@{Rect}!CrabUI.ResizeHandle@{CrabUI.ResizeHandle}}
+\doxysubsubsection{\texorpdfstring{Rect}{Rect}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_resize_handle_a8fb0e1cfb2e0373c0de0094f23434301} 
+override \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}} Crab\+UI.\+Resize\+Handle.\+Rect\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_visual_component}{Crab\+UI.\+IVisual\+Component}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_resize_handle_8cs_source_l00060}{60}} of file \doxymbox{\hyperlink{_resize_handle_8cs_source}{Resize\+Handle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Background.Rect;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ Background.Rect\ =\ value;}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_resize_handle_a30e07af928ea36368c188c7eed60d8f2}\index{CrabUI.ResizeHandle@{CrabUI.ResizeHandle}!SelfAnchor@{SelfAnchor}}
+\index{SelfAnchor@{SelfAnchor}!CrabUI.ResizeHandle@{CrabUI.ResizeHandle}}
+\doxysubsubsection{\texorpdfstring{SelfAnchor}{SelfAnchor}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_resize_handle_a30e07af928ea36368c188c7eed60d8f2} 
+Vector2 Crab\+UI.\+Resize\+Handle.\+Self\+Anchor = new Vector2(1, 1)\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_resize_handle_8cs_source_l00048}{48}} of file \doxymbox{\hyperlink{_resize_handle_8cs_source}{Resize\+Handle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}\ Vector2(1,\ 1);}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_resize_handle_a1d33ab6aceb6263d37c4fb7484afc174}\index{CrabUI.ResizeHandle@{CrabUI.ResizeHandle}!Size@{Size}}
+\index{Size@{Size}!CrabUI.ResizeHandle@{CrabUI.ResizeHandle}}
+\doxysubsubsection{\texorpdfstring{Size}{Size}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_resize_handle_a1d33ab6aceb6263d37c4fb7484afc174} 
+Vector2 Crab\+UI.\+Resize\+Handle.\+Size = Default\+Size\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_resize_handle_8cs_source_l00051}{51}} of file \doxymbox{\hyperlink{_resize_handle_8cs_source}{Resize\+Handle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ DefaultSize;}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_resize_handle_ac43ae05a4a1a16a95ad2337a883f5a17}\index{CrabUI.ResizeHandle@{CrabUI.ResizeHandle}!StartSelfAnchorPoint@{StartSelfAnchorPoint}}
+\index{StartSelfAnchorPoint@{StartSelfAnchorPoint}!CrabUI.ResizeHandle@{CrabUI.ResizeHandle}}
+\doxysubsubsection{\texorpdfstring{StartSelfAnchorPoint}{StartSelfAnchorPoint}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_resize_handle_ac43ae05a4a1a16a95ad2337a883f5a17} 
+Vector2 Crab\+UI.\+Resize\+Handle.\+Start\+Self\+Anchor\+Point\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_resize_handle_8cs_source_l00058}{58}} of file \doxymbox{\hyperlink{_resize_handle_8cs_source}{Resize\+Handle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00058\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_resize_handle_a1512c29163fe5a5e7c35c210c9ec49e6}\index{CrabUI.ResizeHandle@{CrabUI.ResizeHandle}!StaticPointAnchor@{StaticPointAnchor}}
+\index{StaticPointAnchor@{StaticPointAnchor}!CrabUI.ResizeHandle@{CrabUI.ResizeHandle}}
+\doxysubsubsection{\texorpdfstring{StaticPointAnchor}{StaticPointAnchor}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_resize_handle_a1512c29163fe5a5e7c35c210c9ec49e6} 
+Vector2 Crab\+UI.\+Resize\+Handle.\+Static\+Point\+Anchor\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_resize_handle_8cs_source_l00047}{47}} of file \doxymbox{\hyperlink{_resize_handle_8cs_source}{Resize\+Handle.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Handles/\+\+Resize\+Handle/\+Resize\+Handle.\+cs\end{DoxyCompactItemize}

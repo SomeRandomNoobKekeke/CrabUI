@@ -1,0 +1,95 @@
+\doxysection{Crab\+UIUser.\+Snapshot\+Test\+Runner Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_snapshot_test_runner}{}\label{class_crab_u_i_user_1_1_snapshot_test_runner}\index{CrabUIUser.SnapshotTestRunner@{CrabUIUser.SnapshotTestRunner}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot}{Component\+Snapshot}} \doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_test_runner_a5733d7b762dbd3d11279785e79bace41}{Run}} (Snapshot\+Test test)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_logger}{ILogger}} \doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_test_runner_a84a6860c2868458ef0daa0cdadacbad7}{Logger}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_test_chamber}{Snapshot\+Test\+Chamber}} \doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_test_runner_aaf56a210a78fee18b6fc879d8ebdccdc}{Chamber}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_snapshot_test_runner_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_snapshot_test_runner_8cs_source}{Snapshot\+Test\+Runner.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_snapshot_test_runner_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_snapshot_test_runner_a5733d7b762dbd3d11279785e79bace41}\index{CrabUIUser.SnapshotTestRunner@{CrabUIUser.SnapshotTestRunner}!Run@{Run}}
+\index{Run@{Run}!CrabUIUser.SnapshotTestRunner@{CrabUIUser.SnapshotTestRunner}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_snapshot_test_runner_a5733d7b762dbd3d11279785e79bace41} 
+\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot}{Component\+Snapshot}} Crab\+UIUser.\+Snapshot\+Test\+Runner.\+Run (\begin{DoxyParamCaption}\item[{Snapshot\+Test}]{test}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_snapshot_test_runner_8cs_source_l00021}{21}} of file \doxymbox{\hyperlink{_snapshot_test_runner_8cs_source}{Snapshot\+Test\+Runner.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ CUIComponent\ TestSubject\ =\ (CUIComponent)test.TestFunc();}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ TestSubject.DeepDebug\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ Chamber.Children.Clear();}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ Chamber.Children.Add(TestSubject);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ CUI.Main.Step();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ComponentSnapshot.Take(TestSubject,\ test.Name);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ Logger.Warning(\$\textcolor{stringliteral}{"{}Error\ in\ CUISnapshotTest\ [\{test.Name\}]:\ \{e.Message\}\ \{e.InnerException\}\(\backslash\)n\{e.StackTrace\}"{}});}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_user_1_1_snapshot_test_runner_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_snapshot_test_runner_aaf56a210a78fee18b6fc879d8ebdccdc}\index{CrabUIUser.SnapshotTestRunner@{CrabUIUser.SnapshotTestRunner}!Chamber@{Chamber}}
+\index{Chamber@{Chamber}!CrabUIUser.SnapshotTestRunner@{CrabUIUser.SnapshotTestRunner}}
+\doxysubsubsection{\texorpdfstring{Chamber}{Chamber}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_snapshot_test_runner_aaf56a210a78fee18b6fc879d8ebdccdc} 
+\doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_test_chamber}{Snapshot\+Test\+Chamber}} Crab\+UIUser.\+Snapshot\+Test\+Runner.\+Chamber\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_snapshot_test_runner_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_snapshot_test_runner_8cs_source}{Snapshot\+Test\+Runner.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_snapshot_test_runner_a84a6860c2868458ef0daa0cdadacbad7}\index{CrabUIUser.SnapshotTestRunner@{CrabUIUser.SnapshotTestRunner}!Logger@{Logger}}
+\index{Logger@{Logger}!CrabUIUser.SnapshotTestRunner@{CrabUIUser.SnapshotTestRunner}}
+\doxysubsubsection{\texorpdfstring{Logger}{Logger}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_snapshot_test_runner_a84a6860c2868458ef0daa0cdadacbad7} 
+\doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_logger}{ILogger}} Crab\+UIUser.\+Snapshot\+Test\+Runner.\+Logger\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_snapshot_test_runner_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_snapshot_test_runner_8cs_source}{Snapshot\+Test\+Runner.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+CUITest/\+\+Snapshots/\+Snapshot\+Test\+Runner.\+cs\end{DoxyCompactItemize}

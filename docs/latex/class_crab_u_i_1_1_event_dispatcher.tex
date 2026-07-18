@@ -1,0 +1,116 @@
+\doxysection{Crab\+UI.\+Event\+Dispatcher Class Reference}
+\hypertarget{class_crab_u_i_1_1_event_dispatcher}{}\label{class_crab_u_i_1_1_event_dispatcher}\index{CrabUI.EventDispatcher@{CrabUI.EventDispatcher}}
+Inheritance diagram for Crab\+UI.\+Event\+Dispatcher:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_1_1_event_dispatcher}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_event_dispatcher_a495a4e5cfc6ade796b028923a9d3adb6}{Dispatch}} (\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_event_consumer}{IEvent\+Consumer}} consumer, \doxymbox{\hyperlink{class_crab_u_i_1_1_input_event}{Input\+Event}} input\+Event)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_event_dispatcher_a9ff4705e2faade5e07cb1233fdf04ed4}{Dispatch}} (\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_event_consumer}{IEvent\+Consumer}} consumer, IEnumerable$<$ \doxymbox{\hyperlink{class_crab_u_i_1_1_input_event}{Input\+Event}} $>$ events)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_event_dispatcher_a031700713314c524651bd988e04999b5}{Dispatch}} (IEnumerable$<$ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_event_consumer}{IEvent\+Consumer}} $>$ targets, List$<$ \doxymbox{\hyperlink{class_crab_u_i_1_1_input_event}{Input\+Event}} $>$ events)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_event_dispatcher_afa279396877478be505660d202e904d9}{Dispatch}} (IEnumerable$<$ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_event_consumer}{IEvent\+Consumer}} $>$ targets, \doxymbox{\hyperlink{class_crab_u_i_1_1_input_event}{Input\+Event}} input\+Event)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_event_dispatcher_8cs_source_l00013}{13}} of file \doxymbox{\hyperlink{_event_dispatcher_8cs_source}{Event\+Dispatcher.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_event_dispatcher_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_event_dispatcher_afa279396877478be505660d202e904d9}\index{CrabUI.EventDispatcher@{CrabUI.EventDispatcher}!Dispatch@{Dispatch}}
+\index{Dispatch@{Dispatch}!CrabUI.EventDispatcher@{CrabUI.EventDispatcher}}
+\doxysubsubsection{\texorpdfstring{Dispatch()}{Dispatch()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_event_dispatcher_afa279396877478be505660d202e904d9} 
+void Crab\+UI.\+Event\+Dispatcher.\+Dispatch (\begin{DoxyParamCaption}\item[{IEnumerable$<$ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_event_consumer}{IEvent\+Consumer}} $>$}]{targets}{, }\item[{\doxymbox{\hyperlink{class_crab_u_i_1_1_input_event}{Input\+Event}}}]{input\+Event}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_event_dispatcher_8cs_source_l00038}{38}} of file \doxymbox{\hyperlink{_event_dispatcher_8cs_source}{Event\+Dispatcher.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039\ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (IEventConsumer\ consumer\ \textcolor{keywordflow}{in}\ targets)}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (inputEvent.Consumed)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ inputEvent.Dispatch(consumer);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_event_dispatcher_a031700713314c524651bd988e04999b5}\index{CrabUI.EventDispatcher@{CrabUI.EventDispatcher}!Dispatch@{Dispatch}}
+\index{Dispatch@{Dispatch}!CrabUI.EventDispatcher@{CrabUI.EventDispatcher}}
+\doxysubsubsection{\texorpdfstring{Dispatch()}{Dispatch()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_event_dispatcher_a031700713314c524651bd988e04999b5} 
+void Crab\+UI.\+Event\+Dispatcher.\+Dispatch (\begin{DoxyParamCaption}\item[{IEnumerable$<$ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_event_consumer}{IEvent\+Consumer}} $>$}]{targets}{, }\item[{List$<$ \doxymbox{\hyperlink{class_crab_u_i_1_1_input_event}{Input\+Event}} $>$}]{events}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_event_dispatcher_8cs_source_l00030}{30}} of file \doxymbox{\hyperlink{_event_dispatcher_8cs_source}{Event\+Dispatcher.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (IEventConsumer\ consumer\ \textcolor{keywordflow}{in}\ targets)}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ Dispatch(consumer,\ events);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_event_dispatcher_a9ff4705e2faade5e07cb1233fdf04ed4}\index{CrabUI.EventDispatcher@{CrabUI.EventDispatcher}!Dispatch@{Dispatch}}
+\index{Dispatch@{Dispatch}!CrabUI.EventDispatcher@{CrabUI.EventDispatcher}}
+\doxysubsubsection{\texorpdfstring{Dispatch()}{Dispatch()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_event_dispatcher_a9ff4705e2faade5e07cb1233fdf04ed4} 
+void Crab\+UI.\+Event\+Dispatcher.\+Dispatch (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_event_consumer}{IEvent\+Consumer}}}]{consumer}{, }\item[{IEnumerable$<$ \doxymbox{\hyperlink{class_crab_u_i_1_1_input_event}{Input\+Event}} $>$}]{events}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_event_dispatcher_8cs_source_l00021}{21}} of file \doxymbox{\hyperlink{_event_dispatcher_8cs_source}{Event\+Dispatcher.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (InputEvent\ e\ \textcolor{keywordflow}{in}\ events)}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (e.Consumed)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ e.Dispatch(consumer);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_event_dispatcher_a495a4e5cfc6ade796b028923a9d3adb6}\index{CrabUI.EventDispatcher@{CrabUI.EventDispatcher}!Dispatch@{Dispatch}}
+\index{Dispatch@{Dispatch}!CrabUI.EventDispatcher@{CrabUI.EventDispatcher}}
+\doxysubsubsection{\texorpdfstring{Dispatch()}{Dispatch()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_event_dispatcher_a495a4e5cfc6ade796b028923a9d3adb6} 
+void Crab\+UI.\+Event\+Dispatcher.\+Dispatch (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_event_consumer}{IEvent\+Consumer}}}]{consumer}{, }\item[{\doxymbox{\hyperlink{class_crab_u_i_1_1_input_event}{Input\+Event}}}]{input\+Event}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_event_dispatcher_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_event_dispatcher_8cs_source}{Event\+Dispatcher.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (inputEvent.Consumed)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ inputEvent.Dispatch(consumer);}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Components/\+\+CUIMain\+Component/\+\+Modules/\+Event\+Dispatcher.\+cs\end{DoxyCompactItemize}

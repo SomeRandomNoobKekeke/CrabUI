@@ -1,0 +1,196 @@
+\doxysection{CUILibs.\+UTest\+Commands Class Reference}
+\hypertarget{class_c_u_i_libs_1_1_u_test_commands}{}\label{class_c_u_i_libs_1_1_u_test_commands}\index{CUILibs.UTestCommands@{CUILibs.UTestCommands}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_commands_a0d274a7bfb28703191ba31e8e712a798}{Add\+Commands}} ()
+\item 
+static string\+[$\,$]\+\+[$\,$]\+ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_commands_a4be2e08d634a8409d7cb7050c52aff1d}{UTest\+\_\+\+Hints}} ()
+\item 
+static void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_commands_ac6c3b188cd4db707218ab001545bc90d}{UTest\+\_\+\+Command}} (string\+[$\,$]\+ args)
+\item 
+static void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_commands_a65d219c9ffd6827645b7e123ae02f2f9}{Remove\+Commands}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static List$<$ Debug\+Console.\+Command $>$ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_commands_a0ab400f0b0d9d55e5aca9817eaf00147}{Added\+Commands}} = new List$<$Debug\+Console.\+Command$>$()
+\item 
+static int \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_commands_a443ca626d75bd838f315ed141ec712aa}{depth}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_commands_8cs_source_l00010}{10}} of file \doxymbox{\hyperlink{_u_test_commands_8cs_source}{UTest\+Commands.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_commands_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_commands_a0d274a7bfb28703191ba31e8e712a798}\index{CUILibs.UTestCommands@{CUILibs.UTestCommands}!AddCommands@{AddCommands}}
+\index{AddCommands@{AddCommands}!CUILibs.UTestCommands@{CUILibs.UTestCommands}}
+\doxysubsubsection{\texorpdfstring{AddCommands()}{AddCommands()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_commands_a0d274a7bfb28703191ba31e8e712a798} 
+void CUILibs.\+UTest\+Commands.\+Add\+Commands (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_commands_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_u_test_commands_8cs_source}{UTest\+Commands.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ DebugConsole.Command\ utestCommand\ =\ \textcolor{keyword}{new}\ DebugConsole.Command(\textcolor{stringliteral}{"{}utest"{}},\ \textcolor{stringliteral}{"{}"{}},\ UTest\_Command,\ UTest\_Hints);}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#if\ CLIENT }}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ utestCommand.RelayToServer\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ AddedCommands.Add(utestCommand);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ DebugConsole.Commands.InsertRange(0,\ AddedCommands);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#if\ CLIENT }}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ PermitCommands();}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#if\ CLIENT }}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ lastCommand\ =\ ModStorage.Get<\textcolor{keywordtype}{string}>(\textcolor{stringliteral}{"{}lastUtestCommand"{}});}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\textcolor{keywordtype}{string}.IsNullOrEmpty(lastCommand))}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ DebugConsole.ExecuteCommand(lastCommand);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_commands_a65d219c9ffd6827645b7e123ae02f2f9}\index{CUILibs.UTestCommands@{CUILibs.UTestCommands}!RemoveCommands@{RemoveCommands}}
+\index{RemoveCommands@{RemoveCommands}!CUILibs.UTestCommands@{CUILibs.UTestCommands}}
+\doxysubsubsection{\texorpdfstring{RemoveCommands()}{RemoveCommands()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_commands_a65d219c9ffd6827645b7e123ae02f2f9} 
+void CUILibs.\+UTest\+Commands.\+Remove\+Commands (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_commands_8cs_source_l00117}{117}} of file \doxymbox{\hyperlink{_u_test_commands_8cs_source}{UTest\+Commands.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00118\ \ \ \ \ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ AddedCommands.ForEach(c\ =>\ DebugConsole.Commands.Remove(c));}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ AddedCommands.Clear();}
+\DoxyCodeLine{00121\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_commands_ac6c3b188cd4db707218ab001545bc90d}\index{CUILibs.UTestCommands@{CUILibs.UTestCommands}!UTest\_Command@{UTest\_Command}}
+\index{UTest\_Command@{UTest\_Command}!CUILibs.UTestCommands@{CUILibs.UTestCommands}}
+\doxysubsubsection{\texorpdfstring{UTest\_Command()}{UTest\_Command()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_commands_ac6c3b188cd4db707218ab001545bc90d} 
+void CUILibs.\+UTest\+Commands.\+UTest\+\_\+\+Command (\begin{DoxyParamCaption}\item[{string\+[$\,$]\+}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_commands_8cs_source_l00065}{65}} of file \doxymbox{\hyperlink{_u_test_commands_8cs_source}{UTest\+Commands.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00066\ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#if\ CLIENT }}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ ModStorage.Set(\textcolor{stringliteral}{"{}lastUtestCommand"{}},\ \$\textcolor{stringliteral}{"{}utest\ \{(args.ElementAtOrDefault(0)\ ??\ "{}}none\textcolor{stringliteral}{"{})\}"{}});}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (args.Length\ ==\ 0)}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ UTestExplorer.PrintAllTests();}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ RunTestPack(Type\ T) }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ List<UTestPack>\ results\ =\ UTestRunner.RunRecursive(T);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (UTestPack\ pack\ \textcolor{keywordflow}{in}\ results)}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pack.NotEmpty)\ pack.Log();}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (String.Equals(args[0],\ \textcolor{stringliteral}{"{}none"{}},\ StringComparison.OrdinalIgnoreCase))}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (String.Equals(args[0],\ \textcolor{stringliteral}{"{}all"{}},\ StringComparison.OrdinalIgnoreCase))}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Type\ T\ \textcolor{keywordflow}{in}\ UTestExplorer.TestTree.Roots.Select(root\ =>\ root.Type))}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ RunTestPack(T);}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ Type\ start\ =\ UTestExplorer.TestByName.GetValueOrDefault(args[0]);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (start\ is\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ UTestLogger.Warning(\$\textcolor{stringliteral}{"{}Can't\ find\ [\{args[0]\}]\ test"{}});}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ RunTestPack(start);}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)\ \{\ UTestLogger.Warning(\$\textcolor{stringliteral}{"{}utest\ failed\ with:\ \{e.Message\}"{}});\ \}}
+\DoxyCodeLine{00115\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_commands_a4be2e08d634a8409d7cb7050c52aff1d}\index{CUILibs.UTestCommands@{CUILibs.UTestCommands}!UTest\_Hints@{UTest\_Hints}}
+\index{UTest\_Hints@{UTest\_Hints}!CUILibs.UTestCommands@{CUILibs.UTestCommands}}
+\doxysubsubsection{\texorpdfstring{UTest\_Hints()}{UTest\_Hints()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_commands_a4be2e08d634a8409d7cb7050c52aff1d} 
+string\+[$\,$]\+\+[$\,$]\+ CUILibs.\+UTest\+Commands.\+UTest\+\_\+\+Hints (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_commands_8cs_source_l00061}{61}} of file \doxymbox{\hyperlink{_u_test_commands_8cs_source}{UTest\+Commands.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ =>\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{string}[][]\ \{\ UTestExplorer.TestNames.Append(\textcolor{stringliteral}{"{}all"{}}).Append(\textcolor{stringliteral}{"{}none"{}}).OrderBy(s\ =>\ s.Length).ToArray()\ \};}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_commands_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_commands_a0ab400f0b0d9d55e5aca9817eaf00147}\index{CUILibs.UTestCommands@{CUILibs.UTestCommands}!AddedCommands@{AddedCommands}}
+\index{AddedCommands@{AddedCommands}!CUILibs.UTestCommands@{CUILibs.UTestCommands}}
+\doxysubsubsection{\texorpdfstring{AddedCommands}{AddedCommands}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_commands_a0ab400f0b0d9d55e5aca9817eaf00147} 
+List$<$Debug\+Console.\+Command$>$ CUILibs.\+UTest\+Commands.\+Added\+Commands = new List$<$Debug\+Console.\+Command$>$()\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_commands_8cs_source_l00012}{12}} of file \doxymbox{\hyperlink{_u_test_commands_8cs_source}{UTest\+Commands.\+cs}}.
+
+\Hypertarget{class_c_u_i_libs_1_1_u_test_commands_a443ca626d75bd838f315ed141ec712aa}\index{CUILibs.UTestCommands@{CUILibs.UTestCommands}!depth@{depth}}
+\index{depth@{depth}!CUILibs.UTestCommands@{CUILibs.UTestCommands}}
+\doxysubsubsection{\texorpdfstring{depth}{depth}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_commands_a443ca626d75bd838f315ed141ec712aa} 
+int CUILibs.\+UTest\+Commands.\+depth = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_commands_8cs_source_l00064}{64}} of file \doxymbox{\hyperlink{_u_test_commands_8cs_source}{UTest\+Commands.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+Libs/\+\+UTest/\+UTest\+Commands.\+cs\end{DoxyCompactItemize}

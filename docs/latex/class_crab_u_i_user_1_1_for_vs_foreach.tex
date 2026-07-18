@@ -1,0 +1,114 @@
+\doxysection{Crab\+UIUser.\+For\+Vs\+Foreach Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_for_vs_foreach}{}\label{class_crab_u_i_user_1_1_for_vs_foreach}\index{CrabUIUser.ForVsForeach@{CrabUIUser.ForVsForeach}}
+
+
+foreach is a bit slower, but not significantly  
+
+
+Inheritance diagram for Crab\+UIUser.\+For\+Vs\+Foreach:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_for_vs_foreach}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_for_vs_foreach_a36c5f883bd8549fc28145f410ebd5583}{Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Crab\+UIUser.\+Experiment}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Run} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ int $>$ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_for_vs_foreach_af07887246099dbf85bfa1228c8dc634d}{list}} = Enumerable.\+Range(0, 10).To\+List()
+\item 
+int \doxymbox{\hyperlink{class_crab_u_i_user_1_1_for_vs_foreach_a12bb12733ab4ab692b461a6363bab9e9}{repeats}} = 100000000
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+foreach is a bit slower, but not significantly 
+
+Definition at line \doxymbox{\hyperlink{_for_vs_foreach_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_for_vs_foreach_8cs_source}{For\+Vs\+Foreach.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_for_vs_foreach_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_for_vs_foreach_a36c5f883bd8549fc28145f410ebd5583}\index{CrabUIUser.ForVsForeach@{CrabUIUser.ForVsForeach}!Run@{Run}}
+\index{Run@{Run}!CrabUIUser.ForVsForeach@{CrabUIUser.ForVsForeach}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_for_vs_foreach_a36c5f883bd8549fc28145f410ebd5583} 
+override void Crab\+UIUser.\+For\+Vs\+Foreach.\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_for_vs_foreach_8cs_source_l00023}{23}} of file \doxymbox{\hyperlink{_for_vs_foreach_8cs_source}{For\+Vs\+Foreach.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ Stopwatch\ sw\ =\ \textcolor{keyword}{new}\ Stopwatch();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ value\ =\ 0;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ sw.Start();}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ list.Count;\ j++)}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ value\ =\ list[j];}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}measure\ 1:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ sw.Restart();}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keywordtype}{int}\ j\ \textcolor{keywordflow}{in}\ list)}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ value\ =\ j;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}measure\ 2:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_crab_u_i_user_1_1_for_vs_foreach_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_for_vs_foreach_af07887246099dbf85bfa1228c8dc634d}\index{CrabUIUser.ForVsForeach@{CrabUIUser.ForVsForeach}!list@{list}}
+\index{list@{list}!CrabUIUser.ForVsForeach@{CrabUIUser.ForVsForeach}}
+\doxysubsubsection{\texorpdfstring{list}{list}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_for_vs_foreach_af07887246099dbf85bfa1228c8dc634d} 
+List$<$int$>$ Crab\+UIUser.\+For\+Vs\+Foreach.\+list = Enumerable.\+Range(0, 10).To\+List()}
+
+
+
+Definition at line \doxymbox{\hyperlink{_for_vs_foreach_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_for_vs_foreach_8cs_source}{For\+Vs\+Foreach.\+cs}}.
+
+\Hypertarget{class_crab_u_i_user_1_1_for_vs_foreach_a12bb12733ab4ab692b461a6363bab9e9}\index{CrabUIUser.ForVsForeach@{CrabUIUser.ForVsForeach}!repeats@{repeats}}
+\index{repeats@{repeats}!CrabUIUser.ForVsForeach@{CrabUIUser.ForVsForeach}}
+\doxysubsubsection{\texorpdfstring{repeats}{repeats}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_for_vs_foreach_a12bb12733ab4ab692b461a6363bab9e9} 
+int Crab\+UIUser.\+For\+Vs\+Foreach.\+repeats = 100000000}
+
+
+
+Definition at line \doxymbox{\hyperlink{_for_vs_foreach_8cs_source_l00021}{21}} of file \doxymbox{\hyperlink{_for_vs_foreach_8cs_source}{For\+Vs\+Foreach.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Performance/\+For\+Vs\+Foreach.\+cs\end{DoxyCompactItemize}

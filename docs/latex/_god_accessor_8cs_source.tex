@@ -1,0 +1,122 @@
+\doxysection{God\+Accessor.\+cs}
+\hypertarget{_god_accessor_8cs_source}{}\label{_god_accessor_8cs_source}\index{ClientProject/InMemory/Experiments/Design/Access/GodAccessor.cs@{ClientProject/InMemory/Experiments/Design/Access/GodAccessor.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00010}00010\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i_user}{CrabUIUser}}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00012}00012\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00013}00013\ \textcolor{comment}{\ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00014}00014\ \textcolor{comment}{\ \ ///\ Everything\ is\ injected}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00015}00015\ \textcolor{comment}{\ \ ///\ Modules\ depend\ on\ abstractions}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00016}00016\ \textcolor{comment}{\ \ ///\ Internal\ stuff\ isn't\ exposed}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00017}00017\ \textcolor{comment}{\ \ ///\ Amazing,\ now\ with\ a\ single\ god\ access\ object}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00018}00018\ \textcolor{comment}{\ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00019}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_god_accessor_experiment}{00019}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_god_accessor_experiment}{GodAccessorExperiment}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Experiment}}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00020}00020\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00021}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_god_accessor_experiment_1_1_component}{00021}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }Component}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00022}00022\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00023}00023\ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{class\ }ModuleAccess\ :\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_god_accessor_experiment_1_1_full_name_module}{FullNameModule}}.INameModule,\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_god_accessor_experiment_1_1_full_name_module}{FullNameModule}}.ISurnameModule}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00024}00024\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ Component\ Host\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ FullNameModule.INameModule.Name}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Host.Modules.NameModule.Name;}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ Host.Modules.NameModule.Name\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ FullNameModule.ISurnameModule.Surname}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Host.Modules.SurnameModule.Surname;}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ Host.Modules.SurnameModule.Surname\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ ModuleAccess(Component\ host)\ =>\ Host\ =\ host;}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00039}00039\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00041}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_god_accessor_experiment_1_1_component_1_1_module_wrapper}{00041}}\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_god_accessor_experiment_1_1_component_1_1_module_wrapper}{ModuleWrapper}}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00042}00042\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ FullNameModule\ FullNameModule\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ NameModule\ NameModule\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ SurnameModule\ SurnameModule\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00046}00046\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00048}00048\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ FullName\ =>\ Modules.FullNameModule.FullName;}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00050}00050\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ Name}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00051}00051\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Modules.NameModule.Name;}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ Modules.NameModule.Name\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00054}00054\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00056}00056\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ Surname}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00057}00057\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Modules.SurnameModule.Surname;}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ Modules.SurnameModule.Surname\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00060}00060\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00062}00062\ \ \ \ \ \ \ \textcolor{keyword}{private}\ ModuleWrapper\ Modules\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00063}00063\ \ \ \ \ \ \ \textcolor{keyword}{private}\ ModuleAccess\ Access\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00065}00065\ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ InjectModules()}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00066}00066\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ Access\ =\ \textcolor{keyword}{new}\ ModuleAccess(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ Modules.FullNameModule.NameModule\ =\ Access;}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ Modules.FullNameModule.SurnameModule\ =\ Access;}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00070}00070\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00072}00072\ \ \ \ \ \ \ \textcolor{keyword}{public}\ Component()}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00073}00073\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ InjectModules();}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00075}00075\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00076}00076\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00078}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_god_accessor_experiment_1_1_full_name_module}{00078}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_god_accessor_experiment_1_1_full_name_module}{FullNameModule}}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00079}00079\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00080}\doxymbox{\hyperlink{interface_crab_u_i_user_1_1_god_accessor_experiment_1_1_full_name_module_1_1_i_name_module}{00080}}\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{interface\ }\doxymbox{\hyperlink{interface_crab_u_i_user_1_1_god_accessor_experiment_1_1_full_name_module_1_1_i_name_module}{INameModule}}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00081}00081\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ Name\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00083}00083\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00085}\doxymbox{\hyperlink{interface_crab_u_i_user_1_1_god_accessor_experiment_1_1_full_name_module_1_1_i_surname_module}{00085}}\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{interface\ }\doxymbox{\hyperlink{interface_crab_u_i_user_1_1_god_accessor_experiment_1_1_full_name_module_1_1_i_surname_module}{ISurnameModule}}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00086}00086\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ Surname\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00088}00088\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00090}00090\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{interface_crab_u_i_user_1_1_god_accessor_experiment_1_1_full_name_module_1_1_i_name_module}{INameModule}}\ NameModule\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00091}00091\ \ \ \ \ \ \ \textcolor{keyword}{public}\ ISurnameModule\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_god_accessor_experiment_1_1_surname_module}{SurnameModule}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00093}00093\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ FullName\ =>\ \$\textcolor{stringliteral}{"{}\{NameModule.Name\}\ \{SurnameModule.Surname\}"{}};}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00094}00094\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00096}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_god_accessor_experiment_1_1_name_module}{00096}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_god_accessor_experiment_1_1_name_module}{NameModule}}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00097}00097\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00098}00098\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ Name\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00099}00099\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00101}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_god_accessor_experiment_1_1_surname_module}{00101}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_god_accessor_experiment_1_1_surname_module}{SurnameModule}}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00102}00102\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00103}00103\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ Surname\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00104}00104\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00107}00107\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ Run()}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00108}00108\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00109}00109\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_god_accessor_experiment_1_1_component}{Component}}\ component\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00110}00110\ \ \ \ \ \ \ component.Name\ =\ \textcolor{stringliteral}{"{}kek"{}};}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00111}00111\ \ \ \ \ \ \ component.Surname\ =\ \textcolor{stringliteral}{"{}lolov"{}};}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00113}00113\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_mod}{Mod}}.Logger.LogVars(component.FullName);}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00114}00114\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00115}00115\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_god_accessor_8cs_source_l00116}00116\ \}}
+
+\end{DoxyCode}

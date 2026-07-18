@@ -1,0 +1,47 @@
+\doxysection{CUIMain\+Component.\+Debug\+Channels.\+cs}
+\hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source}{}\label{_c_u_i_main_component_8_debug_channels_8cs_source}\index{ClientProject/ClientSource/CUI/Core/Components/CUIMainComponent/CUIMainComponent.DebugChannels.cs@{ClientProject/ClientSource/CUI/Core/Components/CUIMainComponent/CUIMainComponent.DebugChannels.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Collections.ObjectModel;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_code_generator}{CUICodeGenerator}};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00010}00010\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00012}00012\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00014}00014\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_main_component}{CUIMainComponent}}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00015}00015\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{protected}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_main_component_1_1_init_debug_channels___part}{InitDebugChannels\_Part}}\ InitDebugChannels\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00017}\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_main_component_1_1_init_debug_channels___part}{00017}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_main_component_1_1_init_debug_channels___part}{InitDebugChannels\_Part}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_main_component_1_1_part}{Part}}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00019}00019\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Init()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00020}00020\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ (Self\ as\ CUIComponent).DebugRelays.Map(Self.DebugRelays);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ Self.GrabbedHandleTracker.DebugRelay.Map(Self.DebugRelays[DebugCategory.HandleGrab]);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ Self.OnDebugOn\ +=\ ()\ =>\ Self.DebugRelays.Open();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ Self.OnDebugOff\ +=\ ()\ =>\ Self.DebugRelays.Close();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00027}00027\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay_dict}{DebugRelayDict}}\ DebugRelays\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00031}00031\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00032}00032\ \ \ \ \ \ \ [DebugCategory.RoundedRect]\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay}{DebugRelay}}(),}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00033}00033\ \ \ \ \ \ \ [DebugCategory.HandleGrab]\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay}{DebugRelay}}(),}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00034}00034\ \ \ \ \ \ \ [DebugCategory.LayoutPropSet]\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay}{DebugRelay}}(),}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00035}00035\ \ \ \ \ \ \ [DebugCategory.RectSet]\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay}{DebugRelay}}(),}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00036}00036\ \ \ \ \ \ \ [DebugCategory.TreeChanged]\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay}{DebugRelay}}(),}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00037}00037\ \ \ \ \ \ \ [DebugCategory.LayoutUpdated]\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay}{DebugRelay}}(),}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00038}00038\ \ \ \ \ \ \ [DebugCategory.LayoutMarked]\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_relay}{DebugRelay}}(),}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00039}00039\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00040}00040\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_main_component_8_debug_channels_8cs_source_l00041}00041\ \}}
+
+\end{DoxyCode}

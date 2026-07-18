@@ -1,0 +1,82 @@
+\doxysection{Crab\+UI.\+CUISerializable\+Analyzer Class Reference}
+\hypertarget{class_crab_u_i_1_1_c_u_i_serializable_analyzer}{}\label{class_crab_u_i_1_1_c_u_i_serializable_analyzer}\index{CrabUI.CUISerializableAnalyzer@{CrabUI.CUISerializableAnalyzer}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_serializable_analyzer_a037be29b21fb86085b844314527b6632}{Is\+CUISerializable}} (Type T)
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_serializable_analyzer_a0e69671ea3f9e8c1f5d7ab2415b3e0e7}{Is\+CUISerializable\+Prop}} (Property\+Info pi)
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_serializable_info}{CUISerializable\+Info}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_serializable_analyzer_ac1ae1cb6bf5a6ae99f6514a2b8d1a2c1}{Analyze}} (Type T)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_serializable_analyzer_8cs_source_l00012}{12}} of file \doxymbox{\hyperlink{_c_u_i_serializable_analyzer_8cs_source}{CUISerializable\+Analyzer.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_serializable_analyzer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_serializable_analyzer_ac1ae1cb6bf5a6ae99f6514a2b8d1a2c1}\index{CrabUI.CUISerializableAnalyzer@{CrabUI.CUISerializableAnalyzer}!Analyze@{Analyze}}
+\index{Analyze@{Analyze}!CrabUI.CUISerializableAnalyzer@{CrabUI.CUISerializableAnalyzer}}
+\doxysubsubsection{\texorpdfstring{Analyze()}{Analyze()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_serializable_analyzer_ac1ae1cb6bf5a6ae99f6514a2b8d1a2c1} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_serializable_info}{CUISerializable\+Info}} Crab\+UI.\+CUISerializable\+Analyzer.\+Analyze (\begin{DoxyParamCaption}\item[{Type}]{T}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_serializable_analyzer_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_c_u_i_serializable_analyzer_8cs_source}{CUISerializable\+Analyzer.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ CUISerializableInfo\ info\ =\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ SerializableProps\ =\ \textcolor{keyword}{new}(),}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ AnalyzeContainer(info,\ T,\ []);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ info;}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_serializable_analyzer_a037be29b21fb86085b844314527b6632}\index{CrabUI.CUISerializableAnalyzer@{CrabUI.CUISerializableAnalyzer}!IsCUISerializable@{IsCUISerializable}}
+\index{IsCUISerializable@{IsCUISerializable}!CrabUI.CUISerializableAnalyzer@{CrabUI.CUISerializableAnalyzer}}
+\doxysubsubsection{\texorpdfstring{IsCUISerializable()}{IsCUISerializable()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_serializable_analyzer_a037be29b21fb86085b844314527b6632} 
+bool Crab\+UI.\+CUISerializable\+Analyzer.\+Is\+CUISerializable (\begin{DoxyParamCaption}\item[{Type}]{T}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_serializable_analyzer_8cs_source_l00014}{14}} of file \doxymbox{\hyperlink{_c_u_i_serializable_analyzer_8cs_source}{CUISerializable\+Analyzer.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ =>\ T.IsAssignableTo(typeof(CUISerializable));}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_serializable_analyzer_a0e69671ea3f9e8c1f5d7ab2415b3e0e7}\index{CrabUI.CUISerializableAnalyzer@{CrabUI.CUISerializableAnalyzer}!IsCUISerializableProp@{IsCUISerializableProp}}
+\index{IsCUISerializableProp@{IsCUISerializableProp}!CrabUI.CUISerializableAnalyzer@{CrabUI.CUISerializableAnalyzer}}
+\doxysubsubsection{\texorpdfstring{IsCUISerializableProp()}{IsCUISerializableProp()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_serializable_analyzer_a0e69671ea3f9e8c1f5d7ab2415b3e0e7} 
+bool Crab\+UI.\+CUISerializable\+Analyzer.\+Is\+CUISerializable\+Prop (\begin{DoxyParamCaption}\item[{Property\+Info}]{pi}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_serializable_analyzer_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_c_u_i_serializable_analyzer_8cs_source}{CUISerializable\+Analyzer.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ =>\ pi.GetCustomAttribute<CUISerializableProp>()\ !=\ \textcolor{keyword}{null};}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Type\+Analysis/\+\+Analyzers/\+CUISerializable\+Analyzer.\+cs\end{DoxyCompactItemize}

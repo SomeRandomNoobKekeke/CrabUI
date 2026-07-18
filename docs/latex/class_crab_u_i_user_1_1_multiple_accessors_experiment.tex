@@ -1,0 +1,72 @@
+\doxysection{Crab\+UIUser.\+Multiple\+Accessors\+Experiment Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_multiple_accessors_experiment}{}\label{class_crab_u_i_user_1_1_multiple_accessors_experiment}\index{CrabUIUser.MultipleAccessorsExperiment@{CrabUIUser.MultipleAccessorsExperiment}}
+
+
+Everything is injected Modules depend on abstractions Internal stuff isn\textquotesingle{}t exposed Amazing, but do i really need to create Access object for each module dependency?  
+
+
+Inheritance diagram for Crab\+UIUser.\+Multiple\+Accessors\+Experiment:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_multiple_accessors_experiment}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_multiple_accessors_experiment_1_1_component}{Component}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_multiple_accessors_experiment_1_1_full_name_module}{Full\+Name\+Module}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_multiple_accessors_experiment_1_1_name_module}{Name\+Module}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_multiple_accessors_experiment_1_1_surname_module}{Surname\+Module}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_multiple_accessors_experiment_a8a6db225f0f496c45433b2d57e35cac5}{Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Crab\+UIUser.\+Experiment}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Run} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Everything is injected Modules depend on abstractions Internal stuff isn\textquotesingle{}t exposed Amazing, but do i really need to create Access object for each module dependency? 
+
+Definition at line \doxymbox{\hyperlink{_multiple_01_accessors_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_multiple_01_accessors_8cs_source}{Multiple Accessors.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_multiple_accessors_experiment_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_multiple_accessors_experiment_a8a6db225f0f496c45433b2d57e35cac5}\index{CrabUIUser.MultipleAccessorsExperiment@{CrabUIUser.MultipleAccessorsExperiment}!Run@{Run}}
+\index{Run@{Run}!CrabUIUser.MultipleAccessorsExperiment@{CrabUIUser.MultipleAccessorsExperiment}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_multiple_accessors_experiment_a8a6db225f0f496c45433b2d57e35cac5} 
+override void Crab\+UIUser.\+Multiple\+Accessors\+Experiment.\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_multiple_01_accessors_8cs_source_l00112}{112}} of file \doxymbox{\hyperlink{_multiple_01_accessors_8cs_source}{Multiple Accessors.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00113\ \ \ \ \ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ Component\ component\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ component.Name\ =\ \textcolor{stringliteral}{"{}lol"{}};}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ component.Surname\ =\ \textcolor{stringliteral}{"{}kekov"{}};}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ Mod.Logger.LogVars(component.FullName);}
+\DoxyCodeLine{00119\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Design/\+\+Access/\+Multiple Accessors.\+cs\end{DoxyCompactItemize}

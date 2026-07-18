@@ -1,0 +1,125 @@
+\doxysection{Crab\+UIUser.\+Cast\+Enumerable Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_cast_enumerable}{}\label{class_crab_u_i_user_1_1_cast_enumerable}\index{CrabUIUser.CastEnumerable@{CrabUIUser.CastEnumerable}}
+
+
+Itterating IA.\+list is 20 times slower than List$<$\+Prop2$>$ list Itterating list.\+Cast$<$\+Prop1$>$() is exactly the same as IA.\+list.  
+
+
+Inheritance diagram for Crab\+UIUser.\+Cast\+Enumerable:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_cast_enumerable}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_cast_enumerable_1_1_prop1}{Prop1}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_cast_enumerable_1_1_prop2}{Prop2}}
+\item 
+interface \doxymbox{\hyperlink{interface_crab_u_i_user_1_1_cast_enumerable_1_1_i_a}{IA}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_cast_enumerable_1_1_a}{A}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_cast_enumerable_a9f0d98cda926294f2b55157be325b512}{Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Crab\+UIUser.\+Experiment}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Run} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{class_crab_u_i_user_1_1_cast_enumerable_a3b0831965a7478b45b49f33c7828dab4}{repeats}} = 3000000
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Itterating IA.\+list is 20 times slower than List$<$\+Prop2$>$ list Itterating list.\+Cast$<$\+Prop1$>$() is exactly the same as IA.\+list. 
+
+Definition at line \doxymbox{\hyperlink{_cast_enumerable_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_cast_enumerable_8cs_source}{Cast\+Enumerable.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_cast_enumerable_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_cast_enumerable_a9f0d98cda926294f2b55157be325b512}\index{CrabUIUser.CastEnumerable@{CrabUIUser.CastEnumerable}!Run@{Run}}
+\index{Run@{Run}!CrabUIUser.CastEnumerable@{CrabUIUser.CastEnumerable}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_cast_enumerable_a9f0d98cda926294f2b55157be325b512} 
+override void Crab\+UIUser.\+Cast\+Enumerable.\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_cast_enumerable_8cs_source_l00041}{41}} of file \doxymbox{\hyperlink{_cast_enumerable_8cs_source}{Cast\+Enumerable.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042\ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ Stopwatch\ sw\ =\ \textcolor{keyword}{new}\ Stopwatch();}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ A\ a\ =\ \textcolor{keyword}{new}\ A();}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ Prop1\ value\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ sw.Start();}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Prop2\ prop\ \textcolor{keywordflow}{in}\ a.list)}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ value\ =\ prop;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}itterating\ list:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ sw.Restart();}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Prop1\ prop\ \textcolor{keywordflow}{in}\ (a\ as\ IA).list)}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ value\ =\ prop;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}interface\ IEnumerable:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ sw.Restart();}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Prop1\ prop\ \textcolor{keywordflow}{in}\ a.listOfProp1)}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ value\ =\ prop;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}class\ IEnumerable:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00081\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_crab_u_i_user_1_1_cast_enumerable_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_cast_enumerable_a3b0831965a7478b45b49f33c7828dab4}\index{CrabUIUser.CastEnumerable@{CrabUIUser.CastEnumerable}!repeats@{repeats}}
+\index{repeats@{repeats}!CrabUIUser.CastEnumerable@{CrabUIUser.CastEnumerable}}
+\doxysubsubsection{\texorpdfstring{repeats}{repeats}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_cast_enumerable_a3b0831965a7478b45b49f33c7828dab4} 
+int Crab\+UIUser.\+Cast\+Enumerable.\+repeats = 3000000}
+
+
+
+Definition at line \doxymbox{\hyperlink{_cast_enumerable_8cs_source_l00039}{39}} of file \doxymbox{\hyperlink{_cast_enumerable_8cs_source}{Cast\+Enumerable.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Performance/\+Cast\+Enumerable.\+cs\end{DoxyCompactItemize}

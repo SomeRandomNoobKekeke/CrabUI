@@ -1,0 +1,56 @@
+\doxysection{Property\+Path.\+cs}
+\hypertarget{_property_path_8cs_source}{}\label{_property_path_8cs_source}\index{ClientProject/ClientSource/CUI/Core/TypeAnalysis/PropertyPath.cs@{ClientProject/ClientSource/CUI/Core/TypeAnalysis/PropertyPath.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_code_generator}{CUICodeGenerator}};}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}};}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00010}00010\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00012}\doxymbox{\hyperlink{class_crab_u_i_1_1_property_path}{00012}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }PropertyPath}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00013}00013\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{public}\ List<PropertyInfo>\ Path\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{public}\ Type\ Type\ =>\ Path.Last().PropertyType;}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{object}\ GetValue(\textcolor{keywordtype}{object}\ target)}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00019}00019\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Path.Count\ ==\ 0)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00021}00021\ \ \ \ \ \ \ \textcolor{keywordtype}{object}\ o\ =\ target;}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00023}00023\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Path.Count\ -\/\ 1;\ i++)}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00024}00024\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ o\ =\ Path[i].GetValue(o);}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00026}00026\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00028}00028\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Path.Last().GetValue(o);}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ SetValue(\textcolor{keywordtype}{object}\ target,\ \textcolor{keywordtype}{object}\ value)}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00032}00032\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00033}00033\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Path.Count\ ==\ 0)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00035}00035\ \ \ \ \ \ \ \textcolor{keywordtype}{object}\ o\ =\ target;}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00037}00037\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Path.Count\ -\/\ 1;\ i++)}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00038}00038\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ o\ =\ Path[i].GetValue(o);}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00040}00040\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00042}00042\ \ \ \ \ \ \ Path.Last().SetValue(o,\ value);}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00045}00045\ \ \ \ \ \textcolor{keyword}{public}\ PropertyPath(IEnumerable<PropertyInfo>\ path)\ =>\ Path\ =\ path.ToList();}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{public}\ PropertyPath(List<PropertyInfo>\ path)\ =>\ Path\ =\ path;}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{string}\ ToString()\ =>\ String.Join(\textcolor{charliteral}{'.'},\ Path.Select(pi\ =>\ pi.Name));}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00049}00049\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_property_path_8cs_source_l00050}00050\ \}}
+
+\end{DoxyCode}

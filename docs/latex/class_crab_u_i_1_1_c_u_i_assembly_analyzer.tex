@@ -1,0 +1,102 @@
+\doxysection{Crab\+UI.\+CUIAssembly\+Analyzer Class Reference}
+\hypertarget{class_crab_u_i_1_1_c_u_i_assembly_analyzer}{}\label{class_crab_u_i_1_1_c_u_i_assembly_analyzer}\index{CrabUI.CUIAssemblyAnalyzer@{CrabUI.CUIAssemblyAnalyzer}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_assembly_info}{CUIAssembly\+Info}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_assembly_analyzer_accc24dc086e29927f8f4effe1e29aee0}{Analyze\+Assembly}} (Assembly assembly)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+CUIComponent\+Analyzer \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_assembly_analyzer_a4545ef4239e07c8746dbe476639b63ef}{CUIComponent\+Analyzer}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+CUISerializable\+Analyzer \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_assembly_analyzer_a42b36a17c87137b2d98ebf8d0a5b447f}{CUISerializable\+Analyzer}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_assembly_analyzer_8cs_source_l00012}{12}} of file \doxymbox{\hyperlink{_c_u_i_assembly_analyzer_8cs_source}{CUIAssembly\+Analyzer.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_assembly_analyzer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_assembly_analyzer_accc24dc086e29927f8f4effe1e29aee0}\index{CrabUI.CUIAssemblyAnalyzer@{CrabUI.CUIAssemblyAnalyzer}!AnalyzeAssembly@{AnalyzeAssembly}}
+\index{AnalyzeAssembly@{AnalyzeAssembly}!CrabUI.CUIAssemblyAnalyzer@{CrabUI.CUIAssemblyAnalyzer}}
+\doxysubsubsection{\texorpdfstring{AnalyzeAssembly()}{AnalyzeAssembly()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_assembly_analyzer_accc24dc086e29927f8f4effe1e29aee0} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_assembly_info}{CUIAssembly\+Info}} Crab\+UI.\+CUIAssembly\+Analyzer.\+Analyze\+Assembly (\begin{DoxyParamCaption}\item[{Assembly}]{assembly}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_assembly_analyzer_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_c_u_i_assembly_analyzer_8cs_source}{CUIAssembly\+Analyzer.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ CUIAssemblyInfo\ info\ =\ \textcolor{keyword}{new}\ CUIAssemblyInfo();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ info.Assembly\ =\ assembly;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Type\ T\ \textcolor{keywordflow}{in}\ assembly.GetTypes().Where(CUISerializableAnalyzer.IsCUISerializable))}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ info.SerializableInfos[T]\ =\ CUISerializableAnalyzer.Analyze(T);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Type\ T\ \textcolor{keywordflow}{in}\ assembly.GetTypes().Where(CUIComponentAnalyzer.IsComponentType))}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ info.ComponentInfos[T]\ =\ CUIComponentAnalyzer.Analyze(T);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (info.SerializableInfos.ContainsKey(T))\ \textcolor{comment}{//HACK}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ info.ComponentInfos[T].SerializableProps\ =\ info.SerializableInfos[T].SerializableProps;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ info;}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_assembly_analyzer_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_assembly_analyzer_a4545ef4239e07c8746dbe476639b63ef}\index{CrabUI.CUIAssemblyAnalyzer@{CrabUI.CUIAssemblyAnalyzer}!CUIComponentAnalyzer@{CUIComponentAnalyzer}}
+\index{CUIComponentAnalyzer@{CUIComponentAnalyzer}!CrabUI.CUIAssemblyAnalyzer@{CrabUI.CUIAssemblyAnalyzer}}
+\doxysubsubsection{\texorpdfstring{CUIComponentAnalyzer}{CUIComponentAnalyzer}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_assembly_analyzer_a4545ef4239e07c8746dbe476639b63ef} 
+CUIComponent\+Analyzer Crab\+UI.\+CUIAssembly\+Analyzer.\+CUIComponent\+Analyzer = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_assembly_analyzer_8cs_source_l00014}{14}} of file \doxymbox{\hyperlink{_c_u_i_assembly_analyzer_8cs_source}{CUIAssembly\+Analyzer.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_assembly_analyzer_a42b36a17c87137b2d98ebf8d0a5b447f}\index{CrabUI.CUIAssemblyAnalyzer@{CrabUI.CUIAssemblyAnalyzer}!CUISerializableAnalyzer@{CUISerializableAnalyzer}}
+\index{CUISerializableAnalyzer@{CUISerializableAnalyzer}!CrabUI.CUIAssemblyAnalyzer@{CrabUI.CUIAssemblyAnalyzer}}
+\doxysubsubsection{\texorpdfstring{CUISerializableAnalyzer}{CUISerializableAnalyzer}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_assembly_analyzer_a42b36a17c87137b2d98ebf8d0a5b447f} 
+CUISerializable\+Analyzer Crab\+UI.\+CUIAssembly\+Analyzer.\+CUISerializable\+Analyzer = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_assembly_analyzer_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_c_u_i_assembly_analyzer_8cs_source}{CUIAssembly\+Analyzer.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Type\+Analysis/\+\+Analyzers/\+CUIAssembly\+Analyzer.\+cs\end{DoxyCompactItemize}

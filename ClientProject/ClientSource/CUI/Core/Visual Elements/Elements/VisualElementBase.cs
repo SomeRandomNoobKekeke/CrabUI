@@ -34,7 +34,7 @@ namespace CrabUI
 
     public virtual bool IsPointOnTransparentPixel(Vector2 point) => false;
 
-    public bool ConsumeMouseClicks { get; set; }
+    public bool ConsumeMouseEvents { get; set; }
 
     public ClearableEvent<CUIMouseDownEvent> MouseDown { get; } = new();
     public ClearableEvent<CUIMouseUpEvent> MouseUp { get; } = new();

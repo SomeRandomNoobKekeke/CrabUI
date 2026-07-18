@@ -1,0 +1,134 @@
+\doxysection{Crab\+UI.\+Event\+Targets Class Reference}
+\hypertarget{class_crab_u_i_1_1_event_targets}{}\label{class_crab_u_i_1_1_event_targets}\index{CrabUI.EventTargets@{CrabUI.EventTargets}}
+Inheritance diagram for Crab\+UI.\+Event\+Targets:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_1_1_event_targets}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_event_targets_a931afb6ce36c10009bbe579f7ef05e77}{Find}} (List$<$ \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_unit}{Visual\+Unit}} $>$ flat, Vector2 mouse\+Pos)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_event_consumer}{IEvent\+Consumer}} $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_event_targets_ad5333dc53cb354bb068954897fb42291}{Prev\+Targets}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+List$<$ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_event_consumer}{IEvent\+Consumer}} $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_event_targets_a47cb59cea3dd1d7a439766642a1c061d}{Targets}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_event_consumer}{IEvent\+Consumer}} \doxymbox{\hyperlink{class_crab_u_i_1_1_event_targets_afd2a6aa209b70392060a073a25ddc6e1}{Top\+Target}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_event_targets_8cs_source_l00013}{13}} of file \doxymbox{\hyperlink{_event_targets_8cs_source}{Event\+Targets.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_event_targets_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_event_targets_a931afb6ce36c10009bbe579f7ef05e77}\index{CrabUI.EventTargets@{CrabUI.EventTargets}!Find@{Find}}
+\index{Find@{Find}!CrabUI.EventTargets@{CrabUI.EventTargets}}
+\doxysubsubsection{\texorpdfstring{Find()}{Find()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_event_targets_a931afb6ce36c10009bbe579f7ef05e77} 
+void Crab\+UI.\+Event\+Targets.\+Find (\begin{DoxyParamCaption}\item[{List$<$ \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_unit}{Visual\+Unit}} $>$}]{flat}{, }\item[{Vector2}]{mouse\+Pos}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_event_targets_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_event_targets_8cs_source}{Event\+Targets.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ PrevTargets\ =\ Targets;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ Targets\ =\ \textcolor{keyword}{new}\ List<IEventConsumer>();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ Vector2\ pos\ =\ mousePos;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ flat.Count\ -\/\ 1;\ i\ >=\ 0;\ i-\/-\/)}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (flat[i])}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ VisualUnit.PrimitiveVisualElement\ primitive:}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (primitive.Element\ is\ IEventConsumer\ \&\&\ primitive.Element.Contains(pos))}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Targets.Add(primitive.Element\ as\ IEventConsumer);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ VisualBounds.LeftContextBound\ left:}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ leave\ context}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ VisualBounds.RightContextBound\ right:}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ enter\ context}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Unexpected\ VisualUnit"{}});}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ TopTarget\ =\ Targets.ElementAtOrDefault(0);}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_event_targets_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_event_targets_ad5333dc53cb354bb068954897fb42291}\index{CrabUI.EventTargets@{CrabUI.EventTargets}!PrevTargets@{PrevTargets}}
+\index{PrevTargets@{PrevTargets}!CrabUI.EventTargets@{CrabUI.EventTargets}}
+\doxysubsubsection{\texorpdfstring{PrevTargets}{PrevTargets}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_event_targets_ad5333dc53cb354bb068954897fb42291} 
+List$<$\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_event_consumer}{IEvent\+Consumer}}$>$ Crab\+UI.\+Event\+Targets.\+Prev\+Targets = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_event_targets_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_event_targets_8cs_source}{Event\+Targets.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_event_targets_a47cb59cea3dd1d7a439766642a1c061d}\index{CrabUI.EventTargets@{CrabUI.EventTargets}!Targets@{Targets}}
+\index{Targets@{Targets}!CrabUI.EventTargets@{CrabUI.EventTargets}}
+\doxysubsubsection{\texorpdfstring{Targets}{Targets}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_event_targets_a47cb59cea3dd1d7a439766642a1c061d} 
+List$<$\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_event_consumer}{IEvent\+Consumer}}$>$ Crab\+UI.\+Event\+Targets.\+Targets = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_event_targets_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_event_targets_8cs_source}{Event\+Targets.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_event_targets_afd2a6aa209b70392060a073a25ddc6e1}\index{CrabUI.EventTargets@{CrabUI.EventTargets}!TopTarget@{TopTarget}}
+\index{TopTarget@{TopTarget}!CrabUI.EventTargets@{CrabUI.EventTargets}}
+\doxysubsubsection{\texorpdfstring{TopTarget}{TopTarget}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_event_targets_afd2a6aa209b70392060a073a25ddc6e1} 
+\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_event_consumer}{IEvent\+Consumer}} Crab\+UI.\+Event\+Targets.\+Top\+Target\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_event_targets_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_event_targets_8cs_source}{Event\+Targets.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Components/\+\+CUIMain\+Component/\+\+Modules/\+Event\+Targets.\+cs\end{DoxyCompactItemize}

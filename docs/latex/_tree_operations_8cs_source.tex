@@ -1,0 +1,135 @@
+\doxysection{Tree\+Operations.\+cs}
+\hypertarget{_tree_operations_8cs_source}{}\label{_tree_operations_8cs_source}\index{ClientProject/ClientSource/CUI/Core/Components/CUIComponent/Tree/TreeOperations.cs@{ClientProject/ClientSource/CUI/Core/Components/CUIComponent/Tree/TreeOperations.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Collections.ObjectModel;}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_code_generator}{CUICodeGenerator}};}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00010}00010\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}};}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00011}00011\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00012}00012\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00014}00014\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component}{CUIComponent}}}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00015}00015\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{protected}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_tree_operations___part}{TreeOperations\_Part}}\ TreeOperations\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00017}\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_tree_operations___part}{00017}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_tree_operations___part}{TreeOperations\_Part}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_part}{Part}}}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00019}00019\ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ ValidateI(\textcolor{keywordtype}{int}\ i)}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00020}00020\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ <\ 0\ ||\ i\ >=\ Self.\_Children.Count)\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentException(\$\textcolor{stringliteral}{"{}\{Self\}|\ child\ index\ out\ of\ bounds\ [\{i\}]"{}});}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00022}00022\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00024}00024\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ RemoveChild(CUIComponent\ child)}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00025}00025\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ Self.\_Children.Remove(child);}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ child.\_Parent\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ child.Tree.OnDetachFromParent(Self);}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ Self.Tree.OnChildRemoved(child);}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00031}00031\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00033}00033\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ SetChild(\textcolor{keywordtype}{int}\ i,\ CUIComponent\ newChild)}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00034}00034\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (newChild\ is\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ RemoveChildAt(i);\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ ValidateI(i);}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ CUIComponent\ prevchild\ =\ Self.\_Children[i];}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ newChild.\_Parent?.TreeOperations.RemoveChild(newChild);}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ prevchild.\_Parent\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ newChild.\_Parent\ =\ Self;}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ Self.\_Children[i]\ =\ newChild;}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ prevchild.Tree.OnDetachFromParent(Self);}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ Self.Tree.OnChildRemoved(prevchild);}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ newChild.Tree.OnAttachToParent(Self);}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ Self.Tree.OnChildAdded(newChild);}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00054}00054\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00056}00056\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ InsertChild(\textcolor{keywordtype}{int}\ i,\ CUIComponent\ child)}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00057}00057\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ ArgumentNullException.ThrowIfNull(child);}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ <\ 0)\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentException(\$\textcolor{stringliteral}{"{}\{Self\}|\ child\ insert\ index\ out\ of\ bounds\ [\{i\}]"{}});}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ child.\_Parent?.TreeOperations.RemoveChild(child);}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ child.\_Parent\ =\ Self;}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ Self.\_Children.Insert(i,\ child);}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ child.Tree.OnAttachToParent(Self);}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ Self.Tree.OnChildAdded(child);}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00067}00067\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00069}00069\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ MoveChildTo(CUIComponent\ child,\ \textcolor{keywordtype}{int}\ i)}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00070}00070\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ ArgumentNullException.ThrowIfNull(child);}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ ValidateI(i);}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Self.\_Children.Remove(child))}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentException(\$\textcolor{stringliteral}{"{}\{child\}\ is\ not\ in\ the\ child\ list"{}});}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ Self.\_Children.Insert(i,\ child);}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ Self.Tree.OnChildrenRearranged();}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00081}00081\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00083}00083\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ AddChild(CUIComponent\ child)}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00084}00084\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ ArgumentNullException.ThrowIfNull(child);}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ child.\_Parent?.TreeOperations.RemoveChild(child);}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ child.\_Parent\ =\ Self;}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ Self.\_Children.Add(child);}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ child.Tree.OnAttachToParent(Self);}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ Self.Tree.OnChildAdded(child);}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00094}00094\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00096}00096\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ RemoveChildAt(\textcolor{keywordtype}{int}\ i)}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00097}00097\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ ValidateI(i);}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ CUIComponent\ child\ =\ Self.\_Children[i];}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ Self.\_Children.RemoveAt(i);}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ child.\_Parent\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ child.Tree.OnDetachFromParent(Self);}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ Self.Tree.OnChildRemoved(child);}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00106}00106\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00108}00108\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ SetParent(CUIComponent\ newParent)}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00109}00109\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (newParent\ is\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ Self.\_Parent?.TreeOperations.RemoveChild(Self);}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ newParent.TreeOperations.AddChild(Self);}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00117}00117\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00120}00120\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ RemoveAllChildren()}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00121}00121\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ Self.\_Children.Count\ -\/\ 1;\ i\ >=\ 0;\ i-\/-\/)}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ RemoveChildAt(i);}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00126}00126\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00127}00127\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00128}00128\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_operations_8cs_source_l00129}00129\ \}}
+
+\end{DoxyCode}

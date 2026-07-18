@@ -1,0 +1,47 @@
+\doxysection{Wrap.\+cs}
+\hypertarget{_wrap_8cs_source}{}\label{_wrap_8cs_source}\index{ClientProject/ClientSource/CUI/Core/Visual Elements/Elements/TextBlock/Strategies/Wrap.cs@{ClientProject/ClientSource/CUI/Core/Visual Elements/Elements/TextBlock/Strategies/Wrap.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework.Graphics;}
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}};}
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00011}00011\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00013}00013\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_text_block}{TextBlock}}}
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00014}00014\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00015}\doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_1_1_wrap_strategy}{00015}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }WrapStrategy\ :\ \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base}{ResizeStrategyBase}}}
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00016}00016\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00017}00017\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ MeasureRawTextSize(\textcolor{keywordtype}{string}\ text,\ \textcolor{keywordtype}{float}\ scale,\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_font}{CUIFont}}\ font)}
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00018}00018\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ RawTextSize\ =\ font.MeasureString(text);}
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ RealText\ =\ text;}
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00021}00021\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00023}00023\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ MeasureRealTextSize(\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}\ rect,\ Vector2\ anchor,\ \textcolor{keywordtype}{string}\ text,\ \textcolor{keywordtype}{float}\ scale,\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_font}{CUIFont}}\ font)}
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00024}00024\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ Vector2\ RealTextSize\ =\ RawTextSize\ *\ scale;}
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ RealText\ =\ text;}
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ RealScale\ =\ scale;}
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (RealTextSize.X\ >\ rect.Width)}
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ RealText\ =\ font.WrapText(text,\ rect.Width);}
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ RealTextSize\ =\ font.MeasureString(RealText)\ *\ scale;}
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ TextDrawPosition\ =\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_anchor}{CUIAnchor}}.\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_anchor_aa0f632373cfddfb4bdc48a77c8b1f24b}{ChildPosIn}}(rect,\ anchor,\ RealTextSize);}
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00037}00037\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00038}00038\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00039}00039\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_wrap_8cs_source_l00041}00041\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,160 @@
+\doxysection{CUILibs.\+UTest\+Dict\+Result Class Reference}
+\hypertarget{class_c_u_i_libs_1_1_u_test_dict_result}{}\label{class_c_u_i_libs_1_1_u_test_dict_result}\index{CUILibs.UTestDictResult@{CUILibs.UTestDictResult}}
+Inheritance diagram for CUILibs.\+UTest\+Dict\+Result:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_u_i_libs_1_1_u_test_dict_result}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+record \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_dict_result_a36ef26bcf0d747bdbc474af015e9a4b7}{Value\+Diff}} (object Key, object Value1, object Value2)
+\item 
+override bool \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_dict_result_aa4c95e5acd1d37cf470903abfe6a37bc}{Equals}} (object obj)
+\item 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_dict_result_a7025018600f7bb571f3e87736304843c}{UTest\+Dict\+Result}} (System.\+Collections.\+IDictionary values)
+\item 
+override string \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_dict_result_a4e1720b11e0a01bd009316b1924645b2}{To\+String}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+override object \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_dict_result_a8dd69f6834ba2fc4c7f267c32bcbe727}{Result}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_result_base}{CUILibs.\+UTest\+Result\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual object \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_result_base_af0b9b9482f10844f98caac7e917157ec}{Result}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_dict_result_8cs_source_l00009}{9}} of file \doxymbox{\hyperlink{_u_test_dict_result_8cs_source}{UTest\+Dict\+Result.\+cs}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_dict_result_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_dict_result_a7025018600f7bb571f3e87736304843c}\index{CUILibs.UTestDictResult@{CUILibs.UTestDictResult}!UTestDictResult@{UTestDictResult}}
+\index{UTestDictResult@{UTestDictResult}!CUILibs.UTestDictResult@{CUILibs.UTestDictResult}}
+\doxysubsubsection{\texorpdfstring{UTestDictResult()}{UTestDictResult()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_dict_result_a7025018600f7bb571f3e87736304843c} 
+CUILibs.\+UTest\+Dict\+Result.\+UTest\+Dict\+Result (\begin{DoxyParamCaption}\item[{System.\+Collections.\+IDictionary}]{values}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_dict_result_8cs_source_l00043}{43}} of file \doxymbox{\hyperlink{_u_test_dict_result_8cs_source}{UTest\+Dict\+Result.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00043\ =>\ Values\ =\ values;}
+
+\end{DoxyCode}
+
+
+\label{doc-func-members}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_dict_result_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_dict_result_aa4c95e5acd1d37cf470903abfe6a37bc}\index{CUILibs.UTestDictResult@{CUILibs.UTestDictResult}!Equals@{Equals}}
+\index{Equals@{Equals}!CUILibs.UTestDictResult@{CUILibs.UTestDictResult}}
+\doxysubsubsection{\texorpdfstring{Equals()}{Equals()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_dict_result_aa4c95e5acd1d37cf470903abfe6a37bc} 
+override bool CUILibs.\+UTest\+Dict\+Result.\+Equals (\begin{DoxyParamCaption}\item[{object}]{obj}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_dict_result_8cs_source_l00023}{23}} of file \doxymbox{\hyperlink{_u_test_dict_result_8cs_source}{UTest\+Dict\+Result.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (obj\ is\ not\ UTestDictResult\ other)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Values\ is\ not\ \textcolor{keyword}{null}\ \&\&\ other.Values\ is\ not\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (System.Collections.DictionaryEntry\ kvp\ in\ Values)}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!other.Values.Contains(kvp.Key))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Object.Equals(other.Values[kvp.Key],\ kvp.Value))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (System.Collections.DictionaryEntry\ kvp\ in\ other.Values)}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Values.Contains(kvp.Key))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Object.Equals(Values[kvp.Key],\ kvp.Value))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Values\ ==\ other.Values;}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_dict_result_a4e1720b11e0a01bd009316b1924645b2}\index{CUILibs.UTestDictResult@{CUILibs.UTestDictResult}!ToString@{ToString}}
+\index{ToString@{ToString}!CUILibs.UTestDictResult@{CUILibs.UTestDictResult}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_dict_result_a4e1720b11e0a01bd009316b1924645b2} 
+override string CUILibs.\+UTest\+Dict\+Result.\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_dict_result_8cs_source_l00045}{45}} of file \doxymbox{\hyperlink{_u_test_dict_result_8cs_source}{UTest\+Dict\+Result.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ StringBuilder\ sb\ =\ \textcolor{keyword}{new}(\textcolor{stringliteral}{"{}[\(\backslash\)n"{}});}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (System.Collections.DictionaryEntry\ kvp\ in\ Values)}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ sb.Append(\$\textcolor{stringliteral}{"{}\ \ \ \ [\{kvp.Key\}]\ =\ [\{kvp.Value\}],\(\backslash\)n"{}});}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ sb.Remove(sb.Length\ -\/\ 1,\ 1);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ sb.Append(\textcolor{stringliteral}{"{}\(\backslash\)n]"{}});}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sb.ToString();}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_dict_result_a36ef26bcf0d747bdbc474af015e9a4b7}\index{CUILibs.UTestDictResult@{CUILibs.UTestDictResult}!ValueDiff@{ValueDiff}}
+\index{ValueDiff@{ValueDiff}!CUILibs.UTestDictResult@{CUILibs.UTestDictResult}}
+\doxysubsubsection{\texorpdfstring{ValueDiff()}{ValueDiff()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_dict_result_a36ef26bcf0d747bdbc474af015e9a4b7} 
+record CUILibs.\+UTest\+Dict\+Result.\+Value\+Diff (\begin{DoxyParamCaption}\item[{object}]{Key}{, }\item[{object}]{Value1}{, }\item[{object}]{Value2}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_dict_result_8cs_source_l00011}{11}} of file \doxymbox{\hyperlink{_u_test_dict_result_8cs_source}{UTest\+Dict\+Result.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{string}\ ToString()\ =>\ \$\textcolor{stringliteral}{"{}\{Key\}\ [\{Value1\},\ \{Value2\}]"{}};}
+\DoxyCodeLine{00014\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_dict_result_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_dict_result_a8dd69f6834ba2fc4c7f267c32bcbe727}\index{CUILibs.UTestDictResult@{CUILibs.UTestDictResult}!Result@{Result}}
+\index{Result@{Result}!CUILibs.UTestDictResult@{CUILibs.UTestDictResult}}
+\doxysubsubsection{\texorpdfstring{Result}{Result}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_dict_result_a8dd69f6834ba2fc4c7f267c32bcbe727} 
+override object CUILibs.\+UTest\+Dict\+Result.\+Result\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_dict_result_8cs_source_l00021}{21}} of file \doxymbox{\hyperlink{_u_test_dict_result_8cs_source}{UTest\+Dict\+Result.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \{\ \textcolor{keyword}{get}\ =>\ Values;\ \textcolor{keyword}{set}\ =>\ Values\ =\ value\ as\ System.Collections.IDictionary;\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+Libs/\+\+UTest/\+\+UTest\+Results/\+UTest\+Dict\+Result.\+cs\end{DoxyCompactItemize}

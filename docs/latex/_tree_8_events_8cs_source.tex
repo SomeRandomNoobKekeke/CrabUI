@@ -1,0 +1,93 @@
+\doxysection{Tree.\+Events.\+cs}
+\hypertarget{_tree_8_events_8cs_source}{}\label{_tree_8_events_8cs_source}\index{ClientProject/ClientSource/CUI/Core/Components/CUIComponent/Tree/Tree.Events.cs@{ClientProject/ClientSource/CUI/Core/Components/CUIComponent/Tree/Tree.Events.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Collections.ObjectModel;}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_code_generator}{CUICodeGenerator}};}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00010}00010\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}};}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00011}00011\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00012}00012\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00014}00014\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component}{CUIComponent}}}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00015}00015\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{protected}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_tree_events___part}{TreeEvents\_Part}}\ Tree\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00017}\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_tree_events___part}{00017}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_tree_events___part}{TreeEvents\_Part}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_part}{Part}},\ \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_module}{IModule}}}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00019}00019\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_layout_marker_1_1_pattern}{LayoutMarker.Pattern}}\ MarkPattern\ \{\ \textcolor{keyword}{get};\ \}\ =\ LayoutMarker.Pattern.UpAndDown;}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00021}00021\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Init()}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00022}00022\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ Debug\_ChildAdded.Map(Self.DebugRelays[DebugCategory.TreeChanged]);}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ Debug\_ChildRemoved.Map(Self.DebugRelays[DebugCategory.TreeChanged]);}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ Debug\_LayoutMarked.Map(Self.DebugRelays[DebugCategory.LayoutMarked]);}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00027}00027\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00030}00030\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_node}{DebugNode<CUIComponent,\ CUIComponent>}}\ Debug\_ChildAdded\ =\ \textcolor{keyword}{new}(}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ DebugCategory.TreeChanged,\ CUI.DebugHub,}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ (parent,\ child)\ =>\ \$\textcolor{stringliteral}{"{}\{parent\}\ <=\ \{child\}"{}}}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00033}00033\ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00034}00034\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_node}{DebugNode<CUIComponent,\ CUIComponent>}}\ Debug\_ChildRemoved\ =\ \textcolor{keyword}{new}(}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ DebugCategory.TreeChanged,\ CUI.DebugHub,}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ (parent,\ child)\ =>\ \$\textcolor{stringliteral}{"{}\{parent\}\ =>\ \{child\}"{}}}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00037}00037\ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00039}00039\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_node}{DebugNode}}<CUIComponent,\ LayoutMarker.Pattern,\ \textcolor{keywordtype}{string}>\ Debug\_LayoutMarked\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}(}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ DebugCategory.LayoutMarked,\ CUI.DebugHub,}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ (host,\ pattern,\ reason)\ =>\ \$\textcolor{stringliteral}{"{}\{host\}\ \{reason\}\ \{pattern\}"{}}}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00042}00042\ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00046}00046\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ OnChildAdded(CUIComponent\ child)}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00047}00047\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ PropogateTreeChanged();}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ Self.Remember(child);}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ Self.LayoutMarker.Mark(MarkPattern);}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00051}00051\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00053}00053\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ OnChildRemoved(CUIComponent\ child)}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00054}00054\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ PropogateTreeChanged();}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ Self.Forget(child);}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ Self.LayoutMarker.Mark(MarkPattern);}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00058}00058\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00060}00060\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ OnAttachToParent(CUIComponent\ parent)}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00061}00061\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ Self.MainComponentTracker.OnAttachToParentHandler(parent);}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ Self.ProtectedCommands.OnAttachToParentHandler(parent);}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00064}00064\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00066}00066\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ OnDetachFromParent(CUIComponent\ parent)}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00067}00067\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ Self.MainComponentTracker.OnDetachFromParentHandler(parent);}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ Self.ProtectedCommands.OnDetachFromParentHandler(parent);}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00070}00070\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00072}00072\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ OnChildrenRearranged()}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00073}00073\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ PropogateTreeChanged();}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ Self.LayoutMarker.Mark(MarkPattern);}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00076}00076\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00079}00079\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ Changed\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00080}00080\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ PropogateTreeChanged()}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00081}00081\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ Changed\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ Self.Parent?.Tree.PropogateTreeChanged();}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00084}00084\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00085}00085\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00086}00086\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tree_8_events_8cs_source_l00087}00087\ \}}
+
+\end{DoxyCode}

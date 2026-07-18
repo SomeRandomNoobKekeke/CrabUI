@@ -1,0 +1,51 @@
+\doxysection{Fit\+Content.\+cs}
+\hypertarget{_fit_content_8cs_source}{}\label{_fit_content_8cs_source}\index{ClientProject/InMemory/CUITest/Snapshots/Tests/Random/FitContent.cs@{ClientProject/InMemory/CUITest/Snapshots/Tests/Random/FitContent.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }System.Runtime.CompilerServices;}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}};}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}};}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00010}00010\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00012}00012\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i_user}{CrabUIUser}}}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00014}00014\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_tests}{SnapshotTests}}}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00015}00015\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{partial\ class\ }Random}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00017}00017\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00018}00018\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUIComponent\ FitContent()}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00019}00019\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ CUIFrame\ frame\ =\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ Background\ =\ \{\ Color\ =\ \textcolor{keyword}{new}\ Color(32,\ 32,\ 32)\ \},}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ Absolute\ =\ \textcolor{keyword}{new}\ CUINullRect(0,\ 0,\ 400,\ 400),}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ Anchor\ =\ CUIAnchor.Center,}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ FitContent\ =\ \textcolor{keyword}{new}\ CUIBool2(\textcolor{keyword}{true},\ \textcolor{keyword}{true}),}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ frame[\textcolor{stringliteral}{"{}a"{}}]\ =\ \textcolor{keyword}{new}\ CUIComponent()}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ Background\ =\ \{\ Color\ =\ Color.Yellow\ \},}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ Absolute\ =\ \textcolor{keyword}{new}\ CUINullRect(20,\ 20,\ 30,\ 30),}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ frame[\textcolor{stringliteral}{"{}b"{}}]\ =\ \textcolor{keyword}{new}\ CUIComponent()}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ Background\ =\ \{\ Color\ =\ Color.Red\ \},}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ Absolute\ =\ \textcolor{keyword}{new}\ CUINullRect(300,\ 300,\ 30,\ 30),}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ frame;}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00042}00042\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00044}00044\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_fit_content_8cs_source_l00045}00045\ \}}
+
+\end{DoxyCode}

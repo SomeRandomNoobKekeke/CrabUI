@@ -1,0 +1,65 @@
+\doxysection{Interfaces.\+cs}
+\hypertarget{_interfaces_8cs_source}{}\label{_interfaces_8cs_source}\index{ClientProject/ClientSource/Libs/Component Generator/Interfaces.cs@{ClientProject/ClientSource/Libs/Component Generator/Interfaces.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Runtime.CompilerServices;}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}};}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00008}00008\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_c_u_i_code_generator}{CUICodeGenerator}}}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00011}\doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_component}{00011}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{interface\ }\doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_component}{IComponent}}}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00012}00012\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ InjectModules()\ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ InjectParts()\ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ RunInitMethods()\ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ InitParts()\ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ InitModules()\ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ InjectProps()\ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ NotifyAwareObjects()\ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Inject()}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00022}00022\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00023}00023\ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00024}00024\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ InjectParts();}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ InjectModules();}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ InjectProps();}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ NotifyAwareObjects();}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ RunInitMethods();}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ InitParts();}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ InitModules();}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00032}00032\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00033}00033\ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00034}00034\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger}{Logger}}.Default.\doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_a79b61b027b723d0b46119e3f66ed0bef}{Error}}(\$\textcolor{stringliteral}{"{}CG|\ failed\ to\ inject\ [\{this\}]\(\backslash\)n\{e\}"{}});}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00036}00036\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00038}00038\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00040}\doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_part}{00040}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{interface\ }\doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_part}{IPart}}\ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00041}\doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_module}{00041}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{interface\ }\doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_module}{IModule}}\ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00042}\doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_end_part}{00042}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{interface\ }\doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_end_part}{IEndPart}}\ :\ \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_part}{IPart}}\ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00043}\doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_chimera_part}{00043}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{interface\ }\doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_chimera_part}{IChimeraPart}}\ :\ \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_end_part}{IEndPart}},\ \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_module}{IModule}}\ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00044}\doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_adapter_part}{00044}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{interface\ }\doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_adapter_part}{IAdapterPart}}\ :\ \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_end_part}{IEndPart}},\ \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_module}{IModule}}\ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00046}\doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_prop_container}{00046}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{interface\ }\doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_prop_container}{IPropContainer}}\ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00047}\doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_prop}{00047}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{interface\ }\doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_prop}{IProp}}\ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00049}\doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_aware}{00049}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{interface\ }\doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_aware}{IAware}}}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00050}00050\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00051}00051\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{object}\ HostComponent\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00052}00052\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ HostPropName\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00053}00053\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00055}00055\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }IComponent\_Extensions}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00056}00056\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00057}00057\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ Inject(\textcolor{keyword}{this}\ \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_component}{IComponent}}\ component)\ =>\ component.Inject();}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00058}00058\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_interfaces_8cs_source_l00059}00059\ \}}
+
+\end{DoxyCode}

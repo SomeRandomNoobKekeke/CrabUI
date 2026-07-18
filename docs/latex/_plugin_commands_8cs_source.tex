@@ -1,0 +1,101 @@
+\doxysection{Plugin\+Commands.\+cs}
+\hypertarget{_plugin_commands_8cs_source}{}\label{_plugin_commands_8cs_source}\index{ClientProject/ClientSource/Libs/PluginCommands.cs@{ClientProject/ClientSource/Libs/PluginCommands.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Runtime.CompilerServices;}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00010}00010\ \textcolor{keyword}{using\ }System.IO;}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00011}00011\ \textcolor{keyword}{using\ }System.Text;}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00012}00012\ \textcolor{keyword}{using\ }Barotrauma.LuaCs;}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00014}00014\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}}}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00015}00015\ \{}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00017}00017\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }PluginCommands}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00018}00018\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{static}\ PluginCommands()}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00020}00020\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00021}00021\ \ \ \ \ \ \ AddHooks();}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ List<DebugConsole.Command>\ AddedCommands\ =\ \textcolor{keyword}{new}\ List<DebugConsole.Command>();}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ AddHooks()}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00027}00027\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00028}00028\ \ \ \ \ \ \ LuaCsSetup.Instance.Hook.Add(\textcolor{stringliteral}{"{}stop"{}},\ \$\textcolor{stringliteral}{"{}[\{ModInfo.HookId\}].RemoveCommands"{}},\ (\textcolor{keywordtype}{object}[]\ args)\ =>}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00029}00029\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ RemoveCommands();}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00032}00032\ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00034}00034\ \ \ \ \ \ \ ((LuaCsSetup.Instance.EventService\ as\ EventService)}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ .\_luaPatcher\ as\ LuaPatcherService)}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ .Patch(\$\textcolor{stringliteral}{"{}\{ModInfo.HookId\}.PermitCommands"{}},}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ typeof(DebugConsole).GetMethod(\textcolor{stringliteral}{"{}IsCommandPermitted"{}},\ BindingFlags.NonPublic\ |\ BindingFlags.Static),}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{object}\ instance,\ LuaPatcherService.ParameterTable\ ptable)\ =>}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (AddedCommands.Any(c\ =>\ c.Names.Contains(((Identifier)ptable[\textcolor{stringliteral}{"{}command"{}}]))))}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ptable.ReturnValue\ =\ true;}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ptable.PreventExecution\ =\ true;}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00051}00051\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00053}00053\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ Add(\textcolor{keywordtype}{string}\ name,\ Action<\textcolor{keywordtype}{string}[]>\ callback,\ Func<\textcolor{keywordtype}{string}[][]>\ hints\ =\ \textcolor{keyword}{null},\ \textcolor{keywordtype}{string}\ help\ =\ \textcolor{stringliteral}{"{}"{}},\ \textcolor{keywordtype}{bool}\ addToStart\ =\ \textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00054}00054\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00055}00055\ \ \ \ \ \ \ DebugConsole.Command\ command\ =\ \textcolor{keyword}{new}\ DebugConsole.Command(name,\ help,\ (\textcolor{keywordtype}{string}[]\ args)\ =>}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00056}00056\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ callback(args);}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger}{Logger}}.Default.\doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_a79b61b027b723d0b46119e3f66ed0bef}{Error}}(e.Message);}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00065}00065\ \ \ \ \ \ \ \},\ hints);}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00066}00066\ \ \ \ \ \ \ AddedCommands.Add(command);}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00068}00068\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (addToStart)}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00069}00069\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ DebugConsole.Commands.Insert(0,\ command);}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00071}00071\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00072}00072\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00073}00073\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ DebugConsole.Commands.Add(command);}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00075}00075\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00076}00076\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00078}00078\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ Exist(\textcolor{keywordtype}{string}\ name)}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00079}00079\ \ \ \ \ \ \ =>\ DebugConsole.Commands.Any(command\ =>\ command.Names[0].Value\ ==\ name);}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00081}00081\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ PrintCommands()}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00082}00082\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00083}00083\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (DebugConsole.Command\ command\ in\ DebugConsole.Commands)}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00084}00084\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger}{Logger}}.Default.\doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_a6ff24cf58c3762cfd88b5b761daeb0d8}{Log}}(command.Names[0]);}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00086}00086\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00087}00087\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00089}00089\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ RemoveCommands()}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00090}00090\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00091}00091\ \ \ \ \ \ \ AddedCommands.ForEach(c\ =>\ DebugConsole.Commands.Remove(c));}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00092}00092\ \ \ \ \ \ \ AddedCommands.Clear();}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00093}00093\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00094}00094\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_plugin_commands_8cs_source_l00095}00095\ \}}
+
+\end{DoxyCode}

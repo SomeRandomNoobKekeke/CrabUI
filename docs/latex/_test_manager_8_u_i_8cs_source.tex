@@ -1,0 +1,112 @@
+\doxysection{Test\+Manager.\+UI.\+cs}
+\hypertarget{_test_manager_8_u_i_8cs_source}{}\label{_test_manager_8_u_i_8cs_source}\index{ClientProject/InMemory/CUITest/TestManager/TestManager.UI.cs@{ClientProject/InMemory/CUITest/TestManager/TestManager.UI.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }System.Runtime.CompilerServices;}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}};}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}};}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00010}00010\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00011}00011\ \textcolor{keyword}{using\ }System.IO;}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00013}00013\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i_user}{CrabUIUser}}}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00014}00014\ \{}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00015}00015\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_test_manager}{TestManager}}\ :\ CUIFrame}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00016}00016\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{public}\ CUIButton\ OpenButton\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}\ CUIButton()}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00019}00019\ \ \ \ \ \ \ Absolute\ =\ \textcolor{keyword}{new}\ CUINullRect(w:\ 50,\ h:\ 30),}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00020}00020\ \ \ \ \ \ \ Anchor\ =\ CUIAnchor.RightCenter,}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00021}00021\ \ \ \ \ \ \ Text\ =\ \textcolor{stringliteral}{"{}Test"{}},}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00022}00022\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{public}\ CUIPages\ Pages\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ CreateUI()}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00030}00030\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00031}00031\ \ \ \ \ \ \ OpenButton.MouseDown\ +=\ (c,\ e)\ =>\ IsOpen\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00034}00034\ \ \ \ \ \ \ Absolute\ =\ \textcolor{keyword}{new}\ CUINullRect(w:\ 300,\ h:\ 400);}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00035}00035\ \ \ \ \ \ \ Background.Color\ =\ \textcolor{keyword}{new}\ Color(32,\ 32,\ 32);}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00036}00036\ \ \ \ \ \ \ Anchor\ =\ CUIAnchor.RightCenter;}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00038}00038\ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}]\ =\ \textcolor{keyword}{new}\ CUIVerticalList()}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00039}00039\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ Relative\ =\ \textcolor{keyword}{new}\ CUINullRect(0,\ 0,\ 1,\ 1),}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00041}00041\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00043}00043\ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}header"{}}]\ =\ \textcolor{keyword}{new}\ CUIHorizontalList()}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00044}00044\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ Direction\ =\ CUIDirection.Reverse,}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ Absolute\ =\ \textcolor{keyword}{new}\ CUINullRect(h:\ 30),}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ Background\ =\ \{\ Color\ =\ \textcolor{keyword}{new}\ Color(32,\ 32,\ 32)\ \},}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00048}00048\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00050}00050\ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}header"{}}][\textcolor{stringliteral}{"{}close"{}}]\ =\ \textcolor{keyword}{new}\ CUIButton()}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00051}00051\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ Text\ =\ \textcolor{stringliteral}{"{}X"{}},}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ MasterColor\ =\ \textcolor{keyword}{new}\ Color(255,\ 0,\ 0),}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ Absolute\ =\ \textcolor{keyword}{new}\ CUINullRect(w:\ 30,\ h:\ 30),}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ OnMouseDown\ =\ (c,\ e)\ =>\ IsOpen\ =\ \textcolor{keyword}{false},}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00056}00056\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00058}00058\ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}header"{}}][\textcolor{stringliteral}{"{}caption"{}}]\ =\ \textcolor{keyword}{new}\ CUIComponent()}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00059}00059\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ Flex\ =\ 1,}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00061}00061\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00063}00063\ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}header"{}}][\textcolor{stringliteral}{"{}E2E"{}}]\ =\ \textcolor{keyword}{new}\ CUIButton()}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00064}00064\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ Text\ =\ \textcolor{stringliteral}{"{}E2E"{}},}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ResizeStrategy\ =\ ResizeStrategy.Resist,}}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ Absolute\ =\ \textcolor{keyword}{new}\ CUINullRect(w:\ 90),}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ OnMouseDown\ =\ (c,\ e)\ =>\ Pages.Open(E2ETestManager.UI),}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00069}00069\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00071}00071\ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}header"{}}][\textcolor{stringliteral}{"{}snapshots"{}}]\ =\ \textcolor{keyword}{new}\ CUIButton()}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00072}00072\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ Text\ =\ \textcolor{stringliteral}{"{}Snapshots"{}},}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ResizeStrategy\ =\ ResizeStrategy.Resist,}}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ Absolute\ =\ \textcolor{keyword}{new}\ CUINullRect(w:\ 90),}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ OnMouseDown\ =\ (c,\ e)\ =>\ Pages.Open(SnapshotTestManager.UI),}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00077}00077\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00079}00079\ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}main"{}}]\ =\ Pages\ =\ \textcolor{keyword}{new}\ CUIPages()}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00080}00080\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ Flex\ =\ 1,}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00082}00082\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00083}00083\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00085}00085\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ IsOpen}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00086}00086\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00087}00087\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ this.Parent\ !=\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00088}00088\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00089}00089\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (value)}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ OpenButton.RemoveSelf();}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ this.Open(CUI.TopMain);}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ Pages.Open(SnapshotTestManager.UI);}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ CUI.TopMain.Children.Add(OpenButton);}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ this.Close();}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ Pages.Dismantle();\ \textcolor{comment}{//\ This\ should\ trigger\ dismantle\ on\ concrete\ page}}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ ModStorage.Remove(\textcolor{stringliteral}{"{}CUITest"{}});}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00103}00103\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00104}00104\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00105}00105\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_test_manager_8_u_i_8cs_source_l00106}00106\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,200 @@
+\doxysection{Crab\+UI.\+CUIType\+Tree Class Reference}
+\hypertarget{class_crab_u_i_1_1_c_u_i_type_tree}{}\label{class_crab_u_i_1_1_c_u_i_type_tree}\index{CrabUI.CUITypeTree@{CrabUI.CUITypeTree}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_type_tree_a37124f8441ab49ab9432b9046ab3a6e7}{Add}} (IEnumerable$<$ Type $>$ types)
+\item 
+IEnumerable$<$ Type $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_type_tree_a82c8e287d0fc880795805c6b674e2078}{Get\+Derived\+Types}} (Type T)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_type_tree_a2e5b39d6268a5b8e078ed513e24dc087}{Connect}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_type_tree_acb27481a2322d47c8a6828e7b0b4e632}{Clear}} ()
+\item 
+record \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_type_tree_a5033d19fcd9a5dc6cfbca14d926973b1}{Node}} (Type Type)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Dictionary$<$ Type, Node $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_type_tree_a926a2b5e50a1ba90b04bbae75f273a4e}{Nodes}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+Dictionary$<$ string, Type $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_type_tree_a18b385a4a472bdc119a6ffe395cb1528}{Types\+By\+Name}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+ICollection$<$ Type $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_type_tree_a1b5a883faedebd3a8f8aaef22c887ccf}{All\+Types}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_type_tree_8cs_source_l00012}{12}} of file \doxymbox{\hyperlink{_c_u_i_type_tree_8cs_source}{CUIType\+Tree.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_type_tree_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_type_tree_a37124f8441ab49ab9432b9046ab3a6e7}\index{CrabUI.CUITypeTree@{CrabUI.CUITypeTree}!Add@{Add}}
+\index{Add@{Add}!CrabUI.CUITypeTree@{CrabUI.CUITypeTree}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_type_tree_a37124f8441ab49ab9432b9046ab3a6e7} 
+void Crab\+UI.\+CUIType\+Tree.\+Add (\begin{DoxyParamCaption}\item[{IEnumerable$<$ Type $>$}]{types}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_type_tree_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_c_u_i_type_tree_8cs_source}{CUIType\+Tree.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Type\ T\ \textcolor{keywordflow}{in}\ types)}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ Nodes[T]\ =\ \textcolor{keyword}{new}\ Node(T);}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ TypesByName[T.Name]\ =\ T;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \textcolor{comment}{//TODO\ optimize,\ i\ just\ need\ to\ check\ the\ new\ types}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ Connect();}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_type_tree_acb27481a2322d47c8a6828e7b0b4e632}\index{CrabUI.CUITypeTree@{CrabUI.CUITypeTree}!Clear@{Clear}}
+\index{Clear@{Clear}!CrabUI.CUITypeTree@{CrabUI.CUITypeTree}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_type_tree_acb27481a2322d47c8a6828e7b0b4e632} 
+void Crab\+UI.\+CUIType\+Tree.\+Clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_type_tree_8cs_source_l00063}{63}} of file \doxymbox{\hyperlink{_c_u_i_type_tree_8cs_source}{CUIType\+Tree.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00063\ =>\ Nodes.Clear();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_type_tree_a2e5b39d6268a5b8e078ed513e24dc087}\index{CrabUI.CUITypeTree@{CrabUI.CUITypeTree}!Connect@{Connect}}
+\index{Connect@{Connect}!CrabUI.CUITypeTree@{CrabUI.CUITypeTree}}
+\doxysubsubsection{\texorpdfstring{Connect()}{Connect()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_type_tree_a2e5b39d6268a5b8e078ed513e24dc087} 
+void Crab\+UI.\+CUIType\+Tree.\+Connect (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_type_tree_8cs_source_l00047}{47}} of file \doxymbox{\hyperlink{_c_u_i_type_tree_8cs_source}{CUIType\+Tree.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048\ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ (type,\ node)\ in\ Nodes)}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ node.Parent\ is\ \textcolor{keyword}{null}\ \&\&}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ node.Type.BaseType\ !=\ \textcolor{keyword}{null}\ \&\&}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ Nodes.ContainsKey(node.Type.BaseType)}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ Nodes[node.Type.BaseType].Children.Add(node);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ node.Parent\ =\ Nodes[node.Type.BaseType];}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_type_tree_a82c8e287d0fc880795805c6b674e2078}\index{CrabUI.CUITypeTree@{CrabUI.CUITypeTree}!GetDerivedTypes@{GetDerivedTypes}}
+\index{GetDerivedTypes@{GetDerivedTypes}!CrabUI.CUITypeTree@{CrabUI.CUITypeTree}}
+\doxysubsubsection{\texorpdfstring{GetDerivedTypes()}{GetDerivedTypes()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_type_tree_a82c8e287d0fc880795805c6b674e2078} 
+IEnumerable$<$ Type $>$ Crab\+UI.\+CUIType\+Tree.\+Get\+Derived\+Types (\begin{DoxyParamCaption}\item[{Type}]{T}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_type_tree_8cs_source_l00031}{31}} of file \doxymbox{\hyperlink{_c_u_i_type_tree_8cs_source}{CUIType\+Tree.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ T;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Nodes.ContainsKey(T))}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Node\ child\ \textcolor{keywordflow}{in}\ Nodes[T].Children)}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Type\ derived\ \textcolor{keywordflow}{in}\ GetDerivedTypes(child.Type))}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ derived;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_type_tree_a5033d19fcd9a5dc6cfbca14d926973b1}\index{CrabUI.CUITypeTree@{CrabUI.CUITypeTree}!Node@{Node}}
+\index{Node@{Node}!CrabUI.CUITypeTree@{CrabUI.CUITypeTree}}
+\doxysubsubsection{\texorpdfstring{Node()}{Node()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_type_tree_a5033d19fcd9a5dc6cfbca14d926973b1} 
+record Crab\+UI.\+CUIType\+Tree.\+Node (\begin{DoxyParamCaption}\item[{Type}]{Type}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_type_tree_8_node_8cs_source_l00014}{14}} of file \doxymbox{\hyperlink{_c_u_i_type_tree_8_node_8cs_source}{CUIType\+Tree.\+Node.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \textcolor{keyword}{public}\ Node\ Parent\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \textcolor{keyword}{public}\ List<Node>\ Children\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00018\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_type_tree_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_type_tree_a1b5a883faedebd3a8f8aaef22c887ccf}\index{CrabUI.CUITypeTree@{CrabUI.CUITypeTree}!AllTypes@{AllTypes}}
+\index{AllTypes@{AllTypes}!CrabUI.CUITypeTree@{CrabUI.CUITypeTree}}
+\doxysubsubsection{\texorpdfstring{AllTypes}{AllTypes}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_type_tree_a1b5a883faedebd3a8f8aaef22c887ccf} 
+ICollection$<$Type$>$ Crab\+UI.\+CUIType\+Tree.\+All\+Types\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_type_tree_8cs_source_l00029}{29}} of file \doxymbox{\hyperlink{_c_u_i_type_tree_8cs_source}{CUIType\+Tree.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_c_u_i_type_tree_a926a2b5e50a1ba90b04bbae75f273a4e}\index{CrabUI.CUITypeTree@{CrabUI.CUITypeTree}!Nodes@{Nodes}}
+\index{Nodes@{Nodes}!CrabUI.CUITypeTree@{CrabUI.CUITypeTree}}
+\doxysubsubsection{\texorpdfstring{Nodes}{Nodes}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_type_tree_a926a2b5e50a1ba90b04bbae75f273a4e} 
+Dictionary$<$Type, Node$>$ Crab\+UI.\+CUIType\+Tree.\+Nodes = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_type_tree_8cs_source_l00014}{14}} of file \doxymbox{\hyperlink{_c_u_i_type_tree_8cs_source}{CUIType\+Tree.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_type_tree_a18b385a4a472bdc119a6ffe395cb1528}\index{CrabUI.CUITypeTree@{CrabUI.CUITypeTree}!TypesByName@{TypesByName}}
+\index{TypesByName@{TypesByName}!CrabUI.CUITypeTree@{CrabUI.CUITypeTree}}
+\doxysubsubsection{\texorpdfstring{TypesByName}{TypesByName}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_type_tree_a18b385a4a472bdc119a6ffe395cb1528} 
+Dictionary$<$string, Type$>$ Crab\+UI.\+CUIType\+Tree.\+Types\+By\+Name = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_type_tree_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_c_u_i_type_tree_8cs_source}{CUIType\+Tree.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Type\+Analysis/\+\+Type\+Tree/\+CUIType\+Tree.\+cs\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Type\+Analysis/\+\+Type\+Tree/\+CUIType\+Tree.\+Node.\+cs\end{DoxyCompactItemize}

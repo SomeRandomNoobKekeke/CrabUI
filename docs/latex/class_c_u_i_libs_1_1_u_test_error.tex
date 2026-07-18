@@ -1,0 +1,144 @@
+\doxysection{CUILibs.\+UTest\+Error Class Reference}
+\hypertarget{class_c_u_i_libs_1_1_u_test_error}{}\label{class_c_u_i_libs_1_1_u_test_error}\index{CUILibs.UTestError@{CUILibs.UTestError}}
+Inheritance diagram for CUILibs.\+UTest\+Error:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_u_i_libs_1_1_u_test_error}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override bool \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_error_a54f68e36a25a1495abc890a71cff7aec}{Equals}} (object obj)
+\item 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_error_a47b625b36eeda3dc33ea9a627c307965}{UTest\+Error}} (Exception ex)
+\item 
+override string \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_error_ab04fa22e9abfef53b7961c7339b5e2a1}{To\+String}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Exception \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_error_a2306c812071773e0cce8c4a922d10f05}{Error}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+override object \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_error_a3be2d3d2abaa37941d709f33f1e7cc5c}{Result}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_result_base}{CUILibs.\+UTest\+Result\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual object \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_result_base_af0b9b9482f10844f98caac7e917157ec}{Result}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_error_8cs_source_l00009}{9}} of file \doxymbox{\hyperlink{_u_test_error_8cs_source}{UTest\+Error.\+cs}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_error_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_error_a47b625b36eeda3dc33ea9a627c307965}\index{CUILibs.UTestError@{CUILibs.UTestError}!UTestError@{UTestError}}
+\index{UTestError@{UTestError}!CUILibs.UTestError@{CUILibs.UTestError}}
+\doxysubsubsection{\texorpdfstring{UTestError()}{UTestError()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_error_a47b625b36eeda3dc33ea9a627c307965} 
+CUILibs.\+UTest\+Error.\+UTest\+Error (\begin{DoxyParamCaption}\item[{Exception}]{ex}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_error_8cs_source_l00028}{28}} of file \doxymbox{\hyperlink{_u_test_error_8cs_source}{UTest\+Error.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ =>\ Error\ =\ ex;}
+
+\end{DoxyCode}
+
+
+\label{doc-func-members}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_error_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_error_a54f68e36a25a1495abc890a71cff7aec}\index{CUILibs.UTestError@{CUILibs.UTestError}!Equals@{Equals}}
+\index{Equals@{Equals}!CUILibs.UTestError@{CUILibs.UTestError}}
+\doxysubsubsection{\texorpdfstring{Equals()}{Equals()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_error_a54f68e36a25a1495abc890a71cff7aec} 
+override bool CUILibs.\+UTest\+Error.\+Equals (\begin{DoxyParamCaption}\item[{object}]{obj}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_error_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_u_test_error_8cs_source}{UTest\+Error.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (obj\ is\ not\ UTestError\ other)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Error\ is\ not\ \textcolor{keyword}{null}\ \&\&\ other.Error\ is\ not\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Error.GetType()\ ==\ other.Error.GetType();}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Error\ ==\ other.Error;}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_error_ab04fa22e9abfef53b7961c7339b5e2a1}\index{CUILibs.UTestError@{CUILibs.UTestError}!ToString@{ToString}}
+\index{ToString@{ToString}!CUILibs.UTestError@{CUILibs.UTestError}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_error_ab04fa22e9abfef53b7961c7339b5e2a1} 
+override string CUILibs.\+UTest\+Error.\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_error_8cs_source_l00030}{30}} of file \doxymbox{\hyperlink{_u_test_error_8cs_source}{UTest\+Error.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ =>\ \$\textcolor{stringliteral}{"{}\{Error.GetType().Name\}('\{Error.Message\}')"{}};}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_error_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_error_a2306c812071773e0cce8c4a922d10f05}\index{CUILibs.UTestError@{CUILibs.UTestError}!Error@{Error}}
+\index{Error@{Error}!CUILibs.UTestError@{CUILibs.UTestError}}
+\doxysubsubsection{\texorpdfstring{Error}{Error}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_error_a2306c812071773e0cce8c4a922d10f05} 
+Exception CUILibs.\+UTest\+Error.\+Error}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_error_8cs_source_l00011}{11}} of file \doxymbox{\hyperlink{_u_test_error_8cs_source}{UTest\+Error.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_error_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_error_a3be2d3d2abaa37941d709f33f1e7cc5c}\index{CUILibs.UTestError@{CUILibs.UTestError}!Result@{Result}}
+\index{Result@{Result}!CUILibs.UTestError@{CUILibs.UTestError}}
+\doxysubsubsection{\texorpdfstring{Result}{Result}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_error_a3be2d3d2abaa37941d709f33f1e7cc5c} 
+override object CUILibs.\+UTest\+Error.\+Result\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_error_8cs_source_l00012}{12}} of file \doxymbox{\hyperlink{_u_test_error_8cs_source}{UTest\+Error.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Error;}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ Error\ =\ value\ as\ Exception;}
+\DoxyCodeLine{00016\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+Libs/\+\+UTest/\+\+UTest\+Results/\+UTest\+Error.\+cs\end{DoxyCompactItemize}

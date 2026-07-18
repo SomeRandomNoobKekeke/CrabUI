@@ -1,0 +1,45 @@
+\doxysection{Event\+Bridge.\+Variants3.\+cs}
+\hypertarget{_event_bridge_8_variants3_8cs_source}{}\label{_event_bridge_8_variants3_8cs_source}\index{ClientProject/ClientSource/Libs/ClearableEvent/EventBridge/EventBridge.Variants3.cs@{ClientProject/ClientSource/Libs/ClearableEvent/EventBridge/EventBridge.Variants3.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00007}00007\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}}}
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00009}\doxymbox{\hyperlink{class_c_u_i_libs_1_1_event_bridge-3-g}{00009}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }EventBridge<T1,\ T2,\ T3>\ :\ \doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_event_bridge}{IEventBridge}}}
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00010}00010\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{private}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_event_subscription}{EventSubscription}}\ BridgeSubscription;}
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ Opened\ =>\ BridgeSubscription\ !=\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{ClearableEvent<T1,\ T2,\ T3>}}\ SourceEvent\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{public}\ Action<T1,\ T2,\ T3>\ Action\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Open()}
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00019}00019\ \ \ \ \ \ \ BridgeSubscription\ =\ SourceEvent.Add(Action);}
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00020}00020\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Close()}
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00023}00023\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00024}00024\ \ \ \ \ \ \ BridgeSubscription.Cancel();}
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00025}00025\ \ \ \ \ \ \ BridgeSubscription\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00026}00026\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{public}\ EventBridge(\doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{ClearableEvent<T1,\ T2,\ T3>}}\ source\ =\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00029}00029\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00030}00030\ \ \ \ \ \ \ SourceEvent\ =\ source;}
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00031}00031\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00032}00032\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00034}00034\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{partial\ class\ }ClearableEvent\_Extensions}
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00035}00035\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00036}00036\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_event_bridge}{EventBridge<T1,\ T2,\ T3>}}\ CreateBridge<T1,\ T2,\ T3>(\textcolor{keyword}{this}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{ClearableEvent<T1,\ T2,\ T3>}}\ \textcolor{keyword}{self})}
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00037}00037\ \ \ \ \ \ \ =>\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_event_bridge}{EventBridge<T1,\ T2,\ T3>}}(\textcolor{keyword}{self});}
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00038}00038\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_event_bridge_8_variants3_8cs_source_l00039}00039\ \}}
+
+\end{DoxyCode}

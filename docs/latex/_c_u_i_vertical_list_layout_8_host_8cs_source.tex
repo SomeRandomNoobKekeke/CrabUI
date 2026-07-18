@@ -1,0 +1,40 @@
+\doxysection{CUIVertical\+List\+Layout.\+Host.\+cs}
+\hypertarget{_c_u_i_vertical_list_layout_8_host_8cs_source}{}\label{_c_u_i_vertical_list_layout_8_host_8cs_source}\index{ClientProject/ClientSource/CUI/Core/Components/CUIVerticalList/Adapters/CUIVerticalListLayout.Host.cs@{ClientProject/ClientSource/CUI/Core/Components/CUIVerticalList/Adapters/CUIVerticalListLayout.Host.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_u_i_vertical_list_layout_8_host_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_vertical_list_layout_8_host_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_vertical_list_layout_8_host_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Collections.ObjectModel;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_vertical_list_layout_8_host_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_vertical_list_layout_8_host_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_vertical_list_layout_8_host_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_vertical_list_layout_8_host_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_vertical_list_layout_8_host_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_vertical_list_layout_8_host_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_code_generator}{CUICodeGenerator}};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_vertical_list_layout_8_host_8cs_source_l00010}00010\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_vertical_list_layout_8_host_8cs_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_vertical_list_layout_8_host_8cs_source_l00012}00012\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_vertical_list_layout_8_host_8cs_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_vertical_list_layout_8_host_8cs_source_l00014}\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_vertical_list}{00014}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }CUIVerticalList\ :\ CUIComponent,\ \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_component}{IComponent}}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_vertical_list_layout_8_host_8cs_source_l00015}00015\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_vertical_list_layout_8_host_8cs_source_l00016}00016\ \ \ \ \ \textcolor{comment}{//GIGACRINGE\ (but\ at\ least\ it\ works,\ and\ gods\ of\ c\#\ accesibility\ domains\ are\ not\ enraged)}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_vertical_list_layout_8_host_8cs_source_l00017}\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_vertical_list_1_1_c_u_i_vertical_list_layout___host___adapter___part}{00017}}\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{partial\ class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_vertical_list_1_1_c_u_i_vertical_list_layout___host___adapter___part}{CUIVerticalListLayout\_Host\_Adapter\_Part}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_adapters___part}{Adapters\_Part}}.CUIPlainLayout\_Host\_Part,\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_vertical_list_layout}{CUIVerticalListLayout}}.Host}
+\DoxyCodeLine{\Hypertarget{_c_u_i_vertical_list_layout_8_host_8cs_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_vertical_list_layout_8_host_8cs_source_l00019}00019\ \ \ \ \ \ \ \textcolor{keyword}{private}\ CUIVerticalList\ \_Self;\ \textcolor{keyword}{public}\ \textcolor{keyword}{new}\ CUIVerticalList\ Self}
+\DoxyCodeLine{\Hypertarget{_c_u_i_vertical_list_layout_8_host_8cs_source_l00020}00020\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_vertical_list_layout_8_host_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Self;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_vertical_list_layout_8_host_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_vertical_list_layout_8_host_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_vertical_list_layout_8_host_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \_Self\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_vertical_list_layout_8_host_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ base.Self\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_vertical_list_layout_8_host_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_vertical_list_layout_8_host_8cs_source_l00027}00027\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_vertical_list_layout_8_host_8cs_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_vertical_list_layout_8_host_8cs_source_l00029}00029\ \ \ \ \ \ \ CUIDirection\ CUIVerticalListLayout.Host.Direction\ =>\ Self.LayoutProps.Direction.Value;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_vertical_list_layout_8_host_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_vertical_list_layout_8_host_8cs_source_l00031}00031\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ CUIVerticalListLayout.Host.TotalHeight\ \{\ \textcolor{keyword}{set}\ =>\ Self.UpdateChildrenOffsetBounds(value);\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_vertical_list_layout_8_host_8cs_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_vertical_list_layout_8_host_8cs_source_l00033}00033\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_vertical_list_layout_8_host_8cs_source_l00034}00034\ \}}
+
+\end{DoxyCode}

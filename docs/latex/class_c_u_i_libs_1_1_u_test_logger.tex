@@ -1,0 +1,330 @@
+\doxysection{CUILibs.\+UTest\+Logger Class Reference}
+\hypertarget{class_c_u_i_libs_1_1_u_test_logger}{}\label{class_c_u_i_libs_1_1_u_test_logger}\index{CUILibs.UTestLogger@{CUILibs.UTestLogger}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Color \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_logger_a36b1bc1acca1e2b1f29849a1ee1c5827}{UTest\+State\+Color}} (bool state)
+\item 
+static Color \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_logger_afd8d23579bee316f0e6cb66606821920}{UTest\+Pack\+State\+Color}} (UTest\+Pack.\+UTest\+Pack\+State state)
+\item 
+static void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_logger_ac39f7c6186bef4e2b88d7995e97db1b1}{Print\+Stack\+Trace}} ()
+\item 
+static string \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_logger_a1fa6d9b89466ac587957a09d10f00c54}{Wrap\+In\+Color}} (object msg, string color)
+\item 
+static string \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_logger_a35b17b81fc5f6af4cccfa5376c78c55c}{As\+Text}} (object msg)
+\item 
+static void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_logger_ae5527830c9947703c1fa401158afa403}{Log}} (object msg, Color? cl=null)
+\item 
+static void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_logger_a7548a127fcf71783a99bfa6c18fb096a}{Warning}} (object msg)
+\item 
+static void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_logger_ae3f7e875a9aff055cf14e4d4a18efc5c}{Log\+Test}} (\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test}{UTest}} test)
+\item 
+static void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_logger_ae093339aeb5a3efb61ddac653f7de26f}{Log\+Pack}} (\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack}{UTest\+Pack}} pack)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Color \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_logger_a1786369f26bede8971ce69cd04c04f76}{Success\+Color}} = Color.\+Lime
+\item 
+static Color \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_logger_a52e589477505da7560177aa11a3989ed}{Not\+Great\+Color}} = Color.\+Orange
+\item 
+static Color \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_logger_addef7f0ab42ea1bbf773d954528b15b2}{Failure\+Color}} = Color.\+Red
+\item 
+static string \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_logger_a4f9ce9283cfdafc34aae0d29a5996159}{Inner\+Text\+Color}} = "{}128,255,255"{}
+\item 
+static float \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_logger_ac9df7b73b1c71dd6a0b335ff8a0db5cc}{Color\+Contrast}} = 0.\+75f
+\item 
+static string \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_logger_a7ac55aadfe18964fd53ff56186cf412c}{Line}} = "{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static bool \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_logger_a5c281deffa035f16aed784667ab4cbcc}{Collapse\+Test\+Pack\+If\+Succeed}} = true\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\begin{DoxyCompactList}\small\item\em sneaky var that no one will ever find \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_logger_8cs_source_l00012}{12}} of file \doxymbox{\hyperlink{_u_test_logger_8cs_source}{UTest\+Logger.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_logger_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_logger_a35b17b81fc5f6af4cccfa5376c78c55c}\index{CUILibs.UTestLogger@{CUILibs.UTestLogger}!AsText@{AsText}}
+\index{AsText@{AsText}!CUILibs.UTestLogger@{CUILibs.UTestLogger}}
+\doxysubsubsection{\texorpdfstring{AsText()}{AsText()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_logger_a35b17b81fc5f6af4cccfa5376c78c55c} 
+string CUILibs.\+UTest\+Logger.\+As\+Text (\begin{DoxyParamCaption}\item[{object}]{msg}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_logger_8cs_source_l00060}{60}} of file \doxymbox{\hyperlink{_u_test_logger_8cs_source}{UTest\+Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060\ =>\ WrapInColor(msg,\ InnerTextColor);}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_logger_ae5527830c9947703c1fa401158afa403}\index{CUILibs.UTestLogger@{CUILibs.UTestLogger}!Log@{Log}}
+\index{Log@{Log}!CUILibs.UTestLogger@{CUILibs.UTestLogger}}
+\doxysubsubsection{\texorpdfstring{Log()}{Log()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_logger_ae5527830c9947703c1fa401158afa403} 
+void CUILibs.\+UTest\+Logger.\+Log (\begin{DoxyParamCaption}\item[{object}]{msg}{, }\item[{Color?}]{cl}{ = {\ttfamily null}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_logger_8cs_source_l00062}{62}} of file \doxymbox{\hyperlink{_u_test_logger_8cs_source}{UTest\+Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00063\ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ cl\ ??=\ Color.Cyan;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ LuaCsLogger.LogMessage(\$\textcolor{stringliteral}{"{}\{msg\ ??\ "{}}\textcolor{keyword}{null}\textcolor{stringliteral}{"{}\}"{}},\ cl\ *\ 0.8f,\ cl);}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_logger_ae093339aeb5a3efb61ddac653f7de26f}\index{CUILibs.UTestLogger@{CUILibs.UTestLogger}!LogPack@{LogPack}}
+\index{LogPack@{LogPack}!CUILibs.UTestLogger@{CUILibs.UTestLogger}}
+\doxysubsubsection{\texorpdfstring{LogPack()}{LogPack()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_logger_ae093339aeb5a3efb61ddac653f7de26f} 
+void CUILibs.\+UTest\+Logger.\+Log\+Pack (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack}{UTest\+Pack}}}]{pack}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_logger_8cs_source_l00075}{75}} of file \doxymbox{\hyperlink{_u_test_logger_8cs_source}{UTest\+Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00076\ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ Color\ cl\ =\ UTestPackStateColor(pack.State);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ Log(Line);}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ Log(\$\textcolor{stringliteral}{"{}UTestPack\ \{pack.GetType()\}\ [\{pack.PassedCount\}/\{pack.Tests.Count\}]:"{}},\ cl);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pack.Error\ is\ not\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ Log(\$\textcolor{stringliteral}{"{}Error:\ [\{pack.Error.Message\}]"{}},\ cl);}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!CollapseTestPackIfSucceed\ ||\ pack.PassedCount\ !=\ pack.Tests.Count)}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (UTest\ test\ \textcolor{keywordflow}{in}\ pack.Tests)}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ test.Log();}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_logger_ae3f7e875a9aff055cf14e4d4a18efc5c}\index{CUILibs.UTestLogger@{CUILibs.UTestLogger}!LogTest@{LogTest}}
+\index{LogTest@{LogTest}!CUILibs.UTestLogger@{CUILibs.UTestLogger}}
+\doxysubsubsection{\texorpdfstring{LogTest()}{LogTest()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_logger_ae3f7e875a9aff055cf14e4d4a18efc5c} 
+void CUILibs.\+UTest\+Logger.\+Log\+Test (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test}{UTest}}}]{test}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_logger_8cs_source_l00070}{70}} of file \doxymbox{\hyperlink{_u_test_logger_8cs_source}{UTest\+Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00071\ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ Log(test,\ UTestStateColor(test.Passed));}
+\DoxyCodeLine{00073\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_logger_ac39f7c6186bef4e2b88d7995e97db1b1}\index{CUILibs.UTestLogger@{CUILibs.UTestLogger}!PrintStackTrace@{PrintStackTrace}}
+\index{PrintStackTrace@{PrintStackTrace}!CUILibs.UTestLogger@{CUILibs.UTestLogger}}
+\doxysubsubsection{\texorpdfstring{PrintStackTrace()}{PrintStackTrace()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_logger_ac39f7c6186bef4e2b88d7995e97db1b1} 
+void CUILibs.\+UTest\+Logger.\+Print\+Stack\+Trace (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_logger_8cs_source_l00040}{40}} of file \doxymbox{\hyperlink{_u_test_logger_8cs_source}{UTest\+Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041\ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ StackTrace\ st\ =\ \textcolor{keyword}{new}\ StackTrace(\textcolor{keyword}{true});}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ st.FrameCount;\ i++)}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ StackFrame\ sf\ =\ st.GetFrame(i);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sf.GetMethod().DeclaringType\ is\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ Log(\$\textcolor{stringliteral}{"{}-\/>\ \{sf.GetMethod().DeclaringType?.Name\}.\{sf.GetMethod()\}"{}});}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ Log(\$\textcolor{stringliteral}{"{}-\/>\ \{sf.GetMethod().DeclaringType?.Name\}.\{sf.GetMethod()\}"{}});}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_logger_afd8d23579bee316f0e6cb66606821920}\index{CUILibs.UTestLogger@{CUILibs.UTestLogger}!UTestPackStateColor@{UTestPackStateColor}}
+\index{UTestPackStateColor@{UTestPackStateColor}!CUILibs.UTestLogger@{CUILibs.UTestLogger}}
+\doxysubsubsection{\texorpdfstring{UTestPackStateColor()}{UTestPackStateColor()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_logger_afd8d23579bee316f0e6cb66606821920} 
+Color CUILibs.\+UTest\+Logger.\+UTest\+Pack\+State\+Color (\begin{DoxyParamCaption}\item[{UTest\+Pack.\+UTest\+Pack\+State}]{state}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_logger_8cs_source_l00029}{29}} of file \doxymbox{\hyperlink{_u_test_logger_8cs_source}{UTest\+Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ state\ \textcolor{keywordflow}{switch}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ UTestPack.UTestPackState.AllPassed\ =>\ Color.Lerp(Color.White,\ SuccessColor,\ ColorContrast),}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ UTestPack.UTestPackState.SomePassed\ =>\ Color.Lerp(Color.White,\ NotGreatColor,\ ColorContrast),}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ UTestPack.UTestPackState.AllFailed\ =>\ Color.Lerp(Color.White,\ FailureColor,\ ColorContrast),}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ UTestPack.UTestPackState.Error\ =>\ Color.Lerp(Color.White,\ FailureColor,\ ColorContrast),}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_logger_a36b1bc1acca1e2b1f29849a1ee1c5827}\index{CUILibs.UTestLogger@{CUILibs.UTestLogger}!UTestStateColor@{UTestStateColor}}
+\index{UTestStateColor@{UTestStateColor}!CUILibs.UTestLogger@{CUILibs.UTestLogger}}
+\doxysubsubsection{\texorpdfstring{UTestStateColor()}{UTestStateColor()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_logger_a36b1bc1acca1e2b1f29849a1ee1c5827} 
+Color CUILibs.\+UTest\+Logger.\+UTest\+State\+Color (\begin{DoxyParamCaption}\item[{bool}]{state}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_logger_8cs_source_l00025}{25}} of file \doxymbox{\hyperlink{_u_test_logger_8cs_source}{UTest\+Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =>\ state\ ?}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ Color.Lerp(Color.White,\ SuccessColor,\ ColorContrast)\ :}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ Color.Lerp(Color.White,\ FailureColor,\ ColorContrast);}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_logger_a7548a127fcf71783a99bfa6c18fb096a}\index{CUILibs.UTestLogger@{CUILibs.UTestLogger}!Warning@{Warning}}
+\index{Warning@{Warning}!CUILibs.UTestLogger@{CUILibs.UTestLogger}}
+\doxysubsubsection{\texorpdfstring{Warning()}{Warning()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_logger_a7548a127fcf71783a99bfa6c18fb096a} 
+void CUILibs.\+UTest\+Logger.\+Warning (\begin{DoxyParamCaption}\item[{object}]{msg}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_logger_8cs_source_l00068}{68}} of file \doxymbox{\hyperlink{_u_test_logger_8cs_source}{UTest\+Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00068\ =>\ Log(msg,\ Color.Yellow);}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_logger_a1fa6d9b89466ac587957a09d10f00c54}\index{CUILibs.UTestLogger@{CUILibs.UTestLogger}!WrapInColor@{WrapInColor}}
+\index{WrapInColor@{WrapInColor}!CUILibs.UTestLogger@{CUILibs.UTestLogger}}
+\doxysubsubsection{\texorpdfstring{WrapInColor()}{WrapInColor()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_logger_a1fa6d9b89466ac587957a09d10f00c54} 
+string CUILibs.\+UTest\+Logger.\+Wrap\+In\+Color (\begin{DoxyParamCaption}\item[{object}]{msg}{, }\item[{string}]{color}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_logger_8cs_source_l00057}{57}} of file \doxymbox{\hyperlink{_u_test_logger_8cs_source}{UTest\+Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ =>\ \$\textcolor{stringliteral}{"{}‖color:\{color\}‖\{msg\}‖end‖"{}};}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_logger_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_logger_ac9df7b73b1c71dd6a0b335ff8a0db5cc}\index{CUILibs.UTestLogger@{CUILibs.UTestLogger}!ColorContrast@{ColorContrast}}
+\index{ColorContrast@{ColorContrast}!CUILibs.UTestLogger@{CUILibs.UTestLogger}}
+\doxysubsubsection{\texorpdfstring{ColorContrast}{ColorContrast}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_logger_ac9df7b73b1c71dd6a0b335ff8a0db5cc} 
+float CUILibs.\+UTest\+Logger.\+Color\+Contrast = 0.\+75f\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_logger_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_u_test_logger_8cs_source}{UTest\+Logger.\+cs}}.
+
+\Hypertarget{class_c_u_i_libs_1_1_u_test_logger_addef7f0ab42ea1bbf773d954528b15b2}\index{CUILibs.UTestLogger@{CUILibs.UTestLogger}!FailureColor@{FailureColor}}
+\index{FailureColor@{FailureColor}!CUILibs.UTestLogger@{CUILibs.UTestLogger}}
+\doxysubsubsection{\texorpdfstring{FailureColor}{FailureColor}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_logger_addef7f0ab42ea1bbf773d954528b15b2} 
+Color CUILibs.\+UTest\+Logger.\+Failure\+Color = Color.\+Red\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_logger_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_u_test_logger_8cs_source}{UTest\+Logger.\+cs}}.
+
+\Hypertarget{class_c_u_i_libs_1_1_u_test_logger_a4f9ce9283cfdafc34aae0d29a5996159}\index{CUILibs.UTestLogger@{CUILibs.UTestLogger}!InnerTextColor@{InnerTextColor}}
+\index{InnerTextColor@{InnerTextColor}!CUILibs.UTestLogger@{CUILibs.UTestLogger}}
+\doxysubsubsection{\texorpdfstring{InnerTextColor}{InnerTextColor}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_logger_a4f9ce9283cfdafc34aae0d29a5996159} 
+string CUILibs.\+UTest\+Logger.\+Inner\+Text\+Color = "{}128,255,255"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_logger_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_u_test_logger_8cs_source}{UTest\+Logger.\+cs}}.
+
+\Hypertarget{class_c_u_i_libs_1_1_u_test_logger_a7ac55aadfe18964fd53ff56186cf412c}\index{CUILibs.UTestLogger@{CUILibs.UTestLogger}!Line@{Line}}
+\index{Line@{Line}!CUILibs.UTestLogger@{CUILibs.UTestLogger}}
+\doxysubsubsection{\texorpdfstring{Line}{Line}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_logger_a7ac55aadfe18964fd53ff56186cf412c} 
+string CUILibs.\+UTest\+Logger.\+Line = "{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_logger_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_u_test_logger_8cs_source}{UTest\+Logger.\+cs}}.
+
+\Hypertarget{class_c_u_i_libs_1_1_u_test_logger_a52e589477505da7560177aa11a3989ed}\index{CUILibs.UTestLogger@{CUILibs.UTestLogger}!NotGreatColor@{NotGreatColor}}
+\index{NotGreatColor@{NotGreatColor}!CUILibs.UTestLogger@{CUILibs.UTestLogger}}
+\doxysubsubsection{\texorpdfstring{NotGreatColor}{NotGreatColor}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_logger_a52e589477505da7560177aa11a3989ed} 
+Color CUILibs.\+UTest\+Logger.\+Not\+Great\+Color = Color.\+Orange\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_logger_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_u_test_logger_8cs_source}{UTest\+Logger.\+cs}}.
+
+\Hypertarget{class_c_u_i_libs_1_1_u_test_logger_a1786369f26bede8971ce69cd04c04f76}\index{CUILibs.UTestLogger@{CUILibs.UTestLogger}!SuccessColor@{SuccessColor}}
+\index{SuccessColor@{SuccessColor}!CUILibs.UTestLogger@{CUILibs.UTestLogger}}
+\doxysubsubsection{\texorpdfstring{SuccessColor}{SuccessColor}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_logger_a1786369f26bede8971ce69cd04c04f76} 
+Color CUILibs.\+UTest\+Logger.\+Success\+Color = Color.\+Lime\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_logger_8cs_source_l00014}{14}} of file \doxymbox{\hyperlink{_u_test_logger_8cs_source}{UTest\+Logger.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_logger_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_logger_a5c281deffa035f16aed784667ab4cbcc}\index{CUILibs.UTestLogger@{CUILibs.UTestLogger}!CollapseTestPackIfSucceed@{CollapseTestPackIfSucceed}}
+\index{CollapseTestPackIfSucceed@{CollapseTestPackIfSucceed}!CUILibs.UTestLogger@{CUILibs.UTestLogger}}
+\doxysubsubsection{\texorpdfstring{CollapseTestPackIfSucceed}{CollapseTestPackIfSucceed}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_logger_a5c281deffa035f16aed784667ab4cbcc} 
+bool CUILibs.\+UTest\+Logger.\+Collapse\+Test\+Pack\+If\+Succeed = true\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+sneaky var that no one will ever find 
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_logger_8cs_source_l00024}{24}} of file \doxymbox{\hyperlink{_u_test_logger_8cs_source}{UTest\+Logger.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{true};}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+Libs/\+\+UTest/\+UTest\+Logger.\+cs\end{DoxyCompactItemize}

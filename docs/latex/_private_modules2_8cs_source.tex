@@ -1,0 +1,77 @@
+\doxysection{Private\+Modules2.\+cs}
+\hypertarget{_private_modules2_8cs_source}{}\label{_private_modules2_8cs_source}\index{ClientProject/InMemory/Experiments/Design/PrivateModules2.cs@{ClientProject/InMemory/Experiments/Design/PrivateModules2.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00011}00011\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i_user}{CrabUIUser}}}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00014}00014\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00015}00015\ \textcolor{comment}{\ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00016}00016\ \textcolor{comment}{\ \ ///\ If\ i\ inject\ host\ in\ constructor\ then\ Host\ prop\ won't\ have\ to\ be\ public}}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00017}00017\ \textcolor{comment}{\ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00018}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_private_modules2}{00018}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_private_modules2}{PrivateModules2}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Experiment}}}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00019}00019\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00020}\doxymbox{\hyperlink{interface_crab_u_i_user_1_1_private_modules2_1_1_i_module_a_container}{00020}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{interface\ }\doxymbox{\hyperlink{interface_crab_u_i_user_1_1_private_modules2_1_1_i_module_a_container}{IModuleAContainer}}}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00021}00021\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00022}00022\ \ \ \ \ \ \ \textcolor{keyword}{public}\ ModuleA\ ModuleA\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00023}00023\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00025}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_private_modules2_1_1_module_a}{00025}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_private_modules2_1_1_module_a}{ModuleA}}}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00026}00026\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00027}00027\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ Message\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{stringliteral}{"{}bruh"{}};}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00030}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_private_modules2_1_1_module_b}{00030}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }ModuleB}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00031}00031\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00032}00032\ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \doxymbox{\hyperlink{interface_crab_u_i_user_1_1_private_modules2_1_1_i_module_a_container}{IModuleAContainer}}\ Host\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00033}00033\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ Transform()}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00034}00034\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ string(Host.ModuleA.Message.Reverse().ToArray());}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00036}00036\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00038}00038\ \ \ \ \ \ \ \textcolor{keyword}{public}\ ModuleB(Host\ host)\ =>\ Host\ =\ host;}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00041}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_private_modules2_1_1_host}{00041}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }Host\ :\ \doxymbox{\hyperlink{interface_crab_u_i_user_1_1_private_modules2_1_1_i_module_a_container}{IModuleAContainer}}}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00042}00042\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00043}00043\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ Transform\ =>\ ModuleB.Transform();}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00044}00044\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00045}00045\ \textcolor{comment}{\ \ \ \ \ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00046}00046\ \textcolor{comment}{\ \ \ \ \ \ ///\ Modules\ have\ to\ be\ public\ to\ implement\ IModuleAContainer}}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00047}00047\ \textcolor{comment}{\ \ \ \ \ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00048}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_private_modules2_1_1_host_ae816ea2f320573672b2103b860a42326}{00048}}\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_private_modules2_1_1_host_ae816ea2f320573672b2103b860a42326}{ModuleA}}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_private_modules2_1_1_host_ae816ea2f320573672b2103b860a42326}{ModuleA}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00049}00049\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_private_modules2_1_1_module_b}{ModuleB}}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_private_modules2_1_1_module_b}{ModuleB}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00051}00051\ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ InjectModules()}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00052}00052\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_private_modules2_1_1_host_ae816ea2f320573672b2103b860a42326}{ModuleA}}\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_private_modules2_1_1_host_ae816ea2f320573672b2103b860a42326}{ModuleA}}();}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ ModuleB\ =\ \textcolor{keyword}{new}\ ModuleB(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00055}00055\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00057}00057\ \ \ \ \ \ \ \textcolor{keyword}{public}\ Host()}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00058}00058\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ InjectModules();}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00060}00060\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00061}00061\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00064}00064\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ Run()}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00065}00065\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00066}00066\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_private_modules2_1_1_host}{Host}}\ host\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_private_modules2_1_1_host}{Host}}();}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00068}00068\ \ \ \ \ \ \ Mod.Logger.Log(host.ModuleB.Transform());}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00069}00069\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00070}00070\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_private_modules2_8cs_source_l00071}00071\ \}}
+
+\end{DoxyCode}

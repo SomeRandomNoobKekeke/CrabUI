@@ -1,0 +1,342 @@
+\doxysection{CUILibs.\+UTest\+Pack Class Reference}
+\hypertarget{class_c_u_i_libs_1_1_u_test_pack}{}\label{class_c_u_i_libs_1_1_u_test_pack}\index{CUILibs.UTestPack@{CUILibs.UTestPack}}
+Inheritance diagram for CUILibs.\+UTest\+Pack:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.758808cm]{class_c_u_i_libs_1_1_u_test_pack}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries UTest\+Pack\+State} \{ {\bfseries All\+Passed}
+, {\bfseries Some\+Passed}
+, {\bfseries All\+Failed}
+, {\bfseries Error}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test}{UTest}} \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack_a61c642ae79deb0edd5fc2ea3bbbd8c4c}{Add\+Test}} (\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test}{UTest}} test)
+\item 
+virtual void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack_a9078232d1d9245f372556b44c60a2381}{Create\+Tests}} ()
+\item 
+override string \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack_a44bf625a57612167052b8e366631a7cf}{To\+String}} ()
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack_a78a9149fc9b2c738d511ba0db880c2de}{Log}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack_a57020f5b83b040704cbce7ad0e459b07}{Is\+Test\+Generator}} (Method\+Info mi)
+\item 
+static bool \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack_a55f0ddefde5db9d747efb0ca41e5545c}{Is\+Test\+List\+Generator}} (Method\+Info mi)
+\item 
+static bool \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack_a9f670c55ce8bed4271e68c9961171f2d}{Is\+Test\+Creator}} (Method\+Info mi)
+\item 
+static string \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack_a1686b9e9cd5b568dc025ecd95454fcb6}{Get\+Name\+From\+Method\+Info}} (Method\+Info mi)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test}{UTest}} $>$ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack_a25723b6bd2fb28fa2e6ab5e07cb2168b}{Tests}} = new()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack_a97c0124d5eff9728598fc39e81d7bbfc}{Passed\+Count}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+UTest\+Pack\+State \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack_a51872249d965d3a4252f0ad1991a6dfb}{State}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+Exception \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack_a22a4b31a080282dec972fb4710982cef}{Error}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\begin{DoxyCompactList}\small\item\em Set in test runner. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack_a633612c539a2285df314f8e20e8be4b7}{Not\+Empty}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_pack_8cs_source_l00010}{10}} of file \doxymbox{\hyperlink{_u_test_pack_8cs_source}{UTest\+Pack.\+cs}}.
+
+
+
+\label{doc-enum-members}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_pack_doc-enum-members}
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_pack_a1872fb740f1be360cd411795d445457a}\index{CUILibs.UTestPack@{CUILibs.UTestPack}!UTestPackState@{UTestPackState}}
+\index{UTestPackState@{UTestPackState}!CUILibs.UTestPack@{CUILibs.UTestPack}}
+\doxysubsubsection{\texorpdfstring{UTestPackState}{UTestPackState}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_pack_a1872fb740f1be360cd411795d445457a} 
+enum CUILibs.\+UTest\+Pack.\+UTest\+Pack\+State}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_pack_8cs_source_l00012}{12}} of file \doxymbox{\hyperlink{_u_test_pack_8cs_source}{UTest\+Pack.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \{\ AllPassed,\ SomePassed,\ AllFailed,\ Error\ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-func-members}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_pack_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_pack_a61c642ae79deb0edd5fc2ea3bbbd8c4c}\index{CUILibs.UTestPack@{CUILibs.UTestPack}!AddTest@{AddTest}}
+\index{AddTest@{AddTest}!CUILibs.UTestPack@{CUILibs.UTestPack}}
+\doxysubsubsection{\texorpdfstring{AddTest()}{AddTest()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_pack_a61c642ae79deb0edd5fc2ea3bbbd8c4c} 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test}{UTest}} CUILibs.\+UTest\+Pack.\+Add\+Test (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test}{UTest}}}]{test}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_pack_8cs_source_l00048}{48}} of file \doxymbox{\hyperlink{_u_test_pack_8cs_source}{UTest\+Pack.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00049\ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ Tests.Add(test);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ test;}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_pack_a9078232d1d9245f372556b44c60a2381}\index{CUILibs.UTestPack@{CUILibs.UTestPack}!CreateTests@{CreateTests}}
+\index{CreateTests@{CreateTests}!CUILibs.UTestPack@{CUILibs.UTestPack}}
+\doxysubsubsection{\texorpdfstring{CreateTests()}{CreateTests()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_pack_a9078232d1d9245f372556b44c60a2381} 
+virtual void CUILibs.\+UTest\+Pack.\+Create\+Tests (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_pack_8cs_source_l00054}{54}} of file \doxymbox{\hyperlink{_u_test_pack_8cs_source}{UTest\+Pack.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055\ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (MethodInfo\ mi\ \textcolor{keywordflow}{in}\ this.GetType().GetMethods())}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mi.DeclaringType\ ==\ \textcolor{keyword}{this}.GetType())}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsTestGenerator(mi))}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ UTest\ test\ =\ mi.Invoke(mi.IsStatic\ ?\ \textcolor{keyword}{null}\ :\ \textcolor{keyword}{this},\ \textcolor{keyword}{null})\ as\ UTest;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ test.Name\ =\ \$\textcolor{stringliteral}{"{}\{mi.Name\}\ |\ \{test.Name\}"{}};}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ Tests.Add(test);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsTestListGenerator(mi))}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ IEnumerable<UTest>\ list\ =\ mi.Invoke(mi.IsStatic\ ?\ \textcolor{keyword}{null}\ :\ \textcolor{keyword}{this},\ \textcolor{keyword}{null})\ as\ IEnumerable<UTest>;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (UTest\ test\ \textcolor{keywordflow}{in}\ list)}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ test.Name\ =\ \$\textcolor{stringliteral}{"{}\{mi.Name\}\ |\ \{test.Name\}"{}};}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ Tests.AddRange(list);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsTestCreator(mi))}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ mi.Invoke(mi.IsStatic\ ?\ \textcolor{keyword}{null}\ :\ \textcolor{keyword}{this},\ \textcolor{keyword}{null});}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_pack_a1686b9e9cd5b568dc025ecd95454fcb6}\index{CUILibs.UTestPack@{CUILibs.UTestPack}!GetNameFromMethodInfo@{GetNameFromMethodInfo}}
+\index{GetNameFromMethodInfo@{GetNameFromMethodInfo}!CUILibs.UTestPack@{CUILibs.UTestPack}}
+\doxysubsubsection{\texorpdfstring{GetNameFromMethodInfo()}{GetNameFromMethodInfo()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_pack_a1686b9e9cd5b568dc025ecd95454fcb6} 
+string CUILibs.\+UTest\+Pack.\+Get\+Name\+From\+Method\+Info (\begin{DoxyParamCaption}\item[{Method\+Info}]{mi}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_pack_8cs_source_l00022}{22}} of file \doxymbox{\hyperlink{_u_test_pack_8cs_source}{UTest\+Pack.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ =>\ \$\textcolor{stringliteral}{"{}\{mi.DeclaringType.Name\}.\{mi.Name\}"{}};}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_pack_a9f670c55ce8bed4271e68c9961171f2d}\index{CUILibs.UTestPack@{CUILibs.UTestPack}!IsTestCreator@{IsTestCreator}}
+\index{IsTestCreator@{IsTestCreator}!CUILibs.UTestPack@{CUILibs.UTestPack}}
+\doxysubsubsection{\texorpdfstring{IsTestCreator()}{IsTestCreator()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_pack_a9f670c55ce8bed4271e68c9961171f2d} 
+bool CUILibs.\+UTest\+Pack.\+Is\+Test\+Creator (\begin{DoxyParamCaption}\item[{Method\+Info}]{mi}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_pack_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_u_test_pack_8cs_source}{UTest\+Pack.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ =>\ mi.Name.StartsWith(\textcolor{stringliteral}{"{}Create"{}})\ \&\&\ mi.Name\ !=\ \textcolor{stringliteral}{"{}CreateTests"{}};}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_pack_a57020f5b83b040704cbce7ad0e459b07}\index{CUILibs.UTestPack@{CUILibs.UTestPack}!IsTestGenerator@{IsTestGenerator}}
+\index{IsTestGenerator@{IsTestGenerator}!CUILibs.UTestPack@{CUILibs.UTestPack}}
+\doxysubsubsection{\texorpdfstring{IsTestGenerator()}{IsTestGenerator()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_pack_a57020f5b83b040704cbce7ad0e459b07} 
+bool CUILibs.\+UTest\+Pack.\+Is\+Test\+Generator (\begin{DoxyParamCaption}\item[{Method\+Info}]{mi}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_pack_8cs_source_l00014}{14}} of file \doxymbox{\hyperlink{_u_test_pack_8cs_source}{UTest\+Pack.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ =>\ mi.ReturnType.IsAssignableTo(typeof(UTest))\ \&\&\ mi.GetParameters().Length\ ==\ 0;}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_pack_a55f0ddefde5db9d747efb0ca41e5545c}\index{CUILibs.UTestPack@{CUILibs.UTestPack}!IsTestListGenerator@{IsTestListGenerator}}
+\index{IsTestListGenerator@{IsTestListGenerator}!CUILibs.UTestPack@{CUILibs.UTestPack}}
+\doxysubsubsection{\texorpdfstring{IsTestListGenerator()}{IsTestListGenerator()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_pack_a55f0ddefde5db9d747efb0ca41e5545c} 
+bool CUILibs.\+UTest\+Pack.\+Is\+Test\+List\+Generator (\begin{DoxyParamCaption}\item[{Method\+Info}]{mi}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_pack_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_u_test_pack_8cs_source}{UTest\+Pack.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ =>\ mi.ReturnType.IsAssignableTo(typeof(IEnumerable<UTest>))\ \&\&\ mi.GetParameters().Length\ ==\ 0;}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_pack_a78a9149fc9b2c738d511ba0db880c2de}\index{CUILibs.UTestPack@{CUILibs.UTestPack}!Log@{Log}}
+\index{Log@{Log}!CUILibs.UTestPack@{CUILibs.UTestPack}}
+\doxysubsubsection{\texorpdfstring{Log()}{Log()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_pack_a78a9149fc9b2c738d511ba0db880c2de} 
+void CUILibs.\+UTest\+Pack.\+Log (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_pack_8cs_source_l00103}{103}} of file \doxymbox{\hyperlink{_u_test_pack_8cs_source}{UTest\+Pack.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00103\ \{\ \textcolor{keywordflow}{if}\ (NotEmpty)\ UTestLogger.LogPack(\textcolor{keyword}{this});\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_pack_a44bf625a57612167052b8e366631a7cf}\index{CUILibs.UTestPack@{CUILibs.UTestPack}!ToString@{ToString}}
+\index{ToString@{ToString}!CUILibs.UTestPack@{CUILibs.UTestPack}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_pack_a44bf625a57612167052b8e366631a7cf} 
+override string CUILibs.\+UTest\+Pack.\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_pack_8cs_source_l00088}{88}} of file \doxymbox{\hyperlink{_u_test_pack_8cs_source}{UTest\+Pack.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00089\ \ \ \ \ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Error\ is\ not\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ Error.ToString();}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ StringBuilder\ sb\ =\ \textcolor{keyword}{new}\ StringBuilder();}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ sb.Append(\$\textcolor{stringliteral}{"{}UTestPack\ \{this.GetType()\}\ [\{PassedCount\}/\{Tests.Count\}]:\(\backslash\)n"{}});}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (UTest\ test\ \textcolor{keywordflow}{in}\ Tests)}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ sb.Append(test.ToString());}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ sb.Append(\textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sb.ToString();}
+\DoxyCodeLine{00101\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_pack_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_pack_a25723b6bd2fb28fa2e6ab5e07cb2168b}\index{CUILibs.UTestPack@{CUILibs.UTestPack}!Tests@{Tests}}
+\index{Tests@{Tests}!CUILibs.UTestPack@{CUILibs.UTestPack}}
+\doxysubsubsection{\texorpdfstring{Tests}{Tests}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_pack_a25723b6bd2fb28fa2e6ab5e07cb2168b} 
+List$<$\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test}{UTest}}$>$ CUILibs.\+UTest\+Pack.\+Tests = new()}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_pack_8cs_source_l00027}{27}} of file \doxymbox{\hyperlink{_u_test_pack_8cs_source}{UTest\+Pack.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_pack_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_pack_a22a4b31a080282dec972fb4710982cef}\index{CUILibs.UTestPack@{CUILibs.UTestPack}!Error@{Error}}
+\index{Error@{Error}!CUILibs.UTestPack@{CUILibs.UTestPack}}
+\doxysubsubsection{\texorpdfstring{Error}{Error}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_pack_a22a4b31a080282dec972fb4710982cef} 
+Exception CUILibs.\+UTest\+Pack.\+Error\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Set in test runner. 
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_pack_8cs_source_l00045}{45}} of file \doxymbox{\hyperlink{_u_test_pack_8cs_source}{UTest\+Pack.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_pack_a633612c539a2285df314f8e20e8be4b7}\index{CUILibs.UTestPack@{CUILibs.UTestPack}!NotEmpty@{NotEmpty}}
+\index{NotEmpty@{NotEmpty}!CUILibs.UTestPack@{CUILibs.UTestPack}}
+\doxysubsubsection{\texorpdfstring{NotEmpty}{NotEmpty}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_pack_a633612c539a2285df314f8e20e8be4b7} 
+bool CUILibs.\+UTest\+Pack.\+Not\+Empty\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_pack_8cs_source_l00046}{46}} of file \doxymbox{\hyperlink{_u_test_pack_8cs_source}{UTest\+Pack.\+cs}}.
+
+\Hypertarget{class_c_u_i_libs_1_1_u_test_pack_a97c0124d5eff9728598fc39e81d7bbfc}\index{CUILibs.UTestPack@{CUILibs.UTestPack}!PassedCount@{PassedCount}}
+\index{PassedCount@{PassedCount}!CUILibs.UTestPack@{CUILibs.UTestPack}}
+\doxysubsubsection{\texorpdfstring{PassedCount}{PassedCount}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_pack_a97c0124d5eff9728598fc39e81d7bbfc} 
+int CUILibs.\+UTest\+Pack.\+Passed\+Count\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_pack_8cs_source_l00028}{28}} of file \doxymbox{\hyperlink{_u_test_pack_8cs_source}{UTest\+Pack.\+cs}}.
+
+\Hypertarget{class_c_u_i_libs_1_1_u_test_pack_a51872249d965d3a4252f0ad1991a6dfb}\index{CUILibs.UTestPack@{CUILibs.UTestPack}!State@{State}}
+\index{State@{State}!CUILibs.UTestPack@{CUILibs.UTestPack}}
+\doxysubsubsection{\texorpdfstring{State}{State}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_pack_a51872249d965d3a4252f0ad1991a6dfb} 
+UTest\+Pack\+State CUILibs.\+UTest\+Pack.\+State\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_pack_8cs_source_l00029}{29}} of file \doxymbox{\hyperlink{_u_test_pack_8cs_source}{UTest\+Pack.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \textcolor{keyword}{get}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Error\ is\ not\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ UTestPackState.Error;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ passed\ =\ PassedCount;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Tests.Count\ ==\ 0)\ \textcolor{keywordflow}{return}\ UTestPackState.AllPassed;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (passed\ ==\ Tests.Count)\ \textcolor{keywordflow}{return}\ UTestPackState.AllPassed;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (passed\ ==\ 0)\ \textcolor{keywordflow}{return}\ UTestPackState.AllFailed;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ UTestPackState.SomePassed;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+Libs/\+\+UTest/\+UTest\+Pack.\+cs\end{DoxyCompactItemize}

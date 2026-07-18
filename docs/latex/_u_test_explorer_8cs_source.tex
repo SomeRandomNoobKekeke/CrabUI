@@ -1,0 +1,58 @@
+\doxysection{UTest\+Explorer.\+cs}
+\hypertarget{_u_test_explorer_8cs_source}{}\label{_u_test_explorer_8cs_source}\index{ClientProject/ClientSource/Libs/UTest/UTestExplorer.cs@{ClientProject/ClientSource/Libs/UTest/UTestExplorer.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00007}00007\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}}}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00009}00009\ \ \ [System.AttributeUsage(System.AttributeTargets.All,\ Inherited\ =\ \textcolor{keyword}{true},\ AllowMultiple\ =\ \textcolor{keyword}{true})]}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00010}\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_category}{00010}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }UTestCategory\ :\ System.Attribute}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00011}00011\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ Category\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{public}\ UTestCategory(\textcolor{keywordtype}{string}\ category\ =\ \textcolor{keyword}{null})\ =>\ Category\ =\ category;}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00014}00014\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00016}00016\ \ \ [System.AttributeUsage(System.AttributeTargets.All,\ Inherited\ =\ \textcolor{keyword}{false},\ AllowMultiple\ =\ \textcolor{keyword}{true})]}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00017}\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_sub_pack_of}{00017}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }UTestSubPackOf\ :\ System.Attribute}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00018}00018\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{public}\ Type\ SubPackOf\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{public}\ UTestSubPackOf(Type\ parent\ =\ \textcolor{keyword}{null})\ =>\ SubPackOf\ =\ parent;}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00021}00021\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00024}\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_explorer}{00024}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_explorer}{UTestExplorer}}}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00025}00025\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_tree}{UTestTree}}\ testTree;}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_tree}{UTestTree}}\ TestTree}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00029}00029\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00030}00030\ \ \ \ \ \ \ \textcolor{keyword}{get}}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00031}00031\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{comment}{//BRUH\ it's\ sneaky,\ ScanAssembly\ happens\ here}}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (testTree\ is\ \textcolor{keyword}{null})\ testTree\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_tree}{UTestTree}}();}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ testTree;}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00035}00035\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ HashSet<string>\ Categories\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ ScanCategories(params\ \textcolor{keywordtype}{string}[]\ categories)}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00039}00039\ \ \ \ \ \ \ =>\ Categories\ =\ \textcolor{keyword}{new}\ HashSet<string>(categories);}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ ScanCategory(\textcolor{keywordtype}{string}\ category)}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00041}00041\ \ \ \ \ \ \ =>\ Categories.Add(category);}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ IEnumerable<string>\ TestNames\ =>\ TestTree.TypeByPath.Keys;}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00044}00044\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Dictionary<string,\ Type>\ TestByName\ =>\ TestTree.TypeByPath;}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ PrintAllTests()}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00047}00047\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00048}00048\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_logger}{UTestLogger}}.Log(\$\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Available\ UTests:\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}});}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00049}00049\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_logger}{UTestLogger}}.Log(TestTree);}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00050}00050\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00051}00051\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_explorer_8cs_source_l00052}00052\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,58 @@
+\doxysection{Can\+IDerive\+From\+Nested\+Class.\+cs}
+\hypertarget{_can_i_derive_from_nested_class_8cs_source}{}\label{_can_i_derive_from_nested_class_8cs_source}\index{ClientProject/InMemory/Experiments/Design/CanIDeriveFromNestedClass.cs@{ClientProject/InMemory/Experiments/Design/CanIDeriveFromNestedClass.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00010}00010\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i_user}{CrabUIUser}}}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00012}00012\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00013}00013\ \textcolor{comment}{\ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00014}00014\ \textcolor{comment}{\ \ ///\ I\ can\ derive\ a\ class,\ but\ i\ can't\ access\ privates\ of\ a\ base\ outer\ class}}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00015}00015\ \textcolor{comment}{\ \ ///\ Should\ be\ a\ compile\ time\ error\ btw}}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00016}00016\ \textcolor{comment}{\ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00017}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_can_i_derive_from_nested_class}{00017}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_can_i_derive_from_nested_class}{CanIDeriveFromNestedClass}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Experiment}}}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00018}00018\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00020}00020\ \ \ \ \ \textcolor{comment}{//\ public\ class\ WrapperA}}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00021}00021\ \ \ \ \ \textcolor{comment}{//\ \{}}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00022}00022\ \ \ \ \ \textcolor{comment}{//\ \ \ private\ string\ Secret\ =\ "{}Secret"{};}}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00024}00024\ \ \ \ \ \textcolor{comment}{//\ \ \ public\ class\ NestedA}}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00025}00025\ \ \ \ \ \textcolor{comment}{//\ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00027}00027\ \ \ \ \ \textcolor{comment}{//\ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00028}00028\ \ \ \ \ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00030}00030\ \ \ \ \ \textcolor{comment}{//\ public\ class\ WrapperB}}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00031}00031\ \ \ \ \ \textcolor{comment}{//\ \{}}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00032}00032\ \ \ \ \ \textcolor{comment}{//\ \ \ public\ class\ NestedB\ :\ WrapperA.NestedA}}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00033}00033\ \ \ \ \ \textcolor{comment}{//\ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00034}00034\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ public\ string\ GetSecret(WrapperA\ wrapperA)}}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00035}00035\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00036}00036\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ return\ wrapperA.Secret;}}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00037}00037\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00038}00038\ \ \ \ \ \textcolor{comment}{//\ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00040}00040\ \ \ \ \ \textcolor{comment}{//\ \ \ public\ NestedB\ nestedB\ =\ new\ NestedB();}}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00041}00041\ \ \ \ \ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00044}00044\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ Run()}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00045}00045\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00046}00046\ \ \ \ \ \ \ \textcolor{comment}{//\ WrapperA\ wrapperA\ =\ new\ WrapperA();}}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00047}00047\ \ \ \ \ \ \ \textcolor{comment}{//\ WrapperB\ wrapperB\ =\ new\ WrapperB();}}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00049}00049\ \ \ \ \ \ \ \textcolor{comment}{//\ wrapperB.nestedB.GetSecret(wrapperA);}}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00050}00050\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00051}00051\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_can_i_derive_from_nested_class_8cs_source_l00052}00052\ \}}
+
+\end{DoxyCode}

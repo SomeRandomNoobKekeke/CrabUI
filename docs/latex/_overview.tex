@@ -1,0 +1,569 @@
+\chapter{Overview }
+\hypertarget{_overview}{}\label{_overview}\index{Overview@{Overview}}
+\label{_overview_md__docs_sources_2_sources_22_01_overview}%
+\Hypertarget{_overview_md__docs_sources_2_sources_22_01_overview}%
+\hypertarget{_overview_autotoc_md5}{}\doxysection{\texorpdfstring{Basics}{Basics}}\label{_overview_autotoc_md5}
+All GUI elements:\+ frames, buttons, list, textblocks are CUIComponents
+
+They are C\# objects, they all have parameterless constructor so you can just create them
+
+They have props that control how they will be drawn and positioned 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{CUIFrame\ frame\ =\ \textcolor{keyword}{new}\ CUIFrame()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ Absolute\ =\ \textcolor{keyword}{new}\ CUINullRect(w:\ 400,\ h:\ 600),}
+\DoxyCodeLine{\ \ Background\ =\ \{\ Color\ =\ Color.Blue,\ \}\ \textcolor{comment}{//\ you\ can\ set\ deep\ props\ like\ this}}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+
+CUIComponents can be connected to each other forming a tree, they have:\+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ IList<CUIComponent>\ Children\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\textcolor{keyword}{public}\ CUIComponent\ Parent\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+
+
+you can connect them like this 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{CUI.Main.Children.Add(frame);\ }
+\DoxyCodeLine{\textcolor{comment}{//\ or}}
+\DoxyCodeLine{frame.Parent\ =\ CUI.Main;}
+
+\end{DoxyCode}
+
+
+Another fancy way to connect components is indexing ~\newline
+ It adds component as a child and memorizes it, so you can later access it by name 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{frame[\textcolor{stringliteral}{"{}layout"{}}]\ =\ \textcolor{keyword}{new}\ CUIVerticalList()\ \{\ Relative\ =\ \textcolor{keyword}{new}\ CUINullRect(0,\ 0,\ 1,\ 1),\ \};}
+\DoxyCodeLine{frame[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}handle"{}}]\ =\ \textcolor{keyword}{new}\ CUIHorizontalList()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ FitContent\ =\ \textcolor{keyword}{new}\ CUIBool2(\textcolor{keyword}{false},\ \textcolor{keyword}{true}),}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{frame[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}handle"{}}][\textcolor{stringliteral}{"{}caption"{}}]\ =\ Caption\ =\ \textcolor{keyword}{new}\ CUITextBlock(\textcolor{stringliteral}{"{}bruh"{}})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ Flex\ =\ 1,}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+
+To make your components visible add them to CUI.\+Main or CUI.\+Top\+Main ~\newline
+ CUI.\+Main is drawn below vanilla GUI and Top\+Main is drawn above 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{frame.Open();\ \textcolor{comment}{//\ same\ as\ CUI.Main.Children.Add(frame);}}
+
+\end{DoxyCode}
+
+
+CUIComponent can handle various events, e.\+g. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//mmm\ so\ consistent}}
+\DoxyCodeLine{frame.MouseDown\ +=\ (c,\ e)\ =>\ CUI.Logger.Log(\$\textcolor{stringliteral}{"{}Mouse\ down\ at\ \{e.Pos\}"{}});}
+\DoxyCodeLine{frame.OnFocus\ +=\ ()\ =>\ frame.Background.Color\ =\ Color.Cyan;}
+\DoxyCodeLine{frame.OnFocusLost\ +=\ ()\ =>\ frame.Background.Color\ =\ Color.Blue;}
+\DoxyCodeLine{frame.KeyPressed\ +=\ (e)\ =>\ CUI.Logger.Log(e.Key);}
+
+\end{DoxyCode}
+\hypertarget{_overview_autotoc_md6}{}\doxysection{\texorpdfstring{Components}{Components}}\label{_overview_autotoc_md6}
+
+\begin{DoxyItemize}
+\item CUIComponent -\/ It\textquotesingle{}s just a square with background and borders
+\item CUIMain\+Component -\/Special component that Draws and calculates layouts of its children, there\textquotesingle{}s 2 CUI.\+Main and CUI.\+Top\+Main, don\textquotesingle{}t create
+\item CUIButton -\/ A button
+\item CUICanvas -\/ A canvas, you can draw on its texture
+\item CUICheck\+Box -\/ A checkbox
+\item CUIClose\+Button -\/ Button with a cross that emits "{}close"{} event that forces nearest frame to close
+\item CUIDrop\+Down -\/ Drop down select (borked)
+\item CUIFrame -\/ Draggable and resizable container for other components, can be Opened and Closed
+\item CUIVertical\+List -\/ Wrapper with CUIVertical\+List\+Layout
+\item CUIGrid -\/ Wrapper with Grid layour (half-\/assed)
+\item CUIPages -\/ Can have only 1 child -\/ opened page, resizes opened page to its size
+\item CUIPage -\/ When opened in CUIPages recieves On\+Open /\+ On\+Close events
+\item CUIToggle\+Button -\/ Button that can be toggled On and Off
+\item CUIRadio\+Button -\/ Button that can be added to a group where only 1 button can be On at a time
+\item CUIScroll\+Bar -\/ Box with a slider that can be dragged, exposes Lambda (half-\/assed)
+\item CUIText\+Block -\/ Block of text with background, can resist shrinking
+\item CUIText\+Line -\/ Line of text
+\item CUIText\+Input -\/ Text input (half-\/assed)
+\end{DoxyItemize}\hypertarget{_overview_autotoc_md7}{}\doxysubsubsection{\texorpdfstring{CUIDefault.}{CUIDefault.}}\label{_overview_autotoc_md7}
+
+\begin{DoxyItemize}
+\item CUIDefault.\+Frame -\/ prebuilt frame with handle, caption and close button, add children to frame\+["{}layout"{}]\+
+\item Input\+Field -\/ Base class for Input\+Field, wrappers with label and text input, intended to be used in some settings ui (half-\/assed)
+\end{DoxyItemize}\hypertarget{_overview_autotoc_md8}{}\doxysection{\texorpdfstring{Layouts}{Layouts}}\label{_overview_autotoc_md8}
+
+\begin{DoxyItemize}
+\item CUIPlain\+Layout -\/ simple two-\/dimensional plane
+\item CUIVertical\+List\+Layout -\/ places children in a stack, one after another, if child width isn\textquotesingle{}t specified resizes it to its own width ~\newline
+ children can fill empty space with Flex prop
+\item CUIHorizontal\+List\+Layout -\/ Same as CUIVertical\+List\+Layout but horizontal
+\item CUIGrid\+Layout -\/ places children in cells specified by Grid\+Row and Grid\+Column (half-\/assed)
+\end{DoxyItemize}\hypertarget{_overview_autotoc_md9}{}\doxysection{\texorpdfstring{Types}{Types}}\label{_overview_autotoc_md9}
+\hypertarget{_overview_autotoc_md10}{}\doxysubsubsection{\texorpdfstring{Commonly used "{}primitive"{} types:\+}{Commonly used "{}primitive"{} types:\+}}\label{_overview_autotoc_md10}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{enum}\ CUIDirection\ \{\ Straight,\ Reverse,\ \}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{struct\ }CUIRect\ \{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ Left;}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ Top;}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ Width;}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ Height;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{struct\ }CUINullRect\ \{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}?\ Left;}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}?\ Top;}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}?\ Width;}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}?\ Height;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{struct\ }CUIBool2\ \{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ X;}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ Y;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{struct\ }CUISizes\ \{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ Left;}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ Top;}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ Right;}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ Bottom;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }CUIAnchor\ \{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Vector2\ LeftTop\ =\ \textcolor{keyword}{new}\ Vector2(0.0f,\ 0.0f);}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Vector2\ CenterTop\ =\ \textcolor{keyword}{new}\ Vector2(0.5f,\ 0.0f);}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Vector2\ RightTop\ =\ \textcolor{keyword}{new}\ Vector2(1.0f,\ 0.0f);}
+\DoxyCodeLine{\ \ ...}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{struct\ }CUIBoundaries\ \{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}?\ MinX;}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}?\ MaxX;}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}?\ MinY;}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}?\ MaxY;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{_overview_autotoc_md11}{}\doxysection{\texorpdfstring{Props}{Props}}\label{_overview_autotoc_md11}
+\hypertarget{_overview_autotoc_md12}{}\doxysubsubsection{\texorpdfstring{Commonly used Props of CUIComponent:\+}{Commonly used Props of CUIComponent:\+}}\label{_overview_autotoc_md12}
+\hypertarget{_overview_autotoc_md13}{}\doxysubsubsection{\texorpdfstring{Layout Props:\+}{Layout Props:\+}}\label{_overview_autotoc_md13}
+Note that props used by some layouts might be ignored in others
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ CUINullRect\ Absolute\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ Absolute\ position\ and\ size\ in\ pixels}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ CUINullRect\ AbsoluteMin\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ Min\ Absolute\ position\ and\ size\ in\ pixels}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ CUINullRect\ AbsoluteMax\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ Max\ Absolute\ position\ and\ size\ in\ pixels}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ CUINullRect\ Relative\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ Position\ and\ size\ relative\ to\ parent\ size\ }}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ CUINullRect\ RelativeMin\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ Min\ Position\ and\ size\ relative\ to\ parent\ size\ }}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ CUINullRect\ RelativeMax\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ Max\ Position\ and\ size\ relative\ to\ parent\ size\ }}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ CUINullRect\ CrossRelative\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ Relative\ position\ and\ size\ but\ to\ the\ opposite\ dimension,\ useful\ for\ creating\ square\ things}}
+
+\end{DoxyCode}
+
+
+Child position is calculated from Anchor position ~\newline
+ Child is attached with its Anchor point to Parent\+Anchor of parent rect ~\newline
+ if Parent\+Anchor is null Anchor is used for both 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ Vector2\ Anchor\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ ([0..1],[0..1])\ Vector2}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ Vector2?\ ParentAnchor\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ ([0..1],[0..1])\ Vector2?}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ CUIDirection\ Direction\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ used\ in\ lists\ to\ specify\ direction\ of\ child\ positioning}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keywordtype}{float}?\ Flex\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ if\ not\ null\ then\ child\ will\ fill\ empty\ space\ in\ lists\ }}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/\ if\ there's\ multiple\ flex\ components\ space\ will\ be\ splitted\ among\ them\ proportionally\ to\ their\ flex}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ Vector2\ ChildrenOffset\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ All\ children\ will\ be\ shifted\ on\ this\ vector,\ used\ for\ scroll}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ CUIBoundaries\ ChildrenOffsetBounds\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ ChildrenOffset\ will\ be\ bounded\ with\ these,\ used\ to\ limit\ scroll}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ Func<CUIRect,\ CUIBoundaries>\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ Used\ to\ keep\ children\ in\ some\ bounds,\ there's\ static\ funcs\ in\ CUIBoundaries}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ CUIBool2\ FitContent\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ Parent\ will\ resize\ to\ fit\ all\ children\ inside\ of\ its\ rect\ }}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ GridRow\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ Grid\ row\ to\ put\ this\ component\ into}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ GridColumn\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ Grid\ column\ to\ put\ this\ component\ into}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ (int,\ int)\ Grid\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ Set\ both\ at\ once}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ CUISizes\ Margin\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ Empty\ space\ around\ component}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ CUISizes\ Border\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ Size\ of\ borders}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ CUISizes\ Padding\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ Inner\ empty\ space\ between\ border\ and\ children}}
+
+\end{DoxyCode}
+
+
+Note:\+ these rects are not readonly, but you don\textquotesingle{}t need to set them, they\textquotesingle{}re supposed to be set by parent layout 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ CUIRect\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ OuterRect}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ CUIRect\ Rect\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ OuterRect\ -\/\ Margin}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ CUIRect\ InnerRect\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ Rect\ -\/\ Border}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ CUIRect\ ChildrenRect\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ InnerRect\ -\/\ Padding}}
+
+\end{DoxyCode}
+\hypertarget{_overview_autotoc_md14}{}\doxysubsubsection{\texorpdfstring{Graphics Props:\+}{Graphics Props:\+}}\label{_overview_autotoc_md14}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ SimpleTexture\ Background\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{class\ }SimpleTexture\ \{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ CUISprite\ Sprite\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ Visible\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ Note\ that\ these\ props\ are\ forwarded\ from\ Sprite,\ so\ if\ you\ change\ sprite\ you\ throw\ away\ these\ as\ well\ }}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ CUITexture2D\ Texture\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ Rectangle?\ SourceRectangle\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ Color\ Color\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ Rotation\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ Vector2\ Origin\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ SpriteEffects\ Effects\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ LayerDepth\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ Borders\ Borders\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{class\ }Borders\ \{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ CUISizes\ Sizes\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ Visible\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ Color\ Color\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ Displayed\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ If\ false\ component\ won't\ even\ be\ added\ to\ the\ list\ of\ visible\ components}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ CullChildren\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ Should\ children\ be\ culled\ and\ cropped\ outside\ of\ parent\ rect}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ IgnoretransparentPixels\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ Whether\ clicks\ should\ register\ on\ transparent\ pixels,\ it\ buffers\ texture\ data\ to\ test\ pixel,\ it's\ heavy,\ use\ wisely}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ UseReactiveStyles\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ Defaults\ to\ CUICore.Styles.UseReactiveStyles}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ CUIPaletteRank\ PaletteRank\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ uses\ palette\ from\ CUICore.Palettes\ of\ some\ rank\ (Primary,\ Secondary)}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ CUIPalette\ Palette\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ Changes\ palette,\ it'll\ retrigger\ styles}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ CUIPalette\ DeepPalette\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ Recursively\ sets\ palette\ for\ children\ }}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ Action<CUIComponent>\ Style\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ Arbitrary\ func\ that\ sets\ some\ props\ on\ component,\ saved\ in\ PersonalStyle}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ ICUIStyle\ PersonalStyle\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ Extra\ style\ that\ will\ be\ applied\ after\ type\ specific\ styles}}
+
+\end{DoxyCode}
+\hypertarget{_overview_autotoc_md15}{}\doxysubsubsection{\texorpdfstring{Other Props:\+}{Other Props:\+}}\label{_overview_autotoc_md15}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ Focusable\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ Can\ it\ be\ focused}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ Draggable\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ Can\ it\ be\ dragged}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ Swipeable\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ Can\ it\ be\ swiped}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ Resizable\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ Can\ it\ be\ resized}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ ConsumeFocus\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ Should\ it\ consume\ focus\ events}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ ConsumeMouseEvents\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ Should\ it\ consume\ mouse\ events}}
+
+\end{DoxyCode}
+\hypertarget{_overview_autotoc_md16}{}\doxysection{\texorpdfstring{Events}{Events}}\label{_overview_autotoc_md16}
+Note:\+ most events accompanied by delegate props where you can set callbacks in object initializers 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{CUIComponent\ component\ =\ \textcolor{keyword}{new}\ CUIComponent()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ OnMouseDown\ =\ (c,\ e)\ =>\ CUI.Logger.Log(e.Pos),}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{\textcolor{comment}{//Same\ as}}
+\DoxyCodeLine{component.MouseDown\ +=\ (c,\ e)\ =>\ CUI.Logger.Log(e.Pos);}
+
+\end{DoxyCode}
+
+
+Also most events have "{}this"{} component as first arg ~\newline
+ Some of them don\textquotesingle{}t and it\textquotesingle{}s a consistency bug which i\textquotesingle{}ll fix somewhere in the future
+
+Also idk if it\textquotesingle{}s a good idea to pass "{}this"{} as first arg, in fact i never use it, tell me your thoughts
+
+Clearable\+Events are wrappers around event that can be cleared, raised from outside and routed to one another\hypertarget{_overview_autotoc_md17}{}\doxysubsubsection{\texorpdfstring{Commonly used Events of CUIComponent:\+}{Commonly used Events of CUIComponent:\+}}\label{_overview_autotoc_md17}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<CUIComponent,\ CUIMouseDownEvent>\ MouseDown;}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<CUIComponent,\ CUIMouseUpEvent>\ MouseUp}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<CUIComponent,\ CUIMouseClickEvent>\ MouseClick}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<CUIComponent,\ CUIMouseDoubleClickEvent>\ MouseDoubleClick}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<CUIComponent,\ CUIMouseEnterEvent>\ MouseEnter}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<CUIComponent,\ CUIMouseLeaveEvent>\ MouseLeave}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<CUIComponent,\ CUIMouseOnEvent>\ MouseOn\ \textcolor{comment}{//\ It's\ called\ on\ components\ currently\ under\ the\ mouse}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<CUIComponent,\ CUIMouseOffEvent>\ MouseOff\ \textcolor{comment}{//\ It's\ called\ on\ prev\ components\ under\ the\ mouse}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<CUIComponent,\ CUIMouseScrollEvent>\ MouseScroll}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<CUIComponent,\ Vector2>\ Dragged}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<CUIComponent,\ CUIRect>\ RectSet}
+
+\end{DoxyCode}
+
+
+Component recieves Key events only when focused 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action\ OnFocus}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action\ OnFocusLost}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<CUIKeyPressedEvent>\ KeyPressed}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<CUIKeyReleasedEvent>\ KeyReleased}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<CUITextInputEvent>\ TextInput\ \textcolor{comment}{//\ localized\ +\ spammed\ when\ key\ is\ held}}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<CUIKeyDownInputEvent>\ KeyDownInput\ \textcolor{comment}{//\ spammed\ when\ key\ is\ held}}
+
+\end{DoxyCode}
+
+
+There\textquotesingle{}s also global events on main components, e.\+g. in {\ttfamily CUI.\+Main.\+Global\+Events}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }CUIMainComponent}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ GlobalEvents\_Part\ GlobalEvents\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }GlobalEvents\_Part\ :\ Part,\ IMouseEventConsumer,\ IKeyboardEventConsumer}
+\DoxyCodeLine{\ \ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ ClearableEvent\ BeforeUpdate\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ ClearableEvent\ AfterUpdate\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ MouseOver\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ BRUH}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ MousePressed\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ ConsumeMouseEvents\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ BRUH}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ ClearableEvent<CUIMouseDownEvent>\ MouseDown\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ ClearableEvent<CUIMouseUpEvent>\ MouseUp\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ ClearableEvent<CUIMouseClickEvent>\ MouseClick\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ ClearableEvent<CUIMouseDoubleClickEvent>\ MouseDoubleClick\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ ClearableEvent<CUIMouseMovedEvent>\ MouseMoved\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ ClearableEvent<CUIMouseEnterEvent>\ MouseEnter\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();\ \textcolor{comment}{//\ BRUH}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ ClearableEvent<CUIMouseLeaveEvent>\ MouseLeave\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();\ \textcolor{comment}{//\ BRUH}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ ClearableEvent<CUIMouseOnEvent>\ MouseOn\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();\ \textcolor{comment}{//\ BRUH}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ ClearableEvent<CUIMouseOffEvent>\ MouseOff\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();\ \textcolor{comment}{//\ BRUH}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ ClearableEvent<CUIMouseScrollEvent>\ MouseScroll\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ ClearableEvent<CUIKeyPressedEvent>\ KeyPressed\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ ClearableEvent<CUIKeyReleasedEvent>\ KeyReleased\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ ClearableEvent<CUITextInputEvent>\ TextInput\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}\ ClearableEvent<CUIKeyDownInputEvent>\ KeyDownInput\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 

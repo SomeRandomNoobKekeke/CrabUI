@@ -1,0 +1,64 @@
+\doxysection{CUILibs.\+Event\+Subscription Class Reference}
+\hypertarget{class_c_u_i_libs_1_1_event_subscription}{}\label{class_c_u_i_libs_1_1_event_subscription}\index{CUILibs.EventSubscription@{CUILibs.EventSubscription}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_event_subscription_a0a156d11adc5e89c4c20efa07518aeb2}{Cancel}} ()
+\item 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_event_subscription_a8670f06519286eedb96883cc8d7ec6ed}{Event\+Subscription}} (Action cancel\+Action)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_event_subscription_8cs_source_l00009}{9}} of file \doxymbox{\hyperlink{_event_subscription_8cs_source}{Event\+Subscription.\+cs}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_c_u_i_libs_1_1_event_subscription_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_event_subscription_a8670f06519286eedb96883cc8d7ec6ed}\index{CUILibs.EventSubscription@{CUILibs.EventSubscription}!EventSubscription@{EventSubscription}}
+\index{EventSubscription@{EventSubscription}!CUILibs.EventSubscription@{CUILibs.EventSubscription}}
+\doxysubsubsection{\texorpdfstring{EventSubscription()}{EventSubscription()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_event_subscription_a8670f06519286eedb96883cc8d7ec6ed} 
+CUILibs.\+Event\+Subscription.\+Event\+Subscription (\begin{DoxyParamCaption}\item[{Action}]{cancel\+Action}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_event_subscription_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_event_subscription_8cs_source}{Event\+Subscription.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ =>\ CancelAction\ =\ cancelAction;}
+
+\end{DoxyCode}
+
+
+\label{doc-func-members}
+\Hypertarget{class_c_u_i_libs_1_1_event_subscription_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_event_subscription_a0a156d11adc5e89c4c20efa07518aeb2}\index{CUILibs.EventSubscription@{CUILibs.EventSubscription}!Cancel@{Cancel}}
+\index{Cancel@{Cancel}!CUILibs.EventSubscription@{CUILibs.EventSubscription}}
+\doxysubsubsection{\texorpdfstring{Cancel()}{Cancel()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_event_subscription_a0a156d11adc5e89c4c20efa07518aeb2} 
+void CUILibs.\+Event\+Subscription.\+Cancel (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_event_subscription_8cs_source_l00011}{11}} of file \doxymbox{\hyperlink{_event_subscription_8cs_source}{Event\+Subscription.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ CancelAction?.Invoke();}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ CancelAction\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00015\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+Libs/\+\+Clearable\+Event/\+Event\+Subscription.\+cs\end{DoxyCompactItemize}

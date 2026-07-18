@@ -1,0 +1,34 @@
+\doxysection{Already\+Done.\+cs}
+\hypertarget{_already_done_8cs_source}{}\label{_already_done_8cs_source}\index{ClientProject/ClientSource/Libs/AlreadyDone.cs@{ClientProject/ClientSource/Libs/AlreadyDone.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_already_done_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_already_done_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_already_done_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_already_done_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_already_done_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_already_done_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_already_done_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }System.Xml;}
+\DoxyCodeLine{\Hypertarget{_already_done_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }System.Xml.Linq;}
+\DoxyCodeLine{\Hypertarget{_already_done_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }System.IO;}
+\DoxyCodeLine{\Hypertarget{_already_done_8cs_source_l00010}00010\ \textcolor{keyword}{using\ }System.Runtime.CompilerServices;}
+\DoxyCodeLine{\Hypertarget{_already_done_8cs_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_already_done_8cs_source_l00012}\doxymbox{\hyperlink{namespace_c_u_i_libs}{00012}}\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}}}
+\DoxyCodeLine{\Hypertarget{_already_done_8cs_source_l00013}00013\ \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_already_done_8cs_source_l00014}00014\ \textcolor{comment}{\ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_already_done_8cs_source_l00015}00015\ \textcolor{comment}{\ \ ///\ Call\ if(AlreadyDone.Once())\ to\ check\ if\ it's\ already\ have\ been\ done}}
+\DoxyCodeLine{\Hypertarget{_already_done_8cs_source_l00016}00016\ \textcolor{comment}{\ \ ///\ Primarily\ for\ one\ time\ debug}}
+\DoxyCodeLine{\Hypertarget{_already_done_8cs_source_l00017}00017\ \textcolor{comment}{\ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_already_done_8cs_source_l00018}00018\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }AlreadyDone}
+\DoxyCodeLine{\Hypertarget{_already_done_8cs_source_l00019}00019\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_already_done_8cs_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ HashSet<string>\ Paths\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_already_done_8cs_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ Once([CallerFilePath]\ \textcolor{keywordtype}{string}\ source\ =\ \textcolor{stringliteral}{"{}"{}},\ [CallerLineNumber]\ \textcolor{keywordtype}{int}\ lineNumber\ =\ 0)}
+\DoxyCodeLine{\Hypertarget{_already_done_8cs_source_l00022}00022\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_already_done_8cs_source_l00023}00023\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Paths.Contains(\$\textcolor{stringliteral}{"{}\{source\}:\{lineNumber\}"{}}))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_already_done_8cs_source_l00024}00024\ \ \ \ \ \ \ Paths.Add(\$\textcolor{stringliteral}{"{}\{source\}:\{lineNumber\}"{}});}
+\DoxyCodeLine{\Hypertarget{_already_done_8cs_source_l00025}00025\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_already_done_8cs_source_l00026}00026\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_already_done_8cs_source_l00027}00027\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_already_done_8cs_source_l00028}00028\ \}}
+
+\end{DoxyCode}

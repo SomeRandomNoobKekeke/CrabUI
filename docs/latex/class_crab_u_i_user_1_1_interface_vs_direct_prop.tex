@@ -1,0 +1,120 @@
+\doxysection{Crab\+UIUser.\+Interface\+Vs\+Direct\+Prop Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_interface_vs_direct_prop}{}\label{class_crab_u_i_user_1_1_interface_vs_direct_prop}\index{CrabUIUser.InterfaceVsDirectProp@{CrabUIUser.InterfaceVsDirectProp}}
+
+
+Using object via interface doesn\textquotesingle{}t affect performance at all o is \doxylink{interface_crab_u_i_user_1_1_interface_vs_direct_prop_1_1_i_module_b_host}{IModule\+BHost} takes some ticks, but it\textquotesingle{}s still balls.  
+
+
+Inheritance diagram for Crab\+UIUser.\+Interface\+Vs\+Direct\+Prop:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_interface_vs_direct_prop}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+interface \doxymbox{\hyperlink{interface_crab_u_i_user_1_1_interface_vs_direct_prop_1_1_i_module_b_host}{IModule\+BHost}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_interface_vs_direct_prop_1_1_host}{Host}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_interface_vs_direct_prop_1_1_module_a}{ModuleA}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_interface_vs_direct_prop_1_1_module_b}{ModuleB}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_interface_vs_direct_prop_a90814d38f9d31a550e7fc4cb920052df}{Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Crab\+UIUser.\+Experiment}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Run} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{class_crab_u_i_user_1_1_interface_vs_direct_prop_a47d73d856a10e90a406a5a509979327f}{repeats}} = 1000000000
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Using object via interface doesn\textquotesingle{}t affect performance at all o is \doxylink{interface_crab_u_i_user_1_1_interface_vs_direct_prop_1_1_i_module_b_host}{IModule\+BHost} takes some ticks, but it\textquotesingle{}s still balls. 
+
+Definition at line \doxymbox{\hyperlink{_interface_vs_direct_prop_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_interface_vs_direct_prop_8cs_source}{Interface\+Vs\+Direct\+Prop.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_interface_vs_direct_prop_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_interface_vs_direct_prop_a90814d38f9d31a550e7fc4cb920052df}\index{CrabUIUser.InterfaceVsDirectProp@{CrabUIUser.InterfaceVsDirectProp}!Run@{Run}}
+\index{Run@{Run}!CrabUIUser.InterfaceVsDirectProp@{CrabUIUser.InterfaceVsDirectProp}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_interface_vs_direct_prop_a90814d38f9d31a550e7fc4cb920052df} 
+override void Crab\+UIUser.\+Interface\+Vs\+Direct\+Prop.\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_interface_vs_direct_prop_8cs_source_l00063}{63}} of file \doxymbox{\hyperlink{_interface_vs_direct_prop_8cs_source}{Interface\+Vs\+Direct\+Prop.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00064\ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ Stopwatch\ sw\ =\ \textcolor{keyword}{new}\ Stopwatch();}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ value\ =\ 0;}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ Host\ host\ =\ \textcolor{keyword}{new}\ Host();}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ ModuleA\ moduleA\ =\ \textcolor{keyword}{new}\ ModuleA();}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ sw.Start();}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ value\ =\ moduleA.UseHost(host);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}UseHost:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ sw.Restart();}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ value\ =\ moduleA.UseB(host);}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}UseB:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ sw.Restart();}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ value\ =\ moduleA.UseObject(host);}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}UseObject:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_crab_u_i_user_1_1_interface_vs_direct_prop_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_interface_vs_direct_prop_a47d73d856a10e90a406a5a509979327f}\index{CrabUIUser.InterfaceVsDirectProp@{CrabUIUser.InterfaceVsDirectProp}!repeats@{repeats}}
+\index{repeats@{repeats}!CrabUIUser.InterfaceVsDirectProp@{CrabUIUser.InterfaceVsDirectProp}}
+\doxysubsubsection{\texorpdfstring{repeats}{repeats}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_interface_vs_direct_prop_a47d73d856a10e90a406a5a509979327f} 
+int Crab\+UIUser.\+Interface\+Vs\+Direct\+Prop.\+repeats = 1000000000}
+
+
+
+Definition at line \doxymbox{\hyperlink{_interface_vs_direct_prop_8cs_source_l00061}{61}} of file \doxymbox{\hyperlink{_interface_vs_direct_prop_8cs_source}{Interface\+Vs\+Direct\+Prop.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Performance/\+Interface\+Vs\+Direct\+Prop.\+cs\end{DoxyCompactItemize}

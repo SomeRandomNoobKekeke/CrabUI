@@ -1,0 +1,91 @@
+\doxysection{Itterating\+Combined\+Enumerable.\+cs}
+\hypertarget{_itterating_combined_enumerable_8cs_source}{}\label{_itterating_combined_enumerable_8cs_source}\index{ClientProject/InMemory/Experiments/Performance/ItteratingCombinedEnumerable.cs@{ClientProject/InMemory/Experiments/Performance/ItteratingCombinedEnumerable.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00011}00011\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i_user}{CrabUIUser}}}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00012}00012\ \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00013}00013\ \textcolor{comment}{\ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00014}00014\ \textcolor{comment}{\ \ ///\ itterating\ combined\ ienumerables\ is\ 10\ times\ slower\ that\ itterating\ two\ lists}}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00015}00015\ \textcolor{comment}{\ \ ///\ but\ itterating\ combined\ lits\ is\ fast}}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00016}00016\ \textcolor{comment}{\ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00017}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_combined_enumerable}{00017}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_combined_enumerable}{ItteratingCombinedEnumerable}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Experiment}}}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00018}00018\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{public}\ List<int>\ list1\ =\ Enumerable.Range(0,\ 10).ToList();}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{public}\ List<int>\ list2\ =\ Enumerable.Range(0,\ 10).ToList();}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{public}\ IEnumerable<int>\ Combined\ =>\ list1.Concat(list2);}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ repeats\ =\ 1000000;}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ Run()}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00026}00026\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00027}00027\ \ \ \ \ \ \ Stopwatch\ sw\ =\ \textcolor{keyword}{new}\ Stopwatch();}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00029}00029\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ value\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00031}00031\ \ \ \ \ \ \ IEnumerable<int>\ preCombined\ =\ list1.Concat(list2);}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00033}00033\ \ \ \ \ \ \ List<int>\ preCombinedlist\ =\ \textcolor{keyword}{new}\ List<int>(preCombined);}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00035}00035\ \ \ \ \ \ \ sw.Restart();}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00036}00036\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00037}00037\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keywordtype}{int}\ v\ \textcolor{keywordflow}{in}\ list1)}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ value\ =\ v;}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keywordtype}{int}\ v\ \textcolor{keywordflow}{in}\ list2)}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ value\ =\ v;}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00047}00047\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00048}00048\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00049}00049\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_mod}{Mod}}.Logger.Log(\$\textcolor{stringliteral}{"{}itterating\ lists:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00051}00051\ \ \ \ \ \ \ sw.Restart();}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00052}00052\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00053}00053\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keywordtype}{int}\ v\ \textcolor{keywordflow}{in}\ Combined)}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ value\ =\ v;}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00058}00058\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00059}00059\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00060}00060\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_mod}{Mod}}.Logger.Log(\$\textcolor{stringliteral}{"{}itterating\ combined\ ienumerable:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00062}00062\ \ \ \ \ \ \ sw.Restart();}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00063}00063\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00064}00064\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keywordtype}{int}\ v\ \textcolor{keywordflow}{in}\ preCombined)}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ value\ =\ v;}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00069}00069\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00070}00070\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00071}00071\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_mod}{Mod}}.Logger.Log(\$\textcolor{stringliteral}{"{}itterating\ precombined\ ienumerable:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00073}00073\ \ \ \ \ \ \ sw.Restart();}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00074}00074\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00075}00075\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keywordtype}{int}\ v\ \textcolor{keywordflow}{in}\ preCombinedlist)}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ value\ =\ v;}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00080}00080\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00081}00081\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00082}00082\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_mod}{Mod}}.Logger.Log(\$\textcolor{stringliteral}{"{}itterating\ precombined\ list:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00083}00083\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00084}00084\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_combined_enumerable_8cs_source_l00085}00085\ \}}
+
+\end{DoxyCode}

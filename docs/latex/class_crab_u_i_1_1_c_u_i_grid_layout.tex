@@ -1,0 +1,184 @@
+\doxysection{Crab\+UI.\+CUIGrid\+Layout Class Reference}
+\hypertarget{class_crab_u_i_1_1_c_u_i_grid_layout}{}\label{class_crab_u_i_1_1_c_u_i_grid_layout}\index{CrabUI.CUIGridLayout@{CrabUI.CUIGridLayout}}
+
+
+It\textquotesingle{}s still very primitive.  
+
+
+Inheritance diagram for Crab\+UI.\+CUIGrid\+Layout:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_crab_u_i_1_1_c_u_i_grid_layout}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_grid_layout_1_1_line}{Line}}
+\item 
+interface \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_grid_layout_1_1_host}{Host}}
+\item 
+interface \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_grid_layout_1_1_child}{Child}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_grid_layout_a3a9693adbe184a350b1093a0e8714931}{Connect\+To}} (\doxymbox{\hyperlink{interface_crab_u_i_1_1_layout_1_1_host}{Layout.\+Host}} host)
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_grid_layout_a55bcb4513134366ea7acc64370865527}{Update\+Children}} ()
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_grid_layout_a3945a7f5733140f70e0bb73cbd0a8b1e}{Update\+Parent}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_1_1_layout}{Crab\+UI.\+Layout}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \doxymbox{\hyperlink{class_crab_u_i_1_1_layout_a202360a761488fcce26d12b1da8aaede}{Connect\+To}} (\doxymbox{\hyperlink{interface_crab_u_i_1_1_layout_1_1_host}{Host}} host)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Properties inherited from \doxymbox{\hyperlink{class_crab_u_i_1_1_layout}{Crab\+UI.\+Layout}}}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_node}{Debug\+Node}}$<$ object, string $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_layout_a5672df46c42c2cbf477cce97a3d3d9e3}{Debug\+\_\+\+Layout\+Marked}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+object \doxymbox{\hyperlink{class_crab_u_i_1_1_layout_a7b2a0f006cfae9c5f5c59bc7d17cc108}{Host\+Component}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+string \doxymbox{\hyperlink{class_crab_u_i_1_1_layout_ab48cf857defe1d524143eb1f76029f7a}{Host\+Prop\+Name}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_layout_aa1703bfd36a9f080624907e52a70d229}{Require\+Children\+Update}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_layout_af31d46b151349c2c0d9114741c966c08}{Require\+Parent\+Update}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+It\textquotesingle{}s still very primitive. 
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_grid_layout_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_c_u_i_grid_layout_8cs_source}{CUIGrid\+Layout.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_grid_layout_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_grid_layout_a3a9693adbe184a350b1093a0e8714931}\index{CrabUI.CUIGridLayout@{CrabUI.CUIGridLayout}!ConnectTo@{ConnectTo}}
+\index{ConnectTo@{ConnectTo}!CrabUI.CUIGridLayout@{CrabUI.CUIGridLayout}}
+\doxysubsubsection{\texorpdfstring{ConnectTo()}{ConnectTo()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_grid_layout_a3a9693adbe184a350b1093a0e8714931} 
+override void Crab\+UI.\+CUIGrid\+Layout.\+Connect\+To (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interface_crab_u_i_1_1_layout_1_1_host}{Layout.\+Host}}}]{host}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_grid_layout_8cs_source_l00046}{46}} of file \doxymbox{\hyperlink{_c_u_i_grid_layout_8cs_source}{CUIGrid\+Layout.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047\ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ base.ConnectTo(host);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ Parent\ =\ host\ as\ Host;}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_grid_layout_a55bcb4513134366ea7acc64370865527}\index{CrabUI.CUIGridLayout@{CrabUI.CUIGridLayout}!UpdateChildren@{UpdateChildren}}
+\index{UpdateChildren@{UpdateChildren}!CrabUI.CUIGridLayout@{CrabUI.CUIGridLayout}}
+\doxysubsubsection{\texorpdfstring{UpdateChildren()}{UpdateChildren()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_grid_layout_a55bcb4513134366ea7acc64370865527} 
+override void Crab\+UI.\+CUIGrid\+Layout.\+Update\+Children (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \doxymbox{\hyperlink{class_crab_u_i_1_1_layout}{Crab\+UI.\+Layout}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_grid_layout_8cs_source_l00054}{54}} of file \doxymbox{\hyperlink{_c_u_i_grid_layout_8cs_source}{CUIGrid\+Layout.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055\ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Parent\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!RequireChildrenUpdate)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Parent.RowSizes.Count\ ==\ 0\ ||\ Parent.ColumnSizes.Count\ ==\ 0)}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ base.UpdateChildren();}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ List<CUISegment>\ RealRowSizes\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ List<CUISegment>\ RealColumnSizes\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ y\ =\ Parent.ChildrenRect.Top;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ fry\ =\ Parent.ChildrenRect.Height\ /\ Parent.RowSizes.Where(l\ =>\ l.Fraction.HasValue).Sum(l\ =>\ l.Fraction.Value);}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Line\ line\ \textcolor{keywordflow}{in}\ Parent.RowSizes)}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ size\ =\ 0;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (line.Fraction.HasValue)\ size\ =\ fry\ *\ line.Fraction.Value;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (line.RelativeSize.HasValue)\ size\ =\ Parent.ChildrenRect.Height\ *\ line.RelativeSize.Value;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (line.AbsoluteSize.HasValue)\ size\ =\ line.AbsoluteSize.Value;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ RealRowSizes.Add(\textcolor{keyword}{new}\ CUISegment()\ \{\ Left\ =\ y,\ Width\ =\ size\ \});}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ y\ +=\ size;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x\ =\ Parent.ChildrenRect.Left;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ frx\ =\ Parent.ChildrenRect.Width\ /\ Parent.ColumnSizes.Where(l\ =>\ l.Fraction.HasValue).Sum(l\ =>\ l.Fraction.Value);}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Line\ line\ \textcolor{keywordflow}{in}\ Parent.ColumnSizes)}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ size\ =\ 0;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (line.Fraction.HasValue)\ size\ =\ frx\ *\ line.Fraction.Value;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (line.RelativeSize.HasValue)\ size\ =\ Parent.ChildrenRect.Width\ *\ line.RelativeSize.Value;}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (line.AbsoluteSize.HasValue)\ size\ =\ line.AbsoluteSize.Value;}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ RealColumnSizes.Add(\textcolor{keyword}{new}\ CUISegment()\ \{\ Left\ =\ x,\ Width\ =\ size\ \});}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ x\ +=\ size;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Layout.Child\ c\ in\ Parent.Children)}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ Math.Clamp(c.GridColumn\ -\/\ 1,\ 0,\ RealColumnSizes.Count\ -\/\ 1);}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ j\ =\ Math.Clamp(c.GridRow\ -\/\ 1,\ 0,\ RealRowSizes.Count\ -\/\ 1);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ c.OuterRect\ =\ \textcolor{keyword}{new}\ CUIRect(}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ RealColumnSizes[i].Left,}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ RealRowSizes[j].Left,}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ RealColumnSizes[i].Width,}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ RealRowSizes[j].Width}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ base.UpdateChildren();}
+\DoxyCodeLine{00114\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_grid_layout_a3945a7f5733140f70e0bb73cbd0a8b1e}\index{CrabUI.CUIGridLayout@{CrabUI.CUIGridLayout}!UpdateParent@{UpdateParent}}
+\index{UpdateParent@{UpdateParent}!CrabUI.CUIGridLayout@{CrabUI.CUIGridLayout}}
+\doxysubsubsection{\texorpdfstring{UpdateParent()}{UpdateParent()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_grid_layout_a3945a7f5733140f70e0bb73cbd0a8b1e} 
+override void Crab\+UI.\+CUIGrid\+Layout.\+Update\+Parent (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \doxymbox{\hyperlink{class_crab_u_i_1_1_layout}{Crab\+UI.\+Layout}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_grid_layout_8cs_source_l00116}{116}} of file \doxymbox{\hyperlink{_c_u_i_grid_layout_8cs_source}{CUIGrid\+Layout.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00117\ \ \ \ \ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ RequireParentUpdate\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00119\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Layouts/\+\+Layouts/\+CUIGrid\+Layout.\+cs\end{DoxyCompactItemize}

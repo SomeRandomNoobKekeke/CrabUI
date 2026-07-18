@@ -1,0 +1,136 @@
+\doxysection{Crab\+UIUser.\+E2\+ETest\+Pack.\+Pool Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_pool}{}\label{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_pool}\index{CrabUIUser.E2ETestPack.Pool@{CrabUIUser.E2ETestPack.Pool}}
+Inheritance diagram for Crab\+UIUser.\+E2\+ETest\+Pack.\+Pool:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_pool}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_pool_aaba5efbae9083808e07afedc77bd418b}{Initialize}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_pool_aded29442cb4f5d7b1818d34f1cb0264d}{Update\+Pool}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_pool_a338fe9a40b913d29005a238cf359e61a}{Dispose}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+CUIWater \doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_pool_a72917d9b0de42e15757e3ce76daf26ec}{CUIWater}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_pool_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_pool_8cs_source}{Pool.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_pool_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_pool_a338fe9a40b913d29005a238cf359e61a}\index{CrabUIUser.E2ETestPack.Pool@{CrabUIUser.E2ETestPack.Pool}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!CrabUIUser.E2ETestPack.Pool@{CrabUIUser.E2ETestPack.Pool}}
+\doxysubsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_pool_a338fe9a40b913d29005a238cf359e61a} 
+void Crab\+UIUser.\+E2\+ETest\+Pack.\+Pool.\+Dispose (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Implements \doxymbox{\hyperlink{interface_crab_u_i_user_1_1_i_e2_e_test}{Crab\+UIUser.\+IE2\+ETest}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_pool_8cs_source_l00048}{48}} of file \doxymbox{\hyperlink{_pool_8cs_source}{Pool.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ CUI.Main.GlobalEvents.AfterUpdate.Remove(UpdatePool);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_pool_aaba5efbae9083808e07afedc77bd418b}\index{CrabUIUser.E2ETestPack.Pool@{CrabUIUser.E2ETestPack.Pool}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!CrabUIUser.E2ETestPack.Pool@{CrabUIUser.E2ETestPack.Pool}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_pool_aaba5efbae9083808e07afedc77bd418b} 
+void Crab\+UIUser.\+E2\+ETest\+Pack.\+Pool.\+Initialize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Implements \doxymbox{\hyperlink{interface_crab_u_i_user_1_1_i_e2_e_test}{Crab\+UIUser.\+IE2\+ETest}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_pool_8cs_source_l00021}{21}} of file \doxymbox{\hyperlink{_pool_8cs_source}{Pool.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ CUIFrame\ frame\ =\ \textcolor{keyword}{new}\ CUIDefault.Frame(\textcolor{stringliteral}{"{}Pool"{}})}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ Absolute\ =\ \textcolor{keyword}{new}\ CUINullRect(w:\ 512,\ h:\ 512),}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ frame[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}pool"{}}]\ =\ CUIWater\ =\ \textcolor{keyword}{new}\ CUIWater() }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ Flex\ =\ 1,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ CUIWater.MouseOn\ +=\ (c,\ e)\ =>}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!e.Mouse.Pressed)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ Vector2\ v\ =\ CUIAnchor.AnchorFromPos(c.Rect,\ e.Pos);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ CUIWater.Drop(v.X,\ v.Y);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ frame.Open();}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ frame.OnClose\ +=\ (c)\ =>\ Dispose();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ CUI.Main.GlobalEvents.AfterUpdate.Add(UpdatePool);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_pool_aded29442cb4f5d7b1818d34f1cb0264d}\index{CrabUIUser.E2ETestPack.Pool@{CrabUIUser.E2ETestPack.Pool}!UpdatePool@{UpdatePool}}
+\index{UpdatePool@{UpdatePool}!CrabUIUser.E2ETestPack.Pool@{CrabUIUser.E2ETestPack.Pool}}
+\doxysubsubsection{\texorpdfstring{UpdatePool()}{UpdatePool()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_pool_aded29442cb4f5d7b1818d34f1cb0264d} 
+void Crab\+UIUser.\+E2\+ETest\+Pack.\+Pool.\+Update\+Pool (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_pool_8cs_source_l00046}{46}} of file \doxymbox{\hyperlink{_pool_8cs_source}{Pool.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ =>\ CUIWater.Update(Timing.TotalTime);}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_pool_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_pool_a72917d9b0de42e15757e3ce76daf26ec}\index{CrabUIUser.E2ETestPack.Pool@{CrabUIUser.E2ETestPack.Pool}!CUIWater@{CUIWater}}
+\index{CUIWater@{CUIWater}!CrabUIUser.E2ETestPack.Pool@{CrabUIUser.E2ETestPack.Pool}}
+\doxysubsubsection{\texorpdfstring{CUIWater}{CUIWater}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_e2_e_test_pack_1_1_pool_a72917d9b0de42e15757e3ce76daf26ec} 
+CUIWater Crab\+UIUser.\+E2\+ETest\+Pack.\+Pool.\+CUIWater\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_pool_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_pool_8cs_source}{Pool.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+CUITest/\+\+E2\+E/\+\+Test/\+\+Pool/\+Pool.\+cs\end{DoxyCompactItemize}

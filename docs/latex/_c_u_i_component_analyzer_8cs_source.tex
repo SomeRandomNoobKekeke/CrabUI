@@ -1,0 +1,72 @@
+\doxysection{CUIComponent\+Analyzer.\+cs}
+\hypertarget{_c_u_i_component_analyzer_8cs_source}{}\label{_c_u_i_component_analyzer_8cs_source}\index{ClientProject/ClientSource/CUI/Core/TypeAnalysis/Analyzers/CUIComponentAnalyzer.cs@{ClientProject/ClientSource/CUI/Core/TypeAnalysis/Analyzers/CUIComponentAnalyzer.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_code_generator}{CUICodeGenerator}};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00010}00010\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00011}00011\ \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00012}00012\ \textcolor{comment}{\ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00013}00013\ \textcolor{comment}{\ \ ///\ This\ thing\ creating\ CUIComponentInfo\ from\ types}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00014}00014\ \textcolor{comment}{\ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00015}\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_analyzer}{00015}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_analyzer}{CUIComponentAnalyzer}}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00016}00016\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ DefaultStylePropName\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{stringliteral}{"{}DefaultStyle"{}};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ IsComponentType(Type\ T)\ =>\ T.IsAssignableTo(typeof(\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component}{CUIComponent}}));}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00021}00021\ \ \ \ \ \textcolor{comment}{//TODO\ add\ a\ way\ to\ use\ pregenerated\ infos}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_info}{CUIComponentInfo}}\ Analyze(Type\ T)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00023}00023\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00024}00024\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_info}{CUIComponentInfo}}\ info\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_info}{CUIComponentInfo}}()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00025}00025\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ ComponentType\ =\ T,}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00027}00027\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00029}00029\ \ \ \ \ \ \ PropertyInfo?\ defaultStyleProp\ =\ T.GetProperty(DefaultStylePropName,\ BindingFlags.Static\ |\ BindingFlags.Public);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00031}00031\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (defaultStyleProp\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00032}00032\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ info.DefaultStyle\ =\ (\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_c_u_i_style}{ICUIStyle}})defaultStyleProp.GetValue(\textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00034}00034\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00036}00036\ \ \ \ \ \ \ \textcolor{comment}{//\ CRINGE\ i\ have\ to\ create\ defaults\ from\ withing\ CUICore}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00037}00037\ \ \ \ \ \ \ \textcolor{comment}{//\ info.DefaultValue\ =\ CreateDefault(T);\ }}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00039}00039\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ info;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component}{CUIComponent}}\ CreateDefault(Type\ T)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00043}00043\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00044}00044\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (T.IsAbstract)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00046}00046\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (T.GetConstructor([])\ is\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00047}00047\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ CUI.Logger.Warning(\$"{}Failed\ to\ create\ default\ for\ [\{info.ComponentType.Name\}]:\ \{info.ComponentType\}\ doesn't\ have\ default\ constructor"{});}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00050}00050\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00052}00052\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (T.GetCustomAttribute<\doxymbox{\hyperlink{class_crab_u_i_1_1_no_default_attribute}{NoDefaultAttribute}}>()\ !=\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00054}00054\ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00055}00055\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component}{CUIComponent}})Activator.CreateInstance(T);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00057}00057\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00058}00058\ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00059}00059\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ CUI.Logger.Warning(\$\textcolor{stringliteral}{"{}Failed\ to\ create\ default\ for\ [\{T.Name\}]:\ \{e.InnerException?.Message\}"{}});}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00061}00061\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00063}00063\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00065}00065\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_analyzer_8cs_source_l00066}00066\ \}}
+
+\end{DoxyCode}

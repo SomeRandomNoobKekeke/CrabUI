@@ -1,0 +1,89 @@
+\doxysection{Crab\+UIUser.\+E2\+ETest\+Repo Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_e2_e_test_repo}{}\label{class_crab_u_i_user_1_1_e2_e_test_repo}\index{CrabUIUser.E2ETestRepo@{CrabUIUser.E2ETestRepo}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_repo_ae7081b3a0d8e29503d0f55d836a3a0c5}{Add\+Pack}} (Type test\+Pack)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_repo_aa0ef2720683dec2a12ec5f22a77ffe03}{Is\+E2\+ETest}} (Type T)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Dictionary$<$ string, Type $>$ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_repo_a3ad780c8228a81506331b866a80b8944}{Tests}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_e2_e_test_repo_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_e2_e_test_repo_8cs_source}{E2\+ETest\+Repo.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_repo_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_repo_ae7081b3a0d8e29503d0f55d836a3a0c5}\index{CrabUIUser.E2ETestRepo@{CrabUIUser.E2ETestRepo}!AddPack@{AddPack}}
+\index{AddPack@{AddPack}!CrabUIUser.E2ETestRepo@{CrabUIUser.E2ETestRepo}}
+\doxysubsubsection{\texorpdfstring{AddPack()}{AddPack()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_e2_e_test_repo_ae7081b3a0d8e29503d0f55d836a3a0c5} 
+void Crab\+UIUser.\+E2\+ETest\+Repo.\+Add\+Pack (\begin{DoxyParamCaption}\item[{Type}]{test\+Pack}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_e2_e_test_repo_8cs_source_l00026}{26}} of file \doxymbox{\hyperlink{_e2_e_test_repo_8cs_source}{E2\+ETest\+Repo.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Type\ nested\ \textcolor{keywordflow}{in}\ testPack.GetNestedTypes())}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsE2ETest(nested))\ Add(nested);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_repo_aa0ef2720683dec2a12ec5f22a77ffe03}\index{CrabUIUser.E2ETestRepo@{CrabUIUser.E2ETestRepo}!IsE2ETest@{IsE2ETest}}
+\index{IsE2ETest@{IsE2ETest}!CrabUIUser.E2ETestRepo@{CrabUIUser.E2ETestRepo}}
+\doxysubsubsection{\texorpdfstring{IsE2ETest()}{IsE2ETest()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_e2_e_test_repo_aa0ef2720683dec2a12ec5f22a77ffe03} 
+bool Crab\+UIUser.\+E2\+ETest\+Repo.\+Is\+E2\+ETest (\begin{DoxyParamCaption}\item[{Type}]{T}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_e2_e_test_repo_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_e2_e_test_repo_8cs_source}{E2\+ETest\+Repo.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ =>\ T.IsAssignableTo(typeof(IE2ETest));}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_repo_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_repo_a3ad780c8228a81506331b866a80b8944}\index{CrabUIUser.E2ETestRepo@{CrabUIUser.E2ETestRepo}!Tests@{Tests}}
+\index{Tests@{Tests}!CrabUIUser.E2ETestRepo@{CrabUIUser.E2ETestRepo}}
+\doxysubsubsection{\texorpdfstring{Tests}{Tests}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_e2_e_test_repo_a3ad780c8228a81506331b866a80b8944} 
+Dictionary$<$string, Type$>$ Crab\+UIUser.\+E2\+ETest\+Repo.\+Tests = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_e2_e_test_repo_8cs_source_l00020}{20}} of file \doxymbox{\hyperlink{_e2_e_test_repo_8cs_source}{E2\+ETest\+Repo.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+CUITest/\+\+E2\+E/\+E2\+ETest\+Repo.\+cs\end{DoxyCompactItemize}

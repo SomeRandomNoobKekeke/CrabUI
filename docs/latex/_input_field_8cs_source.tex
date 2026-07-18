@@ -1,0 +1,68 @@
+\doxysection{Input\+Field.\+cs}
+\hypertarget{_input_field_8cs_source}{}\label{_input_field_8cs_source}\index{ClientProject/ClientSource/CUI/Core/Components/Default/InputField.cs@{ClientProject/ClientSource/CUI/Core/Components/Default/InputField.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Collections.ObjectModel;}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework.Graphics;}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00010}00010\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_code_generator}{CUICodeGenerator}};}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00011}00011\ \textcolor{keyword}{using\ }Barotrauma.Extensions;}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00013}00013\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00014}00014\ \{}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00015}00015\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{partial\ class\ }CUIDefault}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00016}00016\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00017}\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_default_1_1_input_field}{00017}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{abstract}\ \textcolor{keyword}{class\ }InputField\ :\ CUIHorizontalList}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00019}00019\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ CommandName\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{stringliteral}{"{}setvalue"{}};}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00021}00021\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ Key}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00022}00022\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Label.Text;}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ Label.Text\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00025}00025\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00027}00027\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ RawValue}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00028}00028\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Input.Text;}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ Input.Text\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00031}00031\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00033}00033\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_text_block}{CUITextBlock}}\ Label\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00034}00034\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_text_input}{CUITextInput}}\ Input\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00036}00036\ \ \ \ \ \ \ \textcolor{keyword}{public}\ Func<string,\ bool>\ Validation}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00037}00037\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Input.ValidationFunc;}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ Input.ValidationFunc\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00040}00040\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00042}00042\ \ \ \ \ \ \ \textcolor{keyword}{public}\ InputField()\ :\ base()}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00043}00043\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ FitContent\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_bool2}{CUIBool2}}(\textcolor{keyword}{false},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}label"{}}]\ =\ Label\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_text_block}{CUITextBlock}}()}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ TextAnchor\ =\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_anchor}{CUIAnchor}}.LeftCenter,}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ Padding\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_sizes}{CUISizes}}(2,\ 2,\ 10,\ 2),}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}input"{}}]\ =\ Input\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_text_input}{CUITextInput}}()}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ Flex\ =\ 1,}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ OnValidInput\ =\ (value)\ =>\ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}input"{}}].Commands.SendUp(CommandName,\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{string}[]}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ Key,\ value,}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \})}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00059}00059\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00061}00061\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_input_field_8cs_source_l00062}00062\ \}}
+
+\end{DoxyCode}

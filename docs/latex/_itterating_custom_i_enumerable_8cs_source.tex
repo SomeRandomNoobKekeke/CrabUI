@@ -1,0 +1,100 @@
+\doxysection{Itterating\+Custom\+IEnumerable.\+cs}
+\hypertarget{_itterating_custom_i_enumerable_8cs_source}{}\label{_itterating_custom_i_enumerable_8cs_source}\index{ClientProject/InMemory/Experiments/Performance/ItteratingCustomIEnumerable.cs@{ClientProject/InMemory/Experiments/Performance/ItteratingCustomIEnumerable.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00011}00011\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i_user}{CrabUIUser}}}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00013}00013\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00014}00014\ \textcolor{comment}{\ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00015}00015\ \textcolor{comment}{\ \ ///\ Custom\ IEnumerable\ is\ 10\ times\ slower}}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00016}00016\ \textcolor{comment}{\ \ ///\ Custom\ IEnumerable\ without\ a\ nested\ loop\ is\ just\ as\ slow}}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00017}00017\ \textcolor{comment}{\ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00018}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_custom_i_enumerable}{00018}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_custom_i_enumerable}{ItteratingCustomIEnumerable}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Experiment}}}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00019}00019\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00020}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_custom_i_enumerable_1_1_some_class}{00020}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_custom_i_enumerable_1_1_some_class}{SomeClass}}}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00021}00021\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00022}00022\ \ \ \ \ \ \ \textcolor{keyword}{public}\ List<int>\ Values\ =\ \textcolor{keyword}{new}()\{}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ 1,2,3,4,5}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00024}00024\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00026}00026\ \ \ \ \ \ \ \textcolor{keyword}{public}\ IEnumerable<int>\ GetValues()}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00027}00027\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Values.Count;\ i++)}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ Values[i];}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00033}00033\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00035}00035\ \ \ \ \ \ \ \textcolor{keyword}{public}\ IEnumerable<int>\ GetFunnyValues()}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00036}00036\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ Values[0];}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ Values[1];}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ Values[2];}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ Values[3];}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ Values[4];}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00043}00043\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ repeats\ =\ 100000000;}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ Run()}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00049}00049\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00050}00050\ \ \ \ \ \ \ Stopwatch\ sw\ =\ \textcolor{keyword}{new}\ Stopwatch();}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00052}00052\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_custom_i_enumerable_1_1_some_class}{SomeClass}}\ o\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00054}00054\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ value\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00056}00056\ \ \ \ \ \ \ sw.Start();}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00057}00057\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00058}00058\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keywordtype}{int}\ v\ \textcolor{keywordflow}{in}\ o.Values)}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ value\ =\ v;}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00063}00063\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00064}00064\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00065}00065\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}measure\ 1:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00068}00068\ \ \ \ \ \ \ sw.Restart();}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00069}00069\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00070}00070\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keywordtype}{int}\ v\ \textcolor{keywordflow}{in}\ o.GetFunnyValues())}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ value\ =\ v;}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00075}00075\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00076}00076\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00077}00077\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}measure\ 3:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00079}00079\ \ \ \ \ \ \ sw.Restart();}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00080}00080\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00081}00081\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keywordtype}{int}\ v\ \textcolor{keywordflow}{in}\ o.GetValues())}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ value\ =\ v;}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00086}00086\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00087}00087\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00088}00088\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}measure\ 2:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00092}00092\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00093}00093\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_custom_i_enumerable_8cs_source_l00094}00094\ \}}
+
+\end{DoxyCode}

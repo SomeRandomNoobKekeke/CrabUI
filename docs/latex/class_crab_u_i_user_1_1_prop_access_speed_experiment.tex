@@ -1,0 +1,158 @@
+\doxysection{Crab\+UIUser.\+Prop\+Access\+Speed\+Experiment Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_prop_access_speed_experiment}{}\label{class_crab_u_i_user_1_1_prop_access_speed_experiment}\index{CrabUIUser.PropAccessSpeedExperiment@{CrabUIUser.PropAccessSpeedExperiment}}
+
+
+Accessing dict is 45 times slower that accessing prop accessing field = accessing prop.  
+
+
+Inheritance diagram for Crab\+UIUser.\+Prop\+Access\+Speed\+Experiment:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_prop_access_speed_experiment}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_prop_access_speed_experiment_1_1_bebebe}{Bebebe}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_prop_access_speed_experiment_ab0cf87c491c88556dfeccf41ac8fcbdf}{Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Crab\+UIUser.\+Experiment}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Run} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Dictionary$<$ int, int $>$ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_prop_access_speed_experiment_a4accde159ff3251674904dc7d0223416}{Props}}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_user_1_1_prop_access_speed_experiment_1_1_bebebe}{Bebebe}} \doxymbox{\hyperlink{class_crab_u_i_user_1_1_prop_access_speed_experiment_a023ede843ae4903ca532a85110acca81}{bubu}} = new()
+\item 
+int \doxymbox{\hyperlink{class_crab_u_i_user_1_1_prop_access_speed_experiment_ab22d7c2f0086f1a616942ac8f80967aa}{repeats}} = 100000000
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Accessing dict is 45 times slower that accessing prop accessing field = accessing prop. 
+
+Definition at line \doxymbox{\hyperlink{_prop_access_speed_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_prop_access_speed_8cs_source}{Prop\+Access\+Speed.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_prop_access_speed_experiment_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_prop_access_speed_experiment_ab0cf87c491c88556dfeccf41ac8fcbdf}\index{CrabUIUser.PropAccessSpeedExperiment@{CrabUIUser.PropAccessSpeedExperiment}!Run@{Run}}
+\index{Run@{Run}!CrabUIUser.PropAccessSpeedExperiment@{CrabUIUser.PropAccessSpeedExperiment}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_prop_access_speed_experiment_ab0cf87c491c88556dfeccf41ac8fcbdf} 
+override void Crab\+UIUser.\+Prop\+Access\+Speed\+Experiment.\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_prop_access_speed_8cs_source_l00059}{59}} of file \doxymbox{\hyperlink{_prop_access_speed_8cs_source}{Prop\+Access\+Speed.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060\ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ Stopwatch\ sw\ =\ \textcolor{keyword}{new}\ Stopwatch();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ value\ =\ 0;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ sw.Start();}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ value\ =\ bubu.PropA;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ value\ =\ bubu.PropB;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ value\ =\ bubu.PropC;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}measure\ 1:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ sw.Restart();}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ value\ =\ Props[0];}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ value\ =\ Props[1];}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ value\ =\ Props[2];}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}measure\ 2:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ sw.Restart();}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ value\ =\ bubu.fieldA;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ value\ =\ bubu.fieldB;}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ value\ =\ bubu.fieldC;}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}measure\ 3:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00095\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_crab_u_i_user_1_1_prop_access_speed_experiment_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_prop_access_speed_experiment_a023ede843ae4903ca532a85110acca81}\index{CrabUIUser.PropAccessSpeedExperiment@{CrabUIUser.PropAccessSpeedExperiment}!bubu@{bubu}}
+\index{bubu@{bubu}!CrabUIUser.PropAccessSpeedExperiment@{CrabUIUser.PropAccessSpeedExperiment}}
+\doxysubsubsection{\texorpdfstring{bubu}{bubu}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_prop_access_speed_experiment_a023ede843ae4903ca532a85110acca81} 
+\doxymbox{\hyperlink{class_crab_u_i_user_1_1_prop_access_speed_experiment_1_1_bebebe}{Bebebe}} Crab\+UIUser.\+Prop\+Access\+Speed\+Experiment.\+bubu = new()}
+
+
+
+Definition at line \doxymbox{\hyperlink{_prop_access_speed_8cs_source_l00055}{55}} of file \doxymbox{\hyperlink{_prop_access_speed_8cs_source}{Prop\+Access\+Speed.\+cs}}.
+
+\Hypertarget{class_crab_u_i_user_1_1_prop_access_speed_experiment_a4accde159ff3251674904dc7d0223416}\index{CrabUIUser.PropAccessSpeedExperiment@{CrabUIUser.PropAccessSpeedExperiment}!Props@{Props}}
+\index{Props@{Props}!CrabUIUser.PropAccessSpeedExperiment@{CrabUIUser.PropAccessSpeedExperiment}}
+\doxysubsubsection{\texorpdfstring{Props}{Props}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_prop_access_speed_experiment_a4accde159ff3251674904dc7d0223416} 
+Dictionary$<$int, int$>$ Crab\+UIUser.\+Prop\+Access\+Speed\+Experiment.\+Props}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{new}\ Dictionary<int,\ int>()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ [0]\ =\ 123,}
+\DoxyCodeLine{\ \ [1]\ =\ 12341,}
+\DoxyCodeLine{\ \ [2]\ =\ 43214,}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line \doxymbox{\hyperlink{_prop_access_speed_8cs_source_l00048}{48}} of file \doxymbox{\hyperlink{_prop_access_speed_8cs_source}{Prop\+Access\+Speed.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00049\ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ [0]\ =\ 123,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ [1]\ =\ 12341,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ [2]\ =\ 43214,}
+\DoxyCodeLine{00053\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_prop_access_speed_experiment_ab22d7c2f0086f1a616942ac8f80967aa}\index{CrabUIUser.PropAccessSpeedExperiment@{CrabUIUser.PropAccessSpeedExperiment}!repeats@{repeats}}
+\index{repeats@{repeats}!CrabUIUser.PropAccessSpeedExperiment@{CrabUIUser.PropAccessSpeedExperiment}}
+\doxysubsubsection{\texorpdfstring{repeats}{repeats}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_prop_access_speed_experiment_ab22d7c2f0086f1a616942ac8f80967aa} 
+int Crab\+UIUser.\+Prop\+Access\+Speed\+Experiment.\+repeats = 100000000}
+
+
+
+Definition at line \doxymbox{\hyperlink{_prop_access_speed_8cs_source_l00057}{57}} of file \doxymbox{\hyperlink{_prop_access_speed_8cs_source}{Prop\+Access\+Speed.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Performance/\+Prop\+Access\+Speed.\+cs\end{DoxyCompactItemize}

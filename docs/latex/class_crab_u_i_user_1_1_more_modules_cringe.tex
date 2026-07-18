@@ -1,0 +1,87 @@
+\doxysection{Crab\+UIUser.\+More\+Modules\+Cringe Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_more_modules_cringe}{}\label{class_crab_u_i_user_1_1_more_modules_cringe}\index{CrabUIUser.MoreModulesCringe@{CrabUIUser.MoreModulesCringe}}
+
+
+i\textquotesingle{}m trying to figure out how Modules should work, be initialized, used by other Modules and users This looks like stupid amount of boilerplate code  
+
+
+Inheritance diagram for Crab\+UIUser.\+More\+Modules\+Cringe:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_more_modules_cringe}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_more_modules_cringe_1_1_component}{Component}}
+\item 
+interface \doxymbox{\hyperlink{interface_crab_u_i_user_1_1_more_modules_cringe_1_1_i_module_a}{IModuleA}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_more_modules_cringe_1_1_module_a}{ModuleA}}
+\item 
+interface \doxymbox{\hyperlink{interface_crab_u_i_user_1_1_more_modules_cringe_1_1_i_module_a_container}{IModule\+AContainer}}
+\item 
+interface \doxymbox{\hyperlink{interface_crab_u_i_user_1_1_more_modules_cringe_1_1_i_module_b}{IModuleB}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_more_modules_cringe_1_1_module_b}{ModuleB}}
+\item 
+interface \doxymbox{\hyperlink{interface_crab_u_i_user_1_1_more_modules_cringe_1_1_i_module_b_container}{IModule\+BContainer}}
+\item 
+interface \doxymbox{\hyperlink{interface_crab_u_i_user_1_1_more_modules_cringe_1_1_i_module_c}{IModuleC}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_more_modules_cringe_1_1_module_c}{ModuleC}}
+\item 
+interface \doxymbox{\hyperlink{interface_crab_u_i_user_1_1_more_modules_cringe_1_1_i_module_c_container}{IModule\+CContainer}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_more_modules_cringe_1_1_component_b}{ComponentB}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_more_modules_cringe_a27052decadcf8be1e8c8a5afe805bc42}{Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Crab\+UIUser.\+Experiment}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Run} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+i\textquotesingle{}m trying to figure out how Modules should work, be initialized, used by other Modules and users This looks like stupid amount of boilerplate code 
+
+Definition at line \doxymbox{\hyperlink{_more_modules_cringe_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_more_modules_cringe_8cs_source}{More\+Modules\+Cringe.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_more_modules_cringe_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_more_modules_cringe_a27052decadcf8be1e8c8a5afe805bc42}\index{CrabUIUser.MoreModulesCringe@{CrabUIUser.MoreModulesCringe}!Run@{Run}}
+\index{Run@{Run}!CrabUIUser.MoreModulesCringe@{CrabUIUser.MoreModulesCringe}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_more_modules_cringe_a27052decadcf8be1e8c8a5afe805bc42} 
+override void Crab\+UIUser.\+More\+Modules\+Cringe.\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_more_modules_cringe_8cs_source_l00149}{149}} of file \doxymbox{\hyperlink{_more_modules_cringe_8cs_source}{More\+Modules\+Cringe.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00150\ \ \ \ \ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ Component\ component\ =\ \textcolor{keyword}{new}\ Component();}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ ComponentB\ componentB\ =\ \textcolor{keyword}{new}\ ComponentB();}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \ \ Mod.Logger.Log(component.Cringe);}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ Mod.Logger.Log(component.UnCringed);}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ Mod.Logger.Log(componentB.PutTheCringeBack(component));}
+\DoxyCodeLine{00157\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Design/\+More\+Modules\+Cringe.\+cs\end{DoxyCompactItemize}

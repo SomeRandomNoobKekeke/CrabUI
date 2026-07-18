@@ -1,0 +1,141 @@
+\doxysection{Crab\+UI.\+CUIComponent\+Analyzer Class Reference}
+\hypertarget{class_crab_u_i_1_1_c_u_i_component_analyzer}{}\label{class_crab_u_i_1_1_c_u_i_component_analyzer}\index{CrabUI.CUIComponentAnalyzer@{CrabUI.CUIComponentAnalyzer}}
+
+
+This thing creating \doxylink{class_crab_u_i_1_1_c_u_i_component_info}{CUIComponent\+Info} from types.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_analyzer_a3d88add46da4e89218c84610a2f1ea22}{Is\+Component\+Type}} (Type T)
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_info}{CUIComponent\+Info}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_analyzer_a4ab4875e8cbb9e48c533cc44c7b46b39}{Analyze}} (Type T)
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component}{CUIComponent}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_analyzer_a7da10c5700955fa524a6bc6fd6e61d42}{Create\+Default}} (Type T)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static string \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_analyzer_a561b3c661961c40fa9d183e22de3db42}{Default\+Style\+Prop\+Name}} = "{}Default\+Style"{}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This thing creating \doxylink{class_crab_u_i_1_1_c_u_i_component_info}{CUIComponent\+Info} from types. 
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_analyzer_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_c_u_i_component_analyzer_8cs_source}{CUIComponent\+Analyzer.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_analyzer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_analyzer_a4ab4875e8cbb9e48c533cc44c7b46b39}\index{CrabUI.CUIComponentAnalyzer@{CrabUI.CUIComponentAnalyzer}!Analyze@{Analyze}}
+\index{Analyze@{Analyze}!CrabUI.CUIComponentAnalyzer@{CrabUI.CUIComponentAnalyzer}}
+\doxysubsubsection{\texorpdfstring{Analyze()}{Analyze()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_component_analyzer_a4ab4875e8cbb9e48c533cc44c7b46b39} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_info}{CUIComponent\+Info}} Crab\+UI.\+CUIComponent\+Analyzer.\+Analyze (\begin{DoxyParamCaption}\item[{Type}]{T}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_analyzer_8cs_source_l00022}{22}} of file \doxymbox{\hyperlink{_c_u_i_component_analyzer_8cs_source}{CUIComponent\+Analyzer.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ CUIComponentInfo\ info\ =\ \textcolor{keyword}{new}\ CUIComponentInfo() }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ ComponentType\ =\ T,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ PropertyInfo?\ defaultStyleProp\ =\ T.GetProperty(DefaultStylePropName,\ BindingFlags.Static\ |\ BindingFlags.Public);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (defaultStyleProp\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ info.DefaultStyle\ =\ (ICUIStyle)defaultStyleProp.GetValue(\textcolor{keyword}{null});}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \textcolor{comment}{//\ CRINGE\ i\ have\ to\ create\ defaults\ from\ withing\ CUICore}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \textcolor{comment}{//\ info.DefaultValue\ =\ CreateDefault(T);\ }}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ info;}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_analyzer_a7da10c5700955fa524a6bc6fd6e61d42}\index{CrabUI.CUIComponentAnalyzer@{CrabUI.CUIComponentAnalyzer}!CreateDefault@{CreateDefault}}
+\index{CreateDefault@{CreateDefault}!CrabUI.CUIComponentAnalyzer@{CrabUI.CUIComponentAnalyzer}}
+\doxysubsubsection{\texorpdfstring{CreateDefault()}{CreateDefault()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_component_analyzer_a7da10c5700955fa524a6bc6fd6e61d42} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component}{CUIComponent}} Crab\+UI.\+CUIComponent\+Analyzer.\+Create\+Default (\begin{DoxyParamCaption}\item[{Type}]{T}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_analyzer_8cs_source_l00042}{42}} of file \doxymbox{\hyperlink{_c_u_i_component_analyzer_8cs_source}{CUIComponent\+Analyzer.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00043\ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (T.IsAbstract)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (T.GetConstructor([])\ is\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ CUI.Logger.Warning(\$"{}Failed\ to\ create\ default\ for\ [\{info.ComponentType.Name\}]:\ \{info.ComponentType\}\ doesn't\ have\ default\ constructor"{});}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (T.GetCustomAttribute<NoDefaultAttribute>()\ !=\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (CUIComponent)Activator.CreateInstance(T);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ CUI.Logger.Warning(\$\textcolor{stringliteral}{"{}Failed\ to\ create\ default\ for\ [\{T.Name\}]:\ \{e.InnerException?.Message\}"{}});}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_analyzer_a3d88add46da4e89218c84610a2f1ea22}\index{CrabUI.CUIComponentAnalyzer@{CrabUI.CUIComponentAnalyzer}!IsComponentType@{IsComponentType}}
+\index{IsComponentType@{IsComponentType}!CrabUI.CUIComponentAnalyzer@{CrabUI.CUIComponentAnalyzer}}
+\doxysubsubsection{\texorpdfstring{IsComponentType()}{IsComponentType()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_component_analyzer_a3d88add46da4e89218c84610a2f1ea22} 
+bool Crab\+UI.\+CUIComponent\+Analyzer.\+Is\+Component\+Type (\begin{DoxyParamCaption}\item[{Type}]{T}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_analyzer_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_c_u_i_component_analyzer_8cs_source}{CUIComponent\+Analyzer.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ =>\ T.IsAssignableTo(typeof(CUIComponent));}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_analyzer_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_analyzer_a561b3c661961c40fa9d183e22de3db42}\index{CrabUI.CUIComponentAnalyzer@{CrabUI.CUIComponentAnalyzer}!DefaultStylePropName@{DefaultStylePropName}}
+\index{DefaultStylePropName@{DefaultStylePropName}!CrabUI.CUIComponentAnalyzer@{CrabUI.CUIComponentAnalyzer}}
+\doxysubsubsection{\texorpdfstring{DefaultStylePropName}{DefaultStylePropName}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_component_analyzer_a561b3c661961c40fa9d183e22de3db42} 
+string Crab\+UI.\+CUIComponent\+Analyzer.\+Default\+Style\+Prop\+Name = "{}Default\+Style"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_analyzer_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_c_u_i_component_analyzer_8cs_source}{CUIComponent\+Analyzer.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{stringliteral}{"{}DefaultStyle"{}};}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Type\+Analysis/\+\+Analyzers/\+CUIComponent\+Analyzer.\+cs\end{DoxyCompactItemize}

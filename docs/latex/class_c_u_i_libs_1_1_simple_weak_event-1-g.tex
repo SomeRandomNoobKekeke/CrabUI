@@ -1,0 +1,78 @@
+\doxysection{CUILibs.\+Simple\+Weak\+Event\texorpdfstring{$<$}{<} T1 \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_c_u_i_libs_1_1_simple_weak_event-1-g}{}\label{class_c_u_i_libs_1_1_simple_weak_event-1-g}\index{CUILibs.SimpleWeakEvent$<$ T1 $>$@{CUILibs.SimpleWeakEvent$<$ T1 $>$}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_simple_weak_event-1-g_aa367d16c26a21fd31001d50c96a57cfe}{Add}} (object target, Action$<$ T1 $>$ callback)
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_simple_weak_event-1-g_a296c618f321efd6d93ece2dafb54aa28}{Remove}} (object target)
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_simple_weak_event-1-g_a387080d995ff310d52ea90b1ba5e9f02}{Raise}} (T1 arg1)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_simple_weak_event_8_variants1_8cs_source_l00010}{10}} of file \doxymbox{\hyperlink{_simple_weak_event_8_variants1_8cs_source}{Simple\+Weak\+Event.\+Variants1.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_c_u_i_libs_1_1_simple_weak_event-1-g_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_simple_weak_event-1-g_aa367d16c26a21fd31001d50c96a57cfe}\index{CUILibs.SimpleWeakEvent$<$ T1 $>$@{CUILibs.SimpleWeakEvent$<$ T1 $>$}!Add@{Add}}
+\index{Add@{Add}!CUILibs.SimpleWeakEvent$<$ T1 $>$@{CUILibs.SimpleWeakEvent$<$ T1 $>$}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_simple_weak_event-1-g_aa367d16c26a21fd31001d50c96a57cfe} 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_simple_weak_event}{CUILibs.\+Simple\+Weak\+Event}}$<$ T1 $>$.Add (\begin{DoxyParamCaption}\item[{object}]{target}{, }\item[{Action$<$ T1 $>$}]{callback}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_simple_weak_event_8_variants1_8cs_source_l00014}{14}} of file \doxymbox{\hyperlink{_simple_weak_event_8_variants1_8cs_source}{Simple\+Weak\+Event.\+Variants1.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ =>\ Table.Add(target,\ callback);}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_simple_weak_event-1-g_a387080d995ff310d52ea90b1ba5e9f02}\index{CUILibs.SimpleWeakEvent$<$ T1 $>$@{CUILibs.SimpleWeakEvent$<$ T1 $>$}!Raise@{Raise}}
+\index{Raise@{Raise}!CUILibs.SimpleWeakEvent$<$ T1 $>$@{CUILibs.SimpleWeakEvent$<$ T1 $>$}}
+\doxysubsubsection{\texorpdfstring{Raise()}{Raise()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_simple_weak_event-1-g_a387080d995ff310d52ea90b1ba5e9f02} 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_simple_weak_event}{CUILibs.\+Simple\+Weak\+Event}}$<$ T1 $>$.Raise (\begin{DoxyParamCaption}\item[{T1}]{arg1}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_simple_weak_event_8_variants1_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_simple_weak_event_8_variants1_8cs_source}{Simple\+Weak\+Event.\+Variants1.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ (target,\ action)\ in\ Table)}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ action.Invoke(arg1);}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_simple_weak_event-1-g_a296c618f321efd6d93ece2dafb54aa28}\index{CUILibs.SimpleWeakEvent$<$ T1 $>$@{CUILibs.SimpleWeakEvent$<$ T1 $>$}!Remove@{Remove}}
+\index{Remove@{Remove}!CUILibs.SimpleWeakEvent$<$ T1 $>$@{CUILibs.SimpleWeakEvent$<$ T1 $>$}}
+\doxysubsubsection{\texorpdfstring{Remove()}{Remove()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_simple_weak_event-1-g_a296c618f321efd6d93ece2dafb54aa28} 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_simple_weak_event}{CUILibs.\+Simple\+Weak\+Event}}$<$ T1 $>$.Remove (\begin{DoxyParamCaption}\item[{object}]{target}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_simple_weak_event_8_variants1_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_simple_weak_event_8_variants1_8cs_source}{Simple\+Weak\+Event.\+Variants1.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ =>\ Table.Remove(target);}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+Libs/\+\+Weak\+Events/\+Simple\+Weak\+Event.\+Variants1.\+cs\end{DoxyCompactItemize}

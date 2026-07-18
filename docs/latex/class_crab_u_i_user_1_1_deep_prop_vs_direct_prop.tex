@@ -1,0 +1,115 @@
+\doxysection{Crab\+UIUser.\+Deep\+Prop\+Vs\+Direct\+Prop Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_deep_prop_vs_direct_prop}{}\label{class_crab_u_i_user_1_1_deep_prop_vs_direct_prop}\index{CrabUIUser.DeepPropVsDirectProp@{CrabUIUser.DeepPropVsDirectProp}}
+
+
+Doesn\textquotesingle{}t matter.  
+
+
+Inheritance diagram for Crab\+UIUser.\+Deep\+Prop\+Vs\+Direct\+Prop:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_deep_prop_vs_direct_prop}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_deep_prop_vs_direct_prop_1_1_some_class}{Some\+Class}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_deep_prop_vs_direct_prop_1_1_some_class1}{Some\+Class1}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_deep_prop_vs_direct_prop_1_1_some_class2}{Some\+Class2}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_deep_prop_vs_direct_prop_1_1_some_class3}{Some\+Class3}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_deep_prop_vs_direct_prop_1_1_some_class4}{Some\+Class4}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_deep_prop_vs_direct_prop_1_1_some_class5}{Some\+Class5}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_deep_prop_vs_direct_prop_a4f56806d8d7cc567e5568d37232e38d6}{Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Crab\+UIUser.\+Experiment}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Run} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{class_crab_u_i_user_1_1_deep_prop_vs_direct_prop_aad5b0c7ac48173153052df6de47c3c72}{repeats}} = 1000000000
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Doesn\textquotesingle{}t matter. 
+
+Definition at line \doxymbox{\hyperlink{_deep_prop_vs_direct_prop_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_deep_prop_vs_direct_prop_8cs_source}{Deep\+Prop\+Vs\+Direct\+Prop.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_deep_prop_vs_direct_prop_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_deep_prop_vs_direct_prop_a4f56806d8d7cc567e5568d37232e38d6}\index{CrabUIUser.DeepPropVsDirectProp@{CrabUIUser.DeepPropVsDirectProp}!Run@{Run}}
+\index{Run@{Run}!CrabUIUser.DeepPropVsDirectProp@{CrabUIUser.DeepPropVsDirectProp}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_deep_prop_vs_direct_prop_a4f56806d8d7cc567e5568d37232e38d6} 
+override void Crab\+UIUser.\+Deep\+Prop\+Vs\+Direct\+Prop.\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_deep_prop_vs_direct_prop_8cs_source_l00049}{49}} of file \doxymbox{\hyperlink{_deep_prop_vs_direct_prop_8cs_source}{Deep\+Prop\+Vs\+Direct\+Prop.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ Stopwatch\ sw\ =\ \textcolor{keyword}{new}\ Stopwatch();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ SomeClass\ o\ =\ \textcolor{keyword}{new}\ SomeClass();}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ value\ =\ 0;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ sw.Start();}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ value\ =\ o.Value;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}measure\ 1:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ sw.Restart();}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ value\ =\ o.A.A.A.A.A.Value;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}measure\ 2:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_crab_u_i_user_1_1_deep_prop_vs_direct_prop_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_deep_prop_vs_direct_prop_aad5b0c7ac48173153052df6de47c3c72}\index{CrabUIUser.DeepPropVsDirectProp@{CrabUIUser.DeepPropVsDirectProp}!repeats@{repeats}}
+\index{repeats@{repeats}!CrabUIUser.DeepPropVsDirectProp@{CrabUIUser.DeepPropVsDirectProp}}
+\doxysubsubsection{\texorpdfstring{repeats}{repeats}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_deep_prop_vs_direct_prop_aad5b0c7ac48173153052df6de47c3c72} 
+int Crab\+UIUser.\+Deep\+Prop\+Vs\+Direct\+Prop.\+repeats = 1000000000}
+
+
+
+Definition at line \doxymbox{\hyperlink{_deep_prop_vs_direct_prop_8cs_source_l00047}{47}} of file \doxymbox{\hyperlink{_deep_prop_vs_direct_prop_8cs_source}{Deep\+Prop\+Vs\+Direct\+Prop.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Performance/\+Deep\+Prop\+Vs\+Direct\+Prop.\+cs\end{DoxyCompactItemize}

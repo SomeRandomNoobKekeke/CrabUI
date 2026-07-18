@@ -1,0 +1,60 @@
+\doxysection{Delegate\+Vs\+Direct\+Access.\+cs}
+\hypertarget{_delegate_vs_direct_access_8cs_source}{}\label{_delegate_vs_direct_access_8cs_source}\index{ClientProject/InMemory/Experiments/Performance/DelegateVsDirectAccess.cs@{ClientProject/InMemory/Experiments/Performance/DelegateVsDirectAccess.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00011}00011\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i_user}{CrabUIUser}}}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00013}00013\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00014}00014\ \textcolor{comment}{\ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00015}00015\ \textcolor{comment}{\ \ ///\ delegate\ is\ 8\ times\ slower}}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00016}00016\ \textcolor{comment}{\ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00017}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_delegate_vs_direct_access}{00017}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_delegate_vs_direct_access}{DelegateVsDirectAccess}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Experiment}}}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00018}00018\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00019}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_delegate_vs_direct_access_1_1_some_class}{00019}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_delegate_vs_direct_access_1_1_some_class}{SomeClass}}}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00020}00020\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00021}00021\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ Value\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ 123;}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ repeats\ =\ 100000000;}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ Run()}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00027}00027\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00028}00028\ \ \ \ \ \ \ Stopwatch\ sw\ =\ \textcolor{keyword}{new}\ Stopwatch();}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00030}00030\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_delegate_vs_direct_access_1_1_some_class}{SomeClass}}\ o\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00031}00031\ \ \ \ \ \ \ Func<int>\ getter\ =\ ()\ =>\ o.Value;}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00033}00033\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ value\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00035}00035\ \ \ \ \ \ \ sw.Start();}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00036}00036\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00037}00037\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ value\ =\ o.Value;}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00039}00039\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00040}00040\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00041}00041\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_mod}{Mod}}.Logger.Log(\$\textcolor{stringliteral}{"{}measure\ 1:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00043}00043\ \ \ \ \ \ \ value\ =\ getter();}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00045}00045\ \ \ \ \ \ \ sw.Restart();}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00046}00046\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00047}00047\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ value\ =\ getter();}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00049}00049\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00050}00050\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00051}00051\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}measure\ 2:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00053}00053\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_delegate_vs_direct_access_8cs_source_l00054}00054\ \}}
+
+\end{DoxyCode}

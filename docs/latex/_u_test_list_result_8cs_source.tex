@@ -1,0 +1,34 @@
+\doxysection{UTest\+List\+Result.\+cs}
+\hypertarget{_u_test_list_result_8cs_source}{}\label{_u_test_list_result_8cs_source}\index{ClientProject/ClientSource/Libs/UTest/UTestResults/UTestListResult.cs@{ClientProject/ClientSource/Libs/UTest/UTestResults/UTestListResult.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_u_test_list_result_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_u_test_list_result_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_u_test_list_result_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_u_test_list_result_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_u_test_list_result_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_u_test_list_result_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_u_test_list_result_8cs_source_l00007}00007\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}}}
+\DoxyCodeLine{\Hypertarget{_u_test_list_result_8cs_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_list_result_8cs_source_l00009}\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_list_result}{00009}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }UTestListResult\ :\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_result_base}{UTestResultBase}}}
+\DoxyCodeLine{\Hypertarget{_u_test_list_result_8cs_source_l00010}00010\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_list_result_8cs_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{private}\ List<object>\ Values;}
+\DoxyCodeLine{\Hypertarget{_u_test_list_result_8cs_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{object}\ Result\ \{\ \textcolor{keyword}{get}\ =>\ Values;\ \textcolor{keyword}{set}\ =>\ Values\ =\ value\ as\ List<object>;\ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_list_result_8cs_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_u_test_list_result_8cs_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{bool}\ Equals(\textcolor{keywordtype}{object}\ obj)}
+\DoxyCodeLine{\Hypertarget{_u_test_list_result_8cs_source_l00015}00015\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_list_result_8cs_source_l00016}00016\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (obj\ is\ not\ UTestListResult\ other)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_u_test_list_result_8cs_source_l00017}00017\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Values\ is\ not\ \textcolor{keyword}{null}\ \&\&\ other.Values\ is\ not\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_u_test_list_result_8cs_source_l00018}00018\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_u_test_list_result_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Values.SequenceEqual(other.Values);}
+\DoxyCodeLine{\Hypertarget{_u_test_list_result_8cs_source_l00020}00020\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_list_result_8cs_source_l00021}00021\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Values\ ==\ other.Values;}
+\DoxyCodeLine{\Hypertarget{_u_test_list_result_8cs_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_list_result_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_u_test_list_result_8cs_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{public}\ UTestListResult(List<object>\ values)\ =>\ Values\ =\ values;}
+\DoxyCodeLine{\Hypertarget{_u_test_list_result_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_u_test_list_result_8cs_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{string}\ ToString()\ =>\ \$\textcolor{stringliteral}{"{}[\(\backslash\)n\ \ \ \ \{String.Join("{}},\(\backslash\)n\ \ \ \ \textcolor{stringliteral}{"{},\ Values?.Select(o\ =>\ o?.ToString()))\}\(\backslash\)n]"{}};}
+\DoxyCodeLine{\Hypertarget{_u_test_list_result_8cs_source_l00027}00027\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_u_test_list_result_8cs_source_l00028}00028\ \}}
+
+\end{DoxyCode}

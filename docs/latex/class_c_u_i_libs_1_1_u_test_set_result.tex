@@ -1,0 +1,121 @@
+\doxysection{CUILibs.\+UTest\+Set\+Result Class Reference}
+\hypertarget{class_c_u_i_libs_1_1_u_test_set_result}{}\label{class_c_u_i_libs_1_1_u_test_set_result}\index{CUILibs.UTestSetResult@{CUILibs.UTestSetResult}}
+Inheritance diagram for CUILibs.\+UTest\+Set\+Result:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_u_i_libs_1_1_u_test_set_result}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override bool \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_set_result_ab6432c74f96875233e169eda2c48f83d}{Equals}} (object obj)
+\item 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_set_result_a72d35736ce935e052ac3921231e4c41a}{UTest\+Set\+Result}} (Hash\+Set$<$ object $>$ values)
+\item 
+override string \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_set_result_a3b047d9eb8f851c7cf2c3d2a7ab5aaea}{To\+String}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+override object \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_set_result_ac51b181bb690fd494dda09b3d75512a7}{Result}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_result_base}{CUILibs.\+UTest\+Result\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual object \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_result_base_af0b9b9482f10844f98caac7e917157ec}{Result}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_set_result_8cs_source_l00009}{9}} of file \doxymbox{\hyperlink{_u_test_set_result_8cs_source}{UTest\+Set\+Result.\+cs}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_set_result_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_set_result_a72d35736ce935e052ac3921231e4c41a}\index{CUILibs.UTestSetResult@{CUILibs.UTestSetResult}!UTestSetResult@{UTestSetResult}}
+\index{UTestSetResult@{UTestSetResult}!CUILibs.UTestSetResult@{CUILibs.UTestSetResult}}
+\doxysubsubsection{\texorpdfstring{UTestSetResult()}{UTestSetResult()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_set_result_a72d35736ce935e052ac3921231e4c41a} 
+CUILibs.\+UTest\+Set\+Result.\+UTest\+Set\+Result (\begin{DoxyParamCaption}\item[{Hash\+Set$<$ object $>$}]{values}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_set_result_8cs_source_l00024}{24}} of file \doxymbox{\hyperlink{_u_test_set_result_8cs_source}{UTest\+Set\+Result.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ =>\ Values\ =\ values;}
+
+\end{DoxyCode}
+
+
+\label{doc-func-members}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_set_result_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_set_result_ab6432c74f96875233e169eda2c48f83d}\index{CUILibs.UTestSetResult@{CUILibs.UTestSetResult}!Equals@{Equals}}
+\index{Equals@{Equals}!CUILibs.UTestSetResult@{CUILibs.UTestSetResult}}
+\doxysubsubsection{\texorpdfstring{Equals()}{Equals()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_set_result_ab6432c74f96875233e169eda2c48f83d} 
+override bool CUILibs.\+UTest\+Set\+Result.\+Equals (\begin{DoxyParamCaption}\item[{object}]{obj}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_set_result_8cs_source_l00014}{14}} of file \doxymbox{\hyperlink{_u_test_set_result_8cs_source}{UTest\+Set\+Result.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (obj\ is\ not\ UTestSetResult\ other)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Values\ is\ not\ \textcolor{keyword}{null}\ \&\&\ other.Values\ is\ not\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Values.SetEquals(other.Values);}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Values\ ==\ other.Values;}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_set_result_a3b047d9eb8f851c7cf2c3d2a7ab5aaea}\index{CUILibs.UTestSetResult@{CUILibs.UTestSetResult}!ToString@{ToString}}
+\index{ToString@{ToString}!CUILibs.UTestSetResult@{CUILibs.UTestSetResult}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_set_result_a3b047d9eb8f851c7cf2c3d2a7ab5aaea} 
+override string CUILibs.\+UTest\+Set\+Result.\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_set_result_8cs_source_l00026}{26}} of file \doxymbox{\hyperlink{_u_test_set_result_8cs_source}{UTest\+Set\+Result.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ =>\ \$\textcolor{stringliteral}{"{}[\{String.Join("{}},\ \textcolor{stringliteral}{"{},\ Values?.Select(o\ =>\ o?.ToString()))\}]"{}};}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_set_result_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_set_result_ac51b181bb690fd494dda09b3d75512a7}\index{CUILibs.UTestSetResult@{CUILibs.UTestSetResult}!Result@{Result}}
+\index{Result@{Result}!CUILibs.UTestSetResult@{CUILibs.UTestSetResult}}
+\doxysubsubsection{\texorpdfstring{Result}{Result}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_set_result_ac51b181bb690fd494dda09b3d75512a7} 
+override object CUILibs.\+UTest\+Set\+Result.\+Result\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_set_result_8cs_source_l00012}{12}} of file \doxymbox{\hyperlink{_u_test_set_result_8cs_source}{UTest\+Set\+Result.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \{\ \textcolor{keyword}{get}\ =>\ Values;\ \textcolor{keyword}{set}\ =>\ Values\ =\ value\ as\ HashSet<object>;\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+Libs/\+\+UTest/\+\+UTest\+Results/\+UTest\+Set\+Result.\+cs\end{DoxyCompactItemize}

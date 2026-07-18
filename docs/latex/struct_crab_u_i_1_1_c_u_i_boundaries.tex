@@ -1,0 +1,383 @@
+\doxysection{Crab\+UI.\+CUIBoundaries Struct Reference}
+\hypertarget{struct_crab_u_i_1_1_c_u_i_boundaries}{}\label{struct_crab_u_i_1_1_c_u_i_boundaries}\index{CrabUI.CUIBoundaries@{CrabUI.CUIBoundaries}}
+
+
+Defining Boundaries, not the same as rect ~\newline
+ containing min/\+max x, y.  
+
+
+Inheritance diagram for Crab\+UI.\+CUIBoundaries:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_crab_u_i_1_1_c_u_i_boundaries}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}} \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_boundaries_a1b0ca7c3f00f1d9433a6d4d0c97e5d3d}{Check}} (\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}} rect)
+\item 
+\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}} \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_boundaries_acda41818cde76d292d19aa8b69cf2672}{Check}} (float x, float y, float w, float h)
+\item 
+Vector2 \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_boundaries_af848bf94deb892bcd1bad1d0fd1e3bd2}{Check}} (Vector2 offset)
+\item 
+Vector2 \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_boundaries_a6bb35b6856a45d1a6841fd3f0794dd6b}{Check}} (float x, float y)
+\item 
+\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_boundaries_a794817c0bf948ffb2d007da5de766648}{CUIBoundaries}} (float? minX=null, float? maxX=null, float? minY=null, float? maxY=null)
+\item 
+override string \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_boundaries_a5f0bd49bc6098418639cb33ec5d6cba5}{To\+String}} ()
+\item 
+string \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_boundaries_ac5cf8f6d3e67c89a4b195c4ba1f62ddd}{To\+Text}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static CUIBoundaries \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_boundaries_ad8b853afa35262e6863935e3458d142c}{Parse}} (string s)
+\item 
+static object IParsable. \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_boundaries_a48386fd5565d20024946df9147f0d0f3}{Parse}} (string raw)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float? \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_boundaries_a07edb97567c15ab133e61b8e8bc7a83f}{MinX}}
+\item 
+float? \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_boundaries_acd783e2345f97fcaece5bf3b6776e08f}{MaxX}}
+\item 
+float? \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_boundaries_a63d844f12345bc1b906cd82d5e3d5534}{MinY}}
+\item 
+float? \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_boundaries_a769592f2cd3329fe7f5e7772725a70e5}{MaxY}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Func$<$ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}, CUIBoundaries $>$ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_boundaries_a83e1e1e45201b08ed6e22a718a41494a}{Free}}
+\item 
+static Func$<$ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}, CUIBoundaries $>$ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_boundaries_a2204422c84a400ff3f941a575f9c081b}{Box}}
+\item 
+static Func$<$ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}, CUIBoundaries $>$ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_boundaries_a9b9bab5599a3f49053c07a1ea9b236a7}{Horizontal\+Tube}}
+\item 
+static Func$<$ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}, CUIBoundaries $>$ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_boundaries_aa5fe86c803f0bc72f30218d06f8d46df}{Vertical\+Tube}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defining Boundaries, not the same as rect ~\newline
+ containing min/\+max x, y. 
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source}{CUIBoundaries.\+cs}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_boundaries_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_boundaries_a794817c0bf948ffb2d007da5de766648}\index{CrabUI.CUIBoundaries@{CrabUI.CUIBoundaries}!CUIBoundaries@{CUIBoundaries}}
+\index{CUIBoundaries@{CUIBoundaries}!CrabUI.CUIBoundaries@{CrabUI.CUIBoundaries}}
+\doxysubsubsection{\texorpdfstring{CUIBoundaries()}{CUIBoundaries()}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_boundaries_a794817c0bf948ffb2d007da5de766648} 
+Crab\+UI.\+CUIBoundaries.\+CUIBoundaries (\begin{DoxyParamCaption}\item[{float?}]{minX}{ = {\ttfamily null}, }\item[{float?}]{maxX}{ = {\ttfamily null}, }\item[{float?}]{minY}{ = {\ttfamily null}, }\item[{float?}]{maxY}{ = {\ttfamily null}}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source_l00060}{60}} of file \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source}{CUIBoundaries.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00064\ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ MinX\ =\ minX;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ MaxX\ =\ maxX;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ MinY\ =\ minY;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ MaxY\ =\ maxY;}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-func-members}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_boundaries_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_boundaries_a1b0ca7c3f00f1d9433a6d4d0c97e5d3d}\index{CrabUI.CUIBoundaries@{CrabUI.CUIBoundaries}!Check@{Check}}
+\index{Check@{Check}!CrabUI.CUIBoundaries@{CrabUI.CUIBoundaries}}
+\doxysubsubsection{\texorpdfstring{Check()}{Check()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_boundaries_a1b0ca7c3f00f1d9433a6d4d0c97e5d3d} 
+\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}} Crab\+UI.\+CUIBoundaries.\+Check (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}}]{rect}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source_l00036}{36}} of file \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source}{CUIBoundaries.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ =>\ Check(rect.Left,\ rect.Top,\ rect.Width,\ rect.Height);}
+
+\end{DoxyCode}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_boundaries_a6bb35b6856a45d1a6841fd3f0794dd6b}\index{CrabUI.CUIBoundaries@{CrabUI.CUIBoundaries}!Check@{Check}}
+\index{Check@{Check}!CrabUI.CUIBoundaries@{CrabUI.CUIBoundaries}}
+\doxysubsubsection{\texorpdfstring{Check()}{Check()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_boundaries_a6bb35b6856a45d1a6841fd3f0794dd6b} 
+Vector2 Crab\+UI.\+CUIBoundaries.\+Check (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source_l00049}{49}} of file \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source}{CUIBoundaries.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (MaxX.HasValue\ \&\&\ x\ >\ MaxX.Value)\ x\ =\ MaxX.Value;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (MaxY.HasValue\ \&\&\ y\ >\ MaxY.Value)\ y\ =\ MaxY.Value;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (MinX.HasValue\ \&\&\ x\ <\ MinX.Value)\ x\ =\ MinX.Value;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (MinY.HasValue\ \&\&\ y\ <\ MinY.Value)\ y\ =\ MinY.Value;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Vector2(x,\ y);}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_boundaries_acda41818cde76d292d19aa8b69cf2672}\index{CrabUI.CUIBoundaries@{CrabUI.CUIBoundaries}!Check@{Check}}
+\index{Check@{Check}!CrabUI.CUIBoundaries@{CrabUI.CUIBoundaries}}
+\doxysubsubsection{\texorpdfstring{Check()}{Check()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_boundaries_acda41818cde76d292d19aa8b69cf2672} 
+\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}} Crab\+UI.\+CUIBoundaries.\+Check (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{, }\item[{float}]{w}{, }\item[{float}]{h}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source_l00037}{37}} of file \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source}{CUIBoundaries.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (MaxX.HasValue\ \&\&\ x\ +\ w\ >\ MaxX.Value)\ x\ =\ MaxX.Value\ -\/\ w;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (MaxY.HasValue\ \&\&\ y\ +\ h\ >\ MaxY.Value)\ y\ =\ MaxY.Value\ -\/\ h;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (MinX.HasValue\ \&\&\ x\ <\ MinX.Value)\ x\ =\ MinX.Value;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (MinY.HasValue\ \&\&\ y\ <\ MinY.Value)\ y\ =\ MinY.Value;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ CUIRect(x,\ y,\ w,\ h);}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_boundaries_af848bf94deb892bcd1bad1d0fd1e3bd2}\index{CrabUI.CUIBoundaries@{CrabUI.CUIBoundaries}!Check@{Check}}
+\index{Check@{Check}!CrabUI.CUIBoundaries@{CrabUI.CUIBoundaries}}
+\doxysubsubsection{\texorpdfstring{Check()}{Check()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_boundaries_af848bf94deb892bcd1bad1d0fd1e3bd2} 
+Vector2 Crab\+UI.\+CUIBoundaries.\+Check (\begin{DoxyParamCaption}\item[{Vector2}]{offset}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source_l00048}{48}} of file \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source}{CUIBoundaries.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048\ =>\ Check(offset.X,\ offset.Y);}
+
+\end{DoxyCode}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_boundaries_a48386fd5565d20024946df9147f0d0f3}\index{CrabUI.CUIBoundaries@{CrabUI.CUIBoundaries}!Parse@{Parse}}
+\index{Parse@{Parse}!CrabUI.CUIBoundaries@{CrabUI.CUIBoundaries}}
+\doxysubsubsection{\texorpdfstring{Parse()}{Parse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_boundaries_a48386fd5565d20024946df9147f0d0f3} 
+object IParsable. Crab\+UI.\+CUIBoundaries.\+Parse (\begin{DoxyParamCaption}\item[{string}]{raw}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_parsable}{Crab\+UI.\+IParsable}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source_l00099}{99}} of file \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source}{CUIBoundaries.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00099\ =>\ Parse(raw);}
+
+\end{DoxyCode}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_boundaries_ad8b853afa35262e6863935e3458d142c}\index{CrabUI.CUIBoundaries@{CrabUI.CUIBoundaries}!Parse@{Parse}}
+\index{Parse@{Parse}!CrabUI.CUIBoundaries@{CrabUI.CUIBoundaries}}
+\doxysubsubsection{\texorpdfstring{Parse()}{Parse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_boundaries_ad8b853afa35262e6863935e3458d142c} 
+CUIBoundaries Crab\+UI.\+CUIBoundaries.\+Parse (\begin{DoxyParamCaption}\item[{string}]{s}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_parsable}{Crab\+UI.\+IParsable}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source_l00072}{72}} of file \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source}{CUIBoundaries.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00073\ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ content\ =\ s.Substring(}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ s.IndexOf(\textcolor{charliteral}{'['})\ +\ 1,}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ s.IndexOf(\textcolor{charliteral}{']'})\ -\/\ s.IndexOf(\textcolor{charliteral}{'['})\ -\/\ 1}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ );}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ var\ parts\ =\ content.Split(\textcolor{charliteral}{','}).Select(a\ =>\ a.Trim());}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ minXPart\ =\ parts.ElementAtOrDefault(0);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ maxXPart\ =\ parts.ElementAtOrDefault(1);}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ minYPart\ =\ parts.ElementAtOrDefault(2);}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ maxYPart\ =\ parts.ElementAtOrDefault(3);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \textcolor{keywordtype}{float}?\ minX\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \textcolor{keywordtype}{float}?\ maxX\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \textcolor{keywordtype}{float}?\ minY\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \textcolor{keywordtype}{float}?\ maxY\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!String.IsNullOrEmpty(minXPart))\ minX\ =\ \textcolor{keywordtype}{float}.Parse(minXPart);}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!String.IsNullOrEmpty(maxXPart))\ maxX\ =\ \textcolor{keywordtype}{float}.Parse(maxXPart);}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!String.IsNullOrEmpty(minYPart))\ minY\ =\ \textcolor{keywordtype}{float}.Parse(minYPart);}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!String.IsNullOrEmpty(maxYPart))\ maxY\ =\ \textcolor{keywordtype}{float}.Parse(maxYPart);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ CUIBoundaries(minX,\ maxX,\ minY,\ maxY);}
+\DoxyCodeLine{00097\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_boundaries_a5f0bd49bc6098418639cb33ec5d6cba5}\index{CrabUI.CUIBoundaries@{CrabUI.CUIBoundaries}!ToString@{ToString}}
+\index{ToString@{ToString}!CrabUI.CUIBoundaries@{CrabUI.CUIBoundaries}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_boundaries_a5f0bd49bc6098418639cb33ec5d6cba5} 
+override string Crab\+UI.\+CUIBoundaries.\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source_l00071}{71}} of file \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source}{CUIBoundaries.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00071\ =>\ \$\textcolor{stringliteral}{"{}[\{MinX\},\{MaxX\},\{MinY\},\{MaxY\}]"{}};}
+
+\end{DoxyCode}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_boundaries_ac5cf8f6d3e67c89a4b195c4ba1f62ddd}\index{CrabUI.CUIBoundaries@{CrabUI.CUIBoundaries}!ToText@{ToText}}
+\index{ToText@{ToText}!CrabUI.CUIBoundaries@{CrabUI.CUIBoundaries}}
+\doxysubsubsection{\texorpdfstring{ToText()}{ToText()}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_boundaries_ac5cf8f6d3e67c89a4b195c4ba1f62ddd} 
+string Crab\+UI.\+CUIBoundaries.\+To\+Text (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_parsable}{Crab\+UI.\+IParsable}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source_l00100}{100}} of file \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source}{CUIBoundaries.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00100\ =>\ ToString();}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_boundaries_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_boundaries_a2204422c84a400ff3f941a575f9c081b}\index{CrabUI.CUIBoundaries@{CrabUI.CUIBoundaries}!Box@{Box}}
+\index{Box@{Box}!CrabUI.CUIBoundaries@{CrabUI.CUIBoundaries}}
+\doxysubsubsection{\texorpdfstring{Box}{Box}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_boundaries_a2204422c84a400ff3f941a575f9c081b} 
+Func$<$\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}, CUIBoundaries$>$ Crab\+UI.\+CUIBoundaries.\+Box\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =}
+\DoxyCodeLine{(Rect)\ =>\ \textcolor{keyword}{new}\ CUIBoundaries(Rect.Left,\ Rect.Left\ +\ Rect.Width,\ Rect.Top,\ Rect.Top\ +\ Rect.Height)}
+
+\end{DoxyCode}
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source_l00023}{23}} of file \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source}{CUIBoundaries.\+cs}}.
+
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_boundaries_a83e1e1e45201b08ed6e22a718a41494a}\index{CrabUI.CUIBoundaries@{CrabUI.CUIBoundaries}!Free@{Free}}
+\index{Free@{Free}!CrabUI.CUIBoundaries@{CrabUI.CUIBoundaries}}
+\doxysubsubsection{\texorpdfstring{Free}{Free}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_boundaries_a83e1e1e45201b08ed6e22a718a41494a} 
+Func$<$\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}, CUIBoundaries$>$ Crab\+UI.\+CUIBoundaries.\+Free\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =}
+\DoxyCodeLine{(Rect)\ =>\ \textcolor{keyword}{new}\ CUIBoundaries(\textcolor{keyword}{null},\ \textcolor{keyword}{null},\ \textcolor{keyword}{null},\ \textcolor{keyword}{null})}
+
+\end{DoxyCode}
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source_l00021}{21}} of file \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source}{CUIBoundaries.\+cs}}.
+
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_boundaries_a9b9bab5599a3f49053c07a1ea9b236a7}\index{CrabUI.CUIBoundaries@{CrabUI.CUIBoundaries}!HorizontalTube@{HorizontalTube}}
+\index{HorizontalTube@{HorizontalTube}!CrabUI.CUIBoundaries@{CrabUI.CUIBoundaries}}
+\doxysubsubsection{\texorpdfstring{HorizontalTube}{HorizontalTube}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_boundaries_a9b9bab5599a3f49053c07a1ea9b236a7} 
+Func$<$\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}, CUIBoundaries$>$ Crab\+UI.\+CUIBoundaries.\+Horizontal\+Tube\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =}
+\DoxyCodeLine{(Rect)\ =>\ \textcolor{keyword}{new}\ CUIBoundaries(\textcolor{keyword}{null},\ \textcolor{keyword}{null},\ Rect.Top,\ Rect.Top\ +\ Rect.Height)}
+
+\end{DoxyCode}
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source_l00025}{25}} of file \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source}{CUIBoundaries.\+cs}}.
+
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_boundaries_acd783e2345f97fcaece5bf3b6776e08f}\index{CrabUI.CUIBoundaries@{CrabUI.CUIBoundaries}!MaxX@{MaxX}}
+\index{MaxX@{MaxX}!CrabUI.CUIBoundaries@{CrabUI.CUIBoundaries}}
+\doxysubsubsection{\texorpdfstring{MaxX}{MaxX}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_boundaries_acd783e2345f97fcaece5bf3b6776e08f} 
+float? Crab\+UI.\+CUIBoundaries.\+MaxX}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source_l00032}{32}} of file \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source}{CUIBoundaries.\+cs}}.
+
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_boundaries_a769592f2cd3329fe7f5e7772725a70e5}\index{CrabUI.CUIBoundaries@{CrabUI.CUIBoundaries}!MaxY@{MaxY}}
+\index{MaxY@{MaxY}!CrabUI.CUIBoundaries@{CrabUI.CUIBoundaries}}
+\doxysubsubsection{\texorpdfstring{MaxY}{MaxY}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_boundaries_a769592f2cd3329fe7f5e7772725a70e5} 
+float? Crab\+UI.\+CUIBoundaries.\+MaxY}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source_l00034}{34}} of file \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source}{CUIBoundaries.\+cs}}.
+
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_boundaries_a07edb97567c15ab133e61b8e8bc7a83f}\index{CrabUI.CUIBoundaries@{CrabUI.CUIBoundaries}!MinX@{MinX}}
+\index{MinX@{MinX}!CrabUI.CUIBoundaries@{CrabUI.CUIBoundaries}}
+\doxysubsubsection{\texorpdfstring{MinX}{MinX}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_boundaries_a07edb97567c15ab133e61b8e8bc7a83f} 
+float? Crab\+UI.\+CUIBoundaries.\+MinX}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source_l00031}{31}} of file \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source}{CUIBoundaries.\+cs}}.
+
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_boundaries_a63d844f12345bc1b906cd82d5e3d5534}\index{CrabUI.CUIBoundaries@{CrabUI.CUIBoundaries}!MinY@{MinY}}
+\index{MinY@{MinY}!CrabUI.CUIBoundaries@{CrabUI.CUIBoundaries}}
+\doxysubsubsection{\texorpdfstring{MinY}{MinY}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_boundaries_a63d844f12345bc1b906cd82d5e3d5534} 
+float? Crab\+UI.\+CUIBoundaries.\+MinY}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source_l00033}{33}} of file \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source}{CUIBoundaries.\+cs}}.
+
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_boundaries_aa5fe86c803f0bc72f30218d06f8d46df}\index{CrabUI.CUIBoundaries@{CrabUI.CUIBoundaries}!VerticalTube@{VerticalTube}}
+\index{VerticalTube@{VerticalTube}!CrabUI.CUIBoundaries@{CrabUI.CUIBoundaries}}
+\doxysubsubsection{\texorpdfstring{VerticalTube}{VerticalTube}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_boundaries_aa5fe86c803f0bc72f30218d06f8d46df} 
+Func$<$\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}, CUIBoundaries$>$ Crab\+UI.\+CUIBoundaries.\+Vertical\+Tube\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =}
+\DoxyCodeLine{(Rect)\ =>\ \textcolor{keyword}{new}\ CUIBoundaries(Rect.Left,\ Rect.Left\ +\ Rect.Width,\ \textcolor{keyword}{null},\ \textcolor{keyword}{null})}
+
+\end{DoxyCode}
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source_l00027}{27}} of file \doxymbox{\hyperlink{_c_u_i_boundaries_8cs_source}{CUIBoundaries.\+cs}}.
+
+
+
+The documentation for this struct was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Simple Types/\+CUIBoundaries.\+cs\end{DoxyCompactItemize}

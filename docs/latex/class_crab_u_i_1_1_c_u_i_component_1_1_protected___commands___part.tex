@@ -1,0 +1,175 @@
+\doxysection{Crab\+UI.\+CUIComponent.\+Protected\+\_\+\+Commands\+\_\+\+Part Class Reference}
+\hypertarget{class_crab_u_i_1_1_c_u_i_component_1_1_protected___commands___part}{}\label{class_crab_u_i_1_1_c_u_i_component_1_1_protected___commands___part}\index{CrabUI.CUIComponent.Protected\_Commands\_Part@{CrabUI.CUIComponent.Protected\_Commands\_Part}}
+Inheritance diagram for Crab\+UI.\+CUIComponent.\+Protected\+\_\+\+Commands\+\_\+\+Part:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.781457cm]{class_crab_u_i_1_1_c_u_i_component_1_1_protected___commands___part}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_protected___commands___part_a6abc16a1f49a4c1fa012c91166adcc40}{On\+Attach\+To\+Parent\+Handler}} (CUIComponent parent)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_protected___commands___part_af4b68621817e147f5018b6604b6a673e}{On\+Detach\+From\+Parent\+Handler}} (CUIComponent parent)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_protected___commands___part_a2bdbb784590b7d20bd702fae465343b7}{Listen\+For$<$ T $>$}} (string name, Action$<$ T $>$ action)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_protected___commands___part_a58131111c6b3d509338d8e21db7f863d}{Listen\+For}} (string name, Action$<$ object $>$ action)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_protected___commands___part_ae41b429c0c500b7fdc5b5a9e62793e31}{Send\+Down}} (string name, object data=null)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_protected___commands___part_a535edf82c82428e6e4cd805b1b991918}{Send\+Up}} (string name, object data=null)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_routable_command_node}{Routable\+Command\+Node}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_protected___commands___part_a793c42a729bbe1899368a48d035ffe9c}{Node}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_part}{Crab\+UI.\+CUIComponent.\+Part}}}
+\begin{DoxyCompactItemize}
+\item 
+CUIComponent \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_part_ab47f49d90b2cb6709df65c276f06bb56}{Self}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_commands_8cs_source_l00028}{28}} of file \doxymbox{\hyperlink{_c_u_i_component_8_commands_8cs_source}{CUIComponent.\+Commands.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_1_1_protected___commands___part_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_1_1_protected___commands___part_a58131111c6b3d509338d8e21db7f863d}\index{CrabUI.CUIComponent.Protected\_Commands\_Part@{CrabUI.CUIComponent.Protected\_Commands\_Part}!ListenFor@{ListenFor}}
+\index{ListenFor@{ListenFor}!CrabUI.CUIComponent.Protected\_Commands\_Part@{CrabUI.CUIComponent.Protected\_Commands\_Part}}
+\doxysubsubsection{\texorpdfstring{ListenFor()}{ListenFor()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_component_1_1_protected___commands___part_a58131111c6b3d509338d8e21db7f863d} 
+void Crab\+UI.\+CUIComponent.\+Protected\+\_\+\+Commands\+\_\+\+Part.\+Listen\+For (\begin{DoxyParamCaption}\item[{string}]{name}{, }\item[{Action$<$ object $>$}]{action}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_commands_8cs_source_l00050}{50}} of file \doxymbox{\hyperlink{_c_u_i_component_8_commands_8cs_source}{CUIComponent.\+Commands.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ Node.Listeners[name]\ =\ action;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_1_1_protected___commands___part_a2bdbb784590b7d20bd702fae465343b7}\index{CrabUI.CUIComponent.Protected\_Commands\_Part@{CrabUI.CUIComponent.Protected\_Commands\_Part}!ListenFor$<$ T $>$@{ListenFor$<$ T $>$}}
+\index{ListenFor$<$ T $>$@{ListenFor$<$ T $>$}!CrabUI.CUIComponent.Protected\_Commands\_Part@{CrabUI.CUIComponent.Protected\_Commands\_Part}}
+\doxysubsubsection{\texorpdfstring{ListenFor$<$ T $>$()}{ListenFor< T >()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_component_1_1_protected___commands___part_a2bdbb784590b7d20bd702fae465343b7} 
+void Crab\+UI.\+CUIComponent.\+Protected\+\_\+\+Commands\+\_\+\+Part.\+Listen\+For$<$ T $>$ (\begin{DoxyParamCaption}\item[{string}]{name}{, }\item[{Action$<$ T $>$}]{action}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_commands_8cs_source_l00043}{43}} of file \doxymbox{\hyperlink{_c_u_i_component_8_commands_8cs_source}{CUIComponent.\+Commands.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ Node.Listeners[name]\ =\ (o)\ =>}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (o\ is\ T)\ action((T)o);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_1_1_protected___commands___part_a6abc16a1f49a4c1fa012c91166adcc40}\index{CrabUI.CUIComponent.Protected\_Commands\_Part@{CrabUI.CUIComponent.Protected\_Commands\_Part}!OnAttachToParentHandler@{OnAttachToParentHandler}}
+\index{OnAttachToParentHandler@{OnAttachToParentHandler}!CrabUI.CUIComponent.Protected\_Commands\_Part@{CrabUI.CUIComponent.Protected\_Commands\_Part}}
+\doxysubsubsection{\texorpdfstring{OnAttachToParentHandler()}{OnAttachToParentHandler()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_component_1_1_protected___commands___part_a6abc16a1f49a4c1fa012c91166adcc40} 
+void Crab\+UI.\+CUIComponent.\+Protected\+\_\+\+Commands\+\_\+\+Part.\+On\+Attach\+To\+Parent\+Handler (\begin{DoxyParamCaption}\item[{CUIComponent}]{parent}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_commands_8cs_source_l00032}{32}} of file \doxymbox{\hyperlink{_c_u_i_component_8_commands_8cs_source}{CUIComponent.\+Commands.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ parent.ProtectedCommands.Node.AddChild(this.Node);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_1_1_protected___commands___part_af4b68621817e147f5018b6604b6a673e}\index{CrabUI.CUIComponent.Protected\_Commands\_Part@{CrabUI.CUIComponent.Protected\_Commands\_Part}!OnDetachFromParentHandler@{OnDetachFromParentHandler}}
+\index{OnDetachFromParentHandler@{OnDetachFromParentHandler}!CrabUI.CUIComponent.Protected\_Commands\_Part@{CrabUI.CUIComponent.Protected\_Commands\_Part}}
+\doxysubsubsection{\texorpdfstring{OnDetachFromParentHandler()}{OnDetachFromParentHandler()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_component_1_1_protected___commands___part_af4b68621817e147f5018b6604b6a673e} 
+void Crab\+UI.\+CUIComponent.\+Protected\+\_\+\+Commands\+\_\+\+Part.\+On\+Detach\+From\+Parent\+Handler (\begin{DoxyParamCaption}\item[{CUIComponent}]{parent}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_commands_8cs_source_l00037}{37}} of file \doxymbox{\hyperlink{_c_u_i_component_8_commands_8cs_source}{CUIComponent.\+Commands.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ parent.ProtectedCommands.Node.RemoveChild(this.Node);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_1_1_protected___commands___part_ae41b429c0c500b7fdc5b5a9e62793e31}\index{CrabUI.CUIComponent.Protected\_Commands\_Part@{CrabUI.CUIComponent.Protected\_Commands\_Part}!SendDown@{SendDown}}
+\index{SendDown@{SendDown}!CrabUI.CUIComponent.Protected\_Commands\_Part@{CrabUI.CUIComponent.Protected\_Commands\_Part}}
+\doxysubsubsection{\texorpdfstring{SendDown()}{SendDown()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_component_1_1_protected___commands___part_ae41b429c0c500b7fdc5b5a9e62793e31} 
+void Crab\+UI.\+CUIComponent.\+Protected\+\_\+\+Commands\+\_\+\+Part.\+Send\+Down (\begin{DoxyParamCaption}\item[{string}]{name}{, }\item[{object}]{data}{ = {\ttfamily null}}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_commands_8cs_source_l00056}{56}} of file \doxymbox{\hyperlink{_c_u_i_component_8_commands_8cs_source}{CUIComponent.\+Commands.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ Node.SendDown(\textcolor{keyword}{new}\ RoutableCommand(name,\ data));}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_1_1_protected___commands___part_a535edf82c82428e6e4cd805b1b991918}\index{CrabUI.CUIComponent.Protected\_Commands\_Part@{CrabUI.CUIComponent.Protected\_Commands\_Part}!SendUp@{SendUp}}
+\index{SendUp@{SendUp}!CrabUI.CUIComponent.Protected\_Commands\_Part@{CrabUI.CUIComponent.Protected\_Commands\_Part}}
+\doxysubsubsection{\texorpdfstring{SendUp()}{SendUp()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_component_1_1_protected___commands___part_a535edf82c82428e6e4cd805b1b991918} 
+void Crab\+UI.\+CUIComponent.\+Protected\+\_\+\+Commands\+\_\+\+Part.\+Send\+Up (\begin{DoxyParamCaption}\item[{string}]{name}{, }\item[{object}]{data}{ = {\ttfamily null}}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_commands_8cs_source_l00061}{61}} of file \doxymbox{\hyperlink{_c_u_i_component_8_commands_8cs_source}{CUIComponent.\+Commands.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ Node.SendUp(\textcolor{keyword}{new}\ RoutableCommand(name,\ data));}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_1_1_protected___commands___part_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_1_1_protected___commands___part_a793c42a729bbe1899368a48d035ffe9c}\index{CrabUI.CUIComponent.Protected\_Commands\_Part@{CrabUI.CUIComponent.Protected\_Commands\_Part}!Node@{Node}}
+\index{Node@{Node}!CrabUI.CUIComponent.Protected\_Commands\_Part@{CrabUI.CUIComponent.Protected\_Commands\_Part}}
+\doxysubsubsection{\texorpdfstring{Node}{Node}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_component_1_1_protected___commands___part_a793c42a729bbe1899368a48d035ffe9c} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_routable_command_node}{Routable\+Command\+Node}} Crab\+UI.\+CUIComponent.\+Protected\+\_\+\+Commands\+\_\+\+Part.\+Node = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_commands_8cs_source_l00030}{30}} of file \doxymbox{\hyperlink{_c_u_i_component_8_commands_8cs_source}{CUIComponent.\+Commands.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Components/\+\+CUIComponent/\+CUIComponent.\+Commands.\+cs\end{DoxyCompactItemize}

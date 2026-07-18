@@ -1,0 +1,397 @@
+\doxysection{Crab\+UI.\+CUIAnchor Class Reference}
+\hypertarget{class_crab_u_i_1_1_c_u_i_anchor}{}\label{class_crab_u_i_1_1_c_u_i_anchor}\index{CrabUI.CUIAnchor@{CrabUI.CUIAnchor}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_anchor_ae09466d4d9c1f241526bae752b387138}{Direction}} (Vector2 anchor)
+\item 
+static Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_anchor_a395c7c50edbb8b800df54cfb03d1b997}{Pos\+From\+Anchor}} (\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}} rect, Vector2 anchor)
+\item 
+static Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_anchor_ae3468bee93941b3f1a6c5617fa6a1fde}{Pos\+From\+Anchor}} (Vector2 parent\+Size, Vector2 anchor)
+\item 
+static Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_anchor_a93001e3511d6d0032cb8a9e528d4a5e4}{Anchor\+From\+Pos}} (\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}} rect, Vector2 pos)
+\item 
+static Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_anchor_abc597703a891ff32c91b814f04ac64a3}{Get\+Offset}} (\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}} parent\+Rect, Vector2 parent\+Anchor, \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}} child\+Rect, Vector2 child\+Anchor)
+\item 
+static Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_anchor_aa0f632373cfddfb4bdc48a77c8b1f24b}{Child\+Pos\+In}} (\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}} parent, Vector2 anchor, Vector2 child\+Size)
+\begin{DoxyCompactList}\small\item\em E.\+g. bottom right child vertex is attached to bottom right parent vertex. \end{DoxyCompactList}\item 
+static Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_anchor_a7673257113dd2a0c024694e47c3e0bcc}{Child\+Pos\+In}} (Vector2 parent\+Size, Vector2 anchor, Vector2 child\+Size)
+\item 
+static Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_anchor_aa7651994bf1b771deb44a8e70866f235}{Child\+Pos\+In}} (\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}} parent, Vector2 parent\+Anchor, Vector2 child\+Size, Vector2 child\+Anchor)
+\begin{DoxyCompactList}\small\item\em child\+Anchor point in child is attached to parent\+Anchor point in parent \end{DoxyCompactList}\item 
+static Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_anchor_a7bc6f57fbc0bfc080225e13b21d771d1}{Child\+Pos\+In}} (Vector2 parent\+Size, Vector2 parent\+Anchor, Vector2 child\+Size, Vector2 child\+Anchor)
+\item 
+static \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_anchor_a39e1c2e80085d5ab484facd562a7a6da}{Rect\+From2\+Points\+With\+Anchors}} (Vector2 point1, Vector2 anchor1, Vector2 point2, Vector2 anchor2)
+\item 
+static \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_anchor_a870f285ca844f5f114dd0aef5d1f79ea}{Rect\+From\+Point\+And\+Size}} (Vector2 point1, Vector2 anchor1, Vector2 size)
+\item 
+static \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_anchor_a4ee0f9b1cb09ed9be2eb0eefa05b2080}{Absolute\+Rect\+To\+Achored}} (\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}} rect, \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}} parent\+Rect, Vector2 anchor)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_anchor_a4e63cb254f4652fe6f75f544d134ab28}{Left\+Top}} = new Vector2(0.\+0f, 0.\+0f)
+\item 
+static Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_anchor_a42b2001ae0bc81f86e34cc9494a2eb19}{Center\+Top}} = new Vector2(0.\+5f, 0.\+0f)
+\item 
+static Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_anchor_abecfc723619dbe08a9b4506ed53ee321}{Right\+Top}} = new Vector2(1.\+0f, 0.\+0f)
+\item 
+static Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_anchor_a3603c1df2d67e4f704880080a5695662}{Left\+Center}} = new Vector2(0.\+0f, 0.\+5f)
+\item 
+static Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_anchor_a0784d9d5257c10e6479dc07fefe843d6}{Center}} = new Vector2(0.\+5f, 0.\+5f)
+\item 
+static Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_anchor_acee965590f048236a60ea28f5253f78b}{Right\+Center}} = new Vector2(1.\+0f, 0.\+5f)
+\item 
+static Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_anchor_afd6952f30b5676b2853f245de426b746}{Left\+Bottom}} = new Vector2(0.\+0f, 1.\+0f)
+\item 
+static Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_anchor_a3bec219bcb6b9ac6a8096db941c6c2d6}{Center\+Bottom}} = new Vector2(0.\+5f, 1.\+0f)
+\item 
+static Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_anchor_ae1a5e0dd27ed9a00fb0a25c093edda07}{Right\+Bottom}} = new Vector2(1.\+0f, 1.\+0f)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source_l00010}{10}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source}{CUIAnchor.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_anchor_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_anchor_a4ee0f9b1cb09ed9be2eb0eefa05b2080}\index{CrabUI.CUIAnchor@{CrabUI.CUIAnchor}!AbsoluteRectToAchored@{AbsoluteRectToAchored}}
+\index{AbsoluteRectToAchored@{AbsoluteRectToAchored}!CrabUI.CUIAnchor@{CrabUI.CUIAnchor}}
+\doxysubsubsection{\texorpdfstring{AbsoluteRectToAchored()}{AbsoluteRectToAchored()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_anchor_a4ee0f9b1cb09ed9be2eb0eefa05b2080} 
+\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}} Crab\+UI.\+CUIAnchor.\+Absolute\+Rect\+To\+Achored (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}}]{rect}{, }\item[{\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}}]{parent\+Rect}{, }\item[{Vector2}]{anchor}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source_l00103}{103}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source}{CUIAnchor.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00104\ \ \ \ \ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ CUIRect(}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ GetOffset(parentRect,\ anchor,\ rect,\ anchor),}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ rect.Size}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ );}
+\DoxyCodeLine{00109\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_anchor_a93001e3511d6d0032cb8a9e528d4a5e4}\index{CrabUI.CUIAnchor@{CrabUI.CUIAnchor}!AnchorFromPos@{AnchorFromPos}}
+\index{AnchorFromPos@{AnchorFromPos}!CrabUI.CUIAnchor@{CrabUI.CUIAnchor}}
+\doxysubsubsection{\texorpdfstring{AnchorFromPos()}{AnchorFromPos()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_anchor_a93001e3511d6d0032cb8a9e528d4a5e4} 
+Vector2 Crab\+UI.\+CUIAnchor.\+Anchor\+From\+Pos (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}}]{rect}{, }\item[{Vector2}]{pos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source_l00043}{43}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source}{CUIAnchor.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044\ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (pos\ -\/\ rect.Position)\ /\ rect.Size;}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_anchor_aa0f632373cfddfb4bdc48a77c8b1f24b}\index{CrabUI.CUIAnchor@{CrabUI.CUIAnchor}!ChildPosIn@{ChildPosIn}}
+\index{ChildPosIn@{ChildPosIn}!CrabUI.CUIAnchor@{CrabUI.CUIAnchor}}
+\doxysubsubsection{\texorpdfstring{ChildPosIn()}{ChildPosIn()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_anchor_aa0f632373cfddfb4bdc48a77c8b1f24b} 
+Vector2 Crab\+UI.\+CUIAnchor.\+Child\+Pos\+In (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}}]{parent}{, }\item[{Vector2}]{anchor}{, }\item[{Vector2}]{child\+Size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+E.\+g. bottom right child vertex is attached to bottom right parent vertex. 
+
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source_l00056}{56}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source}{CUIAnchor.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057\ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ PosFromAnchor(parent,\ anchor)\ -\/\ PosFromAnchor(childSize,\ anchor);}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_anchor_aa7651994bf1b771deb44a8e70866f235}\index{CrabUI.CUIAnchor@{CrabUI.CUIAnchor}!ChildPosIn@{ChildPosIn}}
+\index{ChildPosIn@{ChildPosIn}!CrabUI.CUIAnchor@{CrabUI.CUIAnchor}}
+\doxysubsubsection{\texorpdfstring{ChildPosIn()}{ChildPosIn()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_anchor_aa7651994bf1b771deb44a8e70866f235} 
+Vector2 Crab\+UI.\+CUIAnchor.\+Child\+Pos\+In (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}}]{parent}{, }\item[{Vector2}]{parent\+Anchor}{, }\item[{Vector2}]{child\+Size}{, }\item[{Vector2}]{child\+Anchor}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+child\+Anchor point in child is attached to parent\+Anchor point in parent 
+
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source_l00069}{69}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source}{CUIAnchor.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00070\ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ PosFromAnchor(parent,\ parentAnchor)\ -\/\ PosFromAnchor(\textcolor{keyword}{new}\ CUIRect(childSize),\ childAnchor);}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_anchor_a7673257113dd2a0c024694e47c3e0bcc}\index{CrabUI.CUIAnchor@{CrabUI.CUIAnchor}!ChildPosIn@{ChildPosIn}}
+\index{ChildPosIn@{ChildPosIn}!CrabUI.CUIAnchor@{CrabUI.CUIAnchor}}
+\doxysubsubsection{\texorpdfstring{ChildPosIn()}{ChildPosIn()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_anchor_a7673257113dd2a0c024694e47c3e0bcc} 
+Vector2 Crab\+UI.\+CUIAnchor.\+Child\+Pos\+In (\begin{DoxyParamCaption}\item[{Vector2}]{parent\+Size}{, }\item[{Vector2}]{anchor}{, }\item[{Vector2}]{child\+Size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source_l00061}{61}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source}{CUIAnchor.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00062\ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ PosFromAnchor(parentSize,\ anchor)\ -\/\ PosFromAnchor(childSize,\ anchor);}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_anchor_a7bc6f57fbc0bfc080225e13b21d771d1}\index{CrabUI.CUIAnchor@{CrabUI.CUIAnchor}!ChildPosIn@{ChildPosIn}}
+\index{ChildPosIn@{ChildPosIn}!CrabUI.CUIAnchor@{CrabUI.CUIAnchor}}
+\doxysubsubsection{\texorpdfstring{ChildPosIn()}{ChildPosIn()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_anchor_a7bc6f57fbc0bfc080225e13b21d771d1} 
+Vector2 Crab\+UI.\+CUIAnchor.\+Child\+Pos\+In (\begin{DoxyParamCaption}\item[{Vector2}]{parent\+Size}{, }\item[{Vector2}]{parent\+Anchor}{, }\item[{Vector2}]{child\+Size}{, }\item[{Vector2}]{child\+Anchor}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source_l00074}{74}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source}{CUIAnchor.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00075\ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ PosFromAnchor(parentSize,\ parentAnchor)\ -\/\ PosFromAnchor(\textcolor{keyword}{new}\ CUIRect(childSize),\ childAnchor);}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_anchor_ae09466d4d9c1f241526bae752b387138}\index{CrabUI.CUIAnchor@{CrabUI.CUIAnchor}!Direction@{Direction}}
+\index{Direction@{Direction}!CrabUI.CUIAnchor@{CrabUI.CUIAnchor}}
+\doxysubsubsection{\texorpdfstring{Direction()}{Direction()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_anchor_ae09466d4d9c1f241526bae752b387138} 
+Vector2 Crab\+UI.\+CUIAnchor.\+Direction (\begin{DoxyParamCaption}\item[{Vector2}]{anchor}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source_l00022}{22}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source}{CUIAnchor.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (Center\ -\/\ anchor)\ *\ 2;}
+\DoxyCodeLine{00025\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_anchor_abc597703a891ff32c91b814f04ac64a3}\index{CrabUI.CUIAnchor@{CrabUI.CUIAnchor}!GetOffset@{GetOffset}}
+\index{GetOffset@{GetOffset}!CrabUI.CUIAnchor@{CrabUI.CUIAnchor}}
+\doxysubsubsection{\texorpdfstring{GetOffset()}{GetOffset()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_anchor_abc597703a891ff32c91b814f04ac64a3} 
+Vector2 Crab\+UI.\+CUIAnchor.\+Get\+Offset (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}}]{parent\+Rect}{, }\item[{Vector2}]{parent\+Anchor}{, }\item[{\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}}]{child\+Rect}{, }\item[{Vector2}]{child\+Anchor}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source_l00048}{48}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source}{CUIAnchor.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00049\ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ PosFromAnchor(childRect,\ childAnchor)\ -\/\ PosFromAnchor(parentRect,\ parentAnchor);}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_anchor_a395c7c50edbb8b800df54cfb03d1b997}\index{CrabUI.CUIAnchor@{CrabUI.CUIAnchor}!PosFromAnchor@{PosFromAnchor}}
+\index{PosFromAnchor@{PosFromAnchor}!CrabUI.CUIAnchor@{CrabUI.CUIAnchor}}
+\doxysubsubsection{\texorpdfstring{PosFromAnchor()}{PosFromAnchor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_anchor_a395c7c50edbb8b800df54cfb03d1b997} 
+Vector2 Crab\+UI.\+CUIAnchor.\+Pos\+From\+Anchor (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}}]{rect}{, }\item[{Vector2}]{anchor}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source_l00027}{27}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source}{CUIAnchor.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Vector2(}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ rect.Left\ +\ rect.Width\ *\ anchor.X,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ rect.Top\ +\ rect.Height\ *\ anchor.Y}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ );}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_anchor_ae3468bee93941b3f1a6c5617fa6a1fde}\index{CrabUI.CUIAnchor@{CrabUI.CUIAnchor}!PosFromAnchor@{PosFromAnchor}}
+\index{PosFromAnchor@{PosFromAnchor}!CrabUI.CUIAnchor@{CrabUI.CUIAnchor}}
+\doxysubsubsection{\texorpdfstring{PosFromAnchor()}{PosFromAnchor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_anchor_ae3468bee93941b3f1a6c5617fa6a1fde} 
+Vector2 Crab\+UI.\+CUIAnchor.\+Pos\+From\+Anchor (\begin{DoxyParamCaption}\item[{Vector2}]{parent\+Size}{, }\item[{Vector2}]{anchor}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source_l00035}{35}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source}{CUIAnchor.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Vector2(}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ parentSize.X\ *\ anchor.X,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ parentSize.Y\ *\ anchor.Y}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ );}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_anchor_a39e1c2e80085d5ab484facd562a7a6da}\index{CrabUI.CUIAnchor@{CrabUI.CUIAnchor}!RectFrom2PointsWithAnchors@{RectFrom2PointsWithAnchors}}
+\index{RectFrom2PointsWithAnchors@{RectFrom2PointsWithAnchors}!CrabUI.CUIAnchor@{CrabUI.CUIAnchor}}
+\doxysubsubsection{\texorpdfstring{RectFrom2PointsWithAnchors()}{RectFrom2PointsWithAnchors()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_anchor_a39e1c2e80085d5ab484facd562a7a6da} 
+\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}} Crab\+UI.\+CUIAnchor.\+Rect\+From2\+Points\+With\+Anchors (\begin{DoxyParamCaption}\item[{Vector2}]{point1}{, }\item[{Vector2}]{anchor1}{, }\item[{Vector2}]{point2}{, }\item[{Vector2}]{anchor2}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source_l00079}{79}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source}{CUIAnchor.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00080\ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \textcolor{comment}{//\ point1\ =\ position\ +\ size\ *\ anchor1;}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \textcolor{comment}{//\ point2\ =\ position\ +\ size\ *\ anchor2;}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \textcolor{comment}{//\ position\ =\ point1\ -\/\ size\ *\ anchor1;}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \textcolor{comment}{//\ position\ =\ point2\ -\/\ size\ *\ anchor2;}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \textcolor{comment}{//\ point1\ -\/\ size\ *\ anchor1\ =\ point2\ -\/\ size\ *\ anchor2}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \textcolor{comment}{//\ size\ *\ (anchor1\ \ -\/\ \ anchor2)\ =\ point1\ -\/\ point2}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ Vector2\ size\ =\ (point1\ -\/\ point2)\ /\ (anchor1\ -\/\ anchor2);}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ Vector2\ position\ =\ point1\ -\/\ size\ *\ anchor1;}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ CUIRect(position,\ size);}
+\DoxyCodeLine{00094\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_anchor_a870f285ca844f5f114dd0aef5d1f79ea}\index{CrabUI.CUIAnchor@{CrabUI.CUIAnchor}!RectFromPointAndSize@{RectFromPointAndSize}}
+\index{RectFromPointAndSize@{RectFromPointAndSize}!CrabUI.CUIAnchor@{CrabUI.CUIAnchor}}
+\doxysubsubsection{\texorpdfstring{RectFromPointAndSize()}{RectFromPointAndSize()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_anchor_a870f285ca844f5f114dd0aef5d1f79ea} 
+\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}} Crab\+UI.\+CUIAnchor.\+Rect\+From\+Point\+And\+Size (\begin{DoxyParamCaption}\item[{Vector2}]{point1}{, }\item[{Vector2}]{anchor1}{, }\item[{Vector2}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source_l00096}{96}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source}{CUIAnchor.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00097\ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ Vector2\ position\ =\ point1\ -\/\ size\ *\ anchor1;}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ CUIRect(position,\ size);}
+\DoxyCodeLine{00101\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_anchor_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_anchor_a0784d9d5257c10e6479dc07fefe843d6}\index{CrabUI.CUIAnchor@{CrabUI.CUIAnchor}!Center@{Center}}
+\index{Center@{Center}!CrabUI.CUIAnchor@{CrabUI.CUIAnchor}}
+\doxysubsubsection{\texorpdfstring{Center}{Center}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_anchor_a0784d9d5257c10e6479dc07fefe843d6} 
+Vector2 Crab\+UI.\+CUIAnchor.\+Center = new Vector2(0.\+5f, 0.\+5f)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source}{CUIAnchor.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_c_u_i_anchor_a3bec219bcb6b9ac6a8096db941c6c2d6}\index{CrabUI.CUIAnchor@{CrabUI.CUIAnchor}!CenterBottom@{CenterBottom}}
+\index{CenterBottom@{CenterBottom}!CrabUI.CUIAnchor@{CrabUI.CUIAnchor}}
+\doxysubsubsection{\texorpdfstring{CenterBottom}{CenterBottom}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_anchor_a3bec219bcb6b9ac6a8096db941c6c2d6} 
+Vector2 Crab\+UI.\+CUIAnchor.\+Center\+Bottom = new Vector2(0.\+5f, 1.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source}{CUIAnchor.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_c_u_i_anchor_a42b2001ae0bc81f86e34cc9494a2eb19}\index{CrabUI.CUIAnchor@{CrabUI.CUIAnchor}!CenterTop@{CenterTop}}
+\index{CenterTop@{CenterTop}!CrabUI.CUIAnchor@{CrabUI.CUIAnchor}}
+\doxysubsubsection{\texorpdfstring{CenterTop}{CenterTop}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_anchor_a42b2001ae0bc81f86e34cc9494a2eb19} 
+Vector2 Crab\+UI.\+CUIAnchor.\+Center\+Top = new Vector2(0.\+5f, 0.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source_l00013}{13}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source}{CUIAnchor.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_c_u_i_anchor_afd6952f30b5676b2853f245de426b746}\index{CrabUI.CUIAnchor@{CrabUI.CUIAnchor}!LeftBottom@{LeftBottom}}
+\index{LeftBottom@{LeftBottom}!CrabUI.CUIAnchor@{CrabUI.CUIAnchor}}
+\doxysubsubsection{\texorpdfstring{LeftBottom}{LeftBottom}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_anchor_afd6952f30b5676b2853f245de426b746} 
+Vector2 Crab\+UI.\+CUIAnchor.\+Left\+Bottom = new Vector2(0.\+0f, 1.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source}{CUIAnchor.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_c_u_i_anchor_a3603c1df2d67e4f704880080a5695662}\index{CrabUI.CUIAnchor@{CrabUI.CUIAnchor}!LeftCenter@{LeftCenter}}
+\index{LeftCenter@{LeftCenter}!CrabUI.CUIAnchor@{CrabUI.CUIAnchor}}
+\doxysubsubsection{\texorpdfstring{LeftCenter}{LeftCenter}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_anchor_a3603c1df2d67e4f704880080a5695662} 
+Vector2 Crab\+UI.\+CUIAnchor.\+Left\+Center = new Vector2(0.\+0f, 0.\+5f)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source}{CUIAnchor.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_c_u_i_anchor_a4e63cb254f4652fe6f75f544d134ab28}\index{CrabUI.CUIAnchor@{CrabUI.CUIAnchor}!LeftTop@{LeftTop}}
+\index{LeftTop@{LeftTop}!CrabUI.CUIAnchor@{CrabUI.CUIAnchor}}
+\doxysubsubsection{\texorpdfstring{LeftTop}{LeftTop}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_anchor_a4e63cb254f4652fe6f75f544d134ab28} 
+Vector2 Crab\+UI.\+CUIAnchor.\+Left\+Top = new Vector2(0.\+0f, 0.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source_l00012}{12}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source}{CUIAnchor.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_c_u_i_anchor_ae1a5e0dd27ed9a00fb0a25c093edda07}\index{CrabUI.CUIAnchor@{CrabUI.CUIAnchor}!RightBottom@{RightBottom}}
+\index{RightBottom@{RightBottom}!CrabUI.CUIAnchor@{CrabUI.CUIAnchor}}
+\doxysubsubsection{\texorpdfstring{RightBottom}{RightBottom}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_anchor_ae1a5e0dd27ed9a00fb0a25c093edda07} 
+Vector2 Crab\+UI.\+CUIAnchor.\+Right\+Bottom = new Vector2(1.\+0f, 1.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source_l00020}{20}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source}{CUIAnchor.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_c_u_i_anchor_acee965590f048236a60ea28f5253f78b}\index{CrabUI.CUIAnchor@{CrabUI.CUIAnchor}!RightCenter@{RightCenter}}
+\index{RightCenter@{RightCenter}!CrabUI.CUIAnchor@{CrabUI.CUIAnchor}}
+\doxysubsubsection{\texorpdfstring{RightCenter}{RightCenter}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_anchor_acee965590f048236a60ea28f5253f78b} 
+Vector2 Crab\+UI.\+CUIAnchor.\+Right\+Center = new Vector2(1.\+0f, 0.\+5f)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source}{CUIAnchor.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_c_u_i_anchor_abecfc723619dbe08a9b4506ed53ee321}\index{CrabUI.CUIAnchor@{CrabUI.CUIAnchor}!RightTop@{RightTop}}
+\index{RightTop@{RightTop}!CrabUI.CUIAnchor@{CrabUI.CUIAnchor}}
+\doxysubsubsection{\texorpdfstring{RightTop}{RightTop}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_anchor_abecfc723619dbe08a9b4506ed53ee321} 
+Vector2 Crab\+UI.\+CUIAnchor.\+Right\+Top = new Vector2(1.\+0f, 0.\+0f)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source_l00014}{14}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source}{CUIAnchor.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Simple Types/\+CUIAnchor.\+cs\end{DoxyCompactItemize}

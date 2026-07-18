@@ -1,0 +1,75 @@
+\doxysection{Crab\+UIUser.\+Hash\+Code\+Experiment Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_hash_code_experiment}{}\label{class_crab_u_i_user_1_1_hash_code_experiment}\index{CrabUIUser.HashCodeExperiment@{CrabUIUser.HashCodeExperiment}}
+
+
+So dict always uses both, Get\+Hash\+Code and Equals to find the value even if there\textquotesingle{}s only 1 element with such hash.  
+
+
+Inheritance diagram for Crab\+UIUser.\+Hash\+Code\+Experiment:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_hash_code_experiment}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_hash_code_experiment_1_1_a}{A}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_hash_code_experiment_a460292b1bfce4c7b96cc94509bc198a3}{Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Crab\+UIUser.\+Experiment}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Run} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+So dict always uses both, Get\+Hash\+Code and Equals to find the value even if there\textquotesingle{}s only 1 element with such hash. 
+
+Definition at line \doxymbox{\hyperlink{_hash_code_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_hash_code_8cs_source}{Hash\+Code.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_hash_code_experiment_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_hash_code_experiment_a460292b1bfce4c7b96cc94509bc198a3}\index{CrabUIUser.HashCodeExperiment@{CrabUIUser.HashCodeExperiment}!Run@{Run}}
+\index{Run@{Run}!CrabUIUser.HashCodeExperiment@{CrabUIUser.HashCodeExperiment}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_hash_code_experiment_a460292b1bfce4c7b96cc94509bc198a3} 
+override void Crab\+UIUser.\+Hash\+Code\+Experiment.\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_hash_code_8cs_source_l00031}{31}} of file \doxymbox{\hyperlink{_hash_code_8cs_source}{Hash\+Code.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ A\ a1\ =\ \textcolor{keyword}{new}\ A()\ \{\ ID\ =\ 1\ \};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ A\ a2\ =\ \textcolor{keyword}{new}\ A()\ \{\ ID\ =\ 1\ \};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ A\ a3\ =\ \textcolor{keyword}{new}\ A()\ \{\ ID\ =\ 1\ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ Dictionary<A,\ string>\ dict\ =\ \textcolor{keyword}{new}\ Dictionary<A,\ string>() }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ [a1]\ =\ \textcolor{stringliteral}{"{}a1"{}},}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ [a2]\ =\ \textcolor{stringliteral}{"{}a2"{}},}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ [a3]\ =\ \textcolor{stringliteral}{"{}a3"{}},}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ Mod.Logger.Log(dict[a1]);}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ Mod.Logger.Log(dict[a2]);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ Mod.Logger.Log(dict[a3]);}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Design/\+Hash\+Code.\+cs\end{DoxyCompactItemize}

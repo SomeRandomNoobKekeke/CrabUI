@@ -1,0 +1,81 @@
+\doxysection{CUIFrame.\+cs}
+\hypertarget{_c_u_i_frame_8cs_source}{}\label{_c_u_i_frame_8cs_source}\index{ClientProject/ClientSource/CUI/Core/Components/CUIFrame.cs@{ClientProject/ClientSource/CUI/Core/Components/CUIFrame.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Collections.ObjectModel;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_code_generator}{CUICodeGenerator}};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00010}00010\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00012}00012\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00014}\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_frame}{00014}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }CUIFrame\ :\ CUIComponent,\ \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_component}{IComponent}}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00015}00015\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_c_u_i_style}{ICUIStyle}}\ DefaultStyle\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}\ CUIDefaultStyle<CUIFrame>((c)\ =>}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00017}00017\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00018}00018\ \ \ \ \ \ \ c.Background.Color\ =\ c.Palette.Colors[\textcolor{stringliteral}{"{}frame"{}}];}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00019}00019\ \ \ \ \ \ \ c.Borders.Color\ =\ c.Palette.Colors[\textcolor{stringliteral}{"{}border"{}}];}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00020}00020\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ InitStyle()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00023}00023\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00024}00024\ \ \ \ \ \ \ base.InitStyle();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00025}00025\ \ \ \ \ \ \ AbsoluteMin\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_null_rect}{CUINullRect}}(w:\ \doxymbox{\hyperlink{class_crab_u_i_1_1_resize_handle}{ResizeHandle}}.DefaultSize.X,\ h:\ \doxymbox{\hyperlink{class_crab_u_i_1_1_resize_handle}{ResizeHandle}}.DefaultSize.Y);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00026}00026\ \ \ \ \ \ \ Draggable\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00027}00027\ \ \ \ \ \ \ CullChildren\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00028}00028\ \ \ \ \ \ \ Resizable\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00029}00029\ \ \ \ \ \ \ Focusable\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00030}00030\ \ \ \ \ \ \ ConsumeFocus\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00031}00031\ \ \ \ \ \ \ ConsumeMouseEvents\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00032}00032\ \ \ \ \ \ \ Anchor\ =\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_anchor}{CUIAnchor}}.Center;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00033}00033\ \ \ \ \ \ \ Background.Sprite\ =\ CUIDefaultSprite.Vignette;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00036}00036\ \ \ \ \ \textcolor{keyword}{public}\ CUIComponent\ TargetMainComponent\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ IsOpen}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00041}00041\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00042}00042\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Parent\ !=\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00043}00043\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00044}00044\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (value)\ Open();\ \textcolor{keywordflow}{else}\ Close();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00046}00046\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00049}00049\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Open(CUIComponent\ Host\ =\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00050}00050\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00051}00051\ \ \ \ \ \ \ Host\ ??=\ TargetMainComponent\ ??\ CUI.Main;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00052}00052\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Host\ ==\ \textcolor{keyword}{null}\ ||\ Parent\ ==\ Host)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00054}00054\ \ \ \ \ \ \ Host.Children.Add(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00055}00055\ \ \ \ \ \ \ OnOpen?.Invoke(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00056}00056\ \ \ \ \ \ \ SaveState(\textcolor{stringliteral}{"{}lastopened"{}});}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00057}00057\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00060}00060\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Close()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00061}00061\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00062}00062\ \ \ \ \ \ \ RemoveSelf();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00063}00063\ \ \ \ \ \ \ OnClose?.Invoke(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00065}00065\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<CUIFrame>\ OnOpen;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00066}00066\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<CUIFrame>\ OnClose;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00068}00068\ \ \ \ \ \textcolor{keyword}{public}\ CUIFrame()\ :\ base()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00069}00069\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00070}00070\ \ \ \ \ \ \ Commands.ListenFor(\textcolor{stringliteral}{"{}close"{}},\ (\_)\ =>\ Close());}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00071}00071\ \ \ \ \ \ \ MouseDoubleClick\ +=\ (c,\ e)\ =>\ RestoreState(\textcolor{stringliteral}{"{}lastopened"{}});}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00072}00072\ \ \ \ \ \ \ OnFocus\ +=\ MoveToTop;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00073}00073\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00074}00074\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_frame_8cs_source_l00075}00075\ \}}
+
+\end{DoxyCode}

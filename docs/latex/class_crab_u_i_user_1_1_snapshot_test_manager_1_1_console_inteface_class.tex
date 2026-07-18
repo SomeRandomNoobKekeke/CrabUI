@@ -1,0 +1,94 @@
+\doxysection{Crab\+UIUser.\+Snapshot\+Test\+Manager.\+Console\+Inteface\+Class Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_snapshot_test_manager_1_1_console_inteface_class}{}\label{class_crab_u_i_user_1_1_snapshot_test_manager_1_1_console_inteface_class}\index{CrabUIUser.SnapshotTestManager.ConsoleIntefaceClass@{CrabUIUser.SnapshotTestManager.ConsoleIntefaceClass}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_test_manager_1_1_console_inteface_class_a29507172ad86a36acbc56076ddd4c0e4}{Console\+Inteface\+Class}} (Snapshot\+Test\+Manager manager)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_test_manager_1_1_console_inteface_class_a1f1df41822694e326a3bd6b76f28bb35}{Handle\+Manager\+Event}} (Snapshot\+Test\+Manager.\+Event e)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_logger}{ILogger}} \doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_test_manager_1_1_console_inteface_class_a7ee9e6f1212bcaf9b06cafdc3378be25}{Logger}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_snapshot_test_manager_console_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_snapshot_test_manager_console_8cs_source}{Snapshot\+Test\+Manager\+Console.\+cs}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_crab_u_i_user_1_1_snapshot_test_manager_1_1_console_inteface_class_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_snapshot_test_manager_1_1_console_inteface_class_a29507172ad86a36acbc56076ddd4c0e4}\index{CrabUIUser.SnapshotTestManager.ConsoleIntefaceClass@{CrabUIUser.SnapshotTestManager.ConsoleIntefaceClass}!ConsoleIntefaceClass@{ConsoleIntefaceClass}}
+\index{ConsoleIntefaceClass@{ConsoleIntefaceClass}!CrabUIUser.SnapshotTestManager.ConsoleIntefaceClass@{CrabUIUser.SnapshotTestManager.ConsoleIntefaceClass}}
+\doxysubsubsection{\texorpdfstring{ConsoleIntefaceClass()}{ConsoleIntefaceClass()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_snapshot_test_manager_1_1_console_inteface_class_a29507172ad86a36acbc56076ddd4c0e4} 
+Crab\+UIUser.\+Snapshot\+Test\+Manager.\+Console\+Inteface\+Class.\+Console\+Inteface\+Class (\begin{DoxyParamCaption}\item[{Snapshot\+Test\+Manager}]{manager}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_snapshot_test_manager_console_8cs_source_l00021}{21}} of file \doxymbox{\hyperlink{_snapshot_test_manager_console_8cs_source}{Snapshot\+Test\+Manager\+Console.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ manager.Events.Add(HandleManagerEvent);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_snapshot_test_manager_1_1_console_inteface_class_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_snapshot_test_manager_1_1_console_inteface_class_a1f1df41822694e326a3bd6b76f28bb35}\index{CrabUIUser.SnapshotTestManager.ConsoleIntefaceClass@{CrabUIUser.SnapshotTestManager.ConsoleIntefaceClass}!HandleManagerEvent@{HandleManagerEvent}}
+\index{HandleManagerEvent@{HandleManagerEvent}!CrabUIUser.SnapshotTestManager.ConsoleIntefaceClass@{CrabUIUser.SnapshotTestManager.ConsoleIntefaceClass}}
+\doxysubsubsection{\texorpdfstring{HandleManagerEvent()}{HandleManagerEvent()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_snapshot_test_manager_1_1_console_inteface_class_a1f1df41822694e326a3bd6b76f28bb35} 
+void Crab\+UIUser.\+Snapshot\+Test\+Manager.\+Console\+Inteface\+Class.\+Handle\+Manager\+Event (\begin{DoxyParamCaption}\item[{Snapshot\+Test\+Manager.\+Event}]{e}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_snapshot_test_manager_console_8cs_source_l00026}{26}} of file \doxymbox{\hyperlink{_snapshot_test_manager_console_8cs_source}{Snapshot\+Test\+Manager\+Console.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (e.Name\ ==\ \textcolor{stringliteral}{"{}passed"{}})}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ Logger.Log(\$\textcolor{stringliteral}{"{}\{CUILibs.Logger.WrapInColor(\$"{}}\{e.Test.Name\}\ Passed\textcolor{stringliteral}{"{},\ "{}}lime\textcolor{stringliteral}{"{})\}"{}});}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (e.Name\ ==\ \textcolor{stringliteral}{"{}failed"{}})}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ Logger.Log(\$\textcolor{stringliteral}{"{}\{CUILibs.Logger.WrapInColor(\$"{}}\{e.Test.Name\}\ Failed\textcolor{stringliteral}{"{},\ "{}}red\textcolor{stringliteral}{"{})\}"{}});}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ Logger.Log(e.Message);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_user_1_1_snapshot_test_manager_1_1_console_inteface_class_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_snapshot_test_manager_1_1_console_inteface_class_a7ee9e6f1212bcaf9b06cafdc3378be25}\index{CrabUIUser.SnapshotTestManager.ConsoleIntefaceClass@{CrabUIUser.SnapshotTestManager.ConsoleIntefaceClass}!Logger@{Logger}}
+\index{Logger@{Logger}!CrabUIUser.SnapshotTestManager.ConsoleIntefaceClass@{CrabUIUser.SnapshotTestManager.ConsoleIntefaceClass}}
+\doxysubsubsection{\texorpdfstring{Logger}{Logger}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_snapshot_test_manager_1_1_console_inteface_class_a7ee9e6f1212bcaf9b06cafdc3378be25} 
+\doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_logger}{ILogger}} Crab\+UIUser.\+Snapshot\+Test\+Manager.\+Console\+Inteface\+Class.\+Logger\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_snapshot_test_manager_console_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_snapshot_test_manager_console_8cs_source}{Snapshot\+Test\+Manager\+Console.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+CUITest/\+\+Snapshots/\+Snapshot\+Test\+Manager\+Console.\+cs\end{DoxyCompactItemize}

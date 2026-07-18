@@ -1,0 +1,250 @@
+\doxysection{Crab\+UIUser.\+Component\+Snapshot Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_component_snapshot}{}\label{class_crab_u_i_user_1_1_component_snapshot}\index{CrabUIUser.ComponentSnapshot@{CrabUIUser.ComponentSnapshot}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot_a80cabc9615bb7f5f400faa9105d414a1}{Save}} (string path)
+\item 
+override string \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot_a66946048967f10d85c8564531f4ff609}{To\+String}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot}{Component\+Snapshot}} \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot_aad20c071d58e126a573e49979159ab26}{Take}} (\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component}{CUIComponent}} component, string name)
+\item 
+static \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot}{Component\+Snapshot}} \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot_a175a7732900d06b9899217ec2406c7df}{Load\+Snapshot}} (string path)
+\item 
+static bool \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot_a5d283580148c383ad819f874bbec083c}{Are\+Equal}} (\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot}{Component\+Snapshot}} a, \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot}{Component\+Snapshot}} b)
+\item 
+static string \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot_a4bf6ada4f4ee441a7c18d5f5d8a24639}{Create\+Diff\+String}} (\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot}{Component\+Snapshot}} a, \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot}{Component\+Snapshot}} b)
+\item 
+static string \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot_a9e30ad3dabdd7129e3a0e50e5024f3af}{Create\+Diff\+String}} (string a, string b)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot_a27e86980b573e161a11f608ad1576aa3}{Name}} = "{}"{}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+XElement \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot_aa3eb0841f3af39dd0082de549c417c27}{Root}} = new XElement("{}Giga\+Bruh"{})\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_component_snapshot_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_component_snapshot_8cs_source}{Component\+Snapshot.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_component_snapshot_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_component_snapshot_a5d283580148c383ad819f874bbec083c}\index{CrabUIUser.ComponentSnapshot@{CrabUIUser.ComponentSnapshot}!AreEqual@{AreEqual}}
+\index{AreEqual@{AreEqual}!CrabUIUser.ComponentSnapshot@{CrabUIUser.ComponentSnapshot}}
+\doxysubsubsection{\texorpdfstring{AreEqual()}{AreEqual()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_component_snapshot_a5d283580148c383ad819f874bbec083c} 
+bool Crab\+UIUser.\+Component\+Snapshot.\+Are\+Equal (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot}{Component\+Snapshot}}}]{a}{, }\item[{\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot}{Component\+Snapshot}}}]{b}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_component_snapshot_8cs_source_l00070}{70}} of file \doxymbox{\hyperlink{_component_snapshot_8cs_source}{Component\+Snapshot.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ =>\ a.ToString()\ ==\ b.ToString();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_component_snapshot_a4bf6ada4f4ee441a7c18d5f5d8a24639}\index{CrabUIUser.ComponentSnapshot@{CrabUIUser.ComponentSnapshot}!CreateDiffString@{CreateDiffString}}
+\index{CreateDiffString@{CreateDiffString}!CrabUIUser.ComponentSnapshot@{CrabUIUser.ComponentSnapshot}}
+\doxysubsubsection{\texorpdfstring{CreateDiffString()}{CreateDiffString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_component_snapshot_a4bf6ada4f4ee441a7c18d5f5d8a24639} 
+string Crab\+UIUser.\+Component\+Snapshot.\+Create\+Diff\+String (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot}{Component\+Snapshot}}}]{a}{, }\item[{\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot}{Component\+Snapshot}}}]{b}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_component_snapshot_8cs_source_l00073}{73}} of file \doxymbox{\hyperlink{_component_snapshot_8cs_source}{Component\+Snapshot.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ =>\ CreateDiffString(a.ToString(),\ b.ToString());}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_component_snapshot_a9e30ad3dabdd7129e3a0e50e5024f3af}\index{CrabUIUser.ComponentSnapshot@{CrabUIUser.ComponentSnapshot}!CreateDiffString@{CreateDiffString}}
+\index{CreateDiffString@{CreateDiffString}!CrabUIUser.ComponentSnapshot@{CrabUIUser.ComponentSnapshot}}
+\doxysubsubsection{\texorpdfstring{CreateDiffString()}{CreateDiffString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_component_snapshot_a9e30ad3dabdd7129e3a0e50e5024f3af} 
+string Crab\+UIUser.\+Component\+Snapshot.\+Create\+Diff\+String (\begin{DoxyParamCaption}\item[{string}]{a}{, }\item[{string}]{b}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_component_snapshot_8cs_source_l00075}{75}} of file \doxymbox{\hyperlink{_component_snapshot_8cs_source}{Component\+Snapshot.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00076\ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ StringBuilder\ sb\ =\ \textcolor{keyword}{new}\ StringBuilder();}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ Color\ cl\ =\ Color.White;}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ EnterColor(Color\ newCl) }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (newCl\ ==\ cl)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ cl\ =\ newCl;}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ sb.Append(\$\textcolor{stringliteral}{"{}‖color:\{cl.R\},\{cl.G\},\{cl.B\}‖"{}});}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ExitColor() }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Color.White\ ==\ cl)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ cl\ =\ Color.White;}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ sb.Append(\$\textcolor{stringliteral}{"{}‖end‖"{}});}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ChangeColor(Color\ newCl) }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ ExitColor();}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ EnterColor(newCl);}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ EnterColor(Color.Gray);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ minLength\ =\ Math.Min(a.Length,\ b.Length);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ minLength;\ i++)}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (a[i]\ !=\ b[i])}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ ChangeColor(Color.Cyan);}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ ChangeColor(Color.Gray);}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ sb.Append(a[i]);}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ ExitColor();}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sb.ToString();}
+\DoxyCodeLine{00124\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_component_snapshot_a175a7732900d06b9899217ec2406c7df}\index{CrabUIUser.ComponentSnapshot@{CrabUIUser.ComponentSnapshot}!LoadSnapshot@{LoadSnapshot}}
+\index{LoadSnapshot@{LoadSnapshot}!CrabUIUser.ComponentSnapshot@{CrabUIUser.ComponentSnapshot}}
+\doxysubsubsection{\texorpdfstring{LoadSnapshot()}{LoadSnapshot()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_component_snapshot_a175a7732900d06b9899217ec2406c7df} 
+\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot}{Component\+Snapshot}} Crab\+UIUser.\+Component\+Snapshot.\+Load\+Snapshot (\begin{DoxyParamCaption}\item[{string}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_component_snapshot_8cs_source_l00049}{49}} of file \doxymbox{\hyperlink{_component_snapshot_8cs_source}{Component\+Snapshot.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!File.Exists(path))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ ComponentSnapshot() }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ Name\ =\ Path.GetFileNameWithoutExtension(path),}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ Root\ =\ XElement.Parse(File.ReadAllText(path)),}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_component_snapshot_a80cabc9615bb7f5f400faa9105d414a1}\index{CrabUIUser.ComponentSnapshot@{CrabUIUser.ComponentSnapshot}!Save@{Save}}
+\index{Save@{Save}!CrabUIUser.ComponentSnapshot@{CrabUIUser.ComponentSnapshot}}
+\doxysubsubsection{\texorpdfstring{Save()}{Save()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_component_snapshot_a80cabc9615bb7f5f400faa9105d414a1} 
+void Crab\+UIUser.\+Component\+Snapshot.\+Save (\begin{DoxyParamCaption}\item[{string}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_component_snapshot_8cs_source_l00063}{63}} of file \doxymbox{\hyperlink{_component_snapshot_8cs_source}{Component\+Snapshot.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00064\ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ File.WriteAllText(path,\ Root.ToString());}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_component_snapshot_aad20c071d58e126a573e49979159ab26}\index{CrabUIUser.ComponentSnapshot@{CrabUIUser.ComponentSnapshot}!Take@{Take}}
+\index{Take@{Take}!CrabUIUser.ComponentSnapshot@{CrabUIUser.ComponentSnapshot}}
+\doxysubsubsection{\texorpdfstring{Take()}{Take()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_component_snapshot_aad20c071d58e126a573e49979159ab26} 
+\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot}{Component\+Snapshot}} Crab\+UIUser.\+Component\+Snapshot.\+Take (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component}{CUIComponent}}}]{component}{, }\item[{string}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_component_snapshot_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_component_snapshot_8cs_source}{Component\+Snapshot.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ ComponentSnapshot() }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ Name\ =\ name,}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ Root\ =\ TakeXML(component),}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_component_snapshot_a66946048967f10d85c8564531f4ff609}\index{CrabUIUser.ComponentSnapshot@{CrabUIUser.ComponentSnapshot}!ToString@{ToString}}
+\index{ToString@{ToString}!CrabUIUser.ComponentSnapshot@{CrabUIUser.ComponentSnapshot}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_component_snapshot_a66946048967f10d85c8564531f4ff609} 
+override string Crab\+UIUser.\+Component\+Snapshot.\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_component_snapshot_8cs_source_l00068}{68}} of file \doxymbox{\hyperlink{_component_snapshot_8cs_source}{Component\+Snapshot.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00068\ =>\ Root.ToString();}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_user_1_1_component_snapshot_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_component_snapshot_a27e86980b573e161a11f608ad1576aa3}\index{CrabUIUser.ComponentSnapshot@{CrabUIUser.ComponentSnapshot}!Name@{Name}}
+\index{Name@{Name}!CrabUIUser.ComponentSnapshot@{CrabUIUser.ComponentSnapshot}}
+\doxysubsubsection{\texorpdfstring{Name}{Name}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_component_snapshot_a27e86980b573e161a11f608ad1576aa3} 
+string Crab\+UIUser.\+Component\+Snapshot.\+Name = "{}"{}\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_component_snapshot_8cs_source_l00060}{60}} of file \doxymbox{\hyperlink{_component_snapshot_8cs_source}{Component\+Snapshot.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{stringliteral}{"{}"{}};}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_component_snapshot_aa3eb0841f3af39dd0082de549c417c27}\index{CrabUIUser.ComponentSnapshot@{CrabUIUser.ComponentSnapshot}!Root@{Root}}
+\index{Root@{Root}!CrabUIUser.ComponentSnapshot@{CrabUIUser.ComponentSnapshot}}
+\doxysubsubsection{\texorpdfstring{Root}{Root}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_component_snapshot_aa3eb0841f3af39dd0082de549c417c27} 
+XElement Crab\+UIUser.\+Component\+Snapshot.\+Root = new XElement("{}Giga\+Bruh"{})\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_component_snapshot_8cs_source_l00061}{61}} of file \doxymbox{\hyperlink{_component_snapshot_8cs_source}{Component\+Snapshot.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00061\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}\ XElement(\textcolor{stringliteral}{"{}GigaBruh"{}});}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+CUITest/\+\+Snapshots/\+Component\+Snapshot.\+cs\end{DoxyCompactItemize}

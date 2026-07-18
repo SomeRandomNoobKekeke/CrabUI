@@ -1,0 +1,86 @@
+\doxysection{Crab\+UIUser.\+How\+Layouts\+Should\+Generally\+Work.\+CUIPlain\+Layout Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_c_u_i_plain_layout}{}\label{class_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_c_u_i_plain_layout}\index{CrabUIUser.HowLayoutsShouldGenerallyWork.CUIPlainLayout@{CrabUIUser.HowLayoutsShouldGenerallyWork.CUIPlainLayout}}
+Inheritance diagram for Crab\+UIUser.\+How\+Layouts\+Should\+Generally\+Work.\+CUIPlain\+Layout:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_c_u_i_plain_layout}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+interface \doxymbox{\hyperlink{interface_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_c_u_i_plain_layout_1_1_host}{Host}}
+\item 
+interface \doxymbox{\hyperlink{interface_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_c_u_i_plain_layout_1_1_child}{Child}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_c_u_i_plain_layout_a9b5364e50f4104a88bd33a4bbaef67d0}{Connect\+To}} (\doxymbox{\hyperlink{interface_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_layout_1_1_host}{Layout.\+Host}} host)
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_c_u_i_plain_layout_a0a8753f32a80ee2d9bcf2932d505e1dc}{Update\+Children}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_layout}{Crab\+UIUser.\+How\+Layouts\+Should\+Generally\+Work.\+Layout}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_layout_a934de663058073852d7aa6b4cd8f2261}{Connect\+To}} (\doxymbox{\hyperlink{interface_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_layout_1_1_host}{Host}} host)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_plain_layout_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_plain_layout_8cs_source}{Plain\+Layout.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_c_u_i_plain_layout_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_c_u_i_plain_layout_a9b5364e50f4104a88bd33a4bbaef67d0}\index{CrabUIUser.HowLayoutsShouldGenerallyWork.CUIPlainLayout@{CrabUIUser.HowLayoutsShouldGenerallyWork.CUIPlainLayout}!ConnectTo@{ConnectTo}}
+\index{ConnectTo@{ConnectTo}!CrabUIUser.HowLayoutsShouldGenerallyWork.CUIPlainLayout@{CrabUIUser.HowLayoutsShouldGenerallyWork.CUIPlainLayout}}
+\doxysubsubsection{\texorpdfstring{ConnectTo()}{ConnectTo()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_c_u_i_plain_layout_a9b5364e50f4104a88bd33a4bbaef67d0} 
+override void Crab\+UIUser.\+How\+Layouts\+Should\+Generally\+Work.\+CUIPlain\+Layout.\+Connect\+To (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interface_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_layout_1_1_host}{Layout.\+Host}}}]{host}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_plain_layout_8cs_source_l00028}{28}} of file \doxymbox{\hyperlink{_plain_layout_8cs_source}{Plain\+Layout.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ base.ConnectTo(host);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ Parent\ =\ host\ as\ Host;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_c_u_i_plain_layout_a0a8753f32a80ee2d9bcf2932d505e1dc}\index{CrabUIUser.HowLayoutsShouldGenerallyWork.CUIPlainLayout@{CrabUIUser.HowLayoutsShouldGenerallyWork.CUIPlainLayout}!UpdateChildren@{UpdateChildren}}
+\index{UpdateChildren@{UpdateChildren}!CrabUIUser.HowLayoutsShouldGenerallyWork.CUIPlainLayout@{CrabUIUser.HowLayoutsShouldGenerallyWork.CUIPlainLayout}}
+\doxysubsubsection{\texorpdfstring{UpdateChildren()}{UpdateChildren()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_c_u_i_plain_layout_a0a8753f32a80ee2d9bcf2932d505e1dc} 
+override void Crab\+UIUser.\+How\+Layouts\+Should\+Generally\+Work.\+CUIPlain\+Layout.\+Update\+Children (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_layout}{Crab\+UIUser.\+How\+Layouts\+Should\+Generally\+Work.\+Layout}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_plain_layout_8cs_source_l00037}{37}} of file \doxymbox{\hyperlink{_plain_layout_8cs_source}{Plain\+Layout.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Child\ child\ \textcolor{keywordflow}{in}\ Parent.Children)}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ child.Rect\ =\ child.Absolute;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Design/\+\+How\+Layouts\+Should\+Generally\+Work/\+\+Layouts/\+Plain\+Layout.\+cs\end{DoxyCompactItemize}

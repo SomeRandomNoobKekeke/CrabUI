@@ -1,0 +1,54 @@
+\doxysection{Clearable\+Event.\+cs}
+\hypertarget{_clearable_event_8cs_source}{}\label{_clearable_event_8cs_source}\index{ClientProject/ClientSource/Libs/ClearableEvent/ClearableEvent.cs@{ClientProject/ClientSource/Libs/ClearableEvent/ClearableEvent.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00007}00007\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}}}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00009}\doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{00009}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{ClearableEvent}}\ :\ ClearableEventBase}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00010}00010\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{event}\ Action\ Event;}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ Empty\ =>\ Event\ ==\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<Action>\ OnSubscribed;}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<Action>\ OnUnSubscribed;}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_event_subscription}{EventSubscription}}\ Add(Action\ callback)}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00019}00019\ \ \ \ \ \ \ Event\ +=\ callback;}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00020}00020\ \ \ \ \ \ \ OnSubscribed?.Invoke(callback);}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00021}00021\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_event_subscription}{EventSubscription}}(()\ =>}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00022}00022\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ Event\ -\/=\ callback;}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ OnUnSubscribed?.Invoke(callback);}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00025}00025\ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00026}00026\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Remove(Action\ callback)}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00028}00028\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00029}00029\ \ \ \ \ \ \ Event\ -\/=\ callback;}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00030}00030\ \ \ \ \ \ \ OnUnSubscribed?.Invoke(callback);}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00031}00031\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Raise()\ =>\ Event?.Invoke();}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Clear()}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00034}00034\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00035}00035\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Event\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00037}00037\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Delegate\ callback\ \textcolor{keywordflow}{in}\ Event.GetInvocationList())}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00038}00038\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ Event\ -\/=\ (Action)callback;}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00040}00040\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_event_subscription}{EventSubscription}}\ Add(Delegate\ callback)\ =>\ Add((Action)callback);}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00044}00044\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{override}\ Delegate\ DefaultMapping(\doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_clearable_event}{IClearableEvent}}\ next)\ =>\ DefaultMapping((\doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{ClearableEvent}})next);}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00045}00045\ \ \ \ \ \textcolor{keyword}{private}\ Action\ DefaultMapping(\doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{ClearableEvent}}\ next)}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00046}00046\ \ \ \ \ \ \ =>\ ()\ =>\ next.Raise();}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00047}00047\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_clearable_event_8cs_source_l00048}00048\ \}}
+
+\end{DoxyCode}

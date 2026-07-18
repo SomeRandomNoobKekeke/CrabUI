@@ -1,0 +1,224 @@
+\doxysection{Crab\+UI.\+Text\+Block.\+Resize\+Strategy\+Base Class Reference}
+\hypertarget{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base}{}\label{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base}\index{CrabUI.TextBlock.ResizeStrategyBase@{CrabUI.TextBlock.ResizeStrategyBase}}
+Inheritance diagram for Crab\+UI.\+Text\+Block.\+Resize\+Strategy\+Base:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.201717cm]{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_a151bfcc77929e3c3a61a3e0b69eca3db}\label{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_a151bfcc77929e3c3a61a3e0b69eca3db} 
+void {\bfseries Measure\+Raw\+Text\+Size} (string text, float scale, \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_font}{CUIFont}} font)
+\item 
+\Hypertarget{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_aee75a3ccf955640d026659a3de54e1ae}\label{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_aee75a3ccf955640d026659a3de54e1ae} 
+void {\bfseries Measure\+Real\+Text\+Size} (\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}} rect, Vector2 anchor, string text, float scale, \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_font}{CUIFont}} font)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base}{Resize\+Strategy\+Base}} \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_a058a475f04e73fec59345cdde3dba445}{From\+Enum}} (Resize\+Strategy strategy)
+\item 
+static Resize\+Strategy \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_ae0834cff7079ba62ace805422aadc9bd}{To\+Enum}} (\doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base}{Resize\+Strategy\+Base}} strategy\+Base)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static Passive\+Strategy \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_a19f525d3796888099de51635b363c221}{Passive\+Strategy}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+static Rescale\+Strategy \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_ad14508346e6ac4aaefba1eb4dfe154d2}{Rescale\+Strategy}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+static Resist\+Strategy \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_ad102ebfe91af44a23b82e0ef93a833a5}{Resist\+Strategy}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+static Wrap\+Strategy \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_a3bf3c0ba5c8f047fedc49dcbc497fd0f}{Wrap\+Strategy}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+string \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_a10b3a5af4971b213f08d9ead84d01aa7}{Real\+Text}} = "{}"{}\hspace{0.3cm}{\ttfamily  \+[get, protected set]\+}
+\item 
+Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_a07f8073ec5bbd2fa2c7ea7ff85f8214e}{Raw\+Text\+Size}}\hspace{0.3cm}{\ttfamily  \+[get, protected set]\+}
+\item 
+Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_a7677565dc86faa9463a6a1d3ef032323}{Text\+Draw\+Position}}\hspace{0.3cm}{\ttfamily  \+[get, protected set]\+}
+\item 
+\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_null_vector2}{CUINull\+Vector2}} \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_a9786989477e0c64e3c5283886fc128c2}{Forced\+Size}}\hspace{0.3cm}{\ttfamily  \+[get, protected set]\+}
+\item 
+float \doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_aef7eca1c9fb51fc4de00efe23edfb876}{Real\+Scale}}\hspace{0.3cm}{\ttfamily  \+[get, protected set]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_text_block_8_resize_strategy_8cs_source_l00022}{22}} of file \doxymbox{\hyperlink{_text_block_8_resize_strategy_8cs_source}{Text\+Block.\+Resize\+Strategy.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_a058a475f04e73fec59345cdde3dba445}\index{CrabUI.TextBlock.ResizeStrategyBase@{CrabUI.TextBlock.ResizeStrategyBase}!FromEnum@{FromEnum}}
+\index{FromEnum@{FromEnum}!CrabUI.TextBlock.ResizeStrategyBase@{CrabUI.TextBlock.ResizeStrategyBase}}
+\doxysubsubsection{\texorpdfstring{FromEnum()}{FromEnum()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_a058a475f04e73fec59345cdde3dba445} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base}{Resize\+Strategy\+Base}} Crab\+UI.\+Text\+Block.\+Resize\+Strategy\+Base.\+From\+Enum (\begin{DoxyParamCaption}\item[{Resize\+Strategy}]{strategy}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_text_block_8_resize_strategy_8cs_source_l00039}{39}} of file \doxymbox{\hyperlink{_text_block_8_resize_strategy_8cs_source}{Text\+Block.\+Resize\+Strategy.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ =>\ strategy\ \textcolor{keywordflow}{switch}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ ResizeStrategy.Passive\ =>\ PassiveStrategy,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ ResizeStrategy.Rescale\ =>\ RescaleStrategy,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ ResizeStrategy.Resist\ =>\ ResistStrategy,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ ResizeStrategy.Wrap\ =>\ WrapStrategy,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_ae0834cff7079ba62ace805422aadc9bd}\index{CrabUI.TextBlock.ResizeStrategyBase@{CrabUI.TextBlock.ResizeStrategyBase}!ToEnum@{ToEnum}}
+\index{ToEnum@{ToEnum}!CrabUI.TextBlock.ResizeStrategyBase@{CrabUI.TextBlock.ResizeStrategyBase}}
+\doxysubsubsection{\texorpdfstring{ToEnum()}{ToEnum()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_ae0834cff7079ba62ace805422aadc9bd} 
+Resize\+Strategy Crab\+UI.\+Text\+Block.\+Resize\+Strategy\+Base.\+To\+Enum (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base}{Resize\+Strategy\+Base}}}]{strategy\+Base}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_text_block_8_resize_strategy_8cs_source_l00047}{47}} of file \doxymbox{\hyperlink{_text_block_8_resize_strategy_8cs_source}{Text\+Block.\+Resize\+Strategy.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ =>\ strategyBase\ \textcolor{keywordflow}{switch}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ TextBlock.PassiveStrategy\ =>\ ResizeStrategy.Passive,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ TextBlock.RescaleStrategy\ =>\ ResizeStrategy.Rescale,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ TextBlock.ResistStrategy\ =>\ ResizeStrategy.Resist,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ TextBlock.WrapStrategy\ =>\ ResizeStrategy.Wrap}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \};}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_a9786989477e0c64e3c5283886fc128c2}\index{CrabUI.TextBlock.ResizeStrategyBase@{CrabUI.TextBlock.ResizeStrategyBase}!ForcedSize@{ForcedSize}}
+\index{ForcedSize@{ForcedSize}!CrabUI.TextBlock.ResizeStrategyBase@{CrabUI.TextBlock.ResizeStrategyBase}}
+\doxysubsubsection{\texorpdfstring{ForcedSize}{ForcedSize}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_a9786989477e0c64e3c5283886fc128c2} 
+\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_null_vector2}{CUINull\+Vector2}} Crab\+UI.\+Text\+Block.\+Resize\+Strategy\+Base.\+Forced\+Size\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_text_block_8_resize_strategy_8cs_source_l00036}{36}} of file \doxymbox{\hyperlink{_text_block_8_resize_strategy_8cs_source}{Text\+Block.\+Resize\+Strategy.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{protected}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_a19f525d3796888099de51635b363c221}\index{CrabUI.TextBlock.ResizeStrategyBase@{CrabUI.TextBlock.ResizeStrategyBase}!PassiveStrategy@{PassiveStrategy}}
+\index{PassiveStrategy@{PassiveStrategy}!CrabUI.TextBlock.ResizeStrategyBase@{CrabUI.TextBlock.ResizeStrategyBase}}
+\doxysubsubsection{\texorpdfstring{PassiveStrategy}{PassiveStrategy}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_a19f525d3796888099de51635b363c221} 
+Passive\+Strategy Crab\+UI.\+Text\+Block.\+Resize\+Strategy\+Base.\+Passive\+Strategy\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_text_block_8_resize_strategy_8cs_source_l00024}{24}} of file \doxymbox{\hyperlink{_text_block_8_resize_strategy_8cs_source}{Text\+Block.\+Resize\+Strategy.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_a07f8073ec5bbd2fa2c7ea7ff85f8214e}\index{CrabUI.TextBlock.ResizeStrategyBase@{CrabUI.TextBlock.ResizeStrategyBase}!RawTextSize@{RawTextSize}}
+\index{RawTextSize@{RawTextSize}!CrabUI.TextBlock.ResizeStrategyBase@{CrabUI.TextBlock.ResizeStrategyBase}}
+\doxysubsubsection{\texorpdfstring{RawTextSize}{RawTextSize}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_a07f8073ec5bbd2fa2c7ea7ff85f8214e} 
+Vector2 Crab\+UI.\+Text\+Block.\+Resize\+Strategy\+Base.\+Raw\+Text\+Size\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_text_block_8_resize_strategy_8cs_source_l00034}{34}} of file \doxymbox{\hyperlink{_text_block_8_resize_strategy_8cs_source}{Text\+Block.\+Resize\+Strategy.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{protected}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_aef7eca1c9fb51fc4de00efe23edfb876}\index{CrabUI.TextBlock.ResizeStrategyBase@{CrabUI.TextBlock.ResizeStrategyBase}!RealScale@{RealScale}}
+\index{RealScale@{RealScale}!CrabUI.TextBlock.ResizeStrategyBase@{CrabUI.TextBlock.ResizeStrategyBase}}
+\doxysubsubsection{\texorpdfstring{RealScale}{RealScale}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_aef7eca1c9fb51fc4de00efe23edfb876} 
+float Crab\+UI.\+Text\+Block.\+Resize\+Strategy\+Base.\+Real\+Scale\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_text_block_8_resize_strategy_8cs_source_l00037}{37}} of file \doxymbox{\hyperlink{_text_block_8_resize_strategy_8cs_source}{Text\+Block.\+Resize\+Strategy.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{protected}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_a10b3a5af4971b213f08d9ead84d01aa7}\index{CrabUI.TextBlock.ResizeStrategyBase@{CrabUI.TextBlock.ResizeStrategyBase}!RealText@{RealText}}
+\index{RealText@{RealText}!CrabUI.TextBlock.ResizeStrategyBase@{CrabUI.TextBlock.ResizeStrategyBase}}
+\doxysubsubsection{\texorpdfstring{RealText}{RealText}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_a10b3a5af4971b213f08d9ead84d01aa7} 
+string Crab\+UI.\+Text\+Block.\+Resize\+Strategy\+Base.\+Real\+Text = "{}"{}\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_text_block_8_resize_strategy_8cs_source_l00033}{33}} of file \doxymbox{\hyperlink{_text_block_8_resize_strategy_8cs_source}{Text\+Block.\+Resize\+Strategy.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{protected}\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{stringliteral}{"{}"{}};}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_ad14508346e6ac4aaefba1eb4dfe154d2}\index{CrabUI.TextBlock.ResizeStrategyBase@{CrabUI.TextBlock.ResizeStrategyBase}!RescaleStrategy@{RescaleStrategy}}
+\index{RescaleStrategy@{RescaleStrategy}!CrabUI.TextBlock.ResizeStrategyBase@{CrabUI.TextBlock.ResizeStrategyBase}}
+\doxysubsubsection{\texorpdfstring{RescaleStrategy}{RescaleStrategy}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_ad14508346e6ac4aaefba1eb4dfe154d2} 
+Rescale\+Strategy Crab\+UI.\+Text\+Block.\+Resize\+Strategy\+Base.\+Rescale\+Strategy\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_text_block_8_resize_strategy_8cs_source_l00025}{25}} of file \doxymbox{\hyperlink{_text_block_8_resize_strategy_8cs_source}{Text\+Block.\+Resize\+Strategy.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_ad102ebfe91af44a23b82e0ef93a833a5}\index{CrabUI.TextBlock.ResizeStrategyBase@{CrabUI.TextBlock.ResizeStrategyBase}!ResistStrategy@{ResistStrategy}}
+\index{ResistStrategy@{ResistStrategy}!CrabUI.TextBlock.ResizeStrategyBase@{CrabUI.TextBlock.ResizeStrategyBase}}
+\doxysubsubsection{\texorpdfstring{ResistStrategy}{ResistStrategy}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_ad102ebfe91af44a23b82e0ef93a833a5} 
+Resist\+Strategy Crab\+UI.\+Text\+Block.\+Resize\+Strategy\+Base.\+Resist\+Strategy\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_text_block_8_resize_strategy_8cs_source_l00026}{26}} of file \doxymbox{\hyperlink{_text_block_8_resize_strategy_8cs_source}{Text\+Block.\+Resize\+Strategy.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_a7677565dc86faa9463a6a1d3ef032323}\index{CrabUI.TextBlock.ResizeStrategyBase@{CrabUI.TextBlock.ResizeStrategyBase}!TextDrawPosition@{TextDrawPosition}}
+\index{TextDrawPosition@{TextDrawPosition}!CrabUI.TextBlock.ResizeStrategyBase@{CrabUI.TextBlock.ResizeStrategyBase}}
+\doxysubsubsection{\texorpdfstring{TextDrawPosition}{TextDrawPosition}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_a7677565dc86faa9463a6a1d3ef032323} 
+Vector2 Crab\+UI.\+Text\+Block.\+Resize\+Strategy\+Base.\+Text\+Draw\+Position\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_text_block_8_resize_strategy_8cs_source_l00035}{35}} of file \doxymbox{\hyperlink{_text_block_8_resize_strategy_8cs_source}{Text\+Block.\+Resize\+Strategy.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{protected}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_a3bf3c0ba5c8f047fedc49dcbc497fd0f}\index{CrabUI.TextBlock.ResizeStrategyBase@{CrabUI.TextBlock.ResizeStrategyBase}!WrapStrategy@{WrapStrategy}}
+\index{WrapStrategy@{WrapStrategy}!CrabUI.TextBlock.ResizeStrategyBase@{CrabUI.TextBlock.ResizeStrategyBase}}
+\doxysubsubsection{\texorpdfstring{WrapStrategy}{WrapStrategy}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_text_block_1_1_resize_strategy_base_a3bf3c0ba5c8f047fedc49dcbc497fd0f} 
+Wrap\+Strategy Crab\+UI.\+Text\+Block.\+Resize\+Strategy\+Base.\+Wrap\+Strategy\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_text_block_8_resize_strategy_8cs_source_l00027}{27}} of file \doxymbox{\hyperlink{_text_block_8_resize_strategy_8cs_source}{Text\+Block.\+Resize\+Strategy.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Visual Elements/\+\+Elements/\+\+Text\+Block/\+Text\+Block.\+Resize\+Strategy.\+cs\end{DoxyCompactItemize}

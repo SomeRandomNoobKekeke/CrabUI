@@ -1,0 +1,72 @@
+\doxysection{IMouse\+Event\+Consumer.\+cs}
+\hypertarget{_i_mouse_event_consumer_8cs_source}{}\label{_i_mouse_event_consumer_8cs_source}\index{ClientProject/ClientSource/CUI/Core/CUIInput/Events/IMouseEventConsumer.cs@{ClientProject/ClientSource/CUI/Core/CUIInput/Events/IMouseEventConsumer.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Collections.ObjectModel;}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}};}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00010}00010\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00012}\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_mouse_event_consumer}{00012}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{interface\ }\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_mouse_event_consumer}{IMouseEventConsumer}}\ :\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_event_consumer}{IEventConsumer}}}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00013}00013\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ MouseOver\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ MousePressed\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ IsPointOnTransparentPixel(Vector2\ point);}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ ConsumeMouseEvents\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{ClearableEvent<CUIMouseDownEvent>}}\ MouseDown\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{ClearableEvent<CUIMouseUpEvent>}}\ MouseUp\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{ClearableEvent<CUIMouseClickEvent>}}\ MouseClick\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{ClearableEvent<CUIMouseDoubleClickEvent>}}\ MouseDoubleClick\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{ClearableEvent<CUIMouseMovedEvent>}}\ MouseMoved\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{ClearableEvent<CUIMouseEnterEvent>}}\ MouseEnter\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{ClearableEvent<CUIMouseLeaveEvent>}}\ MouseLeave\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{ClearableEvent<CUIMouseOnEvent>}}\ MouseOn\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{ClearableEvent<CUIMouseOffEvent>}}\ MouseOff\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{ClearableEvent<CUIMouseScrollEvent>}}\ MouseScroll\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00031}00031\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00033}00033\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }IMouseEventConsumer\_Extensions}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00034}00034\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ Map(\textcolor{keyword}{this}\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_mouse_event_consumer}{IMouseEventConsumer}}\ \textcolor{keyword}{self},\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_mouse_event_consumer}{IMouseEventConsumer}}\ target)}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00036}00036\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00037}00037\ \ \ \ \ \ \ \textcolor{keyword}{self}.MouseDown.Map(target.MouseDown);}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00038}00038\ \ \ \ \ \ \ \textcolor{keyword}{self}.MouseUp.Map(target.MouseUp);}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00039}00039\ \ \ \ \ \ \ \textcolor{keyword}{self}.MouseClick.Map(target.MouseClick);}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00040}00040\ \ \ \ \ \ \ \textcolor{keyword}{self}.MouseDoubleClick.Map(target.MouseDoubleClick);}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00041}00041\ \ \ \ \ \ \ \textcolor{keyword}{self}.MouseMoved.Map(target.MouseMoved);}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00042}00042\ \ \ \ \ \ \ \textcolor{keyword}{self}.MouseEnter.Map(target.MouseEnter);}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00043}00043\ \ \ \ \ \ \ \textcolor{keyword}{self}.MouseLeave.Map(target.MouseLeave);}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00044}00044\ \ \ \ \ \ \ \textcolor{keyword}{self}.MouseOn.Map(target.MouseOn);}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00045}00045\ \ \ \ \ \ \ \textcolor{keyword}{self}.MouseOff.Map(target.MouseOff);}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00046}00046\ \ \ \ \ \ \ \textcolor{keyword}{self}.MouseScroll.Map(target.MouseScroll);}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00049}00049\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ Unmap(\textcolor{keyword}{this}\ IMouseEventConsumer\ \textcolor{keyword}{self},\ IMouseEventConsumer\ target)}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00050}00050\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00051}00051\ \ \ \ \ \ \ \textcolor{keyword}{self}.MouseDown.Unmap(target.MouseDown);}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00052}00052\ \ \ \ \ \ \ \textcolor{keyword}{self}.MouseUp.Unmap(target.MouseUp);}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00053}00053\ \ \ \ \ \ \ \textcolor{keyword}{self}.MouseClick.Unmap(target.MouseClick);}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00054}00054\ \ \ \ \ \ \ \textcolor{keyword}{self}.MouseDoubleClick.Unmap(target.MouseDoubleClick);}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00055}00055\ \ \ \ \ \ \ \textcolor{keyword}{self}.MouseMoved.Unmap(target.MouseMoved);}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00056}00056\ \ \ \ \ \ \ \textcolor{keyword}{self}.MouseEnter.Unmap(target.MouseEnter);}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00057}00057\ \ \ \ \ \ \ \textcolor{keyword}{self}.MouseLeave.Unmap(target.MouseLeave);}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00058}00058\ \ \ \ \ \ \ \textcolor{keyword}{self}.MouseOn.Unmap(target.MouseOn);}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00059}00059\ \ \ \ \ \ \ \textcolor{keyword}{self}.MouseOff.Unmap(target.MouseOff);}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00060}00060\ \ \ \ \ \ \ \textcolor{keyword}{self}.MouseScroll.Unmap(target.MouseScroll);}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00061}00061\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00063}00063\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ Route(\textcolor{keyword}{this}\ IMouseEventConsumer\ \textcolor{keyword}{self},\ IMouseEventConsumer\ source)\ =>\ source.Map(\textcolor{keyword}{self});}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00064}00064\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ Unroute(\textcolor{keyword}{this}\ IMouseEventConsumer\ \textcolor{keyword}{self},\ IMouseEventConsumer\ source)\ =>\ source.Unmap(\textcolor{keyword}{self});}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00065}00065\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_i_mouse_event_consumer_8cs_source_l00066}00066\ \}}
+
+\end{DoxyCode}

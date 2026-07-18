@@ -1,0 +1,528 @@
+\doxysection{Crab\+UI.\+Animation\+Core Class Reference}
+\hypertarget{class_crab_u_i_1_1_animation_core}{}\label{class_crab_u_i_1_1_animation_core}\index{CrabUI.AnimationCore@{CrabUI.AnimationCore}}
+Inheritance diagram for Crab\+UI.\+Animation\+Core:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_crab_u_i_1_1_animation_core}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_animation_core_aec43d525f946e26b0f5149ad39c7f7a2}{Reset}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_animation_core_a681313e2bd6949f04c3a1f56d661d9c7}{Start}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_animation_core_ae6aaa88af1fbbdb129994bb965377ad2}{Stop}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_animation_core_a8ed2ded56a4982ea3b18db613b095875}{Run\+Forward}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_animation_core_a7ab3d8ba0f27000001ec45582fd78309}{Run\+Backward}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_animation_core_a396cff9fc7cb5479e0f623e61e20698d}{Run\+From\+Start}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_animation_core_a9d6ec13bb1d8b6c4a4ab32d8ad5d1dbf}{Run\+From\+End}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_animation_core_a8bd8e6cf613838c104dac840caf7cc62}{Update}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_segment}{CUISegment}} \doxymbox{\hyperlink{class_crab_u_i_1_1_animation_core_a3d8f1d6c9b69b956709f519f63e263a8}{Pointer\+Bounds}} = new \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_segment}{CUISegment}}(0, 1)\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+double \doxymbox{\hyperlink{class_crab_u_i_1_1_animation_core_a67c8cd5b35d832571efea2ae08ddfa95}{Pointer}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+double \doxymbox{\hyperlink{class_crab_u_i_1_1_animation_core_a818e3e08f621a99b4091f9d5843ef34b}{Lambda}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+Animation\+Direction \doxymbox{\hyperlink{class_crab_u_i_1_1_animation_core_af3fb5144eb2c2176c581d8e69f133e63}{Direction}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_animation_track}{Animation\+Track}} \doxymbox{\hyperlink{class_crab_u_i_1_1_animation_core_a5e605330f33ee7bb11ed9ed91c7c6394}{Forward}} = new()\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_animation_track}{Animation\+Track}} \doxymbox{\hyperlink{class_crab_u_i_1_1_animation_core_a6655dbb18a6c54acb39aaa572a8c2eb6}{Backward}} = new()\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+double \doxymbox{\hyperlink{class_crab_u_i_1_1_animation_core_ad6c257ad56e8f42672152271a3a8fb38}{Duration}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+Func$<$ double, double $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_animation_core_a74e462de4ada3cc6299bb027d4761d0b}{Func}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+double \doxymbox{\hyperlink{class_crab_u_i_1_1_animation_core_a8a480a9cbbc3c9fce736b86aa7da71ac}{Speed}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+Action\+On\+Track\+End \doxymbox{\hyperlink{class_crab_u_i_1_1_animation_core_a75f66331406338654b2cdd0e05a4395f}{On\+End}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_animation_track}{Animation\+Track}} \doxymbox{\hyperlink{class_crab_u_i_1_1_animation_core_aaad6366e79bcf132a74557b71bd8e77d}{Current\+Track}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_animation_core_ab27c720757417fbfbb054cfd19e60792}{Is\+Running}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+Action \doxymbox{\hyperlink{class_crab_u_i_1_1_animation_core_a73ccadb2ebab409f8e34fe3ed42f5b9e}{On\+Ended}}\hspace{0.3cm}{\ttfamily  \+[set]\+}
+\item 
+Action \doxymbox{\hyperlink{class_crab_u_i_1_1_animation_core_a176d5315885014c049670dd741ad8e11}{On\+Started}}\hspace{0.3cm}{\ttfamily  \+[set]\+}
+\item 
+Action$<$ double $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_animation_core_ac55d9e3321d2d163665b6a64627c170b}{On\+Updated}}\hspace{0.3cm}{\ttfamily  \+[set]\+}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+Action \doxymbox{\hyperlink{class_crab_u_i_1_1_animation_core_a5b32c3af621f2b3d31a53a0213e8d559}{Ended}}
+\item 
+Action \doxymbox{\hyperlink{class_crab_u_i_1_1_animation_core_a1a64ec3f70929377a44c3a868c5b87b2}{Started}}
+\item 
+Action$<$ double $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_animation_core_a52590ffdc66bc3eac862e650f6dba03c}{Updated}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_animation_core_8cs_source_l00010}{10}} of file \doxymbox{\hyperlink{_animation_core_8cs_source}{Animation\+Core.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_animation_core_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_animation_core_aec43d525f946e26b0f5149ad39c7f7a2}\index{CrabUI.AnimationCore@{CrabUI.AnimationCore}!Reset@{Reset}}
+\index{Reset@{Reset}!CrabUI.AnimationCore@{CrabUI.AnimationCore}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_animation_core_aec43d525f946e26b0f5149ad39c7f7a2} 
+void Crab\+UI.\+Animation\+Core.\+Reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_animation_core_8cs_source_l00090}{90}} of file \doxymbox{\hyperlink{_animation_core_8cs_source}{Animation\+Core.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00091\ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ Pointer\ =\ StartPoint;}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ Direction\ =\ AnimationDirection.Forward;}
+\DoxyCodeLine{00094\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_animation_core_a7ab3d8ba0f27000001ec45582fd78309}\index{CrabUI.AnimationCore@{CrabUI.AnimationCore}!RunBackward@{RunBackward}}
+\index{RunBackward@{RunBackward}!CrabUI.AnimationCore@{CrabUI.AnimationCore}}
+\doxysubsubsection{\texorpdfstring{RunBackward()}{RunBackward()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_animation_core_a7ab3d8ba0f27000001ec45582fd78309} 
+void Crab\+UI.\+Animation\+Core.\+Run\+Backward (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_animation_core_8cs_source_l00120}{120}} of file \doxymbox{\hyperlink{_animation_core_8cs_source}{Animation\+Core.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00121\ \ \ \ \ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ Direction\ =\ AnimationDirection.Backward;}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ Start();}
+\DoxyCodeLine{00124\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_animation_core_a8ed2ded56a4982ea3b18db613b095875}\index{CrabUI.AnimationCore@{CrabUI.AnimationCore}!RunForward@{RunForward}}
+\index{RunForward@{RunForward}!CrabUI.AnimationCore@{CrabUI.AnimationCore}}
+\doxysubsubsection{\texorpdfstring{RunForward()}{RunForward()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_animation_core_a8ed2ded56a4982ea3b18db613b095875} 
+void Crab\+UI.\+Animation\+Core.\+Run\+Forward (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_animation_core_8cs_source_l00114}{114}} of file \doxymbox{\hyperlink{_animation_core_8cs_source}{Animation\+Core.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00115\ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ Direction\ =\ AnimationDirection.Forward;}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ Start();}
+\DoxyCodeLine{00118\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_animation_core_a9d6ec13bb1d8b6c4a4ab32d8ad5d1dbf}\index{CrabUI.AnimationCore@{CrabUI.AnimationCore}!RunFromEnd@{RunFromEnd}}
+\index{RunFromEnd@{RunFromEnd}!CrabUI.AnimationCore@{CrabUI.AnimationCore}}
+\doxysubsubsection{\texorpdfstring{RunFromEnd()}{RunFromEnd()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_animation_core_a9d6ec13bb1d8b6c4a4ab32d8ad5d1dbf} 
+void Crab\+UI.\+Animation\+Core.\+Run\+From\+End (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_animation_core_8cs_source_l00133}{133}} of file \doxymbox{\hyperlink{_animation_core_8cs_source}{Animation\+Core.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00134\ \ \ \ \ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ Direction\ =\ AnimationDirection.Backward;}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ Pointer\ =\ StartPoint;}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ Start();}
+\DoxyCodeLine{00138\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_animation_core_a396cff9fc7cb5479e0f623e61e20698d}\index{CrabUI.AnimationCore@{CrabUI.AnimationCore}!RunFromStart@{RunFromStart}}
+\index{RunFromStart@{RunFromStart}!CrabUI.AnimationCore@{CrabUI.AnimationCore}}
+\doxysubsubsection{\texorpdfstring{RunFromStart()}{RunFromStart()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_animation_core_a396cff9fc7cb5479e0f623e61e20698d} 
+void Crab\+UI.\+Animation\+Core.\+Run\+From\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_animation_core_8cs_source_l00126}{126}} of file \doxymbox{\hyperlink{_animation_core_8cs_source}{Animation\+Core.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00127\ \ \ \ \ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ Direction\ =\ AnimationDirection.Forward;}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ Pointer\ =\ StartPoint;}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ Start();}
+\DoxyCodeLine{00131\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_animation_core_a681313e2bd6949f04c3a1f56d661d9c7}\index{CrabUI.AnimationCore@{CrabUI.AnimationCore}!Start@{Start}}
+\index{Start@{Start}!CrabUI.AnimationCore@{CrabUI.AnimationCore}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_animation_core_a681313e2bd6949f04c3a1f56d661d9c7} 
+void Crab\+UI.\+Animation\+Core.\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_animation_core_8cs_source_l00096}{96}} of file \doxymbox{\hyperlink{_animation_core_8cs_source}{Animation\+Core.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00097\ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsRunning)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \_IsRunning\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ CUICore.AnimationPlayer.AddToRunning(\textcolor{keyword}{this});}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ Started?.Invoke();}
+\DoxyCodeLine{00103\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_animation_core_ae6aaa88af1fbbdb129994bb965377ad2}\index{CrabUI.AnimationCore@{CrabUI.AnimationCore}!Stop@{Stop}}
+\index{Stop@{Stop}!CrabUI.AnimationCore@{CrabUI.AnimationCore}}
+\doxysubsubsection{\texorpdfstring{Stop()}{Stop()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_animation_core_ae6aaa88af1fbbdb129994bb965377ad2} 
+void Crab\+UI.\+Animation\+Core.\+Stop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_animation_core_8cs_source_l00105}{105}} of file \doxymbox{\hyperlink{_animation_core_8cs_source}{Animation\+Core.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00106\ \ \ \ \ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!IsRunning)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \_IsRunning\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ CUICore.AnimationPlayer.RemoveFromRunning(\textcolor{keyword}{this});}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ Ended?.Invoke();}
+\DoxyCodeLine{00112\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_animation_core_a8bd8e6cf613838c104dac840caf7cc62}\index{CrabUI.AnimationCore@{CrabUI.AnimationCore}!Update@{Update}}
+\index{Update@{Update}!CrabUI.AnimationCore@{CrabUI.AnimationCore}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_animation_core_a8bd8e6cf613838c104dac840caf7cc62} 
+void Crab\+UI.\+Animation\+Core.\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_animation_core_8cs_source_l00141}{141}} of file \doxymbox{\hyperlink{_animation_core_8cs_source}{Animation\+Core.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00142\ \ \ \ \ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ Step();}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ UpdateState();}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ Updated?.Invoke(Lambda);}
+\DoxyCodeLine{00146\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_animation_core_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_animation_core_a6655dbb18a6c54acb39aaa572a8c2eb6}\index{CrabUI.AnimationCore@{CrabUI.AnimationCore}!Backward@{Backward}}
+\index{Backward@{Backward}!CrabUI.AnimationCore@{CrabUI.AnimationCore}}
+\doxysubsubsection{\texorpdfstring{Backward}{Backward}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_animation_core_a6655dbb18a6c54acb39aaa572a8c2eb6} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_animation_track}{Animation\+Track}} Crab\+UI.\+Animation\+Core.\+Backward = new()\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_animation_core_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_animation_core_8cs_source}{Animation\+Core.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_animation_core_aaad6366e79bcf132a74557b71bd8e77d}\index{CrabUI.AnimationCore@{CrabUI.AnimationCore}!CurrentTrack@{CurrentTrack}}
+\index{CurrentTrack@{CurrentTrack}!CrabUI.AnimationCore@{CrabUI.AnimationCore}}
+\doxysubsubsection{\texorpdfstring{CurrentTrack}{CurrentTrack}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_animation_core_aaad6366e79bcf132a74557b71bd8e77d} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_animation_track}{Animation\+Track}} Crab\+UI.\+Animation\+Core.\+Current\+Track\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_animation_core_8cs_source_l00059}{59}} of file \doxymbox{\hyperlink{_animation_core_8cs_source}{Animation\+Core.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_animation_core_af3fb5144eb2c2176c581d8e69f133e63}\index{CrabUI.AnimationCore@{CrabUI.AnimationCore}!Direction@{Direction}}
+\index{Direction@{Direction}!CrabUI.AnimationCore@{CrabUI.AnimationCore}}
+\doxysubsubsection{\texorpdfstring{Direction}{Direction}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_animation_core_af3fb5144eb2c2176c581d8e69f133e63} 
+Animation\+Direction Crab\+UI.\+Animation\+Core.\+Direction\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_animation_core_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_animation_core_8cs_source}{Animation\+Core.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_animation_core_ad6c257ad56e8f42672152271a3a8fb38}\index{CrabUI.AnimationCore@{CrabUI.AnimationCore}!Duration@{Duration}}
+\index{Duration@{Duration}!CrabUI.AnimationCore@{CrabUI.AnimationCore}}
+\doxysubsubsection{\texorpdfstring{Duration}{Duration}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_animation_core_ad6c257ad56e8f42672152271a3a8fb38} 
+double Crab\+UI.\+Animation\+Core.\+Duration\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_animation_core_8cs_source_l00021}{21}} of file \doxymbox{\hyperlink{_animation_core_8cs_source}{Animation\+Core.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Forward.Duration;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ Forward.Duration\ =\ value;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ Backward.Duration\ =\ value;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_animation_core_a5e605330f33ee7bb11ed9ed91c7c6394}\index{CrabUI.AnimationCore@{CrabUI.AnimationCore}!Forward@{Forward}}
+\index{Forward@{Forward}!CrabUI.AnimationCore@{CrabUI.AnimationCore}}
+\doxysubsubsection{\texorpdfstring{Forward}{Forward}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_animation_core_a5e605330f33ee7bb11ed9ed91c7c6394} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_animation_track}{Animation\+Track}} Crab\+UI.\+Animation\+Core.\+Forward = new()\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_animation_core_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_animation_core_8cs_source}{Animation\+Core.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_animation_core_a74e462de4ada3cc6299bb027d4761d0b}\index{CrabUI.AnimationCore@{CrabUI.AnimationCore}!Func@{Func}}
+\index{Func@{Func}!CrabUI.AnimationCore@{CrabUI.AnimationCore}}
+\doxysubsubsection{\texorpdfstring{Func}{Func}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_animation_core_a74e462de4ada3cc6299bb027d4761d0b} 
+Func$<$double, double$>$ Crab\+UI.\+Animation\+Core.\+Func\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_animation_core_8cs_source_l00031}{31}} of file \doxymbox{\hyperlink{_animation_core_8cs_source}{Animation\+Core.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Forward.Func;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ Forward.Func\ =\ value;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ Backward.Func\ =\ (f)\ =>\ value(PointerBounds.Right\ -\/\ f);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_animation_core_ab27c720757417fbfbb054cfd19e60792}\index{CrabUI.AnimationCore@{CrabUI.AnimationCore}!IsRunning@{IsRunning}}
+\index{IsRunning@{IsRunning}!CrabUI.AnimationCore@{CrabUI.AnimationCore}}
+\doxysubsubsection{\texorpdfstring{IsRunning}{IsRunning}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_animation_core_ab27c720757417fbfbb054cfd19e60792} 
+bool Crab\+UI.\+Animation\+Core.\+Is\+Running\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_animation_core_8cs_source_l00072}{72}} of file \doxymbox{\hyperlink{_animation_core_8cs_source}{Animation\+Core.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00073\ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_IsRunning;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (value)\ Start();\ \textcolor{keywordflow}{else}\ Stop();}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_animation_core_a818e3e08f621a99b4091f9d5843ef34b}\index{CrabUI.AnimationCore@{CrabUI.AnimationCore}!Lambda@{Lambda}}
+\index{Lambda@{Lambda}!CrabUI.AnimationCore@{CrabUI.AnimationCore}}
+\doxysubsubsection{\texorpdfstring{Lambda}{Lambda}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_animation_core_a818e3e08f621a99b4091f9d5843ef34b} 
+double Crab\+UI.\+Animation\+Core.\+Lambda\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_animation_core_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_animation_core_8cs_source}{Animation\+Core.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_animation_core_a75f66331406338654b2cdd0e05a4395f}\index{CrabUI.AnimationCore@{CrabUI.AnimationCore}!OnEnd@{OnEnd}}
+\index{OnEnd@{OnEnd}!CrabUI.AnimationCore@{CrabUI.AnimationCore}}
+\doxysubsubsection{\texorpdfstring{OnEnd}{OnEnd}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_animation_core_a75f66331406338654b2cdd0e05a4395f} 
+Action\+On\+Track\+End Crab\+UI.\+Animation\+Core.\+On\+End\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_animation_core_8cs_source_l00049}{49}} of file \doxymbox{\hyperlink{_animation_core_8cs_source}{Animation\+Core.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Forward.OnEnd;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ Forward.OnEnd\ =\ value;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ Backward.OnEnd\ =\ value;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_animation_core_a73ccadb2ebab409f8e34fe3ed42f5b9e}\index{CrabUI.AnimationCore@{CrabUI.AnimationCore}!OnEnded@{OnEnded}}
+\index{OnEnded@{OnEnded}!CrabUI.AnimationCore@{CrabUI.AnimationCore}}
+\doxysubsubsection{\texorpdfstring{OnEnded}{OnEnded}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_animation_core_a73ccadb2ebab409f8e34fe3ed42f5b9e} 
+Action Crab\+UI.\+Animation\+Core.\+On\+Ended\hspace{0.3cm}{\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_animation_core_8cs_source_l00081}{81}} of file \doxymbox{\hyperlink{_animation_core_8cs_source}{Animation\+Core.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081\ \{\ \textcolor{keyword}{set}\ \{\ Ended\ +=\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_animation_core_a176d5315885014c049670dd741ad8e11}\index{CrabUI.AnimationCore@{CrabUI.AnimationCore}!OnStarted@{OnStarted}}
+\index{OnStarted@{OnStarted}!CrabUI.AnimationCore@{CrabUI.AnimationCore}}
+\doxysubsubsection{\texorpdfstring{OnStarted}{OnStarted}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_animation_core_a176d5315885014c049670dd741ad8e11} 
+Action Crab\+UI.\+Animation\+Core.\+On\+Started\hspace{0.3cm}{\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_animation_core_8cs_source_l00084}{84}} of file \doxymbox{\hyperlink{_animation_core_8cs_source}{Animation\+Core.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00084\ \{\ \textcolor{keyword}{set}\ \{\ Started\ +=\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_animation_core_ac55d9e3321d2d163665b6a64627c170b}\index{CrabUI.AnimationCore@{CrabUI.AnimationCore}!OnUpdated@{OnUpdated}}
+\index{OnUpdated@{OnUpdated}!CrabUI.AnimationCore@{CrabUI.AnimationCore}}
+\doxysubsubsection{\texorpdfstring{OnUpdated}{OnUpdated}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_animation_core_ac55d9e3321d2d163665b6a64627c170b} 
+Action$<$double$>$ Crab\+UI.\+Animation\+Core.\+On\+Updated\hspace{0.3cm}{\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_animation_core_8cs_source_l00087}{87}} of file \doxymbox{\hyperlink{_animation_core_8cs_source}{Animation\+Core.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00087\ \{\ \textcolor{keyword}{set}\ \{\ Updated\ +=\ value;\ \}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_animation_core_a67c8cd5b35d832571efea2ae08ddfa95}\index{CrabUI.AnimationCore@{CrabUI.AnimationCore}!Pointer@{Pointer}}
+\index{Pointer@{Pointer}!CrabUI.AnimationCore@{CrabUI.AnimationCore}}
+\doxysubsubsection{\texorpdfstring{Pointer}{Pointer}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_animation_core_a67c8cd5b35d832571efea2ae08ddfa95} 
+double Crab\+UI.\+Animation\+Core.\+Pointer\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_animation_core_8cs_source_l00014}{14}} of file \doxymbox{\hyperlink{_animation_core_8cs_source}{Animation\+Core.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_animation_core_a3d8f1d6c9b69b956709f519f63e263a8}\index{CrabUI.AnimationCore@{CrabUI.AnimationCore}!PointerBounds@{PointerBounds}}
+\index{PointerBounds@{PointerBounds}!CrabUI.AnimationCore@{CrabUI.AnimationCore}}
+\doxysubsubsection{\texorpdfstring{PointerBounds}{PointerBounds}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_animation_core_a3d8f1d6c9b69b956709f519f63e263a8} 
+\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_segment}{CUISegment}} Crab\+UI.\+Animation\+Core.\+Pointer\+Bounds = new \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_segment}{CUISegment}}(0, 1)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_animation_core_8cs_source_l00012}{12}} of file \doxymbox{\hyperlink{_animation_core_8cs_source}{Animation\+Core.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}\ CUISegment(0,\ 1);}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_animation_core_a8a480a9cbbc3c9fce736b86aa7da71ac}\index{CrabUI.AnimationCore@{CrabUI.AnimationCore}!Speed@{Speed}}
+\index{Speed@{Speed}!CrabUI.AnimationCore@{CrabUI.AnimationCore}}
+\doxysubsubsection{\texorpdfstring{Speed}{Speed}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_animation_core_a8a480a9cbbc3c9fce736b86aa7da71ac} 
+double Crab\+UI.\+Animation\+Core.\+Speed\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_animation_core_8cs_source_l00040}{40}} of file \doxymbox{\hyperlink{_animation_core_8cs_source}{Animation\+Core.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041\ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Forward.Speed;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ Forward.Speed\ =\ value;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ Backward.Speed\ =\ value;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-event-members}
+\Hypertarget{class_crab_u_i_1_1_animation_core_doc-event-members}
+\doxysubsection{Event Documentation}
+\Hypertarget{class_crab_u_i_1_1_animation_core_a5b32c3af621f2b3d31a53a0213e8d559}\index{CrabUI.AnimationCore@{CrabUI.AnimationCore}!Ended@{Ended}}
+\index{Ended@{Ended}!CrabUI.AnimationCore@{CrabUI.AnimationCore}}
+\doxysubsubsection{\texorpdfstring{Ended}{Ended}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_animation_core_a5b32c3af621f2b3d31a53a0213e8d559} 
+Action Crab\+UI.\+Animation\+Core.\+Ended}
+
+
+
+Definition at line \doxymbox{\hyperlink{_animation_core_8cs_source_l00082}{82}} of file \doxymbox{\hyperlink{_animation_core_8cs_source}{Animation\+Core.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_animation_core_a1a64ec3f70929377a44c3a868c5b87b2}\index{CrabUI.AnimationCore@{CrabUI.AnimationCore}!Started@{Started}}
+\index{Started@{Started}!CrabUI.AnimationCore@{CrabUI.AnimationCore}}
+\doxysubsubsection{\texorpdfstring{Started}{Started}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_animation_core_a1a64ec3f70929377a44c3a868c5b87b2} 
+Action Crab\+UI.\+Animation\+Core.\+Started}
+
+
+
+Definition at line \doxymbox{\hyperlink{_animation_core_8cs_source_l00085}{85}} of file \doxymbox{\hyperlink{_animation_core_8cs_source}{Animation\+Core.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_animation_core_a52590ffdc66bc3eac862e650f6dba03c}\index{CrabUI.AnimationCore@{CrabUI.AnimationCore}!Updated@{Updated}}
+\index{Updated@{Updated}!CrabUI.AnimationCore@{CrabUI.AnimationCore}}
+\doxysubsubsection{\texorpdfstring{Updated}{Updated}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_animation_core_a52590ffdc66bc3eac862e650f6dba03c} 
+Action$<$double$>$ Crab\+UI.\+Animation\+Core.\+Updated}
+
+
+
+Definition at line \doxymbox{\hyperlink{_animation_core_8cs_source_l00088}{88}} of file \doxymbox{\hyperlink{_animation_core_8cs_source}{Animation\+Core.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Animations/\+\+Core/\+Animation\+Core.\+cs\end{DoxyCompactItemize}

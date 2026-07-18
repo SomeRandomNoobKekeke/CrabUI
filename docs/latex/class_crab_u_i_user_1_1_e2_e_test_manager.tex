@@ -1,0 +1,238 @@
+\doxysection{Crab\+UIUser.\+E2\+ETest\+Manager Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_e2_e_test_manager}{}\label{class_crab_u_i_user_1_1_e2_e_test_manager}\index{CrabUIUser.E2ETestManager@{CrabUIUser.E2ETestManager}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_manager_a1c6d3780cad41d34a552245b95cf835f}\label{class_crab_u_i_user_1_1_e2_e_test_manager_a1c6d3780cad41d34a552245b95cf835f} 
+record {\bfseries Event} (string Name, Type Test\+Type, string Message="{}"{})
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_manager_a635882146756f9361c3ba7c364bd8f80}{Clean\+Up}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_manager_adbf76927dfdcbfdc25a191a8f150d228}{Run\+All}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_manager_a14c3a5cb93b134cb32b2ce48af10c121}{Run}} (string name)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_manager_a0fcf1745cadf33c2d83d7ae333d18f29}{Run}} (Type test\+Type)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_logger}{ILogger}} \doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_manager_a89e2be62b5ce97e44d33fe46aec3ccb6}{Logger}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{interface_crab_u_i_user_1_1_i_e2_e_test}{IE2\+ETest}} \doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_manager_aa19f293c18d28715750a828d71f8ed30}{Current\+Test}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_repo}{E2\+ETest\+Repo}} \doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_manager_a26353dd5ddaec69076cf9d878b7f29a8}{Repo}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_manager_u_i}{E2\+ETest\+Manager\+UI}} \doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_manager_a47ac0b19365244a7cfc9c2f8bc0d445a}{UI}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{Clearable\+Event}}$<$ Event $>$ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_manager_a7a830c8ea677976df8b9a7c70b7b2c13}{Events}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_e2_e_test_8_event_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_e2_e_test_8_event_8cs_source}{E2\+ETest.\+Event.\+cs}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_manager_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_manager_a0d553198cacfe91a3065f641a763d13c}\index{CrabUIUser.E2ETestManager@{CrabUIUser.E2ETestManager}!E2ETestManager@{E2ETestManager}}
+\index{E2ETestManager@{E2ETestManager}!CrabUIUser.E2ETestManager@{CrabUIUser.E2ETestManager}}
+\doxysubsubsection{\texorpdfstring{E2ETestManager()}{E2ETestManager()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_e2_e_test_manager_a0d553198cacfe91a3065f641a763d13c} 
+Crab\+UIUser.\+E2\+ETest\+Manager.\+E2\+ETest\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_e2_e_test_manager_8cs_source_l00022}{22}} of file \doxymbox{\hyperlink{_e2_e_test_manager_8cs_source}{E2\+ETest\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ UI\ =\ \textcolor{keyword}{new}(\textcolor{keyword}{this});}
+\DoxyCodeLine{00025\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_manager_a635882146756f9361c3ba7c364bd8f80}\index{CrabUIUser.E2ETestManager@{CrabUIUser.E2ETestManager}!CleanUp@{CleanUp}}
+\index{CleanUp@{CleanUp}!CrabUIUser.E2ETestManager@{CrabUIUser.E2ETestManager}}
+\doxysubsubsection{\texorpdfstring{CleanUp()}{CleanUp()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_e2_e_test_manager_a635882146756f9361c3ba7c364bd8f80} 
+void Crab\+UIUser.\+E2\+ETest\+Manager.\+Clean\+Up (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_e2_e_test_manager_8cs_source_l00032}{32}} of file \doxymbox{\hyperlink{_e2_e_test_manager_8cs_source}{E2\+ETest\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033\ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (CurrentTest\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ CurrentTest.Dispose();}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ CurrentTest\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ CUI.Main.Children.Clear();}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_manager_a14c3a5cb93b134cb32b2ce48af10c121}\index{CrabUIUser.E2ETestManager@{CrabUIUser.E2ETestManager}!Run@{Run}}
+\index{Run@{Run}!CrabUIUser.E2ETestManager@{CrabUIUser.E2ETestManager}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_e2_e_test_manager_a14c3a5cb93b134cb32b2ce48af10c121} 
+void Crab\+UIUser.\+E2\+ETest\+Manager.\+Run (\begin{DoxyParamCaption}\item[{string}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_e2_e_test_manager_8cs_source_l00050}{50}} of file \doxymbox{\hyperlink{_e2_e_test_manager_8cs_source}{E2\+ETest\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Repo.Tests.ContainsKey(name))}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ Logger.Warning(\$\textcolor{stringliteral}{"{}Can't\ find\ E2E\ test:\ [\{name\}]"{}});}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ ModStorage.Set(\textcolor{stringliteral}{"{}CUITest"{}},\ name);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ Run(Repo.Tests[name]);}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_manager_a0fcf1745cadf33c2d83d7ae333d18f29}\index{CrabUIUser.E2ETestManager@{CrabUIUser.E2ETestManager}!Run@{Run}}
+\index{Run@{Run}!CrabUIUser.E2ETestManager@{CrabUIUser.E2ETestManager}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_e2_e_test_manager_a0fcf1745cadf33c2d83d7ae333d18f29} 
+void Crab\+UIUser.\+E2\+ETest\+Manager.\+Run (\begin{DoxyParamCaption}\item[{Type}]{test\+Type}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_e2_e_test_manager_8cs_source_l00062}{62}} of file \doxymbox{\hyperlink{_e2_e_test_manager_8cs_source}{E2\+ETest\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00063\ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ CleanUp();}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ CurrentTest\ =\ (IE2ETest)Activator.CreateInstance(testType);}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ CurrentTest.Initialize();}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ Logger.Warning(\$\textcolor{stringliteral}{"{}Error\ in\ CUIE2ETest\ [\{testType\}]:\ \{e.Message\}\ \{e.InnerException\}\(\backslash\)n\{e.StackTrace\}"{}});}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_manager_adbf76927dfdcbfdc25a191a8f150d228}\index{CrabUIUser.E2ETestManager@{CrabUIUser.E2ETestManager}!RunAll@{RunAll}}
+\index{RunAll@{RunAll}!CrabUIUser.E2ETestManager@{CrabUIUser.E2ETestManager}}
+\doxysubsubsection{\texorpdfstring{RunAll()}{RunAll()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_e2_e_test_manager_adbf76927dfdcbfdc25a191a8f150d228} 
+void Crab\+UIUser.\+E2\+ETest\+Manager.\+Run\+All (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_e2_e_test_manager_8cs_source_l00043}{43}} of file \doxymbox{\hyperlink{_e2_e_test_manager_8cs_source}{E2\+ETest\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044\ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keywordtype}{string}\ name\ \textcolor{keywordflow}{in}\ Repo.Tests.Keys)}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ Run(name);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_manager_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_manager_aa19f293c18d28715750a828d71f8ed30}\index{CrabUIUser.E2ETestManager@{CrabUIUser.E2ETestManager}!CurrentTest@{CurrentTest}}
+\index{CurrentTest@{CurrentTest}!CrabUIUser.E2ETestManager@{CrabUIUser.E2ETestManager}}
+\doxysubsubsection{\texorpdfstring{CurrentTest}{CurrentTest}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_e2_e_test_manager_aa19f293c18d28715750a828d71f8ed30} 
+\doxymbox{\hyperlink{interface_crab_u_i_user_1_1_i_e2_e_test}{IE2\+ETest}} Crab\+UIUser.\+E2\+ETest\+Manager.\+Current\+Test\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_e2_e_test_manager_8cs_source_l00020}{20}} of file \doxymbox{\hyperlink{_e2_e_test_manager_8cs_source}{E2\+ETest\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_manager_a7a830c8ea677976df8b9a7c70b7b2c13}\index{CrabUIUser.E2ETestManager@{CrabUIUser.E2ETestManager}!Events@{Events}}
+\index{Events@{Events}!CrabUIUser.E2ETestManager@{CrabUIUser.E2ETestManager}}
+\doxysubsubsection{\texorpdfstring{Events}{Events}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_e2_e_test_manager_a7a830c8ea677976df8b9a7c70b7b2c13} 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{Clearable\+Event}}$<$Event$>$ Crab\+UIUser.\+E2\+ETest\+Manager.\+Events = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_e2_e_test_manager_8cs_source_l00030}{30}} of file \doxymbox{\hyperlink{_e2_e_test_manager_8cs_source}{E2\+ETest\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_manager_a89e2be62b5ce97e44d33fe46aec3ccb6}\index{CrabUIUser.E2ETestManager@{CrabUIUser.E2ETestManager}!Logger@{Logger}}
+\index{Logger@{Logger}!CrabUIUser.E2ETestManager@{CrabUIUser.E2ETestManager}}
+\doxysubsubsection{\texorpdfstring{Logger}{Logger}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_e2_e_test_manager_a89e2be62b5ce97e44d33fe46aec3ccb6} 
+\doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_logger}{ILogger}} Crab\+UIUser.\+E2\+ETest\+Manager.\+Logger\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_e2_e_test_manager_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_e2_e_test_manager_8cs_source}{E2\+ETest\+Manager.\+cs}}.
+
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_manager_a26353dd5ddaec69076cf9d878b7f29a8}\index{CrabUIUser.E2ETestManager@{CrabUIUser.E2ETestManager}!Repo@{Repo}}
+\index{Repo@{Repo}!CrabUIUser.E2ETestManager@{CrabUIUser.E2ETestManager}}
+\doxysubsubsection{\texorpdfstring{Repo}{Repo}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_e2_e_test_manager_a26353dd5ddaec69076cf9d878b7f29a8} 
+\doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_repo}{E2\+ETest\+Repo}} Crab\+UIUser.\+E2\+ETest\+Manager.\+Repo = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_e2_e_test_manager_8cs_source_l00027}{27}} of file \doxymbox{\hyperlink{_e2_e_test_manager_8cs_source}{E2\+ETest\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_e2_e_test_manager_a47ac0b19365244a7cfc9c2f8bc0d445a}\index{CrabUIUser.E2ETestManager@{CrabUIUser.E2ETestManager}!UI@{UI}}
+\index{UI@{UI}!CrabUIUser.E2ETestManager@{CrabUIUser.E2ETestManager}}
+\doxysubsubsection{\texorpdfstring{UI}{UI}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_e2_e_test_manager_a47ac0b19365244a7cfc9c2f8bc0d445a} 
+\doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_manager_u_i}{E2\+ETest\+Manager\+UI}} Crab\+UIUser.\+E2\+ETest\+Manager.\+UI\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_e2_e_test_manager_8cs_source_l00028}{28}} of file \doxymbox{\hyperlink{_e2_e_test_manager_8cs_source}{E2\+ETest\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \{\ \textcolor{keyword}{get};\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+CUITest/\+\+E2\+E/\+E2\+ETest.\+Event.\+cs\item 
+Client\+Project/\+\+In\+Memory/\+\+CUITest/\+\+E2\+E/\+E2\+ETest\+Manager.\+cs\end{DoxyCompactItemize}

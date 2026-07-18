@@ -1,0 +1,61 @@
+\chapter{Quick\+Start }
+\hypertarget{_quick_start}{}\label{_quick_start}\index{QuickStart@{QuickStart}}
+\label{_quick_start_md__docs_sources_2_sources_21_01_quick_start}%
+\Hypertarget{_quick_start_md__docs_sources_2_sources_21_01_quick_start}%
+\hypertarget{_quick_start_autotoc_md0}{}\doxysection{\texorpdfstring{To include CUI in your mod:\+}{To include CUI in your mod:\+}}\label{_quick_start_autotoc_md0}
+\hypertarget{_quick_start_autotoc_md1}{}\doxysubsection{\texorpdfstring{For "{}in-\/memory"{} mods}{For "{}in-\/memory"{} mods}}\label{_quick_start_autotoc_md1}
+There\textquotesingle{}s 2 ways:\+
+\begin{DoxyEnumerate}
+\item copy paste code from \href{https://github.com/SomeRandomNoobKekeke/CrabUI/tree/main/ClientProject/ClientSource}{\texttt{https:\+/\+/\+github.\+com/\+\+Some\+Random\+Noob\+Kekeke/\+\+Crab\+UI/\+tree/\+main/\+\+Client\+Project/\+\+Client\+Source}}
+\item publish you mod and add workshop dependency to \href{https://steamcommunity.com/sharedfiles/filedetails/?id=3765325848}{\texttt{CUI mod}}
+\end{DoxyEnumerate}
+
+2 is minimalistic, but you won\textquotesingle{}t have ide hints\hypertarget{_quick_start_autotoc_md2}{}\doxysubsection{\texorpdfstring{For precompiled mods}{For precompiled mods}}\label{_quick_start_autotoc_md2}
+Go to CUI mod folder, take CUI.\+dll from bin and add a reference to it in your project
+
+Or download \href{https://github.com/SomeRandomNoobKekeke/CrabUI}{\texttt{https:\+/\+/\+github.\+com/\+\+Some\+Random\+Noob\+Kekeke/\+\+Crab\+UI}}, add luatrauma Refs to it and compile
+
+Or just copy paste source code :\+Baro\+Dev:\+\hypertarget{_quick_start_autotoc_md3}{}\doxysubsection{\texorpdfstring{Hybrid mods}{Hybrid mods}}\label{_quick_start_autotoc_md3}
+You can take best from both worlds
+
+you can setup \href{https://github.com/Luatrauma/LuaCsModTemplate}{\texttt{https:\+/\+/\+github.\+com/\+\+Luatrauma/\+\+Lua\+Cs\+Mod\+Template}}, and then add {\ttfamily Mod\+Config.\+xml} loading C\# sources as "{}in-\/memory"{} scripts 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{<\textcolor{keywordtype}{ModConfig}>}
+\DoxyCodeLine{\ \ <\textcolor{keywordtype}{Assembly}\ \textcolor{keyword}{Folder}=\textcolor{stringliteral}{"{}\%ModDir\%/ClientProject/ClientSource"{}}\ \textcolor{keyword}{Target}=\textcolor{stringliteral}{"{}Client"{}}\ \textcolor{keyword}{IsScript}=\textcolor{stringliteral}{"{}true"{}}\ \textcolor{keyword}{UseInternalAccessName}=\textcolor{stringliteral}{"{}false"{}}\ />}
+\DoxyCodeLine{</\textcolor{keywordtype}{ModConfig}>}
+
+\end{DoxyCode}
+
+
+Then you can add project reference to CUI.\+dll to have ide hints, put it in Local\+Mods and reload with cl\+\_\+reloadlua\hypertarget{_quick_start_autotoc_md4}{}\doxysection{\texorpdfstring{Min example:\+}{Min example:\+}}\label{_quick_start_autotoc_md4}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{class\ }Mod\ :\ IAssemblyPlugin}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Initialize()}
+\DoxyCodeLine{\ \ \{}
+\DoxyCodeLine{\ \ \ \ CUI.Logger.Log(\$\textcolor{stringliteral}{"{}Compiled\ somehow"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ CUI.Start();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ CUIFrame\ frame\ =\ \textcolor{keyword}{new}\ CUIDefault.Frame(\textcolor{stringliteral}{"{}bruh"{}})}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ Absolute\ =\ \textcolor{keyword}{new}\ CUINullRect(w:\ 400,\ h:\ 600),}
+\DoxyCodeLine{\ \ \ \ \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ frame.Open();}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ OnLoadCompleted()\ \{\ \}}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ PreInitPatching()\ \{\ \}}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Dispose()\ \{\ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Mod with this code should open empty frame in sub editor
+
+ 

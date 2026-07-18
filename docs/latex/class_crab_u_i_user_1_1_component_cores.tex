@@ -1,0 +1,86 @@
+\doxysection{Crab\+UIUser.\+Component\+Cores Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_component_cores}{}\label{class_crab_u_i_user_1_1_component_cores}\index{CrabUIUser.ComponentCores@{CrabUIUser.ComponentCores}}
+
+
+Testing \doxylink{class_crab_u_i_user_1_1_component_cores_1_1_component}{Component} core concept Idea is to put all the logic in cores and make outer component just a wrapper with forwarded prop for the user User is not supposed to access the core.  
+
+
+Inheritance diagram for Crab\+UIUser.\+Component\+Cores:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_component_cores}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_component}{Component}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_square_component}{Square\+Component}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_button}{Button}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_button_list}{Button\+List}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_triangle_component}{Triangle\+Component}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_afd6415483c5595bb91ec5fffa96987bd}{Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Crab\+UIUser.\+Experiment}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Run} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Testing \doxylink{class_crab_u_i_user_1_1_component_cores_1_1_component}{Component} core concept Idea is to put all the logic in cores and make outer component just a wrapper with forwarded prop for the user User is not supposed to access the core. 
+
+Conclusion:\+ dogshit
+\begin{DoxyEnumerate}
+\item There\textquotesingle{}s no way to put components in relations without data duplication or conversion
+\item No way to double inherit, Links to each other has to be created as new prop and will stack
+\item this will force all component to be splitted 
+\end{DoxyEnumerate}
+
+Definition at line \doxymbox{\hyperlink{_component_cores_8cs_source_l00023}{23}} of file \doxymbox{\hyperlink{_component_cores_8cs_source}{Component\+Cores.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_component_cores_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_component_cores_afd6415483c5595bb91ec5fffa96987bd}\index{CrabUIUser.ComponentCores@{CrabUIUser.ComponentCores}!Run@{Run}}
+\index{Run@{Run}!CrabUIUser.ComponentCores@{CrabUIUser.ComponentCores}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_component_cores_afd6415483c5595bb91ec5fffa96987bd} 
+override void Crab\+UIUser.\+Component\+Cores.\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_component_cores_8cs_source_l00111}{111}} of file \doxymbox{\hyperlink{_component_cores_8cs_source}{Component\+Cores.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00112\ \ \ \ \ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ Button\ button\ =\ \textcolor{keyword}{new}\ Button();}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ button.Rect\ =\ \textcolor{keyword}{new}\ Rectangle(0,\ 0,\ 100,\ 100);}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ button.OnClick\ +=\ ()\ =>\ \{\ \};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ Mod.Logger.Log(button.Core.GetType());}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (PropertyInfo\ pi\ \textcolor{keywordflow}{in}\ typeof(Button).GetProperties())}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}\{pi.PropertyType\}\ \{pi.Name\}"{}});}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Design/\+Component\+Cores.\+cs\end{DoxyCompactItemize}

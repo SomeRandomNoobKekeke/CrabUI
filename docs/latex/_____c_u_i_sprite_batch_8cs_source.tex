@@ -1,0 +1,86 @@
+\doxysection{\+\_\+\+\_\+\+CUISprite\+Batch.\+cs}
+\hypertarget{_____c_u_i_sprite_batch_8cs_source}{}\label{_____c_u_i_sprite_batch_8cs_source}\index{ClientProject/ClientSource/CUI/Infrastructure/Graphics Abstractions/\_\_CUISpriteBatch.cs@{ClientProject/ClientSource/CUI/Infrastructure/Graphics Abstractions/\_\_CUISpriteBatch.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework.Graphics;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00010}00010\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00012}\doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_sprite_batch}{00012}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\_\_CUISpriteBatch\ :\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISpriteBatch}}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00013}00013\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \_\_CUISpriteBatch\ Create()\ =>\ \textcolor{keyword}{new}\ \_\_CUISpriteBatch(}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00015}00015\ \ \ \ \ \ \ \textcolor{keyword}{new}\ SpriteBatch(GameMain.Instance.GraphicsDevice)}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00016}00016\ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{public}\ SpriteBatch\ XNASpriteBatch\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ StopStart(Rectangle\ scissorRect,\ SamplerState\ samplerState)}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00020}00020\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00021}00021\ \ \ \ \ \ \ XNASpriteBatch.End();}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00022}00022\ \ \ \ \ \ \ XNASpriteBatch.GraphicsDevice.ScissorRectangle\ =\ scissorRect;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00023}00023\ \ \ \ \ \ \ XNASpriteBatch.Begin(}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ SpriteSortMode.Deferred,}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ samplerState:\ samplerState,}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ rasterizerState:\ GameMain.ScissorTestEnable}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00027}00027\ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Draw(\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture2_d}{CUITexture2D}}\ texture,\ Rectangle\ destinationRectangle,\ Color\ color)}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00031}00031\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00032}00032\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (texture\ is\ \doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_texture2_d}{\_\_CUITexture2D}})}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00033}00033\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ XNASpriteBatch.Draw(((\doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_texture2_d}{\_\_CUITexture2D}})texture).XNATexture,\ destinationRectangle,\ color);}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00035}00035\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Draw(\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture2_d}{CUITexture2D}}\ texture,\ Rectangle\ destinationRectangle,\ Rectangle?\ sourceRectangle,\ Color\ color)}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00039}00039\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00040}00040\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (texture\ is\ \doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_texture2_d}{\_\_CUITexture2D}})}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00041}00041\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ XNASpriteBatch.Draw(((\doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_texture2_d}{\_\_CUITexture2D}})texture).XNATexture,\ destinationRectangle,\ sourceRectangle,\ color);}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00043}00043\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Draw(\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture2_d}{CUITexture2D}}\ texture,\ Rectangle\ destinationRectangle,\ Rectangle?\ sourceRectangle,\ Color\ color,\ \textcolor{keywordtype}{float}\ rotation,\ Vector2\ origin,\ SpriteEffects\ effects,\ \textcolor{keywordtype}{float}\ layerDepth)}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00047}00047\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00048}00048\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (texture\ is\ \doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_texture2_d}{\_\_CUITexture2D}})}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00049}00049\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ XNASpriteBatch.Draw(((\doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_texture2_d}{\_\_CUITexture2D}})texture).XNATexture,\ destinationRectangle,\ sourceRectangle,\ color,\ rotation,\ origin,\ effects,\ layerDepth);}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00051}00051\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00055}00055\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Begin(}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00056}00056\ \ \ \ \ \ \ SpriteSortMode\ sortMode\ =\ SpriteSortMode.Deferred,}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00057}00057\ \ \ \ \ \ \ BlendState\ blendState\ =\ \textcolor{keyword}{null},}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00058}00058\ \ \ \ \ \ \ SamplerState\ samplerState\ =\ \textcolor{keyword}{null},}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00059}00059\ \ \ \ \ \ \ DepthStencilState\ depthStencilState\ =\ \textcolor{keyword}{null},}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00060}00060\ \ \ \ \ \ \ RasterizerState\ rasterizerState\ =\ \textcolor{keyword}{null},}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00061}00061\ \ \ \ \ \ \ Effect\ effect\ =\ \textcolor{keyword}{null},}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00062}00062\ \ \ \ \ \ \ Matrix?\ transformMatrix\ =\ \textcolor{keyword}{null}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00063}00063\ \ \ \ \ )\ =>\ XNASpriteBatch.Begin(}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00064}00064\ \ \ \ \ \ \ sortMode,}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00065}00065\ \ \ \ \ \ \ blendState,}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00066}00066\ \ \ \ \ \ \ samplerState,}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00067}00067\ \ \ \ \ \ \ depthStencilState,}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00068}00068\ \ \ \ \ \ \ rasterizerState,}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00069}00069\ \ \ \ \ \ \ effect,}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00070}00070\ \ \ \ \ \ \ transformMatrix}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00071}00071\ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00073}00073\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ End()\ =>\ XNASpriteBatch.End();}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00077}00077\ \ \ \ \ \textcolor{keyword}{public}\ \_\_CUISpriteBatch()\ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00078}00078\ \ \ \ \ \textcolor{keyword}{public}\ \_\_CUISpriteBatch(SpriteBatch\ spriteBatch)\ =>\ XNASpriteBatch\ =\ spriteBatch;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00079}00079\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_sprite_batch_8cs_source_l00080}00080\ \}}
+
+\end{DoxyCode}

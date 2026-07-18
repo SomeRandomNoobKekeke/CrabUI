@@ -1,0 +1,57 @@
+\doxysection{The problem.\+cs}
+\hypertarget{_the_01problem_8cs_source}{}\label{_the_01problem_8cs_source}\index{ClientProject/InMemory/Experiments/Design/ClassMapping/The problem.cs@{ClientProject/InMemory/Experiments/Design/ClassMapping/The problem.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00010}00010\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i_user}{CrabUIUser}}}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00013}00013\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_class_mapping}{ClassMapping}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Experiment}}}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00014}00014\ \ \ \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00015}00015\ \textcolor{comment}{\ \ \ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00016}00016\ \textcolor{comment}{\ \ \ \ ///\ We\ got\ some\ classes}}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00017}00017\ \textcolor{comment}{\ \ \ \ ///\ Now\ i\ want\ user\ to\ operate\ on\ a\ different\ set\ of\ classes\ that\ behave\ similarly}}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00018}00018\ \textcolor{comment}{\ \ \ \ ///\ and\ could\ be\ mapped\ to\ originals,\ and\ also\ User\ shouldn't\ know\ that\ they\ are\ mapping\ to\ something}}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00019}00019\ \textcolor{comment}{\ \ \ \ ///\ How\ do\ i\ construct\ such\ a\ set?}}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00020}00020\ \textcolor{comment}{\ \ \ \ ///\ Spoilers:\ a\ proper\ solution\ would\ be\ to\ put\ them\ in\ a\ separate\ assembly\ with\ internal\ modifiers}}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00021}00021\ \textcolor{comment}{\ \ \ \ ///\ but\ i\ can't\ do\ that}}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00022}00022\ \textcolor{comment}{\ \ \ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00023}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_class_mapping_1_1_the_problem}{00023}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_class_mapping_1_1_the_problem}{TheProblem}}}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00024}00024\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00025}00025\ \ \ \ \ \ \ \textcolor{comment}{//\ Original\ classes}}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00026}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_class_mapping_1_1_the_problem_1_1_a}{00026}}\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_class_mapping_1_1_the_problem_1_1_a}{A}}}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00027}00027\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ Value\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ UseB(\doxymbox{\hyperlink{class_crab_u_i_user_1_1_class_mapping_1_1_the_problem_1_1_b}{B}}\ b)\ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_class_mapping_1_1_the_problem_1_1_c}{C}}\ CreateC()\ =>\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_class_mapping_1_1_the_problem_1_1_c}{C}}();}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00032}00032\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00034}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_class_mapping_1_1_the_problem_1_1_b}{00034}}\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_class_mapping_1_1_the_problem_1_1_b}{B}}}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00035}00035\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ MakeDUseMe(\doxymbox{\hyperlink{class_crab_u_i_user_1_1_class_mapping_1_1_the_problem_1_1_d}{D}}\ d)\ =>\ d.UseB(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00037}00037\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00038}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_class_mapping_1_1_the_problem_1_1_c}{00038}}\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_class_mapping_1_1_the_problem_1_1_c}{C}}\ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00039}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_class_mapping_1_1_the_problem_1_1_d}{00039}}\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_class_mapping_1_1_the_problem_1_1_d}{D}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_class_mapping_1_1_the_problem_1_1_a}{A}}\ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00041}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_class_mapping_1_1_the_problem_1_1_user}{00041}}\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_class_mapping_1_1_the_problem_1_1_user}{User}}}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00042}00042\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00044}00044\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00045}00045\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00047}00047\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ Run()\ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00048}00048\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_the_01problem_8cs_source_l00051}00051\ \}}
+
+\end{DoxyCode}

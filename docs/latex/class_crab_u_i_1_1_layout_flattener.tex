@@ -1,0 +1,84 @@
+\doxysection{Crab\+UI.\+Layout\+Flattener Class Reference}
+\hypertarget{class_crab_u_i_1_1_layout_flattener}{}\label{class_crab_u_i_1_1_layout_flattener}\index{CrabUI.LayoutFlattener@{CrabUI.LayoutFlattener}}
+Inheritance diagram for Crab\+UI.\+Layout\+Flattener:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_1_1_layout_flattener}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_layout_flattener_a842675dbe3e17cc678872f732b003140}{Flatten}} (\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component}{CUIComponent}} root)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component}{CUIComponent}} $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_layout_flattener_a95ffdffee81fed5c80579cd5862e928d}{Flat}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_layout_flattener_8cs_source_l00014}{14}} of file \doxymbox{\hyperlink{_layout_flattener_8cs_source}{Layout\+Flattener.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_layout_flattener_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_layout_flattener_a842675dbe3e17cc678872f732b003140}\index{CrabUI.LayoutFlattener@{CrabUI.LayoutFlattener}!Flatten@{Flatten}}
+\index{Flatten@{Flatten}!CrabUI.LayoutFlattener@{CrabUI.LayoutFlattener}}
+\doxysubsubsection{\texorpdfstring{Flatten()}{Flatten()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_layout_flattener_a842675dbe3e17cc678872f732b003140} 
+void Crab\+UI.\+Layout\+Flattener.\+Flatten (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component}{CUIComponent}}}]{root}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_layout_flattener_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_layout_flattener_8cs_source}{Layout\+Flattener.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ Flat.Clear();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ FlattenRec(CUIComponent\ component) }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ Flat.Add(component);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (CUIComponent\ child\ \textcolor{keywordflow}{in}\ component.Children)}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ FlattenRec(child);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ FlattenRec(root);}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_layout_flattener_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_layout_flattener_a95ffdffee81fed5c80579cd5862e928d}\index{CrabUI.LayoutFlattener@{CrabUI.LayoutFlattener}!Flat@{Flat}}
+\index{Flat@{Flat}!CrabUI.LayoutFlattener@{CrabUI.LayoutFlattener}}
+\doxysubsubsection{\texorpdfstring{Flat}{Flat}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_layout_flattener_a95ffdffee81fed5c80579cd5862e928d} 
+List$<$\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component}{CUIComponent}}$>$ Crab\+UI.\+Layout\+Flattener.\+Flat = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_layout_flattener_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_layout_flattener_8cs_source}{Layout\+Flattener.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Components/\+\+CUIMain\+Component/\+\+Modules/\+Layout\+Flattener.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,249 @@
+\doxysection{Crab\+UI.\+CUIComponent.\+Tree\+Operations\+\_\+\+Part Class Reference}
+\hypertarget{class_crab_u_i_1_1_c_u_i_component_1_1_tree_operations___part}{}\label{class_crab_u_i_1_1_c_u_i_component_1_1_tree_operations___part}\index{CrabUI.CUIComponent.TreeOperations\_Part@{CrabUI.CUIComponent.TreeOperations\_Part}}
+Inheritance diagram for Crab\+UI.\+CUIComponent.\+Tree\+Operations\+\_\+\+Part:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_crab_u_i_1_1_c_u_i_component_1_1_tree_operations___part}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_tree_operations___part_a95f2ff0b5ccb94480f1b3e03dd94d6e5}{Remove\+Child}} (CUIComponent child)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_tree_operations___part_abf0b12e112b9e3bb26da11b539169e0f}{Set\+Child}} (int i, CUIComponent new\+Child)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_tree_operations___part_a5fe050ecc860c22d997018b6548e4233}{Insert\+Child}} (int i, CUIComponent child)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_tree_operations___part_acd7c2ae1ba22a5ff60b07a836a7c758a}{Move\+Child\+To}} (CUIComponent child, int i)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_tree_operations___part_a6d1c9eb7a36346ee257324c7633a74a9}{Add\+Child}} (CUIComponent child)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_tree_operations___part_a4daba20adeca1b87ee7957c0b9797817}{Remove\+Child\+At}} (int i)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_tree_operations___part_a046d21d13bb6cb81ee3c8dd76078d859}{Set\+Parent}} (CUIComponent new\+Parent)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_tree_operations___part_a3ece5961cc4c852df5b97c2be65ef5af}{Remove\+All\+Children}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Properties inherited from \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_part}{Crab\+UI.\+CUIComponent.\+Part}}}
+\begin{DoxyCompactItemize}
+\item 
+CUIComponent \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_part_ab47f49d90b2cb6709df65c276f06bb56}{Self}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_tree_operations_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_tree_operations_8cs_source}{Tree\+Operations.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_1_1_tree_operations___part_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_1_1_tree_operations___part_a6d1c9eb7a36346ee257324c7633a74a9}\index{CrabUI.CUIComponent.TreeOperations\_Part@{CrabUI.CUIComponent.TreeOperations\_Part}!AddChild@{AddChild}}
+\index{AddChild@{AddChild}!CrabUI.CUIComponent.TreeOperations\_Part@{CrabUI.CUIComponent.TreeOperations\_Part}}
+\doxysubsubsection{\texorpdfstring{AddChild()}{AddChild()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_component_1_1_tree_operations___part_a6d1c9eb7a36346ee257324c7633a74a9} 
+void Crab\+UI.\+CUIComponent.\+Tree\+Operations\+\_\+\+Part.\+Add\+Child (\begin{DoxyParamCaption}\item[{CUIComponent}]{child}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_tree_operations_8cs_source_l00083}{83}} of file \doxymbox{\hyperlink{_tree_operations_8cs_source}{Tree\+Operations.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ ArgumentNullException.ThrowIfNull(child);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ child.\_Parent?.TreeOperations.RemoveChild(child);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ child.\_Parent\ =\ Self;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ Self.\_Children.Add(child);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ child.Tree.OnAttachToParent(Self);}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ Self.Tree.OnChildAdded(child);}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_1_1_tree_operations___part_a5fe050ecc860c22d997018b6548e4233}\index{CrabUI.CUIComponent.TreeOperations\_Part@{CrabUI.CUIComponent.TreeOperations\_Part}!InsertChild@{InsertChild}}
+\index{InsertChild@{InsertChild}!CrabUI.CUIComponent.TreeOperations\_Part@{CrabUI.CUIComponent.TreeOperations\_Part}}
+\doxysubsubsection{\texorpdfstring{InsertChild()}{InsertChild()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_component_1_1_tree_operations___part_a5fe050ecc860c22d997018b6548e4233} 
+void Crab\+UI.\+CUIComponent.\+Tree\+Operations\+\_\+\+Part.\+Insert\+Child (\begin{DoxyParamCaption}\item[{int}]{i}{, }\item[{CUIComponent}]{child}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_tree_operations_8cs_source_l00056}{56}} of file \doxymbox{\hyperlink{_tree_operations_8cs_source}{Tree\+Operations.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ ArgumentNullException.ThrowIfNull(child);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ <\ 0)\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentException(\$\textcolor{stringliteral}{"{}\{Self\}|\ child\ insert\ index\ out\ of\ bounds\ [\{i\}]"{}});}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ child.\_Parent?.TreeOperations.RemoveChild(child);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ child.\_Parent\ =\ Self;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ Self.\_Children.Insert(i,\ child);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ child.Tree.OnAttachToParent(Self);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ Self.Tree.OnChildAdded(child);}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_1_1_tree_operations___part_acd7c2ae1ba22a5ff60b07a836a7c758a}\index{CrabUI.CUIComponent.TreeOperations\_Part@{CrabUI.CUIComponent.TreeOperations\_Part}!MoveChildTo@{MoveChildTo}}
+\index{MoveChildTo@{MoveChildTo}!CrabUI.CUIComponent.TreeOperations\_Part@{CrabUI.CUIComponent.TreeOperations\_Part}}
+\doxysubsubsection{\texorpdfstring{MoveChildTo()}{MoveChildTo()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_component_1_1_tree_operations___part_acd7c2ae1ba22a5ff60b07a836a7c758a} 
+void Crab\+UI.\+CUIComponent.\+Tree\+Operations\+\_\+\+Part.\+Move\+Child\+To (\begin{DoxyParamCaption}\item[{CUIComponent}]{child}{, }\item[{int}]{i}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_tree_operations_8cs_source_l00069}{69}} of file \doxymbox{\hyperlink{_tree_operations_8cs_source}{Tree\+Operations.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ ArgumentNullException.ThrowIfNull(child);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ ValidateI(i);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Self.\_Children.Remove(child))}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentException(\$\textcolor{stringliteral}{"{}\{child\}\ is\ not\ in\ the\ child\ list"{}});}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ Self.\_Children.Insert(i,\ child);}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ Self.Tree.OnChildrenRearranged();}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_1_1_tree_operations___part_a3ece5961cc4c852df5b97c2be65ef5af}\index{CrabUI.CUIComponent.TreeOperations\_Part@{CrabUI.CUIComponent.TreeOperations\_Part}!RemoveAllChildren@{RemoveAllChildren}}
+\index{RemoveAllChildren@{RemoveAllChildren}!CrabUI.CUIComponent.TreeOperations\_Part@{CrabUI.CUIComponent.TreeOperations\_Part}}
+\doxysubsubsection{\texorpdfstring{RemoveAllChildren()}{RemoveAllChildren()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_component_1_1_tree_operations___part_a3ece5961cc4c852df5b97c2be65ef5af} 
+void Crab\+UI.\+CUIComponent.\+Tree\+Operations\+\_\+\+Part.\+Remove\+All\+Children (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_tree_operations_8cs_source_l00120}{120}} of file \doxymbox{\hyperlink{_tree_operations_8cs_source}{Tree\+Operations.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ Self.\_Children.Count\ -\/\ 1;\ i\ >=\ 0;\ i-\/-\/)}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ RemoveChildAt(i);}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_1_1_tree_operations___part_a95f2ff0b5ccb94480f1b3e03dd94d6e5}\index{CrabUI.CUIComponent.TreeOperations\_Part@{CrabUI.CUIComponent.TreeOperations\_Part}!RemoveChild@{RemoveChild}}
+\index{RemoveChild@{RemoveChild}!CrabUI.CUIComponent.TreeOperations\_Part@{CrabUI.CUIComponent.TreeOperations\_Part}}
+\doxysubsubsection{\texorpdfstring{RemoveChild()}{RemoveChild()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_component_1_1_tree_operations___part_a95f2ff0b5ccb94480f1b3e03dd94d6e5} 
+void Crab\+UI.\+CUIComponent.\+Tree\+Operations\+\_\+\+Part.\+Remove\+Child (\begin{DoxyParamCaption}\item[{CUIComponent}]{child}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_tree_operations_8cs_source_l00024}{24}} of file \doxymbox{\hyperlink{_tree_operations_8cs_source}{Tree\+Operations.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ Self.\_Children.Remove(child);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ child.\_Parent\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ child.Tree.OnDetachFromParent(Self);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ Self.Tree.OnChildRemoved(child);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_1_1_tree_operations___part_a4daba20adeca1b87ee7957c0b9797817}\index{CrabUI.CUIComponent.TreeOperations\_Part@{CrabUI.CUIComponent.TreeOperations\_Part}!RemoveChildAt@{RemoveChildAt}}
+\index{RemoveChildAt@{RemoveChildAt}!CrabUI.CUIComponent.TreeOperations\_Part@{CrabUI.CUIComponent.TreeOperations\_Part}}
+\doxysubsubsection{\texorpdfstring{RemoveChildAt()}{RemoveChildAt()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_component_1_1_tree_operations___part_a4daba20adeca1b87ee7957c0b9797817} 
+void Crab\+UI.\+CUIComponent.\+Tree\+Operations\+\_\+\+Part.\+Remove\+Child\+At (\begin{DoxyParamCaption}\item[{int}]{i}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_tree_operations_8cs_source_l00096}{96}} of file \doxymbox{\hyperlink{_tree_operations_8cs_source}{Tree\+Operations.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ ValidateI(i);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ CUIComponent\ child\ =\ Self.\_Children[i];}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ Self.\_Children.RemoveAt(i);}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ child.\_Parent\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ child.Tree.OnDetachFromParent(Self);}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ Self.Tree.OnChildRemoved(child);}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_1_1_tree_operations___part_abf0b12e112b9e3bb26da11b539169e0f}\index{CrabUI.CUIComponent.TreeOperations\_Part@{CrabUI.CUIComponent.TreeOperations\_Part}!SetChild@{SetChild}}
+\index{SetChild@{SetChild}!CrabUI.CUIComponent.TreeOperations\_Part@{CrabUI.CUIComponent.TreeOperations\_Part}}
+\doxysubsubsection{\texorpdfstring{SetChild()}{SetChild()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_component_1_1_tree_operations___part_abf0b12e112b9e3bb26da11b539169e0f} 
+void Crab\+UI.\+CUIComponent.\+Tree\+Operations\+\_\+\+Part.\+Set\+Child (\begin{DoxyParamCaption}\item[{int}]{i}{, }\item[{CUIComponent}]{new\+Child}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_tree_operations_8cs_source_l00033}{33}} of file \doxymbox{\hyperlink{_tree_operations_8cs_source}{Tree\+Operations.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (newChild\ is\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ RemoveChildAt(i);\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ ValidateI(i);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ CUIComponent\ prevchild\ =\ Self.\_Children[i];}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ newChild.\_Parent?.TreeOperations.RemoveChild(newChild);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ prevchild.\_Parent\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ newChild.\_Parent\ =\ Self;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ Self.\_Children[i]\ =\ newChild;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ prevchild.Tree.OnDetachFromParent(Self);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ Self.Tree.OnChildRemoved(prevchild);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ newChild.Tree.OnAttachToParent(Self);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ Self.Tree.OnChildAdded(newChild);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_1_1_tree_operations___part_a046d21d13bb6cb81ee3c8dd76078d859}\index{CrabUI.CUIComponent.TreeOperations\_Part@{CrabUI.CUIComponent.TreeOperations\_Part}!SetParent@{SetParent}}
+\index{SetParent@{SetParent}!CrabUI.CUIComponent.TreeOperations\_Part@{CrabUI.CUIComponent.TreeOperations\_Part}}
+\doxysubsubsection{\texorpdfstring{SetParent()}{SetParent()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_component_1_1_tree_operations___part_a046d21d13bb6cb81ee3c8dd76078d859} 
+void Crab\+UI.\+CUIComponent.\+Tree\+Operations\+\_\+\+Part.\+Set\+Parent (\begin{DoxyParamCaption}\item[{CUIComponent}]{new\+Parent}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_tree_operations_8cs_source_l00108}{108}} of file \doxymbox{\hyperlink{_tree_operations_8cs_source}{Tree\+Operations.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (newParent\ is\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ Self.\_Parent?.TreeOperations.RemoveChild(Self);}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ newParent.TreeOperations.AddChild(Self);}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Components/\+\+CUIComponent/\+\+Tree/\+Tree\+Operations.\+cs\end{DoxyCompactItemize}

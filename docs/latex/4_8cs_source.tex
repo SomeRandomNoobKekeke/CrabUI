@@ -1,0 +1,57 @@
+\doxysection{4.cs}
+\hypertarget{4_8cs_source}{}\label{4_8cs_source}\index{ClientProject/InMemory/Experiments/Design/ClassMapping/4.cs@{ClientProject/InMemory/Experiments/Design/ClassMapping/4.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00010}00010\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i_user}{CrabUIUser}}}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00013}00013\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_class_mapping}{ClassMapping}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Experiment}}}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00014}00014\ \ \ \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00015}00015\ \textcolor{comment}{\ \ \ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00016}00016\ \textcolor{comment}{\ \ \ \ ///\ now\ PropxyA\ doesn't\ have\ to\ extract\ self\ from\ PropxyB}}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00017}00017\ \textcolor{comment}{\ \ \ \ ///\ But\ external\ MappingLayer\ has\ to}}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00018}00018\ \textcolor{comment}{\ \ \ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00019}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_class_mapping_1_1_mapping_layer_test}{00019}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_class_mapping_1_1_mapping_layer_test}{MappingLayerTest}}}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00020}00020\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00021}00021\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }MappingLayer}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00022}00022\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ A\_UseB\_B(\doxymbox{\hyperlink{class_crab_u_i_user_1_1_class_mapping_1_1_mapping_layer_test_1_1_propxy_a}{PropxyA}}\ propxyA,\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_class_mapping_1_1_mapping_layer_test_1_1_propxy_b}{PropxyB}}\ propxyB)}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_class_mapping_1_1_the_problem_1_1_a}{TheProblem.A}}\ a\ =\ propxyA.Self;}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_class_mapping_1_1_the_problem_1_1_b}{TheProblem.B}}\ b\ =\ propxyB.Self;}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ a.UseB(b);}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00030}00030\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00032}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_class_mapping_1_1_mapping_layer_test_1_1_propxy_a}{00032}}\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }PropxyA}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00033}00033\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ UseB(\doxymbox{\hyperlink{class_crab_u_i_user_1_1_class_mapping_1_1_mapping_layer_test_1_1_propxy_b}{PropxyB}}\ b)\ =>\ MappingLayer.A\_UseB\_B(\textcolor{keyword}{this},\ b);}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_class_mapping_1_1_the_problem_1_1_a}{TheProblem.A}}\ Self\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ PropxyA(\doxymbox{\hyperlink{class_crab_u_i_user_1_1_class_mapping_1_1_the_problem}{TheProblem}}.\doxymbox{\hyperlink{class_crab_u_i_user_1_1_class_mapping_1_1_the_problem_1_1_a}{A}}\ \textcolor{keyword}{self})\ =>\ Self\ =\ \textcolor{keyword}{self};}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00038}00038\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00040}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_class_mapping_1_1_mapping_layer_test_1_1_propxy_b}{00040}}\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }PropxyB}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00041}00041\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_class_mapping_1_1_the_problem_1_1_b}{TheProblem.B}}\ Self\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ PropxyB(\doxymbox{\hyperlink{class_crab_u_i_user_1_1_class_mapping_1_1_the_problem}{TheProblem}}.\doxymbox{\hyperlink{class_crab_u_i_user_1_1_class_mapping_1_1_the_problem_1_1_b}{B}}\ \textcolor{keyword}{self})\ =>\ Self\ =\ \textcolor{keyword}{self};}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00044}00044\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00048}00048\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{4_8cs_source_l00051}00051\ \}}
+
+\end{DoxyCode}

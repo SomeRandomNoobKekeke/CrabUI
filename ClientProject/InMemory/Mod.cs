@@ -31,8 +31,6 @@ namespace CrabUIUser
 
       Logger.Log($"Compiled somehow");
 
-
-
       try
       {
         CUI.Start();

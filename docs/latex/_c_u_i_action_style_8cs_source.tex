@@ -1,0 +1,50 @@
+\doxysection{CUIAction\+Style.\+cs}
+\hypertarget{_c_u_i_action_style_8cs_source}{}\label{_c_u_i_action_style_8cs_source}\index{ClientProject/ClientSource/CUI/Core/Styling/Styles/StyleTypes/CUIActionStyle.cs@{ClientProject/ClientSource/CUI/Core/Styling/Styles/StyleTypes/CUIActionStyle.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00006}00006\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00008}\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_action_style}{00008}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{abstract}\ \textcolor{keyword}{class\ }CUIActionStyle\ :\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_c_u_i_style}{ICUIStyle}}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00009}00009\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00010}00010\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ ID\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{public}\ Type\ TargetType\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ Priority\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_c_u_i_style}{ICUIStyle}}.DefaultPriority;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{public}\ CUIStyleCategory\ Category\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{abstract}\ \textcolor{keywordtype}{void}\ Apply(\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component}{CUIComponent}}\ component);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{public}\ CUIActionStyle(\textcolor{keywordtype}{string}\ \textcolor{keywordtype}{id},\ Type\ targetType)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00019}00019\ \ \ \ \ \ \ ID\ =\ id;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00020}00020\ \ \ \ \ \ \ TargetType\ =\ targetType;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00021}00021\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{string}\ ToString()\ =>\ \$\textcolor{stringliteral}{"{}CUIStyle\ [\{ID\}]"{}};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00024}00024\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00026}\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_action_style-1-g}{00026}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }CUIActionStyle<ComponentT>\ :\ CUIActionStyle\ where\ ComponentT\ :\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component}{CUIComponent}}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00027}00027\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{public}\ Action<ComponentT>\ Action\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ Apply(\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component}{CUIComponent}}\ component)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00031}00031\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00032}00032\ \ \ \ \ \ \ Action?.Invoke((ComponentT)component);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00033}00033\ \ \ \ \ \ \ \textcolor{comment}{//\ CUI.Logger.Log(\$"{}Applying\ [\{this\}]\ to\ [\{component\}]"{});\ //\ TODO\ this\ should\ be\ a\ debug\ event}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{public}\ CUIActionStyle(\textcolor{keywordtype}{string}\ \textcolor{keywordtype}{id},\ Action<ComponentT>\ action)\ :\ base(\textcolor{keywordtype}{id},\ typeof(ComponentT))}
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00038}00038\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00039}00039\ \ \ \ \ \ \ Action\ =\ action;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00041}00041\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_action_style_8cs_source_l00044}00044\ \}}
+
+\end{DoxyCode}

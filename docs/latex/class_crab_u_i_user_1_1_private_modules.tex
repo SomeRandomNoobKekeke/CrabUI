@@ -1,0 +1,70 @@
+\doxysection{Crab\+UIUser.\+Private\+Modules Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_private_modules}{}\label{class_crab_u_i_user_1_1_private_modules}\index{CrabUIUser.PrivateModules@{CrabUIUser.PrivateModules}}
+
+
+if i want to inject host via prop, then that prop has to be public  
+
+
+Inheritance diagram for Crab\+UIUser.\+Private\+Modules:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_private_modules}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+interface \doxymbox{\hyperlink{interface_crab_u_i_user_1_1_private_modules_1_1_i_module_a_container}{IModule\+AContainer}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_private_modules_1_1_module_a}{ModuleA}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_private_modules_1_1_module_b}{ModuleB}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_private_modules_1_1_host}{Host}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_private_modules_af8397a3e0a940045ac208d473105fe8c}{Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Crab\+UIUser.\+Experiment}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Run} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+if i want to inject host via prop, then that prop has to be public 
+
+Definition at line \doxymbox{\hyperlink{_private_modules_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_private_modules_8cs_source}{Private\+Modules.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_private_modules_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_private_modules_af8397a3e0a940045ac208d473105fe8c}\index{CrabUIUser.PrivateModules@{CrabUIUser.PrivateModules}!Run@{Run}}
+\index{Run@{Run}!CrabUIUser.PrivateModules@{CrabUIUser.PrivateModules}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_private_modules_af8397a3e0a940045ac208d473105fe8c} 
+override void Crab\+UIUser.\+Private\+Modules.\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_private_modules_8cs_source_l00065}{65}} of file \doxymbox{\hyperlink{_private_modules_8cs_source}{Private\+Modules.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00066\ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ Host\ host\ =\ \textcolor{keyword}{new}\ Host();}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ Mod.Logger.Log(host.ModuleB.Transform());}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Design/\+Private\+Modules.\+cs\end{DoxyCompactItemize}

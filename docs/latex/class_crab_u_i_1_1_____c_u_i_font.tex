@@ -1,0 +1,183 @@
+\doxysection{Crab\+UI.\+\_\+\+\_\+\+CUIFont(GUIFont font) Class Reference}
+\hypertarget{class_crab_u_i_1_1_____c_u_i_font}{}\label{class_crab_u_i_1_1_____c_u_i_font}\index{CrabUI.\_\_CUIFont@{CrabUI.\_\_CUIFont}}
+Inheritance diagram for Crab\+UI.\+\_\+\+\_\+\+CUIFont:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_1_1_____c_u_i_font}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_font_a2b76aa44c5ac6c8c69d539bd39b5ace1}{Wrap\+Text}} (string text, float width)
+\item 
+Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_font_ac2e88a962317d01a432473f7d76fc464}{Measure\+String}} (string str, bool remove\+Extra\+Spacing=false)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_font_ad24007dbcfec4b78ffefbdd51c546e0d}{Draw\+String}} (\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISprite\+Batch}} sb, string text, Vector2 position, Color color, Force\+Upper\+Case force\+Upper\+Case=Barotrauma.\+Force\+Upper\+Case.\+Inherit, bool italics=false)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_font_ac2e47de4b11c0b72b0d7be953aed30f9}{Draw\+String}} (\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISprite\+Batch}} sb, string text, Vector2 position, Color color, float rotation, Vector2 origin, float scale, Sprite\+Effects sprite\+Effects, float layer\+Depth, Alignment alignment=Alignment.\+Top\+Left, Force\+Upper\+Case force\+Upper\+Case=Barotrauma.\+Force\+Upper\+Case.\+Inherit)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_font}{\+\_\+\+\_\+\+CUIFont}} \doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_font_a1ba43e2ee873e524802dc595b3815bd4}{Font}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+GUIFont \doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_font_a79b62ac23b29f42aa86301df87ed00b2}{GUIFont}} = font\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+float \doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_font_af0b1a070f1e9f63c298099a6a05391f5}{Line\+Height}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_____c_u_i_font_8cs_source_l00012}{12}} of file \doxymbox{\hyperlink{_____c_u_i_font_8cs_source}{\+\_\+\+\_\+\+CUIFont.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_____c_u_i_font_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_____c_u_i_font_ac2e47de4b11c0b72b0d7be953aed30f9}\index{CrabUI.\_\_CUIFont@{CrabUI.\_\_CUIFont}!DrawString@{DrawString}}
+\index{DrawString@{DrawString}!CrabUI.\_\_CUIFont@{CrabUI.\_\_CUIFont}}
+\doxysubsubsection{\texorpdfstring{DrawString()}{DrawString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_____c_u_i_font_ac2e47de4b11c0b72b0d7be953aed30f9} 
+void Crab\+UI.\+\_\+\+\_\+\+CUIFont.\+Draw\+String (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISprite\+Batch}}}]{sb}{, }\item[{string}]{text}{, }\item[{Vector2}]{position}{, }\item[{Color}]{color}{, }\item[{float}]{rotation}{, }\item[{Vector2}]{origin}{, }\item[{float}]{scale}{, }\item[{Sprite\+Effects}]{sprite\+Effects}{, }\item[{float}]{layer\+Depth}{, }\item[{Alignment}]{alignment}{ = {\ttfamily Alignment:\+:\+TopLeft}, }\item[{Force\+Upper\+Case}]{force\+Upper\+Case}{ = {\ttfamily Barotrauma:\+:\+ForceUpperCase:\+:\+Inherit}}\end{DoxyParamCaption})}
+
+
+
+Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_font}{Crab\+UI.\+CUIFont}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_____c_u_i_font_8cs_source_l00034}{34}} of file \doxymbox{\hyperlink{_____c_u_i_font_8cs_source}{\+\_\+\+\_\+\+CUIFont.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (text\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sb\ is\ \_\_CUISpriteBatch)}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ GUIFont.DrawString(((\_\_CUISpriteBatch)sb).XNASpriteBatch,\ text,\ position,\ color,\ rotation,\ origin,\ scale,\ spriteEffects,\ layerDepth,\ alignment,\ forceUpperCase);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_____c_u_i_font_ad24007dbcfec4b78ffefbdd51c546e0d}\index{CrabUI.\_\_CUIFont@{CrabUI.\_\_CUIFont}!DrawString@{DrawString}}
+\index{DrawString@{DrawString}!CrabUI.\_\_CUIFont@{CrabUI.\_\_CUIFont}}
+\doxysubsubsection{\texorpdfstring{DrawString()}{DrawString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_____c_u_i_font_ad24007dbcfec4b78ffefbdd51c546e0d} 
+void Crab\+UI.\+\_\+\+\_\+\+CUIFont.\+Draw\+String (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISprite\+Batch}}}]{sb}{, }\item[{string}]{text}{, }\item[{Vector2}]{position}{, }\item[{Color}]{color}{, }\item[{Force\+Upper\+Case}]{force\+Upper\+Case}{ = {\ttfamily Barotrauma:\+:\+ForceUpperCase:\+:\+Inherit}, }\item[{bool}]{italics}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+
+
+Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_font}{Crab\+UI.\+CUIFont}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_____c_u_i_font_8cs_source_l00024}{24}} of file \doxymbox{\hyperlink{_____c_u_i_font_8cs_source}{\+\_\+\+\_\+\+CUIFont.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (text\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sb\ is\ \_\_CUISpriteBatch)}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ GUIFont.DrawString(((\_\_CUISpriteBatch)sb).XNASpriteBatch,\ text,\ position,\ color,\ forceUpperCase,\ italics);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_____c_u_i_font_ac2e88a962317d01a432473f7d76fc464}\index{CrabUI.\_\_CUIFont@{CrabUI.\_\_CUIFont}!MeasureString@{MeasureString}}
+\index{MeasureString@{MeasureString}!CrabUI.\_\_CUIFont@{CrabUI.\_\_CUIFont}}
+\doxysubsubsection{\texorpdfstring{MeasureString()}{MeasureString()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_____c_u_i_font_ac2e88a962317d01a432473f7d76fc464} 
+Vector2 Crab\+UI.\+\_\+\+\_\+\+CUIFont.\+Measure\+String (\begin{DoxyParamCaption}\item[{string}]{str}{, }\item[{bool}]{remove\+Extra\+Spacing}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+
+
+Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_font}{Crab\+UI.\+CUIFont}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_____c_u_i_font_8cs_source_l00021}{21}} of file \doxymbox{\hyperlink{_____c_u_i_font_8cs_source}{\+\_\+\+\_\+\+CUIFont.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ =>\ GUIFont.MeasureString(str,\ removeExtraSpacing);}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_____c_u_i_font_a2b76aa44c5ac6c8c69d539bd39b5ace1}\index{CrabUI.\_\_CUIFont@{CrabUI.\_\_CUIFont}!WrapText@{WrapText}}
+\index{WrapText@{WrapText}!CrabUI.\_\_CUIFont@{CrabUI.\_\_CUIFont}}
+\doxysubsubsection{\texorpdfstring{WrapText()}{WrapText()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_____c_u_i_font_a2b76aa44c5ac6c8c69d539bd39b5ace1} 
+string Crab\+UI.\+\_\+\+\_\+\+CUIFont.\+Wrap\+Text (\begin{DoxyParamCaption}\item[{string}]{text}{, }\item[{float}]{width}{}\end{DoxyParamCaption})}
+
+
+
+Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_font}{Crab\+UI.\+CUIFont}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_____c_u_i_font_8cs_source_l00020}{20}} of file \doxymbox{\hyperlink{_____c_u_i_font_8cs_source}{\+\_\+\+\_\+\+CUIFont.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ =>\ GUIFont.WrapText(text,\ width);}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_____c_u_i_font_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_____c_u_i_font_a1ba43e2ee873e524802dc595b3815bd4}\index{CrabUI.\_\_CUIFont@{CrabUI.\_\_CUIFont}!Font@{Font}}
+\index{Font@{Font}!CrabUI.\_\_CUIFont@{CrabUI.\_\_CUIFont}}
+\doxysubsubsection{\texorpdfstring{Font}{Font}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_____c_u_i_font_a1ba43e2ee873e524802dc595b3815bd4} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_font}{\+\_\+\+\_\+\+CUIFont}} Crab\+UI.\+\_\+\+\_\+\+CUIFont.\+Font\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_font}{Crab\+UI.\+CUIFont}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_____c_u_i_font_8cs_source_l00014}{14}} of file \doxymbox{\hyperlink{_____c_u_i_font_8cs_source}{\+\_\+\+\_\+\+CUIFont.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_____c_u_i_font_a79b62ac23b29f42aa86301df87ed00b2}\index{CrabUI.\_\_CUIFont@{CrabUI.\_\_CUIFont}!GUIFont@{GUIFont}}
+\index{GUIFont@{GUIFont}!CrabUI.\_\_CUIFont@{CrabUI.\_\_CUIFont}}
+\doxysubsubsection{\texorpdfstring{GUIFont}{GUIFont}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_____c_u_i_font_a79b62ac23b29f42aa86301df87ed00b2} 
+GUIFont Crab\+UI.\+\_\+\+\_\+\+CUIFont.\+GUIFont = font\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_____c_u_i_font_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_____c_u_i_font_8cs_source}{\+\_\+\+\_\+\+CUIFont.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{\ \textcolor{keyword}{get};\ \}\ =\ font;}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_____c_u_i_font_af0b1a070f1e9f63c298099a6a05391f5}\index{CrabUI.\_\_CUIFont@{CrabUI.\_\_CUIFont}!LineHeight@{LineHeight}}
+\index{LineHeight@{LineHeight}!CrabUI.\_\_CUIFont@{CrabUI.\_\_CUIFont}}
+\doxysubsubsection{\texorpdfstring{LineHeight}{LineHeight}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_____c_u_i_font_af0b1a070f1e9f63c298099a6a05391f5} 
+float Crab\+UI.\+\_\+\+\_\+\+CUIFont.\+Line\+Height\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_font}{Crab\+UI.\+CUIFont}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_____c_u_i_font_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_____c_u_i_font_8cs_source}{\+\_\+\+\_\+\+CUIFont.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Infrastructure/\+\+Graphics Abstractions/\+\+\_\+\+\_\+\+CUIFont.\+cs\end{DoxyCompactItemize}

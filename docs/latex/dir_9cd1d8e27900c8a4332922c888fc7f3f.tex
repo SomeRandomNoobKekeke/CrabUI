@@ -1,0 +1,55 @@
+\doxysection{Client\+Project/\+\+Client\+Source/\+\+Libs/\+\+UTest Directory Reference}
+\hypertarget{dir_9cd1d8e27900c8a4332922c888fc7f3f}{}\label{dir_9cd1d8e27900c8a4332922c888fc7f3f}\index{ClientProject/ClientSource/Libs/UTest Directory Reference@{ClientProject/ClientSource/Libs/UTest Directory Reference}}
+\doxysubsubsection*{Directories}
+\begin{DoxyCompactItemize}
+\item 
+directory \doxymbox{\hyperlink{dir_21d0c9b915b56fc736af5ada75426031}{UTest\+Results}}
+\item 
+directory \doxymbox{\hyperlink{dir_be8b35a720a8d8a8e25eb161512e6ebd}{UTests}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file {\bfseries UTest\+Commands.\+cs}
+\item 
+file {\bfseries UTest\+Explorer.\+cs}
+\item 
+file {\bfseries UTest\+Logger.\+cs}
+\item 
+file {\bfseries UTest\+Pack.\+cs}
+\item 
+file {\bfseries UTest\+Runner.\+cs}
+\item 
+file {\bfseries UTest\+Tree.\+cs}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Another new half assed library for unit testing
+
+Key class is UTest, it\textquotesingle{}s just a wrapper around expected and real value
+
+UTest\+Pack is a collection of UTest UTest\+Runner is a class for running UTest\+Packs\hypertarget{dir_9cd1d8e27900c8a4332922c888fc7f3f_autotoc_md95}{}\doxysubsubsection{\texorpdfstring{How to use it}{How to use it}}\label{dir_9cd1d8e27900c8a4332922c888fc7f3f_autotoc_md95}
+run UTest\+Commands.\+Add\+Commands(); to add {\ttfamily utest} command
+
+Create class derived from UTest\+Pack, add UTest generating methods, Either:\+
+\begin{DoxyItemize}
+\item override Create\+Tests() and add UTests manually to UTest\+Pack.\+Tests
+\end{DoxyItemize}
+
+Or add methods with specific signatures:\+
+\begin{DoxyItemize}
+\item public UTest Method() should return one UTest
+\item public List$<$\+UTest$>$ Method() if you want to return multiple UTests
+\item public void Create\+Bla\+Bla\+Bla() Should add tests to UTest\+Pack.\+Tests manually without overriding Create\+Tests
+\end{DoxyItemize}
+
+You can derive one UTest\+Pack from another, when you run test pack it also runs all derived packs
+
+Then run utest command with class name ~\newline
+ utest command is tabable, without args it prints whole testpack tree
+
+Also you can run test packs manually with UTest\+Runner
+
+UTest is comparing 2 values as objects, you can also use UDict\+Test, UList\+Test, USet\+Test if you want to compare values as dicts, lists, sets\hypertarget{dir_9cd1d8e27900c8a4332922c888fc7f3f_autotoc_md96}{}\doxysubsubsubsection{\texorpdfstring{for examples check Test folder on Baro\+Junk}{for examples check Test folder on Baro\+Junk}}\label{dir_9cd1d8e27900c8a4332922c888fc7f3f_autotoc_md96}
+\href{https://github.com/SomeRandomNoobKekeke/Baro-Junk/tree/main/CSharp/Shared/Test}{\texttt{https:\+/\+/\+github.\+com/\+\+Some\+Random\+Noob\+Kekeke/\+\+Baro-\/\+Junk/\+tree/\+main/\+\+CSharp/\+\+Shared/\+\+Test}} 

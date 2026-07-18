@@ -1,0 +1,89 @@
+\doxysection{Event\+Constructor.\+cs}
+\hypertarget{_event_constructor_8cs_source}{}\label{_event_constructor_8cs_source}\index{ClientProject/ClientSource/CUI/Core/CUICore/Modules/EventConstructor.cs@{ClientProject/ClientSource/CUI/Core/CUICore/Modules/EventConstructor.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}};}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_code_generator}{CUICodeGenerator}};}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00010}00010\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework.Input;}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00012}00012\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00014}\doxymbox{\hyperlink{class_crab_u_i_1_1_event_constructor}{00014}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_event_constructor}{EventConstructor}}\ :\ \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_module}{IModule}}}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00015}00015\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_node}{DebugNode<List<InputEvent>}}>\ Debug\_Events\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}(}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00017}00017\ \ \ \ \ \ \ DebugCategory.Events,\ CUI.DebugHub,}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00018}00018\ \ \ \ \ \ \ (events)\ =>\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger}{Logger}}.\doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_1_1_wrap}{Wrap}}.IEnumerable(events)}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00019}00019\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00020}00020\ \ \ \ \ \{\ IsOpen\ =\ \textcolor{keyword}{true}\ \};}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{public}\ List<InputEvent>\ Events\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{public}\ List<InputEvent>\ KeyboardEvents\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_leave_event}{CUIMouseLeaveEvent}}\ MouseLeaveEvent\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_enter_event}{CUIMouseEnterEvent}}\ MouseEnterEvent\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_on_event}{CUIMouseOnEvent}}\ MouseOnEvent\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_off_event}{CUIMouseOffEvent}}\ MouseOffEvent\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Construct(\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_input}{CUIInput}}\ input)}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00031}00031\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00032}00032\ \ \ \ \ \ \ Events.Clear();}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00033}00033\ \ \ \ \ \ \ KeyboardEvents.Clear();}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00035}00035\ \ \ \ \ \ \ MouseLeaveEvent\ =\ \textcolor{keyword}{new}(input.Mouse);}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00036}00036\ \ \ \ \ \ \ MouseEnterEvent\ =\ \textcolor{keyword}{new}(input.Mouse);}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00037}00037\ \ \ \ \ \ \ MouseOnEvent\ =\ \textcolor{keyword}{new}(input.Mouse);}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00038}00038\ \ \ \ \ \ \ MouseOffEvent\ =\ \textcolor{keyword}{new}(input.Mouse);}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00040}00040\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ button\ \textcolor{keywordflow}{in}\ input.Mouse.Buttons)}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00041}00041\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!button.Changed)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (button.Down)\ Events.Add(\textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_down_event}{CUIMouseDownEvent}}(button.Type,\ input.Mouse));}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (button.Up)\ Events.Add(\textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_up_event}{CUIMouseUpEvent}}(button.Type,\ input.Mouse));}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (button.Click)\ Events.Add(\textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_click_event}{CUIMouseClickEvent}}(button.Type,\ input.Mouse));}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (button.DoubleClick)\ Events.Add(\textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_double_click_event}{CUIMouseDoubleClickEvent}}(button.Type,\ input.Mouse));}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00047}00047\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00049}00049\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (input.Mouse.Moved)}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00050}00050\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ Events.Add(\textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_moved_event}{CUIMouseMovedEvent}}(input.Mouse));}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00052}00052\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00054}00054\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (input.Mouse.Scrolled)}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00055}00055\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ Events.Add(\textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_scroll_event}{CUIMouseScrollEvent}}(input.Mouse));}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00057}00057\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00060}00060\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Keys\ key\ \textcolor{keywordflow}{in}\ input.Keyboard.PressedKeys)}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00061}00061\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ KeyboardEvents.Add(\textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_key_pressed_event}{CUIKeyPressedEvent}}(key,\ input.Keyboard));}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00063}00063\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00065}00065\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Keys\ key\ \textcolor{keywordflow}{in}\ input.Keyboard.ReleasedKeys)}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00066}00066\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ KeyboardEvents.Add(\textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_key_released_event}{CUIKeyReleasedEvent}}(key,\ input.Keyboard));}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00068}00068\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00070}00070\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (TextInputEventArgs\ args\ \textcolor{keywordflow}{in}\ input.Keyboard.TextInputEvents)}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00071}00071\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ KeyboardEvents.Add(\textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_text_input_event}{CUITextInputEvent}}(args,\ input.Keyboard));}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00073}00073\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00075}00075\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (TextInputEventArgs\ args\ \textcolor{keywordflow}{in}\ input.Keyboard.KeyDownEvents)}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00076}00076\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ KeyboardEvents.Add(\textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_key_down_input_event}{CUIKeyDownInputEvent}}(args,\ input.Keyboard));}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00078}00078\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00080}00080\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Events.Count\ !=\ 0)\ Debug\_Events.Send(Events);}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00081}00081\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00082}00082\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_event_constructor_8cs_source_l00083}00083\ \}}
+
+\end{DoxyCode}

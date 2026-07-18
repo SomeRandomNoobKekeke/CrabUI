@@ -1,0 +1,561 @@
+\doxysection{Crab\+UI.\+CUIRect Struct Reference}
+\hypertarget{struct_crab_u_i_1_1_c_u_i_rect}{}\label{struct_crab_u_i_1_1_c_u_i_rect}\index{CrabUI.CUIRect@{CrabUI.CUIRect}}
+
+
+Rectangle with float.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Rectangle \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect_a8b7e61de87ebf8e74e7b275f9b3edf9d}{Round}} ()
+\item 
+CUIRect \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect_ac36ee4a403d854db0dbe5e116276592d}{Shift}} (Vector2 shift)
+\item 
+bool \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect_ad1606703074bc1f41fa4ba58ed043290}{Contains}} (float x, float y)
+\item 
+bool \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect_a272c38bbd8e9ff324287775e57eccc6f}{Contains}} (Vector2 pos)
+\item 
+bool \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect_a4770a89ff0c1c8becd65ce12ba8c7106}{Intersect}} (CUIRect r)
+\item 
+bool \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect_a447feb24586ea744a582665e9c01f69e}{Outside}} (Vector2 pos)
+\item 
+\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect_a2f2b15e07a8fd992320d778eff88f0b6}{CUIRect}} (Vector2 size)
+\item 
+\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect_a873b4639b794a62de3b2594f2ec5f661}{CUIRect}} (Vector2 position, Vector2 size)
+\item 
+\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect_a61f0813bde53b37a6e826c78ff1bc5e5}{CUIRect}} (float x, float y, float w, float h)
+\item 
+override string \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect_af095640605f4134c7cdf95e82e52fd3a}{To\+String}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static CUIRect \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect_a1800944dadd1b74066dc8ca1b6cf6995}{operator+}} (CUIRect rect, \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_sizes}{CUISizes}} sizes)
+\item 
+static CUIRect \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect_a024a13bb4636433719e23412887c6708}{operator-\/}} (CUIRect rect, \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_sizes}{CUISizes}} sizes)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect_a1b89b967fe577c6c6894ff8b426bdbb9}{Left}}
+\item 
+float \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect_aba2a4a6af0d5a881abfc7a9cb8f41b1e}{Top}}
+\item 
+float \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect_a23b7a0bf9742167a0dbdcb564170c476}{Width}}
+\item 
+float \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect_a3d1a86208f5ce96fe51ac26fce96ec4a}{Height}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static CUIRect \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect_adbdb08771c3ff7ca68ab94b0b06109a7}{Zero}} = new CUIRect(0, 0, 0, 0)\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+float \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect_afdfeed5a0f9dd543f0ea8b939b28cee4}{Right}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+float \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect_a0ead472b1a78c4511f239437d69cbeff}{Bottom}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+Vector2 \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect_abd17f55676838f81a5d96f29a31d3681}{Size}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+Vector2 \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect_a53b86f14ded2f16b17f63746197f1a3f}{Position}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+Vector2 \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect_a6d4e3516cfa288c67ab0eeb8e69c034b}{Center}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+Rectangle \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect_ae27bfb95b93de6cbe5834bacb3d0f24e}{Box}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+Vector2 \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect_af107a024e76038c04fbf0787806ad94f}{Left\+Top}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+Vector2 \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect_a6bd76c6d6882a6d220ea964aa425acf0}{Left\+Center}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+Vector2 \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect_a302729b9f77f059921c35ac708157c02}{Left\+Bottom}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+Vector2 \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect_af3ff378dad7d946cdbf14fbcabf4beda}{Center\+Top}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+Vector2 \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect_a8aa467e20616068bec8afed0817116ef}{Center\+Center}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+Vector2 \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect_aea628c6ec475afb9ec75f38b239f5ee1}{Center\+Bottom}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+Vector2 \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect_af7bd448900c0ecae2469017fd7741c74}{Right\+Top}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+Vector2 \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect_add0bcd57fd1f929a0005e6595fe2081b}{Right\+Center}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+Vector2 \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect_a602789f96a69cc1df4e41beb71e76500}{Right\+Bottom}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Rectangle with float. 
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_rect_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_c_u_i_rect_8cs_source}{CUIRect.\+cs}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_a2f2b15e07a8fd992320d778eff88f0b6}\index{CrabUI.CUIRect@{CrabUI.CUIRect}!CUIRect@{CUIRect}}
+\index{CUIRect@{CUIRect}!CrabUI.CUIRect@{CrabUI.CUIRect}}
+\doxysubsubsection{\texorpdfstring{CUIRect()}{CUIRect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_rect_a2f2b15e07a8fd992320d778eff88f0b6} 
+Crab\+UI.\+CUIRect.\+CUIRect (\begin{DoxyParamCaption}\item[{Vector2}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_rect_8cs_source_l00112}{112}} of file \doxymbox{\hyperlink{_c_u_i_rect_8cs_source}{CUIRect.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00112\ :\ \textcolor{keyword}{this}(0,\ 0,\ size.X,\ size.Y)\ \{\ \}}
+
+\end{DoxyCode}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_a873b4639b794a62de3b2594f2ec5f661}\index{CrabUI.CUIRect@{CrabUI.CUIRect}!CUIRect@{CUIRect}}
+\index{CUIRect@{CUIRect}!CrabUI.CUIRect@{CrabUI.CUIRect}}
+\doxysubsubsection{\texorpdfstring{CUIRect()}{CUIRect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_rect_a873b4639b794a62de3b2594f2ec5f661} 
+Crab\+UI.\+CUIRect.\+CUIRect (\begin{DoxyParamCaption}\item[{Vector2}]{position}{, }\item[{Vector2}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_rect_8cs_source_l00113}{113}} of file \doxymbox{\hyperlink{_c_u_i_rect_8cs_source}{CUIRect.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00113\ :\ \textcolor{keyword}{this}(position.X,\ position.Y,\ size.X,\ size.Y)\ \{\ \}}
+
+\end{DoxyCode}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_a61f0813bde53b37a6e826c78ff1bc5e5}\index{CrabUI.CUIRect@{CrabUI.CUIRect}!CUIRect@{CUIRect}}
+\index{CUIRect@{CUIRect}!CrabUI.CUIRect@{CrabUI.CUIRect}}
+\doxysubsubsection{\texorpdfstring{CUIRect()}{CUIRect()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_rect_a61f0813bde53b37a6e826c78ff1bc5e5} 
+Crab\+UI.\+CUIRect.\+CUIRect (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{, }\item[{float}]{w}{, }\item[{float}]{h}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_rect_8cs_source_l00114}{114}} of file \doxymbox{\hyperlink{_c_u_i_rect_8cs_source}{CUIRect.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00115\ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ Left\ =\ x;}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ Top\ =\ y;}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ Width\ =\ Math.Max(0f,\ w);}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ Height\ =\ Math.Max(0f,\ h);}
+\DoxyCodeLine{00120\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-func-members}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_ad1606703074bc1f41fa4ba58ed043290}\index{CrabUI.CUIRect@{CrabUI.CUIRect}!Contains@{Contains}}
+\index{Contains@{Contains}!CrabUI.CUIRect@{CrabUI.CUIRect}}
+\doxysubsubsection{\texorpdfstring{Contains()}{Contains()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_rect_ad1606703074bc1f41fa4ba58ed043290} 
+bool Crab\+UI.\+CUIRect.\+Contains (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_rect_8cs_source_l00079}{79}} of file \doxymbox{\hyperlink{_c_u_i_rect_8cs_source}{CUIRect.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00080\ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Left\ <\ x\ \&\&\ x\ <\ Right\ \&\&\ Top\ <\ y\ \&\&\ y\ <\ Bottom;}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_a272c38bbd8e9ff324287775e57eccc6f}\index{CrabUI.CUIRect@{CrabUI.CUIRect}!Contains@{Contains}}
+\index{Contains@{Contains}!CrabUI.CUIRect@{CrabUI.CUIRect}}
+\doxysubsubsection{\texorpdfstring{Contains()}{Contains()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_rect_a272c38bbd8e9ff324287775e57eccc6f} 
+bool Crab\+UI.\+CUIRect.\+Contains (\begin{DoxyParamCaption}\item[{Vector2}]{pos}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_rect_8cs_source_l00083}{83}} of file \doxymbox{\hyperlink{_c_u_i_rect_8cs_source}{CUIRect.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00084\ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Left\ <\ pos.X\ \&\&\ pos.X\ <\ Right\ \&\&\ Top\ <\ pos.Y\ \&\&\ pos.Y\ <\ Bottom;}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_a4770a89ff0c1c8becd65ce12ba8c7106}\index{CrabUI.CUIRect@{CrabUI.CUIRect}!Intersect@{Intersect}}
+\index{Intersect@{Intersect}!CrabUI.CUIRect@{CrabUI.CUIRect}}
+\doxysubsubsection{\texorpdfstring{Intersect()}{Intersect()}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_rect_a4770a89ff0c1c8becd65ce12ba8c7106} 
+bool Crab\+UI.\+CUIRect.\+Intersect (\begin{DoxyParamCaption}\item[{CUIRect}]{r}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_rect_8cs_source_l00087}{87}} of file \doxymbox{\hyperlink{_c_u_i_rect_8cs_source}{CUIRect.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00088\ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ r.Right\ >=\ Left\ \&\&\ r.Left\ <=\ Right\ \&\&\ r.Bottom\ >=\ Top\ \&\&\ r.Top\ <=\ Bottom;}
+\DoxyCodeLine{00090\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_a1800944dadd1b74066dc8ca1b6cf6995}\index{CrabUI.CUIRect@{CrabUI.CUIRect}!operator+@{operator+}}
+\index{operator+@{operator+}!CrabUI.CUIRect@{CrabUI.CUIRect}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_rect_a1800944dadd1b74066dc8ca1b6cf6995} 
+CUIRect Crab\+UI.\+CUIRect.\+operator+ (\begin{DoxyParamCaption}\item[{CUIRect}]{rect}{, }\item[{\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_sizes}{CUISizes}}}]{sizes}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_rect_8cs_source_l00096}{96}} of file \doxymbox{\hyperlink{_c_u_i_rect_8cs_source}{CUIRect.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ =>\ \textcolor{keyword}{new}\ CUIRect(}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ rect.Left\ -\/\ sizes.Left,}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ rect.Top\ -\/\ sizes.Top,}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ rect.Width\ +\ sizes.Left\ +\ sizes.Right,}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ rect.Height\ +\ sizes.Top\ +\ sizes.Bottom}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ );}
+
+\end{DoxyCode}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_a024a13bb4636433719e23412887c6708}\index{CrabUI.CUIRect@{CrabUI.CUIRect}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!CrabUI.CUIRect@{CrabUI.CUIRect}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_rect_a024a13bb4636433719e23412887c6708} 
+CUIRect Crab\+UI.\+CUIRect.\+operator-\/ (\begin{DoxyParamCaption}\item[{CUIRect}]{rect}{, }\item[{\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_sizes}{CUISizes}}}]{sizes}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_rect_8cs_source_l00104}{104}} of file \doxymbox{\hyperlink{_c_u_i_rect_8cs_source}{CUIRect.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ =>\ \textcolor{keyword}{new}\ CUIRect(}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ rect.Left\ +\ sizes.Left,}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ rect.Top\ +\ sizes.Top,}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ rect.Width\ -\/\ sizes.Left\ -\/\ sizes.Right,}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ rect.Height\ -\/\ sizes.Top\ -\/\ sizes.Bottom}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ );}
+
+\end{DoxyCode}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_a447feb24586ea744a582665e9c01f69e}\index{CrabUI.CUIRect@{CrabUI.CUIRect}!Outside@{Outside}}
+\index{Outside@{Outside}!CrabUI.CUIRect@{CrabUI.CUIRect}}
+\doxysubsubsection{\texorpdfstring{Outside()}{Outside()}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_rect_a447feb24586ea744a582665e9c01f69e} 
+bool Crab\+UI.\+CUIRect.\+Outside (\begin{DoxyParamCaption}\item[{Vector2}]{pos}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_rect_8cs_source_l00091}{91}} of file \doxymbox{\hyperlink{_c_u_i_rect_8cs_source}{CUIRect.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00092\ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ pos.X\ <\ Left\ ||\ pos.X\ >\ Right\ ||\ pos.Y\ <\ Top\ ||\ pos.Y\ >\ Bottom;}
+\DoxyCodeLine{00094\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_a8b7e61de87ebf8e74e7b275f9b3edf9d}\index{CrabUI.CUIRect@{CrabUI.CUIRect}!Round@{Round}}
+\index{Round@{Round}!CrabUI.CUIRect@{CrabUI.CUIRect}}
+\doxysubsubsection{\texorpdfstring{Round()}{Round()}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_rect_a8b7e61de87ebf8e74e7b275f9b3edf9d} 
+Rectangle Crab\+UI.\+CUIRect.\+Round (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_rect_8cs_source_l00049}{49}} of file \doxymbox{\hyperlink{_c_u_i_rect_8cs_source}{CUIRect.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ Point\ topLeft\ =\ \textcolor{keyword}{new}\ Point(}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{int})Math.Round(Left),}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{int})Math.Round(Top)}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ );}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ Point\ rightBottom\ =\ \textcolor{keyword}{new}\ Point(}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{int})Math.Round(Left\ +\ Width),}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{int})Math.Round(Top\ +\ Height)}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ );}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Rectangle(topLeft,\ rightBottom\ -\/\ topLeft);}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_ac36ee4a403d854db0dbe5e116276592d}\index{CrabUI.CUIRect@{CrabUI.CUIRect}!Shift@{Shift}}
+\index{Shift@{Shift}!CrabUI.CUIRect@{CrabUI.CUIRect}}
+\doxysubsubsection{\texorpdfstring{Shift()}{Shift()}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_rect_ac36ee4a403d854db0dbe5e116276592d} 
+CUIRect Crab\+UI.\+CUIRect.\+Shift (\begin{DoxyParamCaption}\item[{Vector2}]{shift}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_rect_8cs_source_l00074}{74}} of file \doxymbox{\hyperlink{_c_u_i_rect_8cs_source}{CUIRect.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00075\ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ CUIRect(Left\ +\ shift.X,\ Top\ +\ shift.Y,\ Width,\ Height);}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_af095640605f4134c7cdf95e82e52fd3a}\index{CrabUI.CUIRect@{CrabUI.CUIRect}!ToString@{ToString}}
+\index{ToString@{ToString}!CrabUI.CUIRect@{CrabUI.CUIRect}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_rect_af095640605f4134c7cdf95e82e52fd3a} 
+override string Crab\+UI.\+CUIRect.\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_rect_8cs_source_l00122}{122}} of file \doxymbox{\hyperlink{_c_u_i_rect_8cs_source}{CUIRect.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00122\ =>\ \$\textcolor{stringliteral}{"{}[\{Left\},\{Top\},\{Width\},\{Height\}]"{}};}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_a3d1a86208f5ce96fe51ac26fce96ec4a}\index{CrabUI.CUIRect@{CrabUI.CUIRect}!Height@{Height}}
+\index{Height@{Height}!CrabUI.CUIRect@{CrabUI.CUIRect}}
+\doxysubsubsection{\texorpdfstring{Height}{Height}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_rect_a3d1a86208f5ce96fe51ac26fce96ec4a} 
+float Crab\+UI.\+CUIRect.\+Height}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_rect_8cs_source_l00024}{24}} of file \doxymbox{\hyperlink{_c_u_i_rect_8cs_source}{CUIRect.\+cs}}.
+
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_a1b89b967fe577c6c6894ff8b426bdbb9}\index{CrabUI.CUIRect@{CrabUI.CUIRect}!Left@{Left}}
+\index{Left@{Left}!CrabUI.CUIRect@{CrabUI.CUIRect}}
+\doxysubsubsection{\texorpdfstring{Left}{Left}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_rect_a1b89b967fe577c6c6894ff8b426bdbb9} 
+float Crab\+UI.\+CUIRect.\+Left}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_rect_8cs_source_l00021}{21}} of file \doxymbox{\hyperlink{_c_u_i_rect_8cs_source}{CUIRect.\+cs}}.
+
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_aba2a4a6af0d5a881abfc7a9cb8f41b1e}\index{CrabUI.CUIRect@{CrabUI.CUIRect}!Top@{Top}}
+\index{Top@{Top}!CrabUI.CUIRect@{CrabUI.CUIRect}}
+\doxysubsubsection{\texorpdfstring{Top}{Top}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_rect_aba2a4a6af0d5a881abfc7a9cb8f41b1e} 
+float Crab\+UI.\+CUIRect.\+Top}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_rect_8cs_source_l00022}{22}} of file \doxymbox{\hyperlink{_c_u_i_rect_8cs_source}{CUIRect.\+cs}}.
+
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_a23b7a0bf9742167a0dbdcb564170c476}\index{CrabUI.CUIRect@{CrabUI.CUIRect}!Width@{Width}}
+\index{Width@{Width}!CrabUI.CUIRect@{CrabUI.CUIRect}}
+\doxysubsubsection{\texorpdfstring{Width}{Width}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_rect_a23b7a0bf9742167a0dbdcb564170c476} 
+float Crab\+UI.\+CUIRect.\+Width}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_rect_8cs_source_l00023}{23}} of file \doxymbox{\hyperlink{_c_u_i_rect_8cs_source}{CUIRect.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_a0ead472b1a78c4511f239437d69cbeff}\index{CrabUI.CUIRect@{CrabUI.CUIRect}!Bottom@{Bottom}}
+\index{Bottom@{Bottom}!CrabUI.CUIRect@{CrabUI.CUIRect}}
+\doxysubsubsection{\texorpdfstring{Bottom}{Bottom}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_rect_a0ead472b1a78c4511f239437d69cbeff} 
+float Crab\+UI.\+CUIRect.\+Bottom\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_rect_8cs_source_l00027}{27}} of file \doxymbox{\hyperlink{_c_u_i_rect_8cs_source}{CUIRect.\+cs}}.
+
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_ae27bfb95b93de6cbe5834bacb3d0f24e}\index{CrabUI.CUIRect@{CrabUI.CUIRect}!Box@{Box}}
+\index{Box@{Box}!CrabUI.CUIRect@{CrabUI.CUIRect}}
+\doxysubsubsection{\texorpdfstring{Box}{Box}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_rect_ae27bfb95b93de6cbe5834bacb3d0f24e} 
+Rectangle Crab\+UI.\+CUIRect.\+Box\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_rect_8cs_source_l00048}{48}} of file \doxymbox{\hyperlink{_c_u_i_rect_8cs_source}{CUIRect.\+cs}}.
+
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_a6d4e3516cfa288c67ab0eeb8e69c034b}\index{CrabUI.CUIRect@{CrabUI.CUIRect}!Center@{Center}}
+\index{Center@{Center}!CrabUI.CUIRect@{CrabUI.CUIRect}}
+\doxysubsubsection{\texorpdfstring{Center}{Center}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_rect_a6d4e3516cfa288c67ab0eeb8e69c034b} 
+Vector2 Crab\+UI.\+CUIRect.\+Center\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_rect_8cs_source_l00047}{47}} of file \doxymbox{\hyperlink{_c_u_i_rect_8cs_source}{CUIRect.\+cs}}.
+
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_aea628c6ec475afb9ec75f38b239f5ee1}\index{CrabUI.CUIRect@{CrabUI.CUIRect}!CenterBottom@{CenterBottom}}
+\index{CenterBottom@{CenterBottom}!CrabUI.CUIRect@{CrabUI.CUIRect}}
+\doxysubsubsection{\texorpdfstring{CenterBottom}{CenterBottom}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_rect_aea628c6ec475afb9ec75f38b239f5ee1} 
+Vector2 Crab\+UI.\+CUIRect.\+Center\+Bottom\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_rect_8cs_source_l00069}{69}} of file \doxymbox{\hyperlink{_c_u_i_rect_8cs_source}{CUIRect.\+cs}}.
+
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_a8aa467e20616068bec8afed0817116ef}\index{CrabUI.CUIRect@{CrabUI.CUIRect}!CenterCenter@{CenterCenter}}
+\index{CenterCenter@{CenterCenter}!CrabUI.CUIRect@{CrabUI.CUIRect}}
+\doxysubsubsection{\texorpdfstring{CenterCenter}{CenterCenter}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_rect_a8aa467e20616068bec8afed0817116ef} 
+Vector2 Crab\+UI.\+CUIRect.\+Center\+Center\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_rect_8cs_source_l00068}{68}} of file \doxymbox{\hyperlink{_c_u_i_rect_8cs_source}{CUIRect.\+cs}}.
+
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_af3ff378dad7d946cdbf14fbcabf4beda}\index{CrabUI.CUIRect@{CrabUI.CUIRect}!CenterTop@{CenterTop}}
+\index{CenterTop@{CenterTop}!CrabUI.CUIRect@{CrabUI.CUIRect}}
+\doxysubsubsection{\texorpdfstring{CenterTop}{CenterTop}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_rect_af3ff378dad7d946cdbf14fbcabf4beda} 
+Vector2 Crab\+UI.\+CUIRect.\+Center\+Top\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_rect_8cs_source_l00067}{67}} of file \doxymbox{\hyperlink{_c_u_i_rect_8cs_source}{CUIRect.\+cs}}.
+
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_a302729b9f77f059921c35ac708157c02}\index{CrabUI.CUIRect@{CrabUI.CUIRect}!LeftBottom@{LeftBottom}}
+\index{LeftBottom@{LeftBottom}!CrabUI.CUIRect@{CrabUI.CUIRect}}
+\doxysubsubsection{\texorpdfstring{LeftBottom}{LeftBottom}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_rect_a302729b9f77f059921c35ac708157c02} 
+Vector2 Crab\+UI.\+CUIRect.\+Left\+Bottom\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_rect_8cs_source_l00066}{66}} of file \doxymbox{\hyperlink{_c_u_i_rect_8cs_source}{CUIRect.\+cs}}.
+
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_a6bd76c6d6882a6d220ea964aa425acf0}\index{CrabUI.CUIRect@{CrabUI.CUIRect}!LeftCenter@{LeftCenter}}
+\index{LeftCenter@{LeftCenter}!CrabUI.CUIRect@{CrabUI.CUIRect}}
+\doxysubsubsection{\texorpdfstring{LeftCenter}{LeftCenter}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_rect_a6bd76c6d6882a6d220ea964aa425acf0} 
+Vector2 Crab\+UI.\+CUIRect.\+Left\+Center\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_rect_8cs_source_l00065}{65}} of file \doxymbox{\hyperlink{_c_u_i_rect_8cs_source}{CUIRect.\+cs}}.
+
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_af107a024e76038c04fbf0787806ad94f}\index{CrabUI.CUIRect@{CrabUI.CUIRect}!LeftTop@{LeftTop}}
+\index{LeftTop@{LeftTop}!CrabUI.CUIRect@{CrabUI.CUIRect}}
+\doxysubsubsection{\texorpdfstring{LeftTop}{LeftTop}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_rect_af107a024e76038c04fbf0787806ad94f} 
+Vector2 Crab\+UI.\+CUIRect.\+Left\+Top\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_rect_8cs_source_l00064}{64}} of file \doxymbox{\hyperlink{_c_u_i_rect_8cs_source}{CUIRect.\+cs}}.
+
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_a53b86f14ded2f16b17f63746197f1a3f}\index{CrabUI.CUIRect@{CrabUI.CUIRect}!Position@{Position}}
+\index{Position@{Position}!CrabUI.CUIRect@{CrabUI.CUIRect}}
+\doxysubsubsection{\texorpdfstring{Position}{Position}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_rect_a53b86f14ded2f16b17f63746197f1a3f} 
+Vector2 Crab\+UI.\+CUIRect.\+Position\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_rect_8cs_source_l00038}{38}} of file \doxymbox{\hyperlink{_c_u_i_rect_8cs_source}{CUIRect.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039\ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \textcolor{keyword}{new}\ Vector2(Left,\ Top);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ Left\ =\ value.X;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ Top\ =\ value.Y;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_afdfeed5a0f9dd543f0ea8b939b28cee4}\index{CrabUI.CUIRect@{CrabUI.CUIRect}!Right@{Right}}
+\index{Right@{Right}!CrabUI.CUIRect@{CrabUI.CUIRect}}
+\doxysubsubsection{\texorpdfstring{Right}{Right}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_rect_afdfeed5a0f9dd543f0ea8b939b28cee4} 
+float Crab\+UI.\+CUIRect.\+Right\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_rect_8cs_source_l00026}{26}} of file \doxymbox{\hyperlink{_c_u_i_rect_8cs_source}{CUIRect.\+cs}}.
+
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_a602789f96a69cc1df4e41beb71e76500}\index{CrabUI.CUIRect@{CrabUI.CUIRect}!RightBottom@{RightBottom}}
+\index{RightBottom@{RightBottom}!CrabUI.CUIRect@{CrabUI.CUIRect}}
+\doxysubsubsection{\texorpdfstring{RightBottom}{RightBottom}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_rect_a602789f96a69cc1df4e41beb71e76500} 
+Vector2 Crab\+UI.\+CUIRect.\+Right\+Bottom\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_rect_8cs_source_l00072}{72}} of file \doxymbox{\hyperlink{_c_u_i_rect_8cs_source}{CUIRect.\+cs}}.
+
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_add0bcd57fd1f929a0005e6595fe2081b}\index{CrabUI.CUIRect@{CrabUI.CUIRect}!RightCenter@{RightCenter}}
+\index{RightCenter@{RightCenter}!CrabUI.CUIRect@{CrabUI.CUIRect}}
+\doxysubsubsection{\texorpdfstring{RightCenter}{RightCenter}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_rect_add0bcd57fd1f929a0005e6595fe2081b} 
+Vector2 Crab\+UI.\+CUIRect.\+Right\+Center\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_rect_8cs_source_l00071}{71}} of file \doxymbox{\hyperlink{_c_u_i_rect_8cs_source}{CUIRect.\+cs}}.
+
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_af7bd448900c0ecae2469017fd7741c74}\index{CrabUI.CUIRect@{CrabUI.CUIRect}!RightTop@{RightTop}}
+\index{RightTop@{RightTop}!CrabUI.CUIRect@{CrabUI.CUIRect}}
+\doxysubsubsection{\texorpdfstring{RightTop}{RightTop}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_rect_af7bd448900c0ecae2469017fd7741c74} 
+Vector2 Crab\+UI.\+CUIRect.\+Right\+Top\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_rect_8cs_source_l00070}{70}} of file \doxymbox{\hyperlink{_c_u_i_rect_8cs_source}{CUIRect.\+cs}}.
+
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_abd17f55676838f81a5d96f29a31d3681}\index{CrabUI.CUIRect@{CrabUI.CUIRect}!Size@{Size}}
+\index{Size@{Size}!CrabUI.CUIRect@{CrabUI.CUIRect}}
+\doxysubsubsection{\texorpdfstring{Size}{Size}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_rect_abd17f55676838f81a5d96f29a31d3681} 
+Vector2 Crab\+UI.\+CUIRect.\+Size\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_rect_8cs_source_l00029}{29}} of file \doxymbox{\hyperlink{_c_u_i_rect_8cs_source}{CUIRect.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \textcolor{keyword}{new}\ Vector2(Width,\ Height);}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ Width\ =\ value.X;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ Height\ =\ value.Y;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_rect_adbdb08771c3ff7ca68ab94b0b06109a7}\index{CrabUI.CUIRect@{CrabUI.CUIRect}!Zero@{Zero}}
+\index{Zero@{Zero}!CrabUI.CUIRect@{CrabUI.CUIRect}}
+\doxysubsubsection{\texorpdfstring{Zero}{Zero}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_rect_adbdb08771c3ff7ca68ab94b0b06109a7} 
+CUIRect Crab\+UI.\+CUIRect.\+Zero = new CUIRect(0, 0, 0, 0)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_rect_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_c_u_i_rect_8cs_source}{CUIRect.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}\ CUIRect(0,\ 0,\ 0,\ 0);}
+
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Simple Types/\+CUIRect.\+cs\end{DoxyCompactItemize}

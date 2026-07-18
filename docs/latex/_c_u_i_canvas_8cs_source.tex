@@ -1,0 +1,95 @@
+\doxysection{CUICanvas.\+cs}
+\hypertarget{_c_u_i_canvas_8cs_source}{}\label{_c_u_i_canvas_8cs_source}\index{ClientProject/ClientSource/CUI/Core/Components/CUICanvas.cs@{ClientProject/ClientSource/CUI/Core/Components/CUICanvas.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00008}00008\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00009}00009\ \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00010}00010\ \textcolor{comment}{\ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00011}00011\ \textcolor{comment}{\ \ ///\ Allows\ you\ to\ manipulate\ pixel\ data\ of\ its\ texture}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00012}00012\ \textcolor{comment}{\ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00013}\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_canvas}{00013}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }CUICanvas\ :\ CUIComponent,\ IDisposable}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00014}00014\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{private}\ Color[]\ \_Data;\ \textcolor{keyword}{public}\ Color[]\ Data}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00016}00016\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00017}00017\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Data;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00018}00018\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00019}00019\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \_Data\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ Texture.SetData(\_Data);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00022}00022\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00023}00023\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_render_target2_d}{CUIRenderTarget2D}}\ Texture\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISpriteBatch}}\ SpriteBatch\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{virtual}\ Point\ Size}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00029}00029\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00030}00030\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \textcolor{keyword}{new}\ Point(Texture.Width,\ Texture.Height);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00031}00031\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00032}00032\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (value.X\ ==\ Texture?.Width\ \&\&\ value.Y\ ==\ Texture?.Height)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_render_target2_d}{CUIRenderTarget2D}}\ oldTexture\ =\ Texture;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ Texture\ =\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_render_target2_d}{CUIRenderTarget2D}}.Create(value.X,\ value.Y);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ Data\ =\ \textcolor{keyword}{new}\ Color[Texture.Width\ *\ Texture.Height];}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ Background.Sprite.Texture\ =\ Texture;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ Background.Sprite.SourceRectangle\ =\ \textcolor{keyword}{new}\ Rectangle(0,\ 0,\ Texture.Width,\ Texture.Height);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ oldTexture?.Dispose();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00043}00043\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Clear(Color?\ color\ =\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00047}00047\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00048}00048\ \ \ \ \ \ \ Color\ cl\ =\ color\ ??\ Color.Transparent;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00049}00049\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \_Data.Length;\ i++)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00050}00050\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \_Data[i]\ =\ cl;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00052}00052\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00054}00054\ \ \ \ \ \ \ Texture.SetData(\_Data);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00055}00055\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00057}00057\ \ \ \ \ \textcolor{keyword}{public}\ Color\ GetPixel(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\ =>\ Data[y\ *\ Texture.Width\ +\ x];}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00058}00058\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ SetPixel(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ Color\ cl)\ =>\ \_Data[y\ *\ Texture.Width\ +\ x]\ =\ cl;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00059}00059\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ ApplyData()\ =>\ Texture.SetData(\_Data);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00061}00061\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Render(Action<CUISpriteBatch>\ renderFunc)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00062}00062\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00063}00063\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core}{CUICore}}.GraphicsDevice.SetRenderTarget(Texture);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00065}00065\ \ \ \ \ \ \ \textcolor{comment}{//TODO\ save\ and\ restore\ scissor\ rect}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00066}00066\ \ \ \ \ \ \ SpriteBatch.Begin(samplerState:\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core}{CUICore}}.SamplerState,\ rasterizerState:\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core}{CUICore}}.RasterizerState);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00068}00068\ \ \ \ \ \ \ renderFunc(SpriteBatch);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00070}00070\ \ \ \ \ \ \ SpriteBatch.End();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00072}00072\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core}{CUICore}}.GraphicsDevice.SetRenderTarget(\textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00073}00073\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00076}00076\ \ \ \ \ \textcolor{keyword}{public}\ CUICanvas()\ :\ base()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00077}00077\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00078}00078\ \ \ \ \ \ \ Size\ =\ \textcolor{keyword}{new}\ Point(1,\ 1);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00079}00079\ \ \ \ \ \ \ Background.Color\ =\ Color.White;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00080}00080\ \ \ \ \ \ \ SpriteBatch\ =\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISpriteBatch}}.Create();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00081}00081\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00082}00082\ \ \ \ \ \textcolor{keyword}{public}\ CUICanvas(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\ :\ \textcolor{keyword}{this}()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00083}00083\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00084}00084\ \ \ \ \ \ \ Size\ =\ \textcolor{keyword}{new}\ Point(x,\ y);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00085}00085\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00087}00087\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Dispose()\ =>\ Texture?.Dispose();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00088}00088\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_canvas_8cs_source_l00089}00089\ \}}
+
+\end{DoxyCode}

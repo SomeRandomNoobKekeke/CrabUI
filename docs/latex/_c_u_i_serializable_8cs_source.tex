@@ -1,0 +1,33 @@
+\doxysection{CUISerializable.\+cs}
+\hypertarget{_c_u_i_serializable_8cs_source}{}\label{_c_u_i_serializable_8cs_source}\index{ClientProject/ClientSource/CUI/Core/Serialization/Serializer/CUISerializable.cs@{ClientProject/ClientSource/CUI/Core/Serialization/Serializer/CUISerializable.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_u_i_serializable_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_serializable_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_serializable_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_serializable_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_serializable_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_serializable_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_serializable_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_code_generator}{CUICodeGenerator}};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_serializable_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_serializable_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }System.Xml.Linq;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_serializable_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_serializable_8cs_source_l00011}00011\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_serializable_8cs_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_serializable_8cs_source_l00013}00013\ \ \ \textcolor{comment}{//TODO\ centralize\ serialization,\ move\ parser\ here,\ define\ extra\ methods\ here,\ make\ it\ use\ this\ interface}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_serializable_8cs_source_l00014}00014\ \textcolor{comment}{\ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_serializable_8cs_source_l00015}00015\ \textcolor{comment}{\ \ ///\ It\ has\ Serialize()\ method}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_serializable_8cs_source_l00016}00016\ \textcolor{comment}{\ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_serializable_8cs_source_l00017}\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_serializable}{00017}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{interface\ }\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_serializable}{CUISerializable}}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_serializable_8cs_source_l00018}00018\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_serializable_8cs_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{abstract}\ \textcolor{keywordtype}{object}\ Deserialize(XElement\ element);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_serializable_8cs_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{public}\ XElement\ Serialize()\ =>\ \textcolor{keyword}{new}\ XElement(GetType().Name);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_serializable_8cs_source_l00021}00021\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_serializable_8cs_source_l00022}00022\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_serializable_8cs_source_l00023}00023\ \textcolor{comment}{\ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_serializable_8cs_source_l00024}00024\ \textcolor{comment}{\ \ ///\ These\ props\ should\ be\ serialized\ whether\ they\ are\ CUISerializable\ or\ not}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_serializable_8cs_source_l00025}00025\ \textcolor{comment}{\ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_serializable_8cs_source_l00026}\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_serializable_prop}{00026}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_serializable_prop}{CUISerializableProp}}\ :\ Attribute\ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_serializable_8cs_source_l00027}00027\ \}}
+
+\end{DoxyCode}

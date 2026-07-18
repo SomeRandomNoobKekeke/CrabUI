@@ -1,0 +1,143 @@
+\doxysection{CUILibs.\+UTest\+Runner Class Reference}
+\hypertarget{class_c_u_i_libs_1_1_u_test_runner}{}\label{class_c_u_i_libs_1_1_u_test_runner}\index{CUILibs.UTestRunner@{CUILibs.UTestRunner}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack}{UTest\+Pack}} \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_runner_ab30e74870af86d7b65affd6cbbee2c2a}{Run}} (string name)
+\item 
+static \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack}{UTest\+Pack}} \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_runner_a298db1531018efe8322312bc6aa7b2ac}{Run$<$ T $>$}} ()
+\item 
+static \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack}{UTest\+Pack}} \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_runner_a64b78643f179e4a124f5ac7d438e989d}{Run}} (Type T)
+\item 
+static List$<$ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack}{UTest\+Pack}} $>$ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_runner_afa0fef534a60a699b97650df7ff670d4}{Run\+Recursive$<$ T $>$}} ()
+\item 
+static List$<$ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack}{UTest\+Pack}} $>$ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_runner_a3272fd68246ffce8528a5de3d3614a8e}{Run\+Recursive}} (Type T=null)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_runner_8cs_source_l00033}{33}} of file \doxymbox{\hyperlink{_u_test_runner_8cs_source}{UTest\+Runner.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_runner_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_runner_ab30e74870af86d7b65affd6cbbee2c2a}\index{CUILibs.UTestRunner@{CUILibs.UTestRunner}!Run@{Run}}
+\index{Run@{Run}!CUILibs.UTestRunner@{CUILibs.UTestRunner}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_runner_ab30e74870af86d7b65affd6cbbee2c2a} 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack}{UTest\+Pack}} CUILibs.\+UTest\+Runner.\+Run (\begin{DoxyParamCaption}\item[{string}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_runner_8cs_source_l00035}{35}} of file \doxymbox{\hyperlink{_u_test_runner_8cs_source}{UTest\+Runner.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!UTestExplorer.TestByName.ContainsKey(name))}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ UTestPack()\ \{\ Error\ =\ \textcolor{keyword}{new}\ UTestNotFoundException(name)\ \};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Run(UTestExplorer.TestByName[name]);}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_runner_a64b78643f179e4a124f5ac7d438e989d}\index{CUILibs.UTestRunner@{CUILibs.UTestRunner}!Run@{Run}}
+\index{Run@{Run}!CUILibs.UTestRunner@{CUILibs.UTestRunner}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_runner_a64b78643f179e4a124f5ac7d438e989d} 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack}{UTest\+Pack}} CUILibs.\+UTest\+Runner.\+Run (\begin{DoxyParamCaption}\item[{Type}]{T}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_runner_8cs_source_l00045}{45}} of file \doxymbox{\hyperlink{_u_test_runner_8cs_source}{UTest\+Runner.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!T.IsAssignableTo(typeof(UTestPack)))}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ UTestPack()\ \{\ Error\ =\ \textcolor{keyword}{new}\ ArgumentException(\$\textcolor{stringliteral}{"{}[\{T\}]\ is\ not\ a\ UTestPack"{}})\ \};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ UTestPack\ pack\ =\ Activator.CreateInstance(T)\ as\ UTestPack;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ pack.CreateTests();}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{comment}{//HACK\ inner\ exception\ should\ be\ handled\ more\ gracefully}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{comment}{//mb\ intercept\ TargetInvocationException?}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ pack.Error\ =\ \textcolor{keyword}{new}\ UTestRunException(T,\ e.InnerException\ ??\ e);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ pack;}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_runner_a298db1531018efe8322312bc6aa7b2ac}\index{CUILibs.UTestRunner@{CUILibs.UTestRunner}!Run$<$ T $>$@{Run$<$ T $>$}}
+\index{Run$<$ T $>$@{Run$<$ T $>$}!CUILibs.UTestRunner@{CUILibs.UTestRunner}}
+\doxysubsubsection{\texorpdfstring{Run$<$ T $>$()}{Run< T >()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_runner_a298db1531018efe8322312bc6aa7b2ac} 
+\doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack}{UTest\+Pack}} CUILibs.\+UTest\+Runner.\+Run$<$ T $>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_runner_8cs_source_l00044}{44}} of file \doxymbox{\hyperlink{_u_test_runner_8cs_source}{UTest\+Runner.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044\ =>\ Run(typeof(T));}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_runner_a3272fd68246ffce8528a5de3d3614a8e}\index{CUILibs.UTestRunner@{CUILibs.UTestRunner}!RunRecursive@{RunRecursive}}
+\index{RunRecursive@{RunRecursive}!CUILibs.UTestRunner@{CUILibs.UTestRunner}}
+\doxysubsubsection{\texorpdfstring{RunRecursive()}{RunRecursive()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_runner_a3272fd68246ffce8528a5de3d3614a8e} 
+List$<$ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack}{UTest\+Pack}} $>$ CUILibs.\+UTest\+Runner.\+Run\+Recursive (\begin{DoxyParamCaption}\item[{Type}]{T}{ = {\ttfamily null}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_runner_8cs_source_l00070}{70}} of file \doxymbox{\hyperlink{_u_test_runner_8cs_source}{UTest\+Runner.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00071\ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ List<UTestPack>\ results\ =\ \textcolor{keyword}{new}\ List<UTestPack>();}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ UTestExplorer.TestTree.RunRecursive((test)\ =>}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ results.Add(Run(test));}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \},\ T);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ results;}
+\DoxyCodeLine{00080\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_u_test_runner_afa0fef534a60a699b97650df7ff670d4}\index{CUILibs.UTestRunner@{CUILibs.UTestRunner}!RunRecursive$<$ T $>$@{RunRecursive$<$ T $>$}}
+\index{RunRecursive$<$ T $>$@{RunRecursive$<$ T $>$}!CUILibs.UTestRunner@{CUILibs.UTestRunner}}
+\doxysubsubsection{\texorpdfstring{RunRecursive$<$ T $>$()}{RunRecursive< T >()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_u_test_runner_afa0fef534a60a699b97650df7ff670d4} 
+List$<$ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_u_test_pack}{UTest\+Pack}} $>$ CUILibs.\+UTest\+Runner.\+Run\+Recursive$<$ T $>$ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_u_test_runner_8cs_source_l00069}{69}} of file \doxymbox{\hyperlink{_u_test_runner_8cs_source}{UTest\+Runner.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00069\ =>\ RunRecursive(typeof(T));}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+Libs/\+\+UTest/\+UTest\+Runner.\+cs\end{DoxyCompactItemize}

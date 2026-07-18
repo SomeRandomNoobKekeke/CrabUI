@@ -1,0 +1,67 @@
+\doxysection{Crab\+UIUser.\+Inverse\+Backdoor Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_inverse_backdoor}{}\label{class_crab_u_i_user_1_1_inverse_backdoor}\index{CrabUIUser.InverseBackdoor@{CrabUIUser.InverseBackdoor}}
+
+
+So, idea is to instead of placing internals inside the host create full host class with all the stuff and make the Host a facade to its public part.  
+
+
+Inheritance diagram for Crab\+UIUser.\+Inverse\+Backdoor:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_inverse_backdoor}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_inverse_backdoor_1_1_full_host}{Full\+Host}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_inverse_backdoor_a8ce9932a67ee7e1610c5a03cb0b75e33}{Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Crab\+UIUser.\+Experiment}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Run} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+So, idea is to instead of placing internals inside the host create full host class with all the stuff and make the Host a facade to its public part. 
+
+Definition at line \doxymbox{\hyperlink{_inverse_backdoor_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_inverse_backdoor_8cs_source}{Inverse\+Backdoor.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_inverse_backdoor_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_inverse_backdoor_a8ce9932a67ee7e1610c5a03cb0b75e33}\index{CrabUIUser.InverseBackdoor@{CrabUIUser.InverseBackdoor}!Run@{Run}}
+\index{Run@{Run}!CrabUIUser.InverseBackdoor@{CrabUIUser.InverseBackdoor}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_inverse_backdoor_a8ce9932a67ee7e1610c5a03cb0b75e33} 
+override void Crab\+UIUser.\+Inverse\+Backdoor.\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_inverse_backdoor_8cs_source_l00053}{53}} of file \doxymbox{\hyperlink{_inverse_backdoor_8cs_source}{Inverse\+Backdoor.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00054\ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ FullHost\ fullHost\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ FullHost.Host\ host\ =\ \textcolor{keyword}{new}(fullHost);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ FullHost.Backdoor\ backdoor\ =\ \textcolor{keyword}{new}(fullHost);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ Mod.Logger.Log(backdoor.SuperSecret);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ Mod.Logger.Log(host.SuperPublic);}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Design/\+Inverse\+Backdoor.\+cs\end{DoxyCompactItemize}

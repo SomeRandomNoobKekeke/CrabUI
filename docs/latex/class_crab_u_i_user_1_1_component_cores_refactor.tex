@@ -1,0 +1,75 @@
+\doxysection{Crab\+UIUser.\+Component\+Cores\+Refactor Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_component_cores_refactor}{}\label{class_crab_u_i_user_1_1_component_cores_refactor}\index{CrabUIUser.ComponentCoresRefactor@{CrabUIUser.ComponentCoresRefactor}}
+
+
+Testing how hard it is to refactor raw components into cores Backward refactor is ctrl+x ctrl+v Forward refactor would be trivial if there was a macros for prop mapping Also it can be done on one component at a time.  
+
+
+Inheritance diagram for Crab\+UIUser.\+Component\+Cores\+Refactor:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_component_cores_refactor}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_component}{Component}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_square_component}{Square\+Component}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_button}{Button}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_button_list}{Button\+List}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_1_1_triangle_component}{Triangle\+Component}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_refactor_a86c5344c4493ac571eff8f17f4e01dc2}{Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Crab\+UIUser.\+Experiment}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Run} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Testing how hard it is to refactor raw components into cores Backward refactor is ctrl+x ctrl+v Forward refactor would be trivial if there was a macros for prop mapping Also it can be done on one component at a time. 
+
+Definition at line \doxymbox{\hyperlink{_component_cores_refactor_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_component_cores_refactor_8cs_source}{Component\+Cores\+Refactor.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_component_cores_refactor_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_component_cores_refactor_a86c5344c4493ac571eff8f17f4e01dc2}\index{CrabUIUser.ComponentCoresRefactor@{CrabUIUser.ComponentCoresRefactor}!Run@{Run}}
+\index{Run@{Run}!CrabUIUser.ComponentCoresRefactor@{CrabUIUser.ComponentCoresRefactor}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_component_cores_refactor_a86c5344c4493ac571eff8f17f4e01dc2} 
+override void Crab\+UIUser.\+Component\+Cores\+Refactor.\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_component_cores_refactor_8cs_source_l00092}{92}} of file \doxymbox{\hyperlink{_component_cores_refactor_8cs_source}{Component\+Cores\+Refactor.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00093\ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ Button\ button\ =\ \textcolor{keyword}{new}\ Button();}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ button.Rect\ =\ \textcolor{keyword}{new}\ Rectangle(0,\ 0,\ 100,\ 100);}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ button.OnClick\ +=\ ()\ =>\ \{\ \};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \textcolor{comment}{//\ button.Unexposed\ =\ "{}ay\ yay\ yay"{};}}
+\DoxyCodeLine{00100\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Design/\+Component\+Cores\+Refactor.\+cs\end{DoxyCompactItemize}

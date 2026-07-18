@@ -1,0 +1,171 @@
+\doxysection{Crab\+UI.\+Property\+Path Class Reference}
+\hypertarget{class_crab_u_i_1_1_property_path}{}\label{class_crab_u_i_1_1_property_path}\index{CrabUI.PropertyPath@{CrabUI.PropertyPath}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+object \doxymbox{\hyperlink{class_crab_u_i_1_1_property_path_af05706fdc1b1a0d63c9afde53f5e2d38}{Get\+Value}} (object target)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_property_path_a5d77ad70b48ee908c776f260823a6f6b}{Set\+Value}} (object target, object value)
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_property_path_ab9ba5b29f1541bcbe6ae50de9d96aba5}{Property\+Path}} (IEnumerable$<$ Property\+Info $>$ path)
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_property_path_ab9376eb7dd0e9c700b663263af9063e8}{Property\+Path}} (List$<$ Property\+Info $>$ path)
+\item 
+override string \doxymbox{\hyperlink{class_crab_u_i_1_1_property_path_a60e7d655bd445cbb741b42b97c91354c}{To\+String}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ Property\+Info $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_property_path_afbeb6762c8946d7f6d3a6987b31eb02b}{Path}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+Type \doxymbox{\hyperlink{class_crab_u_i_1_1_property_path_acc22db74107adbad87cbb272e2326c4a}{Type}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_property_path_8cs_source_l00012}{12}} of file \doxymbox{\hyperlink{_property_path_8cs_source}{Property\+Path.\+cs}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_crab_u_i_1_1_property_path_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_crab_u_i_1_1_property_path_ab9ba5b29f1541bcbe6ae50de9d96aba5}\index{CrabUI.PropertyPath@{CrabUI.PropertyPath}!PropertyPath@{PropertyPath}}
+\index{PropertyPath@{PropertyPath}!CrabUI.PropertyPath@{CrabUI.PropertyPath}}
+\doxysubsubsection{\texorpdfstring{PropertyPath()}{PropertyPath()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_property_path_ab9ba5b29f1541bcbe6ae50de9d96aba5} 
+Crab\+UI.\+Property\+Path.\+Property\+Path (\begin{DoxyParamCaption}\item[{IEnumerable$<$ Property\+Info $>$}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_property_path_8cs_source_l00045}{45}} of file \doxymbox{\hyperlink{_property_path_8cs_source}{Property\+Path.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045\ =>\ Path\ =\ path.ToList();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_property_path_ab9376eb7dd0e9c700b663263af9063e8}\index{CrabUI.PropertyPath@{CrabUI.PropertyPath}!PropertyPath@{PropertyPath}}
+\index{PropertyPath@{PropertyPath}!CrabUI.PropertyPath@{CrabUI.PropertyPath}}
+\doxysubsubsection{\texorpdfstring{PropertyPath()}{PropertyPath()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_property_path_ab9376eb7dd0e9c700b663263af9063e8} 
+Crab\+UI.\+Property\+Path.\+Property\+Path (\begin{DoxyParamCaption}\item[{List$<$ Property\+Info $>$}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_property_path_8cs_source_l00046}{46}} of file \doxymbox{\hyperlink{_property_path_8cs_source}{Property\+Path.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ =>\ Path\ =\ path;}
+
+\end{DoxyCode}
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_property_path_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_property_path_af05706fdc1b1a0d63c9afde53f5e2d38}\index{CrabUI.PropertyPath@{CrabUI.PropertyPath}!GetValue@{GetValue}}
+\index{GetValue@{GetValue}!CrabUI.PropertyPath@{CrabUI.PropertyPath}}
+\doxysubsubsection{\texorpdfstring{GetValue()}{GetValue()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_property_path_af05706fdc1b1a0d63c9afde53f5e2d38} 
+object Crab\+UI.\+Property\+Path.\+Get\+Value (\begin{DoxyParamCaption}\item[{object}]{target}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_property_path_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_property_path_8cs_source}{Property\+Path.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Path.Count\ ==\ 0)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \textcolor{keywordtype}{object}\ o\ =\ target;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Path.Count\ -\/\ 1;\ i++)}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ o\ =\ Path[i].GetValue(o);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Path.Last().GetValue(o);}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_property_path_a5d77ad70b48ee908c776f260823a6f6b}\index{CrabUI.PropertyPath@{CrabUI.PropertyPath}!SetValue@{SetValue}}
+\index{SetValue@{SetValue}!CrabUI.PropertyPath@{CrabUI.PropertyPath}}
+\doxysubsubsection{\texorpdfstring{SetValue()}{SetValue()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_property_path_a5d77ad70b48ee908c776f260823a6f6b} 
+void Crab\+UI.\+Property\+Path.\+Set\+Value (\begin{DoxyParamCaption}\item[{object}]{target}{, }\item[{object}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_property_path_8cs_source_l00031}{31}} of file \doxymbox{\hyperlink{_property_path_8cs_source}{Property\+Path.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Path.Count\ ==\ 0)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{keywordtype}{object}\ o\ =\ target;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Path.Count\ -\/\ 1;\ i++)}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ o\ =\ Path[i].GetValue(o);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ Path.Last().SetValue(o,\ value);}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_property_path_a60e7d655bd445cbb741b42b97c91354c}\index{CrabUI.PropertyPath@{CrabUI.PropertyPath}!ToString@{ToString}}
+\index{ToString@{ToString}!CrabUI.PropertyPath@{CrabUI.PropertyPath}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_property_path_a60e7d655bd445cbb741b42b97c91354c} 
+override string Crab\+UI.\+Property\+Path.\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_property_path_8cs_source_l00048}{48}} of file \doxymbox{\hyperlink{_property_path_8cs_source}{Property\+Path.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048\ =>\ String.Join(\textcolor{charliteral}{'.'},\ Path.Select(pi\ =>\ pi.Name));}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_property_path_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_property_path_afbeb6762c8946d7f6d3a6987b31eb02b}\index{CrabUI.PropertyPath@{CrabUI.PropertyPath}!Path@{Path}}
+\index{Path@{Path}!CrabUI.PropertyPath@{CrabUI.PropertyPath}}
+\doxysubsubsection{\texorpdfstring{Path}{Path}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_property_path_afbeb6762c8946d7f6d3a6987b31eb02b} 
+List$<$Property\+Info$>$ Crab\+UI.\+Property\+Path.\+Path\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_property_path_8cs_source_l00014}{14}} of file \doxymbox{\hyperlink{_property_path_8cs_source}{Property\+Path.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_property_path_acc22db74107adbad87cbb272e2326c4a}\index{CrabUI.PropertyPath@{CrabUI.PropertyPath}!Type@{Type}}
+\index{Type@{Type}!CrabUI.PropertyPath@{CrabUI.PropertyPath}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_property_path_acc22db74107adbad87cbb272e2326c4a} 
+Type Crab\+UI.\+Property\+Path.\+Type\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_property_path_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_property_path_8cs_source}{Property\+Path.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Type\+Analysis/\+Property\+Path.\+cs\end{DoxyCompactItemize}

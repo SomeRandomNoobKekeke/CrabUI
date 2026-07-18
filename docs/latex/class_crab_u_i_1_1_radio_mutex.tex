@@ -1,0 +1,158 @@
+\doxysection{Crab\+UI.\+Radio\+Mutex Class Reference}
+\hypertarget{class_crab_u_i_1_1_radio_mutex}{}\label{class_crab_u_i_1_1_radio_mutex}\index{CrabUI.RadioMutex@{CrabUI.RadioMutex}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_radio_mutex_a322cabdfe1a58a41339db06639469dee}{Select}} ()
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_radio_mutex_a41056d9695f2c957592005bca13c8ee0}{Radio\+Mutex}} (string name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_radio_mutex_a5b68e7d02a66288bab646b358d34bf4a}{Is\+Selected}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_radio_mutex_ace01817cfb4f381291b1f863a0d57876}{Was\+Selected}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+string \doxymbox{\hyperlink{class_crab_u_i_1_1_radio_mutex_a8b0e3737e083c8c33e3e9abd8ae1a174}{Name}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+Action \doxymbox{\hyperlink{class_crab_u_i_1_1_radio_mutex_a9bfb857de789e3d9199af2b92e1ed633}{Selected}}
+\item 
+Action \doxymbox{\hyperlink{class_crab_u_i_1_1_radio_mutex_a51cc3c8836e26e6d9dc8e2db5a0ef732}{Deselected}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_radio_mutex_8cs_source_l00047}{47}} of file \doxymbox{\hyperlink{_radio_mutex_8cs_source}{Radio\+Mutex.\+cs}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_crab_u_i_1_1_radio_mutex_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_crab_u_i_1_1_radio_mutex_a41056d9695f2c957592005bca13c8ee0}\index{CrabUI.RadioMutex@{CrabUI.RadioMutex}!RadioMutex@{RadioMutex}}
+\index{RadioMutex@{RadioMutex}!CrabUI.RadioMutex@{CrabUI.RadioMutex}}
+\doxysubsubsection{\texorpdfstring{RadioMutex()}{RadioMutex()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_radio_mutex_a41056d9695f2c957592005bca13c8ee0} 
+Crab\+UI.\+Radio\+Mutex.\+Radio\+Mutex (\begin{DoxyParamCaption}\item[{string}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_radio_mutex_8cs_source_l00060}{60}} of file \doxymbox{\hyperlink{_radio_mutex_8cs_source}{Radio\+Mutex.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ Name\ =\ name;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ Group\ =\ RadioGroup.GetOrCreate(name);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ ID\ =\ Group.GetNewId();}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ Group.Selected\ +=\ (id)\ =>}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{id}\ ==\ ID)}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Group.WasSelected(ID)\ \&\&\ Group.IsSelected(ID))\ Selected?.Invoke();}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Group.WasSelected(ID)\ \&\&\ !Group.IsSelected(ID))\ Deselected?.Invoke();}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_radio_mutex_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_radio_mutex_a322cabdfe1a58a41339db06639469dee}\index{CrabUI.RadioMutex@{CrabUI.RadioMutex}!Select@{Select}}
+\index{Select@{Select}!CrabUI.RadioMutex@{CrabUI.RadioMutex}}
+\doxysubsubsection{\texorpdfstring{Select()}{Select()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_radio_mutex_a322cabdfe1a58a41339db06639469dee} 
+void Crab\+UI.\+Radio\+Mutex.\+Select (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_radio_mutex_8cs_source_l00051}{51}} of file \doxymbox{\hyperlink{_radio_mutex_8cs_source}{Radio\+Mutex.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051\ =>\ Group.Select(ID);}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_radio_mutex_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_radio_mutex_a5b68e7d02a66288bab646b358d34bf4a}\index{CrabUI.RadioMutex@{CrabUI.RadioMutex}!IsSelected@{IsSelected}}
+\index{IsSelected@{IsSelected}!CrabUI.RadioMutex@{CrabUI.RadioMutex}}
+\doxysubsubsection{\texorpdfstring{IsSelected}{IsSelected}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_radio_mutex_a5b68e7d02a66288bab646b358d34bf4a} 
+bool Crab\+UI.\+Radio\+Mutex.\+Is\+Selected\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_radio_mutex_8cs_source_l00049}{49}} of file \doxymbox{\hyperlink{_radio_mutex_8cs_source}{Radio\+Mutex.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_radio_mutex_a8b0e3737e083c8c33e3e9abd8ae1a174}\index{CrabUI.RadioMutex@{CrabUI.RadioMutex}!Name@{Name}}
+\index{Name@{Name}!CrabUI.RadioMutex@{CrabUI.RadioMutex}}
+\doxysubsubsection{\texorpdfstring{Name}{Name}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_radio_mutex_a8b0e3737e083c8c33e3e9abd8ae1a174} 
+string Crab\+UI.\+Radio\+Mutex.\+Name\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_radio_mutex_8cs_source_l00056}{56}} of file \doxymbox{\hyperlink{_radio_mutex_8cs_source}{Radio\+Mutex.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056\ \{\ \textcolor{keyword}{get};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_radio_mutex_ace01817cfb4f381291b1f863a0d57876}\index{CrabUI.RadioMutex@{CrabUI.RadioMutex}!WasSelected@{WasSelected}}
+\index{WasSelected@{WasSelected}!CrabUI.RadioMutex@{CrabUI.RadioMutex}}
+\doxysubsubsection{\texorpdfstring{WasSelected}{WasSelected}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_radio_mutex_ace01817cfb4f381291b1f863a0d57876} 
+bool Crab\+UI.\+Radio\+Mutex.\+Was\+Selected\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_radio_mutex_8cs_source_l00050}{50}} of file \doxymbox{\hyperlink{_radio_mutex_8cs_source}{Radio\+Mutex.\+cs}}.
+
+
+
+\label{doc-event-members}
+\Hypertarget{class_crab_u_i_1_1_radio_mutex_doc-event-members}
+\doxysubsection{Event Documentation}
+\Hypertarget{class_crab_u_i_1_1_radio_mutex_a51cc3c8836e26e6d9dc8e2db5a0ef732}\index{CrabUI.RadioMutex@{CrabUI.RadioMutex}!Deselected@{Deselected}}
+\index{Deselected@{Deselected}!CrabUI.RadioMutex@{CrabUI.RadioMutex}}
+\doxysubsubsection{\texorpdfstring{Deselected}{Deselected}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_radio_mutex_a51cc3c8836e26e6d9dc8e2db5a0ef732} 
+Action Crab\+UI.\+Radio\+Mutex.\+Deselected}
+
+
+
+Definition at line \doxymbox{\hyperlink{_radio_mutex_8cs_source_l00054}{54}} of file \doxymbox{\hyperlink{_radio_mutex_8cs_source}{Radio\+Mutex.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_radio_mutex_a9bfb857de789e3d9199af2b92e1ed633}\index{CrabUI.RadioMutex@{CrabUI.RadioMutex}!Selected@{Selected}}
+\index{Selected@{Selected}!CrabUI.RadioMutex@{CrabUI.RadioMutex}}
+\doxysubsubsection{\texorpdfstring{Selected}{Selected}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_radio_mutex_a9bfb857de789e3d9199af2b92e1ed633} 
+Action Crab\+UI.\+Radio\+Mutex.\+Selected}
+
+
+
+Definition at line \doxymbox{\hyperlink{_radio_mutex_8cs_source_l00053}{53}} of file \doxymbox{\hyperlink{_radio_mutex_8cs_source}{Radio\+Mutex.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Simple Types/\+Radio\+Mutex.\+cs\end{DoxyCompactItemize}

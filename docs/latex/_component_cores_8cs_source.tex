@@ -1,0 +1,131 @@
+\doxysection{Component\+Cores.\+cs}
+\hypertarget{_component_cores_8cs_source}{}\label{_component_cores_8cs_source}\index{ClientProject/InMemory/Experiments/Design/ComponentCores.cs@{ClientProject/InMemory/Experiments/Design/ComponentCores.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00010}00010\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i_user}{CrabUIUser}}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00012}00012\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00013}00013\ \textcolor{comment}{\ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00014}00014\ \textcolor{comment}{\ \ ///\ Testing\ Component\ core\ concept}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00015}00015\ \textcolor{comment}{\ \ ///\ Idea\ is\ to\ put\ all\ the\ logic\ in\ cores\ and\ make\ outer\ component\ just\ a\ wrapper\ with\ forwarded\ prop\ for\ the\ user}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00016}00016\ \textcolor{comment}{\ \ ///\ User\ is\ not\ supposed\ to\ access\ the\ core}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00017}00017\ \textcolor{comment}{\ \ ///\ }}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00018}00018\ \textcolor{comment}{\ \ ///\ Conclusion:\ dogshit}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00019}00019\ \textcolor{comment}{\ \ ///\ 1.\ There's\ no\ way\ to\ put\ components\ in\ relations\ without\ data\ duplication\ or\ conversion}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00020}00020\ \textcolor{comment}{\ \ ///\ 2.\ No\ way\ to\ double\ inherit,\ Links\ to\ each\ other\ has\ to\ be\ created\ as\ new\ prop\ and\ will\ stack}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00021}00021\ \textcolor{comment}{\ \ ///\ 3.\ this\ will\ force\ all\ component\ to\ be\ splitted}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00022}00022\ \textcolor{comment}{\ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00023}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores}{00023}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores}{ComponentCores}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Experiment}}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00024}00024\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00025}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_component}{00025}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_component}{Component}}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00026}00026\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00027}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_component_1_1_component_core}{00027}}\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_component_1_1_component_core}{ComponentCore}}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00028}00028\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ List<ComponentCore>\ Children\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Append(\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_component_1_1_component_core}{ComponentCore}}\ child)\ =>\ Children.Add(child);}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00031}00031\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00033}00033\ \ \ \ \ \ \ \textcolor{keyword}{public}\ List<Component>\ Children\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00034}00034\ \ \ \ \ \ \ \textcolor{comment}{//\ I\ can't\ forward\ stuff\ like\ this}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00035}00035\ \ \ \ \ \ \ \textcolor{comment}{//\ having\ 2\ lists\ is\ beyond\ cringe}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00036}00036\ \ \ \ \ \ \ \textcolor{comment}{//\ I\ can't\ forward\ any\ relation\ between\ components\ that\ should\ be\ mirrored\ in\ cores}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00037}00037\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Append(\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_component}{Component}}\ child)}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00038}00038\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ Children.Add(child);}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ Core.Append(child.Core);}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00041}00041\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00043}00043\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{virtual}\ ComponentCore\ Core\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00046}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_square_component}{00046}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_square_component}{SquareComponent}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_component}{Component}}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00047}00047\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00048}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_square_component_1_1_component_core}{00048}}\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_square_component_1_1_component_core}{ComponentCore}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_component}{Component}}.\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_square_component_1_1_component_core}{ComponentCore}}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00049}00049\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ Rectangle\ Rect\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00051}00051\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00053}00053\ \ \ \ \ \ \ \textcolor{comment}{//\ This\ is\ sneaky,\ i\ can't\ add\ setters\ to\ these\ props\ and\ they\ actualy\ created\ with\ new\ keyword}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00054}00054\ \ \ \ \ \ \ \textcolor{comment}{//\ And\ this\ is\ the\ main\ reason\ why\ this\ whole\ idea\ is\ a\ failure}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00055}00055\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_square_component_1_1_component_core}{ComponentCore}}\ Core\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00057}00057\ \ \ \ \ \ \ \textcolor{keyword}{public}\ Rectangle\ Rect}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00058}00058\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Core.Rect;}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ Core.Rect\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00061}00061\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00062}00062\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00064}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_button}{00064}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_button}{Button}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_square_component}{SquareComponent}}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00065}00065\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00066}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_button_1_1_component_core}{00066}}\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_button_1_1_component_core}{ComponentCore}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_square_component}{SquareComponent}}.\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_button_1_1_component_core}{ComponentCore}}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00067}00067\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ Unexposed\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action\ OnClick;}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Click()\ =>\ OnClick?.Invoke();}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00073}00073\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00075}00075\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_button_1_1_component_core}{ComponentCore}}\ Core\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00077}00077\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action\ OnClick}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00078}00078\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ add\ =>\ Core.OnClick\ +=\ value;}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ Core.OnClick\ -\/=\ value;}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00081}00081\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00083}00083\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Click()\ =>\ Core.Click();}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00084}00084\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00086}00086\ \ \ \ \ \textcolor{comment}{//\ Aggregate\ components\ can\ use\ only\ forwarded\ props}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00087}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_button_list}{00087}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_button_list}{ButtonList}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_component}{Component}}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00088}00088\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00089}00089\ \ \ \ \ \ \ \textcolor{keyword}{public}\ List<Button>\ Buttons\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00091}00091\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ AddButton(\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_button}{Button}}\ button)\ =>\ Buttons.Add(button);}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00093}00093\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ ClickAll()}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00094}00094\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_button}{Button}}\ button\ \textcolor{keywordflow}{in}\ Buttons)}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ button.Click();}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00099}00099\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00100}00100\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00102}00102\ \ \ \ \ \textcolor{comment}{//\ Now\ i\ can't\ make\ raw\ core\ components,\ they\ may\ work\ but\ will\ be\ isolated\ from\ the\ ecosystem}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00103}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_triangle_component}{00103}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_triangle_component}{TriangleComponent}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_component}{Component}}.ComponentCore}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00104}00104\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00105}00105\ \ \ \ \ \ \ \textcolor{keyword}{public}\ Point\ A\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00106}00106\ \ \ \ \ \ \ \textcolor{keyword}{public}\ Point\ B\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00107}00107\ \ \ \ \ \ \ \textcolor{keyword}{public}\ Point\ C\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00108}00108\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00111}00111\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ Run()}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00112}00112\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00113}00113\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_button}{Button}}\ button\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_cores_1_1_button}{Button}}();}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00114}00114\ \ \ \ \ \ \ button.Rect\ =\ \textcolor{keyword}{new}\ Rectangle(0,\ 0,\ 100,\ 100);}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00115}00115\ \ \ \ \ \ \ button.OnClick\ +=\ ()\ =>\ \{\ \};}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00117}00117\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_mod}{Mod}}.Logger.Log(button.Core.GetType());}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00118}00118\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (PropertyInfo\ pi\ \textcolor{keywordflow}{in}\ typeof(Button).GetProperties())}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00119}00119\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_mod}{Mod}}.Logger.Log(\$\textcolor{stringliteral}{"{}\{pi.PropertyType\}\ \{pi.Name\}"{}});}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00121}00121\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00123}00123\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00124}00124\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_component_cores_8cs_source_l00125}00125\ \}}
+
+\end{DoxyCode}

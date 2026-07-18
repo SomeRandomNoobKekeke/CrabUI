@@ -1,0 +1,112 @@
+\doxysection{Itterating\+Over\+Props.\+cs}
+\hypertarget{_itterating_over_props_8cs_source}{}\label{_itterating_over_props_8cs_source}\index{ClientProject/InMemory/Experiments/Performance/ItteratingOverProps.cs@{ClientProject/InMemory/Experiments/Performance/ItteratingOverProps.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00010}00010\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i_user}{CrabUIUser}}}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00012}00012\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00013}00013\ \textcolor{comment}{\ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00014}00014\ \textcolor{comment}{\ \ ///\ Difference\ is\ negligible}}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00015}00015\ \textcolor{comment}{\ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00016}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props}{00016}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props}{ItteratingOverProps}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Experiment}}}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00017}00017\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00019}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_a}{00019}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_a}{A}}}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00020}00020\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00023}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_b}{00023}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_b}{B}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_a}{A}}}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00024}00024\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00026}00026\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00027}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_c}{00027}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_c}{C}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_a}{A}}}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00028}00028\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00032}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_d}{00032}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_d}{D}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_c}{C}}}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00033}00033\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00035}00035\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00037}\doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_settings}{00037}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_settings}{Settings}}}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00038}00038\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00039}00039\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_a}{A}}\ A1\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00040}00040\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_a}{A}}\ A2\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00041}00041\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_a}{A}}\ A3\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00042}00042\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_b}{B}}\ B1\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00043}00043\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_b}{B}}\ B2\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00044}00044\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_b}{B}}\ B3\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00045}00045\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_c}{C}}\ C1\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00046}00046\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_c}{C}}\ C2\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00047}00047\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_c}{C}}\ C3\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00048}00048\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_d}{D}}\ D1\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00049}00049\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_d}{D}}\ D2\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00050}00050\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_d}{D}}\ D3\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00051}00051\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00053}00053\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ repeats\ =\ 1000000;}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00055}00055\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ Run()}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00056}00056\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00057}00057\ \ \ \ \ \ \ Stopwatch\ sw\ =\ \textcolor{keyword}{new}\ Stopwatch();}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00059}00059\ \ \ \ \ \ \ \textcolor{keywordtype}{object}\ slot1\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00060}00060\ \ \ \ \ \ \ \textcolor{keywordtype}{object}\ slot2\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00062}00062\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_settings}{Settings}}\ settings\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00064}00064\ \ \ \ \ \ \ sw.Restart();}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00065}00065\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00066}00066\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (PropertyInfo\ pi\ \textcolor{keywordflow}{in}\ typeof(\doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_settings}{Settings}}).GetProperties())}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pi.PropertyType.IsAssignableTo(typeof(\doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_a}{A}})))}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ slot1\ =\ pi.GetValue(settings);}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pi.PropertyType.IsAssignableTo(typeof(C)))}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ slot2\ =\ pi.GetValue(settings);}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00079}00079\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00080}00080\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00081}00081\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}together:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00083}00083\ \ \ \ \ \ \ sw.Restart();}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00084}00084\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00085}00085\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (PropertyInfo\ pi\ \textcolor{keywordflow}{in}\ typeof(\doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_settings}{Settings}}).GetProperties())}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pi.PropertyType.IsAssignableTo(typeof(\doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_a}{A}})))}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ slot1\ =\ pi.GetValue(settings);}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (PropertyInfo\ pi\ \textcolor{keywordflow}{in}\ typeof(\doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_settings}{Settings}}).GetProperties())}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pi.PropertyType.IsAssignableTo(typeof(\doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_over_props_1_1_c}{C}})))}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ slot2\ =\ pi.GetValue(settings);}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00101}00101\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00102}00102\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00103}00103\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}separate:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00104}00104\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00105}00105\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_itterating_over_props_8cs_source_l00106}00106\ \}}
+
+\end{DoxyCode}

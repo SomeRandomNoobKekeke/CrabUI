@@ -92,16 +92,250 @@ $(function(){initNavTree('_overview.html','',''); });
   <div class="headertitle"><div class="title">Overview </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md__docs_sources_2_sources_2_overview"></a></p>
+<div class="textblock"><p><a class="anchor" id="md__docs_sources_2_sources_22_01_overview"></a></p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
-<a class="el" href="_overview_basics.html" title="Basics">Basics</a></h1>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
-<a class="el" href="_overview_components.html" title="Components">Components</a></h1>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
-<a class="el" href="_overview_layouts.html" title="Layouts">Layouts</a></h1>
+Basics</h1>
+<p>All GUI elements: frames, buttons, list, textblocks are CUIComponents</p>
+<p>They are C# objects, they all have parameterless constructor so you can just create them</p>
+<p>They have props that control how they will be drawn and positioned </p><div class="fragment"><div class="line">CUIFrame frame = <span class="keyword">new</span> CUIFrame()</div>
+<div class="line">{</div>
+<div class="line">  Absolute = <span class="keyword">new</span> CUINullRect(w: 400, h: 600),</div>
+<div class="line">  Background = { Color = Color.Blue, } <span class="comment">// you can set deep props like this</span></div>
+<div class="line">};</div>
+</div><!-- fragment --><p>CUIComponents can be connected to each other forming a tree, they have: </p><div class="fragment"><div class="line"><span class="keyword">public</span> IList&lt;CUIComponent&gt; Children { <span class="keyword">get</span>; }</div>
+<div class="line"><span class="keyword">public</span> CUIComponent Parent { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+</div><!-- fragment --><p>you can connect them like this </p><div class="fragment"><div class="line">CUI.Main.Children.Add(frame); </div>
+<div class="line"><span class="comment">// or</span></div>
+<div class="line">frame.Parent = CUI.Main;</div>
+</div><!-- fragment --><p>Another fancy way to connect components is indexing <br  />
+ It adds component as a child and memorizes it, so you can later access it by name </p><div class="fragment"><div class="line">frame[<span class="stringliteral">&quot;layout&quot;</span>] = <span class="keyword">new</span> CUIVerticalList() { Relative = <span class="keyword">new</span> CUINullRect(0, 0, 1, 1), };</div>
+<div class="line">frame[<span class="stringliteral">&quot;layout&quot;</span>][<span class="stringliteral">&quot;handle&quot;</span>] = <span class="keyword">new</span> CUIHorizontalList()</div>
+<div class="line">{</div>
+<div class="line">  FitContent = <span class="keyword">new</span> CUIBool2(<span class="keyword">false</span>, <span class="keyword">true</span>),</div>
+<div class="line">};</div>
+<div class="line">frame[<span class="stringliteral">&quot;layout&quot;</span>][<span class="stringliteral">&quot;handle&quot;</span>][<span class="stringliteral">&quot;caption&quot;</span>] = Caption = <span class="keyword">new</span> CUITextBlock(<span class="stringliteral">&quot;bruh&quot;</span>)</div>
+<div class="line">{</div>
+<div class="line">  Flex = 1,</div>
+<div class="line">};</div>
+</div><!-- fragment --><p>To make your components visible add them to CUI.Main or CUI.TopMain <br  />
+ CUI.Main is drawn below vanilla GUI and TopMain is drawn above </p><div class="fragment"><div class="line">frame.Open(); <span class="comment">// same as CUI.Main.Children.Add(frame);</span></div>
+</div><!-- fragment --><p>CUIComponent can handle various events, e.g. </p><div class="fragment"><div class="line"><span class="comment">//mmm so consistent</span></div>
+<div class="line">frame.MouseDown += (c, e) =&gt; CUI.Logger.Log($<span class="stringliteral">&quot;Mouse down at {e.Pos}&quot;</span>);</div>
+<div class="line">frame.OnFocus += () =&gt; frame.Background.Color = Color.Cyan;</div>
+<div class="line">frame.OnFocusLost += () =&gt; frame.Background.Color = Color.Blue;</div>
+<div class="line">frame.KeyPressed += (e) =&gt; CUI.Logger.Log(e.Key);</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+Components</h1>
+<ul>
+<li>CUIComponent - It's just a square with background and borders</li>
+<li>CUIMainComponent -Special component that Draws and calculates layouts of its children, there's 2 CUI.Main and CUI.TopMain, don't create</li>
+<li>CUIButton - A button</li>
+<li>CUICanvas - A canvas, you can draw on its texture</li>
+<li>CUICheckBox - A checkbox</li>
+<li>CUICloseButton - Button with a cross that emits "close" event that forces nearest frame to close</li>
+<li>CUIDropDown - Drop down select (borked)</li>
+<li>CUIFrame - Draggable and resizable container for other components, can be Opened and Closed</li>
+<li>CUIVerticalList - Wrapper with CUIVerticalListLayout</li>
+<li>CUIGrid - Wrapper with Grid layour (half-assed)</li>
+<li>CUIPages - Can have only 1 child - opened page, resizes opened page to its size</li>
+<li>CUIPage - When opened in CUIPages recieves OnOpen / OnClose events</li>
+<li>CUIToggleButton - Button that can be toggled On and Off</li>
+<li>CUIRadioButton - Button that can be added to a group where only 1 button can be On at a time</li>
+<li>CUIScrollBar - Box with a slider that can be dragged, exposes Lambda (half-assed)</li>
+<li>CUITextBlock - Block of text with background, can resist shrinking</li>
+<li>CUITextLine - Line of text</li>
+<li>CUITextInput - Text input (half-assed)</li>
+</ul>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
+CUIDefault.</h3>
+<ul>
+<li>CUIDefault.Frame - prebuilt frame with handle, caption and close button, add children to frame["layout"]</li>
+<li>InputField - Base class for InputField, wrappers with label and text input, intended to be used in some settings ui (half-assed)</li>
+</ul>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
-<a class="el" href="_overview_props.html" title="Props">Props</a></h1>
-</div></div><!-- contents -->
+Layouts</h1>
+<ul>
+<li>CUIPlainLayout - simple two-dimensional plane</li>
+<li>CUIVerticalListLayout - places children in a stack, one after another, if child width isn't specified resizes it to its own width <br  />
+ children can fill empty space with Flex prop</li>
+<li>CUIHorizontalListLayout - Same as CUIVerticalListLayout but horizontal</li>
+<li>CUIGridLayout - places children in cells specified by GridRow and GridColumn (half-assed)</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
+Types</h1>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
+Commonly used "primitive" types:</h3>
+<div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">enum</span> CUIDirection { Straight, Reverse, }</div>
+</div><!-- fragment --><div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">struct </span>CUIRect {</div>
+<div class="line">  <span class="keyword">public</span> <span class="keywordtype">float</span> Left;</div>
+<div class="line">  <span class="keyword">public</span> <span class="keywordtype">float</span> Top;</div>
+<div class="line">  <span class="keyword">public</span> <span class="keywordtype">float</span> Width;</div>
+<div class="line">  <span class="keyword">public</span> <span class="keywordtype">float</span> Height;</div>
+<div class="line">}</div>
+</div><!-- fragment --><div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">struct </span>CUINullRect {</div>
+<div class="line">  <span class="keyword">public</span> <span class="keywordtype">float</span>? Left;</div>
+<div class="line">  <span class="keyword">public</span> <span class="keywordtype">float</span>? Top;</div>
+<div class="line">  <span class="keyword">public</span> <span class="keywordtype">float</span>? Width;</div>
+<div class="line">  <span class="keyword">public</span> <span class="keywordtype">float</span>? Height;</div>
+<div class="line">}</div>
+</div><!-- fragment --><div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">struct </span>CUIBool2 {</div>
+<div class="line">  <span class="keyword">public</span> <span class="keywordtype">bool</span> X;</div>
+<div class="line">  <span class="keyword">public</span> <span class="keywordtype">bool</span> Y;</div>
+<div class="line">}</div>
+</div><!-- fragment --><div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">struct </span>CUISizes {</div>
+<div class="line">  <span class="keyword">public</span> <span class="keywordtype">float</span> Left;</div>
+<div class="line">  <span class="keyword">public</span> <span class="keywordtype">float</span> Top;</div>
+<div class="line">  <span class="keyword">public</span> <span class="keywordtype">float</span> Right;</div>
+<div class="line">  <span class="keyword">public</span> <span class="keywordtype">float</span> Bottom;</div>
+<div class="line">}</div>
+</div><!-- fragment --><div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class </span>CUIAnchor {</div>
+<div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> Vector2 LeftTop = <span class="keyword">new</span> Vector2(0.0f, 0.0f);</div>
+<div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> Vector2 CenterTop = <span class="keyword">new</span> Vector2(0.5f, 0.0f);</div>
+<div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> Vector2 RightTop = <span class="keyword">new</span> Vector2(1.0f, 0.0f);</div>
+<div class="line">  ...</div>
+<div class="line">}</div>
+</div><!-- fragment --><div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">struct </span>CUIBoundaries {</div>
+<div class="line">  <span class="keyword">public</span> <span class="keywordtype">float</span>? MinX;</div>
+<div class="line">  <span class="keyword">public</span> <span class="keywordtype">float</span>? MaxX;</div>
+<div class="line">  <span class="keyword">public</span> <span class="keywordtype">float</span>? MinY;</div>
+<div class="line">  <span class="keyword">public</span> <span class="keywordtype">float</span>? MaxY;</div>
+<div class="line">}</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
+Props</h1>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
+Commonly used Props of CUIComponent:</h3>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
+Layout Props:</h3>
+<p>Note that props used by some layouts might be ignored in others</p>
+<div class="fragment"><div class="line"><span class="keyword">public</span> CUINullRect Absolute { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Absolute position and size in pixels</span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> CUINullRect AbsoluteMin { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Min Absolute position and size in pixels</span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> CUINullRect AbsoluteMax { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Max Absolute position and size in pixels</span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> CUINullRect Relative { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Position and size relative to parent size </span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> CUINullRect RelativeMin { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Min Position and size relative to parent size </span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> CUINullRect RelativeMax { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Max Position and size relative to parent size </span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> CUINullRect CrossRelative { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Relative position and size but to the opposite dimension, useful for creating square things</span></div>
+</div><!-- fragment --><p>Child position is calculated from Anchor position <br  />
+ Child is attached with its Anchor point to ParentAnchor of parent rect <br  />
+ if ParentAnchor is null Anchor is used for both </p><div class="fragment"><div class="line"><span class="keyword">public</span> Vector2 Anchor { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - ([0..1],[0..1]) Vector2</span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> Vector2? ParentAnchor { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - ([0..1],[0..1]) Vector2?</span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> CUIDirection Direction { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - used in lists to specify direction of child positioning</span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keywordtype">float</span>? Flex { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - if not null then child will fill empty space in lists </span></div>
+<div class="line">                                 <span class="comment">// - if there&#39;s multiple flex components space will be splitted among them proportionally to their flex</span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> Vector2 ChildrenOffset { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - All children will be shifted on this vector, used for scroll</span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> CUIBoundaries ChildrenOffsetBounds { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - ChildrenOffset will be bounded with these, used to limit scroll</span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> Func&lt;CUIRect, CUIBoundaries&gt; { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Used to keep children in some bounds, there&#39;s static funcs in CUIBoundaries</span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> CUIBool2 FitContent { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Parent will resize to fit all children inside of its rect </span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keywordtype">int</span> GridRow { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Grid row to put this component into</span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keywordtype">int</span> GridColumn { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Grid column to put this component into</span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> (int, int) Grid { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Set both at once</span></div>
+</div><!-- fragment --><div class="fragment"><div class="line"><span class="keyword">public</span> CUISizes Margin { <span class="keyword">get</span>; <span class="keyword">set</span>; } { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Empty space around component</span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> CUISizes Border { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Size of borders</span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> CUISizes Padding { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Inner empty space between border and children</span></div>
+</div><!-- fragment --><p>Note: these rects are not readonly, but you don't need to set them, they're supposed to be set by parent layout </p><div class="fragment"><div class="line"><span class="keyword">public</span> CUIRect { <span class="keyword">get</span>; <span class="keyword">set</span>; } OuterRect</div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> CUIRect Rect { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// OuterRect - Margin</span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> CUIRect InnerRect { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// Rect - Border</span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> CUIRect ChildrenRect { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// InnerRect - Padding</span></div>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
+Graphics Props:</h3>
+<div class="fragment"><div class="line"><span class="keyword">public</span> SimpleTexture Background { <span class="keyword">get</span>; }</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">public</span> <span class="keyword">class </span>SimpleTexture {</div>
+<div class="line">  <span class="keyword">public</span> CUISprite Sprite { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line">  <span class="keyword">public</span> <span class="keywordtype">bool</span> Visible { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Note that these props are forwarded from Sprite, so if you change sprite you throw away these as well </span></div>
+<div class="line">  <span class="keyword">public</span> CUITexture2D Texture { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line">  <span class="keyword">public</span> Rectangle? SourceRectangle { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line">  <span class="keyword">public</span> Color Color { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line">  <span class="keyword">public</span> <span class="keywordtype">float</span> Rotation { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line">  <span class="keyword">public</span> Vector2 Origin { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line">  <span class="keyword">public</span> SpriteEffects Effects { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line">  <span class="keyword">public</span> <span class="keywordtype">float</span> LayerDepth { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line">}</div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> Borders Borders { <span class="keyword">get</span>; }</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">public</span> <span class="keyword">class </span>Borders {</div>
+<div class="line">  <span class="keyword">public</span> CUISizes Sizes { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line">  <span class="keyword">public</span> <span class="keywordtype">bool</span> Visible { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line">  <span class="keyword">public</span> Color Color { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line">}</div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keywordtype">bool</span> Displayed { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - If false component won&#39;t even be added to the list of visible components</span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keywordtype">bool</span> CullChildren { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Should children be culled and cropped outside of parent rect</span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keywordtype">bool</span> IgnoretransparentPixels { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Whether clicks should register on transparent pixels, it buffers texture data to test pixel, it&#39;s heavy, use wisely</span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keywordtype">bool</span> UseReactiveStyles { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Defaults to CUICore.Styles.UseReactiveStyles</span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> CUIPaletteRank PaletteRank { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - uses palette from CUICore.Palettes of some rank (Primary, Secondary)</span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> CUIPalette Palette { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Changes palette, it&#39;ll retrigger styles</span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> CUIPalette DeepPalette { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Recursively sets palette for children </span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> Action&lt;CUIComponent&gt; Style { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Arbitrary func that sets some props on component, saved in PersonalStyle</span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> ICUIStyle PersonalStyle { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Extra style that will be applied after type specific styles</span></div>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
+Other Props:</h3>
+<div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keywordtype">bool</span> Focusable { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Can it be focused</span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keywordtype">bool</span> Draggable { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Can it be dragged</span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keywordtype">bool</span> Swipeable { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Can it be swiped</span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keywordtype">bool</span> Resizable { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Can it be resized</span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keywordtype">bool</span> ConsumeFocus { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Should it consume focus events</span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keywordtype">bool</span> ConsumeMouseEvents { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Should it consume mouse events</span></div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
+Events</h1>
+<p>Note: most events accompanied by delegate props where you can set callbacks in object initializers </p><div class="fragment"><div class="line">CUIComponent component = <span class="keyword">new</span> CUIComponent()</div>
+<div class="line">{</div>
+<div class="line">  OnMouseDown = (c, e) =&gt; CUI.Logger.Log(e.Pos),</div>
+<div class="line">};</div>
+<div class="line"><span class="comment">//Same as</span></div>
+<div class="line">component.MouseDown += (c, e) =&gt; CUI.Logger.Log(e.Pos);</div>
+</div><!-- fragment --><p>Also most events have "this" component as first arg <br  />
+ Some of them don't and it's a consistency bug which i'll fix somewhere in the future</p>
+<p>Also idk if it's a good idea to pass "this" as first arg, in fact i never use it, tell me your thoughts</p>
+<p>ClearableEvents are wrappers around event that can be cleared, raised from outside and routed to one another</p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
+Commonly used Events of CUIComponent:</h3>
+<div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">event</span> Action&lt;CUIComponent, CUIMouseDownEvent&gt; MouseDown;</div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">event</span> Action&lt;CUIComponent, CUIMouseUpEvent&gt; MouseUp</div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">event</span> Action&lt;CUIComponent, CUIMouseClickEvent&gt; MouseClick</div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">event</span> Action&lt;CUIComponent, CUIMouseDoubleClickEvent&gt; MouseDoubleClick</div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">event</span> Action&lt;CUIComponent, CUIMouseEnterEvent&gt; MouseEnter</div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">event</span> Action&lt;CUIComponent, CUIMouseLeaveEvent&gt; MouseLeave</div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">event</span> Action&lt;CUIComponent, CUIMouseOnEvent&gt; MouseOn <span class="comment">// It&#39;s called on components currently under the mouse</span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">event</span> Action&lt;CUIComponent, CUIMouseOffEvent&gt; MouseOff <span class="comment">// It&#39;s called on prev components under the mouse</span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">event</span> Action&lt;CUIComponent, CUIMouseScrollEvent&gt; MouseScroll</div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">event</span> Action&lt;CUIComponent, Vector2&gt; Dragged</div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">event</span> Action&lt;CUIComponent, CUIRect&gt; RectSet</div>
+</div><!-- fragment --><p>Component recieves Key events only when focused </p><div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">event</span> Action OnFocus</div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">event</span> Action OnFocusLost</div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">event</span> Action&lt;CUIKeyPressedEvent&gt; KeyPressed</div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">event</span> Action&lt;CUIKeyReleasedEvent&gt; KeyReleased</div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">event</span> Action&lt;CUITextInputEvent&gt; TextInput <span class="comment">// localized + spammed when key is held</span></div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">event</span> Action&lt;CUIKeyDownInputEvent&gt; KeyDownInput <span class="comment">// spammed when key is held</span></div>
+</div><!-- fragment --><p>There's also global events on main components, e.g. in <span class="tt">CUI.Main.GlobalEvents</span></p>
+<div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">partial class </span>CUIMainComponent</div>
+<div class="line">{</div>
+<div class="line">  <span class="keyword">public</span> GlobalEvents_Part GlobalEvents { <span class="keyword">get</span>; } = <span class="keyword">new</span>();</div>
+<div class="line"> </div>
+<div class="line">  <span class="keyword">public</span> <span class="keyword">class </span>GlobalEvents_Part : Part, IMouseEventConsumer, IKeyboardEventConsumer</div>
+<div class="line">  {</div>
+<div class="line">    <span class="keyword">public</span> ClearableEvent BeforeUpdate { <span class="keyword">get</span>; } = <span class="keyword">new</span>();</div>
+<div class="line">    <span class="keyword">public</span> ClearableEvent AfterUpdate { <span class="keyword">get</span>; } = <span class="keyword">new</span>();</div>
+<div class="line">    <span class="keyword">public</span> <span class="keywordtype">bool</span> MouseOver { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// BRUH</span></div>
+<div class="line">    <span class="keyword">public</span> <span class="keywordtype">bool</span> MousePressed { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line">    <span class="keyword">public</span> <span class="keywordtype">bool</span> ConsumeMouseEvents { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// BRUH</span></div>
+<div class="line">    <span class="keyword">public</span> ClearableEvent&lt;CUIMouseDownEvent&gt; MouseDown { <span class="keyword">get</span>; } = <span class="keyword">new</span>();</div>
+<div class="line">    <span class="keyword">public</span> ClearableEvent&lt;CUIMouseUpEvent&gt; MouseUp { <span class="keyword">get</span>; } = <span class="keyword">new</span>();</div>
+<div class="line">    <span class="keyword">public</span> ClearableEvent&lt;CUIMouseClickEvent&gt; MouseClick { <span class="keyword">get</span>; } = <span class="keyword">new</span>();</div>
+<div class="line">    <span class="keyword">public</span> ClearableEvent&lt;CUIMouseDoubleClickEvent&gt; MouseDoubleClick { <span class="keyword">get</span>; } = <span class="keyword">new</span>();</div>
+<div class="line">    <span class="keyword">public</span> ClearableEvent&lt;CUIMouseMovedEvent&gt; MouseMoved { <span class="keyword">get</span>; } = <span class="keyword">new</span>();</div>
+<div class="line">    <span class="keyword">public</span> ClearableEvent&lt;CUIMouseEnterEvent&gt; MouseEnter { <span class="keyword">get</span>; } = <span class="keyword">new</span>(); <span class="comment">// BRUH</span></div>
+<div class="line">    <span class="keyword">public</span> ClearableEvent&lt;CUIMouseLeaveEvent&gt; MouseLeave { <span class="keyword">get</span>; } = <span class="keyword">new</span>(); <span class="comment">// BRUH</span></div>
+<div class="line">    <span class="keyword">public</span> ClearableEvent&lt;CUIMouseOnEvent&gt; MouseOn { <span class="keyword">get</span>; } = <span class="keyword">new</span>(); <span class="comment">// BRUH</span></div>
+<div class="line">    <span class="keyword">public</span> ClearableEvent&lt;CUIMouseOffEvent&gt; MouseOff { <span class="keyword">get</span>; } = <span class="keyword">new</span>(); <span class="comment">// BRUH</span></div>
+<div class="line">    <span class="keyword">public</span> ClearableEvent&lt;CUIMouseScrollEvent&gt; MouseScroll { <span class="keyword">get</span>; } = <span class="keyword">new</span>();</div>
+<div class="line">    <span class="keyword">public</span> ClearableEvent&lt;CUIKeyPressedEvent&gt; KeyPressed { <span class="keyword">get</span>; } = <span class="keyword">new</span>();</div>
+<div class="line">    <span class="keyword">public</span> ClearableEvent&lt;CUIKeyReleasedEvent&gt; KeyReleased { <span class="keyword">get</span>; } = <span class="keyword">new</span>();</div>
+<div class="line">    <span class="keyword">public</span> ClearableEvent&lt;CUITextInputEvent&gt; TextInput { <span class="keyword">get</span>; } = <span class="keyword">new</span>();</div>
+<div class="line">    <span class="keyword">public</span> ClearableEvent&lt;CUIKeyDownInputEvent&gt; KeyDownInput { <span class="keyword">get</span>; } = <span class="keyword">new</span>();</div>
+<div class="line">  }</div>
+<div class="line">}</div>
+</div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

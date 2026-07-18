@@ -1,0 +1,37 @@
+\doxysection{CUIComponent.\+Layout.\+cs}
+\hypertarget{_c_u_i_component_8_layout_8cs_source}{}\label{_c_u_i_component_8_layout_8cs_source}\index{ClientProject/ClientSource/CUI/Core/Components/CUIComponent/CUIComponent.Layout.cs@{ClientProject/ClientSource/CUI/Core/Components/CUIComponent/CUIComponent.Layout.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_layout_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_layout_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_layout_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Collections.ObjectModel;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_layout_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_layout_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_layout_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_layout_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_layout_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_layout_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_code_generator}{CUICodeGenerator}};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_layout_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_layout_8cs_source_l00011}00011\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_layout_8cs_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_layout_8cs_source_l00013}00013\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component}{CUIComponent}}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_layout_8cs_source_l00014}00014\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_layout_8cs_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{protected}\ CUINullVector2\ MinSize\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ CUINullVector2.Null;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_layout_8cs_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{protected}\ CUINullVector2\ MaxSize\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ CUINullVector2.Null;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_layout_8cs_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_layout_8cs_source_l00018}00018\ \ \ \ \ \textcolor{comment}{//CRINGE}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_layout_8cs_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{virtual}\ CUINullVector2\ MinSizeOverride\ =>\ MinSize;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_layout_8cs_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{virtual}\ CUINullVector2\ MaxSizeOverride\ =>\ MaxSize;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_layout_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_layout_8cs_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{public}\ Layout\ Layout\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{protected}\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_layout_8cs_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ SetupLayout()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_layout_8cs_source_l00024}00024\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_layout_8cs_source_l00025}00025\ \ \ \ \ \ \ Layout\ =\ \textcolor{keyword}{new}\ CUIPlainLayout();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_layout_8cs_source_l00026}00026\ \ \ \ \ \ \ Layout.ConnectTo(\textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_adapters___part}{Adapters\_Part}}.\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_adapters___part_1_1_c_u_i_plain_layout___host___part}{CUIPlainLayout\_Host\_Part}}()\ \{\ Self\ =\ this\ \});}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_layout_8cs_source_l00027}00027\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_layout_8cs_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_layout_8cs_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{protected}\ LayoutMarker\ LayoutMarker\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_layout_8cs_source_l00030}00030\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_component_8_layout_8cs_source_l00031}00031\ \}}
+
+\end{DoxyCode}

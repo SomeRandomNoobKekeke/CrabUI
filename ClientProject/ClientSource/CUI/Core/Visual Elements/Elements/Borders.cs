@@ -24,8 +24,6 @@ namespace CrabUI
     public CUIRect InnerRect { get; set; }
 
     public CUISizes Sizes { get; set; }
-    public bool Visible { get; set; }
-
 
     public CUISprite Sprite { get; set; } = CUISprite.White;
     public Color Color { get => Sprite.Color; set => Sprite.Color = value; }

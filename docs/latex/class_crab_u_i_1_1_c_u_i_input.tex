@@ -1,0 +1,162 @@
+\doxysection{Crab\+UI.\+CUIInput Class Reference}
+\hypertarget{class_crab_u_i_1_1_c_u_i_input}{}\label{class_crab_u_i_1_1_c_u_i_input}\index{CrabUI.CUIInput@{CrabUI.CUIInput}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input}{Keyboard\+Input}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_input_1_1_mouse_input}{Mouse\+Input}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_input_ad94c4b4258615ce8e156a31b04448c9a}{Update}} (double total\+Time, Mouse\+State mouse, Keyboard\+State keyboard, Text\+Input\+Event\+Pack text\+Input)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Input\+Settings \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_input_a17e6811f9a5b758deb5ce5ab0c48e19d}{Input\+Settings}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input}{Keyboard\+Input}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_input_a08842169169d09cf8b0b80565cff3fdb}{Keyboard}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_input_1_1_mouse_input}{Mouse\+Input}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_input_ad8d764850ad7e4ed976c7c3776eb65fd}{Mouse}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_input_afe915a340778ae2cdc4cd41480f0996a}{Something\+Focused\+Elsewhere}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_input_ad1cdf8fe9fc83f457bc3ca7f79de22b1}{Something\+Happened}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_input_8cs_source_l00013}{13}} of file \doxymbox{\hyperlink{_c_u_i_input_8cs_source}{CUIInput.\+cs}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_input_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_input_a65eae5da0bff89575186d7c06377eefe}\index{CrabUI.CUIInput@{CrabUI.CUIInput}!CUIInput@{CUIInput}}
+\index{CUIInput@{CUIInput}!CrabUI.CUIInput@{CrabUI.CUIInput}}
+\doxysubsubsection{\texorpdfstring{CUIInput()}{CUIInput()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_input_a65eae5da0bff89575186d7c06377eefe} 
+Crab\+UI.\+CUIInput.\+CUIInput (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_input_8cs_source_l00036}{36}} of file \doxymbox{\hyperlink{_c_u_i_input_8cs_source}{CUIInput.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037\ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ Mouse\ =\ \textcolor{keyword}{new}\ MouseInput(InputSettings);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ Keyboard\ =\ \textcolor{keyword}{new}\ KeyboardInput();}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_input_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_input_ad94c4b4258615ce8e156a31b04448c9a}\index{CrabUI.CUIInput@{CrabUI.CUIInput}!Update@{Update}}
+\index{Update@{Update}!CrabUI.CUIInput@{CrabUI.CUIInput}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_input_ad94c4b4258615ce8e156a31b04448c9a} 
+void Crab\+UI.\+CUIInput.\+Update (\begin{DoxyParamCaption}\item[{double}]{total\+Time}{, }\item[{Mouse\+State}]{mouse}{, }\item[{Keyboard\+State}]{keyboard}{, }\item[{Text\+Input\+Event\+Pack}]{text\+Input}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_input_8cs_source_l00028}{28}} of file \doxymbox{\hyperlink{_c_u_i_input_8cs_source}{CUIInput.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ Mouse.Update(totalTime,\ mouse);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ Keyboard.Update(totalTime,\ keyboard,\ textInput);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ SomethingFocusedElsewhere\ =\ textInput.SomethingFocusedElsewhere;}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_input_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_input_a17e6811f9a5b758deb5ce5ab0c48e19d}\index{CrabUI.CUIInput@{CrabUI.CUIInput}!InputSettings@{InputSettings}}
+\index{InputSettings@{InputSettings}!CrabUI.CUIInput@{CrabUI.CUIInput}}
+\doxysubsubsection{\texorpdfstring{InputSettings}{InputSettings}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_input_a17e6811f9a5b758deb5ce5ab0c48e19d} 
+Input\+Settings Crab\+UI.\+CUIInput.\+Input\+Settings = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_input_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_c_u_i_input_8cs_source}{CUIInput.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_input_a08842169169d09cf8b0b80565cff3fdb}\index{CrabUI.CUIInput@{CrabUI.CUIInput}!Keyboard@{Keyboard}}
+\index{Keyboard@{Keyboard}!CrabUI.CUIInput@{CrabUI.CUIInput}}
+\doxysubsubsection{\texorpdfstring{Keyboard}{Keyboard}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_input_a08842169169d09cf8b0b80565cff3fdb} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input}{Keyboard\+Input}} Crab\+UI.\+CUIInput.\+Keyboard\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_input_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_c_u_i_input_8cs_source}{CUIInput.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \{\ \textcolor{keyword}{get};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_input_ad8d764850ad7e4ed976c7c3776eb65fd}\index{CrabUI.CUIInput@{CrabUI.CUIInput}!Mouse@{Mouse}}
+\index{Mouse@{Mouse}!CrabUI.CUIInput@{CrabUI.CUIInput}}
+\doxysubsubsection{\texorpdfstring{Mouse}{Mouse}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_input_ad8d764850ad7e4ed976c7c3776eb65fd} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_input_1_1_mouse_input}{Mouse\+Input}} Crab\+UI.\+CUIInput.\+Mouse\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_input_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_c_u_i_input_8cs_source}{CUIInput.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \{\ \textcolor{keyword}{get};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_input_afe915a340778ae2cdc4cd41480f0996a}\index{CrabUI.CUIInput@{CrabUI.CUIInput}!SomethingFocusedElsewhere@{SomethingFocusedElsewhere}}
+\index{SomethingFocusedElsewhere@{SomethingFocusedElsewhere}!CrabUI.CUIInput@{CrabUI.CUIInput}}
+\doxysubsubsection{\texorpdfstring{SomethingFocusedElsewhere}{SomethingFocusedElsewhere}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_input_afe915a340778ae2cdc4cd41480f0996a} 
+bool Crab\+UI.\+CUIInput.\+Something\+Focused\+Elsewhere\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_input_8cs_source_l00020}{20}} of file \doxymbox{\hyperlink{_c_u_i_input_8cs_source}{CUIInput.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_input_ad1cdf8fe9fc83f457bc3ca7f79de22b1}\index{CrabUI.CUIInput@{CrabUI.CUIInput}!SomethingHappened@{SomethingHappened}}
+\index{SomethingHappened@{SomethingHappened}!CrabUI.CUIInput@{CrabUI.CUIInput}}
+\doxysubsubsection{\texorpdfstring{SomethingHappened}{SomethingHappened}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_input_ad1cdf8fe9fc83f457bc3ca7f79de22b1} 
+bool Crab\+UI.\+CUIInput.\+Something\+Happened\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_input_8cs_source_l00024}{24}} of file \doxymbox{\hyperlink{_c_u_i_input_8cs_source}{CUIInput.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+CUIInput/\+CUIInput.\+cs\end{DoxyCompactItemize}

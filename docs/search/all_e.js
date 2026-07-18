@@ -1,4 +1,27 @@
 var searchData=
 [
-  ['to_20include_20cui_20in_20your_20mod_3a_0',['To include CUI in your mod:',['../_quick_start.html#autotoc_md11',1,'']]]
+  ['fakeinternalaproxy3_0',['FakeInternalAProxy3',['../class_crab_u_i_user_1_1_proxy_performance_1_1_fake_internal_a_proxy3.html',1,'CrabUIUser::ProxyPerformance']]],
+  ['fakeinternalbproxy3_1',['FakeInternalBProxy3',['../class_crab_u_i_user_1_1_proxy_performance_1_1_fake_internal_b_proxy3.html',1,'CrabUIUser::ProxyPerformance']]],
+  ['fcanvas_2',['FCanvas',['../class_crab_u_i_user_1_1_class_mapping_1_1_magic_mirror_1_1_f_canvas.html',1,'CrabUIUser::ClassMapping::MagicMirror']]],
+  ['fileaccessmodifierexperiment_3',['FileAccessModifierExperiment',['../class_crab_u_i_user_1_1_file_access_modifier_experiment.html',1,'CrabUIUser']]],
+  ['fixes_3a_4',['Fixes:',['../md__client_project_2_client_source_2_changelog.html#autotoc_md55',1,'']]],
+  ['flaws_5',['Died From &lt;strike&gt;Cringe&lt;/strike&gt; 0 day design flaws',['../md__client_project_2_client_source_2_changelog.html#autotoc_md69',1,'']]],
+  ['focus_20wip_20mostly_20borked_6',['Focus (wip, mostly borked)',['../_other_concepts.html#autotoc_md23',1,'']]],
+  ['folder_20on_20barojunk_7',['for examples check Test folder on BaroJunk',['../dir_9cd1d8e27900c8a4332922c888fc7f3f.html#autotoc_md96',1,'']]],
+  ['for_20code_20divers_8',['Notes For Code Divers',['../_notes_for_code_divers.html',1,'']]],
+  ['for_20examples_20check_20test_20folder_20on_20barojunk_9',['for examples check Test folder on BaroJunk',['../dir_9cd1d8e27900c8a4332922c888fc7f3f.html#autotoc_md96',1,'']]],
+  ['for_20in_20memory_20mods_10',['For &quot;in-memory&quot; mods',['../_quick_start.html#autotoc_md1',1,'']]],
+  ['for_20precompiled_20mods_11',['For precompiled mods',['../_quick_start.html#autotoc_md2',1,'']]],
+  ['forget_12',['Forget',['../class_crab_u_i_1_1_c_u_i_component.html#a6705c92f70004b2401268c0968c842e9',1,'CrabUI::CUIComponent']]],
+  ['forvsforeach_13',['ForVsForeach',['../class_crab_u_i_user_1_1_for_vs_foreach.html',1,'CrabUIUser']]],
+  ['frame_14',['Frame',['../class_crab_u_i_1_1_c_u_i_default_1_1_frame.html',1,'CrabUI::CUIDefault']]],
+  ['friendship_15',['Friendship',['../class_crab_u_i_user_1_1_friendship.html',1,'CrabUIUser']]],
+  ['from_20cringe_200_20day_20design_20flaws_16',['Died From &lt;strike&gt;Cringe&lt;/strike&gt; 0 day design flaws',['../md__client_project_2_client_source_2_changelog.html#autotoc_md69',1,'']]],
+  ['from_20monogame_17',['- CUICore is isolated from MonoGame',['../md__client_project_2_client_source_2_changelog.html#autotoc_md57',1,'']]],
+  ['fromparentanddownpattern_18',['FromParentAndDownPattern',['../class_crab_u_i_1_1_layout_marker_1_1_pattern_1_1_from_parent_and_down_pattern.html',1,'CrabUI::LayoutMarker::Pattern']]],
+  ['ftexture_19',['FTexture',['../class_crab_u_i_user_1_1_class_mapping_1_1_magic_mirror_1_1_f_texture.html',1,'CrabUIUser::ClassMapping::MagicMirror']]],
+  ['fullhost_20',['FullHost',['../class_crab_u_i_user_1_1_inverse_backdoor_1_1_full_host.html',1,'CrabUIUser::InverseBackdoor']]],
+  ['fullnamemodule_21',['FullNameModule',['../class_crab_u_i_user_1_1_god_accessor_experiment_1_1_full_name_module.html',1,'CrabUIUser.GodAccessorExperiment.FullNameModule'],['../class_crab_u_i_user_1_1_multiple_accessors_experiment_1_1_full_name_module.html',1,'CrabUIUser.MultipleAccessorsExperiment.FullNameModule']]],
+  ['fullnamemodule_5fnamemodule_5faccess_22',['FullNameModule_NameModule_Access',['../class_crab_u_i_user_1_1_multiple_accessors_experiment_1_1_component_1_1_access_classes_1_1_full_24ce036d94c849156ea28d72f960ba23.html',1,'CrabUIUser::MultipleAccessorsExperiment::Component::AccessClasses']]],
+  ['fullnamemodule_5fsurnamemodule_5faccess_23',['FullNameModule_SurnameModule_Access',['../class_crab_u_i_user_1_1_multiple_accessors_experiment_1_1_component_1_1_access_classes_1_1_full_62859b0c2303abd25cb756181d818a73.html',1,'CrabUIUser::MultipleAccessorsExperiment::Component::AccessClasses']]]
 ];

@@ -1,0 +1,155 @@
+\doxysection{Game\+Input\+Provider.\+cs}
+\hypertarget{_game_input_provider_8cs_source}{}\label{_game_input_provider_8cs_source}\index{ClientProject/ClientSource/CUI/Infrastructure/DataSources/Game/GameInputProvider.cs@{ClientProject/ClientSource/CUI/Infrastructure/DataSources/Game/GameInputProvider.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Diagnostics;}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}};}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework.Input;}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00010}00010\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00011}00011\ \textcolor{keyword}{using\ }HarmonyLib;}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00012}00012\ \textcolor{keyword}{using\ }EventInput;}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00014}00014\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00015}00015\ \{}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00016}\doxymbox{\hyperlink{class_crab_u_i_1_1_game_input_provider}{00016}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_game_input_provider}{GameInputProvider}}\ :\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_input_provider}{IInputProvider}}}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00017}00017\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{public}\ Harmony\ Harmony\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}\ Harmony(\$\textcolor{stringliteral}{"{}\{ModInfo.HookId\}.CUI.Input"{}});}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00020}00020\ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_1_1_text_input_event_pack_builder}{TextInputEventPackBuilder}}\ TextInputBuilder\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{public}\ MouseState\ ScanMouse()\ =>\ Mouse.GetState();}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{public}\ KeyboardState\ ScanKeyboard()\ =>\ Keyboard.GetState();}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{public}\ TextInputEventPack\ ScanTextInput()\ =>\ TextInputBuilder.Build();}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ CaptureWindowTextInput(\textcolor{keywordtype}{object}\ sender,\ TextInputEventArgs\ args)}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00028}00028\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00029}00029\ \ \ \ \ \ \ TextInputBuilder.TextInputEvents.Add(args);}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ CaptureWindowKeyDown(\textcolor{keywordtype}{object}\ sender,\ TextInputEventArgs\ args)}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00033}00033\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00034}00034\ \ \ \ \ \ \ TextInputBuilder.KeyDownEvents.Add(args);}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00035}00035\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_game_input_provider}{GameInputProvider}}\ Instance;}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ ConnectToGame()}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00041}00041\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00042}00042\ \ \ \ \ \ \ Instance\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00043}00043\ \ \ \ \ \ \ GameMain.Instance.Window.TextInput\ +=\ CaptureWindowTextInput;}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00044}00044\ \ \ \ \ \ \ GameMain.Instance.Window.KeyDown\ +=\ CaptureWindowKeyDown;}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00046}00046\ \ \ \ \ \ \ Harmony.Patch(}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ original:\ typeof(KeyboardDispatcher).GetMethod(\textcolor{stringliteral}{"{}set\_Subscriber"{}},\ AccessTools.all),}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ prefix:\ \textcolor{keyword}{new}\ HarmonyMethod(typeof(\doxymbox{\hyperlink{class_crab_u_i_1_1_game_input_provider}{GameInputProvider}}).GetMethod(\textcolor{stringliteral}{"{}KeyboardDispatcher\_set\_Subscriber\_Replace"{}}))}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00049}00049\ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00051}00051\ \ \ \ \ \ \ Harmony.Patch(}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ original:\ typeof(KeyboardDispatcher).GetMethod(\textcolor{stringliteral}{"{}EventInput\_TextEditing"{}},\ AccessTools.all),}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ prefix:\ \textcolor{keyword}{new}\ HarmonyMethod(typeof(\doxymbox{\hyperlink{class_crab_u_i_1_1_game_input_provider}{GameInputProvider}}).GetMethod(\textcolor{stringliteral}{"{}KeyboardDispatcher\_EventInput\_TextEditing"{}}))}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00054}00054\ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00056}00056\ \ \ \ \ \ \ Harmony.Patch(}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ original:\ typeof(KeyboardDispatcher).GetMethod(\textcolor{stringliteral}{"{}EventInput\_KeyDown"{}},\ AccessTools.all),}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ prefix:\ \textcolor{keyword}{new}\ HarmonyMethod(typeof(\doxymbox{\hyperlink{class_crab_u_i_1_1_game_input_provider}{GameInputProvider}}).GetMethod(\textcolor{stringliteral}{"{}KeyboardDispatcher\_EventInput\_KeyDown"{}}))}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00059}00059\ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00061}00061\ \ \ \ \ \ \ Harmony.Patch(}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ original:\ typeof(KeyboardDispatcher).GetMethod(\textcolor{stringliteral}{"{}EventInput\_CharEntered"{}},\ AccessTools.all),}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ prefix:\ \textcolor{keyword}{new}\ HarmonyMethod(typeof(\doxymbox{\hyperlink{class_crab_u_i_1_1_game_input_provider}{GameInputProvider}}).GetMethod(\textcolor{stringliteral}{"{}KeyboardDispatcher\_EventInput\_CharEntered"{}}))}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00064}00064\ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00065}00065\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00067}00067\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ DisconnectFromGame()}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00068}00068\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00069}00069\ \ \ \ \ \ \ Instance\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00070}00070\ \ \ \ \ \ \ GameMain.Instance.Window.TextInput\ -\/=\ CaptureWindowTextInput;}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00071}00071\ \ \ \ \ \ \ GameMain.Instance.Window.KeyDown\ -\/=\ CaptureWindowKeyDown;}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00073}00073\ \ \ \ \ \ \ Harmony.UnpatchSelf();}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00074}00074\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00076}00076\ \ \ \ \ \textcolor{comment}{//\ instead\ of\ app\ wide\ TextInput.StopTextInput();}}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00077}00077\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ InputBlocked\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00079}00079\ \ \ \ \ \textcolor{comment}{//Just\ to\ block\ input\ }}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00080}00080\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ KeyboardDispatcher\_EventInput\_TextEditing(KeyboardDispatcher\ \_\_instance,\ \textcolor{keywordtype}{object}\ sender,\ TextEditingEventArgs\ e)}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00081}00081\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00082}00082\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_\_instance\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00083}00083\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (InputBlocked)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00085}00085\ \ \ \ \ \ \ \_\_instance.\_subscriber?.ReceiveEditingInput(e.Text,\ e.Start,\ e.Length);}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00086}00086\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00087}00087\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00088}00088\ \ \ \ \ \textcolor{comment}{//Just\ to\ block\ input\ }}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00089}00089\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ KeyboardDispatcher\_EventInput\_KeyDown(KeyboardDispatcher\ \_\_instance,\ \textcolor{keywordtype}{object}\ sender,\ KeyEventArgs\ e)}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00090}00090\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00091}00091\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_\_instance\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00092}00092\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (InputBlocked)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00094}00094\ \ \ \ \ \ \ \_\_instance.\_subscriber?.ReceiveSpecialInput(e.KeyCode);}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00095}00095\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{char}.IsControl(e.Character))}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00096}00096\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \_\_instance.\_subscriber?.ReceiveCommandInput(e.Character);}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00098}00098\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00099}00099\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00100}00100\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00101}00101\ \ \ \ \ \textcolor{comment}{//Just\ to\ block\ input\ }}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00102}00102\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ KeyboardDispatcher\_EventInput\_CharEntered(KeyboardDispatcher\ \_\_instance,\ \textcolor{keywordtype}{object}\ sender,\ CharacterEventArgs\ e)}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00103}00103\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00104}00104\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_\_instance\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00105}00105\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (InputBlocked)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00107}00107\ \ \ \ \ \ \ \_\_instance.\_subscriber?.ReceiveTextInput(e.Character);}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00108}00108\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00109}00109\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00110}00110\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00111}00111\ \textcolor{comment}{\ \ \ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00112}00112\ \textcolor{comment}{\ \ \ \ ///\ This\ is\ where\ focus\ resolved}}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00113}00113\ \textcolor{comment}{\ \ \ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00114}\doxymbox{\hyperlink{class_crab_u_i_1_1_game_input_provider_a6ed2f569d96869906a652c7528e6f7a1}{00114}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_game_input_provider_a6ed2f569d96869906a652c7528e6f7a1}{KeyboardDispatcher\_set\_Subscriber\_Replace}}(KeyboardDispatcher\ \_\_instance,\ IKeyboardSubscriber\ value)}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00115}00115\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00116}00116\ \ \ \ \ \ \ KeyboardDispatcher\ \_\ =\ \_\_instance;}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00117}00117\ \ \ \ \ \ \ TextInput.StartTextInput();}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00119}00119\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_.\_subscriber\ ==\ value)\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00121}00121\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_.\_subscriber\ is\ GUITextBox)}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00122}00122\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TextInput.StopTextInput();}}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ InputBlocked\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \_.\_subscriber.Selected\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00127}00127\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00129}00129\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (value\ is\ GUITextBox\ box)}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00130}00130\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ TextInput.SetTextInputRect(box.MouseRect);}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ TextInput.StartTextInput();}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ InputBlocked\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ TextInput.SetTextInputRect(box.MouseRect);}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ Instance?.TextInputBuilder.StealFocus();}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00136}00136\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00138}00138\ \ \ \ \ \ \ \_.\_subscriber\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00139}00139\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (value\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00140}00140\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ value.Selected\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00142}00142\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00144}00144\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00145}00145\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00148}00148\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_game_input_provider_8cs_source_l00149}00149\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,222 @@
+\doxysection{Crab\+UIUser.\+Itterating\+List\+Vs\+Props Class Reference}
+\hypertarget{class_crab_u_i_user_1_1_itterating_list_vs_props}{}\label{class_crab_u_i_user_1_1_itterating_list_vs_props}\index{CrabUIUser.ItteratingListVsProps@{CrabUIUser.ItteratingListVsProps}}
+
+
+itterating list or array is almost 4 times slower that getting props  
+
+
+Inheritance diagram for Crab\+UIUser.\+Itterating\+List\+Vs\+Props:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_user_1_1_itterating_list_vs_props}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_list_vs_props_ae3d6b34a2e920f4a9f2d6cb90581fd55}{Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_user_1_1_experiment}{Crab\+UIUser.\+Experiment}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Run} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ int $>$ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_list_vs_props_a3770d98d71e3928b4ba7ef2e5b51aac1}{list}}
+\item 
+List$<$ int $>$ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_list_vs_props_ac78683b973c0bbd8016a522f3d513ba3}{array}}
+\item 
+int \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_list_vs_props_ae3272022c8699090e65eac98d8700101}{repeats}} = 1000000000
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_list_vs_props_af4f005b538fff4387eef9b944d52b37f}{Prop1}} = 1\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+int \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_list_vs_props_a78ad5cde629b2b8525c04b10a46a9e21}{Prop2}} = 1\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+int \doxymbox{\hyperlink{class_crab_u_i_user_1_1_itterating_list_vs_props_abf07d39891792a39a4e77dcca1914342}{Prop3}} = 1\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+itterating list or array is almost 4 times slower that getting props 
+
+Definition at line \doxymbox{\hyperlink{_itterating_list_vs_props_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_itterating_list_vs_props_8cs_source}{Itterating\+List\+Vs\+Props.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_user_1_1_itterating_list_vs_props_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_itterating_list_vs_props_ae3d6b34a2e920f4a9f2d6cb90581fd55}\index{CrabUIUser.ItteratingListVsProps@{CrabUIUser.ItteratingListVsProps}!Run@{Run}}
+\index{Run@{Run}!CrabUIUser.ItteratingListVsProps@{CrabUIUser.ItteratingListVsProps}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_itterating_list_vs_props_ae3d6b34a2e920f4a9f2d6cb90581fd55} 
+override void Crab\+UIUser.\+Itterating\+List\+Vs\+Props.\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_itterating_list_vs_props_8cs_source_l00034}{34}} of file \doxymbox{\hyperlink{_itterating_list_vs_props_8cs_source}{Itterating\+List\+Vs\+Props.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ Stopwatch\ sw\ =\ \textcolor{keyword}{new}\ Stopwatch();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ value\ =\ 0;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ sw.Start();}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ value\ =\ Prop1;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ value\ =\ Prop2;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ value\ =\ Prop3;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}measure\ 1:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ sw.Restart();}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ value\ =\ list[0];}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ value\ =\ list[1];}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ value\ =\ list[2];}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}measure\ 2:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ sw.Restart();}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ repeats;\ i++)}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ value\ =\ array[0];}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ value\ =\ array[1];}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ value\ =\ array[2];}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ Mod.Logger.Log(\$\textcolor{stringliteral}{"{}measure\ 3:\ [\{sw.ElapsedMilliseconds\}]"{}});}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_crab_u_i_user_1_1_itterating_list_vs_props_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_itterating_list_vs_props_ac78683b973c0bbd8016a522f3d513ba3}\index{CrabUIUser.ItteratingListVsProps@{CrabUIUser.ItteratingListVsProps}!array@{array}}
+\index{array@{array}!CrabUIUser.ItteratingListVsProps@{CrabUIUser.ItteratingListVsProps}}
+\doxysubsubsection{\texorpdfstring{array}{array}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_itterating_list_vs_props_ac78683b973c0bbd8016a522f3d513ba3} 
+List$<$int$>$ Crab\+UIUser.\+Itterating\+List\+Vs\+Props.\+array}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{new}()\{}
+\DoxyCodeLine{\ \ 1,2,3}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line \doxymbox{\hyperlink{_itterating_list_vs_props_8cs_source_l00023}{23}} of file \doxymbox{\hyperlink{_itterating_list_vs_props_8cs_source}{Itterating\+List\+Vs\+Props.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ 1,2,3}
+\DoxyCodeLine{00025\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_itterating_list_vs_props_a3770d98d71e3928b4ba7ef2e5b51aac1}\index{CrabUIUser.ItteratingListVsProps@{CrabUIUser.ItteratingListVsProps}!list@{list}}
+\index{list@{list}!CrabUIUser.ItteratingListVsProps@{CrabUIUser.ItteratingListVsProps}}
+\doxysubsubsection{\texorpdfstring{list}{list}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_itterating_list_vs_props_a3770d98d71e3928b4ba7ef2e5b51aac1} 
+List$<$int$>$ Crab\+UIUser.\+Itterating\+List\+Vs\+Props.\+list}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{new}()\{}
+\DoxyCodeLine{\ \ 1,2,3}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line \doxymbox{\hyperlink{_itterating_list_vs_props_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_itterating_list_vs_props_8cs_source}{Itterating\+List\+Vs\+Props.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ 1,2,3}
+\DoxyCodeLine{00021\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_itterating_list_vs_props_ae3272022c8699090e65eac98d8700101}\index{CrabUIUser.ItteratingListVsProps@{CrabUIUser.ItteratingListVsProps}!repeats@{repeats}}
+\index{repeats@{repeats}!CrabUIUser.ItteratingListVsProps@{CrabUIUser.ItteratingListVsProps}}
+\doxysubsubsection{\texorpdfstring{repeats}{repeats}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_itterating_list_vs_props_ae3272022c8699090e65eac98d8700101} 
+int Crab\+UIUser.\+Itterating\+List\+Vs\+Props.\+repeats = 1000000000}
+
+
+
+Definition at line \doxymbox{\hyperlink{_itterating_list_vs_props_8cs_source_l00032}{32}} of file \doxymbox{\hyperlink{_itterating_list_vs_props_8cs_source}{Itterating\+List\+Vs\+Props.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_user_1_1_itterating_list_vs_props_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_user_1_1_itterating_list_vs_props_af4f005b538fff4387eef9b944d52b37f}\index{CrabUIUser.ItteratingListVsProps@{CrabUIUser.ItteratingListVsProps}!Prop1@{Prop1}}
+\index{Prop1@{Prop1}!CrabUIUser.ItteratingListVsProps@{CrabUIUser.ItteratingListVsProps}}
+\doxysubsubsection{\texorpdfstring{Prop1}{Prop1}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_itterating_list_vs_props_af4f005b538fff4387eef9b944d52b37f} 
+int Crab\+UIUser.\+Itterating\+List\+Vs\+Props.\+Prop1 = 1\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_itterating_list_vs_props_8cs_source_l00027}{27}} of file \doxymbox{\hyperlink{_itterating_list_vs_props_8cs_source}{Itterating\+List\+Vs\+Props.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ 1;}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_itterating_list_vs_props_a78ad5cde629b2b8525c04b10a46a9e21}\index{CrabUIUser.ItteratingListVsProps@{CrabUIUser.ItteratingListVsProps}!Prop2@{Prop2}}
+\index{Prop2@{Prop2}!CrabUIUser.ItteratingListVsProps@{CrabUIUser.ItteratingListVsProps}}
+\doxysubsubsection{\texorpdfstring{Prop2}{Prop2}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_itterating_list_vs_props_a78ad5cde629b2b8525c04b10a46a9e21} 
+int Crab\+UIUser.\+Itterating\+List\+Vs\+Props.\+Prop2 = 1\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_itterating_list_vs_props_8cs_source_l00028}{28}} of file \doxymbox{\hyperlink{_itterating_list_vs_props_8cs_source}{Itterating\+List\+Vs\+Props.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ 1;}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_user_1_1_itterating_list_vs_props_abf07d39891792a39a4e77dcca1914342}\index{CrabUIUser.ItteratingListVsProps@{CrabUIUser.ItteratingListVsProps}!Prop3@{Prop3}}
+\index{Prop3@{Prop3}!CrabUIUser.ItteratingListVsProps@{CrabUIUser.ItteratingListVsProps}}
+\doxysubsubsection{\texorpdfstring{Prop3}{Prop3}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_itterating_list_vs_props_abf07d39891792a39a4e77dcca1914342} 
+int Crab\+UIUser.\+Itterating\+List\+Vs\+Props.\+Prop3 = 1\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_itterating_list_vs_props_8cs_source_l00029}{29}} of file \doxymbox{\hyperlink{_itterating_list_vs_props_8cs_source}{Itterating\+List\+Vs\+Props.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ 1;}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+In\+Memory/\+\+Experiments/\+\+Performance/\+Itterating\+List\+Vs\+Props.\+cs\end{DoxyCompactItemize}

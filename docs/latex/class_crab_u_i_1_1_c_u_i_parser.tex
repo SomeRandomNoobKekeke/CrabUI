@@ -1,0 +1,297 @@
+\doxysection{Crab\+UI.\+CUIParser Class Reference}
+\hypertarget{class_crab_u_i_1_1_c_u_i_parser}{}\label{class_crab_u_i_1_1_c_u_i_parser}\index{CrabUI.CUIParser@{CrabUI.CUIParser}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_parser_a228866931585367e5c6a3fdcca89bd61}{Serialize}} (object o)
+\item 
+T \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_parser_aaa28c783ac56b50d509a13c02b14186c}{Parse$<$ T $>$}} (string raw)
+\item 
+object \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_parser_ac06816051222ab5b84eb1d5767ec2283}{Parse}} (string raw, Type T)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_parser_a0b15151a45384bf7e7a9129526a18dde}{Is\+Nullable}} (Type type)
+\item 
+static Color \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_parser_aa7b907e4af97aa156777cda4aea69c63}{Parse\+Color}} (string raw)
+\item 
+static Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_parser_a87d638fa61c929f8d4561ae59e5a8222}{Parse\+Vector2}} (string raw)
+\item 
+static string \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_parser_aa48dd3a7a6e701e6c5254e502161b28a}{Color\+To\+String}} (Color cl)
+\item 
+static string \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_parser_a950de9df033c5e7d280cd722a0f82884}{Vector2\+To\+String}} (Vector2 v)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static string \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_parser_abe3f9fe8bfafee890a1e40941d12e881}{Null\+Term}} = "{}\{\{null\}\}"{}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static Dictionary$<$ Type, Func$<$ string, object $>$ $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_parser_a1b9afbf8f996718d67ba43a735a4e37b}{Extra\+Parse\+Methods}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+static Dictionary$<$ Type, Func$<$ object, string $>$ $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_parser_a1edba1e338310b3dc459b08e49792938}{Extra\+Serialize\+Methods}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_serialization_2_parser_2_c_u_i_parser_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_serialization_2_parser_2_c_u_i_parser_8cs_source}{CUIParser.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_parser_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_parser_aa48dd3a7a6e701e6c5254e502161b28a}\index{CrabUI.CUIParser@{CrabUI.CUIParser}!ColorToString@{ColorToString}}
+\index{ColorToString@{ColorToString}!CrabUI.CUIParser@{CrabUI.CUIParser}}
+\doxysubsubsection{\texorpdfstring{ColorToString()}{ColorToString()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_parser_aa48dd3a7a6e701e6c5254e502161b28a} 
+string Crab\+UI.\+CUIParser.\+Color\+To\+String (\begin{DoxyParamCaption}\item[{Color}]{cl}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_parser_8_extra_serialize_8cs_source_l00023}{23}} of file \doxymbox{\hyperlink{_c_u_i_parser_8_extra_serialize_8cs_source}{CUIParser.\+Extra\+Serialize.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ =>\ \$\textcolor{stringliteral}{"{}\{cl.R\},\{cl.G\},\{cl.B\},\{cl.A\}"{}};}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_parser_a0b15151a45384bf7e7a9129526a18dde}\index{CrabUI.CUIParser@{CrabUI.CUIParser}!IsNullable@{IsNullable}}
+\index{IsNullable@{IsNullable}!CrabUI.CUIParser@{CrabUI.CUIParser}}
+\doxysubsubsection{\texorpdfstring{IsNullable()}{IsNullable()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_parser_a0b15151a45384bf7e7a9129526a18dde} 
+bool Crab\+UI.\+CUIParser.\+Is\+Nullable (\begin{DoxyParamCaption}\item[{Type}]{type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_serialization_2_parser_2_c_u_i_parser_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_serialization_2_parser_2_c_u_i_parser_8cs_source}{CUIParser.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ =>\ Nullable.GetUnderlyingType(type)\ !=\ \textcolor{keyword}{null};}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_parser_ac06816051222ab5b84eb1d5767ec2283}\index{CrabUI.CUIParser@{CrabUI.CUIParser}!Parse@{Parse}}
+\index{Parse@{Parse}!CrabUI.CUIParser@{CrabUI.CUIParser}}
+\doxysubsubsection{\texorpdfstring{Parse()}{Parse()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_parser_ac06816051222ab5b84eb1d5767ec2283} 
+object Crab\+UI.\+CUIParser.\+Parse (\begin{DoxyParamCaption}\item[{string}]{raw}{, }\item[{Type}]{T}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_serialization_2_parser_2_c_u_i_parser_8cs_source_l00037}{37}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_serialization_2_parser_2_c_u_i_parser_8cs_source}{CUIParser.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (raw\ ==\ NullTerm\ ||\ raw\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ T.GetDefaultValue();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (T.IsAssignableTo(typeof(IParsable)))}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ T.GetMethod(\textcolor{stringliteral}{"{}Parse"{}},\ BindingFlags.Static\ |\ BindingFlags.Public).Invoke(\textcolor{keyword}{null},\ [raw]);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ExtraParseMethods.ContainsKey(T))\ \textcolor{keywordflow}{return}\ ExtraParseMethods[T](raw);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ParseUnknown(raw,\ T);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ CUI.Logger.Warning(\$\textcolor{stringliteral}{"{}Can't\ parse\ [\{raw\}]\ into\ [\{T\}]:\ \{e.Message\}"{}});}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ T.GetDefaultValue();}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_parser_aaa28c783ac56b50d509a13c02b14186c}\index{CrabUI.CUIParser@{CrabUI.CUIParser}!Parse$<$ T $>$@{Parse$<$ T $>$}}
+\index{Parse$<$ T $>$@{Parse$<$ T $>$}!CrabUI.CUIParser@{CrabUI.CUIParser}}
+\doxysubsubsection{\texorpdfstring{Parse$<$ T $>$()}{Parse< T >()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_parser_aaa28c783ac56b50d509a13c02b14186c} 
+T Crab\+UI.\+CUIParser.\+Parse$<$ T $>$ (\begin{DoxyParamCaption}\item[{string}]{raw}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_serialization_2_parser_2_c_u_i_parser_8cs_source_l00036}{36}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_serialization_2_parser_2_c_u_i_parser_8cs_source}{CUIParser.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ =>\ (T)Parse(raw,\ typeof(T));}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_parser_aa7b907e4af97aa156777cda4aea69c63}\index{CrabUI.CUIParser@{CrabUI.CUIParser}!ParseColor@{ParseColor}}
+\index{ParseColor@{ParseColor}!CrabUI.CUIParser@{CrabUI.CUIParser}}
+\doxysubsubsection{\texorpdfstring{ParseColor()}{ParseColor()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_parser_aa7b907e4af97aa156777cda4aea69c63} 
+Color Crab\+UI.\+CUIParser.\+Parse\+Color (\begin{DoxyParamCaption}\item[{string}]{raw}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_parser_8_extra_parse_8cs_source_l00023}{23}} of file \doxymbox{\hyperlink{_c_u_i_parser_8_extra_parse_8cs_source}{CUIParser.\+Extra\+Parse.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ =>\ XMLExtensions.ParseColor(raw);}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_parser_a87d638fa61c929f8d4561ae59e5a8222}\index{CrabUI.CUIParser@{CrabUI.CUIParser}!ParseVector2@{ParseVector2}}
+\index{ParseVector2@{ParseVector2}!CrabUI.CUIParser@{CrabUI.CUIParser}}
+\doxysubsubsection{\texorpdfstring{ParseVector2()}{ParseVector2()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_parser_a87d638fa61c929f8d4561ae59e5a8222} 
+Vector2 Crab\+UI.\+CUIParser.\+Parse\+Vector2 (\begin{DoxyParamCaption}\item[{string}]{raw}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_parser_8_extra_parse_8cs_source_l00024}{24}} of file \doxymbox{\hyperlink{_c_u_i_parser_8_extra_parse_8cs_source}{CUIParser.\+Extra\+Parse.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (raw\ ==\ \textcolor{keyword}{null}\ ||\ raw\ ==\ \textcolor{stringliteral}{"{}"{}})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Vector2(0,\ 0);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ content\ =\ raw.Split(\textcolor{charliteral}{'['},\ \textcolor{charliteral}{']'})[1];}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ List<string>\ coords\ =\ content.Split(\textcolor{charliteral}{','}).Select(s\ =>\ s.Trim()).ToList();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x\ =\ 0;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ y\ =\ 0;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{keywordtype}{float}.TryParse(coords.ElementAtOrDefault(0),\ out\ x);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \textcolor{keywordtype}{float}.TryParse(coords.ElementAtOrDefault(1),\ out\ y);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Vector2(x,\ y);}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_parser_a228866931585367e5c6a3fdcca89bd61}\index{CrabUI.CUIParser@{CrabUI.CUIParser}!Serialize@{Serialize}}
+\index{Serialize@{Serialize}!CrabUI.CUIParser@{CrabUI.CUIParser}}
+\doxysubsubsection{\texorpdfstring{Serialize()}{Serialize()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_parser_a228866931585367e5c6a3fdcca89bd61} 
+string Crab\+UI.\+CUIParser.\+Serialize (\begin{DoxyParamCaption}\item[{object}]{o}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_serialization_2_parser_2_c_u_i_parser_8cs_source_l00020}{20}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_serialization_2_parser_2_c_u_i_parser_8cs_source}{CUIParser.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (o\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ NullTerm;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (o\ is\ IParsable)\ \textcolor{keywordflow}{return}\ ((IParsable)o).ToText();}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ExtraSerializeMethods.ContainsKey(o.GetType()))\ \textcolor{keywordflow}{return}\ ExtraSerializeMethods[o.GetType()](o);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ o.ToString();}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ CUI.Logger.Warning(\$\textcolor{stringliteral}{"{}Can't\ serialize\ [\{o\}]:\ \{e.Message\}"{}});}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ o.ToString();}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_parser_a950de9df033c5e7d280cd722a0f82884}\index{CrabUI.CUIParser@{CrabUI.CUIParser}!Vector2ToString@{Vector2ToString}}
+\index{Vector2ToString@{Vector2ToString}!CrabUI.CUIParser@{CrabUI.CUIParser}}
+\doxysubsubsection{\texorpdfstring{Vector2ToString()}{Vector2ToString()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_parser_a950de9df033c5e7d280cd722a0f82884} 
+string Crab\+UI.\+CUIParser.\+Vector2\+To\+String (\begin{DoxyParamCaption}\item[{Vector2}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_parser_8_extra_serialize_8cs_source_l00024}{24}} of file \doxymbox{\hyperlink{_c_u_i_parser_8_extra_serialize_8cs_source}{CUIParser.\+Extra\+Serialize.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ =>\ \$\textcolor{stringliteral}{"{}[\{v.X\},\{v.Y\}]"{}};}
+
+\end{DoxyCode}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_parser_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_parser_abe3f9fe8bfafee890a1e40941d12e881}\index{CrabUI.CUIParser@{CrabUI.CUIParser}!NullTerm@{NullTerm}}
+\index{NullTerm@{NullTerm}!CrabUI.CUIParser@{CrabUI.CUIParser}}
+\doxysubsubsection{\texorpdfstring{NullTerm}{NullTerm}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_parser_abe3f9fe8bfafee890a1e40941d12e881} 
+string Crab\+UI.\+CUIParser.\+Null\+Term = "{}\{\{null\}\}"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_serialization_2_parser_2_c_u_i_parser_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_serialization_2_parser_2_c_u_i_parser_8cs_source}{CUIParser.\+cs}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_parser_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_parser_a1b9afbf8f996718d67ba43a735a4e37b}\index{CrabUI.CUIParser@{CrabUI.CUIParser}!ExtraParseMethods@{ExtraParseMethods}}
+\index{ExtraParseMethods@{ExtraParseMethods}!CrabUI.CUIParser@{CrabUI.CUIParser}}
+\doxysubsubsection{\texorpdfstring{ExtraParseMethods}{ExtraParseMethods}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_parser_a1b9afbf8f996718d67ba43a735a4e37b} 
+Dictionary$<$Type, Func$<$string, object$>$ $>$ Crab\+UI.\+CUIParser.\+Extra\+Parse\+Methods\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ [typeof(Vector2)]\ =\ (raw)\ =>\ ParseVector2(raw),}
+\DoxyCodeLine{\ \ \ \ \ \ [typeof(Color)]\ =\ (raw)\ =>\ ParseColor(raw),}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_parser_8_extra_parse_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_c_u_i_parser_8_extra_parse_8cs_source}{CUIParser.\+Extra\+Parse.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{00018\ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ [typeof(Vector2)]\ =\ (raw)\ =>\ ParseVector2(raw),}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ [typeof(Color)]\ =\ (raw)\ =>\ ParseColor(raw),}
+\DoxyCodeLine{00021\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_parser_a1edba1e338310b3dc459b08e49792938}\index{CrabUI.CUIParser@{CrabUI.CUIParser}!ExtraSerializeMethods@{ExtraSerializeMethods}}
+\index{ExtraSerializeMethods@{ExtraSerializeMethods}!CrabUI.CUIParser@{CrabUI.CUIParser}}
+\doxysubsubsection{\texorpdfstring{ExtraSerializeMethods}{ExtraSerializeMethods}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_parser_a1edba1e338310b3dc459b08e49792938} 
+Dictionary$<$Type, Func$<$object, string$>$ $>$ Crab\+UI.\+CUIParser.\+Extra\+Serialize\+Methods\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ [typeof(Color)]\ =\ (o)\ =>\ ColorToString((Color)o),}
+\DoxyCodeLine{\ \ \ \ \ \ [typeof(Vector2)]\ =\ (o)\ =>\ Vector2ToString((Vector2)o),}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_parser_8_extra_serialize_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_c_u_i_parser_8_extra_serialize_8cs_source}{CUIParser.\+Extra\+Serialize.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{00018\ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ [typeof(Color)]\ =\ (o)\ =>\ ColorToString((Color)o),}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ [typeof(Vector2)]\ =\ (o)\ =>\ Vector2ToString((Vector2)o),}
+\DoxyCodeLine{00021\ \ \ \ \ \};}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Serialization/\+\+Parser/\+CUIParser.\+cs\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Serialization/\+\+Parser/\+CUIParser.\+Extra\+Parse.\+cs\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Serialization/\+\+Parser/\+CUIParser.\+Extra\+Serialize.\+cs\end{DoxyCompactItemize}

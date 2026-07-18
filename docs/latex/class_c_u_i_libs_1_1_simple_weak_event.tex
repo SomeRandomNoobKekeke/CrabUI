@@ -1,0 +1,78 @@
+\doxysection{CUILibs.\+Simple\+Weak\+Event Class Reference}
+\hypertarget{class_c_u_i_libs_1_1_simple_weak_event}{}\label{class_c_u_i_libs_1_1_simple_weak_event}\index{CUILibs.SimpleWeakEvent@{CUILibs.SimpleWeakEvent}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_simple_weak_event_ac89ec8a3120582ce407aaca3c69bba50}{Add}} (object target, Action callback)
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_simple_weak_event_ab969c07ee86140d35c64b9831af6b770}{Remove}} (object target)
+\item 
+void \doxymbox{\hyperlink{class_c_u_i_libs_1_1_simple_weak_event_a0431396cc788885ab14f27c017663051}{Raise}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_simple_weak_event_8cs_source_l00010}{10}} of file \doxymbox{\hyperlink{_simple_weak_event_8cs_source}{Simple\+Weak\+Event.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_c_u_i_libs_1_1_simple_weak_event_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_u_i_libs_1_1_simple_weak_event_ac89ec8a3120582ce407aaca3c69bba50}\index{CUILibs.SimpleWeakEvent@{CUILibs.SimpleWeakEvent}!Add@{Add}}
+\index{Add@{Add}!CUILibs.SimpleWeakEvent@{CUILibs.SimpleWeakEvent}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_simple_weak_event_ac89ec8a3120582ce407aaca3c69bba50} 
+void CUILibs.\+Simple\+Weak\+Event.\+Add (\begin{DoxyParamCaption}\item[{object}]{target}{, }\item[{Action}]{callback}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_simple_weak_event_8cs_source_l00014}{14}} of file \doxymbox{\hyperlink{_simple_weak_event_8cs_source}{Simple\+Weak\+Event.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ =>\ Table.Add(target,\ callback);}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_simple_weak_event_a0431396cc788885ab14f27c017663051}\index{CUILibs.SimpleWeakEvent@{CUILibs.SimpleWeakEvent}!Raise@{Raise}}
+\index{Raise@{Raise}!CUILibs.SimpleWeakEvent@{CUILibs.SimpleWeakEvent}}
+\doxysubsubsection{\texorpdfstring{Raise()}{Raise()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_simple_weak_event_a0431396cc788885ab14f27c017663051} 
+void CUILibs.\+Simple\+Weak\+Event.\+Raise (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_simple_weak_event_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_simple_weak_event_8cs_source}{Simple\+Weak\+Event.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ (target,\ action)\ in\ Table)}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ action.Invoke();}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_c_u_i_libs_1_1_simple_weak_event_ab969c07ee86140d35c64b9831af6b770}\index{CUILibs.SimpleWeakEvent@{CUILibs.SimpleWeakEvent}!Remove@{Remove}}
+\index{Remove@{Remove}!CUILibs.SimpleWeakEvent@{CUILibs.SimpleWeakEvent}}
+\doxysubsubsection{\texorpdfstring{Remove()}{Remove()}}
+{\footnotesize\ttfamily \label{class_c_u_i_libs_1_1_simple_weak_event_ab969c07ee86140d35c64b9831af6b770} 
+void CUILibs.\+Simple\+Weak\+Event.\+Remove (\begin{DoxyParamCaption}\item[{object}]{target}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_simple_weak_event_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_simple_weak_event_8cs_source}{Simple\+Weak\+Event.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ =>\ Table.Remove(target);}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+Libs/\+\+Weak\+Events/\+Simple\+Weak\+Event.\+cs\end{DoxyCompactItemize}

@@ -65,7 +65,10 @@ public class Component
 
   public float NotFlexAtAll { get; set; }
 }
-~~~~~~~~~~~~~{cs}
+~~~~~~~~~~~~~
+
+### Init methods
+Init methods in parts and methods marked with [InitMethod] on component will be called
 
 ### Modules
 objects implementing IModule are modules  
@@ -76,3 +79,18 @@ Host component is supposed to inject them
 They can be private and hide implementation details
 
 ### Chimera Parts
+Sometimes i fail to decouple module from component and this happens:
+~~~~~~~~~~~~~{cs}
+public class Tree_Part : Part, IModule
+~~~~~~~~~~~~~
+They are parts but they can be injected and request other modules
+
+### IPropContainer IProp
+IProps inside IPropContainer will be injected with the container
+
+This allows me to create reactive props
+
+### IAware
+Aware objects are injected with host component and their property name  
+host component and prop name used only for debug messages  
+They shouldn't couple module to outer component

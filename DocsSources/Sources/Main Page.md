@@ -12,4 +12,5 @@ Also these docs are the source of truth, if something doesn't work as stated her
 #### \subpage Overview
 #### \subpage OtherConcepts
 #### \subpage NotesForCodeDivers
+#### \subpage SomeExamples
 #### \subpage RoadMap

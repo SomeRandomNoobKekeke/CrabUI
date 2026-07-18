@@ -24,7 +24,7 @@ namespace CrabUIUser
       {
         public Rectangle Rect { get; set; }
       }
-      public interface Child : ChildBase, ListLayout.Child, PlainLayout.Child
+      public interface Child : ChildBase, ListLayout.Child, CUIPlainLayout.Child
       {
 
       }

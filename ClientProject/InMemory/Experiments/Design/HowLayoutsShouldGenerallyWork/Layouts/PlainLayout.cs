@@ -13,7 +13,7 @@ namespace CrabUIUser
 
   public partial class HowLayoutsShouldGenerallyWork : Experiment
   {
-    public class PlainLayout : Layout
+    public class CUIPlainLayout : Layout
     {
       public interface Host : Layout.Host
       {

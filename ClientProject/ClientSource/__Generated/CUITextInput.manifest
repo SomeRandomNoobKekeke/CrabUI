@@ -82,7 +82,7 @@ Injectables:
  - Layout.Child  :  Adapters.Layout_Child
  - Layout.ChildBase  :  Adapters.Layout_Child
  - CUIVerticalListLayout.Child  :  Adapters.Layout_Child
- - PlainLayout.Child  :  Adapters.Layout_Child
+ - CUIPlainLayout.Child  :  Adapters.Layout_Child
  - CUIGridLayout.Child  :  Adapters.Layout_Child
  - CUIComponent.Adapters_Part.LayoutMarker_Adapter  :  Adapters.LayoutMarker
  - LayoutMarker.Target  :  Adapters.LayoutMarker

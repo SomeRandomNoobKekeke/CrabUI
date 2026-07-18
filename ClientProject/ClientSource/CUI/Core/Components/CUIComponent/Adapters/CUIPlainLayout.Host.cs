@@ -16,7 +16,7 @@ namespace CrabUI
   {
     protected partial class Adapters_Part : Part
     {
-      public partial class PlainLayout_Host_Part : PlainLayout.Host
+      public partial class CUIPlainLayout_Host_Part : CUIPlainLayout.Host
       {
         public CUIComponent Self { get; set; }
 
@@ -51,7 +51,7 @@ namespace CrabUI
           get => Self.MaxSizeOverride;
           set => Self.MaxSize = value;
         }
-        Func<CUIRect, CUIBoundaries> PlainLayout.Host.ChildrenBounds => Self.LayoutProps.ChildrenBounds.Value;
+        Func<CUIRect, CUIBoundaries> CUIPlainLayout.Host.ChildrenBounds => Self.LayoutProps.ChildrenBounds.Value;
 
         void Layout.Host.NotifyVisualsRestructured() => Self.VisualRestructureNotifier.Notify();
 

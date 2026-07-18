@@ -11,7 +11,7 @@ using CUICodeGenerator;
 
 namespace CrabUI
 {
-  public class PlainLayout : Layout
+  public class CUIPlainLayout : Layout
   {
     public interface Host : Layout.Host
     {

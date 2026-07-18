@@ -21,15 +21,15 @@ namespace CrabUI
       public partial class Layout_Child_Part : Part, IAdapterPart, Layout.Child
       {
         float? CUIVerticalListLayout.Child.Flex => Self.LayoutProps.Flex.Value;
-        CUINullRect PlainLayout.Child.Absolute => Self.LayoutProps.Absolute.Value;
-        CUINullRect PlainLayout.Child.AbsoluteMin => Self.LayoutProps.AbsoluteMin.Value;
-        CUINullRect PlainLayout.Child.AbsoluteMax => Self.LayoutProps.AbsoluteMax.Value;
-        CUINullRect PlainLayout.Child.Relative => Self.LayoutProps.Relative.Value;
-        CUINullRect PlainLayout.Child.RelativeMin => Self.LayoutProps.RelativeMin.Value;
-        CUINullRect PlainLayout.Child.RelativeMax => Self.LayoutProps.RelativeMax.Value;
-        CUINullRect PlainLayout.Child.CrossRelative => Self.LayoutProps.CrossRelative.Value;
-        Vector2 PlainLayout.Child.Anchor => Self.LayoutProps.Anchor.Value;
-        Vector2? PlainLayout.Child.ParentAnchor => Self.LayoutProps.ParentAnchor.Value;
+        CUINullRect CUIPlainLayout.Child.Absolute => Self.LayoutProps.Absolute.Value;
+        CUINullRect CUIPlainLayout.Child.AbsoluteMin => Self.LayoutProps.AbsoluteMin.Value;
+        CUINullRect CUIPlainLayout.Child.AbsoluteMax => Self.LayoutProps.AbsoluteMax.Value;
+        CUINullRect CUIPlainLayout.Child.Relative => Self.LayoutProps.Relative.Value;
+        CUINullRect CUIPlainLayout.Child.RelativeMin => Self.LayoutProps.RelativeMin.Value;
+        CUINullRect CUIPlainLayout.Child.RelativeMax => Self.LayoutProps.RelativeMax.Value;
+        CUINullRect CUIPlainLayout.Child.CrossRelative => Self.LayoutProps.CrossRelative.Value;
+        Vector2 CUIPlainLayout.Child.Anchor => Self.LayoutProps.Anchor.Value;
+        Vector2? CUIPlainLayout.Child.ParentAnchor => Self.LayoutProps.ParentAnchor.Value;
         CUIRect Layout.ChildBase.Rect
         {
           get => Self.Rect;
@@ -63,7 +63,7 @@ namespace CrabUI
         int CUIGridLayout.Child.GridRow => Self.GridRow;
         int CUIGridLayout.Child.GridColumn => Self.GridColumn;
 
-        CUISizes PlainLayout.Child.OutToChildDiff => Self.OutToChildDiff;
+        CUISizes CUIPlainLayout.Child.OutToChildDiff => Self.OutToChildDiff;
         public override string ToString() => Self.ToString();
       }
     }

@@ -14,7 +14,7 @@ namespace CrabUI
   public partial class CUIVerticalList : CUIComponent, IComponent
   {
     //GIGACRINGE (but at least it works, and gods of c# accesibility domains are not enraged)
-    protected partial class CUIVerticalListLayout_Host_Adapter_Part : Adapters_Part.PlainLayout_Host_Part, CUIVerticalListLayout.Host
+    protected partial class CUIVerticalListLayout_Host_Adapter_Part : Adapters_Part.CUIPlainLayout_Host_Part, CUIVerticalListLayout.Host
     {
       private CUIVerticalList _Self; public new CUIVerticalList Self
       {

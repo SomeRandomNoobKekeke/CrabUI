@@ -29,7 +29,7 @@ namespace CrabUIUser
       public partial class LayoutChildAdapter_Part : Part, Layout.Child
       {
         bool ListLayout.Child.Flex => Self.Flex;
-        Rectangle PlainLayout.Child.Absolute => Self.Absolute;
+        Rectangle CUIPlainLayout.Child.Absolute => Self.Absolute;
         Rectangle Layout.ChildBase.Rect
         {
           get => Self.Rect;
@@ -37,7 +37,7 @@ namespace CrabUIUser
         }
       }
 
-      public partial class LayoutHostAdapter_Part : Part, PlainLayout.Host
+      public partial class LayoutHostAdapter_Part : Part, CUIPlainLayout.Host
       {
         IReadOnlyList<Layout.Child> Layout.Host.Children
           => Self.Children.As<Component, Layout.Child>(c => c.AsLayoutChild);
@@ -61,12 +61,12 @@ namespace CrabUIUser
 
       public virtual void SetupLayout()
       {
-        RealLayout = new PlainLayout();
+        RealLayout = new CUIPlainLayout();
         Layout = RealLayout;
         RealLayout.ConnectTo(new LayoutHostAdapter_Part() { Self = this });
       }
       public Layout Layout { get; set; }
-      private PlainLayout RealLayout;
+      private CUIPlainLayout RealLayout;
     }
 
 

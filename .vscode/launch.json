@@ -8,7 +8,7 @@
       "name": "Generate Docs",
       "type": "f5anything",
       "request": "launch",
-      "command": "doxygen Doxyfile"
+      "command": "doxygen Doxyfile.fast"
     }
     // {
     //   "name": "Attach to ClearScript V8 on port 9222",

@@ -29,6 +29,7 @@ namespace CrabUI
     public CUITexture2D Load(string path, string key = null)
     {
       if (!File.Exists(path)) return BackupTexture;
+
       key ??= path;
 
       if (LoadedTextures.ContainsKey(key))
@@ -44,6 +45,7 @@ namespace CrabUI
       }
     }
 
+    public CUITexture2D GetByPath(string path) => Get(path); //Same thing
     public CUITexture2D Get(string key)
     {
       if (LoadedTextures.ContainsKey(key)) return LoadedTextures[key];

@@ -16,9 +16,9 @@ namespace CrabUI
     public __CUISpriteBatch SpriteBatch { get; } = new();
     public __CUIGraphicsDevice GraphicsDevice { get; } = new();
     public __CUIGUI CUIGUI { get; } = new();
+    public AssemblyPackageLookup _AssemblyPackageLookup { get; } = new();
 
     public CUITextureManager CUITextureManager { get; private set; }
-    public PathManager PathManager { get; private set; }
 
     public CUIAssemblyAnalyzer CUIAssemblyAnalyzer { get; } = new();
 
@@ -99,6 +99,7 @@ namespace CrabUI
         SpriteBatch.XNASpriteBatch = null;
         Core.Handles = null;
         CUITextureManager.Dispose();
+        _AssemblyPackageLookup.Dispose();
       }
       catch (Exception e)
       {
@@ -126,12 +127,7 @@ namespace CrabUI
         Self = this
       };
 
-      PathManager = new PathManager() { ModDir = ModInfo.Dir };
-
-      CUITextureManager = new CUITextureManagerProxy(
-        new __CUITextureManager(),
-        PathManager
-      );
+      CUITextureManager = new CUITextureManagerProxy(new __CUITextureManager(), _AssemblyPackageLookup);
 
       LoadDefaultResources();
     }

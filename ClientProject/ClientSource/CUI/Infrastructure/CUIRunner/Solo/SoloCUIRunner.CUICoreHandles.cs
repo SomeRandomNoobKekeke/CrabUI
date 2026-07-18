@@ -15,6 +15,11 @@ namespace CrabUI
   {
     public partial class CUICoreHandles_Part() : CUICore.CUICoreHandles
     {
+      public bool IsRelXMLPath(string path)
+      {
+        return path.EndsWith(".xml") && !Path.IsPathFullyQualified(path);
+      }
+
       private DummyIKeyboardSubscriber DummyIKeyboardSubscriber = new();
 
 
@@ -27,11 +32,27 @@ namespace CrabUI
 
       public void SaveXDoc(XDocument xDoc, string path)
       {
-        xDoc.Save(Self.PathManager.Normalize(path));
+        if (Path.IsPathFullyQualified(path))
+        {
+          xDoc.Save(path);
+        }
+        else
+        {
+          string callerRoot = Self._AssemblyPackageLookup.GetPackage(Assembly.GetCallingAssembly()).Dir;
+          xDoc.Save(Path.Combine(callerRoot, path));
+        }
       }
       public XDocument LoadXDoc(string path)
       {
-        return XDocument.Load(Self.PathManager.Normalize(path));
+        if (Path.IsPathFullyQualified(path))
+        {
+          return XDocument.Load(path);
+        }
+        else
+        {
+          string callerRoot = Self._AssemblyPackageLookup.GetPackage(Assembly.GetCallingAssembly()).Dir;
+          return XDocument.Load(Path.Combine(callerRoot, path));
+        }
       }
 
       public void GrabFocus()

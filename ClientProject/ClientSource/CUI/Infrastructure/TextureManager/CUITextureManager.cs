@@ -19,6 +19,7 @@ namespace CrabUI
     void Dispose();
     void Forget(string key);
     CUITexture2D Get(string key);
+    CUITexture2D GetByPath(string path);
     bool Has(string key);
     CUITexture2D Load(string path, string name);
   }

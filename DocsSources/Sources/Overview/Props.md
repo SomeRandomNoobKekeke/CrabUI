@@ -2,7 +2,7 @@
 
 
 
-### Commonly used CUIComponents Props:
+### Commonly used Props of CUIComponent:
 
 #### Layout Props:
 Note that props used by some layouts might be ignored in others

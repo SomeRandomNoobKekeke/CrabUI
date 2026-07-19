@@ -24,7 +24,7 @@ namespace CrabUI
     {
       public void Init()
       {
-        this.Route(Self.Background);
+        // this.Route(Self.Background);
         //TODO route borders?
       }
 

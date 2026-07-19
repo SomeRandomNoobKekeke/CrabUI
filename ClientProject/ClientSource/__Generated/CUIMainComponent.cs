@@ -12,7 +12,6 @@ namespace CrabUI
     protected Self_As_CUIMainComponent As_CUIMainComponent { get; } = new();
     void IComponent.RunInitMethods()
     {
-      InitFocusStuff();
     }
 
     void IComponent.InjectModules()

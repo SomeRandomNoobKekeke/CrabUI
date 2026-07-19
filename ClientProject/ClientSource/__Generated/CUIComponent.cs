@@ -12,7 +12,7 @@ namespace CrabUI
     protected Self_As_CUIComponent As_CUIComponent { get; } = new();
     void IComponent.RunInitMethods()
     {
-      InitFocusStuff();
+      InitSlots();
     }
 
     void IComponent.InjectModules()

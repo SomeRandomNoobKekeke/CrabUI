@@ -30,7 +30,7 @@ namespace CrabUI
         Self.Debug_RectSet.Map(Self.DebugRelays[DebugCategory.RectSet]);
         Self.DebugRelays[DebugCategory.LayoutMarked].Route(Self.Layout.Debug_LayoutMarked);
 
-        Self.DebugRelays[DebugCategory.RoundedRect].Route(Self.Background.Debug_RoundedRect);
+
 
         Self.OnDebugOn += () => Self.DebugRelays.Open();
         Self.OnDebugOff += () => Self.DebugRelays.Close();

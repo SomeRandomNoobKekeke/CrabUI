@@ -12,7 +12,6 @@ namespace CrabUI
     protected Self_As_CUITextInput As_CUITextInput { get; } = new();
     void IComponent.RunInitMethods()
     {
-      InitFocusStuff();
     }
 
     void IComponent.InjectModules()

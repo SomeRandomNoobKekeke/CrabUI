@@ -25,12 +25,6 @@ namespace CrabUI
     }
     protected IFocusableAdapter_Part IFocusableAdapter { get; } = new();
 
-    [InitMethod]
-    public void InitFocusStuff()
-    {
-      Background.FocusProbed.Add(HandleFocusProbe);
-    }
-
     public bool ConsumeFocus
     {
       get => Background.ConsumeFocus;

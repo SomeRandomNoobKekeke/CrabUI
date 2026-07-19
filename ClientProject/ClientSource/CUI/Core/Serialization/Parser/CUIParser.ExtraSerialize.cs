@@ -18,6 +18,7 @@ namespace CrabUI
     {
       [typeof(Color)] = (o) => ColorToString((Color)o),
       [typeof(Vector2)] = (o) => Vector2ToString((Vector2)o),
+      [typeof(__CUITexture2D)] = (o) => ((CUITexture2D)o).Key,
     };
 
     public static string ColorToString(Color cl) => $"{cl.R},{cl.G},{cl.B},{cl.A}";

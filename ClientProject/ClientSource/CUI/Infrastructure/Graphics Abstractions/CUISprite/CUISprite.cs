@@ -84,7 +84,7 @@ namespace CrabUI
     //TODO, for now i decided to make outer VisualUnit parsable instead
     public static object Parse(string raw)
     {
-      Dictionary<string, string> dict = JsonSerializer.Deserialize<Dictionary<string, string>>(raw)!;
+      Dictionary<string, string> dict = JsonSerializer.Deserialize<Dictionary<string, string>>(raw);
 
       CUI.Logger.Log(Logger.Wrap.IDictionary(dict));
 

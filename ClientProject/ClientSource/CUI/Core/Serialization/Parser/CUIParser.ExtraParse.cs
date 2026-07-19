@@ -18,6 +18,7 @@ namespace CrabUI
     {
       [typeof(Vector2)] = (raw) => ParseVector2(raw),
       [typeof(Color)] = (raw) => ParseColor(raw),
+      [typeof(CUITexture2D)] = CUICore.TextureManager.Get,//BRUH i either have to reference __CUITexture2D from CUICore or CUICore.TextureManager from __CUITexture2D
     };
 
     public static Color ParseColor(string raw) => XMLExtensions.ParseColor(raw);

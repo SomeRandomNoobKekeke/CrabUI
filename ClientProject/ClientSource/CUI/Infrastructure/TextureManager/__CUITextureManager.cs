@@ -23,6 +23,9 @@ namespace CrabUI
       {
         LoadedTextures[key].Dispose();
       }
+
+      texture.Key = key;
+
       return LoadedTextures[key] = texture;
     }
 
@@ -41,7 +44,10 @@ namespace CrabUI
       {
         return LoadedTextures[key] = new __CUITexture2D(
           Texture2D.FromStream(GameMain.Instance.GraphicsDevice, fs)
-        );
+        )
+        {
+          Key = key,
+        };
       }
     }
 

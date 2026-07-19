@@ -10,6 +10,7 @@ namespace CrabUI
   {
     [CUISerializableProp]
     public SimpleTexture Background { get; } = new();
+    [CUISerializableProp]
     public Borders Borders { get; } = new();
 
 

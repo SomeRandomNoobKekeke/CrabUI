@@ -25,9 +25,10 @@ namespace CrabUI
     public bool Scrollable { get; set; }
     [CUISerializableProp]
     public float TopGap { get; set; }
+    [CUISerializableProp]
     public float BottomGap { get; set; }
 
-    //FIXME doens't work with CUIDirection.Reverse
+    [CUISerializableProp]
     public float Scroll
     {
       get => ChildrenOffset.Y;

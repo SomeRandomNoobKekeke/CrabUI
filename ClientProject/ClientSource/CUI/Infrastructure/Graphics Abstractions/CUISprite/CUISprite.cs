@@ -6,10 +6,11 @@ using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-
+using System.Text.Json;
+using CUILibs;
 namespace CrabUI
 {
-  public record CUISprite
+  public record CUISprite : IParsable
   {
     public static CUISprite White => new CUISprite(CUITexture2D.White);
     public static CUISprite BaroDev => new CUISprite(CUICore.TextureManager.Get("BaroDev"));
@@ -80,6 +81,33 @@ namespace CrabUI
       return cl.A == 0;
     }
 
+    //TODO, for now i decided to make outer VisualUnit parsable instead
+    public static object Parse(string raw)
+    {
+      Dictionary<string, string> dict = JsonSerializer.Deserialize<Dictionary<string, string>>(raw)!;
+
+      CUI.Logger.Log(Logger.Wrap.IDictionary(dict));
+
+      CUISprite sprite = new CUISprite();
+
+      if (dict.ContainsKey("texture")) sprite.Texture = CUICore.TextureManager.Get(dict["texture"]);
+      if (dict.ContainsKey("color")) sprite.Color = CUICore.Parser.Parse<Color>(dict["color"]);
+
+      return sprite;
+    }
+
+    public string ToText()
+    {
+      Dictionary<string, string> dict = new Dictionary<string, string>()
+      {
+        ["texture"] = Texture.Key ?? "",
+        ["color"] = CUICore.Parser.Serialize(Color),
+      };
+
+      return JsonSerializer.Serialize(dict);
+    }
+
+    public CUISprite() { }
     public CUISprite(CUITexture2D texture) { Texture = texture; }
   }
 }

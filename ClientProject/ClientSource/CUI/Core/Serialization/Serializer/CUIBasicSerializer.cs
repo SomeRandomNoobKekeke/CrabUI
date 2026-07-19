@@ -13,13 +13,13 @@ using System.Xml.Linq;
 
 namespace CrabUI
 {
-  public static class CUIDefaultSerializer
+  public static class CUIBasicSerializer
   {
     public static XElement Serialize(CUISerializable o, IDictionary<string, object> defaultValues = null)
     {
       defaultValues ??= new Dictionary<string, object>();
 
-      XElement element = new(o.GetType().Name);
+      XElement element = new(o.GetType().GetFullName());
 
       if (CUICore.Reflection.SerializableInfos.ContainsKey(o.GetType()))
       {
@@ -48,6 +48,13 @@ namespace CrabUI
         foreach (XAttribute attribute in element.Attributes())
         {
           PropertyPath pp = info.SerializableProps[attribute.Name.ToString()];
+
+          if (!pp.CanWrite)
+          {
+            CUI.Logger.Warning($"Couldn't deserialize [{pp}] on [{T.GetFullName()}], it's not settable");
+            continue;
+          }
+
           pp.SetValue(o, CUICore.Parser.Parse(attribute.Value, pp.Path.Last().PropertyType));
         }
       }

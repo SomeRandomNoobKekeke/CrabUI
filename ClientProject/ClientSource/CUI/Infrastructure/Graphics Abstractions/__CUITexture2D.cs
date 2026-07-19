@@ -6,6 +6,7 @@ using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Xml.Linq;
 
 namespace CrabUI
 {
@@ -20,6 +21,8 @@ namespace CrabUI
     {
       ShouldBeDisposed = false,
     };
+
+    public string Key { get; set; }
     public Texture2D XNATexture { get; set; }
 
     public int Width => XNATexture.Width;

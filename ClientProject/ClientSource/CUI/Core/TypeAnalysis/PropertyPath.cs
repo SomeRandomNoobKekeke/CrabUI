@@ -14,6 +14,9 @@ namespace CrabUI
     public List<PropertyInfo> Path { get; set; }
     public Type Type => Path.Last().PropertyType;
 
+    public bool CanRead => Path.Last().CanRead;
+    public bool CanWrite => Path.Last().CanWrite;
+
     public object GetValue(object target)
     {
       if (Path.Count == 0) return null;

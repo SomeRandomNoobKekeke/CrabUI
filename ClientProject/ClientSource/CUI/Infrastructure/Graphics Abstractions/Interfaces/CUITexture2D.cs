@@ -19,6 +19,7 @@ namespace CrabUI
 
     public static CUITexture2D White => __CUITexture2D.White;
 
+    public string Key { get; set; }
     public Rectangle Bounds { get; }
     public Color[] Data { get; set; }
 

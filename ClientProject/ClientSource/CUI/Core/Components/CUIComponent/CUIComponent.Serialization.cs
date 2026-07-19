@@ -15,10 +15,15 @@ namespace CrabUI
 {
   public partial class CUIComponent : CUISerializable
   {
+    /// <summary>
+    /// Override this methods to setup component after deserialization
+    /// </summary>
+    protected virtual void WireUp() { }
+
     static object CUISerializable.Deserialize(XElement element) => Deserialize(element);
     public static CUIComponent Deserialize(XElement element)
     {
-      CUIComponent component = (CUIComponent)CUIDefaultSerializer.Deserialize(
+      CUIComponent component = (CUIComponent)CUIBasicSerializer.Deserialize(
         element,
         CUICore.Reflection.GetType(element.Name.ToString())
       );
@@ -28,6 +33,8 @@ namespace CrabUI
         component.Children.Add(Deserialize(child));
       }
 
+      component.WireUp();
+
       return component;
     }
 
@@ -35,7 +42,7 @@ namespace CrabUI
 
     public virtual XElement Serialize()
     {
-      XElement element = CUIDefaultSerializer.Serialize(this, Info.DefaultValue.As_Dictionary);
+      XElement element = CUIBasicSerializer.Serialize(this, Info.DefaultValue.As_Dictionary);
 
       foreach (CUIComponent child in Children)
       {

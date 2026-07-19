@@ -16,6 +16,11 @@ namespace CrabUIUser
   {
     public ILogger Logger => CUI.Logger;
 
+    public bool SerializeTestSubject
+    {
+      get => Runner.SerializeTestSubject;
+      set => Runner.SerializeTestSubject = value;
+    }
     public static string SnaphotsFolder => CUITest.SnaphotsFolder;
 
     public ComponentSnapshot CurrentSnapshot { get; set; }

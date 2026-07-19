@@ -16,6 +16,7 @@ namespace CrabUIUser
   {
     public ILogger Logger => CUI.Logger;
 
+    public bool SerializeTestSubject { get; set; } = true;
     public SnapshotTestChamber Chamber { get; set; }
 
     public ComponentSnapshot Run(SnapshotTest test)
@@ -24,6 +25,11 @@ namespace CrabUIUser
       {
         CUIComponent TestSubject = (CUIComponent)test.TestFunc();
         TestSubject.DeepDebug = true;
+
+        if (SerializeTestSubject)
+        {
+          TestSubject = CUIComponent.Deserialize(TestSubject.Serialize());
+        }
 
         Chamber.Children.Clear();
         Chamber.Children.Add(TestSubject);

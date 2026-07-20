@@ -10,7 +10,7 @@ using CUICodeGenerator;
 
 namespace CrabUI
 {
-  public interface IVisualElement : IAware //FIXME generally IAware on interfaces is wrong, 
+  public interface IVisualElement
   {
     public CUIRect Rect { get; }
     public bool Contains(Vector2 pos);

@@ -10,9 +10,9 @@ namespace CrabUI
   public partial class CUIComponent
   {
     [InitMethod]
-    private void InitSlots()
+    protected void InitVisualSlots()
     {
-      BackgroundSlot = new()
+      BackgroundSlot = new Slot<SimpleTexture>()
       {
         OnWireUp = (background) =>
         {
@@ -22,28 +22,21 @@ namespace CrabUI
         },
         OnTearDown = (background) =>
         {
-          DebugRelays[DebugCategory.RoundedRect].Unroute(background.Debug_RoundedRect);
-          Events.Unroute(background);
-          background.FocusProbed.Remove(HandleFocusProbe);
+          DebugRelays[DebugCategory.RoundedRect].Route(background.Debug_RoundedRect);
+          Events.Route(background);
+          background.FocusProbed.Add(HandleFocusProbe);
         },
         Value = new(),
       };
     }
 
-    private Slot<SimpleTexture> BackgroundSlot;
 
-    private SimpleTexture secret = new();
-
-
+    protected Slot<SimpleTexture> BackgroundSlot;
 
     [CUISerializableProp]
     public SimpleTexture Background
     {
-      get
-      {
-        if (BackgroundSlot == null) CUI.Logger.PrintStackTrace();
-        return BackgroundSlot?.Value ?? secret;
-      }
+      get => BackgroundSlot.Value;
       set => BackgroundSlot.Value = value;
     }
 

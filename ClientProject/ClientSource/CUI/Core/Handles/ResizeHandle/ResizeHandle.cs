@@ -158,7 +158,6 @@ namespace CrabUI
 
     public ResizeHandle()
     {
-      Background.VisualWrapper.HostComponent = this; // :AwareDev:
       Background.Sprite = CUIDefaultSprite.Angle;
 
       Anchor = new Vector2(1, 1);

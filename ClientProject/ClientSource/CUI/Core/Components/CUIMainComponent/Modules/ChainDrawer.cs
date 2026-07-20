@@ -15,7 +15,7 @@ namespace CrabUI
   {
     public DebugNode<VisualUnit> Debug_VisualUnitProcessed { get; } = new(
       DebugCategory.VisualUnitProcessed, CUI.DebugHub,
-      (vu) => $"processing [{vu}] of [{vu.HostComponent}]"
+      (vu) => $"processing [{vu}] of [vu.HostComponent]"
     )
     { IsOpen = true, };
 

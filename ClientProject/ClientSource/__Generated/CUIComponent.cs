@@ -12,7 +12,7 @@ namespace CrabUI
     protected Self_As_CUIComponent As_CUIComponent { get; } = new();
     void IComponent.RunInitMethods()
     {
-      InitSlots();
+      InitVisualSlots();
     }
 
     void IComponent.InjectModules()
@@ -98,14 +98,6 @@ namespace CrabUI
       SwipeHandle.HostPropName = "SwipeHandle";
       Layout.HostComponent = this;
       Layout.HostPropName = "Layout";
-      Background.HostComponent = this;
-      Background.HostPropName = "Background";
-      Borders.HostComponent = this;
-      Borders.HostPropName = "Borders";
-      VisualBounds.HostComponent = this;
-      VisualBounds.HostPropName = "VisualBounds";
-      VisualWrapper.HostComponent = this;
-      VisualWrapper.HostPropName = "VisualWrapper";
       LayoutProps.Absolute.HostComponent = this;
       LayoutProps.Absolute.HostPropName = "Absolute";
       LayoutProps.AbsoluteMin.HostComponent = this;

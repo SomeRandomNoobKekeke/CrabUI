@@ -30,9 +30,12 @@ namespace CrabUI
     public event Action<T> TearDown;
   }
 
+  //Doesn't really work, part init order is random, if it's accessed from other init method there will be nre
   public class SlotPart<THost, T> : IPart
   {
     public THost Self { get; set; }
+    public void Init() => Value = DefaultValue;
+    public T DefaultValue { get; set; }
     private T _Value; public T Value
     {
       get => _Value;

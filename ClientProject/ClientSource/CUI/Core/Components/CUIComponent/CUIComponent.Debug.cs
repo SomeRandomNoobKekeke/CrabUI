@@ -72,7 +72,7 @@ namespace CrabUI
       VisualFlattener flattener = new VisualFlattener();
       flattener.Flatten(this);
       CUI.Logger.Log(Logger.Wrap.IEnumerable(
-        flattener.Flat.Select(vu => $"{vu} of {vu.HostComponent}")
+        flattener.Flat.Select(vu => $"{vu} of vu.HostComponent")
         , true));
     }
   }

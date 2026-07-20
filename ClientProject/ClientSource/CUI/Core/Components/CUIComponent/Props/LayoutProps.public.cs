@@ -126,6 +126,7 @@ namespace CrabUI
       set => LayoutProps.GridColumn.Value = value;
     }
 
+    [CUISerializableProp]
     public (int, int) Grid
     {
       get => (GridColumn, GridRow);

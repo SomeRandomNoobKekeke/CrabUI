@@ -15,28 +15,79 @@ namespace CrabUI
 {
   public partial class CUIComponent : CUISerializable
   {
-    /// <summary>
-    /// Override this methods to setup component after deserialization
-    /// </summary>
-    protected virtual void WireUp() { }
+    protected virtual void BeforeSerialization() { }
+    protected virtual void AfterSerialization() { }
+
+    public CUISerializationMode SerializationMode { get; set; }
 
     static object CUISerializable.Deserialize(XElement element) => Deserialize(element);
     public static CUIComponent Deserialize(XElement element)
     {
-      CUIComponent component = (CUIComponent)CUIBasicSerializer.Deserialize(
-        element,
-        CUICore.Reflection.GetType(element.Name.ToString())
-      );
+      CUIComponent root = CreateEmptyComponent(element);
+      CUIBasicSerializer.DeserializeProps(element, root);
 
-      foreach (XElement child in element.Elements())
+      root._DeserializeChildren(element);
+
+      return root;
+    }
+
+    private static CUIComponent CreateEmptyComponent(XElement element)
+      => (CUIComponent)Activator.CreateInstance(CUICore.Reflection.GetType(element.Name.ToString()));
+    private void _DeserializeChildren(XElement element)
+    {
+      CUIComponent AddNewChild(XElement element)
       {
-        component.Children.Add(Deserialize(child));
+        CUIComponent child = CreateEmptyComponent(element);
+        CUIBasicSerializer.DeserializeProps(element, child);
+        Children.Add(child);
+        return child;
+      }
+      CUIComponent ReplaceWithANewChild(XElement element)
+      {
+        CUIComponent child = CreateEmptyComponent(element);
+        CUIBasicSerializer.DeserializeProps(element, child);
+        this[child.AKA] = child;
+        return child;
+      }
+      void MergeIntoExistingChild(CUIComponent child, XElement element)
+      {
+        CUIBasicSerializer.DeserializeProps(element, child);
       }
 
-      component.WireUp();
+      BeforeSerialization();
+      foreach (XElement childElement in element.Elements())
+      {
+        string AKA = childElement.GetAttribute("AKA")?.Value;
 
-      return component;
+        CUIComponent child = null;
+        if (AKA == null || !NamedComponents.ContainsKey(AKA))
+        {
+          child = AddNewChild(childElement);
+        }
+        else // There's a name conflict
+        {
+          if (SerializationMode == CUISerializationMode.Replace)
+          {
+            child = ReplaceWithANewChild(childElement);
+          }
+
+          if (SerializationMode == CUISerializationMode.Merge)
+          {
+            child = this[AKA];
+            MergeIntoExistingChild(child, childElement);
+          }
+
+          if (SerializationMode == CUISerializationMode.Ignore)
+          {
+            child = this[AKA];
+          }
+        }
+
+        child._DeserializeChildren(childElement);
+      }
+      AfterSerialization();
     }
+
 
 
 

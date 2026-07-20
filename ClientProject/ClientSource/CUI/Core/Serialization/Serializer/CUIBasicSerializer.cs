@@ -40,10 +40,15 @@ namespace CrabUI
     public static object Deserialize(XElement element, Type T)
     {
       object o = Activator.CreateInstance(T);
+      DeserializeProps(element, o);
+      return o;
+    }
 
-      if (CUICore.Reflection.SerializableInfos.ContainsKey(T))
+    public static void DeserializeProps(XElement element, object target)
+    {
+      if (CUICore.Reflection.SerializableInfos.ContainsKey(target.GetType()))
       {
-        CUISerializableInfo info = CUICore.Reflection.GetSerializableInfo(T);
+        CUISerializableInfo info = CUICore.Reflection.GetSerializableInfo(target.GetType());
 
         foreach (XAttribute attribute in element.Attributes())
         {
@@ -51,15 +56,13 @@ namespace CrabUI
 
           if (!pp.CanWrite)
           {
-            CUI.Logger.Warning($"Couldn't deserialize [{pp}] on [{T.GetFullName()}], it's not settable");
+            CUI.Logger.Warning($"Couldn't deserialize [{pp}] on [{target.GetType().GetFullName()}], it's not settable");
             continue;
           }
 
-          pp.SetValue(o, CUICore.Parser.Parse(attribute.Value, pp.Path.Last().PropertyType));
+          pp.SetValue(target, CUICore.Parser.Parse(attribute.Value, pp.Path.Last().PropertyType));
         }
       }
-
-      return o;
     }
   }
 }

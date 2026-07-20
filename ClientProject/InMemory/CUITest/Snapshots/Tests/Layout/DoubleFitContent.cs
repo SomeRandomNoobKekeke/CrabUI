@@ -17,9 +17,9 @@ namespace CrabUIUser
     {
       public static CUIComponent DoubleFitContent()
       {
-        CUIFrame frame = new CUIDefault.Frame()
+        CUIFrame frame = new CUIDefault.Frame("DoubleFitContent")
         {
-          Caption = { Text = "DoubleFitContent" },
+          Absolute = new CUINullRect(w: 400, h: 600),
         };
 
         frame["layout"]["list1"] = new CUIVerticalList()

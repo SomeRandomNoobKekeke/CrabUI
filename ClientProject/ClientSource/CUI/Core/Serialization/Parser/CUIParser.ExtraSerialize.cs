@@ -19,8 +19,10 @@ namespace CrabUI
       [typeof(Color)] = (o) => ColorToString((Color)o),
       [typeof(Vector2)] = (o) => Vector2ToString((Vector2)o),
       [typeof(__CUITexture2D)] = (o) => ((CUITexture2D)o).Key,
+      [typeof((int, int))] = (o) => Tupple2IntIntToString(((int, int))o),
     };
 
+    public static string Tupple2IntIntToString((int, int) tupple) => $"[{tupple.Item1},{tupple.Item2}]";
     public static string ColorToString(Color cl) => $"{cl.R},{cl.G},{cl.B},{cl.A}";
     public static string Vector2ToString(Vector2 v) => $"[{v.X},{v.Y}]";
   }

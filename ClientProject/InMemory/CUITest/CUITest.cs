@@ -24,6 +24,7 @@ namespace CrabUIUser
     public static string TestDataFolder => Path.Combine(ModInfo.Dir, "Test Data");
     public static string SnaphotsFolder => Path.Combine(TestDataFolder, "Snapshots");
     public static string SnaphotsTempFolder => Path.Combine(TestDataFolder, "Temp");
+    public static string CompareFolder => Path.Combine(TestDataFolder, "Compare");
 
     public VirtualFileSystem VirtualFileSystem { get; } = new();
 

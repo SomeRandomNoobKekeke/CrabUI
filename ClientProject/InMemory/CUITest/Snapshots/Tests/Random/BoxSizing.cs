@@ -33,8 +33,8 @@ namespace CrabUIUser
         {
           Background = { Color = new Color(255, 255, 0, 255) },
           Absolute = new CUINullRect(100, 100, 100, 100),
-          Margin = new CUISizes(5, 10, 15, 20),
-          Padding = new CUISizes(5, 10, 15, 20),
+          Margin = new CUISizes(10, 15, 20, 5),
+          Padding = new CUISizes(10, 15, 20, 5),
         };
 
         frame["box1"]["box2"] = new CUIComponent()

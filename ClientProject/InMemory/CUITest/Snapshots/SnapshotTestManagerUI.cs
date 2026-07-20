@@ -105,8 +105,6 @@ namespace CrabUIUser
         OnToggle = (state) => Manager.SerializeTestSubject = state,
       };
 
-      CUI.Logger.Log(this.Get<CUIToggleButton>("layout.controls.serialize").OffColor);
-
       this["layout"]["groups"] = new CUIHorizontalList() { FitContent = new CUIBool2(false, true), };
       foreach (string group in Manager.Repo.Groups)
       {

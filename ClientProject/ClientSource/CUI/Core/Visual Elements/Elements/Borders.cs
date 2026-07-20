@@ -27,6 +27,7 @@ namespace CrabUI
     public CUISizes Sizes { get; set; }
 
     public CUISprite Sprite { get; set; } = CUISprite.White;
+    [CUISerializableProp]
     public Color Color { get => Sprite.Color; set => Sprite.Color = value; }
 
     public override bool Contains(Vector2 pos)

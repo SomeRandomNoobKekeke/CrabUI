@@ -81,9 +81,13 @@ namespace CrabUI
     public Rectangle? SourceRectangle { get => Sprite.SourceRectangle; set => Sprite.SourceRectangle = value; }
     [CUISerializableProp]
     public Color Color { get => Sprite.Color; set => Sprite.Color = value; }
+    [CUISerializableProp]
     public float Rotation { get => Sprite.Rotation; set => Sprite.Rotation = value; }
+    [CUISerializableProp]
     public Vector2 Origin { get => Sprite.Origin; set => Sprite.Origin = value; }
+    [CUISerializableProp]
     public SpriteEffects Effects { get => Sprite.Effects; set => Sprite.Effects = value; }
+    [CUISerializableProp]
     public float LayerDepth { get => Sprite.LayerDepth; set => Sprite.LayerDepth = value; }
 
     #endregion

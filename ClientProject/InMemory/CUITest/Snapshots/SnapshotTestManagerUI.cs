@@ -95,6 +95,17 @@ namespace CrabUIUser
         MasterColor = new Color(64, 0, 64),
         OnMouseDown = (c, e) => Manager.AcceptCurrent()
       };
+      this["layout"]["controls"]["serialize"] = new CUIToggleButton()
+      {
+        Text = "Serialize",
+        Flex = 1,
+        MasterColor = new Color(255, 0, 255),
+
+        State = Manager.SerializeTestSubject,
+        OnToggle = (state) => Manager.SerializeTestSubject = state,
+      };
+
+      CUI.Logger.Log(this.Get<CUIToggleButton>("layout.controls.serialize").OffColor);
 
       this["layout"]["groups"] = new CUIHorizontalList() { FitContent = new CUIBool2(false, true), };
       foreach (string group in Manager.Repo.Groups)

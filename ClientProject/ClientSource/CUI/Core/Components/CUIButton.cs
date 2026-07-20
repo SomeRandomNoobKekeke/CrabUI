@@ -37,8 +37,8 @@ namespace CrabUI
     {
       set
       {
-        InactiveColor = new Color((int)(value.R * 0.7f), (int)(value.G * 0.7f), (int)(value.B * 0.7f), value.A);
-        MouseOverColor = new Color((int)(value.R * 0.9f), (int)(value.G * 0.9f), (int)(value.B * 0.9f), value.A);
+        InactiveColor = value.MultOpaque(0.7f);
+        MouseOverColor = value.MultOpaque(0.9f);
         MousePressedColor = value;
         DetermineColor();
       }

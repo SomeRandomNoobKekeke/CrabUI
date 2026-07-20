@@ -10,7 +10,7 @@ using Barotrauma;
 
 namespace CrabUI
 {
-  public static class Utils
+  public static partial class Utils
   {
     public static string SubstringSafe(this string s, int i)
       => s.Substring(0, Math.Clamp(i, 0, s.Length));

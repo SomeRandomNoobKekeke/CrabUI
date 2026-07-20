@@ -21,11 +21,13 @@ namespace CrabUI
     });
 
     [CUISerializableProp]
-    public Color OnColor { get; set; } = new Color(0, 255, 255);
+    public Color OnColor { get; set; } = new Color(255, 0, 255);
 
     [CUISerializableProp]
-    public Color OffColor { get; set; } = new Color(0, 0, 255);
+    public Color OffColorHovered { get; set; } = new Color(64, 0, 64);
 
+    [CUISerializableProp]
+    public Color OffColor { get; set; } = new Color(48, 0, 48);
 
 
     private bool _State; public bool State
@@ -42,8 +44,9 @@ namespace CrabUI
     {
       set
       {
-        OnColor = value.Multiply(0.9f);
-        OffColor = value.Multiply(0.5f);
+        OnColor = value.MultOpaque(1.0f);
+        OffColorHovered = value.MultOpaque(0.25f);
+        OffColor = OffColorHovered.MultOpaque(0.7f);
         DetermineColor();
       }
     }
@@ -53,20 +56,24 @@ namespace CrabUI
       if (State)
       {
         Background.Color = OnColor;
-        if (MouseOver) Background.Color = OnColor.Multiply(2.0f);
-        if (MousePressed) Background.Color = OnColor.Multiply(3.0f);
       }
       else
       {
         Background.Color = OffColor;
-        if (MouseOver) Background.Color = OffColor.Multiply(2.0f);
-        if (MousePressed) Background.Color = OffColor.Multiply(3.0f);
+        if (MouseOver) Background.Color = OffColorHovered;
       }
     }
 
+    public Action<bool> OnToggle { set { Toggle += value; } }
+    public event Action<bool> Toggle;
+
     public CUIToggleButton() : base()
     {
-      MouseDown += (c, e) => State = !State;
+      MouseDown += (c, e) =>
+      {
+        State = !State;
+        Toggle?.Invoke(State);
+      };
     }
     public CUIToggleButton(string text) : this()
     {

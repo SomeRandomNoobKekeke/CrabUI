@@ -54,28 +54,37 @@ namespace CrabUI
     internal void Activate()
     {
       if (_Activated) return;
-      _Activated = true;
 
-      CUIStyleManager = new(Reflection.TypeTree);
-      CUIPaletteManager = new();
+      try
+      {
+        CUIStyleManager = new(Reflection.TypeTree);
+        CUIPaletteManager = new();
 
-      EventConstructor = new();
-      _AnimationPlayer = new();
+        EventConstructor = new();
+        _AnimationPlayer = new();
 
-      //CUICore analyzes itself because it needs infos for MainComponents right here
-      Reflection.AddAssemblyInfo(
-        CUIAssemblyAnalyzer.AnalyzeAssembly(typeof(CUICore).Assembly)
-      );
+        //CUICore analyzes itself because it needs infos for MainComponents right here
+        Reflection.AddAssemblyInfo(
+          CUIAssemblyAnalyzer.AnalyzeAssembly(typeof(CUICore).Assembly)
+        );
 
-      Main = new() { EventConstructor = EventConstructor };
-      TopMain = new() { EventConstructor = EventConstructor };
+        Main = new() { EventConstructor = EventConstructor };
+        TopMain = new() { EventConstructor = EventConstructor };
 
-      UpdateGameScreenRect();
+        UpdateGameScreenRect();
 
-      DebugRelays.Route(Main.DebugRelays);
-      DebugRelays.Map(DebugHub);
+        DebugRelays.Route(Main.DebugRelays);
+        DebugRelays.Map(DebugHub);
 
-      // DebugHub.Output.Add((e) => CUI.Logger.Log(e));
+        // DebugHub.Output.Add((e) => CUI.Logger.Log(e));
+        _Activated = true;
+      }
+      catch (Exception e)
+      {
+        CUI.Logger.Warning($"CUICore Activation failed with:\n{e}");
+        CUI.Logger.Warning($"Stopping CUI");
+        CUI.Stop();
+      }
     }
   }
 }

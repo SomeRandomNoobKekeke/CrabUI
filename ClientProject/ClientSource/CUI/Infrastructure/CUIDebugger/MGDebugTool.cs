@@ -26,9 +26,9 @@ namespace CrabUI
 
     public void Dispose()
     {
-      ToggleButton.RemoveSelf();
-      Frame.Close();
-      MG.Dispose();
+      MG?.Dispose();
+      ToggleButton?.RemoveSelf();
+      Frame?.Close();
     }
 
     public void CreateUI()

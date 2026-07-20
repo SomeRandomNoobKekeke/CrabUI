@@ -63,6 +63,8 @@ namespace CrabUI
     }
     public static CUICore Core => Setup.Core;
 
+
+    public static bool Started => Setup?.Started == true;
     //Akshually in MasterRunners calling this 
     public static void Start()
     {

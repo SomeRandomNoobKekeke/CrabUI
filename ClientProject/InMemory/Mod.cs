@@ -62,9 +62,9 @@ namespace CrabUIUser
     {
       Instance = null;
       UTestCommands.RemoveCommands();
-      CUIDebugger.Dispose();
-      MGDebugTool.Dispose();
-      CUITest.Dispose();
+      CUIDebugger?.Dispose();
+      MGDebugTool?.Dispose();
+      CUITest?.Dispose();
     }
   }
 }

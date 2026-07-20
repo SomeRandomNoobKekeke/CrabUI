@@ -21,7 +21,6 @@ namespace CrabUI
       {
         Runner.Connect();
         Core.Activate();
-
         Started = true;
       }
 

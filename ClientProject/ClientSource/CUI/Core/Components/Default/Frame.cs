@@ -21,7 +21,7 @@ namespace CrabUI
       public Frame() : base()
       {
         Anchor = CUIAnchor.Center;
-
+        VisualChildrenOrder = CUIDirection.Reverse;
         // Absolute = new(w: 400, h: 600);
 
         this["layout"] = new CUIVerticalList()

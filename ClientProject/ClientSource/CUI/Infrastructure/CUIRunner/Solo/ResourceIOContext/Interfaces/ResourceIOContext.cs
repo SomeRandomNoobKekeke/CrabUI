@@ -10,9 +10,12 @@ using System.IO;
 
 namespace CrabUI
 {
-  public interface CUITextureManagerInternal : CUITextureManager
+  /// <summary>
+  /// This is a shared context for all resource loaders like texture loaders, xml loaders
+  /// </summary>
+  public interface ResourceIOContext
   {
-    public string LoadedFileDir { set; }
-    public Assembly CallingAssembly { set; }
+    public string? PackageDir { set; }
+    public string? FileDir { set; }
   }
 }

@@ -28,31 +28,18 @@ namespace CrabUI
       public CUIGraphicsDevice GraphicsDevice => Self.GraphicsDevice;
       public CUIGUI GUI => Self.CUIGUI;
 
-      public CUITextureManagerInternal TextureManager => Self.CUITextureManagerInternal;
+      public CUITextureManager TextureManager => Self.TextureManager;
+      public ResourceIOContextHandle ResourceIOContext => Self.ResourceIOContextHandle;
 
-      public void SaveXDoc(XDocument xDoc, string path, Assembly CallingAssembly)
+      public void SaveXDoc(XDocument xDoc, string path)
       {
-        if (Path.IsPathFullyQualified(path))
-        {
-          xDoc.Save(path);
-        }
-        else
-        {
-          string callerRoot = Self.DirLookup.GetPackage(Assembly.GetCallingAssembly()).Dir;
-          xDoc.Save(Path.Combine(callerRoot, path));
-        }
+        string realPath = Self.FilePathResolver.FindBestMatchForSaving(path);
+        xDoc.Save(realPath);
       }
-      public XDocument LoadXDoc(string path, Assembly CallingAssembly)
+      public XDocument LoadXDoc(string path)
       {
-        if (Path.IsPathFullyQualified(path))
-        {
-          return XDocument.Load(path);
-        }
-        else
-        {
-          string callerRoot = Self._AssemblyPackageLookup.GetPackage(Assembly.GetCallingAssembly()).Dir;
-          return XDocument.Load(Path.Combine(callerRoot, path));
-        }
+        string realPath = Self.FilePathResolver.FindBestMatchForLoading(path);
+        return XDocument.Load(realPath);
       }
 
       public void GrabFocus()

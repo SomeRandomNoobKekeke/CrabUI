@@ -19,8 +19,10 @@ namespace CrabUI
     public AssemblyPackageDirLookup DirLookup { get; } = new();
 
     public __CUITextureManager TextureManager { get; private set; } = new();
+    CUITextureManager ICUIRunner.TextureManager => CUITextureManagerPublic;
     public CUITextureManager_PublicPart CUITextureManagerPublic { get; private set; } = new();
-    public CUITextureManager_InternalPart CUITextureManagerInternal { get; private set; } = new();
+    public ResourceIOContext_Part ResourceIOContext { get; private set; } = new();
+    public ResourceIOContextHandle_Part ResourceIOContextHandle { get; private set; } = new();
     public FilePathResolver FilePathResolver { get; private set; } = new();
 
     public CUIAssemblyAnalyzer CUIAssemblyAnalyzer { get; } = new();
@@ -112,8 +114,8 @@ namespace CrabUI
 
     private void LoadDefaultResources()
     {
-      TextureManager.LoadAs("Assets/PNG/dev.png", "BaroDev");
-      TextureManager.LoadAs("Assets/PNG/CUI.png", "CUI");
+      CUITextureManagerPublic.LoadAs("Assets/PNG/dev.png", "BaroDev");
+      CUITextureManagerPublic.LoadAs("Assets/PNG/CUI.png", "CUI");
     }
 
     public void OnStartAttempt(Assembly callingAssembly)
@@ -131,7 +133,8 @@ namespace CrabUI
       };
 
       CUITextureManagerPublic.Self = this;
-      CUITextureManagerInternal.Self = this;
+      ResourceIOContext.Self = this;
+      ResourceIOContextHandle.Self = this;
 
       LoadDefaultResources();
     }

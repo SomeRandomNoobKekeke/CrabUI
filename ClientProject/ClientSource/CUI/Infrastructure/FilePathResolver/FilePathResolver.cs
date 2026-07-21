@@ -12,31 +12,38 @@ namespace CrabUI
 {
   public class FilePathResolver
   {
-    public string? LoaderPackageDir { get; set; }
-    public string? LoadedFileDir { get; set; }
+    public string? PackageDir { get; set; }
+    public string? FileDir { get; set; }
 
     public string FindBestMatchForSaving(string path)
     {
       if (Path.IsPathFullyQualified(path)) return path;
+
+      if (PackageDir != null)
+      {
+        return Path.Combine(PackageDir, path);
+      }
+
+      return path;
     }
 
     public string FindBestMatchForLoading(string path)
     {
       if (Path.IsPathFullyQualified(path)) return path;
 
-      if (LoadedFileDir != null)
+      if (FileDir != null)
       {
-        if (File.Exists(Path.Combine(LoadedFileDir, path)))
+        if (File.Exists(Path.Combine(FileDir, path)))
         {
-          return Path.Combine(LoadedFileDir, path);
+          return Path.Combine(FileDir, path);
         }
       }
 
-      if (LoaderPackageDir != null)
+      if (PackageDir != null)
       {
-        if (File.Exists(Path.Combine(LoaderPackageDir, path)))
+        if (File.Exists(Path.Combine(PackageDir, path)))
         {
-          return Path.Combine(LoaderPackageDir, path);
+          return Path.Combine(PackageDir, path);
         }
       }
 

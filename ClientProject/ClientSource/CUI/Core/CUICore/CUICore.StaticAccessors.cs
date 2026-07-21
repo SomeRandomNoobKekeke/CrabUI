@@ -37,7 +37,8 @@ namespace CrabUI
     public static AnimationPlayer AnimationPlayer => Instance._AnimationPlayer;
     public static CUIInput Input => Instance._Input;
 
-    public static CUITextureManagerInternal TextureManager => Instance.Handles.TextureManager;
+    public static CUITextureManager TextureManager => Instance.Handles.TextureManager;
+    public static ResourceIOContextHandle ResourceIOContext => Instance.Handles.ResourceIOContext;
 
     public static event Action<double> OnUpdate
     {

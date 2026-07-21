@@ -75,6 +75,7 @@ namespace CrabUI
     public static CUIMainComponent Main => Setup.Core.Main;
     public static CUIMainComponent TopMain => Setup.Core.TopMain;
     public static DebugHub DebugHub => Core.DebugHub;
+    public static CUITextureManager TextureManager => Setup.Runner.TextureManager;
 
 
     public static event Action<double> OnUpdate

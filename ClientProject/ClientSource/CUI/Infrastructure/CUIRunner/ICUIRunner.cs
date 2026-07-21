@@ -15,5 +15,7 @@ namespace CrabUI
     public void Disconnect();
 
     public void OnStartAttempt(Assembly callingAssembly);
+
+    public CUITextureManager TextureManager { get; }
   }
 }

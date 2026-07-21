@@ -15,11 +15,21 @@ namespace CrabUI
     public static CUISprite White => new CUISprite(CUITexture2D.White);
     public static CUISprite BaroDev => new CUISprite(CUICore.TextureManager.Get("BaroDev"));
 
-    public static CUISprite Load(string path, string key = null)
+
+    public static CUISprite Get(string key)
     {
-      return new CUISprite(
-        CUICore.TextureManager.Load(path, key)
-      );
+      CUICore.ResourceIOContext.CallingAssembly = Assembly.GetCallingAssembly();
+      CUISprite sprite = new CUISprite(CUICore.TextureManager.Get(key));
+      CUICore.ResourceIOContext.CallingAssembly = null;
+      return sprite;
+    }
+
+    public static CUISprite LoadAs(string path, string key)
+    {
+      CUICore.ResourceIOContext.CallingAssembly = Assembly.GetCallingAssembly();
+      CUISprite sprite = new CUISprite(CUICore.TextureManager.LoadAs(path, key));
+      CUICore.ResourceIOContext.CallingAssembly = null;
+      return sprite;
     }
 
     private CUITexture2D _Texture; public CUITexture2D Texture

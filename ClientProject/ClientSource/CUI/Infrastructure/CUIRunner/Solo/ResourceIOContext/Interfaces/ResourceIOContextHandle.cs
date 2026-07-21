@@ -10,12 +10,14 @@ using System.IO;
 
 namespace CrabUI
 {
-  public interface FilePathResolverInternal
+  /// <summary>
+  /// This is what CUICore has
+  /// CUICore doesn't know how to resolve Assembly -> PackageDir
+  /// </summary>
+  public interface ResourceIOContextHandle
   {
-    public string FileDir { set; }
+    // public string? PackageDir { set; }
     public Assembly CallingAssembly { set; }
-
-    public string FindBestMatchForSaving(string path);
-    public string FindBestMatchForLoading(string path);
+    public string? FileDir { set; }
   }
 }

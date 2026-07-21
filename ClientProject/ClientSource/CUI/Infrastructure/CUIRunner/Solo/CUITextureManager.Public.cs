@@ -16,7 +16,7 @@ namespace CrabUI
   {
     /// <summary>
     /// This one is supposed to be used by user
-    /// It tracks assembly that it's called from
+    /// It tracks assembly that it was called from
     /// </summary>
     public class CUITextureManager_PublicPart : CUITextureManager
     {
@@ -30,31 +30,31 @@ namespace CrabUI
 
       public CUITexture2D Get(string key)
       {
-        Self.TextureManager.Context.LoaderPackageDir = Self.DirLookup.GetPackageDir(Assembly.GetCallingAssembly());
+        Self.TextureManager.Context.PackageDir = Self.DirLookup.GetPackageDir(Assembly.GetCallingAssembly());
 
         CUITexture2D texture = Self.TextureManager.Get(key);
 
-        Self.TextureManager.Context.LoaderPackageDir = null;
+        Self.TextureManager.Context.PackageDir = null;
         return texture;
       }
 
       public CUITexture2D LoadAs(string path, string key)
       {
-        Self.TextureManager.Context.LoaderPackageDir = Self.DirLookup.GetPackageDir(Assembly.GetCallingAssembly());
+        Self.TextureManager.Context.PackageDir = Self.DirLookup.GetPackageDir(Assembly.GetCallingAssembly());
 
         CUITexture2D texture = Self.TextureManager.LoadAs(path, key);
 
-        Self.TextureManager.Context.LoaderPackageDir = null;
+        Self.TextureManager.Context.PackageDir = null;
         return texture;
       }
 
       public CUITexture2D Reload(string key)
       {
-        Self.TextureManager.Context.LoaderPackageDir = Self.DirLookup.GetPackageDir(Assembly.GetCallingAssembly());
+        Self.TextureManager.Context.PackageDir = Self.DirLookup.GetPackageDir(Assembly.GetCallingAssembly());
 
         CUITexture2D texture = Self.TextureManager.Reload(key);
 
-        Self.TextureManager.Context.LoaderPackageDir = null;
+        Self.TextureManager.Context.PackageDir = null;
         return texture;
       }
     }

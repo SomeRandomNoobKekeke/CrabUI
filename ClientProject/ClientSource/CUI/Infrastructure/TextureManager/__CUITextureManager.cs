@@ -16,9 +16,8 @@ namespace CrabUI
   {
     public class Context_Part
     {
-      public string? LoaderPackageDir { get; set; }
-      public string? LoadedFileDir { get; set; }
-      public void Clear() => (LoaderPackageDir, LoadedFileDir) = (null, null);
+      public string? PackageDir { get; set; }
+      public string? FileDir { get; set; }
     }
     public Context_Part Context { get; } = new();
 
@@ -58,6 +57,8 @@ namespace CrabUI
     {
       CUITexture2D texture = _LoadFrom(path);
 
+      // CUI.Logger.LogVars(key, Context.PackageDir, Context.FileDir);
+
       if (texture is null)
       {
         CUI.Logger.Warning($"Failed to load CUITexture from [{path}]");
@@ -77,15 +78,15 @@ namespace CrabUI
         if (texture is not null) return texture;
       }
 
-      if (Context.LoadedFileDir != null)
+      if (Context.FileDir != null)
       {
-        texture = TryLoadFrom(Path.Combine(Context.LoadedFileDir, path));
+        texture = TryLoadFrom(Path.Combine(Context.FileDir, path));
         if (texture is not null) return texture;
       }
 
-      if (Context.LoaderPackageDir != null)
+      if (Context.PackageDir != null)
       {
-        texture = TryLoadFrom(Path.Combine(Context.LoaderPackageDir, path));
+        texture = TryLoadFrom(Path.Combine(Context.PackageDir, path));
         if (texture is not null) return texture;
       }
 

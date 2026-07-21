@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="../Build.props" />
-  
+
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <DefineConstants>TRACETRACE;CLIENT;WINDOWS</DefineConstants>
     <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
@@ -10,6 +10,10 @@
     <DefineConstants>TRACETRACE;CLIENT;WINDOWS</DefineConstants>
     <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="InMemory/**/*.cs" /> <!-- All .cs files in a directory subtree -->
+  </ItemGroup>
 
   <ItemGroup>
     <Reference Include="Barotrauma">

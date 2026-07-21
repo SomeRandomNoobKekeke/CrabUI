@@ -22,6 +22,8 @@ namespace CUILibs
   {
     public static ContentPackage GetPackageForAssembly(Assembly assembly)
     {
+      if (assembly == typeof(GameMain).Assembly) return null;
+
       PluginManagementService pluginManagement = LuaCsSetup.Instance.PluginManagementService as PluginManagementService;
 
       foreach (var (package, asmLoader) in pluginManagement._assemblyLoaders)

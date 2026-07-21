@@ -28,9 +28,9 @@ namespace CrabUI
       public CUIGraphicsDevice GraphicsDevice => Self.GraphicsDevice;
       public CUIGUI GUI => Self.CUIGUI;
 
-      public CUITextureManager CUITextureManager => Self.CUITextureManager;
+      public CUITextureManagerInternal TextureManager => Self.CUITextureManagerInternal;
 
-      public void SaveXDoc(XDocument xDoc, string path)
+      public void SaveXDoc(XDocument xDoc, string path, Assembly CallingAssembly)
       {
         if (Path.IsPathFullyQualified(path))
         {
@@ -38,11 +38,11 @@ namespace CrabUI
         }
         else
         {
-          string callerRoot = Self._AssemblyPackageLookup.GetPackage(Assembly.GetCallingAssembly()).Dir;
+          string callerRoot = Self.DirLookup.GetPackage(Assembly.GetCallingAssembly()).Dir;
           xDoc.Save(Path.Combine(callerRoot, path));
         }
       }
-      public XDocument LoadXDoc(string path)
+      public XDocument LoadXDoc(string path, Assembly CallingAssembly)
       {
         if (Path.IsPathFullyQualified(path))
         {

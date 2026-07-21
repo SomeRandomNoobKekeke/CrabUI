@@ -16,9 +16,12 @@ namespace CrabUI
     public __CUISpriteBatch SpriteBatch { get; } = new();
     public __CUIGraphicsDevice GraphicsDevice { get; } = new();
     public __CUIGUI CUIGUI { get; } = new();
-    public AssemblyPackageLookup _AssemblyPackageLookup { get; } = new();
+    public AssemblyPackageDirLookup DirLookup { get; } = new();
 
-    public CUITextureManager CUITextureManager { get; private set; }
+    public __CUITextureManager TextureManager { get; private set; } = new();
+    public CUITextureManager_PublicPart CUITextureManagerPublic { get; private set; } = new();
+    public CUITextureManager_InternalPart CUITextureManagerInternal { get; private set; } = new();
+    public FilePathResolver FilePathResolver { get; private set; } = new();
 
     public CUIAssemblyAnalyzer CUIAssemblyAnalyzer { get; } = new();
 
@@ -98,8 +101,8 @@ namespace CrabUI
         DataSources.DisconnectFromGame();
         SpriteBatch.XNASpriteBatch = null;
         Core.Handles = null;
-        CUITextureManager.Dispose();
-        _AssemblyPackageLookup.Dispose();
+        TextureManager.Dispose();
+        DirLookup.Dispose();
       }
       catch (Exception e)
       {
@@ -109,8 +112,8 @@ namespace CrabUI
 
     private void LoadDefaultResources()
     {
-      CUITextureManager.Load("Assets/PNG/dev.png", "BaroDev");
-      CUITextureManager.Load("Assets/PNG/CUI.png", "CUI");
+      TextureManager.LoadAs("Assets/PNG/dev.png", "BaroDev");
+      TextureManager.LoadAs("Assets/PNG/CUI.png", "CUI");
     }
 
     public void OnStartAttempt(Assembly callingAssembly)
@@ -127,7 +130,8 @@ namespace CrabUI
         Self = this
       };
 
-      CUITextureManager = new CUITextureManagerProxy(new __CUITextureManager(), _AssemblyPackageLookup);
+      CUITextureManagerPublic.Self = this;
+      CUITextureManagerInternal.Self = this;
 
       LoadDefaultResources();
     }

@@ -13,15 +13,16 @@ namespace CrabUI
 {
   public partial class SoloCUIRunner
   {
-    public class AssemblyPackageLookup : IDisposable
+    public class AssemblyPackageDirLookup : IDisposable
     {
-      private Dictionary<Assembly, ContentPackage> Cache { get; } = new();
+      private Dictionary<Assembly, string> Cache { get; } = new();
 
-      public ContentPackage GetPackage(Assembly assembly)
+      public string GetPackageDir(Assembly assembly)
       {
         if (!Cache.ContainsKey(assembly))
         {
-          Cache[assembly] = ModInfo.GetPackageForAssembly(assembly);
+          ContentPackage package = ModInfo.GetPackageForAssembly(assembly);
+          Cache[assembly] = package?.Dir ?? ""; // null == vanilla
         }
 
         return Cache[assembly];

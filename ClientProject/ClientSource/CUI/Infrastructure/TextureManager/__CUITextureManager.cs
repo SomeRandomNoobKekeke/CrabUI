@@ -14,6 +14,14 @@ namespace CrabUI
 
   public class __CUITextureManager : IDisposable, CUITextureManager
   {
+    public class Context_Part
+    {
+      public string? LoaderPackageDir { get; set; }
+      public string? LoadedFileDir { get; set; }
+      public void Clear() => (LoaderPackageDir, LoadedFileDir) = (null, null);
+    }
+    public Context_Part Context { get; } = new();
+
     public CUITexture2D BackupTexture => __CUITexture2D.White;
     public Dictionary<string, CUITexture2D> LoadedTextures { get; } = new();
 
@@ -25,40 +33,79 @@ namespace CrabUI
       }
 
       texture.Key = key;
-
       return LoadedTextures[key] = texture;
     }
 
-    public CUITexture2D Load(string path, string key = null)
-    {
-      if (!File.Exists(path)) return BackupTexture;
 
-      key ??= path;
+    public bool Has(string key) => LoadedTextures.ContainsKey(key);
 
-      if (LoadedTextures.ContainsKey(key))
-      {
-        return LoadedTextures[key];
-      }
-
-      using (FileStream fs = File.OpenRead(path))
-      {
-        return LoadedTextures[key] = new __CUITexture2D(
-          Texture2D.FromStream(GameMain.Instance.GraphicsDevice, fs)
-        )
-        {
-          Key = key,
-        };
-      }
-    }
-
-    public CUITexture2D GetByPath(string path) => Get(path); //Same thing
+    private bool IsTexturePath(string path)
+      => path.EndsWith(".bmp") || path.EndsWith(".gif") || path.EndsWith(".jpg") || path.EndsWith(".png");
     public CUITexture2D Get(string key)
     {
       if (LoadedTextures.ContainsKey(key)) return LoadedTextures[key];
+      if (IsTexturePath(key)) return LoadAs(key, key);
       return BackupTexture;
     }
 
-    public bool Has(string key) => LoadedTextures.ContainsKey(key);
+    public CUITexture2D Reload(string key)
+    {
+      if (Has(key)) Forget(key);
+      return LoadAs(key, key);
+    }
+
+    public CUITexture2D LoadAs(string path, string key)
+    {
+      CUITexture2D texture = _LoadFrom(path);
+
+      if (texture is null)
+      {
+        CUI.Logger.Warning($"Failed to load CUITexture from [{path}]");
+        return BackupTexture;
+      }
+
+      return Add(texture, key);
+    }
+
+    private CUITexture2D _LoadFrom(string path)
+    {
+      CUITexture2D? texture;
+
+      if (Path.IsPathFullyQualified(path))
+      {
+        texture = TryLoadFrom(path);
+        if (texture is not null) return texture;
+      }
+
+      if (Context.LoadedFileDir != null)
+      {
+        texture = TryLoadFrom(Path.Combine(Context.LoadedFileDir, path));
+        if (texture is not null) return texture;
+      }
+
+      if (Context.LoaderPackageDir != null)
+      {
+        texture = TryLoadFrom(Path.Combine(Context.LoaderPackageDir, path));
+        if (texture is not null) return texture;
+      }
+
+      // Relative to game folder?
+      texture = TryLoadFrom(path);
+
+      return texture;
+    }
+
+    private CUITexture2D TryLoadFrom(string path)
+    {
+      if (!File.Exists(path)) return null;
+
+      using (FileStream fs = File.OpenRead(path))
+      {
+        return new __CUITexture2D(
+          Texture2D.FromStream(GameMain.Instance.GraphicsDevice, fs)
+        );
+      }
+    }
 
     public void Forget(string key)
     {

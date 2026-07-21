@@ -30,7 +30,7 @@ namespace CrabUI
     {
       public CUIGraphicsDevice GraphicsDevice { get; }
       public CUIGUI GUI { get; }
-      public CUITextureManager CUITextureManager { get; }
+      public CUITextureManagerInternal TextureManager { get; }
 
       /// <summary>
       /// Should steal focus from other GUI Components

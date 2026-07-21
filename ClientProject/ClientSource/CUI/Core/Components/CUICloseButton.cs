@@ -25,11 +25,8 @@ namespace CrabUI
     {
       base.InitStyle();
       Icon.Sprite = CUIDefaultSprite.Cross;
-      Absolute = new CUINullRect(DefaultSize);
       ConsumeMouseEvents = true;
     }
-
-    public static Vector2 DefaultSize => ResizeHandle.DefaultSize;
 
     public SimpleTexture Icon { get; } = new();
 
@@ -68,8 +65,6 @@ namespace CrabUI
 
     public bool PlaySound { get; set; } = true;
     public GUISoundType ClickSound { get; set; } = GUISoundType.Select;//BRUH check buttonbase
-
-    protected override CUINullVector2 MinSizeOverride => new CUINullVector2(DefaultSize);
 
     public override IEnumerable<VisualUnit> VisualSplit()
     {

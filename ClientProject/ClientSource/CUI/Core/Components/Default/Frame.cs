@@ -22,9 +22,7 @@ namespace CrabUI
       {
         Anchor = CUIAnchor.Center;
 
-
         // Absolute = new(w: 400, h: 600);
-
 
         this["layout"] = new CUIVerticalList()
         {
@@ -33,7 +31,7 @@ namespace CrabUI
         };
         this["layout"]["handle"] = new CUIHorizontalList()
         {
-          FitContent = new CUIBool2(false, true),
+          Absolute = new CUINullRect(h: ResizeHandle.DefaultSize.Y),
           Style = (c) =>
           {
             c.Background.Color = c.Palette.Colors["border"];
@@ -43,12 +41,11 @@ namespace CrabUI
         {
           Flex = 1,
         };
-        this["layout"]["handle"]["closebuttonwrapper"] = new CUIComponent()
+        this["layout"]["handle"]["closebutton"] = new CUICloseButton()
         {
-          FitContent = new(true, true),
+          CrossRelative = new CUINullRect(w: 1),
           Background = { Color = Palette.Colors["border"] },
         };
-        this["layout"]["handle"]["closebuttonwrapper"]["closebutton"] = new CUICloseButton();
       }
 
       public Frame(string caption) : this()

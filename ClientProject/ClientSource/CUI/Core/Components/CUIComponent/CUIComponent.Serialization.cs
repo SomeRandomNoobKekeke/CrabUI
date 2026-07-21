@@ -18,22 +18,28 @@ namespace CrabUI
     protected virtual void BeforeSerialization() { }
     protected virtual void AfterSerialization() { }
 
+    [CUISerializableProp]
     public CUISerializationMode SerializationMode { get; set; }
 
+    [CUISerializableProp] // BaroDev(wide)
+    public bool Serializable { get; set; } = true;
+
     static object CUISerializable.Deserialize(XElement element) => Deserialize(element);
+    public static T Deserialize<T>(XElement element) where T : CUIComponent => (T)Deserialize(element);
     public static CUIComponent Deserialize(XElement element)
     {
       CUIComponent root = CreateEmptyComponent(element);
       CUIBasicSerializer.DeserializeProps(element, root);
 
-      root._DeserializeChildren(element);
+      root.DeserializeChildren(element, root.SerializationMode);
 
       return root;
     }
 
     private static CUIComponent CreateEmptyComponent(XElement element)
       => (CUIComponent)Activator.CreateInstance(CUICore.Reflection.GetType(element.Name.ToString()));
-    private void _DeserializeChildren(XElement element)
+
+    private void DeserializeChildren(XElement element, CUISerializationMode mode)
     {
       CUIComponent AddNewChild(XElement element)
       {
@@ -66,24 +72,25 @@ namespace CrabUI
         }
         else // There's a name conflict
         {
-          if (SerializationMode == CUISerializationMode.Replace)
-          {
-            child = ReplaceWithANewChild(childElement);
-          }
-
-          if (SerializationMode == CUISerializationMode.Merge)
+          if (mode == CUISerializationMode.Replace)
           {
             child = this[AKA];
-            MergeIntoExistingChild(child, childElement);
+            if (child.Serializable) child = ReplaceWithANewChild(childElement);
           }
 
-          if (SerializationMode == CUISerializationMode.Ignore)
+          if (mode == CUISerializationMode.Merge)
+          {
+            child = this[AKA];
+            if (child.Serializable) MergeIntoExistingChild(child, childElement);
+          }
+
+          if (mode == CUISerializationMode.Ignore)
           {
             child = this[AKA];
           }
         }
 
-        child._DeserializeChildren(childElement);
+        child.DeserializeChildren(childElement, mode);
       }
       AfterSerialization();
     }
@@ -97,6 +104,7 @@ namespace CrabUI
 
       foreach (CUIComponent child in Children)
       {
+        if (!child.Serializable) continue;
         element.Add(child.Serialize());
       }
 

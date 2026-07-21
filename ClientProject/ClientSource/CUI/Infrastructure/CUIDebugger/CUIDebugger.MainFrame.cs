@@ -43,7 +43,10 @@ namespace CrabUI
           TextAnchor = CUIAnchor.LeftCenter,
         };
 
-        this["layout"]["handle"]["close"] = new CUICloseButton();
+        this["layout"]["handle"]["close"] = new CUICloseButton()
+        {
+          CrossRelative = new CUINullRect(w: 1),
+        };
 
 
         this["layout"]["header"] = new CUIHorizontalList()

@@ -35,7 +35,6 @@ namespace CrabUI
     public void PressKey(Keys key)
     {
       IFocusableAdapter.KeyPressed.Raise(
-        this,
         new CUIKeyPressedEvent(key, CUICore.Input.Keyboard)
       );
     }

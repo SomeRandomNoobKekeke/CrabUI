@@ -25,6 +25,6 @@ namespace CrabUI
     public static string Events = "Events";
     public static string ScissorRectSet = "Scissor Rect Set";
     public static string VisualUnitProcessed = "VisualUnitProcessed";
-    public static string FocusedChanged = "Focused Changed";
+    public static string Focus = "Focus";
   }
 }

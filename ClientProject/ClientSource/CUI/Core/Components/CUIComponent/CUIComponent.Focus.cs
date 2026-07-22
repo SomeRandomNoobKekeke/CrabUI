@@ -23,6 +23,8 @@ namespace CrabUI
       public ClearableEvent<CUIKeyReleasedEvent> KeyReleased { get; } = new();
       public ClearableEvent<CUITextInputEvent> TextInput { get; } = new();
       public ClearableEvent<CUIKeyDownInputEvent> KeyDownInput { get; } = new();
+
+      public override string ToString() => $"Focusable part of [{Self}]";
     }
     protected IFocusableAdapter_Part IFocusableAdapter { get; } = new();
 
@@ -50,7 +52,7 @@ namespace CrabUI
     }
 
     public void Focus() => CUICore.RequestFocus(IFocusableAdapter);
-    public void Blur() => CUICore.Blur();
+    public void Blur() => CUICore.RequestBlur(IFocusableAdapter);
 
     //TODO should these take this CUIComponent as first arg?
     public Action AddOnFocus { set { OnFocus += value; } }

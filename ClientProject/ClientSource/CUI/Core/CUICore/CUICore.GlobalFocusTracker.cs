@@ -32,7 +32,7 @@ namespace CrabUI
           }
 
           _Focused = value;
-          Self.Debug_FocusedChanged.Send(_Focused);
+          Self.Debug_Focus.Send($"Focused set [{_Focused}]");
 
           if (_Focused is not null)
           {
@@ -42,14 +42,23 @@ namespace CrabUI
         }
       }
 
-      public IFocusable WantsToBeFocused { get; set; }
-
-      //TODO should this be delayed and resolved at the end of the update?
-      public void Blur()
+      private IFocusable _WantsToBeFocused; public IFocusable WantsToBeFocused
       {
-        Focused = null;
-        Self.Handles.ClearFocus();
+        get => _WantsToBeFocused;
+        set
+        {
+          _WantsToBeFocused = value;
+          Self.Debug_Focus.Send($"WantsToBeFocused [{value}]");
+        }
       }
+      public HashSet<IFocusable> WantsToBeBlured { get; } = new();
+
+      public void AddToWantsToBeBlured(IFocusable focusable)
+      {
+        WantsToBeBlured.Add(focusable);
+        Self.Debug_Focus.Send($"WantsToBeBlured [{focusable}]");
+      }
+
       public void ResolveFocus(bool SomethingFocusedElsewhere)
       {
         if (SomethingFocusedElsewhere)
@@ -59,30 +68,35 @@ namespace CrabUI
         }
 
         IFocusable next = WantsToBeFocused;
-        next ??= Self.Main.WantsToBeFocused;
         next ??= Self.TopMain.WantsToBeFocused;
+        next ??= Self.Main.WantsToBeFocused;
+
 
         if (next is not null)
         {
           Focused = next;
-
-          //TODO there are ton of hardcoded actions in barotrauma that are performed without focus
-          // idk, i need a map of them to see how focus can possibly be resolved 
           Self.Handles.GrabFocus();
         }
-        if (next is null && FocusShouldBeLost())
+
+
+        if (WantsToBeBlured.Contains(Focused))
         {
-          Blur();
+          Focused = null;
+          Self.Handles.ClearFocus();
         }
 
-        WantsToBeFocused = null;
+        if (next is null && Self._Input.Mouse.M1.Down)
+        {
+          Focused = null;
+          Self.Handles.ClearFocus();
+        }
+
+        _WantsToBeFocused = null;
+        Self.Main.WantsToBeFocused = null;
+        Self.TopMain.WantsToBeFocused = null;
+        WantsToBeBlured.Clear();
       }
 
-      private bool FocusShouldBeLost()
-      {
-        if (Focused?.ManuallyFocused == true) return false;
-        return Self._Input.Mouse.M1.Down;
-      }
 
       public void DispatchKeyboadEvents()
       {

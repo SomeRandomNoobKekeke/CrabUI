@@ -69,6 +69,7 @@ namespace CrabUI
     public static void RequestFocus(IFocusable focusable)
       => Instance.GlobalFocusTracker.WantsToBeFocused = focusable;
 
-    public static void Blur() => Instance.GlobalFocusTracker.Blur();
+    public static void RequestBlur(IFocusable focusable)
+      => Instance.GlobalFocusTracker.AddToWantsToBeBlured(focusable);
   }
 }

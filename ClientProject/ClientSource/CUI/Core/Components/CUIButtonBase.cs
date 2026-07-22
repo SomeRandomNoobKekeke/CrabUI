@@ -102,7 +102,11 @@ namespace CrabUI
       if (!Displayed || CulledOut) yield break;
 
       yield return Background.VisualWrapper;
+
+      yield return VisualBounds.LeftBound;
       yield return TextBlock.VisualWrapper;
+      yield return VisualBounds.RightBound;
+
       yield return Borders.VisualWrapper;
     }
 

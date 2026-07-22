@@ -137,7 +137,7 @@ namespace CrabUI
 
     public CUIMainComponent() : base()
     {
-
+      ChildrenBounds = CUIBoundaries.Box;
     }
   }
 }

@@ -13,6 +13,7 @@ namespace CrabUI
 {
   public partial class CUIPage : CUIComponent, IComponent
   {
+    //TODO i'm using ClearableEvent to be able to raise them from CUIPages, todo find another way to rise them
     public ClearableEvent OnOpen { get; } = new();
     public Action AddOnOpen { set { OnOpen.Add(value); } }
 

@@ -41,6 +41,13 @@ namespace CrabUI
     public static CUITextureManager TextureManager => Instance.Handles.TextureManager;
     public static ResourceIOContextHandle ResourceIOContext => Instance.Handles.ResourceIOContext;
 
+    public static bool Debug
+    {
+      get => Instance._Debug;
+      set => Instance._Debug = value;
+    }
+    public static DebugHub DebugHub => Instance._DebugHub;
+
     public static event Action<double> OnUpdate
     {
       add => Instance.LifeCycle.OnUpdate.Add(value);

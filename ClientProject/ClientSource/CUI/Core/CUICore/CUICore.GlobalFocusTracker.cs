@@ -32,6 +32,7 @@ namespace CrabUI
           }
 
           _Focused = value;
+          Self.Debug_FocusedChanged.Send(_Focused);
 
           if (_Focused is not null)
           {

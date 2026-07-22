@@ -73,10 +73,9 @@ namespace CrabUI
 
         UpdateGameScreenRect();
 
-        DebugRelays.Route(Main.DebugRelays);
-        DebugRelays.Map(DebugHub);
+        InitDebug();
 
-        // DebugHub.Output.Add((e) => CUI.Logger.Log(e));
+
         _Activated = true;
       }
       catch (Exception e)

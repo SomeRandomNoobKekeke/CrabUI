@@ -15,6 +15,7 @@ namespace CrabUI
     public class IFocusableAdapter_Part : Part, IFocusable, IKeyboardEventConsumer
     {
       public bool Focused { get; set; }
+      public bool ManuallyFocused { get; set; }
       public ClearableEvent OnFocus { get; } = new();
       public ClearableEvent OnFocusLost { get; } = new();
 
@@ -32,6 +33,11 @@ namespace CrabUI
     }
     public bool Focused => IFocusableAdapter.Focused;
     public bool Focusable { get; set; }
+    public bool ManuallyFocused
+    {
+      get => IFocusableAdapter.ManuallyFocused;
+      set => IFocusableAdapter.ManuallyFocused = value;
+    }
 
     public void HandleFocusProbe(CUIFocusRequestEvent e)
     {

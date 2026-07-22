@@ -29,7 +29,6 @@ namespace CrabUI
           {
             _Focused.Focused = false;
             _Focused.OnFocusLost.Raise();
-
           }
 
           _Focused = value;
@@ -75,6 +74,7 @@ namespace CrabUI
 
       private bool FocusShouldBeLost()
       {
+        if (Focused?.ManuallyFocused == true) return false;
         return Self._Input.Mouse.M1.Down;
       }
 

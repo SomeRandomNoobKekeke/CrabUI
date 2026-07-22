@@ -17,6 +17,8 @@ namespace CrabUI
         MEConsumer.MouseOver = false;
         MEConsumer.MousePressed = false;
         MEConsumer.MouseOff.Raise(this);
+
+        Consumed = MEConsumer.ConsumeMouseEvents || Consumed;
       }
     }
 

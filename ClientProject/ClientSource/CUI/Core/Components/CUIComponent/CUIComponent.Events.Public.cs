@@ -8,6 +8,9 @@ using Barotrauma;
 using Microsoft.Xna.Framework;
 using CUICodeGenerator;
 using CUILibs;
+using Microsoft.Xna.Framework.Input;
+
+
 namespace CrabUI
 {
   public partial class CUIComponent
@@ -16,6 +19,25 @@ namespace CrabUI
     {
       get => Background.ConsumeMouseEvents;
       set => Background.ConsumeMouseEvents = value;
+    }
+
+    public bool MouseOver => Events.MouseOver;
+    public bool MousePressed => Events.MousePressed;
+
+    public void Click()
+    {
+      Events.MouseDown.Raise(
+        this,
+        new CUIMouseDownEvent(CUIMouseButton.LeftButton, CUICore.Input.Mouse)
+      );
+    }
+
+    public void PressKey(Keys key)
+    {
+      IFocusableAdapter.KeyPressed.Raise(
+        this,
+        new CUIKeyPressedEvent(key, CUICore.Input.Keyboard)
+      );
     }
 
     public Action<CUIComponent, CUIMouseDownEvent> OnMouseDown { set { MouseDown += value; } }

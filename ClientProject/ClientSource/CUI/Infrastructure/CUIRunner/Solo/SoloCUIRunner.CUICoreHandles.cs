@@ -31,6 +31,8 @@ namespace CrabUI
       public CUITextureManager TextureManager => Self.TextureManager;
       public ResourceIOContextHandle ResourceIOContext => Self.ResourceIOContextHandle;
 
+      public bool InputBlockingMenuOpen => Barotrauma.GUI.InputBlockingMenuOpen;
+
       public void SaveXDoc(XDocument xDoc, string path)
       {
         string realPath = Self.FilePathResolver.FindBestMatchForSaving(path);

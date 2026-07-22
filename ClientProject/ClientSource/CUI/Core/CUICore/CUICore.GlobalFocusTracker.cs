@@ -43,6 +43,12 @@ namespace CrabUI
 
       public IFocusable WantsToBeFocused { get; set; }
 
+      //TODO should this be delayed and resolved at the end of the update?
+      public void Blur()
+      {
+        Focused = null;
+        Self.Handles.ClearFocus();
+      }
       public void ResolveFocus(bool SomethingFocusedElsewhere)
       {
         if (SomethingFocusedElsewhere)
@@ -65,8 +71,7 @@ namespace CrabUI
         }
         if (next is null && FocusShouldBeLost())
         {
-          Focused = null;
-          Self.Handles.ClearFocus();
+          Blur();
         }
 
         WantsToBeFocused = null;
@@ -81,6 +86,7 @@ namespace CrabUI
       public void DispatchKeyboadEvents()
       {
         if (Focused is null) return;
+        if (CUICore.InputBlockingMenuOpen) return;
 
         EventDispatcher.Dispatch(Focused, Self.EventConstructor.KeyboardEvents);
       }

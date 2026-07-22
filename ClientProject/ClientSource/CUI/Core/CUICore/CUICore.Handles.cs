@@ -33,6 +33,8 @@ namespace CrabUI
       public CUITextureManager TextureManager { get; }
       public ResourceIOContextHandle ResourceIOContext { get; }
 
+      public bool InputBlockingMenuOpen { get; }
+
       /// <summary>
       /// Should steal focus from other GUI Components
       /// </summary>

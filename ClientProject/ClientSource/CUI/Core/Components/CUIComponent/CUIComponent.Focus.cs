@@ -50,6 +50,7 @@ namespace CrabUI
     }
 
     public void Focus() => CUICore.RequestFocus(IFocusableAdapter);
+    public void Blur() => CUICore.Blur();
 
     //TODO should these take this CUIComponent as first arg?
     public Action AddOnFocus { set { OnFocus += value; } }

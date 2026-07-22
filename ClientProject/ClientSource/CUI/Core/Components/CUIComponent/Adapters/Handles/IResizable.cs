@@ -47,6 +47,12 @@ namespace CrabUI
 
         public void ResizeToAbsoluteRect(CUIRect rect)
         {
+          //TODO It's better but still kinda funny, you can smash frame out of bounds
+          if (Self.Parent.ChildrenBounds != null)
+          {
+            rect = Self.Parent.ChildrenBounds(Self.Parent.ChildrenRect).FitGracefuly(Rect, rect);
+          }
+
           Self.Absolute = new CUINullRect(
             CUIAnchor.AbsoluteRectToAchored(
               rect, Self.Parent.Rect, Self.Anchor

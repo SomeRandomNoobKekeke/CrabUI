@@ -13,7 +13,6 @@ Refs/*
 !Refs/README.txt
 
 docs/*
-!docs/.nojekyll
 
 [Ss]pecs.md
 

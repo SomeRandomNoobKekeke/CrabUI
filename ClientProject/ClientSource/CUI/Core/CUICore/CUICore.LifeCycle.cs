@@ -19,6 +19,17 @@ namespace CrabUI
       public ClearableEvent<CUISpriteBatch> OnDrawAfterGUI = new();
       public ClearableEvent<CUISpriteBatch> OnDrawBeforeGUI = new();
 
+      public int MaxErrorCount = 10;
+      public int ErrorCount = 0;
+
+      private void HandleError()
+      {
+        if (ErrorCount++ < MaxErrorCount) return;
+        CUI.Logger.Warning($"More than [{MaxErrorCount}] errors happened in CUICore.LifeCycle");
+        CUI.Logger.Warning($"Stopping CUI");
+        CUI.Stop();
+      }
+
       public void Update(double totalTime, MouseState mouse, KeyboardState keyboard, TextInputEventPack textInput)
       {
         try
@@ -44,6 +55,7 @@ namespace CrabUI
         catch (Exception e)
         {
           CUI.Logger.Error(e);
+          HandleError();
         }
       }
 
@@ -57,6 +69,7 @@ namespace CrabUI
         catch (Exception e)
         {
           CUI.Logger.Error($"Error in CUICore.DrawAfterGUI: {e}\n");
+          HandleError();
         }
       }
 
@@ -70,6 +83,7 @@ namespace CrabUI
         catch (Exception e)
         {
           CUI.Logger.Error($"Error in CUICore.DrawBeforeGUI: {e}\n");
+          HandleError();
         }
       }
 

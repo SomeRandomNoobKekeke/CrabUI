@@ -5,7 +5,7 @@
 %%For: 
 %Magnification: 1.00
 %%Orientation: Portrait
-%%BoundingBox: 0 0 500 759.493652
+%%BoundingBox: 0 0 500 506.329102
 %%Pages: 0
 %%BeginSetup
 %%EndSetup
@@ -19,13 +19,13 @@
 /marginwidth 10 def
 /distx 20 def
 /disty 40 def
-/boundaspect 0.658333 def  % aspect ratio of the BoundingBox (width/height)
+/boundaspect 0.987500 def  % aspect ratio of the BoundingBox (width/height)
 /boundx 500 def
 /boundy boundx boundaspect div def
 /xspacing 0 def
 /yspacing 0 def
 /rows 24 def
-/cols 2 def
+/cols 3 def
 /scalefactor 0 def
 /boxfont /Times-Roman findfont fontheight scalefont def
 
@@ -174,6 +174,7 @@
 boxfont setfont
 1 boundaspect scale
 (CrabUI.CUISerializable) cw
+(CrabUI.Borders) cw
 (CrabUI.CUIComponent) cw
 (CrabUI.SimpleTexture) cw
 (CrabUI.CUIButtonBase) cw
@@ -209,93 +210,96 @@ boundx scalefactor div boundy scalefactor div scale
 
 % ----- classes -----
 
- (CrabUI.CUISerializable) 0.500000 23.000000 box
- (CrabUI.CUIComponent) 0.000000 22.000000 box
- (CrabUI.SimpleTexture) 1.000000 22.000000 box
- (CrabUI.CUIButtonBase) 1.000000 21.000000 box
-1.000000 21.000000 mark
- (CrabUI.CUICanvas) 1.000000 20.000000 box
-1.000000 20.000000 mark
- (CrabUI.CUICheckBox) 1.000000 19.000000 box
- (CrabUI.CUICloseButton) 1.000000 18.000000 box
- (CrabUI.CUIDropDown) 1.000000 17.000000 box
- (CrabUI.CUIFrame) 1.000000 16.000000 box
-1.000000 16.000000 mark
- (CrabUI.CUIGrid) 1.000000 15.000000 box
- (CrabUI.CUIHorizontalList) 1.000000 14.000000 box
-1.000000 14.000000 mark
- (CrabUI.CUIHorizontalList) 1.000000 13.000000 box
-1.000000 13.000000 mark
- (CrabUI.CUIMainComponent) 1.000000 12.000000 box
- (CrabUI.CUIPage) 1.000000 11.000000 box
-1.000000 11.000000 mark
- (CrabUI.CUIPages) 1.000000 10.000000 box
- (CrabUI.CUIScrollBar) 1.000000 9.000000 box
- (CrabUI.CUITextBlock) 1.000000 8.000000 box
- (CrabUI.CUITextInput) 1.000000 7.000000 box
- (CrabUI.CUITextInput) 1.000000 6.000000 box
- (CrabUI.CUITextInput) 1.000000 5.000000 box
- (CrabUI.CUITextLine) 1.000000 4.000000 box
- (CrabUI.CUIVerticalList) 1.000000 3.000000 box
- (CrabUI.CUIVerticalList) 1.000000 2.000000 box
- (CrabUIUser.E2ETestPack.RadialMenu.RadialMenuUI) 1.000000 1.000000 box
- (CrabUIUser.SnapshotTestChamber) 1.000000 0.000000 box
+ (CrabUI.CUISerializable) 1.000000 23.000000 box
+ (CrabUI.Borders) 0.000000 22.000000 box
+ (CrabUI.CUIComponent) 1.000000 22.000000 box
+ (CrabUI.SimpleTexture) 2.000000 22.000000 box
+ (CrabUI.CUIButtonBase) 2.000000 21.000000 box
+2.000000 21.000000 mark
+ (CrabUI.CUICanvas) 2.000000 20.000000 box
+2.000000 20.000000 mark
+ (CrabUI.CUICheckBox) 2.000000 19.000000 box
+ (CrabUI.CUICloseButton) 2.000000 18.000000 box
+ (CrabUI.CUIDropDown) 2.000000 17.000000 box
+ (CrabUI.CUIFrame) 2.000000 16.000000 box
+2.000000 16.000000 mark
+ (CrabUI.CUIGrid) 2.000000 15.000000 box
+ (CrabUI.CUIHorizontalList) 2.000000 14.000000 box
+2.000000 14.000000 mark
+ (CrabUI.CUIHorizontalList) 2.000000 13.000000 box
+2.000000 13.000000 mark
+ (CrabUI.CUIMainComponent) 2.000000 12.000000 box
+ (CrabUI.CUIPage) 2.000000 11.000000 box
+2.000000 11.000000 mark
+ (CrabUI.CUIPages) 2.000000 10.000000 box
+ (CrabUI.CUIScrollBar) 2.000000 9.000000 box
+ (CrabUI.CUITextBlock) 2.000000 8.000000 box
+ (CrabUI.CUITextInput) 2.000000 7.000000 box
+ (CrabUI.CUITextInput) 2.000000 6.000000 box
+ (CrabUI.CUITextInput) 2.000000 5.000000 box
+ (CrabUI.CUITextLine) 2.000000 4.000000 box
+ (CrabUI.CUIVerticalList) 2.000000 3.000000 box
+ (CrabUI.CUIVerticalList) 2.000000 2.000000 box
+ (CrabUIUser.E2ETestPack.RadialMenu.RadialMenuUI) 2.000000 1.000000 box
+ (CrabUIUser.SnapshotTestChamber) 2.000000 0.000000 box
 
 % ----- relations -----
 
 solid
-1 0.500000 22.250000 out
+1 1.000000 22.250000 out
 solid
-0.000000 1.000000 23.000000 conn
+0.000000 2.000000 23.000000 conn
 solid
 0 0.000000 22.750000 in
 solid
-1 0.000000 21.250000 out
-solid
 0 1.000000 22.750000 in
 solid
-0 0.000000 21.500000 hedge
+1 1.000000 21.250000 out
 solid
-0 0.000000 20.500000 hedge
+0 2.000000 22.750000 in
 solid
-0 0.000000 19.500000 hedge
+0 1.000000 21.500000 hedge
 solid
-0 0.000000 18.500000 hedge
+0 1.000000 20.500000 hedge
 solid
-0 0.000000 17.500000 hedge
+0 1.000000 19.500000 hedge
 solid
-0 0.000000 16.500000 hedge
+0 1.000000 18.500000 hedge
 solid
-0 0.000000 15.500000 hedge
+0 1.000000 17.500000 hedge
 solid
-0 0.000000 14.500000 hedge
+0 1.000000 16.500000 hedge
 solid
-0 0.000000 13.500000 hedge
+0 1.000000 15.500000 hedge
 solid
-0 0.000000 12.500000 hedge
+0 1.000000 14.500000 hedge
 solid
-0 0.000000 11.500000 hedge
+0 1.000000 13.500000 hedge
 solid
-0 0.000000 10.500000 hedge
+0 1.000000 12.500000 hedge
 solid
-0 0.000000 9.500000 hedge
+0 1.000000 11.500000 hedge
 solid
-0 0.000000 8.500000 hedge
+0 1.000000 10.500000 hedge
 solid
-0 0.000000 7.500000 hedge
+0 1.000000 9.500000 hedge
 solid
-0 0.000000 6.500000 hedge
+0 1.000000 8.500000 hedge
 solid
-0 0.000000 5.500000 hedge
+0 1.000000 7.500000 hedge
 solid
-0 0.000000 4.500000 hedge
+0 1.000000 6.500000 hedge
 solid
-0 0.000000 3.500000 hedge
+0 1.000000 5.500000 hedge
 solid
-0 0.000000 2.500000 hedge
+0 1.000000 4.500000 hedge
 solid
-0 0.000000 1.500000 hedge
+0 1.000000 3.500000 hedge
 solid
-0 0.000000 0.500000 hedge
+0 1.000000 2.500000 hedge
 solid
-0.000000 22.000000 0.500000 vedge
+0 1.000000 1.500000 hedge
+solid
+0 1.000000 0.500000 hedge
+solid
+1.000000 22.000000 0.500000 vedge

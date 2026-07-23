@@ -105,6 +105,7 @@ Properties</h2></td></tr>
 <tr class="memitem:ab3ed11131c8e6c8012e284b1cfa63dd5" id="r_ab3ed11131c8e6c8012e284b1cfa63dd5"><td class="memItemLeft">static string&#160;</td><td class="memItemRight"><a class="el" href="#ab3ed11131c8e6c8012e284b1cfa63dd5">TestDataFolder</a><code> [get]</code></td></tr>
 <tr class="memitem:a2f26e2c7e8b11d2f33e5ebe19ac13b65" id="r_a2f26e2c7e8b11d2f33e5ebe19ac13b65"><td class="memItemLeft">static string&#160;</td><td class="memItemRight"><a class="el" href="#a2f26e2c7e8b11d2f33e5ebe19ac13b65">SnaphotsFolder</a><code> [get]</code></td></tr>
 <tr class="memitem:a54c6f830baecc13278c62d9ce2c28974" id="r_a54c6f830baecc13278c62d9ce2c28974"><td class="memItemLeft">static string&#160;</td><td class="memItemRight"><a class="el" href="#a54c6f830baecc13278c62d9ce2c28974">SnaphotsTempFolder</a><code> [get]</code></td></tr>
+<tr class="memitem:a6972d3c88d5527101587e7deda0f54ca" id="r_a6972d3c88d5527101587e7deda0f54ca"><td class="memItemLeft">static string&#160;</td><td class="memItemRight"><a class="el" href="#a6972d3c88d5527101587e7deda0f54ca">CompareFolder</a><code> [get]</code></td></tr>
 <tr class="memitem:acf585c7b28f3b6807ea2790bb63418cf" id="r_acf585c7b28f3b6807ea2790bb63418cf"><td class="memItemLeft">VirtualFileSystem&#160;</td><td class="memItemRight"><a class="el" href="#acf585c7b28f3b6807ea2790bb63418cf">VirtualFileSystem</a> = new()<code> [get]</code></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
@@ -126,10 +127,10 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_test_8cs_source.html#l00038">38</a> of file <a class="el" href="_c_u_i_test_8cs_source.html">CUITest.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   39</span>    {</div>
-<div class="line"><span class="lineno">   40</span> </div>
-<div class="line"><span class="lineno">   41</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_test_8cs_source.html#l00039">39</a> of file <a class="el" href="_c_u_i_test_8cs_source.html">CUITest.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>    {</div>
+<div class="line"><span class="lineno">   41</span> </div>
+<div class="line"><span class="lineno">   42</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -148,17 +149,41 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_test_8cs_source.html#l00030">30</a> of file <a class="el" href="_c_u_i_test_8cs_source.html">CUITest.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   31</span>    {</div>
-<div class="line"><span class="lineno">   32</span>      TestManager.SnapshotTestManager.Repo.Add(typeof(SnapshotTests));</div>
-<div class="line"><span class="lineno">   33</span>      TestManager.E2ETestManager.Repo.AddPack(typeof(E2ETestPack));</div>
-<div class="line"><span class="lineno">   34</span> </div>
-<div class="line"><span class="lineno">   35</span>      TestManager.Init();</div>
-<div class="line"><span class="lineno">   36</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_test_8cs_source.html#l00031">31</a> of file <a class="el" href="_c_u_i_test_8cs_source.html">CUITest.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>    {</div>
+<div class="line"><span class="lineno">   33</span>      TestManager.SnapshotTestManager.Repo.Add(typeof(SnapshotTests));</div>
+<div class="line"><span class="lineno">   34</span>      TestManager.E2ETestManager.Repo.AddPack(typeof(E2ETestPack));</div>
+<div class="line"><span class="lineno">   35</span> </div>
+<div class="line"><span class="lineno">   36</span>      TestManager.Init();</div>
+<div class="line"><span class="lineno">   37</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <a name="doc-property-members" id="doc-property-members"></a><h2 id="header-doc-property-members" class="groupheader">Property Documentation</h2>
+<a id="a6972d3c88d5527101587e7deda0f54ca" name="a6972d3c88d5527101587e7deda0f54ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6972d3c88d5527101587e7deda0f54ca">&#9670;&#160;</a></span>CompareFolder</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string CrabUIUser.CUITest.CompareFolder</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_test_8cs_source.html#l00027">27</a> of file <a class="el" href="_c_u_i_test_8cs_source.html">CUITest.cs</a>.</p>
+
+</div>
+</div>
 <a id="a3aa7bc1cc661f3b0eaaafc6a4a780db6" name="a3aa7bc1cc661f3b0eaaafc6a4a780db6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3aa7bc1cc661f3b0eaaafc6a4a780db6">&#9670;&#160;</a></span>Logger</h2>
 
@@ -308,8 +333,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_test_8cs_source.html#l00028">28</a> of file <a class="el" href="_c_u_i_test_8cs_source.html">CUITest.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   28</span>{ <span class="keyword">get</span>; } = <span class="keyword">new</span>();</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_test_8cs_source.html#l00029">29</a> of file <a class="el" href="_c_u_i_test_8cs_source.html">CUITest.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   29</span>{ <span class="keyword">get</span>; } = <span class="keyword">new</span>();</div>
 </div><!-- fragment -->
 </div>
 </div>

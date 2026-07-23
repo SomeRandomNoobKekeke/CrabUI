@@ -15,6 +15,7 @@ namespace CrabUI
     public class IFocusableAdapter_Part : Part, IFocusable, IKeyboardEventConsumer
     {
       public bool Focused { get; set; }
+      public bool ManuallyFocused { get; set; }
       public ClearableEvent OnFocus { get; } = new();
       public ClearableEvent OnFocusLost { get; } = new();
 
@@ -22,14 +23,10 @@ namespace CrabUI
       public ClearableEvent<CUIKeyReleasedEvent> KeyReleased { get; } = new();
       public ClearableEvent<CUITextInputEvent> TextInput { get; } = new();
       public ClearableEvent<CUIKeyDownInputEvent> KeyDownInput { get; } = new();
+
+      public override string ToString() => $"Focusable part of [{Self}]";
     }
     protected IFocusableAdapter_Part IFocusableAdapter { get; } = new();
-
-    [InitMethod]
-    public void InitFocusStuff()
-    {
-      Background.FocusProbed.Add(HandleFocusProbe);
-    }
 
     public bool ConsumeFocus
     {
@@ -38,6 +35,11 @@ namespace CrabUI
     }
     public bool Focused => IFocusableAdapter.Focused;
     public bool Focusable { get; set; }
+    public bool ManuallyFocused
+    {
+      get => IFocusableAdapter.ManuallyFocused;
+      set => IFocusableAdapter.ManuallyFocused = value;
+    }
 
     public void HandleFocusProbe(CUIFocusRequestEvent e)
     {
@@ -50,6 +52,7 @@ namespace CrabUI
     }
 
     public void Focus() => CUICore.RequestFocus(IFocusableAdapter);
+    public void Blur() => CUICore.RequestBlur(IFocusableAdapter);
 
     //TODO should these take this CUIComponent as first arg?
     public Action AddOnFocus { set { OnFocus += value; } }

@@ -17,9 +17,9 @@ namespace CrabUIUser
     {
       public static CUIComponent Grid()
       {
-        CUIFrame frame = new CUIDefault.Frame()
+        CUIFrame frame = new CUIDefault.Frame("Grid test")
         {
-          Caption = { Text = "Grid test" }
+          Absolute = new CUINullRect(w: 400, h: 600),
         };
 
         frame["layout"]["grid"] = new CUIGrid()

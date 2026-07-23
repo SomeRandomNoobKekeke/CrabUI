@@ -99,6 +99,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a82c8e287d0fc880795805c6b674e2078" id="r_a82c8e287d0fc880795805c6b674e2078"><td class="memItemLeft">IEnumerable&lt; Type &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a82c8e287d0fc880795805c6b674e2078">GetDerivedTypes</a> (Type T)</td></tr>
 <tr class="memitem:a2e5b39d6268a5b8e078ed513e24dc087" id="r_a2e5b39d6268a5b8e078ed513e24dc087"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2e5b39d6268a5b8e078ed513e24dc087">Connect</a> ()</td></tr>
 <tr class="memitem:acb27481a2322d47c8a6828e7b0b4e632" id="r_acb27481a2322d47c8a6828e7b0b4e632"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#acb27481a2322d47c8a6828e7b0b4e632">Clear</a> ()</td></tr>
+<tr class="memitem:a86834d2f3e0d03669455f94326ed211d" id="r_a86834d2f3e0d03669455f94326ed211d"><td class="memItemLeft">override string&#160;</td><td class="memItemRight"><a class="el" href="#a86834d2f3e0d03669455f94326ed211d">ToString</a> ()</td></tr>
 <tr class="memitem:a5033d19fcd9a5dc6cfbca14d926973b1" id="r_a5033d19fcd9a5dc6cfbca14d926973b1"><td class="memItemLeft">record&#160;</td><td class="memItemRight"><a class="el" href="#a5033d19fcd9a5dc6cfbca14d926973b1">Node</a> (Type Type)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
@@ -131,7 +132,7 @@ Properties</h2></td></tr>
 <div class="line"><span class="lineno">   19</span>      <span class="keywordflow">foreach</span> (Type T <span class="keywordflow">in</span> types)</div>
 <div class="line"><span class="lineno">   20</span>      {</div>
 <div class="line"><span class="lineno">   21</span>        Nodes[T] = <span class="keyword">new</span> Node(T);</div>
-<div class="line"><span class="lineno">   22</span>        TypesByName[T.Name] = T;</div>
+<div class="line"><span class="lineno">   22</span>        TypesByName[T.GetFullName()] = T;</div>
 <div class="line"><span class="lineno">   23</span>      }</div>
 <div class="line"><span class="lineno">   24</span> </div>
 <div class="line"><span class="lineno">   25</span>      <span class="comment">//TODO optimize, i just need to check the new types</span></div>
@@ -246,6 +247,26 @@ Properties</h2></td></tr>
 <div class="line"><span class="lineno">   16</span>      <span class="keyword">public</span> Node Parent { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 <div class="line"><span class="lineno">   17</span>      <span class="keyword">public</span> List&lt;Node&gt; Children { <span class="keyword">get</span>; } = <span class="keyword">new</span>();</div>
 <div class="line"><span class="lineno">   18</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a86834d2f3e0d03669455f94326ed211d" name="a86834d2f3e0d03669455f94326ed211d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86834d2f3e0d03669455f94326ed211d">&#9670;&#160;</a></span>ToString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override string CrabUI.CUITypeTree.ToString </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_type_tree_8cs_source.html#l00065">65</a> of file <a class="el" href="_c_u_i_type_tree_8cs_source.html">CUITypeTree.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   65</span>=&gt; Logger.Wrap.IDictionary(TypesByName);</div>
 </div><!-- fragment -->
 </div>
 </div>

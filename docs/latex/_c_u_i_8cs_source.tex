@@ -67,49 +67,52 @@
 \DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00063}00063\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00064}00064\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUICore\ Core\ =>\ Setup.Core;}
 \DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00065}00065\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00066}00066\ \ \ \ \ \textcolor{comment}{//Akshually\ in\ MasterRunners\ calling\ this\ }}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00067}00067\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ Start()}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00068}00068\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00069}00069\ \ \ \ \ \ \ Setup.Start(Assembly.GetCallingAssembly());}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00070}00070\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00071}00071\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ Stop()\ =>\ Setup?.Stop();}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00072}00072\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00073}00073\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUIMainComponent\ Main\ =>\ Setup.Core.Main;}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00074}00074\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUIMainComponent\ TopMain\ =>\ Setup.Core.TopMain;}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00075}00075\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ DebugHub\ DebugHub\ =>\ Core.DebugHub;}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00076}00076\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00077}00077\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00078}00078\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{event}\ Action<double>\ OnUpdate}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00079}00079\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00080}00080\ \ \ \ \ \ \ add\ =>\ Setup.Core.LifeCycle.OnUpdate.Add(value);}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00081}00081\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ Setup.Core.LifeCycle.OnUpdate.Remove(value);}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00082}00082\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00083}00083\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00084}00084\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{event}\ Action<CUISpriteBatch>\ OnDrawAfterGUI}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00085}00085\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00086}00086\ \ \ \ \ \ \ add\ =>\ Setup.Core.LifeCycle.OnDrawAfterGUI.Add(value);}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00087}00087\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ Setup.Core.LifeCycle.OnDrawAfterGUI.Remove(value);}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00088}00088\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00089}00089\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00090}00090\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{event}\ Action<CUISpriteBatch>\ OnDrawBeforeGUI}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00091}00091\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00092}00092\ \ \ \ \ \ \ add\ =>\ Setup.Core.LifeCycle.OnDrawBeforeGUI.Add(value);}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00093}00093\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ Setup.Core.LifeCycle.OnDrawBeforeGUI.Remove(value);}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00094}00094\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00095}00095\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00096}00096\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ Dispose()}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00097}00097\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00098}00098\ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00099}00099\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ Setup?.Stop();}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ Setup\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00102}00102\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00103}00103\ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00104}00104\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ CUI.Logger.Error(\$\textcolor{stringliteral}{"{}Error\ in\ CUI\ Dispose:\ \{e\}"{}});}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00106}00106\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00107}00107\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00108}00108\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00109}00109\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00067}00067\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ Started\ =>\ Setup?.Started\ ==\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00068}00068\ \ \ \ \ \textcolor{comment}{//Akshually\ in\ MasterRunners\ calling\ this\ }}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00069}00069\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ Start()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00070}00070\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00071}00071\ \ \ \ \ \ \ Setup.Start(Assembly.GetCallingAssembly());}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00072}00072\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00073}00073\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ Stop()\ =>\ Setup?.Stop();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00075}00075\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUIMainComponent\ Main\ =>\ Setup.Core.Main;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00076}00076\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUIMainComponent\ TopMain\ =>\ Setup.Core.TopMain;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00077}00077\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ DebugHub\ DebugHub\ =>\ CUICore.DebugHub;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00078}00078\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUITextureManager\ TextureManager\ =>\ Setup.Runner.TextureManager;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00081}00081\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{event}\ Action<double>\ OnUpdate}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00082}00082\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00083}00083\ \ \ \ \ \ \ add\ =>\ Setup.Core.LifeCycle.OnUpdate.Add(value);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00084}00084\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ Setup.Core.LifeCycle.OnUpdate.Remove(value);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00085}00085\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00087}00087\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{event}\ Action<CUISpriteBatch>\ OnDrawAfterGUI}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00088}00088\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00089}00089\ \ \ \ \ \ \ add\ =>\ Setup.Core.LifeCycle.OnDrawAfterGUI.Add(value);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00090}00090\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ Setup.Core.LifeCycle.OnDrawAfterGUI.Remove(value);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00091}00091\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00093}00093\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{event}\ Action<CUISpriteBatch>\ OnDrawBeforeGUI}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00094}00094\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00095}00095\ \ \ \ \ \ \ add\ =>\ Setup.Core.LifeCycle.OnDrawBeforeGUI.Add(value);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00096}00096\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ Setup.Core.LifeCycle.OnDrawBeforeGUI.Remove(value);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00097}00097\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00099}00099\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ Dispose()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00100}00100\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00101}00101\ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00102}00102\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ Setup?.Stop();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ Setup\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00105}00105\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00106}00106\ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00107}00107\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ CUI.Logger.Error(\$\textcolor{stringliteral}{"{}Error\ in\ CUI\ Dispose:\ \{e\}"{}});}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00109}00109\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00110}00110\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00111}00111\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_8cs_source_l00112}00112\ \}}
 
 \end{DoxyCode}

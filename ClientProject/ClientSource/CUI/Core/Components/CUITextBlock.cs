@@ -32,43 +32,44 @@ namespace CrabUI
       get => TextBlock.Text;
       set => TextBlock.Text = value;
     }
-
+    [CUISerializableProp]
     public float Scale
     {
       get => TextBlock.Scale;
       set => TextBlock.Scale = value;
     }
-
+    [CUISerializableProp]
     public Vector2 TextAnchor
     {
       get => TextBlock.Anchor;
       set => TextBlock.Anchor = value;
     }
-
+    [CUISerializableProp]
     public Color TextColor
     {
       get => TextBlock.TextColor;
       set => TextBlock.TextColor = value;
     }
-
+    [CUISerializableProp]
     public SpriteEffects SpriteEffects
     {
       get => TextBlock.SpriteEffects;
       set => TextBlock.SpriteEffects = value;
     }
-
+    [CUISerializableProp]
     public float LayerDepth
     {
       get => TextBlock.LayerDepth;
       set => TextBlock.LayerDepth = value;
     }
 
+    //TODO [CUISerializableProp]
     public CUIFont Font
     {
       get => TextBlock.Font;
       set => TextBlock.Font = value;
     }
-
+    [CUISerializableProp]
     public ResizeStrategy ResizeStrategy
     {
       get => TextBlock.ResizeStrategy;

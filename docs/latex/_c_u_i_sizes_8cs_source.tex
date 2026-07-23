@@ -16,7 +16,7 @@
 \DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00012}00012\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
 \DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00013}00013\ \{}
 \DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00014}00014\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00015}\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_sizes}{00015}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{struct\ }CUISizes}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00015}\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_sizes}{00015}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{struct\ }CUISizes\ :\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_parsable}{IParsable}}}
 \DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00016}00016\ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}\ Zero\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}(0,\ 0,\ 0,\ 0);}
 \DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00018}00018\ }
@@ -30,32 +30,62 @@
 \DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00026}00026\ }
 \DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUISizes\ operator\ +(CUISizes\ a,\ CUISizes\ b)}
 \DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00028}00028\ \ \ \ \ \ \ =>\ \textcolor{keyword}{new}\ CUISizes(}
-\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ a.Left\ +\ b.Left,}
-\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ a.Top\ +\ b.Top,}
-\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ a.Right\ +\ b.Right,}
-\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ a.Bottom\ +\ b.Bottom}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ a.Top\ +\ b.Top,}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ a.Right\ +\ b.Right,}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ a.Bottom\ +\ b.Bottom,}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ a.Left\ +\ b.Left}
 \DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00033}00033\ \ \ \ \ \ \ );}
 \DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00034}00034\ }
 \DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUISizes\ operator\ -\/(CUISizes\ a,\ CUISizes\ b)}
 \DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00036}00036\ \ \ \ \ \ \ =>\ \textcolor{keyword}{new}\ CUISizes(}
-\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ a.Left\ -\/\ b.Left,}
-\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ a.Top\ -\/\ b.Top,}
-\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ a.Right\ -\/\ b.Right,}
-\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ a.Bottom\ -\/\ b.Bottom}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ a.Top\ -\/\ b.Top,}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ a.Right\ -\/\ b.Right,}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ a.Bottom\ -\/\ b.Bottom,}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ a.Left\ -\/\ b.Left}
 \DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00041}00041\ \ \ \ \ \ \ );}
 \DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00042}00042\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{public}\ CUISizes(\textcolor{keywordtype}{float}\ left\ =\ 0,\ \textcolor{keywordtype}{float}\ top\ =\ 0,\ \textcolor{keywordtype}{float}\ right\ =\ 0,\ \textcolor{keywordtype}{float}\ bottom\ =\ 0)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{public}\ CUISizes(\textcolor{keywordtype}{float}\ top\ =\ 0,\ \textcolor{keywordtype}{float}\ right\ =\ 0,\ \textcolor{keywordtype}{float}\ bottom\ =\ 0,\ \textcolor{keywordtype}{float}\ left\ =\ 0)}
 \DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00044}00044\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00045}00045\ \ \ \ \ \ \ Left\ =\ left;}
-\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00046}00046\ \ \ \ \ \ \ Top\ =\ top;}
-\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00047}00047\ \ \ \ \ \ \ Right\ =\ right;}
-\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00048}00048\ \ \ \ \ \ \ Bottom\ =\ bottom;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00045}00045\ \ \ \ \ \ \ Top\ =\ top;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00046}00046\ \ \ \ \ \ \ Right\ =\ right;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00047}00047\ \ \ \ \ \ \ Bottom\ =\ bottom;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00048}00048\ \ \ \ \ \ \ Left\ =\ left;}
 \DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00049}00049\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00050}00050\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00051}00051\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{string}\ ToString()\ =>\ \$\textcolor{stringliteral}{"{}[\{Left\},\{Top\},\{Right\},\{Bottom\}]"{}};}
-\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00052}00052\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00051}00051\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{string}\ ToString()\ =>\ \$\textcolor{stringliteral}{"{}[\{Top\},\{Right\},\{Bottom\},\{Left\}]"{}};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00053}00053\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ ToText()\ =>\ ToString();}
 \DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00054}00054\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00055}00055\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00055}00055\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{object}\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_parsable}{IParsable}}.Parse(\textcolor{keywordtype}{string}\ raw)\ =>\ Parse(raw);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00056}00056\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUISizes\ Parse(\textcolor{keywordtype}{string}\ s)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00057}00057\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00058}00058\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ content\ =\ s.Substring(}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ s.IndexOf(\textcolor{charliteral}{'['})\ +\ 1,}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ s.IndexOf(\textcolor{charliteral}{']'})\ -\/\ s.IndexOf(\textcolor{charliteral}{'['})\ -\/\ 1}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00061}00061\ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00063}00063\ \ \ \ \ \ \ var\ components\ =\ content.Split(\textcolor{charliteral}{','}).Select(a\ =>\ a.Trim());}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00065}00065\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ st\ =\ components.ElementAtOrDefault(0);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00066}00066\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ sr\ =\ components.ElementAtOrDefault(1);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00067}00067\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ sb\ =\ components.ElementAtOrDefault(2);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00068}00068\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ sl\ =\ components.ElementAtOrDefault(3);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00070}00070\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ t\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00071}00071\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ r\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00072}00072\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ b\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00073}00073\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ l\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00075}00075\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!String.IsNullOrEmpty(st))\ t\ =\ \textcolor{keywordtype}{float}.Parse(st);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00076}00076\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!String.IsNullOrEmpty(sr))\ r\ =\ \textcolor{keywordtype}{float}.Parse(sr);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00077}00077\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!String.IsNullOrEmpty(sb))\ b\ =\ \textcolor{keywordtype}{float}.Parse(sb);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00078}00078\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!String.IsNullOrEmpty(sl))\ l\ =\ \textcolor{keywordtype}{float}.Parse(sl);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00080}00080\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ CUISizes(t,\ r,\ b,\ l);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00081}00081\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00082}00082\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_sizes_8cs_source_l00085}00085\ \}}
 
 \end{DoxyCode}

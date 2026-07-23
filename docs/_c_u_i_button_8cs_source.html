@@ -132,8 +132,8 @@ $(function(){initNavTree('_c_u_i_button_8cs_source.html','',''); });
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    {</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      <span class="keyword">set</span></div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        InactiveColor = <span class="keyword">new</span> Color((<span class="keywordtype">int</span>)(value.R * 0.7f), (<span class="keywordtype">int</span>)(value.G * 0.7f), (<span class="keywordtype">int</span>)(value.B * 0.7f), value.A);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        MouseOverColor = <span class="keyword">new</span> Color((<span class="keywordtype">int</span>)(value.R * 0.9f), (<span class="keywordtype">int</span>)(value.G * 0.9f), (<span class="keywordtype">int</span>)(value.B * 0.9f), value.A);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        InactiveColor = value.MultOpaque(0.7f);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        MouseOverColor = value.MultOpaque(0.9f);</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        MousePressedColor = value;</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        DetermineColor();</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>      }</div>

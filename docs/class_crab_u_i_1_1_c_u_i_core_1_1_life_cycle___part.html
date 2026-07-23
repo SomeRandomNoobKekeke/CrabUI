@@ -115,6 +115,8 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a91c955f37184a7b700269ae40117b539" id="r_a91c955f37184a7b700269ae40117b539"><td class="memItemLeft"><a class="el" href="class_c_u_i_libs_1_1_clearable_event.html">ClearableEvent</a>&lt; double &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a91c955f37184a7b700269ae40117b539">OnUpdate</a> = new()</td></tr>
 <tr class="memitem:a4d2653ba9008a28d24e3ed65041ebaef" id="r_a4d2653ba9008a28d24e3ed65041ebaef"><td class="memItemLeft"><a class="el" href="class_c_u_i_libs_1_1_clearable_event.html">ClearableEvent</a>&lt; <a class="el" href="interface_crab_u_i_1_1_c_u_i_sprite_batch.html">CUISpriteBatch</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a4d2653ba9008a28d24e3ed65041ebaef">OnDrawAfterGUI</a> = new()</td></tr>
 <tr class="memitem:ada2b7605adbecfb2eb7f5a3decf4cc65" id="r_ada2b7605adbecfb2eb7f5a3decf4cc65"><td class="memItemLeft"><a class="el" href="class_c_u_i_libs_1_1_clearable_event.html">ClearableEvent</a>&lt; <a class="el" href="interface_crab_u_i_1_1_c_u_i_sprite_batch.html">CUISpriteBatch</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ada2b7605adbecfb2eb7f5a3decf4cc65">OnDrawBeforeGUI</a> = new()</td></tr>
+<tr class="memitem:a775a4dace45b72f8201c773dfc19479e" id="r_a775a4dace45b72f8201c773dfc19479e"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a775a4dace45b72f8201c773dfc19479e">MaxErrorCount</a> = 10</td></tr>
+<tr class="memitem:a2b3862318f4826fa3786a8db72ce3d40" id="r_a2b3862318f4826fa3786a8db72ce3d40"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a2b3862318f4826fa3786a8db72ce3d40">ErrorCount</a> = 0</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -140,18 +142,19 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_core_8_life_cycle_8cs_source.html#l00050">50</a> of file <a class="el" href="_c_u_i_core_8_life_cycle_8cs_source.html">CUICore.LifeCycle.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   51</span>      {</div>
-<div class="line"><span class="lineno">   52</span>        <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">   53</span>        {</div>
-<div class="line"><span class="lineno">   54</span>          OnDrawAfterGUI.Raise(spriteBatch);</div>
-<div class="line"><span class="lineno">   55</span>          Self.TopMain.DrawChildren(spriteBatch);</div>
-<div class="line"><span class="lineno">   56</span>        }</div>
-<div class="line"><span class="lineno">   57</span>        <span class="keywordflow">catch</span> (Exception e)</div>
-<div class="line"><span class="lineno">   58</span>        {</div>
-<div class="line"><span class="lineno">   59</span>          CUI.Logger.Error($<span class="stringliteral">&quot;Error in CUICore.DrawAfterGUI: {e}\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   60</span>        }</div>
-<div class="line"><span class="lineno">   61</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_core_8_life_cycle_8cs_source.html#l00062">62</a> of file <a class="el" href="_c_u_i_core_8_life_cycle_8cs_source.html">CUICore.LifeCycle.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>      {</div>
+<div class="line"><span class="lineno">   64</span>        <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">   65</span>        {</div>
+<div class="line"><span class="lineno">   66</span>          OnDrawAfterGUI.Raise(spriteBatch);</div>
+<div class="line"><span class="lineno">   67</span>          Self.TopMain.DrawChildren(spriteBatch);</div>
+<div class="line"><span class="lineno">   68</span>        }</div>
+<div class="line"><span class="lineno">   69</span>        <span class="keywordflow">catch</span> (Exception e)</div>
+<div class="line"><span class="lineno">   70</span>        {</div>
+<div class="line"><span class="lineno">   71</span>          CUI.Logger.Error($<span class="stringliteral">&quot;Error in CUICore.DrawAfterGUI: {e}\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   72</span>          HandleError();</div>
+<div class="line"><span class="lineno">   73</span>        }</div>
+<div class="line"><span class="lineno">   74</span>      }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -170,18 +173,19 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_core_8_life_cycle_8cs_source.html#l00063">63</a> of file <a class="el" href="_c_u_i_core_8_life_cycle_8cs_source.html">CUICore.LifeCycle.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   64</span>      {</div>
-<div class="line"><span class="lineno">   65</span>        <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">   66</span>        {</div>
-<div class="line"><span class="lineno">   67</span>          Self.Main.DrawChildren(spriteBatch);</div>
-<div class="line"><span class="lineno">   68</span>          OnDrawBeforeGUI.Raise(spriteBatch);</div>
-<div class="line"><span class="lineno">   69</span>        }</div>
-<div class="line"><span class="lineno">   70</span>        <span class="keywordflow">catch</span> (Exception e)</div>
-<div class="line"><span class="lineno">   71</span>        {</div>
-<div class="line"><span class="lineno">   72</span>          CUI.Logger.Error($<span class="stringliteral">&quot;Error in CUICore.DrawBeforeGUI: {e}\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   73</span>        }</div>
-<div class="line"><span class="lineno">   74</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_core_8_life_cycle_8cs_source.html#l00076">76</a> of file <a class="el" href="_c_u_i_core_8_life_cycle_8cs_source.html">CUICore.LifeCycle.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>      {</div>
+<div class="line"><span class="lineno">   78</span>        <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">   79</span>        {</div>
+<div class="line"><span class="lineno">   80</span>          Self.Main.DrawChildren(spriteBatch);</div>
+<div class="line"><span class="lineno">   81</span>          OnDrawBeforeGUI.Raise(spriteBatch);</div>
+<div class="line"><span class="lineno">   82</span>        }</div>
+<div class="line"><span class="lineno">   83</span>        <span class="keywordflow">catch</span> (Exception e)</div>
+<div class="line"><span class="lineno">   84</span>        {</div>
+<div class="line"><span class="lineno">   85</span>          CUI.Logger.Error($<span class="stringliteral">&quot;Error in CUICore.DrawBeforeGUI: {e}\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   86</span>          HandleError();</div>
+<div class="line"><span class="lineno">   87</span>        }</div>
+<div class="line"><span class="lineno">   88</span>      }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -200,10 +204,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_core_8_life_cycle_8cs_source.html#l00076">76</a> of file <a class="el" href="_c_u_i_core_8_life_cycle_8cs_source.html">CUICore.LifeCycle.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   77</span>      {</div>
-<div class="line"><span class="lineno">   78</span>        <span class="keywordflow">return</span> Self.Main.MouseOverSomeElement;</div>
-<div class="line"><span class="lineno">   79</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_core_8_life_cycle_8cs_source.html#l00090">90</a> of file <a class="el" href="_c_u_i_core_8_life_cycle_8cs_source.html">CUICore.LifeCycle.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   91</span>      {</div>
+<div class="line"><span class="lineno">   92</span>        <span class="keywordflow">return</span> Self.Main.MouseOverSomeElement;</div>
+<div class="line"><span class="lineno">   93</span>      }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -236,37 +240,70 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_core_8_life_cycle_8cs_source.html#l00022">22</a> of file <a class="el" href="_c_u_i_core_8_life_cycle_8cs_source.html">CUICore.LifeCycle.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   23</span>      {</div>
-<div class="line"><span class="lineno">   24</span>        <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">   25</span>        {</div>
-<div class="line"><span class="lineno">   26</span>          Stopwatch sw = Stopwatch.StartNew();</div>
-<div class="line"><span class="lineno">   27</span> </div>
-<div class="line"><span class="lineno">   28</span>          Self._Input.Update(totalTime, mouse, keyboard, textInput);</div>
-<div class="line"><span class="lineno">   29</span>          Self.EventConstructor.Construct(Self._Input);</div>
-<div class="line"><span class="lineno">   30</span> </div>
-<div class="line"><span class="lineno">   31</span>          Self.TopMain.Update(totalTime, Self._Input);</div>
-<div class="line"><span class="lineno">   32</span>          Self.Main.Update(totalTime, Self._Input);</div>
-<div class="line"><span class="lineno">   33</span> </div>
-<div class="line"><span class="lineno">   34</span>          Self.GlobalFocusTracker.DispatchKeyboadEvents();</div>
-<div class="line"><span class="lineno">   35</span>          Self.GlobalFocusTracker.ResolveFocus(Self._Input.SomethingFocusedElsewhere);</div>
-<div class="line"><span class="lineno">   36</span> </div>
-<div class="line"><span class="lineno">   37</span>          Self._AnimationPlayer.Update();</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_core_8_life_cycle_8cs_source.html#l00033">33</a> of file <a class="el" href="_c_u_i_core_8_life_cycle_8cs_source.html">CUICore.LifeCycle.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   34</span>      {</div>
+<div class="line"><span class="lineno">   35</span>        <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">   36</span>        {</div>
+<div class="line"><span class="lineno">   37</span>          Stopwatch sw = Stopwatch.StartNew();</div>
 <div class="line"><span class="lineno">   38</span> </div>
-<div class="line"><span class="lineno">   39</span>          OnUpdate.Raise(totalTime);</div>
-<div class="line"><span class="lineno">   40</span> </div>
-<div class="line"><span class="lineno">   41</span>          sw.Stop();</div>
-<div class="line"><span class="lineno">   42</span>          <span class="comment">// CUI.Logger.Log($&quot;Update took {sw.ElapsedTicks}&quot;);</span></div>
-<div class="line"><span class="lineno">   43</span>        }</div>
-<div class="line"><span class="lineno">   44</span>        <span class="keywordflow">catch</span> (Exception e)</div>
-<div class="line"><span class="lineno">   45</span>        {</div>
-<div class="line"><span class="lineno">   46</span>          CUI.Logger.Error(e);</div>
-<div class="line"><span class="lineno">   47</span>        }</div>
-<div class="line"><span class="lineno">   48</span>      }</div>
+<div class="line"><span class="lineno">   39</span>          Self._Input.Update(totalTime, mouse, keyboard, textInput);</div>
+<div class="line"><span class="lineno">   40</span>          Self.EventConstructor.Construct(Self._Input);</div>
+<div class="line"><span class="lineno">   41</span> </div>
+<div class="line"><span class="lineno">   42</span>          Self.TopMain.Update(totalTime, Self._Input);</div>
+<div class="line"><span class="lineno">   43</span>          Self.Main.Update(totalTime, Self._Input);</div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span>          Self.GlobalFocusTracker.DispatchKeyboadEvents();</div>
+<div class="line"><span class="lineno">   46</span>          Self.GlobalFocusTracker.ResolveFocus(Self._Input.SomethingFocusedElsewhere);</div>
+<div class="line"><span class="lineno">   47</span> </div>
+<div class="line"><span class="lineno">   48</span>          Self._AnimationPlayer.Update();</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>          OnUpdate.Raise(totalTime);</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>          sw.Stop();</div>
+<div class="line"><span class="lineno">   53</span>          <span class="comment">// CUI.Logger.Log($&quot;Update took {sw.ElapsedTicks}&quot;);</span></div>
+<div class="line"><span class="lineno">   54</span>        }</div>
+<div class="line"><span class="lineno">   55</span>        <span class="keywordflow">catch</span> (Exception e)</div>
+<div class="line"><span class="lineno">   56</span>        {</div>
+<div class="line"><span class="lineno">   57</span>          CUI.Logger.Error(e);</div>
+<div class="line"><span class="lineno">   58</span>          HandleError();</div>
+<div class="line"><span class="lineno">   59</span>        }</div>
+<div class="line"><span class="lineno">   60</span>      }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a2b3862318f4826fa3786a8db72ce3d40" name="a2b3862318f4826fa3786a8db72ce3d40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b3862318f4826fa3786a8db72ce3d40">&#9670;&#160;</a></span>ErrorCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CrabUI.CUICore.LifeCycle_Part.ErrorCount = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_core_8_life_cycle_8cs_source.html#l00023">23</a> of file <a class="el" href="_c_u_i_core_8_life_cycle_8cs_source.html">CUICore.LifeCycle.cs</a>.</p>
+
+</div>
+</div>
+<a id="a775a4dace45b72f8201c773dfc19479e" name="a775a4dace45b72f8201c773dfc19479e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a775a4dace45b72f8201c773dfc19479e">&#9670;&#160;</a></span>MaxErrorCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CrabUI.CUICore.LifeCycle_Part.MaxErrorCount = 10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_core_8_life_cycle_8cs_source.html#l00022">22</a> of file <a class="el" href="_c_u_i_core_8_life_cycle_8cs_source.html">CUICore.LifeCycle.cs</a>.</p>
+
+</div>
+</div>
 <a id="a4d2653ba9008a28d24e3ed65041ebaef" name="a4d2653ba9008a28d24e3ed65041ebaef"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4d2653ba9008a28d24e3ed65041ebaef">&#9670;&#160;</a></span>OnDrawAfterGUI</h2>
 

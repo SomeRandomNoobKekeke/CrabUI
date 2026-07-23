@@ -20,23 +20,24 @@ namespace CUILibs
   /// </summary>
   public static class ModInfo
   {
-    public static ContentPackage Package
+    public static ContentPackage GetPackageForAssembly(Assembly assembly)
     {
-      get
+      if (assembly == typeof(GameMain).Assembly) return null;
+
+      PluginManagementService pluginManagement = LuaCsSetup.Instance.PluginManagementService as PluginManagementService;
+
+      foreach (var (package, asmLoader) in pluginManagement._assemblyLoaders)
       {
-        PluginManagementService pluginManagement = LuaCsSetup.Instance.PluginManagementService as PluginManagementService;
-
-        foreach (var (package, asmLoader) in pluginManagement._assemblyLoaders)
+        if (asmLoader.Assemblies.Any(asm => asm == assembly))
         {
-          if (asmLoader.Assemblies.Any(asm => asm == Assembly.GetExecutingAssembly()))
-          {
-            return package;
-          }
+          return package;
         }
-
-        throw new UnreachableException();
       }
+
+      throw new UnreachableException();
     }
+
+    public static ContentPackage Package => GetPackageForAssembly(Assembly.GetExecutingAssembly());
 
     // public static string AssemblyName => Assembly.GetExecutingAssembly().GetName().Name;
     public static string HookId => Package.Name;

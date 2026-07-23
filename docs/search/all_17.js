@@ -1,19 +1,19 @@
 var searchData=
 [
-  ['package_0',['Then why are you putting solo runnner in CUI master package?',['../_other_concepts.html#autotoc_md19',1,'']]],
-  ['palettes_20wip_20mostly_20borked_1',['Styles and palettes (wip, mostly borked)',['../_other_concepts.html#autotoc_md25',1,'']]],
+  ['package_0',['Then why are you putting solo runner in CUI master package?',['../_other_concepts.html#autotoc_md19',1,'']]],
+  ['palettes_20wip_20mostly_20borked_1',['Styles and palettes (wip, mostly borked)',['../_other_concepts.html#autotoc_md27',1,'']]],
   ['part_2',['Part',['../class_crab_u_i_1_1_c_u_i_component_1_1_part.html',1,'CrabUI.CUIComponent.Part'],['../class_crab_u_i_1_1_c_u_i_core_1_1_part.html',1,'CrabUI.CUICore.Part'],['../class_crab_u_i_1_1_c_u_i_main_component_1_1_part.html',1,'CrabUI.CUIMainComponent.Part'],['../class_crab_u_i_1_1_c_u_i_text_input_1_1_part.html',1,'CrabUI.CUITextInput.Part'],['../class_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_component_1_1_part.html',1,'CrabUIUser.HowLayoutsShouldGenerallyWork.Component.Part'],['../class_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_list_component_1_1_part.html',1,'CrabUIUser.HowLayoutsShouldGenerallyWork.ListComponent.Part']]],
-  ['parts_3',['Parts',['../_notes_for_code_divers.html#autotoc_md35',1,'Chimera Parts'],['../_notes_for_code_divers.html#autotoc_md31',1,'Parts']]],
-  ['parts_4',['Adapter parts',['../_notes_for_code_divers.html#autotoc_md32',1,'']]],
+  ['parts_3',['Parts',['../_notes_for_code_divers.html#autotoc_md37',1,'Chimera Parts'],['../_notes_for_code_divers.html#autotoc_md33',1,'Parts']]],
+  ['parts_4',['Adapter parts',['../_notes_for_code_divers.html#autotoc_md34',1,'']]],
   ['passivestrategy_5',['PassiveStrategy',['../class_crab_u_i_1_1_text_block_1_1_passive_strategy.html',1,'CrabUI::TextBlock']]],
-  ['pathing_3a_6',['Temporary solution to pathing:',['../md__client_project_2_client_source_2_changelog.html#autotoc_md85',1,'']]],
-  ['pathmanager_7',['PathManager',['../class_crab_u_i_1_1_path_manager.html',1,'CrabUI']]],
+  ['path_20resolution_6',['path resolution',['../_other_concepts.html#autotoc_md22',1,'']]],
+  ['pathing_3a_7',['Temporary solution to pathing:',['../md__client_project_2_client_source_2_changelog.html#autotoc_md91',1,'']]],
   ['pattern_8',['Pattern',['../class_crab_u_i_1_1_layout_marker_1_1_pattern.html',1,'CrabUI::LayoutMarker']]],
   ['performanceofselect_9',['PerformanceOfSelect',['../class_crab_u_i_user_1_1_performance_of_select.html',1,'CrabUIUser']]],
   ['pluginlifecycle_10',['PluginLifeCycle',['../class_c_u_i_libs_1_1_plugin_life_cycle.html',1,'CUILibs']]],
   ['point_11',['Point',['../class_c_u_i_libs_1_1_logger.html#a9f64a28ceff0377a6dc80529bdc623e1',1,'CUILibs::Logger']]],
-  ['pool_12',['Pool',['../_some_examples.html#autotoc_md41',1,'&lt;a class=&quot;el&quot; href=&quot;_pool_8cs_source.html&quot;&gt;Pool &lt;/a&gt;'],['../class_crab_u_i_user_1_1_e2_e_test_pack_1_1_pool.html',1,'CrabUIUser.E2ETestPack.Pool']]],
-  ['pool_20cs_20pool_13',['&lt;a class=&quot;el&quot; href=&quot;_pool_8cs_source.html&quot;&gt;Pool &lt;/a&gt;',['../_some_examples.html#autotoc_md41',1,'']]],
+  ['pool_12',['Pool',['../_some_examples.html#autotoc_md43',1,'&lt;a class=&quot;el&quot; href=&quot;_pool_8cs_source.html&quot;&gt;Pool &lt;/a&gt;'],['../class_crab_u_i_user_1_1_e2_e_test_pack_1_1_pool.html',1,'CrabUIUser.E2ETestPack.Pool']]],
+  ['pool_20cs_20pool_13',['&lt;a class=&quot;el&quot; href=&quot;_pool_8cs_source.html&quot;&gt;Pool &lt;/a&gt;',['../_some_examples.html#autotoc_md43',1,'']]],
   ['precompiled_20mods_14',['For precompiled mods',['../_quick_start.html#autotoc_md2',1,'']]],
   ['primitive_20types_3a_15',['Commonly used &quot;primitive&quot; types:',['../_overview.html#autotoc_md10',1,'']]],
   ['primitivevisualelement_16',['PrimitiveVisualElement',['../class_crab_u_i_1_1_visual_unit_1_1_primitive_visual_element.html',1,'CrabUI::VisualUnit']]],
@@ -50,8 +50,8 @@ var searchData=
   ['protectedinterfacemembers_47',['ProtectedInterfaceMembers',['../class_crab_u_i_user_1_1_protected_interface_members.html',1,'CrabUIUser']]],
   ['proxieswithinterfaces_48',['ProxiesWithInterfaces',['../class_crab_u_i_user_1_1_class_mapping_1_1_proxies_with_interfaces.html',1,'CrabUIUser::ClassMapping']]],
   ['proxyperformance_49',['ProxyPerformance',['../class_crab_u_i_user_1_1_proxy_performance.html',1,'CrabUIUser']]],
-  ['public_50',['- Everything was public',['../md__client_project_2_client_source_2_changelog.html#autotoc_md62',1,'']]],
+  ['public_50',['- Everything was public',['../md__client_project_2_client_source_2_changelog.html#autotoc_md68',1,'']]],
   ['public_5fcommands_5fpart_51',['public_Commands_Part',['../class_crab_u_i_1_1_c_u_i_component_1_1public___commands___part.html',1,'CrabUI::CUIComponent']]],
   ['publicinternalaccess_52',['PublicInternalAccess',['../class_crab_u_i_user_1_1_internals_in_derived_1_1_component_a_1_1_public_internal_access.html',1,'CrabUIUser.InternalsInDerived.ComponentA.PublicInternalAccess'],['../class_crab_u_i_user_1_1_internals_in_derived_1_1_component_b_1_1_public_internal_access.html',1,'CrabUIUser.InternalsInDerived.ComponentB.PublicInternalAccess']]],
-  ['putting_20solo_20runnner_20in_20cui_20master_20package_53',['Then why are you putting solo runnner in CUI master package?',['../_other_concepts.html#autotoc_md19',1,'']]]
+  ['putting_20solo_20runner_20in_20cui_20master_20package_53',['Then why are you putting solo runner in CUI master package?',['../_other_concepts.html#autotoc_md19',1,'']]]
 ];

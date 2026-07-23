@@ -54,11 +54,15 @@ void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a510c38d1b0a1b77de5
 \item 
 void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_aacdc8a408cd8f86218c37e3d2504c6a9}{Print\+Visual\+Split}} ()
 \item 
-void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a0686c82ff971e9eed6afae581c19e3be}{Init\+Focus\+Stuff}} ()
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a3ac0f246c9cd4da4b36c434cc75d9154}{Click}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a2d957da5b3a695ab29d582958e0cf71e}{Press\+Key}} (Keys key)
 \item 
 void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_af1c451dcf2101490e91677a324cda7a4}{Handle\+Focus\+Probe}} (\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_focus_request_event}{CUIFocus\+Request\+Event}} e)
 \item 
 void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ae3189b3a54a68395c6e28f61d542bbbe}{Focus}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_afe3d12ed76204347065442cbb33caabe}{Blur}} ()
 \item 
 void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a84963ce8cfd9360263599cde20220bd5}{Save\+To}} (string path)
 \item 
@@ -95,6 +99,8 @@ static T \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a441833e2a2a4f2
 \item 
 static CUIComponent \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a18ddf33f3422dbea552dae6c4cf613a3}{Load\+From}} (string path)
 \item 
+static T \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_af2d4e034a81919410aad6c4b63b41e1b}{Deserialize$<$ T $>$}} (XElement element)
+\item 
 static CUIComponent \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ace149ae70802abfae8dc6bd821c28a35}{Deserialize}} (XElement element)
 \end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes inherited from \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component}{Crab\+UI.\+CUIComponent}}}
@@ -116,7 +122,18 @@ virtual void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a297ce30514
 \item 
 virtual void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a4f51d684b48f4ea9fe94891b1a7f948e}{On\+Detached\+From\+Main\+Component}} (\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_main_component}{CUIMain\+Component}} main\+Component)
 \item 
+virtual void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ada873da053f0f370c9b506d6b6a1696f}{Before\+Serialization}} ()
+\item 
+virtual void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ae3f13990c051ac2e0a7227922965c712}{After\+Serialization}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_afe9cc29e69b545e57a7b81a272ef505e}{Init\+Visual\+Slots}} ()
+\item 
 virtual void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_afd2ce1b28a8260b7b3c2372fc8888b02}{Update\+Rects}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component}{Crab\+UI.\+CUIComponent}}}
+\begin{DoxyCompactItemize}
+\item 
+Slot$<$ \doxymbox{\hyperlink{class_crab_u_i_1_1_simple_texture}{Simple\+Texture}} $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a03acaac1c7ad28fc393b86045c049a16}{Background\+Slot}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Properties inherited from \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_frame}{Crab\+UI.\+CUIFrame}}}
 \begin{DoxyCompactItemize}
@@ -185,13 +202,13 @@ bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ad23cf52a0c5645b41c
 \item 
 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_dictionary___part}{Dictionary\+\_\+\+Part}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ad0fd00bef3bab7b9b5a5588719851192}{As\+\_\+\+Dictionary}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \item 
-bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_abd55bc8278acdc223ac0967ccd95eede}{Mouse\+Over}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
-\item 
-bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a964b2a47ce7b8b00fefc21cec56bb703}{Mouse\+Pressed}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
-\item 
 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_events___part}{Events\+\_\+\+Part}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_abd2cc8fe5529f145286eca5f4bfcba91}{Events}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \item 
 bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a53359e54295a51d37c30a3f88d9c14b8}{Consume\+Mouse\+Events}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_abd55bc8278acdc223ac0967ccd95eede}{Mouse\+Over}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a964b2a47ce7b8b00fefc21cec56bb703}{Mouse\+Pressed}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \item 
 Action$<$ CUIComponent, \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_down_event}{CUIMouse\+Down\+Event}} $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a61f5d241dafd36868c63d12bf5872d67}{On\+Mouse\+Down}}\hspace{0.3cm}{\ttfamily  \+[set]\+}
 \item 
@@ -210,6 +227,8 @@ bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_aeaa8862f5910e4accd
 bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a8af5dbbd20ae885e75b22f15e3490f31}{Focused}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \item 
 bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a7e1d73c9d920b2f43089c39a40d793c5}{Focusable}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a6ddfaf66a411f62478439fc0640820df}{Manually\+Focused}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
 \item 
 Action \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_aa9dc1e6d7a7430cc0550d7c522cba903}{Add\+On\+Focus}}\hspace{0.3cm}{\ttfamily  \+[set]\+}
 \item 
@@ -255,6 +274,10 @@ virtual \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_main_compone
 \item 
 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_visual_restructure_notifier___part}{Visual\+Restructure\+Notifier\+\_\+\+Part}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_add514561fba6873435770ad6f04c2a49}{Visual\+Restructure\+Notifier}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \item 
+CUISerialization\+Mode \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a4b7eb70658f8980289a65596eedfd307}{Serialization\+Mode}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ac809b22336545d5265ce8d1d38383ad7}{Serializable}} = true\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_string_dictionary___part}{String\+Dictionary\+\_\+\+Part}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ae7f438b0b698ceed6ed4a0237df35846}{As\+\_\+\+String\+Dictionary}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \item 
 CUIPalette\+Rank \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a63bb7a754341f29b8bdd9669aeb56a07}{Palette\+Rank}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
@@ -271,7 +294,7 @@ bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a4a7f71b549f18d2f14
 \item 
 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_style___part}{Style\+\_\+\+Part}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ab3a006ca4cd1bdef264fceb570826030}{Styles}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \item 
-\doxymbox{\hyperlink{class_crab_u_i_1_1_simple_texture}{Simple\+Texture}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ac3e45044a94079932fcba5008d602b44}{Background}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\doxymbox{\hyperlink{class_crab_u_i_1_1_simple_texture}{Simple\+Texture}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ac3e45044a94079932fcba5008d602b44}{Background}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
 \item 
 Borders \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a1af4fdd8d543306aeb00270064ced746}{Borders}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \item 
@@ -448,42 +471,45 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_debugger_8_main_frame_8cs_source_
 \DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ TextAnchor\ =\ CUIAnchor.LeftCenter,}
 \DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \};}
 \DoxyCodeLine{00045\ }
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}handle"{}}][\textcolor{stringliteral}{"{}close"{}}]\ =\ \textcolor{keyword}{new}\ CUICloseButton();}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ }
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}header"{}}]\ =\ \textcolor{keyword}{new}\ CUIHorizontalList() }
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ Background\ =\ \{\ Color\ =\ \textcolor{keyword}{new}\ Color(0,\ 0,\ 220)\ \},}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ FitContent\ =\ \textcolor{keyword}{new}\ CUIBool2(\textcolor{keyword}{false},\ \textcolor{keyword}{true}),}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}header"{}}][\textcolor{stringliteral}{"{}Events"{}}]\ =\ \textcolor{keyword}{new}\ CUIButton(\textcolor{stringliteral}{"{}Events"{}}) }
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ Flex\ =\ 1,}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ OnMouseDown\ =\ (c,\ e)\ =>\ Pages!.Open(EventsPage),}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00060\ }
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}header"{}}][\textcolor{stringliteral}{"{}Components"{}}]\ =\ \textcolor{keyword}{new}\ CUIButton(\textcolor{stringliteral}{"{}Components"{}}) }
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ OnMouseDown\ =\ (c,\ e)\ =>\ Pages!.Open(ComponentsPage),}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ Flex\ =\ 1,}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00066\ }
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}header"{}}][\textcolor{stringliteral}{"{}Gates"{}}]\ =\ \textcolor{keyword}{new}\ CUIButton(\textcolor{stringliteral}{"{}Gates"{}}) }
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ OnMouseDown\ =\ (c,\ e)\ =>\ Pages!.Open(GatesPage),}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ Flex\ =\ 1,}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00072\ }
-\DoxyCodeLine{00073\ }
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}main"{}}]\ =\ Pages\ =\ \textcolor{keyword}{new}\ CUIPages() }
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ Flex\ =\ 1,}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ Background\ =\ \{\ Color\ =\ Color.Yellow\ \},}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00079\ }
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ IsDebugTool\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}handle"{}}][\textcolor{stringliteral}{"{}close"{}}]\ =\ \textcolor{keyword}{new}\ CUICloseButton() }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ CrossRelative\ =\ \textcolor{keyword}{new}\ CUINullRect(w:\ 1),}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}header"{}}]\ =\ \textcolor{keyword}{new}\ CUIHorizontalList() }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ Background\ =\ \{\ Color\ =\ \textcolor{keyword}{new}\ Color(0,\ 0,\ 220)\ \},}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ FitContent\ =\ \textcolor{keyword}{new}\ CUIBool2(\textcolor{keyword}{false},\ \textcolor{keyword}{true}),}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}header"{}}][\textcolor{stringliteral}{"{}Events"{}}]\ =\ \textcolor{keyword}{new}\ CUIButton(\textcolor{stringliteral}{"{}Events"{}}) }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ Flex\ =\ 1,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ OnMouseDown\ =\ (c,\ e)\ =>\ Pages!.Open(EventsPage),}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}header"{}}][\textcolor{stringliteral}{"{}Components"{}}]\ =\ \textcolor{keyword}{new}\ CUIButton(\textcolor{stringliteral}{"{}Components"{}}) }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ OnMouseDown\ =\ (c,\ e)\ =>\ Pages!.Open(ComponentsPage),}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ Flex\ =\ 1,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}header"{}}][\textcolor{stringliteral}{"{}Gates"{}}]\ =\ \textcolor{keyword}{new}\ CUIButton(\textcolor{stringliteral}{"{}Gates"{}}) }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ OnMouseDown\ =\ (c,\ e)\ =>\ Pages!.Open(GatesPage),}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ Flex\ =\ 1,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}main"{}}]\ =\ Pages\ =\ \textcolor{keyword}{new}\ CUIPages() }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ Flex\ =\ 1,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ Background\ =\ \{\ Color\ =\ Color.Yellow\ \},}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ IsDebugTool\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 

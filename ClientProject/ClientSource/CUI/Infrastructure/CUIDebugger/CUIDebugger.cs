@@ -41,8 +41,8 @@ namespace CrabUI
 
     public void Dispose()
     {
-      OpenButton.RemoveSelf();
-      MainFrame.Close();
+      OpenButton?.RemoveSelf();
+      MainFrame?.Close();
     }
   }
 }

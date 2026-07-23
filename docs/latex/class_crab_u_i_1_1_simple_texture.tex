@@ -12,8 +12,6 @@ Inheritance diagram for Crab\+UI.\+Simple\+Texture:\+\begin{figure}[H]
 override bool \doxymbox{\hyperlink{class_crab_u_i_1_1_simple_texture_a6cc0dec5675cf99ba1363afd1499972e}{Contains}} (Vector2 pos)
 \item 
 override void \doxymbox{\hyperlink{class_crab_u_i_1_1_simple_texture_a1a7adb93d8edce5d95ba1bd25b8ce316}{Draw}} (\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISprite\+Batch}} sprite\+Batch)
-\item 
-XElement \doxymbox{\hyperlink{class_crab_u_i_1_1_simple_texture_a57dcb5efa1af978e532e89f79641c1a8}{Serialize}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_element_base}{Crab\+UI.\+Visual\+Element\+Base}}}
 \begin{DoxyCompactItemize}
@@ -21,6 +19,11 @@ XElement \doxymbox{\hyperlink{class_crab_u_i_1_1_simple_texture_a57dcb5efa1af978
 void \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_element_base_ae22b6b4d97f2e2641632412a0793c9b0}{Draw}} (\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISprite\+Batch}} sprite\+Batch)
 \item 
 virtual bool \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_element_base_a1d0c8a399ba4f4f7e8a1d3d37b42a303}{Is\+Point\+On\+Transparent\+Pixel}} (Vector2 point)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_serializable}{Crab\+UI.\+CUISerializable}}}
+\begin{DoxyCompactItemize}
+\item 
+XElement \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_serializable_ad08444d81d0881704c5e8be25e2f6df9}{Serialize}} ()
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -41,6 +44,8 @@ override \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}} \doxymbo
 CUISprite \doxymbox{\hyperlink{class_crab_u_i_1_1_simple_texture_aa2e1c390fe86dcdd56f4f4ffd27aca22}{Sprite}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
 \item 
 bool \doxymbox{\hyperlink{class_crab_u_i_1_1_simple_texture_a190e95ffd5fb60c0bcb7d5ecb755e9f8}{Ignoretransparent\+Pixels}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+string \doxymbox{\hyperlink{class_crab_u_i_1_1_simple_texture_a96979e320710ad8967b079e2bbe7f353}{Texture\+Key}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
 \item 
 \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture2_d}{CUITexture2D}} \doxymbox{\hyperlink{class_crab_u_i_1_1_simple_texture_a68be1b87b8ea86bfb30b20f228ef2836}{Texture}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
 \item 
@@ -100,7 +105,7 @@ bool \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_element_base_a4f5c943c5ca9e7
 \doxysubsection{Detailed Description}
 
 
-Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00014}{14}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
 
 
 
@@ -119,19 +124,19 @@ Reimplemented from \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_element_base}{
 
 
 
-Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00060}{60}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00061}{61}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00061\ \ \ \ \ \{}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IgnoretransparentPixels)}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !Sprite.IsPointOnTransparentPixel(}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ (pos\ -\/\ Rect.Position)\ /\ Rect.Size}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ );}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Rect.Contains(pos);}
-\DoxyCodeLine{00069\ \ \ \ \ \}}
+\DoxyCodeLine{00062\ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IgnoretransparentPixels)}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !Sprite.IsPointOnTransparentPixel(}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ (pos\ -\/\ Rect.Position)\ /\ Rect.Size}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Rect.Contains(pos);}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_simple_texture_afff9b0d26c6340730e4eda6d04459564}\index{CrabUI.SimpleTexture@{CrabUI.SimpleTexture}!Deserialize@{Deserialize}}
@@ -146,13 +151,13 @@ Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_serializable}{Crab\
 
 
 
-Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00092}{92}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00103}{103}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00093\ \ \ \ \ \{}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ SimpleTexture();}
-\DoxyCodeLine{00095\ \ \ \ \ \}}
+\DoxyCodeLine{00104\ \ \ \ \ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ NotImplementedException();}
+\DoxyCodeLine{00106\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_simple_texture_a1a7adb93d8edce5d95ba1bd25b8ce316}\index{CrabUI.SimpleTexture@{CrabUI.SimpleTexture}!Draw@{Draw}}
@@ -167,35 +172,16 @@ Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_visual_element}{Crab\+U
 
 
 
-Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00084}{84}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00095}{95}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00085\ \ \ \ \ \{}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Visible)}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ Sprite.Draw(spriteBatch,\ RoundedRect);}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00090\ \ \ \ \ \}}
-
-\end{DoxyCode}
-\Hypertarget{class_crab_u_i_1_1_simple_texture_a57dcb5efa1af978e532e89f79641c1a8}\index{CrabUI.SimpleTexture@{CrabUI.SimpleTexture}!Serialize@{Serialize}}
-\index{Serialize@{Serialize}!CrabUI.SimpleTexture@{CrabUI.SimpleTexture}}
-\doxysubsubsection{\texorpdfstring{Serialize()}{Serialize()}}
-{\footnotesize\ttfamily \label{class_crab_u_i_1_1_simple_texture_a57dcb5efa1af978e532e89f79641c1a8} 
-XElement Crab\+UI.\+Simple\+Texture.\+Serialize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
-
-
-
-Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_serializable}{Crab\+UI.\+CUISerializable}}.
-
-
-
-Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00096}{96}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00096\ =>\ \textcolor{keyword}{new}\ XElement(GetType().Name);}
+\DoxyCodeLine{00096\ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Visible)}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ Sprite.Draw(spriteBatch,\ RoundedRect);}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -211,11 +197,11 @@ Color Crab\+UI.\+Simple\+Texture.\+Color\hspace{0.3cm}{\ttfamily [get]}, {\ttfam
 
 
 
-Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00076}{76}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00083}{83}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00076\ \{\ \textcolor{keyword}{get}\ =>\ Sprite.Color;\ \textcolor{keyword}{set}\ =>\ Sprite.Color\ =\ value;\ \}}
+\DoxyCodeLine{00083\ \{\ \textcolor{keyword}{get}\ =>\ Sprite.Color;\ \textcolor{keyword}{set}\ =>\ Sprite.Color\ =\ value;\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_simple_texture_a7df00facdad092aa3c67b3b91f2517ee}\index{CrabUI.SimpleTexture@{CrabUI.SimpleTexture}!ConsumeFocus@{ConsumeFocus}}
@@ -230,11 +216,11 @@ Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_focus_request_event_con
 
 
 
-Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00021}{21}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00022}{22}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00021\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{00022\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_simple_texture_a625db93c2f3ecbc2d2d03c11cab7f7f1}\index{CrabUI.SimpleTexture@{CrabUI.SimpleTexture}!Debug\_RoundedRect@{Debug\_RoundedRect}}
@@ -253,11 +239,11 @@ Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00021}{21}} 
 \end{DoxyCode}
 
 
-Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00016\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}(}
+\DoxyCodeLine{00017\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}(}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_simple_texture_aa76295c2c3a8c4d89840d740ca0834e5}\index{CrabUI.SimpleTexture@{CrabUI.SimpleTexture}!Effects@{Effects}}
@@ -268,11 +254,11 @@ Sprite\+Effects Crab\+UI.\+Simple\+Texture.\+Effects\hspace{0.3cm}{\ttfamily [ge
 
 
 
-Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00079}{79}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00089}{89}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00079\ \{\ \textcolor{keyword}{get}\ =>\ Sprite.Effects;\ \textcolor{keyword}{set}\ =>\ Sprite.Effects\ =\ value;\ \}}
+\DoxyCodeLine{00089\ \{\ \textcolor{keyword}{get}\ =>\ Sprite.Effects;\ \textcolor{keyword}{set}\ =>\ Sprite.Effects\ =\ value;\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_simple_texture_a4d7d82b882088fae4cf5edbf972e2dd5}\index{CrabUI.SimpleTexture@{CrabUI.SimpleTexture}!FocusProbed@{FocusProbed}}
@@ -287,11 +273,11 @@ Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_focus_request_event_con
 
 
 
-Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00022}{22}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00023}{23}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00022\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00023\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_simple_texture_a190e95ffd5fb60c0bcb7d5ecb755e9f8}\index{CrabUI.SimpleTexture@{CrabUI.SimpleTexture}!IgnoretransparentPixels@{IgnoretransparentPixels}}
@@ -302,18 +288,18 @@ bool Crab\+UI.\+Simple\+Texture.\+Ignoretransparent\+Pixels\hspace{0.3cm}{\ttfam
 
 
 
-Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00050}{50}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00051}{51}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00051\ \ \ \ \ \{}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_IgnoretransparentPixels;}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \textcolor{keyword}{set}}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \_IgnoretransparentPixels\ =\ value;}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \_Sprite.ShouldBufferData\ =\ IgnoretransparentPixels;}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00058\ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_IgnoretransparentPixels;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \_IgnoretransparentPixels\ =\ value;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \_Sprite.ShouldBufferData\ =\ IgnoretransparentPixels;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_simple_texture_ae807a545c10d1d52d736c7963e9ee394}\index{CrabUI.SimpleTexture@{CrabUI.SimpleTexture}!LayerDepth@{LayerDepth}}
@@ -324,11 +310,11 @@ float Crab\+UI.\+Simple\+Texture.\+Layer\+Depth\hspace{0.3cm}{\ttfamily [get]}, 
 
 
 
-Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00080}{80}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00091}{91}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00080\ \{\ \textcolor{keyword}{get}\ =>\ Sprite.LayerDepth;\ \textcolor{keyword}{set}\ =>\ Sprite.LayerDepth\ =\ value;\ \}}
+\DoxyCodeLine{00091\ \{\ \textcolor{keyword}{get}\ =>\ Sprite.LayerDepth;\ \textcolor{keyword}{set}\ =>\ Sprite.LayerDepth\ =\ value;\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_simple_texture_a7ebf8807dec5761f941ad7c18f69c06d}\index{CrabUI.SimpleTexture@{CrabUI.SimpleTexture}!Origin@{Origin}}
@@ -339,11 +325,11 @@ Vector2 Crab\+UI.\+Simple\+Texture.\+Origin\hspace{0.3cm}{\ttfamily [get]}, {\tt
 
 
 
-Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00078}{78}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00087}{87}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00078\ \{\ \textcolor{keyword}{get}\ =>\ Sprite.Origin;\ \textcolor{keyword}{set}\ =>\ Sprite.Origin\ =\ value;\ \}}
+\DoxyCodeLine{00087\ \{\ \textcolor{keyword}{get}\ =>\ Sprite.Origin;\ \textcolor{keyword}{set}\ =>\ Sprite.Origin\ =\ value;\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_simple_texture_ae40c97bdbb5b2e26ecafae1ed4c8adb8}\index{CrabUI.SimpleTexture@{CrabUI.SimpleTexture}!Rect@{Rect}}
@@ -358,19 +344,19 @@ Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_visual_element}{Crab\+U
 
 
 
-Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00026}{26}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00027}{27}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00027\ \ \ \ \ \{}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Rect;}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \textcolor{keyword}{set}}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \_Rect\ =\ value;}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ RoundedRect\ =\ \_Rect.Round();}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ Debug\_RoundedRect.Send(\_Rect,\ RoundedRect);}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00035\ \ \ \ \ \}}
+\DoxyCodeLine{00028\ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Rect;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \_Rect\ =\ value;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ RoundedRect\ =\ \_Rect.Round();}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ Debug\_RoundedRect.Send(\_Rect,\ RoundedRect);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_simple_texture_acf85730f1d4324ea2be7920afd41aee4}\index{CrabUI.SimpleTexture@{CrabUI.SimpleTexture}!Rotation@{Rotation}}
@@ -381,11 +367,11 @@ float Crab\+UI.\+Simple\+Texture.\+Rotation\hspace{0.3cm}{\ttfamily [get]}, {\tt
 
 
 
-Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00077}{77}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00085}{85}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00077\ \{\ \textcolor{keyword}{get}\ =>\ Sprite.Rotation;\ \textcolor{keyword}{set}\ =>\ Sprite.Rotation\ =\ value;\ \}}
+\DoxyCodeLine{00085\ \{\ \textcolor{keyword}{get}\ =>\ Sprite.Rotation;\ \textcolor{keyword}{set}\ =>\ Sprite.Rotation\ =\ value;\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_simple_texture_ab4878d2fb686e99d172874488524f249}\index{CrabUI.SimpleTexture@{CrabUI.SimpleTexture}!SourceRectangle@{SourceRectangle}}
@@ -396,11 +382,11 @@ Rectangle? Crab\+UI.\+Simple\+Texture.\+Source\+Rectangle\hspace{0.3cm}{\ttfamil
 
 
 
-Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00074}{74}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00081}{81}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00074\ \{\ \textcolor{keyword}{get}\ =>\ Sprite.SourceRectangle;\ \textcolor{keyword}{set}\ =>\ Sprite.SourceRectangle\ =\ value;\ \}}
+\DoxyCodeLine{00081\ \{\ \textcolor{keyword}{get}\ =>\ Sprite.SourceRectangle;\ \textcolor{keyword}{set}\ =>\ Sprite.SourceRectangle\ =\ value;\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_simple_texture_aa2e1c390fe86dcdd56f4f4ffd27aca22}\index{CrabUI.SimpleTexture@{CrabUI.SimpleTexture}!Sprite@{Sprite}}
@@ -411,18 +397,18 @@ CUISprite Crab\+UI.\+Simple\+Texture.\+Sprite\hspace{0.3cm}{\ttfamily [get]}, {\
 
 
 
-Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00037}{37}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00038}{38}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00038\ \ \ \ \ \{}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Sprite;}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \textcolor{keyword}{set}}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \_Sprite\ =\ value;}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \_Sprite.ShouldBufferData\ =\ IgnoretransparentPixels;}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Sprite;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \_Sprite\ =\ value;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \_Sprite.ShouldBufferData\ =\ IgnoretransparentPixels;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_simple_texture_a68be1b87b8ea86bfb30b20f228ef2836}\index{CrabUI.SimpleTexture@{CrabUI.SimpleTexture}!Texture@{Texture}}
@@ -433,11 +419,29 @@ Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00037}{37}} 
 
 
 
-Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00073}{73}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00079}{79}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00073\ \{\ \textcolor{keyword}{get}\ =>\ Sprite.Texture;\ \textcolor{keyword}{set}\ =>\ Sprite.Texture\ =\ value;\ \}}
+\DoxyCodeLine{00079\ \{\ \textcolor{keyword}{get}\ =>\ Sprite.Texture;\ \textcolor{keyword}{set}\ =>\ Sprite.Texture\ =\ value;\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_simple_texture_a96979e320710ad8967b079e2bbe7f353}\index{CrabUI.SimpleTexture@{CrabUI.SimpleTexture}!TextureKey@{TextureKey}}
+\index{TextureKey@{TextureKey}!CrabUI.SimpleTexture@{CrabUI.SimpleTexture}}
+\doxysubsubsection{\texorpdfstring{TextureKey}{TextureKey}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_simple_texture_a96979e320710ad8967b079e2bbe7f353} 
+string Crab\+UI.\+Simple\+Texture.\+Texture\+Key\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_simple_texture_8cs_source_l00072}{72}} of file \doxymbox{\hyperlink{_simple_texture_8cs_source}{Simple\+Texture.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00073\ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Sprite.Texture.Key;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ Sprite.Texture\ =\ CUICore.TextureManager.Get(value);}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
 
 \end{DoxyCode}
 

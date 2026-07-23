@@ -1,0 +1,128 @@
+\doxysection{Crab\+UI.\+File\+Path\+Resolver Class Reference}
+\hypertarget{class_crab_u_i_1_1_file_path_resolver}{}\label{class_crab_u_i_1_1_file_path_resolver}\index{CrabUI.FilePathResolver@{CrabUI.FilePathResolver}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \doxymbox{\hyperlink{class_crab_u_i_1_1_file_path_resolver_a791d23f58cdcd23eac1c9191194a7d89}{Find\+Best\+Match\+For\+Saving}} (string path)
+\item 
+string \doxymbox{\hyperlink{class_crab_u_i_1_1_file_path_resolver_a41554c0fdf5b30b5dcf7456017a559f3}{Find\+Best\+Match\+For\+Loading}} (string path)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string? \doxymbox{\hyperlink{class_crab_u_i_1_1_file_path_resolver_aa96cc900a362cac6358d10be53224717}{Package\+Dir}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+string? \doxymbox{\hyperlink{class_crab_u_i_1_1_file_path_resolver_a7eb87c2c527e58856205ded24a8aa6f8}{File\+Dir}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_file_path_resolver_8cs_source_l00013}{13}} of file \doxymbox{\hyperlink{_file_path_resolver_8cs_source}{File\+Path\+Resolver.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_file_path_resolver_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_file_path_resolver_a41554c0fdf5b30b5dcf7456017a559f3}\index{CrabUI.FilePathResolver@{CrabUI.FilePathResolver}!FindBestMatchForLoading@{FindBestMatchForLoading}}
+\index{FindBestMatchForLoading@{FindBestMatchForLoading}!CrabUI.FilePathResolver@{CrabUI.FilePathResolver}}
+\doxysubsubsection{\texorpdfstring{FindBestMatchForLoading()}{FindBestMatchForLoading()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_file_path_resolver_a41554c0fdf5b30b5dcf7456017a559f3} 
+string Crab\+UI.\+File\+Path\+Resolver.\+Find\+Best\+Match\+For\+Loading (\begin{DoxyParamCaption}\item[{string}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_file_path_resolver_8cs_source_l00030}{30}} of file \doxymbox{\hyperlink{_file_path_resolver_8cs_source}{File\+Path\+Resolver.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Path.IsPathFullyQualified(path))\ \textcolor{keywordflow}{return}\ path;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (FileDir\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (File.Exists(Path.Combine(FileDir,\ path)))}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Path.Combine(FileDir,\ path);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (PackageDir\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (File.Exists(Path.Combine(PackageDir,\ path)))}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Path.Combine(PackageDir,\ path);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \textcolor{comment}{//\ Relative\ to\ game\ folder\ or\ idk}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ path;}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_file_path_resolver_a791d23f58cdcd23eac1c9191194a7d89}\index{CrabUI.FilePathResolver@{CrabUI.FilePathResolver}!FindBestMatchForSaving@{FindBestMatchForSaving}}
+\index{FindBestMatchForSaving@{FindBestMatchForSaving}!CrabUI.FilePathResolver@{CrabUI.FilePathResolver}}
+\doxysubsubsection{\texorpdfstring{FindBestMatchForSaving()}{FindBestMatchForSaving()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_file_path_resolver_a791d23f58cdcd23eac1c9191194a7d89} 
+string Crab\+UI.\+File\+Path\+Resolver.\+Find\+Best\+Match\+For\+Saving (\begin{DoxyParamCaption}\item[{string}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_file_path_resolver_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_file_path_resolver_8cs_source}{File\+Path\+Resolver.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Path.IsPathFullyQualified(path))\ \textcolor{keywordflow}{return}\ path;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (PackageDir\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Path.Combine(PackageDir,\ path);}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ path;}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_file_path_resolver_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_file_path_resolver_a7eb87c2c527e58856205ded24a8aa6f8}\index{CrabUI.FilePathResolver@{CrabUI.FilePathResolver}!FileDir@{FileDir}}
+\index{FileDir@{FileDir}!CrabUI.FilePathResolver@{CrabUI.FilePathResolver}}
+\doxysubsubsection{\texorpdfstring{FileDir}{FileDir}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_file_path_resolver_a7eb87c2c527e58856205ded24a8aa6f8} 
+string? Crab\+UI.\+File\+Path\+Resolver.\+File\+Dir\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_file_path_resolver_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_file_path_resolver_8cs_source}{File\+Path\+Resolver.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_file_path_resolver_aa96cc900a362cac6358d10be53224717}\index{CrabUI.FilePathResolver@{CrabUI.FilePathResolver}!PackageDir@{PackageDir}}
+\index{PackageDir@{PackageDir}!CrabUI.FilePathResolver@{CrabUI.FilePathResolver}}
+\doxysubsubsection{\texorpdfstring{PackageDir}{PackageDir}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_file_path_resolver_aa96cc900a362cac6358d10be53224717} 
+string? Crab\+UI.\+File\+Path\+Resolver.\+Package\+Dir\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_file_path_resolver_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_file_path_resolver_8cs_source}{File\+Path\+Resolver.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Infrastructure/\+\+File\+Path\+Resolver/\+File\+Path\+Resolver.\+cs\end{DoxyCompactItemize}

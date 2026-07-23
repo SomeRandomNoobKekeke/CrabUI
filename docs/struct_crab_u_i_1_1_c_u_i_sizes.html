@@ -92,16 +92,28 @@ $(function(){initNavTree('struct_crab_u_i_1_1_c_u_i_sizes.html','','struct_crab_
   <div class="headertitle"><div class="title">CrabUI.CUISizes Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
+<div class="dynheader">
+Inheritance diagram for CrabUI.CUISizes:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="struct_crab_u_i_1_1_c_u_i_sizes.png" usemap="#CrabUI_2ECUISizes_map" alt=""/>
+  <map id="CrabUI_2ECUISizes_map" name="CrabUI_2ECUISizes_map">
+<area href="interface_crab_u_i_1_1_i_parsable.html" alt="CrabUI.IParsable" shape="rect" coords="0,0,108,24"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3c8feb3b6a43f209910d37455b20e723" id="r_a3c8feb3b6a43f209910d37455b20e723"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a3c8feb3b6a43f209910d37455b20e723">CUISizes</a> (float left=0, float top=0, float right=0, float bottom=0)</td></tr>
+<tr class="memitem:a20c33acbebcfe4069ad34ff74b08970c" id="r_a20c33acbebcfe4069ad34ff74b08970c"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a20c33acbebcfe4069ad34ff74b08970c">CUISizes</a> (float top=0, float right=0, float bottom=0, float left=0)</td></tr>
 <tr class="memitem:a4ab681972f599d05464bde583fce0dd2" id="r_a4ab681972f599d05464bde583fce0dd2"><td class="memItemLeft">override string&#160;</td><td class="memItemRight"><a class="el" href="#a4ab681972f599d05464bde583fce0dd2">ToString</a> ()</td></tr>
+<tr class="memitem:ac12e0983af94c0f40fd3882296f27861" id="r_ac12e0983af94c0f40fd3882296f27861"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#ac12e0983af94c0f40fd3882296f27861">ToText</a> ()</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a3c7c67553505828a269fdb4dc5e44d63" id="r_a3c7c67553505828a269fdb4dc5e44d63"><td class="memItemLeft">static CUISizes&#160;</td><td class="memItemRight"><a class="el" href="#a3c7c67553505828a269fdb4dc5e44d63">operator+</a> (CUISizes a, CUISizes b)</td></tr>
 <tr class="memitem:a3ac9228da8d3d2f324c4ea7c7074e063" id="r_a3ac9228da8d3d2f324c4ea7c7074e063"><td class="memItemLeft">static CUISizes&#160;</td><td class="memItemRight"><a class="el" href="#a3ac9228da8d3d2f324c4ea7c7074e063">operator-</a> (CUISizes a, CUISizes b)</td></tr>
+<tr class="memitem:a649886b30ea65baa926b9222e3d80805" id="r_a649886b30ea65baa926b9222e3d80805"><td class="memItemLeft">static object IParsable.&#160;</td><td class="memItemRight"><a class="el" href="#a649886b30ea65baa926b9222e3d80805">Parse</a> (string raw)</td></tr>
+<tr class="memitem:a4ca6f9a05b9af2a3f689644dcf9ffcfc" id="r_a4ca6f9a05b9af2a3f689644dcf9ffcfc"><td class="memItemLeft">static CUISizes&#160;</td><td class="memItemRight"><a class="el" href="#a4ca6f9a05b9af2a3f689644dcf9ffcfc">Parse</a> (string s)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -120,8 +132,8 @@ Properties</h2></td></tr>
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="_c_u_i_sizes_8cs_source.html#l00015">15</a> of file <a class="el" href="_c_u_i_sizes_8cs_source.html">CUISizes.cs</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a3c8feb3b6a43f209910d37455b20e723" name="a3c8feb3b6a43f209910d37455b20e723"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c8feb3b6a43f209910d37455b20e723">&#9670;&#160;</a></span>CUISizes()</h2>
+<a id="a20c33acbebcfe4069ad34ff74b08970c" name="a20c33acbebcfe4069ad34ff74b08970c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20c33acbebcfe4069ad34ff74b08970c">&#9670;&#160;</a></span>CUISizes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -129,11 +141,6 @@ Properties</h2></td></tr>
         <tr>
           <td class="memname">CrabUI.CUISizes.CUISizes </td>
           <td>(</td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>left</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>top</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>, </td>
         </tr>
         <tr>
@@ -144,17 +151,22 @@ Properties</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>bottom</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>bottom</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>left</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_c_u_i_sizes_8cs_source.html#l00043">43</a> of file <a class="el" href="_c_u_i_sizes_8cs_source.html">CUISizes.cs</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   44</span>    {</div>
-<div class="line"><span class="lineno">   45</span>      Left = left;</div>
-<div class="line"><span class="lineno">   46</span>      Top = top;</div>
-<div class="line"><span class="lineno">   47</span>      Right = right;</div>
-<div class="line"><span class="lineno">   48</span>      Bottom = bottom;</div>
+<div class="line"><span class="lineno">   45</span>      Top = top;</div>
+<div class="line"><span class="lineno">   46</span>      Right = right;</div>
+<div class="line"><span class="lineno">   47</span>      Bottom = bottom;</div>
+<div class="line"><span class="lineno">   48</span>      Left = left;</div>
 <div class="line"><span class="lineno">   49</span>    }</div>
 </div><!-- fragment -->
 </div>
@@ -189,10 +201,10 @@ Properties</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_c_u_i_sizes_8cs_source.html#l00027">27</a> of file <a class="el" href="_c_u_i_sizes_8cs_source.html">CUISizes.cs</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   28</span>      =&gt; <span class="keyword">new</span> CUISizes(</div>
-<div class="line"><span class="lineno">   29</span>        a.Left + b.Left,</div>
-<div class="line"><span class="lineno">   30</span>        a.Top + b.Top,</div>
-<div class="line"><span class="lineno">   31</span>        a.Right + b.Right,</div>
-<div class="line"><span class="lineno">   32</span>        a.Bottom + b.Bottom</div>
+<div class="line"><span class="lineno">   29</span>        a.Top + b.Top,</div>
+<div class="line"><span class="lineno">   30</span>        a.Right + b.Right,</div>
+<div class="line"><span class="lineno">   31</span>        a.Bottom + b.Bottom,</div>
+<div class="line"><span class="lineno">   32</span>        a.Left + b.Left</div>
 <div class="line"><span class="lineno">   33</span>      );</div>
 </div><!-- fragment -->
 </div>
@@ -226,11 +238,95 @@ Properties</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_c_u_i_sizes_8cs_source.html#l00035">35</a> of file <a class="el" href="_c_u_i_sizes_8cs_source.html">CUISizes.cs</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   36</span>      =&gt; <span class="keyword">new</span> CUISizes(</div>
-<div class="line"><span class="lineno">   37</span>        a.Left - b.Left,</div>
-<div class="line"><span class="lineno">   38</span>        a.Top - b.Top,</div>
-<div class="line"><span class="lineno">   39</span>        a.Right - b.Right,</div>
-<div class="line"><span class="lineno">   40</span>        a.Bottom - b.Bottom</div>
+<div class="line"><span class="lineno">   37</span>        a.Top - b.Top,</div>
+<div class="line"><span class="lineno">   38</span>        a.Right - b.Right,</div>
+<div class="line"><span class="lineno">   39</span>        a.Bottom - b.Bottom,</div>
+<div class="line"><span class="lineno">   40</span>        a.Left - b.Left</div>
 <div class="line"><span class="lineno">   41</span>      );</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a649886b30ea65baa926b9222e3d80805" name="a649886b30ea65baa926b9222e3d80805"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a649886b30ea65baa926b9222e3d80805">&#9670;&#160;</a></span>Parse() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">object IParsable. CrabUI.CUISizes.Parse </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>raw</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="interface_crab_u_i_1_1_i_parsable.html">CrabUI.IParsable</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_sizes_8cs_source.html#l00055">55</a> of file <a class="el" href="_c_u_i_sizes_8cs_source.html">CUISizes.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   55</span>=&gt; Parse(raw);</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4ca6f9a05b9af2a3f689644dcf9ffcfc" name="a4ca6f9a05b9af2a3f689644dcf9ffcfc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ca6f9a05b9af2a3f689644dcf9ffcfc">&#9670;&#160;</a></span>Parse() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CUISizes CrabUI.CUISizes.Parse </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="interface_crab_u_i_1_1_i_parsable.html">CrabUI.IParsable</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_sizes_8cs_source.html#l00056">56</a> of file <a class="el" href="_c_u_i_sizes_8cs_source.html">CUISizes.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   57</span>    {</div>
+<div class="line"><span class="lineno">   58</span>      <span class="keywordtype">string</span> content = s.Substring(</div>
+<div class="line"><span class="lineno">   59</span>        s.IndexOf(<span class="charliteral">&#39;[&#39;</span>) + 1,</div>
+<div class="line"><span class="lineno">   60</span>        s.IndexOf(<span class="charliteral">&#39;]&#39;</span>) - s.IndexOf(<span class="charliteral">&#39;[&#39;</span>) - 1</div>
+<div class="line"><span class="lineno">   61</span>      );</div>
+<div class="line"><span class="lineno">   62</span> </div>
+<div class="line"><span class="lineno">   63</span>      var components = content.Split(<span class="charliteral">&#39;,&#39;</span>).Select(a =&gt; a.Trim());</div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   65</span>      <span class="keywordtype">string</span> st = components.ElementAtOrDefault(0);</div>
+<div class="line"><span class="lineno">   66</span>      <span class="keywordtype">string</span> sr = components.ElementAtOrDefault(1);</div>
+<div class="line"><span class="lineno">   67</span>      <span class="keywordtype">string</span> sb = components.ElementAtOrDefault(2);</div>
+<div class="line"><span class="lineno">   68</span>      <span class="keywordtype">string</span> sl = components.ElementAtOrDefault(3);</div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>      <span class="keywordtype">float</span> t = 0;</div>
+<div class="line"><span class="lineno">   71</span>      <span class="keywordtype">float</span> r = 0;</div>
+<div class="line"><span class="lineno">   72</span>      <span class="keywordtype">float</span> b = 0;</div>
+<div class="line"><span class="lineno">   73</span>      <span class="keywordtype">float</span> l = 0;</div>
+<div class="line"><span class="lineno">   74</span> </div>
+<div class="line"><span class="lineno">   75</span>      <span class="keywordflow">if</span> (!String.IsNullOrEmpty(st)) t = <span class="keywordtype">float</span>.Parse(st);</div>
+<div class="line"><span class="lineno">   76</span>      <span class="keywordflow">if</span> (!String.IsNullOrEmpty(sr)) r = <span class="keywordtype">float</span>.Parse(sr);</div>
+<div class="line"><span class="lineno">   77</span>      <span class="keywordflow">if</span> (!String.IsNullOrEmpty(sb)) b = <span class="keywordtype">float</span>.Parse(sb);</div>
+<div class="line"><span class="lineno">   78</span>      <span class="keywordflow">if</span> (!String.IsNullOrEmpty(sl)) l = <span class="keywordtype">float</span>.Parse(sl);</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>      <span class="keywordflow">return</span> <span class="keyword">new</span> CUISizes(t, r, b, l);</div>
+<div class="line"><span class="lineno">   81</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -250,7 +346,29 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_c_u_i_sizes_8cs_source.html#l00051">51</a> of file <a class="el" href="_c_u_i_sizes_8cs_source.html">CUISizes.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   51</span>=&gt; $<span class="stringliteral">&quot;[{Left},{Top},{Right},{Bottom}]&quot;</span>;</div>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>=&gt; $<span class="stringliteral">&quot;[{Top},{Right},{Bottom},{Left}]&quot;</span>;</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac12e0983af94c0f40fd3882296f27861" name="ac12e0983af94c0f40fd3882296f27861"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac12e0983af94c0f40fd3882296f27861">&#9670;&#160;</a></span>ToText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string CrabUI.CUISizes.ToText </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="interface_crab_u_i_1_1_i_parsable.html">CrabUI.IParsable</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_sizes_8cs_source.html#l00053">53</a> of file <a class="el" href="_c_u_i_sizes_8cs_source.html">CUISizes.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>=&gt; ToString();</div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -19,37 +19,47 @@
 \DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00015}00015\ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00016}\doxymbox{\hyperlink{class_crab_u_i_1_1_solo_c_u_i_runner_1_1_c_u_i_core_handles___part}{00016}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_solo_c_u_i_runner_1_1_c_u_i_core_handles___part}{CUICoreHandles\_Part}}()\ :\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core}{CUICore}}.CUICoreHandles}
 \DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00017}00017\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00018}00018\ \ \ \ \ \ \ \textcolor{keyword}{private}\ DummyIKeyboardSubscriber\ DummyIKeyboardSubscriber\ =\ \textcolor{keyword}{new}();}
-\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00019}00019\ }
-\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00020}00020\ }
-\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00021}00021\ \ \ \ \ \ \ \textcolor{keyword}{public}\ SoloCUIRunner\ Self\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00018}00018\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ IsRelXMLPath(\textcolor{keywordtype}{string}\ path)}
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00019}00019\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ path.EndsWith(\textcolor{stringliteral}{"{}.xml"{}})\ \&\&\ !Path.IsPathFullyQualified(path);}
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00021}00021\ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00022}00022\ }
-\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00023}00023\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_graphics_device}{CUIGraphicsDevice}}\ GraphicsDevice\ =>\ Self.GraphicsDevice;}
-\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00024}00024\ \ \ \ \ \ \ \textcolor{keyword}{public}\ CUIGUI\ GUI\ =>\ Self.CUIGUI;}
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00023}00023\ \ \ \ \ \ \ \textcolor{keyword}{private}\ DummyIKeyboardSubscriber\ DummyIKeyboardSubscriber\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00024}00024\ }
 \DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00025}00025\ }
-\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00026}00026\ \ \ \ \ \ \ \textcolor{keyword}{public}\ CUITextureManager\ CUITextureManager\ =>\ Self.CUITextureManager;}
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00026}00026\ \ \ \ \ \ \ \textcolor{keyword}{public}\ SoloCUIRunner\ Self\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
 \DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00027}00027\ }
-\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00028}00028\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ SaveXDoc(XDocument\ xDoc,\ \textcolor{keywordtype}{string}\ path)}
-\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00029}00029\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ xDoc.Save(Self.PathManager.Normalize(path));}
-\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00031}00031\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00032}00032\ \ \ \ \ \ \ \textcolor{keyword}{public}\ XDocument\ LoadXDoc(\textcolor{keywordtype}{string}\ path)}
-\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00033}00033\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ XDocument.Load(Self.PathManager.Normalize(path));}
-\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00035}00035\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00036}00036\ }
-\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00037}\doxymbox{\hyperlink{class_crab_u_i_1_1_solo_c_u_i_runner_1_1_c_u_i_core_handles___part_a73e16ba4b0666c3830eeedeb9d2f283a}{00037}}\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_solo_c_u_i_runner_1_1_c_u_i_core_handles___part_a73e16ba4b0666c3830eeedeb9d2f283a}{GrabFocus}}()}
-\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00038}00038\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ Barotrauma.GUI.KeyboardDispatcher.Subscriber\ =\ DummyIKeyboardSubscriber;}
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00028}00028\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_graphics_device}{CUIGraphicsDevice}}\ GraphicsDevice\ =>\ Self.GraphicsDevice;}
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00029}00029\ \ \ \ \ \ \ \textcolor{keyword}{public}\ CUIGUI\ GUI\ =>\ Self.CUIGUI;}
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00031}00031\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture_manager}{CUITextureManager}}\ TextureManager\ =>\ Self.TextureManager;}
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00032}00032\ \ \ \ \ \ \ \textcolor{keyword}{public}\ ResourceIOContextHandle\ ResourceIOContext\ =>\ Self.ResourceIOContextHandle;}
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00034}00034\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ InputBlockingMenuOpen\ =>\ Barotrauma.GUI.InputBlockingMenuOpen;}
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00036}00036\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ SaveXDoc(XDocument\ xDoc,\ \textcolor{keywordtype}{string}\ path)}
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00037}00037\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ realPath\ =\ Self.FilePathResolver.FindBestMatchForSaving(path);}
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ xDoc.Save(realPath);}
 \DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00040}00040\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00041}00041\ }
-\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00042}00042\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ ClearFocus()}
-\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00043}00043\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ Barotrauma.GUI.KeyboardDispatcher.Subscriber\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00041}00041\ \ \ \ \ \ \ \textcolor{keyword}{public}\ XDocument\ LoadXDoc(\textcolor{keywordtype}{string}\ path)}
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00042}00042\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ realPath\ =\ Self.FilePathResolver.FindBestMatchForLoading(path);}
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ XDocument.Load(realPath);}
 \DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00045}00045\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00046}00046\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00047}00047\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00048}00048\ }
-\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00049}00049\ \}}
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00047}\doxymbox{\hyperlink{class_crab_u_i_1_1_solo_c_u_i_runner_1_1_c_u_i_core_handles___part_a73e16ba4b0666c3830eeedeb9d2f283a}{00047}}\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_solo_c_u_i_runner_1_1_c_u_i_core_handles___part_a73e16ba4b0666c3830eeedeb9d2f283a}{GrabFocus}}()}
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00048}00048\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ Barotrauma.GUI.KeyboardDispatcher.Subscriber\ =\ DummyIKeyboardSubscriber;}
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00050}00050\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00052}00052\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ ClearFocus()}
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00053}00053\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ Barotrauma.GUI.KeyboardDispatcher.Subscriber\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00055}00055\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00056}00056\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00057}00057\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source_l00059}00059\ \}}
 
 \end{DoxyCode}

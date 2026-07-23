@@ -12,95 +12,129 @@
 \DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_c_u_i_libs}{CUILibs}};}
 \DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework.Graphics;}
 \DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00010}00010\ \textcolor{keyword}{using\ }System.Xml.Linq;}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00011}00011\ }
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00012}00012\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00013}00013\ \{}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00014}\doxymbox{\hyperlink{class_crab_u_i_1_1_simple_texture}{00014}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_simple_texture}{SimpleTexture}}\ :\ VisualElementBase,\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_serializable}{CUISerializable}},\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_focus_request_event_consumer}{IFocusRequestEventConsumer}}}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00015}00015\ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_node}{DebugNode<CUIRect,\ Rectangle>}}\ Debug\_RoundedRect\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}(}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00017}00017\ \ \ \ \ \ \ DebugCategory.RoundedRect,\ CUI.DebugHub,}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00018}00018\ \ \ \ \ \ \ (rect,\ rounded)\ =>\ \$\textcolor{stringliteral}{"{}\{rect\}\ -\/>\ \{rounded\}"{}}}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00019}00019\ \ \ \ \ );}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00020}00020\ }
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ ConsumeFocus\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{ClearableEvent<CUIFocusRequestEvent>}}\ FocusProbed\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00023}00023\ }
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{private}\ Rectangle\ RoundedRect;}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00025}00025\ }
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{private}\ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}\ \_Rect;\ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}\ Rect}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00027}00027\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00028}00028\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Rect;}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00029}00029\ \ \ \ \ \ \ \textcolor{keyword}{set}}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00030}00030\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \_Rect\ =\ value;}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ RoundedRect\ =\ \_Rect.Round();}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ Debug\_RoundedRect.Send(\_Rect,\ RoundedRect);}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00034}00034\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00035}00035\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00036}00036\ }
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{private}\ CUISprite\ \_Sprite\ =\ CUISprite.White;\ \textcolor{keyword}{public}\ CUISprite\ Sprite}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00038}00038\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00039}00039\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Sprite;}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00040}00040\ \ \ \ \ \ \ \textcolor{keyword}{set}}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00041}00041\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \_Sprite\ =\ value;}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \_Sprite.ShouldBufferData\ =\ IgnoretransparentPixels;}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00044}00044\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00045}00045\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00046}00046\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00047}00047\ \textcolor{comment}{\ \ \ \ ///\ <summary>}}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00048}00048\ \textcolor{comment}{\ \ \ \ ///\ Source\ of\ truth\ elevated\ from\ sprite}}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00049}00049\ \textcolor{comment}{\ \ \ \ ///\ </summary>}}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00050}00050\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ \_IgnoretransparentPixels;\ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ IgnoretransparentPixels}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00051}00051\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00052}00052\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_IgnoretransparentPixels;}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00053}00053\ \ \ \ \ \ \ \textcolor{keyword}{set}}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00054}00054\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \_IgnoretransparentPixels\ =\ value;}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \_Sprite.ShouldBufferData\ =\ IgnoretransparentPixels;}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00057}00057\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00058}00058\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00059}00059\ }
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00060}00060\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{bool}\ Contains(Vector2\ pos)}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00061}00061\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00062}00062\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IgnoretransparentPixels)}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00063}00063\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !Sprite.IsPointOnTransparentPixel(}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ (pos\ -\/\ Rect.Position)\ /\ Rect.Size}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ );}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00067}00067\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00068}00068\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Rect.Contains(pos);}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00069}00069\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00011}00011\ \textcolor{keyword}{using\ }System.Text.Json;}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00013}00013\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00014}00014\ \{}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00015}\doxymbox{\hyperlink{class_crab_u_i_1_1_simple_texture}{00015}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_simple_texture}{SimpleTexture}}\ :\ VisualElementBase,\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_serializable}{CUISerializable}},\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_focus_request_event_consumer}{IFocusRequestEventConsumer}}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00016}00016\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_debug_node}{DebugNode<CUIRect,\ Rectangle>}}\ Debug\_RoundedRect\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}(}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00018}00018\ \ \ \ \ \ \ DebugCategory.RoundedRect,\ CUI.DebugHub,}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00019}00019\ \ \ \ \ \ \ (rect,\ rounded)\ =>\ \$\textcolor{stringliteral}{"{}\{rect\}\ -\/>\ \{rounded\}"{}}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00020}00020\ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ ConsumeFocus\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{ClearableEvent<CUIFocusRequestEvent>}}\ FocusProbed\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{private}\ Rectangle\ RoundedRect;}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{private}\ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}\ \_Rect;\ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}\ Rect}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00028}00028\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00029}00029\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Rect;}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00030}00030\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00031}00031\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \_Rect\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ RoundedRect\ =\ \_Rect.Round();}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ Debug\_RoundedRect.Send(\_Rect,\ RoundedRect);}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00035}00035\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{private}\ CUISprite\ \_Sprite\ =\ CUISprite.White;\ \textcolor{keyword}{public}\ CUISprite\ Sprite}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00039}00039\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00040}00040\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Sprite;}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00041}00041\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00042}00042\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \_Sprite\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \_Sprite.ShouldBufferData\ =\ IgnoretransparentPixels;}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00045}00045\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00047}00047\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00048}00048\ \textcolor{comment}{\ \ \ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00049}00049\ \textcolor{comment}{\ \ \ \ ///\ Source\ of\ truth\ elevated\ from\ sprite}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00050}00050\ \textcolor{comment}{\ \ \ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00051}00051\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ \_IgnoretransparentPixels;\ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ IgnoretransparentPixels}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00052}00052\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00053}00053\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_IgnoretransparentPixels;}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00054}00054\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00055}00055\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \_IgnoretransparentPixels\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \_Sprite.ShouldBufferData\ =\ IgnoretransparentPixels;}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00058}00058\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00059}00059\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00061}00061\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{bool}\ Contains(Vector2\ pos)}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00062}00062\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00063}00063\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IgnoretransparentPixels)}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00064}00064\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !Sprite.IsPointOnTransparentPixel(}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ (pos\ -\/\ Rect.Position)\ /\ Rect.Size}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00068}00068\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00069}00069\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Rect.Contains(pos);}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00070}00070\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00071}00071\ }
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00072}00072\ \textcolor{preprocessor}{\ \ \ \ \#region\ Forwarded\ to\ CUISprite}}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00073}00073\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture2_d}{CUITexture2D}}\ Texture\ \{\ \textcolor{keyword}{get}\ =>\ Sprite.Texture;\ \textcolor{keyword}{set}\ =>\ Sprite.Texture\ =\ value;\ \}}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00074}00074\ \ \ \ \ \textcolor{keyword}{public}\ Rectangle?\ SourceRectangle\ \{\ \textcolor{keyword}{get}\ =>\ Sprite.SourceRectangle;\ \textcolor{keyword}{set}\ =>\ Sprite.SourceRectangle\ =\ value;\ \}}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00075}00075\ \ \ \ \ [\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_serializable_prop}{CUISerializableProp}}]}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00076}00076\ \ \ \ \ \textcolor{keyword}{public}\ Color\ Color\ \{\ \textcolor{keyword}{get}\ =>\ Sprite.Color;\ \textcolor{keyword}{set}\ =>\ Sprite.Color\ =\ value;\ \}}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00077}00077\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ Rotation\ \{\ \textcolor{keyword}{get}\ =>\ Sprite.Rotation;\ \textcolor{keyword}{set}\ =>\ Sprite.Rotation\ =\ value;\ \}}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00078}00078\ \ \ \ \ \textcolor{keyword}{public}\ Vector2\ Origin\ \{\ \textcolor{keyword}{get}\ =>\ Sprite.Origin;\ \textcolor{keyword}{set}\ =>\ Sprite.Origin\ =\ value;\ \}}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00079}00079\ \ \ \ \ \textcolor{keyword}{public}\ SpriteEffects\ Effects\ \{\ \textcolor{keyword}{get}\ =>\ Sprite.Effects;\ \textcolor{keyword}{set}\ =>\ Sprite.Effects\ =\ value;\ \}}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00080}00080\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ LayerDepth\ \{\ \textcolor{keyword}{get}\ =>\ Sprite.LayerDepth;\ \textcolor{keyword}{set}\ =>\ Sprite.LayerDepth\ =\ value;\ \}}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00081}00081\ }
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00082}00082\ \textcolor{preprocessor}{\ \ \ \ \#endregion}}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00083}00083\ }
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00084}00084\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ Draw(\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISpriteBatch}}\ spriteBatch)}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00085}00085\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00086}00086\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Visible)}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00087}00087\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ Sprite.Draw(spriteBatch,\ RoundedRect);}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00089}00089\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00090}00090\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00091}00091\ }
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00092}00092\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{object}\ Deserialize(XElement\ element)}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00093}00093\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00094}00094\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_simple_texture}{SimpleTexture}}();}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00095}00095\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00096}00096\ \ \ \ \ \textcolor{keyword}{public}\ XElement\ Serialize()\ =>\ \textcolor{keyword}{new}\ XElement(GetType().Name);}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00097}00097\ }
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00098}00098\ }
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00099}00099\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00100}00100\ \}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00072}00072\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ TextureKey}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00073}00073\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00074}00074\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Sprite.Texture.Key;}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00075}00075\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ Sprite.Texture\ =\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core}{CUICore}}.TextureManager.Get(value);}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00076}00076\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00077}00077\ \textcolor{preprocessor}{\ \ \ \ \#region\ Forwarded\ to\ CUISprite}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00078}00078\ \ \ \ \ [\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_serializable_prop}{CUISerializableProp}}]}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00079}00079\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture2_d}{CUITexture2D}}\ Texture\ \{\ \textcolor{keyword}{get}\ =>\ Sprite.Texture;\ \textcolor{keyword}{set}\ =>\ Sprite.Texture\ =\ value;\ \}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00080}00080\ \ \ \ \ [\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_serializable_prop}{CUISerializableProp}}]}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00081}00081\ \ \ \ \ \textcolor{keyword}{public}\ Rectangle?\ SourceRectangle\ \{\ \textcolor{keyword}{get}\ =>\ Sprite.SourceRectangle;\ \textcolor{keyword}{set}\ =>\ Sprite.SourceRectangle\ =\ value;\ \}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00082}00082\ \ \ \ \ [\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_serializable_prop}{CUISerializableProp}}]}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00083}00083\ \ \ \ \ \textcolor{keyword}{public}\ Color\ Color\ \{\ \textcolor{keyword}{get}\ =>\ Sprite.Color;\ \textcolor{keyword}{set}\ =>\ Sprite.Color\ =\ value;\ \}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00084}00084\ \ \ \ \ [\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_serializable_prop}{CUISerializableProp}}]}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00085}00085\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ Rotation\ \{\ \textcolor{keyword}{get}\ =>\ Sprite.Rotation;\ \textcolor{keyword}{set}\ =>\ Sprite.Rotation\ =\ value;\ \}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00086}00086\ \ \ \ \ [\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_serializable_prop}{CUISerializableProp}}]}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00087}00087\ \ \ \ \ \textcolor{keyword}{public}\ Vector2\ Origin\ \{\ \textcolor{keyword}{get}\ =>\ Sprite.Origin;\ \textcolor{keyword}{set}\ =>\ Sprite.Origin\ =\ value;\ \}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00088}00088\ \ \ \ \ [\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_serializable_prop}{CUISerializableProp}}]}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00089}00089\ \ \ \ \ \textcolor{keyword}{public}\ SpriteEffects\ Effects\ \{\ \textcolor{keyword}{get}\ =>\ Sprite.Effects;\ \textcolor{keyword}{set}\ =>\ Sprite.Effects\ =\ value;\ \}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00090}00090\ \ \ \ \ [\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_serializable_prop}{CUISerializableProp}}]}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00091}00091\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ LayerDepth\ \{\ \textcolor{keyword}{get}\ =>\ Sprite.LayerDepth;\ \textcolor{keyword}{set}\ =>\ Sprite.LayerDepth\ =\ value;\ \}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00093}00093\ \textcolor{preprocessor}{\ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00095}00095\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ Draw(\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISpriteBatch}}\ spriteBatch)}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00096}00096\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00097}00097\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Visible)}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00098}00098\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ Sprite.Draw(spriteBatch,\ RoundedRect);}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00100}00100\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00101}00101\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00103}00103\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{object}\ Deserialize(XElement\ element)}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00104}00104\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00105}00105\ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ NotImplementedException();}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00106}00106\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00109}00109\ \ \ \ \ \textcolor{comment}{//\ public\ static\ object\ Parse(string\ raw)}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00110}00110\ \ \ \ \ \textcolor{comment}{//\ \{}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00111}00111\ \ \ \ \ \textcolor{comment}{//\ \ \ Dictionary<string,\ string>\ dict\ =\ JsonSerializer.Deserialize<Dictionary<string,\ string>>(raw)!;}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00113}00113\ \ \ \ \ \textcolor{comment}{//\ \ \ CUI.Logger.Log(Logger.Wrap.IDictionary(dict));}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00115}00115\ \ \ \ \ \textcolor{comment}{//\ \ \ SimpleTexture\ texture\ =\ new\ SimpleTexture();}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00117}00117\ \ \ \ \ \textcolor{comment}{//\ \ \ if\ (dict.ContainsKey("{}texture"{}))\ texture.Texture\ =\ CUICore.TextureManager.Get(dict["{}texture"{}]);}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00118}00118\ \ \ \ \ \textcolor{comment}{//\ \ \ if\ (dict.ContainsKey("{}color"{}))\ texture.Color\ =\ CUICore.Parser.Parse<Color>(dict["{}color"{}]);}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00120}00120\ \ \ \ \ \textcolor{comment}{//\ \ \ return\ texture;}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00121}00121\ \ \ \ \ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00123}00123\ \ \ \ \ \textcolor{comment}{//\ public\ string\ ToText()}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00124}00124\ \ \ \ \ \textcolor{comment}{//\ \{}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00125}00125\ \ \ \ \ \textcolor{comment}{//\ \ \ Dictionary<string,\ string>\ dict\ =\ new\ Dictionary<string,\ string>()}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00126}00126\ \ \ \ \ \textcolor{comment}{//\ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00127}00127\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ ["{}texture"{}]\ =\ Texture.Key\ ??\ "{}"{},}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00128}00128\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ ["{}color"{}]\ =\ CUICore.Parser.Serialize(Color),}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00129}00129\ \ \ \ \ \textcolor{comment}{//\ \ \ \};}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00131}00131\ \ \ \ \ \textcolor{comment}{//\ \ \ return\ JsonSerializer.Serialize(dict);}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00132}00132\ \ \ \ \ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00133}00133\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_simple_texture_8cs_source_l00134}00134\ \}}
 
 \end{DoxyCode}

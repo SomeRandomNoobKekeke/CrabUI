@@ -25,10 +25,10 @@ namespace CUICodeGenerator
         InjectParts();
         InjectModules();
         InjectProps();
-        NotifyAwareObjects();
         RunInitMethods();
         InitParts();
         InitModules();
+        NotifyAwareObjects();
       }
       catch (Exception e)
       {

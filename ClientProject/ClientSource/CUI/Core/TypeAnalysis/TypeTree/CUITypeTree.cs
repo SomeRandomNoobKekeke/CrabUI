@@ -19,7 +19,7 @@ namespace CrabUI
       foreach (Type T in types)
       {
         Nodes[T] = new Node(T);
-        TypesByName[T.Name] = T;
+        TypesByName[T.GetFullName()] = T;
       }
 
       //TODO optimize, i just need to check the new types
@@ -61,5 +61,7 @@ namespace CrabUI
     }
 
     public void Clear() => Nodes.Clear();
+
+    public override string ToString() => Logger.Wrap.IDictionary(TypesByName);
   }
 }

@@ -18,61 +18,117 @@
 \DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00014}00014\ }
 \DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00015}\doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_texture_manager}{00015}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_texture_manager}{\_\_CUITextureManager}}\ :\ IDisposable,\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture_manager}{CUITextureManager}}}
 \DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00016}00016\ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture2_d}{CUITexture2D}}\ BackupTexture\ =>\ \doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_texture2_d}{\_\_CUITexture2D}}.White;}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{public}\ Dictionary<string,\ CUITexture2D>\ LoadedTextures\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00019}00019\ }
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture2_d}{CUITexture2D}}\ Add(\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture2_d}{CUITexture2D}}\ texture,\ \textcolor{keywordtype}{string}\ key)}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00021}00021\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00022}00022\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (LoadedTextures.ContainsKey(key))}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00023}00023\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ LoadedTextures[key].Dispose();}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00025}00025\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00026}00026\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ LoadedTextures[key]\ =\ texture;}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00027}00027\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00028}00028\ }
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture2_d}{CUITexture2D}}\ Load(\textcolor{keywordtype}{string}\ path,\ \textcolor{keywordtype}{string}\ key\ =\ \textcolor{keyword}{null})}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00030}00030\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00031}00031\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!File.Exists(path))\ \textcolor{keywordflow}{return}\ BackupTexture;}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00032}00032\ \ \ \ \ \ \ key\ ??=\ path;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00017}\doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_texture_manager_1_1_context___part}{00017}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_texture_manager_1_1_context___part}{Context\_Part}}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00019}00019\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}?\ PackageDir\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00020}00020\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}?\ FileDir\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00021}00021\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_texture_manager_1_1_context___part}{Context\_Part}}\ Context\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture2_d}{CUITexture2D}}\ BackupTexture\ =>\ \doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_texture2_d}{\_\_CUITexture2D}}.White;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{public}\ Dictionary<string,\ CUITexture2D>\ LoadedTextures\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{public}\ CUITexture2D\ Add(CUITexture2D\ texture,\ \textcolor{keywordtype}{string}\ key)}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00028}00028\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00029}00029\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (LoadedTextures.ContainsKey(key))}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00030}00030\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ LoadedTextures[key].Dispose();}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00032}00032\ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00033}00033\ }
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00034}00034\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (LoadedTextures.ContainsKey(key))}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00035}00035\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ LoadedTextures[key];}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00037}00037\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00034}00034\ \ \ \ \ \ \ texture.Key\ =\ key;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00035}00035\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ LoadedTextures[key]\ =\ texture;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00037}00037\ }
 \DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00038}00038\ }
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00039}00039\ \ \ \ \ \ \ \textcolor{keyword}{using}\ (FileStream\ fs\ =\ File.OpenRead(path))}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00040}00040\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ LoadedTextures[key]\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_texture2_d}{\_\_CUITexture2D}}(}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ Texture2D.FromStream(GameMain.Instance.GraphicsDevice,\ fs)}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ );}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00044}00044\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00045}00045\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00046}00046\ }
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00047}00047\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture2_d}{CUITexture2D}}\ Get(\textcolor{keywordtype}{string}\ key)}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00048}00048\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00049}00049\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (LoadedTextures.ContainsKey(key))\ \textcolor{keywordflow}{return}\ LoadedTextures[key];}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00050}00050\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ BackupTexture;}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00051}00051\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00052}00052\ }
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00053}00053\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ Has(\textcolor{keywordtype}{string}\ key)\ =>\ LoadedTextures.ContainsKey(key);}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00054}00054\ }
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00055}00055\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Forget(\textcolor{keywordtype}{string}\ key)}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00056}00056\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00057}00057\ \ \ \ \ \ \ LoadedTextures[key].Dispose();}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00058}00058\ \ \ \ \ \ \ LoadedTextures.Remove(key);}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00059}00059\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00060}00060\ }
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00061}00061\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Clear()}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00062}00062\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00063}00063\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture2_d}{CUITexture2D}}\ texture\ \textcolor{keywordflow}{in}\ LoadedTextures.Values)}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00064}00064\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ texture.Dispose();}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00039}00039\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ Has(\textcolor{keywordtype}{string}\ key)\ =>\ LoadedTextures.ContainsKey(key);}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00041}00041\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ IsTexturePath(\textcolor{keywordtype}{string}\ path)}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00042}00042\ \ \ \ \ \ \ =>\ path.EndsWith(\textcolor{stringliteral}{"{}.bmp"{}})\ ||\ path.EndsWith(\textcolor{stringliteral}{"{}.gif"{}})\ ||\ path.EndsWith(\textcolor{stringliteral}{"{}.jpg"{}})\ ||\ path.EndsWith(\textcolor{stringliteral}{"{}.png"{}});}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{public}\ CUITexture2D\ Get(\textcolor{keywordtype}{string}\ key)}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00044}00044\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00045}00045\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (LoadedTextures.ContainsKey(key))\ \textcolor{keywordflow}{return}\ LoadedTextures[key];}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00046}00046\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsTexturePath(key))\ \textcolor{keywordflow}{return}\ LoadAs(key,\ key);}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00047}00047\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ BackupTexture;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00048}00048\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00050}00050\ \ \ \ \ \textcolor{keyword}{public}\ CUITexture2D\ Reload(\textcolor{keywordtype}{string}\ key)}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00051}00051\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00052}00052\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Has(key))\ Forget(key);}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00053}00053\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ LoadAs(key,\ key);}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00054}00054\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00056}00056\ \ \ \ \ \textcolor{keyword}{public}\ CUITexture2D\ LoadAs(\textcolor{keywordtype}{string}\ path,\ \textcolor{keywordtype}{string}\ key)}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00057}00057\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00058}00058\ \ \ \ \ \ \ CUITexture2D\ texture\ =\ \_LoadFrom(path);}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00060}00060\ \ \ \ \ \ \ \textcolor{comment}{//\ CUI.Logger.LogVars(key,\ Context.PackageDir,\ Context.FileDir);}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00062}00062\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (texture\ is\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00063}00063\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ CUI.Logger.Warning(\$\textcolor{stringliteral}{"{}Failed\ to\ load\ CUITexture\ from\ [\{path\}]"{}});}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ BackupTexture;}
 \DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00066}00066\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00067}00067\ \ \ \ \ \ \ LoadedTextures.Clear();}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00068}00068\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00069}00069\ }
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00070}00070\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Dispose()\ =>\ Clear();}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00071}00071\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00072}00072\ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00068}00068\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Add(texture,\ key);}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00069}00069\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00071}00071\ \ \ \ \ \textcolor{keyword}{private}\ CUITexture2D\ \_LoadFrom(\textcolor{keywordtype}{string}\ path)}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00072}00072\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00073}00073\ \ \ \ \ \ \ CUITexture2D?\ texture;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00075}00075\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Path.IsPathFullyQualified(path))}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00076}00076\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ texture\ =\ TryLoadFrom(path);}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (texture\ is\ not\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ texture;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00079}00079\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00081}00081\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Context.FileDir\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00082}00082\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ texture\ =\ TryLoadFrom(Path.Combine(Context.FileDir,\ path));}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (texture\ is\ not\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ texture;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00085}00085\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00087}00087\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Context.PackageDir\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00088}00088\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ texture\ =\ TryLoadFrom(Path.Combine(Context.PackageDir,\ path));}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (texture\ is\ not\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ texture;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00091}00091\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00093}00093\ \ \ \ \ \ \ \textcolor{comment}{//\ Relative\ to\ game\ folder?}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00094}00094\ \ \ \ \ \ \ texture\ =\ TryLoadFrom(path);}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00096}00096\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ texture;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00097}00097\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00099}00099\ \ \ \ \ \textcolor{keyword}{private}\ CUITexture2D\ TryLoadFrom(\textcolor{keywordtype}{string}\ path)}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00100}00100\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00101}00101\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!File.Exists(path))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00103}00103\ \ \ \ \ \ \ \textcolor{keyword}{using}\ (FileStream\ fs\ =\ File.OpenRead(path))}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00104}00104\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \_\_CUITexture2D(}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ Texture2D.FromStream(GameMain.Instance.GraphicsDevice,\ fs)}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00108}00108\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00109}00109\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00111}00111\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Forget(\textcolor{keywordtype}{string}\ key)}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00112}00112\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00113}00113\ \ \ \ \ \ \ LoadedTextures[key].Dispose();}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00114}00114\ \ \ \ \ \ \ LoadedTextures.Remove(key);}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00115}00115\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00117}00117\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Clear()}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00118}00118\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00119}00119\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (CUITexture2D\ texture\ \textcolor{keywordflow}{in}\ LoadedTextures.Values)}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00120}00120\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ texture.Dispose();}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00122}00122\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00123}00123\ \ \ \ \ \ \ LoadedTextures.Clear();}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00124}00124\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00126}00126\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Dispose()\ =>\ Clear();}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00127}00127\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture_manager_8cs_source_l00128}00128\ \}}
 
 \end{DoxyCode}

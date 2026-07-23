@@ -9,6 +9,14 @@ Inheritance diagram for Crab\+UI.\+Solo\+CUIRunner:\+\begin{figure}[H]
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
+class \doxymbox{\hyperlink{class_crab_u_i_1_1_solo_c_u_i_runner_1_1_assembly_package_dir_lookup}{Assembly\+Package\+Dir\+Lookup}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_1_1_solo_c_u_i_runner_1_1_c_u_i_texture_manager___public_part}{CUITexture\+Manager\+\_\+\+Public\+Part}}
+\begin{DoxyCompactList}\small\item\em This one is supposed to be used by user It tracks assembly that it was called from. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_crab_u_i_1_1_solo_c_u_i_runner_1_1_resource_i_o_context___part}{Resource\+IOContext\+\_\+\+Part}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_1_1_solo_c_u_i_runner_1_1_resource_i_o_context_handle___part}{Resource\+IOContext\+Handle\+\_\+\+Part}}
+\item 
 class \doxymbox{\hyperlink{class_crab_u_i_1_1_solo_c_u_i_runner_1_1_c_u_i_core_handles___part}{CUICore\+Handles\+\_\+\+Part}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
@@ -35,9 +43,17 @@ void \doxymbox{\hyperlink{class_crab_u_i_1_1_solo_c_u_i_runner_a5b82e45ac6618581
 \item 
 \doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_g_u_i}{\+\_\+\+\_\+\+CUIGUI}} \doxymbox{\hyperlink{class_crab_u_i_1_1_solo_c_u_i_runner_ae73243a393883e5cfea0c4b1ef268294}{CUIGUI}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \item 
-CUITexture\+Manager \doxymbox{\hyperlink{class_crab_u_i_1_1_solo_c_u_i_runner_aaa105db1e91ec981a5c499cf981e89d4}{CUITexture\+Manager}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\doxymbox{\hyperlink{class_crab_u_i_1_1_solo_c_u_i_runner_1_1_assembly_package_dir_lookup}{Assembly\+Package\+Dir\+Lookup}} \doxymbox{\hyperlink{class_crab_u_i_1_1_solo_c_u_i_runner_af59d77d321091850f72b3e764c52df82}{Dir\+Lookup}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \item 
-Path\+Manager \doxymbox{\hyperlink{class_crab_u_i_1_1_solo_c_u_i_runner_aad9a7a009d1f705b8b9e82cdf7cbb056}{Path\+Manager}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_texture_manager}{\+\_\+\+\_\+\+CUITexture\+Manager}} \doxymbox{\hyperlink{class_crab_u_i_1_1_solo_c_u_i_runner_a703b8392c6fcbc0549c866acb63d7472}{Texture\+Manager}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_solo_c_u_i_runner_1_1_c_u_i_texture_manager___public_part}{CUITexture\+Manager\+\_\+\+Public\+Part}} \doxymbox{\hyperlink{class_crab_u_i_1_1_solo_c_u_i_runner_a4067fc4982e46a6b276a68cca03212ad}{CUITexture\+Manager\+Public}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_solo_c_u_i_runner_1_1_resource_i_o_context___part}{Resource\+IOContext\+\_\+\+Part}} \doxymbox{\hyperlink{class_crab_u_i_1_1_solo_c_u_i_runner_a03251f53952d0b0252e4caf93812e7c2}{Resource\+IOContext}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_solo_c_u_i_runner_1_1_resource_i_o_context_handle___part}{Resource\+IOContext\+Handle\+\_\+\+Part}} \doxymbox{\hyperlink{class_crab_u_i_1_1_solo_c_u_i_runner_a3e6d22f631bc3d46f696066b0d022f26}{Resource\+IOContext\+Handle}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+File\+Path\+Resolver \doxymbox{\hyperlink{class_crab_u_i_1_1_solo_c_u_i_runner_ab9c9fc4256f00b17b4b1dd31e0de0880}{File\+Path\+Resolver}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \item 
 CUIAssembly\+Analyzer \doxymbox{\hyperlink{class_crab_u_i_1_1_solo_c_u_i_runner_a4a5c0377052a6163c9b8d249eb3fa861}{CUIAssembly\+Analyzer}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \end{DoxyCompactItemize}
@@ -46,7 +62,7 @@ CUIAssembly\+Analyzer \doxymbox{\hyperlink{class_crab_u_i_1_1_solo_c_u_i_runner_
 \doxysubsection{Detailed Description}
 
 
-Definition at line \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source_l00010}{10}} of file \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source}{Solo\+CUIRunner.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_assembly_package_lookup_8cs_source_l00014}{14}} of file \doxymbox{\hyperlink{_assembly_package_lookup_8cs_source}{Assembly\+Package\+Lookup.\+cs}}.
 
 
 
@@ -61,25 +77,22 @@ Crab\+UI.\+Solo\+CUIRunner.\+Solo\+CUIRunner (\begin{DoxyParamCaption}{}{}\end{D
 
 
 
-Definition at line \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source_l00122}{122}} of file \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source}{Solo\+CUIRunner.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source_l00128}{128}} of file \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source}{Solo\+CUIRunner.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00123\ \ \ \ \ \{}
-\DoxyCodeLine{00124\ \ \ \ \ \ \ CUICoreHandles\ =\ \textcolor{keyword}{new}\ SoloCUIRunner.CUICoreHandles\_Part()}
-\DoxyCodeLine{00125\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ Self\ =\ \textcolor{keyword}{this}}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00128\ }
-\DoxyCodeLine{00129\ \ \ \ \ \ \ PathManager\ =\ \textcolor{keyword}{new}\ PathManager()\ \{\ ModDir\ =\ ModInfo.Dir\ \};}
-\DoxyCodeLine{00130\ }
-\DoxyCodeLine{00131\ \ \ \ \ \ \ CUITextureManager\ =\ \textcolor{keyword}{new}\ CUITextureManagerProxy(}
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \_\_CUITextureManager(),}
-\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ PathManager}
-\DoxyCodeLine{00134\ \ \ \ \ \ \ );}
-\DoxyCodeLine{00135\ }
-\DoxyCodeLine{00136\ \ \ \ \ \ \ LoadDefaultResources();}
-\DoxyCodeLine{00137\ \ \ \ \ \}}
+\DoxyCodeLine{00129\ \ \ \ \ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ CUICoreHandles\ =\ \textcolor{keyword}{new}\ SoloCUIRunner.CUICoreHandles\_Part()}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ Self\ =\ \textcolor{keyword}{this}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \ \ CUITextureManagerPublic.Self\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ ResourceIOContext.Self\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ ResourceIOContextHandle.Self\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \ \ LoadDefaultResources();}
+\DoxyCodeLine{00140\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -99,18 +112,18 @@ Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_c_u_i_runner}{Crab\+UI.
 
 
 
-Definition at line \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source_l00025}{25}} of file \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source}{Solo\+CUIRunner.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source_l00030}{30}} of file \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source}{Solo\+CUIRunner.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00026\ \ \ \ \ \{}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ ArgumentNullException.ThrowIfNull(Core);}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ ArgumentNullException.ThrowIfNull(DataSources);}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \ \ \ \ \ \ Core.Handles\ =\ CUICoreHandles;}
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00032\ \ \ \ \ \ \ AttachLifeCycleHooks();}
-\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ ArgumentNullException.ThrowIfNull(Core);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ ArgumentNullException.ThrowIfNull(DataSources);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ Core.Handles\ =\ CUICoreHandles;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ AttachLifeCycleHooks();}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_solo_c_u_i_runner_ab432d9e29d240ec7b345ae740c10874a}\index{CrabUI.SoloCUIRunner@{CrabUI.SoloCUIRunner}!Disconnect@{Disconnect}}
@@ -125,23 +138,24 @@ Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_c_u_i_runner}{Crab\+UI.
 
 
 
-Definition at line \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source_l00094}{94}} of file \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source}{Solo\+CUIRunner.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source_l00099}{99}} of file \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source}{Solo\+CUIRunner.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00095\ \ \ \ \ \{}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ DataSources.DisconnectFromGame();}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ SpriteBatch.XNASpriteBatch\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ Core.Handles\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ CUITextureManager.Dispose();}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ CUI.Logger.Error(e);}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00107\ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ DataSources.DisconnectFromGame();}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ SpriteBatch.XNASpriteBatch\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ Core.Handles\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ TextureManager.Dispose();}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ DirLookup.Dispose();}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ CUI.Logger.Error(e);}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00113\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_solo_c_u_i_runner_a5b82e45ac66185816270e13c24c7445c}\index{CrabUI.SoloCUIRunner@{CrabUI.SoloCUIRunner}!OnStartAttempt@{OnStartAttempt}}
@@ -156,15 +170,15 @@ Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_c_u_i_runner}{Crab\+UI.
 
 
 
-Definition at line \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source_l00115}{115}} of file \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source}{Solo\+CUIRunner.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source_l00121}{121}} of file \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source}{Solo\+CUIRunner.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00116\ \ \ \ \ \{}
-\DoxyCodeLine{00117\ \ \ \ \ \ \ Core.CUIRunnerHandle.AddAssemblyInfo(}
-\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ CUIAssemblyAnalyzer.AnalyzeAssembly(callingAssembly)}
-\DoxyCodeLine{00119\ \ \ \ \ \ \ );}
-\DoxyCodeLine{00120\ \ \ \ \ \}}
+\DoxyCodeLine{00122\ \ \ \ \ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ Core.CUIRunnerHandle.AddAssemblyInfo(}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ CUIAssemblyAnalyzer.AnalyzeAssembly(callingAssembly)}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ );}
+\DoxyCodeLine{00126\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -199,11 +213,11 @@ CUIAssembly\+Analyzer Crab\+UI.\+Solo\+CUIRunner.\+CUIAssembly\+Analyzer = new()
 
 
 
-Definition at line \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source_l00023}{23}} of file \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source}{Solo\+CUIRunner.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source_l00028}{28}} of file \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source}{Solo\+CUIRunner.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00023\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00028\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_solo_c_u_i_runner_a4cc929c1ea461503e5c05a714942c542}\index{CrabUI.SoloCUIRunner@{CrabUI.SoloCUIRunner}!CUICoreHandles@{CUICoreHandles}}
@@ -236,19 +250,19 @@ Definition at line \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source_l00018}{18
 \DoxyCodeLine{00018\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
 
 \end{DoxyCode}
-\Hypertarget{class_crab_u_i_1_1_solo_c_u_i_runner_aaa105db1e91ec981a5c499cf981e89d4}\index{CrabUI.SoloCUIRunner@{CrabUI.SoloCUIRunner}!CUITextureManager@{CUITextureManager}}
-\index{CUITextureManager@{CUITextureManager}!CrabUI.SoloCUIRunner@{CrabUI.SoloCUIRunner}}
-\doxysubsubsection{\texorpdfstring{CUITextureManager}{CUITextureManager}}
-{\footnotesize\ttfamily \label{class_crab_u_i_1_1_solo_c_u_i_runner_aaa105db1e91ec981a5c499cf981e89d4} 
-CUITexture\+Manager Crab\+UI.\+Solo\+CUIRunner.\+CUITexture\+Manager\hspace{0.3cm}{\ttfamily [get]}}
+\Hypertarget{class_crab_u_i_1_1_solo_c_u_i_runner_a4067fc4982e46a6b276a68cca03212ad}\index{CrabUI.SoloCUIRunner@{CrabUI.SoloCUIRunner}!CUITextureManagerPublic@{CUITextureManagerPublic}}
+\index{CUITextureManagerPublic@{CUITextureManagerPublic}!CrabUI.SoloCUIRunner@{CrabUI.SoloCUIRunner}}
+\doxysubsubsection{\texorpdfstring{CUITextureManagerPublic}{CUITextureManagerPublic}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_solo_c_u_i_runner_a4067fc4982e46a6b276a68cca03212ad} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_solo_c_u_i_runner_1_1_c_u_i_texture_manager___public_part}{CUITexture\+Manager\+\_\+\+Public\+Part}} Crab\+UI.\+Solo\+CUIRunner.\+CUITexture\+Manager\+Public = new()\hspace{0.3cm}{\ttfamily [get]}}
 
 
 
-Definition at line \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source_l00020}{20}} of file \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source}{Solo\+CUIRunner.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source_l00023}{23}} of file \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source}{Solo\+CUIRunner.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00020\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{00023\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}();}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_solo_c_u_i_runner_a85d45ff20abe4fa1f68bfbf4fb6cb183}\index{CrabUI.SoloCUIRunner@{CrabUI.SoloCUIRunner}!DataSources@{DataSources}}
@@ -270,6 +284,36 @@ Definition at line \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source_l00013}{13
 \DoxyCodeLine{00013\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
 
 \end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_solo_c_u_i_runner_af59d77d321091850f72b3e764c52df82}\index{CrabUI.SoloCUIRunner@{CrabUI.SoloCUIRunner}!DirLookup@{DirLookup}}
+\index{DirLookup@{DirLookup}!CrabUI.SoloCUIRunner@{CrabUI.SoloCUIRunner}}
+\doxysubsubsection{\texorpdfstring{DirLookup}{DirLookup}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_solo_c_u_i_runner_af59d77d321091850f72b3e764c52df82} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_solo_c_u_i_runner_1_1_assembly_package_dir_lookup}{Assembly\+Package\+Dir\+Lookup}} Crab\+UI.\+Solo\+CUIRunner.\+Dir\+Lookup = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source}{Solo\+CUIRunner.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_solo_c_u_i_runner_ab9c9fc4256f00b17b4b1dd31e0de0880}\index{CrabUI.SoloCUIRunner@{CrabUI.SoloCUIRunner}!FilePathResolver@{FilePathResolver}}
+\index{FilePathResolver@{FilePathResolver}!CrabUI.SoloCUIRunner@{CrabUI.SoloCUIRunner}}
+\doxysubsubsection{\texorpdfstring{FilePathResolver}{FilePathResolver}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_solo_c_u_i_runner_ab9c9fc4256f00b17b4b1dd31e0de0880} 
+File\+Path\+Resolver Crab\+UI.\+Solo\+CUIRunner.\+File\+Path\+Resolver = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source_l00026}{26}} of file \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source}{Solo\+CUIRunner.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_solo_c_u_i_runner_ada58ba4224a3217ecbdf1345d06274f1}\index{CrabUI.SoloCUIRunner@{CrabUI.SoloCUIRunner}!GraphicsDevice@{GraphicsDevice}}
 \index{GraphicsDevice@{GraphicsDevice}!CrabUI.SoloCUIRunner@{CrabUI.SoloCUIRunner}}
 \doxysubsubsection{\texorpdfstring{GraphicsDevice}{GraphicsDevice}}
@@ -285,19 +329,34 @@ Definition at line \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source_l00017}{17
 \DoxyCodeLine{00017\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
 
 \end{DoxyCode}
-\Hypertarget{class_crab_u_i_1_1_solo_c_u_i_runner_aad9a7a009d1f705b8b9e82cdf7cbb056}\index{CrabUI.SoloCUIRunner@{CrabUI.SoloCUIRunner}!PathManager@{PathManager}}
-\index{PathManager@{PathManager}!CrabUI.SoloCUIRunner@{CrabUI.SoloCUIRunner}}
-\doxysubsubsection{\texorpdfstring{PathManager}{PathManager}}
-{\footnotesize\ttfamily \label{class_crab_u_i_1_1_solo_c_u_i_runner_aad9a7a009d1f705b8b9e82cdf7cbb056} 
-Path\+Manager Crab\+UI.\+Solo\+CUIRunner.\+Path\+Manager\hspace{0.3cm}{\ttfamily [get]}}
+\Hypertarget{class_crab_u_i_1_1_solo_c_u_i_runner_a03251f53952d0b0252e4caf93812e7c2}\index{CrabUI.SoloCUIRunner@{CrabUI.SoloCUIRunner}!ResourceIOContext@{ResourceIOContext}}
+\index{ResourceIOContext@{ResourceIOContext}!CrabUI.SoloCUIRunner@{CrabUI.SoloCUIRunner}}
+\doxysubsubsection{\texorpdfstring{ResourceIOContext}{ResourceIOContext}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_solo_c_u_i_runner_a03251f53952d0b0252e4caf93812e7c2} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_solo_c_u_i_runner_1_1_resource_i_o_context___part}{Resource\+IOContext\+\_\+\+Part}} Crab\+UI.\+Solo\+CUIRunner.\+Resource\+IOContext = new()\hspace{0.3cm}{\ttfamily [get]}}
 
 
 
-Definition at line \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source_l00021}{21}} of file \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source}{Solo\+CUIRunner.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source_l00024}{24}} of file \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source}{Solo\+CUIRunner.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00021\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{00024\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_solo_c_u_i_runner_a3e6d22f631bc3d46f696066b0d022f26}\index{CrabUI.SoloCUIRunner@{CrabUI.SoloCUIRunner}!ResourceIOContextHandle@{ResourceIOContextHandle}}
+\index{ResourceIOContextHandle@{ResourceIOContextHandle}!CrabUI.SoloCUIRunner@{CrabUI.SoloCUIRunner}}
+\doxysubsubsection{\texorpdfstring{ResourceIOContextHandle}{ResourceIOContextHandle}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_solo_c_u_i_runner_a3e6d22f631bc3d46f696066b0d022f26} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_solo_c_u_i_runner_1_1_resource_i_o_context_handle___part}{Resource\+IOContext\+Handle\+\_\+\+Part}} Crab\+UI.\+Solo\+CUIRunner.\+Resource\+IOContext\+Handle = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source_l00025}{25}} of file \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source}{Solo\+CUIRunner.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}();}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_solo_c_u_i_runner_ac02fdad66c9cdf2d9bc451c4db36f238}\index{CrabUI.SoloCUIRunner@{CrabUI.SoloCUIRunner}!SpriteBatch@{SpriteBatch}}
@@ -315,8 +374,28 @@ Definition at line \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source_l00016}{16
 \DoxyCodeLine{00016\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
 
 \end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_solo_c_u_i_runner_a703b8392c6fcbc0549c866acb63d7472}\index{CrabUI.SoloCUIRunner@{CrabUI.SoloCUIRunner}!TextureManager@{TextureManager}}
+\index{TextureManager@{TextureManager}!CrabUI.SoloCUIRunner@{CrabUI.SoloCUIRunner}}
+\doxysubsubsection{\texorpdfstring{TextureManager}{TextureManager}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_solo_c_u_i_runner_a703b8392c6fcbc0549c866acb63d7472} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_texture_manager}{\+\_\+\+\_\+\+CUITexture\+Manager}} Crab\+UI.\+Solo\+CUIRunner.\+Texture\+Manager = new()\hspace{0.3cm}{\ttfamily [get]}}
 
 
-The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+
+Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_c_u_i_runner}{Crab\+UI.\+ICUIRunner}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source_l00021}{21}} of file \doxymbox{\hyperlink{_solo_c_u_i_runner_8cs_source}{Solo\+CUIRunner.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
 \item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Infrastructure/\+\+CUIRunner/\+\+Solo/\+Assembly\+Package\+Lookup.\+cs\item 
 Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Infrastructure/\+\+CUIRunner/\+\+Solo/\+Solo\+CUIRunner.\+cs\end{DoxyCompactItemize}

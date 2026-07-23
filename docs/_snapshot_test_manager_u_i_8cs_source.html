@@ -190,31 +190,41 @@ $(function(){initNavTree('_snapshot_test_manager_u_i_8cs_source.html','',''); })
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        MasterColor = <span class="keyword">new</span> Color(64, 0, 64),</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        OnMouseDown = (c, e) =&gt; Manager.AcceptCurrent()</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>      };</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>      <span class="keyword">this</span>[<span class="stringliteral">&quot;layout&quot;</span>][<span class="stringliteral">&quot;groups&quot;</span>] = <span class="keyword">new</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_horizontal_list.html">CUIHorizontalList</a>() { FitContent = <span class="keyword">new</span> <a class="code hl_struct" href="struct_crab_u_i_1_1_c_u_i_bool2.html">CUIBool2</a>(<span class="keyword">false</span>, <span class="keyword">true</span>), };</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>      <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> group <span class="keywordflow">in</span> Manager.Repo.Groups)</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>      {</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <span class="keyword">this</span>[<span class="stringliteral">&quot;layout&quot;</span>][<span class="stringliteral">&quot;groups&quot;</span>].Children.Add(<span class="keyword">new</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_button.html">CUIButton</a>(group)</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        {</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>          OnMouseDown = (c, e) =&gt; OpenGroup(group),</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        });</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>      }</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>      <span class="keyword">this</span>[<span class="stringliteral">&quot;layout&quot;</span>][<span class="stringliteral">&quot;controls&quot;</span>][<span class="stringliteral">&quot;serialize&quot;</span>] = <span class="keyword">new</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_toggle_button.html">CUIToggleButton</a>()</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>      {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        Text = <span class="stringliteral">&quot;Serialize&quot;</span>,</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        Flex = 1,</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        MasterColor = <span class="keyword">new</span> Color(255, 0, 255),</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        State = Manager.SerializeTestSubject,</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        OnToggle = (state) =&gt; Manager.SerializeTestSubject = state,</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>      };</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>      <span class="keyword">this</span>[<span class="stringliteral">&quot;layout&quot;</span>][<span class="stringliteral">&quot;btnlist&quot;</span>] = ButtonList = <span class="keyword">new</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_vertical_list.html">CUIVerticalList</a>()</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>      {</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        Flex = 1,</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        Scrollable = <span class="keyword">true</span>,</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>      };</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>      OpenGroup(Manager.Repo.Groups.First());</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    }</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  }</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>      <span class="keyword">this</span>[<span class="stringliteral">&quot;layout&quot;</span>][<span class="stringliteral">&quot;groups&quot;</span>] = <span class="keyword">new</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_horizontal_list.html">CUIHorizontalList</a>() { FitContent = <span class="keyword">new</span> <a class="code hl_struct" href="struct_crab_u_i_1_1_c_u_i_bool2.html">CUIBool2</a>(<span class="keyword">false</span>, <span class="keyword">true</span>), };</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>      <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> group <span class="keywordflow">in</span> Manager.Repo.Groups)</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>      {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        <span class="keyword">this</span>[<span class="stringliteral">&quot;layout&quot;</span>][<span class="stringliteral">&quot;groups&quot;</span>].Children.Add(<span class="keyword">new</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_button.html">CUIButton</a>(group)</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        {</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>          OnMouseDown = (c, e) =&gt; OpenGroup(group),</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        });</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>      }</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>      <span class="keyword">this</span>[<span class="stringliteral">&quot;layout&quot;</span>][<span class="stringliteral">&quot;btnlist&quot;</span>] = ButtonList = <span class="keyword">new</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_vertical_list.html">CUIVerticalList</a>()</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>      {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        Flex = 1,</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        Scrollable = <span class="keyword">true</span>,</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>      };</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>      OpenGroup(Manager.Repo.Groups.First());</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    }</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  }</div>
 </div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>}</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>}</div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_anchor_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_anchor.html">CrabUI.CUIAnchor</a></div><div class="ttdef"><b>Definition</b> <a href="_client_source_2_c_u_i_2_core_2_simple_01_types_2_c_u_i_anchor_8cs_source.html#l00010">CUIAnchor.cs:11</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_button_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_button.html">CrabUI.CUIButton</a></div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_button_8cs_source.html#l00015">CUIButton.cs:16</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_horizontal_list_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_horizontal_list.html">CrabUI.CUIHorizontalList</a></div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_horizontal_list_layout_8_host_8cs_source.html#l00014">CUIHorizontalListLayout.Host.cs:15</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_page_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_page.html">CrabUI.CUIPage</a></div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_page_8cs_source.html#l00014">CUIPage.cs:15</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_toggle_button_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_toggle_button.html">CrabUI.CUIToggleButton</a></div><div class="ttdef"><b>Definition</b> <a href="_client_source_2_c_u_i_2_core_2_components_2_c_u_i_toggle_button_8cs_source.html#l00015">CUIToggleButton.cs:16</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_vertical_list_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_vertical_list.html">CrabUI.CUIVerticalList</a></div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_vertical_list_layout_8_host_8cs_source.html#l00014">CUIVerticalListLayout.Host.cs:15</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_user_1_1_snapshot_test_manager_html"><div class="ttname"><a href="class_crab_u_i_user_1_1_snapshot_test_manager.html">CrabUIUser.SnapshotTestManager</a></div><div class="ttdef"><b>Definition</b> <a href="_snapshot_test_manager_8cs_source.html#l00015">SnapshotTestManager.cs:16</a></div></div>
 <div class="ttc" id="anamespace_c_u_i_libs_html"><div class="ttname"><a href="namespace_c_u_i_libs.html">CUILibs</a></div><div class="ttdef"><b>Definition</b> <a href="_already_done_8cs_source.html#l00012">AlreadyDone.cs:13</a></div></div>

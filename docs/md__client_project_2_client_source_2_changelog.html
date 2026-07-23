@@ -92,23 +92,59 @@ $(function(){initNavTree('md__client_project_2_client_source_2_changelog.html','
   <div class="headertitle"><div class="title">Changelog </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md53"></a></p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md54"></a>
+<div class="textblock"><p><a class="anchor" id="autotoc_md55"></a></p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md56"></a>
+0.3.0.1</h1>
+<ul>
+<li>CUI now takes into account calling mod package dir and loaded xml dir when loading textures <br  />
+ You can now load textures from paths relative to loaded prefab or mod dir</li>
+<li>From now on use CUI.TextureManager to load textures, CUICore.TextureManager doesn't capture calling assembly</li>
+<li>Added more try-catches in CUI lifecycle, at least it should always unload if something went wrong</li>
+<li>Added "cuidebug" command to toggle debug in console, debug overall is borked, don't use</li>
+<li>moved Click() and PressKey(Keys key) up to CUIComponent</li>
+<li>Added Box boundaries to CUIMainComponents</li>
+<li>CUISizes now defined clockwise like in CSS, top-right-bottom-left</li>
+<li>CUIButton now yields visual bounds so you can trim text with CullChildren</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md57"></a>
+WIP focus</h2>
+<ul>
+<li>Added Blur() to CUIComponent</li>
+<li>CUIMain Gloabal keyboard events are not dispatched when GUI.InputBlockingMenuOpen</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md58"></a>
+Serialization</h2>
+<ul>
+<li>Snapshot tests now do serialize/deserialize pass on test subjects so i could spot serialization artifacts</li>
+<li>Made more props serializable</li>
+<li>Nested classes serialized with full name with containing classes</li>
+<li>Added serialization modes: Ignore Replace Merge</li>
+<li>You can skip child serialization with Serializable = false</li>
+<li>BeforeSerialization AfterSerialization virtual methods</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md59"></a>
+not important:</h2>
+<ul>
+<li>Made VisualUnits Unaware, moved Background to BackgroundSlot <br  />
+ It's some wip change, i wanted to serialize Background as a whole with JSON, and for that it had to be transient parsable prop <br  />
+ Turned out that JSON inside XML is super ugly and i'm still too lazy to write specialized parsing method</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md60"></a>
 0.3.0.0</h1>
 <p>Rewritten from scratch</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md55"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md61"></a>
 Fixes:</h2>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md56"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md62"></a>
 - Isolated CUICore</h3>
 <p>prev CUI was hardwired to the game and it's lifecycle</p>
 <p>Now all CUI stuff was moved to CUICore, which is passive isolated state machine <br  />
  It doesn't know about the game and has to be runned by CUIRunners via handles <br  />
- There could be various runners, e.g. they can run code in this mod, or scan other mods, or feed it with test data, or run it in a separate process</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md57"></a>
+ There can be various runners, e.g. they can run code in this mod, or scan other mods, or feed it with test data, or run it in a separate process</p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md63"></a>
 - CUICore is isolated from MonoGame</h3>
 <p>It runs on its own abstraction <br  />
  Now it's possible to write tests for draw calls and use fake textures with no data</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md58"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md64"></a>
 - VisualComponents / VisualElements</h3>
 <p>In prev version the base class for drawn stuff was CUIComponent <br  />
  So other stuff had to either be based on CUIComponent or copy its code and be processed separately <br  />
@@ -120,30 +156,30 @@ Fixes:</h2>
  VisualComponent is almost empty abstract base for all components <br  />
  VisualComponent can have many VisualElements and they control their order with VisualSplit <br  />
  Events are routed from VisualElements to host components</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md59"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md65"></a>
 - Text measurement / drawing logic was moved to TextBlock VisualElement</h3>
-<p>So components that need to draw some text no longer have to be based on CUITextBlock</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md60"></a>
+<p>So components that needs to draw some text no longer have to be based on CUITextBlock</p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md66"></a>
 - VisualBounds</h3>
 <p>VisualComponents can yield enter/exit VisualBounds instructions for ChainDrawer in VisualSplit <br  />
  This allows to apply camera transformation / croping / different sampler state to children / particular VisualElements <br  />
  Now CUIMap with natural zoom should be possible</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md61"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md67"></a>
 - Most reflection stuff was moved to code generator</h3>
 <p>So i can use funny design patterns without wrecking the performance</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md62"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md68"></a>
 - Everything was public</h3>
 <p>There's a lot of internal logic, and it's impossible to maintain in one big object <br  />
  So i had to split them, but then those objects had to touch internals of each other -&gt; internals had to be public <br  />
  And anything could potentially reference and depend on anything (and it did) <br  />
 </p>
 <p>Now there's funny compiler generated component level dependency injection system that allows me to keep logic in private modules that require each other via interfaces and are injected into each other by host component</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md63"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md69"></a>
 - Layout calculations use RectFloat while Drawing uses RectInt</h3>
 <p>In prev version rects was rounded on every step of layout calculations <br  />
  And it caused double rounding issues all over the place, e.g. ladder walking components in nested lists</p>
 <p>Now layout is calculated on RectFloat and gets rounded only on the last stage before drawing</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md64"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md70"></a>
 - Debug system rework</h3>
 <p>This is actually was the last straw that killed prev version: <br  />
  You had to create debug string for each event even if the node was off which killed the fps <br  />
@@ -152,22 +188,22 @@ Fixes:</h2>
 <p>new DebugNodes don't create event objects when they're off <br  />
  They are routable, so i can enable them for some types of events or groups of components <br  />
  They are sending debug events to debug hub where debuggers can listen for them So i can make different debuggers / swap them, one faulty debugger won't break the whole debug system</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md65"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md71"></a>
 - other stuff i'm too lazy to mention</h3>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md66"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md72"></a>
 New issues:</h2>
 <ul>
 <li>inconsistency</li>
 <li>poor error handling and validation</li>
 <li>a lot of stuff from prev version still missing</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md67"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md73"></a>
 0.2.7.0 -&gt; 0.0.0.0</h1>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md68"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md74"></a>
 ↓ Legacy ↓</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md69"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md75"></a>
 Died From <strike>Cringe</strike> 0 day design flaws</h2>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md70"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md76"></a>
 0.2.7.0</h2>
 <p>Removed CUIFrame outline from DrawFront, but not ResizeHandle yet, it's a bit harder <br  />
  Now Frame outlines won't be visible through other components</p>
@@ -177,11 +213,11 @@ Died From <strike>Cringe</strike> 0 day design flaws</h2>
 <p>Added Repeat prop for CUIAnimation</p>
 <p>Made CUIPalette a bit more resistant to missing files and misuse <br  />
  Added hardcoded backup palette so you could see something even if you could't load it for some reason</p>
-<h4 class="doxsection"><a class="anchor" id="autotoc_md71"></a>
+<h4 class="doxsection"><a class="anchor" id="autotoc_md77"></a>
 added AttachedItems</h4>
 <p>You can now attach CUIComponent to Barotrauma.Item and track when it's get selected, deselected and when its UpdateHUD is called <br  />
  Check docs</p>
-<h4 class="doxsection"><a class="anchor" id="autotoc_md72"></a>
+<h4 class="doxsection"><a class="anchor" id="autotoc_md78"></a>
 Serialization changes:</h4>
 <p>Separated serialization and parsing logic <br  />
  All parsing is now done in CUIParser, it can parse anything, you can also use it</p>
@@ -194,7 +230,7 @@ Serialization changes:</h4>
 <li>MergeSerialization - Children of deserialized component will be moved to existing component</li>
 <li>ReplaceSerialization - Deserialized component will replace existing component</li>
 </ul>
-<h4 class="doxsection"><a class="anchor" id="autotoc_md73"></a>
+<h4 class="doxsection"><a class="anchor" id="autotoc_md79"></a>
 Debug</h4>
 <p>Added</p><ul>
 <li>CUIPropsInterface component</li>
@@ -203,23 +239,23 @@ Debug</h4>
 <li>printcolors console command</li>
 </ul>
 <p>Added checkers texture for debug</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md74"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md80"></a>
 0.2.6.4</h2>
 <p>"Fixed" buttons still changing colors behind components with ConsumeMouseClicks</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md75"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md81"></a>
 0.2.6.3</h2>
 <p>Added Piano test</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md76"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md82"></a>
 0.2.6.2</h2>
 <p>Added Gap prop for CUIHorizontalList</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md77"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md83"></a>
 0.2.6.1</h2>
 <p>Set UseCursedPatches to true by default because that way it's easier to make mod running <br  />
 </p>
 <p>Added Ghost Detector, it will notify you if something cursed happenes with the patches</p>
 <p>Added CUIButton.PlaySound prop, you can prevent it from playing click sound</p>
 <p>Rearranged files to confuse you even more</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md78"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md84"></a>
 0.2.6.0</h2>
 <p>Found one ugly solution to the curse (<a href="https://github.com/evilfactory/LuaCsForBarotrauma/issues/245">https://github.com/evilfactory/LuaCsForBarotrauma/issues/245</a>), i think it's the only way to bypass it <br  />
  If you find a better way let me know <br  />
@@ -229,19 +265,19 @@ Debug</h4>
 <p>Solution: Add lua script that adds patches and calls hooks, and then add hooks from assembly</p>
 <p>If you set CUI.UseCursedPatches to true it'll use harmony and be potentially bugged <br  />
  If you set CUI.UseCursedPatches to false it won't be bugged, but you'll also have to set CUI.HookIdentifier to some name or hooks from different CUIs will conflict and add AdditionalHooks.lua to Lua/Autorun</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md79"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md85"></a>
 0.2.5.1</h2>
 <p>Experimenting with the way multiple CUIs resolve conflicts Renamed CUI.UpdateHookIdentifier =&gt; CUI.HookIdentifier now i'm using it in harmony patches to</p>
 <p>added warning if it's not set</p>
 <p>fixed crash in GUI_UpdateMouseOn_Postfix Added null checks in GUI_UpdateMouseOn_Postfix</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md80"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md86"></a>
 0.2.5.0</h2>
 <p>Added CUI.UpdateHookIdentifier it will be set as identifier to CUI think hook, it very important to set it or hooks from different CUIs will conflict</p>
 <p>Added CUIAnimation Added IgnoreTransparent prop, if true mouse events will work only on not transparent sprites Added Transparency prop, it multiplies BackgroundColor.A and is propagated to Children</p>
 <p>Made CUISpite an object... again Added Rotation, Origin and Offset to CUISprite Added option to load CUISprites with base folder, which allows deserialized components to load sprites from the same folder with relative paths</p>
 <p>Added CUIMenu, check "Custom Menus" mod, CUIRadialMenu (the ugly brother of CUIMenu)</p>
 <p>Added more docs</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md81"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md87"></a>
 0.2.4.0</h2>
 <p>"Fixed" cursed bug that made MainComponents become in GameMain.Update patch after multiple lobbies in compiled version But this "fix" seems to decrease update smoothness, so i might rethink later Set CUI.UseCursedPatches to true if you're not affraid</p>
 <p>Added more performance measurements, shortcutted dumb class scanning in CUILuaRegistrar that happened even if you didn't use lua</p>
@@ -250,7 +286,7 @@ Debug</h4>
 <p>You can now limit resize directions with CUIComponent.ResizeDirection</p>
 <p>Fixed forsed size not reseting after removing a textblock</p>
 <p>Added cuiprinttree command along with cuidraworder</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md82"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md88"></a>
 0.2.3.0</h2>
 <p>Made CUITextInput, CUITickBox and CUISlider use commands and consume data</p>
 <p>Added Gap to CUIVerticalList</p>
@@ -264,32 +300,32 @@ Debug</h4>
 <p>Added more useless CUIPrefabs, i think they are too specific and need some redesign, perhaps i need to create some builder</p>
 <p>Added FloatRange alongside with IntRange</p>
 <p>fixed crash in KeyboardDispatcher_set_Subscriber_Replace in compiled mods</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md83"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md89"></a>
 0.2.2.1</h2>
 <p>Minor stuff: multibutton dispatches the command, CUIPages resizes page to [0,0,1,1], maincomponent flatten tree is a bit more thread safe</p>
 <p>Added IRefreshable interface and CUIComponent.CascadeRefresh CascadeRefresh will recursivelly call Refresh on every child that implements IRefreshable</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md84"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md90"></a>
 0.2.2.0</h2>
 <p>Added to <a class="el" href="_c_u_i_8cs_source.html">CUI.cs</a> </p><div class="fragment"><div class="line">using System.Runtime.CompilerServices;</div>
 <div class="line">[assembly: IgnoresAccessChecksTo(&quot;Barotrauma&quot;)]</div>
 <div class="line">[assembly: IgnoresAccessChecksTo(&quot;DedicatedServer&quot;)]</div>
 <div class="line">[assembly: IgnoresAccessChecksTo(&quot;BarotraumaCore&quot;)]</div>
 </div><!-- fragment --><p> So it could be compiled</p>
-<h4 class="doxsection"><a class="anchor" id="autotoc_md85"></a>
+<h4 class="doxsection"><a class="anchor" id="autotoc_md91"></a>
 Temporary solution to pathing:</h4>
 <p>Now mod won't automatially find its folders</p>
 <p>If you want to use lua you need to set CUI.ModDir to the mod folder path</p>
 <p>Also you need to place Assets folder with CUI stuff somewhere in your mod and set CUI.AssetsPath to it <br  />
  You can rename it, just set the path</p>
 <p>All this needs to be done before CUI.Initialize()</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md86"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md92"></a>
 0.2.1.0</h2>
 <p>Dried tree building methods, added tests for them</p>
 <p>Added insert method along with append and prepend, unlike List.Insert it won't throw on "index out of bounds"</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md87"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md93"></a>
 0.2.0.1</h2>
 <p>.nojekyll moment</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md88"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md94"></a>
 0.2.0.0</h2>
 <p>Reworked CUIPalette, and CUICommand, check docs</p>
 <p>Reworked border, added separate borders for each side, border sprite, outline</p>
@@ -298,7 +334,7 @@ Temporary solution to pathing:</h4>
 <p>Added CUIPresets with... presets. Which you can use to reduce boilerplate code</p>
 <p>Made more stuff parsable and serializble</p>
 <p>And tons of other things i'm too lazy to write down, compare commits if you're curious</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md89"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md95"></a>
 0.1.0.0</h2>
 <p>You can now use relative paths for sprite textures <br  />
  You can set CUI.PGNAssets to the folder with your assets, CUI will also search for textures there</p>
@@ -309,7 +345,7 @@ Temporary solution to pathing:</h4>
 <p>Added CrossRelative prop, it's like Relative but values are relative to the oposite value, e.g. CrossRelative.Width = Host.Real.Height, convinient for making square things</p>
 <p>Reworked slider component</p>
 <p>DragHandle can now DragRelative to the parent</p>
-<h4 class="doxsection"><a class="anchor" id="autotoc_md90"></a>
+<h4 class="doxsection"><a class="anchor" id="autotoc_md96"></a>
 Serialization</h4>
 <p>Added BreakSerialization prop, if true serrialization will stop on this component</p>
 <p>Added LoadSelfFromFile, SaveToTheSamePath methods</p>
@@ -317,7 +353,7 @@ Serialization</h4>
 <p>Added SaveAfterLoad prop, it's mostly for serialization debugging</p>
 <p>Added more Custom ToString and parsed methods to CUIExtensions, Added native enum serialization, Vector2 and Rectangle is now serialized into [ x, y ], be carefull</p>
 <p>Sprite is now fully serializable</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md91"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md97"></a>
 0.0.5.1</h2>
 <p>Added "[CUISerializable] public string Command { get; set; }"" to CUIButton so you could define command that is called on click in xml</p>
 <p>Splitted MasterColor into MasterColor and MasterColorOpaque</p>
@@ -334,15 +370,15 @@ Serialization</h4>
 <p>Added sprites to resize handles, and gradient sprite that's not used yet</p>
 <p>Added <span class="tt">public SpriteEffects Effects;</span> to CUISprite, it controls texture flipping</p>
 <p>More params in CUITextureManager.GetSprite</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md92"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md98"></a>
 0.0.5.0</h2>
 <p>Added Styles</p>
 <p>Every component has a Style and every Type has a DefaultStyle</p>
 <p>Styles are observable dicts with pairs { "prop name", "prop value" } and can be used to assign any parsable string to any prop or reference some value from CUIPalette</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md93"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md99"></a>
 0.0.4.0</h2>
 <p>Added CUICanvas.Render(Action&lt; SpriteBatch &gt; renderFunc) method that allows you to render anything you want onto the canvas texture</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md94"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md100"></a>
 0.0.3.0</h2>
 <p>Added Changelog.md :BaroDev:</p>
 <p>Added CUI.TopMain, it's the second CUIMainComponent which exists above vanilla GUI</p>

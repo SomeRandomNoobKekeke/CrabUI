@@ -22,26 +22,44 @@
 \DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00018}00018\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00019}00019\ \ \ \ \ \ \ [typeof(Vector2)]\ =\ (raw)\ =>\ ParseVector2(raw),}
 \DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00020}00020\ \ \ \ \ \ \ [typeof(Color)]\ =\ (raw)\ =>\ ParseColor(raw),}
-\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00021}00021\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00022}00022\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Color\ ParseColor(\textcolor{keywordtype}{string}\ raw)\ =>\ XMLExtensions.ParseColor(raw);}
-\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Vector2\ ParseVector2(\textcolor{keywordtype}{string}\ raw)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00021}00021\ \ \ \ \ \ \ [typeof(CUITexture2D)]\ =\ CUICore.TextureManager.Get,\textcolor{comment}{//BRUH\ i\ either\ have\ to\ reference\ \_\_CUITexture2D\ from\ CUICore\ or\ CUICore.TextureManager\ from\ \_\_CUITexture2D}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00022}00022\ \ \ \ \ \ \ [typeof((\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int}))]\ =\ (raw)\ =>\ Tupple2IntInt(raw),}
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00023}00023\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ (int,\ int)\ Tupple2IntInt(\textcolor{keywordtype}{string}\ raw)}
 \DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00025}00025\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00026}00026\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (raw\ ==\ \textcolor{keyword}{null}\ ||\ raw\ ==\ \textcolor{stringliteral}{"{}"{}})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Vector2(0,\ 0);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00026}00026\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (raw\ ==\ \textcolor{keyword}{null}\ ||\ raw\ ==\ \textcolor{stringliteral}{"{}"{}})\ \textcolor{keywordflow}{return}\ (0,\ 0);}
 \DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00027}00027\ }
 \DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00028}00028\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ content\ =\ raw.Split(\textcolor{charliteral}{'['},\ \textcolor{charliteral}{']'})[1];}
 \DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00029}00029\ }
 \DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00030}00030\ \ \ \ \ \ \ List<string>\ coords\ =\ content.Split(\textcolor{charliteral}{','}).Select(s\ =>\ s.Trim()).ToList();}
 \DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00031}00031\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00032}00032\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00033}00033\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ y\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00032}00032\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ x\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00033}00033\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ y\ =\ 0;}
 \DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00034}00034\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00035}00035\ \ \ \ \ \ \ \textcolor{keywordtype}{float}.TryParse(coords.ElementAtOrDefault(0),\ out\ x);}
-\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00036}00036\ \ \ \ \ \ \ \textcolor{keywordtype}{float}.TryParse(coords.ElementAtOrDefault(1),\ out\ y);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00035}00035\ \ \ \ \ \ \ \textcolor{keywordtype}{int}.TryParse(coords.ElementAtOrDefault(0),\ out\ x);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00036}00036\ \ \ \ \ \ \ \textcolor{keywordtype}{int}.TryParse(coords.ElementAtOrDefault(1),\ out\ y);}
 \DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00037}00037\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00038}00038\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Vector2(x,\ y);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00038}00038\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (x,\ y);}
 \DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00039}00039\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00040}00040\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00041}00041\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00041}00041\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Color\ ParseColor(\textcolor{keywordtype}{string}\ raw)\ =>\ XMLExtensions.ParseColor(raw);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Vector2\ ParseVector2(\textcolor{keywordtype}{string}\ raw)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00043}00043\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00044}00044\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (raw\ ==\ \textcolor{keyword}{null}\ ||\ raw\ ==\ \textcolor{stringliteral}{"{}"{}})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Vector2(0,\ 0);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00046}00046\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ content\ =\ raw.Split(\textcolor{charliteral}{'['},\ \textcolor{charliteral}{']'})[1];}
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00048}00048\ \ \ \ \ \ \ List<string>\ coords\ =\ content.Split(\textcolor{charliteral}{','}).Select(s\ =>\ s.Trim()).ToList();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00050}00050\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00051}00051\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ y\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00053}00053\ \ \ \ \ \ \ \textcolor{keywordtype}{float}.TryParse(coords.ElementAtOrDefault(0),\ out\ x);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00054}00054\ \ \ \ \ \ \ \textcolor{keywordtype}{float}.TryParse(coords.ElementAtOrDefault(1),\ out\ y);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00056}00056\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Vector2(x,\ y);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00057}00057\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00058}00058\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_parse_8cs_source_l00059}00059\ \}}
 
 \end{DoxyCode}

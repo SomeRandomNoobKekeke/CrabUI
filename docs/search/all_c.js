@@ -1,9 +1,9 @@
 var searchData=
 [
   ['d_0',['D',['../class_crab_u_i_user_1_1_class_mapping_1_1_the_problem_1_1_d.html',1,'CrabUIUser.ClassMapping.TheProblem.D'],['../class_crab_u_i_user_1_1_how_to_access_protected_in_grand_parent_1_1_d.html',1,'CrabUIUser.HowToAccessProtectedInGrandParent.D'],['../class_crab_u_i_user_1_1_itterating_over_props_1_1_d.html',1,'CrabUIUser.ItteratingOverProps.D']]],
-  ['day_20design_20flaws_1',['Died From &lt;strike&gt;Cringe&lt;/strike&gt; 0 day design flaws',['../md__client_project_2_client_source_2_changelog.html#autotoc_md69',1,'']]],
-  ['debug_2',['Debug',['../_other_concepts.html#autotoc_md28',1,'Debug'],['../md__client_project_2_client_source_2_changelog.html#autotoc_md73',1,'Debug']]],
-  ['debug_20system_20rework_3',['- Debug system rework',['../md__client_project_2_client_source_2_changelog.html#autotoc_md64',1,'']]],
+  ['day_20design_20flaws_1',['Died From &lt;strike&gt;Cringe&lt;/strike&gt; 0 day design flaws',['../md__client_project_2_client_source_2_changelog.html#autotoc_md75',1,'']]],
+  ['debug_2',['Debug',['../_other_concepts.html#autotoc_md30',1,'Debug'],['../md__client_project_2_client_source_2_changelog.html#autotoc_md79',1,'Debug']]],
+  ['debug_20system_20rework_3',['- Debug system rework',['../md__client_project_2_client_source_2_changelog.html#autotoc_md70',1,'']]],
   ['debugevent_4',['DebugEvent',['../class_c_u_i_libs_1_1_debug_event.html',1,'CUILibs']]],
   ['debuggate_5',['DebugGate',['../class_c_u_i_libs_1_1_debug_gate.html',1,'CUILibs']]],
   ['debuggatedict_6',['DebugGateDict',['../class_c_u_i_libs_1_1_debug_gate_dict.html',1,'CUILibs']]],
@@ -26,15 +26,15 @@ var searchData=
   ['deeppropvsdirectprop_23',['DeepPropVsDirectProp',['../class_crab_u_i_user_1_1_deep_prop_vs_direct_prop.html',1,'CrabUIUser']]],
   ['default_24',['Default',['../class_crab_u_i_1_1_c_u_i_palette.html#ac443fcba5e685041425a08933880e3ea',1,'CrabUI::CUIPalette']]],
   ['delegatevsdirectaccess_25',['DelegateVsDirectAccess',['../class_crab_u_i_user_1_1_delegate_vs_direct_access.html',1,'CrabUIUser']]],
-  ['design_20flaws_26',['Died From &lt;strike&gt;Cringe&lt;/strike&gt; 0 day design flaws',['../md__client_project_2_client_source_2_changelog.html#autotoc_md69',1,'']]],
+  ['design_20flaws_26',['Died From &lt;strike&gt;Cringe&lt;/strike&gt; 0 day design flaws',['../md__client_project_2_client_source_2_changelog.html#autotoc_md75',1,'']]],
   ['dictionary_5fpart_27',['Dictionary_Part',['../class_crab_u_i_1_1_c_u_i_component_1_1_dictionary___part.html',1,'CrabUI::CUIComponent']]],
   ['dictionaryvsprop_28',['DictionaryVsProp',['../class_crab_u_i_user_1_1_dictionary_vs_prop.html',1,'CrabUIUser']]],
-  ['died_20from_20cringe_200_20day_20design_20flaws_29',['Died From &lt;strike&gt;Cringe&lt;/strike&gt; 0 day design flaws',['../md__client_project_2_client_source_2_changelog.html#autotoc_md69',1,'']]],
+  ['died_20from_20cringe_200_20day_20design_20flaws_29',['Died From &lt;strike&gt;Cringe&lt;/strike&gt; 0 day design flaws',['../md__client_project_2_client_source_2_changelog.html#autotoc_md75',1,'']]],
   ['directproxies_30',['DirectProxies',['../class_crab_u_i_user_1_1_class_mapping_1_1_direct_proxies.html',1,'CrabUIUser::ClassMapping']]],
   ['divers_31',['Notes For Code Divers',['../_notes_for_code_divers.html',1,'']]],
   ['draghandle_32',['DragHandle',['../class_crab_u_i_1_1_drag_handle.html',1,'CrabUI']]],
-  ['drawing_20logic_20was_20moved_20to_20textblock_20visualelement_33',['- Text measurement / drawing logic was moved to TextBlock VisualElement',['../md__client_project_2_client_source_2_changelog.html#autotoc_md59',1,'']]],
-  ['drawing_20uses_20rectint_34',['- Layout calculations use RectFloat while Drawing uses RectInt',['../md__client_project_2_client_source_2_changelog.html#autotoc_md63',1,'']]],
+  ['drawing_20logic_20was_20moved_20to_20textblock_20visualelement_33',['- Text measurement / drawing logic was moved to TextBlock VisualElement',['../md__client_project_2_client_source_2_changelog.html#autotoc_md65',1,'']]],
+  ['drawing_20uses_20rectint_34',['- Layout calculations use RectFloat while Drawing uses RectInt',['../md__client_project_2_client_source_2_changelog.html#autotoc_md69',1,'']]],
   ['dummyikeyboardsubscriber_35',['DummyIKeyboardSubscriber',['../class_crab_u_i_1_1_dummy_i_keyboard_subscriber.html',1,'CrabUI']]],
   ['duration_36',['Duration',['../class_crab_u_i_1_1_animation_track.html#a4449cf246fbb5bac96cd89f79c54237b',1,'CrabUI::AnimationTrack']]]
 ];

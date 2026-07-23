@@ -111,6 +111,7 @@ record&#160;</td><td class="memItemRight"><b>Event</b> (string Name, SnapshotTes
 <tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:adda92c161ff0edc6911a063ebe933447" id="r_adda92c161ff0edc6911a063ebe933447"><td class="memItemLeft"><a class="el" href="interface_c_u_i_libs_1_1_i_logger.html">ILogger</a>&#160;</td><td class="memItemRight"><a class="el" href="#adda92c161ff0edc6911a063ebe933447">Logger</a><code> [get]</code></td></tr>
+<tr class="memitem:a791c779fbc18964cc83561610451daac" id="r_a791c779fbc18964cc83561610451daac"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a791c779fbc18964cc83561610451daac">SerializeTestSubject</a><code> [get, set]</code></td></tr>
 <tr class="memitem:a360049b6021843cf91beca7a34039927" id="r_a360049b6021843cf91beca7a34039927"><td class="memItemLeft">static string&#160;</td><td class="memItemRight"><a class="el" href="#a360049b6021843cf91beca7a34039927">SnaphotsFolder</a><code> [get]</code></td></tr>
 <tr class="memitem:af1c3309a09f788e80067c32d0e75ba2e" id="r_af1c3309a09f788e80067c32d0e75ba2e"><td class="memItemLeft"><a class="el" href="class_crab_u_i_user_1_1_component_snapshot.html">ComponentSnapshot</a>&#160;</td><td class="memItemRight"><a class="el" href="#af1c3309a09f788e80067c32d0e75ba2e">CurrentSnapshot</a><code> [get, set]</code></td></tr>
 <tr class="memitem:ac88e4e7acb96e0e35f389cb25fd3e148" id="r_ac88e4e7acb96e0e35f389cb25fd3e148"><td class="memItemLeft">SnapshotTest&#160;</td><td class="memItemRight"><a class="el" href="#ac88e4e7acb96e0e35f389cb25fd3e148">CurrentTest</a><code> [get, set]</code></td></tr>
@@ -140,12 +141,12 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_snapshot_test_manager_8cs_source.html#l00026">26</a> of file <a class="el" href="_snapshot_test_manager_8cs_source.html">SnapshotTestManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   27</span>    {</div>
-<div class="line"><span class="lineno">   28</span>      ConsoleInteface = <span class="keyword">new</span> ConsoleIntefaceClass(<span class="keyword">this</span>);</div>
-<div class="line"><span class="lineno">   29</span>      Runner.Chamber = Chamber;</div>
-<div class="line"><span class="lineno">   30</span>      UI = <span class="keyword">new</span> SnapshotPage(<span class="keyword">this</span>);</div>
-<div class="line"><span class="lineno">   31</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_snapshot_test_manager_8cs_source.html#l00037">37</a> of file <a class="el" href="_snapshot_test_manager_8cs_source.html">SnapshotTestManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   38</span>    {</div>
+<div class="line"><span class="lineno">   39</span>      ConsoleInteface = <span class="keyword">new</span> ConsoleIntefaceClass(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   40</span>      Runner.Chamber = Chamber;</div>
+<div class="line"><span class="lineno">   41</span>      UI = <span class="keyword">new</span> SnapshotPage(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   42</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -169,11 +170,11 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_snapshot_test_manager_8cs_source.html#l00091">91</a> of file <a class="el" href="_snapshot_test_manager_8cs_source.html">SnapshotTestManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   92</span>    {</div>
-<div class="line"><span class="lineno">   93</span>      <span class="keywordtype">string</span> savePath = Path.Combine(SnaphotsFolder, $<span class="stringliteral">&quot;{test.Name}.xml&quot;</span>);</div>
-<div class="line"><span class="lineno">   94</span>      snapshot.Save(savePath);</div>
-<div class="line"><span class="lineno">   95</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_snapshot_test_manager_8cs_source.html#l00102">102</a> of file <a class="el" href="_snapshot_test_manager_8cs_source.html">SnapshotTestManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  103</span>    {</div>
+<div class="line"><span class="lineno">  104</span>      <span class="keywordtype">string</span> savePath = Path.Combine(SnaphotsFolder, $<span class="stringliteral">&quot;{test.Name}.xml&quot;</span>);</div>
+<div class="line"><span class="lineno">  105</span>      snapshot.Save(savePath);</div>
+<div class="line"><span class="lineno">  106</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -192,12 +193,12 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_snapshot_test_manager_8cs_source.html#l00084">84</a> of file <a class="el" href="_snapshot_test_manager_8cs_source.html">SnapshotTestManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   85</span>    {</div>
-<div class="line"><span class="lineno">   86</span>      <span class="keywordflow">if</span> (CurrentTest is <span class="keyword">null</span>) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   87</span>      Accept(CurrentTest, CurrentSnapshot);</div>
-<div class="line"><span class="lineno">   88</span>      Events.Raise(<span class="keyword">new</span> Event(<span class="stringliteral">&quot;passed&quot;</span>, CurrentTest));</div>
-<div class="line"><span class="lineno">   89</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_snapshot_test_manager_8cs_source.html#l00095">95</a> of file <a class="el" href="_snapshot_test_manager_8cs_source.html">SnapshotTestManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   96</span>    {</div>
+<div class="line"><span class="lineno">   97</span>      <span class="keywordflow">if</span> (CurrentTest is <span class="keyword">null</span>) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   98</span>      Accept(CurrentTest, CurrentSnapshot);</div>
+<div class="line"><span class="lineno">   99</span>      Events.Raise(<span class="keyword">new</span> Event(<span class="stringliteral">&quot;passed&quot;</span>, CurrentTest));</div>
+<div class="line"><span class="lineno">  100</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -216,8 +217,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_snapshot_test_manager_8cs_source.html#l00082">82</a> of file <a class="el" href="_snapshot_test_manager_8cs_source.html">SnapshotTestManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   82</span>=&gt; Chamber.Dismantle();</div>
+<p class="definition">Definition at line <a class="el" href="_snapshot_test_manager_8cs_source.html#l00093">93</a> of file <a class="el" href="_snapshot_test_manager_8cs_source.html">SnapshotTestManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   93</span>=&gt; Chamber.Dismantle();</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -236,38 +237,38 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_snapshot_test_manager_8cs_source.html#l00048">48</a> of file <a class="el" href="_snapshot_test_manager_8cs_source.html">SnapshotTestManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   49</span>    {</div>
-<div class="line"><span class="lineno">   50</span>      <span class="keywordflow">if</span> (!Repo.Tests.ContainsKey(name))</div>
-<div class="line"><span class="lineno">   51</span>      {</div>
-<div class="line"><span class="lineno">   52</span>        Logger.Warning($<span class="stringliteral">&quot;Can&#39;t find snapshot test: [{name}]&quot;</span>);</div>
-<div class="line"><span class="lineno">   53</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   54</span>      }</div>
-<div class="line"><span class="lineno">   55</span> </div>
-<div class="line"><span class="lineno">   56</span>      ModStorage.Set(<span class="stringliteral">&quot;CUITest&quot;</span>, name);</div>
-<div class="line"><span class="lineno">   57</span> </div>
-<div class="line"><span class="lineno">   58</span>      <span class="keywordflow">if</span> (!Chamber.IsSetup) Chamber.Setup();</div>
-<div class="line"><span class="lineno">   59</span> </div>
-<div class="line"><span class="lineno">   60</span>      CurrentTest = Repo.Tests[name];</div>
-<div class="line"><span class="lineno">   61</span>      CurrentSnapshot = Runner.Run(CurrentTest);</div>
-<div class="line"><span class="lineno">   62</span>      ComponentSnapshot stored = GetStoredSnapshot(CurrentTest);</div>
-<div class="line"><span class="lineno">   63</span> </div>
-<div class="line"><span class="lineno">   64</span>      <span class="keywordflow">if</span> (stored is <span class="keyword">null</span>)</div>
-<div class="line"><span class="lineno">   65</span>      {</div>
-<div class="line"><span class="lineno">   66</span>        Accept(CurrentTest, CurrentSnapshot);</div>
-<div class="line"><span class="lineno">   67</span>        Events.Raise(<span class="keyword">new</span> Event(<span class="stringliteral">&quot;passed&quot;</span>, CurrentTest));</div>
-<div class="line"><span class="lineno">   68</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   69</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="_snapshot_test_manager_8cs_source.html#l00059">59</a> of file <a class="el" href="_snapshot_test_manager_8cs_source.html">SnapshotTestManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   60</span>    {</div>
+<div class="line"><span class="lineno">   61</span>      <span class="keywordflow">if</span> (!Repo.Tests.ContainsKey(name))</div>
+<div class="line"><span class="lineno">   62</span>      {</div>
+<div class="line"><span class="lineno">   63</span>        Logger.Warning($<span class="stringliteral">&quot;Can&#39;t find snapshot test: [{name}]&quot;</span>);</div>
+<div class="line"><span class="lineno">   64</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   65</span>      }</div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>      ModStorage.Set(<span class="stringliteral">&quot;CUITest&quot;</span>, name);</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>      <span class="keywordflow">if</span> (!Chamber.IsSetup) Chamber.Setup();</div>
 <div class="line"><span class="lineno">   70</span> </div>
-<div class="line"><span class="lineno">   71</span>      <span class="keywordflow">if</span> (ComponentSnapshot.AreEqual(stored, CurrentSnapshot))</div>
-<div class="line"><span class="lineno">   72</span>      {</div>
-<div class="line"><span class="lineno">   73</span>        Events.Raise(<span class="keyword">new</span> Event(<span class="stringliteral">&quot;passed&quot;</span>, CurrentTest));</div>
-<div class="line"><span class="lineno">   74</span>      }</div>
-<div class="line"><span class="lineno">   75</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   71</span>      CurrentTest = Repo.Tests[name];</div>
+<div class="line"><span class="lineno">   72</span>      CurrentSnapshot = Runner.Run(CurrentTest);</div>
+<div class="line"><span class="lineno">   73</span>      ComponentSnapshot stored = GetStoredSnapshot(CurrentTest);</div>
+<div class="line"><span class="lineno">   74</span> </div>
+<div class="line"><span class="lineno">   75</span>      <span class="keywordflow">if</span> (stored is <span class="keyword">null</span>)</div>
 <div class="line"><span class="lineno">   76</span>      {</div>
-<div class="line"><span class="lineno">   77</span>        Events.Raise(<span class="keyword">new</span> Event(<span class="stringliteral">&quot;failed&quot;</span>, CurrentTest, ComponentSnapshot.CreateDiffString(CurrentSnapshot, stored)));</div>
-<div class="line"><span class="lineno">   78</span>      }</div>
-<div class="line"><span class="lineno">   79</span>    }</div>
+<div class="line"><span class="lineno">   77</span>        Accept(CurrentTest, CurrentSnapshot);</div>
+<div class="line"><span class="lineno">   78</span>        Events.Raise(<span class="keyword">new</span> Event(<span class="stringliteral">&quot;passed&quot;</span>, CurrentTest));</div>
+<div class="line"><span class="lineno">   79</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   80</span>      }</div>
+<div class="line"><span class="lineno">   81</span> </div>
+<div class="line"><span class="lineno">   82</span>      <span class="keywordflow">if</span> (ComponentSnapshot.AreEqual(stored, CurrentSnapshot))</div>
+<div class="line"><span class="lineno">   83</span>      {</div>
+<div class="line"><span class="lineno">   84</span>        Events.Raise(<span class="keyword">new</span> Event(<span class="stringliteral">&quot;passed&quot;</span>, CurrentTest));</div>
+<div class="line"><span class="lineno">   85</span>      }</div>
+<div class="line"><span class="lineno">   86</span>      <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   87</span>      {</div>
+<div class="line"><span class="lineno">   88</span>        Events.Raise(<span class="keyword">new</span> Event(<span class="stringliteral">&quot;failed&quot;</span>, CurrentTest, ComponentSnapshot.CreateDiffString(CurrentSnapshot, stored)));</div>
+<div class="line"><span class="lineno">   89</span>      }</div>
+<div class="line"><span class="lineno">   90</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -286,13 +287,13 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_snapshot_test_manager_8cs_source.html#l00041">41</a> of file <a class="el" href="_snapshot_test_manager_8cs_source.html">SnapshotTestManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   42</span>    {</div>
-<div class="line"><span class="lineno">   43</span>      <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> name <span class="keywordflow">in</span> Repo.Tests.Keys)</div>
-<div class="line"><span class="lineno">   44</span>      {</div>
-<div class="line"><span class="lineno">   45</span>        Run(name);</div>
-<div class="line"><span class="lineno">   46</span>      }</div>
-<div class="line"><span class="lineno">   47</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_snapshot_test_manager_8cs_source.html#l00052">52</a> of file <a class="el" href="_snapshot_test_manager_8cs_source.html">SnapshotTestManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>    {</div>
+<div class="line"><span class="lineno">   54</span>      <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> name <span class="keywordflow">in</span> Repo.Tests.Keys)</div>
+<div class="line"><span class="lineno">   55</span>      {</div>
+<div class="line"><span class="lineno">   56</span>        Run(name);</div>
+<div class="line"><span class="lineno">   57</span>      }</div>
+<div class="line"><span class="lineno">   58</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -311,8 +312,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_snapshot_test_manager_8cs_source.html#l00081">81</a> of file <a class="el" href="_snapshot_test_manager_8cs_source.html">SnapshotTestManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   81</span>=&gt; Chamber.Setup();</div>
+<p class="definition">Definition at line <a class="el" href="_snapshot_test_manager_8cs_source.html#l00092">92</a> of file <a class="el" href="_snapshot_test_manager_8cs_source.html">SnapshotTestManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   92</span>=&gt; Chamber.Setup();</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -337,8 +338,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_snapshot_test_manager_8cs_source.html#l00033">33</a> of file <a class="el" href="_snapshot_test_manager_8cs_source.html">SnapshotTestManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   33</span>{ <span class="keyword">get</span>; } = <span class="keyword">new</span>();</div>
+<p class="definition">Definition at line <a class="el" href="_snapshot_test_manager_8cs_source.html#l00044">44</a> of file <a class="el" href="_snapshot_test_manager_8cs_source.html">SnapshotTestManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>{ <span class="keyword">get</span>; } = <span class="keyword">new</span>();</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -362,8 +363,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_snapshot_test_manager_8cs_source.html#l00037">37</a> of file <a class="el" href="_snapshot_test_manager_8cs_source.html">SnapshotTestManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   37</span>{ <span class="keyword">get</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_snapshot_test_manager_8cs_source.html#l00048">48</a> of file <a class="el" href="_snapshot_test_manager_8cs_source.html">SnapshotTestManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   48</span>{ <span class="keyword">get</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -387,8 +388,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_snapshot_test_manager_8cs_source.html#l00021">21</a> of file <a class="el" href="_snapshot_test_manager_8cs_source.html">SnapshotTestManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   21</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_snapshot_test_manager_8cs_source.html#l00032">32</a> of file <a class="el" href="_snapshot_test_manager_8cs_source.html">SnapshotTestManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -412,8 +413,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_snapshot_test_manager_8cs_source.html#l00022">22</a> of file <a class="el" href="_snapshot_test_manager_8cs_source.html">SnapshotTestManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   22</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_snapshot_test_manager_8cs_source.html#l00033">33</a> of file <a class="el" href="_snapshot_test_manager_8cs_source.html">SnapshotTestManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   33</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -437,8 +438,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_snapshot_test_manager_8cs_source.html#l00039">39</a> of file <a class="el" href="_snapshot_test_manager_8cs_source.html">SnapshotTestManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   39</span>{ <span class="keyword">get</span>; } = <span class="keyword">new</span>();</div>
+<p class="definition">Definition at line <a class="el" href="_snapshot_test_manager_8cs_source.html#l00050">50</a> of file <a class="el" href="_snapshot_test_manager_8cs_source.html">SnapshotTestManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   50</span>{ <span class="keyword">get</span>; } = <span class="keyword">new</span>();</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -486,8 +487,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_snapshot_test_manager_8cs_source.html#l00034">34</a> of file <a class="el" href="_snapshot_test_manager_8cs_source.html">SnapshotTestManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   34</span>{ <span class="keyword">get</span>; } = <span class="keyword">new</span>();</div>
+<p class="definition">Definition at line <a class="el" href="_snapshot_test_manager_8cs_source.html#l00045">45</a> of file <a class="el" href="_snapshot_test_manager_8cs_source.html">SnapshotTestManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   45</span>{ <span class="keyword">get</span>; } = <span class="keyword">new</span>();</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -511,8 +512,36 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_snapshot_test_manager_8cs_source.html#l00035">35</a> of file <a class="el" href="_snapshot_test_manager_8cs_source.html">SnapshotTestManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   35</span>{ <span class="keyword">get</span>; } = <span class="keyword">new</span>();</div>
+<p class="definition">Definition at line <a class="el" href="_snapshot_test_manager_8cs_source.html#l00046">46</a> of file <a class="el" href="_snapshot_test_manager_8cs_source.html">SnapshotTestManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>{ <span class="keyword">get</span>; } = <span class="keyword">new</span>();</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a791c779fbc18964cc83561610451daac" name="a791c779fbc18964cc83561610451daac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a791c779fbc18964cc83561610451daac">&#9670;&#160;</a></span>SerializeTestSubject</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CrabUIUser.SnapshotTestManager.SerializeTestSubject</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_snapshot_test_manager_8cs_source.html#l00019">19</a> of file <a class="el" href="_snapshot_test_manager_8cs_source.html">SnapshotTestManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>    {</div>
+<div class="line"><span class="lineno">   21</span>      <span class="keyword">get</span> =&gt; Runner.SerializeTestSubject;</div>
+<div class="line"><span class="lineno">   22</span>      <span class="keyword">set</span> =&gt; Runner.SerializeTestSubject = value;</div>
+<div class="line"><span class="lineno">   23</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -536,7 +565,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_snapshot_test_manager_8cs_source.html#l00019">19</a> of file <a class="el" href="_snapshot_test_manager_8cs_source.html">SnapshotTestManager.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_snapshot_test_manager_8cs_source.html#l00030">30</a> of file <a class="el" href="_snapshot_test_manager_8cs_source.html">SnapshotTestManager.cs</a>.</p>
 
 </div>
 </div>
@@ -560,8 +589,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_snapshot_test_manager_8cs_source.html#l00036">36</a> of file <a class="el" href="_snapshot_test_manager_8cs_source.html">SnapshotTestManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   36</span>{ <span class="keyword">get</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_snapshot_test_manager_8cs_source.html#l00047">47</a> of file <a class="el" href="_snapshot_test_manager_8cs_source.html">SnapshotTestManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   47</span>{ <span class="keyword">get</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -38,7 +38,7 @@ namespace CrabUIUser
             {
               Relative = CUINullRect.One,
               Background = {
-                Sprite = CUISprite.Load($"Assets\\PNG\\For testing\\Radial menu\\{i + 1}.png"),
+                Sprite = CUISprite.Get($"Assets\\PNG\\For testing\\Radial menu\\{i + 1}.png"),
                 Color = Color.Gray,
               },
               ConsumeMouseEvents = true,

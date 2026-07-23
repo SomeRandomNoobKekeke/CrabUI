@@ -28,22 +28,23 @@
 \DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ TestDataFolder\ =>\ Path.Combine(ModInfo.Dir,\ \textcolor{stringliteral}{"{}Test\ Data"{}});}
 \DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ SnaphotsFolder\ =>\ Path.Combine(TestDataFolder,\ \textcolor{stringliteral}{"{}Snapshots"{}});}
 \DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ SnaphotsTempFolder\ =>\ Path.Combine(TestDataFolder,\ \textcolor{stringliteral}{"{}Temp"{}});}
-\DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00027}00027\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{public}\ VirtualFileSystem\ VirtualFileSystem\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
-\DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00029}00029\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Init()}
-\DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00031}00031\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00032}00032\ \ \ \ \ \ \ TestManager.SnapshotTestManager.Repo.Add(typeof(\doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_tests}{SnapshotTests}}));}
-\DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00033}00033\ \ \ \ \ \ \ TestManager.E2ETestManager.Repo.AddPack(typeof(\doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_pack}{E2ETestPack}}));}
-\DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00034}00034\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00035}00035\ \ \ \ \ \ \ TestManager.Init();}
-\DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00036}00036\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00037}00037\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Dispose()}
-\DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00039}00039\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00040}00040\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00041}00041\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00042}00042\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00043}00043\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ CompareFolder\ =>\ Path.Combine(TestDataFolder,\ \textcolor{stringliteral}{"{}Compare"{}});}
+\DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{public}\ VirtualFileSystem\ VirtualFileSystem\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Init()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00032}00032\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00033}00033\ \ \ \ \ \ \ TestManager.SnapshotTestManager.Repo.Add(typeof(\doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_tests}{SnapshotTests}}));}
+\DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00034}00034\ \ \ \ \ \ \ TestManager.E2ETestManager.Repo.AddPack(typeof(\doxymbox{\hyperlink{class_crab_u_i_user_1_1_e2_e_test_pack}{E2ETestPack}}));}
+\DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00036}00036\ \ \ \ \ \ \ TestManager.Init();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00039}00039\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Dispose()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00040}00040\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00042}00042\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00043}00043\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_test_8cs_source_l00044}00044\ \}}
 
 \end{DoxyCode}

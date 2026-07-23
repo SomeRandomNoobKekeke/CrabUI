@@ -30,6 +30,7 @@ namespace CrabUI
     public static CUIGraphicsDevice GraphicsDevice => Instance.Handles.GraphicsDevice;
     public static SamplerState SamplerState => Instance.Handles.GUI.SamplerState;
     public static RasterizerState RasterizerState => Instance.Handles.GUI.RasterizerState;
+    public static bool InputBlockingMenuOpen => Instance.Handles.InputBlockingMenuOpen;
 
     public static Reflection_Part Reflection => Instance._Reflection;
     public static CUIStyleManager Styles => Instance.CUIStyleManager;
@@ -37,7 +38,15 @@ namespace CrabUI
     public static AnimationPlayer AnimationPlayer => Instance._AnimationPlayer;
     public static CUIInput Input => Instance._Input;
 
-    public static CUITextureManager TextureManager => Instance.Handles.CUITextureManager;
+    public static CUITextureManager TextureManager => Instance.Handles.TextureManager;
+    public static ResourceIOContextHandle ResourceIOContext => Instance.Handles.ResourceIOContext;
+
+    public static bool Debug
+    {
+      get => Instance._Debug;
+      set => Instance._Debug = value;
+    }
+    public static DebugHub DebugHub => Instance._DebugHub;
 
     public static event Action<double> OnUpdate
     {
@@ -59,5 +68,8 @@ namespace CrabUI
 
     public static void RequestFocus(IFocusable focusable)
       => Instance.GlobalFocusTracker.WantsToBeFocused = focusable;
+
+    public static void RequestBlur(IFocusable focusable)
+      => Instance.GlobalFocusTracker.AddToWantsToBeBlured(focusable);
   }
 }

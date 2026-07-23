@@ -1,5 +1,45 @@
 # Changelog
 
+# 0.3.0.1
+
+- CUI now takes into account calling mod package dir and loaded xml dir when loading textures  
+You can now load textures from paths relative to loaded prefab or mod dir
+
+- From now on use CUI.TextureManager to load textures, CUICore.TextureManager doesn't capture calling assembly
+
+- Added more try-catches in CUI lifecycle, at least it should always unload if something went wrong
+
+- Added "cuidebug" command to toggle debug in console, debug overall is borked, don't use
+
+- moved Click() and PressKey(Keys key) up to CUIComponent
+
+- Added Box boundaries to CUIMainComponents
+
+- CUISizes now defined clockwise like in CSS, top-right-bottom-left
+
+- CUIButton now yields visual bounds so you can trim text with CullChildren
+
+## WIP focus
+- Added Blur() to CUIComponent
+- CUIMain Gloabal keyboard events are not dispatched when GUI.InputBlockingMenuOpen
+
+## Serialization
+- Snapshot tests now do serialize/deserialize pass on test subjects so i could spot serialization artifacts
+
+- Made more props serializable
+
+- Nested classes serialized with full name with containing classes 
+
+- Added serialization modes: Ignore Replace Merge
+
+- You can skip child serialization with Serializable = false
+
+- BeforeSerialization AfterSerialization virtual methods
+
+## not important:
+- Made VisualUnits Unaware, moved Background to BackgroundSlot  
+It's some wip change, i wanted to serialize Background as a whole with JSON, and for that it had to be transient parsable prop  
+Turned out that JSON inside XML is super ugly and i'm still too lazy to write specialized parsing method
 
 # 0.3.0.0
 Rewritten from scratch
@@ -11,7 +51,7 @@ prev CUI was hardwired to the game and it's lifecycle
 
 Now all CUI stuff was moved to CUICore, which is passive isolated state machine  
 It doesn't know about the game and has to be runned by CUIRunners via handles  
-There could be various runners, e.g. they can run code in this mod, or scan other mods, or feed it with test data, or run it in a separate process
+There can be various runners, e.g. they can run code in this mod, or scan other mods, or feed it with test data, or run it in a separate process
 
 ### - CUICore is isolated from MonoGame
 It runs on its own abstraction  
@@ -32,7 +72,7 @@ VisualComponent can have many VisualElements and they control their order with V
 Events are routed from VisualElements to host components
 
 ### - Text measurement / drawing logic was moved to TextBlock VisualElement
-So components that need to draw some text no longer have to be based on CUITextBlock
+So components that needs to draw some text no longer have to be based on CUITextBlock
 
 ### - VisualBounds
 VisualComponents can yield enter/exit VisualBounds instructions for ChainDrawer in VisualSplit  

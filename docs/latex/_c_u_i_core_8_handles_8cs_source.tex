@@ -34,35 +34,38 @@
 \DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00030}00030\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00031}00031\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_graphics_device}{CUIGraphicsDevice}}\ GraphicsDevice\ \{\ \textcolor{keyword}{get};\ \}}
 \DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00032}00032\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_g_u_i}{CUIGUI}}\ GUI\ \{\ \textcolor{keyword}{get};\ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00033}00033\ \ \ \ \ \ \ \textcolor{keyword}{public}\ CUITextureManager\ CUITextureManager\ \{\ \textcolor{keyword}{get};\ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00034}00034\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00035}00035\ \textcolor{comment}{\ \ \ \ \ \ ///\ <summary>}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00036}00036\ \textcolor{comment}{\ \ \ \ \ \ ///\ Should\ steal\ focus\ from\ other\ GUI\ Components}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00037}00037\ \textcolor{comment}{\ \ \ \ \ \ ///\ </summary>}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00038}\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_core_1_1_c_u_i_core_handles_aa5ed419bf2a7ecab6462ef1d1d5e2e04}{00038}}\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_core_1_1_c_u_i_core_handles_aa5ed419bf2a7ecab6462ef1d1d5e2e04}{GrabFocus}}();}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00039}00039\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ ClearFocus();}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00040}00040\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00041}00041\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00042}00042\ \textcolor{comment}{\ \ \ \ ///\ <summary>}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00043}00043\ \textcolor{comment}{\ \ \ \ ///\ This\ is\ how\ CUIRunner\ interacts\ with\ CUICore}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00044}00044\ \textcolor{comment}{\ \ \ \ ///\ </summary>}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00045}\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_c_u_i_runner_handle___part}{00045}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_c_u_i_runner_handle___part}{CUIRunnerHandle\_Part}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_part}{Part}}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00046}00046\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00047}00047\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Update(\textcolor{keywordtype}{double}\ totalTime,\ MouseState\ mouse,\ KeyboardState\ keyboard,\ TextInputEventPack\ textInput)}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ =>\ Self.LifeCycle.Update(totalTime,\ mouse,\ keyboard,\ textInput);}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00049}00049\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ DrawBeforeGUI(\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISpriteBatch}}\ spriteBatch)\ =>\ Self.LifeCycle.DrawBeforeGUI(spriteBatch);}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00050}00050\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ DrawAfterGUI(\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISpriteBatch}}\ spriteBatch)\ =>\ Self.LifeCycle.DrawAfterGUI(spriteBatch);}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00051}00051\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ IsMouseOnSomeCUIComponent()\ =>\ Self.LifeCycle.IsMouseOnSomeCUIComponent();}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00052}00052\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00053}00053\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ AddAssemblyInfo(\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_assembly_info}{CUIAssemblyInfo}}\ assemblyInfo)\ =>\ Self.\_Reflection.AddAssemblyInfo(assemblyInfo);}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00054}00054\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00055}00055\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00056}00056\ \textcolor{comment}{\ \ \ \ ///\ <summary>}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00057}00057\ \textcolor{comment}{\ \ \ \ ///\ This\ must\ be\ set\ by\ CUIRunner}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00058}00058\ \textcolor{comment}{\ \ \ \ ///\ </summary>}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00059}\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_a7f81b95923ed9bcfd55ae57d645b9c9f}{00059}}\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_core_1_1_c_u_i_core_handles}{CUICoreHandles}}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_a7f81b95923ed9bcfd55ae57d645b9c9f}{Handles}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00060}00060\ \ \ \ \ \textcolor{keyword}{public}\ CUIRunnerHandle\_Part\ CUIRunnerHandle\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00061}00061\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00062}00062\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00033}00033\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture_manager}{CUITextureManager}}\ TextureManager\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00034}00034\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_resource_i_o_context_handle}{ResourceIOContextHandle}}\ ResourceIOContext\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00036}00036\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ InputBlockingMenuOpen\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00037}00037\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00038}00038\ \textcolor{comment}{\ \ \ \ \ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00039}00039\ \textcolor{comment}{\ \ \ \ \ \ ///\ Should\ steal\ focus\ from\ other\ GUI\ Components}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00040}00040\ \textcolor{comment}{\ \ \ \ \ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00041}\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_core_1_1_c_u_i_core_handles_aa5ed419bf2a7ecab6462ef1d1d5e2e04}{00041}}\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_core_1_1_c_u_i_core_handles_aa5ed419bf2a7ecab6462ef1d1d5e2e04}{GrabFocus}}();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00042}00042\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ ClearFocus();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00044}00044\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00045}00045\ \textcolor{comment}{\ \ \ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00046}00046\ \textcolor{comment}{\ \ \ \ ///\ This\ is\ how\ CUIRunner\ interacts\ with\ CUICore}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00047}00047\ \textcolor{comment}{\ \ \ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00048}\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_c_u_i_runner_handle___part}{00048}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_c_u_i_runner_handle___part}{CUIRunnerHandle\_Part}}\ :\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_part}{Part}}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00049}00049\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00050}00050\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Update(\textcolor{keywordtype}{double}\ totalTime,\ MouseState\ mouse,\ KeyboardState\ keyboard,\ TextInputEventPack\ textInput)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ =>\ Self.LifeCycle.Update(totalTime,\ mouse,\ keyboard,\ textInput);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00052}00052\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ DrawBeforeGUI(\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISpriteBatch}}\ spriteBatch)\ =>\ Self.LifeCycle.DrawBeforeGUI(spriteBatch);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00053}00053\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ DrawAfterGUI(\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISpriteBatch}}\ spriteBatch)\ =>\ Self.LifeCycle.DrawAfterGUI(spriteBatch);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00054}00054\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ IsMouseOnSomeCUIComponent()\ =>\ Self.LifeCycle.IsMouseOnSomeCUIComponent();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00056}00056\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ AddAssemblyInfo(\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_assembly_info}{CUIAssemblyInfo}}\ assemblyInfo)\ =>\ Self.\_Reflection.AddAssemblyInfo(assemblyInfo);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00057}00057\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00058}00058\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00059}00059\ \textcolor{comment}{\ \ \ \ ///\ <summary>}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00060}00060\ \textcolor{comment}{\ \ \ \ ///\ This\ must\ be\ set\ by\ CUIRunner}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00061}00061\ \textcolor{comment}{\ \ \ \ ///\ </summary>}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00062}\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_a7f81b95923ed9bcfd55ae57d645b9c9f}{00062}}\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_core_1_1_c_u_i_core_handles}{CUICoreHandles}}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_a7f81b95923ed9bcfd55ae57d645b9c9f}{Handles}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00063}00063\ \ \ \ \ \textcolor{keyword}{public}\ CUIRunnerHandle\_Part\ CUIRunnerHandle\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00064}00064\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_handles_8cs_source_l00065}00065\ \}}
 
 \end{DoxyCode}

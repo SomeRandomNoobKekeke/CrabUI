@@ -5,7 +5,7 @@
 %%For: 
 %Magnification: 1.00
 %%Orientation: Portrait
-%%BoundingBox: 0 0 500 116.959061
+%%BoundingBox: 0 0 500 88.235291
 %%Pages: 0
 %%BeginSetup
 %%EndSetup
@@ -19,12 +19,12 @@
 /marginwidth 10 def
 /distx 20 def
 /disty 40 def
-/boundaspect 4.275000 def  % aspect ratio of the BoundingBox (width/height)
+/boundaspect 5.666667 def  % aspect ratio of the BoundingBox (width/height)
 /boundx 500 def
 /boundy boundx boundaspect div def
 /xspacing 0 def
 /yspacing 0 def
-/rows 4 def
+/rows 3 def
 /cols 4 def
 /scalefactor 0 def
 /boxfont /Times-Roman findfont fontheight scalefont def
@@ -174,7 +174,6 @@
 boxfont setfont
 1 boundaspect scale
 (CrabUI.IVisualElement) cw
-(CUICodeGenerator.IAware) cw
 (CrabUI.VisualElementBase) cw
 (CrabUI.Borders) cw
 (CrabUI.SimpleTexture) cw
@@ -192,7 +191,6 @@ boundx scalefactor div boundy scalefactor div scale
 % ----- classes -----
 
  (CrabUI.IVisualElement) 1.500000 2.000000 box
- (CUICodeGenerator.IAware) 1.500000 3.000000 box
  (CrabUI.VisualElementBase) 1.500000 1.000000 box
  (CrabUI.Borders) 0.000000 0.000000 box
  (CrabUI.SimpleTexture) 1.000000 0.000000 box
@@ -201,10 +199,6 @@ boundx scalefactor div boundy scalefactor div scale
 
 % ----- relations -----
 
-solid
-0 1.500000 2.000000 out
-solid
-1 1.500000 3.000000 in
 solid
 1 1.500000 1.250000 out
 solid

@@ -22,11 +22,14 @@
 \DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_serialize_8cs_source_l00018}00018\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_serialize_8cs_source_l00019}00019\ \ \ \ \ \ \ [typeof(Color)]\ =\ (o)\ =>\ ColorToString((Color)o),}
 \DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_serialize_8cs_source_l00020}00020\ \ \ \ \ \ \ [typeof(Vector2)]\ =\ (o)\ =>\ Vector2ToString((Vector2)o),}
-\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_serialize_8cs_source_l00021}00021\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_serialize_8cs_source_l00022}00022\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_serialize_8cs_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ ColorToString(Color\ cl)\ =>\ \$\textcolor{stringliteral}{"{}\{cl.R\},\{cl.G\},\{cl.B\},\{cl.A\}"{}};}
-\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_serialize_8cs_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ Vector2ToString(Vector2\ v)\ =>\ \$\textcolor{stringliteral}{"{}[\{v.X\},\{v.Y\}]"{}};}
-\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_serialize_8cs_source_l00025}00025\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_serialize_8cs_source_l00026}00026\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_serialize_8cs_source_l00021}00021\ \ \ \ \ \ \ [typeof(\_\_CUITexture2D)]\ =\ (o)\ =>\ ((CUITexture2D)o).Key,}
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_serialize_8cs_source_l00022}00022\ \ \ \ \ \ \ [typeof((\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int}))]\ =\ (o)\ =>\ Tupple2IntIntToString(((\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int}))o),}
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_serialize_8cs_source_l00023}00023\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_serialize_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_serialize_8cs_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ Tupple2IntIntToString((\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int})\ tupple)\ =>\ \$\textcolor{stringliteral}{"{}[\{tupple.Item1\},\{tupple.Item2\}]"{}};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_serialize_8cs_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ ColorToString(Color\ cl)\ =>\ \$\textcolor{stringliteral}{"{}\{cl.R\},\{cl.G\},\{cl.B\},\{cl.A\}"{}};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_serialize_8cs_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ Vector2ToString(Vector2\ v)\ =>\ \$\textcolor{stringliteral}{"{}[\{v.X\},\{v.Y\}]"{}};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_serialize_8cs_source_l00028}00028\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_parser_8_extra_serialize_8cs_source_l00029}00029\ \}}
 
 \end{DoxyCode}

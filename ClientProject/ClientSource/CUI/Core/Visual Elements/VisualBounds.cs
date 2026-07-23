@@ -10,32 +10,10 @@ using CUICodeGenerator;
 
 namespace CrabUI
 {
-  public class VisualBounds : IAware
+  public class VisualBounds
   {
-    public object HostComponent
-    {
-      get => LeftBound.HostComponent;
-      set
-      {
-        LeftBound.HostComponent = value;
-        RightBound.HostComponent = value;
-      }
-    }
-    public string HostPropName
-    {
-      get => LeftBound.HostPropName;
-      set
-      {
-        LeftBound.HostPropName = value;
-        RightBound.HostPropName = value;
-      }
-    }
-
     public class LeftContextBound : VisualUnit
     {
-      public override object HostComponent { get; set; }
-      public override string HostPropName { get; set; }
-
       public LeftContextBound(VisualBounds bounds) => Bounds = bounds;
       public VisualBounds Bounds { get; }
     }
@@ -43,8 +21,6 @@ namespace CrabUI
 
     public class RightContextBound : VisualUnit
     {
-      public override object HostComponent { get; set; }
-      public override string HostPropName { get; set; }
       public RightContextBound(VisualBounds bounds) => Bounds = bounds;
       public VisualBounds Bounds { get; }
     }

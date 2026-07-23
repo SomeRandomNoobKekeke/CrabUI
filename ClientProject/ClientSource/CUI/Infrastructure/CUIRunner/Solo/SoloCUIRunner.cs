@@ -16,9 +16,14 @@ namespace CrabUI
     public __CUISpriteBatch SpriteBatch { get; } = new();
     public __CUIGraphicsDevice GraphicsDevice { get; } = new();
     public __CUIGUI CUIGUI { get; } = new();
+    public AssemblyPackageDirLookup DirLookup { get; } = new();
 
-    public CUITextureManager CUITextureManager { get; private set; }
-    public PathManager PathManager { get; private set; }
+    public __CUITextureManager TextureManager { get; private set; } = new();
+    CUITextureManager ICUIRunner.TextureManager => CUITextureManagerPublic;
+    public CUITextureManager_PublicPart CUITextureManagerPublic { get; private set; } = new();
+    public ResourceIOContext_Part ResourceIOContext { get; private set; } = new();
+    public ResourceIOContextHandle_Part ResourceIOContextHandle { get; private set; } = new();
+    public FilePathResolver FilePathResolver { get; private set; } = new();
 
     public CUIAssemblyAnalyzer CUIAssemblyAnalyzer { get; } = new();
 
@@ -98,7 +103,8 @@ namespace CrabUI
         DataSources.DisconnectFromGame();
         SpriteBatch.XNASpriteBatch = null;
         Core.Handles = null;
-        CUITextureManager.Dispose();
+        TextureManager.Dispose();
+        DirLookup.Dispose();
       }
       catch (Exception e)
       {
@@ -108,8 +114,8 @@ namespace CrabUI
 
     private void LoadDefaultResources()
     {
-      CUITextureManager.Load("Assets/PNG/dev.png", "BaroDev");
-      CUITextureManager.Load("Assets/PNG/CUI.png", "CUI");
+      CUITextureManagerPublic.LoadAs("Assets/PNG/dev.png", "BaroDev");
+      CUITextureManagerPublic.LoadAs("Assets/PNG/CUI.png", "CUI");
     }
 
     public void OnStartAttempt(Assembly callingAssembly)
@@ -126,12 +132,9 @@ namespace CrabUI
         Self = this
       };
 
-      PathManager = new PathManager() { ModDir = ModInfo.Dir };
-
-      CUITextureManager = new CUITextureManagerProxy(
-        new __CUITextureManager(),
-        PathManager
-      );
+      CUITextureManagerPublic.Self = this;
+      ResourceIOContext.Self = this;
+      ResourceIOContextHandle.Self = this;
 
       LoadDefaultResources();
     }

@@ -190,7 +190,7 @@ class \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_parser}{CUIParser}}
 \item 
 interface \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_parsable}{IParsable}}
 \item 
-class {\bfseries CUIDefault\+Serializer}
+class {\bfseries CUIBasic\+Serializer}
 \item 
 interface \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_serializable}{CUISerializable}}
 \begin{DoxyCompactList}\small\item\em It has Serialize() method. \end{DoxyCompactList}\item 
@@ -220,6 +220,10 @@ class \doxymbox{\hyperlink{class_crab_u_i_1_1_radio_group}{Radio\+Group}}
 class \doxymbox{\hyperlink{class_crab_u_i_1_1_radio_mutex}{Radio\+Mutex}}
 \item 
 class \doxymbox{\hyperlink{class_crab_u_i_1_1_safe_dict-2-g}{Safe\+Dict$<$ TKey, TValue $>$}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_1_1_slot-1-g}{Slot$<$ T $>$}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_1_1_slot_part-2-g}{Slot\+Part$<$ THost, T $>$}}
 \item 
 class \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_palette}{CUIPalette}}
 \item 
@@ -289,14 +293,14 @@ class \doxymbox{\hyperlink{class_crab_u_i_1_1_m_g_debug_tool}{MGDebug\+Tool}}
 \item 
 interface \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_c_u_i_runner}{ICUIRunner}}
 \item 
-class \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_texture_manager_proxy}{CUITexture\+Manager\+Proxy}}
+class \doxymbox{\hyperlink{class_crab_u_i_1_1_solo_c_u_i_runner}{Solo\+CUIRunner}}
 \item 
 class \doxymbox{\hyperlink{class_crab_u_i_1_1_dummy_i_keyboard_subscriber}{Dummy\+IKeyboard\+Subscriber}}
 \item 
-class \doxymbox{\hyperlink{class_crab_u_i_1_1_path_manager}{Path\+Manager}}
-\item 
-class \doxymbox{\hyperlink{class_crab_u_i_1_1_solo_c_u_i_runner}{Solo\+CUIRunner}}
-\item 
+interface \doxymbox{\hyperlink{interface_crab_u_i_1_1_resource_i_o_context}{Resource\+IOContext}}
+\begin{DoxyCompactList}\small\item\em This is a shared context for all resource loaders like texture loaders, xml loaders. \end{DoxyCompactList}\item 
+interface \doxymbox{\hyperlink{interface_crab_u_i_1_1_resource_i_o_context_handle}{Resource\+IOContext\+Handle}}
+\begin{DoxyCompactList}\small\item\em This is what \doxylink{class_crab_u_i_1_1_c_u_i_core}{CUICore} has \doxylink{class_crab_u_i_1_1_c_u_i_core}{CUICore} doesn\textquotesingle{}t know how to resolve Assembly -\/\texorpdfstring{$>$}{>} Package\+Dir. \end{DoxyCompactList}\item 
 class \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_setup}{CUISetup}}
 \item 
 class \doxymbox{\hyperlink{class_crab_u_i_1_1_game_data_sources}{Game\+Data\+Sources}}
@@ -312,6 +316,8 @@ interface \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_game_life_cycle_tracker}
 interface \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_input_provider}{IInput\+Provider}}
 \item 
 class \doxymbox{\hyperlink{class_crab_u_i_1_1_text_input_event_pack_builder}{Text\+Input\+Event\+Pack\+Builder}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_1_1_file_path_resolver}{File\+Path\+Resolver}}
 \item 
 class \doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_font}{\+\_\+\+\_\+\+CUIFont}}
 \item 
@@ -387,6 +393,10 @@ class \doxymbox{\hyperlink{class_crab_u_i_1_1_excessive_serialization}{Excessive
 \item 
 class \doxymbox{\hyperlink{class_crab_u_i_1_1_print_serializable_props_test}{Print\+Serializable\+Props\+Test}}
 \item 
+class \doxymbox{\hyperlink{class_crab_u_i_1_1_serialization_modes_test}{Serialization\+Modes\+Test}}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_1_1_serialization_persistence_test}{Serialization\+Persistence\+Test}}
+\item 
 class \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_anchor_test}{CUIAnchor\+Test}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Enumerations}
@@ -403,6 +413,11 @@ enum {\bfseries Animation\+Direction} \{ {\bfseries Forward}
 \item 
 enum {\bfseries CUIMouse\+Button} \{ {\bfseries Left\+Button}
 , {\bfseries Right\+Button}
+ \}
+\item 
+enum {\bfseries CUISerialization\+Mode} \{ {\bfseries Replace}
+, {\bfseries Merge}
+, {\bfseries Ignore}
  \}
 \item 
 enum {\bfseries CUIDirection} \{ {\bfseries Straight}
@@ -432,6 +447,28 @@ record {\bfseries Routable\+Command} (string name, object data)
 \item 
 \Hypertarget{namespace_crab_u_i_aad8efab019f655dd5496ed3b0d664094}\label{namespace_crab_u_i_aad8efab019f655dd5496ed3b0d664094} 
 record {\bfseries Text\+Input\+Event\+Pack} (Text\+Input\+Event\+Args\+[$\,$]\+ Text\+Input\+Events, Text\+Input\+Event\+Args\+[$\,$]\+ Key\+Down\+Events, bool Something\+Focused\+Elsewhere)
+\item 
+void \doxymbox{\hyperlink{namespace_crab_u_i_af79ea300f590157b004fba2152c53991}{Draw}} (\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISprite\+Batch}} sprite\+Batch, Rectangle destination\+Rectangle)
+\item 
+void \doxymbox{\hyperlink{namespace_crab_u_i_aeb3bcd26b9526c6c5e1d3dae1a3a5800}{Update\+Data\+Buffer}} ()
+\item 
+bool \doxymbox{\hyperlink{namespace_crab_u_i_a803f973540c3daacf828516ed69718b1}{Is\+Point\+On\+Transparent\+Pixel}} (Vector2 point)
+\begin{DoxyCompactList}\small\item\em 
+\begin{DoxyParams}{Parameters}
+{\em point} & (\+[0..1]\+, \+[0..1]\+)\\
+\hline
+\end{DoxyParams}
+\end{DoxyCompactList}\item 
+string \doxymbox{\hyperlink{namespace_crab_u_i_a095727d18793aa61b6f4bd6df7c500aa}{To\+Text}} ()
+\item 
+\doxymbox{\hyperlink{namespace_crab_u_i_a46c9b753ef47e55c969e61e9a7de7e05}{CUISprite}} (\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture2_d}{CUITexture2D}} texture)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+record \doxymbox{\hyperlink{namespace_crab_u_i_af9eb14b390583bdbc1615aec443d4628}{CUISprite}}
+\item 
+bool \doxymbox{\hyperlink{namespace_crab_u_i_a96fdaf0979445fcd321cded5322362dd}{\+\_\+\+Should\+Buffer\+Data}}
 \end{DoxyCompactItemize}
 
 
@@ -523,6 +560,23 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_palette_rank_8cs_source_l00008}{8
 \DoxyCodeLine{00011\ \ \ \}}
 
 \end{DoxyCode}
+\Hypertarget{namespace_crab_u_i_a6ad0bb55b3d084e9213b0aa77cec79cc}\index{CrabUI@{CrabUI}!CUISerializationMode@{CUISerializationMode}}
+\index{CUISerializationMode@{CUISerializationMode}!CrabUI@{CrabUI}}
+\doxysubsubsection{\texorpdfstring{CUISerializationMode}{CUISerializationMode}}
+{\footnotesize\ttfamily \label{namespace_crab_u_i_a6ad0bb55b3d084e9213b0aa77cec79cc} 
+enum Crab\+UI.\+CUISerialization\+Mode}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_serialization_mode_8cs_source_l00013}{13}} of file \doxymbox{\hyperlink{_c_u_i_serialization_mode_8cs_source}{CUISerialization\+Mode.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ Replace,\ Merge,\ Ignore,}
+\DoxyCodeLine{00016\ \ \ \}}
+
+\end{DoxyCode}
 \Hypertarget{namespace_crab_u_i_a25cebf537ac825ce93aed9c9bf1e9e38}\index{CrabUI@{CrabUI}!CUIStyleCategory@{CUIStyleCategory}}
 \index{CUIStyleCategory@{CUIStyleCategory}!CrabUI@{CrabUI}}
 \doxysubsubsection{\texorpdfstring{CUIStyleCategory}{CUIStyleCategory}}
@@ -557,3 +611,141 @@ Definition at line \doxymbox{\hyperlink{_text_block_8_resize_strategy_8cs_source
 \DoxyCodeLine{00017\ \ \ \}}
 
 \end{DoxyCode}
+
+
+\label{doc-func-members}
+\Hypertarget{namespace_crab_u_i_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{namespace_crab_u_i_a46c9b753ef47e55c969e61e9a7de7e05}\index{CrabUI@{CrabUI}!CUISprite@{CUISprite}}
+\index{CUISprite@{CUISprite}!CrabUI@{CrabUI}}
+\doxysubsubsection{\texorpdfstring{CUISprite()}{CUISprite()}}
+{\footnotesize\ttfamily \label{namespace_crab_u_i_a46c9b753ef47e55c969e61e9a7de7e05} 
+Crab\+UI.\+CUISprite (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture2_d}{CUITexture2D}}}]{texture}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_sprite_8cs_source_l00121}{121}} of file \doxymbox{\hyperlink{_c_u_i_sprite_8cs_source}{CUISprite.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00121\ \{\ Texture\ =\ texture;\ \}}
+
+\end{DoxyCode}
+\Hypertarget{namespace_crab_u_i_af79ea300f590157b004fba2152c53991}\index{CrabUI@{CrabUI}!Draw@{Draw}}
+\index{Draw@{Draw}!CrabUI@{CrabUI}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily \label{namespace_crab_u_i_af79ea300f590157b004fba2152c53991} 
+void Crab\+UI.\+Draw (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISprite\+Batch}}}]{sprite\+Batch}{, }\item[{Rectangle}]{destination\+Rectangle}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_sprite_8cs_source_l00052}{52}} of file \doxymbox{\hyperlink{_c_u_i_sprite_8cs_source}{CUISprite.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00053\ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ spriteBatch.Draw(Texture,\ destinationRectangle,\ SourceRectangle,\ Color,\ Rotation,\ Origin,\ Effects,\ LayerDepth);}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{namespace_crab_u_i_a803f973540c3daacf828516ed69718b1}\index{CrabUI@{CrabUI}!IsPointOnTransparentPixel@{IsPointOnTransparentPixel}}
+\index{IsPointOnTransparentPixel@{IsPointOnTransparentPixel}!CrabUI@{CrabUI}}
+\doxysubsubsection{\texorpdfstring{IsPointOnTransparentPixel()}{IsPointOnTransparentPixel()}}
+{\footnotesize\ttfamily \label{namespace_crab_u_i_a803f973540c3daacf828516ed69718b1} 
+bool Crab\+UI.\+Is\+Point\+On\+Transparent\+Pixel (\begin{DoxyParamCaption}\item[{Vector2}]{point}{}\end{DoxyParamCaption})}
+
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & (\+[0..1]\+, \+[0..1]\+)\\
+\hline
+\end{DoxyParams}
+
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_sprite_8cs_source_l00079}{79}} of file \doxymbox{\hyperlink{_c_u_i_sprite_8cs_source}{CUISprite.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00080\ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ Rectangle\ SourceRect\ =\ SourceRectangle.HasValue\ ?\ SourceRectangle.Value\ :\ Texture.Bounds;}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ textureX\ =\ (int)Math.Round(SourceRect.X\ +\ point.X\ *\ SourceRect.Width);}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ textureY\ =\ (int)Math.Round(SourceRect.Y\ +\ point.Y\ *\ SourceRect.Height);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (textureX\ <\ SourceRect.X\ ||\ (SourceRect.X\ +\ SourceRect.Width\ -\/\ 1)\ <\ textureX)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (textureY\ <\ SourceRect.Y\ ||\ (SourceRect.Y\ +\ SourceRect.Height\ -\/\ 1)\ <\ textureY)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ Color\ cl\ =\ Data[textureY\ *\ Texture.Width\ +\ textureX];}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ cl.A\ ==\ 0;}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{namespace_crab_u_i_a095727d18793aa61b6f4bd6df7c500aa}\index{CrabUI@{CrabUI}!ToText@{ToText}}
+\index{ToText@{ToText}!CrabUI@{CrabUI}}
+\doxysubsubsection{\texorpdfstring{ToText()}{ToText()}}
+{\footnotesize\ttfamily \label{namespace_crab_u_i_a095727d18793aa61b6f4bd6df7c500aa} 
+string Crab\+UI.\+To\+Text (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_sprite_8cs_source_l00109}{109}} of file \doxymbox{\hyperlink{_c_u_i_sprite_8cs_source}{CUISprite.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00110\ \ \ \ \ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ Dictionary<string,\ string>\ dict\ =\ \textcolor{keyword}{new}\ Dictionary<string,\ string>() }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}texture"{}}]\ =\ Texture.Key\ ??\ \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}color"{}}]\ =\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core}{CUICore}}.Parser.Serialize(Color),}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ JsonSerializer.Serialize(dict);}
+\DoxyCodeLine{00118\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{namespace_crab_u_i_aeb3bcd26b9526c6c5e1d3dae1a3a5800}\index{CrabUI@{CrabUI}!UpdateDataBuffer@{UpdateDataBuffer}}
+\index{UpdateDataBuffer@{UpdateDataBuffer}!CrabUI@{CrabUI}}
+\doxysubsubsection{\texorpdfstring{UpdateDataBuffer()}{UpdateDataBuffer()}}
+{\footnotesize\ttfamily \label{namespace_crab_u_i_aeb3bcd26b9526c6c5e1d3dae1a3a5800} 
+void Crab\+UI.\+Update\+Data\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_sprite_8cs_source_l00059}{59}} of file \doxymbox{\hyperlink{_c_u_i_sprite_8cs_source}{CUISprite.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060\ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ DataBuffer\ =\ ShouldBufferData\ ?\ Texture.Data\ :\ [];}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\label{doc-var-members}
+\Hypertarget{namespace_crab_u_i_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespace_crab_u_i_a96fdaf0979445fcd321cded5322362dd}\index{CrabUI@{CrabUI}!\_ShouldBufferData@{\_ShouldBufferData}}
+\index{\_ShouldBufferData@{\_ShouldBufferData}!CrabUI@{CrabUI}}
+\doxysubsubsection{\texorpdfstring{\_ShouldBufferData}{\_ShouldBufferData}}
+{\footnotesize\ttfamily \label{namespace_crab_u_i_a96fdaf0979445fcd321cded5322362dd} 
+bool Crab\+UI.\+\_\+\+Should\+Buffer\+Data}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_sprite_8cs_source_l00064}{64}} of file \doxymbox{\hyperlink{_c_u_i_sprite_8cs_source}{CUISprite.\+cs}}.
+
+\Hypertarget{namespace_crab_u_i_af9eb14b390583bdbc1615aec443d4628}\index{CrabUI@{CrabUI}!CUISprite@{CUISprite}}
+\index{CUISprite@{CUISprite}!CrabUI@{CrabUI}}
+\doxysubsubsection{\texorpdfstring{CUISprite}{CUISprite}}
+{\footnotesize\ttfamily \label{namespace_crab_u_i_af9eb14b390583bdbc1615aec443d4628} 
+Crab\+UI.\+CUISprite}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_sprite_8cs_source_l00013}{13}} of file \doxymbox{\hyperlink{_c_u_i_sprite_8cs_source}{CUISprite.\+cs}}.
+

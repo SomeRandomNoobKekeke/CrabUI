@@ -136,33 +136,32 @@ $(function(){initNavTree('_complex_layout_8cs_source.html','',''); });
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        {</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>          Anchor = CUIAnchor.RightCenter,</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>          TextColor = Color.Black,</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>          <span class="comment">// Margin = new CUISizes(20, 0, 20, 0),</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>          Padding = <span class="keyword">new</span> CUISizes(20, 0, 20, 0),</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        };</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        frame[<span class="stringliteral">&quot;layout&quot;</span>][<span class="stringliteral">&quot;main&quot;</span>] = <span class="keyword">new</span> CUIComponent()</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        {</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>          Flex = 1,</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>          Background = { Color = Color.Blue },</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        };</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>          Padding = <span class="keyword">new</span> CUISizes(0, 20, 0, 20),</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        };</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        frame[<span class="stringliteral">&quot;layout&quot;</span>][<span class="stringliteral">&quot;main&quot;</span>] = <span class="keyword">new</span> CUIComponent()</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>          Flex = 1,</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>          Background = { Color = Color.Blue },</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        };</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        frame[<span class="stringliteral">&quot;layout&quot;</span>][<span class="stringliteral">&quot;footer&quot;</span>] = <span class="keyword">new</span> CUIVerticalList()</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>          FitContent = <span class="keyword">new</span> CUIBool2(<span class="keyword">false</span>, <span class="keyword">true</span>),</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>          Background = { Color = Color.Red },</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        };</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        frame[<span class="stringliteral">&quot;layout&quot;</span>][<span class="stringliteral">&quot;footer&quot;</span>][<span class="stringliteral">&quot;text&quot;</span>] = <span class="keyword">new</span> CUITextBlock(<span class="stringliteral">&quot;footer&quot;</span>)</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        {</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>          Anchor = CUIAnchor.RightCenter,</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        };</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordflow">return</span> frame;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      }</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    }</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  }</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>}</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        frame[<span class="stringliteral">&quot;layout&quot;</span>][<span class="stringliteral">&quot;footer&quot;</span>] = <span class="keyword">new</span> CUIVerticalList()</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>          FitContent = <span class="keyword">new</span> CUIBool2(<span class="keyword">false</span>, <span class="keyword">true</span>),</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>          Background = { Color = Color.Red },</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        };</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        frame[<span class="stringliteral">&quot;layout&quot;</span>][<span class="stringliteral">&quot;footer&quot;</span>][<span class="stringliteral">&quot;text&quot;</span>] = <span class="keyword">new</span> CUITextBlock(<span class="stringliteral">&quot;footer&quot;</span>)</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>          Anchor = CUIAnchor.RightCenter,</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        };</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keywordflow">return</span> frame;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>      }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}</div>
 <div class="ttc" id="aclass_crab_u_i_user_1_1_snapshot_tests_html"><div class="ttname"><a href="class_crab_u_i_user_1_1_snapshot_tests.html">CrabUIUser.SnapshotTests</a></div><div class="ttdef"><b>Definition</b> <a href="_in_memory_2_c_u_i_test_2_snapshots_2_tests_2_components_2_c_u_i_check_box_8cs_source.html#l00014">CUICheckBox.cs:15</a></div></div>
 <div class="ttc" id="anamespace_c_u_i_libs_html"><div class="ttname"><a href="namespace_c_u_i_libs.html">CUILibs</a></div><div class="ttdef"><b>Definition</b> <a href="_already_done_8cs_source.html#l00012">AlreadyDone.cs:13</a></div></div>
 <div class="ttc" id="anamespace_crab_u_i_html"><div class="ttname"><a href="namespace_crab_u_i.html">CrabUI</a></div><div class="ttdef"><b>Definition</b> <a href="_____generated_2_c_u_i_component_8cs_source.html#l00007">CUIComponent.cs:8</a></div></div>

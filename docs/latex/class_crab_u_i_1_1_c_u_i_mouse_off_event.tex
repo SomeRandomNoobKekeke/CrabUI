@@ -58,11 +58,11 @@ Crab\+UI.\+CUIMouse\+Off\+Event.\+CUIMouse\+Off\+Event (\begin{DoxyParamCaption}
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_mouse_off_event_8cs_source_l00023}{23}} of file \doxymbox{\hyperlink{_c_u_i_mouse_off_event_8cs_source}{CUIMouse\+Off\+Event.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_mouse_off_event_8cs_source_l00025}{25}} of file \doxymbox{\hyperlink{_c_u_i_mouse_off_event_8cs_source}{CUIMouse\+Off\+Event.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00023\ :\ base(mouse)\ \{\ \}}
+\DoxyCodeLine{00025\ :\ base(mouse)\ \{\ \}}
 
 \end{DoxyCode}
 
@@ -88,8 +88,10 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_mouse_off_event_8cs_source_l00013
 \DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ MEConsumer.MouseOver\ =\ \textcolor{keyword}{false};}
 \DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ MEConsumer.MousePressed\ =\ \textcolor{keyword}{false};}
 \DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ MEConsumer.MouseOff.Raise(\textcolor{keyword}{this});}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00021\ \ \ \ \ \}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ Consumed\ =\ MEConsumer.ConsumeMouseEvents\ ||\ Consumed;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_mouse_off_event_a8b6b568abd9dab7847a69bc006b15d42}\index{CrabUI.CUIMouseOffEvent@{CrabUI.CUIMouseOffEvent}!ToString@{ToString}}
@@ -100,11 +102,11 @@ override string Crab\+UI.\+CUIMouse\+Off\+Event.\+To\+String (\begin{DoxyParamCa
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_mouse_off_event_8cs_source_l00024}{24}} of file \doxymbox{\hyperlink{_c_u_i_mouse_off_event_8cs_source}{CUIMouse\+Off\+Event.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_mouse_off_event_8cs_source_l00026}{26}} of file \doxymbox{\hyperlink{_c_u_i_mouse_off_event_8cs_source}{CUIMouse\+Off\+Event.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00024\ =>\ \$\textcolor{stringliteral}{"{}Mouse\ Enter"{}};}
+\DoxyCodeLine{00026\ =>\ \$\textcolor{stringliteral}{"{}Mouse\ Enter"{}};}
 
 \end{DoxyCode}
 

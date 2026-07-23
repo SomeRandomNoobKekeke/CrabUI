@@ -51,33 +51,39 @@
 \DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00047}00047\ }
 \DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ ResizeToAbsoluteRect(\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}\ rect)}
 \DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ Self.Absolute\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_null_rect}{CUINullRect}}(}
-\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_anchor}{CUIAnchor}}.AbsoluteRectToAchored(}
-\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rect,\ Self.Parent.Rect,\ Self.Anchor}
-\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ )}
-\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ );}
-\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00056}00056\ }
-\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<CUIMouseDownEvent>\ MouseDown;}
-\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00058}00058\ }
-\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<CUIMouseUpEvent>\ HubMouseUp}
-\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ add\ =>\ Self.MainComponentTracker.MainComponent?.GlobalEvents.MouseUp.Add(value);}
-\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ Self.MainComponentTracker.MainComponent?.GlobalEvents.MouseUp.Remove(value);}
-\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<CUIMouseMovedEvent>\ HubMouseMoved}
-\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ add\ =>\ Self.MainComponentTracker.MainComponent?.GlobalEvents.MouseMoved.Add(value);}
-\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ Self.MainComponentTracker.MainComponent?.GlobalEvents.MouseMoved.Remove(value);}
-\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00069}00069\ }
-\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ TryGrab(\textcolor{keywordtype}{object}\ handle)}
-\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ =>\ Self.MainComponentTracker.MainComponent.GrabbedHandleTracker.TryGrab(handle);}
-\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Release(\textcolor{keywordtype}{object}\ handle)}
-\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ =>\ Self.MainComponentTracker.MainComponent.GrabbedHandleTracker.Release(handle);}
-\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00074}00074\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00075}00075\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00076}00076\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00077}00077\ \}}
+\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//TODO\ It's\ better\ but\ still\ kinda\ funny,\ you\ can\ smash\ frame\ out\ of\ bounds}}
+\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Self.Parent.ChildrenBounds\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ rect\ =\ Self.Parent.ChildrenBounds(Self.Parent.ChildrenRect).FitGracefuly(Rect,\ rect);}
+\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ Self.Absolute\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_null_rect}{CUINullRect}}(}
+\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_anchor}{CUIAnchor}}.AbsoluteRectToAchored(}
+\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rect,\ Self.Parent.Rect,\ Self.Anchor}
+\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<CUIMouseDownEvent>\ MouseDown;}
+\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<CUIMouseUpEvent>\ HubMouseUp}
+\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ add\ =>\ Self.MainComponentTracker.MainComponent?.GlobalEvents.MouseUp.Add(value);}
+\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ Self.MainComponentTracker.MainComponent?.GlobalEvents.MouseUp.Remove(value);}
+\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<CUIMouseMovedEvent>\ HubMouseMoved}
+\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ add\ =>\ Self.MainComponentTracker.MainComponent?.GlobalEvents.MouseMoved.Add(value);}
+\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ Self.MainComponentTracker.MainComponent?.GlobalEvents.MouseMoved.Remove(value);}
+\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ TryGrab(\textcolor{keywordtype}{object}\ handle)}
+\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ =>\ Self.MainComponentTracker.MainComponent.GrabbedHandleTracker.TryGrab(handle);}
+\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Release(\textcolor{keywordtype}{object}\ handle)}
+\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ =>\ Self.MainComponentTracker.MainComponent.GrabbedHandleTracker.Release(handle);}
+\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00080}00080\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00081}00081\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00082}00082\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00083}00083\ \}}
 
 \end{DoxyCode}

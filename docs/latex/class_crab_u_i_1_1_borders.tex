@@ -3,7 +3,7 @@
 Inheritance diagram for Crab\+UI.\+Borders:\+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=4.000000cm]{class_crab_u_i_1_1_borders}
+\includegraphics[height=3.868739cm]{class_crab_u_i_1_1_borders}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
@@ -19,6 +19,16 @@ override void \doxymbox{\hyperlink{class_crab_u_i_1_1_borders_a3ed63442d39ab6888
 void \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_element_base_ae22b6b4d97f2e2641632412a0793c9b0}{Draw}} (\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISprite\+Batch}} sprite\+Batch)
 \item 
 virtual bool \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_element_base_a1d0c8a399ba4f4f7e8a1d3d37b42a303}{Is\+Point\+On\+Transparent\+Pixel}} (Vector2 point)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_serializable}{Crab\+UI.\+CUISerializable}}}
+\begin{DoxyCompactItemize}
+\item 
+XElement \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_serializable_ad08444d81d0881704c5e8be25e2f6df9}{Serialize}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static object \doxymbox{\hyperlink{class_crab_u_i_1_1_borders_ab6b7101c87341e98da6e011c1354d5e3}{Deserialize}} (XElement element)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Properties}
 \begin{DoxyCompactItemize}
@@ -77,7 +87,7 @@ bool \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_element_base_a4f5c943c5ca9e7
 \doxysubsection{Detailed Description}
 
 
-Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00013}{13}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source}{Borders.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00014}{14}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source}{Borders.\+cs}}.
 
 
 
@@ -96,13 +106,34 @@ Reimplemented from \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_element_base}{
 
 
 
-Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00031}{31}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source}{Borders.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00033}{33}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source}{Borders.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00032\ \ \ \ \ \{}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Rect.Contains(pos)\ \&\&\ !InnerRect.Contains(pos);}
-\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Rect.Contains(pos)\ \&\&\ !InnerRect.Contains(pos);}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_borders_ab6b7101c87341e98da6e011c1354d5e3}\index{CrabUI.Borders@{CrabUI.Borders}!Deserialize@{Deserialize}}
+\index{Deserialize@{Deserialize}!CrabUI.Borders@{CrabUI.Borders}}
+\doxysubsubsection{\texorpdfstring{Deserialize()}{Deserialize()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_borders_ab6b7101c87341e98da6e011c1354d5e3} 
+object Crab\+UI.\+Borders.\+Deserialize (\begin{DoxyParamCaption}\item[{XElement}]{element}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_serializable}{Crab\+UI.\+CUISerializable}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00090}{90}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source}{Borders.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00091\ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Borders();}
+\DoxyCodeLine{00093\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_borders_a3ed63442d39ab688888583719ee39128}\index{CrabUI.Borders@{CrabUI.Borders}!Draw@{Draw}}
@@ -117,19 +148,19 @@ Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_visual_element}{Crab\+U
 
 
 
-Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00077}{77}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source}{Borders.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00079}{79}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source}{Borders.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00078\ \ \ \ \ \{}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Visible)}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Sizes.Left\ !=\ 0)\ Sprite.Draw(spriteBatch,\ LeftRect);}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Sizes.Top\ !=\ 0)\ Sprite.Draw(spriteBatch,\ TopRect);}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Sizes.Right\ !=\ 0)\ Sprite.Draw(spriteBatch,\ RightRect);}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Sizes.Bottom\ !=\ 0)\ Sprite.Draw(spriteBatch,\ BottomRect);}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00086\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Visible)}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Sizes.Left\ !=\ 0)\ Sprite.Draw(spriteBatch,\ LeftRect);}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Sizes.Top\ !=\ 0)\ Sprite.Draw(spriteBatch,\ TopRect);}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Sizes.Right\ !=\ 0)\ Sprite.Draw(spriteBatch,\ RightRect);}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Sizes.Bottom\ !=\ 0)\ Sprite.Draw(spriteBatch,\ BottomRect);}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -145,11 +176,11 @@ Color Crab\+UI.\+Borders.\+Color\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set
 
 
 
-Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00029}{29}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source}{Borders.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00031}{31}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source}{Borders.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00029\ \{\ \textcolor{keyword}{get}\ =>\ Sprite.Color;\ \textcolor{keyword}{set}\ =>\ Sprite.Color\ =\ value;\ \}}
+\DoxyCodeLine{00031\ \{\ \textcolor{keyword}{get}\ =>\ Sprite.Color;\ \textcolor{keyword}{set}\ =>\ Sprite.Color\ =\ value;\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_borders_a278b23c471f5f3854b0144a00d999f9f}\index{CrabUI.Borders@{CrabUI.Borders}!InnerRect@{InnerRect}}
@@ -160,11 +191,11 @@ Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_0
 
 
 
-Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00024}{24}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source}{Borders.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00025}{25}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source}{Borders.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00024\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{00025\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_borders_a6e67e954d02d65386fb9f893a5386af2}\index{CrabUI.Borders@{CrabUI.Borders}!Rect@{Rect}}
@@ -179,18 +210,18 @@ Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_visual_element}{Crab\+U
 
 
 
-Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source}{Borders.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source}{Borders.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00016\ \ \ \ \ \{}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Rect;}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \textcolor{keyword}{set}}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \_Rect\ =\ value;}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ UpdateRects();}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00023\ \ \ \ \ \}}
+\DoxyCodeLine{00017\ \ \ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Rect;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \_Rect\ =\ value;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ UpdateRects();}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_borders_ac7f9eb89b6654efc59b590b4c65e1877}\index{CrabUI.Borders@{CrabUI.Borders}!Sizes@{Sizes}}
@@ -201,11 +232,11 @@ Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_0
 
 
 
-Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00026}{26}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source}{Borders.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00027}{27}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source}{Borders.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00026\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{00027\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_borders_a3afe74372af27e85d99089c622eab83e}\index{CrabUI.Borders@{CrabUI.Borders}!Sprite@{Sprite}}
@@ -216,11 +247,11 @@ CUISprite Crab\+UI.\+Borders.\+Sprite = CUISprite.\+White\hspace{0.3cm}{\ttfamil
 
 
 
-Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00028}{28}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source}{Borders.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source_l00029}{29}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_visual_01_elements_2_elements_2_borders_8cs_source}{Borders.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00028\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ CUISprite.White;}
+\DoxyCodeLine{00029\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ CUISprite.White;}
 
 \end{DoxyCode}
 

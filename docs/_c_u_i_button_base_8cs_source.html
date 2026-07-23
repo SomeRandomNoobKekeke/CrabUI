@@ -191,48 +191,43 @@ $(function(){initNavTree('_c_u_i_button_base_8cs_source.html','',''); });
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keyword">public</span> <span class="keywordtype">string</span> Emit { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keyword">public</span> <span class="keywordtype">void</span> Click()</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    {</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>      Events.MouseDown.Raise(</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <span class="keyword">this</span>,</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <span class="keyword">new</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_mouse_down_event.html">CUIMouseDownEvent</a>(CUIMouseButton.LeftButton, <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_core.html">CUICore</a>.Input.Mouse)</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>      );</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    }</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keyword">public</span> <span class="keyword">override</span> IEnumerable&lt;VisualUnit&gt; VisualSplit()</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    {</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>      <span class="keywordflow">if</span> (!Displayed || CulledOut) yield <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>      yield <span class="keywordflow">return</span> Background.VisualWrapper;</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>      yield <span class="keywordflow">return</span> TextBlock.VisualWrapper;</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>      yield <span class="keywordflow">return</span> Borders.VisualWrapper;</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    }</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keyword">public</span> CUIButtonBase() : base()</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    {</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>      MouseOff += (c, e) =&gt; DetermineColor();</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>      MouseOn += (c, e) =&gt; DetermineColor();</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>      DetermineColor();</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>      MouseDown += (c, e) =&gt;</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>      {</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        <span class="keywordflow">if</span> (PlaySound) SoundPlayer.PlayUISound(ClickSound);</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <span class="keywordflow">if</span> (Emit != <span class="keyword">null</span>) Commands.SendUp(Emit, Text);</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>      };</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keyword">public</span> <span class="keyword">override</span> IEnumerable&lt;VisualUnit&gt; VisualSplit()</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>      <span class="keywordflow">if</span> (!Displayed || CulledOut) yield <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>      yield <span class="keywordflow">return</span> Background.VisualWrapper;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>      yield <span class="keywordflow">return</span> VisualBounds.LeftBound;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>      yield <span class="keywordflow">return</span> TextBlock.VisualWrapper;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>      yield <span class="keywordflow">return</span> VisualBounds.RightBound;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>      yield <span class="keywordflow">return</span> Borders.VisualWrapper;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keyword">public</span> CUIButtonBase() : base()</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>      MouseOff += (c, e) =&gt; DetermineColor();</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>      MouseOn += (c, e) =&gt; DetermineColor();</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>      DetermineColor();</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>      MouseDown += (c, e) =&gt;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>      {</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <span class="keywordflow">if</span> (PlaySound) SoundPlayer.PlayUISound(ClickSound);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        <span class="keywordflow">if</span> (Emit != <span class="keyword">null</span>) Commands.SendUp(Emit, Text);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>      };</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>      ConsumeMouseEvents = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    }</div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>      ConsumeMouseEvents = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    }</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keyword">public</span> CUIButtonBase(<span class="keywordtype">string</span> text) : <span class="keyword">this</span>()</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    {</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>      Text = text;</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    }</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>  }</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="keyword">public</span> CUIButtonBase(<span class="keywordtype">string</span> text) : <span class="keyword">this</span>()</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    {</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>      Text = text;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    }</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  }</div>
 </div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>}</div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_core_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_core.html">CrabUI.CUICore</a></div><div class="ttdef"><b>Definition</b> <a href="_____generated_2_c_u_i_core_8cs_source.html#l00009">CUICore.cs:10</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_mouse_down_event_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_mouse_down_event.html">CrabUI.CUIMouseDownEvent</a></div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_mouse_down_event_8cs_source.html#l00011">CUIMouseDownEvent.cs:12</a></div></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>}</div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_serializable_prop_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_serializable_prop.html">CrabUI.CUISerializableProp</a></div><div class="ttdoc">These props should be serialized whether they are CUISerializable or not.</div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_serializable_8cs_source.html#l00026">CUISerializable.cs:26</a></div></div>
 <div class="ttc" id="ainterface_c_u_i_code_generator_1_1_i_component_html"><div class="ttname"><a href="interface_c_u_i_code_generator_1_1_i_component.html">CUICodeGenerator.IComponent</a></div><div class="ttdef"><b>Definition</b> <a href="_interfaces_8cs_source.html#l00011">Interfaces.cs:12</a></div></div>
 <div class="ttc" id="ainterface_crab_u_i_1_1_c_u_i_font_html"><div class="ttname"><a href="interface_crab_u_i_1_1_c_u_i_font.html">CrabUI.CUIFont</a></div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_font_8cs_source.html#l00012">CUIFont.cs:13</a></div></div>

@@ -175,8 +175,8 @@ Events</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_crab_u_i_1_1_i_resizable.html">CrabUI.IResizable</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source.html#l00072">72</a> of file <a class="el" href="_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source.html">IResizable.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   73</span>          =&gt; Self.MainComponentTracker.MainComponent.GrabbedHandleTracker.Release(handle);</div>
+<p class="definition">Definition at line <a class="el" href="_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source.html#l00078">78</a> of file <a class="el" href="_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source.html">IResizable.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   79</span>          =&gt; Self.MainComponentTracker.MainComponent.GrabbedHandleTracker.Release(handle);</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -199,12 +199,18 @@ Events</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source.html#l00048">48</a> of file <a class="el" href="_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source.html">IResizable.cs</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   49</span>        {</div>
-<div class="line"><span class="lineno">   50</span>          Self.Absolute = <span class="keyword">new</span> CUINullRect(</div>
-<div class="line"><span class="lineno">   51</span>            CUIAnchor.AbsoluteRectToAchored(</div>
-<div class="line"><span class="lineno">   52</span>              rect, Self.Parent.Rect, Self.Anchor</div>
-<div class="line"><span class="lineno">   53</span>            )</div>
-<div class="line"><span class="lineno">   54</span>          );</div>
-<div class="line"><span class="lineno">   55</span>        }</div>
+<div class="line"><span class="lineno">   50</span>          <span class="comment">//TODO It&#39;s better but still kinda funny, you can smash frame out of bounds</span></div>
+<div class="line"><span class="lineno">   51</span>          <span class="keywordflow">if</span> (Self.Parent.ChildrenBounds != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   52</span>          {</div>
+<div class="line"><span class="lineno">   53</span>            rect = Self.Parent.ChildrenBounds(Self.Parent.ChildrenRect).FitGracefuly(Rect, rect);</div>
+<div class="line"><span class="lineno">   54</span>          }</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>          Self.Absolute = <span class="keyword">new</span> CUINullRect(</div>
+<div class="line"><span class="lineno">   57</span>            CUIAnchor.AbsoluteRectToAchored(</div>
+<div class="line"><span class="lineno">   58</span>              rect, Self.Parent.Rect, Self.Anchor</div>
+<div class="line"><span class="lineno">   59</span>            )</div>
+<div class="line"><span class="lineno">   60</span>          );</div>
+<div class="line"><span class="lineno">   61</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -225,8 +231,8 @@ Events</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_crab_u_i_1_1_i_resizable.html">CrabUI.IResizable</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source.html#l00070">70</a> of file <a class="el" href="_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source.html">IResizable.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   71</span>         =&gt; Self.MainComponentTracker.MainComponent.GrabbedHandleTracker.TryGrab(handle);</div>
+<p class="definition">Definition at line <a class="el" href="_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source.html#l00076">76</a> of file <a class="el" href="_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source.html">IResizable.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>         =&gt; Self.MainComponentTracker.MainComponent.GrabbedHandleTracker.TryGrab(handle);</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -318,11 +324,11 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source.html#l00064">64</a> of file <a class="el" href="_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source.html">IResizable.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   65</span>        {</div>
-<div class="line"><span class="lineno">   66</span>          add =&gt; Self.MainComponentTracker.MainComponent?.GlobalEvents.MouseMoved.Add(value);</div>
-<div class="line"><span class="lineno">   67</span>          <span class="keyword">remove</span> =&gt; Self.MainComponentTracker.MainComponent?.GlobalEvents.MouseMoved.Remove(value);</div>
-<div class="line"><span class="lineno">   68</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source.html#l00070">70</a> of file <a class="el" href="_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source.html">IResizable.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   71</span>        {</div>
+<div class="line"><span class="lineno">   72</span>          add =&gt; Self.MainComponentTracker.MainComponent?.GlobalEvents.MouseMoved.Add(value);</div>
+<div class="line"><span class="lineno">   73</span>          <span class="keyword">remove</span> =&gt; Self.MainComponentTracker.MainComponent?.GlobalEvents.MouseMoved.Remove(value);</div>
+<div class="line"><span class="lineno">   74</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -346,11 +352,11 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source.html#l00059">59</a> of file <a class="el" href="_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source.html">IResizable.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   60</span>        {</div>
-<div class="line"><span class="lineno">   61</span>          add =&gt; Self.MainComponentTracker.MainComponent?.GlobalEvents.MouseUp.Add(value);</div>
-<div class="line"><span class="lineno">   62</span>          <span class="keyword">remove</span> =&gt; Self.MainComponentTracker.MainComponent?.GlobalEvents.MouseUp.Remove(value);</div>
-<div class="line"><span class="lineno">   63</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source.html#l00065">65</a> of file <a class="el" href="_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source.html">IResizable.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>        {</div>
+<div class="line"><span class="lineno">   67</span>          add =&gt; Self.MainComponentTracker.MainComponent?.GlobalEvents.MouseUp.Add(value);</div>
+<div class="line"><span class="lineno">   68</span>          <span class="keyword">remove</span> =&gt; Self.MainComponentTracker.MainComponent?.GlobalEvents.MouseUp.Remove(value);</div>
+<div class="line"><span class="lineno">   69</span>        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -366,7 +372,7 @@ Events</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source.html#l00057">57</a> of file <a class="el" href="_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source.html">IResizable.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source.html#l00063">63</a> of file <a class="el" href="_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source.html">IResizable.cs</a>.</p>
 
 </div>
 </div>

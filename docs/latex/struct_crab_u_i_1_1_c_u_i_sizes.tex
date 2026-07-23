@@ -1,11 +1,19 @@
 \doxysection{Crab\+UI.\+CUISizes Struct Reference}
 \hypertarget{struct_crab_u_i_1_1_c_u_i_sizes}{}\label{struct_crab_u_i_1_1_c_u_i_sizes}\index{CrabUI.CUISizes@{CrabUI.CUISizes}}
+Inheritance diagram for Crab\+UI.\+CUISizes:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_crab_u_i_1_1_c_u_i_sizes}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_sizes_a3c8feb3b6a43f209910d37455b20e723}{CUISizes}} (float left=0, float top=0, float right=0, float bottom=0)
+\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_sizes_a20c33acbebcfe4069ad34ff74b08970c}{CUISizes}} (float top=0, float right=0, float bottom=0, float left=0)
 \item 
 override string \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_sizes_a4ab681972f599d05464bde583fce0dd2}{To\+String}} ()
+\item 
+string \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_sizes_ac12e0983af94c0f40fd3882296f27861}{To\+Text}} ()
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -13,6 +21,10 @@ override string \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_sizes_a4ab681972f
 static CUISizes \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_sizes_a3c7c67553505828a269fdb4dc5e44d63}{operator+}} (CUISizes a, CUISizes b)
 \item 
 static CUISizes \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_sizes_a3ac9228da8d3d2f324c4ea7c7074e063}{operator-\/}} (CUISizes a, CUISizes b)
+\item 
+static object IParsable. \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_sizes_a649886b30ea65baa926b9222e3d80805}{Parse}} (string raw)
+\item 
+static CUISizes \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_sizes_a4ca6f9a05b9af2a3f689644dcf9ffcfc}{Parse}} (string s)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -46,11 +58,11 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_sizes_8cs_source_l00015}{15}} of 
 \label{doc-constructors}
 \Hypertarget{struct_crab_u_i_1_1_c_u_i_sizes_doc-constructors}
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{struct_crab_u_i_1_1_c_u_i_sizes_a3c8feb3b6a43f209910d37455b20e723}\index{CrabUI.CUISizes@{CrabUI.CUISizes}!CUISizes@{CUISizes}}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_sizes_a20c33acbebcfe4069ad34ff74b08970c}\index{CrabUI.CUISizes@{CrabUI.CUISizes}!CUISizes@{CUISizes}}
 \index{CUISizes@{CUISizes}!CrabUI.CUISizes@{CrabUI.CUISizes}}
 \doxysubsubsection{\texorpdfstring{CUISizes()}{CUISizes()}}
-{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_sizes_a3c8feb3b6a43f209910d37455b20e723} 
-Crab\+UI.\+CUISizes.\+CUISizes (\begin{DoxyParamCaption}\item[{float}]{left}{ = {\ttfamily 0}, }\item[{float}]{top}{ = {\ttfamily 0}, }\item[{float}]{right}{ = {\ttfamily 0}, }\item[{float}]{bottom}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_sizes_a20c33acbebcfe4069ad34ff74b08970c} 
+Crab\+UI.\+CUISizes.\+CUISizes (\begin{DoxyParamCaption}\item[{float}]{top}{ = {\ttfamily 0}, }\item[{float}]{right}{ = {\ttfamily 0}, }\item[{float}]{bottom}{ = {\ttfamily 0}, }\item[{float}]{left}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
 
 
 
@@ -59,10 +71,10 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_sizes_8cs_source_l00043}{43}} of 
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00044\ \ \ \ \ \{}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ Left\ =\ left;}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ Top\ =\ top;}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ Right\ =\ right;}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ Bottom\ =\ bottom;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ Top\ =\ top;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ Right\ =\ right;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ Bottom\ =\ bottom;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ Left\ =\ left;}
 \DoxyCodeLine{00049\ \ \ \ \ \}}
 
 \end{DoxyCode}
@@ -84,10 +96,10 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_sizes_8cs_source_l00027}{27}} of 
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00028\ \ \ \ \ \ \ =>\ \textcolor{keyword}{new}\ CUISizes(}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ a.Left\ +\ b.Left,}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ a.Top\ +\ b.Top,}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ a.Right\ +\ b.Right,}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ a.Bottom\ +\ b.Bottom}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ a.Top\ +\ b.Top,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ a.Right\ +\ b.Right,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ a.Bottom\ +\ b.Bottom,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ a.Left\ +\ b.Left}
 \DoxyCodeLine{00033\ \ \ \ \ \ \ );}
 
 \end{DoxyCode}
@@ -104,11 +116,73 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_sizes_8cs_source_l00035}{35}} of 
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00036\ \ \ \ \ \ \ =>\ \textcolor{keyword}{new}\ CUISizes(}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ a.Left\ -\/\ b.Left,}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ a.Top\ -\/\ b.Top,}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ a.Right\ -\/\ b.Right,}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ a.Bottom\ -\/\ b.Bottom}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ a.Top\ -\/\ b.Top,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ a.Right\ -\/\ b.Right,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ a.Bottom\ -\/\ b.Bottom,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ a.Left\ -\/\ b.Left}
 \DoxyCodeLine{00041\ \ \ \ \ \ \ );}
+
+\end{DoxyCode}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_sizes_a649886b30ea65baa926b9222e3d80805}\index{CrabUI.CUISizes@{CrabUI.CUISizes}!Parse@{Parse}}
+\index{Parse@{Parse}!CrabUI.CUISizes@{CrabUI.CUISizes}}
+\doxysubsubsection{\texorpdfstring{Parse()}{Parse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_sizes_a649886b30ea65baa926b9222e3d80805} 
+object IParsable. Crab\+UI.\+CUISizes.\+Parse (\begin{DoxyParamCaption}\item[{string}]{raw}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_parsable}{Crab\+UI.\+IParsable}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_sizes_8cs_source_l00055}{55}} of file \doxymbox{\hyperlink{_c_u_i_sizes_8cs_source}{CUISizes.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055\ =>\ Parse(raw);}
+
+\end{DoxyCode}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_sizes_a4ca6f9a05b9af2a3f689644dcf9ffcfc}\index{CrabUI.CUISizes@{CrabUI.CUISizes}!Parse@{Parse}}
+\index{Parse@{Parse}!CrabUI.CUISizes@{CrabUI.CUISizes}}
+\doxysubsubsection{\texorpdfstring{Parse()}{Parse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_sizes_a4ca6f9a05b9af2a3f689644dcf9ffcfc} 
+CUISizes Crab\+UI.\+CUISizes.\+Parse (\begin{DoxyParamCaption}\item[{string}]{s}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_parsable}{Crab\+UI.\+IParsable}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_sizes_8cs_source_l00056}{56}} of file \doxymbox{\hyperlink{_c_u_i_sizes_8cs_source}{CUISizes.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057\ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ content\ =\ s.Substring(}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ s.IndexOf(\textcolor{charliteral}{'['})\ +\ 1,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ s.IndexOf(\textcolor{charliteral}{']'})\ -\/\ s.IndexOf(\textcolor{charliteral}{'['})\ -\/\ 1}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ );}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ var\ components\ =\ content.Split(\textcolor{charliteral}{','}).Select(a\ =>\ a.Trim());}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ st\ =\ components.ElementAtOrDefault(0);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ sr\ =\ components.ElementAtOrDefault(1);}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ sb\ =\ components.ElementAtOrDefault(2);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ sl\ =\ components.ElementAtOrDefault(3);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ t\ =\ 0;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ r\ =\ 0;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ b\ =\ 0;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ l\ =\ 0;}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!String.IsNullOrEmpty(st))\ t\ =\ \textcolor{keywordtype}{float}.Parse(st);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!String.IsNullOrEmpty(sr))\ r\ =\ \textcolor{keywordtype}{float}.Parse(sr);}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!String.IsNullOrEmpty(sb))\ b\ =\ \textcolor{keywordtype}{float}.Parse(sb);}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!String.IsNullOrEmpty(sl))\ l\ =\ \textcolor{keywordtype}{float}.Parse(sl);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ CUISizes(t,\ r,\ b,\ l);}
+\DoxyCodeLine{00081\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{struct_crab_u_i_1_1_c_u_i_sizes_a4ab681972f599d05464bde583fce0dd2}\index{CrabUI.CUISizes@{CrabUI.CUISizes}!ToString@{ToString}}
@@ -123,7 +197,26 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_sizes_8cs_source_l00051}{51}} of 
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00051\ =>\ \$\textcolor{stringliteral}{"{}[\{Left\},\{Top\},\{Right\},\{Bottom\}]"{}};}
+\DoxyCodeLine{00051\ =>\ \$\textcolor{stringliteral}{"{}[\{Top\},\{Right\},\{Bottom\},\{Left\}]"{}};}
+
+\end{DoxyCode}
+\Hypertarget{struct_crab_u_i_1_1_c_u_i_sizes_ac12e0983af94c0f40fd3882296f27861}\index{CrabUI.CUISizes@{CrabUI.CUISizes}!ToText@{ToText}}
+\index{ToText@{ToText}!CrabUI.CUISizes@{CrabUI.CUISizes}}
+\doxysubsubsection{\texorpdfstring{ToText()}{ToText()}}
+{\footnotesize\ttfamily \label{struct_crab_u_i_1_1_c_u_i_sizes_ac12e0983af94c0f40fd3882296f27861} 
+string Crab\+UI.\+CUISizes.\+To\+Text (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_parsable}{Crab\+UI.\+IParsable}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_sizes_8cs_source_l00053}{53}} of file \doxymbox{\hyperlink{_c_u_i_sizes_8cs_source}{CUISizes.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00053\ =>\ ToString();}
 
 \end{DoxyCode}
 

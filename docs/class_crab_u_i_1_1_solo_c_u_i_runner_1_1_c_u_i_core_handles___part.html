@@ -105,6 +105,7 @@ Inheritance diagram for CrabUI.SoloCUIRunner.CUICoreHandles_Part:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a16d7ae2d0b936ee83feedbbc8954a43a" id="r_a16d7ae2d0b936ee83feedbbc8954a43a"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a16d7ae2d0b936ee83feedbbc8954a43a">IsRelXMLPath</a> (string path)</td></tr>
 <tr class="memitem:a6eab840a526cf44462dbbccc82537ca7" id="r_a6eab840a526cf44462dbbccc82537ca7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6eab840a526cf44462dbbccc82537ca7">SaveXDoc</a> (XDocument xDoc, string path)</td></tr>
 <tr class="memitem:abfbfae805fc2740c01e2bd68358fbfec" id="r_abfbfae805fc2740c01e2bd68358fbfec"><td class="memItemLeft">XDocument&#160;</td><td class="memItemRight"><a class="el" href="#abfbfae805fc2740c01e2bd68358fbfec">LoadXDoc</a> (string path)</td></tr>
 <tr class="memitem:a73e16ba4b0666c3830eeedeb9d2f283a" id="r_a73e16ba4b0666c3830eeedeb9d2f283a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a73e16ba4b0666c3830eeedeb9d2f283a">GrabFocus</a> ()</td></tr>
@@ -116,7 +117,9 @@ Properties</h2></td></tr>
 <tr class="memitem:a7a1b65c0fa1c513d55c2b631a5d7609a" id="r_a7a1b65c0fa1c513d55c2b631a5d7609a"><td class="memItemLeft">SoloCUIRunner&#160;</td><td class="memItemRight"><a class="el" href="#a7a1b65c0fa1c513d55c2b631a5d7609a">Self</a><code> [get, set]</code></td></tr>
 <tr class="memitem:a431c21215bc269207e8fae737aefaff3" id="r_a431c21215bc269207e8fae737aefaff3"><td class="memItemLeft"><a class="el" href="interface_crab_u_i_1_1_c_u_i_graphics_device.html">CUIGraphicsDevice</a>&#160;</td><td class="memItemRight"><a class="el" href="#a431c21215bc269207e8fae737aefaff3">GraphicsDevice</a><code> [get]</code></td></tr>
 <tr class="memitem:a45cd2532ef2e973b12deca19a40d6297" id="r_a45cd2532ef2e973b12deca19a40d6297"><td class="memItemLeft">CUIGUI&#160;</td><td class="memItemRight"><a class="el" href="#a45cd2532ef2e973b12deca19a40d6297">GUI</a><code> [get]</code></td></tr>
-<tr class="memitem:a11f5f1b9259c136134570405f735ac73" id="r_a11f5f1b9259c136134570405f735ac73"><td class="memItemLeft">CUITextureManager&#160;</td><td class="memItemRight"><a class="el" href="#a11f5f1b9259c136134570405f735ac73">CUITextureManager</a><code> [get]</code></td></tr>
+<tr class="memitem:aa2aafe29cbe4891cfd01d6a9ed7b3653" id="r_aa2aafe29cbe4891cfd01d6a9ed7b3653"><td class="memItemLeft"><a class="el" href="interface_crab_u_i_1_1_c_u_i_texture_manager.html">CUITextureManager</a>&#160;</td><td class="memItemRight"><a class="el" href="#aa2aafe29cbe4891cfd01d6a9ed7b3653">TextureManager</a><code> [get]</code></td></tr>
+<tr class="memitem:a38f7b0411fc880969bcef5d44980ba79" id="r_a38f7b0411fc880969bcef5d44980ba79"><td class="memItemLeft">ResourceIOContextHandle&#160;</td><td class="memItemRight"><a class="el" href="#a38f7b0411fc880969bcef5d44980ba79">ResourceIOContext</a><code> [get]</code></td></tr>
+<tr class="memitem:a5c2bdfd94651ebfa5ff42d012b32b744" id="r_a5c2bdfd94651ebfa5ff42d012b32b744"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a5c2bdfd94651ebfa5ff42d012b32b744">InputBlockingMenuOpen</a><code> [get]</code></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -139,10 +142,10 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_crab_u_i_1_1_c_u_i_core_1_1_c_u_i_core_handles.html">CrabUI.CUICore.CUICoreHandles</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html#l00042">42</a> of file <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html">SoloCUIRunner.CUICoreHandles.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   43</span>      {</div>
-<div class="line"><span class="lineno">   44</span>        Barotrauma.GUI.KeyboardDispatcher.Subscriber = <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">   45</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html#l00052">52</a> of file <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html">SoloCUIRunner.CUICoreHandles.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>      {</div>
+<div class="line"><span class="lineno">   54</span>        Barotrauma.GUI.KeyboardDispatcher.Subscriber = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">   55</span>      }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -165,10 +168,32 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_crab_u_i_1_1_c_u_i_core_1_1_c_u_i_core_handles.html#aa5ed419bf2a7ecab6462ef1d1d5e2e04">CrabUI.CUICore.CUICoreHandles</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html#l00037">37</a> of file <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html">SoloCUIRunner.CUICoreHandles.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   38</span>      {</div>
-<div class="line"><span class="lineno">   39</span>        Barotrauma.GUI.KeyboardDispatcher.Subscriber = DummyIKeyboardSubscriber;</div>
-<div class="line"><span class="lineno">   40</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html#l00047">47</a> of file <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html">SoloCUIRunner.CUICoreHandles.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   48</span>      {</div>
+<div class="line"><span class="lineno">   49</span>        Barotrauma.GUI.KeyboardDispatcher.Subscriber = DummyIKeyboardSubscriber;</div>
+<div class="line"><span class="lineno">   50</span>      }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a16d7ae2d0b936ee83feedbbc8954a43a" name="a16d7ae2d0b936ee83feedbbc8954a43a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16d7ae2d0b936ee83feedbbc8954a43a">&#9670;&#160;</a></span>IsRelXMLPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CrabUI.SoloCUIRunner.CUICoreHandles_Part.IsRelXMLPath </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html#l00018">18</a> of file <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html">SoloCUIRunner.CUICoreHandles.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   19</span>      {</div>
+<div class="line"><span class="lineno">   20</span>        <span class="keywordflow">return</span> path.EndsWith(<span class="stringliteral">&quot;.xml&quot;</span>) &amp;&amp; !Path.IsPathFullyQualified(path);</div>
+<div class="line"><span class="lineno">   21</span>      }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -189,10 +214,11 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_crab_u_i_1_1_c_u_i_core_1_1_c_u_i_core_i_o_handle.html">CrabUI.CUICore.CUICoreIOHandle</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html#l00032">32</a> of file <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html">SoloCUIRunner.CUICoreHandles.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   33</span>      {</div>
-<div class="line"><span class="lineno">   34</span>        <span class="keywordflow">return</span> XDocument.Load(Self.PathManager.Normalize(path));</div>
-<div class="line"><span class="lineno">   35</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html#l00041">41</a> of file <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html">SoloCUIRunner.CUICoreHandles.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>      {</div>
+<div class="line"><span class="lineno">   43</span>        <span class="keywordtype">string</span> realPath = Self.FilePathResolver.FindBestMatchForLoading(path);</div>
+<div class="line"><span class="lineno">   44</span>        <span class="keywordflow">return</span> XDocument.Load(realPath);</div>
+<div class="line"><span class="lineno">   45</span>      }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -217,40 +243,15 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_crab_u_i_1_1_c_u_i_core_1_1_c_u_i_core_i_o_handle.html">CrabUI.CUICore.CUICoreIOHandle</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html#l00028">28</a> of file <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html">SoloCUIRunner.CUICoreHandles.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   29</span>      {</div>
-<div class="line"><span class="lineno">   30</span>        xDoc.Save(Self.PathManager.Normalize(path));</div>
-<div class="line"><span class="lineno">   31</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html#l00036">36</a> of file <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html">SoloCUIRunner.CUICoreHandles.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   37</span>      {</div>
+<div class="line"><span class="lineno">   38</span>        <span class="keywordtype">string</span> realPath = Self.FilePathResolver.FindBestMatchForSaving(path);</div>
+<div class="line"><span class="lineno">   39</span>        xDoc.Save(realPath);</div>
+<div class="line"><span class="lineno">   40</span>      }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <a name="doc-property-members" id="doc-property-members"></a><h2 id="header-doc-property-members" class="groupheader">Property Documentation</h2>
-<a id="a11f5f1b9259c136134570405f735ac73" name="a11f5f1b9259c136134570405f735ac73"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11f5f1b9259c136134570405f735ac73">&#9670;&#160;</a></span>CUITextureManager</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">CUITextureManager CrabUI.SoloCUIRunner.CUICoreHandles_Part.CUITextureManager</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="interface_crab_u_i_1_1_c_u_i_core_1_1_c_u_i_core_handles.html">CrabUI.CUICore.CUICoreHandles</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html#l00026">26</a> of file <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html">SoloCUIRunner.CUICoreHandles.cs</a>.</p>
-
-</div>
-</div>
 <a id="a431c21215bc269207e8fae737aefaff3" name="a431c21215bc269207e8fae737aefaff3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a431c21215bc269207e8fae737aefaff3">&#9670;&#160;</a></span>GraphicsDevice</h2>
 
@@ -273,7 +274,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_crab_u_i_1_1_c_u_i_core_1_1_c_u_i_core_handles.html">CrabUI.CUICore.CUICoreHandles</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html#l00023">23</a> of file <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html">SoloCUIRunner.CUICoreHandles.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html#l00028">28</a> of file <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html">SoloCUIRunner.CUICoreHandles.cs</a>.</p>
 
 </div>
 </div>
@@ -299,7 +300,59 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_crab_u_i_1_1_c_u_i_core_1_1_c_u_i_core_handles.html">CrabUI.CUICore.CUICoreHandles</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html#l00024">24</a> of file <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html">SoloCUIRunner.CUICoreHandles.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html#l00029">29</a> of file <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html">SoloCUIRunner.CUICoreHandles.cs</a>.</p>
+
+</div>
+</div>
+<a id="a5c2bdfd94651ebfa5ff42d012b32b744" name="a5c2bdfd94651ebfa5ff42d012b32b744"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c2bdfd94651ebfa5ff42d012b32b744">&#9670;&#160;</a></span>InputBlockingMenuOpen</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CrabUI.SoloCUIRunner.CUICoreHandles_Part.InputBlockingMenuOpen</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="interface_crab_u_i_1_1_c_u_i_core_1_1_c_u_i_core_handles.html">CrabUI.CUICore.CUICoreHandles</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html#l00034">34</a> of file <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html">SoloCUIRunner.CUICoreHandles.cs</a>.</p>
+
+</div>
+</div>
+<a id="a38f7b0411fc880969bcef5d44980ba79" name="a38f7b0411fc880969bcef5d44980ba79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38f7b0411fc880969bcef5d44980ba79">&#9670;&#160;</a></span>ResourceIOContext</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ResourceIOContextHandle CrabUI.SoloCUIRunner.CUICoreHandles_Part.ResourceIOContext</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="interface_crab_u_i_1_1_c_u_i_core_1_1_c_u_i_core_handles.html">CrabUI.CUICore.CUICoreHandles</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html#l00032">32</a> of file <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html">SoloCUIRunner.CUICoreHandles.cs</a>.</p>
 
 </div>
 </div>
@@ -323,9 +376,35 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html#l00021">21</a> of file <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html">SoloCUIRunner.CUICoreHandles.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   21</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html#l00026">26</a> of file <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html">SoloCUIRunner.CUICoreHandles.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   26</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
+</div>
+</div>
+<a id="aa2aafe29cbe4891cfd01d6a9ed7b3653" name="aa2aafe29cbe4891cfd01d6a9ed7b3653"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2aafe29cbe4891cfd01d6a9ed7b3653">&#9670;&#160;</a></span>TextureManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="interface_crab_u_i_1_1_c_u_i_texture_manager.html">CUITextureManager</a> CrabUI.SoloCUIRunner.CUICoreHandles_Part.TextureManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="interface_crab_u_i_1_1_c_u_i_core_1_1_c_u_i_core_handles.html">CrabUI.CUICore.CUICoreHandles</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html#l00031">31</a> of file <a class="el" href="_solo_c_u_i_runner_8_c_u_i_core_handles_8cs_source.html">SoloCUIRunner.CUICoreHandles.cs</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

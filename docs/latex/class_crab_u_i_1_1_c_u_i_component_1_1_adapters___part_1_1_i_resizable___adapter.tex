@@ -88,11 +88,11 @@ Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_resizable}{Crab\+UI.\+I
 
 
 
-Definition at line \doxymbox{\hyperlink{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00072}{72}} of file \doxymbox{\hyperlink{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source}{IResizable.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00078}{78}} of file \doxymbox{\hyperlink{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source}{IResizable.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ =>\ Self.MainComponentTracker.MainComponent.GrabbedHandleTracker.Release(handle);}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ =>\ Self.MainComponentTracker.MainComponent.GrabbedHandleTracker.Release(handle);}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_1_1_adapters___part_1_1_i_resizable___adapter_adb554602c59e370708ee7e893b30aa4f}\index{CrabUI.CUIComponent.Adapters\_Part.IResizable\_Adapter@{CrabUI.CUIComponent.Adapters\_Part.IResizable\_Adapter}!ResizeToAbsoluteRect@{ResizeToAbsoluteRect}}
@@ -112,12 +112,18 @@ Definition at line \doxymbox{\hyperlink{_components_2_c_u_i_component_2_adapters
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ Self.Absolute\ =\ \textcolor{keyword}{new}\ CUINullRect(}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ CUIAnchor.AbsoluteRectToAchored(}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rect,\ Self.Parent.Rect,\ Self.Anchor}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ )}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ );}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//TODO\ It's\ better\ but\ still\ kinda\ funny,\ you\ can\ smash\ frame\ out\ of\ bounds}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Self.Parent.ChildrenBounds\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ rect\ =\ Self.Parent.ChildrenBounds(Self.Parent.ChildrenRect).FitGracefuly(Rect,\ rect);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ Self.Absolute\ =\ \textcolor{keyword}{new}\ CUINullRect(}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ CUIAnchor.AbsoluteRectToAchored(}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rect,\ Self.Parent.Rect,\ Self.Anchor}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_1_1_adapters___part_1_1_i_resizable___adapter_a20a2b84607475c7ffd9b0049c92755db}\index{CrabUI.CUIComponent.Adapters\_Part.IResizable\_Adapter@{CrabUI.CUIComponent.Adapters\_Part.IResizable\_Adapter}!TryGrab@{TryGrab}}
@@ -132,11 +138,11 @@ Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_resizable}{Crab\+UI.\+I
 
 
 
-Definition at line \doxymbox{\hyperlink{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00070}{70}} of file \doxymbox{\hyperlink{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source}{IResizable.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00076}{76}} of file \doxymbox{\hyperlink{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source}{IResizable.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ =>\ Self.MainComponentTracker.MainComponent.GrabbedHandleTracker.TryGrab(handle);}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ =>\ Self.MainComponentTracker.MainComponent.GrabbedHandleTracker.TryGrab(handle);}
 
 \end{DoxyCode}
 
@@ -203,14 +209,14 @@ Action$<$\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_moved_event}{CUIMou
 
 
 
-Definition at line \doxymbox{\hyperlink{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00064}{64}} of file \doxymbox{\hyperlink{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source}{IResizable.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00070}{70}} of file \doxymbox{\hyperlink{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source}{IResizable.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ add\ =>\ Self.MainComponentTracker.MainComponent?.GlobalEvents.MouseMoved.Add(value);}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ Self.MainComponentTracker.MainComponent?.GlobalEvents.MouseMoved.Remove(value);}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ add\ =>\ Self.MainComponentTracker.MainComponent?.GlobalEvents.MouseMoved.Add(value);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ Self.MainComponentTracker.MainComponent?.GlobalEvents.MouseMoved.Remove(value);}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_1_1_adapters___part_1_1_i_resizable___adapter_a52d817fb514634ee081bb879afe43067}\index{CrabUI.CUIComponent.Adapters\_Part.IResizable\_Adapter@{CrabUI.CUIComponent.Adapters\_Part.IResizable\_Adapter}!HubMouseUp@{HubMouseUp}}
@@ -221,14 +227,14 @@ Action$<$\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_up_event}{CUIMouse\
 
 
 
-Definition at line \doxymbox{\hyperlink{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00059}{59}} of file \doxymbox{\hyperlink{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source}{IResizable.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00065}{65}} of file \doxymbox{\hyperlink{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source}{IResizable.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ add\ =>\ Self.MainComponentTracker.MainComponent?.GlobalEvents.MouseUp.Add(value);}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ Self.MainComponentTracker.MainComponent?.GlobalEvents.MouseUp.Remove(value);}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ add\ =>\ Self.MainComponentTracker.MainComponent?.GlobalEvents.MouseUp.Add(value);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ Self.MainComponentTracker.MainComponent?.GlobalEvents.MouseUp.Remove(value);}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_1_1_adapters___part_1_1_i_resizable___adapter_a75e22384ac8359368b7e9fefc64572ed}\index{CrabUI.CUIComponent.Adapters\_Part.IResizable\_Adapter@{CrabUI.CUIComponent.Adapters\_Part.IResizable\_Adapter}!MouseDown@{MouseDown}}
@@ -239,7 +245,7 @@ Action$<$\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_down_event}{CUIMous
 
 
 
-Definition at line \doxymbox{\hyperlink{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00057}{57}} of file \doxymbox{\hyperlink{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source}{IResizable.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source_l00063}{63}} of file \doxymbox{\hyperlink{_components_2_c_u_i_component_2_adapters_2_handles_2_i_resizable_8cs_source}{IResizable.\+cs}}.
 
 
 

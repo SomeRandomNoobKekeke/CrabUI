@@ -92,15 +92,6 @@ $(function(){initNavTree('class_crab_u_i_1_1_visual_bounds.html','','class_crab_
   <div class="headertitle"><div class="title">CrabUI.VisualBounds Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Inheritance diagram for CrabUI.VisualBounds:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="class_crab_u_i_1_1_visual_bounds.png" usemap="#CrabUI_2EVisualBounds_map" alt=""/>
-  <map id="CrabUI_2EVisualBounds_map" name="CrabUI_2EVisualBounds_map">
-<area href="interface_c_u_i_code_generator_1_1_i_aware.html" alt="CUICodeGenerator.IAware" shape="rect" coords="0,0,163,24"/>
-  </map>
-</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -109,8 +100,6 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a7611fc772ac7425ffc55f66de1936236" id="r_a7611fc772ac7425ffc55f66de1936236"><td class="memItemLeft">object&#160;</td><td class="memItemRight"><a class="el" href="#a7611fc772ac7425ffc55f66de1936236">HostComponent</a><code> [get, set]</code></td></tr>
-<tr class="memitem:abc9181ac3191c40db28b2110500c3a45" id="r_abc9181ac3191c40db28b2110500c3a45"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#abc9181ac3191c40db28b2110500c3a45">HostPropName</a><code> [get, set]</code></td></tr>
 <tr class="memitem:a5307734b635fe51fbb9cf4e15fe4c43b" id="r_a5307734b635fe51fbb9cf4e15fe4c43b"><td class="memItemLeft"><a class="el" href="class_crab_u_i_1_1_visual_bounds_1_1_left_context_bound.html">LeftContextBound</a>&#160;</td><td class="memItemRight"><a class="el" href="#a5307734b635fe51fbb9cf4e15fe4c43b">LeftBound</a><code> [get]</code></td></tr>
 <tr class="memitem:a968e5297e845ec45017b5968b0d14c6c" id="r_a968e5297e845ec45017b5968b0d14c6c"><td class="memItemLeft"><a class="el" href="class_crab_u_i_1_1_visual_bounds_1_1_right_context_bound.html">RightContextBound</a>&#160;</td><td class="memItemRight"><a class="el" href="#a968e5297e845ec45017b5968b0d14c6c">RightBound</a><code> [get]</code></td></tr>
 <tr class="memitem:a53984b65e2ffa093ea414b70f2990615" id="r_a53984b65e2ffa093ea414b70f2990615"><td class="memItemLeft">SamplerState?&#160;</td><td class="memItemRight"><a class="el" href="#a53984b65e2ffa093ea414b70f2990615">SamplerState</a><code> [get, set]</code></td></tr>
@@ -135,83 +124,15 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_visual_bounds_8cs_source.html#l00052">52</a> of file <a class="el" href="_visual_bounds_8cs_source.html">VisualBounds.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   53</span>    {</div>
-<div class="line"><span class="lineno">   54</span>      LeftBound = <span class="keyword">new</span> LeftContextBound(<span class="keyword">this</span>);</div>
-<div class="line"><span class="lineno">   55</span>      RightBound = <span class="keyword">new</span> RightContextBound(<span class="keyword">this</span>);</div>
-<div class="line"><span class="lineno">   56</span>    }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a name="doc-property-members" id="doc-property-members"></a><h2 id="header-doc-property-members" class="groupheader">Property Documentation</h2>
-<a id="a7611fc772ac7425ffc55f66de1936236" name="a7611fc772ac7425ffc55f66de1936236"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7611fc772ac7425ffc55f66de1936236">&#9670;&#160;</a></span>HostComponent</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">object CrabUI.VisualBounds.HostComponent</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="interface_c_u_i_code_generator_1_1_i_aware.html">CUICodeGenerator.IAware</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="_visual_bounds_8cs_source.html#l00015">15</a> of file <a class="el" href="_visual_bounds_8cs_source.html">VisualBounds.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   16</span>    {</div>
-<div class="line"><span class="lineno">   17</span>      <span class="keyword">get</span> =&gt; LeftBound.HostComponent;</div>
-<div class="line"><span class="lineno">   18</span>      <span class="keyword">set</span></div>
-<div class="line"><span class="lineno">   19</span>      {</div>
-<div class="line"><span class="lineno">   20</span>        LeftBound.HostComponent = value;</div>
-<div class="line"><span class="lineno">   21</span>        RightBound.HostComponent = value;</div>
-<div class="line"><span class="lineno">   22</span>      }</div>
-<div class="line"><span class="lineno">   23</span>    }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="abc9181ac3191c40db28b2110500c3a45" name="abc9181ac3191c40db28b2110500c3a45"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc9181ac3191c40db28b2110500c3a45">&#9670;&#160;</a></span>HostPropName</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">string CrabUI.VisualBounds.HostPropName</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="interface_c_u_i_code_generator_1_1_i_aware.html">CUICodeGenerator.IAware</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="_visual_bounds_8cs_source.html#l00024">24</a> of file <a class="el" href="_visual_bounds_8cs_source.html">VisualBounds.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   25</span>    {</div>
-<div class="line"><span class="lineno">   26</span>      <span class="keyword">get</span> =&gt; LeftBound.HostPropName;</div>
-<div class="line"><span class="lineno">   27</span>      <span class="keyword">set</span></div>
-<div class="line"><span class="lineno">   28</span>      {</div>
-<div class="line"><span class="lineno">   29</span>        LeftBound.HostPropName = value;</div>
-<div class="line"><span class="lineno">   30</span>        RightBound.HostPropName = value;</div>
-<div class="line"><span class="lineno">   31</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="_visual_bounds_8cs_source.html#l00028">28</a> of file <a class="el" href="_visual_bounds_8cs_source.html">VisualBounds.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   29</span>    {</div>
+<div class="line"><span class="lineno">   30</span>      LeftBound = <span class="keyword">new</span> LeftContextBound(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   31</span>      RightBound = <span class="keyword">new</span> RightContextBound(<span class="keyword">this</span>);</div>
 <div class="line"><span class="lineno">   32</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
+<a name="doc-property-members" id="doc-property-members"></a><h2 id="header-doc-property-members" class="groupheader">Property Documentation</h2>
 <a id="a5307734b635fe51fbb9cf4e15fe4c43b" name="a5307734b635fe51fbb9cf4e15fe4c43b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5307734b635fe51fbb9cf4e15fe4c43b">&#9670;&#160;</a></span>LeftBound</h2>
 
@@ -232,8 +153,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_visual_bounds_8cs_source.html#l00058">58</a> of file <a class="el" href="_visual_bounds_8cs_source.html">VisualBounds.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   58</span>{ <span class="keyword">get</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_visual_bounds_8cs_source.html#l00034">34</a> of file <a class="el" href="_visual_bounds_8cs_source.html">VisualBounds.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   34</span>{ <span class="keyword">get</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -257,8 +178,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_visual_bounds_8cs_source.html#l00059">59</a> of file <a class="el" href="_visual_bounds_8cs_source.html">VisualBounds.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   59</span>{ <span class="keyword">get</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_visual_bounds_8cs_source.html#l00035">35</a> of file <a class="el" href="_visual_bounds_8cs_source.html">VisualBounds.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   35</span>{ <span class="keyword">get</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -282,8 +203,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_visual_bounds_8cs_source.html#l00061">61</a> of file <a class="el" href="_visual_bounds_8cs_source.html">VisualBounds.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   61</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_visual_bounds_8cs_source.html#l00037">37</a> of file <a class="el" href="_visual_bounds_8cs_source.html">VisualBounds.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   37</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -307,8 +228,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_visual_bounds_8cs_source.html#l00062">62</a> of file <a class="el" href="_visual_bounds_8cs_source.html">VisualBounds.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   62</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_visual_bounds_8cs_source.html#l00038">38</a> of file <a class="el" href="_visual_bounds_8cs_source.html">VisualBounds.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   38</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>

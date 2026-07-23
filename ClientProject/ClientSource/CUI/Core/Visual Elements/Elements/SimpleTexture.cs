@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework;
 using CUILibs;
 using Microsoft.Xna.Framework.Graphics;
 using System.Xml.Linq;
+using System.Text.Json;
 
 namespace CrabUI
 {
@@ -68,15 +69,25 @@ namespace CrabUI
       return Rect.Contains(pos);
     }
 
-
+    public string TextureKey
+    {
+      get => Sprite.Texture.Key;
+      set => Sprite.Texture = CUICore.TextureManager.Get(value);
+    }
     #region Forwarded to CUISprite
+    [CUISerializableProp]
     public CUITexture2D Texture { get => Sprite.Texture; set => Sprite.Texture = value; }
+    [CUISerializableProp]
     public Rectangle? SourceRectangle { get => Sprite.SourceRectangle; set => Sprite.SourceRectangle = value; }
     [CUISerializableProp]
     public Color Color { get => Sprite.Color; set => Sprite.Color = value; }
+    [CUISerializableProp]
     public float Rotation { get => Sprite.Rotation; set => Sprite.Rotation = value; }
+    [CUISerializableProp]
     public Vector2 Origin { get => Sprite.Origin; set => Sprite.Origin = value; }
+    [CUISerializableProp]
     public SpriteEffects Effects { get => Sprite.Effects; set => Sprite.Effects = value; }
+    [CUISerializableProp]
     public float LayerDepth { get => Sprite.LayerDepth; set => Sprite.LayerDepth = value; }
 
     #endregion
@@ -91,10 +102,33 @@ namespace CrabUI
 
     public static object Deserialize(XElement element)
     {
-      return new SimpleTexture();
+      throw new NotImplementedException();
     }
-    public XElement Serialize() => new XElement(GetType().Name);
 
 
+    // public static object Parse(string raw)
+    // {
+    //   Dictionary<string, string> dict = JsonSerializer.Deserialize<Dictionary<string, string>>(raw)!;
+
+    //   CUI.Logger.Log(Logger.Wrap.IDictionary(dict));
+
+    //   SimpleTexture texture = new SimpleTexture();
+
+    //   if (dict.ContainsKey("texture")) texture.Texture = CUICore.TextureManager.Get(dict["texture"]);
+    //   if (dict.ContainsKey("color")) texture.Color = CUICore.Parser.Parse<Color>(dict["color"]);
+
+    //   return texture;
+    // }
+
+    // public string ToText()
+    // {
+    //   Dictionary<string, string> dict = new Dictionary<string, string>()
+    //   {
+    //     ["texture"] = Texture.Key ?? "",
+    //     ["color"] = CUICore.Parser.Serialize(Color),
+    //   };
+
+    //   return JsonSerializer.Serialize(dict);
+    // }
   }
 }

@@ -12,19 +12,12 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-    #region public
-    #endregion
-    public bool MouseOver => Events.MouseOver;
-    public bool MousePressed => Events.MousePressed;
-
-    #region protected
-    #endregion
     protected Events_Part Events { get; } = new();
     public class Events_Part : Part, IModule, IMouseEventConsumingComponent
     {
       public void Init()
       {
-        this.Route(Self.Background);
+        // this.Route(Self.Background);
         //TODO route borders?
       }
 

@@ -105,6 +105,8 @@ Public Member Functions</h2></td></tr>
 Properties</h2></td></tr>
 <tr class="memitem:afbeb6762c8946d7f6d3a6987b31eb02b" id="r_afbeb6762c8946d7f6d3a6987b31eb02b"><td class="memItemLeft">List&lt; PropertyInfo &gt;&#160;</td><td class="memItemRight"><a class="el" href="#afbeb6762c8946d7f6d3a6987b31eb02b">Path</a><code> [get, set]</code></td></tr>
 <tr class="memitem:acc22db74107adbad87cbb272e2326c4a" id="r_acc22db74107adbad87cbb272e2326c4a"><td class="memItemLeft">Type&#160;</td><td class="memItemRight"><a class="el" href="#acc22db74107adbad87cbb272e2326c4a">Type</a><code> [get]</code></td></tr>
+<tr class="memitem:a01bcc4fb2ec619009c8c971970b91614" id="r_a01bcc4fb2ec619009c8c971970b91614"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a01bcc4fb2ec619009c8c971970b91614">CanRead</a><code> [get]</code></td></tr>
+<tr class="memitem:ae61101574cc5c435ac9a9201190ee362" id="r_ae61101574cc5c435ac9a9201190ee362"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ae61101574cc5c435ac9a9201190ee362">CanWrite</a><code> [get]</code></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -125,8 +127,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_property_path_8cs_source.html#l00045">45</a> of file <a class="el" href="_property_path_8cs_source.html">PropertyPath.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   45</span>=&gt; Path = path.ToList();</div>
+<p class="definition">Definition at line <a class="el" href="_property_path_8cs_source.html#l00048">48</a> of file <a class="el" href="_property_path_8cs_source.html">PropertyPath.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   48</span>=&gt; Path = path.ToList();</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -145,8 +147,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_property_path_8cs_source.html#l00046">46</a> of file <a class="el" href="_property_path_8cs_source.html">PropertyPath.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   46</span>=&gt; Path = path;</div>
+<p class="definition">Definition at line <a class="el" href="_property_path_8cs_source.html#l00049">49</a> of file <a class="el" href="_property_path_8cs_source.html">PropertyPath.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   49</span>=&gt; Path = path;</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -166,19 +168,19 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_property_path_8cs_source.html#l00017">17</a> of file <a class="el" href="_property_path_8cs_source.html">PropertyPath.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   18</span>    {</div>
-<div class="line"><span class="lineno">   19</span>      <span class="keywordflow">if</span> (Path.Count == 0) <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">   20</span> </div>
-<div class="line"><span class="lineno">   21</span>      <span class="keywordtype">object</span> o = target;</div>
-<div class="line"><span class="lineno">   22</span> </div>
-<div class="line"><span class="lineno">   23</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; Path.Count - 1; i++)</div>
-<div class="line"><span class="lineno">   24</span>      {</div>
-<div class="line"><span class="lineno">   25</span>        o = Path[i].GetValue(o);</div>
-<div class="line"><span class="lineno">   26</span>      }</div>
-<div class="line"><span class="lineno">   27</span> </div>
-<div class="line"><span class="lineno">   28</span>      <span class="keywordflow">return</span> Path.Last().GetValue(o);</div>
-<div class="line"><span class="lineno">   29</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_property_path_8cs_source.html#l00020">20</a> of file <a class="el" href="_property_path_8cs_source.html">PropertyPath.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   21</span>    {</div>
+<div class="line"><span class="lineno">   22</span>      <span class="keywordflow">if</span> (Path.Count == 0) <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">   23</span> </div>
+<div class="line"><span class="lineno">   24</span>      <span class="keywordtype">object</span> o = target;</div>
+<div class="line"><span class="lineno">   25</span> </div>
+<div class="line"><span class="lineno">   26</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; Path.Count - 1; i++)</div>
+<div class="line"><span class="lineno">   27</span>      {</div>
+<div class="line"><span class="lineno">   28</span>        o = Path[i].GetValue(o);</div>
+<div class="line"><span class="lineno">   29</span>      }</div>
+<div class="line"><span class="lineno">   30</span> </div>
+<div class="line"><span class="lineno">   31</span>      <span class="keywordflow">return</span> Path.Last().GetValue(o);</div>
+<div class="line"><span class="lineno">   32</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -201,19 +203,19 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_property_path_8cs_source.html#l00031">31</a> of file <a class="el" href="_property_path_8cs_source.html">PropertyPath.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   32</span>    {</div>
-<div class="line"><span class="lineno">   33</span>      <span class="keywordflow">if</span> (Path.Count == 0) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   34</span> </div>
-<div class="line"><span class="lineno">   35</span>      <span class="keywordtype">object</span> o = target;</div>
-<div class="line"><span class="lineno">   36</span> </div>
-<div class="line"><span class="lineno">   37</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; Path.Count - 1; i++)</div>
-<div class="line"><span class="lineno">   38</span>      {</div>
-<div class="line"><span class="lineno">   39</span>        o = Path[i].GetValue(o);</div>
-<div class="line"><span class="lineno">   40</span>      }</div>
-<div class="line"><span class="lineno">   41</span> </div>
-<div class="line"><span class="lineno">   42</span>      Path.Last().SetValue(o, value);</div>
-<div class="line"><span class="lineno">   43</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_property_path_8cs_source.html#l00034">34</a> of file <a class="el" href="_property_path_8cs_source.html">PropertyPath.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   35</span>    {</div>
+<div class="line"><span class="lineno">   36</span>      <span class="keywordflow">if</span> (Path.Count == 0) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   37</span> </div>
+<div class="line"><span class="lineno">   38</span>      <span class="keywordtype">object</span> o = target;</div>
+<div class="line"><span class="lineno">   39</span> </div>
+<div class="line"><span class="lineno">   40</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; Path.Count - 1; i++)</div>
+<div class="line"><span class="lineno">   41</span>      {</div>
+<div class="line"><span class="lineno">   42</span>        o = Path[i].GetValue(o);</div>
+<div class="line"><span class="lineno">   43</span>      }</div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span>      Path.Last().SetValue(o, value);</div>
+<div class="line"><span class="lineno">   46</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -232,12 +234,60 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_property_path_8cs_source.html#l00048">48</a> of file <a class="el" href="_property_path_8cs_source.html">PropertyPath.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   48</span>=&gt; String.Join(<span class="charliteral">&#39;.&#39;</span>, Path.Select(pi =&gt; pi.Name));</div>
+<p class="definition">Definition at line <a class="el" href="_property_path_8cs_source.html#l00051">51</a> of file <a class="el" href="_property_path_8cs_source.html">PropertyPath.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>=&gt; String.Join(<span class="charliteral">&#39;.&#39;</span>, Path.Select(pi =&gt; pi.Name));</div>
 </div><!-- fragment -->
 </div>
 </div>
 <a name="doc-property-members" id="doc-property-members"></a><h2 id="header-doc-property-members" class="groupheader">Property Documentation</h2>
+<a id="a01bcc4fb2ec619009c8c971970b91614" name="a01bcc4fb2ec619009c8c971970b91614"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01bcc4fb2ec619009c8c971970b91614">&#9670;&#160;</a></span>CanRead</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CrabUI.PropertyPath.CanRead</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_property_path_8cs_source.html#l00017">17</a> of file <a class="el" href="_property_path_8cs_source.html">PropertyPath.cs</a>.</p>
+
+</div>
+</div>
+<a id="ae61101574cc5c435ac9a9201190ee362" name="ae61101574cc5c435ac9a9201190ee362"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae61101574cc5c435ac9a9201190ee362">&#9670;&#160;</a></span>CanWrite</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CrabUI.PropertyPath.CanWrite</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_property_path_8cs_source.html#l00018">18</a> of file <a class="el" href="_property_path_8cs_source.html">PropertyPath.cs</a>.</p>
+
+</div>
+</div>
 <a id="afbeb6762c8946d7f6d3a6987b31eb02b" name="afbeb6762c8946d7f6d3a6987b31eb02b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afbeb6762c8946d7f6d3a6987b31eb02b">&#9670;&#160;</a></span>Path</h2>
 

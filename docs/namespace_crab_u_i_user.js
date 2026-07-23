@@ -14,6 +14,7 @@ var namespace_crab_u_i_user =
     [ "SnapshotTestRunner", "class_crab_u_i_user_1_1_snapshot_test_runner.html", null ],
     [ "SnapshotTests", "class_crab_u_i_user_1_1_snapshot_tests.html", null ],
     [ "TestManager", "class_crab_u_i_user_1_1_test_manager.html", null ],
+    [ "XMLSaveLoadingTest", "class_crab_u_i_user_1_1_x_m_l_save_loading_test.html", null ],
     [ "VirtualFileSystem", "class_crab_u_i_user_1_1_virtual_file_system.html", null ],
     [ "Mod", "class_crab_u_i_user_1_1_mod.html", null ],
     [ "GodAccessorExperiment", "class_crab_u_i_user_1_1_god_accessor_experiment.html", "class_crab_u_i_user_1_1_god_accessor_experiment" ],

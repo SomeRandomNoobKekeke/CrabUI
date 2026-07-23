@@ -35,8 +35,8 @@ namespace CrabUIUser
       {
         CUI.Start();
 
-        CUICore.TextureManager.Load("Assets/PNG/For testing/Test Chamber Background.png", "Test Chamber Background");
-        CUICore.TextureManager.Load("Assets/PNG/For testing/Icons.png", "Test Icons");
+        CUI.TextureManager.LoadAs("Assets/PNG/For testing/Test Chamber Background.png", "Test Chamber Background");
+        CUI.TextureManager.LoadAs("Assets/PNG/For testing/Icons.png", "Test Icons");
 
         UTestCommands.AddCommands();
         CUITest = new CUITest();
@@ -62,9 +62,9 @@ namespace CrabUIUser
     {
       Instance = null;
       UTestCommands.RemoveCommands();
-      CUIDebugger.Dispose();
-      MGDebugTool.Dispose();
-      CUITest.Dispose();
+      CUIDebugger?.Dispose();
+      MGDebugTool?.Dispose();
+      CUITest?.Dispose();
     }
   }
 }

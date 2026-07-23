@@ -104,26 +104,51 @@ $(function(){initNavTree('_c_u_i_component_8_saving_8cs_source.html','',''); });
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">using </span><a class="code hl_namespace" href="namespace_c_u_i_libs.html">CUILibs</a>;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">using </span>System.Xml;</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">using </span>System.Xml.Linq;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_crab_u_i.html">CrabUI</a></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <span class="keyword">public</span> <span class="keyword">partial class </span><a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">public</span> <span class="keywordtype">void</span> SaveTo(<span class="keywordtype">string</span> path)</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>      XDocument xdoc = <span class="keyword">new</span> XDocument();</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>      xdoc.Add(Serialize());</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>      CUICore.SaveXDoc(xdoc, path);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    }</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">public</span> <span class="keyword">static</span> T LoadFrom&lt;T&gt;(<span class="keywordtype">string</span> path) where T : CUIComponent =&gt; (T)LoadFrom(path);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">public</span> <span class="keyword">static</span> CUIComponent LoadFrom(<span class="keywordtype">string</span> path)</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    {</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>      XDocument xdoc = CUICore.LoadXDoc(path); ;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>      <span class="keywordflow">return</span> CUIComponent.Deserialize(xdoc.Root);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    }</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  }</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">using </span>System.IO;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_crab_u_i.html">CrabUI</a></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keyword">public</span> <span class="keyword">partial class </span><a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_component.html">CUIComponent</a></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">public</span> <span class="keywordtype">void</span> SaveTo(<span class="keywordtype">string</span> path)</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>      CUICore.ResourceIOContext.CallingAssembly = Assembly.GetCallingAssembly();</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>      XDocument xdoc = <span class="keyword">new</span> XDocument();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>      xdoc.Add(Serialize());</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>      CUICore.SaveXDoc(xdoc, path);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>      CUICore.ResourceIOContext.CallingAssembly = <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">public</span> <span class="keyword">static</span> T LoadFrom&lt;T&gt;(<span class="keywordtype">string</span> path) where T : CUIComponent</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>      CUICore.ResourceIOContext.CallingAssembly = Assembly.GetCallingAssembly();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>      CUICore.ResourceIOContext.FileDir = Path.GetDirectoryName(path);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>      XDocument xdoc = CUICore.LoadXDoc(path);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      CUIComponent result = CUIComponent.Deserialize(xdoc.Root);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      CUICore.ResourceIOContext.CallingAssembly = <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      CUICore.ResourceIOContext.FileDir = <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      <span class="keywordflow">return</span> (T)result;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keyword">public</span> <span class="keyword">static</span> CUIComponent LoadFrom(<span class="keywordtype">string</span> path)</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>      CUICore.ResourceIOContext.CallingAssembly = Assembly.GetCallingAssembly();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>      CUICore.ResourceIOContext.FileDir = Path.GetDirectoryName(path);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>      XDocument xdoc = CUICore.LoadXDoc(path);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>      CUIComponent result = CUIComponent.Deserialize(xdoc.Root);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>      CUICore.ResourceIOContext.CallingAssembly = <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>      CUICore.ResourceIOContext.FileDir = <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>      <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}</div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_component_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_component.html">CrabUI.CUIComponent</a></div><div class="ttdef"><b>Definition</b> <a href="_____generated_2_c_u_i_component_8cs_source.html#l00009">CUIComponent.cs:10</a></div></div>
 <div class="ttc" id="anamespace_c_u_i_code_generator_html"><div class="ttname"><a href="namespace_c_u_i_code_generator.html">CUICodeGenerator</a></div><div class="ttdef"><b>Definition</b> <a href="_attributes_8cs_source.html#l00008">Attributes.cs:9</a></div></div>
 <div class="ttc" id="anamespace_c_u_i_libs_html"><div class="ttname"><a href="namespace_c_u_i_libs.html">CUILibs</a></div><div class="ttdef"><b>Definition</b> <a href="_already_done_8cs_source.html#l00012">AlreadyDone.cs:13</a></div></div>

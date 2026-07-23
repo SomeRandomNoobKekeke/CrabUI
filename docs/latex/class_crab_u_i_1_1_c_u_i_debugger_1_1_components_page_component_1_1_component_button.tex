@@ -25,8 +25,6 @@ override void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_button_ae4f1d141cd5f
 \item 
 void {\bfseries Determine\+Color} ()
 \item 
-void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_button_base_a201584888455c134d776e4a742843f55}{Click}} ()
-\item 
 override IEnumerable$<$ \doxymbox{\hyperlink{class_crab_u_i_1_1_visual_unit}{Visual\+Unit}} $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_button_base_a71b002b49cba2bc7e1104eaa776ff52d}{Visual\+Split}} ()
 \item 
 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_button_base_a752461360e0bddae5314e69c7ba1af27}{CUIButton\+Base}} (string text)
@@ -55,11 +53,15 @@ void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a510c38d1b0a1b77de5
 \item 
 void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_aacdc8a408cd8f86218c37e3d2504c6a9}{Print\+Visual\+Split}} ()
 \item 
-void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a0686c82ff971e9eed6afae581c19e3be}{Init\+Focus\+Stuff}} ()
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a3ac0f246c9cd4da4b36c434cc75d9154}{Click}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a2d957da5b3a695ab29d582958e0cf71e}{Press\+Key}} (Keys key)
 \item 
 void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_af1c451dcf2101490e91677a324cda7a4}{Handle\+Focus\+Probe}} (\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_focus_request_event}{CUIFocus\+Request\+Event}} e)
 \item 
 void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ae3189b3a54a68395c6e28f61d542bbbe}{Focus}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_afe3d12ed76204347065442cbb33caabe}{Blur}} ()
 \item 
 void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a84963ce8cfd9360263599cde20220bd5}{Save\+To}} (string path)
 \item 
@@ -107,6 +109,8 @@ static T \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a441833e2a2a4f2
 \item 
 static CUIComponent \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a18ddf33f3422dbea552dae6c4cf613a3}{Load\+From}} (string path)
 \item 
+static T \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_af2d4e034a81919410aad6c4b63b41e1b}{Deserialize$<$ T $>$}} (XElement element)
+\item 
 static CUIComponent \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ace149ae70802abfae8dc6bd821c28a35}{Deserialize}} (XElement element)
 \end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes inherited from \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component}{Crab\+UI.\+CUIComponent}}}
@@ -132,6 +136,17 @@ virtual void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a0882ecb01c
 virtual void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a297ce305147348cefda03b67e11c95cd}{On\+Attached\+To\+Main\+Component}} (\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_main_component}{CUIMain\+Component}} main\+Component)
 \item 
 virtual void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a4f51d684b48f4ea9fe94891b1a7f948e}{On\+Detached\+From\+Main\+Component}} (\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_main_component}{CUIMain\+Component}} main\+Component)
+\item 
+virtual void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ada873da053f0f370c9b506d6b6a1696f}{Before\+Serialization}} ()
+\item 
+virtual void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ae3f13990c051ac2e0a7227922965c712}{After\+Serialization}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_afe9cc29e69b545e57a7b81a272ef505e}{Init\+Visual\+Slots}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component}{Crab\+UI.\+CUIComponent}}}
+\begin{DoxyCompactItemize}
+\item 
+Slot$<$ \doxymbox{\hyperlink{class_crab_u_i_1_1_simple_texture}{Simple\+Texture}} $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a03acaac1c7ad28fc393b86045c049a16}{Background\+Slot}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Properties inherited from \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_button}{Crab\+UI.\+CUIButton}}}
 \begin{DoxyCompactItemize}
@@ -237,13 +252,13 @@ bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ad23cf52a0c5645b41c
 \item 
 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_dictionary___part}{Dictionary\+\_\+\+Part}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ad0fd00bef3bab7b9b5a5588719851192}{As\+\_\+\+Dictionary}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \item 
-bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_abd55bc8278acdc223ac0967ccd95eede}{Mouse\+Over}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
-\item 
-bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a964b2a47ce7b8b00fefc21cec56bb703}{Mouse\+Pressed}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
-\item 
 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_events___part}{Events\+\_\+\+Part}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_abd2cc8fe5529f145286eca5f4bfcba91}{Events}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \item 
 bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a53359e54295a51d37c30a3f88d9c14b8}{Consume\+Mouse\+Events}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_abd55bc8278acdc223ac0967ccd95eede}{Mouse\+Over}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a964b2a47ce7b8b00fefc21cec56bb703}{Mouse\+Pressed}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \item 
 Action$<$ CUIComponent, \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_down_event}{CUIMouse\+Down\+Event}} $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a61f5d241dafd36868c63d12bf5872d67}{On\+Mouse\+Down}}\hspace{0.3cm}{\ttfamily  \+[set]\+}
 \item 
@@ -262,6 +277,8 @@ bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_aeaa8862f5910e4accd
 bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a8af5dbbd20ae885e75b22f15e3490f31}{Focused}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \item 
 bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a7e1d73c9d920b2f43089c39a40d793c5}{Focusable}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a6ddfaf66a411f62478439fc0640820df}{Manually\+Focused}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
 \item 
 Action \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_aa9dc1e6d7a7430cc0550d7c522cba903}{Add\+On\+Focus}}\hspace{0.3cm}{\ttfamily  \+[set]\+}
 \item 
@@ -307,6 +324,10 @@ virtual \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_main_compone
 \item 
 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_visual_restructure_notifier___part}{Visual\+Restructure\+Notifier\+\_\+\+Part}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_add514561fba6873435770ad6f04c2a49}{Visual\+Restructure\+Notifier}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \item 
+CUISerialization\+Mode \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a4b7eb70658f8980289a65596eedfd307}{Serialization\+Mode}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ac809b22336545d5265ce8d1d38383ad7}{Serializable}} = true\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_string_dictionary___part}{String\+Dictionary\+\_\+\+Part}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ae7f438b0b698ceed6ed4a0237df35846}{As\+\_\+\+String\+Dictionary}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \item 
 CUIPalette\+Rank \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a63bb7a754341f29b8bdd9669aeb56a07}{Palette\+Rank}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
@@ -323,7 +344,7 @@ bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a4a7f71b549f18d2f14
 \item 
 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_style___part}{Style\+\_\+\+Part}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ab3a006ca4cd1bdef264fceb570826030}{Styles}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \item 
-\doxymbox{\hyperlink{class_crab_u_i_1_1_simple_texture}{Simple\+Texture}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ac3e45044a94079932fcba5008d602b44}{Background}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\doxymbox{\hyperlink{class_crab_u_i_1_1_simple_texture}{Simple\+Texture}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ac3e45044a94079932fcba5008d602b44}{Background}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
 \item 
 Borders \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a1af4fdd8d543306aeb00270064ced746}{Borders}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \item 

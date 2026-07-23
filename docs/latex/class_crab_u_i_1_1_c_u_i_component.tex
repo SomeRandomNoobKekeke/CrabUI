@@ -69,11 +69,15 @@ void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a510c38d1b0a1b77de5
 \item 
 void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_aacdc8a408cd8f86218c37e3d2504c6a9}{Print\+Visual\+Split}} ()
 \item 
-void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a0686c82ff971e9eed6afae581c19e3be}{Init\+Focus\+Stuff}} ()
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a3ac0f246c9cd4da4b36c434cc75d9154}{Click}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a2d957da5b3a695ab29d582958e0cf71e}{Press\+Key}} (Keys key)
 \item 
 void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_af1c451dcf2101490e91677a324cda7a4}{Handle\+Focus\+Probe}} (\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_focus_request_event}{CUIFocus\+Request\+Event}} e)
 \item 
 void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ae3189b3a54a68395c6e28f61d542bbbe}{Focus}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_afe3d12ed76204347065442cbb33caabe}{Blur}} ()
 \item 
 void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a84963ce8cfd9360263599cde20220bd5}{Save\+To}} (string path)
 \item 
@@ -110,6 +114,8 @@ static T \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a441833e2a2a4f2
 \item 
 static CUIComponent \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a18ddf33f3422dbea552dae6c4cf613a3}{Load\+From}} (string path)
 \item 
+static T \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_af2d4e034a81919410aad6c4b63b41e1b}{Deserialize$<$ T $>$}} (XElement element)
+\item 
 static CUIComponent \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ace149ae70802abfae8dc6bd821c28a35}{Deserialize}} (XElement element)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
@@ -133,7 +139,18 @@ virtual void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a297ce30514
 \item 
 virtual void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a4f51d684b48f4ea9fe94891b1a7f948e}{On\+Detached\+From\+Main\+Component}} (\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_main_component}{CUIMain\+Component}} main\+Component)
 \item 
+virtual void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ada873da053f0f370c9b506d6b6a1696f}{Before\+Serialization}} ()
+\item 
+virtual void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ae3f13990c051ac2e0a7227922965c712}{After\+Serialization}} ()
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_afe9cc29e69b545e57a7b81a272ef505e}{Init\+Visual\+Slots}} ()
+\item 
 virtual void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_afd2ce1b28a8260b7b3c2372fc8888b02}{Update\+Rects}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Slot$<$ \doxymbox{\hyperlink{class_crab_u_i_1_1_simple_texture}{Simple\+Texture}} $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a03acaac1c7ad28fc393b86045c049a16}{Background\+Slot}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Properties}
 \begin{DoxyCompactItemize}
@@ -193,13 +210,13 @@ bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ad23cf52a0c5645b41c
 \item 
 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_dictionary___part}{Dictionary\+\_\+\+Part}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ad0fd00bef3bab7b9b5a5588719851192}{As\+\_\+\+Dictionary}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \item 
-bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_abd55bc8278acdc223ac0967ccd95eede}{Mouse\+Over}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
-\item 
-bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a964b2a47ce7b8b00fefc21cec56bb703}{Mouse\+Pressed}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
-\item 
 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_events___part}{Events\+\_\+\+Part}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_abd2cc8fe5529f145286eca5f4bfcba91}{Events}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \item 
 bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a53359e54295a51d37c30a3f88d9c14b8}{Consume\+Mouse\+Events}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_abd55bc8278acdc223ac0967ccd95eede}{Mouse\+Over}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a964b2a47ce7b8b00fefc21cec56bb703}{Mouse\+Pressed}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \item 
 Action$<$ CUIComponent, \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_down_event}{CUIMouse\+Down\+Event}} $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a61f5d241dafd36868c63d12bf5872d67}{On\+Mouse\+Down}}\hspace{0.3cm}{\ttfamily  \+[set]\+}
 \item 
@@ -218,6 +235,8 @@ bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_aeaa8862f5910e4accd
 bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a8af5dbbd20ae885e75b22f15e3490f31}{Focused}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \item 
 bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a7e1d73c9d920b2f43089c39a40d793c5}{Focusable}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a6ddfaf66a411f62478439fc0640820df}{Manually\+Focused}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
 \item 
 Action \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_aa9dc1e6d7a7430cc0550d7c522cba903}{Add\+On\+Focus}}\hspace{0.3cm}{\ttfamily  \+[set]\+}
 \item 
@@ -263,6 +282,10 @@ virtual \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_main_compone
 \item 
 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_visual_restructure_notifier___part}{Visual\+Restructure\+Notifier\+\_\+\+Part}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_add514561fba6873435770ad6f04c2a49}{Visual\+Restructure\+Notifier}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \item 
+CUISerialization\+Mode \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a4b7eb70658f8980289a65596eedfd307}{Serialization\+Mode}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ac809b22336545d5265ce8d1d38383ad7}{Serializable}} = true\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_string_dictionary___part}{String\+Dictionary\+\_\+\+Part}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ae7f438b0b698ceed6ed4a0237df35846}{As\+\_\+\+String\+Dictionary}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \item 
 CUIPalette\+Rank \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a63bb7a754341f29b8bdd9669aeb56a07}{Palette\+Rank}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
@@ -279,7 +302,7 @@ bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a4a7f71b549f18d2f14
 \item 
 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_style___part}{Style\+\_\+\+Part}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ab3a006ca4cd1bdef264fceb570826030}{Styles}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \item 
-\doxymbox{\hyperlink{class_crab_u_i_1_1_simple_texture}{Simple\+Texture}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ac3e45044a94079932fcba5008d602b44}{Background}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\doxymbox{\hyperlink{class_crab_u_i_1_1_simple_texture}{Simple\+Texture}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ac3e45044a94079932fcba5008d602b44}{Background}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
 \item 
 Borders \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a1af4fdd8d543306aeb00270064ced746}{Borders}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \item 
@@ -440,6 +463,71 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_2_core_2_components_2_c_u_i_compo
 \label{doc-func-members}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_doc-func-members}
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_ae3f13990c051ac2e0a7227922965c712}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!AfterSerialization@{AfterSerialization}}
+\index{AfterSerialization@{AfterSerialization}!CrabUI.CUIComponent@{CrabUI.CUIComponent}}
+\doxysubsubsection{\texorpdfstring{AfterSerialization()}{AfterSerialization()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_component_ae3f13990c051ac2e0a7227922965c712} 
+virtual void Crab\+UI.\+CUIComponent.\+After\+Serialization (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_serialization_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_c_u_i_component_8_serialization_8cs_source}{CUIComponent.\+Serialization.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \{\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_ada873da053f0f370c9b506d6b6a1696f}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!BeforeSerialization@{BeforeSerialization}}
+\index{BeforeSerialization@{BeforeSerialization}!CrabUI.CUIComponent@{CrabUI.CUIComponent}}
+\doxysubsubsection{\texorpdfstring{BeforeSerialization()}{BeforeSerialization()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_component_ada873da053f0f370c9b506d6b6a1696f} 
+virtual void Crab\+UI.\+CUIComponent.\+Before\+Serialization (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_serialization_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_c_u_i_component_8_serialization_8cs_source}{CUIComponent.\+Serialization.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \{\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_afe3d12ed76204347065442cbb33caabe}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!Blur@{Blur}}
+\index{Blur@{Blur}!CrabUI.CUIComponent@{CrabUI.CUIComponent}}
+\doxysubsubsection{\texorpdfstring{Blur()}{Blur()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_component_afe3d12ed76204347065442cbb33caabe} 
+void Crab\+UI.\+CUIComponent.\+Blur (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00055}{55}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055\ =>\ CUICore.RequestBlur(IFocusableAdapter);}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_a3ac0f246c9cd4da4b36c434cc75d9154}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!Click@{Click}}
+\index{Click@{Click}!CrabUI.CUIComponent@{CrabUI.CUIComponent}}
+\doxysubsubsection{\texorpdfstring{Click()}{Click()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_component_a3ac0f246c9cd4da4b36c434cc75d9154} 
+void Crab\+UI.\+CUIComponent.\+Click (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00027}{27}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ Events.MouseDown.Raise(}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this},}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ CUIMouseDownEvent(CUIMouseButton.LeftButton,\ CUICore.Input.Mouse)}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ );}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+
+\end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_ace149ae70802abfae8dc6bd821c28a35}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!Deserialize@{Deserialize}}
 \index{Deserialize@{Deserialize}!CrabUI.CUIComponent@{CrabUI.CUIComponent}}
 \doxysubsubsection{\texorpdfstring{Deserialize()}{Deserialize()}}
@@ -452,23 +540,37 @@ Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_serializable}{Crab\
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_serialization_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_c_u_i_component_8_serialization_8cs_source}{CUIComponent.\+Serialization.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_serialization_8cs_source_l00029}{29}} of file \doxymbox{\hyperlink{_c_u_i_component_8_serialization_8cs_source}{CUIComponent.\+Serialization.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00020\ \ \ \ \ \{}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ CUIComponent\ component\ =\ (CUIComponent)CUIDefaultSerializer.Deserialize(}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ element,}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ CUICore.Reflection.GetType(element.Name.ToString())}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ );}
-\DoxyCodeLine{00025\ }
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (XElement\ child\ \textcolor{keywordflow}{in}\ element.Elements())}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ component.Children.Add(Deserialize(child));}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ component;}
-\DoxyCodeLine{00032\ \ \ \ \ \}}
+\DoxyCodeLine{00030\ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ CUIComponent\ root\ =\ CreateEmptyComponent(element);}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ CUIBasicSerializer.DeserializeProps(element,\ root);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ root.DeserializeChildren(element,\ root.SerializationMode);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ root;}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_af2d4e034a81919410aad6c4b63b41e1b}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!Deserialize$<$ T $>$@{Deserialize$<$ T $>$}}
+\index{Deserialize$<$ T $>$@{Deserialize$<$ T $>$}!CrabUI.CUIComponent@{CrabUI.CUIComponent}}
+\doxysubsubsection{\texorpdfstring{Deserialize$<$ T $>$()}{Deserialize< T >()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_component_af2d4e034a81919410aad6c4b63b41e1b} 
+T Crab\+UI.\+CUIComponent.\+Deserialize$<$ T $>$ (\begin{DoxyParamCaption}\item[{XElement}]{element}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em CUIComponent}]\end{description}
+\end{Desc}
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_serialization_8cs_source_l00028}{28}} of file \doxymbox{\hyperlink{_c_u_i_component_8_serialization_8cs_source}{CUIComponent.\+Serialization.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ :\ CUIComponent\ =>\ (T)Deserialize(element);}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_ae3189b3a54a68395c6e28f61d542bbbe}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!Focus@{Focus}}
@@ -479,11 +581,11 @@ void Crab\+UI.\+CUIComponent.\+Focus (\begin{DoxyParamCaption}{}{}\end{DoxyParam
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00052}{52}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00054}{54}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00052\ =>\ CUICore.RequestFocus(IFocusableAdapter);}
+\DoxyCodeLine{00054\ =>\ CUICore.RequestFocus(IFocusableAdapter);}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a6705c92f70004b2401268c0968c842e9}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!Forget@{Forget}}
@@ -618,35 +720,18 @@ void Crab\+UI.\+CUIComponent.\+Handle\+Focus\+Probe (\begin{DoxyParamCaption}\it
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00042}{42}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00044}{44}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00043\ \ \ \ \ \{}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Focusable)\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00045\ }
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (e.Input.Mouse.M1.Down)}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ e.Accept(IFocusableAdapter);}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00050\ \ \ \ \ \}}
-
-\end{DoxyCode}
-\Hypertarget{class_crab_u_i_1_1_c_u_i_component_a0686c82ff971e9eed6afae581c19e3be}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!InitFocusStuff@{InitFocusStuff}}
-\index{InitFocusStuff@{InitFocusStuff}!CrabUI.CUIComponent@{CrabUI.CUIComponent}}
-\doxysubsubsection{\texorpdfstring{InitFocusStuff()}{InitFocusStuff()}}
-{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_component_a0686c82ff971e9eed6afae581c19e3be} 
-void Crab\+UI.\+CUIComponent.\+Init\+Focus\+Stuff (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
-
-
-
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00029}{29}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00030\ \ \ \ \ \{}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ Background.FocusProbed.Add(HandleFocusProbe);}
-\DoxyCodeLine{00032\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Focusable)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (e.Input.Mouse.M1.Down)}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ e.Accept(IFocusableAdapter);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a4b35f52cdeae0c7ee6a496f24a556c3a}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!InitStyle@{InitStyle}}
@@ -664,6 +749,38 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_2_core_2_components_2_c_u_i_compo
 \DoxyCodeLine{00020\ \ \ \ \ \{}
 \DoxyCodeLine{00021\ \ \ \ \ \ \ Background.Color\ =\ Color.Transparent;}
 \DoxyCodeLine{00022\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_afe9cc29e69b545e57a7b81a272ef505e}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!InitVisualSlots@{InitVisualSlots}}
+\index{InitVisualSlots@{InitVisualSlots}!CrabUI.CUIComponent@{CrabUI.CUIComponent}}
+\doxysubsubsection{\texorpdfstring{InitVisualSlots()}{InitVisualSlots()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_component_afe9cc29e69b545e57a7b81a272ef505e} 
+void Crab\+UI.\+CUIComponent.\+Init\+Visual\+Slots (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source_l00013}{13}} of file \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source}{CUIComponent.\+Visual.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ BackgroundSlot\ =\ \textcolor{keyword}{new}\ Slot<SimpleTexture>() }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ OnWireUp\ =\ (background)\ =>}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ DebugRelays[DebugCategory.RoundedRect].Route(background.Debug\_RoundedRect);}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ Events.Route(background);}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ background.FocusProbed.Add(HandleFocusProbe);}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ OnTearDown\ =\ (background)\ =>}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ DebugRelays[DebugCategory.RoundedRect].Route(background.Debug\_RoundedRect);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ Events.Route(background);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ background.FocusProbed.Add(HandleFocusProbe);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ Value\ =\ \textcolor{keyword}{new}(),}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a992c47ab1f14764758e01cfba246b6b2}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!IsEqualTo@{IsEqualTo}}
@@ -699,14 +816,22 @@ CUIComponent Crab\+UI.\+CUIComponent.\+Load\+From (\begin{DoxyParamCaption}\item
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_saving_8cs_source_l00026}{26}} of file \doxymbox{\hyperlink{_c_u_i_component_8_saving_8cs_source}{CUIComponent.\+Saving.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_saving_8cs_source_l00043}{43}} of file \doxymbox{\hyperlink{_c_u_i_component_8_saving_8cs_source}{CUIComponent.\+Saving.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00027\ \ \ \ \ \{}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ XDocument\ xdoc\ =\ CUICore.LoadXDoc(path);\ ;}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ CUIComponent.Deserialize(xdoc.Root);}
-\DoxyCodeLine{00030\ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ CUICore.ResourceIOContext.CallingAssembly\ =\ Assembly.GetCallingAssembly();}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ CUICore.ResourceIOContext.FileDir\ =\ Path.GetDirectoryName(path);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ XDocument\ xdoc\ =\ CUICore.LoadXDoc(path);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ CUIComponent\ result\ =\ CUIComponent.Deserialize(xdoc.Root);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ CUICore.ResourceIOContext.CallingAssembly\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ CUICore.ResourceIOContext.FileDir\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a441833e2a2a4f287828484cff8f9f299}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!LoadFrom$<$ T $>$@{LoadFrom$<$ T $>$}}
@@ -721,11 +846,23 @@ T Crab\+UI.\+CUIComponent.\+Load\+From$<$ T $>$ (\begin{DoxyParamCaption}\item[{
 \end{Desc}
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_saving_8cs_source_l00025}{25}} of file \doxymbox{\hyperlink{_c_u_i_component_8_saving_8cs_source}{CUIComponent.\+Saving.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_saving_8cs_source_l00030}{30}} of file \doxymbox{\hyperlink{_c_u_i_component_8_saving_8cs_source}{CUIComponent.\+Saving.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00025\ :\ CUIComponent\ =>\ (T)LoadFrom(path);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ CUIComponent}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ CUICore.ResourceIOContext.CallingAssembly\ =\ Assembly.GetCallingAssembly();}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ CUICore.ResourceIOContext.FileDir\ =\ Path.GetDirectoryName(path);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ XDocument\ xdoc\ =\ CUICore.LoadXDoc(path);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ CUIComponent\ result\ =\ CUIComponent.Deserialize(xdoc.Root);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ CUICore.ResourceIOContext.CallingAssembly\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ CUICore.ResourceIOContext.FileDir\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (T)result;}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_af0c6d21c178ab5ed0b1bbf5ec36d103c}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!MoveToBottom@{MoveToBottom}}
@@ -804,6 +941,25 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_main_component_tracke
 \DoxyCodeLine{00030\ \ \ \ \ \}}
 
 \end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_a2d957da5b3a695ab29d582958e0cf71e}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!PressKey@{PressKey}}
+\index{PressKey@{PressKey}!CrabUI.CUIComponent@{CrabUI.CUIComponent}}
+\doxysubsubsection{\texorpdfstring{PressKey()}{PressKey()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_component_a2d957da5b3a695ab29d582958e0cf71e} 
+void Crab\+UI.\+CUIComponent.\+Press\+Key (\begin{DoxyParamCaption}\item[{Keys}]{key}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00035}{35}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ IFocusableAdapter.KeyPressed.Raise(}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ CUIKeyPressedEvent(key,\ CUICore.Input.Keyboard)}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ );}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+
+\end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a510c38d1b0a1b77de5df6294cfe7a0bf}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!PrintTree@{PrintTree}}
 \index{PrintTree@{PrintTree}!CrabUI.CUIComponent@{CrabUI.CUIComponent}}
 \doxysubsubsection{\texorpdfstring{PrintTree()}{PrintTree()}}
@@ -841,7 +997,7 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_debug_8cs_source_l000
 \DoxyCodeLine{00072\ \ \ \ \ \ \ VisualFlattener\ flattener\ =\ \textcolor{keyword}{new}\ VisualFlattener();}
 \DoxyCodeLine{00073\ \ \ \ \ \ \ flattener.Flatten(\textcolor{keyword}{this});}
 \DoxyCodeLine{00074\ \ \ \ \ \ \ CUI.Logger.Log(Logger.Wrap.IEnumerable(}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ flattener.Flat.Select(vu\ =>\ \$\textcolor{stringliteral}{"{}\{vu\}\ of\ \{vu.HostComponent\}"{}})}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ flattener.Flat.Select(vu\ =>\ \$\textcolor{stringliteral}{"{}\{vu\}\ of\ vu.HostComponent"{}})}
 \DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ ,\ \textcolor{keyword}{true}));}
 \DoxyCodeLine{00077\ \ \ \ \ \}}
 
@@ -949,15 +1105,19 @@ void Crab\+UI.\+CUIComponent.\+Save\+To (\begin{DoxyParamCaption}\item[{string}]
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_saving_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_c_u_i_component_8_saving_8cs_source}{CUIComponent.\+Saving.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_saving_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_c_u_i_component_8_saving_8cs_source}{CUIComponent.\+Saving.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00019\ \ \ \ \ \{}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ XDocument\ xdoc\ =\ \textcolor{keyword}{new}\ XDocument();}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ xdoc.Add(Serialize());}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ CUICore.SaveXDoc(xdoc,\ path);}
-\DoxyCodeLine{00023\ \ \ \ \ \}}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ CUICore.ResourceIOContext.CallingAssembly\ =\ Assembly.GetCallingAssembly();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ XDocument\ xdoc\ =\ \textcolor{keyword}{new}\ XDocument();}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ xdoc.Add(Serialize());}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ CUICore.SaveXDoc(xdoc,\ path);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ CUICore.ResourceIOContext.CallingAssembly\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_aa9fade2d415b35f613368ee4aa7eb77a}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!Serialize@{Serialize}}
@@ -972,20 +1132,21 @@ Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_serializable}{Crab\
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_serialization_8cs_source_l00036}{36}} of file \doxymbox{\hyperlink{_c_u_i_component_8_serialization_8cs_source}{CUIComponent.\+Serialization.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_serialization_8cs_source_l00101}{101}} of file \doxymbox{\hyperlink{_c_u_i_component_8_serialization_8cs_source}{CUIComponent.\+Serialization.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00037\ \ \ \ \ \{}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ XElement\ element\ =\ CUIDefaultSerializer.Serialize(\textcolor{keyword}{this},\ Info.DefaultValue.As\_Dictionary);}
-\DoxyCodeLine{00039\ }
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (CUIComponent\ child\ \textcolor{keywordflow}{in}\ Children)}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ element.Add(child.Serialize());}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00044\ }
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ element;}
-\DoxyCodeLine{00046\ \ \ \ \ \}}
+\DoxyCodeLine{00102\ \ \ \ \ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ XElement\ element\ =\ CUIBasicSerializer.Serialize(\textcolor{keyword}{this},\ Info.DefaultValue.As\_Dictionary);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (CUIComponent\ child\ \textcolor{keywordflow}{in}\ Children)}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!child.Serializable)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ element.Add(child.Serialize());}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ element;}
+\DoxyCodeLine{00112\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a0882ecb01c3cf030d17f5a9fc77d730e}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!SetupLayout@{SetupLayout}}
@@ -1029,25 +1190,25 @@ virtual void Crab\+UI.\+CUIComponent.\+Update\+Rects (\begin{DoxyParamCaption}{}
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source_l00042}{42}} of file \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source}{CUIComponent.\+Visual.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source_l00073}{73}} of file \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source}{CUIComponent.\+Visual.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00043\ \ \ \ \ \{}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ Debug\_PropSet.Send(typeof(CUIRect),\ Rect,\ \textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Rect"{}});}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ Background.Rect\ =\ Rect;}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ Borders.Rect\ =\ Rect;}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ \ \ \ \ \ \ RightResizeHandle.UpdateRect();}
-\DoxyCodeLine{00049\ }
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (CullChildren)}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ ScissorRect\ =\ ChildrenRect.Round();}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ \ \ \ \ \ \ Debug\_RectSet.Send(\textcolor{keyword}{this},\ Rect);}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ Events.RectSet.Raise(\textcolor{keyword}{this},\ OuterRect);}
-\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ Debug\_PropSet.Send(typeof(CUIRect),\ Rect,\ \textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Rect"{}});}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ Background.Rect\ =\ Rect;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ Borders.Rect\ =\ Rect;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ RightResizeHandle.UpdateRect();}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (CullChildren)}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ ScissorRect\ =\ ChildrenRect.Round();}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ Debug\_RectSet.Send(\textcolor{keyword}{this},\ Rect);}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ Events.RectSet.Raise(\textcolor{keyword}{this},\ OuterRect);}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_ae8f9ec8ae1587e579871c850493cf65a}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!VisualSplit@{VisualSplit}}
@@ -1062,37 +1223,37 @@ Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_visual_component}{Crab\
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source_l00079}{79}} of file \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source}{CUIComponent.\+Visual.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source_l00110}{110}} of file \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source}{CUIComponent.\+Visual.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00080\ \ \ \ \ \{}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Displayed\ ||\ CulledOut)\ yield\ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00082\ }
-\DoxyCodeLine{00083\ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ Background.VisualWrapper;}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Children.Count\ !=\ 0)}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ VisualBounds.LeftBound;\ \textcolor{comment}{//TODO\ bounds\ should\ be\ yielded\ only\ if\ there's\ something\ non\ standart}}
-\DoxyCodeLine{00087\ }
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (VisualChildrenOrder\ ==\ CUIDirection.Straight)}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Children.Count;\ i++)}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ Children[i].VisualWrapper;}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ Children.Count\ -\/\ 1;\ i\ >=\ 0;\ i-\/-\/)}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ Children[i].VisualWrapper;}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ VisualBounds.RightBound;}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ RightResizeHandle.VisualWrapper;}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ Borders.VisualWrapper;}
-\DoxyCodeLine{00106\ \ \ \ \ \}}
+\DoxyCodeLine{00111\ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Displayed\ ||\ CulledOut)\ yield\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ Background.VisualWrapper;}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Children.Count\ !=\ 0)}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ VisualBounds.LeftBound;\ \textcolor{comment}{//TODO\ bounds\ should\ be\ yielded\ only\ if\ there's\ something\ non\ standart}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (VisualChildrenOrder\ ==\ CUIDirection.Straight)}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Children.Count;\ i++)}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ Children[i].VisualWrapper;}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ Children.Count\ -\/\ 1;\ i\ >=\ 0;\ i-\/-\/)}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ Children[i].VisualWrapper;}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ VisualBounds.RightBound;}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ RightResizeHandle.VisualWrapper;}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ Borders.VisualWrapper;}
+\DoxyCodeLine{00137\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -1100,6 +1261,16 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source_l00
 \label{doc-variable-members}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_doc-variable-members}
 \doxysubsection{Member Data Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_a03acaac1c7ad28fc393b86045c049a16}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!BackgroundSlot@{BackgroundSlot}}
+\index{BackgroundSlot@{BackgroundSlot}!CrabUI.CUIComponent@{CrabUI.CUIComponent}}
+\doxysubsubsection{\texorpdfstring{BackgroundSlot}{BackgroundSlot}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_component_a03acaac1c7ad28fc393b86045c049a16} 
+Slot$<$\doxymbox{\hyperlink{class_crab_u_i_1_1_simple_texture}{Simple\+Texture}}$>$ Crab\+UI.\+CUIComponent.\+Background\+Slot\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source_l00034}{34}} of file \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source}{CUIComponent.\+Visual.\+cs}}.
+
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a793be20d19190029a5a478c756709ca8}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!ComponentsById@{ComponentsById}}
 \index{ComponentsById@{ComponentsById}!CrabUI.CUIComponent@{CrabUI.CUIComponent}}
 \doxysubsubsection{\texorpdfstring{ComponentsById}{ComponentsById}}
@@ -1118,7 +1289,7 @@ Crab\+UI.\+CUIComponent.\+int}
 
 
 
-Definition at line \doxymbox{\hyperlink{_layout_props_8public_8cs_source_l00129}{129}} of file \doxymbox{\hyperlink{_layout_props_8public_8cs_source}{Layout\+Props.\+public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_layout_props_8public_8cs_source_l00130}{130}} of file \doxymbox{\hyperlink{_layout_props_8public_8cs_source}{Layout\+Props.\+public.\+cs}}.
 
 
 
@@ -1202,11 +1373,11 @@ Action Crab\+UI.\+CUIComponent.\+Add\+On\+Focus\hspace{0.3cm}{\ttfamily [set]}}
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00055}{55}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00058}{58}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00055\ \{\ \textcolor{keyword}{set}\ \{\ OnFocus\ +=\ value;\ \}\ \}}
+\DoxyCodeLine{00058\ \{\ \textcolor{keyword}{set}\ \{\ OnFocus\ +=\ value;\ \}\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_aaedf36bce81dc6bbdd6f8d7c5c38cb4b}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!AddOnFocusLost@{AddOnFocusLost}}
@@ -1217,11 +1388,11 @@ Action Crab\+UI.\+CUIComponent.\+Add\+On\+Focus\+Lost\hspace{0.3cm}{\ttfamily [s
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00062}{62}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00065}{65}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00062\ \{\ \textcolor{keyword}{set}\ \{\ OnFocusLost\ +=\ value;\ \}\ \}}
+\DoxyCodeLine{00065\ \{\ \textcolor{keyword}{set}\ \{\ OnFocusLost\ +=\ value;\ \}\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a7bd52e276817a724f0526b2b1c31ad2d}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!AKA@{AKA}}
@@ -1320,15 +1491,18 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_string_dictionary_8cs
 \index{Background@{Background}!CrabUI.CUIComponent@{CrabUI.CUIComponent}}
 \doxysubsubsection{\texorpdfstring{Background}{Background}}
 {\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_component_ac3e45044a94079932fcba5008d602b44} 
-\doxymbox{\hyperlink{class_crab_u_i_1_1_simple_texture}{Simple\+Texture}} Crab\+UI.\+CUIComponent.\+Background = new()\hspace{0.3cm}{\ttfamily [get]}}
+\doxymbox{\hyperlink{class_crab_u_i_1_1_simple_texture}{Simple\+Texture}} Crab\+UI.\+CUIComponent.\+Background\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source_l00012}{12}} of file \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source}{CUIComponent.\+Visual.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source_l00037}{37}} of file \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source}{CUIComponent.\+Visual.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00012\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00038\ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ BackgroundSlot.Value;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ BackgroundSlot.Value\ =\ value;}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a75fd6cfdec87d1a22af8bd31d34048ae}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!Border@{Border}}
@@ -1339,18 +1513,18 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source_l00
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_box_sizing_8cs_source_l00035}{35}} of file \doxymbox{\hyperlink{_c_u_i_component_8_box_sizing_8cs_source}{CUIComponent.\+Box\+Sizing.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_box_sizing_8cs_source_l00040}{40}} of file \doxymbox{\hyperlink{_c_u_i_component_8_box_sizing_8cs_source}{CUIComponent.\+Box\+Sizing.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00036\ \ \ \ \ \{}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Borders.Sizes;}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \textcolor{keyword}{set}}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ Borders.Sizes\ =\ value;}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ UpdateSizeDiffs();}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00043\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Borders.Sizes;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ Borders.Sizes\ =\ value;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ UpdateSizeDiffs();}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a1af4fdd8d543306aeb00270064ced746}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!Borders@{Borders}}
@@ -1361,11 +1535,11 @@ Borders Crab\+UI.\+CUIComponent.\+Borders = new()\hspace{0.3cm}{\ttfamily [get]}
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source_l00013}{13}} of file \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source}{CUIComponent.\+Visual.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source_l00044}{44}} of file \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source}{CUIComponent.\+Visual.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00013\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00044\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a43e61be91cb14d40f6f37105732e5ab7}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!Children@{Children}}
@@ -1445,22 +1619,22 @@ Definition at line \doxymbox{\hyperlink{_layout_props_8public_8cs_source_l00095}
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_box_sizing_8cs_source_l00096}{96}} of file \doxymbox{\hyperlink{_c_u_i_component_8_box_sizing_8cs_source}{CUIComponent.\+Box\+Sizing.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_box_sizing_8cs_source_l00101}{101}} of file \doxymbox{\hyperlink{_c_u_i_component_8_box_sizing_8cs_source}{CUIComponent.\+Box\+Sizing.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00097\ \ \ \ \ \{}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_ChildrenRect;}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \textcolor{keyword}{set}}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \_ChildrenRect\ =\ value;}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \_InnerRect\ =\ \_ChildrenRect\ +\ Padding;}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \_Rect\ =\ \_InnerRect\ +\ Border;}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \_OuterRect\ =\ \_Rect\ +\ Margin;}
-\DoxyCodeLine{00105\ }
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ UpdateRects();}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00108\ \ \ \ \ \}}
+\DoxyCodeLine{00102\ \ \ \ \ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_ChildrenRect;}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \_ChildrenRect\ =\ value;}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \_InnerRect\ =\ \_ChildrenRect\ +\ Padding;}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \_Rect\ =\ \_InnerRect\ +\ Border;}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \_OuterRect\ =\ \_Rect\ +\ Margin;}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ UpdateRects();}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00113\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_af163d08166679ca4505902a54cebc4ae}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!Commands@{Commands}}
@@ -1486,14 +1660,14 @@ bool Crab\+UI.\+CUIComponent.\+Consume\+Focus\hspace{0.3cm}{\ttfamily [get]}, {\
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00034}{34}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00031}{31}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00035\ \ \ \ \ \{}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Background.ConsumeFocus;}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ Background.ConsumeFocus\ =\ value;}
-\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Background.ConsumeFocus;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ Background.ConsumeFocus\ =\ value;}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a53359e54295a51d37c30a3f88d9c14b8}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!ConsumeMouseEvents@{ConsumeMouseEvents}}
@@ -1504,14 +1678,14 @@ bool Crab\+UI.\+CUIComponent.\+Consume\+Mouse\+Events\hspace{0.3cm}{\ttfamily [g
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00016\ \ \ \ \ \{}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Background.ConsumeMouseEvents;}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ Background.ConsumeMouseEvents\ =\ value;}
-\DoxyCodeLine{00019\ \ \ \ \ \}}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Background.ConsumeMouseEvents;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ Background.ConsumeMouseEvents\ =\ value;}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a9594fa13baf8acb34d1c6c4347d9313d}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!CrossRelative@{CrossRelative}}
@@ -1540,11 +1714,11 @@ bool Crab\+UI.\+CUIComponent.\+Cull\+Children\hspace{0.3cm}{\ttfamily [get]}, {\
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source_l00031}{31}} of file \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source}{CUIComponent.\+Visual.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source_l00062}{62}} of file \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source}{CUIComponent.\+Visual.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00031\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{00062\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a0b9879bc01650a0a51a70b400c4d3c21}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!CulledOut@{CulledOut}}
@@ -1555,11 +1729,11 @@ bool Crab\+UI.\+CUIComponent.\+Culled\+Out\hspace{0.3cm}{\ttfamily [get]}, {\ttf
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source_l00032}{32}} of file \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source}{CUIComponent.\+Visual.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source_l00063}{63}} of file \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source}{CUIComponent.\+Visual.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00032\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{00063\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a5d500c1375149e82e80f484969d630f7}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!Debug@{Debug}}
@@ -1797,19 +1971,19 @@ bool Crab\+UI.\+CUIComponent.\+Displayed\hspace{0.3cm}{\ttfamily [get]}, {\ttfam
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source}{CUIComponent.\+Visual.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source_l00049}{49}} of file \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source}{CUIComponent.\+Visual.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00019\ \ \ \ \ \{}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Displayed;}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \textcolor{keyword}{set}}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_Displayed\ ==\ value)\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \_Displayed\ =\ value;}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ VisualRestructureNotifier.Notify();}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00027\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Displayed;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_Displayed\ ==\ value)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \_Displayed\ =\ value;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ VisualRestructureNotifier.Notify();}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_abd955222dd9a8a3a8614c947e4a089a2}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!Draggable@{Draggable}}
@@ -1853,11 +2027,11 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_handles_8cs_source_l0
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8cs_source_l00022}{22}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8cs_source}{CUIComponent.\+Events.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8cs_source}{CUIComponent.\+Events.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00022\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00015\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a80a8a2f6fe26a69ba6f9aaad453f38fb}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!FitContent@{FitContent}}
@@ -1904,11 +2078,11 @@ bool Crab\+UI.\+CUIComponent.\+Focusable\hspace{0.3cm}{\ttfamily [get]}, {\ttfam
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00040}{40}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00037}{37}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00040\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{00037\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a8af5dbbd20ae885e75b22f15e3490f31}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!Focused@{Focused}}
@@ -1919,7 +2093,7 @@ bool Crab\+UI.\+CUIComponent.\+Focused\hspace{0.3cm}{\ttfamily [get]}}
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00039}{39}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00036}{36}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
 
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_adf0d0703ad6ce53f5f8f2dd4b6bb3606}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!GetParentLitteral@{GetParentLitteral}}
 \index{GetParentLitteral@{GetParentLitteral}!CrabUI.CUIComponent@{CrabUI.CUIComponent}}
@@ -1953,14 +2127,14 @@ int Crab\+UI.\+CUIComponent.\+Grid\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [s
 
 
 
-Definition at line \doxymbox{\hyperlink{_layout_props_8public_8cs_source_l00129}{129}} of file \doxymbox{\hyperlink{_layout_props_8public_8cs_source}{Layout\+Props.\+public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_layout_props_8public_8cs_source_l00130}{130}} of file \doxymbox{\hyperlink{_layout_props_8public_8cs_source}{Layout\+Props.\+public.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00130\ \ \ \ \ \{}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ (GridColumn,\ GridRow);}
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ (GridColumn,\ GridRow)\ =\ value;}
-\DoxyCodeLine{00133\ \ \ \ \ \}}
+\DoxyCodeLine{00131\ \ \ \ \ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ (GridColumn,\ GridRow);}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ (GridColumn,\ GridRow)\ =\ value;}
+\DoxyCodeLine{00134\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a015089051ec401ead9cccaa27ac8d439}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!GridColumn@{GridColumn}}
@@ -2007,11 +2181,11 @@ Definition at line \doxymbox{\hyperlink{_layout_props_8public_8cs_source_l00116}
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00026}{26}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00029}{29}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00026\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00029\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_ab17be032a36fba490de2ed0a1b1ad2ef}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!IgnoretransparentPixels@{IgnoretransparentPixels}}
@@ -2022,14 +2196,14 @@ bool Crab\+UI.\+CUIComponent.\+Ignoretransparent\+Pixels\hspace{0.3cm}{\ttfamily
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source_l00035}{35}} of file \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source}{CUIComponent.\+Visual.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source_l00066}{66}} of file \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source}{CUIComponent.\+Visual.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00036\ \ \ \ \ \{}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Background.IgnoretransparentPixels;}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ Background.IgnoretransparentPixels\ =\ value;}
-\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Background.IgnoretransparentPixels;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ Background.IgnoretransparentPixels\ =\ value;}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a3ce762cdc67c858f75c729ec6490ea0b}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!Info@{Info}}
@@ -2070,22 +2244,22 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_debug_channels_8cs_so
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_box_sizing_8cs_source_l00082}{82}} of file \doxymbox{\hyperlink{_c_u_i_component_8_box_sizing_8cs_source}{CUIComponent.\+Box\+Sizing.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_box_sizing_8cs_source_l00087}{87}} of file \doxymbox{\hyperlink{_c_u_i_component_8_box_sizing_8cs_source}{CUIComponent.\+Box\+Sizing.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00083\ \ \ \ \ \{}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_InnerRect;}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \textcolor{keyword}{set}}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \_InnerRect\ =\ value;}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \_ChildrenRect\ =\ \_InnerRect\ -\/\ Padding;}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \_Rect\ =\ \_InnerRect\ +\ Border;}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \_OuterRect\ =\ \_Rect\ +\ Margin;}
-\DoxyCodeLine{00091\ }
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ UpdateRects();}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00094\ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_InnerRect;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \_InnerRect\ =\ value;}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \_ChildrenRect\ =\ \_InnerRect\ -\/\ Padding;}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \_Rect\ =\ \_InnerRect\ +\ Border;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \_OuterRect\ =\ \_Rect\ +\ Margin;}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ UpdateRects();}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a6608d94990354dfeed4f10baedb6ba1c}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!IsDebugTool@{IsDebugTool}}
@@ -2198,6 +2372,24 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_main_component_tracke
 \DoxyCodeLine{00033\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}();}
 
 \end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_a6ddfaf66a411f62478439fc0640820df}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!ManuallyFocused@{ManuallyFocused}}
+\index{ManuallyFocused@{ManuallyFocused}!CrabUI.CUIComponent@{CrabUI.CUIComponent}}
+\doxysubsubsection{\texorpdfstring{ManuallyFocused}{ManuallyFocused}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_component_a6ddfaf66a411f62478439fc0640820df} 
+bool Crab\+UI.\+CUIComponent.\+Manually\+Focused\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00038}{38}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039\ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ IFocusableAdapter.ManuallyFocused;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ IFocusableAdapter.ManuallyFocused\ =\ value;}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+
+\end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a52e876714dcc1eec0e11d746168c44e6}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!Margin@{Margin}}
 \index{Margin@{Margin}!CrabUI.CUIComponent@{CrabUI.CUIComponent}}
 \doxysubsubsection{\texorpdfstring{Margin}{Margin}}
@@ -2206,18 +2398,18 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_main_component_tracke
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_box_sizing_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_c_u_i_component_8_box_sizing_8cs_source}{CUIComponent.\+Box\+Sizing.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_box_sizing_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_c_u_i_component_8_box_sizing_8cs_source}{CUIComponent.\+Box\+Sizing.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00016\ \ \ \ \ \{}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Margin;}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \textcolor{keyword}{set}}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \_Margin\ =\ value;}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ UpdateSizeDiffs();}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00023\ \ \ \ \ \}}
+\DoxyCodeLine{00018\ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Margin;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \_Margin\ =\ value;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ UpdateSizeDiffs();}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00025\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a848e5ec35c1433512bc62df27028a858}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!MaxSize@{MaxSize}}
@@ -2278,7 +2470,7 @@ bool Crab\+UI.\+CUIComponent.\+Mouse\+Over\hspace{0.3cm}{\ttfamily [get]}}
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8cs_source}{CUIComponent.\+Events.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00024}{24}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
 
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a964b2a47ce7b8b00fefc21cec56bb703}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!MousePressed@{MousePressed}}
 \index{MousePressed@{MousePressed}!CrabUI.CUIComponent@{CrabUI.CUIComponent}}
@@ -2288,7 +2480,7 @@ bool Crab\+UI.\+CUIComponent.\+Mouse\+Pressed\hspace{0.3cm}{\ttfamily [get]}}
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8cs_source}{CUIComponent.\+Events.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00025}{25}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
 
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a4829b4b36215bad485d703214d1d5ef1}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!NamedComponents@{NamedComponents}}
 \index{NamedComponents@{NamedComponents}!CrabUI.CUIComponent@{CrabUI.CUIComponent}}
@@ -2321,11 +2513,11 @@ Action$<$CUIComponent, Vector2$>$ Crab\+UI.\+CUIComponent.\+On\+Dragged\hspace{0
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00084}{84}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00105}{105}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00084\ \{\ \textcolor{keyword}{set}\ \{\ Dragged\ +=\ value;\ \}\ \}}
+\DoxyCodeLine{00105\ \{\ \textcolor{keyword}{set}\ \{\ Dragged\ +=\ value;\ \}\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a837f86204de598d6015b08a8249df3f3}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!OnKeyDownInput@{OnKeyDownInput}}
@@ -2336,11 +2528,11 @@ Action$<$\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_key_down_input_event}{CUI
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00091}{91}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00094}{94}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00091\ \{\ \textcolor{keyword}{set}\ \{\ KeyDownInput\ +=\ value;\ \}\ \}}
+\DoxyCodeLine{00094\ \{\ \textcolor{keyword}{set}\ \{\ KeyDownInput\ +=\ value;\ \}\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_adc5622df96b0d341299ebf4d3f73e90d}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!OnKeyPressed@{OnKeyPressed}}
@@ -2351,11 +2543,11 @@ Action$<$\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_key_pressed_event}{CUIKey
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00070}{70}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00073}{73}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00070\ \{\ \textcolor{keyword}{set}\ \{\ KeyPressed\ +=\ value;\ \}\ \}}
+\DoxyCodeLine{00073\ \{\ \textcolor{keyword}{set}\ \{\ KeyPressed\ +=\ value;\ \}\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a28b4e80f19e28c255dfd8ff26be1efc2}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!OnKeyReleased@{OnKeyReleased}}
@@ -2366,11 +2558,11 @@ Action$<$\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_key_released_event}{CUIKe
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00077}{77}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00080}{80}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00077\ \{\ \textcolor{keyword}{set}\ \{\ KeyReleased\ +=\ value;\ \}\ \}}
+\DoxyCodeLine{00080\ \{\ \textcolor{keyword}{set}\ \{\ KeyReleased\ +=\ value;\ \}\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a61f5d241dafd36868c63d12bf5872d67}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!OnMouseDown@{OnMouseDown}}
@@ -2381,11 +2573,11 @@ Action$<$CUIComponent, \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_down_
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00021}{21}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00042}{42}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00021\ \{\ \textcolor{keyword}{set}\ \{\ MouseDown\ +=\ value;\ \}\ \}}
+\DoxyCodeLine{00042\ \{\ \textcolor{keyword}{set}\ \{\ MouseDown\ +=\ value;\ \}\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_acf54ef9f18a0753e62c24cfb703ac84f}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!OnMouseScroll@{OnMouseScroll}}
@@ -2396,11 +2588,11 @@ Action$<$CUIComponent, \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_scrol
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00077}{77}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00098}{98}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00077\ \{\ \textcolor{keyword}{set}\ \{\ MouseScroll\ +=\ value;\ \}\ \}}
+\DoxyCodeLine{00098\ \{\ \textcolor{keyword}{set}\ \{\ MouseScroll\ +=\ value;\ \}\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a120f0f27e625fe8d10be8ff8acafae77}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!OnMouseUp@{OnMouseUp}}
@@ -2411,11 +2603,11 @@ Action$<$CUIComponent, \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_up_ev
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00028}{28}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00049}{49}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00028\ \{\ \textcolor{keyword}{set}\ \{\ MouseUp\ +=\ value;\ \}\ \}}
+\DoxyCodeLine{00049\ \{\ \textcolor{keyword}{set}\ \{\ MouseUp\ +=\ value;\ \}\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a7b2a042e03f76b3f9e7fffc7fb15b9fd}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!OnRectSet@{OnRectSet}}
@@ -2426,11 +2618,11 @@ Action$<$CUIComponent, \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIR
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00091}{91}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00112}{112}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00091\ \{\ \textcolor{keyword}{set}\ \{\ RectSet\ +=\ value;\ \}\ \}}
+\DoxyCodeLine{00112\ \{\ \textcolor{keyword}{set}\ \{\ RectSet\ +=\ value;\ \}\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a7728fed1e5ef153e344c4839b17205a0}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!OnTextInput@{OnTextInput}}
@@ -2441,11 +2633,11 @@ Action$<$\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_text_input_event}{CUIText
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00084}{84}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00087}{87}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00084\ \{\ \textcolor{keyword}{set}\ \{\ TextInput\ +=\ value;\ \}\ \}}
+\DoxyCodeLine{00087\ \{\ \textcolor{keyword}{set}\ \{\ TextInput\ +=\ value;\ \}\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a3243ad0d8632e7d89671ae1942dff350}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!OuterRect@{OuterRect}}
@@ -2456,22 +2648,22 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l000
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_box_sizing_8cs_source_l00054}{54}} of file \doxymbox{\hyperlink{_c_u_i_component_8_box_sizing_8cs_source}{CUIComponent.\+Box\+Sizing.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_box_sizing_8cs_source_l00059}{59}} of file \doxymbox{\hyperlink{_c_u_i_component_8_box_sizing_8cs_source}{CUIComponent.\+Box\+Sizing.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00055\ \ \ \ \ \{}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_OuterRect;}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{keyword}{set}}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \_OuterRect\ =\ value;}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \_Rect\ =\ \_OuterRect\ -\/\ Margin;}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \_InnerRect\ =\ \_Rect\ -\/\ Border;}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \_ChildrenRect\ =\ \_InnerRect\ -\/\ Padding;}
-\DoxyCodeLine{00063\ }
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ UpdateRects();}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_OuterRect;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \_OuterRect\ =\ value;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \_Rect\ =\ \_OuterRect\ -\/\ Margin;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \_InnerRect\ =\ \_Rect\ -\/\ Border;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \_ChildrenRect\ =\ \_InnerRect\ -\/\ Padding;}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ UpdateRects();}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a11a0ba93763ae4554529535b430fdd3a}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!OutToChildDiff@{OutToChildDiff}}
@@ -2482,11 +2674,11 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_box_sizing_8cs_source
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_box_sizing_8cs_source_l00050}{50}} of file \doxymbox{\hyperlink{_c_u_i_component_8_box_sizing_8cs_source}{CUIComponent.\+Box\+Sizing.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_box_sizing_8cs_source_l00055}{55}} of file \doxymbox{\hyperlink{_c_u_i_component_8_box_sizing_8cs_source}{CUIComponent.\+Box\+Sizing.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00050\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{00055\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a8e6626ca865df9bc5461dbd5603cb0af}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!Padding@{Padding}}
@@ -2497,18 +2689,18 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_box_sizing_8cs_source
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_box_sizing_8cs_source_l00025}{25}} of file \doxymbox{\hyperlink{_c_u_i_component_8_box_sizing_8cs_source}{CUIComponent.\+Box\+Sizing.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_box_sizing_8cs_source_l00029}{29}} of file \doxymbox{\hyperlink{_c_u_i_component_8_box_sizing_8cs_source}{CUIComponent.\+Box\+Sizing.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00026\ \ \ \ \ \{}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Padding;}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \textcolor{keyword}{set}}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \_Padding\ =\ value;}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ UpdateSizeDiffs();}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00030\ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Padding;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \_Padding\ =\ value;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ UpdateSizeDiffs();}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a7744e057d505b5a5f1f0621b02d058b2}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!Palette@{Palette}}
@@ -2632,22 +2824,22 @@ Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_visual_component}{Crab\
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_box_sizing_8cs_source_l00068}{68}} of file \doxymbox{\hyperlink{_c_u_i_component_8_box_sizing_8cs_source}{CUIComponent.\+Box\+Sizing.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_box_sizing_8cs_source_l00073}{73}} of file \doxymbox{\hyperlink{_c_u_i_component_8_box_sizing_8cs_source}{CUIComponent.\+Box\+Sizing.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00069\ \ \ \ \ \{}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Rect;}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \textcolor{keyword}{set}}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \_Rect\ =\ value;}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \_InnerRect\ =\ \_Rect\ -\/\ Border;}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \_ChildrenRect\ =\ \_InnerRect\ -\/\ Padding;}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \_OuterRect\ =\ \_Rect\ +\ Margin;}
-\DoxyCodeLine{00077\ }
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ UpdateRects();}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00080\ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Rect;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \_Rect\ =\ value;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \_InnerRect\ =\ \_Rect\ -\/\ Border;}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \_ChildrenRect\ =\ \_InnerRect\ -\/\ Padding;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \_OuterRect\ =\ \_Rect\ +\ Margin;}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ UpdateRects();}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a3bf46498c5f0dae185b27ebb3a452c98}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!Relative@{Relative}}
@@ -2745,14 +2937,44 @@ Rectangle? Crab\+UI.\+CUIComponent.\+Scissor\+Rect\hspace{0.3cm}{\ttfamily [get]
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source_l00059}{59}} of file \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source}{CUIComponent.\+Visual.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source_l00090}{90}} of file \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source}{CUIComponent.\+Visual.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00060\ \ \ \ \ \{}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ VisualBounds.ScissorRect;}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ VisualBounds.ScissorRect\ =\ value;}
-\DoxyCodeLine{00063\ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ VisualBounds.ScissorRect;}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ VisualBounds.ScissorRect\ =\ value;}
+\DoxyCodeLine{00094\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_ac809b22336545d5265ce8d1d38383ad7}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!Serializable@{Serializable}}
+\index{Serializable@{Serializable}!CrabUI.CUIComponent@{CrabUI.CUIComponent}}
+\doxysubsubsection{\texorpdfstring{Serializable}{Serializable}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_component_ac809b22336545d5265ce8d1d38383ad7} 
+bool Crab\+UI.\+CUIComponent.\+Serializable = true\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_serialization_8cs_source_l00025}{25}} of file \doxymbox{\hyperlink{_c_u_i_component_8_serialization_8cs_source}{CUIComponent.\+Serialization.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{true};}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_component_a4b7eb70658f8980289a65596eedfd307}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!SerializationMode@{SerializationMode}}
+\index{SerializationMode@{SerializationMode}!CrabUI.CUIComponent@{CrabUI.CUIComponent}}
+\doxysubsubsection{\texorpdfstring{SerializationMode}{SerializationMode}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_component_a4b7eb70658f8980289a65596eedfd307} 
+CUISerialization\+Mode Crab\+UI.\+CUIComponent.\+Serialization\+Mode\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_serialization_8cs_source_l00022}{22}} of file \doxymbox{\hyperlink{_c_u_i_component_8_serialization_8cs_source}{CUIComponent.\+Serialization.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a2e4027f6656f9acb97ac33996b312389}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!Style@{Style}}
@@ -2918,14 +3140,14 @@ virtual bool Crab\+UI.\+CUIComponent.\+Visible\hspace{0.3cm}{\ttfamily [get]}, {
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source_l00067}{67}} of file \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source}{CUIComponent.\+Visual.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source_l00098}{98}} of file \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source}{CUIComponent.\+Visual.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00068\ \ \ \ \ \{}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Background.Visible;}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ Background.Visible\ =\ value;}
-\DoxyCodeLine{00071\ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Background.Visible;}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ Background.Visible\ =\ value;}
+\DoxyCodeLine{00102\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_ad894351e428146f276b1ec5a81256171}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!VisualBounds@{VisualBounds}}
@@ -2936,11 +3158,11 @@ Visual\+Bounds Crab\+UI.\+CUIComponent.\+Visual\+Bounds = new()\hspace{0.3cm}{\t
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source_l00064}{64}} of file \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source}{CUIComponent.\+Visual.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source_l00095}{95}} of file \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source}{CUIComponent.\+Visual.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00064\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00095\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a82bdc107c51ab5c3c7fcd6d349edb8cc}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!VisualChildrenOrder@{VisualChildrenOrder}}
@@ -2955,11 +3177,11 @@ Half assed substitution for z-\/index, set to CUIDirection.\+Reverse to draw chi
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source_l00077}{77}} of file \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source}{CUIComponent.\+Visual.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source_l00108}{108}} of file \doxymbox{\hyperlink{_c_u_i_component_8_visual_8cs_source}{CUIComponent.\+Visual.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00077\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ CUIDirection.Straight;}
+\DoxyCodeLine{00108\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ CUIDirection.Straight;}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_add514561fba6873435770ad6f04c2a49}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!VisualRestructureNotifier@{VisualRestructureNotifier}}
@@ -2990,14 +3212,14 @@ Action$<$CUIComponent, Vector2$>$ Crab\+UI.\+CUIComponent.\+Dragged\hspace{0.3cm
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00085}{85}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00106}{106}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00086\ \ \ \ \ \{}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ add\ =>\ this.Events.Dragged.Add(value);}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ this.Events.Dragged.Remove(value);}
-\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00107\ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ add\ =>\ this.Events.Dragged.Add(value);}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ this.Events.Dragged.Remove(value);}
+\DoxyCodeLine{00110\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a8051d3c72f6431a747f4d774b0a54bb6}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!KeyDownInput@{KeyDownInput}}
@@ -3008,14 +3230,14 @@ Action$<$\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_key_down_input_event}{CUI
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00092}{92}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00095}{95}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00093\ \ \ \ \ \{}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ add\ =>\ IFocusableAdapter.KeyDownInput.Add(value);}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ IFocusableAdapter.KeyDownInput.Remove(value);}
-\DoxyCodeLine{00096\ \ \ \ \ \}}
+\DoxyCodeLine{00096\ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ add\ =>\ IFocusableAdapter.KeyDownInput.Add(value);}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ IFocusableAdapter.KeyDownInput.Remove(value);}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_aca0fa520d32e10f6e5dfabe9814b8aee}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!KeyPressed@{KeyPressed}}
@@ -3026,14 +3248,14 @@ Action$<$\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_key_pressed_event}{CUIKey
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00071}{71}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00074}{74}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00072\ \ \ \ \ \{}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ add\ =>\ IFocusableAdapter.KeyPressed.Add(value);}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ IFocusableAdapter.KeyPressed.Remove(value);}
-\DoxyCodeLine{00075\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ add\ =>\ IFocusableAdapter.KeyPressed.Add(value);}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ IFocusableAdapter.KeyPressed.Remove(value);}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_ab22e899b20539a3ce2c75c33e2688acf}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!KeyReleased@{KeyReleased}}
@@ -3044,14 +3266,14 @@ Action$<$\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_key_released_event}{CUIKe
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00078}{78}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00081}{81}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00079\ \ \ \ \ \{}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ add\ =>\ IFocusableAdapter.KeyReleased.Add(value);}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ IFocusableAdapter.KeyReleased.Remove(value);}
-\DoxyCodeLine{00082\ \ \ \ \ \}}
+\DoxyCodeLine{00082\ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ add\ =>\ IFocusableAdapter.KeyReleased.Add(value);}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ IFocusableAdapter.KeyReleased.Remove(value);}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a52331f19458ac8c783acb6bdc66c137e}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!MouseClick@{MouseClick}}
@@ -3062,14 +3284,14 @@ Action$<$CUIComponent, \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_click
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00035}{35}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00056}{56}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00036\ \ \ \ \ \{}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ add\ =>\ this.Events.MouseClick.Add(value);}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ this.Events.MouseClick.Remove(value);}
-\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ add\ =>\ this.Events.MouseClick.Add(value);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ this.Events.MouseClick.Remove(value);}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a0902ff475b75a33c87d97ada0f814ecf}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!MouseDoubleClick@{MouseDoubleClick}}
@@ -3080,14 +3302,14 @@ Action$<$CUIComponent, \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_doubl
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00041}{41}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00062}{62}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00042\ \ \ \ \ \{}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ add\ =>\ this.Events.MouseDoubleClick.Add(value);}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ this.Events.MouseDoubleClick.Remove(value);}
-\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ add\ =>\ this.Events.MouseDoubleClick.Add(value);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ this.Events.MouseDoubleClick.Remove(value);}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a492f2dfce7155ef15c6ef1aa178b5dc2}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!MouseDown@{MouseDown}}
@@ -3098,14 +3320,14 @@ Action$<$CUIComponent, \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_down_
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00022}{22}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00043}{43}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00023\ \ \ \ \ \{}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ add\ =>\ this.Events.MouseDown.Add(value);}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ this.Events.MouseDown.Remove(value);}
-\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ add\ =>\ this.Events.MouseDown.Add(value);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ this.Events.MouseDown.Remove(value);}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_abf8448c6d74bdb899587e8e8be1ca5d6}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!MouseEnter@{MouseEnter}}
@@ -3116,14 +3338,14 @@ Action$<$CUIComponent, \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_enter
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00053}{53}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00074}{74}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00054\ \ \ \ \ \{}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ add\ =>\ this.Events.MouseEnter.Add(value);}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ this.Events.MouseEnter.Remove(value);}
-\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ add\ =>\ this.Events.MouseEnter.Add(value);}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ this.Events.MouseEnter.Remove(value);}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a23a44885be1b4a96381addc7fbc9a62d}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!MouseLeave@{MouseLeave}}
@@ -3134,14 +3356,14 @@ Action$<$CUIComponent, \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_leave
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00059}{59}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00080}{80}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00060\ \ \ \ \ \{}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ add\ =>\ this.Events.MouseLeave.Add(value);}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ this.Events.MouseLeave.Remove(value);}
-\DoxyCodeLine{00063\ \ \ \ \ \}}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ add\ =>\ this.Events.MouseLeave.Add(value);}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ this.Events.MouseLeave.Remove(value);}
+\DoxyCodeLine{00084\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a0ff02a7795e2715496dff388dbf4108f}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!MouseMoved@{MouseMoved}}
@@ -3152,14 +3374,14 @@ Action$<$CUIComponent, \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_moved
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00047}{47}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00068}{68}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00048\ \ \ \ \ \{}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ add\ =>\ this.Events.MouseMoved.Add(value);}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ this.Events.MouseMoved.Remove(value);}
-\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ add\ =>\ this.Events.MouseMoved.Add(value);}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ this.Events.MouseMoved.Remove(value);}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_ac493e1bfdeb569d70acf3151cadd5bd3}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!MouseOff@{MouseOff}}
@@ -3170,14 +3392,14 @@ Action$<$CUIComponent, \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_off_e
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00071}{71}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00092}{92}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00072\ \ \ \ \ \{}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ add\ =>\ this.Events.MouseOff.Add(value);}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ this.Events.MouseOff.Remove(value);}
-\DoxyCodeLine{00075\ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ add\ =>\ this.Events.MouseOff.Add(value);}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ this.Events.MouseOff.Remove(value);}
+\DoxyCodeLine{00096\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a123aa146cf2b1d58fe9e8a3409287214}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!MouseOn@{MouseOn}}
@@ -3188,14 +3410,14 @@ Action$<$CUIComponent, \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_on_ev
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00065}{65}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00086}{86}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00066\ \ \ \ \ \{}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ add\ =>\ this.Events.MouseOn.Add(value);}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ this.Events.MouseOn.Remove(value);}
-\DoxyCodeLine{00069\ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ add\ =>\ this.Events.MouseOn.Add(value);}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ this.Events.MouseOn.Remove(value);}
+\DoxyCodeLine{00090\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a6bf733b9a20ddfbb00237461fcc5ac83}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!MouseScroll@{MouseScroll}}
@@ -3206,14 +3428,14 @@ Action$<$CUIComponent, \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_scrol
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00078}{78}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00099}{99}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00079\ \ \ \ \ \{}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ add\ =>\ this.Events.MouseScroll.Add(value);}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ this.Events.MouseScroll.Remove(value);}
-\DoxyCodeLine{00082\ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ add\ =>\ this.Events.MouseScroll.Add(value);}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ this.Events.MouseScroll.Remove(value);}
+\DoxyCodeLine{00103\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_aaa3708fb1b7a67930b0210930308e55d}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!MouseUp@{MouseUp}}
@@ -3224,14 +3446,14 @@ Action$<$CUIComponent, \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_mouse_up_ev
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00029}{29}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00050}{50}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00030\ \ \ \ \ \{}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ add\ =>\ this.Events.MouseUp.Add(value);}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ this.Events.MouseUp.Remove(value);}
-\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ add\ =>\ this.Events.MouseUp.Add(value);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ this.Events.MouseUp.Remove(value);}
+\DoxyCodeLine{00054\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a5fa4392d96fc2be7e488c2ac5ea44416}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!OnDebugOff@{OnDebugOff}}
@@ -3262,14 +3484,14 @@ Action Crab\+UI.\+CUIComponent.\+On\+Focus\hspace{0.3cm}{\ttfamily [add]}, {\ttf
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00056}{56}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00059}{59}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00057\ \ \ \ \ \{}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ add\ =>\ IFocusableAdapter.OnFocus.Add(value);}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ IFocusableAdapter.OnFocus.Remove(value);}
-\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ add\ =>\ IFocusableAdapter.OnFocus.Add(value);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ IFocusableAdapter.OnFocus.Remove(value);}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_a49f94e7e1ab87e23f76322587f508ad6}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!OnFocusLost@{OnFocusLost}}
@@ -3280,14 +3502,14 @@ Action Crab\+UI.\+CUIComponent.\+On\+Focus\+Lost\hspace{0.3cm}{\ttfamily [add]},
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00063}{63}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00066}{66}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00064\ \ \ \ \ \{}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ add\ =>\ IFocusableAdapter.OnFocusLost.Add(value);}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ IFocusableAdapter.OnFocusLost.Remove(value);}
-\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ add\ =>\ IFocusableAdapter.OnFocusLost.Add(value);}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ IFocusableAdapter.OnFocusLost.Remove(value);}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_aa1bdff6480c10422184fcfd5b44c35cc}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!RectSet@{RectSet}}
@@ -3298,14 +3520,14 @@ Action$<$CUIComponent, \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIR
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00092}{92}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source_l00113}{113}} of file \doxymbox{\hyperlink{_c_u_i_component_8_events_8_public_8cs_source}{CUIComponent.\+Events.\+Public.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00093\ \ \ \ \ \{}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ add\ =>\ this.Events.RectSet.Add(value);}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ this.Events.RectSet.Remove(value);}
-\DoxyCodeLine{00096\ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \ \ \ \ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ add\ =>\ this.Events.RectSet.Add(value);}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ this.Events.RectSet.Remove(value);}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_component_afc84b901d29522def3e556521cb66716}\index{CrabUI.CUIComponent@{CrabUI.CUIComponent}!TextInput@{TextInput}}
@@ -3316,14 +3538,14 @@ Action$<$\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_text_input_event}{CUIText
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00085}{85}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source_l00088}{88}} of file \doxymbox{\hyperlink{_c_u_i_component_8_focus_8cs_source}{CUIComponent.\+Focus.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00086\ \ \ \ \ \{}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ add\ =>\ IFocusableAdapter.TextInput.Add(value);}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ IFocusableAdapter.TextInput.Remove(value);}
-\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ add\ =>\ IFocusableAdapter.TextInput.Add(value);}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \textcolor{keyword}{remove}\ =>\ IFocusableAdapter.TextInput.Remove(value);}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -3346,6 +3568,7 @@ Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Components/\+\+CUICompon
 Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Components/\+\+CUIComponent/\+CUIComponent.\+Layout.\+cs\item 
 Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Components/\+\+CUIComponent/\+CUIComponent.\+Main\+Component\+Tracker.\+cs\item 
 Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Components/\+\+CUIComponent/\+CUIComponent.\+Notifier.\+cs\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Components/\+\+CUIComponent/\+CUIComponent.\+Serialization.\+cs\item 
 Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Components/\+\+CUIComponent/\+CUIComponent.\+States.\+cs\item 
 Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Components/\+\+CUIComponent/\+CUIComponent.\+String\+Dictionary.\+cs\item 
 Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Components/\+\+CUIComponent/\+CUIComponent.\+Styles.\+cs\item 
@@ -3356,5 +3579,4 @@ Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Components/\+\+CUICompon
 Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Components/\+\+CUIComponent/\+\+Tree/\+Tree.\+Events.\+cs\item 
 Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Components/\+\+CUIComponent/\+\+Tree/\+Tree\+Operations.\+cs\item 
 Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Components/\+\+CUIComponent/\+CUIComponent.\+Compare.\+cs\item 
-Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Components/\+\+CUIComponent/\+CUIComponent.\+Saving.\+cs\item 
-Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Components/\+\+CUIComponent/\+CUIComponent.\+Serialization.\+cs\end{DoxyCompactItemize}
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Components/\+\+CUIComponent/\+CUIComponent.\+Saving.\+cs\end{DoxyCompactItemize}

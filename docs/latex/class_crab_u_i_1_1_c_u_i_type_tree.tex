@@ -11,6 +11,8 @@ void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_type_tree_a2e5b39d6268a5b8e07
 \item 
 void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_type_tree_acb27481a2322d47c8a6828e7b0b4e632}{Clear}} ()
 \item 
+override string \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_type_tree_a86834d2f3e0d03669455f94326ed211d}{To\+String}} ()
+\item 
 record \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_type_tree_a5033d19fcd9a5dc6cfbca14d926973b1}{Node}} (Type Type)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Properties}
@@ -50,7 +52,7 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_type_tree_8cs_source_l00017}{17}}
 \DoxyCodeLine{00019\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Type\ T\ \textcolor{keywordflow}{in}\ types)}
 \DoxyCodeLine{00020\ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ Nodes[T]\ =\ \textcolor{keyword}{new}\ Node(T);}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ TypesByName[T.Name]\ =\ T;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ TypesByName[T.GetFullName()]\ =\ T;}
 \DoxyCodeLine{00023\ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00024\ }
 \DoxyCodeLine{00025\ \ \ \ \ \ \ \textcolor{comment}{//TODO\ optimize,\ i\ just\ need\ to\ check\ the\ new\ types}}
@@ -145,6 +147,21 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_type_tree_8_node_8cs_source_l0001
 \DoxyCodeLine{00016\ \ \ \ \ \ \ \textcolor{keyword}{public}\ Node\ Parent\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
 \DoxyCodeLine{00017\ \ \ \ \ \ \ \textcolor{keyword}{public}\ List<Node>\ Children\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
 \DoxyCodeLine{00018\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_type_tree_a86834d2f3e0d03669455f94326ed211d}\index{CrabUI.CUITypeTree@{CrabUI.CUITypeTree}!ToString@{ToString}}
+\index{ToString@{ToString}!CrabUI.CUITypeTree@{CrabUI.CUITypeTree}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_type_tree_a86834d2f3e0d03669455f94326ed211d} 
+override string Crab\+UI.\+CUIType\+Tree.\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_type_tree_8cs_source_l00065}{65}} of file \doxymbox{\hyperlink{_c_u_i_type_tree_8cs_source}{CUIType\+Tree.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065\ =>\ Logger.Wrap.IDictionary(TypesByName);}
 
 \end{DoxyCode}
 

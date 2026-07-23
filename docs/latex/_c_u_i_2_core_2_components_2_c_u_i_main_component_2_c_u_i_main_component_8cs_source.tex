@@ -33,7 +33,7 @@
 \DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{public}\ GrabbedHandleTracker\ GrabbedHandleTracker\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();\ \ \textcolor{comment}{//BRUH\ should\ this\ be\ public?}}
 \DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00030}00030\ }
 \DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ MouseOverSomeElement\ =>\ EventTargets.TopTarget\ !=\ \textcolor{keyword}{null};}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{public}\ IFocusable\ WantsToBeFocused\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{private}\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{public}\ IFocusable\ WantsToBeFocused\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//TODO\ it\ was\ in\ nested\ FocusTrackerPart,\ why\ did\ i\ move\ it\ up?}}
 \DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ DrawChildren(CUISpriteBatch\ spriteBatch)}
 \DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00034}00034\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00035}00035\ \ \ \ \ \ \ ChainDrawer.Draw(spriteBatch,\ VisualFlattener.Flat);}
@@ -95,55 +95,59 @@
 \DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00091}00091\ \ \ \ \ \ \ EventDispatcher.Dispatch(entered,\ EventConstructor.MouseEnterEvent);}
 \DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00092}00092\ }
 \DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00093}00093\ \ \ \ \ \ \ EventDispatcher.Dispatch(GlobalEvents,\ EventConstructor.Events);}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00094}00094\ \ \ \ \ \ \ EventDispatcher.Dispatch(GlobalEvents,\ EventConstructor.KeyboardEvents);}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00095}00095\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00096}00096\ \ \ \ \ \ \ EventDispatcher.Dispatch(EventTargets.Targets,\ EventConstructor.Events);}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00097}00097\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00098}00098\ \ \ \ \ \ \ CheckFocus(Input);}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00099}00099\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00100}00100\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00101}00101\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ CheckFocus(CUIInput\ Input)}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00102}00102\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00103}00103\ \ \ \ \ \ \ CUIFocusRequestEvent\ focusProbe\ =\ \textcolor{keyword}{new}\ CUIFocusRequestEvent(Input);}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00104}00104\ \ \ \ \ \ \ EventDispatcher.Dispatch(EventTargets.Targets,\ focusProbe);}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00105}00105\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00106}00106\ \ \ \ \ \ \ WantsToBeFocused\ =\ focusProbe.Acceptor;}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00107}00107\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00095}00095\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!CUICore.InputBlockingMenuOpen)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00096}00096\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ EventDispatcher.Dispatch(GlobalEvents,\ EventConstructor.KeyboardEvents);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00098}00098\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00100}00100\ \ \ \ \ \ \ EventDispatcher.Dispatch(EventTargets.Targets,\ EventConstructor.Events);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00102}00102\ \ \ \ \ \ \ CheckFocus(Input);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00103}00103\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00105}00105\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ CheckFocus(CUIInput\ Input)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00106}00106\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00107}00107\ \ \ \ \ \ \ CUIFocusRequestEvent\ focusProbe\ =\ \textcolor{keyword}{new}\ CUIFocusRequestEvent(Input);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00108}00108\ \ \ \ \ \ \ EventDispatcher.Dispatch(EventTargets.Targets,\ focusProbe);}
 \DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00109}00109\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00110}00110\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ UpdateLayout()}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00111}00111\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00112}00112\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ repeats\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00113}00113\ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (RequireLayoutUpdate)}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00114}00114\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ RequireLayoutUpdate\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00116}00116\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ LayoutFlattener.Flat.Count\ -\/\ 1;\ i\ >=\ 0;\ i-\/-\/)}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ LayoutFlattener.Flat[i].Layout.UpdateParent();}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00121}00121\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ LayoutFlattener.Flat.Count;\ i++)}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ LayoutFlattener.Flat[i].Layout.UpdateChildren();}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00126}00126\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (repeats++\ >\ MaxLayoutCalcItterations)}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ CUI.Logger.Warning(\$\textcolor{stringliteral}{"{}\{this\}\ couldn't\ resolve\ layout\ after\ \{MaxLayoutCalcItterations\}\ itterations!"{}});}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00132}00132\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00133}00133\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00134}00134\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00135}00135\ \ \ \ \ \ \ \textcolor{comment}{//\ DebugChannels["{}Layout\ Updated"{}].Send(this);}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00136}00136\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00110}00110\ \ \ \ \ \ \ WantsToBeFocused\ =\ focusProbe.Acceptor;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00111}00111\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00114}00114\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ UpdateLayout()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00115}00115\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00116}00116\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ repeats\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00117}00117\ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (RequireLayoutUpdate)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00118}00118\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ RequireLayoutUpdate\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ LayoutFlattener.Flat.Count\ -\/\ 1;\ i\ >=\ 0;\ i-\/-\/)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ LayoutFlattener.Flat[i].Layout.UpdateParent();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ LayoutFlattener.Flat.Count;\ i++)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ LayoutFlattener.Flat[i].Layout.UpdateChildren();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (repeats++\ >\ MaxLayoutCalcItterations)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ CUI.Logger.Warning(\$\textcolor{stringliteral}{"{}\{this\}\ couldn't\ resolve\ layout\ after\ \{MaxLayoutCalcItterations\}\ itterations!"{}});}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00136}00136\ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00137}00137\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00138}00138\ \ \ \ \ \textcolor{keyword}{public}\ CUIMainComponent()\ :\ base()}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00139}00139\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00140}00140\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00141}00141\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00142}00142\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00143}00143\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00139}00139\ \ \ \ \ \ \ \textcolor{comment}{//\ DebugChannels["{}Layout\ Updated"{}].Send(this);}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00140}00140\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00142}00142\ \ \ \ \ \textcolor{keyword}{public}\ CUIMainComponent()\ :\ base()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00143}00143\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00144}00144\ \ \ \ \ \ \ ChildrenBounds\ =\ CUIBoundaries.Box;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00145}00145\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00146}00146\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_2_core_2_components_2_c_u_i_main_component_2_c_u_i_main_component_8cs_source_l00147}00147\ \}}
 
 \end{DoxyCode}

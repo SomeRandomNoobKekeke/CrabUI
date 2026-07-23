@@ -16,7 +16,7 @@
 \DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{protected}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_text_input_1_1_self___as___c_u_i_text_input}{Self\_As\_CUITextInput}}\ As\_CUITextInput\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
 \DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00013}00013\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_component}{IComponent}}.RunInitMethods()}
 \DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00014}00014\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00015}00015\ \ \ \ \ \ \ InitFocusStuff();}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00015}00015\ \ \ \ \ \ \ InitVisualSlots();}
 \DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00016}00016\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00017}00017\ }
 \DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00018}00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_component}{IComponent}}.InjectModules()}
@@ -97,77 +97,63 @@
 \DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00093}00093\ }
 \DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00094}00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_component}{IComponent}}.NotifyAwareObjects()}
 \DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00095}00095\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00096}00096\ \ \ \ \ \ \ TextBlock.HostComponent\ =\ \textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00097}00097\ \ \ \ \ \ \ TextBlock.HostPropName\ =\ \textcolor{stringliteral}{"{}TextBlock"{}};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00098}00098\ \ \ \ \ \ \ CaretTexture.HostComponent\ =\ \textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00099}00099\ \ \ \ \ \ \ CaretTexture.HostPropName\ =\ \textcolor{stringliteral}{"{}CaretTexture"{}};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00100}00100\ \ \ \ \ \ \ SelectionOverlay.HostComponent\ =\ \textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00101}00101\ \ \ \ \ \ \ SelectionOverlay.HostPropName\ =\ \textcolor{stringliteral}{"{}SelectionOverlay"{}};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00102}00102\ \ \ \ \ \ \ DragHandle.HostComponent\ =\ \textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00103}00103\ \ \ \ \ \ \ DragHandle.HostPropName\ =\ \textcolor{stringliteral}{"{}DragHandle"{}};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00104}00104\ \ \ \ \ \ \ RightResizeHandle.HostComponent\ =\ \textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00105}00105\ \ \ \ \ \ \ RightResizeHandle.HostPropName\ =\ \textcolor{stringliteral}{"{}RightResizeHandle"{}};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00106}00106\ \ \ \ \ \ \ SwipeHandle.HostComponent\ =\ \textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00107}00107\ \ \ \ \ \ \ SwipeHandle.HostPropName\ =\ \textcolor{stringliteral}{"{}SwipeHandle"{}};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00108}00108\ \ \ \ \ \ \ Layout.HostComponent\ =\ \textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00109}00109\ \ \ \ \ \ \ Layout.HostPropName\ =\ \textcolor{stringliteral}{"{}Layout"{}};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00110}00110\ \ \ \ \ \ \ Background.HostComponent\ =\ \textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00111}00111\ \ \ \ \ \ \ Background.HostPropName\ =\ \textcolor{stringliteral}{"{}Background"{}};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00112}00112\ \ \ \ \ \ \ Borders.HostComponent\ =\ \textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00113}00113\ \ \ \ \ \ \ Borders.HostPropName\ =\ \textcolor{stringliteral}{"{}Borders"{}};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00114}00114\ \ \ \ \ \ \ VisualBounds.HostComponent\ =\ \textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00115}00115\ \ \ \ \ \ \ VisualBounds.HostPropName\ =\ \textcolor{stringliteral}{"{}VisualBounds"{}};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00116}00116\ \ \ \ \ \ \ VisualWrapper.HostComponent\ =\ \textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00117}00117\ \ \ \ \ \ \ VisualWrapper.HostPropName\ =\ \textcolor{stringliteral}{"{}VisualWrapper"{}};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00118}00118\ \ \ \ \ \ \ LayoutProps.Absolute.HostComponent\ =\ \textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00119}00119\ \ \ \ \ \ \ LayoutProps.Absolute.HostPropName\ =\ \textcolor{stringliteral}{"{}Absolute"{}};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00120}00120\ \ \ \ \ \ \ LayoutProps.AbsoluteMin.HostComponent\ =\ \textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00121}00121\ \ \ \ \ \ \ LayoutProps.AbsoluteMin.HostPropName\ =\ \textcolor{stringliteral}{"{}AbsoluteMin"{}};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00122}00122\ \ \ \ \ \ \ LayoutProps.AbsoluteMax.HostComponent\ =\ \textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00123}00123\ \ \ \ \ \ \ LayoutProps.AbsoluteMax.HostPropName\ =\ \textcolor{stringliteral}{"{}AbsoluteMax"{}};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00124}00124\ \ \ \ \ \ \ LayoutProps.Relative.HostComponent\ =\ \textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00125}00125\ \ \ \ \ \ \ LayoutProps.Relative.HostPropName\ =\ \textcolor{stringliteral}{"{}Relative"{}};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00126}00126\ \ \ \ \ \ \ LayoutProps.RelativeMin.HostComponent\ =\ \textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00127}00127\ \ \ \ \ \ \ LayoutProps.RelativeMin.HostPropName\ =\ \textcolor{stringliteral}{"{}RelativeMin"{}};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00128}00128\ \ \ \ \ \ \ LayoutProps.RelativeMax.HostComponent\ =\ \textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00129}00129\ \ \ \ \ \ \ LayoutProps.RelativeMax.HostPropName\ =\ \textcolor{stringliteral}{"{}RelativeMax"{}};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00130}00130\ \ \ \ \ \ \ LayoutProps.CrossRelative.HostComponent\ =\ \textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00131}00131\ \ \ \ \ \ \ LayoutProps.CrossRelative.HostPropName\ =\ \textcolor{stringliteral}{"{}CrossRelative"{}};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00132}00132\ \ \ \ \ \ \ LayoutProps.Anchor.HostComponent\ =\ \textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00133}00133\ \ \ \ \ \ \ LayoutProps.Anchor.HostPropName\ =\ \textcolor{stringliteral}{"{}Anchor"{}};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00134}00134\ \ \ \ \ \ \ LayoutProps.ParentAnchor.HostComponent\ =\ \textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00135}00135\ \ \ \ \ \ \ LayoutProps.ParentAnchor.HostPropName\ =\ \textcolor{stringliteral}{"{}ParentAnchor"{}};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00136}00136\ \ \ \ \ \ \ LayoutProps.Direction.HostComponent\ =\ \textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00137}00137\ \ \ \ \ \ \ LayoutProps.Direction.HostPropName\ =\ \textcolor{stringliteral}{"{}Direction"{}};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00138}00138\ \ \ \ \ \ \ LayoutProps.Flex.HostComponent\ =\ \textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00139}00139\ \ \ \ \ \ \ LayoutProps.Flex.HostPropName\ =\ \textcolor{stringliteral}{"{}Flex"{}};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00140}00140\ \ \ \ \ \ \ LayoutProps.ChildrenOffset.HostComponent\ =\ \textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00141}00141\ \ \ \ \ \ \ LayoutProps.ChildrenOffset.HostPropName\ =\ \textcolor{stringliteral}{"{}ChildrenOffset"{}};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00142}00142\ \ \ \ \ \ \ LayoutProps.ChildrenBounds.HostComponent\ =\ \textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00143}00143\ \ \ \ \ \ \ LayoutProps.ChildrenBounds.HostPropName\ =\ \textcolor{stringliteral}{"{}ChildrenBounds"{}};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00144}00144\ \ \ \ \ \ \ LayoutProps.FitContent.HostComponent\ =\ \textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00145}00145\ \ \ \ \ \ \ LayoutProps.FitContent.HostPropName\ =\ \textcolor{stringliteral}{"{}FitContent"{}};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00146}00146\ \ \ \ \ \ \ LayoutProps.GridRow.HostComponent\ =\ \textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00147}00147\ \ \ \ \ \ \ LayoutProps.GridRow.HostPropName\ =\ \textcolor{stringliteral}{"{}GridRow"{}};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00148}00148\ \ \ \ \ \ \ LayoutProps.GridColumn.HostComponent\ =\ \textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00149}00149\ \ \ \ \ \ \ LayoutProps.GridColumn.HostPropName\ =\ \textcolor{stringliteral}{"{}GridColumn"{}};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00150}00150\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00151}00151\ }
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00152}\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_text_input_1_1_self___as___c_u_i_text_input}{00152}}\ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_text_input_1_1_self___as___c_u_i_text_input}{Self\_As\_CUITextInput}}\ :\ \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_adapter_part}{IAdapterPart}}}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00153}00153\ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00154}00154\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_text_input_1_1_selection_handle___part}{CUITextInput.SelectionHandle\_Part}}\ SelectionHandle\ =>\ Self.SelectionHandle;}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00155}00155\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1public___commands___part}{CUIComponent.public\_Commands\_Part}}\ Commands\ =>\ Self.Commands;}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00156}00156\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_protected___commands___part}{CUIComponent.Protected\_Commands\_Part}}\ ProtectedCommands\ =>\ Self.ProtectedCommands;}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00157}00157\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_events___part}{CUIComponent.Events\_Part}}\ Events\ =>\ Self.Events;}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00158}00158\ \ \ \ \ \textcolor{keyword}{public}\ DragHandle\ DragHandle\ =>\ Self.DragHandle;}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00159}00159\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_resize_handle}{ResizeHandle}}\ RightResizeHandle\ =>\ Self.RightResizeHandle;}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00160}00160\ \ \ \ \ \textcolor{keyword}{public}\ SwipeHandle\ SwipeHandle\ =>\ Self.SwipeHandle;}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00161}00161\ \ \ \ \ \textcolor{keyword}{public}\ LayoutMarker\ LayoutMarker\ =>\ Self.LayoutMarker;}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00162}00162\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_main_component_tracker___part}{CUIComponent.MainComponentTracker\_Part}}\ MainComponentTracker\ =>\ Self.MainComponentTracker;}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00163}00163\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_tree_events___part}{CUIComponent.TreeEvents\_Part}}\ Tree\ =>\ Self.Tree;}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00164}00164\ \ \ \ \ \textcolor{keyword}{public}\ CUITextInput\ Self\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00165}00165\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00166}00166\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00167}00167\ \}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00096}00096\ \ \ \ \ \ \ DragHandle.HostComponent\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00097}00097\ \ \ \ \ \ \ DragHandle.HostPropName\ =\ \textcolor{stringliteral}{"{}DragHandle"{}};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00098}00098\ \ \ \ \ \ \ RightResizeHandle.HostComponent\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00099}00099\ \ \ \ \ \ \ RightResizeHandle.HostPropName\ =\ \textcolor{stringliteral}{"{}RightResizeHandle"{}};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00100}00100\ \ \ \ \ \ \ SwipeHandle.HostComponent\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00101}00101\ \ \ \ \ \ \ SwipeHandle.HostPropName\ =\ \textcolor{stringliteral}{"{}SwipeHandle"{}};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00102}00102\ \ \ \ \ \ \ Layout.HostComponent\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00103}00103\ \ \ \ \ \ \ Layout.HostPropName\ =\ \textcolor{stringliteral}{"{}Layout"{}};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00104}00104\ \ \ \ \ \ \ LayoutProps.Absolute.HostComponent\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00105}00105\ \ \ \ \ \ \ LayoutProps.Absolute.HostPropName\ =\ \textcolor{stringliteral}{"{}Absolute"{}};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00106}00106\ \ \ \ \ \ \ LayoutProps.AbsoluteMin.HostComponent\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00107}00107\ \ \ \ \ \ \ LayoutProps.AbsoluteMin.HostPropName\ =\ \textcolor{stringliteral}{"{}AbsoluteMin"{}};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00108}00108\ \ \ \ \ \ \ LayoutProps.AbsoluteMax.HostComponent\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00109}00109\ \ \ \ \ \ \ LayoutProps.AbsoluteMax.HostPropName\ =\ \textcolor{stringliteral}{"{}AbsoluteMax"{}};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00110}00110\ \ \ \ \ \ \ LayoutProps.Relative.HostComponent\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00111}00111\ \ \ \ \ \ \ LayoutProps.Relative.HostPropName\ =\ \textcolor{stringliteral}{"{}Relative"{}};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00112}00112\ \ \ \ \ \ \ LayoutProps.RelativeMin.HostComponent\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00113}00113\ \ \ \ \ \ \ LayoutProps.RelativeMin.HostPropName\ =\ \textcolor{stringliteral}{"{}RelativeMin"{}};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00114}00114\ \ \ \ \ \ \ LayoutProps.RelativeMax.HostComponent\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00115}00115\ \ \ \ \ \ \ LayoutProps.RelativeMax.HostPropName\ =\ \textcolor{stringliteral}{"{}RelativeMax"{}};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00116}00116\ \ \ \ \ \ \ LayoutProps.CrossRelative.HostComponent\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00117}00117\ \ \ \ \ \ \ LayoutProps.CrossRelative.HostPropName\ =\ \textcolor{stringliteral}{"{}CrossRelative"{}};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00118}00118\ \ \ \ \ \ \ LayoutProps.Anchor.HostComponent\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00119}00119\ \ \ \ \ \ \ LayoutProps.Anchor.HostPropName\ =\ \textcolor{stringliteral}{"{}Anchor"{}};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00120}00120\ \ \ \ \ \ \ LayoutProps.ParentAnchor.HostComponent\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00121}00121\ \ \ \ \ \ \ LayoutProps.ParentAnchor.HostPropName\ =\ \textcolor{stringliteral}{"{}ParentAnchor"{}};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00122}00122\ \ \ \ \ \ \ LayoutProps.Direction.HostComponent\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00123}00123\ \ \ \ \ \ \ LayoutProps.Direction.HostPropName\ =\ \textcolor{stringliteral}{"{}Direction"{}};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00124}00124\ \ \ \ \ \ \ LayoutProps.Flex.HostComponent\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00125}00125\ \ \ \ \ \ \ LayoutProps.Flex.HostPropName\ =\ \textcolor{stringliteral}{"{}Flex"{}};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00126}00126\ \ \ \ \ \ \ LayoutProps.ChildrenOffset.HostComponent\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00127}00127\ \ \ \ \ \ \ LayoutProps.ChildrenOffset.HostPropName\ =\ \textcolor{stringliteral}{"{}ChildrenOffset"{}};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00128}00128\ \ \ \ \ \ \ LayoutProps.ChildrenBounds.HostComponent\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00129}00129\ \ \ \ \ \ \ LayoutProps.ChildrenBounds.HostPropName\ =\ \textcolor{stringliteral}{"{}ChildrenBounds"{}};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00130}00130\ \ \ \ \ \ \ LayoutProps.FitContent.HostComponent\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00131}00131\ \ \ \ \ \ \ LayoutProps.FitContent.HostPropName\ =\ \textcolor{stringliteral}{"{}FitContent"{}};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00132}00132\ \ \ \ \ \ \ LayoutProps.GridRow.HostComponent\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00133}00133\ \ \ \ \ \ \ LayoutProps.GridRow.HostPropName\ =\ \textcolor{stringliteral}{"{}GridRow"{}};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00134}00134\ \ \ \ \ \ \ LayoutProps.GridColumn.HostComponent\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00135}00135\ \ \ \ \ \ \ LayoutProps.GridColumn.HostPropName\ =\ \textcolor{stringliteral}{"{}GridColumn"{}};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00136}00136\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00138}\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_text_input_1_1_self___as___c_u_i_text_input}{00138}}\ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_text_input_1_1_self___as___c_u_i_text_input}{Self\_As\_CUITextInput}}\ :\ \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_adapter_part}{IAdapterPart}}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00139}00139\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00140}00140\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_text_input_1_1_selection_handle___part}{CUITextInput.SelectionHandle\_Part}}\ SelectionHandle\ =>\ Self.SelectionHandle;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00141}00141\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1public___commands___part}{CUIComponent.public\_Commands\_Part}}\ Commands\ =>\ Self.Commands;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00142}00142\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_protected___commands___part}{CUIComponent.Protected\_Commands\_Part}}\ ProtectedCommands\ =>\ Self.ProtectedCommands;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00143}00143\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_events___part}{CUIComponent.Events\_Part}}\ Events\ =>\ Self.Events;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00144}00144\ \ \ \ \ \textcolor{keyword}{public}\ DragHandle\ DragHandle\ =>\ Self.DragHandle;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00145}00145\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_resize_handle}{ResizeHandle}}\ RightResizeHandle\ =>\ Self.RightResizeHandle;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00146}00146\ \ \ \ \ \textcolor{keyword}{public}\ SwipeHandle\ SwipeHandle\ =>\ Self.SwipeHandle;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00147}00147\ \ \ \ \ \textcolor{keyword}{public}\ LayoutMarker\ LayoutMarker\ =>\ Self.LayoutMarker;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00148}00148\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_main_component_tracker___part}{CUIComponent.MainComponentTracker\_Part}}\ MainComponentTracker\ =>\ Self.MainComponentTracker;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00149}00149\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_tree_events___part}{CUIComponent.TreeEvents\_Part}}\ Tree\ =>\ Self.Tree;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00150}00150\ \ \ \ \ \textcolor{keyword}{public}\ CUITextInput\ Self\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00151}00151\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00152}00152\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_____generated_2_c_u_i_text_input_8cs_source_l00153}00153\ \}}
 
 \end{DoxyCode}

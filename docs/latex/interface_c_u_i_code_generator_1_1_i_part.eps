@@ -5,7 +5,7 @@
 %%For: 
 %Magnification: 1.00
 %%Orientation: Portrait
-%%BoundingBox: 0 0 500 157.862778
+%%BoundingBox: 0 0 500 142.076508
 %%Pages: 0
 %%BeginSetup
 %%EndSetup
@@ -19,13 +19,13 @@
 /marginwidth 10 def
 /distx 20 def
 /disty 40 def
-/boundaspect 3.167308 def  % aspect ratio of the BoundingBox (width/height)
+/boundaspect 3.519231 def  % aspect ratio of the BoundingBox (width/height)
 /boundx 500 def
 /boundy boundx boundaspect div def
 /xspacing 0 def
 /yspacing 0 def
 /rows 26 def
-/cols 9 def
+/cols 10 def
 /scalefactor 0 def
 /boxfont /Times-Roman findfont fontheight scalefont def
 
@@ -179,6 +179,7 @@ boxfont setfont
 (CrabUI.CUICore.Part) cw
 (CrabUI.CUIMainComponent.Part) cw
 (CrabUI.CUITextInput.Part) cw
+(CrabUI.SlotPart< THost, T >) cw
 (CUICodeGenerator.IAdapterPart) cw
 (CUICodeGenerator.IChimeraPart) cw
 (CrabUI.CUIComponent.Adapters_Part) cw
@@ -224,12 +225,13 @@ boundx scalefactor div boundy scalefactor div scale
 
 % ----- classes -----
 
- (CUICodeGenerator.IPart) 4.000000 25.000000 box
+ (CUICodeGenerator.IPart) 5.000000 25.000000 box
  (CUICodeGenerator.IEndPart) 0.000000 24.000000 box
  (CrabUI.CUIComponent.Part) 2.000000 24.000000 box
  (CrabUI.CUICore.Part) 4.000000 24.000000 box
  (CrabUI.CUIMainComponent.Part) 6.000000 24.000000 box
  (CrabUI.CUITextInput.Part) 8.000000 24.000000 box
+ (CrabUI.SlotPart< THost, T >) 9.000000 24.000000 box
  (CUICodeGenerator.IAdapterPart) 1.000000 23.000000 box
 1.000000 23.000000 mark
  (CUICodeGenerator.IChimeraPart) 1.000000 22.000000 box
@@ -269,9 +271,9 @@ boundx scalefactor div boundy scalefactor div scale
 % ----- relations -----
 
 solid
-1 4.000000 24.250000 out
+1 5.000000 24.250000 out
 solid
-0.000000 8.000000 25.000000 conn
+0.000000 9.000000 25.000000 conn
 solid
 0 0.000000 24.750000 in
 solid
@@ -292,6 +294,8 @@ solid
 0 8.000000 24.750000 in
 solid
 1 8.000000 23.250000 out
+solid
+0 9.000000 24.750000 in
 solid
 0 0.000000 23.500000 hedge
 solid

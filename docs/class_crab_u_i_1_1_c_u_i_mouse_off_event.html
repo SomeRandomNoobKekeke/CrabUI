@@ -141,8 +141,8 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_mouse_off_event_8cs_source.html#l00023">23</a> of file <a class="el" href="_c_u_i_mouse_off_event_8cs_source.html">CUIMouseOffEvent.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   23</span>: base(mouse) { }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_mouse_off_event_8cs_source.html#l00025">25</a> of file <a class="el" href="_c_u_i_mouse_off_event_8cs_source.html">CUIMouseOffEvent.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   25</span>: base(mouse) { }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -169,8 +169,10 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="lineno">   17</span>        MEConsumer.MouseOver = <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">   18</span>        MEConsumer.MousePressed = <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">   19</span>        MEConsumer.MouseOff.Raise(<span class="keyword">this</span>);</div>
-<div class="line"><span class="lineno">   20</span>      }</div>
-<div class="line"><span class="lineno">   21</span>    }</div>
+<div class="line"><span class="lineno">   20</span> </div>
+<div class="line"><span class="lineno">   21</span>        Consumed = MEConsumer.ConsumeMouseEvents || Consumed;</div>
+<div class="line"><span class="lineno">   22</span>      }</div>
+<div class="line"><span class="lineno">   23</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -189,8 +191,8 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_mouse_off_event_8cs_source.html#l00024">24</a> of file <a class="el" href="_c_u_i_mouse_off_event_8cs_source.html">CUIMouseOffEvent.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   24</span>=&gt; $<span class="stringliteral">&quot;Mouse Enter&quot;</span>;</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_mouse_off_event_8cs_source.html#l00026">26</a> of file <a class="el" href="_c_u_i_mouse_off_event_8cs_source.html">CUIMouseOffEvent.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   26</span>=&gt; $<span class="stringliteral">&quot;Mouse Enter&quot;</span>;</div>
 </div><!-- fragment -->
 </div>
 </div>

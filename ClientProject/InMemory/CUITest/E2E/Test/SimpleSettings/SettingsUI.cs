@@ -45,7 +45,7 @@ namespace CrabUIUser
           CUIVerticalList NestedWrapper = new CUIVerticalList()
           {
             FitContent = new CUIBool2(false, true),
-            Padding = new CUISizes(30, 0, 0, 0),
+            Padding = new CUISizes(0, 0, 0, 30),
           };
 
           NestedWrapper.Add(new CUIDefault.TextField()

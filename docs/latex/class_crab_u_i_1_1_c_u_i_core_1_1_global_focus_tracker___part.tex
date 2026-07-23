@@ -9,6 +9,8 @@ Inheritance diagram for Crab\+UI.\+CUICore.\+Global\+Focus\+Tracker\+\_\+\+Part:
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_global_focus_tracker___part_a8aa103811ba482574b306a87266276b3}{Add\+To\+Wants\+To\+Be\+Blured}} (\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_focusable}{IFocusable}} focusable)
+\item 
 void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_global_focus_tracker___part_a881f475223e0d236707378040564e000}{Resolve\+Focus}} (bool Something\+Focused\+Elsewhere)
 \item 
 void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_global_focus_tracker___part_a24273c8a7b44779280dc097012b2a5e2}{Dispatch\+Keyboad\+Events}} ()
@@ -19,6 +21,8 @@ void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_global_focus_tracker
 \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_focusable}{IFocusable}}? \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_global_focus_tracker___part_a6dd01e4585b78913ebf9eae05c665d9e}{Focused}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \item 
 \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_focusable}{IFocusable}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_global_focus_tracker___part_aff249b91dd68e583e2bda81679b2f048}{Wants\+To\+Be\+Focused}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+Hash\+Set$<$ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_focusable}{IFocusable}} $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_global_focus_tracker___part_a10bf4e04db6dd40c6878544f696c342b}{Wants\+To\+Be\+Blured}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \end{DoxyCompactItemize}
 \doxysubsection*{Properties inherited from \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_part}{Crab\+UI.\+CUICore.\+Part}}}
 \begin{DoxyCompactItemize}
@@ -37,6 +41,24 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_global_focus_tracker_8cs_s
 \label{doc-func-members}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_core_1_1_global_focus_tracker___part_doc-func-members}
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_1_1_global_focus_tracker___part_a8aa103811ba482574b306a87266276b3}\index{CrabUI.CUICore.GlobalFocusTracker\_Part@{CrabUI.CUICore.GlobalFocusTracker\_Part}!AddToWantsToBeBlured@{AddToWantsToBeBlured}}
+\index{AddToWantsToBeBlured@{AddToWantsToBeBlured}!CrabUI.CUICore.GlobalFocusTracker\_Part@{CrabUI.CUICore.GlobalFocusTracker\_Part}}
+\doxysubsubsection{\texorpdfstring{AddToWantsToBeBlured()}{AddToWantsToBeBlured()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_1_1_global_focus_tracker___part_a8aa103811ba482574b306a87266276b3} 
+void Crab\+UI.\+CUICore.\+Global\+Focus\+Tracker\+\_\+\+Part.\+Add\+To\+Wants\+To\+Be\+Blured (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_focusable}{IFocusable}}}]{focusable}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_global_focus_tracker_8cs_source_l00056}{56}} of file \doxymbox{\hyperlink{_c_u_i_core_8_global_focus_tracker_8cs_source}{CUICore.\+Global\+Focus\+Tracker.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ WantsToBeBlured.Add(focusable);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ Self.Debug\_Focus.Send(\$\textcolor{stringliteral}{"{}WantsToBeBlured\ [\{focusable\}]"{}});}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_core_1_1_global_focus_tracker___part_a24273c8a7b44779280dc097012b2a5e2}\index{CrabUI.CUICore.GlobalFocusTracker\_Part@{CrabUI.CUICore.GlobalFocusTracker\_Part}!DispatchKeyboadEvents@{DispatchKeyboadEvents}}
 \index{DispatchKeyboadEvents@{DispatchKeyboadEvents}!CrabUI.CUICore.GlobalFocusTracker\_Part@{CrabUI.CUICore.GlobalFocusTracker\_Part}}
 \doxysubsubsection{\texorpdfstring{DispatchKeyboadEvents()}{DispatchKeyboadEvents()}}
@@ -45,15 +67,16 @@ void Crab\+UI.\+CUICore.\+Global\+Focus\+Tracker\+\_\+\+Part.\+Dispatch\+Keyboad
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_global_focus_tracker_8cs_source_l00081}{81}} of file \doxymbox{\hyperlink{_c_u_i_core_8_global_focus_tracker_8cs_source}{CUICore.\+Global\+Focus\+Tracker.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_global_focus_tracker_8cs_source_l00101}{101}} of file \doxymbox{\hyperlink{_c_u_i_core_8_global_focus_tracker_8cs_source}{CUICore.\+Global\+Focus\+Tracker.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Focused\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00084\ }
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ EventDispatcher.Dispatch(Focused,\ Self.EventConstructor.KeyboardEvents);}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Focused\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (CUICore.InputBlockingMenuOpen)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ EventDispatcher.Dispatch(Focused,\ Self.EventConstructor.KeyboardEvents);}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_core_1_1_global_focus_tracker___part_a881f475223e0d236707378040564e000}\index{CrabUI.CUICore.GlobalFocusTracker\_Part@{CrabUI.CUICore.GlobalFocusTracker\_Part}!ResolveFocus@{ResolveFocus}}
@@ -64,37 +87,46 @@ void Crab\+UI.\+CUICore.\+Global\+Focus\+Tracker\+\_\+\+Part.\+Resolve\+Focus (\
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_global_focus_tracker_8cs_source_l00047}{47}} of file \doxymbox{\hyperlink{_c_u_i_core_8_global_focus_tracker_8cs_source}{CUICore.\+Global\+Focus\+Tracker.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_global_focus_tracker_8cs_source_l00062}{62}} of file \doxymbox{\hyperlink{_c_u_i_core_8_global_focus_tracker_8cs_source}{CUICore.\+Global\+Focus\+Tracker.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (SomethingFocusedElsewhere)}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ Focused\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ IFocusable\ next\ =\ WantsToBeFocused;}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ next\ ??=\ Self.Main.WantsToBeFocused;}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ next\ ??=\ Self.TopMain.WantsToBeFocused;}
-\DoxyCodeLine{00058\ }
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (next\ is\ not\ \textcolor{keyword}{null})}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ Focused\ =\ next;}
-\DoxyCodeLine{00062\ }
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//TODO\ there\ are\ ton\ of\ hardcoded\ actions\ in\ barotrauma\ that\ are\ performed\ without\ focus}}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ idk,\ i\ need\ a\ map\ of\ them\ to\ see\ how\ focus\ can\ possibly\ be\ resolved\ }}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ Self.Handles.GrabFocus();}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (next\ is\ \textcolor{keyword}{null}\ \&\&\ FocusShouldBeLost())}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ Focused\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ Self.Handles.ClearFocus();}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00072\ }
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ WantsToBeFocused\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (SomethingFocusedElsewhere)}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ Focused\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ IFocusable\ next\ =\ WantsToBeFocused;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ next\ ??=\ Self.TopMain.WantsToBeFocused;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ next\ ??=\ Self.Main.WantsToBeFocused;}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (next\ is\ not\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ Focused\ =\ next;}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ Self.Handles.GrabFocus();}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (WantsToBeBlured.Contains(Focused))}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ Focused\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ Self.Handles.ClearFocus();}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (next\ is\ \textcolor{keyword}{null}\ \&\&\ Self.\_Input.Mouse.M1.Down)}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ Focused\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ Self.Handles.ClearFocus();}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \_WantsToBeFocused\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ Self.Main.WantsToBeFocused\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ Self.TopMain.WantsToBeFocused\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ WantsToBeBlured.Clear();}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -124,10 +156,10 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_global_focus_tracker_8cs_s
 \DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \_Focused.Focused\ =\ \textcolor{keyword}{false};}
 \DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \_Focused.OnFocusLost.Raise();}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \_Focused\ =\ value;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \_Focused\ =\ value;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ Self.Debug\_Focus.Send(\$\textcolor{stringliteral}{"{}Focused\ set\ [\{\_Focused\}]"{}});}
 \DoxyCodeLine{00036\ }
 \DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_Focused\ is\ not\ \textcolor{keyword}{null})}
 \DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \{}
@@ -136,6 +168,21 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_global_focus_tracker_8cs_s
 \DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00043\ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_1_1_global_focus_tracker___part_a10bf4e04db6dd40c6878544f696c342b}\index{CrabUI.CUICore.GlobalFocusTracker\_Part@{CrabUI.CUICore.GlobalFocusTracker\_Part}!WantsToBeBlured@{WantsToBeBlured}}
+\index{WantsToBeBlured@{WantsToBeBlured}!CrabUI.CUICore.GlobalFocusTracker\_Part@{CrabUI.CUICore.GlobalFocusTracker\_Part}}
+\doxysubsubsection{\texorpdfstring{WantsToBeBlured}{WantsToBeBlured}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_1_1_global_focus_tracker___part_a10bf4e04db6dd40c6878544f696c342b} 
+Hash\+Set$<$\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_focusable}{IFocusable}}$>$ Crab\+UI.\+CUICore.\+Global\+Focus\+Tracker\+\_\+\+Part.\+Wants\+To\+Be\+Blured = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_global_focus_tracker_8cs_source_l00054}{54}} of file \doxymbox{\hyperlink{_c_u_i_core_8_global_focus_tracker_8cs_source}{CUICore.\+Global\+Focus\+Tracker.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00054\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_core_1_1_global_focus_tracker___part_aff249b91dd68e583e2bda81679b2f048}\index{CrabUI.CUICore.GlobalFocusTracker\_Part@{CrabUI.CUICore.GlobalFocusTracker\_Part}!WantsToBeFocused@{WantsToBeFocused}}
@@ -150,7 +197,14 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_global_focus_tracker_8cs_s
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00045\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_WantsToBeFocused;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \_WantsToBeFocused\ =\ value;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ Self.Debug\_Focus.Send(\$\textcolor{stringliteral}{"{}WantsToBeFocused\ [\{value\}]"{}});}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 

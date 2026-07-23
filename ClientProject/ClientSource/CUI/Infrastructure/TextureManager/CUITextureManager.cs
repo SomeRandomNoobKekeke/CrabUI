@@ -12,14 +12,13 @@ namespace CrabUI
 {
   public interface CUITextureManager
   {
-    Dictionary<string, CUITexture2D> LoadedTextures { get; }
-
     CUITexture2D Add(CUITexture2D texture, string key);
     void Clear();
     void Dispose();
     void Forget(string key);
-    CUITexture2D Get(string key);
     bool Has(string key);
-    CUITexture2D Load(string path, string name);
+    CUITexture2D Get(string key);
+    public CUITexture2D Reload(string key);
+    public CUITexture2D LoadAs(string path, string key);
   }
 }

@@ -183,10 +183,10 @@ Commonly used "primitive" types:</h3>
 <div class="line">  <span class="keyword">public</span> <span class="keywordtype">bool</span> Y;</div>
 <div class="line">}</div>
 </div><!-- fragment --><div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">struct </span>CUISizes {</div>
-<div class="line">  <span class="keyword">public</span> <span class="keywordtype">float</span> Left;</div>
 <div class="line">  <span class="keyword">public</span> <span class="keywordtype">float</span> Top;</div>
 <div class="line">  <span class="keyword">public</span> <span class="keywordtype">float</span> Right;</div>
 <div class="line">  <span class="keyword">public</span> <span class="keywordtype">float</span> Bottom;</div>
+<div class="line">  <span class="keyword">public</span> <span class="keywordtype">float</span> Left;</div>
 <div class="line">}</div>
 </div><!-- fragment --><div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class </span>CUIAnchor {</div>
 <div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> Vector2 LeftTop = <span class="keyword">new</span> Vector2(0.0f, 0.0f);</div>
@@ -284,6 +284,8 @@ Events</h1>
 <div class="line">};</div>
 <div class="line"><span class="comment">//Same as</span></div>
 <div class="line">component.MouseDown += (c, e) =&gt; CUI.Logger.Log(e.Pos);</div>
+</div><!-- fragment --><p>You can trigger some events manually: </p><div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keywordtype">void</span> CUIComponent.Click(); <span class="comment">// - triggers MouseDown</span></div>
+<div class="line"><span class="keyword">public</span> <span class="keywordtype">void</span> CUIComponent.PressKey(Keys key); <span class="comment">// - Triggers KeyPressed</span></div>
 </div><!-- fragment --><p>Also most events have "this" component as first arg <br  />
  Some of them don't and it's a consistency bug which i'll fix somewhere in the future</p>
 <p>Also idk if it's a good idea to pass "this" as first arg, in fact i never use it, tell me your thoughts</p>

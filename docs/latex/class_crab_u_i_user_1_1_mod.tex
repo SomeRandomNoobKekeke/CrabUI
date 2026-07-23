@@ -62,9 +62,9 @@ Definition at line \doxymbox{\hyperlink{_mod_8cs_source_l00061}{61}} of file \do
 \DoxyCodeLine{00062\ \ \ \ \ \{}
 \DoxyCodeLine{00063\ \ \ \ \ \ \ Instance\ =\ \textcolor{keyword}{null};}
 \DoxyCodeLine{00064\ \ \ \ \ \ \ UTestCommands.RemoveCommands();}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ CUIDebugger.Dispose();}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ MGDebugTool.Dispose();}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ CUITest.Dispose();}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ CUIDebugger?.Dispose();}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ MGDebugTool?.Dispose();}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ CUITest?.Dispose();}
 \DoxyCodeLine{00068\ \ \ \ \ \}}
 
 \end{DoxyCode}
@@ -106,8 +106,8 @@ Definition at line \doxymbox{\hyperlink{_mod_8cs_source_l00027}{27}} of file \do
 \DoxyCodeLine{00035\ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ CUI.Start();}
 \DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ CUICore.TextureManager.Load(\textcolor{stringliteral}{"{}Assets/PNG/For\ testing/Test\ Chamber\ Background.png"{}},\ \textcolor{stringliteral}{"{}Test\ Chamber\ Background"{}});}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ CUICore.TextureManager.Load(\textcolor{stringliteral}{"{}Assets/PNG/For\ testing/Icons.png"{}},\ \textcolor{stringliteral}{"{}Test\ Icons"{}});}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ CUI.TextureManager.LoadAs(\textcolor{stringliteral}{"{}Assets/PNG/For\ testing/Test\ Chamber\ Background.png"{}},\ \textcolor{stringliteral}{"{}Test\ Chamber\ Background"{}});}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ CUI.TextureManager.LoadAs(\textcolor{stringliteral}{"{}Assets/PNG/For\ testing/Icons.png"{}},\ \textcolor{stringliteral}{"{}Test\ Icons"{}});}
 \DoxyCodeLine{00040\ }
 \DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ UTestCommands.AddCommands();}
 \DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ CUITest\ =\ \textcolor{keyword}{new}\ CUITest();}

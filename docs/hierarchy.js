@@ -143,6 +143,7 @@ var hierarchy =
     [ "CrabUIUser.ComponentSnapshot", "class_crab_u_i_user_1_1_component_snapshot.html", null ],
     [ "CrabUIUser.ModuleAccessors.ComponentTreeModule", "class_crab_u_i_user_1_1_module_accessors_1_1_component_tree_module.html", null ],
     [ "CrabUIUser.SnapshotTestManager.ConsoleIntefaceClass", "class_crab_u_i_user_1_1_snapshot_test_manager_1_1_console_inteface_class.html", null ],
+    [ "CrabUI.__CUITextureManager.Context_Part", "class_crab_u_i_1_1_____c_u_i_texture_manager_1_1_context___part.html", null ],
     [ "CrabUI.CUIAnchor", "class_crab_u_i_1_1_c_u_i_anchor.html", null ],
     [ "CrabUI.CUIAssemblyAnalyzer", "class_crab_u_i_1_1_c_u_i_assembly_analyzer.html", null ],
     [ "CrabUI.CUIAssemblyInfo", "class_crab_u_i_1_1_c_u_i_assembly_info.html", null ],
@@ -188,6 +189,7 @@ var hierarchy =
     [ "CrabUI.CUIRect", "struct_crab_u_i_1_1_c_u_i_rect.html", null ],
     [ "CrabUI.CUISegment", "struct_crab_u_i_1_1_c_u_i_segment.html", null ],
     [ "CrabUI.CUISerializable", "interface_crab_u_i_1_1_c_u_i_serializable.html", [
+      [ "CrabUI.Borders", "class_crab_u_i_1_1_borders.html", null ],
       [ "CrabUI.CUIComponent", "class_crab_u_i_1_1_c_u_i_component.html", [
         [ "CrabUI.CUIButtonBase", "class_crab_u_i_1_1_c_u_i_button_base.html", [
           [ "CrabUI.CUIButton", "class_crab_u_i_1_1_c_u_i_button.html", [
@@ -207,6 +209,7 @@ var hierarchy =
         [ "CrabUI.CUIFrame", "class_crab_u_i_1_1_c_u_i_frame.html", [
           [ "CrabUI.CUIDebugger.MainFrameComponent", "class_crab_u_i_1_1_c_u_i_debugger_1_1_main_frame_component.html", null ],
           [ "CrabUI.CUIDefault.Frame", "class_crab_u_i_1_1_c_u_i_default_1_1_frame.html", [
+            [ "CrabUI.SerializationModesTest.VerySpecialFrame", "class_crab_u_i_1_1_serialization_modes_test_1_1_very_special_frame.html", null ],
             [ "CrabUIUser.E2ETestPack.Calculator.CalculatorUI", "class_crab_u_i_user_1_1_e2_e_test_pack_1_1_calculator_1_1_calculator_u_i.html", null ],
             [ "CrabUIUser.E2ETestPack.Console", "class_crab_u_i_user_1_1_e2_e_test_pack_1_1_console.html", null ],
             [ "CrabUIUser.E2ETestPack.SimpleSettings.SettingsUI", "class_crab_u_i_user_1_1_e2_e_test_pack_1_1_simple_settings_1_1_settings_u_i.html", null ]
@@ -247,7 +250,6 @@ var hierarchy =
     [ "CrabUI.CUISerializableInfo", "class_crab_u_i_1_1_c_u_i_serializable_info.html", null ],
     [ "CrabUI.CUISerializer", "class_crab_u_i_1_1_c_u_i_serializer.html", null ],
     [ "CrabUI.CUISetup", "class_crab_u_i_1_1_c_u_i_setup.html", null ],
-    [ "CrabUI.CUISizes", "struct_crab_u_i_1_1_c_u_i_sizes.html", null ],
     [ "CrabUI.CUISpriteAtlas", "class_crab_u_i_1_1_c_u_i_sprite_atlas.html", null ],
     [ "CrabUI.CUISpriteBatch", "interface_crab_u_i_1_1_c_u_i_sprite_batch.html", [
       [ "CrabUI.__CUISpriteBatch", "class_crab_u_i_1_1_____c_u_i_sprite_batch.html", null ]
@@ -256,7 +258,7 @@ var hierarchy =
     [ "CrabUI.CUIStylePipeline", "class_crab_u_i_1_1_c_u_i_style_pipeline.html", null ],
     [ "CrabUIUser.CUITest", "class_crab_u_i_user_1_1_c_u_i_test.html", null ],
     [ "CrabUI.CUITextureManager", "interface_crab_u_i_1_1_c_u_i_texture_manager.html", [
-      [ "CrabUI.CUITextureManagerProxy", "class_crab_u_i_1_1_c_u_i_texture_manager_proxy.html", null ],
+      [ "CrabUI.SoloCUIRunner.CUITextureManager_PublicPart", "class_crab_u_i_1_1_solo_c_u_i_runner_1_1_c_u_i_texture_manager___public_part.html", null ],
       [ "CrabUI.__CUITextureManager", "class_crab_u_i_1_1_____c_u_i_texture_manager.html", null ]
     ] ],
     [ "CrabUI.CUITypeTree", "class_crab_u_i_1_1_c_u_i_type_tree.html", null ],
@@ -364,6 +366,7 @@ var hierarchy =
     [ "CrabUIUser.ProxyPerformance.FakeInternalAProxy3", "class_crab_u_i_user_1_1_proxy_performance_1_1_fake_internal_a_proxy3.html", null ],
     [ "CrabUIUser.ProxyPerformance.FakeInternalBProxy3", "class_crab_u_i_user_1_1_proxy_performance_1_1_fake_internal_b_proxy3.html", null ],
     [ "CrabUIUser.ClassMapping.MagicMirror.FCanvas", "class_crab_u_i_user_1_1_class_mapping_1_1_magic_mirror_1_1_f_canvas.html", null ],
+    [ "CrabUI.FilePathResolver", "class_crab_u_i_1_1_file_path_resolver.html", null ],
     [ "CrabUIUser.Friendship", "class_crab_u_i_user_1_1_friendship.html", null ],
     [ "CrabUIUser.ClassMapping.MagicMirror.FTexture", "class_crab_u_i_user_1_1_class_mapping_1_1_magic_mirror_1_1_f_texture.html", null ],
     [ "CrabUIUser.InverseBackdoor.FullHost", "class_crab_u_i_user_1_1_inverse_backdoor_1_1_full_host.html", null ],
@@ -417,14 +420,6 @@ var hierarchy =
     [ "CUICodeGenerator.IAware", "interface_c_u_i_code_generator_1_1_i_aware.html", [
       [ "CrabUI.CUIAwareProp< T >", "class_crab_u_i_1_1_c_u_i_aware_prop-1-g.html", null ],
       [ "CrabUI.DragHandle", "class_crab_u_i_1_1_drag_handle.html", null ],
-      [ "CrabUI.IVisualElement", "interface_crab_u_i_1_1_i_visual_element.html", [
-        [ "CrabUI.VisualElementBase", "class_crab_u_i_1_1_visual_element_base.html", [
-          [ "CrabUI.Borders", "class_crab_u_i_1_1_borders.html", null ],
-          [ "CrabUI.SimpleTexture", "class_crab_u_i_1_1_simple_texture.html", null ],
-          [ "CrabUI.TextBlock", "class_crab_u_i_1_1_text_block.html", null ],
-          [ "CrabUI.TextLine", "class_crab_u_i_1_1_text_line.html", null ]
-        ] ]
-      ] ],
       [ "CrabUI.Layout", "class_crab_u_i_1_1_layout.html", [
         [ "CrabUI.CUIGridLayout", "class_crab_u_i_1_1_c_u_i_grid_layout.html", null ],
         [ "CrabUI.CUIHorizontalListLayout", "class_crab_u_i_1_1_c_u_i_horizontal_list_layout.html", null ],
@@ -432,14 +427,7 @@ var hierarchy =
         [ "CrabUI.CUIVerticalListLayout", "class_crab_u_i_1_1_c_u_i_vertical_list_layout.html", null ]
       ] ],
       [ "CrabUI.ResizeHandle", "class_crab_u_i_1_1_resize_handle.html", null ],
-      [ "CrabUI.SwipeHandle", "class_crab_u_i_1_1_swipe_handle.html", null ],
-      [ "CrabUI.VisualBounds", "class_crab_u_i_1_1_visual_bounds.html", null ],
-      [ "CrabUI.VisualUnit", "class_crab_u_i_1_1_visual_unit.html", [
-        [ "CrabUI.VisualBounds.LeftContextBound", "class_crab_u_i_1_1_visual_bounds_1_1_left_context_bound.html", null ],
-        [ "CrabUI.VisualBounds.RightContextBound", "class_crab_u_i_1_1_visual_bounds_1_1_right_context_bound.html", null ],
-        [ "CrabUI.VisualUnit.NestedVisualComponent", "class_crab_u_i_1_1_visual_unit_1_1_nested_visual_component.html", null ],
-        [ "CrabUI.VisualUnit.PrimitiveVisualElement", "class_crab_u_i_1_1_visual_unit_1_1_primitive_visual_element.html", null ]
-      ] ]
+      [ "CrabUI.SwipeHandle", "class_crab_u_i_1_1_swipe_handle.html", null ]
     ] ],
     [ "CrabUIUser.ProxyPerformance.IBProxy2", "interface_crab_u_i_user_1_1_proxy_performance_1_1_i_b_proxy2.html", [
       [ "CrabUIUser.ProxyPerformance.BProxy2", "class_crab_u_i_user_1_1_proxy_performance_1_1_b_proxy2.html", null ]
@@ -525,6 +513,7 @@ var hierarchy =
           [ "CrabUI.__CUIRenderTarget2D", "class_crab_u_i_1_1_____c_u_i_render_target2_d.html", null ]
         ] ]
       ] ],
+      [ "CrabUI.SoloCUIRunner.AssemblyPackageDirLookup", "class_crab_u_i_1_1_solo_c_u_i_runner_1_1_assembly_package_dir_lookup.html", null ],
       [ "CrabUI.__CUITexture2D", "class_crab_u_i_1_1_____c_u_i_texture2_d.html", null ],
       [ "CrabUI.__CUITextureManager", "class_crab_u_i_1_1_____c_u_i_texture_manager.html", null ]
     ] ],
@@ -569,7 +558,12 @@ var hierarchy =
       ] ],
       [ "CrabUI.IMouseEventConsumer", "interface_crab_u_i_1_1_i_mouse_event_consumer.html", [
         [ "CrabUI.CUIMainComponent.GlobalEvents_Part", "class_crab_u_i_1_1_c_u_i_main_component_1_1_global_events___part.html", null ],
-        [ "CrabUI.VisualElementBase", "class_crab_u_i_1_1_visual_element_base.html", null ]
+        [ "CrabUI.VisualElementBase", "class_crab_u_i_1_1_visual_element_base.html", [
+          [ "CrabUI.Borders", "class_crab_u_i_1_1_borders.html", null ],
+          [ "CrabUI.SimpleTexture", "class_crab_u_i_1_1_simple_texture.html", null ],
+          [ "CrabUI.TextBlock", "class_crab_u_i_1_1_text_block.html", null ],
+          [ "CrabUI.TextLine", "class_crab_u_i_1_1_text_line.html", null ]
+        ] ]
       ] ]
     ] ],
     [ "CrabUI.IGameLifeCycleTracker", "interface_crab_u_i_1_1_i_game_life_cycle_tracker.html", [
@@ -740,7 +734,8 @@ var hierarchy =
     [ "CrabUI.IParsable", "interface_crab_u_i_1_1_i_parsable.html", [
       [ "CrabUI.CUIBool2", "struct_crab_u_i_1_1_c_u_i_bool2.html", null ],
       [ "CrabUI.CUIBoundaries", "struct_crab_u_i_1_1_c_u_i_boundaries.html", null ],
-      [ "CrabUI.CUINullRect", "struct_crab_u_i_1_1_c_u_i_null_rect.html", null ]
+      [ "CrabUI.CUINullRect", "struct_crab_u_i_1_1_c_u_i_null_rect.html", null ],
+      [ "CrabUI.CUISizes", "struct_crab_u_i_1_1_c_u_i_sizes.html", null ]
     ] ],
     [ "CUICodeGenerator.IPart", "interface_c_u_i_code_generator_1_1_i_part.html", [
       [ "CUICodeGenerator.IEndPart", "interface_c_u_i_code_generator_1_1_i_end_part.html", [
@@ -786,7 +781,8 @@ var hierarchy =
       ] ],
       [ "CrabUI.CUITextInput.Part", "class_crab_u_i_1_1_c_u_i_text_input_1_1_part.html", [
         [ "CrabUI.CUITextInput.SelectionHandle_Part", "class_crab_u_i_1_1_c_u_i_text_input_1_1_selection_handle___part.html", null ]
-      ] ]
+      ] ],
+      [ "CrabUI.SlotPart< THost, T >", "class_crab_u_i_1_1_slot_part-2-g.html", null ]
     ] ],
     [ "CrabUIUser.StructuralTreeRefactor.IPlaceable", "interface_crab_u_i_user_1_1_structural_tree_refactor_1_1_i_placeable.html", [
       [ "CrabUIUser.StructuralTreeRefactor.Component", "class_crab_u_i_user_1_1_structural_tree_refactor_1_1_component.html", null ],
@@ -829,6 +825,9 @@ var hierarchy =
         [ "CrabUI.ResizeHandle", "class_crab_u_i_1_1_resize_handle.html", null ]
       ] ]
     ] ],
+    [ "CrabUI.IVisualElement", "interface_crab_u_i_1_1_i_visual_element.html", [
+      [ "CrabUI.VisualElementBase", "class_crab_u_i_1_1_visual_element_base.html", null ]
+    ] ],
     [ "CrabUI.CUIInput.KeyboardInput", "class_crab_u_i_1_1_c_u_i_input_1_1_keyboard_input.html", null ],
     [ "CrabUIUser.HowLayoutsShouldGenerallyWork.Layout", "class_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_layout.html", [
       [ "CrabUIUser.HowLayoutsShouldGenerallyWork.CUIPlainLayout", "class_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_c_u_i_plain_layout.html", null ],
@@ -866,7 +865,6 @@ var hierarchy =
     [ "CrabUIUser.HowLayoutsShouldGenerallyWork.ListComponent.Part", "class_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_list_component_1_1_part.html", [
       [ "CrabUIUser.HowLayoutsShouldGenerallyWork.ListComponent.LayoutAdapter_Part", "class_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_list_component_1_1_layout_adapter___part.html", null ]
     ] ],
-    [ "CrabUI.PathManager", "class_crab_u_i_1_1_path_manager.html", null ],
     [ "CrabUI.LayoutMarker.Pattern", "class_crab_u_i_1_1_layout_marker_1_1_pattern.html", [
       [ "CrabUI.LayoutMarker.Pattern.AbsolutePropPattern", "class_crab_u_i_1_1_layout_marker_1_1_pattern_1_1_absolute_prop_pattern.html", null ],
       [ "CrabUI.LayoutMarker.Pattern.FromParentAndDownPattern", "class_crab_u_i_1_1_layout_marker_1_1_pattern_1_1_from_parent_and_down_pattern.html", null ],
@@ -932,6 +930,12 @@ var hierarchy =
       [ "CrabUI.TextBlock.ResistStrategy", "class_crab_u_i_1_1_text_block_1_1_resist_strategy.html", null ],
       [ "CrabUI.TextBlock.WrapStrategy", "class_crab_u_i_1_1_text_block_1_1_wrap_strategy.html", null ]
     ] ],
+    [ "CrabUI.ResourceIOContext", "interface_crab_u_i_1_1_resource_i_o_context.html", [
+      [ "CrabUI.SoloCUIRunner.ResourceIOContext_Part", "class_crab_u_i_1_1_solo_c_u_i_runner_1_1_resource_i_o_context___part.html", null ]
+    ] ],
+    [ "CrabUI.ResourceIOContextHandle", "interface_crab_u_i_1_1_resource_i_o_context_handle.html", [
+      [ "CrabUI.SoloCUIRunner.ResourceIOContextHandle_Part", "class_crab_u_i_1_1_solo_c_u_i_runner_1_1_resource_i_o_context_handle___part.html", null ]
+    ] ],
     [ "CUILibs.ReusableTuple&lt; T1 &gt;", "class_c_u_i_libs_1_1_reusable_tuple-1-g.html", null ],
     [ "CUILibs.ReusableTuple&lt; T1, T2 &gt;", "class_c_u_i_libs_1_1_reusable_tuple-2-g.html", null ],
     [ "CUILibs.ReusableTuple&lt; T1, T2, T3 &gt;", "class_c_u_i_libs_1_1_reusable_tuple-3-g.html", null ],
@@ -950,6 +954,7 @@ var hierarchy =
     [ "CUILibs.SimpleWeakEvent", "class_c_u_i_libs_1_1_simple_weak_event.html", null ],
     [ "CUILibs.SimpleWeakEvent&lt; T1 &gt;", "class_c_u_i_libs_1_1_simple_weak_event-1-g.html", null ],
     [ "CUILibs.SimpleWeakEvent&lt; T1, T2 &gt;", "class_c_u_i_libs_1_1_simple_weak_event-2-g.html", null ],
+    [ "CrabUI.Slot&lt; T &gt;", "class_crab_u_i_1_1_slot-1-g.html", null ],
     [ "CrabUIUser.SnapshotTestManager", "class_crab_u_i_user_1_1_snapshot_test_manager.html", null ],
     [ "CrabUIUser.SnapshotTestRepo", "class_crab_u_i_user_1_1_snapshot_test_repo.html", null ],
     [ "CrabUIUser.SnapshotTestRunner", "class_crab_u_i_user_1_1_snapshot_test_runner.html", null ],
@@ -1009,9 +1014,12 @@ var hierarchy =
       ] ],
       [ "CrabUI.CUIParserTest", "class_crab_u_i_1_1_c_u_i_parser_test.html", null ],
       [ "CrabUI.CUISerializationTest", "class_crab_u_i_1_1_c_u_i_serialization_test.html", [
-        [ "CrabUI.ExcessiveSerialization", "class_crab_u_i_1_1_excessive_serialization.html", null ]
+        [ "CrabUI.ExcessiveSerialization", "class_crab_u_i_1_1_excessive_serialization.html", null ],
+        [ "CrabUI.PrintSerializablePropsTest", "class_crab_u_i_1_1_print_serializable_props_test.html", null ],
+        [ "CrabUI.SerializationModesTest", "class_crab_u_i_1_1_serialization_modes_test.html", null ],
+        [ "CrabUI.SerializationPersistenceTest", "class_crab_u_i_1_1_serialization_persistence_test.html", null ]
       ] ],
-      [ "CrabUI.PrintSerializablePropsTest", "class_crab_u_i_1_1_print_serializable_props_test.html", null ]
+      [ "CrabUIUser.XMLSaveLoadingTest", "class_crab_u_i_user_1_1_x_m_l_save_loading_test.html", null ]
     ] ],
     [ "CUILibs.UTestResultBase", "class_c_u_i_libs_1_1_u_test_result_base.html", [
       [ "CUILibs.UTestDictResult", "class_c_u_i_libs_1_1_u_test_dict_result.html", null ],
@@ -1023,6 +1031,13 @@ var hierarchy =
     [ "CUILibs.UTestRunner", "class_c_u_i_libs_1_1_u_test_runner.html", null ],
     [ "CUILibs.UTestTree", "class_c_u_i_libs_1_1_u_test_tree.html", null ],
     [ "CUILibs.UTestTreeNode", "class_c_u_i_libs_1_1_u_test_tree_node.html", null ],
+    [ "CrabUI.VisualBounds", "class_crab_u_i_1_1_visual_bounds.html", null ],
+    [ "CrabUI.VisualUnit", "class_crab_u_i_1_1_visual_unit.html", [
+      [ "CrabUI.VisualBounds.LeftContextBound", "class_crab_u_i_1_1_visual_bounds_1_1_left_context_bound.html", null ],
+      [ "CrabUI.VisualBounds.RightContextBound", "class_crab_u_i_1_1_visual_bounds_1_1_right_context_bound.html", null ],
+      [ "CrabUI.VisualUnit.NestedVisualComponent", "class_crab_u_i_1_1_visual_unit_1_1_nested_visual_component.html", null ],
+      [ "CrabUI.VisualUnit.PrimitiveVisualElement", "class_crab_u_i_1_1_visual_unit_1_1_primitive_visual_element.html", null ]
+    ] ],
     [ "CUILibs.Logger.Wrap", "class_c_u_i_libs_1_1_logger_1_1_wrap.html", null ],
     [ "CrabUIUser.PerformanceOfSelect.Wrapper", "class_crab_u_i_user_1_1_performance_of_select_1_1_wrapper.html", null ]
 ];

@@ -15,6 +15,11 @@ namespace CrabUI
   {
     public partial class CUICoreHandles_Part() : CUICore.CUICoreHandles
     {
+      public bool IsRelXMLPath(string path)
+      {
+        return path.EndsWith(".xml") && !Path.IsPathFullyQualified(path);
+      }
+
       private DummyIKeyboardSubscriber DummyIKeyboardSubscriber = new();
 
 
@@ -23,15 +28,20 @@ namespace CrabUI
       public CUIGraphicsDevice GraphicsDevice => Self.GraphicsDevice;
       public CUIGUI GUI => Self.CUIGUI;
 
-      public CUITextureManager CUITextureManager => Self.CUITextureManager;
+      public CUITextureManager TextureManager => Self.TextureManager;
+      public ResourceIOContextHandle ResourceIOContext => Self.ResourceIOContextHandle;
+
+      public bool InputBlockingMenuOpen => Barotrauma.GUI.InputBlockingMenuOpen;
 
       public void SaveXDoc(XDocument xDoc, string path)
       {
-        xDoc.Save(Self.PathManager.Normalize(path));
+        string realPath = Self.FilePathResolver.FindBestMatchForSaving(path);
+        xDoc.Save(realPath);
       }
       public XDocument LoadXDoc(string path)
       {
-        return XDocument.Load(Self.PathManager.Normalize(path));
+        string realPath = Self.FilePathResolver.FindBestMatchForLoading(path);
+        return XDocument.Load(realPath);
       }
 
       public void GrabFocus()

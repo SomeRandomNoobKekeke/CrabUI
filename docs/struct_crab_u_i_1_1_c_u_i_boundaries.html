@@ -112,6 +112,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acda41818cde76d292d19aa8b69cf2672" id="r_acda41818cde76d292d19aa8b69cf2672"><td class="memItemLeft"><a class="el" href="struct_crab_u_i_1_1_c_u_i_rect.html">CUIRect</a>&#160;</td><td class="memItemRight"><a class="el" href="#acda41818cde76d292d19aa8b69cf2672">Check</a> (float x, float y, float w, float h)</td></tr>
 <tr class="memitem:af848bf94deb892bcd1bad1d0fd1e3bd2" id="r_af848bf94deb892bcd1bad1d0fd1e3bd2"><td class="memItemLeft">Vector2&#160;</td><td class="memItemRight"><a class="el" href="#af848bf94deb892bcd1bad1d0fd1e3bd2">Check</a> (Vector2 offset)</td></tr>
 <tr class="memitem:a6bb35b6856a45d1a6841fd3f0794dd6b" id="r_a6bb35b6856a45d1a6841fd3f0794dd6b"><td class="memItemLeft">Vector2&#160;</td><td class="memItemRight"><a class="el" href="#a6bb35b6856a45d1a6841fd3f0794dd6b">Check</a> (float x, float y)</td></tr>
+<tr class="memitem:a702d633683258892b08d5b5c1c81aa8b" id="r_a702d633683258892b08d5b5c1c81aa8b"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a702d633683258892b08d5b5c1c81aa8b">OutOfBounds</a> (<a class="el" href="struct_crab_u_i_1_1_c_u_i_rect.html">CUIRect</a> rect)</td></tr>
+<tr class="memitem:ae7c10624c934a11da7a7eb0b3edd1040" id="r_ae7c10624c934a11da7a7eb0b3edd1040"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ae7c10624c934a11da7a7eb0b3edd1040">OutOfBounds</a> (float x, float y, float w, float h)</td></tr>
+<tr class="memitem:a3f13b6c0b4670d346b8af934083e9d3f" id="r_a3f13b6c0b4670d346b8af934083e9d3f"><td class="memItemLeft"><a class="el" href="struct_crab_u_i_1_1_c_u_i_rect.html">CUIRect</a>&#160;</td><td class="memItemRight"><a class="el" href="#a3f13b6c0b4670d346b8af934083e9d3f">FitGracefuly</a> (<a class="el" href="struct_crab_u_i_1_1_c_u_i_rect.html">CUIRect</a> prev, <a class="el" href="struct_crab_u_i_1_1_c_u_i_rect.html">CUIRect</a> next)</td></tr>
 <tr class="memitem:a794817c0bf948ffb2d007da5de766648" id="r_a794817c0bf948ffb2d007da5de766648"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a794817c0bf948ffb2d007da5de766648">CUIBoundaries</a> (float? minX=null, float? maxX=null, float? minY=null, float? maxY=null)</td></tr>
 <tr class="memitem:a5f0bd49bc6098418639cb33ec5d6cba5" id="r_a5f0bd49bc6098418639cb33ec5d6cba5"><td class="memItemLeft">override string&#160;</td><td class="memItemRight"><a class="el" href="#a5f0bd49bc6098418639cb33ec5d6cba5">ToString</a> ()</td></tr>
 <tr class="memitem:ac5cf8f6d3e67c89a4b195c4ba1f62ddd" id="r_ac5cf8f6d3e67c89a4b195c4ba1f62ddd"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="#ac5cf8f6d3e67c89a4b195c4ba1f62ddd">ToText</a> ()</td></tr>
@@ -170,13 +173,13 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_boundaries_8cs_source.html#l00060">60</a> of file <a class="el" href="_c_u_i_boundaries_8cs_source.html">CUIBoundaries.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   64</span>    {</div>
-<div class="line"><span class="lineno">   65</span>      MinX = minX;</div>
-<div class="line"><span class="lineno">   66</span>      MaxX = maxX;</div>
-<div class="line"><span class="lineno">   67</span>      MinY = minY;</div>
-<div class="line"><span class="lineno">   68</span>      MaxY = maxY;</div>
-<div class="line"><span class="lineno">   69</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_boundaries_8cs_source.html#l00125">125</a> of file <a class="el" href="_c_u_i_boundaries_8cs_source.html">CUIBoundaries.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  129</span>    {</div>
+<div class="line"><span class="lineno">  130</span>      MinX = minX;</div>
+<div class="line"><span class="lineno">  131</span>      MaxX = maxX;</div>
+<div class="line"><span class="lineno">  132</span>      MinY = minY;</div>
+<div class="line"><span class="lineno">  133</span>      MaxY = maxY;</div>
+<div class="line"><span class="lineno">  134</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -294,6 +297,136 @@ Static Public Attributes</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="a3f13b6c0b4670d346b8af934083e9d3f" name="a3f13b6c0b4670d346b8af934083e9d3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f13b6c0b4670d346b8af934083e9d3f">&#9670;&#160;</a></span>FitGracefuly()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_crab_u_i_1_1_c_u_i_rect.html">CUIRect</a> CrabUI.CUIBoundaries.FitGracefuly </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_crab_u_i_1_1_c_u_i_rect.html">CUIRect</a></td>          <td class="paramname"><span class="paramname"><em>prev</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_crab_u_i_1_1_c_u_i_rect.html">CUIRect</a></td>          <td class="paramname"><span class="paramname"><em>next</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_boundaries_8cs_source.html#l00073">73</a> of file <a class="el" href="_c_u_i_boundaries_8cs_source.html">CUIBoundaries.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   74</span>    {</div>
+<div class="line"><span class="lineno">   75</span>      <span class="keywordtype">float</span> x = next.Left;</div>
+<div class="line"><span class="lineno">   76</span>      <span class="keywordtype">float</span> y = next.Top;</div>
+<div class="line"><span class="lineno">   77</span>      <span class="keywordtype">float</span> w = next.Width;</div>
+<div class="line"><span class="lineno">   78</span>      <span class="keywordtype">float</span> h = next.Height;</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span> </div>
+<div class="line"><span class="lineno">   81</span>      <span class="keywordflow">if</span> (MinX.HasValue &amp;&amp; next.Left &lt; MinX.Value &amp;&amp; MaxX.HasValue &amp;&amp; next.Right &gt; MaxX.Value)</div>
+<div class="line"><span class="lineno">   82</span>      {</div>
+<div class="line"><span class="lineno">   83</span>        x = MinX.Value;</div>
+<div class="line"><span class="lineno">   84</span>        w = MaxX.Value - MinX.Value;</div>
+<div class="line"><span class="lineno">   85</span>      }</div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>      <span class="keywordflow">if</span> (MinX.HasValue &amp;&amp; next.Left &lt; MinX.Value)</div>
+<div class="line"><span class="lineno">   88</span>      {</div>
+<div class="line"><span class="lineno">   89</span>        x = MinX.Value;</div>
+<div class="line"><span class="lineno">   90</span>        w = prev.Width;</div>
+<div class="line"><span class="lineno">   91</span>      }</div>
+<div class="line"><span class="lineno">   92</span> </div>
+<div class="line"><span class="lineno">   93</span>      <span class="keywordflow">if</span> (MaxX.HasValue &amp;&amp; next.Right &gt; MaxX.Value)</div>
+<div class="line"><span class="lineno">   94</span>      {</div>
+<div class="line"><span class="lineno">   95</span>        x = MaxX.Value - prev.Width;</div>
+<div class="line"><span class="lineno">   96</span>        w = prev.Width;</div>
+<div class="line"><span class="lineno">   97</span>      }</div>
+<div class="line"><span class="lineno">   98</span> </div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>      <span class="keywordflow">if</span> (MinY.HasValue &amp;&amp; next.Top &lt; MinY.Value &amp;&amp; MaxY.HasValue &amp;&amp; next.Bottom &gt; MaxY.Value)</div>
+<div class="line"><span class="lineno">  101</span>      {</div>
+<div class="line"><span class="lineno">  102</span>        y = MinY.Value;</div>
+<div class="line"><span class="lineno">  103</span>        h = MaxY.Value - MinY.Value;</div>
+<div class="line"><span class="lineno">  104</span>      }</div>
+<div class="line"><span class="lineno">  105</span> </div>
+<div class="line"><span class="lineno">  106</span>      <span class="keywordflow">if</span> (MinY.HasValue &amp;&amp; next.Top &lt; MinY.Value)</div>
+<div class="line"><span class="lineno">  107</span>      {</div>
+<div class="line"><span class="lineno">  108</span>        y = MinY.Value;</div>
+<div class="line"><span class="lineno">  109</span>        h = prev.Height;</div>
+<div class="line"><span class="lineno">  110</span>      }</div>
+<div class="line"><span class="lineno">  111</span> </div>
+<div class="line"><span class="lineno">  112</span>      <span class="keywordflow">if</span> (MaxY.HasValue &amp;&amp; next.Bottom &gt; MaxY.Value)</div>
+<div class="line"><span class="lineno">  113</span>      {</div>
+<div class="line"><span class="lineno">  114</span>        y = MaxY.Value - prev.Height;</div>
+<div class="line"><span class="lineno">  115</span>        h = prev.Height;</div>
+<div class="line"><span class="lineno">  116</span>      }</div>
+<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  118</span>      <span class="keywordflow">return</span> <span class="keyword">new</span> CUIRect(x, y, w, h);</div>
+<div class="line"><span class="lineno">  119</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a702d633683258892b08d5b5c1c81aa8b" name="a702d633683258892b08d5b5c1c81aa8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a702d633683258892b08d5b5c1c81aa8b">&#9670;&#160;</a></span>OutOfBounds() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CrabUI.CUIBoundaries.OutOfBounds </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_crab_u_i_1_1_c_u_i_rect.html">CUIRect</a></td>          <td class="paramname"><span class="paramname"><em>rect</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_boundaries_8cs_source.html#l00061">61</a> of file <a class="el" href="_c_u_i_boundaries_8cs_source.html">CUIBoundaries.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   61</span>=&gt; OutOfBounds(rect.Left, rect.Top, rect.Width, rect.Height);</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae7c10624c934a11da7a7eb0b3edd1040" name="ae7c10624c934a11da7a7eb0b3edd1040"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7c10624c934a11da7a7eb0b3edd1040">&#9670;&#160;</a></span>OutOfBounds() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CrabUI.CUIBoundaries.OutOfBounds </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>w</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>h</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_boundaries_8cs_source.html#l00062">62</a> of file <a class="el" href="_c_u_i_boundaries_8cs_source.html">CUIBoundaries.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>    {</div>
+<div class="line"><span class="lineno">   64</span>      <span class="keywordflow">if</span> (MaxX.HasValue &amp;&amp; x + w &gt; MaxX.Value) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   65</span>      <span class="keywordflow">if</span> (MaxY.HasValue &amp;&amp; y + h &gt; MaxY.Value) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   66</span>      <span class="keywordflow">if</span> (MinX.HasValue &amp;&amp; x &lt; MinX.Value) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   67</span>      <span class="keywordflow">if</span> (MinY.HasValue &amp;&amp; y &lt; MinY.Value) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   70</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a48386fd5565d20024946df9147f0d0f3" name="a48386fd5565d20024946df9147f0d0f3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a48386fd5565d20024946df9147f0d0f3">&#9670;&#160;</a></span>Parse() <span class="overload">[1/2]</span></h2>
 
@@ -319,8 +452,8 @@ Static Public Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_crab_u_i_1_1_i_parsable.html">CrabUI.IParsable</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_boundaries_8cs_source.html#l00099">99</a> of file <a class="el" href="_c_u_i_boundaries_8cs_source.html">CUIBoundaries.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   99</span>=&gt; Parse(raw);</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_boundaries_8cs_source.html#l00164">164</a> of file <a class="el" href="_c_u_i_boundaries_8cs_source.html">CUIBoundaries.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  164</span>=&gt; Parse(raw);</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -349,32 +482,32 @@ Static Public Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_crab_u_i_1_1_i_parsable.html">CrabUI.IParsable</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_boundaries_8cs_source.html#l00072">72</a> of file <a class="el" href="_c_u_i_boundaries_8cs_source.html">CUIBoundaries.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   73</span>    {</div>
-<div class="line"><span class="lineno">   74</span>      <span class="keywordtype">string</span> content = s.Substring(</div>
-<div class="line"><span class="lineno">   75</span>        s.IndexOf(<span class="charliteral">&#39;[&#39;</span>) + 1,</div>
-<div class="line"><span class="lineno">   76</span>        s.IndexOf(<span class="charliteral">&#39;]&#39;</span>) - s.IndexOf(<span class="charliteral">&#39;[&#39;</span>) - 1</div>
-<div class="line"><span class="lineno">   77</span>      );</div>
-<div class="line"><span class="lineno">   78</span> </div>
-<div class="line"><span class="lineno">   79</span>      var parts = content.Split(<span class="charliteral">&#39;,&#39;</span>).Select(a =&gt; a.Trim());</div>
-<div class="line"><span class="lineno">   80</span> </div>
-<div class="line"><span class="lineno">   81</span>      <span class="keywordtype">string</span> minXPart = parts.ElementAtOrDefault(0);</div>
-<div class="line"><span class="lineno">   82</span>      <span class="keywordtype">string</span> maxXPart = parts.ElementAtOrDefault(1);</div>
-<div class="line"><span class="lineno">   83</span>      <span class="keywordtype">string</span> minYPart = parts.ElementAtOrDefault(2);</div>
-<div class="line"><span class="lineno">   84</span>      <span class="keywordtype">string</span> maxYPart = parts.ElementAtOrDefault(3);</div>
-<div class="line"><span class="lineno">   85</span> </div>
-<div class="line"><span class="lineno">   86</span>      <span class="keywordtype">float</span>? minX = <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">   87</span>      <span class="keywordtype">float</span>? maxX = <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">   88</span>      <span class="keywordtype">float</span>? minY = <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">   89</span>      <span class="keywordtype">float</span>? maxY = <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">   90</span> </div>
-<div class="line"><span class="lineno">   91</span>      <span class="keywordflow">if</span> (!String.IsNullOrEmpty(minXPart)) minX = <span class="keywordtype">float</span>.Parse(minXPart);</div>
-<div class="line"><span class="lineno">   92</span>      <span class="keywordflow">if</span> (!String.IsNullOrEmpty(maxXPart)) maxX = <span class="keywordtype">float</span>.Parse(maxXPart);</div>
-<div class="line"><span class="lineno">   93</span>      <span class="keywordflow">if</span> (!String.IsNullOrEmpty(minYPart)) minY = <span class="keywordtype">float</span>.Parse(minYPart);</div>
-<div class="line"><span class="lineno">   94</span>      <span class="keywordflow">if</span> (!String.IsNullOrEmpty(maxYPart)) maxY = <span class="keywordtype">float</span>.Parse(maxYPart);</div>
-<div class="line"><span class="lineno">   95</span> </div>
-<div class="line"><span class="lineno">   96</span>      <span class="keywordflow">return</span> <span class="keyword">new</span> CUIBoundaries(minX, maxX, minY, maxY);</div>
-<div class="line"><span class="lineno">   97</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_boundaries_8cs_source.html#l00137">137</a> of file <a class="el" href="_c_u_i_boundaries_8cs_source.html">CUIBoundaries.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  138</span>    {</div>
+<div class="line"><span class="lineno">  139</span>      <span class="keywordtype">string</span> content = s.Substring(</div>
+<div class="line"><span class="lineno">  140</span>        s.IndexOf(<span class="charliteral">&#39;[&#39;</span>) + 1,</div>
+<div class="line"><span class="lineno">  141</span>        s.IndexOf(<span class="charliteral">&#39;]&#39;</span>) - s.IndexOf(<span class="charliteral">&#39;[&#39;</span>) - 1</div>
+<div class="line"><span class="lineno">  142</span>      );</div>
+<div class="line"><span class="lineno">  143</span> </div>
+<div class="line"><span class="lineno">  144</span>      var parts = content.Split(<span class="charliteral">&#39;,&#39;</span>).Select(a =&gt; a.Trim());</div>
+<div class="line"><span class="lineno">  145</span> </div>
+<div class="line"><span class="lineno">  146</span>      <span class="keywordtype">string</span> minXPart = parts.ElementAtOrDefault(0);</div>
+<div class="line"><span class="lineno">  147</span>      <span class="keywordtype">string</span> maxXPart = parts.ElementAtOrDefault(1);</div>
+<div class="line"><span class="lineno">  148</span>      <span class="keywordtype">string</span> minYPart = parts.ElementAtOrDefault(2);</div>
+<div class="line"><span class="lineno">  149</span>      <span class="keywordtype">string</span> maxYPart = parts.ElementAtOrDefault(3);</div>
+<div class="line"><span class="lineno">  150</span> </div>
+<div class="line"><span class="lineno">  151</span>      <span class="keywordtype">float</span>? minX = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  152</span>      <span class="keywordtype">float</span>? maxX = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  153</span>      <span class="keywordtype">float</span>? minY = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  154</span>      <span class="keywordtype">float</span>? maxY = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  155</span> </div>
+<div class="line"><span class="lineno">  156</span>      <span class="keywordflow">if</span> (!String.IsNullOrEmpty(minXPart)) minX = <span class="keywordtype">float</span>.Parse(minXPart);</div>
+<div class="line"><span class="lineno">  157</span>      <span class="keywordflow">if</span> (!String.IsNullOrEmpty(maxXPart)) maxX = <span class="keywordtype">float</span>.Parse(maxXPart);</div>
+<div class="line"><span class="lineno">  158</span>      <span class="keywordflow">if</span> (!String.IsNullOrEmpty(minYPart)) minY = <span class="keywordtype">float</span>.Parse(minYPart);</div>
+<div class="line"><span class="lineno">  159</span>      <span class="keywordflow">if</span> (!String.IsNullOrEmpty(maxYPart)) maxY = <span class="keywordtype">float</span>.Parse(maxYPart);</div>
+<div class="line"><span class="lineno">  160</span> </div>
+<div class="line"><span class="lineno">  161</span>      <span class="keywordflow">return</span> <span class="keyword">new</span> CUIBoundaries(minX, maxX, minY, maxY);</div>
+<div class="line"><span class="lineno">  162</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -393,8 +526,8 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_boundaries_8cs_source.html#l00071">71</a> of file <a class="el" href="_c_u_i_boundaries_8cs_source.html">CUIBoundaries.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   71</span>=&gt; $<span class="stringliteral">&quot;[{MinX},{MaxX},{MinY},{MaxY}]&quot;</span>;</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_boundaries_8cs_source.html#l00136">136</a> of file <a class="el" href="_c_u_i_boundaries_8cs_source.html">CUIBoundaries.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  136</span>=&gt; $<span class="stringliteral">&quot;[{MinX},{MaxX},{MinY},{MaxY}]&quot;</span>;</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -415,8 +548,8 @@ Static Public Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_crab_u_i_1_1_i_parsable.html">CrabUI.IParsable</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_boundaries_8cs_source.html#l00100">100</a> of file <a class="el" href="_c_u_i_boundaries_8cs_source.html">CUIBoundaries.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  100</span>=&gt; ToString();</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_boundaries_8cs_source.html#l00165">165</a> of file <a class="el" href="_c_u_i_boundaries_8cs_source.html">CUIBoundaries.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  165</span>=&gt; ToString();</div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using CUICodeGenerator;
 using CUILibs;
 using Microsoft.Xna.Framework;
 
@@ -8,8 +9,38 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
+    [InitMethod]
+    protected void InitVisualSlots()
+    {
+      BackgroundSlot = new Slot<SimpleTexture>()
+      {
+        OnWireUp = (background) =>
+        {
+          DebugRelays[DebugCategory.RoundedRect].Route(background.Debug_RoundedRect);
+          Events.Route(background);
+          background.FocusProbed.Add(HandleFocusProbe);
+        },
+        OnTearDown = (background) =>
+        {
+          DebugRelays[DebugCategory.RoundedRect].Route(background.Debug_RoundedRect);
+          Events.Route(background);
+          background.FocusProbed.Add(HandleFocusProbe);
+        },
+        Value = new(),
+      };
+    }
+
+
+    protected Slot<SimpleTexture> BackgroundSlot;
+
     [CUISerializableProp]
-    public SimpleTexture Background { get; } = new();
+    public SimpleTexture Background
+    {
+      get => BackgroundSlot.Value;
+      set => BackgroundSlot.Value = value;
+    }
+
+    [CUISerializableProp]
     public Borders Borders { get; } = new();
 
 

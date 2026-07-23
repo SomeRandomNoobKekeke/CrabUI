@@ -121,10 +121,10 @@ public struct CUIBool2 {
 
 ~~~~~~~~~~~~~{cs}
 public struct CUISizes {
-  public float Left;
   public float Top;
   public float Right;
   public float Bottom;
+  public float Left;
 }
 ~~~~~~~~~~~~~
 
@@ -319,6 +319,12 @@ CUIComponent component = new CUIComponent()
 };
 //Same as
 component.MouseDown += (c, e) => CUI.Logger.Log(e.Pos);
+~~~~~~~~~~~~~
+
+You can trigger some events manually: 
+~~~~~~~~~~~~~{cs}
+public void CUIComponent.Click(); // - triggers MouseDown
+public void CUIComponent.PressKey(Keys key); // - Triggers KeyPressed
 ~~~~~~~~~~~~~
 
 Also most events have "this" component as first arg  

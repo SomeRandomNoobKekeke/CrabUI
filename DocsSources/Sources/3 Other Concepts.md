@@ -1,18 +1,19 @@
 # Other Concepts {#OtherConcepts}
 
 ## CUIInfrastructure
+
 Most CUI stuff is located in CUICore  
-CUICore is passive isolated state machine  
-It doesn't know about the game and has to be runned by CUIRunners via handles 
+CUICore is a passive isolated state machine  
+It doesn't know about the game and has to be run by CUIRunners via handles  
 
-There could be various runners, e.g. Solo runner runs code in this mod, Master runner scans other mods, test runner can feed it with fake data and concurent runner can run CUICore in a separate thread
+There could be various runners, e.g. Solo runner runs code in this mod, Master runner scans other mods, test runner can feed it with fake data and concurrent runner can run CUICore in a separate thread
 
-#### Then why are you putting solo runnner in CUI master package?
+#### Then why are you putting solo runner in CUI master package?
 A eto, bleh.gif
 
 Master runner isn't done yet, and there's not much to scan in other packages yet  
 Current SoloRunner just finds all CUIComponents and ISerializable in assembly that called CUI.Start  
-Should work from master package too, but it probably won't be able to load textures with relative paths //TODO
+Should work from master package too
 
 Also data sources are separated from runners
 
@@ -53,6 +54,46 @@ public IDictionary<string, string> As_StringDictionary { get; }
 public IDictionary<string, object> As_Dictionary { get; }
 ~~~~~~~~~~~~~
 
+### path resolution
+When loading textures or xml prefabs CUI is aware of mod that called it and prefab file being loaded
+
+So it checks for textures to load at:
+- Full path
+- Relative path to loaded xml folder
+- Relative path to mod folder
+- Relative path to game folder
+
+Same for loaded xml
+
+For saved xml it tries to save to:
+- Full path
+- Relative path to mod folder
+- Relative path to game folder
+
+### Serialization modes
+There's a prop 
+~~~~~~~~~~~~~{cs}
+public CUISerializationMode CUIComponent.SerializationMode { get; set; }
+~~~~~~~~~~~~~
+it's one of 
+~~~~~~~~~~~~~{cs}
+public enum CUISerializationMode { Replace, Merge, Ignore }
+~~~~~~~~~~~~~
+It affects how child will be deserialized when there is already a child with the same name:
+- Replace - create new child and replace existing
+- Merge - Props will be copied to existing child
+- Ignore - Will keep existing child intact
+
+You can prevent child from being serialized with 
+~~~~~~~~~~~~~{cs}
+public bool CUIComponent.Serializable { get; set; } = true;
+~~~~~~~~~~~~~
+You can override these in derived components:
+~~~~~~~~~~~~~{cs}
+protected virtual void CUIComponent.BeforeSerialization() { } // - Happens before deserialization of children
+protected virtual void CUIComponent.AfterSerialization() { } // - Happens after deserialization of children
+~~~~~~~~~~~~~
+
 ## Component States
 you can save / restore component state with
 
@@ -61,7 +102,7 @@ public void SaveState(string name)
 public void RestoreState(string name)
 ~~~~~~~~~~~~~
 
-there's a dict of MemorizedStates behind the scenes and it uses serialization
+there's a dict of MemorizedStates and it uses serialization behind the scenes
 
 ## Focus (wip, mostly borked)
 In vanilla there's 
@@ -82,6 +123,12 @@ Focused components start recieving keyboard events
 But actually they only request focus   
 it's resolved at the end of update cycle because there might be multiple clicked components at once
 
+You can request focus and blur manually with:
+~~~~~~~~~~~~~{cs}
+public void CUIComponent.Focus();
+public void CUIComponent.Blur();
+~~~~~~~~~~~~~
+
 CUI can steal focus from vanilla KeyboardDispatcher and simulate focus on some dummy IKeyboardSubscriber  
 It's barely tested and i'm sure it's borked  
 Also there's a lot of actions in vanilla that just ignores KeyboardDispatcher.Subscriber, idk how to block those 
@@ -89,28 +136,31 @@ Also there's a lot of actions in vanilla that just ignores KeyboardDispatcher.Su
 ## Sprites / Textures
 CUICore can't load textures on its own, it requests them from CUIRunner  
 
-CUIRunner load them into CUITextureManager, it only loads them once and automatically disposes them later  
+CUIRunner loads them into CUITextureManager, it only loads them once and automatically disposes them later  
 All textures have a name, typically a path but you can specify the name you like  
 Then you can get them by that name  
 
 ~~~~~~~~~~~~~{cs}
-public partial class CUICore {
-  public static CUITextureManager TextureManager { get; }
-}
+public static CUITextureManager CUI.TextureManager { get; }
 ~~~~~~~~~~~~~
 ~~~~~~~~~~~~~{cs}
 public interface CUITextureManager
 {
-  Dictionary<string, CUITexture2D> LoadedTextures { get; }
   CUITexture2D Add(CUITexture2D texture, string key);
   void Clear();
   void Dispose();
   void Forget(string key);
-  CUITexture2D Get(string key);
   bool Has(string key);
-  CUITexture2D Load(string path, string name);
+  CUITexture2D Get(string key); // - this also loads the texture if it's not loaded yet
+  public CUITexture2D Reload(string key);
+  public CUITexture2D LoadAs(string path, string key);
 }
 ~~~~~~~~~~~~~
+When loading textures you can use:
+- Absolute path
+- Relative path to loaded xml folder (when texture path is inside xml prefab)
+- Relative path to mod folder
+- Relative path to game folder
 
 CUI doesn't use use monogame types directly, CUIRunner wraps them in abstractions, they are mostly similar  
 ~~~~~~~~~~~~~
@@ -128,7 +178,8 @@ public record CUISprite(CUITexture2D texture)
   public static CUISprite White => new CUISprite(CUITexture2D.White);
   public static CUISprite BaroDev => new CUISprite(CUICore.TextureManager.Get("BaroDev"));
 
-  public static CUISprite Load(string path, string key = null);
+  public static CUISprite Get(string key);
+  public static CUISprite LoadAs(string path, string key);
 
   public CUITexture2D Texture { get; set; }
   public Rectangle? SourceRectangle { get; set; } = null;

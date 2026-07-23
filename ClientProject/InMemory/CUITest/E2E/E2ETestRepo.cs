@@ -21,7 +21,7 @@ namespace CrabUIUser
 
     private void Add(Type T)
     {
-      Tests[T.GetFullTypeName()] = T;
+      Tests[T.GetFullName()] = T;
     }
     public void AddPack(Type testPack)
     {

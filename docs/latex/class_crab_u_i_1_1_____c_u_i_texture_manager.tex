@@ -6,16 +6,23 @@ Inheritance diagram for Crab\+UI.\+\_\+\+\_\+\+CUITexture\+Manager:\+\begin{figu
 \includegraphics[height=2.000000cm]{class_crab_u_i_1_1_____c_u_i_texture_manager}
 \end{center}
 \end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_texture_manager_1_1_context___part}{Context\+\_\+\+Part}}
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture2_d}{CUITexture2D}} \doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_texture_manager_a6e35fad91ce9d4452b435b5c25253f77}{Add}} (\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture2_d}{CUITexture2D}} texture, string key)
 \item 
-\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture2_d}{CUITexture2D}} \doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_texture_manager_a1b9b5855307a6cf465a3e99a9e6b39d4}{Load}} (string path, string key=null)
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_texture_manager_a5bab21e8ffe7ae363ff0f2a5e7eda060}{Has}} (string key)
 \item 
 \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture2_d}{CUITexture2D}} \doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_texture_manager_aac223a5aa4497af4b2cb2e7abd7fbc9a}{Get}} (string key)
 \item 
-bool \doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_texture_manager_a5bab21e8ffe7ae363ff0f2a5e7eda060}{Has}} (string key)
+\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture2_d}{CUITexture2D}} \doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_texture_manager_aba41642962f9dd7cb6912070b250756e}{Reload}} (string key)
+\item 
+\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture2_d}{CUITexture2D}} \doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_texture_manager_a756014174e719b5ce6e3494fdec2a2d6}{Load\+As}} (string path, string key)
 \item 
 void \doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_texture_manager_a35b49b7f8dfad03485cce93c824c9894}{Forget}} (string key)
 \item 
@@ -25,6 +32,8 @@ void \doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_texture_manager_af4f1dea0
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Properties}
 \begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_texture_manager_1_1_context___part}{Context\+\_\+\+Part}} \doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_texture_manager_abfffbfbd191a78d1db6366b5bf4fadc0}{Context}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \item 
 \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture2_d}{CUITexture2D}} \doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_texture_manager_ac8987db2120b2a7520cdfafe639ad406}{Backup\+Texture}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \item 
@@ -54,17 +63,19 @@ Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture_manager}{Cr
 
 
 
-Definition at line \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source_l00020}{20}} of file \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source}{\+\_\+\+\_\+\+CUITexture\+Manager.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source_l00027}{27}} of file \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source}{\+\_\+\+\_\+\+CUITexture\+Manager.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00021\ \ \ \ \ \{}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (LoadedTextures.ContainsKey(key))}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ LoadedTextures[key].Dispose();}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ LoadedTextures[key]\ =\ texture;}
-\DoxyCodeLine{00027\ \ \ \ \ \}}
+\DoxyCodeLine{00028\ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (LoadedTextures.ContainsKey(key))}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ LoadedTextures[key].Dispose();}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ texture.Key\ =\ key;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ LoadedTextures[key]\ =\ texture;}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_____c_u_i_texture_manager_a65e97021be226a9a42f401b060bc403d}\index{CrabUI.\_\_CUITextureManager@{CrabUI.\_\_CUITextureManager}!Clear@{Clear}}
@@ -79,17 +90,17 @@ Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture_manager}{Cr
 
 
 
-Definition at line \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source_l00061}{61}} of file \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source}{\+\_\+\+\_\+\+CUITexture\+Manager.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source_l00117}{117}} of file \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source}{\+\_\+\+\_\+\+CUITexture\+Manager.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00062\ \ \ \ \ \{}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (CUITexture2D\ texture\ \textcolor{keywordflow}{in}\ LoadedTextures.Values)}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ texture.Dispose();}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ LoadedTextures.Clear();}
-\DoxyCodeLine{00068\ \ \ \ \ \}}
+\DoxyCodeLine{00118\ \ \ \ \ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (CUITexture2D\ texture\ \textcolor{keywordflow}{in}\ LoadedTextures.Values)}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ texture.Dispose();}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ LoadedTextures.Clear();}
+\DoxyCodeLine{00124\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_____c_u_i_texture_manager_af4f1dea051f0d26d36c894f03d636b3d}\index{CrabUI.\_\_CUITextureManager@{CrabUI.\_\_CUITextureManager}!Dispose@{Dispose}}
@@ -104,11 +115,11 @@ Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture_manager}{Cr
 
 
 
-Definition at line \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source_l00070}{70}} of file \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source}{\+\_\+\+\_\+\+CUITexture\+Manager.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source_l00126}{126}} of file \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source}{\+\_\+\+\_\+\+CUITexture\+Manager.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00070\ =>\ Clear();}
+\DoxyCodeLine{00126\ =>\ Clear();}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_____c_u_i_texture_manager_a35b49b7f8dfad03485cce93c824c9894}\index{CrabUI.\_\_CUITextureManager@{CrabUI.\_\_CUITextureManager}!Forget@{Forget}}
@@ -123,14 +134,14 @@ Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture_manager}{Cr
 
 
 
-Definition at line \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source_l00055}{55}} of file \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source}{\+\_\+\+\_\+\+CUITexture\+Manager.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source_l00111}{111}} of file \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source}{\+\_\+\+\_\+\+CUITexture\+Manager.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00056\ \ \ \ \ \{}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ LoadedTextures[key].Dispose();}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ LoadedTextures.Remove(key);}
-\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00112\ \ \ \ \ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ LoadedTextures[key].Dispose();}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ LoadedTextures.Remove(key);}
+\DoxyCodeLine{00115\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_____c_u_i_texture_manager_aac223a5aa4497af4b2cb2e7abd7fbc9a}\index{CrabUI.\_\_CUITextureManager@{CrabUI.\_\_CUITextureManager}!Get@{Get}}
@@ -145,14 +156,15 @@ Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture_manager}{Cr
 
 
 
-Definition at line \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source_l00047}{47}} of file \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source}{\+\_\+\+\_\+\+CUITexture\+Manager.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source_l00043}{43}} of file \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source}{\+\_\+\+\_\+\+CUITexture\+Manager.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00048\ \ \ \ \ \{}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (LoadedTextures.ContainsKey(key))\ \textcolor{keywordflow}{return}\ LoadedTextures[key];}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ BackupTexture;}
-\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (LoadedTextures.ContainsKey(key))\ \textcolor{keywordflow}{return}\ LoadedTextures[key];}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (IsTexturePath(key))\ \textcolor{keywordflow}{return}\ LoadAs(key,\ key);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ BackupTexture;}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_____c_u_i_texture_manager_a5bab21e8ffe7ae363ff0f2a5e7eda060}\index{CrabUI.\_\_CUITextureManager@{CrabUI.\_\_CUITextureManager}!Has@{Has}}
@@ -167,18 +179,18 @@ Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture_manager}{Cr
 
 
 
-Definition at line \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source_l00053}{53}} of file \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source}{\+\_\+\+\_\+\+CUITexture\+Manager.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source_l00039}{39}} of file \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source}{\+\_\+\+\_\+\+CUITexture\+Manager.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00053\ =>\ LoadedTextures.ContainsKey(key);}
+\DoxyCodeLine{00039\ =>\ LoadedTextures.ContainsKey(key);}
 
 \end{DoxyCode}
-\Hypertarget{class_crab_u_i_1_1_____c_u_i_texture_manager_a1b9b5855307a6cf465a3e99a9e6b39d4}\index{CrabUI.\_\_CUITextureManager@{CrabUI.\_\_CUITextureManager}!Load@{Load}}
-\index{Load@{Load}!CrabUI.\_\_CUITextureManager@{CrabUI.\_\_CUITextureManager}}
-\doxysubsubsection{\texorpdfstring{Load()}{Load()}}
-{\footnotesize\ttfamily \label{class_crab_u_i_1_1_____c_u_i_texture_manager_a1b9b5855307a6cf465a3e99a9e6b39d4} 
-\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture2_d}{CUITexture2D}} Crab\+UI.\+\_\+\+\_\+\+CUITexture\+Manager.\+Load (\begin{DoxyParamCaption}\item[{string}]{path}{, }\item[{string}]{key}{ = {\ttfamily null}}\end{DoxyParamCaption})}
+\Hypertarget{class_crab_u_i_1_1_____c_u_i_texture_manager_a756014174e719b5ce6e3494fdec2a2d6}\index{CrabUI.\_\_CUITextureManager@{CrabUI.\_\_CUITextureManager}!LoadAs@{LoadAs}}
+\index{LoadAs@{LoadAs}!CrabUI.\_\_CUITextureManager@{CrabUI.\_\_CUITextureManager}}
+\doxysubsubsection{\texorpdfstring{LoadAs()}{LoadAs()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_____c_u_i_texture_manager_a756014174e719b5ce6e3494fdec2a2d6} 
+\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture2_d}{CUITexture2D}} Crab\+UI.\+\_\+\+\_\+\+CUITexture\+Manager.\+Load\+As (\begin{DoxyParamCaption}\item[{string}]{path}{, }\item[{string}]{key}{}\end{DoxyParamCaption})}
 
 
 
@@ -186,26 +198,45 @@ Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture_manager}{Cr
 
 
 
-Definition at line \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source_l00029}{29}} of file \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source}{\+\_\+\+\_\+\+CUITexture\+Manager.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source_l00056}{56}} of file \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source}{\+\_\+\+\_\+\+CUITexture\+Manager.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00030\ \ \ \ \ \{}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!File.Exists(path))\ \textcolor{keywordflow}{return}\ BackupTexture;}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ key\ ??=\ path;}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (LoadedTextures.ContainsKey(key))}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ LoadedTextures[key];}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \textcolor{keyword}{using}\ (FileStream\ fs\ =\ File.OpenRead(path))}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ LoadedTextures[key]\ =\ \textcolor{keyword}{new}\ \_\_CUITexture2D(}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ Texture2D.FromStream(GameMain.Instance.GraphicsDevice,\ fs)}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ );}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ CUITexture2D\ texture\ =\ \_LoadFrom(path);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \textcolor{comment}{//\ CUI.Logger.LogVars(key,\ Context.PackageDir,\ Context.FileDir);}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (texture\ is\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ CUI.Logger.Warning(\$\textcolor{stringliteral}{"{}Failed\ to\ load\ CUITexture\ from\ [\{path\}]"{}});}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ BackupTexture;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Add(texture,\ key);}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_____c_u_i_texture_manager_aba41642962f9dd7cb6912070b250756e}\index{CrabUI.\_\_CUITextureManager@{CrabUI.\_\_CUITextureManager}!Reload@{Reload}}
+\index{Reload@{Reload}!CrabUI.\_\_CUITextureManager@{CrabUI.\_\_CUITextureManager}}
+\doxysubsubsection{\texorpdfstring{Reload()}{Reload()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_____c_u_i_texture_manager_aba41642962f9dd7cb6912070b250756e} 
+\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture2_d}{CUITexture2D}} Crab\+UI.\+\_\+\+\_\+\+CUITexture\+Manager.\+Reload (\begin{DoxyParamCaption}\item[{string}]{key}{}\end{DoxyParamCaption})}
+
+
+
+Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture_manager}{Crab\+UI.\+CUITexture\+Manager}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source_l00050}{50}} of file \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source}{\+\_\+\+\_\+\+CUITexture\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Has(key))\ Forget(key);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ LoadAs(key,\ key);}
+\DoxyCodeLine{00054\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -221,8 +252,23 @@ Definition at line \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source_l0
 
 
 
-Definition at line \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source}{\+\_\+\+\_\+\+CUITexture\+Manager.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source_l00024}{24}} of file \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source}{\+\_\+\+\_\+\+CUITexture\+Manager.\+cs}}.
 
+\Hypertarget{class_crab_u_i_1_1_____c_u_i_texture_manager_abfffbfbd191a78d1db6366b5bf4fadc0}\index{CrabUI.\_\_CUITextureManager@{CrabUI.\_\_CUITextureManager}!Context@{Context}}
+\index{Context@{Context}!CrabUI.\_\_CUITextureManager@{CrabUI.\_\_CUITextureManager}}
+\doxysubsubsection{\texorpdfstring{Context}{Context}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_____c_u_i_texture_manager_abfffbfbd191a78d1db6366b5bf4fadc0} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_texture_manager_1_1_context___part}{Context\+\_\+\+Part}} Crab\+UI.\+\_\+\+\_\+\+CUITexture\+Manager.\+Context = new()\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source_l00022}{22}} of file \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source}{\+\_\+\+\_\+\+CUITexture\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+
+\end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_____c_u_i_texture_manager_ae7eb8234110e3c99c1461fb5a646ba26}\index{CrabUI.\_\_CUITextureManager@{CrabUI.\_\_CUITextureManager}!LoadedTextures@{LoadedTextures}}
 \index{LoadedTextures@{LoadedTextures}!CrabUI.\_\_CUITextureManager@{CrabUI.\_\_CUITextureManager}}
 \doxysubsubsection{\texorpdfstring{LoadedTextures}{LoadedTextures}}
@@ -231,15 +277,11 @@ Dictionary$<$string, \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture2_
 
 
 
-Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture_manager}{Crab\+UI.\+CUITexture\+Manager}}.
-
-
-
-Definition at line \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source}{\+\_\+\+\_\+\+CUITexture\+Manager.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source_l00025}{25}} of file \doxymbox{\hyperlink{_____c_u_i_texture_manager_8cs_source}{\+\_\+\+\_\+\+CUITexture\+Manager.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00018\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{00025\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
 
 \end{DoxyCode}
 

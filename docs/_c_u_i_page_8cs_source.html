@@ -108,14 +108,15 @@ $(function(){initNavTree('_c_u_i_page_8cs_source.html','',''); });
 <div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_crab_u_i_1_1_c_u_i_page.html">   14</a></span>  <span class="keyword">public</span> <span class="keyword">partial class </span><a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_page.html">CUIPage</a> : CUIComponent, <a class="code hl_interface" href="interface_c_u_i_code_generator_1_1_i_component.html">IComponent</a></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">public</span> <a class="code hl_class" href="class_c_u_i_libs_1_1_clearable_event.html">ClearableEvent</a> OnOpen { <span class="keyword">get</span>; } = <span class="keyword">new</span>();</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">public</span> Action AddOnOpen { <span class="keyword">set</span> { OnOpen.Add(value); } }</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">public</span> <a class="code hl_class" href="class_c_u_i_libs_1_1_clearable_event.html">ClearableEvent</a> OnClose { <span class="keyword">get</span>; } = <span class="keyword">new</span>();</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">public</span> Action AddOnClose { <span class="keyword">set</span> { OnClose.Add(value); } }</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  }</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="comment">//TODO i&#39;m using ClearableEvent to be able to raise them from CUIPages, todo find another way to rise them</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">public</span> <a class="code hl_class" href="class_c_u_i_libs_1_1_clearable_event.html">ClearableEvent</a> OnOpen { <span class="keyword">get</span>; } = <span class="keyword">new</span>();</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">public</span> Action AddOnOpen { <span class="keyword">set</span> { OnOpen.Add(value); } }</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">public</span> <a class="code hl_class" href="class_c_u_i_libs_1_1_clearable_event.html">ClearableEvent</a> OnClose { <span class="keyword">get</span>; } = <span class="keyword">new</span>();</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">public</span> Action AddOnClose { <span class="keyword">set</span> { OnClose.Add(value); } }</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  }</div>
 </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
 <div class="ttc" id="aclass_c_u_i_libs_1_1_clearable_event_html"><div class="ttname"><a href="class_c_u_i_libs_1_1_clearable_event.html">CUILibs.ClearableEvent</a></div><div class="ttdef"><b>Definition</b> <a href="_clearable_event_8cs_source.html#l00009">ClearableEvent.cs:10</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_page_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_page.html">CrabUI.CUIPage</a></div><div class="ttdef"><b>Definition</b> <a href="#l00014">CUIPage.cs:15</a></div></div>
 <div class="ttc" id="ainterface_c_u_i_code_generator_1_1_i_component_html"><div class="ttname"><a href="interface_c_u_i_code_generator_1_1_i_component.html">CUICodeGenerator.IComponent</a></div><div class="ttdef"><b>Definition</b> <a href="_interfaces_8cs_source.html#l00011">Interfaces.cs:12</a></div></div>

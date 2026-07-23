@@ -41,7 +41,7 @@ namespace CrabUIUser
           Borders = {
             Visible = true,
             Color = new Color(0,255,255,128),
-            Sizes = new CUISizes(0,4,8,12),
+            Sizes = new CUISizes(4,8,12,0),
           },
           Margin = new CUISizes(5, 5, 5, 5),
         };

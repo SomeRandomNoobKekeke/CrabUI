@@ -20,90 +20,101 @@
 \DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00016}00016\ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_logger}{ILogger}}\ Logger\ =>\ CUI.Logger;}
 \DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00018}00018\ }
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ SnaphotsFolder\ =>\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_c_u_i_test}{CUITest}}.SnaphotsFolder;}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00020}00020\ }
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot}{ComponentSnapshot}}\ CurrentSnapshot\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{public}\ SnapshotTest\ CurrentTest\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00023}00023\ }
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00024}00024\ }
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00025}00025\ }
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{public}\ SnapshotTestManager()}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00027}00027\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00028}00028\ \ \ \ \ \ \ ConsoleInteface\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_test_manager_1_1_console_inteface_class}{ConsoleIntefaceClass}}(\textcolor{keyword}{this});}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00029}00029\ \ \ \ \ \ \ Runner.Chamber\ =\ Chamber;}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00030}00030\ \ \ \ \ \ \ UI\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_page}{SnapshotPage}}(\textcolor{keyword}{this});}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00031}00031\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00032}00032\ }
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_test_chamber}{SnapshotTestChamber}}\ Chamber\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_test_repo}{SnapshotTestRepo}}\ Repo\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_test_runner}{SnapshotTestRunner}}\ Runner\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00036}00036\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_page}{SnapshotPage}}\ UI\ \{\ \textcolor{keyword}{get};\ \}}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_test_manager_1_1_console_inteface_class}{ConsoleIntefaceClass}}\ ConsoleInteface\ \{\ \textcolor{keyword}{get};\ \}}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00038}00038\ }
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00039}00039\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{ClearableEvent<Event>}}\ Events\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00040}00040\ }
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00041}00041\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ RunAll()}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00042}00042\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00043}00043\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keywordtype}{string}\ name\ \textcolor{keywordflow}{in}\ Repo.Tests.Keys)}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00044}00044\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ Run(name);}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00046}00046\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00047}00047\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Run(\textcolor{keywordtype}{string}\ name)}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00049}00049\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00050}00050\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Repo.Tests.ContainsKey(name))}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00051}00051\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ Logger.Warning(\$\textcolor{stringliteral}{"{}Can't\ find\ snapshot\ test:\ [\{name\}]"{}});}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00054}00054\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00055}00055\ }
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00056}00056\ \ \ \ \ \ \ ModStorage.Set(\textcolor{stringliteral}{"{}CUITest"{}},\ name);}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00057}00057\ }
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00058}00058\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Chamber.IsSetup)\ Chamber.Setup();}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00059}00059\ }
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00060}00060\ \ \ \ \ \ \ CurrentTest\ =\ Repo.Tests[name];}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00061}00061\ \ \ \ \ \ \ CurrentSnapshot\ =\ Runner.Run(CurrentTest);}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00062}00062\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot}{ComponentSnapshot}}\ stored\ =\ GetStoredSnapshot(CurrentTest);}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00063}00063\ }
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00064}00064\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (stored\ is\ \textcolor{keyword}{null})}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00065}00065\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ Accept(CurrentTest,\ CurrentSnapshot);}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ Events.Raise(\textcolor{keyword}{new}\ Event(\textcolor{stringliteral}{"{}passed"{}},\ CurrentTest));}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00069}00069\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ SerializeTestSubject}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00020}00020\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00021}00021\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Runner.SerializeTestSubject;}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00022}00022\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ Runner.SerializeTestSubject\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00023}00023\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00024}00024\ \ \ \ \ \textcolor{comment}{//\ public\ bool\ PrintTestSubject}}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00025}00025\ \ \ \ \ \textcolor{comment}{//\ \{}}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00026}00026\ \ \ \ \ \textcolor{comment}{//\ \ \ get\ =>\ Runner.PrintTestSubject;}}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00027}00027\ \ \ \ \ \textcolor{comment}{//\ \ \ set\ =>\ Runner.PrintTestSubject\ =\ value;}}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00028}00028\ \ \ \ \ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ SnaphotsFolder\ =>\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_c_u_i_test}{CUITest}}.SnaphotsFolder;}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot}{ComponentSnapshot}}\ CurrentSnapshot\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{public}\ SnapshotTest\ CurrentTest\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{public}\ SnapshotTestManager()}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00038}00038\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00039}00039\ \ \ \ \ \ \ ConsoleInteface\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_test_manager_1_1_console_inteface_class}{ConsoleIntefaceClass}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00040}00040\ \ \ \ \ \ \ Runner.Chamber\ =\ Chamber;}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00041}00041\ \ \ \ \ \ \ UI\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_page}{SnapshotPage}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00042}00042\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00044}00044\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_test_chamber}{SnapshotTestChamber}}\ Chamber\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00045}00045\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_test_repo}{SnapshotTestRepo}}\ Repo\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_test_runner}{SnapshotTestRunner}}\ Runner\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00047}00047\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_page}{SnapshotPage}}\ UI\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_test_manager_1_1_console_inteface_class}{ConsoleIntefaceClass}}\ ConsoleInteface\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00050}00050\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{ClearableEvent<Event>}}\ Events\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00052}00052\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ RunAll()}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00053}00053\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00054}00054\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (\textcolor{keywordtype}{string}\ name\ \textcolor{keywordflow}{in}\ Repo.Tests.Keys)}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00055}00055\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ Run(name);}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00057}00057\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00059}00059\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Run(\textcolor{keywordtype}{string}\ name)}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00060}00060\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00061}00061\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Repo.Tests.ContainsKey(name))}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00062}00062\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ Logger.Warning(\$\textcolor{stringliteral}{"{}Can't\ find\ snapshot\ test:\ [\{name\}]"{}});}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00065}00065\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00067}00067\ \ \ \ \ \ \ ModStorage.Set(\textcolor{stringliteral}{"{}CUITest"{}},\ name);}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00069}00069\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Chamber.IsSetup)\ Chamber.Setup();}
 \DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00070}00070\ }
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00071}00071\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot}{ComponentSnapshot}}.AreEqual(stored,\ CurrentSnapshot))}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00072}00072\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ Events.Raise(\textcolor{keyword}{new}\ Event(\textcolor{stringliteral}{"{}passed"{}},\ CurrentTest));}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00074}00074\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00075}00075\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00071}00071\ \ \ \ \ \ \ CurrentTest\ =\ Repo.Tests[name];}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00072}00072\ \ \ \ \ \ \ CurrentSnapshot\ =\ Runner.Run(CurrentTest);}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00073}00073\ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot}{ComponentSnapshot}}\ stored\ =\ GetStoredSnapshot(CurrentTest);}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00075}00075\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (stored\ is\ \textcolor{keyword}{null})}
 \DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00076}00076\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ Events.Raise(\textcolor{keyword}{new}\ Event(\textcolor{stringliteral}{"{}failed"{}},\ CurrentTest,\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot}{ComponentSnapshot}}.CreateDiffString(CurrentSnapshot,\ stored)));}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00078}00078\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00079}00079\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00080}00080\ }
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00081}00081\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Setup()\ =>\ Chamber.Setup();}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00082}00082\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Dismantle()\ =>\ Chamber.Dismantle();}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00083}00083\ }
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00084}00084\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ AcceptCurrent()}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00085}00085\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00086}00086\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (CurrentTest\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00087}00087\ \ \ \ \ \ \ Accept(CurrentTest,\ CurrentSnapshot);}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00088}00088\ \ \ \ \ \ \ Events.Raise(\textcolor{keyword}{new}\ Event(\textcolor{stringliteral}{"{}passed"{}},\ CurrentTest));}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00089}00089\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00090}00090\ }
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00091}00091\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Accept(SnapshotTest\ test,\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot}{ComponentSnapshot}}\ snapshot)}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00092}00092\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00093}00093\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ savePath\ =\ Path.Combine(SnaphotsFolder,\ \$\textcolor{stringliteral}{"{}\{test.Name\}.xml"{}});}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00094}00094\ \ \ \ \ \ \ snapshot.Save(savePath);}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00095}00095\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00096}00096\ }
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00097}00097\ \ \ \ \ \textcolor{keyword}{private}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot}{ComponentSnapshot}}\ GetStoredSnapshot(SnapshotTest\ test)}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00098}00098\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00099}00099\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ savePath\ =\ Path.Combine(SnaphotsFolder,\ \$\textcolor{stringliteral}{"{}\{test.Name\}.xml"{}});}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00100}00100\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot}{ComponentSnapshot}}.LoadSnapshot(savePath);}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00101}00101\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00102}00102\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00103}00103\ \}}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ Accept(CurrentTest,\ CurrentSnapshot);}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ Events.Raise(\textcolor{keyword}{new}\ Event(\textcolor{stringliteral}{"{}passed"{}},\ CurrentTest));}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00080}00080\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00082}00082\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot}{ComponentSnapshot}}.AreEqual(stored,\ CurrentSnapshot))}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00083}00083\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ Events.Raise(\textcolor{keyword}{new}\ Event(\textcolor{stringliteral}{"{}passed"{}},\ CurrentTest));}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00085}00085\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00086}00086\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00087}00087\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ Events.Raise(\textcolor{keyword}{new}\ Event(\textcolor{stringliteral}{"{}failed"{}},\ CurrentTest,\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot}{ComponentSnapshot}}.CreateDiffString(CurrentSnapshot,\ stored)));}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00089}00089\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00090}00090\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00092}00092\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Setup()\ =>\ Chamber.Setup();}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00093}00093\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Dismantle()\ =>\ Chamber.Dismantle();}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00095}00095\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ AcceptCurrent()}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00096}00096\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00097}00097\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (CurrentTest\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00098}00098\ \ \ \ \ \ \ Accept(CurrentTest,\ CurrentSnapshot);}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00099}00099\ \ \ \ \ \ \ Events.Raise(\textcolor{keyword}{new}\ Event(\textcolor{stringliteral}{"{}passed"{}},\ CurrentTest));}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00100}00100\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00102}00102\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Accept(SnapshotTest\ test,\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot}{ComponentSnapshot}}\ snapshot)}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00103}00103\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00104}00104\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ savePath\ =\ Path.Combine(SnaphotsFolder,\ \$\textcolor{stringliteral}{"{}\{test.Name\}.xml"{}});}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00105}00105\ \ \ \ \ \ \ snapshot.Save(savePath);}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00106}00106\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00108}00108\ \ \ \ \ \textcolor{keyword}{private}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot}{ComponentSnapshot}}\ GetStoredSnapshot(SnapshotTest\ test)}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00109}00109\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00110}00110\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ savePath\ =\ Path.Combine(SnaphotsFolder,\ \$\textcolor{stringliteral}{"{}\{test.Name\}.xml"{}});}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00111}00111\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \doxymbox{\hyperlink{class_crab_u_i_user_1_1_component_snapshot}{ComponentSnapshot}}.LoadSnapshot(savePath);}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00112}00112\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00113}00113\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_snapshot_test_manager_8cs_source_l00114}00114\ \}}
 
 \end{DoxyCode}

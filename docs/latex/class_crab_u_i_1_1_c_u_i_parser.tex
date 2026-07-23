@@ -14,9 +14,13 @@ object \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_parser_ac06816051222ab5b84e
 \item 
 static bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_parser_a0b15151a45384bf7e7a9129526a18dde}{Is\+Nullable}} (Type type)
 \item 
+static int \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_parser_aabab94510138d967cc7cf83b38940904}{Tupple2\+Int\+Int}} (string raw)
+\item 
 static Color \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_parser_aa7b907e4af97aa156777cda4aea69c63}{Parse\+Color}} (string raw)
 \item 
 static Vector2 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_parser_a87d638fa61c929f8d4561ae59e5a8222}{Parse\+Vector2}} (string raw)
+\item 
+static string \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_parser_af64734869bb8bec6ef0157ea2e1e3f26}{Tupple2\+Int\+Int\+To\+String}} ((int, int) tupple)
 \item 
 static string \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_parser_aa48dd3a7a6e701e6c5254e502161b28a}{Color\+To\+String}} (Color cl)
 \item 
@@ -26,6 +30,8 @@ static string \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_parser_a950de9df033c
 \begin{DoxyCompactItemize}
 \item 
 static string \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_parser_abe3f9fe8bfafee890a1e40941d12e881}{Null\+Term}} = "{}\{\{null\}\}"{}
+\item 
+static \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_parser_abb1b120f119c5da02dbc623cf2bd338d}{int}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Properties}
 \begin{DoxyCompactItemize}
@@ -54,11 +60,11 @@ string Crab\+UI.\+CUIParser.\+Color\+To\+String (\begin{DoxyParamCaption}\item[{
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_parser_8_extra_serialize_8cs_source_l00023}{23}} of file \doxymbox{\hyperlink{_c_u_i_parser_8_extra_serialize_8cs_source}{CUIParser.\+Extra\+Serialize.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_parser_8_extra_serialize_8cs_source_l00026}{26}} of file \doxymbox{\hyperlink{_c_u_i_parser_8_extra_serialize_8cs_source}{CUIParser.\+Extra\+Serialize.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00023\ =>\ \$\textcolor{stringliteral}{"{}\{cl.R\},\{cl.G\},\{cl.B\},\{cl.A\}"{}};}
+\DoxyCodeLine{00026\ =>\ \$\textcolor{stringliteral}{"{}\{cl.R\},\{cl.G\},\{cl.B\},\{cl.A\}"{}};}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_parser_a0b15151a45384bf7e7a9129526a18dde}\index{CrabUI.CUIParser@{CrabUI.CUIParser}!IsNullable@{IsNullable}}
@@ -133,11 +139,11 @@ Color Crab\+UI.\+CUIParser.\+Parse\+Color (\begin{DoxyParamCaption}\item[{string
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_parser_8_extra_parse_8cs_source_l00023}{23}} of file \doxymbox{\hyperlink{_c_u_i_parser_8_extra_parse_8cs_source}{CUIParser.\+Extra\+Parse.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_parser_8_extra_parse_8cs_source_l00041}{41}} of file \doxymbox{\hyperlink{_c_u_i_parser_8_extra_parse_8cs_source}{CUIParser.\+Extra\+Parse.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00023\ =>\ XMLExtensions.ParseColor(raw);}
+\DoxyCodeLine{00041\ =>\ XMLExtensions.ParseColor(raw);}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_parser_a87d638fa61c929f8d4561ae59e5a8222}\index{CrabUI.CUIParser@{CrabUI.CUIParser}!ParseVector2@{ParseVector2}}
@@ -148,25 +154,25 @@ Vector2 Crab\+UI.\+CUIParser.\+Parse\+Vector2 (\begin{DoxyParamCaption}\item[{st
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_parser_8_extra_parse_8cs_source_l00024}{24}} of file \doxymbox{\hyperlink{_c_u_i_parser_8_extra_parse_8cs_source}{CUIParser.\+Extra\+Parse.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_parser_8_extra_parse_8cs_source_l00042}{42}} of file \doxymbox{\hyperlink{_c_u_i_parser_8_extra_parse_8cs_source}{CUIParser.\+Extra\+Parse.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00025\ \ \ \ \ \{}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (raw\ ==\ \textcolor{keyword}{null}\ ||\ raw\ ==\ \textcolor{stringliteral}{"{}"{}})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Vector2(0,\ 0);}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ content\ =\ raw.Split(\textcolor{charliteral}{'['},\ \textcolor{charliteral}{']'})[1];}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \ \ \ \ \ \ List<string>\ coords\ =\ content.Split(\textcolor{charliteral}{','}).Select(s\ =>\ s.Trim()).ToList();}
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x\ =\ 0;}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ y\ =\ 0;}
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{keywordtype}{float}.TryParse(coords.ElementAtOrDefault(0),\ out\ x);}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \textcolor{keywordtype}{float}.TryParse(coords.ElementAtOrDefault(1),\ out\ y);}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Vector2(x,\ y);}
-\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (raw\ ==\ \textcolor{keyword}{null}\ ||\ raw\ ==\ \textcolor{stringliteral}{"{}"{}})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Vector2(0,\ 0);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ content\ =\ raw.Split(\textcolor{charliteral}{'['},\ \textcolor{charliteral}{']'})[1];}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ List<string>\ coords\ =\ content.Split(\textcolor{charliteral}{','}).Select(s\ =>\ s.Trim()).ToList();}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x\ =\ 0;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ y\ =\ 0;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \textcolor{keywordtype}{float}.TryParse(coords.ElementAtOrDefault(0),\ out\ x);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \textcolor{keywordtype}{float}.TryParse(coords.ElementAtOrDefault(1),\ out\ y);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Vector2(x,\ y);}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_parser_a228866931585367e5c6a3fdcca89bd61}\index{CrabUI.CUIParser@{CrabUI.CUIParser}!Serialize@{Serialize}}
@@ -197,6 +203,50 @@ Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_serializ
 \DoxyCodeLine{00034\ \ \ \ \ \}}
 
 \end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_parser_aabab94510138d967cc7cf83b38940904}\index{CrabUI.CUIParser@{CrabUI.CUIParser}!Tupple2IntInt@{Tupple2IntInt}}
+\index{Tupple2IntInt@{Tupple2IntInt}!CrabUI.CUIParser@{CrabUI.CUIParser}}
+\doxysubsubsection{\texorpdfstring{Tupple2IntInt()}{Tupple2IntInt()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_parser_aabab94510138d967cc7cf83b38940904} 
+int Crab\+UI.\+CUIParser.\+Tupple2\+Int\+Int (\begin{DoxyParamCaption}\item[{string}]{raw}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_parser_8_extra_parse_8cs_source_l00024}{24}} of file \doxymbox{\hyperlink{_c_u_i_parser_8_extra_parse_8cs_source}{CUIParser.\+Extra\+Parse.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (raw\ ==\ \textcolor{keyword}{null}\ ||\ raw\ ==\ \textcolor{stringliteral}{"{}"{}})\ \textcolor{keywordflow}{return}\ (0,\ 0);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ content\ =\ raw.Split(\textcolor{charliteral}{'['},\ \textcolor{charliteral}{']'})[1];}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ List<string>\ coords\ =\ content.Split(\textcolor{charliteral}{','}).Select(s\ =>\ s.Trim()).ToList();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ x\ =\ 0;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ y\ =\ 0;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{keywordtype}{int}.TryParse(coords.ElementAtOrDefault(0),\ out\ x);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \textcolor{keywordtype}{int}.TryParse(coords.ElementAtOrDefault(1),\ out\ y);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (x,\ y);}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_parser_af64734869bb8bec6ef0157ea2e1e3f26}\index{CrabUI.CUIParser@{CrabUI.CUIParser}!Tupple2IntIntToString@{Tupple2IntIntToString}}
+\index{Tupple2IntIntToString@{Tupple2IntIntToString}!CrabUI.CUIParser@{CrabUI.CUIParser}}
+\doxysubsubsection{\texorpdfstring{Tupple2IntIntToString()}{Tupple2IntIntToString()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_parser_af64734869bb8bec6ef0157ea2e1e3f26} 
+string Crab\+UI.\+CUIParser.\+Tupple2\+Int\+Int\+To\+String (\begin{DoxyParamCaption}\item[{(int, int)}]{tupple}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_parser_8_extra_serialize_8cs_source_l00025}{25}} of file \doxymbox{\hyperlink{_c_u_i_parser_8_extra_serialize_8cs_source}{CUIParser.\+Extra\+Serialize.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ =>\ \$\textcolor{stringliteral}{"{}[\{tupple.Item1\},\{tupple.Item2\}]"{}};}
+
+\end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_parser_a950de9df033c5e7d280cd722a0f82884}\index{CrabUI.CUIParser@{CrabUI.CUIParser}!Vector2ToString@{Vector2ToString}}
 \index{Vector2ToString@{Vector2ToString}!CrabUI.CUIParser@{CrabUI.CUIParser}}
 \doxysubsubsection{\texorpdfstring{Vector2ToString()}{Vector2ToString()}}
@@ -205,11 +255,11 @@ string Crab\+UI.\+CUIParser.\+Vector2\+To\+String (\begin{DoxyParamCaption}\item
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_parser_8_extra_serialize_8cs_source_l00024}{24}} of file \doxymbox{\hyperlink{_c_u_i_parser_8_extra_serialize_8cs_source}{CUIParser.\+Extra\+Serialize.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_parser_8_extra_serialize_8cs_source_l00027}{27}} of file \doxymbox{\hyperlink{_c_u_i_parser_8_extra_serialize_8cs_source}{CUIParser.\+Extra\+Serialize.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00024\ =>\ \$\textcolor{stringliteral}{"{}[\{v.X\},\{v.Y\}]"{}};}
+\DoxyCodeLine{00027\ =>\ \$\textcolor{stringliteral}{"{}[\{v.X\},\{v.Y\}]"{}};}
 
 \end{DoxyCode}
 
@@ -217,6 +267,16 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_parser_8_extra_serialize_8cs_sour
 \label{doc-variable-members}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_parser_doc-variable-members}
 \doxysubsection{Member Data Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_parser_abb1b120f119c5da02dbc623cf2bd338d}\index{CrabUI.CUIParser@{CrabUI.CUIParser}!int@{int}}
+\index{int@{int}!CrabUI.CUIParser@{CrabUI.CUIParser}}
+\doxysubsubsection{\texorpdfstring{int}{int}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_parser_abb1b120f119c5da02dbc623cf2bd338d} 
+Crab\+UI.\+CUIParser.\+int\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_parser_8_extra_parse_8cs_source_l00024}{24}} of file \doxymbox{\hyperlink{_c_u_i_parser_8_extra_parse_8cs_source}{CUIParser.\+Extra\+Parse.\+cs}}.
+
 \Hypertarget{class_crab_u_i_1_1_c_u_i_parser_abe3f9fe8bfafee890a1e40941d12e881}\index{CrabUI.CUIParser@{CrabUI.CUIParser}!NullTerm@{NullTerm}}
 \index{NullTerm@{NullTerm}!CrabUI.CUIParser@{CrabUI.CUIParser}}
 \doxysubsubsection{\texorpdfstring{NullTerm}{NullTerm}}
@@ -244,6 +304,8 @@ Dictionary$<$Type, Func$<$string, object$>$ $>$ Crab\+UI.\+CUIParser.\+Extra\+Pa
 \DoxyCodeLine{\ \ \ \ \{}
 \DoxyCodeLine{\ \ \ \ \ \ [typeof(Vector2)]\ =\ (raw)\ =>\ ParseVector2(raw),}
 \DoxyCodeLine{\ \ \ \ \ \ [typeof(Color)]\ =\ (raw)\ =>\ ParseColor(raw),}
+\DoxyCodeLine{\ \ \ \ \ \ [typeof(\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture2_d}{CUITexture2D}})]\ =\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core}{CUICore}}.TextureManager.Get,}
+\DoxyCodeLine{\ \ \ \ \ \ [typeof((\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int}))]\ =\ (raw)\ =>\ Tupple2IntInt(raw),}
 \DoxyCodeLine{\ \ \ \ \}}
 
 \end{DoxyCode}
@@ -257,7 +319,9 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_parser_8_extra_parse_8cs_source_l
 \DoxyCodeLine{00018\ \ \ \ \ \{}
 \DoxyCodeLine{00019\ \ \ \ \ \ \ [typeof(Vector2)]\ =\ (raw)\ =>\ ParseVector2(raw),}
 \DoxyCodeLine{00020\ \ \ \ \ \ \ [typeof(Color)]\ =\ (raw)\ =>\ ParseColor(raw),}
-\DoxyCodeLine{00021\ \ \ \ \ \};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ [typeof(CUITexture2D)]\ =\ CUICore.TextureManager.Get,\textcolor{comment}{//BRUH\ i\ either\ have\ to\ reference\ \_\_CUITexture2D\ from\ CUICore\ or\ CUICore.TextureManager\ from\ \_\_CUITexture2D}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ [typeof((\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int}))]\ =\ (raw)\ =>\ Tupple2IntInt(raw),}
+\DoxyCodeLine{00023\ \ \ \ \ \};}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_parser_a1edba1e338310b3dc459b08e49792938}\index{CrabUI.CUIParser@{CrabUI.CUIParser}!ExtraSerializeMethods@{ExtraSerializeMethods}}
@@ -272,6 +336,8 @@ Dictionary$<$Type, Func$<$object, string$>$ $>$ Crab\+UI.\+CUIParser.\+Extra\+Se
 \DoxyCodeLine{\ \ \ \ \{}
 \DoxyCodeLine{\ \ \ \ \ \ [typeof(Color)]\ =\ (o)\ =>\ ColorToString((Color)o),}
 \DoxyCodeLine{\ \ \ \ \ \ [typeof(Vector2)]\ =\ (o)\ =>\ Vector2ToString((Vector2)o),}
+\DoxyCodeLine{\ \ \ \ \ \ [typeof(\doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_texture2_d}{\_\_CUITexture2D}})]\ =\ (o)\ =>\ ((\doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture2_d}{CUITexture2D}})o).Key,}
+\DoxyCodeLine{\ \ \ \ \ \ [typeof((\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int}))]\ =\ (o)\ =>\ Tupple2IntIntToString(((\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int}))o),}
 \DoxyCodeLine{\ \ \ \ \}}
 
 \end{DoxyCode}
@@ -285,7 +351,9 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_parser_8_extra_serialize_8cs_sour
 \DoxyCodeLine{00018\ \ \ \ \ \{}
 \DoxyCodeLine{00019\ \ \ \ \ \ \ [typeof(Color)]\ =\ (o)\ =>\ ColorToString((Color)o),}
 \DoxyCodeLine{00020\ \ \ \ \ \ \ [typeof(Vector2)]\ =\ (o)\ =>\ Vector2ToString((Vector2)o),}
-\DoxyCodeLine{00021\ \ \ \ \ \};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ [typeof(\_\_CUITexture2D)]\ =\ (o)\ =>\ ((CUITexture2D)o).Key,}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ [typeof((\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int}))]\ =\ (o)\ =>\ Tupple2IntIntToString(((\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int}))o),}
+\DoxyCodeLine{00023\ \ \ \ \ \};}
 
 \end{DoxyCode}
 

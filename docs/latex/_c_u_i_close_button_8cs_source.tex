@@ -29,73 +29,68 @@
 \DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00025}00025\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00026}00026\ \ \ \ \ \ \ base.InitStyle();}
 \DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00027}00027\ \ \ \ \ \ \ Icon.Sprite\ =\ CUIDefaultSprite.Cross;}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00028}00028\ \ \ \ \ \ \ Absolute\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_null_rect}{CUINullRect}}(DefaultSize);}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00029}00029\ \ \ \ \ \ \ ConsumeMouseEvents\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00030}00030\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00031}00031\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ Vector2\ DefaultSize\ =>\ \doxymbox{\hyperlink{class_crab_u_i_1_1_resize_handle}{ResizeHandle}}.DefaultSize;}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00033}00033\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_simple_texture}{SimpleTexture}}\ Icon\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00035}00035\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00036}00036\ \ \ \ \ \textcolor{keyword}{private}\ Color\ \_ForeColor;\ \textcolor{keyword}{public}\ Color\ ForeColor}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00037}00037\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00038}00038\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_ForeColor;}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00039}00039\ \ \ \ \ \ \ \textcolor{keyword}{set}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00040}00040\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \_ForeColor\ =\ value;}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ DetermineColor();}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00043}00043\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00044}00044\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00045}00045\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ DetermineColor()}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00047}00047\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00048}00048\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (MouseOver)\ Icon.Color\ =\ ForeColor;}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00049}00049\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ Icon.Color\ =\ ForeColor.Multiply(0.9f);}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00050}00050\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00051}00051\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00052}00052\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ UpdateRects()}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00053}00053\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00054}00054\ \ \ \ \ \ \ base.UpdateRects();}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00055}00055\ \ \ \ \ \ \ Icon.Rect\ =\ Rect;}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00056}00056\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00057}00057\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00058}00058\ \ \ \ \ [\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_serializable_prop}{CUISerializableProp}}]}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00059}00059\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{bool}\ Visible}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00060}00060\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00061}00061\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Background.Visible;}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00062}00062\ \ \ \ \ \ \ \textcolor{keyword}{set}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00063}00063\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ Background.Visible\ =\ value;}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ Icon.Visible\ =\ value;}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00066}00066\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00067}00067\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00028}00028\ \ \ \ \ \ \ ConsumeMouseEvents\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_simple_texture}{SimpleTexture}}\ Icon\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{private}\ Color\ \_ForeColor;\ \textcolor{keyword}{public}\ Color\ ForeColor}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00034}00034\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00035}00035\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_ForeColor;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00036}00036\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00037}00037\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \_ForeColor\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ DetermineColor();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00040}00040\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ DetermineColor()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00044}00044\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00045}00045\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (MouseOver)\ Icon.Color\ =\ ForeColor;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00046}00046\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ Icon.Color\ =\ ForeColor.Multiply(0.9f);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00049}00049\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ UpdateRects()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00050}00050\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00051}00051\ \ \ \ \ \ \ base.UpdateRects();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00052}00052\ \ \ \ \ \ \ Icon.Rect\ =\ Rect;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00055}00055\ \ \ \ \ [\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_serializable_prop}{CUISerializableProp}}]}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00056}00056\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{bool}\ Visible}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00057}00057\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00058}00058\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Background.Visible;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00059}00059\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00060}00060\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ Background.Visible\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ Icon.Visible\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00063}00063\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00066}00066\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ PlaySound\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00067}00067\ \ \ \ \ \textcolor{keyword}{public}\ GUISoundType\ ClickSound\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ GUISoundType.Select;\textcolor{comment}{//BRUH\ check\ buttonbase}}
 \DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00068}00068\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00069}00069\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ PlaySound\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00070}00070\ \ \ \ \ \textcolor{keyword}{public}\ GUISoundType\ ClickSound\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ GUISoundType.Select;\textcolor{comment}{//BRUH\ check\ buttonbase}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00071}00071\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00072}00072\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{override}\ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_null_vector2}{CUINullVector2}}\ MinSizeOverride\ =>\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_null_vector2}{CUINullVector2}}(DefaultSize);}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00073}00073\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00074}00074\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ IEnumerable<VisualUnit>\ VisualSplit()}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00075}00075\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00076}00076\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Displayed\ ||\ CulledOut)\ yield\ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00077}00077\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00078}00078\ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ Background.VisualWrapper;}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00079}00079\ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ Icon.VisualWrapper;}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00080}00080\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00081}00081\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00082}00082\ \ \ \ \ \textcolor{keyword}{public}\ CUICloseButton()\ :\ base()}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00083}00083\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00084}00084\ \ \ \ \ \ \ MouseDown\ +=\ (c,\ e)\ =>}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00085}00085\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (PlaySound)\ SoundPlayer.PlayUISound(ClickSound);}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ Commands.SendUp(\textcolor{stringliteral}{"{}close"{}});}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00088}00088\ \ \ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00089}00089\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00090}00090\ \ \ \ \ \ \ MouseOff\ +=\ (c,\ e)\ =>\ DetermineColor();}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00091}00091\ \ \ \ \ \ \ MouseOn\ +=\ (c,\ e)\ =>\ DetermineColor();}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00092}00092\ \ \ \ \ \ \ DetermineColor();}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00093}00093\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00094}00094\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00095}00095\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00069}00069\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ IEnumerable<VisualUnit>\ VisualSplit()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00070}00070\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00071}00071\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Displayed\ ||\ CulledOut)\ yield\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00073}00073\ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ Background.VisualWrapper;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00074}00074\ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ Icon.VisualWrapper;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00075}00075\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00077}00077\ \ \ \ \ \textcolor{keyword}{public}\ CUICloseButton()\ :\ base()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00078}00078\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00079}00079\ \ \ \ \ \ \ MouseDown\ +=\ (c,\ e)\ =>}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00080}00080\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (PlaySound)\ SoundPlayer.PlayUISound(ClickSound);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ Commands.SendUp(\textcolor{stringliteral}{"{}close"{}});}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00083}00083\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00085}00085\ \ \ \ \ \ \ MouseOff\ +=\ (c,\ e)\ =>\ DetermineColor();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00086}00086\ \ \ \ \ \ \ MouseOn\ +=\ (c,\ e)\ =>\ DetermineColor();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00087}00087\ \ \ \ \ \ \ DetermineColor();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00088}00088\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00089}00089\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_close_button_8cs_source_l00090}00090\ \}}
 
 \end{DoxyCode}

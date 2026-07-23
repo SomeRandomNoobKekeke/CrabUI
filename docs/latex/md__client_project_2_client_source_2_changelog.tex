@@ -1,17 +1,49 @@
 \chapter{Changelog }
 \hypertarget{md__client_project_2_client_source_2_changelog}{}\label{md__client_project_2_client_source_2_changelog}\index{Changelog@{Changelog}}
-\label{md__client_project_2_client_source_2_changelog_autotoc_md53}%
-\Hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md53}%
-\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md54}{}\doxysection{\texorpdfstring{0.\+3.\+0.\+0}{0.\+3.\+0.\+0}}\label{md__client_project_2_client_source_2_changelog_autotoc_md54}
-Rewritten from scratch\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md55}{}\doxysubsection{\texorpdfstring{Fixes:\+}{Fixes:\+}}\label{md__client_project_2_client_source_2_changelog_autotoc_md55}
-\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md56}{}\doxysubsubsection{\texorpdfstring{-\/ Isolated CUICore}{-\/ Isolated CUICore}}\label{md__client_project_2_client_source_2_changelog_autotoc_md56}
+\label{md__client_project_2_client_source_2_changelog_autotoc_md55}%
+\Hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md55}%
+\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md56}{}\doxysection{\texorpdfstring{0.\+3.\+0.\+1}{0.\+3.\+0.\+1}}\label{md__client_project_2_client_source_2_changelog_autotoc_md56}
+
+\begin{DoxyItemize}
+\item CUI now takes into account calling mod package dir and loaded xml dir when loading textures ~\newline
+ You can now load textures from paths relative to loaded prefab or mod dir
+\item From now on use CUI.\+Texture\+Manager to load textures, CUICore.\+Texture\+Manager doesn\textquotesingle{}t capture calling assembly
+\item Added more try-\/catches in CUI lifecycle, at least it should always unload if something went wrong
+\item Added "{}cuidebug"{} command to toggle debug in console, debug overall is borked, don\textquotesingle{}t use
+\item moved Click() and Press\+Key(\+Keys key) up to CUIComponent
+\item Added Box boundaries to CUIMain\+Components
+\item CUISizes now defined clockwise like in CSS, top-\/right-\/bottom-\/left
+\item CUIButton now yields visual bounds so you can trim text with Cull\+Children
+\end{DoxyItemize}\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md57}{}\doxysubsection{\texorpdfstring{WIP focus}{WIP focus}}\label{md__client_project_2_client_source_2_changelog_autotoc_md57}
+
+\begin{DoxyItemize}
+\item Added Blur() to CUIComponent
+\item CUIMain Gloabal keyboard events are not dispatched when GUI.\+Input\+Blocking\+Menu\+Open
+\end{DoxyItemize}\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md58}{}\doxysubsection{\texorpdfstring{Serialization}{Serialization}}\label{md__client_project_2_client_source_2_changelog_autotoc_md58}
+
+\begin{DoxyItemize}
+\item Snapshot tests now do serialize/\+deserialize pass on test subjects so i could spot serialization artifacts
+\item Made more props serializable
+\item Nested classes serialized with full name with containing classes
+\item Added serialization modes:\+ Ignore Replace Merge
+\item You can skip child serialization with Serializable = false
+\item Before\+Serialization After\+Serialization virtual methods
+\end{DoxyItemize}\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md59}{}\doxysubsection{\texorpdfstring{not important:\+}{not important:\+}}\label{md__client_project_2_client_source_2_changelog_autotoc_md59}
+
+\begin{DoxyItemize}
+\item Made Visual\+Units Unaware, moved Background to Background\+Slot ~\newline
+ It\textquotesingle{}s some wip change, i wanted to serialize Background as a whole with JSON, and for that it had to be transient parsable prop ~\newline
+ Turned out that JSON inside XML is super ugly and i\textquotesingle{}m still too lazy to write specialized parsing method
+\end{DoxyItemize}\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md60}{}\doxysection{\texorpdfstring{0.\+3.\+0.\+0}{0.\+3.\+0.\+0}}\label{md__client_project_2_client_source_2_changelog_autotoc_md60}
+Rewritten from scratch\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md61}{}\doxysubsection{\texorpdfstring{Fixes:\+}{Fixes:\+}}\label{md__client_project_2_client_source_2_changelog_autotoc_md61}
+\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md62}{}\doxysubsubsection{\texorpdfstring{-\/ Isolated CUICore}{-\/ Isolated CUICore}}\label{md__client_project_2_client_source_2_changelog_autotoc_md62}
 prev CUI was hardwired to the game and it\textquotesingle{}s lifecycle
 
 Now all CUI stuff was moved to CUICore, which is passive isolated state machine ~\newline
  It doesn\textquotesingle{}t know about the game and has to be runned by CUIRunners via handles ~\newline
- There could be various runners, e.\+g. they can run code in this mod, or scan other mods, or feed it with test data, or run it in a separate process\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md57}{}\doxysubsubsection{\texorpdfstring{-\/ CUICore is isolated from Mono\+Game}{-\/ CUICore is isolated from Mono\+Game}}\label{md__client_project_2_client_source_2_changelog_autotoc_md57}
+ There can be various runners, e.\+g. they can run code in this mod, or scan other mods, or feed it with test data, or run it in a separate process\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md63}{}\doxysubsubsection{\texorpdfstring{-\/ CUICore is isolated from Mono\+Game}{-\/ CUICore is isolated from Mono\+Game}}\label{md__client_project_2_client_source_2_changelog_autotoc_md63}
 It runs on its own abstraction ~\newline
- Now it\textquotesingle{}s possible to write tests for draw calls and use fake textures with no data\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md58}{}\doxysubsubsection{\texorpdfstring{-\/ Visual\+Components /\+ Visual\+Elements}{-\/ Visual\+Components /\+ Visual\+Elements}}\label{md__client_project_2_client_source_2_changelog_autotoc_md58}
+ Now it\textquotesingle{}s possible to write tests for draw calls and use fake textures with no data\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md64}{}\doxysubsubsection{\texorpdfstring{-\/ Visual\+Components /\+ Visual\+Elements}{-\/ Visual\+Components /\+ Visual\+Elements}}\label{md__client_project_2_client_source_2_changelog_autotoc_md64}
 In prev version the base class for drawn stuff was CUIComponent ~\newline
  So other stuff had to either be based on CUIComponent or copy its code and be processed separately ~\newline
  E.\+g. slider handles, resize handles had to either be child CUIComponent or be so pseudo components manually updated and drawn by host component ~\newline
@@ -22,22 +54,22 @@ Now the unit of drawing /\+ event handling is Visual\+Element ~\newline
  They are primitives, e.\+g. texture, border, lines, blocks of text ~\newline
  Visual\+Component is almost empty abstract base for all components ~\newline
  Visual\+Component can have many Visual\+Elements and they control their order with Visual\+Split ~\newline
- Events are routed from Visual\+Elements to host components\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md59}{}\doxysubsubsection{\texorpdfstring{-\/ Text measurement /\+ drawing logic was moved to Text\+Block Visual\+Element}{-\/ Text measurement /\+ drawing logic was moved to Text\+Block Visual\+Element}}\label{md__client_project_2_client_source_2_changelog_autotoc_md59}
-So components that need to draw some text no longer have to be based on CUIText\+Block\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md60}{}\doxysubsubsection{\texorpdfstring{-\/ Visual\+Bounds}{-\/ Visual\+Bounds}}\label{md__client_project_2_client_source_2_changelog_autotoc_md60}
+ Events are routed from Visual\+Elements to host components\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md65}{}\doxysubsubsection{\texorpdfstring{-\/ Text measurement /\+ drawing logic was moved to Text\+Block Visual\+Element}{-\/ Text measurement /\+ drawing logic was moved to Text\+Block Visual\+Element}}\label{md__client_project_2_client_source_2_changelog_autotoc_md65}
+So components that needs to draw some text no longer have to be based on CUIText\+Block\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md66}{}\doxysubsubsection{\texorpdfstring{-\/ Visual\+Bounds}{-\/ Visual\+Bounds}}\label{md__client_project_2_client_source_2_changelog_autotoc_md66}
 Visual\+Components can yield enter/\+exit Visual\+Bounds instructions for Chain\+Drawer in Visual\+Split ~\newline
  This allows to apply camera transformation /\+ croping /\+ different sampler state to children /\+ particular Visual\+Elements ~\newline
- Now CUIMap with natural zoom should be possible\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md61}{}\doxysubsubsection{\texorpdfstring{-\/ Most reflection stuff was moved to code generator}{-\/ Most reflection stuff was moved to code generator}}\label{md__client_project_2_client_source_2_changelog_autotoc_md61}
-So i can use funny design patterns without wrecking the performance\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md62}{}\doxysubsubsection{\texorpdfstring{-\/ Everything was public}{-\/ Everything was public}}\label{md__client_project_2_client_source_2_changelog_autotoc_md62}
+ Now CUIMap with natural zoom should be possible\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md67}{}\doxysubsubsection{\texorpdfstring{-\/ Most reflection stuff was moved to code generator}{-\/ Most reflection stuff was moved to code generator}}\label{md__client_project_2_client_source_2_changelog_autotoc_md67}
+So i can use funny design patterns without wrecking the performance\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md68}{}\doxysubsubsection{\texorpdfstring{-\/ Everything was public}{-\/ Everything was public}}\label{md__client_project_2_client_source_2_changelog_autotoc_md68}
 There\textquotesingle{}s a lot of internal logic, and it\textquotesingle{}s impossible to maintain in one big object ~\newline
  So i had to split them, but then those objects had to touch internals of each other -\/\texorpdfstring{$>$}{>} internals had to be public ~\newline
  And anything could potentially reference and depend on anything (and it did) ~\newline
 
 
-Now there\textquotesingle{}s funny compiler generated component level dependency injection system that allows me to keep logic in private modules that require each other via interfaces and are injected into each other by host component\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md63}{}\doxysubsubsection{\texorpdfstring{-\/ Layout calculations use Rect\+Float while Drawing uses Rect\+Int}{-\/ Layout calculations use Rect\+Float while Drawing uses Rect\+Int}}\label{md__client_project_2_client_source_2_changelog_autotoc_md63}
+Now there\textquotesingle{}s funny compiler generated component level dependency injection system that allows me to keep logic in private modules that require each other via interfaces and are injected into each other by host component\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md69}{}\doxysubsubsection{\texorpdfstring{-\/ Layout calculations use Rect\+Float while Drawing uses Rect\+Int}{-\/ Layout calculations use Rect\+Float while Drawing uses Rect\+Int}}\label{md__client_project_2_client_source_2_changelog_autotoc_md69}
 In prev version rects was rounded on every step of layout calculations ~\newline
  And it caused double rounding issues all over the place, e.\+g. ladder walking components in nested lists
 
-Now layout is calculated on Rect\+Float and gets rounded only on the last stage before drawing\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md64}{}\doxysubsubsection{\texorpdfstring{-\/ Debug system rework}{-\/ Debug system rework}}\label{md__client_project_2_client_source_2_changelog_autotoc_md64}
+Now layout is calculated on Rect\+Float and gets rounded only on the last stage before drawing\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md70}{}\doxysubsubsection{\texorpdfstring{-\/ Debug system rework}{-\/ Debug system rework}}\label{md__client_project_2_client_source_2_changelog_autotoc_md70}
 This is actually was the last straw that killed prev version:\+ ~\newline
  You had to create debug string for each event even if the node was off which killed the fps ~\newline
  And CUI was using one hardcoded debugger which wasn\textquotesingle{}t flexible enough ~\newline
@@ -45,17 +77,17 @@ This is actually was the last straw that killed prev version:\+ ~\newline
 
 new Debug\+Nodes don\textquotesingle{}t create event objects when they\textquotesingle{}re off ~\newline
  They are routable, so i can enable them for some types of events or groups of components ~\newline
- They are sending debug events to debug hub where debuggers can listen for them So i can make different debuggers /\+ swap them, one faulty debugger won\textquotesingle{}t break the whole debug system\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md65}{}\doxysubsubsection{\texorpdfstring{-\/ other stuff i\textquotesingle{}m too lazy to mention}{-\/ other stuff i\textquotesingle{}m too lazy to mention}}\label{md__client_project_2_client_source_2_changelog_autotoc_md65}
-\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md66}{}\doxysubsection{\texorpdfstring{New issues:\+}{New issues:\+}}\label{md__client_project_2_client_source_2_changelog_autotoc_md66}
+ They are sending debug events to debug hub where debuggers can listen for them So i can make different debuggers /\+ swap them, one faulty debugger won\textquotesingle{}t break the whole debug system\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md71}{}\doxysubsubsection{\texorpdfstring{-\/ other stuff i\textquotesingle{}m too lazy to mention}{-\/ other stuff i\textquotesingle{}m too lazy to mention}}\label{md__client_project_2_client_source_2_changelog_autotoc_md71}
+\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md72}{}\doxysubsection{\texorpdfstring{New issues:\+}{New issues:\+}}\label{md__client_project_2_client_source_2_changelog_autotoc_md72}
 
 \begin{DoxyItemize}
 \item inconsistency
 \item poor error handling and validation
 \item a lot of stuff from prev version still missing
-\end{DoxyItemize}\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md67}{}\doxysection{\texorpdfstring{0.\+2.\+7.\+0 -\/\texorpdfstring{$>$}{>} 0.\+0.\+0.\+0}{0.\+2.\+7.\+0 -\/\texorpdfstring{$>$}{>} 0.\+0.\+0.\+0}}\label{md__client_project_2_client_source_2_changelog_autotoc_md67}
-\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md68}{}\doxysection{\texorpdfstring{↓ Legacy ↓}{↓ Legacy ↓}}\label{md__client_project_2_client_source_2_changelog_autotoc_md68}
-\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md69}{}\doxysubsection{\texorpdfstring{Died From \sout{Cringe} 0 day design flaws}{Died From \sout{Cringe} 0 day design flaws}}\label{md__client_project_2_client_source_2_changelog_autotoc_md69}
-\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md70}{}\doxysubsection{\texorpdfstring{0.\+2.\+7.\+0}{0.\+2.\+7.\+0}}\label{md__client_project_2_client_source_2_changelog_autotoc_md70}
+\end{DoxyItemize}\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md73}{}\doxysection{\texorpdfstring{0.\+2.\+7.\+0 -\/\texorpdfstring{$>$}{>} 0.\+0.\+0.\+0}{0.\+2.\+7.\+0 -\/\texorpdfstring{$>$}{>} 0.\+0.\+0.\+0}}\label{md__client_project_2_client_source_2_changelog_autotoc_md73}
+\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md74}{}\doxysection{\texorpdfstring{↓ Legacy ↓}{↓ Legacy ↓}}\label{md__client_project_2_client_source_2_changelog_autotoc_md74}
+\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md75}{}\doxysubsection{\texorpdfstring{Died From \sout{Cringe} 0 day design flaws}{Died From \sout{Cringe} 0 day design flaws}}\label{md__client_project_2_client_source_2_changelog_autotoc_md75}
+\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md76}{}\doxysubsection{\texorpdfstring{0.\+2.\+7.\+0}{0.\+2.\+7.\+0}}\label{md__client_project_2_client_source_2_changelog_autotoc_md76}
 Removed CUIFrame outline from Draw\+Front, but not Resize\+Handle yet, it\textquotesingle{}s a bit harder ~\newline
  Now Frame outlines won\textquotesingle{}t be visible through other components
 
@@ -68,9 +100,9 @@ CUIToggle\+Button.\+Toggle\+On\+Click CUIMulti\+Button.\+Cycle\+On\+Click props
 Added Repeat prop for CUIAnimation
 
 Made CUIPalette a bit more resistant to missing files and misuse ~\newline
- Added hardcoded backup palette so you could see something even if you could\textquotesingle{}t load it for some reason\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md71}{}\doxysubsubsubsection{\texorpdfstring{added Attached\+Items}{added Attached\+Items}}\label{md__client_project_2_client_source_2_changelog_autotoc_md71}
+ Added hardcoded backup palette so you could see something even if you could\textquotesingle{}t load it for some reason\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md77}{}\doxysubsubsubsection{\texorpdfstring{added Attached\+Items}{added Attached\+Items}}\label{md__client_project_2_client_source_2_changelog_autotoc_md77}
 You can now attach CUIComponent to Barotrauma.\+Item and track when it\textquotesingle{}s get selected, deselected and when its Update\+HUD is called ~\newline
- Check docs\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md72}{}\doxysubsubsubsection{\texorpdfstring{Serialization changes:\+}{Serialization changes:\+}}\label{md__client_project_2_client_source_2_changelog_autotoc_md72}
+ Check docs\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md78}{}\doxysubsubsubsection{\texorpdfstring{Serialization changes:\+}{Serialization changes:\+}}\label{md__client_project_2_client_source_2_changelog_autotoc_md78}
 Separated serialization and parsing logic ~\newline
  All parsing is now done in CUIParser, it can parse anything, you can also use it
 
@@ -85,7 +117,7 @@ Added:\+
 \begin{DoxyItemize}
 \item Merge\+Serialization -\/ Children of deserialized component will be moved to existing component
 \item Replace\+Serialization -\/ Deserialized component will replace existing component
-\end{DoxyItemize}\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md73}{}\doxysubsubsubsection{\texorpdfstring{Debug}{Debug}}\label{md__client_project_2_client_source_2_changelog_autotoc_md73}
+\end{DoxyItemize}\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md79}{}\doxysubsubsubsection{\texorpdfstring{Debug}{Debug}}\label{md__client_project_2_client_source_2_changelog_autotoc_md79}
 Added
 \begin{DoxyItemize}
 \item CUIProps\+Interface component
@@ -94,10 +126,10 @@ Added
 \item printcolors console command
 \end{DoxyItemize}
 
-Added checkers texture for debug\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md74}{}\doxysubsection{\texorpdfstring{0.\+2.\+6.\+4}{0.\+2.\+6.\+4}}\label{md__client_project_2_client_source_2_changelog_autotoc_md74}
-"{}\+Fixed"{} buttons still changing colors behind components with Consume\+Mouse\+Clicks\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md75}{}\doxysubsection{\texorpdfstring{0.\+2.\+6.\+3}{0.\+2.\+6.\+3}}\label{md__client_project_2_client_source_2_changelog_autotoc_md75}
-Added Piano test\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md76}{}\doxysubsection{\texorpdfstring{0.\+2.\+6.\+2}{0.\+2.\+6.\+2}}\label{md__client_project_2_client_source_2_changelog_autotoc_md76}
-Added Gap prop for CUIHorizontal\+List\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md77}{}\doxysubsection{\texorpdfstring{0.\+2.\+6.\+1}{0.\+2.\+6.\+1}}\label{md__client_project_2_client_source_2_changelog_autotoc_md77}
+Added checkers texture for debug\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md80}{}\doxysubsection{\texorpdfstring{0.\+2.\+6.\+4}{0.\+2.\+6.\+4}}\label{md__client_project_2_client_source_2_changelog_autotoc_md80}
+"{}\+Fixed"{} buttons still changing colors behind components with Consume\+Mouse\+Clicks\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md81}{}\doxysubsection{\texorpdfstring{0.\+2.\+6.\+3}{0.\+2.\+6.\+3}}\label{md__client_project_2_client_source_2_changelog_autotoc_md81}
+Added Piano test\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md82}{}\doxysubsection{\texorpdfstring{0.\+2.\+6.\+2}{0.\+2.\+6.\+2}}\label{md__client_project_2_client_source_2_changelog_autotoc_md82}
+Added Gap prop for CUIHorizontal\+List\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md83}{}\doxysubsection{\texorpdfstring{0.\+2.\+6.\+1}{0.\+2.\+6.\+1}}\label{md__client_project_2_client_source_2_changelog_autotoc_md83}
 Set Use\+Cursed\+Patches to true by default because that way it\textquotesingle{}s easier to make mod running ~\newline
 
 
@@ -105,7 +137,7 @@ Added Ghost Detector, it will notify you if something cursed happenes with the p
 
 Added CUIButton.\+Play\+Sound prop, you can prevent it from playing click sound
 
-Rearranged files to confuse you even more\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md78}{}\doxysubsection{\texorpdfstring{0.\+2.\+6.\+0}{0.\+2.\+6.\+0}}\label{md__client_project_2_client_source_2_changelog_autotoc_md78}
+Rearranged files to confuse you even more\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md84}{}\doxysubsection{\texorpdfstring{0.\+2.\+6.\+0}{0.\+2.\+6.\+0}}\label{md__client_project_2_client_source_2_changelog_autotoc_md84}
 Found one ugly solution to the curse (\href{https://github.com/evilfactory/LuaCsForBarotrauma/issues/245}{\texttt{https:\+/\+/\+github.\+com/\+evilfactory/\+\+Lua\+Cs\+For\+Barotrauma/\+issues/\+245}}), i think it\textquotesingle{}s the only way to bypass it ~\newline
  If you find a better way let me know ~\newline
 
@@ -116,12 +148,12 @@ So, the problem is harmony patches in assembly mods are bugged and generally don
 Solution:\+ Add lua script that adds patches and calls hooks, and then add hooks from assembly
 
 If you set CUI.\+Use\+Cursed\+Patches to true it\textquotesingle{}ll use harmony and be potentially bugged ~\newline
- If you set CUI.\+Use\+Cursed\+Patches to false it won\textquotesingle{}t be bugged, but you\textquotesingle{}ll also have to set CUI.\+Hook\+Identifier to some name or hooks from different CUIs will conflict and add Additional\+Hooks.\+lua to Lua/\+\+Autorun\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md79}{}\doxysubsection{\texorpdfstring{0.\+2.\+5.\+1}{0.\+2.\+5.\+1}}\label{md__client_project_2_client_source_2_changelog_autotoc_md79}
+ If you set CUI.\+Use\+Cursed\+Patches to false it won\textquotesingle{}t be bugged, but you\textquotesingle{}ll also have to set CUI.\+Hook\+Identifier to some name or hooks from different CUIs will conflict and add Additional\+Hooks.\+lua to Lua/\+\+Autorun\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md85}{}\doxysubsection{\texorpdfstring{0.\+2.\+5.\+1}{0.\+2.\+5.\+1}}\label{md__client_project_2_client_source_2_changelog_autotoc_md85}
 Experimenting with the way multiple CUIs resolve conflicts Renamed CUI.\+Update\+Hook\+Identifier =\texorpdfstring{$>$}{>} CUI.\+Hook\+Identifier now i\textquotesingle{}m using it in harmony patches to
 
 added warning if it\textquotesingle{}s not set
 
-fixed crash in GUI\+\_\+\+Update\+Mouse\+On\+\_\+\+Postfix Added null checks in GUI\+\_\+\+Update\+Mouse\+On\+\_\+\+Postfix\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md80}{}\doxysubsection{\texorpdfstring{0.\+2.\+5.\+0}{0.\+2.\+5.\+0}}\label{md__client_project_2_client_source_2_changelog_autotoc_md80}
+fixed crash in GUI\+\_\+\+Update\+Mouse\+On\+\_\+\+Postfix Added null checks in GUI\+\_\+\+Update\+Mouse\+On\+\_\+\+Postfix\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md86}{}\doxysubsection{\texorpdfstring{0.\+2.\+5.\+0}{0.\+2.\+5.\+0}}\label{md__client_project_2_client_source_2_changelog_autotoc_md86}
 Added CUI.\+Update\+Hook\+Identifier it will be set as identifier to CUI think hook, it very important to set it or hooks from different CUIs will conflict
 
 Added CUIAnimation Added Ignore\+Transparent prop, if true mouse events will work only on not transparent sprites Added Transparency prop, it multiplies Background\+Color.\+A and is propagated to Children
@@ -130,7 +162,7 @@ Made CUISpite an object... again Added Rotation, Origin and Offset to CUISprite 
 
 Added CUIMenu, check "{}\+Custom Menus"{} mod, CUIRadial\+Menu (the ugly brother of CUIMenu)
 
-Added more docs\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md81}{}\doxysubsection{\texorpdfstring{0.\+2.\+4.\+0}{0.\+2.\+4.\+0}}\label{md__client_project_2_client_source_2_changelog_autotoc_md81}
+Added more docs\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md87}{}\doxysubsection{\texorpdfstring{0.\+2.\+4.\+0}{0.\+2.\+4.\+0}}\label{md__client_project_2_client_source_2_changelog_autotoc_md87}
 "{}\+Fixed"{} cursed bug that made Main\+Components become in Game\+Main.\+Update patch after multiple lobbies in compiled version But this "{}fix"{} seems to decrease update smoothness, so i might rethink later Set CUI.\+Use\+Cursed\+Patches to true if you\textquotesingle{}re not affraid
 
 Added more performance measurements, shortcutted dumb class scanning in CUILua\+Registrar that happened even if you didn\textquotesingle{}t use lua
@@ -143,7 +175,7 @@ You can now limit resize directions with CUIComponent.\+Resize\+Direction
 
 Fixed forsed size not reseting after removing a textblock
 
-Added cuiprinttree command along with cuidraworder\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md82}{}\doxysubsection{\texorpdfstring{0.\+2.\+3.\+0}{0.\+2.\+3.\+0}}\label{md__client_project_2_client_source_2_changelog_autotoc_md82}
+Added cuiprinttree command along with cuidraworder\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md88}{}\doxysubsection{\texorpdfstring{0.\+2.\+3.\+0}{0.\+2.\+3.\+0}}\label{md__client_project_2_client_source_2_changelog_autotoc_md88}
 Made CUIText\+Input, CUITick\+Box and CUISlider use commands and consume data
 
 Added Gap to CUIVertical\+List
@@ -166,10 +198,10 @@ Added more useless CUIPrefabs, i think they are too specific and need some redes
 
 Added Float\+Range alongside with Int\+Range
 
-fixed crash in Keyboard\+Dispatcher\+\_\+set\+\_\+\+Subscriber\+\_\+\+Replace in compiled mods\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md83}{}\doxysubsection{\texorpdfstring{0.\+2.\+2.\+1}{0.\+2.\+2.\+1}}\label{md__client_project_2_client_source_2_changelog_autotoc_md83}
+fixed crash in Keyboard\+Dispatcher\+\_\+set\+\_\+\+Subscriber\+\_\+\+Replace in compiled mods\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md89}{}\doxysubsection{\texorpdfstring{0.\+2.\+2.\+1}{0.\+2.\+2.\+1}}\label{md__client_project_2_client_source_2_changelog_autotoc_md89}
 Minor stuff:\+ multibutton dispatches the command, CUIPages resizes page to \+[0,0,1,1]\+, maincomponent flatten tree is a bit more thread safe
 
-Added IRefreshable interface and CUIComponent.\+Cascade\+Refresh Cascade\+Refresh will recursivelly call Refresh on every child that implements IRefreshable\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md84}{}\doxysubsection{\texorpdfstring{0.\+2.\+2.\+0}{0.\+2.\+2.\+0}}\label{md__client_project_2_client_source_2_changelog_autotoc_md84}
+Added IRefreshable interface and CUIComponent.\+Cascade\+Refresh Cascade\+Refresh will recursivelly call Refresh on every child that implements IRefreshable\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md90}{}\doxysubsection{\texorpdfstring{0.\+2.\+2.\+0}{0.\+2.\+2.\+0}}\label{md__client_project_2_client_source_2_changelog_autotoc_md90}
 Added to \doxylink{_c_u_i_8cs_source}{CUI.\+cs} 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{using\ System.Runtime.CompilerServices;}
@@ -178,7 +210,7 @@ Added to \doxylink{_c_u_i_8cs_source}{CUI.\+cs}
 \DoxyCodeLine{[assembly:\ IgnoresAccessChecksTo("{}BarotraumaCore"{})]}
 
 \end{DoxyCode}
- So it could be compiled\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md85}{}\doxysubsubsubsection{\texorpdfstring{Temporary solution to pathing:\+}{Temporary solution to pathing:\+}}\label{md__client_project_2_client_source_2_changelog_autotoc_md85}
+ So it could be compiled\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md91}{}\doxysubsubsubsection{\texorpdfstring{Temporary solution to pathing:\+}{Temporary solution to pathing:\+}}\label{md__client_project_2_client_source_2_changelog_autotoc_md91}
 Now mod won\textquotesingle{}t automatially find its folders
 
 If you want to use lua you need to set CUI.\+Mod\+Dir to the mod folder path
@@ -186,11 +218,11 @@ If you want to use lua you need to set CUI.\+Mod\+Dir to the mod folder path
 Also you need to place Assets folder with CUI stuff somewhere in your mod and set CUI.\+Assets\+Path to it ~\newline
  You can rename it, just set the path
 
-All this needs to be done before CUI.\+Initialize()\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md86}{}\doxysubsection{\texorpdfstring{0.\+2.\+1.\+0}{0.\+2.\+1.\+0}}\label{md__client_project_2_client_source_2_changelog_autotoc_md86}
+All this needs to be done before CUI.\+Initialize()\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md92}{}\doxysubsection{\texorpdfstring{0.\+2.\+1.\+0}{0.\+2.\+1.\+0}}\label{md__client_project_2_client_source_2_changelog_autotoc_md92}
 Dried tree building methods, added tests for them
 
-Added insert method along with append and prepend, unlike List.\+Insert it won\textquotesingle{}t throw on "{}index out of bounds"{}\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md87}{}\doxysubsection{\texorpdfstring{0.\+2.\+0.\+1}{0.\+2.\+0.\+1}}\label{md__client_project_2_client_source_2_changelog_autotoc_md87}
-.nojekyll moment\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md88}{}\doxysubsection{\texorpdfstring{0.\+2.\+0.\+0}{0.\+2.\+0.\+0}}\label{md__client_project_2_client_source_2_changelog_autotoc_md88}
+Added insert method along with append and prepend, unlike List.\+Insert it won\textquotesingle{}t throw on "{}index out of bounds"{}\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md93}{}\doxysubsection{\texorpdfstring{0.\+2.\+0.\+1}{0.\+2.\+0.\+1}}\label{md__client_project_2_client_source_2_changelog_autotoc_md93}
+.nojekyll moment\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md94}{}\doxysubsection{\texorpdfstring{0.\+2.\+0.\+0}{0.\+2.\+0.\+0}}\label{md__client_project_2_client_source_2_changelog_autotoc_md94}
 Reworked CUIPalette, and CUICommand, check docs
 
 Reworked border, added separate borders for each side, border sprite, outline
@@ -203,7 +235,7 @@ Added CUIPresets with... presets. Which you can use to reduce boilerplate code
 
 Made more stuff parsable and serializble
 
-And tons of other things i\textquotesingle{}m too lazy to write down, compare commits if you\textquotesingle{}re curious\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md89}{}\doxysubsection{\texorpdfstring{0.\+1.\+0.\+0}{0.\+1.\+0.\+0}}\label{md__client_project_2_client_source_2_changelog_autotoc_md89}
+And tons of other things i\textquotesingle{}m too lazy to write down, compare commits if you\textquotesingle{}re curious\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md95}{}\doxysubsection{\texorpdfstring{0.\+1.\+0.\+0}{0.\+1.\+0.\+0}}\label{md__client_project_2_client_source_2_changelog_autotoc_md95}
 You can now use relative paths for sprite textures ~\newline
  You can set CUI.\+PGNAssets to the folder with your assets, CUI will also search for textures there
 
@@ -219,7 +251,7 @@ Added Cross\+Relative prop, it\textquotesingle{}s like Relative but values are r
 
 Reworked slider component
 
-Drag\+Handle can now Drag\+Relative to the parent\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md90}{}\doxysubsubsubsection{\texorpdfstring{Serialization}{Serialization}}\label{md__client_project_2_client_source_2_changelog_autotoc_md90}
+Drag\+Handle can now Drag\+Relative to the parent\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md96}{}\doxysubsubsubsection{\texorpdfstring{Serialization}{Serialization}}\label{md__client_project_2_client_source_2_changelog_autotoc_md96}
 Added Break\+Serialization prop, if true serrialization will stop on this component
 
 Added Load\+Self\+From\+File, Save\+To\+The\+Same\+Path methods
@@ -230,7 +262,7 @@ Added Save\+After\+Load prop, it\textquotesingle{}s mostly for serialization deb
 
 Added more Custom To\+String and parsed methods to CUIExtensions, Added native enum serialization, Vector2 and Rectangle is now serialized into \+[ x, y ]\+, be carefull
 
-Sprite is now fully serializable\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md91}{}\doxysubsection{\texorpdfstring{0.\+0.\+5.\+1}{0.\+0.\+5.\+1}}\label{md__client_project_2_client_source_2_changelog_autotoc_md91}
+Sprite is now fully serializable\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md97}{}\doxysubsection{\texorpdfstring{0.\+0.\+5.\+1}{0.\+0.\+5.\+1}}\label{md__client_project_2_client_source_2_changelog_autotoc_md97}
 Added "{}\+[\+CUISerializable]\+ public string Command \{ get; set; \}"{}"{} to CUIButton so you could define command that is called on click in xml
 
 Splitted Master\+Color into Master\+Color and Master\+Color\+Opaque
@@ -257,13 +289,13 @@ Added sprites to resize handles, and gradient sprite that\textquotesingle{}s not
 
 Added {\ttfamily public Sprite\+Effects Effects;} to CUISprite, it controls texture flipping
 
-More params in CUITexture\+Manager.\+Get\+Sprite\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md92}{}\doxysubsection{\texorpdfstring{0.\+0.\+5.\+0}{0.\+0.\+5.\+0}}\label{md__client_project_2_client_source_2_changelog_autotoc_md92}
+More params in CUITexture\+Manager.\+Get\+Sprite\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md98}{}\doxysubsection{\texorpdfstring{0.\+0.\+5.\+0}{0.\+0.\+5.\+0}}\label{md__client_project_2_client_source_2_changelog_autotoc_md98}
 Added Styles
 
 Every component has a Style and every Type has a Default\+Style
 
-Styles are observable dicts with pairs \{ "{}prop name"{}, "{}prop value"{} \} and can be used to assign any parsable string to any prop or reference some value from CUIPalette\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md93}{}\doxysubsection{\texorpdfstring{0.\+0.\+4.\+0}{0.\+0.\+4.\+0}}\label{md__client_project_2_client_source_2_changelog_autotoc_md93}
-Added CUICanvas.\+Render(\+Action$<$ Sprite\+Batch $>$ render\+Func) method that allows you to render anything you want onto the canvas texture\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md94}{}\doxysubsection{\texorpdfstring{0.\+0.\+3.\+0}{0.\+0.\+3.\+0}}\label{md__client_project_2_client_source_2_changelog_autotoc_md94}
+Styles are observable dicts with pairs \{ "{}prop name"{}, "{}prop value"{} \} and can be used to assign any parsable string to any prop or reference some value from CUIPalette\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md99}{}\doxysubsection{\texorpdfstring{0.\+0.\+4.\+0}{0.\+0.\+4.\+0}}\label{md__client_project_2_client_source_2_changelog_autotoc_md99}
+Added CUICanvas.\+Render(\+Action$<$ Sprite\+Batch $>$ render\+Func) method that allows you to render anything you want onto the canvas texture\hypertarget{md__client_project_2_client_source_2_changelog_autotoc_md100}{}\doxysubsection{\texorpdfstring{0.\+0.\+3.\+0}{0.\+0.\+3.\+0}}\label{md__client_project_2_client_source_2_changelog_autotoc_md100}
 Added Changelog.\+md :\+Baro\+Dev:\+
 
 Added CUI.\+Top\+Main, it\textquotesingle{}s the second CUIMain\+Component which exists above vanilla GUI

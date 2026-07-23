@@ -100,11 +100,12 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a84a6860c2868458ef0daa0cdadacbad7" id="r_a84a6860c2868458ef0daa0cdadacbad7"><td class="memItemLeft"><a class="el" href="interface_c_u_i_libs_1_1_i_logger.html">ILogger</a>&#160;</td><td class="memItemRight"><a class="el" href="#a84a6860c2868458ef0daa0cdadacbad7">Logger</a><code> [get]</code></td></tr>
+<tr class="memitem:ad4eb9c0750f029a241d9481260ff50ca" id="r_ad4eb9c0750f029a241d9481260ff50ca"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ad4eb9c0750f029a241d9481260ff50ca">SerializeTestSubject</a> = true<code> [get, set]</code></td></tr>
 <tr class="memitem:aaf56a210a78fee18b6fc879d8ebdccdc" id="r_aaf56a210a78fee18b6fc879d8ebdccdc"><td class="memItemLeft"><a class="el" href="class_crab_u_i_user_1_1_snapshot_test_chamber.html">SnapshotTestChamber</a>&#160;</td><td class="memItemRight"><a class="el" href="#aaf56a210a78fee18b6fc879d8ebdccdc">Chamber</a><code> [get, set]</code></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_snapshot_test_runner_8cs_source.html#l00015">15</a> of file <a class="el" href="_snapshot_test_runner_8cs_source.html">SnapshotTestRunner.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_snapshot_test_runner_8cs_source.html#l00016">16</a> of file <a class="el" href="_snapshot_test_runner_8cs_source.html">SnapshotTestRunner.cs</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a5733d7b762dbd3d11279785e79bace41" name="a5733d7b762dbd3d11279785e79bace41"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5733d7b762dbd3d11279785e79bace41">&#9670;&#160;</a></span>Run()</h2>
@@ -121,27 +122,48 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_snapshot_test_runner_8cs_source.html#l00021">21</a> of file <a class="el" href="_snapshot_test_runner_8cs_source.html">SnapshotTestRunner.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   22</span>    {</div>
-<div class="line"><span class="lineno">   23</span>      <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">   24</span>      {</div>
-<div class="line"><span class="lineno">   25</span>        CUIComponent TestSubject = (CUIComponent)test.TestFunc();</div>
-<div class="line"><span class="lineno">   26</span>        TestSubject.DeepDebug = <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   27</span> </div>
-<div class="line"><span class="lineno">   28</span>        Chamber.Children.Clear();</div>
-<div class="line"><span class="lineno">   29</span>        Chamber.Children.Add(TestSubject);</div>
+<p class="definition">Definition at line <a class="el" href="_snapshot_test_runner_8cs_source.html#l00024">24</a> of file <a class="el" href="_snapshot_test_runner_8cs_source.html">SnapshotTestRunner.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   25</span>    {</div>
+<div class="line"><span class="lineno">   26</span>      <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">   27</span>      {</div>
+<div class="line"><span class="lineno">   28</span>        CUIComponent TestSubject = (CUIComponent)test.TestFunc();</div>
+<div class="line"><span class="lineno">   29</span>        TestSubject.DeepDebug = <span class="keyword">true</span>;</div>
 <div class="line"><span class="lineno">   30</span> </div>
-<div class="line"><span class="lineno">   31</span>        CUI.Main.Step();</div>
-<div class="line"><span class="lineno">   32</span> </div>
-<div class="line"><span class="lineno">   33</span>        <span class="keywordflow">return</span> ComponentSnapshot.Take(TestSubject, test.Name);</div>
-<div class="line"><span class="lineno">   34</span>      }</div>
-<div class="line"><span class="lineno">   35</span>      <span class="keywordflow">catch</span> (Exception e)</div>
-<div class="line"><span class="lineno">   36</span>      {</div>
-<div class="line"><span class="lineno">   37</span>        Logger.Warning($<span class="stringliteral">&quot;Error in CUISnapshotTest [{test.Name}]: {e.Message} {e.InnerException}\n{e.StackTrace}&quot;</span>);</div>
-<div class="line"><span class="lineno">   38</span>      }</div>
-<div class="line"><span class="lineno">   39</span> </div>
-<div class="line"><span class="lineno">   40</span>      <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
-<div class="line"><span class="lineno">   41</span>    }</div>
+<div class="line"><span class="lineno">   31</span> </div>
+<div class="line"><span class="lineno">   32</span>        <span class="keywordflow">if</span> (SerializeTestSubject)</div>
+<div class="line"><span class="lineno">   33</span>        {</div>
+<div class="line"><span class="lineno">   34</span>          XElement XMLBefore = TestSubject.Serialize();</div>
+<div class="line"><span class="lineno">   35</span>          TestSubject = CUIComponent.Deserialize(TestSubject.Serialize());</div>
+<div class="line"><span class="lineno">   36</span>          XElement XMLAfter = TestSubject.Serialize();</div>
+<div class="line"><span class="lineno">   37</span> </div>
+<div class="line"><span class="lineno">   38</span>          <span class="keywordflow">if</span> (XMLBefore.ToString() != XMLAfter.ToString())</div>
+<div class="line"><span class="lineno">   39</span>          {</div>
+<div class="line"><span class="lineno">   40</span>            CUI.Logger.Log($<span class="stringliteral">&quot;=========&gt;&gt; Before serialization: &lt;&lt;=========\n{XMLBefore}\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   41</span>            CUI.Logger.Log($<span class="stringliteral">&quot;=========&gt;&gt; After serialization: &lt;&lt;=========\n{XMLAfter}\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span>            <span class="keyword">new</span> XDocument(XMLBefore).Save(Path.Combine(CUITest.CompareFolder, <span class="stringliteral">&quot;Before.xml&quot;</span>));</div>
+<div class="line"><span class="lineno">   44</span>            <span class="keyword">new</span> XDocument(XMLAfter).Save(Path.Combine(CUITest.CompareFolder, <span class="stringliteral">&quot;After.xml&quot;</span>));</div>
+<div class="line"><span class="lineno">   45</span>          }</div>
+<div class="line"><span class="lineno">   46</span>          <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   47</span>          {</div>
+<div class="line"><span class="lineno">   48</span>            CUI.Logger.Log($<span class="stringliteral">&quot;=========&gt;&gt; XML Before and After serialization matches &lt;&lt;=========\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   49</span>          }</div>
+<div class="line"><span class="lineno">   50</span>        }</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>        Chamber.Children.Clear();</div>
+<div class="line"><span class="lineno">   53</span>        Chamber.Children.Add(TestSubject);</div>
+<div class="line"><span class="lineno">   54</span> </div>
+<div class="line"><span class="lineno">   55</span>        CUI.Main.Step();</div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span>        <span class="keywordflow">return</span> ComponentSnapshot.Take(TestSubject, test.Name);</div>
+<div class="line"><span class="lineno">   58</span>      }</div>
+<div class="line"><span class="lineno">   59</span>      <span class="keywordflow">catch</span> (Exception e)</div>
+<div class="line"><span class="lineno">   60</span>      {</div>
+<div class="line"><span class="lineno">   61</span>        Logger.Warning($<span class="stringliteral">&quot;Error in CUISnapshotTest [{test.Name}]: {e.Message} {e.InnerException}\n{e.StackTrace}&quot;</span>);</div>
+<div class="line"><span class="lineno">   62</span>      }</div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>      <span class="keywordflow">return</span> <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">   65</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -166,8 +188,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_snapshot_test_runner_8cs_source.html#l00019">19</a> of file <a class="el" href="_snapshot_test_runner_8cs_source.html">SnapshotTestRunner.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   19</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_snapshot_test_runner_8cs_source.html#l00022">22</a> of file <a class="el" href="_snapshot_test_runner_8cs_source.html">SnapshotTestRunner.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -191,8 +213,33 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_snapshot_test_runner_8cs_source.html#l00017">17</a> of file <a class="el" href="_snapshot_test_runner_8cs_source.html">SnapshotTestRunner.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_snapshot_test_runner_8cs_source.html#l00018">18</a> of file <a class="el" href="_snapshot_test_runner_8cs_source.html">SnapshotTestRunner.cs</a>.</p>
 
+</div>
+</div>
+<a id="ad4eb9c0750f029a241d9481260ff50ca" name="ad4eb9c0750f029a241d9481260ff50ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4eb9c0750f029a241d9481260ff50ca">&#9670;&#160;</a></span>SerializeTestSubject</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CrabUIUser.SnapshotTestRunner.SerializeTestSubject = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_snapshot_test_runner_8cs_source.html#l00020">20</a> of file <a class="el" href="_snapshot_test_runner_8cs_source.html">SnapshotTestRunner.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; } = <span class="keyword">true</span>;</div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

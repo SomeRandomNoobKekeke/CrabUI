@@ -7,10 +7,11 @@ using Barotrauma;
 using Microsoft.Xna.Framework;
 using CUILibs;
 using Microsoft.Xna.Framework.Graphics;
+using System.Xml.Linq;
 
 namespace CrabUI
 {
-  public class Borders : VisualElementBase
+  public class Borders : VisualElementBase, CUISerializable
   {
     private CUIRect _Rect; public override CUIRect Rect
     {
@@ -26,6 +27,7 @@ namespace CrabUI
     public CUISizes Sizes { get; set; }
 
     public CUISprite Sprite { get; set; } = CUISprite.White;
+    [CUISerializableProp]
     public Color Color { get => Sprite.Color; set => Sprite.Color = value; }
 
     public override bool Contains(Vector2 pos)
@@ -83,6 +85,11 @@ namespace CrabUI
         if (Sizes.Right != 0) Sprite.Draw(spriteBatch, RightRect);
         if (Sizes.Bottom != 0) Sprite.Draw(spriteBatch, BottomRect);
       }
+    }
+
+    public static object Deserialize(XElement element)
+    {
+      return new Borders();
     }
   }
 }

@@ -57,6 +57,71 @@ namespace CrabUI
       return new Vector2(x, y);
     }
 
+
+    public bool OutOfBounds(CUIRect rect) => OutOfBounds(rect.Left, rect.Top, rect.Width, rect.Height);
+    public bool OutOfBounds(float x, float y, float w, float h)
+    {
+      if (MaxX.HasValue && x + w > MaxX.Value) return true;
+      if (MaxY.HasValue && y + h > MaxY.Value) return true;
+      if (MinX.HasValue && x < MinX.Value) return true;
+      if (MinY.HasValue && y < MinY.Value) return true;
+
+      return false;
+    }
+
+    //BRUH mb this should be in some CUIBoundaries extensions
+    public CUIRect FitGracefuly(CUIRect prev, CUIRect next)
+    {
+      float x = next.Left;
+      float y = next.Top;
+      float w = next.Width;
+      float h = next.Height;
+
+
+      if (MinX.HasValue && next.Left < MinX.Value && MaxX.HasValue && next.Right > MaxX.Value)
+      {
+        x = MinX.Value;
+        w = MaxX.Value - MinX.Value;
+      }
+
+      if (MinX.HasValue && next.Left < MinX.Value)
+      {
+        x = MinX.Value;
+        w = prev.Width;
+      }
+
+      if (MaxX.HasValue && next.Right > MaxX.Value)
+      {
+        x = MaxX.Value - prev.Width;
+        w = prev.Width;
+      }
+
+
+      if (MinY.HasValue && next.Top < MinY.Value && MaxY.HasValue && next.Bottom > MaxY.Value)
+      {
+        y = MinY.Value;
+        h = MaxY.Value - MinY.Value;
+      }
+
+      if (MinY.HasValue && next.Top < MinY.Value)
+      {
+        y = MinY.Value;
+        h = prev.Height;
+      }
+
+      if (MaxY.HasValue && next.Bottom > MaxY.Value)
+      {
+        y = MaxY.Value - prev.Height;
+        h = prev.Height;
+      }
+
+      return new CUIRect(x, y, w, h);
+    }
+
+
+
+
+
     public CUIBoundaries(
       float? minX = null, float? maxX = null,
       float? minY = null, float? maxY = null

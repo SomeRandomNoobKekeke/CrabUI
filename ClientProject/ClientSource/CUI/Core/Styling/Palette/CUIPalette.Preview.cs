@@ -10,9 +10,9 @@ namespace CrabUI
   {
     public static void Preview()
     {
-      CUIFrame frame = new CUIDefault.Frame()
+      CUIFrame frame = new CUIDefault.Frame("Palette Preview")
       {
-        Caption = { Text = "Palette Preview" },
+        Absolute = new CUINullRect(w: 400, h: 600),
       };
 
       frame["layout"]["header"] = new CUIHorizontalList()

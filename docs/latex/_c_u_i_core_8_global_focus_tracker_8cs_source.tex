@@ -33,10 +33,10 @@
 \DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \_Focused.Focused\ =\ \textcolor{keyword}{false};}
 \DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \_Focused.OnFocusLost.Raise();}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00032}00032\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00034}00034\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \_Focused\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \_Focused\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ Self.Debug\_Focus.Send(\$\textcolor{stringliteral}{"{}Focused\ set\ [\{\_Focused\}]"{}});}
 \DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00036}00036\ }
 \DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_Focused\ is\ not\ \textcolor{keyword}{null})}
 \DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \{}
@@ -46,53 +46,74 @@
 \DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00043}00043\ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00044}00044\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00045}00045\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_focusable}{IFocusable}}\ WantsToBeFocused\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00046}00046\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00047}00047\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ ResolveFocus(\textcolor{keywordtype}{bool}\ SomethingFocusedElsewhere)}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00048}00048\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (SomethingFocusedElsewhere)}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ Focused\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00054}00054\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_focusable}{IFocusable}}\ next\ =\ WantsToBeFocused;}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ next\ ??=\ Self.Main.WantsToBeFocused;}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ next\ ??=\ Self.TopMain.WantsToBeFocused;}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00058}00058\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (next\ is\ not\ \textcolor{keyword}{null})}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ Focused\ =\ next;}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00062}00062\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//TODO\ there\ are\ ton\ of\ hardcoded\ actions\ in\ barotrauma\ that\ are\ performed\ without\ focus}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ idk,\ i\ need\ a\ map\ of\ them\ to\ see\ how\ focus\ can\ possibly\ be\ resolved\ }}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ Self.Handles.GrabFocus();}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (next\ is\ \textcolor{keyword}{null}\ \&\&\ FocusShouldBeLost())}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ Focused\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ Self.Handles.ClearFocus();}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00072}00072\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ WantsToBeFocused\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00074}00074\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00075}00075\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00076}00076\ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{bool}\ FocusShouldBeLost()}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00077}00077\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Self.\_Input.Mouse.M1.Down;}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00079}00079\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00045}00045\ \ \ \ \ \ \ \textcolor{keyword}{private}\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_focusable}{IFocusable}}\ \_WantsToBeFocused;\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_focusable}{IFocusable}}\ WantsToBeFocused}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00046}00046\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_WantsToBeFocused;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \_WantsToBeFocused\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ Self.Debug\_Focus.Send(\$\textcolor{stringliteral}{"{}WantsToBeFocused\ [\{value\}]"{}});}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00053}00053\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00054}00054\ \ \ \ \ \ \ \textcolor{keyword}{public}\ HashSet<IFocusable>\ WantsToBeBlured\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00056}00056\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ AddToWantsToBeBlured(\doxymbox{\hyperlink{interface_crab_u_i_1_1_i_focusable}{IFocusable}}\ focusable)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00057}00057\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ WantsToBeBlured.Add(focusable);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ Self.Debug\_Focus.Send(\$\textcolor{stringliteral}{"{}WantsToBeBlured\ [\{focusable\}]"{}});}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00060}00060\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00062}00062\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ ResolveFocus(\textcolor{keywordtype}{bool}\ SomethingFocusedElsewhere)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00063}00063\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (SomethingFocusedElsewhere)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ Focused\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_focusable}{IFocusable}}\ next\ =\ WantsToBeFocused;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ next\ ??=\ Self.TopMain.WantsToBeFocused;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ next\ ??=\ Self.Main.WantsToBeFocused;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (next\ is\ not\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ Focused\ =\ next;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ Self.Handles.GrabFocus();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00080}00080\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00081}00081\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ DispatchKeyboadEvents()}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00082}00082\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Focused\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00084}00084\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ EventDispatcher.Dispatch(Focused,\ Self.EventConstructor.KeyboardEvents);}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00086}00086\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00087}00087\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00088}00088\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00089}00089\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00090}00090\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00091}00091\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00092}00092\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (WantsToBeBlured.Contains(Focused))}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ Focused\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ Self.Handles.ClearFocus();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (next\ is\ \textcolor{keyword}{null}\ \&\&\ Self.\_Input.Mouse.M1.Down)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ Focused\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ Self.Handles.ClearFocus();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \_WantsToBeFocused\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ Self.Main.WantsToBeFocused\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ Self.TopMain.WantsToBeFocused\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ WantsToBeBlured.Clear();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00098}00098\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00101}00101\ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ DispatchKeyboadEvents()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00102}00102\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Focused\ is\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (CUICore.InputBlockingMenuOpen)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ EventDispatcher.Dispatch(Focused,\ Self.EventConstructor.KeyboardEvents);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00107}00107\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00108}00108\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00111}00111\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_core_8_global_focus_tracker_8cs_source_l00113}00113\ \}}
 
 \end{DoxyCode}

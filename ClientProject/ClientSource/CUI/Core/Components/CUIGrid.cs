@@ -34,7 +34,7 @@ namespace CrabUI
     {
       base.InitStyle();
     }
-
+    //TODO [CUISerializableProp]
     public List<CUIGridLayout.Line> RowSizes { get; set; } = new();
     public List<CUIGridLayout.Line> ColumnSizes { get; set; } = new();
 

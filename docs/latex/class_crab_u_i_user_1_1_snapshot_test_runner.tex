@@ -10,6 +10,8 @@
 \item 
 \doxymbox{\hyperlink{interface_c_u_i_libs_1_1_i_logger}{ILogger}} \doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_test_runner_a84a6860c2868458ef0daa0cdadacbad7}{Logger}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \item 
+bool \doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_test_runner_ad4eb9c0750f029a241d9481260ff50ca}{Serialize\+Test\+Subject}} = true\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
 \doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_test_chamber}{Snapshot\+Test\+Chamber}} \doxymbox{\hyperlink{class_crab_u_i_user_1_1_snapshot_test_runner_aaf56a210a78fee18b6fc879d8ebdccdc}{Chamber}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
 \end{DoxyCompactItemize}
 
@@ -17,7 +19,7 @@
 \doxysubsection{Detailed Description}
 
 
-Definition at line \doxymbox{\hyperlink{_snapshot_test_runner_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_snapshot_test_runner_8cs_source}{Snapshot\+Test\+Runner.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_snapshot_test_runner_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_snapshot_test_runner_8cs_source}{Snapshot\+Test\+Runner.\+cs}}.
 
 
 
@@ -32,30 +34,51 @@ Definition at line \doxymbox{\hyperlink{_snapshot_test_runner_8cs_source_l00015}
 
 
 
-Definition at line \doxymbox{\hyperlink{_snapshot_test_runner_8cs_source_l00021}{21}} of file \doxymbox{\hyperlink{_snapshot_test_runner_8cs_source}{Snapshot\+Test\+Runner.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_snapshot_test_runner_8cs_source_l00024}{24}} of file \doxymbox{\hyperlink{_snapshot_test_runner_8cs_source}{Snapshot\+Test\+Runner.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00022\ \ \ \ \ \{}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ CUIComponent\ TestSubject\ =\ (CUIComponent)test.TestFunc();}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ TestSubject.DeepDebug\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ Chamber.Children.Clear();}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ Chamber.Children.Add(TestSubject);}
+\DoxyCodeLine{00025\ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ CUIComponent\ TestSubject\ =\ (CUIComponent)test.TestFunc();}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ TestSubject.DeepDebug\ =\ \textcolor{keyword}{true};}
 \DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ CUI.Main.Step();}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ComponentSnapshot.Take(TestSubject,\ test.Name);}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ Logger.Warning(\$\textcolor{stringliteral}{"{}Error\ in\ CUISnapshotTest\ [\{test.Name\}]:\ \{e.Message\}\ \{e.InnerException\}\(\backslash\)n\{e.StackTrace\}"{}});}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00039\ }
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
-\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (SerializeTestSubject)}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ XElement\ XMLBefore\ =\ TestSubject.Serialize();}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ TestSubject\ =\ CUIComponent.Deserialize(TestSubject.Serialize());}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ XElement\ XMLAfter\ =\ TestSubject.Serialize();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (XMLBefore.ToString()\ !=\ XMLAfter.ToString())}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ CUI.Logger.Log(\$\textcolor{stringliteral}{"{}=========>>\ Before\ serialization:\ <<=========\(\backslash\)n\{XMLBefore\}\(\backslash\)n"{}});}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ CUI.Logger.Log(\$\textcolor{stringliteral}{"{}=========>>\ After\ serialization:\ <<=========\(\backslash\)n\{XMLAfter\}\(\backslash\)n"{}});}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ XDocument(XMLBefore).Save(Path.Combine(CUITest.CompareFolder,\ \textcolor{stringliteral}{"{}Before.xml"{}}));}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ XDocument(XMLAfter).Save(Path.Combine(CUITest.CompareFolder,\ \textcolor{stringliteral}{"{}After.xml"{}}));}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ CUI.Logger.Log(\$\textcolor{stringliteral}{"{}=========>>\ XML\ Before\ and\ After\ serialization\ matches\ <<=========\(\backslash\)n"{}});}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ Chamber.Children.Clear();}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ Chamber.Children.Add(TestSubject);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ CUI.Main.Step();}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ComponentSnapshot.Take(TestSubject,\ test.Name);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ Logger.Warning(\$\textcolor{stringliteral}{"{}Error\ in\ CUISnapshotTest\ [\{test.Name\}]:\ \{e.Message\}\ \{e.InnerException\}\(\backslash\)n\{e.StackTrace\}"{}});}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00065\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -71,11 +94,11 @@ Definition at line \doxymbox{\hyperlink{_snapshot_test_runner_8cs_source_l00021}
 
 
 
-Definition at line \doxymbox{\hyperlink{_snapshot_test_runner_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_snapshot_test_runner_8cs_source}{Snapshot\+Test\+Runner.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_snapshot_test_runner_8cs_source_l00022}{22}} of file \doxymbox{\hyperlink{_snapshot_test_runner_8cs_source}{Snapshot\+Test\+Runner.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00019\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{00022\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_user_1_1_snapshot_test_runner_a84a6860c2868458ef0daa0cdadacbad7}\index{CrabUIUser.SnapshotTestRunner@{CrabUIUser.SnapshotTestRunner}!Logger@{Logger}}
@@ -86,8 +109,23 @@ Definition at line \doxymbox{\hyperlink{_snapshot_test_runner_8cs_source_l00019}
 
 
 
-Definition at line \doxymbox{\hyperlink{_snapshot_test_runner_8cs_source_l00017}{17}} of file \doxymbox{\hyperlink{_snapshot_test_runner_8cs_source}{Snapshot\+Test\+Runner.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_snapshot_test_runner_8cs_source_l00018}{18}} of file \doxymbox{\hyperlink{_snapshot_test_runner_8cs_source}{Snapshot\+Test\+Runner.\+cs}}.
 
+\Hypertarget{class_crab_u_i_user_1_1_snapshot_test_runner_ad4eb9c0750f029a241d9481260ff50ca}\index{CrabUIUser.SnapshotTestRunner@{CrabUIUser.SnapshotTestRunner}!SerializeTestSubject@{SerializeTestSubject}}
+\index{SerializeTestSubject@{SerializeTestSubject}!CrabUIUser.SnapshotTestRunner@{CrabUIUser.SnapshotTestRunner}}
+\doxysubsubsection{\texorpdfstring{SerializeTestSubject}{SerializeTestSubject}}
+{\footnotesize\ttfamily \label{class_crab_u_i_user_1_1_snapshot_test_runner_ad4eb9c0750f029a241d9481260ff50ca} 
+bool Crab\+UIUser.\+Snapshot\+Test\+Runner.\+Serialize\+Test\+Subject = true\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_snapshot_test_runner_8cs_source_l00020}{20}} of file \doxymbox{\hyperlink{_snapshot_test_runner_8cs_source}{Snapshot\+Test\+Runner.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{true};}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}

@@ -10,69 +10,72 @@
 \DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }Barotrauma;}
 \DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
 \DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework.Graphics;}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00009}00009\ }
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00010}00010\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00011}00011\ \{}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00012}\doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_texture2_d}{00012}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\_\_CUITexture2D\ :\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture2_d}{CUITexture2D}},\ IDisposable}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00013}00013\ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \_\_CUITexture2D\ Create(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{bool}\ mipmap,\ SurfaceFormat\ format)}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00015}00015\ \ \ \ \ \ \ =>\ \textcolor{keyword}{new}\ \_\_CUITexture2D(width,\ height,\ mipmap,\ format);}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \_\_CUITexture2D\ Create(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height)}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00017}00017\ \ \ \ \ \ \ =>\ \textcolor{keyword}{new}\ \_\_CUITexture2D(width,\ height,\ \textcolor{keyword}{false},\ GameMain.Instance.GraphicsDevice.PresentationParameters.BackBufferFormat);}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00018}00018\ }
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \_\_CUITexture2D\ White\ =\ \textcolor{keyword}{new}\ \_\_CUITexture2D(GUI.WhiteTexture)}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00020}00020\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00021}00021\ \ \ \ \ \ \ ShouldBeDisposed\ =\ \textcolor{keyword}{false},}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00022}00022\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{public}\ Texture2D\ XNATexture\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }System.Xml.Linq;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00011}00011\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00013}\doxymbox{\hyperlink{class_crab_u_i_1_1_____c_u_i_texture2_d}{00013}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\_\_CUITexture2D\ :\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_texture2_d}{CUITexture2D}},\ IDisposable}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00014}00014\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \_\_CUITexture2D\ Create(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{bool}\ mipmap,\ SurfaceFormat\ format)}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00016}00016\ \ \ \ \ \ \ =>\ \textcolor{keyword}{new}\ \_\_CUITexture2D(width,\ height,\ mipmap,\ format);}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \_\_CUITexture2D\ Create(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height)}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00018}00018\ \ \ \ \ \ \ =>\ \textcolor{keyword}{new}\ \_\_CUITexture2D(width,\ height,\ \textcolor{keyword}{false},\ GameMain.Instance.GraphicsDevice.PresentationParameters.BackBufferFormat);}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \_\_CUITexture2D\ White\ =\ \textcolor{keyword}{new}\ \_\_CUITexture2D(GUI.WhiteTexture)}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00021}00021\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00022}00022\ \ \ \ \ \ \ ShouldBeDisposed\ =\ \textcolor{keyword}{false},}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00023}00023\ \ \ \ \ \};}
 \DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00024}00024\ }
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ Width\ =>\ XNATexture.Width;}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ Height\ =>\ XNATexture.Height;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ Key\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{public}\ Texture2D\ XNATexture\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
 \DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00027}00027\ }
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ ShouldBeDisposed\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{true};\ \textcolor{comment}{//BRUH\ sneaky}}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00029}00029\ }
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{public}\ Rectangle\ Bounds\ =>\ XNATexture.Bounds;}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{public}\ Color[]\ Data}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00032}00032\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00033}00033\ \ \ \ \ \ \ \textcolor{keyword}{get}}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00034}00034\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ Color[]\ buff\ =\ \textcolor{keyword}{new}\ Color[Width\ *\ Height];}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ GetData(buff);}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ buff;}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00038}00038\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00039}00039\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ SetData(value);}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00040}00040\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00041}00041\ }
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ SetData(Color[]\ data)\ =>\ XNATexture.SetData<Color>(data);}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ SetData(\textcolor{keywordtype}{int}\ level,\ \textcolor{keywordtype}{int}\ arraySlice,\ Rectangle?\ rect,\ Color[]\ data,\ \textcolor{keywordtype}{int}\ startIndex,\ \textcolor{keywordtype}{int}\ elementCount)}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00044}00044\ \ \ \ \ \ \ =>\ XNATexture.SetData<Color>(level,\ arraySlice,\ rect,\ data,\ startIndex,\ elementCount);}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00045}00045\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ SetData(\textcolor{keywordtype}{int}\ level,\ Rectangle?\ rect,\ Color[]\ data,\ \textcolor{keywordtype}{int}\ startIndex,\ \textcolor{keywordtype}{int}\ elementCount)}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00046}00046\ \ \ \ \ \ \ =>\ XNATexture.SetData<Color>(level,\ rect,\ data,\ startIndex,\ elementCount);}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00047}00047\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ SetData(Color[]\ data,\ \textcolor{keywordtype}{int}\ startIndex,\ \textcolor{keywordtype}{int}\ elementCount)}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00048}00048\ \ \ \ \ \ \ =>\ XNATexture.SetData<Color>(data,\ startIndex,\ elementCount);}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00049}00049\ }
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00050}00050\ }
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00051}00051\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ GetData(\textcolor{keywordtype}{int}\ level,\ \textcolor{keywordtype}{int}\ arraySlice,\ Rectangle?\ rect,\ Color[]\ data,\ \textcolor{keywordtype}{int}\ startIndex,\ \textcolor{keywordtype}{int}\ elementCount)}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00052}00052\ \ \ \ \ \ \ =>\ XNATexture.GetData<Color>(level,\ arraySlice,\ rect,\ data,\ startIndex,\ elementCount);}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00053}00053\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ GetData(\textcolor{keywordtype}{int}\ level,\ Rectangle?\ rect,\ Color[]\ data,\ \textcolor{keywordtype}{int}\ startIndex,\ \textcolor{keywordtype}{int}\ elementCount)}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00054}00054\ \ \ \ \ \ \ =>\ XNATexture.GetData<Color>(level,\ rect,\ data,\ startIndex,\ elementCount);}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00055}00055\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ GetData(Color[]\ data)\ =>\ XNATexture.GetData<Color>(data);}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00056}00056\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ GetData(Color[]\ data,\ \textcolor{keywordtype}{int}\ startIndex,\ \textcolor{keywordtype}{int}\ elementCount)}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00057}00057\ \ \ \ \ \ \ =>\ XNATexture.GetData<Color>(data,\ startIndex,\ elementCount);}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00058}00058\ }
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00059}00059\ }
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00060}00060\ \ \ \ \ \textcolor{keyword}{public}\ \_\_CUITexture2D(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{bool}\ mipmap,\ SurfaceFormat\ format)}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00061}00061\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00062}00062\ \ \ \ \ \ \ XNATexture\ =\ \textcolor{keyword}{new}\ Texture2D(GameMain.Instance.GraphicsDevice,\ width,\ height,\ mipmap,\ format);}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00063}00063\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00064}00064\ \ \ \ \ \textcolor{keyword}{public}\ \_\_CUITexture2D(Texture2D\ texture)\ =>\ XNATexture\ =\ texture;}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00065}00065\ \ \ \ \ \textcolor{keyword}{public}\ \_\_CUITexture2D()\ \{\ \}}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00066}00066\ }
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00067}00067\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Dispose()}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00068}00068\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00069}00069\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ShouldBeDisposed)\ XNATexture.Dispose();}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00070}00070\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00071}00071\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00072}00072\ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ Width\ =>\ XNATexture.Width;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ Height\ =>\ XNATexture.Height;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ ShouldBeDisposed\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{true};\ \textcolor{comment}{//BRUH\ sneaky}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{public}\ Rectangle\ Bounds\ =>\ XNATexture.Bounds;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{public}\ Color[]\ Data}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00035}00035\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00036}00036\ \ \ \ \ \ \ \textcolor{keyword}{get}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00037}00037\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ Color[]\ buff\ =\ \textcolor{keyword}{new}\ Color[Width\ *\ Height];}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ GetData(buff);}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ buff;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00041}00041\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00042}00042\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ SetData(value);}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00045}00045\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ SetData(Color[]\ data)\ =>\ XNATexture.SetData<Color>(data);}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ SetData(\textcolor{keywordtype}{int}\ level,\ \textcolor{keywordtype}{int}\ arraySlice,\ Rectangle?\ rect,\ Color[]\ data,\ \textcolor{keywordtype}{int}\ startIndex,\ \textcolor{keywordtype}{int}\ elementCount)}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00047}00047\ \ \ \ \ \ \ =>\ XNATexture.SetData<Color>(level,\ arraySlice,\ rect,\ data,\ startIndex,\ elementCount);}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ SetData(\textcolor{keywordtype}{int}\ level,\ Rectangle?\ rect,\ Color[]\ data,\ \textcolor{keywordtype}{int}\ startIndex,\ \textcolor{keywordtype}{int}\ elementCount)}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00049}00049\ \ \ \ \ \ \ =>\ XNATexture.SetData<Color>(level,\ rect,\ data,\ startIndex,\ elementCount);}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00050}00050\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ SetData(Color[]\ data,\ \textcolor{keywordtype}{int}\ startIndex,\ \textcolor{keywordtype}{int}\ elementCount)}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00051}00051\ \ \ \ \ \ \ =>\ XNATexture.SetData<Color>(data,\ startIndex,\ elementCount);}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00054}00054\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ GetData(\textcolor{keywordtype}{int}\ level,\ \textcolor{keywordtype}{int}\ arraySlice,\ Rectangle?\ rect,\ Color[]\ data,\ \textcolor{keywordtype}{int}\ startIndex,\ \textcolor{keywordtype}{int}\ elementCount)}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00055}00055\ \ \ \ \ \ \ =>\ XNATexture.GetData<Color>(level,\ arraySlice,\ rect,\ data,\ startIndex,\ elementCount);}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00056}00056\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ GetData(\textcolor{keywordtype}{int}\ level,\ Rectangle?\ rect,\ Color[]\ data,\ \textcolor{keywordtype}{int}\ startIndex,\ \textcolor{keywordtype}{int}\ elementCount)}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00057}00057\ \ \ \ \ \ \ =>\ XNATexture.GetData<Color>(level,\ rect,\ data,\ startIndex,\ elementCount);}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00058}00058\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ GetData(Color[]\ data)\ =>\ XNATexture.GetData<Color>(data);}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00059}00059\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ GetData(Color[]\ data,\ \textcolor{keywordtype}{int}\ startIndex,\ \textcolor{keywordtype}{int}\ elementCount)}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00060}00060\ \ \ \ \ \ \ =>\ XNATexture.GetData<Color>(data,\ startIndex,\ elementCount);}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00063}00063\ \ \ \ \ \textcolor{keyword}{public}\ \_\_CUITexture2D(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{bool}\ mipmap,\ SurfaceFormat\ format)}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00064}00064\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00065}00065\ \ \ \ \ \ \ XNATexture\ =\ \textcolor{keyword}{new}\ Texture2D(GameMain.Instance.GraphicsDevice,\ width,\ height,\ mipmap,\ format);}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00067}00067\ \ \ \ \ \textcolor{keyword}{public}\ \_\_CUITexture2D(Texture2D\ texture)\ =>\ XNATexture\ =\ texture;}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00068}00068\ \ \ \ \ \textcolor{keyword}{public}\ \_\_CUITexture2D()\ \{\ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00070}00070\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Dispose()}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00071}00071\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00072}00072\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ShouldBeDisposed)\ XNATexture.Dispose();}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00073}00073\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00074}00074\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_____c_u_i_texture2_d_8cs_source_l00075}00075\ \}}
 
 \end{DoxyCode}

@@ -112,12 +112,15 @@ $(function(){initNavTree('_c_u_i_parser_8_extra_serialize_8cs_source.html','',''
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    {</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>      [typeof(Color)] = (o) =&gt; ColorToString((Color)o),</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>      [typeof(Vector2)] = (o) =&gt; Vector2ToString((Vector2)o),</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    };</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> ColorToString(Color cl) =&gt; $<span class="stringliteral">&quot;{cl.R},{cl.G},{cl.B},{cl.A}&quot;</span>;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> Vector2ToString(Vector2 v) =&gt; $<span class="stringliteral">&quot;[{v.X},{v.Y}]&quot;</span>;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  }</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>      [typeof(__CUITexture2D)] = (o) =&gt; ((CUITexture2D)o).Key,</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>      [typeof((<span class="keywordtype">int</span>, <span class="keywordtype">int</span>))] = (o) =&gt; Tupple2IntIntToString(((<span class="keywordtype">int</span>, <span class="keywordtype">int</span>))o),</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    };</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> Tupple2IntIntToString((<span class="keywordtype">int</span>, <span class="keywordtype">int</span>) tupple) =&gt; $<span class="stringliteral">&quot;[{tupple.Item1},{tupple.Item2}]&quot;</span>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> ColorToString(Color cl) =&gt; $<span class="stringliteral">&quot;{cl.R},{cl.G},{cl.B},{cl.A}&quot;</span>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> Vector2ToString(Vector2 v) =&gt; $<span class="stringliteral">&quot;[{v.X},{v.Y}]&quot;</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_parser_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_parser.html">CrabUI.CUIParser</a></div><div class="ttdef"><b>Definition</b> <a href="_client_source_2_c_u_i_2_core_2_serialization_2_parser_2_c_u_i_parser_8cs_source.html#l00015">CUIParser.cs:16</a></div></div>
 <div class="ttc" id="anamespace_crab_u_i_html"><div class="ttname"><a href="namespace_crab_u_i.html">CrabUI</a></div><div class="ttdef"><b>Definition</b> <a href="_____generated_2_c_u_i_component_8cs_source.html#l00007">CUIComponent.cs:8</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

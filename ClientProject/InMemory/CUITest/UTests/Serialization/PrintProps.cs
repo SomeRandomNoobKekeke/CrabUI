@@ -7,7 +7,7 @@ using CUILibs;
 
 namespace CrabUI
 {
-  public class PrintSerializablePropsTest : UTestPack
+  public class PrintSerializablePropsTest : CUISerializationTest
   {
     public override void CreateTests()
     {

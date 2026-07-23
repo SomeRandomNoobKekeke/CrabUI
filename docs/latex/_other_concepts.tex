@@ -4,15 +4,16 @@
 \Hypertarget{_other_concepts_md__docs_sources_2_sources_23_01_other_01_concepts}%
 \hypertarget{_other_concepts_autotoc_md18}{}\doxysection{\texorpdfstring{CUIInfrastructure}{CUIInfrastructure}}\label{_other_concepts_autotoc_md18}
 Most CUI stuff is located in CUICore ~\newline
- CUICore is passive isolated state machine ~\newline
- It doesn\textquotesingle{}t know about the game and has to be runned by CUIRunners via handles
+ CUICore is a passive isolated state machine ~\newline
+ It doesn\textquotesingle{}t know about the game and has to be run by CUIRunners via handles ~\newline
 
-There could be various runners, e.\+g. Solo runner runs code in this mod, Master runner scans other mods, test runner can feed it with fake data and concurent runner can run CUICore in a separate thread\hypertarget{_other_concepts_autotoc_md19}{}\doxysubsubsection{\texorpdfstring{Then why are you putting solo runnner in CUI master package?}{Then why are you putting solo runnner in CUI master package?}}\label{_other_concepts_autotoc_md19}
+
+There could be various runners, e.\+g. Solo runner runs code in this mod, Master runner scans other mods, test runner can feed it with fake data and concurrent runner can run CUICore in a separate thread\hypertarget{_other_concepts_autotoc_md19}{}\doxysubsubsection{\texorpdfstring{Then why are you putting solo runner in CUI master package?}{Then why are you putting solo runner in CUI master package?}}\label{_other_concepts_autotoc_md19}
 A eto, bleh.\+gif
 
 Master runner isn\textquotesingle{}t done yet, and there\textquotesingle{}s not much to scan in other packages yet ~\newline
  Current Solo\+Runner just finds all CUIComponents and ISerializable in assembly that called CUI.\+Start ~\newline
- Should work from master package too, but it probably won\textquotesingle{}t be able to load textures with relative paths /\+/\+\+TODO
+ Should work from master package too
 
 Also data sources are separated from runners
 
@@ -53,7 +54,54 @@ Also CUIComponents can be accessed as
 \DoxyCodeLine{\textcolor{keyword}{public}\ IDictionary<string,\ object>\ As\_Dictionary\ \{\ \textcolor{keyword}{get};\ \}}
 
 \end{DoxyCode}
-\hypertarget{_other_concepts_autotoc_md22}{}\doxysection{\texorpdfstring{Component States}{Component States}}\label{_other_concepts_autotoc_md22}
+\hypertarget{_other_concepts_autotoc_md22}{}\doxysubsection{\texorpdfstring{path resolution}{path resolution}}\label{_other_concepts_autotoc_md22}
+When loading textures or xml prefabs CUI is aware of mod that called it and prefab file being loaded
+
+So it checks for textures to load at:\+
+\begin{DoxyItemize}
+\item Full path
+\item Relative path to loaded xml folder
+\item Relative path to mod folder
+\item Relative path to game folder
+\end{DoxyItemize}
+
+Same for loaded xml
+
+For saved xml it tries to save to:\+
+\begin{DoxyItemize}
+\item Full path
+\item Relative path to mod folder
+\item Relative path to game folder
+\end{DoxyItemize}\hypertarget{_other_concepts_autotoc_md23}{}\doxysubsection{\texorpdfstring{Serialization modes}{Serialization modes}}\label{_other_concepts_autotoc_md23}
+There\textquotesingle{}s a prop 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ CUISerializationMode\ CUIComponent.SerializationMode\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+ it\textquotesingle{}s one of 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{enum}\ CUISerializationMode\ \{\ Replace,\ Merge,\ Ignore\ \}}
+
+\end{DoxyCode}
+ It affects how child will be deserialized when there is already a child with the same name:\+
+\begin{DoxyItemize}
+\item Replace -\/ create new child and replace existing
+\item Merge -\/ Props will be copied to existing child
+\item Ignore -\/ Will keep existing child intact
+\end{DoxyItemize}
+
+You can prevent child from being serialized with 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ CUIComponent.Serializable\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{true};}
+
+\end{DoxyCode}
+ You can override these in derived components:\+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{protected}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ CUIComponent.BeforeSerialization()\ \{\ \}\ \textcolor{comment}{//\ -\/\ Happens\ before\ deserialization\ of\ children}}
+\DoxyCodeLine{\textcolor{keyword}{protected}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ CUIComponent.AfterSerialization()\ \{\ \}\ \textcolor{comment}{//\ -\/\ Happens\ after\ deserialization\ of\ children}}
+
+\end{DoxyCode}
+\hypertarget{_other_concepts_autotoc_md24}{}\doxysection{\texorpdfstring{Component States}{Component States}}\label{_other_concepts_autotoc_md24}
 you can save /\+ restore component state with
 
 
@@ -64,7 +112,7 @@ you can save /\+ restore component state with
 \end{DoxyCode}
 
 
-there\textquotesingle{}s a dict of Memorized\+States behind the scenes and it uses serialization\hypertarget{_other_concepts_autotoc_md23}{}\doxysection{\texorpdfstring{Focus (wip, mostly borked)}{Focus (wip, mostly borked)}}\label{_other_concepts_autotoc_md23}
+there\textquotesingle{}s a dict of Memorized\+States and it uses serialization behind the scenes\hypertarget{_other_concepts_autotoc_md25}{}\doxysection{\texorpdfstring{Focus (wip, mostly borked)}{Focus (wip, mostly borked)}}\label{_other_concepts_autotoc_md25}
 In vanilla there\textquotesingle{}s 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keyword}{public}\ IKeyboardSubscriber\ Barotrauma.GUI.KeyboardDispatcher.Subscriber\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
@@ -86,40 +134,52 @@ Focusable components are focused when clicked ~\newline
 But actually they only request focus ~\newline
  it\textquotesingle{}s resolved at the end of update cycle because there might be multiple clicked components at once
 
+You can request focus and blur manually with:\+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ CUIComponent.Focus();}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ CUIComponent.Blur();}
+
+\end{DoxyCode}
+
+
 CUI can steal focus from vanilla Keyboard\+Dispatcher and simulate focus on some dummy IKeyboard\+Subscriber ~\newline
  It\textquotesingle{}s barely tested and i\textquotesingle{}m sure it\textquotesingle{}s borked ~\newline
- Also there\textquotesingle{}s a lot of actions in vanilla that just ignores Keyboard\+Dispatcher.\+Subscriber, idk how to block those\hypertarget{_other_concepts_autotoc_md24}{}\doxysection{\texorpdfstring{Sprites /\+ Textures}{Sprites /\+ Textures}}\label{_other_concepts_autotoc_md24}
+ Also there\textquotesingle{}s a lot of actions in vanilla that just ignores Keyboard\+Dispatcher.\+Subscriber, idk how to block those\hypertarget{_other_concepts_autotoc_md26}{}\doxysection{\texorpdfstring{Sprites /\+ Textures}{Sprites /\+ Textures}}\label{_other_concepts_autotoc_md26}
 CUICore can\textquotesingle{}t load textures on its own, it requests them from CUIRunner ~\newline
 
 
-CUIRunner load them into CUITexture\+Manager, it only loads them once and automatically disposes them later ~\newline
+CUIRunner loads them into CUITexture\+Manager, it only loads them once and automatically disposes them later ~\newline
  All textures have a name, typically a path but you can specify the name you like ~\newline
  Then you can get them by that name ~\newline
 
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }CUICore\ \{}
-\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUITextureManager\ TextureManager\ \{\ \textcolor{keyword}{get};\ \}}
-\DoxyCodeLine{\}}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUITextureManager\ CUI.TextureManager\ \{\ \textcolor{keyword}{get};\ \}}
 
 \end{DoxyCode}
  
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{interface\ }CUITextureManager}
 \DoxyCodeLine{\{}
-\DoxyCodeLine{\ \ Dictionary<string,\ CUITexture2D>\ LoadedTextures\ \{\ \textcolor{keyword}{get};\ \}}
 \DoxyCodeLine{\ \ CUITexture2D\ Add(CUITexture2D\ texture,\ \textcolor{keywordtype}{string}\ key);}
 \DoxyCodeLine{\ \ \textcolor{keywordtype}{void}\ Clear();}
 \DoxyCodeLine{\ \ \textcolor{keywordtype}{void}\ Dispose();}
 \DoxyCodeLine{\ \ \textcolor{keywordtype}{void}\ Forget(\textcolor{keywordtype}{string}\ key);}
-\DoxyCodeLine{\ \ CUITexture2D\ Get(\textcolor{keywordtype}{string}\ key);}
 \DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ Has(\textcolor{keywordtype}{string}\ key);}
-\DoxyCodeLine{\ \ CUITexture2D\ Load(\textcolor{keywordtype}{string}\ path,\ \textcolor{keywordtype}{string}\ name);}
+\DoxyCodeLine{\ \ CUITexture2D\ Get(\textcolor{keywordtype}{string}\ key);\ \textcolor{comment}{//\ -\/\ this\ also\ loads\ the\ texture\ if\ it's\ not\ loaded\ yet}}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ CUITexture2D\ Reload(\textcolor{keywordtype}{string}\ key);}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ CUITexture2D\ LoadAs(\textcolor{keywordtype}{string}\ path,\ \textcolor{keywordtype}{string}\ key);}
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
-
+ When loading textures you can use:\+
+\begin{DoxyItemize}
+\item Absolute path
+\item Relative path to loaded xml folder (when texture path is inside xml prefab)
+\item Relative path to mod folder
+\item Relative path to game folder
+\end{DoxyItemize}
 
 CUI doesn\textquotesingle{}t use use monogame types directly, CUIRunner wraps them in abstractions, they are mostly similar ~\newline
  
@@ -139,7 +199,8 @@ But most stuff uses CUISprites ~\newline
 \DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUISprite\ White\ =>\ \textcolor{keyword}{new}\ CUISprite(CUITexture2D.White);}
 \DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUISprite\ BaroDev\ =>\ \textcolor{keyword}{new}\ CUISprite(CUICore.TextureManager.Get(\textcolor{stringliteral}{"{}BaroDev"{}}));}
 \DoxyCodeLine{}
-\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUISprite\ Load(\textcolor{keywordtype}{string}\ path,\ \textcolor{keywordtype}{string}\ key\ =\ \textcolor{keyword}{null});}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUISprite\ Get(\textcolor{keywordtype}{string}\ key);}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUISprite\ LoadAs(\textcolor{keywordtype}{string}\ path,\ \textcolor{keywordtype}{string}\ key);}
 \DoxyCodeLine{}
 \DoxyCodeLine{\ \ \textcolor{keyword}{public}\ CUITexture2D\ Texture\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
 \DoxyCodeLine{\ \ \textcolor{keyword}{public}\ Rectangle?\ SourceRectangle\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{null};}
@@ -153,7 +214,7 @@ But most stuff uses CUISprites ~\newline
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
-\hypertarget{_other_concepts_autotoc_md25}{}\doxysection{\texorpdfstring{Styles and palettes (wip, mostly borked)}{Styles and palettes (wip, mostly borked)}}\label{_other_concepts_autotoc_md25}
+\hypertarget{_other_concepts_autotoc_md27}{}\doxysection{\texorpdfstring{Styles and palettes (wip, mostly borked)}{Styles and palettes (wip, mostly borked)}}\label{_other_concepts_autotoc_md27}
 ICUIStyle is something that can be applied to component and change its state ~\newline
  It can be a function, a dict of props or xml prefab ~\newline
 
@@ -170,7 +231,7 @@ Styles typically use values from component palette ~\newline
 
 CUIStyle\+Pipelines and palettes are reactive, so changin styles or palette will reaplly CUIStyle\+Pipelines
 
-So if you need some props to be resistant to palette changes put them in personal styles\hypertarget{_other_concepts_autotoc_md26}{}\doxysection{\texorpdfstring{Animations}{Animations}}\label{_other_concepts_autotoc_md26}
+So if you need some props to be resistant to palette changes put them in personal styles\hypertarget{_other_concepts_autotoc_md28}{}\doxysection{\texorpdfstring{Animations}{Animations}}\label{_other_concepts_autotoc_md28}
 All animations in CUI are based on objects Animation\+Core
 
 Animation\+Core is passive state machine, it has tons of settings, exposes Lambda \+[0..1]\+ and can be updated manually or by CUICore.\+Animation\+Player
@@ -193,7 +254,7 @@ There\textquotesingle{}s also yped\+Animation$<$\+T$>$ that can animate typed va
 
 
 Currently all animations are external, so you have to animate some value and then manually update some prop on component ~\newline
- There\textquotesingle{}s no Animated\+Prop yet\hypertarget{_other_concepts_autotoc_md27}{}\doxysection{\texorpdfstring{Routable\+Commands}{Routable\+Commands}}\label{_other_concepts_autotoc_md27}
+ There\textquotesingle{}s no Animated\+Prop yet\hypertarget{_other_concepts_autotoc_md29}{}\doxysection{\texorpdfstring{Routable\+Commands}{Routable\+Commands}}\label{_other_concepts_autotoc_md29}
 All CUIComponents can send such Routable\+Commands up and down component tree to communicate with each other 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keyword}{public}\ record\ RoutableCommand(\textcolor{keywordtype}{string}\ name,\ \textcolor{keywordtype}{object}\ data);}
@@ -225,7 +286,7 @@ Benefits of Routable\+Commands:\+
 
 For example CUIClose\+Button emits "{}close"{} event up to the nearest CUIFrame ~\newline
  When CUIFrame recieves "{}close"{} event it closes ~\newline
- It doesn\textquotesingle{}t matter where the close button is and i don\textquotesingle{}t have to pass close button to the frame so it could subscribe to its events\hypertarget{_other_concepts_autotoc_md28}{}\doxysection{\texorpdfstring{Debug}{Debug}}\label{_other_concepts_autotoc_md28}
+ It doesn\textquotesingle{}t matter where the close button is and i don\textquotesingle{}t have to pass close button to the frame so it could subscribe to its events\hypertarget{_other_concepts_autotoc_md30}{}\doxysection{\texorpdfstring{Debug}{Debug}}\label{_other_concepts_autotoc_md30}
 Most of the time i debug with just CUI.\+Logger, but if it\textquotesingle{}s too complex or i know i\textquotesingle{}ll need the same data later is add Debug\+Nodes
 
 

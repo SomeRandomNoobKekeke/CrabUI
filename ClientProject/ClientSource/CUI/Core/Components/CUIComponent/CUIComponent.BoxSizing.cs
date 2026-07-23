@@ -12,7 +12,9 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-    private CUISizes _Margin; public CUISizes Margin
+    private CUISizes _Margin;
+    [CUISerializableProp]
+    public CUISizes Margin
     {
       get => _Margin;
       set
@@ -22,7 +24,9 @@ namespace CrabUI
       }
     }
 
-    private CUISizes _Padding; public CUISizes Padding
+    private CUISizes _Padding;
+    [CUISerializableProp]
+    public CUISizes Padding
     {
       get => _Padding;
       set
@@ -32,6 +36,7 @@ namespace CrabUI
       }
     }
 
+    [CUISerializableProp]
     public CUISizes Border
     {
       get => Borders.Sizes;

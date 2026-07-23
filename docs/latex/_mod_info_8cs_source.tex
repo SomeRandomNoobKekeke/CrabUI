@@ -24,33 +24,34 @@
 \DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00020}00020\ \textcolor{comment}{\ \ ///\ </summary>}}
 \DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00021}00021\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }ModInfo}
 \DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00022}00022\ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ ContentPackage\ Package}
+\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ ContentPackage\ GetPackageForAssembly(Assembly\ assembly)}
 \DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00024}00024\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00025}00025\ \ \ \ \ \ \ \textcolor{keyword}{get}}
-\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00026}00026\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ PluginManagementService\ pluginManagement\ =\ LuaCsSetup.Instance.PluginManagementService\ as\ PluginManagementService;}
+\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00025}00025\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (assembly\ ==\ typeof(GameMain).Assembly)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00027}00027\ \ \ \ \ \ \ PluginManagementService\ pluginManagement\ =\ LuaCsSetup.Instance.PluginManagementService\ as\ PluginManagementService;}
 \DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00028}00028\ }
-\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ (package,\ asmLoader)\ in\ pluginManagement.\_assemblyLoaders)}
-\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (asmLoader.Assemblies.Any(\textcolor{keyword}{asm}\ =>\ \textcolor{keyword}{asm}\ ==\ Assembly.GetExecutingAssembly()))}
-\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ package;}
-\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00029}00029\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ (package,\ asmLoader)\ in\ pluginManagement.\_assemblyLoaders)}
+\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00030}00030\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (asmLoader.Assemblies.Any(\textcolor{keyword}{asm}\ =>\ \textcolor{keyword}{asm}\ ==\ assembly))}
+\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ package;}
+\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00035}00035\ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00036}00036\ }
-\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ UnreachableException();}
-\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00038}00038\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00039}00039\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00040}00040\ }
-\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00041}00041\ \ \ \ \ \textcolor{comment}{//\ public\ static\ string\ AssemblyName\ =>\ Assembly.GetExecutingAssembly().GetName().Name;}}
-\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ HookId\ =>\ Package.Name;}
-\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ BarotraumaPath\ =>\ Path.GetFullPath(\textcolor{stringliteral}{"{}./"{}});}
-\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00037}00037\ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ UnreachableException();}
+\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00038}00038\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ ContentPackage\ Package\ =>\ GetPackageForAssembly(Assembly.GetExecutingAssembly());}
+\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00042}00042\ \ \ \ \ \textcolor{comment}{//\ public\ static\ string\ AssemblyName\ =>\ Assembly.GetExecutingAssembly().GetName().Name;}}
+\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ HookId\ =>\ Package.Name;}
+\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00044}00044\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ BarotraumaPath\ =>\ Path.GetFullPath(\textcolor{stringliteral}{"{}./"{}});}
 \DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00045}00045\ }
-\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ Dir\ =>\ Package.Dir;}
-\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00047}00047\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ Version\ =>\ Package.ModVersion;}
-\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ Name\ =>\ Package.Name;}
-\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00049}00049\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00050}00050\ \}}
+\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00047}00047\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ Dir\ =>\ Package.Dir;}
+\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ Version\ =>\ Package.ModVersion;}
+\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00049}00049\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ Name\ =>\ Package.Name;}
+\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00050}00050\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_mod_info_8cs_source_l00051}00051\ \}}
 
 \end{DoxyCode}

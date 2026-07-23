@@ -61,48 +61,113 @@
 \DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00057}00057\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ Vector2(x,\ y);}
 \DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00058}00058\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00059}00059\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00060}00060\ \ \ \ \ \textcolor{keyword}{public}\ CUIBoundaries(}
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00061}00061\ \ \ \ \ \ \ \textcolor{keywordtype}{float}?\ minX\ =\ \textcolor{keyword}{null},\ \textcolor{keywordtype}{float}?\ maxX\ =\ \textcolor{keyword}{null},}
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00062}00062\ \ \ \ \ \ \ \textcolor{keywordtype}{float}?\ minY\ =\ \textcolor{keyword}{null},\ \textcolor{keywordtype}{float}?\ maxY\ =\ \textcolor{keyword}{null}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00063}00063\ \ \ \ \ )}
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00064}00064\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00065}00065\ \ \ \ \ \ \ MinX\ =\ minX;}
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00066}00066\ \ \ \ \ \ \ MaxX\ =\ maxX;}
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00067}00067\ \ \ \ \ \ \ MinY\ =\ minY;}
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00068}00068\ \ \ \ \ \ \ MaxY\ =\ maxY;}
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00069}00069\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00070}00070\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00071}00071\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{string}\ ToString()\ =>\ \$\textcolor{stringliteral}{"{}[\{MinX\},\{MaxX\},\{MinY\},\{MaxY\}]"{}};}
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00072}00072\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUIBoundaries\ Parse(\textcolor{keywordtype}{string}\ s)}
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00073}00073\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00074}00074\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ content\ =\ s.Substring(}
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ s.IndexOf(\textcolor{charliteral}{'['})\ +\ 1,}
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ s.IndexOf(\textcolor{charliteral}{']'})\ -\/\ s.IndexOf(\textcolor{charliteral}{'['})\ -\/\ 1}
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00077}00077\ \ \ \ \ \ \ );}
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00078}00078\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00079}00079\ \ \ \ \ \ \ var\ parts\ =\ content.Split(\textcolor{charliteral}{','}).Select(a\ =>\ a.Trim());}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00061}00061\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ OutOfBounds(\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}\ rect)\ =>\ OutOfBounds(rect.Left,\ rect.Top,\ rect.Width,\ rect.Height);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00062}00062\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ OutOfBounds(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ w,\ \textcolor{keywordtype}{float}\ h)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00063}00063\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00064}00064\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (MaxX.HasValue\ \&\&\ x\ +\ w\ >\ MaxX.Value)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00065}00065\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (MaxY.HasValue\ \&\&\ y\ +\ h\ >\ MaxY.Value)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00066}00066\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (MinX.HasValue\ \&\&\ x\ <\ MinX.Value)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00067}00067\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (MinY.HasValue\ \&\&\ y\ <\ MinY.Value)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00069}00069\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00070}00070\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00072}00072\ \ \ \ \ \textcolor{comment}{//BRUH\ mb\ this\ should\ be\ in\ some\ CUIBoundaries\ extensions}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00073}00073\ \ \ \ \ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}\ FitGracefuly(\doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}\ prev,\ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}\ next)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00074}00074\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00075}00075\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x\ =\ next.Left;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00076}00076\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ y\ =\ next.Top;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00077}00077\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ w\ =\ next.Width;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00078}00078\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ h\ =\ next.Height;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00079}00079\ }
 \DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00080}00080\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00081}00081\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ minXPart\ =\ parts.ElementAtOrDefault(0);}
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00082}00082\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ maxXPart\ =\ parts.ElementAtOrDefault(1);}
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00083}00083\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ minYPart\ =\ parts.ElementAtOrDefault(2);}
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00084}00084\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ maxYPart\ =\ parts.ElementAtOrDefault(3);}
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00085}00085\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00086}00086\ \ \ \ \ \ \ \textcolor{keywordtype}{float}?\ minX\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00087}00087\ \ \ \ \ \ \ \textcolor{keywordtype}{float}?\ maxX\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00088}00088\ \ \ \ \ \ \ \textcolor{keywordtype}{float}?\ minY\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00089}00089\ \ \ \ \ \ \ \textcolor{keywordtype}{float}?\ maxY\ =\ \textcolor{keyword}{null};}
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00090}00090\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00091}00091\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!String.IsNullOrEmpty(minXPart))\ minX\ =\ \textcolor{keywordtype}{float}.Parse(minXPart);}
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00092}00092\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!String.IsNullOrEmpty(maxXPart))\ maxX\ =\ \textcolor{keywordtype}{float}.Parse(maxXPart);}
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00093}00093\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!String.IsNullOrEmpty(minYPart))\ minY\ =\ \textcolor{keywordtype}{float}.Parse(minYPart);}
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00094}00094\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!String.IsNullOrEmpty(maxYPart))\ maxY\ =\ \textcolor{keywordtype}{float}.Parse(maxYPart);}
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00095}00095\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00096}00096\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ CUIBoundaries(minX,\ maxX,\ minY,\ maxY);}
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00097}00097\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00081}00081\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (MinX.HasValue\ \&\&\ next.Left\ <\ MinX.Value\ \&\&\ MaxX.HasValue\ \&\&\ next.Right\ >\ MaxX.Value)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00082}00082\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ x\ =\ MinX.Value;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ w\ =\ MaxX.Value\ -\/\ MinX.Value;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00085}00085\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00087}00087\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (MinX.HasValue\ \&\&\ next.Left\ <\ MinX.Value)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00088}00088\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ x\ =\ MinX.Value;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ w\ =\ prev.Width;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00091}00091\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00093}00093\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (MaxX.HasValue\ \&\&\ next.Right\ >\ MaxX.Value)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00094}00094\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ x\ =\ MaxX.Value\ -\/\ prev.Width;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ w\ =\ prev.Width;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00097}00097\ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00098}00098\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00099}00099\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{object}\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_parsable}{IParsable}}.Parse(\textcolor{keywordtype}{string}\ raw)\ =>\ Parse(raw);}
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00100}00100\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ ToText()\ =>\ ToString();}
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00101}00101\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00102}00102\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00100}00100\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (MinY.HasValue\ \&\&\ next.Top\ <\ MinY.Value\ \&\&\ MaxY.HasValue\ \&\&\ next.Bottom\ >\ MaxY.Value)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00101}00101\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ y\ =\ MinY.Value;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ h\ =\ MaxY.Value\ -\/\ MinY.Value;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00104}00104\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00106}00106\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (MinY.HasValue\ \&\&\ next.Top\ <\ MinY.Value)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00107}00107\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ y\ =\ MinY.Value;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ h\ =\ prev.Height;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00110}00110\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00112}00112\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (MaxY.HasValue\ \&\&\ next.Bottom\ >\ MaxY.Value)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00113}00113\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ y\ =\ MaxY.Value\ -\/\ prev.Height;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ h\ =\ prev.Height;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00116}00116\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00118}00118\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_rect}{CUIRect}}(x,\ y,\ w,\ h);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00119}00119\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00125}00125\ \ \ \ \ \textcolor{keyword}{public}\ CUIBoundaries(}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00126}00126\ \ \ \ \ \ \ \textcolor{keywordtype}{float}?\ minX\ =\ \textcolor{keyword}{null},\ \textcolor{keywordtype}{float}?\ maxX\ =\ \textcolor{keyword}{null},}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00127}00127\ \ \ \ \ \ \ \textcolor{keywordtype}{float}?\ minY\ =\ \textcolor{keyword}{null},\ \textcolor{keywordtype}{float}?\ maxY\ =\ \textcolor{keyword}{null}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00128}00128\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00129}00129\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00130}00130\ \ \ \ \ \ \ MinX\ =\ minX;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00131}00131\ \ \ \ \ \ \ MaxX\ =\ maxX;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00132}00132\ \ \ \ \ \ \ MinY\ =\ minY;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00133}00133\ \ \ \ \ \ \ MaxY\ =\ maxY;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00134}00134\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00136}00136\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{string}\ ToString()\ =>\ \$\textcolor{stringliteral}{"{}[\{MinX\},\{MaxX\},\{MinY\},\{MaxY\}]"{}};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00137}00137\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUIBoundaries\ Parse(\textcolor{keywordtype}{string}\ s)}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00138}00138\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00139}00139\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ content\ =\ s.Substring(}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ s.IndexOf(\textcolor{charliteral}{'['})\ +\ 1,}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ s.IndexOf(\textcolor{charliteral}{']'})\ -\/\ s.IndexOf(\textcolor{charliteral}{'['})\ -\/\ 1}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00142}00142\ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00144}00144\ \ \ \ \ \ \ var\ parts\ =\ content.Split(\textcolor{charliteral}{','}).Select(a\ =>\ a.Trim());}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00146}00146\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ minXPart\ =\ parts.ElementAtOrDefault(0);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00147}00147\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ maxXPart\ =\ parts.ElementAtOrDefault(1);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00148}00148\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ minYPart\ =\ parts.ElementAtOrDefault(2);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00149}00149\ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ maxYPart\ =\ parts.ElementAtOrDefault(3);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00151}00151\ \ \ \ \ \ \ \textcolor{keywordtype}{float}?\ minX\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00152}00152\ \ \ \ \ \ \ \textcolor{keywordtype}{float}?\ maxX\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00153}00153\ \ \ \ \ \ \ \textcolor{keywordtype}{float}?\ minY\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00154}00154\ \ \ \ \ \ \ \textcolor{keywordtype}{float}?\ maxY\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00156}00156\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!String.IsNullOrEmpty(minXPart))\ minX\ =\ \textcolor{keywordtype}{float}.Parse(minXPart);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00157}00157\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!String.IsNullOrEmpty(maxXPart))\ maxX\ =\ \textcolor{keywordtype}{float}.Parse(maxXPart);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00158}00158\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!String.IsNullOrEmpty(minYPart))\ minY\ =\ \textcolor{keywordtype}{float}.Parse(minYPart);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00159}00159\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!String.IsNullOrEmpty(maxYPart))\ maxY\ =\ \textcolor{keywordtype}{float}.Parse(maxYPart);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00161}00161\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ CUIBoundaries(minX,\ maxX,\ minY,\ maxY);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00162}00162\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00164}00164\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{object}\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_parsable}{IParsable}}.Parse(\textcolor{keywordtype}{string}\ raw)\ =>\ Parse(raw);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00165}00165\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ ToText()\ =>\ ToString();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00166}00166\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_boundaries_8cs_source_l00167}00167\ \}}
 
 \end{DoxyCode}

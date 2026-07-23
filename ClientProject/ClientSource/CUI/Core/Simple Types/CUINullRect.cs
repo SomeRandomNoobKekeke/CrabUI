@@ -53,7 +53,7 @@ namespace CrabUI
     }
 
     public override string ToString() => $"[{Left},{Top},{Width},{Height}]";
-    public static string Serialize(CUINullRect rect) => rect.ToString();
+
 
     public string ToText() => ToString();
 

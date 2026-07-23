@@ -12,5 +12,6 @@ var searchData=
   ['aproxy2_9',['AProxy2',['../class_crab_u_i_user_1_1_proxy_performance_1_1_a_proxy2.html',1,'CrabUIUser::ProxyPerformance']]],
   ['aproxy3_10',['AProxy3',['../class_crab_u_i_user_1_1_proxy_performance_1_1_a_proxy3.html',1,'CrabUIUser::ProxyPerformance']]],
   ['aproxy4_11',['AProxy4',['../class_crab_u_i_user_1_1_proxy_performance_1_1_a_proxy4.html',1,'CrabUIUser::ProxyPerformance']]],
-  ['areeventsprivate_12',['AreEventsPrivate',['../class_crab_u_i_user_1_1_are_events_private.html',1,'CrabUIUser']]]
+  ['areeventsprivate_12',['AreEventsPrivate',['../class_crab_u_i_user_1_1_are_events_private.html',1,'CrabUIUser']]],
+  ['assemblypackagedirlookup_13',['AssemblyPackageDirLookup',['../class_crab_u_i_1_1_solo_c_u_i_runner_1_1_assembly_package_dir_lookup.html',1,'CrabUI::SoloCUIRunner']]]
 ];

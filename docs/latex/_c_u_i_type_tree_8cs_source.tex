@@ -23,7 +23,7 @@
 \DoxyCodeLine{\Hypertarget{_c_u_i_type_tree_8cs_source_l00019}00019\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (Type\ T\ \textcolor{keywordflow}{in}\ types)}
 \DoxyCodeLine{\Hypertarget{_c_u_i_type_tree_8cs_source_l00020}00020\ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_c_u_i_type_tree_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ Nodes[T]\ =\ \textcolor{keyword}{new}\ Node(T);}
-\DoxyCodeLine{\Hypertarget{_c_u_i_type_tree_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ TypesByName[T.Name]\ =\ T;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_type_tree_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ TypesByName[T.GetFullName()]\ =\ T;}
 \DoxyCodeLine{\Hypertarget{_c_u_i_type_tree_8cs_source_l00023}00023\ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_c_u_i_type_tree_8cs_source_l00024}00024\ }
 \DoxyCodeLine{\Hypertarget{_c_u_i_type_tree_8cs_source_l00025}00025\ \ \ \ \ \ \ \textcolor{comment}{//TODO\ optimize,\ i\ just\ need\ to\ check\ the\ new\ types}}
@@ -65,7 +65,9 @@
 \DoxyCodeLine{\Hypertarget{_c_u_i_type_tree_8cs_source_l00061}00061\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_c_u_i_type_tree_8cs_source_l00062}00062\ }
 \DoxyCodeLine{\Hypertarget{_c_u_i_type_tree_8cs_source_l00063}00063\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Clear()\ =>\ Nodes.Clear();}
-\DoxyCodeLine{\Hypertarget{_c_u_i_type_tree_8cs_source_l00064}00064\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_type_tree_8cs_source_l00065}00065\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_type_tree_8cs_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_type_tree_8cs_source_l00065}00065\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{string}\ ToString()\ =>\ \doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger}{Logger}}.\doxymbox{\hyperlink{class_c_u_i_libs_1_1_logger_1_1_wrap}{Wrap}}.IDictionary(TypesByName);}
+\DoxyCodeLine{\Hypertarget{_c_u_i_type_tree_8cs_source_l00066}00066\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_type_tree_8cs_source_l00067}00067\ \}}
 
 \end{DoxyCode}

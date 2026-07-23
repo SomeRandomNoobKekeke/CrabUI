@@ -148,10 +148,10 @@ CUIComponent can handle various events, e.\+g.
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{struct\ }CUISizes\ \{}
-\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ Left;}
 \DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ Top;}
 \DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ Right;}
 \DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ Bottom;}
+\DoxyCodeLine{\ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ Left;}
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
@@ -434,6 +434,14 @@ Note:\+ most events accompanied by delegate props where you can set callbacks in
 \DoxyCodeLine{\};}
 \DoxyCodeLine{\textcolor{comment}{//Same\ as}}
 \DoxyCodeLine{component.MouseDown\ +=\ (c,\ e)\ =>\ CUI.Logger.Log(e.Pos);}
+
+\end{DoxyCode}
+
+
+You can trigger some events manually:\+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ CUIComponent.Click();\ \textcolor{comment}{//\ -\/\ triggers\ MouseDown}}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ CUIComponent.PressKey(Keys\ key);\ \textcolor{comment}{//\ -\/\ Triggers\ KeyPressed}}
 
 \end{DoxyCode}
 

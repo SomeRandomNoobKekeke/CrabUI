@@ -1,0 +1,70 @@
+\doxysection{Crab\+UI.\+Solo\+CUIRunner.\+Assembly\+Package\+Dir\+Lookup Class Reference}
+\hypertarget{class_crab_u_i_1_1_solo_c_u_i_runner_1_1_assembly_package_dir_lookup}{}\label{class_crab_u_i_1_1_solo_c_u_i_runner_1_1_assembly_package_dir_lookup}\index{CrabUI.SoloCUIRunner.AssemblyPackageDirLookup@{CrabUI.SoloCUIRunner.AssemblyPackageDirLookup}}
+Inheritance diagram for Crab\+UI.\+Solo\+CUIRunner.\+Assembly\+Package\+Dir\+Lookup:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_crab_u_i_1_1_solo_c_u_i_runner_1_1_assembly_package_dir_lookup}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \doxymbox{\hyperlink{class_crab_u_i_1_1_solo_c_u_i_runner_1_1_assembly_package_dir_lookup_ae7529d0afb88552748ed7f44767d7adb}{Get\+Package\+Dir}} (Assembly assembly)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_solo_c_u_i_runner_1_1_assembly_package_dir_lookup_a275475b1e4ddfdfe0ae9d2233e7c3a7f}{Dispose}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_assembly_package_lookup_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_assembly_package_lookup_8cs_source}{Assembly\+Package\+Lookup.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_solo_c_u_i_runner_1_1_assembly_package_dir_lookup_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_solo_c_u_i_runner_1_1_assembly_package_dir_lookup_a275475b1e4ddfdfe0ae9d2233e7c3a7f}\index{CrabUI.SoloCUIRunner.AssemblyPackageDirLookup@{CrabUI.SoloCUIRunner.AssemblyPackageDirLookup}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!CrabUI.SoloCUIRunner.AssemblyPackageDirLookup@{CrabUI.SoloCUIRunner.AssemblyPackageDirLookup}}
+\doxysubsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_solo_c_u_i_runner_1_1_assembly_package_dir_lookup_a275475b1e4ddfdfe0ae9d2233e7c3a7f} 
+void Crab\+UI.\+Solo\+CUIRunner.\+Assembly\+Package\+Dir\+Lookup.\+Dispose (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_assembly_package_lookup_8cs_source_l00031}{31}} of file \doxymbox{\hyperlink{_assembly_package_lookup_8cs_source}{Assembly\+Package\+Lookup.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031\ =>\ Cache.Clear();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_solo_c_u_i_runner_1_1_assembly_package_dir_lookup_ae7529d0afb88552748ed7f44767d7adb}\index{CrabUI.SoloCUIRunner.AssemblyPackageDirLookup@{CrabUI.SoloCUIRunner.AssemblyPackageDirLookup}!GetPackageDir@{GetPackageDir}}
+\index{GetPackageDir@{GetPackageDir}!CrabUI.SoloCUIRunner.AssemblyPackageDirLookup@{CrabUI.SoloCUIRunner.AssemblyPackageDirLookup}}
+\doxysubsubsection{\texorpdfstring{GetPackageDir()}{GetPackageDir()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_solo_c_u_i_runner_1_1_assembly_package_dir_lookup_ae7529d0afb88552748ed7f44767d7adb} 
+string Crab\+UI.\+Solo\+CUIRunner.\+Assembly\+Package\+Dir\+Lookup.\+Get\+Package\+Dir (\begin{DoxyParamCaption}\item[{Assembly}]{assembly}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_assembly_package_lookup_8cs_source_l00020}{20}} of file \doxymbox{\hyperlink{_assembly_package_lookup_8cs_source}{Assembly\+Package\+Lookup.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Cache.ContainsKey(assembly))}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ ContentPackage\ \textcolor{keyword}{package\ }=\ ModInfo.GetPackageForAssembly(assembly);}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ Cache[assembly]\ =\ package?.Dir\ ??\ \textcolor{stringliteral}{"{}"{}};\ \textcolor{comment}{//\ null\ ==\ vanilla}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Cache[assembly];}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Infrastructure/\+\+CUIRunner/\+\+Solo/\+Assembly\+Package\+Lookup.\+cs\end{DoxyCompactItemize}

@@ -25,6 +25,10 @@ bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_life_cycle___part_a5
 \doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{Clearable\+Event}}$<$ \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISprite\+Batch}} $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_life_cycle___part_a4d2653ba9008a28d24e3ed65041ebaef}{On\+Draw\+After\+GUI}} = new()
 \item 
 \doxymbox{\hyperlink{class_c_u_i_libs_1_1_clearable_event}{Clearable\+Event}}$<$ \doxymbox{\hyperlink{interface_crab_u_i_1_1_c_u_i_sprite_batch}{CUISprite\+Batch}} $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_life_cycle___part_ada2b7605adbecfb2eb7f5a3decf4cc65}{On\+Draw\+Before\+GUI}} = new()
+\item 
+int \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_life_cycle___part_a775a4dace45b72f8201c773dfc19479e}{Max\+Error\+Count}} = 10
+\item 
+int \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_life_cycle___part_a2b3862318f4826fa3786a8db72ce3d40}{Error\+Count}} = 0
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Properties inherited from \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_core_1_1_part}{Crab\+UI.\+CUICore.\+Part}}}
@@ -52,21 +56,22 @@ void Crab\+UI.\+CUICore.\+Life\+Cycle\+\_\+\+Part.\+Draw\+After\+GUI (\begin{Dox
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_life_cycle_8cs_source_l00050}{50}} of file \doxymbox{\hyperlink{_c_u_i_core_8_life_cycle_8cs_source}{CUICore.\+Life\+Cycle.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_life_cycle_8cs_source_l00062}{62}} of file \doxymbox{\hyperlink{_c_u_i_core_8_life_cycle_8cs_source}{CUICore.\+Life\+Cycle.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ OnDrawAfterGUI.Raise(spriteBatch);}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ Self.TopMain.DrawChildren(spriteBatch);}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ CUI.Logger.Error(\$\textcolor{stringliteral}{"{}Error\ in\ CUICore.DrawAfterGUI:\ \{e\}\(\backslash\)n"{}});}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ OnDrawAfterGUI.Raise(spriteBatch);}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ Self.TopMain.DrawChildren(spriteBatch);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ CUI.Logger.Error(\$\textcolor{stringliteral}{"{}Error\ in\ CUICore.DrawAfterGUI:\ \{e\}\(\backslash\)n"{}});}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ HandleError();}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_core_1_1_life_cycle___part_aa81fff507ef32dcb83eaa4cbce1a9995}\index{CrabUI.CUICore.LifeCycle\_Part@{CrabUI.CUICore.LifeCycle\_Part}!DrawBeforeGUI@{DrawBeforeGUI}}
@@ -77,21 +82,22 @@ void Crab\+UI.\+CUICore.\+Life\+Cycle\+\_\+\+Part.\+Draw\+Before\+GUI (\begin{Do
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_life_cycle_8cs_source_l00063}{63}} of file \doxymbox{\hyperlink{_c_u_i_core_8_life_cycle_8cs_source}{CUICore.\+Life\+Cycle.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_life_cycle_8cs_source_l00076}{76}} of file \doxymbox{\hyperlink{_c_u_i_core_8_life_cycle_8cs_source}{CUICore.\+Life\+Cycle.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ Self.Main.DrawChildren(spriteBatch);}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ OnDrawBeforeGUI.Raise(spriteBatch);}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ CUI.Logger.Error(\$\textcolor{stringliteral}{"{}Error\ in\ CUICore.DrawBeforeGUI:\ \{e\}\(\backslash\)n"{}});}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ Self.Main.DrawChildren(spriteBatch);}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ OnDrawBeforeGUI.Raise(spriteBatch);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ CUI.Logger.Error(\$\textcolor{stringliteral}{"{}Error\ in\ CUICore.DrawBeforeGUI:\ \{e\}\(\backslash\)n"{}});}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ HandleError();}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_core_1_1_life_cycle___part_a5dc1fc11e2dea1b9e580e2d2641fab8d}\index{CrabUI.CUICore.LifeCycle\_Part@{CrabUI.CUICore.LifeCycle\_Part}!IsMouseOnSomeCUIComponent@{IsMouseOnSomeCUIComponent}}
@@ -102,13 +108,13 @@ bool Crab\+UI.\+CUICore.\+Life\+Cycle\+\_\+\+Part.\+Is\+Mouse\+On\+Some\+CUIComp
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_life_cycle_8cs_source_l00076}{76}} of file \doxymbox{\hyperlink{_c_u_i_core_8_life_cycle_8cs_source}{CUICore.\+Life\+Cycle.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_life_cycle_8cs_source_l00090}{90}} of file \doxymbox{\hyperlink{_c_u_i_core_8_life_cycle_8cs_source}{CUICore.\+Life\+Cycle.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Self.Main.MouseOverSomeElement;}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Self.Main.MouseOverSomeElement;}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_core_1_1_life_cycle___part_a10944428288ab35bd29b9408060b2900}\index{CrabUI.CUICore.LifeCycle\_Part@{CrabUI.CUICore.LifeCycle\_Part}!Update@{Update}}
@@ -119,36 +125,37 @@ void Crab\+UI.\+CUICore.\+Life\+Cycle\+\_\+\+Part.\+Update (\begin{DoxyParamCapt
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_life_cycle_8cs_source_l00022}{22}} of file \doxymbox{\hyperlink{_c_u_i_core_8_life_cycle_8cs_source}{CUICore.\+Life\+Cycle.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_life_cycle_8cs_source_l00033}{33}} of file \doxymbox{\hyperlink{_c_u_i_core_8_life_cycle_8cs_source}{CUICore.\+Life\+Cycle.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ Stopwatch\ sw\ =\ Stopwatch.StartNew();}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ Self.\_Input.Update(totalTime,\ mouse,\ keyboard,\ textInput);}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ Self.EventConstructor.Construct(Self.\_Input);}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ Self.TopMain.Update(totalTime,\ Self.\_Input);}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ Self.Main.Update(totalTime,\ Self.\_Input);}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ Self.GlobalFocusTracker.DispatchKeyboadEvents();}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ Self.GlobalFocusTracker.ResolveFocus(Self.\_Input.SomethingFocusedElsewhere);}
-\DoxyCodeLine{00036\ }
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ Self.\_AnimationPlayer.Update();}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ Stopwatch\ sw\ =\ Stopwatch.StartNew();}
 \DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ OnUpdate.Raise(totalTime);}
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ sw.Stop();}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ CUI.Logger.Log(\$"{}Update\ took\ \{sw.ElapsedTicks\}"{});}}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ CUI.Logger.Error(e);}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ Self.\_Input.Update(totalTime,\ mouse,\ keyboard,\ textInput);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ Self.EventConstructor.Construct(Self.\_Input);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ Self.TopMain.Update(totalTime,\ Self.\_Input);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ Self.Main.Update(totalTime,\ Self.\_Input);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ Self.GlobalFocusTracker.DispatchKeyboadEvents();}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ Self.GlobalFocusTracker.ResolveFocus(Self.\_Input.SomethingFocusedElsewhere);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ Self.\_AnimationPlayer.Update();}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ OnUpdate.Raise(totalTime);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ sw.Stop();}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ CUI.Logger.Log(\$"{}Update\ took\ \{sw.ElapsedTicks\}"{});}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ CUI.Logger.Error(e);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ HandleError();}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -156,6 +163,26 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_life_cycle_8cs_source_l000
 \label{doc-variable-members}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_core_1_1_life_cycle___part_doc-variable-members}
 \doxysubsection{Member Data Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_1_1_life_cycle___part_a2b3862318f4826fa3786a8db72ce3d40}\index{CrabUI.CUICore.LifeCycle\_Part@{CrabUI.CUICore.LifeCycle\_Part}!ErrorCount@{ErrorCount}}
+\index{ErrorCount@{ErrorCount}!CrabUI.CUICore.LifeCycle\_Part@{CrabUI.CUICore.LifeCycle\_Part}}
+\doxysubsubsection{\texorpdfstring{ErrorCount}{ErrorCount}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_1_1_life_cycle___part_a2b3862318f4826fa3786a8db72ce3d40} 
+int Crab\+UI.\+CUICore.\+Life\+Cycle\+\_\+\+Part.\+Error\+Count = 0}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_life_cycle_8cs_source_l00023}{23}} of file \doxymbox{\hyperlink{_c_u_i_core_8_life_cycle_8cs_source}{CUICore.\+Life\+Cycle.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_c_u_i_core_1_1_life_cycle___part_a775a4dace45b72f8201c773dfc19479e}\index{CrabUI.CUICore.LifeCycle\_Part@{CrabUI.CUICore.LifeCycle\_Part}!MaxErrorCount@{MaxErrorCount}}
+\index{MaxErrorCount@{MaxErrorCount}!CrabUI.CUICore.LifeCycle\_Part@{CrabUI.CUICore.LifeCycle\_Part}}
+\doxysubsubsection{\texorpdfstring{MaxErrorCount}{MaxErrorCount}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_core_1_1_life_cycle___part_a775a4dace45b72f8201c773dfc19479e} 
+int Crab\+UI.\+CUICore.\+Life\+Cycle\+\_\+\+Part.\+Max\+Error\+Count = 10}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_core_8_life_cycle_8cs_source_l00022}{22}} of file \doxymbox{\hyperlink{_c_u_i_core_8_life_cycle_8cs_source}{CUICore.\+Life\+Cycle.\+cs}}.
+
 \Hypertarget{class_crab_u_i_1_1_c_u_i_core_1_1_life_cycle___part_a4d2653ba9008a28d24e3ed65041ebaef}\index{CrabUI.CUICore.LifeCycle\_Part@{CrabUI.CUICore.LifeCycle\_Part}!OnDrawAfterGUI@{OnDrawAfterGUI}}
 \index{OnDrawAfterGUI@{OnDrawAfterGUI}!CrabUI.CUICore.LifeCycle\_Part@{CrabUI.CUICore.LifeCycle\_Part}}
 \doxysubsubsection{\texorpdfstring{OnDrawAfterGUI}{OnDrawAfterGUI}}

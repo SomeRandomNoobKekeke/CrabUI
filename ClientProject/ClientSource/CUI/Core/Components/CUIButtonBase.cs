@@ -96,20 +96,17 @@ namespace CrabUI
 
     public string Emit { get; set; }
 
-    public void Click()
-    {
-      Events.MouseDown.Raise(
-        this,
-        new CUIMouseDownEvent(CUIMouseButton.LeftButton, CUICore.Input.Mouse)
-      );
-    }
 
     public override IEnumerable<VisualUnit> VisualSplit()
     {
       if (!Displayed || CulledOut) yield break;
 
       yield return Background.VisualWrapper;
+
+      yield return VisualBounds.LeftBound;
       yield return TextBlock.VisualWrapper;
+      yield return VisualBounds.RightBound;
+
       yield return Borders.VisualWrapper;
     }
 

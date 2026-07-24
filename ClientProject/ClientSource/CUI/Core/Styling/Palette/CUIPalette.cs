@@ -18,34 +18,19 @@ namespace CrabUI
       Color selection = new Color(0, 255, 255);
       Color valid = new Color(0, 255, 0);
       Color invalid = new Color(255, 0, 0);
+      Color disabled = new Color(64, 64, 64);
 
       return new CUIPalette()
       {
-        ["button"] = front,
+        ["main"] = front,
+        ["back"] = back,
         ["text"] = text,
-        ["frame"] = Color.Lerp(front, back, 0.9f),
-        ["outercontrols"] = front,
-        ["inputfocused"] = color.MultOpaque(0.8f),
-        ["inputblured"] = color.MultOpaque(0.2f),
-        ["inputselection"] = selection,
-        ["inputcaret"] = selection,
-        ["inputinvalid"] = invalid,
-        ["border"] = front,
+        ["controls"] = controls,
+        ["selection"] = selection,
+        ["valid"] = valid,
+        ["invalid"] = invalid,
+        ["disabled"] = disabled,
       };
     }
-
-    public static CUIPalette Red => new()
-    {
-      ["button"] = new Color(255, 0, 0),
-      ["text"] = new Color(255, 255, 255),
-      ["frame"] = new Color(32, 0, 0),
-      ["outercontrols"] = new Color(255, 200, 200),
-      ["inputfocused"] = new Color(200, 0, 0),
-      ["inputblured"] = new Color(64, 0, 0),
-      ["inputselection"] = new Color(255, 255, 255),
-      ["inputcaret"] = new Color(255, 255, 255),
-      ["inputinvalid"] = new Color(255, 255, 0),
-      ["border"] = new Color(100, 0, 0),
-    };
   }
 }

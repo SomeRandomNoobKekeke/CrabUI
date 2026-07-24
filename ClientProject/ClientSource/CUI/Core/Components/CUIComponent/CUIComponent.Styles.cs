@@ -57,7 +57,7 @@ namespace CrabUI
     protected Style_Part Styles { get; } = new();
     public class Style_Part : Part
     {
-      public CUIStylePipeline TypeSpecificStyles { get; set; }
+      public CUIStylePipeline TypeSpecificStyles { get; private set; }
 
 
       private bool _UseReactiveStyles; public bool UseReactiveStyles

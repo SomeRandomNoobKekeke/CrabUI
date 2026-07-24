@@ -17,8 +17,8 @@ namespace CrabUI
   {
     public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUICloseButton>((c) =>
     {
-      c.Background.Color = c.Palette["border"];
-      c.ForeColor = c.Palette["outercontrols"];
+      c.Background.Color = c.Palette["main"];
+      c.ForeColor = c.Palette["text"];
     });
 
     protected override void InitStyle()

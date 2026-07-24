@@ -34,7 +34,7 @@ namespace CrabUI
           Absolute = new CUINullRect(h: ResizeHandle.DefaultSize.Y),
           Style = (c) =>
           {
-            c.Background.Color = c.Palette.Colors["border"];
+            c.Background.Color = c.Palette["border"];
           },
         };
         this["layout"]["handle"]["caption"] = Caption = new CUITextBlock()
@@ -44,7 +44,7 @@ namespace CrabUI
         this["layout"]["handle"]["closebutton"] = new CUICloseButton()
         {
           CrossRelative = new CUINullRect(w: 1),
-          Background = { Color = Palette.Colors["border"] },
+          Background = { Color = Palette["border"] },
         };
       }
 

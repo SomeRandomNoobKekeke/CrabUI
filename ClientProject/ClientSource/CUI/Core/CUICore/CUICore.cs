@@ -14,7 +14,7 @@ namespace CrabUI
     public class Part : IPart { public CUICore Self { get; set; } }
 
     public CUIStyleManager CUIStyleManager { get; private set; }
-    public CUIPaletteManager CUIPaletteManager { get; private set; }
+    public CUIPalettes CUIPalettes { get; private set; }
 
     private Rectangle _GameScreenRect; public Rectangle GameScreenRect
     {
@@ -58,7 +58,7 @@ namespace CrabUI
       try
       {
         CUIStyleManager = new(Reflection.TypeTree);
-        CUIPaletteManager = new();
+        CUIPalettes = new();
 
         EventConstructor = new();
         _AnimationPlayer = new();

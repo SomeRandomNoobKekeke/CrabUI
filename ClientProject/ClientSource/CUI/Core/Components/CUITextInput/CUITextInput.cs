@@ -18,12 +18,12 @@ namespace CrabUI
     public class Part : IPart { public CUITextInput Self { get; set; } }
     public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUITextInput>((c) =>
     {
-      c.FocusedColor = c.Palette.Colors["inputfocused"];
-      c.BluredColor = c.Palette.Colors["inputblured"];
-      c.SelectionColor = c.Palette.Colors["inputselection"] * 0.4f;
-      c.CaretColor = c.Palette.Colors["inputcaret"];
-      c.InvalidColor = c.Palette.Colors["inputinvalid"] * 0.5f;
-      c.TextBlock.TextColor = c.Palette.Colors["text"];
+      c.FocusedColor = c.Palette["inputfocused"];
+      c.BluredColor = c.Palette["inputblured"];
+      c.SelectionColor = c.Palette["inputselection"] * 0.4f;
+      c.CaretColor = c.Palette["inputcaret"];
+      c.InvalidColor = c.Palette["inputinvalid"] * 0.5f;
+      c.TextBlock.TextColor = c.Palette["text"];
     });
 
     protected override void InitStyle()

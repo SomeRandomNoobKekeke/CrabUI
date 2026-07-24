@@ -34,7 +34,7 @@ namespace CrabUI
 
     public static Reflection_Part Reflection => Instance._Reflection;
     public static CUIStyleManager Styles => Instance.CUIStyleManager;
-    public static CUIPaletteManager Palettes => Instance.CUIPaletteManager;
+    public static CUIPalettes Palettes => Instance.CUIPalettes;
     public static AnimationPlayer AnimationPlayer => Instance._AnimationPlayer;
     public static CUIInput Input => Instance._Input;
 

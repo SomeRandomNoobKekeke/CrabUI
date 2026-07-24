@@ -16,8 +16,8 @@ namespace CrabUI
   {
     public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIRadioButton>((c) =>
     {
-      c.TextColor = c.Palette.Colors["text"];
-      c.MasterColor = c.Palette.Colors["button"];
+      c.TextColor = c.Palette["text"];
+      c.MasterColor = c.Palette["button"];
     });
 
     [CUISerializableProp]

@@ -27,14 +27,14 @@ namespace CrabUIUser
         frame["a"] = new CUIDefault.Frame()
         {
           Caption = { Text = "kekw" },
-          DeepPalette = CUIPalette.Blue,
+          DeepPalette = CUIPalette.FromColor(Color.Blue),
           Absolute = new CUINullRect(0, 0, 100, 100),
         };
 
         frame["b"] = new CUIDefault.Frame()
         {
           Caption = { Text = "lul" },
-          DeepPalette = CUIPalette.Green,
+          DeepPalette = CUIPalette.FromColor(Color.Green),
           Absolute = new CUINullRect(0, 0, 100, 100),
         };
 

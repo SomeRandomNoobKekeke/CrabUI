@@ -5,16 +5,18 @@ using System.Reflection;
 
 namespace CrabUI
 {
-  public class CUIPaletteManager
+  public class CUIPalettes
   {
-    public CUIPaletteSlot FromRank(CUIPaletteRank rank) => rank switch
+    private CUIPalette _Primary = CUIPalette.Red; public CUIPalette Primary
     {
-      CUIPaletteRank.Primary => Primary,
-      CUIPaletteRank.Secondary => Secondary,
-      CUIPaletteRank.Personal => new CUIPaletteSlot(),
-    };
+      get => _Primary;
+      set => _Primary.Swap(value);
+    }
 
-    public CUIPaletteSlot Primary { get; } = new();
-    public CUIPaletteSlot Secondary { get; } = new();
+    private CUIPalette _Secondary = CUIPalette.Red; public CUIPalette Secondary
+    {
+      get => _Secondary;
+      set => _Secondary.Swap(value);
+    }
   }
 }

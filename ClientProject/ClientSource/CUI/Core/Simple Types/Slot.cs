@@ -19,9 +19,12 @@ namespace CrabUI
       {
         if (_Value is not null) TearDown?.Invoke(_Value);
         _Value = value;
+        Changed?.Invoke(value);
         if (_Value is not null) WireUp?.Invoke(_Value);
       }
     }
+
+    public event Action<T> Changed;
 
     public Action<T> OnWireUp { set { WireUp += value; } }
     public event Action<T> WireUp;

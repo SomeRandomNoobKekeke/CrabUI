@@ -20,6 +20,8 @@ namespace CrabUI
       Setup = CUISetup.Default();
     }
 
+    public static ErrorHandlingStrategy ErrorHandlingStrategy { get; set; } = ErrorHandlingStrategy.FailFast;
+
     //BRUH why is it here?
     public static SamplerState NoSmoothing = new SamplerState()
     {

@@ -33,6 +33,7 @@ namespace CUICodeGenerator
       catch (Exception e)
       {
         Logger.Default.Error($"CG| failed to inject [{this}]\n{e}");
+        if (CrabUI.CUI.ErrorHandlingStrategy == CrabUI.ErrorHandlingStrategy.FailFast) throw;
       }
     }
   }

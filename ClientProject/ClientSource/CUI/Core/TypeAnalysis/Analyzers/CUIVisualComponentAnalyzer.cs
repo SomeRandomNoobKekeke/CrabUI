@@ -58,6 +58,7 @@ namespace CrabUI
       catch (Exception e)
       {
         CUI.Logger.Warning($"Failed to create default for [{T.Name}]: {e.InnerException?.Message}");
+        if (CUI.ErrorHandlingStrategy == ErrorHandlingStrategy.FailFast) throw;
       }
 
       return null;

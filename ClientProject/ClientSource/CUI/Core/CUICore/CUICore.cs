@@ -83,6 +83,7 @@ namespace CrabUI
         CUI.Logger.Warning($"CUICore Activation failed with:\n{e}");
         CUI.Logger.Warning($"Stopping CUI");
         CUI.Stop();
+        if (CUI.ErrorHandlingStrategy == ErrorHandlingStrategy.FailFast) throw;
       }
     }
   }

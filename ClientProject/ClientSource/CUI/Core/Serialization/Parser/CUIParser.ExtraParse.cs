@@ -38,7 +38,7 @@ namespace CrabUI
       return (x, y);
     }
 
-    public static Color ParseColor(string raw) => XMLExtensions.ParseColor(raw);
+    public static Color ParseColor(string raw) => XMLExtensions.ParseColor(raw, false);
     public static Vector2 ParseVector2(string raw)
     {
       if (raw == null || raw == "") return new Vector2(0, 0);

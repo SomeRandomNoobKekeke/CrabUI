@@ -87,6 +87,7 @@ namespace CrabUI
     private void HandleFocusLost()
     {
       MainComponent?.GlobalEvents.AfterUpdate.Remove(HandleUpdate);
+      ClearSelection();
       UpdateVisualState();
     }
 

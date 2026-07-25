@@ -24,6 +24,7 @@ namespace CrabUI
     {
       base.InitStyle();
       Padding = new(4, 2, 4, 2);
+      Background.Sprite = CUIDefaultSprite.VignetteLight;
     }
 
     [CUISerializableProp]
@@ -37,7 +38,7 @@ namespace CrabUI
     {
       set
       {
-        InactiveColor = value.MultOpaque(0.7f);
+        InactiveColor = value.MultOpaque(0.8f);
         MouseOverColor = value.MultOpaque(0.9f);
         MousePressedColor = value;
         DetermineColor();

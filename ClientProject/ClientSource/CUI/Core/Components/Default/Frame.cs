@@ -32,6 +32,7 @@ namespace CrabUI
         this["layout"]["handle"] = new CUIHorizontalList()
         {
           Absolute = new CUINullRect(h: ResizeHandle.DefaultSize.Y),
+          Background = { Sprite = CUIDefaultSprite.DimmedVertical },
           Style = (c) =>
           {
             c.Background.Color = c.Palette["main"];
@@ -43,6 +44,10 @@ namespace CrabUI
         };
         this["layout"]["handle"]["closebutton"] = new CUICloseButton()
         {
+          Background = {
+            Sprite = CUIDefaultSprite.DimmedVertical,
+            Color = Palette["main"], //HACK
+          },
           CrossRelative = new CUINullRect(w: 1),
         };
       }

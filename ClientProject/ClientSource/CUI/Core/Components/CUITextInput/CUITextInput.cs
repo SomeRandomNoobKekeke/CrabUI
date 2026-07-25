@@ -19,11 +19,12 @@ namespace CrabUI
     public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUITextInput>((c) =>
     {
       c.FocusedColor = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.8f);
-      c.BluredColor = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.5f);
+      c.BluredColor = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.3f);
       c.SelectionColor = c.Palette["selection"] * 0.4f;
       c.CaretColor = c.Palette["selection"];
       c.InvalidColor = c.Palette["invalid"] * 0.5f;
       c.TextBlock.TextColor = c.Palette["text"];
+      c.UpdateVisualState();//HACK
     });
 
     protected override void InitStyle()
@@ -34,6 +35,8 @@ namespace CrabUI
       ConsumeMouseEvents = true;
       ConsumeFocus = true;
       CullChildren = true;
+      Background.Sprite = CUIDefaultSprite.BoxWithALamp;
+      Padding = new CUISizes(4, 4, 4, 4);
     }
 
 

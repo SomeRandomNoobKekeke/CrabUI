@@ -30,7 +30,11 @@ namespace CrabUI
 
     public void Swap(ReactiveDict<TKey, TValue> other)
     {
-      _Dict = other._Dict.CreateCopy();
+      _Dict = new Dictionary<TKey, TValue>();
+      foreach (var (key, value) in other)
+      {
+        _Dict[key] = value;
+      }
       Changed?.Invoke();
     }
 

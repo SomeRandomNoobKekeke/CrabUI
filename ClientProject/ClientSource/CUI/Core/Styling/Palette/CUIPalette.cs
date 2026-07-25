@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using CUILibs;
 using Microsoft.Xna.Framework;
 
 namespace CrabUI
@@ -11,9 +12,11 @@ namespace CrabUI
   {
     public static CUIPalette FromColor(Color color)
     {
+      float brightness = color.Brightness();
+
       Color front = color;
       Color back = new Color(0, 0, 0);
-      Color text = new Color(255, 255, 255);
+      Color text = Color.Lerp(Color.Black, Color.White, brightness * 1.5f);
       Color controls = new Color(0, 255, 255);
       Color selection = new Color(0, 255, 255);
       Color valid = new Color(0, 255, 0);
@@ -32,5 +35,7 @@ namespace CrabUI
         ["disabled"] = disabled,
       };
     }
+
+    public override string ToString() => $"Palette: {Logger.Wrap.Dictionary(this)}";
   }
 }

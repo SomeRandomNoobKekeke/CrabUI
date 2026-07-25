@@ -31,7 +31,7 @@ namespace CrabUI
       }
     }
 
-    public override Layout? Layout { get; protected set; } = null;
+    public override Layout? Layout { get; protected set; } = new CUIDummyLayout();
 
 
     public SimpleTexture Background { get; } = new();

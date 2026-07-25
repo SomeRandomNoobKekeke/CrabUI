@@ -16,13 +16,13 @@ namespace CrabUI
       {
         OnWireUp = (background) =>
         {
-          DebugRelays[DebugCategory.RoundedRect].Route(background.Debug_RoundedRect);
+          // DebugRelays[DebugCategory.RoundedRect].Route(background.Debug_RoundedRect);
           Events.Route(background);
           background.FocusProbed.Add(HandleFocusProbe);
         },
         OnTearDown = (background) =>
         {
-          DebugRelays[DebugCategory.RoundedRect].Route(background.Debug_RoundedRect);
+          // DebugRelays[DebugCategory.RoundedRect].Route(background.Debug_RoundedRect);
           Events.Route(background);
           background.FocusProbed.Add(HandleFocusProbe);
         },

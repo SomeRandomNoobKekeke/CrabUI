@@ -1,0 +1,21 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Reflection;
+using System.Diagnostics;
+using Barotrauma;
+using Microsoft.Xna.Framework;
+using CUILibs;
+using CUICodeGenerator;
+
+namespace CrabUI
+{
+  public partial class CUIVisualComponent
+  {
+    protected Adapters_Part Adapters { get; } = new();
+
+    protected partial class Adapters_Part : Part { }
+  }
+}

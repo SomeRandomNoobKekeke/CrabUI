@@ -12,6 +12,8 @@ namespace CrabUI
 {
   public abstract partial class CUIVisualComponent : IVisualComponent
   {
+    public class Part : IPart { public CUIVisualComponent Self { get; set; } }
+
     public static int MaxID { get; private set; }
     public int ID { get; set; }
 

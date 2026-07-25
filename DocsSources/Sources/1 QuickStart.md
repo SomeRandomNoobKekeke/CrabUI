@@ -1,22 +1,16 @@
 # QuickStart {#QuickStart}
 
-## To include CUI in your mod:
+#### For "in-memory" mods
+publish you mod and add workshop dependency to [CUI mod](https://steamcommunity.com/sharedfiles/filedetails/?id=3765325848)
+<br><br>
+#### For precompiled mods
+Go to [CUI mod](https://steamcommunity.com/sharedfiles/filedetails/?id=3765325848) folder, take CUI.dll from bin and add a reference to it in your project
 
-### For "in-memory" mods
-There's 2 ways:
-1. copy paste code from https://github.com/SomeRandomNoobKekeke/CrabUI/tree/main/ClientProject/ClientSource
-2. publish you mod and add workshop dependency to [CUI mod](https://steamcommunity.com/sharedfiles/filedetails/?id=3765325848)
+Or download https://github.com/SomeRandomNoobKekeke/CrabUI, add luatrauma Refs and compile it yourself
 
-2 is minimalistic, but you won't have ide hints
-
-### For precompiled mods
-Go to CUI mod folder, take CUI.dll from bin and add a reference to it in your project
-
-Or download https://github.com/SomeRandomNoobKekeke/CrabUI, add luatrauma Refs to it and compile
-
-Or just copy paste source code :BaroDev:
-
-### Hybrid mods
+Or just copy paste sources from [github](https://github.com/SomeRandomNoobKekeke/CrabUI/tree/main/ClientProject/ClientSource)
+<br><br>
+#### Hybrid mods
 You can take best from both worlds
 
 you can setup https://github.com/Luatrauma/LuaCsModTemplate, and then add `ModConfig.xml` loading C# sources as "in-memory" scripts
@@ -27,7 +21,7 @@ you can setup https://github.com/Luatrauma/LuaCsModTemplate, and then add `ModCo
 ~~~~~~~~~~~~~
 
 Then you can add project reference to CUI.dll to have ide hints, put it in LocalMods and reload with cl_reloadlua
-
+<br><br>
 ## Min example:
 ~~~~~~~~~~~~~{cs}
 using CrabUI;

@@ -55,7 +55,7 @@ frame.OnFocus += () => frame.Background.Color = Color.Cyan;
 frame.OnFocusLost += () => frame.Background.Color = Color.Blue;
 frame.KeyPressed += (e) => CUI.Logger.Log(e.Key);
 ~~~~~~~~~~~~~
-
+<br><br>
 ## Components
 - CUIComponent - It's just a square with background and borders
 - CUIMainComponent -Special component that Draws and calculates layouts of its children, there's 2 CUI.Main and CUI.TopMain, don't create
@@ -78,16 +78,17 @@ frame.KeyPressed += (e) => CUI.Logger.Log(e.Key);
 
 #### CUIDefault.
 - CUIDefault.Frame - prebuilt frame with handle, caption and close button, add children to frame["layout"]
+- CUIDefault.Panels - Styled and a bit dimmed panels
 - InputField - Base class for InputField, wrappers with label and text input, intended to be used in some settings ui (half-assed)
 
-
+<br><br>
 ## Layouts
 - CUIPlainLayout - simple two-dimensional plane
-- CUIVerticalListLayout - places children in a stack, one after another, if child width isn't specified resizes it to its own width  
-children can fill empty space with Flex prop
+- CUIVerticalListLayout - places children in a stack
 - CUIHorizontalListLayout - Same as CUIVerticalListLayout but horizontal
 - CUIGridLayout - places children in cells specified by GridRow and GridColumn (half-assed)
 
+<br><br>
 ## Types
 #### Commonly used "primitive" types:
 ~~~~~~~~~~~~~{cs}
@@ -146,6 +147,7 @@ public struct CUIBoundaries {
 }
 ~~~~~~~~~~~~~
 
+<br><br>
 ## Props
 #### Commonly used Props of CUIComponent:
 #### Layout Props:
@@ -310,6 +312,7 @@ public bool ConsumeFocus { get; set; } // - Should it consume focus events
 public bool ConsumeMouseEvents { get; set; } // - Should it consume mouse events
 ~~~~~~~~~~~~~
 
+<br><br>
 ## Events
 Note: most events accompanied by delegate props where you can set callbacks in object initializers 
 ~~~~~~~~~~~~~{cs}

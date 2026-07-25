@@ -238,6 +238,12 @@ public static CUIPalette CUIPalette.FromColor(Color color)
 
 CUIPalettes are IDictionary<string, Color> so you can change them manually in theory
 
+#### About Palette colors:
+Those are key reference colors that all components can use to construct colors they need to paint themselves
+
+Basically if you're making a component and want to use a color that you can't construct from already existing you should add it to palette    
+And then ask yourself what if i set all colors to random will it still look good? If not then there's some hidden interconnection you're missing
+
 #### How styles are applied on object creation:
 1. Properties are initialized before constructor
 2. Props can be set in constructor

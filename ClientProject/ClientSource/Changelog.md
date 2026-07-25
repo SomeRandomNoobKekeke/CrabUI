@@ -1,5 +1,14 @@
 # Changelog
 
+# 0.3.1.0
+Reworked palettes a lil: 
+- Palettes are reactive dicts<string, Color>
+- You can create palettes from 1 Color
+- CUIComponent listens for changes in the palette you give it, be it some personal palette or a global palette from CUICore.Palettes
+- You can assign palettes in CUICore.Palettes, they are also magically reactive
+
+- Added more default sprites
+
 # 0.3.0.1
 
 - CUI now takes into account calling mod package dir and loaded xml dir when loading textures  

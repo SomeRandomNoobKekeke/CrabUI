@@ -35,7 +35,12 @@ namespace CrabUI
       ConsumeMouseEvents = true;
       ConsumeFocus = true;
       CullChildren = true;
-      Background.Sprite = CUIDefaultSprite.BoxWithALamp;
+
+      BluredSprite = CUISprite.White;
+      InvalidSprite = CUIDefaultSprite.BoxWithALamp;
+      FocusedSprite = CUIDefaultSprite.BoxWithALamp;
+
+      Background.Sprite = BluredSprite;
       Padding = new CUISizes(4, 4, 4, 4);
     }
 

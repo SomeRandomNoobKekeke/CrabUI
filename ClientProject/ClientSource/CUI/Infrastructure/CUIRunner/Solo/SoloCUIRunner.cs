@@ -118,8 +118,16 @@ namespace CrabUI
       CUITextureManagerPublic.LoadAs("Assets/PNG/CUI.png", "CUI");
     }
 
+
+    public HashSet<Assembly> AlreadyAnalyzedAssemblies { get; } = new()
+    {
+      typeof(CUICore).Assembly, //HACK CUICore analyzes itself
+    };
     public void OnStartAttempt(Assembly callingAssembly)
     {
+      if (AlreadyAnalyzedAssemblies.Contains(callingAssembly)) return;
+      AlreadyAnalyzedAssemblies.Add(callingAssembly);
+
       Core.CUIRunnerHandle.AddAssemblyInfo(
         CUIAssemblyAnalyzer.AnalyzeAssembly(callingAssembly)
       );

@@ -21,21 +21,21 @@ namespace CrabUI
       {
         public void Init()
         {
-          Self.MouseDown += (CUIComponent c, CUIMouseDownEvent e) => MouseDown?.Invoke(e);
+          Self.MouseDown += (CUIVisualComponent c, CUIMouseDownEvent e) => MouseDown?.Invoke(e);
         }
 
-        public CUIRect Rect => Self.Rect;
+        public CUIRect Rect => Self.OuterRect;
 
         public Vector2 MinSize
         {
           get
           {
             float w = 0;
-            if (Self.RelativeMin.Width.HasValue) w = Math.Max(w, Self.RelativeMin.Width.Value * Self.Parent.Rect.Width);
+            if (Self.RelativeMin.Width.HasValue) w = Math.Max(w, Self.RelativeMin.Width.Value * Self.Parent.ChildrenRect.Width);
             if (Self.AbsoluteMin.Width.HasValue) w = Math.Max(w, Self.AbsoluteMin.Width.Value);
 
             float h = 0;
-            if (Self.RelativeMin.Height.HasValue) h = Math.Max(h, Self.RelativeMin.Height.Value * Self.Parent.Rect.Height);
+            if (Self.RelativeMin.Height.HasValue) h = Math.Max(h, Self.RelativeMin.Height.Value * Self.Parent.ChildrenRect.Height);
             if (Self.AbsoluteMin.Height.HasValue) h = Math.Max(h, Self.AbsoluteMin.Height.Value);
 
             return new Vector2(w, h);
@@ -55,7 +55,7 @@ namespace CrabUI
 
           Self.Absolute = new CUINullRect(
             CUIAnchor.AbsoluteRectToAchored(
-              rect, Self.Parent.Rect, Self.Anchor
+              rect, Self.Parent.ChildrenRect, Self.Anchor
             )
           );
         }

@@ -37,7 +37,8 @@ namespace CrabUIUser
           Flex = 1,
         };
 
-        CUIComponent Main = frame["layout"]["main"] = new CUIComponent() { Flex = 1 };
+        CUIComponent Main = new CUIComponent() { Flex = 1 };
+        frame["layout"]["main"] = Main;
 
         Main["list1"] = new CUIVerticalList()
         {

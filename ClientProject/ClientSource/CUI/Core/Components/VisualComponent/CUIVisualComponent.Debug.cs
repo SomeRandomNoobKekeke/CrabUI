@@ -12,8 +12,8 @@ namespace CrabUI
 {
   public partial class CUIVisualComponent
   {
-    protected event Action OnDebugOn; //CRINGE
-    protected event Action OnDebugOff;//CRINGE
+    public virtual void OnDebugOn() { }
+    public virtual void OnDebugOff() { }
 
     private bool _IsDebugTool; public bool IsDebugTool
     {
@@ -21,7 +21,7 @@ namespace CrabUI
       set
       {
         _IsDebugTool = value;
-        foreach (CUIComponent child in Children)
+        foreach (CUIVisualComponent child in Children)
         {
           child.IsDebugTool = value;
         }
@@ -37,7 +37,7 @@ namespace CrabUI
         if (IsDebugTool) return;
         _Debug = value;
 
-        if (value) OnDebugOn?.Invoke(); else OnDebugOff?.Invoke();
+        if (value) OnDebugOn(); else OnDebugOff();
       }
     }
 
@@ -50,7 +50,7 @@ namespace CrabUI
 
         Debug = value;
 
-        foreach (CUIComponent child in Children)
+        foreach (CUIVisualComponent child in Children)
         {
           child.DeepDebug = value;
         }
@@ -61,7 +61,7 @@ namespace CrabUI
     public void PrintTree(string offset = "")
     {
       CUI.Logger.Log($"{offset}{this}");
-      foreach (CUIComponent child in Children)
+      foreach (CUIVisualComponent child in Children)
       {
         child.PrintTree(offset + "|    ");
       }
@@ -72,7 +72,7 @@ namespace CrabUI
       VisualFlattener flattener = new VisualFlattener();
       flattener.Flatten(this);
       CUI.Logger.Log(Logger.Wrap.IEnumerable(
-        flattener.Flat.Select(vu => $"{vu} of vu.HostComponent")
+        flattener.Flat.Select(vu => $"{vu} of {this}")
         , true));
     }
   }

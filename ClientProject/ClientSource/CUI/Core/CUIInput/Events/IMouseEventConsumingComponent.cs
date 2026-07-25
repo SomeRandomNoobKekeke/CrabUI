@@ -14,21 +14,21 @@ namespace CrabUI
   //Still need somehow make sure that they are synched
   public interface IMouseEventConsumingComponent
   {
-    public CUIComponent Component { get; } // CRINGE
+    public CUIVisualComponent Component { get; } // CRINGE
 
     public bool MouseOver { get; set; }
     public bool MousePressed { get; set; }
 
-    public ClearableEvent<CUIComponent, CUIMouseDownEvent> MouseDown { get; }
-    public ClearableEvent<CUIComponent, CUIMouseUpEvent> MouseUp { get; }
-    public ClearableEvent<CUIComponent, CUIMouseClickEvent> MouseClick { get; }
-    public ClearableEvent<CUIComponent, CUIMouseDoubleClickEvent> MouseDoubleClick { get; }
-    public ClearableEvent<CUIComponent, CUIMouseMovedEvent> MouseMoved { get; }
-    public ClearableEvent<CUIComponent, CUIMouseEnterEvent> MouseEnter { get; }
-    public ClearableEvent<CUIComponent, CUIMouseLeaveEvent> MouseLeave { get; }
-    public ClearableEvent<CUIComponent, CUIMouseOnEvent> MouseOn { get; }
-    public ClearableEvent<CUIComponent, CUIMouseOffEvent> MouseOff { get; }
-    public ClearableEvent<CUIComponent, CUIMouseScrollEvent> MouseScroll { get; }
+    public ClearableEvent<CUIVisualComponent, CUIMouseDownEvent> MouseDown { get; }
+    public ClearableEvent<CUIVisualComponent, CUIMouseUpEvent> MouseUp { get; }
+    public ClearableEvent<CUIVisualComponent, CUIMouseClickEvent> MouseClick { get; }
+    public ClearableEvent<CUIVisualComponent, CUIMouseDoubleClickEvent> MouseDoubleClick { get; }
+    public ClearableEvent<CUIVisualComponent, CUIMouseMovedEvent> MouseMoved { get; }
+    public ClearableEvent<CUIVisualComponent, CUIMouseEnterEvent> MouseEnter { get; }
+    public ClearableEvent<CUIVisualComponent, CUIMouseLeaveEvent> MouseLeave { get; }
+    public ClearableEvent<CUIVisualComponent, CUIMouseOnEvent> MouseOn { get; }
+    public ClearableEvent<CUIVisualComponent, CUIMouseOffEvent> MouseOff { get; }
+    public ClearableEvent<CUIVisualComponent, CUIMouseScrollEvent> MouseScroll { get; }
   }
 
   public static class IMouseEventConsumingComponent_Extensions

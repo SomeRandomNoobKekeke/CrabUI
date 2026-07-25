@@ -18,52 +18,27 @@ namespace CrabUI
     {
       public LayoutMarker.Pattern MarkPattern { get; } = LayoutMarker.Pattern.UpAndDown;
 
-      public void Init()
-      {
-        Debug_ChildAdded.Map(Self.DebugRelays[DebugCategory.TreeChanged]);
-        Debug_ChildRemoved.Map(Self.DebugRelays[DebugCategory.TreeChanged]);
-
-        Debug_LayoutMarked.Map(Self.DebugRelays[DebugCategory.LayoutMarked]);
-      }
-
-
-      public DebugNode<CUIComponent, CUIComponent> Debug_ChildAdded = new(
-        DebugCategory.TreeChanged, CUI.DebugHub,
-        (parent, child) => $"{parent} <= {child}"
-      );
-      public DebugNode<CUIComponent, CUIComponent> Debug_ChildRemoved = new(
-        DebugCategory.TreeChanged, CUI.DebugHub,
-        (parent, child) => $"{parent} => {child}"
-      );
-
-      public DebugNode<CUIComponent, LayoutMarker.Pattern, string> Debug_LayoutMarked { get; } = new(
-        DebugCategory.LayoutMarked, CUI.DebugHub,
-        (host, pattern, reason) => $"{host} {reason} {pattern}"
-      );
-
-
-
-      public void OnChildAdded(CUIComponent child)
+      public void OnChildAdded(CUIVisualComponent child)
       {
         PropogateTreeChanged();
         Self.Remember(child);
         Self.LayoutMarker.Mark(MarkPattern);
       }
 
-      public void OnChildRemoved(CUIComponent child)
+      public void OnChildRemoved(CUIVisualComponent child)
       {
         PropogateTreeChanged();
         Self.Forget(child);
         Self.LayoutMarker.Mark(MarkPattern);
       }
 
-      public void OnAttachToParent(CUIComponent parent)
+      public void OnAttachToParent(CUIVisualComponent parent)
       {
         Self.MainComponentTracker.OnAttachToParentHandler(parent);
         Self.ProtectedCommands.OnAttachToParentHandler(parent);
       }
 
-      public void OnDetachFromParent(CUIComponent parent)
+      public void OnDetachFromParent(CUIVisualComponent parent)
       {
         Self.MainComponentTracker.OnDetachFromParentHandler(parent);
         Self.ProtectedCommands.OnDetachFromParentHandler(parent);

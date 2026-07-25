@@ -18,23 +18,14 @@ namespace CrabUI
     {
       public partial class CUIPlainLayout_Host_Part : CUIPlainLayout.Host
       {
-        public CUIComponent Self { get; set; }
+        public CUIVisualComponent Self { get; set; }
 
         IReadOnlyList<Layout.Child> Layout.Host.Children
-          => Self.Children.ReadOnlyAs<CUIComponent, Layout.Child>(c => c.Adapters.Layout_Child);
+          => Self.Children.ReadOnlyAs<CUIVisualComponent, Layout.Child>(c => c.Adapters.Layout_Child);
 
         Vector2 Layout.Host.ChildrenOffset => Self.LayoutProps.ChildrenOffset.Value;
         bool Layout.Host.CullChildren => Self.CullChildren;
-        CUIRect Layout.Host.Rect
-        {
-          get => Self.Rect;
-          set => Self.Rect = value;
-        }
-        CUIRect Layout.Host.OuterRect
-        {
-          get => Self.OuterRect;
-          set => Self.OuterRect = value;
-        }
+
         CUIRect Layout.Host.ChildrenRect
         {
           get => Self.ChildrenRect;

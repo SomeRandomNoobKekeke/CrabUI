@@ -15,10 +15,10 @@ namespace CrabUIUser
     {
       string savePath = Path.Combine("Test Data", "bruh.xml");
 
-      CUIComponent frame = new CUIDefault.Frame("bruh");
+      CUIFrame frame = new CUIDefault.Frame("bruh");
       frame.SaveTo(savePath);
 
-      CUIComponent frame2 = CUIComponent.LoadFrom(savePath);
+      CUIFrame frame2 = CUIVisualComponent.LoadFrom<CUIFrame>(savePath);
 
       return new UTest(frame.IsEqualTo(frame2), true);
     }

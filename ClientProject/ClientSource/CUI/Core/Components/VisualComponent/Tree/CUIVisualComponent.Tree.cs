@@ -13,12 +13,12 @@ namespace CrabUI
 {
   public partial class CUIVisualComponent
   {
-    private CUIComponent _Parent; public CUIComponent Parent
+    private CUIVisualComponent _Parent; public CUIVisualComponent Parent
     {
       get => _Parent;
       set => TreeOperations.SetParent(value);
     }
-    private List<CUIComponent> _Children = new();
+    private List<CUIVisualComponent> _Children = new();
     public ChildrenListProxy Children { get; } = new();
 
     public void RemoveSelf() => Parent = null;
@@ -33,14 +33,14 @@ namespace CrabUI
       Parent.Children.MoveChildTo(this, 0);
     }
 
-    public IEnumerable<CUIComponent> DeepChildren
+    public IEnumerable<CUIVisualComponent> DeepChildren
     {
       get
       {
-        foreach (CUIComponent child in Children)
+        foreach (CUIVisualComponent child in Children)
         {
           yield return child;
-          foreach (CUIComponent deepChild in child.DeepChildren)
+          foreach (CUIVisualComponent deepChild in child.DeepChildren)
           {
             yield return deepChild;
           }

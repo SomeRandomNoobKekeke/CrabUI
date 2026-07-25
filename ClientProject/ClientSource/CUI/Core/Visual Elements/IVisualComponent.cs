@@ -11,9 +11,7 @@ namespace CrabUI
 {
   public interface IVisualComponent
   {
-    public CUIRect Rect { get; set; }
     public IEnumerable<VisualUnit> VisualSplit();
-
     public VisualUnit.NestedVisualComponent VisualWrapper { get; }
   }
 }

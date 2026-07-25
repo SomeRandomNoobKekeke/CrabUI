@@ -17,16 +17,16 @@ namespace CrabUI
     public class Reflection_Part : Part
     {
       public CUITypeTree TypeTree { get; } = new();
-      public Dictionary<Type, CUIComponentInfo> ComponentInfos { get; } = new();
+      public Dictionary<Type, CUIVisualComponentInfo> ComponentInfos { get; } = new();
       public Dictionary<Type, CUISerializableInfo> SerializableInfos { get; } = new();
 
       public HashSet<Assembly> KnownAssemblies { get; } = new();
 
 
       public Type GetType(string name) => TypeTree.TypesByName.GetValueOrDefault(name);
-      public CUIComponentInfo GetComponentInfo(Type T)
+      public CUIVisualComponentInfo GetComponentInfo(Type T)
       {
-        if (!ComponentInfos.ContainsKey(T)) throw new Exception($"CUIComponentInfo for [{T}] is missing");
+        if (!ComponentInfos.ContainsKey(T)) throw new Exception($"CUIVisualComponentInfo for [{T}] is missing");
         return ComponentInfos[T];
       }
       public CUISerializableInfo GetSerializableInfo(Type T)
@@ -56,7 +56,7 @@ namespace CrabUI
 
         TypeTree.Add(assemblyInfo.ComponentInfos.Keys);
 
-        foreach (CUIComponentInfo info in assemblyInfo.ComponentInfos.Values)
+        foreach (CUIVisualComponentInfo info in assemblyInfo.ComponentInfos.Values)
         {
           if (info.DefaultStyle is not null)
           {
@@ -69,7 +69,7 @@ namespace CrabUI
         //CRINGE why here?
         foreach (var (T, info) in assemblyInfo.ComponentInfos)
         {
-          info.DefaultValue = Self.CUIAssemblyAnalyzer.CUIComponentAnalyzer.CreateDefault(T);
+          info.DefaultValue = Self.CUIAssemblyAnalyzer.CUIVisualComponentAnalyzer.CreateDefault(T);
         }
       }
     }

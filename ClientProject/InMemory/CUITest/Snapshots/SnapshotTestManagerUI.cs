@@ -36,7 +36,7 @@ namespace CrabUIUser
 
     public void HandleManagerEvent(SnapshotTestManager.Event e)
     {
-      foreach (CUIComponent child in ButtonList.Children)
+      foreach (CUIVisualComponent child in ButtonList.Children)
       {
         if (child is not CUIButton button) continue;
 

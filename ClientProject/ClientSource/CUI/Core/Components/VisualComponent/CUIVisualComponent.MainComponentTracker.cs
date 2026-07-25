@@ -16,21 +16,15 @@ namespace CrabUI
 
     protected virtual void OnAttachedToMainComponent(CUIMainComponent mainComponent)
     {
-      DebugRelays.Map(MainComponent.DebugRelays);
+
     }
     protected virtual void OnDetachedFromMainComponent(CUIMainComponent mainComponent)
     {
-      DebugRelays.Unmap(MainComponent.DebugRelays);
-
-
-      //TODO find better place for these
-      //TODO release all handles
-      RightResizeHandle.ForceRelease();
       DragHandle.ForceRelease();
     }
 
 
-    protected virtual MainComponentTracker_Part MainComponentTracker { get; set; } = new();
+    protected MainComponentTracker_Part MainComponentTracker { get; } = new();
     public class MainComponentTracker_Part : Part, IModule
     {
       private CUIMainComponent _MainComponent;
@@ -45,7 +39,7 @@ namespace CrabUI
         }
       }
 
-      public void OnAttachToParentHandler(CUIComponent parent)
+      public void OnAttachToParentHandler(CUIVisualComponent parent)
       {
         if (parent is CUIMainComponent mainComponent)
         {
@@ -57,7 +51,7 @@ namespace CrabUI
         }
       }
 
-      public void OnDetachFromParentHandler(CUIComponent parent)
+      public void OnDetachFromParentHandler(CUIVisualComponent parent)
       {
         SetRec(null);
       }
@@ -66,7 +60,7 @@ namespace CrabUI
       {
         MainComponent = mainComponent;
 
-        foreach (CUIComponent child in Self.Children)
+        foreach (CUIVisualComponent child in Self.Children)
         {
           child.MainComponentTracker.SetRec(mainComponent);
         }

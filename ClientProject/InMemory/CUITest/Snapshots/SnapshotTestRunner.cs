@@ -25,14 +25,14 @@ namespace CrabUIUser
     {
       try
       {
-        CUIComponent TestSubject = (CUIComponent)test.TestFunc();
+        CUIVisualComponent TestSubject = (CUIVisualComponent)test.TestFunc();
         TestSubject.DeepDebug = true;
 
 
         if (SerializeTestSubject)
         {
           XElement XMLBefore = TestSubject.Serialize();
-          TestSubject = CUIComponent.Deserialize(TestSubject.Serialize());
+          TestSubject = CUIVisualComponent.Deserialize(TestSubject.Serialize());
           XElement XMLAfter = TestSubject.Serialize();
 
           if (XMLBefore.ToString() != XMLAfter.ToString())

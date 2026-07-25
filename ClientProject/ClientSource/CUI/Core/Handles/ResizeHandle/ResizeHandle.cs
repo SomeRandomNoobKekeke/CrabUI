@@ -31,7 +31,16 @@ namespace CrabUI
       }
     }
 
+    public override Layout? Layout { get; protected set; } = null;
+
+
     public SimpleTexture Background { get; } = new();
+
+    public override bool Visible
+    {
+      get => Background.Visible;
+      set => Background.Visible = value;
+    }
 
     public Vector2 Anchor
     {
@@ -57,7 +66,10 @@ namespace CrabUI
     public Vector2 GrabOffset { get; private set; }
     public Vector2 StartSelfAnchorPoint { get; private set; }
 
-    public override CUIRect Rect
+
+    public override CUIRect OuterRect { get => Rect; set => Rect = value; }
+    public override CUIRect ChildrenRect { get => Rect; set => Rect = value; }
+    public CUIRect Rect
     {
       get => Background.Rect;
       set => Background.Rect = value;

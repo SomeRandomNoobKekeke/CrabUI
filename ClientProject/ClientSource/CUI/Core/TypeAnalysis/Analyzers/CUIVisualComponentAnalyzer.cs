@@ -12,16 +12,16 @@ namespace CrabUI
   /// <summary>
   /// This thing creating CUIComponentInfo from types
   /// </summary>
-  public class CUIComponentAnalyzer
+  public class CUIVisualComponentAnalyzer
   {
     public static string DefaultStylePropName { get; } = "DefaultStyle";
 
-    public bool IsComponentType(Type T) => T.IsAssignableTo(typeof(CUIComponent));
+    public bool IsCUIVisualComponentType(Type T) => T.IsAssignableTo(typeof(CUIVisualComponent));
 
     //TODO add a way to use pregenerated infos
-    public CUIComponentInfo Analyze(Type T)
+    public CUIVisualComponentInfo Analyze(Type T)
     {
-      CUIComponentInfo info = new CUIComponentInfo()
+      CUIVisualComponentInfo info = new CUIVisualComponentInfo()
       {
         ComponentType = T,
       };
@@ -39,7 +39,7 @@ namespace CrabUI
       return info;
     }
 
-    public CUIComponent CreateDefault(Type T)
+    public CUIVisualComponent CreateDefault(Type T)
     {
       if (T.IsAbstract) return null;
 
@@ -53,7 +53,7 @@ namespace CrabUI
 
       try
       {
-        return (CUIComponent)Activator.CreateInstance(T);
+        return (CUIVisualComponent)Activator.CreateInstance(T);
       }
       catch (Exception e)
       {

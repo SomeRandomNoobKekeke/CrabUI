@@ -21,7 +21,7 @@ namespace CrabUI
     /// <summary>
     /// You can access NamedComponents with this indexer
     /// </summary>
-    public CUIComponent this[string name]
+    public CUIVisualComponent this[string name]
     {
       get => Get(name);
       set
@@ -47,6 +47,8 @@ namespace CrabUI
       }
     }
 
+    public T As<T>() where T : CUIVisualComponent => this as T;
+
     /// <summary>
     /// Gets the parent, like that A["^"] == A.Parent, A["B.^"] == A  
     /// I'm not sure about the symbol, suggestions are welcomed
@@ -56,9 +58,9 @@ namespace CrabUI
     /// <summary>
     /// All memorized components
     /// </summary>
-    public Dictionary<string, CUIComponent> NamedComponents { get; } = new();
+    public Dictionary<string, CUIVisualComponent> NamedComponents { get; } = new();
 
-    public CUIComponent Remember(CUIComponent c, string name)
+    public CUIVisualComponent Remember(CUIVisualComponent c, string name)
     {
       NamedComponents[name] = c;
       c.AKA = name;
@@ -67,24 +69,24 @@ namespace CrabUI
     /// <summary>
     /// If it already has AKA
     /// </summary>
-    public CUIComponent Remember(CUIComponent c)
+    public CUIVisualComponent Remember(CUIVisualComponent c)
     {
       if (!String.IsNullOrEmpty(c.AKA)) NamedComponents[c.AKA] = c;
       return c;
     }
 
-    public CUIComponent Forget(string name)
+    public CUIVisualComponent Forget(string name)
     {
       if (name == null) return null;
       if (!NamedComponents.ContainsKey(name)) return null;
-      CUIComponent c = NamedComponents[name];
+      CUIVisualComponent c = NamedComponents[name];
       NamedComponents.Remove(name);
       return c;
     }
     /// <summary>
     /// If it already has AKA
     /// </summary>
-    public CUIComponent Forget(CUIComponent c)
+    public CUIVisualComponent Forget(CUIVisualComponent c)
     {
       if (!String.IsNullOrEmpty(c?.AKA)) NamedComponents.Remove(c.AKA);
       return c;
@@ -124,14 +126,14 @@ namespace CrabUI
     /// Returns memorized component by name.  
     /// You can chain names with . and get parent with ^
     /// </summary>
-    public virtual CUIComponent Get(string name)
+    public CUIVisualComponent Get(string name)
     {
       if (name == null || name == "") return null;
       name = name.Trim();
 
       if (NamedComponents.ContainsKey(name)) return NamedComponents[name];
 
-      CUIComponent component = this;
+      CUIVisualComponent component = this;
       string[] commands = name.Split('.');
 
       foreach (string c in commands)
@@ -160,7 +162,7 @@ namespace CrabUI
 
       return component;
     }
-    public T Get<T>(string name) where T : CUIComponent => (T)Get(name);
+    public T Get<T>(string name) where T : CUIVisualComponent => (T)Get(name);
 
     /// <summary>
     /// Prints named components recursivelly,  

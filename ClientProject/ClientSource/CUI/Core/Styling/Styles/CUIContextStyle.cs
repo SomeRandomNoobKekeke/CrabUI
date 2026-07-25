@@ -6,7 +6,7 @@ using System.Reflection;
 namespace CrabUI
 {
 
-  public class CUIContextStyle<T> : IDisposable where T : CUIComponent
+  public class CUIContextStyle<T> : IDisposable where T : CUIVisualComponent
   {
     public CUIActionStyle Style { get; }
     public Type Type => typeof(T);

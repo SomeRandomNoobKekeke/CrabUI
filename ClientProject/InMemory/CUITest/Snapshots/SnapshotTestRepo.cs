@@ -15,7 +15,7 @@ namespace CrabUIUser
   public class SnapshotTestRepo
   {
     public static bool IsSnapshotTestFunc(MethodInfo mi)
-          => mi.ReturnType.IsAssignableTo(typeof(CUIComponent)) && mi.GetParameters().Length == 0;
+          => mi.ReturnType.IsAssignableTo(typeof(CUIVisualComponent)) && mi.GetParameters().Length == 0;
 
 
 

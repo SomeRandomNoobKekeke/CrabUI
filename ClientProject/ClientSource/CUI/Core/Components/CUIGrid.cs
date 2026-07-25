@@ -30,17 +30,15 @@ namespace CrabUI
     }
 
 
-    protected override void InitStyle()
-    {
-      base.InitStyle();
-    }
     //TODO [CUISerializableProp]
     public List<CUIGridLayout.Line> RowSizes { get; set; } = new();
     public List<CUIGridLayout.Line> ColumnSizes { get; set; } = new();
 
     protected CUIGridLayout GridLayout;
 
-    protected override void SetupLayout()
+
+    [InitMethod]
+    protected override void InitLayout()
     {
       GridLayout = new();
       Layout = GridLayout;

@@ -15,39 +15,25 @@ namespace CrabUI
     protected Events_Part Events { get; } = new();
     public class Events_Part : Part, IModule, IMouseEventConsumingComponent
     {
-      public void Init()
-      {
-        // this.Route(Self.Background);
-        //TODO route borders?
-      }
+      public CUIVisualComponent Component => Self;
 
-      public CUIComponent Component => Self;
-
-      public bool MouseOver
-      {
-        get => Self.Background.MouseOver;
-        set => Self.Background.MouseOver = value;
-      }
-      public bool MousePressed
-      {
-        get => Self.Background.MousePressed;
-        set => Self.Background.MousePressed = value;
-      }
+      public bool MouseOver { get; set; }
+      public bool MousePressed { get; set; }
 
 
-      public ClearableEvent<CUIComponent, CUIMouseDownEvent> MouseDown { get; } = new();
-      public ClearableEvent<CUIComponent, CUIMouseUpEvent> MouseUp { get; } = new();
-      public ClearableEvent<CUIComponent, CUIMouseClickEvent> MouseClick { get; } = new();
-      public ClearableEvent<CUIComponent, CUIMouseDoubleClickEvent> MouseDoubleClick { get; } = new();
-      public ClearableEvent<CUIComponent, CUIMouseMovedEvent> MouseMoved { get; } = new();
-      public ClearableEvent<CUIComponent, CUIMouseEnterEvent> MouseEnter { get; } = new();
-      public ClearableEvent<CUIComponent, CUIMouseLeaveEvent> MouseLeave { get; } = new();
-      public ClearableEvent<CUIComponent, CUIMouseOnEvent> MouseOn { get; } = new();
-      public ClearableEvent<CUIComponent, CUIMouseOffEvent> MouseOff { get; } = new();
-      public ClearableEvent<CUIComponent, CUIMouseScrollEvent> MouseScroll { get; } = new();
+      public ClearableEvent<CUIVisualComponent, CUIMouseDownEvent> MouseDown { get; } = new();
+      public ClearableEvent<CUIVisualComponent, CUIMouseUpEvent> MouseUp { get; } = new();
+      public ClearableEvent<CUIVisualComponent, CUIMouseClickEvent> MouseClick { get; } = new();
+      public ClearableEvent<CUIVisualComponent, CUIMouseDoubleClickEvent> MouseDoubleClick { get; } = new();
+      public ClearableEvent<CUIVisualComponent, CUIMouseMovedEvent> MouseMoved { get; } = new();
+      public ClearableEvent<CUIVisualComponent, CUIMouseEnterEvent> MouseEnter { get; } = new();
+      public ClearableEvent<CUIVisualComponent, CUIMouseLeaveEvent> MouseLeave { get; } = new();
+      public ClearableEvent<CUIVisualComponent, CUIMouseOnEvent> MouseOn { get; } = new();
+      public ClearableEvent<CUIVisualComponent, CUIMouseOffEvent> MouseOff { get; } = new();
+      public ClearableEvent<CUIVisualComponent, CUIMouseScrollEvent> MouseScroll { get; } = new();
 
-      public ClearableEvent<CUIComponent, Vector2> Dragged { get; } = new();
-      public ClearableEvent<CUIComponent, CUIRect> RectSet { get; } = new();
+      public ClearableEvent<CUIVisualComponent, Vector2> Dragged { get; } = new();
+      public ClearableEvent<CUIVisualComponent, CUIRect> RectSet { get; } = new();
 
 
     }

@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace CrabUI
 {
-  public class CUIDefaultStyle<ComponentT> : CUIActionStyle<ComponentT> where ComponentT : CUIComponent
+  public class CUIDefaultStyle<ComponentT> : CUIActionStyle<ComponentT> where ComponentT : CUIVisualComponent
   {
     public CUIDefaultStyle(Action<ComponentT> action) : base($"Default for {typeof(ComponentT).Name}", action)
     {

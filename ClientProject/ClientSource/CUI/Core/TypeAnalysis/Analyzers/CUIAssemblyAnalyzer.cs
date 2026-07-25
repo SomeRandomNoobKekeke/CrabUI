@@ -11,7 +11,7 @@ namespace CrabUI
 {
   public class CUIAssemblyAnalyzer
   {
-    public CUIComponentAnalyzer CUIComponentAnalyzer { get; } = new();
+    public CUIVisualComponentAnalyzer CUIVisualComponentAnalyzer { get; } = new();
     public CUISerializableAnalyzer CUISerializableAnalyzer { get; } = new();
 
     public CUIAssemblyInfo AnalyzeAssembly(Assembly assembly)
@@ -25,9 +25,9 @@ namespace CrabUI
         info.SerializableInfos[T] = CUISerializableAnalyzer.Analyze(T);
       }
 
-      foreach (Type T in assembly.GetTypes().Where(CUIComponentAnalyzer.IsComponentType))
+      foreach (Type T in assembly.GetTypes().Where(CUIVisualComponentAnalyzer.IsCUIVisualComponentType))
       {
-        info.ComponentInfos[T] = CUIComponentAnalyzer.Analyze(T);
+        info.ComponentInfos[T] = CUIVisualComponentAnalyzer.Analyze(T);
 
         if (info.SerializableInfos.ContainsKey(T)) //HACK
         {

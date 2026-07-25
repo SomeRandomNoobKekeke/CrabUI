@@ -24,15 +24,8 @@ namespace CrabUI
       get => SwipeHandle.Active;
       set => SwipeHandle.Active = value;
     }
-    [CUISerializableProp]
-    public bool Resizable
-    {
-      get => RightResizeHandle.Displayed;
-      set => RightResizeHandle.Displayed = value;
-    }
 
     public DragHandle DragHandle { get; } = new();
-    public ResizeHandle RightResizeHandle { get; } = new();
     public SwipeHandle SwipeHandle { get; } = new();
   }
 }

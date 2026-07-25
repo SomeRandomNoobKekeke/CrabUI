@@ -12,104 +12,11 @@ namespace CrabUI
 {
   public partial class CUIVisualComponent
   {
-    private CUISizes _Margin;
-    [CUISerializableProp]
-    public CUISizes Margin
-    {
-      get => _Margin;
-      set
-      {
-        _Margin = value;
-        UpdateSizeDiffs();
-      }
-    }
+    public abstract CUIRect OuterRect { get; set; }
+    // public abstract CUIRect Rect { get; set; }
+    // public abstract CUIRect InnerRect { get; set; }
+    public abstract CUIRect ChildrenRect { get; set; }
 
-    private CUISizes _Padding;
-    [CUISerializableProp]
-    public CUISizes Padding
-    {
-      get => _Padding;
-      set
-      {
-        _Padding = value;
-        UpdateSizeDiffs();
-      }
-    }
-
-    [CUISerializableProp]
-    public CUISizes Border
-    {
-      get => Borders.Sizes;
-      set
-      {
-        Borders.Sizes = value;
-        UpdateSizeDiffs();
-      }
-    }
-
-    private void UpdateSizeDiffs()
-    {
-      OutToChildDiff = Margin + Border + Padding;
-    }
-
-    public CUISizes OutToChildDiff { get; private set; }
-
-
-
-    private CUIRect _OuterRect; public CUIRect OuterRect
-    {
-      get => _OuterRect;
-      set
-      {
-        _OuterRect = value;
-        _Rect = _OuterRect - Margin;
-        _InnerRect = _Rect - Border;
-        _ChildrenRect = _InnerRect - Padding;
-
-        UpdateRects();
-      }
-    }
-
-    private CUIRect _Rect; public override CUIRect Rect
-    {
-      get => _Rect;
-      set
-      {
-        _Rect = value;
-        _InnerRect = _Rect - Border;
-        _ChildrenRect = _InnerRect - Padding;
-        _OuterRect = _Rect + Margin;
-
-        UpdateRects();
-      }
-    }
-
-    private CUIRect _InnerRect; public CUIRect InnerRect
-    {
-      get => _InnerRect;
-      set
-      {
-        _InnerRect = value;
-        _ChildrenRect = _InnerRect - Padding;
-        _Rect = _InnerRect + Border;
-        _OuterRect = _Rect + Margin;
-
-        UpdateRects();
-      }
-    }
-
-    private CUIRect _ChildrenRect; public CUIRect ChildrenRect
-    {
-      get => _ChildrenRect;
-      set
-      {
-        _ChildrenRect = value;
-        _InnerRect = _ChildrenRect + Padding;
-        _Rect = _InnerRect + Border;
-        _OuterRect = _Rect + Margin;
-
-        UpdateRects();
-      }
-    }
+    public CUISizes OutToChildDiff { get; protected set; }
   }
 }

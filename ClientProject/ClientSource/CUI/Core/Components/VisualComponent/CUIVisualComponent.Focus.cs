@@ -28,11 +28,7 @@ namespace CrabUI
     }
     protected IFocusableAdapter_Part IFocusableAdapter { get; } = new();
 
-    public bool ConsumeFocus
-    {
-      get => Background.ConsumeFocus;
-      set => Background.ConsumeFocus = value;
-    }
+
     public bool Focused => IFocusableAdapter.Focused;
     public bool Focusable { get; set; }
     public bool ManuallyFocused
@@ -54,7 +50,7 @@ namespace CrabUI
     public void Focus() => CUICore.RequestFocus(IFocusableAdapter);
     public void Blur() => CUICore.RequestBlur(IFocusableAdapter);
 
-    //TODO should these take this CUIComponent as first arg?
+    //TODO should these take this CUIVisualComponent as first arg?
     public Action AddOnFocus { set { OnFocus += value; } }
     public event Action OnFocus
     {

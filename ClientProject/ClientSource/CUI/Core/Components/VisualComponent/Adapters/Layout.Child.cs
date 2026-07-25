@@ -30,19 +30,11 @@ namespace CrabUI
         CUINullRect CUIPlainLayout.Child.CrossRelative => Self.LayoutProps.CrossRelative.Value;
         Vector2 CUIPlainLayout.Child.Anchor => Self.LayoutProps.Anchor.Value;
         Vector2? CUIPlainLayout.Child.ParentAnchor => Self.LayoutProps.ParentAnchor.Value;
-        CUIRect Layout.ChildBase.Rect
-        {
-          get => Self.Rect;
-          set => Self.Rect = value;
-        }
+
         CUIRect Layout.ChildBase.OuterRect
         {
           get => Self.OuterRect;
           set => Self.OuterRect = value;
-        }
-        CUIRect Layout.ChildBase.ChildrenRect
-        {
-          get => Self.ChildrenRect;
         }
 
         bool Layout.ChildBase.CulledOut

@@ -21,11 +21,11 @@ namespace CrabUI
       {
         public void Init()
         {
-          Self.MouseDown += (CUIComponent c, CUIMouseDownEvent e) => MouseDown?.Invoke(e);
+          Self.MouseDown += (CUIVisualComponent c, CUIMouseDownEvent e) => MouseDown?.Invoke(e);
         }
         public event Action<CUIMouseDownEvent> MouseDown;
-        public CUIRect Rect => Self.Rect;
-        public CUIRect? ParentRect => Self.Parent?.Rect;
+        public CUIRect Rect => Self.OuterRect;
+        public CUIRect? ParentRect => Self.Parent?.ChildrenRect;
 
         public void MoveChildrenOffset(Vector2 offset)
         {

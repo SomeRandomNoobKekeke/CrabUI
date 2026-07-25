@@ -61,19 +61,21 @@ namespace CrabUI
       }
     }
 
-    protected CUIVerticalListLayout ListLayout;
-
-    private void ScrollHandle(CUIComponent c, CUIMouseScrollEvent e)
+    private void ScrollHandle(CUIVisualComponent c, CUIMouseScrollEvent e)
     {
       Scroll += e.Scroll;
     }
 
-    protected override void SetupLayout()
+    protected CUIVerticalListLayout ListLayout;
+
+    [InitMethod]
+    protected override void InitLayout()
     {
       ListLayout = new CUIVerticalListLayout();
       Layout = ListLayout;
       Layout.ConnectTo(new CUIVerticalListLayout_Host_Adapter_Part() { Self = this });
     }
+
 
     public CUIVerticalList() : base()
     {

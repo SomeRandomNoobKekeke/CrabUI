@@ -12,7 +12,7 @@ namespace CrabUI
     public int Priority { get; set; } = ICUIStyle.DefaultPriority;
     public CUIStyleCategory Category { get; set; }
 
-    public abstract void Apply(CUIComponent component);
+    public abstract void Apply(CUIVisualComponent component);
 
     public CUIActionStyle(string id, Type targetType)
     {
@@ -23,11 +23,11 @@ namespace CrabUI
     public override string ToString() => $"CUIStyle [{ID}]";
   }
 
-  public class CUIActionStyle<ComponentT> : CUIActionStyle where ComponentT : CUIComponent
+  public class CUIActionStyle<ComponentT> : CUIActionStyle where ComponentT : CUIVisualComponent
   {
     public Action<ComponentT> Action { get; set; }
 
-    public override void Apply(CUIComponent component)
+    public override void Apply(CUIVisualComponent component)
     {
       Action?.Invoke((ComponentT)component);
       // CUI.Logger.Log($"Applying [{this}] to [{component}]"); // TODO this should be a debug event

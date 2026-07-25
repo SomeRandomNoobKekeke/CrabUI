@@ -16,18 +16,6 @@ namespace CrabUI
     protected LayoutProps_Part LayoutProps { get; } = new();
     public partial class LayoutProps_Part : Part, ICUILayoutProp.IContainer
     {
-      // public DebugNode<object, string> Debug_LayoutMarked { get; } = new(
-      //   DebugCategory.LayoutMarked, CUI.DebugHub,
-      //   (host, propName) => $"{host}.{propName} = true"
-      // );
-
-
-      public void Init()
-      {
-        Absolute.Debug_ValueSet.Map(Self.DebugRelays[DebugCategory.LayoutPropSet]);
-        Relative.Debug_ValueSet.Map(Self.DebugRelays[DebugCategory.LayoutPropSet]);
-      }
-
       void ICUILayoutProp.IContainer.Mark(LayoutMarker.Pattern pattern)
       {
         Self.LayoutMarker.Mark(pattern);

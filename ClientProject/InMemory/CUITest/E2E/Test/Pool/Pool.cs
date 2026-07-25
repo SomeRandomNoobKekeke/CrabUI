@@ -33,7 +33,7 @@ namespace CrabUIUser
         CUIWater.MouseOn += (c, e) =>
         {
           if (!e.Mouse.Pressed) return;
-          Vector2 v = CUIAnchor.AnchorFromPos(c.Rect, e.Pos);
+          Vector2 v = CUIAnchor.AnchorFromPos(CUIWater.Rect, e.Pos);
           CUIWater.Drop(v.X, v.Y);
         };
 

@@ -15,7 +15,7 @@ namespace CrabUI
     public StringDictionary_Part As_StringDictionary { get; } = new();
     public class StringDictionary_Part : Part, IDictionary<string, string>
     {
-      public CUIComponentInfo Info => Self.Info;
+      public CUIVisualComponentInfo Info => Self.Info;
 
       public string this[string key]
       {

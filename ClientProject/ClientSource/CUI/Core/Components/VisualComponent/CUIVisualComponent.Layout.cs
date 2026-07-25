@@ -19,12 +19,7 @@ namespace CrabUI
     protected virtual CUINullVector2 MinSizeOverride => MinSize;
     protected virtual CUINullVector2 MaxSizeOverride => MaxSize;
 
-    public Layout Layout { get; protected set; }
-    protected virtual void SetupLayout()
-    {
-      Layout = new CUIPlainLayout();
-      Layout.ConnectTo(new Adapters_Part.CUIPlainLayout_Host_Part() { Self = this });
-    }
+    public abstract Layout? Layout { get; protected set; }
 
     protected LayoutMarker LayoutMarker { get; set; } = new();
   }

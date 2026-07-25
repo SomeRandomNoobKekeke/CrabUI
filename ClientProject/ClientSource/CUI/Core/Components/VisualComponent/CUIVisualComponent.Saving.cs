@@ -27,26 +27,26 @@ namespace CrabUI
       CUICore.ResourceIOContext.CallingAssembly = null;
     }
 
-    public static T LoadFrom<T>(string path) where T : CUIComponent
+    public static T LoadFrom<T>(string path) where T : CUIVisualComponent
     {
       CUICore.ResourceIOContext.CallingAssembly = Assembly.GetCallingAssembly();
       CUICore.ResourceIOContext.FileDir = Path.GetDirectoryName(path);
 
       XDocument xdoc = CUICore.LoadXDoc(path);
-      CUIComponent result = CUIComponent.Deserialize(xdoc.Root);
+      CUIVisualComponent result = CUIVisualComponent.Deserialize(xdoc.Root);
 
       CUICore.ResourceIOContext.CallingAssembly = null;
       CUICore.ResourceIOContext.FileDir = null;
 
       return (T)result;
     }
-    public static CUIComponent LoadFrom(string path)
+    public static CUIVisualComponent LoadFrom(string path)
     {
       CUICore.ResourceIOContext.CallingAssembly = Assembly.GetCallingAssembly();
       CUICore.ResourceIOContext.FileDir = Path.GetDirectoryName(path);
 
       XDocument xdoc = CUICore.LoadXDoc(path);
-      CUIComponent result = CUIComponent.Deserialize(xdoc.Root);
+      CUIVisualComponent result = CUIVisualComponent.Deserialize(xdoc.Root);
 
       CUICore.ResourceIOContext.CallingAssembly = null;
       CUICore.ResourceIOContext.FileDir = null;

@@ -34,8 +34,8 @@ namespace CrabUIUser
           this.TextInput += HandleInput;
 
           Focusable = true;
-          OnFocus += () => this["layout"]["handle"].Background.Color = new Color(0, 0, 200);
-          OnFocusLost += () => this["layout"]["handle"].Background.Color = new Color(0, 0, 64);
+          OnFocus += () => this["layout"]["handle"].As<CUIComponent>().Background.Color = new Color(0, 0, 200);
+          OnFocusLost += () => this["layout"]["handle"].As<CUIComponent>().Background.Color = new Color(0, 0, 64);
 
 
           Absolute = new CUINullRect(w: 400, h: 600);

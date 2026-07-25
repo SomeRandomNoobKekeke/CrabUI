@@ -16,7 +16,7 @@ namespace CrabUIUser
 {
   public class ComponentSnapshot
   {
-    public static ComponentSnapshot Take(CUIComponent component, string name)
+    public static ComponentSnapshot Take(CUIVisualComponent component, string name)
     {
       return new ComponentSnapshot()
       {
@@ -25,13 +25,13 @@ namespace CrabUIUser
       };
     }
 
-    private static XElement TakeXML(CUIComponent component)
+    private static XElement TakeXML(CUIVisualComponent component)
     {
       XElement element = new XElement(component.TypeName);
 
       ExtractAttributes(element, component);
 
-      foreach (CUIComponent child in component.Children)
+      foreach (CUIVisualComponent child in component.Children)
       {
         element.Add(TakeXML(child));
       }
@@ -39,9 +39,9 @@ namespace CrabUIUser
       return element;
     }
 
-    private static void ExtractAttributes(XElement element, CUIComponent component)
+    private static void ExtractAttributes(XElement element, CUIVisualComponent component)
     {
-      element.Add(new XAttribute("Rect", component.Rect.ToString()));
+      element.Add(new XAttribute("Rect", component.OuterRect.ToString()));
       element.Add(new XAttribute("AKA", component.AKA ?? ""));
     }
 

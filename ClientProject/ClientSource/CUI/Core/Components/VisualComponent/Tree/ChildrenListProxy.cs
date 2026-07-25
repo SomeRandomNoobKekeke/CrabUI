@@ -16,12 +16,12 @@ namespace CrabUI
     /// <summary>
     /// This is just convenient accessor, it doesn't do the work
     /// </summary>
-    public class ChildrenListProxy : Part, IList<CUIComponent>
+    public class ChildrenListProxy : Part, IList<CUIVisualComponent>
     {
-      public List<CUIComponent> Children => Self._Children;
+      public List<CUIVisualComponent> Children => Self._Children;
       public TreeOperations_Part Operations => Self.TreeOperations;
 
-      public CUIComponent this[int i]
+      public CUIVisualComponent this[int i]
       {
         get => Children[i];
         set => Operations.SetChild(i, value);
@@ -30,16 +30,16 @@ namespace CrabUI
       public int Count => Children.Count;
       public bool IsReadOnly => false;
 
-      public void MoveChildTo(CUIComponent child, int i) => Operations.MoveChildTo(child, i);
-      public void Add(CUIComponent child) => Operations.AddChild(child);
+      public void MoveChildTo(CUIVisualComponent child, int i) => Operations.MoveChildTo(child, i);
+      public void Add(CUIVisualComponent child) => Operations.AddChild(child);
       public void Clear() => Operations.RemoveAllChildren();
-      public bool Contains(CUIComponent child) => Children.Contains(child);
-      public void CopyTo(CUIComponent[] array, int arrayIndex) => Children.CopyTo(array, arrayIndex);
-      public IEnumerator<CUIComponent> GetEnumerator() => Children.GetEnumerator();
-      public int IndexOf(CUIComponent child) => Children.IndexOf(child);
+      public bool Contains(CUIVisualComponent child) => Children.Contains(child);
+      public void CopyTo(CUIVisualComponent[] array, int arrayIndex) => Children.CopyTo(array, arrayIndex);
+      public IEnumerator<CUIVisualComponent> GetEnumerator() => Children.GetEnumerator();
+      public int IndexOf(CUIVisualComponent child) => Children.IndexOf(child);
 
-      public void Insert(int i, CUIComponent child) => Operations.InsertChild(i, child);
-      public bool Remove(CUIComponent child)
+      public void Insert(int i, CUIVisualComponent child) => Operations.InsertChild(i, child);
+      public bool Remove(CUIVisualComponent child)
       {
         Operations.RemoveChild(child);
         return true; //BRUH

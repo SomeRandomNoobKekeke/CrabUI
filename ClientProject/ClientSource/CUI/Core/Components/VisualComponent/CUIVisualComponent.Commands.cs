@@ -29,12 +29,12 @@ namespace CrabUI
     {
       public RoutableCommandNode Node { get; } = new();
 
-      public void OnAttachToParentHandler(CUIComponent parent)
+      public void OnAttachToParentHandler(CUIVisualComponent parent)
       {
         parent.ProtectedCommands.Node.AddChild(this.Node);
       }
 
-      public void OnDetachFromParentHandler(CUIComponent parent)
+      public void OnDetachFromParentHandler(CUIVisualComponent parent)
       {
         parent.ProtectedCommands.Node.RemoveChild(this.Node);
       }

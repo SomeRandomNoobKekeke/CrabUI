@@ -8,6 +8,6 @@ namespace CrabUI
 {
   public interface ICUIPrefab
   {
-    public CUIComponent Instantiate();
+    public CUIVisualComponent Instantiate();
   }
 }

@@ -21,7 +21,7 @@ namespace CrabUI
         if (i < 0 || i >= Self._Children.Count) throw new ArgumentException($"{Self}| child index out of bounds [{i}]");
       }
 
-      public void RemoveChild(CUIComponent child)
+      public void RemoveChild(CUIVisualComponent child)
       {
         Self._Children.Remove(child);
         child._Parent = null;
@@ -30,7 +30,7 @@ namespace CrabUI
         Self.Tree.OnChildRemoved(child);
       }
 
-      public void SetChild(int i, CUIComponent newChild)
+      public void SetChild(int i, CUIVisualComponent newChild)
       {
         if (newChild is null)
         {
@@ -39,7 +39,7 @@ namespace CrabUI
 
         ValidateI(i);
 
-        CUIComponent prevchild = Self._Children[i];
+        CUIVisualComponent prevchild = Self._Children[i];
 
         newChild._Parent?.TreeOperations.RemoveChild(newChild);
 
@@ -53,7 +53,7 @@ namespace CrabUI
         Self.Tree.OnChildAdded(newChild);
       }
 
-      public void InsertChild(int i, CUIComponent child)
+      public void InsertChild(int i, CUIVisualComponent child)
       {
         ArgumentNullException.ThrowIfNull(child);
         if (i < 0) throw new ArgumentException($"{Self}| child insert index out of bounds [{i}]");
@@ -66,7 +66,7 @@ namespace CrabUI
         Self.Tree.OnChildAdded(child);
       }
 
-      public void MoveChildTo(CUIComponent child, int i)
+      public void MoveChildTo(CUIVisualComponent child, int i)
       {
         ArgumentNullException.ThrowIfNull(child);
         ValidateI(i);
@@ -80,7 +80,7 @@ namespace CrabUI
         Self.Tree.OnChildrenRearranged();
       }
 
-      public void AddChild(CUIComponent child)
+      public void AddChild(CUIVisualComponent child)
       {
         ArgumentNullException.ThrowIfNull(child);
 
@@ -97,7 +97,7 @@ namespace CrabUI
       {
         ValidateI(i);
 
-        CUIComponent child = Self._Children[i];
+        CUIVisualComponent child = Self._Children[i];
         Self._Children.RemoveAt(i);
         child._Parent = null;
 
@@ -105,7 +105,7 @@ namespace CrabUI
         Self.Tree.OnChildRemoved(child);
       }
 
-      public void SetParent(CUIComponent newParent)
+      public void SetParent(CUIVisualComponent newParent)
       {
         if (newParent is null)
         {

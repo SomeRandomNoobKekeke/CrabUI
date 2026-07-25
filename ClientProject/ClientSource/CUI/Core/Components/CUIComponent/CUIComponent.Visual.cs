@@ -43,25 +43,6 @@ namespace CrabUI
     [CUISerializableProp]
     public Borders Borders { get; } = new();
 
-
-    private bool _Displayed = true;
-    [CUISerializableProp]
-    public bool Displayed
-    {
-      get => _Displayed;
-      set
-      {
-        if (_Displayed == value) return;
-        _Displayed = value;
-        VisualRestructureNotifier.Notify();
-      }
-    }
-
-
-    [CUISerializableProp]
-    public bool CullChildren { get; set; }
-    protected bool CulledOut { get; set; }
-
     [CUISerializableProp]
     public bool IgnoretransparentPixels
     {
@@ -69,10 +50,8 @@ namespace CrabUI
       set => Background.IgnoretransparentPixels = value;
     }
 
-
     protected virtual void UpdateRects()
     {
-      Debug_PropSet.Send(typeof(CUIRect), Rect, this, "Rect");
       Background.Rect = Rect;
       Borders.Rect = Rect;
 
@@ -83,7 +62,6 @@ namespace CrabUI
         ScissorRect = ChildrenRect.Round();
       }
 
-      Debug_RectSet.Send(this, Rect);
       Events.RectSet.Raise(this, OuterRect);
     }
 
@@ -94,18 +72,11 @@ namespace CrabUI
     }
     protected VisualBounds VisualBounds { get; } = new();
 
-    [CUISerializableProp] //TODO will this just magically work?
-    public virtual bool Visible
+    public override bool Visible
     {
       get => Background.Visible;
       set => Background.Visible = value;
     }
-
-    /// <summary>
-    /// Half assed substitution for z-index, set to CUIDirection.Reverse to draw children in reverse order
-    /// </summary>
-    [CUISerializableProp]
-    public CUIDirection VisualChildrenOrder { get; set; } = CUIDirection.Straight;
 
     public override IEnumerable<VisualUnit> VisualSplit()
     {

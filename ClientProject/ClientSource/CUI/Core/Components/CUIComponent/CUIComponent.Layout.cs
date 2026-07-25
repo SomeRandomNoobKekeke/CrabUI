@@ -12,20 +12,13 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-    protected CUINullVector2 MinSize { get; set; } = CUINullVector2.Null;
-    protected CUINullVector2 MaxSize { get; set; } = CUINullVector2.Null;
-
-    //CRINGE
-    protected virtual CUINullVector2 MinSizeOverride => MinSize;
-    protected virtual CUINullVector2 MaxSizeOverride => MaxSize;
-
-    public Layout Layout { get; protected set; }
-    protected virtual void SetupLayout()
+    [InitMethod]
+    protected virtual void InitLayout()
     {
       Layout = new CUIPlainLayout();
       Layout.ConnectTo(new Adapters_Part.CUIPlainLayout_Host_Part() { Self = this });
     }
 
-    protected LayoutMarker LayoutMarker { get; set; } = new();
+    public override Layout? Layout { get; protected set; }
   }
 }

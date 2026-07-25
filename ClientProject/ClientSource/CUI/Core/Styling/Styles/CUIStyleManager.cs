@@ -30,7 +30,7 @@ namespace CrabUI
     {
       CUIStylePipeline pipeline = new CUIStylePipeline();
 
-      List<Type> typeChain = Utils.GetTypeChain(T, typeof(CUIComponent)).ToList();
+      List<Type> typeChain = Utils.GetTypeChain(T, typeof(CUIVisualComponent)).ToList();
       typeChain.Reverse();
 
       foreach (Type type in typeChain)

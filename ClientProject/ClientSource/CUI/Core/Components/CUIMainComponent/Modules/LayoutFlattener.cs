@@ -10,20 +10,20 @@ using CUICodeGenerator;
 
 namespace CrabUI
 {
-  //TODO untangle from CUIComponent?
+  //TODO untangle from CUIVisualComponent?
   public class LayoutFlattener : IModule
   {
-    public List<CUIComponent> Flat { get; } = new();
+    public List<CUIVisualComponent> Flat { get; } = new();
 
-    public void Flatten(CUIComponent root)
+    public void Flatten(CUIVisualComponent root)
     {
       Flat.Clear();
 
-      void FlattenRec(CUIComponent component)
+      void FlattenRec(CUIVisualComponent component)
       {
         Flat.Add(component);
 
-        foreach (CUIComponent child in component.Children)
+        foreach (CUIVisualComponent child in component.Children)
         {
           FlattenRec(child);
         }

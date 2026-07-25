@@ -16,7 +16,7 @@ namespace CrabUI
 
     public Type TargetType { get; }
 
-    public void Apply(CUIComponent component);
+    public void Apply(CUIVisualComponent component);
   }
 
 }

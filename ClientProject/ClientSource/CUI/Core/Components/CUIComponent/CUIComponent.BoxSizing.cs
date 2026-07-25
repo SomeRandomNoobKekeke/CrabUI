@@ -52,11 +52,7 @@ namespace CrabUI
       OutToChildDiff = Margin + Border + Padding;
     }
 
-    public CUISizes OutToChildDiff { get; private set; }
-
-
-
-    private CUIRect _OuterRect; public CUIRect OuterRect
+    private CUIRect _OuterRect; public override CUIRect OuterRect
     {
       get => _OuterRect;
       set
@@ -70,7 +66,7 @@ namespace CrabUI
       }
     }
 
-    private CUIRect _Rect; public override CUIRect Rect
+    private CUIRect _Rect; public CUIRect Rect
     {
       get => _Rect;
       set
@@ -98,7 +94,7 @@ namespace CrabUI
       }
     }
 
-    private CUIRect _ChildrenRect; public CUIRect ChildrenRect
+    private CUIRect _ChildrenRect; public override CUIRect ChildrenRect
     {
       get => _ChildrenRect;
       set

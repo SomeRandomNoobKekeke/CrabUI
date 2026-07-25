@@ -21,9 +21,6 @@ namespace CrabUI
       public Vector2 ChildrenOffset { get; }
       public bool CullChildren { get; }
 
-
-      public CUIRect Rect { get; set; }
-      public CUIRect OuterRect { get; set; }
       public CUIRect ChildrenRect { get; }
 
       public CUIBool2 FitContent { get; }
@@ -35,9 +32,7 @@ namespace CrabUI
     }
     public interface ChildBase
     {
-      public CUIRect Rect { get; set; }
       public CUIRect OuterRect { get; set; }
-      public CUIRect ChildrenRect { get; }
 
       public bool CulledOut { get; set; }
 
@@ -92,7 +87,7 @@ namespace CrabUI
       {
         foreach (Child child in Parent.Children)
         {
-          child.CulledOut = !child.Rect.Intersect(Parent.Rect);
+          child.CulledOut = !child.OuterRect.Intersect(Parent.ChildrenRect);
         }
 
         Parent.NotifyVisualsRestructured();

@@ -12,6 +12,9 @@ namespace CrabUI
 {
   public partial class CUIVisualComponent
   {
+
+    protected virtual void InitStyle() { }
+
     //TODO mb this should be deep by default
     public CUIPalette Palette
     {
@@ -25,7 +28,7 @@ namespace CrabUI
       set
       {
         Styles.Palette = value;
-        foreach (CUIComponent child in Children)
+        foreach (CUIVisualComponent child in Children)
         {
           child.DeepPalette = value;
         }
@@ -33,9 +36,9 @@ namespace CrabUI
     }
 
 
-    public virtual Action<CUIComponent> Style
+    public Action<CUIVisualComponent> Style
     {
-      set => PersonalStyle = new CUIActionStyle<CUIComponent>("personal", value);
+      set => PersonalStyle = new CUIActionStyle<CUIVisualComponent>("personal", value);
     }
 
     private ICUIStyle _PersonalStyle; public ICUIStyle PersonalStyle

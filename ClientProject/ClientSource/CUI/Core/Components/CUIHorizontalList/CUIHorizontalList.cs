@@ -40,12 +40,13 @@ namespace CrabUI
 
     protected CUIHorizontalListLayout ListLayout;
 
-    private void ScrollHandle(CUIComponent c, CUIMouseScrollEvent e)
+    private void ScrollHandle(CUIVisualComponent c, CUIMouseScrollEvent e)
     {
       Scroll += e.Scroll;
     }
 
-    protected override void SetupLayout()
+    [InitMethod]
+    protected override void InitLayout()
     {
       ListLayout = new CUIHorizontalListLayout();
       Layout = ListLayout;

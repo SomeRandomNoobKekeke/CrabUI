@@ -12,7 +12,7 @@ namespace CrabUI
   public class CUIAssemblyInfo
   {
     public Assembly Assembly { get; set; }
-    public Dictionary<Type, CUIComponentInfo> ComponentInfos { get; } = new();
+    public Dictionary<Type, CUIVisualComponentInfo> ComponentInfos { get; } = new();
     public Dictionary<Type, CUISerializableInfo> SerializableInfos { get; } = new();
   }
 }

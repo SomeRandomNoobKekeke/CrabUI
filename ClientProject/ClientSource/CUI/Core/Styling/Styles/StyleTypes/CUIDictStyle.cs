@@ -7,7 +7,7 @@ namespace CrabUI
 {
   public class CUIDictStyle : Dictionary<string, object>, ICUIStyle
   {
-    public static CUIDictStyle FromComponent(string id, CUIComponent component)
+    public static CUIDictStyle FromComponent(string id, CUIVisualComponent component)
     {
       CUIDictStyle style = new CUIDictStyle(id, component.GetType());
       foreach (string key in component.As_Dictionary.Keys)
@@ -22,7 +22,7 @@ namespace CrabUI
     public int Priority { get; set; } = ICUIStyle.DefaultPriority;
     public CUIStyleCategory Category { get; set; }
 
-    public void Apply(CUIComponent component)
+    public void Apply(CUIVisualComponent component)
     {
       foreach (var (key, value) in this)
       {

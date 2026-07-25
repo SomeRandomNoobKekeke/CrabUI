@@ -62,7 +62,7 @@ namespace CrabUI
     public void AddSilent(ICUIStyle style) => styles.Add(style);
     public void RemoveSilent(ICUIStyle style) => styles.Remove(style);
 
-    public void Apply(CUIComponent component)
+    public void Apply(CUIVisualComponent component)
     {
       foreach (ICUIStyle style in styles)
       {

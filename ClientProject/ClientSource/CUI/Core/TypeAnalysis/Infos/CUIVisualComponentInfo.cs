@@ -10,14 +10,14 @@ using CUILibs;
 namespace CrabUI
 {
   /// <summary>
-  /// This is additional info about CUIComponent type
+  /// This is additional info about CUIVisualComponent type
   /// </summary>
-  public class CUIComponentInfo
+  public class CUIVisualComponentInfo
   {
     public Type ComponentType { get; set; }
     public Dictionary<string, PropertyPath> SerializableProps { get; set; } = new();
     public ICUIStyle? DefaultStyle { get; set; }
-    public CUIComponent DefaultValue { get; set; }
+    public CUIVisualComponent DefaultValue { get; set; }
 
     public override string ToString()
       => $"{ComponentType.Name}:{{\n{Logger.Wrap.IEnumerable(SerializableProps.Keys, true)}\n}}";

@@ -12,7 +12,7 @@ namespace CrabUI
   {
     public override IEnumerable<VisualUnit> VisualSplit()
     {
-      foreach (CUIComponent child in Children)
+      foreach (CUIVisualComponent child in Children)
       {
         yield return child.VisualWrapper;
       }

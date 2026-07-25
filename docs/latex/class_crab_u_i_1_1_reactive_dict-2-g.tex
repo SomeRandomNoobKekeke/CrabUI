@@ -1,0 +1,233 @@
+\doxysection{Crab\+UI.\+Reactive\+Dict\texorpdfstring{$<$}{<} TKey, TValue \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_crab_u_i_1_1_reactive_dict-2-g}{}\label{class_crab_u_i_1_1_reactive_dict-2-g}\index{CrabUI.ReactiveDict$<$ TKey, TValue $>$@{CrabUI.ReactiveDict$<$ TKey, TValue $>$}}
+Inheritance diagram for Crab\+UI.\+Reactive\+Dict\texorpdfstring{$<$}{<} TKey, TValue \texorpdfstring{$>$}{>}:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_crab_u_i_1_1_reactive_dict-2-g}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_reactive_dict-2-g_a96ef9cb33bfd54a8154555bfd3773a81}{Swap}} (Reactive\+Dict$<$ TKey, TValue $>$ other)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_reactive_dict-2-g_a9b9f9a0420932d1ba33cfee4b35de4af}{Add}} (TKey key, TValue value)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_reactive_dict-2-g_a52e0c7038898b658d56ae1327ade0798}{Clear}} ()
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_reactive_dict-2-g_a976425695b5b6c9b477719195fc5f44b}{Contains\+Key}} (TKey key)
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_reactive_dict-2-g_a802ce5c34d0347b793e4af3c23e56271}{Remove}} (TKey key)
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_reactive_dict-2-g_adfaca0cc2c28ad08e31384a811433662}{Try\+Get\+Value}} (TKey key, out TValue value)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+TValue \doxymbox{\hyperlink{class_crab_u_i_1_1_reactive_dict-2-g_a3f35a40b7950204b3854b940fec7e66e}{this\+[\+TKey key]\+}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+ICollection$<$ TKey $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_reactive_dict-2-g_a26718a7882f6d4e4698902e6e59d20b5}{Keys}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+ICollection$<$ TValue $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_reactive_dict-2-g_a9d523f37903e02578a8184658aaf1334}{Values}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\item 
+int \doxymbox{\hyperlink{class_crab_u_i_1_1_reactive_dict-2-g_a86d73608874dea23f4dc162139f1b9f5}{Count}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+Action \doxymbox{\hyperlink{class_crab_u_i_1_1_reactive_dict-2-g_a0959a50a07ede990aead9d2bf1789748}{Changed}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \doxymbox{\hyperlink{_reactive_dict_8cs_source_l00015}{15}} of file \doxymbox{\hyperlink{_reactive_dict_8cs_source}{Reactive\+Dict.\+cs}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_crab_u_i_1_1_reactive_dict-2-g_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_reactive_dict-2-g_a9b9f9a0420932d1ba33cfee4b35de4af}\index{CrabUI.ReactiveDict$<$ TKey, TValue $>$@{CrabUI.ReactiveDict$<$ TKey, TValue $>$}!Add@{Add}}
+\index{Add@{Add}!CrabUI.ReactiveDict$<$ TKey, TValue $>$@{CrabUI.ReactiveDict$<$ TKey, TValue $>$}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_reactive_dict-2-g_a9b9f9a0420932d1ba33cfee4b35de4af} 
+void Crab\+UI.\+Reactive\+Dict$<$ TKey, TValue $>$.Add (\begin{DoxyParamCaption}\item[{TKey}]{key}{, }\item[{TValue}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_reactive_dict_8cs_source_l00046}{46}} of file \doxymbox{\hyperlink{_reactive_dict_8cs_source}{Reactive\+Dict.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ =>\ \textcolor{keyword}{this}[key]\ =\ value;}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_reactive_dict-2-g_a52e0c7038898b658d56ae1327ade0798}\index{CrabUI.ReactiveDict$<$ TKey, TValue $>$@{CrabUI.ReactiveDict$<$ TKey, TValue $>$}!Clear@{Clear}}
+\index{Clear@{Clear}!CrabUI.ReactiveDict$<$ TKey, TValue $>$@{CrabUI.ReactiveDict$<$ TKey, TValue $>$}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_reactive_dict-2-g_a52e0c7038898b658d56ae1327ade0798} 
+void Crab\+UI.\+Reactive\+Dict$<$ TKey, TValue $>$.Clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_reactive_dict_8cs_source_l00047}{47}} of file \doxymbox{\hyperlink{_reactive_dict_8cs_source}{Reactive\+Dict.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047\ =>\ \_Dict.Clear();}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_reactive_dict-2-g_a976425695b5b6c9b477719195fc5f44b}\index{CrabUI.ReactiveDict$<$ TKey, TValue $>$@{CrabUI.ReactiveDict$<$ TKey, TValue $>$}!ContainsKey@{ContainsKey}}
+\index{ContainsKey@{ContainsKey}!CrabUI.ReactiveDict$<$ TKey, TValue $>$@{CrabUI.ReactiveDict$<$ TKey, TValue $>$}}
+\doxysubsubsection{\texorpdfstring{ContainsKey()}{ContainsKey()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_reactive_dict-2-g_a976425695b5b6c9b477719195fc5f44b} 
+bool Crab\+UI.\+Reactive\+Dict$<$ TKey, TValue $>$.Contains\+Key (\begin{DoxyParamCaption}\item[{TKey}]{key}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_reactive_dict_8cs_source_l00048}{48}} of file \doxymbox{\hyperlink{_reactive_dict_8cs_source}{Reactive\+Dict.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048\ =>\ \_Dict.ContainsKey(key);}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_reactive_dict-2-g_a802ce5c34d0347b793e4af3c23e56271}\index{CrabUI.ReactiveDict$<$ TKey, TValue $>$@{CrabUI.ReactiveDict$<$ TKey, TValue $>$}!Remove@{Remove}}
+\index{Remove@{Remove}!CrabUI.ReactiveDict$<$ TKey, TValue $>$@{CrabUI.ReactiveDict$<$ TKey, TValue $>$}}
+\doxysubsubsection{\texorpdfstring{Remove()}{Remove()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_reactive_dict-2-g_a802ce5c34d0347b793e4af3c23e56271} 
+bool Crab\+UI.\+Reactive\+Dict$<$ TKey, TValue $>$.Remove (\begin{DoxyParamCaption}\item[{TKey}]{key}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_reactive_dict_8cs_source_l00049}{49}} of file \doxymbox{\hyperlink{_reactive_dict_8cs_source}{Reactive\+Dict.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_Dict.Remove(key))}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ Changed?.Invoke();}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_reactive_dict-2-g_a96ef9cb33bfd54a8154555bfd3773a81}\index{CrabUI.ReactiveDict$<$ TKey, TValue $>$@{CrabUI.ReactiveDict$<$ TKey, TValue $>$}!Swap@{Swap}}
+\index{Swap@{Swap}!CrabUI.ReactiveDict$<$ TKey, TValue $>$@{CrabUI.ReactiveDict$<$ TKey, TValue $>$}}
+\doxysubsubsection{\texorpdfstring{Swap()}{Swap()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_reactive_dict-2-g_a96ef9cb33bfd54a8154555bfd3773a81} 
+void Crab\+UI.\+Reactive\+Dict$<$ TKey, TValue $>$.Swap (\begin{DoxyParamCaption}\item[{Reactive\+Dict$<$ TKey, TValue $>$}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_reactive_dict_8cs_source_l00031}{31}} of file \doxymbox{\hyperlink{_reactive_dict_8cs_source}{Reactive\+Dict.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \_Dict\ =\ \textcolor{keyword}{new}\ Dictionary<TKey,\ TValue>();}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ (key,\ value)\ in\ other)}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \_Dict[key]\ =\ value;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ Changed?.Invoke();}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_reactive_dict-2-g_adfaca0cc2c28ad08e31384a811433662}\index{CrabUI.ReactiveDict$<$ TKey, TValue $>$@{CrabUI.ReactiveDict$<$ TKey, TValue $>$}!TryGetValue@{TryGetValue}}
+\index{TryGetValue@{TryGetValue}!CrabUI.ReactiveDict$<$ TKey, TValue $>$@{CrabUI.ReactiveDict$<$ TKey, TValue $>$}}
+\doxysubsubsection{\texorpdfstring{TryGetValue()}{TryGetValue()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_reactive_dict-2-g_adfaca0cc2c28ad08e31384a811433662} 
+bool Crab\+UI.\+Reactive\+Dict$<$ TKey, TValue $>$.Try\+Get\+Value (\begin{DoxyParamCaption}\item[{TKey}]{key}{, }\item[{out TValue}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \doxymbox{\hyperlink{_reactive_dict_8cs_source_l00060}{60}} of file \doxymbox{\hyperlink{_reactive_dict_8cs_source}{Reactive\+Dict.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060\ =>\ \_Dict.TryGetValue(key,\ out\ value!);}
+
+\end{DoxyCode}
+
+
+\label{doc-property-members}
+\Hypertarget{class_crab_u_i_1_1_reactive_dict-2-g_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_crab_u_i_1_1_reactive_dict-2-g_a86d73608874dea23f4dc162139f1b9f5}\index{CrabUI.ReactiveDict$<$ TKey, TValue $>$@{CrabUI.ReactiveDict$<$ TKey, TValue $>$}!Count@{Count}}
+\index{Count@{Count}!CrabUI.ReactiveDict$<$ TKey, TValue $>$@{CrabUI.ReactiveDict$<$ TKey, TValue $>$}}
+\doxysubsubsection{\texorpdfstring{Count}{Count}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_reactive_dict-2-g_a86d73608874dea23f4dc162139f1b9f5} 
+int Crab\+UI.\+Reactive\+Dict$<$ TKey, TValue $>$.Count\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_reactive_dict_8cs_source_l00043}{43}} of file \doxymbox{\hyperlink{_reactive_dict_8cs_source}{Reactive\+Dict.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_reactive_dict-2-g_a26718a7882f6d4e4698902e6e59d20b5}\index{CrabUI.ReactiveDict$<$ TKey, TValue $>$@{CrabUI.ReactiveDict$<$ TKey, TValue $>$}!Keys@{Keys}}
+\index{Keys@{Keys}!CrabUI.ReactiveDict$<$ TKey, TValue $>$@{CrabUI.ReactiveDict$<$ TKey, TValue $>$}}
+\doxysubsubsection{\texorpdfstring{Keys}{Keys}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_reactive_dict-2-g_a26718a7882f6d4e4698902e6e59d20b5} 
+ICollection$<$TKey$>$ Crab\+UI.\+Reactive\+Dict$<$ TKey, TValue $>$.Keys\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_reactive_dict_8cs_source_l00041}{41}} of file \doxymbox{\hyperlink{_reactive_dict_8cs_source}{Reactive\+Dict.\+cs}}.
+
+\Hypertarget{class_crab_u_i_1_1_reactive_dict-2-g_a3f35a40b7950204b3854b940fec7e66e}\index{CrabUI.ReactiveDict$<$ TKey, TValue $>$@{CrabUI.ReactiveDict$<$ TKey, TValue $>$}!this\+[TKey key]\+@{this[TKey key]}}
+\index{this\+[TKey key]\+@{this[TKey key]}!CrabUI.ReactiveDict$<$ TKey, TValue $>$@{CrabUI.ReactiveDict$<$ TKey, TValue $>$}}
+\doxysubsubsection{\texorpdfstring{this[TKey key]}{this[TKey key]}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_reactive_dict-2-g_a3f35a40b7950204b3854b940fec7e66e} 
+TValue Crab\+UI.\+Reactive\+Dict$<$ TKey, TValue $>$.this\+[TKey key]\+\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_reactive_dict_8cs_source_l00021}{21}} of file \doxymbox{\hyperlink{_reactive_dict_8cs_source}{Reactive\+Dict.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Dict[key];}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \_Dict[key]\ =\ value;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ Changed?.Invoke();}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_reactive_dict-2-g_a9d523f37903e02578a8184658aaf1334}\index{CrabUI.ReactiveDict$<$ TKey, TValue $>$@{CrabUI.ReactiveDict$<$ TKey, TValue $>$}!Values@{Values}}
+\index{Values@{Values}!CrabUI.ReactiveDict$<$ TKey, TValue $>$@{CrabUI.ReactiveDict$<$ TKey, TValue $>$}}
+\doxysubsubsection{\texorpdfstring{Values}{Values}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_reactive_dict-2-g_a9d523f37903e02578a8184658aaf1334} 
+ICollection$<$TValue$>$ Crab\+UI.\+Reactive\+Dict$<$ TKey, TValue $>$.Values\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_reactive_dict_8cs_source_l00042}{42}} of file \doxymbox{\hyperlink{_reactive_dict_8cs_source}{Reactive\+Dict.\+cs}}.
+
+
+
+\label{doc-event-members}
+\Hypertarget{class_crab_u_i_1_1_reactive_dict-2-g_doc-event-members}
+\doxysubsection{Event Documentation}
+\Hypertarget{class_crab_u_i_1_1_reactive_dict-2-g_a0959a50a07ede990aead9d2bf1789748}\index{CrabUI.ReactiveDict$<$ TKey, TValue $>$@{CrabUI.ReactiveDict$<$ TKey, TValue $>$}!Changed@{Changed}}
+\index{Changed@{Changed}!CrabUI.ReactiveDict$<$ TKey, TValue $>$@{CrabUI.ReactiveDict$<$ TKey, TValue $>$}}
+\doxysubsubsection{\texorpdfstring{Changed}{Changed}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_reactive_dict-2-g_a0959a50a07ede990aead9d2bf1789748} 
+Action Crab\+UI.\+Reactive\+Dict$<$ TKey, TValue $>$.Changed}
+
+
+
+Definition at line \doxymbox{\hyperlink{_reactive_dict_8cs_source_l00019}{19}} of file \doxymbox{\hyperlink{_reactive_dict_8cs_source}{Reactive\+Dict.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Simple Types/\+Reactive\+Dict.\+cs\end{DoxyCompactItemize}

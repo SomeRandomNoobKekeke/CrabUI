@@ -12,6 +12,7 @@ var dir_e6295f1fbb95761db0ace6e70367adb6 =
     [ "FitContent.cs", "_fit_content_8cs_source.html", null ],
     [ "LayoutProps.cs", "_in_memory_2_c_u_i_test_2_snapshots_2_tests_2_random_2_layout_props_8cs_source.html", null ],
     [ "ListScroll.cs", "_list_scroll_8cs_source.html", null ],
+    [ "MultiPalette.cs", "_multi_palette_8cs_source.html", null ],
     [ "NestedScissorRects.cs", "_nested_scissor_rects_8cs_source.html", null ],
     [ "SimpleForm.cs", "_simple_form_8cs_source.html", null ],
     [ "SimpleList.cs", "_simple_list_8cs_source.html", null ],

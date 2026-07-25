@@ -1,0 +1,82 @@
+\doxysection{Reactive\+Dict.\+cs}
+\hypertarget{_reactive_dict_8cs_source}{}\label{_reactive_dict_8cs_source}\index{ClientProject/ClientSource/CUI/Core/Simple Types/ReactiveDict.cs@{ClientProject/ClientSource/CUI/Core/Simple Types/ReactiveDict.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Reflection;}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }Barotrauma;}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework;}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework.Input;}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }Microsoft.Xna.Framework.Graphics;}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00010}00010\ \textcolor{keyword}{using\ }System.Diagnostics.CodeAnalysis;}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00011}00011\ \textcolor{keyword}{using\ }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00013}00013\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}}}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00014}00014\ \{}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00015}\doxymbox{\hyperlink{class_crab_u_i_1_1_reactive_dict-2-g}{00015}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }ReactiveDict<TKey,\ TValue>\ :\ IDictionary<TKey,\ TValue>}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00016}00016\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{private}\ Dictionary<TKey,\ TValue>\ \_Dict\ =\ \textcolor{keyword}{new}();}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action\ Changed;}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{public}\ TValue\ \textcolor{keyword}{this}[TKey\ key]}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00022}00022\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00023}00023\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Dict[key];}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00024}00024\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00025}00025\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \_Dict[key]\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ Changed?.Invoke();}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00028}00028\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Swap(ReactiveDict<TKey,\ TValue>\ other)}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00032}00032\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00033}00033\ \ \ \ \ \ \ \_Dict\ =\ \textcolor{keyword}{new}\ Dictionary<TKey,\ TValue>();}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00034}00034\ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ (key,\ value)\ in\ other)}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00035}00035\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \_Dict[key]\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00037}00037\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00038}00038\ \ \ \ \ \ \ Changed?.Invoke();}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00041}00041\ \ \ \ \ \textcolor{keyword}{public}\ ICollection<TKey>\ Keys\ =>\ \_Dict.Keys;}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{public}\ ICollection<TValue>\ Values\ =>\ \_Dict.Values;}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ Count\ =>\ \_Dict.Count;}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Add(TKey\ key,\ TValue\ value)\ =>\ \textcolor{keyword}{this}[key]\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00047}00047\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Clear()\ =>\ \_Dict.Clear();}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ ContainsKey(TKey\ key)\ =>\ \_Dict.ContainsKey(key);}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00049}00049\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ Remove(TKey\ key)}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00050}00050\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00051}00051\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_Dict.Remove(key))}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00052}00052\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ Changed?.Invoke();}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00055}00055\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00057}00057\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00060}00060\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ TryGetValue(TKey\ key,\ out\ TValue\ value)\ =>\ \_Dict.TryGetValue(key,\ out\ value!);}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00062}00062\ \ \ \ \ \textcolor{keywordtype}{bool}\ ICollection<KeyValuePair<TKey,\ TValue>>.IsReadOnly\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00063}00063\ \ \ \ \ \textcolor{keywordtype}{void}\ ICollection<KeyValuePair<TKey,\ TValue>>.Add(KeyValuePair<TKey,\ TValue>\ item)\ =>\ \textcolor{keyword}{this}[item.Key]\ =\ item.Value;}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00064}00064\ \ \ \ \ \textcolor{keywordtype}{bool}\ ICollection<KeyValuePair<TKey,\ TValue>>.Contains(KeyValuePair<TKey,\ TValue>\ item)}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00065}00065\ \ \ \ \ \ \ =>\ ((ICollection<KeyValuePair<TKey,\ TValue>>)\_Dict).Contains(item);}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00066}00066\ \ \ \ \ \textcolor{keywordtype}{void}\ ICollection<KeyValuePair<TKey,\ TValue>>.CopyTo(KeyValuePair<TKey,\ TValue>[]\ array,\ \textcolor{keywordtype}{int}\ arrayIndex)}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00067}00067\ \ \ \ \ \ \ =>\ ((ICollection<KeyValuePair<TKey,\ TValue>>)\_Dict).CopyTo(array,\ arrayIndex);}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00068}00068\ \ \ \ \ \textcolor{keywordtype}{bool}\ ICollection<KeyValuePair<TKey,\ TValue>>.Remove(KeyValuePair<TKey,\ TValue>\ item)}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00069}00069\ \ \ \ \ \ \ =>\ ((ICollection<KeyValuePair<TKey,\ TValue>>)\_Dict).Remove(item);}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00071}00071\ \ \ \ \ IEnumerator<KeyValuePair<TKey,\ TValue>>\ IEnumerable<KeyValuePair<TKey,\ TValue>>.GetEnumerator()}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00072}00072\ \ \ \ \ \ \ =>\ \_Dict.GetEnumerator();}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00073}00073\ \ \ \ \ IEnumerator\ IEnumerable.GetEnumerator()}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00074}00074\ \ \ \ \ \ \ =>\ \_Dict.GetEnumerator();}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00075}00075\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_reactive_dict_8cs_source_l00076}00076\ \}}
+
+\end{DoxyCode}

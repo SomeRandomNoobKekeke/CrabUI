@@ -21,7 +21,7 @@ namespace CrabUI
       public Frame() : base()
       {
         Anchor = CUIAnchor.Center;
-        VisualChildrenOrder = CUIDirection.Reverse;
+        // VisualChildrenOrder = CUIDirection.Reverse;
         // Absolute = new(w: 400, h: 600);
 
         this["layout"] = new CUIVerticalList()
@@ -32,9 +32,10 @@ namespace CrabUI
         this["layout"]["handle"] = new CUIHorizontalList()
         {
           Absolute = new CUINullRect(h: ResizeHandle.DefaultSize.Y),
+          Background = { Sprite = CUIDefaultSprite.DimmedVertical },
           Style = (c) =>
           {
-            c.Background.Color = c.Palette.Colors["border"];
+            c.Background.Color = c.Palette["main"];
           },
         };
         this["layout"]["handle"]["caption"] = Caption = new CUITextBlock()
@@ -43,8 +44,11 @@ namespace CrabUI
         };
         this["layout"]["handle"]["closebutton"] = new CUICloseButton()
         {
+          Background = {
+            Sprite = CUIDefaultSprite.DimmedVertical,
+            Color = Palette["main"], //HACK
+          },
           CrossRelative = new CUINullRect(w: 1),
-          Background = { Color = Palette.Colors["border"] },
         };
       }
 

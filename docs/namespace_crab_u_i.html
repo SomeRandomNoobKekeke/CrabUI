@@ -25,6 +25,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="dev.png"/></td>
   <td id="projectalign">
    <div id="projectname">CUI
    </div>
@@ -214,12 +215,11 @@ Classes</h2></td></tr>
 <tr class="memitem:CUISizes" id="r_CUISizes"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_crab_u_i_1_1_c_u_i_sizes.html">CUISizes</a></td></tr>
 <tr class="memitem:RadioGroup" id="r_RadioGroup"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_crab_u_i_1_1_radio_group.html">RadioGroup</a></td></tr>
 <tr class="memitem:RadioMutex" id="r_RadioMutex"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_crab_u_i_1_1_radio_mutex.html">RadioMutex</a></td></tr>
-<tr class="memitem:SafeDict_3C_20TKey_2C_20TValue_20_3E" id="r_SafeDict_3C_20TKey_2C_20TValue_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_crab_u_i_1_1_safe_dict-2-g.html">SafeDict&lt; TKey, TValue &gt;</a></td></tr>
+<tr class="memitem:ReactiveDict_3C_20TKey_2C_20TValue_20_3E" id="r_ReactiveDict_3C_20TKey_2C_20TValue_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_crab_u_i_1_1_reactive_dict-2-g.html">ReactiveDict&lt; TKey, TValue &gt;</a></td></tr>
 <tr class="memitem:Slot_3C_20T_20_3E" id="r_Slot_3C_20T_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_crab_u_i_1_1_slot-1-g.html">Slot&lt; T &gt;</a></td></tr>
 <tr class="memitem:SlotPart_3C_20THost_2C_20T_20_3E" id="r_SlotPart_3C_20THost_2C_20T_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_crab_u_i_1_1_slot_part-2-g.html">SlotPart&lt; THost, T &gt;</a></td></tr>
 <tr class="memitem:CUIPalette" id="r_CUIPalette"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_crab_u_i_1_1_c_u_i_palette.html">CUIPalette</a></td></tr>
-<tr class="memitem:CUIPaletteManager" id="r_CUIPaletteManager"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_crab_u_i_1_1_c_u_i_palette_manager.html">CUIPaletteManager</a></td></tr>
-<tr class="memitem:CUIPaletteSlot" id="r_CUIPaletteSlot"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_crab_u_i_1_1_c_u_i_palette_slot.html">CUIPaletteSlot</a></td></tr>
+<tr class="memitem:CUIPalettes" id="r_CUIPalettes"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_crab_u_i_1_1_c_u_i_palettes.html">CUIPalettes</a></td></tr>
 <tr class="memitem:CUIContextStyle_3C_20T_20_3E" id="r_CUIContextStyle_3C_20T_20_3E"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_crab_u_i_1_1_c_u_i_context_style-1-g.html">CUIContextStyle&lt; T &gt;</a></td></tr>
 <tr class="memitem:CUIStyleManager" id="r_CUIStyleManager"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_crab_u_i_1_1_c_u_i_style_manager.html">CUIStyleManager</a></td></tr>
 <tr class="memitem:CUIStylePipeline" id="r_CUIStylePipeline"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_crab_u_i_1_1_c_u_i_style_pipeline.html">CUIStylePipeline</a></td></tr>
@@ -332,10 +332,6 @@ Enumerations</h2></td></tr>
 <tr class="memitem:a4f6b0365f6d45a8884b25d6a34056b41" id="r_a4f6b0365f6d45a8884b25d6a34056b41"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><b>CUIDirection</b> { <b>Straight</b>
 , <b>Reverse</b>
  }</td></tr>
-<tr class="memitem:aeb34e238fa98b2c5ae796cd470655d50" id="r_aeb34e238fa98b2c5ae796cd470655d50"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><b>CUIPaletteRank</b> { <b>Primary</b>
-, <b>Secondary</b>
-, <b>Personal</b>
- }</td></tr>
 <tr class="memitem:a25cebf537ac825ce93aed9c9bf1e9e38" id="r_a25cebf537ac825ce93aed9c9bf1e9e38"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><b>CUIStyleCategory</b> { <b>User</b>
 , <b>Default</b>
  }</td></tr>
@@ -443,25 +439,6 @@ Variables</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   12</span>  {</div>
 <div class="line"><span class="lineno">   13</span>    LeftButton, RightButton</div>
 <div class="line"><span class="lineno">   14</span>  }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="aeb34e238fa98b2c5ae796cd470655d50" name="aeb34e238fa98b2c5ae796cd470655d50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb34e238fa98b2c5ae796cd470655d50">&#9670;&#160;</a></span>CUIPaletteRank</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum CrabUI.CUIPaletteRank</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_c_u_i_palette_rank_8cs_source.html#l00008">8</a> of file <a class="el" href="_c_u_i_palette_rank_8cs_source.html">CUIPaletteRank.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    9</span>  {</div>
-<div class="line"><span class="lineno">   10</span>    Primary, Secondary, Personal</div>
-<div class="line"><span class="lineno">   11</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>

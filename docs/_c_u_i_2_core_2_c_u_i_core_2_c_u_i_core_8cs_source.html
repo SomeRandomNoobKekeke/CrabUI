@@ -25,6 +25,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="dev.png"/></td>
   <td id="projectalign">
    <div id="projectname">CUI
    </div>
@@ -108,7 +109,7 @@ $(function(){initNavTree('_c_u_i_2_core_2_c_u_i_core_2_c_u_i_core_8cs_source.htm
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_crab_u_i_1_1_c_u_i_core_1_1_part.html">   14</a></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_core_1_1_part.html">Part</a> : <a class="code hl_interface" href="interface_c_u_i_code_generator_1_1_i_part.html">IPart</a> { <span class="keyword">public</span> CUICore Self { <span class="keyword">get</span>; <span class="keyword">set</span>; } }</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">public</span> CUIStyleManager CUIStyleManager { <span class="keyword">get</span>; <span class="keyword">private</span> <span class="keyword">set</span>; }</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">public</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_palette_manager.html">CUIPaletteManager</a> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_palette_manager.html">CUIPaletteManager</a> { <span class="keyword">get</span>; <span class="keyword">private</span> <span class="keyword">set</span>; }</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">public</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_palettes.html">CUIPalettes</a> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_palettes.html">CUIPalettes</a> { <span class="keyword">get</span>; <span class="keyword">private</span> <span class="keyword">set</span>; }</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">private</span> Rectangle _GameScreenRect; <span class="keyword">public</span> Rectangle GameScreenRect</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    {</div>
@@ -152,7 +153,7 @@ $(function(){initNavTree('_c_u_i_2_core_2_c_u_i_core_2_c_u_i_core_8cs_source.htm
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>      <span class="keywordflow">try</span></div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      {</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        CUIStyleManager = <span class="keyword">new</span>(Reflection.TypeTree);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        CUIPaletteManager = <span class="keyword">new</span>();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        CUIPalettes = <span class="keyword">new</span>();</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        EventConstructor = <span class="keyword">new</span>();</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        _AnimationPlayer = <span class="keyword">new</span>();</div>
@@ -183,7 +184,7 @@ $(function(){initNavTree('_c_u_i_2_core_2_c_u_i_core_2_c_u_i_core_8cs_source.htm
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>}</div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_core_1_1_part_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_core_1_1_part.html">CrabUI.CUICore.Part</a></div><div class="ttdef"><b>Definition</b> <a href="#l00014">CUICore.cs:14</a></div></div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_core_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_core.html">CrabUI.CUICore</a></div><div class="ttdef"><b>Definition</b> <a href="_____generated_2_c_u_i_core_8cs_source.html#l00009">CUICore.cs:10</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_palette_manager_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_palette_manager.html">CrabUI.CUIPaletteManager</a></div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_palette_manager_8cs_source.html#l00008">CUIPaletteManager.cs:9</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_palettes_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_palettes.html">CrabUI.CUIPalettes</a></div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_palette_manager_8cs_source.html#l00009">CUIPaletteManager.cs:10</a></div></div>
 <div class="ttc" id="ainterface_c_u_i_code_generator_1_1_i_part_html"><div class="ttname"><a href="interface_c_u_i_code_generator_1_1_i_part.html">CUICodeGenerator.IPart</a></div><div class="ttdef"><b>Definition</b> <a href="_interfaces_8cs_source.html#l00040">Interfaces.cs:40</a></div></div>
 <div class="ttc" id="anamespace_c_u_i_code_generator_html"><div class="ttname"><a href="namespace_c_u_i_code_generator.html">CUICodeGenerator</a></div><div class="ttdef"><b>Definition</b> <a href="_attributes_8cs_source.html#l00008">Attributes.cs:9</a></div></div>
 <div class="ttc" id="anamespace_c_u_i_libs_html"><div class="ttname"><a href="namespace_c_u_i_libs.html">CUILibs</a></div><div class="ttdef"><b>Definition</b> <a href="_already_done_8cs_source.html#l00012">AlreadyDone.cs:13</a></div></div>

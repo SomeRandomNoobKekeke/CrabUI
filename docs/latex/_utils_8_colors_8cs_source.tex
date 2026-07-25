@@ -23,7 +23,10 @@
 \DoxyCodeLine{\Hypertarget{_utils_8_colors_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{int})(color.B\ *\ l),}
 \DoxyCodeLine{\Hypertarget{_utils_8_colors_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{int})color.A}
 \DoxyCodeLine{\Hypertarget{_utils_8_colors_8cs_source_l00021}00021\ \ \ \ \ \ \ );}
-\DoxyCodeLine{\Hypertarget{_utils_8_colors_8cs_source_l00022}00022\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_utils_8_colors_8cs_source_l00023}00023\ \}}
+\DoxyCodeLine{\Hypertarget{_utils_8_colors_8cs_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_utils_8_colors_8cs_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}\ Brightness(\textcolor{keyword}{this}\ Color\ cl)}
+\DoxyCodeLine{\Hypertarget{_utils_8_colors_8cs_source_l00024}00024\ \ \ \ \ \ \ =>\ Math.Clamp((cl.R\ +\ cl.G\ +\ cl.B)\ /\ 255.0f,\ 0.0f,\ 1.0f);}
+\DoxyCodeLine{\Hypertarget{_utils_8_colors_8cs_source_l00025}00025\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_utils_8_colors_8cs_source_l00026}00026\ \}}
 
 \end{DoxyCode}

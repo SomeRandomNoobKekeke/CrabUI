@@ -23,41 +23,44 @@
 \DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00019}00019\ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_Value\ is\ not\ \textcolor{keyword}{null})\ TearDown?.Invoke(\_Value);}
 \DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \_Value\ =\ value;}
-\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_Value\ is\ not\ \textcolor{keyword}{null})\ WireUp?.Invoke(\_Value);}
-\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00023}00023\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00024}00024\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00025}00025\ }
-\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{public}\ Action<T>\ OnWireUp\ \{\ \textcolor{keyword}{set}\ \{\ WireUp\ +=\ value;\ \}\ \}}
-\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<T>\ WireUp;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ Changed?.Invoke(value);}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_Value\ is\ not\ \textcolor{keyword}{null})\ WireUp?.Invoke(\_Value);}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00024}00024\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00025}00025\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<T>\ Changed;}
 \DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00028}00028\ }
-\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{public}\ Action<T>\ OnTearDown\ \{\ \textcolor{keyword}{set}\ \{\ TearDown\ +=\ value;\ \}\ \}}
-\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<T>\ TearDown;}
-\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00031}00031\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00032}00032\ }
-\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00033}00033\ \ \ \textcolor{comment}{//Doesn't\ really\ work,\ part\ init\ order\ is\ random,\ if\ it's\ accessed\ from\ other\ init\ method\ there\ will\ be\ nre}}
-\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00034}\doxymbox{\hyperlink{class_crab_u_i_1_1_slot_part-2-g}{00034}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }SlotPart<THost,\ T>\ :\ \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_part}{IPart}}}
-\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00035}00035\ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00036}00036\ \ \ \ \ \textcolor{keyword}{public}\ THost\ Self\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
-\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Init()\ =>\ Value\ =\ DefaultValue;}
-\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{public}\ T\ DefaultValue\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
-\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00039}00039\ \ \ \ \ \textcolor{keyword}{private}\ T\ \_Value;\ \textcolor{keyword}{public}\ T\ Value}
-\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00040}00040\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00041}00041\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Value;}
-\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00042}00042\ \ \ \ \ \ \ \textcolor{keyword}{set}}
-\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00043}00043\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_Value\ is\ not\ \textcolor{keyword}{null})\ TearDown?.Invoke(Self,\ \_Value);}
-\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \_Value\ =\ value;}
-\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_Value\ is\ not\ \textcolor{keyword}{null})\ WireUp?.Invoke(Self,\ \_Value);}
-\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00047}00047\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00048}00048\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00049}00049\ }
-\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00050}00050\ }
-\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00051}00051\ \ \ \ \ \textcolor{keyword}{public}\ Action<THost,\ T>\ OnWireUp\ \{\ \textcolor{keyword}{set}\ \{\ WireUp\ +=\ value;\ \}\ \}}
-\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00052}00052\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<THost,\ T>\ WireUp;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{public}\ Action<T>\ OnWireUp\ \{\ \textcolor{keyword}{set}\ \{\ WireUp\ +=\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<T>\ WireUp;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{public}\ Action<T>\ OnTearDown\ \{\ \textcolor{keyword}{set}\ \{\ TearDown\ +=\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<T>\ TearDown;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00034}00034\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00036}00036\ \ \ \textcolor{comment}{//Doesn't\ really\ work,\ part\ init\ order\ is\ random,\ if\ it's\ accessed\ from\ other\ init\ method\ there\ will\ be\ nre}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00037}\doxymbox{\hyperlink{class_crab_u_i_1_1_slot_part-2-g}{00037}}\ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }SlotPart<THost,\ T>\ :\ \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_part}{IPart}}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00038}00038\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00039}00039\ \ \ \ \ \textcolor{keyword}{public}\ THost\ Self\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Init()\ =>\ Value\ =\ DefaultValue;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00041}00041\ \ \ \ \ \textcolor{keyword}{public}\ T\ DefaultValue\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{private}\ T\ \_Value;\ \textcolor{keyword}{public}\ T\ Value}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00043}00043\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00044}00044\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ \_Value;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00045}00045\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00046}00046\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_Value\ is\ not\ \textcolor{keyword}{null})\ TearDown?.Invoke(Self,\ \_Value);}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \_Value\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_Value\ is\ not\ \textcolor{keyword}{null})\ WireUp?.Invoke(Self,\ \_Value);}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00050}00050\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00051}00051\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00052}00052\ }
 \DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00053}00053\ }
-\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00054}00054\ \ \ \ \ \textcolor{keyword}{public}\ Action<THost,\ T>\ OnTearDown\ \{\ \textcolor{keyword}{set}\ \{\ TearDown\ +=\ value;\ \}\ \}}
-\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00055}00055\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<THost,\ T>\ TearDown;}
-\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00056}00056\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00057}00057\ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00054}00054\ \ \ \ \ \textcolor{keyword}{public}\ Action<THost,\ T>\ OnWireUp\ \{\ \textcolor{keyword}{set}\ \{\ WireUp\ +=\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00055}00055\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<THost,\ T>\ WireUp;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00057}00057\ \ \ \ \ \textcolor{keyword}{public}\ Action<THost,\ T>\ OnTearDown\ \{\ \textcolor{keyword}{set}\ \{\ TearDown\ +=\ value;\ \}\ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00058}00058\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<THost,\ T>\ TearDown;}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00059}00059\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_slot_8cs_source_l00060}00060\ \}}
 
 \end{DoxyCode}

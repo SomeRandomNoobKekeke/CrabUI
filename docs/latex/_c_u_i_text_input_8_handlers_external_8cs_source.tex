@@ -91,15 +91,16 @@
 \DoxyCodeLine{\Hypertarget{_c_u_i_text_input_8_handlers_external_8cs_source_l00087}00087\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ HandleFocusLost()}
 \DoxyCodeLine{\Hypertarget{_c_u_i_text_input_8_handlers_external_8cs_source_l00088}00088\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_c_u_i_text_input_8_handlers_external_8cs_source_l00089}00089\ \ \ \ \ \ \ MainComponent?.GlobalEvents.AfterUpdate.Remove(HandleUpdate);}
-\DoxyCodeLine{\Hypertarget{_c_u_i_text_input_8_handlers_external_8cs_source_l00090}00090\ \ \ \ \ \ \ UpdateVisualState();}
-\DoxyCodeLine{\Hypertarget{_c_u_i_text_input_8_handlers_external_8cs_source_l00091}00091\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_text_input_8_handlers_external_8cs_source_l00092}00092\ }
-\DoxyCodeLine{\Hypertarget{_c_u_i_text_input_8_handlers_external_8cs_source_l00093}00093\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ HandleUpdate()}
-\DoxyCodeLine{\Hypertarget{_c_u_i_text_input_8_handlers_external_8cs_source_l00094}00094\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_c_u_i_text_input_8_handlers_external_8cs_source_l00095}00095\ \ \ \ \ \ \ CaretIsHidden\ =\ (Timing.TotalTime\ -\/\ LastSomethingHappenedTime)\ \%\ CaretBlinkInterval\ >\ 0.5\ *\ CaretBlinkInterval;}
-\DoxyCodeLine{\Hypertarget{_c_u_i_text_input_8_handlers_external_8cs_source_l00096}00096\ \ \ \ \ \ \ CaretTexture.Visible\ =\ Focused\ \&\&\ SelectionEmpty\ \&\&\ !CaretIsHidden;}
-\DoxyCodeLine{\Hypertarget{_c_u_i_text_input_8_handlers_external_8cs_source_l00097}00097\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_text_input_8_handlers_external_8cs_source_l00098}00098\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_c_u_i_text_input_8_handlers_external_8cs_source_l00099}00099\ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_text_input_8_handlers_external_8cs_source_l00090}00090\ \ \ \ \ \ \ ClearSelection();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_text_input_8_handlers_external_8cs_source_l00091}00091\ \ \ \ \ \ \ UpdateVisualState();}
+\DoxyCodeLine{\Hypertarget{_c_u_i_text_input_8_handlers_external_8cs_source_l00092}00092\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_text_input_8_handlers_external_8cs_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_c_u_i_text_input_8_handlers_external_8cs_source_l00094}00094\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ HandleUpdate()}
+\DoxyCodeLine{\Hypertarget{_c_u_i_text_input_8_handlers_external_8cs_source_l00095}00095\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_c_u_i_text_input_8_handlers_external_8cs_source_l00096}00096\ \ \ \ \ \ \ CaretIsHidden\ =\ (Timing.TotalTime\ -\/\ LastSomethingHappenedTime)\ \%\ CaretBlinkInterval\ >\ 0.5\ *\ CaretBlinkInterval;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_text_input_8_handlers_external_8cs_source_l00097}00097\ \ \ \ \ \ \ CaretTexture.Visible\ =\ Focused\ \&\&\ SelectionEmpty\ \&\&\ !CaretIsHidden;}
+\DoxyCodeLine{\Hypertarget{_c_u_i_text_input_8_handlers_external_8cs_source_l00098}00098\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_text_input_8_handlers_external_8cs_source_l00099}00099\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_u_i_text_input_8_handlers_external_8cs_source_l00100}00100\ \}}
 
 \end{DoxyCode}

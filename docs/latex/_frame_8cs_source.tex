@@ -25,7 +25,7 @@
 \DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00021}00021\ \ \ \ \ \ \ \textcolor{keyword}{public}\ Frame()\ :\ base()}
 \DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00022}00022\ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ Anchor\ =\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_anchor}{CUIAnchor}}.Center;}
-\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a82bdc107c51ab5c3c7fcd6d349edb8cc}{VisualChildrenOrder}}\ =\ CUIDirection.Reverse;}
+\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ VisualChildrenOrder\ =\ CUIDirection.Reverse;}}
 \DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Absolute\ =\ new(w:\ 400,\ h:\ 600);}}
 \DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00026}00026\ }
 \DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}]\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_vertical_list}{CUIVerticalList}}()}
@@ -36,28 +36,32 @@
 \DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}handle"{}}]\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_horizontal_list}{CUIHorizontalList}}()}
 \DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ Absolute\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_null_rect}{CUINullRect}}(h:\ \doxymbox{\hyperlink{class_crab_u_i_1_1_resize_handle}{ResizeHandle}}.DefaultSize.Y),}
-\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ Style\ =\ (c)\ =>}
-\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ c.Background.Color\ =\ c.Palette.Colors[\textcolor{stringliteral}{"{}border"{}}];}
-\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \},}
-\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}handle"{}}][\textcolor{stringliteral}{"{}caption"{}}]\ =\ Caption\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_text_block}{CUITextBlock}}()}
-\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ Flex\ =\ 1,}
-\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}handle"{}}][\textcolor{stringliteral}{"{}closebutton"{}}]\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_close_button}{CUICloseButton}}()}
-\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ CrossRelative\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_null_rect}{CUINullRect}}(w:\ 1),}
-\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ Background\ =\ \{\ Color\ =\ Palette.Colors[\textcolor{stringliteral}{"{}border"{}}]\ \},}
-\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00049}00049\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00050}00050\ }
-\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00051}00051\ \ \ \ \ \ \ \textcolor{keyword}{public}\ Frame(\textcolor{keywordtype}{string}\ caption)\ :\ \textcolor{keyword}{this}()}
-\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00052}00052\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ Caption.Text\ =\ caption;}
-\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00054}00054\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00055}00055\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00056}00056\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00057}00057\ \}}
+\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ Background\ =\ \{\ Sprite\ =\ CUIDefaultSprite.DimmedVertical\ \},}
+\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ Style\ =\ (c)\ =>}
+\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ c.Background.Color\ =\ c.Palette[\textcolor{stringliteral}{"{}main"{}}];}
+\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}handle"{}}][\textcolor{stringliteral}{"{}caption"{}}]\ =\ Caption\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_text_block}{CUITextBlock}}()}
+\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ Flex\ =\ 1,}
+\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}handle"{}}][\textcolor{stringliteral}{"{}closebutton"{}}]\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_close_button}{CUICloseButton}}()}
+\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ Background\ =\ \{}
+\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ Sprite\ =\ CUIDefaultSprite.DimmedVertical,}
+\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ Color\ =\ Palette[\textcolor{stringliteral}{"{}main"{}}],\ \textcolor{comment}{//HACK}}
+\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ CrossRelative\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{struct_crab_u_i_1_1_c_u_i_null_rect}{CUINullRect}}(w:\ 1),}
+\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00053}00053\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00055}00055\ \ \ \ \ \ \ \textcolor{keyword}{public}\ Frame(\textcolor{keywordtype}{string}\ caption)\ :\ \textcolor{keyword}{this}()}
+\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00056}00056\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ Caption.Text\ =\ caption;}
+\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00058}00058\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00059}00059\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00060}00060\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_frame_8cs_source_l00061}00061\ \}}
 
 \end{DoxyCode}

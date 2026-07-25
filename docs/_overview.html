@@ -25,6 +25,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="dev.png"/></td>
   <td id="projectalign">
    <div id="projectname">CUI
    </div>
@@ -93,7 +94,7 @@ $(function(){initNavTree('_overview.html','',''); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md__docs_sources_2_sources_22_01_overview"></a></p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
 Basics</h1>
 <p>All GUI elements: frames, buttons, list, textblocks are CUIComponents</p>
 <p>They are C# objects, they all have parameterless constructor so you can just create them</p>
@@ -124,7 +125,10 @@ Basics</h1>
 <div class="line">frame.OnFocus += () =&gt; frame.Background.Color = Color.Cyan;</div>
 <div class="line">frame.OnFocusLost += () =&gt; frame.Background.Color = Color.Blue;</div>
 <div class="line">frame.KeyPressed += (e) =&gt; CUI.Logger.Log(e.Key);</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+</div><!-- fragment --><p> <br  />
+<br  />
+ </p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
 Components</h1>
 <ul>
 <li>CUIComponent - It's just a square with background and borders</li>
@@ -146,24 +150,30 @@ Components</h1>
 <li>CUITextLine - Line of text</li>
 <li>CUITextInput - Text input (half-assed)</li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
 CUIDefault.</h3>
 <ul>
 <li>CUIDefault.Frame - prebuilt frame with handle, caption and close button, add children to frame["layout"]</li>
+<li>CUIDefault.Panels - Styled and a bit dimmed panels</li>
 <li>InputField - Base class for InputField, wrappers with label and text input, intended to be used in some settings ui (half-assed)</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+<p><br  />
+<br  />
+ </p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
 Layouts</h1>
 <ul>
 <li>CUIPlainLayout - simple two-dimensional plane</li>
-<li>CUIVerticalListLayout - places children in a stack, one after another, if child width isn't specified resizes it to its own width <br  />
- children can fill empty space with Flex prop</li>
+<li>CUIVerticalListLayout - places children in a stack</li>
 <li>CUIHorizontalListLayout - Same as CUIVerticalListLayout but horizontal</li>
 <li>CUIGridLayout - places children in cells specified by GridRow and GridColumn (half-assed)</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
+<p><br  />
+<br  />
+ </p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
 Types</h1>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
 Commonly used "primitive" types:</h3>
 <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">enum</span> CUIDirection { Straight, Reverse, }</div>
 </div><!-- fragment --><div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">struct </span>CUIRect {</div>
@@ -200,11 +210,14 @@ Commonly used "primitive" types:</h3>
 <div class="line">  <span class="keyword">public</span> <span class="keywordtype">float</span>? MinY;</div>
 <div class="line">  <span class="keyword">public</span> <span class="keywordtype">float</span>? MaxY;</div>
 <div class="line">}</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
+</div><!-- fragment --><p><br  />
+<br  />
+ </p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
 Props</h1>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
 Commonly used Props of CUIComponent:</h3>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
 Layout Props:</h3>
 <p>Note that props used by some layouts might be ignored in others</p>
 <div class="fragment"><div class="line"><span class="keyword">public</span> CUINullRect Absolute { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Absolute position and size in pixels</span></div>
@@ -235,7 +248,7 @@ Layout Props:</h3>
 </div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> CUIRect Rect { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// OuterRect - Margin</span></div>
 </div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> CUIRect InnerRect { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// Rect - Border</span></div>
 </div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> CUIRect ChildrenRect { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// InnerRect - Padding</span></div>
-</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
 Graphics Props:</h3>
 <div class="fragment"><div class="line"><span class="keyword">public</span> SimpleTexture Background { <span class="keyword">get</span>; }</div>
 <div class="line"> </div>
@@ -268,7 +281,7 @@ Graphics Props:</h3>
 </div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> CUIPalette DeepPalette { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Recursively sets palette for children </span></div>
 </div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> Action&lt;CUIComponent&gt; Style { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Arbitrary func that sets some props on component, saved in PersonalStyle</span></div>
 </div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> ICUIStyle PersonalStyle { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Extra style that will be applied after type specific styles</span></div>
-</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
 Other Props:</h3>
 <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keywordtype">bool</span> Focusable { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Can it be focused</span></div>
 </div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keywordtype">bool</span> Draggable { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Can it be dragged</span></div>
@@ -276,7 +289,10 @@ Other Props:</h3>
 </div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keywordtype">bool</span> Resizable { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Can it be resized</span></div>
 </div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keywordtype">bool</span> ConsumeFocus { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Should it consume focus events</span></div>
 </div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keywordtype">bool</span> ConsumeMouseEvents { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - Should it consume mouse events</span></div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
+</div><!-- fragment --><p><br  />
+<br  />
+ </p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
 Events</h1>
 <p>Note: most events accompanied by delegate props where you can set callbacks in object initializers </p><div class="fragment"><div class="line">CUIComponent component = <span class="keyword">new</span> CUIComponent()</div>
 <div class="line">{</div>
@@ -290,7 +306,7 @@ Events</h1>
  Some of them don't and it's a consistency bug which i'll fix somewhere in the future</p>
 <p>Also idk if it's a good idea to pass "this" as first arg, in fact i never use it, tell me your thoughts</p>
 <p>ClearableEvents are wrappers around event that can be cleared, raised from outside and routed to one another</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
 Commonly used Events of CUIComponent:</h3>
 <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">event</span> Action&lt;CUIComponent, CUIMouseDownEvent&gt; MouseDown;</div>
 </div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">event</span> Action&lt;CUIComponent, CUIMouseUpEvent&gt; MouseUp</div>

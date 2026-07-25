@@ -25,6 +25,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="dev.png"/></td>
   <td id="projectalign">
    <div id="projectname">CUI
    </div>
@@ -113,8 +114,11 @@ $(function(){initNavTree('_utils_8_colors_8cs_source.html','',''); });
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        (<span class="keywordtype">int</span>)(color.B * l),</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        (<span class="keywordtype">int</span>)color.A</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>      );</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  }</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">float</span> Brightness(<span class="keyword">this</span> Color cl)</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>      =&gt; Math.Clamp((cl.R + cl.G + cl.B) / 255.0f, 0.0f, 1.0f);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  }</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
 <div class="ttc" id="anamespace_c_u_i_libs_html"><div class="ttname"><a href="namespace_c_u_i_libs.html">CUILibs</a></div><div class="ttdef"><b>Definition</b> <a href="_already_done_8cs_source.html#l00012">AlreadyDone.cs:13</a></div></div>
 <div class="ttc" id="anamespace_crab_u_i_html"><div class="ttname"><a href="namespace_crab_u_i.html">CrabUI</a></div><div class="ttdef"><b>Definition</b> <a href="_____generated_2_c_u_i_component_8cs_source.html#l00007">CUIComponent.cs:8</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

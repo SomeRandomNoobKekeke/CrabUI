@@ -291,8 +291,6 @@ bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ac809b22336545d5265
 \item 
 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_string_dictionary___part}{String\+Dictionary\+\_\+\+Part}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ae7f438b0b698ceed6ed4a0237df35846}{As\+\_\+\+String\+Dictionary}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \item 
-CUIPalette\+Rank \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a63bb7a754341f29b8bdd9669aeb56a07}{Palette\+Rank}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
-\item 
 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_palette}{CUIPalette}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a7744e057d505b5a5f1f0621b02d058b2}{Palette}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
 \item 
 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_palette}{CUIPalette}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ad5ceae4216de2a994b4083ca7ff03f0d}{Deep\+Palette}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
@@ -476,11 +474,11 @@ Crab\+UI.\+CUIButton.\+CUIButton (\begin{DoxyParamCaption}{}{}\end{DoxyParamCapt
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_button_8cs_source_l00054}{54}} of file \doxymbox{\hyperlink{_c_u_i_button_8cs_source}{CUIButton.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_button_8cs_source_l00055}{55}} of file \doxymbox{\hyperlink{_c_u_i_button_8cs_source}{CUIButton.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00054\ :\ base()\ \{\ \}}
+\DoxyCodeLine{00055\ :\ base()\ \{\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_button_af1b6e725b2f91ec0cd5612285983e682}\index{CrabUI.CUIButton@{CrabUI.CUIButton}!CUIButton@{CUIButton}}
@@ -491,11 +489,11 @@ Crab\+UI.\+CUIButton.\+CUIButton (\begin{DoxyParamCaption}\item[{string}]{text}{
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_button_8cs_source_l00055}{55}} of file \doxymbox{\hyperlink{_c_u_i_button_8cs_source}{CUIButton.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_button_8cs_source_l00056}{56}} of file \doxymbox{\hyperlink{_c_u_i_button_8cs_source}{CUIButton.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00055\ :\ base(text)\ \{\ \}}
+\DoxyCodeLine{00056\ :\ base(text)\ \{\ \}}
 
 \end{DoxyCode}
 
@@ -511,15 +509,15 @@ override void Crab\+UI.\+CUIButton.\+Determine\+Color (\begin{DoxyParamCaption}{
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_button_8cs_source_l00047}{47}} of file \doxymbox{\hyperlink{_c_u_i_button_8cs_source}{CUIButton.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_button_8cs_source_l00048}{48}} of file \doxymbox{\hyperlink{_c_u_i_button_8cs_source}{CUIButton.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00048\ \ \ \ \ \{}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ Background.Color\ =\ InactiveColor;}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (MouseOver)\ Background.Color\ =\ MouseOverColor;}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (MousePressed)\ Background.Color\ =\ MousePressedColor;}
-\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ Background.Color\ =\ InactiveColor;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (MouseOver)\ Background.Color\ =\ MouseOverColor;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (MousePressed)\ Background.Color\ =\ MousePressedColor;}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_button_a74f7a9783abcb5ae9fd02e4cc58f7fc7}\index{CrabUI.CUIButton@{CrabUI.CUIButton}!InitStyle@{InitStyle}}
@@ -541,7 +539,8 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_button_8cs_source_l00023}{23}} of
 \DoxyCodeLine{00024\ \ \ \ \ \{}
 \DoxyCodeLine{00025\ \ \ \ \ \ \ base.InitStyle();}
 \DoxyCodeLine{00026\ \ \ \ \ \ \ Padding\ =\ \textcolor{keyword}{new}(4,\ 2,\ 4,\ 2);}
-\DoxyCodeLine{00027\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ Background.Sprite\ =\ CUIDefaultSprite.VignetteLight;}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -559,8 +558,8 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_button_8cs_source_l00023}{23}} of
 \begin{DoxyCode}{0}
 \DoxyCodeLine{=\ \textcolor{keyword}{new}\ CUIDefaultStyle<CUIButton>((c)\ =>}
 \DoxyCodeLine{\ \ \ \ \{}
-\DoxyCodeLine{\ \ \ \ \ \ c.MasterColor\ =\ c.Palette.Colors[\textcolor{stringliteral}{"{}button"{}}];}
-\DoxyCodeLine{\ \ \ \ \ \ c.TextColor\ =\ c.Palette.Colors[\textcolor{stringliteral}{"{}text"{}}];}
+\DoxyCodeLine{\ \ \ \ \ \ c.MasterColor\ =\ c.Palette[\textcolor{stringliteral}{"{}main"{}}];}
+\DoxyCodeLine{\ \ \ \ \ \ c.TextColor\ =\ c.Palette[\textcolor{stringliteral}{"{}text"{}}];}
 \DoxyCodeLine{\ \ \ \ \})}
 
 \end{DoxyCode}
@@ -581,11 +580,11 @@ Color Crab\+UI.\+CUIButton.\+Inactive\+Color = new Color(0, 0, 100)\hspace{0.3cm
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_button_8cs_source_l00034}{34}} of file \doxymbox{\hyperlink{_c_u_i_button_8cs_source}{CUIButton.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_button_8cs_source_l00035}{35}} of file \doxymbox{\hyperlink{_c_u_i_button_8cs_source}{CUIButton.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00034\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}\ Color(0,\ 0,\ 100);}
+\DoxyCodeLine{00035\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}\ Color(0,\ 0,\ 100);}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_button_a4c25c856a45e979a3470d7b8a3515e64}\index{CrabUI.CUIButton@{CrabUI.CUIButton}!MasterColor@{MasterColor}}
@@ -596,19 +595,19 @@ override Color Crab\+UI.\+CUIButton.\+Master\+Color\hspace{0.3cm}{\ttfamily [set
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_button_8cs_source_l00036}{36}} of file \doxymbox{\hyperlink{_c_u_i_button_8cs_source}{CUIButton.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_button_8cs_source_l00037}{37}} of file \doxymbox{\hyperlink{_c_u_i_button_8cs_source}{CUIButton.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00037\ \ \ \ \ \{}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \textcolor{keyword}{set}}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ InactiveColor\ =\ value.MultOpaque(0.7f);}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ MouseOverColor\ =\ value.MultOpaque(0.9f);}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ MousePressedColor\ =\ value;}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ DetermineColor();}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ InactiveColor\ =\ value.MultOpaque(0.8f);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ MouseOverColor\ =\ value.MultOpaque(0.9f);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ MousePressedColor\ =\ value;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ DetermineColor();}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_button_a58d69fbcd165dd8184257f45b993b220}\index{CrabUI.CUIButton@{CrabUI.CUIButton}!MouseOverColor@{MouseOverColor}}
@@ -619,11 +618,11 @@ Color Crab\+UI.\+CUIButton.\+Mouse\+Over\+Color = new Color(0, 0, 140)\hspace{0.
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_button_8cs_source_l00030}{30}} of file \doxymbox{\hyperlink{_c_u_i_button_8cs_source}{CUIButton.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_button_8cs_source_l00031}{31}} of file \doxymbox{\hyperlink{_c_u_i_button_8cs_source}{CUIButton.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00030\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}\ Color(0,\ 0,\ 140);}
+\DoxyCodeLine{00031\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}\ Color(0,\ 0,\ 140);}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_button_acc5214721aa66a02712c539a3a898af5}\index{CrabUI.CUIButton@{CrabUI.CUIButton}!MousePressedColor@{MousePressedColor}}
@@ -634,11 +633,11 @@ Color Crab\+UI.\+CUIButton.\+Mouse\+Pressed\+Color = new Color(0, 0, 200)\hspace
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_button_8cs_source_l00032}{32}} of file \doxymbox{\hyperlink{_c_u_i_button_8cs_source}{CUIButton.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_button_8cs_source_l00033}{33}} of file \doxymbox{\hyperlink{_c_u_i_button_8cs_source}{CUIButton.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00032\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}\ Color(0,\ 0,\ 200);}
+\DoxyCodeLine{00033\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}\ Color(0,\ 0,\ 200);}
 
 \end{DoxyCode}
 

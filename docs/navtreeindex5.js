@@ -1,12 +1,5 @@
 var NAVTREEINDEX5 =
 {
-"class_crab_u_i_user_1_1_class_mapping_1_1_direct_proxies_1_1_propxy_c.html":[8,0,1,21,0,2],
-"class_crab_u_i_user_1_1_class_mapping_1_1_direct_proxies_1_1_propxy_c.html":[9,0,1,21,0,2],
-"class_crab_u_i_user_1_1_class_mapping_1_1_direct_proxies_1_1_propxy_d.html":[8,0,1,21,0,3],
-"class_crab_u_i_user_1_1_class_mapping_1_1_direct_proxies_1_1_propxy_d.html":[9,0,1,21,0,3],
-"class_crab_u_i_user_1_1_class_mapping_1_1_inconvenient_proxies.html":[8,0,1,21,1],
-"class_crab_u_i_user_1_1_class_mapping_1_1_inconvenient_proxies.html":[9,0,1,21,1],
-"class_crab_u_i_user_1_1_class_mapping_1_1_inconvenient_proxies_1_1_propxy_a.html":[8,0,1,21,1,0],
 "class_crab_u_i_user_1_1_class_mapping_1_1_inconvenient_proxies_1_1_propxy_a.html":[9,0,1,21,1,0],
 "class_crab_u_i_user_1_1_class_mapping_1_1_inconvenient_proxies_1_1_propxy_b.html":[8,0,1,21,1,1],
 "class_crab_u_i_user_1_1_class_mapping_1_1_inconvenient_proxies_1_1_propxy_b.html":[9,0,1,21,1,1],
@@ -249,5 +242,12 @@ var NAVTREEINDEX5 =
 "class_crab_u_i_user_1_1_how_many_types_can_be_putted_inside_generics_1_1_real_type9.html":[8,0,1,30,8],
 "class_crab_u_i_user_1_1_how_many_types_can_be_putted_inside_generics_1_1_real_type9.html":[9,0,1,30,8],
 "class_crab_u_i_user_1_1_how_reimplementing_interface_works.html":[8,0,1,31],
-"class_crab_u_i_user_1_1_how_reimplementing_interface_works.html":[9,0,1,31]
+"class_crab_u_i_user_1_1_how_reimplementing_interface_works.html":[9,0,1,31],
+"class_crab_u_i_user_1_1_how_reimplementing_interface_works_1_1_a.html":[8,0,1,31,1],
+"class_crab_u_i_user_1_1_how_reimplementing_interface_works_1_1_a.html":[9,0,1,31,1],
+"class_crab_u_i_user_1_1_how_reimplementing_interface_works_1_1_b.html":[8,0,1,31,2],
+"class_crab_u_i_user_1_1_how_reimplementing_interface_works_1_1_b.html":[9,0,1,31,2],
+"class_crab_u_i_user_1_1_how_to_access_protected_in_grand_parent.html":[8,0,1,32],
+"class_crab_u_i_user_1_1_how_to_access_protected_in_grand_parent.html":[9,0,1,32],
+"class_crab_u_i_user_1_1_how_to_access_protected_in_grand_parent_1_1_a.html":[8,0,1,32,0]
 };

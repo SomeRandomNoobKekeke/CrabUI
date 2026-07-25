@@ -12,6 +12,8 @@ Action$<$ T $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_slot-1-g_a9db5dc59a31c24
 \doxysubsubsection*{Events}
 \begin{DoxyCompactItemize}
 \item 
+Action$<$ T $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_slot-1-g_a1c309d24362de6c9e8a95257aea17fbd}{Changed}}
+\item 
 Action$<$ T $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_slot-1-g_a1a5bd2576213afc605c5900cc1eff0e2}{Wire\+Up}}
 \item 
 Action$<$ T $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_slot-1-g_aefaeb3f4d1f6d6d7d83776191b5da7e2}{Tear\+Down}}
@@ -36,11 +38,11 @@ Action$<$T$>$ Crab\+UI.\+Slot$<$ T $>$.On\+Tear\+Down\hspace{0.3cm}{\ttfamily [s
 
 
 
-Definition at line \doxymbox{\hyperlink{_slot_8cs_source_l00029}{29}} of file \doxymbox{\hyperlink{_slot_8cs_source}{Slot.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_slot_8cs_source_l00032}{32}} of file \doxymbox{\hyperlink{_slot_8cs_source}{Slot.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00029\ \{\ \textcolor{keyword}{set}\ \{\ TearDown\ +=\ value;\ \}\ \}}
+\DoxyCodeLine{00032\ \{\ \textcolor{keyword}{set}\ \{\ TearDown\ +=\ value;\ \}\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_slot-1-g_af9d1ed7ab94df45f9e76ae15c53b0218}\index{CrabUI.Slot$<$ T $>$@{CrabUI.Slot$<$ T $>$}!OnWireUp@{OnWireUp}}
@@ -51,11 +53,11 @@ Action$<$T$>$ Crab\+UI.\+Slot$<$ T $>$.On\+Wire\+Up\hspace{0.3cm}{\ttfamily [set
 
 
 
-Definition at line \doxymbox{\hyperlink{_slot_8cs_source_l00026}{26}} of file \doxymbox{\hyperlink{_slot_8cs_source}{Slot.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_slot_8cs_source_l00029}{29}} of file \doxymbox{\hyperlink{_slot_8cs_source}{Slot.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00026\ \{\ \textcolor{keyword}{set}\ \{\ WireUp\ +=\ value;\ \}\ \}}
+\DoxyCodeLine{00029\ \{\ \textcolor{keyword}{set}\ \{\ WireUp\ +=\ value;\ \}\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_slot-1-g_afe0075baf8359919239c7736a7c665b4}\index{CrabUI.Slot$<$ T $>$@{CrabUI.Slot$<$ T $>$}!Value@{Value}}
@@ -76,9 +78,10 @@ Definition at line \doxymbox{\hyperlink{_slot_8cs_source_l00015}{15}} of file \d
 \DoxyCodeLine{00019\ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_Value\ is\ not\ \textcolor{keyword}{null})\ TearDown?.Invoke(\_Value);}
 \DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \_Value\ =\ value;}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_Value\ is\ not\ \textcolor{keyword}{null})\ WireUp?.Invoke(\_Value);}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00024\ \ \ \ \ \}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ Changed?.Invoke(value);}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_Value\ is\ not\ \textcolor{keyword}{null})\ WireUp?.Invoke(\_Value);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00025\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -86,6 +89,16 @@ Definition at line \doxymbox{\hyperlink{_slot_8cs_source_l00015}{15}} of file \d
 \label{doc-event-members}
 \Hypertarget{class_crab_u_i_1_1_slot-1-g_doc-event-members}
 \doxysubsection{Event Documentation}
+\Hypertarget{class_crab_u_i_1_1_slot-1-g_a1c309d24362de6c9e8a95257aea17fbd}\index{CrabUI.Slot$<$ T $>$@{CrabUI.Slot$<$ T $>$}!Changed@{Changed}}
+\index{Changed@{Changed}!CrabUI.Slot$<$ T $>$@{CrabUI.Slot$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Changed}{Changed}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_slot-1-g_a1c309d24362de6c9e8a95257aea17fbd} 
+Action$<$T$>$ Crab\+UI.\+Slot$<$ T $>$.Changed}
+
+
+
+Definition at line \doxymbox{\hyperlink{_slot_8cs_source_l00027}{27}} of file \doxymbox{\hyperlink{_slot_8cs_source}{Slot.\+cs}}.
+
 \Hypertarget{class_crab_u_i_1_1_slot-1-g_aefaeb3f4d1f6d6d7d83776191b5da7e2}\index{CrabUI.Slot$<$ T $>$@{CrabUI.Slot$<$ T $>$}!TearDown@{TearDown}}
 \index{TearDown@{TearDown}!CrabUI.Slot$<$ T $>$@{CrabUI.Slot$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{TearDown}{TearDown}}
@@ -94,7 +107,7 @@ Action$<$T$>$ Crab\+UI.\+Slot$<$ T $>$.Tear\+Down}
 
 
 
-Definition at line \doxymbox{\hyperlink{_slot_8cs_source_l00030}{30}} of file \doxymbox{\hyperlink{_slot_8cs_source}{Slot.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_slot_8cs_source_l00033}{33}} of file \doxymbox{\hyperlink{_slot_8cs_source}{Slot.\+cs}}.
 
 \Hypertarget{class_crab_u_i_1_1_slot-1-g_a1a5bd2576213afc605c5900cc1eff0e2}\index{CrabUI.Slot$<$ T $>$@{CrabUI.Slot$<$ T $>$}!WireUp@{WireUp}}
 \index{WireUp@{WireUp}!CrabUI.Slot$<$ T $>$@{CrabUI.Slot$<$ T $>$}}
@@ -104,7 +117,7 @@ Action$<$T$>$ Crab\+UI.\+Slot$<$ T $>$.Wire\+Up}
 
 
 
-Definition at line \doxymbox{\hyperlink{_slot_8cs_source_l00027}{27}} of file \doxymbox{\hyperlink{_slot_8cs_source}{Slot.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_slot_8cs_source_l00030}{30}} of file \doxymbox{\hyperlink{_slot_8cs_source}{Slot.\+cs}}.
 
 
 

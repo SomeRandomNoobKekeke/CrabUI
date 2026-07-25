@@ -17,9 +17,26 @@ namespace CrabUI
   {
     public double CaretBlinkInterval { get; set; } = 1.0;
 
-    public Color InvalidColor { get; set; }
-    public Color FocusedColor { get; set; }
-    public Color BluredColor { get; set; }
+    public Color FocusedColor
+    {
+      get => FocusedSprite.Color;
+      set => FocusedSprite.Color = value;
+    }
+    public Color BluredColor
+    {
+      get => BluredSprite.Color;
+      set => BluredSprite.Color = value;
+    }
+    public Color InvalidColor
+    {
+      get => InvalidSprite.Color;
+      set => InvalidSprite.Color = value;
+    }
+
+    public CUISprite FocusedSprite { get; set; }
+    public CUISprite BluredSprite { get; set; }
+    public CUISprite InvalidSprite { get; set; }
+
     public Color SelectionColor { get; set; }
     public Color CaretColor
     {

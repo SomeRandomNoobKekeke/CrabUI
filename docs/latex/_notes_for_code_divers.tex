@@ -4,18 +4,18 @@
 \Hypertarget{_notes_for_code_divers_md__docs_sources_2_sources_24_01_notes_for_code_divers}%
 
 
-those /\+/\+\+BRUH and /\+/\+\+CRINGE marks are actually tech debt markers, i can see them in TODO Tree\hypertarget{_notes_for_code_divers_autotoc_md31}{}\doxysection{\texorpdfstring{Component Generator}{Component Generator}}\label{_notes_for_code_divers_autotoc_md31}
+those /\+/\+\+BRUH and /\+/\+\+CRINGE marks are actually tech debt markers, i can see them in TODO Tree\hypertarget{_notes_for_code_divers_autotoc_md34}{}\doxysection{\texorpdfstring{Component Generator}{Component Generator}}\label{_notes_for_code_divers_autotoc_md34}
 I moved many reflection based tasks to a separate project \href{https://github.com/SomeRandomNoobKekeke/CUICodeGenerator}{\texttt{here}} ~\newline
 
 
-It\textquotesingle{}s in a separate mod so i won\textquotesingle{}t be softlocked if CUI assembly won\textquotesingle{}t compile
+It\textquotesingle{}s in a separate mod so i wouldn\textquotesingle{}t be softlocked if CUI assembly doesn\textquotesingle{}t compile
 
-It allows me to use some funny desing patterns:\+\hypertarget{_notes_for_code_divers_autotoc_md32}{}\doxysubsection{\texorpdfstring{Components}{Components}}\label{_notes_for_code_divers_autotoc_md32}
+It allows me to use some funny desing patterns:\+\hypertarget{_notes_for_code_divers_autotoc_md35}{}\doxysubsection{\texorpdfstring{Components}{Components}}\label{_notes_for_code_divers_autotoc_md35}
 Components implementing IComponent are just containers for stuff ~\newline
  Their main purpose is to be an identity, a linking point for modules that contain logic and data ~\newline
  Sometimes they have logic and data on rool level, treat is as root level modules
 
-\doxylink{namespace_c_u_i_code_generator}{CUICode\+Generator} will generate code for Components with \+[Generated\+Component]\+\hypertarget{_notes_for_code_divers_autotoc_md33}{}\doxysubsection{\texorpdfstring{Parts}{Parts}}\label{_notes_for_code_divers_autotoc_md33}
+\doxylink{namespace_c_u_i_code_generator}{CUICode\+Generator} will generate code for Components with \+[Generated\+Component]\+\hypertarget{_notes_for_code_divers_autotoc_md36}{}\doxysubsection{\texorpdfstring{Parts}{Parts}}\label{_notes_for_code_divers_autotoc_md36}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{class\ }Component}
@@ -44,7 +44,7 @@ Their main purpose is to add structure and move some props deeper ~\newline
 \end{DoxyCode}
 
 
-parts can be private and hide internal state, or they can expose limited access to private stuff\hypertarget{_notes_for_code_divers_autotoc_md34}{}\doxysubsection{\texorpdfstring{Adapter parts}{Adapter parts}}\label{_notes_for_code_divers_autotoc_md34}
+parts can be private and hide internal state, or they can expose limited access to private stuff\hypertarget{_notes_for_code_divers_autotoc_md37}{}\doxysubsection{\texorpdfstring{Adapter parts}{Adapter parts}}\label{_notes_for_code_divers_autotoc_md37}
 Parts can implement interfaces and make host appear like something else 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{interface\ }IFlexible}
@@ -70,23 +70,23 @@ Parts can implement interfaces and make host appear like something else
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
-\hypertarget{_notes_for_code_divers_autotoc_md35}{}\doxysubsection{\texorpdfstring{Init methods}{Init methods}}\label{_notes_for_code_divers_autotoc_md35}
-Init methods in parts and methods marked with \+[Init\+Method]\+ on component will be called\hypertarget{_notes_for_code_divers_autotoc_md36}{}\doxysubsection{\texorpdfstring{Modules}{Modules}}\label{_notes_for_code_divers_autotoc_md36}
+\hypertarget{_notes_for_code_divers_autotoc_md38}{}\doxysubsection{\texorpdfstring{Init methods}{Init methods}}\label{_notes_for_code_divers_autotoc_md38}
+Init methods in parts and methods marked with \+[Init\+Method]\+ on component will be called\hypertarget{_notes_for_code_divers_autotoc_md39}{}\doxysubsection{\texorpdfstring{Modules}{Modules}}\label{_notes_for_code_divers_autotoc_md39}
 objects implementing IModule are modules ~\newline
  They can contain logic and data ~\newline
  They don\textquotesingle{}t know where they are located, but tipically in some component or its part ~\newline
  They can reques other modules with \+[In]\+ attribute by type or interface ~\newline
  Host component is supposed to inject them ~\newline
- They can be private and hide implementation details\hypertarget{_notes_for_code_divers_autotoc_md37}{}\doxysubsection{\texorpdfstring{Chimera Parts}{Chimera Parts}}\label{_notes_for_code_divers_autotoc_md37}
+ They can be private and hide implementation details\hypertarget{_notes_for_code_divers_autotoc_md40}{}\doxysubsection{\texorpdfstring{Chimera Parts}{Chimera Parts}}\label{_notes_for_code_divers_autotoc_md40}
 Sometimes i fail to decouple module from component and this happens:\+ 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{class\ }Tree\_Part\ :\ Part,\ IModule}
 
 \end{DoxyCode}
- They are parts but they can be injected and request other modules\hypertarget{_notes_for_code_divers_autotoc_md38}{}\doxysubsection{\texorpdfstring{IProp\+Container IProp}{IProp\+Container IProp}}\label{_notes_for_code_divers_autotoc_md38}
+ They are parts but they can be injected and request other modules\hypertarget{_notes_for_code_divers_autotoc_md41}{}\doxysubsection{\texorpdfstring{IProp\+Container IProp}{IProp\+Container IProp}}\label{_notes_for_code_divers_autotoc_md41}
 IProps inside IProp\+Container will be injected with the container
 
-This allows me to create reactive props\hypertarget{_notes_for_code_divers_autotoc_md39}{}\doxysubsection{\texorpdfstring{IAware}{IAware}}\label{_notes_for_code_divers_autotoc_md39}
+This allows me to create reactive props\hypertarget{_notes_for_code_divers_autotoc_md42}{}\doxysubsection{\texorpdfstring{IAware}{IAware}}\label{_notes_for_code_divers_autotoc_md42}
 Aware objects are injected with host component and their property name ~\newline
  host component and prop name used only for debug messages ~\newline
  They shouldn\textquotesingle{}t couple module to outer component 

@@ -25,6 +25,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="dev.png"/></td>
   <td id="projectalign">
    <div id="projectname">CUI
    </div>
@@ -132,7 +133,7 @@ $(function(){initNavTree('_c_u_i_parser_8_extra_parse_8cs_source.html','',''); }
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      <span class="keywordflow">return</span> (x, y);</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">public</span> <span class="keyword">static</span> Color ParseColor(<span class="keywordtype">string</span> raw) =&gt; XMLExtensions.ParseColor(raw);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">public</span> <span class="keyword">static</span> Color ParseColor(<span class="keywordtype">string</span> raw) =&gt; XMLExtensions.ParseColor(raw, <span class="keyword">false</span>);</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keyword">public</span> <span class="keyword">static</span> Vector2 ParseVector2(<span class="keywordtype">string</span> raw)</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    {</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>      <span class="keywordflow">if</span> (raw == <span class="keyword">null</span> || raw == <span class="stringliteral">&quot;&quot;</span>) <span class="keywordflow">return</span> <span class="keyword">new</span> Vector2(0, 0);</div>

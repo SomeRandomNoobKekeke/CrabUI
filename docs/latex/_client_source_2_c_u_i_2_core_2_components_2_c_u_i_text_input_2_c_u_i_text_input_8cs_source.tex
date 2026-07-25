@@ -22,60 +22,68 @@
 \DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00018}\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_text_input_1_1_part}{00018}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_text_input_1_1_part}{Part}}\ :\ \doxymbox{\hyperlink{interface_c_u_i_code_generator_1_1_i_part}{IPart}}\ \{\ \textcolor{keyword}{public}\ CUITextInput\ Self\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \}}
 \DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_c_u_i_style}{ICUIStyle}}\ DefaultStyle\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}\ CUIDefaultStyle<CUITextInput>((c)\ =>}
 \DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00020}00020\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00021}00021\ \ \ \ \ \ \ c.FocusedColor\ =\ c.Palette.Colors[\textcolor{stringliteral}{"{}inputfocused"{}}];}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00022}00022\ \ \ \ \ \ \ c.BluredColor\ =\ c.Palette.Colors[\textcolor{stringliteral}{"{}inputblured"{}}];}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00023}00023\ \ \ \ \ \ \ c.SelectionColor\ =\ c.Palette.Colors[\textcolor{stringliteral}{"{}inputselection"{}}]\ *\ 0.4f;}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00024}00024\ \ \ \ \ \ \ c.CaretColor\ =\ c.Palette.Colors[\textcolor{stringliteral}{"{}inputcaret"{}}];}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00025}00025\ \ \ \ \ \ \ c.InvalidColor\ =\ c.Palette.Colors[\textcolor{stringliteral}{"{}inputinvalid"{}}]\ *\ 0.5f;}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00026}00026\ \ \ \ \ \ \ c.TextBlock.TextColor\ =\ c.Palette.Colors[\textcolor{stringliteral}{"{}text"{}}];}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00027}00027\ \ \ \ \ \});}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00028}00028\ }
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ InitStyle()}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00030}00030\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00031}00031\ \ \ \ \ \ \ base.InitStyle();}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00032}00032\ \ \ \ \ \ \ Focusable\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00033}00033\ \ \ \ \ \ \ TextBlock.Anchor\ =\ CUIAnchor.LeftCenter;}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00034}00034\ \ \ \ \ \ \ ConsumeMouseEvents\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00035}00035\ \ \ \ \ \ \ ConsumeFocus\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00036}00036\ \ \ \ \ \ \ CullChildren\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00021}00021\ \ \ \ \ \ \ c.FocusedColor\ =\ Color.Lerp(c.Palette[\textcolor{stringliteral}{"{}back"{}}],\ c.Palette[\textcolor{stringliteral}{"{}main"{}}],\ 0.8f);}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00022}00022\ \ \ \ \ \ \ c.BluredColor\ =\ Color.Lerp(c.Palette[\textcolor{stringliteral}{"{}back"{}}],\ c.Palette[\textcolor{stringliteral}{"{}main"{}}],\ 0.3f);}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00023}00023\ \ \ \ \ \ \ c.SelectionColor\ =\ c.Palette[\textcolor{stringliteral}{"{}selection"{}}]\ *\ 0.4f;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00024}00024\ \ \ \ \ \ \ c.CaretColor\ =\ c.Palette[\textcolor{stringliteral}{"{}selection"{}}];}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00025}00025\ \ \ \ \ \ \ c.InvalidColor\ =\ c.Palette[\textcolor{stringliteral}{"{}invalid"{}}]\ *\ 0.5f;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00026}00026\ \ \ \ \ \ \ c.TextBlock.TextColor\ =\ c.Palette[\textcolor{stringliteral}{"{}text"{}}];}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00027}00027\ \ \ \ \ \ \ c.UpdateVisualState();\textcolor{comment}{//HACK}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00028}00028\ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ InitStyle()}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00031}00031\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00032}00032\ \ \ \ \ \ \ base.InitStyle();}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00033}00033\ \ \ \ \ \ \ Focusable\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00034}00034\ \ \ \ \ \ \ TextBlock.Anchor\ =\ CUIAnchor.LeftCenter;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00035}00035\ \ \ \ \ \ \ ConsumeMouseEvents\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00036}00036\ \ \ \ \ \ \ ConsumeFocus\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00037}00037\ \ \ \ \ \ \ CullChildren\ =\ \textcolor{keyword}{true};}
 \DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00038}00038\ }
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00039}00039\ }
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ OnAttachedToMainComponent(CUIMainComponent\ mainComponent)}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00041}00041\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00042}00042\ \ \ \ \ \ \ base.OnAttachedToMainComponent(mainComponent);}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00043}00043\ }
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00044}00044\ \ \ \ \ \ \ mainComponent.GlobalEvents.TextInput.Add(HandleTextInput);}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00045}00045\ \ \ \ \ \ \ mainComponent.GlobalEvents.KeyDownInput.Add(HandleKeyDownInput);}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00046}00046\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00047}00047\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ OnDetachedFromMainComponent(CUIMainComponent\ mainComponent)}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00048}00048\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00049}00049\ \ \ \ \ \ \ base.OnDetachedFromMainComponent(mainComponent);}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00050}00050\ }
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00051}00051\ \ \ \ \ \ \ mainComponent.GlobalEvents.TextInput.Remove(HandleTextInput);}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00052}00052\ \ \ \ \ \ \ mainComponent.GlobalEvents.KeyDownInput.Remove(HandleKeyDownInput);}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00053}00053\ \ \ \ \ \ \ mainComponent.GlobalEvents.AfterUpdate.Remove(HandleUpdate);}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00039}00039\ \ \ \ \ \ \ BluredSprite\ =\ CUISprite.White;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00040}00040\ \ \ \ \ \ \ InvalidSprite\ =\ CUIDefaultSprite.BoxWithALamp;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00041}00041\ \ \ \ \ \ \ FocusedSprite\ =\ CUIDefaultSprite.BoxWithALamp;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00043}00043\ \ \ \ \ \ \ Background.Sprite\ =\ BluredSprite;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00044}00044\ \ \ \ \ \ \ Padding\ =\ \textcolor{keyword}{new}\ CUISizes(4,\ 4,\ 4,\ 4);}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00045}00045\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ OnAttachedToMainComponent(CUIMainComponent\ mainComponent)}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00049}00049\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00050}00050\ \ \ \ \ \ \ base.OnAttachedToMainComponent(mainComponent);}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00052}00052\ \ \ \ \ \ \ mainComponent.GlobalEvents.TextInput.Add(HandleTextInput);}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00053}00053\ \ \ \ \ \ \ mainComponent.GlobalEvents.KeyDownInput.Add(HandleKeyDownInput);}
 \DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00054}00054\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00055}00055\ }
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00056}00056\ }
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00057}00057\ }
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00058}00058\ \ \ \ \ \textcolor{keyword}{public}\ CUITextInput()\ :\ base()}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00059}00059\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00060}00060\ \ \ \ \ \ \ OnFocus\ +=\ HandleFocus;}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00061}00061\ \ \ \ \ \ \ OnFocusLost\ +=\ HandleFocusLost;}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00062}00062\ }
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00063}00063\ \ \ \ \ \ \ MouseDown\ +=\ HandleMouseDown;}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00064}00064\ \ \ \ \ \ \ MouseDoubleClick\ +=\ HandleDoubleClick;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00055}00055\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ OnDetachedFromMainComponent(CUIMainComponent\ mainComponent)}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00056}00056\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00057}00057\ \ \ \ \ \ \ base.OnDetachedFromMainComponent(mainComponent);}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00059}00059\ \ \ \ \ \ \ mainComponent.GlobalEvents.TextInput.Remove(HandleTextInput);}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00060}00060\ \ \ \ \ \ \ mainComponent.GlobalEvents.KeyDownInput.Remove(HandleKeyDownInput);}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00061}00061\ \ \ \ \ \ \ mainComponent.GlobalEvents.AfterUpdate.Remove(HandleUpdate);}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00062}00062\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00064}00064\ }
 \DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00065}00065\ }
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00066}00066\ \ \ \ \ \ \ State.Changed\ +=\ HandleStateChanged;}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00067}00067\ \ \ \ \ \ \ State.TextChanged\ +=\ HandleTextChanged;}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00068}00068\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00066}00066\ \ \ \ \ \textcolor{keyword}{public}\ CUITextInput()\ :\ base()}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00067}00067\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00068}00068\ \ \ \ \ \ \ OnFocus\ +=\ HandleFocus;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00069}00069\ \ \ \ \ \ \ OnFocusLost\ +=\ HandleFocusLost;}
 \DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00070}00070\ }
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00071}00071\ }
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00071}00071\ \ \ \ \ \ \ MouseDown\ +=\ HandleMouseDown;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00072}00072\ \ \ \ \ \ \ MouseDoubleClick\ +=\ HandleDoubleClick;}
 \DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00073}00073\ }
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00074}00074\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00075}00075\ \}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00074}00074\ \ \ \ \ \ \ State.Changed\ +=\ HandleStateChanged;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00075}00075\ \ \ \ \ \ \ State.TextChanged\ +=\ HandleTextChanged;}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00076}00076\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00082}00082\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00083}00083\ \}}
 
 \end{DoxyCode}

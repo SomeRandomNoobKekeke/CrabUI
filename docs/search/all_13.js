@@ -2,8 +2,8 @@ var searchData=
 [
   ['lambdamemoryusage_0',['LambdaMemoryUsage',['../class_crab_u_i_user_1_1_lambda_memory_usage.html',1,'CrabUIUser']]],
   ['layout_1',['Layout',['../class_crab_u_i_1_1_layout.html',1,'CrabUI.Layout'],['../class_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_layout.html',1,'CrabUIUser.HowLayoutsShouldGenerallyWork.Layout']]],
-  ['layout_20calculations_20use_20rectfloat_20while_20drawing_20uses_20rectint_2',['- Layout calculations use RectFloat while Drawing uses RectInt',['../md__client_project_2_client_source_2_changelog.html#autotoc_md69',1,'']]],
-  ['layout_20props_3a_3',['Layout Props:',['../_overview.html#autotoc_md13',1,'']]],
+  ['layout_20calculations_20use_20rectfloat_20while_20drawing_20uses_20rectint_2',['- Layout calculations use RectFloat while Drawing uses RectInt',['../md__client_project_2_client_source_2_changelog.html#autotoc_md73',1,'']]],
+  ['layout_20props_3a_3',['Layout Props:',['../_overview.html#autotoc_md12',1,'']]],
   ['layout_5fchild_5fpart_4',['Layout_Child_Part',['../class_crab_u_i_1_1_c_u_i_component_1_1_adapters___part_1_1_layout___child___part.html',1,'CrabUI::CUIComponent::Adapters_Part']]],
   ['layoutadapter_5fpart_5',['LayoutAdapter_Part',['../class_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_list_component_1_1_layout_adapter___part.html',1,'CrabUIUser::HowLayoutsShouldGenerallyWork::ListComponent']]],
   ['layoutchild_6',['LayoutChild',['../class_crab_u_i_1_1_c_u_i_vertical_list_layout_test_1_1_layout_child.html',1,'CrabUI::CUIVerticalListLayoutTest']]],
@@ -14,11 +14,11 @@ var searchData=
   ['layoutmarker_11',['LayoutMarker',['../class_crab_u_i_1_1_layout_marker.html',1,'CrabUI']]],
   ['layoutmarker_5fadapter_12',['LayoutMarker_Adapter',['../class_crab_u_i_1_1_c_u_i_component_1_1_adapters___part_1_1_layout_marker___adapter.html',1,'CrabUI::CUIComponent::Adapters_Part']]],
   ['layoutprops_5fpart_13',['LayoutProps_Part',['../class_crab_u_i_1_1_c_u_i_component_1_1_layout_props___part.html',1,'CrabUI::CUIComponent']]],
-  ['layouts_14',['Layouts',['../_overview.html#autotoc_md8',1,'']]],
+  ['layouts_14',['Layouts',['../_overview.html#autotoc_md7',1,'']]],
   ['layoutupdatenotifier_5fpart_15',['LayoutUpdateNotifier_Part',['../class_crab_u_i_1_1_c_u_i_component_1_1_layout_update_notifier___part.html',1,'CrabUI::CUIComponent']]],
-  ['lazy_20to_20mention_16',['- other stuff i&apos;m too lazy to mention',['../md__client_project_2_client_source_2_changelog.html#autotoc_md71',1,'']]],
+  ['lazy_20to_20mention_16',['- other stuff i&apos;m too lazy to mention',['../md__client_project_2_client_source_2_changelog.html#autotoc_md75',1,'']]],
   ['leftcontextbound_17',['LeftContextBound',['../class_crab_u_i_1_1_visual_bounds_1_1_left_context_bound.html',1,'CrabUI::VisualBounds']]],
-  ['legacy_20↓_18',['↓ Legacy ↓',['../md__client_project_2_client_source_2_changelog.html#autotoc_md74',1,'']]],
+  ['legacy_20↓_18',['↓ Legacy ↓',['../md__client_project_2_client_source_2_changelog.html#autotoc_md78',1,'']]],
   ['lifecycle_5fpart_19',['LifeCycle_Part',['../class_crab_u_i_1_1_c_u_i_core_1_1_life_cycle___part.html',1,'CrabUI::CUICore']]],
   ['line_20',['Line',['../struct_crab_u_i_1_1_c_u_i_grid_layout_1_1_line.html',1,'CrabUI::CUIGridLayout']]],
   ['listcomponent_21',['ListComponent',['../class_crab_u_i_user_1_1_how_layouts_should_generally_work_1_1_list_component.html',1,'CrabUIUser::HowLayoutsShouldGenerallyWork']]],
@@ -28,5 +28,5 @@ var searchData=
   ['localattribute_25',['LocalAttribute',['../class_c_u_i_code_generator_1_1_local_attribute.html',1,'CUICodeGenerator']]],
   ['log_26',['Log',['../class_c_u_i_libs_1_1_logger.html#a6ff24cf58c3762cfd88b5b761daeb0d8',1,'CUILibs::Logger']]],
   ['logger_27',['Logger',['../class_c_u_i_libs_1_1_logger.html',1,'CUILibs']]],
-  ['logic_20was_20moved_20to_20textblock_20visualelement_28',['- Text measurement / drawing logic was moved to TextBlock VisualElement',['../md__client_project_2_client_source_2_changelog.html#autotoc_md65',1,'']]]
+  ['logic_20was_20moved_20to_20textblock_20visualelement_28',['- Text measurement / drawing logic was moved to TextBlock VisualElement',['../md__client_project_2_client_source_2_changelog.html#autotoc_md69',1,'']]]
 ];

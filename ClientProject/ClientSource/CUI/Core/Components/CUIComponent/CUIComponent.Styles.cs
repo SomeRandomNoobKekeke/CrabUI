@@ -12,26 +12,19 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
-    public CUIPaletteRank PaletteRank
-    {
-      get => Styles.PaletteRank;
-      set => Styles.PaletteRank = value;
-    }
-
     //TODO mb this should be deep by default
     public CUIPalette Palette
     {
-      get => Styles.PaletteSlot.Palette;
-      set => Styles.PaletteSlot.Palette = value;
+      get => Styles.Palette;
+      set => Styles.Palette = value;
     }
-
 
     public CUIPalette DeepPalette
     {
-      get => Styles.PaletteSlot.Palette;
+      get => Styles.Palette;
       set
       {
-        Styles.PaletteSlot.Palette = value;
+        Styles.Palette = value;
         foreach (CUIComponent child in Children)
         {
           child.DeepPalette = value;
@@ -64,7 +57,7 @@ namespace CrabUI
     protected Style_Part Styles { get; } = new();
     public class Style_Part : Part
     {
-      public CUIStylePipeline TypeSpecificStyles { get; set; }
+      public CUIStylePipeline TypeSpecificStyles { get; private set; }
 
 
       private bool _UseReactiveStyles; public bool UseReactiveStyles
@@ -72,61 +65,55 @@ namespace CrabUI
         get => _UseReactiveStyles;
         set
         {
+          if (value == _UseReactiveStyles) return;
+
+          bool prevValue = _UseReactiveStyles;
           _UseReactiveStyles = value;
-          if (UseReactiveStyles)
+
+
+          if (!prevValue && value)
           {
-            TypeSpecificStyles.Changed.Add(Self, ApplyTypeStyles);
-            _PaletteSlot?.Changed.Add(Self, ApplyTypeStyles);
+            TypeSpecificStyles.Changed += ReapplyStyles;
+            Palette.Changed += ReapplyStyles;
           }
-          else
+
+          if (prevValue && !value)
           {
-            TypeSpecificStyles.Changed.Remove(Self);
-            _PaletteSlot?.Changed.Remove(Self);
+            TypeSpecificStyles.Changed -= ReapplyStyles;
+            Palette.Changed -= ReapplyStyles;
           }
         }
       }
 
-      private CUIPaletteRank _PaletteRank; public CUIPaletteRank PaletteRank
+      private CUIPalette _Palette; public CUIPalette Palette
       {
-        get => _PaletteRank;
+        get => _Palette;
         set
         {
-          _PaletteRank = value;
-          PaletteSlot = CUICore.Palettes.FromRank(value);
+          if (_Palette == value) return;
+
+          if (_Palette != null) _Palette.Changed -= ReapplyStyles;
+          _Palette = value;
+          if (UseReactiveStyles && _Palette != null) _Palette.Changed += ReapplyStyles;
+
+          ReapplyStyles();
         }
       }
 
-      private CUIPaletteSlot _PaletteSlot;
-      public CUIPaletteSlot PaletteSlot
-      {
-        get => _PaletteSlot;
-        set
-        {
-          if (_PaletteSlot == value) return;
 
-          _PaletteSlot?.Changed.Remove(Self);
-
-          _PaletteSlot = value;
-
-          if (UseReactiveStyles)
-          {
-            _PaletteSlot?.Changed.Add(Self, ApplyTypeStyles);
-          }
-        }
-      }
 
       public void Init()
       {
-        _PaletteSlot = new CUIPaletteSlot() { Palette = CUIPalette.Default };//CUICore.Palettes.Primary;
+        _Palette = CUICore.Palettes.Primary;
         TypeSpecificStyles = CUICore.Styles.GetOrCreatePipeline(Self.GetType());
 
-        Self.InitStyle();
-        ApplyTypeStyles();
+        Self.InitStyle(); // 1 time
+        ReapplyStyles();
 
         UseReactiveStyles = CUICore.Styles.UseReactiveStyles;
       }
 
-      public void ApplyTypeStyles()
+      public void ReapplyStyles()
       {
         TypeSpecificStyles.Apply(Self);
         Self.PersonalStyle?.Apply(Self);

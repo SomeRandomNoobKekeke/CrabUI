@@ -5,7 +5,7 @@ those //BRUH and //CRINGE marks are actually tech debt markers, i can see them i
 ## Component Generator
 I moved many reflection based tasks to a separate project [here](https://github.com/SomeRandomNoobKekeke/CUICodeGenerator)  
 
-It's in a separate mod so i won't be softlocked if CUI assembly won't compile
+It's in a separate mod so i wouldn't be softlocked if CUI assembly doesn't compile
 
 It allows me to use some funny desing patterns:
 

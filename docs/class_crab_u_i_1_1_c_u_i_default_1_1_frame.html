@@ -25,6 +25,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="dev.png"/></td>
   <td id="projectalign">
    <div id="projectname">CUI
    </div>
@@ -231,7 +232,6 @@ Properties</h2></td></tr>
 <tr class="memitem:a4b7eb70658f8980289a65596eedfd307 inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a4b7eb70658f8980289a65596eedfd307"><td class="memItemLeft">CUISerializationMode&#160;</td><td class="memItemRight"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a4b7eb70658f8980289a65596eedfd307">SerializationMode</a><code> [get, set]</code></td></tr>
 <tr class="memitem:ac809b22336545d5265ce8d1d38383ad7 inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_ac809b22336545d5265ce8d1d38383ad7"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#ac809b22336545d5265ce8d1d38383ad7">Serializable</a> = true<code> [get, set]</code></td></tr>
 <tr class="memitem:ae7f438b0b698ceed6ed4a0237df35846 inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_ae7f438b0b698ceed6ed4a0237df35846"><td class="memItemLeft"><a class="el" href="class_crab_u_i_1_1_c_u_i_component_1_1_string_dictionary___part.html">StringDictionary_Part</a>&#160;</td><td class="memItemRight"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#ae7f438b0b698ceed6ed4a0237df35846">As_StringDictionary</a> = new()<code> [get]</code></td></tr>
-<tr class="memitem:a63bb7a754341f29b8bdd9669aeb56a07 inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a63bb7a754341f29b8bdd9669aeb56a07"><td class="memItemLeft">CUIPaletteRank&#160;</td><td class="memItemRight"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a63bb7a754341f29b8bdd9669aeb56a07">PaletteRank</a><code> [get, set]</code></td></tr>
 <tr class="memitem:a7744e057d505b5a5f1f0621b02d058b2 inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a7744e057d505b5a5f1f0621b02d058b2"><td class="memItemLeft"><a class="el" href="class_crab_u_i_1_1_c_u_i_palette.html">CUIPalette</a>&#160;</td><td class="memItemRight"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a7744e057d505b5a5f1f0621b02d058b2">Palette</a><code> [get, set]</code></td></tr>
 <tr class="memitem:ad5ceae4216de2a994b4083ca7ff03f0d inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_ad5ceae4216de2a994b4083ca7ff03f0d"><td class="memItemLeft"><a class="el" href="class_crab_u_i_1_1_c_u_i_palette.html">CUIPalette</a>&#160;</td><td class="memItemRight"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#ad5ceae4216de2a994b4083ca7ff03f0d">DeepPalette</a><code> [get, set]</code></td></tr>
 <tr class="memitem:a2e4027f6656f9acb97ac33996b312389 inherit properties_class_crab_u_i_1_1_c_u_i_component" id="r_a2e4027f6656f9acb97ac33996b312389"><td class="memItemLeft">virtual Action&lt; CUIComponent &gt;&#160;</td><td class="memItemRight"><a class="el" href="class_crab_u_i_1_1_c_u_i_component.html#a2e4027f6656f9acb97ac33996b312389">Style</a><code> [set]</code></td></tr>
@@ -351,7 +351,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   21</span>                     : base()</div>
 <div class="line"><span class="lineno">   22</span>      {</div>
 <div class="line"><span class="lineno">   23</span>        Anchor = CUIAnchor.Center;</div>
-<div class="line"><span class="lineno">   24</span>        VisualChildrenOrder = CUIDirection.Reverse;</div>
+<div class="line"><span class="lineno">   24</span>        <span class="comment">// VisualChildrenOrder = CUIDirection.Reverse;</span></div>
 <div class="line"><span class="lineno">   25</span>        <span class="comment">// Absolute = new(w: 400, h: 600);</span></div>
 <div class="line"><span class="lineno">   26</span> </div>
 <div class="line"><span class="lineno">   27</span>        <span class="keyword">this</span>[<span class="stringliteral">&quot;layout&quot;</span>] = <span class="keyword">new</span> CUIVerticalList()</div>
@@ -362,21 +362,25 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="lineno">   32</span>        <span class="keyword">this</span>[<span class="stringliteral">&quot;layout&quot;</span>][<span class="stringliteral">&quot;handle&quot;</span>] = <span class="keyword">new</span> CUIHorizontalList()</div>
 <div class="line"><span class="lineno">   33</span>        {</div>
 <div class="line"><span class="lineno">   34</span>          Absolute = <span class="keyword">new</span> CUINullRect(h: ResizeHandle.DefaultSize.Y),</div>
-<div class="line"><span class="lineno">   35</span>          Style = (c) =&gt;</div>
-<div class="line"><span class="lineno">   36</span>          {</div>
-<div class="line"><span class="lineno">   37</span>            c.Background.Color = c.Palette.Colors[<span class="stringliteral">&quot;border&quot;</span>];</div>
-<div class="line"><span class="lineno">   38</span>          },</div>
-<div class="line"><span class="lineno">   39</span>        };</div>
-<div class="line"><span class="lineno">   40</span>        <span class="keyword">this</span>[<span class="stringliteral">&quot;layout&quot;</span>][<span class="stringliteral">&quot;handle&quot;</span>][<span class="stringliteral">&quot;caption&quot;</span>] = Caption = <span class="keyword">new</span> CUITextBlock()</div>
-<div class="line"><span class="lineno">   41</span>        {</div>
-<div class="line"><span class="lineno">   42</span>          Flex = 1,</div>
-<div class="line"><span class="lineno">   43</span>        };</div>
-<div class="line"><span class="lineno">   44</span>        <span class="keyword">this</span>[<span class="stringliteral">&quot;layout&quot;</span>][<span class="stringliteral">&quot;handle&quot;</span>][<span class="stringliteral">&quot;closebutton&quot;</span>] = <span class="keyword">new</span> CUICloseButton()</div>
-<div class="line"><span class="lineno">   45</span>        {</div>
-<div class="line"><span class="lineno">   46</span>          CrossRelative = <span class="keyword">new</span> CUINullRect(w: 1),</div>
-<div class="line"><span class="lineno">   47</span>          Background = { Color = Palette.Colors[<span class="stringliteral">&quot;border&quot;</span>] },</div>
-<div class="line"><span class="lineno">   48</span>        };</div>
-<div class="line"><span class="lineno">   49</span>      }</div>
+<div class="line"><span class="lineno">   35</span>          Background = { Sprite = CUIDefaultSprite.DimmedVertical },</div>
+<div class="line"><span class="lineno">   36</span>          Style = (c) =&gt;</div>
+<div class="line"><span class="lineno">   37</span>          {</div>
+<div class="line"><span class="lineno">   38</span>            c.Background.Color = c.Palette[<span class="stringliteral">&quot;main&quot;</span>];</div>
+<div class="line"><span class="lineno">   39</span>          },</div>
+<div class="line"><span class="lineno">   40</span>        };</div>
+<div class="line"><span class="lineno">   41</span>        <span class="keyword">this</span>[<span class="stringliteral">&quot;layout&quot;</span>][<span class="stringliteral">&quot;handle&quot;</span>][<span class="stringliteral">&quot;caption&quot;</span>] = Caption = <span class="keyword">new</span> CUITextBlock()</div>
+<div class="line"><span class="lineno">   42</span>        {</div>
+<div class="line"><span class="lineno">   43</span>          Flex = 1,</div>
+<div class="line"><span class="lineno">   44</span>        };</div>
+<div class="line"><span class="lineno">   45</span>        <span class="keyword">this</span>[<span class="stringliteral">&quot;layout&quot;</span>][<span class="stringliteral">&quot;handle&quot;</span>][<span class="stringliteral">&quot;closebutton&quot;</span>] = <span class="keyword">new</span> CUICloseButton()</div>
+<div class="line"><span class="lineno">   46</span>        {</div>
+<div class="line"><span class="lineno">   47</span>          Background = {</div>
+<div class="line"><span class="lineno">   48</span>            Sprite = CUIDefaultSprite.DimmedVertical,</div>
+<div class="line"><span class="lineno">   49</span>            Color = Palette[<span class="stringliteral">&quot;main&quot;</span>], <span class="comment">//HACK</span></div>
+<div class="line"><span class="lineno">   50</span>          },</div>
+<div class="line"><span class="lineno">   51</span>          CrossRelative = <span class="keyword">new</span> CUINullRect(w: 1),</div>
+<div class="line"><span class="lineno">   52</span>        };</div>
+<div class="line"><span class="lineno">   53</span>      }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -395,11 +399,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_frame_8cs_source.html#l00051">51</a> of file <a class="el" href="_frame_8cs_source.html">Frame.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   51</span>                                   : <span class="keyword">this</span>()</div>
-<div class="line"><span class="lineno">   52</span>      {</div>
-<div class="line"><span class="lineno">   53</span>        Caption.Text = caption;</div>
-<div class="line"><span class="lineno">   54</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="_frame_8cs_source.html#l00055">55</a> of file <a class="el" href="_frame_8cs_source.html">Frame.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   55</span>                                   : <span class="keyword">this</span>()</div>
+<div class="line"><span class="lineno">   56</span>      {</div>
+<div class="line"><span class="lineno">   57</span>        Caption.Text = caption;</div>
+<div class="line"><span class="lineno">   58</span>      }</div>
 </div><!-- fragment -->
 </div>
 </div>

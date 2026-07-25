@@ -25,6 +25,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="dev.png"/></td>
   <td id="projectalign">
    <div id="projectname">CUI
    </div>
@@ -93,28 +94,28 @@ $(function(){initNavTree('_quick_start.html','',''); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md__docs_sources_2_sources_21_01_quick_start"></a></p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md0"></a>
-To include CUI in your mod:</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
-For "in-memory" mods</h2>
-<p>There's 2 ways:</p><ol type="1">
-<li>copy paste code from <a href="https://github.com/SomeRandomNoobKekeke/CrabUI/tree/main/ClientProject/ClientSource">https://github.com/SomeRandomNoobKekeke/CrabUI/tree/main/ClientProject/ClientSource</a></li>
-<li>publish you mod and add workshop dependency to <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3765325848">CUI mod</a></li>
-</ol>
-<p>2 is minimalistic, but you won't have ide hints</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
-For precompiled mods</h2>
-<p>Go to CUI mod folder, take CUI.dll from bin and add a reference to it in your project</p>
-<p>Or download <a href="https://github.com/SomeRandomNoobKekeke/CrabUI">https://github.com/SomeRandomNoobKekeke/CrabUI</a>, add luatrauma Refs to it and compile</p>
-<p>Or just copy paste source code :BaroDev:</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
-Hybrid mods</h2>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md0"></a>
+For "in-memory" mods</h3>
+<p>publish you mod and add workshop dependency to <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3765325848">CUI mod</a> <br  />
+<br  />
+ </p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
+For precompiled mods</h3>
+<p>Go to <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3765325848">CUI mod</a> folder, take CUI.dll from bin and add a reference to it in your project</p>
+<p>Or download <a href="https://github.com/SomeRandomNoobKekeke/CrabUI">https://github.com/SomeRandomNoobKekeke/CrabUI</a>, add luatrauma Refs and compile it yourself</p>
+<p>Or just copy paste sources from <a href="https://github.com/SomeRandomNoobKekeke/CrabUI/tree/main/ClientProject/ClientSource">github</a> <br  />
+<br  />
+ </p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
+Hybrid mods</h3>
 <p>You can take best from both worlds</p>
 <p>you can setup <a href="https://github.com/Luatrauma/LuaCsModTemplate">https://github.com/Luatrauma/LuaCsModTemplate</a>, and then add <span class="tt">ModConfig.xml</span> loading C# sources as "in-memory" scripts </p><div class="fragment"><div class="line">&lt;<span class="keywordtype">ModConfig</span>&gt;</div>
 <div class="line">  &lt;<span class="keywordtype">Assembly</span> <span class="keyword">Folder</span>=<span class="stringliteral">&quot;%ModDir%/ClientProject/ClientSource&quot;</span> <span class="keyword">Target</span>=<span class="stringliteral">&quot;Client&quot;</span> <span class="keyword">IsScript</span>=<span class="stringliteral">&quot;true&quot;</span> <span class="keyword">UseInternalAccessName</span>=<span class="stringliteral">&quot;false&quot;</span> /&gt;</div>
 <div class="line">&lt;/<span class="keywordtype">ModConfig</span>&gt;</div>
-</div><!-- fragment --><p>Then you can add project reference to CUI.dll to have ide hints, put it in LocalMods and reload with cl_reloadlua</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+</div><!-- fragment --><p>Then you can add project reference to CUI.dll to have ide hints, put it in LocalMods and reload with cl_reloadlua <br  />
+<br  />
+ </p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
 Min example:</h1>
 <div class="fragment"><div class="line"><span class="keyword">using </span><a class="code hl_namespace" href="namespace_crab_u_i.html">CrabUI</a>;</div>
 <div class="line"> </div>

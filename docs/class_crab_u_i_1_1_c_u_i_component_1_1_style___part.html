@@ -25,6 +25,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="dev.png"/></td>
   <td id="projectalign">
    <div id="projectname">CUI
    </div>
@@ -106,44 +107,20 @@ Inheritance diagram for CrabUI.CUIComponent.Style_Part:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8def554da5cc389d0baf96f5101725dc" id="r_a8def554da5cc389d0baf96f5101725dc"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8def554da5cc389d0baf96f5101725dc">Init</a> ()</td></tr>
-<tr class="memitem:a8ab33fdd09e617a31a5666d565f5eca6" id="r_a8ab33fdd09e617a31a5666d565f5eca6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8ab33fdd09e617a31a5666d565f5eca6">ApplyTypeStyles</a> ()</td></tr>
+<tr class="memitem:aef7f4bee0dc5e8eb9fe934c6cb4d7eda" id="r_aef7f4bee0dc5e8eb9fe934c6cb4d7eda"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aef7f4bee0dc5e8eb9fe934c6cb4d7eda">ReapplyStyles</a> ()</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a83dd40f3fa421a6b9647546b57f7d69f" id="r_a83dd40f3fa421a6b9647546b57f7d69f"><td class="memItemLeft"><a class="el" href="class_crab_u_i_1_1_c_u_i_style_pipeline.html">CUIStylePipeline</a>&#160;</td><td class="memItemRight"><a class="el" href="#a83dd40f3fa421a6b9647546b57f7d69f">TypeSpecificStyles</a><code> [get, set]</code></td></tr>
+<tr class="memitem:a83dd40f3fa421a6b9647546b57f7d69f" id="r_a83dd40f3fa421a6b9647546b57f7d69f"><td class="memItemLeft"><a class="el" href="class_crab_u_i_1_1_c_u_i_style_pipeline.html">CUIStylePipeline</a>&#160;</td><td class="memItemRight"><a class="el" href="#a83dd40f3fa421a6b9647546b57f7d69f">TypeSpecificStyles</a><code> [get]</code></td></tr>
 <tr class="memitem:a556b44cfc5a4f2852bf898ed714157a0" id="r_a556b44cfc5a4f2852bf898ed714157a0"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a556b44cfc5a4f2852bf898ed714157a0">UseReactiveStyles</a><code> [get, set]</code></td></tr>
-<tr class="memitem:af7ab5134d43ccb56708d4ffa211b1243" id="r_af7ab5134d43ccb56708d4ffa211b1243"><td class="memItemLeft">CUIPaletteRank&#160;</td><td class="memItemRight"><a class="el" href="#af7ab5134d43ccb56708d4ffa211b1243">PaletteRank</a><code> [get, set]</code></td></tr>
-<tr class="memitem:a200b0bafaa88f4564e6fd12ddfd97f7d" id="r_a200b0bafaa88f4564e6fd12ddfd97f7d"><td class="memItemLeft"><a class="el" href="class_crab_u_i_1_1_c_u_i_palette_slot.html">CUIPaletteSlot</a>&#160;</td><td class="memItemRight"><a class="el" href="#a200b0bafaa88f4564e6fd12ddfd97f7d">PaletteSlot</a><code> [get, set]</code></td></tr>
+<tr class="memitem:a85c58418ec30367a1922b0ef674a0eba" id="r_a85c58418ec30367a1922b0ef674a0eba"><td class="memItemLeft"><a class="el" href="class_crab_u_i_1_1_c_u_i_palette.html">CUIPalette</a>&#160;</td><td class="memItemRight"><a class="el" href="#a85c58418ec30367a1922b0ef674a0eba">Palette</a><code> [get, set]</code></td></tr>
 <tr class="inherit_header properties_class_crab_u_i_1_1_c_u_i_component_1_1_part"><td colspan="2" onclick="javascript:dynsection.toggleInherit('properties_class_crab_u_i_1_1_c_u_i_component_1_1_part')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Properties inherited from <a class="el" href="class_crab_u_i_1_1_c_u_i_component_1_1_part.html">CrabUI.CUIComponent.Part</a></td></tr>
 <tr class="memitem:ab47f49d90b2cb6709df65c276f06bb56 inherit properties_class_crab_u_i_1_1_c_u_i_component_1_1_part" id="r_ab47f49d90b2cb6709df65c276f06bb56"><td class="memItemLeft">CUIComponent&#160;</td><td class="memItemRight"><a class="el" href="class_crab_u_i_1_1_c_u_i_component_1_1_part.html#ab47f49d90b2cb6709df65c276f06bb56">Self</a><code> [get, set]</code></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_styles_8cs_source.html#l00065">65</a> of file <a class="el" href="_c_u_i_component_8_styles_8cs_source.html">CUIComponent.Styles.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_styles_8cs_source.html#l00058">58</a> of file <a class="el" href="_c_u_i_component_8_styles_8cs_source.html">CUIComponent.Styles.cs</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a8ab33fdd09e617a31a5666d565f5eca6" name="a8ab33fdd09e617a31a5666d565f5eca6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ab33fdd09e617a31a5666d565f5eca6">&#9670;&#160;</a></span>ApplyTypeStyles()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CrabUI.CUIComponent.Style_Part.ApplyTypeStyles </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_styles_8cs_source.html#l00129">129</a> of file <a class="el" href="_c_u_i_component_8_styles_8cs_source.html">CUIComponent.Styles.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  130</span>      {</div>
-<div class="line"><span class="lineno">  131</span>        TypeSpecificStyles.Apply(Self);</div>
-<div class="line"><span class="lineno">  132</span>        Self.PersonalStyle?.Apply(Self);</div>
-<div class="line"><span class="lineno">  133</span>      }</div>
-</div><!-- fragment -->
-</div>
-</div>
 <a id="a8def554da5cc389d0baf96f5101725dc" name="a8def554da5cc389d0baf96f5101725dc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8def554da5cc389d0baf96f5101725dc">&#9670;&#160;</a></span>Init()</h2>
 
@@ -159,22 +136,45 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_styles_8cs_source.html#l00118">118</a> of file <a class="el" href="_c_u_i_component_8_styles_8cs_source.html">CUIComponent.Styles.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  119</span>      {</div>
-<div class="line"><span class="lineno">  120</span>        _PaletteSlot = <span class="keyword">new</span> CUIPaletteSlot() { Palette = CUIPalette.Default };<span class="comment">//CUICore.Palettes.Primary;</span></div>
-<div class="line"><span class="lineno">  121</span>        TypeSpecificStyles = CUICore.Styles.GetOrCreatePipeline(Self.GetType());</div>
-<div class="line"><span class="lineno">  122</span> </div>
-<div class="line"><span class="lineno">  123</span>        Self.InitStyle();</div>
-<div class="line"><span class="lineno">  124</span>        ApplyTypeStyles();</div>
-<div class="line"><span class="lineno">  125</span> </div>
-<div class="line"><span class="lineno">  126</span>        UseReactiveStyles = CUICore.Styles.UseReactiveStyles;</div>
-<div class="line"><span class="lineno">  127</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_styles_8cs_source.html#l00105">105</a> of file <a class="el" href="_c_u_i_component_8_styles_8cs_source.html">CUIComponent.Styles.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  106</span>      {</div>
+<div class="line"><span class="lineno">  107</span>        _Palette = CUICore.Palettes.Primary;</div>
+<div class="line"><span class="lineno">  108</span>        TypeSpecificStyles = CUICore.Styles.GetOrCreatePipeline(Self.GetType());</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>        Self.InitStyle(); <span class="comment">// 1 time</span></div>
+<div class="line"><span class="lineno">  111</span>        ReapplyStyles();</div>
+<div class="line"><span class="lineno">  112</span> </div>
+<div class="line"><span class="lineno">  113</span>        UseReactiveStyles = CUICore.Styles.UseReactiveStyles;</div>
+<div class="line"><span class="lineno">  114</span>      }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aef7f4bee0dc5e8eb9fe934c6cb4d7eda" name="aef7f4bee0dc5e8eb9fe934c6cb4d7eda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef7f4bee0dc5e8eb9fe934c6cb4d7eda">&#9670;&#160;</a></span>ReapplyStyles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CrabUI.CUIComponent.Style_Part.ReapplyStyles </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_styles_8cs_source.html#l00116">116</a> of file <a class="el" href="_c_u_i_component_8_styles_8cs_source.html">CUIComponent.Styles.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  117</span>      {</div>
+<div class="line"><span class="lineno">  118</span>        TypeSpecificStyles.Apply(Self);</div>
+<div class="line"><span class="lineno">  119</span>        Self.PersonalStyle?.Apply(Self);</div>
+<div class="line"><span class="lineno">  120</span>      }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <a name="doc-property-members" id="doc-property-members"></a><h2 id="header-doc-property-members" class="groupheader">Property Documentation</h2>
-<a id="af7ab5134d43ccb56708d4ffa211b1243" name="af7ab5134d43ccb56708d4ffa211b1243"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af7ab5134d43ccb56708d4ffa211b1243">&#9670;&#160;</a></span>PaletteRank</h2>
+<a id="a85c58418ec30367a1922b0ef674a0eba" name="a85c58418ec30367a1922b0ef674a0eba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85c58418ec30367a1922b0ef674a0eba">&#9670;&#160;</a></span>Palette</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -183,7 +183,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">CUIPaletteRank CrabUI.CUIComponent.Style_Part.PaletteRank</td>
+          <td class="memname"><a class="el" href="class_crab_u_i_1_1_c_u_i_palette.html">CUIPalette</a> CrabUI.CUIComponent.Style_Part.Palette</td>
         </tr>
       </table>
   </td>
@@ -193,55 +193,20 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_styles_8cs_source.html#l00089">89</a> of file <a class="el" href="_c_u_i_component_8_styles_8cs_source.html">CUIComponent.Styles.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   90</span>      {</div>
-<div class="line"><span class="lineno">   91</span>        <span class="keyword">get</span> =&gt; _PaletteRank;</div>
-<div class="line"><span class="lineno">   92</span>        <span class="keyword">set</span></div>
-<div class="line"><span class="lineno">   93</span>        {</div>
-<div class="line"><span class="lineno">   94</span>          _PaletteRank = value;</div>
-<div class="line"><span class="lineno">   95</span>          PaletteSlot = CUICore.Palettes.FromRank(value);</div>
-<div class="line"><span class="lineno">   96</span>        }</div>
-<div class="line"><span class="lineno">   97</span>      }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a200b0bafaa88f4564e6fd12ddfd97f7d" name="a200b0bafaa88f4564e6fd12ddfd97f7d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a200b0bafaa88f4564e6fd12ddfd97f7d">&#9670;&#160;</a></span>PaletteSlot</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_crab_u_i_1_1_c_u_i_palette_slot.html">CUIPaletteSlot</a> CrabUI.CUIComponent.Style_Part.PaletteSlot</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_styles_8cs_source.html#l00100">100</a> of file <a class="el" href="_c_u_i_component_8_styles_8cs_source.html">CUIComponent.Styles.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  101</span>      {</div>
-<div class="line"><span class="lineno">  102</span>        <span class="keyword">get</span> =&gt; _PaletteSlot;</div>
-<div class="line"><span class="lineno">  103</span>        <span class="keyword">set</span></div>
-<div class="line"><span class="lineno">  104</span>        {</div>
-<div class="line"><span class="lineno">  105</span>          <span class="keywordflow">if</span> (_PaletteSlot == value) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  106</span> </div>
-<div class="line"><span class="lineno">  107</span>          _PaletteSlot?.Changed.Remove(Self);</div>
-<div class="line"><span class="lineno">  108</span> </div>
-<div class="line"><span class="lineno">  109</span>          _PaletteSlot = value;</div>
-<div class="line"><span class="lineno">  110</span> </div>
-<div class="line"><span class="lineno">  111</span>          <span class="keywordflow">if</span> (UseReactiveStyles)</div>
-<div class="line"><span class="lineno">  112</span>          {</div>
-<div class="line"><span class="lineno">  113</span>            _PaletteSlot?.Changed.Add(Self, ApplyTypeStyles);</div>
-<div class="line"><span class="lineno">  114</span>          }</div>
-<div class="line"><span class="lineno">  115</span>        }</div>
-<div class="line"><span class="lineno">  116</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_styles_8cs_source.html#l00088">88</a> of file <a class="el" href="_c_u_i_component_8_styles_8cs_source.html">CUIComponent.Styles.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   89</span>      {</div>
+<div class="line"><span class="lineno">   90</span>        <span class="keyword">get</span> =&gt; _Palette;</div>
+<div class="line"><span class="lineno">   91</span>        <span class="keyword">set</span></div>
+<div class="line"><span class="lineno">   92</span>        {</div>
+<div class="line"><span class="lineno">   93</span>          <span class="keywordflow">if</span> (_Palette == value) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>          <span class="keywordflow">if</span> (_Palette != <span class="keyword">null</span>) _Palette.Changed -= ReapplyStyles;</div>
+<div class="line"><span class="lineno">   96</span>          _Palette = value;</div>
+<div class="line"><span class="lineno">   97</span>          <span class="keywordflow">if</span> (UseReactiveStyles &amp;&amp; _Palette != <span class="keyword">null</span>) _Palette.Changed += ReapplyStyles;</div>
+<div class="line"><span class="lineno">   98</span> </div>
+<div class="line"><span class="lineno">   99</span>          ReapplyStyles();</div>
+<div class="line"><span class="lineno">  100</span>        }</div>
+<div class="line"><span class="lineno">  101</span>      }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -260,13 +225,13 @@ Properties</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel get">get</span><span class="mlabel set">set</span></span>  </td>
+<span class="mlabels"><span class="mlabel get">get</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_styles_8cs_source.html#l00067">67</a> of file <a class="el" href="_c_u_i_component_8_styles_8cs_source.html">CUIComponent.Styles.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   67</span>{ <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_styles_8cs_source.html#l00060">60</a> of file <a class="el" href="_c_u_i_component_8_styles_8cs_source.html">CUIComponent.Styles.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   60</span>{ <span class="keyword">get</span>; <span class="keyword">private</span> <span class="keyword">set</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -290,24 +255,30 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_styles_8cs_source.html#l00070">70</a> of file <a class="el" href="_c_u_i_component_8_styles_8cs_source.html">CUIComponent.Styles.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   71</span>      {</div>
-<div class="line"><span class="lineno">   72</span>        <span class="keyword">get</span> =&gt; _UseReactiveStyles;</div>
-<div class="line"><span class="lineno">   73</span>        <span class="keyword">set</span></div>
-<div class="line"><span class="lineno">   74</span>        {</div>
-<div class="line"><span class="lineno">   75</span>          _UseReactiveStyles = value;</div>
-<div class="line"><span class="lineno">   76</span>          <span class="keywordflow">if</span> (UseReactiveStyles)</div>
-<div class="line"><span class="lineno">   77</span>          {</div>
-<div class="line"><span class="lineno">   78</span>            TypeSpecificStyles.Changed.Add(Self, ApplyTypeStyles);</div>
-<div class="line"><span class="lineno">   79</span>            _PaletteSlot?.Changed.Add(Self, ApplyTypeStyles);</div>
-<div class="line"><span class="lineno">   80</span>          }</div>
-<div class="line"><span class="lineno">   81</span>          <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   82</span>          {</div>
-<div class="line"><span class="lineno">   83</span>            TypeSpecificStyles.Changed.Remove(Self);</div>
-<div class="line"><span class="lineno">   84</span>            _PaletteSlot?.Changed.Remove(Self);</div>
-<div class="line"><span class="lineno">   85</span>          }</div>
-<div class="line"><span class="lineno">   86</span>        }</div>
-<div class="line"><span class="lineno">   87</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="_c_u_i_component_8_styles_8cs_source.html#l00063">63</a> of file <a class="el" href="_c_u_i_component_8_styles_8cs_source.html">CUIComponent.Styles.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>      {</div>
+<div class="line"><span class="lineno">   65</span>        <span class="keyword">get</span> =&gt; _UseReactiveStyles;</div>
+<div class="line"><span class="lineno">   66</span>        <span class="keyword">set</span></div>
+<div class="line"><span class="lineno">   67</span>        {</div>
+<div class="line"><span class="lineno">   68</span>          <span class="keywordflow">if</span> (value == _UseReactiveStyles) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>          <span class="keywordtype">bool</span> prevValue = _UseReactiveStyles;</div>
+<div class="line"><span class="lineno">   71</span>          _UseReactiveStyles = value;</div>
+<div class="line"><span class="lineno">   72</span> </div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>          <span class="keywordflow">if</span> (!prevValue &amp;&amp; value)</div>
+<div class="line"><span class="lineno">   75</span>          {</div>
+<div class="line"><span class="lineno">   76</span>            TypeSpecificStyles.Changed += ReapplyStyles;</div>
+<div class="line"><span class="lineno">   77</span>            Palette.Changed += ReapplyStyles;</div>
+<div class="line"><span class="lineno">   78</span>          }</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>          <span class="keywordflow">if</span> (prevValue &amp;&amp; !value)</div>
+<div class="line"><span class="lineno">   81</span>          {</div>
+<div class="line"><span class="lineno">   82</span>            TypeSpecificStyles.Changed -= ReapplyStyles;</div>
+<div class="line"><span class="lineno">   83</span>            Palette.Changed -= ReapplyStyles;</div>
+<div class="line"><span class="lineno">   84</span>          }</div>
+<div class="line"><span class="lineno">   85</span>        }</div>
+<div class="line"><span class="lineno">   86</span>      }</div>
 </div><!-- fragment -->
 </div>
 </div>

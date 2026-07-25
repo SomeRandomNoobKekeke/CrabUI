@@ -16,14 +16,15 @@ namespace CrabUI
   {
     public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIButton>((c) =>
     {
-      c.MasterColor = c.Palette.Colors["button"];
-      c.TextColor = c.Palette.Colors["text"];
+      c.MasterColor = c.Palette["main"];
+      c.TextColor = c.Palette["text"];
     });
 
     protected override void InitStyle()
     {
       base.InitStyle();
       Padding = new(4, 2, 4, 2);
+      Background.Sprite = CUIDefaultSprite.VignetteLight;
     }
 
     [CUISerializableProp]
@@ -37,7 +38,7 @@ namespace CrabUI
     {
       set
       {
-        InactiveColor = value.MultOpaque(0.7f);
+        InactiveColor = value.MultOpaque(0.8f);
         MouseOverColor = value.MultOpaque(0.9f);
         MousePressedColor = value;
         DetermineColor();

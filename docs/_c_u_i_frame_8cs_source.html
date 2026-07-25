@@ -25,6 +25,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="dev.png"/></td>
   <td id="projectalign">
    <div id="projectname">CUI
    </div>
@@ -110,8 +111,8 @@ $(function(){initNavTree('_c_u_i_frame_8cs_source.html','',''); });
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  {</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">public</span> <span class="keyword">static</span> <a class="code hl_interface" href="interface_crab_u_i_1_1_i_c_u_i_style.html">ICUIStyle</a> DefaultStyle { <span class="keyword">get</span>; } = <span class="keyword">new</span> CUIDefaultStyle&lt;CUIFrame&gt;((c) =&gt;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>      c.Background.Color = c.Palette.Colors[<span class="stringliteral">&quot;frame&quot;</span>];</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>      c.Borders.Color = c.Palette.Colors[<span class="stringliteral">&quot;border&quot;</span>];</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>      c.Background.Color = Color.Lerp(c.Palette[<span class="stringliteral">&quot;back&quot;</span>], c.Palette[<span class="stringliteral">&quot;main&quot;</span>], 0.2f);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>      c.Borders.Color = c.Palette[<span class="stringliteral">&quot;main&quot;</span>];</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    });</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> InitStyle()</div>

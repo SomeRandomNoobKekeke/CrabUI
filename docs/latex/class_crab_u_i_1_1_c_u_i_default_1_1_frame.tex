@@ -230,8 +230,6 @@ bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ac809b22336545d5265
 \item 
 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_string_dictionary___part}{String\+Dictionary\+\_\+\+Part}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ae7f438b0b698ceed6ed4a0237df35846}{As\+\_\+\+String\+Dictionary}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \item 
-CUIPalette\+Rank \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a63bb7a754341f29b8bdd9669aeb56a07}{Palette\+Rank}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
-\item 
 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_palette}{CUIPalette}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a7744e057d505b5a5f1f0621b02d058b2}{Palette}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
 \item 
 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_palette}{CUIPalette}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ad5ceae4216de2a994b4083ca7ff03f0d}{Deep\+Palette}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
@@ -451,7 +449,7 @@ Definition at line \doxymbox{\hyperlink{_frame_8cs_source_l00021}{21}} of file \
 \DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ base() }
 \DoxyCodeLine{00022\ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ Anchor\ =\ CUIAnchor.Center;}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ VisualChildrenOrder\ =\ CUIDirection.Reverse;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ VisualChildrenOrder\ =\ CUIDirection.Reverse;}}
 \DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Absolute\ =\ new(w:\ 400,\ h:\ 600);}}
 \DoxyCodeLine{00026\ }
 \DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}]\ =\ \textcolor{keyword}{new}\ CUIVerticalList() }
@@ -462,21 +460,25 @@ Definition at line \doxymbox{\hyperlink{_frame_8cs_source_l00021}{21}} of file \
 \DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}handle"{}}]\ =\ \textcolor{keyword}{new}\ CUIHorizontalList() }
 \DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ Absolute\ =\ \textcolor{keyword}{new}\ CUINullRect(h:\ ResizeHandle.DefaultSize.Y),}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ Style\ =\ (c)\ =>}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ c.Background.Color\ =\ c.Palette.Colors[\textcolor{stringliteral}{"{}border"{}}];}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \},}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}handle"{}}][\textcolor{stringliteral}{"{}caption"{}}]\ =\ Caption\ =\ \textcolor{keyword}{new}\ CUITextBlock() }
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ Flex\ =\ 1,}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}handle"{}}][\textcolor{stringliteral}{"{}closebutton"{}}]\ =\ \textcolor{keyword}{new}\ CUICloseButton() }
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ CrossRelative\ =\ \textcolor{keyword}{new}\ CUINullRect(w:\ 1),}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ Background\ =\ \{\ Color\ =\ Palette.Colors[\textcolor{stringliteral}{"{}border"{}}]\ \},}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ Background\ =\ \{\ Sprite\ =\ CUIDefaultSprite.DimmedVertical\ \},}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ Style\ =\ (c)\ =>}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ c.Background.Color\ =\ c.Palette[\textcolor{stringliteral}{"{}main"{}}];}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}handle"{}}][\textcolor{stringliteral}{"{}caption"{}}]\ =\ Caption\ =\ \textcolor{keyword}{new}\ CUITextBlock() }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ Flex\ =\ 1,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}[\textcolor{stringliteral}{"{}layout"{}}][\textcolor{stringliteral}{"{}handle"{}}][\textcolor{stringliteral}{"{}closebutton"{}}]\ =\ \textcolor{keyword}{new}\ CUICloseButton() }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ Background\ =\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ Sprite\ =\ CUIDefaultSprite.DimmedVertical,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ Color\ =\ Palette[\textcolor{stringliteral}{"{}main"{}}],\ \textcolor{comment}{//HACK}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ CrossRelative\ =\ \textcolor{keyword}{new}\ CUINullRect(w:\ 1),}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_default_1_1_frame_a3fbd3790cec9a3c72c735523444f8df5}\index{CrabUI.CUIDefault.Frame@{CrabUI.CUIDefault.Frame}!Frame@{Frame}}
@@ -487,14 +489,14 @@ Crab\+UI.\+CUIDefault.\+Frame.\+Frame (\begin{DoxyParamCaption}\item[{string}]{c
 
 
 
-Definition at line \doxymbox{\hyperlink{_frame_8cs_source_l00051}{51}} of file \doxymbox{\hyperlink{_frame_8cs_source}{Frame.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_frame_8cs_source_l00055}{55}} of file \doxymbox{\hyperlink{_frame_8cs_source}{Frame.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \textcolor{keyword}{this}()}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ Caption.Text\ =\ caption;}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \textcolor{keyword}{this}()}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ Caption.Text\ =\ caption;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \}}
 
 \end{DoxyCode}
 

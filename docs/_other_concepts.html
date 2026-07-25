@@ -25,6 +25,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="dev.png"/></td>
   <td id="projectalign">
    <div id="projectname">CUI
    </div>
@@ -93,16 +94,16 @@ $(function(){initNavTree('_other_concepts.html','',''); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md__docs_sources_2_sources_23_01_other_01_concepts"></a></p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
 CUIInfrastructure</h1>
 <p>Most CUI stuff is located in CUICore <br  />
  CUICore is a passive isolated state machine <br  />
  It doesn't know about the game and has to be run by CUIRunners via handles <br  />
 </p>
 <p>There could be various runners, e.g. Solo runner runs code in this mod, Master runner scans other mods, test runner can feed it with fake data and concurrent runner can run CUICore in a separate thread</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md19"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
 Then why are you putting solo runner in CUI master package?</h3>
-<p>A eto, bleh.gif</p>
+<p><a href="https://tenor.com/ru/view/ah-eto-bleh-anime-bleh-gif-26784876">Ah, eto... bleh.gif</a></p>
 <p>Master runner isn't done yet, and there's not much to scan in other packages yet <br  />
  Current SoloRunner just finds all CUIComponents and ISerializable in assembly that called CUI.Start <br  />
  Should work from master package too</p>
@@ -114,7 +115,10 @@ Then why are you putting solo runner in CUI master package?</h3>
 <p>CUI and CUICore classes have static members for accessing core and runners <br  />
  Why 2? CUI is supposed to be used by you, and CUICore is supposed to be called by stuff from inside CUICore <br  />
  Also stuff that calls CUICore assumes that it's already activated</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md20"></a>
+<p><br  />
+<br  />
+ </p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md19"></a>
 VisualComponents / VisualUnits</h1>
 <p>Unit of drawing / event handling in CUI is VisualUnits <br  />
 </p>
@@ -126,13 +130,16 @@ VisualComponents / VisualUnits</h1>
  Then it draws them and dispatches events to them <br  />
  Host VisualComponent typically listens to events on its VisualUnits</p>
 <p>Also VisualComponents can yield VisualBounds in VisualSplit, they are commands for ChainDrawer to change its state e.g. change scissor rect, sampler state or apply camera transformation before drawing</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md21"></a>
+<p><br  />
+<br  />
+ </p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md20"></a>
 Serialization (wip, mostly borked)</h1>
 <p>All components are serializable to / from xml with </p><div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> CUIComponent CUIComponent.Deserialize(XElement element)</div>
 <div class="line"><span class="keyword">public</span> XElement Serialize()</div>
 </div><!-- fragment --><p>Also CUIComponents can be accessed as </p><div class="fragment"><div class="line"><span class="keyword">public</span> IDictionary&lt;string, string&gt; As_StringDictionary { <span class="keyword">get</span>; }</div>
 <div class="line"><span class="keyword">public</span> IDictionary&lt;string, object&gt; As_Dictionary { <span class="keyword">get</span>; }</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md22"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md21"></a>
 path resolution</h2>
 <p>When loading textures or xml prefabs CUI is aware of mod that called it and prefab file being loaded</p>
 <p>So it checks for textures to load at:</p><ul>
@@ -147,11 +154,11 @@ path resolution</h2>
 <li>Relative path to mod folder</li>
 <li>Relative path to game folder</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md23"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md22"></a>
 Serialization modes</h2>
 <p>There's a prop </p><div class="fragment"><div class="line"><span class="keyword">public</span> CUISerializationMode CUIComponent.SerializationMode { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment --><p> it's one of </p><div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">enum</span> CUISerializationMode { Replace, Merge, Ignore }</div>
-</div><!-- fragment --><p> It affects how child will be deserialized when there is already a child with the same name:</p><ul>
+</div><!-- fragment --><p> It affects how child will be deserialized if there is already a child with the same name:</p><ul>
 <li>Replace - create new child and replace existing</li>
 <li>Merge - Props will be copied to existing child</li>
 <li>Ignore - Will keep existing child intact</li>
@@ -159,13 +166,19 @@ Serialization modes</h2>
 <p>You can prevent child from being serialized with </p><div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keywordtype">bool</span> CUIComponent.Serializable { <span class="keyword">get</span>; <span class="keyword">set</span>; } = <span class="keyword">true</span>;</div>
 </div><!-- fragment --><p> You can override these in derived components: </p><div class="fragment"><div class="line"><span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> CUIComponent.BeforeSerialization() { } <span class="comment">// - Happens before deserialization of children</span></div>
 <div class="line"><span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> CUIComponent.AfterSerialization() { } <span class="comment">// - Happens after deserialization of children</span></div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md24"></a>
+</div><!-- fragment --><p><br  />
+<br  />
+ </p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md23"></a>
 Component States</h1>
 <p>you can save / restore component state with</p>
 <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keywordtype">void</span> SaveState(<span class="keywordtype">string</span> name)</div>
 <div class="line"><span class="keyword">public</span> <span class="keywordtype">void</span> RestoreState(<span class="keywordtype">string</span> name)</div>
 </div><!-- fragment --><p>there's a dict of MemorizedStates and it uses serialization behind the scenes</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md25"></a>
+<p><br  />
+<br  />
+ </p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md24"></a>
 Focus (wip, mostly borked)</h1>
 <p>In vanilla there's </p><div class="fragment"><div class="line"><span class="keyword">public</span> IKeyboardSubscriber Barotrauma.GUI.KeyboardDispatcher.Subscriber { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 </div><!-- fragment --><p> new subscriber gains focus, old one loses it</p>
@@ -181,7 +194,10 @@ Focus (wip, mostly borked)</h1>
 </div><!-- fragment --><p>CUI can steal focus from vanilla KeyboardDispatcher and simulate focus on some dummy IKeyboardSubscriber <br  />
  It's barely tested and i'm sure it's borked <br  />
  Also there's a lot of actions in vanilla that just ignores KeyboardDispatcher.Subscriber, idk how to block those</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md26"></a>
+<p><br  />
+<br  />
+ </p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md25"></a>
 Sprites / Textures</h1>
 <p>CUICore can't load textures on its own, it requests them from CUIRunner <br  />
 </p>
@@ -231,21 +247,66 @@ Sprites / Textures</h1>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">public</span> Color[] Data =&gt; ShouldBufferData ? DataBuffer : Texture.Data;</div>
 <div class="line">}</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md27"></a>
-Styles and palettes (wip, mostly borked)</h1>
-<p>ICUIStyle is something that can be applied to component and change its state <br  />
- It can be a function, a dict of props or xml prefab <br  />
+</div><!-- fragment --><p><br  />
+<br  />
+ </p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md26"></a>
+Styles and Palettes</h1>
+<ul>
+<li>Styles are actions that can be applied to components to change their props</li>
+<li>Palettes are tables of values for styles</li>
+</ul>
+<p>Styles and palettes are reactive so if you change them all affected components will reapply their styles</p>
+<p>CUIComponent types can have: </p><div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> ICUIStyle DefaultStyle { <span class="keyword">get</span>; } = <span class="keyword">new</span> CUIDefaultStyle&lt;CUIFrame&gt;((c) =&gt;{ ... });</div>
+<div class="line"><span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> InitStyle() {}</div>
+</div><!-- fragment --><p>CUIComponents have: </p><div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">virtual</span> Action&lt;CUIComponent&gt; CUIComponent.Style { <span class="keyword">set</span>; } <span class="comment">// - sets PersonalStyle to CUIActionStyle</span></div>
+<div class="line"><span class="keyword">public</span> ICUIStyle CUIComponent.PersonalStyle { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><span class="keyword">public</span> CUIPalette CUIComponent.Palette { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><span class="keyword">public</span> CUIPalette CUIComponent.DeepPalette { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - This sets palette recursively to all children</span></div>
+<div class="line"><span class="keyword">public</span> <span class="keywordtype">bool</span> UseReactiveStyles { <span class="keyword">get</span>; <span class="keyword">set</span>; } <span class="comment">// - It defaults to CUICore.Styles.UseReactiveStyles</span></div>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md27"></a>
+Where to get palettes:</h3>
+<p>There are 4 global palettes in CUICore </p><div class="fragment"><div class="line"><span class="keyword">public</span> CUIPalette CUICore.Palettes.Primary { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><span class="keyword">public</span> CUIPalette CUICore.Palettes.Secondary { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><span class="keyword">public</span> CUIPalette CUICore.Palettes.Tertiary { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><span class="keyword">public</span> CUIPalette CUICore.Palettes.Quaternary { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+</div><!-- fragment --><p>Also you can create palettes from color </p><div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> CUIPalette CUIPalette.FromColor(Color color)</div>
+</div><!-- fragment --><p>CUIPalettes are IDictionary&lt;string, Color&gt; so you can change them manually in theory</p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md28"></a>
+About Palette colors:</h3>
+<p>Those are key reference colors that all components can use to construct colors they need to paint themselves</p>
+<p>Basically if you're making a component and want to use a color that you can't construct from already existing you should add it to palette <br  />
+ And then ask yourself what if i set all colors to random will it still look good? If not then there's some hidden interconnection you're missing</p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md29"></a>
+How styles are applied on object creation:</h3>
+<ol type="1">
+<li>Properties are initialized before constructor</li>
+<li>Props can be set in constructor</li>
+<li>InitStyle() method is runned, once</li>
+<li>All DefaultStyles from lineage of types are applied</li>
+<li>Personal style applied</li>
+<li>Props you set in object initializer, if you set personal style it will also be applied on set</li>
+</ol>
+<p>If you change palette or styles later this happens:</p><ol type="1">
+<li>All DefaultStyles from lineage of types are applied</li>
+<li>Personal style applied</li>
+</ol>
+<p>So props you set manually or in constructor will be overriden <br  />
 </p>
-<p>Many CUIComponent types have attached DefaultStyles <br  />
- All CUIComponent scanned on CUI.Start() and default styles from lineage of CUIComponents are combined in CUIStylePipelines <br  />
- Which then applied on component creation</p>
-<p>There's also CUIPalettes, they are dicts of typically used colors, sizes etc <br  />
- There's global Primary, Secondary palettes in CUICore.Styles and components can have personal palettes</p>
-<p>Styles typically use values from component palette <br  />
-</p>
-<p>CUIStylePipelines and palettes are reactive, so changin styles or palette will reaplly CUIStylePipelines</p>
-<p>So if you need some props to be resistant to palette changes put them in personal styles</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md28"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md30"></a>
+Experimental CUIContextStyle&lt;T&gt;</h3>
+<p>It's a style that is added to type styles pipeline on creation and removed on dispose</p>
+<p>You can use it to apply same actions to a group of created components</p>
+<div class="fragment"><div class="line"><span class="keyword">using</span> (<span class="keyword">new</span> CUIContextStyle&lt;CUIButton&gt;(btn =&gt; btn.Background.Color = Color.Green))</div>
+<div class="line">{</div>
+<div class="line">  <span class="keyword">new</span> CUIButton(<span class="stringliteral">&quot;Green&quot;</span>);</div>
+<div class="line">  <span class="keyword">new</span> CUIButton(<span class="stringliteral">&quot;Green&quot;</span>);</div>
+<div class="line">}</div>
+<div class="line"><span class="keyword">new</span> CUIButton(<span class="stringliteral">&quot;Not Green&quot;</span>);</div>
+</div><!-- fragment --><p><br  />
+<br  />
+ </p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md31"></a>
 Animations</h1>
 <p>All animations in CUI are based on objects AnimationCore</p>
 <p>AnimationCore is passive state machine, it has tons of settings, exposes Lambda [0..1] and can be updated manually or by CUICore.AnimationPlayer</p>
@@ -261,7 +322,10 @@ Animations</h1>
 <div class="line">}</div>
 </div><!-- fragment --><p>Currently all animations are external, so you have to animate some value and then manually update some prop on component <br  />
  There's no AnimatedProp yet</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md29"></a>
+<p><br  />
+<br  />
+ </p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md32"></a>
 RoutableCommands</h1>
 <p>All CUIComponents can send such RoutableCommands up and down component tree to communicate with each other </p><div class="fragment"><div class="line"><span class="keyword">public</span> record RoutableCommand(<span class="keywordtype">string</span> name, <span class="keywordtype">object</span> data);</div>
 </div><!-- fragment --> <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">partial class </span>CUIComponent</div>
@@ -283,8 +347,8 @@ RoutableCommands</h1>
 <p>For example CUICloseButton emits "close" event up to the nearest CUIFrame <br  />
  When CUIFrame recieves "close" event it closes <br  />
  It doesn't matter where the close button is and i don't have to pass close button to the frame so it could subscribe to its events</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md30"></a>
-Debug</h1>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md33"></a>
+Debug (almost non existent)</h1>
 <p>Most of the time i debug with just CUI.Logger, but if it's too complex or i know i'll need the same data later is add DebugNodes</p>
 <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>DebugHub : DebugRelayBase</div>
 <div class="line">{</div>

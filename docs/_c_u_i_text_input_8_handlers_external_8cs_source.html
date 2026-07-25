@@ -25,6 +25,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="dev.png"/></td>
   <td id="projectalign">
    <div id="projectname">CUI
    </div>
@@ -181,16 +182,17 @@ $(function(){initNavTree('_c_u_i_text_input_8_handlers_external_8cs_source.html'
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keyword">private</span> <span class="keywordtype">void</span> HandleFocusLost()</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    {</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>      MainComponent?.GlobalEvents.AfterUpdate.Remove(HandleUpdate);</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>      UpdateVisualState();</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    }</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keyword">private</span> <span class="keywordtype">void</span> HandleUpdate()</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    {</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>      CaretIsHidden = (Timing.TotalTime - LastSomethingHappenedTime) % CaretBlinkInterval &gt; 0.5 * CaretBlinkInterval;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>      CaretTexture.Visible = Focused &amp;&amp; SelectionEmpty &amp;&amp; !CaretIsHidden;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    }</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  }</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>}</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>      ClearSelection();</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>      UpdateVisualState();</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keyword">private</span> <span class="keywordtype">void</span> HandleUpdate()</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>      CaretIsHidden = (Timing.TotalTime - LastSomethingHappenedTime) % CaretBlinkInterval &gt; 0.5 * CaretBlinkInterval;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>      CaretTexture.Visible = Focused &amp;&amp; SelectionEmpty &amp;&amp; !CaretIsHidden;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>}</div>
 <div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_text_input_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_text_input.html">CrabUI.CUITextInput</a></div><div class="ttdef"><b>Definition</b> <a href="_client_source_2_____generated_2_c_u_i_text_input_8cs_source.html#l00009">CUITextInput.cs:10</a></div></div>
 <div class="ttc" id="anamespace_c_u_i_code_generator_html"><div class="ttname"><a href="namespace_c_u_i_code_generator.html">CUICodeGenerator</a></div><div class="ttdef"><b>Definition</b> <a href="_attributes_8cs_source.html#l00008">Attributes.cs:9</a></div></div>
 <div class="ttc" id="anamespace_crab_u_i_html"><div class="ttname"><a href="namespace_crab_u_i.html">CrabUI</a></div><div class="ttdef"><b>Definition</b> <a href="_____generated_2_c_u_i_component_8cs_source.html#l00007">CUIComponent.cs:8</a></div></div>

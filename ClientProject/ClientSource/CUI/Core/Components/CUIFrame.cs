@@ -15,8 +15,8 @@ namespace CrabUI
   {
     public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIFrame>((c) =>
     {
-      c.Background.Color = c.Palette.Colors["frame"];
-      c.Borders.Color = c.Palette.Colors["border"];
+      c.Background.Color = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.2f);
+      c.Borders.Color = c.Palette["main"];
     });
 
     protected override void InitStyle()

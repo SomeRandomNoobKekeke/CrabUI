@@ -1,35 +1,105 @@
 \doxysection{Crab\+UI.\+CUIPalette Class Reference}
 \hypertarget{class_crab_u_i_1_1_c_u_i_palette}{}\label{class_crab_u_i_1_1_c_u_i_palette}\index{CrabUI.CUIPalette@{CrabUI.CUIPalette}}
+Inheritance diagram for Crab\+UI.\+CUIPalette:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_crab_u_i_1_1_c_u_i_palette}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override string \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_palette_a877313461bbe34fb8840ef5372f9440e}{To\+String}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_crab_u_i_1_1_reactive_dict-2-g}{Crab\+UI.\+Reactive\+Dict$<$ TKey, TValue $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_reactive_dict-2-g_a96ef9cb33bfd54a8154555bfd3773a81}{Swap}} (Reactive\+Dict$<$ TKey, TValue $>$ other)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_reactive_dict-2-g_a9b9f9a0420932d1ba33cfee4b35de4af}{Add}} (TKey key, TValue value)
+\item 
+void \doxymbox{\hyperlink{class_crab_u_i_1_1_reactive_dict-2-g_a52e0c7038898b658d56ae1327ade0798}{Clear}} ()
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_reactive_dict-2-g_a976425695b5b6c9b477719195fc5f44b}{Contains\+Key}} (TKey key)
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_reactive_dict-2-g_a802ce5c34d0347b793e4af3c23e56271}{Remove}} (TKey key)
+\item 
+bool \doxymbox{\hyperlink{class_crab_u_i_1_1_reactive_dict-2-g_adfaca0cc2c28ad08e31384a811433662}{Try\+Get\+Value}} (TKey key, out TValue value)
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+static \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_palette}{CUIPalette}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_palette_ae73f8fc9c8710f7f9c68b60803acfb57}{From\+Color}} (Color color)
+\item 
 static void \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_palette_ae167ab5b04826f63eb66b8403aa5acbe}{Preview}} ()
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Properties}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Properties inherited from \doxymbox{\hyperlink{class_crab_u_i_1_1_reactive_dict-2-g}{Crab\+UI.\+Reactive\+Dict$<$ TKey, TValue $>$}}}
 \begin{DoxyCompactItemize}
 \item 
-Safe\+Dict$<$ string, Color $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_palette_af9f8a5721349df22bc5246f289cc9d4f}{Colors}} = new()\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+TValue \doxymbox{\hyperlink{class_crab_u_i_1_1_reactive_dict-2-g_a3f35a40b7950204b3854b940fec7e66e}{this\+[\+TKey key]\+}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
 \item 
-static \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_palette}{CUIPalette}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_palette_ac443fcba5e685041425a08933880e3ea}{Default}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
-\begin{DoxyCompactList}\small\item\em I have no idea how many colors is required, my plan is this:\+ I\textquotesingle{}ll create new color for each use case If i see that some colors correlate i\textquotesingle{}ll try to generalize them. \end{DoxyCompactList}\item 
-static \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_palette}{CUIPalette}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_palette_a0b54a51be3bdf9ba093c377875882d37}{Red}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+ICollection$<$ TKey $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_reactive_dict-2-g_a26718a7882f6d4e4698902e6e59d20b5}{Keys}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \item 
-static \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_palette}{CUIPalette}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_palette_a323b7fe41f29625f32deceff80388a19}{Blue}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+ICollection$<$ TValue $>$ \doxymbox{\hyperlink{class_crab_u_i_1_1_reactive_dict-2-g_a9d523f37903e02578a8184658aaf1334}{Values}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
 \item 
-static \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_palette}{CUIPalette}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_palette_adfaecbc0e79fbbd967caebec25706486}{Green}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+int \doxymbox{\hyperlink{class_crab_u_i_1_1_reactive_dict-2-g_a86d73608874dea23f4dc162139f1b9f5}{Count}}\hspace{0.3cm}{\ttfamily  \+[get]\+}
+\end{DoxyCompactItemize}
+\doxysubsection*{Events inherited from \doxymbox{\hyperlink{class_crab_u_i_1_1_reactive_dict-2-g}{Crab\+UI.\+Reactive\+Dict$<$ TKey, TValue $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+Action \doxymbox{\hyperlink{class_crab_u_i_1_1_reactive_dict-2-g_a0959a50a07ede990aead9d2bf1789748}{Changed}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_palette_8cs_source_l00009}{9}} of file \doxymbox{\hyperlink{_c_u_i_palette_8cs_source}{CUIPalette.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_palette_8cs_source_l00011}{11}} of file \doxymbox{\hyperlink{_c_u_i_palette_8cs_source}{CUIPalette.\+cs}}.
 
 
 
 \label{doc-func-members}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_palette_doc-func-members}
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_palette_ae73f8fc9c8710f7f9c68b60803acfb57}\index{CrabUI.CUIPalette@{CrabUI.CUIPalette}!FromColor@{FromColor}}
+\index{FromColor@{FromColor}!CrabUI.CUIPalette@{CrabUI.CUIPalette}}
+\doxysubsubsection{\texorpdfstring{FromColor()}{FromColor()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_palette_ae73f8fc9c8710f7f9c68b60803acfb57} 
+\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_palette}{CUIPalette}} Crab\+UI.\+CUIPalette.\+From\+Color (\begin{DoxyParamCaption}\item[{Color}]{color}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_palette_8cs_source_l00013}{13}} of file \doxymbox{\hyperlink{_c_u_i_palette_8cs_source}{CUIPalette.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ brightness\ =\ color.Brightness();}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ Color\ front\ =\ color;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ Color\ back\ =\ \textcolor{keyword}{new}\ Color(0,\ 0,\ 0);}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ Color\ text\ =\ Color.Lerp(Color.Black,\ Color.White,\ brightness\ *\ 1.5f);}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ Color\ controls\ =\ \textcolor{keyword}{new}\ Color(0,\ 255,\ 255);}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ Color\ selection\ =\ \textcolor{keyword}{new}\ Color(0,\ 255,\ 255);}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ Color\ valid\ =\ \textcolor{keyword}{new}\ Color(0,\ 255,\ 0);}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ Color\ invalid\ =\ \textcolor{keyword}{new}\ Color(255,\ 0,\ 0);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ Color\ disabled\ =\ \textcolor{keyword}{new}\ Color(64,\ 64,\ 64);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ CUIPalette() }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}main"{}}]\ =\ front,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}back"{}}]\ =\ back,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}text"{}}]\ =\ text,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}controls"{}}]\ =\ controls,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}selection"{}}]\ =\ selection,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}valid"{}}]\ =\ valid,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}invalid"{}}]\ =\ invalid,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}disabled"{}}]\ =\ disabled,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+
+\end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_palette_ae167ab5b04826f63eb66b8403aa5acbe}\index{CrabUI.CUIPalette@{CrabUI.CUIPalette}!Preview@{Preview}}
 \index{Preview@{Preview}!CrabUI.CUIPalette@{CrabUI.CUIPalette}}
 \doxysubsubsection{\texorpdfstring{Preview()}{Preview()}}
@@ -84,148 +154,19 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_palette_8_preview_8cs_source_l000
 \DoxyCodeLine{00051\ \ \ \ \ \}}
 
 \end{DoxyCode}
-
-
-\label{doc-property-members}
-\Hypertarget{class_crab_u_i_1_1_c_u_i_palette_doc-property-members}
-\doxysubsection{Property Documentation}
-\Hypertarget{class_crab_u_i_1_1_c_u_i_palette_a323b7fe41f29625f32deceff80388a19}\index{CrabUI.CUIPalette@{CrabUI.CUIPalette}!Blue@{Blue}}
-\index{Blue@{Blue}!CrabUI.CUIPalette@{CrabUI.CUIPalette}}
-\doxysubsubsection{\texorpdfstring{Blue}{Blue}}
-{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_palette_a323b7fe41f29625f32deceff80388a19} 
-\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_palette}{CUIPalette}} Crab\+UI.\+CUIPalette.\+Blue\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_palette_a877313461bbe34fb8840ef5372f9440e}\index{CrabUI.CUIPalette@{CrabUI.CUIPalette}!ToString@{ToString}}
+\index{ToString@{ToString}!CrabUI.CUIPalette@{CrabUI.CUIPalette}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_palette_a877313461bbe34fb8840ef5372f9440e} 
+override string Crab\+UI.\+CUIPalette.\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_palette_8_default_8cs_source_l00050}{50}} of file \doxymbox{\hyperlink{_c_u_i_palette_8_default_8cs_source}{CUIPalette.\+Default.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_palette_8cs_source_l00039}{39}} of file \doxymbox{\hyperlink{_c_u_i_palette_8cs_source}{CUIPalette.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =>\ \textcolor{keyword}{new}()}
-\DoxyCodeLine{00051\ \ \ \ \ \{}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ Colors\ =\ \textcolor{keyword}{new}()}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}button"{}}]\ =\ \textcolor{keyword}{new}\ Color(0,\ 0,\ 255),}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}text"{}}]\ =\ \textcolor{keyword}{new}\ Color(255,\ 255,\ 255),}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}frame"{}}]\ =\ \textcolor{keyword}{new}\ Color(0,\ 0,\ 32),}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}outercontrols"{}}]\ =\ \textcolor{keyword}{new}\ Color(0,\ 255,\ 255),}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}inputfocused"{}}]\ =\ \textcolor{keyword}{new}\ Color(0,\ 255,\ 255),}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}inputblured"{}}]\ =\ \textcolor{keyword}{new}\ Color(0,\ 0,\ 64),}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}inputselection"{}}]\ =\ \textcolor{keyword}{new}\ Color(255,\ 255,\ 255),}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}inputcaret"{}}]\ =\ \textcolor{keyword}{new}\ Color(255,\ 255,\ 255),}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}inputinvalid"{}}]\ =\ \textcolor{keyword}{new}\ Color(255,\ 0,\ 255),}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}border"{}}]\ =\ \textcolor{keyword}{new}\ Color(0,\ 0,\ 100),}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00065\ \ \ \ \ \};}
-
-\end{DoxyCode}
-\Hypertarget{class_crab_u_i_1_1_c_u_i_palette_af9f8a5721349df22bc5246f289cc9d4f}\index{CrabUI.CUIPalette@{CrabUI.CUIPalette}!Colors@{Colors}}
-\index{Colors@{Colors}!CrabUI.CUIPalette@{CrabUI.CUIPalette}}
-\doxysubsubsection{\texorpdfstring{Colors}{Colors}}
-{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_palette_af9f8a5721349df22bc5246f289cc9d4f} 
-Safe\+Dict$<$string, Color$>$ Crab\+UI.\+CUIPalette.\+Colors = new()\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
-
-
-
-Definition at line \doxymbox{\hyperlink{_c_u_i_palette_8cs_source_l00011}{11}} of file \doxymbox{\hyperlink{_c_u_i_palette_8cs_source}{CUIPalette.\+cs}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00011\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}();}
-
-\end{DoxyCode}
-\Hypertarget{class_crab_u_i_1_1_c_u_i_palette_ac443fcba5e685041425a08933880e3ea}\index{CrabUI.CUIPalette@{CrabUI.CUIPalette}!Default@{Default}}
-\index{Default@{Default}!CrabUI.CUIPalette@{CrabUI.CUIPalette}}
-\doxysubsubsection{\texorpdfstring{Default}{Default}}
-{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_palette_ac443fcba5e685041425a08933880e3ea} 
-\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_palette}{CUIPalette}} Crab\+UI.\+CUIPalette.\+Default\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
-
-
-
-I have no idea how many colors is required, my plan is this:\+ I\textquotesingle{}ll create new color for each use case If i see that some colors correlate i\textquotesingle{}ll try to generalize them. 
-
-
-
-Definition at line \doxymbox{\hyperlink{_c_u_i_palette_8_default_8cs_source_l00016}{16}} of file \doxymbox{\hyperlink{_c_u_i_palette_8_default_8cs_source}{CUIPalette.\+Default.\+cs}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =>\ \textcolor{keyword}{new}()}
-\DoxyCodeLine{00017\ \ \ \ \ \{}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ Colors\ =\ \textcolor{keyword}{new}()}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}button"{}}]\ =\ \textcolor{keyword}{new}\ Color(255,\ 0,\ 0),}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}text"{}}]\ =\ \textcolor{keyword}{new}\ Color(255,\ 255,\ 255),}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}frame"{}}]\ =\ \textcolor{keyword}{new}\ Color(32,\ 0,\ 0),}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}outercontrols"{}}]\ =\ \textcolor{keyword}{new}\ Color(255,\ 200,\ 200),}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}inputfocused"{}}]\ =\ \textcolor{keyword}{new}\ Color(200,\ 0,\ 0),}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}inputblured"{}}]\ =\ \textcolor{keyword}{new}\ Color(64,\ 0,\ 0),}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}inputselection"{}}]\ =\ \textcolor{keyword}{new}\ Color(255,\ 255,\ 255),}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}inputcaret"{}}]\ =\ \textcolor{keyword}{new}\ Color(255,\ 255,\ 255),}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}inputinvalid"{}}]\ =\ \textcolor{keyword}{new}\ Color(255,\ 255,\ 0),}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}border"{}}]\ =\ \textcolor{keyword}{new}\ Color(100,\ 0,\ 0),}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00031\ \ \ \ \ \};}
-
-\end{DoxyCode}
-\Hypertarget{class_crab_u_i_1_1_c_u_i_palette_adfaecbc0e79fbbd967caebec25706486}\index{CrabUI.CUIPalette@{CrabUI.CUIPalette}!Green@{Green}}
-\index{Green@{Green}!CrabUI.CUIPalette@{CrabUI.CUIPalette}}
-\doxysubsubsection{\texorpdfstring{Green}{Green}}
-{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_palette_adfaecbc0e79fbbd967caebec25706486} 
-\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_palette}{CUIPalette}} Crab\+UI.\+CUIPalette.\+Green\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
-
-
-
-Definition at line \doxymbox{\hyperlink{_c_u_i_palette_8_default_8cs_source_l00067}{67}} of file \doxymbox{\hyperlink{_c_u_i_palette_8_default_8cs_source}{CUIPalette.\+Default.\+cs}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =>\ \textcolor{keyword}{new}()}
-\DoxyCodeLine{00068\ \ \ \ \ \{}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ Colors\ =\ \textcolor{keyword}{new}()}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}button"{}}]\ =\ \textcolor{keyword}{new}\ Color(0,\ 255,\ 0),}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}text"{}}]\ =\ \textcolor{keyword}{new}\ Color(255,\ 255,\ 255),}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}frame"{}}]\ =\ \textcolor{keyword}{new}\ Color(0,\ 32,\ 0),}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}outercontrols"{}}]\ =\ \textcolor{keyword}{new}\ Color(255,\ 255,\ 0),}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}inputfocused"{}}]\ =\ \textcolor{keyword}{new}\ Color(0,\ 255,\ 255),}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}inputblured"{}}]\ =\ \textcolor{keyword}{new}\ Color(0,\ 64,\ 0),}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}inputselection"{}}]\ =\ \textcolor{keyword}{new}\ Color(255,\ 255,\ 255),}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}inputcaret"{}}]\ =\ \textcolor{keyword}{new}\ Color(255,\ 255,\ 255),}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}inputinvalid"{}}]\ =\ \textcolor{keyword}{new}\ Color(255,\ 0,\ 0),}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}border"{}}]\ =\ \textcolor{keyword}{new}\ Color(0,\ 100,\ 0),}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00082\ \ \ \ \ \};}
-
-\end{DoxyCode}
-\Hypertarget{class_crab_u_i_1_1_c_u_i_palette_a0b54a51be3bdf9ba093c377875882d37}\index{CrabUI.CUIPalette@{CrabUI.CUIPalette}!Red@{Red}}
-\index{Red@{Red}!CrabUI.CUIPalette@{CrabUI.CUIPalette}}
-\doxysubsubsection{\texorpdfstring{Red}{Red}}
-{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_palette_a0b54a51be3bdf9ba093c377875882d37} 
-\doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_palette}{CUIPalette}} Crab\+UI.\+CUIPalette.\+Red\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
-
-
-
-Definition at line \doxymbox{\hyperlink{_c_u_i_palette_8_default_8cs_source_l00033}{33}} of file \doxymbox{\hyperlink{_c_u_i_palette_8_default_8cs_source}{CUIPalette.\+Default.\+cs}}.
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =>\ \textcolor{keyword}{new}()}
-\DoxyCodeLine{00034\ \ \ \ \ \{}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ Colors\ =\ \textcolor{keyword}{new}()}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}button"{}}]\ =\ \textcolor{keyword}{new}\ Color(255,\ 0,\ 0),}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}text"{}}]\ =\ \textcolor{keyword}{new}\ Color(255,\ 255,\ 255),}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}frame"{}}]\ =\ \textcolor{keyword}{new}\ Color(32,\ 0,\ 0),}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}outercontrols"{}}]\ =\ \textcolor{keyword}{new}\ Color(255,\ 200,\ 200),}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}inputfocused"{}}]\ =\ \textcolor{keyword}{new}\ Color(200,\ 0,\ 0),}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}inputblured"{}}]\ =\ \textcolor{keyword}{new}\ Color(64,\ 0,\ 0),}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}inputselection"{}}]\ =\ \textcolor{keyword}{new}\ Color(255,\ 255,\ 255),}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}inputcaret"{}}]\ =\ \textcolor{keyword}{new}\ Color(255,\ 255,\ 255),}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}inputinvalid"{}}]\ =\ \textcolor{keyword}{new}\ Color(255,\ 255,\ 0),}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ [\textcolor{stringliteral}{"{}border"{}}]\ =\ \textcolor{keyword}{new}\ Color(100,\ 0,\ 0),}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00048\ \ \ \ \ \};}
+\DoxyCodeLine{00039\ =>\ \$\textcolor{stringliteral}{"{}Palette:\ \{Logger.Wrap.Dictionary(this)\}"{}};}
 
 \end{DoxyCode}
 
@@ -233,5 +174,4 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_palette_8_default_8cs_source_l000
 The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
 \item 
 Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Styling/\+\+Palette/\+CUIPalette.\+cs\item 
-Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Styling/\+\+Palette/\+CUIPalette.\+Default.\+cs\item 
 Client\+Project/\+\+Client\+Source/\+\+CUI/\+\+Core/\+\+Styling/\+\+Palette/\+CUIPalette.\+Preview.\+cs\end{DoxyCompactItemize}

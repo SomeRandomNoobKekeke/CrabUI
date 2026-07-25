@@ -17,7 +17,7 @@ namespace CrabUIUser
   {
     public ILogger Logger => CUI.Logger;
 
-    public bool SerializeTestSubject { get; set; } = true;
+    public bool SerializeTestSubject { get; set; } = false;
     // public bool PrintTestSubject { get; set; } = true;
     public SnapshotTestChamber Chamber { get; set; }
 

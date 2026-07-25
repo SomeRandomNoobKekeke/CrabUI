@@ -9,7 +9,8 @@ It doesn't know about the game and has to be run by CUIRunners via handles
 There could be various runners, e.g. Solo runner runs code in this mod, Master runner scans other mods, test runner can feed it with fake data and concurrent runner can run CUICore in a separate thread
 
 #### Then why are you putting solo runner in CUI master package?
-A eto, bleh.gif
+
+[Ah, eto... bleh.gif](https://tenor.com/ru/view/ah-eto-bleh-anime-bleh-gif-26784876)
 
 Master runner isn't done yet, and there's not much to scan in other packages yet  
 Current SoloRunner just finds all CUIComponents and ISerializable in assembly that called CUI.Start  
@@ -27,6 +28,7 @@ CUI and CUICore classes have static members for accessing core and runners
 Why 2? CUI is supposed to be used by you, and CUICore is supposed to be called by stuff from inside CUICore  
 Also stuff that calls CUICore assumes that it's already activated
 
+<br><br>
 ## VisualComponents / VisualUnits
 Unit of drawing / event handling in CUI is VisualUnits  
 
@@ -41,6 +43,7 @@ Host VisualComponent typically listens to events on its VisualUnits
 
 Also VisualComponents can yield VisualBounds in VisualSplit, they are commands for ChainDrawer to change its state e.g. change scissor rect, sampler state or apply camera transformation before drawing
 
+<br><br>
 ## Serialization (wip, mostly borked)
 All components are serializable to / from xml with
 ~~~~~~~~~~~~~{cs}
@@ -79,7 +82,7 @@ it's one of
 ~~~~~~~~~~~~~{cs}
 public enum CUISerializationMode { Replace, Merge, Ignore }
 ~~~~~~~~~~~~~
-It affects how child will be deserialized when there is already a child with the same name:
+It affects how child will be deserialized if there is already a child with the same name:
 - Replace - create new child and replace existing
 - Merge - Props will be copied to existing child
 - Ignore - Will keep existing child intact
@@ -94,6 +97,7 @@ protected virtual void CUIComponent.BeforeSerialization() { } // - Happens befor
 protected virtual void CUIComponent.AfterSerialization() { } // - Happens after deserialization of children
 ~~~~~~~~~~~~~
 
+<br><br>
 ## Component States
 you can save / restore component state with
 
@@ -104,6 +108,7 @@ public void RestoreState(string name)
 
 there's a dict of MemorizedStates and it uses serialization behind the scenes
 
+<br><br>
 ## Focus (wip, mostly borked)
 In vanilla there's 
 ~~~~~~~~~~~~~{cs}
@@ -133,6 +138,7 @@ CUI can steal focus from vanilla KeyboardDispatcher and simulate focus on some d
 It's barely tested and i'm sure it's borked  
 Also there's a lot of actions in vanilla that just ignores KeyboardDispatcher.Subscriber, idk how to block those 
 
+<br><br>
 ## Sprites / Textures
 CUICore can't load textures on its own, it requests them from CUIRunner  
 
@@ -193,23 +199,80 @@ public record CUISprite(CUITexture2D texture)
 }
 ~~~~~~~~~~~~~
 
-## Styles and palettes (wip, mostly borked)
-ICUIStyle is something that can be applied to component and change its state  
-It can be a function, a dict of props or xml prefab  
+<br><br>
+## Styles and Palettes
 
-Many CUIComponent types have attached DefaultStyles  
-All CUIComponent scanned on CUI.Start() and default styles from lineage of CUIComponents are combined in CUIStylePipelines  
-Which then applied on component creation
+- Styles are actions that can be applied to components to change their props
+- Palettes are tables of values for styles
 
-There's also CUIPalettes, they are dicts of typically used colors, sizes etc  
-There's global Primary, Secondary palettes in CUICore.Styles and components can have personal palettes
+Styles and palettes are reactive so if you change them all affected components will reapply their styles
 
-Styles typically use values from component palette  
+CUIComponent types can have:
+~~~~~~~~~~~~~{cs}
+public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIFrame>((c) =>{ ... });
+protected override void InitStyle() {}
+~~~~~~~~~~~~~
 
-CUIStylePipelines and palettes are reactive, so changin styles or palette will reaplly CUIStylePipelines
+CUIComponents have:
+~~~~~~~~~~~~~{cs}
+public virtual Action<CUIComponent> CUIComponent.Style { set; } // - sets PersonalStyle to CUIActionStyle
+public ICUIStyle CUIComponent.PersonalStyle { get; set; }
+public CUIPalette CUIComponent.Palette { get; set; }
+public CUIPalette CUIComponent.DeepPalette { get; set; } // - This sets palette recursively to all children
+public bool UseReactiveStyles { get; set; } // - It defaults to CUICore.Styles.UseReactiveStyles
+~~~~~~~~~~~~~
 
-So if you need some props to be resistant to palette changes put them in personal styles
+#### Where to get palettes:
+There are 4 global palettes in CUICore
+~~~~~~~~~~~~~{cs}
+public CUIPalette CUICore.Palettes.Primary { get; set; }
+public CUIPalette CUICore.Palettes.Secondary { get; set; }
+public CUIPalette CUICore.Palettes.Tertiary { get; set; }
+public CUIPalette CUICore.Palettes.Quaternary { get; set; }
+~~~~~~~~~~~~~
 
+Also you can create palettes from color
+~~~~~~~~~~~~~{cs}
+public static CUIPalette CUIPalette.FromColor(Color color)
+~~~~~~~~~~~~~
+
+CUIPalettes are IDictionary<string, Color> so you can change them manually in theory
+
+#### About Palette colors:
+Those are key reference colors that all components can use to construct colors they need to paint themselves
+
+Basically if you're making a component and want to use a color that you can't construct from already existing you should add it to palette    
+And then ask yourself what if i set all colors to random will it still look good? If not then there's some hidden interconnection you're missing
+
+#### How styles are applied on object creation:
+1. Properties are initialized before constructor
+2. Props can be set in constructor
+3. InitStyle() method is runned, once
+4. All DefaultStyles from lineage of types are applied
+5. Personal style applied
+6. Props you set in object initializer, if you set personal style it will also be applied on set
+
+If you change palette or styles later this happens:
+4. All DefaultStyles from lineage of types are applied
+5. Personal style applied
+
+So props you set manually or in constructor will be overriden  
+
+#### Experimental CUIContextStyle<T>
+It's a style that is added to type styles pipeline on creation and removed on dispose
+
+You can use it to apply same actions to a group of created components
+
+~~~~~~~~~~~~~{cs}
+using (new CUIContextStyle<CUIButton>(btn => btn.Background.Color = Color.Green))
+{
+  new CUIButton("Green");
+  new CUIButton("Green");
+}
+new CUIButton("Not Green");
+~~~~~~~~~~~~~
+
+<br><br>
 ## Animations
 All animations in CUI are based on objects AnimationCore
 
@@ -233,6 +296,7 @@ public class TypedAnimation<T> : AnimationCore
 Currently all animations are external, so you have to animate some value and then manually update some prop on component  
 There's no AnimatedProp yet
 
+<br><br>
 ## RoutableCommands
 All CUIComponents can send such RoutableCommands up and down component tree to communicate with each other
 ~~~~~~~~~~~~~{cs}
@@ -262,7 +326,7 @@ When CUIFrame recieves "close" event it closes
 It doesn't matter where the close button is and i don't have to pass close button to the frame so it could subscribe to its events
 
 
-## Debug
+## Debug (almost non existent)
 
 Most of the time i debug with just CUI.Logger, but if it's too complex or i know i'll need the same data later is add DebugNodes
 

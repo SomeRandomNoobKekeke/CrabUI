@@ -25,6 +25,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="dev.png"/></td>
   <td id="projectalign">
    <div id="projectname">CUI
    </div>
@@ -96,26 +97,41 @@ $(function(){initNavTree('_c_u_i_palette_manager_8cs_source.html','',''); });
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>System.Collections.Generic;</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using </span>System.Linq;</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using </span>System.Reflection;</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_crab_u_i.html">CrabUI</a></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
-<div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class_crab_u_i_1_1_c_u_i_palette_manager.html">    8</a></span>  <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_palette_manager.html">CUIPaletteManager</a></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>  {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">public</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_palette_slot.html">CUIPaletteSlot</a> FromRank(CUIPaletteRank rank) =&gt; rank <span class="keywordflow">switch</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>      CUIPaletteRank.Primary =&gt; Primary,</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>      CUIPaletteRank.Secondary =&gt; Secondary,</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>      CUIPaletteRank.Personal =&gt; <span class="keyword">new</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_palette_slot.html">CUIPaletteSlot</a>(),</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    };</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using </span>Microsoft.Xna.Framework;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_crab_u_i.html">CrabUI</a></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
+<div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="class_crab_u_i_1_1_c_u_i_palettes.html">    9</a></span>  <span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_palettes.html">CUIPalettes</a></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">private</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_palette.html">CUIPalette</a> _Primary = <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_palette.html">CUIPalette</a>.FromColor(<span class="keyword">new</span> Color(200, 0, 0)); <span class="keyword">public</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_palette.html">CUIPalette</a> Primary</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>      <span class="keyword">get</span> =&gt; _Primary;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>      <span class="keyword">set</span> =&gt; _Primary.Swap(value);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    }</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">public</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_palette_slot.html">CUIPaletteSlot</a> Primary { <span class="keyword">get</span>; } = <span class="keyword">new</span>();</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">public</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_palette_slot.html">CUIPaletteSlot</a> Secondary { <span class="keyword">get</span>; } = <span class="keyword">new</span>();</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  }</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">private</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_palette.html">CUIPalette</a> _Secondary = <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_palette.html">CUIPalette</a>.FromColor(<span class="keyword">new</span> Color(150, 0, 0)); <span class="keyword">public</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_palette.html">CUIPalette</a> Secondary</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>      <span class="keyword">get</span> =&gt; _Secondary;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>      <span class="keyword">set</span> =&gt; _Secondary.Swap(value);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    }</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">private</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_palette.html">CUIPalette</a> _Tertiary = <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_palette.html">CUIPalette</a>.FromColor(<span class="keyword">new</span> Color(100, 0, 32)); <span class="keyword">public</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_palette.html">CUIPalette</a> Tertiary</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>      <span class="keyword">get</span> =&gt; _Tertiary;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>      <span class="keyword">set</span> =&gt; _Tertiary.Swap(value);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    }</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">private</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_palette.html">CUIPalette</a> _Quaternary = <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_palette.html">CUIPalette</a>.FromColor(<span class="keyword">new</span> Color(64, 0, 64)); <span class="keyword">public</span> <a class="code hl_class" href="class_crab_u_i_1_1_c_u_i_palette.html">CUIPalette</a> Quaternary</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>      <span class="keyword">get</span> =&gt; _Quaternary;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>      <span class="keyword">set</span> =&gt; _Quaternary.Swap(value);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  }</div>
 </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_palette_manager_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_palette_manager.html">CrabUI.CUIPaletteManager</a></div><div class="ttdef"><b>Definition</b> <a href="#l00008">CUIPaletteManager.cs:9</a></div></div>
-<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_palette_slot_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_palette_slot.html">CrabUI.CUIPaletteSlot</a></div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_palette_slot_8cs_source.html#l00010">CUIPaletteSlot.cs:11</a></div></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_palette_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_palette.html">CrabUI.CUIPalette</a></div><div class="ttdef"><b>Definition</b> <a href="_c_u_i_palette_8cs_source.html#l00011">CUIPalette.cs:12</a></div></div>
+<div class="ttc" id="aclass_crab_u_i_1_1_c_u_i_palettes_html"><div class="ttname"><a href="class_crab_u_i_1_1_c_u_i_palettes.html">CrabUI.CUIPalettes</a></div><div class="ttdef"><b>Definition</b> <a href="#l00009">CUIPaletteManager.cs:10</a></div></div>
 <div class="ttc" id="anamespace_crab_u_i_html"><div class="ttname"><a href="namespace_crab_u_i.html">CrabUI</a></div><div class="ttdef"><b>Definition</b> <a href="_____generated_2_c_u_i_component_8cs_source.html#l00007">CUIComponent.cs:8</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

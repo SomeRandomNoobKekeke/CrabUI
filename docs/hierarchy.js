@@ -167,9 +167,7 @@ var hierarchy =
     ] ],
     [ "CrabUI.CUIInput", "class_crab_u_i_1_1_c_u_i_input.html", null ],
     [ "CrabUI.CUINullVector2", "struct_crab_u_i_1_1_c_u_i_null_vector2.html", null ],
-    [ "CrabUI.CUIPalette", "class_crab_u_i_1_1_c_u_i_palette.html", null ],
-    [ "CrabUI.CUIPaletteManager", "class_crab_u_i_1_1_c_u_i_palette_manager.html", null ],
-    [ "CrabUI.CUIPaletteSlot", "class_crab_u_i_1_1_c_u_i_palette_slot.html", null ],
+    [ "CrabUI.CUIPalettes", "class_crab_u_i_1_1_c_u_i_palettes.html", null ],
     [ "CrabUI.CUIParser", "class_crab_u_i_1_1_c_u_i_parser.html", null ],
     [ "Adapters_Part.CUIPlainLayout_Host_Part", null, [
       [ "CrabUI.CUIGrid.CUIGridLayout_Host_Adapter_Part", "class_crab_u_i_1_1_c_u_i_grid_1_1_c_u_i_grid_layout___host___adapter___part.html", null ],
@@ -218,6 +216,7 @@ var hierarchy =
         ] ],
         [ "CrabUI.CUIGrid", "class_crab_u_i_1_1_c_u_i_grid.html", null ],
         [ "CrabUI.CUIHorizontalList", "class_crab_u_i_1_1_c_u_i_horizontal_list.html", [
+          [ "CrabUI.CUIDefault.HorizontalPanel", "class_crab_u_i_1_1_c_u_i_default_1_1_horizontal_panel.html", null ],
           [ "CrabUI.CUIDefault.InputField", "class_crab_u_i_1_1_c_u_i_default_1_1_input_field.html", [
             [ "CrabUI.CUIDefault.IntField", "class_crab_u_i_1_1_c_u_i_default_1_1_int_field.html", null ],
             [ "CrabUI.CUIDefault.TextField", "class_crab_u_i_1_1_c_u_i_default_1_1_text_field.html", null ]
@@ -239,7 +238,9 @@ var hierarchy =
         [ "CrabUI.CUITextInput", "class_crab_u_i_1_1_c_u_i_text_input.html", null ],
         [ "CrabUI.CUITextInput", "class_crab_u_i_1_1_c_u_i_text_input.html", null ],
         [ "CrabUI.CUITextLine", "class_crab_u_i_1_1_c_u_i_text_line.html", null ],
-        [ "CrabUI.CUIVerticalList", "class_crab_u_i_1_1_c_u_i_vertical_list.html", null ],
+        [ "CrabUI.CUIVerticalList", "class_crab_u_i_1_1_c_u_i_vertical_list.html", [
+          [ "CrabUI.CUIDefault.VerticalPanel", "class_crab_u_i_1_1_c_u_i_default_1_1_vertical_panel.html", null ]
+        ] ],
         [ "CrabUI.CUIVerticalList", "class_crab_u_i_1_1_c_u_i_vertical_list.html", null ],
         [ "CrabUIUser.E2ETestPack.RadialMenu.RadialMenuUI", "class_crab_u_i_user_1_1_e2_e_test_pack_1_1_radial_menu_1_1_radial_menu_u_i.html", null ],
         [ "CrabUIUser.SnapshotTestChamber", "class_crab_u_i_user_1_1_snapshot_test_chamber.html", null ]
@@ -273,8 +274,7 @@ var hierarchy =
       [ "CUILibs.ClearableEventDict", "class_c_u_i_libs_1_1_clearable_event_dict.html", null ],
       [ "CUILibs.DebugNodeDict", "class_c_u_i_libs_1_1_debug_node_dict.html", null ],
       [ "CUILibs.DebugRelayDict", "class_c_u_i_libs_1_1_debug_relay_dict.html", null ],
-      [ "CrabUI.CUIDictStyle", "class_crab_u_i_1_1_c_u_i_dict_style.html", null ],
-      [ "CrabUI.SafeDict< TKey, TValue >", "class_crab_u_i_1_1_safe_dict-2-g.html", null ]
+      [ "CrabUI.CUIDictStyle", "class_crab_u_i_1_1_c_u_i_dict_style.html", null ]
     ] ],
     [ "CrabUIUser.ClassMapping.DirectProxies", "class_crab_u_i_user_1_1_class_mapping_1_1_direct_proxies.html", null ],
     [ "CrabUIUser.E2ETestManager", "class_crab_u_i_user_1_1_e2_e_test_manager.html", null ],
@@ -500,7 +500,10 @@ var hierarchy =
     ] ],
     [ "IDictionary", null, [
       [ "CrabUI.CUIComponent.Dictionary_Part", "class_crab_u_i_1_1_c_u_i_component_1_1_dictionary___part.html", null ],
-      [ "CrabUI.CUIComponent.StringDictionary_Part", "class_crab_u_i_1_1_c_u_i_component_1_1_string_dictionary___part.html", null ]
+      [ "CrabUI.CUIComponent.StringDictionary_Part", "class_crab_u_i_1_1_c_u_i_component_1_1_string_dictionary___part.html", null ],
+      [ "CrabUI.ReactiveDict< TKey, TValue >", "class_crab_u_i_1_1_reactive_dict-2-g.html", [
+        [ "CrabUI.CUIPalette", "class_crab_u_i_1_1_c_u_i_palette.html", null ]
+      ] ]
     ] ],
     [ "IDisposable", null, [
       [ "CrabUI.CUICanvas", "class_crab_u_i_1_1_c_u_i_canvas.html", null ],

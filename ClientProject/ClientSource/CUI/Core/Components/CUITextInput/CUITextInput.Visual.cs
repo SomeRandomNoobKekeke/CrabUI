@@ -39,10 +39,11 @@ namespace CrabUI
     {
       _UpdateRects();
 
-      Background.Color = Focused ?
-        Valid ?
-          FocusedColor : InvalidColor
-        : BluredColor;
+
+
+      Background.Sprite = Focused ?
+        Valid ? FocusedSprite : InvalidSprite
+        : BluredSprite;
 
       SelectionOverlay.Color = Focused ? SelectionColor : SelectionColor * 0.5f;
 
@@ -51,24 +52,24 @@ namespace CrabUI
 
     private void _UpdateRects()
     {
-      TextBlock.Rect = Rect;
+      TextBlock.Rect = ChildrenRect;
       TextBlock.Text = State.Text;
 
 
-      CaretTexture.Rect = Rect with
+      CaretTexture.Rect = ChildrenRect with
       {
-        Left = Rect.Left + TextMeasurements.CaretLeft - 1,
+        Left = ChildrenRect.Left + TextMeasurements.CaretLeft - 1,
         Width = 2,
-        Top = Rect.Top + Rect.Height * 0.1f,
-        Height = Rect.Height * 0.8f,
+        Top = ChildrenRect.Top + ChildrenRect.Height * 0.1f,
+        Height = ChildrenRect.Height * 0.8f,
       };
 
-      SelectionOverlay.Rect = Rect with
+      SelectionOverlay.Rect = ChildrenRect with
       {
-        Left = Rect.Left + TextMeasurements.SelectionLeft,
+        Left = ChildrenRect.Left + TextMeasurements.SelectionLeft,
         Width = TextMeasurements.SelectionWidth,
-        Top = Rect.Top + Rect.Height * 0.1f,
-        Height = Rect.Height * 0.8f,
+        Top = ChildrenRect.Top + ChildrenRect.Height * 0.1f,
+        Height = ChildrenRect.Height * 0.8f,
       };
     }
 

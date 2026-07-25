@@ -157,11 +157,17 @@ static \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_c_u_i_style}{ICUIStyle}} \d
 \item 
 double \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_text_input_aa16276471910863e183ec2930100f239}{Caret\+Blink\+Interval}} = 1.\+0\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
 \item 
-Color \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_text_input_a366db6d211faf6591d4e2468b9fa4956}{Invalid\+Color}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
-\item 
 Color \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_text_input_ab59b5e4238549d4444fbbb87df679244}{Focused\+Color}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
 \item 
 Color \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_text_input_a7e046f5a3bf1d076687d3714a635b414}{Blured\+Color}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+Color \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_text_input_a366db6d211faf6591d4e2468b9fa4956}{Invalid\+Color}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+CUISprite \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_text_input_acc37adc77d5594a5d4e0a7dc0a90e15c}{Focused\+Sprite}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+CUISprite \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_text_input_ad763cca447c324cd1c3bee5fa434ebf9}{Blured\+Sprite}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
+\item 
+CUISprite \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_text_input_a65fc4fc733f0620105a32cdcb9976a64}{Invalid\+Sprite}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
 \item 
 Color \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_text_input_a73b4cb3a98a4bee2d1567ec83c708793}{Selection\+Color}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
 \item 
@@ -334,8 +340,6 @@ CUISerialization\+Mode \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a
 bool \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ac809b22336545d5265ce8d1d38383ad7}{Serializable}} = true\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
 \item 
 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_1_1_string_dictionary___part}{String\+Dictionary\+\_\+\+Part}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_ae7f438b0b698ceed6ed4a0237df35846}{As\+\_\+\+String\+Dictionary}} = new()\hspace{0.3cm}{\ttfamily  \+[get]\+}
-\item 
-CUIPalette\+Rank \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a63bb7a754341f29b8bdd9669aeb56a07}{Palette\+Rank}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
 \item 
 \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_palette}{CUIPalette}} \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component_a7744e057d505b5a5f1f0621b02d058b2}{Palette}}\hspace{0.3cm}{\ttfamily  \+[get, set]\+}
 \item 
@@ -517,21 +521,21 @@ Crab\+UI.\+CUIText\+Input.\+CUIText\+Input (\begin{DoxyParamCaption}{}{}\end{Dox
 
 
 
-Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00058}{58}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source}{CUIText\+Input.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00066}{66}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source}{CUIText\+Input.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ base() }
-\DoxyCodeLine{00059\ \ \ \ \ \{}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ OnFocus\ +=\ HandleFocus;}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ OnFocusLost\ +=\ HandleFocusLost;}
-\DoxyCodeLine{00062\ }
-\DoxyCodeLine{00063\ \ \ \ \ \ \ MouseDown\ +=\ HandleMouseDown;}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ MouseDoubleClick\ +=\ HandleDoubleClick;}
-\DoxyCodeLine{00065\ }
-\DoxyCodeLine{00066\ \ \ \ \ \ \ State.Changed\ +=\ HandleStateChanged;}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ State.TextChanged\ +=\ HandleTextChanged;}
-\DoxyCodeLine{00068\ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ base() }
+\DoxyCodeLine{00067\ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ OnFocus\ +=\ HandleFocus;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ OnFocusLost\ +=\ HandleFocusLost;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ MouseDown\ +=\ HandleMouseDown;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ MouseDoubleClick\ +=\ HandleDoubleClick;}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ State.Changed\ +=\ HandleStateChanged;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ State.TextChanged\ +=\ HandleTextChanged;}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -547,11 +551,11 @@ void Crab\+UI.\+CUIText\+Input.\+Clear\+Selection (\begin{DoxyParamCaption}{}{}\
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00049}{49}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00066}{66}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00049\ =>\ State.ClearSelection();}
+\DoxyCodeLine{00066\ =>\ State.ClearSelection();}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_text_input_aa28ab62c7053bc660b10bb0e955ad262}\index{CrabUI.CUITextInput@{CrabUI.CUITextInput}!HandleDoubleClick@{HandleDoubleClick}}
@@ -637,18 +641,25 @@ Reimplemented from \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component}{Crab
 
 
 
-Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00029}{29}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source}{CUIText\+Input.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00030}{30}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source}{CUIText\+Input.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00030\ \ \ \ \ \{}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ base.InitStyle();}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ Focusable\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ TextBlock.Anchor\ =\ CUIAnchor.LeftCenter;}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ ConsumeMouseEvents\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ ConsumeFocus\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ CullChildren\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ base.InitStyle();}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ Focusable\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ TextBlock.Anchor\ =\ CUIAnchor.LeftCenter;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ ConsumeMouseEvents\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ ConsumeFocus\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ CullChildren\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ BluredSprite\ =\ CUISprite.White;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ InvalidSprite\ =\ CUIDefaultSprite.BoxWithALamp;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ FocusedSprite\ =\ CUIDefaultSprite.BoxWithALamp;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ Background.Sprite\ =\ BluredSprite;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ Padding\ =\ \textcolor{keyword}{new}\ CUISizes(4,\ 4,\ 4,\ 4);}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_text_input_a9cd727d172df59af480003b41bf8e1e5}\index{CrabUI.CUITextInput@{CrabUI.CUITextInput}!IsInsideSelection@{IsInsideSelection}}
@@ -659,11 +670,11 @@ bool Crab\+UI.\+CUIText\+Input.\+Is\+Inside\+Selection (\begin{DoxyParamCaption}
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00064}{64}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00081}{81}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00064\ =>\ State.IsInsideSelection(value);}
+\DoxyCodeLine{00081\ =>\ State.IsInsideSelection(value);}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_text_input_a19d3c1ebb16a849e5a977a23026574ab}\index{CrabUI.CUITextInput@{CrabUI.CUITextInput}!OnAttachedToMainComponent@{OnAttachedToMainComponent}}
@@ -678,16 +689,16 @@ Reimplemented from \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component}{Crab
 
 
 
-Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00040}{40}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source}{CUIText\+Input.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00048}{48}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source}{CUIText\+Input.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00041\ \ \ \ \ \{}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ base.OnAttachedToMainComponent(mainComponent);}
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00044\ \ \ \ \ \ \ mainComponent.GlobalEvents.TextInput.Add(HandleTextInput);}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ mainComponent.GlobalEvents.KeyDownInput.Add(HandleKeyDownInput);}
-\DoxyCodeLine{00046\ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ base.OnAttachedToMainComponent(mainComponent);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ mainComponent.GlobalEvents.TextInput.Add(HandleTextInput);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ mainComponent.GlobalEvents.KeyDownInput.Add(HandleKeyDownInput);}
+\DoxyCodeLine{00054\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_text_input_a2fc6a49d4c28464e833786c7bc0e731b}\index{CrabUI.CUITextInput@{CrabUI.CUITextInput}!OnDetachedFromMainComponent@{OnDetachedFromMainComponent}}
@@ -702,17 +713,17 @@ Reimplemented from \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component}{Crab
 
 
 
-Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00047}{47}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source}{CUIText\+Input.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source_l00055}{55}} of file \doxymbox{\hyperlink{_client_source_2_c_u_i_2_core_2_components_2_c_u_i_text_input_2_c_u_i_text_input_8cs_source}{CUIText\+Input.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00048\ \ \ \ \ \{}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ base.OnDetachedFromMainComponent(mainComponent);}
-\DoxyCodeLine{00050\ }
-\DoxyCodeLine{00051\ \ \ \ \ \ \ mainComponent.GlobalEvents.TextInput.Remove(HandleTextInput);}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ mainComponent.GlobalEvents.KeyDownInput.Remove(HandleKeyDownInput);}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ mainComponent.GlobalEvents.AfterUpdate.Remove(HandleUpdate);}
-\DoxyCodeLine{00054\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ base.OnDetachedFromMainComponent(mainComponent);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ mainComponent.GlobalEvents.TextInput.Remove(HandleTextInput);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ mainComponent.GlobalEvents.KeyDownInput.Remove(HandleKeyDownInput);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ mainComponent.GlobalEvents.AfterUpdate.Remove(HandleUpdate);}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_text_input_acf01aaee3e560f1a83d898f0a841e883}\index{CrabUI.CUITextInput@{CrabUI.CUITextInput}!SetSelection@{SetSelection}}
@@ -723,11 +734,11 @@ void Crab\+UI.\+CUIText\+Input.\+Set\+Selection (\begin{DoxyParamCaption}\item[{
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00050}{50}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00067}{67}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00050\ =>\ State.SetSelection(start,\ end);}
+\DoxyCodeLine{00067\ =>\ State.SetSelection(start,\ end);}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_text_input_aede8e8ef703e79490e9b71a3269244af}\index{CrabUI.CUITextInput@{CrabUI.CUITextInput}!UpdateRects@{UpdateRects}}
@@ -742,15 +753,15 @@ Reimplemented from \doxymbox{\hyperlink{class_crab_u_i_1_1_c_u_i_component}{Crab
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_visual_8cs_source_l00077}{77}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_visual_8cs_source}{CUIText\+Input.\+Visual.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_visual_8cs_source_l00078}{78}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_visual_8cs_source}{CUIText\+Input.\+Visual.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00078\ \ \ \ \ \{}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ base.UpdateRects();}
-\DoxyCodeLine{00080\ }
-\DoxyCodeLine{00081\ \ \ \ \ \ \ UpdateVisualState();}
-\DoxyCodeLine{00082\ \ \ \ \ \}}
+\DoxyCodeLine{00079\ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ base.UpdateRects();}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ UpdateVisualState();}
+\DoxyCodeLine{00083\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_text_input_a57b3a328fe164b7076439d8ef9eb8218}\index{CrabUI.CUITextInput@{CrabUI.CUITextInput}!UpdaTextMeasurements@{UpdaTextMeasurements}}
@@ -806,23 +817,23 @@ Implements \doxymbox{\hyperlink{interface_crab_u_i_1_1_i_visual_component}{Crab\
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_visual_8cs_source_l00097}{97}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_visual_8cs_source}{CUIText\+Input.\+Visual.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_visual_8cs_source_l00098}{98}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_visual_8cs_source}{CUIText\+Input.\+Visual.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00098\ \ \ \ \ \{}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Displayed\ ||\ CulledOut)\ yield\ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00100\ }
-\DoxyCodeLine{00101\ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ Background.VisualWrapper;}
-\DoxyCodeLine{00102\ }
-\DoxyCodeLine{00103\ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ VisualBounds.LeftBound;}
-\DoxyCodeLine{00104\ }
-\DoxyCodeLine{00105\ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ SelectionOverlay.VisualWrapper;}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ TextBlock.VisualWrapper;}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ CaretTexture.VisualWrapper;}
-\DoxyCodeLine{00108\ }
-\DoxyCodeLine{00109\ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ VisualBounds.RightBound;}
-\DoxyCodeLine{00110\ \ \ \ \ \}}
+\DoxyCodeLine{00099\ \ \ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!Displayed\ ||\ CulledOut)\ yield\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ Background.VisualWrapper;}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ VisualBounds.LeftBound;}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ SelectionOverlay.VisualWrapper;}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ TextBlock.VisualWrapper;}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ CaretTexture.VisualWrapper;}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ yield\ \textcolor{keywordflow}{return}\ VisualBounds.RightBound;}
+\DoxyCodeLine{00111\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -888,11 +899,29 @@ Color Crab\+UI.\+CUIText\+Input.\+Blured\+Color\hspace{0.3cm}{\ttfamily [get]}, 
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00022}{22}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00025}{25}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00022\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{00026\ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ BluredSprite.Color;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ BluredSprite.Color\ =\ value;}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_text_input_ad763cca447c324cd1c3bee5fa434ebf9}\index{CrabUI.CUITextInput@{CrabUI.CUITextInput}!BluredSprite@{BluredSprite}}
+\index{BluredSprite@{BluredSprite}!CrabUI.CUITextInput@{CrabUI.CUITextInput}}
+\doxysubsubsection{\texorpdfstring{BluredSprite}{BluredSprite}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_text_input_ad763cca447c324cd1c3bee5fa434ebf9} 
+CUISprite Crab\+UI.\+CUIText\+Input.\+Blured\+Sprite\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00037}{37}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_text_input_aa16276471910863e183ec2930100f239}\index{CrabUI.CUITextInput@{CrabUI.CUITextInput}!CaretBlinkInterval@{CaretBlinkInterval}}
@@ -918,14 +947,14 @@ Color Crab\+UI.\+CUIText\+Input.\+Caret\+Color\hspace{0.3cm}{\ttfamily [get]}, {
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00024}{24}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00041}{41}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00025\ \ \ \ \ \{}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ CaretTexture.Color;}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ CaretTexture.Color\ =\ value;}
-\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ CaretTexture.Color;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ CaretTexture.Color\ =\ value;}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_text_input_a6760c7d0db895dd60be3b2c8d3b3adee}\index{CrabUI.CUITextInput@{CrabUI.CUITextInput}!CaretPos@{CaretPos}}
@@ -936,14 +965,14 @@ int Crab\+UI.\+CUIText\+Input.\+Caret\+Pos\hspace{0.3cm}{\ttfamily [get]}, {\ttf
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00058}{58}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00075}{75}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00059\ \ \ \ \ \{}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ State.CaretPos;}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ State.SetCaretPos(value);}
-\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ State.CaretPos;}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ State.SetCaretPos(value);}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_text_input_a220a0382498ac7d794b67856d137c44a}\index{CrabUI.CUITextInput@{CrabUI.CUITextInput}!CaretTexture@{CaretTexture}}
@@ -971,12 +1000,13 @@ Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_visual_8cs_source_l0
 \begin{DoxyCode}{0}
 \DoxyCodeLine{=\ \textcolor{keyword}{new}\ CUIDefaultStyle<CUITextInput>((c)\ =>}
 \DoxyCodeLine{\ \ \ \ \{}
-\DoxyCodeLine{\ \ \ \ \ \ c.FocusedColor\ =\ c.Palette.Colors[\textcolor{stringliteral}{"{}inputfocused"{}}];}
-\DoxyCodeLine{\ \ \ \ \ \ c.BluredColor\ =\ c.Palette.Colors[\textcolor{stringliteral}{"{}inputblured"{}}];}
-\DoxyCodeLine{\ \ \ \ \ \ c.SelectionColor\ =\ c.Palette.Colors[\textcolor{stringliteral}{"{}inputselection"{}}]\ *\ 0.4f;}
-\DoxyCodeLine{\ \ \ \ \ \ c.CaretColor\ =\ c.Palette.Colors[\textcolor{stringliteral}{"{}inputcaret"{}}];}
-\DoxyCodeLine{\ \ \ \ \ \ c.InvalidColor\ =\ c.Palette.Colors[\textcolor{stringliteral}{"{}inputinvalid"{}}]\ *\ 0.5f;}
-\DoxyCodeLine{\ \ \ \ \ \ c.TextBlock.TextColor\ =\ c.Palette.Colors[\textcolor{stringliteral}{"{}text"{}}];}
+\DoxyCodeLine{\ \ \ \ \ \ c.FocusedColor\ =\ Color.Lerp(c.Palette[\textcolor{stringliteral}{"{}back"{}}],\ c.Palette[\textcolor{stringliteral}{"{}main"{}}],\ 0.8f);}
+\DoxyCodeLine{\ \ \ \ \ \ c.BluredColor\ =\ Color.Lerp(c.Palette[\textcolor{stringliteral}{"{}back"{}}],\ c.Palette[\textcolor{stringliteral}{"{}main"{}}],\ 0.3f);}
+\DoxyCodeLine{\ \ \ \ \ \ c.SelectionColor\ =\ c.Palette[\textcolor{stringliteral}{"{}selection"{}}]\ *\ 0.4f;}
+\DoxyCodeLine{\ \ \ \ \ \ c.CaretColor\ =\ c.Palette[\textcolor{stringliteral}{"{}selection"{}}];}
+\DoxyCodeLine{\ \ \ \ \ \ c.InvalidColor\ =\ c.Palette[\textcolor{stringliteral}{"{}invalid"{}}]\ *\ 0.5f;}
+\DoxyCodeLine{\ \ \ \ \ \ c.TextBlock.TextColor\ =\ c.Palette[\textcolor{stringliteral}{"{}text"{}}];}
+\DoxyCodeLine{\ \ \ \ \ \ c.UpdateVisualState();}
 \DoxyCodeLine{\ \ \ \ \})}
 
 \end{DoxyCode}
@@ -997,11 +1027,29 @@ Color Crab\+UI.\+CUIText\+Input.\+Focused\+Color\hspace{0.3cm}{\ttfamily [get]},
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00021}{21}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00020}{20}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00021\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{00021\ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ FocusedSprite.Color;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ FocusedSprite.Color\ =\ value;}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_text_input_acc37adc77d5594a5d4e0a7dc0a90e15c}\index{CrabUI.CUITextInput@{CrabUI.CUITextInput}!FocusedSprite@{FocusedSprite}}
+\index{FocusedSprite@{FocusedSprite}!CrabUI.CUITextInput@{CrabUI.CUITextInput}}
+\doxysubsubsection{\texorpdfstring{FocusedSprite}{FocusedSprite}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_text_input_acc37adc77d5594a5d4e0a7dc0a90e15c} 
+CUISprite Crab\+UI.\+CUIText\+Input.\+Focused\+Sprite\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00036}{36}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_text_input_a366db6d211faf6591d4e2468b9fa4956}\index{CrabUI.CUITextInput@{CrabUI.CUITextInput}!InvalidColor@{InvalidColor}}
@@ -1012,11 +1060,29 @@ Color Crab\+UI.\+CUIText\+Input.\+Invalid\+Color\hspace{0.3cm}{\ttfamily [get]},
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00020}{20}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00030}{30}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00020\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ InvalidSprite.Color;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ InvalidSprite.Color\ =\ value;}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_crab_u_i_1_1_c_u_i_text_input_a65fc4fc733f0620105a32cdcb9976a64}\index{CrabUI.CUITextInput@{CrabUI.CUITextInput}!InvalidSprite@{InvalidSprite}}
+\index{InvalidSprite@{InvalidSprite}!CrabUI.CUITextInput@{CrabUI.CUITextInput}}
+\doxysubsubsection{\texorpdfstring{InvalidSprite}{InvalidSprite}}
+{\footnotesize\ttfamily \label{class_crab_u_i_1_1_c_u_i_text_input_a65fc4fc733f0620105a32cdcb9976a64} 
+CUISprite Crab\+UI.\+CUIText\+Input.\+Invalid\+Sprite\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00038}{38}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_text_input_adc8df5c3af9c01426eeac06286013503}\index{CrabUI.CUITextInput@{CrabUI.CUITextInput}!OnInput@{OnInput}}
@@ -1027,11 +1093,11 @@ Action$<$string$>$ Crab\+UI.\+CUIText\+Input.\+On\+Input\hspace{0.3cm}{\ttfamily
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00036}{36}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00053}{53}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00036\ \{\ \textcolor{keyword}{set}\ \{\ Input\ +=\ value;\ \}\ \}}
+\DoxyCodeLine{00053\ \{\ \textcolor{keyword}{set}\ \{\ Input\ +=\ value;\ \}\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_text_input_a9b3642632fca802e0e2114494f111411}\index{CrabUI.CUITextInput@{CrabUI.CUITextInput}!OnValidInput@{OnValidInput}}
@@ -1042,11 +1108,11 @@ Action$<$string$>$ Crab\+UI.\+CUIText\+Input.\+On\+Valid\+Input\hspace{0.3cm}{\t
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00039}{39}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00056}{56}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00039\ \{\ \textcolor{keyword}{set}\ \{\ ValidInput\ +=\ value;\ \}\ \}}
+\DoxyCodeLine{00056\ \{\ \textcolor{keyword}{set}\ \{\ ValidInput\ +=\ value;\ \}\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_text_input_a73b4cb3a98a4bee2d1567ec83c708793}\index{CrabUI.CUITextInput@{CrabUI.CUITextInput}!SelectionColor@{SelectionColor}}
@@ -1057,11 +1123,11 @@ Color Crab\+UI.\+CUIText\+Input.\+Selection\+Color\hspace{0.3cm}{\ttfamily [get]
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00023}{23}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00040}{40}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00023\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{00040\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_text_input_a3916b2d45373ecf99b35115db4b7a4f6}\index{CrabUI.CUITextInput@{CrabUI.CUITextInput}!SelectionEmpty@{SelectionEmpty}}
@@ -1072,7 +1138,7 @@ bool Crab\+UI.\+CUIText\+Input.\+Selection\+Empty\hspace{0.3cm}{\ttfamily [get]}
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00067}{67}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00084}{84}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
 
 \Hypertarget{class_crab_u_i_1_1_c_u_i_text_input_ac75440f38a3e89f7fe30a7250619e9ee}\index{CrabUI.CUITextInput@{CrabUI.CUITextInput}!SelectionEnd@{SelectionEnd}}
 \index{SelectionEnd@{SelectionEnd}!CrabUI.CUITextInput@{CrabUI.CUITextInput}}
@@ -1082,14 +1148,14 @@ int Crab\+UI.\+CUIText\+Input.\+Selection\+End\hspace{0.3cm}{\ttfamily [get]}, {
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00052}{52}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00069}{69}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00053\ \ \ \ \ \{}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ State.SelectionEnd;}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ State.SetSelectionEnd(value);}
-\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ State.SelectionEnd;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ State.SetSelectionEnd(value);}
+\DoxyCodeLine{00073\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_text_input_adb2fec0c1dec6f288224938813aae9a2}\index{CrabUI.CUITextInput@{CrabUI.CUITextInput}!SelectionLength@{SelectionLength}}
@@ -1100,7 +1166,7 @@ int Crab\+UI.\+CUIText\+Input.\+Selection\+Length\hspace{0.3cm}{\ttfamily [get]}
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00066}{66}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00083}{83}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
 
 \Hypertarget{class_crab_u_i_1_1_c_u_i_text_input_a28f987d5ff97821b473b011f0c2d958f}\index{CrabUI.CUITextInput@{CrabUI.CUITextInput}!SelectionOverlay@{SelectionOverlay}}
 \index{SelectionOverlay@{SelectionOverlay}!CrabUI.CUITextInput@{CrabUI.CUITextInput}}
@@ -1125,14 +1191,14 @@ int Crab\+UI.\+CUIText\+Input.\+Selection\+Start\hspace{0.3cm}{\ttfamily [get]},
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00043}{43}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00060}{60}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00044\ \ \ \ \ \{}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ State.SelectionStart;}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ State.SetSelectionStart(value);}
-\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ State.SelectionStart;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ State.SetSelectionStart(value);}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_text_input_a63b9e58b85d3c89e9afbeb9b0080b2ab}\index{CrabUI.CUITextInput@{CrabUI.CUITextInput}!SomethingSelected@{SomethingSelected}}
@@ -1143,7 +1209,7 @@ bool Crab\+UI.\+CUIText\+Input.\+Something\+Selected\hspace{0.3cm}{\ttfamily [ge
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00042}{42}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00059}{59}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
 
 \Hypertarget{class_crab_u_i_1_1_c_u_i_text_input_adfb0bdc424bf31201bae58da0b7b019e}\index{CrabUI.CUITextInput@{CrabUI.CUITextInput}!State@{State}}
 \index{State@{State}!CrabUI.CUITextInput@{CrabUI.CUITextInput}}
@@ -1168,14 +1234,14 @@ string Crab\+UI.\+CUIText\+Input.\+Text\hspace{0.3cm}{\ttfamily [get]}, {\ttfami
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00030}{30}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00047}{47}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00031\ \ \ \ \ \{}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ State.Text;}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ State.SetText(value);}
-\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ State.Text;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \textcolor{keyword}{set}\ =>\ State.SetText(value);}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
 
 \end{DoxyCode}
 \Hypertarget{class_crab_u_i_1_1_c_u_i_text_input_a7c5d2b8ad27296c26f98aebaa4612df7}\index{CrabUI.CUITextInput@{CrabUI.CUITextInput}!TextBlock@{TextBlock}}
@@ -1231,20 +1297,20 @@ virtual bool Crab\+UI.\+CUIText\+Input.\+Visible\hspace{0.3cm}{\ttfamily [get]},
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_visual_8cs_source_l00085}{85}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_visual_8cs_source}{CUIText\+Input.\+Visual.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_visual_8cs_source_l00086}{86}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_visual_8cs_source}{CUIText\+Input.\+Visual.\+cs}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00086\ \ \ \ \ \{}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Background.Visible;}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \textcolor{keyword}{set}}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ Background.Visible\ =\ value;}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ SelectionOverlay.Visible\ =\ value;}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ TextBlock.Visible\ =\ value;}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ CaretTexture.Visible\ =\ value;}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00095\ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \textcolor{keyword}{get}\ =>\ Background.Visible;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \textcolor{keyword}{set}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ Background.Visible\ =\ value;}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ SelectionOverlay.Visible\ =\ value;}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ TextBlock.Visible\ =\ value;}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ CaretTexture.Visible\ =\ value;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00096\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -1260,7 +1326,7 @@ Action$<$string$>$ Crab\+UI.\+CUIText\+Input.\+Input}
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00037}{37}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00054}{54}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
 
 \Hypertarget{class_crab_u_i_1_1_c_u_i_text_input_a79e4f8d68df9f0c550938f22c0cbdb47}\index{CrabUI.CUITextInput@{CrabUI.CUITextInput}!ValidInput@{ValidInput}}
 \index{ValidInput@{ValidInput}!CrabUI.CUITextInput@{CrabUI.CUITextInput}}
@@ -1270,7 +1336,7 @@ Action$<$string$>$ Crab\+UI.\+CUIText\+Input.\+Valid\+Input}
 
 
 
-Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00040}{40}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
+Definition at line \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source_l00057}{57}} of file \doxymbox{\hyperlink{_c_u_i_text_input_8_public_8cs_source}{CUIText\+Input.\+Public.\+cs}}.
 
 
 

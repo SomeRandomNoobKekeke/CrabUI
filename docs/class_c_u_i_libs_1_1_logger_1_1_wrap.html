@@ -25,6 +25,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="dev.png"/></td>
   <td id="projectalign">
    <div id="projectname">CUI
    </div>
@@ -100,7 +101,9 @@ $(function(){initNavTree('class_c_u_i_libs_1_1_logger_1_1_wrap.html','','class_c
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a2dd9159d9222e3353909fd2505555184" id="r_a2dd9159d9222e3353909fd2505555184"><td class="memItemLeft">static string&#160;</td><td class="memItemRight"><a class="el" href="#a2dd9159d9222e3353909fd2505555184">ExceptionMessage</a> (Exception e)</td></tr>
 <tr class="memitem:a42810e9e580d2a13b1060d9632236adf" id="r_a42810e9e580d2a13b1060d9632236adf"><td class="memItemLeft">static string&#160;</td><td class="memItemRight"><a class="el" href="#a42810e9e580d2a13b1060d9632236adf">IEnumerable</a> (IEnumerable&lt; object &gt; array, bool newline=false)</td></tr>
+<tr class="memitem:af8bd76531c93c2f84c93f06cd4324250" id="r_af8bd76531c93c2f84c93f06cd4324250"><td class="memItemLeft">static string&#160;</td><td class="memItemRight"><a class="el" href="#af8bd76531c93c2f84c93f06cd4324250">Dictionary&lt; TKey, TValue &gt;</a> (IDictionary&lt; TKey, TValue &gt; dict)</td></tr>
 <tr class="memitem:ab99a64c507473f40acbcdd79e4260144" id="r_ab99a64c507473f40acbcdd79e4260144"><td class="memItemLeft">static string&#160;</td><td class="memItemRight"><a class="el" href="#ab99a64c507473f40acbcdd79e4260144">IDictionary</a> (System.Collections.IDictionary dict)</td></tr>
+<tr class="memitem:ae919dae9d85f4996c9e39a7f537f3a8f" id="r_ae919dae9d85f4996c9e39a7f537f3a8f"><td class="memItemLeft">static string&#160;</td><td class="memItemRight"><a class="el" href="#ae919dae9d85f4996c9e39a7f537f3a8f">AsJson</a> (object target)</td></tr>
 <tr class="memitem:acc84da5959a12fb510b97c032bdc2990" id="r_acc84da5959a12fb510b97c032bdc2990"><td class="memItemLeft">static string&#160;</td><td class="memItemRight"><a class="el" href="#acc84da5959a12fb510b97c032bdc2990">Props</a> (object target)</td></tr>
 <tr class="memdesc:acc84da5959a12fb510b97c032bdc2990"><td class="mdescLeft">&#160;</td><td class="mdescRight">Just direct props of an object.  <br /></td></tr>
 <tr class="memitem:af5fa02348d4ae3bebe1813455ebb66d4" id="r_af5fa02348d4ae3bebe1813455ebb66d4"><td class="memItemLeft">static string&#160;</td><td class="memItemRight"><a class="el" href="#af5fa02348d4ae3bebe1813455ebb66d4">Vars</a> (object arg1, [CallerArgumentExpression(&quot;arg1&quot;)] string exp1=null)</td></tr>
@@ -112,8 +115,81 @@ Static Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Some custom serialization methods, Tooks them from parser, some of them are garbage. </p>
 
-<p class="definition">Definition at line <a class="el" href="_logger_8_wrap_8cs_source.html#l00029">29</a> of file <a class="el" href="_logger_8_wrap_8cs_source.html">Logger.Wrap.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_logger_8_wrap_8cs_source.html#l00032">32</a> of file <a class="el" href="_logger_8_wrap_8cs_source.html">Logger.Wrap.cs</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="ae919dae9d85f4996c9e39a7f537f3a8f" name="ae919dae9d85f4996c9e39a7f537f3a8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae919dae9d85f4996c9e39a7f537f3a8f">&#9670;&#160;</a></span>AsJson()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string CUILibs.Logger.Wrap.AsJson </td>
+          <td>(</td>
+          <td class="paramtype">object</td>          <td class="paramname"><span class="paramname"><em>target</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_logger_8_wrap_8cs_source.html#l00077">77</a> of file <a class="el" href="_logger_8_wrap_8cs_source.html">Logger.Wrap.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   78</span>      {</div>
+<div class="line"><span class="lineno">   79</span>        <span class="keywordflow">return</span> JsonSerializer.Serialize(target, <span class="keyword">new</span> JsonSerializerOptions</div>
+<div class="line"><span class="lineno">   80</span>        {</div>
+<div class="line"><span class="lineno">   81</span>          WriteIndented = <span class="keyword">true</span>,</div>
+<div class="line"><span class="lineno">   82</span>          Encoder = JavaScriptEncoder.Create(UnicodeRanges.All)</div>
+<div class="line"><span class="lineno">   83</span>        });</div>
+<div class="line"><span class="lineno">   84</span>      }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af8bd76531c93c2f84c93f06cd4324250" name="af8bd76531c93c2f84c93f06cd4324250"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8bd76531c93c2f84c93f06cd4324250">&#9670;&#160;</a></span>Dictionary&lt; TKey, TValue &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string CUILibs.Logger.Wrap.Dictionary&lt; TKey, TValue &gt; </td>
+          <td>(</td>
+          <td class="paramtype">IDictionary&lt; TKey, TValue &gt;</td>          <td class="paramname"><span class="paramname"><em>dict</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_logger_8_wrap_8cs_source.html#l00048">48</a> of file <a class="el" href="_logger_8_wrap_8cs_source.html">Logger.Wrap.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   49</span>      {</div>
+<div class="line"><span class="lineno">   50</span>        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>        sb.Append(<span class="stringliteral">&quot;{\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   53</span>        <span class="keywordflow">foreach</span> (var entry <span class="keywordflow">in</span> dict)</div>
+<div class="line"><span class="lineno">   54</span>        {</div>
+<div class="line"><span class="lineno">   55</span>          sb.Append($<span class="stringliteral">&quot;    {entry.Key}: [{WrapInColor(entry.Value, &quot;</span>white<span class="stringliteral">&quot;)}],\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   56</span>        }</div>
+<div class="line"><span class="lineno">   57</span>        sb.Append(<span class="stringliteral">&quot;} &quot;</span>);</div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span>        <span class="keywordflow">return</span> sb.ToString();</div>
+<div class="line"><span class="lineno">   60</span>      }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a2dd9159d9222e3353909fd2505555184" name="a2dd9159d9222e3353909fd2505555184"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2dd9159d9222e3353909fd2505555184">&#9670;&#160;</a></span>ExceptionMessage()</h2>
 
@@ -137,8 +213,8 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_logger_8_wrap_8cs_source.html#l00031">31</a> of file <a class="el" href="_logger_8_wrap_8cs_source.html">Logger.Wrap.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   32</span>        =&gt; $<span class="stringliteral">&quot;[{e.Message}{(e.InnerException is null ? null : $&quot;</span> - {e.InnerException.Message}<span class="stringliteral">&quot;)}]&quot;</span>;</div>
+<p class="definition">Definition at line <a class="el" href="_logger_8_wrap_8cs_source.html#l00034">34</a> of file <a class="el" href="_logger_8_wrap_8cs_source.html">Logger.Wrap.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   35</span>        =&gt; $<span class="stringliteral">&quot;[{e.Message}{(e.InnerException is null ? null : $&quot;</span> - {e.InnerException.Message}<span class="stringliteral">&quot;)}]&quot;</span>;</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -165,19 +241,19 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_logger_8_wrap_8cs_source.html#l00045">45</a> of file <a class="el" href="_logger_8_wrap_8cs_source.html">Logger.Wrap.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   46</span>      {</div>
-<div class="line"><span class="lineno">   47</span>        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</div>
-<div class="line"><span class="lineno">   48</span> </div>
-<div class="line"><span class="lineno">   49</span>        sb.Append(<span class="stringliteral">&quot;{\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   50</span>        <span class="keywordflow">foreach</span> (System.Collections.DictionaryEntry entry in dict)</div>
-<div class="line"><span class="lineno">   51</span>        {</div>
-<div class="line"><span class="lineno">   52</span>          sb.Append($<span class="stringliteral">&quot;    {entry.Key}: [{WrapInColor(entry.Value, &quot;</span>white<span class="stringliteral">&quot;)}],\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   53</span>        }</div>
-<div class="line"><span class="lineno">   54</span>        sb.Append(<span class="stringliteral">&quot;} &quot;</span>);</div>
-<div class="line"><span class="lineno">   55</span> </div>
-<div class="line"><span class="lineno">   56</span>        <span class="keywordflow">return</span> sb.ToString();</div>
-<div class="line"><span class="lineno">   57</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="_logger_8_wrap_8cs_source.html#l00062">62</a> of file <a class="el" href="_logger_8_wrap_8cs_source.html">Logger.Wrap.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>      {</div>
+<div class="line"><span class="lineno">   64</span>        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</div>
+<div class="line"><span class="lineno">   65</span> </div>
+<div class="line"><span class="lineno">   66</span>        sb.Append(<span class="stringliteral">&quot;{\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   67</span>        <span class="keywordflow">foreach</span> (System.Collections.DictionaryEntry entry in dict)</div>
+<div class="line"><span class="lineno">   68</span>        {</div>
+<div class="line"><span class="lineno">   69</span>          sb.Append($<span class="stringliteral">&quot;    {entry.Key}: [{WrapInColor(entry.Value, &quot;</span>white<span class="stringliteral">&quot;)}],\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   70</span>        }</div>
+<div class="line"><span class="lineno">   71</span>        sb.Append(<span class="stringliteral">&quot;} &quot;</span>);</div>
+<div class="line"><span class="lineno">   72</span> </div>
+<div class="line"><span class="lineno">   73</span>        <span class="keywordflow">return</span> sb.ToString();</div>
+<div class="line"><span class="lineno">   74</span>      }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -208,17 +284,17 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_logger_8_wrap_8cs_source.html#l00033">33</a> of file <a class="el" href="_logger_8_wrap_8cs_source.html">Logger.Wrap.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   34</span>      {</div>
-<div class="line"><span class="lineno">   35</span>        <span class="keywordflow">if</span> (newline)</div>
-<div class="line"><span class="lineno">   36</span>        {</div>
-<div class="line"><span class="lineno">   37</span>          <span class="keywordflow">return</span> $<span class="stringliteral">&quot;[\n{String.Join(&quot;</span>,\n<span class="stringliteral">&quot;, array?.Select(o =&gt; $&quot;</span>    {WrapInColor(o?.ToString(), <span class="stringliteral">&quot;white&quot;</span>)}<span class="stringliteral">&quot;) ?? new string[] { })}\n]&quot;</span>;</div>
-<div class="line"><span class="lineno">   38</span>        }</div>
-<div class="line"><span class="lineno">   39</span>        <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   40</span>        {</div>
-<div class="line"><span class="lineno">   41</span>          <span class="keywordflow">return</span> $<span class="stringliteral">&quot;[{String.Join(&quot;</span>, <span class="stringliteral">&quot;, array?.Select(o =&gt; WrapInColor(o?.ToString(), &quot;</span>white<span class="stringliteral">&quot;)) ?? new string[] { })}]&quot;</span>;</div>
-<div class="line"><span class="lineno">   42</span>        }</div>
-<div class="line"><span class="lineno">   43</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="_logger_8_wrap_8cs_source.html#l00036">36</a> of file <a class="el" href="_logger_8_wrap_8cs_source.html">Logger.Wrap.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   37</span>      {</div>
+<div class="line"><span class="lineno">   38</span>        <span class="keywordflow">if</span> (newline)</div>
+<div class="line"><span class="lineno">   39</span>        {</div>
+<div class="line"><span class="lineno">   40</span>          <span class="keywordflow">return</span> $<span class="stringliteral">&quot;[\n{String.Join(&quot;</span>,\n<span class="stringliteral">&quot;, array?.Select(o =&gt; $&quot;</span>    {WrapInColor(o?.ToString(), <span class="stringliteral">&quot;white&quot;</span>)}<span class="stringliteral">&quot;) ?? new string[] { })}\n]&quot;</span>;</div>
+<div class="line"><span class="lineno">   41</span>        }</div>
+<div class="line"><span class="lineno">   42</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   43</span>        {</div>
+<div class="line"><span class="lineno">   44</span>          <span class="keywordflow">return</span> $<span class="stringliteral">&quot;[{String.Join(&quot;</span>, <span class="stringliteral">&quot;, array?.Select(o =&gt; WrapInColor(o?.ToString(), &quot;</span>white<span class="stringliteral">&quot;)) ?? new string[] { })}]&quot;</span>;</div>
+<div class="line"><span class="lineno">   45</span>        }</div>
+<div class="line"><span class="lineno">   46</span>      }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -247,17 +323,17 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Just direct props of an object. </p>
 
-<p class="definition">Definition at line <a class="el" href="_logger_8_wrap_8cs_source.html#l00117">117</a> of file <a class="el" href="_logger_8_wrap_8cs_source.html">Logger.Wrap.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  118</span>      {</div>
-<div class="line"><span class="lineno">  119</span>        <span class="keywordflow">if</span> (target is <span class="keyword">null</span>) <span class="keywordflow">return</span> <span class="stringliteral">&quot;[null]&quot;</span>;</div>
-<div class="line"><span class="lineno">  120</span>        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</div>
-<div class="line"><span class="lineno">  121</span>        <span class="keywordflow">foreach</span> (PropertyInfo pi <span class="keywordflow">in</span> target.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public))</div>
-<div class="line"><span class="lineno">  122</span>        {</div>
-<div class="line"><span class="lineno">  123</span>          sb.Append($<span class="stringliteral">&quot;{pi.PropertyType.Name}  {pi.Name}: [{WrapInColor(pi.GetValue(target), &quot;</span>white<span class="stringliteral">&quot;)}]\n&quot;</span>);</div>
-<div class="line"><span class="lineno">  124</span>        }</div>
-<div class="line"><span class="lineno">  125</span> </div>
-<div class="line"><span class="lineno">  126</span>        <span class="keywordflow">return</span> sb.ToString();</div>
-<div class="line"><span class="lineno">  127</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="_logger_8_wrap_8cs_source.html#l00089">89</a> of file <a class="el" href="_logger_8_wrap_8cs_source.html">Logger.Wrap.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   90</span>      {</div>
+<div class="line"><span class="lineno">   91</span>        <span class="keywordflow">if</span> (target is <span class="keyword">null</span>) <span class="keywordflow">return</span> <span class="stringliteral">&quot;[null]&quot;</span>;</div>
+<div class="line"><span class="lineno">   92</span>        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</div>
+<div class="line"><span class="lineno">   93</span>        <span class="keywordflow">foreach</span> (PropertyInfo pi <span class="keywordflow">in</span> target.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public))</div>
+<div class="line"><span class="lineno">   94</span>        {</div>
+<div class="line"><span class="lineno">   95</span>          sb.Append($<span class="stringliteral">&quot;{pi.PropertyType.Name}  {pi.Name}: [{WrapInColor(pi.GetValue(target), &quot;</span>white<span class="stringliteral">&quot;)}]\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   96</span>        }</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>        <span class="keywordflow">return</span> sb.ToString();</div>
+<div class="line"><span class="lineno">   99</span>      }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -288,10 +364,10 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_logger_8_wrap_8cs_source.html#l00131">131</a> of file <a class="el" href="_logger_8_wrap_8cs_source.html">Logger.Wrap.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  134</span>      {</div>
-<div class="line"><span class="lineno">  135</span>        <span class="keywordflow">return</span> $<span class="stringliteral">&quot;{exp1}: [{WrapInColor(arg1, &quot;</span>white<span class="stringliteral">&quot;)}]&quot;</span>;</div>
-<div class="line"><span class="lineno">  136</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="_logger_8_wrap_8cs_source.html#l00103">103</a> of file <a class="el" href="_logger_8_wrap_8cs_source.html">Logger.Wrap.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  106</span>      {</div>
+<div class="line"><span class="lineno">  107</span>        <span class="keywordflow">return</span> $<span class="stringliteral">&quot;{exp1}: [{WrapInColor(arg1, &quot;</span>white<span class="stringliteral">&quot;)}]&quot;</span>;</div>
+<div class="line"><span class="lineno">  108</span>      }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -332,10 +408,10 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_logger_8_wrap_8cs_source.html#l00138">138</a> of file <a class="el" href="_logger_8_wrap_8cs_source.html">Logger.Wrap.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  142</span>      {</div>
-<div class="line"><span class="lineno">  143</span>        <span class="keywordflow">return</span> $<span class="stringliteral">&quot;{exp1}: [{WrapInColor(arg1, &quot;</span>white<span class="stringliteral">&quot;)}], {exp2}: [{WrapInColor(arg2, &quot;</span>white<span class="stringliteral">&quot;)}]&quot;</span>;</div>
-<div class="line"><span class="lineno">  144</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="_logger_8_wrap_8cs_source.html#l00110">110</a> of file <a class="el" href="_logger_8_wrap_8cs_source.html">Logger.Wrap.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  114</span>      {</div>
+<div class="line"><span class="lineno">  115</span>        <span class="keywordflow">return</span> $<span class="stringliteral">&quot;{exp1}: [{WrapInColor(arg1, &quot;</span>white<span class="stringliteral">&quot;)}], {exp2}: [{WrapInColor(arg2, &quot;</span>white<span class="stringliteral">&quot;)}]&quot;</span>;</div>
+<div class="line"><span class="lineno">  116</span>      }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -386,10 +462,10 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_logger_8_wrap_8cs_source.html#l00147">147</a> of file <a class="el" href="_logger_8_wrap_8cs_source.html">Logger.Wrap.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  152</span>      {</div>
-<div class="line"><span class="lineno">  153</span>        <span class="keywordflow">return</span> $<span class="stringliteral">&quot;{exp1}: [{WrapInColor(arg1, &quot;</span>white<span class="stringliteral">&quot;)}], {exp2}: [{WrapInColor(arg2, &quot;</span>white<span class="stringliteral">&quot;)}], {exp3}: [{WrapInColor(arg3, &quot;</span>white<span class="stringliteral">&quot;)}]&quot;</span>;</div>
-<div class="line"><span class="lineno">  154</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="_logger_8_wrap_8cs_source.html#l00119">119</a> of file <a class="el" href="_logger_8_wrap_8cs_source.html">Logger.Wrap.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  124</span>      {</div>
+<div class="line"><span class="lineno">  125</span>        <span class="keywordflow">return</span> $<span class="stringliteral">&quot;{exp1}: [{WrapInColor(arg1, &quot;</span>white<span class="stringliteral">&quot;)}], {exp2}: [{WrapInColor(arg2, &quot;</span>white<span class="stringliteral">&quot;)}], {exp3}: [{WrapInColor(arg3, &quot;</span>white<span class="stringliteral">&quot;)}]&quot;</span>;</div>
+<div class="line"><span class="lineno">  126</span>      }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -450,10 +526,10 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_logger_8_wrap_8cs_source.html#l00156">156</a> of file <a class="el" href="_logger_8_wrap_8cs_source.html">Logger.Wrap.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  162</span>      {</div>
-<div class="line"><span class="lineno">  163</span>        <span class="keywordflow">return</span> $<span class="stringliteral">&quot;{exp1}: [{WrapInColor(arg1, &quot;</span>white<span class="stringliteral">&quot;)}], {exp2}: [{WrapInColor(arg2, &quot;</span>white<span class="stringliteral">&quot;)}], {exp3}: [{WrapInColor(arg3, &quot;</span>white<span class="stringliteral">&quot;)}], {exp4}: [{WrapInColor(arg4, &quot;</span>white<span class="stringliteral">&quot;)}]&quot;</span>;</div>
-<div class="line"><span class="lineno">  164</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="_logger_8_wrap_8cs_source.html#l00128">128</a> of file <a class="el" href="_logger_8_wrap_8cs_source.html">Logger.Wrap.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  134</span>      {</div>
+<div class="line"><span class="lineno">  135</span>        <span class="keywordflow">return</span> $<span class="stringliteral">&quot;{exp1}: [{WrapInColor(arg1, &quot;</span>white<span class="stringliteral">&quot;)}], {exp2}: [{WrapInColor(arg2, &quot;</span>white<span class="stringliteral">&quot;)}], {exp3}: [{WrapInColor(arg3, &quot;</span>white<span class="stringliteral">&quot;)}], {exp4}: [{WrapInColor(arg4, &quot;</span>white<span class="stringliteral">&quot;)}]&quot;</span>;</div>
+<div class="line"><span class="lineno">  136</span>      }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -524,10 +600,10 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_logger_8_wrap_8cs_source.html#l00166">166</a> of file <a class="el" href="_logger_8_wrap_8cs_source.html">Logger.Wrap.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  173</span>      {</div>
-<div class="line"><span class="lineno">  174</span>        <span class="keywordflow">return</span> $<span class="stringliteral">&quot;{exp1}: [{WrapInColor(arg1, &quot;</span>white<span class="stringliteral">&quot;)}], {exp2}: [{WrapInColor(arg2, &quot;</span>white<span class="stringliteral">&quot;)}], {exp3}: [{WrapInColor(arg3, &quot;</span>white<span class="stringliteral">&quot;)}], {exp4}: [{WrapInColor(arg4, &quot;</span>white<span class="stringliteral">&quot;)}], {exp5}: [{WrapInColor(arg5, &quot;</span>white<span class="stringliteral">&quot;)}]&quot;</span>;</div>
-<div class="line"><span class="lineno">  175</span>      }</div>
+<p class="definition">Definition at line <a class="el" href="_logger_8_wrap_8cs_source.html#l00138">138</a> of file <a class="el" href="_logger_8_wrap_8cs_source.html">Logger.Wrap.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  145</span>      {</div>
+<div class="line"><span class="lineno">  146</span>        <span class="keywordflow">return</span> $<span class="stringliteral">&quot;{exp1}: [{WrapInColor(arg1, &quot;</span>white<span class="stringliteral">&quot;)}], {exp2}: [{WrapInColor(arg2, &quot;</span>white<span class="stringliteral">&quot;)}], {exp3}: [{WrapInColor(arg3, &quot;</span>white<span class="stringliteral">&quot;)}], {exp4}: [{WrapInColor(arg4, &quot;</span>white<span class="stringliteral">&quot;)}], {exp5}: [{WrapInColor(arg5, &quot;</span>white<span class="stringliteral">&quot;)}]&quot;</span>;</div>
+<div class="line"><span class="lineno">  147</span>      }</div>
 </div><!-- fragment -->
 </div>
 </div>

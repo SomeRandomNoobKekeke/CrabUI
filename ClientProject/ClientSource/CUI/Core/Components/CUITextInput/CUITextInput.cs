@@ -18,12 +18,13 @@ namespace CrabUI
     public class Part : IPart { public CUITextInput Self { get; set; } }
     public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUITextInput>((c) =>
     {
-      c.FocusedColor = c.Palette.Colors["inputfocused"];
-      c.BluredColor = c.Palette.Colors["inputblured"];
-      c.SelectionColor = c.Palette.Colors["inputselection"] * 0.4f;
-      c.CaretColor = c.Palette.Colors["inputcaret"];
-      c.InvalidColor = c.Palette.Colors["inputinvalid"] * 0.5f;
-      c.TextBlock.TextColor = c.Palette.Colors["text"];
+      c.FocusedColor = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.8f);
+      c.BluredColor = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.3f);
+      c.SelectionColor = c.Palette["selection"] * 0.4f;
+      c.CaretColor = c.Palette["selection"];
+      c.InvalidColor = c.Palette["invalid"] * 0.5f;
+      c.TextBlock.TextColor = c.Palette["text"];
+      c.UpdateVisualState();//HACK
     });
 
     protected override void InitStyle()
@@ -34,6 +35,13 @@ namespace CrabUI
       ConsumeMouseEvents = true;
       ConsumeFocus = true;
       CullChildren = true;
+
+      BluredSprite = CUISprite.White;
+      InvalidSprite = CUIDefaultSprite.BoxWithALamp;
+      FocusedSprite = CUIDefaultSprite.BoxWithALamp;
+
+      Background.Sprite = BluredSprite;
+      Padding = new CUISizes(4, 4, 4, 4);
     }
 
 

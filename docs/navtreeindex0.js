@@ -131,12 +131,9 @@ var NAVTREEINDEX0 =
 "_c_u_i_null_vector2_8cs_source.html":[10,0,0,0,1,0,10,5],
 "_c_u_i_page_8cs_source.html":[10,0,0,0,1,0,2,15],
 "_c_u_i_pages_8cs_source.html":[10,0,0,0,1,0,2,16],
-"_c_u_i_palette_8_default_8cs_source.html":[10,0,0,0,1,0,11,0,1],
-"_c_u_i_palette_8_preview_8cs_source.html":[10,0,0,0,1,0,11,0,2],
+"_c_u_i_palette_8_preview_8cs_source.html":[10,0,0,0,1,0,11,0,1],
 "_c_u_i_palette_8cs_source.html":[10,0,0,0,1,0,11,0,0],
-"_c_u_i_palette_manager_8cs_source.html":[10,0,0,0,1,0,11,0,3],
-"_c_u_i_palette_rank_8cs_source.html":[10,0,0,0,1,0,11,0,4],
-"_c_u_i_palette_slot_8cs_source.html":[10,0,0,0,1,0,11,0,5],
+"_c_u_i_palette_manager_8cs_source.html":[10,0,0,0,1,0,11,0,2],
 "_c_u_i_parser_8_extra_parse_8cs_source.html":[10,0,0,0,1,0,9,0,1],
 "_c_u_i_parser_8_extra_serialize_8cs_source.html":[10,0,0,0,1,0,9,0,2],
 "_c_u_i_plain_layout_8_host_8cs_source.html":[10,0,0,0,1,0,2,0,0,2],
@@ -249,5 +246,8 @@ var NAVTREEINDEX0 =
 "_debug_node3_8cs_source.html":[10,0,0,0,2,2,1,3],
 "_debug_node4_8cs_source.html":[10,0,0,0,2,2,1,4],
 "_debug_node5_8cs_source.html":[10,0,0,0,2,2,1,5],
-"_debug_node_2_test_2_concept_8cs_source.html":[10,0,0,0,2,2,3,0]
+"_debug_node_2_test_2_concept_8cs_source.html":[10,0,0,0,2,2,3,0],
+"_debug_node_base_8cs_source.html":[10,0,0,0,2,2,1,6],
+"_debug_node_dict_8cs_source.html":[10,0,0,0,2,2,1,7],
+"_debug_node_setup_8cs_source.html":[10,0,0,0,2,2,1,8]
 };

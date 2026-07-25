@@ -25,6 +25,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="dev.png"/></td>
   <td id="projectalign">
    <div id="projectname">CUI
    </div>
@@ -94,19 +95,19 @@ $(function(){initNavTree('_notes_for_code_divers.html','',''); });
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md__docs_sources_2_sources_24_01_notes_for_code_divers"></a></p>
 <p>those //BRUH and //CRINGE marks are actually tech debt markers, i can see them in TODO Tree</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md31"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md34"></a>
 Component Generator</h1>
 <p>I moved many reflection based tasks to a separate project <a href="https://github.com/SomeRandomNoobKekeke/CUICodeGenerator">here</a> <br  />
 </p>
-<p>It's in a separate mod so i won't be softlocked if CUI assembly won't compile</p>
+<p>It's in a separate mod so i wouldn't be softlocked if CUI assembly doesn't compile</p>
 <p>It allows me to use some funny desing patterns:</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md32"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md35"></a>
 Components</h2>
 <p>Components implementing IComponent are just containers for stuff <br  />
  Their main purpose is to be an identity, a linking point for modules that contain logic and data <br  />
  Sometimes they have logic and data on rool level, treat is as root level modules</p>
 <p><a class="el" href="namespace_c_u_i_code_generator.html">CUICodeGenerator</a> will generate code for Components with [GeneratedComponent]</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md33"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md36"></a>
 Parts</h2>
 <div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>Component</div>
 <div class="line">{</div>
@@ -125,7 +126,7 @@ Parts</h2>
 <div class="fragment"><div class="line">Component component = <span class="keyword">new</span>();</div>
 <div class="line">component.LayoutProps.Flex = 1;</div>
 </div><!-- fragment --><p>parts can be private and hide internal state, or they can expose limited access to private stuff</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md34"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md37"></a>
 Adapter parts</h2>
 <p>Parts can implement interfaces and make host appear like something else </p><div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">interface </span>IFlexible</div>
 <div class="line">{</div>
@@ -148,10 +149,10 @@ Adapter parts</h2>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">public</span> <span class="keywordtype">float</span> NotFlexAtAll { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 <div class="line">}</div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md35"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md38"></a>
 Init methods</h2>
 <p>Init methods in parts and methods marked with [InitMethod] on component will be called</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md36"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md39"></a>
 Modules</h2>
 <p>objects implementing IModule are modules <br  />
  They can contain logic and data <br  />
@@ -159,15 +160,15 @@ Modules</h2>
  They can reques other modules with [In] attribute by type or interface <br  />
  Host component is supposed to inject them <br  />
  They can be private and hide implementation details</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md37"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md40"></a>
 Chimera Parts</h2>
 <p>Sometimes i fail to decouple module from component and this happens: </p><div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keyword">class </span>Tree_Part : Part, IModule</div>
 </div><!-- fragment --><p> They are parts but they can be injected and request other modules</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md38"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md41"></a>
 IPropContainer IProp</h2>
 <p>IProps inside IPropContainer will be injected with the container</p>
 <p>This allows me to create reactive props</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md39"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md42"></a>
 IAware</h2>
 <p>Aware objects are injected with host component and their property name <br  />
  host component and prop name used only for debug messages <br  />

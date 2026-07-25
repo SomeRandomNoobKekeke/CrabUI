@@ -123,7 +123,7 @@ namespace CrabUIUser
             }
           }
 
-          this.DeepPalette = CUIPalette.Blue;
+          this.DeepPalette = CUIPalette.FromColor(Color.Blue);
         }
 
 

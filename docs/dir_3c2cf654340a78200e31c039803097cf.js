@@ -10,6 +10,6 @@ var dir_3c2cf654340a78200e31c039803097cf =
     [ "CUISegment.cs", "_c_u_i_segment_8cs_source.html", null ],
     [ "CUISizes.cs", "_c_u_i_sizes_8cs_source.html", null ],
     [ "RadioMutex.cs", "_radio_mutex_8cs_source.html", null ],
-    [ "SafeDict.cs", "_safe_dict_8cs_source.html", null ],
+    [ "ReactiveDict.cs", "_reactive_dict_8cs_source.html", null ],
     [ "Slot.cs", "_slot_8cs_source.html", null ]
 ];

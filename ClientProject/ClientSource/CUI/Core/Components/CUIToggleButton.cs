@@ -17,7 +17,7 @@ namespace CrabUI
 
     public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIToggleButton>((c) =>
     {
-      c.MasterColor = c.Palette.Colors["button"];
+      c.MasterColor = c.Palette["main"];
     });
 
     [CUISerializableProp]

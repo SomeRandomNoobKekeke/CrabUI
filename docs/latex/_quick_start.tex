@@ -2,20 +2,17 @@
 \hypertarget{_quick_start}{}\label{_quick_start}\index{QuickStart@{QuickStart}}
 \label{_quick_start_md__docs_sources_2_sources_21_01_quick_start}%
 \Hypertarget{_quick_start_md__docs_sources_2_sources_21_01_quick_start}%
-\hypertarget{_quick_start_autotoc_md0}{}\doxysection{\texorpdfstring{To include CUI in your mod:\+}{To include CUI in your mod:\+}}\label{_quick_start_autotoc_md0}
-\hypertarget{_quick_start_autotoc_md1}{}\doxysubsection{\texorpdfstring{For "{}in-\/memory"{} mods}{For "{}in-\/memory"{} mods}}\label{_quick_start_autotoc_md1}
-There\textquotesingle{}s 2 ways:\+
-\begin{DoxyEnumerate}
-\item copy paste code from \href{https://github.com/SomeRandomNoobKekeke/CrabUI/tree/main/ClientProject/ClientSource}{\texttt{https:\+/\+/\+github.\+com/\+\+Some\+Random\+Noob\+Kekeke/\+\+Crab\+UI/\+tree/\+main/\+\+Client\+Project/\+\+Client\+Source}}
-\item publish you mod and add workshop dependency to \href{https://steamcommunity.com/sharedfiles/filedetails/?id=3765325848}{\texttt{CUI mod}}
-\end{DoxyEnumerate}
+\hypertarget{_quick_start_autotoc_md0}{}\doxysubsubsection{\texorpdfstring{For "{}in-\/memory"{} mods}{For "{}in-\/memory"{} mods}}\label{_quick_start_autotoc_md0}
+publish you mod and add workshop dependency to \href{https://steamcommunity.com/sharedfiles/filedetails/?id=3765325848}{\texttt{CUI mod}} ~\newline
+~\newline
+ \hypertarget{_quick_start_autotoc_md1}{}\doxysubsubsection{\texorpdfstring{For precompiled mods}{For precompiled mods}}\label{_quick_start_autotoc_md1}
+Go to \href{https://steamcommunity.com/sharedfiles/filedetails/?id=3765325848}{\texttt{CUI mod}} folder, take CUI.\+dll from bin and add a reference to it in your project
 
-2 is minimalistic, but you won\textquotesingle{}t have ide hints\hypertarget{_quick_start_autotoc_md2}{}\doxysubsection{\texorpdfstring{For precompiled mods}{For precompiled mods}}\label{_quick_start_autotoc_md2}
-Go to CUI mod folder, take CUI.\+dll from bin and add a reference to it in your project
+Or download \href{https://github.com/SomeRandomNoobKekeke/CrabUI}{\texttt{https:\+/\+/\+github.\+com/\+\+Some\+Random\+Noob\+Kekeke/\+\+Crab\+UI}}, add luatrauma Refs and compile it yourself
 
-Or download \href{https://github.com/SomeRandomNoobKekeke/CrabUI}{\texttt{https:\+/\+/\+github.\+com/\+\+Some\+Random\+Noob\+Kekeke/\+\+Crab\+UI}}, add luatrauma Refs to it and compile
-
-Or just copy paste source code :\+Baro\+Dev:\+\hypertarget{_quick_start_autotoc_md3}{}\doxysubsection{\texorpdfstring{Hybrid mods}{Hybrid mods}}\label{_quick_start_autotoc_md3}
+Or just copy paste sources from \href{https://github.com/SomeRandomNoobKekeke/CrabUI/tree/main/ClientProject/ClientSource}{\texttt{github}} ~\newline
+~\newline
+ \hypertarget{_quick_start_autotoc_md2}{}\doxysubsubsection{\texorpdfstring{Hybrid mods}{Hybrid mods}}\label{_quick_start_autotoc_md2}
 You can take best from both worlds
 
 you can setup \href{https://github.com/Luatrauma/LuaCsModTemplate}{\texttt{https:\+/\+/\+github.\+com/\+\+Luatrauma/\+\+Lua\+Cs\+Mod\+Template}}, and then add {\ttfamily Mod\+Config.\+xml} loading C\# sources as "{}in-\/memory"{} scripts 
@@ -27,7 +24,9 @@ you can setup \href{https://github.com/Luatrauma/LuaCsModTemplate}{\texttt{https
 \end{DoxyCode}
 
 
-Then you can add project reference to CUI.\+dll to have ide hints, put it in Local\+Mods and reload with cl\+\_\+reloadlua\hypertarget{_quick_start_autotoc_md4}{}\doxysection{\texorpdfstring{Min example:\+}{Min example:\+}}\label{_quick_start_autotoc_md4}
+Then you can add project reference to CUI.\+dll to have ide hints, put it in Local\+Mods and reload with cl\+\_\+reloadlua ~\newline
+~\newline
+ \hypertarget{_quick_start_autotoc_md3}{}\doxysection{\texorpdfstring{Min example:\+}{Min example:\+}}\label{_quick_start_autotoc_md3}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespace_crab_u_i}{CrabUI}};}

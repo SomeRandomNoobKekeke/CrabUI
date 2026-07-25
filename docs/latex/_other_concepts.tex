@@ -2,14 +2,14 @@
 \hypertarget{_other_concepts}{}\label{_other_concepts}\index{Other Concepts@{Other Concepts}}
 \label{_other_concepts_md__docs_sources_2_sources_23_01_other_01_concepts}%
 \Hypertarget{_other_concepts_md__docs_sources_2_sources_23_01_other_01_concepts}%
-\hypertarget{_other_concepts_autotoc_md18}{}\doxysection{\texorpdfstring{CUIInfrastructure}{CUIInfrastructure}}\label{_other_concepts_autotoc_md18}
+\hypertarget{_other_concepts_autotoc_md17}{}\doxysection{\texorpdfstring{CUIInfrastructure}{CUIInfrastructure}}\label{_other_concepts_autotoc_md17}
 Most CUI stuff is located in CUICore ~\newline
  CUICore is a passive isolated state machine ~\newline
  It doesn\textquotesingle{}t know about the game and has to be run by CUIRunners via handles ~\newline
 
 
-There could be various runners, e.\+g. Solo runner runs code in this mod, Master runner scans other mods, test runner can feed it with fake data and concurrent runner can run CUICore in a separate thread\hypertarget{_other_concepts_autotoc_md19}{}\doxysubsubsection{\texorpdfstring{Then why are you putting solo runner in CUI master package?}{Then why are you putting solo runner in CUI master package?}}\label{_other_concepts_autotoc_md19}
-A eto, bleh.\+gif
+There could be various runners, e.\+g. Solo runner runs code in this mod, Master runner scans other mods, test runner can feed it with fake data and concurrent runner can run CUICore in a separate thread\hypertarget{_other_concepts_autotoc_md18}{}\doxysubsubsection{\texorpdfstring{Then why are you putting solo runner in CUI master package?}{Then why are you putting solo runner in CUI master package?}}\label{_other_concepts_autotoc_md18}
+\href{https://tenor.com/ru/view/ah-eto-bleh-anime-bleh-gif-26784876}{\texttt{Ah, eto... bleh.\+gif}}
 
 Master runner isn\textquotesingle{}t done yet, and there\textquotesingle{}s not much to scan in other packages yet ~\newline
  Current Solo\+Runner just finds all CUIComponents and ISerializable in assembly that called CUI.\+Start ~\newline
@@ -25,7 +25,11 @@ CUI.\+Setup is the singleton here, everything else is just pointing to it
 
 CUI and CUICore classes have static members for accessing core and runners ~\newline
  Why 2? CUI is supposed to be used by you, and CUICore is supposed to be called by stuff from inside CUICore ~\newline
- Also stuff that calls CUICore assumes that it\textquotesingle{}s already activated\hypertarget{_other_concepts_autotoc_md20}{}\doxysection{\texorpdfstring{Visual\+Components /\+ Visual\+Units}{Visual\+Components /\+ Visual\+Units}}\label{_other_concepts_autotoc_md20}
+ Also stuff that calls CUICore assumes that it\textquotesingle{}s already activated
+
+~\newline
+~\newline
+ \hypertarget{_other_concepts_autotoc_md19}{}\doxysection{\texorpdfstring{Visual\+Components /\+ Visual\+Units}{Visual\+Components /\+ Visual\+Units}}\label{_other_concepts_autotoc_md19}
 Unit of drawing /\+ event handling in CUI is Visual\+Units ~\newline
 
 
@@ -39,7 +43,11 @@ CUIMain\+Component recursively splits Visual\+Components into a chain of Visual\
  Then it draws them and dispatches events to them ~\newline
  Host Visual\+Component typically listens to events on its Visual\+Units
 
-Also Visual\+Components can yield Visual\+Bounds in Visual\+Split, they are commands for Chain\+Drawer to change its state e.\+g. change scissor rect, sampler state or apply camera transformation before drawing\hypertarget{_other_concepts_autotoc_md21}{}\doxysection{\texorpdfstring{Serialization (wip, mostly borked)}{Serialization (wip, mostly borked)}}\label{_other_concepts_autotoc_md21}
+Also Visual\+Components can yield Visual\+Bounds in Visual\+Split, they are commands for Chain\+Drawer to change its state e.\+g. change scissor rect, sampler state or apply camera transformation before drawing
+
+~\newline
+~\newline
+ \hypertarget{_other_concepts_autotoc_md20}{}\doxysection{\texorpdfstring{Serialization (wip, mostly borked)}{Serialization (wip, mostly borked)}}\label{_other_concepts_autotoc_md20}
 All components are serializable to /\+ from xml with 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUIComponent\ CUIComponent.Deserialize(XElement\ element)}
@@ -54,7 +62,7 @@ Also CUIComponents can be accessed as
 \DoxyCodeLine{\textcolor{keyword}{public}\ IDictionary<string,\ object>\ As\_Dictionary\ \{\ \textcolor{keyword}{get};\ \}}
 
 \end{DoxyCode}
-\hypertarget{_other_concepts_autotoc_md22}{}\doxysubsection{\texorpdfstring{path resolution}{path resolution}}\label{_other_concepts_autotoc_md22}
+\hypertarget{_other_concepts_autotoc_md21}{}\doxysubsection{\texorpdfstring{path resolution}{path resolution}}\label{_other_concepts_autotoc_md21}
 When loading textures or xml prefabs CUI is aware of mod that called it and prefab file being loaded
 
 So it checks for textures to load at:\+
@@ -72,7 +80,7 @@ For saved xml it tries to save to:\+
 \item Full path
 \item Relative path to mod folder
 \item Relative path to game folder
-\end{DoxyItemize}\hypertarget{_other_concepts_autotoc_md23}{}\doxysubsection{\texorpdfstring{Serialization modes}{Serialization modes}}\label{_other_concepts_autotoc_md23}
+\end{DoxyItemize}\hypertarget{_other_concepts_autotoc_md22}{}\doxysubsection{\texorpdfstring{Serialization modes}{Serialization modes}}\label{_other_concepts_autotoc_md22}
 There\textquotesingle{}s a prop 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keyword}{public}\ CUISerializationMode\ CUIComponent.SerializationMode\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
@@ -83,7 +91,7 @@ There\textquotesingle{}s a prop
 \DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{enum}\ CUISerializationMode\ \{\ Replace,\ Merge,\ Ignore\ \}}
 
 \end{DoxyCode}
- It affects how child will be deserialized when there is already a child with the same name:\+
+ It affects how child will be deserialized if there is already a child with the same name:\+
 \begin{DoxyItemize}
 \item Replace -\/ create new child and replace existing
 \item Merge -\/ Props will be copied to existing child
@@ -101,7 +109,11 @@ You can prevent child from being serialized with
 \DoxyCodeLine{\textcolor{keyword}{protected}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ CUIComponent.AfterSerialization()\ \{\ \}\ \textcolor{comment}{//\ -\/\ Happens\ after\ deserialization\ of\ children}}
 
 \end{DoxyCode}
-\hypertarget{_other_concepts_autotoc_md24}{}\doxysection{\texorpdfstring{Component States}{Component States}}\label{_other_concepts_autotoc_md24}
+
+
+~\newline
+~\newline
+ \hypertarget{_other_concepts_autotoc_md23}{}\doxysection{\texorpdfstring{Component States}{Component States}}\label{_other_concepts_autotoc_md23}
 you can save /\+ restore component state with
 
 
@@ -112,7 +124,11 @@ you can save /\+ restore component state with
 \end{DoxyCode}
 
 
-there\textquotesingle{}s a dict of Memorized\+States and it uses serialization behind the scenes\hypertarget{_other_concepts_autotoc_md25}{}\doxysection{\texorpdfstring{Focus (wip, mostly borked)}{Focus (wip, mostly borked)}}\label{_other_concepts_autotoc_md25}
+there\textquotesingle{}s a dict of Memorized\+States and it uses serialization behind the scenes
+
+~\newline
+~\newline
+ \hypertarget{_other_concepts_autotoc_md24}{}\doxysection{\texorpdfstring{Focus (wip, mostly borked)}{Focus (wip, mostly borked)}}\label{_other_concepts_autotoc_md24}
 In vanilla there\textquotesingle{}s 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keyword}{public}\ IKeyboardSubscriber\ Barotrauma.GUI.KeyboardDispatcher.Subscriber\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
@@ -144,7 +160,11 @@ You can request focus and blur manually with:\+
 
 CUI can steal focus from vanilla Keyboard\+Dispatcher and simulate focus on some dummy IKeyboard\+Subscriber ~\newline
  It\textquotesingle{}s barely tested and i\textquotesingle{}m sure it\textquotesingle{}s borked ~\newline
- Also there\textquotesingle{}s a lot of actions in vanilla that just ignores Keyboard\+Dispatcher.\+Subscriber, idk how to block those\hypertarget{_other_concepts_autotoc_md26}{}\doxysection{\texorpdfstring{Sprites /\+ Textures}{Sprites /\+ Textures}}\label{_other_concepts_autotoc_md26}
+ Also there\textquotesingle{}s a lot of actions in vanilla that just ignores Keyboard\+Dispatcher.\+Subscriber, idk how to block those
+
+~\newline
+~\newline
+ \hypertarget{_other_concepts_autotoc_md25}{}\doxysection{\texorpdfstring{Sprites /\+ Textures}{Sprites /\+ Textures}}\label{_other_concepts_autotoc_md25}
 CUICore can\textquotesingle{}t load textures on its own, it requests them from CUIRunner ~\newline
 
 
@@ -214,24 +234,96 @@ But most stuff uses CUISprites ~\newline
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
-\hypertarget{_other_concepts_autotoc_md27}{}\doxysection{\texorpdfstring{Styles and palettes (wip, mostly borked)}{Styles and palettes (wip, mostly borked)}}\label{_other_concepts_autotoc_md27}
-ICUIStyle is something that can be applied to component and change its state ~\newline
- It can be a function, a dict of props or xml prefab ~\newline
 
 
-Many CUIComponent types have attached Default\+Styles ~\newline
- All CUIComponent scanned on CUI.\+Start() and default styles from lineage of CUIComponents are combined in CUIStyle\+Pipelines ~\newline
- Which then applied on component creation
+~\newline
+~\newline
+ \hypertarget{_other_concepts_autotoc_md26}{}\doxysection{\texorpdfstring{Styles and Palettes}{Styles and Palettes}}\label{_other_concepts_autotoc_md26}
 
-There\textquotesingle{}s also CUIPalettes, they are dicts of typically used colors, sizes etc ~\newline
- There\textquotesingle{}s global Primary, Secondary palettes in CUICore.\+Styles and components can have personal palettes
+\begin{DoxyItemize}
+\item Styles are actions that can be applied to components to change their props
+\item Palettes are tables of values for styles
+\end{DoxyItemize}
 
-Styles typically use values from component palette ~\newline
+Styles and palettes are reactive so if you change them all affected components will reapply their styles
+
+CUIComponent types can have:\+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{static}\ ICUIStyle\ DefaultStyle\ \{\ \textcolor{keyword}{get};\ \}\ =\ \textcolor{keyword}{new}\ CUIDefaultStyle<CUIFrame>((c)\ =>\{\ ...\ \});}
+\DoxyCodeLine{\textcolor{keyword}{protected}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ InitStyle()\ \{\}}
+
+\end{DoxyCode}
 
 
-CUIStyle\+Pipelines and palettes are reactive, so changin styles or palette will reaplly CUIStyle\+Pipelines
+CUIComponents have:\+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{virtual}\ Action<CUIComponent>\ CUIComponent.Style\ \{\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ sets\ PersonalStyle\ to\ CUIActionStyle}}
+\DoxyCodeLine{\textcolor{keyword}{public}\ ICUIStyle\ CUIComponent.PersonalStyle\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\textcolor{keyword}{public}\ CUIPalette\ CUIComponent.Palette\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\textcolor{keyword}{public}\ CUIPalette\ CUIComponent.DeepPalette\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ This\ sets\ palette\ recursively\ to\ all\ children}}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ UseReactiveStyles\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ It\ defaults\ to\ CUICore.Styles.UseReactiveStyles}}
 
-So if you need some props to be resistant to palette changes put them in personal styles\hypertarget{_other_concepts_autotoc_md28}{}\doxysection{\texorpdfstring{Animations}{Animations}}\label{_other_concepts_autotoc_md28}
+\end{DoxyCode}
+\hypertarget{_other_concepts_autotoc_md27}{}\doxysubsubsection{\texorpdfstring{Where to get palettes:\+}{Where to get palettes:\+}}\label{_other_concepts_autotoc_md27}
+There are 4 global palettes in CUICore 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ CUIPalette\ CUICore.Palettes.Primary\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\textcolor{keyword}{public}\ CUIPalette\ CUICore.Palettes.Secondary\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\textcolor{keyword}{public}\ CUIPalette\ CUICore.Palettes.Tertiary\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\textcolor{keyword}{public}\ CUIPalette\ CUICore.Palettes.Quaternary\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+
+
+Also you can create palettes from color 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{static}\ CUIPalette\ CUIPalette.FromColor(Color\ color)}
+
+\end{DoxyCode}
+
+
+CUIPalettes are IDictionary$<$string, Color$>$ so you can change them manually in theory\hypertarget{_other_concepts_autotoc_md28}{}\doxysubsubsection{\texorpdfstring{About Palette colors:\+}{About Palette colors:\+}}\label{_other_concepts_autotoc_md28}
+Those are key reference colors that all components can use to construct colors they need to paint themselves
+
+Basically if you\textquotesingle{}re making a component and want to use a color that you can\textquotesingle{}t construct from already existing you should add it to palette ~\newline
+ And then ask yourself what if i set all colors to random will it still look good? If not then there\textquotesingle{}s some hidden interconnection you\textquotesingle{}re missing\hypertarget{_other_concepts_autotoc_md29}{}\doxysubsubsection{\texorpdfstring{How styles are applied on object creation:\+}{How styles are applied on object creation:\+}}\label{_other_concepts_autotoc_md29}
+
+\begin{DoxyEnumerate}
+\item Properties are initialized before constructor
+\item Props can be set in constructor
+\item Init\+Style() method is runned, once
+\item All Default\+Styles from lineage of types are applied
+\item Personal style applied
+\item Props you set in object initializer, if you set personal style it will also be applied on set
+\end{DoxyEnumerate}
+
+If you change palette or styles later this happens:\+
+\begin{DoxyEnumerate}
+\item All Default\+Styles from lineage of types are applied
+\item Personal style applied
+\end{DoxyEnumerate}
+
+So props you set manually or in constructor will be overriden ~\newline
+\hypertarget{_other_concepts_autotoc_md30}{}\doxysubsubsection{\texorpdfstring{Experimental CUIContext\+Style$<$\+T$>$}{Experimental CUIContext\+Style$<$\+T$>$}}\label{_other_concepts_autotoc_md30}
+It\textquotesingle{}s a style that is added to type styles pipeline on creation and removed on dispose
+
+You can use it to apply same actions to a group of created components
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{using}\ (\textcolor{keyword}{new}\ CUIContextStyle<CUIButton>(btn\ =>\ btn.Background.Color\ =\ Color.Green))}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{new}\ CUIButton(\textcolor{stringliteral}{"{}Green"{}});}
+\DoxyCodeLine{\ \ \textcolor{keyword}{new}\ CUIButton(\textcolor{stringliteral}{"{}Green"{}});}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\textcolor{keyword}{new}\ CUIButton(\textcolor{stringliteral}{"{}Not\ Green"{}});}
+
+\end{DoxyCode}
+
+
+~\newline
+~\newline
+ \hypertarget{_other_concepts_autotoc_md31}{}\doxysection{\texorpdfstring{Animations}{Animations}}\label{_other_concepts_autotoc_md31}
 All animations in CUI are based on objects Animation\+Core
 
 Animation\+Core is passive state machine, it has tons of settings, exposes Lambda \+[0..1]\+ and can be updated manually or by CUICore.\+Animation\+Player
@@ -254,7 +346,11 @@ There\textquotesingle{}s also yped\+Animation$<$\+T$>$ that can animate typed va
 
 
 Currently all animations are external, so you have to animate some value and then manually update some prop on component ~\newline
- There\textquotesingle{}s no Animated\+Prop yet\hypertarget{_other_concepts_autotoc_md29}{}\doxysection{\texorpdfstring{Routable\+Commands}{Routable\+Commands}}\label{_other_concepts_autotoc_md29}
+ There\textquotesingle{}s no Animated\+Prop yet
+
+~\newline
+~\newline
+ \hypertarget{_other_concepts_autotoc_md32}{}\doxysection{\texorpdfstring{Routable\+Commands}{Routable\+Commands}}\label{_other_concepts_autotoc_md32}
 All CUIComponents can send such Routable\+Commands up and down component tree to communicate with each other 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keyword}{public}\ record\ RoutableCommand(\textcolor{keywordtype}{string}\ name,\ \textcolor{keywordtype}{object}\ data);}
@@ -286,7 +382,7 @@ Benefits of Routable\+Commands:\+
 
 For example CUIClose\+Button emits "{}close"{} event up to the nearest CUIFrame ~\newline
  When CUIFrame recieves "{}close"{} event it closes ~\newline
- It doesn\textquotesingle{}t matter where the close button is and i don\textquotesingle{}t have to pass close button to the frame so it could subscribe to its events\hypertarget{_other_concepts_autotoc_md30}{}\doxysection{\texorpdfstring{Debug}{Debug}}\label{_other_concepts_autotoc_md30}
+ It doesn\textquotesingle{}t matter where the close button is and i don\textquotesingle{}t have to pass close button to the frame so it could subscribe to its events\hypertarget{_other_concepts_autotoc_md33}{}\doxysection{\texorpdfstring{Debug (almost non existent)}{Debug (almost non existent)}}\label{_other_concepts_autotoc_md33}
 Most of the time i debug with just CUI.\+Logger, but if it\textquotesingle{}s too complex or i know i\textquotesingle{}ll need the same data later is add Debug\+Nodes
 
 

@@ -2,7 +2,7 @@
 \hypertarget{_overview}{}\label{_overview}\index{Overview@{Overview}}
 \label{_overview_md__docs_sources_2_sources_22_01_overview}%
 \Hypertarget{_overview_md__docs_sources_2_sources_22_01_overview}%
-\hypertarget{_overview_autotoc_md5}{}\doxysection{\texorpdfstring{Basics}{Basics}}\label{_overview_autotoc_md5}
+\hypertarget{_overview_autotoc_md4}{}\doxysection{\texorpdfstring{Basics}{Basics}}\label{_overview_autotoc_md4}
 All GUI elements:\+ frames, buttons, list, textblocks are CUIComponents
 
 They are C\# objects, they all have parameterless constructor so you can just create them
@@ -68,7 +68,9 @@ CUIComponent can handle various events, e.\+g.
 \DoxyCodeLine{frame.KeyPressed\ +=\ (e)\ =>\ CUI.Logger.Log(e.Key);}
 
 \end{DoxyCode}
-\hypertarget{_overview_autotoc_md6}{}\doxysection{\texorpdfstring{Components}{Components}}\label{_overview_autotoc_md6}
+ ~\newline
+~\newline
+ \hypertarget{_overview_autotoc_md5}{}\doxysection{\texorpdfstring{Components}{Components}}\label{_overview_autotoc_md5}
 
 \begin{DoxyItemize}
 \item CUIComponent -\/ It\textquotesingle{}s just a square with background and borders
@@ -89,21 +91,29 @@ CUIComponent can handle various events, e.\+g.
 \item CUIText\+Block -\/ Block of text with background, can resist shrinking
 \item CUIText\+Line -\/ Line of text
 \item CUIText\+Input -\/ Text input (half-\/assed)
-\end{DoxyItemize}\hypertarget{_overview_autotoc_md7}{}\doxysubsubsection{\texorpdfstring{CUIDefault.}{CUIDefault.}}\label{_overview_autotoc_md7}
+\end{DoxyItemize}\hypertarget{_overview_autotoc_md6}{}\doxysubsubsection{\texorpdfstring{CUIDefault.}{CUIDefault.}}\label{_overview_autotoc_md6}
 
 \begin{DoxyItemize}
 \item CUIDefault.\+Frame -\/ prebuilt frame with handle, caption and close button, add children to frame\+["{}layout"{}]\+
+\item CUIDefault.\+Panels -\/ Styled and a bit dimmed panels
 \item Input\+Field -\/ Base class for Input\+Field, wrappers with label and text input, intended to be used in some settings ui (half-\/assed)
-\end{DoxyItemize}\hypertarget{_overview_autotoc_md8}{}\doxysection{\texorpdfstring{Layouts}{Layouts}}\label{_overview_autotoc_md8}
+\end{DoxyItemize}
+
+~\newline
+~\newline
+ \hypertarget{_overview_autotoc_md7}{}\doxysection{\texorpdfstring{Layouts}{Layouts}}\label{_overview_autotoc_md7}
 
 \begin{DoxyItemize}
 \item CUIPlain\+Layout -\/ simple two-\/dimensional plane
-\item CUIVertical\+List\+Layout -\/ places children in a stack, one after another, if child width isn\textquotesingle{}t specified resizes it to its own width ~\newline
- children can fill empty space with Flex prop
+\item CUIVertical\+List\+Layout -\/ places children in a stack
 \item CUIHorizontal\+List\+Layout -\/ Same as CUIVertical\+List\+Layout but horizontal
 \item CUIGrid\+Layout -\/ places children in cells specified by Grid\+Row and Grid\+Column (half-\/assed)
-\end{DoxyItemize}\hypertarget{_overview_autotoc_md9}{}\doxysection{\texorpdfstring{Types}{Types}}\label{_overview_autotoc_md9}
-\hypertarget{_overview_autotoc_md10}{}\doxysubsubsection{\texorpdfstring{Commonly used "{}primitive"{} types:\+}{Commonly used "{}primitive"{} types:\+}}\label{_overview_autotoc_md10}
+\end{DoxyItemize}
+
+~\newline
+~\newline
+ \hypertarget{_overview_autotoc_md8}{}\doxysection{\texorpdfstring{Types}{Types}}\label{_overview_autotoc_md8}
+\hypertarget{_overview_autotoc_md9}{}\doxysubsubsection{\texorpdfstring{Commonly used "{}primitive"{} types:\+}{Commonly used "{}primitive"{} types:\+}}\label{_overview_autotoc_md9}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{enum}\ CUIDirection\ \{\ Straight,\ Reverse,\ \}}
@@ -179,9 +189,13 @@ CUIComponent can handle various events, e.\+g.
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
-\hypertarget{_overview_autotoc_md11}{}\doxysection{\texorpdfstring{Props}{Props}}\label{_overview_autotoc_md11}
-\hypertarget{_overview_autotoc_md12}{}\doxysubsubsection{\texorpdfstring{Commonly used Props of CUIComponent:\+}{Commonly used Props of CUIComponent:\+}}\label{_overview_autotoc_md12}
-\hypertarget{_overview_autotoc_md13}{}\doxysubsubsection{\texorpdfstring{Layout Props:\+}{Layout Props:\+}}\label{_overview_autotoc_md13}
+
+
+~\newline
+~\newline
+ \hypertarget{_overview_autotoc_md10}{}\doxysection{\texorpdfstring{Props}{Props}}\label{_overview_autotoc_md10}
+\hypertarget{_overview_autotoc_md11}{}\doxysubsubsection{\texorpdfstring{Commonly used Props of CUIComponent:\+}{Commonly used Props of CUIComponent:\+}}\label{_overview_autotoc_md11}
+\hypertarget{_overview_autotoc_md12}{}\doxysubsubsection{\texorpdfstring{Layout Props:\+}{Layout Props:\+}}\label{_overview_autotoc_md12}
 Note that props used by some layouts might be ignored in others
 
 
@@ -318,7 +332,7 @@ Note:\+ these rects are not readonly, but you don\textquotesingle{}t need to set
 \DoxyCodeLine{\textcolor{keyword}{public}\ CUIRect\ ChildrenRect\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ InnerRect\ -\/\ Padding}}
 
 \end{DoxyCode}
-\hypertarget{_overview_autotoc_md14}{}\doxysubsubsection{\texorpdfstring{Graphics Props:\+}{Graphics Props:\+}}\label{_overview_autotoc_md14}
+\hypertarget{_overview_autotoc_md13}{}\doxysubsubsection{\texorpdfstring{Graphics Props:\+}{Graphics Props:\+}}\label{_overview_autotoc_md13}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keyword}{public}\ SimpleTexture\ Background\ \{\ \textcolor{keyword}{get};\ \}}
@@ -394,7 +408,7 @@ Note:\+ these rects are not readonly, but you don\textquotesingle{}t need to set
 \DoxyCodeLine{\textcolor{keyword}{public}\ ICUIStyle\ PersonalStyle\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ Extra\ style\ that\ will\ be\ applied\ after\ type\ specific\ styles}}
 
 \end{DoxyCode}
-\hypertarget{_overview_autotoc_md15}{}\doxysubsubsection{\texorpdfstring{Other Props:\+}{Other Props:\+}}\label{_overview_autotoc_md15}
+\hypertarget{_overview_autotoc_md14}{}\doxysubsubsection{\texorpdfstring{Other Props:\+}{Other Props:\+}}\label{_overview_autotoc_md14}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ Focusable\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ Can\ it\ be\ focused}}
@@ -425,7 +439,11 @@ Note:\+ these rects are not readonly, but you don\textquotesingle{}t need to set
 \DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keywordtype}{bool}\ ConsumeMouseEvents\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ \textcolor{comment}{//\ -\/\ Should\ it\ consume\ mouse\ events}}
 
 \end{DoxyCode}
-\hypertarget{_overview_autotoc_md16}{}\doxysection{\texorpdfstring{Events}{Events}}\label{_overview_autotoc_md16}
+
+
+~\newline
+~\newline
+ \hypertarget{_overview_autotoc_md15}{}\doxysection{\texorpdfstring{Events}{Events}}\label{_overview_autotoc_md15}
 Note:\+ most events accompanied by delegate props where you can set callbacks in object initializers 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{CUIComponent\ component\ =\ \textcolor{keyword}{new}\ CUIComponent()}
@@ -451,7 +469,7 @@ Also most events have "{}this"{} component as first arg ~\newline
 
 Also idk if it\textquotesingle{}s a good idea to pass "{}this"{} as first arg, in fact i never use it, tell me your thoughts
 
-Clearable\+Events are wrappers around event that can be cleared, raised from outside and routed to one another\hypertarget{_overview_autotoc_md17}{}\doxysubsubsection{\texorpdfstring{Commonly used Events of CUIComponent:\+}{Commonly used Events of CUIComponent:\+}}\label{_overview_autotoc_md17}
+Clearable\+Events are wrappers around event that can be cleared, raised from outside and routed to one another\hypertarget{_overview_autotoc_md16}{}\doxysubsubsection{\texorpdfstring{Commonly used Events of CUIComponent:\+}{Commonly used Events of CUIComponent:\+}}\label{_overview_autotoc_md16}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keyword}{public}\ \textcolor{keyword}{event}\ Action<CUIComponent,\ CUIMouseDownEvent>\ MouseDown;}

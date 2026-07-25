@@ -25,6 +25,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="dev.png"/></td>
   <td id="projectalign">
    <div id="projectname">CUI
    </div>
@@ -101,6 +102,7 @@ Properties</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-events" class="groupheader"><a id="events" name="events"></a>
 Events</h2></td></tr>
+<tr class="memitem:a1c309d24362de6c9e8a95257aea17fbd" id="r_a1c309d24362de6c9e8a95257aea17fbd"><td class="memItemLeft">Action&lt; T &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a1c309d24362de6c9e8a95257aea17fbd">Changed</a></td></tr>
 <tr class="memitem:a1a5bd2576213afc605c5900cc1eff0e2" id="r_a1a5bd2576213afc605c5900cc1eff0e2"><td class="memItemLeft">Action&lt; T &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a1a5bd2576213afc605c5900cc1eff0e2">WireUp</a></td></tr>
 <tr class="memitem:aefaeb3f4d1f6d6d7d83776191b5da7e2" id="r_aefaeb3f4d1f6d6d7d83776191b5da7e2"><td class="memItemLeft">Action&lt; T &gt;&#160;</td><td class="memItemRight"><a class="el" href="#aefaeb3f4d1f6d6d7d83776191b5da7e2">TearDown</a></td></tr>
 </table>
@@ -128,8 +130,8 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_slot_8cs_source.html#l00029">29</a> of file <a class="el" href="_slot_8cs_source.html">Slot.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   29</span>{ <span class="keyword">set</span> { TearDown += value; } }</div>
+<p class="definition">Definition at line <a class="el" href="_slot_8cs_source.html#l00032">32</a> of file <a class="el" href="_slot_8cs_source.html">Slot.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>{ <span class="keyword">set</span> { TearDown += value; } }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -153,8 +155,8 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_slot_8cs_source.html#l00026">26</a> of file <a class="el" href="_slot_8cs_source.html">Slot.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   26</span>{ <span class="keyword">set</span> { WireUp += value; } }</div>
+<p class="definition">Definition at line <a class="el" href="_slot_8cs_source.html#l00029">29</a> of file <a class="el" href="_slot_8cs_source.html">Slot.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   29</span>{ <span class="keyword">set</span> { WireUp += value; } }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -185,13 +187,30 @@ Events</h2></td></tr>
 <div class="line"><span class="lineno">   19</span>      {</div>
 <div class="line"><span class="lineno">   20</span>        <span class="keywordflow">if</span> (_Value is not <span class="keyword">null</span>) TearDown?.Invoke(_Value);</div>
 <div class="line"><span class="lineno">   21</span>        _Value = value;</div>
-<div class="line"><span class="lineno">   22</span>        <span class="keywordflow">if</span> (_Value is not <span class="keyword">null</span>) WireUp?.Invoke(_Value);</div>
-<div class="line"><span class="lineno">   23</span>      }</div>
-<div class="line"><span class="lineno">   24</span>    }</div>
+<div class="line"><span class="lineno">   22</span>        Changed?.Invoke(value);</div>
+<div class="line"><span class="lineno">   23</span>        <span class="keywordflow">if</span> (_Value is not <span class="keyword">null</span>) WireUp?.Invoke(_Value);</div>
+<div class="line"><span class="lineno">   24</span>      }</div>
+<div class="line"><span class="lineno">   25</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <a name="doc-event-members" id="doc-event-members"></a><h2 id="header-doc-event-members" class="groupheader">Event Documentation</h2>
+<a id="a1c309d24362de6c9e8a95257aea17fbd" name="a1c309d24362de6c9e8a95257aea17fbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c309d24362de6c9e8a95257aea17fbd">&#9670;&#160;</a></span>Changed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Action&lt;T&gt; CrabUI.Slot&lt; T &gt;.Changed</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_slot_8cs_source.html#l00027">27</a> of file <a class="el" href="_slot_8cs_source.html">Slot.cs</a>.</p>
+
+</div>
+</div>
 <a id="aefaeb3f4d1f6d6d7d83776191b5da7e2" name="aefaeb3f4d1f6d6d7d83776191b5da7e2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aefaeb3f4d1f6d6d7d83776191b5da7e2">&#9670;&#160;</a></span>TearDown</h2>
 
@@ -204,7 +223,7 @@ Events</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_slot_8cs_source.html#l00030">30</a> of file <a class="el" href="_slot_8cs_source.html">Slot.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_slot_8cs_source.html#l00033">33</a> of file <a class="el" href="_slot_8cs_source.html">Slot.cs</a>.</p>
 
 </div>
 </div>
@@ -220,7 +239,7 @@ Events</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_slot_8cs_source.html#l00027">27</a> of file <a class="el" href="_slot_8cs_source.html">Slot.cs</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_slot_8cs_source.html#l00030">30</a> of file <a class="el" href="_slot_8cs_source.html">Slot.cs</a>.</p>
 
 </div>
 </div>

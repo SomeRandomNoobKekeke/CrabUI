@@ -42,8 +42,9 @@ namespace CrabUI
 
       return closestCaretPos;
     }
+    public override bool Contains(Vector2 pos) => Rect.Contains(pos);
 
-    private CUIRect _Rect; public override CUIRect Rect
+    private CUIRect _Rect; public CUIRect Rect
     {
       get => _Rect;
       set

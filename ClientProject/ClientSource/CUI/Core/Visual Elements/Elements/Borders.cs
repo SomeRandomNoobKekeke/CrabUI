@@ -13,7 +13,7 @@ namespace CrabUI
 {
   public class Borders : VisualElementBase, CUISerializable
   {
-    private CUIRect _Rect; public override CUIRect Rect
+    private CUIRect _Rect; public CUIRect Rect
     {
       get => _Rect;
       set

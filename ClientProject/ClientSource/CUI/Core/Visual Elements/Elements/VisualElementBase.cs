@@ -21,9 +21,8 @@ namespace CrabUI
     public string HostPropName { get; set; }
 
     public bool Visible { get; set; } = true;
-    public abstract CUIRect Rect { get; set; }
     public abstract void Draw(CUISpriteBatch spriteBatch);
-    public virtual bool Contains(Vector2 pos) => Rect.Contains(pos);
+    public abstract bool Contains(Vector2 pos);
 
     public VisualUnit.PrimitiveVisualElement VisualWrapper { get; }
 

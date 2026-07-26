@@ -12,7 +12,6 @@ namespace CrabUI
 {
   public interface IVisualElement
   {
-    public CUIRect Rect { get; }
     public bool Contains(Vector2 pos);
     public void Draw(CUISpriteBatch spriteBatch);
   }

@@ -20,6 +20,7 @@ namespace CrabUIUser
 
       Background.Sprite = new CUISprite(CUICore.TextureManager.Get("Test Chamber Background"));
       Background.Color = Color.White;
+      ChildrenBounds = CUIBoundaries.Box;
 
       IsDebugTool = true;
     }

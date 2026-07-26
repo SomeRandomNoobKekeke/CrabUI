@@ -33,10 +33,17 @@ namespace CrabUI
         {
           CUIRect parentRect = ParentRect ?? CUIRect.Zero;
 
+
+          CUIRect rect = new CUIRect(x, y, Rect.Width, Rect.Height);
+          if (Self.Parent.ChildrenBounds != null)
+          {
+            rect = Self.Parent.ChildrenBounds(Self.Parent.ChildrenRect).FitGracefuly(Rect, rect);
+          }
+
           Vector2 offset = CUIAnchor.GetOffset(
             parentRect,
             Self.LayoutProps.ParentAnchor.Value ?? Self.LayoutProps.Anchor.Value,
-            new CUIRect(x, y, Rect.Width, Rect.Height),
+            rect,
             Self.LayoutProps.Anchor.Value
           );
 

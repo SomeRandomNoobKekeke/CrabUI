@@ -51,6 +51,14 @@ namespace CrabUI
       }
     }
 
+    public void Draw(CUITexture2D texture, VertexPositionColorTexture[] vertices)
+    {
+      if (texture is __CUITexture2D)
+      {
+        XNASpriteBatch.Draw(((__CUITexture2D)texture).XNATexture, vertices);
+      }
+    }
+
 
     public void Begin(
       SpriteSortMode sortMode = SpriteSortMode.Deferred,

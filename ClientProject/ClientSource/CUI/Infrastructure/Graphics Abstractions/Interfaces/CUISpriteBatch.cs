@@ -17,6 +17,7 @@ namespace CrabUI
     public void Draw(CUITexture2D texture, Rectangle destinationRectangle, Color color);
     public void Draw(CUITexture2D texture, Rectangle destinationRectangle, Rectangle? sourceRectangle, Color color);
     public void Draw(CUITexture2D texture, Rectangle destinationRectangle, Rectangle? sourceRectangle, Color color, float rotation, Vector2 origin, SpriteEffects effects, float layerDepth);
+    public void Draw(CUITexture2D texture, VertexPositionColorTexture[] vertices);
 
     public void StopStart(Rectangle ScissorRect, SamplerState SamplerState);
 

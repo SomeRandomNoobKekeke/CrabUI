@@ -52,6 +52,31 @@ namespace CrabUI
     public void Draw(CUISpriteBatch spriteBatch, Rectangle destinationRectangle)
     {
       spriteBatch.Draw(Texture, destinationRectangle, SourceRectangle, Color, Rotation, Origin, Effects, LayerDepth);
+
+      // spriteBatch.Draw(Texture, new VertexPositionColorTexture[]
+      // {
+      //   new VertexPositionColorTexture(
+      //     new Vector3(destinationRectangle.Left, destinationRectangle.Top, 0),
+      //     Color.Red,
+      //     new Vector2(0,0)
+
+      //   ),
+      //   new VertexPositionColorTexture(
+      //     new Vector3(destinationRectangle.Right, destinationRectangle.Top, 0),
+      //     Color.Green,
+      //     new Vector2(1,0)
+      //   ),
+      //   new VertexPositionColorTexture(
+      //     new Vector3(destinationRectangle.Left, destinationRectangle.Bottom, 0),
+      //     Color.Blue,
+      //     new Vector2(0,1)
+      //   ),
+      //   new VertexPositionColorTexture(
+      //     new Vector3(destinationRectangle.Right, destinationRectangle.Bottom, 0),
+      //     Color.White,
+      //     new Vector2(1,1)
+      //   ),
+      // }, 0.1f);
     }
 
     //TODO how to UpdateDataBuffer if user changes data in texture manually? 

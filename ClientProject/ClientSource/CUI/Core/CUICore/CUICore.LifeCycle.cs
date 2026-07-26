@@ -8,6 +8,7 @@ using CUICodeGenerator;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using Barotrauma;
 
 namespace CrabUI
 {
@@ -50,6 +51,7 @@ namespace CrabUI
           OnUpdate.Raise(totalTime);
 
           sw.Stop();
+          GameMain.PerformanceCounter.AddElapsedTicks("Update:CUI", sw.ElapsedTicks);
           // CUI.Logger.Log($"Update took {sw.ElapsedTicks}");
         }
         catch (Exception e)
@@ -63,8 +65,13 @@ namespace CrabUI
       {
         try
         {
+          Stopwatch sw = Stopwatch.StartNew();
+
           OnDrawAfterGUI.Raise(spriteBatch);
           Self.TopMain.DrawChildren(spriteBatch);
+
+          sw.Stop();
+          GameMain.PerformanceCounter.AddElapsedTicks("Draw:CUI", sw.ElapsedTicks);
         }
         catch (Exception e)
         {
@@ -77,8 +84,13 @@ namespace CrabUI
       {
         try
         {
+          Stopwatch sw = Stopwatch.StartNew();
+
           Self.Main.DrawChildren(spriteBatch);
           OnDrawBeforeGUI.Raise(spriteBatch);
+
+          sw.Stop();
+          GameMain.PerformanceCounter.AddElapsedTicks("Draw:CUI", sw.ElapsedTicks);
         }
         catch (Exception e)
         {

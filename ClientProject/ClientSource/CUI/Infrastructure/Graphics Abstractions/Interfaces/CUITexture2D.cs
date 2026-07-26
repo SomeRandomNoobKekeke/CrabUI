@@ -20,6 +20,7 @@ namespace CrabUI
 
     public static CUITexture2D Create(int width, int height) => __CUITexture2D.Create(width, height);
 
+
     public string Key { get; set; }
     public Rectangle Bounds { get; }
     public Color[] Data { get; set; }
@@ -40,6 +41,8 @@ namespace CrabUI
     public void GetData(int level, Rectangle? rect, Color[] data, int startIndex, int elementCount);
     public void GetData(Color[] data);
     public void GetData(Color[] data, int startIndex, int elementCount);
+
+    public CUITexture2D Fill(Func<int, int, Color> fillFunc);
   }
 
 }

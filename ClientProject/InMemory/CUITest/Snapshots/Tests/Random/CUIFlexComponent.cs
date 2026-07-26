@@ -15,6 +15,7 @@ namespace CrabUIUser
   {
     public static partial class Random
     {
+      //Ass you can see doesn't really work
       public static CUIVisualComponent CUIFlexComponent()
       {
         CUIFlexComponent flexComponent = new();
@@ -23,10 +24,10 @@ namespace CrabUIUser
 
         flexComponent.FlexTexture.FlexRect = new CUIFlexRect()
         {
-          LT = new Vector2(400, 400),
-          RT = new Vector2(700, 300),
-          RB = new Vector2(1000, 1000),
-          LB = new Vector2(300, 700),
+          LT = new Vector2(500, 400),
+          RT = new Vector2(1100, 400),
+          RB = new Vector2(900, 700),
+          LB = new Vector2(700, 700),
         };
 
         return flexComponent;

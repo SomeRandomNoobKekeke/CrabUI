@@ -62,6 +62,23 @@ namespace CrabUI
     public void GetData(Color[] data, int startIndex, int elementCount)
       => XNATexture.GetData<Color>(data, startIndex, elementCount);
 
+    public CUITexture2D Fill(Func<int, int, Color> fillFunc)
+    {
+      ArgumentNullException.ThrowIfNull(fillFunc);
+
+      Color[] data = new Color[Width * Height];
+      for (int y = 0; y < Height; y++)
+      {
+        for (int x = 0; x < Width; x++)
+        {
+          data[x + y * Width] = fillFunc(x, y);
+        }
+      }
+
+      SetData(data);
+      return this;
+    }
+
 
     public __CUITexture2D(int width, int height, bool mipmap, SurfaceFormat format)
     {

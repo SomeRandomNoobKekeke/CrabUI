@@ -15,16 +15,26 @@ namespace CrabUI
   public class FlexTexture : VisualElementBase, IFocusRequestEventConsumer
   {
     public bool ConsumeFocus { get; set; }
-    public ClearableEvent<CUIFocusRequestEvent> FocusProbed { get; }
+    public ClearableEvent<CUIFocusRequestEvent> FocusProbed { get; } = new();
 
-    public override bool Contains(Vector2 pos)
+    public CUIFlexSprite Sprite { get; set; } = CUIFlexSprite.White;
+    private CUIFlexRect _FlexRect; public CUIFlexRect FlexRect
     {
-      throw new NotImplementedException();
+      get => _FlexRect;
+      set
+      {
+        _FlexRect = value;
+        Rect = _FlexRect.Box;
+      }
     }
+
+    public CUIRect Rect { get; private set; }
+
+    public override bool Contains(Vector2 pos) => Rect.Contains(pos);
 
     public override void Draw(CUISpriteBatch spriteBatch)
     {
-      throw new NotImplementedException();
+      Sprite.Draw(spriteBatch, FlexRect.LT, FlexRect.RT, FlexRect.RB, FlexRect.LB);
     }
   }
 }

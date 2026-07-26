@@ -170,7 +170,7 @@ namespace CrabUI
 
     public ResizeHandle()
     {
-      Background.Sprite = CUIDefaultSprite.Angle;
+      Background.Sprite = CUISprite.Angle;
 
       Anchor = new Vector2(1, 1);
       Background.Sprite.Effects = SpriteEffects.FlipHorizontally;

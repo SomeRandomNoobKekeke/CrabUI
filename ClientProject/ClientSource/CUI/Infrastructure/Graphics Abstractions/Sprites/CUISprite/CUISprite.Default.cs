@@ -10,12 +10,11 @@ using System.IO;
 
 namespace CrabUI
 {
-  /// <summary>
-  /// Note: all of this is cringe, idk which ones i need, what looks good or how to name them
-  /// It's volatile, don't rely on this too much
-  /// </summary>
-  public static class CUIDefaultSprite
+  public partial record CUISprite
   {
+    public static CUISprite White => new CUISprite(CUITexture2D.White);
+    public static CUISprite BaroDev => new CUISprite(CUITexture2D.BaroDev);
+
     /// <summary>
     /// 64x64 textures separated by 2px transparent lines to avoid sampler artifacts
     /// </summary>

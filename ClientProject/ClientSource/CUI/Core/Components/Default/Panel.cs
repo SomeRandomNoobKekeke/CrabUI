@@ -24,7 +24,7 @@ namespace CrabUI
       protected override void InitStyle()
       {
         base.InitStyle();
-        Background.Sprite = CUIDefaultSprite.DimmedVerticalLight;
+        Background.Sprite = CUISprite.DimmedVerticalLight;
       }
     }
 
@@ -38,7 +38,7 @@ namespace CrabUI
       protected override void InitStyle()
       {
         base.InitStyle();
-        Background.Sprite = CUIDefaultSprite.DimmedHorizontalLight;
+        Background.Sprite = CUISprite.DimmedHorizontalLight;
       }
     }
   }

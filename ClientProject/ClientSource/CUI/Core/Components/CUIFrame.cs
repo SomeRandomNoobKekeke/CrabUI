@@ -30,7 +30,7 @@ namespace CrabUI
       ConsumeFocus = true;
       ConsumeMouseEvents = true;
       Anchor = CUIAnchor.Center;
-      Background.Sprite = CUIDefaultSprite.Vignette;
+      Background.Sprite = CUISprite.Vignette;
     }
 
     public CUIComponent TargetMainComponent { get; set; }

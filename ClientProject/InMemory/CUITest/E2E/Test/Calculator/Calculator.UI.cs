@@ -78,7 +78,7 @@ namespace CrabUIUser
 
           using (new CUIContextStyle<CUIButton>(c =>
           {
-            // c.Background.Sprite = CUIDefaultSprite.Outlined;
+            // c.Background.Sprite = CUISprite.Outlined;
             c.Borders.Color = Color.Black * 0.5f;
             c.Borders.Sizes = new CUISizes(1, 1, 1, 1);
             c.Borders.Visible = true;

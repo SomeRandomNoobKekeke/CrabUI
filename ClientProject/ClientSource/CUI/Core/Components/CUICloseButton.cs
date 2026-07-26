@@ -24,7 +24,7 @@ namespace CrabUI
     protected override void InitStyle()
     {
       base.InitStyle();
-      Icon.Sprite = CUIDefaultSprite.Cross;
+      Icon.Sprite = CUISprite.Cross;
       ConsumeMouseEvents = true;
     }
 

@@ -28,6 +28,9 @@ namespace CrabUI
     public int Width => XNATexture.Width;
     public int Height => XNATexture.Height;
 
+    public float TexelWidth => XNATexture.TexelWidth;
+    public float TexelHeight => XNATexture.TexelHeight;
+
     public bool ShouldBeDisposed { get; set; } = true; //BRUH sneaky
 
     public Rectangle Bounds => XNATexture.Bounds;

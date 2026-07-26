@@ -43,10 +43,10 @@ namespace CrabUI
 
     public CUICheckBox() : base()
     {
-      OnSprite = CUIDefaultSprite.AtPos(0, 1);
+      OnSprite = CUISprite.AtPos(0, 1);
       OnSprite.Color = Color.Lime;
 
-      OffSprite = CUIDefaultSprite.AtPos(1, 1);
+      OffSprite = CUISprite.AtPos(1, 1);
       OffSprite.Color = Color.Red;
 
       State = false;

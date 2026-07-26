@@ -24,7 +24,7 @@ namespace CrabUI
     {
       base.InitStyle();
       Padding = new(4, 2, 4, 2);
-      Background.Sprite = CUIDefaultSprite.VignetteLight;
+      Background.Sprite = CUISprite.VignetteLight;
     }
 
     [CUISerializableProp]

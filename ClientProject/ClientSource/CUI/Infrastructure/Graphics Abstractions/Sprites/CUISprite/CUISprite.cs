@@ -10,12 +10,8 @@ using System.Text.Json;
 using CUILibs;
 namespace CrabUI
 {
-  public record CUISprite : IParsable
+  public partial record CUISprite : IParsable
   {
-    public static CUISprite White => new CUISprite(CUITexture2D.White);
-    public static CUISprite BaroDev => new CUISprite(CUICore.TextureManager.Get("BaroDev"));
-
-
     public static CUISprite Get(string key)
     {
       CUICore.ResourceIOContext.CallingAssembly = Assembly.GetCallingAssembly();

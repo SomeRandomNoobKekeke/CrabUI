@@ -11,7 +11,13 @@ namespace CrabUI
 {
   public static class SpriteBatch_Extensions
   {
-    public static void Draw(this SpriteBatch spriteBatch, Texture2D texture, VertexPositionColorTexture[] vertices)
+    public static void Draw(this SpriteBatch spriteBatch,
+      Texture2D texture,
+      VertexPositionColorTexture lt,
+      VertexPositionColorTexture rt,
+      VertexPositionColorTexture rb,
+      VertexPositionColorTexture lb
+    )
     {
       spriteBatch.CheckValid(texture);
 
@@ -21,10 +27,10 @@ namespace CrabUI
 
       item.SortKey = 0f;
 
-      item.vertexTL = vertices[0];
-      item.vertexTR = vertices[1];
-      item.vertexBR = vertices[2];
-      item.vertexBL = vertices[3];
+      item.vertexTL = lt;
+      item.vertexTR = rt;
+      item.vertexBR = rb;
+      item.vertexBL = lb;
     }
   }
 }

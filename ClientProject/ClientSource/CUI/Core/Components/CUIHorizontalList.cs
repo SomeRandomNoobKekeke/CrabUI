@@ -13,6 +13,21 @@ namespace CrabUI
   //Note: i usually test fixes and features on CUIVerticalList, so it might get outdated
   public partial class CUIHorizontalList : CUIComponent, IComponent
   {
+    protected partial class CUIHorizontalListLayout_Host_Adapter_Part : Adapters_Part.CUIPlainLayout_Host_Part, CUIHorizontalListLayout.Host
+    {
+      private CUIHorizontalList _Self; public new CUIHorizontalList Self
+      {
+        get => _Self;
+        set
+        {
+          _Self = value;
+          base.Self = value;
+        }
+      }
+
+      CUIDirection CUIHorizontalListLayout.Host.Direction => Self.LayoutProps.Direction.Value;
+    }
+
     protected override void InitStyle()
     {
       base.InitStyle();

@@ -32,7 +32,7 @@ namespace CrabUIUser
         {
           Flex = 1,
           Background = {
-            Sprite = CUIDefaultSprite.VerticalGradient with {
+            Sprite = CUISprite.VerticalGradient with {
               Color = new Color(128,0,255),
               Effects = SpriteEffects.FlipVertically,
             },

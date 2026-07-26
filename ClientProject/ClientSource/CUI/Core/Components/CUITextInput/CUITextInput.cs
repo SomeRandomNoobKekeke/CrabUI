@@ -37,8 +37,8 @@ namespace CrabUI
       CullChildren = true;
 
       BluredSprite = CUISprite.White;
-      InvalidSprite = CUIDefaultSprite.BoxWithALamp;
-      FocusedSprite = CUIDefaultSprite.BoxWithALamp;
+      InvalidSprite = CUISprite.BoxWithALamp;
+      FocusedSprite = CUISprite.BoxWithALamp;
 
       Background.Sprite = BluredSprite;
       Padding = new CUISizes(4, 4, 4, 4);

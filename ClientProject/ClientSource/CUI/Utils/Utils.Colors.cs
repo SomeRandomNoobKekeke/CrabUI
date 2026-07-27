@@ -22,5 +22,8 @@ namespace CrabUI
 
     public static float Brightness(this Color cl)
       => Math.Clamp((cl.R + cl.G + cl.B) / 255.0f, 0.0f, 1.0f);
+
+    public static Color Add(this Color cl, Color other)
+      => new Color(cl.R, cl.G, cl.B, cl.A);
   }
 }

@@ -30,6 +30,7 @@ namespace CrabUI
     public static CUIGraphicsDevice GraphicsDevice => Instance.Handles.GraphicsDevice;
     public static SamplerState SamplerState => Instance.Handles.GUI.SamplerState;
     public static RasterizerState RasterizerState => Instance.Handles.GUI.RasterizerState;
+    public static CUIGUI GUI => Instance.Handles.GUI;
     public static bool InputBlockingMenuOpen => Instance.Handles.InputBlockingMenuOpen;
 
     public static Reflection_Part Reflection => Instance._Reflection;

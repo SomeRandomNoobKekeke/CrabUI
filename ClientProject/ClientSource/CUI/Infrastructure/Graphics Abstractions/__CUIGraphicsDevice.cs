@@ -24,6 +24,13 @@ namespace CrabUI
 
     public void SetRenderTarget(CUIRenderTarget2D target)
     {
+      if (target is null)
+      {
+        GameMain.Instance.GraphicsDevice.SetRenderTarget(null);
+        return;
+      }
+
+
       if (target is __CUIRenderTarget2D)
       {
         GameMain.Instance.GraphicsDevice.SetRenderTarget(

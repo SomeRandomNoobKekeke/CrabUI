@@ -16,5 +16,7 @@ namespace CrabUI
     //TODO It's actually in GameMain
     public RasterizerState RasterizerState { get; }
 
+    public void DrawLine(CUISpriteBatch spriteBatch, Vector2 start, Vector2 end, float width, Color color);
+
   }
 }

@@ -11,7 +11,8 @@ namespace CrabUI
 {
   public partial interface CUITexture2D : IDisposable
   {
-    public static CUITexture2D Create(int width, int height) => CUICore.TextureManager.CreateNew(width, height);
+    public static CUITexture2D Create(int width, int height)
+      => CUICore.TextureManager.CreateNew(width, height);
     public static CUITexture2D Create(int width, int height, bool mipmap, SurfaceFormat format)
       => CUICore.TextureManager.CreateNew(width, height, mipmap, format);
 
@@ -40,8 +41,6 @@ namespace CrabUI
     public void GetData(Color[] data);
     public void GetData(Color[] data, int startIndex, int elementCount);
 
-    public CUITexture2D Fill(Func<int, int, Color> fillFunc);
-    public CUITexture2D Fill(Func<Vector2, Color> fillFunc);
   }
 
 }

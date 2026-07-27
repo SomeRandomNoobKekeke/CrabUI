@@ -23,20 +23,15 @@ namespace CrabUIUser
           Absolute = new CUINullRect(w: 512, h: 512),
         };
 
-
-        float maxl = 50 * 50;
-        Vector2 center = new Vector2(128, 128);
-        CUITexture2D texture = CUITexture2D.Create(256, 256).Fill((v) =>
-        {
-          Vector2 diff = v - center;
-          float l = diff.LengthSquared();
-
-
-
-          if (l < maxl) return Color.Lime;
-          return new Color(0, (int)(255 - (l - maxl) / 3.0f), 0);
-
-        });
+        CUITexture2D texture = new TextureBuilder(256, 256)
+          .DrawCircle(new Vector2(100, 100), 30, Color.Red)
+          .DrawRadialGradient(new Vector2(100, 100), 30, 35, Color.White, Color.Transparent)
+          .DrawRadialGradient(new Vector2(100, 100), 25, 30, Color.Red, Color.White)
+          .Render(spritebatch =>
+          {
+            CUICore.GUI.DrawLine(spritebatch, new Vector2(20, 20), new Vector2(40, 40), 10, Color.Lime);
+          })
+          .Build();
 
         CUICore.TextureManager.Add(texture, "ConstructedTexture");
 

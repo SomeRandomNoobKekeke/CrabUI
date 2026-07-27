@@ -24,6 +24,23 @@ namespace CrabUI
     public CUITexture2D BackupTexture => __CUITexture2D.White;
     public Dictionary<string, CUITexture2D> LoadedTextures { get; } = new();
 
+    private static int MaxID;
+    public CUITexture2D CreateNew(int width, int height, string key = null)
+    {
+      CUITexture2D texture = new __CUITexture2D(width, height);
+      key ??= $"__{MaxID++}";
+      Add(texture, key);
+      return texture;
+    }
+
+    public CUITexture2D CreateNew(int width, int height, bool mipmap, SurfaceFormat format, string key = null)
+    {
+      CUITexture2D texture = new __CUITexture2D(width, height, mipmap, format);
+      key ??= $"__{MaxID++}";
+      Add(texture, key);
+      return texture;
+    }
+
     public CUITexture2D Add(CUITexture2D texture, string key)
     {
       if (LoadedTextures.ContainsKey(key))

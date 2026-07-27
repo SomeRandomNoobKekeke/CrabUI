@@ -20,6 +20,12 @@ namespace CrabUI
     /// </summary>
     public class CUITextureManager_PublicPart : CUITextureManager
     {
+      public CUITexture2D CreateNew(int width, int height, string key = null)
+        => Self.TextureManager.CreateNew(width, height, key);
+
+      public CUITexture2D CreateNew(int width, int height, bool mipmap, SurfaceFormat format, string key = null)
+        => Self.TextureManager.CreateNew(width, height, mipmap, format, key);
+
       public SoloCUIRunner Self { get; set; }
 
       public CUITexture2D Add(CUITexture2D texture, string key) => Self.TextureManager.Add(texture, key);
@@ -57,6 +63,8 @@ namespace CrabUI
         Self.TextureManager.Context.PackageDir = null;
         return texture;
       }
+
+
     }
   }
 }

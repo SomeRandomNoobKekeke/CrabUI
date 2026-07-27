@@ -11,14 +11,12 @@ namespace CrabUI
 {
   public partial interface CUITexture2D : IDisposable
   {
+    public static CUITexture2D Create(int width, int height) => CUICore.TextureManager.CreateNew(width, height);
+    public static CUITexture2D Create(int width, int height, bool mipmap, SurfaceFormat format)
+      => CUICore.TextureManager.CreateNew(width, height, mipmap, format);
+
     public static CUITexture2D White => __CUITexture2D.White;
     public static CUITexture2D BaroDev => CUICore.TextureManager.Get("BaroDev");
-
-    //TODO there should be an abstract factory for this
-    public static CUITexture2D Create(int width, int height, bool mipmap, SurfaceFormat format)
-      => __CUITexture2D.Create(width, height, mipmap, format);
-
-    public static CUITexture2D Create(int width, int height) => __CUITexture2D.Create(width, height);
 
 
     public string Key { get; set; }
@@ -43,6 +41,7 @@ namespace CrabUI
     public void GetData(Color[] data, int startIndex, int elementCount);
 
     public CUITexture2D Fill(Func<int, int, Color> fillFunc);
+    public CUITexture2D Fill(Func<Vector2, Color> fillFunc);
   }
 
 }

@@ -12,11 +12,6 @@ namespace CrabUI
 {
   public class __CUITexture2D : CUITexture2D, IDisposable
   {
-    public static __CUITexture2D Create(int width, int height, bool mipmap, SurfaceFormat format)
-      => new __CUITexture2D(width, height, mipmap, format);
-    public static __CUITexture2D Create(int width, int height)
-      => new __CUITexture2D(width, height, false, GameMain.Instance.GraphicsDevice.PresentationParameters.BackBufferFormat);
-
     public static __CUITexture2D White = new __CUITexture2D(GUI.WhiteTexture)
     {
       ShouldBeDisposed = false,
@@ -79,7 +74,29 @@ namespace CrabUI
       return this;
     }
 
+    public CUITexture2D Fill(Func<Vector2, Color> fillFunc)
+    {
+      ArgumentNullException.ThrowIfNull(fillFunc);
 
+      Color[] data = new Color[Width * Height];
+      for (int y = 0; y < Height; y++)
+      {
+        for (int x = 0; x < Width; x++)
+        {
+          data[x + y * Width] = fillFunc(new Vector2(x, y));
+        }
+      }
+
+      SetData(data);
+      return this;
+    }
+
+
+    public __CUITexture2D(int width, int height) : this(
+      width, height,
+      false, GameMain.Instance.GraphicsDevice.PresentationParameters.BackBufferFormat
+    )
+    { }
     public __CUITexture2D(int width, int height, bool mipmap, SurfaceFormat format)
     {
       XNATexture = new Texture2D(GameMain.Instance.GraphicsDevice, width, height, mipmap, format);

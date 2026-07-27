@@ -12,6 +12,9 @@ namespace CrabUI
 {
   public interface CUITextureManager
   {
+    public CUITexture2D CreateNew(int width, int height, string key = null);
+    public CUITexture2D CreateNew(int width, int height, bool mipmap, SurfaceFormat format, string key = null);
+
     CUITexture2D Add(CUITexture2D texture, string key);
     void Clear();
     void Dispose();

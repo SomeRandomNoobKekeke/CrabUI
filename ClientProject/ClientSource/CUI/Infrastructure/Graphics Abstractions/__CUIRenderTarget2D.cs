@@ -11,9 +11,6 @@ namespace CrabUI
 {
   public class __CUIRenderTarget2D : __CUITexture2D, CUIRenderTarget2D
   {
-    public static __CUIRenderTarget2D Create(int width, int height)
-      => new __CUIRenderTarget2D(width, height);
-
     public RenderTarget2D XNARenderTarget2D { get; }
 
     public __CUIRenderTarget2D(RenderTarget2D target) : base()

@@ -9,10 +9,8 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CrabUI
 {
-  public interface CUIRenderTarget2D : CUITexture2D
+  public enum PaintingMode
   {
-    public static CUIRenderTarget2D Create(int width, int height)
-      => CUICore.TextureManager.CreateNewRenderTarget(width, height);
+    AlphaBlend, Replace, Mask, InvertMask
   }
-
 }

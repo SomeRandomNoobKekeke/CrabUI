@@ -14,9 +14,7 @@ namespace CrabUI
     //TODO there should be an abstract factory for this
     public static CUISpriteBatch Create() => __CUISpriteBatch.Create();
 
-    public void Draw(CUITexture2D texture, Rectangle destinationRectangle, Color color);
-    public void Draw(CUITexture2D texture, Rectangle destinationRectangle, Rectangle? sourceRectangle, Color color);
-    public void Draw(CUITexture2D texture, Rectangle destinationRectangle, Rectangle? sourceRectangle, Color color, float rotation, Vector2 origin, SpriteEffects effects, float layerDepth);
+    //Note: this one is mine
     public void Draw(
       CUITexture2D texture,
       VertexPositionColorTexture lt,
@@ -24,6 +22,92 @@ namespace CrabUI
       VertexPositionColorTexture rb,
       VertexPositionColorTexture lb
     );
+
+    //This one is BaroDevish
+    public void Draw(
+      CUITexture2D texture,
+      VertexPositionColorTexture[] vertices,
+      float layerDepth,
+      int? count = null
+    );
+
+    //These seems to be vanilla
+    public void Draw(
+      CUITexture2D texture,
+      Rectangle destinationRectangle,
+      Color color
+    );
+
+    public void Draw(
+      CUITexture2D texture,
+      Vector2 position,
+      Color color
+    );
+
+    public void Draw(
+      CUITexture2D texture,
+      Vector2 position,
+      Rectangle? sourceRectangle,
+      Color color
+    );
+
+    public void Draw(
+      CUITexture2D texture,
+      Rectangle destinationRectangle,
+      Rectangle? sourceRectangle,
+      Color color
+    );
+
+    public void Draw(
+      CUITexture2D texture,
+      Rectangle destinationRectangle,
+      Rectangle? sourceRectangle,
+      Color color,
+      float rotation,
+      Vector2 origin,
+      SpriteEffects effects,
+      float layerDepth
+    );
+
+    public void Draw(
+      CUITexture2D texture,
+      Vector2 position,
+      Rectangle? sourceRectangle,
+      Color color,
+      float rotation,
+      Vector2 origin,
+      float scale,
+      SpriteEffects effects,
+      float layerDepth
+    );
+
+    public void Draw(
+      CUITexture2D texture,
+      Vector2? position = null,
+      Rectangle? destinationRectangle = null,
+      Rectangle? sourceRectangle = null,
+      Vector2? origin = null,
+      float rotation = 0f,
+      Vector2? scale = null,
+      Color? color = null,
+      SpriteEffects effects = SpriteEffects.None,
+      float layerDepth = 0f
+    );
+
+    public void Draw(
+      CUITexture2D texture,
+      Vector2 position,
+      Rectangle? sourceRectangle,
+      Color color,
+      float rotation,
+      Vector2 origin,
+      Vector2 scale,
+      SpriteEffects effects,
+      float layerDepth
+    );
+
+
+
 
     public void StopStart(Rectangle ScissorRect, SamplerState SamplerState);
 

@@ -1,0 +1,318 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Diagnostics;
+using Barotrauma;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+
+namespace CrabUI
+{
+  //TODO This class depends on CUICore, it probably should be inside
+  public class TextureBuilder
+  {
+    private Color[] data;
+    private CUIRenderTarget2D target;
+    private CUISpriteBatch SpriteBatch;
+    public int Width { get; private set; }
+    public int Height { get; private set; }
+
+    public PaintingMode PaintingMode { get; set; }
+
+    public TextureBuilder ChangeMode(PaintingMode paintingMode)
+    {
+      PaintingMode = paintingMode;
+      return this;
+    }
+
+    public CUITexture2D Build()
+    {
+      target.SetData(data);
+      return target;
+    }
+
+    public TextureBuilder Clear(Color? color = null)
+    {
+      color ??= Color.Transparent;
+      Array.Fill(data, color.Value);
+
+      return this;
+    }
+
+    public TextureBuilder Start(int width, int height)
+    {
+      target?.Dispose();
+
+      Width = width;
+      Height = height;
+      data = new Color[width * height];
+      target = CUIRenderTarget2D.Create(width, height);
+
+      return this;
+    }
+
+    public TextureBuilder Load(string key)
+    {
+      target?.Dispose();
+
+      CUITexture2D texture = CUICore.TextureManager.Get(key);
+
+      Width = texture.Width;
+      Height = texture.Height;
+      data = new Color[Width * Height];
+
+      texture.GetData(data);
+
+      target = CUIRenderTarget2D.Create(Width, Height);
+      target.SetData(data);
+
+      texture.Dispose();
+
+      return this;
+    }
+
+    public TextureBuilder SetPixel(int x, int y, Color color)
+    {
+      int i = x + y * Width;
+      Color prev = data[i];
+
+      switch (PaintingMode)
+      {
+        case PaintingMode.Replace:
+          data[i] = color;
+          break;
+        case PaintingMode.AlphaBlend:
+          data[i] = color.Over(prev);
+          break;
+        case PaintingMode.Mask:
+          data[i] = color.Mask(prev);
+          break;
+        case PaintingMode.InvertMask:
+          data[i] = color.InvertMask(prev);
+          break;
+      }
+
+      return this;
+    }
+
+    public TextureBuilder Render(Action<CUISpriteBatch> renderFunc)
+    {
+      CUICore.GraphicsDevice.SetRenderTarget(target); //It actually fills the target with black
+      target.SetData(data);
+
+      // //TODO save and restore scissor rect
+      SpriteBatch.Begin(samplerState: CUICore.SamplerState, rasterizerState: CUICore.RasterizerState);
+
+      renderFunc(SpriteBatch);
+
+      SpriteBatch.End();
+
+      CUICore.GraphicsDevice.SetRenderTarget(null);
+
+      target.GetData(data);
+      return this;
+    }
+
+    public Effect DamageEffect => GameMain.GameScreen.DamageEffect;
+    public TextureBuilder Redraw()
+    {
+      CUITexture2D buff = CUITexture2D.Create(Width, Height);
+      buff.SetData(data);
+
+      CUICore.GraphicsDevice.SetRenderTarget(target); //It actually fills the target with black
+
+      DamageEffect.CurrentTechnique = DamageEffect.Techniques["StencilShader"];
+      ResetDamageEffect();
+      SpriteBatch.Begin(SpriteSortMode.Deferred, BlendState.NonPremultiplied, SamplerState.LinearWrap, effect: DamageEffect);
+
+      SpriteBatch.Draw(buff, target.Bounds, Color.White);
+
+      SpriteBatch.End();
+      ResetDamageEffect();
+
+
+      void ResetDamageEffect()
+      {
+        DamageEffect.Parameters["aCutoff"].SetValue(0.0f);
+        DamageEffect.Parameters["cCutoff"].SetValue(0.1f);
+        DamageEffect.CurrentTechnique.Passes[0].Apply();
+      }
+
+      CUICore.GraphicsDevice.SetRenderTarget(null);
+      buff.Dispose();
+
+      target.GetData(data);
+      return this;
+    }
+
+    public TextureBuilder Draw(TextureBuilder other)
+    {
+      if (Width != other.Width || Height != other.Height) throw new Exception("Size mismatch");
+
+      for (int y = 0; y < Height; y++)
+      {
+        for (int x = 0; x < Width; x++)
+        {
+          SetPixel(x, y, other.data[x + y * Width]);
+        }
+      }
+
+      return this;
+    }
+
+    public TextureBuilder Fill(Func<int, int, Color> fillFunc)
+    {
+      ArgumentNullException.ThrowIfNull(fillFunc);
+
+      for (int y = 0; y < Height; y++)
+      {
+        for (int x = 0; x < Width; x++)
+        {
+          SetPixel(x, y, fillFunc(x, y));
+        }
+      }
+
+      return this;
+    }
+
+    public TextureBuilder Fill(Func<Vector2, Color> fillFunc)
+    {
+      ArgumentNullException.ThrowIfNull(fillFunc);
+
+      for (int y = 0; y < Height; y++)
+      {
+        for (int x = 0; x < Width; x++)
+        {
+          SetPixel(x, y, fillFunc(new Vector2(x, y)));
+        }
+      }
+
+      return this;
+    }
+
+
+
+    public TextureBuilder DrawCircle(Vector2 origin, float radius, Color color)
+    {
+      Rectangle affected = new Rectangle(
+        (int)(origin.X - radius),
+        (int)(origin.Y - radius),
+        (int)radius * 2 + 1,
+        (int)radius * 2 + 1
+      );
+
+      if (!affected.Intersects(target.Bounds)) return this;
+
+      int minX = Math.Max(0, affected.Left);
+      int minY = Math.Max(0, affected.Top);
+      int maxX = Math.Min(target.Width, affected.Right);
+      int maxY = Math.Min(target.Height, affected.Bottom);
+
+      float r2 = radius * radius;
+
+      for (int y = minY; y < maxY; y++)
+      {
+        for (int x = minX; x < maxX; x++)
+        {
+          Vector2 v = new Vector2(x - origin.X, y - origin.Y);
+
+          if (v.LengthSquared() <= r2)
+          {
+            SetPixel(x, y, color);
+          }
+        }
+      }
+
+      return this;
+    }
+
+    public TextureBuilder DrawRadialGradient(Vector2 origin, float rFrom, float rTo, Color clFrom, Color clTo)
+    {
+      if (rTo < rFrom)
+      {
+        (rFrom, rTo) = (rTo, rFrom);
+        (clFrom, clTo) = (clTo, clFrom);
+      }
+
+      float rFrom2 = rFrom * rFrom;
+      float rTo2 = rTo * rTo;
+
+      float rDiff2 = rTo2 - rFrom2;
+
+      for (int y = 0; y < Height; y++)
+      {
+        for (int x = 0; x < Width; x++)
+        {
+          Vector2 diff = new Vector2(x - origin.X, y - origin.Y);
+          float length2 = diff.LengthSquared();
+
+          if (rFrom2 <= length2 && length2 <= rTo2)
+          {
+            float lambda = (length2 - rFrom2) / rDiff2;
+            SetPixel(x, y, Color.Lerp(clFrom, clTo, lambda));
+          }
+        }
+      }
+
+      return this;
+    }
+
+    public TextureBuilder DrawRing(Vector2 origin, float radius, Color color, float thickness = 0.5f, float fade = 2)
+    {
+      float ringSize = thickness + fade;
+
+      Rectangle affected = new Rectangle(
+        (int)(origin.X - (radius + ringSize)),
+        (int)(origin.Y - (radius + ringSize)),
+        (int)((radius + ringSize) * 2 + 1),
+        (int)((radius + ringSize) * 2 + 1)
+      );
+
+      if (!affected.Intersects(target.Bounds)) return this;
+
+      int minX = Math.Max(0, affected.Left);
+      int minY = Math.Max(0, affected.Top);
+      int maxX = Math.Min(target.Width, affected.Right);
+      int maxY = Math.Min(target.Height, affected.Bottom);
+
+
+
+      for (int y = minY; y < maxY; y++)
+      {
+        for (int x = minX; x < maxX; x++)
+        {
+          float r = new Vector2(x - origin.X, y - origin.Y).Length();
+
+          float rDiff = Math.Abs(r - radius);
+
+          if (rDiff > ringSize) continue;
+
+          if (rDiff < thickness)
+          {
+            SetPixel(x, y, color);
+            continue;
+          }
+
+
+          float lambda = (rDiff - thickness) / fade;
+          SetPixel(x, y, Color.Lerp(color, Color.Transparent, lambda));
+        }
+      }
+
+      return this;
+    }
+
+    public TextureBuilder()
+    {
+      SpriteBatch = CUISpriteBatch.Create();
+    }
+
+    public TextureBuilder(int width, int height) : this()
+    {
+      Start(width, height);
+    }
+
+  }
+
+}

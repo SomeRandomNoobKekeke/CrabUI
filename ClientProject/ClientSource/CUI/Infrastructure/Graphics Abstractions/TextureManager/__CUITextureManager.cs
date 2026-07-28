@@ -25,6 +25,15 @@ namespace CrabUI
     public Dictionary<string, CUITexture2D> LoadedTextures { get; } = new();
 
     private static int MaxID;
+    public CUIRenderTarget2D CreateNewRenderTarget(int width, int height, string key = null)
+    {
+      CUIRenderTarget2D texture = new __CUIRenderTarget2D(width, height);
+      key ??= $"__{MaxID++}";
+      Add(texture, key);
+
+      return texture;
+    }
+
     public CUITexture2D CreateNew(int width, int height, string key = null)
     {
       CUITexture2D texture = new __CUITexture2D(width, height);
@@ -133,7 +142,7 @@ namespace CrabUI
 
     public void Clear()
     {
-      foreach (CUITexture2D texture in LoadedTextures.Values)
+      foreach (var (key, texture) in LoadedTextures)
       {
         texture.Dispose();
       }

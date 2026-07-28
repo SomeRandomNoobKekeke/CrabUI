@@ -96,13 +96,21 @@ namespace CrabUI
       return this;
     }
 
-    public TextureBuilder Render(Action<CUISpriteBatch> renderFunc)
+    public TextureBuilder Render(
+      Action<CUISpriteBatch> renderFunc,
+      SpriteSortMode sortMode = SpriteSortMode.Deferred,
+      BlendState blendState = null,
+      SamplerState samplerState = null,
+      DepthStencilState depthStencilState = null,
+      RasterizerState rasterizerState = null,
+      Effect effect = null,
+      Matrix? transformMatrix = null
+    )
     {
       CUICore.GraphicsDevice.SetRenderTarget(target); //It actually fills the target with black
       target.SetData(data);
 
-      // //TODO save and restore scissor rect
-      SpriteBatch.Begin(samplerState: CUICore.SamplerState, rasterizerState: CUICore.RasterizerState);
+      SpriteBatch.Begin(sortMode, blendState, samplerState, depthStencilState, rasterizerState, effect, transformMatrix);
 
       renderFunc(SpriteBatch);
 
@@ -115,34 +123,46 @@ namespace CrabUI
     }
 
     public Effect DamageEffect => GameMain.GameScreen.DamageEffect;
-    public TextureBuilder Redraw()
+
+
+    public TextureBuilder Redraw(
+      SpriteSortMode sortMode = SpriteSortMode.Deferred,
+      BlendState blendState = null,
+      SamplerState samplerState = null,
+      DepthStencilState depthStencilState = null,
+      RasterizerState rasterizerState = null,
+      Effect effect = null,
+      Matrix? transformMatrix = null
+    )
     {
       CUITexture2D buff = CUITexture2D.Create(Width, Height);
       buff.SetData(data);
 
       CUICore.GraphicsDevice.SetRenderTarget(target); //It actually fills the target with black
 
-      DamageEffect.CurrentTechnique = DamageEffect.Techniques["StencilShader"];
-      ResetDamageEffect();
-      SpriteBatch.Begin(SpriteSortMode.Deferred, BlendState.NonPremultiplied, SamplerState.LinearWrap, effect: DamageEffect);
-
+      SpriteBatch.Begin(sortMode, blendState, samplerState, depthStencilState, rasterizerState, effect, transformMatrix);
       SpriteBatch.Draw(buff, target.Bounds, Color.White);
-
       SpriteBatch.End();
-      ResetDamageEffect();
-
-
-      void ResetDamageEffect()
-      {
-        DamageEffect.Parameters["aCutoff"].SetValue(0.0f);
-        DamageEffect.Parameters["cCutoff"].SetValue(0.1f);
-        DamageEffect.CurrentTechnique.Passes[0].Apply();
-      }
 
       CUICore.GraphicsDevice.SetRenderTarget(null);
       buff.Dispose();
 
       target.GetData(data);
+      return this;
+    }
+
+    /// <summary>
+    /// Have no idea how it works
+    /// </summary>
+    public TextureBuilder Damage(float aCutoff = 0.2f, float cCutoff = 0.0f)
+    {
+      // DamageEffect.CurrentTechnique = DamageEffect.Techniques["StencilShader"];
+      DamageEffect.Parameters["aCutoff"].SetValue(aCutoff);
+      DamageEffect.Parameters["cCutoff"].SetValue(cCutoff);
+      // DamageEffect.CurrentTechnique.Passes[0].Apply();
+
+      Redraw(effect: DamageEffect);
+
       return this;
     }
 

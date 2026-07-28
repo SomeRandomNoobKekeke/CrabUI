@@ -44,7 +44,7 @@ namespace CrabUIUser
             }),
             Color.AliceBlue, 3);
           })
-          .Redraw()
+          .Damage()
           .Build();
 
         CUICore.TextureManager.Add(texture, "ConstructedTexture");

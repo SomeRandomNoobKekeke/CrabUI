@@ -30,6 +30,7 @@ namespace CrabUI
 
       public CUITextureManager TextureManager => Self.TextureManager;
       public ResourceIOContextHandle ResourceIOContext => Self.ResourceIOContextHandle;
+      public CUICore.OtherCUICoreResources OtherResources => Self._OtherResources;
 
       public bool InputBlockingMenuOpen => Barotrauma.GUI.InputBlockingMenuOpen;
 

@@ -122,9 +122,6 @@ namespace CrabUI
       return this;
     }
 
-    public Effect DamageEffect => GameMain.GameScreen.DamageEffect;
-
-
     public TextureBuilder Redraw(
       SpriteSortMode sortMode = SpriteSortMode.Deferred,
       BlendState blendState = null,
@@ -154,14 +151,28 @@ namespace CrabUI
     /// <summary>
     /// Have no idea how it works
     /// </summary>
-    public TextureBuilder Damage(float aCutoff = 0.2f, float cCutoff = 0.0f)
+    public TextureBuilder Damage(float aCutoff = 0.0f, float cCutoff = 0.2f)
     {
       // DamageEffect.CurrentTechnique = DamageEffect.Techniques["StencilShader"];
-      DamageEffect.Parameters["aCutoff"].SetValue(aCutoff);
-      DamageEffect.Parameters["cCutoff"].SetValue(cCutoff);
+      CUICore.GraphicEffects.DamageEffect.Parameters["aCutoff"].SetValue(aCutoff);
+      CUICore.GraphicEffects.DamageEffect.Parameters["cCutoff"].SetValue(cCutoff);
       // DamageEffect.CurrentTechnique.Passes[0].Apply();
 
-      Redraw(effect: DamageEffect);
+      Redraw(effect: CUICore.GraphicEffects.DamageEffect);
+
+      return this;
+    }
+
+    /// <summary>
+    /// Have no idea how to use it, found it in legacy
+    /// </summary>
+    public TextureBuilder Blur(float amount = 0.002f)
+    {
+      CUICore.GraphicEffects.BlurEffect.SetParameters(amount, amount);
+      Redraw(effect: CUICore.GraphicEffects.BlurEffect.Effect);
+
+      CUICore.GraphicEffects.BlurEffect.SetParameters(amount, -amount);
+      Redraw(effect: CUICore.GraphicEffects.BlurEffect.Effect);
 
       return this;
     }
@@ -317,6 +328,42 @@ namespace CrabUI
 
           float lambda = (rDiff - thickness) / fade;
           SetPixel(x, y, Color.Lerp(color, Color.Transparent, lambda));
+        }
+      }
+
+      return this;
+    }
+
+    public TextureBuilder DrawRingSector(RingSegmentParams args)
+    {
+      Vector2 realOrigin = args.Origin +
+        new Vector2(
+          (float)Math.Cos(args.MidAngle),
+          (float)Math.Sin(args.MidAngle)
+        ) * args.Offset;
+
+
+      Rectangle affected = new Rectangle(
+        (int)(realOrigin.X - args.OuterFadeRadius),
+        (int)(realOrigin.Y - args.OuterFadeRadius),
+        (int)(args.OuterFadeRadius * 2 + 1),
+        (int)(args.OuterFadeRadius * 2 + 1)
+      );
+
+      if (!affected.Intersects(target.Bounds)) return this;
+
+      int minX = Math.Max(0, affected.Left);
+      int minY = Math.Max(0, affected.Top);
+      int maxX = Math.Min(target.Width, affected.Right);
+      int maxY = Math.Min(target.Height, affected.Bottom);
+
+
+      for (int y = minY; y < maxY; y++)
+      {
+        for (int x = minX; x < maxX; x++)
+        {
+          Vector2 v = new Vector2(x - realOrigin.X, y - realOrigin.Y);
+          float r = v.Length();
         }
       }
 

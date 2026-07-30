@@ -20,7 +20,7 @@ namespace CrabUIUser
       {
         CUIFrame frame = new CUIDefault.Frame("ConstructedTexture")
         {
-          Absolute = new CUINullRect(w: 512, h: 512),
+          Absolute = new CUINullRect(w: 256, h: 256),
         };
 
         CUITexture2D texture2 = CUITexture2D.Create(100, 100);
@@ -28,8 +28,6 @@ namespace CrabUIUser
 
         CUITexture2D texture = new TextureBuilder(256, 256)
           .Load("BaroDev")
-          .DrawCircle(new Vector2(100, 100), 30, Color.Red * 0.5f)
-          .DrawRing(new Vector2(100, 100), 30, Color.Red)
           .Render(spritebatch =>
           {
             // CUICore.GUI.DrawLine(spritebatch, new Vector2(20, 20), new Vector2(40, 40), 10, Color.Lime);
@@ -44,7 +42,20 @@ namespace CrabUIUser
             }),
             Color.AliceBlue, 3);
           })
-          .Damage()
+          .Blur(0.002f)
+          .DrawRingSector(new RingSegmentParams()
+          {
+            Origin = new Vector2(200, 150),
+            Hole = 20,
+            Height = 30,
+            Angle = Math.PI * 0.3,
+            AngleOffset = 1.5,
+            FillColor = Color.Lime,
+          })
+          .DrawCircle(new Vector2(100, 100), 30, Color.Red * 0.5f)
+          .DrawRing(new Vector2(100, 100), 30, Color.Red)
+
+
           .Build();
 
         CUICore.TextureManager.Add(texture, "ConstructedTexture");

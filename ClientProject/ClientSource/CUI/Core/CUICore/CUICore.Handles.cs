@@ -12,11 +12,23 @@ using Microsoft.Xna.Framework.Input;
 using System.IO;
 using System.Xml;
 using System.Xml.Linq;
+using Barotrauma;
 
 namespace CrabUI
 {
   public partial class CUICore
   {
+    public interface OtherCUICoreResources
+    {
+      public IEffectPack Effects { get; }
+    }
+    public interface IEffectPack
+    {
+      public Effect DamageEffect { get; }
+      public BlurEffect BlurEffect { get; }
+    }
+
+
     public interface CUICoreIOHandle
     {
       public void SaveXDoc(XDocument xDoc, string path);
@@ -32,6 +44,7 @@ namespace CrabUI
       public CUIGUI GUI { get; }
       public CUITextureManager TextureManager { get; }
       public ResourceIOContextHandle ResourceIOContext { get; }
+      public OtherCUICoreResources OtherResources { get; }
 
       public bool InputBlockingMenuOpen { get; }
 

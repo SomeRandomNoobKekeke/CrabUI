@@ -10,6 +10,7 @@ using CrabUI;
 using System.Xml.Linq;
 using Barotrauma.LuaCs;
 using CUICodeGenerator;
+using Microsoft.Xna.Framework;
 
 namespace CrabUIUser
 {
@@ -20,6 +21,14 @@ namespace CrabUIUser
 
     public void Experiment()
     {
+      // Logger.LogVars(new Vector2(1, 0).Angle() / Math.PI);
+      // Logger.LogVars(new Vector2(1, 1).Angle() / Math.PI);
+      // Logger.LogVars(new Vector2(0, 1).Angle() / Math.PI);
+      // Logger.LogVars(new Vector2(-1, 1).Angle() / Math.PI);
+      // Logger.LogVars(new Vector2(-1, 0).Angle() / Math.PI);
+      // Logger.LogVars(new Vector2(-1, -1).Angle() / Math.PI);
+      // Logger.LogVars(new Vector2(0, -1).Angle() / Math.PI);
+      // Logger.LogVars(new Vector2(1, -1).Angle() / Math.PI);
 
     }
   }

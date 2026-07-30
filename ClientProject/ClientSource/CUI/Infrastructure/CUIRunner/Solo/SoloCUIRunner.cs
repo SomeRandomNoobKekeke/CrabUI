@@ -27,6 +27,8 @@ namespace CrabUI
 
     public CUIAssemblyAnalyzer CUIAssemblyAnalyzer { get; } = new();
 
+    public OtherResources _OtherResources { get; } = new();
+
     public void Connect()
     {
       ArgumentNullException.ThrowIfNull(Core);

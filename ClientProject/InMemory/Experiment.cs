@@ -21,15 +21,14 @@ namespace CrabUIUser
 
     public void Experiment()
     {
-      // Logger.LogVars(new Vector2(1, 0).Angle() / Math.PI);
-      // Logger.LogVars(new Vector2(1, 1).Angle() / Math.PI);
-      // Logger.LogVars(new Vector2(0, 1).Angle() / Math.PI);
-      // Logger.LogVars(new Vector2(-1, 1).Angle() / Math.PI);
-      // Logger.LogVars(new Vector2(-1, 0).Angle() / Math.PI);
-      // Logger.LogVars(new Vector2(-1, -1).Angle() / Math.PI);
-      // Logger.LogVars(new Vector2(0, -1).Angle() / Math.PI);
-      // Logger.LogVars(new Vector2(1, -1).Angle() / Math.PI);
+      // for (int i = -40; i < 40; i += 1)
+      // {
+      //   double a = i / 10.0 * Math.PI;
 
+      //   a = CrabUI.Utils.BoundAngle(a);
+
+      //   Logger.LogVars(a / Math.PI, CrabUI.Utils.IsAngleWithin(a, 0.8 * Math.PI, -0.8 * Math.PI));
+      // }
     }
   }
 }

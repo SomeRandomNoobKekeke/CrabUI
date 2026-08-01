@@ -17,13 +17,68 @@ namespace CrabUI
 
 
     /// <summary>
-    /// Dot with orthogonal vector
-    /// If it's > 0 then v is on the right, if < 0 then on the left
+    /// lazy unoptimized implementation
     /// </summary>
-    public static float OrthDot(this Vector2 self, Vector2 v)
+    public static float DistanceToSegment(this Vector2 point, Vector2 pointA, Vector2 pointB)
     {
-      // Vector2 orthogonal = new Vector2(self.Y, -self.X);
-      return self.Y * v.X - self.X * v.Y;
+      if (pointA == pointB) return Vector2.Distance(point, pointA);
+
+
+      Vector2 AB = pointB - pointA;
+      Vector2 AP = point - pointA;
+
+      float AB_AP = Vector2.Dot(AB, AP);
+      if (AB_AP <= 0) return Vector2.Distance(point, pointA);
+      if (AB_AP >= AB.LengthSquared()) return Vector2.Distance(point, pointB);
+
+      Vector2 normal = Vector2.Normalize(new Vector2(AB.Y, -AB.X));
+
+      return Math.Abs(Vector2.Dot(normal, AP));
     }
+
+    public static float DistanceToCircle(this Vector2 point, Vector2 origin, float radius)
+    {
+      return Math.Abs((point - origin).Length() - radius);
+    }
+
+    public static Vector2 PointOnACircle(Vector2 origin, float radius, double angle)
+      => origin + new Vector2((float)Math.Cos(angle), (float)Math.Sin(angle)) * radius;
+
+    /// <summary>
+    /// lazy unoptimized implementation
+    /// </summary>
+    public static float DistanceToArc(this Vector2 point, Vector2 origin, float radius, double startAngle, double endAngle)
+    {
+      if (radius <= 0) return Vector2.Distance(point, origin);
+
+      if (startAngle == endAngle)
+      {
+        return Vector2.Distance(point, PointOnACircle(origin, radius, startAngle));
+      }
+
+      if (Math.Abs(endAngle - startAngle) > 2 * Math.PI)
+      {
+        return DistanceToCircle(point, origin, radius);
+      }
+
+      startAngle = Utils.BoundAngle(startAngle);
+      endAngle = Utils.BoundAngle(endAngle);
+
+      Vector2 v = point - origin;
+      double angle = Math.Atan2(v.Y, v.X);
+
+      if (Utils.IsAngleWithin(angle, startAngle, endAngle))
+      {
+        return DistanceToCircle(point, origin, radius);
+      }
+
+      float distanceToStart = Vector2.Distance(point, PointOnACircle(origin, radius, startAngle));
+      float distanceToEnd = Vector2.Distance(point, PointOnACircle(origin, radius, endAngle));
+
+      return Math.Min(distanceToStart, distanceToEnd);
+    }
+
+
+
   }
 }

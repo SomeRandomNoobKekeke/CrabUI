@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Graphics;
 namespace CrabUI
 {
   //TODO This class depends on CUICore, it probably should be inside
-  public class TextureBuilder
+  public partial class TextureBuilder
   {
     private Color[] data;
     private CUIRenderTarget2D target;
@@ -32,14 +32,6 @@ namespace CrabUI
       return target;
     }
 
-    public TextureBuilder Clear(Color? color = null)
-    {
-      color ??= Color.Transparent;
-      Array.Fill(data, color.Value);
-
-      return this;
-    }
-
     public TextureBuilder Start(int width, int height)
     {
       target?.Dispose();
@@ -48,6 +40,14 @@ namespace CrabUI
       Height = height;
       data = new Color[width * height];
       target = CUIRenderTarget2D.Create(width, height);
+
+      return this;
+    }
+
+    public TextureBuilder Clear(Color? color = null)
+    {
+      color ??= Color.Transparent;
+      Array.Fill(data, color.Value);
 
       return this;
     }
@@ -96,16 +96,23 @@ namespace CrabUI
       return this;
     }
 
+    public TextureBuilder Edit(Action<Color[]> action)
+    {
+      action(data);
+      return this;
+    }
+
+
     public TextureBuilder Render(
-      Action<CUISpriteBatch> renderFunc,
-      SpriteSortMode sortMode = SpriteSortMode.Deferred,
-      BlendState blendState = null,
-      SamplerState samplerState = null,
-      DepthStencilState depthStencilState = null,
-      RasterizerState rasterizerState = null,
-      Effect effect = null,
-      Matrix? transformMatrix = null
-    )
+          Action<CUISpriteBatch> renderFunc,
+          SpriteSortMode sortMode = SpriteSortMode.Deferred,
+          BlendState blendState = null,
+          SamplerState samplerState = null,
+          DepthStencilState depthStencilState = null,
+          RasterizerState rasterizerState = null,
+          Effect effect = null,
+          Matrix? transformMatrix = null
+        )
     {
       CUICore.GraphicsDevice.SetRenderTarget(target); //It actually fills the target with black
       target.SetData(data);
@@ -145,35 +152,6 @@ namespace CrabUI
       buff.Dispose();
 
       target.GetData(data);
-      return this;
-    }
-
-    /// <summary>
-    /// Have no idea how it works
-    /// </summary>
-    public TextureBuilder Damage(float aCutoff = 0.0f, float cCutoff = 0.2f)
-    {
-      // DamageEffect.CurrentTechnique = DamageEffect.Techniques["StencilShader"];
-      CUICore.GraphicEffects.DamageEffect.Parameters["aCutoff"].SetValue(aCutoff);
-      CUICore.GraphicEffects.DamageEffect.Parameters["cCutoff"].SetValue(cCutoff);
-      // DamageEffect.CurrentTechnique.Passes[0].Apply();
-
-      Redraw(effect: CUICore.GraphicEffects.DamageEffect);
-
-      return this;
-    }
-
-    /// <summary>
-    /// Have no idea how to use it, found it in legacy
-    /// </summary>
-    public TextureBuilder Blur(float amount = 0.002f)
-    {
-      CUICore.GraphicEffects.BlurEffect.SetParameters(amount, amount);
-      Redraw(effect: CUICore.GraphicEffects.BlurEffect.Effect);
-
-      CUICore.GraphicEffects.BlurEffect.SetParameters(amount, -amount);
-      Redraw(effect: CUICore.GraphicEffects.BlurEffect.Effect);
-
       return this;
     }
 
@@ -224,152 +202,6 @@ namespace CrabUI
 
 
 
-    public TextureBuilder DrawCircle(Vector2 origin, float radius, Color color)
-    {
-      Rectangle affected = new Rectangle(
-        (int)(origin.X - radius),
-        (int)(origin.Y - radius),
-        (int)radius * 2 + 1,
-        (int)radius * 2 + 1
-      );
-
-      if (!affected.Intersects(target.Bounds)) return this;
-
-      int minX = Math.Max(0, affected.Left);
-      int minY = Math.Max(0, affected.Top);
-      int maxX = Math.Min(target.Width, affected.Right);
-      int maxY = Math.Min(target.Height, affected.Bottom);
-
-      float r2 = radius * radius;
-
-      for (int y = minY; y < maxY; y++)
-      {
-        for (int x = minX; x < maxX; x++)
-        {
-          Vector2 v = new Vector2(x - origin.X, y - origin.Y);
-
-          if (v.LengthSquared() <= r2)
-          {
-            SetPixel(x, y, color);
-          }
-        }
-      }
-
-      return this;
-    }
-
-    public TextureBuilder DrawRadialGradient(Vector2 origin, float rFrom, float rTo, Color clFrom, Color clTo)
-    {
-      if (rTo < rFrom)
-      {
-        (rFrom, rTo) = (rTo, rFrom);
-        (clFrom, clTo) = (clTo, clFrom);
-      }
-
-      float rFrom2 = rFrom * rFrom;
-      float rTo2 = rTo * rTo;
-
-      float rDiff2 = rTo2 - rFrom2;
-
-      for (int y = 0; y < Height; y++)
-      {
-        for (int x = 0; x < Width; x++)
-        {
-          Vector2 diff = new Vector2(x - origin.X, y - origin.Y);
-          float length2 = diff.LengthSquared();
-
-          if (rFrom2 <= length2 && length2 <= rTo2)
-          {
-            float lambda = (length2 - rFrom2) / rDiff2;
-            SetPixel(x, y, Color.Lerp(clFrom, clTo, lambda));
-          }
-        }
-      }
-
-      return this;
-    }
-
-    public TextureBuilder DrawRing(Vector2 origin, float radius, Color color, float thickness = 0.5f, float fade = 2)
-    {
-      float ringSize = thickness + fade;
-
-      Rectangle affected = new Rectangle(
-        (int)(origin.X - (radius + ringSize)),
-        (int)(origin.Y - (radius + ringSize)),
-        (int)((radius + ringSize) * 2 + 1),
-        (int)((radius + ringSize) * 2 + 1)
-      );
-
-      if (!affected.Intersects(target.Bounds)) return this;
-
-      int minX = Math.Max(0, affected.Left);
-      int minY = Math.Max(0, affected.Top);
-      int maxX = Math.Min(target.Width, affected.Right);
-      int maxY = Math.Min(target.Height, affected.Bottom);
-
-
-
-      for (int y = minY; y < maxY; y++)
-      {
-        for (int x = minX; x < maxX; x++)
-        {
-          float r = new Vector2(x - origin.X, y - origin.Y).Length();
-
-          float rDiff = Math.Abs(r - radius);
-
-          if (rDiff > ringSize) continue;
-
-          if (rDiff < thickness)
-          {
-            SetPixel(x, y, color);
-            continue;
-          }
-
-
-          float lambda = (rDiff - thickness) / fade;
-          SetPixel(x, y, Color.Lerp(color, Color.Transparent, lambda));
-        }
-      }
-
-      return this;
-    }
-
-    public TextureBuilder DrawRingSector(RingSegmentParams args)
-    {
-      Vector2 realOrigin = args.Origin +
-        new Vector2(
-          (float)Math.Cos(args.MidAngle),
-          (float)Math.Sin(args.MidAngle)
-        ) * args.Offset;
-
-
-      Rectangle affected = new Rectangle(
-        (int)(realOrigin.X - args.OuterFadeRadius),
-        (int)(realOrigin.Y - args.OuterFadeRadius),
-        (int)(args.OuterFadeRadius * 2 + 1),
-        (int)(args.OuterFadeRadius * 2 + 1)
-      );
-
-      if (!affected.Intersects(target.Bounds)) return this;
-
-      int minX = Math.Max(0, affected.Left);
-      int minY = Math.Max(0, affected.Top);
-      int maxX = Math.Min(target.Width, affected.Right);
-      int maxY = Math.Min(target.Height, affected.Bottom);
-
-
-      for (int y = minY; y < maxY; y++)
-      {
-        for (int x = minX; x < maxX; x++)
-        {
-          Vector2 v = new Vector2(x - realOrigin.X, y - realOrigin.Y);
-          float r = v.Length();
-        }
-      }
-
-      return this;
-    }
-
     public TextureBuilder()
     {
       SpriteBatch = CUISpriteBatch.Create();
@@ -379,6 +211,7 @@ namespace CrabUI
     {
       Start(width, height);
     }
+
 
   }
 

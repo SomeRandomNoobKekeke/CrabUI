@@ -23,44 +23,20 @@ namespace CrabUIUser
           Absolute = new CUINullRect(w: 256, h: 256),
         };
 
-        CUITexture2D texture2 = CUITexture2D.Create(100, 100);
-        texture2.Dispose();
-
         CUITexture2D texture = new TextureBuilder(256, 256)
           .Load("BaroDev")
-          .Render(spritebatch =>
-          {
-            // CUICore.GUI.DrawLine(spritebatch, new Vector2(20, 20), new Vector2(40, 40), 10, Color.Lime);
-            spritebatch.DrawLine(new Vector2(20, 20), new Vector2(40, 40), Color.Lime, 5);
-            spritebatch.DrawCircle(new Vector2(50, 50), 30, 20, Color.Pink, 2);
-            spritebatch.DrawPolygon(new Vector2(50, 50), new Polygon(new Vector2[]
-            {
-              new  Vector2(-20,-10),
-              new  Vector2(-10,20),
-              new  Vector2(10,20),
-              new  Vector2(20,-10),
-            }),
-            Color.AliceBlue, 3);
-          })
-          .Blur(0.002f)
-          .DrawRingSector(new RingSegmentParams()
-          {
-            Origin = new Vector2(200, 150),
-            Hole = 20,
-            Height = 30,
-            Angle = Math.PI * 0.3,
-            AngleOffset = 1.5,
-            FillColor = Color.Lime,
-          })
           .DrawCircle(new Vector2(100, 100), 30, Color.Red * 0.5f)
-          .DrawRing(new Vector2(100, 100), 30, Color.Red)
-
-
+          .DrawCircle(new Vector2(100, 100), 30, Color.Red * 0.5f, Color.Yellow, 0, 2)
+          .DrawPoint(new Vector2(150, 100), Color.Lime, 5, 5)
+          .DrawLine(new Vector2(10, 30), new Vector2(100, 50), Color.Blue, 0.5f, 2)
+          .DrawArc(new Vector2(150, 150), 50, -1.5 * Math.PI, 0.3 * Math.PI, Color.Yellow, 2, 2)
           .Build();
 
         CUICore.TextureManager.Add(texture, "ConstructedTexture");
 
-        frame["layout"].Background.Sprite = new CUISprite(texture);
+        frame.Background.Sprite = new CUISprite(texture);
+        frame.Absolute = new CUINullRect(w: frame.Background.Sprite.Texture.Width, h: frame.Background.Sprite.Texture.Height);
+
 
         return frame;
       }

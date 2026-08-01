@@ -52,12 +52,14 @@ namespace CrabUI
 
     public CUITexture2D Add(CUITexture2D texture, string key)
     {
+      key ??= $"__{MaxID++}";
+      texture.Key = key;
+
       if (LoadedTextures.ContainsKey(key))
       {
         LoadedTextures[key].Dispose();
       }
 
-      texture.Key = key;
       return LoadedTextures[key] = texture;
     }
 
@@ -136,8 +138,10 @@ namespace CrabUI
 
     public void Forget(string key)
     {
-      LoadedTextures[key].Dispose();
-      LoadedTextures.Remove(key);
+      if (LoadedTextures.ContainsKey(key))
+      {
+        LoadedTextures.Remove(key);
+      }
     }
 
     public void Clear()

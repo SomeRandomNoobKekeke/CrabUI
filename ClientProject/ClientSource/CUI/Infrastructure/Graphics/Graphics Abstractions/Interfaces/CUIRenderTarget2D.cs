@@ -12,7 +12,7 @@ namespace CrabUI
   public interface CUIRenderTarget2D : CUITexture2D
   {
     public static CUIRenderTarget2D Create(int width, int height)
-      => CUICore.TextureManager.CreateNewRenderTarget(width, height);
+      => new __CUIRenderTarget2D(width, height);
   }
 
 }

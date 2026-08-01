@@ -24,12 +24,12 @@ namespace CrabUI
       CUI.TopMain["mgbutton"] = ToggleButton;
     }
 
-    public void Dispose()
-    {
-      MG?.Dispose();
-      ToggleButton?.RemoveSelf();
-      Frame?.Close();
-    }
+    // public void Dispose()
+    // {
+    //   // MG?.Dispose();
+    //   ToggleButton?.RemoveSelf();
+    //   Frame?.Close();
+    // }
 
     public void CreateUI()
     {

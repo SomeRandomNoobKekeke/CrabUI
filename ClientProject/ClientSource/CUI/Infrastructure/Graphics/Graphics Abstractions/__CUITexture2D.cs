@@ -70,9 +70,15 @@ namespace CrabUI
     public __CUITexture2D(Texture2D texture) => XNATexture = texture;
     public __CUITexture2D() { }
 
+    private bool _disposed = false;
     public void Dispose()
     {
-      if (ShouldBeDisposed) XNATexture.Dispose();
+      if (!_disposed && ShouldBeDisposed)
+      {
+        _disposed = true;
+        XNATexture?.Dispose();
+        XNATexture = null;
+      }
     }
   }
 }

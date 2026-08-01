@@ -13,7 +13,7 @@ namespace CrabUI
   public partial class TextureBuilder
   {
     private Color[] data;
-    private CUIRenderTarget2D target;
+    // private CUIRenderTarget2D target;
     private CUISpriteBatch SpriteBatch;
     public int Width { get; private set; }
     public int Height { get; private set; }
@@ -26,20 +26,22 @@ namespace CrabUI
       return this;
     }
 
-    public CUITexture2D Build()
+    public CUITexture2D Build(bool tracked = false)
     {
+
+      CUIRenderTarget2D target = tracked ?
+        CUICore.TextureManager.CreateNewRenderTarget(Width, Height) :
+        CUIRenderTarget2D.Create(Width, Height);
+
       target.SetData(data);
       return target;
     }
 
     public TextureBuilder Start(int width, int height)
     {
-      target?.Dispose();
-
       Width = width;
       Height = height;
       data = new Color[width * height];
-      target = CUIRenderTarget2D.Create(width, height);
 
       return this;
     }
@@ -54,8 +56,6 @@ namespace CrabUI
 
     public TextureBuilder Load(string key)
     {
-      target?.Dispose();
-
       CUITexture2D texture = CUICore.TextureManager.Get(key);
 
       Width = texture.Width;
@@ -63,11 +63,6 @@ namespace CrabUI
       data = new Color[Width * Height];
 
       texture.GetData(data);
-
-      target = CUIRenderTarget2D.Create(Width, Height);
-      target.SetData(data);
-
-      texture.Dispose();
 
       return this;
     }
@@ -114,6 +109,8 @@ namespace CrabUI
           Matrix? transformMatrix = null
         )
     {
+      CUIRenderTarget2D target = CUIRenderTarget2D.Create(Width, Height);
+
       CUICore.GraphicsDevice.SetRenderTarget(target); //It actually fills the target with black
       target.SetData(data);
 
@@ -126,6 +123,8 @@ namespace CrabUI
       CUICore.GraphicsDevice.SetRenderTarget(null);
 
       target.GetData(data);
+      target.ForgetAndDispose();
+
       return this;
     }
 
@@ -139,19 +138,19 @@ namespace CrabUI
       Matrix? transformMatrix = null
     )
     {
-      CUITexture2D buff = CUITexture2D.Create(Width, Height);
-      buff.SetData(data);
+      CUIRenderTarget2D target = CUIRenderTarget2D.Create(Width, Height);
+      target.SetData(data);
 
       CUICore.GraphicsDevice.SetRenderTarget(target); //It actually fills the target with black
 
       SpriteBatch.Begin(sortMode, blendState, samplerState, depthStencilState, rasterizerState, effect, transformMatrix);
-      SpriteBatch.Draw(buff, target.Bounds, Color.White);
+      SpriteBatch.Draw(target, target.Bounds, Color.White);
       SpriteBatch.End();
 
       CUICore.GraphicsDevice.SetRenderTarget(null);
-      buff.Dispose();
-
       target.GetData(data);
+      target.ForgetAndDispose();
+
       return this;
     }
 

@@ -63,14 +63,14 @@ namespace CrabUI
 
       backBuffer = new Color[w * h];
 
-      texture = CUITexture2D.Create(w, h, false, CUICore.GraphicsDevice.BackBufferFormat);
+      texture = CUICore.TextureManager.CreateNew(w, h, false, CUICore.GraphicsDevice.BackBufferFormat);
 
       CUI.OnDrawAfterGUI += (sb) => Update();
     }
 
     public override void Dispose()
     {
-      texture.Dispose();
+      texture.ForgetAndDispose();
       base.Dispose();
     }
 

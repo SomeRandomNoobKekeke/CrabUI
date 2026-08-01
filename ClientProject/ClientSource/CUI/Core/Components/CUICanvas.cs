@@ -33,7 +33,7 @@ namespace CrabUI
         if (value.X == Texture?.Width && value.Y == Texture?.Height) return;
 
         CUIRenderTarget2D oldTexture = Texture;
-        Texture = CUIRenderTarget2D.Create(value.X, value.Y);
+        Texture = CUICore.TextureManager.CreateNewRenderTarget(value.X, value.Y);
         Data = new Color[Texture.Width * Texture.Height];
 
         Background.Sprite.Texture = Texture;
@@ -84,6 +84,6 @@ namespace CrabUI
       Size = new Point(x, y);
     }
 
-    public virtual void Dispose() => Texture?.Dispose();
+    public virtual void Dispose() => Texture?.ForgetAndDispose();
   }
 }

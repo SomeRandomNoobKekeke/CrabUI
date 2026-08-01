@@ -16,8 +16,8 @@ namespace CrabUI
       float outerRadius = thickness + fade;
 
       IntBounds affected = Bounds.FromRadius(point, outerRadius).Round();
-      if (!affected.Intersects(target.Bounds)) return this;
-      affected.Fit(target.Bounds);
+      if (!affected.Intersects(0, 0, Width, Height)) return this;
+      affected.Fit(0, 0, Width, Height);
 
       for (int y = affected.MinY; y < affected.MaxY; y++)
       {
@@ -39,8 +39,8 @@ namespace CrabUI
     public TextureBuilder DrawCircle(Vector2 origin, float radius, Color fillColor)
     {
       IntBounds affected = Bounds.FromRadius(origin, radius).Round();
-      if (!affected.Intersects(target.Bounds)) return this;
-      affected.Fit(target.Bounds);
+      if (!affected.Intersects(0, 0, Width, Height)) return this;
+      affected.Fit(0, 0, Width, Height);
 
       float r2 = radius * radius;
 
@@ -65,8 +65,8 @@ namespace CrabUI
       float outerRadius = radius + borderThickness + borderFade;
 
       IntBounds affected = Bounds.FromRadius(origin, outerRadius).Round();
-      if (!affected.Intersects(target.Bounds)) return this;
-      affected.Fit(target.Bounds);
+      if (!affected.Intersects(0, 0, Width, Height)) return this;
+      affected.Fit(0, 0, Width, Height);
 
       float totalThickness = borderThickness + borderFade;
 
@@ -93,8 +93,8 @@ namespace CrabUI
       float outerRadius = radius + borderThickness + borderFade;
 
       IntBounds affected = Bounds.FromRadius(origin, outerRadius).Round();
-      if (!affected.Intersects(target.Bounds)) return this;
-      affected.Fit(target.Bounds);
+      if (!affected.Intersects(0, 0, Width, Height)) return this;
+      affected.Fit(0, 0, Width, Height);
 
       float totalThickness = borderThickness + borderFade;
 
@@ -127,8 +127,8 @@ namespace CrabUI
       float outerRadius = thickness + fade;
 
       IntBounds affected = Bounds.From2Points(pointA, pointB, outerRadius).Round();
-      if (!affected.Intersects(target.Bounds)) return this;
-      affected.Fit(target.Bounds);
+      if (!affected.Intersects(0, 0, Width, Height)) return this;
+      affected.Fit(0, 0, Width, Height);
 
       for (int y = affected.MinY; y < affected.MaxY; y++)
       {
@@ -150,8 +150,8 @@ namespace CrabUI
       float outerRadius = radius + thickness + fade;
 
       IntBounds affected = Bounds.FromRadius(origin, outerRadius).Round();
-      if (!affected.Intersects(target.Bounds)) return this;
-      affected.Fit(target.Bounds);
+      if (!affected.Intersects(0, 0, Width, Height)) return this;
+      affected.Fit(0, 0, Width, Height);
 
       float totalThickness = thickness + fade;
 

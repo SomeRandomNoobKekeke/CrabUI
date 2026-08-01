@@ -18,6 +18,15 @@ namespace CrabUI
     public int MinY { get; set; }
     public int MaxY { get; set; }
 
+    public bool Intersects(int x, int y, int w, int h)
+    {
+      if (MaxX < x) return false;
+      if (MaxY < y) return false;
+      if (MinX > x + w) return false;
+      if (MinY > y + h) return false;
+      return true;
+    }
+
     public bool Intersects(Rectangle rect)
     {
       if (MaxX < rect.Left) return false;
@@ -25,6 +34,14 @@ namespace CrabUI
       if (MinX > rect.Right) return false;
       if (MinY > rect.Bottom) return false;
       return true;
+    }
+
+    public void Fit(int x, int y, int w, int h)
+    {
+      MinX = Math.Max(x, MinX);
+      MaxX = Math.Min(x + w, MaxX);
+      MinY = Math.Max(y, MinY);
+      MaxY = Math.Min(y + h, MaxY);
     }
 
     public void Fit(Rectangle rect)

@@ -138,7 +138,7 @@ namespace CrabUI
 
     public void Forget(string key)
     {
-      if (LoadedTextures.ContainsKey(key))
+      if (key is not null && LoadedTextures.ContainsKey(key))
       {
         LoadedTextures.Remove(key);
       }

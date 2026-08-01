@@ -139,17 +139,21 @@ namespace CrabUI
     )
     {
       CUIRenderTarget2D target = CUIRenderTarget2D.Create(Width, Height);
-      target.SetData(data);
+      CUIRenderTarget2D buff = CUIRenderTarget2D.Create(Width, Height);
+      buff.SetData(data);
 
       CUICore.GraphicsDevice.SetRenderTarget(target); //It actually fills the target with black
+      // target.SetData(data);
 
       SpriteBatch.Begin(sortMode, blendState, samplerState, depthStencilState, rasterizerState, effect, transformMatrix);
-      SpriteBatch.Draw(target, target.Bounds, Color.White);
+      SpriteBatch.Draw(buff, buff.Bounds, Color.White);
       SpriteBatch.End();
 
       CUICore.GraphicsDevice.SetRenderTarget(null);
       target.GetData(data);
+
       target.ForgetAndDispose();
+      buff.ForgetAndDispose();
 
       return this;
     }

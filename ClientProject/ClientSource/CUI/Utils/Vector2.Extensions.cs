@@ -79,6 +79,76 @@ namespace CrabUI
     }
 
 
+    public static float DistanceToRindSectorEdge(this Vector2 point, Vector2 origin, float startRadius, float endRadius, double startAngle, double endAngle)
+    {
+      if (endRadius <= 0) return Vector2.Distance(point, origin);
+
+      if (startRadius == endRadius)
+      {
+        return DistanceToArc(point, origin, startRadius, startAngle, endAngle);
+      }
+
+      if (startAngle == endAngle)
+      {
+        return DistanceToSegment(
+          point,
+          PointOnACircle(origin, startRadius, startAngle),
+          PointOnACircle(origin, endRadius, startAngle)
+        );
+      }
+
+      if (Math.Abs(endAngle - startAngle) > 2 * Math.PI)
+      {
+        return Math.Min(
+          DistanceToCircle(point, origin, startRadius),
+          DistanceToCircle(point, origin, endRadius)
+        );
+      }
+
+      startAngle = Utils.BoundAngle(startAngle);
+      endAngle = Utils.BoundAngle(endAngle);
+
+      Vector2 v = point - origin;
+      double angle = Math.Atan2(v.Y, v.X);
+
+
+      if (Utils.IsAngleWithin(angle, startAngle, endAngle))
+      {
+        return Math.Min(
+          Math.Min(
+            DistanceToCircle(point, origin, startRadius),
+            DistanceToCircle(point, origin, endRadius)
+          ),
+          Math.Min(
+            DistanceToSegment(
+              point,
+              PointOnACircle(origin, startRadius, startAngle),
+              PointOnACircle(origin, endRadius, startAngle)
+            ),
+            DistanceToSegment(
+              point,
+              PointOnACircle(origin, startRadius, endAngle),
+              PointOnACircle(origin, endRadius, endAngle)
+            )
+          )
+        );
+      }
+
+      return Math.Min(
+        DistanceToSegment(
+          point,
+          PointOnACircle(origin, startRadius, startAngle),
+          PointOnACircle(origin, endRadius, startAngle)
+        ),
+        DistanceToSegment(
+          point,
+          PointOnACircle(origin, startRadius, endAngle),
+          PointOnACircle(origin, endRadius, endAngle)
+        )
+      );
+    }
+
+
 
   }
 }

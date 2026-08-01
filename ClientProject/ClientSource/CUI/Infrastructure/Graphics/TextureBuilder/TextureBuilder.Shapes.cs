@@ -145,7 +145,15 @@ namespace CrabUI
       return this;
     }
 
-    public TextureBuilder DrawArc(Vector2 origin, float radius, double startAngle, double endAngle, Color borderColor, float thickness, float fade)
+    public TextureBuilder DrawArc(
+      Vector2 origin,
+      float radius,
+      double startAngle,
+      double endAngle,
+      Color borderColor,
+      float thickness,
+      float fade
+    )
     {
       float outerRadius = radius + thickness + fade;
 
@@ -163,6 +171,98 @@ namespace CrabUI
           if (distance > totalThickness) continue;
 
           float lambda = (distance - thickness) / fade;
+          SetPixel(x, y, Color.Lerp(borderColor, Color.Transparent, lambda));
+        }
+      }
+
+      return this;
+    }
+
+    public TextureBuilder DrawRing(
+      Vector2 origin,
+      float startRadius,
+      float endRadius,
+      Color fillColor,
+      Color borderColor,
+      float borderThickness,
+      float borderFade
+    )
+    {
+      float outerRadius = endRadius + borderThickness + borderFade;
+
+      IntBounds affected = Bounds.FromRadius(origin, outerRadius).Round();
+      if (!affected.Intersects(0, 0, Width, Height)) return this;
+      affected.Fit(0, 0, Width, Height);
+
+      float totalThickness = borderThickness + borderFade;
+
+      for (int y = affected.MinY; y < affected.MaxY; y++)
+      {
+        for (int x = affected.MinX; x < affected.MaxX; x++)
+        {
+          Vector2 v = new Vector2(x - origin.X, y - origin.Y);
+          float l = v.Length();
+
+          if (startRadius <= l && l <= endRadius) SetPixel(x, y, fillColor);
+
+          float dl = Math.Min(Math.Abs(l - startRadius), Math.Abs(l - endRadius));
+
+          if (dl > totalThickness) continue;
+
+          float lambda = (dl - borderThickness) / borderFade;
+          SetPixel(x, y, Color.Lerp(borderColor, Color.Transparent, lambda));
+        }
+      }
+
+      return this;
+    }
+
+
+    public TextureBuilder DrawRingSector(
+      Vector2 origin,
+      float startRadius,
+      float endRadius,
+      double startAngle,
+      double endAngle,
+      Color fillColor,
+      Color borderColor,
+      float borderThickness,
+      float borderFade
+    )
+    {
+      float outerRadius = endRadius + borderThickness + borderFade;
+
+      IntBounds affected = Bounds.FromRadius(origin, outerRadius).Round();
+      if (!affected.Intersects(0, 0, Width, Height)) return this;
+      affected.Fit(0, 0, Width, Height);
+
+      float totalThickness = borderThickness + borderFade;
+
+      for (int y = affected.MinY; y < affected.MaxY; y++)
+      {
+        for (int x = affected.MinX; x < affected.MaxX; x++)
+        {
+          Vector2 v = new Vector2(x - origin.X, y - origin.Y);
+          float l = v.Length();
+          startAngle = Utils.BoundAngle(startAngle);
+          endAngle = Utils.BoundAngle(endAngle);
+
+
+          if (startRadius <= l && l <= endRadius)
+          {
+            double angle = Math.Atan2(v.Y, v.X);
+
+            if (Utils.IsAngleWithin(angle, startAngle, endAngle))
+            {
+              SetPixel(x, y, fillColor);
+            }
+          }
+
+          float dl = new Vector2(x, y).DistanceToRindSectorEdge(origin, startRadius, endRadius, startAngle, endAngle);
+
+          if (dl > totalThickness) continue;
+
+          float lambda = (dl - borderThickness) / borderFade;
           SetPixel(x, y, Color.Lerp(borderColor, Color.Transparent, lambda));
         }
       }

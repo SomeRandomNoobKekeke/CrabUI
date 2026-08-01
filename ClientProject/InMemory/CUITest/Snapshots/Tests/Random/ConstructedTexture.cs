@@ -26,11 +26,12 @@ namespace CrabUIUser
         CUITexture2D texture = new TextureBuilder(256, 256)
           .Load("BaroDev")
           .DrawCircle(new Vector2(100, 100), 30, Color.Red * 0.5f)
-          .DrawCircle(new Vector2(100, 100), 30, Color.Red * 0.5f, Color.Yellow, 0, 2)
+          .DrawCircle(new Vector2(100, 100), 30, Color.Red * 0.5f, Color.Yellow, 0.5f, 2)
           .DrawPoint(new Vector2(150, 100), Color.Lime, 5, 5)
           .DrawLine(new Vector2(10, 30), new Vector2(100, 50), Color.Blue, 0.5f, 2)
-          .DrawArc(new Vector2(150, 150), 50, -1.5 * Math.PI, 0.3 * Math.PI, Color.Yellow, 2, 2)
+          .DrawArc(new Vector2(150, 150), 50, -1.5 * Math.PI, 0.3 * Math.PI, Color.Yellow, 0.5f, 2)
           .Damage()
+          .DrawRingSector(new Vector2(300, 100), 50, 70, -0.5, 0.5, Color.Green, Color.Blue, 0.5f, 2)
           .Build(tracked: true);
 
         CUICore.TextureManager.Add(texture, "ConstructedTexture");

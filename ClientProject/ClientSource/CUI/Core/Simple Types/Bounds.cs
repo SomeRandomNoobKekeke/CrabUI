@@ -13,6 +13,17 @@ namespace CrabUI
 {
   public class IntBounds
   {
+    public static IntBounds FromRect(Rectangle rect)
+    {
+      return new IntBounds()
+      {
+        MinX = rect.Left,
+        MinY = rect.Top,
+        MaxX = rect.Right,
+        MaxY = rect.Bottom,
+      };
+    }
+
     public int MinX { get; set; }
     public int MaxX { get; set; }
     public int MinY { get; set; }
@@ -51,6 +62,15 @@ namespace CrabUI
       MinY = Math.Max(rect.Top, MinY);
       MaxY = Math.Min(rect.Bottom, MaxY);
     }
+
+    public IntBounds() { }
+    public IntBounds(int minX, int minY, int maxX, int maxY)
+    {
+      MinX = minX;
+      MinY = minY;
+      MaxX = maxX;
+      MaxY = maxY;
+    }
   }
 
   public class Bounds
@@ -74,6 +94,17 @@ namespace CrabUI
       MinY = (int)Math.Round(MinY),
       MaxY = (int)Math.Round(MaxY),
     };
+
+    public static Bounds FromRect(Rectangle rect)
+    {
+      return new Bounds()
+      {
+        MinX = rect.Left,
+        MinY = rect.Top,
+        MaxX = rect.Right,
+        MaxY = rect.Bottom,
+      };
+    }
 
     public static Bounds From2Points(Vector2 pointA, Vector2 pointB, float margin = 0) => new Bounds()
     {

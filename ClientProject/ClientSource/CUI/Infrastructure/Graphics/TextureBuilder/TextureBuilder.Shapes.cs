@@ -269,6 +269,38 @@ namespace CrabUI
 
       return this;
     }
+    public TextureBuilder DrawRectangle(int x, int y, int w, int h, Color color)
+    {
+      IntBounds affected = new IntBounds(x, y, x + w, y + h);
+      if (!affected.Intersects(0, 0, Width, Height)) return this;
+      affected.Fit(0, 0, Width, Height);
+
+      for (int i = affected.MinX; i < affected.MaxX; i++)
+      {
+        for (int j = affected.MinY; j < affected.MaxY; j++)
+        {
+          SetPixel(i, j, color);
+        }
+      }
+      return this;
+    }
+
+    public TextureBuilder DrawRectangle(Rectangle rect, Color color)
+    {
+      IntBounds affected = IntBounds.FromRect(rect);
+      if (!affected.Intersects(0, 0, Width, Height)) return this;
+      affected.Fit(0, 0, Width, Height);
+
+      for (int y = affected.MinY; y < affected.MaxY; y++)
+      {
+        for (int x = affected.MinX; x < affected.MaxX; x++)
+        {
+          SetPixel(x, y, color);
+        }
+      }
+
+      return this;
+    }
 
   }
 }

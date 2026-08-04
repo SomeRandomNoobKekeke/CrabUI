@@ -31,9 +31,9 @@ namespace CrabUI
       As_CUIMainComponent.Self = this;
       
       As_CUIMainComponent.GlobalEvents.Self = this;
-      As_CUIMainComponent.Adapters.Self = this;
       As_CUIVisualComponent.Commands.Self = this;
       As_CUIVisualComponent.ProtectedCommands.Self = this;
+      As_CUIVisualComponent.Data.Self = this;
       As_CUIVisualComponent.As_Dictionary.Self = this;
       As_CUIVisualComponent.Events.Self = this;
       As_CUIVisualComponent.IFocusableAdapter.Self = this;
@@ -135,7 +135,6 @@ namespace CrabUI
   protected class Self_As_CUIMainComponent : IAdapterPart
   {
     public CUIMainComponent.GlobalEvents_Part GlobalEvents => Self.GlobalEvents;
-    public CUIMainComponent.Adapters_Part Adapters => Self.Adapters;
     public VisualFlattener VisualFlattener => Self.VisualFlattener;
     public LayoutFlattener LayoutFlattener => Self.LayoutFlattener;
     public ChainDrawer ChainDrawer => Self.ChainDrawer;

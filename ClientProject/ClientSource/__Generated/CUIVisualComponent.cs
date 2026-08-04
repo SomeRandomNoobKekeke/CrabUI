@@ -27,6 +27,7 @@ namespace CrabUI
       
       As_CUIVisualComponent.Commands.Self = this;
       As_CUIVisualComponent.ProtectedCommands.Self = this;
+      As_CUIVisualComponent.Data.Self = this;
       As_CUIVisualComponent.As_Dictionary.Self = this;
       As_CUIVisualComponent.Events.Self = this;
       As_CUIVisualComponent.IFocusableAdapter.Self = this;
@@ -125,6 +126,7 @@ namespace CrabUI
 
   protected class Self_As_CUIVisualComponent : IAdapterPart
   {
+    public CUIVisualComponent.Data_Part Data => Self.Data;
     public CUIVisualComponent.Dictionary_Part As_Dictionary => Self.As_Dictionary;
     public CUIVisualComponent.IFocusableAdapter_Part IFocusableAdapter => Self.IFocusableAdapter;
     public CUIVisualComponent.LayoutUpdateNotifier_Part LayoutUpdateNotifier => Self.LayoutUpdateNotifier;

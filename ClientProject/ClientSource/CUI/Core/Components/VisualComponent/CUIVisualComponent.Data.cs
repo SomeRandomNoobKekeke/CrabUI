@@ -13,20 +13,31 @@ namespace CrabUI
   public partial class CUIVisualComponent
   {
     private Dictionary<string, Func<object>> DataGetters { get; } = new();
+    private Dictionary<string, Action<object>> DataSetters { get; } = new();
 
-    protected void AddDataGetter(string key, Func<object> getter)
-      => DataGetters[key] = getter;
-
-    public object GetData(string key)
+    protected void AddDataImage(string key, Func<object> getter = null, Action<object> setter = null)
     {
-      if (!DataGetters.ContainsKey(key)) return null;
-      return DataGetters[key]();
+      if (getter != null) DataGetters[key] = getter;
+      if (setter != null) DataSetters[key] = setter;
     }
 
-    public T GetData<T>(string key)
+    protected void AddDataImage<T>(string key, Func<T> getter = null, Action<T> setter = null)
     {
-      if (!DataGetters.ContainsKey(key)) return default;
-      return (T)DataGetters[key]();
+      if (getter != null) DataGetters[key] = () => getter();
+      if (setter != null) DataSetters[key] = (object value) => setter((T)value);
     }
+
+    public Data_Part Data { get; } = new();
+    public class Data_Part : Part
+    {
+      public object this[string key]
+      {
+        get => Self.DataGetters.GetValueOrDefault(key)?.Invoke();
+        set => Self.DataSetters.GetValueOrDefault(key)?.Invoke(value);
+      }
+
+      public T GetData<T>(string key) => (T)Self.DataGetters.GetValueOrDefault(key)?.Invoke();
+    }
+
   }
 }

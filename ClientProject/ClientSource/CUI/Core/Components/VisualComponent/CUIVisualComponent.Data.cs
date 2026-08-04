@@ -30,13 +30,34 @@ namespace CrabUI
     public Data_Part Data { get; } = new();
     public class Data_Part : Part
     {
-      public object this[string key]
+      private Func<object> SafeGetGetter(string key)
       {
-        get => Self.DataGetters.GetValueOrDefault(key)?.Invoke();
-        set => Self.DataSetters.GetValueOrDefault(key)?.Invoke(value);
+        if (key is null || !Self.DataGetters.ContainsKey(key))
+        {
+          CUI.Logger.Warning($"No data getter with key [{key}] on [{Self}]"); return null;
+        }
+
+        return Self.DataGetters[key];
       }
 
-      public T GetData<T>(string key) => (T)Self.DataGetters.GetValueOrDefault(key)?.Invoke();
+      private Action<object> SafeGetSetter(string key)
+      {
+        if (key is null || !Self.DataSetters.ContainsKey(key))
+        {
+          CUI.Logger.Warning($"No data setter with key [{key}] on [{Self}]"); return null;
+        }
+
+        return Self.DataSetters[key];
+      }
+
+
+      public object this[string key]
+      {
+        get => SafeGetGetter(key)?.Invoke();
+        set => SafeGetSetter(key)?.Invoke(value);
+      }
+
+      public T GetData<T>(string key) => (T)SafeGetGetter(key)?.Invoke();
     }
 
   }

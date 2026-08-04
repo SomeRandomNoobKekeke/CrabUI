@@ -26,9 +26,12 @@ namespace CrabUI
       get => Get(name);
       set
       {
-        if (value is null && NamedComponents.ContainsKey(name))
+        if (value is null)
         {
-          Children.Remove(NamedComponents[name]);
+          if (NamedComponents.ContainsKey(name))
+          {
+            Children.Remove(NamedComponents[name]);
+          }
           return;
         }
 

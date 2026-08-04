@@ -5,24 +5,30 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "build",
+      "type": "f5anything",
+      "request": "launch",
+      "command": "./build.cmd"
+    },
+    {
       "name": "Generate Docs",
       "type": "f5anything",
       "request": "launch",
       "command": "doxygen Doxyfile && echo bruh > docs/.nojekyll"
+    },
+    {
+      "name": "Generate Docs fast",
+      "type": "f5anything",
+      "request": "launch",
+      "command": "doxygen Doxyfile.fast && echo bruh > docs/.nojekyll"
+    },
+    {
+      "name": "Attach to ClearScript V8 on port 9222",
+      "type": "node",
+      "request": "attach",
+      "protocol": "inspector",
+      "address": "localhost",
+      "port": 9222
     }
-    // {
-    //   "name": "Generate Docs",
-    //   "type": "f5anything",
-    //   "request": "launch",
-    //   "command": "doxygen Doxyfile.fast && echo bruh > docs/.nojekyll"
-    // }
-    // {
-    //   "name": "Attach to ClearScript V8 on port 9222",
-    //   "type": "node",
-    //   "request": "attach",
-    //   "protocol": "inspector",
-    //   "address": "localhost",
-    //   "port": 9222
-    // }
   ]
 }

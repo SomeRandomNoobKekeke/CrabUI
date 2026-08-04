@@ -47,6 +47,8 @@ namespace CrabUI
       public void RemoveAt(int i) => Operations.RemoveChildAt(i);
 
       IEnumerator IEnumerable.GetEnumerator() => Children.GetEnumerator();
+
+      public override string ToString() => Logger.Wrap.IEnumerable(Children);
     }
   }
 }

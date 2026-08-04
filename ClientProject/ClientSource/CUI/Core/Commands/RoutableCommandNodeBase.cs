@@ -31,7 +31,7 @@ namespace CrabUI
     public void RemoveSelf() => Parent?.RemoveChild(this);
 
 
-    public abstract void Process(RoutableCommand command);
+    public abstract void Execute(RoutableCommand command);
     public virtual void SendDown(RoutableCommand command)
     {
       if (Children.Count == 0) return;
@@ -39,14 +39,14 @@ namespace CrabUI
       for (int i = Children.Count - 1; i >= 0; i--)
       {
         RoutableCommandNodeBase node = Children[i];
-        node.Process(command);
+        node.Execute(command);
         node.SendDown(command);
       }
     }
 
     public virtual void SendUp(RoutableCommand command)
     {
-      Parent?.Process(command);
+      Parent?.Execute(command);
       Parent?.SendUp(command);
     }
   }

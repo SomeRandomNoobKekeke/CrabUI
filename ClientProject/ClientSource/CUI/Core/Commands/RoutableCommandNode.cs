@@ -15,7 +15,7 @@ namespace CrabUI
   {
     public Dictionary<string, Action<object>> Listeners { get; } = new();
 
-    public override void Process(RoutableCommand command)
+    public override void Execute(RoutableCommand command)
     {
       if (Listeners.ContainsKey(command.name))
       {

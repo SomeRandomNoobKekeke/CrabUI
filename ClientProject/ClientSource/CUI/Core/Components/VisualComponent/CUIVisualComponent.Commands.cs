@@ -20,6 +20,7 @@ namespace CrabUI
       public void ListenFor<T>(string name, Action<T> action) => Self.ProtectedCommands.ListenFor<T>(name, action);
       public void SendDown(string name, object data = null) => Self.ProtectedCommands.SendDown(name, data);
       public void SendUp(string name, object data = null) => Self.ProtectedCommands.SendUp(name, data);
+      public void Execute(string name, object data = null) => Self.ProtectedCommands.Execute(name, data);
     }
 
 
@@ -61,6 +62,11 @@ namespace CrabUI
       public void SendUp(string name, object data = null)
       {
         Node.SendUp(new RoutableCommand(name, data));
+      }
+
+      public void Execute(string name, object data = null)
+      {
+        Node.Execute(new RoutableCommand(name, data));
       }
     }
   }

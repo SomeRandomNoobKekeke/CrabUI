@@ -16,9 +16,6 @@ namespace CrabUI
   {
     public CUIVisualComponent Component { get; } // CRINGE
 
-    public bool MouseOver { get; set; }
-    public bool MousePressed { get; set; }
-
     public ClearableEvent<CUIVisualComponent, CUIMouseDownEvent> MouseDown { get; }
     public ClearableEvent<CUIVisualComponent, CUIMouseUpEvent> MouseUp { get; }
     public ClearableEvent<CUIVisualComponent, CUIMouseClickEvent> MouseClick { get; }

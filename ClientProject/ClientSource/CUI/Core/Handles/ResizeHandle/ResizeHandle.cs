@@ -67,6 +67,9 @@ namespace CrabUI
     public Vector2 StartSelfAnchorPoint { get; private set; }
 
 
+    public override bool MouseOver => Background.MouseOver;
+    public override bool MousePressed => Background.MousePressed;
+
     public override CUIRect OuterRect { get => Rect; set => Rect = value; }
     public override CUIRect ChildrenRect { get => Rect; set => Rect = value; }
     public CUIRect Rect

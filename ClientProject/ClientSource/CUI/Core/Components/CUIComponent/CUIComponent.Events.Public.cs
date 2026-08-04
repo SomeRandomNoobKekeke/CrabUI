@@ -15,6 +15,9 @@ namespace CrabUI
 {
   public partial class CUIComponent
   {
+    public override bool MouseOver => Background.MouseOver;
+    public override bool MousePressed => Background.MousePressed;
+
     public bool ConsumeMouseEvents
     {
       get => Background.ConsumeMouseEvents;

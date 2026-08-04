@@ -15,6 +15,9 @@ namespace CrabUI
   {
     public FlexTexture FlexTexture { get; } = new FlexTexture();
 
+    public override bool MouseOver => FlexTexture.MouseOver;
+    public override bool MousePressed => FlexTexture.MousePressed;
+
     public override CUIRect OuterRect { get; set; }
     public override CUIRect ChildrenRect { get; set; }
     public override bool Visible { get; set; } = true;

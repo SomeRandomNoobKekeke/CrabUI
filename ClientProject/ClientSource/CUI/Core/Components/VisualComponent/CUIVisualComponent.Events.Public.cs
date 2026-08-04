@@ -15,9 +15,6 @@ namespace CrabUI
 {
   public partial class CUIVisualComponent
   {
-    public bool MouseOver => Events.MouseOver;
-    public bool MousePressed => Events.MousePressed;
-
     public void Click()
     {
       Events.MouseDown.Raise(

@@ -12,13 +12,14 @@ namespace CrabUI
 {
   public partial class CUIVisualComponent
   {
+    public abstract bool MouseOver { get; }
+    public abstract bool MousePressed { get; }
+
+
     protected Events_Part Events { get; } = new();
     public class Events_Part : Part, IModule, IMouseEventConsumingComponent
     {
       public CUIVisualComponent Component => Self;
-
-      public bool MouseOver { get; set; }
-      public bool MousePressed { get; set; }
 
 
       public ClearableEvent<CUIVisualComponent, CUIMouseDownEvent> MouseDown { get; } = new();

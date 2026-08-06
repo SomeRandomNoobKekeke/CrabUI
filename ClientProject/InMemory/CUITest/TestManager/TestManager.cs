@@ -37,7 +37,7 @@ namespace CrabUIUser
 
         if (E2ETestManager.Repo.Tests.ContainsKey(name))
         {
-          Pages.Open(E2ETestManager.UI);
+          Pages.Open(E2ETestManager);
           E2ETestManager.Run(name);
         }
       }

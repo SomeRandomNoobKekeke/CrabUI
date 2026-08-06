@@ -65,7 +65,7 @@ namespace CrabUIUser
         Text = "E2E",
         // ResizeStrategy = ResizeStrategy.Resist,
         Absolute = new CUINullRect(w: 90),
-        OnMouseDown = (c, e) => Pages.Open(E2ETestManager.UI),
+        OnMouseDown = (c, e) => Pages.Open(E2ETestManager),
       };
 
       this["layout"]["header"]["snapshots"] = new CUIButton()

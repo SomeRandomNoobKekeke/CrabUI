@@ -12,33 +12,14 @@ using System.IO;
 
 namespace CrabUIUser
 {
-  public partial class E2ETestManager
+  public partial class E2ETestManager : CUIPage
   {
     public ILogger Logger => CUI.Logger;
 
 
     public IE2ETest CurrentTest { get; set; }
-
-    public E2ETestManager()
-    {
-      UI = new(this);
-    }
-
     public E2ETestRepo Repo { get; } = new();
-    public E2ETestManagerUI UI { get; }
-
-    public ClearableEvent<Event> Events { get; } = new();
-
-    public void CleanUp()
-    {
-      if (CurrentTest != null)
-      {
-        CurrentTest.Dispose();
-        CurrentTest = null;
-      }
-
-      CUI.Main.Children.Clear();
-    }
+    public CUIVerticalList ButtonList { get; set; }
 
     public void RunAll()
     {
@@ -73,5 +54,50 @@ namespace CrabUIUser
         Logger.Warning($"Error in CUIE2ETest [{testType}]: {e.Message} {e.InnerException}\n{e.StackTrace}");
       }
     }
+
+    public void Refresh()
+    {
+      ButtonList.Children.Clear();
+      foreach (var (name, type) in Repo.Tests)
+      {
+        ButtonList.Add(new CUIButton()
+        {
+          Text = type.Name,
+          Absolute = new CUINullRect(h: 30),
+          MasterColor = new Color(0, 255, 255),
+          OnMouseDown = (c, e) => Run(name),
+        });
+      }
+    }
+
+    public void CleanUp()
+    {
+      if (CurrentTest != null)
+      {
+        CurrentTest.Dispose();
+        CurrentTest = null;
+      }
+
+      CUI.Main.Children.Clear();
+    }
+
+    private void CreateUI()
+    {
+      OnOpen.Add(Refresh);
+      OnClose.Add(CleanUp);
+
+      Background.Color = new Color(32, 32, 32);
+
+      this["layout"] = new CUIVerticalList() { Relative = new CUINullRect(0, 0, 1, 1) };
+      this["layout"]["btnlist"] = ButtonList = new CUIVerticalList() { Flex = 1 };
+    }
+
+    public E2ETestManager()
+    {
+      CreateUI();
+    }
+
+
+
   }
 }

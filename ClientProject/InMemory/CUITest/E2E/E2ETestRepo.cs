@@ -23,6 +23,7 @@ namespace CrabUIUser
     {
       Tests[T.GetFullName()] = T;
     }
+
     public void AddPack(Type testPack)
     {
       foreach (Type nested in testPack.GetNestedTypes())

@@ -35,6 +35,9 @@ namespace CUILibs
       };
     }
 
+    //TODO there was some reason why i didn't want to add this constructor, i forgot why
+    public UTest(bool realValue, [CallerArgumentExpression("realValue")] string expression = "")
+      => Init(realValue, true, expression);
     public UTest(object realValue, object expect, [CallerArgumentExpression("realValue")] string expression = "")
       => Init(realValue, expect, expression);
     public UTest(Func<object> method, object expect, [CallerArgumentExpression("method")] string expression = "")

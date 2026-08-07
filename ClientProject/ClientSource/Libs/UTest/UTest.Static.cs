@@ -9,6 +9,12 @@ namespace CUILibs
 {
   public partial class UTest
   {
+    public static bool CollapseTestPackIfSucceed
+    {
+      get => UTestLogger.CollapseTestPackIfSucceed;
+      set => UTestLogger.CollapseTestPackIfSucceed = value;
+    }
+
     public static void Init()
     {
       UTestExplorer.TestTree = new UTestTree(Assembly.GetExecutingAssembly());

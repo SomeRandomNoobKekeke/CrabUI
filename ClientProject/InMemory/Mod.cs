@@ -38,7 +38,10 @@ namespace CrabUIUser
         CUI.TextureManager.LoadAs("Assets/PNG/For testing/Test Chamber Background.png", "Test Chamber Background");
         CUI.TextureManager.LoadAs("Assets/PNG/For testing/Icons.png", "Test Icons");
 
+        UTest.CollapseTestPackIfSucceed = false;
         UTest.Init();
+
+
         CUITest = new CUITest();
         CUITest.Init();
 

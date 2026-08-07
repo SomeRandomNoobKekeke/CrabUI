@@ -35,11 +35,7 @@ namespace CrabUI
           return;
         }
 
-        if (value.Parent != null)
-        {
-          Remember(value, name);
-          return;
-        }
+        value.RemoveSelf(); // ensure that parent forgets it by prev aka
 
         value.AKA = name;
 

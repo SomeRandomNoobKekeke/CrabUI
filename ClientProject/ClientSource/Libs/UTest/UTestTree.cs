@@ -144,7 +144,10 @@ namespace CUILibs
     }
 
 
-    public UTestTree() => ScanAssembly(Assembly.GetExecutingAssembly());
+    public UTestTree(Assembly targetAssembly)
+    {
+      ScanAssembly(targetAssembly);
+    }
 
     public override string ToString()
     {

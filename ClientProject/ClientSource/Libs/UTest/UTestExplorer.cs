@@ -21,19 +21,11 @@ namespace CUILibs
   }
 
 
-  public class UTestExplorer
+  public static class UTestExplorer
   {
 
-    private static UTestTree testTree;
-    public static UTestTree TestTree
-    {
-      get
-      {
-        //BRUH it's sneaky, ScanAssembly happens here
-        if (testTree is null) testTree = new UTestTree();
-        return testTree;
-      }
-    }
+    public static UTestTree TestTree { get; set; }
+
     public static HashSet<string> Categories = new();
     public static void ScanCategories(params string[] categories)
       => Categories = new HashSet<string>(categories);
@@ -47,6 +39,12 @@ namespace CUILibs
     {
       UTestLogger.Log($"----------- Available UTests: -----------");
       UTestLogger.Log(TestTree);
+    }
+
+    public static void Clear()
+    {
+      TestTree = null;
+      Categories = null;
     }
   }
 }

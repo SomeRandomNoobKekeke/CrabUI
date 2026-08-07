@@ -36,16 +36,7 @@ namespace CrabUIUser
       }
     }
 
-    public void HandleOpen()
-    {
-      Setup();
-      Refresh();
-    }
 
-    public void HandleClose()
-    {
-      Dismantle();
-    }
 
     public void OpenGroup(string name)
     {

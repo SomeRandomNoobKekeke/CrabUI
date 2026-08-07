@@ -35,6 +35,7 @@ namespace CrabUI
 
 
           CUIRect rect = new CUIRect(x, y, Rect.Width, Rect.Height);
+
           if (Self.Parent.ChildrenBounds != null)
           {
             rect = Self.Parent.ChildrenBounds(Self.Parent.ChildrenRect).FitGracefuly(Rect, rect);

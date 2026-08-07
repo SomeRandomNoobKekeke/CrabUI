@@ -38,7 +38,7 @@ namespace CrabUIUser
         CUI.TextureManager.LoadAs("Assets/PNG/For testing/Test Chamber Background.png", "Test Chamber Background");
         CUI.TextureManager.LoadAs("Assets/PNG/For testing/Icons.png", "Test Icons");
 
-        UTestCommands.AddCommands();
+        UTest.Init();
         CUITest = new CUITest();
         CUITest.Init();
 
@@ -61,7 +61,7 @@ namespace CrabUIUser
     public void Dispose()
     {
       Instance = null;
-      UTestCommands.RemoveCommands();
+      UTest.Dispose();
       CUIDebugger?.Dispose();
       // MGDebugTool?.Dispose();
       CUITest?.Dispose();

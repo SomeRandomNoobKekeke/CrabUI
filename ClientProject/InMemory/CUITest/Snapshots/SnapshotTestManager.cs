@@ -42,9 +42,17 @@ namespace CrabUIUser
 
       Events.Add(HandleManagerEvent);
 
-      OnOpen.Add(HandleOpen);
-      OnClose.Add(HandleClose);
+      OnOpen.Add(() =>
+      {
+        Setup();
+        Refresh();
+      });
+      OnClose.Add(Dismantle);
     }
+
+    public void Setup() => Chamber.Setup();
+    public void Dismantle() => Chamber.Dismantle();
+
 
     public SnapshotTestChamber Chamber { get; } = new();
     public SnapshotTestRepo Repo { get; } = new();
@@ -94,8 +102,7 @@ namespace CrabUIUser
       }
     }
 
-    public void Setup() => Chamber.Setup();
-    public void Dismantle() => Chamber.Dismantle();
+
 
     public void AcceptCurrent()
     {

@@ -84,19 +84,29 @@ namespace CrabUIUser
         Flex = 1,
       };
 
+      //It's just easier to use in console
+      // this["layout"]["header"]["UTest"] = new CUIButton()
+      // {
+      //   Text = "UTest",
+      //   Padding = new CUISizes(0, 15, 0, 15),
+      //   OnMouseDown = (c, e) => Pages.Open(UTestManager),
+      // };
+
       this["layout"]["header"]["E2E"] = new CUIButton()
       {
         Text = "E2E",
-        Absolute = new CUINullRect(w: 90),
+        Padding = new CUISizes(0, 15, 0, 15),
         OnMouseDown = (c, e) => Pages.Open(E2ETestManager),
       };
 
       this["layout"]["header"]["snapshots"] = new CUIButton()
       {
         Text = "Snapshots",
-        Absolute = new CUINullRect(w: 90),
+        Padding = new CUISizes(0, 15, 0, 15),
         OnMouseDown = (c, e) => Pages.Open(SnapshotTestManager),
       };
+
+
 
       this["layout"]["main"] = Pages = new CUIPages()
       {

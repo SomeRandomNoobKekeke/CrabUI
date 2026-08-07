@@ -16,6 +16,8 @@ namespace CrabUIUser
   {
     public SnapshotTestManager SnapshotTestManager { get; } = new();
     public E2ETestManager E2ETestManager { get; } = new();
+    public UTestManager UTestManager { get; } = new();
+
 
 
 

@@ -27,15 +27,15 @@ namespace CrabUIUser
       {
         IsOpen = true;
 
-        string name = (string)ModStorage.Get("CUITest");
+        var (type, name) = ((string, string))ModStorage.Get("CUITest");
 
-        if (SnapshotTestManager.Repo.Tests.ContainsKey(name))
+        if (type == "snapshot")
         {
-          Pages.Open(SnapshotTestManager.UI);
+          Pages.Open(SnapshotTestManager);
           SnapshotTestManager.Run(name);
         }
 
-        if (E2ETestManager.Repo.Tests.ContainsKey(name))
+        if (type == "e2e")
         {
           Pages.Open(E2ETestManager);
           E2ETestManager.Run(name);

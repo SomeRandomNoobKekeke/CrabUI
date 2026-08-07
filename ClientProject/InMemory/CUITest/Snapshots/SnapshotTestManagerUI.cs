@@ -12,25 +12,14 @@ using System.IO;
 
 namespace CrabUIUser
 {
-  public class SnapshotPage : CUIPage
+  public partial class SnapshotTestManager : CUIPage
   {
-    public SnapshotPage(SnapshotTestManager manager)
-    {
-      Manager = manager;
-      Manager.Events.Add(HandleManagerEvent);
-
-      OnOpen.Add(HandleOpen);
-      OnClose.Add(HandleClose);
-    }
-
-    public SnapshotTestManager Manager { get; set; }
-
     public CUIVerticalList ButtonList { get; set; }
 
     public void UpdateTests()
     {
       Children.Clear();
-      Manager.Dismantle();
+      Dismantle();
     }
 
 
@@ -49,26 +38,26 @@ namespace CrabUIUser
 
     public void HandleOpen()
     {
-      Manager.Setup();
+      Setup();
       Refresh();
     }
 
     public void HandleClose()
     {
-      Manager.Dismantle();
+      Dismantle();
     }
 
     public void OpenGroup(string name)
     {
       ButtonList.Children.Clear();
-      foreach (SnapshotTest test in Manager.Repo.GroupedTests[name].Values)
+      foreach (SnapshotTest test in Repo.GroupedTests[name].Values)
       {
         ButtonList.Add(new CUIButton()
         {
           Text = test.Name,
           TextAnchor = CUIAnchor.LeftCenter,
           MasterColor = new Color(64, 64, 64),
-          OnMouseDown = (c, e) => Manager.Run(test.Name),
+          OnMouseDown = (c, e) => Run(test.Name),
         });
       }
     }
@@ -86,14 +75,14 @@ namespace CrabUIUser
         Text = "Run All",
         Flex = 1,
         MasterColor = new Color(64, 0, 64),
-        OnMouseDown = (c, e) => Manager.RunAll(),
+        OnMouseDown = (c, e) => RunAll(),
       };
       this["layout"]["controls"]["accept"] = new CUIButton()
       {
         Text = "Accept",
         Flex = 1,
         MasterColor = new Color(64, 0, 64),
-        OnMouseDown = (c, e) => Manager.AcceptCurrent()
+        OnMouseDown = (c, e) => AcceptCurrent()
       };
       this["layout"]["controls"]["serialize"] = new CUIToggleButton()
       {
@@ -101,12 +90,12 @@ namespace CrabUIUser
         Flex = 1,
         MasterColor = new Color(255, 0, 255),
 
-        State = Manager.SerializeTestSubject,
-        OnToggle = (state) => Manager.SerializeTestSubject = state,
+        State = SerializeTestSubject,
+        OnToggle = (state) => SerializeTestSubject = state,
       };
 
       this["layout"]["groups"] = new CUIHorizontalList() { FitContent = new CUIBool2(false, true), };
-      foreach (string group in Manager.Repo.Groups)
+      foreach (string group in Repo.Groups)
       {
         this["layout"]["groups"].Children.Add(new CUIButton(group)
         {
@@ -120,7 +109,7 @@ namespace CrabUIUser
         Scrollable = true,
       };
 
-      OpenGroup(Manager.Repo.Groups.First());
+      OpenGroup(Repo.Groups.First());
     }
   }
 }

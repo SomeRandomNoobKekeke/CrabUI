@@ -38,13 +38,18 @@ namespace CrabUIUser
     {
       ConsoleInteface = new ConsoleIntefaceClass(this);
       Runner.Chamber = Chamber;
-      UI = new SnapshotPage(this);
+
+
+      Events.Add(HandleManagerEvent);
+
+      OnOpen.Add(HandleOpen);
+      OnClose.Add(HandleClose);
     }
 
     public SnapshotTestChamber Chamber { get; } = new();
     public SnapshotTestRepo Repo { get; } = new();
     public SnapshotTestRunner Runner { get; } = new();
-    public SnapshotPage UI { get; }
+
     public ConsoleIntefaceClass ConsoleInteface { get; }
 
     public ClearableEvent<Event> Events { get; } = new();
@@ -64,7 +69,7 @@ namespace CrabUIUser
         return;
       }
 
-      ModStorage.Set("CUITest", name);
+      ModStorage.Set("CUITest", ("snapshot", name));
 
       if (!Chamber.IsSetup) Chamber.Setup();
 

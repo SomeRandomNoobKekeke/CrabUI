@@ -17,8 +17,6 @@ namespace CrabUIUser
     public static bool IsSnapshotTestFunc(MethodInfo mi)
           => mi.ReturnType.IsAssignableTo(typeof(CUIVisualComponent)) && mi.GetParameters().Length == 0;
 
-
-
     public Dictionary<string, SnapshotTest> Tests { get; } = new();
     public Dictionary<string, Dictionary<string, SnapshotTest>> GroupedTests { get; } = new();
 

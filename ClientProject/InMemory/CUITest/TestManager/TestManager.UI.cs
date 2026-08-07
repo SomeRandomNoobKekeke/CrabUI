@@ -14,12 +14,28 @@ namespace CrabUIUser
 {
   public partial class TestManager : CUIFrame
   {
-    public CUIButton OpenButton { get; } = new CUIButton()
+    public CUIButton OpenButton { get; private set; }
+
+    public bool IsOpen
     {
-      Absolute = new CUINullRect(w: 50, h: 30),
-      Anchor = CUIAnchor.RightCenter,
-      Text = "Test",
-    };
+      get => this.Parent != null;
+      set
+      {
+        if (value)
+        {
+          OpenButton.RemoveSelf();
+          this.Open(CUI.TopMain);
+          Pages.Open(SnapshotTestManager);
+        }
+        else
+        {
+          CUI.TopMain.Children.Add(OpenButton);
+          this.Close();
+          Pages.Dismantle(); // This should trigger dismantle on concrete page
+          ModStorage.Remove("CUITest");
+        }
+      }
+    }
 
 
     public CUIPages Pages { get; private set; }
@@ -28,7 +44,15 @@ namespace CrabUIUser
 
     public void CreateUI()
     {
-      OpenButton.MouseDown += (c, e) => IsOpen = true;
+      OpenButton = new CUIButton()
+      {
+        Absolute = new CUINullRect(w: 50, h: 30),
+        Anchor = CUIAnchor.RightCenter,
+        Text = "Test",
+        OnMouseDown = (c, e) => IsOpen = true,
+      };
+
+      CUI.TopMain.Children.Add(OpenButton);
 
 
       Absolute = new CUINullRect(w: 300, h: 400);
@@ -63,7 +87,6 @@ namespace CrabUIUser
       this["layout"]["header"]["E2E"] = new CUIButton()
       {
         Text = "E2E",
-        // ResizeStrategy = ResizeStrategy.Resist,
         Absolute = new CUINullRect(w: 90),
         OnMouseDown = (c, e) => Pages.Open(E2ETestManager),
       };
@@ -71,36 +94,19 @@ namespace CrabUIUser
       this["layout"]["header"]["snapshots"] = new CUIButton()
       {
         Text = "Snapshots",
-        // ResizeStrategy = ResizeStrategy.Resist,
         Absolute = new CUINullRect(w: 90),
-        OnMouseDown = (c, e) => Pages.Open(SnapshotTestManager.UI),
+        OnMouseDown = (c, e) => Pages.Open(SnapshotTestManager),
       };
 
       this["layout"]["main"] = Pages = new CUIPages()
       {
         Flex = 1,
       };
+
+
+
     }
 
-    public bool IsOpen
-    {
-      get => this.Parent != null;
-      set
-      {
-        if (value)
-        {
-          OpenButton.RemoveSelf();
-          this.Open(CUI.TopMain);
-          Pages.Open(SnapshotTestManager.UI);
-        }
-        else
-        {
-          CUI.TopMain.Children.Add(OpenButton);
-          this.Close();
-          Pages.Dismantle(); // This should trigger dismantle on concrete page
-          ModStorage.Remove("CUITest");
-        }
-      }
-    }
+
   }
 }

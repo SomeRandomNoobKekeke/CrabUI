@@ -21,13 +21,6 @@ namespace CrabUIUser
     public E2ETestRepo Repo { get; } = new();
     public CUIVerticalList ButtonList { get; set; }
 
-    public void RunAll()
-    {
-      foreach (string name in Repo.Tests.Keys)
-      {
-        Run(name);
-      }
-    }
     public void Run(string name)
     {
       if (!Repo.Tests.ContainsKey(name))
@@ -36,7 +29,7 @@ namespace CrabUIUser
         return;
       }
 
-      ModStorage.Set("CUITest", name);
+      ModStorage.Set("CUITest", ("e2e", name));
       Run(Repo.Tests[name]);
     }
 

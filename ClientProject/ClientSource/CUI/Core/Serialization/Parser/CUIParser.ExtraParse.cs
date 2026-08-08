@@ -25,15 +25,12 @@ namespace CrabUI
     {
       if (raw == null || raw == "") return (0, 0);
 
-      string content = raw.Split('[', ']')[1];
+      string content = raw.Trim(' ', '[', ']');
 
-      List<string> coords = content.Split(',').Select(s => s.Trim()).ToList();
+      string[] coords = content.Split(',');
 
-      int x = 0;
-      int y = 0;
-
-      int.TryParse(coords.ElementAtOrDefault(0), out x);
-      int.TryParse(coords.ElementAtOrDefault(1), out y);
+      int.TryParse(coords.ElementAtOrDefault(0), out int x);
+      int.TryParse(coords.ElementAtOrDefault(1), out int y);
 
       return (x, y);
     }

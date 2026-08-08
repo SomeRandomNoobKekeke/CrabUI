@@ -50,7 +50,7 @@ namespace CrabUI
           //TODO It's better but still kinda funny, you can smash frame out of bounds
           if (Self.Parent.ChildrenBounds != null)
           {
-            rect = Self.Parent.ChildrenBounds(Self.Parent.ChildrenRect).FitGracefuly(Rect, rect);
+            rect = Self.Parent.ChildrenBounds(Self.Parent.ChildrenRect).FitResizingRect(Rect, rect);
           }
 
           Self.Absolute = new CUINullRect(

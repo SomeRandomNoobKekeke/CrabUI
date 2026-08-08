@@ -71,6 +71,8 @@ namespace CrabUI
       MaxX = maxX;
       MaxY = maxY;
     }
+
+    public override string ToString() => $"[{MinX},{MaxX},{MinY},{MaxY}]";
   }
 
   public class Bounds

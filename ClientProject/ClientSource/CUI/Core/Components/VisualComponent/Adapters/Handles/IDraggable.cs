@@ -38,13 +38,13 @@ namespace CrabUI
 
           if (Self.Parent.ChildrenBounds != null)
           {
-            rect = Self.Parent.ChildrenBounds(Self.Parent.ChildrenRect).FitGracefuly(Rect, rect);
+            rect = Self.Parent.ChildrenBounds(Self.Parent.ChildrenRect).FitMovingRect(Rect, rect);
           }
 
           Vector2 offset = CUIAnchor.GetOffset(
             parentRect,
             Self.LayoutProps.ParentAnchor.Value ?? Self.LayoutProps.Anchor.Value,
-            rect,
+            rect.Shift(-parentRect.Position),
             Self.LayoutProps.Anchor.Value
           );
 

@@ -29,7 +29,6 @@ namespace CrabUI
       Focusable = true;
       ConsumeFocus = true;
       ConsumeMouseEvents = true;
-      Anchor = CUIAnchor.Center;
       Background.Sprite = CUISprite.Vignette;
     }
 

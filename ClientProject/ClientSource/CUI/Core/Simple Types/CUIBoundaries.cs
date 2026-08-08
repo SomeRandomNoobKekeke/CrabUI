@@ -70,19 +70,13 @@ namespace CrabUI
     }
 
     //BRUH mb this should be in some CUIBoundaries extensions
-    public CUIRect FitGracefuly(CUIRect prev, CUIRect next)
+    public CUIRect FitMovingRect(CUIRect prev, CUIRect next)
     {
       float x = next.Left;
       float y = next.Top;
       float w = next.Width;
       float h = next.Height;
 
-
-      if (MinX.HasValue && next.Left < MinX.Value && MaxX.HasValue && next.Right > MaxX.Value)
-      {
-        x = MinX.Value;
-        w = MaxX.Value - MinX.Value;
-      }
 
       if (MinX.HasValue && next.Left < MinX.Value)
       {
@@ -96,12 +90,12 @@ namespace CrabUI
         w = prev.Width;
       }
 
-
-      if (MinY.HasValue && next.Top < MinY.Value && MaxY.HasValue && next.Bottom > MaxY.Value)
+      if (MinX.HasValue && next.Left < MinX.Value && MaxX.HasValue && next.Right > MaxX.Value)
       {
-        y = MinY.Value;
-        h = MaxY.Value - MinY.Value;
+        x = MinX.Value;
+        w = MaxX.Value - MinX.Value;
       }
+
 
       if (MinY.HasValue && next.Top < MinY.Value)
       {
@@ -115,12 +109,69 @@ namespace CrabUI
         h = prev.Height;
       }
 
+      if (MinY.HasValue && next.Top < MinY.Value && MaxY.HasValue && next.Bottom > MaxY.Value)
+      {
+        y = MinY.Value;
+        h = MaxY.Value - MinY.Value;
+      }
+
       return new CUIRect(x, y, w, h);
     }
 
+    public CUIRect FitResizingRect(CUIRect prev, CUIRect next)
+    {
+      float x = next.Left;
+      float y = next.Top;
+      float w = next.Width;
+      float h = next.Height;
 
 
+      if (MinX.HasValue && next.Left < MinX.Value)
+      {
+        w = prev.Right - MinX.Value;
+        x = MinX.Value;
+      }
 
+      if (MaxX.HasValue && next.Right > MaxX.Value)
+      {
+        w = MaxX.Value - prev.Left;
+        x = MaxX.Value - w;
+      }
+
+      if (MinX.HasValue && next.Left < MinX.Value && MaxX.HasValue && next.Right > MaxX.Value)
+      {
+        x = MinX.Value;
+        w = MaxX.Value - MinX.Value;
+      }
+
+
+      if (MinY.HasValue && next.Top < MinY.Value)
+      {
+        h = prev.Bottom - MinY.Value;
+        y = MinY.Value;
+      }
+
+      if (MaxY.HasValue && next.Bottom > MaxY.Value)
+      {
+        h = MaxY.Value - prev.Top;
+        y = MaxY.Value - h;
+      }
+
+      if (MinY.HasValue && next.Top < MinY.Value && MaxY.HasValue && next.Bottom > MaxY.Value)
+      {
+        y = MinY.Value;
+        h = MaxY.Value - MinY.Value;
+      }
+
+      return new CUIRect(x, y, w, h);
+    }
+
+    public IntBounds Round() => new IntBounds(
+      (int)MinX,
+      (int)MaxX,
+      (int)MinY,
+      (int)MaxY
+    );
 
     public CUIBoundaries(
       float? minX = null, float? maxX = null,

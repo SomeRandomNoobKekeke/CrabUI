@@ -100,6 +100,13 @@ namespace CrabUI
       remove => this.Events.Dragged.Remove(value);
     }
 
+    public Action<CUIVisualComponent, CUIRect> OnResized { set { Resized += value; } }
+    public event Action<CUIVisualComponent, CUIRect> Resized
+    {
+      add => this.Events.Resized.Add(value);
+      remove => this.Events.Resized.Remove(value);
+    }
+
     public Action<CUIVisualComponent, CUIRect> OnRectSet { set { RectSet += value; } }
     public event Action<CUIVisualComponent, CUIRect> RectSet
     {

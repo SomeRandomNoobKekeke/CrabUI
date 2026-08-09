@@ -13,6 +13,9 @@ namespace CrabUI
   public partial class CUIVisualComponent
   {
     [CUISerializableProp]
+    public bool DragRelative { get; set; }
+
+    [CUISerializableProp]
     public bool Draggable
     {
       get => DragHandle.Active;

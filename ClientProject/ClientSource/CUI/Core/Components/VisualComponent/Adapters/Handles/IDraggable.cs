@@ -43,19 +43,34 @@ namespace CrabUI
 
           Vector2 offset = CUIAnchor.GetOffset(
             parentRect,
-            Self.LayoutProps.ParentAnchor.Value ?? Self.LayoutProps.Anchor.Value,
-            rect.Shift(-parentRect.Position),
-            Self.LayoutProps.Anchor.Value
+            Self.ParentAnchor ?? Self.Anchor,
+            rect,
+            Self.Anchor
           );
 
           //TODO add Relative drag
-          Self.LayoutProps.Absolute.Value = Self.LayoutProps.Absolute.Value with
+          if (Self.DragRelative)
           {
-            Left = parentRect.Left + offset.X,
-            Top = parentRect.Top + offset.Y,
-          };
+            Self.Relative = Self.Relative with
+            {
+              Left = offset.X / parentRect.Width,
+              Top = offset.Y / parentRect.Height,
+            };
 
-          Self.Events.Dragged.Raise(Self, new Vector2(x, y));
+            Self.Events.Dragged.Raise(Self, Self.Relative.Position);
+          }
+          else
+          {
+            Self.Absolute = Self.Absolute with
+            {
+              Left = offset.X,
+              Top = offset.Y,
+            };
+
+            Self.Events.Dragged.Raise(Self, Self.Absolute.Position);
+          }
+
+
         }
 
 

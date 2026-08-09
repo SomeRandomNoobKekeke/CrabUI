@@ -34,6 +34,7 @@ namespace CrabUI
       public ClearableEvent<CUIVisualComponent, CUIMouseScrollEvent> MouseScroll { get; } = new();
 
       public ClearableEvent<CUIVisualComponent, Vector2> Dragged { get; } = new();
+      public ClearableEvent<CUIVisualComponent, CUIRect> Resized { get; } = new();
       public ClearableEvent<CUIVisualComponent, CUIRect> RectSet { get; } = new();
 
 

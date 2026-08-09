@@ -17,6 +17,8 @@ namespace CrabUI
   public struct CUIRect
   {
     public static CUIRect Zero { get; } = new CUIRect(0, 0, 0, 0);
+    public static CUIRect FromAnchorAndSize(Vector2 point, Vector2 anchor, Vector2 size)
+      => CUIAnchor.RectFromPointAndSize(point, anchor, size);
 
     public float Left;
     public float Top;

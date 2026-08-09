@@ -43,5 +43,11 @@ namespace CrabUI
     public static CUISprite VignetteLight => AtPos(3, 3);
     public static CUISprite DimmedHorizontalLight => AtPos(4, 3);
     public static CUISprite DimmedVerticalLight => AtPos(5, 3);
+
+
+    public static CUISprite LeftLineEnd => AtPos(0, 4);
+    public static CUISprite LineCenter => AtPos(1, 4);
+    public static CUISprite RightLineEnd => AtPos(2, 4);
+    public static CUISprite Handle => AtPos(3, 4);
   }
 }

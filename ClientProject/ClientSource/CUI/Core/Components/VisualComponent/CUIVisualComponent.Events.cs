@@ -33,7 +33,10 @@ namespace CrabUI
       public ClearableEvent<CUIVisualComponent, CUIMouseOffEvent> MouseOff { get; } = new();
       public ClearableEvent<CUIVisualComponent, CUIMouseScrollEvent> MouseScroll { get; } = new();
 
+      public ClearableEvent<CUIVisualComponent, Vector2> DragStarted { get; } = new();
       public ClearableEvent<CUIVisualComponent, Vector2> Dragged { get; } = new();
+      public ClearableEvent<CUIVisualComponent, Vector2> DragEnded { get; } = new();
+
       public ClearableEvent<CUIVisualComponent, CUIRect> Resized { get; } = new();
       public ClearableEvent<CUIVisualComponent, CUIRect> RectSet { get; } = new();
 

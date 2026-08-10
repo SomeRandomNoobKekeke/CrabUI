@@ -86,11 +86,18 @@ namespace CrabUI
         }
 
         public bool TryGrab(object handle)
-          => Self.MainComponentTracker.MainComponent?.GrabbedHandleTracker.TryGrab(handle) ?? false;
+        {
+          bool result = Self.MainComponentTracker.MainComponent?.GrabbedHandleTracker.TryGrab(handle) ?? false;
+          Self.Events.DragStarted.Raise(Self, Self.DragRelative ? Self.Relative.Position : Self.Absolute.Position);
+          return result;
+        }
 
-        //TODO How to release grab handle when component is detached?
         public void Release(object handle)
-          => Self.MainComponentTracker.MainComponent?.GrabbedHandleTracker.Release(handle);
+        {
+          //TODO this feels awkward, drag handle doesn't pass coordinates here, mb i should make separate events
+          Self.MainComponentTracker.MainComponent?.GrabbedHandleTracker.Release(handle);
+          Self.Events.DragEnded.Raise(Self, Self.DragRelative ? Self.Relative.Position : Self.Absolute.Position);
+        }
       }
     }
   }

@@ -28,6 +28,8 @@ namespace CrabUIUser
           Anchor = CUIAnchor.Center,
           Relative = new CUINullRect(w: 0.8f),
           Absolute = new CUINullRect(h: 50),
+          PinCount = 5,
+          Pin = 3,
         };
 
         return frame;

@@ -48,6 +48,15 @@ namespace CrabUIUser
         rangeInput.HandleDragged += (l) => label.Text = Math.Round(l, 2).ToString();
         rangeInput.Changed += (l) => label.Text = Math.Round(l, 2).ToString();
 
+        for (int i = 0; i < rangeInput.Pins.Children.Count; i++)
+        {
+          rangeInput.Pins[i]["label"] = new CUITextBlock($"{i}")
+          {
+            Anchor = CUIAnchor.CenterBottom,
+            ParentAnchor = CUIAnchor.CenterTop,
+          };
+        }
+
         return frame;
       }
     }

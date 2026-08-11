@@ -23,7 +23,7 @@ namespace CrabUI
     protected override void InitStyle()
     {
       base.InitStyle();
-      Background.Color = Color.Brown * 0.25f;
+      // Background.Color = Color.Brown * 0.25f;
 
       // LineCenter.Color = Color.Cyan;
       // LeftLineEnd.Color = Color.Red;
@@ -103,11 +103,14 @@ namespace CrabUI
           {
             Pins.Children.Add(new CUIComponent()
             {
-              Absolute = new CUINullRect(w: 4),
-              Relative = new CUINullRect(x: interval.Pin, y: 0, h: 1),
-              Anchor = CUIAnchor.CenterTop,
-              ParentAnchor = CUIAnchor.LeftTop,
-              Background = { Color = Color.Blue },
+              Absolute = new CUINullRect(w: 8, h: 20),
+              Relative = new CUINullRect(x: interval.Pin),
+              Anchor = CUIAnchor.Center,
+              ParentAnchor = CUIAnchor.LeftCenter,
+              Background = {
+                Sprite = CUISprite.LineMark,
+
+              },
             });
           }
         }
@@ -187,6 +190,12 @@ namespace CrabUI
         ChildrenRect.Height
       );
 
+      Pins.Absolute = Pins.Absolute with
+      {
+        Left = squareSide / 2.0f,
+        Width = ChildrenRect.Width - squareSide,
+      };
+
       // Handle.Rect = new CUIRect(
       //   ChildrenRect.Left + (ChildrenRect.Width - squareSide) * Lambda,
       //   ChildrenRect.Top,
@@ -226,7 +235,7 @@ namespace CrabUI
 
       this["pins"] = Pins = new CUIComponent()
       {
-        Relative = new CUINullRect(0, 0, 1, 1),
+        Relative = new CUINullRect(y: 0, h: 1),
       };
 
 

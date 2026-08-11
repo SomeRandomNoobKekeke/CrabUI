@@ -49,5 +49,6 @@ namespace CrabUI
     public static CUISprite LineCenter => AtPos(1, 4);
     public static CUISprite RightLineEnd => AtPos(2, 4);
     public static CUISprite Handle => AtPos(3, 4);
+    public static CUISprite LineMark => AtPos(4, 4);
   }
 }

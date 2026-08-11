@@ -23,8 +23,9 @@ namespace CrabUI
     protected override void InitStyle()
     {
       base.InitStyle();
-      // Background.Color = Color.Brown;
+      Background.Color = Color.Brown * 0.25f;
 
+      // LineCenter.Color = Color.Cyan;
       // LeftLineEnd.Color = Color.Red;
       // RightLineEnd.Color = Color.Red;
     }
@@ -44,7 +45,7 @@ namespace CrabUI
 
     private void SetLambdaFromPoint(Vector2 v)
     {
-      Lambda = (v.X - ChildrenRect.Left) / (ChildrenRect.Width - Handle.Rect.Width);
+      _Lambda = (v.X - ChildrenRect.Left) / ChildrenRect.Width;
     }
     private void SyncLambdaWithHandle()
     {
@@ -59,45 +60,69 @@ namespace CrabUI
       };
     }
 
+    public List<Interval> Intervals { get; private set; }
+
+
     private void PinLambda()
     {
+      if (Intervals is null) return;
       for (int i = 0; i < Intervals.Count; i++)
       {
         if (Intervals[i].IsInside(_Lambda))
         {
           _Lambda = Intervals[i].Pin;
-          _Pin = i;
+          _CurrentPin = i;
           break;
         }
       }
     }
 
-    private int _Pin; public int Pin
+    private int _CurrentPin; public int CurrentPin
     {
-      get => _Pin;
+      get => _CurrentPin;
       set
       {
-        if (Intervals.Count == 0) return;
-        _Pin = Math.Clamp(value, 0, Intervals.Count - 1);
-        _Lambda = Intervals[_Pin].Pin;
+        if (Intervals is null || Intervals.Count == 0) return;
+        _CurrentPin = Math.Clamp(value, 0, Intervals.Count - 1);
+        _Lambda = Intervals[_CurrentPin].Pin;
         SyncHandleWithLambda();
       }
     }
 
     public int PinCount
     {
-      get => Intervals.Count;
-      set => SetPins(value);
+      get => Intervals?.Count ?? 0;
+      set
+      {
+        SetPins(value);
+
+        Pins.Children.Clear();
+        if (Intervals != null)
+        {
+          foreach (Interval interval in Intervals)
+          {
+            Pins.Children.Add(new CUIComponent()
+            {
+              Absolute = new CUINullRect(w: 4),
+              Relative = new CUINullRect(x: interval.Pin, y: 0, h: 1),
+              Anchor = CUIAnchor.CenterTop,
+              ParentAnchor = CUIAnchor.LeftTop,
+              Background = { Color = Color.Blue },
+            });
+          }
+        }
+
+      }
     }
 
     /// <summary>
     /// |-------  -------|-------    -------|-------    -------|-------  -------|
     /// </summary>
-    public void SetPins(int count)
+    private void SetPins(int count)
     {
-      Intervals = new();
+      if (count < 1) { Intervals = null; return; }
 
-      if (count < 1) return;
+      Intervals = new();
 
       if (count == 1)
       {
@@ -121,18 +146,25 @@ namespace CrabUI
 
       Intervals.Add(new Interval(1.0f - dl, 1.0f, 1.0f)); // Last pin
     }
-    public List<Interval> Intervals { get; set; } = new();
+
+
+    public Action<float> OnChanged { set { Changed += value; } }
+    public event Action<float> Changed;
+
+    public Action<float> OnHandleDragged { set { HandleDragged += value; } }
+    public event Action<float> HandleDragged;
 
     public SimpleTexture LeftLineEnd { get; } = new() { Sprite = CUISprite.LeftLineEnd };
     public SimpleTexture RightLineEnd { get; } = new() { Sprite = CUISprite.RightLineEnd };
     public SimpleTexture LineCenter { get; } = new() { Sprite = CUISprite.LineCenter };
     public CUIComponent Handle { get; }
+    public CUIComponent Pins { get; private set; }
 
     protected override void UpdateRects()
     {
       base.UpdateRects();
 
-      float squareSide = ChildrenRect.Height;
+      float squareSide = Math.Min(ChildrenRect.Width / 2.0f, ChildrenRect.Height);
 
       LeftLineEnd.Rect = new CUIRect(
         ChildrenRect.Left,
@@ -155,12 +187,12 @@ namespace CrabUI
         ChildrenRect.Height
       );
 
-      Handle.Rect = new CUIRect(
-        ChildrenRect.Left + (ChildrenRect.Width - squareSide) * Lambda,
-        ChildrenRect.Top,
-        squareSide,
-        ChildrenRect.Height
-      );
+      // Handle.Rect = new CUIRect(
+      //   ChildrenRect.Left + (ChildrenRect.Width - squareSide) * Lambda,
+      //   ChildrenRect.Top,
+      //   squareSide,
+      //   ChildrenRect.Height
+      // );
     }
 
     public override IEnumerable<VisualUnit> VisualSplit()
@@ -174,6 +206,12 @@ namespace CrabUI
       yield return LineCenter.VisualWrapper;
       yield return LeftLineEnd.VisualWrapper;
       yield return RightLineEnd.VisualWrapper;
+
+      foreach (var child in Pins.Children)
+      {
+        yield return child.VisualWrapper;
+      }
+
       yield return Handle.VisualWrapper;
 
       yield return VisualBounds.RightBound;
@@ -186,23 +224,42 @@ namespace CrabUI
       ChildrenBounds = CUIBoundaries.Box;
       ConsumeMouseEvents = true;
 
+      this["pins"] = Pins = new CUIComponent()
+      {
+        Relative = new CUINullRect(0, 0, 1, 1),
+      };
+
+
       this["handle"] = Handle = new CUIComponent()
       {
         Background = { Sprite = CUISprite.Handle },
         Relative = new CUINullRect(h: 1),
         CrossRelative = new CUINullRect(w: 1),
         Draggable = true,
+        ConsumeMouseEvents = true,
       };
 
       RectSet += (c, rect) => SyncHandleWithLambda();
-      Handle.Dragged += (c, v) => SyncLambdaWithHandle();
+      Handle.Dragged += (c, v) =>
+      {
+        SyncLambdaWithHandle();
+        HandleDragged?.Invoke(Lambda);
+      };
       Handle.DragEnded += (c, v) =>
       {
         SyncLambdaWithHandle();
         PinLambda();
         SyncHandleWithLambda();
+        HandleDragged?.Invoke(Lambda);
+        Changed?.Invoke(Lambda);
       };
-      MouseDown += (c, e) => SetLambdaFromPoint(e.Pos);
+      MouseDown += (c, e) =>
+      {
+        SetLambdaFromPoint(e.Pos);
+        PinLambda();
+        SyncHandleWithLambda();
+        Changed?.Invoke(Lambda);
+      };
     }
   }
 }

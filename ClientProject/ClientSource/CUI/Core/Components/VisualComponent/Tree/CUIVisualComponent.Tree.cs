@@ -21,6 +21,12 @@ namespace CrabUI
     private List<CUIVisualComponent> _Children = new();
     public ChildrenListProxy Children { get; } = new();
 
+    public CUIVisualComponent this[int i]
+    {
+      get => Children[i];
+      set => Children[i] = value;
+    }
+
     public void RemoveSelf() => Parent = null;
     public void MoveToTop()
     {

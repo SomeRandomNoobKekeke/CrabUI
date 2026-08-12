@@ -42,12 +42,14 @@ namespace CUILibs
     public bool IsMapped(IClearableEvent next) => Mapping.ContainsKey(next);
     public bool IsRouted(IClearableEvent prev) => prev.IsMapped(this);
 
-    public virtual void Raise() { }
-    public virtual void Raise(object arg1) { }
-    public virtual void Raise(object arg1, object arg2) { }
-    public virtual void Raise(object arg1, object arg2, object arg3) { }
-    public virtual void Raise(object arg1, object arg2, object arg3, object arg4) { }
-    public virtual void Raise(object arg1, object arg2, object arg3, object arg4, object arg5) { }
+    private void ThrowArgCountMismatch() => throw new ArgumentException("Called ClearableEvent with wrong arg count");
+
+    public virtual void Raise() => ThrowArgCountMismatch();
+    public virtual void Raise(object arg1) => ThrowArgCountMismatch();
+    public virtual void Raise(object arg1, object arg2) => ThrowArgCountMismatch();
+    public virtual void Raise(object arg1, object arg2, object arg3) => ThrowArgCountMismatch();
+    public virtual void Raise(object arg1, object arg2, object arg3, object arg4) => ThrowArgCountMismatch();
+    public virtual void Raise(object arg1, object arg2, object arg3, object arg4, object arg5) => ThrowArgCountMismatch();
 
     public override int GetHashCode() => ID;
 

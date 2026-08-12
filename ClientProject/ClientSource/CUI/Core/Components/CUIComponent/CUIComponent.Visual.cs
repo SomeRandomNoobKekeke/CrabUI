@@ -63,7 +63,7 @@ namespace CrabUI
       }
 
       Debug_RectSet.Send(this, OuterRect);
-      Events.RectSet.Raise(this, OuterRect);
+      Events.RectSet.Raise(OuterRect);
     }
 
     protected Rectangle? ScissorRect

@@ -29,7 +29,7 @@ namespace CUILibs
       Event -= callback;
       OnUnSubscribed?.Invoke(callback);
     }
-    public void Raise() => Event?.Invoke();
+    public override void Raise() => Event?.Invoke();
     public void Clear()
     {
       if (Event is null) return;

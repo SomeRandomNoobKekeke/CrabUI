@@ -57,7 +57,7 @@ namespace CrabUI
               Top = offset.Y / parentRect.Height,
             };
 
-            Self.Events.Dragged.Raise(Self, Self.Relative.Position);
+            Self.Events.Dragged.Raise(Self.Relative.Position);
           }
           else
           {
@@ -67,7 +67,7 @@ namespace CrabUI
               Top = offset.Y,
             };
 
-            Self.Events.Dragged.Raise(Self, Self.Absolute.Position);
+            Self.Events.Dragged.Raise(Self.Absolute.Position);
           }
 
 
@@ -88,7 +88,7 @@ namespace CrabUI
         public bool TryGrab(object handle)
         {
           bool result = Self.MainComponentTracker.MainComponent?.GrabbedHandleTracker.TryGrab(handle) ?? false;
-          Self.Events.DragStarted.Raise(Self, Self.DragRelative ? Self.Relative.Position : Self.Absolute.Position);
+          Self.Events.DragStarted.Raise(Self.DragRelative ? Self.Relative.Position : Self.Absolute.Position);
           return result;
         }
 
@@ -96,7 +96,7 @@ namespace CrabUI
         {
           //TODO this feels awkward, drag handle doesn't pass coordinates here, mb i should make separate events
           Self.MainComponentTracker.MainComponent?.GrabbedHandleTracker.Release(handle);
-          Self.Events.DragEnded.Raise(Self, Self.DragRelative ? Self.Relative.Position : Self.Absolute.Position);
+          Self.Events.DragEnded.Raise(Self.DragRelative ? Self.Relative.Position : Self.Absolute.Position);
         }
       }
     }

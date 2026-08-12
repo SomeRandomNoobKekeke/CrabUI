@@ -44,11 +44,6 @@ namespace CrabUI
 
     }
 
-    public DebugNode<object, string> Debug_LayoutMarked { get; } = new(
-      DebugCategory.LayoutMarked, CUI.DebugHub,
-      (host, propName) => $"{host}.{propName} = true"
-    );
-
     public object HostComponent { get; set; }
     public string HostPropName { get; set; }
 
@@ -66,7 +61,6 @@ namespace CrabUI
       set
       {
         _RequireChildrenUpdate = value;
-        Debug_LayoutMarked.Send(HostComponent, "RequireChildrenUpdate");
       }
     }
 
@@ -77,7 +71,6 @@ namespace CrabUI
       set
       {
         _RequireParentUpdate = value;
-        Debug_LayoutMarked.Send(HostComponent, "RequireParentUpdate");
       }
     }
 

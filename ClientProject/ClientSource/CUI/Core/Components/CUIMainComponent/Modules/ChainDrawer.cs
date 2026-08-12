@@ -13,12 +13,6 @@ namespace CrabUI
 {
   public class ChainDrawer : IModule
   {
-    public DebugNode<VisualUnit> Debug_VisualUnitProcessed { get; } = new(
-      DebugCategory.VisualUnitProcessed, CUI.DebugHub,
-      (vu) => $"processing [{vu}] of [vu.HostComponent]"
-    )
-    { IsOpen = true, };
-
     public ChainDrawerStateMachine StateMachine { get; } = new();
 
     public void Draw(CUISpriteBatch spriteBatch, List<VisualUnit> flat)
@@ -29,7 +23,6 @@ namespace CrabUI
       {
         foreach (VisualUnit unit in flat)
         {
-          Debug_VisualUnitProcessed.Send(unit);
           switch (unit)
           {
             case VisualUnit.PrimitiveVisualElement primitive:

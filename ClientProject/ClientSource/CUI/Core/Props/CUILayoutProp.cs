@@ -22,11 +22,6 @@ namespace CrabUI
 
   public class CUILayoutProp<T> : CUIReactiveProp<T>, ICUILayoutProp
   {
-    public DebugNode<Type, object, object, string> Debug_ValueSet { get; } = new(
-      DebugCategory.LayoutPropSet, CUI.DebugHub,
-      (propType, value, host, propName) => $"{host}.{propName} = {value}"
-    );
-
     public LayoutMarker.Pattern Pattern { get; set; } = LayoutMarker.Pattern.None;
 
     [In] public ICUILayoutProp.IContainer Container { get; set; }
@@ -38,7 +33,6 @@ namespace CrabUI
       {
         base.Value = value;
         Container.Mark(Pattern);
-        Debug_ValueSet.Send(typeof(T), Value, HostComponent, HostPropName);
       }
     }
   }

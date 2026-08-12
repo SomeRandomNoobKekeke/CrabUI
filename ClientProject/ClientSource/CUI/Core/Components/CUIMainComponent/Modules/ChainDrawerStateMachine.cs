@@ -14,12 +14,6 @@ namespace CrabUI
   //TODO don't know how to name it
   public class ChainDrawerStateMachine
   {
-    public DebugNode<Rectangle> Debug_ScissorRectChanged { get; } = new(
-      DebugCategory.ScissorRectSet, CUI.DebugHub,
-      (rect) => $"ScissorRect = {rect}"
-    )
-    { IsOpen = true, };
-
     public record State(Rectangle ScissorRect, SamplerState SamplerState);
 
     public Stack<State> States { get; } = new();
@@ -36,7 +30,6 @@ namespace CrabUI
 
 
       spriteBatch.StopStart(state.ScissorRect, state.SamplerState);
-      Debug_ScissorRectChanged.Send(state.ScissorRect);
     }
 
     public void Init(CUISpriteBatch spriteBatch)

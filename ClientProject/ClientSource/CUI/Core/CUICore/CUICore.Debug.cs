@@ -15,16 +15,9 @@ namespace CrabUI
       IsOpen = false,
     };
 
-    public DebugNode<string> Debug_Focus { get; private set; }
-
     public bool _Debug { get; set; } = true;
     public void InitDebug()
     {
-      Debug_Focus = new(DebugCategory.Focus, _DebugHub, (msg) => msg) { IsOpen = true };
-
-      Main.DebugRelays.Map(_DebugHub);
-      Debug_Focus.Map(_DebugHub);
-
       _DebugHub.Output.Add(HandleDebugEvent);
     }
 

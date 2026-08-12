@@ -7,7 +7,6 @@ using CUILibs;
 
 namespace CrabUI
 {
-  //TODO where should it be?
   public static class DebugCategory
   {
     public static string FunnyPropSet = "Funny Prop Set";

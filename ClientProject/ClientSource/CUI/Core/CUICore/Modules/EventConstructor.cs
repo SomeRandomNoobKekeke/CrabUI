@@ -13,12 +13,6 @@ namespace CrabUI
 {
   public class EventConstructor : IModule
   {
-    public DebugNode<List<InputEvent>> Debug_Events { get; } = new(
-      DebugCategory.Events, CUI.DebugHub,
-      (events) => Logger.Wrap.IEnumerable(events)
-    )
-    { IsOpen = true };
-
     public List<InputEvent> Events { get; } = new();
     public List<InputEvent> KeyboardEvents { get; } = new();
 
@@ -77,7 +71,7 @@ namespace CrabUI
         KeyboardEvents.Add(new CUIKeyDownInputEvent(args, input.Keyboard));
       }
 
-      if (Events.Count != 0) Debug_Events.Send(Events);
+      // if (Events.Count != 0) Debug_Events.Send(Events);
     }
   }
 }

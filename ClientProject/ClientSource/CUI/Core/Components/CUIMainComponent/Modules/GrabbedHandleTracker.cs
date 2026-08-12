@@ -14,16 +14,6 @@ namespace CrabUI
   {
     public DebugRelay DebugRelay { get; } = new();
 
-    public DebugNode<object> Debug_HandleGrabbed { get; } = new(
-      DebugCategory.HandleGrab, CUI.DebugHub,
-      (handle) => $"{handle.GetType().Name} on {(handle as IAware).HostComponent} Grabbed"
-    );
-
-    public DebugNode<object> Debug_HandleReleased { get; } = new(
-      DebugCategory.HandleGrab, CUI.DebugHub,
-      (handle) => $"{handle.GetType().Name} on {(handle as IAware).HostComponent} Released"
-    );
-
     public object GrabbedHandle { get; private set; }
     public bool SomethingGrabbed => GrabbedHandle is not null;
 
@@ -37,7 +27,6 @@ namespace CrabUI
       else
       {
         GrabbedHandle = handle;
-        Debug_HandleGrabbed.Send(handle);
         return true;
       }
     }
@@ -45,13 +34,6 @@ namespace CrabUI
     public void Release(object handle)
     {
       GrabbedHandle = null;
-      Debug_HandleReleased.Send(handle);
-    }
-
-    public GrabbedHandleTracker()
-    {
-      DebugRelay.Route(Debug_HandleGrabbed);
-      DebugRelay.Route(Debug_HandleReleased);
     }
   }
 }

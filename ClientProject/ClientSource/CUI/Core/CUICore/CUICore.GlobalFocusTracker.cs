@@ -32,7 +32,6 @@ namespace CrabUI
           }
 
           _Focused = value;
-          Self.Debug_Focus.Send($"Focused set [{_Focused}]");
 
           if (_Focused is not null)
           {
@@ -48,7 +47,6 @@ namespace CrabUI
         set
         {
           _WantsToBeFocused = value;
-          Self.Debug_Focus.Send($"WantsToBeFocused [{value}]");
         }
       }
       public HashSet<IFocusable> WantsToBeBlured { get; } = new();
@@ -56,7 +54,6 @@ namespace CrabUI
       public void AddToWantsToBeBlured(IFocusable focusable)
       {
         WantsToBeBlured.Add(focusable);
-        Self.Debug_Focus.Send($"WantsToBeBlured [{focusable}]");
       }
 
       public void ResolveFocus(bool SomethingFocusedElsewhere)

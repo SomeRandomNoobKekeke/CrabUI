@@ -14,11 +14,6 @@ namespace CrabUI
 {
   public class SimpleTexture : VisualElementBase, CUISerializable, IFocusRequestEventConsumer
   {
-    public DebugNode<CUIRect, Rectangle> Debug_RoundedRect { get; } = new(
-      DebugCategory.RoundedRect, CUI.DebugHub,
-      (rect, rounded) => $"{rect} -> {rounded}"
-    );
-
     public bool ConsumeFocus { get; set; }
     public ClearableEvent<CUIFocusRequestEvent> FocusProbed { get; } = new();
 
@@ -31,7 +26,6 @@ namespace CrabUI
       {
         _Rect = value;
         RoundedRect = _Rect.Round();
-        Debug_RoundedRect.Send(_Rect, RoundedRect);
       }
     }
 

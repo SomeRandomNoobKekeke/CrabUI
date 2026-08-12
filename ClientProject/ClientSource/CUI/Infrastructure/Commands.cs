@@ -22,21 +22,12 @@ namespace CrabUI
 
       PluginCommands.Add("cuipalettepreview", CUIPalettePreview_Command);
 
-      PluginCommands.Add("cuidebug", CUIDebug_Command,
-        () => new string[][] { CUI.DebugHub.Gates.Names.ToArray() }
-      );
+      PluginCommands.Add("cuidebug", CUIDebug_Command);
     }
 
     public static void CUIDebug_Command(string[] args)
     {
-      if (args.Length == 0)
-      {
-        CUICore.Debug = !CUICore.Debug;
-        CUI.Logger.LogVars(CUICore.Debug);
-        return;
-      }
-
-      CUICore.DebugHub.Gates[args[0]].Toggle();
+      CUICore.Debugger.Open();
     }
 
     public static void CUIPrintTree_Command(string[] args)

@@ -15,18 +15,7 @@ namespace CrabUI
       IsOpen = false,
     };
 
-    public bool _Debug { get; set; } = true;
-    public void InitDebug()
-    {
-      _DebugHub.Output.Add(HandleDebugEvent);
-    }
-
-    public void HandleDebugEvent(DebugEvent e)
-    {
-      if (!_Debug) return;
-      CUI.Logger.Log(e);
-    }
-
-
+    public static CUIDebugger Debugger => Instance?._Debugger;
+    public CUIDebugger _Debugger { get; private set; }
   }
 }

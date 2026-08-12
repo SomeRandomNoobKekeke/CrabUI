@@ -20,8 +20,6 @@ namespace CrabUIUser
       PrintFilePath = false,
     };
 
-    public CUIDebugger CUIDebugger { get; } = new();
-    public MGDebugTool MGDebugTool { get; } = new();
     public CUITest CUITest { get; set; }
 
     public void Initialize()
@@ -45,8 +43,11 @@ namespace CrabUIUser
         CUITest = new CUITest();
         CUITest.Init();
 
-        CUIDebugger.Init();
-        MGDebugTool.Init();
+        CUI.TopMain["debug button"] = new CUIButton("debug")
+        {
+          Anchor = CUIAnchor.LeftCenter,
+          OnMouseDown = (c, e) => CUICore.Debugger.Open(),
+        };
 
         // Utils.PrintAllHarmonyPatches();
         // CUIPalette.Preview();
@@ -65,7 +66,6 @@ namespace CrabUIUser
     {
       Instance = null;
       UTest.Dispose();
-      CUIDebugger?.Dispose();
       // MGDebugTool?.Dispose();
       CUITest?.Dispose();
 

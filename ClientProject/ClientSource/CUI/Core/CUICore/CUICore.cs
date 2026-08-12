@@ -73,7 +73,7 @@ namespace CrabUI
 
         UpdateGameScreenRect();
 
-        InitDebug();
+        _Debugger = new();
 
 
         _Activated = true;

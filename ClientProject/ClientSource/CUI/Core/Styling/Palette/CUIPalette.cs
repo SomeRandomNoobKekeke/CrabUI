@@ -15,7 +15,9 @@ namespace CrabUI
       float brightness = color.Brightness();
 
       Color front = color;
-      Color back = new Color(0, 0, 0);
+      Color back = Color.Lerp(Color.Black, color, 0.1f);
+      Color panel = Color.Lerp(Color.Black, color, 0.3f);
+      Color border = Color.Lerp(Color.Black, color, 0.7f);
       Color text = Color.Lerp(Color.Black, Color.White, brightness * 1.5f);
       Color controls = new Color(0, 255, 255);
       Color selection = new Color(0, 255, 255);
@@ -27,6 +29,8 @@ namespace CrabUI
       {
         ["main"] = front,
         ["back"] = back,
+        ["panel"] = panel,
+        ["border"] = border,
         ["text"] = text,
         ["controls"] = controls,
         ["selection"] = selection,

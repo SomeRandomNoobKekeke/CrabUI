@@ -25,8 +25,30 @@ namespace CrabUI
     public CUIRect InnerRect { get; set; }
 
     public CUISizes Sizes { get; set; }
+    public float Top
+    {
+      get => Sizes.Top;
+      set => Sizes = Sizes with { Top = value };
+    }
+    public float Right
+    {
+      get => Sizes.Right;
+      set => Sizes = Sizes with { Right = value };
+    }
+    public float Bottom
+    {
+      get => Sizes.Bottom;
+      set => Sizes = Sizes with { Bottom = value };
+    }
+    public float Left
+    {
+      get => Sizes.Left;
+      set => Sizes = Sizes with { Left = value };
+    }
 
-    public CUISprite Sprite { get; set; } = CUISprite.White;
+    public CUISprite Sprite { get; set; } = CUISprite.Vignette;
+
+
     [CUISerializableProp]
     public Color Color { get => Sprite.Color; set => Sprite.Color = value; }
 

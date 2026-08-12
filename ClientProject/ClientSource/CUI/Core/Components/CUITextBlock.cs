@@ -21,7 +21,7 @@ namespace CrabUI
     protected override void InitStyle()
     {
       base.InitStyle();
-      Padding = new(0, 2, 0, 2);
+      Padding = new(2, 4, 2, 4);
     }
 
     public TextBlock TextBlock { get; } = new();
@@ -103,6 +103,7 @@ namespace CrabUI
 
       yield return Background.VisualWrapper;
       yield return TextBlock.VisualWrapper;
+      yield return Borders.VisualWrapper;
     }
 
     public CUITextBlock() : base() { }

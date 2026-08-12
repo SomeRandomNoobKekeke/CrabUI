@@ -62,6 +62,7 @@ namespace CrabUI
         ScissorRect = ChildrenRect.Round();
       }
 
+      Debug_RectSet.Send(this, OuterRect);
       Events.RectSet.Raise(this, OuterRect);
     }
 

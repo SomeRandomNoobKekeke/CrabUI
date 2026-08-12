@@ -49,6 +49,8 @@ namespace CrabUIUser
           OnMouseDown = (e) => CUICore.Debugger.Open(),
         };
 
+        CUICore.Debugger.Open();
+
         // Utils.PrintAllHarmonyPatches();
         // CUIPalette.Preview();
 

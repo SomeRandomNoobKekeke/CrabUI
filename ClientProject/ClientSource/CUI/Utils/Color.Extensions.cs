@@ -61,6 +61,7 @@ namespace CrabUI
         (int)color.A
       );
 
+    //FIXME that's not how it's calculated
     public static float Brightness(this Color cl)
       => Math.Clamp((cl.R + cl.G + cl.B) / 255.0f, 0.0f, 1.0f);
 

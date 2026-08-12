@@ -13,6 +13,19 @@ namespace CrabUI
 {
   public partial class CUIMainComponent
   {
+    public CUIDebugNode Debug_LayoutUpdated = new(DebugCategory.LayoutUpdated) { IsOpen = true };
 
+
+    [InitMethod]
+    private void InitDebugChannels()
+    {
+      Debug_LayoutUpdated.Map(DebugRelays[DebugCategory.LayoutUpdated]);
+    }
+
+    public new DebugRelayDict DebugRelays { get; } = new()
+    {
+      [DebugCategory.LayoutUpdated] = new DebugRelay(),
+      [DebugCategory.RectSet] = new DebugRelay(),
+    };
   }
 }

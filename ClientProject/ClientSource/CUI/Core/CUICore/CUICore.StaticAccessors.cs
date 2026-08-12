@@ -51,6 +51,12 @@ namespace CrabUI
       remove => Instance.LifeCycle.OnUpdate.Remove(value);
     }
 
+    public static event Action<double> OnBeforeUpdate
+    {
+      add => Instance.LifeCycle.OnBeforeUpdate.Add(value);
+      remove => Instance.LifeCycle.OnBeforeUpdate.Remove(value);
+    }
+
     public static event Action<CUISpriteBatch> OnDrawAfterGUI
     {
       add => Instance.LifeCycle.OnDrawAfterGUI.Add(value);

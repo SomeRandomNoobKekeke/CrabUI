@@ -12,6 +12,7 @@ namespace CrabUI
     protected Self_As_CUIMainComponent As_CUIMainComponent { get; } = new();
     void IComponent.RunInitMethods()
     {
+      InitDebugChannels();
       InitLayout();
       InitVisualSlots();
     }

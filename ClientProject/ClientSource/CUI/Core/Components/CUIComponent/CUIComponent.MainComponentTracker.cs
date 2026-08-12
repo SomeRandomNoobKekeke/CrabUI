@@ -14,11 +14,11 @@ namespace CrabUI
   {
     protected override void OnAttachedToMainComponent(CUIMainComponent mainComponent)
     {
-      // DebugRelays.Map(MainComponent.DebugRelays);
+      DebugRelays.Map(MainComponent.DebugRelays);
     }
     protected override void OnDetachedFromMainComponent(CUIMainComponent mainComponent)
     {
-      // DebugRelays.Unmap(MainComponent.DebugRelays);
+      DebugRelays.Unmap(MainComponent.DebugRelays);
       RightResizeHandle.ForceRelease();
     }
 

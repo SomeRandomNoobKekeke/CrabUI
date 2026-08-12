@@ -45,6 +45,8 @@ namespace CrabUI
       }
     }
 
+    public void Toggle() { if (IsOpen) Close(); else Open(); }
+
     public void Open(CUIComponent Host = null)
     {
       Host ??= TargetMainComponent ?? CUI.Main;

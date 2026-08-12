@@ -13,7 +13,6 @@ namespace CrabUI
     // public static string PropSet = "PropSet";
     // public static string ChildAdded = "Child Added";
     // public static string ChildRemoved = "Child Removed";
-    // public static string LayoutUpdated = "Layout Updated";
     // public static string LayoutMarked = "Layout Marked";
     // public static string TreeChanged = "Tree Changed";
     // public static string HandleGrab = "Handle Grab";
@@ -25,5 +24,8 @@ namespace CrabUI
     // public static string ScissorRectSet = "Scissor Rect Set";
     // public static string VisualUnitProcessed = "VisualUnitProcessed";
     // public static string Focus = "Focus";
+
+    public static string LayoutUpdated = "Layout Updated";
+    public static string RectSet = "Rect Set";
   }
 }

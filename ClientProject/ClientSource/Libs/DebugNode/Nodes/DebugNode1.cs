@@ -8,8 +8,8 @@ namespace CUILibs
 {
   public class DebugNode<T1> : DebugNodeBase
   {
-    public static string DefaultMsgFactory(T1 arg1) => $"{arg1}";
-    public Func<T1, string> MsgFactory { get; set; } = DefaultMsgFactory;
+    public string DefaultMsgFactory(T1 arg1) => $"{Type}: {arg1}";
+    public Func<T1, string> MsgFactory { get; set; }
 
     private DebugEvent EventFactory(T1 arg1)
     {
@@ -31,7 +31,10 @@ namespace CUILibs
       }
     }
 
-    public DebugNode(string type, DebugHub hub) : base(type, hub) { }
+    public DebugNode(string type, DebugHub hub) : base(type, hub)
+    {
+      MsgFactory = DefaultMsgFactory;
+    }
     public DebugNode(string type, DebugHub hub, Func<T1, string> msgFactory) : base(type, hub)
     {
       MsgFactory = msgFactory;

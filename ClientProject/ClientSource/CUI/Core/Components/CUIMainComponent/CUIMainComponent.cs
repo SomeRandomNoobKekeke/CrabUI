@@ -113,6 +113,8 @@ namespace CrabUI
 
     private void UpdateLayout()
     {
+      Debug_LayoutUpdated.Send();
+
       int repeats = 0;
       while (RequireLayoutUpdate)
       {
@@ -134,9 +136,6 @@ namespace CrabUI
           break;
         }
       }
-
-
-      // DebugChannels["Layout Updated"].Send(this);
     }
 
     public CUIMainComponent() : base()

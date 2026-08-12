@@ -57,6 +57,7 @@ namespace CrabUI
     public CUIMagnifyingGlass() : base()
     {
       VisualBounds.SamplerState = CUI.NoSmoothing;
+      Background.Color = Color.White;
 
       int w = CUICore.GraphicsDevice.BackBufferWidth;
       int h = CUICore.GraphicsDevice.BackBufferHeight;

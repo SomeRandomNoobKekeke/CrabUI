@@ -47,23 +47,36 @@ namespace CrabUI
 
     private void HandleSelect()
     {
-      Selected?.Invoke();
+      OnSelected?.Invoke();
+      Changed?.Invoke(true);
       DetermineColor();
     }
 
     private void HandleDeselect()
     {
-      Deselected?.Invoke();
+      OnDeselected?.Invoke();
+      Changed?.Invoke(false);
       DetermineColor();
     }
 
-    public Action OnSelected { set { Selected += value; } }
-    public event Action Selected;
+    public Action AddOnSelected { set { OnSelected += value; } }
+    public event Action OnSelected;
 
-    public Action OnDeselected { set { Deselected += value; } }
-    public event Action Deselected;
+    public Action AddOnDeselected { set { OnDeselected += value; } }
+    public event Action OnDeselected;
 
-    public bool IsSelected => Mutex?.IsSelected ?? false;
+    public Action<bool> OnChanged { set { Changed += value; } }
+    public event Action<bool> Changed;
+
+    public bool Selected
+    {
+      get => Mutex?.IsSelected ?? false;
+      set
+      {
+        if (value) Select();
+      }
+    }
+
     public void Select() => Mutex?.Select();
 
 
@@ -71,7 +84,7 @@ namespace CrabUI
     {
       set
       {
-        OnColor = value.Multiply(0.8f);
+        OnColor = value.Multiply(0.7f);
         OffColor = value.Multiply(0.3f);
         DetermineColor();
       }
@@ -79,17 +92,17 @@ namespace CrabUI
 
     public override void DetermineColor()
     {
-      if (IsSelected)
+      if (Selected)
       {
         Background.Color = OnColor;
-        if (MouseOver) Background.Color = OnColor.Multiply(2.0f);
-        if (MousePressed) Background.Color = OnColor.Multiply(3.0f);
+        // if (MouseOver) Background.Color = OnColor.Multiply(2.0f);
+        // if (MousePressed) Background.Color = OnColor.Multiply(3.0f);
       }
       else
       {
         Background.Color = OffColor;
         if (MouseOver) Background.Color = OffColor.Multiply(2.0f);
-        if (MousePressed) Background.Color = OffColor.Multiply(3.0f);
+        // if (MousePressed) Background.Color = OffColor.Multiply(3.0f);
       }
     }
 

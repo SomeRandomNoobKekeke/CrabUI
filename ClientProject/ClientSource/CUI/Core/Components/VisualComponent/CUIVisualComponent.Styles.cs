@@ -93,7 +93,7 @@ namespace CrabUI
         get => _Palette;
         set
         {
-          if (_Palette == value) return;
+          // if (_Palette == value) return;
 
           if (_Palette != null) _Palette.Changed -= ReapplyStyles;
           _Palette = value;

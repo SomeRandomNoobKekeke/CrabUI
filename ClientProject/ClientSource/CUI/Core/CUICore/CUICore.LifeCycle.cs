@@ -16,6 +16,7 @@ namespace CrabUI
   {
     public class LifeCycle_Part : Part
     {
+      public ClearableEvent<double> OnBeforeUpdate = new();
       public ClearableEvent<double> OnUpdate = new();
       public ClearableEvent<CUISpriteBatch> OnDrawAfterGUI = new();
       public ClearableEvent<CUISpriteBatch> OnDrawBeforeGUI = new();
@@ -36,6 +37,8 @@ namespace CrabUI
         try
         {
           Stopwatch sw = Stopwatch.StartNew();
+
+          OnBeforeUpdate.Raise(totalTime);
 
           Self._Input.Update(totalTime, mouse, keyboard, textInput);
           Self.EventConstructor.Construct(Self._Input);

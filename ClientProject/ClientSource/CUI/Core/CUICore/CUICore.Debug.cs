@@ -17,5 +17,11 @@ namespace CrabUI
 
     public static CUIDebugger Debugger => Instance?._Debugger;
     public CUIDebugger _Debugger { get; private set; }
+
+    public void InitDebug()
+    {
+      _Debugger = new();
+      Main.DebugRelays.Map(_DebugHub);
+    }
   }
 }

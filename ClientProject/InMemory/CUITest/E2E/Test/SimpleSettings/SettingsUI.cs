@@ -70,7 +70,7 @@ namespace CrabUIUser
         {
           Manager = manager;
 
-          OnOpen += (self) => Refresh();
+          OnOpen += () => Refresh();
 
           Caption.Text = "Some Settings, bruh";
 

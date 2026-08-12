@@ -38,7 +38,7 @@ namespace CrabUIUser
         };
 
         frame.Open();
-        frame.OnClose += (c) => Dispose();
+        frame.OnClose += Dispose;
 
         CUI.Main.GlobalEvents.AfterUpdate.Add(UpdatePool);
       }

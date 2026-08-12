@@ -18,6 +18,7 @@ namespace CrabUI
     {
       c.TextColor = c.Palette["text"];
       c.MasterColor = c.Palette["main"];
+      c.Padding = new(2, 4, 2, 4);
     });
 
     [CUISerializableProp]

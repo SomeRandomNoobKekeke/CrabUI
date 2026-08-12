@@ -53,7 +53,7 @@ namespace CrabUIUser
 
         Input.KeyPressed += HandleKeyPressed;
 
-        OnClose += (c) => Dispose();
+        OnClose += Dispose;
 
         Open();
       }

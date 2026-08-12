@@ -21,7 +21,7 @@ namespace CrabUI
     protected override void InitStyle()
     {
       base.InitStyle();
-      Padding = new(2, 0, 2, 0);
+      Padding = new(0, 2, 0, 2);
     }
 
     public TextBlock TextBlock { get; } = new();

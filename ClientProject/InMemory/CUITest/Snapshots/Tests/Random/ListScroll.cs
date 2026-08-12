@@ -43,7 +43,7 @@ namespace CrabUIUser
         CUIVerticalList list1 = new CUIVerticalList()
         {
           Absolute = new CUINullRect(0, 0, 100, 200),
-          Background = { Color = Color.Blue },
+          Background = { Color = CUICore.Palettes.Secondary["main"] },
           Anchor = CUIAnchor.LeftCenter,
           Direction = CUIDirection.Straight,
           Scrollable = true,
@@ -61,7 +61,7 @@ namespace CrabUIUser
         CUIVerticalList list2 = new CUIVerticalList()
         {
           Absolute = new CUINullRect(0, 0, 100, 200),
-          Background = { Color = Color.Blue },
+          Background = { Color = CUICore.Palettes.Secondary["main"] },
           Anchor = CUIAnchor.RightCenter,
           Direction = CUIDirection.Reverse,
           Scrollable = true,

@@ -51,7 +51,7 @@ namespace CrabUI
       if (Host == null || Parent == Host) return;
 
       Host.Children.Add(this);
-      OnOpen?.Invoke(this);
+      OnOpen?.Invoke();
       SaveState("lastopened");
     }
 
@@ -59,10 +59,10 @@ namespace CrabUI
     public void Close()
     {
       RemoveSelf();
-      OnClose?.Invoke(this);
+      OnClose?.Invoke();
     }
-    public event Action<CUIFrame> OnOpen;
-    public event Action<CUIFrame> OnClose;
+    public event Action OnOpen;
+    public event Action OnClose;
 
     public CUIFrame() : base()
     {

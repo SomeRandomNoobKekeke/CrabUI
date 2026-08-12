@@ -8,6 +8,53 @@ namespace CrabUI
 {
   public partial class CUIPalette
   {
+    private static CUIComponent BlockOfRandomStuff(CUIPalette palette)
+    {
+      CUIComponent block = new CUIVerticalList()
+      {
+        Relative = new CUINullRect(w: 1),
+        Absolute = new CUINullRect(h: 150),
+        // FitContent = new CUIBool2(false, true),
+      };
+
+      block["header"] = new CUIHorizontalList()
+      {
+        FitContent = new CUIBool2(false, true),
+      };
+
+      block["header"]["bnt1"] = new CUIButton("bruh") { Flex = 1 };
+      block["header"]["bnt2"] = new CUIButton("bruh") { Flex = 1 };
+
+      block["main"] = new CUIVerticalList()
+      {
+        Flex = 1,
+      };
+
+      block["main"]["field1"] = new CUIDefault.IntField()
+      {
+        Key = "bruh",
+        Value = 123,
+      };
+
+      block["main"]["radios"] = new CUIHorizontalList()
+      {
+        FitContent = new CUIBool2(false, true),
+      };
+
+      block["main"]["radios"]["1"] = new CUIRadioButton("radio 1") { Group = "bruh" };
+      block["main"]["radios"]["2"] = new CUIRadioButton("radio 2") { Group = "bruh" };
+
+      block["main"]["checkbox"] = new CUICheckBox()
+      {
+        Absolute = new CUINullRect(w: 30, h: 30),
+      };
+
+      block.DeepPalette = palette;
+
+      return block;
+    }
+
+
     public static void Preview()
     {
       CUIFrame frame = new CUIDefault.Frame("Palette Preview")
@@ -15,37 +62,10 @@ namespace CrabUI
         Absolute = new CUINullRect(w: 400, h: 600),
       };
 
-      frame["layout"]["header"] = new CUIHorizontalList()
-      {
-        FitContent = new CUIBool2(false, true),
-      };
-
-      frame["layout"]["header"]["bnt1"] = new CUIButton("bruh") { Flex = 1 };
-      frame["layout"]["header"]["bnt2"] = new CUIButton("bruh") { Flex = 1 };
-
-      frame["layout"]["main"] = new CUIVerticalList()
-      {
-        Flex = 1,
-      };
-
-      frame["layout"]["main"]["field1"] = new CUIDefault.IntField()
-      {
-        Key = "bruh",
-        Value = 123,
-      };
-
-      frame["layout"]["main"]["radios"] = new CUIHorizontalList()
-      {
-        FitContent = new CUIBool2(false, true),
-      };
-
-      frame["layout"]["main"]["radios"]["1"] = new CUIRadioButton("radio 1") { Group = "bruh" };
-      frame["layout"]["main"]["radios"]["2"] = new CUIRadioButton("radio 2") { Group = "bruh" };
-
-      frame["layout"]["main"]["checkbox"] = new CUICheckBox()
-      {
-        Absolute = new CUINullRect(w: 30, h: 30),
-      };
+      frame["layout"]["block 1"] = BlockOfRandomStuff(CUICore.Palettes.Primary);
+      frame["layout"]["block 2"] = BlockOfRandomStuff(CUICore.Palettes.Secondary);
+      frame["layout"]["block 3"] = BlockOfRandomStuff(CUICore.Palettes.Tertiary);
+      frame["layout"]["block 4"] = BlockOfRandomStuff(CUICore.Palettes.Quaternary);
 
       frame.Open();
     }

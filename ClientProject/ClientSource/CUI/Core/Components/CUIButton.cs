@@ -23,7 +23,7 @@ namespace CrabUI
     protected override void InitStyle()
     {
       base.InitStyle();
-      Padding = new(4, 2, 4, 2);
+      Padding = new(2, 4, 2, 4);
       Background.Sprite = CUISprite.VignetteLight;
     }
 

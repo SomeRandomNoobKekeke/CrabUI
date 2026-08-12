@@ -11,6 +11,9 @@ namespace CrabUI
   {
     public DebugHub DebugHub => CUICore.DebugHub;
 
+    public ClearableEvent<DebugEvent> Input { get; } = new();
+
+
     public CUIDebugger() : base("Debug")
     {
       TargetMainComponent = CUI.TopMain;
@@ -18,7 +21,8 @@ namespace CrabUI
       Absolute = new CUINullRect(w: 400, h: 600);
       Anchor = CUIAnchor.LeftCenter;
 
-
+      OnOpen += () => DebugHub.Output.Map(Input);
+      OnClose += () => DebugHub.Output.Unmap(Input);
     }
   }
 }

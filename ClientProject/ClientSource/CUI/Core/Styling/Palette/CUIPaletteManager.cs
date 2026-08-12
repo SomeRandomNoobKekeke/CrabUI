@@ -8,25 +8,25 @@ namespace CrabUI
 {
   public class CUIPalettes
   {
-    private CUIPalette _Primary = CUIPalette.FromColor(new Color(200, 0, 0)); public CUIPalette Primary
+    private CUIPalette _Primary = CUIPalette.FromColor(new Color(64, 64, 64)); public CUIPalette Primary
     {
       get => _Primary;
       set => _Primary.Swap(value);
     }
 
-    private CUIPalette _Secondary = CUIPalette.FromColor(new Color(150, 0, 0)); public CUIPalette Secondary
+    private CUIPalette _Secondary = CUIPalette.FromColor(new Color(0, 128, 90)); public CUIPalette Secondary
     {
       get => _Secondary;
       set => _Secondary.Swap(value);
     }
 
-    private CUIPalette _Tertiary = CUIPalette.FromColor(new Color(100, 0, 32)); public CUIPalette Tertiary
+    private CUIPalette _Tertiary = CUIPalette.FromColor(new Color(0, 128, 128)); public CUIPalette Tertiary
     {
       get => _Tertiary;
       set => _Tertiary.Swap(value);
     }
 
-    private CUIPalette _Quaternary = CUIPalette.FromColor(new Color(64, 0, 64)); public CUIPalette Quaternary
+    private CUIPalette _Quaternary = CUIPalette.FromColor(new Color(0, 0, 128)); public CUIPalette Quaternary
     {
       get => _Quaternary;
       set => _Quaternary.Swap(value);

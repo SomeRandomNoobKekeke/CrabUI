@@ -81,7 +81,7 @@ namespace CrabUI
       {
         Background = { Color = Color.Blue },
         Draggable = true,
-        OnDragged = (c, pos) =>
+        OnDragged = (pos) =>
         {
           UpdateLambda();
           Moved?.Invoke(Lambda);

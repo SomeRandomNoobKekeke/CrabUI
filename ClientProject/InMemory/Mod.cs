@@ -46,7 +46,7 @@ namespace CrabUIUser
         CUI.TopMain["debug button"] = new CUIButton("debug")
         {
           Anchor = CUIAnchor.LeftCenter,
-          OnMouseDown = (c, e) => CUICore.Debugger.Open(),
+          OnMouseDown = (e) => CUICore.Debugger.Open(),
         };
 
         // Utils.PrintAllHarmonyPatches();

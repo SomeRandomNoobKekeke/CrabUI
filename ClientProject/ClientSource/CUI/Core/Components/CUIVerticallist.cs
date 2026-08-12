@@ -79,7 +79,7 @@ namespace CrabUI
       }
     }
 
-    private void ScrollHandle(CUIVisualComponent c, CUIMouseScrollEvent e)
+    private void ScrollHandle(CUIMouseScrollEvent e)
     {
       Scroll += e.Scroll;
     }

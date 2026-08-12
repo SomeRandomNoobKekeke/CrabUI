@@ -29,7 +29,7 @@ namespace CrabUIUser
         {
           Anchor = new Vector2(0, 0.4f),
           MasterColor = Color.Pink,
-          OnMouseDown = (c, e) => CUI.Main["radial menu"] = Menu,
+          OnMouseDown = (e) => CUI.Main["radial menu"] = Menu,
         };
 
 

@@ -50,7 +50,7 @@ namespace CrabUI
       OffSprite.Color = Color.Red;
 
       State = false;
-      MouseDown += (c, e) => Toggle();
+      MouseDown += (e) => Toggle();
       ConsumeMouseEvents = true;
     }
   }

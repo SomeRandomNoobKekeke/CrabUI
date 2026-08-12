@@ -53,27 +53,25 @@ namespace CrabUI
       }
     }
 
-    public void HandleMouseDown(CUIVisualComponent c, CUIMouseDownEvent e)
+    public void HandleMouseDown(CUIMouseDownEvent e)
     {
       CaretPos = TextBlock.CaretIndex(e.Pos);
       UpdateVisualState();
     }
 
-    public void HandleDoubleClick(CUIVisualComponent c, CUIMouseDoubleClickEvent e)
+    public void HandleDoubleClick(CUIMouseDoubleClickEvent e)
     {
       SelectAll();
     }
 
-    public void HandleMouseMoved(CUIVisualComponent c, CUIMouseMovedEvent e)
+    public void HandleMouseMoved(CUIMouseMovedEvent e)
     {
-
       UpdateVisualState();
     }
 
 
-    public void HandleMouseUp(CUIVisualComponent c, CUIMouseUpEvent e)
+    public void HandleMouseUp(CUIMouseUpEvent e)
     {
-
       UpdateVisualState();
     }
 

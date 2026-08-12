@@ -18,10 +18,13 @@ namespace CrabUI
     public override bool MouseOver => Background.MouseOver;
     public override bool MousePressed => Background.MousePressed;
 
-    public bool ConsumeMouseEvents
+    public override bool ConsumeMouseEvents
     {
       get => Background.ConsumeMouseEvents;
       set => Background.ConsumeMouseEvents = value;
     }
+
+    public override bool IsPointOnTransparentPixel(Vector2 point)
+      => Background.IsPointOnTransparentPixel(point);
   }
 }

@@ -40,7 +40,7 @@ namespace CrabUIUser
         CUIComponent Main = new CUIComponent() { Flex = 1 };
         frame["layout"]["main"] = Main;
 
-        Main["list1"] = new CUIVerticalList()
+        CUIVerticalList list1 = new CUIVerticalList()
         {
           Absolute = new CUINullRect(0, 0, 100, 200),
           Background = { Color = Color.Blue },
@@ -49,16 +49,16 @@ namespace CrabUIUser
           Scrollable = true,
           TopGap = 10,
           BottomGap = 30,
-          OnMouseScroll = (c, e) => frame.Get<CUITextBlock>("layout.header.scroll1").Text = $"{(c as CUIVerticalList).Scroll}",
         };
+        list1.MouseScroll += (e) => frame.Get<CUITextBlock>("layout.header.scroll1").Text = $"{list1.Scroll}";
+        Main["list1"] = list1;
 
         for (int i = 1; i <= 100; i++)
         {
           Main["list1"].Children.Add(new CUITextBlock($"child {i}"));
         }
 
-
-        Main["list2"] = new CUIVerticalList()
+        CUIVerticalList list2 = new CUIVerticalList()
         {
           Absolute = new CUINullRect(0, 0, 100, 200),
           Background = { Color = Color.Blue },
@@ -67,8 +67,9 @@ namespace CrabUIUser
           Scrollable = true,
           TopGap = 10,
           BottomGap = 30,
-          OnMouseScroll = (c, e) => frame.Get<CUITextBlock>("layout.header.scroll2").Text = $"{(c as CUIVerticalList).Scroll}",
         };
+        list2.MouseScroll += (e) => frame.Get<CUITextBlock>("layout.header.scroll2").Text = $"{list2.Scroll}";
+        Main["list2"] = list2;
 
         for (int i = 1; i <= 100; i++)
         {

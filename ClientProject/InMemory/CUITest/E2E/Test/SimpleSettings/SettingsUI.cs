@@ -86,7 +86,7 @@ namespace CrabUIUser
 
           this["layout"]["header"]["printSettings"] = new CUIButton("Print Settings")
           {
-            OnMouseDown = (c, e) => Manager.Print(),
+            OnMouseDown = (e) => Manager.Print(),
           };
 
           this["layout"]["main"] = FieldList = new CUIVerticalList()

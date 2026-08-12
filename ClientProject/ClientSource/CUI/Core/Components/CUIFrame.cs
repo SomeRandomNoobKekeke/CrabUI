@@ -67,7 +67,7 @@ namespace CrabUI
     public CUIFrame() : base()
     {
       Commands.ListenFor("close", (_) => Close());
-      MouseDoubleClick += (c, e) => RestoreState("lastopened");
+      MouseDoubleClick += (e) => RestoreState("lastopened");
       OnFocus += MoveToTop;
     }
   }

@@ -94,7 +94,7 @@ namespace CrabUI
 
     public CUIRadioButton() : base()
     {
-      MouseDown += (c, e) => Select();
+      MouseDown += (e) => Select();
     }
     public CUIRadioButton(string text) : this()
     {

@@ -29,7 +29,7 @@ namespace CrabUI
         {
           OptionBox.Children.Add(new CUIButton(option)
           {
-            OnMouseDown = (c, e) => Select(option),
+            OnMouseDown = (e) => Select(option),
           });
         }
       }
@@ -100,7 +100,7 @@ namespace CrabUI
       };
 
       this["selected"] = SelectedBtn = new CUIButton("Unset");
-      SelectedBtn.MouseDown += (c, e) => Open = !Open;
+      SelectedBtn.MouseDown += (e) => Open = !Open;
     }
   }
 }

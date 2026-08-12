@@ -69,7 +69,7 @@ namespace CrabUI
 
     public CUIToggleButton() : base()
     {
-      MouseDown += (c, e) =>
+      MouseDown += (e) =>
       {
         State = !State;
         Toggle?.Invoke(State);

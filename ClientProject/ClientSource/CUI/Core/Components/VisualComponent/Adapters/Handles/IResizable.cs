@@ -21,7 +21,7 @@ namespace CrabUI
       {
         public void Init()
         {
-          Self.MouseDown += (CUIVisualComponent c, CUIMouseDownEvent e) => MouseDown?.Invoke(e);
+          Self.MouseDown += (CUIMouseDownEvent e) => MouseDown?.Invoke(e);
         }
 
         public CUIRect Rect => Self.OuterRect;

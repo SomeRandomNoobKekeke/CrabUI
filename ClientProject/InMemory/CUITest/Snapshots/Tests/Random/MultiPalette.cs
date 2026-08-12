@@ -33,7 +33,7 @@ namespace CrabUIUser
         panel["wrapper"]["input"] = input;
         panel["button"] = new CUIButton("Update")
         {
-          OnMouseDown = (c, e) =>
+          OnMouseDown = (e) =>
           {
             Color color = CUICore.Parser.Parse<Color>(input.Text);
 

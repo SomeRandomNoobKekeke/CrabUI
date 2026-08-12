@@ -248,13 +248,13 @@ namespace CrabUI
         ConsumeMouseEvents = true,
       };
 
-      RectSet += (c, rect) => SyncHandleWithLambda();
-      Handle.Dragged += (c, v) =>
+      RectSet += (rect) => SyncHandleWithLambda();
+      Handle.Dragged += (v) =>
       {
         SyncLambdaWithHandle();
         HandleDragged?.Invoke(Lambda);
       };
-      Handle.DragEnded += (c, v) =>
+      Handle.DragEnded += (v) =>
       {
         SyncLambdaWithHandle();
         PinLambda();
@@ -262,7 +262,7 @@ namespace CrabUI
         HandleDragged?.Invoke(Lambda);
         Changed?.Invoke(Lambda);
       };
-      MouseDown += (c, e) =>
+      MouseDown += (e) =>
       {
         SetLambdaFromPoint(e.Pos);
         PinLambda();

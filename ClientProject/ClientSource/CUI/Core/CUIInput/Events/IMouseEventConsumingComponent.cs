@@ -9,39 +9,38 @@ using Microsoft.Xna.Framework;
 using CUILibs;
 namespace CrabUI
 {
-  //WTF is this? why are there 2 EventConsumers, do i need to maintain them both? Are they synched?
-  //So, i added it when i made all events accept component as firs arg, i guess not every IMouseEventConsumer is actually attached to component
-  //Still need somehow make sure that they are synched
+
+  //The only difference is that it doesn't force you to implement MouseOver, MousePressed etc
   public interface IMouseEventConsumingComponent
   {
     public CUIVisualComponent Component { get; } // CRINGE
 
-    public ClearableEvent<CUIVisualComponent, CUIMouseDownEvent> MouseDown { get; }
-    public ClearableEvent<CUIVisualComponent, CUIMouseUpEvent> MouseUp { get; }
-    public ClearableEvent<CUIVisualComponent, CUIMouseClickEvent> MouseClick { get; }
-    public ClearableEvent<CUIVisualComponent, CUIMouseDoubleClickEvent> MouseDoubleClick { get; }
-    public ClearableEvent<CUIVisualComponent, CUIMouseMovedEvent> MouseMoved { get; }
-    public ClearableEvent<CUIVisualComponent, CUIMouseEnterEvent> MouseEnter { get; }
-    public ClearableEvent<CUIVisualComponent, CUIMouseLeaveEvent> MouseLeave { get; }
-    public ClearableEvent<CUIVisualComponent, CUIMouseOnEvent> MouseOn { get; }
-    public ClearableEvent<CUIVisualComponent, CUIMouseOffEvent> MouseOff { get; }
-    public ClearableEvent<CUIVisualComponent, CUIMouseScrollEvent> MouseScroll { get; }
+    public ClearableEvent<CUIMouseDownEvent> MouseDown { get; }
+    public ClearableEvent<CUIMouseUpEvent> MouseUp { get; }
+    public ClearableEvent<CUIMouseClickEvent> MouseClick { get; }
+    public ClearableEvent<CUIMouseDoubleClickEvent> MouseDoubleClick { get; }
+    public ClearableEvent<CUIMouseMovedEvent> MouseMoved { get; }
+    public ClearableEvent<CUIMouseEnterEvent> MouseEnter { get; }
+    public ClearableEvent<CUIMouseLeaveEvent> MouseLeave { get; }
+    public ClearableEvent<CUIMouseOnEvent> MouseOn { get; }
+    public ClearableEvent<CUIMouseOffEvent> MouseOff { get; }
+    public ClearableEvent<CUIMouseScrollEvent> MouseScroll { get; }
   }
 
   public static class IMouseEventConsumingComponent_Extensions
   {
     public static void Map(this IMouseEventConsumer self, IMouseEventConsumingComponent target)
     {
-      self.MouseDown.Map(target.MouseDown, (CUIMouseDownEvent e) => target.MouseDown.Raise(target.Component, e));
-      self.MouseUp.Map(target.MouseUp, (CUIMouseUpEvent e) => target.MouseUp.Raise(target.Component, e));
-      self.MouseClick.Map(target.MouseClick, (CUIMouseClickEvent e) => target.MouseClick.Raise(target.Component, e));
-      self.MouseDoubleClick.Map(target.MouseDoubleClick, (CUIMouseDoubleClickEvent e) => target.MouseDoubleClick.Raise(target.Component, e));
-      self.MouseMoved.Map(target.MouseMoved, (CUIMouseMovedEvent e) => target.MouseMoved.Raise(target.Component, e));
-      self.MouseEnter.Map(target.MouseEnter, (CUIMouseEnterEvent e) => target.MouseEnter.Raise(target.Component, e));
-      self.MouseLeave.Map(target.MouseLeave, (CUIMouseLeaveEvent e) => target.MouseLeave.Raise(target.Component, e));
-      self.MouseOn.Map(target.MouseOn, (CUIMouseOnEvent e) => target.MouseOn.Raise(target.Component, e));
-      self.MouseOff.Map(target.MouseOff, (CUIMouseOffEvent e) => target.MouseOff.Raise(target.Component, e));
-      self.MouseScroll.Map(target.MouseScroll, (CUIMouseScrollEvent e) => target.MouseScroll.Raise(target.Component, e));
+      self.MouseDown.Map(target.MouseDown);
+      self.MouseUp.Map(target.MouseUp);
+      self.MouseClick.Map(target.MouseClick);
+      self.MouseDoubleClick.Map(target.MouseDoubleClick);
+      self.MouseMoved.Map(target.MouseMoved);
+      self.MouseEnter.Map(target.MouseEnter);
+      self.MouseLeave.Map(target.MouseLeave);
+      self.MouseOn.Map(target.MouseOn);
+      self.MouseOff.Map(target.MouseOff);
+      self.MouseScroll.Map(target.MouseScroll);
     }
 
     public static void Unmap(this IMouseEventConsumer self, IMouseEventConsumingComponent target)

@@ -18,6 +18,15 @@ namespace CrabUI
     public override bool MouseOver => FlexTexture.MouseOver;
     public override bool MousePressed => FlexTexture.MousePressed;
 
+    public override bool ConsumeMouseEvents
+    {
+      get => FlexTexture.ConsumeMouseEvents;
+      set => FlexTexture.ConsumeMouseEvents = value;
+    }
+
+    public override bool IsPointOnTransparentPixel(Vector2 point)
+      => FlexTexture.IsPointOnTransparentPixel(point);
+
     public override CUIRect OuterRect { get; set; }
     public override CUIRect ChildrenRect { get; set; }
     public override bool Visible { get; set; } = true;

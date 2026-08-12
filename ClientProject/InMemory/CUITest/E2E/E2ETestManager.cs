@@ -58,7 +58,7 @@ namespace CrabUIUser
           Text = type.Name,
           Absolute = new CUINullRect(h: 30),
           MasterColor = new Color(0, 255, 255),
-          OnMouseDown = (c, e) => Run(name),
+          OnMouseDown = (e) => Run(name),
         });
       }
     }

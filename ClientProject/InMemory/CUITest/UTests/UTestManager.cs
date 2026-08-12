@@ -32,7 +32,7 @@ namespace CrabUIUser
           Text = name,
           TextAnchor = CUIAnchor.LeftCenter,
           Absolute = new CUINullRect(h: 30),
-          OnMouseDown = (c, e) => Run(name),
+          OnMouseDown = (e) => Run(name),
           Palette = CUICore.Palettes.Tertiary,
         });
       }

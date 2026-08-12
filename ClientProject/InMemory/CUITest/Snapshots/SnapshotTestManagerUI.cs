@@ -48,7 +48,7 @@ namespace CrabUIUser
           Text = test.Name,
           TextAnchor = CUIAnchor.LeftCenter,
           MasterColor = new Color(64, 64, 64),
-          OnMouseDown = (c, e) => Run(test.Name),
+          OnMouseDown = (e) => Run(test.Name),
         });
       }
     }
@@ -66,14 +66,14 @@ namespace CrabUIUser
         Text = "Run All",
         Flex = 1,
         MasterColor = new Color(64, 0, 64),
-        OnMouseDown = (c, e) => RunAll(),
+        OnMouseDown = (e) => RunAll(),
       };
       this["layout"]["controls"]["accept"] = new CUIButton()
       {
         Text = "Accept",
         Flex = 1,
         MasterColor = new Color(64, 0, 64),
-        OnMouseDown = (c, e) => AcceptCurrent()
+        OnMouseDown = (e) => AcceptCurrent()
       };
       this["layout"]["controls"]["serialize"] = new CUIToggleButton()
       {
@@ -90,7 +90,7 @@ namespace CrabUIUser
       {
         this["layout"]["groups"].Children.Add(new CUIButton(group)
         {
-          OnMouseDown = (c, e) => OpenGroup(group),
+          OnMouseDown = (e) => OpenGroup(group),
         });
       }
 

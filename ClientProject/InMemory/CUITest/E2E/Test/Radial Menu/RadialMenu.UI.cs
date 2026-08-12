@@ -53,11 +53,11 @@ namespace CrabUIUser
               OnChanged = (cl) => part.Background.Color = cl,
             };
 
-            part.MouseEnter += (self, e) => animation.RunForward();
-            part.MouseLeave += (self, e) => animation.RunBackward();
+            part.MouseEnter += (e) => animation.RunForward();
+            part.MouseLeave += (e) => animation.RunBackward();
 
             int bruh = i + 1;
-            part.MouseDown += (c, e) => ExecuteCommand($"run script {bruh}");
+            part.MouseDown += (e) => ExecuteCommand($"run script {bruh}");
 
             this[$"part {i + 1}"] = part;
           }

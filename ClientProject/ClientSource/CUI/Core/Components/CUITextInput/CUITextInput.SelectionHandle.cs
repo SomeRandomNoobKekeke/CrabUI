@@ -20,7 +20,7 @@ namespace CrabUI
     {
       public void Init()
       {
-        Self.MouseDown += (c, e) => HandleMouseDown(e);
+        Self.MouseDown += (e) => HandleMouseDown(e);
       }
 
       public bool Selecting;

@@ -76,14 +76,14 @@ namespace CrabUI
 
     public CUICloseButton() : base()
     {
-      MouseDown += (c, e) =>
+      MouseDown += (e) =>
       {
         if (PlaySound) SoundPlayer.PlayUISound(ClickSound);
         Commands.SendUp("close");
       };
 
-      MouseOff += (c, e) => DetermineColor();
-      MouseOn += (c, e) => DetermineColor();
+      MouseOff += (e) => DetermineColor();
+      MouseOn += (e) => DetermineColor();
       DetermineColor();
     }
   }

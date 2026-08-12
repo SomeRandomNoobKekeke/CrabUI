@@ -117,11 +117,11 @@ namespace CrabUI
 
     public CUIButtonBase() : base()
     {
-      MouseOff += (c, e) => DetermineColor();
-      MouseOn += (c, e) => DetermineColor();
+      MouseOff += (e) => DetermineColor();
+      MouseOn += (e) => DetermineColor();
       DetermineColor();
 
-      MouseDown += (c, e) =>
+      MouseDown += (e) =>
       {
         if (PlaySound) SoundPlayer.PlayUISound(ClickSound);
         if (Emit != null) Commands.SendUp(Emit, Text);

@@ -23,7 +23,11 @@ namespace CrabUI
     public string Text
     {
       get => TextBlock.Text;
-      set => TextBlock.Text = value;
+      set
+      {
+        TextBlock.Text = value;
+        LayoutMarker.Mark(LayoutMarker.Pattern.FromParentAndDown);
+      }
     }
 
     public float Scale

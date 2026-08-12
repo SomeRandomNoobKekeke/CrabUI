@@ -26,6 +26,10 @@ namespace CrabUIUser
         frame["dropbdown"] = new CUIDropDown()
         {
           Anchor = CUIAnchor.Center,
+          Selected = "bruh",
+          Options = new string[]{
+            "lol","123424234fqwef"
+          }
         };
 
         return frame;

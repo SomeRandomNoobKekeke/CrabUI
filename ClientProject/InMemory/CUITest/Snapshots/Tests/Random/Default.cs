@@ -21,6 +21,17 @@ namespace CrabUIUser
         {
           Absolute = new CUINullRect(w: 400, h: 600),
         };
+
+        CUITextInput input = new CUITextInput()
+        {
+          Anchor = CUIAnchor.Center,
+          Absolute = new CUINullRect(w: 100, h: 24),
+        };
+
+        input.Input += (s) => CUICore.Palettes.Primary = CUIPalette.FromColor(CUICore.Parser.Parse<Color>(s));
+
+        frame["theme"] = input;
+
         return frame;
       }
     }

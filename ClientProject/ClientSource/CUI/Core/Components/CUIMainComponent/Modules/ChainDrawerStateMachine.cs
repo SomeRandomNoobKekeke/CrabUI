@@ -17,9 +17,7 @@ namespace CrabUI
     public record State(Rectangle ScissorRect, SamplerState SamplerState);
 
     public Stack<State> States { get; } = new();
-
     public State OriginalState { get; private set; }
-
     public State CurrentState { get; private set; }
 
 
@@ -28,8 +26,7 @@ namespace CrabUI
       if (CurrentState == state) return;
       CurrentState = state;
 
-
-      spriteBatch.StopStart(state.ScissorRect, state.SamplerState);
+      spriteBatch.StopStart(state.ScissorRect, samplerState: state.SamplerState);
     }
 
     public void Init(CUISpriteBatch spriteBatch)
@@ -42,6 +39,12 @@ namespace CrabUI
       States.Clear();
       States.Push(OriginalState);
       CurrentState = OriginalState;
+    }
+
+    public void Enter(CUISpriteBatch spriteBatch, State state)
+    {
+      States.Push(state);
+      StopStart(spriteBatch, state);
     }
 
     public void Enter(CUISpriteBatch spriteBatch, VisualBounds bounds)

@@ -18,10 +18,10 @@ namespace CrabUI
     /// <summary>
     /// 64x64 textures separated by 2px transparent lines to avoid sampler artifacts
     /// </summary>
-    public static CUISprite AtPos(int x, int y)
+    public static CUISprite AtPos(int x, int y, int w = 1, int h = 1)
       => new CUISprite(CUICore.TextureManager.Get("CUI"))
       {
-        SourceRectangle = new Rectangle(1 + 66 * x, 1 + 66 * y, 64, 64)
+        SourceRectangle = new Rectangle(1 + 66 * x, 1 + 66 * y, 64 * w, 64 * h)
       };
 
     public static CUISprite Cross => AtPos(0, 0);
@@ -37,7 +37,7 @@ namespace CrabUI
     public static CUISprite Window => AtPos(3, 2);
     public static CUISprite BoxWithALamp => AtPos(4, 2);
 
-    public static CUISprite Vignette => AtPos(0, 3);
+    public static CUISprite Vignette => AtPos(7, 7, 8, 8);
     public static CUISprite DimmedHorizontal => AtPos(1, 3);
     public static CUISprite DimmedVertical => AtPos(2, 3);
     public static CUISprite VignetteLight => AtPos(3, 3);

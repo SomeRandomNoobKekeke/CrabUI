@@ -16,15 +16,19 @@ namespace CrabUI
     );
 
     public SpriteBatch XNASpriteBatch { get; set; }
-    public void StopStart(Rectangle scissorRect, SamplerState samplerState)
+    public void StopStart(Rectangle scissorRect,
+      SpriteSortMode sortMode = SpriteSortMode.Deferred,
+      BlendState blendState = null,
+      SamplerState samplerState = null,
+      DepthStencilState depthStencilState = null,
+      RasterizerState rasterizerState = null,
+      Effect effect = null,
+      Matrix? transformMatrix = null
+    )
     {
       XNASpriteBatch.End();
       XNASpriteBatch.GraphicsDevice.ScissorRectangle = scissorRect;
-      XNASpriteBatch.Begin(
-        SpriteSortMode.Deferred,
-        samplerState: samplerState,
-        rasterizerState: GameMain.ScissorTestEnable
-      );
+      XNASpriteBatch.Begin(sortMode, blendState, samplerState, depthStencilState, rasterizerState ?? GameMain.ScissorTestEnable, effect, transformMatrix);
     }
 
     public void Begin(

@@ -109,7 +109,15 @@ namespace CrabUI
 
 
 
-    public void StopStart(Rectangle ScissorRect, SamplerState SamplerState);
+    public void StopStart(Rectangle scissorRect,
+      SpriteSortMode sortMode = SpriteSortMode.Deferred,
+      BlendState blendState = null,
+      SamplerState samplerState = null,
+      DepthStencilState depthStencilState = null,
+      RasterizerState rasterizerState = null,
+      Effect effect = null,
+      Matrix? transformMatrix = null
+    );
 
     public void Begin(
       SpriteSortMode sortMode = SpriteSortMode.Deferred,

@@ -8,6 +8,7 @@ using Barotrauma;
 using Microsoft.Xna.Framework;
 using CUICodeGenerator;
 using CUILibs;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace CrabUI
 {

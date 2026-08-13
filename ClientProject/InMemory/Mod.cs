@@ -39,6 +39,7 @@ namespace CrabUIUser
         UTest.CollapseTestPackIfSucceed = false;
         UTest.Init();
 
+        // CUICore.Palettes.Primary = CUIPalette.FromColor(new Color(0, 0, 128));
 
         CUITest = new CUITest();
         CUITest.Init();

@@ -114,6 +114,7 @@ namespace CrabUI
     private void UpdateLayout()
     {
       Debug_LayoutUpdated.Send();
+      Tree.Changed = false; //HACK debug events might create new nodes here, change tree and create a loop
 
       int repeats = 0;
       while (RequireLayoutUpdate)

@@ -17,11 +17,9 @@ namespace CrabUI
 
     public KeyboardInput Keyboard { get; }
     public MouseInput Mouse { get; }
-    public bool SomethingFocusedElsewhere { get; private set; }
 
-    //TODO
-    // public bool MouseOverSomeVanillaGUI { get; private set; }
-    public bool SomethingHappened => Mouse.SomethingHappened || Keyboard.SomethingHappened;// || SomethingFocusedElsewhere;
+
+    public bool SomethingHappened => Mouse.SomethingHappened || Keyboard.SomethingHappened;
 
 
 
@@ -29,8 +27,6 @@ namespace CrabUI
     {
       Mouse.Update(totalTime, mouse);
       Keyboard.Update(totalTime, keyboard, textInput);
-
-      SomethingFocusedElsewhere = textInput.SomethingFocusedElsewhere;
     }
 
     public CUIInput()

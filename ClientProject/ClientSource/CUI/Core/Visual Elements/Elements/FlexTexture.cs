@@ -12,11 +12,8 @@ using System.Text.Json;
 
 namespace CrabUI
 {
-  public class FlexTexture : VisualElementBase, IFocusRequestEventConsumer
+  public class FlexTexture : VisualElementBase
   {
-    public bool ConsumeFocus { get; set; }
-    public ClearableEvent<CUIFocusRequestEvent> FocusProbed { get; } = new();
-
     public CUIFlexSprite Sprite { get; set; } = CUIFlexSprite.White;
     private CUIFlexRect _FlexRect; public CUIFlexRect FlexRect
     {

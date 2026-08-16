@@ -18,13 +18,11 @@ namespace CrabUI
         {
           // DebugRelays[DebugCategory.RoundedRect].Route(background.Debug_RoundedRect);
           Events.Route(background);
-          background.FocusProbed.Add(HandleFocusProbe);
         },
         OnTearDown = (background) =>
         {
           // DebugRelays[DebugCategory.RoundedRect].Route(background.Debug_RoundedRect);
           Events.Route(background);
-          background.FocusProbed.Add(HandleFocusProbe);
         },
         Value = new(),
       };

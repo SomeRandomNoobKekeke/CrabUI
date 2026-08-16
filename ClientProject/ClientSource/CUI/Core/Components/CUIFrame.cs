@@ -27,8 +27,8 @@ namespace CrabUI
       Draggable = true;
       CullChildren = true;
       Resizable = true;
-      Focusable = true;
-      ConsumeFocus = true;
+      // Focusable = true; //TODO2
+      // ConsumeFocus = true; //TODO2
       ConsumeMouseEvents = true;
       Background.Sprite = CUISprite.Vignette;
     }
@@ -71,7 +71,7 @@ namespace CrabUI
     {
       Commands.ListenFor("close", (_) => Close());
       MouseDoubleClick += (e) => RestoreState("lastopened");
-      OnFocus += MoveToTop;
+      // OnFocus += MoveToTop; //TODO2
     }
   }
 }

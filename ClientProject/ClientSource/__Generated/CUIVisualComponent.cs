@@ -24,13 +24,12 @@ namespace CrabUI
     void IComponent.InjectParts()
     {
       As_CUIVisualComponent.Self = this;
-      
+
       As_CUIVisualComponent.Commands.Self = this;
       As_CUIVisualComponent.ProtectedCommands.Self = this;
       As_CUIVisualComponent.Data.Self = this;
       As_CUIVisualComponent.As_Dictionary.Self = this;
       As_CUIVisualComponent.Events.Self = this;
-      As_CUIVisualComponent.IFocusableAdapter.Self = this;
       As_CUIVisualComponent.MainComponentTracker.Self = this;
       As_CUIVisualComponent.LayoutUpdateNotifier.Self = this;
       As_CUIVisualComponent.VisualRestructureNotifier.Self = this;
@@ -124,28 +123,27 @@ namespace CrabUI
       LayoutProps.GridColumn.HostPropName = "GridColumn";
     }
 
-  protected class Self_As_CUIVisualComponent : IAdapterPart
-  {
-    public CUIVisualComponent.Data_Part Data => Self.Data;
-    public CUIVisualComponent.Dictionary_Part As_Dictionary => Self.As_Dictionary;
-    public CUIVisualComponent.IFocusableAdapter_Part IFocusableAdapter => Self.IFocusableAdapter;
-    public CUIVisualComponent.LayoutUpdateNotifier_Part LayoutUpdateNotifier => Self.LayoutUpdateNotifier;
-    public CUIVisualComponent.VisualRestructureNotifier_Part VisualRestructureNotifier => Self.VisualRestructureNotifier;
-    public CUIVisualComponent.StringDictionary_Part As_StringDictionary => Self.As_StringDictionary;
-    public CUIVisualComponent.Style_Part Styles => Self.Styles;
-    public CUIVisualComponent.Adapters_Part Adapters => Self.Adapters;
-    public CUIVisualComponent.LayoutProps_Part LayoutProps => Self.LayoutProps;
-    public CUIVisualComponent.ChildrenListProxy Children => Self.Children;
-    public CUIVisualComponent.TreeOperations_Part TreeOperations => Self.TreeOperations;
-    public CUIVisualComponent.public_Commands_Part Commands => Self.Commands;
-    public CUIVisualComponent.Protected_Commands_Part ProtectedCommands => Self.ProtectedCommands;
-    public CUIVisualComponent.Events_Part Events => Self.Events;
-    public DragHandle DragHandle => Self.DragHandle;
-    public SwipeHandle SwipeHandle => Self.SwipeHandle;
-    public LayoutMarker LayoutMarker => Self.LayoutMarker;
-    public CUIVisualComponent.MainComponentTracker_Part MainComponentTracker => Self.MainComponentTracker;
-    public CUIVisualComponent.TreeEvents_Part Tree => Self.Tree;
-    public CUIVisualComponent Self { get; set; }
-  }
+    protected class Self_As_CUIVisualComponent : IAdapterPart
+    {
+      public CUIVisualComponent.Data_Part Data => Self.Data;
+      public CUIVisualComponent.Dictionary_Part As_Dictionary => Self.As_Dictionary;
+      public CUIVisualComponent.LayoutUpdateNotifier_Part LayoutUpdateNotifier => Self.LayoutUpdateNotifier;
+      public CUIVisualComponent.VisualRestructureNotifier_Part VisualRestructureNotifier => Self.VisualRestructureNotifier;
+      public CUIVisualComponent.StringDictionary_Part As_StringDictionary => Self.As_StringDictionary;
+      public CUIVisualComponent.Style_Part Styles => Self.Styles;
+      public CUIVisualComponent.Adapters_Part Adapters => Self.Adapters;
+      public CUIVisualComponent.LayoutProps_Part LayoutProps => Self.LayoutProps;
+      public CUIVisualComponent.ChildrenListProxy Children => Self.Children;
+      public CUIVisualComponent.TreeOperations_Part TreeOperations => Self.TreeOperations;
+      public CUIVisualComponent.public_Commands_Part Commands => Self.Commands;
+      public CUIVisualComponent.Protected_Commands_Part ProtectedCommands => Self.ProtectedCommands;
+      public CUIVisualComponent.Events_Part Events => Self.Events;
+      public DragHandle DragHandle => Self.DragHandle;
+      public SwipeHandle SwipeHandle => Self.SwipeHandle;
+      public LayoutMarker LayoutMarker => Self.LayoutMarker;
+      public CUIVisualComponent.MainComponentTracker_Part MainComponentTracker => Self.MainComponentTracker;
+      public CUIVisualComponent.TreeEvents_Part Tree => Self.Tree;
+      public CUIVisualComponent Self { get; set; }
+    }
   }
 }

@@ -21,8 +21,7 @@ namespace CrabUI
     void IComponent.InjectParts()
     {
       As_CUICore.Self = this;
-      
-      As_CUICore.GlobalFocusTracker.Self = this;
+
       As_CUICore.CUIRunnerHandle.Self = this;
       As_CUICore.LifeCycle.Self = this;
       As_CUICore._Reflection.Self = this;
@@ -44,14 +43,13 @@ namespace CrabUI
     {
     }
 
-  protected class Self_As_CUICore : IAdapterPart
-  {
-    public CUICore.GlobalFocusTracker_Part GlobalFocusTracker => Self.GlobalFocusTracker;
-    public CUICore.CUIRunnerHandle_Part CUIRunnerHandle => Self.CUIRunnerHandle;
-    public CUICore.LifeCycle_Part LifeCycle => Self.LifeCycle;
-    public CUICore.Reflection_Part _Reflection => Self._Reflection;
-    public EventConstructor EventConstructor => Self.EventConstructor;
-    public CUICore Self { get; set; }
-  }
+    protected class Self_As_CUICore : IAdapterPart
+    {
+      public CUICore.CUIRunnerHandle_Part CUIRunnerHandle => Self.CUIRunnerHandle;
+      public CUICore.LifeCycle_Part LifeCycle => Self.LifeCycle;
+      public CUICore.Reflection_Part _Reflection => Self._Reflection;
+      public EventConstructor EventConstructor => Self.EventConstructor;
+      public CUICore Self { get; set; }
+    }
   }
 }

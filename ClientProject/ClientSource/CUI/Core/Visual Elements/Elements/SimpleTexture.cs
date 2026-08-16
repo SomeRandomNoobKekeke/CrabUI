@@ -12,11 +12,8 @@ using System.Text.Json;
 
 namespace CrabUI
 {
-  public class SimpleTexture : VisualElementBase, CUISerializable, IFocusRequestEventConsumer
+  public class SimpleTexture : VisualElementBase, CUISerializable
   {
-    public bool ConsumeFocus { get; set; }
-    public ClearableEvent<CUIFocusRequestEvent> FocusProbed { get; } = new();
-
     private Rectangle RoundedRect;
 
     private CUIRect _Rect; public CUIRect Rect

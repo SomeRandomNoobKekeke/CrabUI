@@ -29,7 +29,7 @@ namespace CrabUI
     public GrabbedHandleTracker GrabbedHandleTracker { get; } = new();  //BRUH should this be public?
 
     public bool MouseOverSomeElement => EventTargets.TopTarget != null;
-    public IFocusable WantsToBeFocused { get; set; } //TODO it was in nested FocusTrackerPart, why did i move it up?
+
     public void DrawChildren(CUISpriteBatch spriteBatch)
     {
       ChainDrawer.Draw(spriteBatch, VisualFlattener.Flat);
@@ -98,16 +98,6 @@ namespace CrabUI
       }
 
       EventDispatcher.Dispatch(EventTargets.Targets, EventConstructor.Events);
-
-      CheckFocus(Input);
-    }
-
-    private void CheckFocus(CUIInput Input)
-    {
-      CUIFocusRequestEvent focusProbe = new CUIFocusRequestEvent(Input);
-      EventDispatcher.Dispatch(EventTargets.Targets, focusProbe);
-
-      WantsToBeFocused = focusProbe.Acceptor;
     }
 
 

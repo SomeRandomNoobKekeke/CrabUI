@@ -44,16 +44,6 @@ namespace CrabUI
         string realPath = Self.FilePathResolver.FindBestMatchForLoading(path);
         return XDocument.Load(realPath);
       }
-
-      public void GrabFocus()
-      {
-        Barotrauma.GUI.KeyboardDispatcher.Subscriber = DummyIKeyboardSubscriber;
-      }
-
-      public void ClearFocus()
-      {
-        Barotrauma.GUI.KeyboardDispatcher.Subscriber = null;
-      }
     }
   }
 

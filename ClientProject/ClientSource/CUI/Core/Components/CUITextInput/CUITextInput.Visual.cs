@@ -39,15 +39,17 @@ namespace CrabUI
     {
       _UpdateRects();
 
+      Background.Sprite = Valid ? BluredSprite : InvalidSprite;
 
+      SelectionOverlay.Color = SelectionColor * 0.5f;
+      CaretTexture.Visible = SelectionEmpty && !CaretIsHidden;
 
-      Background.Sprite = Focused ?
-        Valid ? FocusedSprite : InvalidSprite
-        : BluredSprite;
+      // Background.Sprite = Focused ?
+      //   Valid ? FocusedSprite : InvalidSprite
+      //   : BluredSprite; //TODO2
 
-      SelectionOverlay.Color = Focused ? SelectionColor : SelectionColor * 0.5f;
-
-      CaretTexture.Visible = Focused && SelectionEmpty && !CaretIsHidden;
+      // SelectionOverlay.Color = Focused ? SelectionColor : SelectionColor * 0.5f;
+      // CaretTexture.Visible = Focused && SelectionEmpty && !CaretIsHidden;
     }
 
     private void _UpdateRects()

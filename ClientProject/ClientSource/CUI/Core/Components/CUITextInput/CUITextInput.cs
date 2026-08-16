@@ -18,7 +18,7 @@ namespace CrabUI
     public class Part : IPart { public CUITextInput Self { get; set; } }
     public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUITextInput>((c) =>
     {
-      c.FocusedColor = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.8f);
+      // c.FocusedColor = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.8f); //TODO2
       c.BluredColor = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.3f);
       c.SelectionColor = c.Palette["selection"] * 0.4f;
       c.CaretColor = c.Palette["selection"];
@@ -30,10 +30,10 @@ namespace CrabUI
     protected override void InitStyle()
     {
       base.InitStyle();
-      Focusable = true;
+      // Focusable = true;//TODO2
       TextBlock.Anchor = CUIAnchor.LeftCenter;
       ConsumeMouseEvents = true;
-      ConsumeFocus = true;
+      // ConsumeFocus = true;//TODO2
       CullChildren = true;
 
       BluredSprite = CUISprite.White;
@@ -65,8 +65,8 @@ namespace CrabUI
 
     public CUITextInput() : base()
     {
-      OnFocus += HandleFocus;
-      OnFocusLost += HandleFocusLost;
+      // OnFocus += HandleFocus;//TODO2
+      // OnFocusLost += HandleFocusLost;//TODO2
 
       MouseDown += HandleMouseDown;
       MouseDoubleClick += HandleDoubleClick;

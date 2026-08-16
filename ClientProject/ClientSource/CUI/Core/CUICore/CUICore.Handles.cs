@@ -47,12 +47,6 @@ namespace CrabUI
       public OtherCUICoreResources OtherResources { get; }
 
       public bool InputBlockingMenuOpen { get; }
-
-      /// <summary>
-      /// Should steal focus from other GUI Components
-      /// </summary>
-      public void GrabFocus();
-      public void ClearFocus();
     }
 
     /// <summary>

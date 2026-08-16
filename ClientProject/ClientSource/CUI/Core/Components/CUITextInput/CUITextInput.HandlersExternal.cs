@@ -18,7 +18,7 @@ namespace CrabUI
     {
       try
       {
-        if (!Focused) return;
+        // if (!Focused) return;//TODO2 
         HandleCharacter(e.Args.Character);
       }
       catch (Exception ex)
@@ -31,7 +31,7 @@ namespace CrabUI
     {
       try
       {
-        if (!Focused) return;
+        // if (!Focused) return;//TODO2
 
         if (CUICore.Input.Keyboard.IsKeyDown(Keys.LeftControl))
         {
@@ -92,7 +92,7 @@ namespace CrabUI
     private void HandleUpdate()
     {
       CaretIsHidden = (Timing.TotalTime - LastSomethingHappenedTime) % CaretBlinkInterval > 0.5 * CaretBlinkInterval;
-      CaretTexture.Visible = Focused && SelectionEmpty && !CaretIsHidden;
+      // CaretTexture.Visible = Focused && SelectionEmpty && !CaretIsHidden;//TODO2
     }
   }
 }

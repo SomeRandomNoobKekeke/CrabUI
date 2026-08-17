@@ -81,8 +81,6 @@ namespace CrabUI
       {
         try
         {
-          RunnerMouseOnTracker.IsMouseOnVanillaGUIComponent = GUI.MouseOn != null && GUI.MouseOn != DummyComponent; //TODO get it from DataSources
-
           //TODO extract real totalTime from gameTime
           //TODO mb i should pass RunnerMouseOnTracker as arg
           Core.CUIRunnerHandle.Update(
@@ -108,6 +106,8 @@ namespace CrabUI
       {
         try
         {
+          RunnerMouseOnTracker.IsMouseOnVanillaGUIComponent = GUI.MouseOn != null && GUI.MouseOn != DummyComponent;
+
           if (Core.CUIRunnerHandle.MouseIsOnSomeCUIElement)
           {
             GUI.MouseOn = DummyComponent;

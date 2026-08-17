@@ -77,18 +77,16 @@ namespace CrabUI
         }
       };
 
-      DataSources.LifeCycle.Update += () =>
+      DataSources.LifeCycle.Update += (gameTime) =>
       {
         try
         {
           RunnerMouseOnTracker.IsMouseOnVanillaGUIComponent = GUI.MouseOn != null && GUI.MouseOn != DummyComponent; //TODO get it from DataSources
 
-          // CUI.Logger.LogVars(gameTime.TotalGameTime, Timing.TotalTime);
-
           //TODO extract real totalTime from gameTime
           //TODO mb i should pass RunnerMouseOnTracker as arg
           Core.CUIRunnerHandle.Update(
-            Timing.TotalTime,
+            gameTime.TotalGameTime.TotalSeconds,
             DataSources.Input.ScanMouse(),
             DataSources.Input.ScanKeyboard(),
             DataSources.Input.ScanTextInput()

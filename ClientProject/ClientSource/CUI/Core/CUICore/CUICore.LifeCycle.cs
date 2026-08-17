@@ -20,7 +20,7 @@ namespace CrabUI
       set => UpdateInterval = 1.0 / value;
     }
 
-    private double UpdateInterval = 1.0 / 60.0;
+    private double UpdateInterval = 1.0 / 300.0;
 
 
     public class LifeCycle_Part : Part
@@ -44,31 +44,35 @@ namespace CrabUI
       private double LastUpdateTime;
       public void Update(double totalTime, MouseState mouse, KeyboardState keyboard, TextInputEventPack textInput)
       {
+        int steps = 0;
         try
         {
-          if (totalTime - LastUpdateTime < Self.UpdateInterval) return;
-          LastUpdateTime = totalTime;
 
+          while (LastUpdateTime + Self.UpdateInterval < totalTime)
+          {
+            steps++;
+            LastUpdateTime += Self.UpdateInterval;
 
-          Stopwatch sw = Stopwatch.StartNew();
+            Stopwatch sw = Stopwatch.StartNew();
 
-          OnBeforeUpdate.Raise(totalTime);
+            OnBeforeUpdate.Raise(totalTime);
 
-          Self._Input.Update(totalTime, mouse, keyboard, textInput);
-          Self.EventConstructor.Construct(Self._Input);
+            Self._Input.Update(totalTime, mouse, keyboard, textInput);
+            Self.EventConstructor.Construct(Self._Input);
 
-          Self.TopMain.Update(totalTime, Self._Input);
-          Self.VanillaGUILayerImage.Update(Self._Input);
-          Self.Main.Update(totalTime, Self._Input);
-          Self.VanillaGUILayerImage.CommunicateCUIMouseOnToRunner();
+            Self.TopMain.Update(totalTime, Self._Input);
+            Self.VanillaGUILayerImage.Update(Self._Input);
+            Self.Main.Update(totalTime, Self._Input);
+            Self.VanillaGUILayerImage.CommunicateCUIMouseOnToRunner();
 
-          Self._AnimationPlayer.Update();
+            Self._AnimationPlayer.Update();
 
-          OnUpdate.Raise(totalTime);
+            OnUpdate.Raise(totalTime);
 
-          sw.Stop();
-          GameMain.PerformanceCounter.AddElapsedTicks("Update:CUI", sw.ElapsedTicks);
-          // CUI.Logger.Log($"Update took {sw.ElapsedTicks}");
+            sw.Stop();
+            GameMain.PerformanceCounter.AddElapsedTicks("Update:CUI", sw.ElapsedTicks);
+            // CUI.Logger.Log($"Update took {sw.ElapsedTicks}");
+          }
         }
         catch (Exception e)
         {

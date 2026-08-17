@@ -14,6 +14,15 @@ namespace CrabUI
 {
   public partial class CUICore
   {
+    public double UpdateFPS
+    {
+      get => 1.0 / UpdateInterval;
+      set => UpdateInterval = 1.0 / value;
+    }
+
+    private double UpdateInterval = 1.0 / 40.0;
+
+
     public class LifeCycle_Part : Part
     {
       public ClearableEvent<double> OnBeforeUpdate = new();
@@ -32,10 +41,15 @@ namespace CrabUI
         CUI.Stop();
       }
 
+      private double LastUpdateTime;
       public void Update(double totalTime, MouseState mouse, KeyboardState keyboard, TextInputEventPack textInput)
       {
         try
         {
+          if (totalTime - LastUpdateTime < Self.UpdateInterval) return;
+          LastUpdateTime = totalTime;
+
+
           Stopwatch sw = Stopwatch.StartNew();
 
           OnBeforeUpdate.Raise(totalTime);

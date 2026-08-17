@@ -83,6 +83,8 @@ namespace CrabUI
         {
           RunnerMouseOnTracker.IsMouseOnVanillaGUIComponent = GUI.MouseOn != null && GUI.MouseOn != DummyComponent; //TODO get it from DataSources
 
+          // CUI.Logger.LogVars(gameTime.TotalGameTime, Timing.TotalTime);
+
           //TODO extract real totalTime from gameTime
           //TODO mb i should pass RunnerMouseOnTracker as arg
           Core.CUIRunnerHandle.Update(
@@ -100,6 +102,22 @@ namespace CrabUI
         catch (Exception e)
         {
           CUI.Logger.Error($"CUI Update hook: [{e.Message}] -> Stopping CUI");
+          Disconnect();
+        }
+      };
+
+      DataSources.LifeCycle.SyncMouseOn += () =>
+      {
+        try
+        {
+          if (Core.CUIRunnerHandle.MouseIsOnSomeCUIElement)
+          {
+            GUI.MouseOn = DummyComponent;
+          }
+        }
+        catch (Exception e)
+        {
+          CUI.Logger.Error($"CUI SyncMouseOn hook: [{e.Message}] -> Stopping CUI");
           Disconnect();
         }
       };

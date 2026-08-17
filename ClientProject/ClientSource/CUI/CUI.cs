@@ -76,6 +76,11 @@ namespace CrabUI
     public static DebugHub DebugHub => CUICore.DebugHub;
     public static CUITextureManager TextureManager => Setup.Runner.TextureManager;
 
+    public static double UpdateFPS
+    {
+      get => Setup.Core.UpdateFPS;
+      set => Setup.Core.UpdateFPS = value;
+    }
 
     public static event Action<double> OnUpdate
     {

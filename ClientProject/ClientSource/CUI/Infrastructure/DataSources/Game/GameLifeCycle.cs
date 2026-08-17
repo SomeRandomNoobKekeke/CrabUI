@@ -21,7 +21,7 @@ namespace CrabUI
     private ClearableEvent<SpriteBatch> _BeforeGUIDraw = new();
     private ClearableEvent<SpriteBatch> _AfterGUIDraw = new();
     private ClearableEvent _Update = new();
-
+    private ClearableEvent _SyncMouseOn = new();
 
     public event Action<SpriteBatch> BeforeGUIDraw
     {
@@ -38,7 +38,11 @@ namespace CrabUI
       add => _Update.Add(value);
       remove => _Update.Remove(value);
     }
-
+    public event Action SyncMouseOn
+    {
+      add => _SyncMouseOn.Add(value);
+      remove => _SyncMouseOn.Remove(value);
+    }
 
 
     public static GameLifeCycle Instance;
@@ -53,7 +57,12 @@ namespace CrabUI
       Instance?._AfterGUIDraw.Raise(spriteBatch);
     }
 
-    public static void UpdateHandler()
+    public static void UpdateHandler(GameTime gameTime)
+    {
+      Instance?._Update.Raise();
+    }
+
+    public static void SyncMouseOnHandler()
     {
       // It can also be called from UpdateGUIMessageBoxesOnly
       if (CallFrom_GUI_Update) Instance?._Update.Raise();
@@ -74,6 +83,11 @@ namespace CrabUI
       );
 
       Harmony.Patch(
+        original: typeof(GameMain).GetMethod("Update", AccessTools.all),
+        postfix: new HarmonyMethod(typeof(GameLifeCycle).GetMethod("UpdateHandler"))
+      );
+
+      Harmony.Patch(
         original: typeof(GUI).GetMethod("Update", AccessTools.all),
         prefix: new HarmonyMethod(typeof(GameLifeCycle).GetMethod("GUI_Update_Prefix")),
         postfix: new HarmonyMethod(typeof(GameLifeCycle).GetMethod("GUI_Update_Postfix"))
@@ -81,7 +95,7 @@ namespace CrabUI
 
       Harmony.Patch(
         original: typeof(GUI).GetMethod("UpdateMouseOn", AccessTools.all),
-        postfix: new HarmonyMethod(typeof(GameLifeCycle).GetMethod("UpdateHandler"))
+        postfix: new HarmonyMethod(typeof(GameLifeCycle).GetMethod("SyncMouseOnHandler"))
       );
     }
 

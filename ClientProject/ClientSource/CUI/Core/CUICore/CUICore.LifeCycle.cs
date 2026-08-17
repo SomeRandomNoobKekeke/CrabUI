@@ -20,7 +20,7 @@ namespace CrabUI
       set => UpdateInterval = 1.0 / value;
     }
 
-    private double UpdateInterval = 1.0 / 40.0;
+    private double UpdateInterval = 1.0 / 60.0;
 
 
     public class LifeCycle_Part : Part

@@ -22,13 +22,11 @@ namespace CrabUI
     protected LayoutFlattener LayoutFlattener { get; } = new();
     protected ChainDrawer ChainDrawer { get; } = new();
     protected EventDispatcher EventDispatcher { get; } = new();
-    protected EventTargets EventTargets { get; } = new();
+    public EventTargets EventTargets { get; } = new();
 
 
     public EventConstructor EventConstructor { get; set; } // Injected from CUICore //TODO use CUICodeGenerator
     public GrabbedHandleTracker GrabbedHandleTracker { get; } = new();  //BRUH should this be public?
-
-    public bool MouseOverSomeElement => EventTargets.TopTarget != null;
 
     public void DrawChildren(CUISpriteBatch spriteBatch)
     {

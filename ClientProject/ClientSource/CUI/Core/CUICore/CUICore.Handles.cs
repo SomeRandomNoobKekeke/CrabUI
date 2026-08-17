@@ -58,7 +58,6 @@ namespace CrabUI
         => Self.LifeCycle.Update(totalTime, mouse, keyboard, textInput);
       public void DrawBeforeGUI(CUISpriteBatch spriteBatch) => Self.LifeCycle.DrawBeforeGUI(spriteBatch);
       public void DrawAfterGUI(CUISpriteBatch spriteBatch) => Self.LifeCycle.DrawAfterGUI(spriteBatch);
-      public bool IsMouseOnSomeCUIComponent() => Self.LifeCycle.IsMouseOnSomeCUIComponent();
 
       public void AddAssemblyInfo(CUIAssemblyInfo assemblyInfo) => Self._Reflection.AddAssemblyInfo(assemblyInfo);
     }

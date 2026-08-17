@@ -98,11 +98,6 @@ namespace CrabUI
           HandleError();
         }
       }
-
-      public bool IsMouseOnSomeCUIComponent()
-      {
-        return Self.Main.MouseOverSomeElement;
-      }
     }
 
     public LifeCycle_Part LifeCycle { get; } = new();

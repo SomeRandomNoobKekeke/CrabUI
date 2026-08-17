@@ -80,7 +80,6 @@ namespace CrabUI
             DataSources.Input.ScanKeyboard(),
             DataSources.Input.ScanTextInput()
           );
-          UpdateMouseOn();
         }
         catch (Exception e)
         {
@@ -90,13 +89,7 @@ namespace CrabUI
       };
     }
 
-    private void UpdateMouseOn()
-    {
-      if (GUI.MouseOn == null && Core.CUIRunnerHandle.IsMouseOnSomeCUIComponent())
-      {
-        GUI.MouseOn = CUI.DummyComponent;
-      }
-    }
+
 
     public void Disconnect()
     {

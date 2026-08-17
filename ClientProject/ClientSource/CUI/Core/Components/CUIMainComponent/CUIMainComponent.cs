@@ -61,7 +61,7 @@ namespace CrabUI
         UpdateLayout();
       }
 
-      if (Input is not null && Input.SomethingHappened)
+      if (Input is not null && Input.SomethingHappened) //TODO can i just check event count?
       {
         HandleInput(Input);
       }

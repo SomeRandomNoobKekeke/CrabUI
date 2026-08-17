@@ -14,6 +14,6 @@ namespace CrabUI
   {
     public event Action<SpriteBatch> BeforeGUIDraw;
     public event Action<SpriteBatch> AfterGUIDraw;
-    public event Action<GameTime> Update;
+    public event Action Update;
   }
 }

@@ -44,7 +44,9 @@ namespace CrabUI
           Self.EventConstructor.Construct(Self._Input);
 
           Self.TopMain.Update(totalTime, Self._Input);
+          Self.VanillaGUILayerImage.Update(Self._Input);
           Self.Main.Update(totalTime, Self._Input);
+          Self.VanillaGUILayerImage.CommunicateCUIMouseOnToRunner();
 
           Self._AnimationPlayer.Update();
 
@@ -99,6 +101,8 @@ namespace CrabUI
         }
       }
     }
+
+
 
     public LifeCycle_Part LifeCycle { get; } = new();
   }

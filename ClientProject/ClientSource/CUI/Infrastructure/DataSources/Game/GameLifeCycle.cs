@@ -20,7 +20,7 @@ namespace CrabUI
 
     private ClearableEvent<SpriteBatch> _BeforeGUIDraw = new();
     private ClearableEvent<SpriteBatch> _AfterGUIDraw = new();
-    private ClearableEvent<GameTime> _Update = new();
+    private ClearableEvent _Update = new();
 
 
     public event Action<SpriteBatch> BeforeGUIDraw
@@ -33,7 +33,7 @@ namespace CrabUI
       add => _AfterGUIDraw.Add(value);
       remove => _AfterGUIDraw.Remove(value);
     }
-    public event Action<GameTime> Update
+    public event Action Update
     {
       add => _Update.Add(value);
       remove => _Update.Remove(value);
@@ -53,9 +53,10 @@ namespace CrabUI
       Instance?._AfterGUIDraw.Raise(spriteBatch);
     }
 
-    public static void UpdateHandler(GameTime gameTime)
+    public static void UpdateHandler()
     {
-      Instance?._Update.Raise(gameTime);
+      // It can also be called from UpdateGUIMessageBoxesOnly
+      if (CallFrom_GUI_Update) Instance?._Update.Raise();
     }
 
     public void ConnectToGame()
@@ -73,10 +74,20 @@ namespace CrabUI
       );
 
       Harmony.Patch(
-        original: typeof(GameMain).GetMethod("Update", AccessTools.all),
+        original: typeof(GUI).GetMethod("Update", AccessTools.all),
+        prefix: new HarmonyMethod(typeof(GameLifeCycle).GetMethod("GUI_Update_Prefix")),
+        postfix: new HarmonyMethod(typeof(GameLifeCycle).GetMethod("GUI_Update_Postfix"))
+      );
+
+      Harmony.Patch(
+        original: typeof(GUI).GetMethod("UpdateMouseOn", AccessTools.all),
         postfix: new HarmonyMethod(typeof(GameLifeCycle).GetMethod("UpdateHandler"))
       );
     }
+
+    public static bool CallFrom_GUI_Update; //HACK should use transpiler to hook that call
+    public static void GUI_Update_Prefix() => CallFrom_GUI_Update = true;
+    public static void GUI_Update_Postfix() => CallFrom_GUI_Update = false;
 
     public void DisconnectFromGame()
     {

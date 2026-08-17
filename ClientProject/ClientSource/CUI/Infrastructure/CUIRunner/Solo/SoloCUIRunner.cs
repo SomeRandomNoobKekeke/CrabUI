@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Diagnostics;
 using CUILibs;
 using Barotrauma;
+using Microsoft.Xna.Framework;
 namespace CrabUI
 {
   public partial class SoloCUIRunner : ICUIRunner
@@ -12,6 +13,11 @@ namespace CrabUI
     public CUICore Core { get; set; }
     public ICUIRunnerDataSources DataSources { get; set; }
     public CUICore.CUICoreHandles CUICoreHandles { get; private set; }
+
+    public GUIButton DummyComponent = new GUIButton(new RectTransform(new Point(0, 0)))
+    {
+      Text = "DUMMY",
+    };
 
     public __CUISpriteBatch SpriteBatch { get; } = new();
     public __CUIGraphicsDevice GraphicsDevice { get; } = new();
@@ -24,6 +30,8 @@ namespace CrabUI
     public ResourceIOContext_Part ResourceIOContext { get; private set; } = new();
     public ResourceIOContextHandle_Part ResourceIOContextHandle { get; private set; } = new();
     public FilePathResolver FilePathResolver { get; private set; } = new();
+
+    public RunnerMouseOnTracker RunnerMouseOnTracker { get; private set; } = new();
 
     public CUIAssemblyAnalyzer CUIAssemblyAnalyzer { get; } = new();
 
@@ -69,17 +77,25 @@ namespace CrabUI
         }
       };
 
-      DataSources.LifeCycle.Update += (gameTime) =>
+      DataSources.LifeCycle.Update += () =>
       {
         try
         {
+          RunnerMouseOnTracker.IsMouseOnVanillaGUIComponent = GUI.MouseOn != null && GUI.MouseOn != DummyComponent; //TODO get it from DataSources
+
           //TODO extract real totalTime from gameTime
+          //TODO mb i should pass RunnerMouseOnTracker as arg
           Core.CUIRunnerHandle.Update(
             Timing.TotalTime,
             DataSources.Input.ScanMouse(),
             DataSources.Input.ScanKeyboard(),
             DataSources.Input.ScanTextInput()
           );
+
+          if (Core.CUIRunnerHandle.MouseIsOnSomeCUIElement)
+          {
+            GUI.MouseOn = DummyComponent;
+          }
         }
         catch (Exception e)
         {

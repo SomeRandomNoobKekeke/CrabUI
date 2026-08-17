@@ -21,10 +21,11 @@ namespace CrabUI
     void IComponent.InjectParts()
     {
       As_CUICore.Self = this;
-
+      
       As_CUICore.CUIRunnerHandle.Self = this;
       As_CUICore.LifeCycle.Self = this;
       As_CUICore._Reflection.Self = this;
+      As_CUICore.VanillaGUILayerImage.Self = this;
     }
 
     void IComponent.InitParts()
@@ -43,13 +44,14 @@ namespace CrabUI
     {
     }
 
-    protected class Self_As_CUICore : IAdapterPart
-    {
-      public CUICore.CUIRunnerHandle_Part CUIRunnerHandle => Self.CUIRunnerHandle;
-      public CUICore.LifeCycle_Part LifeCycle => Self.LifeCycle;
-      public CUICore.Reflection_Part _Reflection => Self._Reflection;
-      public EventConstructor EventConstructor => Self.EventConstructor;
-      public CUICore Self { get; set; }
-    }
+  protected class Self_As_CUICore : IAdapterPart
+  {
+    public CUICore.CUIRunnerHandle_Part CUIRunnerHandle => Self.CUIRunnerHandle;
+    public CUICore.LifeCycle_Part LifeCycle => Self.LifeCycle;
+    public CUICore.Reflection_Part _Reflection => Self._Reflection;
+    public CUICore.VanillaGUILayerImage_Part VanillaGUILayerImage => Self.VanillaGUILayerImage;
+    public EventConstructor EventConstructor => Self.EventConstructor;
+    public CUICore Self { get; set; }
+  }
   }
 }

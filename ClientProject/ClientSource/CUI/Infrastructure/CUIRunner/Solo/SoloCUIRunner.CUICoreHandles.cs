@@ -20,7 +20,6 @@ namespace CrabUI
         return path.EndsWith(".xml") && !Path.IsPathFullyQualified(path);
       }
 
-      private DummyIKeyboardSubscriber DummyIKeyboardSubscriber = new();
 
 
       public SoloCUIRunner Self { get; set; }
@@ -31,8 +30,11 @@ namespace CrabUI
       public CUITextureManager TextureManager => Self.TextureManager;
       public ResourceIOContextHandle ResourceIOContext => Self.ResourceIOContextHandle;
       public CUICore.OtherCUICoreResources OtherResources => Self._OtherResources;
+      public CUICore.IRunnerMouseOnTracker VanillaMouseOnTracker => Self.RunnerMouseOnTracker;
 
       public bool InputBlockingMenuOpen => Barotrauma.GUI.InputBlockingMenuOpen;
+
+
 
       public void SaveXDoc(XDocument xDoc, string path)
       {

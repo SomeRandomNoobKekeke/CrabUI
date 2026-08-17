@@ -35,6 +35,11 @@ namespace CrabUI
       public XDocument LoadXDoc(string path);
     }
 
+    public interface IRunnerMouseOnTracker
+    {
+      public bool IsMouseOnVanillaGUIComponent { get; }
+    }
+
     /// <summary>
     /// This is how CUICore interacts with CUIRunner
     /// </summary>
@@ -47,13 +52,17 @@ namespace CrabUI
       public OtherCUICoreResources OtherResources { get; }
 
       public bool InputBlockingMenuOpen { get; }
+
+      public IRunnerMouseOnTracker VanillaMouseOnTracker { get; }
     }
 
     /// <summary>
     /// This is how CUIRunner interacts with CUICore
     /// </summary>
-    public class CUIRunnerHandle_Part : Part
+    public class CUIRunnerHandle_Part : Part, ICUICoreMouseOnResponse
     {
+      public bool MouseIsOnSomeCUIElement { get; set; }
+
       public void Update(double totalTime, MouseState mouse, KeyboardState keyboard, TextInputEventPack textInput)
         => Self.LifeCycle.Update(totalTime, mouse, keyboard, textInput);
       public void DrawBeforeGUI(CUISpriteBatch spriteBatch) => Self.LifeCycle.DrawBeforeGUI(spriteBatch);

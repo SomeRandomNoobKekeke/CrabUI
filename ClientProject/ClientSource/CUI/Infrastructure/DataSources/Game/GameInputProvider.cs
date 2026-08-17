@@ -34,12 +34,8 @@ namespace CrabUI
       TextInputBuilder.KeyDownEvents.Add(args);
     }
 
-
-    public static GameInputProvider Instance;
-
     public void ConnectToGame()
     {
-      Instance = this;
       GameMain.Instance.Window.TextInput += CaptureWindowTextInput;
       GameMain.Instance.Window.KeyDown += CaptureWindowKeyDown;
 
@@ -51,7 +47,6 @@ namespace CrabUI
 
     public void DisconnectFromGame()
     {
-      Instance = null;
       GameMain.Instance.Window.TextInput -= CaptureWindowTextInput;
       GameMain.Instance.Window.KeyDown -= CaptureWindowKeyDown;
       Harmony.UnpatchSelf();

@@ -29,7 +29,7 @@ namespace CrabUI
       As_CUIVisualComponent.Self = this;
       As_CUIComponent.Self = this;
       As_CUITextInput.Self = this;
-
+      
       As_CUITextInput.SelectionHandle.Self = this;
       As_CUIVisualComponent.Commands.Self = this;
       As_CUIVisualComponent.ProtectedCommands.Self = this;
@@ -132,19 +132,19 @@ namespace CrabUI
       LayoutProps.GridColumn.HostPropName = "GridColumn";
     }
 
-    protected class Self_As_CUITextInput : IAdapterPart
-    {
-      public CUITextInput.SelectionHandle_Part SelectionHandle => Self.SelectionHandle;
-      public ResizeHandle RightResizeHandle => Self.RightResizeHandle;
-      public CUIVisualComponent.public_Commands_Part Commands => Self.Commands;
-      public CUIVisualComponent.Protected_Commands_Part ProtectedCommands => Self.ProtectedCommands;
-      public CUIVisualComponent.Events_Part Events => Self.Events;
-      public DragHandle DragHandle => Self.DragHandle;
-      public SwipeHandle SwipeHandle => Self.SwipeHandle;
-      public LayoutMarker LayoutMarker => Self.LayoutMarker;
-      public CUIVisualComponent.MainComponentTracker_Part MainComponentTracker => Self.MainComponentTracker;
-      public CUIVisualComponent.TreeEvents_Part Tree => Self.Tree;
-      public CUITextInput Self { get; set; }
-    }
+  protected class Self_As_CUITextInput : IAdapterPart
+  {
+    public CUITextInput.SelectionHandle_Part SelectionHandle => Self.SelectionHandle;
+    public ResizeHandle RightResizeHandle => Self.RightResizeHandle;
+    public CUIVisualComponent.public_Commands_Part Commands => Self.Commands;
+    public CUIVisualComponent.Protected_Commands_Part ProtectedCommands => Self.ProtectedCommands;
+    public CUIVisualComponent.Events_Part Events => Self.Events;
+    public DragHandle DragHandle => Self.DragHandle;
+    public SwipeHandle SwipeHandle => Self.SwipeHandle;
+    public LayoutMarker LayoutMarker => Self.LayoutMarker;
+    public CUIVisualComponent.MainComponentTracker_Part MainComponentTracker => Self.MainComponentTracker;
+    public CUIVisualComponent.TreeEvents_Part Tree => Self.Tree;
+    public CUITextInput Self { get; set; }
+  }
   }
 }

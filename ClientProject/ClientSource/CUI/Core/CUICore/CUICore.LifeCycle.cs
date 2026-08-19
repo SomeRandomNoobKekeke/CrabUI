@@ -73,6 +73,7 @@ namespace CrabUI
             Self.VanillaGUILayer.CommunicateCUIMouseOnToRunner();
 
             Self.FocusHandle.ResolveFocus();
+            Self.FocusHandle.DispatchKeyboadEvents();
 
             Self._AnimationPlayer.Update();
 
@@ -89,6 +90,8 @@ namespace CrabUI
           HandleError();
         }
       }
+
+
 
       public void DrawAfterGUI(CUISpriteBatch spriteBatch)
       {

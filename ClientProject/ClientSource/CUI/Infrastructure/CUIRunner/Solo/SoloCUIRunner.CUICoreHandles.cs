@@ -43,6 +43,11 @@ namespace CrabUI
         string realPath = Self.FilePathResolver.FindBestMatchForLoading(path);
         return XDocument.Load(realPath);
       }
+
+      public void GrabFocus(IFocusable focusable)
+      {
+        throw new NotImplementedException();
+      }
     }
   }
 

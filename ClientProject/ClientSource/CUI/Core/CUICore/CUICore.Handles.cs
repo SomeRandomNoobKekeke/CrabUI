@@ -50,6 +50,8 @@ namespace CrabUI
 
       public bool IsMouseOnVanillaGUIComponent { get; }
       public bool VanillaGUIComponentFocused { get; }
+
+      public void GrabFocus(IFocusable focusable);
     }
 
     /// <summary>
@@ -65,6 +67,8 @@ namespace CrabUI
       public void DrawAfterGUI(CUISpriteBatch spriteBatch) => Self.LifeCycle.DrawAfterGUI(spriteBatch);
 
       public void AddAssemblyInfo(CUIAssemblyInfo assemblyInfo) => Self._Reflection.AddAssemblyInfo(assemblyInfo);
+
+      public void ClearFocus() => Self.FocusHandle.ClearFocus();
     }
 
     /// <summary>

@@ -18,7 +18,7 @@ namespace CrabUI
     {
 
       public bool MouseOn => Self.Handles.IsMouseOnVanillaGUIComponent;
-      public bool Focused => Self.Handles.IsMouseOnVanillaGUIComponent;
+      public bool Focused => Self.Handles.VanillaGUIComponentFocused;
 
       private DummyVisualElement VanillaGUIComponentImage { get; } = new()
       {

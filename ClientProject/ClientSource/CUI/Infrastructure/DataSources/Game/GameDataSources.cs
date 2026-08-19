@@ -17,12 +17,14 @@ namespace CrabUI
     public GameLifeCycle GameLifeCycle { get; } = new();
     public GameInputProvider GameInputProvider { get; } = new();
     public GameMouseOnTracker GameMouseOnTracker { get; } = new();
+    public GameFocusTracker GameFocusTracker { get; } = new();
 
     public void ConnectToGame()
     {
       GameLifeCycle.ConnectToGame();
       GameInputProvider.ConnectToGame();
       GameMouseOnTracker.ConnectToGame();
+      GameFocusTracker.ConnectToGame();
     }
 
     public void DisconnectFromGame()
@@ -30,6 +32,7 @@ namespace CrabUI
       GameLifeCycle.DisconnectFromGame();
       GameInputProvider.DisconnectFromGame();
       GameMouseOnTracker.DisconnectFromGame();
+      GameFocusTracker.DisconnectFromGame();
     }
 
     public event Action<SpriteBatch> BeforeGUIDraw
@@ -48,12 +51,18 @@ namespace CrabUI
       remove => GameLifeCycle.Update -= value;
     }
 
-
     public event Action SyncMouseOn
     {
       add => GameMouseOnTracker.SyncMouseOn += value;
       remove => GameMouseOnTracker.SyncMouseOn -= value;
     }
+    public event Action VanillaGUIElementFocused
+    {
+      add => GameFocusTracker.VanillaGUIElementFocused += value;
+      remove => GameFocusTracker.VanillaGUIElementFocused -= value;
+    }
+
+    public void GrabFocus(IFocusable focusable) => GameFocusTracker.GrabFocus(focusable);
 
     public KeyboardState ScanKeyboard() => GameInputProvider.ScanKeyboard();
     public MouseState ScanMouse() => GameInputProvider.ScanMouse();

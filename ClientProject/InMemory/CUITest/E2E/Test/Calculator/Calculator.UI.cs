@@ -30,13 +30,12 @@ namespace CrabUIUser
           Core = core;
           Core.Changed += Refresh;
 
-          //TODO2
-          // this.KeyDownInput += HandleKeyInput;
-          // this.TextInput += HandleInput;
+          this.KeyDownInput += HandleKeyInput;
+          this.TextInput += HandleInput;
 
-          // Focusable = true;
-          // OnFocus += () => this["layout"]["handle"].As<CUIComponent>().Background.Color = new Color(0, 0, 200);
-          // OnFocusLost += () => this["layout"]["handle"].As<CUIComponent>().Background.Color = new Color(0, 0, 64);
+          Focusable = true;
+          OnFocus += () => this["layout"]["handle"].As<CUIComponent>().Background.Color = new Color(0, 0, 200);
+          OnBlur += () => this["layout"]["handle"].As<CUIComponent>().Background.Color = new Color(0, 0, 64);
 
 
           Absolute = new CUINullRect(w: 400, h: 600);

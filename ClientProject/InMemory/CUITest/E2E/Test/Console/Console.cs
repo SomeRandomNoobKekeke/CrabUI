@@ -51,7 +51,7 @@ namespace CrabUIUser
           AbsoluteMin = new CUINullRect(h: 24),
         };
 
-        // Input.KeyPressed += HandleKeyPressed;//TODO2
+        Input.KeyPressed += HandleKeyPressed;
 
         OnClose += Dispose;
 

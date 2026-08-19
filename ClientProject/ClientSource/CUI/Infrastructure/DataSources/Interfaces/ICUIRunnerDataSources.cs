@@ -19,6 +19,9 @@ namespace CrabUI
     public event Action<SpriteBatch> AfterGUIDraw;
     public event Action<GameTime> Update;
     public event Action SyncMouseOn;
+    public event Action VanillaGUIElementFocused;
+
+    public void GrabFocus(IFocusable focusable);
 
     public MouseState ScanMouse();
     public KeyboardState ScanKeyboard();

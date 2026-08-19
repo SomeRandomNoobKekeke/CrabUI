@@ -13,8 +13,21 @@ namespace CrabUI
   {
     public class FocusHandle_Part : Part
     {
+      private IFocusable _Focused; public IFocusable Focused
+      {
+        get => _Focused;
+        private set
+        {
+          if (_Focused == value) return;
+
+          if (_Focused != null) _Focused.Focused = false;
+          _Focused = value;
+          if (_Focused != null) _Focused.Focused = true;
+        }
+      }
+
       public List<IFocusable> RequestedFocus { get; } = new();
-      public List<IFocusable> RequestedBlur { get; } = new();
+      public HashSet<IFocusable> RequestedBlur { get; } = new();
 
       public void RequestFocus(IFocusable focusable)
       {
@@ -33,7 +46,30 @@ namespace CrabUI
 
       public void ResolveFocus()
       {
+        IFocusable newFocused = RequestedFocus.LastOrDefault();
 
+        if (newFocused != null)
+        {
+          Focused = newFocused;
+        }
+        else if (RequestedBlur.Contains(Focused))
+        {
+          Focused = null;
+        }
+      }
+
+      public void ClearFocus()
+      {
+        if (Focused != null) RequestBlur(Focused);
+      }
+
+      private EventDispatcher EventDispatcher { get; } = new();
+      public void DispatchKeyboadEvents()
+      {
+        if (Focused is null) return;
+        // if (CUICore.InputBlockingMenuOpen) return;
+
+        EventDispatcher.Dispatch(Focused, Self._EventConstructor.KeyboardEvents);
       }
     }
 

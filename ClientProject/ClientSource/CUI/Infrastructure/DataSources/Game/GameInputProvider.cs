@@ -38,11 +38,6 @@ namespace CrabUI
     {
       GameMain.Instance.Window.TextInput += CaptureWindowTextInput;
       GameMain.Instance.Window.KeyDown += CaptureWindowKeyDown;
-
-      // Harmony.Patch(
-      //   original: typeof(KeyboardDispatcher).GetMethod("set_Subscriber", AccessTools.all),
-      //   prefix: new HarmonyMethod(typeof(GameInputProvider).GetMethod("KeyboardDispatcher_set_Subscriber_Replace"))
-      // );
     }
 
     public void DisconnectFromGame()

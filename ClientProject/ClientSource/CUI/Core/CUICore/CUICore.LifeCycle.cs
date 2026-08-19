@@ -49,40 +49,31 @@ namespace CrabUI
       {
         if (!Self.Activated) return;
 
-        int steps = 0;
         try
         {
+          Stopwatch sw = Stopwatch.StartNew();
 
-          while (LastUpdateTime + Self.UpdateInterval < totalTime)
-          {
-            steps++;
-            LastUpdateTime += Self.UpdateInterval;
+          OnBeforeUpdate.Raise(totalTime);
 
-            Stopwatch sw = Stopwatch.StartNew();
+          Self.FocusHandle.Reset();
+          Self._Input.Update(totalTime, mouse, keyboard, textInput);
+          Self._EventConstructor.Construct(Self._Input);
 
-            OnBeforeUpdate.Raise(totalTime);
+          Self.TopMain.Update(totalTime, Self._Input);
+          Self.VanillaGUILayer.Update(Self._Input);
+          Self.Main.Update(totalTime, Self._Input);
+          Self.VanillaGUILayer.CommunicateCUIMouseOnToRunner();
 
-            Self.FocusHandle.Reset();
+          Self.FocusHandle.ResolveFocus();
+          Self.FocusHandle.DispatchKeyboadEvents();
 
-            Self._Input.Update(totalTime, mouse, keyboard, textInput);
-            Self._EventConstructor.Construct(Self._Input);
+          Self._AnimationPlayer.Update();
 
-            Self.TopMain.Update(totalTime, Self._Input);
-            Self.VanillaGUILayer.Update(Self._Input);
-            Self.Main.Update(totalTime, Self._Input);
-            Self.VanillaGUILayer.CommunicateCUIMouseOnToRunner();
+          OnUpdate.Raise(totalTime);
 
-            Self.FocusHandle.ResolveFocus();
-            Self.FocusHandle.DispatchKeyboadEvents();
-
-            Self._AnimationPlayer.Update();
-
-            OnUpdate.Raise(totalTime);
-
-            sw.Stop();
-            GameMain.PerformanceCounter.AddElapsedTicks("Update:CUI", sw.ElapsedTicks);
-            // CUI.Logger.Log($"Update took {sw.ElapsedTicks}");
-          }
+          sw.Stop();
+          GameMain.PerformanceCounter.AddElapsedTicks("Update:CUI", sw.ElapsedTicks);
+          // CUI.Logger.Log($"Update took {sw.ElapsedTicks}");
         }
         catch (Exception e)
         {

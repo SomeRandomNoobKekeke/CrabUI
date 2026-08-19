@@ -16,18 +16,22 @@ namespace CrabUI
   {
     public class VanillaGUILayerImage_Part : Part
     {
+
+      public bool MouseOn => Self.Handles.IsMouseOnVanillaGUIComponent;
+      public bool Focused => Self.Handles.IsMouseOnVanillaGUIComponent;
+
       private DummyVisualElement VanillaGUIComponentImage { get; } = new()
       {
         ConsumeMouseEvents = true,
       };
 
-      public EventDispatcher EventDispatcher { get; } = new();
+      private EventDispatcher EventDispatcher { get; } = new();
 
       public void Update(CUIInput Input)
       {
-        if (Input.SomethingHappened && Self.Handles.VanillaMouseOnTracker.IsMouseOnVanillaGUIComponent)
+        if (Input.SomethingHappened && Self.Handles.IsMouseOnVanillaGUIComponent)
         {
-          EventDispatcher.Dispatch(VanillaGUIComponentImage, Self.EventConstructor.Events);
+          EventDispatcher.Dispatch(VanillaGUIComponentImage, Self._EventConstructor.Events);
         }
       }
 
@@ -35,13 +39,10 @@ namespace CrabUI
       {
         Self.CUIRunnerHandle.MouseIsOnSomeCUIElement =
           Self.TopMain.EventTargets.TopTarget != null ||
-          (
-            !Self.Handles.VanillaMouseOnTracker.IsMouseOnVanillaGUIComponent &&
-            Self.Main.EventTargets.TopTarget != null
-          );
+          !MouseOn && Self.Main.EventTargets.TopTarget != null;
       }
     }
 
-    private VanillaGUILayerImage_Part VanillaGUILayerImage { get; } = new();
+    private VanillaGUILayerImage_Part VanillaGUILayer { get; } = new();
   }
 }

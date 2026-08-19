@@ -49,17 +49,7 @@ namespace CrabUI
     public static Rectangle GameScreenRect => Core.GameScreenRect;
 
 
-    private static CUISetup _Setup; public static CUISetup Setup
-    {
-      get
-      {
-        return _Setup;
-      }
-      set
-      {
-        _Setup = value;
-      }
-    }
+    public static CUISetup Setup { get; set; }
     public static CUICore Core => Setup.Core;
 
 

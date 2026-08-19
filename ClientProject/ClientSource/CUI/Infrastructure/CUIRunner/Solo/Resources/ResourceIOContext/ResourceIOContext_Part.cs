@@ -12,23 +12,22 @@ namespace CrabUI
 {
   public partial class SoloCUIRunner
   {
-    public class ResourceIOContextHandle_Part : ResourceIOContextHandle
+    public class ResourceIOContext_Part : Part, ResourceIOContext
     {
-      public SoloCUIRunner Self { get; set; }
-      public Assembly CallingAssembly
+      public string? PackageDir
       {
         set
         {
-          Self.ResourceIOContext.PackageDir = value is null ?
-            "" :
-            Self.DirLookup.GetPackageDir(value);
+          Self.TextureManager.Context.PackageDir = value;
+          Self.FilePathResolver.PackageDir = value;
         }
       }
       public string? FileDir
       {
         set
         {
-          Self.ResourceIOContext.FileDir = value;
+          Self.TextureManager.Context.FileDir = value;
+          Self.FilePathResolver.FileDir = value;
         }
       }
     }

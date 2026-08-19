@@ -13,7 +13,7 @@ using EventInput;
 
 namespace CrabUI
 {
-  public class GameInputProvider : IInputProvider
+  public class GameInputProvider
   {
     public Harmony Harmony { get; } = new Harmony($"{ModInfo.HookId}.CUI.Input");
 

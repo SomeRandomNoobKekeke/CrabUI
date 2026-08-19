@@ -25,6 +25,8 @@ namespace CrabUI
     {
       public CUICore.IEffectPack Effects { get; } = new LazyLoadedEffects();
     }
+
+    public OtherResources _OtherResources { get; } = new();
   }
 
   public class LazyLoadedEffects : CUICore.IEffectPack

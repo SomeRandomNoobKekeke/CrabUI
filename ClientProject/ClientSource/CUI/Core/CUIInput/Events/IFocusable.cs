@@ -10,11 +10,10 @@ using CUILibs;
 
 namespace CrabUI
 {
-  // public interface IFocusable : IEventConsumer
-  // {
-  //   public bool Focused { get; set; }
-  //   public bool ManuallyFocused { get; set; }
-  //   public ClearableEvent OnFocus { get; }
-  //   public ClearableEvent OnFocusLost { get; }
-  // }
+  public interface IFocusable : IEventConsumer
+  {
+    public bool Focused { get; set; }
+    public void Focus();
+    public void Blur();
+  }
 }

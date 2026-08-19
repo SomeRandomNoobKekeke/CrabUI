@@ -14,58 +14,30 @@ using Barotrauma.LuaCs;
 
 namespace CrabUI
 {
-  public class GameLifeCycle : IGameLifeCycleTracker
+  public class GameLifeCycle
   {
+    public static GameLifeCycle Instance;
     public Harmony Harmony { get; } = new Harmony($"{ModInfo.HookId}.CUI.LifeCycle");
 
-    private ClearableEvent<SpriteBatch> _BeforeGUIDraw = new();
-    private ClearableEvent<SpriteBatch> _AfterGUIDraw = new();
-    private ClearableEvent<GameTime> _Update = new();
-    private ClearableEvent _SyncMouseOn = new();
-
-    public event Action<SpriteBatch> BeforeGUIDraw
-    {
-      add => _BeforeGUIDraw.Add(value);
-      remove => _BeforeGUIDraw.Remove(value);
-    }
-    public event Action<SpriteBatch> AfterGUIDraw
-    {
-      add => _AfterGUIDraw.Add(value);
-      remove => _AfterGUIDraw.Remove(value);
-    }
-    public event Action<GameTime> Update
-    {
-      add => _Update.Add(value);
-      remove => _Update.Remove(value);
-    }
-    public event Action SyncMouseOn
-    {
-      add => _SyncMouseOn.Add(value);
-      remove => _SyncMouseOn.Remove(value);
-    }
+    public event Action<SpriteBatch> BeforeGUIDraw;
+    public event Action<SpriteBatch> AfterGUIDraw;
+    public event Action<GameTime> Update;
 
 
-    public static GameLifeCycle Instance;
 
     public static void BeforeGUIDrawHandler(Camera cam, SpriteBatch spriteBatch)
     {
-      Instance?._BeforeGUIDraw.Raise(spriteBatch);
+      Instance?.BeforeGUIDraw?.Invoke(spriteBatch);
     }
 
     public static void AfterGUIDrawHandler(SpriteBatch spriteBatch)
     {
-      Instance?._AfterGUIDraw.Raise(spriteBatch);
+      Instance?.AfterGUIDraw?.Invoke(spriteBatch);
     }
 
     public static void UpdateHandler(GameTime gameTime)
     {
-      Instance?._Update.Raise(gameTime);
-    }
-
-    public static void SyncMouseOnHandler()
-    {
-      // It can also be called from UpdateGUIMessageBoxesOnly
-      if (CallFrom_GUI_Update) Instance?._SyncMouseOn.Raise();
+      Instance?.Update?.Invoke(gameTime);
     }
 
     public void ConnectToGame()
@@ -74,34 +46,19 @@ namespace CrabUI
 
       Harmony.Patch(
         original: typeof(GUI).GetMethod("Draw"),
-        prefix: new HarmonyMethod(typeof(GameLifeCycle).GetMethod("BeforeGUIDrawHandler"))
+        prefix: new HarmonyMethod(GetType().GetMethod("BeforeGUIDrawHandler"))
       );
 
       Harmony.Patch(
         original: typeof(GUI).GetMethod("DrawCursor", AccessTools.all),
-        prefix: new HarmonyMethod(typeof(GameLifeCycle).GetMethod("AfterGUIDrawHandler"))
+        prefix: new HarmonyMethod(GetType().GetMethod("AfterGUIDrawHandler"))
       );
 
       Harmony.Patch(
         original: typeof(GameMain).GetMethod("Update", AccessTools.all),
-        prefix: new HarmonyMethod(typeof(GameLifeCycle).GetMethod("UpdateHandler"))
-      );
-
-      Harmony.Patch(
-        original: typeof(GUI).GetMethod("Update", AccessTools.all),
-        prefix: new HarmonyMethod(typeof(GameLifeCycle).GetMethod("GUI_Update_Prefix")),
-        postfix: new HarmonyMethod(typeof(GameLifeCycle).GetMethod("GUI_Update_Postfix"))
-      );
-
-      Harmony.Patch(
-        original: typeof(GUI).GetMethod("UpdateMouseOn", AccessTools.all),
-        postfix: new HarmonyMethod(typeof(GameLifeCycle).GetMethod("SyncMouseOnHandler"))
+        prefix: new HarmonyMethod(GetType().GetMethod("UpdateHandler"))
       );
     }
-
-    public static bool CallFrom_GUI_Update; //HACK should use transpiler to hook that call
-    public static void GUI_Update_Prefix() => CallFrom_GUI_Update = true;
-    public static void GUI_Update_Postfix() => CallFrom_GUI_Update = false;
 
     public void DisconnectFromGame()
     {

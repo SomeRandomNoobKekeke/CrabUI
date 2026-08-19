@@ -13,54 +13,40 @@ namespace CrabUI
   {
     public class Part : IPart { public CUICore Self { get; set; } }
 
-    public CUIStyleManager CUIStyleManager { get; private set; }
-    public CUIPalettes CUIPalettes { get; private set; }
-
-    private Rectangle _GameScreenRect; public Rectangle GameScreenRect
+    public Rectangle GameScreenRect
     {
-      get => _GameScreenRect;
-      set
-      {
-        _GameScreenRect = value;
-        if (_Activated) UpdateGameScreenRect();
-      }
+      get => MainComponents.GameScreenRect;
+      set => MainComponents.GameScreenRect = value;
     }
 
-    public CUIMainComponent Main { get; private set; }
-    public CUIMainComponent TopMain { get; private set; }
-    public CUIInput _Input { get; private set; } = new();
-    public EventConstructor EventConstructor { get; private set; }
-    public AnimationPlayer _AnimationPlayer { get; private set; }
+    private CUIStyleManager CUIStyleManager;
+    private CUIPalettes _Palettes;
 
-    public CUIParser _CUIParser { get; private set; } = new();
-    public CUISerializer _CUISerializer { get; private set; } = new();
-    public CUIAssemblyAnalyzer CUIAssemblyAnalyzer { get; } = new();
+    public CUIMainComponent Main => MainComponents.Main;
+    public CUIMainComponent TopMain => MainComponents.TopMain;
+
+    private CUIInput _Input = new();
+    private EventConstructor _EventConstructor;
+    private AnimationPlayer _AnimationPlayer;
+    private CUIParser _CUIParser = new();
+    private CUISerializer _CUISerializer = new();
+    private CUIAssemblyAnalyzer CUIAssemblyAnalyzer = new();
 
 
 
-    private void UpdateGameScreenRect()
-    {
-      Main.Rect = new CUIRect(GameScreenRect.Left, GameScreenRect.Top, GameScreenRect.Width, GameScreenRect.Height);
-      TopMain.Rect = new CUIRect(GameScreenRect.Left, GameScreenRect.Top, GameScreenRect.Width, GameScreenRect.Height);
-    }
 
-    public CUICore()
-    {
-      this.Inject();
-    }
-
-    private bool _Activated;
+    private bool Activated;
     //Note: this exists primarily because DebugNodes may call DebugHub on creation
     internal void Activate()
     {
-      if (_Activated) return;
+      if (Activated) return;
 
       try
       {
         CUIStyleManager = new(Reflection.TypeTree);
-        CUIPalettes = new();
+        _Palettes = new();
 
-        EventConstructor = new();
+        _EventConstructor = new();
         _AnimationPlayer = new();
 
         //CUICore analyzes itself because it needs infos for MainComponents right here
@@ -68,14 +54,11 @@ namespace CrabUI
           CUIAssemblyAnalyzer.AnalyzeAssembly(typeof(CUICore).Assembly)
         );
 
-        Main = new() { EventConstructor = EventConstructor };
-        TopMain = new() { EventConstructor = EventConstructor };
-
-        UpdateGameScreenRect();
+        MainComponents.Setup();
 
         InitDebug();
 
-        _Activated = true;
+        Activated = true;
       }
       catch (Exception e)
       {
@@ -84,6 +67,11 @@ namespace CrabUI
         CUI.Stop();
         if (CUI.ErrorHandlingStrategy == ErrorHandlingStrategy.FailFast) throw;
       }
+    }
+
+    public CUICore()
+    {
+      this.Inject();
     }
   }
 }

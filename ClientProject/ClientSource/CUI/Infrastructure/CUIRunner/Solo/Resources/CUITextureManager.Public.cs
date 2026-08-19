@@ -18,7 +18,7 @@ namespace CrabUI
     /// This one is supposed to be used by user
     /// It tracks assembly that it was called from
     /// </summary>
-    public class CUITextureManager_PublicPart : CUITextureManager
+    public class CUITextureManager_PublicPart : Part, CUITextureManager
     {
       public CUIRenderTarget2D CreateNewRenderTarget(int width, int height, string key = null)
         => Self.TextureManager.CreateNewRenderTarget(width, height, key);
@@ -28,8 +28,6 @@ namespace CrabUI
 
       public CUITexture2D CreateNew(int width, int height, bool mipmap, SurfaceFormat format, string key = null)
         => Self.TextureManager.CreateNew(width, height, mipmap, format, key);
-
-      public SoloCUIRunner Self { get; set; }
 
       public CUITexture2D Add(CUITexture2D texture, string key) => Self.TextureManager.Add(texture, key);
       public void Clear() => Self.TextureManager.Clear();

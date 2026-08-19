@@ -31,6 +31,7 @@ namespace CrabUI
       As_CUIComponent.Self = this;
       As_CUIMainComponent.Self = this;
       
+      As_CUIMainComponent.FocusHandle.Self = this;
       As_CUIMainComponent.GlobalEvents.Self = this;
       As_CUIVisualComponent.Commands.Self = this;
       As_CUIVisualComponent.ProtectedCommands.Self = this;
@@ -134,6 +135,7 @@ namespace CrabUI
 
   protected class Self_As_CUIMainComponent : IAdapterPart
   {
+    public CUIMainComponent.FocusHandle_Part FocusHandle => Self.FocusHandle;
     public CUIMainComponent.GlobalEvents_Part GlobalEvents => Self.GlobalEvents;
     public VisualFlattener VisualFlattener => Self.VisualFlattener;
     public LayoutFlattener LayoutFlattener => Self.LayoutFlattener;

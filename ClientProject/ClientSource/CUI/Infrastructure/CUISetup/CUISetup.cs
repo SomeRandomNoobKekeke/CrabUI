@@ -19,6 +19,7 @@ namespace CrabUI
     {
       if (!Started)
       {
+        DataSources.ConnectToGame();
         Runner.Connect();
         Core.Activate();
         Started = true;
@@ -30,7 +31,9 @@ namespace CrabUI
     public void Stop()
     {
       if (!Started) return;
+
       Runner.Disconnect();
+      DataSources.DisconnectFromGame();
       Started = false;
     }
 

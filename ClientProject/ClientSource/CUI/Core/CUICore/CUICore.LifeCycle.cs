@@ -30,12 +30,15 @@ namespace CrabUI
       public ClearableEvent<CUISpriteBatch> OnDrawAfterGUI = new();
       public ClearableEvent<CUISpriteBatch> OnDrawBeforeGUI = new();
 
-      public int MaxErrorCount = 10;
+      public int MaxErrorCount = 5;
       public int ErrorCount = 0;
 
       private void HandleError()
       {
         if (ErrorCount++ < MaxErrorCount) return;
+
+        Self.Activated = false;
+
         CUI.Logger.Warning($"More than [{MaxErrorCount}] errors happened in CUICore.LifeCycle");
         CUI.Logger.Warning($"Stopping CUI");
         CUI.Stop();
@@ -44,6 +47,8 @@ namespace CrabUI
       private double LastUpdateTime;
       public void Update(double totalTime, MouseState mouse, KeyboardState keyboard, TextInputEventPack textInput)
       {
+        if (!Self.Activated) return;
+
         int steps = 0;
         try
         {
@@ -57,13 +62,17 @@ namespace CrabUI
 
             OnBeforeUpdate.Raise(totalTime);
 
+            Self.FocusHandle.Reset();
+
             Self._Input.Update(totalTime, mouse, keyboard, textInput);
-            Self.EventConstructor.Construct(Self._Input);
+            Self._EventConstructor.Construct(Self._Input);
 
             Self.TopMain.Update(totalTime, Self._Input);
-            Self.VanillaGUILayerImage.Update(Self._Input);
+            Self.VanillaGUILayer.Update(Self._Input);
             Self.Main.Update(totalTime, Self._Input);
-            Self.VanillaGUILayerImage.CommunicateCUIMouseOnToRunner();
+            Self.VanillaGUILayer.CommunicateCUIMouseOnToRunner();
+
+            Self.FocusHandle.ResolveFocus();
 
             Self._AnimationPlayer.Update();
 
@@ -83,6 +92,8 @@ namespace CrabUI
 
       public void DrawAfterGUI(CUISpriteBatch spriteBatch)
       {
+        if (!Self.Activated) return;
+
         try
         {
           Stopwatch sw = Stopwatch.StartNew();
@@ -102,6 +113,8 @@ namespace CrabUI
 
       public void DrawBeforeGUI(CUISpriteBatch spriteBatch)
       {
+        if (!Self.Activated) return;
+
         try
         {
           Stopwatch sw = Stopwatch.StartNew();

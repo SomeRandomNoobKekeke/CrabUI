@@ -15,8 +15,6 @@ namespace CrabUI
 {
   public class GameInputProvider
   {
-    public Harmony Harmony { get; } = new Harmony($"{ModInfo.HookId}.CUI.Input");
-
     TextInputEventPackBuilder TextInputBuilder = new();
 
 
@@ -44,7 +42,6 @@ namespace CrabUI
     {
       GameMain.Instance.Window.TextInput -= CaptureWindowTextInput;
       GameMain.Instance.Window.KeyDown -= CaptureWindowKeyDown;
-      Harmony.UnpatchSelf();
     }
   }
 }

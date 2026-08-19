@@ -38,6 +38,8 @@ namespace CrabUI
       public ClearableEvent<CUIKeyReleasedEvent> KeyReleased { get; } = new();
       public ClearableEvent<CUITextInputEvent> TextInput { get; } = new();
       public ClearableEvent<CUIKeyDownInputEvent> KeyDownInput { get; } = new();
+
+      public override string ToString() => $"{Self} Focus Handle";
     }
 
     protected FocusHandle_Part FocusHandle { get; } = new();

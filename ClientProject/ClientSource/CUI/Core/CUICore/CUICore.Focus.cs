@@ -51,8 +51,16 @@ namespace CrabUI
         if (newFocused != null)
         {
           Focused = newFocused;
+          return;
         }
-        else if (RequestedBlur.Contains(Focused))
+
+        if (RequestedBlur.Contains(Focused))
+        {
+          Focused = null;
+          return;
+        }
+
+        if (Self._Input.Mouse.M1.Down)
         {
           Focused = null;
         }
@@ -60,7 +68,7 @@ namespace CrabUI
 
       public void ClearFocus()
       {
-        if (Focused != null) RequestBlur(Focused);
+        Focused = null;
       }
 
       private EventDispatcher EventDispatcher { get; } = new();
@@ -68,7 +76,6 @@ namespace CrabUI
       {
         if (Focused is null) return;
         // if (CUICore.InputBlockingMenuOpen) return;
-
         EventDispatcher.Dispatch(Focused, Self._EventConstructor.KeyboardEvents);
       }
     }

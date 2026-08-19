@@ -89,6 +89,7 @@ namespace CrabUI
       EventDispatcher.Dispatch(entered, EventConstructor.MouseEnterEvent);
 
       EventDispatcher.Dispatch(GlobalEvents, EventConstructor.Events);
+      EventDispatcher.Dispatch(GlobalEvents, EventConstructor.KeyboardEvents);
 
       if (!CUICore.InputBlockingMenuOpen)
       {

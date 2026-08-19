@@ -24,7 +24,7 @@ namespace CrabUI
       catch (Exception e)
       {
         CUI.Logger.Error($"CUI AfterGUIDraw hook: [{e.Message}] -> Stopping CUI");
-        Disconnect();
+        CUI.Stop();
       }
     }
 
@@ -38,7 +38,7 @@ namespace CrabUI
       catch (Exception e)
       {
         CUI.Logger.Error($"CUI BeforeGUIDraw hook: [{e.Message}] -> Stopping CUI");
-        Disconnect();
+        CUI.Stop();
       }
     }
 
@@ -63,7 +63,7 @@ namespace CrabUI
       catch (Exception e)
       {
         CUI.Logger.Error($"CUI Update hook: [{e.Message}] -> Stopping CUI");
-        Disconnect();
+        CUI.Stop();
       }
     }
 
@@ -82,7 +82,20 @@ namespace CrabUI
       catch (Exception e)
       {
         CUI.Logger.Error($"CUI SyncMouseOn hook: [{e.Message}] -> Stopping CUI");
-        Disconnect();
+        CUI.Stop();
+      }
+    }
+
+    private void ClearCUIFocus()
+    {
+      try
+      {
+        Core.CUIRunnerHandle.ClearFocus();
+      }
+      catch (Exception e)
+      {
+        CUI.Logger.Error($"CUI ClearCUIFocus hook: [{e.Message}] -> Stopping CUI");
+        CUI.Stop();
       }
     }
 

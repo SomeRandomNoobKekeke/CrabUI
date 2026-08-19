@@ -30,6 +30,7 @@ namespace CrabUI
       As_CUIVisualComponent.Data.Self = this;
       As_CUIVisualComponent.As_Dictionary.Self = this;
       As_CUIVisualComponent.Events.Self = this;
+      As_CUIVisualComponent.FocusHandle.Self = this;
       As_CUIVisualComponent.MainComponentTracker.Self = this;
       As_CUIVisualComponent.LayoutUpdateNotifier.Self = this;
       As_CUIVisualComponent.VisualRestructureNotifier.Self = this;
@@ -50,6 +51,7 @@ namespace CrabUI
 
     void IComponent.InitParts()
     {
+      As_CUIVisualComponent.FocusHandle.Init();
       As_CUIVisualComponent.Styles.Init();
     }
 
@@ -127,6 +129,7 @@ namespace CrabUI
   {
     public CUIVisualComponent.Data_Part Data => Self.Data;
     public CUIVisualComponent.Dictionary_Part As_Dictionary => Self.As_Dictionary;
+    public CUIVisualComponent.FocusHandle_Part FocusHandle => Self.FocusHandle;
     public CUIVisualComponent.LayoutUpdateNotifier_Part LayoutUpdateNotifier => Self.LayoutUpdateNotifier;
     public CUIVisualComponent.VisualRestructureNotifier_Part VisualRestructureNotifier => Self.VisualRestructureNotifier;
     public CUIVisualComponent.StringDictionary_Part As_StringDictionary => Self.As_StringDictionary;

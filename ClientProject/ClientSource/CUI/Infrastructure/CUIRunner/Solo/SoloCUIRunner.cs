@@ -56,6 +56,7 @@ namespace CrabUI
       DataSources.BeforeGUIDraw += BeforeGUIDrawHook;
       DataSources.Update += UpdateHook;
       DataSources.SyncMouseOn += SyncMouseOn;
+      DataSources.VanillaGUIElementFocused += ClearCUIFocus;
     }
 
     private void DetachHooks()
@@ -64,6 +65,7 @@ namespace CrabUI
       DataSources.BeforeGUIDraw -= BeforeGUIDrawHook;
       DataSources.Update -= UpdateHook;
       DataSources.SyncMouseOn -= SyncMouseOn;
+      DataSources.VanillaGUIElementFocused -= ClearCUIFocus;
     }
 
     public void Disconnect()

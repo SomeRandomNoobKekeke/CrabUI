@@ -70,36 +70,21 @@ namespace CrabUI
 
       if (_._subscriber == value) { return false; }
 
-      //CUI can handle blur on its own
-      if (_._subscriber == Instance.DummyIKeyboardSubscriber && value == null) return false;
-
       if (_._subscriber is GUITextBox)
       {
-        TextInput.StopTextInput();
-        CUI.Logger.Print($"StopTextInput [{value}]", Color.Yellow);
         _._subscriber.Selected = false; // this prop also sets _subscriber = null, bruh
       }
 
-      if (_._subscriber == Instance.DummyIKeyboardSubscriber)
+      if (_._subscriber != null && value == null)
       {
         TextInput.StopTextInput();
-        CUI.Logger.Print($"StopTextInput [{value}]", Color.Yellow);
       }
-
-
-      if (value is GUITextBox box)
+      if (_._subscriber == null && value != null)
       {
-        TextInput.SetTextInputRect(box.MouseRect);
-        TextInput.StartTextInput();
-        CUI.Logger.Print($"StartTextInput [{value}]", Color.Yellow);
-        TextInput.SetTextInputRect(box.MouseRect);
-      }
-
-      if (value == Instance.DummyIKeyboardSubscriber)
-      {
-        CUI.Logger.Print($"StartTextInput [{value}]", Color.Yellow);
         TextInput.StartTextInput();
       }
+
+      if (value is GUITextBox box) TextInput.SetTextInputRect(box.MouseRect);
 
       _._subscriber = value;
       // CUI.Logger.Print($"_._subscriber = value [{value}]", Color.Lime);

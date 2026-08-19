@@ -58,12 +58,14 @@ namespace CrabUI
         if (RequestedBlur.Contains(Focused))
         {
           Focused = null;
+          Self.Handles.GrabFocus(Focused);
           return;
         }
 
         if (Self._Input.Mouse.M1.Down)
         {
           Focused = null;
+          Self.Handles.GrabFocus(Focused);
         }
       }
 

@@ -13,6 +13,12 @@ namespace CrabUI
 {
   public class EventConstructor : IModule
   {
+    public CUIDebugNode<List<InputEvent>> Debug_MouseEvents { get; } = new(DebugCategory.MouseEvents)
+    { IsOpen = true, MsgFactory = (events) => String.Join(", ", events), };
+
+    public CUIDebugNode<List<InputEvent>> Debug_KeyboardEvents { get; } = new(DebugCategory.KeyboardEvents)
+    { IsOpen = true, MsgFactory = (events) => String.Join(", ", events), };
+
     public List<InputEvent> Events { get; } = new();
     public List<InputEvent> KeyboardEvents { get; } = new();
 
@@ -71,7 +77,8 @@ namespace CrabUI
         KeyboardEvents.Add(new CUIKeyDownInputEvent(args, input.Keyboard));
       }
 
-      // if (Events.Count != 0) Debug_Events.Send(Events);
+      if (Events.Count != 0) Debug_MouseEvents.Send(Events);
+      if (KeyboardEvents.Count != 0) Debug_KeyboardEvents.Send(KeyboardEvents);
     }
   }
 }

@@ -26,5 +26,7 @@ namespace CrabUI
 
     public static string LayoutUpdated = "Layout Updated";
     public static string RectSet = "Rect Set";
+    public static string MouseEvents = "Mouse Events";
+    public static string KeyboardEvents = "Keyboard Events";
   }
 }

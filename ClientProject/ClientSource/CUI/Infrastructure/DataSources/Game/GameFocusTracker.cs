@@ -48,20 +48,20 @@ namespace CrabUI
         prefix: new HarmonyMethod(GetType().GetMethod("KeyboardDispatcher_set_Subscriber_Replace"))
       );
 
-      Harmony.Patch(
-        original: typeof(KeyboardDispatcher).GetMethod("EventInput_TextEditing", AccessTools.all),
-        prefix: new HarmonyMethod(GetType().GetMethod("BlockInputPatch"))
-      );
+      // Harmony.Patch(
+      //   original: typeof(KeyboardDispatcher).GetMethod("EventInput_TextEditing", AccessTools.all),
+      //   prefix: new HarmonyMethod(GetType().GetMethod("BlockInputPatch"))
+      // );
 
-      Harmony.Patch(
-        original: typeof(KeyboardDispatcher).GetMethod("EventInput_KeyDown", AccessTools.all),
-        prefix: new HarmonyMethod(GetType().GetMethod("BlockInputPatch"))
-      );
+      // Harmony.Patch(
+      //   original: typeof(KeyboardDispatcher).GetMethod("EventInput_KeyDown", AccessTools.all),
+      //   prefix: new HarmonyMethod(GetType().GetMethod("BlockInputPatch"))
+      // );
 
-      Harmony.Patch(
-        original: typeof(KeyboardDispatcher).GetMethod("EventInput_CharEntered", AccessTools.all),
-        prefix: new HarmonyMethod(GetType().GetMethod("BlockInputPatch"))
-      );
+      // Harmony.Patch(
+      //   original: typeof(KeyboardDispatcher).GetMethod("EventInput_CharEntered", AccessTools.all),
+      //   prefix: new HarmonyMethod(GetType().GetMethod("BlockInputPatch"))
+      // );
     }
 
     public static bool KeyboardDispatcher_set_Subscriber_Replace(KeyboardDispatcher __instance, IKeyboardSubscriber value)
@@ -70,36 +70,59 @@ namespace CrabUI
 
       if (_._subscriber == value) { return false; }
 
+      //CUI can handle blur on its own
+      if (_._subscriber == Instance.DummyIKeyboardSubscriber && value == null) return false;
+
       if (_._subscriber is GUITextBox)
       {
-        InputBlocked = true; //TextInput.StopTextInput();
-        _._subscriber.Selected = false;
+        TextInput.StopTextInput();
+        CUI.Logger.Print($"StopTextInput [{value}]", Color.Yellow);
+        _._subscriber.Selected = false; // this prop also sets _subscriber = null, bruh
       }
+
+      if (_._subscriber == Instance.DummyIKeyboardSubscriber)
+      {
+        TextInput.StopTextInput();
+        CUI.Logger.Print($"StopTextInput [{value}]", Color.Yellow);
+      }
+
 
       if (value is GUITextBox box)
       {
         TextInput.SetTextInputRect(box.MouseRect);
         TextInput.StartTextInput();
+        CUI.Logger.Print($"StartTextInput [{value}]", Color.Yellow);
         TextInput.SetTextInputRect(box.MouseRect);
-        InputBlocked = false;
+      }
+
+      if (value == Instance.DummyIKeyboardSubscriber)
+      {
+        CUI.Logger.Print($"StartTextInput [{value}]", Color.Yellow);
+        TextInput.StartTextInput();
       }
 
       _._subscriber = value;
+      // CUI.Logger.Print($"_._subscriber = value [{value}]", Color.Lime);
+
       if (value != null)
       {
         value.Selected = true;
-        Instance?.VanillaGUIElementFocused?.Invoke();
+
+        if (value != Instance.DummyIKeyboardSubscriber)
+        {
+          Instance?.VanillaGUIElementFocused?.Invoke();
+        }
       }
 
       return false;
     }
 
     // instead of app wide TextInput.StopTextInput();
-    public static bool InputBlocked { get; set; }
-    public static bool BlockInputPatch(KeyboardDispatcher __instance)
-    {
-      return __instance is null || !InputBlocked;
-    }
+    // public static bool InputBlocked { get; set; }
+    // public static bool BlockInputPatch(KeyboardDispatcher __instance)
+    // {
+    //   return __instance is null || !InputBlocked;
+    // }
 
 
 

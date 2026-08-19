@@ -46,7 +46,7 @@ namespace CrabUI
 
       public void GrabFocus(IFocusable focusable)
       {
-        throw new NotImplementedException();
+        Self.DataSources.GrabFocus(focusable);
       }
     }
   }

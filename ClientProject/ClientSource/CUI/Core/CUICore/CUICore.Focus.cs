@@ -51,6 +51,7 @@ namespace CrabUI
         if (newFocused != null)
         {
           Focused = newFocused;
+          Self.Handles.GrabFocus(Focused);
           return;
         }
 

@@ -13,7 +13,7 @@ namespace CrabUIUser
 {
   public partial class SnapshotTests
   {
-    public static partial class Random
+    public static partial class Components
     {
       public static CUIComponent CUITextBox()
       {

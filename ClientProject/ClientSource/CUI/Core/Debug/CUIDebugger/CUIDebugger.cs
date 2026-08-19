@@ -23,7 +23,7 @@ namespace CrabUI
     private CUIRadioButton DrawEventFlow;
     private CUIRadioButton UpdateEventFlow;
 
-
+    public CUIDirection Direction => FreeEventFlow.Selected ? CUIDirection.Reverse : CUIDirection.Straight;
 
     private bool ClearRequested;
     private void HandleDebugEvent(DebugEvent e)
@@ -34,16 +34,35 @@ namespace CrabUI
         ClearRequested = false;
       }
 
-      if (EventList.Children.Count > MaxEvents)
+      if (Direction == CUIDirection.Straight)
       {
-        EventList.Children.Remove(EventList.Children.First());
+        if (EventList.Children.Count > MaxEvents)
+        {
+          EventList.Children.Remove(EventList.Children.First());
+        }
+
+        EventList.Children.Add(new CUITextBlock()
+        {
+          Text = e.ToString(),
+          TextAnchor = CUIAnchor.LeftCenter,
+        });
       }
 
-      EventList.Children.Add(new CUITextBlock()
+      if (Direction == CUIDirection.Reverse)
       {
-        Text = e.ToString(),
-        TextAnchor = CUIAnchor.LeftCenter,
-      });
+        if (EventList.Children.Count > MaxEvents)
+        {
+          EventList.Children.Remove(EventList.Children.Last());
+        }
+
+        EventList.Children.Insert(0, new CUITextBlock()
+        {
+          Text = e.ToString(),
+          TextAnchor = CUIAnchor.LeftCenter,
+        });
+      }
+
+
     }
 
     private void UpdateHook(double totalTime)

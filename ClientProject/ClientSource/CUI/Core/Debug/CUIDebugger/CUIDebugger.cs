@@ -10,77 +10,72 @@ namespace CrabUI
 {
   public partial class CUIDebugger : CUIDefault.Frame
   {
-    public DebugHub DebugHub => CUICore.DebugHub;
+    private CUIPages Pages;
+    private EventsPageComponent EventsPage = new();
+    private ComponentsPageComponent ComponentsPage = new();
 
-    public ClearableEvent<DebugEvent> Input { get; } = new();
-
-    public CUIVerticalList EventList { get; private set; }
-    private CUIFrame MGFrame;
-
-    public int MaxEvents = 50;
-
-    private CUIRadioButton FreeEventFlow;
-    private CUIRadioButton DrawEventFlow;
-    private CUIRadioButton UpdateEventFlow;
-
-    public CUIDirection Direction => FreeEventFlow.Selected ? CUIDirection.Reverse : CUIDirection.Straight;
-
-    private bool ClearRequested;
-    private void HandleDebugEvent(DebugEvent e)
+    private void CreateUI()
     {
-      if (ClearRequested)
+      TargetMainComponent = CUI.TopMain;
+
+      Absolute = new CUINullRect(w: 400, h: 600);
+      Background.Sprite = CUISprite.White;
+      Palette = CUICore.Palettes.Primary;
+
+      Anchor = CUIAnchor.LeftCenter;
+
+      OnOpen += DeepRefresh;
+
+      MGFrame = CreateMGFrame();
+      this["layout"]["tools"] = CreateToolsPanel();
+
+      this["layout"]["page buttons"] = new CUIHorizontalList() { FitContent = new CUIBool2(false, true) };
+      this["layout"]["page buttons"]["events"] = new CUIButton("Events")
       {
-        ClearEventList();
-        ClearRequested = false;
-      }
-
-      if (Direction == CUIDirection.Straight)
+        Flex = 1,
+        OnMouseDown = (e) => Pages.Open(EventsPage),
+      };
+      this["layout"]["page buttons"]["components"] = new CUIButton("Components")
       {
-        if (EventList.Children.Count > MaxEvents)
-        {
-          EventList.Children.Remove(EventList.Children.First());
-        }
-
-        EventList.Children.Add(new CUITextBlock()
-        {
-          Text = e.ToString(),
-          TextAnchor = CUIAnchor.LeftCenter,
-        });
-      }
-
-      if (Direction == CUIDirection.Reverse)
-      {
-        if (EventList.Children.Count > MaxEvents)
-        {
-          EventList.Children.Remove(EventList.Children.Last());
-        }
-
-        EventList.Children.Insert(0, new CUITextBlock()
-        {
-          Text = e.ToString(),
-          TextAnchor = CUIAnchor.LeftCenter,
-        });
-      }
+        Flex = 1,
+        OnMouseDown = (e) => Pages.Open(ComponentsPage),
+      };
 
 
+      this["layout"]["pages"] = Pages = new CUIPages() { Flex = 1, };
+
+      Pages.Open(EventsPage);
     }
 
-    private void UpdateHook(double totalTime)
+    private CUIComponent CreateToolsPanel()
     {
-      if (UpdateEventFlow.Selected) ClearRequested = true;
+      CUIHorizontalList list = new()
+      {
+        FitContent = new(false, true),
+        Background = { Color = CUICore.Palettes.Secondary["panel"] },
+        Borders = { Bottom = 3 }
+      };
+      list["Hint"] = new CUITextBlock("Tools: ") { };
+
+
+      list["mg"] = new CUIButton("Magnifying Glass")
+      {
+        OnMouseDown = (e) =>
+        {
+          MGFrame.Absolute = MGFrame.Absolute with { Position = new Vector2(0, 0) };
+          MGFrame.Toggle();
+        },
+      };
+      list.DeepPalette = CUICore.Palettes.Secondary;
+
+      return list;
     }
-    private void DrawHook(CUISpriteBatch spriteBatch)
-    {
-      if (DrawEventFlow.Selected) ClearRequested = true;
-    }
+
+
 
     public CUIDebugger() : base("Debug")
     {
-      Input.Add(HandleDebugEvent);
       CreateUI();
-
-      CUICore.OnUpdate += UpdateHook;
-      CUICore.OnDrawAfterGUI += DrawHook;
     }
   }
 }

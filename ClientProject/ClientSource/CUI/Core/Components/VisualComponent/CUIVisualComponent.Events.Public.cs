@@ -15,6 +15,16 @@ namespace CrabUI
 {
   public partial class CUIVisualComponent
   {
+    public void DeepRefresh()
+    {
+      Refresh();
+      foreach (CUIVisualComponent child in Children)
+      {
+        child.DeepRefresh();
+      }
+    }
+    public virtual void Refresh() { } //TODO where should it be?
+
     public void Click()
     {
       Events.MouseDown.Raise(

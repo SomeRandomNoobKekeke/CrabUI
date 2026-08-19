@@ -18,7 +18,6 @@ namespace CrabUI
     public void Click()
     {
       Events.MouseDown.Raise(
-        this,
         new CUIMouseDownEvent(CUIMouseButton.LeftButton, CUICore.Input.Mouse)
       );
     }

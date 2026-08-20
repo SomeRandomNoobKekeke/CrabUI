@@ -84,18 +84,14 @@ namespace CrabUI
         nodes.Clear();
         foreach (string name in DebugHub.Gates.Names)
         {
-          CUIButton btn = new CUIButton(name);
-
-          btn.MouseDown += (e) =>
+          nodes.Children.Add(new CUIToggleButton(name)
           {
-            DebugHub.Gates[name].Toggle();
-            btn.MasterColor = DebugHub.Gates[name].IsOpen ? new Color(0, 128, 128) : btn.Palette["main"];
-            ClearEventList();
-          };
-
-          btn.MasterColor = DebugHub.Gates[name].IsOpen ? new Color(0, 128, 128) : btn.Palette["main"];
-
-          nodes.Children.Add(btn);
+            OnToggle = (state) =>
+            {
+              DebugHub.Gates[name].Toggle();
+              ClearEventList();
+            }
+          });
         }
       }
 
@@ -119,10 +115,9 @@ namespace CrabUI
         {
           btn.Flex = 1;
           btn.Group = "debugger event flow controls";
-          btn.MasterColor = btn.Selected ? new Color(0, 128, 128) : btn.Palette["main"];
+          btn.Palette = CUICore.Palettes.Secondary;
           btn.Changed += (state) =>
           {
-            btn.MasterColor = state ? new Color(0, 128, 128) : btn.Palette["main"];
             ClearEventList();
           };
         }))

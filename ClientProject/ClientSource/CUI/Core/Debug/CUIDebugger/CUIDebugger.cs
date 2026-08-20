@@ -47,31 +47,6 @@ namespace CrabUI
       Pages.Open(EventsPage);
     }
 
-    private CUIComponent CreateToolsPanel()
-    {
-      CUIHorizontalList list = new()
-      {
-        FitContent = new(false, true),
-        Background = { Color = CUICore.Palettes.Secondary["panel"] },
-        Borders = { Bottom = 3 }
-      };
-      list["Hint"] = new CUITextBlock("Tools: ") { };
-
-
-      list["mg"] = new CUIButton("Magnifying Glass")
-      {
-        OnMouseDown = (e) =>
-        {
-          MGFrame.Absolute = MGFrame.Absolute with { Position = new Vector2(0, 0) };
-          MGFrame.Toggle();
-        },
-      };
-      list.DeepPalette = CUICore.Palettes.Secondary;
-
-      return list;
-    }
-
-
 
     public CUIDebugger() : base("Debug")
     {

@@ -10,6 +10,7 @@ namespace CrabUI
     private CUITypeTree TypeTree = typeTree;
     public bool UseReactiveStyles { get; set; } = true;
 
+    public DictOfLists<Type, ICUIStyle> ContextStyles { get; } = new();
 
     private Dictionary<Type, ICUIStyle> DefaultStyles { get; } = new();
     private Dictionary<Type, CUIStylePipeline> Pipelines { get; } = new();
@@ -62,14 +63,14 @@ namespace CrabUI
 
 
 
-    public void EnterContextStyle(ICUIStyle style, Type T)
+    public void EnterContextStyle(Type T, ICUIStyle style)
     {
-      Pipelines[T].AddSilent(style);
+      ContextStyles.Add(T, style);
     }
 
-    public void ExitContextStyle(ICUIStyle style, Type T)
+    public void ExitContextStyle(Type T, ICUIStyle style)
     {
-      Pipelines[T].RemoveSilent(style);
+      ContextStyles.Remove(T, style);
     }
 
 

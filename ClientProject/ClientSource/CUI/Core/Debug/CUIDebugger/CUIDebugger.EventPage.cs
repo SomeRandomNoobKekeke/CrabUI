@@ -97,7 +97,11 @@ namespace CrabUI
 
       private CUIComponent CreateEventList()
       {
-        CUIVerticalList wrapper = new CUIVerticalList() { Flex = 1 };
+        CUIVerticalList wrapper = new CUIVerticalList()
+        {
+          Flex = 1,
+        };
+
         wrapper["controls"] = new CUIHorizontalList()
         {
           FitContent = new CUIBool2(false, true),

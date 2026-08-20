@@ -13,13 +13,13 @@ namespace CrabUI
 
     public void Dispose()
     {
-      CUICore.Styles.ExitContextStyle(Style, Type);
+      CUICore.Styles.ExitContextStyle(Type, Style);
     }
 
     public CUIContextStyle(Action<T> action)
     {
       Style = new CUIActionStyle<T>("context", action);
-      CUICore.Styles.EnterContextStyle(Style, Type);
+      CUICore.Styles.EnterContextStyle(Type, Style);
     }
   }
 

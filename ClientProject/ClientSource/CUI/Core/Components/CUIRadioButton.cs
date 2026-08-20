@@ -84,8 +84,8 @@ namespace CrabUI
     {
       set
       {
-        OnColor = value.Multiply(0.7f);
-        OffColor = value.Multiply(0.3f);
+        OnColor = value.MultOpaque(0.7f);
+        OffColor = value.MultOpaque(0.3f);
         DetermineColor();
       }
     }

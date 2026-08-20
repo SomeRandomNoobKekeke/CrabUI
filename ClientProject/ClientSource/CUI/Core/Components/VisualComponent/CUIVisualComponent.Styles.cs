@@ -113,13 +113,35 @@ namespace CrabUI
         Self.InitStyle(); // 1 time
         ReapplyStyles();
 
+        foreach (ICUIStyle style in CUICore.Styles.ContextStyles[Self.GetType()])
+        {
+          style.Apply(Self);
+        }
+
         UseReactiveStyles = CUICore.Styles.UseReactiveStyles;
       }
 
+      private int recDepth;
       public void ReapplyStyles()
       {
-        TypeSpecificStyles.Apply(Self);
-        Self.PersonalStyle?.Apply(Self);
+        recDepth++;
+        if (recDepth > 2)
+        {
+          CUI.Logger.Warning($"Recursion in [{Self}] styles");
+          CUI.Logger.PrintStackTrace();
+          recDepth = 0;
+          return;
+        }
+
+        try
+        {
+          TypeSpecificStyles.Apply(Self);
+          Self.PersonalStyle?.Apply(Self);
+        }
+        finally
+        {
+          recDepth--;
+        }
       }
     }
   }

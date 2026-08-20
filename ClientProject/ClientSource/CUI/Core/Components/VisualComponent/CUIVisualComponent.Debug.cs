@@ -15,7 +15,8 @@ namespace CrabUI
     public virtual void OnDebugOn() { }
     public virtual void OnDebugOff() { }
 
-    private bool _IsDebugTool; public bool IsDebugTool
+    protected virtual bool _IsDebugTool { get; set; } = false;
+    public bool IsDebugTool
     {
       get => _IsDebugTool;
       set

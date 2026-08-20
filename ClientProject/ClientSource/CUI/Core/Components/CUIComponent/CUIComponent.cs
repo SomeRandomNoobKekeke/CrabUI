@@ -21,6 +21,10 @@ namespace CrabUI
       Background.Color = Color.Transparent;
     }
 
+    public CUIComponent() : base()
+    {
+      if (!_IsDebugTool) Debug_ComponentCreated.Send(this);
+    }
 
     public class Part : IPart { public CUIComponent Self { get; set; } }
   }

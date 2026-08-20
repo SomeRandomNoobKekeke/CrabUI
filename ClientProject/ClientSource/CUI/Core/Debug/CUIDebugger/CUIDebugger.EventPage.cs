@@ -12,6 +12,12 @@ namespace CrabUI
   {
     public class EventsPageComponent : CUIPage
     {
+      public class DebugEventBlock : CUITextBlock
+      {
+        protected override bool _IsDebugTool { get; set; } = true;
+      }
+
+
       public DebugHub DebugHub => CUICore.DebugHub;
       public ClearableEvent<DebugEvent> Input { get; } = new();
 
@@ -27,6 +33,8 @@ namespace CrabUI
       private bool ClearRequested;
       public void HandleDebugEvent(DebugEvent e)
       {
+        BreakTheLoop.After(100);
+
         if (ClearRequested)
         {
           ClearEventList();
@@ -40,7 +48,7 @@ namespace CrabUI
             EventList.Children.Remove(EventList.Children.First());
           }
 
-          EventList.Children.Add(new CUITextBlock()
+          EventList.Children.Add(new DebugEventBlock()
           {
             Text = e.ToString(),
             TextAnchor = CUIAnchor.LeftCenter,
@@ -54,7 +62,7 @@ namespace CrabUI
             EventList.Children.Remove(EventList.Children.Last());
           }
 
-          EventList.Children.Insert(0, new CUITextBlock()
+          EventList.Children.Insert(0, new DebugEventBlock()
           {
             Text = e.ToString(),
             TextAnchor = CUIAnchor.LeftCenter,

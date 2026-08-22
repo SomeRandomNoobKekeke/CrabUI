@@ -3,3 +3,4 @@ using System.Runtime.CompilerServices;
 [assembly: IgnoresAccessChecksTo("BarotraumaCore")]
 [assembly: IgnoresAccessChecksTo("DedicatedServer")]
 [assembly: IgnoresAccessChecksTo("MonoGame.Framework.Windows.NetStandard")]
+[assembly: IgnoresAccessChecksTo("LuaCsForBarotraumaPluginClient")]

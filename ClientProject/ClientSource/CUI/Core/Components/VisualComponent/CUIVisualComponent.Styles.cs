@@ -125,7 +125,7 @@ namespace CrabUI
       public void ReapplyStyles()
       {
         recDepth++;
-        if (recDepth > 2)
+        if (recDepth > 2)  // this can happen e.g. if you set Palette in style
         {
           CUI.Logger.Warning($"Recursion in [{Self}] styles");
           CUI.Logger.PrintStackTrace();

@@ -17,6 +17,7 @@ namespace CrabUI
 
     public CUIDebugNode<CUIComponent, CUIRect> Debug_RectSet { get; } = new(DebugCategory.RectSet);
 
+
     public override void OnDebugOn()
     {
       DebugRelays.Open();

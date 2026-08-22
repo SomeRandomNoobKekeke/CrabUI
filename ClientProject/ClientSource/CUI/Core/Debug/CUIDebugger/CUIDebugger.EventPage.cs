@@ -31,9 +31,12 @@ namespace CrabUI
       public CUIDirection Direction => FreeEventFlow.Selected ? CUIDirection.Reverse : CUIDirection.Straight;
 
       private bool ClearRequested;
+      private bool CreatedFromHandleDebugEvent; //HACK
       public void HandleDebugEvent(DebugEvent e)
       {
-        BreakTheLoop.After(100);
+        if (CreatedFromHandleDebugEvent) return;
+        CreatedFromHandleDebugEvent = true;
+        // BreakTheLoop.After(200);
 
         if (ClearRequested)
         {
@@ -69,7 +72,7 @@ namespace CrabUI
           });
         }
 
-
+        CreatedFromHandleDebugEvent = false;
       }
 
 

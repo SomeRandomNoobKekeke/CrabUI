@@ -24,7 +24,7 @@ namespace CrabUI
     // public static string ScissorRectSet = "Scissor Rect Set";
     // public static string VisualUnitProcessed = "VisualUnitProcessed";
     public static string ComponentCreated = "Component Created";
-
+    public static string StyleApplied = "Style Applied";
     public static string LayoutUpdated = "Layout Updated";
     public static string RectSet = "Rect Set";
     public static string MouseEvents = "Mouse Events";

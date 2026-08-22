@@ -20,17 +20,23 @@ namespace CrabUI
       TargetType = targetType;
     }
 
-    public override string ToString() => $"CUIStyle [{ID}]";
+    public override string ToString() => $"CUIActionStyle [{ID}]";
   }
 
   public class CUIActionStyle<ComponentT> : CUIActionStyle where ComponentT : CUIVisualComponent
   {
+    public CUIDebugNode<CUIVisualComponent, ICUIStyle> Debug_StyleApplied { get; } = new(DebugCategory.StyleApplied)
+    {
+      MsgFactory = (component, style) => $"{style} applied to {component}",
+      IsOpen = true,
+    };
+
     public Action<ComponentT> Action { get; set; }
 
     public override void Apply(CUIVisualComponent component)
     {
       Action?.Invoke((ComponentT)component);
-      // CUI.Logger.Log($"Applying [{this}] to [{component}]"); // TODO this should be a debug event
+      if (component.Debug) Debug_StyleApplied.Send(component, this);
     }
 
 

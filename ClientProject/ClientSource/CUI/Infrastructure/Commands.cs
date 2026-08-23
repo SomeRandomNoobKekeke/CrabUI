@@ -28,6 +28,51 @@ namespace CrabUI
         new string[]{ "nolua" },
         new string[]{ "deep" },
       });
+
+      PluginCommands.Add("printcuitextures", PrintCUITextures_Command, PrintCUITextures_Hints);
+      PluginCommands.Add("gc", GC_Command);
+    }
+
+    public static void GC_Command(string[] args)
+    {
+      GC.Collect();
+      CUI.Logger.Print($"Process.PrivateMemorySize64: {LuaCsPerformanceCounter.MemoryUsage}MB", Color.Lime);
+    }
+
+    public static string[][] PrintCUITextures_Hints()
+    {
+      return new string[][]
+      {
+        (CUICore.TextureManager as __CUITextureManager).LoadedTextures.Keys.ToArray()
+      };
+    }
+    public static void PrintCUITextures_Command(string[] args)
+    {
+      void PrintTexture(string key, CUITexture2D texture)
+      {
+        try
+        {
+          int size = texture.Width * texture.Height * 4;
+          CUI.Logger.Log($"{(texture is CUIRenderTarget2D ? "RT " : "")}[{texture.Width}x{texture.Height}] {key} - {size / 1000}KB");
+        }
+        catch (Exception e)
+        {
+          CUI.Logger.Warning($"{key} - Disposed");
+        }
+      }
+
+      __CUITextureManager textureManager = (CUICore.TextureManager as __CUITextureManager);
+
+      if (args.Length == 0)
+      {
+        foreach (var (key, texture) in textureManager.LoadedTextures)
+        {
+          PrintTexture(key, texture);
+        }
+        return;
+      }
+
+      textureManager.PrintTrace(args[0]);
     }
 
     public static void CUIDebug_Command(string[] args)

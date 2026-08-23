@@ -82,5 +82,15 @@ namespace CrabUI
 
     public int SelectionLength => State.SelectionLength;
     public bool SelectionEmpty => State.SelectionEmpty;
+
+    public string SelectedText => SomethingSelected ? Text.Substring(SelectionStart, SelectionLength) : "";
+
+    public void InsertText(int pos, string value)
+    {
+      Text = Text.Insert(pos, value);
+    }
+
+    public void RemoveSelection() => State.RemoveSelection();
+    public void ReplaceSelection(string value) => State.ReplaceSelection(value);
   }
 }

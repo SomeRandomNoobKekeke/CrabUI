@@ -56,17 +56,17 @@ namespace CrabUI
       CaretTexture.Rect = ChildrenRect with
       {
         Left = ChildrenRect.Left + TextMeasurements.CaretLeft - 1,
+        Top = ChildrenRect.Top + ChildrenRect.Height * 0.0f,
         Width = 2,
-        Top = ChildrenRect.Top + ChildrenRect.Height * 0.1f,
-        Height = ChildrenRect.Height * 0.8f,
+        Height = ChildrenRect.Height * 1.0f,
       };
 
       SelectionOverlay.Rect = ChildrenRect with
       {
         Left = ChildrenRect.Left + TextMeasurements.SelectionLeft,
+        Top = ChildrenRect.Top + ChildrenRect.Height * 0.0f,
         Width = TextMeasurements.SelectionWidth,
-        Top = ChildrenRect.Top + ChildrenRect.Height * 0.1f,
-        Height = ChildrenRect.Height * 0.8f,
+        Height = ChildrenRect.Height * 1.0f,
       };
     }
 
@@ -105,6 +105,7 @@ namespace CrabUI
       yield return CaretTexture.VisualWrapper;
 
       yield return VisualBounds.RightBound;
+
     }
   }
 }

@@ -45,6 +45,22 @@ namespace CrabUI
       {
         SelectAll();
       }
+
+      if (key == Keys.C)
+      {
+        Clipboard.SetText(SelectedText);
+      }
+
+      if (key == Keys.V)
+      {
+        ReplaceSelection(Clipboard.GetText());
+      }
+
+      if (key == Keys.X)
+      {
+        Clipboard.SetText(SelectedText);
+        RemoveSelection();
+      }
     }
 
     private void HandleShiftCommand(Keys key)
@@ -59,6 +75,8 @@ namespace CrabUI
         HandleSelectionExpansionRight();
       }
     }
+
+
 
     private void HandleSelectionExpansionLeft()
     {
@@ -124,6 +142,25 @@ namespace CrabUI
       }
     }
 
+
+    private void SelectAll()
+    {
+      State.SetSelection(0, Text.Length);
+    }
+
+    private void RemoveLeftChar()
+    {
+      if (CaretPos == 0) return;
+
+      CaretPos = CaretPos - 1;
+      Text = Text.Remove(CaretPos, 1);
+    }
+
+    private void RemoveRightChar()
+    {
+      if (CaretPos == Text.Length) return;
+      Text = Text.Remove(CaretPos, 1);
+    }
     private void HandleKey(Keys key)
     {
       if (key == Keys.Back)
@@ -152,42 +189,17 @@ namespace CrabUI
 
       if (key == Keys.Left)
       {
-        CaretPos--;
-        ClearSelection();
+        CaretPos = SomethingSelected ? SelectionStart : CaretPos - 1;
+        SetSelection(CaretPos, CaretPos);
       }
       if (key == Keys.Right)
       {
-        CaretPos++;
-        ClearSelection();
+        CaretPos = SomethingSelected ? SelectionEnd : CaretPos + 1;
+        SetSelection(CaretPos, CaretPos);
       }
     }
 
-    private void SelectAll()
-    {
-      State.SetSelection(0, Text.Length);
-    }
 
-    private void RemoveLeftChar()
-    {
-      if (CaretPos == 0) return;
-
-      CaretPos = CaretPos - 1;
-      Text = Text.Remove(CaretPos, 1);
-    }
-
-    private void RemoveRightChar()
-    {
-      if (CaretPos == Text.Length) return;
-
-      Text = Text.Remove(CaretPos, 1);
-    }
-
-    private void RemoveSelection()
-    {
-      Text = Text.Remove(SelectionStart, SelectionLength);
-      CaretPos = SelectionStart;
-      ClearSelection();
-    }
 
   }
 }

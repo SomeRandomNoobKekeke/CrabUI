@@ -70,6 +70,43 @@ namespace CrabUI
         Changed?.Invoke();
       }
 
+      public void RemoveSelection()
+      {
+        Text = Text.Remove(SelectionStart, SelectionLength);
+
+        CaretPos = SelectionStart;
+        SelectionEnd = SelectionStart;
+
+        Changed?.Invoke();
+        TextChanged?.Invoke(Text);
+      }
+
+      public void ReplaceSelection(string value)
+      {
+        value ??= "";
+
+        if (SomethingSelected)
+        {
+          Text = Text.Remove(SelectionStart, SelectionLength);
+          Text = Text.Insert(SelectionStart, value);
+
+          CaretPos = Math.Clamp(SelectionStart + value.Length, 0, Text.Length);
+          SelectionStart = CaretPos;
+          SelectionEnd = CaretPos;
+        }
+        else
+        {
+          Text = Text.Insert(CaretPos, value);
+
+          CaretPos = Math.Clamp(CaretPos + value.Length, 0, Text.Length);
+          SelectionStart = CaretPos;
+          SelectionEnd = CaretPos;
+        }
+
+        Changed?.Invoke();
+        TextChanged?.Invoke(Text);
+      }
+
       public void SetCaretPos(int value)
       {
         CaretPos = Math.Clamp(value, 0, Text.Length);

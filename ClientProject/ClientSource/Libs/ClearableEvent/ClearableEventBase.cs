@@ -17,7 +17,13 @@ namespace CUILibs
     }
 
     public abstract EventSubscription Add(Delegate callback);
-    protected Dictionary<IClearableEvent, EventSubscription> Mapping = new();
+
+    private Dictionary<IClearableEvent, EventSubscription> _Mapping;
+    protected Dictionary<IClearableEvent, EventSubscription> Mapping
+    {
+      get => _Mapping ??= new();
+    }
+
     public EventSubscription Map(IClearableEvent next, Delegate callback)
     {
       EventSubscription subscription = Add(callback);

@@ -11,7 +11,7 @@ using System.Diagnostics;
 
 namespace BaroJunk
 {
-  public class ClearableEvent<@types>: ClearableEventBase
+  public class ClearableEvent<@types> : ClearableEventBase
   {
     private event Action<@types> Event;
     public bool Empty => Event == null;
@@ -49,7 +49,6 @@ namespace BaroJunk
 
     public override EventSubscription Add(Delegate callback) => Add((Action<@types>)callback);
     protected override Delegate DefaultMapping(ClearableEventBase next) => DefaultMapping((ClearableEvent<@types>)next);
-    private Action<@types> DefaultMapping(ClearableEvent<@types> next)
-      => (@argDefs) => next.Raise(@args);
+    private Action<@types> DefaultMapping(ClearableEvent<@types> next) => next.Raise;
   }
 }

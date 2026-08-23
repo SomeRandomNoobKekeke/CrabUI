@@ -43,7 +43,6 @@ namespace CUILibs
 
     public override EventSubscription Add(Delegate callback) => Add((Action<T1>)callback);
     protected override Delegate DefaultMapping(IClearableEvent next) => DefaultMapping((ClearableEvent<T1>)next);
-    private Action<T1> DefaultMapping(ClearableEvent<T1> next)
-      => (T1 arg1) => next.Raise(arg1);
+    private Action<T1> DefaultMapping(ClearableEvent<T1> next) => next.Raise;
   }
 }

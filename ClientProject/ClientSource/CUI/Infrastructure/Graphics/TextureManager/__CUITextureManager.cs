@@ -12,7 +12,7 @@ namespace CrabUI
 {
 
 
-  public class __CUITextureManager : IDisposable, CUITextureManager
+  public partial class __CUITextureManager : IDisposable, CUITextureManager
   {
     public class Context_Part
     {
@@ -24,11 +24,21 @@ namespace CrabUI
     public CUITexture2D BackupTexture => __CUITexture2D.White;
     public Dictionary<string, CUITexture2D> LoadedTextures { get; } = new();
 
+
+    //TODO implement, e.g. default components should get dummy textures with no real data
+    public bool DummyMode { get; set; }
     private static int MaxID;
+
+    private string CreateID()
+    {
+      string result = $"__{MaxID++}";
+      MemorizeStackTrace(result);
+      return result;
+    }
     public CUIRenderTarget2D CreateNewRenderTarget(int width, int height, string key = null)
     {
       CUIRenderTarget2D texture = new __CUIRenderTarget2D(width, height);
-      key ??= $"__{MaxID++}";
+      key ??= CreateID();
       Add(texture, key);
 
       return texture;
@@ -37,7 +47,7 @@ namespace CrabUI
     public CUITexture2D CreateNew(int width, int height, string key = null)
     {
       CUITexture2D texture = new __CUITexture2D(width, height);
-      key ??= $"__{MaxID++}";
+      key ??= CreateID();
       Add(texture, key);
       return texture;
     }
@@ -45,14 +55,14 @@ namespace CrabUI
     public CUITexture2D CreateNew(int width, int height, bool mipmap, SurfaceFormat format, string key = null)
     {
       CUITexture2D texture = new __CUITexture2D(width, height, mipmap, format);
-      key ??= $"__{MaxID++}";
+      key ??= CreateID();
       Add(texture, key);
       return texture;
     }
 
     public CUITexture2D Add(CUITexture2D texture, string key)
     {
-      key ??= $"__{MaxID++}";
+      key ??= CreateID();
       texture.Key = key;
 
       if (LoadedTextures.ContainsKey(key))

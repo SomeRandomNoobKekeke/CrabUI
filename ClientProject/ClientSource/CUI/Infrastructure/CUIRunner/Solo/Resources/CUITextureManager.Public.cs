@@ -20,6 +20,8 @@ namespace CrabUI
     /// </summary>
     public class CUITextureManager_PublicPart : Part, CUITextureManager
     {
+      public bool DummyMode { get; set; }
+
       public CUIRenderTarget2D CreateNewRenderTarget(int width, int height, string key = null)
         => Self.TextureManager.CreateNewRenderTarget(width, height, key);
 

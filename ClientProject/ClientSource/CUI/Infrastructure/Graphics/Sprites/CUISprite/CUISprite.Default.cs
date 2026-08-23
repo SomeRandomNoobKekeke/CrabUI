@@ -50,5 +50,50 @@ namespace CrabUI
     public static CUISprite RightLineEnd => AtPos(2, 4);
     public static CUISprite Handle => AtPos(3, 4);
     public static CUISprite LineMark => AtPos(4, 4);
+
+
+    public static CUISprite CreateRadialColorPicker(int w, int h)
+    {
+      TextureBuilder tb = new TextureBuilder(w, h);
+
+      Vector2 center = new Vector2(0.5f, 0.5f);
+
+      tb.Fill((i, j) =>
+      {
+        Vector2 v = new Vector2(((float)i) / ((float)w), ((float)j) / ((float)h));
+        Vector2 d = v - center;
+        float l = d.Length();
+
+        double a = Math.Atan2(d.Y, d.X) * 180.0 / Math.PI;
+        if (a < 0) a += 360;
+
+        return CUIColor.FromHSV((float)a, 1, 1 - l * 2.0f);
+      });
+
+
+      return new CUISprite(tb.Build(tracked: true, key: $"RadialColorPicker[{w},{h}]"));
+    }
+
+    public static CUISprite CreateHSVColorPicker(int w, int h)
+    {
+      TextureBuilder tb = new TextureBuilder(w, h);
+
+      Vector2 center = new Vector2(0.5f, 0.5f);
+
+      tb.Fill((i, j) =>
+      {
+        Vector2 v = new Vector2(((float)i) / ((float)w), ((float)j) / ((float)h));
+        Vector2 d = v - center;
+        float l = d.Length();
+
+        double a = Math.Atan2(d.Y, d.X) * 180.0 / Math.PI;
+        if (a < 0) a += 360;
+
+        return CUIColor.FromHSV((float)a, 1, 1 - l * 2.0f);
+      });
+
+
+      return new CUISprite(tb.Build(tracked: true, key: $"RadialColorPicker[{w},{h}]"));
+    }
   }
 }

@@ -26,11 +26,10 @@ namespace CrabUI
       return this;
     }
 
-    public CUITexture2D Build(bool tracked = false)
+    public CUITexture2D Build(bool tracked = false, string key = null)
     {
-
       CUIRenderTarget2D target = tracked ?
-        CUICore.TextureManager.CreateNewRenderTarget(Width, Height) :
+        CUICore.TextureManager.CreateNewRenderTarget(Width, Height, key) :
         CUIRenderTarget2D.Create(Width, Height);
 
       target.SetData(data);

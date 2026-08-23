@@ -67,10 +67,12 @@ namespace CrabUI
         //Note: it's important to create defaults only after setting DefaultStyles or they'll create empty style pipelines
         //TODO these defaults should somehow be created with dummy resources, textures, sounds etc
         //CRINGE why here?
+        CUICore.TextureManager.DummyMode = true;
         foreach (var (T, info) in assemblyInfo.ComponentInfos)
         {
           info.DefaultValue = Self.CUIAssemblyAnalyzer.CUIVisualComponentAnalyzer.CreateDefault(T);
         }
+        CUICore.TextureManager.DummyMode = false;
       }
     }
   }

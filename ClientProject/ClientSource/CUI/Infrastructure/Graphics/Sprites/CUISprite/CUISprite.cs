@@ -95,22 +95,21 @@ namespace CrabUI
 
     public Color[] Data => ShouldBufferData ? DataBuffer : Texture.Data;
 
-
     /// <param name="point">([0..1], [0..1])</param>
-    public bool IsPointOnTransparentPixel(Vector2 point)
+    public Color GetPixel(Vector2 point)
     {
       Rectangle SourceRect = SourceRectangle.HasValue ? SourceRectangle.Value : Texture.Bounds;
 
       int textureX = (int)Math.Round(SourceRect.X + point.X * SourceRect.Width);
       int textureY = (int)Math.Round(SourceRect.Y + point.Y * SourceRect.Height);
 
-      if (textureX < SourceRect.X || (SourceRect.X + SourceRect.Width - 1) < textureX) return true;
-      if (textureY < SourceRect.Y || (SourceRect.Y + SourceRect.Height - 1) < textureY) return true;
+      if (textureX < SourceRect.X || (SourceRect.X + SourceRect.Width - 1) < textureX) return Color.Transparent;
+      if (textureY < SourceRect.Y || (SourceRect.Y + SourceRect.Height - 1) < textureY) return Color.Transparent;
 
-      Color cl = Data[textureY * Texture.Width + textureX];
-
-      return cl.A == 0;
+      return Data[textureY * Texture.Width + textureX];
     }
+
+    public bool IsPointOnTransparentPixel(Vector2 point) => GetPixel(point).A == 0;
 
     //TODO, for now i decided to make outer VisualUnit parsable instead
     public static object Parse(string raw)

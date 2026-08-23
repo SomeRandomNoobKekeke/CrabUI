@@ -10,6 +10,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CrabUI
 {
+  [NoDefault]
   public class CUIMagnifyingGlass : CUICanvas
   {
     public bool Active { get; set; }
@@ -62,6 +63,7 @@ namespace CrabUI
       int w = CUICore.GraphicsDevice.BackBufferWidth;
       int h = CUICore.GraphicsDevice.BackBufferHeight;
 
+      //TODO I Don't really need 2 buffers, it's 8mb
       backBuffer = new Color[w * h];
 
       texture = CUICore.TextureManager.CreateNew(w, h, false, CUICore.GraphicsDevice.BackBufferFormat);

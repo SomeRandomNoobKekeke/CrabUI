@@ -72,14 +72,14 @@ namespace CrabUI
 
           if (!_UseReactiveStyles && value)
           {
-            TypeSpecificStyles.Changed += ReapplyStyles;
-            Palette.Changed += ReapplyStyles;
+            TypeSpecificStyles.Changed.Add(Self, ReapplyStyles);
+            _Palette.Changed.Add(Self, ReapplyStyles);
           }
 
           if (_UseReactiveStyles && !value)
           {
-            TypeSpecificStyles.Changed -= ReapplyStyles;
-            Palette.Changed -= ReapplyStyles;
+            TypeSpecificStyles.Changed.Remove(Self);
+            _Palette.Changed.Remove(Self);
           }
 
           _UseReactiveStyles = value;
@@ -93,9 +93,9 @@ namespace CrabUI
         {
           // if (_Palette == value) return;
 
-          if (_Palette != null) _Palette.Changed -= ReapplyStyles;
+          if (_Palette != null) _Palette.Changed.Remove(Self);
           _Palette = value;
-          if (UseReactiveStyles && _Palette != null) _Palette.Changed += ReapplyStyles;
+          if (UseReactiveStyles && _Palette != null) _Palette.Changed.Add(Self, ReapplyStyles);
 
           ReapplyStyles();
         }

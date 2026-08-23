@@ -9,14 +9,14 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
 using System.Diagnostics.CodeAnalysis;
 using System.Collections;
-
+using CUILibs;
 namespace CrabUI
 {
   public class ReactiveDict<TKey, TValue> : IDictionary<TKey, TValue>
   {
     private Dictionary<TKey, TValue> _Dict = new();
 
-    public event Action Changed;
+    public SimpleWeakEvent Changed { get; } = new();
 
     public TValue this[TKey key]
     {
@@ -24,7 +24,7 @@ namespace CrabUI
       set
       {
         _Dict[key] = value;
-        Changed?.Invoke();
+        Changed.Raise();
       }
     }
 
@@ -35,7 +35,7 @@ namespace CrabUI
       {
         _Dict[key] = value;
       }
-      Changed?.Invoke();
+      Changed.Raise();
     }
 
     public ICollection<TKey> Keys => _Dict.Keys;
@@ -50,7 +50,7 @@ namespace CrabUI
     {
       if (_Dict.Remove(key))
       {
-        Changed?.Invoke();
+        Changed.Raise();
         return true;
       }
 

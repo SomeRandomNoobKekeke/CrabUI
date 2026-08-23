@@ -11,31 +11,31 @@ namespace CrabUI
     private List<ICUIStyle> styles = new();
     public IReadOnlyList<ICUIStyle> Styles { get; }
 
-    public event Action Changed;
+    public SimpleWeakEvent Changed { get; } = new();
 
 
     public void Remove(ICUIStyle style)
     {
       styles.Remove(style);
-      Changed?.Invoke();
+      Changed.Raise();
     }
 
     public void Remove(string id)
     {
       styles.RemoveAll(style => style.ID == id);
-      Changed?.Invoke();
+      Changed.Raise();
     }
 
     public void Remove(CUIStyleCategory category)
     {
       styles.RemoveAll(style => style.Category == category);
-      Changed?.Invoke();
+      Changed.Raise();
     }
 
     public void Clear()
     {
       styles.Clear();
-      Changed?.Invoke();
+      Changed.Raise();
     }
 
 
@@ -51,7 +51,7 @@ namespace CrabUI
         Sort();
       }
 
-      Changed?.Invoke();
+      Changed.Raise();
     }
 
     public void Sort()

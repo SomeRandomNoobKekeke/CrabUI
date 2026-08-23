@@ -33,12 +33,13 @@ namespace CrabUIUser
           Flex = 1,
           Background = {
             Sprite = CUISprite.VerticalGradient with {
-              Color = new Color(128,0,255),
               Effects = SpriteEffects.FlipVertically,
             },
           },
           Scrollable = true,
           Direction = CUIDirection.Reverse,
+          Style = (c) => c.Background.Color = c.Palette["panel"],
+          Palette = CUICore.Palettes.Secondary,
         };
 
         this["layout"]["logwrapper"]["log"] = LogList = new CUIVerticalList()

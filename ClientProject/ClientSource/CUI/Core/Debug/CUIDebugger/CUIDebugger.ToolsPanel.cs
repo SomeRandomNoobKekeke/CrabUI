@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Diagnostics;
 using CUILibs;
 using Microsoft.Xna.Framework;
+using Barotrauma;
 
 namespace CrabUI
 {
@@ -17,8 +18,17 @@ namespace CrabUI
         FitContent = new CUIBool2(false, true),
         // Borders = { Bottom = 2 }
       };
-      wrapper["Hint"] = new CUITextBlock("Tools: ") { };
 
+      wrapper["Reload Lua"] = new CUIButton("Reload Lua")
+      {
+        OnMouseDown = (e) => DebugConsole.ExecuteCommand("cl_reloadlua"),
+        Style = (c) => c.MasterColor = Color.Red,
+      };
+
+      wrapper["palettes"] = new CUIButton("Palettes")
+      {
+        OnMouseDown = (e) => DebugConsole.ExecuteCommand("cuipalettepreview"),
+      };
 
       wrapper["mg"] = new CUIButton("Magnifying Glass")
       {
@@ -29,7 +39,7 @@ namespace CrabUI
         },
       };
 
-      // list.DeepPalette = CUICore.Palettes.Tertiary;
+      wrapper.DeepPalette = CUICore.Palettes.Primary;
 
       return wrapper;
     }

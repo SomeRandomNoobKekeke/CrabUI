@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace CrabUI
 {
+  //TODO reuse events
   public class EventConstructor : IModule
   {
     public CUIDebugNode<List<InputEvent>> Debug_MouseEvents { get; } = new(DebugCategory.MouseEvents)

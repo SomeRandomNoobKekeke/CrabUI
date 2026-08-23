@@ -24,7 +24,7 @@ namespace CrabUI
     {
       base.InitStyle();
       Padding = new(2, 4, 2, 4);
-      Background.Sprite = CUISprite.VignetteLight;
+      Background.Sprite = CUISprite.Vignette;
     }
 
     [CUISerializableProp]
@@ -50,6 +50,11 @@ namespace CrabUI
       Background.Color = InactiveColor;
       if (MouseOver) Background.Color = MouseOverColor;
       if (MousePressed) Background.Color = MousePressedColor;
+    }
+
+    public new Action<CUIButton> Style
+    {
+      set => PersonalStyle = new CUIActionStyle<CUIButton>("personal", value);
     }
 
     public CUIButton() : base() { }

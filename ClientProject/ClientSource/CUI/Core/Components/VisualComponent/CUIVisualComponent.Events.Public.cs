@@ -23,7 +23,7 @@ namespace CrabUI
         child.DeepRefresh();
       }
     }
-    public virtual void Refresh() { } //TODO where should it be?
+    protected virtual void Refresh() { } //TODO where should it be?
 
     public void Click()
     {

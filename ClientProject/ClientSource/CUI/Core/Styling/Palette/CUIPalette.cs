@@ -10,6 +10,8 @@ namespace CrabUI
   //Note that later i might split it into multiple dicts, interface should stay the same
   public partial class CUIPalette : ReactiveDict<string, Color>
   {
+    public Color BaseColor { get; set; }
+
     public static CUIPalette FromColor(Color color)
     {
       float brightness = color.Brightness();
@@ -37,6 +39,8 @@ namespace CrabUI
         ["valid"] = valid,
         ["invalid"] = invalid,
         ["disabled"] = disabled,
+
+        BaseColor = color,
       };
     }
 

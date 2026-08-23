@@ -82,7 +82,7 @@ namespace CrabUI
         EventList.Scroll = 0;
       }
 
-      public override void Refresh()
+      protected override void Refresh()
       {
         RefreshNodes();
         ClearEventList();
@@ -123,7 +123,8 @@ namespace CrabUI
         {
           Flex = 1,
           Scrollable = true,
-          Background = { Sprite = CUISprite.VerticalGradient, Color = new Color(0, 100, 100) }
+          Background = { Sprite = CUISprite.VerticalGradient },
+          Style = (c) => c.Background.Color = c.Palette["panel"],
         };
 
         using (new CUIContextStyle<CUIRadioButton>(btn =>
@@ -142,6 +143,7 @@ namespace CrabUI
           wrapper["controls"]["update"] = UpdateEventFlow = new CUIRadioButton("Update") { Selected = true };
         }
 
+        wrapper.DeepPalette = CUICore.Palettes.Quaternary;
 
 
         return wrapper;
@@ -185,14 +187,14 @@ namespace CrabUI
 
 
         this["panels"] = new CUIHorizontalList() { Relative = new CUINullRect(0, 0, 1, 1) };
-        this["panels"]["nodes"] = new CUIVerticalList()
+        this["panels"]["nodes"] = new CUIDefault.VerticalPanel()
         {
           Absolute = new(w: 150),
           Borders = { Right = 3 }
         };
         this["panels"]["nodes"]["header"] = new CUITextBlock("Nodes:");
         this["panels"]["nodes"]["list"] = new CUIVerticalList() { Flex = 1 };
-
+        this["panels"]["nodes"].DeepPalette = CUICore.Palettes.Tertiary;
 
         this["panels"]["events"] = CreateEventList();
       }

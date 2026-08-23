@@ -40,6 +40,7 @@ namespace CrabUI
         Flex = 1,
         OnMouseDown = (e) => Pages.Open(ComponentsPage),
       };
+      this["layout"]["page buttons"].DeepPalette = CUICore.Palettes.Secondary;
 
 
       this["layout"]["pages"] = Pages = new CUIPages() { Flex = 1, };

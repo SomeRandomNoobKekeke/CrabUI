@@ -22,29 +22,36 @@ namespace CrabUI
         FitContent = new CUIBool2(false, true),
       };
 
-      block["header"]["bnt1"] = new CUIButton("bruh") { Flex = 1 };
-      block["header"]["bnt2"] = new CUIButton("bruh") { Flex = 1 };
+      block["header"]["bnt1"] = new CUIButton("button") { Flex = 1 };
+      block["header"]["bnt2"] = new CUIButton("button") { Flex = 1 };
 
       block["main"] = new CUIVerticalList()
       {
         Flex = 1,
       };
 
-      block["main"]["field1"] = new CUIDefault.IntField()
+      block["main"]["input"] = new CUITextInput()
       {
-        Key = "bruh",
-        Value = 123,
+        Anchor = CUIAnchor.Center,
+        Absolute = new CUINullRect(h: 24),
+        Text = CUICore.Parser.Serialize(palette.BaseColor),
+        OnInput = (s) => palette.Swap(CUIPalette.FromColor(CUICore.Parser.Parse<Color>(s))),
       };
 
-      block["main"]["radios"] = new CUIHorizontalList()
+      block["main"]["panel"] = new CUIDefault.HorizontalPanel()
       {
         FitContent = new CUIBool2(false, true),
       };
 
-      block["main"]["radios"]["1"] = new CUIRadioButton("radio 1") { Group = "bruh" };
-      block["main"]["radios"]["2"] = new CUIRadioButton("radio 2") { Group = "bruh" };
+      block["main"]["panel"]["radios"] = new CUIHorizontalList()
+      {
+        FitContent = new CUIBool2(false, true),
+      };
 
-      block["main"]["checkbox"] = new CUICheckBox()
+      block["main"]["panel"]["radios"]["1"] = new CUIRadioButton("radio button 1") { Group = "bruh" };
+      block["main"]["panel"]["radios"]["2"] = new CUIRadioButton("radio button 2") { Group = "bruh" };
+
+      block["main"]["panel"]["checkbox"] = new CUICheckBox()
       {
         Absolute = new CUINullRect(w: 30, h: 30),
       };

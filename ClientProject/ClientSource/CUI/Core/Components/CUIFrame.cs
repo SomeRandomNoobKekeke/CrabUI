@@ -29,7 +29,7 @@ namespace CrabUI
       Resizable = true;
       Focusable = true;
       ConsumeMouseEvents = true;
-      Background.Sprite = CUISprite.Vignette;
+      Background.Sprite = CUISprite.VignetteLight;
     }
 
     public CUIComponent TargetMainComponent { get; set; }

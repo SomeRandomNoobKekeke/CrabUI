@@ -40,8 +40,8 @@ namespace CrabUI
 
       public void Setup()
       {
-        Main = new() { EventConstructor = EventConstructor };
-        TopMain = new() { EventConstructor = EventConstructor };
+        Main = new CUIMainComponent(Self);
+        TopMain = new CUIMainComponent(Self);
 
         UpdateGameScreenRect();
 

@@ -47,7 +47,7 @@ namespace CrabUI
       set
       {
         _PersonalStyle = value;
-        _PersonalStyle.Apply(this);
+        _PersonalStyle.Apply(this); //HACK i don't need full ReapplyStyles() because PersonalStyle it always last
       }
     }
 
@@ -70,21 +70,19 @@ namespace CrabUI
         {
           if (value == _UseReactiveStyles) return;
 
-          bool prevValue = _UseReactiveStyles;
-          _UseReactiveStyles = value;
-
-
-          if (!prevValue && value)
+          if (!_UseReactiveStyles && value)
           {
             TypeSpecificStyles.Changed += ReapplyStyles;
             Palette.Changed += ReapplyStyles;
           }
 
-          if (prevValue && !value)
+          if (_UseReactiveStyles && !value)
           {
             TypeSpecificStyles.Changed -= ReapplyStyles;
             Palette.Changed -= ReapplyStyles;
           }
+
+          _UseReactiveStyles = value;
         }
       }
 

@@ -20,13 +20,13 @@ namespace CrabUI
     }
 
     private CUIStyleManager CUIStyleManager;
-    private CUIPalettes _Palettes;
+    public CUIPalettes _Palettes;
 
     public CUIMainComponent Main => MainComponents.Main;
     public CUIMainComponent TopMain => MainComponents.TopMain;
 
     private CUIInput _Input = new();
-    private EventConstructor _EventConstructor;
+    public EventConstructor _EventConstructor;
     private AnimationPlayer _AnimationPlayer;
     private CUIParser _CUIParser = new();
     private CUISerializer _CUISerializer = new();

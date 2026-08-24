@@ -15,6 +15,7 @@ namespace CrabUI
     public interface Host : Layout.Host
     {
       public CUIDirection Direction { get; }
+      public float TotalWidth { set; }
     }
     public interface Child : Layout.ChildBase
     {
@@ -29,16 +30,14 @@ namespace CrabUI
     }
 
 
-
-
-
-
     public class ChildSize
     {
       public Layout.Child Child { get; set; }
       public float Width { get; set; }
       public float Height { get; set; }
     }
+
+    public float TotalWidth { get; private set; }
 
     public override void UpdateChildren()
     {
@@ -48,7 +47,7 @@ namespace CrabUI
       List<ChildSize> sizes = new();
       List<ChildSize> resizables = new();
 
-      float TotalWidth = 0;
+      TotalWidth = 0;
       foreach (Layout.Child c in Parent.Children)
       {
         float w = 0;
@@ -98,13 +97,20 @@ namespace CrabUI
         }
       }
 
-      float emptySpace = Parent.ChildrenRect.Width - TotalWidth;
-      float totalFlex = resizables.Sum(size => size.Child.Flex.Value);
-      foreach (ChildSize size in resizables)
+      if (resizables.Count > 0)
       {
-        size.Width = emptySpace * size.Child.Flex.Value / totalFlex;
-      }
+        float emptySpace = Parent.ChildrenRect.Width - TotalWidth;
+        float totalFlex = resizables.Sum(size => size.Child.Flex.Value);
 
+        float spaceleft = emptySpace;
+        for (int i = 0; i < resizables.Count - 1; i++)
+        {
+          resizables[i].Width = emptySpace * resizables[i].Child.Flex.Value / totalFlex;
+          spaceleft -= resizables[i].Width;
+        }
+
+        resizables.Last().Width = spaceleft;
+      }
 
       if (Parent.Direction == CUIDirection.Straight)
       {
@@ -138,6 +144,9 @@ namespace CrabUI
         }
       }
 
+
+      Parent.TotalWidth = TotalWidth;//HACK
+
       base.UpdateChildren();
     }
 
@@ -145,7 +154,7 @@ namespace CrabUI
     {
       if (Parent.FitContent.X)
       {
-        float maxWidth = 0;
+        float totalWidth = 0;
         foreach (Layout.Child c in Parent.Children)
         {
           if (c.Flex != null) continue;
@@ -157,11 +166,11 @@ namespace CrabUI
           if (c.MinSize.X.HasValue) w = Math.Max(w, c.MinSize.X.Value + c.OutToChildDiff.FullWidth);
           if (c.MaxSize.X.HasValue) w = Math.Min(w, c.MaxSize.X.Value);
 
-          maxWidth = Math.Max(maxWidth, w);
+          totalWidth += w;
         }
 
-        Parent.MinSize = Parent.MinSize with { X = maxWidth };
-        Parent.MaxSize = Parent.MaxSize with { X = maxWidth };
+        Parent.MinSize = Parent.MinSize with { X = totalWidth };
+        Parent.MaxSize = Parent.MaxSize with { X = totalWidth };
       }
 
       if (Parent.FitContent.Y)

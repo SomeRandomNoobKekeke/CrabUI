@@ -19,8 +19,7 @@ namespace CrabUI
       CUIVerticalList block = new CUIVerticalList()
       {
         Flex = 1,
-        Absolute = new CUINullRect(h: 150),
-        // FitContent = new CUIBool2(false, true),
+        FitContent = new CUIBool2(false, true),
       };
 
       wrapper["color select"] = new CUIColorPicker()
@@ -45,12 +44,12 @@ namespace CrabUI
         OnInput = (s) => palette.Swap(CUIPalette.FromColor(CUICore.Parser.Parse<Color>(s))),
       };
 
-      block["panel"] = new CUIDefault.HorizontalPanel()
+      block["panel"] = new CUIDefault.VerticalPanel()
       {
         FitContent = new CUIBool2(false, true),
       };
 
-      block["panel"]["radios"] = new CUIHorizontalList()
+      block["panel"]["radios"] = new CUIDefault.HorizontalPanel()
       {
         FitContent = new CUIBool2(false, true),
       };
@@ -58,10 +57,9 @@ namespace CrabUI
       block["panel"]["radios"]["1"] = new CUIRadioButton("radio button 1") { Group = "bruh" };
       block["panel"]["radios"]["2"] = new CUIRadioButton("radio button 2") { Group = "bruh" };
 
-      block["panel"]["checkbox"] = new CUICheckBox()
-      {
-        Absolute = new CUINullRect(w: 30, h: 30),
-      };
+      block["panel"]["toggle button"] = new CUIToggleButton("CUIToggleButton");
+
+      block["panel"]["checkbox"] = new CUICheckBox();
 
       block.DeepPalette = palette;
 

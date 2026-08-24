@@ -33,16 +33,9 @@ namespace CrabUIUser
           Background = { Color = Color.Yellow },
         };
 
-        frame["wrapper1"]["text 1"] = new CUITextBlock()
+        frame["wrapper1"]["text"] = new CUITextBlock()
         {
-          Text = "text 1",
-          Absolute = new CUINullRect(20, 20),
-          Background = { Color = Color.Orange },
-        };
-
-        frame["wrapper1"]["text 2"] = new CUITextBlock()
-        {
-          Text = "text 2",
+          Text = "Fit x,y",
           Absolute = new CUINullRect(50, 50),
           Background = { Color = Color.Orange },
         };
@@ -55,17 +48,9 @@ namespace CrabUIUser
           Background = { Color = Color.Yellow },
         };
 
-        frame["wrapper2"]["text 1"] = new CUITextBlock()
+        frame["wrapper2"]["text"] = new CUITextBlock()
         {
-          Text = "text 1",
-          ResizeStrategy = ResizeStrategy.Resist,
-          Absolute = new CUINullRect(0, 0),
-          Background = { Color = Color.Orange },
-        };
-
-        frame["wrapper2"]["text 2"] = new CUITextBlock()
-        {
-          Text = "text 2",
+          Text = "Fit y",
           ResizeStrategy = ResizeStrategy.Resist,
           Absolute = new CUINullRect(50, 50),
           Background = { Color = Color.Orange },
@@ -79,17 +64,9 @@ namespace CrabUIUser
           Background = { Color = Color.Yellow },
         };
 
-        frame["wrapper3"]["text 1"] = new CUITextBlock()
+        frame["wrapper3"]["text"] = new CUITextBlock()
         {
-          Text = "text 1",
-          ResizeStrategy = ResizeStrategy.Resist,
-          Absolute = new CUINullRect(0, 0),
-          Background = { Color = Color.Orange },
-        };
-
-        frame["wrapper3"]["text 2"] = new CUITextBlock()
-        {
-          Text = "text 2",
+          Text = "Fit x",
           ResizeStrategy = ResizeStrategy.Resist,
           Absolute = new CUINullRect(50, 50),
           Background = { Color = Color.Orange },

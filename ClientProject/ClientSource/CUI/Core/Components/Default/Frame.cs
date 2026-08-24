@@ -56,6 +56,12 @@ namespace CrabUI
       {
         Caption.Text = caption;
       }
+
+      public Frame(string caption, float width, float height) : this()
+      {
+        Caption.Text = caption;
+        Absolute = new CUINullRect(w: width, h: height);
+      }
     }
   }
 }

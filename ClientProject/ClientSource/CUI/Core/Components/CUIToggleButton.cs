@@ -44,9 +44,9 @@ namespace CrabUI
     {
       set
       {
-        OnColor = value.MultOpaque(1.0f);
-        OffColorHovered = value.MultOpaque(0.25f);
-        OffColor = OffColorHovered.MultOpaque(0.7f);
+        OnColor = value.MultOpaque(0.7f);
+        OffColorHovered = value.MultOpaque(0.4f);
+        OffColor = value.MultOpaque(0.3f);
         DetermineColor();
       }
     }

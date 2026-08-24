@@ -26,6 +26,7 @@ namespace CrabUI
       }
 
       CUIDirection CUIHorizontalListLayout.Host.Direction => Self.LayoutProps.Direction.Value;
+      float CUIHorizontalListLayout.Host.TotalWidth { set => Self.UpdateChildrenOffsetBounds(value); }
     }
 
     protected override void InitStyle()
@@ -40,9 +41,11 @@ namespace CrabUI
     [CUISerializableProp]
     public bool Scrollable { get; set; }
     [CUISerializableProp]
-    public float TopGap { get; set; }
-    public float BottomGap { get; set; }
+    public float LeftGap { get; set; }
+    [CUISerializableProp]
+    public float RightGap { get; set; }
 
+    [CUISerializableProp]
     public float Scroll
     {
       get => ChildrenOffset.X;
@@ -53,12 +56,34 @@ namespace CrabUI
       }
     }
 
-    protected CUIHorizontalListLayout ListLayout;
+    protected void UpdateChildrenOffsetBounds(float totalChildrenHeight)
+    {
+      if (Direction == CUIDirection.Straight)
+      {
+        LayoutProps.ChildrenOffset.Bounds = new CUIBoundaries(
+          minX: Math.Min(Rect.Height - totalChildrenHeight - LeftGap, 0),
+          maxX: RightGap,
+          minY: 0,
+          maxY: 0
+        );
+      }
+      else
+      {
+        LayoutProps.ChildrenOffset.Bounds = new CUIBoundaries(
+          minX: -LeftGap,
+          maxX: -Math.Min(Rect.Height - totalChildrenHeight - RightGap, 0),
+          minY: 0,
+          maxY: 0
+        );
+      }
+    }
 
     private void ScrollHandle(CUIMouseScrollEvent e)
     {
       Scroll += e.Scroll;
     }
+
+    protected CUIHorizontalListLayout ListLayout;
 
     [InitMethod]
     protected override void InitLayout()

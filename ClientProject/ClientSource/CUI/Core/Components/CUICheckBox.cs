@@ -16,14 +16,24 @@ namespace CrabUI
   {
     public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUICheckBox>((c) =>
     {
-
+      c.OnSprite.Color = c.Palette["main"];
+      c.OffSprite.Color = Color.Lerp(c.Palette["main"], Color.Gray, 0.5f);
     });
 
     protected override void InitStyle()
     {
       base.InitStyle();
-      Absolute = new CUINullRect(w: 30, h: 30);
+
+      OnSprite = CUISprite.AtPos(0, 1);
+      OffSprite = CUISprite.AtPos(1, 1);
+
+      State = false;
+
+      Absolute = new CUINullRect(w: 24, h: 24);
     }
+
+    public bool PlaySound { get; set; } = true;
+    public GUISoundType ClickSound { get; set; } = GUISoundType.TickBox;//TODO don't reference it directly? there should be some cui sound manager
 
     public CUISprite OnSprite { get; set; }
     public CUISprite OffSprite { get; set; }
@@ -43,14 +53,11 @@ namespace CrabUI
 
     public CUICheckBox() : base()
     {
-      OnSprite = CUISprite.AtPos(0, 1);
-      OnSprite.Color = Color.Lime;
-
-      OffSprite = CUISprite.AtPos(1, 1);
-      OffSprite.Color = Color.Red;
-
-      State = false;
-      MouseDown += (e) => Toggle();
+      MouseDown += (e) =>
+      {
+        Toggle();
+        if (PlaySound) SoundPlayer.PlayUISound(ClickSound);
+      };
       ConsumeMouseEvents = true;
     }
   }

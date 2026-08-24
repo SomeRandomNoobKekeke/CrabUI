@@ -10,6 +10,7 @@ using Microsoft.Xna.Framework.Graphics;
 namespace CrabUI
 {
   /// <summary>
+  /// Not used
   /// It's very primitive, it assumes that all sprites are separated by 2px empty lines
   /// </summary>
   public class CUISpriteAtlas(CUITexture2D texture)

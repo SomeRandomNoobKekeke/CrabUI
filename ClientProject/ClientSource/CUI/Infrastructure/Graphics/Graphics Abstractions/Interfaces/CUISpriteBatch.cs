@@ -14,13 +14,27 @@ namespace CrabUI
     //TODO there should be an abstract factory for this
     public static CUISpriteBatch Create() => __CUISpriteBatch.Create();
 
-    //Note: this one is mine
+    //Note: these are mine
     public void Draw(
       CUITexture2D texture,
       VertexPositionColorTexture lt,
       VertexPositionColorTexture rt,
       VertexPositionColorTexture rb,
       VertexPositionColorTexture lb
+    );
+
+    public void Draw(
+      CUITexture2D texture,
+      Rectangle destinationRectangle,
+      Rectangle? sourceRectangle,
+      Color colorTL,
+      Color colorTR,
+      Color colorBR,
+      Color colorBL,
+      float rotation,
+      Vector2 origin,
+      SpriteEffects effects,
+      float layerDepth
     );
 
     //This one is BaroDevish

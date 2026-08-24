@@ -69,73 +69,105 @@ namespace CrabUI
       => new Color(cl.R, cl.G, cl.B, cl.A);
 
 
+
     // https://github.com/MonoGame/MonoGame/blob/ef06375d186e85db9bf554679aaf509278072823/MonoGame.Framework/Color.cs
     #region From MonoGame
-    /// <summary>
-    /// Calculates Hue and Saturation value from RGB, to avoid code duplication.
-    /// </summary>
-    /// <param name="h">Hue component value from 0.0f to 360.0f</param>
-    /// <param name="s">Saturation component</param>
-    /// <param name="max">Returns the highest value of the <see cref="R"/>, <see cref="G"/> and <see cref="B"/> values</param>
-    /// <param name="min">Returns the lowest value of the <see cref="R"/>, <see cref="G"/> and <see cref="B"/> values</param>
-    private static void ToHS(Color _, out float h, out float s, out double max, out double min)
-    {
-      double r = _.R / 255f;
-      double g = _.G / 255f;
-      double b = _.B / 255f;
 
-      max = Math.Max(r, Math.Max(g, b));
-      min = Math.Min(r, Math.Min(g, b));
-      double delta = max - min;
+    //BRUH these methods are out of sync with FromHSV methods, wtf
+    // /// <summary>
+    // /// Calculates Hue and Saturation value from RGB, to avoid code duplication.
+    // /// </summary>
+    // /// <param name="h">Hue component value from 0.0f to 360.0f</param>
+    // /// <param name="s">Saturation component</param>
+    // /// <param name="max">Returns the highest value of the <see cref="R"/>, <see cref="G"/> and <see cref="B"/> values</param>
+    // /// <param name="min">Returns the lowest value of the <see cref="R"/>, <see cref="G"/> and <see cref="B"/> values</param>
+    // private static void ToHS(Color _, out float h, out float s, out double max, out double min)
+    // {
+    //   double r = _.R / 255f;
+    //   double g = _.G / 255f;
+    //   double b = _.B / 255f;
+
+    //   max = Math.Max(r, Math.Max(g, b));
+    //   min = Math.Min(r, Math.Min(g, b));
+    //   double delta = max - min;
 
 
-      // calculating hue
-      if (delta == 0f)
-        h = 0.0f;
-      else if (max == r)
-        h = (float)(60.0 * (((g - b) / delta) % 6.0));
-      else if (max == g)
-        h = (float)(60.0 * (((b - r) / delta) + 2.0));
-      else
-        h = (float)((60.0 * (((r - g) / delta)) + 4.0));
+    //   // calculating hue
+    //   if (delta == 0f)
+    //     h = 0.0f;
+    //   else if (max == r)
+    //     h = (float)(60.0 * (((g - b) / delta) % 6.0));
+    //   else if (max == g)
+    //     h = (float)(60.0 * (((b - r) / delta) + 2.0));
+    //   else
+    //     h = (float)((60.0 * (((r - g) / delta)) + 4.0));
 
-      if (h < 0.0f)
-        h += 360.0f;
-      // calculating saturation
-      s = 0.0f;
-      if (max != 0.0)
-        s = (float)((delta / max) * 100.0);
+    //   if (h < 0.0f)
+    //     h += 360.0f;
+    //   // calculating saturation
+    //   s = 0.0f;
+    //   if (max != 0.0)
+    //     s = (float)((delta / max) * 100.0);
 
-    }
-    /// <summary>
-    /// Converts <see cref="Color"/> into HSL components.
-    /// </summary>
-    /// <param name="h">Hue component from 0.0f to 360.0f.</param>
-    /// <param name="s">Saturation component from 0.0f to 100.0f.</param>
-    /// <param name="l">Luminosity (or brightness) component from 0.0f to 100.0f.</param>
-    public static void ToHSL(this Color _, out float h, out float s, out float l)
-    {
-      double max, min;
-      ToHS(_, out h, out s, out max, out min);
+    // }
+    // /// <summary>
+    // /// Converts <see cref="Color"/> into HSL components.
+    // /// </summary>
+    // /// <param name="h">Hue component from 0.0f to 360.0f.</param>
+    // /// <param name="s">Saturation component from 0.0f to 100.0f.</param>
+    // /// <param name="l">Luminosity (or brightness) component from 0.0f to 100.0f.</param>
+    // public static void ToHSL(this Color _, out float h, out float s, out float l)
+    // {
+    //   double max, min;
+    //   ToHS(_, out h, out s, out max, out min);
 
-      // luminosity
-      l = (float)((max + min) / 2.0) * 100.0f;
-    }
+    //   // luminosity
+    //   l = (float)((max + min) / 2.0) * 100.0f;
+    // }
 
-    /// <summary>
-    /// Converts <see cref="Color"/> into HSV components 
-    /// </summary>
-    /// <param name="h">Hue component value from 0.0f to 360.0f</param>
-    /// <param name="s">Saturation component value from 0.0f to 100.0f</param>
-    /// <param name="v">Value component value from 0.0f to 100.0f</param>
-    public static void ToHSV(this Color _, out float h, out float s, out float v)
-    {
-      double max, min;
-      ToHS(_, out h, out s, out max, out min);
+    // /// <summary>
+    // /// Converts <see cref="Color"/> into HSV components 
+    // /// </summary>
+    // /// <param name="h">Hue component value from 0.0f to 360.0f</param>
+    // /// <param name="s">Saturation component value from 0.0f to 100.0f</param>
+    // /// <param name="v">Value component value from 0.0f to 100.0f</param>
+    // public static void ToHSV(this Color _, out float h, out float s, out float v)
+    // {
+    //   double max, min;
+    //   ToHS(_, out h, out s, out max, out min);
 
-      // value
-      v = (float)(max * 100.0);
-    }
+    //   // value
+    //   v = (float)(max * 100.0);
+    // }
+
+
+    // public static float GetHue(this Color _)
+    // {
+    //   float h, s, v;
+    //   _.ToHSV(out h, out s, out v);
+    //   return h;
+    // }
+
+    // public static float GetSaturation(this Color _)
+    // {
+    //   float h, s, v;
+    //   _.ToHSV(out h, out s, out v);
+    //   return s;
+    // }
+
+    // public static float GetValue(this Color _)
+    // {
+    //   float h, s, v;
+    //   _.ToHSV(out h, out s, out v);
+    //   return v;
+    // }
+
+    // public static float GetLuminocity(this Color _)
+    // {
+    //   float h, s, l;
+    //   _.ToHSL(out h, out s, out l);
+    //   return l;
+    // }
 
     /// <summary>
     /// Converts the Hue value to either an R, G or B value

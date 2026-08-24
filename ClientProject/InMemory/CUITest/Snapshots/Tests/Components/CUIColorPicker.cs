@@ -15,11 +15,11 @@ namespace CrabUIUser
   {
     public static partial class Components
     {
-      public static CUIComponent CUIColorSelect()
+      public static CUIComponent CUIColorPicker()
       {
         CUIFrame frame = new CUIDefault.Frame()
         {
-          Caption = { Text = "CUIColorSelect" },
+          Caption = { Text = "CUIColorPicker" },
           Absolute = new CUINullRect(w: 400, h: 600),
         };
 
@@ -29,18 +29,16 @@ namespace CrabUIUser
           Anchor = CUIAnchor.Center,
         };
 
-        frame["wrapper"]["CUIColorSelect"] = new CUIColorSelect()
+        frame["wrapper"]["CUIColorSelect"] = new CUIColorPicker()
         {
-
-          Absolute = new CUINullRect(w: 256, h: 256),
-          Background = {
-            Sprite = CUISprite.CreateRadialColorPicker(256, 256),
-          },
+          Absolute = new CUINullRect(w: 210, h: 180),
+          HueSelectWidth = 30,
           OnSelected = (cl) =>
           {
             frame.Get<CUITextBlock>("wrapper.label").Text = CUICore.Parser.Serialize(cl);
             frame.Get<CUITextBlock>("wrapper.label").Background.Color = cl;
-          }
+          },
+
         };
 
         frame["wrapper"]["label"] = new CUITextBlock("Color");

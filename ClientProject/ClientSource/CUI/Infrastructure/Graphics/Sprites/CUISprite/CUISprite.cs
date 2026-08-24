@@ -10,24 +10,8 @@ using System.Text.Json;
 using CUILibs;
 namespace CrabUI
 {
-  public partial record CUISprite : IParsable
+  public partial record CUISprite
   {
-    public static CUISprite Get(string key)
-    {
-      CUICore.ResourceIOContext.CallingAssembly = Assembly.GetCallingAssembly();
-      CUISprite sprite = new CUISprite(CUICore.TextureManager.Get(key));
-      CUICore.ResourceIOContext.CallingAssembly = null;
-      return sprite;
-    }
-
-    public static CUISprite LoadAs(string path, string key)
-    {
-      CUICore.ResourceIOContext.CallingAssembly = Assembly.GetCallingAssembly();
-      CUISprite sprite = new CUISprite(CUICore.TextureManager.LoadAs(path, key));
-      CUICore.ResourceIOContext.CallingAssembly = null;
-      return sprite;
-    }
-
     private CUITexture2D _Texture; public CUITexture2D Texture
     {
       get => _Texture;
@@ -38,7 +22,24 @@ namespace CrabUI
       }
     }
     public Rectangle? SourceRectangle { get; set; } = null;
-    public Color Color { get; set; } = Color.White; // !!!
+
+    private static Color DefaultColor => Color.White;
+    public Color ColorTL { get; set; } = DefaultColor;
+    public Color ColorTR { get; set; } = DefaultColor;
+    public Color ColorBR { get; set; } = DefaultColor;
+    public Color ColorBL { get; set; } = DefaultColor;
+    public Color Color
+    {
+      get => ColorTL;
+      set
+      {
+        ColorTL = value;
+        ColorTR = value;
+        ColorBR = value;
+        ColorBL = value;
+      }
+    }
+
     public float Rotation { get; set; } = 0.0f;
     public Vector2 Origin { get; set; } = Vector2.Zero;
     public SpriteEffects Effects { get; set; } = SpriteEffects.None;
@@ -47,97 +48,10 @@ namespace CrabUI
 
     public void Draw(CUISpriteBatch spriteBatch, Rectangle destinationRectangle)
     {
-      spriteBatch.Draw(Texture, destinationRectangle, SourceRectangle, Color, Rotation, Origin, Effects, LayerDepth);
-
-      // spriteBatch.Draw(Texture, new VertexPositionColorTexture[]
-      // {
-      //   new VertexPositionColorTexture(
-      //     new Vector3(destinationRectangle.Left, destinationRectangle.Top, 0),
-      //     Color.Red,
-      //     new Vector2(0,0)
-
-      //   ),
-      //   new VertexPositionColorTexture(
-      //     new Vector3(destinationRectangle.Right, destinationRectangle.Top, 0),
-      //     Color.Green,
-      //     new Vector2(1,0)
-      //   ),
-      //   new VertexPositionColorTexture(
-      //     new Vector3(destinationRectangle.Left, destinationRectangle.Bottom, 0),
-      //     Color.Blue,
-      //     new Vector2(0,1)
-      //   ),
-      //   new VertexPositionColorTexture(
-      //     new Vector3(destinationRectangle.Right, destinationRectangle.Bottom, 0),
-      //     Color.White,
-      //     new Vector2(1,1)
-      //   ),
-      // }, 0.1f);
+      spriteBatch.Draw(Texture, destinationRectangle, SourceRectangle, ColorTL, ColorTR, ColorBR, ColorBL, Rotation, Origin, Effects, LayerDepth);
     }
 
-    //TODO how to UpdateDataBuffer if user changes data in texture manually? 
-    private Color[] DataBuffer;
-    public void UpdateDataBuffer()
-    {
-      DataBuffer = ShouldBufferData ? Texture.Data : [];
-    }
-
-    public bool _ShouldBufferData; public bool ShouldBufferData
-    {
-      get => _ShouldBufferData;
-      set
-      {
-        if (ShouldBufferData == value) return;
-        _ShouldBufferData = value;
-        UpdateDataBuffer();
-      }
-    }
-
-    public Color[] Data => ShouldBufferData ? DataBuffer : Texture.Data;
-
-    /// <param name="point">([0..1], [0..1])</param>
-    public Color GetPixel(Vector2 point)
-    {
-      Rectangle SourceRect = SourceRectangle.HasValue ? SourceRectangle.Value : Texture.Bounds;
-
-      int textureX = (int)Math.Round(SourceRect.X + point.X * SourceRect.Width);
-      int textureY = (int)Math.Round(SourceRect.Y + point.Y * SourceRect.Height);
-
-      if (textureX < SourceRect.X || (SourceRect.X + SourceRect.Width - 1) < textureX) return Color.Transparent;
-      if (textureY < SourceRect.Y || (SourceRect.Y + SourceRect.Height - 1) < textureY) return Color.Transparent;
-
-      return Data[textureY * Texture.Width + textureX];
-    }
-
-    public bool IsPointOnTransparentPixel(Vector2 point) => GetPixel(point).A == 0;
-
-    //TODO, for now i decided to make outer VisualUnit parsable instead
-    public static object Parse(string raw)
-    {
-      Dictionary<string, string> dict = JsonSerializer.Deserialize<Dictionary<string, string>>(raw);
-
-      CUI.Logger.Log(Logger.Wrap.IDictionary(dict));
-
-      CUISprite sprite = new CUISprite();
-
-      if (dict.ContainsKey("texture")) sprite.Texture = CUICore.TextureManager.Get(dict["texture"]);
-      if (dict.ContainsKey("color")) sprite.Color = CUICore.Parser.Parse<Color>(dict["color"]);
-
-      return sprite;
-    }
-
-    public string ToText()
-    {
-      Dictionary<string, string> dict = new Dictionary<string, string>()
-      {
-        ["texture"] = Texture.Key ?? "",
-        ["color"] = CUICore.Parser.Serialize(Color),
-      };
-
-      return JsonSerializer.Serialize(dict);
-    }
-
-    public CUISprite() { }
+    public CUISprite() { Texture = CUITexture2D.White; }
     public CUISprite(CUITexture2D texture) { Texture = texture; }
   }
 }

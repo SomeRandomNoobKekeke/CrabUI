@@ -8,50 +8,22 @@ using Microsoft.Xna.Framework;
 namespace CrabUI
 {
 
-  public class CUIColorSelect : CUIComponent
+  public class CUIColorSelect : CUIPosSelect
   {
-    private bool Selecting;
+    //TODO Mb i shouldn't hide base selected
+    public new Action<Color> OnSelected { set { Selected += value; } }
+    public new event Action<Color> Selected;
 
-    public Action<Color> OnSelected { set { Selected += value; } }
-    public event Action<Color> Selected;
-
-    private void SelectColor(Vector2 pos)
+    protected override void SelectPos(Vector2 pos)
     {
       if (!Selecting) return;
 
-      Selected?.Invoke(Background.Sprite.GetPixel(
-        (pos - ChildrenRect.Position) / ChildrenRect.Size
-      ));
+      //TODO remove code duplication
+      Vector2 v = (pos - ChildrenRect.Position) / ChildrenRect.Size;
+      v = new Vector2(Math.Clamp(v.X, 0, 1), Math.Clamp(v.Y, 0, 1));
+
+      Selected?.Invoke(Background.Sprite.GetPixel(v));
     }
 
-    private void HandleMouseUp(CUIMouseUpEvent e)
-    {
-      SelectColor(e.Pos);
-      Selecting = false;
-    }
-
-    protected override void OnAttachedToMainComponent(CUIMainComponent mainComponent)
-    {
-      base.OnAttachedToMainComponent(mainComponent);
-      mainComponent.GlobalEvents.MouseUp.Add(HandleMouseUp);
-    }
-    protected override void OnDetachedFromMainComponent(CUIMainComponent mainComponent)
-    {
-      base.OnDetachedFromMainComponent(mainComponent);
-      mainComponent.GlobalEvents.MouseUp.Remove(HandleMouseUp);
-    }
-
-    public CUIColorSelect()
-    {
-      ConsumeMouseEvents = true;
-      MouseDown += (e) =>
-      {
-        Selecting = true;
-        SelectColor(e.Pos);
-      };
-
-      MouseMoved += (e) => SelectColor(e.Pos);
-      // MouseLeave += (e) => Selecting = false;
-    }
   }
 }

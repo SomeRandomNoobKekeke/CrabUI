@@ -20,8 +20,13 @@ namespace CrabUIUser
         CUIFrame frame = new()
         {
           Background = {
-            Color = Color.White,
-            Sprite = new CUISprite(CUICore.TextureManager.Get("BaroDev")),
+            Sprite = new CUISprite(CUICore.TextureManager.Get("BaroDev"))
+            {
+              ColorTL = Color.Red,
+              ColorTR = Color.Green,
+              ColorBR = Color.Blue,
+              ColorBL = Color.Transparent,
+            },
           },
           Absolute = new CUINullRect(0, 0, 400, 600),
           Anchor = CUIAnchor.Center,

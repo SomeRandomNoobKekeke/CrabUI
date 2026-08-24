@@ -22,6 +22,7 @@ namespace CrabUIUser
 
     public CUITest CUITest { get; set; }
 
+
     public void Initialize()
     {
       Instance = this;

@@ -101,7 +101,8 @@ namespace CrabUI
             {
               DebugHub.Gates[name].Toggle();
               ClearEventList();
-            }
+            },
+            InheritPalette = true,
           });
         }
       }

@@ -12,6 +12,12 @@ namespace CrabUI
 {
   public static class CUIColor
   {
+
+    public static Color To(this Color source, Color target, float lambda)
+      => Color.Lerp(source, target, lambda);
+
+
+
     // https://en.wikipedia.org/wiki/Alpha_compositing
     public static Color Over(this Color top, Color bottom)
     {

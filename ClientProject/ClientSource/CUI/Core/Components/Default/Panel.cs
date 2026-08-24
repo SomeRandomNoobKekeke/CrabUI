@@ -18,7 +18,7 @@ namespace CrabUI
     {
       public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<HorizontalPanel>((c) =>
       {
-        c.Background.Color = c.Palette["main"].MultOpaque(0.5f);
+        c.Background.Color = c.Palette["main"].MultOpaque(0.4f);
       });
 
       protected override void InitStyle()
@@ -32,7 +32,7 @@ namespace CrabUI
     {
       public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<VerticalPanel>((c) =>
       {
-        c.Background.Color = c.Palette["main"].MultOpaque(0.5f);
+        c.Background.Color = c.Palette["main"].MultOpaque(0.4f);
       });
 
       protected override void InitStyle()

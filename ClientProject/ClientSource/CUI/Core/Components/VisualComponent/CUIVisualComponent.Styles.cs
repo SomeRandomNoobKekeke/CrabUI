@@ -15,14 +15,12 @@ namespace CrabUI
 
     protected virtual void InitStyle() { }
 
-    //TODO mb this should be deep by default
     public CUIPalette Palette
     {
       get => Styles.Palette;
       set
       {
         Styles.Palette = value;
-        InheritPalette = false; // HACK idk how if it fells naturals
       }
     }
 
@@ -39,7 +37,7 @@ namespace CrabUI
       }
     }
 
-    public bool InheritPalette { get; set; } = true;
+    public bool InheritPalette { get; set; } = false;
 
 
     public Action<CUIVisualComponent> Style

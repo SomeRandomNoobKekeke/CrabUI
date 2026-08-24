@@ -36,12 +36,23 @@ namespace CrabUI
         {
           if (child.IsDebugTool) continue;
 
-          ComponentList.Add(
-            new CUITextBlock(child.ToString())
-            {
-              TextAnchor = CUIAnchor.LeftCenter,
-            }
-          );
+          CUIButton btn = new CUIButton(child.ToString())
+          {
+            TextAnchor = CUIAnchor.LeftCenter,
+            Palette = CUICore.Palettes.Secondary,
+            MasterColor = child.Debug ? new Color(0, 200, 200) : new Color(0, 0, 200),
+          };
+
+          btn.MouseDown += (e) =>
+          {
+            child.DeepDebug = !child.DeepDebug;
+            Refresh();
+          };
+
+          btn.MouseEnter += (e) => HighlightOverlay.Rect = child.OuterRect;
+          btn.MouseLeave += (e) => HighlightOverlay.Rect = new CUIRect(0, 0, 0, 0);
+
+          ComponentList.Add(btn);
         }
       }
 
@@ -53,18 +64,16 @@ namespace CrabUI
 
         HighlightOverlay = new CUIComponent()
         {
-          Background = { Sprite = CUISprite.BaroDev }
+          Background = {
+            Sprite = CUISprite.BaroDev,
+            Color = Color.White *0.5f,
+          }
         };
 
-        this["panels"] = new CUIHorizontalList()
+        this["components"] = ComponentList = new CUIDefault.VerticalPanel()
         {
           Relative = new CUINullRect(0, 0, 1, 1),
-        };
-
-        this["panels"]["components"] = ComponentList = new CUIVerticalList()
-        {
-          FitContent = new CUIBool2(true, false),
-          Background = { Color = Color.Green },
+          Scrollable = true,
         };
       }
     }

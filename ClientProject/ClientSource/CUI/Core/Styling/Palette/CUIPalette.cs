@@ -20,7 +20,7 @@ namespace CrabUI
       Color back = Color.Lerp(Color.Black, color, 0.1f);
       Color panel = Color.Lerp(Color.Black, color, 0.3f);
       Color border = Color.Lerp(Color.Black, color, 0.7f);
-      Color text = Color.Lerp(Color.Black, Color.White, brightness * 1.5f);
+      Color text = Color.Lerp(Color.Black, Color.White, 0.95f);
       Color controls = new Color(0, 255, 255);
       Color selection = new Color(0, 255, 255);
       Color valid = new Color(0, 255, 0);

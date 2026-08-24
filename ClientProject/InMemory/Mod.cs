@@ -52,7 +52,7 @@ namespace CrabUIUser
         };
 
         CUICore.Debugger.Open();
-        CUIPalette.Preview();
+        // CUIPalette.Preview();
         // Utils.PrintAllHarmonyPatches();
 
 

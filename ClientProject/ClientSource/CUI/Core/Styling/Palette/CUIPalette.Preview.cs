@@ -25,7 +25,7 @@ namespace CrabUI
 
       wrapper["color select"] = new CUIColorPicker()
       {
-        Absolute = new CUINullRect(w: 210, h: 180),
+        Absolute = new CUINullRect(w: 390, h: 360),
         HueSelectWidth = 30,
         OnSelected = (cl) =>
         {
@@ -75,6 +75,8 @@ namespace CrabUI
       {
         Absolute = new CUINullRect(w: 600, h: 800),
       };
+
+      frame.Get<CUIVerticalList>("layout").Scrollable = true;
 
       frame["layout"]["block 1"] = BlockOfRandomStuff(CUICore.Palettes.Primary);
       frame["layout"]["block 2"] = BlockOfRandomStuff(CUICore.Palettes.Secondary);

@@ -10,27 +10,34 @@ namespace CrabUI
   {
     private static CUIComponent BlockOfRandomStuff(CUIPalette palette)
     {
-      CUIComponent block = new CUIVerticalList()
+      CUIHorizontalList wrapper = new CUIHorizontalList()
       {
-        Relative = new CUINullRect(w: 1),
+        FitContent = new CUIBool2(false, true),
+        // Margin = new CUISizes(bottom: 20),
+      };
+
+      CUIVerticalList block = new CUIVerticalList()
+      {
+        Flex = 1,
         Absolute = new CUINullRect(h: 150),
         // FitContent = new CUIBool2(false, true),
       };
 
-      block["header"] = new CUIHorizontalList()
+      wrapper["color select"] = new CUIColorPicker()
       {
-        FitContent = new CUIBool2(false, true),
+        Absolute = new CUINullRect(w: 210, h: 180),
+        HueSelectWidth = 30,
+        OnSelected = (cl) =>
+        {
+          block.Get<CUITextInput>("input").Text = CUICore.Parser.Serialize(cl);
+        },
       };
 
-      block["header"]["bnt1"] = new CUIButton("button") { Flex = 1 };
-      block["header"]["bnt2"] = new CUIButton("button") { Flex = 1 };
+      wrapper["block of random stuff"] = block;
 
-      block["main"] = new CUIVerticalList()
-      {
-        Flex = 1,
-      };
 
-      block["main"]["input"] = new CUITextInput()
+      block["button"] = new CUIButton("button");
+      block["input"] = new CUITextInput()
       {
         Anchor = CUIAnchor.Center,
         Absolute = new CUINullRect(h: 24),
@@ -38,27 +45,27 @@ namespace CrabUI
         OnInput = (s) => palette.Swap(CUIPalette.FromColor(CUICore.Parser.Parse<Color>(s))),
       };
 
-      block["main"]["panel"] = new CUIDefault.HorizontalPanel()
+      block["panel"] = new CUIDefault.HorizontalPanel()
       {
         FitContent = new CUIBool2(false, true),
       };
 
-      block["main"]["panel"]["radios"] = new CUIHorizontalList()
+      block["panel"]["radios"] = new CUIHorizontalList()
       {
         FitContent = new CUIBool2(false, true),
       };
 
-      block["main"]["panel"]["radios"]["1"] = new CUIRadioButton("radio button 1") { Group = "bruh" };
-      block["main"]["panel"]["radios"]["2"] = new CUIRadioButton("radio button 2") { Group = "bruh" };
+      block["panel"]["radios"]["1"] = new CUIRadioButton("radio button 1") { Group = "bruh" };
+      block["panel"]["radios"]["2"] = new CUIRadioButton("radio button 2") { Group = "bruh" };
 
-      block["main"]["panel"]["checkbox"] = new CUICheckBox()
+      block["panel"]["checkbox"] = new CUICheckBox()
       {
         Absolute = new CUINullRect(w: 30, h: 30),
       };
 
       block.DeepPalette = palette;
 
-      return block;
+      return wrapper;
     }
 
 
@@ -66,7 +73,7 @@ namespace CrabUI
     {
       CUIFrame frame = new CUIDefault.Frame("Palette Preview")
       {
-        Absolute = new CUINullRect(w: 400, h: 600),
+        Absolute = new CUINullRect(w: 600, h: 800),
       };
 
       frame["layout"]["block 1"] = BlockOfRandomStuff(CUICore.Palettes.Primary);

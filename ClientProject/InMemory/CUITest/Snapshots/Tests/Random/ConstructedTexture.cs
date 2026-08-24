@@ -53,7 +53,7 @@ namespace CrabUIUser
 
           .Build(tracked: true);
 
-        CUICore.TextureManager.Add(texture, "ConstructedTexture");
+        CUICore.TextureManager.Add("ConstructedTexture", texture);
 
         frame.Background.Sprite = new CUISprite(texture);
         frame.Absolute = new CUINullRect(w: frame.Background.Sprite.Texture.Width, h: frame.Background.Sprite.Texture.Height);

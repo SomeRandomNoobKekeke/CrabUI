@@ -18,7 +18,7 @@ namespace CrabUI
 
     public void Forget() => CUICore.TextureManager.Forget(Key);
     public void ForgetAndDispose() { Forget(); Dispose(); }
-    public void Track(string key = null) => CUICore.TextureManager.Add(this, key ?? Key);
+    public void Track(string key = null) => CUICore.TextureManager.Add(key ?? Key, this);
 
     public static CUITexture2D White => __CUITexture2D.White;
     public static CUITexture2D BaroDev => CUICore.TextureManager.Get("BaroDev");
@@ -33,6 +33,8 @@ namespace CrabUI
 
     public float TexelWidth { get; }
     public float TexelHeight { get; }
+
+    public void SwapAndDispose(CUITexture2D other);
 
     public void SetData(Color[] data);
     public void SetData(int level, int arraySlice, Rectangle? rect, Color[] data, int startIndex, int elementCount);

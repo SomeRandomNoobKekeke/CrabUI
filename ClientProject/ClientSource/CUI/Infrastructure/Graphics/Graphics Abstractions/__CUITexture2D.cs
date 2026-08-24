@@ -40,6 +40,17 @@ namespace CrabUI
       set => SetData(value);
     }
 
+    public void SwapAndDispose(CUITexture2D other)
+    {
+      if (other is __CUITexture2D _other)
+      {
+        if (ShouldBeDisposed) XNATexture?.Dispose();
+
+        XNATexture = _other.XNATexture;
+        ShouldBeDisposed = _other.ShouldBeDisposed;
+      }
+    }
+
     public void SetData(Color[] data) => XNATexture.SetData<Color>(data);
     public void SetData(int level, int arraySlice, Rectangle? rect, Color[] data, int startIndex, int elementCount)
       => XNATexture.SetData<Color>(level, arraySlice, rect, data, startIndex, elementCount);

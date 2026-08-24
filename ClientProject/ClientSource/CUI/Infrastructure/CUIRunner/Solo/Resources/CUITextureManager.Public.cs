@@ -31,7 +31,7 @@ namespace CrabUI
       public CUITexture2D CreateNew(int width, int height, bool mipmap, SurfaceFormat format, string key = null)
         => Self.TextureManager.CreateNew(width, height, mipmap, format, key);
 
-      public CUITexture2D Add(CUITexture2D texture, string key) => Self.TextureManager.Add(texture, key);
+      public CUITexture2D Add(string key, CUITexture2D texture) => Self.TextureManager.Add(key, texture);
       public void Clear() => Self.TextureManager.Clear();
       public void Dispose() => Self.TextureManager.Dispose();
       public void Forget(string key) => Self.TextureManager.Forget(key);

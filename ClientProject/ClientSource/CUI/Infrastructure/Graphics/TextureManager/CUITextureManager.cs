@@ -18,7 +18,7 @@ namespace CrabUI
     public CUITexture2D CreateNew(int width, int height, string key = null);
     public CUITexture2D CreateNew(int width, int height, bool mipmap, SurfaceFormat format, string key = null);
 
-    CUITexture2D Add(CUITexture2D texture, string key);
+    CUITexture2D Add(string key, CUITexture2D texture);
     void Clear();
     void Dispose();
     void Forget(string key);

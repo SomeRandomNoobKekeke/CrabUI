@@ -75,18 +75,21 @@ namespace CrabUI
         },
       };
 
+      if (!CUICore.TextureManager.Has("HueSelect"))
+      {
+        CUICore.TextureManager.Add("HueSelect",
+          new TextureBuilder(1, 360)
+            .Fill((x, y) => CUIColor.FromHSV(y, 1, 1))
+            .Build(tracked: true)
+        );
+      }
+
       this["layout"]["HueSelect"] = HueSelect = new CUIPosSelect()
       {
         Absolute = new CUINullRect(w: 30),
         Borders = { Sizes = new CUISizes(left: 2) },
         Style = (c) => c.Borders.Color = Color.White,
-        Background = {
-          Sprite = new CUISprite(
-            new TextureBuilder(1, 360)
-              .Fill((x,y) => CUIColor.FromHSV(y, 1, 1))
-              .Build(tracked:true, key:"HueSelect")
-          )
-        },
+        Background = { Sprite = CUISprite.Get("HueSelect") },
         OnSelected = (v) =>
         {
           Hue = (float)Math.Floor(v.Y * 360);

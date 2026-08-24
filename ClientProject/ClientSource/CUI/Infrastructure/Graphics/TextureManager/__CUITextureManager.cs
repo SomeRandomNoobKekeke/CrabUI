@@ -39,7 +39,7 @@ namespace CrabUI
     {
       CUIRenderTarget2D texture = new __CUIRenderTarget2D(width, height);
       key ??= CreateID();
-      Add(texture, key);
+      Add(key, texture);
 
       return texture;
     }
@@ -48,7 +48,7 @@ namespace CrabUI
     {
       CUITexture2D texture = new __CUITexture2D(width, height);
       key ??= CreateID();
-      Add(texture, key);
+      Add(key, texture);
       return texture;
     }
 
@@ -56,21 +56,25 @@ namespace CrabUI
     {
       CUITexture2D texture = new __CUITexture2D(width, height, mipmap, format);
       key ??= CreateID();
-      Add(texture, key);
+      Add(key, texture);
       return texture;
     }
 
-    public CUITexture2D Add(CUITexture2D texture, string key)
+    public CUITexture2D Add(string key, CUITexture2D texture)
     {
       key ??= CreateID();
       texture.Key = key;
 
       if (LoadedTextures.ContainsKey(key))
       {
-        LoadedTextures[key].Dispose();
+        LoadedTextures[key].SwapAndDispose(texture);
+      }
+      else
+      {
+        LoadedTextures[key] = texture;
       }
 
-      return LoadedTextures[key] = texture;
+      return LoadedTextures[key];
     }
 
 
@@ -103,7 +107,7 @@ namespace CrabUI
         return BackupTexture;
       }
 
-      return Add(texture, key);
+      return Add(key, texture);
     }
 
     private CUITexture2D _LoadFrom(string path)

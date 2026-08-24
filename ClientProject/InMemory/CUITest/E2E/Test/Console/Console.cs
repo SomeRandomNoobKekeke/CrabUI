@@ -26,7 +26,7 @@ namespace CrabUIUser
       public void Initialize()
       {
         Absolute = new CUINullRect(w: 600, h: 400);
-        Caption.Text = "Console";
+        Caption = "Console";
 
         this["layout"]["logwrapper"] = new CUIVerticalList()
         {

@@ -25,7 +25,7 @@ namespace CrabUIUser
           this.Get<CUITextBlock>("layout.header.text").Text = Core.Text;
         }
 
-        public CalculatorUI(CalculatorCore core) : base()
+        public CalculatorUI(CalculatorCore core) : base("Calc")
         {
           Core = core;
           Core.Changed += Refresh;
@@ -45,7 +45,7 @@ namespace CrabUIUser
           Commands.ListenFor<string>("opp", (s) => Core.AcceptOpperation(s));
           Commands.ListenFor<string>("command", (s) => Core.AcceptCommand(s));
 
-          Caption.Text = "Calc";
+
           this["layout"]["header"] = new CUIHorizontalList()
           {
             Absolute = new CUINullRect(h: 50),

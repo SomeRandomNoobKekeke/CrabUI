@@ -17,19 +17,14 @@ namespace CrabUIUser
     {
       public static CUIComponent CUIDropDown()
       {
-        CUIFrame frame = new CUIDefault.Frame()
-        {
-          Caption = { Text = "CUIDropDown" },
-          Absolute = new CUINullRect(w: 400, h: 600),
-        };
+        var frame = new CUIDefault.Frame("CUIDropDown", 400, 600);
 
         frame["dropdown"] = new CUIDropDown()
         {
           Anchor = CUIAnchor.Center,
           Selected = "bruh",
-          Options = new string[]{
-            "lol","123424234fqwef"
-          }
+          Options = ["lol", "123424234fqwef"],
+          OnSelect = (s) => frame.Caption = s,
         };
 
         return frame;

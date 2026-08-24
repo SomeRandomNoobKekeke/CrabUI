@@ -66,13 +66,11 @@ namespace CrabUIUser
           FieldList.Add(NestedWrapper);
         }
 
-        public SettingsUI(MicroSettingsManager manager) : base()
+        public SettingsUI(MicroSettingsManager manager) : base("Some Settings, bruh")
         {
           Manager = manager;
 
           OnOpen += () => Refresh();
-
-          Caption.Text = "Some Settings, bruh";
 
           Commands.ListenFor<string[]>(
             "setvalue",

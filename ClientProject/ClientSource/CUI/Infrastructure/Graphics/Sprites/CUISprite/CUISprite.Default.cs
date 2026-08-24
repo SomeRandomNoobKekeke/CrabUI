@@ -27,10 +27,12 @@ namespace CrabUI
     public static CUISprite Cross => AtPos(0, 0);
     public static CUISprite Angle => AtPos(1, 0);
 
+
     public static CUISprite HorizontalGradient => AtPos(7, 6, 8, 1);
     public static CUISprite VerticalGradient => AtPos(6, 7, 1, 8);
     public static CUISprite BoxWithAShadow => AtPos(4, 1);
 
+    public static CUISprite GlowingEdges => AtPos(2, 1);
     public static CUISprite BluredEdges => AtPos(0, 2);
     public static CUISprite BluredEdgesHorizontal => AtPos(1, 2);
     public static CUISprite BluredEdgesVertical => AtPos(2, 2);

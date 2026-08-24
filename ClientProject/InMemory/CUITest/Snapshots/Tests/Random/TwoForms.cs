@@ -17,23 +17,20 @@ namespace CrabUIUser
     {
       public static CUIComponent TwoForms()
       {
-        CUIFrame frame = new CUIDefault.Frame()
+        CUIFrame frame = new CUIDefault.Frame("bruh")
         {
-          Caption = { Text = "bruh" },
           Relative = CUINullRect.One,
         };
 
 
-        frame["a"] = new CUIDefault.Frame()
+        frame["a"] = new CUIDefault.Frame("kekw")
         {
-          Caption = { Text = "kekw" },
           DeepPalette = CUIPalette.FromColor(Color.Blue),
           Absolute = new CUINullRect(0, 0, 100, 100),
         };
 
-        frame["b"] = new CUIDefault.Frame()
+        frame["b"] = new CUIDefault.Frame("lul")
         {
-          Caption = { Text = "lul" },
           DeepPalette = CUIPalette.FromColor(Color.Green),
           Absolute = new CUINullRect(0, 0, 100, 100),
         };

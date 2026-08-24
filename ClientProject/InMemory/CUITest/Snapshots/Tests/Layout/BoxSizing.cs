@@ -17,11 +17,7 @@ namespace CrabUIUser
     {
       public static CUIComponent BoxSizing()
       {
-        CUIFrame frame = new CUIDefault.Frame()
-        {
-          Caption = { Text = "BoxSizing" },
-          Absolute = new CUINullRect(w: 400, h: 600),
-        };
+        CUIFrame frame = new CUIDefault.Frame("BoxSizing", 400, 600);
 
         frame["background"] = new CUIComponent()
         {

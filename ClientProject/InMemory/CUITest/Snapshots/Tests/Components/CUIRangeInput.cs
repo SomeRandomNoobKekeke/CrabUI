@@ -17,11 +17,7 @@ namespace CrabUIUser
     {
       public static CUIComponent CUIRangeInput()
       {
-        CUIFrame frame = new CUIDefault.Frame()
-        {
-          Caption = { Text = "CUIRangeInput" },
-          Absolute = new CUINullRect(w: 400, h: 600),
-        };
+        CUIFrame frame = new CUIDefault.Frame("CUIRangeInput", 400, 600);
 
         CUIRangeInput rangeInput = new CUIRangeInput()
         {

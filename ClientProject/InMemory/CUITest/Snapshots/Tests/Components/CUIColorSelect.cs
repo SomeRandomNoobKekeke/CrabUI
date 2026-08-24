@@ -17,11 +17,7 @@ namespace CrabUIUser
     {
       public static CUIComponent CUIColorSelect()
       {
-        CUIFrame frame = new CUIDefault.Frame()
-        {
-          Caption = { Text = "CUIColorSelect" },
-          Absolute = new CUINullRect(w: 400, h: 600),
-        };
+        CUIFrame frame = new CUIDefault.Frame("CUIColorSelect", 400, 600);
 
         frame["wrapper"] = new CUIVerticalList()
         {

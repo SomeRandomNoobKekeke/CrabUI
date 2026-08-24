@@ -64,6 +64,9 @@ namespace CrabUI
     {
       EventTargets.Find(VisualFlattener.Flat, Input.Mouse.Pos);
 
+      EventDispatcher.Dispatch(GlobalEvents, EventConstructor.Events);
+      EventDispatcher.Dispatch(GlobalEvents, EventConstructor.KeyboardEvents);
+
       EventDispatcher.Dispatch(EventTargets.PrevTargets, EventConstructor.MouseOffEvent);
       EventDispatcher.Dispatch(EventTargets.Targets, EventConstructor.MouseOnEvent);
 
@@ -71,9 +74,6 @@ namespace CrabUI
       IEnumerable<IEventConsumer> leaved = EventTargets.PrevTargets.Except(EventTargets.Targets);
       EventDispatcher.Dispatch(leaved, EventConstructor.MouseLeaveEvent);
       EventDispatcher.Dispatch(entered, EventConstructor.MouseEnterEvent);
-
-      EventDispatcher.Dispatch(GlobalEvents, EventConstructor.Events);
-      EventDispatcher.Dispatch(GlobalEvents, EventConstructor.KeyboardEvents);
 
       EventDispatcher.Dispatch(EventTargets.Targets, EventConstructor.Events);
     }

@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using CUICodeGenerator;
 using Barotrauma.Extensions;
+using CUILibs;
 
 namespace CrabUI
 {
@@ -17,31 +18,90 @@ namespace CrabUI
     public string Selected
     {
       get => SelectedBtn.Text;
-      set => SelectedBtn.Text = value;
+      set
+      {
+        SelectedBtn.Text = value;
+        Select?.Invoke(value);
+      }
     }
+
+    public Action<string> OnSelect { set { Select += value; } }
+    public event Action<string> Select;
 
     public IEnumerable<string> Options
     {
+      get => OptionBox.Children.Select(c => (c as CUIButton).Text);
       set
       {
         OptionBox.Children.Clear();
         foreach (string option in value)
         {
-          OptionBox.Children.Add(new CUIButton(option)
-          {
-            OnMouseDown = (e) => Select(option),
-          });
+          Add(option);
         }
       }
     }
 
-    private void Select(string option)
+    public void Add(string option)
     {
-      Selected = option;
+      OptionBox.Children.Add(new CUIButton(option)
+      {
+        Background = { Sprite = CUISprite.White },
+        Borders = {
+          Sizes = new CUISizes(bottom:1),
+          Color = Color.White,
+        },
+        OnMouseDown = (e) =>
+        {
+          Selected = option;
+          IsOpen = false;
+        },
+        Style = (c) =>
+        {
+          c.MasterColor = c.Palette["main"].To(Color.Black, 0.3f);
+          c.Borders.Color = c.Palette["border"];
+        },
+      });
     }
 
+    public void Remove(string option)
+    {
+      CUIButton? btn = (CUIButton)OptionBox.Children.FirstOrDefault(
+        c => (c as CUIButton).Text == option
+      );
 
-    public bool Open { get; set; }
+      if (btn != null)
+      {
+        OptionBox.Children.Remove(btn);
+      }
+    }
+
+    public bool Has(string option)
+    {
+      foreach (CUIVisualComponent child in OptionBox.Children)
+      {
+        if (child is CUIButton btn)
+        {
+          if (btn.Text == option) return true;
+        }
+      }
+
+      return false;
+    }
+
+    public void Clear()
+    {
+      OptionBox.Children.Clear();
+    }
+
+    private bool _IsOpen; public bool IsOpen
+    {
+      get => _IsOpen;
+      set
+      {
+        _IsOpen = value;
+        VisualRestructureNotifier.Notify();
+      }
+    }
 
     protected override void OnAttachedToMainComponent(CUIMainComponent mainComponent)
     {
@@ -54,16 +114,19 @@ namespace CrabUI
       mainComponent.GlobalEvents.MouseDown.Remove(HandleGlobalMouseClick);
     }
 
-    private void HandleGlobalMouseClick(CUIMouseDownEvent e) => Open = false;
+    private bool WasClosedFromGlobalMouseDown; //HACK
+    private void HandleGlobalMouseClick(CUIMouseDownEvent e)
+    {
+      WasClosedFromGlobalMouseDown = false;
+      if (IsOpen)
+      {
+        IsOpen = false;
+        WasClosedFromGlobalMouseDown = true;
+      }
+    }
 
     private CUIButton SelectedBtn { get; }
     private CUIComponent OptionBox { get; }
-
-    // private CUINullVector2 MinSize;
-    // protected override CUINullVector2 MinSizeOverride => new CUINullVector2(
-    //   SelectedBtn.TextBlock.ForcedSize.X,
-    //   SelectedBtn.TextBlock.ForcedSize.Y
-    // );
 
     public override IEnumerable<VisualUnit> VisualSplit()
     {
@@ -73,11 +136,7 @@ namespace CrabUI
 
       yield return SelectedBtn.VisualWrapper;
 
-      if (!Open)
-      {
-        yield return OptionBox.VisualWrapper;
-      }
-
+      if (IsOpen) yield return OptionBox.VisualWrapper;
 
       yield return Borders.VisualWrapper;
     }
@@ -99,8 +158,17 @@ namespace CrabUI
         Anchor = CUIAnchor.CenterTop,
       };
 
-      this["selected"] = SelectedBtn = new CUIButton("Unset");
-      SelectedBtn.MouseDown += (e) => Open = !Open;
+      this["selected"] = SelectedBtn = new CUIButton("Unset")
+      {
+        Relative = new CUINullRect(w: 1),
+        TextAnchor = CUIAnchor.LeftCenter,
+        OnMouseDown = (e) =>
+        {
+          if (!IsOpen && WasClosedFromGlobalMouseDown) return;
+
+          IsOpen = !IsOpen;
+        },
+      };
     }
   }
 }

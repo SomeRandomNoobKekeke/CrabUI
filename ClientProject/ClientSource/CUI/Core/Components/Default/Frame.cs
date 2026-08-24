@@ -16,7 +16,12 @@ namespace CrabUI
   {
     public class Frame : CUIFrame
     {
-      public CUITextBlock Caption { get; }
+      public CUITextBlock CaptionBlock { get; }
+      public string Caption
+      {
+        get => CaptionBlock.Text;
+        set => CaptionBlock.Text = value;
+      }
 
       public Frame() : base()
       {
@@ -38,7 +43,7 @@ namespace CrabUI
             c.Background.Color = c.Palette["main"];
           },
         };
-        this["layout"]["handle"]["caption"] = Caption = new CUITextBlock()
+        this["layout"]["handle"]["caption"] = CaptionBlock = new CUITextBlock()
         {
           Flex = 1,
         };
@@ -54,12 +59,12 @@ namespace CrabUI
 
       public Frame(string caption) : this()
       {
-        Caption.Text = caption;
+        CaptionBlock.Text = caption;
       }
 
       public Frame(string caption, float width, float height) : this()
       {
-        Caption.Text = caption;
+        CaptionBlock.Text = caption;
         Absolute = new CUINullRect(w: width, h: height);
       }
     }

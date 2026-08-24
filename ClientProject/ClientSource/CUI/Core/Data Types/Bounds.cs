@@ -29,6 +29,8 @@ namespace CrabUI
     public int MinY { get; set; }
     public int MaxY { get; set; }
 
+    public Vector2 Center => new Vector2((MinX + MaxX) / 2.0f, (MinY + MaxY) / 2.0f);
+
     public bool Intersects(int x, int y, int w, int h)
     {
       if (MaxX < x) return false;

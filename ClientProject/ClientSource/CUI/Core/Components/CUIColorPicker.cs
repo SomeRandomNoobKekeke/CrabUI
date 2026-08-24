@@ -13,6 +13,9 @@ namespace CrabUI
     private CUIPosSelect HueSelect;
     private CUIPosSelect ColorSelect;
 
+    private CUIComponent ColorSelectMark;
+    private CUIComponent HueSelectMark;
+
     public float? HueSelectWidth
     {
       get => this["layout"]["HueSelect"].Absolute.Width;
@@ -54,6 +57,25 @@ namespace CrabUI
     {
       ConsumeMouseEvents = true;
 
+      if (!CUICore.TextureManager.Has("HueSelect"))
+      {
+        CUICore.TextureManager.Add("HueSelect",
+          new TextureBuilder(1, 360)
+            .Fill((x, y) => CUIColor.FromHSV(y, 1, 1))
+            .Build(tracked: true)
+        );
+      }
+
+      if (!CUICore.TextureManager.Has("bw target 6x6"))
+      {
+        CUICore.TextureManager.Add("bw target 6x6",
+          new TextureBuilder(6, 6)
+            .DrawTarget(new Rectangle(0, 0, 6, 6), Color.White * 0.75f, Color.Black * 0.75f)
+            .Build(tracked: true)
+        );
+      }
+
+
       this["layout"] = new CUIHorizontalList() { Relative = new CUINullRect(0, 0, 1, 1) };
 
       this["layout"]["ColorSelect"] = ColorSelect = new CUIPosSelect()
@@ -71,18 +93,20 @@ namespace CrabUI
         OnSelected = (v) =>
         {
           ColorPos = v;
+          ColorSelectMark.Relative = ColorSelectMark.Relative with { Position = v };
           SelectColor();
         },
       };
 
-      if (!CUICore.TextureManager.Has("HueSelect"))
+      this["layout"]["ColorSelect"]["mark"] = ColorSelectMark = new CUIComponent()
       {
-        CUICore.TextureManager.Add("HueSelect",
-          new TextureBuilder(1, 360)
-            .Fill((x, y) => CUIColor.FromHSV(y, 1, 1))
-            .Build(tracked: true)
-        );
-      }
+        Absolute = new CUINullRect(w: 6, h: 6),
+        Background = {
+          Sprite = CUISprite.Get("bw target 6x6")
+        },
+        Anchor = CUIAnchor.Center,
+        ParentAnchor = CUIAnchor.LeftTop,
+      };
 
       this["layout"]["HueSelect"] = HueSelect = new CUIPosSelect()
       {
@@ -93,9 +117,19 @@ namespace CrabUI
         OnSelected = (v) =>
         {
           Hue = (float)Math.Floor(v.Y * 360);
+          HueSelectMark.Relative = HueSelectMark.Relative with { Top = v.Y };
           SelectColor();
         },
       };
+
+      this["layout"]["HueSelect"]["mark"] = HueSelectMark = new CUIComponent()
+      {
+        Absolute = new CUINullRect(h: 1),
+        Relative = new CUINullRect(w: 1),
+        Background = { Color = Color.White },
+      };
+
+
     }
   }
 }

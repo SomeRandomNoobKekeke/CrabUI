@@ -11,6 +11,6 @@ namespace CrabUI
 {
   public enum PaintingMode
   {
-    AlphaBlend, Replace, Mask, InvertMask
+    Replace, AlphaBlend, Mask, InvertMask
   }
 }

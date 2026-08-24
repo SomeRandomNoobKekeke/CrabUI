@@ -302,5 +302,76 @@ namespace CrabUI
       return this;
     }
 
+    public TextureBuilder DrawCheckers(Rectangle rect, params Color[] colors)
+    {
+      IntBounds affected = IntBounds.FromRect(rect);
+      if (!affected.Intersects(0, 0, Width, Height)) return this;
+      affected.Fit(0, 0, Width, Height);
+
+      Vector2 center = affected.Center;
+
+      for (int y = affected.MinY; y < affected.MaxY; y++)
+      {
+        for (int x = affected.MinX; x < affected.MaxX; x++)
+        {
+          Vector2 v = new Vector2(x + 0.5f, y + 0.5f);
+          int diff = (int)(Math.Abs(v.X - center.X) + Math.Abs(v.Y - center.Y));
+          int i = diff % colors.Length;
+
+          SetPixel(x, y, colors[i]);
+        }
+      }
+
+      return this;
+    }
+
+    public TextureBuilder DrawPyramid(Rectangle rect, params Color[] colors)
+    {
+      IntBounds affected = IntBounds.FromRect(rect);
+      if (!affected.Intersects(0, 0, Width, Height)) return this;
+      affected.Fit(0, 0, Width, Height);
+
+      Vector2 center = affected.Center;
+
+      for (int y = affected.MinY; y < affected.MaxY; y++)
+      {
+        for (int x = affected.MinX; x < affected.MaxX; x++)
+        {
+          Vector2 v = new Vector2(x + 0.5f, y + 0.5f);
+
+          int diff = (int)Math.Min(Math.Abs(v.X - center.X), Math.Abs(v.Y - center.Y));
+          int i = diff % colors.Length;
+
+          SetPixel(x, y, colors[i]);
+        }
+      }
+
+      return this;
+    }
+
+    public TextureBuilder DrawTarget(Rectangle rect, params Color[] colors)
+    {
+      IntBounds affected = IntBounds.FromRect(rect);
+      if (!affected.Intersects(0, 0, Width, Height)) return this;
+      affected.Fit(0, 0, Width, Height);
+
+      Vector2 center = affected.Center;
+
+      for (int y = affected.MinY; y < affected.MaxY; y++)
+      {
+        for (int x = affected.MinX; x < affected.MaxX; x++)
+        {
+          Vector2 v = new Vector2(x + 0.5f, y + 0.5f);
+
+          int diff = (int)Math.Max(Math.Abs(v.X - center.X), Math.Abs(v.Y - center.Y));
+          int i = diff % colors.Length;
+
+          SetPixel(x, y, colors[i]);
+        }
+      }
+
+      return this;
+    }
+
   }
 }

@@ -19,21 +19,27 @@ namespace CrabUI
     public CUIPalette Palette
     {
       get => Styles.Palette;
-      set => Styles.Palette = value;
+      set
+      {
+        Styles.Palette = value;
+        InheritPalette = false; // HACK idk how if it fells naturals
+      }
     }
 
     public CUIPalette DeepPalette
     {
-      get => Styles.Palette;
+      get => Palette;
       set
       {
-        Styles.Palette = value;
+        Palette = value;
         foreach (CUIVisualComponent child in Children)
         {
           child.DeepPalette = value;
         }
       }
     }
+
+    public bool InheritPalette { get; set; } = true;
 
 
     public Action<CUIVisualComponent> Style

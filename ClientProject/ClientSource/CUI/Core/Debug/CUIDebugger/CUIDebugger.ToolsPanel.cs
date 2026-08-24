@@ -22,7 +22,7 @@ namespace CrabUI
       wrapper["Reload Lua"] = new CUIButton("Reload Lua")
       {
         OnMouseDown = (e) => DebugConsole.ExecuteCommand("cl_reloadlua"),
-        Style = (c) => c.MasterColor = Color.Red,
+        Style = (c) => c.MasterColor = Color.Lerp(c.Palette["main"], Color.Red, 0.5f),
       };
 
       wrapper["palettes"] = new CUIButton("Palettes")

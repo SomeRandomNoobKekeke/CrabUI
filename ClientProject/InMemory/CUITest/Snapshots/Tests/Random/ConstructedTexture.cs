@@ -25,6 +25,7 @@ namespace CrabUIUser
 
         CUITexture2D texture = new TextureBuilder(256, 256)
           .Load("BaroDev")
+          .ChangeMode(PaintingMode.AlphaBlend)
           .DrawRectangle(20, 190, 30, 30, Color.Green * 0.5f)
           .DrawCircle(new Vector2(100, 100), 30, Color.Red * 0.5f)
           .DrawCircle(new Vector2(100, 100), 30, Color.Red * 0.5f, Color.Yellow, 0.5f, 2)
@@ -50,13 +51,24 @@ namespace CrabUIUser
           .DrawRingSector(new Vector2(300, 110), 20, 70, -Math.PI / 4.0 + Math.PI / 2, Math.PI / 4.0 + Math.PI / 2, Color.Green, Color.Lime, 0.5f, 2)
           .DrawRingSector(new Vector2(290, 100), 20, 70, -Math.PI / 4.0 + Math.PI, Math.PI / 4.0 + Math.PI, Color.Green, Color.Lime, 0.5f, 2)
           .DrawRingSector(new Vector2(300, 90), 20, 70, -Math.PI / 4.0 + 3 * Math.PI / 2, Math.PI / 4.0 + 3 * Math.PI / 2, Color.Green * 0.5f, Color.Lime * 0.5f, 0.5f, 2)
-
+          .DrawTarget(new Rectangle(100, 10, 20, 20), Color.Black, Color.White)
+          .DrawPyramid(new Rectangle(100, 40, 20, 20), Color.Black, Color.White)
+          .DrawCheckers(new Rectangle(100, 70, 20, 20), Color.Black, Color.White)
           .Build(tracked: true);
 
         CUICore.TextureManager.Add("ConstructedTexture", texture);
 
-        frame.Background.Sprite = new CUISprite(texture);
-        frame.Absolute = new CUINullRect(w: frame.Background.Sprite.Texture.Width, h: frame.Background.Sprite.Texture.Height);
+        frame["layout"]["texture"] = new CUIComponent()
+        {
+          Background = { Sprite = CUISprite.Get("ConstructedTexture") },
+          Flex = 1,
+        };
+
+
+        frame.Absolute = new CUINullRect(
+          w: texture.Width,
+          h: texture.Height
+        );
 
 
         return frame;

@@ -36,6 +36,7 @@ namespace CrabUI
       {
         Self.MainComponentTracker.OnAttachToParentHandler(parent);
         Self.ProtectedCommands.OnAttachToParentHandler(parent);
+        Self.InheritProps(parent);
       }
 
       public void OnDetachFromParent(CUIVisualComponent parent)

@@ -18,8 +18,14 @@ namespace CursedUI
     {
       c.TextColor = c.Palette["text"];
       c.MasterColor = c.Palette["main"];
-      c.Padding = new(2, 4, 2, 4);
     });
+
+    protected override void InitStyle()
+    {
+      base.InitStyle();
+      Padding = new(2, 4, 2, 4);
+      Background.Sprite = CUISprite.Vignette;
+    }
 
     [CUISerializableProp]
     public Color OnColor { get; set; } = new Color(0, 255, 255);
@@ -60,7 +66,17 @@ namespace CursedUI
     public bool IsSelected
     {
       get => Group?.Current == this;
-      set => Group?.Select(this);
+      set
+      {
+        if (value)
+        {
+          Group?.Select(this);
+        }
+        else
+        {
+          Group?.Deselect(this);
+        }
+      }
     }
 
     public void Select() => Group?.Select(this);
@@ -88,7 +104,7 @@ namespace CursedUI
       else
       {
         Background.Color = OffColor;
-        if (MouseOver) Background.Color = OffColor.Multiply(2.0f);
+        if (MouseOver) Background.Color = OffColor.Multiply(1.3f);
         // if (MousePressed) Background.Color = OffColor.Multiply(3.0f);
       }
     }

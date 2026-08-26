@@ -12,52 +12,24 @@ namespace CursedUI
 {
   public partial class CUIVisualComponent
   {
-    private Dictionary<string, Func<object>> DataGetters { get; } = new();
-    private Dictionary<string, Action<object>> DataSetters { get; } = new();
-
-    protected void AddDataImage(string key, Func<object> getter = null, Action<object> setter = null)
-    {
-      if (getter != null) DataGetters[key] = getter;
-      if (setter != null) DataSetters[key] = setter;
-    }
-
-    protected void AddDataImage<T>(string key, Func<T> getter = null, Action<T> setter = null)
-    {
-      if (getter != null) DataGetters[key] = () => getter();
-      if (setter != null) DataSetters[key] = (object value) => setter((T)value);
-    }
-
+    /// <summary>
+    /// You can attach some simple metadata to components
+    /// </summary>
     public Data_Part Data { get; } = new();
     public class Data_Part : Part
     {
-      private Func<object> SafeGetGetter(string key)
+      private Dictionary<string, object> _Values; private Dictionary<string, object> Values
       {
-        if (key is null || !Self.DataGetters.ContainsKey(key))
-        {
-          CUI.Logger.Warning($"No data getter with key [{key}] on [{Self}]"); return null;
-        }
-
-        return Self.DataGetters[key];
+        get => _Values ??= new();
       }
-
-      private Action<object> SafeGetSetter(string key)
-      {
-        if (key is null || !Self.DataSetters.ContainsKey(key))
-        {
-          CUI.Logger.Warning($"No data setter with key [{key}] on [{Self}]"); return null;
-        }
-
-        return Self.DataSetters[key];
-      }
-
 
       public object this[string key]
       {
-        get => SafeGetGetter(key)?.Invoke();
-        set => SafeGetSetter(key)?.Invoke(value);
+        get => Values[key];
+        set => Values[key] = value;
       }
 
-      public T GetData<T>(string key) => (T)SafeGetGetter(key)?.Invoke();
+      public T Get<T>(string key) => (T)this[key];
     }
 
   }

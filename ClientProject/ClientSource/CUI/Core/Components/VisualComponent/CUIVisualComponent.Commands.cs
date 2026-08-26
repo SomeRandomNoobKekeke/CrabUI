@@ -47,10 +47,20 @@ namespace CursedUI
       }
       public void ListenFor<T>(string name, Action<T> action)
       {
-        Node.Listeners.Add(name, (o) =>
+        if (typeof(T).IsValueType)//BRUH idk
         {
-          if (o is T) action((T)o);
-        });
+          Node.Listeners.Add(name, (o) =>
+          {
+            if (o is T) action((T)o);
+          });
+        }
+        else
+        {
+          Node.Listeners.Add(name, (o) =>
+          {
+            if (o is T || o is null) action((T)o);
+          });
+        }
       }
       public void ListenFor(string name, Action<object> action)
       {

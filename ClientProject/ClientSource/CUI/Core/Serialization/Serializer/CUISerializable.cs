@@ -8,7 +8,7 @@ using CUICodeGenerator;
 using CUILibs;
 using System.Xml.Linq;
 
-namespace CrabUI
+namespace CursedUI
 {
   //TODO centralize serialization, move parser here, define extra methods here, make it use this interface
   /// <summary>

@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework;
 using CUILibs;
 using CUICodeGenerator;
 
-namespace CrabUI
+namespace CursedUI
 {
   /// <summary>
   /// It's still very primitive

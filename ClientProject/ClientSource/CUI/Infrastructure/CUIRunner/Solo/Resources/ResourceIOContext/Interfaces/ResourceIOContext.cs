@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.IO;
 
-namespace CrabUI
+namespace CursedUI
 {
   /// <summary>
   /// This is a shared context for all resource loaders like texture loaders, xml loaders

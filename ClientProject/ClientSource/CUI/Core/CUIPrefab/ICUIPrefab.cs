@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using Microsoft.Xna.Framework;
 
-namespace CrabUI
+namespace CursedUI
 {
   public interface ICUIPrefab
   {

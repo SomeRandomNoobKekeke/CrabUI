@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 
 using System.Diagnostics;
 
-namespace CrabUIUser
+namespace CursedUIUser
 {
   /// <summary>
   /// itterating list or array is almost 4 times slower that getting props

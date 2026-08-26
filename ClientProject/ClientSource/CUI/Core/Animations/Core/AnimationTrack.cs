@@ -6,7 +6,7 @@ using System.Diagnostics;
 using CUILibs;
 using Barotrauma;
 
-namespace CrabUI
+namespace CursedUI
 {
   public class AnimationTrack
   {

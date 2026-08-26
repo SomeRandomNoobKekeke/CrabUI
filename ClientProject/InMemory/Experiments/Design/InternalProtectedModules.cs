@@ -8,7 +8,7 @@
 
 // using System.Diagnostics;
 
-// namespace CrabUIUser
+// namespace CursedUIUser
 // {
 
 //   /// <summary>

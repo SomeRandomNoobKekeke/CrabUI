@@ -7,7 +7,7 @@ using Barotrauma;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace CrabUI
+namespace CursedUI
 {
   /// <summary>
   ///     Sprite batch extensions for drawing primitive shapes

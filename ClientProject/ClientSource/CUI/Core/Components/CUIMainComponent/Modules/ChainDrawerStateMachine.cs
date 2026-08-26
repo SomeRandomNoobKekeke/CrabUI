@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using CUILibs;
 using CUICodeGenerator;
 
-namespace CrabUI
+namespace CursedUI
 {
   //TODO don't know how to name it
   public class ChainDrawerStateMachine

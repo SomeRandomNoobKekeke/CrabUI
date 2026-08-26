@@ -8,7 +8,7 @@ using Barotrauma;
 using Microsoft.Xna.Framework;
 using CUICodeGenerator;
 
-namespace CrabUI
+namespace CursedUI
 {
   public class CUIAwareProp<T> : CUIProp<T>, IAware { }
 }

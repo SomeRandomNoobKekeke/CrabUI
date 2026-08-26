@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Diagnostics;
-namespace CrabUI
+namespace CursedUI
 {
   //TODO add routelist, route with arg mapping
   public abstract class InfoChannelBase : InfoChannelCore

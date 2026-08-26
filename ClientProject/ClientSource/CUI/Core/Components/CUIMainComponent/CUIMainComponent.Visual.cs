@@ -6,7 +6,7 @@ using System.Diagnostics;
 using Barotrauma;
 using CUILibs;
 using CUICodeGenerator;
-namespace CrabUI
+namespace CursedUI
 {
   public partial class CUIMainComponent
   {

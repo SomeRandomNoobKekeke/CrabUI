@@ -5,7 +5,7 @@ using System.Linq;
 using Barotrauma;
 using Microsoft.Xna.Framework;
 
-namespace CrabUI
+namespace CursedUI
 {
   /// <summary>
   /// Allows you to manipulate pixel data of its texture

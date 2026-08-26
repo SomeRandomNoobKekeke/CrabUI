@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Graphics;
 using CUICodeGenerator;
 using Barotrauma.Extensions;
 
-namespace CrabUI
+namespace CursedUI
 {
   public static partial class CUIDefault
   {

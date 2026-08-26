@@ -14,7 +14,7 @@ using System.Xml;
 using System.Xml.Linq;
 using Barotrauma;
 
-namespace CrabUI
+namespace CursedUI
 {
   public partial class CUICore
   {

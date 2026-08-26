@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using CUICodeGenerator;
 
-namespace CrabUI
+namespace CursedUI
 {
   public partial class CUITextBlock : CUIComponent, IComponent
   {

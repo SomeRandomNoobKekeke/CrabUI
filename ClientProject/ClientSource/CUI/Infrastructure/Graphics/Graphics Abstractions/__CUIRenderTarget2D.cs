@@ -7,7 +7,7 @@ using Barotrauma;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace CrabUI
+namespace CursedUI
 {
   public class __CUIRenderTarget2D : __CUITexture2D, CUIRenderTarget2D
   {

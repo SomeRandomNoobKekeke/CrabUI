@@ -11,7 +11,7 @@ using CUICodeGenerator;
 using Microsoft.Xna.Framework.Input;
 using CUILibs;
 
-namespace CrabUI
+namespace CursedUI
 {
   public partial class CUITextInput : CUIComponent, IComponent
   {

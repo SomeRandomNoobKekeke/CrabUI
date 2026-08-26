@@ -11,7 +11,7 @@ using Barotrauma;
 using HarmonyLib;
 using EventInput;
 
-namespace CrabUI
+namespace CursedUI
 {
   public class DummyIKeyboardSubscriber : IKeyboardSubscriber
   {

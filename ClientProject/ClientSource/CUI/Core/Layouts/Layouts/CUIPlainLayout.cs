@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework;
 using CUILibs;
 using CUICodeGenerator;
 
-namespace CrabUI
+namespace CursedUI
 {
   public class CUIPlainLayout : Layout
   {

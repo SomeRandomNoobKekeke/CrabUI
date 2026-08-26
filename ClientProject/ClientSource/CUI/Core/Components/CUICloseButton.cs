@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Graphics;
 using CUICodeGenerator;
 using Barotrauma.Extensions;
 
-namespace CrabUI
+namespace CursedUI
 {
   //TODO this should really be inheried from some CUIIconButton
   public partial class CUICloseButton : CUIComponent, IComponent

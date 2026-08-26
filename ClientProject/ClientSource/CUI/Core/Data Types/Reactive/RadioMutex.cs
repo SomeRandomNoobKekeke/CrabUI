@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
 using CUILibs;
 
-namespace CrabUI
+namespace CursedUI
 {
   public class RadioGroup
   {

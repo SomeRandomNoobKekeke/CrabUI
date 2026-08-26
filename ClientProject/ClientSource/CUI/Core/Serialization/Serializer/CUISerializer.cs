@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework;
 using System.IO;
 using System.Xml.Linq;
 
-namespace CrabUI
+namespace CursedUI
 {
   public partial class CUISerializer
   {

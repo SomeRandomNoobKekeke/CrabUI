@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace CrabUI
+namespace CursedUI
 {
   //THINK mb make styles aplicable to any object?
   public interface ICUIStyle

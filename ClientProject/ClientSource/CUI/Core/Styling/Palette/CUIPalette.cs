@@ -5,7 +5,7 @@ using System.Reflection;
 using CUILibs;
 using Microsoft.Xna.Framework;
 
-namespace CrabUI
+namespace CursedUI
 {
   //Note that later i might split it into multiple dicts, interface should stay the same
   public partial class CUIPalette : ReactiveDict<string, Color>

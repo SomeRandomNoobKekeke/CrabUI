@@ -5,7 +5,7 @@ using System.Reflection;
 using Microsoft.Xna.Framework;
 
 
-namespace CrabUI
+namespace CursedUI
 {
   public class CUIAnchor
   {

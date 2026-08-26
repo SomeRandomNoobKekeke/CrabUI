@@ -7,7 +7,7 @@ using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
 
-namespace CrabUIUser
+namespace CursedUIUser
 {
   /// <summary>
   /// So dict always uses both, GetHashCode and Equals to find the value 

@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using CUILibs;
 
-namespace CrabUI
+namespace CursedUI
 {
   public partial class TextBlock : VisualElementBase
   {

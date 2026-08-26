@@ -4,10 +4,10 @@ using System.Linq;
 using System.Reflection;
 using Microsoft.Xna.Framework;
 using CUILibs;
-using CrabUI;
+using CursedUI;
 using System.IO;
 
-namespace CrabUIUser
+namespace CursedUIUser
 {
   public class XMLSaveLoadingTest : UTestPack
   {

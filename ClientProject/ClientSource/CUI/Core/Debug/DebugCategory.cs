@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Diagnostics;
 using CUILibs;
 
-namespace CrabUI
+namespace CursedUI
 {
   public static class DebugCategory
   {

@@ -6,7 +6,7 @@ using System.Diagnostics;
 using CUILibs;
 using CUICodeGenerator;
 using Microsoft.Xna.Framework;
-namespace CrabUI
+namespace CursedUI
 {
   [GeneratedComponent]
   public partial class CUICore : IComponent

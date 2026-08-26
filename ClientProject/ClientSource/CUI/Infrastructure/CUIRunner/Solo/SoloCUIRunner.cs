@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework;
 using CUICodeGenerator;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace CrabUI
+namespace CursedUI
 {
   [GeneratedComponent]
   public partial class SoloCUIRunner : ICUIRunner, IComponent

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Collections.Generic;
 using CUICodeGenerator;
 
-namespace CrabUI
+namespace CursedUI
 {
   public partial class SoloCUIRunner
   {
@@ -21,7 +21,7 @@ namespace CrabUI
     void IComponent.InjectParts()
     {
       As_SoloCUIRunner.Self = this;
-      
+
       As_SoloCUIRunner.CUICoreHandles.Self = this;
       As_SoloCUIRunner.ResourceIOContext.Self = this;
       As_SoloCUIRunner.ResourceIOContextHandle.Self = this;
@@ -44,13 +44,13 @@ namespace CrabUI
     {
     }
 
-  protected class Self_As_SoloCUIRunner : IAdapterPart
-  {
-    public SoloCUIRunner.CUICoreHandles_Part CUICoreHandles => Self.CUICoreHandles;
-    public SoloCUIRunner.ResourceIOContext_Part ResourceIOContext => Self.ResourceIOContext;
-    public SoloCUIRunner.ResourceIOContextHandle_Part ResourceIOContextHandle => Self.ResourceIOContextHandle;
-    public SoloCUIRunner.CUITextureManager_PublicPart CUITextureManagerPublic => Self.CUITextureManagerPublic;
-    public SoloCUIRunner Self { get; set; }
-  }
+    protected class Self_As_SoloCUIRunner : IAdapterPart
+    {
+      public SoloCUIRunner.CUICoreHandles_Part CUICoreHandles => Self.CUICoreHandles;
+      public SoloCUIRunner.ResourceIOContext_Part ResourceIOContext => Self.ResourceIOContext;
+      public SoloCUIRunner.ResourceIOContextHandle_Part ResourceIOContextHandle => Self.ResourceIOContextHandle;
+      public SoloCUIRunner.CUITextureManager_PublicPart CUITextureManagerPublic => Self.CUITextureManagerPublic;
+      public SoloCUIRunner Self { get; set; }
+    }
   }
 }

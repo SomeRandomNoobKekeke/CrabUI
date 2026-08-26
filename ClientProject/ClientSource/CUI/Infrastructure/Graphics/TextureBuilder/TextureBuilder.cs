@@ -7,7 +7,7 @@ using Barotrauma;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace CrabUI
+namespace CursedUI
 {
   //TODO This class depends on CUICore, it probably should be inside
   public partial class TextureBuilder

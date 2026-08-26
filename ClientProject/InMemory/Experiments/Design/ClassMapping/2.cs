@@ -7,7 +7,7 @@ using System.Diagnostics;
 using Microsoft.Xna.Framework;
 using System.Diagnostics;
 
-namespace CrabUIUser
+namespace CursedUIUser
 {
 
   public partial class ClassMapping : Experiment

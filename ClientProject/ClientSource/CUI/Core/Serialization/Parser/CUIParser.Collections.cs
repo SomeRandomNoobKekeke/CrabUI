@@ -10,7 +10,7 @@ using HarmonyLib;
 using Microsoft.Xna.Framework;
 using System.IO;
 
-namespace CrabUI
+namespace CursedUI
 {
   public partial class CUIParser
   {

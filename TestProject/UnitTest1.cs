@@ -1,6 +1,6 @@
 ﻿namespace TestProject;
 
-using CrabUI;
+using CursedUI;
 using Microsoft.Xna.Framework;
 
 public class UnitTest1

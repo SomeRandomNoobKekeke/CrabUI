@@ -10,7 +10,7 @@ using CUICodeGenerator;
 using CUILibs;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace CrabUI
+namespace CursedUI
 {
   public partial class CUIFrame : CUIComponent, IComponent
   {

@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Barotrauma;
 
-namespace CrabUI
+namespace CursedUI
 {
   public partial class CUICore
   {

@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Graphics;
 using HarmonyLib;
 using Microsoft.Xna.Framework.Input;
 
-namespace CrabUI
+namespace CursedUI
 {
   public class GameDataSources : ICUIRunnerDataSources
   {

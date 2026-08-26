@@ -7,7 +7,7 @@ using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
 using CUILibs;
-namespace CrabUI
+namespace CursedUI
 {
 
   //The only difference is that it doesn't force you to implement MouseOver, MousePressed etc

@@ -5,7 +5,7 @@ using CUILibs;
 using Microsoft.Xna.Framework;
 
 
-namespace CrabUI
+namespace CursedUI
 {
   public partial class CUIVisualComponent
   {

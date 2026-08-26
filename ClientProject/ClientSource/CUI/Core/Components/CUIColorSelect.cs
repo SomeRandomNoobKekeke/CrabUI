@@ -5,7 +5,7 @@ using System.Linq;
 using Barotrauma;
 using Microsoft.Xna.Framework;
 
-namespace CrabUI
+namespace CursedUI
 {
 
   public class CUIColorSelect : CUIPosSelect

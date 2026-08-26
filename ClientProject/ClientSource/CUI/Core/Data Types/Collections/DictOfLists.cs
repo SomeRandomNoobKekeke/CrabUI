@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Graphics;
 using System.Diagnostics.CodeAnalysis;
 using System.Collections;
 
-namespace CrabUI
+namespace CursedUI
 {
   /// <summary>
   /// It's a dict of lists but you can add and remove elements one by one  

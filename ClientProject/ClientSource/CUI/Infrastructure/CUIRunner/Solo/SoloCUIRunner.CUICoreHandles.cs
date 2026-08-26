@@ -9,7 +9,7 @@ using Barotrauma;
 using System.IO;
 using System.Xml;
 using System.Xml.Linq;
-namespace CrabUI
+namespace CursedUI
 {
   public partial class SoloCUIRunner
   {

@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 using CUILibs;
 using System.Xml.Linq;
 
-namespace CrabUI
+namespace CursedUI
 {
   public class SerializationPersistenceTest : CUISerializationTest
   {

@@ -7,7 +7,7 @@ using System.Diagnostics;
 using CUICodeGenerator;
 using CUILibs;
 
-namespace CrabUI
+namespace CursedUI
 {
   /// <summary>
   /// This thing creating CUIComponentInfo from types

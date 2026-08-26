@@ -8,7 +8,7 @@ using CUICodeGenerator;
 using CUILibs;
 using System.Xml.Linq;
 
-namespace CrabUI
+namespace CursedUI
 {
   public enum CUISerializationMode
   {

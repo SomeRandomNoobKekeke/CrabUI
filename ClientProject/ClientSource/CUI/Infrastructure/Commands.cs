@@ -6,12 +6,12 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Barotrauma;
 using CUILibs;
-using CrabUI;
+using CursedUI;
 using Microsoft.Xna.Framework;
 using HarmonyLib;
 
 
-namespace CrabUI
+namespace CursedUI
 {
   public static class CUICommands
   {

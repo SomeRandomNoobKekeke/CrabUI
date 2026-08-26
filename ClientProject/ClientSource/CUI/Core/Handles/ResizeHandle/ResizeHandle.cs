@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 using CUICodeGenerator;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace CrabUI
+namespace CursedUI
 {
   public class ResizeHandle : CUIVisualComponent, IModule, IAware
   {

@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 using System.Diagnostics;
 using CUILibs;
 
-namespace CrabUIUser
+namespace CursedUIUser
 {
 
 

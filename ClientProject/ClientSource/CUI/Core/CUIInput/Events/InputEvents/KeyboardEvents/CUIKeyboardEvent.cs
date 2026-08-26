@@ -6,7 +6,7 @@ using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
 
-namespace CrabUI
+namespace CursedUI
 {
   public abstract class CUIKeyboardEvent : InputEvent
   {

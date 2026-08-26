@@ -7,7 +7,7 @@ using Barotrauma;
 using Microsoft.Xna.Framework;
 using CUICodeGenerator;
 
-namespace CrabUI
+namespace CursedUI
 {
   public interface ISwipeable
   {

@@ -5,7 +5,7 @@ using System.Reflection;
 using Microsoft.Xna.Framework;
 using CUILibs;
 
-namespace CrabUI
+namespace CursedUI
 {
   public class PrintSerializablePropsTest : CUISerializationTest
   {

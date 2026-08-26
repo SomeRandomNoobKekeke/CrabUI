@@ -6,10 +6,10 @@ using System.Diagnostics;
 
 using Microsoft.Xna.Framework;
 using System.Diagnostics;
-using CrabUI;
+using CursedUI;
 using Barotrauma;
 
-namespace CrabUIUser
+namespace CursedUIUser
 {
 
   /// <summary>

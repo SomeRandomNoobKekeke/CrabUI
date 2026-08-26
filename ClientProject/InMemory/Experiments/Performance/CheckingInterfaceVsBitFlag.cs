@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 
 using System.Diagnostics;
 
-namespace CrabUIUser
+namespace CursedUIUser
 {
   /// <summary>
   /// They are equaly fast lol

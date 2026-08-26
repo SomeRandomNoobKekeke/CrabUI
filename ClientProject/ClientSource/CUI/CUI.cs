@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Barotrauma;
 
-namespace CrabUI
+namespace CursedUI
 {
   public static class CUI
   {

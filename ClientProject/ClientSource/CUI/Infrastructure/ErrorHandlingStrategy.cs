@@ -6,11 +6,11 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Barotrauma;
 using CUILibs;
-using CrabUI;
+using CursedUI;
 using Microsoft.Xna.Framework;
 
 
-namespace CrabUI
+namespace CursedUI
 {
   public enum ErrorHandlingStrategy
   {

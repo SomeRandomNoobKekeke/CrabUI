@@ -12,7 +12,7 @@ using System.Xml;
 using System.Xml.Linq;
 using System.IO;
 
-namespace CrabUI
+namespace CursedUI
 {
   public partial class CUIVisualComponent
   {

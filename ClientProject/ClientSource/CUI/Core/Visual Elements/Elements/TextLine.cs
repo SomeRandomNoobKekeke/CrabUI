@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using CUILibs;
 
-namespace CrabUI
+namespace CursedUI
 {
   /// <summary>
   /// This is just raw unleashed line of text

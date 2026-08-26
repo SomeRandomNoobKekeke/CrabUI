@@ -32,7 +32,7 @@
         <!-- IMPORTANT: Avoid the use of special (IE: / : ; , \ < > ?) (periods "." are good) and non-english characters in the AssemblyName and RootNamespace.-->
         <!-- You must also change the assembly.dll name in ModConfig.xml to match the AssemblyName. -->
         <AssemblyName>CUI</AssemblyName>
-        <RootNamespace>CrabUI</RootNamespace>
+        <RootNamespace>CursedUI</RootNamespace>
         <GenerateDocumentationFile>False</GenerateDocumentationFile>
         <!-- These two numbers should match under almost all circumstances. -->
         <AssemblyVersion>1.0.0.0</AssemblyVersion>

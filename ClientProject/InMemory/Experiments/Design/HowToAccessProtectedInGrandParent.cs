@@ -7,7 +7,7 @@ using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
 
-namespace CrabUIUser
+namespace CursedUIUser
 {
   /// <summary>
   /// Bruh, spring update brought back access checks

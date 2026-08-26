@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework;
 using CUICodeGenerator;
 using CUILibs;
 using System.Collections;
-namespace CrabUI
+namespace CursedUI
 {
   public partial class CUIVisualComponent
   {

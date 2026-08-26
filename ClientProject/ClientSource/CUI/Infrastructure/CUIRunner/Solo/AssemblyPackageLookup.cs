@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using System.IO;
 using CUILibs;
 
-namespace CrabUI
+namespace CursedUI
 {
   public partial class SoloCUIRunner
   {

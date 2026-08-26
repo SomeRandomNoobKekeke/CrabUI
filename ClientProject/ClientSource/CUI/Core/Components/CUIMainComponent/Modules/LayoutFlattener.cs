@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 using CUILibs;
 using CUICodeGenerator;
 
-namespace CrabUI
+namespace CursedUI
 {
   //TODO untangle from CUIVisualComponent?
   public class LayoutFlattener : IModule

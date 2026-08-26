@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace CrabUI
+namespace CursedUI
 {
   public abstract class CUIActionStyle : ICUIStyle
   {

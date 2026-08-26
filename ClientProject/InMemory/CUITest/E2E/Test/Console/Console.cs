@@ -6,13 +6,13 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Barotrauma;
 using CUILibs;
-using CrabUI;
+using CursedUI;
 using Microsoft.Xna.Framework;
 using System.IO;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace CrabUIUser
+namespace CursedUIUser
 {
   public partial class E2ETestPack
   {

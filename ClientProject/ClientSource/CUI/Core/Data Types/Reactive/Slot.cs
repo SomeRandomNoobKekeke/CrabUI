@@ -8,7 +8,7 @@ using CUICodeGenerator;
 using Microsoft.Xna.Framework;
 
 
-namespace CrabUI
+namespace CursedUI
 {
   public class Slot<T> // where T : class
   {

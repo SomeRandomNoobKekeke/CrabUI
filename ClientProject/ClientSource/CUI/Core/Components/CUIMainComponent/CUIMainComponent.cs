@@ -7,7 +7,7 @@ using Barotrauma;
 using CUILibs;
 using CUICodeGenerator;
 
-namespace CrabUI
+namespace CursedUI
 {
   [GeneratedComponent]
   public partial class CUIMainComponent : CUIComponent, IComponent

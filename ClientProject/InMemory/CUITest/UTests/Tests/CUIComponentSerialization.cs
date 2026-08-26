@@ -8,7 +8,7 @@ using System.Xml;
 using System.Xml.Linq;
 
 
-namespace CrabUI
+namespace CursedUI
 {
 
   //TODO

@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Xml.Linq;
 
-namespace CrabUI
+namespace CursedUI
 {
   public class __CUITexture2D : CUITexture2D, IDisposable
   {

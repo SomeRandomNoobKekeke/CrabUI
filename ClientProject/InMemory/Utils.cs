@@ -7,11 +7,11 @@ using System.Runtime.CompilerServices;
 using Barotrauma;
 using Barotrauma.LuaCs;
 using CUILibs;
-using CrabUI;
+using CursedUI;
 using Microsoft.Xna.Framework;
 using HarmonyLib;
 
-namespace CrabUIUser
+namespace CursedUIUser
 {
   public static class Utils
   {

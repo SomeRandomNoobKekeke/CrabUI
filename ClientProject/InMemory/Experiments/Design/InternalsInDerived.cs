@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Diagnostics;
 using Microsoft.Xna.Framework;
 
-namespace CrabUIUser
+namespace CursedUIUser
 {
   /// <summary>
   /// So i want to hide all internal stuff in some internal object

@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Graphics;
 using System.Diagnostics.CodeAnalysis;
 using System.Collections;
 using CUILibs;
-namespace CrabUI
+namespace CursedUI
 {
   public class ReactiveDict<TKey, TValue> : IDictionary<TKey, TValue>
   {

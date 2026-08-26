@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 using CUICodeGenerator;
 using CUILibs;
 
-namespace CrabUI
+namespace CursedUI
 {
   public interface IFocusable : IEventConsumer
   {

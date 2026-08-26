@@ -8,7 +8,7 @@ using Barotrauma;
 using Microsoft.Xna.Framework;
 using System.Runtime.InteropServices;
 
-namespace CrabUIUser
+namespace CursedUIUser
 {
   public partial class FileAccessModifierExperiment : Experiment
   {

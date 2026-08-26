@@ -11,7 +11,7 @@ using CUICodeGenerator;
 using Barotrauma.Extensions;
 using CUILibs;
 
-namespace CrabUI
+namespace CursedUI
 {
   public partial class CUIRangeInput : CUIComponent, IComponent
   {

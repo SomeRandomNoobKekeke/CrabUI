@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 
 using System.Diagnostics;
 
-namespace CrabUIUser
+namespace CursedUIUser
 {
   /// <summary>
   /// i'm trying to figure out how Modules should work, be initialized, used by other Modules and users

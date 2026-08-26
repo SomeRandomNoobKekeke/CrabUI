@@ -8,7 +8,7 @@ using Barotrauma;
 using Microsoft.Xna.Framework;
 using CUICodeGenerator;
 
-namespace CrabUI
+namespace CursedUI
 {
   //Note: i usually test fixes and features on CUIVerticalList, so it might get outdated
   public partial class CUIHorizontalList : CUIComponent, IComponent

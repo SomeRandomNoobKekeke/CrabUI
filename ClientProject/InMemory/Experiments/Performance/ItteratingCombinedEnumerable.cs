@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 
 using System.Diagnostics;
 
-namespace CrabUIUser
+namespace CursedUIUser
 {
   /// <summary>
   /// itterating combined ienumerables is 10 times slower that itterating two lists

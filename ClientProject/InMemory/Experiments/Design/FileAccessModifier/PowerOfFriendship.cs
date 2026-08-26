@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework;
 
 
 
-namespace CrabUIUser
+namespace CursedUIUser
 {
 
   /// <summary>

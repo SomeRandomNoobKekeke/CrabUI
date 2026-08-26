@@ -12,7 +12,7 @@ using Barotrauma;
 using Barotrauma.LuaCs.Compatibility;
 using Barotrauma.LuaCs;
 
-namespace CrabUI
+namespace CursedUI
 {
   public class GameLifeCycle
   {

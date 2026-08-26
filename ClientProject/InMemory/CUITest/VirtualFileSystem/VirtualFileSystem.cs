@@ -6,14 +6,14 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Barotrauma;
 using CUILibs;
-using CrabUI;
+using CursedUI;
 using Microsoft.Xna.Framework;
 
 using System.IO;
 using System.Xml;
 using System.Xml.Linq;
 
-namespace CrabUIUser
+namespace CursedUIUser
 {
   //Unused
   public class VirtualFileSystem : CUICore.CUICoreIOHandle

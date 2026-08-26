@@ -9,7 +9,7 @@ using CUILibs;
 using CUICodeGenerator;
 using Microsoft.Xna.Framework.Input;
 
-namespace CrabUI
+namespace CursedUI
 {
   public partial class CUICore
   {

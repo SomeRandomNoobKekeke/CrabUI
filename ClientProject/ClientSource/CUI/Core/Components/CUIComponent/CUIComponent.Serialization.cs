@@ -11,7 +11,7 @@ using CUILibs;
 using System.Xml;
 using System.Xml.Linq;
 
-namespace CrabUI
+namespace CursedUI
 {
   public partial class CUIComponent : CUISerializable
   {

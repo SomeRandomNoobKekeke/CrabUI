@@ -7,7 +7,7 @@ using System.Diagnostics;
 using CUICodeGenerator;
 using CUILibs;
 
-namespace CrabUI
+namespace CursedUI
 {
   /// <summary>
   /// This is additional info about CUIVisualComponent type

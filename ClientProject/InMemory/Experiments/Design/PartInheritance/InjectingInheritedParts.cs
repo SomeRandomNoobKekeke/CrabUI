@@ -7,7 +7,7 @@ using System.Diagnostics;
 using Microsoft.Xna.Framework;
 using System.Diagnostics;
 
-namespace CrabUIUser
+namespace CursedUIUser
 {
   /// <summary>
   /// The problem is: you can't access shadowed protected props in base class, this means you can generate code accessing those parts

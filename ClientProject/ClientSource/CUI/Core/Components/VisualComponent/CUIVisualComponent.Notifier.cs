@@ -8,7 +8,7 @@ using Barotrauma;
 using Microsoft.Xna.Framework;
 using CUICodeGenerator;
 using CUILibs;
-namespace CrabUI
+namespace CursedUI
 {
 
   //CRINGE but at least it's fast and not scattered all over the place

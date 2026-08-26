@@ -7,7 +7,7 @@ using CUILibs;
 using Microsoft.Xna.Framework;
 using Barotrauma;
 
-namespace CrabUI
+namespace CursedUI
 {
   public partial class CUISetup
   {

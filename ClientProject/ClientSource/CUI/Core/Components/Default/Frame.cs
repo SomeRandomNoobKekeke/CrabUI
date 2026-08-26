@@ -46,6 +46,7 @@ namespace CrabUI
         this["layout"]["handle"]["caption"] = CaptionBlock = new CUITextBlock()
         {
           Flex = 1,
+          Padding = new CUISizes(0, 0, 0, 0),
         };
         this["layout"]["handle"]["closebutton"] = new CUICloseButton()
         {

@@ -13,9 +13,9 @@ namespace CrabUIUser
 {
   public partial class SnapshotTests
   {
-    public static partial class Random
+    public static partial class Layout
     {
-      public static CUIComponent FitContent()
+      public static CUIComponent FitContent2()
       {
         // Fit in plain layout
         CUIFrame frame = new CUIDefault.Frame("FitContent")

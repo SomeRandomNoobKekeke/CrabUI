@@ -82,7 +82,7 @@ namespace CrabUI
 
         if (c.RelativeMin.Width.HasValue) w = Math.Max(w, c.RelativeMin.Width.Value * Parent.ChildrenRect.Width);
         if (c.AbsoluteMin.Width.HasValue) w = Math.Max(w, c.AbsoluteMin.Width.Value);
-        if (c.MinSize.X.HasValue) w = Math.Max(w, c.MinSize.X.Value + c.OutToChildDiff.FullWidth);
+        if (c.MinSize.X.HasValue) w = Math.Max(w, c.MinSize.X.Value);
 
         if (c.RelativeMax.Width.HasValue) w = Math.Min(w, c.RelativeMax.Width.Value * Parent.ChildrenRect.Width);
         if (c.AbsoluteMax.Width.HasValue) w = Math.Min(w, c.AbsoluteMax.Width.Value);
@@ -95,7 +95,7 @@ namespace CrabUI
 
         if (c.RelativeMin.Height.HasValue) h = Math.Max(h, c.RelativeMin.Height.Value * Parent.ChildrenRect.Height);
         if (c.AbsoluteMin.Height.HasValue) h = Math.Max(h, c.AbsoluteMin.Height.Value);
-        if (c.MinSize.Y.HasValue) h = Math.Max(h, c.MinSize.Y.Value + c.OutToChildDiff.FullHeigth);
+        if (c.MinSize.Y.HasValue) h = Math.Max(h, c.MinSize.Y.Value);
 
         if (c.RelativeMax.Height.HasValue) h = Math.Min(h, c.RelativeMax.Height.Value * Parent.ChildrenRect.Height);
         if (c.AbsoluteMax.Height.HasValue) h = Math.Min(h, c.AbsoluteMax.Height.Value);
@@ -141,10 +141,10 @@ namespace CrabUI
           if (c.Absolute.Width.HasValue) w = c.Absolute.Width.Value;
           if (c.AbsoluteMin.Width.HasValue) w = Math.Max(w, c.AbsoluteMin.Width.Value);
           if (c.AbsoluteMax.Width.HasValue) w = Math.Min(w, c.AbsoluteMax.Width.Value);
-          if (c.MinSize.X.HasValue) w = Math.Max(w, c.MinSize.X.Value + c.OutToChildDiff.FullWidth);
+          if (c.MinSize.X.HasValue) w = Math.Max(w, c.MinSize.X.Value);
           if (c.MaxSize.X.HasValue) w = Math.Min(w, c.MaxSize.X.Value);
 
-          rightmostRight = Math.Max(rightmostRight, x + w);
+          rightmostRight = Math.Max(rightmostRight, x + w + c.OutToChildDiff.FullWidth);
         }
 
         Parent.MinSize = Parent.MinSize with { X = rightmostRight };
@@ -166,10 +166,10 @@ namespace CrabUI
           if (c.Absolute.Height.HasValue) h = c.Absolute.Height.Value;
           if (c.AbsoluteMin.Height.HasValue) h = Math.Max(h, c.AbsoluteMin.Height.Value);
           if (c.AbsoluteMax.Height.HasValue) h = Math.Min(h, c.AbsoluteMax.Height.Value);
-          if (c.MinSize.Y.HasValue) h = Math.Max(h, c.MinSize.Y.Value + c.OutToChildDiff.FullHeigth);
+          if (c.MinSize.Y.HasValue) h = Math.Max(h, c.MinSize.Y.Value);
           if (c.MaxSize.Y.HasValue) h = Math.Min(h, c.MaxSize.Y.Value);
 
-          bottommostBottom = Math.Max(bottommostBottom, y + h);
+          bottommostBottom = Math.Max(bottommostBottom, y + h + c.OutToChildDiff.FullHeigth);
         }
 
         Parent.MinSize = Parent.MinSize with { Y = bottommostBottom };

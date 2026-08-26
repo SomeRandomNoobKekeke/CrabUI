@@ -27,9 +27,27 @@ namespace CrabUIUser
             Absolute = new CUINullRect(x: 20, y: 50),
           };
 
-          block.Add(new CUITextBlock("123"));
+          block.Add(new CUITextBlock("123")
+          {
+            Padding = new CUISizes(5, 5, 5, 5),
+            Margin = new CUISizes(5, 5, 5, 5),
+            Borders =
+            {
+              Sizes = new CUISizes(5, 5, 5, 5),
+              Color = Color.Cyan,
+            }
+          });
           block.Add(new CUIComponent() { Absolute = new CUINullRect(w: 20, h: 20) });
-          block.Add(new CUITextBlock("qiwejfpoqwenfqwpeifnqw"));
+          block.Add(new CUITextBlock("qiwejfpoqwenfqwpeifnqw")
+          {
+            Padding = new CUISizes(5, 5, 5, 5),
+            Margin = new CUISizes(5, 5, 5, 5),
+            Borders =
+            {
+              Sizes = new CUISizes(5, 5, 5, 5),
+              Color = Color.Cyan,
+            }
+          });
 
           return block;
         }
@@ -39,7 +57,7 @@ namespace CrabUIUser
           CUIVerticalList block = new CUIVerticalList()
           {
             FitContent = new CUIBool2(true, true),
-            Absolute = new CUINullRect(x: 20, y: 150),
+            Absolute = new CUINullRect(x: 20, y: 200),
           };
 
           CUIComponent a = block["nested"] = new CUIHorizontalList() { FitContent = new CUIBool2(true, true) };
@@ -47,9 +65,27 @@ namespace CrabUIUser
           CUIComponent c = b["nested"] = new CUIHorizontalList() { FitContent = new CUIBool2(true, true) };
           CUIComponent d = c["nested"] = new CUIVerticalList() { FitContent = new CUIBool2(true, true) };
 
-          d.Children.Add(new CUITextBlock("123"));
+          d.Children.Add(new CUITextBlock("123")
+          {
+            Padding = new CUISizes(5, 5, 5, 5),
+            Margin = new CUISizes(5, 5, 5, 5),
+            Borders =
+            {
+              Sizes = new CUISizes(5, 5, 5, 5),
+              Color = Color.Cyan,
+            }
+          });
           d.Children.Add(new CUIComponent() { Absolute = new CUINullRect(w: 20, h: 20) });
-          d.Children.Add(new CUITextBlock("qiwejfpoqwenfqwpeifnqw"));
+          d.Children.Add(new CUITextBlock("qiwejfpoqwenfqwpeifnqw")
+          {
+            Padding = new CUISizes(5, 5, 5, 5),
+            Margin = new CUISizes(5, 5, 5, 5),
+            Borders =
+            {
+              Sizes = new CUISizes(5, 5, 5, 5),
+              Color = Color.Cyan,
+            }
+          });
 
           return block;
         }
@@ -59,7 +95,7 @@ namespace CrabUIUser
           CUIVerticalList block = new CUIVerticalList()
           {
             FitContent = new CUIBool2(true, true),
-            Absolute = new CUINullRect(x: 20, y: 250),
+            Absolute = new CUINullRect(x: 20, y: 400),
           };
 
           CUIComponent a = block["nested"] = new CUIHorizontalList() { FitContent = new CUIBool2(true, true) };
@@ -67,9 +103,27 @@ namespace CrabUIUser
           CUIComponent c = b["nested"] = new CUIHorizontalList() { FitContent = new CUIBool2(true, true) };
           CUIComponent d = c["nested"] = new CUIVerticalList() { FitContent = new CUIBool2(true, true) };
 
-          d.Children.Add(new CUITextBlock("123"));
+          d.Children.Add(new CUITextBlock("123")
+          {
+            Padding = new CUISizes(5, 5, 5, 5),
+            Margin = new CUISizes(5, 5, 5, 5),
+            Borders =
+            {
+              Sizes = new CUISizes(5, 5, 5, 5),
+              Color = Color.Cyan,
+            }
+          });
           d.Children.Add(new CUIComponent() { Absolute = new CUINullRect(w: 20, h: 20) });
-          d.Children.Add(new CUITextBlock("qiwejfpoqwenfqwpeifnqw"));
+          d.Children.Add(new CUITextBlock("qiwejfpoqwenfqwpeifnqw")
+          {
+            Padding = new CUISizes(5, 5, 5, 5),
+            Margin = new CUISizes(5, 5, 5, 5),
+            Borders =
+            {
+              Sizes = new CUISizes(5, 5, 5, 5),
+              Color = Color.Cyan,
+            }
+          });
 
           return block;
         }
@@ -79,7 +133,7 @@ namespace CrabUIUser
           CUIHorizontalList block = new CUIHorizontalList()
           {
             FitContent = new CUIBool2(true, true),
-            Absolute = new CUINullRect(x: 20, y: 350),
+            Absolute = new CUINullRect(x: 20, y: 600),
           };
 
           CUIComponent a = block["nested"] = new CUIVerticalList() { FitContent = new CUIBool2(true, true) };
@@ -87,9 +141,27 @@ namespace CrabUIUser
           CUIComponent c = b["nested"] = new CUIVerticalList() { FitContent = new CUIBool2(true, true) };
           CUIComponent d = c["nested"] = new CUIHorizontalList() { FitContent = new CUIBool2(true, true) };
 
-          d.Children.Add(new CUITextBlock("123"));
-          d.Children.Add(new CUIComponent() { Absolute = new CUINullRect(w: 20, h: 40) });
-          d.Children.Add(new CUITextBlock("qiwejfpoqwe"));
+          d.Children.Add(new CUITextBlock("123")
+          {
+            Padding = new CUISizes(5, 5, 5, 5),
+            Margin = new CUISizes(5, 5, 5, 5),
+            Borders =
+            {
+              Sizes = new CUISizes(5, 5, 5, 5),
+              Color = Color.Cyan,
+            }
+          });
+          d.Children.Add(new CUIComponent() { Absolute = new CUINullRect(w: 20, h: 20) });
+          d.Children.Add(new CUITextBlock("qiwejfpoqwenfqwpeifnqw")
+          {
+            Padding = new CUISizes(5, 5, 5, 5),
+            Margin = new CUISizes(5, 5, 5, 5),
+            Borders =
+            {
+              Sizes = new CUISizes(5, 5, 5, 5),
+              Color = Color.Cyan,
+            }
+          });
 
           return block;
         }

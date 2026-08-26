@@ -13,9 +13,10 @@ namespace CursedUI
 {
   public class RadioGroup
   {
+    public static int EmptyID = -1;
     static RadioGroup()
     {
-      PluginLifeCycle.Stop += () => Groups.Clear();
+      PluginLifeCycle.Stop += Groups.Clear;
     }
 
     public static Dictionary<string, RadioGroup> Groups { get; } = new();
@@ -28,8 +29,8 @@ namespace CursedUI
 
 
     public int MaxID { get; private set; }
-    public int Previous { get; private set; } = -1;
-    public int Current { get; private set; } = -1;
+    public int Previous { get; private set; } = EmptyID;
+    public int Current { get; private set; } = EmptyID;
 
     public event Action<int> Selected;
 
@@ -49,6 +50,7 @@ namespace CursedUI
     public bool IsSelected => Group.IsSelected(ID);
     public bool WasSelected => Group.WasSelected(ID);
     public void Select() => Group.Select(ID);
+    public void ClearSelection() => Group.Select(RadioGroup.EmptyID);
 
     public event Action Selected;
     public event Action Deselected;

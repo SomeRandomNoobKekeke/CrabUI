@@ -47,7 +47,7 @@ namespace CursedUI
 
     public void Toggle() { if (IsOpen) Close(); else Open(); }
 
-    public void Open(CUIComponent Host = null)
+    public virtual void Open(CUIComponent Host = null)
     {
       Host ??= TargetMainComponent ?? CUI.Main;
       if (Host == null || Parent == Host) return;
@@ -58,10 +58,10 @@ namespace CursedUI
     }
 
 
-    public void Close()
+    public virtual void Close()
     {
-      RemoveSelf();
       OnClose?.Invoke();
+      RemoveSelf();
     }
     public event Action OnOpen;
     public event Action OnClose;

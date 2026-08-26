@@ -27,19 +27,19 @@ namespace CursedUIUser
         frame["A"] = new CUIRadioButton("Option A")
         {
           Anchor = CUIAnchor.LeftCenter,
-          Group = "bruh",
+          GroupName = "bruh",
         };
 
         frame["B"] = new CUIRadioButton("Option B")
         {
           Anchor = CUIAnchor.Center,
-          Group = "bruh",
+          GroupName = "bruh",
         };
 
         frame["C"] = new CUIRadioButton("Option C")
         {
           Anchor = CUIAnchor.RightCenter,
-          Group = "bruh",
+          GroupName = "bruh",
         };
 
         return frame;

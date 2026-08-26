@@ -28,7 +28,7 @@ namespace CursedUI
     public Color OffColor { get; set; } = new Color(0, 0, 255);
 
     private RadioMutex Mutex;
-    public string Group
+    public string GroupName
     {
       get => Mutex?.Name;
       set
@@ -78,7 +78,11 @@ namespace CursedUI
     }
 
     public void Select() => Mutex?.Select();
-
+    public void ClearSelection() => Mutex?.ClearSelection();
+    public void Toggle()
+    {
+      if (Selected) ClearSelection(); else Select();
+    }
 
     public override Color MasterColor
     {
@@ -108,7 +112,7 @@ namespace CursedUI
 
     public CUIRadioButton() : base()
     {
-      MouseDown += (e) => Select();
+      MouseDown += (e) => Toggle();
     }
     public CUIRadioButton(string text) : this()
     {

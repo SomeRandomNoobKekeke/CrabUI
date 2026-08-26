@@ -131,7 +131,7 @@ namespace CursedUI
         using (new CUIContextStyle<CUIRadioButton>(btn =>
         {
           btn.Flex = 1;
-          btn.Group = "debugger event flow controls";
+          btn.GroupName = "debugger event flow controls";
           btn.Palette = CUICore.Palettes.Secondary;
           btn.Changed += (state) =>
           {

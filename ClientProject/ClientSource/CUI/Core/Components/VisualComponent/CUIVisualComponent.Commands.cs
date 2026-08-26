@@ -16,6 +16,7 @@ namespace CursedUI
     public public_Commands_Part Commands { get; } = new();
     public class public_Commands_Part : Part, IModule
     {
+      public void ListenFor(string name, Action action) => Self.ProtectedCommands.ListenFor(name, action);
       public void ListenFor(string name, Action<object> action) => Self.ProtectedCommands.ListenFor(name, action);
       public void ListenFor<T>(string name, Action<T> action) => Self.ProtectedCommands.ListenFor<T>(name, action);
       public void SendDown(string name, object data = null) => Self.ProtectedCommands.SendDown(name, data);
@@ -40,17 +41,20 @@ namespace CursedUI
         parent.ProtectedCommands.Node.RemoveChild(this.Node);
       }
 
-
+      public void ListenFor(string name, Action action)
+      {
+        Node.Listeners.Add(name, (o) => action());
+      }
       public void ListenFor<T>(string name, Action<T> action)
       {
-        Node.Listeners[name] = (o) =>
+        Node.Listeners.Add(name, (o) =>
         {
           if (o is T) action((T)o);
-        };
+        });
       }
       public void ListenFor(string name, Action<object> action)
       {
-        Node.Listeners[name] = action;
+        Node.Listeners.Add(name, action);
       }
 
 

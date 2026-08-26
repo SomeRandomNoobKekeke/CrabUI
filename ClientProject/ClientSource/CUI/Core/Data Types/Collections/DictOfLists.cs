@@ -14,6 +14,7 @@ namespace CursedUI
 {
   /// <summary>
   /// It's a dict of lists but you can add and remove elements one by one  
+  /// It creates new lists when necessary
   /// Also it never returns null  
   /// Also list ref is persistent
   /// </summary>

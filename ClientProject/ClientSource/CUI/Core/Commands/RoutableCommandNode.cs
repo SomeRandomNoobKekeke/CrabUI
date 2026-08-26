@@ -13,13 +13,16 @@ namespace CursedUI
 {
   public class RoutableCommandNode : RoutableCommandNodeBase
   {
-    public Dictionary<string, Action<object>> Listeners { get; } = new();
+    public DictOfLists<string, Action<object>> Listeners { get; } = new();
 
     public override void Execute(RoutableCommand command)
     {
       if (Listeners.ContainsKey(command.name))
       {
-        Listeners[command.name](command.data);
+        foreach (Action<object> action in Listeners[command.name])
+        {
+          action(command.data);
+        }
       }
     }
   }

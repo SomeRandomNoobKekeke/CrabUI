@@ -54,8 +54,8 @@ namespace CursedUI
         FitContent = new CUIBool2(false, true),
       };
 
-      block["panel"]["radios"]["1"] = new CUIRadioButton("radio button 1") { Group = "bruh" };
-      block["panel"]["radios"]["2"] = new CUIRadioButton("radio button 2") { Group = "bruh" };
+      block["panel"]["radios"]["1"] = new CUIRadioButton("radio button 1") { GroupName = "bruh" };
+      block["panel"]["radios"]["2"] = new CUIRadioButton("radio button 2") { GroupName = "bruh" };
 
       block["panel"]["toggle button"] = new CUIToggleButton("CUIToggleButton");
 

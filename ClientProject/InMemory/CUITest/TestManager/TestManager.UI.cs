@@ -92,7 +92,7 @@ namespace CrabUIUser
       this["layout"]["header"]["reload"] = new CUIButton()
       {
         Text = "Reload lua",
-        Padding = new CUISizes(0, 15, 0, 15),
+        Padding = new CUISizes(0, 5, 0, 5),
         MasterColor = Color.Red,
         OnMouseDown = (e) => DebugConsole.ExecuteCommand("cl_reloadlua"),
       };
@@ -100,14 +100,14 @@ namespace CrabUIUser
       this["layout"]["header"]["E2E"] = new CUIButton()
       {
         Text = "E2E",
-        Padding = new CUISizes(0, 15, 0, 15),
+        Padding = new CUISizes(0, 5, 0, 5),
         OnMouseDown = (e) => Pages.Open(E2ETestManager),
       };
 
       this["layout"]["header"]["snapshots"] = new CUIButton()
       {
         Text = "Snapshots",
-        Padding = new CUISizes(0, 15, 0, 15),
+        Padding = new CUISizes(0, 5, 0, 5),
         OnMouseDown = (e) => Pages.Open(SnapshotTestManager),
       };
 

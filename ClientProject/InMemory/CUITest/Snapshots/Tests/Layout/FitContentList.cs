@@ -38,7 +38,7 @@ namespace CrabUIUser
             }
           });
           block.Add(new CUIComponent() { Absolute = new CUINullRect(w: 20, h: 20) });
-          block.Add(new CUITextBlock("qiwejfpoqwenfqwpeifnqw")
+          block.Add(new CUIButton("CUIButton")
           {
             Padding = new CUISizes(5, 5, 5, 5),
             Margin = new CUISizes(5, 5, 5, 5),
@@ -76,7 +76,7 @@ namespace CrabUIUser
             }
           });
           d.Children.Add(new CUIComponent() { Absolute = new CUINullRect(w: 20, h: 20) });
-          d.Children.Add(new CUITextBlock("qiwejfpoqwenfqwpeifnqw")
+          d.Children.Add(new CUIRadioButton("CUIRadioButton")
           {
             Padding = new CUISizes(5, 5, 5, 5),
             Margin = new CUISizes(5, 5, 5, 5),
@@ -114,7 +114,7 @@ namespace CrabUIUser
             }
           });
           d.Children.Add(new CUIComponent() { Absolute = new CUINullRect(w: 20, h: 20) });
-          d.Children.Add(new CUITextBlock("qiwejfpoqwenfqwpeifnqw")
+          d.Children.Add(new CUIToggleButton("CUIToggleButton")
           {
             Padding = new CUISizes(5, 5, 5, 5),
             Margin = new CUISizes(5, 5, 5, 5),

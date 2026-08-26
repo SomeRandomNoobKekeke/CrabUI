@@ -27,62 +27,45 @@ namespace CursedUI
     [CUISerializableProp]
     public Color OffColor { get; set; } = new Color(0, 0, 255);
 
-    private RadioMutex Mutex;
+    public RadioGroup Group { get; set; }
     public string GroupName
     {
-      get => Mutex?.Name;
-      set
-      {
-        if (Mutex != null)
-        {
-          Mutex.Selected -= HandleSelect;
-          Mutex.Deselected -= HandleDeselect;
-        }
-
-        Mutex = new RadioMutex(value);
-        Mutex.Selected += HandleSelect;
-        Mutex.Deselected += HandleDeselect;
-      }
+      get => Group.Name;
+      set => Group = RadioGroup.GetOrCreate(value);
     }
 
     private void HandleSelect()
     {
-      OnSelected?.Invoke();
-      Changed?.Invoke(true);
+      Selected?.Invoke();
+      Toggled?.Invoke(true);
       DetermineColor();
     }
 
     private void HandleDeselect()
     {
-      OnDeselected?.Invoke();
-      Changed?.Invoke(false);
+      Deselected?.Invoke();
+      Toggled?.Invoke(false);
       DetermineColor();
     }
 
-    public Action AddOnSelected { set { OnSelected += value; } }
-    public event Action OnSelected;
+    public Action OnSelected { set { Selected += value; } }
+    public event Action Selected;
 
-    public Action AddOnDeselected { set { OnDeselected += value; } }
-    public event Action OnDeselected;
+    public Action OnDeselected { set { Deselected += value; } }
+    public event Action Deselected;
 
-    public Action<bool> OnChanged { set { Changed += value; } }
-    public event Action<bool> Changed;
+    public Action<bool> OnToggled { set { Toggled += value; } }
+    public event Action<bool> Toggled;
 
-    public bool Selected
+    public bool IsSelected
     {
-      get => Mutex?.IsSelected ?? false;
-      set
-      {
-        if (value) Select();
-      }
+      get => Group?.Current == this;
+      set => Group?.Select(this);
     }
 
-    public void Select() => Mutex?.Select();
-    public void ClearSelection() => Mutex?.ClearSelection();
-    public void Toggle()
-    {
-      if (Selected) ClearSelection(); else Select();
-    }
+    public void Select() => Group?.Select(this);
+    public void Deselect() => Group?.Deselect(this);
+    public void Toggle() => IsSelected = !IsSelected;
 
     public override Color MasterColor
     {
@@ -96,7 +79,7 @@ namespace CursedUI
 
     public override void DetermineColor()
     {
-      if (Selected)
+      if (IsSelected)
       {
         Background.Color = OnColor;
         // if (MouseOver) Background.Color = OnColor.Multiply(2.0f);

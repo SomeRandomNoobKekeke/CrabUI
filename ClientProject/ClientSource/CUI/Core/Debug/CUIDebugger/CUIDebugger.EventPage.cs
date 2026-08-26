@@ -28,7 +28,7 @@ namespace CursedUI
       private CUIRadioButton UpdateEventFlow;
 
       public int MaxEvents = 50;
-      public CUIDirection Direction => FreeEventFlow.Selected ? CUIDirection.Reverse : CUIDirection.Straight;
+      public CUIDirection Direction => FreeEventFlow.IsSelected ? CUIDirection.Reverse : CUIDirection.Straight;
 
       private bool ClearRequested;
       private bool CreatedFromHandleDebugEvent; //HACK
@@ -133,7 +133,7 @@ namespace CursedUI
           btn.Flex = 1;
           btn.GroupName = "debugger event flow controls";
           btn.Palette = CUICore.Palettes.Secondary;
-          btn.Changed += (state) =>
+          btn.Toggled += (state) =>
           {
             ClearEventList();
           };
@@ -141,7 +141,7 @@ namespace CursedUI
         {
           wrapper["controls"]["free"] = FreeEventFlow = new CUIRadioButton("Free");
           wrapper["controls"]["draw"] = DrawEventFlow = new CUIRadioButton("Draw");
-          wrapper["controls"]["update"] = UpdateEventFlow = new CUIRadioButton("Update") { Selected = true };
+          wrapper["controls"]["update"] = UpdateEventFlow = new CUIRadioButton("Update") { IsSelected = true };
         }
 
         wrapper.DeepPalette = CUICore.Palettes.Quaternary;
@@ -153,11 +153,11 @@ namespace CursedUI
 
       private void UpdateHook(double totalTime)
       {
-        if (UpdateEventFlow.Selected) ClearRequested = true;
+        if (UpdateEventFlow.IsSelected) ClearRequested = true;
       }
       private void DrawHook(CUISpriteBatch spriteBatch)
       {
-        if (DrawEventFlow.Selected) ClearRequested = true;
+        if (DrawEventFlow.IsSelected) ClearRequested = true;
       }
 
 

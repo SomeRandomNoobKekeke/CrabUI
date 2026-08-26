@@ -34,22 +34,22 @@ namespace CursedUIUser
       {
         CUI.Start();
 
-        // CUI.TextureManager.LoadAs("Assets/PNG/For testing/Test Chamber Background.png", "Test Chamber Background");
-        // CUI.TextureManager.LoadAs("Assets/PNG/For testing/Icons.png", "Test Icons");
+        CUI.TextureManager.LoadAs("Assets/PNG/For testing/Test Chamber Background.png", "Test Chamber Background");
+        CUI.TextureManager.LoadAs("Assets/PNG/For testing/Icons.png", "Test Icons");
 
-        // UTest.CollapseTestPackIfSucceed = false;
-        // UTest.Init();
+        UTest.CollapseTestPackIfSucceed = false;
+        UTest.Init();
 
-        // // CUICore.Palettes.Primary = CUIPalette.FromColor(new Color(0, 0, 128));
+        // CUICore.Palettes.Primary = CUIPalette.FromColor(new Color(0, 0, 128));
 
-        // CUITest = new CUITest();
-        // CUITest.Init();
+        CUITest = new CUITest();
+        CUITest.Init();
 
-        // CUI.TopMain["debug button"] = new CUIButton("debug")
-        // {
-        //   Anchor = CUIAnchor.LeftCenter,
-        //   OnMouseDown = (e) => CUICore.Debugger.Open(),
-        // };
+        CUI.TopMain["debug button"] = new CUIButton("debug")
+        {
+          Anchor = CUIAnchor.LeftCenter,
+          OnMouseDown = (e) => CUICore.Debugger.Open(),
+        };
 
         // CUICore.Debugger.Open();
         // CUIPalette.Preview();

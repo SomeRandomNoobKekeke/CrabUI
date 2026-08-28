@@ -17,12 +17,7 @@ namespace CursedUIUser
     {
       public static CUIComponent CUIToggleButton()
       {
-        CUIFrame frame = new()
-        {
-          Background = { Color = new Color(0, 0, 64) },
-          Absolute = new CUINullRect(0, 0, 400, 600),
-          Anchor = CUIAnchor.Center,
-        };
+        CUIFrame frame = new CUIDefault.Frame("CUIToggleButton", 400, 600);
 
         frame["button"] = new CUIToggleButton("bruh")
         {

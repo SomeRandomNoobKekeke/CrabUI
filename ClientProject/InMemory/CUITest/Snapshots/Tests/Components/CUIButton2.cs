@@ -19,7 +19,7 @@ namespace CursedUIUser
       {
         CUIFrame frame = new CUIDefault.Frame("CUIButton2", 400, 600);
 
-        frame["button"] = new CUIButton("button")
+        frame["button"] = new CUIToggleButton("button")
         {
           Anchor = CUIAnchor.Center,
         };

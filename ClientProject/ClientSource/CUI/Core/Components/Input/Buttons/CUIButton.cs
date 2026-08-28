@@ -28,7 +28,7 @@ namespace CursedUI
       Background.Sprite = CUISprite.Vignette;
     }
 
-    public TextState_Part TextState { get; } = new();
+    TextState_Part TextState { get; } = new();
 
 
 

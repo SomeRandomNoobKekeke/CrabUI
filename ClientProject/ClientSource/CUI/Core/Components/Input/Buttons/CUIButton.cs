@@ -12,6 +12,7 @@ using Barotrauma.Extensions;
 
 namespace CursedUI
 {
+  [GeneratedComponent]
   public partial class CUIButton : CUIButtonBase, IComponent
   {
     public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIButton>((c) =>
@@ -27,12 +28,9 @@ namespace CursedUI
       Background.Sprite = CUISprite.Vignette;
     }
 
-    [CUISerializableProp]
-    public Color MouseOverColor { get; set; } = new Color(0, 0, 140);
-    [CUISerializableProp]
-    public Color MousePressedColor { get; set; } = new Color(0, 0, 200);
-    [CUISerializableProp]
-    public Color InactiveColor { get; set; } = new Color(0, 0, 100);
+    public TextState_Part TextState { get; } = new();
+
+
 
     public override Color MasterColor
     {
@@ -57,7 +55,98 @@ namespace CursedUI
       set => PersonalStyle = new CUIActionStyle<CUIButton>("personal", value);
     }
 
-    public CUIButton() : base() { }
-    public CUIButton(string text) : base(text) { }
+    protected override CUINullVector2 MinSizeOverride => new CUINullVector2(
+      TextState.TextBlock.ForcedSize.X + Padding.FullWidth,
+      TextState.TextBlock.ForcedSize.Y + Padding.FullHeigth
+    );
+
+    protected override void UpdateRects()
+    {
+      base.UpdateRects();
+      TextState.TextBlock.Rect = ChildrenRect;
+    }
+
+    [CUISerializableProp]
+    public override bool Visible
+    {
+      get => Background.Visible;
+      set
+      {
+        Background.Visible = value;
+        TextState.TextBlock.Visible = value;
+      }
+    }
+
+
+
+
+    public override IEnumerable<VisualUnit> VisualSplit()
+    {
+      if (!Displayed || CulledOut) yield break;
+
+      yield return Background.VisualWrapper;
+
+      yield return VisualBounds.LeftBound;
+      yield return TextState.TextBlock.VisualWrapper;
+      yield return VisualBounds.RightBound;
+
+      yield return Borders.VisualWrapper;
+    }
+
+
+    #region Forwarded to TextState
+    [CUISerializableProp]
+    public Color MouseOverColor
+    {
+      get => TextState.MouseOverColor;
+      set => TextState.MouseOverColor = value;
+    }
+    [CUISerializableProp]
+    public Color MousePressedColor
+    {
+      get => TextState.MousePressedColor;
+      set => TextState.MousePressedColor = value;
+    }
+    [CUISerializableProp]
+    public Color InactiveColor
+    {
+      get => TextState.InactiveColor;
+      set => TextState.InactiveColor = value;
+    }
+
+    public string Text { get => TextState.Text; set => TextState.Text = value; }
+    public Color TextColor { get => TextState.TextColor; set => TextState.TextColor = value; }
+    public float Scale { get => TextState.Scale; set => TextState.Scale = value; }
+    public ResizeStrategy ResizeStrategy { get => TextState.ResizeStrategy; set => TextState.ResizeStrategy = value; }
+    public Vector2 TextAnchor { get => TextState.TextAnchor; set => TextState.TextAnchor = value; }
+    public SpriteEffects SpriteEffects { get => TextState.SpriteEffects; set => TextState.SpriteEffects = value; }
+    public float LayerDepth { get => TextState.LayerDepth; set => TextState.LayerDepth = value; }
+    public CUIFont Font { get => TextState.Font; set => TextState.Font = value; }
+
+    public string RealText => TextState.RealText;
+    public Vector2 RawTextSize => TextState.RawTextSize;
+    public Vector2 TextDrawPosition => TextState.TextDrawPosition;
+    public CUINullVector2 ForcedSize => TextState.ForcedSize;
+    public float RealScale => TextState.RealScale;
+    #endregion
+
+    public CUIButton() : base()
+    {
+      MouseOff += (e) => DetermineColor();
+      MouseOn += (e) => DetermineColor();
+      DetermineColor();
+
+      MouseDown += (e) =>
+      {
+        if (PlaySound) SoundPlayer.PlayUISound(ClickSound);
+        if (Emit != null) Commands.SendUp(Emit, Text);
+      };
+
+      ConsumeMouseEvents = true;
+    }
+    public CUIButton(string text) : this()
+    {
+      Text = text;
+    }
   }
 }

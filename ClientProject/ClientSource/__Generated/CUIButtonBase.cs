@@ -6,13 +6,12 @@ using CUICodeGenerator;
 
 namespace CursedUI
 {
-  public partial class CUIComponent
+  public partial class CUIButtonBase
   {
     [Local]
-    protected Self_As_CUIComponent As_CUIComponent { get; } = new();
+    protected Self_As_CUIButtonBase As_CUIButtonBase { get; } = new();
     void IComponent.RunInitMethods()
     {
-      InitDebugChannels();
       InitLayout();
       InitVisualSlots();
     }
@@ -29,6 +28,7 @@ namespace CursedUI
     {
       As_CUIVisualComponent.Self = this;
       As_CUIComponent.Self = this;
+      As_CUIButtonBase.Self = this;
       
       As_CUIVisualComponent.Commands.Self = this;
       As_CUIVisualComponent.ProtectedCommands.Self = this;
@@ -132,10 +132,9 @@ namespace CursedUI
       LayoutProps.GridColumn.HostPropName = "GridColumn";
     }
 
-  protected class Self_As_CUIComponent : IAdapterPart
+  protected class Self_As_CUIButtonBase : IAdapterPart
   {
-    public ResizeHandle RightResizeHandle => Self.RightResizeHandle;
-    public CUIComponent Self { get; set; }
+    public CUIButtonBase Self { get; set; }
   }
   }
 }

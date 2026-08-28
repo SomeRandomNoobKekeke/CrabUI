@@ -12,7 +12,7 @@ using Barotrauma.Extensions;
 
 namespace CursedUI
 {
-  public abstract partial class CUIButtonBase : CUIComponent, IComponent
+  public abstract partial class CUITextButtonBase : CUIComponent, IComponent
   {
     public abstract Color MasterColor { set; }
     public abstract void DetermineColor();
@@ -115,7 +115,7 @@ namespace CursedUI
     }
 
 
-    public CUIButtonBase() : base()
+    public CUITextButtonBase() : base()
     {
       MouseOff += (e) => DetermineColor();
       MouseOn += (e) => DetermineColor();
@@ -130,7 +130,7 @@ namespace CursedUI
       ConsumeMouseEvents = true;
     }
 
-    public CUIButtonBase(string text) : this()
+    public CUITextButtonBase(string text) : this()
     {
       Text = text;
     }

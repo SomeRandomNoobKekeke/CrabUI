@@ -85,7 +85,12 @@ namespace CursedUIUser
         OnToggle = (state) => SerializeTestSubject = state,
       };
 
-      this["layout"]["groups"] = new CUIHorizontalList() { FitContent = new CUIBool2(false, true), };
+      this["layout"]["groups"] = new CUIHorizontalList()
+      {
+        FitContent = new CUIBool2(false, true),
+        Scrollable = true,
+      };
+
       foreach (string group in Repo.Groups)
       {
         this["layout"]["groups"].Children.Add(new CUIButton(group)

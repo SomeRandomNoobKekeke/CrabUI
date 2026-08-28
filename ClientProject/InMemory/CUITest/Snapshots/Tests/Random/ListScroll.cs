@@ -17,64 +17,60 @@ namespace CursedUIUser
     {
       public static CUIComponent ListScroll()
       {
-        CUIFrame frame = new CUIDefault.Frame("ListScroll")
+        IEnumerable<CUIComponent> LotsOfTextBlocks()
         {
-          Absolute = new CUINullRect(w: 400, h: 600),
-        };
+          return Enumerable.Range(0, 30).Select(i => new CUITextBlock($"child {i}"));
+        }
 
-        frame["layout"]["header"] = new CUIHorizontalList()
-        {
-          FitContent = new CUIBool2(false, true),
-        };
+        CUIFrame frame = new CUIDefault.Frame("ListScroll", 600, 600);
 
-        frame["layout"]["header"]["scroll1"] = new CUITextBlock("0")
-        {
-          Flex = 1,
-        };
-
-        frame["layout"]["header"]["scroll2"] = new CUITextBlock("0")
-        {
-          Flex = 1,
-        };
 
         CUIComponent Main = new CUIComponent() { Flex = 1 };
         frame["layout"]["main"] = Main;
 
-        CUIVerticalList list1 = new CUIVerticalList()
+        Main["list left"] = new CUIDefault.VerticalPanel()
         {
           Absolute = new CUINullRect(0, 0, 100, 200),
-          Background = { Color = CUICore.Palettes.Secondary["main"] },
           Anchor = CUIAnchor.LeftCenter,
           Direction = CUIDirection.Straight,
           Scrollable = true,
           TopGap = 10,
           BottomGap = 30,
+          Children = { AddBulk = LotsOfTextBlocks() },
         };
-        list1.MouseScroll += (e) => frame.Get<CUITextBlock>("layout.header.scroll1").Text = $"{list1.Scroll}";
-        Main["list1"] = list1;
 
-        for (int i = 1; i <= 100; i++)
-        {
-          Main["list1"].Children.Add(new CUITextBlock($"child {i}"));
-        }
-
-        CUIVerticalList list2 = new CUIVerticalList()
+        Main["list right"] = new CUIDefault.VerticalPanel()
         {
           Absolute = new CUINullRect(0, 0, 100, 200),
-          Background = { Color = CUICore.Palettes.Secondary["main"] },
           Anchor = CUIAnchor.RightCenter,
           Direction = CUIDirection.Reverse,
           Scrollable = true,
           TopGap = 10,
           BottomGap = 30,
+          Children = { AddBulk = LotsOfTextBlocks() },
         };
-        list2.MouseScroll += (e) => frame.Get<CUITextBlock>("layout.header.scroll2").Text = $"{list2.Scroll}";
-        Main["list2"] = list2;
 
-        for (int i = 1; i <= 100; i++)
+        Main["list top"] = new CUIDefault.HorizontalPanel()
         {
-          Main["list2"].Children.Add(new CUITextBlock($"child {i}"));
-        }
+          Absolute = new CUINullRect(0, 0, 200, 100),
+          Anchor = CUIAnchor.CenterTop,
+          Direction = CUIDirection.Straight,
+          Scrollable = true,
+          LeftGap = 10,
+          RightGap = 30,
+          Children = { AddBulk = LotsOfTextBlocks() },
+        };
+
+        Main["list bottom"] = new CUIDefault.HorizontalPanel()
+        {
+          Absolute = new CUINullRect(0, 0, 200, 100),
+          Anchor = CUIAnchor.CenterBottom,
+          Direction = CUIDirection.Reverse,
+          Scrollable = true,
+          LeftGap = 10,
+          RightGap = 30,
+          Children = { AddBulk = LotsOfTextBlocks() },
+        };
 
         return frame;
       }

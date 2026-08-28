@@ -16,10 +16,21 @@ namespace CursedUI
     /// <summary>
     /// This is just convenient accessor, it doesn't do the work
     /// </summary>
-    public class ChildrenListProxy : Part, IList<CUIVisualComponent>
+    public class ChildrenListProxy : Part, IEndPart, IList<CUIVisualComponent>
     {
-      public List<CUIVisualComponent> Children => Self._Children;
-      public TreeOperations_Part Operations => Self.TreeOperations;
+      private List<CUIVisualComponent> Children => Self._Children;
+      private TreeOperations_Part Operations => Self.TreeOperations;
+
+      public IEnumerable<CUIVisualComponent> AddBulk
+      {
+        set
+        {
+          foreach (CUIVisualComponent child in value)
+          {
+            Operations.AddChild(child);
+          }
+        }
+      }
 
       public CUIVisualComponent this[int i]
       {

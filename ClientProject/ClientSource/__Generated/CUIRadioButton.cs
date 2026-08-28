@@ -6,10 +6,10 @@ using CUICodeGenerator;
 
 namespace CursedUI
 {
-  public partial class CUIToggleButton
+  public partial class CUIRadioButton
   {
     [Local]
-    protected Self_As_CUIToggleButton As_CUIToggleButton { get; } = new();
+    protected Self_As_CUIRadioButton As_CUIRadioButton { get; } = new();
     void IComponent.RunInitMethods()
     {
       InitLayout();
@@ -29,10 +29,10 @@ namespace CursedUI
       As_CUIVisualComponent.Self = this;
       As_CUIComponent.Self = this;
       As_CUIButtonBase.Self = this;
-      As_CUIToggleButton.Self = this;
+      As_CUIRadioButton.Self = this;
       
-      As_CUIToggleButton.OnState.Self = this;
-      As_CUIToggleButton.OffState.Self = this;
+      As_CUIRadioButton.OnState.Self = this;
+      As_CUIRadioButton.OffState.Self = this;
       As_CUIVisualComponent.Commands.Self = this;
       As_CUIVisualComponent.ProtectedCommands.Self = this;
       As_CUIVisualComponent.Data.Self = this;
@@ -135,11 +135,11 @@ namespace CursedUI
       LayoutProps.GridColumn.HostPropName = "GridColumn";
     }
 
-  protected class Self_As_CUIToggleButton : IAdapterPart
+  protected class Self_As_CUIRadioButton : IAdapterPart
   {
     public CUIButtonBase.TextToggleState_Part OnState => Self.OnState;
     public CUIButtonBase.TextToggleState_Part OffState => Self.OffState;
-    public CUIToggleButton Self { get; set; }
+    public CUIRadioButton Self { get; set; }
   }
   }
 }

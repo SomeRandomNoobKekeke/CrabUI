@@ -28,8 +28,26 @@ namespace CursedUI
       Background.Sprite = CUISprite.Vignette;
     }
 
-    TextState_Part TextState { get; } = new();
+    public TextState_Part TextState { get; } = new();
 
+    [CUISerializableProp]
+    public Color MouseOverColor
+    {
+      get => TextState.MouseOverColor;
+      set => TextState.MouseOverColor = value;
+    }
+    [CUISerializableProp]
+    public Color MousePressedColor
+    {
+      get => TextState.MousePressedColor;
+      set => TextState.MousePressedColor = value;
+    }
+    [CUISerializableProp]
+    public Color InactiveColor
+    {
+      get => TextState.InactiveColor;
+      set => TextState.InactiveColor = value;
+    }
 
 
     public override Color MasterColor
@@ -95,25 +113,6 @@ namespace CursedUI
 
 
     #region Forwarded to TextState
-    [CUISerializableProp]
-    public Color MouseOverColor
-    {
-      get => TextState.MouseOverColor;
-      set => TextState.MouseOverColor = value;
-    }
-    [CUISerializableProp]
-    public Color MousePressedColor
-    {
-      get => TextState.MousePressedColor;
-      set => TextState.MousePressedColor = value;
-    }
-    [CUISerializableProp]
-    public Color InactiveColor
-    {
-      get => TextState.InactiveColor;
-      set => TextState.InactiveColor = value;
-    }
-
     public string Text { get => TextState.Text; set => TextState.Text = value; }
     public Color TextColor { get => TextState.TextColor; set => TextState.TextColor = value; }
     public float Scale { get => TextState.Scale; set => TextState.Scale = value; }

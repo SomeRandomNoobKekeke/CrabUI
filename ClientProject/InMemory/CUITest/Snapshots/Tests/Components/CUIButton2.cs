@@ -22,6 +22,8 @@ namespace CursedUIUser
         frame["button"] = new CUIToggleButton("button")
         {
           Anchor = CUIAnchor.Center,
+          OnState = { Text = "On", TextColor = Color.Black, BackgroundColor = Color.Orange },
+          OffState = { Text = "Off34r234r234r234r23", BackgroundColor = Color.Green, BackgroundColorHovered = Color.Lime },
         };
 
 

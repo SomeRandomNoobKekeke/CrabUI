@@ -27,39 +27,30 @@ namespace CursedUI
       Background.Sprite = CUISprite.Vignette;
     }
 
-    public TextState_Part OnState { get; } = new();
-    public TextState_Part OffState { get; } = new();
+    public TextToggleState_Part OnState { get; } = new();
+    public TextToggleState_Part OffState { get; } = new();
 
-    private TextState_Part SelectedTextState;
+    private TextToggleState_Part SelectedTextState;
 
     [CUISerializableProp]
     public Color OnColor
     {
-      get => OnState.InactiveColor;
-      set
-      {
-        OnState.InactiveColor = value;
-      }
+      get => OnState.BackgroundColor;
+      set => OnState.BackgroundColor = value;
     }
 
     [CUISerializableProp]
     public Color OffColorHovered
     {
-      get => OffState.MouseOverColor;
-      set
-      {
-        OffState.MouseOverColor = value;
-      }
+      get => OffState.BackgroundColorHovered;
+      set => OffState.BackgroundColorHovered = value;
     }
 
     [CUISerializableProp]
     public Color OffColor
     {
-      get => OffState.InactiveColor;
-      set
-      {
-        OffState.InactiveColor = value;
-      }
+      get => OffState.BackgroundColor;
+      set => OffState.BackgroundColor = value;
     }
 
 
@@ -71,6 +62,7 @@ namespace CursedUI
         _State = value;
         SelectedTextState = value ? OnState : OffState;
         DetermineColor();
+        VisualRestructureNotifier.Notify();
       }
     }
 

@@ -17,14 +17,14 @@ namespace CursedUI
     /// <summary>
     /// It's a wrapper for TextBlock that also marks layout when you set props
     /// </summary>
-    public class TextState_Part : Part
+    public class TextToggleState_Part : Part
     {
       public TextBlock TextBlock { get; } = new();
 
+      public Color BackgroundColor { get; set; }
+      public Color BackgroundColorHovered { get; set; }
 
-      public Color MouseOverColor { get; set; } = new Color(0, 0, 140);
-      public Color MousePressedColor { get; set; } = new Color(0, 0, 200);
-      public Color InactiveColor { get; set; } = new Color(0, 0, 100);
+
 
       public CUIRect Rect
       {
@@ -78,6 +78,7 @@ namespace CursedUI
         set
         {
           TextBlock.TextColor = value;
+          Self.LayoutMarker.Mark(LayoutMarker.Pattern.FromParentAndDown);
         }
       }
 

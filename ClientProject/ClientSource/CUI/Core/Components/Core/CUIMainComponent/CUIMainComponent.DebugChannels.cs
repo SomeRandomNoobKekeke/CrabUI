@@ -17,8 +17,9 @@ namespace CursedUI
 
 
     [InitMethod]
-    private void InitDebugChannels()
+    protected override void InitDebugChannels()//CRINGE i have no idea why this works
     {
+      // base.InitDebugChannels(); 
       Debug_LayoutUpdated.Map(DebugRelays[DebugCategory.LayoutUpdated]);
     }
 

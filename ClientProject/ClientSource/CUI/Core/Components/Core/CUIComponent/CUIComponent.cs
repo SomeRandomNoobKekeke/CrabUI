@@ -12,7 +12,7 @@ namespace CursedUI
   {
     public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIComponent>((c) =>
     {
-      c.RightResizeHandle.Background.Color = c.Palette["main"];
+      c.RightResizeHandle.Background.Color = c.Palette["main"] * 0.5f;
       c.Borders.Color = c.Palette["border"];
     });
 

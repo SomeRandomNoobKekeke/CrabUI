@@ -32,14 +32,12 @@ namespace CursedUIUser
         {
           Flex = 1,
           Background = {
-            Sprite = CUISprite.VerticalGradient with {
-              Effects = SpriteEffects.FlipVertically,
-            },
+            Sprite = { ColorTop = Color.Transparent }
           },
           Scrollable = true,
           Direction = CUIDirection.Reverse,
-          Style = (c) => c.Background.Color = c.Palette["panel"],
-          Palette = CUICore.Palettes.Secondary,
+          Style = (c) => c.Background.Sprite.ColorBottom = c.Palette["panel"],
+          Palette = CUICore.Palettes.Quaternary,
         };
 
         this["layout"]["logwrapper"]["log"] = LogList = new CUIVerticalList()

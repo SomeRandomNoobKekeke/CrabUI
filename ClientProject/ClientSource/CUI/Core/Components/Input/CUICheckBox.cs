@@ -24,8 +24,8 @@ namespace CursedUI
     {
       base.InitStyle();
 
-      OnSprite = CUISprite.AtPos(0, 1);
-      OffSprite = CUISprite.AtPos(1, 1);
+      OnSprite = CUISprite.CheckBoxOn;
+      OffSprite = CUISprite.CheckBoxOff;
 
       State = false;
 

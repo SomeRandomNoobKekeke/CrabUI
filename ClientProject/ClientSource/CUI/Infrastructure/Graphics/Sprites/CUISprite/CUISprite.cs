@@ -42,6 +42,11 @@ namespace CursedUI
       }
     }
 
+    public Color ColorTop { get => ColorTL; set { ColorTL = value; ColorTR = value; } }
+    public Color ColorRight { get => ColorTR; set { ColorTR = value; ColorBR = value; } }
+    public Color ColorBottom { get => ColorBL; set { ColorBR = value; ColorBL = value; } }
+    public Color ColorLeft { get => ColorTL; set { ColorTL = value; ColorBL = value; } }
+
     public float Rotation { get; set; } = 0.0f;
     public Vector2 Origin { get; set; } = Vector2.Zero;
     public SpriteEffects Effects { get; set; } = SpriteEffects.None;

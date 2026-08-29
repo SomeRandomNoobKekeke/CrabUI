@@ -12,6 +12,7 @@ namespace CursedUI
     protected Self_As_CUIRadioButton As_CUIRadioButton { get; } = new();
     void IComponent.RunInitMethods()
     {
+      InitDebugChannels();
       InitLayout();
       InitVisualSlots();
     }

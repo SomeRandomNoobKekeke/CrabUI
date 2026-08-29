@@ -30,10 +30,8 @@ namespace CursedUI
       base.OnDebugOff();
     }
 
-
-
     [InitMethod]
-    private void InitDebugChannels()
+    protected virtual void InitDebugChannels()
     {
       Debug_RectSet.Map(DebugRelays[DebugCategory.RectSet]);
     }

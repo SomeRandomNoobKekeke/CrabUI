@@ -124,7 +124,11 @@ namespace CursedUI
         {
           Flex = 1,
           Scrollable = true,
-          Background = { Sprite = CUISprite.VerticalGradient },
+          Background = { Sprite =
+            {
+              ColorBL = Color.Transparent,
+              ColorBR = Color.Red,
+            } },
           Style = (c) => c.Background.Color = c.Palette["panel"],
         };
 

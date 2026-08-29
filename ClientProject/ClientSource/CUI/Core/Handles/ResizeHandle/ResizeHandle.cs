@@ -177,7 +177,6 @@ namespace CursedUI
 
       Anchor = new Vector2(1, 1);
       Background.Sprite.Effects = SpriteEffects.FlipHorizontally;
-      Background.Color = Color.White;
 
       Background.MouseDown.Add(Grab);
 

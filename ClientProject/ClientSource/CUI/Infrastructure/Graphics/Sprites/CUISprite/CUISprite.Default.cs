@@ -18,40 +18,47 @@ namespace CursedUI
     /// <summary>
     /// 64x64 textures separated by 2px transparent lines to avoid sampler artifacts
     /// </summary>
-    public static CUISprite AtPos(int x, int y, int w = 1, int h = 1)
+    private static CUISprite AtIndex(int x, int y, int w = 1, int h = 1)
       => new CUISprite(CUICore.TextureManager.Get("CUI"))
       {
         SourceRectangle = new Rectangle(1 + 66 * x, 1 + 66 * y, 64 * w, 64 * h)
       };
 
-    public static CUISprite Cross => AtPos(0, 0);
-    public static CUISprite Angle => AtPos(1, 0);
+    private static CUISprite AtPos(int x, int y, int w, int h)
+      => new CUISprite(CUICore.TextureManager.Get("CUI"))
+      {
+        SourceRectangle = new Rectangle(x, y, w, h)
+      };
+
+    public static CUISprite Cross => AtIndex(0, 0);
+    public static CUISprite Angle => AtIndex(1, 0);
 
 
-    public static CUISprite HorizontalGradient => AtPos(7, 6, 8, 1);
-    public static CUISprite VerticalGradient => AtPos(6, 7, 1, 8);
-    public static CUISprite BoxWithAShadow => AtPos(4, 1);
+    public static CUISprite CheckBoxOn => AtIndex(0, 1);
+    public static CUISprite CheckBoxOff => AtIndex(1, 1);
 
-    public static CUISprite GlowingEdges => AtPos(2, 1);
-    public static CUISprite BluredEdges => AtPos(0, 2);
-    public static CUISprite BluredEdgesHorizontal => AtPos(1, 2);
-    public static CUISprite BluredEdgesVertical => AtPos(2, 2);
-    public static CUISprite Window => AtPos(3, 2);
-    public static CUISprite BoxWithALamp => AtPos(4, 2);
+    public static CUISprite BoxWithAShadow => AtIndex(4, 1);
 
-    public static CUISprite Vignette => AtPos(0, 3);
-    public static CUISprite DimmedHorizontal => AtPos(1, 3);
-    public static CUISprite DimmedVertical => AtPos(2, 3);
-    public static CUISprite VignetteLight => AtPos(7, 7, 8, 8);
-    public static CUISprite DimmedHorizontalLight => AtPos(4, 3);
-    public static CUISprite DimmedVerticalLight => AtPos(5, 3);
+    public static CUISprite GlowingEdges => AtIndex(2, 1);
+    public static CUISprite BluredEdges => AtIndex(0, 2);
+    public static CUISprite BluredEdgesHorizontal => AtIndex(1, 2);
+    public static CUISprite BluredEdgesVertical => AtIndex(2, 2);
+    public static CUISprite Window => AtIndex(3, 2);
+    public static CUISprite BoxWithALamp => AtIndex(4, 2);
+
+    public static CUISprite Vignette => AtIndex(0, 3);
+    public static CUISprite DimmedHorizontal => AtIndex(1, 3);
+    public static CUISprite DimmedVertical => AtIndex(2, 3);
+    public static CUISprite VignetteLight => AtIndex(7, 7, 8, 8);
+    public static CUISprite DimmedHorizontalLight => AtIndex(4, 3);
+    public static CUISprite DimmedVerticalLight => AtIndex(5, 3);
 
 
-    public static CUISprite LeftLineEnd => AtPos(0, 4);
-    public static CUISprite LineCenter => AtPos(1, 4);
-    public static CUISprite RightLineEnd => AtPos(2, 4);
-    public static CUISprite Handle => AtPos(3, 4);
-    public static CUISprite LineMark => AtPos(4, 4);
+    public static CUISprite LeftLineEnd => AtIndex(0, 4);
+    public static CUISprite LineCenter => AtIndex(1, 4);
+    public static CUISprite RightLineEnd => AtIndex(2, 4);
+    public static CUISprite Handle => AtIndex(3, 4);
+    public static CUISprite LineMark => AtIndex(4, 4);
 
 
     public static CUISprite CreateRadialColorPicker(int w, int h)

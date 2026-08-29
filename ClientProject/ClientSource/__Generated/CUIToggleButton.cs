@@ -12,6 +12,7 @@ namespace CursedUI
     protected Self_As_CUIToggleButton As_CUIToggleButton { get; } = new();
     void IComponent.RunInitMethods()
     {
+      InitDebugChannels();
       InitLayout();
       InitVisualSlots();
     }

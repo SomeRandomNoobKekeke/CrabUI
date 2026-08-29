@@ -12,6 +12,7 @@ namespace CursedUI
     protected Self_As_CUITextInput As_CUITextInput { get; } = new();
     void IComponent.RunInitMethods()
     {
+      InitDebugChannels();
       InitLayout();
       InitVisualSlots();
     }

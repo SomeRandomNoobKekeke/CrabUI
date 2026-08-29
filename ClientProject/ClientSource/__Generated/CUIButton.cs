@@ -12,6 +12,7 @@ namespace CursedUI
     protected Self_As_CUIButton As_CUIButton { get; } = new();
     void IComponent.RunInitMethods()
     {
+      InitDebugChannels();
       InitLayout();
       InitVisualSlots();
     }

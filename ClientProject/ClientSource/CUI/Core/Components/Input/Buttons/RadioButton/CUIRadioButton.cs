@@ -113,7 +113,9 @@ namespace CursedUI
       set
       {
         OnColor = value.MultOpaque(0.7f);
-        OffColor = value.MultOpaque(0.3f);
+        OffColorHovered = value.MultOpaque(0.5f);
+        OffColor = value.MultOpaque(0.4f);
+
         DetermineColor();
       }
     }

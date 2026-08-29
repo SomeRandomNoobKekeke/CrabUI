@@ -61,8 +61,9 @@ namespace CursedUI
       {
         _State = value;
         SelectedTextState = value ? OnState : OffState;
+
         DetermineColor();
-        VisualRestructureNotifier.Notify();
+        LayoutMarker.Mark(LayoutMarker.Pattern.FromParentAndDown);
       }
     }
 

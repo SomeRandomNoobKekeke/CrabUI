@@ -30,7 +30,7 @@ namespace CursedUI
     public TextToggleState_Part OnState { get; } = new();
     public TextToggleState_Part OffState { get; } = new();
 
-    private TextToggleState_Part SelectedTextState;
+    private TextToggleState_Part SelectedTextState;//CRINGE parts are not designed to be swapped around, this is cursed
 
     [CUISerializableProp]
     public Color OnColor

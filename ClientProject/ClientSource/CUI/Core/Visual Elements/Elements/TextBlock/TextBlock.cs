@@ -87,7 +87,7 @@ namespace CursedUI
       }
     }
 
-    public Vector2 Anchor { get; set; } = new Vector2(0.5f, 0.5f);
+    public Vector2 Anchor { get; set; } = new Vector2(0.5f, 0.5f); //TODO test, shouldn't this be reacive?
 
 
     public Color TextColor { get; set; } = Color.White;

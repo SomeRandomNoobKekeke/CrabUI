@@ -23,6 +23,8 @@ namespace CursedUI
     }
     public Rectangle? SourceRectangle { get; set; } = null;
 
+    public Point Size => SourceRectangle.HasValue ? SourceRectangle.Value.Size : Texture.Bounds.Size;
+
     private static Color DefaultColor => Color.White;
     public Color ColorTL { get; set; } = DefaultColor;
     public Color ColorTR { get; set; } = DefaultColor;

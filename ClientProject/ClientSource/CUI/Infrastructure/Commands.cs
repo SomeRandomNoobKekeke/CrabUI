@@ -105,7 +105,7 @@ namespace CursedUI
       foreach (MethodBase mb in Harmony.GetAllPatchedMethods())
       {
         Func<Patch, bool> selector = nolua ? (p) => !p.owner.Contains("LuaCsForBarotrauma") : (p) => true;
-        Func<Patch, string> toText = p => $"{p.owner}{(deep ? $" - {Utils.GetFullMethodName(p.PatchMethod)}" : "")}";
+        Func<Patch, string> toText = p => $"{p.owner}{(deep ? $" - {p.PatchMethod.GetFullMethodName()}" : "")}";
 
         bool PatchIsEmpty(Patches p) =>
           p.Prefixes.Count(selector) == 0 &&

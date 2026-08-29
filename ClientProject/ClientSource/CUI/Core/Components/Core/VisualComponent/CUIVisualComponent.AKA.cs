@@ -165,7 +165,7 @@ namespace CursedUI
 
       return component;
     }
-    public T Get<T>(string name) where T : CUIVisualComponent => (T)Get(name);
+    public T Get<T>(string name) where T : class => Get(name) as T;
 
     /// <summary>
     /// Prints named components recursivelly,  

@@ -16,18 +16,15 @@ namespace CursedUI
     {
       public override void MeasureRawTextSize(string text, float scale, CUIFont font)
       {
-        RawTextSize = font.MeasureString(text);
+        RawTextSize = font.MeasureString(text) * scale;
         ForcedSize = new CUINullVector2(RawTextSize);
         RealText = text;
+        RealScale = scale;
       }
 
       public override void MeasureRealTextSize(CUIRect rect, Vector2 anchor, string text, float scale, CUIFont font)
       {
-        Vector2 RealTextSize = RawTextSize * scale;
-        RealScale = scale;
-
-        RealText = text;
-        TextDrawPosition = CUIAnchor.ChildPosIn(rect, anchor, RealTextSize);
+        TextDrawPosition = CUIAnchor.ChildPosIn(rect, anchor, RawTextSize);
       }
     }
   }

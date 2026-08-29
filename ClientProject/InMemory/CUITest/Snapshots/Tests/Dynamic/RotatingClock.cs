@@ -15,32 +15,6 @@ namespace CursedUIUser
   {
     public static partial class Dynamic
     {
-      public class DynamicContainer : CUIComponent
-      {
-        public event Action Updated;
-
-        private void MapUpdate(double t)
-        {
-          Updated?.Invoke();
-        }
-
-        protected override void OnAttachedToMainComponent(CUIMainComponent mainComponent)
-        {
-          base.OnAttachedToMainComponent(mainComponent);
-          CUICore.OnUpdate += MapUpdate;
-        }
-
-        protected override void OnDetachedFromMainComponent(CUIMainComponent mainComponent)
-        {
-          base.OnDetachedFromMainComponent(mainComponent);
-          CUICore.OnUpdate -= MapUpdate;
-        }
-        public DynamicContainer()
-        {
-          Relative = new CUINullRect(0, 0, 1, 1);
-        }
-      }
-
       public static CUIComponent RotatingClock()
       {
         DynamicContainer container = new DynamicContainer()
@@ -48,7 +22,7 @@ namespace CursedUIUser
           Children = {AddBulk = Enumerable.Range(1,12).Select(i=>new CUITextBlock($"{i}")
           {
             Anchor = CUIAnchor.Center,
-          })}
+          })},
         };
 
         double angle = Math.PI * 2 / container.Children.Count;

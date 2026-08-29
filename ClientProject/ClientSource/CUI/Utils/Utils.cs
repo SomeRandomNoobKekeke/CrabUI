@@ -7,51 +7,17 @@ using CUILibs;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Barotrauma;
+using Barotrauma.Extensions;
 
 namespace CursedUI
 {
   public static partial class Utils
   {
-    public static string SubstringSafe(this string s, int i)
-      => s.Substring(0, Math.Clamp(i, 0, s.Length));
 
-    public static string GetFullName(this Type T)
-    {
-      List<string> parts = new List<string>() { T.Name };
-      Type declaringType = T.DeclaringType;
-      while (declaringType != null)
-      {
-        parts.Add(declaringType.Name);
-        declaringType = declaringType.DeclaringType;
-      }
-      parts.Reverse();
 
-      return string.Join('.', parts);
-    }
 
-    public static string GetFullMethodName(this MethodInfo mi)
-    {
-      List<string> parts = new List<string>() { mi.Name };
-      Type declaringType = mi.DeclaringType;
-      while (declaringType != null)
-      {
-        parts.Add(declaringType.Name);
-        declaringType = declaringType.DeclaringType;
-      }
-      parts.Reverse();
 
-      return string.Join('.', parts);
-    }
 
-    public static IEnumerable<Type> GetTypeChain(Type T, Type rootType)
-    {
-      yield return T;
 
-      while (T.BaseType != null && T.BaseType.IsAssignableTo(rootType))
-      {
-        T = T.BaseType;
-        yield return T;
-      }
-    }
   }
 }

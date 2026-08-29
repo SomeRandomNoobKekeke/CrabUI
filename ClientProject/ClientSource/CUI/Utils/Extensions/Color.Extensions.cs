@@ -13,6 +13,8 @@ namespace CursedUI
   public static class CUIColor
   {
 
+    public static Color Random => new Color((byte)CUI.Random.Next(), (byte)CUI.Random.Next(), (byte)CUI.Random.Next());
+
     public static Color To(this Color source, Color target, float lambda)
       => Color.Lerp(source, target, lambda);
 

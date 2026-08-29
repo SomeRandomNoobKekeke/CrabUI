@@ -11,7 +11,7 @@ using CUICodeGenerator;
 
 namespace CursedUI
 {
-  public partial class CUITextBlock : CUIComponent, IComponent
+  public partial class CUITextBlock : CUIComponent, IComponent, ITextComponent
   {
     public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUITextBlock>((c) =>
     {
@@ -30,13 +30,21 @@ namespace CursedUI
     public string Text
     {
       get => TextBlock.Text;
-      set => TextBlock.Text = value;
+      set
+      {
+        TextBlock.Text = value;
+        LayoutMarker.Mark(LayoutMarker.Pattern.OnlyParent);
+      }
     }
     [CUISerializableProp]
     public float Scale
     {
       get => TextBlock.Scale;
-      set => TextBlock.Scale = value;
+      set
+      {
+        TextBlock.Scale = value;
+        LayoutMarker.Mark(LayoutMarker.Pattern.OnlyParent);
+      }
     }
     [CUISerializableProp]
     public Vector2 TextAnchor
@@ -75,6 +83,13 @@ namespace CursedUI
       get => TextBlock.ResizeStrategy;
       set => TextBlock.ResizeStrategy = value;
     }
+
+
+    public string RealText => TextBlock.RealText;
+    public Vector2 RawTextSize => TextBlock.RawTextSize;
+    public Vector2 TextDrawPosition => TextBlock.TextDrawPosition;
+    public CUINullVector2 ForcedSize => TextBlock.ForcedSize;
+    public float RealScale => TextBlock.RealScale;
 
     protected override CUINullVector2 MinSizeOverride => new CUINullVector2(
       TextBlock.ForcedSize.X + Padding.FullWidth,

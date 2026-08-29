@@ -13,7 +13,7 @@ using Barotrauma.Extensions;
 namespace CursedUI
 {
   [GeneratedComponent]
-  public partial class CUIButton : CUIButtonBase, IComponent
+  public partial class CUIButton : CUIButtonBase, IComponent, ITextComponent
   {
     public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIButton>((c) =>
     {

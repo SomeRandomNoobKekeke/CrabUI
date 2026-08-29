@@ -31,7 +31,7 @@ namespace CursedUI
     {
       CUIStylePipeline pipeline = new CUIStylePipeline();
 
-      List<Type> typeChain = Utils.GetTypeChain(T, typeof(CUIVisualComponent)).ToList();
+      List<Type> typeChain = T.GetTypeChain(typeof(CUIVisualComponent)).ToList();
       typeChain.Reverse();
 
       foreach (Type type in typeChain)

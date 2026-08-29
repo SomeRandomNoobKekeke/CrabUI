@@ -12,6 +12,7 @@ namespace CursedUI
 {
   public partial record CUISprite
   {
+    public static CUISprite Transparent => new CUISprite(CUITexture2D.White) { Color = Color.Transparent };
     public static CUISprite White => new CUISprite(CUITexture2D.White);
     public static CUISprite BaroDev => new CUISprite(CUITexture2D.BaroDev);
 

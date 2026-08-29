@@ -118,7 +118,8 @@ namespace CursedUI
       set
       {
         Background.Visible = value;
-        SelectedTextState.TextBlock.Visible = value;
+        OnState.TextBlock.Visible = value;
+        OffState.TextBlock.Visible = value;
       }
     }
 

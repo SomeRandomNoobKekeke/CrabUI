@@ -12,7 +12,7 @@ namespace CursedUI
 {
   public partial class IconBlock : VisualElementBase
   {
-    private CUISprite _Icon; public CUISprite Icon
+    private CUISprite _Icon = CUISprite.Transparent; public CUISprite Icon
     {
       get => _Icon;
       set
@@ -54,13 +54,19 @@ namespace CursedUI
       }
     }
 
+    public Color Color
+    {
+      get => Icon.Color;
+      set => Icon.Color = value;
+    }
+
     public Rectangle IconRectangle { get; private set; }
     private void RecalcIconRectangle()
     {
-      IconRectangle = new Rectangle( //TODO test rounding issues
-        CUIAnchor.ChildPosIn(Rect, Anchor, Icon.Size.ToVector2()).ToPoint(),
-        Icon.Size
-      );
+      IconRectangle = new CUIRect(
+        CUIAnchor.ChildPosIn(Rect, Anchor, Icon.Size.ToVector2()),
+        Icon.Size.ToVector2()
+      ).Round();
     }
 
     public override bool Contains(Vector2 pos) => Rect.Contains(pos);

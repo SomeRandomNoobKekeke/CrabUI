@@ -15,13 +15,15 @@ namespace CursedUIUser
   {
     public static partial class Components
     {
-      public static CUIComponent CUICheckBox()
+      public static CUIComponent CUIToggleIconButton()
       {
-        CUIFrame frame = new CUIDefault.Frame("CUICheckBox", 400, 600);
+        CUIFrame frame = new CUIDefault.Frame("CUIToggleIconButton", 400, 600);
 
-        frame["checkbox"] = new CUICheckBox2()
+        frame["button"] = new CUIToggleIconButton(CUISprite.Cross)
         {
           Anchor = CUIAnchor.Center,
+          MasterColor = Color.Red,
+          OffIconBlock = { Icon = CUISprite.CheckIcon },
         };
 
         return frame;

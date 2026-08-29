@@ -22,7 +22,7 @@ namespace CursedUI
     protected override void InitStyle()
     {
       base.InitStyle();
-      Padding = new(4, 4, 4, 4);
+      // Padding = new(2, 2, 2, 2);
       Background.Sprite = CUISprite.Vignette;
     }
 

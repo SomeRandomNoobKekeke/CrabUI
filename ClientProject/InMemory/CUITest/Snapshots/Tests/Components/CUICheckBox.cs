@@ -17,11 +17,12 @@ namespace CursedUIUser
     {
       public static CUIComponent CUICheckBox()
       {
-        CUIFrame frame = new CUIDefault.Frame("CUICheckBox", 400, 600);
+        var frame = new CUIDefault.Frame("CUICheckBox", 400, 600);
 
-        frame["checkbox"] = new CUICheckBox2()
+        frame["checkbox"] = new CUICheckBox()
         {
           Anchor = CUIAnchor.Center,
+          OnToggle = (state) => frame.Caption = $"Checked: [{state}]",
         };
 
         return frame;

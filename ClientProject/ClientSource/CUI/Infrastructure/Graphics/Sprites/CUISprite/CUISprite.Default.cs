@@ -25,7 +25,7 @@ namespace CursedUI
         SourceRectangle = new Rectangle(1 + 66 * x, 1 + 66 * y, 64 * w, 64 * h)
       };
 
-    private static CUISprite AtPos(int x, int y, int w, int h)
+    public static CUISprite AtPos(int x, int y, int w, int h)
       => new CUISprite(CUICore.TextureManager.Get("CUI"))
       {
         SourceRectangle = new Rectangle(x, y, w, h)
@@ -60,6 +60,8 @@ namespace CursedUI
     public static CUISprite RightLineEnd => AtIndex(2, 4);
     public static CUISprite Handle => AtIndex(3, 4);
     public static CUISprite LineMark => AtIndex(4, 4);
+
+    public static CUISprite FuzzyCircle => AtIndex(5, 4);
 
 
     public static CUISprite CreateRadialColorPicker(int w, int h)

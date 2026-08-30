@@ -77,9 +77,9 @@ namespace CursedUI
       {
         _State = value;
         SelectedIconBlock = value ? OnIconBlock : OffIconBlock;
-
         DetermineColor();
-        LayoutMarker.Mark(LayoutMarker.Pattern.FromParentAndDown);
+        LayoutMarker.Mark(LayoutMarker.Pattern.AbsoluteProp);
+        VisualRestructureNotifier.Notify();
       }
     }
 

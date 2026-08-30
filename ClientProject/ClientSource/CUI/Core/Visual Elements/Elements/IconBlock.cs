@@ -18,8 +18,6 @@ namespace CursedUI
       set
       {
         _Icon = value;
-
-        CUI.Logger.Log(Icon);
         RecalcIconRectangle();
       }
     }
@@ -60,13 +58,17 @@ namespace CursedUI
       set => Icon.Color = value;
     }
 
+    public Vector2 ForcedSize { get; private set; }
+
     public Rectangle IconRectangle { get; private set; }
     private void RecalcIconRectangle()
     {
       IconRectangle = new CUIRect(
-        CUIAnchor.ChildPosIn(Rect, Anchor, Icon.Size.ToVector2()),
-        Icon.Size.ToVector2()
+        CUIAnchor.ChildPosIn(Rect, Anchor, Icon.Size.ToVector2() * Scale),
+        Icon.Size.ToVector2() * Scale
       ).Round();
+
+      ForcedSize = Icon.Size.ToVector2() * Scale;
     }
 
     public override bool Contains(Vector2 pos) => Rect.Contains(pos);

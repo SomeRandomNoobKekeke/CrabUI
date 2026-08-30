@@ -74,8 +74,8 @@ namespace CursedUI
     }
 
     protected override CUINullVector2 MinSizeOverride => new CUINullVector2(
-      Icon.Size.X + Padding.FullWidth,
-      Icon.Size.Y + Padding.FullHeigth
+      IconBlock.ForcedSize.X + Padding.FullWidth,
+      IconBlock.ForcedSize.Y + Padding.FullHeigth
     );
 
     protected override void UpdateRects()

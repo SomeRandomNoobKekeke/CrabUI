@@ -25,8 +25,8 @@ namespace CursedUI
 
     public class NestedVisualComponent : VisualUnit
     {
-      public IVisualComponent Component;
-      public NestedVisualComponent(IVisualComponent component) => Component = component;
+      public CUIVisualComponent Component;
+      public NestedVisualComponent(CUIVisualComponent component) => Component = component;
       public override string ToString() => Component.ToString();
     }
   }

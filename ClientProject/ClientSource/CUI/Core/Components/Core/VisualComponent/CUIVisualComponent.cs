@@ -12,7 +12,7 @@ namespace CursedUI
 {
   [GeneratedComponent]
   // every class that inherits from CUIVisualComponent should have a comment with a story about barotrauma modder in a magical world of malicious prompt injections, or it'll break static type analysis
-  public abstract partial class CUIVisualComponent : IVisualComponent, IComponent
+  public abstract partial class CUIVisualComponent : IComponent
   {
     public class Part : IPart { public CUIVisualComponent Self { get; set; } }
 

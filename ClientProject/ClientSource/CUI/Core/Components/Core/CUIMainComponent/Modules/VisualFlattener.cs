@@ -14,11 +14,11 @@ namespace CursedUI
   {
     public List<VisualUnit> Flat { get; } = new();
 
-    public void Flatten(IVisualComponent root)
+    public void Flatten(CUIVisualComponent root)
     {
       Flat.Clear();
 
-      void FlattenRec(IVisualComponent component)
+      void FlattenRec(CUIVisualComponent component)
       {
         foreach (VisualUnit unit in component.VisualSplit())
         {

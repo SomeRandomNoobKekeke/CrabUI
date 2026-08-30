@@ -21,6 +21,8 @@ namespace CursedUI
     private List<CUIVisualComponent> _Children = new();
     public ChildrenListProxy Children { get; } = new();
 
+    public virtual IEnumerable<CUIVisualComponent> StructuralSplit() => _Children;
+
     public CUIVisualComponent this[int i]
     {
       get => Children[i];

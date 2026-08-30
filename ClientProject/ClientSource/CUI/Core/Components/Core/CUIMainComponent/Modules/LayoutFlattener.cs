@@ -23,7 +23,7 @@ namespace CursedUI
       {
         Flat.Add(component);
 
-        foreach (CUIVisualComponent child in component.Children)
+        foreach (CUIVisualComponent child in component.StructuralSplit())
         {
           FlattenRec(child);
         }

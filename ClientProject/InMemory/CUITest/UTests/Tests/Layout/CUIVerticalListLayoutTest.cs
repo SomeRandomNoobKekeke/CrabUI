@@ -20,7 +20,7 @@ namespace CursedUI
 
       public CUIDirection Direction { get; set; }
       public float TotalHeight { set { } }
-      public IReadOnlyList<Layout.Child> Children { get; set; }
+      public IEnumerable<Layout.Child> Children { get; set; }
       public Vector2 ChildrenOffset { get; set; }
       public bool CullChildren { get; set; }
       public CUIRect Rect { get; set; }

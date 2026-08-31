@@ -17,7 +17,7 @@ namespace CursedUI
   {
     public interface Host
     {
-      public IReadOnlyList<Child> Children { get; }
+      public IEnumerable<Child> Children { get; }
       public Vector2 ChildrenOffset { get; }
       public bool CullChildren { get; }
 

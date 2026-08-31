@@ -32,7 +32,7 @@ namespace CursedUI
       {
         ComponentList.Clear();
 
-        foreach (CUIVisualComponent child in CUI.Main.DeepChildren)
+        foreach (CUIVisualComponent child in CUI.Main.DeepStructuralSplit)
         {
           if (child.IsDebugTool) continue;
 

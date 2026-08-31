@@ -13,12 +13,12 @@ namespace CursedUI
 {
   public partial class CUIVisualComponent
   {
-    private CUIVisualComponent _Parent; public CUIVisualComponent Parent
+    protected CUIVisualComponent _Parent; public CUIVisualComponent Parent
     {
       get => _Parent;
       set => TreeOperations.SetParent(value);
     }
-    private List<CUIVisualComponent> _Children = new();
+    protected List<CUIVisualComponent> _Children = new();
     public ChildrenListProxy Children { get; } = new();
 
     public virtual IEnumerable<CUIVisualComponent> StructuralSplit() => _Children;
@@ -29,6 +29,10 @@ namespace CursedUI
       set => Children[i] = value;
     }
 
+    /// <summary>
+    /// Cursed, use it to make components that are not in Children but in StructuralSplit think that they have a parent
+    /// </summary>
+    protected void AttachChild(CUIVisualComponent child) => TreeOperations.AttachChild(child);
     public void RemoveSelf() => Parent = null;
     public void MoveToTop()
     {
@@ -49,6 +53,21 @@ namespace CursedUI
         {
           yield return child;
           foreach (CUIVisualComponent deepChild in child.DeepChildren)
+          {
+            yield return deepChild;
+          }
+        }
+      }
+    }
+
+    public IEnumerable<CUIVisualComponent> DeepStructuralSplit
+    {
+      get
+      {
+        foreach (CUIVisualComponent child in StructuralSplit())
+        {
+          yield return child;
+          foreach (CUIVisualComponent deepChild in child.DeepStructuralSplit)
           {
             yield return deepChild;
           }

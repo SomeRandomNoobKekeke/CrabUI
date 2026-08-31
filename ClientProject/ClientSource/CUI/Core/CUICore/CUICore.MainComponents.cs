@@ -40,8 +40,8 @@ namespace CursedUI
 
       public void Setup()
       {
-        Main = new CUIMainComponent(Self);
-        TopMain = new CUIMainComponent(Self);
+        Main = new CUIMainComponent(Self) { AKA = "Main" };
+        TopMain = new CUIMainComponent(Self) { AKA = "TopMain" };
 
         UpdateGameScreenRect();
 

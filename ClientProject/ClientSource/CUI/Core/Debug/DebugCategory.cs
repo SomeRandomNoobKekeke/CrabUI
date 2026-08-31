@@ -23,6 +23,7 @@ namespace CursedUI
     // public static string Events = "Events";
     // public static string ScissorRectSet = "Scissor Rect Set";
     // public static string VisualUnitProcessed = "VisualUnitProcessed";
+    public static string LayoutFlatten = "Layout Flatten";
     public static string ComponentCreated = "Component Created";
     public static string StyleApplied = "Style Applied";
     public static string LayoutUpdated = "Layout Updated";

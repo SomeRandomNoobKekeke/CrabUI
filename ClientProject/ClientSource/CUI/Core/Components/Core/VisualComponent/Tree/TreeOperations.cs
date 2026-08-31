@@ -124,6 +124,22 @@ namespace CursedUI
           RemoveChildAt(i);
         }
       }
+
+      /// <summary>
+      /// Very cursed
+      /// </summary>
+      public void AttachChild(CUIVisualComponent child)
+      {
+        ArgumentNullException.ThrowIfNull(child);
+
+        child._Parent?.TreeOperations.RemoveChild(child);
+
+        child._Parent = Self;
+        // Self._Children.Add(child);
+
+        child.Tree.OnAttachToParent(Self);
+        Self.Tree.OnChildAdded(child);
+      }
     }
   }
 }

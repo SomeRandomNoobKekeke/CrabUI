@@ -10,11 +10,15 @@ using CUICodeGenerator;
 
 namespace CursedUI
 {
-  //TODO untangle from CUIVisualComponent?
   public class LayoutFlattener : IModule
   {
-    public List<CUIVisualComponent> Flat { get; } = new();
+    // public CUIDebugNode<List<CUIVisualComponent>> Debug_LayoutFlatten { get; } = new(DebugCategory.LayoutFlatten)
+    // {
+    //   IsOpen = true,
+    //   MsgFactory = (list) => $"New Flat: [\n{String.Join(",\n", list.Select(c => $"  {c}"))}\n]",
+    // };
 
+    public List<CUIVisualComponent> Flat { get; } = new();
     public void Flatten(CUIVisualComponent root)
     {
       Flat.Clear();
@@ -30,6 +34,11 @@ namespace CursedUI
       }
 
       FlattenRec(root);
+
+      // Doesn't work 
+      // Debug_LayoutFlatten.Send(Flat);
+
+      // CUI.Logger.Log($"New Flat: [\n{String.Join(",\n", Flat.Select(c => $"  {c}"))}\n]");
     }
   }
 

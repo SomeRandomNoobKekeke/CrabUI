@@ -95,9 +95,9 @@ namespace CursedUI
     public Action<bool> OnToggle { set { Toggle += value; } }
     public event Action<bool> Toggle;
 
-    public new Action<CUIButton> Style
+    public new Action<CUIToggleButton> Style
     {
-      set => PersonalStyle = new CUIActionStyle<CUIButton>("personal", value);
+      set => PersonalStyle = new CUIActionStyle<CUIToggleButton>("personal", value);
     }
 
     protected override CUINullVector2 MinSizeOverride => new CUINullVector2(

@@ -19,7 +19,7 @@ namespace CursedUI
     /// <summary>
     /// 64x64 textures separated by 2px transparent lines to avoid sampler artifacts
     /// </summary>
-    private static CUISprite AtIndex(int x, int y, int w = 1, int h = 1)
+    public static CUISprite AtIndex(int x, int y, int w = 1, int h = 1)
       => new CUISprite(CUICore.TextureManager.Get("CUI"))
       {
         SourceRectangle = new Rectangle(1 + 66 * x, 1 + 66 * y, 64 * w, 64 * h)

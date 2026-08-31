@@ -109,6 +109,7 @@ namespace CursedUI
       base.UpdateRects();
       OnIconBlock.Rect = ChildrenRect;
       OffIconBlock.Rect = ChildrenRect;
+      DetermineColor();
     }
 
     [CUISerializableProp]
@@ -134,6 +135,11 @@ namespace CursedUI
       yield return VisualBounds.RightBound;
 
       yield return Borders.VisualWrapper;
+    }
+
+    public new Action<CUIToggleIconButton> Style
+    {
+      set => PersonalStyle = new CUIActionStyle<CUIToggleIconButton>("personal", value);
     }
 
     public CUIToggleIconButton() : base()

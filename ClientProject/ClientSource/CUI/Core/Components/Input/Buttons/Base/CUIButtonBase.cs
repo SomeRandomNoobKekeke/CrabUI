@@ -20,6 +20,10 @@ namespace CursedUI
     public abstract Color MasterColor { set; }
     public abstract void DetermineColor();
 
+    public new Action<CUIButtonBase> Style
+    {
+      set => PersonalStyle = new CUIActionStyle<CUIButtonBase>("personal", value);
+    }
 
     public bool PlaySound { get; set; } = true;
     public GUISoundType ClickSound { get; set; } = GUISoundType.Select;//TODO don't reference it directly? there should be some cui sound manager

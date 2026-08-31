@@ -39,7 +39,6 @@ namespace CursedUI
 
     public bool InheritPalette { get; set; } = false;
 
-
     public Action<CUIVisualComponent> Style
     {
       set => PersonalStyle = new CUIActionStyle<CUIVisualComponent>("personal", value);

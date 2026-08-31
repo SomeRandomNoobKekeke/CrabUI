@@ -15,7 +15,8 @@ namespace CursedUI
   {
     protected void InheritProps(CUIVisualComponent parent)
     {
-      if (InheritPalette) Palette = parent.Palette;
+      if (InheritPalette) DeepPalette = parent.Palette;
+      // if (DeepInheritPalette) DeepPalette = parent.Palette;
     }
 
   }

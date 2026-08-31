@@ -96,7 +96,10 @@ namespace CursedUI
     }
 
 
-
+    public new Action<CUIIconButton> Style
+    {
+      set => PersonalStyle = new CUIActionStyle<CUIIconButton>("personal", value);
+    }
 
     public override IEnumerable<VisualUnit> VisualSplit()
     {

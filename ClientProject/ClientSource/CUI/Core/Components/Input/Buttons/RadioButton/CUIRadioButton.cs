@@ -170,6 +170,10 @@ namespace CursedUI
       yield return Borders.VisualWrapper;
     }
 
+    public new Action<CUIRadioButton> Style
+    {
+      set => PersonalStyle = new CUIActionStyle<CUIRadioButton>("personal", value);
+    }
 
     #region Forwarded to TextState
     public string Text

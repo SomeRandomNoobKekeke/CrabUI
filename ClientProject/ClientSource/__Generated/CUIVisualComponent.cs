@@ -43,6 +43,7 @@ namespace CursedUI
       As_CUIVisualComponent.Adapters.IResizable.Self = this;
       As_CUIVisualComponent.Adapters.ISwipeable.Self = this;
       As_CUIVisualComponent.LayoutProps.Self = this;
+      As_CUIVisualComponent.PseudoChildren.Self = this;
       As_CUIVisualComponent.Children.Self = this;
       As_CUIVisualComponent.Tree.Self = this;
       As_CUIVisualComponent.TreeOperations.Self = this;
@@ -139,6 +140,7 @@ namespace CursedUI
     public CUIVisualComponent.Style_Part Styles => Self.Styles;
     public CUIVisualComponent.Adapters_Part Adapters => Self.Adapters;
     public CUIVisualComponent.LayoutProps_Part LayoutProps => Self.LayoutProps;
+    public CUIVisualComponent.PseudoChildren_Part PseudoChildren => Self.PseudoChildren;
     public CUIVisualComponent.ChildrenListProxy Children => Self.Children;
     public CUIVisualComponent.TreeEvents_Part Tree => Self.Tree;
     public CUIVisualComponent.TreeOperations_Part TreeOperations => Self.TreeOperations;

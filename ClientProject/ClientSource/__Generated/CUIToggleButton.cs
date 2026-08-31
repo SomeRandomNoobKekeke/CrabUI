@@ -52,6 +52,7 @@ namespace CursedUI
       As_CUIVisualComponent.Adapters.IResizable.Self = this;
       As_CUIVisualComponent.Adapters.ISwipeable.Self = this;
       As_CUIVisualComponent.LayoutProps.Self = this;
+      As_CUIVisualComponent.PseudoChildren.Self = this;
       As_CUIVisualComponent.Children.Self = this;
       As_CUIVisualComponent.Tree.Self = this;
       As_CUIVisualComponent.TreeOperations.Self = this;

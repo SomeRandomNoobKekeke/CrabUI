@@ -31,10 +31,7 @@ namespace CursedUI
       set => Children[i] = value;
     }
 
-    /// <summary>
-    /// Cursed, use it to make components that are not in Children but in StructuralSplit think that they have a parent
-    /// </summary>
-    protected void AttachChild(CUIVisualComponent child) => TreeOperations.AttachChild(child);
+
     public void RemoveSelf() => Parent = null;
     public void MoveToTop()
     {

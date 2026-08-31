@@ -12,7 +12,7 @@ namespace CursedUI
 {
   public static partial class CUI
   {
-    public const string Branch = "???"; //CRINGE ?
+    public const string Branch = "dev"; //CRINGE ?
     public const string CUITexturePath = "Assets/PNG/CUI.png";
   }
 }

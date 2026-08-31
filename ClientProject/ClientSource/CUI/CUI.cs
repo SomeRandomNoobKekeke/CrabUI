@@ -10,7 +10,7 @@ using Barotrauma;
 
 namespace CursedUI
 {
-  public static class CUI
+  public static partial class CUI
   {
     static CUI()
     {

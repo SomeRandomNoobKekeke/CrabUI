@@ -20,7 +20,7 @@ namespace CursedUI
     private void LoadDefaultTextures()
     {
       CUITextureManagerPublic.LoadAs("Assets/PNG/dev.png", "BaroDev");
-      CUITextureManagerPublic.LoadAs("Assets/PNG/CUI.png", "CUI");
+      CUITextureManagerPublic.LoadAs(CUI.CUITexturePath, "CUI");
     }
   }
 }

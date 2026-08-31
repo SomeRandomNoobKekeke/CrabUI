@@ -18,12 +18,12 @@ namespace CursedUI
     {
       private void ValidateI(int i)
       {
-        if (i < 0 || i >= Self._Children.Count) throw new ArgumentException($"{Self}| child index out of bounds [{i}]");
+        if (i < 0 || i >= Self.ChildrenContainer.Count) throw new ArgumentException($"{Self}| child index out of bounds [{i}]");
       }
 
       public void RemoveChild(CUIVisualComponent child)
       {
-        Self._Children.Remove(child);
+        Self.ChildrenContainer.Remove(child);
         child._Parent = null;
 
         child.Tree.OnDetachFromParent(Self);
@@ -39,13 +39,13 @@ namespace CursedUI
 
         ValidateI(i);
 
-        CUIVisualComponent prevchild = Self._Children[i];
+        CUIVisualComponent prevchild = Self.ChildrenContainer[i];
 
         newChild._Parent?.TreeOperations.RemoveChild(newChild);
 
         prevchild._Parent = null;
         newChild._Parent = Self;
-        Self._Children[i] = newChild;
+        Self.ChildrenContainer[i] = newChild;
 
         prevchild.Tree.OnDetachFromParent(Self);
         Self.Tree.OnChildRemoved(prevchild);
@@ -60,7 +60,7 @@ namespace CursedUI
 
         child._Parent?.TreeOperations.RemoveChild(child);
         child._Parent = Self;
-        Self._Children.Insert(i, child);
+        Self.ChildrenContainer.Insert(i, child);
 
         child.Tree.OnAttachToParent(Self);
         Self.Tree.OnChildAdded(child);
@@ -71,12 +71,12 @@ namespace CursedUI
         ArgumentNullException.ThrowIfNull(child);
         ValidateI(i);
 
-        if (!Self._Children.Remove(child))
+        if (!Self.ChildrenContainer.Remove(child))
         {
           throw new ArgumentException($"{child} is not in the child list");
         }
 
-        Self._Children.Insert(i, child);
+        Self.ChildrenContainer.Insert(i, child);
         Self.Tree.OnChildrenRearranged();
       }
 
@@ -87,7 +87,7 @@ namespace CursedUI
         child._Parent?.TreeOperations.RemoveChild(child);
 
         child._Parent = Self;
-        Self._Children.Add(child);
+        Self.ChildrenContainer.Add(child);
 
         child.Tree.OnAttachToParent(Self);
         Self.Tree.OnChildAdded(child);
@@ -97,8 +97,8 @@ namespace CursedUI
       {
         ValidateI(i);
 
-        CUIVisualComponent child = Self._Children[i];
-        Self._Children.RemoveAt(i);
+        CUIVisualComponent child = Self.ChildrenContainer[i];
+        Self.ChildrenContainer.RemoveAt(i);
         child._Parent = null;
 
         child.Tree.OnDetachFromParent(Self);
@@ -119,7 +119,7 @@ namespace CursedUI
 
       public void RemoveAllChildren()
       {
-        for (int i = Self._Children.Count - 1; i >= 0; i--)
+        for (int i = Self.ChildrenContainer.Count - 1; i >= 0; i--)
         {
           RemoveChildAt(i);
         }

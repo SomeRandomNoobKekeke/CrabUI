@@ -18,10 +18,12 @@ namespace CursedUI
       get => _Parent;
       set => TreeOperations.SetParent(value);
     }
-    protected List<CUIVisualComponent> _Children = new();
+
+    protected List<CUIVisualComponent> _Children = new List<CUIVisualComponent>();
+    protected virtual IList<CUIVisualComponent> ChildrenContainer => _Children;
     public ChildrenListProxy Children { get; } = new();
 
-    public virtual IEnumerable<CUIVisualComponent> StructuralSplit() => _Children;
+    public virtual IEnumerable<CUIVisualComponent> StructuralSplit() => ChildrenContainer;
 
     public CUIVisualComponent this[int i]
     {

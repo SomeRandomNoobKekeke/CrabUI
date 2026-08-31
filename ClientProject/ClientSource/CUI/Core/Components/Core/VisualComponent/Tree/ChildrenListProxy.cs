@@ -18,7 +18,7 @@ namespace CursedUI
     /// </summary>
     public class ChildrenListProxy : Part, IEndPart, IList<CUIVisualComponent>
     {
-      private List<CUIVisualComponent> Children => Self._Children;
+      private IList<CUIVisualComponent> Children => Self.ChildrenContainer;
       private TreeOperations_Part Operations => Self.TreeOperations;
 
       public IEnumerable<CUIVisualComponent> AddBulk

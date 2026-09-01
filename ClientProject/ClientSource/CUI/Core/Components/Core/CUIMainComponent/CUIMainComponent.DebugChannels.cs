@@ -26,6 +26,7 @@ namespace CursedUI
     public new DebugRelayDict DebugRelays { get; } = new()
     {
       [DebugCategory.LayoutUpdated] = new DebugRelay(),
+      [DebugCategory.LayoutMarked] = new DebugRelay(),
       [DebugCategory.RectSet] = new DebugRelay(),
     };
   }

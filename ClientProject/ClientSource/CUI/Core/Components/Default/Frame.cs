@@ -61,12 +61,14 @@ namespace CursedUI
       public Frame(string caption) : this()
       {
         CaptionBlock.Text = caption;
+        AKA = caption;
       }
 
       public Frame(string caption, float width, float height) : this()
       {
         CaptionBlock.Text = caption;
         Absolute = new CUINullRect(w: width, h: height);
+        AKA = caption;
       }
     }
   }

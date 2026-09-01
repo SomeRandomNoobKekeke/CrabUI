@@ -20,11 +20,18 @@ namespace CursedUI
       public void NotifyLayoutUpdated();
     }
 
+    public CUIDebugNode<Target, Pattern> Debug_Marked = new(DebugCategory.LayoutMarked)
+    {
+      MsgFactory = (host, pattern) => $"[{host}] ... marking with [{pattern}]"
+    };
+
     [In] public Target Host { get; set; }
 
     public void Mark(Pattern pattern)
     {
       if (pattern.Empty) return;
+      Debug_Marked.Send(Host, pattern);
+
       pattern.MarkFunc(Host);
       Host.NotifyLayoutUpdated();
     }

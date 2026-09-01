@@ -31,6 +31,8 @@ namespace CursedUI
           => Self.Children.ReadOnlyAs<CUIVisualComponent, LayoutMarker.Target>(child => child.Adapters.LayoutMarker);
 
         void LayoutMarker.Target.NotifyLayoutUpdated() => Self.LayoutUpdateNotifier.Notify();
+
+        public override string ToString() => Self.ToString();
       }
     }
   }

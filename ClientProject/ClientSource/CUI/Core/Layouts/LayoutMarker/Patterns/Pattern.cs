@@ -19,10 +19,16 @@ namespace CursedUI
       public static Pattern AbsoluteProp = new AbsolutePropPattern();
       public static Pattern UpAndDown = new UpAndDownPattern();
 
+      /// <summary>
+      /// for rofl and debug, don't use
+      /// </summary>
+      public static Pattern UpdateAll = new UpdateAllPattern();
 
       public bool Empty { get; set; }
 
       public virtual void MarkFunc(Target Host) { }
+
+      public override string ToString() => this.GetType().Name;
     }
   }
 

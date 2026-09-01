@@ -44,6 +44,16 @@ namespace CursedUI
 
     }
 
+    public CUIDebugNode<Host> Debug_MarkedForChildrenUpdate = new(DebugCategory.LayoutMarked)
+    {
+      MsgFactory = (host) => $"[{host}] >>> marked for children update"
+    };
+
+    public CUIDebugNode<Host> Debug_MarkedForParentUpdate = new(DebugCategory.LayoutMarked)
+    {
+      MsgFactory = (host) => $"[{host}] <<< marked for parent update"
+    };
+
     public object HostComponent { get; set; }
     public string HostPropName { get; set; }
 
@@ -61,6 +71,7 @@ namespace CursedUI
       set
       {
         _RequireChildrenUpdate = value;
+        Debug_MarkedForChildrenUpdate.Send(Parent);
       }
     }
 
@@ -71,6 +82,7 @@ namespace CursedUI
       set
       {
         _RequireParentUpdate = value;
+        Debug_MarkedForParentUpdate.Send(Parent);
       }
     }
 

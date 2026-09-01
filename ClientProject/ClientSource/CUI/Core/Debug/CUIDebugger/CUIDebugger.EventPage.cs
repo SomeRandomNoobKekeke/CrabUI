@@ -100,7 +100,7 @@ namespace CursedUI
             OnToggle = (state) =>
             {
               DebugHub.Gates[name].Toggle();
-              ClearEventList();
+              // ClearEventList();
             },
             InheritPalette = true,
           });

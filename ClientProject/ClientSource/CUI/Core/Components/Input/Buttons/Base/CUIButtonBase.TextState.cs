@@ -41,7 +41,7 @@ namespace CursedUI
         set
         {
           TextBlock.Text = value;
-          Self.LayoutMarker.Mark(LayoutMarker.Pattern.FromParentAndDown);
+          Self.LayoutMarker.Mark(LayoutMarker.Pattern.AbsoluteProp);
         }
       }
 

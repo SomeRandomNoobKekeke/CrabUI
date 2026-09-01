@@ -146,6 +146,8 @@ namespace CursedUI
     {
       MouseDown += (e) =>
       {
+        if (!e.Mouse.M1.Down) return;
+
         State = !State;
         if (PlaySound) SoundPlayer.PlayUISound(ClickSound);
         Toggle?.Invoke(State);

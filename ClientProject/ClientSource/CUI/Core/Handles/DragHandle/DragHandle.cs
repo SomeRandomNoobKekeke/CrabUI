@@ -45,6 +45,8 @@ namespace CursedUI
 
     private void Grab(CUIMouseEvent e)
     {
+      if (!e.Mouse.M1.Down) return;
+
       if (!Active) return;
       if (!Host.TryGrab(this)) return;
 

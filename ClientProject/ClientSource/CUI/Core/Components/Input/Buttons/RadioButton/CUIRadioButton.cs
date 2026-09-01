@@ -266,6 +266,8 @@ namespace CursedUI
 
       MouseDown += (e) =>
       {
+        if (!e.Mouse.M1.Down) return;
+
         if (PlaySound) SoundPlayer.PlayUISound(ClickSound);
         if (Emit != null) Commands.SendUp(Emit, Text);
         Toggle();

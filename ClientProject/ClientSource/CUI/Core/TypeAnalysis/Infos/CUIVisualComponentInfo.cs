@@ -18,9 +18,8 @@ namespace CursedUI
     public Dictionary<string, PropertyPath> SerializableProps { get; set; } = new();
     public ICUIStyle? DefaultStyle { get; set; }
     public CUIVisualComponent DefaultValue { get; set; }
+    public override string ToString() => $"{(DefaultStyle == null ? "" : "[has DefaultStyle]")} {(DefaultValue == null ? "" : "[has DefaultValue]")} [{SerializableProps.Count} props]";
 
-    public override string ToString()
-      => $"{ComponentType.Name}:{{\n{Logger.Wrap.IEnumerable(SerializableProps.Keys, true)}\n}}";
 
 
   }

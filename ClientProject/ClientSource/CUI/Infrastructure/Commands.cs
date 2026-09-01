@@ -21,7 +21,9 @@ namespace CursedUI
         () => new string[][] { new string[] { "Main", "TopMain" } }
       );
 
-      PluginCommands.Add("cuipalettepreview", CUIPalettePreview_Command);
+      PluginCommands.Add("cuiprinttypetree", CUIPrintTypeTree_Command);
+
+      PluginCommands.Add("cuipalettes", CUIPalettes_Command);
 
       PluginCommands.Add("cuidebug", CUIDebug_Command);
       PluginCommands.Add("printharmonypatches", PrintHarmonyPatches_Command, () => new string[][]{
@@ -29,8 +31,22 @@ namespace CursedUI
         new string[]{ "deep" },
       });
 
-      PluginCommands.Add("printcuitextures", PrintCUITextures_Command, PrintCUITextures_Hints);
+      PluginCommands.Add("cuiprinttextures", PrintCUITextures_Command, CUIPrintTextures_Hints);
       PluginCommands.Add("gc", GC_Command);
+      PluginCommands.Add("cuiprintcomponentinfos", CUIPrintComponentInfos_Command);
+    }
+
+    public static void CUIPrintComponentInfos_Command(string[] args)
+    {
+      foreach (var (type, info) in CUICore.Reflection.ComponentInfos)
+      {
+        CUI.Logger.Log($"{type.Name}   -   {info}");
+      }
+    }
+
+    public static void CUIPrintTypeTree_Command(string[] args)
+    {
+      CUI.Logger.Log($"\n{CUICore.Reflection.TypeTree}");
     }
 
     public static void GC_Command(string[] args)
@@ -39,12 +55,12 @@ namespace CursedUI
       CUI.Logger.Print($"Process.PrivateMemorySize64: {LuaCsPerformanceCounter.MemoryUsage}MB", Color.Lime);
     }
 
-    public static string[][] PrintCUITextures_Hints()
+    public static string[][] CUIPrintTextures_Hints()
     {
-      return new string[][]
-      {
+      return
+      [
         (CUICore.TextureManager as __CUITextureManager).LoadedTextures.Keys.ToArray()
-      };
+      ];
     }
     public static void PrintCUITextures_Command(string[] args)
     {
@@ -92,7 +108,7 @@ namespace CursedUI
       }
     }
 
-    public static void CUIPalettePreview_Command(string[] args)
+    public static void CUIPalettes_Command(string[] args)
     {
       CUIPalette.Preview();
     }

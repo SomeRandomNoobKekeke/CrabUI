@@ -12,6 +12,17 @@ namespace CursedUI
 {
   public partial class CUIVisualComponent
   {
+    public Dictionary<string, Action> Reactions
+    {
+      set
+      {
+        foreach (var (name, action) in value)
+        {
+          Commands.ListenFor(name, action);
+        }
+      }
+    }
+
 
     public public_Commands_Part Commands { get; } = new();
     public class public_Commands_Part : Part, IModule

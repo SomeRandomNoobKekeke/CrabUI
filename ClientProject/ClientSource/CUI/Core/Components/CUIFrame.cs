@@ -34,11 +34,7 @@ namespace CursedUI
     }
 
     private static ConditionalWeakTable<Type, CUIFrame> OpenedFrames { get; } = new();
-    private static bool AlreadyOpened(Type T)
-    {
-      OpenedFrames.TryGetValue(T, out CUIFrame frame);
-      return frame is not null;
-    }
+
 
     public CUIComponent TargetMainComponent { get; set; }
 
@@ -63,8 +59,14 @@ namespace CursedUI
     }
     public void Open(CUIComponent Host = null)
     {
-      if (SingleInstance && AlreadyOpened(this.GetType())) return;
-      OpenedFrames.Add(this.GetType(), this);
+      if (SingleInstance)
+      {
+        OpenedFrames.TryGetValue(this.GetType(), out CUIFrame frame);
+        frame?.Close();
+
+        OpenedFrames.Add(this.GetType(), this);
+      }
+
 
       Host ??= TargetMainComponent ?? CUI.Main;
 
@@ -77,7 +79,11 @@ namespace CursedUI
 
     public virtual void Close()
     {
-      OpenedFrames.Remove(this.GetType());
+      if (SingleInstance)
+      {
+        OpenedFrames.Remove(this.GetType());
+      }
+
       OnClose?.Invoke();
       RemoveSelf();
     }

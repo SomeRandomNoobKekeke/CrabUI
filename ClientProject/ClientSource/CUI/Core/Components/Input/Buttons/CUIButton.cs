@@ -147,6 +147,7 @@ namespace CursedUI
     public CUIButton(string text) : this()
     {
       Text = text;
+      Emit = text;
     }
   }
 }

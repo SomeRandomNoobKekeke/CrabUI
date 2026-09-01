@@ -148,7 +148,7 @@ namespace CursedUI
         }
 
         Parent.MinSize = Parent.MinSize with { X = rightmostRight };
-        Parent.MaxSize = Parent.MaxSize with { X = rightmostRight };
+        // Parent.MaxSize = Parent.MaxSize with { X = rightmostRight }; //TODO
       }
 
       if (Parent.FitContent.Y)
@@ -173,7 +173,7 @@ namespace CursedUI
         }
 
         Parent.MinSize = Parent.MinSize with { Y = bottommostBottom };
-        Parent.MaxSize = Parent.MaxSize with { Y = bottommostBottom };
+        // Parent.MaxSize = Parent.MaxSize with { Y = bottommostBottom };
       }
 
       RequireParentUpdate = false;

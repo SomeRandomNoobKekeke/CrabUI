@@ -28,6 +28,7 @@ namespace CursedUI
       Background.Sprite = CUISprite.Vignette;
     }
 
+    private string TextBeforeRenaming;
     public void StartRenaming() => IsRenaming = true;
     private bool _IsRenaming; public bool IsRenaming
     {
@@ -38,6 +39,7 @@ namespace CursedUI
 
         if (!_IsRenaming && value)
         {
+          TextBeforeRenaming = Text;
           TextInput.Text = Text;
           TextInput.Focus();
         }
@@ -45,7 +47,7 @@ namespace CursedUI
         if (_IsRenaming && !value)
         {
           Text = TextInput.Text;
-          Renamed?.Invoke(TextInput.Text);
+          Renamed?.Invoke(TextBeforeRenaming, TextInput.Text);
           TextInput.Blur();
         }
 
@@ -53,8 +55,8 @@ namespace CursedUI
       }
     }
 
-    public Action<string> OnRenamed { set { Renamed += value; } }
-    public event Action<string> Renamed;
+    public Action<string, string> OnRenamed { set { Renamed += value; } }
+    public event Action<string, string> Renamed;
 
     protected override void OnAttachedToMainComponent(CUIMainComponent mainComponent)
     {

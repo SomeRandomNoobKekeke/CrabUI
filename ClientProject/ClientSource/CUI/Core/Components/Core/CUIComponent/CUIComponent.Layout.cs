@@ -7,6 +7,7 @@ using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
 using CUICodeGenerator;
+using CUILibs;
 
 namespace CursedUI
 {
@@ -18,10 +19,17 @@ namespace CursedUI
       Layout = new CUIPlainLayout();
       Layout.ConnectTo(new Adapters_Part.CUIPlainLayout_Host_Part() { Self = this });
 
+      MapLayoutDebugChannels();
+    }
+
+    protected void MapLayoutDebugChannels()
+    {
       Layout.Debug_MarkedForChildrenUpdate.Map(DebugRelays[DebugCategory.LayoutMarked]);
       Layout.Debug_MarkedForParentUpdate.Map(DebugRelays[DebugCategory.LayoutMarked]);
 
       LayoutMarker.Debug_Marked.Map(DebugRelays[DebugCategory.LayoutMarked]);
+
+      Layout.Debug_Calculations.Map(DebugRelays[DebugCategory.LayoutCalculations]);
     }
 
     public override Layout? Layout { get; protected set; }

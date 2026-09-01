@@ -43,6 +43,8 @@ namespace CursedUI
       GridLayout = new();
       Layout = GridLayout;
       Layout.ConnectTo(new CUIGridLayout_Host_Adapter_Part() { Self = this });
+
+      MapLayoutDebugChannels();
     }
   }
 }

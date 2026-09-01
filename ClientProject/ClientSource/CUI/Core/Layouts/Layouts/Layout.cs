@@ -54,6 +54,8 @@ namespace CursedUI
       MsgFactory = (host) => $"[{host}] <<< marked for parent update"
     };
 
+    public DebugRelay Debug_Calculations { get; } = new();
+
     public object HostComponent { get; set; }
     public string HostPropName { get; set; }
 

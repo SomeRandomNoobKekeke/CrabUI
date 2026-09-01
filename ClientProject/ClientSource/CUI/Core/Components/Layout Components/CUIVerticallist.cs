@@ -92,6 +92,8 @@ namespace CursedUI
       ListLayout = new CUIVerticalListLayout();
       Layout = ListLayout;
       Layout.ConnectTo(new CUIVerticalListLayout_Host_Adapter_Part() { Self = this });
+
+      MapLayoutDebugChannels();
     }
 
 

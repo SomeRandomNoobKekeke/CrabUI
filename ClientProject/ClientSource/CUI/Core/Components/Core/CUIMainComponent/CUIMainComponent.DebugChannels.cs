@@ -27,6 +27,7 @@ namespace CursedUI
     {
       [DebugCategory.LayoutUpdated] = new DebugRelay(),
       [DebugCategory.LayoutMarked] = new DebugRelay(),
+      [DebugCategory.LayoutCalculations] = new DebugRelay(),
       [DebugCategory.RectSet] = new DebugRelay(),
     };
   }

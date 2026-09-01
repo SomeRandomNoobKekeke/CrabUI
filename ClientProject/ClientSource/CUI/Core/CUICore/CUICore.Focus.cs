@@ -13,6 +13,16 @@ namespace CursedUI
   {
     public class FocusHandle_Part : Part
     {
+      public void Init()
+      {
+        Debug_Focus = new(DebugCategory.Focus, Self._DebugHub)
+        {
+          IsOpen = true,
+          MsgFactory = (s) => s,
+        };
+      }
+      public DebugNode<string> Debug_Focus { get; private set; }
+
       private IFocusable _Focused; public IFocusable Focused
       {
         get => _Focused;
@@ -21,6 +31,7 @@ namespace CursedUI
           if (_Focused == value) return;
 
           if (_Focused != null) _Focused.Focused = false;
+          Debug_Focus.Send($"Focus changed [{_Focused}] -> [{value}]");
           _Focused = value;
           if (_Focused != null) _Focused.Focused = true;
         }
@@ -32,14 +43,19 @@ namespace CursedUI
       public void RequestFocus(IFocusable focusable)
       {
         RequestedFocus.Add(focusable);
+        Debug_Focus.Send($"[{focusable}] requested focus");
       }
       public void RequestBlur(IFocusable focusable)
       {
         RequestedBlur.Add(focusable);
+        Debug_Focus.Send($"[{focusable}] requested blur");
       }
 
       public void Reset()
       {
+        if (RequestedFocus.Count > 0) Debug_Focus.Send($"RequestedFocus reset");
+        if (RequestedBlur.Count > 0) Debug_Focus.Send($"RequestedBlur reset");
+
         RequestedFocus.Clear();
         RequestedBlur.Clear();
       }
@@ -72,6 +88,7 @@ namespace CursedUI
       public void ClearFocus()
       {
         Focused = null;
+        Debug_Focus.Send($"Focus Cleared");
       }
 
       private EventDispatcher EventDispatcher { get; } = new();

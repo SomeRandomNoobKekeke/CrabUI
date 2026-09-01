@@ -13,139 +13,43 @@ using Barotrauma.Extensions;
 
 namespace CursedUI
 {
-  public partial class CUIRenamableButton : CUIComponent
+  public partial class CUIRenamableButton : CUIButton
   {
-    // public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIRenamableButton>((c) =>
-    // {
-    //   c.MasterColor = c.Palette["main"];
-    //   c.TextColor = c.Palette["text"];
-    // });
+    public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIRenamableButton>((c) =>
+    {
+      c.MasterColor = c.Palette["main"];
+      c.TextColor = c.Palette["text"];
+    });
 
-    // protected override void InitStyle()
-    // {
-    //   base.InitStyle();
-    //   Padding = new(2, 4, 2, 4);
-    //   Background.Sprite = CUISprite.Vignette;
-    // }
+    protected override void InitStyle()
+    {
+      base.InitStyle();
+      Padding = new(2, 0, 2, 0);
+      Background.Sprite = CUISprite.Vignette;
+    }
 
-    // public TextState_Part TextState { get; } = new();
-
-    // [CUISerializableProp]
-    // public Color MouseOverColor
-    // {
-    //   get => TextState.MouseOverColor;
-    //   set => TextState.MouseOverColor = value;
-    // }
-    // [CUISerializableProp]
-    // public Color MousePressedColor
-    // {
-    //   get => TextState.MousePressedColor;
-    //   set => TextState.MousePressedColor = value;
-    // }
-    // [CUISerializableProp]
-    // public Color InactiveColor
-    // {
-    //   get => TextState.InactiveColor;
-    //   set => TextState.InactiveColor = value;
-    // }
-
-
-    // public override Color MasterColor
-    // {
-    //   set
-    //   {
-    //     InactiveColor = value.MultOpaque(0.8f);
-    //     MouseOverColor = value.MultOpaque(0.9f);
-    //     MousePressedColor = value;
-    //     DetermineColor();
-    //   }
-    // }
-
-    // public override void DetermineColor()
-    // {
-    //   Background.Color = InactiveColor;
-    //   if (MouseOver) Background.Color = MouseOverColor;
-    //   if (MousePressed) Background.Color = MousePressedColor;
-    // }
-
-    // public new Action<CUIButton> Style
-    // {
-    //   set => PersonalStyle = new CUIActionStyle<CUIButton>("personal", value);
-    // }
-
-    // protected override CUINullVector2 MinSizeOverride => new CUINullVector2(
-    //   TextState.TextBlock.ForcedSize.X + Padding.FullWidth,
-    //   TextState.TextBlock.ForcedSize.Y + Padding.FullHeigth
-    // );
-
-    // protected override void UpdateRects()
-    // {
-    //   base.UpdateRects();
-    //   TextState.TextBlock.Rect = ChildrenRect;
-    // }
-
-    // [CUISerializableProp]
-    // public override bool Visible
-    // {
-    //   get => Background.Visible;
-    //   set
-    //   {
-    //     Background.Visible = value;
-    //     TextState.TextBlock.Visible = value;
-    //   }
-    // }
-
-
-
-
-    // public override IEnumerable<VisualUnit> VisualSplit()
-    // {
-    //   if (!Displayed || CulledOut) yield break;
-
-    //   yield return Background.VisualWrapper;
-
-    //   yield return VisualBounds.LeftBound;
-    //   yield return TextState.TextBlock.VisualWrapper;
-    //   yield return VisualBounds.RightBound;
-
-    //   yield return Borders.VisualWrapper;
-    // }
-
-
-    // #region Forwarded to TextState
-    // public string Text { get => TextState.Text; set => TextState.Text = value; }
-    // public Color TextColor { get => TextState.TextColor; set => TextState.TextColor = value; }
-    // public float Scale { get => TextState.Scale; set => TextState.Scale = value; }
-    // public ResizeStrategy ResizeStrategy { get => TextState.ResizeStrategy; set => TextState.ResizeStrategy = value; }
-    // public Vector2 TextAnchor { get => TextState.TextAnchor; set => TextState.TextAnchor = value; }
-    // public SpriteEffects SpriteEffects { get => TextState.SpriteEffects; set => TextState.SpriteEffects = value; }
-    // public float LayerDepth { get => TextState.LayerDepth; set => TextState.LayerDepth = value; }
-    // public CUIFont Font { get => TextState.Font; set => TextState.Font = value; }
-
-    // public string RealText => TextState.RealText;
-    // public Vector2 RawTextSize => TextState.RawTextSize;
-    // public Vector2 TextDrawPosition => TextState.TextDrawPosition;
-    // public CUINullVector2 ForcedSize => TextState.ForcedSize;
-    // public float RealScale => TextState.RealScale;
-    // #endregion
-
+    public void StartRenaming() => IsRenaming = true;
     private bool _IsRenaming; public bool IsRenaming
     {
       get => _IsRenaming;
       set
       {
-        _IsRenaming = value;
         TextInput.Displayed = value;
-        if (value)
+
+        if (!_IsRenaming && value)
         {
+          TextInput.Text = Text;
           TextInput.Focus();
         }
-        else
+
+        if (_IsRenaming && !value)
         {
-          Button.Text = TextInput.Text;
+          Text = TextInput.Text;
           Renamed?.Invoke(TextInput.Text);
           TextInput.Blur();
         }
+
+        _IsRenaming = value;
       }
     }
 
@@ -169,13 +73,38 @@ namespace CursedUI
       IsRenaming = false;
     }
 
-    public CUIButton Button { get; }
     public CUITextInput TextInput { get; }
+
+    public override IEnumerable<VisualUnit> VisualSplit()
+    {
+      if (!Displayed || CulledOut) yield break;
+
+      yield return Background.VisualWrapper;
+
+      yield return VisualBounds.LeftBound;
+      yield return TextState.TextBlock.VisualWrapper;
+      yield return TextInput.VisualWrapper;
+      yield return VisualBounds.RightBound;
+
+      yield return Borders.VisualWrapper;
+    }
+
+    public CUISizes TextPadding { get; set; } = new CUISizes(2, 4, 2, 4);
+    protected override void UpdateRects()
+    {
+      base.UpdateRects();
+      TextState.TextBlock.Rect = ChildrenRect - TextPadding;//HACK idk how to apply padding only to TextBlock
+    }
+
+    protected override CUINullVector2 MinSizeOverride => new CUINullVector2(
+      TextState.TextBlock.ForcedSize.X + TextPadding.FullWidth,
+      TextState.TextBlock.ForcedSize.Y + TextPadding.FullHeigth
+    );
 
     public CUIRenamableButton() : base()
     {
-      FitContent = new CUIBool2(true, true);
-      this["button"] = Button = new CUIButton();
+      TextAnchor = CUIAnchor.LeftCenter;
+
       this["input"] = TextInput = new CUITextInput()
       {
         Relative = new CUINullRect(0, 0, 1, 1),
@@ -185,13 +114,14 @@ namespace CursedUI
           if (e.Key == Keys.Enter) IsRenaming = false;
         },
         Palette = CUICore.Palettes.Primary,
+        OnInput = (s) => Text = TextInput.Text,
       };
 
       IsRenaming = false;
     }
     public CUIRenamableButton(string text) : this()
     {
-      Button.Text = text;
+      Text = text;
     }
 
   }

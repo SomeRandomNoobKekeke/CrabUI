@@ -17,23 +17,45 @@ namespace CursedUIUser
     {
       public static CUIComponent CUIRenamableButton()
       {
-        CUIFrame frame = new CUIDefault.Frame("CUIRenamableButton", 400, 600);
+        CUIFrame frame = new CUIDefault.Frame("CUIRenamableButton", 600, 600);
 
-        frame["button"] = new CUIRenamableButton("bruh")
+
+        frame["wrapper1"] = new CUIVerticalList
         {
           Anchor = CUIAnchor.Center,
+          Absolute = new CUINullRect(x: 100, y: 0, w: 200, h: 100),
+          Background = { Color = Color.Lime },
         };
 
-        frame["rename"] = new CUIButton("rename")
+        frame["wrapper1"]["button"] = new CUIRenamableButton("bruh")
+        {
+
+        };
+        frame["wrapper1"]["rename"] = new CUIButton("rename")
+        {
+          OnMouseDown = (e) => frame["wrapper1"].Get<CUIRenamableButton>("button").IsRenaming = true,
+        };
+
+
+
+        frame["wrapper2"] = new CUIComponent
         {
           Anchor = CUIAnchor.Center,
-          Absolute = new CUINullRect(y: -100),
+          Absolute = new CUINullRect(x: -100, y: 0, w: 200, h: 100),
+          Background = { Color = Color.Lime },
         };
 
-        frame.Commands.ListenFor("rename", () =>
+        frame["wrapper2"]["button"] = new CUIRenamableButton("bruh")
         {
-          frame.Get<CUIRenamableButton>("button").IsRenaming = true;
-        });
+
+        };
+        frame["wrapper2"]["rename"] = new CUIButton("rename")
+        {
+          Absolute = new CUINullRect(x: 0, y: 30),
+          OnMouseDown = (e) => frame["wrapper2"].Get<CUIRenamableButton>("button").IsRenaming = true,
+        };
+
+
 
         return frame;
       }

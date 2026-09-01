@@ -55,7 +55,7 @@ namespace CursedUI
 
           OnBeforeUpdate.Raise(totalTime);
 
-          Self.FocusHandle.Reset();
+
           Self._Input.Update(totalTime, mouse, keyboard, textInput);
           Self._EventConstructor.Construct(Self._Input);
 
@@ -64,8 +64,10 @@ namespace CursedUI
           Self.Main.Update(totalTime, Self._Input);
           Self.VanillaGUILayer.CommunicateCUIMouseOnToRunner();
 
-          Self.FocusHandle.ResolveFocus();
+
           Self.FocusHandle.DispatchKeyboadEvents();
+          Self.FocusHandle.ResolveFocus();
+          Self.FocusHandle.Reset();
 
           Self._AnimationPlayer.Update();
 

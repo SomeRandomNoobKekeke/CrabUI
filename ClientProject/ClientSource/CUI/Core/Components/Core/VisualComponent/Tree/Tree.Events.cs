@@ -22,6 +22,9 @@ namespace CursedUI
       {
         PropogateTreeChanged();
         Self.Remember(child);
+
+        if (child is ResizeHandle) (child as ResizeHandle).Host = Self.Adapters.IResizable;
+
         Self.LayoutMarker.Mark(MarkPattern);
       }
 
@@ -29,6 +32,9 @@ namespace CursedUI
       {
         PropogateTreeChanged();
         Self.Forget(child);
+
+        if (child is ResizeHandle) (child as ResizeHandle).Host = null;
+
         Self.LayoutMarker.Mark(MarkPattern);
       }
 

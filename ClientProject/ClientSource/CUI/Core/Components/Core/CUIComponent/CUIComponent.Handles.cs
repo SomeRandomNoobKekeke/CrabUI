@@ -16,34 +16,53 @@ namespace CursedUI
     [CUISerializableProp]
     public bool Resizable
     {
-      get => RightResizeHandle.Displayed;
+      get => RightResizeHandle == null;
       set
       {
-        RightResizeHandle.Displayed = value;
-        LeftResizeHandle.Displayed = value;
+        if (RightResizeHandle is null && value)
+        {
+          RightResizeHandle = new ResizeHandle(1, 1);
+          AttachChild(RightResizeHandle);
+        }
+
+        if (RightResizeHandle is not null && !value)
+        {
+          DetachChild(RightResizeHandle);
+          RightResizeHandle = null;
+        }
       }
     }
 
-    [InitMethod]
-    protected void InitHandles()
+    public bool ResizableLeft
     {
-      AttachResizeHandle(RightResizeHandle);
-      AttachResizeHandle(LeftResizeHandle);
+      get => LeftResizeHandle == null;
+      set
+      {
+        if (LeftResizeHandle is null && value)
+        {
+          LeftResizeHandle = new ResizeHandle(0, 1);
+          AttachChild(LeftResizeHandle);
+        }
+
+        if (LeftResizeHandle is not null && !value)
+        {
+          DetachChild(LeftResizeHandle);
+          LeftResizeHandle = null;
+        }
+      }
     }
 
-    public ResizeHandle RightResizeHandle { get; } = new(new Vector2(1, 1))
+    public bool ResizableBoth
     {
-      Background ={
-        Sprite = CUISprite.Angle,
-        Effects = SpriteEffects.FlipHorizontally,
+      get => Resizable;
+      set
+      {
+        Resizable = value;
+        ResizableLeft = value;
       }
-    };
+    }
 
-    public ResizeHandle LeftResizeHandle { get; } = new(new Vector2(0.0f, 1))
-    {
-      Background ={
-        Sprite = CUISprite.Angle,
-      }
-    };
+    public ResizeHandle? LeftResizeHandle { get; protected set; }
+    public ResizeHandle? RightResizeHandle { get; protected set; }
   }
 }

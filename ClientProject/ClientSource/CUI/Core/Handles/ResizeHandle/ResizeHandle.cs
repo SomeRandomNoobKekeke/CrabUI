@@ -12,6 +12,11 @@ namespace CursedUI
 {
   public class ResizeHandle : CUIVisualComponent
   {
+    public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<ResizeHandle>((c) =>
+    {
+      c.Background.Color = c.Palette["main"] * 0.5f;
+    });
+
     public static Vector2 DefaultSize = new Vector2(22, 22);
 
     private IResizable host; public IResizable Host
@@ -35,24 +40,26 @@ namespace CursedUI
       set => Background.Visible = value;
     }
 
-    public Vector2 Anchor
+    public new Vector2 Anchor
     {
       get => SelfAnchor;
       set
       {
+        base.Anchor = value;
         SelfAnchor = value;
         ParentAnchor = value;
         StaticPointAnchor = Vector2.One - value;
       }
     }
-    public Vector2 ParentAnchor { get; set; }
+
+
+
     public Vector2 StaticPointAnchor { get; set; }
     public Vector2 SelfAnchor { get; set; } = new Vector2(1, 1);
 
 
-    public Vector2 Size { get; set; } = DefaultSize;
+    public Vector2 Size => Absolute.Size;
 
-    public bool Displayed { get; set; }
     public bool Grabbed { get; private set; }
 
     public Vector2 GrabPoint { get; private set; }
@@ -114,7 +121,7 @@ namespace CursedUI
 
       CUIRect rect = CUIAnchor.RectFrom2PointsWithAnchors(
         staticPoint, StaticPointAnchor,
-        SelfAnchorPoint, ParentAnchor
+        SelfAnchorPoint, ParentAnchor.Value
       );
 
       Vector2 size = new Vector2(
@@ -156,9 +163,29 @@ namespace CursedUI
       if (Displayed) yield return Background.VisualWrapper;
     }
 
+    public ResizeHandle(float x, float y) : this(new Vector2(x, y)) { }
     public ResizeHandle(Vector2 anchor)
     {
+      Layout = new CUIDummyLayout();
+      Layout.ConnectTo(new Adapters_Part.CUIPlainLayout_Host_Part() { Self = this });
+
+      Absolute = new CUINullRect(w: DefaultSize.X, h: DefaultSize.Y);
+      InheritPalette = true;
+
       Anchor = anchor;
+
+      Background.Sprite = CUISprite.Angle;
+      Background.Color = Color.White;
+
+      if (anchor.X > 0.5f)
+      {
+        Background.Effects = Background.Effects | SpriteEffects.FlipHorizontally;
+      }
+
+      if (anchor.Y > 0.5f)
+      {
+        Background.Effects = Background.Effects | SpriteEffects.FlipVertically;
+      }
 
       Background.MouseDown.Add(Grab);
       Background.ConsumeMouseEvents = true;

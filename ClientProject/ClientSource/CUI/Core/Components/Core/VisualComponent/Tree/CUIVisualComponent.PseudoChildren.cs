@@ -17,6 +17,7 @@ namespace CursedUI
     /// Cursed, use it to make components that are not in Children but in StructuralSplit think that they have a parent
     /// </summary>
     protected void AttachChild(CUIVisualComponent child) => TreeOperations.AttachChild(child);
+    protected void DetachChild(CUIVisualComponent child) => TreeOperations.DetachChild(child);
 
     /// <summary>
     /// Hacky fake dict for attaching childs without adding them to Children

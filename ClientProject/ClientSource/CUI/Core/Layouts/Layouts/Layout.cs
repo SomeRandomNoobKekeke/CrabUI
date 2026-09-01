@@ -90,17 +90,25 @@ namespace CursedUI
 
     public virtual void UpdateChildren()
     {
-      if (Parent.CullChildren)
+      try
       {
-        foreach (Child child in Parent.Children)
+        if (Parent.CullChildren)
         {
-          child.CulledOut = !child.OuterRect.Intersect(Parent.ChildrenRect);
+          foreach (Child child in Parent.Children)
+          {
+            child.CulledOut = !child.OuterRect.Intersect(Parent.ChildrenRect);
+          }
+
+          Parent.NotifyVisualsRestructured();
         }
 
-        Parent.NotifyVisualsRestructured();
+        RequireChildrenUpdate = false;
       }
-
-      RequireChildrenUpdate = false;
+      catch (Exception e)
+      {
+        CUI.Logger.LogVars(Parent);
+        CUI.Logger.Error(e);
+      }
     }
 
     public virtual void UpdateParent()

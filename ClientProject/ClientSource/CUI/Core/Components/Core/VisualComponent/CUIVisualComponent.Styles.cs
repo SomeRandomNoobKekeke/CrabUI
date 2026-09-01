@@ -15,7 +15,7 @@ namespace CursedUI
 
     protected virtual void InitStyle() { }
 
-    public CUIPalette Palette
+    public virtual CUIPalette Palette
     {
       get => Styles.Palette;
       set

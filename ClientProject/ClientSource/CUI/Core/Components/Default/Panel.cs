@@ -14,6 +14,20 @@ namespace CursedUI
 {
   public static partial class CUIDefault
   {
+    public class Panel : CUIComponent
+    {
+      public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<Panel>((c) =>
+      {
+        c.Background.Color = c.Palette["main"].MultOpaque(0.4f);
+      });
+
+      protected override void InitStyle()
+      {
+        base.InitStyle();
+        Background.Sprite = CUISprite.Vignette;
+      }
+    }
+
     public class HorizontalPanel : CUIHorizontalList
     {
       public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<HorizontalPanel>((c) =>

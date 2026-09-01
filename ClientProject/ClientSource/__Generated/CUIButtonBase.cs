@@ -13,7 +13,6 @@ namespace CursedUI
     void IComponent.RunInitMethods()
     {
       InitDebugChannels();
-      InitHandles();
       InitLayout();
       InitVisualSlots();
     }

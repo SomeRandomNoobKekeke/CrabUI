@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework;
 using CUICodeGenerator;
 using CUILibs;
 using Microsoft.Xna.Framework.Graphics;
+using System.Runtime.CompilerServices;
 
 namespace CursedUI
 {
@@ -32,9 +33,16 @@ namespace CursedUI
       Background.Sprite = CUISprite.VignetteLight;
     }
 
+    private static ConditionalWeakTable<Type, CUIFrame> OpenedFrames { get; } = new();
+    private static bool AlreadyOpened(Type T)
+    {
+      OpenedFrames.TryGetValue(T, out CUIFrame frame);
+      return frame is not null;
+    }
+
     public CUIComponent TargetMainComponent { get; set; }
 
-
+    protected virtual bool SingleInstance => false;
 
     public bool IsOpen
     {
@@ -47,9 +55,19 @@ namespace CursedUI
 
     public void Toggle() { if (IsOpen) Close(); else Open(); }
 
-    public virtual void Open(CUIComponent Host = null)
+
+    public void Open(Vector2 pos, CUIComponent Host = null)
     {
+      Absolute = Absolute with { Position = pos };
+      Open(Host);
+    }
+    public void Open(CUIComponent Host = null)
+    {
+      if (SingleInstance && AlreadyOpened(this.GetType())) return;
+      OpenedFrames.Add(this.GetType(), this);
+
       Host ??= TargetMainComponent ?? CUI.Main;
+
       if (Host == null || Parent == Host) return;
 
       Host.Children.Add(this);
@@ -57,9 +75,9 @@ namespace CursedUI
       SaveState("lastopened");
     }
 
-
     public virtual void Close()
     {
+      OpenedFrames.Remove(this.GetType());
       OnClose?.Invoke();
       RemoveSelf();
     }

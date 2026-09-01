@@ -147,7 +147,12 @@ namespace CursedUI
     public CUIButton(string text) : this()
     {
       Text = text;
-      Emit = text;
+
+      // idk if this is convenient
+      // if you create with new("name") it will emit ("name", "name")
+      // if you create with new() { Text ="asd", Emit = "name" } it will emit ("name", "asd")
+      // if you create new("123") with context style setting { Emit = "bruh" } it will emit ("bruh", "123")
+      Emit ??= text;
     }
   }
 }

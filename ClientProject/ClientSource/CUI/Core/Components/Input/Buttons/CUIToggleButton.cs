@@ -240,7 +240,7 @@ namespace CursedUI
     public CUIToggleButton(string text) : this()
     {
       Text = text;
-      Emit = text;
+      Emit ??= text;
     }
   }
 }

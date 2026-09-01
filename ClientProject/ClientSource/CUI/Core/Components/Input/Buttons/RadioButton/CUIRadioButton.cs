@@ -278,7 +278,7 @@ namespace CursedUI
     public CUIRadioButton(string text) : this()
     {
       Text = text;
-      Emit = text;
+      Emit ??= text;
     }
   }
 }

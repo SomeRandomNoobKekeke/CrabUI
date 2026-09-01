@@ -8,6 +8,7 @@ using Barotrauma;
 using Microsoft.Xna.Framework;
 using CUICodeGenerator;
 using CUILibs;
+using Microsoft.Xna.Framework.Graphics;
 namespace CursedUI
 {
   public partial class CUIComponent
@@ -16,9 +17,33 @@ namespace CursedUI
     public bool Resizable
     {
       get => RightResizeHandle.Displayed;
-      set => RightResizeHandle.Displayed = value;
+      set
+      {
+        RightResizeHandle.Displayed = value;
+        LeftResizeHandle.Displayed = value;
+      }
     }
 
-    public ResizeHandle RightResizeHandle { get; } = new();
+    [InitMethod]
+    protected void InitHandles()
+    {
+      AttachResizeHandle(RightResizeHandle);
+      AttachResizeHandle(LeftResizeHandle);
+    }
+
+    public ResizeHandle RightResizeHandle { get; } = new(new Vector2(1, 1))
+    {
+      Background ={
+        Sprite = CUISprite.Angle,
+        Effects = SpriteEffects.FlipHorizontally,
+      }
+    };
+
+    public ResizeHandle LeftResizeHandle { get; } = new(new Vector2(0.0f, 1))
+    {
+      Background ={
+        Sprite = CUISprite.Angle,
+      }
+    };
   }
 }

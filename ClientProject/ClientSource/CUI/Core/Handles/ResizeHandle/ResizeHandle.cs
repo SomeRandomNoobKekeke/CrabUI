@@ -10,24 +10,17 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CursedUI
 {
-  public class ResizeHandle : CUIVisualComponent, IModule, IAware
+  public class ResizeHandle : CUIVisualComponent
   {
     public static Vector2 DefaultSize = new Vector2(22, 22);
 
-
-    public object HostComponent { get; set; }
-    public string HostPropName { get; set; }
-
-    private IResizable host;
-    [In]
-    public IResizable Host
+    private IResizable host; public IResizable Host
     {
       get => host;
       set
       {
-        if (host is not null) DisconnectFromHost(host);
         host = value;
-        if (host is not null) ConnectToHost(host);
+        UpdateRect();
       }
     }
 
@@ -78,14 +71,6 @@ namespace CursedUI
       set => Background.Rect = value;
     }
 
-    private void ConnectToHost(IResizable host)
-    {
-      UpdateRect();
-    }
-
-    private void DisconnectFromHost(IResizable host)
-    {
-    }
 
     //BRUH Why is this inverted, why not just set Rect from Host.UpdateRect?
     public void UpdateRect()
@@ -171,15 +156,11 @@ namespace CursedUI
       if (Displayed) yield return Background.VisualWrapper;
     }
 
-    public ResizeHandle()
+    public ResizeHandle(Vector2 anchor)
     {
-      Background.Sprite = CUISprite.Angle;
-
-      Anchor = new Vector2(1, 1);
-      Background.Sprite.Effects = SpriteEffects.FlipHorizontally;
+      Anchor = anchor;
 
       Background.MouseDown.Add(Grab);
-
       Background.ConsumeMouseEvents = true;
     }
   }

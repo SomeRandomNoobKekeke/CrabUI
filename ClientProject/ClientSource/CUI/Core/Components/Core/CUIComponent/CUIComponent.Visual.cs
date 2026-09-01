@@ -53,6 +53,7 @@ namespace CursedUI
       Background.Rect = Rect;
       Borders.Rect = Rect;
 
+      LeftResizeHandle.UpdateRect();
       RightResizeHandle.UpdateRect();
 
       if (CullChildren)
@@ -102,6 +103,8 @@ namespace CursedUI
         }
         yield return VisualBounds.RightBound;
       }
+
+      yield return LeftResizeHandle.VisualWrapper;
       yield return RightResizeHandle.VisualWrapper;
       yield return Borders.VisualWrapper;
     }

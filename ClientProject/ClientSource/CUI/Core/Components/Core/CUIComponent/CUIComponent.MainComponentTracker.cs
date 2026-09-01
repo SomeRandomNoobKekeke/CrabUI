@@ -19,6 +19,7 @@ namespace CursedUI
     protected override void OnDetachedFromMainComponent(CUIMainComponent mainComponent)
     {
       DebugRelays.Unmap(MainComponent.DebugRelays);
+      LeftResizeHandle.ForceRelease();
       RightResizeHandle.ForceRelease();
     }
 

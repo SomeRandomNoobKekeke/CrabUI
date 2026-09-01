@@ -30,5 +30,11 @@ namespace CursedUI
 
     public DragHandle DragHandle { get; } = new();
     public SwipeHandle SwipeHandle { get; } = new();
+
+
+    public void AttachResizeHandle(ResizeHandle handle)
+    {
+      handle.Host = Adapters.IResizable;
+    }
   }
 }

@@ -13,13 +13,13 @@ namespace CursedUI
     void IComponent.RunInitMethods()
     {
       InitDebugChannels();
+      InitHandles();
       InitLayout();
       InitVisualSlots();
     }
 
     void IComponent.InjectModules()
     {
-      As_CUIComponent.RightResizeHandle.Host = As_CUIVisualComponent.Adapters.IResizable;
       As_CUIVisualComponent.DragHandle.Host = As_CUIVisualComponent.Adapters.IDraggable;
       As_CUIVisualComponent.SwipeHandle.Host = As_CUIVisualComponent.Adapters.ISwipeable;
       As_CUIVisualComponent.LayoutMarker.Host = As_CUIVisualComponent.Adapters.LayoutMarker;
@@ -90,8 +90,6 @@ namespace CursedUI
 
     void IComponent.NotifyAwareObjects()
     {
-      RightResizeHandle.HostComponent = this;
-      RightResizeHandle.HostPropName = "RightResizeHandle";
       Layout.HostComponent = this;
       Layout.HostPropName = "Layout";
       DragHandle.HostComponent = this;
@@ -134,7 +132,6 @@ namespace CursedUI
 
   protected class Self_As_CUIComponent : IAdapterPart
   {
-    public ResizeHandle RightResizeHandle => Self.RightResizeHandle;
     public CUIComponent Self { get; set; }
   }
   }

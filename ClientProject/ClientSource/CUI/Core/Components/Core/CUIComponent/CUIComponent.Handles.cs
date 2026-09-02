@@ -21,7 +21,7 @@ namespace CursedUI
       {
         if (RightResizeHandle is null && value)
         {
-          RightResizeHandle = new ResizeHandle(1, 1);
+          RightResizeHandle = ResizeHandle.CreateAngle(1, 1);
           AttachChild(RightResizeHandle);
         }
 
@@ -40,7 +40,7 @@ namespace CursedUI
       {
         if (LeftResizeHandle is null && value)
         {
-          LeftResizeHandle = new ResizeHandle(0, 1);
+          LeftResizeHandle = ResizeHandle.CreateAngle(0, 1);
           AttachChild(LeftResizeHandle);
         }
 

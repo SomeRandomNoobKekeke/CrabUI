@@ -12,12 +12,44 @@ namespace CursedUI
 {
   public class ResizeHandle : CUIVisualComponent
   {
+    /// <summary>
+    /// Used everywhere  
+    /// why 22? it's default height of barotrauma text
+    /// </summary>
+    //TODO akshually should move all such sizes to some global class
+    public static Vector2 DefaultSize = new Vector2(22, 22);
     public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<ResizeHandle>((c) =>
     {
       c.Background.Color = c.Palette["main"] * 0.5f;
     });
 
-    public static Vector2 DefaultSize = new Vector2(22, 22);
+    protected override void InitStyle()
+    {
+      base.InitStyle();
+
+      Absolute = new CUINullRect(w: DefaultSize.X, h: DefaultSize.Y);
+    }
+
+    public static ResizeHandle CreateAngle(float x, float y)
+    {
+      ResizeHandle handle = new ResizeHandle(x, y)
+      {
+        Background = { Sprite = CUISprite.Angle },
+      };
+
+      if (x > 0.5f)
+      {
+        handle.Background.Effects = handle.Background.Effects | SpriteEffects.FlipHorizontally;
+      }
+
+      if (y > 0.5f)
+      {
+        handle.Background.Effects = handle.Background.Effects | SpriteEffects.FlipVertically;
+      }
+
+      return handle;
+    }
+
 
     private IResizable host; public IResizable Host
     {
@@ -57,9 +89,6 @@ namespace CursedUI
     public Vector2 StaticPointAnchor { get; set; }
     public Vector2 SelfAnchor { get; set; } = new Vector2(1, 1);
 
-
-    public Vector2 Size => Absolute.Size;
-
     public bool Grabbed { get; private set; }
 
     public Vector2 GrabPoint { get; private set; }
@@ -78,19 +107,21 @@ namespace CursedUI
       set => Background.Rect = value;
     }
 
+    public bool OnlyHorizontal { get; set; }
+    public bool OnlyVertical { get; set; }
 
     //BRUH Why is this inverted, why not just set Rect from Host.UpdateRect?
     public void UpdateRect()
     {
       if (Host is null)
       {
-        Rect = new CUIRect(Vector2.Zero, Size);
+        Rect = new CUIRect(Vector2.Zero, Absolute.Size);
       }
       else
       {
         Rect = new CUIRect(
-          CUIAnchor.ChildPosIn(Host.Rect, Anchor, Size),
-          Size
+          CUIAnchor.ChildPosIn(Host.Rect, Anchor, Absolute.Size),
+          Absolute.Size
         );
       }
     }
@@ -111,6 +142,9 @@ namespace CursedUI
     public void Update(CUIMouseEvent e)
     {
       Vector2 delta = e.Pos - GrabPoint;
+      if (OnlyHorizontal) delta = new Vector2(delta.X, 0);
+      if (OnlyVertical) delta = new Vector2(0, delta.Y);
+
       Vector2 SelfAnchorPoint = StartSelfAnchorPoint + delta;
       Resize(SelfAnchorPoint);
     }
@@ -119,14 +153,19 @@ namespace CursedUI
     {
       Vector2 staticPoint = CUIAnchor.PosFromAnchor(Host.Rect, StaticPointAnchor);
 
-      CUIRect rect = CUIAnchor.RectFrom2PointsWithAnchors(
+      CUINullVector2 nullSize = CUIAnchor.NullSizeFrom2PointsWithAnchors(
         staticPoint, StaticPointAnchor,
         SelfAnchorPoint, ParentAnchor.Value
       );
 
       Vector2 size = new Vector2(
-        Math.Max(rect.Width, Host.MinSize.X),
-        Math.Max(rect.Height, Host.MinSize.Y)
+        nullSize.X.HasValue ? nullSize.X.Value : Host.Rect.Width,
+        nullSize.Y.HasValue ? nullSize.Y.Value : Host.Rect.Height
+      );
+
+      size = new Vector2(
+        Math.Max(size.X, Host.MinSize.X),
+        Math.Max(size.Y, Host.MinSize.Y)
       );
 
       Host.ResizeToAbsoluteRect(
@@ -139,6 +178,10 @@ namespace CursedUI
     private void Release(CUIMouseEvent e)
     {
       Vector2 delta = e.Pos - GrabPoint;
+      if (OnlyHorizontal) delta = new Vector2(delta.X, 0);
+      if (OnlyVertical) delta = new Vector2(0, delta.Y);
+
+
       Vector2 SelfAnchorPoint = StartSelfAnchorPoint + delta;
 
       Resize(SelfAnchorPoint);
@@ -169,23 +212,9 @@ namespace CursedUI
       Layout = new CUIDummyLayout();
       Layout.ConnectTo(new Adapters_Part.CUIPlainLayout_Host_Part() { Self = this });
 
-      Absolute = new CUINullRect(w: DefaultSize.X, h: DefaultSize.Y);
       InheritPalette = true;
 
       Anchor = anchor;
-
-      Background.Sprite = CUISprite.Angle;
-      Background.Color = Color.White;
-
-      if (anchor.X > 0.5f)
-      {
-        Background.Effects = Background.Effects | SpriteEffects.FlipHorizontally;
-      }
-
-      if (anchor.Y > 0.5f)
-      {
-        Background.Effects = Background.Effects | SpriteEffects.FlipVertically;
-      }
 
       Background.MouseDown.Add(Grab);
       Background.ConsumeMouseEvents = true;

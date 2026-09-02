@@ -10,7 +10,7 @@ using CUICodeGenerator;
 
 namespace CursedUI
 {
-  public abstract class VisualElementBase : IMouseEventConsumer, IVisualElement
+  public abstract class VisualElementBase : IMouseEventConsumer, IVisualElement, IAware
   {
     public VisualElementBase()
     {
@@ -46,5 +46,6 @@ namespace CursedUI
     public ClearableEvent<CUIMouseOffEvent> MouseOff { get; } = new();
     public ClearableEvent<CUIMouseScrollEvent> MouseScroll { get; } = new();
 
+    public override string ToString() => GetType().Name;
   }
 }

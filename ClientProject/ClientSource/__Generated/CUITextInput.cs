@@ -92,8 +92,18 @@ namespace CursedUI
 
     void IComponent.NotifyAwareObjects()
     {
+      TextBlock.HostComponent = this;
+      TextBlock.HostPropName = "TextBlock";
+      CaretTexture.HostComponent = this;
+      CaretTexture.HostPropName = "CaretTexture";
+      SelectionOverlay.HostComponent = this;
+      SelectionOverlay.HostPropName = "SelectionOverlay";
       Layout.HostComponent = this;
       Layout.HostPropName = "Layout";
+      Background.HostComponent = this;
+      Background.HostPropName = "Background";
+      Borders.HostComponent = this;
+      Borders.HostPropName = "Borders";
       DragHandle.HostComponent = this;
       DragHandle.HostPropName = "DragHandle";
       SwipeHandle.HostComponent = this;

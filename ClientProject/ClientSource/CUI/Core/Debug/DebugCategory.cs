@@ -33,5 +33,6 @@ namespace CursedUI
     public static string RectSet = "Rect Set";
     public static string MouseEvents = "Mouse Events";
     public static string KeyboardEvents = "Keyboard Events";
+    public static string EventTargets = "Event Targets";
   }
 }

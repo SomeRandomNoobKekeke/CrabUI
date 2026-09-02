@@ -95,6 +95,7 @@ namespace CursedUIUser
       {
         this["layout"]["groups"].Children.Add(new CUIButton(group)
         {
+          AKA = group,
           OnMouseDown = (e) => OpenGroup(group),
         });
       }
@@ -103,6 +104,7 @@ namespace CursedUIUser
       {
         Flex = 1,
         Scrollable = true,
+        ScrollSpeed = 0.5f,
       };
 
       OpenGroup(Repo.Groups.First());

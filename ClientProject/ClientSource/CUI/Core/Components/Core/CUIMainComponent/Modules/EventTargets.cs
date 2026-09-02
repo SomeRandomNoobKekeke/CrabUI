@@ -12,6 +12,15 @@ namespace CursedUI
 {
   public class EventTargets : IModule
   {
+    public CUIDebugNode<List<IEventConsumer>> Debug_Targets { get; } = new(DebugCategory.EventTargets)
+    {
+      IsOpen = true,
+      MsgFactory = (targets) => $"[\n{String.Join(",\n", targets.Select(t =>
+      {
+        return t is IAware ? $"  [{(t as IAware).HostComponent}].{(t as IAware).HostPropName}" : $"  {t}";
+      }))}\n]",
+    };
+
     public List<IEventConsumer> PrevTargets { get; private set; } = new();
     public List<IEventConsumer> Targets { get; private set; } = new();
     public IEventConsumer TopTarget { get; private set; }
@@ -47,6 +56,7 @@ namespace CursedUI
       }
 
       TopTarget = Targets.ElementAtOrDefault(0);
+      Debug_Targets.Send(Targets);
     }
 
   }

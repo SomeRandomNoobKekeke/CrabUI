@@ -20,10 +20,12 @@ namespace CursedUIUser
         CUIComponent component = new CUIDefault.Panel()
         {
           Anchor = CUIAnchor.Center,
-          Absolute = new CUINullRect(w: 400, h: 400),
+          // Absolute = new CUINullRect(w: 400, h: 400),
+          Relative = new CUINullRect(w: 0.3f, h: 0.3f),
           ResizableBoth = true,
           Draggable = true,
           AbsoluteMin = new CUINullRect(ResizeHandle.DefaultSize),
+          ResizeRelative = true,
         };
 
         component.Children.Add(ResizeHandle.CreateAngle(0.0f, 0.0f));
@@ -68,6 +70,23 @@ namespace CursedUIUser
           component.Children.Add(new ResizeHandle(0.5f, 0.3f));
           component.Children.Add(new ResizeHandle(0.5f, 0.7f));
         }
+
+        component["mode"] = new CUIToggleButton("mode")
+        {
+          Anchor = CUIAnchor.Center,
+          OnToggle = (state) =>
+          {
+            component.ResizeRelative = state;
+            if (state) component.Absolute = new CUINullRect();
+          },
+          State = true,
+        };
+
+
+        component.Resized += (rect) =>
+        {
+          CUI.Logger.LogVars(component.Absolute, component.Relative);
+        };
 
         return component;
       }

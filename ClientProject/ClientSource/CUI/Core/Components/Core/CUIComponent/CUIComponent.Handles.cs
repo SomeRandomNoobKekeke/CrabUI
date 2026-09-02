@@ -33,6 +33,7 @@ namespace CursedUI
       }
     }
 
+    [CUISerializableProp]
     public bool ResizableLeft
     {
       get => LeftResizeHandle == null;

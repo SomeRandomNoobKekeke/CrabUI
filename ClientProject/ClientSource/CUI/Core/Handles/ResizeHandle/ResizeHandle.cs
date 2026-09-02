@@ -93,8 +93,19 @@ namespace CursedUI
       set => Background.Rect = value;
     }
 
-    public bool OnlyHorizontal { get; set; }
-    public bool OnlyVertical { get; set; }
+    public bool OnlyHorizontal
+    {
+      get => PreventMovement == new CUIBool2(false, true);
+      set => PreventMovement = new CUIBool2(false, true);
+    }
+
+    public bool OnlyVertical
+    {
+      get => PreventMovement == new CUIBool2(true, false);
+      set => PreventMovement = new CUIBool2(true, false);
+    }
+    public CUIBool2 PreventMovement { get; set; } = new CUIBool2(false, false);
+
 
     //BRUH Why is this inverted, why not just set Rect from Host.UpdateRect?
     public void UpdateRect()
@@ -128,8 +139,8 @@ namespace CursedUI
     public void Update(CUIMouseEvent e)
     {
       Vector2 delta = e.Pos - GrabPoint;
-      if (OnlyHorizontal) delta = new Vector2(delta.X, 0);
-      if (OnlyVertical) delta = new Vector2(0, delta.Y);
+      if (PreventMovement.Y) delta = new Vector2(delta.X, 0);
+      if (PreventMovement.X) delta = new Vector2(0, delta.Y);
 
       Vector2 SelfAnchorPoint = StartSelfAnchorPoint + delta;
       Resize(SelfAnchorPoint);
@@ -157,15 +168,16 @@ namespace CursedUI
       Host.ResizeToAbsoluteRect(
         CUIAnchor.RectFromPointAndSize(
           staticPoint, StaticPointAnchor, size
-        )
+        ),
+        PreventMovement
       );
     }
 
     private void Release(CUIMouseEvent e)
     {
       Vector2 delta = e.Pos - GrabPoint;
-      if (OnlyHorizontal) delta = new Vector2(delta.X, 0);
-      if (OnlyVertical) delta = new Vector2(0, delta.Y);
+      if (PreventMovement.Y) delta = new Vector2(delta.X, 0);
+      if (PreventMovement.X) delta = new Vector2(0, delta.Y);
 
 
       Vector2 SelfAnchorPoint = StartSelfAnchorPoint + delta;

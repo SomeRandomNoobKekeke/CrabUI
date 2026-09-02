@@ -13,8 +13,13 @@ namespace CursedUI
   /// <summary>
   /// Vector2 but with bools
   /// </summary>
-  public struct CUIBool2 : IParsable
+  public record struct CUIBool2 : IParsable
   {
+    public static CUIBool2 None { get; } = new CUIBool2(false, false);
+    public static CUIBool2 OnlyX { get; } = new CUIBool2(true, false);
+    public static CUIBool2 OnlyY { get; } = new CUIBool2(false, true);
+    public static CUIBool2 Both { get; } = new CUIBool2(true, true);
+
     public bool X;
     public bool Y;
 

@@ -14,7 +14,9 @@ namespace CursedUI
     public event Action<CUIMouseDownEvent> MouseDown;
     public CUIRect Rect { get; }
 
-    public void ResizeToAbsoluteRect(CUIRect rect);
+
+    /// <param name="preventMovement">passed in case you don't want to touch 1 of the coordinates</param>
+    public void ResizeToAbsoluteRect(CUIRect rect, CUIBool2 preventMovement);
     public event Action<CUIMouseUpEvent> HubMouseUp;
     public event Action<CUIMouseMovedEvent> HubMouseMoved;
     public bool TryGrab(object handle);

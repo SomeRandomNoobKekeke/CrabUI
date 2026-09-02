@@ -72,22 +72,8 @@ namespace CursedUI
       set => Background.Visible = value;
     }
 
-    public new Vector2 Anchor
-    {
-      get => SelfAnchor;
-      set
-      {
-        base.Anchor = value;
-        SelfAnchor = value;
-        ParentAnchor = value;
-        StaticPointAnchor = Vector2.One - value;
-      }
-    }
-
-
-
     public Vector2 StaticPointAnchor { get; set; }
-    public Vector2 SelfAnchor { get; set; } = new Vector2(1, 1);
+
 
     public bool Grabbed { get; private set; }
 
@@ -134,7 +120,7 @@ namespace CursedUI
       Grabbed = true;
       GrabOffset = Rect.LeftTop - e.Pos;
       GrabPoint = e.Pos;
-      StartSelfAnchorPoint = CUIAnchor.PosFromAnchor(Rect, SelfAnchor);
+      StartSelfAnchorPoint = CUIAnchor.PosFromAnchor(Rect, Anchor);
       host.HubMouseMoved += Update;
       host.HubMouseUp += Release;
     }
@@ -206,18 +192,23 @@ namespace CursedUI
       if (Displayed) yield return Background.VisualWrapper;
     }
 
-    public ResizeHandle(float x, float y) : this(new Vector2(x, y)) { }
-    public ResizeHandle(Vector2 anchor)
+    public ResizeHandle()
     {
       Layout = new CUIDummyLayout();
       Layout.ConnectTo(new Adapters_Part.CUIPlainLayout_Host_Part() { Self = this });
 
       InheritPalette = true;
 
-      Anchor = anchor;
-
       Background.MouseDown.Add(Grab);
       Background.ConsumeMouseEvents = true;
+    }
+
+    public ResizeHandle(float x, float y) : this(new Vector2(x, y)) { }
+    public ResizeHandle(Vector2 anchor) : this()
+    {
+      Anchor = anchor;
+      ParentAnchor = anchor;
+      StaticPointAnchor = Vector2.One - anchor;
     }
   }
 }

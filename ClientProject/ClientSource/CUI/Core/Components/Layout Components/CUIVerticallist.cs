@@ -46,7 +46,7 @@ namespace CursedUI
     [CUISerializableProp]
     public float BottomGap { get; set; }
     [CUISerializableProp]
-    public float ScrollSpeed { get; set; }
+    public float ScrollSpeed { get; set; } = 1.0f;
 
     [CUISerializableProp]
     public float Scroll

@@ -32,11 +32,14 @@ namespace CursedUI
 
       Vector2 pos = mousePos;
 
-      for (int i = flat.Count - 1; i >= 0; i--)
+      VisualBounds? blockedBy = null;
+
+      for (int i = 0; i < flat.Count; i++)
       {
         switch (flat[i])
         {
           case VisualUnit.PrimitiveVisualElement primitive:
+            if (blockedBy != null) break;
             if (primitive.Element is IEventConsumer && primitive.Element.Contains(pos))
             {
               Targets.Add(primitive.Element as IEventConsumer);
@@ -44,16 +47,25 @@ namespace CursedUI
 
             break;
           case VisualBounds.LeftContextBound left:
-            // leave context
+            if (blockedBy != null) break;
+            if (left.Bounds.ScissorRect.HasValue && !left.Bounds.ScissorRect.Value.Contains(pos))
+            {
+              blockedBy = left.Bounds;
+            }
             break;
           case VisualBounds.RightContextBound right:
-            // enter context
+            if (right.Bounds == blockedBy)
+            {
+              blockedBy = null;
+            }
             break;
           default:
             throw new Exception("Unexpected VisualUnit");
-            break;
         }
       }
+
+      // Scanning from parent to children then reversing to handle visual bounds correctly
+      Targets.Reverse(); //TODO optimize
 
       TopTarget = Targets.ElementAtOrDefault(0);
       Debug_Targets.Send(Targets);

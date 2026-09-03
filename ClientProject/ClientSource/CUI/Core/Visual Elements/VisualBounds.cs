@@ -65,6 +65,8 @@ namespace CursedUI
     public SamplerState? SamplerState { get; set; }
     public Rectangle? ScissorRect { get; set; }
 
+
+    public override string ToString() => $"{HostComponent} Visual Bounds";
   }
 
 

@@ -78,8 +78,7 @@ namespace CursedUI
     public bool Grabbed { get; private set; }
 
     public Vector2 GrabPoint { get; private set; }
-    public Vector2 GrabOffset { get; private set; }
-    public Vector2 StartSelfAnchorPoint { get; private set; }
+    public Vector2 PrevPinPoint { get; private set; }
 
 
     public override bool MouseOver => Background.MouseOver;
@@ -129,9 +128,8 @@ namespace CursedUI
       if (!Host.TryGrab(this)) return;
 
       Grabbed = true;
-      GrabOffset = Rect.LeftTop - e.Pos;
       GrabPoint = e.Pos;
-      StartSelfAnchorPoint = CUIAnchor.PosFromAnchor(Rect, Anchor);
+      PrevPinPoint = CUIAnchor.PosFromAnchor(Host.Rect, ParentAnchor.Value);
       host.HubMouseMoved += Update;
       host.HubMouseUp += Release;
     }
@@ -142,17 +140,16 @@ namespace CursedUI
       if (PreventMovement.Y) delta = new Vector2(delta.X, 0);
       if (PreventMovement.X) delta = new Vector2(0, delta.Y);
 
-      Vector2 SelfAnchorPoint = StartSelfAnchorPoint + delta;
-      Resize(SelfAnchorPoint);
+      Resize(PrevPinPoint + delta);
     }
 
-    private void Resize(Vector2 SelfAnchorPoint)
+    private void Resize(Vector2 pinPoint)
     {
       Vector2 staticPoint = CUIAnchor.PosFromAnchor(Host.Rect, StaticPointAnchor);
 
       CUINullVector2 nullSize = CUIAnchor.NullSizeFrom2PointsWithAnchors(
         staticPoint, StaticPointAnchor,
-        SelfAnchorPoint, ParentAnchor.Value
+        pinPoint, ParentAnchor.Value
       );
 
       Vector2 size = new Vector2(
@@ -179,10 +176,7 @@ namespace CursedUI
       if (PreventMovement.Y) delta = new Vector2(delta.X, 0);
       if (PreventMovement.X) delta = new Vector2(0, delta.Y);
 
-
-      Vector2 SelfAnchorPoint = StartSelfAnchorPoint + delta;
-
-      Resize(SelfAnchorPoint);
+      Resize(PrevPinPoint + delta);
 
 
       Grabbed = false;

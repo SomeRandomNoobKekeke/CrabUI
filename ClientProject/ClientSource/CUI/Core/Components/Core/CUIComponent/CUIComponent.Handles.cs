@@ -16,7 +16,7 @@ namespace CursedUI
     [CUISerializableProp]
     public bool Resizable
     {
-      get => RightResizeHandle == null;
+      get => RightResizeHandle != null;
       set
       {
         if (RightResizeHandle is null && value)
@@ -36,7 +36,7 @@ namespace CursedUI
     [CUISerializableProp]
     public bool ResizableLeft
     {
-      get => LeftResizeHandle == null;
+      get => LeftResizeHandle != null;
       set
       {
         if (LeftResizeHandle is null && value)

@@ -24,8 +24,19 @@ namespace CursedUI
 
     public void Apply(CUIVisualComponent component)
     {
+      if (component.Debug)
+      {
+        //TODO there should separate StateStyle that tracks this
+        CUI.Logger.Log($"Applying state props to [{component}]");
+      }
+
       foreach (var (key, value) in this)
       {
+        if (component.Debug)
+        {
+          CUI.Logger.Log($"{key} = [{value}]");
+        }
+
         component.As_Dictionary[key] = value;
       }
     }

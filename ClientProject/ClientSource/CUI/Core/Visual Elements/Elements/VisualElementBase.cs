@@ -46,6 +46,6 @@ namespace CursedUI
     public ClearableEvent<CUIMouseOffEvent> MouseOff { get; } = new();
     public ClearableEvent<CUIMouseScrollEvent> MouseScroll { get; } = new();
 
-    public override string ToString() => GetType().Name;
+    public override string ToString() => $"{GetType().Name} {HostComponent}.{HostPropName}";
   }
 }

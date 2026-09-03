@@ -34,6 +34,22 @@ namespace CursedUI
       PluginCommands.Add("cuiprinttextures", PrintCUITextures_Command, CUIPrintTextures_Hints);
       PluginCommands.Add("gc", GC_Command);
       PluginCommands.Add("cuiprintcomponentinfos", CUIPrintComponentInfos_Command);
+
+      PluginCommands.Add("cuiprintflatlayout", CUIPrintFlatLayout_Command, () => [["Main", "TopMain"]]);
+      PluginCommands.Add("cuiprintflatvisuals", CUIPrintFlatVisuals_Command, () => [["Main", "TopMain"]]);
+    }
+
+
+    public static void CUIPrintFlatLayout_Command(string[] args)
+    {
+      if (args.ElementAtOrDefault(0) != "Main") CUI.TopMain.PrintFlatLayout();
+      if (args.ElementAtOrDefault(0) != "TopMain") CUI.Main.PrintFlatLayout();
+    }
+
+    public static void CUIPrintFlatVisuals_Command(string[] args)
+    {
+      if (args.ElementAtOrDefault(0) != "Main") CUI.TopMain.PrintFlatVisual();
+      if (args.ElementAtOrDefault(0) != "TopMain") CUI.Main.PrintFlatVisual();
     }
 
     public static void CUIPrintComponentInfos_Command(string[] args)

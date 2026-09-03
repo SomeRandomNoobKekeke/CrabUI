@@ -23,6 +23,7 @@ namespace CursedUIUser
       {
         CUIFrame frame = new CUIDefault.Frame("WeirdGhostClicks", 400, 600);
 
+
         frame["layout"]["header"] = new CUIDefault.HorizontalPanel()
         {
           FitContent = new CUIBool2(false, true),
@@ -39,22 +40,6 @@ namespace CursedUIUser
           });
         }
 
-        frame["layout"]["header2"] = new CUIDefault.HorizontalPanel()
-        {
-          FitContent = new CUIBool2(false, true),
-          Scrollable = true,
-          Palette = CUICore.Palettes.Secondary,
-          ConsumeMouseEvents = true,
-        };
-
-        for (int i = 0; i < 10; i++)
-        {
-          frame["layout"]["header2"].Children.Add(new CUIButton("bruh")
-          {
-            OnMouseDown = (e) => CUI.Logger.Log("header"),
-            InheritPalette = true,
-          });
-        }
 
         frame["layout"]["main"] = new CUIVerticalList()
         {
@@ -69,6 +54,25 @@ namespace CursedUIUser
             OnMouseDown = (e) => CUI.Logger.Log("main")
           });
         }
+
+        frame["layout"]["footer"] = new CUIDefault.HorizontalPanel()
+        {
+          FitContent = new CUIBool2(false, true),
+          Scrollable = true,
+          Palette = CUICore.Palettes.Secondary,
+          ConsumeMouseEvents = true,
+        };
+
+        for (int i = 0; i < 10; i++)
+        {
+          frame["layout"]["footer"].Children.Add(new CUIButton("bruh")
+          {
+            OnMouseDown = (e) => CUI.Logger.Log("footer"),
+            InheritPalette = true,
+          });
+        }
+
+
 
         return frame;
       }

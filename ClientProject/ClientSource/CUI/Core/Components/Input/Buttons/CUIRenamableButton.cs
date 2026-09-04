@@ -24,7 +24,6 @@ namespace CursedUI
     protected override void InitStyle()
     {
       base.InitStyle();
-      Padding = new(2, 0, 2, 0);
       Background.Sprite = CUISprite.Vignette;
     }
 
@@ -35,20 +34,20 @@ namespace CursedUI
       get => _IsRenaming;
       set
       {
-        TextInput.Displayed = value;
+        RenameOverlay.Displayed = value;
 
         if (!_IsRenaming && value)
         {
           TextBeforeRenaming = Text;
-          TextInput.Text = Text;
-          TextInput.Focus();
+          RenameOverlay.Text = Text;
+          RenameOverlay.Focus();
         }
 
         if (_IsRenaming && !value)
         {
-          Text = TextInput.Text;
-          Renamed?.Invoke(TextBeforeRenaming, TextInput.Text);
-          TextInput.Blur();
+          Text = RenameOverlay.Text;
+          Renamed?.Invoke(TextBeforeRenaming, RenameOverlay.Text);
+          RenameOverlay.Blur();
         }
 
         _IsRenaming = value;
@@ -75,7 +74,7 @@ namespace CursedUI
       IsRenaming = false;
     }
 
-    public CUITextInput TextInput { get; }
+    public CUITextInput RenameOverlay { get; }
 
     public override IEnumerable<VisualUnit> VisualSplit()
     {
@@ -85,29 +84,17 @@ namespace CursedUI
 
       yield return VisualBounds.LeftBound;
       yield return TextState.TextBlock.VisualWrapper;
-      yield return TextInput.VisualWrapper;
+      yield return RenameOverlay.VisualWrapper;
       yield return VisualBounds.RightBound;
 
       yield return Borders.VisualWrapper;
     }
 
-    public CUISizes TextPadding { get; set; } = new CUISizes(2, 4, 2, 4);
-    protected override void UpdateRects()
-    {
-      base.UpdateRects();
-      TextState.TextBlock.Rect = ChildrenRect - TextPadding;//HACK idk how to apply padding only to TextBlock
-    }
-
-    protected override CUINullVector2 MinSizeOverride => new CUINullVector2(
-      TextState.TextBlock.ForcedSize.X + TextPadding.FullWidth,
-      TextState.TextBlock.ForcedSize.Y + TextPadding.FullHeigth
-    );
-
     public CUIRenamableButton() : base()
     {
       TextAnchor = CUIAnchor.LeftCenter;
 
-      this["input"] = TextInput = new CUITextInput()
+      this["overlay"] = RenameOverlay = new CUITextInput()
       {
         Relative = new CUINullRect(0, 0, 1, 1),
         FocusedSprite = CUISprite.GlowingEdges,
@@ -116,7 +103,7 @@ namespace CursedUI
           if (e.Key == Keys.Enter) IsRenaming = false;
         },
         Palette = CUICore.Palettes.Primary,
-        OnInput = (s) => Text = TextInput.Text,
+        OnInput = (s) => Text = RenameOverlay.Text,
       };
 
       IsRenaming = false;

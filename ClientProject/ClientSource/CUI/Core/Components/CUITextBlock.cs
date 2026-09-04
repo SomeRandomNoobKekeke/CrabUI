@@ -21,7 +21,7 @@ namespace CursedUI
     protected override void InitStyle()
     {
       base.InitStyle();
-      Padding = new(2, 4, 2, 4);
+      TextPadding = new(2, 4, 2, 4);
     }
 
     public TextBlock TextBlock { get; } = new();
@@ -91,15 +91,18 @@ namespace CursedUI
     public CUINullVector2 ForcedSize => TextBlock.ForcedSize;
     public float RealScale => TextBlock.RealScale;
 
+
+    [CUISerializableProp]
+    public CUISizes TextPadding { get; set; }
     protected override CUINullVector2 MinSizeOverride => new CUINullVector2(
-      TextBlock.ForcedSize.X + Padding.FullWidth,
-      TextBlock.ForcedSize.Y + Padding.FullHeigth
+      TextBlock.ForcedSize.X + TextPadding.FullWidth,
+      TextBlock.ForcedSize.Y + TextPadding.FullHeigth
     );
 
     protected override void UpdateRects()
     {
       base.UpdateRects();
-      TextBlock.Rect = ChildrenRect;
+      TextBlock.Rect = InnerRect - TextPadding;
     }
 
     [CUISerializableProp]

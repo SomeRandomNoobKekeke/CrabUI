@@ -23,7 +23,7 @@ namespace CursedUI
     protected override void InitStyle()
     {
       base.InitStyle();
-      Padding = new(2, 4, 2, 4);
+      TextPadding = new(2, 4, 2, 4);
       Background.Sprite = CUISprite.Vignette;
     }
 
@@ -100,16 +100,18 @@ namespace CursedUI
       set => PersonalStyle = new CUIActionStyle<CUIToggleButton>("personal", value);
     }
 
+    [CUISerializableProp]
+    public CUISizes TextPadding { get; set; }
     protected override CUINullVector2 MinSizeOverride => new CUINullVector2(
-      SelectedTextState.TextBlock.ForcedSize.X + Padding.FullWidth,
-      SelectedTextState.TextBlock.ForcedSize.Y + Padding.FullHeigth
+      SelectedTextState.TextBlock.ForcedSize.X + TextPadding.FullWidth,
+      SelectedTextState.TextBlock.ForcedSize.Y + TextPadding.FullHeigth
     );
 
     protected override void UpdateRects()
     {
       base.UpdateRects();
-      OnState.TextBlock.Rect = ChildrenRect;
-      OffState.TextBlock.Rect = ChildrenRect;
+      OnState.TextBlock.Rect = InnerRect - TextPadding;
+      OffState.TextBlock.Rect = InnerRect - TextPadding;
     }
 
     [CUISerializableProp]

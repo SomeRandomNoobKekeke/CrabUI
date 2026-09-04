@@ -52,10 +52,93 @@ namespace CursedUI
     public SpriteEffects Effects { get; set; } = SpriteEffects.None;
     public float LayerDepth { get; set; } = 0.0f;
 
+    public CUISpriteDrawMode DrawMode { get; set; }
+
 
     public void Draw(CUISpriteBatch spriteBatch, Rectangle destinationRectangle)
     {
-      spriteBatch.Draw(Texture, destinationRectangle, SourceRectangle, ColorTL, ColorTR, ColorBR, ColorBL, Rotation, Origin, Effects, LayerDepth);
+      switch (DrawMode)
+      {
+        case CUISpriteDrawMode.Resize:
+          spriteBatch.Draw(
+            Texture,
+            destinationRectangle,
+            SourceRectangle,
+            ColorTL, ColorTR, ColorBR, ColorBL, Rotation, Origin, Effects, LayerDepth
+          );
+          break;
+
+        case CUISpriteDrawMode.Wrap:
+          if (SourceRectangle.HasValue)
+          {
+            spriteBatch.Draw(
+              Texture,
+              destinationRectangle,
+              new Rectangle(
+                SourceRectangle.Value.Left,
+                SourceRectangle.Value.Top,
+                destinationRectangle.Width,
+                destinationRectangle.Height
+              ),
+              ColorTL, ColorTR, ColorBR, ColorBL, Rotation, Origin, Effects, LayerDepth
+            );
+          }
+          else
+          {
+            spriteBatch.Draw(
+              Texture,
+              destinationRectangle,
+              new Rectangle(0, 0, destinationRectangle.Width, destinationRectangle.Height),
+              ColorTL, ColorTR, ColorBR, ColorBL, Rotation, Origin, Effects, LayerDepth
+            );
+          }
+          break;
+
+        case CUISpriteDrawMode.Static:
+          spriteBatch.Draw(
+            Texture,
+            destinationRectangle,
+            destinationRectangle,
+            ColorTL, ColorTR, ColorBR, ColorBL, Rotation, Origin, Effects, LayerDepth
+          );
+          break;
+
+        case CUISpriteDrawMode.StaticDeep:
+          spriteBatch.Draw(
+            Texture,
+            destinationRectangle,
+            new Rectangle(
+              (int)(destinationRectangle.Left * 0.9f),
+              (int)(destinationRectangle.Top * 0.9f),
+              destinationRectangle.Width,
+              destinationRectangle.Height
+            ),
+            ColorTL, ColorTR, ColorBR, ColorBL, Rotation, Origin, Effects, LayerDepth
+          );
+          break;
+
+          // case CUISpriteDrawMode.Zoom:
+          //   Rectangle Zoom(Rectangle rect, float z)
+          //   {
+          //     Vector2 ScreenCenter = CUI.GameScreenRect.Size.ToVector2() / 2.0f;
+          //     Vector2 PosDif = new Vector2(rect.Left, rect.Top) - ScreenCenter;
+          //     Vector2 newPos = PosDif * z + ScreenCenter;
+
+          //     return new Rectangle(
+          //       (int)newPos.X, (int)newPos.Y,
+          //       (int)(rect.Width / z), (int)(rect.Height / z)
+          //     );
+          //   }
+
+          //   spriteBatch.Draw(
+          //     Texture,
+          //     destinationRectangle,
+          //     Zoom(destinationRectangle, 0.6f),
+          //     ColorTL, ColorTR, ColorBR, ColorBL, Rotation, Origin, Effects, LayerDepth
+          //   );
+          //   break;
+      }
+
     }
 
     public CUISprite() { Texture = CUITexture2D.White; }

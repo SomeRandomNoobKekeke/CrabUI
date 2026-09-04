@@ -80,6 +80,8 @@ namespace CursedUI
     public SpriteEffects Effects { get => Sprite.Effects; set => Sprite.Effects = value; }
     [CUISerializableProp]
     public float LayerDepth { get => Sprite.LayerDepth; set => Sprite.LayerDepth = value; }
+    [CUISerializableProp]
+    public CUISpriteDrawMode DrawMode { get => Sprite.DrawMode; set => Sprite.DrawMode = value; }
 
     #endregion
 

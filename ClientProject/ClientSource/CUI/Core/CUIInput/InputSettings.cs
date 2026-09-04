@@ -12,7 +12,7 @@ namespace CursedUI
 {
   public class InputSettings
   {
-    public double DoubleClickInterval = 0.2;
+    public double DoubleClickInterval = 0.3;
     public float ScrollSpeed = 0.6f;
     public double ClickInterval = 0.2;
   }

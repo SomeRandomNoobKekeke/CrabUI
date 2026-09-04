@@ -23,6 +23,11 @@ namespace CursedUI
       c.Background.Color = c.Palette["main"] * 0.5f;
     });
 
+    public new Action<ResizeHandle> Style
+    {
+      set => PersonalStyle = new CUIActionStyle<ResizeHandle>("personal", value);
+    }
+
     protected override void InitStyle()
     {
       base.InitStyle();
@@ -207,6 +212,7 @@ namespace CursedUI
 
       Background.MouseDown.Add(Grab);
       Background.ConsumeMouseEvents = true;
+      Events.Route(Background);
     }
 
     public ResizeHandle(float x, float y) : this(new Vector2(x, y)) { }

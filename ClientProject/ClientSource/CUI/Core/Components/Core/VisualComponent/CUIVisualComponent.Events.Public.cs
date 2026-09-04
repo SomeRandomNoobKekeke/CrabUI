@@ -53,42 +53,49 @@ namespace CursedUI
       remove => this.Events.MouseUp.Remove(value);
     }
 
+    public Action<CUIMouseClickEvent> OnMouseClick { set { MouseClick += value; } }
     public event Action<CUIMouseClickEvent> MouseClick
     {
       add => this.Events.MouseClick.Add(value);
       remove => this.Events.MouseClick.Remove(value);
     }
 
+    public Action<CUIMouseDoubleClickEvent> OnMouseDoubleClick { set { MouseDoubleClick += value; } }
     public event Action<CUIMouseDoubleClickEvent> MouseDoubleClick
     {
       add => this.Events.MouseDoubleClick.Add(value);
       remove => this.Events.MouseDoubleClick.Remove(value);
     }
 
+    public Action<CUIMouseMovedEvent> OnMouseMoved { set { MouseMoved += value; } }
     public event Action<CUIMouseMovedEvent> MouseMoved
     {
       add => this.Events.MouseMoved.Add(value);
       remove => this.Events.MouseMoved.Remove(value);
     }
 
+    public Action<CUIMouseEnterEvent> OnMouseEnter { set { MouseEnter += value; } }
     public event Action<CUIMouseEnterEvent> MouseEnter
     {
       add => this.Events.MouseEnter.Add(value);
       remove => this.Events.MouseEnter.Remove(value);
     }
 
+    public Action<CUIMouseLeaveEvent> OnMouseLeave { set { MouseLeave += value; } }
     public event Action<CUIMouseLeaveEvent> MouseLeave
     {
       add => this.Events.MouseLeave.Add(value);
       remove => this.Events.MouseLeave.Remove(value);
     }
 
+    public Action<CUIMouseOnEvent> OnMouseOn { set { MouseOn += value; } }
     public event Action<CUIMouseOnEvent> MouseOn
     {
       add => this.Events.MouseOn.Add(value);
       remove => this.Events.MouseOn.Remove(value);
     }
 
+    public Action<CUIMouseOffEvent> OnMouseOff { set { MouseOff += value; } }
     public event Action<CUIMouseOffEvent> MouseOff
     {
       add => this.Events.MouseOff.Add(value);

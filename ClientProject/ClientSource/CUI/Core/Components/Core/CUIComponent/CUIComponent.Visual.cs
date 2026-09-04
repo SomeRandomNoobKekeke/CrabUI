@@ -22,7 +22,7 @@ namespace CursedUI
         OnTearDown = (background) =>
         {
           // DebugRelays[DebugCategory.RoundedRect].Route(background.Debug_RoundedRect);
-          Events.Route(background);
+          Events.Unroute(background);
         },
         Value = new(),
       };

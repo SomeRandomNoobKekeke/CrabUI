@@ -99,10 +99,11 @@ namespace CursedUI
           {
             OnToggle = (state) =>
             {
-              DebugHub.Gates[name].Toggle();
+              DebugHub.Gates[name].IsOpen = state;
               // ClearEventList();
             },
             InheritPalette = true,
+            State = DebugHub.Gates[name].IsOpen,
           });
         }
       }

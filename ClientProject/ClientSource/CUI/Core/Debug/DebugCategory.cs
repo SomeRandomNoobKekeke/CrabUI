@@ -34,5 +34,6 @@ namespace CursedUI
     public static string MouseEvents = "Mouse Events";
     public static string KeyboardEvents = "Keyboard Events";
     public static string EventTargets = "Event Targets";
+    public static string PropSet = "Prop Set";
   }
 }

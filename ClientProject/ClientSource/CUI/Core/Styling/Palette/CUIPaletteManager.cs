@@ -31,5 +31,15 @@ namespace CursedUI
       get => _Quaternary;
       set => _Quaternary.Swap(value);
     }
+
+    public CUIPalette FromName(string name)
+    {
+      if (name == "Primary") return Primary;
+      if (name == "Secondary") return Secondary;
+      if (name == "Tertiary") return Tertiary;
+      if (name == "Quaternary") return Quaternary;
+
+      return Primary;
+    }
   }
 }

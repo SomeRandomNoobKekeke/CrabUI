@@ -41,6 +41,8 @@ namespace CursedUI
 
       Background.Sprite = BluredSprite;
       Padding = new CUISizes(4, 4, 4, 4);
+
+      Absolute = new CUINullRect(h: 24);//HACK i need some global class with default sizes
     }
 
 

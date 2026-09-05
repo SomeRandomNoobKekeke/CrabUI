@@ -33,6 +33,7 @@ namespace CursedUI
       public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<HorizontalPanel>((c) =>
       {
         c.Background.Color = c.Palette["main"].MultOpaque(0.4f);
+        c.FitContent = new CUIBool2(false, true);
       });
 
       protected override void InitStyle()
@@ -47,6 +48,7 @@ namespace CursedUI
       public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<VerticalPanel>((c) =>
       {
         c.Background.Color = c.Palette["main"].MultOpaque(0.4f);
+        c.FitContent = new CUIBool2(true, false);
       });
 
       protected override void InitStyle()

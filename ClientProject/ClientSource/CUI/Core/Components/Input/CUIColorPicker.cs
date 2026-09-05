@@ -57,24 +57,17 @@ namespace CursedUI
     {
       ConsumeMouseEvents = true;
 
-      if (!CUICore.TextureManager.Has("HueSelect"))
-      {
-        CUICore.TextureManager.Add("HueSelect",
-          new TextureBuilder(1, 360)
-            .Fill((x, y) => CUIColor.FromHSV(y, 1, 1))
-            .Build(tracked: true)
-        );
-      }
+      CUICore.TextureManager.Ensure("HueSelect", () =>
+        new TextureBuilder(1, 360)
+          .Fill((x, y) => CUIColor.FromHSV(y, 1, 1))
+          .Build(tracked: true)
+      );
 
-      if (!CUICore.TextureManager.Has("bw target 6x6"))
-      {
-        CUICore.TextureManager.Add("bw target 6x6",
-          new TextureBuilder(6, 6)
-            .DrawTarget(new Rectangle(0, 0, 6, 6), Color.White * 0.75f, Color.Black * 0.75f)
-            .Build(tracked: true)
-        );
-      }
-
+      CUICore.TextureManager.Ensure("bw target 6x6", () =>
+        new TextureBuilder(6, 6)
+          .DrawTarget(new Rectangle(0, 0, 6, 6), Color.White * 0.75f, Color.Black * 0.75f)
+          .Build(tracked: true)
+      );
 
       this["layout"] = new CUIHorizontalList() { Relative = new CUINullRect(0, 0, 1, 1) };
 

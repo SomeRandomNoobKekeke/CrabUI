@@ -95,6 +95,22 @@ namespace CursedUI
       {
         if (value)
         {
+          Group?.SelectSilent(this);
+        }
+        else
+        {
+          Group?.DeselectSilent(this);
+        }
+      }
+    }
+
+    protected bool IsSelectedReactive
+    {
+      get => Group?.Current == this;
+      set
+      {
+        if (value)
+        {
           Group?.Select(this);
         }
         else
@@ -103,7 +119,6 @@ namespace CursedUI
         }
       }
     }
-
     public void Select() => Group?.Select(this);
     public void Deselect() => Group?.Deselect(this);
     public void Toggle() => IsSelected = !IsSelected;
@@ -271,7 +286,7 @@ namespace CursedUI
 
         if (PlaySound) SoundPlayer.PlayUISound(ClickSound);
         if (Emit != null) Commands.SendUp(Emit, Text);
-        Toggle();
+        IsSelectedReactive = !IsSelectedReactive;
       };
 
       ConsumeMouseEvents = true;

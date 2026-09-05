@@ -49,10 +49,24 @@ namespace CursedUI
         Current?.HandleSelect();
       }
 
+      public void SelectSilent(CUIRadioButton btn)
+      {
+        if (btn == Current) return;
+
+        Previous = Current;
+        Current = btn;
+      }
+
       public void Deselect(CUIRadioButton btn)
       {
         if (!IsSelected(btn)) return;
         Select(null);
+      }
+
+      public void DeselectSilent(CUIRadioButton btn)
+      {
+        if (!IsSelected(btn)) return;
+        SelectSilent(null);
       }
 
       public void ClearSelection()

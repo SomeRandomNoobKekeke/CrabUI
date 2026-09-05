@@ -40,7 +40,7 @@ namespace CursedUI
       private set => ColorSelect.Background.Sprite.ColorTR = value;
     }
 
-    public Vector2 ColorPos { get; private set; }
+    public Vector2 ColorPos { get; private set; } = new Vector2(1, 0);
 
     public Action<Color> OnSelected { set { Selected += value; } }
     public event Action<Color> Selected;
@@ -49,7 +49,7 @@ namespace CursedUI
     private void SelectColor()
     {
       Color cl = CUIColor.FromHSV(Hue, ColorPos.X, 1.0f - ColorPos.Y);
-
+      CUI.Logger.LogVars(Hue, ColorPos.X, 1.0f - ColorPos.Y);
       Selected?.Invoke(cl);
     }
 

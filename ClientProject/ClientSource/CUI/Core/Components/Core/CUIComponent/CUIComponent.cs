@@ -17,7 +17,7 @@ namespace CursedUI
 
     protected override void InitStyle()
     {
-      Background.Color = Color.Transparent;
+      Background.Sprite = CUISprite.Transparent;
     }
 
     public CUIComponent() : base()

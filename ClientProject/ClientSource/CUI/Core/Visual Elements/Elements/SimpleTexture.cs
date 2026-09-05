@@ -33,6 +33,11 @@ namespace CursedUI
       {
         _Sprite = value;
         _Sprite.ShouldBufferData = IgnoretransparentPixels;
+
+        if (_Color.HasValue && _Sprite.ColorIsDefault)
+        {
+          _Sprite.Color = _Color.Value;
+        }
       }
     }
 
@@ -71,7 +76,16 @@ namespace CursedUI
     [CUISerializableProp]
     public Rectangle? SourceRectangle { get => Sprite.SourceRectangle; set => Sprite.SourceRectangle = value; }
     [CUISerializableProp]
-    public Color Color { get => Sprite.Color; set => Sprite.Color = value; }
+    public Color Color
+    {
+      get => Sprite.Color;
+      set
+      {
+        Sprite.Color = value;
+        _Color = value;
+      }
+    }
+    public Color? _Color = null; //CRINGE so if you change this Color next sprite will inherit it
     [CUISerializableProp]
     public float Rotation { get => Sprite.Rotation; set => Sprite.Rotation = value; }
     [CUISerializableProp]

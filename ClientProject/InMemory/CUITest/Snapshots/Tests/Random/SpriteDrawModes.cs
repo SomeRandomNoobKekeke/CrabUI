@@ -22,7 +22,7 @@ namespace CursedUIUser
         wrapper["frame 1"] = new CUIDefault.Frame("Resize")
         {
           Background = {
-            Sprite = new CUISprite(CUICore.TextureManager.Get("BaroDev")),
+            Sprite = new CUISprite(CUICore.TextureManager.Get("BaroDev")){Color = Color.White},
             DrawMode = CUISpriteDrawMode.Resize,
           },
           Absolute = new CUINullRect(-300, -150, 400, 200)
@@ -31,7 +31,7 @@ namespace CursedUIUser
         wrapper["frame 2"] = new CUIDefault.Frame("Wrap")
         {
           Background = {
-            Sprite = new CUISprite(CUICore.TextureManager.Get("BaroDev")),
+            Sprite = new CUISprite(CUICore.TextureManager.Get("BaroDev")){Color = Color.White},
             SourceRectangle = new(-100,-100,0,0),
             DrawMode = CUISpriteDrawMode.Wrap,
           },
@@ -41,7 +41,7 @@ namespace CursedUIUser
         wrapper["frame 3"] = new CUIDefault.Frame("Static")
         {
           Background = {
-            Sprite = new CUISprite(CUICore.TextureManager.Get("BaroDev")),
+            Sprite = new CUISprite(CUICore.TextureManager.Get("BaroDev")){Color = Color.White},
             DrawMode = CUISpriteDrawMode.Static,
           },
           Absolute = new CUINullRect(-300, 150, 400, 200)
@@ -50,7 +50,7 @@ namespace CursedUIUser
         wrapper["frame 4"] = new CUIDefault.Frame("StaticDeep")
         {
           Background = {
-            Sprite = new CUISprite(CUICore.TextureManager.Get("BaroDev")),
+            Sprite = new CUISprite(CUICore.TextureManager.Get("BaroDev")){Color = Color.White},
             DrawMode = CUISpriteDrawMode.StaticDeep,
           },
           Absolute = new CUINullRect(300, 150, 400, 200)

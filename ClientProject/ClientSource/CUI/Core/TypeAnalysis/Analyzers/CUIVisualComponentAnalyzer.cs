@@ -24,6 +24,7 @@ namespace CursedUI
       CUIVisualComponentInfo info = new CUIVisualComponentInfo()
       {
         ComponentType = T,
+        NoDefault = T.GetCustomAttribute<NoDefaultAttribute>() != null,
       };
 
       PropertyInfo? defaultStyleProp = T.GetProperty(DefaultStylePropName, BindingFlags.Static | BindingFlags.Public);
@@ -39,29 +40,6 @@ namespace CursedUI
       return info;
     }
 
-    public CUIVisualComponent CreateDefault(Type T)
-    {
-      if (T.IsAbstract) return null;
 
-      if (T.GetConstructor([]) is null)
-      {
-        // CUI.Logger.Warning($"Failed to create default for [{info.ComponentType.Name}]: {info.ComponentType} doesn't have default constructor");
-        return null;
-      }
-
-      if (T.GetCustomAttribute<NoDefaultAttribute>() != null) return null;
-
-      try
-      {
-        return (CUIVisualComponent)Activator.CreateInstance(T);
-      }
-      catch (Exception e)
-      {
-        CUI.Logger.Warning($"Failed to create default for [{T.Name}]: {e.InnerException?.Message}");
-        if (CUI.ErrorHandlingStrategy == ErrorHandlingStrategy.FailFast) throw;
-      }
-
-      return null;
-    }
   }
 }

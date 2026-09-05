@@ -19,6 +19,7 @@ namespace CursedUI
     public CUITexture2D CreateNew(int width, int height, bool mipmap, SurfaceFormat format, string key = null);
 
     CUITexture2D Add(string key, CUITexture2D texture);
+    CUITexture2D Ensure(string key, Func<CUITexture2D> factory);
     void Clear();
     void Dispose();
     void Forget(string key);

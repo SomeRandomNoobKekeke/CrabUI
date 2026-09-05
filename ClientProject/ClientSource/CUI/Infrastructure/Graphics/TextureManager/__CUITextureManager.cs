@@ -77,6 +77,16 @@ namespace CursedUI
       return LoadedTextures[key];
     }
 
+    public CUITexture2D Ensure(string key, Func<CUITexture2D> factory)
+    {
+      if (!LoadedTextures.ContainsKey(key))
+      {
+        LoadedTextures[key] = factory?.Invoke();
+      }
+
+      return LoadedTextures[key];
+    }
+
 
     public bool Has(string key) => LoadedTextures.ContainsKey(key);
 

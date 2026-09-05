@@ -32,6 +32,8 @@ namespace CursedUI
         => Self.TextureManager.CreateNew(width, height, mipmap, format, key);
 
       public CUITexture2D Add(string key, CUITexture2D texture) => Self.TextureManager.Add(key, texture);
+      public CUITexture2D Ensure(string key, Func<CUITexture2D> factory)
+         => Self.TextureManager.Ensure(key, factory);
       public void Clear() => Self.TextureManager.Clear();
       public void Dispose() => Self.TextureManager.Dispose();
       public void Forget(string key) => Self.TextureManager.Forget(key);

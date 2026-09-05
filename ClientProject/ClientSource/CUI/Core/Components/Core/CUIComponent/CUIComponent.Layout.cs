@@ -27,7 +27,8 @@ namespace CursedUI
       Layout.Debug_MarkedForChildrenUpdate.Map(DebugRelays[DebugCategory.LayoutMarked]);
       Layout.Debug_MarkedForParentUpdate.Map(DebugRelays[DebugCategory.LayoutMarked]);
 
-      LayoutMarker.Debug_Marked.Map(DebugRelays[DebugCategory.LayoutMarked]);
+      LayoutMarker.Debug_Marking_Start.Map(DebugRelays[DebugCategory.LayoutMarked]);
+      LayoutMarker.Debug_Marking_End.Map(DebugRelays[DebugCategory.LayoutMarked]);
 
       Layout.Debug_Calculations.Map(DebugRelays[DebugCategory.LayoutCalculations]);
     }

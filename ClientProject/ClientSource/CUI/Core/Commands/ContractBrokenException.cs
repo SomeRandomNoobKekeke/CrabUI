@@ -12,11 +12,11 @@ using CUILibs;
 namespace CursedUI
 {
 
-  public class ContractBrokenException : System.Exception
+  public class ContractBrokenException : Exception
   {
     public ContractBrokenException() { }
     public ContractBrokenException(string message) : base(message) { }
-    public ContractBrokenException(string message, System.Exception inner) : base(message, inner) { }
+    public ContractBrokenException(string message, Exception inner) : base(message, inner) { }
     protected ContractBrokenException(
       System.Runtime.Serialization.SerializationInfo info,
       System.Runtime.Serialization.StreamingContext context) : base(info, context) { }

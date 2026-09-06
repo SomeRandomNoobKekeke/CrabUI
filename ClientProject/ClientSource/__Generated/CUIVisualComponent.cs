@@ -26,7 +26,6 @@ namespace CursedUI
       As_CUIVisualComponent.Self = this;
       
       As_CUIVisualComponent.Commands.Self = this;
-      As_CUIVisualComponent.ProtectedCommands.Self = this;
       As_CUIVisualComponent.Data.Self = this;
       As_CUIVisualComponent.As_Dictionary.Self = this;
       As_CUIVisualComponent.Events.Self = this;
@@ -128,7 +127,6 @@ namespace CursedUI
   protected class Self_As_CUIVisualComponent : IAdapterPart
   {
     public CUIVisualComponent.public_Commands_Part Commands => Self.Commands;
-    public CUIVisualComponent.Protected_Commands_Part ProtectedCommands => Self.ProtectedCommands;
     public CUIVisualComponent.Data_Part Data => Self.Data;
     public CUIVisualComponent.Dictionary_Part As_Dictionary => Self.As_Dictionary;
     public CUIVisualComponent.Events_Part Events => Self.Events;

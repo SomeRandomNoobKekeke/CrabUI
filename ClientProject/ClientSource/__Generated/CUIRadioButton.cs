@@ -34,7 +34,6 @@ namespace CursedUI
       As_CUIRadioButton.OnState.Self = this;
       As_CUIRadioButton.OffState.Self = this;
       As_CUIVisualComponent.Commands.Self = this;
-      As_CUIVisualComponent.ProtectedCommands.Self = this;
       As_CUIVisualComponent.Data.Self = this;
       As_CUIVisualComponent.As_Dictionary.Self = this;
       As_CUIVisualComponent.Events.Self = this;

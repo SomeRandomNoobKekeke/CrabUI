@@ -32,7 +32,6 @@ namespace CursedUI
       
       As_CUITextInput.SelectionHandle.Self = this;
       As_CUIVisualComponent.Commands.Self = this;
-      As_CUIVisualComponent.ProtectedCommands.Self = this;
       As_CUIVisualComponent.Data.Self = this;
       As_CUIVisualComponent.As_Dictionary.Self = this;
       As_CUIVisualComponent.Events.Self = this;

@@ -23,7 +23,7 @@ namespace CursedUI
     public IEnumerable<string> EmitsDown { set => EmitsDownSet = value.ToImmutableHashSet(); }
 
     public bool CanConsume(string name) => ConsumesSet.Contains(name);
-    public bool CanEmitUp(string name) => EmitsUpSet.Contains(name);
-    public bool CanEmitDown(string name) => EmitsDownSet.Contains(name);
+    public bool CanSendUp(string name) => EmitsUpSet.Contains(name);
+    public bool CanSendDown(string name) => EmitsDownSet.Contains(name);
   }
 }

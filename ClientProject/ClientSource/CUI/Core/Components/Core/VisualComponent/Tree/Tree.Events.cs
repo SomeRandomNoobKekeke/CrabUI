@@ -41,14 +41,15 @@ namespace CursedUI
       public void OnAttachToParent(CUIVisualComponent parent)
       {
         Self.MainComponentTracker.OnAttachToParentHandler(parent);
-        Self.ProtectedCommands.OnAttachToParentHandler(parent);
+        parent.CommandNode.AddChild(Self.CommandNode);
+
         Self.InheritProps(parent);
       }
 
       public void OnDetachFromParent(CUIVisualComponent parent)
       {
         Self.MainComponentTracker.OnDetachFromParentHandler(parent);
-        Self.ProtectedCommands.OnDetachFromParentHandler(parent);
+        parent.CommandNode.RemoveChild(Self.CommandNode);
       }
 
       public void OnChildrenRearranged()

@@ -12,6 +12,8 @@ namespace CursedUI
 {
   public partial class CUIVisualComponent
   {
+    public virtual RoutableCommandContract Contract { get; set; }
+
     public Dictionary<string, Action> Reactions
     {
       set
@@ -27,12 +29,59 @@ namespace CursedUI
     public public_Commands_Part Commands { get; } = new();
     public class public_Commands_Part : Part, IModule
     {
-      public void ListenFor(string name, Action action) => Self.ProtectedCommands.ListenFor(name, action);
-      public void ListenFor(string name, Action<object> action) => Self.ProtectedCommands.ListenFor(name, action);
-      public void ListenFor<T>(string name, Action<T> action) => Self.ProtectedCommands.ListenFor<T>(name, action);
-      public void SendDown(string name, object data = null) => Self.ProtectedCommands.SendDown(name, data);
-      public void SendUp(string name, object data = null) => Self.ProtectedCommands.SendUp(name, data);
-      public void Execute(string name, object data = null) => Self.ProtectedCommands.Execute(name, data);
+      public void ListenFor(string name, Action action)
+      {
+        if (Self.Contract is not null && !Self.Contract.CanConsume(name))
+        {
+          throw new ContractBrokenException($"[{Self}] can't listen for [{name}]");
+        }
+        Self.ProtectedCommands.ListenFor(name, action);
+      }
+
+      public void ListenFor(string name, Action<object> action)
+      {
+        if (Self.Contract is not null && !Self.Contract.CanConsume(name))
+        {
+          throw new ContractBrokenException($"[{Self}] can't listen for [{name}]");
+        }
+        Self.ProtectedCommands.ListenFor(name, action);
+      }
+
+      public void ListenFor<T>(string name, Action<T> action)
+      {
+        if (Self.Contract is not null && !Self.Contract.CanConsume(name))
+        {
+          throw new ContractBrokenException($"[{Self}] can't listen for [{name}]");
+        }
+        Self.ProtectedCommands.ListenFor<T>(name, action);
+      }
+
+      public void SendDown(string name, object data = null)
+      {
+        if (Self.Contract is not null && !Self.Contract.CanEmitDown(name))
+        {
+          throw new ContractBrokenException($"[{Self}] can't send [{name}] down");
+        }
+        Self.ProtectedCommands.SendDown(name, data);
+      }
+
+      public void SendUp(string name, object data = null)
+      {
+        if (Self.Contract is not null && !Self.Contract.CanEmitUp(name))
+        {
+          throw new ContractBrokenException($"[{Self}] can't send [{name}] up");
+        }
+        Self.ProtectedCommands.SendUp(name, data);
+      }
+
+      public void Execute(string name, object data = null)
+      {
+        if (Self.Contract is not null && !Self.Contract.CanConsume(name))
+        {
+          throw new ContractBrokenException($"[{Self}] can't execute [{name}]");
+        }
+        Self.ProtectedCommands.Execute(name, data);
+      }
     }
 
 

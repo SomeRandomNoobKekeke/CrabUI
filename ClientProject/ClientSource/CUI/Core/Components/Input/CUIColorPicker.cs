@@ -49,7 +49,6 @@ namespace CursedUI
     private void SelectColor()
     {
       Color cl = CUIColor.FromHSV(Hue, ColorPos.X, 1.0f - ColorPos.Y);
-      CUI.Logger.LogVars(Hue, ColorPos.X, 1.0f - ColorPos.Y);
       Selected?.Invoke(cl);
     }
 

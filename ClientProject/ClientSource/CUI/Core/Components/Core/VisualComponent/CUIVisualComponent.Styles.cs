@@ -50,7 +50,7 @@ namespace CursedUI
       set
       {
         _PersonalStyle = value;
-        _PersonalStyle.Apply(this); //HACK i don't need full ReapplyStyles() because PersonalStyle it always last
+        Styles.ReapplyStyles();
       }
     }
 

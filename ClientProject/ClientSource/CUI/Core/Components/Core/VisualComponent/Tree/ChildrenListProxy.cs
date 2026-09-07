@@ -16,7 +16,7 @@ namespace CursedUI
     /// <summary>
     /// This is just convenient accessor, it doesn't do the work
     /// </summary>
-    public class ChildrenListProxy : Part, IEndPart, IList<CUIVisualComponent>
+    public class ChildrenListProxy : Part, IEndPart, IList<CUIVisualComponent>, IList
     {
       private IList<CUIVisualComponent> Children => Self.ChildrenContainer;
       private TreeOperations_Part Operations => Self.TreeOperations;
@@ -60,6 +60,47 @@ namespace CursedUI
       IEnumerator IEnumerable.GetEnumerator() => Children.GetEnumerator();
 
       public override string ToString() => Logger.Wrap.IEnumerable(Children);
+
+
+
+      #region IList
+
+      object? IList.this[int i]
+      {
+        get => this[i];
+        set => this[i] = (CUIVisualComponent)value;
+      }
+
+      bool IList.IsFixedSize => false;
+      bool IList.IsReadOnly => false;
+      int ICollection.Count => Count;
+      bool ICollection.IsSynchronized => (Children as IList).IsSynchronized;
+      object ICollection.SyncRoot => (Children as IList).SyncRoot;
+
+      int IList.Add(object? value)
+      {
+        Add((CUIVisualComponent)value);
+        return Count - 1;
+      }
+
+      void IList.Clear() => Clear();
+
+      bool IList.Contains(object? value) => Contains((CUIVisualComponent)value);
+
+      void ICollection.CopyTo(Array array, int index)
+      {
+        throw new NotImplementedException("why are you using this?");
+      }
+
+      int IList.IndexOf(object? value) => IndexOf((CUIVisualComponent)value);
+
+      void IList.Insert(int index, object? value) => Insert(index, (CUIVisualComponent)value);
+
+      void IList.Remove(object? value) => Remove((CUIVisualComponent)value);
+
+      void IList.RemoveAt(int index) => RemoveAt(index);
+      #endregion
+
     }
   }
 }

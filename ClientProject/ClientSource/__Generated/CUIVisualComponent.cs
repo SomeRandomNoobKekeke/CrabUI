@@ -12,7 +12,6 @@ namespace CursedUI
     protected Self_As_CUIVisualComponent As_CUIVisualComponent { get; } = new();
     void IComponent.RunInitMethods()
     {
-      InjectCommandContract();
     }
 
     void IComponent.InjectModules()
@@ -127,7 +126,7 @@ namespace CursedUI
 
   protected class Self_As_CUIVisualComponent : IAdapterPart
   {
-    public CUIVisualComponent.public_Commands_Part Commands => Self.Commands;
+    public CUIVisualComponent.Commands_Part Commands => Self.Commands;
     public CUIVisualComponent.Data_Part Data => Self.Data;
     public CUIVisualComponent.Dictionary_Part As_Dictionary => Self.As_Dictionary;
     public CUIVisualComponent.Events_Part Events => Self.Events;

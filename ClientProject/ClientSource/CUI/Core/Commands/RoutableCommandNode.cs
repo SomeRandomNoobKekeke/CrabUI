@@ -11,6 +11,7 @@ using CUILibs;
 
 namespace CursedUI
 {
+  //not used
   public class RoutableCommandNode
   {
     public RoutableCommandContract? CommandsContract { get; set; }

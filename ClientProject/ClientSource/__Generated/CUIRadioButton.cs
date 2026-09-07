@@ -15,7 +15,6 @@ namespace CursedUI
       InitDebugChannels();
       InitLayout();
       InitVisualSlots();
-      InjectCommandContract();
     }
 
     void IComponent.InjectModules()

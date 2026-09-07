@@ -18,7 +18,7 @@ namespace CursedUI
       public override RoutableCommandContract? CommandsContract { get; } = new()
       {
         Consumes = [CreateNewObject],
-        EmitsDown = [ObjectCreated],
+        SendsDown = [ObjectCreated],
       };
     }
 
@@ -27,7 +27,7 @@ namespace CursedUI
       public override RoutableCommandContract? CommandsContract { get; } = new()
       {
         Consumes = ["confirm", "cancel", Layer1.ObjectCreated],
-        EmitsUp = [Layer1.CreateNewObject],
+        SendsUp = [Layer1.CreateNewObject],
       };
     }
 
@@ -35,7 +35,7 @@ namespace CursedUI
     {
       public override RoutableCommandContract? CommandsContract { get; } = new()
       {
-        EmitsUp = ["confirm", "cancel", "uncaught"],
+        SendsUp = ["confirm", "cancel", "uncaught"],
       };
     }
 

@@ -15,6 +15,17 @@ namespace CursedUI
     public virtual RoutableCommandContract? CommandsContract => null;
 
 
+    public Dictionary<string, Action> Reactions
+    {
+      set
+      {
+        foreach (var (name, action) in value)
+        {
+          Commands.ListenFor(name, action);
+        }
+      }
+    }
+
     public Commands_Part Commands { get; } = new();
     public class Commands_Part : Part
     {

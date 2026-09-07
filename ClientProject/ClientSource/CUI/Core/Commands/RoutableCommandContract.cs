@@ -16,16 +16,16 @@ namespace CursedUI
     private ImmutableHashSet<string> ConsumesSet = [];
     public IEnumerable<string> Consumes { set => ConsumesSet = value.ToImmutableHashSet(); }
 
-    private ImmutableHashSet<string> EmitsUpSet = [];
-    public IEnumerable<string> EmitsUp { set => EmitsUpSet = value.ToImmutableHashSet(); }
+    private ImmutableHashSet<string> SendsUpSet = [];
+    public IEnumerable<string> SendsUp { set => SendsUpSet = value.ToImmutableHashSet(); }
 
-    private ImmutableHashSet<string> EmitsDownSet = [];
-    public IEnumerable<string> EmitsDown { set => EmitsDownSet = value.ToImmutableHashSet(); }
+    private ImmutableHashSet<string> SendsDownSet = [];
+    public IEnumerable<string> SendsDown { set => SendsDownSet = value.ToImmutableHashSet(); }
 
     public bool CanConsume(string name) => ConsumesSet.Contains(name);
-    public bool CanSendUp(string name) => EmitsUpSet.Contains(name);
-    public bool CanSendDown(string name) => EmitsDownSet.Contains(name);
+    public bool CanSendUp(string name) => SendsUpSet.Contains(name);
+    public bool CanSendDown(string name) => SendsDownSet.Contains(name);
 
-    public override string ToString() => $"Consumes: {Logger.Wrap.IEnumerable(ConsumesSet)} EmitsUp: {Logger.Wrap.IEnumerable(EmitsUpSet)} EmitsDown: {Logger.Wrap.IEnumerable(EmitsDownSet)}";
+    public override string ToString() => $"Consumes: {Logger.Wrap.IEnumerable(ConsumesSet)} SendsUp: {Logger.Wrap.IEnumerable(SendsUpSet)} SendsDown: {Logger.Wrap.IEnumerable(SendsDownSet)}";
   }
 }

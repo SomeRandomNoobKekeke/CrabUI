@@ -25,5 +25,7 @@ namespace CursedUI
     public bool CanConsume(string name) => ConsumesSet.Contains(name);
     public bool CanSendUp(string name) => EmitsUpSet.Contains(name);
     public bool CanSendDown(string name) => EmitsDownSet.Contains(name);
+
+    public override string ToString() => $"Consumes: {Logger.Wrap.IEnumerable(ConsumesSet)} EmitsUp: {Logger.Wrap.IEnumerable(EmitsUpSet)} EmitsDown: {Logger.Wrap.IEnumerable(EmitsDownSet)}";
   }
 }

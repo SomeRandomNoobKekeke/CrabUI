@@ -14,6 +14,19 @@ namespace CursedUI
   {
     public virtual RoutableCommandContract? CommandsContract => null;
 
+    [InitMethod]
+    protected void InjectCommandContract()
+    {
+
+      CommandNode.CommandsContract = CommandsContract;
+
+      if (CommandsContract != null)
+      {
+        CUI.Logger.Log($"{this} [{CommandNode.CommandsContract}]");
+      }
+
+    }
+
     public Dictionary<string, Action> Reactions
     {
       set
@@ -24,6 +37,8 @@ namespace CursedUI
         }
       }
     }
+
+
 
     protected RoutableCommandNode CommandNode { get; } = new();
 
@@ -49,38 +64,34 @@ namespace CursedUI
 
       public void ListenFor(string name, Action<object> action)
       {
-        if (Self.CommandsContract?.CanConsume(name) == false)
+        if (!Self.CommandNode.ListenFor(name, action))
         {
           throw new ContractBrokenException($"[{Self}] can't listen for [{name}]");
         }
-        Self.CommandNode.ListenFor(name, action);
       }
 
       public void SendDown(string name, object data = null)
       {
-        if (Self.CommandsContract?.CanSendDown(name) == false)
+        if (!Self.CommandNode.SendDown(new RoutableCommand(name, data)))
         {
           throw new ContractBrokenException($"[{Self}] can't send [{name}] down");
         }
-        Self.CommandNode.SendDown(new RoutableCommand(name, data));
       }
 
       public void SendUp(string name, object data = null)
       {
-        if (Self.CommandsContract?.CanSendUp(name) == false)
+        if (!Self.CommandNode.SendUp(new RoutableCommand(name, data)))
         {
           throw new ContractBrokenException($"[{Self}] can't send [{name}] up");
         }
-        Self.CommandNode.SendUp(new RoutableCommand(name, data));
       }
 
       public void Execute(string name, object data = null)
       {
-        if (Self.CommandsContract?.CanConsume(name) == false)
+        if (Self.CommandNode.Execute(new RoutableCommand(name, data)))
         {
           throw new ContractBrokenException($"[{Self}] can't execute [{name}]");
         }
-        Self.CommandNode.Execute(new RoutableCommand(name, data));
       }
     }
   }

@@ -12,6 +12,7 @@ namespace CursedUI
     protected Self_As_CUIVisualComponent As_CUIVisualComponent { get; } = new();
     void IComponent.RunInitMethods()
     {
+      InjectCommandContract();
     }
 
     void IComponent.InjectModules()

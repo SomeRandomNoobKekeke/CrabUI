@@ -13,6 +13,7 @@ namespace CursedUI
 {
   public class RoutableCommandNode
   {
+    public RoutableCommandContract? CommandsContract { get; set; }
     public DictOfLists<string, Action<object>> Listeners { get; } = new();
 
     public RoutableCommandNode Parent { get; set; }
@@ -33,36 +34,46 @@ namespace CursedUI
     public void RemoveSelf() => Parent?.RemoveChild(this);
 
 
-    public void ListenFor(string name, Action<object> action)
+    public bool ListenFor(string name, Action<object> action)
     {
+      if (CommandsContract?.CanConsume(name) == false) return false;
       Listeners.Add(name, action);
+      return true;
     }
 
-    public void Execute(RoutableCommand command)
+    public bool Execute(RoutableCommand command)
     {
       if (Listeners.ContainsKey(command.name))
       {
+        if (CommandsContract?.CanConsume(command.name) == false) return false;
+
         foreach (Action<object> action in Listeners[command.name])
         {
           action(command.data);
         }
       }
+      return true;
     }
-    public void SendDown(RoutableCommand command)
+
+    public bool SendDown(RoutableCommand command)
     {
-      if (Children.Count == 0) return;
+      if (CommandsContract?.CanSendDown(command.name) == false) return false;
+      if (Children.Count == 0) return true;
 
       for (int i = Children.Count - 1; i >= 0; i--)
       {
         Children[i].Execute(command);
         Children[i].SendDown(command);
       }
+      return true;
     }
 
-    public void SendUp(RoutableCommand command)
+    public bool SendUp(RoutableCommand command)
     {
+      if (CommandsContract?.CanSendUp(command.name) == false) return false;
       Parent?.Execute(command);
       Parent?.SendUp(command);
+      return true;
     }
 
 

@@ -52,6 +52,8 @@ namespace CursedUI
       if (Parent is null) return;
       if (!RequireChildrenUpdate) return;
 
+      Debug_Calc.Send($"---------- Calculating children in {Parent}");
+
       foreach (Layout.Child c in Parent.Children)
       {
         Debug_Calc.Send($"calculating [{c}]");
@@ -78,7 +80,7 @@ namespace CursedUI
         if (c.Relative.Height.HasValue) h = c.Relative.Height.Value * Parent.ChildrenRect.Height;
         if (c.CrossRelative.Height.HasValue) h = c.CrossRelative.Height.Value * Parent.ChildrenRect.Width;
         if (c.Absolute.Height.HasValue) h = c.Absolute.Height.Value;
-        Debug_Calc.Send($"step 1 [{x},{y},{w},{h}]");
+        Debug_Calc.Send($"from direct values 1 [{x},{y},{w},{h}]");
 
 
 
@@ -95,7 +97,7 @@ namespace CursedUI
         if (c.RelativeMin.Height.HasValue) h = Math.Max(h, c.RelativeMin.Height.Value * Parent.ChildrenRect.Height);
         if (c.AbsoluteMin.Height.HasValue) h = Math.Max(h, c.AbsoluteMin.Height.Value);
         if (c.MinSize.Y.HasValue) h = Math.Max(h, c.MinSize.Y.Value + c.OutToChildDiff.FullHeigth);
-        Debug_Calc.Send($"step 2 [{x},{y},{w},{h}]");
+        Debug_Calc.Send($"from min values [{x},{y},{w},{h}]");
 
 
         if (c.RelativeMax.Left.HasValue) x = Math.Min(x, c.RelativeMax.Left.Value * Parent.ChildrenRect.Width);
@@ -111,7 +113,7 @@ namespace CursedUI
         if (c.RelativeMax.Height.HasValue) h = Math.Min(h, c.RelativeMax.Height.Value * Parent.ChildrenRect.Height);
         if (c.AbsoluteMax.Height.HasValue) h = Math.Min(h, c.AbsoluteMax.Height.Value);
         if (c.MaxSize.Y.HasValue) h = Math.Min(h, c.MaxSize.Y.Value);
-        Debug_Calc.Send($"step 3 [{x},{y},{w},{h}]");
+        Debug_Calc.Send($"from max values [{x},{y},{w},{h}]");
 
         Vector2 anchorPos = CUIAnchor.ChildPosIn(
           Parent.ChildrenRect.Size,
@@ -141,8 +143,15 @@ namespace CursedUI
 
     public override void UpdateParent()
     {
+      Debug_Calc.Send($"---------- Calculating parent in {Parent}");
+
+      Parent.MinSize = new CUINullVector2();
+      Parent.MaxSize = new CUINullVector2();
+
       if (Parent.FitContent.X)
       {
+        Debug_Calc.Send($"{Parent}.FitContent.X");
+
         float rightmostRight = 0;
         foreach (Child c in Parent.Children)
         {
@@ -162,12 +171,15 @@ namespace CursedUI
           rightmostRight = Math.Max(rightmostRight, x + w + c.OutToChildDiff.FullWidth);
         }
 
+        Debug_Calc.Send($"rightmostRight: {rightmostRight}");
         Parent.MinSize = Parent.MinSize with { X = rightmostRight };
         // Parent.MaxSize = Parent.MaxSize with { X = rightmostRight }; //TODO
       }
 
       if (Parent.FitContent.Y)
       {
+        Debug_Calc.Send($"{Parent}.FitContent.Y");
+
         float bottommostBottom = 0;
         foreach (Child c in Parent.Children)
         {
@@ -187,6 +199,7 @@ namespace CursedUI
           bottommostBottom = Math.Max(bottommostBottom, y + h + c.OutToChildDiff.FullHeigth);
         }
 
+        Debug_Calc.Send($"bottommostBottom: {bottommostBottom}");
         Parent.MinSize = Parent.MinSize with { Y = bottommostBottom };
         // Parent.MaxSize = Parent.MaxSize with { Y = bottommostBottom };
       }

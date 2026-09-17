@@ -52,6 +52,8 @@ namespace CursedUI
       List<ChildSize> sizes = new();
       List<ChildSize> resizables = new();
 
+      Debug_Calc.Send($"---------- calculating children in {Parent}");
+
       TotalWidth = 0;
       foreach (Layout.Child c in Parent.Children)
       {
@@ -166,8 +168,15 @@ namespace CursedUI
 
     public override void UpdateParent()
     {
+      Debug_Calc.Send($"---------- Calculating parent in {Parent}");
+
+      Parent.MinSize = new CUINullVector2();
+      Parent.MaxSize = new CUINullVector2();
+
       if (Parent.FitContent.X)
       {
+        Debug_Calc.Send($"{Parent}.FitContent.X");
+
         float totalWidth = 0;
         foreach (Layout.Child c in Parent.Children)
         {
@@ -180,15 +189,20 @@ namespace CursedUI
           if (c.MinSize.X.HasValue) w = Math.Max(w, c.MinSize.X.Value + c.OutToChildDiff.FullWidth);
           if (c.MaxSize.X.HasValue) w = Math.Min(w, c.MaxSize.X.Value);
 
+          Debug_Calc.Send($"child {c}.Width: {w}");
+
           totalWidth += w;
         }
 
+        Debug_Calc.Send($"totalWidth = {totalWidth}");
         Parent.MinSize = Parent.MinSize with { X = totalWidth };
         // Parent.MaxSize = Parent.MaxSize with { X = totalWidth };
       }
 
       if (Parent.FitContent.Y)
       {
+        Debug_Calc.Send($"{Parent}.FitContent.Y");
+
         float maxHeight = 0;
         foreach (Layout.Child c in Parent.Children)
         {
@@ -200,9 +214,12 @@ namespace CursedUI
           if (c.MinSize.Y.HasValue) h = Math.Max(h, c.MinSize.Y.Value + c.OutToChildDiff.FullHeigth);
           if (c.MaxSize.Y.HasValue) h = Math.Min(h, c.MaxSize.Y.Value);
 
+          Debug_Calc.Send($"child {c}.Height: {h}");
+
           maxHeight = Math.Max(maxHeight, h);
         }
 
+        Debug_Calc.Send($"maxHeight = {maxHeight}");
         Parent.MinSize = Parent.MinSize with { Y = maxHeight };
         // Parent.MaxSize = Parent.MaxSize with { Y = maxHeight };
       }

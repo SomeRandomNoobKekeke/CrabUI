@@ -27,8 +27,8 @@ namespace CursedUI
       private CUIRadioButton DrawEventFlow;
       private CUIRadioButton UpdateEventFlow;
 
-      public int MaxEvents = 50;
-      public CUIDirection Direction => FreeEventFlow.IsSelected ? CUIDirection.Reverse : CUIDirection.Straight;
+      public int MaxEvents = 1000;
+      public CUIDirection Direction => FreeEventFlow.IsSelected ? CUIDirection.Straight : CUIDirection.Straight;
 
       private bool ClearRequested;
       private bool CreatedFromHandleDebugEvent; //HACK

@@ -15,15 +15,34 @@ namespace CursedUI
     {
       public class AbsolutePropPattern : Pattern
       {
-        public override void MarkFunc(Target host)
+
+        private void MarkUp(Target host)
         {
           host.Layout.RequireParentUpdate = true;
-          host.Layout.RequireChildrenUpdate = true;
 
           if (host.Parent is not null)
           {
-            MarkFunc(host.Parent);
+            MarkUp(host.Parent);
           }
+          else // We reached the top
+          {
+            MarkDown(host);
+          }
+        }
+
+        private void MarkDown(Target container)
+        {
+          container.Layout.RequireChildrenUpdate = true;
+
+          foreach (Target child in container.Children)
+          {
+            MarkDown(child);
+          }
+        }
+
+        public override void MarkFunc(Target host)
+        {
+          MarkUp(host);
         }
       }
     }

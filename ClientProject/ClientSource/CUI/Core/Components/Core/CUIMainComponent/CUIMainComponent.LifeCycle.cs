@@ -23,7 +23,17 @@ namespace CursedUI
     }
 
 
-    public bool RequireLayoutUpdate { get; set; }
+    private bool _RequireLayoutUpdate; public bool RequireLayoutUpdate
+    {
+      get => _RequireLayoutUpdate;
+      set
+      {
+
+        // if (!_RequireLayoutUpdate && value) CUI.Logger.PrintStackTrace();
+        _RequireLayoutUpdate = value;
+
+      }
+    }
     public bool RequireVisualRestructure { get; set; }
 
 

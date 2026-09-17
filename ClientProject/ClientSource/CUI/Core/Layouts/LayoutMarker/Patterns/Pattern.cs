@@ -15,6 +15,7 @@ namespace CursedUI
     {
       public static Pattern None = new Pattern() { Empty = true };
       public static Pattern FromParentAndDown = new FromParentAndDownPattern();
+      public static Pattern Down = new DownPattern();
       public static Pattern OnlyParent = new OnlyParentPattern();
       public static Pattern AbsoluteProp = new AbsolutePropPattern();
       public static Pattern UpAndDown = new UpAndDownPattern();

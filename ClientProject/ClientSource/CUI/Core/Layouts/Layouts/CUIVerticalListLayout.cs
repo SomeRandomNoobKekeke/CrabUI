@@ -37,6 +37,11 @@ namespace CursedUI
       public float Height { get; set; }
     }
 
+    public CUIDebugNode<string> Debug_Calc = new(DebugCategory.LayoutCalculations)
+    {
+      MsgFactory = (s) => s
+    };
+
     public float TotalHeight { get; private set; }
 
     public override void UpdateChildren()
@@ -47,37 +52,44 @@ namespace CursedUI
       List<ChildSize> sizes = new();
       List<ChildSize> resizables = new();
 
+      Debug_Calc.Send($"---------- calculating children in {Parent}");
       TotalHeight = 0;
       foreach (Layout.Child c in Parent.Children)
       {
-        //TODO add prop for it
+        Debug_Calc.Send($"calculating [{c}]");
+
         float w = Parent.ChildrenRect.Width;// Resize to host width by default
         float h = 0;
+        Debug_Calc.Send($"init size [{w},{h}]");
 
         if (c.Relative.Width.HasValue) w = c.Relative.Width.Value * Parent.ChildrenRect.Width;
         if (c.CrossRelative.Width.HasValue) w = c.CrossRelative.Width.Value * Parent.ChildrenRect.Height;
         if (c.Absolute.Width.HasValue) w = c.Absolute.Width.Value;
 
+        if (c.Relative.Height.HasValue) h = c.Relative.Height.Value * Parent.ChildrenRect.Height;
+        if (c.CrossRelative.Height.HasValue) h = c.CrossRelative.Height.Value * Parent.ChildrenRect.Width;
+        if (c.Absolute.Height.HasValue) h = c.Absolute.Height.Value;
+        Debug_Calc.Send($"size 1 [{w},{h}]");
+
+
         if (c.RelativeMin.Width.HasValue) w = Math.Max(w, c.RelativeMin.Width.Value * Parent.ChildrenRect.Width);
         if (c.AbsoluteMin.Width.HasValue) w = Math.Max(w, c.AbsoluteMin.Width.Value);
         if (c.MinSize.X.HasValue) w = Math.Max(w, c.MinSize.X.Value + c.OutToChildDiff.FullWidth);
+
+        if (c.RelativeMin.Height.HasValue) h = Math.Max(h, c.RelativeMin.Height.Value * Parent.ChildrenRect.Height);
+        if (c.AbsoluteMin.Height.HasValue) h = Math.Max(h, c.AbsoluteMin.Height.Value);
+        if (c.MinSize.Y.HasValue) h = Math.Max(h, c.MinSize.Y.Value + c.OutToChildDiff.FullHeigth);
+        Debug_Calc.Send($"size 2 [{w},{h}]");
+
 
         if (c.RelativeMax.Width.HasValue) w = Math.Min(w, c.RelativeMax.Width.Value * Parent.ChildrenRect.Width);
         if (c.AbsoluteMax.Width.HasValue) w = Math.Min(w, c.AbsoluteMax.Width.Value);
         if (c.MaxSize.X.HasValue) w = Math.Min(w, c.MaxSize.X.Value);
 
-
-        if (c.Relative.Height.HasValue) h = c.Relative.Height.Value * Parent.ChildrenRect.Height;
-        if (c.CrossRelative.Height.HasValue) h = c.CrossRelative.Height.Value * Parent.ChildrenRect.Width;
-        if (c.Absolute.Height.HasValue) h = c.Absolute.Height.Value;
-
-        if (c.RelativeMin.Height.HasValue) h = Math.Max(h, c.RelativeMin.Height.Value * Parent.ChildrenRect.Height);
-        if (c.AbsoluteMin.Height.HasValue) h = Math.Max(h, c.AbsoluteMin.Height.Value);
-        if (c.MinSize.Y.HasValue) h = Math.Max(h, c.MinSize.Y.Value + c.OutToChildDiff.FullHeigth);
-
         if (c.RelativeMax.Height.HasValue) h = Math.Min(h, c.RelativeMax.Height.Value * Parent.ChildrenRect.Height);
         if (c.AbsoluteMax.Height.HasValue) h = Math.Min(h, c.AbsoluteMax.Height.Value);
         if (c.MaxSize.Y.HasValue) h = Math.Min(h, c.MaxSize.Y.Value);
+        Debug_Calc.Send($"size 3 [{w},{h}]");
 
         ChildSize size = new ChildSize
         {
@@ -107,9 +119,12 @@ namespace CursedUI
         {
           resizables[i].Height = emptySpace * resizables[i].Child.Flex.Value / totalFlex;
           spaceleft -= resizables[i].Height;
+
+          Debug_Calc.Send($"resizable [{i}] [{resizables[i].Child}] flex:[{resizables[i].Child.Flex.Value}] h:[{resizables[i].Height}]");
         }
 
         resizables.Last().Height = spaceleft;
+        Debug_Calc.Send($"resizable [{resizables.Count - 1}] [{resizables.Last().Child}] flex:[{resizables.Last().Child.Flex.Value}] h:[{resizables.Last().Height}]");
       }
 
       if (Parent.Direction == CUIDirection.Straight)
@@ -152,8 +167,15 @@ namespace CursedUI
 
     public override void UpdateParent()
     {
+      Debug_Calc.Send($"---------- Calculating parent in {Parent}");
+
+      Parent.MinSize = new CUINullVector2();
+      Parent.MaxSize = new CUINullVector2();
+
       if (Parent.FitContent.X)
       {
+        Debug_Calc.Send($"{Parent}.FitContent.X");
+
         float maxWidth = 0;
         foreach (Layout.Child c in Parent.Children)
         {
@@ -165,15 +187,20 @@ namespace CursedUI
           if (c.MinSize.X.HasValue) w = Math.Max(w, c.MinSize.X.Value + c.OutToChildDiff.FullWidth);
           if (c.MaxSize.X.HasValue) w = Math.Min(w, c.MaxSize.X.Value);
 
+          Debug_Calc.Send($"child {c}.Width: {w}");
+
           maxWidth = Math.Max(maxWidth, w);
         }
 
+        Debug_Calc.Send($"maxWidth = {maxWidth}");
         Parent.MinSize = Parent.MinSize with { X = maxWidth };
         // Parent.MaxSize = Parent.MaxSize with { X = maxWidth };
       }
 
       if (Parent.FitContent.Y)
       {
+        Debug_Calc.Send($"{Parent}.FitContent.Y");
+
         float totalHeight = 0;
         foreach (Layout.Child c in Parent.Children)
         {
@@ -187,14 +214,22 @@ namespace CursedUI
           if (c.MinSize.Y.HasValue) h = Math.Max(h, c.MinSize.Y.Value + c.OutToChildDiff.FullHeigth);
           if (c.MaxSize.Y.HasValue) h = Math.Min(h, c.MaxSize.Y.Value);
 
+          Debug_Calc.Send($"child {c}.Height: {h}");
+
           totalHeight += h;
         }
 
+        Debug_Calc.Send($"totalHeight = {totalHeight}");
         Parent.MinSize = Parent.MinSize with { Y = totalHeight };
         // Parent.MaxSize = Parent.MaxSize with { Y = totalHeight };
       }
 
       RequireParentUpdate = false;
+    }
+
+    public CUIVerticalListLayout()
+    {
+      Debug_Calc.Map(Debug_Calculations);
     }
   }
 }

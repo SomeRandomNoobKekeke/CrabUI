@@ -81,12 +81,12 @@ namespace CursedUI
 
       public CUILayoutVectorProp ChildrenOffset { get; } = new()
       {
-        Pattern = LayoutMarker.Pattern.FromParentAndDown,
+        Pattern = LayoutMarker.Pattern.Down,
       };
 
       public CUILayoutProp<Func<CUIRect, CUIBoundaries>> ChildrenBounds { get; } = new()
       {
-        Pattern = LayoutMarker.Pattern.FromParentAndDown,
+        Pattern = LayoutMarker.Pattern.Down,
       };
 
       public CUILayoutProp<CUIBool2> FitContent { get; } = new()

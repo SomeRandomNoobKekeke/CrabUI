@@ -10,7 +10,7 @@ using System.Text.Json;
 using CUILibs;
 namespace CursedUI
 {
-  public partial record CUISprite : IParsable
+  public partial class CUISprite : IParsable
   {
     public static CUISprite Get(string key)
     {

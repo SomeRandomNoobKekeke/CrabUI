@@ -10,7 +10,7 @@ using System.IO;
 
 namespace CursedUI
 {
-  public partial record CUISprite
+  public partial class CUISprite
   {
     public static CUISprite Transparent => new CUISprite(CUITexture2D.White) { Color = Color.Transparent };
     public static CUISprite White => new CUISprite(CUITexture2D.White);

@@ -19,7 +19,8 @@ namespace CursedUIUser
       {
         CUIFrame frame = new CUIDefault.Frame("CUIIconButton", 400, 600);
 
-        frame["button"] = new CUIIconButton(CUISprite.CrossIcon with { Color = Color.Lime })
+        frame["button"] = new CUIIconButton(
+          new CUISprite(CUISprite.CrossIcon) { Color = Color.Lime })
         {
           Anchor = CUIAnchor.Center,
         };

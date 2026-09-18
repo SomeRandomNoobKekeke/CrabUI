@@ -10,13 +10,19 @@ using System.IO;
 
 namespace CursedUI
 {
-  public partial record CUISprite
+  public partial class CUISprite
   {
     private static Point IconsTL = new Point(462, 0);
+    private static Point IconsSize = new Point(24, 24);
     public static CUISprite AtIconIndex(int x, int y, int w = 1, int h = 1)
       => new CUISprite(CUICore.TextureManager.Get("CUI"))
       {
-        SourceRectangle = new Rectangle(IconsTL.X + 1 + 26 * x, IconsTL.Y + 1 + 26 * y, 24 * w, 24 * h)
+        SourceRectangle = new Rectangle(
+          IconsTL.X + 1 + (IconsSize.X + 2) * x,
+          IconsTL.Y + 1 + (IconsSize.Y + 2) * y,
+          IconsSize.X * w,
+          IconsSize.Y * h
+        )
       };
 
     /// <summary>

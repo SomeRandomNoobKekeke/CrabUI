@@ -7,18 +7,20 @@ using System.Runtime.CompilerServices;
 using Barotrauma;
 using CUILibs;
 using CursedUI;
-using System.Xml.Linq;
-using Barotrauma.LuaCs;
-using CUICodeGenerator;
 using Microsoft.Xna.Framework;
 
 namespace CursedUIUser
 {
-  public partial class Mod : IAssemblyPlugin
+  public partial class SnapshotTests
   {
-    public void Experiment()
+    public static partial class Random
     {
-      // new OverridingVirtualProps().Run();
+      public static CUIComponent AnimatedSprite()
+      {
+        CUIComponent frame = new CUIDefault.Frame("AnimatedSprite", 400, 600);
+
+        return frame;
+      }
     }
   }
 }

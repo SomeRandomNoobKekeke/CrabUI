@@ -10,7 +10,7 @@ using System.Text.Json;
 using CUILibs;
 namespace CursedUI
 {
-  public partial record CUISprite
+  public partial class CUISprite : ITextureSource
   {
     private CUITexture2D _Texture; public CUITexture2D Texture
     {
@@ -167,7 +167,15 @@ namespace CursedUI
 
     }
 
+
+
+
     public CUISprite() { Texture = CUITexture2D.White; }
     public CUISprite(CUITexture2D texture) { Texture = texture; }
+    public CUISprite(CUISprite basedOn)
+    {
+      Texture = basedOn.Texture;
+      SourceRectangle = basedOn.SourceRectangle;
+    }
   }
 }

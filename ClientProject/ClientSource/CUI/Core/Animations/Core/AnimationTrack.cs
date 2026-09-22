@@ -10,16 +10,11 @@ namespace CursedUI
 {
   public class AnimationTrack
   {
-    /// <summary>
-    /// 0..1 - segment
-    /// Speed - 1 step size
-    /// 1.0 / Speed - amount of steps in animation
-    /// Duration / AnimationPlayer.UpdateStepDuration - amount of steps in animation
-    /// </summary>
+
     public double Duration
     {
-      get => AnimationPlayer.UpdateStepDuration / _Speed;
-      set => _Speed = AnimationPlayer.UpdateStepDuration / value;
+      get => 1.0 / _Speed;
+      set => _Speed = 1.0 / value;
     }
 
     private Func<double, double> _Func = f => f; public Func<double, double> Func
@@ -27,7 +22,8 @@ namespace CursedUI
       get => _Func;
       set => _Func = value is not null ? value : throw new ArgumentNullException(nameof(Func));
     }
-    private double _Speed = 1.0 / AnimationPlayer.UpdateStepsInSecond; public double Speed
+
+    private double _Speed = 1.0; public double Speed
     {
       get => _Speed;
       set => _Speed = Math.Max(0, value);

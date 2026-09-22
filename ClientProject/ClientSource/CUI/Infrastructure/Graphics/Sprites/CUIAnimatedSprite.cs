@@ -73,11 +73,7 @@ namespace CursedUI
 
     public CUIAnimatedSprite() : base()
     {
-      Animation.Changed += (i) =>
-      {
-        CurrentSource = i;
-        CUI.Logger.Log($"frame {i}");
-      };
+      Animation.Changed += (i) => CurrentSource = i;
     }
 
     public CUIAnimatedSprite(List<ITextureSource> sources) : this()

@@ -49,6 +49,9 @@ namespace CursedUI
       {
         if (!Self.Activated) return;
 
+        double deltaTime = totalTime - LastUpdateTime;
+        LastUpdateTime = totalTime;
+
         try
         {
           Stopwatch sw = Stopwatch.StartNew();
@@ -69,7 +72,7 @@ namespace CursedUI
           Self.FocusHandle.ResolveFocus();
           Self.FocusHandle.Reset();
 
-          Self._AnimationPlayer.Update();
+          Self._AnimationPlayer.Update(deltaTime);
 
           OnUpdate.Raise(totalTime);
 

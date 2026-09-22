@@ -147,16 +147,11 @@ namespace CursedUI
     }
 
 
-    public void Update()
+    public void Update(double deltaTime)
     {
-      Step();
+      Pointer += SignedSpeed * deltaTime;
       UpdateState();
       Updated?.Invoke(Lambda);
-    }
-
-    private void Step()
-    {
-      Pointer += SignedSpeed;
     }
 
     private void UpdateState()

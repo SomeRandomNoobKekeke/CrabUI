@@ -10,15 +10,16 @@ namespace CursedUI
 {
   public class AnimationPlayer
   {
-    public const double UpdateStepDuration = Timing.Step;
-    public const double UpdateStepsInSecond = 1.0 / Timing.Step;
-
     private HashSet<AnimationCore> RunningAnimations = new();
-    public void Update()
+    public static int step = 0;
+    public static int maxStep = 0;
+
+    public static double lastTime;
+    public void Update(double deltaTime)
     {
       foreach (AnimationCore animation in RunningAnimations)
       {
-        animation.Update();
+        animation.Update(deltaTime);
       }
     }
 

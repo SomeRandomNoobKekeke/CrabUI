@@ -24,8 +24,7 @@ namespace CursedUIUser
           frames: new Point(12, 1), frameSize: new Point(64, 64), gap: new Point(2, 0)
         );
 
-        sprite.SecPerFrame = 1;
-        CUI.Logger.Log(sprite.Animation.Duration);
+        sprite.MsPerFrame = 100;
 
         sprite.Animation.RunForward();
 

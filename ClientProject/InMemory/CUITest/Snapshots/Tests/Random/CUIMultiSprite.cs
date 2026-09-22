@@ -15,7 +15,7 @@ namespace CursedUIUser
   {
     public static partial class Random
     {
-      public static CUIComponent CUIMultiSprite()
+      public static CUIComponent MultiSprite()
       {
         CUIComponent frame = new CUIDefault.Frame("CUIMultiSprite", 400, 600);
 

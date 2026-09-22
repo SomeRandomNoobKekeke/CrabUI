@@ -10,7 +10,8 @@ namespace CursedUI
 {
   public class AnimationPlayer
   {
-    public double UpdateStepDuration { get; set; } = Timing.Step;
+    public const double UpdateStepDuration = Timing.Step;
+    public const double UpdateStepsInSecond = 1.0 / Timing.Step;
 
     private HashSet<AnimationCore> RunningAnimations = new();
     public void Update()

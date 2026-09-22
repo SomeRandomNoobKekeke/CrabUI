@@ -14,13 +14,53 @@ namespace CursedUI
 {
   public class CUIAnimatedSprite : CUIMultiSprite
   {
-    public static CUIAnimatedSprite FromSpriteAtlas(
+    public double MsPerFrame
+    {
+      get => SecPerFrame * 1000.0;
+      set => SecPerFrame = value / 1000.0;
+    }
+
+    public double SecPerFrame
+    {
+      get => Animation.Duration / Sources.Count;
+      set => Animation.Duration = Sources.Count * value;
+    }
+
+    private TypedAnimation<int> _Animation; public TypedAnimation<int> Animation
+    {
+      get => _Animation;
+      set
+      {
+        if (_Animation is not null) _Animation.Changed -= UpdateSource;
+        _Animation = value;
+        if (_Animation is not null) _Animation.Changed += UpdateSource;
+      }
+    }
+
+    private void UpdateSource(int i) => CurrentSource = i;
+
+
+    public CUIAnimatedSprite() : base()
+    {
+      Animation = new();
+    }
+
+    public CUIAnimatedSprite(
+      List<ITextureSource> sources,
+      TypedAnimation<int> animation
+    ) : base()
+    {
+      Sources = sources;
+      Animation = animation;
+    }
+
+    public CUIAnimatedSprite(
       CUITexture2D texture,
       Point? frames,
       Point? frameSize,
       Point? gap = null,
       Point? start = null
-    )
+    ) : base()
     {
       Point _frames = frames ?? new Point(1, 1);
       Point _frameSize = frameSize ?? texture.Bounds.Size;
@@ -45,40 +85,15 @@ namespace CursedUI
         }
       }
 
-      return new CUIAnimatedSprite(sources)
+      Sources = sources;
+
+      Animation = new()
       {
-        Animation = {
-          StartValue = 0,
-          EndValue = sources.Count - 1,
-          OnEnd = ActionOnTrackEnd.Repeat,
-        }
+        StartValue = 0,
+        EndValue = Sources.Count - 1,
+        OnEnd = ActionOnTrackEnd.Repeat,
       };
     }
 
-    public double MsPerFrame
-    {
-      get => SecPerFrame * 1000.0;
-      set => SecPerFrame = value / 1000.0;
-    }
-
-    public double SecPerFrame
-    {
-      get => Animation.Duration / Sources.Count;
-      set => Animation.Duration = Sources.Count * value;
-    }
-
-
-    public TypedAnimation<int> Animation { get; } = new();
-
-
-    public CUIAnimatedSprite() : base()
-    {
-      Animation.Changed += (i) => CurrentSource = i;
-    }
-
-    public CUIAnimatedSprite(List<ITextureSource> sources) : this()
-    {
-      Sources = sources;
-    }
   }
 }

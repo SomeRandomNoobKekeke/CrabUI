@@ -19,12 +19,14 @@ namespace CursedUIUser
       {
         CUIComponent frame = new CUIDefault.Frame("AnimatedSprite", 400, 600);
 
-        CUIAnimatedSprite sprite = CUIAnimatedSprite.FromSpriteAtlas(
+        CUIAnimatedSprite sprite = new CUIAnimatedSprite(
           CUI.TextureManager.Get("Assets/PNG/For testing/CursorDefault.png"),
-          frames: new Point(12, 1), frameSize: new Point(64, 64), gap: new Point(2, 0)
-        );
-
-        sprite.MsPerFrame = 100;
+          frames: new Point(12, 1),
+          frameSize: new Point(64, 64),
+          gap: new Point(2, 0),
+          start: new Point(0, 64)
+        )
+        { MsPerFrame = 100 };
 
         sprite.Animation.RunForward();
 

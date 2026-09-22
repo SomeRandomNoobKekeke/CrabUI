@@ -62,9 +62,9 @@ namespace CursedUI
           Self._Input.Update(totalTime, mouse, keyboard, textInput);
           Self._EventConstructor.Construct(Self._Input);
 
-          Self.TopMain.Update(totalTime, Self._Input);
+          Self.TopMain.Update(Self._Input);
           Self.VanillaGUILayer.Update(Self._Input);
-          Self.Main.Update(totalTime, Self._Input);
+          Self.Main.Update(Self._Input);
           Self.VanillaGUILayer.CommunicateCUIMouseOnToRunner();
 
 

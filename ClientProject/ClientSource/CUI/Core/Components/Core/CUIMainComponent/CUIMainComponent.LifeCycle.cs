@@ -19,7 +19,7 @@ namespace CursedUI
 
     public void Step()
     {
-      Update(LastUpdateTime + UpdateInterval, null);
+      Update(null);
     }
 
 
@@ -36,9 +36,7 @@ namespace CursedUI
     }
     public bool RequireVisualRestructure { get; set; }
 
-
-    private double LastUpdateTime;
-    public void Update(double totalTime, CUIInput Input)
+    public void Update(CUIInput Input)
     {
       GlobalEvents.BeforeUpdate.Raise();
 
@@ -66,7 +64,6 @@ namespace CursedUI
         VisualFlattener.Flatten(this);
       }
 
-      LastUpdateTime = totalTime;
       GlobalEvents.AfterUpdate.Raise();
     }
 

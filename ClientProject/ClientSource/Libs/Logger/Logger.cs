@@ -12,15 +12,18 @@ using System.Text;
 
 namespace CUILibs
 {
-  public partial class Logger : ILogger
+  public partial class Logger
   {
-    public static Logger Default = new Logger()
-    {
-      PrintFilePath = false,
-    };
+    public static Logger Default = new Logger() { PrintFilePath = false };
 
+#if CLIENT
     public static string WrapInColor(object msg, string color) => $"‖color:{color}‖{msg}‖end‖";
     public static string White(object msg) => $"‖color:white‖{msg}‖end‖";
+#elif SERVER
+    public static string WrapInColor(object msg, string color) => msg.ToString();
+    public static string White(object msg) => msg.ToString();
+#endif
+
 
     public interface ISerializer { public string Serialize(object o); }
     public class MicroSerializer : ISerializer
@@ -42,9 +45,7 @@ namespace CUILibs
     /// Set this to true to see the source of the logs
     /// </summary>
     public bool PrintFilePath { get; set; } = false;
-    public bool PrintLogs { get; set; } = true;
-    public bool PrintWarnings { get; set; } = true;
-    public bool PrintErrors { get; set; } = true;
+
 
     public ISerializer Serializer { get; set; } = new MicroSerializer();
 
@@ -52,56 +53,63 @@ namespace CUILibs
     /// <summary>
     /// Log with LogColor
     /// </summary>
-    public void Log(object msg1, [CallerFilePath] string source = "", [CallerLineNumber] int lineNumber = 0)
+    public void Log(object msg1)
     {
-      _Log(msg1, source, lineNumber);
+      Print(msg1, LogColor);
     }
-    public void Log(object msg1, object msg2, [CallerFilePath] string source = "", [CallerLineNumber] int lineNumber = 0)
+    public void Log(object msg1, object msg2)
     {
-      _Log(msg1, source, lineNumber);
-      _Log(msg2, source, lineNumber);
+      Print(msg1, LogColor);
+      Print(msg2, LogColor);
     }
-    public void Log(object msg1, object msg2, object msg3, [CallerFilePath] string source = "", [CallerLineNumber] int lineNumber = 0)
+    public void Log(object msg1, object msg2, object msg3)
     {
-      _Log(msg1, source, lineNumber);
-      _Log(msg2, source, lineNumber);
-      _Log(msg3, source, lineNumber);
-    }
-
-    private void _Log(object msg, string source = "", int lineNumber = 0)
-    {
-      if (PrintLogs) Print(msg, LogColor, source, lineNumber);
+      Print(msg1, LogColor);
+      Print(msg2, LogColor);
+      Print(msg3, LogColor);
     }
 
-    /// <summary>
-    /// Log with WarningColor
-    /// </summary>
-    /// /// 
-    public void Warning(object msg, [CallerFilePath] string source = "", [CallerLineNumber] int lineNumber = 0)
-    { if (PrintWarnings) Print(msg, WarningColor, source, lineNumber); }
+    public void Log(object msg1, object msg2, object msg3, object msg4)
+    {
+      Print(msg1, LogColor);
+      Print(msg2, LogColor);
+      Print(msg3, LogColor);
+      Print(msg4, LogColor);
+    }
 
-    /// <summary>
-    /// Log with ErrorColor
-    /// </summary>
-    public void Error(object msg, [CallerFilePath] string source = "", [CallerLineNumber] int lineNumber = 0)
-    { if (PrintErrors) Print(msg, ErrorColor, source, lineNumber); }
+    public void Log(object msg1, object msg2, object msg3, object msg4, object msg5)
+    {
+      Print(msg1, LogColor);
+      Print(msg2, LogColor);
+      Print(msg3, LogColor);
+      Print(msg4, LogColor);
+      Print(msg5, LogColor);
+    }
+
+    public void Warning(object msg) => Print(msg, WarningColor);
+    public void Error(object msg) => Print(msg, ErrorColor);
 
     /// <summary>
     /// Log with Color
     /// </summary>
-    public void Print(object msg, Color color, [CallerFilePath] string source = "", [CallerLineNumber] int lineNumber = 0)
+    public void Print(object msg, Color color)
     {
-      if (PrintFilePath) _PrintFilePath(color * 0.8f, source, lineNumber);
-      _Print(msg, color);
+#if CLIENT
+      DebugConsole.NewMessage(Serializer.Serialize(msg), color);
+#else
+      DebugConsole.NewMessage(Serializer.Serialize(msg), color * 0.8f);
+#endif
     }
 
     /// <summary>
     /// Log with file path
+    /// Use this for print debugging, because in case you forget to remove it
+    /// you will have option to turn PrintFilePath to true and see exact file and line number where you left it 
     /// </summary>
     public void Info(object msg, [CallerFilePath] string source = "", [CallerLineNumber] int lineNumber = 0)
     {
-      _PrintFilePath(LogColor * 0.8f, source, lineNumber);
-      _Print(msg, LogColor);
+      if (PrintFilePath) _PrintFilePath(LogColor * 0.8f, source, lineNumber);
+      Print(msg, LogColor);
     }
 
     /// <summary>
@@ -127,22 +135,21 @@ namespace CUILibs
       Log($"\n");
     }
 
-    private void _Print(object msg, Color color)
-    {
-      LuaCsLogger.LogMessage(Serializer.Serialize(msg), color * 0.8f, color);
-    }
-
     private void _PrintFilePath(Color color, string source, int lineNumber)
     {
       var fi = new FileInfo(source);
-      LuaCsLogger.LogMessage($"{fi.Directory.Name}/{fi.Name}:{lineNumber}", color * 0.8f, color);
+#if CLIENT
+      DebugConsole.NewMessage($"{fi.Directory.Name}/{fi.Name}:{lineNumber}", color);
+#else
+      DebugConsole.NewMessage($"{fi.Directory.Name}/{fi.Name}:{lineNumber}", color * 0.8f);
+#endif
     }
 
     public void LogVars(object arg1,
       [CallerArgumentExpression("arg1")] string exp1 = null
     )
     {
-      _Print($"{exp1}: [{WrapInColor(arg1, "white")}]", LogColor);
+      Print($"{exp1}: [{WrapInColor(arg1, "white")}]", LogColor);
     }
 
     public void LogVars(object arg1, object arg2,
@@ -150,7 +157,7 @@ namespace CUILibs
       [CallerArgumentExpression("arg2")] string exp2 = null
     )
     {
-      _Print($"{exp1}: [{WrapInColor(arg1, "white")}], {exp2}: [{WrapInColor(arg2, "white")}]", LogColor);
+      Print($"{exp1}: [{WrapInColor(arg1, "white")}], {exp2}: [{WrapInColor(arg2, "white")}]", LogColor);
     }
 
 
@@ -160,7 +167,7 @@ namespace CUILibs
       [CallerArgumentExpression("arg3")] string exp3 = null
     )
     {
-      _Print($"{exp1}: [{WrapInColor(arg1, "white")}], {exp2}: [{WrapInColor(arg2, "white")}], {exp3}: [{WrapInColor(arg3, "white")}]", LogColor);
+      Print($"{exp1}: [{WrapInColor(arg1, "white")}], {exp2}: [{WrapInColor(arg2, "white")}], {exp3}: [{WrapInColor(arg3, "white")}]", LogColor);
     }
 
     public void LogVars(object arg1, object arg2, object arg3, object arg4,
@@ -170,7 +177,7 @@ namespace CUILibs
       [CallerArgumentExpression("arg4")] string exp4 = null
     )
     {
-      _Print($"{exp1}: [{WrapInColor(arg1, "white")}], {exp2}: [{WrapInColor(arg2, "white")}], {exp3}: [{WrapInColor(arg3, "white")}], {exp4}: [{WrapInColor(arg4, "white")}]", LogColor);
+      Print($"{exp1}: [{WrapInColor(arg1, "white")}], {exp2}: [{WrapInColor(arg2, "white")}], {exp3}: [{WrapInColor(arg3, "white")}], {exp4}: [{WrapInColor(arg4, "white")}]", LogColor);
     }
 
     public void LogVars(object arg1, object arg2, object arg3, object arg4, object arg5,
@@ -181,7 +188,7 @@ namespace CUILibs
       [CallerArgumentExpression("arg5")] string exp5 = null
     )
     {
-      _Print($"{exp1}: [{WrapInColor(arg1, "white")}], {exp2}: [{WrapInColor(arg2, "white")}], {exp3}: [{WrapInColor(arg3, "white")}], {exp4}: [{WrapInColor(arg4, "white")}], {exp5}: [{WrapInColor(arg5, "white")}]", LogColor);
+      Print($"{exp1}: [{WrapInColor(arg1, "white")}], {exp2}: [{WrapInColor(arg2, "white")}], {exp3}: [{WrapInColor(arg3, "white")}], {exp4}: [{WrapInColor(arg4, "white")}], {exp5}: [{WrapInColor(arg5, "white")}]", LogColor);
     }
 
 

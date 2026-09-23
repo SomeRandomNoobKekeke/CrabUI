@@ -6,10 +6,52 @@ using System.Diagnostics;
 
 namespace CUILibs
 {
-  public class DebugRelay : DebugRelayBase, IDebugRelayTarget
+  public class DebugRelay : IDebugRelayTarget
   {
-    public void Map(DebugRelayBase next) => next.Route(this);
-    public void Unmap(DebugRelayBase next) => next.Unroute(this);
+    protected List<IDebugRelayTarget> Children = new();
+
+    public void Route(IDebugRelayTarget prev) => this.Children.Add(prev);
+    public void Unroute(IDebugRelayTarget prev) => this.Children.Remove(prev);
+
+    public void Route(DebugNodeDict nodes) => nodes.Map(this);
+    public void Route(DebugRelayDict relays) => relays.Map(this);
+    public void Unroute(DebugNodeDict nodes) => nodes.Unmap(this);
+    public void Unroute(DebugRelayDict relays) => relays.Unmap(this);
+
+
+
+    public IEnumerable<DebugNodeBase> GetNodes(string type)
+      => GetNodes().Where(node => node.Type == type);
+
+    public IEnumerable<DebugNodeBase> GetNodes()
+    {
+      IEnumerable<DebugNodeBase> GetNodesRec(DebugRelay relay)
+      {
+        foreach (IDebugRelayTarget target in relay.Children)
+        {
+          if (target is DebugNodeBase)
+          {
+            yield return target as DebugNodeBase;
+          }
+
+          if (target is DebugRelay)
+          {
+            foreach (DebugNodeBase node in GetNodesRec(target as DebugRelay))
+            {
+              yield return node;
+            }
+          }
+        }
+      }
+
+      foreach (DebugNodeBase node in GetNodesRec(this))
+      {
+        yield return node;
+      }
+    }
+
+    public void Map(DebugRelay next) => next.Route(this);
+    public void Unmap(DebugRelay next) => next.Unroute(this);
 
     public void Open()
     {

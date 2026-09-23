@@ -17,14 +17,7 @@ namespace CUILibs
     public void Close() => IsOpen = false;
     public void Toggle() => IsOpen = !IsOpen;
 
-    public void Map(DebugRelayBase next) => next.Route(this);
-
-    public virtual void Send() { }
-    public virtual void Send(object arg1) { }
-    public virtual void Send(object arg1, object arg2) { }
-    public virtual void Send(object arg1, object arg2, object arg3) { }
-    public virtual void Send(object arg1, object arg2, object arg3, object arg4) { }
-    public virtual void Send(object arg1, object arg2, object arg3, object arg4, object arg5) { }
+    public void Map(DebugRelay next) => next.Route(this);
 
     public DebugNodeBase(string type, DebugHub hub)
     {
@@ -34,7 +27,6 @@ namespace CUILibs
       Type = type;
       Hub = hub;
       GlobalGate = Hub.Gates[Type];
-      IsOpen = Hub.IsOpen;
     }
   }
 }

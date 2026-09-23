@@ -12,31 +12,22 @@ namespace CUILibs
     public Func<string> MsgFactory { get; set; }
 
 
-    private DebugEvent EventFactory()
-    {
-      return new DebugEvent()
-      {
-        Type = Type,
-        Args = new object[] { },
-        Msg = MsgFactory.Invoke(),
-      };
-    }
-
-    public override void Send()
+    public void Send()
     {
       if (GlobalGate.IsOpen && IsOpen)
       {
-        Hub.Output.Raise(EventFactory());
+        Hub.Output.Raise(new DebugEvent()
+        {
+          Type = Type,
+          Args = [],
+          Msg = MsgFactory.Invoke(),
+        });
       }
     }
 
     public DebugNode(string type, DebugHub hub) : base(type, hub)
     {
       MsgFactory = DefaultMsgFactory;
-    }
-    public DebugNode(string type, DebugHub hub, Func<string> msgFactory) : base(type, hub)
-    {
-      MsgFactory = msgFactory;
     }
   }
 }

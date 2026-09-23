@@ -10,11 +10,7 @@ namespace CursedUI
 {
   public partial class CUICore
   {
-    public DebugHub _DebugHub { get; } = new()
-    {
-      IsOpen = false,
-    };
-
+    public DebugHub _DebugHub { get; } = new();
     public static CUIDebugger Debugger => Instance?._Debugger;
     public CUIDebugger _Debugger { get; private set; }
 

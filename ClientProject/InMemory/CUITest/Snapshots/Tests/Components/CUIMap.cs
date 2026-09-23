@@ -19,7 +19,21 @@ namespace CursedUIUser
       {
         var frame = new CUIDefault.Frame("CUIMap", 400, 600);
 
-        CUIComponent map = frame["layout"]["map"] = new CUIMap()
+        CUIMap map = null;
+
+
+
+        frame["layout"]["zoom"] = new CUIRangeInput()
+        {
+          Absolute = new CUINullRect(h: 30),
+          OnHandleDragged = (v) =>
+          {
+            map.Zoom = v;
+          },
+        };
+
+
+        frame["layout"]["map"] = map = new CUIMap()
         {
           Flex = 1,
           Background =

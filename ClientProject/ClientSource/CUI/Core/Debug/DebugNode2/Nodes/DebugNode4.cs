@@ -16,12 +16,11 @@ namespace CUILibs
       return new Debug2Event()
       {
         Type = Type,
-        Args = new object[] { arg1, arg2, arg3, arg4 },
+        Args = [arg1, arg2, arg3, arg4],
         Msg = MsgFactory.Invoke(arg1, arg2, arg3, arg4),
       };
     }
 
-    public override void Send(object arg1, object arg2, object arg3, object arg4) => Send((T1)arg1, (T2)arg2, (T3)arg3, (T4)arg4);
     public void Send(T1 arg1, T2 arg2, T3 arg3, T4 arg4)
     {
       if (GlobalGate.IsOpen && IsOpen)

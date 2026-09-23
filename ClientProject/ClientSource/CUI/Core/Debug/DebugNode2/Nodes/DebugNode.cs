@@ -17,12 +17,12 @@ namespace CUILibs
       return new Debug2Event()
       {
         Type = Type,
-        Args = new object[] { },
+        Args = [],
         Msg = MsgFactory.Invoke(),
       };
     }
 
-    public override void Send()
+    public void Send()
     {
       if (GlobalGate.IsOpen && IsOpen)
       {

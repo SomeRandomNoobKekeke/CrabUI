@@ -16,15 +16,13 @@ namespace CUILibs
       return new Debug2Event()
       {
         Type = Type,
-        Args = new object[] { arg1 },
+        Args = [arg1],
         Msg = MsgFactory.Invoke(arg1),
       };
     }
 
-    public override void Send(object arg1) => Send((T1)arg1);
     public void Send(T1 arg1)
     {
-      // Logger.Default.LogVars(Type, GlobalGate.IsOpen, IsOpen);
       if (GlobalGate.IsOpen && IsOpen)
       {
         Hub.Output.Raise(EventFactory(arg1));

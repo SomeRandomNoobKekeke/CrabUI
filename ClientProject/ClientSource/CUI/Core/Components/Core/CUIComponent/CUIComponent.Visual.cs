@@ -61,7 +61,7 @@ namespace CursedUI
         ScissorRect = ChildrenRect.Round();
       }
 
-      Debug_RectSet.Send(this, OuterRect);
+      Debug_RectSet.Send(this, this, OuterRect);
       Events.RectSet.Raise(OuterRect);
     }
 

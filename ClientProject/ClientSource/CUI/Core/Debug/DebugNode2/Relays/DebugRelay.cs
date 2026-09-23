@@ -6,7 +6,7 @@ using System.Diagnostics;
 
 namespace CUILibs
 {
-  public abstract class Debug2Relay : IDebug2RelayTarget
+  public class Debug2Relay : IDebug2RelayTarget
   {
     protected List<IDebug2RelayTarget> Children = new();
 

@@ -31,7 +31,7 @@ namespace CUILibs
 
       Debug2NodeDict nodes = new Debug2NodeDict()
       {
-        ["bruh"] = new Debug2Node<string>("bruh", hub, (s) => $"123 {s}"),
+        ["bruh"] = new Debug2Node<string>("bruh", hub) { MsgFactory = (s) => $"123 {s}" },
       };
 
       nodes.Map(dict2);

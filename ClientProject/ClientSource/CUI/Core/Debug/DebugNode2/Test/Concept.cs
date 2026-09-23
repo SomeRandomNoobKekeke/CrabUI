@@ -19,9 +19,12 @@ namespace CUILibs
       Debug2Hub hub = new();
 
       hub.Gates["cringe"].Open();
-      hub.Output.Add((e) => result = e.ToString());
+      hub.Output += (e) => result = e.ToString();
 
-      Debug2Node<string, int> node1 = new("cringe", hub, (s, i) => $"bruh {s} {i}");
+      Debug2Node<string, int> node1 = new("cringe", hub)
+      {
+        MsgFactory = (s, i) => $"bruh {s} {i}"
+      };
       node1.Send("kek", 123);
 
       Tests.Add(new UTest(result, $"cringe| bruh kek 123"));

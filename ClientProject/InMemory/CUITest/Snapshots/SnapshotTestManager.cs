@@ -77,7 +77,7 @@ namespace CursedUIUser
         return;
       }
 
-      ModStorage.Set("CUITest", ("snapshot", name));
+      ModStorage.Set("CUITest.LastTest", ("snapshot", name));
 
       if (!Chamber.IsSetup) Chamber.Setup();
 

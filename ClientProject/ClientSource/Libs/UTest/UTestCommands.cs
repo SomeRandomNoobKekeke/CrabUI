@@ -67,7 +67,14 @@ namespace CUILibs
       try
       {
 #if CLIENT
-        ModStorage.Set("lastUtestCommand", $"utest {(args.ElementAtOrDefault(0) ?? "none")}");
+        if (args.Length < 1 || args[0] == "none")
+        {
+          ModStorage.Remove("lastUtestCommand");
+        }
+        else
+        {
+          ModStorage.Set("lastUtestCommand", $"utest {args[0]}");
+        }
 #endif
 
         if (args.Length == 0)

@@ -29,7 +29,7 @@ namespace CursedUIUser
         return;
       }
 
-      ModStorage.Set("CUITest", ("e2e", name));
+      ModStorage.Set("CUITest.LastTest", ("e2e", name));
       Run(Repo.Tests[name]);
     }
 

@@ -36,7 +36,16 @@ namespace CursedUIUser
       }
     }
 
-
+    public void OpenGroupByTestName(string name)
+    {
+      foreach (var (groupName, group) in Repo.GroupedTests)
+      {
+        if (group.ContainsKey(name))
+        {
+          OpenGroup(groupName);
+        }
+      }
+    }
 
     public void OpenGroup(string name)
     {

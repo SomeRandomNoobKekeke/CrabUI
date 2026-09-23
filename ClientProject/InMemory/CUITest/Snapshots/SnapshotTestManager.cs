@@ -42,12 +42,12 @@ namespace CursedUIUser
 
       Events.Add(HandleManagerEvent);
 
-      OnOpen.Add(() =>
+      OnOpen += () =>
       {
         Setup();
         Refresh();
-      });
-      OnClose.Add(Dismantle);
+      };
+      OnClose += Dismantle;
     }
 
     public void Setup() => Chamber.Setup();

@@ -76,8 +76,8 @@ namespace CursedUIUser
 
     private void CreateUI()
     {
-      OnOpen.Add(Refresh);
-      OnClose.Add(CleanUp);
+      OnOpen += Refresh;
+      OnClose += CleanUp;
 
       Background.Color = new Color(32, 32, 32);
 

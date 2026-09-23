@@ -59,8 +59,8 @@ namespace CursedUI
 
       public ComponentsPageComponent()
       {
-        OnOpen.Add(HandleOpen);
-        OnClose.Add(HandleClose);
+        OnOpen += HandleOpen;
+        OnClose += HandleClose;
 
         HighlightOverlay = new CUIComponent()
         {

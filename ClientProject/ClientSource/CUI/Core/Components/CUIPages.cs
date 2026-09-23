@@ -19,7 +19,7 @@ namespace CursedUI
     {
       if (Children.Count > 0 && Children[0] is CUIPage)
       {
-        (Children[0] as CUIPage).OnClose.Raise();
+        (Children[0] as CUIPage).RaiseOnClose();
       }
 
       Children.Clear();
@@ -39,7 +39,7 @@ namespace CursedUI
 
       if (page is CUIPage)
       {
-        (page as CUIPage).OnOpen.Raise();
+        (page as CUIPage).RaiseOnOpen();
       }
     }
   }

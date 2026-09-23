@@ -220,8 +220,8 @@ namespace CursedUI
 
       public EventsPageComponent()
       {
-        OnOpen.Add(HandleOpen);
-        OnClose.Add(HandleClose);
+        OnOpen += HandleOpen;
+        OnClose += HandleClose;
 
         Input.Add(HandleDebugEvent);
 

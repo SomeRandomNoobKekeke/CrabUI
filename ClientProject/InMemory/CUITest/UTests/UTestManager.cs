@@ -40,7 +40,7 @@ namespace CursedUIUser
 
     private void CreateUI()
     {
-      OnOpen.Add(Refresh);
+      OnOpen += Refresh;
 
       Background.Color = new Color(32, 32, 32);
 

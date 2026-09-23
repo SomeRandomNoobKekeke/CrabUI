@@ -14,6 +14,8 @@ namespace CursedUI
     //TODO there should be an abstract factory for this
     public static CUISpriteBatch Create() => __CUISpriteBatch.Create();
 
+    public Matrix? TransformMatrix { get; }
+
     //Note: these are mine
     public void Draw(
       CUITexture2D texture,
@@ -144,6 +146,7 @@ namespace CursedUI
     );
 
     public void End();
+
   }
 
 }

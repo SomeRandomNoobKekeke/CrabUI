@@ -14,7 +14,7 @@ namespace CursedUI
   //TODO don't know how to name it
   public class ChainDrawerStateMachine
   {
-    public record State(Rectangle ScissorRect, SamplerState SamplerState);
+    public record State(Rectangle ScissorRect, SamplerState SamplerState, Matrix? TransformMatrix);
 
     public Stack<State> States { get; } = new();
     public State OriginalState { get; private set; }
@@ -26,14 +26,19 @@ namespace CursedUI
       if (CurrentState == state) return;
       CurrentState = state;
 
-      spriteBatch.StopStart(state.ScissorRect, samplerState: state.SamplerState);
+      spriteBatch.StopStart(
+        state.ScissorRect,
+        samplerState: state.SamplerState,
+        transformMatrix: state.TransformMatrix
+      );
     }
 
     public void Init(CUISpriteBatch spriteBatch)
     {
       OriginalState = new State(
         CUICore.GraphicsDevice.ScissorRect,
-        CUICore.SamplerState
+        CUICore.SamplerState,
+        spriteBatch.TransformMatrix
       );
 
       States.Clear();
@@ -50,10 +55,14 @@ namespace CursedUI
     public void Enter(CUISpriteBatch spriteBatch, VisualBounds bounds)
     {
       State newState = new State(
-        bounds.ScissorRect is null ?
-          CurrentState.ScissorRect :
-          Rectangle.Intersect(CurrentState.ScissorRect, bounds.ScissorRect.Value),
-        bounds.SamplerState is null ? CurrentState.SamplerState : bounds.SamplerState
+        CurrentState.ScissorRect,
+        // bounds.ScissorRect is null ?
+        //   CurrentState.ScissorRect :
+        //   Rectangle.Intersect(CurrentState.ScissorRect, bounds.ScissorRect.Value),
+
+        bounds.SamplerState is null ? CurrentState.SamplerState : bounds.SamplerState,
+
+        bounds.TransformMatrix.HasValue ? bounds.TransformMatrix : CurrentState.TransformMatrix
       );
 
       States.Push(CurrentState);

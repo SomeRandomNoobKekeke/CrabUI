@@ -67,6 +67,8 @@ namespace CursedUIUser
       Children.Clear();
       Background.Color = new Color(32, 32, 32);
 
+      SerializeTestSubject = ModStorage.Get<bool>("CUITest.SerializeTestSubject");
+
       this["layout"] = new CUIVerticalList() { Relative = new CUINullRect(0, 0, 1, 1), };
 
       this["layout"]["controls"] = new CUIHorizontalList() { FitContent = new CUIBool2(false, true), };
@@ -91,7 +93,11 @@ namespace CursedUIUser
         MasterColor = new Color(255, 0, 255),
 
         State = SerializeTestSubject,
-        OnToggle = (state) => SerializeTestSubject = state,
+        OnToggle = (state) =>
+        {
+          SerializeTestSubject = state;
+          ModStorage.Set("CUITest.SerializeTestSubject", state);
+        },
       };
 
       this["layout"]["groups"] = new CUIHorizontalList()

@@ -6,10 +6,52 @@ using System.Diagnostics;
 
 namespace CUILibs
 {
-  public class Debug2Relay : Debug2RelayBase, IDebug2RelayTarget
+  public abstract class Debug2Relay : IDebug2RelayTarget
   {
-    public void Map(Debug2RelayBase next) => next.Route(this);
-    public void Unmap(Debug2RelayBase next) => next.Unroute(this);
+    protected List<IDebug2RelayTarget> Children = new();
+
+    public void Route(IDebug2RelayTarget prev) => this.Children.Add(prev);
+    public void Unroute(IDebug2RelayTarget prev) => this.Children.Remove(prev);
+
+    public void Route(Debug2NodeDict nodes) => nodes.Map(this);
+    public void Route(Debug2RelayDict relays) => relays.Map(this);
+    public void Unroute(Debug2NodeDict nodes) => nodes.Unmap(this);
+    public void Unroute(Debug2RelayDict relays) => relays.Unmap(this);
+
+
+
+    public IEnumerable<Debug2NodeBase> GetNodes(string type)
+      => GetNodes().Where(node => node.Type == type);
+
+    public IEnumerable<Debug2NodeBase> GetNodes()
+    {
+      IEnumerable<Debug2NodeBase> GetNodesRec(Debug2Relay relay)
+      {
+        foreach (IDebug2RelayTarget target in relay.Children)
+        {
+          if (target is Debug2NodeBase)
+          {
+            yield return target as Debug2NodeBase;
+          }
+
+          if (target is Debug2Relay)
+          {
+            foreach (Debug2NodeBase node in GetNodesRec(target as Debug2Relay))
+            {
+              yield return node;
+            }
+          }
+        }
+      }
+
+      foreach (Debug2NodeBase node in GetNodesRec(this))
+      {
+        yield return node;
+      }
+    }
+
+    public void Map(Debug2Relay next) => next.Route(this);
+    public void Unmap(Debug2Relay next) => next.Unroute(this);
 
     public void Open()
     {

@@ -17,7 +17,7 @@ namespace CUILibs
     public void Close() => IsOpen = false;
     public void Toggle() => IsOpen = !IsOpen;
 
-    public void Map(Debug2RelayBase next) => next.Route(this);
+    public void Map(Debug2Relay next) => next.Route(this);
 
     public Debug2NodeBase(string type, Debug2Hub hub)
     {
@@ -27,7 +27,6 @@ namespace CUILibs
       Type = type;
       Hub = hub;
       GlobalGate = Hub.Gates[Type];
-      IsOpen = Hub.IsOpen;
     }
   }
 }

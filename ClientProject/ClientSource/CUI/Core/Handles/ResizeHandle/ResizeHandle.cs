@@ -206,7 +206,6 @@ namespace CursedUI
     public ResizeHandle()
     {
       Layout = new CUIDummyLayout();
-      Layout.ConnectTo(new Adapters_Part.CUIPlainLayout_Host_Part() { Self = this });
 
       InheritPalette = true;
 

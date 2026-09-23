@@ -65,16 +65,6 @@ namespace CursedUI
       return Rect.Contains(pos);
     }
 
-    public string TextureKey
-    {
-      get => Sprite.Texture.Key;
-      set => Sprite.Texture = CUICore.TextureManager.Get(value);
-    }
-    #region Forwarded to CUISprite
-    [CUISerializableProp]
-    public CUITexture2D Texture { get => Sprite.Texture; set => Sprite.Texture = value; }
-    [CUISerializableProp]
-    public Rectangle? SourceRectangle { get => Sprite.SourceRectangle; set => Sprite.SourceRectangle = value; }
     [CUISerializableProp]
     public Color Color
     {
@@ -86,6 +76,12 @@ namespace CursedUI
       }
     }
     public Color? _Color = null; //CRINGE so if you change this Color next sprite will inherit it
+
+    #region Forwarded to CUISprite
+    [CUISerializableProp]
+    public CUITexture2D Texture { get => Sprite.Texture; set => Sprite.Texture = value; }
+    [CUISerializableProp]
+    public Rectangle? SourceRectangle { get => Sprite.SourceRectangle; set => Sprite.SourceRectangle = value; }
     [CUISerializableProp]
     public float Rotation { get => Sprite.Rotation; set => Sprite.Rotation = value; }
     [CUISerializableProp]

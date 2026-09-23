@@ -10,6 +10,10 @@ using CUILibs;
 
 namespace CursedUI
 {
+  /// <summary>
+  /// This is like TextBlock but with Icon
+  /// This thing resizes to Icon, not vice versa
+  /// </summary>
   public partial class IconBlock : VisualElementBase
   {
     private CUISprite _Icon = CUISprite.Transparent; public CUISprite Icon

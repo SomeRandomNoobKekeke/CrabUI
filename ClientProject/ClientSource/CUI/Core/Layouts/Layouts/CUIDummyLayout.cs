@@ -13,7 +13,15 @@ namespace CursedUI
 {
   public class CUIDummyLayout : Layout
   {
+    public override void UpdateChildren()
+    {
+      RequireChildrenUpdate = false;
+    }
 
+    public override void UpdateParent()
+    {
+      RequireParentUpdate = false;
+    }
 
   }
 }

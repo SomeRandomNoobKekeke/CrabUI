@@ -305,7 +305,7 @@ namespace CursedUI
     public static Color FromSeed(int seed, float s, float v)
     {
 
-      return FromHSV(seed * 16, s, v);
+      return FromHSV(seed * 76, s, v);
     }
 
   }

@@ -55,10 +55,9 @@ namespace CursedUI
     public void Enter(CUISpriteBatch spriteBatch, VisualBounds bounds)
     {
       State newState = new State(
-        CurrentState.ScissorRect,
-        // bounds.ScissorRect is null ?
-        //   CurrentState.ScissorRect :
-        //   Rectangle.Intersect(CurrentState.ScissorRect, bounds.ScissorRect.Value),
+        bounds.ScissorRect is null ?
+          CurrentState.ScissorRect :
+          Rectangle.Intersect(CurrentState.ScissorRect, bounds.ScissorRect.Value),
 
         bounds.SamplerState is null ? CurrentState.SamplerState : bounds.SamplerState,
 

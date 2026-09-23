@@ -12,6 +12,7 @@ using Barotrauma.Extensions;
 
 namespace CursedUI
 {
+  //Test LINK:\ClientProject\InMemory\CUITest\Snapshots\Tests\Components\CUICheckBox.cs
   public partial class CUICheckBox : CUIToggleIconButton, IComponent
   {
     protected override void InitStyle()

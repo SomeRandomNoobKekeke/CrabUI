@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace CursedUI
 {
-  public class ResizeHandle : CUIVisualComponent
+  public partial class ResizeHandle : CUIVisualComponent
   {
     /// <summary>
     /// Used everywhere  
@@ -68,141 +68,6 @@ namespace CursedUI
 
     public override Layout? Layout { get; protected set; } = new CUIDummyLayout();
 
-
-    public SimpleTexture Background { get; } = new();
-
-    public override bool Visible
-    {
-      get => Background.Visible;
-      set => Background.Visible = value;
-    }
-
-    public Vector2 StaticPointAnchor { get; set; }
-
-
-    public bool Grabbed { get; private set; }
-
-    public Vector2 GrabPoint { get; private set; }
-    public Vector2 PrevPinPoint { get; private set; }
-
-
-    public override bool MouseOver => Background.MouseOver;
-    public override bool MousePressed => Background.MousePressed;
-
-    public override CUIRect OuterRect { get => Rect; set => Rect = value; }
-    public override CUIRect ChildrenRect { get => Rect; set => Rect = value; }
-    public CUIRect Rect
-    {
-      get => Background.Rect;
-      set => Background.Rect = value;
-    }
-
-    public bool OnlyHorizontal
-    {
-      get => PreventMovement == new CUIBool2(false, true);
-      set => PreventMovement = new CUIBool2(false, true);
-    }
-
-    public bool OnlyVertical
-    {
-      get => PreventMovement == new CUIBool2(true, false);
-      set => PreventMovement = new CUIBool2(true, false);
-    }
-    public CUIBool2 PreventMovement { get; set; } = new CUIBool2(false, false);
-
-
-    //BRUH Why is this inverted, why not just set Rect from Host.UpdateRect?
-    public void UpdateRect()
-    {
-      if (Host is null)
-      {
-        Rect = new CUIRect(Vector2.Zero, Absolute.Size);
-      }
-      else
-      {
-        Rect = new CUIRect(
-          CUIAnchor.ChildPosIn(Host.Rect, Anchor, Absolute.Size),
-          Absolute.Size
-        );
-      }
-    }
-
-
-    private void Grab(CUIMouseEvent e)
-    {
-      if (!Host.TryGrab(this)) return;
-
-      Grabbed = true;
-      GrabPoint = e.Pos;
-      PrevPinPoint = CUIAnchor.PosFromAnchor(Host.Rect, ParentAnchor.Value);
-      host.HubMouseMoved += Update;
-      host.HubMouseUp += Release;
-    }
-
-    public void Update(CUIMouseEvent e)
-    {
-      Vector2 delta = e.Pos - GrabPoint;
-      if (PreventMovement.Y) delta = new Vector2(delta.X, 0);
-      if (PreventMovement.X) delta = new Vector2(0, delta.Y);
-
-      Resize(PrevPinPoint + delta);
-    }
-
-    private void Resize(Vector2 pinPoint)
-    {
-      Vector2 staticPoint = CUIAnchor.PosFromAnchor(Host.Rect, StaticPointAnchor);
-
-      CUINullVector2 nullSize = CUIAnchor.NullSizeFrom2PointsWithAnchors(
-        staticPoint, StaticPointAnchor,
-        pinPoint, ParentAnchor.Value
-      );
-
-      Vector2 size = new Vector2(
-        nullSize.X.HasValue ? nullSize.X.Value : Host.Rect.Width,
-        nullSize.Y.HasValue ? nullSize.Y.Value : Host.Rect.Height
-      );
-
-      size = new Vector2(
-        Math.Max(size.X, Host.MinSize.X),
-        Math.Max(size.Y, Host.MinSize.Y)
-      );
-
-      Host.ResizeToAbsoluteRect(
-        CUIAnchor.RectFromPointAndSize(
-          staticPoint, StaticPointAnchor, size
-        ),
-        PreventMovement
-      );
-    }
-
-    private void Release(CUIMouseEvent e)
-    {
-      Vector2 delta = e.Pos - GrabPoint;
-      if (PreventMovement.Y) delta = new Vector2(delta.X, 0);
-      if (PreventMovement.X) delta = new Vector2(0, delta.Y);
-
-      Resize(PrevPinPoint + delta);
-
-
-      Grabbed = false;
-      host.HubMouseMoved -= Update;
-      host.HubMouseUp -= Release;
-      host.Release(this);
-    }
-
-    public void ForceRelease()
-    {
-      Grabbed = false;
-      host.HubMouseMoved -= Update;
-      host.HubMouseUp -= Release;
-      host.Release(this);
-    }
-
-    public override IEnumerable<VisualUnit> VisualSplit()
-    {
-      if (Displayed) yield return Background.VisualWrapper;
-    }
-
     public ResizeHandle()
     {
       Layout = new CUIDummyLayout();
@@ -211,6 +76,8 @@ namespace CursedUI
 
       Background.MouseDown.Add(Grab);
       Background.ConsumeMouseEvents = true;
+
+
       Events.Route(Background);
     }
 

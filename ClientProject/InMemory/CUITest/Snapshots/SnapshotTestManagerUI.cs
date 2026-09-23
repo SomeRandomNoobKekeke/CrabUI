@@ -97,6 +97,7 @@ namespace CursedUIUser
         {
           SerializeTestSubject = state;
           ModStorage.Set("CUITest.SerializeTestSubject", state);
+          Run(CurrentTestName);
         },
       };
 

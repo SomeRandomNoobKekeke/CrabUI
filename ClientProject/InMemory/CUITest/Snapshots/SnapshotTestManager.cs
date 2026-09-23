@@ -31,7 +31,7 @@ namespace CursedUIUser
 
     public ComponentSnapshot CurrentSnapshot { get; set; }
     public SnapshotTest CurrentTest { get; set; }
-
+    public string CurrentTestName;
 
 
     public SnapshotTestManager()
@@ -71,6 +71,7 @@ namespace CursedUIUser
     }
     public void Run(string name)
     {
+      if (name is null) return;
       if (!Repo.Tests.ContainsKey(name))
       {
         Logger.Warning($"Can't find snapshot test: [{name}]");
@@ -81,6 +82,7 @@ namespace CursedUIUser
 
       if (!Chamber.IsSetup) Chamber.Setup();
 
+      CurrentTestName = name;
       CurrentTest = Repo.Tests[name];
       CurrentSnapshot = Runner.Run(CurrentTest);
       ComponentSnapshot stored = GetStoredSnapshot(CurrentTest);

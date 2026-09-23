@@ -33,6 +33,8 @@ namespace CursedUI
 
       DeepDictAccess.Set("   ...  ", "cringe", repo);
       Tests.Add(new UTest(DeepDictAccess.Get("   ...  ", repo), "cringe"));
+      DeepDictAccess.Remove("   ...  ", repo);
+      Tests.Add(new UTest(!DeepDictAccess.Has("   ...  ", repo)));
 
       Logger.Default.Log(JsonSerializer.Serialize(repo, options: new JsonSerializerOptions()
       {

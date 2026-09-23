@@ -50,6 +50,29 @@ namespace CUILibs
       dict[parts.Last()] = value;
     }
 
+    public static void Remove(string path, IDictionary<string, object> dict)
+    {
+      if (string.IsNullOrEmpty(path)) return;
+
+      string[] parts = path.Split('.');
+
+      foreach (string part in parts.SkipLast(1))
+      {
+        if (dict.TryGetValue(part, out object o) && o is IDictionary<string, object>)
+        {
+          dict = o as IDictionary<string, object>;
+        }
+        else
+        {
+          Dictionary<string, object> nested = new();
+          dict[part] = nested;
+          dict = nested;
+        }
+      }
+
+      dict.Remove(parts.Last());
+    }
+
 
     public static T Get<T>(string path, IDictionary<string, object> dict)
     {

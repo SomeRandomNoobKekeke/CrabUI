@@ -26,6 +26,13 @@ namespace CursedUI
       }
     }
 
+    /// <summary>
+    /// HACK
+    /// Expands area where texture captures clicks
+    /// Primarily for resize handles
+    /// </summary>
+    public CUISizes SensorExpansion { get; set; }
+
     private CUISprite _Sprite = CUISprite.White; public CUISprite Sprite
     {
       get => _Sprite;
@@ -62,7 +69,7 @@ namespace CursedUI
           (pos - Rect.Position) / Rect.Size
         );
       }
-      return Rect.Contains(pos);
+      return Rect.Contains(pos, SensorExpansion);
     }
 
     [CUISerializableProp]

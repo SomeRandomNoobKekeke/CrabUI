@@ -29,7 +29,11 @@ namespace CursedUIUser
         };
 
         component.Children.Add(ResizeHandle.CreateAngle(0.0f, 0.0f));
-        component.Children.Add(ResizeHandle.CreateAngle(1.0f, 0.0f));
+
+
+        ResizeHandle handle = ResizeHandle.CreateAngle(1.0f, 0.0f);
+        handle.Background.SensorExpansion = new CUISizes(30, 30, 30, 30);
+        component.Children.Add(handle);
 
 
         component.Children.Add(ResizeHandle.CreateAngle(0.3f, 0.3f));

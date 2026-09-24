@@ -111,7 +111,7 @@ namespace CursedUI
         EventList.Scroll = 0;
       }
 
-      protected override void Refresh()
+      public override void Refresh()
       {
         RefreshNodes();
         ClearEventList();

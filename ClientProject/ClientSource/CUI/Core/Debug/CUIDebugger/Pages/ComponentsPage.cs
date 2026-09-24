@@ -28,7 +28,7 @@ namespace CursedUI
         HighlightOverlay.Absolute = new CUINullRect();
       }
 
-      protected override void Refresh()
+      public override void Refresh()
       {
         ComponentList.Clear();
 

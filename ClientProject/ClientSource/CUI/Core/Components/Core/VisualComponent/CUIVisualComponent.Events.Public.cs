@@ -23,7 +23,7 @@ namespace CursedUI
         child.DeepRefresh();
       }
     }
-    protected virtual void Refresh() { } //TODO where should it be?
+    public virtual void Refresh() { } //TODO where should it be?
 
     public void Click()
     {

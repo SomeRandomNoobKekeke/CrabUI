@@ -20,6 +20,7 @@ namespace CursedUI
       {
         _Root = value;
         ComponentTree.Root = value;
+        PropView.Target = null;
       }
     }
 
@@ -35,7 +36,10 @@ namespace CursedUI
         Flex = 1,
         Border = new CUISizes(right: 2),
       };
-      this["layout"]["props"] = PropView = new CUIPropView() { Flex = 1 };
+      this["layout"]["props"] = PropView = new CUIPropView()
+      {
+        Flex = 1,
+      };
 
       ComponentTree.Selected += (c) => PropView.Target = c;
     }

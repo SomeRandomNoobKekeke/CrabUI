@@ -20,20 +20,27 @@ namespace CursedUIUser
     public bool SerializeTestSubject { get; set; } = false;
     // public bool PrintTestSubject { get; set; } = true;
     public SnapshotTestChamber Chamber { get; set; }
+    public SnapshotTestManager.SerializationCompareFrame SerializationCompare { get; } = new();
 
     public ComponentSnapshot Run(SnapshotTest test)
     {
       try
       {
-        CUIVisualComponent TestSubject = (CUIVisualComponent)test.TestFunc();
+        CUIVisualComponent TestSubject = test.TestFunc();
         TestSubject.DeepDebug = true;
 
 
         if (SerializeTestSubject)
         {
+          if (SerializationCompare.IsOpen) SerializationCompare.ComponentBefore = TestSubject;
+
           XElement XMLBefore = TestSubject.Serialize();
           TestSubject = CUIVisualComponent.Deserialize(TestSubject.Serialize());
+          TestSubject.DeepDebug = true;
           XElement XMLAfter = TestSubject.Serialize();
+
+
+          if (SerializationCompare.IsOpen) SerializationCompare.ComponentAfter = TestSubject;
 
           if (XMLBefore.ToString() != XMLAfter.ToString())
           {

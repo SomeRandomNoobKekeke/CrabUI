@@ -11,6 +11,8 @@ namespace CursedUI
 {
   public class CUIComponentTreeSelect : CUIVerticalList
   {
+    public CUIRadioButton.RadioGroup RadioGroup { get; private set; }
+
 
     private CUIVisualComponent _Root; public CUIVisualComponent Root
     {
@@ -18,13 +20,38 @@ namespace CursedUI
       set
       {
         _Root = value;
+        RadioGroup = CUIRadioButton.RadioGroup.GetOrCreate($"CUIComponentTreeSelect|{Root}");
         Refresh();
       }
     }
 
     public event Action<CUIVisualComponent> Selected;
 
+    public void Select(string relatievAKA)
+    {
+      SelectedComponent = Root.Get(relatievAKA);
+    }
+
+    public CUIVisualComponent SelectedComponent
+    {
+      get => RadioGroup.Current?.GetData<CUIVisualComponent>("component");
+      set
+      {
+        RadioGroup.ClearSelection();
+
+        foreach (CUIRadioButton btn in ComponentTree.Children.As<CUIRadioButton>())
+        {
+          if (btn.GetData<CUIVisualComponent>("component") == value)
+          {
+            btn.Select();
+          }
+        }
+      }
+    }
+
     public CUIVerticalList ComponentTree { get; }
+
+    public float Offset { get; set; } = 10.0f;
 
     public override void Refresh()
     {
@@ -38,9 +65,9 @@ namespace CursedUI
         toAdd.Add(new CUIRadioButton(parent.ToString())
         {
           TextAnchor = CUIAnchor.LeftCenter,
-          Margin = new CUISizes(left: depth * 20),
+          Margin = new CUISizes(left: depth * Offset),
           Background = { Sprite = CUISprite.DimmedVerticalLight },
-          GroupName = $"CUIComponentTreeSelect|{Root}",
+          Group = RadioGroup,
           Data = new() { ["component"] = parent },
           Palette = CUICore.Palettes.Tertiary,
         });
@@ -53,7 +80,7 @@ namespace CursedUI
 
       AddChildrenRec(Root, 0);
 
-      CUIRadioButton.RadioGroup.GetOrCreate($"CUIComponentTreeSelect|{Root}").Selected += (CUIRadioButton) =>
+      RadioGroup.Selected += (CUIRadioButton) =>
       {
         Selected?.Invoke(CUIRadioButton?.GetData<CUIVisualComponent>("component"));
       };

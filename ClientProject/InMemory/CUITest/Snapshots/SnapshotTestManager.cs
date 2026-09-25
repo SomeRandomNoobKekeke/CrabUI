@@ -85,6 +85,7 @@ namespace CursedUIUser
       CurrentTestName = name;
       CurrentTest = Repo.Tests[name];
       CurrentSnapshot = Runner.Run(CurrentTest);
+
       ComponentSnapshot stored = GetStoredSnapshot(CurrentTest);
 
       if (stored is null)

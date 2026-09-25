@@ -32,6 +32,13 @@ namespace CursedUI
       );
     }
 
+    public void Scroll(float scroll)
+    {
+      Events.MouseScroll.Raise(
+        new CUIMouseScrollEvent(CUICore.Input.Mouse, scroll)
+      );
+    }
+
     public void PressKey(Keys key)
     {
       FocusHandle.KeyPressed.Raise(

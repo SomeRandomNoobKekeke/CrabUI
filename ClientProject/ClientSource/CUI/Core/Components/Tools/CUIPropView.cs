@@ -22,6 +22,8 @@ namespace CursedUI
       }
     }
 
+    public CUIDefault.VerticalBackPanel Props { get; }
+
     public override void Refresh()
     {
       this["layout"]["Props"].Children.Clear();
@@ -71,7 +73,7 @@ namespace CursedUI
         OnToggle = (state) => SetAutoUpdate(state),
       };
 
-      this["layout"]["Props"] = new CUIDefault.VerticalBackPanel()
+      this["layout"]["Props"] = Props = new CUIDefault.VerticalBackPanel()
       {
         Relative = new CUINullRect(0, 0, 1, 1),
         Scrollable = true,

@@ -20,12 +20,6 @@ namespace CursedUI
       {
         c.Background.Color = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.4f);
       });
-
-      protected override void InitStyle()
-      {
-        base.InitStyle();
-        // Background.Sprite = CUISprite.Vignette;
-      }
     }
 
     public class HorizontalPanel : CUIHorizontalList
@@ -35,12 +29,6 @@ namespace CursedUI
         c.Background.Color = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.4f);
         c.FitContent = new CUIBool2(false, true);
       });
-
-      protected override void InitStyle()
-      {
-        base.InitStyle();
-        // Background.Sprite = CUISprite.DimmedVerticalLight;
-      }
     }
 
     public class VerticalPanel : CUIVerticalList
@@ -50,12 +38,6 @@ namespace CursedUI
         c.Background.Color = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.4f);
         c.FitContent = new CUIBool2(true, false);
       });
-
-      protected override void InitStyle()
-      {
-        base.InitStyle();
-        // Background.Sprite = CUISprite.DimmedHorizontalLight;
-      }
     }
 
 
@@ -65,12 +47,6 @@ namespace CursedUI
       {
         c.Background.Color = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.2f);
       });
-
-      protected override void InitStyle()
-      {
-        base.InitStyle();
-        // Background.Sprite = CUISprite.Vignette;
-      }
     }
 
     public class HorizontalBackPanel : CUIHorizontalList
@@ -80,12 +56,6 @@ namespace CursedUI
         c.Background.Color = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.2f);
         c.FitContent = new CUIBool2(false, true);
       });
-
-      protected override void InitStyle()
-      {
-        base.InitStyle();
-        // Background.Sprite = CUISprite.DimmedVerticalLight;
-      }
     }
 
     public class VerticalBackPanel : CUIVerticalList
@@ -95,12 +65,6 @@ namespace CursedUI
         c.Background.Color = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.2f);
         c.FitContent = new CUIBool2(true, false);
       });
-
-      protected override void InitStyle()
-      {
-        base.InitStyle();
-        // Background.Sprite = CUISprite.DimmedHorizontalLight;
-      }
     }
   }
 }

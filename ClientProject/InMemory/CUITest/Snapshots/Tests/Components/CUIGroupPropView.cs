@@ -18,12 +18,20 @@ namespace CursedUIUser
       //Component LINK:\ClientProject\ClientSource\CUI\Core\Components\Tools\CUIGroupPropView.cs
       public static CUIComponent CUIGroupPropView()
       {
-        var frame = new CUIDefault.Frame("CUIGroupPropView", 400, 600);
+        var frame = new CUIDefault.Frame("CUIGroupPropView", 800, 600);
+
+        CUIComponent wrapper = new();
+        wrapper["wrapper2"] = new();
+        for (int i = 0; i < 10; i++)
+        {
+          wrapper["wrapper2"][$"child {i}"] = new CUIComponent();
+        }
 
 
         frame["layout"]["group"] = new CUIGroupPropView()
         {
           Flex = 1,
+          Root = wrapper,
         };
 
         return frame;

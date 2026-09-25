@@ -58,7 +58,7 @@ namespace CursedUI
     public static CUISprite Vignette => AtIndex(0, 3);
     public static CUISprite DimmedHorizontal => AtIndex(1, 3);
     public static CUISprite DimmedVertical => AtIndex(2, 3);
-    public static CUISprite VignetteLight => AtIndex(7, 7, 8, 8);
+    public static CUISprite VignetteDithered => AtIndex(7, 7, 8, 8);
     public static CUISprite DimmedHorizontalLight => AtIndex(4, 3);
     public static CUISprite DimmedVerticalLight => AtIndex(5, 3);
 

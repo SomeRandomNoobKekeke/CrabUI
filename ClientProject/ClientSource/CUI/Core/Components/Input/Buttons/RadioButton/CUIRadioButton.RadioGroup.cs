@@ -77,7 +77,7 @@ namespace CursedUI
       public bool IsSelected(CUIRadioButton btn) => Current == btn;
       public bool WasSelected(CUIRadioButton btn) => Previous == btn;
 
-      public RadioGroup(string name)
+      private RadioGroup(string name)
       {
         Name = name;
         if (!Groups.ContainsKey(name)) Groups[name] = this;

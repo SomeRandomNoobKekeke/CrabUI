@@ -9,7 +9,6 @@ using Microsoft.Xna.Framework;
 
 namespace CursedUI
 {
-  //Test LINK:\ClientProject\InMemory\CUITest\Snapshots\Tests\Components\CUIPropView.cs
   public class CUIPropView : CUIPage
   {
 
@@ -66,20 +65,19 @@ namespace CursedUI
       {
         Flex = 1,
         OnMouseDown = (e) => Refresh(),
-        Palette = CUICore.Palettes.Secondary
       };
       this["layout"]["header"]["autoupdate"] = new CUIToggleButton("AutoUpdate")
       {
         OnToggle = (state) => SetAutoUpdate(state),
-        Palette = CUICore.Palettes.Tertiary
       };
 
-
-      this["layout"]["Props"] = new CUIVerticalList()
+      this["layout"]["Props"] = new CUIDefault.VerticalBackPanel()
       {
         Relative = new CUINullRect(0, 0, 1, 1),
         Scrollable = true,
       };
+
+      DeepPalette = CUICore.Palettes.Secondary;
     }
   }
 }

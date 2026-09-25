@@ -33,7 +33,6 @@ namespace CursedUI
       As_CUIMainComponent.FocusHandle.Self = this;
       As_CUIMainComponent.GlobalEvents.Self = this;
       As_CUIVisualComponent.Commands.Self = this;
-      As_CUIVisualComponent.Data.Self = this;
       As_CUIVisualComponent.As_Dictionary.Self = this;
       As_CUIVisualComponent.Events.Self = this;
       As_CUIVisualComponent.FocusHandle.Self = this;

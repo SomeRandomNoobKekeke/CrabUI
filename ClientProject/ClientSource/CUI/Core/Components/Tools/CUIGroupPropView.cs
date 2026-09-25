@@ -13,19 +13,31 @@ namespace CursedUI
   public class CUIGroupPropView : CUIPage
   {
 
-    private CUIVisualComponent _Target; public CUIVisualComponent Target
+    private CUIVisualComponent _Root; public CUIVisualComponent Root
     {
-      get => _Target;
+      get => _Root;
       set
       {
-        _Target = value;
+        _Root = value;
+        ComponentTree.Root = value;
       }
     }
+
+    public CUIComponentTreeSelect ComponentTree { get; }
+    public CUIPropView PropView { get; }
 
 
     public CUIGroupPropView() : base()
     {
-      Background.Color = Color.Cyan;
+      this["layout"] = new CUIHorizontalList() { Relative = new CUINullRect(0, 0, 1, 1) };
+      this["layout"]["component tree"] = ComponentTree = new()
+      {
+        Flex = 1,
+        Border = new CUISizes(right: 2),
+      };
+      this["layout"]["props"] = PropView = new CUIPropView() { Flex = 1 };
+
+      ComponentTree.Selected += (c) => PropView.Target = c;
     }
   }
 }

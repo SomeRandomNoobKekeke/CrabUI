@@ -97,13 +97,10 @@ namespace CursedUIUser
         OnToggle = (state) =>
         {
           SerializeTestSubject = state;
-          Runner.SerializationCompare.IsOpen = state;
           ModStorage.Set("CUITest.SerializeTestSubject", state);
           Run(CurrentTestName);
         },
       };
-
-      Runner.SerializationCompare.IsOpen = SerializeTestSubject;
 
       this["layout"]["groups"] = new CUIHorizontalList()
       {

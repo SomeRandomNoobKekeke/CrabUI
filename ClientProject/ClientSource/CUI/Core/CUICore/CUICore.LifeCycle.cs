@@ -12,8 +12,35 @@ using Barotrauma;
 
 namespace CursedUI
 {
+
+
   public partial class CUICore
   {
+    public static event Action<double> OnUpdate
+    {
+      add => Instance.LifeCycle.OnUpdate.Add(value);
+      remove => Instance.LifeCycle.OnUpdate.Remove(value);
+    }
+
+    public static event Action<double> OnBeforeUpdate
+    {
+      add => Instance.LifeCycle.OnBeforeUpdate.Add(value);
+      remove => Instance.LifeCycle.OnBeforeUpdate.Remove(value);
+    }
+
+    public static event Action<CUISpriteBatch> OnDrawAfterGUI
+    {
+      add => Instance.LifeCycle.OnDrawAfterGUI.Add(value);
+      remove => Instance.LifeCycle.OnDrawAfterGUI.Remove(value);
+    }
+
+    public static event Action<CUISpriteBatch> OnDrawBeforeGUI
+    {
+      add => Instance.LifeCycle.OnDrawBeforeGUI.Add(value);
+      remove => Instance.LifeCycle.OnDrawBeforeGUI.Remove(value);
+    }
+
+
     public double UpdateFPS
     {
       get => 1.0 / UpdateInterval;
@@ -21,6 +48,8 @@ namespace CursedUI
     }
 
     private double UpdateInterval = 1.0 / 300.0;
+
+
 
 
     public class LifeCycle_Part : Part

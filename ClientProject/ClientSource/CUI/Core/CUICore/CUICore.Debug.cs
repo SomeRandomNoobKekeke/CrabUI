@@ -10,6 +10,8 @@ namespace CursedUI
 {
   public partial class CUICore
   {
+    public static DebugHub DebugHub => Instance._DebugHub;
+
     public DebugHub _DebugHub { get; } = new();
     public static CUIDebugger Debugger => Instance?._Debugger;
     public CUIDebugger _Debugger { get; private set; }

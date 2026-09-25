@@ -20,7 +20,7 @@ namespace CursedUIUser
     public bool SerializeTestSubject { get; set; } = false;
     // public bool PrintTestSubject { get; set; } = true;
     public SnapshotTestChamber Chamber { get; set; }
-    public SnapshotTestManager.SerializationCompareFrame SerializationCompare { get; } = new();
+
 
     public ComponentSnapshot Run(SnapshotTest test)
     {
@@ -32,7 +32,10 @@ namespace CursedUIUser
 
         if (SerializeTestSubject)
         {
-          if (SerializationCompare.IsOpen) SerializationCompare.ComponentBefore = TestSubject;
+          if (CUISerializationCompare.Instance.IsOpen)
+          {
+            CUISerializationCompare.Instance.ComponentBefore = TestSubject;
+          }
 
           XElement XMLBefore = TestSubject.Serialize();
           TestSubject = CUIVisualComponent.Deserialize(TestSubject.Serialize());
@@ -40,7 +43,10 @@ namespace CursedUIUser
           XElement XMLAfter = TestSubject.Serialize();
 
 
-          if (SerializationCompare.IsOpen) SerializationCompare.ComponentAfter = TestSubject;
+          if (CUISerializationCompare.Instance.IsOpen)
+          {
+            CUISerializationCompare.Instance.ComponentAfter = TestSubject;
+          }
 
           if (XMLBefore.ToString() != XMLAfter.ToString())
           {

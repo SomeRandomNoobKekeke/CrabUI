@@ -39,6 +39,14 @@ namespace CursedUI
         },
       };
 
+      wrapper["sc"] = new CUIButton("SC")
+      {
+        OnMouseDown = (e) =>
+        {
+          CUISerializationCompare.Instance.Open();
+        },
+      };
+
       wrapper.DeepPalette = CUICore.Palettes.Primary;
 
       return wrapper;

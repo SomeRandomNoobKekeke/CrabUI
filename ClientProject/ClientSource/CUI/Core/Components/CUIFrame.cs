@@ -33,7 +33,7 @@ namespace CursedUI
       Background.Sprite = CUISprite.VignetteDithered;
     }
 
-    private static ConditionalWeakTable<Type, CUIFrame> OpenedFrames { get; } = new();
+    protected static ConditionalWeakTable<Type, CUIFrame> OpenedFrames { get; } = new();
 
 
     public CUIComponent TargetMainComponent { get; set; }

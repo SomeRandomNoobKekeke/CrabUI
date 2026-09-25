@@ -19,10 +19,10 @@ namespace CursedUI
     {
       static RadioGroup()
       {
-        PluginLifeCycle.Stop += Groups.Clear;
+        PluginLifeCycle.Stop += static () => Groups = null;
       }
 
-      public static Dictionary<string, RadioGroup> Groups { get; } = new();
+      public static Dictionary<string, RadioGroup> Groups { get; private set; } = new();
 
       public static RadioGroup GetOrCreate(string name)
       {

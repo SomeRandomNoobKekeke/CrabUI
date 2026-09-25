@@ -9,15 +9,15 @@ namespace CursedUI
 {
   public class CUIAnchor
   {
-    public static Vector2 LeftTop = new Vector2(0.0f, 0.0f);
-    public static Vector2 CenterTop = new Vector2(0.5f, 0.0f);
-    public static Vector2 RightTop = new Vector2(1.0f, 0.0f);
-    public static Vector2 LeftCenter = new Vector2(0.0f, 0.5f);
-    public static Vector2 Center = new Vector2(0.5f, 0.5f);
-    public static Vector2 RightCenter = new Vector2(1.0f, 0.5f);
-    public static Vector2 LeftBottom = new Vector2(0.0f, 1.0f);
-    public static Vector2 CenterBottom = new Vector2(0.5f, 1.0f);
-    public static Vector2 RightBottom = new Vector2(1.0f, 1.0f);
+    public static Vector2 LeftTop => new Vector2(0.0f, 0.0f);
+    public static Vector2 CenterTop => new Vector2(0.5f, 0.0f);
+    public static Vector2 RightTop => new Vector2(1.0f, 0.0f);
+    public static Vector2 LeftCenter => new Vector2(0.0f, 0.5f);
+    public static Vector2 Center => new Vector2(0.5f, 0.5f);
+    public static Vector2 RightCenter => new Vector2(1.0f, 0.5f);
+    public static Vector2 LeftBottom => new Vector2(0.0f, 1.0f);
+    public static Vector2 CenterBottom => new Vector2(0.5f, 1.0f);
+    public static Vector2 RightBottom => new Vector2(1.0f, 1.0f);
 
     public static Vector2 Direction(Vector2 anchor)
     {

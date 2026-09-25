@@ -4,8 +4,9 @@ using System.Linq;
 using System.Reflection;
 using Microsoft.Xna.Framework;
 using CUILibs;
+using CursedUI;
 
-namespace CursedUI
+namespace CursedUIUser
 {
   public class RoutableCommandNodeTest : UTestPack
   {

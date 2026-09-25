@@ -56,6 +56,8 @@ namespace CursedUIUser
         // CUIPalette.Preview();
         // Utils.PrintAllHarmonyPatches();
 
+        StaticFieldsAnalyzer.PrintAllStaticFields();
+
 
         Experiment();
       }

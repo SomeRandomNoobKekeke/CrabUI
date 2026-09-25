@@ -6,6 +6,7 @@ using System.Diagnostics;
 
 using CUICodeGenerator;
 using CUILibs;
+using Microsoft.Xna.Framework;
 
 namespace CursedUI
 {

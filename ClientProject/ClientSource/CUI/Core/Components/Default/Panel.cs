@@ -16,7 +16,7 @@ namespace CursedUI
   {
     public class Panel : CUIComponent
     {
-      public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<Panel>((c) =>
+      public static ICUIStyle DefaultStyle => new CUIDefaultStyle<Panel>((c) =>
       {
         c.Background.Color = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.4f);
       });
@@ -24,7 +24,7 @@ namespace CursedUI
 
     public class HorizontalPanel : CUIHorizontalList
     {
-      public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<HorizontalPanel>((c) =>
+      public static ICUIStyle DefaultStyle => new CUIDefaultStyle<HorizontalPanel>((c) =>
       {
         c.Background.Color = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.4f);
         c.FitContent = new CUIBool2(false, true);
@@ -33,7 +33,7 @@ namespace CursedUI
 
     public class VerticalPanel : CUIVerticalList
     {
-      public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<VerticalPanel>((c) =>
+      public static ICUIStyle DefaultStyle => new CUIDefaultStyle<VerticalPanel>((c) =>
       {
         c.Background.Color = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.4f);
         c.FitContent = new CUIBool2(true, false);
@@ -43,7 +43,7 @@ namespace CursedUI
 
     public class BackPanel : CUIComponent
     {
-      public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<BackPanel>((c) =>
+      public static ICUIStyle DefaultStyle => new CUIDefaultStyle<BackPanel>((c) =>
       {
         c.Background.Color = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.2f);
       });
@@ -51,7 +51,7 @@ namespace CursedUI
 
     public class HorizontalBackPanel : CUIHorizontalList
     {
-      public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<HorizontalBackPanel>((c) =>
+      public static ICUIStyle DefaultStyle => new CUIDefaultStyle<HorizontalBackPanel>((c) =>
       {
         c.Background.Color = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.2f);
         c.FitContent = new CUIBool2(false, true);
@@ -60,7 +60,7 @@ namespace CursedUI
 
     public class VerticalBackPanel : CUIVerticalList
     {
-      public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<VerticalBackPanel>((c) =>
+      public static ICUIStyle DefaultStyle => new CUIDefaultStyle<VerticalBackPanel>((c) =>
       {
         c.Background.Color = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.2f);
         c.FitContent = new CUIBool2(true, false);

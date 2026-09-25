@@ -13,7 +13,7 @@ namespace CursedUI
 {
   public partial class CUITextBlock : CUIComponent, IComponent, ITextComponent
   {
-    public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUITextBlock>((c) =>
+    public static ICUIStyle DefaultStyle => new CUIDefaultStyle<CUITextBlock>((c) =>
     {
       c.TextColor = c.Palette["text"];
     });

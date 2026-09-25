@@ -15,7 +15,7 @@ namespace CursedUI
 {
   public partial class CUIRenamableButton : CUIButton
   {
-    public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIRenamableButton>((c) =>
+    public static ICUIStyle DefaultStyle => new CUIDefaultStyle<CUIRenamableButton>((c) =>
     {
       c.MasterColor = c.Palette["main"];
       c.TextColor = c.Palette["text"];

@@ -16,7 +16,7 @@ namespace CursedUI
   {
     public class SolidTextBlock : CUITextBlock
     {
-      public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<SolidTextBlock>((c) =>
+      public static ICUIStyle DefaultStyle => new CUIDefaultStyle<SolidTextBlock>((c) =>
       {
         c.Background.Color = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.4f);
       });

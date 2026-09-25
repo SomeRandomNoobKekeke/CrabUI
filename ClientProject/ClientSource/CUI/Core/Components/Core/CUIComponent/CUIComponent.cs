@@ -10,7 +10,7 @@ namespace CursedUI
   [GeneratedComponent]
   public partial class CUIComponent : CUIVisualComponent, IComponent
   {
-    public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIComponent>((c) =>
+    public static ICUIStyle DefaultStyle => new CUIDefaultStyle<CUIComponent>((c) =>
     {
       c.Borders.Color = c.Palette["border"];
     });

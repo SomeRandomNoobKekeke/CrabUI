@@ -15,7 +15,7 @@ namespace CursedUI
   [GeneratedComponent]
   public partial class CUIRadioButton : CUIButtonBase, IComponent, ITextComponent
   {
-    public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIRadioButton>((c) =>
+    public static ICUIStyle DefaultStyle => new CUIDefaultStyle<CUIRadioButton>((c) =>
     {
       c.TextColor = c.Palette["text"];
       c.MasterColor = c.Palette["main"];

@@ -18,7 +18,7 @@ namespace CursedUI
     /// </summary>
     //TODO akshually should move all such sizes to some global class
     public static Vector2 DefaultSize = new Vector2(22, 22);
-    public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<ResizeHandle>((c) =>
+    public static ICUIStyle DefaultStyle => new CUIDefaultStyle<ResizeHandle>((c) =>
     {
       c.Background.Color = c.Palette["main"] * 0.5f;
     });

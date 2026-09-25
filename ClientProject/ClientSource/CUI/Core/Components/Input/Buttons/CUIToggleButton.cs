@@ -15,7 +15,7 @@ namespace CursedUI
   [GeneratedComponent]
   public partial class CUIToggleButton : CUIButtonBase, IComponent, ITextComponent
   {
-    public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIToggleButton>((c) =>
+    public static ICUIStyle DefaultStyle => new CUIDefaultStyle<CUIToggleButton>((c) =>
     {
       c.MasterColor = c.Palette["main"];
     });

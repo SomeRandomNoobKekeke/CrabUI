@@ -14,7 +14,7 @@ namespace CursedUI
 {
   public partial class CUIIconButton : CUIButtonBase, IComponent
   {
-    public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIIconButton>((c) =>
+    public static ICUIStyle DefaultStyle => new CUIDefaultStyle<CUIIconButton>((c) =>
     {
       c.MasterColor = c.Palette["main"];
     });

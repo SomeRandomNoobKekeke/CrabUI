@@ -15,7 +15,7 @@ namespace CursedUI
   //TODO this should really be inheried from some CUIIconButton
   public partial class CUICloseButton : CUIComponent, IComponent
   {
-    public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUICloseButton>((c) =>
+    public static ICUIStyle DefaultStyle => new CUIDefaultStyle<CUICloseButton>((c) =>
     {
       c.Background.Color = c.Palette["main"];
       c.ForeColor = c.Palette["text"];

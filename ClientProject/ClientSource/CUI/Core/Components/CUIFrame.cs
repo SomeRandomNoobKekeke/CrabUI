@@ -30,7 +30,8 @@ namespace CursedUI
       Resizable = true;
       Focusable = true;
       ConsumeMouseEvents = true;
-      Background.Sprite = CUISprite.VignetteLight;
+      Background.Sprite = CUISprite.Hex;
+      Background.Sprite.DrawMode = CUISpriteDrawMode.Wrap;
     }
 
     private static ConditionalWeakTable<Type, CUIFrame> OpenedFrames { get; } = new();

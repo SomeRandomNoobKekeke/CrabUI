@@ -27,6 +27,8 @@ namespace CursedUI
     {
       this["layout"]["Props"].Children.Clear();
 
+      if (Target is null) return;
+
       foreach (var (key, value) in Target.As_StringDictionary)
       {
         this["layout"]["Props"].Children.Add(new CUITextBlock($"{key} - {value}")

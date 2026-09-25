@@ -16,20 +16,28 @@ namespace CursedUI
     public static CUISprite White => new CUISprite(CUITexture2D.White);
     public static CUISprite BaroDev => new CUISprite(CUITexture2D.BaroDev);
 
+    public static Rectangle IndexToPos(Rectangle rect)
+      => new Rectangle(1 + 66 * rect.Left, 1 + 66 * rect.Top, 64 * rect.Width, 64 * rect.Height);
+    public static Rectangle IndexToPos(int x, int y, int w = 1, int h = 1)
+      => new Rectangle(1 + 66 * x, 1 + 66 * y, 64 * w, 64 * h);
+
     /// <summary>
     /// 64x64 textures separated by 2px transparent lines to avoid sampler artifacts
     /// </summary>
     public static CUISprite AtIndex(int x, int y, int w = 1, int h = 1)
-      => new CUISprite(CUICore.TextureManager.Get("CUI"))
-      {
-        SourceRectangle = new Rectangle(1 + 66 * x, 1 + 66 * y, 64 * w, 64 * h)
-      };
+      => new CUISprite(CUICore.TextureManager.Get("CUI")) { SourceRectangle = IndexToPos(x, y, w, h) };
 
     public static CUISprite AtPos(int x, int y, int w, int h)
-      => new CUISprite(CUICore.TextureManager.Get("CUI"))
-      {
-        SourceRectangle = new Rectangle(x, y, w, h)
-      };
+      => new CUISprite(CUICore.TextureManager.Get("CUI")) { SourceRectangle = new Rectangle(x, y, w, h) };
+
+    public static CUISprite CutAtIndexAs(string name, int x, int y, int w = 1, int h = 1)
+    {
+      CUICore.TextureManager.Ensure(name,
+        () => CUICore.TextureManager.Get("CUI").Cut(IndexToPos(x, y, w, h))
+      );
+
+      return new CUISprite(CUICore.TextureManager.Get(name));
+    }
 
     public static CUISprite Cross => AtIndex(0, 0);
     public static CUISprite Angle => AtIndex(1, 0);
@@ -62,6 +70,8 @@ namespace CursedUI
     public static CUISprite LineMark => AtIndex(4, 4);
 
     public static CUISprite FuzzyCircle => AtIndex(5, 4);
+
+    public static CUISprite Hex => CutAtIndexAs("CUI.Hex", 0, 5, 2, 2);
 
 
     public static CUISprite CreateRadialColorPicker(int w, int h)

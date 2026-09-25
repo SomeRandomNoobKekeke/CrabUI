@@ -46,7 +46,7 @@ namespace CursedUI
       set => Sizes = Sizes with { Left = value };
     }
 
-    public CUISprite Sprite { get; set; } = CUISprite.Vignette;
+    public CUISprite Sprite { get; set; } = CUISprite.White;
 
 
     [CUISerializableProp]

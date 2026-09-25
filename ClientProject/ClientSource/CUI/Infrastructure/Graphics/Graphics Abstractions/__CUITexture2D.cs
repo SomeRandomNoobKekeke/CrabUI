@@ -68,6 +68,16 @@ namespace CursedUI
     public void GetData(Color[] data, int startIndex, int elementCount)
       => XNATexture.GetData<Color>(data, startIndex, elementCount);
 
+    public CUITexture2D Cut(Rectangle rect)
+    {
+      Color[] data = new Color[rect.Width * rect.Height];
+      GetData(0, rect, data, 0, rect.Width * rect.Height);
+
+      __CUITexture2D texture = new __CUITexture2D(rect.Width, rect.Height);
+
+      texture.SetData(data);
+      return texture;
+    }
 
     public __CUITexture2D(int width, int height) : this(
       width, height,

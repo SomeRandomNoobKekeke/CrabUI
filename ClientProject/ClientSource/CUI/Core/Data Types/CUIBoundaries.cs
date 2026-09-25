@@ -18,13 +18,13 @@ namespace CursedUI
   /// </summary>
   public struct CUIBoundaries : IParsable
   {
-    public static Func<CUIRect, CUIBoundaries> Free =
+    public static Func<CUIRect, CUIBoundaries> Free =>
       (Rect) => new CUIBoundaries(null, null, null, null);
-    public static Func<CUIRect, CUIBoundaries> Box =
+    public static Func<CUIRect, CUIBoundaries> Box =>
       (Rect) => new CUIBoundaries(Rect.Left, Rect.Left + Rect.Width, Rect.Top, Rect.Top + Rect.Height);
-    public static Func<CUIRect, CUIBoundaries> HorizontalTube =
+    public static Func<CUIRect, CUIBoundaries> HorizontalTube =>
       (Rect) => new CUIBoundaries(null, null, Rect.Top, Rect.Top + Rect.Height);
-    public static Func<CUIRect, CUIBoundaries> VerticalTube =
+    public static Func<CUIRect, CUIBoundaries> VerticalTube =>
       (Rect) => new CUIBoundaries(Rect.Left, Rect.Left + Rect.Width, null, null);
 
 

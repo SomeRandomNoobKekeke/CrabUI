@@ -26,20 +26,32 @@ namespace CursedUI
       Background.Sprite = CUISprite.Vignette;
     }
 
+    public new Action<CUIIconButton> Style
+    {
+      set => PersonalStyle = new CUIActionStyle<CUIIconButton>("personal", value);
+    }
+
     private IconBlock IconBlock = new();
 
+    [CUISerializableProp]
     public CUISprite Icon
     {
       get => IconBlock.Icon;
-      set => IconBlock.Icon = value;
+      set
+      {
+        IconBlock.Icon = value;
+        LayoutMarker.Mark(LayoutMarker.Pattern.AbsoluteProp);
+      }
     }
 
+    [CUISerializableProp]
     public float Scale
     {
       get => IconBlock.Scale;
       set => IconBlock.Scale = value;
     }
 
+    [CUISerializableProp]
     public Vector2 IconAnchor
     {
       get => IconBlock.Anchor;
@@ -93,12 +105,6 @@ namespace CursedUI
         Background.Visible = value;
         IconBlock.Visible = value;
       }
-    }
-
-
-    public new Action<CUIIconButton> Style
-    {
-      set => PersonalStyle = new CUIActionStyle<CUIIconButton>("personal", value);
     }
 
     public override IEnumerable<VisualUnit> VisualSplit()

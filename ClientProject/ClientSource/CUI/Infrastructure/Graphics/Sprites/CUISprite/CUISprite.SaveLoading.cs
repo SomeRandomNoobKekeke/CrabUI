@@ -28,17 +28,19 @@ namespace CursedUI
       return sprite;
     }
 
-    //TODO, for now i decided to make outer VisualUnit parsable instead
+    //TODO other props
     public static object Parse(string raw)
     {
       Dictionary<string, string> dict = JsonSerializer.Deserialize<Dictionary<string, string>>(raw);
-
-      CUI.Logger.Log(Logger.Wrap.IDictionary(dict));
 
       CUISprite sprite = new CUISprite();
 
       if (dict.ContainsKey("texture")) sprite.Texture = CUICore.TextureManager.Get(dict["texture"]);
       if (dict.ContainsKey("color")) sprite.Color = CUICore.Parser.Parse<Color>(dict["color"]);
+      if (dict.ContainsKey("sourcerect"))
+      {
+        sprite.SourceRectangle = CUICore.Parser.Parse<Rectangle?>(dict["sourcerect"]);
+      }
 
       return sprite;
     }
@@ -48,8 +50,10 @@ namespace CursedUI
       Dictionary<string, string> dict = new Dictionary<string, string>()
       {
         ["texture"] = Texture.Key ?? "",
-        ["color"] = CUICore.Parser.Serialize(Color),
       };
+
+      if (Color != DefaultColor) dict["color"] = CUICore.Parser.Serialize(Color);
+      if (SourceRectangle != null) dict["sourcerect"] = CUICore.Parser.Serialize(SourceRectangle);
 
       return JsonSerializer.Serialize(dict);
     }

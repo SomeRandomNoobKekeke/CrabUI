@@ -35,6 +35,7 @@ namespace CursedUI
         this["layout"]["Props"].Children.Add(new CUITextBlock($"{key} - {value}")
         {
           TextAnchor = CUIAnchor.LeftCenter,
+          ResizeStrategy = ResizeStrategy.Resist,
         });
       }
     }

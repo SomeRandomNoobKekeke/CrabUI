@@ -18,13 +18,15 @@ namespace CursedUI
   public partial class IconBlock : VisualElementBase, CUISerializable
   {
     private CUISprite _Icon = CUISprite.Transparent;
-    // [CUISerializableProp]
+
+    [CUISerializableProp]
     public CUISprite Icon
     {
       get => _Icon;
       set
       {
         _Icon = value;
+        RecalcForcedSize();
         RecalcIconRectangle();
       }
     }
@@ -47,6 +49,7 @@ namespace CursedUI
       set
       {
         _Scale = Math.Max(0, value);
+        RecalcForcedSize();
         RecalcIconRectangle();
       }
     }
@@ -59,6 +62,7 @@ namespace CursedUI
       set
       {
         _Anchor = value;
+        RecalcForcedSize();
         RecalcIconRectangle();
       }
     }
@@ -73,14 +77,17 @@ namespace CursedUI
     public Vector2 ForcedSize { get; private set; }
 
     public Rectangle IconRectangle { get; private set; }
+
+    private void RecalcForcedSize()
+    {
+      ForcedSize = Icon.Size.ToVector2() * Scale;
+    }
     private void RecalcIconRectangle()
     {
       IconRectangle = new CUIRect(
         CUIAnchor.ChildPosIn(Rect, Anchor, Icon.Size.ToVector2() * Scale),
         Icon.Size.ToVector2() * Scale
       ).Round();
-
-      ForcedSize = Icon.Size.ToVector2() * Scale;
     }
 
     public override bool Contains(Vector2 pos) => Rect.Contains(pos);

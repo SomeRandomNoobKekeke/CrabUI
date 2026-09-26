@@ -14,13 +14,35 @@ namespace CursedUI
 {
   public partial class CUIParser
   {
-    public static Dictionary<Type, Func<string, object>> ExtraParseMethods { get; } = new()
+    public static Dictionary<Type, Func<string, object?>> ExtraParseMethods { get; } = new()
     {
       [typeof(Vector2)] = (raw) => ParseVector2(raw),
+      [typeof(Rectangle)] = (raw) => ParseRectangle(raw),
+      [typeof(Rectangle?)] = (raw) => ParseNullRectangle(raw),
       [typeof(Color)] = (raw) => ParseColor(raw),
       [typeof(CUITexture2D)] = CUICore.TextureManager.Get,//BRUH i either have to reference __CUITexture2D from CUICore or CUICore.TextureManager from __CUITexture2D
       [typeof((int, int))] = (raw) => Tupple2IntInt(raw),
     };
+
+    public static Rectangle ParseRectangle(string raw)
+      => ParseNullRectangle(raw) ?? new Rectangle(0, 0, 0, 0);
+
+    public static Rectangle? ParseNullRectangle(string raw)
+    {
+      if (raw == null || raw == "") return null;
+
+      string content = raw.Split('[', ']')[1];
+
+      List<string> coords = content.Split(',').Select(s => s.Trim()).ToList();
+
+      int.TryParse(coords.ElementAtOrDefault(0), out int x);
+      int.TryParse(coords.ElementAtOrDefault(1), out int y);
+      int.TryParse(coords.ElementAtOrDefault(2), out int w);
+      int.TryParse(coords.ElementAtOrDefault(3), out int h);
+
+      return new Rectangle(x, y, w, h);
+    }
+
     public static (int, int) Tupple2IntInt(string raw)
     {
       if (raw == null || raw == "") return (0, 0);

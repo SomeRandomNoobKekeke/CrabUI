@@ -95,6 +95,14 @@ namespace CursedUI
     public Action<bool> OnToggle { set { Toggle += value; } }
     public event Action<bool> Toggle;
 
+    public void DoToggle()
+    {
+      State = !State;
+      if (PlaySound) SoundPlayer.PlayUISound(ClickSound);
+      Toggle?.Invoke(State);
+      if (Emit != null) Commands.SendUp(Emit, Text);
+    }
+
     public new Action<CUIToggleButton> Style
     {
       set => PersonalStyle = new CUIActionStyle<CUIToggleButton>("personal", value);
@@ -226,11 +234,7 @@ namespace CursedUI
       MouseDown += (e) =>
       {
         if (!e.Mouse.M1.Down) return;
-
-        State = !State;
-        if (PlaySound) SoundPlayer.PlayUISound(ClickSound);
-        Toggle?.Invoke(State);
-        if (Emit != null) Commands.SendUp(Emit, Text);
+        DoToggle();
       };
 
       MouseOff += (e) => DetermineColor();

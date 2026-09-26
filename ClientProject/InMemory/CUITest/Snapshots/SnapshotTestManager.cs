@@ -34,21 +34,7 @@ namespace CursedUIUser
     public string CurrentTestName;
 
 
-    public SnapshotTestManager()
-    {
-      ConsoleInteface = new ConsoleIntefaceClass(this);
-      Runner.Chamber = Chamber;
 
-
-      Events.Add(HandleManagerEvent);
-
-      OnOpen += () =>
-      {
-        Setup();
-        Refresh();
-      };
-      OnClose += Dismantle;
-    }
 
     public void Setup() => Chamber.Setup();
     public void Dismantle() => Chamber.Dismantle();
@@ -124,6 +110,15 @@ namespace CursedUIUser
     {
       string savePath = Path.Combine(SnaphotsFolder, $"{test.Name}.xml");
       return ComponentSnapshot.LoadSnapshot(savePath);
+    }
+
+
+    public SnapshotTestManager()
+    {
+      ConsoleInteface = new ConsoleIntefaceClass(this);
+      Runner.Chamber = Chamber;
+
+      Events.Add(HandleManagerEvent);
     }
   }
 }

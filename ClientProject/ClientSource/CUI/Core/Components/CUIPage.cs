@@ -13,13 +13,25 @@ namespace CursedUI
 {
   public partial class CUIPage : CUIComponent, IComponent
   {
+    protected virtual void HandleOpen() { }
+    protected virtual void HandleClose() { }
 
     public event Action OnOpen;
-    public void RaiseOnOpen() => OnOpen?.Invoke();
-    public Action AddOnOpen { set { OnOpen += value; } }
-
     public event Action OnClose;
-    public void RaiseOnClose() => OnClose?.Invoke();
+
+    public Action AddOnOpen { set { OnOpen += value; } }
     public Action AddOnClose { set { OnClose += value; } }
+
+    public void RaiseOnOpen()
+    {
+      HandleOpen();
+      OnOpen?.Invoke();
+    }
+    public void RaiseOnClose()
+    {
+      HandleClose();
+      OnClose?.Invoke();
+    }
+
   }
 }

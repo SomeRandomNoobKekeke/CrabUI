@@ -9,6 +9,7 @@ using CUILibs;
 using CursedUI;
 using Microsoft.Xna.Framework;
 using System.IO;
+using Microsoft.Xna.Framework.Input;
 
 namespace CursedUIUser
 {
@@ -22,6 +23,29 @@ namespace CursedUIUser
       Children.Clear();
       Dismantle();
     }
+
+
+    private void GlobalKeyPressedHandler(CUIKeyPressedEvent e)
+    {
+      if (e.Key == Keys.S && e.Keyboard.IsKeyDown(Keys.LeftAlt))
+      {
+        this.Get<CUIToggleButton>("layout.controls.serialize").DoToggle();
+      }
+    }
+    protected override void HandleOpen()
+    {
+      Setup();
+      Refresh();
+
+      CUI.TopMain.GlobalEvents.KeyPressed.Add(GlobalKeyPressedHandler);
+    }
+
+    protected override void HandleClose()
+    {
+      Dismantle();
+      CUI.TopMain.GlobalEvents.KeyPressed.Remove(GlobalKeyPressedHandler);
+    }
+
 
 
     public void HandleManagerEvent(SnapshotTestManager.Event e)

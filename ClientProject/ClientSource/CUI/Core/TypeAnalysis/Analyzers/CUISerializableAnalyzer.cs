@@ -12,6 +12,7 @@ namespace CursedUI
   public class CUISerializableAnalyzer
   {
     public bool IsCUISerializable(Type T) => T.IsAssignableTo(typeof(CUISerializable));
+    public bool IsNestedSerializable(Type T) => T.IsAssignableTo(typeof(NestedCUISerializable));
     public bool IsCUISerializableProp(PropertyInfo pi)
       => pi.GetCustomAttribute<CUISerializableProp>() != null;
 
@@ -37,7 +38,7 @@ namespace CursedUI
 
           PropertyPath pp = new PropertyPath(path.Append(pi));
 
-          if (IsCUISerializable(pi.PropertyType))
+          if (IsNestedSerializable(pi.PropertyType))
           {
             AnalyzeContainer(info, pi.PropertyType, pp.Path);
           }

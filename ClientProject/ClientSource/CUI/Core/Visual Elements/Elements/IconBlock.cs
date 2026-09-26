@@ -15,7 +15,7 @@ namespace CursedUI
   /// This is like TextBlock but with Icon
   /// This thing resizes to Icon, not vice versa
   /// </summary>
-  public partial class IconBlock : VisualElementBase, CUISerializable
+  public partial class IconBlock : VisualElementBase, NestedCUISerializable
   {
     private CUISprite _Icon = CUISprite.Transparent;
 
@@ -95,11 +95,6 @@ namespace CursedUI
     public override void Draw(CUISpriteBatch spriteBatch)
     {
       Icon.Draw(spriteBatch, IconRectangle);
-    }
-
-    public static object Deserialize(XElement element)
-    {
-      throw new NotImplementedException();
     }
   }
 }

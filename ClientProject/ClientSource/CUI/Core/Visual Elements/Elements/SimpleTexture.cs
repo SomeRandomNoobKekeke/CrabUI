@@ -12,7 +12,7 @@ using System.Text.Json;
 
 namespace CursedUI
 {
-  public class SimpleTexture : VisualElementBase, CUISerializable
+  public class SimpleTexture : VisualElementBase, NestedCUISerializable
   {
     private Rectangle RoundedRect;
 
@@ -109,36 +109,5 @@ namespace CursedUI
         Sprite.Draw(spriteBatch, RoundedRect);
       }
     }
-
-    public static object Deserialize(XElement element)
-    {
-      throw new NotImplementedException();
-    }
-
-
-    // public static object Parse(string raw)
-    // {
-    //   Dictionary<string, string> dict = JsonSerializer.Deserialize<Dictionary<string, string>>(raw)!;
-
-    //   CUI.Logger.Log(Logger.Wrap.IDictionary(dict));
-
-    //   SimpleTexture texture = new SimpleTexture();
-
-    //   if (dict.ContainsKey("texture")) texture.Texture = CUICore.TextureManager.Get(dict["texture"]);
-    //   if (dict.ContainsKey("color")) texture.Color = CUICore.Parser.Parse<Color>(dict["color"]);
-
-    //   return texture;
-    // }
-
-    // public string ToText()
-    // {
-    //   Dictionary<string, string> dict = new Dictionary<string, string>()
-    //   {
-    //     ["texture"] = Texture.Key ?? "",
-    //     ["color"] = CUICore.Parser.Serialize(Color),
-    //   };
-
-    //   return JsonSerializer.Serialize(dict);
-    // }
   }
 }

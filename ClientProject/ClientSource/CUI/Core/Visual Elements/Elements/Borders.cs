@@ -11,7 +11,7 @@ using System.Xml.Linq;
 
 namespace CursedUI
 {
-  public class Borders : VisualElementBase, CUISerializable
+  public class Borders : VisualElementBase, NestedCUISerializable
   {
     private CUIRect _Rect; public CUIRect Rect
     {
@@ -107,11 +107,6 @@ namespace CursedUI
         if (Sizes.Right != 0) Sprite.Draw(spriteBatch, RightRect);
         if (Sizes.Bottom != 0) Sprite.Draw(spriteBatch, BottomRect);
       }
-    }
-
-    public static object Deserialize(XElement element)
-    {
-      return new Borders();
     }
   }
 }

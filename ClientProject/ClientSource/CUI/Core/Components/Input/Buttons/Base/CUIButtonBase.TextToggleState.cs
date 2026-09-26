@@ -18,7 +18,7 @@ namespace CursedUI
     /// <summary>
     /// It's a wrapper for TextBlock that also marks layout when you set props
     /// </summary>
-    public class TextToggleState_Part : Part, CUISerializable
+    public class TextToggleState_Part : Part, NestedCUISerializable
     {
       public TextBlock TextBlock { get; } = new();
 
@@ -136,11 +136,6 @@ namespace CursedUI
       public Vector2 TextDrawPosition => TextBlock.TextDrawPosition;
       public CUINullVector2 ForcedSize => TextBlock.ForcedSize;
       public float RealScale => TextBlock.RealScale;
-
-      public static object Deserialize(XElement element)
-      {
-        throw new NotImplementedException();
-      }
     }
   }
 }

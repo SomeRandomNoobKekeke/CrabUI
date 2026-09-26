@@ -27,7 +27,15 @@ namespace CursedUI
       Background.Sprite = CUISprite.DimmedVertical;
     }
 
+    public new Action<CUIToggleButton> Style
+    {
+      set => PersonalStyle = new CUIActionStyle<CUIToggleButton>("personal", value);
+    }
+
+    [CUISerializableProp]
     public TextToggleState_Part OnState { get; } = new();
+
+    [CUISerializableProp]
     public TextToggleState_Part OffState { get; } = new();
 
     private TextToggleState_Part SelectedTextState;//CRINGE parts are not designed to be swapped around, this is cursed
@@ -53,8 +61,9 @@ namespace CursedUI
       set => OffState.BackgroundColor = value;
     }
 
-
-    private bool _State; public bool State
+    private bool _State;
+    [CUISerializableProp]
+    public bool State
     {
       get => _State;
       set
@@ -103,10 +112,7 @@ namespace CursedUI
       if (Emit != null) Commands.SendUp(Emit, Text);
     }
 
-    public new Action<CUIToggleButton> Style
-    {
-      set => PersonalStyle = new CUIActionStyle<CUIToggleButton>("personal", value);
-    }
+
 
     [CUISerializableProp]
     public CUISizes TextPadding { get; set; }
@@ -114,13 +120,6 @@ namespace CursedUI
       SelectedTextState.TextBlock.ForcedSize.X + TextPadding.FullWidth,
       SelectedTextState.TextBlock.ForcedSize.Y + TextPadding.FullHeigth
     );
-
-    protected override void UpdateRects()
-    {
-      base.UpdateRects();
-      OnState.TextBlock.Rect = InnerRect - TextPadding;
-      OffState.TextBlock.Rect = InnerRect - TextPadding;
-    }
 
     [CUISerializableProp]
     public override bool Visible
@@ -132,6 +131,13 @@ namespace CursedUI
         OnState.TextBlock.Visible = value;
         OffState.TextBlock.Visible = value;
       }
+    }
+
+    protected override void UpdateRects()
+    {
+      base.UpdateRects();
+      OnState.TextBlock.Rect = InnerRect - TextPadding;
+      OffState.TextBlock.Rect = InnerRect - TextPadding;
     }
 
     public override IEnumerable<VisualUnit> VisualSplit()
@@ -149,6 +155,7 @@ namespace CursedUI
 
 
     #region Forwarded to TextState
+    // [CUISerializableProp]
     public string Text
     {
       get => OnState.Text;
@@ -158,6 +165,7 @@ namespace CursedUI
         OffState.Text = value;
       }
     }
+    // [CUISerializableProp]
     public Color TextColor
     {
       get => OnState.TextColor;
@@ -167,6 +175,7 @@ namespace CursedUI
         OffState.TextColor = value;
       }
     }
+    // [CUISerializableProp]
     public float Scale
     {
       get => OnState.Scale;
@@ -176,6 +185,7 @@ namespace CursedUI
         OffState.Scale = value;
       }
     }
+    // [CUISerializableProp]
     public ResizeStrategy ResizeStrategy
     {
       get => OnState.ResizeStrategy;
@@ -185,6 +195,7 @@ namespace CursedUI
         OffState.ResizeStrategy = value;
       }
     }
+    // [CUISerializableProp]
     public Vector2 TextAnchor
     {
       get => OnState.TextAnchor;
@@ -194,6 +205,7 @@ namespace CursedUI
         OffState.TextAnchor = value;
       }
     }
+    // [CUISerializableProp]
     public SpriteEffects SpriteEffects
     {
       get => OnState.SpriteEffects;
@@ -203,6 +215,7 @@ namespace CursedUI
         OffState.SpriteEffects = value;
       }
     }
+    // [CUISerializableProp]
     public float LayerDepth
     {
       get => OnState.LayerDepth;

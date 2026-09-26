@@ -7,6 +7,7 @@ using Barotrauma;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using CUILibs;
+using System.Xml.Linq;
 
 namespace CursedUI
 {
@@ -14,9 +15,11 @@ namespace CursedUI
   /// This is like TextBlock but with Icon
   /// This thing resizes to Icon, not vice versa
   /// </summary>
-  public partial class IconBlock : VisualElementBase
+  public partial class IconBlock : VisualElementBase, CUISerializable
   {
-    private CUISprite _Icon = CUISprite.Transparent; public CUISprite Icon
+    private CUISprite _Icon = CUISprite.Transparent;
+    // [CUISerializableProp]
+    public CUISprite Icon
     {
       get => _Icon;
       set
@@ -36,7 +39,9 @@ namespace CursedUI
       }
     }
 
-    private float _Scale = 1.0f; public float Scale
+    private float _Scale = 1.0f;
+    [CUISerializableProp]
+    public float Scale
     {
       get => _Scale;
       set
@@ -46,7 +51,9 @@ namespace CursedUI
       }
     }
 
-    private Vector2 _Anchor = new Vector2(0.5f, 0.5f); public Vector2 Anchor
+    private Vector2 _Anchor = new Vector2(0.5f, 0.5f);
+    [CUISerializableProp]
+    public Vector2 Anchor
     {
       get => _Anchor;
       set
@@ -56,6 +63,7 @@ namespace CursedUI
       }
     }
 
+    [CUISerializableProp]
     public Color Color
     {
       get => Icon.Color;
@@ -80,6 +88,11 @@ namespace CursedUI
     public override void Draw(CUISpriteBatch spriteBatch)
     {
       Icon.Draw(spriteBatch, IconRectangle);
+    }
+
+    public static object Deserialize(XElement element)
+    {
+      throw new NotImplementedException();
     }
   }
 }

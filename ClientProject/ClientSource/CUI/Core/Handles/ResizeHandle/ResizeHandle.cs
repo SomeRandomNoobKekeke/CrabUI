@@ -17,7 +17,7 @@ namespace CursedUI
     /// why 22? it's default height of barotrauma text
     /// </summary>
     //TODO akshually should move all such sizes to some global class
-    public static Vector2 DefaultSize = new Vector2(22, 22);
+    public static Vector2 DefaultSize = new Vector2(24, 24);
     public static ICUIStyle DefaultStyle => new CUIDefaultStyle<ResizeHandle>((c) =>
     {
       c.Background.Color = c.Palette["main"] * 0.5f;

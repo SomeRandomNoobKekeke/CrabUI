@@ -28,6 +28,11 @@ namespace CursedUI
       Background.Sprite = CUISprite.DimmedVertical;
     }
 
+    public new Action<CUIRadioButton> Style
+    {
+      set => PersonalStyle = new CUIActionStyle<CUIRadioButton>("personal", value);
+    }
+
     public TextToggleState_Part OnState { get; } = new();
     public TextToggleState_Part OffState { get; } = new();
     private TextToggleState_Part SelectedTextState;
@@ -55,9 +60,11 @@ namespace CursedUI
     }
 
     public RadioGroup Group { get; set; }
+
+    [CUISerializableProp]
     public string GroupName
     {
-      get => Group.Name;
+      get => Group?.Name;
       set => Group = RadioGroup.GetOrCreate(value);
     }
 
@@ -88,6 +95,7 @@ namespace CursedUI
     public Action<bool> OnToggled { set { Toggled += value; } }
     public event Action<bool> Toggled;
 
+    [CUISerializableProp]
     public bool IsSelected
     {
       get => Group?.Current == this;
@@ -155,12 +163,7 @@ namespace CursedUI
       SelectedTextState.TextBlock.ForcedSize.Y + TextPadding.FullHeigth
     );
 
-    protected override void UpdateRects()
-    {
-      base.UpdateRects();
-      OnState.TextBlock.Rect = InnerRect - TextPadding;
-      OffState.TextBlock.Rect = InnerRect - TextPadding;
-    }
+
 
     [CUISerializableProp]
     public override bool Visible
@@ -171,6 +174,13 @@ namespace CursedUI
         Background.Visible = value;
         SelectedTextState.TextBlock.Visible = value;
       }
+    }
+
+    protected override void UpdateRects()
+    {
+      base.UpdateRects();
+      OnState.TextBlock.Rect = InnerRect - TextPadding;
+      OffState.TextBlock.Rect = InnerRect - TextPadding;
     }
 
     public override IEnumerable<VisualUnit> VisualSplit()
@@ -186,12 +196,10 @@ namespace CursedUI
       yield return Borders.VisualWrapper;
     }
 
-    public new Action<CUIRadioButton> Style
-    {
-      set => PersonalStyle = new CUIActionStyle<CUIRadioButton>("personal", value);
-    }
+
 
     #region Forwarded to TextState
+    [CUISerializableProp]
     public string Text
     {
       get => OnState.Text;
@@ -201,6 +209,7 @@ namespace CursedUI
         OffState.Text = value;
       }
     }
+    [CUISerializableProp]
     public Color TextColor
     {
       get => OnState.TextColor;
@@ -210,6 +219,7 @@ namespace CursedUI
         OffState.TextColor = value;
       }
     }
+    [CUISerializableProp]
     public float Scale
     {
       get => OnState.Scale;
@@ -219,6 +229,7 @@ namespace CursedUI
         OffState.Scale = value;
       }
     }
+    [CUISerializableProp]
     public ResizeStrategy ResizeStrategy
     {
       get => OnState.ResizeStrategy;
@@ -228,6 +239,7 @@ namespace CursedUI
         OffState.ResizeStrategy = value;
       }
     }
+    [CUISerializableProp]
     public Vector2 TextAnchor
     {
       get => OnState.TextAnchor;
@@ -237,6 +249,7 @@ namespace CursedUI
         OffState.TextAnchor = value;
       }
     }
+    [CUISerializableProp]
     public SpriteEffects SpriteEffects
     {
       get => OnState.SpriteEffects;
@@ -246,6 +259,7 @@ namespace CursedUI
         OffState.SpriteEffects = value;
       }
     }
+    [CUISerializableProp]
     public float LayerDepth
     {
       get => OnState.LayerDepth;

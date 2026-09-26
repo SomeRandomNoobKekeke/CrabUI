@@ -25,6 +25,8 @@ namespace CursedUI
     {
       base.InitStyle();
       Icon.Sprite = CUISprite.Cross;
+      Absolute = new CUINullRect(w: ResizeHandle.DefaultSize.X, h: ResizeHandle.DefaultSize.Y);
+
       ConsumeMouseEvents = true;
     }
 

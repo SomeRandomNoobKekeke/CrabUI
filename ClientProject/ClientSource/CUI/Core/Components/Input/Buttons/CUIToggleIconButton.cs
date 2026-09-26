@@ -26,27 +26,50 @@ namespace CursedUI
       Background.Sprite = CUISprite.Vignette;
     }
 
+    public new Action<CUIToggleIconButton> Style
+    {
+      set => PersonalStyle = new CUIActionStyle<CUIToggleIconButton>("personal", value);
+    }
+
+    [CUISerializableProp]
     public IconBlock OnIconBlock { get; } = new();
+
+    [CUISerializableProp]
     public IconBlock OffIconBlock { get; } = new();
 
     private IconBlock SelectedIconBlock;
 
+    // [CUISerializableProp]
     public CUISprite Icon
     {
       get => OnIconBlock.Icon;
-      set => OnIconBlock.Icon = value;
+      set
+      {
+        OnIconBlock.Icon = value;
+        OffIconBlock.Icon = value;
+      }
     }
 
+    // [CUISerializableProp]
     public float Scale
     {
       get => OnIconBlock.Scale;
-      set => OnIconBlock.Scale = value;
+      set
+      {
+        OnIconBlock.Scale = value;
+        OffIconBlock.Scale = value;
+      }
     }
 
+    // [CUISerializableProp]
     public Vector2 IconAnchor
     {
       get => OnIconBlock.Anchor;
-      set => OnIconBlock.Anchor = value;
+      set
+      {
+        OnIconBlock.Anchor = value;
+        OffIconBlock.Anchor = value;
+      }
     }
 
     [CUISerializableProp]
@@ -70,7 +93,9 @@ namespace CursedUI
       }
     }
 
-    private bool _State; public bool State
+    private bool _State;
+    [CUISerializableProp]
+    public bool State
     {
       get => _State;
       set
@@ -137,10 +162,7 @@ namespace CursedUI
       yield return Borders.VisualWrapper;
     }
 
-    public new Action<CUIToggleIconButton> Style
-    {
-      set => PersonalStyle = new CUIActionStyle<CUIToggleIconButton>("personal", value);
-    }
+
 
     public CUIToggleIconButton() : base()
     {

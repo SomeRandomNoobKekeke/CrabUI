@@ -28,6 +28,11 @@ namespace CursedUI
       Background.Sprite = CUISprite.DimmedVertical;
     }
 
+    public new Action<CUIButton> Style
+    {
+      set => PersonalStyle = new CUIActionStyle<CUIButton>("personal", value);
+    }
+
     public TextState_Part TextState { get; } = new();
 
     [CUISerializableProp]
@@ -68,10 +73,7 @@ namespace CursedUI
       if (MousePressed) Background.Color = MousePressedColor;
     }
 
-    public new Action<CUIButton> Style
-    {
-      set => PersonalStyle = new CUIActionStyle<CUIButton>("personal", value);
-    }
+
 
     [CUISerializableProp]
     public CUISizes TextPadding { get; set; }
@@ -79,12 +81,6 @@ namespace CursedUI
       TextState.TextBlock.ForcedSize.X + TextPadding.FullWidth,
       TextState.TextBlock.ForcedSize.Y + TextPadding.FullHeigth
     );
-
-    protected override void UpdateRects()
-    {
-      base.UpdateRects();
-      TextState.TextBlock.Rect = InnerRect - TextPadding;
-    }
 
     [CUISerializableProp]
     public override bool Visible
@@ -97,8 +93,11 @@ namespace CursedUI
       }
     }
 
-
-
+    protected override void UpdateRects()
+    {
+      base.UpdateRects();
+      TextState.TextBlock.Rect = InnerRect - TextPadding;
+    }
 
     public override IEnumerable<VisualUnit> VisualSplit()
     {
@@ -115,12 +114,19 @@ namespace CursedUI
 
 
     #region Forwarded to TextState
+    [CUISerializableProp]
     public string Text { get => TextState.Text; set => TextState.Text = value; }
+    [CUISerializableProp]
     public Color TextColor { get => TextState.TextColor; set => TextState.TextColor = value; }
+    [CUISerializableProp]
     public float Scale { get => TextState.Scale; set => TextState.Scale = value; }
+    [CUISerializableProp]
     public ResizeStrategy ResizeStrategy { get => TextState.ResizeStrategy; set => TextState.ResizeStrategy = value; }
+    [CUISerializableProp]
     public Vector2 TextAnchor { get => TextState.TextAnchor; set => TextState.TextAnchor = value; }
+    [CUISerializableProp]
     public SpriteEffects SpriteEffects { get => TextState.SpriteEffects; set => TextState.SpriteEffects = value; }
+    [CUISerializableProp]
     public float LayerDepth { get => TextState.LayerDepth; set => TextState.LayerDepth = value; }
     public CUIFont Font { get => TextState.Font; set => TextState.Font = value; }
 

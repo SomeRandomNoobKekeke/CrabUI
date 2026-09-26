@@ -14,6 +14,22 @@ namespace CursedUI
 {
   public static partial class CUIDefault
   {
+    public class FrameHandle : CUIHorizontalList
+    {
+      public static ICUIStyle DefaultStyle => new CUIDefaultStyle<FrameHandle>((c) =>
+      {
+        c.Background.Color = Color.Lerp(c.Palette["back"], c.Palette["main"], 1.0f);
+        c.FitContent = new CUIBool2(false, true);
+      });
+
+      protected override void InitStyle()
+      {
+        base.InitStyle();
+        Background.Sprite = CUISprite.DimmedVertical;
+      }
+    }
+
+
     public class Frame : CUIFrame
     {
       public CUITextBlock CaptionBlock { get; }
@@ -34,15 +50,7 @@ namespace CursedUI
           Relative = new CUINullRect(0, 0, 1, 1),
           VisualChildrenOrder = CUIDirection.Reverse,
         };
-        this["layout"]["handle"] = new CUIHorizontalList()
-        {
-          Absolute = new CUINullRect(h: ResizeHandle.DefaultSize.Y),
-          Background = { Sprite = CUISprite.DimmedVertical },
-          Style = (c) =>
-          {
-            c.Background.Color = c.Palette["main"];
-          },
-        };
+        this["layout"]["handle"] = new FrameHandle();
         this["layout"]["handle"]["caption"] = CaptionBlock = new CUITextBlock()
         {
           Flex = 1,

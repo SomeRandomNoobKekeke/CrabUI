@@ -28,7 +28,6 @@ namespace CursedUI
       return sprite;
     }
 
-    //TODO other props
     public static object Parse(string raw)
     {
       Dictionary<string, string> dict = JsonSerializer.Deserialize<Dictionary<string, string>>(raw);
@@ -36,15 +35,25 @@ namespace CursedUI
       CUISprite sprite = new CUISprite();
 
       if (dict.ContainsKey("texture")) sprite.Texture = CUICore.TextureManager.Get(dict["texture"]);
+      if (dict.ContainsKey("colorTL")) sprite.ColorTL = CUICore.Parser.Parse<Color>(dict["colorTL"]);
+      if (dict.ContainsKey("colorTR")) sprite.ColorTR = CUICore.Parser.Parse<Color>(dict["colorTR"]);
+      if (dict.ContainsKey("colorBR")) sprite.ColorBR = CUICore.Parser.Parse<Color>(dict["colorBR"]);
+      if (dict.ContainsKey("colorBL")) sprite.ColorBL = CUICore.Parser.Parse<Color>(dict["colorBL"]);
       if (dict.ContainsKey("color")) sprite.Color = CUICore.Parser.Parse<Color>(dict["color"]);
       if (dict.ContainsKey("sourcerect"))
       {
         sprite.SourceRectangle = CUICore.Parser.Parse<Rectangle?>(dict["sourcerect"]);
       }
 
+      if (dict.ContainsKey("rotation")) sprite.Rotation = CUICore.Parser.Parse<float>(dict["rotation"]);
+      if (dict.ContainsKey("origin")) sprite.Origin = CUICore.Parser.Parse<Vector2>(dict["origin"]);
+      if (dict.ContainsKey("effects")) sprite.Effects = CUICore.Parser.Parse<SpriteEffects>(dict["effects"]);
+      if (dict.ContainsKey("layerdepth")) sprite.LayerDepth = CUICore.Parser.Parse<float>(dict["layerdepth"]);
+
       return sprite;
     }
 
+    //TODO don't use json, it uses "" and they are not allowed in xml
     public string ToText()
     {
       Dictionary<string, string> dict = new Dictionary<string, string>()
@@ -52,8 +61,23 @@ namespace CursedUI
         ["texture"] = Texture.Key ?? "",
       };
 
-      if (Color != DefaultColor) dict["color"] = CUICore.Parser.Serialize(Color);
+      if (ColorTL == ColorTR && ColorTL == ColorBL && ColorTL == ColorBR)
+      {
+        if (Color != DefaultColor) dict["color"] = CUICore.Parser.Serialize(Color);
+      }
+      else
+      {
+        if (ColorTL != DefaultColor) dict["colorTL"] = CUICore.Parser.Serialize(ColorTL);
+        if (ColorTR != DefaultColor) dict["colorTR"] = CUICore.Parser.Serialize(ColorTR);
+        if (ColorBR != DefaultColor) dict["colorBR"] = CUICore.Parser.Serialize(ColorBR);
+        if (ColorBL != DefaultColor) dict["colorBL"] = CUICore.Parser.Serialize(ColorBL);
+      }
+
       if (SourceRectangle != null) dict["sourcerect"] = CUICore.Parser.Serialize(SourceRectangle);
+      if (Rotation != 0) dict["rotation"] = CUICore.Parser.Serialize(Rotation);
+      if (Origin != Vector2.Zero) dict["origin"] = CUICore.Parser.Serialize(Origin);
+      if (Effects != SpriteEffects.None) dict["effects"] = CUICore.Parser.Serialize(Effects);
+      if (LayerDepth != 0) dict["layerdepth"] = CUICore.Parser.Serialize(LayerDepth);
 
       return JsonSerializer.Serialize(dict);
     }

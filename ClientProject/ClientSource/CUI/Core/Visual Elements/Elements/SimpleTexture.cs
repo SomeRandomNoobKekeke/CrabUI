@@ -33,7 +33,10 @@ namespace CursedUI
     /// </summary>
     public CUISizes SensorExpansion { get; set; }
 
-    private CUISprite _Sprite = CUISprite.White; public CUISprite Sprite
+    private CUISprite _Sprite = CUISprite.White;
+
+    [CUISerializableProp]
+    public CUISprite Sprite
     {
       get => _Sprite;
       set
@@ -51,7 +54,9 @@ namespace CursedUI
     /// <summary>
     /// Source of truth elevated from sprite
     /// </summary>
-    private bool _IgnoretransparentPixels; public bool IgnoretransparentPixels
+    private bool _IgnoretransparentPixels;
+    [CUISerializableProp]
+    public bool IgnoretransparentPixels
     {
       get => _IgnoretransparentPixels;
       set
@@ -72,7 +77,7 @@ namespace CursedUI
       return Rect.Contains(pos, SensorExpansion);
     }
 
-    [CUISerializableProp]
+    public Color? _Color = null; //CRINGE so if you change this Color next sprite will inherit it
     public Color Color
     {
       get => Sprite.Color;
@@ -82,24 +87,16 @@ namespace CursedUI
         _Color = value;
       }
     }
-    public Color? _Color = null; //CRINGE so if you change this Color next sprite will inherit it
+
 
     #region Forwarded to CUISprite
-    [CUISerializableProp]
     public CUITexture2D Texture { get => Sprite.Texture; set => Sprite.Texture = value; }
-    [CUISerializableProp]
     public Rectangle? SourceRectangle { get => Sprite.SourceRectangle; set => Sprite.SourceRectangle = value; }
-    [CUISerializableProp]
     public float Rotation { get => Sprite.Rotation; set => Sprite.Rotation = value; }
-    [CUISerializableProp]
     public Vector2 Origin { get => Sprite.Origin; set => Sprite.Origin = value; }
-    [CUISerializableProp]
     public SpriteEffects Effects { get => Sprite.Effects; set => Sprite.Effects = value; }
-    [CUISerializableProp]
     public float LayerDepth { get => Sprite.LayerDepth; set => Sprite.LayerDepth = value; }
-    [CUISerializableProp]
     public CUISpriteDrawMode DrawMode { get => Sprite.DrawMode; set => Sprite.DrawMode = value; }
-
     #endregion
 
     public override void Draw(CUISpriteBatch spriteBatch)

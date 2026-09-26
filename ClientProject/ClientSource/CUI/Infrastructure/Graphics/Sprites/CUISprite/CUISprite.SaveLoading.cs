@@ -30,6 +30,7 @@ namespace CursedUI
 
     public static object Parse(string raw)
     {
+      raw = raw.Replace('\'', '"');
       Dictionary<string, string> dict = JsonSerializer.Deserialize<Dictionary<string, string>>(raw);
 
       CUISprite sprite = new CUISprite();
@@ -79,7 +80,7 @@ namespace CursedUI
       if (Effects != SpriteEffects.None) dict["effects"] = CUICore.Parser.Serialize(Effects);
       if (LayerDepth != 0) dict["layerdepth"] = CUICore.Parser.Serialize(LayerDepth);
 
-      return JsonSerializer.Serialize(dict);
+      return JsonSerializer.Serialize(dict).Replace('"', '\'');
     }
   }
 }

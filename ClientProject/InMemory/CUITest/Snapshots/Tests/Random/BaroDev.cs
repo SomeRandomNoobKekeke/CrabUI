@@ -8,6 +8,7 @@ using Barotrauma;
 using CUILibs;
 using CursedUI;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace CursedUIUser
 {
@@ -26,6 +27,7 @@ namespace CursedUIUser
               ColorTR = Color.Green,
               ColorBR = Color.Blue,
               ColorBL = Color.Transparent,
+              Effects = SpriteEffects.FlipHorizontally | SpriteEffects.FlipVertically,
             },
           },
           Absolute = new CUINullRect(0, 0, 400, 600),

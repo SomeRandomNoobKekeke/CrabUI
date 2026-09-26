@@ -47,9 +47,9 @@ namespace CursedUI
 
       try
       {
-        CUICore.TextureManager.DummyMode = true;
+        CUICore.DummyMode = true;
         CUIVisualComponent result = (CUIVisualComponent)Activator.CreateInstance(ComponentType);
-        CUICore.TextureManager.DummyMode = false;
+        CUICore.DummyMode = false;
 
         return result;
       }

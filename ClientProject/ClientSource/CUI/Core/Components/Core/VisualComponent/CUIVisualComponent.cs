@@ -16,15 +16,6 @@ namespace CursedUI
   {
     public class Part : IPart { public CUIVisualComponent Self { get; set; } }
 
-    public static Dictionary<int, WeakReference<CUIVisualComponent>> ComponentsById = new();
-    public static IEnumerable<CUIVisualComponent> AllComponents => ComponentsById.Values
-      .Select(wr =>
-      {
-        wr.TryGetTarget(out CUIVisualComponent component);
-        return component;
-      }).Where(c => c != null);
-
-    public static int MaxID { get; private set; }
     public int ID { get; set; }
 
     public string TypeName => this.GetType().Name;
@@ -33,7 +24,7 @@ namespace CursedUI
 
     public CUIVisualComponent()
     {
-      ID = MaxID++;
+      ID = CUICore.GetID();
       VisualWrapper = new(this);
 
       Info = CUICore.Reflection.GetComponentInfo(GetType());

@@ -17,28 +17,33 @@ namespace CursedUI
   {
     public static void Add()
     {
-      PluginCommands.Add("cuiprinttree", CUIPrintTree_Command,
-        () => new string[][] { new string[] { "Main", "TopMain" } }
-      );
+      PluginCommands.Add("cuiprintstaticfields", CUIPrintStaticFields_Command);
+
+      PluginCommands.Add("cuiprintflatlayout", CUIPrintFlatLayout_Command, () => [["Main", "TopMain"]]);
+      PluginCommands.Add("cuiprintflatvisuals", CUIPrintFlatVisuals_Command, () => [["Main", "TopMain"]]);
 
       PluginCommands.Add("cuiprinttypetree", CUIPrintTypeTree_Command);
+      PluginCommands.Add("cuiprintcomponentinfos", CUIPrintComponentInfos_Command);
 
-      PluginCommands.Add("cuipalettes", CUIPalettes_Command);
-
-      PluginCommands.Add("cuidebug", CUIDebug_Command);
+      PluginCommands.Add("gc", GC_Command);
       PluginCommands.Add("printharmonypatches", PrintHarmonyPatches_Command, () => new string[][]{
         new string[]{ "nolua" },
         new string[]{ "deep" },
       });
 
       PluginCommands.Add("cuiprinttextures", PrintCUITextures_Command, CUIPrintTextures_Hints);
-      PluginCommands.Add("gc", GC_Command);
-      PluginCommands.Add("cuiprintcomponentinfos", CUIPrintComponentInfos_Command);
-
-      PluginCommands.Add("cuiprintflatlayout", CUIPrintFlatLayout_Command, () => [["Main", "TopMain"]]);
-      PluginCommands.Add("cuiprintflatvisuals", CUIPrintFlatVisuals_Command, () => [["Main", "TopMain"]]);
+      PluginCommands.Add("cuiprinttree", CUIPrintTree_Command,
+        () => new string[][] { new string[] { "Main", "TopMain" } }
+      );
+      PluginCommands.Add("cuidebug", CUIDebug_Command);
+      PluginCommands.Add("cuipalettes", CUIPalettes_Command);
     }
 
+
+    public static void CUIPrintStaticFields_Command(string[] args)
+    {
+      StaticFieldsAnalyzer.PrintAllStaticFields();
+    }
 
     public static void CUIPrintFlatLayout_Command(string[] args)
     {

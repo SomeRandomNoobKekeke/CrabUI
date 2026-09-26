@@ -25,7 +25,7 @@ namespace CursedUI
     {
       base.InitStyle();
       TextPadding = new(2, 4, 2, 4);
-      Background.Sprite = CUISprite.Vignette;
+      Background.Sprite = CUISprite.DimmedVertical;
     }
 
     public TextToggleState_Part OnState { get; } = new();

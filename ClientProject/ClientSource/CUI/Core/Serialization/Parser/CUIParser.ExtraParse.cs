@@ -17,6 +17,7 @@ namespace CursedUI
     public static Dictionary<Type, Func<string, object?>> ExtraParseMethods { get; } = new()
     {
       [typeof(Vector2)] = (raw) => ParseVector2(raw),
+      [typeof(Vector2?)] = (raw) => ParseNullVector2(raw),
       [typeof(Rectangle)] = (raw) => ParseRectangle(raw),
       [typeof(Rectangle?)] = (raw) => ParseNullRectangle(raw),
       [typeof(Color)] = (raw) => ParseColor(raw),
@@ -58,9 +59,9 @@ namespace CursedUI
     }
 
     public static Color ParseColor(string raw) => XMLExtensions.ParseColor(raw, false);
-    public static Vector2 ParseVector2(string raw)
+    public static Vector2? ParseNullVector2(string raw)
     {
-      if (raw == null || raw == "") return new Vector2(0, 0);
+      if (raw == null || raw == "") return null;
 
       string content = raw.Split('[', ']')[1];
 
@@ -74,5 +75,7 @@ namespace CursedUI
 
       return new Vector2(x, y);
     }
+    public static Vector2 ParseVector2(string raw)
+      => ParseNullVector2(raw) ?? Vector2.Zero;
   }
 }

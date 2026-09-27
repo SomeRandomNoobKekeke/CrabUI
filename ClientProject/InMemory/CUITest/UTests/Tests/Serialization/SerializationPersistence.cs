@@ -10,16 +10,15 @@ namespace CursedUI
 {
   public class SerializationPersistenceTest : CUISerializationTest
   {
+
     public UTest Default()
     {
-      CUIFrame frame = new CUIDefault.Frame("bruh");
+      CUIDefault.Frame frame1 = new CUIDefault.Frame("guh");
+      CUIDefault.Frame frame2 = CUIComponent.Deserialize<CUIDefault.Frame>(frame1.Serialize());
 
-      CUI.Logger.Log(frame.GetType().GetFullName());
+      // frame2.Caption = "not guh";
 
-      XElement element = frame.Serialize();
-      CUI.Logger.Log(element);
-
-      return new UTest(frame.IsEqualTo(CUIComponent.Deserialize(element)), true);
+      return new UTest(frame1.IsDeepEqualTo(frame2));
     }
   }
 }

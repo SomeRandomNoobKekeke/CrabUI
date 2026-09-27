@@ -15,6 +15,7 @@ namespace CursedUI
 {
   public partial class CUIDropDown : CUIComponent, IComponent
   {
+    [CUISerializableProp]
     public string Selected
     {
       get => SelectedBtn.Text;

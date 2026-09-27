@@ -24,5 +24,18 @@ namespace CursedUI
 
       return true;
     }
+
+    public bool IsDeepEqualTo(CUIVisualComponent other)
+    {
+      if (!IsEqualTo(other)) return false;
+      if (Children.Count != other.Children.Count) return false;
+
+      for (int i = 0; i < Children.Count; i++)
+      {
+        if (!Children[i].IsDeepEqualTo(other.Children[i])) return false;
+      }
+
+      return true;
+    }
   }
 }

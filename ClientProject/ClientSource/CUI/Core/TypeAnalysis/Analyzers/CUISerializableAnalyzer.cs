@@ -52,6 +52,7 @@ namespace CursedUI
 
     private bool CheckCringe(Type T)
     {
+      if (T.IsAssignableTo(typeof(NestedCUISerializable))) return true;
       if (T.IsAssignableTo(typeof(IParsable))) return true;
       if (T.IsPrimitive) return true;
       if (T == typeof(string)) return true;

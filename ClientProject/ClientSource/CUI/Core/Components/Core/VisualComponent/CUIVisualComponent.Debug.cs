@@ -76,5 +76,23 @@ namespace CursedUI
         flattener.Flat.Select(vu => $"{vu} of {this}")
         , true));
     }
+
+    public void PrintProps(string offset = "")
+    {
+      CUI.Logger.Log($"{offset}{this} props:");
+      foreach (var (key, value) in As_StringDictionary)
+      {
+        CUI.Logger.Log($"{offset}    {key}  -  {value}");
+      }
+    }
+
+    public void PrintDeepProps(string offset = "")
+    {
+      PrintProps(offset);
+      foreach (var child in Children)
+      {
+        child.PrintDeepProps(offset + "    ");
+      }
+    }
   }
 }

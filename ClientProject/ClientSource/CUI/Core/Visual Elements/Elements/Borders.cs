@@ -22,8 +22,9 @@ namespace CursedUI
         UpdateRects();
       }
     }
-    public CUIRect InnerRect { get; set; }
+    public CUIRect InnerRect { get; private set; }
 
+    [CUISerializableProp]
     public CUISizes Sizes { get; set; }
     public float Top
     {

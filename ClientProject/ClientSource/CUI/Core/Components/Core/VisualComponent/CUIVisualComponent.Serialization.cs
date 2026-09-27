@@ -24,6 +24,8 @@ namespace CursedUI
     [CUISerializableProp] // BaroDev(wide)
     public bool Serializable { get; set; } = true;
 
+    public bool SerializeChildren { get; set; } = true;
+
     static object CUISerializable.Deserialize(XElement element) => Deserialize(element);
     public static T Deserialize<T>(XElement element) where T : CUIVisualComponent => (T)Deserialize(element);
     public static CUIVisualComponent Deserialize(XElement element)

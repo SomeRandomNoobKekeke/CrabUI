@@ -32,11 +32,10 @@ namespace CursedUI
 
     public class Frame : CUIFrame
     {
-      public CUITextBlock CaptionBlock { get; }
       public string Caption
       {
-        get => CaptionBlock.Text;
-        set => CaptionBlock.Text = value;
+        get => Get<CUITextBlock>("layout.handle.caption").Text;
+        set => Get<CUITextBlock>("layout.handle.caption").Text = value;
       }
 
       public Frame() : base()
@@ -51,7 +50,7 @@ namespace CursedUI
           VisualChildrenOrder = CUIDirection.Reverse,
         };
         this["layout"]["handle"] = new FrameHandle();
-        this["layout"]["handle"]["caption"] = CaptionBlock = new CUITextBlock()
+        this["layout"]["handle"]["caption"] = new CUITextBlock()
         {
           Flex = 1,
           Padding = new CUISizes(0, 0, 0, 0),
@@ -68,13 +67,13 @@ namespace CursedUI
 
       public Frame(string caption) : this()
       {
-        CaptionBlock.Text = caption;
+        Caption = caption;
         AKA = caption;
       }
 
       public Frame(string caption, float width, float height) : this()
       {
-        CaptionBlock.Text = caption;
+        Caption = caption;
         Absolute = new CUINullRect(w: width, h: height);
         AKA = caption;
       }

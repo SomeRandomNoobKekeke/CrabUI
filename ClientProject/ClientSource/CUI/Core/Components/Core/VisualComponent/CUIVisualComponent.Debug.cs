@@ -91,7 +91,7 @@ namespace CursedUI
       PrintProps(offset);
       foreach (var child in Children)
       {
-        child.PrintDeepProps(offset + "    ");
+        child.PrintDeepProps(offset + "    |");
       }
     }
   }

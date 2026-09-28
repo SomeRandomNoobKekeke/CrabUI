@@ -19,7 +19,20 @@ namespace CursedUI
     protected virtual void AfterSerialization() { }
 
     [CUISerializableProp]
-    public CUISerializationMode SerializationMode { get; set; }
+    public CUISerializationMode SerializationMode { get; set; } = CUISerializationMode.Replace;
+
+    public CUISerializationMode DeepSerializationMode
+    {
+      get => DeepSerializationMode;
+      set
+      {
+        SerializationMode = value;
+        foreach (var child in Children)
+        {
+          child.DeepSerializationMode = value;
+        }
+      }
+    }
 
     [CUISerializableProp] // BaroDev(wide)
     public bool Serializable { get; set; } = true;
@@ -43,23 +56,11 @@ namespace CursedUI
 
     private void DeserializeChildren(XElement element, CUISerializationMode mode)
     {
-      CUIVisualComponent AddNewChild(XElement element)
+      CUIVisualComponent CreateNewChild(XElement element)
       {
         CUIVisualComponent child = CreateEmptyComponent(element);
         CUIBasicSerializer.DeserializeProps(element, child);
-        Children.Add(child);
         return child;
-      }
-      CUIVisualComponent ReplaceWithANewChild(XElement element)
-      {
-        CUIVisualComponent child = CreateEmptyComponent(element);
-        CUIBasicSerializer.DeserializeProps(element, child);
-        this[child.AKA] = child;
-        return child;
-      }
-      void MergeIntoExistingChild(CUIVisualComponent child, XElement element)
-      {
-        CUIBasicSerializer.DeserializeProps(element, child);
       }
 
       BeforeSerialization();
@@ -67,23 +68,27 @@ namespace CursedUI
       {
         string AKA = childElement.GetAttribute("AKA")?.Value;
 
+        DebugContext.Set("321", DebugContext.IsInside("123") && AKA == "textblock");
+
+        DebugContext.Log($"{this} Mode:{mode}", "321");
+
         CUIVisualComponent child = null;
         if (AKA == null || !NamedComponents.ContainsKey(AKA))
         {
-          child = AddNewChild(childElement);
+          child = CreateNewChild(childElement);
+          Children.Add(child);
         }
         else // There's a name conflict
         {
           if (mode == CUISerializationMode.Replace)
           {
-            child = this[AKA];
-            if (child.Serializable) child = ReplaceWithANewChild(childElement);
+            this[AKA] = child = CreateNewChild(childElement);
           }
 
           if (mode == CUISerializationMode.Merge)
           {
             child = this[AKA];
-            if (child.Serializable) MergeIntoExistingChild(child, childElement);
+            CUIBasicSerializer.DeserializeProps(childElement, child);
           }
 
           if (mode == CUISerializationMode.Ignore)
@@ -92,7 +97,7 @@ namespace CursedUI
           }
         }
 
-        child.DeserializeChildren(childElement, mode);
+        child.DeserializeChildren(childElement, child.SerializationMode);
       }
       AfterSerialization();
     }

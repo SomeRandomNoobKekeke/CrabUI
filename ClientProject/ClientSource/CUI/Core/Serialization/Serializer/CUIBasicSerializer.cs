@@ -21,10 +21,8 @@ namespace CursedUI
 
       XElement element = new(o.GetType().GetFullName());
 
-      if (CUICore.Reflection.SerializableInfos.ContainsKey(o.GetType()))
+      if (CUICore.Reflection.SerializableInfos.TryGetValue(o.GetType(), out CUISerializableInfo? info))
       {
-        CUISerializableInfo info = CUICore.Reflection.GetSerializableInfo(o.GetType());
-
         foreach (var (name, pp) in info.SerializableProps)
         {
           object value = pp.GetValue(o);
@@ -46,10 +44,8 @@ namespace CursedUI
 
     public static void DeserializeProps(XElement element, object target)
     {
-      if (CUICore.Reflection.SerializableInfos.ContainsKey(target.GetType()))
+      if (CUICore.Reflection.SerializableInfos.TryGetValue(target.GetType(), out CUISerializableInfo? info))
       {
-        CUISerializableInfo info = CUICore.Reflection.GetSerializableInfo(target.GetType());
-
         foreach (XAttribute attribute in element.Attributes())
         {
           PropertyPath pp = info.SerializableProps[attribute.Name.ToString()];

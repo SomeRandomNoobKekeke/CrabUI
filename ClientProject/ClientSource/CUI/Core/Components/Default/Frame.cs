@@ -57,10 +57,6 @@ namespace CursedUI
         };
         this["layout"]["handle"]["closebutton"] = new CUICloseButton()
         {
-          Background = {
-            Sprite = CUISprite.DimmedVertical,
-            Color = Palette["main"], //HACK
-          },
           CrossRelative = new CUINullRect(w: 1),
         };
       }

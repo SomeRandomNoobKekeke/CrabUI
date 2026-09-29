@@ -177,5 +177,26 @@ namespace CursedUI
       Texture = basedOn.Texture;
       SourceRectangle = basedOn.SourceRectangle;
     }
+
+    public override bool Equals(object? obj)
+    {
+      if (obj.GetType() != typeof(CUISprite)) return false;
+
+      CUISprite other = obj as CUISprite;
+
+      if (Texture != other.Texture) return false;
+      if (SourceRectangle != other.SourceRectangle) return false;
+      if (ColorTL != other.ColorTL) return false;
+      if (ColorTR != other.ColorTR) return false;
+      if (ColorBR != other.ColorBR) return false;
+      if (ColorBL != other.ColorBL) return false;
+      if (Rotation != other.Rotation) return false;
+      if (Origin != other.Origin) return false;
+      if (Effects != other.Effects) return false;
+      if (LayerDepth != other.LayerDepth) return false;
+      if (DrawMode != other.DrawMode) return false;
+
+      return true;
+    }
   }
 }

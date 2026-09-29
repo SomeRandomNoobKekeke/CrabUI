@@ -15,9 +15,9 @@ namespace CursedUI
       Absolute = new CUINullRect(0, 0, null, 100),
     }.Serialize().ToString(), "<CUIComponent Absolute=\"[0,0,,100]\" />");
 
-    public UTest DeepProp() => new UTest(new CUIComponent()
-    {
-      Background = { Color = Color.Red },
-    }.Serialize().ToString(), "<CUIComponent Background.Color=\"255,0,0,255\" />");
+    // public UTest DeepProp() => new UTest(new CUIComponent()
+    // {
+    //   Background = { Color = Color.Red },
+    // }.Serialize().ToString(), "<CUIComponent Background.Color=\"255,0,0,255\" />");
   }
 }

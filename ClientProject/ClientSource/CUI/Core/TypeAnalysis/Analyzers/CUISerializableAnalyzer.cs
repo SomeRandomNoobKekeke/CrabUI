@@ -30,7 +30,7 @@ namespace CursedUI
 
     private void AnalyzeContainer(CUISerializableInfo info, Type T, List<PropertyInfo> path)
     {
-      foreach (PropertyInfo pi in T.GetProperties(BindingFlags.Public | BindingFlags.Instance))
+      foreach (PropertyInfo pi in T.GetProperties(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance))
       {
         if (IsCUISerializableProp(pi))
         {

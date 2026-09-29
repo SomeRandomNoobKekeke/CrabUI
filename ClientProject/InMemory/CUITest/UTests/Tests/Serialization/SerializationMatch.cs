@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace CursedUI
 {
-  public class SerializationPersistenceTest : CUISerializationTest
+  public class SerializationMatchTest : CUISerializationTest
   {
 
     public UTest Default()

@@ -44,7 +44,7 @@ namespace CursedUI
         _Sprite = value;
         _Sprite.ShouldBufferData = IgnoretransparentPixels;
 
-        if (_Color.HasValue && _Sprite.ColorIsDefault)
+        if (_Color.Elevated && _Sprite.ColorIsDefault)
         {
           _Sprite.Color = _Color.Value;
         }
@@ -77,14 +77,15 @@ namespace CursedUI
       return Rect.Contains(pos, SensorExpansion);
     }
 
-    public Color? _Color = null; //CRINGE so if you change this Color next sprite will inherit it
-    public Color Color
+    private ElevatedProp<Color> _Color;
+    public Color Color //CRINGE so if you change this Color next sprite will inherit it
     {
       get => Sprite.Color;
       set
       {
         Sprite.Color = value;
-        _Color = value;
+        _Color.Value = value;
+        _Color.Elevated = true;
       }
     }
 

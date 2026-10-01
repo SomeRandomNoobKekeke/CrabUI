@@ -10,7 +10,7 @@ using System.Text.Json;
 using CUILibs;
 namespace CursedUI
 {
-  public partial class CUISprite : IParsable
+  public partial class CUISprite : ICustomSerializable<CUISprite>
   {
     public static CUISprite Get(string key)
     {
@@ -79,6 +79,72 @@ namespace CursedUI
       if (Origin != Vector2.Zero) dict["origin"] = CUICore.Parser.Serialize(Origin);
       if (Effects != SpriteEffects.None) dict["effects"] = CUICore.Parser.Serialize(Effects);
       if (LayerDepth != 0) dict["layerdepth"] = CUICore.Parser.Serialize(LayerDepth);
+
+      return JsonSerializer.Serialize(dict).Replace('"', '\'');
+    }
+
+    public string ToText(CUISprite defValue)
+    {
+      if (defValue is null) return ToText();
+
+      Dictionary<string, string> dict = new();
+
+      if (Texture != defValue.Texture)
+      {
+        dict["texture"] = Texture.Key;
+      }
+
+      if (SourceRectangle != defValue.SourceRectangle)
+      {
+        dict["sourcerect"] = CUICore.Parser.Serialize(SourceRectangle);
+      }
+
+      if (Rotation != defValue.Rotation)
+      {
+        dict["rotation"] = CUICore.Parser.Serialize(Rotation);
+      }
+
+      if (Origin != defValue.Origin)
+      {
+        dict["origin"] = CUICore.Parser.Serialize(Origin);
+      }
+
+      if (Effects != defValue.Effects)
+      {
+        dict["effects"] = CUICore.Parser.Serialize(Effects);
+      }
+
+      if (LayerDepth != defValue.LayerDepth)
+      {
+        dict["layerdepth"] = CUICore.Parser.Serialize(LayerDepth);
+      }
+
+      if (ColorTL == ColorTR && ColorTL == ColorBL && ColorTL == ColorBR)
+      {
+        if (Color != defValue.Color)
+        {
+          dict["color"] = CUICore.Parser.Serialize(Color);
+        }
+      }
+      else
+      {
+        if (ColorTL != defValue.ColorTL)
+        {
+          dict["colorTL"] = CUICore.Parser.Serialize(ColorTL);
+        }
+        if (ColorTR != defValue.ColorTR)
+        {
+          dict["colorTR"] = CUICore.Parser.Serialize(ColorTR);
+        }
+        if (ColorBR != defValue.ColorBR)
+        {
+          dict["colorBR"] = CUICore.Parser.Serialize(ColorBR);
+        }
+        if (ColorBL != defValue.ColorBL)
+        {
+          dict["colorBL"] = CUICore.Parser.Serialize(ColorBL);
+        }
+      }
 
       return JsonSerializer.Serialize(dict).Replace('"', '\'');
     }

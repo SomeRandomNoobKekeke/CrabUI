@@ -13,15 +13,14 @@ namespace CursedUI
   {
     public bool IsCUISerializable(Type T) => T.IsAssignableTo(typeof(CUISerializable));
     public bool IsNestedSerializable(Type T) => T.IsAssignableTo(typeof(NestedCUISerializable));
+    public bool IsICustomSerializable(PropertyInfo pi) => pi.PropertyType.IsAssignableTo(typeof(ICustomSerializable));
     public bool IsCUISerializableProp(PropertyInfo pi)
       => pi.GetCustomAttribute<CUISerializableProp>() != null;
 
+
     public CUISerializableInfo Analyze(Type T)
     {
-      CUISerializableInfo info = new()
-      {
-        SerializableProps = new(),
-      };
+      CUISerializableInfo info = new();
 
       AnalyzeContainer(info, T, []);
 
@@ -44,7 +43,16 @@ namespace CursedUI
           }
           else
           {
-            info.SerializableProps[pp.ToString()] = pp;
+            if (IsICustomSerializable(pi))
+            {
+              info.CustomSerializableProps[pp.ToString()] = pp;
+            }
+            else
+            {
+              info.SerializableProps[pp.ToString()] = pp;
+            }
+
+            info.ParsableProps[pp.ToString()] = pp;
           }
         }
       }

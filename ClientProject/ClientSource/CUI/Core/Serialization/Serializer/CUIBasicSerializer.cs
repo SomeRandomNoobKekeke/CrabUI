@@ -15,20 +15,31 @@ namespace CursedUI
 {
   public static class CUIBasicSerializer
   {
-    public static XElement Serialize(CUISerializable o, IDictionary<string, object> defaultValues = null)
+    public static XElement Serialize(CUISerializable o, IDictionary<string, object> defaultValues)
     {
-      defaultValues ??= new Dictionary<string, object>();
-
       XElement element = new(o.GetType().GetFullName());
 
       if (CUICore.Reflection.SerializableInfos.TryGetValue(o.GetType(), out CUISerializableInfo? info))
       {
-        foreach (var (name, pp) in info.SerializableProps)
+        foreach (var (fullName, pp) in info.SerializableProps)
         {
           object value = pp.GetValue(o);
-          if (defaultValues.ContainsKey(name) && Equals(value, defaultValues[name])) continue;
+          if (defaultValues.ContainsKey(fullName) && Equals(value, defaultValues[fullName])) continue;
 
-          element.SetAttributeValue(name, CUICore.Parser.Serialize(value));
+          element.SetAttributeValue(fullName, CUICore.Parser.Serialize(value));
+        }
+
+        foreach (var (fullName, pp) in info.CustomSerializableProps)
+        {
+          ICustomSerializable value = (ICustomSerializable)pp.GetValue(o);
+
+          //TODO it's excessive
+          if (defaultValues.ContainsKey(fullName) && Equals(value, defaultValues[fullName])) continue;
+
+          element.SetAttributeValue(
+            fullName,
+            value.ToText(defaultValues.GetValueOrDefault(fullName))
+          );
         }
       }
 
@@ -48,7 +59,7 @@ namespace CursedUI
       {
         foreach (XAttribute attribute in element.Attributes())
         {
-          PropertyPath pp = info.SerializableProps[attribute.Name.ToString()];
+          PropertyPath pp = info.ParsableProps[attribute.Name.ToString()];
 
           if (!pp.CanWrite)
           {

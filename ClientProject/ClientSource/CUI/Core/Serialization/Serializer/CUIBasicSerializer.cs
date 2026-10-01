@@ -23,23 +23,26 @@ namespace CursedUI
       {
         foreach (var (fullName, pp) in info.SerializableProps)
         {
-          object value = pp.GetValue(o);
-          if (defaultValues.ContainsKey(fullName) && Equals(value, defaultValues[fullName])) continue;
+          if (pp.Type.IsAssignableTo(typeof(ICustomSerializable)))
+          {
+            ICustomSerializable value = (ICustomSerializable)pp.GetValue(o);
 
-          element.SetAttributeValue(fullName, CUICore.Parser.Serialize(value));
-        }
+            //TODO it's excessive
+            if (defaultValues.ContainsKey(fullName) && Equals(value, defaultValues[fullName])) continue;
 
-        foreach (var (fullName, pp) in info.CustomSerializableProps)
-        {
-          ICustomSerializable value = (ICustomSerializable)pp.GetValue(o);
+            element.SetAttributeValue(
+              fullName,
+              value.ToText(defaultValues.GetValueOrDefault(fullName))
+            );
 
-          //TODO it's excessive
-          if (defaultValues.ContainsKey(fullName) && Equals(value, defaultValues[fullName])) continue;
+          }
+          else
+          {
+            object value = pp.GetValue(o);
+            if (defaultValues.ContainsKey(fullName) && Equals(value, defaultValues[fullName])) continue;
 
-          element.SetAttributeValue(
-            fullName,
-            value.ToText(defaultValues.GetValueOrDefault(fullName))
-          );
+            element.SetAttributeValue(fullName, CUICore.Parser.Serialize(value));
+          }
         }
       }
 
@@ -59,7 +62,11 @@ namespace CursedUI
       {
         foreach (XAttribute attribute in element.Attributes())
         {
-          PropertyPath pp = info.ParsableProps[attribute.Name.ToString()];
+          if (!info.SerializableProps.TryGetValue(attribute.Name.ToString(), out PropertyPath pp))
+          {
+            CUI.Logger.Warning($"Couldn't deserialize [{attribute.Name}], no such prop on [{target.GetType().GetFullName()}]");
+            continue;
+          }
 
           if (!pp.CanWrite)
           {

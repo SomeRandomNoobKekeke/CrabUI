@@ -43,16 +43,7 @@ namespace CursedUI
           }
           else
           {
-            if (IsICustomSerializable(pi))
-            {
-              info.CustomSerializableProps[pp.ToString()] = pp;
-            }
-            else
-            {
-              info.SerializableProps[pp.ToString()] = pp;
-            }
-
-            info.ParsableProps[pp.ToString()] = pp;
+            info.SerializableProps[pp.ToString()] = pp;
           }
         }
       }

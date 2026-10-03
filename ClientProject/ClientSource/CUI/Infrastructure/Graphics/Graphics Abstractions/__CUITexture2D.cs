@@ -86,6 +86,8 @@ namespace CursedUI
     public __CUITexture2D(Texture2D texture) => XNATexture = texture;
     public __CUITexture2D() { }
 
+    public override string ToString() => Key;
+
     private bool _disposed = false;
     public void Dispose()
     {

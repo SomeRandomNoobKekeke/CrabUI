@@ -13,6 +13,7 @@ using CUILibs;
 
 namespace CursedUI
 {
+  //LINK:/ClientProject\InMemory\CUITest\Snapshots\Tests\Components\CUIRangeInput.cs
   public partial class CUIRangeInput : CUIComponent, IComponent
   {
     public record Interval(float Start, float End, float Pin)

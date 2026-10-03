@@ -16,8 +16,10 @@ namespace CursedUI
   public abstract partial class CUIButtonBase
   {
     /// <summary>
-    /// It's a wrapper for TextBlock that also marks layout when you set props
+    /// It's a wrapper for TextBlock and button state colors
+    /// that also marks layout when you set props
     /// </summary>
+
     public class TextToggleState_Part : Part, NestedCUISerializable
     {
       public TextBlock TextBlock { get; } = new();

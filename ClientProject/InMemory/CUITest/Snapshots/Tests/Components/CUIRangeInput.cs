@@ -15,6 +15,7 @@ namespace CursedUIUser
   {
     public static partial class Components
     {
+      //LINK:/ClientProject\ClientSource\CUI\Core\Components\Input\CUIRangeInput.cs
       public static CUIComponent CUIRangeInput()
       {
         CUIFrame frame = new CUIDefault.Frame("CUIRangeInput", 400, 600);

@@ -12,6 +12,7 @@ using Barotrauma.Extensions;
 
 namespace CursedUI
 {
+  //LINK:/ClientProject\InMemory\CUITest\Snapshots\Tests\Components\CUIToggleIconButton.cs
   public partial class CUIToggleIconButton : CUIButtonBase, IComponent
   {
     public static ICUIStyle DefaultStyle => new CUIDefaultStyle<CUIToggleIconButton>((c) =>
@@ -31,6 +32,7 @@ namespace CursedUI
       set => PersonalStyle = new CUIActionStyle<CUIToggleIconButton>("personal", value);
     }
 
+    //TODO wrap them in CUIButtonBase.ToggleIconButtonState so i could set different master colors for on and off state
     [CUISerializableProp]
     public IconBlock OnIconBlock { get; } = new();
 
@@ -39,7 +41,7 @@ namespace CursedUI
 
     private IconBlock SelectedIconBlock;
 
-    // [CUISerializableProp]
+
     public CUISprite Icon
     {
       get => OnIconBlock.Icon;
@@ -50,7 +52,7 @@ namespace CursedUI
       }
     }
 
-    // [CUISerializableProp]
+
     public float Scale
     {
       get => OnIconBlock.Scale;
@@ -61,7 +63,7 @@ namespace CursedUI
       }
     }
 
-    // [CUISerializableProp]
+
     public Vector2 IconAnchor
     {
       get => OnIconBlock.Anchor;

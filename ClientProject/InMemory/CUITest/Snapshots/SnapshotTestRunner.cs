@@ -55,11 +55,12 @@ namespace CursedUIUser
           new XDocument(XMLAfter).Save(Path.Combine(CUITest.CompareFolder, "After.xml"));
           if (XMLBefore.ToString() != XMLAfter.ToString())
           {
+            CUI.Logger.Print($"=========>> XML Before doesn't match XML After <<=========", Color.Orange);
             CUI.Logger.Log($"=========>> After serialization: <<=========\n{XMLAfter}\n");
           }
           else
           {
-            CUI.Logger.Log($"=========>> XML Before and After serialization matches <<=========");
+            CUI.Logger.Print($"=========>> XML Before and After serialization matches <<=========", Color.Lime);
           }
         }
 

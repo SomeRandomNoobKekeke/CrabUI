@@ -30,6 +30,12 @@ namespace CursedUI
 
     public static object Parse(string raw)
     {
+      raw = raw.Trim();
+      if (!raw.StartsWith('{'))
+      {
+        return GetByName(raw);
+      }
+
       raw = raw.Replace('\'', '"');
       Dictionary<string, string> dict = JsonSerializer.Deserialize<Dictionary<string, string>>(raw);
 
@@ -54,9 +60,11 @@ namespace CursedUI
       return sprite;
     }
 
-    //TODO don't use json, it uses "" and they are not allowed in xml
+    //TODO mb don't use json, it uses "" and they are not allowed in xml
     public string ToText()
     {
+      if (Name is not null) return Name;
+
       Dictionary<string, string> dict = new Dictionary<string, string>()
       {
         ["texture"] = Texture.Key ?? "",
@@ -85,6 +93,8 @@ namespace CursedUI
 
     public string ToText(CUISprite defValue)
     {
+      if (Name is not null) return Name;
+
       if (defValue is null) return ToText();
 
       Dictionary<string, string> dict = new();

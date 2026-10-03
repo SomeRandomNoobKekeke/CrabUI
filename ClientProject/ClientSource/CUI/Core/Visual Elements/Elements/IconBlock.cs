@@ -15,11 +15,10 @@ namespace CursedUI
   /// This is like TextBlock but with Icon
   /// This thing resizes to Icon
   /// </summary>
-  public partial class IconBlock : VisualElementBase
+  public partial class IconBlock : VisualElementBase, NestedCUISerializable
   {
     private CUISprite _Icon = CUISprite.Transparent;
-
-
+    [CUISerializableProp]
     public CUISprite Icon
     {
       get => _Icon;
@@ -42,7 +41,7 @@ namespace CursedUI
     }
 
     private float _Scale = 1.0f;
-
+    [CUISerializableProp]
     public float Scale
     {
       get => _Scale;
@@ -55,7 +54,7 @@ namespace CursedUI
     }
 
     private Vector2 _Anchor = new Vector2(0.5f, 0.5f);
-
+    [CUISerializableProp]
     public Vector2 Anchor
     {
       get => _Anchor;
@@ -67,7 +66,7 @@ namespace CursedUI
       }
     }
 
-
+    [CUISerializableProp]
     public Color Color
     {
       get => Icon.Color;
@@ -75,7 +74,6 @@ namespace CursedUI
     }
 
     public Vector2 ForcedSize { get; private set; }
-
     public Rectangle IconRectangle { get; private set; }
 
     private void RecalcForcedSize()

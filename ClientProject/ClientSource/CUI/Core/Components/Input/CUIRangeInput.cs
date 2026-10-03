@@ -226,7 +226,7 @@ namespace CursedUI
 
       yield return VisualBounds.RightBound;
 
-      yield return Borders.VisualWrapper;
+      yield return Border.VisualWrapper;
     }
 
     public CUIRangeInput()

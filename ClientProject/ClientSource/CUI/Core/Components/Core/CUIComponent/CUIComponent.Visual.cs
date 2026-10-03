@@ -39,7 +39,7 @@ namespace CursedUI
     }
 
     [CUISerializableProp]
-    public Borders Borders { get; } = new();
+    public Borders Border { get; } = new();
 
     [CUISerializableProp]
     public bool IgnoretransparentPixels
@@ -51,7 +51,7 @@ namespace CursedUI
     protected virtual void UpdateRects()
     {
       Background.Rect = Rect;
-      Borders.Rect = Rect;
+      Border.Rect = Rect;
 
       LeftResizeHandle?.UpdateRect();
       RightResizeHandle?.UpdateRect();
@@ -107,7 +107,7 @@ namespace CursedUI
       if (LeftResizeHandle != null) yield return LeftResizeHandle.VisualWrapper;
       if (RightResizeHandle != null) yield return RightResizeHandle.VisualWrapper;
 
-      yield return Borders.VisualWrapper;
+      yield return Border.VisualWrapper;
     }
   }
 }

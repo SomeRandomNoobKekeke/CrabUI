@@ -20,7 +20,7 @@ namespace CursedUI
       base.InitStyle();
       Icon = CUISprite.CheckIcon;
       // Padding = new CUISizes(1, 1, 1, 1);
-      Borders.Sizes = new CUISizes(1, 1, 1, 1);
+      Border.Sizes = new CUISizes(1, 1, 1, 1);
       ClickSound = GUISoundType.TickBox;
     }
   }

@@ -49,7 +49,7 @@ namespace CursedUI
       OptionBox.Children.Add(new CUIButton(option)
       {
         Background = { Sprite = CUISprite.White },
-        Borders = {
+        Border = {
           Sizes = new CUISizes(bottom:1),
           Color = Color.White,
         },
@@ -61,7 +61,7 @@ namespace CursedUI
         Style = (c) =>
         {
           c.MasterColor = c.Palette["main"].To(Color.Black, 0.3f);
-          c.Borders.Color = c.Palette["border"];
+          c.Border.Color = c.Palette["border"];
         },
       });
     }
@@ -141,7 +141,7 @@ namespace CursedUI
 
       if (IsOpen) yield return OptionBox.VisualWrapper;
 
-      yield return Borders.VisualWrapper;
+      yield return Border.VisualWrapper;
     }
 
     public CUIDropDown()

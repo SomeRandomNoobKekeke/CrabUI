@@ -161,7 +161,7 @@ namespace CursedUI
       yield return SelectedIconBlock.VisualWrapper;
       yield return VisualBounds.RightBound;
 
-      yield return Borders.VisualWrapper;
+      yield return Border.VisualWrapper;
     }
 
 

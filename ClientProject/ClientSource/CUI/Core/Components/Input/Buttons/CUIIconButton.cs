@@ -117,7 +117,7 @@ namespace CursedUI
       yield return IconBlock.VisualWrapper;
       yield return VisualBounds.RightBound;
 
-      yield return Borders.VisualWrapper;
+      yield return Border.VisualWrapper;
     }
 
     public CUIIconButton() : base()

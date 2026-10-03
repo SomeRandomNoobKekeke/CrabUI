@@ -32,12 +32,12 @@ namespace CursedUI
     }
 
     [CUISerializableProp]
-    public CUISizes Border
+    public CUISizes Borders
     {
-      get => Borders.Sizes;
+      get => Border.Sizes;
       set
       {
-        Borders.Sizes = value;
+        Border.Sizes = value;
         UpdateSizeDiffs();
       }
     }
@@ -56,7 +56,7 @@ namespace CursedUI
 
     private void UpdateSizeDiffs()
     {
-      OutToChildDiff = Margin + Border + Padding;
+      OutToChildDiff = Margin + Borders + Padding;
     }
 
     private CUIRect _OuterRect; public override CUIRect OuterRect
@@ -66,7 +66,7 @@ namespace CursedUI
       {
         _OuterRect = value;
         _Rect = _OuterRect - Margin;
-        _InnerRect = _Rect - Border;
+        _InnerRect = _Rect - Borders;
         _ChildrenRect = _InnerRect - Padding;
 
         UpdateRects();
@@ -79,7 +79,7 @@ namespace CursedUI
       set
       {
         _Rect = value;
-        _InnerRect = _Rect - Border;
+        _InnerRect = _Rect - Borders;
         _ChildrenRect = _InnerRect - Padding;
         _OuterRect = _Rect + Margin;
 
@@ -94,7 +94,7 @@ namespace CursedUI
       {
         _InnerRect = value;
         _ChildrenRect = _InnerRect - Padding;
-        _Rect = _InnerRect + Border;
+        _Rect = _InnerRect + Borders;
         _OuterRect = _Rect + Margin;
 
         UpdateRects();
@@ -108,7 +108,7 @@ namespace CursedUI
       {
         _ChildrenRect = value;
         _InnerRect = _ChildrenRect + Padding;
-        _Rect = _InnerRect + Border;
+        _Rect = _InnerRect + Borders;
         _OuterRect = _Rect + Margin;
 
         UpdateRects();

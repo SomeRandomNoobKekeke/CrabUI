@@ -12,7 +12,7 @@ namespace CursedUI
   {
     public static ICUIStyle DefaultStyle => new CUIDefaultStyle<CUIComponent>((c) =>
     {
-      c.Borders.Color = c.Palette["border"];
+      c.Border.Color = c.Palette["border"];
     });
 
     protected override void InitStyle()

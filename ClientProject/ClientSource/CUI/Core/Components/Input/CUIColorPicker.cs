@@ -103,8 +103,8 @@ namespace CursedUI
       this["layout"]["HueSelect"] = HueSelect = new CUIPosSelect()
       {
         Absolute = new CUINullRect(w: 30),
-        Borders = { Sizes = new CUISizes(left: 2) },
-        Style = (c) => c.Borders.Color = Color.White,
+        Border = { Sizes = new CUISizes(left: 2) },
+        Style = (c) => c.Border.Color = Color.White,
         Background = { Sprite = CUISprite.Get("HueSelect") },
         OnSelected = (v) =>
         {

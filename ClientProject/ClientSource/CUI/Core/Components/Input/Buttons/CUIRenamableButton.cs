@@ -87,7 +87,7 @@ namespace CursedUI
       yield return RenameOverlay.VisualWrapper;
       yield return VisualBounds.RightBound;
 
-      yield return Borders.VisualWrapper;
+      yield return Border.VisualWrapper;
     }
 
     public CUIRenamableButton() : base()

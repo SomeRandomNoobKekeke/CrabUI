@@ -18,7 +18,7 @@ namespace CursedUI
     public static ICUIStyle DefaultStyle => new CUIDefaultStyle<CUIFrame>((c) =>
     {
       c.Background.Color = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.2f);
-      c.Borders.Color = c.Palette["main"];
+      c.Border.Color = c.Palette["main"];
     });
 
     protected override void InitStyle()

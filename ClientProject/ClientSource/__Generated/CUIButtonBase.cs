@@ -92,8 +92,8 @@ namespace CursedUI
       Layout.HostPropName = "Layout";
       Background.HostComponent = this;
       Background.HostPropName = "Background";
-      Borders.HostComponent = this;
-      Borders.HostPropName = "Borders";
+      Border.HostComponent = this;
+      Border.HostPropName = "Border";
       VisualBounds.HostComponent = this;
       VisualBounds.HostPropName = "VisualBounds";
       DragHandle.HostComponent = this;

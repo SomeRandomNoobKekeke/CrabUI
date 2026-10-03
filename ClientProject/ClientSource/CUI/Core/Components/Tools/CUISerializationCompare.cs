@@ -53,7 +53,7 @@ namespace CursedUI
       this["layout"]["split"]["before"] = new CUIVerticalList()
       {
         Flex = 1,
-        Border = new CUISizes(right: 2),
+        Borders = new CUISizes(right: 2),
       };
       this["layout"]["split"]["after"] = new CUIVerticalList()
       {

@@ -35,7 +35,7 @@ namespace CursedUIUser
           Padding = new CUISizes(5, 5, 5, 5),
 
           Margin = new CUISizes(5, 5, 5, 5),
-          Borders =
+          Border =
           {
             Sizes = new CUISizes(5, 5, 5, 5),
             Color = Color.Cyan,

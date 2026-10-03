@@ -34,7 +34,7 @@ namespace CursedUI
       this["layout"]["component tree"] = ComponentTree = new()
       {
         Flex = 1,
-        Border = new CUISizes(right: 2),
+        Borders = new CUISizes(right: 2),
       };
       this["layout"]["props"] = PropView = new CUIPropView()
       {

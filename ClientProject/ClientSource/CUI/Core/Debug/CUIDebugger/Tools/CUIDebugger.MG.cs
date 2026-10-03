@@ -19,7 +19,7 @@ namespace CursedUI
         Absolute = new CUINullRect(w: 256, h: 256),
         Anchor = CUIAnchor.Center,
         TargetMainComponent = CUI.TopMain,
-        Borders = { Sizes = new CUISizes(5, 5, 5, 5), Color = new Color(0, 200, 200) }
+        Border = { Sizes = new CUISizes(5, 5, 5, 5), Color = new Color(0, 200, 200) }
       };
 
       frame["mg"] = new CUIMagnifyingGlass()

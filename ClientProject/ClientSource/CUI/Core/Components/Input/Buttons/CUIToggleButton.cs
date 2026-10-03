@@ -150,7 +150,7 @@ namespace CursedUI
       yield return SelectedTextState.TextBlock.VisualWrapper;
       yield return VisualBounds.RightBound;
 
-      yield return Borders.VisualWrapper;
+      yield return Border.VisualWrapper;
     }
 
 

@@ -147,7 +147,7 @@ namespace CursedUI
         wrapper["controls"] = new CUIHorizontalList()
         {
           FitContent = new CUIBool2(false, true),
-          Borders = { Bottom = 1 }
+          Border = { Bottom = 1 }
         };
 
         wrapper["list"] = EventList = new CUIVerticalList()
@@ -232,7 +232,7 @@ namespace CursedUI
         this["panels"]["nodes"] = new CUIDefault.VerticalPanel()
         {
           Absolute = new(w: 150),
-          Borders = { Right = 3 }
+          Border = { Right = 3 }
         };
         this["panels"]["nodes"]["header"] = new CUITextBlock("Nodes:");
         this["panels"]["nodes"]["list"] = new CUIVerticalList() { Flex = 1 };

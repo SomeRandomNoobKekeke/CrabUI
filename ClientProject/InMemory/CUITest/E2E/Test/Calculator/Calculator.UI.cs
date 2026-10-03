@@ -79,9 +79,9 @@ namespace CursedUIUser
           using (new CUIContextStyle<CUIButton>(c =>
           {
             // c.Background.Sprite = CUISprite.Outlined;
-            c.Borders.Color = Color.Black * 0.5f;
-            c.Borders.Sizes = new CUISizes(1, 1, 1, 1);
-            c.Borders.Visible = true;
+            c.Border.Color = Color.Black * 0.5f;
+            c.Border.Sizes = new CUISizes(1, 1, 1, 1);
+            c.Border.Visible = true;
 
             c.PlaySound = false;
 

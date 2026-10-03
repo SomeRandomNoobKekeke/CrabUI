@@ -59,7 +59,7 @@ namespace CursedUIUser
           }
           else
           {
-            CUI.Logger.Log($"=========>> XML Before and After serialization matches <<=========\n{XMLAfter}\n");
+            CUI.Logger.Log($"=========>> XML Before and After serialization matches <<=========");
           }
         }
 

@@ -146,8 +146,6 @@ namespace CursedUI
         }
       }
 
-      CUI.Logger.LogVars(JsonSerializer.Serialize(dict).Replace('"', '\''));
-
       return JsonSerializer.Serialize(dict).Replace('"', '\'');
     }
   }

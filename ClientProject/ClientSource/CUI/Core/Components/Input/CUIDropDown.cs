@@ -30,6 +30,7 @@ namespace CursedUI
     public Action<string> OnSelect { set { Select += value; } }
     public event Action<string> Select;
 
+    [CUISerializableProp]
     public IEnumerable<string> Options
     {
       get => OptionBox.Children.Select(c => (c as CUIButton).Text);
@@ -146,6 +147,7 @@ namespace CursedUI
     public CUIDropDown()
     {
       FitContent = new CUIBool2(true, true);
+      SerializeChildren = false;
 
       this["pin"] = new CUIComponent()
       {

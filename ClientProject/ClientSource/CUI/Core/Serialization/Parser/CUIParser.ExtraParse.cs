@@ -23,7 +23,16 @@ namespace CursedUI
       [typeof(Color)] = (raw) => ParseColor(raw),
       [typeof(CUITexture2D)] = CUICore.TextureManager.Get,//BRUH i either have to reference __CUITexture2D from CUICore or CUICore.TextureManager from __CUITexture2D
       [typeof((int, int))] = (raw) => Tupple2IntInt(raw),
+      [typeof(IEnumerable<string>)] = (raw) => ParseIEnumerable_String(raw),
     };
+
+    public static IEnumerable<string> ParseIEnumerable_String(string raw)
+    {
+      if (raw == null || raw == "") return [];
+      return raw.Split('[', ']')[1].Split(';');
+    }
+
+
 
     public static Rectangle ParseRectangle(string raw)
       => ParseNullRectangle(raw) ?? new Rectangle(0, 0, 0, 0);

@@ -15,7 +15,6 @@ namespace CursedUI
     /// <summary>
     /// If not null sprite will be serialized by name and parsed by name from static props on CUISprite  
     /// </summary>
-    //CRINGE if i change any prop it won't be "Default" anymore and shouldn't be serialized by name
     public string Name { get; private set; }
 
     private CUITexture2D _Texture; public CUITexture2D Texture

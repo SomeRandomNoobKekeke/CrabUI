@@ -63,7 +63,7 @@ namespace CursedUI
     //TODO mb don't use json, it uses "" and they are not allowed in xml
     public string ToText()
     {
-      if (Name is not null) return Name;
+      if (Name is not null && Equals(GetByName(Name))) return Name;
 
       Dictionary<string, string> dict = new Dictionary<string, string>()
       {
@@ -93,7 +93,7 @@ namespace CursedUI
 
     public string ToText(CUISprite defValue)
     {
-      if (Name is not null) return Name;
+      if (Name is not null && Equals(GetByName(Name))) return Name;
 
       if (defValue is null) return ToText();
 

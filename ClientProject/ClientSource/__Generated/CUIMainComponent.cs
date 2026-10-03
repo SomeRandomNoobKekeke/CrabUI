@@ -32,6 +32,7 @@ namespace CursedUI
       
       As_CUIMainComponent.FocusHandle.Self = this;
       As_CUIMainComponent.GlobalEvents.Self = this;
+      As_CUIComponent.Border.Self = this;
       As_CUIVisualComponent.Commands.Self = this;
       As_CUIVisualComponent.As_Dictionary.Self = this;
       As_CUIVisualComponent.Events.Self = this;
@@ -94,8 +95,8 @@ namespace CursedUI
       Layout.HostPropName = "Layout";
       Background.HostComponent = this;
       Background.HostPropName = "Background";
-      Border.HostComponent = this;
-      Border.HostPropName = "Border";
+      _Border.HostComponent = this;
+      _Border.HostPropName = "_Border";
       VisualBounds.HostComponent = this;
       VisualBounds.HostPropName = "VisualBounds";
       DragHandle.HostComponent = this;

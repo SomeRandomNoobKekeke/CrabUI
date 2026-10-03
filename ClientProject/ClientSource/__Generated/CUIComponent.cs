@@ -29,6 +29,7 @@ namespace CursedUI
       As_CUIVisualComponent.Self = this;
       As_CUIComponent.Self = this;
       
+      As_CUIComponent.Border.Self = this;
       As_CUIVisualComponent.Commands.Self = this;
       As_CUIVisualComponent.As_Dictionary.Self = this;
       As_CUIVisualComponent.Events.Self = this;
@@ -91,8 +92,8 @@ namespace CursedUI
       Layout.HostPropName = "Layout";
       Background.HostComponent = this;
       Background.HostPropName = "Background";
-      Border.HostComponent = this;
-      Border.HostPropName = "Border";
+      _Border.HostComponent = this;
+      _Border.HostPropName = "_Border";
       VisualBounds.HostComponent = this;
       VisualBounds.HostPropName = "VisualBounds";
       DragHandle.HostComponent = this;
@@ -135,6 +136,7 @@ namespace CursedUI
 
   protected class Self_As_CUIComponent : IAdapterPart
   {
+    public CUIComponent.Border_Part Border => Self.Border;
     public CUIComponent Self { get; set; }
   }
   }

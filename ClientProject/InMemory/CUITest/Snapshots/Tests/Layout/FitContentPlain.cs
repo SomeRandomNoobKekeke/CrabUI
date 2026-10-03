@@ -33,11 +33,10 @@ namespace CursedUIUser
           Absolute = new CUINullRect(50, 50),
           Background = { Color = Color.Orange },
           Padding = new CUISizes(5, 5, 5, 5),
-
           Margin = new CUISizes(5, 5, 5, 5),
+          Borders = new CUISizes(5, 5, 5, 5),
           Border =
           {
-            Sizes = new CUISizes(5, 5, 5, 5),
             Color = Color.Cyan,
           }
         };

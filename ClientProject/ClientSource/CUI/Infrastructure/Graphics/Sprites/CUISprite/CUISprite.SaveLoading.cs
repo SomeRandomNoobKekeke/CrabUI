@@ -93,6 +93,7 @@ namespace CursedUI
 
     public string ToText(CUISprite defValue)
     {
+      //TODO is this too slow?
       if (Name is not null && Equals(GetByName(Name))) return Name;
 
       if (defValue is null) return ToText();

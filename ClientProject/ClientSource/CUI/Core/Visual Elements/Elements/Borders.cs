@@ -24,7 +24,7 @@ namespace CursedUI
     }
     public CUIRect InnerRect { get; private set; }
 
-    // [CUISerializableProp]
+    [CUISerializableProp]
     public CUISizes Sizes { get; set; }
     public float Top
     {
@@ -47,8 +47,9 @@ namespace CursedUI
       set => Sizes = Sizes with { Left = value };
     }
 
-    public CUISprite Sprite { get; set; } = CUISprite.White;
-
+    //TODO 
+    // [CUISerializableProp]
+    public CUISprite Sprite { get; set; } = new CUISprite();
 
     [CUISerializableProp]
     public Color Color { get => Sprite.Color; set => Sprite.Color = value; }

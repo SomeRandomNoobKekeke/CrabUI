@@ -38,8 +38,10 @@ namespace CursedUI
       set => BackgroundSlot.Value = value;
     }
 
-    [CUISerializableProp]
-    public Borders Border { get; } = new();
+    //LINK:\ClientProject\ClientSource\CUI\Core\Components\Core\CUIComponent\CUIComponent.Border.cs
+    protected Borders _Border { get; } = new();
+
+
 
     [CUISerializableProp]
     public bool IgnoretransparentPixels

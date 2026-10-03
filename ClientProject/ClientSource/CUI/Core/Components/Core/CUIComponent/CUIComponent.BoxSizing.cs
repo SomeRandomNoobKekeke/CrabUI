@@ -10,6 +10,13 @@ using CUICodeGenerator;
 
 namespace CursedUI
 {
+  // OuterRect
+  // | Margin
+  // Rect
+  // | Border
+  // InnerRect
+  // | Padding
+  // ChildrenRect
   public partial class CUIComponent
   {
     private CUISizes _Margin;
@@ -24,6 +31,17 @@ namespace CursedUI
       }
     }
 
+    [CUISerializableProp]
+    public CUISizes Border
+    {
+      get => Borders.Sizes;
+      set
+      {
+        Borders.Sizes = value;
+        UpdateSizeDiffs();
+      }
+    }
+
     private CUISizes _Padding;
     [CUISerializableProp]
     public CUISizes Padding
@@ -32,17 +50,6 @@ namespace CursedUI
       set
       {
         _Padding = value;
-        UpdateSizeDiffs();
-      }
-    }
-
-    [CUISerializableProp]
-    public CUISizes Border
-    {
-      get => Borders.Sizes;
-      set
-      {
-        Borders.Sizes = value;
         UpdateSizeDiffs();
       }
     }

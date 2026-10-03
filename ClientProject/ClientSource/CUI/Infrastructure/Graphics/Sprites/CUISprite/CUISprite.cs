@@ -176,7 +176,11 @@ namespace CursedUI
 
 
 
-    public CUISprite() { Texture = CUITexture2D.White; }
+    public CUISprite()
+    {
+      Texture = CUITexture2D.White;
+      // Name = "White";
+    }
     public CUISprite(CUITexture2D texture) { Texture = texture; }
     public CUISprite(CUISprite basedOn)
     {

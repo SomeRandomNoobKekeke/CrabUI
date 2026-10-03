@@ -24,7 +24,7 @@ namespace CursedUI
     }
     public CUIRect InnerRect { get; private set; }
 
-    [CUISerializableProp]
+    // [CUISerializableProp]
     public CUISizes Sizes { get; set; }
     public float Top
     {

@@ -21,7 +21,7 @@ namespace CursedUI
 
     public static CUISprite Transparent => new CUISprite(CUITexture2D.White)
     {
-      Name = "Transparent",
+      // Name = "Transparent",
       Color = Color.Transparent,
     };
     public static CUISprite White => new CUISprite(CUITexture2D.White) { Name = "White" };

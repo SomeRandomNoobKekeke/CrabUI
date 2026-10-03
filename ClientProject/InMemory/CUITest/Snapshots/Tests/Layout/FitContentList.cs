@@ -29,25 +29,26 @@ namespace CursedUIUser
 
           block.Add(new CUITextBlock("123")
           {
-            Padding = new CUISizes(5, 5, 5, 5),
-            Margin = new CUISizes(5, 5, 5, 5),
+            TextPadding = new CUISizes(0, 0, 0, 0),
+            // Padding = new CUISizes(5, 5, 5, 5),
+            // Margin = new CUISizes(5, 5, 5, 5),
             Borders =
             {
               Sizes = new CUISizes(5, 5, 5, 5),
               Color = Color.Cyan,
             }
           });
-          block.Add(new CUIComponent() { Absolute = new CUINullRect(w: 20, h: 20) });
-          block.Add(new CUIButton("CUIButton")
-          {
-            Padding = new CUISizes(5, 5, 5, 5),
-            Margin = new CUISizes(5, 5, 5, 5),
-            Borders =
-            {
-              Sizes = new CUISizes(5, 5, 5, 5),
-              Color = Color.Cyan,
-            }
-          });
+          // block.Add(new CUIComponent() { Absolute = new CUINullRect(w: 20, h: 20) });
+          // block.Add(new CUIButton("CUIButton")
+          // {
+          //   Padding = new CUISizes(5, 5, 5, 5),
+          //   Margin = new CUISizes(5, 5, 5, 5),
+          //   Borders =
+          //   {
+          //     Sizes = new CUISizes(5, 5, 5, 5),
+          //     Color = Color.Cyan,
+          //   }
+          // });
 
           return block;
         }

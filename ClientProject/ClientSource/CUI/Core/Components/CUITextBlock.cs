@@ -102,7 +102,7 @@ namespace CursedUI
     protected override void UpdateRects()
     {
       base.UpdateRects();
-      TextBlock.Rect = InnerRect - TextPadding;
+      TextBlock.Rect = ChildrenRect - TextPadding;
     }
 
     [CUISerializableProp]

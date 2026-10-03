@@ -20,7 +20,7 @@ namespace CursedUI
     public void ForgetAndDispose() { Forget(); Dispose(); }
     public void Track(string key = null) => CUICore.TextureManager.Add(key ?? Key, this);
 
-    public static CUITexture2D White => __CUITexture2D.White;
+    public static CUITexture2D White => CUICore.TextureManager.White;
     public static CUITexture2D BaroDev => CUICore.TextureManager.Get("BaroDev");
 
 

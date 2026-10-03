@@ -12,6 +12,9 @@ namespace CursedUI
 {
   public interface CUITextureManager
   {
+    public CUITexture2D BackupTexture { get; }
+    public CUITexture2D White { get; }
+
     public bool DummyMode { get; set; }
 
     public CUIRenderTarget2D CreateNewRenderTarget(int width, int height, string key = null);

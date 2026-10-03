@@ -59,16 +59,16 @@ namespace CursedUI
       public ClearableEvent<CUISpriteBatch> OnDrawAfterGUI = new();
       public ClearableEvent<CUISpriteBatch> OnDrawBeforeGUI = new();
 
-      public int MaxErrorCount = 5;
+
       public int ErrorCount = 0;
 
       private void HandleError()
       {
-        if (ErrorCount++ < MaxErrorCount) return;
+        if (ErrorCount++ < CUI.MaxErrorCount) return;
 
         Self.Activated = false;
 
-        CUI.Logger.Warning($"More than [{MaxErrorCount}] errors happened in CUICore.LifeCycle");
+        CUI.Logger.Warning($"More than [{CUI.MaxErrorCount}] errors happened in CUICore.LifeCycle");
         CUI.Logger.Warning($"Stopping CUI");
         CUI.Stop();
       }

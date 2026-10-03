@@ -38,6 +38,10 @@ namespace CursedUIUser
           }
 
           XElement XMLBefore = TestSubject.Serialize();
+
+          CUI.Logger.Log($"=========>> Before serialization: <<=========\n{XMLBefore}\n");
+          new XDocument(XMLBefore).Save(Path.Combine(CUITest.CompareFolder, "Before.xml"));
+
           TestSubject = CUIVisualComponent.Deserialize(TestSubject.Serialize());
           TestSubject.DeepDebug = true;
           XElement XMLAfter = TestSubject.Serialize();
@@ -48,12 +52,9 @@ namespace CursedUIUser
             CUISerializationCompare.Instance.ComponentAfter = TestSubject;
           }
 
-
-          new XDocument(XMLBefore).Save(Path.Combine(CUITest.CompareFolder, "Before.xml"));
           new XDocument(XMLAfter).Save(Path.Combine(CUITest.CompareFolder, "After.xml"));
           if (XMLBefore.ToString() != XMLAfter.ToString())
           {
-            CUI.Logger.Log($"=========>> Before serialization: <<=========\n{XMLBefore}\n");
             CUI.Logger.Log($"=========>> After serialization: <<=========\n{XMLAfter}\n");
           }
           else

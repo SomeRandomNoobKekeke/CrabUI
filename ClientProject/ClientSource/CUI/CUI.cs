@@ -21,6 +21,7 @@ namespace CursedUI
     }
 
     public static ErrorHandlingStrategy ErrorHandlingStrategy { get; set; } = ErrorHandlingStrategy.FailFast;
+    public static int MaxErrorCount = 5;
 
     //BRUH why is it here?
     public static SamplerState NoSmoothing = new SamplerState()

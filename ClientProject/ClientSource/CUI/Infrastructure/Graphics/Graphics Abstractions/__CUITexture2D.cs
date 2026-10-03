@@ -12,11 +12,6 @@ namespace CursedUI
 {
   public class __CUITexture2D : CUITexture2D, IDisposable
   {
-    public static __CUITexture2D White = new __CUITexture2D(GUI.WhiteTexture)
-    {
-      ShouldBeDisposed = false,
-    };
-
     public string Key { get; set; }
     public Texture2D XNATexture { get; set; }
 

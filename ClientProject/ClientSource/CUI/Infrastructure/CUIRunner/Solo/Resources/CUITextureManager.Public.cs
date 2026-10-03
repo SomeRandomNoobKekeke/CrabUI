@@ -20,6 +20,9 @@ namespace CursedUI
     /// </summary>
     public class CUITextureManager_PublicPart : Part, CUITextureManager
     {
+      public CUITexture2D BackupTexture => Self.TextureManager.BackupTexture;
+      public CUITexture2D White => Self.TextureManager.White;
+
       public bool DummyMode { get; set; }
 
       public CUIRenderTarget2D CreateNewRenderTarget(int width, int height, string key = null)

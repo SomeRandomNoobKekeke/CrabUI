@@ -21,7 +21,8 @@ namespace CursedUI
     }
     public Context_Part Context { get; } = new();
 
-    public CUITexture2D BackupTexture => __CUITexture2D.White;
+    public CUITexture2D BackupTexture => White;
+    public CUITexture2D White { get; } = new TextureBuilder(1, 1).Clear(Color.White).Build();
     public Dictionary<string, CUITexture2D> LoadedTextures { get; } = new();
 
 
@@ -178,5 +179,10 @@ namespace CursedUI
     }
 
     public void Dispose() => Clear();
+
+    public __CUITextureManager()
+    {
+      Add("white", White);
+    }
   }
 }

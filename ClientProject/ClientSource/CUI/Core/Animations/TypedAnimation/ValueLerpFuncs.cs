@@ -34,8 +34,13 @@ namespace CursedUI
     public static float Float(float value1, float value2, double lambda)
       => (float)(value1 + (value2 - value1) * lambda);
 
-    public static int Int(int value1, int value2, double lambda)
-      => (int)Math.Round(value1 + (value2 - value1) * lambda);
+
+    public static int Int(int start, int end, double lambda)
+    {
+      double step = 1.0 / (end - start + 1);
+      return start + (int)Math.Floor(lambda / step);
+    }
+
 
     public static Color Color(Color value1, Color value2, double lambda)
       => Microsoft.Xna.Framework.Color.Lerp(value1, value2, (float)lambda);

@@ -7,17 +7,25 @@ using Barotrauma;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using CUILibs;
+using System.Xml.Linq;
 
 namespace CursedUI
 {
-  public partial class IconBlock : VisualElementBase
+  /// <summary>
+  /// This is like TextBlock but with Icon
+  /// This thing resizes to Icon
+  /// </summary>
+  public partial class IconBlock : VisualElementBase, NestedCUISerializable
   {
-    private CUISprite _Icon = CUISprite.Transparent; public CUISprite Icon
+    private CUISprite _Icon = CUISprite.Transparent;
+    [CUISerializableProp]
+    public CUISprite Icon
     {
       get => _Icon;
       set
       {
         _Icon = value;
+        RecalcForcedSize();
         RecalcIconRectangle();
       }
     }
@@ -32,26 +40,33 @@ namespace CursedUI
       }
     }
 
-    private float _Scale = 1.0f; public float Scale
+    private float _Scale = 1.0f;
+    [CUISerializableProp]
+    public float Scale
     {
       get => _Scale;
       set
       {
         _Scale = Math.Max(0, value);
+        RecalcForcedSize();
         RecalcIconRectangle();
       }
     }
 
-    private Vector2 _Anchor = new Vector2(0.5f, 0.5f); public Vector2 Anchor
+    private Vector2 _Anchor = new Vector2(0.5f, 0.5f);
+    [CUISerializableProp]
+    public Vector2 Anchor
     {
       get => _Anchor;
       set
       {
         _Anchor = value;
+        RecalcForcedSize();
         RecalcIconRectangle();
       }
     }
 
+    [CUISerializableProp]
     public Color Color
     {
       get => Icon.Color;
@@ -59,16 +74,18 @@ namespace CursedUI
     }
 
     public Vector2 ForcedSize { get; private set; }
-
     public Rectangle IconRectangle { get; private set; }
+
+    private void RecalcForcedSize()
+    {
+      ForcedSize = Icon.Size.ToVector2() * Scale;
+    }
     private void RecalcIconRectangle()
     {
       IconRectangle = new CUIRect(
         CUIAnchor.ChildPosIn(Rect, Anchor, Icon.Size.ToVector2() * Scale),
         Icon.Size.ToVector2() * Scale
       ).Round();
-
-      ForcedSize = Icon.Size.ToVector2() * Scale;
     }
 
     public override bool Contains(Vector2 pos) => Rect.Contains(pos);

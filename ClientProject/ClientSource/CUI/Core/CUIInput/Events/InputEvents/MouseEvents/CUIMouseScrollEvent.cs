@@ -10,7 +10,7 @@ namespace CursedUI
 {
   public class CUIMouseScrollEvent : CUIMouseEvent
   {
-    public float Scroll => Mouse.Scroll;
+    public float Scroll { get; }
 
     public override void Dispatch(IEventConsumer consumer)
     {
@@ -20,7 +20,10 @@ namespace CursedUI
       }
     }
 
-    public CUIMouseScrollEvent(CUIInput.MouseInput mouse) : base(mouse) { }
+    public CUIMouseScrollEvent(CUIInput.MouseInput mouse, float scroll) : base(mouse)
+    {
+      Scroll = scroll;
+    }
     public override string ToString() => $"Scrolled {Scroll}";
   }
 }

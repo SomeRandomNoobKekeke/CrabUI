@@ -15,7 +15,7 @@ namespace CursedUI
   [GeneratedComponent]
   public partial class CUIButton : CUIButtonBase, IComponent, ITextComponent
   {
-    public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIButton>((c) =>
+    public static ICUIStyle DefaultStyle => new CUIDefaultStyle<CUIButton>((c) =>
     {
       c.MasterColor = c.Palette["main"];
       c.TextColor = c.Palette["text"];
@@ -24,8 +24,13 @@ namespace CursedUI
     protected override void InitStyle()
     {
       base.InitStyle();
-      Padding = new(2, 4, 2, 4);
-      Background.Sprite = CUISprite.Vignette;
+      TextPadding = new(2, 4, 2, 4);
+      Background.Sprite = CUISprite.DimmedVertical;
+    }
+
+    public new Action<CUIButton> Style
+    {
+      set => PersonalStyle = new CUIActionStyle<CUIButton>("personal", value);
     }
 
     public TextState_Part TextState { get; } = new();
@@ -68,21 +73,14 @@ namespace CursedUI
       if (MousePressed) Background.Color = MousePressedColor;
     }
 
-    public new Action<CUIButton> Style
-    {
-      set => PersonalStyle = new CUIActionStyle<CUIButton>("personal", value);
-    }
 
+
+    [CUISerializableProp]
+    public CUISizes TextPadding { get; set; }
     protected override CUINullVector2 MinSizeOverride => new CUINullVector2(
-      TextState.TextBlock.ForcedSize.X + Padding.FullWidth,
-      TextState.TextBlock.ForcedSize.Y + Padding.FullHeigth
+      TextState.TextBlock.ForcedSize.X + TextPadding.FullWidth,
+      TextState.TextBlock.ForcedSize.Y + TextPadding.FullHeigth
     );
-
-    protected override void UpdateRects()
-    {
-      base.UpdateRects();
-      TextState.TextBlock.Rect = ChildrenRect;
-    }
 
     [CUISerializableProp]
     public override bool Visible
@@ -95,8 +93,11 @@ namespace CursedUI
       }
     }
 
-
-
+    protected override void UpdateRects()
+    {
+      base.UpdateRects();
+      TextState.TextBlock.Rect = InnerRect - TextPadding;
+    }
 
     public override IEnumerable<VisualUnit> VisualSplit()
     {
@@ -108,17 +109,24 @@ namespace CursedUI
       yield return TextState.TextBlock.VisualWrapper;
       yield return VisualBounds.RightBound;
 
-      yield return Borders.VisualWrapper;
+      yield return Border.VisualWrapper;
     }
 
 
     #region Forwarded to TextState
+    [CUISerializableProp]
     public string Text { get => TextState.Text; set => TextState.Text = value; }
+    [CUISerializableProp]
     public Color TextColor { get => TextState.TextColor; set => TextState.TextColor = value; }
+    [CUISerializableProp]
     public float Scale { get => TextState.Scale; set => TextState.Scale = value; }
+    [CUISerializableProp]
     public ResizeStrategy ResizeStrategy { get => TextState.ResizeStrategy; set => TextState.ResizeStrategy = value; }
+    [CUISerializableProp]
     public Vector2 TextAnchor { get => TextState.TextAnchor; set => TextState.TextAnchor = value; }
+    [CUISerializableProp]
     public SpriteEffects SpriteEffects { get => TextState.SpriteEffects; set => TextState.SpriteEffects = value; }
+    [CUISerializableProp]
     public float LayerDepth { get => TextState.LayerDepth; set => TextState.LayerDepth = value; }
     public CUIFont Font { get => TextState.Font; set => TextState.Font = value; }
 
@@ -137,6 +145,7 @@ namespace CursedUI
 
       MouseDown += (e) =>
       {
+        if (!e.Mouse.M1.Down) return;
         if (PlaySound) SoundPlayer.PlayUISound(ClickSound);
         if (Emit != null) Commands.SendUp(Emit, Text);
       };

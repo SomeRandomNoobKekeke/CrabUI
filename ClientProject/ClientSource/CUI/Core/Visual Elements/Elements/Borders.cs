@@ -11,7 +11,7 @@ using System.Xml.Linq;
 
 namespace CursedUI
 {
-  public class Borders : VisualElementBase, CUISerializable
+  public class Borders : VisualElementBase, NestedCUISerializable
   {
     private CUIRect _Rect; public CUIRect Rect
     {
@@ -22,8 +22,9 @@ namespace CursedUI
         UpdateRects();
       }
     }
-    public CUIRect InnerRect { get; set; }
+    public CUIRect InnerRect { get; private set; }
 
+    [CUISerializableProp]
     public CUISizes Sizes { get; set; }
     public float Top
     {
@@ -46,8 +47,9 @@ namespace CursedUI
       set => Sizes = Sizes with { Left = value };
     }
 
-    public CUISprite Sprite { get; set; } = CUISprite.Vignette;
-
+    //TODO 
+    // [CUISerializableProp]
+    public CUISprite Sprite { get; set; } = new CUISprite();
 
     [CUISerializableProp]
     public Color Color { get => Sprite.Color; set => Sprite.Color = value; }
@@ -107,11 +109,6 @@ namespace CursedUI
         if (Sizes.Right != 0) Sprite.Draw(spriteBatch, RightRect);
         if (Sizes.Bottom != 0) Sprite.Draw(spriteBatch, BottomRect);
       }
-    }
-
-    public static object Deserialize(XElement element)
-    {
-      return new Borders();
     }
   }
 }

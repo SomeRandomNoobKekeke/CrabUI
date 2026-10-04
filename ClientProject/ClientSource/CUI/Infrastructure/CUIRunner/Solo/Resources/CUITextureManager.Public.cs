@@ -20,6 +20,9 @@ namespace CursedUI
     /// </summary>
     public class CUITextureManager_PublicPart : Part, CUITextureManager
     {
+      public CUITexture2D BackupTexture => Self.TextureManager.BackupTexture;
+      public CUITexture2D White => Self.TextureManager.White;
+
       public bool DummyMode { get; set; }
 
       public CUIRenderTarget2D CreateNewRenderTarget(int width, int height, string key = null)
@@ -32,6 +35,8 @@ namespace CursedUI
         => Self.TextureManager.CreateNew(width, height, mipmap, format, key);
 
       public CUITexture2D Add(string key, CUITexture2D texture) => Self.TextureManager.Add(key, texture);
+      public CUITexture2D Ensure(string key, Func<CUITexture2D> factory)
+         => Self.TextureManager.Ensure(key, factory);
       public void Clear() => Self.TextureManager.Clear();
       public void Dispose() => Self.TextureManager.Dispose();
       public void Forget(string key) => Self.TextureManager.Forget(key);

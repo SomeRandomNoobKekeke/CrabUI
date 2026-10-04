@@ -27,20 +27,30 @@ namespace CursedUIUser
         Color dark = new Color(48, 48, 48);
         Color light = Color.Cyan;
 
-        frame["dark"] = new CUIDefault.Frame("Dark")
+        frame["dark1"] = new CUIDefault.Frame("Dark dithered vignette")
         {
           DeepPalette = CUIPalette.FromColor(dark),
-          Absolute = new CUINullRect(w: 600, h: 600),
-          Anchor = CUIAnchor.RightCenter,
-          ParentAnchor = CUIAnchor.Center,
+          Absolute = new CUINullRect(-250, -250, 500, 500),
         };
 
-        frame["light"] = new CUIDefault.Frame("Light")
+        frame["light1"] = new CUIDefault.Frame("Light dithered vignette")
         {
           DeepPalette = CUIPalette.FromColor(light),
-          Absolute = new CUINullRect(w: 600, h: 600),
-          Anchor = CUIAnchor.LeftCenter,
-          ParentAnchor = CUIAnchor.Center,
+          Absolute = new CUINullRect(250, -250, 500, 500),
+        };
+
+        frame["dark2"] = new CUIDefault.Frame("Dark vignette")
+        {
+          DeepPalette = CUIPalette.FromColor(dark),
+          Background = { Sprite = CUISprite.Vignette },
+          Absolute = new CUINullRect(-250, 250, 500, 500),
+        };
+
+        frame["light2"] = new CUIDefault.Frame("Light vignette")
+        {
+          DeepPalette = CUIPalette.FromColor(light),
+          Background = { Sprite = CUISprite.Vignette },
+          Absolute = new CUINullRect(250, 250, 500, 500),
         };
 
         return frame;

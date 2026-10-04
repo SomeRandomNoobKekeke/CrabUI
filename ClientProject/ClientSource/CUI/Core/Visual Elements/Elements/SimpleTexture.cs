@@ -12,7 +12,7 @@ using System.Text.Json;
 
 namespace CursedUI
 {
-  public class SimpleTexture : VisualElementBase, CUISerializable
+  public class SimpleTexture : VisualElementBase, NestedCUISerializable
   {
     private Rectangle RoundedRect;
 
@@ -26,20 +26,37 @@ namespace CursedUI
       }
     }
 
-    private CUISprite _Sprite = CUISprite.White; public CUISprite Sprite
+    /// <summary>
+    /// HACK
+    /// Expands area where texture captures clicks
+    /// Primarily for resize handles
+    /// </summary>
+    public CUISizes SensorExpansion { get; set; }
+
+    private CUISprite _Sprite = CUISprite.White;
+
+    [CUISerializableProp]
+    public CUISprite Sprite
     {
       get => _Sprite;
       set
       {
         _Sprite = value;
         _Sprite.ShouldBufferData = IgnoretransparentPixels;
+
+        if (_Color.Elevated && _Sprite.ColorIsDefault)
+        {
+          _Sprite.Color = _Color.Value;
+        }
       }
     }
 
     /// <summary>
     /// Source of truth elevated from sprite
     /// </summary>
-    private bool _IgnoretransparentPixels; public bool IgnoretransparentPixels
+    private bool _IgnoretransparentPixels;
+    [CUISerializableProp]
+    public bool IgnoretransparentPixels
     {
       get => _IgnoretransparentPixels;
       set
@@ -57,30 +74,30 @@ namespace CursedUI
           (pos - Rect.Position) / Rect.Size
         );
       }
-      return Rect.Contains(pos);
+      return Rect.Contains(pos, SensorExpansion);
     }
 
-    public string TextureKey
+    private ElevatedProp<Color> _Color;
+    public Color Color //CRINGE so if you change this Color next sprite will inherit it
     {
-      get => Sprite.Texture.Key;
-      set => Sprite.Texture = CUICore.TextureManager.Get(value);
+      get => Sprite.Color;
+      set
+      {
+        Sprite.Color = value;
+        _Color.Value = value;
+        _Color.Elevated = true;
+      }
     }
-    #region Forwarded to CUISprite
-    [CUISerializableProp]
-    public CUITexture2D Texture { get => Sprite.Texture; set => Sprite.Texture = value; }
-    [CUISerializableProp]
-    public Rectangle? SourceRectangle { get => Sprite.SourceRectangle; set => Sprite.SourceRectangle = value; }
-    [CUISerializableProp]
-    public Color Color { get => Sprite.Color; set => Sprite.Color = value; }
-    [CUISerializableProp]
-    public float Rotation { get => Sprite.Rotation; set => Sprite.Rotation = value; }
-    [CUISerializableProp]
-    public Vector2 Origin { get => Sprite.Origin; set => Sprite.Origin = value; }
-    [CUISerializableProp]
-    public SpriteEffects Effects { get => Sprite.Effects; set => Sprite.Effects = value; }
-    [CUISerializableProp]
-    public float LayerDepth { get => Sprite.LayerDepth; set => Sprite.LayerDepth = value; }
 
+
+    #region Forwarded to CUISprite
+    public CUITexture2D Texture { get => Sprite.Texture; set => Sprite.Texture = value; }
+    public Rectangle? SourceRectangle { get => Sprite.SourceRectangle; set => Sprite.SourceRectangle = value; }
+    public float Rotation { get => Sprite.Rotation; set => Sprite.Rotation = value; }
+    public Vector2 Origin { get => Sprite.Origin; set => Sprite.Origin = value; }
+    public SpriteEffects Effects { get => Sprite.Effects; set => Sprite.Effects = value; }
+    public float LayerDepth { get => Sprite.LayerDepth; set => Sprite.LayerDepth = value; }
+    public CUISpriteDrawMode DrawMode { get => Sprite.DrawMode; set => Sprite.DrawMode = value; }
     #endregion
 
     public override void Draw(CUISpriteBatch spriteBatch)
@@ -90,36 +107,5 @@ namespace CursedUI
         Sprite.Draw(spriteBatch, RoundedRect);
       }
     }
-
-    public static object Deserialize(XElement element)
-    {
-      throw new NotImplementedException();
-    }
-
-
-    // public static object Parse(string raw)
-    // {
-    //   Dictionary<string, string> dict = JsonSerializer.Deserialize<Dictionary<string, string>>(raw)!;
-
-    //   CUI.Logger.Log(Logger.Wrap.IDictionary(dict));
-
-    //   SimpleTexture texture = new SimpleTexture();
-
-    //   if (dict.ContainsKey("texture")) texture.Texture = CUICore.TextureManager.Get(dict["texture"]);
-    //   if (dict.ContainsKey("color")) texture.Color = CUICore.Parser.Parse<Color>(dict["color"]);
-
-    //   return texture;
-    // }
-
-    // public string ToText()
-    // {
-    //   Dictionary<string, string> dict = new Dictionary<string, string>()
-    //   {
-    //     ["texture"] = Texture.Key ?? "",
-    //     ["color"] = CUICore.Parser.Serialize(Color),
-    //   };
-
-    //   return JsonSerializer.Serialize(dict);
-    // }
   }
 }

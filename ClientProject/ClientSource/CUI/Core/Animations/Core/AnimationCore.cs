@@ -18,16 +18,6 @@ namespace CursedUI
     public AnimationTrack Forward { get; set; } = new();
     public AnimationTrack Backward { get; set; } = new();
 
-    public double Duration
-    {
-      get => Forward.Duration;
-      set
-      {
-        Forward.Duration = value;
-        Backward.Duration = value;
-      }
-    }
-
     public Func<double, double> Func
     {
       get => Forward.Func;
@@ -37,6 +27,12 @@ namespace CursedUI
         Backward.Func = (f) => value(PointerBounds.Right - f);
       }
     }
+
+    /// <summary>
+    /// 1 update step size
+    /// Animations are updated 60 times / sec
+    /// if Speed is 1/60 then Duration is 1 sec
+    /// </summary>
     public double Speed
     {
       get => Forward.Speed;
@@ -44,6 +40,19 @@ namespace CursedUI
       {
         Forward.Speed = value;
         Backward.Speed = value;
+      }
+    }
+
+    /// <summary>
+    /// In secs
+    /// </summary>
+    public double Duration
+    {
+      get => Forward.Duration;
+      set
+      {
+        Forward.Duration = value;
+        Backward.Duration = value;
       }
     }
     public ActionOnTrackEnd OnEnd
@@ -138,16 +147,11 @@ namespace CursedUI
     }
 
 
-    public void Update()
+    public void Update(double deltaTime)
     {
-      Step();
+      Pointer += SignedSpeed * deltaTime;
       UpdateState();
       Updated?.Invoke(Lambda);
-    }
-
-    private void Step()
-    {
-      Pointer += SignedSpeed;
     }
 
     private void UpdateState()

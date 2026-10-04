@@ -13,8 +13,10 @@ using CUILibs;
 
 namespace CursedUI
 {
+  //LINK:/ClientProject\InMemory\CUITest\Snapshots\Tests\Components\CUIDropDown.cs
   public partial class CUIDropDown : CUIComponent, IComponent
   {
+    [CUISerializableProp]
     public string Selected
     {
       get => SelectedBtn.Text;
@@ -28,6 +30,7 @@ namespace CursedUI
     public Action<string> OnSelect { set { Select += value; } }
     public event Action<string> Select;
 
+    [CUISerializableProp]
     public IEnumerable<string> Options
     {
       get => OptionBox.Children.Select(c => (c as CUIButton).Text);
@@ -46,7 +49,7 @@ namespace CursedUI
       OptionBox.Children.Add(new CUIButton(option)
       {
         Background = { Sprite = CUISprite.White },
-        Borders = {
+        Border = {
           Sizes = new CUISizes(bottom:1),
           Color = Color.White,
         },
@@ -58,7 +61,7 @@ namespace CursedUI
         Style = (c) =>
         {
           c.MasterColor = c.Palette["main"].To(Color.Black, 0.3f);
-          c.Borders.Color = c.Palette["border"];
+          c.Border.Color = c.Palette["border"];
         },
       });
     }
@@ -138,12 +141,13 @@ namespace CursedUI
 
       if (IsOpen) yield return OptionBox.VisualWrapper;
 
-      yield return Borders.VisualWrapper;
+      yield return Border.VisualWrapper;
     }
 
     public CUIDropDown()
     {
       FitContent = new CUIBool2(true, true);
+      SerializeChildren = false;
 
       this["pin"] = new CUIComponent()
       {

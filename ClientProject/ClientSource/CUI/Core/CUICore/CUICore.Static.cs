@@ -14,7 +14,7 @@ using System.Xml.Linq;
 
 namespace CursedUI
 {
-
+  //TODO Sort
   public partial class CUICore
   {
     public static CUICore Instance => CUI.Core;
@@ -43,30 +43,8 @@ namespace CursedUI
     public static CUITextureManager TextureManager => Instance.Handles.TextureManager;
     public static ResourceIOContextHandle ResourceIOContext => Instance.Handles.ResourceIOContext;
 
-    public static DebugHub DebugHub => Instance._DebugHub;
 
-    public static event Action<double> OnUpdate
-    {
-      add => Instance.LifeCycle.OnUpdate.Add(value);
-      remove => Instance.LifeCycle.OnUpdate.Remove(value);
-    }
 
-    public static event Action<double> OnBeforeUpdate
-    {
-      add => Instance.LifeCycle.OnBeforeUpdate.Add(value);
-      remove => Instance.LifeCycle.OnBeforeUpdate.Remove(value);
-    }
 
-    public static event Action<CUISpriteBatch> OnDrawAfterGUI
-    {
-      add => Instance.LifeCycle.OnDrawAfterGUI.Add(value);
-      remove => Instance.LifeCycle.OnDrawAfterGUI.Remove(value);
-    }
-
-    public static event Action<CUISpriteBatch> OnDrawBeforeGUI
-    {
-      add => Instance.LifeCycle.OnDrawBeforeGUI.Add(value);
-      remove => Instance.LifeCycle.OnDrawBeforeGUI.Remove(value);
-    }
   }
 }

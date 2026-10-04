@@ -9,6 +9,7 @@ using CUILibs;
 using CursedUI;
 using Microsoft.Xna.Framework;
 using System.IO;
+using Microsoft.Xna.Framework.Input;
 
 namespace CursedUIUser
 {
@@ -16,11 +17,35 @@ namespace CursedUIUser
   {
     public CUIVerticalList ButtonList { get; set; }
 
+
     public void UpdateTests()
     {
       Children.Clear();
       Dismantle();
     }
+
+
+    private void GlobalKeyPressedHandler(CUIKeyPressedEvent e)
+    {
+      if (e.Key == Keys.S && e.Keyboard.IsKeyDown(Keys.LeftAlt))
+      {
+        this.Get<CUIToggleButton>("layout.controls.serialize").DoToggle();
+      }
+    }
+    protected override void HandleOpen()
+    {
+      Setup();
+      Refresh();
+
+      CUI.TopMain.GlobalEvents.KeyPressed.Add(GlobalKeyPressedHandler);
+    }
+
+    protected override void HandleClose()
+    {
+      Dismantle();
+      CUI.TopMain.GlobalEvents.KeyPressed.Remove(GlobalKeyPressedHandler);
+    }
+
 
 
     public void HandleManagerEvent(SnapshotTestManager.Event e)
@@ -36,7 +61,16 @@ namespace CursedUIUser
       }
     }
 
-
+    public void OpenGroupByTestName(string name)
+    {
+      foreach (var (groupName, group) in Repo.GroupedTests)
+      {
+        if (group.ContainsKey(name))
+        {
+          OpenGroup(groupName);
+        }
+      }
+    }
 
     public void OpenGroup(string name)
     {
@@ -57,6 +91,8 @@ namespace CursedUIUser
     {
       Children.Clear();
       Background.Color = new Color(32, 32, 32);
+
+      SerializeTestSubject = ModStorage.Get<bool>("CUITest.SerializeTestSubject");
 
       this["layout"] = new CUIVerticalList() { Relative = new CUINullRect(0, 0, 1, 1), };
 
@@ -82,7 +118,12 @@ namespace CursedUIUser
         MasterColor = new Color(255, 0, 255),
 
         State = SerializeTestSubject,
-        OnToggle = (state) => SerializeTestSubject = state,
+        OnToggle = (state) =>
+        {
+          SerializeTestSubject = state;
+          ModStorage.Set("CUITest.SerializeTestSubject", state);
+          Run(CurrentTestName);
+        },
       };
 
       this["layout"]["groups"] = new CUIHorizontalList()
@@ -95,6 +136,7 @@ namespace CursedUIUser
       {
         this["layout"]["groups"].Children.Add(new CUIButton(group)
         {
+          AKA = group,
           OnMouseDown = (e) => OpenGroup(group),
         });
       }
@@ -103,6 +145,7 @@ namespace CursedUIUser
       {
         Flex = 1,
         Scrollable = true,
+        ScrollSpeed = 0.5f,
       };
 
       OpenGroup(Repo.Groups.First());

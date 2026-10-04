@@ -19,14 +19,14 @@ namespace CursedUIUser
       {
         CUIFrame frame = new CUIDefault.Frame("Borders")
         {
-          Borders = {
+          Border = {
             Visible = true,
             Sizes = new CUISizes(1,1,1,1),
           },
           Absolute = new CUINullRect(w: 400, h: 600),
         };
 
-        frame.Borders.MouseDown.Add((e) => CUI.Logger.Log("bruh"));
+        frame.Border.MouseDown.Add((e) => CUI.Logger.Log("bruh"));
 
         frame["box1"] = new CUIComponent()
         {
@@ -38,7 +38,7 @@ namespace CursedUIUser
         {
           Background = { Color = new Color(255, 255, 0, 255) },
           Absolute = new CUINullRect(100, 100, 100, 100),
-          Borders = {
+          Border = {
             Visible = true,
             Color = new Color(0,255,255,128),
             Sizes = new CUISizes(4,8,12,0),

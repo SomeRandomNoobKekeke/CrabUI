@@ -12,7 +12,6 @@ namespace CursedUI
 {
   public static class CUIColor
   {
-
     public static Color Random => new Color((byte)CUI.Random.Next(), (byte)CUI.Random.Next(), (byte)CUI.Random.Next());
 
     public static Color To(this Color source, Color target, float lambda)
@@ -303,7 +302,11 @@ namespace CursedUI
     }
     #endregion
 
+    public static Color FromSeed(int seed, float s, float v)
+    {
 
+      return FromHSV(seed * 76, s, v);
+    }
 
   }
 }

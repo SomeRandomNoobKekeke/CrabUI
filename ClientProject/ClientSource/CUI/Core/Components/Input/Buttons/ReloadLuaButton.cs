@@ -14,7 +14,7 @@ namespace CursedUI
   /// </summary>
   public class ReloadLuaButton : CUIButton
   {
-    public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<ReloadLuaButton>((c) =>
+    public static ICUIStyle DefaultStyle => new CUIDefaultStyle<ReloadLuaButton>((c) =>
     {
       c.MasterColor = Color.Lerp(c.Palette["main"], Color.Red, 0.5f);
     });

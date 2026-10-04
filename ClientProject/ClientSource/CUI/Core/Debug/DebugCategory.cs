@@ -23,6 +23,9 @@ namespace CursedUI
     // public static string Events = "Events";
     // public static string ScissorRectSet = "Scissor Rect Set";
     // public static string VisualUnitProcessed = "VisualUnitProcessed";
+    public static string LayoutMarked = "Layout Marked";
+    public static string LayoutCalculations = "Layout Calculations";
+    public static string Focus = "Focus";
     public static string LayoutFlatten = "Layout Flatten";
     public static string ComponentCreated = "Component Created";
     public static string StyleApplied = "Style Applied";
@@ -30,5 +33,7 @@ namespace CursedUI
     public static string RectSet = "Rect Set";
     public static string MouseEvents = "Mouse Events";
     public static string KeyboardEvents = "Keyboard Events";
+    public static string EventTargets = "Event Targets";
+    public static string PropSet = "Prop Set";
   }
 }

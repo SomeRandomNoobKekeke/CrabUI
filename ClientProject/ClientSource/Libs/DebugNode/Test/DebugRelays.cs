@@ -20,7 +20,7 @@ namespace CUILibs
 
       hub.Gates["cringe"].Open();
       hub.Output.Add((e) => result = e.ToString());
-      hub.IsOpen = false;
+
 
       DebugRelay relay1 = new();
       DebugRelay relay2 = new();
@@ -28,9 +28,9 @@ namespace CUILibs
       relay1.Route(relay2);
       hub.Route(relay1);
 
-      DebugNode<string, int> node1 = new("cringe", hub, (s, i) => $"bruh {s} {i}");
-      DebugNode<string, int> node2 = new("cringe", hub, (s, i) => $"bruh {s} {i}");
-      DebugNode<string, int> node3 = new("bruh", hub, (s, i) => $"bruh {s} {i}");
+      DebugNode<string, int> node1 = new("cringe", hub) { MsgFactory = (s, i) => $"bruh {s} {i}" };
+      DebugNode<string, int> node2 = new("cringe", hub) { MsgFactory = (s, i) => $"bruh {s} {i}" };
+      DebugNode<string, int> node3 = new("bruh", hub) { MsgFactory = (s, i) => $"bruh {s} {i}" };
 
       node1.Map(relay2);
       relay2.Route(node2);

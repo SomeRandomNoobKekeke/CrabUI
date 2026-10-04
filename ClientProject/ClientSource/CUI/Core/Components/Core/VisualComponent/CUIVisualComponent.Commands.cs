@@ -12,77 +12,106 @@ namespace CursedUI
 {
   public partial class CUIVisualComponent
   {
+    public virtual RoutableCommandContract? CommandsContract => null;
 
-    public public_Commands_Part Commands { get; } = new();
-    public class public_Commands_Part : Part, IModule
+
+    public Dictionary<string, Action> Reactions
     {
-      public void ListenFor(string name, Action action) => Self.ProtectedCommands.ListenFor(name, action);
-      public void ListenFor(string name, Action<object> action) => Self.ProtectedCommands.ListenFor(name, action);
-      public void ListenFor<T>(string name, Action<T> action) => Self.ProtectedCommands.ListenFor<T>(name, action);
-      public void SendDown(string name, object data = null) => Self.ProtectedCommands.SendDown(name, data);
-      public void SendUp(string name, object data = null) => Self.ProtectedCommands.SendUp(name, data);
-      public void Execute(string name, object data = null) => Self.ProtectedCommands.Execute(name, data);
+      set
+      {
+        foreach (var (name, action) in value)
+        {
+          Commands.ListenFor(name, action);
+        }
+      }
     }
 
-
-
-    protected Protected_Commands_Part ProtectedCommands { get; } = new();
-    public class Protected_Commands_Part : Part, IModule
+    public Commands_Part Commands { get; } = new();
+    public class Commands_Part : Part
     {
-      public RoutableCommandNode Node { get; } = new();
-
-      public void OnAttachToParentHandler(CUIVisualComponent parent)
-      {
-        parent.ProtectedCommands.Node.AddChild(this.Node);
-      }
-
-      public void OnDetachFromParentHandler(CUIVisualComponent parent)
-      {
-        parent.ProtectedCommands.Node.RemoveChild(this.Node);
-      }
+      private DictOfLists<string, Action<object>> Listeners { get; } = new();
 
       public void ListenFor(string name, Action action)
       {
-        Node.Listeners.Add(name, (o) => action());
+        ListenFor(name, (o) => action());
       }
+
       public void ListenFor<T>(string name, Action<T> action)
       {
         if (typeof(T).IsValueType)//BRUH idk
         {
-          Node.Listeners.Add(name, (o) =>
-          {
-            if (o is T) action((T)o);
-          });
+          ListenFor(name, (o) => { if (o is T) action((T)o); });
         }
         else
         {
-          Node.Listeners.Add(name, (o) =>
-          {
-            if (o is T || o is null) action((T)o);
-          });
+          ListenFor(name, (o) => { if (o is T || o is null) action((T)o); });
         }
       }
+
       public void ListenFor(string name, Action<object> action)
       {
-        Node.Listeners.Add(name, action);
-      }
+        if (Self.CommandsContract?.CanConsume(name) == false)
+        {
+          throw new ContractBrokenException($"[{Self}] can't listen for [{name}]");
+        }
 
-
-      public void SendDown(string name, object data = null)
-      {
-        Node.SendDown(new RoutableCommand(name, data));
-      }
-
-      public void SendUp(string name, object data = null)
-      {
-        Node.SendUp(new RoutableCommand(name, data));
+        Listeners.Add(name, action);
       }
 
       public void Execute(string name, object data = null)
       {
-        Node.Execute(new RoutableCommand(name, data));
+        if (Self.CommandsContract?.CanConsume(name) == false)
+        {
+          throw new ContractBrokenException($"[{Self}] can't execute [{name}]");
+        }
+
+        foreach (Action<object> action in Listeners[name])
+        {
+          action(data);
+        }
+      }
+
+      public void SendDown(string name, object data = null)
+      {
+        if (Self.CommandsContract?.CanSendDown(name) == false)
+        {
+          throw new ContractBrokenException($"[{Self}] can't send [{name}] down");
+        }
+
+        for (int i = Self.Children.Count - 1; i >= 0; i--)
+        {
+          if (Self.Children[i].Commands.Listeners.ContainsKey(name))
+          {
+            Self.Children[i].Commands.Execute(name, data);
+          }
+          else
+          {
+            Self.Children[i].Commands.SendDown(name, data);
+          }
+        }
+      }
+
+      public void SendUp(string name, object data = null)
+      {
+        if (Self.CommandsContract?.CanSendUp(name) == false)
+        {
+          throw new ContractBrokenException($"[{Self}] can't send [{name}] up");
+        }
+
+        if (Self.Parent == null) return;
+
+        if (Self.Parent.Commands.Listeners.ContainsKey(name))
+        {
+          Self.Parent?.Commands.Execute(name, data);
+        }
+        else
+        {
+          Self.Parent?.Commands.SendUp(name, data);
+        }
       }
     }
+
+
   }
 
 

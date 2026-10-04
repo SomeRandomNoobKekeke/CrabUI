@@ -90,6 +90,37 @@ namespace CursedUI
       return this;
     }
 
+
+    public TextureBuilder SetData(int width, int height, Color[] colors)
+    {
+      Width = width;
+      Height = height;
+      data = colors;
+
+      return this;
+    }
+
+    public TextureBuilder SetData(Color[,] colors)
+    {
+      Width = colors.GetUpperBound(0);
+      Height = colors.GetUpperBound(1);
+
+      data = new Color[Width * Height];
+
+      for (int i = 0; i < Width; i++)
+      {
+        for (int j = 0; j < Height; i++)
+        {
+          data[j * Width + i] = colors[i, j];
+        }
+      }
+
+      //TODO mb use Buffer.BlockCopy?
+      // Buffer.BlockCopy(colors, 0, data, 0, colors.Length * sizeof(Color));
+
+      return this;
+    }
+
     public TextureBuilder Edit(Action<Color[]> action)
     {
       action(data);

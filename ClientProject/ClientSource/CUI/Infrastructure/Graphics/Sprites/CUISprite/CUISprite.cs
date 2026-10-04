@@ -10,8 +10,13 @@ using System.Text.Json;
 using CUILibs;
 namespace CursedUI
 {
-  public partial record CUISprite
+  public partial class CUISprite : ITextureSource
   {
+    /// <summary>
+    /// If not null sprite will be serialized by name and parsed by name from static props on CUISprite  
+    /// </summary>
+    public string Name { get; private set; }
+
     private CUITexture2D _Texture; public CUITexture2D Texture
     {
       get => _Texture;
@@ -25,11 +30,37 @@ namespace CursedUI
 
     public Point Size => SourceRectangle.HasValue ? SourceRectangle.Value.Size : Texture.Bounds.Size;
 
-    private static Color DefaultColor => Color.White;
-    public Color ColorTL { get; set; } = DefaultColor;
-    public Color ColorTR { get; set; } = DefaultColor;
-    public Color ColorBR { get; set; } = DefaultColor;
-    public Color ColorBL { get; set; } = DefaultColor;
+    //CRINGE to block sprite color inheritance in SimpleTexture
+    public bool ColorIsDefault { get; private set; } = true;
+
+    public static Color DefaultColor => Color.White;
+
+    private Color _ColorTL = DefaultColor;
+    private Color _ColorTR = DefaultColor;
+    private Color _ColorBR = DefaultColor;
+    private Color _ColorBL = DefaultColor;
+
+    public Color ColorTL
+    {
+      get => _ColorTL;
+      set { _ColorTL = value; ColorIsDefault = false; }
+    }
+    public Color ColorTR
+    {
+      get => _ColorTR;
+      set { _ColorTR = value; ColorIsDefault = false; }
+    }
+    public Color ColorBR
+    {
+      get => _ColorBR;
+      set { _ColorBR = value; ColorIsDefault = false; }
+    }
+    public Color ColorBL
+    {
+      get => _ColorBL;
+      set { _ColorBL = value; ColorIsDefault = false; }
+    }
+
     public Color Color
     {
       get => ColorTL;
@@ -52,13 +83,131 @@ namespace CursedUI
     public SpriteEffects Effects { get; set; } = SpriteEffects.None;
     public float LayerDepth { get; set; } = 0.0f;
 
+    public CUISpriteDrawMode DrawMode { get; set; }
+
 
     public void Draw(CUISpriteBatch spriteBatch, Rectangle destinationRectangle)
     {
-      spriteBatch.Draw(Texture, destinationRectangle, SourceRectangle, ColorTL, ColorTR, ColorBR, ColorBL, Rotation, Origin, Effects, LayerDepth);
+      switch (DrawMode)
+      {
+        case CUISpriteDrawMode.Resize:
+          spriteBatch.Draw(
+            Texture,
+            destinationRectangle,
+            SourceRectangle,
+            ColorTL, ColorTR, ColorBR, ColorBL, Rotation, Origin, Effects, LayerDepth
+          );
+          break;
+
+        case CUISpriteDrawMode.Wrap:
+          if (SourceRectangle.HasValue)
+          {
+            spriteBatch.Draw(
+              Texture,
+              destinationRectangle,
+              new Rectangle(
+                SourceRectangle.Value.Left,
+                SourceRectangle.Value.Top,
+                destinationRectangle.Width,
+                destinationRectangle.Height
+              ),
+              ColorTL, ColorTR, ColorBR, ColorBL, Rotation, Origin, Effects, LayerDepth
+            );
+          }
+          else
+          {
+            spriteBatch.Draw(
+              Texture,
+              destinationRectangle,
+              new Rectangle(0, 0, destinationRectangle.Width, destinationRectangle.Height),
+              ColorTL, ColorTR, ColorBR, ColorBL, Rotation, Origin, Effects, LayerDepth
+            );
+          }
+          break;
+
+        case CUISpriteDrawMode.Static:
+          spriteBatch.Draw(
+            Texture,
+            destinationRectangle,
+            destinationRectangle,
+            ColorTL, ColorTR, ColorBR, ColorBL, Rotation, Origin, Effects, LayerDepth
+          );
+          break;
+
+        case CUISpriteDrawMode.StaticDeep:
+          spriteBatch.Draw(
+            Texture,
+            destinationRectangle,
+            new Rectangle(
+              (int)(destinationRectangle.Left * 0.9f),
+              (int)(destinationRectangle.Top * 0.9f),
+              destinationRectangle.Width,
+              destinationRectangle.Height
+            ),
+            ColorTL, ColorTR, ColorBR, ColorBL, Rotation, Origin, Effects, LayerDepth
+          );
+          break;
+
+          // case CUISpriteDrawMode.Zoom:
+          //   Rectangle Zoom(Rectangle rect, float z)
+          //   {
+          //     Vector2 ScreenCenter = CUI.GameScreenRect.Size.ToVector2() / 2.0f;
+          //     Vector2 PosDif = new Vector2(rect.Left, rect.Top) - ScreenCenter;
+          //     Vector2 newPos = PosDif * z + ScreenCenter;
+
+          //     return new Rectangle(
+          //       (int)newPos.X, (int)newPos.Y,
+          //       (int)(rect.Width / z), (int)(rect.Height / z)
+          //     );
+          //   }
+
+          //   spriteBatch.Draw(
+          //     Texture,
+          //     destinationRectangle,
+          //     Zoom(destinationRectangle, 0.6f),
+          //     ColorTL, ColorTR, ColorBR, ColorBL, Rotation, Origin, Effects, LayerDepth
+          //   );
+          //   break;
+      }
+
     }
 
-    public CUISprite() { Texture = CUITexture2D.White; }
+
+
+
+    public CUISprite()
+    {
+      Texture = CUITexture2D.White;
+      // Name = "White";
+    }
     public CUISprite(CUITexture2D texture) { Texture = texture; }
+    public CUISprite(CUISprite basedOn)
+    {
+      Texture = basedOn.Texture;
+      SourceRectangle = basedOn.SourceRectangle;
+    }
+
+    public override string ToString() => Name is not null ? Name : $"CUISprite({Texture}:{CUICore.Parser.Serialize(SourceRectangle)})";
+
+    public override bool Equals(object? obj)
+    {
+      if (obj.GetType() != typeof(CUISprite)) return false;
+
+      CUISprite other = obj as CUISprite;
+
+      if (Texture != other.Texture) return false;
+      if (SourceRectangle != other.SourceRectangle) return false;
+      if (ColorTL != other.ColorTL) return false;
+      if (ColorTR != other.ColorTR) return false;
+      if (ColorBR != other.ColorBR) return false;
+      if (ColorBL != other.ColorBL) return false;
+      if (Rotation != other.Rotation) return false;
+      if (Origin != other.Origin) return false;
+      if (Effects != other.Effects) return false;
+      if (LayerDepth != other.LayerDepth) return false;
+      if (DrawMode != other.DrawMode) return false;
+
+      return true;
+    }
   }
 }

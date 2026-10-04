@@ -7,6 +7,7 @@ using CUILibs;
 
 namespace CursedUI
 {
+  // Not a test
   public class PrintSerializablePropsTest : CUISerializationTest
   {
     public override void CreateTests()

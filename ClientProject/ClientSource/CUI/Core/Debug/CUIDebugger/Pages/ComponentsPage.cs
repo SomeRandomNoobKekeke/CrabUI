@@ -28,7 +28,7 @@ namespace CursedUI
         HighlightOverlay.Absolute = new CUINullRect();
       }
 
-      protected override void Refresh()
+      public override void Refresh()
       {
         ComponentList.Clear();
 
@@ -59,8 +59,8 @@ namespace CursedUI
 
       public ComponentsPageComponent()
       {
-        OnOpen.Add(HandleOpen);
-        OnClose.Add(HandleClose);
+        OnOpen += HandleOpen;
+        OnClose += HandleClose;
 
         HighlightOverlay = new CUIComponent()
         {

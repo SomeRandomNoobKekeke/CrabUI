@@ -12,15 +12,15 @@ namespace CursedUI
   public class CUISerializableAnalyzer
   {
     public bool IsCUISerializable(Type T) => T.IsAssignableTo(typeof(CUISerializable));
+    public bool IsNestedSerializable(Type T) => T.IsAssignableTo(typeof(NestedCUISerializable));
+    public bool IsICustomSerializable(PropertyInfo pi) => pi.PropertyType.IsAssignableTo(typeof(ICustomSerializable));
     public bool IsCUISerializableProp(PropertyInfo pi)
       => pi.GetCustomAttribute<CUISerializableProp>() != null;
 
+
     public CUISerializableInfo Analyze(Type T)
     {
-      CUISerializableInfo info = new()
-      {
-        SerializableProps = new(),
-      };
+      CUISerializableInfo info = new();
 
       AnalyzeContainer(info, T, []);
 
@@ -29,7 +29,7 @@ namespace CursedUI
 
     private void AnalyzeContainer(CUISerializableInfo info, Type T, List<PropertyInfo> path)
     {
-      foreach (PropertyInfo pi in T.GetProperties(BindingFlags.Public | BindingFlags.Instance))
+      foreach (PropertyInfo pi in T.GetProperties(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance))
       {
         if (IsCUISerializableProp(pi))
         {
@@ -37,7 +37,7 @@ namespace CursedUI
 
           PropertyPath pp = new PropertyPath(path.Append(pi));
 
-          if (IsCUISerializable(pi.PropertyType))
+          if (IsNestedSerializable(pi.PropertyType))
           {
             AnalyzeContainer(info, pi.PropertyType, pp.Path);
           }
@@ -51,6 +51,7 @@ namespace CursedUI
 
     private bool CheckCringe(Type T)
     {
+      if (T.IsAssignableTo(typeof(NestedCUISerializable))) return true;
       if (T.IsAssignableTo(typeof(IParsable))) return true;
       if (T.IsPrimitive) return true;
       if (T == typeof(string)) return true;

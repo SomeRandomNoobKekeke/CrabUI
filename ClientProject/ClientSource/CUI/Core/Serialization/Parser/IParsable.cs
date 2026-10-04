@@ -10,6 +10,9 @@ using System.Xml.Linq;
 
 namespace CursedUI
 {
+  /// <summary>
+  /// This thing can be parsed to / from text
+  /// </summary>
   public interface IParsable
   {
     public static abstract object Parse(string raw);

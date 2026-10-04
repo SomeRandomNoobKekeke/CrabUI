@@ -12,6 +12,7 @@ using Barotrauma.Extensions;
 
 namespace CursedUI
 {
+  //Test LINK:\ClientProject\InMemory\CUITest\Snapshots\Tests\Components\CUICheckBox.cs
   public partial class CUICheckBox : CUIToggleIconButton, IComponent
   {
     protected override void InitStyle()
@@ -19,7 +20,7 @@ namespace CursedUI
       base.InitStyle();
       Icon = CUISprite.CheckIcon;
       // Padding = new CUISizes(1, 1, 1, 1);
-      Borders.Sizes = new CUISizes(1, 1, 1, 1);
+      Border.Sizes = new CUISizes(1, 1, 1, 1);
       ClickSound = GUISoundType.TickBox;
     }
   }

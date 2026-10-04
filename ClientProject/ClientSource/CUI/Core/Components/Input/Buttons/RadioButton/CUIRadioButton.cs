@@ -15,7 +15,7 @@ namespace CursedUI
   [GeneratedComponent]
   public partial class CUIRadioButton : CUIButtonBase, IComponent, ITextComponent
   {
-    public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIRadioButton>((c) =>
+    public static ICUIStyle DefaultStyle => new CUIDefaultStyle<CUIRadioButton>((c) =>
     {
       c.TextColor = c.Palette["text"];
       c.MasterColor = c.Palette["main"];
@@ -24,8 +24,13 @@ namespace CursedUI
     protected override void InitStyle()
     {
       base.InitStyle();
-      Padding = new(2, 4, 2, 4);
-      Background.Sprite = CUISprite.Vignette;
+      TextPadding = new(2, 4, 2, 4);
+      Background.Sprite = CUISprite.DimmedVertical;
+    }
+
+    public new Action<CUIRadioButton> Style
+    {
+      set => PersonalStyle = new CUIActionStyle<CUIRadioButton>("personal", value);
     }
 
     public TextToggleState_Part OnState { get; } = new();
@@ -55,9 +60,11 @@ namespace CursedUI
     }
 
     public RadioGroup Group { get; set; }
+
+    [CUISerializableProp]
     public string GroupName
     {
-      get => Group.Name;
+      get => Group?.Name;
       set => Group = RadioGroup.GetOrCreate(value);
     }
 
@@ -88,7 +95,24 @@ namespace CursedUI
     public Action<bool> OnToggled { set { Toggled += value; } }
     public event Action<bool> Toggled;
 
+    [CUISerializableProp]
     public bool IsSelected
+    {
+      get => Group?.Current == this;
+      set
+      {
+        if (value)
+        {
+          Group?.SelectSilent(this);
+        }
+        else
+        {
+          Group?.DeselectSilent(this);
+        }
+      }
+    }
+
+    protected bool IsSelectedReactive
     {
       get => Group?.Current == this;
       set
@@ -103,7 +127,6 @@ namespace CursedUI
         }
       }
     }
-
     public void Select() => Group?.Select(this);
     public void Deselect() => Group?.Deselect(this);
     public void Toggle() => IsSelected = !IsSelected;
@@ -133,18 +156,14 @@ namespace CursedUI
       }
     }
 
-
+    [CUISerializableProp]
+    public CUISizes TextPadding { get; set; }
     protected override CUINullVector2 MinSizeOverride => new CUINullVector2(
-      SelectedTextState.TextBlock.ForcedSize.X + Padding.FullWidth,
-      SelectedTextState.TextBlock.ForcedSize.Y + Padding.FullHeigth
+      SelectedTextState.TextBlock.ForcedSize.X + TextPadding.FullWidth,
+      SelectedTextState.TextBlock.ForcedSize.Y + TextPadding.FullHeigth
     );
 
-    protected override void UpdateRects()
-    {
-      base.UpdateRects();
-      OnState.TextBlock.Rect = ChildrenRect;
-      OffState.TextBlock.Rect = ChildrenRect;
-    }
+
 
     [CUISerializableProp]
     public override bool Visible
@@ -157,6 +176,13 @@ namespace CursedUI
       }
     }
 
+    protected override void UpdateRects()
+    {
+      base.UpdateRects();
+      OnState.TextBlock.Rect = InnerRect - TextPadding;
+      OffState.TextBlock.Rect = InnerRect - TextPadding;
+    }
+
     public override IEnumerable<VisualUnit> VisualSplit()
     {
       if (!Displayed || CulledOut) yield break;
@@ -167,15 +193,13 @@ namespace CursedUI
       yield return SelectedTextState.TextBlock.VisualWrapper;
       yield return VisualBounds.RightBound;
 
-      yield return Borders.VisualWrapper;
+      yield return Border.VisualWrapper;
     }
 
-    public new Action<CUIRadioButton> Style
-    {
-      set => PersonalStyle = new CUIActionStyle<CUIRadioButton>("personal", value);
-    }
+
 
     #region Forwarded to TextState
+    [CUISerializableProp]
     public string Text
     {
       get => OnState.Text;
@@ -185,6 +209,7 @@ namespace CursedUI
         OffState.Text = value;
       }
     }
+    [CUISerializableProp]
     public Color TextColor
     {
       get => OnState.TextColor;
@@ -194,6 +219,7 @@ namespace CursedUI
         OffState.TextColor = value;
       }
     }
+    [CUISerializableProp]
     public float Scale
     {
       get => OnState.Scale;
@@ -203,6 +229,7 @@ namespace CursedUI
         OffState.Scale = value;
       }
     }
+    [CUISerializableProp]
     public ResizeStrategy ResizeStrategy
     {
       get => OnState.ResizeStrategy;
@@ -212,6 +239,7 @@ namespace CursedUI
         OffState.ResizeStrategy = value;
       }
     }
+    [CUISerializableProp]
     public Vector2 TextAnchor
     {
       get => OnState.TextAnchor;
@@ -221,6 +249,7 @@ namespace CursedUI
         OffState.TextAnchor = value;
       }
     }
+    [CUISerializableProp]
     public SpriteEffects SpriteEffects
     {
       get => OnState.SpriteEffects;
@@ -230,6 +259,7 @@ namespace CursedUI
         OffState.SpriteEffects = value;
       }
     }
+    [CUISerializableProp]
     public float LayerDepth
     {
       get => OnState.LayerDepth;
@@ -266,9 +296,11 @@ namespace CursedUI
 
       MouseDown += (e) =>
       {
+        if (!e.Mouse.M1.Down) return;
+
         if (PlaySound) SoundPlayer.PlayUISound(ClickSound);
         if (Emit != null) Commands.SendUp(Emit, Text);
-        Toggle();
+        IsSelectedReactive = !IsSelectedReactive;
       };
 
       ConsumeMouseEvents = true;

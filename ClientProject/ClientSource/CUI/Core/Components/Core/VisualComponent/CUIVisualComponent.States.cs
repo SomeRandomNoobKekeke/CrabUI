@@ -14,6 +14,8 @@ namespace CursedUI
   {
     private Dictionary<string, CUIDictStyle> MemorizedStates { get; } = new();
 
+    public string ThisState { set => SaveState(value); }
+
     public void SaveState(string name)
     {
       MemorizedStates[name] = CUIDictStyle.FromComponent($"state [{name}]", this);

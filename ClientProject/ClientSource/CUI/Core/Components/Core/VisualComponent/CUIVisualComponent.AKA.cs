@@ -98,32 +98,35 @@ namespace CursedUI
 
 
     //TODO optimize
-    // public string RelativeAKA(CUIComponent relativeTo)
-    // {
-    //   List<CUIComponent> parents = Parents.ToList();
-    //   if (!parents.Contains(relativeTo))
-    //   {
-    //     CUI.Warning($"Can't get RelativeAKA from [{this}] to [{relativeTo}]: they are not relatives");
-    //     return null;
-    //   }
+    public string RelativeAKA(CUIVisualComponent relativeTo)
+    {
+      if (relativeTo == this) return "";
 
-    //   if (string.IsNullOrEmpty(this.AKA))
-    //   {
-    //     CUI.Warning($"Can't get RelativeAKA from [{this}] to [{relativeTo}]: {this} doesn't have AKA");
-    //     return null;
-    //   }
-    //   List<string> AKAs = parents.TakeWhile(c => c != relativeTo).Select(c => c.AKA).ToList();
-    //   if (AKAs.Any(aka => string.IsNullOrEmpty(aka)))
-    //   {
-    //     CUI.Warning($"Can't get RelativeAKA from [{this}] to [{relativeTo}]: some components in the chain doesn't have aka");
-    //     return null;
-    //   }
+      List<CUIVisualComponent> parents = Parents.ToList();
+      if (!parents.Contains(relativeTo))
+      {
+        CUI.Logger.Warning($"Can't get RelativeAKA from [{this}] to [{relativeTo}]: they are not relatives");
+        return null;
+      }
 
-    //   AKAs.Reverse();
-    //   AKAs.Add(this.AKA);
+      if (string.IsNullOrEmpty(AKA))
+      {
+        CUI.Logger.Warning($"Can't get RelativeAKA from [{this}] to [{relativeTo}]: {this} doesn't have AKA");
+        return null;
+      }
 
-    //   return string.Join('.', AKAs);
-    // }
+      List<string> AKAs = parents.TakeWhile(c => c != relativeTo).Select(c => c.AKA).ToList();
+      if (AKAs.Any(aka => string.IsNullOrEmpty(aka)))
+      {
+        CUI.Logger.Warning($"Can't get RelativeAKA from [{this}] to [{relativeTo}]: some components in the chain doesn't have aka");
+        return null;
+      }
+
+      AKAs.Reverse();
+      AKAs.Add(AKA);
+
+      return string.Join('.', AKAs);
+    }
 
     /// <summary>
     /// Returns memorized component by name.  
@@ -131,7 +134,9 @@ namespace CursedUI
     /// </summary>
     public CUIVisualComponent Get(string name)
     {
-      if (name == null || name == "") return null;
+      if (name == null) return null;
+      if (name == "") return this; //TODO mb i should use special symbol for referencing self
+
       name = name.Trim();
 
       if (NamedComponents.ContainsKey(name)) return NamedComponents[name];

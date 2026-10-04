@@ -19,10 +19,10 @@ namespace CursedUI
     {
       static RadioGroup()
       {
-        PluginLifeCycle.Stop += Groups.Clear;
+        PluginLifeCycle.Stop += static () => Groups = null;
       }
 
-      public static Dictionary<string, RadioGroup> Groups { get; } = new();
+      public static Dictionary<string, RadioGroup> Groups { get; private set; } = new();
 
       public static RadioGroup GetOrCreate(string name)
       {
@@ -49,10 +49,24 @@ namespace CursedUI
         Current?.HandleSelect();
       }
 
+      public void SelectSilent(CUIRadioButton btn)
+      {
+        if (btn == Current) return;
+
+        Previous = Current;
+        Current = btn;
+      }
+
       public void Deselect(CUIRadioButton btn)
       {
         if (!IsSelected(btn)) return;
         Select(null);
+      }
+
+      public void DeselectSilent(CUIRadioButton btn)
+      {
+        if (!IsSelected(btn)) return;
+        SelectSilent(null);
       }
 
       public void ClearSelection()
@@ -63,7 +77,7 @@ namespace CursedUI
       public bool IsSelected(CUIRadioButton btn) => Current == btn;
       public bool WasSelected(CUIRadioButton btn) => Previous == btn;
 
-      public RadioGroup(string name)
+      private RadioGroup(string name)
       {
         Name = name;
         if (!Groups.ContainsKey(name)) Groups[name] = this;

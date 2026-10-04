@@ -40,7 +40,15 @@ namespace CursedUI
         prefix: new HarmonyMethod(GetType().GetMethod("GUI_Update_Prefix")),
         postfix: new HarmonyMethod(GetType().GetMethod("GUI_Update_Postfix"))
       );
+
+
+      Harmony.Patch(
+        original: typeof(SubEditorScreen).GetMethod("CreateContextMenu", AccessTools.all),
+        prefix: new HarmonyMethod(GetType().GetMethod("BlockContextMenuInSubEditor"))
+      );
     }
+
+    public static bool BlockContextMenuInSubEditor() => GUI.MouseOn is null;
 
     public static bool CallFrom_GUI_Update; //HACK should use transpiler to hook that call
     public static void GUI_Update_Prefix() => CallFrom_GUI_Update = true;

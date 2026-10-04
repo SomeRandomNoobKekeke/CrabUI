@@ -32,6 +32,7 @@ namespace CursedUI
 
     void IComponent.InitParts()
     {
+      As_CUICore.FocusHandle.Init();
     }
 
     void IComponent.InitModules()

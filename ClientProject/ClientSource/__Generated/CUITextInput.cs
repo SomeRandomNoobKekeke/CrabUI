@@ -19,7 +19,6 @@ namespace CursedUI
 
     void IComponent.InjectModules()
     {
-      As_CUIComponent.RightResizeHandle.Host = As_CUIVisualComponent.Adapters.IResizable;
       As_CUIVisualComponent.DragHandle.Host = As_CUIVisualComponent.Adapters.IDraggable;
       As_CUIVisualComponent.SwipeHandle.Host = As_CUIVisualComponent.Adapters.ISwipeable;
       As_CUIVisualComponent.LayoutMarker.Host = As_CUIVisualComponent.Adapters.LayoutMarker;
@@ -32,9 +31,8 @@ namespace CursedUI
       As_CUITextInput.Self = this;
       
       As_CUITextInput.SelectionHandle.Self = this;
+      As_CUIComponent.Border.Self = this;
       As_CUIVisualComponent.Commands.Self = this;
-      As_CUIVisualComponent.ProtectedCommands.Self = this;
-      As_CUIVisualComponent.Data.Self = this;
       As_CUIVisualComponent.As_Dictionary.Self = this;
       As_CUIVisualComponent.Events.Self = this;
       As_CUIVisualComponent.FocusHandle.Self = this;
@@ -93,10 +91,20 @@ namespace CursedUI
 
     void IComponent.NotifyAwareObjects()
     {
-      RightResizeHandle.HostComponent = this;
-      RightResizeHandle.HostPropName = "RightResizeHandle";
+      TextBlock.HostComponent = this;
+      TextBlock.HostPropName = "TextBlock";
+      CaretTexture.HostComponent = this;
+      CaretTexture.HostPropName = "CaretTexture";
+      SelectionOverlay.HostComponent = this;
+      SelectionOverlay.HostPropName = "SelectionOverlay";
       Layout.HostComponent = this;
       Layout.HostPropName = "Layout";
+      Background.HostComponent = this;
+      Background.HostPropName = "Background";
+      _Border.HostComponent = this;
+      _Border.HostPropName = "_Border";
+      VisualBounds.HostComponent = this;
+      VisualBounds.HostPropName = "VisualBounds";
       DragHandle.HostComponent = this;
       DragHandle.HostPropName = "DragHandle";
       SwipeHandle.HostComponent = this;

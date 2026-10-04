@@ -27,7 +27,7 @@ namespace CursedUI
 
       wrapper["palettes"] = new CUIButton("Palettes")
       {
-        OnMouseDown = (e) => DebugConsole.ExecuteCommand("cuipalettepreview"),
+        OnMouseDown = (e) => CUIPalette.Preview(),
       };
 
       wrapper["mg"] = new CUIButton("Magnifying Glass")
@@ -36,6 +36,14 @@ namespace CursedUI
         {
           MGFrame.Absolute = MGFrame.Absolute with { Position = new Vector2(0, 0) };
           MGFrame.Toggle();
+        },
+      };
+
+      wrapper["sc"] = new CUIButton("SC")
+      {
+        OnMouseDown = (e) =>
+        {
+          CUISerializationCompare.Instance.Open();
         },
       };
 

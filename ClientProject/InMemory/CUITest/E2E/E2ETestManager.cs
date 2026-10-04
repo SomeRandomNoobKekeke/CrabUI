@@ -29,7 +29,7 @@ namespace CursedUIUser
         return;
       }
 
-      ModStorage.Set("CUITest", ("e2e", name));
+      ModStorage.Set("CUITest.LastTest", ("e2e", name));
       Run(Repo.Tests[name]);
     }
 
@@ -76,8 +76,8 @@ namespace CursedUIUser
 
     private void CreateUI()
     {
-      OnOpen.Add(Refresh);
-      OnClose.Add(CleanUp);
+      OnOpen += Refresh;
+      OnClose += CleanUp;
 
       Background.Color = new Color(32, 32, 32);
 

@@ -39,7 +39,7 @@ namespace CursedUI
       public ClearableEvent<CUITextInputEvent> TextInput { get; } = new();
       public ClearableEvent<CUIKeyDownInputEvent> KeyDownInput { get; } = new();
 
-      public override string ToString() => $"{Self} Focus Handle";
+      public override string ToString() => Self.ToString();
     }
 
     protected FocusHandle_Part FocusHandle { get; } = new();

@@ -44,6 +44,18 @@ namespace CursedUI
 
     }
 
+    public CUIDebugNode<Host> Debug_MarkedForChildrenUpdate = new(DebugCategory.LayoutMarked)
+    {
+      MsgFactory = (host) => $"[{host}] >>> marked for children update"
+    };
+
+    public CUIDebugNode<Host> Debug_MarkedForParentUpdate = new(DebugCategory.LayoutMarked)
+    {
+      MsgFactory = (host) => $"[{host}] <<< marked for parent update"
+    };
+
+    public DebugRelay Debug_Calculations { get; } = new();
+
     public object HostComponent { get; set; }
     public string HostPropName { get; set; }
 
@@ -61,6 +73,7 @@ namespace CursedUI
       set
       {
         _RequireChildrenUpdate = value;
+        Debug_MarkedForChildrenUpdate.Send(Parent);
       }
     }
 
@@ -71,22 +84,31 @@ namespace CursedUI
       set
       {
         _RequireParentUpdate = value;
+        Debug_MarkedForParentUpdate.Send(Parent);
       }
     }
 
     public virtual void UpdateChildren()
     {
-      if (Parent.CullChildren)
+      try
       {
-        foreach (Child child in Parent.Children)
+        if (Parent.CullChildren)
         {
-          child.CulledOut = !child.OuterRect.Intersect(Parent.ChildrenRect);
+          foreach (Child child in Parent.Children)
+          {
+            child.CulledOut = !child.OuterRect.Intersect(Parent.ChildrenRect);
+          }
+
+          Parent.NotifyVisualsRestructured();
         }
 
-        Parent.NotifyVisualsRestructured();
+        RequireChildrenUpdate = false;
       }
-
-      RequireChildrenUpdate = false;
+      catch (Exception e)
+      {
+        CUI.Logger.LogVars(Parent);
+        CUI.Logger.Error(e);
+      }
     }
 
     public virtual void UpdateParent()

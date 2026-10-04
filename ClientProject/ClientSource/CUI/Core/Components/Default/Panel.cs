@@ -14,32 +14,57 @@ namespace CursedUI
 {
   public static partial class CUIDefault
   {
+    public class Panel : CUIComponent
+    {
+      public static ICUIStyle DefaultStyle => new CUIDefaultStyle<Panel>((c) =>
+      {
+        c.Background.Color = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.4f);
+      });
+    }
+
     public class HorizontalPanel : CUIHorizontalList
     {
-      public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<HorizontalPanel>((c) =>
+      public static ICUIStyle DefaultStyle => new CUIDefaultStyle<HorizontalPanel>((c) =>
       {
-        c.Background.Color = c.Palette["main"].MultOpaque(0.4f);
+        c.Background.Color = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.4f);
+        c.FitContent = new CUIBool2(false, true);
       });
-
-      protected override void InitStyle()
-      {
-        base.InitStyle();
-        Background.Sprite = CUISprite.DimmedVerticalLight;
-      }
     }
 
     public class VerticalPanel : CUIVerticalList
     {
-      public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<VerticalPanel>((c) =>
+      public static ICUIStyle DefaultStyle => new CUIDefaultStyle<VerticalPanel>((c) =>
       {
-        c.Background.Color = c.Palette["main"].MultOpaque(0.4f);
+        c.Background.Color = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.4f);
+        c.FitContent = new CUIBool2(true, false);
       });
+    }
 
-      protected override void InitStyle()
+
+    public class BackPanel : CUIComponent
+    {
+      public static ICUIStyle DefaultStyle => new CUIDefaultStyle<BackPanel>((c) =>
       {
-        base.InitStyle();
-        Background.Sprite = CUISprite.DimmedHorizontalLight;
-      }
+        c.Background.Color = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.2f);
+      });
+    }
+
+    public class HorizontalBackPanel : CUIHorizontalList
+    {
+      public static ICUIStyle DefaultStyle => new CUIDefaultStyle<HorizontalBackPanel>((c) =>
+      {
+        c.Background.Color = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.2f);
+        c.FitContent = new CUIBool2(false, true);
+      });
+    }
+
+    public class VerticalBackPanel : CUIVerticalList
+    {
+      public static ICUIStyle DefaultStyle => new CUIDefaultStyle<VerticalBackPanel>((c) =>
+      {
+        c.Background.Color = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.2f);
+        c.FitContent = new CUIBool2(true, false);
+      });
     }
   }
 }

@@ -16,7 +16,7 @@ namespace CursedUI
   public partial class CUITextInput : CUIComponent, IComponent
   {
     public class Part : IPart { public CUITextInput Self { get; set; } }
-    public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUITextInput>((c) =>
+    public static ICUIStyle DefaultStyle => new CUIDefaultStyle<CUITextInput>((c) =>
     {
       c.FocusedColor = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.8f);
       c.BluredColor = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.3f);
@@ -41,6 +41,8 @@ namespace CursedUI
 
       Background.Sprite = BluredSprite;
       Padding = new CUISizes(4, 4, 4, 4);
+
+      Absolute = new CUINullRect(h: 24);//HACK i need some global class with default sizes
     }
 
 

@@ -10,7 +10,7 @@ using System.Text.Json;
 using CUILibs;
 namespace CursedUI
 {
-  public partial record CUISprite
+  public partial class CUISprite
   {
     //TODO how to UpdateDataBuffer if user changes data in texture manually? 
     private Color[] DataBuffer;

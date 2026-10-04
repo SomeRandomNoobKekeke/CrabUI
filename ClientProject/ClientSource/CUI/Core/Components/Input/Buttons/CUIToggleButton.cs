@@ -15,7 +15,7 @@ namespace CursedUI
   [GeneratedComponent]
   public partial class CUIToggleButton : CUIButtonBase, IComponent, ITextComponent
   {
-    public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIToggleButton>((c) =>
+    public static ICUIStyle DefaultStyle => new CUIDefaultStyle<CUIToggleButton>((c) =>
     {
       c.MasterColor = c.Palette["main"];
     });
@@ -23,11 +23,19 @@ namespace CursedUI
     protected override void InitStyle()
     {
       base.InitStyle();
-      Padding = new(2, 4, 2, 4);
-      Background.Sprite = CUISprite.Vignette;
+      TextPadding = new(2, 4, 2, 4);
+      Background.Sprite = CUISprite.DimmedVertical;
     }
 
+    public new Action<CUIToggleButton> Style
+    {
+      set => PersonalStyle = new CUIActionStyle<CUIToggleButton>("personal", value);
+    }
+
+    [CUISerializableProp]
     public TextToggleState_Part OnState { get; } = new();
+
+    [CUISerializableProp]
     public TextToggleState_Part OffState { get; } = new();
 
     private TextToggleState_Part SelectedTextState;//CRINGE parts are not designed to be swapped around, this is cursed
@@ -53,8 +61,9 @@ namespace CursedUI
       set => OffState.BackgroundColor = value;
     }
 
-
-    private bool _State; public bool State
+    private bool _State;
+    [CUISerializableProp]
+    public bool State
     {
       get => _State;
       set
@@ -95,22 +104,22 @@ namespace CursedUI
     public Action<bool> OnToggle { set { Toggle += value; } }
     public event Action<bool> Toggle;
 
-    public new Action<CUIToggleButton> Style
+    public void DoToggle()
     {
-      set => PersonalStyle = new CUIActionStyle<CUIToggleButton>("personal", value);
+      State = !State;
+      if (PlaySound) SoundPlayer.PlayUISound(ClickSound);
+      Toggle?.Invoke(State);
+      if (Emit != null) Commands.SendUp(Emit, Text);
     }
 
+
+
+    [CUISerializableProp]
+    public CUISizes TextPadding { get; set; }
     protected override CUINullVector2 MinSizeOverride => new CUINullVector2(
-      SelectedTextState.TextBlock.ForcedSize.X + Padding.FullWidth,
-      SelectedTextState.TextBlock.ForcedSize.Y + Padding.FullHeigth
+      SelectedTextState.TextBlock.ForcedSize.X + TextPadding.FullWidth,
+      SelectedTextState.TextBlock.ForcedSize.Y + TextPadding.FullHeigth
     );
-
-    protected override void UpdateRects()
-    {
-      base.UpdateRects();
-      OnState.TextBlock.Rect = ChildrenRect;
-      OffState.TextBlock.Rect = ChildrenRect;
-    }
 
     [CUISerializableProp]
     public override bool Visible
@@ -124,6 +133,13 @@ namespace CursedUI
       }
     }
 
+    protected override void UpdateRects()
+    {
+      base.UpdateRects();
+      OnState.TextBlock.Rect = InnerRect - TextPadding;
+      OffState.TextBlock.Rect = InnerRect - TextPadding;
+    }
+
     public override IEnumerable<VisualUnit> VisualSplit()
     {
       if (!Displayed || CulledOut) yield break;
@@ -134,11 +150,12 @@ namespace CursedUI
       yield return SelectedTextState.TextBlock.VisualWrapper;
       yield return VisualBounds.RightBound;
 
-      yield return Borders.VisualWrapper;
+      yield return Border.VisualWrapper;
     }
 
 
     #region Forwarded to TextState
+    // [CUISerializableProp]
     public string Text
     {
       get => OnState.Text;
@@ -148,6 +165,7 @@ namespace CursedUI
         OffState.Text = value;
       }
     }
+    // [CUISerializableProp]
     public Color TextColor
     {
       get => OnState.TextColor;
@@ -157,6 +175,7 @@ namespace CursedUI
         OffState.TextColor = value;
       }
     }
+    // [CUISerializableProp]
     public float Scale
     {
       get => OnState.Scale;
@@ -166,6 +185,7 @@ namespace CursedUI
         OffState.Scale = value;
       }
     }
+    // [CUISerializableProp]
     public ResizeStrategy ResizeStrategy
     {
       get => OnState.ResizeStrategy;
@@ -175,6 +195,7 @@ namespace CursedUI
         OffState.ResizeStrategy = value;
       }
     }
+    // [CUISerializableProp]
     public Vector2 TextAnchor
     {
       get => OnState.TextAnchor;
@@ -184,6 +205,7 @@ namespace CursedUI
         OffState.TextAnchor = value;
       }
     }
+    // [CUISerializableProp]
     public SpriteEffects SpriteEffects
     {
       get => OnState.SpriteEffects;
@@ -193,6 +215,7 @@ namespace CursedUI
         OffState.SpriteEffects = value;
       }
     }
+    // [CUISerializableProp]
     public float LayerDepth
     {
       get => OnState.LayerDepth;
@@ -223,10 +246,8 @@ namespace CursedUI
     {
       MouseDown += (e) =>
       {
-        State = !State;
-        if (PlaySound) SoundPlayer.PlayUISound(ClickSound);
-        Toggle?.Invoke(State);
-        if (Emit != null) Commands.SendUp(Emit, Text);
+        if (!e.Mouse.M1.Down) return;
+        DoToggle();
       };
 
       MouseOff += (e) => DetermineColor();

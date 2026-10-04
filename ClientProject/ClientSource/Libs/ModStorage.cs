@@ -20,61 +20,30 @@ namespace CUILibs
   /// </summary>
   public static class ModStorage
   {
-    public static bool Debug { get; set; } = false;
-
-    public static TValue Get<TValue>(string key) => (TValue)Get(key);
-
-    public static object Get(string key)
+    private static IDictionary<string, object> Repo
     {
-      Dictionary<string, object> repo = GetOrCreateRepo();
-      return repo.GetValueOrDefault(key);
-    }
-
-    public static void Set(string key, object value)
-    {
-      if (Debug)
+      get
       {
-        Logger.Default.Log($"\n\nModStorage| [{Logger.WrapInColor(key, "white")}] = {Logger.WrapInColor(value, "white")}");
-        Logger.Default.PrintStackTrace();
+        if (GUI.Canvas.GUIComponent?.UserData is not IDictionary<string, object>)
+        {
+          GUI.Canvas.GUIComponent = new GUIButton(new RectTransform(new Point(0, 0)))
+          {
+            UserData = new Dictionary<string, object>()
+          };
+        }
+
+        return GUI.Canvas.GUIComponent?.UserData as IDictionary<string, object>;
       }
-
-      Dictionary<string, object> repo = GetOrCreateRepo();
-      repo[key] = value;
-    }
-
-    public static bool Has(string key)
-    {
-      Dictionary<string, object> repo = GetOrCreateRepo();
-      return repo.ContainsKey(key);
-    }
-
-    public static void Remove(string key)
-    {
-      if (Debug)
-      {
-        Logger.Default.Log($"\n\nModStorage| [{Logger.WrapInColor(key, "white")}] removed");
-        Logger.Default.PrintStackTrace();
-      }
-
-      Dictionary<string, object> repo = GetOrCreateRepo();
-      repo.Remove(key);
     }
 
 
-    private static Dictionary<string, object> GetOrCreateRepo()
-    {
-      if (GUI.Canvas.GUIComponent is not GUIButton)
-      {
-        GUI.Canvas.GUIComponent = new GUIButton(new RectTransform(new Point(0, 0)));
-      }
-
-      if (GUI.Canvas.GUIComponent.UserData is not Dictionary<string, object>)
-      {
-        GUI.Canvas.GUIComponent.UserData = new Dictionary<string, object>();
-      }
-
-      return (Dictionary<string, object>)GUI.Canvas.GUIComponent.UserData;
-    }
+    public static void Print() => DeepDictAccess.Print(Repo);
+    public static bool Has(string path) => DeepDictAccess.Has(path, Repo);
+    public static void Set(string path, object value) => DeepDictAccess.Set(path, value, Repo);
+    public static void Remove(string path) => DeepDictAccess.Remove(path, Repo);
+    public static T Get<T>(string path) => DeepDictAccess.Get<T>(path, Repo);
+    public static object Get(string path) => DeepDictAccess.Get(path, Repo);
+    public static bool TryGetValue(string path, out object result) => DeepDictAccess.TryGetValue(path, Repo, out result);
   }
 }
 #endif

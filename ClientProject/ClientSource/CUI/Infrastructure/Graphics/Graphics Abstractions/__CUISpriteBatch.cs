@@ -16,6 +16,10 @@ namespace CursedUI
     );
 
     public SpriteBatch XNASpriteBatch { get; set; }
+
+    public Matrix? TransformMatrix => XNASpriteBatch._matrix;
+
+
     public void StopStart(Rectangle scissorRect,
       SpriteSortMode sortMode = SpriteSortMode.Deferred,
       BlendState blendState = null,

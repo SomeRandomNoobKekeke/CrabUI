@@ -12,9 +12,10 @@ using Barotrauma.Extensions;
 
 namespace CursedUI
 {
+  //LINK:/ClientProject\InMemory\CUITest\Snapshots\Tests\Components\CUIToggleIconButton.cs
   public partial class CUIToggleIconButton : CUIButtonBase, IComponent
   {
-    public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIToggleIconButton>((c) =>
+    public static ICUIStyle DefaultStyle => new CUIDefaultStyle<CUIToggleIconButton>((c) =>
     {
       c.MasterColor = c.Palette["main"];
     });
@@ -26,27 +27,51 @@ namespace CursedUI
       Background.Sprite = CUISprite.Vignette;
     }
 
+    public new Action<CUIToggleIconButton> Style
+    {
+      set => PersonalStyle = new CUIActionStyle<CUIToggleIconButton>("personal", value);
+    }
+
+    //TODO wrap them in CUIButtonBase.ToggleIconButtonState so i could set different master colors for on and off state
+    [CUISerializableProp]
     public IconBlock OnIconBlock { get; } = new();
+
+    [CUISerializableProp]
     public IconBlock OffIconBlock { get; } = new();
 
     private IconBlock SelectedIconBlock;
 
+
     public CUISprite Icon
     {
       get => OnIconBlock.Icon;
-      set => OnIconBlock.Icon = value;
+      set
+      {
+        OnIconBlock.Icon = value;
+        OffIconBlock.Icon = value;
+      }
     }
+
 
     public float Scale
     {
       get => OnIconBlock.Scale;
-      set => OnIconBlock.Scale = value;
+      set
+      {
+        OnIconBlock.Scale = value;
+        OffIconBlock.Scale = value;
+      }
     }
+
 
     public Vector2 IconAnchor
     {
       get => OnIconBlock.Anchor;
-      set => OnIconBlock.Anchor = value;
+      set
+      {
+        OnIconBlock.Anchor = value;
+        OffIconBlock.Anchor = value;
+      }
     }
 
     [CUISerializableProp]
@@ -70,7 +95,9 @@ namespace CursedUI
       }
     }
 
-    private bool _State; public bool State
+    private bool _State;
+    [CUISerializableProp]
+    public bool State
     {
       get => _State;
       set
@@ -134,18 +161,17 @@ namespace CursedUI
       yield return SelectedIconBlock.VisualWrapper;
       yield return VisualBounds.RightBound;
 
-      yield return Borders.VisualWrapper;
+      yield return Border.VisualWrapper;
     }
 
-    public new Action<CUIToggleIconButton> Style
-    {
-      set => PersonalStyle = new CUIActionStyle<CUIToggleIconButton>("personal", value);
-    }
+
 
     public CUIToggleIconButton() : base()
     {
       MouseDown += (e) =>
       {
+        if (!e.Mouse.M1.Down) return;
+
         State = !State;
         if (PlaySound) SoundPlayer.PlayUISound(ClickSound);
         Toggle?.Invoke(State);

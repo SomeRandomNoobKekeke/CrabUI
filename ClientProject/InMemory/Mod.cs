@@ -22,8 +22,9 @@ namespace CursedUIUser
 
     public CUITest CUITest { get; set; }
 
+    public void Initialize() => Init();
 
-    public void Initialize()
+    public void Init()
     {
       Instance = this;
       if (ModStorage.Has("ReloadRequest")) { return; }
@@ -56,12 +57,12 @@ namespace CursedUIUser
         // Utils.PrintAllHarmonyPatches();
 
 
+
+
         Experiment();
       }
       catch (Exception e) { Logger.Error(e); }
     }
-
-
 
     public void OnLoadCompleted() { }
     public void PreInitPatching() { }

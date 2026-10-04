@@ -45,19 +45,90 @@ namespace CursedUI
 
 
 
-        public void ResizeToAbsoluteRect(CUIRect rect)
+        public void ResizeToAbsoluteRect(CUIRect rect, CUIBool2 preventMovement)
         {
-          //TODO It's better but still kinda funny, you can smash frame out of bounds
           if (Self.Parent.ChildrenBounds != null)
           {
             rect = Self.Parent.ChildrenBounds(Self.Parent.ChildrenRect).FitResizingRect(Rect, rect);
           }
 
-          Self.Absolute = new CUINullRect(
-            CUIAnchor.AbsoluteRectToAchored(
-              rect, Self.Parent.ChildrenRect, Self.Anchor
-            )
+          CUIRect anchoredRect = CUIAnchor.AbsoluteRectToAchored(
+            rect, Self.Parent.ChildrenRect, Self.Anchor
           );
+
+          if (preventMovement.X)
+          {
+            if (preventMovement.Y)
+            {
+              return;
+            }
+            else
+            {
+              if (Self.ResizeRelative)
+              {
+                Self.Relative = Self.Relative with
+                {
+                  Top = anchoredRect.Top / Self.Parent.ChildrenRect.Height,
+                  Height = anchoredRect.Height / Self.Parent.ChildrenRect.Height,
+                };
+              }
+              else
+              {
+                Self.Absolute = Self.Absolute with
+                {
+                  Top = anchoredRect.Top,
+                  Height = anchoredRect.Height,
+                };
+              }
+            }
+          }
+          else
+          {
+            if (preventMovement.Y)
+            {
+              if (Self.ResizeRelative)
+              {
+                Self.Relative = Self.Relative with
+                {
+                  Left = anchoredRect.Left / Self.Parent.ChildrenRect.Width,
+                  Width = anchoredRect.Width / Self.Parent.ChildrenRect.Width,
+                };
+              }
+              else
+              {
+                Self.Absolute = Self.Absolute with
+                {
+                  Left = anchoredRect.Left,
+                  Width = anchoredRect.Width,
+                };
+              }
+            }
+            else
+            {
+              if (Self.ResizeRelative)
+              {
+                Self.Relative = Self.Relative with
+                {
+                  Left = anchoredRect.Left / Self.Parent.ChildrenRect.Width,
+                  Top = anchoredRect.Top / Self.Parent.ChildrenRect.Height,
+                  Width = anchoredRect.Width / Self.Parent.ChildrenRect.Width,
+                  Height = anchoredRect.Height / Self.Parent.ChildrenRect.Height,
+                };
+              }
+              else
+              {
+                Self.Absolute = Self.Absolute with
+                {
+                  Left = anchoredRect.Left,
+                  Top = anchoredRect.Top,
+                  Width = anchoredRect.Width,
+                  Height = anchoredRect.Height,
+                };
+              }
+            }
+          }
+
+          Self.Events.Resized.Raise(anchoredRect);
         }
 
         public event Action<CUIMouseDownEvent> MouseDown;

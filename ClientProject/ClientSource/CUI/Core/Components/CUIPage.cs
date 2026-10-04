@@ -13,11 +13,25 @@ namespace CursedUI
 {
   public partial class CUIPage : CUIComponent, IComponent
   {
-    //TODO i'm using ClearableEvent to be able to raise them from CUIPages, todo find another way to rise them
-    public ClearableEvent OnOpen { get; } = new();
-    public Action AddOnOpen { set { OnOpen.Add(value); } }
+    protected virtual void HandleOpen() { }
+    protected virtual void HandleClose() { }
 
-    public ClearableEvent OnClose { get; } = new();
-    public Action AddOnClose { set { OnClose.Add(value); } }
+    public event Action OnOpen;
+    public event Action OnClose;
+
+    public Action AddOnOpen { set { OnOpen += value; } }
+    public Action AddOnClose { set { OnClose += value; } }
+
+    public void RaiseOnOpen()
+    {
+      HandleOpen();
+      OnOpen?.Invoke();
+    }
+    public void RaiseOnClose()
+    {
+      HandleClose();
+      OnClose?.Invoke();
+    }
+
   }
 }

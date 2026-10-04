@@ -12,24 +12,22 @@ namespace CursedUI
 {
   public partial class CUIVisualComponent
   {
-    /// <summary>
-    /// You can attach some simple metadata to components
-    /// </summary>
-    public Data_Part Data { get; } = new();
-    public class Data_Part : Part
+    private Dictionary<string, object> _Data; public Dictionary<string, object> Data
     {
-      private Dictionary<string, object> _Values; private Dictionary<string, object> Values
-      {
-        get => _Values ??= new();
-      }
+      get => _Data ??= [];
+      set => _Data = value;
+    }
 
-      public object this[string key]
+    public T GetData<T>(string key)
+    {
+      if (Data.TryGetValue(key, out object data))
       {
-        get => Values[key];
-        set => Values[key] = value;
+        return (T)data;
       }
-
-      public T Get<T>(string key) => (T)this[key];
+      else
+      {
+        return default;
+      }
     }
 
   }

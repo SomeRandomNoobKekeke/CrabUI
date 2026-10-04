@@ -45,6 +45,8 @@ namespace CursedUI
     public float TopGap { get; set; }
     [CUISerializableProp]
     public float BottomGap { get; set; }
+    [CUISerializableProp]
+    public float ScrollSpeed { get; set; } = 1.0f;
 
     [CUISerializableProp]
     public float Scroll
@@ -81,7 +83,7 @@ namespace CursedUI
 
     private void ScrollHandle(CUIMouseScrollEvent e)
     {
-      Scroll += e.Scroll;
+      Scroll += e.Scroll * ScrollSpeed;
     }
 
     protected CUIVerticalListLayout ListLayout;
@@ -92,6 +94,8 @@ namespace CursedUI
       ListLayout = new CUIVerticalListLayout();
       Layout = ListLayout;
       Layout.ConnectTo(new CUIVerticalListLayout_Host_Adapter_Part() { Self = this });
+
+      MapLayoutDebugChannels();
     }
 
 

@@ -16,5 +16,16 @@ namespace CursedUI
     {
       set => PersonalStyle = new CUIActionStyle<CUIComponent>("personal", value);
     }
+
+    public override CUIPalette Palette
+    {
+      get => base.Palette;
+      set
+      {
+        base.Palette = value;
+        if (LeftResizeHandle is not null) LeftResizeHandle.Palette = value;
+        if (RightResizeHandle is not null) RightResizeHandle.Palette = value;
+      }
+    }
   }
 }

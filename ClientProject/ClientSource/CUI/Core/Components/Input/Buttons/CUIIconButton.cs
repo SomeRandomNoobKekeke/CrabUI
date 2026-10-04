@@ -14,7 +14,7 @@ namespace CursedUI
 {
   public partial class CUIIconButton : CUIButtonBase, IComponent
   {
-    public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIIconButton>((c) =>
+    public static ICUIStyle DefaultStyle => new CUIDefaultStyle<CUIIconButton>((c) =>
     {
       c.MasterColor = c.Palette["main"];
     });
@@ -26,20 +26,32 @@ namespace CursedUI
       Background.Sprite = CUISprite.Vignette;
     }
 
+    public new Action<CUIIconButton> Style
+    {
+      set => PersonalStyle = new CUIActionStyle<CUIIconButton>("personal", value);
+    }
+
     private IconBlock IconBlock = new();
 
+    [CUISerializableProp]
     public CUISprite Icon
     {
       get => IconBlock.Icon;
-      set => IconBlock.Icon = value;
+      set
+      {
+        IconBlock.Icon = value;
+        LayoutMarker.Mark(LayoutMarker.Pattern.AbsoluteProp);
+      }
     }
 
+    [CUISerializableProp]
     public float Scale
     {
       get => IconBlock.Scale;
       set => IconBlock.Scale = value;
     }
 
+    [CUISerializableProp]
     public Vector2 IconAnchor
     {
       get => IconBlock.Anchor;
@@ -95,12 +107,6 @@ namespace CursedUI
       }
     }
 
-
-    public new Action<CUIIconButton> Style
-    {
-      set => PersonalStyle = new CUIActionStyle<CUIIconButton>("personal", value);
-    }
-
     public override IEnumerable<VisualUnit> VisualSplit()
     {
       if (!Displayed || CulledOut) yield break;
@@ -111,7 +117,7 @@ namespace CursedUI
       yield return IconBlock.VisualWrapper;
       yield return VisualBounds.RightBound;
 
-      yield return Borders.VisualWrapper;
+      yield return Border.VisualWrapper;
     }
 
     public CUIIconButton() : base()
@@ -122,6 +128,7 @@ namespace CursedUI
 
       MouseDown += (e) =>
       {
+        if (!e.Mouse.M1.Down) return;
         if (PlaySound) SoundPlayer.PlayUISound(ClickSound);
         if (Emit != null) Commands.SendUp(Emit);
       };

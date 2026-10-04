@@ -60,7 +60,7 @@ namespace CursedUI
       {
         MainComponent = mainComponent;
 
-        foreach (CUIVisualComponent child in Self.Children)
+        foreach (CUIVisualComponent child in Self.StructuralSplit())
         {
           child.MainComponentTracker.SetRec(mainComponent);
         }

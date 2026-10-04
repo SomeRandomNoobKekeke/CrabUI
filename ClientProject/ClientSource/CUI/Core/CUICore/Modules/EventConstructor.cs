@@ -54,7 +54,7 @@ namespace CursedUI
 
       if (input.Mouse.Scrolled)
       {
-        Events.Add(new CUIMouseScrollEvent(input.Mouse));
+        Events.Add(new CUIMouseScrollEvent(input.Mouse, input.Mouse.Scroll));
       }
 
 

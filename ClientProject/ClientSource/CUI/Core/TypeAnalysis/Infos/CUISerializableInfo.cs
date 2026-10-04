@@ -11,6 +11,6 @@ namespace CursedUI
 {
   public class CUISerializableInfo
   {
-    public Dictionary<string, PropertyPath> SerializableProps { get; set; }
+    public Dictionary<string, PropertyPath> SerializableProps { get; set; } = new();
   }
 }

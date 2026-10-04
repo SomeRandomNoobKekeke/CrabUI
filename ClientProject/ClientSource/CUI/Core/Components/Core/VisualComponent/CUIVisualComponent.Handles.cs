@@ -16,6 +16,9 @@ namespace CursedUI
     public bool DragRelative { get; set; }
 
     [CUISerializableProp]
+    public bool ResizeRelative { get; set; }
+
+    [CUISerializableProp]
     public bool Draggable
     {
       get => DragHandle.Active;

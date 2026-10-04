@@ -12,8 +12,35 @@ using Barotrauma;
 
 namespace CursedUI
 {
+
+
   public partial class CUICore
   {
+    public static event Action<double> OnUpdate
+    {
+      add => Instance.LifeCycle.OnUpdate.Add(value);
+      remove => Instance.LifeCycle.OnUpdate.Remove(value);
+    }
+
+    public static event Action<double> OnBeforeUpdate
+    {
+      add => Instance.LifeCycle.OnBeforeUpdate.Add(value);
+      remove => Instance.LifeCycle.OnBeforeUpdate.Remove(value);
+    }
+
+    public static event Action<CUISpriteBatch> OnDrawAfterGUI
+    {
+      add => Instance.LifeCycle.OnDrawAfterGUI.Add(value);
+      remove => Instance.LifeCycle.OnDrawAfterGUI.Remove(value);
+    }
+
+    public static event Action<CUISpriteBatch> OnDrawBeforeGUI
+    {
+      add => Instance.LifeCycle.OnDrawBeforeGUI.Add(value);
+      remove => Instance.LifeCycle.OnDrawBeforeGUI.Remove(value);
+    }
+
+
     public double UpdateFPS
     {
       get => 1.0 / UpdateInterval;
@@ -23,6 +50,8 @@ namespace CursedUI
     private double UpdateInterval = 1.0 / 300.0;
 
 
+
+
     public class LifeCycle_Part : Part
     {
       public ClearableEvent<double> OnBeforeUpdate = new();
@@ -30,16 +59,16 @@ namespace CursedUI
       public ClearableEvent<CUISpriteBatch> OnDrawAfterGUI = new();
       public ClearableEvent<CUISpriteBatch> OnDrawBeforeGUI = new();
 
-      public int MaxErrorCount = 5;
+
       public int ErrorCount = 0;
 
       private void HandleError()
       {
-        if (ErrorCount++ < MaxErrorCount) return;
+        if (ErrorCount++ < CUI.MaxErrorCount) return;
 
         Self.Activated = false;
 
-        CUI.Logger.Warning($"More than [{MaxErrorCount}] errors happened in CUICore.LifeCycle");
+        CUI.Logger.Warning($"More than [{CUI.MaxErrorCount}] errors happened in CUICore.LifeCycle");
         CUI.Logger.Warning($"Stopping CUI");
         CUI.Stop();
       }
@@ -49,25 +78,30 @@ namespace CursedUI
       {
         if (!Self.Activated) return;
 
+        double deltaTime = totalTime - LastUpdateTime;
+        LastUpdateTime = totalTime;
+
         try
         {
           Stopwatch sw = Stopwatch.StartNew();
 
           OnBeforeUpdate.Raise(totalTime);
 
-          Self.FocusHandle.Reset();
+
           Self._Input.Update(totalTime, mouse, keyboard, textInput);
           Self._EventConstructor.Construct(Self._Input);
 
-          Self.TopMain.Update(totalTime, Self._Input);
+          Self.TopMain.Update(Self._Input);
           Self.VanillaGUILayer.Update(Self._Input);
-          Self.Main.Update(totalTime, Self._Input);
+          Self.Main.Update(Self._Input);
           Self.VanillaGUILayer.CommunicateCUIMouseOnToRunner();
 
-          Self.FocusHandle.ResolveFocus();
-          Self.FocusHandle.DispatchKeyboadEvents();
 
-          Self._AnimationPlayer.Update();
+          Self.FocusHandle.DispatchKeyboadEvents();
+          Self.FocusHandle.ResolveFocus();
+          Self.FocusHandle.Reset();
+
+          Self._AnimationPlayer.Update(deltaTime);
 
           OnUpdate.Raise(totalTime);
 

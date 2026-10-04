@@ -22,6 +22,9 @@ namespace CursedUI
       {
         PropogateTreeChanged();
         Self.Remember(child);
+
+        if (child is ResizeHandle) (child as ResizeHandle).Host = Self.Adapters.IResizable;
+
         Self.LayoutMarker.Mark(MarkPattern);
       }
 
@@ -29,20 +32,21 @@ namespace CursedUI
       {
         PropogateTreeChanged();
         Self.Forget(child);
+
+        if (child is ResizeHandle) (child as ResizeHandle).Host = null;
+
         Self.LayoutMarker.Mark(MarkPattern);
       }
 
       public void OnAttachToParent(CUIVisualComponent parent)
       {
         Self.MainComponentTracker.OnAttachToParentHandler(parent);
-        Self.ProtectedCommands.OnAttachToParentHandler(parent);
         Self.InheritProps(parent);
       }
 
       public void OnDetachFromParent(CUIVisualComponent parent)
       {
         Self.MainComponentTracker.OnDetachFromParentHandler(parent);
-        Self.ProtectedCommands.OnDetachFromParentHandler(parent);
       }
 
       public void OnChildrenRearranged()

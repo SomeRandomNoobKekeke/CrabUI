@@ -12,6 +12,9 @@ namespace CursedUI
 {
   public interface CUITextureManager
   {
+    public CUITexture2D BackupTexture { get; }
+    public CUITexture2D White { get; }
+
     public bool DummyMode { get; set; }
 
     public CUIRenderTarget2D CreateNewRenderTarget(int width, int height, string key = null);
@@ -19,6 +22,7 @@ namespace CursedUI
     public CUITexture2D CreateNew(int width, int height, bool mipmap, SurfaceFormat format, string key = null);
 
     CUITexture2D Add(string key, CUITexture2D texture);
+    CUITexture2D Ensure(string key, Func<CUITexture2D> factory);
     void Clear();
     void Dispose();
     void Forget(string key);

@@ -19,10 +19,25 @@ namespace CursedUI
     protected virtual void AfterSerialization() { }
 
     [CUISerializableProp]
-    public CUISerializationMode SerializationMode { get; set; }
+    public CUISerializationMode SerializationMode { get; set; } = CUISerializationMode.Merge;
 
-    [CUISerializableProp] // BaroDev(wide)
+    public CUISerializationMode DeepSerializationMode
+    {
+      get => DeepSerializationMode;
+      set
+      {
+        SerializationMode = value;
+        foreach (var child in Children)
+        {
+          child.DeepSerializationMode = value;
+        }
+      }
+    }
+
     public bool Serializable { get; set; } = true;
+
+    [CUISerializableProp]
+    public bool SerializeChildren { get; set; } = true;
 
     static object CUISerializable.Deserialize(XElement element) => Deserialize(element);
     public static T Deserialize<T>(XElement element) where T : CUIVisualComponent => (T)Deserialize(element);
@@ -31,7 +46,10 @@ namespace CursedUI
       CUIVisualComponent root = CreateEmptyComponent(element);
       CUIBasicSerializer.DeserializeProps(element, root);
 
-      root.DeserializeChildren(element, root.SerializationMode);
+      if (root.SerializeChildren)
+      {
+        root.DeserializeChildren(element);
+      }
 
       return root;
     }
@@ -39,25 +57,13 @@ namespace CursedUI
     private static CUIVisualComponent CreateEmptyComponent(XElement element)
       => (CUIVisualComponent)Activator.CreateInstance(CUICore.Reflection.GetType(element.Name.ToString()));
 
-    private void DeserializeChildren(XElement element, CUISerializationMode mode)
+    private void DeserializeChildren(XElement element)
     {
-      CUIVisualComponent AddNewChild(XElement element)
+      CUIVisualComponent CreateNewChild(XElement element)
       {
         CUIVisualComponent child = CreateEmptyComponent(element);
         CUIBasicSerializer.DeserializeProps(element, child);
-        Children.Add(child);
         return child;
-      }
-      CUIVisualComponent ReplaceWithANewChild(XElement element)
-      {
-        CUIVisualComponent child = CreateEmptyComponent(element);
-        CUIBasicSerializer.DeserializeProps(element, child);
-        this[child.AKA] = child;
-        return child;
-      }
-      void MergeIntoExistingChild(CUIVisualComponent child, XElement element)
-      {
-        CUIBasicSerializer.DeserializeProps(element, child);
       }
 
       BeforeSerialization();
@@ -65,23 +71,27 @@ namespace CursedUI
       {
         string AKA = childElement.GetAttribute("AKA")?.Value;
 
+        CUISerializationMode mode = CUICore.Parser.Parse<CUISerializationMode>(
+          childElement.GetAttribute("SerializationMode")?.Value
+        );
+
         CUIVisualComponent child = null;
         if (AKA == null || !NamedComponents.ContainsKey(AKA))
         {
-          child = AddNewChild(childElement);
+          child = CreateNewChild(childElement);
+          Children.Add(child);
         }
         else // There's a name conflict
         {
           if (mode == CUISerializationMode.Replace)
           {
-            child = this[AKA];
-            if (child.Serializable) child = ReplaceWithANewChild(childElement);
+            this[AKA] = child = CreateNewChild(childElement);
           }
 
           if (mode == CUISerializationMode.Merge)
           {
             child = this[AKA];
-            if (child.Serializable) MergeIntoExistingChild(child, childElement);
+            CUIBasicSerializer.DeserializeProps(childElement, child);
           }
 
           if (mode == CUISerializationMode.Ignore)
@@ -90,22 +100,25 @@ namespace CursedUI
           }
         }
 
-        child.DeserializeChildren(childElement, mode);
+        if (child.SerializeChildren)
+        {
+          child.DeserializeChildren(childElement);
+        }
       }
       AfterSerialization();
     }
-
-
-
 
     public virtual XElement Serialize()
     {
       XElement element = CUIBasicSerializer.Serialize(this, Info.DefaultValue.As_Dictionary);
 
-      foreach (CUIVisualComponent child in Children)
+      if (SerializeChildren)
       {
-        if (!child.Serializable) continue;
-        element.Add(child.Serialize());
+        foreach (CUIVisualComponent child in Children)
+        {
+          if (!child.Serializable) continue;
+          element.Add(child.Serialize());
+        }
       }
 
       return element;

@@ -19,7 +19,16 @@ namespace CursedUI
     public virtual T Value
     {
       get => _value;
-      set => _value = value;
+      set
+      {
+        _value = value;
+
+        // debug nodes are a bit too heavy for this
+        // if ((HostComponent as CUIVisualComponent)?.Debug == true)
+        // {
+        //   CUI.Logger.Log($"{HostComponent}.{HostPropName} = [{value}]");
+        // }
+      }
     }
 
     public T DefaultValue { set { _value = value; } }

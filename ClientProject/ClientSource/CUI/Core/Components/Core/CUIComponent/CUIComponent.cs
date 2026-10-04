@@ -10,15 +10,14 @@ namespace CursedUI
   [GeneratedComponent]
   public partial class CUIComponent : CUIVisualComponent, IComponent
   {
-    public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIComponent>((c) =>
+    public static ICUIStyle DefaultStyle => new CUIDefaultStyle<CUIComponent>((c) =>
     {
-      c.RightResizeHandle.Background.Color = c.Palette["main"] * 0.5f;
-      c.Borders.Color = c.Palette["border"];
+      c.Border.Color = c.Palette["border"];
     });
 
     protected override void InitStyle()
     {
-      Background.Color = Color.Transparent;
+      Background.Sprite = CUISprite.Transparent;
     }
 
     public CUIComponent() : base()

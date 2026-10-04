@@ -14,13 +14,45 @@ namespace CursedUI
 {
   public partial class CUIParser
   {
-    public static Dictionary<Type, Func<string, object>> ExtraParseMethods { get; } = new()
+    public static Dictionary<Type, Func<string, object?>> ExtraParseMethods { get; } = new()
     {
       [typeof(Vector2)] = (raw) => ParseVector2(raw),
+      [typeof(Vector2?)] = (raw) => ParseNullVector2(raw),
+      [typeof(Rectangle)] = (raw) => ParseRectangle(raw),
+      [typeof(Rectangle?)] = (raw) => ParseNullRectangle(raw),
       [typeof(Color)] = (raw) => ParseColor(raw),
       [typeof(CUITexture2D)] = CUICore.TextureManager.Get,//BRUH i either have to reference __CUITexture2D from CUICore or CUICore.TextureManager from __CUITexture2D
       [typeof((int, int))] = (raw) => Tupple2IntInt(raw),
+      [typeof(IEnumerable<string>)] = (raw) => ParseIEnumerable_String(raw),
     };
+
+    public static IEnumerable<string> ParseIEnumerable_String(string raw)
+    {
+      if (raw == null || raw == "") return [];
+      return raw.Split('[', ']')[1].Split(';');
+    }
+
+
+
+    public static Rectangle ParseRectangle(string raw)
+      => ParseNullRectangle(raw) ?? new Rectangle(0, 0, 0, 0);
+
+    public static Rectangle? ParseNullRectangle(string raw)
+    {
+      if (raw == null || raw == "") return null;
+
+      string content = raw.Split('[', ']')[1];
+
+      List<string> coords = content.Split(',').Select(s => s.Trim()).ToList();
+
+      int.TryParse(coords.ElementAtOrDefault(0), out int x);
+      int.TryParse(coords.ElementAtOrDefault(1), out int y);
+      int.TryParse(coords.ElementAtOrDefault(2), out int w);
+      int.TryParse(coords.ElementAtOrDefault(3), out int h);
+
+      return new Rectangle(x, y, w, h);
+    }
+
     public static (int, int) Tupple2IntInt(string raw)
     {
       if (raw == null || raw == "") return (0, 0);
@@ -36,9 +68,9 @@ namespace CursedUI
     }
 
     public static Color ParseColor(string raw) => XMLExtensions.ParseColor(raw, false);
-    public static Vector2 ParseVector2(string raw)
+    public static Vector2? ParseNullVector2(string raw)
     {
-      if (raw == null || raw == "") return new Vector2(0, 0);
+      if (raw == null || raw == "") return null;
 
       string content = raw.Split('[', ']')[1];
 
@@ -52,5 +84,7 @@ namespace CursedUI
 
       return new Vector2(x, y);
     }
+    public static Vector2 ParseVector2(string raw)
+      => ParseNullVector2(raw) ?? Vector2.Zero;
   }
 }

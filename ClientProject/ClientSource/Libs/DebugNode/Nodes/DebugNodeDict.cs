@@ -28,7 +28,7 @@ namespace CUILibs
       }
     }
 
-    public static void Map(this Dictionary<string, DebugNodeBase> self, DebugRelayBase next)
+    public static void Map(this Dictionary<string, DebugNodeBase> self, DebugRelay next)
     {
       foreach (DebugNodeBase node in self.Values)
       {
@@ -48,7 +48,7 @@ namespace CUILibs
       }
     }
 
-    public static void Unmap(this Dictionary<string, DebugNodeBase> self, DebugRelayBase next)
+    public static void Unmap(this Dictionary<string, DebugNodeBase> self, DebugRelay next)
     {
       foreach (DebugNodeBase node in self.Values)
       {

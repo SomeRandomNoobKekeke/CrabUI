@@ -12,14 +12,21 @@ namespace CursedUI
 {
   public partial class CUIPages : CUIComponent, IComponent
   {
-    public CUIComponent OpenedPage;
+    private CUIComponent _OpenedPage; public CUIComponent OpenedPage
+    {
+      get => _OpenedPage;
+      set
+      {
+        Open(value);
+      }
+    }
 
     public bool IsOpened(CUIComponent p) => OpenedPage == p;
     public void Dismantle()
     {
       if (Children.Count > 0 && Children[0] is CUIPage)
       {
-        (Children[0] as CUIPage).OnClose.Raise();
+        (Children[0] as CUIPage).RaiseOnClose();
       }
 
       Children.Clear();
@@ -32,14 +39,17 @@ namespace CursedUI
     {
       Dismantle();
 
+      _OpenedPage = page;
+      if (page is null) return;
+
       Children.Add(page);
 
       page.Relative = new CUINullRect(0, 0, 1, 1);
-      OpenedPage = page;
+
 
       if (page is CUIPage)
       {
-        (page as CUIPage).OnOpen.Raise();
+        (page as CUIPage).RaiseOnOpen();
       }
     }
   }

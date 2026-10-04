@@ -140,6 +140,17 @@ namespace CursedUI
         child.Tree.OnAttachToParent(Self);
         Self.Tree.OnChildAdded(child);
       }
+      /// <summary>
+      /// Very cursed
+      /// </summary>
+      public void DetachChild(CUIVisualComponent child)
+      {
+        // Self.ChildrenContainer.Remove(child);
+        child._Parent = null;
+
+        child.Tree.OnDetachFromParent(Self);
+        Self.Tree.OnChildRemoved(child);
+      }
     }
   }
 }

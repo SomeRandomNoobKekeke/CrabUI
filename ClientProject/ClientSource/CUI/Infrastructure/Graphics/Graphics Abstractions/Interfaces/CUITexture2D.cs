@@ -20,7 +20,7 @@ namespace CursedUI
     public void ForgetAndDispose() { Forget(); Dispose(); }
     public void Track(string key = null) => CUICore.TextureManager.Add(key ?? Key, this);
 
-    public static CUITexture2D White => __CUITexture2D.White;
+    public static CUITexture2D White => CUICore.TextureManager.White;
     public static CUITexture2D BaroDev => CUICore.TextureManager.Get("BaroDev");
 
 
@@ -46,9 +46,7 @@ namespace CursedUI
     public void GetData(int level, Rectangle? rect, Color[] data, int startIndex, int elementCount);
     public void GetData(Color[] data);
     public void GetData(Color[] data, int startIndex, int elementCount);
-
-
-
+    public CUITexture2D Cut(Rectangle rect);
   }
 
 }

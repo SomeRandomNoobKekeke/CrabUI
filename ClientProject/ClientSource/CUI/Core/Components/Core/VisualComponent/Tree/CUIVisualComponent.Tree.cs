@@ -44,6 +44,22 @@ namespace CursedUI
       Parent.Children.MoveChildTo(this, 0);
     }
 
+    public IEnumerable<CUIVisualComponent> Parents
+    {
+      get
+      {
+        if (Parent is not null)
+        {
+          yield return Parent;
+
+          foreach (CUIVisualComponent parent in Parent.Parents)
+          {
+            yield return parent;
+          }
+        }
+      }
+    }
+
     public IEnumerable<CUIVisualComponent> DeepChildren
     {
       get

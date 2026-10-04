@@ -22,7 +22,7 @@ namespace CursedUI
         OnTearDown = (background) =>
         {
           // DebugRelays[DebugCategory.RoundedRect].Route(background.Debug_RoundedRect);
-          Events.Route(background);
+          Events.Unroute(background);
         },
         Value = new(),
       };
@@ -38,8 +38,10 @@ namespace CursedUI
       set => BackgroundSlot.Value = value;
     }
 
-    [CUISerializableProp]
-    public Borders Borders { get; } = new();
+    //LINK:\ClientProject\ClientSource\CUI\Core\Components\Core\CUIComponent\CUIComponent.Border.cs
+    protected Borders _Border { get; } = new();
+
+
 
     [CUISerializableProp]
     public bool IgnoretransparentPixels
@@ -51,16 +53,17 @@ namespace CursedUI
     protected virtual void UpdateRects()
     {
       Background.Rect = Rect;
-      Borders.Rect = Rect;
+      Border.Rect = Rect;
 
-      RightResizeHandle.UpdateRect();
+      LeftResizeHandle?.UpdateRect();
+      RightResizeHandle?.UpdateRect();
 
       if (CullChildren)
       {
         ScissorRect = ChildrenRect.Round();
       }
 
-      Debug_RectSet.Send(this, OuterRect);
+      Debug_RectSet.Send(this, this, OuterRect);
       Events.RectSet.Raise(OuterRect);
     }
 
@@ -102,8 +105,11 @@ namespace CursedUI
         }
         yield return VisualBounds.RightBound;
       }
-      yield return RightResizeHandle.VisualWrapper;
-      yield return Borders.VisualWrapper;
+
+      if (LeftResizeHandle != null) yield return LeftResizeHandle.VisualWrapper;
+      if (RightResizeHandle != null) yield return RightResizeHandle.VisualWrapper;
+
+      yield return Border.VisualWrapper;
     }
   }
 }

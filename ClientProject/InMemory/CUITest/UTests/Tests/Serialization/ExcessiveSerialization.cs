@@ -18,6 +18,6 @@ namespace CursedUI
     public UTest DeepProp() => new UTest(new CUIComponent()
     {
       Background = { Color = Color.Red },
-    }.Serialize().ToString(), "<CUIComponent Background.Color=\"255,0,0,255\" />");
+    }.Serialize().ToString(), "<CUIComponent Background.Sprite=\"{'color':'255,0,0,255'}\" />");
   }
 }

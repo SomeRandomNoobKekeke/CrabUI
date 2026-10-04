@@ -2,19 +2,19 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
-using Barotrauma;
-using Barotrauma.LuaCs;
 using CUILibs;
-using CursedUI;
-using Microsoft.Xna.Framework;
 using HarmonyLib;
+using System.Threading.Tasks;
 
 namespace CursedUIUser
 {
   public static class Utils
   {
+    public static void RunWithDelay(Action action, int delay = 100)
+    {
+      Task.Delay(delay).ContinueWith((t) => action());
+    }
+
     public static void PrintAllHarmonyPatches()
     {
       foreach (MethodBase mb in Harmony.GetAllPatchedMethods())

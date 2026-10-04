@@ -25,27 +25,23 @@ namespace CursedUIUser
     {
       CreateUI();
 
-      if (ModStorage.Has("CUITest"))
+      if (ModStorage.Has("CUITest.LastTest"))
       {
         IsOpen = true;
 
-        var (type, name) = ((string, string))ModStorage.Get("CUITest");
+        var (type, name) = ModStorage.Get<(string, string)>("CUITest.LastTest");
 
         if (type == "snapshot")
         {
           Pages.Open(SnapshotTestManager);
+          SnapshotTestManager.OpenGroupByTestName(name);
           SnapshotTestManager.Run(name);
         }
-
         if (type == "e2e")
         {
           Pages.Open(E2ETestManager);
           E2ETestManager.Run(name);
         }
-      }
-      else
-      {
-        IsOpen = false;
       }
     }
   }

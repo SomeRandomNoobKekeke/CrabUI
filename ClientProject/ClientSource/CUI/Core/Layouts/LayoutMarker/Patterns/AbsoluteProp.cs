@@ -18,6 +18,7 @@ namespace CursedUI
         public override void MarkFunc(Target host)
         {
           host.Layout.RequireParentUpdate = true;
+          host.Layout.RequireChildrenUpdate = true;
 
           if (host.Parent is not null)
           {

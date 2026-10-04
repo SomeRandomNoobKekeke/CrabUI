@@ -15,6 +15,28 @@ namespace CursedUI
       public class DebugEventBlock : CUITextBlock
       {
         protected override bool _IsDebugTool { get; set; } = true;
+        public DebugEventBlock(DebugEvent e)
+        {
+          Text = e.ToString();
+          TextAnchor = CUIAnchor.LeftCenter;
+        }
+      }
+
+      public class CUIDebugEventBlock : CUITextBlock
+      {
+        public CUIVisualComponent Component { get; set; }
+        protected override bool _IsDebugTool { get; set; } = true;
+        public CUIDebugEventBlock(CUIDebugEvent cuievent)
+        {
+          Text = cuievent.ToString();
+          Component = cuievent.RelatedComponent;
+          TextAnchor = CUIAnchor.LeftCenter;
+
+          MouseEnter += (e) => Commands.SendUp("highlight", Component);
+          MouseLeave += (e) => Commands.SendUp("unhighlight", Component);
+
+          Background.Color = CUIColor.FromSeed(Component.ID, 1.0f, 0.5f);
+        }
       }
 
 
@@ -27,11 +49,26 @@ namespace CursedUI
       private CUIRadioButton DrawEventFlow;
       private CUIRadioButton UpdateEventFlow;
 
-      public int MaxEvents = 50;
-      public CUIDirection Direction => FreeEventFlow.IsSelected ? CUIDirection.Reverse : CUIDirection.Straight;
+      private CUIComponent HighlightOverlay = new CUIComponent()
+      {
+        Background = {
+          Sprite = CUISprite.BaroDev, Color = Color.White *0.5f,
+        }
+      };
+
+      public int MaxEvents = 1000;
+      public CUIDirection Direction => FreeEventFlow.IsSelected ? CUIDirection.Straight : CUIDirection.Straight;
 
       private bool ClearRequested;
       private bool CreatedFromHandleDebugEvent; //HACK
+
+
+      private CUIComponent CreateEventBlock(DebugEvent e) => e switch
+      {
+        CUIDebugEvent cuievent => new CUIDebugEventBlock(cuievent),
+        DebugEvent => new DebugEventBlock(e),
+      };
+
       public void HandleDebugEvent(DebugEvent e)
       {
         if (CreatedFromHandleDebugEvent) return;
@@ -51,11 +88,7 @@ namespace CursedUI
             EventList.Children.Remove(EventList.Children.First());
           }
 
-          EventList.Children.Add(new DebugEventBlock()
-          {
-            Text = e.ToString(),
-            TextAnchor = CUIAnchor.LeftCenter,
-          });
+          EventList.Children.Add(CreateEventBlock(e));
         }
 
         if (Direction == CUIDirection.Reverse)
@@ -65,11 +98,7 @@ namespace CursedUI
             EventList.Children.Remove(EventList.Children.Last());
           }
 
-          EventList.Children.Insert(0, new DebugEventBlock()
-          {
-            Text = e.ToString(),
-            TextAnchor = CUIAnchor.LeftCenter,
-          });
+          EventList.Children.Insert(0, CreateEventBlock(e));
         }
 
         CreatedFromHandleDebugEvent = false;
@@ -82,7 +111,7 @@ namespace CursedUI
         EventList.Scroll = 0;
       }
 
-      protected override void Refresh()
+      public override void Refresh()
       {
         RefreshNodes();
         ClearEventList();
@@ -99,10 +128,11 @@ namespace CursedUI
           {
             OnToggle = (state) =>
             {
-              DebugHub.Gates[name].Toggle();
-              ClearEventList();
+              DebugHub.Gates[name].IsOpen = state;
+              // ClearEventList();
             },
             InheritPalette = true,
+            State = DebugHub.Gates[name].IsOpen,
           });
         }
       }
@@ -117,7 +147,7 @@ namespace CursedUI
         wrapper["controls"] = new CUIHorizontalList()
         {
           FitContent = new CUIBool2(false, true),
-          Borders = { Bottom = 1 }
+          Border = { Bottom = 1 }
         };
 
         wrapper["list"] = EventList = new CUIVerticalList()
@@ -168,6 +198,8 @@ namespace CursedUI
 
       public void HandleOpen()
       {
+        CUI.TopMain.Children.Insert(0, HighlightOverlay);
+
         DebugHub.Output.Map(Input);
 
         CUICore.OnUpdate += UpdateHook;
@@ -177,6 +209,9 @@ namespace CursedUI
 
       public void HandleClose()
       {
+        HighlightOverlay.RemoveSelf();
+        HighlightOverlay.Absolute = new CUINullRect();
+
         DebugHub.Output.Unmap(Input);
 
         CUICore.OnUpdate += UpdateHook;
@@ -185,17 +220,19 @@ namespace CursedUI
 
       public EventsPageComponent()
       {
-        OnOpen.Add(HandleOpen);
-        OnClose.Add(HandleClose);
+        OnOpen += HandleOpen;
+        OnClose += HandleClose;
 
         Input.Add(HandleDebugEvent);
 
+        Commands.ListenFor<CUIComponent>("highlight", (c) => HighlightOverlay.Rect = c.OuterRect);
+        Commands.ListenFor<CUIComponent>("unhighlight", (c) => HighlightOverlay.Rect = new CUIRect(0, 0, 0, 0));
 
         this["panels"] = new CUIHorizontalList() { Relative = new CUINullRect(0, 0, 1, 1) };
         this["panels"]["nodes"] = new CUIDefault.VerticalPanel()
         {
           Absolute = new(w: 150),
-          Borders = { Right = 3 }
+          Border = { Right = 3 }
         };
         this["panels"]["nodes"]["header"] = new CUITextBlock("Nodes:");
         this["panels"]["nodes"]["list"] = new CUIVerticalList() { Flex = 1 };

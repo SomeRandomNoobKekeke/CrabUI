@@ -6,7 +6,7 @@ using System.Diagnostics;
 
 using CUICodeGenerator;
 using CUILibs;
-
+using System.Text;
 namespace CursedUI
 {
   public partial class CUITypeTree
@@ -62,6 +62,32 @@ namespace CursedUI
 
     public void Clear() => Nodes.Clear();
 
-    public override string ToString() => Logger.Wrap.IDictionary(TypesByName);
+    // public void PrintTree(string offset = "")
+    // {
+    //   CUI.Logger.Log($"{offset}{this}");
+    //   foreach (CUIVisualComponent child in Children)
+    //   {
+    //     child.PrintTree(offset + "|    ");
+    //   }
+    // }
+
+    public override string ToString()
+    {
+      StringBuilder sb = new();
+
+      void NodeToText(Node node, string offset)
+      {
+        sb.Append($"{offset}{node.Type.Name}\n");
+
+        foreach (Node child in node.Children)
+        {
+          NodeToText(child, offset + "|      ");
+        }
+      }
+
+      NodeToText(Nodes[typeof(CUIVisualComponent)], "");
+
+      return sb.ToString();
+    }
   }
 }

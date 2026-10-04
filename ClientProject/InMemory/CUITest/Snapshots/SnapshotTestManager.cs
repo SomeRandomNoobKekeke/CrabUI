@@ -31,24 +31,10 @@ namespace CursedUIUser
 
     public ComponentSnapshot CurrentSnapshot { get; set; }
     public SnapshotTest CurrentTest { get; set; }
+    public string CurrentTestName;
 
 
 
-    public SnapshotTestManager()
-    {
-      ConsoleInteface = new ConsoleIntefaceClass(this);
-      Runner.Chamber = Chamber;
-
-
-      Events.Add(HandleManagerEvent);
-
-      OnOpen.Add(() =>
-      {
-        Setup();
-        Refresh();
-      });
-      OnClose.Add(Dismantle);
-    }
 
     public void Setup() => Chamber.Setup();
     public void Dismantle() => Chamber.Dismantle();
@@ -71,18 +57,21 @@ namespace CursedUIUser
     }
     public void Run(string name)
     {
+      if (name is null) return;
       if (!Repo.Tests.ContainsKey(name))
       {
         Logger.Warning($"Can't find snapshot test: [{name}]");
         return;
       }
 
-      ModStorage.Set("CUITest", ("snapshot", name));
+      ModStorage.Set("CUITest.LastTest", ("snapshot", name));
 
       if (!Chamber.IsSetup) Chamber.Setup();
 
+      CurrentTestName = name;
       CurrentTest = Repo.Tests[name];
       CurrentSnapshot = Runner.Run(CurrentTest);
+
       ComponentSnapshot stored = GetStoredSnapshot(CurrentTest);
 
       if (stored is null)
@@ -121,6 +110,15 @@ namespace CursedUIUser
     {
       string savePath = Path.Combine(SnaphotsFolder, $"{test.Name}.xml");
       return ComponentSnapshot.LoadSnapshot(savePath);
+    }
+
+
+    public SnapshotTestManager()
+    {
+      ConsoleInteface = new ConsoleIntefaceClass(this);
+      Runner.Chamber = Chamber;
+
+      Events.Add(HandleManagerEvent);
     }
   }
 }

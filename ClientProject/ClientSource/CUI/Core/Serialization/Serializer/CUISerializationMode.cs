@@ -12,6 +12,6 @@ namespace CursedUI
 {
   public enum CUISerializationMode
   {
-    Replace, Merge, Ignore,
+    Merge, Replace, Ignore,
   }
 }

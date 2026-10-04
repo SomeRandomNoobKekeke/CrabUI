@@ -6,9 +6,9 @@ using Microsoft.Xna.Framework;
 using CUILibs;
 using System.Xml;
 using System.Xml.Linq;
+using CursedUI;
 
-
-namespace CursedUI
+namespace CursedUIUser
 {
 
   //TODO

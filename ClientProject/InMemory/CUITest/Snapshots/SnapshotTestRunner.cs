@@ -21,31 +21,46 @@ namespace CursedUIUser
     // public bool PrintTestSubject { get; set; } = true;
     public SnapshotTestChamber Chamber { get; set; }
 
+
     public ComponentSnapshot Run(SnapshotTest test)
     {
       try
       {
-        CUIVisualComponent TestSubject = (CUIVisualComponent)test.TestFunc();
+        CUIVisualComponent TestSubject = test.TestFunc();
         TestSubject.DeepDebug = true;
 
 
         if (SerializeTestSubject)
         {
+          if (CUISerializationCompare.Instance.IsOpen)
+          {
+            CUISerializationCompare.Instance.ComponentBefore = TestSubject;
+          }
+
           XElement XMLBefore = TestSubject.Serialize();
+
+          CUI.Logger.Log($"=========>> Before serialization: <<=========\n{XMLBefore}\n");
+          new XDocument(XMLBefore).Save(Path.Combine(CUITest.CompareFolder, "Before.xml"));
+
           TestSubject = CUIVisualComponent.Deserialize(TestSubject.Serialize());
+          TestSubject.DeepDebug = true;
           XElement XMLAfter = TestSubject.Serialize();
 
+
+          if (CUISerializationCompare.Instance.IsOpen)
+          {
+            CUISerializationCompare.Instance.ComponentAfter = TestSubject;
+          }
+
+          new XDocument(XMLAfter).Save(Path.Combine(CUITest.CompareFolder, "After.xml"));
           if (XMLBefore.ToString() != XMLAfter.ToString())
           {
-            CUI.Logger.Log($"=========>> Before serialization: <<=========\n{XMLBefore}\n");
+            CUI.Logger.Print($"=========>> XML Before doesn't match XML After <<=========", Color.Orange);
             CUI.Logger.Log($"=========>> After serialization: <<=========\n{XMLAfter}\n");
-
-            new XDocument(XMLBefore).Save(Path.Combine(CUITest.CompareFolder, "Before.xml"));
-            new XDocument(XMLAfter).Save(Path.Combine(CUITest.CompareFolder, "After.xml"));
           }
           else
           {
-            CUI.Logger.Log($"=========>> XML Before and After serialization matches <<=========\n");
+            CUI.Logger.Print($"=========>> XML Before and After serialization matches <<=========", Color.Lime);
           }
         }
 

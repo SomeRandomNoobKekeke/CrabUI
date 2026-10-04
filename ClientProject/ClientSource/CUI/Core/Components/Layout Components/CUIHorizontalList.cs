@@ -91,6 +91,8 @@ namespace CursedUI
       ListLayout = new CUIHorizontalListLayout();
       Layout = ListLayout;
       Layout.ConnectTo(new CUIHorizontalListLayout_Host_Adapter_Part() { Self = this });
+
+      MapLayoutDebugChannels();
     }
 
     public CUIHorizontalList() : base()

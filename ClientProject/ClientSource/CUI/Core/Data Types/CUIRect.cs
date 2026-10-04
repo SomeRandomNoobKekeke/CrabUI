@@ -86,6 +86,11 @@ namespace CursedUI
     {
       return Left < pos.X && pos.X < Right && Top < pos.Y && pos.Y < Bottom;
     }
+    public bool Contains(Vector2 pos, CUISizes offset)
+    {
+      return Left - offset.Left < pos.X && pos.X < Right + offset.Left && Top - offset.Top < pos.Y && pos.Y < Bottom + offset.Bottom;
+    }
+
     public bool Intersect(CUIRect r)
     {
       return r.Right >= Left && r.Left <= Right && r.Bottom >= Top && r.Top <= Bottom;

@@ -15,18 +15,21 @@ namespace CursedUI
 {
   public partial class CUITextInput : CUIComponent, IComponent
   {
+    [CUISerializableProp]
     public double CaretBlinkInterval { get; set; } = 1.0;
-
+    [CUISerializableProp]
     public Color FocusedColor
     {
       get => FocusedSprite.Color;
       set => FocusedSprite.Color = value;
     }
+    [CUISerializableProp]
     public Color BluredColor
     {
       get => BluredSprite.Color;
       set => BluredSprite.Color = value;
     }
+    [CUISerializableProp]
     public Color InvalidColor
     {
       get => InvalidSprite.Color;
@@ -37,13 +40,17 @@ namespace CursedUI
     public CUISprite BluredSprite { get; set; }
     public CUISprite InvalidSprite { get; set; }
 
+    [CUISerializableProp]
     public Color SelectionColor { get; set; }
+
+    [CUISerializableProp]
     public Color CaretColor
     {
       get => CaretTexture.Color;
       set => CaretTexture.Color = value;
     }
 
+    [CUISerializableProp]
     public string Text
     {
       get => State.Text;

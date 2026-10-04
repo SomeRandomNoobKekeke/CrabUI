@@ -19,16 +19,24 @@ namespace CursedUI
 
     public void Step()
     {
-      Update(LastUpdateTime + UpdateInterval, null);
+      Update(null);
     }
 
 
-    public bool RequireLayoutUpdate { get; set; }
+    private bool _RequireLayoutUpdate; public bool RequireLayoutUpdate
+    {
+      get => _RequireLayoutUpdate;
+      set
+      {
+
+        // if (!_RequireLayoutUpdate && value) CUI.Logger.PrintStackTrace();
+        _RequireLayoutUpdate = value;
+
+      }
+    }
     public bool RequireVisualRestructure { get; set; }
 
-
-    private double LastUpdateTime;
-    public void Update(double totalTime, CUIInput Input)
+    public void Update(CUIInput Input)
     {
       GlobalEvents.BeforeUpdate.Raise();
 
@@ -56,7 +64,6 @@ namespace CursedUI
         VisualFlattener.Flatten(this);
       }
 
-      LastUpdateTime = totalTime;
       GlobalEvents.AfterUpdate.Raise();
     }
 

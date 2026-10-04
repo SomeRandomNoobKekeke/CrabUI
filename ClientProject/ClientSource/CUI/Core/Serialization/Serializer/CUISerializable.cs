@@ -10,11 +10,17 @@ using System.Xml.Linq;
 
 namespace CursedUI
 {
-  //TODO centralize serialization, move parser here, define extra methods here, make it use this interface
   /// <summary>
-  /// It has Serialize() method
+  /// If Prop implementing NestedCUISerializable has CUISerializableProp it will be scanned for nested props  
+  /// They will be added to outer CUISerializable, e.g. Background.Color
   /// </summary>
-  public interface CUISerializable
+  public interface NestedCUISerializable { }
+
+  /// <summary>
+  /// It has Serialize() and Deserialize methods  
+  /// And can be serialized directly
+  /// </summary>
+  public interface CUISerializable : NestedCUISerializable
   {
     public static abstract object Deserialize(XElement element);
     public XElement Serialize() => new XElement(GetType().Name);

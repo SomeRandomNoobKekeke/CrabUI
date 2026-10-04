@@ -15,22 +15,34 @@ namespace CursedUI
 {
   public static class CUIBasicSerializer
   {
-    public static XElement Serialize(CUISerializable o, IDictionary<string, object> defaultValues = null)
+    public static XElement Serialize(CUISerializable o, IDictionary<string, object> defaultValues)
     {
-      defaultValues ??= new Dictionary<string, object>();
-
       XElement element = new(o.GetType().GetFullName());
 
-      if (CUICore.Reflection.SerializableInfos.ContainsKey(o.GetType()))
+      if (CUICore.Reflection.SerializableInfos.TryGetValue(o.GetType(), out CUISerializableInfo? info))
       {
-        CUISerializableInfo info = CUICore.Reflection.GetSerializableInfo(o.GetType());
-
-        foreach (var (name, pp) in info.SerializableProps)
+        foreach (var (fullName, pp) in info.SerializableProps)
         {
-          object value = pp.GetValue(o);
-          if (defaultValues.ContainsKey(name) && Equals(value, defaultValues[name])) continue;
+          if (pp.Type.IsAssignableTo(typeof(ICustomSerializable)))
+          {
+            ICustomSerializable value = (ICustomSerializable)pp.GetValue(o);
 
-          element.SetAttributeValue(name, CUICore.Parser.Serialize(value));
+            //TODO it's excessive
+            if (defaultValues.ContainsKey(fullName) && Equals(value, defaultValues[fullName])) continue;
+
+            element.SetAttributeValue(
+              fullName,
+              value.ToText(defaultValues.GetValueOrDefault(fullName))
+            );
+
+          }
+          else
+          {
+            object value = pp.GetValue(o);
+            if (defaultValues.ContainsKey(fullName) && Equals(value, defaultValues[fullName])) continue;
+
+            element.SetAttributeValue(fullName, CUICore.Parser.Serialize(value));
+          }
         }
       }
 
@@ -46,13 +58,15 @@ namespace CursedUI
 
     public static void DeserializeProps(XElement element, object target)
     {
-      if (CUICore.Reflection.SerializableInfos.ContainsKey(target.GetType()))
+      if (CUICore.Reflection.SerializableInfos.TryGetValue(target.GetType(), out CUISerializableInfo? info))
       {
-        CUISerializableInfo info = CUICore.Reflection.GetSerializableInfo(target.GetType());
-
         foreach (XAttribute attribute in element.Attributes())
         {
-          PropertyPath pp = info.SerializableProps[attribute.Name.ToString()];
+          if (!info.SerializableProps.TryGetValue(attribute.Name.ToString(), out PropertyPath pp))
+          {
+            CUI.Logger.Warning($"Couldn't deserialize [{attribute.Name}], no such prop on [{target.GetType().GetFullName()}]");
+            continue;
+          }
 
           if (!pp.CanWrite)
           {

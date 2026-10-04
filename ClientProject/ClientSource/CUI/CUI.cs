@@ -21,6 +21,7 @@ namespace CursedUI
     }
 
     public static ErrorHandlingStrategy ErrorHandlingStrategy { get; set; } = ErrorHandlingStrategy.FailFast;
+    public static int MaxErrorCount = 5;
 
     //BRUH why is it here?
     public static SamplerState NoSmoothing = new SamplerState()
@@ -52,7 +53,7 @@ namespace CursedUI
     public static CUISetup Setup { get; set; }
     public static CUICore Core => Setup.Core;
 
-
+    public static CUICore.Singletons_Module Singletons => CUICore.Singletons;
     public static bool Started => Setup?.Started == true;
     //Akshually in MasterRunners calling this 
     public static void Start()

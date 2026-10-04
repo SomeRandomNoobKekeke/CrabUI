@@ -13,6 +13,7 @@ namespace CursedUIUser
 {
   public partial class SnapshotTests
   {
+    //Component LINK:\ClientProject\ClientSource\CUI\Core\Components\Input\CUICheckBox.cs
     public static partial class Components
     {
       public static CUIComponent CUICheckBox()

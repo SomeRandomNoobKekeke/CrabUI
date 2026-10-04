@@ -15,70 +15,68 @@ namespace CursedUI
       public CUITextBlock TextBlock { get; set; }
       public VerySpecialFrame() : base("bruh")
       {
-        this["layout"]["textblock"] = TextBlock = new CUITextBlock("lul");
+        this["layout"]["textblock"] = TextBlock = new CUITextBlock("init value");
       }
     }
 
-    public UTest Replace()
+    public List<UTest> Replace()
     {
-      VerySpecialFrame frame = new VerySpecialFrame()
-      {
-        SerializationMode = CUISerializationMode.Replace,
-      };
+      VerySpecialFrame frame = new VerySpecialFrame();
+
       frame.TextBlock.Text = "uwu";
+      frame.TextBlock.SerializationMode = CUISerializationMode.Replace;
 
       VerySpecialFrame frame2 = CUIComponent.Deserialize<VerySpecialFrame>(frame.Serialize());
 
-      return new UTest(
-        frame2.TextBlock != frame2["layout"]["textblock"] &&
-        frame2.Get<CUITextBlock>("layout.textblock").Text == "uwu",
-        true
-      );
+      return [
+        new UTest(frame2.TextBlock != frame2["layout"]["textblock"], "it was replaced"),
+        new UTest(frame2.Get<CUITextBlock>("layout.textblock").Text, "uwu"),
+      ];
     }
 
-    public UTest Ignore()
+    public List<UTest> Ignore()
     {
-      VerySpecialFrame frame = new VerySpecialFrame()
-      {
-        SerializationMode = CUISerializationMode.Ignore,
-      };
+      VerySpecialFrame frame = new VerySpecialFrame();
+      frame.TextBlock.SerializationMode = CUISerializationMode.Ignore;
 
       VerySpecialFrame frame2 = CUIComponent.Deserialize<VerySpecialFrame>(frame.Serialize());
 
-      return new UTest(frame2.TextBlock, frame2["layout"]["textblock"]);
+      return [
+        new UTest(frame2.TextBlock == frame2["layout"]["textblock"], "new textblock was thrown away"),
+        new UTest(frame2.Get<CUITextBlock>("layout.textblock").Text, "init value", "value is the same"),
+      ];
     }
 
-    public UTest Merge()
+    public List<UTest> Merge()
     {
-      VerySpecialFrame frame = new VerySpecialFrame()
-      {
-        SerializationMode = CUISerializationMode.Merge,
-      };
+      VerySpecialFrame frame = new VerySpecialFrame();
+
       frame.TextBlock.Text = "uwu";
+      frame.TextBlock.SerializationMode = CUISerializationMode.Merge;
 
       VerySpecialFrame frame2 = CUIComponent.Deserialize<VerySpecialFrame>(frame.Serialize());
 
-      return new UTest(
-        frame2.TextBlock == frame2["layout"]["textblock"] &&
-        frame2.TextBlock.Text == "uwu",
-        true
-      );
+      return [
+        new UTest(frame2.TextBlock == frame2["layout"]["textblock"], "new textblock was thrown away"),
+        new UTest(frame2.Get<CUITextBlock>("layout.textblock").Text, "uwu","but props were copied"),
+      ];
     }
 
-    public UTest NotSerializable()
+    public List<UTest> NotSerializable()
     {
-      VerySpecialFrame frame = new VerySpecialFrame()
+      VerySpecialFrame frame = new VerySpecialFrame();
+
+      frame["layout"]["secret"] = new CUITextBlock("secret")
       {
-        SerializationMode = CUISerializationMode.Replace,
+        Serializable = false,
       };
-      frame.TextBlock.Serializable = false;
 
       VerySpecialFrame frame2 = CUIComponent.Deserialize<VerySpecialFrame>(frame.Serialize());
 
-      return new UTest(
-        frame2["layout"].NamedComponents.ContainsKey("textblock"),
-        false
-      );
+      return [
+        new UTest(frame["layout"]["secret"] != null),
+        new UTest(frame2["layout"]["secret"] == null)
+      ];
     }
   }
 }

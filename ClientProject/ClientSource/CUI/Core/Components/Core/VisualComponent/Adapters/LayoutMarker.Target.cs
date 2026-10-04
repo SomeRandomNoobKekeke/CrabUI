@@ -27,10 +27,11 @@ namespace CursedUI
         LayoutMarker.Target LayoutMarker.Target.Parent => Self.Parent?.Adapters.LayoutMarker;
         Layout LayoutMarker.Target.Layout => Self.Layout;
 
-        IReadOnlyList<LayoutMarker.Target> LayoutMarker.Target.Children
-          => Self.Children.ReadOnlyAs<CUIVisualComponent, LayoutMarker.Target>(child => child.Adapters.LayoutMarker);
+        public IEnumerable<LayoutMarker.Target> Children => Self.StructuralSplit().Select(c => c.Adapters.LayoutMarker);
 
         void LayoutMarker.Target.NotifyLayoutUpdated() => Self.LayoutUpdateNotifier.Notify();
+
+        public override string ToString() => Self.ToString();
       }
     }
   }

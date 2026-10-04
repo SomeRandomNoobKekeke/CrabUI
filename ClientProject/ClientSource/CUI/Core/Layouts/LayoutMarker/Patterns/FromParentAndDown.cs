@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
+using CUILibs;
 
 namespace CursedUI
 {
@@ -29,10 +30,12 @@ namespace CursedUI
 
           if (host.Parent is not null)
           {
-            host.Parent.Layout.RequireChildrenUpdate = true;
+            MarkRec(host.Parent);
           }
-
-          MarkRec(host);
+          else
+          {
+            MarkRec(host);
+          }
         }
       }
     }

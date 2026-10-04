@@ -40,7 +40,7 @@ namespace CursedUI
       private set => ColorSelect.Background.Sprite.ColorTR = value;
     }
 
-    public Vector2 ColorPos { get; private set; }
+    public Vector2 ColorPos { get; private set; } = new Vector2(1, 0);
 
     public Action<Color> OnSelected { set { Selected += value; } }
     public event Action<Color> Selected;
@@ -49,7 +49,6 @@ namespace CursedUI
     private void SelectColor()
     {
       Color cl = CUIColor.FromHSV(Hue, ColorPos.X, 1.0f - ColorPos.Y);
-
       Selected?.Invoke(cl);
     }
 
@@ -57,24 +56,17 @@ namespace CursedUI
     {
       ConsumeMouseEvents = true;
 
-      if (!CUICore.TextureManager.Has("HueSelect"))
-      {
-        CUICore.TextureManager.Add("HueSelect",
-          new TextureBuilder(1, 360)
-            .Fill((x, y) => CUIColor.FromHSV(y, 1, 1))
-            .Build(tracked: true)
-        );
-      }
+      CUICore.TextureManager.Ensure("HueSelect", () =>
+        new TextureBuilder(1, 360)
+          .Fill((x, y) => CUIColor.FromHSV(y, 1, 1))
+          .Build(tracked: true)
+      );
 
-      if (!CUICore.TextureManager.Has("bw target 6x6"))
-      {
-        CUICore.TextureManager.Add("bw target 6x6",
-          new TextureBuilder(6, 6)
-            .DrawTarget(new Rectangle(0, 0, 6, 6), Color.White * 0.75f, Color.Black * 0.75f)
-            .Build(tracked: true)
-        );
-      }
-
+      CUICore.TextureManager.Ensure("bw target 6x6", () =>
+        new TextureBuilder(6, 6)
+          .DrawTarget(new Rectangle(0, 0, 6, 6), Color.White * 0.75f, Color.Black * 0.75f)
+          .Build(tracked: true)
+      );
 
       this["layout"] = new CUIHorizontalList() { Relative = new CUINullRect(0, 0, 1, 1) };
 
@@ -111,8 +103,8 @@ namespace CursedUI
       this["layout"]["HueSelect"] = HueSelect = new CUIPosSelect()
       {
         Absolute = new CUINullRect(w: 30),
-        Borders = { Sizes = new CUISizes(left: 2) },
-        Style = (c) => c.Borders.Color = Color.White,
+        Border = { Sizes = new CUISizes(left: 2) },
+        Style = (c) => c.Border.Color = Color.White,
         Background = { Sprite = CUISprite.Get("HueSelect") },
         OnSelected = (v) =>
         {

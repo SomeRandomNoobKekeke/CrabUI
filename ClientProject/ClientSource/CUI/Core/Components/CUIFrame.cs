@@ -9,15 +9,16 @@ using Microsoft.Xna.Framework;
 using CUICodeGenerator;
 using CUILibs;
 using Microsoft.Xna.Framework.Graphics;
+using System.Runtime.CompilerServices;
 
 namespace CursedUI
 {
   public partial class CUIFrame : CUIComponent, IComponent
   {
-    public static ICUIStyle DefaultStyle { get; } = new CUIDefaultStyle<CUIFrame>((c) =>
+    public static ICUIStyle DefaultStyle => new CUIDefaultStyle<CUIFrame>((c) =>
     {
       c.Background.Color = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.2f);
-      c.Borders.Color = c.Palette["main"];
+      c.Border.Color = c.Palette["main"];
     });
 
     protected override void InitStyle()
@@ -29,12 +30,15 @@ namespace CursedUI
       Resizable = true;
       Focusable = true;
       ConsumeMouseEvents = true;
-      Background.Sprite = CUISprite.VignetteLight;
+      Background.Sprite = CUISprite.VignetteDithered;
     }
+
+    protected static ConditionalWeakTable<Type, CUIFrame> OpenedFrames { get; } = new();
+
 
     public CUIComponent TargetMainComponent { get; set; }
 
-
+    protected virtual bool SingleInstance => false;
 
     public bool IsOpen
     {
@@ -47,9 +51,25 @@ namespace CursedUI
 
     public void Toggle() { if (IsOpen) Close(); else Open(); }
 
-    public virtual void Open(CUIComponent Host = null)
+
+    public void Open(Vector2 pos, CUIComponent Host = null)
     {
+      Absolute = Absolute with { Position = pos };
+      Open(Host);
+    }
+    public void Open(CUIComponent Host = null)
+    {
+      if (SingleInstance)
+      {
+        OpenedFrames.TryGetValue(this.GetType(), out CUIFrame frame);
+        frame?.Close();
+
+        OpenedFrames.Add(this.GetType(), this);
+      }
+
+
       Host ??= TargetMainComponent ?? CUI.Main;
+
       if (Host == null || Parent == Host) return;
 
       Host.Children.Add(this);
@@ -57,9 +77,13 @@ namespace CursedUI
       SaveState("lastopened");
     }
 
-
     public virtual void Close()
     {
+      if (SingleInstance)
+      {
+        OpenedFrames.Remove(this.GetType());
+      }
+
       OnClose?.Invoke();
       RemoveSelf();
     }

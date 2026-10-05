@@ -12,7 +12,7 @@ using System.Collections;
 
 namespace CursedUI
 {
-  public class CUIAnimatedSprite : CUIMultiSprite
+  public partial class CUIAnimatedSprite : CUIMultiSprite
   {
     public double MsPerFrame
     {

@@ -10,7 +10,7 @@ using System.Text.Json;
 using CUILibs;
 namespace CursedUI
 {
-  public class TextureSource : ITextureSource, IParsable
+  public class TextureSource : ITextureSource
   {
     public CUITexture2D Texture { get; set; }
     public Rectangle? SourceRectangle { get; set; }
@@ -40,6 +40,8 @@ namespace CursedUI
 
     public string ToText()
     {
+
+
       Dictionary<string, string> dict = new Dictionary<string, string>()
       {
         ["texture"] = Texture.Key ?? "",

@@ -55,12 +55,12 @@ namespace CursedUI
       IEnumerator enumerator = items.GetEnumerator();
 
       if (!enumerator.MoveNext()) return "[]";
-      sb.Append(enumerator.Current.ToString());
+      sb.Append(Serialize(enumerator.Current));
 
       while (enumerator.MoveNext())
       {
         sb.Append(EnumerableSeparator);
-        sb.Append(enumerator.Current.ToString());
+        sb.Append(Serialize(enumerator.Current));
       }
       sb.Append("]");
 

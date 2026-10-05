@@ -50,7 +50,7 @@ namespace CursedUI
       Dictionary<string, string> dict = new();
 
       dict["sources"] = CUICore.Parser.Serialize(Sources);
-      if (CurrentSource != 0) dict["current"] = CUICore.Parser.Serialize(CurrentSource);
+      if (CurrentSource != 0) dict["current"] = CurrentSource.ToString();
 
       return JsonSerializer.Serialize(dict).Replace('"', '\'');
     }

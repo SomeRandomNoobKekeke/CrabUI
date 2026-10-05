@@ -11,6 +11,7 @@ using HarmonyLib;
 using Microsoft.Xna.Framework;
 using System.IO;
 using System.Text;
+using CUILibs;
 
 namespace CursedUI
 {
@@ -19,6 +20,11 @@ namespace CursedUI
     public static char EnumerableSeparator = ';';
     public static string NullTerm = "{{null}}";
     public static bool IsNullable(Type type) => Nullable.GetUnderlyingType(type) != null;
+    public static object CreateDefaultFor(Type T)
+    {
+      if (T.IsValueType) return Activator.CreateInstance(T);
+      return null;
+    }
 
     public string Serialize(object o)
     {
@@ -70,7 +76,13 @@ namespace CursedUI
 
         if (T.IsAssignableTo(typeof(IParsable)))
         {
-          return T.GetMethod("Parse", BindingFlags.Static | BindingFlags.Public).Invoke(null, [raw]);
+          MethodInfo parse = T.GetMethod("Parse", BindingFlags.Static | BindingFlags.Public);
+          if (parse is null)
+          {
+            CUI.Logger.Warning($"Can't parse [{raw}] into [{T}]: It doesn't have Parse method");
+            return CreateDefaultFor(T);
+          }
+          return parse.Invoke(null, [raw]);
         }
 
         if (ExtraParseMethods.ContainsKey(T)) return ExtraParseMethods[T](raw);
@@ -81,7 +93,7 @@ namespace CursedUI
       }
       catch (Exception e)
       {
-        CUI.Logger.Warning($"Can't parse [{raw}] into [{T}]: {e.Message}");
+        CUI.Logger.Warning($"Can't parse [{raw}] into [{T}]: {Logger.Wrap.ExceptionMessage(e)}");
         return T.GetDefaultValue();
       }
     }

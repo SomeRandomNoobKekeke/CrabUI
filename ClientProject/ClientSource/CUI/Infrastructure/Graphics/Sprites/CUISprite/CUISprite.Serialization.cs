@@ -10,7 +10,7 @@ using System.Text.Json;
 using CUILibs;
 namespace CursedUI
 {
-  public partial class CUISprite : ICustomSerializable<CUISprite>
+  public partial class CUISprite : ICustomSerializable
   {
     public static CUISprite Get(string key)
     {
@@ -30,6 +30,8 @@ namespace CursedUI
 
     public static object Parse(string raw)
     {
+      if (string.IsNullOrEmpty(raw)) return new CUISprite();
+
       raw = raw.Trim();
       if (!raw.StartsWith('{'))
       {
@@ -38,6 +40,8 @@ namespace CursedUI
 
       raw = raw.Replace('\'', '"');
       Dictionary<string, string> dict = JsonSerializer.Deserialize<Dictionary<string, string>>(raw);
+
+      if (dict.ContainsKey("sources")) return CUIMultiSprite.Parse(dict);
 
       CUISprite sprite = new CUISprite();
 
@@ -62,7 +66,7 @@ namespace CursedUI
     }
 
     //TODO mb don't use json, it uses "" and they are not allowed in xml
-    public string ToText()
+    public virtual string ToText()
     {
       if (Name is not null && Equals(GetByName(Name))) return Name;
 
@@ -93,7 +97,9 @@ namespace CursedUI
       return JsonSerializer.Serialize(dict).Replace('"', '\'');
     }
 
-    public string ToText(CUISprite defValue)
+
+    string ICustomSerializable.ToText(object defValue) => ToText(defValue as CUISprite);
+    public virtual string ToText(CUISprite defValue)
     {
       //TODO is this too slow?
       if (Name is not null && Equals(GetByName(Name))) return Name;
@@ -166,5 +172,7 @@ namespace CursedUI
 
       return JsonSerializer.Serialize(dict).Replace('"', '\'');
     }
+
+
   }
 }

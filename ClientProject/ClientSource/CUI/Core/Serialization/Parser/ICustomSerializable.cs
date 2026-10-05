@@ -14,10 +14,4 @@ namespace CursedUI
   {
     public string ToText(object defValue);
   }
-
-  public interface ICustomSerializable<T> : ICustomSerializable
-  {
-    string ICustomSerializable.ToText(object defValue) => ToText((T)defValue);
-    public string ToText(T defValue);
-  }
 }

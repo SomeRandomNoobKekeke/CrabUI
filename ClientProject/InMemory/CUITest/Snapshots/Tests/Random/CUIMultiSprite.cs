@@ -15,6 +15,14 @@ namespace CursedUIUser
   {
     public static partial class Random
     {
+      public class TestMultiSpriteComponent : CUIComponent
+      {
+        public TestMultiSpriteComponent() : base()
+        {
+          OnMouseDown = (e) => (Background.Sprite as CUIMultiSprite).CurrentSource++;
+        }
+      }
+
       public static CUIComponent MultiSprite()
       {
         CUIComponent frame = new CUIDefault.Frame("CUIMultiSprite", 400, 600);
@@ -25,14 +33,13 @@ namespace CursedUIUser
           CUISprite.Window,
         };
 
-        frame["sprite"] = new CUIComponent()
+        frame["sprite"] = new TestMultiSpriteComponent()
         {
           Anchor = CUIAnchor.Center,
           Absolute = new CUINullRect(w: 200, h: 200),
           Background ={
             Sprite = sprite
           },
-          OnMouseDown = (e) => sprite.CurrentSource++,
         };
 
 

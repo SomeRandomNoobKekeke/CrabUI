@@ -24,6 +24,8 @@ namespace CursedUI
       [typeof(CUITexture2D)] = CUICore.TextureManager.Get,//BRUH i either have to reference __CUITexture2D from CUICore or CUICore.TextureManager from __CUITexture2D
       [typeof((int, int))] = (raw) => Tupple2IntInt(raw),
       [typeof(IEnumerable<string>)] = (raw) => ParseIEnumerable_String(raw),
+      [typeof(List<string>)] = (raw) => ParseIEnumerable_String(raw).ToList(),
+      [typeof(string[])] = (raw) => ParseIEnumerable_String(raw).ToArray(),
     };
 
     public static IEnumerable<string> ParseIEnumerable_String(string raw)

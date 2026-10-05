@@ -8,14 +8,12 @@ using Microsoft.Xna.Framework;
 namespace CursedUI
 {
   //Note that later i might split it into multiple dicts, interface should stay the same
-  public partial class CUIPalette : ReactiveDict<string, Color>
+  public partial class CUIPalette : ReactiveDict<string, Color>, IParsable
   {
-    public Color BaseColor { get; set; }
+    public Color? BaseColor { get; set; }
 
     public static CUIPalette FromColor(Color color)
     {
-      float brightness = color.Brightness();
-
       Color front = color;
       Color back = Color.Lerp(Color.Black, color, 0.1f);
       Color panel = Color.Lerp(Color.Black, color, 0.3f);
@@ -44,6 +42,29 @@ namespace CursedUI
       };
     }
 
-    public override string ToString() => $"Palette: {Logger.Wrap.Dictionary(this)}";
+    public static object Parse(string raw)
+    {
+      if (raw == "Primary") return CUICore.Palettes.Primary;
+      if (raw == "Secondary") return CUICore.Palettes.Secondary;
+      if (raw == "Tertiary") return CUICore.Palettes.Tertiary;
+      if (raw == "Quaternary") return CUICore.Palettes.Quaternary;
+
+      return FromColor(CUICore.Parser.Parse<Color>(raw));
+    }
+
+    public override string ToString() => $"Palette: {ToText()}";
+
+    public string ToText()
+    {
+      if (this == CUICore.Palettes.Primary) return "Primary";
+      if (this == CUICore.Palettes.Secondary) return "Secondary";
+      if (this == CUICore.Palettes.Tertiary) return "Tertiary";
+      if (this == CUICore.Palettes.Quaternary) return "Quaternary";
+
+      if (BaseColor.HasValue) return CUICore.Parser.Serialize(BaseColor.Value);
+      return "Primary";
+    }
+
+
   }
 }

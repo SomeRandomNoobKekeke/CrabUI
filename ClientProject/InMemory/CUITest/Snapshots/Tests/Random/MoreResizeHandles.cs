@@ -26,6 +26,7 @@ namespace CursedUIUser
           Draggable = true,
           AbsoluteMin = new CUINullRect(ResizeHandle.DefaultSize),
           ResizeRelative = true,
+          Palette = CUICore.Palettes.Quaternary,
         };
 
         component.Children.Add(ResizeHandle.CreateAngle(0.0f, 0.0f));

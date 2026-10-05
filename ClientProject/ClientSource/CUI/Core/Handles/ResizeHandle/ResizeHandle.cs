@@ -14,7 +14,7 @@ namespace CursedUI
   {
     /// <summary>
     /// Used everywhere  
-    /// why 22? it's default height of barotrauma text
+    /// why 24? it's default height of barotrauma text
     /// </summary>
     //TODO akshually should move all such sizes to some global class
     public static Vector2 DefaultSize = new Vector2(24, 24);
@@ -33,6 +33,7 @@ namespace CursedUI
       base.InitStyle();
 
       Absolute = new CUINullRect(w: DefaultSize.X, h: DefaultSize.Y);
+      InheritPalette = true;
     }
 
     public static ResizeHandle CreateAngle(float x, float y)

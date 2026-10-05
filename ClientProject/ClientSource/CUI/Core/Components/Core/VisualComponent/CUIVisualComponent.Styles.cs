@@ -15,6 +15,7 @@ namespace CursedUI
 
     protected virtual void InitStyle() { }
 
+    [CUISerializableProp]
     public virtual CUIPalette Palette
     {
       get => Styles.Palette;
@@ -37,6 +38,7 @@ namespace CursedUI
       }
     }
 
+    [CUISerializableProp]
     public bool InheritPalette { get; set; } = false;
 
     public Action<CUIVisualComponent> Style

@@ -56,6 +56,7 @@ namespace CursedUI
       if (dict.ContainsKey("origin")) sprite.Origin = CUICore.Parser.Parse<Vector2>(dict["origin"]);
       if (dict.ContainsKey("effects")) sprite.Effects = CUICore.Parser.Parse<SpriteEffects>(dict["effects"]);
       if (dict.ContainsKey("layerdepth")) sprite.LayerDepth = CUICore.Parser.Parse<float>(dict["layerdepth"]);
+      if (dict.ContainsKey("drawmode")) sprite.DrawMode = CUICore.Parser.Parse<CUISpriteDrawMode>(dict["drawmode"]);
 
       return sprite;
     }
@@ -87,6 +88,7 @@ namespace CursedUI
       if (Origin != Vector2.Zero) dict["origin"] = CUICore.Parser.Serialize(Origin);
       if (Effects != SpriteEffects.None) dict["effects"] = CUICore.Parser.Serialize(Effects);
       if (LayerDepth != 0) dict["layerdepth"] = CUICore.Parser.Serialize(LayerDepth);
+      if (DrawMode != CUISpriteDrawMode.Resize) dict["drawmode"] = CUICore.Parser.Serialize(DrawMode);
 
       return JsonSerializer.Serialize(dict).Replace('"', '\'');
     }
@@ -128,6 +130,11 @@ namespace CursedUI
       if (LayerDepth != defValue.LayerDepth)
       {
         dict["layerdepth"] = CUICore.Parser.Serialize(LayerDepth);
+      }
+
+      if (DrawMode != defValue.DrawMode)
+      {
+        dict["drawmode"] = CUICore.Parser.Serialize(DrawMode);
       }
 
       if (ColorTL == ColorTR && ColorTL == ColorBL && ColorTL == ColorBR)

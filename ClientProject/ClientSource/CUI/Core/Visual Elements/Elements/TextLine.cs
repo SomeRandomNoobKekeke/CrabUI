@@ -11,7 +11,7 @@ using CUILibs;
 namespace CursedUI
 {
   /// <summary>
-  /// This is just raw unleashed line of text
+  /// This is just unbouded line of text
   /// </summary>
   public class TextLine : VisualElementBase
   {

@@ -16,22 +16,11 @@ namespace CUILibs
 {
   public partial class Parser
   {
-    public static char EnumerableSeparator = ';';
-    public static string NullTerm = "{{null}}";
-    public static bool IsNullable(Type type) => Nullable.GetUnderlyingType(type) != null;
-    public static object CreateDefaultFor(Type T)
-    {
-      if (T is null) return null;
-      if (T == typeof(void)) return null;
-      if (T.IsValueType) return Activator.CreateInstance(T);
-      return null;
-    }
-
     public string Serialize(object o)
     {
       try
       {
-        if (o is null) return NullTerm;
+        if (o is null) return Settings.NullTerm;
         if (o is string) return o as string;
         if (o is IParsable) return ((IParsable)o).ToText();
         if (ExtraSerializeMethods.ContainsKey(o.GetType())) return ExtraSerializeMethods[o.GetType()](o);
@@ -60,7 +49,7 @@ namespace CUILibs
 
       while (enumerator.MoveNext())
       {
-        sb.Append(EnumerableSeparator);
+        sb.Append(Settings.EnumerableSeparator);
         sb.Append(Serialize(enumerator.Current));
       }
       sb.Append("]");
@@ -68,12 +57,17 @@ namespace CUILibs
       return sb.ToString();
     }
 
+    public string SerializeDictionary(IDictionary dict)
+    {
+      return "wip";
+    }
+
     public T Parse<T>(string raw) => (T)Parse(raw, typeof(T));
     public object Parse(string raw, Type T)
     {
       try
       {
-        if (raw == NullTerm || raw == null) return T.GetDefaultValue();
+        if (raw == Settings.NullTerm || raw == null) return T.GetDefaultValue();
 
         if (T.IsAssignableTo(typeof(IParsable)))
         {

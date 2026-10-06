@@ -10,7 +10,8 @@ using System.Xml.Linq;
 
 namespace CursedUI
 {
-  public interface ICustomSerializable : IParsable
+
+  public interface CUICustomSerializable : IParsable
   {
     public string ToText(object defValue);
   }

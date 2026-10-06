@@ -10,7 +10,7 @@ using System.Text.Json;
 using CUILibs;
 namespace CursedUI
 {
-  public partial class CUISprite : ICustomSerializable
+  public partial class CUISprite : CUICustomSerializable
   {
     public static CUISprite Get(string key)
     {
@@ -98,7 +98,7 @@ namespace CursedUI
     }
 
 
-    string ICustomSerializable.ToText(object defValue) => ToText(defValue as CUISprite);
+    string CUICustomSerializable.ToText(object defValue) => ToText(defValue as CUISprite);
     public virtual string ToText(CUISprite defValue)
     {
       //TODO is this too slow?

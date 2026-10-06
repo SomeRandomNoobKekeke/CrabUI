@@ -23,9 +23,9 @@ namespace CursedUI
       {
         foreach (var (fullName, pp) in info.SerializableProps)
         {
-          if (pp.Type.IsAssignableTo(typeof(ICustomSerializable)))
+          if (pp.Type.IsAssignableTo(typeof(CUICustomSerializable)))
           {
-            ICustomSerializable value = (ICustomSerializable)pp.GetValue(o);
+            CUICustomSerializable value = (CUICustomSerializable)pp.GetValue(o);
 
             //TODO it's excessive
             if (defaultValues.ContainsKey(fullName) && Equals(value, defaultValues[fullName])) continue;

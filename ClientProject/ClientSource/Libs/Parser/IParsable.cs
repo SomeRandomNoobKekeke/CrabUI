@@ -5,10 +5,9 @@ using System.Reflection;
 using System.Diagnostics;
 
 using CUICodeGenerator;
-using CUILibs;
 using System.Xml.Linq;
 
-namespace CursedUI
+namespace CUILibs
 {
   /// <summary>
   /// This thing can be parsed to / from text

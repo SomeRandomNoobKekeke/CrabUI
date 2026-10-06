@@ -10,7 +10,7 @@ using HarmonyLib;
 using Microsoft.Xna.Framework;
 using System.IO;
 
-namespace CursedUI
+namespace CUILibs
 {
   public partial class CUIParser
   {
@@ -21,14 +21,14 @@ namespace CursedUI
       [typeof(Rectangle)] = (o) => RectangleToString((Rectangle)o),
       [typeof(Rectangle?)] = (o) => NullRectangleToString((Rectangle?)o),
       [typeof(Color)] = (o) => ColorToString((Color)o),
-      [typeof(__CUITexture2D)] = (o) => ((CUITexture2D)o).Key,
+      [typeof(CursedUI.__CUITexture2D)] = (o) => ((CursedUI.CUITexture2D)o).Key,
       [typeof((int, int))] = (o) => Tupple2IntIntToString(((int, int))o),
       [typeof(IEnumerable<string>)] = (o) => IEnumerable_StringToString((IEnumerable<string>)o),
     };
 
     public static string IEnumerable_StringToString(IEnumerable<string> items)
     {
-      CUI.Logger.Point();
+      CursedUI.CUI.Logger.Point();
       return $"[{string.Join(';', items)}]";
     }
 

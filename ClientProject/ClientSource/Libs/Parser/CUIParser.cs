@@ -8,12 +8,11 @@ using System.Linq;
 
 using Barotrauma;
 using HarmonyLib;
-using Microsoft.Xna.Framework;
 using System.IO;
 using System.Text;
-using CUILibs;
 
-namespace CursedUI
+
+namespace CUILibs
 {
   public partial class CUIParser
   {
@@ -39,7 +38,7 @@ namespace CursedUI
       }
       catch (Exception e)
       {
-        CUI.Logger.Warning($"Can't serialize [{o}]: {e.Message}");
+        CursedUI.CUI.Logger.Warning($"Can't serialize [{o}]: {e.Message}");
         return o.ToString();
       }
     }
@@ -79,7 +78,7 @@ namespace CursedUI
           MethodInfo parse = T.GetMethod("Parse", BindingFlags.Static | BindingFlags.Public);
           if (parse is null)
           {
-            CUI.Logger.Warning($"Can't parse [{raw}] into [{T}]: It doesn't have Parse method");
+            CursedUI.CUI.Logger.Warning($"Can't parse [{raw}] into [{T}]: It doesn't have Parse method");
             return CreateDefaultFor(T);
           }
           return parse.Invoke(null, [raw]);
@@ -93,7 +92,7 @@ namespace CursedUI
       }
       catch (Exception e)
       {
-        CUI.Logger.Warning($"Can't parse [{raw}] into [{T}]: {Logger.Wrap.ExceptionMessage(e)}");
+        CursedUI.CUI.Logger.Warning($"Can't parse [{raw}] into [{T}]: {Logger.Wrap.ExceptionMessage(e)}");
         return T.GetDefaultValue();
       }
     }

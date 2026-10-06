@@ -10,7 +10,7 @@ using HarmonyLib;
 using Microsoft.Xna.Framework;
 using System.IO;
 
-namespace CursedUI
+namespace CUILibs
 {
   public partial class CUIParser
   {
@@ -21,7 +21,7 @@ namespace CursedUI
       [typeof(Rectangle)] = (raw) => ParseRectangle(raw),
       [typeof(Rectangle?)] = (raw) => ParseNullRectangle(raw),
       [typeof(Color)] = (raw) => ParseColor(raw),
-      [typeof(CUITexture2D)] = CUICore.TextureManager.Get,//BRUH i either have to reference __CUITexture2D from CUICore or CUICore.TextureManager from __CUITexture2D
+      [typeof(CursedUI.CUITexture2D)] = CursedUI.CUICore.TextureManager.Get,//BRUH i either have to reference __CUITexture2D from CUICore or CUICore.TextureManager from __CUITexture2D
       [typeof((int, int))] = (raw) => Tupple2IntInt(raw),
       [typeof(IEnumerable<string>)] = (raw) => ParseIEnumerable_String(raw),
       [typeof(List<string>)] = (raw) => ParseIEnumerable_String(raw).ToList(),

@@ -5,7 +5,9 @@ using System.Reflection;
 using Microsoft.Xna.Framework;
 using CUILibs;
 using CursedUI;
-namespace CursedUIUser
+
+
+namespace CUILibs
 {
   public class CUIParserTest : UTestPack
   {

@@ -57,8 +57,8 @@ namespace CursedUI
       if (T == typeof(string)) return true;
       if (T.IsEnum) return true;
       if (
-        CUIParser.ExtraParseMethods.ContainsKey(T) &&
-        CUIParser.ExtraSerializeMethods.ContainsKey(T)
+        Parser.ExtraParseMethods.ContainsKey(T) &&
+        Parser.ExtraSerializeMethods.ContainsKey(T)
       ) return true;
 
       if (Nullable.GetUnderlyingType(T) != null && CheckCringe(Nullable.GetUnderlyingType(T))) return true;

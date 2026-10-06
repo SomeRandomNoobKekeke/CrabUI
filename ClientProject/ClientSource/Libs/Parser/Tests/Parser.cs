@@ -9,14 +9,14 @@ using CursedUI;
 
 namespace CUILibs
 {
-  public class CUIParserTest : UTestPack
+  public class ParserTest : UTestPack
   {
 
     public List<UTest> Random()
     {
       List<UTest> tests = new();
 
-      CUIParser parser = new();
+      Parser parser = new();
 
       tests.Add(new UTest(parser.Parse("123", typeof(int)), 123));
       tests.Add(new UTest(parser.Parse("255,0,255", typeof(Color)), Color.Magenta));
@@ -31,7 +31,7 @@ namespace CUILibs
     {
       List<UTest> tests = new();
 
-      CUIParser parser = new();
+      Parser parser = new();
 
       Tests.Add(new UTest(parser.Parse("[2,2]", typeof((int, int))), (2, 2)));
       Tests.Add(new UTest(parser.Parse("  [  2  ,   2   ]   ", typeof((int, int))), (2, 2)));
@@ -49,7 +49,7 @@ namespace CUILibs
     {
       List<UTest> tests = new();
 
-      CUIParser parser = new();
+      Parser parser = new();
 
       Tests.Add(new UTest(parser.SerializeArray(2, 2), "[2,2]"));
       Tests.Add(new UTest(parser.SerializeArray(2, (3, 3)), "[2,[3,3]]"));

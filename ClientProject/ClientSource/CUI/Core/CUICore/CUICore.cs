@@ -28,7 +28,7 @@ namespace CursedUI
     private CUIInput _Input = new();
     public EventConstructor _EventConstructor;
     private AnimationPlayer _AnimationPlayer;
-    private CUIParser _CUIParser = new();
+    private Parser _CUIParser = new();
     private CUISerializer _CUISerializer = new();
     private CUIAssemblyAnalyzer CUIAssemblyAnalyzer = new();
 

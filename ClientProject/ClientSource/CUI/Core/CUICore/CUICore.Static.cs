@@ -24,7 +24,7 @@ namespace CursedUI
     public static XDocument LoadXDoc(string path)
       => Instance.Handles.LoadXDoc(path);
 
-    public static CUIParser Parser => Instance._CUIParser;
+    public static Parser Parser => Instance._CUIParser;
     public static CUISerializer Serializer => Instance._CUISerializer;
 
     public static CUIGraphicsDevice GraphicsDevice => Instance.Handles.GraphicsDevice;

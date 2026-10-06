@@ -12,7 +12,7 @@ using System.IO;
 
 namespace CUILibs
 {
-  public partial class CUIParser
+  public partial class Parser
   {
     public static Dictionary<Type, Func<object, string>> ExtraSerializeMethods { get; } = new()
     {

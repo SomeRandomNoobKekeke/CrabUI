@@ -9,16 +9,18 @@ using CursedUI;
 
 namespace CUILibs
 {
-  /// <summary>
-  /// It just checks that these methods exist
-  /// </summary>
-  public class ParserInterfaceTest : ParserTest
+  public partial class ParserTest : UTestPack
   {
-    public List<UTest> Usage()
+    /// <summary>
+    /// It just checks that these methods exist
+    /// </summary>
+    public class ParserInterfaceTest : ParserTest
     {
-      Parser parser = CreateParser();
+      public List<UTest> Usage()
+      {
+        Parser parser = CreateTestParser();
 
-      return new List<UTest>()
+        return new List<UTest>()
       {
         new UTest(parser.Serialize(123), "123"),
         new UTest(parser.SerializeEnumerable(new int[] { 123, 321 }) is string),
@@ -30,25 +32,7 @@ namespace CUILibs
         new UTest(parser.Parse<int>("123"), 123),
         new UTest(parser.Parse("123", typeof(int)), 123)
       };
-    }
-
-    public UTest Settings()
-    {
-      Parser parser = CreateParser();
-
-      parser.Settings.NullTerm = "123";
-      parser.Settings.EnumerableStart = 'q';
-      parser.Settings.EnumerableEnd = 'q';
-      parser.Settings.Quote = 'q';
-      parser.Settings.EnumerableSeparator = 'q';
-      parser.Settings.DictSeparator = 'q';
-      parser.Settings.DictStart = 'q';
-      parser.Settings.DictEnd = 'q';
-      parser.Settings.DictKVSeparator = 'q';
-      parser.Settings.ExtraParseMethods = new Dictionary<Type, Func<string, object?>>();
-      parser.Settings.ExtraSerializeMethods = new Dictionary<Type, Func<object, string>>();
-
-      return new UTest(true);
+      }
     }
   }
 }

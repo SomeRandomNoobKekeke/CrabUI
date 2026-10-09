@@ -50,6 +50,23 @@ namespace CUILibs
           new UTest(parser.Parse<char>($"T"), 'T'),
         };
       }
+
+      public List<UTest> ParseInvalid()
+      {
+        Parser parser = CreateTestParser();
+
+        return new List<UTest>()
+        {
+          new UTest(parser.Parse<object>("123"), null!),
+          new UTest(parser.Parse<int>("sdaf"), 0),
+          new UTest(parser.Parse<int>(null!), 0),
+          new UTest(parser.Parse<bool>("truth nuke"), false),
+          new UTest(parser.Parse<string>(null!), null!),
+          new UTest(parser.Parse<char>(""), default(char)),
+          new UTest(parser.Parse<char>("qwer"), default(char)),
+          new UTest(parser.Parse<char>(null!), default(char)),
+        };
+      }
     }
   }
 

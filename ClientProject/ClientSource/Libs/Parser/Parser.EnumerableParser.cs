@@ -29,7 +29,7 @@ namespace CUILibs
 
       private bool IsQuoteChar(char c) => c == '\'' || c == '\"' || c == '`';
 
-      public List<string> Parse(string raw)
+      public List<string> Split(string raw)
       {
         if (raw == null || raw == "") return [];
 

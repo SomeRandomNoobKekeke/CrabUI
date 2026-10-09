@@ -17,6 +17,7 @@ namespace CUILibs
   public partial class Parser
   {
     private EnumerableParser enumerableParser = new();
+    private DictionaryParser dictionaryParser = new();
 
     public T Parse<T>(string raw) => (T)Parse(raw, typeof(T));
     public object Parse(string raw, Type T)
@@ -24,6 +25,8 @@ namespace CUILibs
       try
       {
         if (raw == Settings.NullTerm || raw == null) return T.GetDefaultValue();
+
+        if (T == typeof(string)) return raw;
 
         if (T.IsAssignableTo(typeof(IParsable)))
         {
@@ -38,9 +41,9 @@ namespace CUILibs
 
         if (ExtraParseMethods.ContainsKey(T)) return ExtraParseMethods[T](raw);
 
-        //TODO if (o is IEnumerable) ??
+        if (T.IsAssignableTo(typeof(IEnumerable<string>))) return SplitEnumerable(raw);
 
-        return ParseUnknown(raw, T);
+        return ParseValueType(raw, T);
       }
       catch (Exception e)
       {
@@ -49,19 +52,19 @@ namespace CUILibs
       }
     }
 
-    private object ParseUnknown(string raw, Type T)
+    private object ParseValueType(string raw, Type T)
     {
-      if (T == typeof(string)) return raw;
-
       if (T.IsPrimitive) return Convert.ChangeType(raw, T);
       if (T.IsEnum) return Enum.Parse(T, raw);
-      if (IsNullable(T)) return ParseUnknown(raw, Nullable.GetUnderlyingType(T));
+      if (IsNullable(T)) return ParseValueType(raw, Nullable.GetUnderlyingType(T));
       return T.GetDefaultValue();
     }
 
+    public List<string> SplitEnumerable(string raw) => enumerableParser.Split(raw);
     public IEnumerable<T> ParseEnumerable<T>(string raw)
-    {
-      return enumerableParser.Parse(raw).Select(Parse<T>);
-    }
+      => enumerableParser.Split(raw).Select(Parse<T>);
+
+    public Dictionary<string, string> SplitDict(string raw) => dictionaryParser.Split(raw);
+
   }
 }

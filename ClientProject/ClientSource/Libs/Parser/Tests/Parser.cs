@@ -16,14 +16,14 @@ namespace CUILibs
       Parser parser = new();
 
       parser.Settings.NullTerm = "_null_";
-      parser.Settings.EnumerableStart = '[';
-      parser.Settings.EnumerableEnd = ']';
-      parser.Settings.Quote = '\'';
-      parser.Settings.EnumerableSeparator = ',';
-      parser.Settings.DictSeparator = ',';
-      parser.Settings.DictStart = '{';
-      parser.Settings.DictEnd = '}';
-      parser.Settings.DictKVSeparator = ':';
+      parser.Settings.EnumerableStart = "[";
+      parser.Settings.EnumerableEnd = "]";
+      parser.Settings.Quote = "\'";
+      parser.Settings.EnumerableSeparator = ",";
+      parser.Settings.DictSeparator = ",";
+      parser.Settings.DictStart = "{";
+      parser.Settings.DictEnd = "}";
+      parser.Settings.DictKVSeparator = ":";
       parser.Settings.ExtraParseMethods = new Dictionary<Type, Func<string, object?>>();
       parser.Settings.ExtraSerializeMethods = new Dictionary<Type, Func<object, string>>();
 

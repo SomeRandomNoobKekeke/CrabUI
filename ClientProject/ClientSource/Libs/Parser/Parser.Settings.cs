@@ -25,7 +25,7 @@ namespace CUILibs
       public char EnumerableSeparator { get; set; } = ',';
       public char DictSeparator { get; set; } = ',';
       public char DictStart { get; set; } = '{';
-      public char DictEnd { get; set; } = '{';
+      public char DictEnd { get; set; } = '}';
       public char DictKVSeparator { get; set; } = ':';
 
       public Dictionary<Type, Func<string, object?>> ExtraParseMethods { get; set; } = [];

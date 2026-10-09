@@ -11,6 +11,6 @@ namespace CUILibs
 {
   public class ParserTest : UTestPack
   {
-    public static Parser DefaultParser => new Parser();
+    public static Parser CreateParser() => new Parser();
   }
 }

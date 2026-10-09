@@ -26,7 +26,7 @@ public interface IParsable
 - Enums are parsed with `Enum.Parse(T, raw)`
 - primitives are parsed with `Convert.ChangeType(raw, T)`
 - Nullable types are unwrapped and parsed by underlying type
-- you can serialize Enumarables as [a,b,c,d]
+- you can serialize Enumerables as [a,b,c,d]
 - you can serialize Dictionaries as {a: 123, b: 321, c: 213}
 - you can escape []{} chars in values or wrap values in '' so make it appear as one value
 - unlike nested json it should work fine in xml

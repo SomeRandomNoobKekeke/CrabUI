@@ -21,17 +21,18 @@ namespace CUILibs
         Parser parser = CreateTestParser();
 
         return new List<UTest>()
-      {
-        new UTest(parser.Serialize(123), "123"),
-        new UTest(parser.SerializeEnumerable(new int[] { 123, 321 }) is string),
-        new UTest(parser.SerializeDictionary(new Dictionary<string, object>()
         {
-          ["a"] = 123,
-          ["b"] = 321,
-        }) is string),
-        new UTest(parser.Parse<int>("123"), 123),
-        new UTest(parser.Parse("123", typeof(int)), 123)
-      };
+          new UTest(parser.Serialize(123), "123"),
+          new UTest(parser.SerializeEnumerable(new int[] { 123, 321 }) is string),
+          new UTest(parser.SerializeDictionary(new Dictionary<string, object>()
+          {
+            ["a"] = 123,
+            ["b"] = 321,
+          }) is string),
+          new UTest(parser.Parse<int>("123"), 123),
+          new UTest(parser.Parse("123", typeof(int)), 123),
+          new UTest(parser.ParseEnumerable<int>("[]") is IEnumerable<int>),
+        };
       }
     }
   }

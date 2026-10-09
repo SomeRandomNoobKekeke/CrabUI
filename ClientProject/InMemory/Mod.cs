@@ -58,8 +58,8 @@ namespace CursedUIUser
 
 
 
-
-        Experiment();
+        Utils.RunWithDelay(Experiment, 800);
+        //Experiment();
       }
       catch (Exception e) { Logger.Error(e); }
     }

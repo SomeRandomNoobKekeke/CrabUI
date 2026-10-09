@@ -23,6 +23,9 @@ namespace CUILibs
     /// </summary>
     public class Wrap
     {
+
+      public static string DeepestExceptionMessage(Exception e)
+        => $"{e.InnerException?.Message ?? e.Message}";
       public static string ExceptionMessage(Exception e)
         => $"[{e.Message}{(e.InnerException is null ? null : $" - {e.InnerException.Message}")}]";
 

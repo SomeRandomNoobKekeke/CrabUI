@@ -16,6 +16,9 @@ namespace CUILibs
 {
   public partial class Parser
   {
+    public ILogger Logger { get; set; } = CUILibs.Logger.Default;
+
+
     public string Serialize(object o)
     {
       try
@@ -25,12 +28,20 @@ namespace CUILibs
         if (o is IParsable) return ((IParsable)o).ToText();
         if (ExtraSerializeMethods.ContainsKey(o.GetType())) return ExtraSerializeMethods[o.GetType()](o);
         if (o is IEnumerable) return SerializeEnumerable(o as IEnumerable);
+      }
+      catch (Exception e)
+      {
+        Logger.Warning($"Can't serialize [{o}]: {e.Message}");
+      }
+
+      try
+      {
         return o.ToString();
       }
       catch (Exception e)
       {
-        CursedUI.CUI.Logger.Warning($"Can't serialize [{o}]: {e.Message}");
-        return o.ToString();
+        Logger.Warning($"Can't return [{o}].ToString(): {e.Message}");
+        return $"{CreateDefaultFor(o.GetType())}";
       }
     }
 
@@ -74,7 +85,7 @@ namespace CUILibs
           MethodInfo parse = T.GetMethod("Parse", BindingFlags.Static | BindingFlags.Public);
           if (parse is null)
           {
-            CursedUI.CUI.Logger.Warning($"Can't parse [{raw}] into [{T}]: It doesn't have Parse method");
+            Logger.Warning($"Can't parse [{raw}] into [{T}]: It doesn't have Parse method");
             return CreateDefaultFor(T);
           }
           return parse.Invoke(null, [raw]);
@@ -88,7 +99,7 @@ namespace CUILibs
       }
       catch (Exception e)
       {
-        CursedUI.CUI.Logger.Warning($"Can't parse [{raw}] into [{T}]: {Logger.Wrap.ExceptionMessage(e)}");
+        Logger.Warning($"Can't parse [{raw}] into [{T}]: {e.InnerException?.Message ?? e.Message}");
         return T.GetDefaultValue();
       }
     }

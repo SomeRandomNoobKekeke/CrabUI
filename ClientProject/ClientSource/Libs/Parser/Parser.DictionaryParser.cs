@@ -23,21 +23,22 @@ namespace CUILibs
     {
       public enum States
       {
-        BeforeDict, ReadingKey, ReadingValue, LookingForNextPart, InsideQuotes, Done
+        BeforeDict,
+        ReadingKey,
+        ReadingValue,
+        LookingForNextPart,
+        InKeyNestedCollection,
+        InValueNestedCollection,
+        InKeyQuotes,
+        InValueQuotes,
+        Done
       }
+
+      public enum CollectionType { List, Dict }
 
       public Settings_Part.WhenParsing_Part Setting { get; } = settings;
 
-      private States PrevState;
-      private States _State; private States State
-      {
-        get => _State;
-        set
-        {
-          PrevState = _State;
-          _State = value;
-        }
-      }
+
 
       [Conditional("DebugParser")]
       private void DebugLog(string msg) => CUILibs.Logger.Default.Log(msg);
@@ -51,6 +52,7 @@ namespace CUILibs
         if (string.IsNullOrEmpty(raw)) return [];
 
         Dictionary<string, string> dict = [];
+        Stack<CollectionType> nestedCollections = new();
 
 
         int partStart = 0;
@@ -59,7 +61,7 @@ namespace CUILibs
         string key = "";
         string value = "";
 
-        State = States.BeforeDict;
+        States State = States.BeforeDict;
 
         for (int i = 0; i < raw.Length; i++)
         {
@@ -72,8 +74,8 @@ namespace CUILibs
               {
                 State = States.ReadingKey;
                 partStart = i + 1;
-                DebugLog($"hit [ {raw[i]} ] State: {State} PrevState: {PrevState}");
-                continue;
+                DebugLog($"hit [ {raw[i]} ] State: {State}");
+                break;
               }
               break;
 
@@ -83,29 +85,48 @@ namespace CUILibs
                 State = States.ReadingValue;
                 key = raw.Substring(partStart, i - partStart);
                 partStart = i + 1;
-                DebugLog($"hit [ {raw[i]} ] State: {State} PrevState: {PrevState}");
-                continue;
+                DebugLog($"hit [ {raw[i]} ] State: {State}");
+                break;
               }
 
               if (IsQuoteChar(raw[i]))
               {
-                State = States.InsideQuotes;
+                State = States.InKeyQuotes;
                 quoteChar = raw[i];
                 partStart = i + 1;
-                DebugLog($"hit [ {raw[i]} ] State: {State} PrevState: {PrevState}");
-                continue;
+                DebugLog($"hit [ {raw[i]} ] State: {State}");
+                break;
               }
               break;
 
             case States.ReadingValue:
+
+              if (raw[i] == Setting.ListStart)
+              {
+                State = States.InValueNestedCollection;
+                nestedCollections.Push(CollectionType.List);
+                partStart = i;
+                break;
+              }
+
+              if (raw[i] == Setting.DictStart)
+              {
+                State = States.InValueNestedCollection;
+                nestedCollections.Push(CollectionType.Dict);
+                partStart = i;
+                break;
+              }
+
+              if (nestedCollections.Count != 0) break;
+
               if (raw[i] == Setting.DictSeparator)
               {
                 State = States.ReadingKey;
                 value = raw.Substring(partStart, i - partStart);
                 dict[key] = value;
                 partStart = i + 1;
-                DebugLog($"hit [ {raw[i]} ] State: {State} PrevState: {PrevState}");
-                continue;
+                DebugLog($"hit [ {raw[i]} ] State: {State}");
+                break;
               }
 
               if (raw[i] == Setting.DictEnd)
@@ -113,38 +134,56 @@ namespace CUILibs
                 State = States.Done;
                 value = raw.Substring(partStart, i - partStart);
                 dict[key] = value;
-                DebugLog($"hit [ {raw[i]} ] State: {State} PrevState: {PrevState}");
-                continue;
+                DebugLog($"hit [ {raw[i]} ] State: {State}");
+                break;
               }
 
               if (IsQuoteChar(raw[i]))
               {
-                State = States.InsideQuotes;
+                State = States.InValueQuotes;
                 quoteChar = raw[i];
                 partStart = i + 1;
-                DebugLog($"hit [ {raw[i]} ] State: {State} PrevState: {PrevState}");
-                continue;
+                DebugLog($"hit [ {raw[i]} ] State: {State}");
+                break;
               }
               break;
 
-            case States.InsideQuotes:
+            case States.InValueNestedCollection:
+              if (
+                (raw[i] == Setting.DictEnd && nestedCollections.Peek() == CollectionType.Dict) ||
+                (raw[i] == Setting.ListEnd && nestedCollections.Peek() == CollectionType.List)
+              )
+              {
+                nestedCollections.Pop();
+
+                if (nestedCollections.Count == 0)
+                {
+                  value = raw.Substring(partStart, i - partStart + 1);
+                  dict[key] = value;
+                  State = States.LookingForNextPart;
+                }
+                break;
+              }
+              break;
+
+            case States.InKeyQuotes:
               if (IsQuoteChar(raw[i]) && raw[i] == quoteChar)
               {
-                if (PrevState == States.ReadingKey)
-                {
-                  key = raw.Substring(partStart, i - partStart);
-                }
-
-                if (PrevState == States.ReadingValue)
-                {
-                  value = raw.Substring(partStart, i - partStart);
-                  dict[key] = value;
-                }
-
+                key = raw.Substring(partStart, i - partStart);
                 State = States.LookingForNextPart;
+                DebugLog($"hit [ {raw[i]} ] State: {State}");
+                break;
+              }
+              break;
 
-                DebugLog($"hit [ {raw[i]} ] State: {State} PrevState: {PrevState}");
-                continue;
+            case States.InValueQuotes:
+              if (IsQuoteChar(raw[i]) && raw[i] == quoteChar)
+              {
+                value = raw.Substring(partStart, i - partStart);
+                dict[key] = value;
+                State = States.LookingForNextPart;
+                DebugLog($"hit [ {raw[i]} ] State: {State}");
+                break;
               }
               break;
 
@@ -161,7 +200,7 @@ namespace CUILibs
                 partStart = i + 1;
               }
 
-              DebugLog($"hit [ {raw[i]} ] State: {State} PrevState: {PrevState}");
+              DebugLog($"hit [ {raw[i]} ] State: {State}");
               break;
 
           }

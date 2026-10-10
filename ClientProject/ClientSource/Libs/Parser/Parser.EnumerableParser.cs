@@ -20,8 +20,10 @@ namespace CUILibs
     {
       public enum States
       {
-        BeforeArray, Reading, LookingForNextPart, InsideQuotes, Done
+        BeforeArray, Reading, LookingForNextPart, InsideQuotes, InNestedCollection, Done
       }
+
+      public enum CollectionType { List, Dict }
 
       public Settings_Part.WhenParsing_Part Setting { get; } = settings;
 
@@ -37,6 +39,8 @@ namespace CUILibs
 
         List<string> parts = [];
 
+        Stack<CollectionType> nestedCollections = new();
+
 
         State = States.BeforeArray;
 
@@ -45,46 +49,81 @@ namespace CUILibs
           switch (State)
           {
             case States.BeforeArray:
-              if (raw[i] == Setting.EnumerableStart)
+              if (raw[i] == Setting.ListStart)
               {
                 State = States.Reading;
                 partStart = i + 1;
-                continue;
               }
 
               break;
 
             case States.Reading:
-              if (raw[i] == Setting.EnumerableSeparator)
+              if (raw[i] == Setting.ListSeparator)
               {
                 parts.Add(raw.Substring(partStart, i - partStart));
                 partStart = i + 1;
-                continue;
+                break;
               }
+
+              if (raw[i] == Setting.ListStart)
+              {
+                State = States.InNestedCollection;
+                nestedCollections.Push(CollectionType.List);
+                partStart = i;
+                break;
+              }
+
+              if (raw[i] == Setting.DictStart)
+              {
+                State = States.InNestedCollection;
+                nestedCollections.Push(CollectionType.Dict);
+                partStart = i;
+                break;
+              }
+
+              if (nestedCollections.Count != 0) break;
 
               if (IsQuoteChar(raw[i]))
               {
                 State = States.InsideQuotes;
                 quoteChar = raw[i];
                 partStart = i + 1;
-                continue;
+                break;
               }
 
-              if (raw[i] == Setting.EnumerableEnd)
+              if (raw[i] == Setting.ListEnd)
               {
                 State = States.Done;
                 parts.Add(raw.Substring(partStart, i - partStart));
-                continue;
+                break;
               }
 
               break;
 
             case States.LookingForNextPart:
-              if (raw[i] == Setting.EnumerableSeparator)
+              if (raw[i] == Setting.ListSeparator)
               {
                 State = States.Reading;
                 partStart = i + 1;
-                continue;
+                break;
+              }
+
+              break;
+
+            case States.InNestedCollection:
+              if (
+                (raw[i] == Setting.DictEnd && nestedCollections.Peek() == CollectionType.Dict) ||
+                (raw[i] == Setting.ListEnd && nestedCollections.Peek() == CollectionType.List)
+              )
+              {
+                nestedCollections.Pop();
+
+                if (nestedCollections.Count == 0)
+                {
+                  parts.Add(raw.Substring(partStart, i - partStart + 1));
+                  State = States.LookingForNextPart;
+                }
+                break;
               }
 
               break;

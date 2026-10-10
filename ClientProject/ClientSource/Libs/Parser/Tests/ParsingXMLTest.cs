@@ -39,7 +39,7 @@ namespace CUILibs
 
         return new List<UTest>()
         {
-          new UTest(doc.ToString(), "<root value=\"{qwe:`{q:1,w:2,e:3}`,asd:`{a:1,s:2,d:3}`}\" />"),
+          new UTest(doc.ToString(), "<root value=\"{qwe:{q:1,w:2,e:3},asd:{a:1,s:2,d:3}}\" />"),
         };
       }
     }

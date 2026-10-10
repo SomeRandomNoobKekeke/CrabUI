@@ -46,41 +46,52 @@ namespace CUILibs
       }
     }
 
+
+    private bool ShouldWrapInQuotes(object item)
+    {
+      if (item is string) return true;
+      if (item.GetType().IsPrimitive) return false;
+      if (item.GetType().IsAssignableTo(typeof(IEnumerable))) return false;
+      if (item.GetType().IsAssignableTo(typeof(IDictionary))) return false;
+      return true;
+    }
+
+    private string WrapIfNeeded(object item)
+    {
+      if (ShouldWrapInQuotes(item))
+      {
+        return $"{Settings.WhenSerializing.OpeningQuote}{Serialize(item)}{Settings.WhenSerializing.ClosingQuote}";
+      }
+
+      return Serialize(item);
+    }
+
+
     /// <summary>
     /// Basically $"[{string.Join(',', items)}]"
     /// Had to itterate manually because it's not generic IEnumerable
     /// </summary>
     public string SerializeEnumerable(IEnumerable items)
     {
-      //Wrap in `` if it's sus
-      string SerializeItem(object item)
-      {
-        if (item.GetType().IsPrimitive) return Serialize(item);
-        // if (item.GetType().IsAssignableTo(typeof(IEnumerable))) return Serialize(item);
-        // if (item.GetType().IsAssignableTo(typeof(IDictionary))) return Serialize(item);
-
-        return $"{Settings.WhenSerializing.OpeningQuote}{Serialize(item)}{Settings.WhenSerializing.ClosingQuote}";
-      }
-
-      StringBuilder sb = new StringBuilder(Settings.WhenSerializing.EnumerableStart);
+      StringBuilder sb = new StringBuilder(Settings.WhenSerializing.ListStart);
 
       IEnumerator enumerator = items.GetEnumerator();
 
       if (!enumerator.MoveNext()) // It's empty
       {
-        sb.Append(Settings.WhenSerializing.EnumerableEnd);
+        sb.Append(Settings.WhenSerializing.ListEnd);
         return sb.ToString();
       }
 
       // Serialize 1 item without EnumerableSeparator
-      sb.Append(SerializeItem(enumerator.Current));
+      sb.Append(WrapIfNeeded(enumerator.Current));
 
       while (enumerator.MoveNext())
       {
-        sb.Append(Settings.WhenSerializing.EnumerableSeparator);
-        sb.Append(SerializeItem(enumerator.Current));
+        sb.Append(Settings.WhenSerializing.ListSeparator);
+        sb.Append(WrapIfNeeded(enumerator.Current));
       }
-      sb.Append(Settings.WhenSerializing.EnumerableEnd);
+      sb.Append(Settings.WhenSerializing.ListEnd);
 
       return sb.ToString();
     }
@@ -90,18 +101,6 @@ namespace CUILibs
     /// </summary>
     public string SerializeDictionary(IDictionary dict)
     {
-      string SerializeKey(object key) => Serialize(key);
-
-      //Wrap in `` if it's sus
-      string SerializeValue(object value)
-      {
-        if (value.GetType().IsPrimitive) return Serialize(value);
-        // if (value.GetType().IsAssignableTo(typeof(IEnumerable))) return Serialize(value);
-        // if (value.GetType().IsAssignableTo(typeof(IDictionary))) return Serialize(value);
-
-        return $"{Settings.WhenSerializing.OpeningQuote}{Serialize(value)}{Settings.WhenSerializing.ClosingQuote}";
-      }
-
       StringBuilder sb = new StringBuilder();
       sb.Append(Settings.WhenSerializing.DictStart);
 
@@ -114,17 +113,17 @@ namespace CUILibs
       }
 
       // Serialize 1 kvp without DictSeparator
-      sb.Append(SerializeKey(EKey.Current));
+      sb.Append(Serialize(EKey.Current));
       sb.Append(Settings.WhenSerializing.DictKVSeparator);
-      sb.Append(SerializeValue(dict[EKey.Current]!));
+      sb.Append(WrapIfNeeded(dict[EKey.Current]!));
 
       while (EKey.MoveNext())
       {
         sb.Append(Settings.WhenSerializing.DictSeparator);
 
-        sb.Append(SerializeKey(EKey.Current));
+        sb.Append(Serialize(EKey.Current));
         sb.Append(Settings.WhenSerializing.DictKVSeparator);
-        sb.Append(SerializeValue(dict[EKey.Current]!));
+        sb.Append(WrapIfNeeded(dict[EKey.Current]!));
       }
       sb.Append(Settings.WhenSerializing.DictEnd);
 

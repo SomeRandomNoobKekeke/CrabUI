@@ -19,17 +19,17 @@ namespace CUILibs
 
       parser.Settings.WhenSerializing.OpeningQuote = "`";
       parser.Settings.WhenSerializing.ClosingQuote = "`";
-      parser.Settings.WhenSerializing.EnumerableStart = "[";
-      parser.Settings.WhenSerializing.EnumerableEnd = "]";
-      parser.Settings.WhenSerializing.EnumerableSeparator = ",";
+      parser.Settings.WhenSerializing.ListStart = "[";
+      parser.Settings.WhenSerializing.ListEnd = "]";
+      parser.Settings.WhenSerializing.ListSeparator = ",";
       parser.Settings.WhenSerializing.DictSeparator = ",";
       parser.Settings.WhenSerializing.DictStart = "{";
       parser.Settings.WhenSerializing.DictEnd = "}";
       parser.Settings.WhenSerializing.DictKVSeparator = ":";
 
-      parser.Settings.WhenParsing.EnumerableStart = '[';
-      parser.Settings.WhenParsing.EnumerableEnd = ']';
-      parser.Settings.WhenParsing.EnumerableSeparator = ',';
+      parser.Settings.WhenParsing.ListStart = '[';
+      parser.Settings.WhenParsing.ListEnd = ']';
+      parser.Settings.WhenParsing.ListSeparator = ',';
       parser.Settings.WhenParsing.DictSeparator = ',';
       parser.Settings.WhenParsing.DictStart = '{';
       parser.Settings.WhenParsing.DictEnd = '}';

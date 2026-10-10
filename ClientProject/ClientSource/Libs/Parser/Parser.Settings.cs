@@ -22,9 +22,9 @@ namespace CUILibs
       {
         public string OpeningQuote { get; set; } = "`";
         public string ClosingQuote { get; set; } = "`";
-        public string EnumerableStart { get; set; } = "[";
-        public string EnumerableEnd { get; set; } = "]";
-        public string EnumerableSeparator { get; set; } = ",";
+        public string ListStart { get; set; } = "[";
+        public string ListEnd { get; set; } = "]";
+        public string ListSeparator { get; set; } = ",";
         public string DictSeparator { get; set; } = ",";
         public string DictStart { get; set; } = "{";
         public string DictEnd { get; set; } = "}";
@@ -35,9 +35,9 @@ namespace CUILibs
       {
 
         // public char[] Quotes { get; set; } = ['\'', '\"', '`']; // Hardcoded
-        public char EnumerableStart { get; set; } = '[';
-        public char EnumerableEnd { get; set; } = ']';
-        public char EnumerableSeparator { get; set; } = ',';
+        public char ListStart { get; set; } = '[';
+        public char ListEnd { get; set; } = ']';
+        public char ListSeparator { get; set; } = ',';
         public char DictSeparator { get; set; } = ',';
         public char DictStart { get; set; } = '{';
         public char DictEnd { get; set; } = '}';

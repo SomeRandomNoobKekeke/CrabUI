@@ -24,7 +24,7 @@ namespace CUILibs
           new UTest(parser.Serialize(new int[][]{
             new int[]{1,2,3},
             new int[]{4,5,6 }
-          }), "[`[1,2,3]`,`[4,5,6]`]"),
+          }), "[[1,2,3],[4,5,6]]"),
 
           new UTest(parser.Serialize(new List<Dictionary<string,int>>{
             new Dictionary<string, int>()
@@ -37,12 +37,12 @@ namespace CUILibs
               ["a"] = 3,
               ["s"] = 4,
             },
-          }), "[`{q:1,w:2}`,`{a:3,s:4}`]"),
+          }), "[{q:1,w:2},{a:3,s:4}]"),
 
           new UTest(parser.Serialize(new Dictionary<string,int[]>{
             ["qwe"] = new int[]{1,2,3},
             ["asd"] = new int[]{3,2,1},
-          }), "{qwe:`[1,2,3]`,asd:`[3,2,1]`}"),
+          }), "{qwe:[1,2,3],asd:[3,2,1]}"),
 
           new UTest(parser.Serialize(new Dictionary<string,Dictionary<string,int>>{
             ["qwe"] = new Dictionary<string, int>()
@@ -57,9 +57,16 @@ namespace CUILibs
               ["s"] = 5,
               ["d"] = 6,
             },
-          }), "{qwe:`{q:1,w:2,e:3}`,asd:`{a:4,s:5,d:6}`}"),
+          }), "{qwe:{q:1,w:2,e:3},asd:{a:4,s:5,d:6}}"),
 
-          //TODO serialize 3 level dict
+          new UTest(parser.Serialize(new Dictionary<string,Dictionary<string,Dictionary<string,int>>>{
+            ["qwe"] = new Dictionary<string, Dictionary<string,int>>()
+            {
+              ["q"] = new Dictionary<string, int>(){ ["q"] = 1 },
+              ["w"] = new Dictionary<string, int>(){ ["w"] = 2 },
+              ["e"] = new Dictionary<string, int>(){ ["e"] = 3 },
+            },
+          }), "{qwe:{q:{q:1},w:{w:2},e:{e:3}}}"),
         };
       }
 
@@ -69,14 +76,14 @@ namespace CUILibs
 
         return new List<UTest>()
         {
-          new UListTest(parser.SplitEnumerable("[`[1,2,3]`,`[4,5,6]`]"), new string[]{"[1,2,3]","[4,5,6]"}),
-          new UListTest(parser.SplitEnumerable("[`{q:1,w:2}`,`{a:3,s:4}`]"), new string[]{ "{q:1,w:2}", "{a:3,s:4}"}),
-          new UDictTest(parser.SplitDict("{qwe:`[1,2,3]`,asd:`[4,5,6]`}"), new Dictionary<string, string>
+          new UListTest(parser.SplitEnumerable("[[1,2,3],[4,5,6]]"), new string[]{"[1,2,3]","[4,5,6]"}),
+          new UListTest(parser.SplitEnumerable("[{q:1,w:2},{a:3,s:4}]"), new string[]{ "{q:1,w:2}", "{a:3,s:4}"}),
+          new UDictTest(parser.SplitDict("{qwe:[1,2,3],asd:[4,5,6]}"), new Dictionary<string, string>
           {
             ["qwe"] = "[1,2,3]",
             ["asd"] = "[4,5,6]",
           }),
-          new UDictTest(parser.SplitDict("{qwe:`{q:1,w:2,e:3}`,asd:`{a:4,s:5,d:6}`}"), new Dictionary<string, string>
+          new UDictTest(parser.SplitDict("{qwe:{q:1,w:2,e:3},asd:{a:4,s:5,d:6}}"), new Dictionary<string, string>
           {
             ["qwe"] = "{q:1,w:2,e:3}",
             ["asd"] = "{a:4,s:5,d:6}",

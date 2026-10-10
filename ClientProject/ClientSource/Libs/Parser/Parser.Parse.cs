@@ -43,7 +43,7 @@ namespace CUILibs
 
 
 
-        if (T.IsAssignableTo(typeof(IEnumerable<string>))) return SplitEnumerable(raw);
+        if (T.IsAssignableTo(typeof(IEnumerable<string>))) return SplitList(raw);
 
         return ParseValueType(raw, T);
       }
@@ -62,7 +62,7 @@ namespace CUILibs
       return T.GetDefaultValue();
     }
 
-    public List<string> SplitEnumerable(string raw) => enumerableParser.Split(raw);
+    public List<string> SplitList(string raw) => enumerableParser.Split(raw);
     public IEnumerable<T> ParseEnumerable<T>(string raw)
       => enumerableParser.Split(raw).Select(Parse<T>);
 

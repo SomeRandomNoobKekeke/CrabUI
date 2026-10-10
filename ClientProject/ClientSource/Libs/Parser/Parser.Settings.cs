@@ -46,6 +46,8 @@ namespace CUILibs
 
       public string NullTerm { get; set; } = "_null_";
 
+      // multichar separators are not supported
+      // WhenSerializing has strings just so you could add indent
       public WhenSerializing_Part WhenSerializing { get; } = new();
       public WhenParsing_Part WhenParsing { get; } = new();
 

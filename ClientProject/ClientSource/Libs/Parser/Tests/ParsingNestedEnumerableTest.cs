@@ -76,8 +76,8 @@ namespace CUILibs
 
         return new List<UTest>()
         {
-          new UListTest(parser.SplitEnumerable("[[1,2,3],[4,5,6]]"), new string[]{"[1,2,3]","[4,5,6]"}),
-          new UListTest(parser.SplitEnumerable("[{q:1,w:2},{a:3,s:4}]"), new string[]{ "{q:1,w:2}", "{a:3,s:4}"}),
+          new UListTest(parser.SplitList("[[1,2,3],[4,5,6]]"), new string[]{"[1,2,3]","[4,5,6]"}),
+          new UListTest(parser.SplitList("[{q:1,w:2},{a:3,s:4}]"), new string[]{ "{q:1,w:2}", "{a:3,s:4}"}),
           new UDictTest(parser.SplitDict("{qwe:[1,2,3],asd:[4,5,6]}"), new Dictionary<string, string>
           {
             ["qwe"] = "[1,2,3]",

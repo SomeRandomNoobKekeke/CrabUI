@@ -32,7 +32,7 @@ namespace CUILibs
           new UTest(parser.Parse<int>("123"), 123),
           new UTest(parser.Parse("123", typeof(int)), 123),
           new UTest(parser.ParseEnumerable<int>("[]") is IEnumerable<int>),
-          new UTest(parser.SplitEnumerable("[]") is List<string>),
+          new UTest(parser.SplitList("[]") is List<string>),
           new UTest(parser.SplitDict("[]") is Dictionary<string,string>),
         };
       }

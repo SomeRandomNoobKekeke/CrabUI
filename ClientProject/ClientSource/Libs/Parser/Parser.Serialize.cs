@@ -49,6 +49,16 @@ namespace CUILibs
     /// </summary>
     public string SerializeEnumerable(IEnumerable items)
     {
+      //Wrap in `` if it's sus
+      string SerializeItem(object item)
+      {
+        if (item.GetType().IsPrimitive)
+        {
+          return Serialize(item);
+        }
+        return $"{Settings.WhenSerializing.OpeningQuote}{Serialize(item)}{Settings.WhenSerializing.ClosingQuote}";
+      }
+
       StringBuilder sb = new StringBuilder(Settings.WhenSerializing.EnumerableStart);
 
       IEnumerator enumerator = items.GetEnumerator();
@@ -60,12 +70,12 @@ namespace CUILibs
       }
 
       // Serialize 1 item without EnumerableSeparator
-      sb.Append(Serialize(enumerator.Current));
+      sb.Append(SerializeItem(enumerator.Current));
 
       while (enumerator.MoveNext())
       {
         sb.Append(Settings.WhenSerializing.EnumerableSeparator);
-        sb.Append(Serialize(enumerator.Current));
+        sb.Append(SerializeItem(enumerator.Current));
       }
       sb.Append(Settings.WhenSerializing.EnumerableEnd);
 

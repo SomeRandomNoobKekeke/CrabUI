@@ -14,7 +14,7 @@ namespace CUILibs
 {
   public partial class Parser
   {
-    public static Dictionary<Type, Func<string, object?>> ExtraParseMethods { get; } = new()
+    public static Dictionary<Type, Func<string, object?>> DefaultExtraParseMethods => new()
     {
       [typeof(Vector2)] = (raw) => ParseVector2(raw),
       [typeof(Vector2?)] = (raw) => ParseNullVector2(raw),
@@ -23,18 +23,7 @@ namespace CUILibs
       [typeof(Color)] = (raw) => ParseColor(raw),
       [typeof(CursedUI.CUITexture2D)] = CursedUI.CUICore.TextureManager.Get,//BRUH i either have to reference __CUITexture2D from CUICore or CUICore.TextureManager from __CUITexture2D
       [typeof((int, int))] = (raw) => Tupple2IntInt(raw),
-      [typeof(IEnumerable<string>)] = (raw) => ParseIEnumerable_String(raw),
-      [typeof(List<string>)] = (raw) => ParseIEnumerable_String(raw).ToList(),
-      [typeof(string[])] = (raw) => ParseIEnumerable_String(raw).ToArray(),
     };
-
-    public static IEnumerable<string> ParseIEnumerable_String(string raw)
-    {
-      if (raw == null || raw == "") return [];
-      return raw.Split('[', ']')[1].Split(';');
-    }
-
-
 
     public static Rectangle ParseRectangle(string raw)
       => ParseNullRectangle(raw) ?? new Rectangle(0, 0, 0, 0);

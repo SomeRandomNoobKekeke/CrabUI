@@ -14,7 +14,7 @@ namespace CUILibs
 {
   public partial class Parser
   {
-    public static Dictionary<Type, Func<object, string>> ExtraSerializeMethods { get; } = new()
+    public static Dictionary<Type, Func<object, string>> DefaultExtraSerializeMethods => new()
     {
       [typeof(Vector2)] = (o) => Vector2ToString((Vector2)o),
       [typeof(Vector2?)] = (o) => NullVector2ToString((Vector2?)o),
@@ -23,14 +23,7 @@ namespace CUILibs
       [typeof(Color)] = (o) => ColorToString((Color)o),
       [typeof(CursedUI.__CUITexture2D)] = (o) => ((CursedUI.CUITexture2D)o).Key,
       [typeof((int, int))] = (o) => Tupple2IntIntToString(((int, int))o),
-      [typeof(IEnumerable<string>)] = (o) => IEnumerable_StringToString((IEnumerable<string>)o),
     };
-
-    public static string IEnumerable_StringToString(IEnumerable<string> items)
-    {
-      CursedUI.CUI.Logger.Point();
-      return $"[{string.Join(';', items)}]";
-    }
 
     public static string Tupple2IntIntToString((int, int) tupple) => $"[{tupple.Item1},{tupple.Item2}]";
     public static string ColorToString(Color cl) => $"{cl.R},{cl.G},{cl.B},{cl.A}";

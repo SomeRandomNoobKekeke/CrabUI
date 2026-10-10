@@ -55,10 +55,10 @@ namespace CUILibs
       //Wrap in `` if it's sus
       string SerializeItem(object item)
       {
-        if (item.GetType().IsPrimitive)
-        {
-          return Serialize(item);
-        }
+        if (item.GetType().IsPrimitive) return Serialize(item);
+        // if (item.GetType().IsAssignableTo(typeof(IEnumerable))) return Serialize(item);
+        // if (item.GetType().IsAssignableTo(typeof(IDictionary))) return Serialize(item);
+
         return $"{Settings.WhenSerializing.OpeningQuote}{Serialize(item)}{Settings.WhenSerializing.ClosingQuote}";
       }
 
@@ -95,10 +95,10 @@ namespace CUILibs
       //Wrap in `` if it's sus
       string SerializeValue(object value)
       {
-        if (value.GetType().IsPrimitive)
-        {
-          return Serialize(value);
-        }
+        if (value.GetType().IsPrimitive) return Serialize(value);
+        // if (value.GetType().IsAssignableTo(typeof(IEnumerable))) return Serialize(value);
+        // if (value.GetType().IsAssignableTo(typeof(IDictionary))) return Serialize(value);
+
         return $"{Settings.WhenSerializing.OpeningQuote}{Serialize(value)}{Settings.WhenSerializing.ClosingQuote}";
       }
 

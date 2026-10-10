@@ -23,6 +23,8 @@ namespace CUILibs
         if (_Default is null)
         {
           _Default = new();
+          _Default.Settings.ExtraParseMethods = DefaultExtraParseMethods;
+          _Default.Settings.ExtraSerializeMethods = DefaultExtraSerializeMethods;
         }
 
         return _Default;

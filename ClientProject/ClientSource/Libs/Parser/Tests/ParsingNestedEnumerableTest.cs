@@ -58,6 +58,8 @@ namespace CUILibs
               ["d"] = 6,
             },
           }), "{qwe:`{q:1,w:2,e:3}`,asd:`{a:4,s:5,d:6}`}"),
+
+          //TODO serialize 3 level dict
         };
       }
 

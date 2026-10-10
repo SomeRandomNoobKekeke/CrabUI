@@ -19,15 +19,18 @@ namespace CUILibs
       {
         Parser parser = CreateTestParser();
 
-        Dictionary<string, int> dict = new()
-        {
-          ["qwe"] = 123,
-          ["asd"] = 321,
-        };
-
         return new List<UTest>()
         {
-          new UTest(parser.Serialize(dict), "{qwe:123,asd:321}"),
+          new UTest(parser.Serialize(new Dictionary<string, int>()
+          {
+            ["qwe"] = 123,
+            ["asd"] = 321,
+          }), "{qwe:123,asd:321}"),
+          new UTest(parser.Serialize(new Dictionary<string, string>()
+          {
+            ["qwe"] = "123",
+            ["asd"] = "321",
+          }), "{qwe:`123`,asd:`321`}"),
         };
       }
 
@@ -42,6 +45,12 @@ namespace CUILibs
             ["qwe"] = "123",
             ["asd"] = "321",
           }),
+
+          new UDictTest(parser.SplitDict("{qwe:'123, asd','asd, fgh':321}"), new Dictionary<string, string>
+          {
+            ["qwe"] = "123, asd",
+            ["asd, fgh"] = "321",
+          }),
         };
       }
 
@@ -51,7 +60,17 @@ namespace CUILibs
 
         return new List<UTest>()
         {
+          new UDictTest(parser.SplitDict("{'qwe:123':'asd:321'}"), new Dictionary<string, string>
+          {
+            ["qwe:123"] = "asd:321",
+          }),
+          new UDictTest(parser.SplitDict("{qwe':'321}"), new Dictionary<string, string>
+          {
 
+          }),
+          new UDictTest(parser.SplitDict(null), new Dictionary<string, string>{}),
+          new UDictTest(parser.SplitDict("{}"), new Dictionary<string, string>{}),
+          new UDictTest(parser.SplitDict(""), new Dictionary<string, string>{}),
         };
       }
     }

@@ -8,6 +8,9 @@ public class CUIParser
   public string SerializeDictionary(IDictionary dict);
   public T Parse<T>(string raw);
   public object Parse(string raw, Type T);
+  public List<string> SplitEnumerable(string raw);
+  public IEnumerable<T> ParseEnumerable<T>(string raw);
+  public Dictionary<string, string> SplitDict(string raw);
 }
 ```
 ### How is it better than just ToString()?

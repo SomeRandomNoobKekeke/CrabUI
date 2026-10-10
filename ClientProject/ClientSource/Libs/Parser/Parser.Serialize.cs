@@ -49,24 +49,25 @@ namespace CUILibs
     /// </summary>
     public string SerializeEnumerable(IEnumerable items)
     {
-      StringBuilder sb = new StringBuilder(Settings.EnumerableStart);
+      StringBuilder sb = new StringBuilder(Settings.WhenSerializing.EnumerableStart);
 
       IEnumerator enumerator = items.GetEnumerator();
 
-      if (!enumerator.MoveNext())
+      if (!enumerator.MoveNext()) // It's empty
       {
-        sb.Append(Settings.EnumerableEnd);
+        sb.Append(Settings.WhenSerializing.EnumerableEnd);
         return sb.ToString();
       }
 
+      // Serialize 1 item without EnumerableSeparator
       sb.Append(Serialize(enumerator.Current));
 
       while (enumerator.MoveNext())
       {
-        sb.Append(Settings.EnumerableSeparator);
+        sb.Append(Settings.WhenSerializing.EnumerableSeparator);
         sb.Append(Serialize(enumerator.Current));
       }
-      sb.Append(Settings.EnumerableEnd);
+      sb.Append(Settings.WhenSerializing.EnumerableEnd);
 
       return sb.ToString();
     }
@@ -76,30 +77,43 @@ namespace CUILibs
     /// </summary>
     public string SerializeDictionary(IDictionary dict)
     {
+      string SerializeKey(object key) => Serialize(key);
+
+      //Wrap in `` if it's sus
+      string SerializeValue(object value)
+      {
+        if (value.GetType().IsPrimitive)
+        {
+          return Serialize(value);
+        }
+        return $"{Settings.WhenSerializing.OpeningQuote}{Serialize(value)}{Settings.WhenSerializing.ClosingQuote}";
+      }
+
       StringBuilder sb = new StringBuilder();
-      sb.Append(Settings.DictStart);
+      sb.Append(Settings.WhenSerializing.DictStart);
 
       IEnumerator EKey = dict.Keys.GetEnumerator();
 
-      if (!EKey.MoveNext())
+      if (!EKey.MoveNext()) // It's empty
       {
-        sb.Append(Settings.DictEnd);
+        sb.Append(Settings.WhenSerializing.DictEnd);
         return sb.ToString();
       }
 
-      sb.Append(Serialize(EKey.Current));
-      sb.Append(Settings.DictKVSeparator);
-      sb.Append(Serialize(dict[EKey.Current]!));
+      // Serialize 1 kvp without DictSeparator
+      sb.Append(SerializeKey(EKey.Current));
+      sb.Append(Settings.WhenSerializing.DictKVSeparator);
+      sb.Append(SerializeValue(dict[EKey.Current]!));
 
       while (EKey.MoveNext())
       {
-        sb.Append(Settings.DictSeparator);
+        sb.Append(Settings.WhenSerializing.DictSeparator);
 
-        sb.Append(Serialize(EKey.Current));
-        sb.Append(Settings.DictKVSeparator);
-        sb.Append(Serialize(dict[EKey.Current]!));
+        sb.Append(SerializeKey(EKey.Current));
+        sb.Append(Settings.WhenSerializing.DictKVSeparator);
+        sb.Append(SerializeValue(dict[EKey.Current]!));
       }
-      sb.Append('}');
+      sb.Append(Settings.WhenSerializing.DictEnd);
 
       return sb.ToString();
     }

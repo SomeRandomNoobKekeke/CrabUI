@@ -16,9 +16,6 @@ namespace CUILibs
 {
   public partial class Parser
   {
-    private EnumerableParser enumerableParser = new();
-    private DictionaryParser dictionaryParser = new();
-
     public T Parse<T>(string raw) => (T)Parse(raw, typeof(T));
     public object Parse(string raw, Type T)
     {

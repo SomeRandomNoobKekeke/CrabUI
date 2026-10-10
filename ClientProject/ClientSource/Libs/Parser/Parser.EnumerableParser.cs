@@ -16,12 +16,14 @@ namespace CUILibs
 {
   public partial class Parser
   {
-    public class EnumerableParser
+    public class EnumerableParser(Settings_Part.WhenParsing_Part settings)
     {
       public enum States
       {
         BeforeArray, Reading, LookingForNextPart, InsideQuotes, Done
       }
+
+      public Settings_Part.WhenParsing_Part Setting { get; } = settings;
 
       private States State;
       private int partStart;
@@ -31,7 +33,7 @@ namespace CUILibs
 
       public List<string> Split(string raw)
       {
-        if (raw == null || raw == "") return [];
+        if (string.IsNullOrEmpty(raw)) return [];
 
         List<string> parts = [];
 
@@ -43,7 +45,7 @@ namespace CUILibs
           switch (State)
           {
             case States.BeforeArray:
-              if (raw[i] == '[')
+              if (raw[i] == Setting.EnumerableStart)
               {
                 State = States.Reading;
                 partStart = i + 1;
@@ -53,7 +55,7 @@ namespace CUILibs
               break;
 
             case States.Reading:
-              if (raw[i] == ',')
+              if (raw[i] == Setting.EnumerableSeparator)
               {
                 parts.Add(raw.Substring(partStart, i - partStart));
                 partStart = i + 1;
@@ -68,7 +70,7 @@ namespace CUILibs
                 continue;
               }
 
-              if (raw[i] == ']')
+              if (raw[i] == Setting.EnumerableEnd)
               {
                 State = States.Done;
                 parts.Add(raw.Substring(partStart, i - partStart));
@@ -78,7 +80,7 @@ namespace CUILibs
               break;
 
             case States.LookingForNextPart:
-              if (raw[i] == ',')
+              if (raw[i] == Setting.EnumerableSeparator)
               {
                 State = States.Reading;
                 partStart = i + 1;

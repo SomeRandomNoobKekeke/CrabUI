@@ -20,7 +20,7 @@ namespace CUILibs
     public static object CreateDefaultFor(Type T)
     {
       if (T is null) return null;
-      if (T == typeof(void)) return null;
+      // if (T == typeof(void)) return null;
       if (T.IsValueType) return Activator.CreateInstance(T);
       return null;
     }

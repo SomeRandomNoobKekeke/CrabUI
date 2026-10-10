@@ -16,6 +16,30 @@ namespace CUILibs
 {
   public partial class Parser
   {
+    private static Parser _Default; public static Parser Default
+    {
+      get
+      {
+        if (_Default is null)
+        {
+          _Default = new();
+        }
+
+        return _Default;
+      }
+    }
+
+
     public ILogger Logger { get; set; } = CUILibs.Logger.Default;
+    public Settings_Part Settings { get; set; } = new();
+
+    private EnumerableParser enumerableParser;
+    private DictionaryParser dictionaryParser;
+
+    public Parser()
+    {
+      enumerableParser = new(Settings.WhenParsing);
+      dictionaryParser = new(Settings.WhenParsing);
+    }
   }
 }

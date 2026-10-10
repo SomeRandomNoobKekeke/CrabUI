@@ -25,6 +25,11 @@ namespace CUILibs
 
         if (T == typeof(string)) return raw;
 
+        if (Settings.ExtraParseMethods.ContainsKey(T))
+        {
+          return Settings.ExtraParseMethods[T](raw);
+        }
+
         if (T.IsAssignableTo(typeof(IParsable)))
         {
           MethodInfo parse = T.GetMethod("Parse", BindingFlags.Static | BindingFlags.Public);
@@ -36,7 +41,7 @@ namespace CUILibs
           return parse.Invoke(null, [raw]);
         }
 
-        if (ExtraParseMethods.ContainsKey(T)) return ExtraParseMethods[T](raw);
+
 
         if (T.IsAssignableTo(typeof(IEnumerable<string>))) return SplitEnumerable(raw);
 

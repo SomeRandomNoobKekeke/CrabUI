@@ -22,8 +22,11 @@ namespace CUILibs
       {
         if (o is null) return Settings.NullTerm;
         if (o is string) return o as string;
+        if (Settings.ExtraSerializeMethods.ContainsKey(o.GetType()))
+        {
+          return Settings.ExtraSerializeMethods[o.GetType()](o);
+        }
         if (o is IParsable) return ((IParsable)o).ToText();
-        if (ExtraSerializeMethods.ContainsKey(o.GetType())) return ExtraSerializeMethods[o.GetType()](o);
         if (o is IDictionary) return SerializeDictionary(o as IDictionary);
         if (o is IEnumerable) return SerializeEnumerable(o as IEnumerable);
       }

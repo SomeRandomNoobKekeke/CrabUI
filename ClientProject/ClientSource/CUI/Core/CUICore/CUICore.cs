@@ -31,8 +31,7 @@ namespace CursedUI
 
     private CUISerializer _CUISerializer = new();
     private CUIAssemblyAnalyzer CUIAssemblyAnalyzer = new();
-
-
+    private CUIParser _Parser = new CUIParser();
 
 
     private bool Activated;

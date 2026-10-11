@@ -21,7 +21,6 @@ namespace CUILibs
       [typeof(Rectangle)] = (o) => RectangleToString((Rectangle)o),
       [typeof(Rectangle?)] = (o) => NullRectangleToString((Rectangle?)o),
       [typeof(Color)] = (o) => ColorToString((Color)o),
-      [typeof(CursedUI.__CUITexture2D)] = (o) => ((CursedUI.CUITexture2D)o).Key,
       [typeof((int, int))] = (o) => Tupple2IntIntToString(((int, int))o),
     };
 

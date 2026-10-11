@@ -26,6 +26,7 @@ namespace CursedUI
 
 
     public static CUISerializer Serializer => Instance._CUISerializer;
+    public static CUIParser Parser => Instance._Parser;
 
     public static CUIGraphicsDevice GraphicsDevice => Instance.Handles.GraphicsDevice;
     public static SamplerState SamplerState => Instance.Handles.GUI.SamplerState;

@@ -21,7 +21,6 @@ namespace CUILibs
       [typeof(Rectangle)] = (raw) => ParseRectangle(raw),
       [typeof(Rectangle?)] = (raw) => ParseNullRectangle(raw),
       [typeof(Color)] = (raw) => ParseColor(raw),
-      [typeof(CursedUI.CUITexture2D)] = CursedUI.CUICore.TextureManager.Get,//BRUH i either have to reference __CUITexture2D from CUICore or CUICore.TextureManager from __CUITexture2D
       [typeof((int, int))] = (raw) => Tupple2IntInt(raw),
     };
 

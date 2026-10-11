@@ -24,8 +24,7 @@ namespace CursedUI
 
     public static object Parse(string raw)
     {
-      raw = raw.Replace('\'', '"');
-      Dictionary<string, string> dict = JsonSerializer.Deserialize<Dictionary<string, string>>(raw);
+      Dictionary<string, string> dict = CUICore.Parser.SplitDict(raw);
 
       TextureSource source = new TextureSource();
 
@@ -40,16 +39,14 @@ namespace CursedUI
 
     public string ToText()
     {
-
-
-      Dictionary<string, string> dict = new Dictionary<string, string>()
+      Dictionary<string, object> dict = new()
       {
         ["texture"] = Texture.Key ?? "",
       };
 
-      if (SourceRectangle != null) dict["sourcerect"] = CUICore.Parser.Serialize(SourceRectangle);
+      if (SourceRectangle != null) dict["sourcerect"] = SourceRectangle;
 
-      return JsonSerializer.Serialize(dict).Replace('"', '\'');
+      return CUICore.Parser.Serialize(dict);
     }
   }
 }

@@ -19,8 +19,10 @@ namespace CursedUIUser
       {
         CUIComponent frame = new CUIDefault.Frame("AnimatedSprite", 400, 600);
 
+        CUI.TextureManager.LoadAs("Assets/PNG/For testing/CursorDefault.png", "Goldenglow Cursor");
+
         CUIAnimatedSprite sprite = new CUIAnimatedSprite(
-          CUI.TextureManager.Get("Assets/PNG/For testing/CursorDefault.png"),
+          CUI.TextureManager.Get("Goldenglow Cursor"),
           frames: new Point(12, 1),
           frameSize: new Point(64, 64),
           gap: new Point(2, 0),

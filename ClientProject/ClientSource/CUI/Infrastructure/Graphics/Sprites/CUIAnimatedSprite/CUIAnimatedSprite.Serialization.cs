@@ -18,8 +18,7 @@ namespace CursedUI
     {
       if (string.IsNullOrEmpty(raw)) return new CUIMultiSprite();
 
-      raw = raw.Replace('\'', '"');
-      Dictionary<string, string> dict = JsonSerializer.Deserialize<Dictionary<string, string>>(raw);
+      Dictionary<string, string> dict = CUICore.Parser.SplitDict(raw);
       return Parse(dict);
     }
 
@@ -29,7 +28,7 @@ namespace CursedUI
 
       if (dict.ContainsKey("sources"))
       {
-        IEnumerable<string> rawSourses = CUICore.Parser.Parse<IEnumerable<string>>(dict["sources"]);
+        List<string> rawSourses = CUICore.Parser.SplitList(dict["sources"]);
         foreach (string rawSource in rawSourses)
         {
           sprite.Add(CUICore.Parser.Parse<ITextureSource>(rawSource));
@@ -43,7 +42,7 @@ namespace CursedUI
 
       if (dict.ContainsKey("msPerFrame"))
       {
-        sprite.MsPerFrame = CUICore.Parser.Parse<int>(dict["msPerFrame"]);
+        sprite.MsPerFrame = CUICore.Parser.Parse<double>(dict["msPerFrame"]);
       }
 
       return sprite;
@@ -51,15 +50,13 @@ namespace CursedUI
 
     public override string ToText()
     {
-      Dictionary<string, string> dict = new();
+      Dictionary<string, object> dict = new();
 
-      dict["msPerFrame"] = MsPerFrame.ToString();
+      dict["msPerFrame"] = MsPerFrame;
+      dict["sources"] = Sources;
+      if (CurrentSource != 0) dict["current"] = CurrentSource;
 
-      dict["sources"] = CUICore.Parser.Serialize(Sources);
-      if (CurrentSource != 0) dict["current"] = CurrentSource.ToString();
-
-
-      return JsonSerializer.Serialize(dict).Replace('"', '\'');
+      return CUICore.Parser.Serialize(dict);
     }
   }
 }

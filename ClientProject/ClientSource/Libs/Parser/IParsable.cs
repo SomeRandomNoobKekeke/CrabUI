@@ -14,6 +14,7 @@ namespace CUILibs
   /// </summary>
   public interface IParsable
   {
+    public bool WrapInQuotes => true;
     public static abstract object Parse(string raw);
     public string ToText();
   }

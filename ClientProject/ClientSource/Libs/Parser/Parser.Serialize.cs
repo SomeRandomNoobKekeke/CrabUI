@@ -50,6 +50,7 @@ namespace CUILibs
     private bool ShouldWrapInQuotes(object item)
     {
       if (item is string) return true;
+      if (item is IParsable parsable) return parsable.WrapInQuotes;
       if (item.GetType().IsPrimitive) return false;
       if (item.GetType().IsAssignableTo(typeof(IEnumerable))) return false;
       if (item.GetType().IsAssignableTo(typeof(IDictionary))) return false;

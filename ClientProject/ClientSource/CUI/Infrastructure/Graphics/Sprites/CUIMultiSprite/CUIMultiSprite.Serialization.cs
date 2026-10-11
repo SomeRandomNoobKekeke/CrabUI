@@ -17,14 +17,15 @@ namespace CursedUI
     public static new object Parse(string raw)
     {
       if (string.IsNullOrEmpty(raw)) return new CUIMultiSprite();
+      Dictionary<string, string> dict = CUICore.Parser.SplitDict(raw);
 
-      raw = raw.Replace('\'', '"');
-      Dictionary<string, string> dict = JsonSerializer.Deserialize<Dictionary<string, string>>(raw);
       return Parse(dict);
     }
 
     public static object Parse(Dictionary<string, string> dict)
     {
+      if (dict.ContainsKey("msPerFrame")) return CUIAnimatedSprite.Parse(dict);
+
       CUIMultiSprite sprite = new();
 
       if (dict.ContainsKey("sources"))
@@ -46,12 +47,12 @@ namespace CursedUI
 
     public override string ToText()
     {
-      Dictionary<string, string> dict = new();
+      Dictionary<string, object> dict = new();
 
-      dict["sources"] = CUICore.Parser.Serialize(Sources);
-      if (CurrentSource != 0) dict["current"] = CurrentSource.ToString();
+      dict["sources"] = Sources;
+      if (CurrentSource != 0) dict["current"] = CurrentSource;
 
-      return JsonSerializer.Serialize(dict).Replace('"', '\'');
+      return CUICore.Parser.Serialize(dict);
     }
   }
 }

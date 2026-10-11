@@ -37,9 +37,9 @@ namespace CursedUI
       {
         return GetByName(raw);
       }
-
-      raw = raw.Replace('\'', '"');
-      Dictionary<string, string> dict = JsonSerializer.Deserialize<Dictionary<string, string>>(raw);
+      CUI.Logger.LogVars(raw);
+      Dictionary<string, string> dict = CUICore.Parser.SplitDict(raw);
+      CUI.Logger.LogVars(Logger.Wrap.IDictionary(dict));
 
       if (dict.ContainsKey("sources")) return CUIMultiSprite.Parse(dict);
 
@@ -69,31 +69,31 @@ namespace CursedUI
     {
       if (Name is not null && Equals(GetByName(Name))) return Name;
 
-      Dictionary<string, string> dict = new Dictionary<string, string>()
+      Dictionary<string, object> dict = new()
       {
         ["texture"] = Texture.Key ?? "",
       };
 
       if (ColorTL == ColorTR && ColorTL == ColorBL && ColorTL == ColorBR)
       {
-        if (Color != DefaultColor) dict["color"] = CUICore.Parser.Serialize(Color);
+        if (Color != DefaultColor) dict["color"] = Color;
       }
       else
       {
-        if (ColorTL != DefaultColor) dict["colorTL"] = CUICore.Parser.Serialize(ColorTL);
-        if (ColorTR != DefaultColor) dict["colorTR"] = CUICore.Parser.Serialize(ColorTR);
-        if (ColorBR != DefaultColor) dict["colorBR"] = CUICore.Parser.Serialize(ColorBR);
-        if (ColorBL != DefaultColor) dict["colorBL"] = CUICore.Parser.Serialize(ColorBL);
+        if (ColorTL != DefaultColor) dict["colorTL"] = ColorTL;
+        if (ColorTR != DefaultColor) dict["colorTR"] = ColorTR;
+        if (ColorBR != DefaultColor) dict["colorBR"] = ColorBR;
+        if (ColorBL != DefaultColor) dict["colorBL"] = ColorBL;
       }
 
-      if (SourceRectangle != null) dict["sourcerect"] = CUICore.Parser.Serialize(SourceRectangle);
-      if (Rotation != 0) dict["rotation"] = CUICore.Parser.Serialize(Rotation);
-      if (Origin != Vector2.Zero) dict["origin"] = CUICore.Parser.Serialize(Origin);
-      if (Effects != SpriteEffects.None) dict["effects"] = CUICore.Parser.Serialize(Effects);
-      if (LayerDepth != 0) dict["layerdepth"] = CUICore.Parser.Serialize(LayerDepth);
-      if (DrawMode != CUISpriteDrawMode.Resize) dict["drawmode"] = CUICore.Parser.Serialize(DrawMode);
+      if (SourceRectangle != null) dict["sourcerect"] = SourceRectangle;
+      if (Rotation != 0) dict["rotation"] = Rotation;
+      if (Origin != Vector2.Zero) dict["origin"] = Origin;
+      if (Effects != SpriteEffects.None) dict["effects"] = Effects;
+      if (LayerDepth != 0) dict["layerdepth"] = LayerDepth;
+      if (DrawMode != CUISpriteDrawMode.Resize) dict["drawmode"] = DrawMode;
 
-      return JsonSerializer.Serialize(dict).Replace('"', '\'');
+      return CUICore.Parser.Serialize(dict);
     }
   }
 }

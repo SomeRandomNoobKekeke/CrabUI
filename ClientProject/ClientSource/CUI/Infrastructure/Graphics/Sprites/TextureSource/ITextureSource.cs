@@ -15,7 +15,8 @@ namespace CursedUI
     public CUITexture2D Texture { get; }
     public Rectangle? SourceRectangle { get; }
 
-    static object IParsable.Parse(string raw) => Parse(raw);
+    bool IParsable.WrapInQuotes => false;
+    static object IParsable.Parse(string raw) => Parse(raw); // Reimplemented!
     public static new object Parse(string raw)
     {
       if (string.IsNullOrEmpty(raw)) return new CUISprite();
@@ -26,8 +27,7 @@ namespace CursedUI
         return CUISprite.GetByName(raw);
       }
 
-      raw = raw.Replace('\'', '"');
-      Dictionary<string, string> dict = JsonSerializer.Deserialize<Dictionary<string, string>>(raw);
+      Dictionary<string, string> dict = CUICore.Parser.SplitDict(raw);
 
       TextureSource source = new TextureSource();
 

@@ -58,13 +58,6 @@ namespace CUILibs
               break;
 
             case States.Reading:
-              if (raw[i] == Setting.ListSeparator)
-              {
-                parts.Add(raw.Substring(partStart, i - partStart));
-                partStart = i + 1;
-                break;
-              }
-
               if (raw[i] == Setting.ListStart)
               {
                 State = States.InNestedCollection;
@@ -82,6 +75,13 @@ namespace CUILibs
               }
 
               if (nestedCollections.Count != 0) break;
+
+              if (raw[i] == Setting.ListSeparator)
+              {
+                parts.Add(raw.Substring(partStart, i - partStart));
+                partStart = i + 1;
+                break;
+              }
 
               if (IsQuoteChar(raw[i]))
               {
@@ -111,6 +111,18 @@ namespace CUILibs
               break;
 
             case States.InNestedCollection:
+              if (raw[i] == Setting.ListStart)
+              {
+                nestedCollections.Push(CollectionType.List);
+                break;
+              }
+
+              if (raw[i] == Setting.DictStart)
+              {
+                nestedCollections.Push(CollectionType.Dict);
+                break;
+              }
+
               if (
                 (raw[i] == Setting.DictEnd && nestedCollections.Peek() == CollectionType.Dict) ||
                 (raw[i] == Setting.ListEnd && nestedCollections.Peek() == CollectionType.List)

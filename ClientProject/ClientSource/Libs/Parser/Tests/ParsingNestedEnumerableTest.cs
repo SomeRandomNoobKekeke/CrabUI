@@ -78,6 +78,9 @@ namespace CUILibs
         {
           new UListTest(parser.SplitList("[[1,2,3],[4,5,6]]"), new string[]{"[1,2,3]","[4,5,6]"}),
           new UListTest(parser.SplitList("[{q:1,w:2},{a:3,s:4}]"), new string[]{ "{q:1,w:2}", "{a:3,s:4}"}),
+          new UListTest(parser.SplitList("[{qwe:[1,2,3]},{asd:[1,2,3]}]"), new string[]{
+            "{qwe:[1,2,3]}", "{asd:[1,2,3]}"}
+          ),
           new UDictTest(parser.SplitDict("{qwe:[1,2,3],asd:[4,5,6]}"), new Dictionary<string, string>
           {
             ["qwe"] = "[1,2,3]",
@@ -87,6 +90,16 @@ namespace CUILibs
           {
             ["qwe"] = "{q:1,w:2,e:3}",
             ["asd"] = "{a:4,s:5,d:6}",
+          }),
+          new UDictTest(parser.SplitDict("{current:1, sources:[{texture:`123`, rect:`[0,0,1,1]`}, {texture:`321`, rect:`[1,1,1,1]`}]}"), new Dictionary<string, string>
+          {
+            ["current"] = "1",
+            ["sources"] = "[{texture:`123`, rect:`[0,0,1,1]`}, {texture:`321`, rect:`[1,1,1,1]`}]",
+          }),
+          new UListTest(parser.SplitList("[{texture:`123`, rect:`[0,0,1,1]`}, {texture:`321`, rect:`[1,1,1,1]`}]"), new string[]
+          {
+            "{texture:`123`, rect:`[0,0,1,1]`}",
+            "{texture:`321`, rect:`[1,1,1,1]`}",
           }),
         };
       }

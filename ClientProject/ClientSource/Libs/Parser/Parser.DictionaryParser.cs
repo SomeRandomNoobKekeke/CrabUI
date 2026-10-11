@@ -55,6 +55,11 @@ namespace CUILibs
         Stack<CollectionType> nestedCollections = new();
 
 
+        void AddKVP(string key, string value)
+        {
+          dict[key.Trim()] = value.Trim();
+        }
+
         int partStart = 0;
         char quoteChar = '\'';
 
@@ -106,6 +111,7 @@ namespace CUILibs
                 State = States.InValueNestedCollection;
                 nestedCollections.Push(CollectionType.List);
                 partStart = i;
+                DebugLog($"hit [ {raw[i]} ] State: {State} nestedCollections: {nestedCollections.Count}");
                 break;
               }
 
@@ -114,6 +120,7 @@ namespace CUILibs
                 State = States.InValueNestedCollection;
                 nestedCollections.Push(CollectionType.Dict);
                 partStart = i;
+                DebugLog($"hit [ {raw[i]} ] State: {State} nestedCollections: {nestedCollections.Count}");
                 break;
               }
 
@@ -123,7 +130,7 @@ namespace CUILibs
               {
                 State = States.ReadingKey;
                 value = raw.Substring(partStart, i - partStart);
-                dict[key] = value;
+                AddKVP(key, value);
                 partStart = i + 1;
                 DebugLog($"hit [ {raw[i]} ] State: {State}");
                 break;
@@ -133,7 +140,7 @@ namespace CUILibs
               {
                 State = States.Done;
                 value = raw.Substring(partStart, i - partStart);
-                dict[key] = value;
+                AddKVP(key, value);
                 DebugLog($"hit [ {raw[i]} ] State: {State}");
                 break;
               }
@@ -149,6 +156,20 @@ namespace CUILibs
               break;
 
             case States.InValueNestedCollection:
+              if (raw[i] == Setting.ListStart)
+              {
+                nestedCollections.Push(CollectionType.List);
+                DebugLog($"hit [ {raw[i]} ] State: {State} nestedCollections: {nestedCollections.Count}");
+                break;
+              }
+
+              if (raw[i] == Setting.DictStart)
+              {
+                nestedCollections.Push(CollectionType.Dict);
+                DebugLog($"hit [ {raw[i]} ] State: {State} nestedCollections: {nestedCollections.Count}");
+                break;
+              }
+
               if (
                 (raw[i] == Setting.DictEnd && nestedCollections.Peek() == CollectionType.Dict) ||
                 (raw[i] == Setting.ListEnd && nestedCollections.Peek() == CollectionType.List)
@@ -159,9 +180,10 @@ namespace CUILibs
                 if (nestedCollections.Count == 0)
                 {
                   value = raw.Substring(partStart, i - partStart + 1);
-                  dict[key] = value;
+                  AddKVP(key, value);
                   State = States.LookingForNextPart;
                 }
+                DebugLog($"hit [ {raw[i]} ] State: {State} nestedCollections: {nestedCollections.Count}");
                 break;
               }
               break;
@@ -180,7 +202,7 @@ namespace CUILibs
               if (IsQuoteChar(raw[i]) && raw[i] == quoteChar)
               {
                 value = raw.Substring(partStart, i - partStart);
-                dict[key] = value;
+                AddKVP(key, value);
                 State = States.LookingForNextPart;
                 DebugLog($"hit [ {raw[i]} ] State: {State}");
                 break;

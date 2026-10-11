@@ -44,7 +44,7 @@ namespace CursedUI
         _Sprite = value;
         _Sprite.ShouldBufferData = IgnoretransparentPixels;
 
-        if (_Color.Elevated && _Sprite.ColorIsDefault)
+        if (_Color.Elevated && !_Sprite.ColorWasModified)
         {
           _Sprite.Color = _Color.Value;
         }

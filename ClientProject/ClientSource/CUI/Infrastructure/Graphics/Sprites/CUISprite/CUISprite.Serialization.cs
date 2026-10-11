@@ -73,17 +73,21 @@ namespace CursedUI
         ["texture"] = Texture.Key ?? "",
       };
 
-      if (ColorTL == ColorTR && ColorTL == ColorBL && ColorTL == ColorBR)
+      if (ColorWasModified)
       {
-        if (Color != DefaultColor) dict["color"] = Color;
+        if (ColorTL == ColorTR && ColorTL == ColorBL && ColorTL == ColorBR)
+        {
+          dict["color"] = Color;
+        }
+        else
+        {
+          dict["colorTL"] = ColorTL;
+          dict["colorTR"] = ColorTR;
+          dict["colorBR"] = ColorBR;
+          dict["colorBL"] = ColorBL;
+        }
       }
-      else
-      {
-        if (ColorTL != DefaultColor) dict["colorTL"] = ColorTL;
-        if (ColorTR != DefaultColor) dict["colorTR"] = ColorTR;
-        if (ColorBR != DefaultColor) dict["colorBR"] = ColorBR;
-        if (ColorBL != DefaultColor) dict["colorBL"] = ColorBL;
-      }
+
 
       if (SourceRectangle != null) dict["sourcerect"] = SourceRectangle;
       if (Rotation != 0) dict["rotation"] = Rotation;

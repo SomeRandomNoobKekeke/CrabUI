@@ -31,7 +31,7 @@ namespace CursedUI
     public Point Size => SourceRectangle.HasValue ? SourceRectangle.Value.Size : Texture.Bounds.Size;
 
     //CRINGE to block sprite color inheritance in SimpleTexture
-    public bool ColorIsDefault { get; private set; } = true;
+    public bool ColorWasModified { get; private set; }
 
     public static Color DefaultColor => Color.White;
 
@@ -43,22 +43,22 @@ namespace CursedUI
     public Color ColorTL
     {
       get => _ColorTL;
-      set { _ColorTL = value; ColorIsDefault = false; }
+      set { _ColorTL = value; ColorWasModified = true; }
     }
     public Color ColorTR
     {
       get => _ColorTR;
-      set { _ColorTR = value; ColorIsDefault = false; }
+      set { _ColorTR = value; ColorWasModified = true; }
     }
     public Color ColorBR
     {
       get => _ColorBR;
-      set { _ColorBR = value; ColorIsDefault = false; }
+      set { _ColorBR = value; ColorWasModified = true; }
     }
     public Color ColorBL
     {
       get => _ColorBL;
-      set { _ColorBL = value; ColorIsDefault = false; }
+      set { _ColorBL = value; ColorWasModified = true; }
     }
 
     public Color Color

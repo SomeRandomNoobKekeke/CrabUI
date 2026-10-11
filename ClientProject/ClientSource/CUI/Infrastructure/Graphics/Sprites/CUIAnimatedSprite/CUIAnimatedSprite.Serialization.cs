@@ -12,7 +12,7 @@ using System.Collections;
 
 namespace CursedUI
 {
-  public partial class CUIAnimatedSprite : CUIMultiSprite, CUICustomSerializable
+  public partial class CUIAnimatedSprite : CUIMultiSprite
   {
     public static new object Parse(string raw)
     {
@@ -49,7 +49,6 @@ namespace CursedUI
       return sprite;
     }
 
-    string CUICustomSerializable.ToText(object defValue) => ToText();
     public override string ToText()
     {
       Dictionary<string, string> dict = new();

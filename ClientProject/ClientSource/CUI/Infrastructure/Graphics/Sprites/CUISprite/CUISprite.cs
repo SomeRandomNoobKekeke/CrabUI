@@ -187,7 +187,9 @@ namespace CursedUI
       SourceRectangle = basedOn.SourceRectangle;
     }
 
-    public override string ToString() => Name is not null ? Name : $"CUISprite({Texture}:{CUICore.Parser.Serialize(SourceRectangle)})";
+    public override string ToString() => Name is not null ?
+      Name :
+      $"CUISprite({Texture}{(SourceRectangle is null ? "" : $": {CUICore.Parser.Serialize(SourceRectangle)}")})";
 
     public override bool Equals(object? obj)
     {

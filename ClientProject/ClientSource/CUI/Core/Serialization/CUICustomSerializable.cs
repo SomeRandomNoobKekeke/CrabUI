@@ -10,9 +10,9 @@ using System.Xml.Linq;
 
 namespace CursedUI
 {
-
-  public interface CUICustomSerializable : IParsable
-  {
-    public string ToText(object defValue);
-  }
+  //TODO
+  // public interface CUICustomSerializable : IParsable
+  // {
+  //   public string ToText(object defValue);
+  // }
 }

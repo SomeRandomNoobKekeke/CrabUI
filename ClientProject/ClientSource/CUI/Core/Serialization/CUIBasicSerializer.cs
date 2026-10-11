@@ -23,26 +23,10 @@ namespace CursedUI
       {
         foreach (var (fullName, pp) in info.SerializableProps)
         {
-          if (pp.Type.IsAssignableTo(typeof(CUICustomSerializable)))
-          {
-            CUICustomSerializable value = (CUICustomSerializable)pp.GetValue(o);
+          object value = pp.GetValue(o);
+          if (defaultValues.ContainsKey(fullName) && Equals(value, defaultValues[fullName])) continue;
 
-            //TODO it's excessive
-            if (defaultValues.ContainsKey(fullName) && Equals(value, defaultValues[fullName])) continue;
-
-            element.SetAttributeValue(
-              fullName,
-              value.ToText(defaultValues.GetValueOrDefault(fullName))
-            );
-
-          }
-          else
-          {
-            object value = pp.GetValue(o);
-            if (defaultValues.ContainsKey(fullName) && Equals(value, defaultValues[fullName])) continue;
-
-            element.SetAttributeValue(fullName, CUICore.Parser.Serialize(value));
-          }
+          element.SetAttributeValue(fullName, CUICore.Parser.Serialize(value));
         }
       }
 

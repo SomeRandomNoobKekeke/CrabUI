@@ -13,7 +13,6 @@ namespace CursedUI
   {
     public bool IsCUISerializable(Type T) => T.IsAssignableTo(typeof(CUISerializable));
     public bool IsNestedSerializable(Type T) => T.IsAssignableTo(typeof(NestedCUISerializable));
-    public bool IsICustomSerializable(PropertyInfo pi) => pi.PropertyType.IsAssignableTo(typeof(CUICustomSerializable));
     public bool IsCUISerializableProp(PropertyInfo pi)
       => pi.GetCustomAttribute<CUISerializableProp>() != null;
 

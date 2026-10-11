@@ -12,6 +12,7 @@ using System.Collections;
 
 namespace CursedUI
 {
+  //LINK:/ClientProject\InMemory\CUITest\Snapshots\Tests\Random\AnimatedSprite.cs
   public partial class CUIAnimatedSprite : CUIMultiSprite
   {
     public double MsPerFrame
@@ -26,6 +27,12 @@ namespace CursedUI
       set => Animation.Duration = Sources.Count * value;
     }
 
+    public bool IsRunnung
+    {
+      get => Animation.IsRunning;
+      set => Animation.IsRunning = value;
+    }
+
     private TypedAnimation<int> _Animation; public TypedAnimation<int> Animation
     {
       get => _Animation;
@@ -36,22 +43,36 @@ namespace CursedUI
         if (_Animation is not null) _Animation.Changed += UpdateSource;
       }
     }
-
     private void UpdateSource(int i) => CurrentSource = i;
+
+
+    public override List<ITextureSource> Sources
+    {
+      get => _Sources;
+      set
+      {
+        base.Sources = value;
+
+        if (Animation is not null) Animation.EndValue = Sources.Count - 1;
+      }
+    }
+
+    public override void Add(ITextureSource source)
+    {
+      base.Add(source);
+      if (Animation is not null) Animation.EndValue = Sources.Count - 1;
+    }
 
 
     public CUIAnimatedSprite() : base()
     {
-      Animation = new();
-    }
+      Animation = new()
+      {
+        StartValue = 0,
+        OnEnd = ActionOnTrackEnd.Repeat,
+      };
 
-    public CUIAnimatedSprite(
-      List<ITextureSource> sources,
-      TypedAnimation<int> animation
-    ) : base()
-    {
-      Sources = sources;
-      Animation = animation;
+      Animation.RunForward();
     }
 
     public CUIAnimatedSprite(
@@ -60,7 +81,7 @@ namespace CursedUI
       Point? frameSize,
       Point? gap = null,
       Point? start = null
-    ) : base()
+    ) : this()
     {
       Point _frames = frames ?? new Point(1, 1);
       Point _frameSize = frameSize ?? texture.Bounds.Size;
@@ -86,13 +107,6 @@ namespace CursedUI
       }
 
       Sources = sources;
-
-      Animation = new()
-      {
-        StartValue = 0,
-        EndValue = Sources.Count - 1,
-        OnEnd = ActionOnTrackEnd.Repeat,
-      };
     }
 
   }

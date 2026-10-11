@@ -15,6 +15,7 @@ namespace CursedUIUser
   {
     public static partial class Random
     {
+      //LINK:/ClientProject\ClientSource\CUI\Infrastructure\Graphics\Sprites\CUIAnimatedSprite\CUIAnimatedSprite.cs
       public static CUIComponent AnimatedSprite()
       {
         CUIComponent frame = new CUIDefault.Frame("AnimatedSprite", 400, 600);

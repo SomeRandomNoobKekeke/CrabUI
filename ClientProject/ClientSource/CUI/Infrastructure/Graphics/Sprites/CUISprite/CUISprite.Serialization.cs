@@ -37,9 +37,8 @@ namespace CursedUI
       {
         return GetByName(raw);
       }
-      CUI.Logger.LogVars(raw);
+
       Dictionary<string, string> dict = CUICore.Parser.SplitDict(raw);
-      CUI.Logger.LogVars(Logger.Wrap.IDictionary(dict));
 
       if (dict.ContainsKey("sources")) return CUIMultiSprite.Parse(dict);
 

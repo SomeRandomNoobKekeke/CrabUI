@@ -45,6 +45,13 @@ namespace CursedUI
         sprite.MsPerFrame = CUICore.Parser.Parse<double>(dict["msPerFrame"]);
       }
 
+      if (dict.ContainsKey("isRunning"))
+      {
+        sprite.IsRunnung = CUICore.Parser.Parse<bool>(dict["isRunning"]);
+      }
+
+      CUI.Logger.Log(sprite.Animation);
+
       return sprite;
     }
 
@@ -53,8 +60,10 @@ namespace CursedUI
       Dictionary<string, object> dict = new();
 
       dict["msPerFrame"] = MsPerFrame;
-      dict["sources"] = Sources;
       if (CurrentSource != 0) dict["current"] = CurrentSource;
+      if (IsRunnung == false) dict["isRunning"] = IsRunnung;
+
+      dict["sources"] = Sources;
 
       return CUICore.Parser.Serialize(dict);
     }

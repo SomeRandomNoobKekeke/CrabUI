@@ -18,7 +18,6 @@ namespace CursedUIUser
   {
     public void Experiment()
     {
-      // Logger.LogVars(typeof(string).IsValueType, typeof(string).IsPrimitive);
 
       // new OverridingVirtualProps().Run();
     }

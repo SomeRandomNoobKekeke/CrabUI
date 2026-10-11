@@ -27,8 +27,8 @@ namespace CUILibs
           return Settings.ExtraSerializeMethods[o.GetType()](o);
         }
         if (o is IParsable) return ((IParsable)o).ToText();
-        if (o is IDictionary) return SerializeDictionary(o as IDictionary);
-        if (o is IEnumerable) return SerializeEnumerable(o as IEnumerable);
+        if (o is IDictionary) return SerializeDict(o as IDictionary);
+        if (o is IEnumerable) return SerializeList(o as IEnumerable);
       }
       catch (Exception e)
       {
@@ -71,7 +71,7 @@ namespace CUILibs
     /// Basically $"[{string.Join(',', items)}]"
     /// Had to itterate manually because it's not generic IEnumerable
     /// </summary>
-    public string SerializeEnumerable(IEnumerable items)
+    public string SerializeList(IEnumerable items)
     {
       StringBuilder sb = new StringBuilder(Settings.WhenSerializing.ListStart);
 
@@ -99,7 +99,7 @@ namespace CUILibs
     /// <summary>
     /// {asd:123,qwe:321}
     /// </summary>
-    public string SerializeDictionary(IDictionary dict)
+    public string SerializeDict(IDictionary dict)
     {
       StringBuilder sb = new StringBuilder();
       sb.Append(Settings.WhenSerializing.DictStart);

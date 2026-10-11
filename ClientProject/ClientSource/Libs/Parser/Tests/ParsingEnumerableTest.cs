@@ -31,10 +31,10 @@ namespace CUILibs
 
         return new List<UTest>()
         {
-          new UListTest(parser.ParseEnumerable<int>("[123,321]"), new int[]{123, 321}),
-          new UListTest(parser.ParseEnumerable<string>("[123,321]"), new string[]{"123", "321"}),
-          new UListTest(parser.ParseEnumerable<string>("['123 321']"), new string[]{"123 321"}),
-          new UListTest(parser.ParseEnumerable<string>("['123, 321',qwe,'asd']"), new string[]{"123, 321", "qwe","asd"}),
+          new UListTest(parser.ParseList<int>("[123,321]"), new int[]{123, 321}),
+          new UListTest(parser.ParseList<string>("[123,321]"), new string[]{"123", "321"}),
+          new UListTest(parser.ParseList<string>("['123 321']"), new string[]{"123 321"}),
+          new UListTest(parser.ParseList<string>("['123, 321',qwe,'asd']"), new string[]{"123, 321", "qwe","asd"}),
         };
       }
 
@@ -44,16 +44,16 @@ namespace CUILibs
 
         return new List<UTest>()
         {
-          new UListTest(parser.ParseEnumerable<int>(null), new int[]{}),
-          new UListTest(parser.ParseEnumerable<int>(""), new int[]{}),
-          new UListTest(parser.ParseEnumerable<int>("[]"), new int[]{ 0 }),
-          new UListTest(parser.ParseEnumerable<int>("["), new int[]{  }),
-          new UListTest(parser.ParseEnumerable<int>("[,,"), new int[]{ 0,0, }),
-          new UListTest(parser.ParseEnumerable<int>("[',','"), new int[]{ 0,}),
-          new UListTest(parser.ParseEnumerable<int>("1[2,3,4"), new int[]{ 2,3 }),
-          new UListTest(parser.ParseEnumerable<int>("1[2,3,4]5"), new int[]{ 2,3,4 }),
-          new UListTest(parser.ParseEnumerable<int>(",,,"), new int[]{ }),
-          new UListTest(parser.ParseEnumerable<int>("[123,qwe]"), new int[]{123, 0}),
+          new UListTest(parser.ParseList<int>(null), new int[]{}),
+          new UListTest(parser.ParseList<int>(""), new int[]{}),
+          new UListTest(parser.ParseList<int>("[]"), new int[]{ 0 }),
+          new UListTest(parser.ParseList<int>("["), new int[]{  }),
+          new UListTest(parser.ParseList<int>("[,,"), new int[]{ 0,0, }),
+          new UListTest(parser.ParseList<int>("[',','"), new int[]{ 0,}),
+          new UListTest(parser.ParseList<int>("1[2,3,4"), new int[]{ 2,3 }),
+          new UListTest(parser.ParseList<int>("1[2,3,4]5"), new int[]{ 2,3,4 }),
+          new UListTest(parser.ParseList<int>(",,,"), new int[]{ }),
+          new UListTest(parser.ParseList<int>("[123,qwe]"), new int[]{123, 0}),
         };
       }
     }

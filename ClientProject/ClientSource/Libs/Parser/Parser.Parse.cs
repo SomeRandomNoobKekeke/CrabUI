@@ -63,7 +63,7 @@ namespace CUILibs
     }
 
     public List<string> SplitList(string raw) => enumerableParser.Split(raw);
-    public IEnumerable<T> ParseEnumerable<T>(string raw)
+    public IEnumerable<T> ParseList<T>(string raw)
       => enumerableParser.Split(raw).Select(Parse<T>);
 
     public Dictionary<string, string> SplitDict(string raw) => dictionaryParser.Split(raw);

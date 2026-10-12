@@ -67,6 +67,16 @@ namespace CursedUI
       }
     }
 
+    public override float Transparency
+    {
+      get => base.Transparency;
+      set
+      {
+        base.Transparency = value;
+        Icon.Transparency = value;
+      }
+    }
+
     public bool PlaySound { get; set; } = true;
     public GUISoundType ClickSound { get; set; } = GUISoundType.Select;//BRUH check buttonbase
 

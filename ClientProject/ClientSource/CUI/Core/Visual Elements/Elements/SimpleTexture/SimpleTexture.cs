@@ -47,14 +47,23 @@ namespace CursedUI
     }
 
 
+
+
     public Color Color
     {
       get => Sprite.Color;
       set => AnimatedColor.Target = value;
     }
 
+    public float Transparency
+    {
+      get => Sprite.Transparency;
+      set => AnimatedTransparency.Target = value;
+    }
+
 
     #region Forwarded to CUISprite
+
     public CUITexture2D Texture { get => Sprite.Texture; set => Sprite.Texture = value; }
     public Rectangle? SourceRectangle { get => Sprite.SourceRectangle; set => Sprite.SourceRectangle = value; }
     public float Rotation { get => Sprite.Rotation; set => Sprite.Rotation = value; }

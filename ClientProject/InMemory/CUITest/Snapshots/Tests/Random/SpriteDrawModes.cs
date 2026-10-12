@@ -47,11 +47,11 @@ namespace CursedUIUser
           Absolute = new CUINullRect(-300, 150, 400, 200)
         };
 
-        wrapper["frame 4"] = new CUIDefault.Frame("StaticDeep")
+        wrapper["frame 4"] = new CUIDefault.Frame("StaticAbove")
         {
           Background = {
             Sprite = new CUISprite(CUICore.TextureManager.Get("BaroDev")){Color = Color.White},
-            DrawMode = CUISpriteDrawMode.StaticDeep,
+            DrawMode = CUISpriteDrawMode.StaticAbove,
           },
           Absolute = new CUINullRect(300, 150, 400, 200)
         };

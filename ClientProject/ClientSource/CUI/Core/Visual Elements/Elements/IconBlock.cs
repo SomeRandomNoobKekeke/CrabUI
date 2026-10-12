@@ -73,6 +73,12 @@ namespace CursedUI
       set => Icon.Color = value;
     }
 
+    public float Transparency
+    {
+      get => Icon.Transparency;
+      set => Icon.Transparency = value;
+    }
+
     public Vector2 ForcedSize { get; private set; }
     public Rectangle IconRectangle { get; private set; }
 

@@ -133,6 +133,17 @@ namespace CursedUI
       }
     }
 
+    public override float Transparency
+    {
+      get => base.Transparency;
+      set
+      {
+        base.Transparency = value;
+        OnState.TextBlock.Transparency = value;
+        OffState.TextBlock.Transparency = value;
+      }
+    }
+
     protected override void UpdateRects()
     {
       base.UpdateRects();

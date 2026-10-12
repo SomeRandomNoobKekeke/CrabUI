@@ -20,6 +20,7 @@ namespace CursedUI
       public SimpleTexture Self { get; set; }
 
       public TypedAnimation<Color> Color => Self.AnimatedColor.Animation;
+      public TypedAnimation<float> Transparency => Self.AnimatedTransparency.Animation;
     }
 
     [InitMethod]
@@ -30,10 +31,13 @@ namespace CursedUI
         ElevatedColor.Value = cl;
         Sprite.Color = cl;
       };
+
+      AnimatedTransparency.Changed += (v) => Sprite.Transparency = v;
     }
 
     public Animations_Part Animations { get; } = new();
 
     protected AnimatedValue<Color> AnimatedColor { get; } = new();
+    protected AnimatedValue<float> AnimatedTransparency { get; } = new();
   }
 }

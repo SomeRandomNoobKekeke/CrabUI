@@ -21,6 +21,12 @@ namespace CursedUI
       set => Background.Visible = value;
     }
 
+    public override float Transparency
+    {
+      get => Background.Transparency;
+      set => Background.Transparency = value;
+    }
+
     public override bool MouseOver => Background.MouseOver;
     public override bool MousePressed => Background.MousePressed;
 

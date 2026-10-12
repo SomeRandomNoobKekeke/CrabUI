@@ -90,7 +90,12 @@ namespace CursedUI
     public Vector2 Anchor { get; set; } = new Vector2(0.5f, 0.5f); //TODO test, shouldn't this be reacive?
 
 
-    public Color TextColor { get; set; } = Color.White;
+    private TransparentColor _TextColor = new TransparentColor(Color.White);
+    public Color TextColor
+    {
+      get => _TextColor.Value;
+      set => _TextColor.PureColor = value;
+    }
     public SpriteEffects SpriteEffects { get; set; } = SpriteEffects.None;
     public float LayerDepth { get; set; } = 0.1f;
 
@@ -103,6 +108,12 @@ namespace CursedUI
     public CUINullVector2 ForcedSize => _ResizeStrategy.ForcedSize;
     public float RealScale => _ResizeStrategy.RealScale;
 
+
+    public float Transparency
+    {
+      get => _TextColor.Transparency;
+      set => _TextColor.Transparency = value;
+    }
 
     public override void Draw(CUISpriteBatch spriteBatch)
     {

@@ -21,7 +21,7 @@ namespace CursedUIUser
         {
           Border = {
             Visible = true,
-            Sizes = new CUISizes(1,1,1,1),
+            Sizes = new CUISizes(0,1,1,1),
           },
           Absolute = new CUINullRect(w: 400, h: 600),
         };

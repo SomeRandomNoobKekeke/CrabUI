@@ -33,30 +33,30 @@ namespace CursedUI
 
     public static Color DefaultColor => Color.White;
 
-    private Color _ColorTL = DefaultColor;
-    private Color _ColorTR = DefaultColor;
-    private Color _ColorBR = DefaultColor;
-    private Color _ColorBL = DefaultColor;
+    private TransparentColor _ColorTL = new TransparentColor(DefaultColor);
+    private TransparentColor _ColorTR = new TransparentColor(DefaultColor);
+    private TransparentColor _ColorBR = new TransparentColor(DefaultColor);
+    private TransparentColor _ColorBL = new TransparentColor(DefaultColor);
 
     public Color ColorTL
     {
-      get => _ColorTL;
-      set { _ColorTL = value; ElevatedColor.WasModified = true; }
+      get => _ColorTL.Value;
+      set { _ColorTL.PureColor = value; ElevatedColor.WasModified = true; }
     }
     public Color ColorTR
     {
-      get => _ColorTR;
-      set { _ColorTR = value; ElevatedColor.WasModified = true; }
+      get => _ColorTR.Value;
+      set { _ColorTR.PureColor = value; ElevatedColor.WasModified = true; }
     }
     public Color ColorBR
     {
-      get => _ColorBR;
-      set { _ColorBR = value; ElevatedColor.WasModified = true; }
+      get => _ColorBR.Value;
+      set { _ColorBR.PureColor = value; ElevatedColor.WasModified = true; }
     }
     public Color ColorBL
     {
-      get => _ColorBL;
-      set { _ColorBL = value; ElevatedColor.WasModified = true; }
+      get => _ColorBL.Value;
+      set { _ColorBL.PureColor = value; ElevatedColor.WasModified = true; }
     }
 
     public Color Color
@@ -77,6 +77,18 @@ namespace CursedUI
     public Color ColorRight { get => ColorTR; set { ColorTR = value; ColorBR = value; } }
     public Color ColorBottom { get => ColorBL; set { ColorBR = value; ColorBL = value; } }
     public Color ColorLeft { get => ColorTL; set { ColorTL = value; ColorBL = value; } }
+
+    public float Transparency
+    {
+      get => _ColorTL.Transparency;
+      set
+      {
+        _ColorTL.Transparency = value;
+        _ColorTR.Transparency = value;
+        _ColorBR.Transparency = value;
+        _ColorBL.Transparency = value;
+      }
+    }
 
     public float Rotation { get; set; } = 0.0f;
     public Vector2 Origin { get; set; } = Vector2.Zero;
@@ -134,13 +146,27 @@ namespace CursedUI
           );
           break;
 
-        case CUISpriteDrawMode.StaticDeep:
+        case CUISpriteDrawMode.StaticAbove:
           spriteBatch.Draw(
             Texture,
             destinationRectangle,
             new Rectangle(
               (int)(destinationRectangle.Left * 0.9f),
               (int)(destinationRectangle.Top * 0.9f),
+              destinationRectangle.Width,
+              destinationRectangle.Height
+            ),
+            ColorTL, ColorTR, ColorBR, ColorBL, Rotation, Origin, Effects, LayerDepth
+          );
+          break;
+
+        case CUISpriteDrawMode.StaticBelow:
+          spriteBatch.Draw(
+            Texture,
+            destinationRectangle,
+            new Rectangle(
+              (int)(destinationRectangle.Left * 1.1f),
+              (int)(destinationRectangle.Top * 1.1f),
               destinationRectangle.Width,
               destinationRectangle.Height
             ),

@@ -80,6 +80,19 @@ namespace CursedUI
       set => Background.Visible = value;
     }
 
+
+    public override float Transparency
+    {
+      get => Background.Transparency;
+      set
+      {
+        Background.Transparency = value;
+
+        if (LeftResizeHandle is not null) LeftResizeHandle.Transparency = value;
+        if (RightResizeHandle is not null) RightResizeHandle.Transparency = value;
+      }
+    }
+
     public override IEnumerable<VisualUnit> VisualSplit()
     {
       if (!Displayed || CulledOut) yield break;

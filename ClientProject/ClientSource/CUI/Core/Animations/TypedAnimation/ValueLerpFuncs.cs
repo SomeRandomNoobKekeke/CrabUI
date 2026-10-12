@@ -26,6 +26,7 @@ namespace CursedUI
       [typeof(int)] = Int,
       [typeof(float)] = Float,
       [typeof(Color)] = Color,
+      [typeof(Vector2)] = Vector2Func,
     };
 
     public static T Default<T>(T value1, T value2, double lambda)
@@ -40,6 +41,9 @@ namespace CursedUI
       double step = 1.0 / (end - start + 1);
       return start + (int)Math.Floor(lambda / step);
     }
+
+    public static Vector2 Vector2Func(Vector2 value1, Vector2 value2, double lambda)
+      => value1 + Vector2.Multiply(value2 - value1, (float)lambda);
 
 
     public static Color Color(Color value1, Color value2, double lambda)

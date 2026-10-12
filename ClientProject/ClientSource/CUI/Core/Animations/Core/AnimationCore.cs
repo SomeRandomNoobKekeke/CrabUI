@@ -83,7 +83,8 @@ namespace CursedUI
       get => _IsRunning;
       set
       {
-        if (value) Start(); else Stop();
+        if (value && !IsRunning) Start();
+        if (!value && IsRunning) Stop();
       }
     }
 

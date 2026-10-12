@@ -12,14 +12,20 @@ namespace CursedUI
 {
   public static class Dictionary_Extensions
   {
-    //omfg
-    public static TValue GetValueOrDefault<TKey, TValue>(this IDictionary<TKey, TValue> dict, TKey key)
-    {
-      if (dict.TryGetValue(key, out TValue value))
-      {
-        return value;
-      }
-      return default;
-    }
+    /// <summary>
+    /// Don't do this, ever
+    /// You'll get:
+    /// The call is ambiguous between the following methods or properties: 
+    /// 'System.Collections.Generic.CollectionExtensions.GetValueOrDefault<TKey, TValue>(System.Collections.Generic.IReadOnlyDictionary<TKey, TValue>, TKey)' and 
+    /// 'CursedUI.Dictionary_Extensions.GetValueOrDefault<TKey, TValue>(System.Collections.Generic.IDictionary<TKey, TValue>, TKey)'CS0121
+    /// </summary>
+    // public static TValue GetValueOrDefault<TKey, TValue>(this IDictionary<TKey, TValue> dict, TKey key)
+    // {
+    //   if (dict.TryGetValue(key, out TValue value))
+    //   {
+    //     return value;
+    //   }
+    //   return default;
+    // }
   }
 }

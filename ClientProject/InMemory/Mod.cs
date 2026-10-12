@@ -22,6 +22,8 @@ namespace CursedUIUser
 
     public CUITest CUITest { get; set; }
 
+    public bool InstallDebugStuff = true;
+
     public void Initialize() => Init();
 
     public void Init()
@@ -35,22 +37,25 @@ namespace CursedUIUser
       {
         CUI.Start();
 
-        CUI.TextureManager.LoadAs("Assets/PNG/For testing/Test Chamber Background.png", "Test Chamber Background");
-        CUI.TextureManager.LoadAs("Assets/PNG/For testing/Icons.png", "Test Icons");
-
-        UTest.CollapseTestPackIfSucceed = false;
-        UTest.Init();
-
-        // CUICore.Palettes.Primary = CUIPalette.FromColor(new Color(0, 0, 128));
-
-        CUITest = new CUITest();
-        CUITest.Init();
-
-        CUI.TopMain["debug button"] = new CUIButton("debug")
+        if (InstallDebugStuff)
         {
-          Anchor = CUIAnchor.LeftCenter,
-          OnMouseDown = (e) => CUICore.Debugger.Open(),
-        };
+          CUI.TextureManager.LoadAs("Assets/PNG/For testing/Test Chamber Background.png", "Test Chamber Background");
+          CUI.TextureManager.LoadAs("Assets/PNG/For testing/Icons.png", "Test Icons");
+
+          UTest.CollapseTestPackIfSucceed = false;
+          UTest.Init();
+
+          // CUICore.Palettes.Primary = CUIPalette.FromColor(new Color(0, 0, 128));
+
+          CUITest = new CUITest();
+          CUITest.Init();
+
+          CUI.TopMain["debug button"] = new CUIButton("debug")
+          {
+            Anchor = CUIAnchor.LeftCenter,
+            OnMouseDown = (e) => CUICore.Debugger.Open(),
+          };
+        }
 
         // CUICore.Debugger.Open();
         // CUIPalette.Preview();
@@ -58,7 +63,7 @@ namespace CursedUIUser
 
 
 
-        Utils.RunWithDelay(Experiment, 800);
+        //Utils.RunWithDelay(Experiment, 800);
         //Experiment();
       }
       catch (Exception e) { Logger.Error(e); }

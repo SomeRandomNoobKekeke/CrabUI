@@ -1,3 +1,5 @@
+// #define CLIENT
+
 using System;
 using System.Reflection;
 using System.Runtime.CompilerServices;

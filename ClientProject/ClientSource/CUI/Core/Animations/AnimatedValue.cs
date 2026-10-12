@@ -10,10 +10,25 @@ namespace CursedUI
   //LINK:/ClientProject\InMemory\CUITest\Snapshots\Tests\Random\AnimatedValue.cs
   public class AnimatedValue<T>
   {
-    public TypedAnimation<T> Animation { get; } = new()
+    private TypedAnimation<T> _Animation; public TypedAnimation<T> Animation
     {
-      // Duration = 1,
-    };
+      get
+      {
+        if (_Animation is null)
+        {
+          _Animation = new TypedAnimation<T>()
+          {
+            Func = AnimationFunctions.EasyOut,
+          };
+
+          Animation.Changed += (v) => Value = v;
+        }
+
+        return _Animation;
+      }
+
+
+    }
 
     public event Action<T> Changed;
 
@@ -32,22 +47,22 @@ namespace CursedUI
       get => _Target;
       set
       {
-        if (Equals(Value, value)) return;
-
         _Target = value;
 
-        Animation.StartValue = Value;
-        Animation.EndValue = _Target;
-        Animation.RunFromStart();
+        if (Animation is null || Animation.Duration == 0)
+        {
+          Value = value;
+        }
+        else
+        {
+          Animation.StartValue = Value;
+          Animation.EndValue = _Target;
+          Animation.RunFromStart();
+        }
       }
     }
 
-    public AnimatedValue()
-    {
-      Animation.Changed += (v) => Value = v;
-      Animation.Func = AnimationFunctions.EasyOut;
-    }
-
+    public AnimatedValue() { }
     public AnimatedValue(T value) : this()
     {
       _Value = value;

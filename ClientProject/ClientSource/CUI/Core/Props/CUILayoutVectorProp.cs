@@ -12,7 +12,7 @@ using CUILibs;
 
 namespace CursedUI
 {
-  public class CUILayoutVectorProp : CUILayoutProp<Vector2>
+  public class CUIBoundedVectorProp : CUILayoutProp<Vector2>
   {
     private CUIBoundaries _Bounds; public CUIBoundaries Bounds
     {

@@ -24,13 +24,16 @@ namespace CursedUIUser
         };
 
 
-        AnimatedValue<Vector2> pos = new(new Vector2(50, 50));
+
 
         frame["barodev"] = new CUIComponent()
         {
           Background = { Sprite = CUISprite.BaroDev },
-          Absolute = new CUINullRect(x: 50, y: 50, w: 30, h: 30),
+          Absolute = new CUINullRect(w: 30, h: 30),
+          Anchor = CUIAnchor.Center,
         };
+
+        AnimatedValue<Vector2> pos = new(frame["barodev"].Absolute.Position);
 
         pos.Changed += (v) => frame["barodev"].Absolute = frame["barodev"].Absolute with
         {
@@ -39,7 +42,7 @@ namespace CursedUIUser
 
         frame.MouseDown += (e) =>
         {
-          pos.Target = e.Pos - frame.Rect.LeftTop - new Vector2(15, 15);
+          pos.Target = e.Pos - frame.Rect.Center;
         };
 
 

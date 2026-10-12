@@ -33,7 +33,10 @@ namespace CursedUIUser
           Anchor = CUIAnchor.Center,
         };
 
-        AnimatedValue<Vector2> pos = new(frame["barodev"].Absolute.Position);
+        AnimatedValue<Vector2> pos = new(frame["barodev"].Absolute.Position)
+        {
+          Animation = { Duration = 1 }
+        };
 
         pos.Changed += (v) => frame["barodev"].Absolute = frame["barodev"].Absolute with
         {

@@ -7,9 +7,9 @@ using Barotrauma;
 
 namespace CursedUI
 {
-  public struct ElevatedProp<T>
+  public class ElevatedProp<T>
   {
-    public bool WasModified { get; private set; }
+    public bool WasModified { get; set; }
 
     private T _Value; public T Value
     {

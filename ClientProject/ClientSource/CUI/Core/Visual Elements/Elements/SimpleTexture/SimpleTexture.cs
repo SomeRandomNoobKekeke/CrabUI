@@ -10,9 +10,11 @@ using Microsoft.Xna.Framework.Graphics;
 using System.Xml.Linq;
 using System.Text.Json;
 
+using CUICodeGenerator;
+
 namespace CursedUI
 {
-  public class SimpleTexture : VisualElementBase, NestedCUISerializable
+  public partial class SimpleTexture : VisualElementBase, NestedCUISerializable
   {
     private Rectangle RoundedRect;
 
@@ -33,39 +35,6 @@ namespace CursedUI
     /// </summary>
     public CUISizes SensorExpansion { get; set; }
 
-    private CUISprite _Sprite = CUISprite.White;
-
-    [CUISerializableProp]
-    public CUISprite Sprite
-    {
-      get => _Sprite;
-      set
-      {
-        _Sprite = value;
-        _Sprite.ShouldBufferData = IgnoretransparentPixels;
-
-        if (_Color.WasModified && !_Sprite.ColorWasModified)
-        {
-          _Sprite.Color = _Color.Value;
-        }
-      }
-    }
-
-    /// <summary>
-    /// Source of truth elevated from sprite
-    /// </summary>
-    private bool _IgnoretransparentPixels;
-    [CUISerializableProp]
-    public bool IgnoretransparentPixels
-    {
-      get => _IgnoretransparentPixels;
-      set
-      {
-        _IgnoretransparentPixels = value;
-        _Sprite.ShouldBufferData = IgnoretransparentPixels;
-      }
-    }
-
     public override bool Contains(Vector2 pos)
     {
       if (IgnoretransparentPixels)
@@ -77,15 +46,11 @@ namespace CursedUI
       return Rect.Contains(pos, SensorExpansion);
     }
 
-    private ElevatedProp<Color> _Color;
-    public Color Color //CRINGE so if you change this Color next sprite will inherit it
+
+    public Color Color
     {
       get => Sprite.Color;
-      set
-      {
-        Sprite.Color = value;
-        _Color.Value = value;
-      }
+      set => AnimatedColor.Target = value;
     }
 
 
@@ -106,5 +71,7 @@ namespace CursedUI
         Sprite.Draw(spriteBatch, RoundedRect);
       }
     }
+
+    public SimpleTexture() => this.Inject();
   }
 }

@@ -19,6 +19,7 @@ namespace CursedUI
           _Animation = new TypedAnimation<T>()
           {
             Func = AnimationFunctions.EasyOut,
+            Duration = 0,
           };
 
           Animation.Changed += (v) => Value = v;
@@ -26,10 +27,9 @@ namespace CursedUI
 
         return _Animation;
       }
-
-
     }
 
+    public Action<T> OnChanged { set { Changed += value; } }
     public event Action<T> Changed;
 
     private T _Value; public T Value

@@ -73,7 +73,7 @@ namespace CursedUI
         ["texture"] = Texture.Key ?? "",
       };
 
-      if (ColorWasModified)
+      if (ElevatedColor.WasModified)
       {
         if (ColorTL == ColorTR && ColorTL == ColorBL && ColorTL == ColorBR)
         {

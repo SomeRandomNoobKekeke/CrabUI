@@ -6,6 +6,7 @@ using System.Diagnostics;
 using Barotrauma;
 using CUILibs;
 using CUICodeGenerator;
+using Microsoft.Xna.Framework;
 
 namespace CursedUI
 {
@@ -28,8 +29,11 @@ namespace CursedUI
       get => _RequireLayoutUpdate;
       set
       {
-
-        // if (!_RequireLayoutUpdate && value) CUI.Logger.PrintStackTrace();
+        // if (_RequireLayoutUpdate ^ value)
+        // {
+        //   CUI.Logger.Print($"\n RequireLayoutUpdate {_RequireLayoutUpdate} -> {value}", Color.Yellow);
+        //   CUI.Logger.PrintStackTrace();
+        // }
         _RequireLayoutUpdate = value;
 
       }

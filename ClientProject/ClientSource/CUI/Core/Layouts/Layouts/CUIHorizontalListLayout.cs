@@ -48,6 +48,7 @@ namespace CursedUI
     {
       if (Parent is null) return;
       if (!RequireChildrenUpdate) return;
+      RequireChildrenUpdate = false;
 
       List<ChildSize> sizes = new();
       List<ChildSize> resizables = new();

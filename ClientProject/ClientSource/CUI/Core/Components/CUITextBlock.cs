@@ -102,7 +102,15 @@ namespace CursedUI
     protected override void UpdateRects()
     {
       base.UpdateRects();
+
+      CUINullVector2 prevSize = TextBlock.ForcedSize;
+
       TextBlock.Rect = ChildrenRect - TextPadding;
+
+      if (TextBlock.ForcedSize != prevSize)
+      {
+        LayoutMarker.Mark(LayoutMarker.Pattern.AbsoluteProp);
+      }
     }
 
     [CUISerializableProp]

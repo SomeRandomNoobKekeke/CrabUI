@@ -51,6 +51,7 @@ namespace CursedUI
     {
       if (Parent is null) return;
       if (!RequireChildrenUpdate) return;
+      RequireChildrenUpdate = false;
 
       Debug_Calc.Send($"---------- Calculating children in {Parent}");
 

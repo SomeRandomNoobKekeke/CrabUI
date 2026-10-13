@@ -7,6 +7,7 @@ using Barotrauma;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
+using System.Diagnostics.CodeAnalysis;
 
 
 namespace CursedUI
@@ -36,6 +37,26 @@ namespace CursedUI
     {
       X = x;
       Y = y;
+    }
+
+    public static bool operator ==(CUINullVector2 v1, CUINullVector2 v2)
+    {
+      return v1.Equals(v2);
+    }
+
+    public static bool operator !=(CUINullVector2 v1, CUINullVector2 v2)
+    {
+      return !v1.Equals(v2);
+    }
+
+    public override bool Equals([NotNullWhen(true)] object? obj)
+    {
+      if (obj is not CUINullVector2 other) return false;
+      return Equals(other);
+    }
+    public bool Equals(CUINullVector2 other)
+    {
+      return X == other.X && Y == other.Y;
     }
 
     public override string ToString() => $"[{X},{Y}]";

@@ -11,9 +11,11 @@
     <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
   </PropertyGroup>
 
+  <!--
   <ItemGroup>
-    <Compile Remove="InMemory/**/*.cs" /> <!-- All .cs files in a directory subtree -->
+    <Compile Remove="Tests/**/*.cs" />
   </ItemGroup>
+  -->
 
   <ItemGroup>
     <Reference Include="Barotrauma">

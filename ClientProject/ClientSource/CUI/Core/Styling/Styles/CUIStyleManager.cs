@@ -5,9 +5,9 @@ using System.Reflection;
 using CUILibs;
 namespace CursedUI
 {
-  public class CUIStyleManager(CUITypeTree typeTree)
+  public class CUIStyleManager(TypeTree typeTree)
   {
-    private CUITypeTree TypeTree = typeTree;
+    private TypeTree TypeTree = typeTree;
     public bool UseReactiveStyles { get; set; } = true;
 
     public DictOfLists<Type, ICUIStyle> ContextStyles { get; } = new();

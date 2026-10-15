@@ -9,11 +9,11 @@ using CUILibs;
 
 namespace CursedUI
 {
-  public partial class CUITypeTree
+  public partial class TypeTree
   {
     public record Node(Type Type)
     {
-      public Node Parent { get; set; }
+      public Node? Parent { get; set; }
       public List<Node> Children { get; } = new();
     }
   }

@@ -13,10 +13,11 @@ namespace CursedUI
 {
   public partial class CUICore
   {
+    public static Reflection_Part Reflection => Instance._Reflection;
     public Reflection_Part _Reflection { get; } = new();
     public class Reflection_Part : Part
     {
-      public CUITypeTree TypeTree { get; } = new();
+      public TypeTree TypeTree { get; } = new();
       public Dictionary<Type, CUIVisualComponentInfo> ComponentInfos { get; } = new();
       public Dictionary<Type, CUISerializableInfo> SerializableInfos { get; } = new();
 

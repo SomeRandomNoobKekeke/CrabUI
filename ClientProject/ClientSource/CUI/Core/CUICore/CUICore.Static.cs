@@ -35,7 +35,7 @@ namespace CursedUI
     public static IEffectPack GraphicEffects => Instance.Handles.OtherResources.Effects;
     public static bool InputBlockingMenuOpen => Instance.Handles.InputBlockingMenuOpen;
 
-    public static Reflection_Part Reflection => Instance._Reflection;
+
     public static CUIStyleManager Styles => Instance.CUIStyleManager;
     public static CUIPalettes Palettes => Instance._Palettes;
     public static AnimationPlayer AnimationPlayer => Instance._AnimationPlayer;

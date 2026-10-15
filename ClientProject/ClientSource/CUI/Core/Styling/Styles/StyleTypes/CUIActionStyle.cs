@@ -9,8 +9,6 @@ namespace CursedUI
   {
     public string ID { get; set; }
     public Type TargetType { get; set; }
-    public int Priority { get; set; } = ICUIStyle.DefaultPriority;
-    public CUIStyleCategory Category { get; set; }
 
     public abstract void Apply(CUIVisualComponent component);
 

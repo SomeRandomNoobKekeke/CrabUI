@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 namespace CursedUI
 {
   //Note that later i might split it into multiple dicts, interface should stay the same
-  public partial class CUIPalette : ReactiveDict<string, Color>, IParsable
+  public partial class CUIPalette : WeakReactiveDict<string, Color>, IParsable
   {
     public Color? BaseColor { get; set; }
 

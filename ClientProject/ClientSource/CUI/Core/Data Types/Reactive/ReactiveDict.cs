@@ -16,7 +16,7 @@ namespace CursedUI
   {
     private Dictionary<TKey, TValue> _Dict = new();
 
-    public SimpleWeakEvent Changed { get; } = new();
+    public event Action Changed;
 
     public TValue this[TKey key]
     {
@@ -24,18 +24,18 @@ namespace CursedUI
       set
       {
         _Dict[key] = value;
-        Changed.Raise();
+        Changed?.Invoke();
       }
     }
 
-    public void Swap(ReactiveDict<TKey, TValue> other)
+    public void Swap(WeakReactiveDict<TKey, TValue> other)
     {
       _Dict = new Dictionary<TKey, TValue>();
       foreach (var (key, value) in other)
       {
         _Dict[key] = value;
       }
-      Changed.Raise();
+      Changed?.Invoke();
     }
 
     public ICollection<TKey> Keys => _Dict.Keys;
@@ -50,7 +50,7 @@ namespace CursedUI
     {
       if (_Dict.Remove(key))
       {
-        Changed.Raise();
+        Changed?.Invoke();
         return true;
       }
 

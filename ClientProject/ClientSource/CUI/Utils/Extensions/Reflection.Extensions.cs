@@ -40,7 +40,7 @@ namespace CursedUI
       return string.Join('.', parts);
     }
 
-    public static IEnumerable<Type> GetTypeChain(this Type T, Type rootType)
+    public static IEnumerable<Type> GetTypeChainTo(this Type T, Type rootType)
     {
       yield return T;
 

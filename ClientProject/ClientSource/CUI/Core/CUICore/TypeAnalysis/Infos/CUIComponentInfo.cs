@@ -12,7 +12,7 @@ namespace CursedUI
   /// <summary>
   /// This is additional info about CUIVisualComponent type
   /// </summary>
-  public class CUIVisualComponentInfo
+  public class CUIComponentInfo
   {
     public Type ComponentType { get; set; }
     public Dictionary<string, PropertyPath> SerializableProps { get; set; } = new();

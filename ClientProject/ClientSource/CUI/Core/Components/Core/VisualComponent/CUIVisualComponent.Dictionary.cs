@@ -15,7 +15,7 @@ namespace CursedUI
     public Dictionary_Part As_Dictionary { get; } = new();
     public class Dictionary_Part : Part, IDictionary<string, object>
     {
-      public CUIVisualComponentInfo Info => Self.Info;
+      public CUIComponentInfo Info => Self.Info;
 
       public object this[string key]
       {

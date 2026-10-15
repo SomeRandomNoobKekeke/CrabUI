@@ -59,7 +59,7 @@ namespace CursedUI
 
     public static void CUIPrintComponentInfos_Command(string[] args)
     {
-      foreach (var (type, info) in CUICore.Reflection.ComponentInfos)
+      foreach (var (type, info) in CUICore.TypeAnalysis.ComponentInfos)
       {
         CUI.Logger.Log($"{type.Name}   -   {info}");
       }
@@ -67,7 +67,7 @@ namespace CursedUI
 
     public static void CUIPrintTypeTree_Command(string[] args)
     {
-      CUI.Logger.Log($"\n{CUICore.Reflection.TypeTree}");
+      CUI.Logger.Log($"\n{CUICore.TypeAnalysis.ComponentTypeTree}");
     }
 
     public static void GC_Command(string[] args)

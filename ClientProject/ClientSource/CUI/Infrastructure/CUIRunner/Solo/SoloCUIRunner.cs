@@ -35,10 +35,6 @@ namespace CursedUI
     public ResourceIOContextHandle_Part ResourceIOContextHandle { get; private set; } = new();
     public FilePathResolver FilePathResolver { get; private set; } = new();
 
-    public CUIAssemblyAnalyzer CUIAssemblyAnalyzer { get; } = new();
-
-
-
     public void Connect()
     {
       ArgumentNullException.ThrowIfNull(Core);
@@ -86,19 +82,9 @@ namespace CursedUI
     }
 
 
-
-    private HashSet<Assembly> AlreadyAnalyzedAssemblies { get; } = new()
+    public void AnalyzeAssembly(Assembly assembly)
     {
-      typeof(CUICore).Assembly, //HACK CUICore analyzes itself
-    };
-    public void OnStartAttempt(Assembly callingAssembly)
-    {
-      if (AlreadyAnalyzedAssemblies.Contains(callingAssembly)) return;
-      AlreadyAnalyzedAssemblies.Add(callingAssembly);
-
-      Core.CUIRunnerHandle.AddAssemblyInfo(
-        CUIAssemblyAnalyzer.AnalyzeAssembly(callingAssembly)
-      );
+      Core.CUIRunnerHandle.AnalyzeAssembly(assembly);
     }
 
     public SoloCUIRunner()

@@ -54,9 +54,15 @@ namespace CursedUI
       return root;
     }
 
-    private static CUIVisualComponent CreateEmptyComponent(XElement element)
-      => (CUIVisualComponent)Activator.CreateInstance(CUICore.Reflection.GetType(element.Name.ToString()));
+    private static CUIVisualComponent? CreateEmptyComponent(XElement element)
+    {
+      if (CUICore.TypeAnalysis.ComponentTypeTree.TypesByName.TryGetValue(element.Name.ToString(), out Type? T))
+      {
+        return (CUIVisualComponent?)Activator.CreateInstance(T);
+      }
 
+      return default;
+    }
     private void DeserializeChildren(XElement element)
     {
       CUIVisualComponent CreateNewChild(XElement element)

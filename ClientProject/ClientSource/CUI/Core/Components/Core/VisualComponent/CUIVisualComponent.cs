@@ -20,14 +20,14 @@ namespace CursedUI
 
     public string TypeName => this.GetType().Name;
 
-    public CUIVisualComponentInfo Info { get; }
+    public CUIComponentInfo Info { get; }
 
     public CUIVisualComponent()
     {
       ID = CUICore.GetID();
       VisualWrapper = new(this);
 
-      Info = CUICore.Reflection.GetComponentInfo(GetType());
+      Info = CUICore.TypeAnalysis.GetComponentInfo(GetType());
 
       this.Inject();
     }

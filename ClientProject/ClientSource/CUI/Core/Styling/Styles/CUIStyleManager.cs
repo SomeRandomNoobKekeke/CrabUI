@@ -5,9 +5,8 @@ using System.Reflection;
 using CUILibs;
 namespace CursedUI
 {
-  public class CUIStyleManager(TypeTree typeTree)
+  public class CUIStyleManager
   {
-    private TypeTree TypeTree = typeTree;
     public bool UseReactiveStyles { get; set; } = true;
 
     public DictOfLists<Type, ICUIStyle> ContextStyles { get; } = new();
@@ -47,7 +46,7 @@ namespace CursedUI
 
     public void AddStyle(ICUIStyle style)
     {
-      foreach (Type T in TypeTree.GetDerivedTypes(style.TargetType))
+      foreach (Type T in CUICore.TypeAnalysis.ComponentTypeTree.GetDerivedTypes(style.TargetType))
       {
         GetOrCreatePipeline(T).Add(style);
       }
@@ -55,7 +54,7 @@ namespace CursedUI
 
     public void RemoveStyle(ICUIStyle style)
     {
-      foreach (Type T in TypeTree.GetDerivedTypes(style.TargetType))
+      foreach (Type T in CUICore.TypeAnalysis.ComponentTypeTree.GetDerivedTypes(style.TargetType))
       {
         GetOrCreatePipeline(T).Remove(style);
       }

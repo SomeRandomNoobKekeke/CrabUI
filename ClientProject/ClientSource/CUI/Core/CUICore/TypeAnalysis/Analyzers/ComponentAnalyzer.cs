@@ -12,16 +12,16 @@ namespace CursedUI
   /// <summary>
   /// This thing creating CUIComponentInfo from types
   /// </summary>
-  public class CUIVisualComponentAnalyzer
+  public class ComponentAnalyzer
   {
     public static string DefaultStylePropName { get; } = "DefaultStyle";
 
     public bool IsCUIVisualComponentType(Type T) => T.IsAssignableTo(typeof(CUIVisualComponent));
 
     //TODO add a way to use pregenerated infos
-    public CUIVisualComponentInfo Analyze(Type T)
+    public CUIComponentInfo Analyze(Type T)
     {
-      CUIVisualComponentInfo info = new CUIVisualComponentInfo()
+      CUIComponentInfo info = new CUIComponentInfo()
       {
         ComponentType = T,
         NoDefault = T.GetCustomAttribute<NoDefaultAttribute>() != null,

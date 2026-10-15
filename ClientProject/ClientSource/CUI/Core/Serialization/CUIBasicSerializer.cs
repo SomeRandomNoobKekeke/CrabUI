@@ -19,15 +19,14 @@ namespace CursedUI
     {
       XElement element = new(o.GetType().GetFullName());
 
-      if (CUICore.Reflection.SerializableInfos.TryGetValue(o.GetType(), out CUISerializableInfo? info))
-      {
-        foreach (var (fullName, pp) in info.SerializableProps)
-        {
-          object value = pp.GetValue(o);
-          if (defaultValues.ContainsKey(fullName) && Equals(value, defaultValues[fullName])) continue;
+      CUISerializableInfo info = CUICore.TypeAnalysis.GetSerializableInfo(o.GetType());
 
-          element.SetAttributeValue(fullName, CUICore.Parser.Serialize(value));
-        }
+      foreach (var (fullName, pp) in info.SerializableProps)
+      {
+        object value = pp.GetValue(o);
+        if (defaultValues.ContainsKey(fullName) && Equals(value, defaultValues[fullName])) continue;
+
+        element.SetAttributeValue(fullName, CUICore.Parser.Serialize(value));
       }
 
       return element;
@@ -42,24 +41,29 @@ namespace CursedUI
 
     public static void DeserializeProps(XElement element, object target)
     {
-      if (CUICore.Reflection.SerializableInfos.TryGetValue(target.GetType(), out CUISerializableInfo? info))
+      if (!CUICore.TypeAnalysis.IsSerializable(target.GetType()))
       {
-        foreach (XAttribute attribute in element.Attributes())
+        CUI.Logger.Warning($"Couldn't deserialize [{element}] into {target}, it's not CUISerializable");
+        return;
+      }
+
+      CUISerializableInfo info = CUICore.TypeAnalysis.GetSerializableInfo(target.GetType());
+
+      foreach (XAttribute attribute in element.Attributes())
+      {
+        if (!info.SerializableProps.TryGetValue(attribute.Name.ToString(), out PropertyPath pp))
         {
-          if (!info.SerializableProps.TryGetValue(attribute.Name.ToString(), out PropertyPath pp))
-          {
-            CUI.Logger.Warning($"Couldn't deserialize [{attribute.Name}], no such prop on [{target.GetType().GetFullName()}]");
-            continue;
-          }
-
-          if (!pp.CanWrite)
-          {
-            CUI.Logger.Warning($"Couldn't deserialize [{pp}] on [{target.GetType().GetFullName()}], it's not settable");
-            continue;
-          }
-
-          pp.SetValue(target, CUICore.Parser.Parse(attribute.Value, pp.Path.Last().PropertyType));
+          CUI.Logger.Warning($"Couldn't deserialize [{attribute.Name}], no such prop on [{target.GetType().GetFullName()}]");
+          continue;
         }
+
+        if (!pp.CanWrite)
+        {
+          CUI.Logger.Warning($"Couldn't deserialize [{pp}] on [{target.GetType().GetFullName()}], it's not settable");
+          continue;
+        }
+
+        pp.SetValue(target, CUICore.Parser.Parse(attribute.Value, pp.Path.Last().PropertyType));
       }
     }
   }

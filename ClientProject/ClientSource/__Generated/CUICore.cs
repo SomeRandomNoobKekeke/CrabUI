@@ -26,8 +26,8 @@ namespace CursedUI
       As_CUICore.CUIRunnerHandle.Self = this;
       As_CUICore.LifeCycle.Self = this;
       As_CUICore.MainComponents.Self = this;
-      As_CUICore._Reflection.Self = this;
       As_CUICore.VanillaGUILayer.Self = this;
+      As_CUICore._TypeAnalysis.Self = this;
     }
 
     void IComponent.InitParts()
@@ -53,8 +53,8 @@ namespace CursedUI
     public CUICore.CUIRunnerHandle_Part CUIRunnerHandle => Self.CUIRunnerHandle;
     public CUICore.LifeCycle_Part LifeCycle => Self.LifeCycle;
     public CUICore.MainComponents_Part MainComponents => Self.MainComponents;
-    public CUICore.Reflection_Part _Reflection => Self._Reflection;
     public CUICore.VanillaGUILayerImage_Part VanillaGUILayer => Self.VanillaGUILayer;
+    public CUICore.TypeAnalysis_Part _TypeAnalysis => Self._TypeAnalysis;
     public CUICore Self { get; set; }
   }
   }

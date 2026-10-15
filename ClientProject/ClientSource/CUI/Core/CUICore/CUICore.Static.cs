@@ -36,7 +36,7 @@ namespace CursedUI
     public static bool InputBlockingMenuOpen => Instance.Handles.InputBlockingMenuOpen;
 
 
-    public static CUIStyleManager Styles => Instance.CUIStyleManager;
+    public static CUIStyleManager Styles => Instance._CUIStyleManager;
     public static CUIPalettes Palettes => Instance._Palettes;
     public static AnimationPlayer AnimationPlayer => Instance._AnimationPlayer;
     public static CUIInput Input => Instance._Input;

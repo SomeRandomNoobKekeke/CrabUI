@@ -26,7 +26,7 @@ namespace CursedUI
       return string.Join('.', parts);
     }
 
-    public static string GetFullMethodName(this MethodInfo mi)
+    public static string GetFullMethodName(this MethodBase mi)
     {
       List<string> parts = new List<string>() { mi.Name };
       Type declaringType = mi.DeclaringType;

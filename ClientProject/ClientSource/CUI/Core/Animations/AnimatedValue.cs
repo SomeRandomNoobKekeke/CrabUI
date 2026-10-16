@@ -7,7 +7,7 @@ using CUILibs;
 
 namespace CursedUI
 {
-  //LINK:/ClientProject\InMemory\CUITest\Snapshots\Tests\Random\AnimatedValue.cs
+  //LINK:/ClientProject\Tests\CUITest\Snapshots\Tests\Random\AnimatedValue.cs
   public class AnimatedValue<T>
   {
     private TypedAnimation<T> _Animation; public TypedAnimation<T> Animation

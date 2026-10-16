@@ -21,6 +21,7 @@ namespace CUITests
     };
 
     public CUITest CUITest { get; set; }
+    public bool AddTestStuff { get; set; } = true;
 
     public void Initialize() => Init();
 
@@ -28,6 +29,8 @@ namespace CUITests
     {
       Instance = this;
       if (ModStorage.Has("ReloadRequest")) { return; }
+      if (!AddTestStuff) return;
+
 
       Logger.Log($"Compiled somehow");
 

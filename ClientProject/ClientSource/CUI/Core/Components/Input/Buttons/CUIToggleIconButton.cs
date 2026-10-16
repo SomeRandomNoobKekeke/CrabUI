@@ -12,7 +12,7 @@ using Barotrauma.Extensions;
 
 namespace CursedUI
 {
-  //LINK:/ClientProject\InMemory\CUITest\Snapshots\Tests\Components\CUIToggleIconButton.cs
+  //LINK:/ClientProject\Tests\CUITest\Snapshots\Tests\Components\CUIToggleIconButton.cs
   public partial class CUIToggleIconButton : CUIButtonBase, IComponent
   {
     public static ICUIStyle DefaultStyle => new CUIDefaultStyle<CUIToggleIconButton>((c) =>

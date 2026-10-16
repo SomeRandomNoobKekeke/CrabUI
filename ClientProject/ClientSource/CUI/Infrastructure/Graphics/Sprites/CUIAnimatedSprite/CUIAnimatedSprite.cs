@@ -12,7 +12,7 @@ using System.Collections;
 
 namespace CursedUI
 {
-  //LINK:/ClientProject\InMemory\CUITest\Snapshots\Tests\Random\AnimatedSprite.cs
+  //LINK:/ClientProject\Tests\CUITest\Snapshots\Tests\Random\AnimatedSprite.cs
   public partial class CUIAnimatedSprite : CUIMultiSprite
   {
     public double MsPerFrame

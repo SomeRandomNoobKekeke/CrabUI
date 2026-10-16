@@ -8,9 +8,13 @@ namespace CursedUI
 {
   public partial class CUIStarterPlugin : IAssemblyPlugin
   {
+    static CUIStarterPlugin()
+    {
+      CUI.Start(); //HACK hopefully this will start CUI before other plugin instances get created so you could create components in property initializers
+    }
     public void Initialize()
     {
-      CUI.Start();
+      // CUI.Start();
     }
 
     public void OnLoadCompleted() { }

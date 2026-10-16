@@ -23,7 +23,7 @@ namespace CursedUI
       public Vector2 PosDiff { get; private set; }
       public bool Pressed { get; private set; }
       public bool Moved { get; private set; }
-      public bool SomethingHappened { get; private set; }
+      public bool SomethingHappened { get; set; }
       public MouseButtonInput M1 { get; }
       public MouseButtonInput M2 { get; }
       public List<MouseButtonInput> Buttons { get; }

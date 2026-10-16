@@ -28,11 +28,16 @@ namespace CursedUI
     public CUIMouseOnEvent MouseOnEvent { get; private set; }
     public CUIMouseOffEvent MouseOffEvent { get; private set; }
 
+
+    //HACK hacky temp solution to button state not updating when scrolling list
+    private bool ShouldSendAnotherMouseMove;
+
     public void Construct(CUIInput input)
     {
       Events.Clear();
       KeyboardEvents.Clear();
 
+      //TODO i should just reset Consumed
       MouseLeaveEvent = new(input.Mouse);
       MouseEnterEvent = new(input.Mouse);
       MouseOnEvent = new(input.Mouse);
@@ -52,9 +57,16 @@ namespace CursedUI
         Events.Add(new CUIMouseMovedEvent(input.Mouse));
       }
 
+      if (ShouldSendAnotherMouseMove)
+      {
+        input.Mouse.SomethingHappened = true;
+        ShouldSendAnotherMouseMove = false;
+      }
+
       if (input.Mouse.Scrolled)
       {
         Events.Add(new CUIMouseScrollEvent(input.Mouse, input.Mouse.Scroll));
+        ShouldSendAnotherMouseMove = true;
       }
 
 

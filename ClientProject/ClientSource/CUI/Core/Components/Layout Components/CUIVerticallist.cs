@@ -107,6 +107,18 @@ namespace CursedUI
       Scroll += e.Scroll * ScrollSpeed;
     }
 
+    private void ValidateScroll()
+    {
+      // if (Scroll > 0) Scroll = 0;
+      if (Scroll < TotalContentHeight) Scroll = TotalContentHeight;
+    }
+
+    protected override void UpdateRects()
+    {
+      base.UpdateRects();
+      ValidateScroll();
+    }
+
     protected CUIVerticalListLayout ListLayout;
 
     [InitMethod]

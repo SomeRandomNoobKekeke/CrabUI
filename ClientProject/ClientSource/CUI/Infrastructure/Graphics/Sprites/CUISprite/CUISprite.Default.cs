@@ -67,9 +67,10 @@ namespace CursedUI
     public static CUISprite CheckBoxOn => AtIndex("CheckBoxOn", 0, 1);
     public static CUISprite CheckBoxOff => AtIndex("CheckBoxOff", 1, 1);
 
-    public static CUISprite BoxWithAShadow => AtIndex("BoxWithAShadow", 4, 1);
+    public static CUISprite GlowingEdges => AtIndex("GlowingEdges", 0, 1);
+    public static CUISprite DarkEdges => AtIndex("DarkEdges", 1, 1);
 
-    public static CUISprite GlowingEdges => AtIndex("GlowingEdges", 2, 1);
+
     public static CUISprite BluredEdges => AtIndex("BluredEdges", 0, 2);
     public static CUISprite BluredEdgesHorizontal => AtIndex("BluredEdgesHorizontal", 1, 2);
     public static CUISprite BluredEdgesVertical => AtIndex("BluredEdgesVertical", 2, 2);
@@ -79,9 +80,8 @@ namespace CursedUI
     public static CUISprite Vignette => AtIndex("Vignette", 0, 3);
     public static CUISprite DimmedHorizontal => AtIndex("DimmedHorizontal", 1, 3);
     public static CUISprite DimmedVertical => AtIndex("DimmedVertical", 2, 3);
-    public static CUISprite VignetteDithered => AtIndex("VignetteDithered", 7, 7, 8, 8);
-    public static CUISprite DimmedHorizontalLight => AtIndex("DimmedHorizontalLight", 4, 3);
-    public static CUISprite DimmedVerticalLight => AtIndex("DimmedVerticalLight", 5, 3);
+    public static CUISprite DimmedHorizontalLight => AtIndex("DimmedHorizontalLight", 3, 3);
+    public static CUISprite DimmedVerticalLight => AtIndex("DimmedVerticalLight", 4, 3);
 
 
     public static CUISprite LeftLineEnd => AtIndex("LeftLineEnd", 0, 4);
@@ -89,11 +89,15 @@ namespace CursedUI
     public static CUISprite RightLineEnd => AtIndex("RightLineEnd", 2, 4);
     public static CUISprite Handle => AtIndex("Handle", 3, 4);
     public static CUISprite LineMark => AtIndex("LineMark", 4, 4);
-
     public static CUISprite FuzzyCircle => AtIndex("FuzzyCircle", 5, 4);
 
-    public static CUISprite Hex => CutAtIndexAs("Hex", 0, 5, 2, 2);
+    public static CUISprite VerticalTrack => AtIndex("VerticalTrack", 0, 5);
+    public static CUISprite HorizontalTrack => AtIndex("VerticalTrack", 1, 5);
+    public static CUISprite VerticalTrackEnd => AtIndex("VerticalTrack", 2, 5);
+    public static CUISprite HorizontalTrackEnd => AtIndex("VerticalTrack", 3, 5);
+    public static CUISprite VerticalTrackSlider => AtIndex("VerticalTrack", 4, 5);
 
+    public static CUISprite VignetteDithered => AtIndex("VignetteDithered", 7, 7, 8, 8);
 
     public static CUISprite CreateRadialColorPicker(int w, int h)
     {

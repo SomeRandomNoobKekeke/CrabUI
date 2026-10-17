@@ -59,14 +59,35 @@ namespace CursedUI
       }
     }
 
-    protected void UpdateChildrenOffsetBounds(float totalChildrenHeight)
+    /// <summary>
+    /// [0..1]
+    /// </summary>
+    public float RelativeScroll
     {
+      get
+      {
+        float spaceToScroll = TotalContentHeight - Rect.Height;
+        return Math.Clamp(-Scroll / spaceToScroll, 0, 1);
+      }
+      set
+      {
+        float spaceToMove = TotalContentHeight - Rect.Height;
+        Scroll = -value * spaceToMove;
+      }
+    }
+
+    public float TotalContentHeight { get; private set; }
+
+    protected void UpdateChildrenOffsetBounds(float totalContentHeight)
+    {
+      TotalContentHeight = totalContentHeight;
+
       if (Direction == CUIDirection.Straight)
       {
         LayoutProps.ChildrenOffset.Bounds = new CUIBoundaries(
           minX: 0,
           maxX: 0,
-          minY: Math.Min(Rect.Height - totalChildrenHeight - BottomGap, 0),
+          minY: Math.Min(Rect.Height - totalContentHeight - BottomGap, 0),
           maxY: TopGap
         );
       }
@@ -76,12 +97,12 @@ namespace CursedUI
           minX: 0,
           maxX: 0,
           minY: -TopGap,
-          maxY: -Math.Min(Rect.Height - totalChildrenHeight - BottomGap, 0)
+          maxY: -Math.Min(Rect.Height - totalContentHeight - BottomGap, 0)
         );
       }
     }
 
-    private void ScrollHandle(CUIMouseScrollEvent e)
+    private void HandleScroll(CUIMouseScrollEvent e)
     {
       Scroll += e.Scroll * ScrollSpeed;
     }
@@ -101,7 +122,7 @@ namespace CursedUI
 
     public CUIVerticalList() : base()
     {
-      MouseScroll += ScrollHandle;
+      MouseScroll += HandleScroll;
     }
   }
 }

@@ -15,21 +15,30 @@ namespace CUITests
   {
     public static partial class Components
     {
+      //LINK:\ClientProject\ClientSource\CUI\Core\Components\Layout Components\CUIVerticalScrollBar.cs
       public static CUIComponent CUIScrollBar()
       {
-        CUIFrame frame = new()
+        CUIFrame frame = new CUIDefault.Frame("CUIScrollbar", 400, 600);
+
+        frame["layout"]["main"] = new CUIHorizontalList() { Flex = 1 };
+        frame["layout"]["main"]["list"] = new CUIVerticalList()
         {
-          Background = { Color = new Color(0, 0, 64) },
-          Absolute = new CUINullRect(0, 0, 400, 600),
-          Anchor = CUIAnchor.Center,
+          Flex = 1,
+          Scrollable = true,
         };
 
-        frame["scrollbar"] = new CUIScrollBar()
+        for (int i = 0; i < 100; i++)
         {
-          Relative = new CUINullRect(0, 0, 0.6f, 0.6f),
-          Anchor = CUIAnchor.Center,
-          Background = { Color = Color.Pink },
-          OnMoved = (l) => CUI.Logger.Log(l),
+          frame["layout"]["main"]["list"].Children.Add(new CUITextBlock($"line {i}")
+          {
+            TextAnchor = CUIAnchor.LeftCenter,
+          });
+        }
+
+        frame["layout"]["main"]["scrollbar"] = new CUIVerticalScrollBar()
+        {
+          Absolute = new CUINullRect(w: 24),
+          ConnectedList = frame["layout"]["main"]["list"],
         };
 
         return frame;

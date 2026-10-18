@@ -30,7 +30,7 @@ namespace CursedUI
     private void AddOneSide(Type T)
     {
       Node node = Nodes[T] = new Node(T);
-      TypesByName[T.GetFullName()] = T;
+      TypesByName[Reflection_Extensions.GetFullName(T)] = T;
 
       if (T.BaseType is not null)
       {
@@ -44,7 +44,7 @@ namespace CursedUI
     private void AddBothSides(Type T)
     {
       Node node = Nodes[T] = new Node(T);
-      TypesByName[T.GetFullName()] = T;
+      TypesByName[Reflection_Extensions.GetFullName(T)] = T;
 
       if (T.BaseType is not null)
       {
@@ -82,7 +82,7 @@ namespace CursedUI
       foreach (Type T in types)
       {
         Nodes[T] = new Node(T);
-        TypesByName[T.GetFullName()] = T;
+        TypesByName[Reflection_Extensions.GetFullName(T)] = T;
       }
 
       foreach (Type T in types)
@@ -103,7 +103,7 @@ namespace CursedUI
       foreach (Type T in types)
       {
         Nodes[T] = new Node(T);
-        TypesByName[T.GetFullName()] = T;
+        TypesByName[Reflection_Extensions.GetFullName(T)] = T;
       }
 
       foreach (Node node in Nodes.Values)

@@ -21,7 +21,7 @@ namespace CUITests
 
     private void Add(Type T)
     {
-      Tests[T.GetFullName()] = T;
+      Tests[Reflection_Extensions.GetFullName(T)] = T;
     }
 
     public void AddPack(Type testPack)

@@ -40,7 +40,7 @@ namespace CursedUI
 
         if (fields.Count > 0)
         {
-          CUI.Logger.Log($"Static delegates in {T.GetFullName()}:");
+          CUI.Logger.Log($"Static delegates in {Reflection_Extensions.GetFullName(T)}:");
           foreach (FieldInfo fi in fields)
           {
             CUI.Logger.Log($" - {fi}");
@@ -71,7 +71,7 @@ namespace CursedUI
 
         if (fields.Count > 0)
         {
-          CUI.Logger.Log($"Static fields in {T.GetFullName()}:");
+          CUI.Logger.Log($"Static fields in {Reflection_Extensions.GetFullName(T)}:");
           foreach (FieldInfo fi in fields)
           {
             CUI.Logger.Log($" - {fi}");
@@ -82,7 +82,7 @@ namespace CursedUI
 
     public static void PrintStaticFieldsInType(Type T)
     {
-      CUI.Logger.Log($"Static fields in {T.GetFullName()}:");
+      CUI.Logger.Log($"Static fields in {Reflection_Extensions.GetFullName(T)}:");
       foreach (FieldInfo fi in T.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static))
       {
         CUI.Logger.Log($" - {fi}");

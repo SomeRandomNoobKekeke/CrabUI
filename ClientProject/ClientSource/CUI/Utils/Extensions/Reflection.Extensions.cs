@@ -12,7 +12,7 @@ namespace CursedUI
 {
   public static class Reflection_Extensions
   {
-    public static string GetFullName(this Type T)
+    public static string GetFullName(Type T)
     {
       List<string> parts = new List<string>() { T.Name };
       Type declaringType = T.DeclaringType;
@@ -26,7 +26,7 @@ namespace CursedUI
       return string.Join('.', parts);
     }
 
-    public static string GetFullMethodName(this MethodBase mi)
+    public static string GetFullMethodName(MethodBase mi)
     {
       List<string> parts = new List<string>() { mi.Name };
       Type declaringType = mi.DeclaringType;

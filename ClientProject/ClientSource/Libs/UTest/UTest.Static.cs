@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using Barotrauma;
 
 namespace CUILibs
 {
@@ -24,6 +25,17 @@ namespace CUILibs
     {
       UTestExplorer.TestTree.ScanAssembly(Assembly.GetCallingAssembly());
       UTestCommands.AddCommands();
+    }
+
+    public static void TryRunPrevTest()
+    {
+#if CLIENT
+      string lastCommand = ModStorage.Get<string>("lastUtestCommand");
+      if (!string.IsNullOrEmpty(lastCommand))
+      {
+        DebugConsole.ExecuteCommand(lastCommand);
+      }
+#endif
     }
 
     public static void Dispose()

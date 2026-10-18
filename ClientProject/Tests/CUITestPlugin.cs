@@ -41,6 +41,7 @@ namespace CUITests
 
         UTest.CollapseTestPackIfSucceed = false;
         UTest.ScanThisAssembly();
+        UTest.TryRunPrevTest();
 
         // CUICore.Palettes.Primary = CUIPalette.FromColor(new Color(0, 0, 128));
 

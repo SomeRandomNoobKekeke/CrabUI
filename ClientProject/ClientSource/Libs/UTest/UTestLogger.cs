@@ -18,6 +18,8 @@ namespace CUILibs
     public static float ColorContrast = 0.75f;
     public static string Line = "----------------------------------------------------------------------------------------";
 
+    public static bool LogMissingTests = false;
+
     /// <summary>
     /// sneaky var that no one will ever find
     /// </summary>

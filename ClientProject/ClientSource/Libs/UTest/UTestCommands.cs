@@ -14,6 +14,8 @@ namespace CUILibs
     //THINK Why this method is the main entry point?
     public static void AddCommands()
     {
+      if (DebugConsole.Commands.Any(c => c.Names[0].Value == "utest")) return;
+
       DebugConsole.Command utestCommand = new DebugConsole.Command("utest", "", UTest_Command, UTest_Hints);
 
 #if CLIENT
@@ -26,7 +28,6 @@ namespace CUILibs
 #if CLIENT
       PermitCommands();
 #endif
-
 
 #if CLIENT
       string lastCommand = ModStorage.Get<string>("lastUtestCommand");

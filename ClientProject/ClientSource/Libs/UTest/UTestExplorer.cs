@@ -24,8 +24,9 @@ namespace CUILibs
   public static class UTestExplorer
   {
 
-    public static UTestTree TestTree { get; set; }
+    public static UTestTree TestTree { get; set; } = new();
 
+    //WTF is this? 
     public static HashSet<string> Categories = new();
     public static void ScanCategories(params string[] categories)
       => Categories = new HashSet<string>(categories);

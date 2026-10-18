@@ -40,7 +40,7 @@ namespace CUITests
         CUI.TextureManager.LoadAs("Assets/PNG/For testing/Icons.png", "Test Icons");
 
         UTest.CollapseTestPackIfSucceed = false;
-        UTest.Init();
+        UTest.ScanThisAssembly();
 
         // CUICore.Palettes.Primary = CUIPalette.FromColor(new Color(0, 0, 128));
 
@@ -71,7 +71,6 @@ namespace CUITests
     public void Dispose()
     {
       Instance = null;
-      UTest.Dispose();
       // MGDebugTool?.Dispose();
       CUITest?.Dispose();
     }

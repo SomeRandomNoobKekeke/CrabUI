@@ -9,15 +9,20 @@ namespace CUILibs
 {
   public partial class UTest
   {
+    static UTest()
+    {
+      PluginLifeCycle.Stop += Dispose;
+    }
+
     public static bool CollapseTestPackIfSucceed
     {
       get => UTestLogger.CollapseTestPackIfSucceed;
       set => UTestLogger.CollapseTestPackIfSucceed = value;
     }
 
-    public static void Init()
+    public static void ScanThisAssembly()
     {
-      UTestExplorer.TestTree = new UTestTree(Assembly.GetExecutingAssembly());
+      UTestExplorer.TestTree.ScanAssembly(Assembly.GetCallingAssembly());
       UTestCommands.AddCommands();
     }
 

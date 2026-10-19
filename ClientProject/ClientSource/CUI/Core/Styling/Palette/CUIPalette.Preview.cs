@@ -44,22 +44,31 @@ namespace CursedUI
         OnInput = (s) => palette.Swap(CUIPalette.FromColor(CUICore.Parser.Parse<Color>(s))),
       };
 
-      block["panel"] = new CUIDefault.VerticalPanel()
+      block["controls"] = new CUIDefault.VerticalPanel()
       {
         FitContent = new CUIBool2(false, true),
       };
 
-      block["panel"]["radios"] = new CUIDefault.HorizontalPanel()
+      block["controls"]["radios"] = new CUIDefault.HorizontalPanel();
+
+      block["controls"]["radios"]["1"] = new CUIRadioButton("radio button 1") { GroupName = "bruh" };
+      block["controls"]["radios"]["2"] = new CUIRadioButton("radio button 2") { GroupName = "bruh" };
+
+      block["controls"]["toggle button"] = new CUIToggleButton("CUIToggleButton");
+
+      block["controls"]["checkbox"] = new CUICheckBox()
       {
-        FitContent = new CUIBool2(false, true),
+        Absolute = new CUINullRect(w: 24, h: 24),
       };
 
-      block["panel"]["radios"]["1"] = new CUIRadioButton("radio button 1") { GroupName = "bruh" };
-      block["panel"]["radios"]["2"] = new CUIRadioButton("radio button 2") { GroupName = "bruh" };
+      block["panel"] = new CUIDefault.HorizontalPanel();
+      block["panel"]["text"] = new CUITextBlock("panel");
 
-      block["panel"]["toggle button"] = new CUIToggleButton("CUIToggleButton");
+      block["backpanel"] = new CUIDefault.HorizontalBackPanel();
+      block["backpanel"]["text"] = new CUITextBlock("backpanel");
 
-      block["panel"]["checkbox"] = new CUICheckBox();
+      block["backpanel"] = new CUIDefault.HorizontalBackPanel();
+      block["backpanel"]["text"] = new CUITextBlock("backpanel");
 
       block.DeepPalette = palette;
 

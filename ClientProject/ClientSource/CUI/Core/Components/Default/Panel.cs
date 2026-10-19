@@ -27,8 +27,14 @@ namespace CursedUI
       public static ICUIStyle DefaultStyle => new CUIDefaultStyle<HorizontalPanel>((c) =>
       {
         c.Background.Color = c.Palette["panel"];
-        c.FitContent = new CUIBool2(false, true);
+
       });
+
+      protected override void InitStyle()
+      {
+        base.InitStyle();
+        FitContent = new CUIBool2(false, true);
+      }
     }
 
     public class VerticalPanel : CUIVerticalList
@@ -36,8 +42,13 @@ namespace CursedUI
       public static ICUIStyle DefaultStyle => new CUIDefaultStyle<VerticalPanel>((c) =>
       {
         c.Background.Color = c.Palette["panel"];
-        c.FitContent = new CUIBool2(true, false);
       });
+
+      protected override void InitStyle()
+      {
+        base.InitStyle();
+        FitContent = new CUIBool2(true, false);
+      }
     }
 
 
@@ -54,8 +65,13 @@ namespace CursedUI
       public static ICUIStyle DefaultStyle => new CUIDefaultStyle<HorizontalBackPanel>((c) =>
       {
         c.Background.Color = c.Palette["backpanel"];
-        c.FitContent = new CUIBool2(false, true);
       });
+
+      protected override void InitStyle()
+      {
+        base.InitStyle();
+        FitContent = new CUIBool2(false, true);
+      }
     }
 
     public class VerticalBackPanel : CUIVerticalList
@@ -63,8 +79,13 @@ namespace CursedUI
       public static ICUIStyle DefaultStyle => new CUIDefaultStyle<VerticalBackPanel>((c) =>
       {
         c.Background.Color = c.Palette["backpanel"];
-        c.FitContent = new CUIBool2(true, false);
       });
+
+      protected override void InitStyle()
+      {
+        base.InitStyle();
+        FitContent = new CUIBool2(true, false);
+      }
     }
   }
 }

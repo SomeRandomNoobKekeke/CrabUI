@@ -19,10 +19,10 @@ namespace CursedUI
       float brightness = Math.Max(color.R, Math.Max(color.G, color.B)) / 255.0f;
 
       Color front = color;
-      Color back = Color.Lerp(black, color, 0.1f);
-      Color panel = Color.Lerp(black, color, 0.4f);
-      Color backpanel = Color.Lerp(black, color, 0.2f);
-      Color border = Color.Lerp(black, color, 0.7f);
+      Color back = Color.Lerp(black, color, 0.2f);
+      Color panel = Color.Lerp(back, color, 0.4f);
+      Color backpanel = Color.Lerp(back, color, 0.2f);
+      Color border = Color.Lerp(back, color, 0.7f);
       Color text = Color.Lerp(Color.Black, Color.White, 0.95f - (1.0f - brightness) * 0.1f);
       Color selection = new Color(0, 255, 255);
       Color valid = new Color(0, 255, 0);

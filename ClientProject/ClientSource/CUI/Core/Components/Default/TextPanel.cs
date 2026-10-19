@@ -18,7 +18,7 @@ namespace CursedUI
     {
       public static ICUIStyle DefaultStyle => new CUIDefaultStyle<TextPanel>((c) =>
       {
-        c.Background.Color = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.4f);
+        c.Background.Color = c.Palette["panel"];
       });
 
       public TextPanel() : base() { }

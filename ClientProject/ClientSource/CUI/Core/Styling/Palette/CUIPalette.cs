@@ -7,7 +7,6 @@ using Microsoft.Xna.Framework;
 
 namespace CursedUI
 {
-  //Note that later i might split it into multiple dicts, interface should stay the same
   public partial class CUIPalette : WeakReactiveDict<string, Color>, IParsable
   {
     public Color? BaseColor { get; set; }
@@ -21,10 +20,10 @@ namespace CursedUI
 
       Color front = color;
       Color back = Color.Lerp(black, color, 0.1f);
-      Color panel = Color.Lerp(black, color, 0.3f);
+      Color panel = Color.Lerp(black, color, 0.4f);
+      Color backpanel = Color.Lerp(black, color, 0.2f);
       Color border = Color.Lerp(black, color, 0.7f);
       Color text = Color.Lerp(Color.Black, Color.White, 0.95f - (1.0f - brightness) * 0.1f);
-      Color controls = new Color(0, 255, 255);
       Color selection = new Color(0, 255, 255);
       Color valid = new Color(0, 255, 0);
       Color invalid = new Color(255, 0, 0);
@@ -35,9 +34,9 @@ namespace CursedUI
         ["main"] = front,
         ["back"] = back,
         ["panel"] = panel,
+        ["backpanel"] = backpanel,
         ["border"] = border,
         ["text"] = text,
-        ["controls"] = controls,
         ["selection"] = selection,
         ["valid"] = valid,
         ["invalid"] = invalid,

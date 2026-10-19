@@ -18,7 +18,7 @@ namespace CursedUI
     {
       public static ICUIStyle DefaultStyle => new CUIDefaultStyle<FrameHandle>((c) =>
       {
-        c.Background.Color = Color.Lerp(c.Palette["back"], c.Palette["main"], 1.0f);
+        c.Background.Color = c.Palette["main"];
         c.FitContent = new CUIBool2(false, true);
       });
 

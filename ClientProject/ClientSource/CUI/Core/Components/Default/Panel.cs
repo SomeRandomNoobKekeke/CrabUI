@@ -18,7 +18,7 @@ namespace CursedUI
     {
       public static ICUIStyle DefaultStyle => new CUIDefaultStyle<Panel>((c) =>
       {
-        c.Background.Color = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.4f);
+        c.Background.Color = c.Palette["panel"];
       });
     }
 
@@ -26,7 +26,7 @@ namespace CursedUI
     {
       public static ICUIStyle DefaultStyle => new CUIDefaultStyle<HorizontalPanel>((c) =>
       {
-        c.Background.Color = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.4f);
+        c.Background.Color = c.Palette["panel"];
         c.FitContent = new CUIBool2(false, true);
       });
     }
@@ -35,7 +35,7 @@ namespace CursedUI
     {
       public static ICUIStyle DefaultStyle => new CUIDefaultStyle<VerticalPanel>((c) =>
       {
-        c.Background.Color = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.4f);
+        c.Background.Color = c.Palette["panel"];
         c.FitContent = new CUIBool2(true, false);
       });
     }
@@ -45,7 +45,7 @@ namespace CursedUI
     {
       public static ICUIStyle DefaultStyle => new CUIDefaultStyle<BackPanel>((c) =>
       {
-        c.Background.Color = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.2f);
+        c.Background.Color = c.Palette["backpanel"];
       });
     }
 
@@ -53,7 +53,7 @@ namespace CursedUI
     {
       public static ICUIStyle DefaultStyle => new CUIDefaultStyle<HorizontalBackPanel>((c) =>
       {
-        c.Background.Color = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.2f);
+        c.Background.Color = c.Palette["backpanel"];
         c.FitContent = new CUIBool2(false, true);
       });
     }
@@ -62,7 +62,7 @@ namespace CursedUI
     {
       public static ICUIStyle DefaultStyle => new CUIDefaultStyle<VerticalBackPanel>((c) =>
       {
-        c.Background.Color = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.2f);
+        c.Background.Color = c.Palette["backpanel"];
         c.FitContent = new CUIBool2(true, false);
       });
     }

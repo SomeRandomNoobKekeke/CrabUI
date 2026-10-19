@@ -14,11 +14,16 @@ namespace CursedUI
 
     public static CUIPalette FromColor(Color color)
     {
+      Color black = new Color((byte)0, (byte)0, (byte)0, (byte)color.A);
+      Color white = new Color((byte)255, (byte)255, (byte)255, (byte)color.A);
+
+      float brightness = Math.Max(color.R, Math.Max(color.G, color.B)) / 255.0f;
+
       Color front = color;
-      Color back = Color.Lerp(Color.Black, color, 0.1f);
-      Color panel = Color.Lerp(Color.Black, color, 0.3f);
-      Color border = Color.Lerp(Color.Black, color, 0.7f);
-      Color text = Color.Lerp(Color.Black, Color.White, 0.95f);
+      Color back = Color.Lerp(black, color, 0.1f);
+      Color panel = Color.Lerp(black, color, 0.3f);
+      Color border = Color.Lerp(black, color, 0.7f);
+      Color text = Color.Lerp(Color.Black, Color.White, 0.95f - (1.0f - brightness) * 0.1f);
       Color controls = new Color(0, 255, 255);
       Color selection = new Color(0, 255, 255);
       Color valid = new Color(0, 255, 0);
@@ -44,10 +49,12 @@ namespace CursedUI
 
     public static object Parse(string raw)
     {
-      if (raw == "Primary") return CUICore.Palettes.Primary;
-      if (raw == "Secondary") return CUICore.Palettes.Secondary;
-      if (raw == "Tertiary") return CUICore.Palettes.Tertiary;
-      if (raw == "Quaternary") return CUICore.Palettes.Quaternary;
+      PropertyInfo pi = typeof(CUIPalettes).GetProperty(raw);
+
+      if (pi?.PropertyType == typeof(CUIPalette))
+      {
+        return (CUIPalette)pi.GetValue(null)!;
+      }
 
       return FromColor(CUICore.Parser.Parse<Color>(raw));
     }
@@ -56,10 +63,11 @@ namespace CursedUI
 
     public string ToText()
     {
-      if (this == CUICore.Palettes.Primary) return "Primary";
-      if (this == CUICore.Palettes.Secondary) return "Secondary";
-      if (this == CUICore.Palettes.Tertiary) return "Tertiary";
-      if (this == CUICore.Palettes.Quaternary) return "Quaternary";
+      foreach (PropertyInfo pi in typeof(CUIPalettes).GetProperties(BindingFlags.Public | BindingFlags.Static))
+      {
+        if (pi.PropertyType != typeof(CUIPalette)) continue;
+        if (pi.GetValue(null).Equals(this)) return pi.Name;
+      }
 
       if (BaseColor.HasValue) return CUICore.Parser.Serialize(BaseColor.Value);
       return "Primary";

@@ -32,14 +32,37 @@ namespace CursedUI
       set => _Quaternary.Swap(value);
     }
 
+    private CUIPalette _Quinary = CUIPalette.FromColor(new Color(0, 0, 0, 255)); public CUIPalette Quinary
+    {
+      get => _Quinary;
+      set => _Quinary.Swap(value);
+    }
+
+    private CUIPalette _Senary = CUIPalette.FromColor(new Color(0, 0, 0, 255)); public CUIPalette Senary
+    {
+      get => _Senary;
+      set => _Senary.Swap(value);
+    }
+
+    private CUIPalette _Septenary = CUIPalette.FromColor(new Color(0, 0, 0, 255)); public CUIPalette Septenary
+    {
+      get => _Septenary;
+      set => _Septenary.Swap(value);
+    }
+
+    private CUIPalette _Octonary = CUIPalette.FromColor(new Color(0, 0, 0, 255)); public CUIPalette Octonary
+    {
+      get => _Octonary;
+      set => _Octonary.Swap(value);
+    }
+
     public CUIPalette FromName(string name)
     {
-      if (name == "Primary") return Primary;
-      if (name == "Secondary") return Secondary;
-      if (name == "Tertiary") return Tertiary;
-      if (name == "Quaternary") return Quaternary;
+      PropertyInfo pi = typeof(CUIPalettes).GetProperty(name);
+      if (pi is null) return Primary;
+      if (pi.PropertyType != typeof(CUIPalette)) return Primary;
 
-      return Primary;
+      return (CUIPalette)pi.GetValue(null)!;
     }
   }
 }

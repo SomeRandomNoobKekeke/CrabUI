@@ -28,7 +28,10 @@ namespace CursedUI
         HueSelectWidth = 30,
         OnSelected = (cl) =>
         {
-          block.Get<CUITextInput>("input").Text = CUICore.Parser.Serialize(cl);
+          float alpha = block.Get<CUIRangeInput>("alphainput").Lambda;
+          cl = new Color(cl.R, cl.G, cl.B, (int)Math.Round(alpha * 255));
+
+          block.Get<CUITextInput>("colorinput").Text = CUICore.Parser.Serialize(cl);
         },
       };
 
@@ -36,12 +39,31 @@ namespace CursedUI
 
 
       block["button"] = new CUIButton("button");
-      block["input"] = new CUITextInput()
+
+
+      void UpdatePalette()
+      {
+
+        Color cl = CUICore.Parser.Parse<Color>(block.Get<CUITextInput>("colorinput").Text);
+        float alpha = block.Get<CUIRangeInput>("alphainput").Lambda;
+
+        cl = new Color(cl.R, cl.G, cl.B, (int)Math.Round(alpha * 255));
+
+        palette.Swap(CUIPalette.FromColor(cl));
+      }
+
+      block["alphainput"] = new CUIRangeInput()
+      {
+        Absolute = new CUINullRect(h: 24),
+        OnChanged = (l) => UpdatePalette(),
+        Lambda = 1,
+      };
+      block["colorinput"] = new CUITextInput()
       {
         Anchor = CUIAnchor.Center,
         Absolute = new CUINullRect(h: 24),
         Text = CUICore.Parser.Serialize(palette.BaseColor),
-        OnInput = (s) => palette.Swap(CUIPalette.FromColor(CUICore.Parser.Parse<Color>(s))),
+        OnInput = (s) => UpdatePalette(),
       };
 
       block["controls"] = new CUIDefault.VerticalPanel()
@@ -89,6 +111,10 @@ namespace CursedUI
       frame["layout"]["block 2"] = BlockOfRandomStuff(CUICore.Palettes.Secondary);
       frame["layout"]["block 3"] = BlockOfRandomStuff(CUICore.Palettes.Tertiary);
       frame["layout"]["block 4"] = BlockOfRandomStuff(CUICore.Palettes.Quaternary);
+      frame["layout"]["block 5"] = BlockOfRandomStuff(CUICore.Palettes.Quinary);
+      frame["layout"]["block 6"] = BlockOfRandomStuff(CUICore.Palettes.Senary);
+      frame["layout"]["block 7"] = BlockOfRandomStuff(CUICore.Palettes.Septenary);
+      frame["layout"]["block 8"] = BlockOfRandomStuff(CUICore.Palettes.Octonary);
 
       frame.Open();
     }

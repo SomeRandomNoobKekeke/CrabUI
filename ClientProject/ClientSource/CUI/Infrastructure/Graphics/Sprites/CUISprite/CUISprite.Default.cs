@@ -63,13 +63,11 @@ namespace CursedUI
     public static CUISprite Cross => AtIndex("Cross", 0, 0);
     public static CUISprite Angle => AtIndex("Angle", 1, 0);
 
-
-    public static CUISprite CheckBoxOn => AtIndex("CheckBoxOn", 0, 1);
-    public static CUISprite CheckBoxOff => AtIndex("CheckBoxOff", 1, 1);
-
-    public static CUISprite GlowingEdges => AtIndex("GlowingEdges", 0, 1);
-    public static CUISprite DarkEdges => AtIndex("DarkEdges", 1, 1);
-
+    public static CUISprite VerticalGlow => AtIndex("VerticalGlow", 0, 1);
+    public static CUISprite VerticalGlow16 => AtIndex("VerticalGlow16", 1, 1);
+    public static CUISprite VerticalGlow32 => AtIndex("VerticalGlow32", 2, 1);
+    public static CUISprite VerticalGlow64 => AtIndex("VerticalGlow64", 3, 1);
+    public static CUISprite VerticalGlow128 => AtIndex("VerticalGlow128", 4, 1);
 
     public static CUISprite BluredEdges => AtIndex("BluredEdges", 0, 2);
     public static CUISprite BluredEdgesHorizontal => AtIndex("BluredEdgesHorizontal", 1, 2);
@@ -96,6 +94,9 @@ namespace CursedUI
     public static CUISprite VerticalTrackEnd => AtIndex("VerticalTrack", 2, 5);
     public static CUISprite HorizontalTrackEnd => AtIndex("VerticalTrack", 3, 5);
     public static CUISprite VerticalTrackSlider => AtIndex("VerticalTrack", 4, 5);
+
+    public static CUISprite GlowingEdges => AtIndex("GlowingEdges", 0, 6);
+
 
     public static CUISprite VignetteDithered => AtIndex("VignetteDithered", 7, 7, 8, 8);
 

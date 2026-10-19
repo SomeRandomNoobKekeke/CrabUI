@@ -34,6 +34,7 @@ namespace CursedUI
       {
         base.InitStyle();
         FitContent = new CUIBool2(false, true);
+        Borders = new CUISizes(0, 0, 1, 0);
       }
     }
 
@@ -71,6 +72,7 @@ namespace CursedUI
       {
         base.InitStyle();
         FitContent = new CUIBool2(false, true);
+        Borders = new CUISizes(0, 0, 1, 0);
       }
     }
 

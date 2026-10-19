@@ -56,8 +56,12 @@ namespace CursedUI
       {
         if (!Scrollable) return;
         ChildrenOffset = ChildrenOffset with { Y = value };
+        ScrollChanged?.Invoke(Scroll);
       }
     }
+
+    //TODO Cursed, temp event that also raises when scroll is validated
+    public event Action<float> ScrollChanged;
 
     /// <summary>
     /// [0..1]
@@ -67,6 +71,7 @@ namespace CursedUI
       get
       {
         float spaceToScroll = TotalContentHeight - Rect.Height;
+        if (spaceToScroll == 0) return 0;
         return Math.Clamp(-Scroll / spaceToScroll, 0, 1);
       }
       set
@@ -110,7 +115,10 @@ namespace CursedUI
     private void ValidateScroll()
     {
       // if (Scroll > 0) Scroll = 0;
-      if (Scroll < TotalContentHeight) Scroll = TotalContentHeight;
+      if (Scroll < -TotalContentHeight)
+      {
+        Scroll = -TotalContentHeight;
+      }
     }
 
     protected override void UpdateRects()

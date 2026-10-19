@@ -74,10 +74,14 @@ namespace CursedUI
 
         float spaceToMove = Rect.Height - Slider.Rect.Height;
         float shift = value * spaceToMove;
-        Slider.Absolute = Slider.Absolute with
+
+        if (!Slider.IsDragged)//HACK
         {
-          Top = shift,
-        };
+          Slider.Absolute = Slider.Absolute with
+          {
+            Top = shift,
+          };
+        }
       }
     }
 
@@ -94,13 +98,13 @@ namespace CursedUI
       {
         CUIVerticalList list = value as CUIVerticalList;
 
-        if (_ConnectedList is not null) _ConnectedList.MouseScroll -= HandleConnectedListScroll;
+        if (_ConnectedList is not null) _ConnectedList.ScrollChanged -= HandleConnectedListScroll;
         _ConnectedList = list;
-        if (_ConnectedList is not null) _ConnectedList.MouseScroll += HandleConnectedListScroll;
+        if (_ConnectedList is not null) _ConnectedList.ScrollChanged += HandleConnectedListScroll;
       }
     }
 
-    private void HandleConnectedListScroll(CUIMouseScrollEvent e)
+    private void HandleConnectedListScroll(float scroll)
     {
       Lambda = _ConnectedList.RelativeScroll;
     }
@@ -122,8 +126,9 @@ namespace CursedUI
     {
       MouseDown += (e) =>
       {
-        Lambda = LambdaFromMousePos(e.Pos - new Vector2(0, Slider.Rect.Height / 2.0f));
-        if (_ConnectedList is not null) _ConnectedList.RelativeScroll = prevLambda;
+        float l = LambdaFromMousePos(e.Pos - new Vector2(0, Slider.Rect.Height / 2.0f));
+        Lambda = l;
+        if (_ConnectedList is not null) _ConnectedList.RelativeScroll = l;
       };
     }
   }

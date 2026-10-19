@@ -48,14 +48,11 @@ namespace CursedUI
     {
       get
       {
-        if (Parent is not null)
+        CUIVisualComponent parent = Parent;
+        while (parent is not null)
         {
-          yield return Parent;
-
-          foreach (CUIVisualComponent parent in Parent.Parents)
-          {
-            yield return parent;
-          }
+          yield return parent;
+          parent = parent.Parent;
         }
       }
     }

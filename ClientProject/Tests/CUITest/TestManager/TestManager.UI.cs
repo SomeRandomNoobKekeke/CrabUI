@@ -25,13 +25,13 @@ namespace CUITests
         {
           OpenButton.RemoveSelf();
           this.Open(CUI.TopMain);
-          Pages.Open(SnapshotTestManager);
+          Pages.OpenPage(SnapshotTestManager);
         }
         else
         {
           CUI.TopMain.Children.Add(OpenButton);
           this.Close();
-          Pages.Dismantle(); // This should trigger dismantle on concrete page
+          Pages.ClosePage(); // This should trigger dismantle on concrete page
           ModStorage.Remove("CUITest.LastTest");
         }
       }
@@ -101,14 +101,14 @@ namespace CUITests
       {
         Text = "E2E",
         Padding = new CUISizes(0, 5, 0, 5),
-        OnMouseDown = (e) => Pages.Open(E2ETestManager),
+        OnMouseDown = (e) => Pages.OpenPage(E2ETestManager),
       };
 
       this["layout"]["header"]["snapshots"] = new CUIButton()
       {
         Text = "Snapshots",
         Padding = new CUISizes(0, 5, 0, 5),
-        OnMouseDown = (e) => Pages.Open(SnapshotTestManager),
+        OnMouseDown = (e) => Pages.OpenPage(SnapshotTestManager),
       };
 
 

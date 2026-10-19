@@ -13,7 +13,7 @@ namespace CursedUI
 {
   public partial class CUIPage : CUIComponent, IComponent
   {
-    protected virtual void HandleOpen() { }
+    protected virtual void HandleOpen(RoutableCommandContract parentContract = null) { }
     protected virtual void HandleClose() { }
 
     public event Action OnOpen;
@@ -22,9 +22,9 @@ namespace CursedUI
     public Action AddOnOpen { set { OnOpen += value; } }
     public Action AddOnClose { set { OnClose += value; } }
 
-    public void RaiseOnOpen()
+    public void RaiseOnOpen(RoutableCommandContract parentContract = null)
     {
-      HandleOpen();
+      HandleOpen(parentContract);
       OnOpen?.Invoke();
     }
     public void RaiseOnClose()

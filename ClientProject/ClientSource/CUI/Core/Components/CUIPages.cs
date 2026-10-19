@@ -17,12 +17,12 @@ namespace CursedUI
       get => _OpenedPage;
       set
       {
-        Open(value);
+        OpenPage(value);
       }
     }
 
     public bool IsOpened(CUIComponent p) => OpenedPage == p;
-    public void Dismantle()
+    public void ClosePage()
     {
       if (Children.Count > 0 && Children[0] is CUIPage)
       {
@@ -35,9 +35,9 @@ namespace CursedUI
     /// <summary>
     /// Adds page as its only child
     /// </summary>
-    public void Open(CUIComponent page)
+    public void OpenPage(CUIComponent page)
     {
-      Dismantle();
+      ClosePage();
 
       _OpenedPage = page;
       if (page is null) return;
@@ -46,11 +46,17 @@ namespace CursedUI
 
       page.Relative = new CUINullRect(0, 0, 1, 1);
 
-
       if (page is CUIPage)
       {
         (page as CUIPage).RaiseOnOpen();
       }
+    }
+
+    private RoutableCommandContract? FindNearestContract()
+    {
+      return Parents.FirstOrDefault(
+        p => p?.CommandsContract != null
+      )?.CommandsContract;
     }
   }
 }

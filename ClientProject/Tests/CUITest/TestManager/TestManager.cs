@@ -33,13 +33,13 @@ namespace CUITests
 
         if (type == "snapshot")
         {
-          Pages.Open(SnapshotTestManager);
+          Pages.OpenPage(SnapshotTestManager);
           SnapshotTestManager.OpenGroupByTestName(name);
           SnapshotTestManager.Run(name);
         }
         if (type == "e2e")
         {
-          Pages.Open(E2ETestManager);
+          Pages.OpenPage(E2ETestManager);
           E2ETestManager.Run(name);
         }
       }

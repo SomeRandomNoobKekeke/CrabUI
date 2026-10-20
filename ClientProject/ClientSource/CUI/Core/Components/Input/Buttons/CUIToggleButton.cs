@@ -18,6 +18,7 @@ namespace CursedUI
     public static ICUIStyle DefaultStyle => new CUIDefaultStyle<CUIToggleButton>((c) =>
     {
       c.MasterColor = c.Palette["main"];
+      c.TextColor = c.Palette["text"];
     });
 
     protected override void InitStyle()

@@ -32,7 +32,7 @@ namespace CUITests
         this.Get<CUIToggleButton>("layout.controls.serialize").DoToggle();
       }
     }
-    protected override void HandleOpen(RoutableCommandContract nearestContract = null)
+    protected override void HandleOpen()
     {
       Setup();
       Refresh();

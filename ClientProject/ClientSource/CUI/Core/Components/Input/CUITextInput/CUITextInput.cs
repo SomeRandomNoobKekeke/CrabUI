@@ -21,7 +21,7 @@ namespace CursedUI
       c.FocusedColor = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.8f);
       c.BluredColor = Color.Lerp(c.Palette["back"], c.Palette["main"], 0.3f);
       c.SelectionColor = c.Palette["selection"] * 0.4f;
-      c.CaretColor = c.Palette["selection"];
+      c.CaretColor = c.Palette["selection"] * 0.6f;
       c.InvalidColor = c.Palette["invalid"] * 0.5f;
       c.TextBlock.TextColor = c.Palette["text"];
       c.UpdateVisualState();//HACK

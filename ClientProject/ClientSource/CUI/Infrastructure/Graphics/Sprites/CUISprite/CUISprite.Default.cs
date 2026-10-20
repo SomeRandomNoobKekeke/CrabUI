@@ -68,6 +68,7 @@ namespace CursedUI
     public static CUISprite VerticalGlow32 => AtIndex("VerticalGlow32", 2, 1);
     public static CUISprite VerticalGlow64 => AtIndex("VerticalGlow64", 3, 1);
     public static CUISprite VerticalGlow128 => AtIndex("VerticalGlow128", 4, 1);
+    public static CUISprite VerticalGlowSolid => AtIndex("VerticalSolid", 5, 1);
 
     public static CUISprite BluredEdges => AtIndex("BluredEdges", 0, 2);
     public static CUISprite BluredEdgesHorizontal => AtIndex("BluredEdgesHorizontal", 1, 2);

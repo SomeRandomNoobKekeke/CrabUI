@@ -19,7 +19,7 @@ namespace CursedUI
       protected override void InitStyle()
       {
         base.InitStyle();
-        Background.Sprite = CUISprite.VerticalGlow64;
+        Background.Sprite = CUISprite.VerticalGlowSolid;
       }
       public GlowingButton() : base() { }
       public GlowingButton(string text) : base(text) { }
@@ -29,7 +29,7 @@ namespace CursedUI
       protected override void InitStyle()
       {
         base.InitStyle();
-        Background.Sprite = CUISprite.VerticalGlow64;
+        Background.Sprite = CUISprite.VerticalGlowSolid;
       }
       public GlowingToggleButton() : base() { }
       public GlowingToggleButton(string text) : base(text) { }
@@ -40,7 +40,7 @@ namespace CursedUI
       protected override void InitStyle()
       {
         base.InitStyle();
-        Background.Sprite = CUISprite.VerticalGlow64;
+        Background.Sprite = CUISprite.VerticalGlowSolid;
       }
       public GlowingRadioButton() : base() { }
       public GlowingRadioButton(string text) : base(text) { }

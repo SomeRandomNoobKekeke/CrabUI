@@ -20,7 +20,7 @@ namespace CursedUI
 
       Absolute = new CUINullRect(w: 400, h: 600);
       Background.Sprite = CUISprite.White;
-      Palette = CUICore.Palettes.Primary;
+      Palette = CUICore.Palettes.Primary1;
 
       Anchor = CUIAnchor.LeftCenter;
 
@@ -40,7 +40,7 @@ namespace CursedUI
         Flex = 1,
         OnMouseDown = (e) => Pages.OpenPage(ComponentsPage),
       };
-      this["layout"]["page buttons"].DeepPalette = CUICore.Palettes.Secondary;
+      this["layout"]["page buttons"].DeepPalette = CUICore.Palettes.Primary2;
 
 
       this["layout"]["pages"] = Pages = new CUIPages() { Flex = 1, };

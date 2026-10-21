@@ -9,7 +9,24 @@ namespace CursedUI
 {
   public partial class CUIPalette : WeakReactiveDict<string, Color>, IParsable
   {
+    public static Color UltimateBackColor => Color.Black;
+
+    public static CUIPalette Darken(CUIPalette palette, float amount)
+    {
+      if (palette.BaseColor.HasValue)
+      {
+        return CUIPalette.FromColor(palette.BaseColor.Value.To(UltimateBackColor, amount));
+      }
+      return palette;
+    }
+
     public Color? BaseColor { get; set; }
+
+    public void Swap(CUIPalette other)
+    {
+      if (other.BaseColor.HasValue) BaseColor = other.BaseColor;
+      base.Swap(other);
+    }
 
     public static CUIPalette FromColor(Color color)
     {
@@ -46,13 +63,15 @@ namespace CursedUI
       };
     }
 
+    //TODO it feels weird that "value" type CUIPalette can be serialized to a reference to CUIPalettes
+    // mb these methods should serialize as data, and CUICore.Parser should have extra parsing methods that would hide these and they would compare and restore by reference
     public static object Parse(string raw)
     {
       PropertyInfo pi = typeof(CUIPalettes).GetProperty(raw);
 
       if (pi?.PropertyType == typeof(CUIPalette))
       {
-        return (CUIPalette)pi.GetValue(null)!;
+        return (CUIPalette)pi.GetValue(CUICore.Palettes)!;
       }
 
       return FromColor(CUICore.Parser.Parse<Color>(raw));
@@ -62,10 +81,9 @@ namespace CursedUI
 
     public string ToText()
     {
-      foreach (PropertyInfo pi in typeof(CUIPalettes).GetProperties(BindingFlags.Public | BindingFlags.Static))
+      foreach (var (name, palette) in CUICore.Palettes.All)
       {
-        if (pi.PropertyType != typeof(CUIPalette)) continue;
-        if (pi.GetValue(null).Equals(this)) return pi.Name;
+        if (palette == this) return name;
       }
 
       if (BaseColor.HasValue) return CUICore.Parser.Serialize(BaseColor.Value);

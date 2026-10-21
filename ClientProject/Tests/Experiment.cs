@@ -19,7 +19,6 @@ namespace CUITests
     public void Experiment()
     {
 
-      // new OverridingVirtualProps().Run();
     }
   }
 }

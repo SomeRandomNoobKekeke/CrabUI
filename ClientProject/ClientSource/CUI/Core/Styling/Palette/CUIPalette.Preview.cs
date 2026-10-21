@@ -8,8 +8,10 @@ namespace CursedUI
 {
   public partial class CUIPalette
   {
-    private static CUIComponent BlockOfRandomStuff(CUIPalette palette)
+    private static CUIComponent BlockOfRandomStuff(PropertyInfo pi)
     {
+      CUIPalette palette = (CUIPalette)pi.GetValue(CUICore.Palettes);
+
       CUIHorizontalList wrapper = new CUIHorizontalList()
       {
         FitContent = new CUIBool2(false, true),
@@ -49,7 +51,7 @@ namespace CursedUI
 
         cl = new Color(cl.R, cl.G, cl.B, (int)Math.Round(alpha * 255));
 
-        palette.Swap(CUIPalette.FromColor(cl));
+        pi.SetValue(CUICore.Palettes, CUIPalette.FromColor(cl));
       }
 
       block["alphainput"] = new CUIRangeInput()
@@ -132,14 +134,14 @@ namespace CursedUI
 
       frame["layout"]["palette"] = CreatePaletteBlock();
 
-      frame["layout"]["block 1"] = BlockOfRandomStuff(CUICore.Palettes.Primary);
-      frame["layout"]["block 2"] = BlockOfRandomStuff(CUICore.Palettes.Secondary);
-      frame["layout"]["block 3"] = BlockOfRandomStuff(CUICore.Palettes.Tertiary);
-      frame["layout"]["block 4"] = BlockOfRandomStuff(CUICore.Palettes.Quaternary);
-      frame["layout"]["block 5"] = BlockOfRandomStuff(CUICore.Palettes.Quinary);
-      frame["layout"]["block 6"] = BlockOfRandomStuff(CUICore.Palettes.Senary);
-      frame["layout"]["block 7"] = BlockOfRandomStuff(CUICore.Palettes.Septenary);
-      frame["layout"]["block 8"] = BlockOfRandomStuff(CUICore.Palettes.Octonary);
+      frame["layout"]["block 1"] = BlockOfRandomStuff(typeof(CUIPalettes).GetProperty("Primary")!);
+      frame["layout"]["block 2"] = BlockOfRandomStuff(typeof(CUIPalettes).GetProperty("Secondary")!);
+      frame["layout"]["block 3"] = BlockOfRandomStuff(typeof(CUIPalettes).GetProperty("Tertiary")!);
+      frame["layout"]["block 4"] = BlockOfRandomStuff(typeof(CUIPalettes).GetProperty("Quaternary")!);
+      frame["layout"]["block 5"] = BlockOfRandomStuff(typeof(CUIPalettes).GetProperty("Quinary")!);
+      frame["layout"]["block 6"] = BlockOfRandomStuff(typeof(CUIPalettes).GetProperty("Senary")!);
+      frame["layout"]["block 7"] = BlockOfRandomStuff(typeof(CUIPalettes).GetProperty("Septenary")!);
+      frame["layout"]["block 8"] = BlockOfRandomStuff(typeof(CUIPalettes).GetProperty("Octonary")!);
 
 
 

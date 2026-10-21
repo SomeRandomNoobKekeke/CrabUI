@@ -47,7 +47,7 @@ namespace CursedUI
         },
       };
 
-      wrapper.DeepPalette = CUICore.Palettes.Tertiary;
+      wrapper.DeepPalette = CUICore.Palettes.Primary3;
 
       return wrapper;
     }

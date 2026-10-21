@@ -60,7 +60,7 @@ namespace CUITests
 
 
 
-        //Utils.RunWithDelay(Experiment, 800);
+        Utils.RunWithDelay(Experiment, 500);
         //Experiment();
       }
       catch (Exception e) { Logger.Error(e); }

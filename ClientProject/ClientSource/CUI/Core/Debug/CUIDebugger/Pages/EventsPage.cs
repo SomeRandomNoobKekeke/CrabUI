@@ -166,7 +166,7 @@ namespace CursedUI
         {
           btn.Flex = 1;
           btn.GroupName = "debugger event flow controls";
-          btn.Palette = CUICore.Palettes.Secondary;
+          btn.Palette = CUICore.Palettes.Secondary2;
           btn.Toggled += (state) =>
           {
             ClearEventList();
@@ -178,7 +178,7 @@ namespace CursedUI
           wrapper["controls"]["update"] = UpdateEventFlow = new CUIRadioButton("Update") { IsSelected = true };
         }
 
-        wrapper.DeepPalette = CUICore.Palettes.Quinary;
+        wrapper.DeepPalette = CUICore.Palettes.Secondary2;
 
 
         return wrapper;
@@ -236,7 +236,7 @@ namespace CursedUI
         };
         this["panels"]["nodes"]["header"] = new CUITextBlock("Nodes:");
         this["panels"]["nodes"]["list"] = new CUIVerticalList() { Flex = 1 };
-        this["panels"]["nodes"].DeepPalette = CUICore.Palettes.Quaternary;
+        this["panels"]["nodes"].DeepPalette = CUICore.Palettes.Primary3;
 
         this["panels"]["events"] = CreateEventList();
       }

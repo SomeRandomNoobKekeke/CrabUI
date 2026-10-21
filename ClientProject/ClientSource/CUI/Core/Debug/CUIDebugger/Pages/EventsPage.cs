@@ -178,7 +178,7 @@ namespace CursedUI
           wrapper["controls"]["update"] = UpdateEventFlow = new CUIRadioButton("Update") { IsSelected = true };
         }
 
-        wrapper.DeepPalette = CUICore.Palettes.Quaternary;
+        wrapper.DeepPalette = CUICore.Palettes.Quinary;
 
 
         return wrapper;
@@ -236,7 +236,7 @@ namespace CursedUI
         };
         this["panels"]["nodes"]["header"] = new CUITextBlock("Nodes:");
         this["panels"]["nodes"]["list"] = new CUIVerticalList() { Flex = 1 };
-        this["panels"]["nodes"].DeepPalette = CUICore.Palettes.Tertiary;
+        this["panels"]["nodes"].DeepPalette = CUICore.Palettes.Quaternary;
 
         this["panels"]["events"] = CreateEventList();
       }

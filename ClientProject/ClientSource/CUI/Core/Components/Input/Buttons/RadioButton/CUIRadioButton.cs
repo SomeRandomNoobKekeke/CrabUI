@@ -70,7 +70,7 @@ namespace CursedUI
 
     private void HandleSelect()
     {
-      SelectedTextState = OffState;
+      SelectedTextState = OffState; //TODO why is OffState used twice? it's prob a typo
       Selected?.Invoke();
       Toggled?.Invoke(true);
       DetermineColor();
@@ -300,7 +300,7 @@ namespace CursedUI
 
         if (PlaySound) SoundPlayer.PlayUISound(ClickSound);
         if (Emit != null) Commands.SendUp(Emit, Text);
-        IsSelectedReactive = !IsSelectedReactive;
+        if (!IsSelectedReactive) IsSelectedReactive = true;
       };
 
       ConsumeMouseEvents = true;

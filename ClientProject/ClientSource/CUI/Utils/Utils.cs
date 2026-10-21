@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Threading;
 using System.Threading.Tasks;
 using CUILibs;
 
@@ -17,6 +18,48 @@ namespace CursedUI
     {
       Task.Delay(delay).ContinueWith((t) => action());
     }
+
+    //https://stackoverflow.com/a/29491927
+    public static Action<T> Debounce<T>(this Action<T> func, int milliseconds = 100)
+    {
+      CancellationTokenSource? cancelTokenSource = null;
+
+      return arg =>
+      {
+        cancelTokenSource?.Cancel();
+        cancelTokenSource = new CancellationTokenSource();
+
+        Task.Delay(milliseconds, cancelTokenSource.Token)
+          .ContinueWith(t =>
+          {
+            if (t.IsCompletedSuccessfully)
+            {
+              func(arg);
+            }
+          }, TaskScheduler.Default);
+      };
+    }
+
+    public static Action Debounce(this Action func, int milliseconds = 100)
+    {
+      CancellationTokenSource? cancelTokenSource = null;
+
+      return () =>
+      {
+        cancelTokenSource?.Cancel();
+        cancelTokenSource = new CancellationTokenSource();
+
+        Task.Delay(milliseconds, cancelTokenSource.Token)
+          .ContinueWith(t =>
+          {
+            if (t.IsCompletedSuccessfully)
+            {
+              func();
+            }
+          }, TaskScheduler.Default);
+      };
+    }
+
 
     public static void PrintAllHarmonyPatches()
     {

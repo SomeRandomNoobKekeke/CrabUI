@@ -23,7 +23,7 @@ namespace CursedUI
       Color panel = Color.Lerp(back, color, 0.4f);
       Color backpanel = Color.Lerp(back, color, 0.2f);
       Color border = Color.Lerp(back, color, 0.6f);
-      Color text = Color.Lerp(Color.Black, Color.White, 0.95f - (1.0f - brightness) * 0.1f);
+      Color text = Color.Lerp(Color.Black, Color.White, 0.95f - (1.0f - brightness) * 0.2f);
       Color selection = new Color(0, 255, 255);
       Color valid = new Color(0, 255, 0);
       Color invalid = new Color(255, 0, 0);

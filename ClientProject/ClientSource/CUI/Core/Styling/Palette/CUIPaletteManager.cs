@@ -8,31 +8,31 @@ namespace CursedUI
 {
   public class CUIPalettes
   {
-    private CUIPalette _Primary = CUIPalette.FromColor(new Color(50, 50, 50, 255)); public CUIPalette Primary
+    private CUIPalette _Primary = CUIPalette.FromColor(new Color(92, 92, 92, 255)); public CUIPalette Primary
     {
       get => _Primary;
       set => _Primary.Swap(value);
     }
 
-    private CUIPalette _Secondary = CUIPalette.FromColor(new Color(100, 100, 100, 255)); public CUIPalette Secondary
+    private CUIPalette _Secondary = CUIPalette.FromColor(new Color(89, 89, 89, 255)); public CUIPalette Secondary
     {
       get => _Secondary;
       set => _Secondary.Swap(value);
     }
 
-    private CUIPalette _Tertiary = CUIPalette.FromColor(new Color(80, 80, 80, 255)); public CUIPalette Tertiary
+    private CUIPalette _Tertiary = CUIPalette.FromColor(new Color(61, 61, 61, 255)); public CUIPalette Tertiary
     {
       get => _Tertiary;
       set => _Tertiary.Swap(value);
     }
 
-    private CUIPalette _Quaternary = CUIPalette.FromColor(new Color(80, 0, 0, 255)); public CUIPalette Quaternary
+    private CUIPalette _Quaternary = CUIPalette.FromColor(new Color(116, 0, 0, 255)); public CUIPalette Quaternary
     {
       get => _Quaternary;
       set => _Quaternary.Swap(value);
     }
 
-    private CUIPalette _Quinary = CUIPalette.FromColor(new Color(0, 0, 0, 255)); public CUIPalette Quinary
+    private CUIPalette _Quinary = CUIPalette.FromColor(new Color(60, 0, 30, 255)); public CUIPalette Quinary
     {
       get => _Quinary;
       set => _Quinary.Swap(value);

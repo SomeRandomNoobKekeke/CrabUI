@@ -34,5 +34,17 @@ namespace CursedUI
     public static CUISprite AngleLeftIcon => AtIconIndex("AngleLeftIcon", 2, 0);
     public static CUISprite AngleDownIcon => AtIconIndex("AngleDownIcon", 3, 0);
     public static CUISprite CheckIcon => AtIconIndex("CheckIcon", 4, 0);
+
+    public static CUISprite ArrowLeftIcon => AtIconIndex("ArrowLeftIcon", 3, 2);
+    public static CUISprite ArrowDownIcon => AtIconIndex("ArrowDownIcon", 4, 2);
+    public static CUISprite ArrowRightIcon => new CUISprite(ArrowLeftIcon)
+    {
+      Effects = SpriteEffects.FlipHorizontally
+    };
+    public static CUISprite ArrowUpIcon => new CUISprite(ArrowDownIcon)
+    {
+      Effects = SpriteEffects.FlipVertically
+    };
+
   }
 }

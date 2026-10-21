@@ -98,6 +98,29 @@ namespace CursedUI
     }
 
 
+    private static CUIComponent CreatePaletteBlock()
+    {
+      CUIComponent panel = new CUIDefault.HorizontalBackPanel();
+
+      using (new CUIContextStyle<CUIDefault.Panel>(p =>
+      {
+        p.Flex = 1;
+        p.Absolute = new CUINullRect(h: 24);
+      }))
+      {
+        panel.Children.Add(new CUIDefault.Panel() { Palette = CUICore.Palettes.Primary });
+        panel.Children.Add(new CUIDefault.Panel() { Palette = CUICore.Palettes.Secondary });
+        panel.Children.Add(new CUIDefault.Panel() { Palette = CUICore.Palettes.Tertiary });
+        panel.Children.Add(new CUIDefault.Panel() { Palette = CUICore.Palettes.Quaternary });
+        panel.Children.Add(new CUIDefault.Panel() { Palette = CUICore.Palettes.Senary });
+        panel.Children.Add(new CUIDefault.Panel() { Palette = CUICore.Palettes.Septenary });
+        panel.Children.Add(new CUIDefault.Panel() { Palette = CUICore.Palettes.Octonary });
+      }
+
+      return panel;
+
+    }
+
     public static void Preview()
     {
       CUIFrame frame = new CUIDefault.Frame("Palette Preview")
@@ -107,6 +130,8 @@ namespace CursedUI
 
       frame.Get<CUIVerticalList>("layout").Scrollable = true;
 
+      frame["layout"]["palette"] = CreatePaletteBlock();
+
       frame["layout"]["block 1"] = BlockOfRandomStuff(CUICore.Palettes.Primary);
       frame["layout"]["block 2"] = BlockOfRandomStuff(CUICore.Palettes.Secondary);
       frame["layout"]["block 3"] = BlockOfRandomStuff(CUICore.Palettes.Tertiary);
@@ -115,6 +140,8 @@ namespace CursedUI
       frame["layout"]["block 6"] = BlockOfRandomStuff(CUICore.Palettes.Senary);
       frame["layout"]["block 7"] = BlockOfRandomStuff(CUICore.Palettes.Septenary);
       frame["layout"]["block 8"] = BlockOfRandomStuff(CUICore.Palettes.Octonary);
+
+
 
       frame.Open();
     }

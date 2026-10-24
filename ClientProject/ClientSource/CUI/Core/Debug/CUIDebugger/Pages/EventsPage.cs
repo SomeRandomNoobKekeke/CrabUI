@@ -166,7 +166,7 @@ namespace CursedUI
         {
           btn.Flex = 1;
           btn.GroupName = "debugger event flow controls";
-          btn.Palette = CUICore.Palettes.Secondary2;
+          btn.Palette = CUICore.Palettes.Secondary;
           btn.Toggled += (state) =>
           {
             ClearEventList();
@@ -178,7 +178,7 @@ namespace CursedUI
           wrapper["controls"]["update"] = UpdateEventFlow = new CUIRadioButton("Update") { IsSelected = true };
         }
 
-        wrapper.DeepPalette = CUICore.Palettes.Secondary2;
+        wrapper.DeepPalette = CUICore.Palettes.Secondary;
 
 
         return wrapper;

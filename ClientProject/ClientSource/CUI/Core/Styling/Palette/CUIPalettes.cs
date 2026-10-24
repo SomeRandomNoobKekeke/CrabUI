@@ -57,9 +57,9 @@ namespace CursedUI
 
     public Dictionary<string, Color> DefaultColors => new Dictionary<string, Color>()
     {
-      ["Primary"] = new Color(92, 92, 92, 255),
-      ["Secondary"] = new Color(255, 0, 0, 255),
-      ["Tertiary"] = new Color(212, 0, 255, 255),
+      ["Primary"] = new Color(70, 70, 70, 255),
+      ["Secondary"] = new Color(112, 0, 0, 255),
+      ["Tertiary"] = new Color(0, 94, 91, 255),
       ["Quaternary"] = new Color(92, 92, 92, 255),
       ["Quinary"] = new Color(92, 92, 92, 255),
       ["Senary"] = new Color(92, 92, 92, 255),

@@ -40,7 +40,7 @@ namespace CursedUI
       remove => Instance.LifeCycle.OnDrawBeforeGUI.Remove(value);
     }
 
-
+    //TODO unused
     public double UpdateFPS
     {
       get => 1.0 / UpdateInterval;

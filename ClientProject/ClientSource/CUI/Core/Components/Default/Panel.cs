@@ -48,7 +48,7 @@ namespace CursedUI
       protected override void InitStyle()
       {
         base.InitStyle();
-        FitContent = new CUIBool2(true, false);
+        FitContent = new CUIBool2(false, true);
       }
     }
 
@@ -86,7 +86,7 @@ namespace CursedUI
       protected override void InitStyle()
       {
         base.InitStyle();
-        FitContent = new CUIBool2(true, false);
+        FitContent = new CUIBool2(false, true);
       }
     }
   }

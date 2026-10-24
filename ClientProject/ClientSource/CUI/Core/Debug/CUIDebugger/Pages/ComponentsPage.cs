@@ -70,7 +70,7 @@ namespace CursedUI
           }
         };
 
-        this["components"] = ComponentList = new CUIDefault.VerticalPanel()
+        this["components"] = ComponentList = new CUIVerticalList()
         {
           Relative = new CUINullRect(0, 0, 1, 1),
           Scrollable = true,

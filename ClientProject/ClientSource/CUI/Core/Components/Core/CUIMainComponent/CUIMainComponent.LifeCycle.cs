@@ -44,6 +44,26 @@ namespace CursedUI
     {
       GlobalEvents.BeforeUpdate.Raise();
 
+      //TODO idk what should happen first this needs to be investigated in low fps
+      // if (Tree.Changed)
+      // {
+      //   Tree.Changed = false;
+      //   RequireVisualRestructure = true;
+      //   RequireLayoutUpdate = true;
+      //   LayoutFlattener.Flatten(this);
+      // }
+
+      // if (RequireLayoutUpdate)
+      // {
+      //   UpdateLayout();
+      // }
+
+      if (Input is not null && Input.SomethingHappened) //TODO can i just check event count?
+      {
+        HandleInput(Input);
+      }
+
+      //TODO idk what should happen first this needs to be investigated in low fps
       if (Tree.Changed)
       {
         Tree.Changed = false;
@@ -57,10 +77,6 @@ namespace CursedUI
         UpdateLayout();
       }
 
-      if (Input is not null && Input.SomethingHappened) //TODO can i just check event count?
-      {
-        HandleInput(Input);
-      }
 
       if (RequireVisualRestructure)
       {

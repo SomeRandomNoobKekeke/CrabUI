@@ -74,7 +74,7 @@ namespace CursedUI
 
         DetermineColor();
         LayoutMarker.Mark(LayoutMarker.Pattern.AbsoluteProp);
-        VisualRestructureNotifier.Notify();
+        NotifyVisualsRestructured();
       }
     }
 

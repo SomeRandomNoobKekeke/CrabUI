@@ -106,7 +106,7 @@ namespace CursedUI
         SelectedIconBlock = value ? OnIconBlock : OffIconBlock;
         DetermineColor();
         LayoutMarker.Mark(LayoutMarker.Pattern.AbsoluteProp);
-        VisualRestructureNotifier.Notify();
+        NotifyVisualsRestructured();
       }
     }
 

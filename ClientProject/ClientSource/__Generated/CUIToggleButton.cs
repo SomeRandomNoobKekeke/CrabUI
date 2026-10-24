@@ -39,8 +39,6 @@ namespace CursedUI
       As_CUIVisualComponent.Events.Self = this;
       As_CUIVisualComponent.FocusHandle.Self = this;
       As_CUIVisualComponent.MainComponentTracker.Self = this;
-      As_CUIVisualComponent.LayoutUpdateNotifier.Self = this;
-      As_CUIVisualComponent.VisualRestructureNotifier.Self = this;
       As_CUIVisualComponent.As_StringDictionary.Self = this;
       As_CUIVisualComponent.Styles.Self = this;
       As_CUIVisualComponent.Adapters.Self = this;

@@ -102,7 +102,7 @@ namespace CursedUI
       set
       {
         _IsOpen = value;
-        VisualRestructureNotifier.Notify();
+        NotifyVisualsRestructured();
       }
     }
 

@@ -74,7 +74,7 @@ namespace CursedUI
       Selected?.Invoke();
       Toggled?.Invoke(true);
       DetermineColor();
-      VisualRestructureNotifier.Notify();
+      NotifyVisualsRestructured();
     }
 
     private void HandleDeselect()
@@ -83,7 +83,7 @@ namespace CursedUI
       Deselected?.Invoke();
       Toggled?.Invoke(false);
       DetermineColor();
-      VisualRestructureNotifier.Notify();
+      NotifyVisualsRestructured();
     }
 
     public Action OnSelected { set { Selected += value; } }

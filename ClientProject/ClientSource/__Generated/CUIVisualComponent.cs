@@ -30,8 +30,6 @@ namespace CursedUI
       As_CUIVisualComponent.Events.Self = this;
       As_CUIVisualComponent.FocusHandle.Self = this;
       As_CUIVisualComponent.MainComponentTracker.Self = this;
-      As_CUIVisualComponent.LayoutUpdateNotifier.Self = this;
-      As_CUIVisualComponent.VisualRestructureNotifier.Self = this;
       As_CUIVisualComponent.As_StringDictionary.Self = this;
       As_CUIVisualComponent.Styles.Self = this;
       As_CUIVisualComponent.Adapters.Self = this;
@@ -130,8 +128,6 @@ namespace CursedUI
     public CUIVisualComponent.Events_Part Events => Self.Events;
     public CUIVisualComponent.FocusHandle_Part FocusHandle => Self.FocusHandle;
     public CUIVisualComponent.MainComponentTracker_Part MainComponentTracker => Self.MainComponentTracker;
-    public CUIVisualComponent.LayoutUpdateNotifier_Part LayoutUpdateNotifier => Self.LayoutUpdateNotifier;
-    public CUIVisualComponent.VisualRestructureNotifier_Part VisualRestructureNotifier => Self.VisualRestructureNotifier;
     public CUIVisualComponent.StringDictionary_Part As_StringDictionary => Self.As_StringDictionary;
     public CUIVisualComponent.Style_Part Styles => Self.Styles;
     public CUIVisualComponent.Adapters_Part Adapters => Self.Adapters;

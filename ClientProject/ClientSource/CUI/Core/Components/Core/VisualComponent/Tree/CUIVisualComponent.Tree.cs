@@ -23,7 +23,7 @@ namespace CursedUI
     protected virtual IList<CUIVisualComponent> ChildrenContainer => _Children;
     public ChildrenListProxy Children { get; } = new();
 
-    public virtual IEnumerable<CUIVisualComponent> StructuralSplit() => ChildrenContainer;
+    public virtual IEnumerable<CUIVisualComponent> StructuralSplit() => ChildrenContainer.Where(c => c.Displayed);
 
     public CUIVisualComponent this[int i]
     {

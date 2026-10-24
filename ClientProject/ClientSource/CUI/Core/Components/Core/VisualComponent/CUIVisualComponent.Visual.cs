@@ -20,7 +20,7 @@ namespace CursedUI
       {
         if (_Displayed == value) return;
         _Displayed = value;
-        NotifyVisualsRestructured();
+        NotifyTreeChanged();
       }
     }
 

@@ -140,7 +140,18 @@ namespace CursedUI
       if (!Displayed || CulledOut) yield break;
 
       yield return Background.VisualWrapper;
-      yield return TextBlock.VisualWrapper;
+
+      if (CullChildren)
+      {
+        yield return VisualBounds.LeftBound;
+        yield return TextBlock.VisualWrapper;
+        yield return VisualBounds.RightBound;
+      }
+      else
+      {
+        yield return TextBlock.VisualWrapper;
+      }
+
       yield return Border.VisualWrapper;
     }
 

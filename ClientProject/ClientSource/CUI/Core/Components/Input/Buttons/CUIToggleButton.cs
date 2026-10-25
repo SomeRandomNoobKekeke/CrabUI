@@ -105,7 +105,7 @@ namespace CursedUI
       else
       {
         Background.Color = OffColor;
-        if (MouseOver) Background.Color = OffColorHovered;
+        // if (MouseOver) Background.Color = OffColorHovered;
       }
     }
 

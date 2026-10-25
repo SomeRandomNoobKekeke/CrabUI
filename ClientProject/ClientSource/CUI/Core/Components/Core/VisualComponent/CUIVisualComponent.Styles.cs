@@ -62,6 +62,8 @@ namespace CursedUI
       set => Styles.UseReactiveStyles = value;
     }
 
+    public CUIStylePipeline TypeSpecificStyles => Styles.TypeSpecificStyles;
+
     protected Style_Part Styles { get; } = new();
     public class Style_Part : Part
     {

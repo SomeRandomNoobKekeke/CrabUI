@@ -91,6 +91,13 @@ namespace CursedUI
 
     public override void DetermineColor()
     {
+      if (Disabled)
+      {
+        Background.Color = Palette["disabled"];
+        return;
+      }
+
+
       if (State)
       {
         Background.Color = OnColor;
@@ -258,6 +265,7 @@ namespace CursedUI
     {
       MouseDown += (e) =>
       {
+        if (Disabled) return;
         if (!e.Mouse.M1.Down) return;
         DoToggle();
       };

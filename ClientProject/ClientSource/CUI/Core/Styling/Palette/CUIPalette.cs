@@ -38,13 +38,13 @@ namespace CursedUI
       Color front = color;
       Color back = Color.Lerp(black, color, 0.2f);
       Color panel = Color.Lerp(back, color, 0.4f);
-      Color backpanel = Color.Lerp(back, color, 0.2f);
+      Color backpanel = Color.Lerp(back, color, 0.1f);
       Color border = Color.Lerp(back, color, 0.6f);
       Color text = Color.Lerp(Color.Black, Color.White, 0.95f - (1.0f - brightness) * 0.2f);
       Color selection = new Color(0, 255, 255);
       Color valid = new Color(0, 255, 0);
       Color invalid = new Color(255, 0, 0);
-      Color disabled = new Color(64, 64, 64);
+      Color disabled = color.To(new Color(64, 64, 64), 0.75f);
 
       return new CUIPalette()
       {

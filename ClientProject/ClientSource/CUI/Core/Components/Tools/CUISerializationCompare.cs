@@ -71,7 +71,7 @@ namespace CursedUI
         ViewAfter.ComponentTree.Select(c.RelativeAKA(ComponentBefore));
       };
 
-      ViewBefore.PropView.Props.MouseScroll += (e) => ViewAfter.PropView.Props.Scroll(e.Scroll);
+      ViewBefore.PropView.Props.MouseScroll += (e) => ViewAfter.PropView.Props.DoScroll(e.Scroll);
 
     }
   }

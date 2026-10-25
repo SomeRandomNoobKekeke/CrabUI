@@ -8,8 +8,8 @@ namespace CursedUI
 {
   public class CUIStylePipeline
   {
-    public ReactiveList<ICUIStyle> UserStyles = new();
     public ReactiveList<ICUIStyle> DefaultStyles = new();
+    public ReactiveList<ICUIStyle> UserStyles = new();
 
     public SimpleWeakEvent Changed { get; } = new();
 
@@ -30,6 +30,11 @@ namespace CursedUI
     {
       UserStyles.Changed += Changed.Raise;
       DefaultStyles.Changed += Changed.Raise;
+    }
+
+    public override string ToString()
+    {
+      return $"{Logger.Wrap.IEnumerable(DefaultStyles, true)}\n{Logger.Wrap.IEnumerable(UserStyles, true)}";
     }
   }
 }

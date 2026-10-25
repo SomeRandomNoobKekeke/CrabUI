@@ -35,7 +35,7 @@ namespace CUITests
 
         CUI.Main["open"] = OpenButton;
 
-        OpenButton.Click();
+        OpenButton.DoClick();
       }
 
       public void Dispose()

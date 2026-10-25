@@ -87,7 +87,9 @@ namespace CursedUI
       }
     }
 
-    public Vector2 Anchor { get; set; } = new Vector2(0.5f, 0.5f); //TODO test, shouldn't this be reacive?
+    //TODO test, shouldn't this be reacive?
+    public Vector2 Anchor { get; set; } = new Vector2(0.5f, 0.5f);
+
 
 
     private TransparentColor _TextColor = new TransparentColor(Color.White);

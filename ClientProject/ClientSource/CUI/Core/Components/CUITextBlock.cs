@@ -21,6 +21,7 @@ namespace CursedUI
     protected override void InitStyle()
     {
       base.InitStyle();
+      TextAnchor = CUIAnchor.LeftCenter;
       TextPadding = new(2, 4, 2, 4);
     }
 

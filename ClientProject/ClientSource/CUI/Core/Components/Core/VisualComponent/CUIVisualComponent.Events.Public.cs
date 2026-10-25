@@ -25,21 +25,21 @@ namespace CursedUI
     }
     public virtual void Refresh() { } //TODO where should it be?
 
-    public void Click()
+    public void DoClick()
     {
       Events.MouseDown.Raise(
         new CUIMouseDownEvent(CUIMouseButton.LeftButton, CUICore.Input.Mouse)
       );
     }
 
-    public void Scroll(float scroll)
+    public void DoScroll(float scroll)
     {
       Events.MouseScroll.Raise(
         new CUIMouseScrollEvent(CUICore.Input.Mouse, scroll)
       );
     }
 
-    public void PressKey(Keys key)
+    public void DoPressKey(Keys key)
     {
       FocusHandle.KeyPressed.Raise(
         new CUIKeyPressedEvent(key, CUICore.Input.Keyboard)

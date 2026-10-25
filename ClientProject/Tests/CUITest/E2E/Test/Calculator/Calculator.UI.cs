@@ -87,7 +87,7 @@ namespace CUITests
 
             c.Commands.ListenFor<string>("command", (s) =>
             {
-              if (c.Text == s) c.Click();
+              if (c.Text == s) c.DoClick();
             });
           }))
           {

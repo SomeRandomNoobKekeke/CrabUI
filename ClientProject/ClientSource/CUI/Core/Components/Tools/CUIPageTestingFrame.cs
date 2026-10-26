@@ -68,7 +68,7 @@ namespace CursedUI
 
       this["layout"]["main"] = Pages = new CUIPages() { Flex = 1 };
 
-      this["layout"]["header"]["reload lua"] = new ReloadLuaButton();
+      this["layout"]["header"]["reload lua"] = new CUIDefault.ReloadLuaButton();
       this["layout"]["header"]["pages label"] = new CUITextBlock("pages:")
       {
         Margin = new CUISizes(0, 4, 0, 4),

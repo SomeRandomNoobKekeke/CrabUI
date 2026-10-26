@@ -56,10 +56,7 @@ namespace CursedUI
           Padding = new CUISizes(0, 0, 0, 0),
           // CullChildren = true,
         };
-        this["layout"]["handle"]["closebutton"] = new CUICloseButton()
-        {
-          CrossRelative = new CUINullRect(w: 1),
-        };
+        this["layout"]["handle"]["closebutton"] = new CUICloseButton();
       }
 
       public Frame(string caption) : this()

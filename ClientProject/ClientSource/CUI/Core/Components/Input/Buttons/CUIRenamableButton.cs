@@ -24,7 +24,7 @@ namespace CursedUI
     protected override void InitStyle()
     {
       base.InitStyle();
-      Background.Sprite = CUISprite.Vignette;
+      Background.Sprite = CUISprite.DimmedVertical;
     }
 
     private string TextBeforeRenaming;

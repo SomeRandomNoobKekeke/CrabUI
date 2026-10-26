@@ -24,7 +24,7 @@ namespace CursedUI
     {
       base.InitStyle();
       // Padding = new(2, 2, 2, 2);
-      Background.Sprite = CUISprite.Vignette;
+      Background.Sprite = CUISprite.DimmedVertical;
     }
 
     public new Action<CUIToggleIconButton> Style

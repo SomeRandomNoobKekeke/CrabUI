@@ -21,7 +21,7 @@ namespace CUITests
     };
 
     public CUITest CUITest { get; set; }
-    public bool AddTestStuff { get; set; } = true;
+    public bool AddTestStuff { get; set; } = false;
 
     public void Initialize() => Init();
 

@@ -63,6 +63,7 @@ namespace CursedUI
     //TODO Cursed, temp event that also raises when scroll is validated
     public event Action<float> ScrollChanged;
 
+    //TODO also use TopGap, test this and sync with horizontal list
     /// <summary>
     /// [0..1]
     /// </summary>
@@ -70,13 +71,13 @@ namespace CursedUI
     {
       get
       {
-        float spaceToScroll = TotalContentHeight - Rect.Height;
+        float spaceToScroll = TotalContentHeight + BottomGap - Rect.Height;
         if (spaceToScroll == 0) return 0;
         return Math.Clamp(-Scroll / spaceToScroll, 0, 1);
       }
       set
       {
-        float spaceToMove = TotalContentHeight - Rect.Height;
+        float spaceToMove = TotalContentHeight + BottomGap - Rect.Height;
         Scroll = -value * spaceToMove;
       }
     }
@@ -115,7 +116,7 @@ namespace CursedUI
     private void ValidateScroll()
     {
       // if (Scroll > 0) Scroll = 0;
-      if (Scroll < -TotalContentHeight)
+      if (Scroll < -TotalContentHeight - BottomGap)
       {
         Scroll = -TotalContentHeight;
       }

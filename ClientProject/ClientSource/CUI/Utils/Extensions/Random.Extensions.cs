@@ -16,6 +16,9 @@ namespace CursedUI
     public static string RandomString(this Random rng, int length)
       => new string(rng.GetItems<char>(chars, length));
 
+    public static Color Color(this Random rng) => new Color((byte)rng.Next(), (byte)rng.Next(), (byte)rng.Next());
+
+
 
     // Addition to https://github.com/FakeFishGames/Barotrauma/blob/master/Libraries/BarotraumaLibs/BarotraumaCore/Extensions/RngExtensions.cs
     public static int Range(this Random rng, int minimum, int maximum)

@@ -117,14 +117,7 @@ namespace CursedUI
       get => Group?.Current == this;
       set
       {
-        if (value)
-        {
-          Group?.Select(this);
-        }
-        else
-        {
-          Group?.Deselect(this);
-        }
+        if (value) Select(); else Deselect();
       }
     }
     public void Select() => Group?.Select(this);

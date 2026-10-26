@@ -34,6 +34,7 @@ namespace CursedUI
       set
       {
         TextBlock.Text = value;
+        //TODO why OnlyParent shouldn't this be Absolute?
         LayoutMarker.Mark(LayoutMarker.Pattern.OnlyParent);
       }
     }

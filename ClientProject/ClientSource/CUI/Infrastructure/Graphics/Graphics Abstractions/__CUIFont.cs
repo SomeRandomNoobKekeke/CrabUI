@@ -12,6 +12,7 @@ namespace CursedUI
   public class __CUIFont(GUIFont font) : CUIFont
   {
     public static __CUIFont Font => new(GUIStyle.Font);
+    public static __CUIFont MonospacedFont => new(GUIStyle.MonospacedFont);
 
     public GUIFont GUIFont { get; } = font;
 

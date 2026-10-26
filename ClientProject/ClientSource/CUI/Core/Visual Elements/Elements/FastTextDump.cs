@@ -49,13 +49,13 @@ namespace CursedUI
     public Vector2 Offset { get; set; }
     public float Rotation { get; set; } = 0f;
     public Vector2 Origin { get; set; } = Vector2.Zero;
-    public float Scale { get; set; } = 1.0f;
+    public float Scale { get; set; } = 0.9f;
     public SpriteEffects SpriteEffects { get; set; } = SpriteEffects.None;
     public float LayerDepth { get; set; } = 0.1f;
     public Alignment TextAlignment { get; set; } = Alignment.TopLeft;
     public ForceUpperCase ForceUpperCase { get; set; } = ForceUpperCase.Inherit;
 
-    public CUIFont Font { get; set; } = CUIFont.Font;
+    public CUIFont Font { get; set; } = CUIFont.MonospacedFont;
 
 
     public override void Draw(CUISpriteBatch spriteBatch)

@@ -12,6 +12,7 @@ namespace CursedUI
   public interface CUIFont
   {
     public static CUIFont Font => __CUIFont.Font;
+    public static CUIFont MonospacedFont => __CUIFont.MonospacedFont;
 
     public float LineHeight { get; }
     public string WrapText(string text, float width);

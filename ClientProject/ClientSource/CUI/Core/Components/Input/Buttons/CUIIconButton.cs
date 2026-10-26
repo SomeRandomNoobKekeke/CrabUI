@@ -12,11 +12,12 @@ using Barotrauma.Extensions;
 
 namespace CursedUI
 {
+  //LINK:\ClientProject\Tests\CUITest\Snapshots\Tests\Components\CUIIconButton.cs
   public partial class CUIIconButton : CUIButtonBase, IComponent
   {
     public static ICUIStyle DefaultStyle => new CUIDefaultStyle<CUIIconButton>((c) =>
     {
-      c.MasterColor = c.Palette["main"];
+      c.Background.Color = c.Palette["main"];
     });
 
     protected override void InitStyle()
@@ -24,6 +25,7 @@ namespace CursedUI
       base.InitStyle();
       // Padding = new(2, 2, 2, 2);
       Background.Sprite = CUISprite.DimmedVertical;
+      MasterColor = Color.White;
     }
 
     public new Action<CUIIconButton> Style
@@ -80,16 +82,11 @@ namespace CursedUI
 
     public override void DetermineColor()
     {
-      if (Disabled)
-      {
-        Background.Color = Palette["disabled"];
-        return;
-      }
+      Background.Color = Disabled ? Palette["disabled"] : Palette["main"];
 
-
-      Background.Color = InactiveColor;
-      if (MouseOver) Background.Color = MouseOverColor;
-      if (MousePressed) Background.Color = MousePressedColor;
+      IconBlock.Color = InactiveColor;
+      if (MouseOver) IconBlock.Color = MouseOverColor;
+      if (MousePressed) IconBlock.Color = MousePressedColor;
     }
 
     protected override CUINullVector2 MinSizeOverride => new CUINullVector2(

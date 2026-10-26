@@ -15,13 +15,14 @@ namespace CUITests
   {
     public static partial class Components
     {
+      //LINK:\ClientProject\ClientSource\CUI\Core\Components\Input\Buttons\CUIIconButton.cs
       public static CUIComponent CUIIconButton()
       {
         CUIFrame frame = new CUIDefault.Frame("CUIIconButton", 400, 600);
 
-        frame["button"] = new CUIIconButton(
-          new CUISprite(CUISprite.CrossIcon) { Color = Color.Lime })
+        frame["button"] = new CUIIconButton(CUISprite.CrossIcon)
         {
+          MasterColor = Color.Lime,
           Anchor = CUIAnchor.Center,
         };
 

@@ -25,6 +25,12 @@ namespace CursedUI
       set
       {
         _Icon = value;
+
+        if (ElevatedColor.WasModified && !_Icon.ElevatedColor.WasModified)
+        {
+          _Icon.Color = ElevatedColor.Value;
+        }
+
         RecalcForcedSize();
         RecalcIconRectangle();
       }
@@ -66,11 +72,19 @@ namespace CursedUI
       }
     }
 
+
+
+    protected ElevatedProp<Color> ElevatedColor { get; } = new();
+
     [CUISerializableProp]
     public Color Color
     {
       get => Icon.Color;
-      set => Icon.Color = value;
+      set
+      {
+        ElevatedColor.Value = value;
+        Icon.Color = value;
+      }
     }
 
     public float Transparency

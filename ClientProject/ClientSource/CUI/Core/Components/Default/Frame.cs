@@ -54,6 +54,7 @@ namespace CursedUI
         {
           Flex = 1,
           Padding = new CUISizes(0, 0, 0, 0),
+          // CullChildren = true,
         };
         this["layout"]["handle"]["closebutton"] = new CUICloseButton()
         {

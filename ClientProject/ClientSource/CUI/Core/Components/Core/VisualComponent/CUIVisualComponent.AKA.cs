@@ -50,6 +50,33 @@ namespace CursedUI
       }
     }
 
+    public CUIVisualComponent this[string name, int index]
+    {
+      set
+      {
+        if (value is null)
+        {
+          if (NamedComponents.ContainsKey(name))
+          {
+            Children.Remove(NamedComponents[name]);
+          }
+          return;
+        }
+
+        value.RemoveSelf(); // ensure that parent forgets it by prev aka
+
+        value.AKA = name;
+
+        if (NamedComponents.ContainsKey(name))
+        {
+          Children.Remove(NamedComponents[name]);
+        }
+
+        //TODO validate index
+        Children.Insert(index, value);
+      }
+    }
+
     public T As<T>() where T : CUIVisualComponent => this as T;
 
     /// <summary>

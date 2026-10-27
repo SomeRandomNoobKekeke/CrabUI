@@ -50,7 +50,7 @@ namespace CursedUI
       set
       {
         _Rect = value;
-        _ResizeStrategy.MeasureRealTextSize(Rect, Anchor, Text, Scale, Font);
+        _ResizeStrategy.MeasureRealTextSize(Rect, Anchor, Text, Scale, Font, Vertical);
       }
     }
 
@@ -60,8 +60,8 @@ namespace CursedUI
       set
       {
         _Text = value;
-        _ResizeStrategy.MeasureRawTextSize(Text, Scale, Font);
-        _ResizeStrategy.MeasureRealTextSize(Rect, Anchor, Text, Scale, Font);
+        _ResizeStrategy.MeasureRawTextSize(Text, Scale, Font, Vertical);
+        _ResizeStrategy.MeasureRealTextSize(Rect, Anchor, Text, Scale, Font, Vertical);
       }
     }
 
@@ -71,8 +71,8 @@ namespace CursedUI
       set
       {
         _Scale = Math.Max(0, value);
-        _ResizeStrategy.MeasureRawTextSize(Text, Scale, Font);
-        _ResizeStrategy.MeasureRealTextSize(Rect, Anchor, Text, Scale, Font);
+        _ResizeStrategy.MeasureRawTextSize(Text, Scale, Font, Vertical);
+        _ResizeStrategy.MeasureRealTextSize(Rect, Anchor, Text, Scale, Font, Vertical);
       }
     }
 
@@ -83,7 +83,19 @@ namespace CursedUI
       set
       {
         _ResizeStrategy = ResizeStrategyBase.FromEnum(value);
-        _ResizeStrategy.MeasureRawTextSize(Text, Scale, Font);
+        _ResizeStrategy.MeasureRawTextSize(Text, Scale, Font, Vertical);
+      }
+    }
+
+    //TODO wip, works only for Resist strategy
+    private bool _Vertical; public bool Vertical
+    {
+      get => _Vertical;
+      set
+      {
+        _Vertical = value;
+        _ResizeStrategy.MeasureRawTextSize(Text, Scale, Font, Vertical);
+        _ResizeStrategy.MeasureRealTextSize(Rect, Anchor, Text, Scale, Font, Vertical);
       }
     }
 

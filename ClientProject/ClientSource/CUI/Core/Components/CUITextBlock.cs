@@ -27,6 +27,9 @@ namespace CursedUI
 
     public TextBlock TextBlock { get; } = new();
 
+
+
+
     [CUISerializableProp]
     public string Text
     {
@@ -38,6 +41,10 @@ namespace CursedUI
         LayoutMarker.Mark(LayoutMarker.Pattern.OnlyParent);
       }
     }
+
+    [CUISerializableProp]
+    public bool Vertical { get => TextBlock.Vertical; set => TextBlock.Vertical = value; }
+
     [CUISerializableProp]
     public float Scale
     {

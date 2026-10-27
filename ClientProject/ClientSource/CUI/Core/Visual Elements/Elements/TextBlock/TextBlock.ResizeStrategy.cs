@@ -27,8 +27,8 @@ namespace CursedUI
       public static WrapStrategy WrapStrategy => new();
 
 
-      public abstract void MeasureRawTextSize(string text, float scale, CUIFont font);
-      public abstract void MeasureRealTextSize(CUIRect rect, Vector2 anchor, string text, float scale, CUIFont font);
+      public abstract void MeasureRawTextSize(string text, float scale, CUIFont font, bool vertical);
+      public abstract void MeasureRealTextSize(CUIRect rect, Vector2 anchor, string text, float scale, CUIFont font, bool vertical);
 
       public string RealText { get; protected set; } = "";
       public Vector2 RawTextSize { get; protected set; }

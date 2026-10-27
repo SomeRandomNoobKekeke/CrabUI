@@ -68,6 +68,48 @@ namespace CUITests
           TextColor = Color.White,
         };
 
+
+        frame["textblock1 vertical"] = new CUITextBlock()
+        {
+          Text = "Resize Strategy Passive",
+          Absolute = new CUINullRect(x: 30, y: 200),
+          Background = { Color = new Color(64, 0, 64) },
+          TextColor = Color.White,
+          ResizeStrategy = ResizeStrategy.Passive,
+          Vertical = true,
+        };
+
+        frame["textblock2 vertical"] = new CUITextBlock()
+        {
+          Text = "Resize Strategy Rescale",
+          Absolute = new CUINullRect(x: 60, y: 200),
+          Background = { Color = new Color(64, 0, 64) },
+          TextColor = Color.White,
+          ResizeStrategy = ResizeStrategy.Rescale,
+          Vertical = true,
+        };
+
+        frame["textblock3 vertical"] = new CUITextBlock()
+        {
+          Text = "Resize Strategy Resist",
+          Absolute = new CUINullRect(x: 90, y: 200),
+          Background = { Color = new Color(64, 0, 64) },
+          TextColor = Color.White,
+          ResizeStrategy = ResizeStrategy.Resist,
+          Vertical = true,
+        };
+
+        frame["textblock4 vertical"] = new CUITextBlock()
+        {
+          Text = "Resize Strategy Wrap",
+          Absolute = new CUINullRect(x: 120, y: 200),
+          Background = { Color = new Color(64, 0, 64) },
+          TextColor = Color.White,
+          ResizeStrategy = ResizeStrategy.Wrap,
+          Vertical = true,
+        };
+
+
         return frame;
       }
     }

@@ -10,7 +10,10 @@ namespace CursedUI
 {
   public partial class CUICore
   {
-    public static Debouncer Debouncer => Instance?._Debouncer;
+    public static void Debounce(Action action, int delay = 300)
+    {
+      Instance?._Debouncer.Debounce(action, delay);
+    }
     private Debouncer _Debouncer = new();
   }
 }

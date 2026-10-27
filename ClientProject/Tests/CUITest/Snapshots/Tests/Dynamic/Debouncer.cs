@@ -19,17 +19,17 @@ namespace CUITests
       {
         var frame = new CUIDefault.Frame("Debouncer", 400, 600);
 
-        frame["layout"]["message"] = new CUITextBlock("i hope no one will type anything today");
+        CUITextBlock messageBlock = new CUITextBlock("i hope no one will type anything today");
+
+        frame["layout"]["message"] = messageBlock;
         frame["layout"]["input"] = new CUITextInput()
         {
           OnInput = (text) =>
           {
-            frame.Get<CUITextBlock>("layout.message").Text = "omg he's typing again...";
-            CUICore.Debouncer.Debouce(() =>
-              {
-                frame.Get<CUITextBlock>("layout.message").Text = "are you done typing?";
-              }, 1000
-            );
+            messageBlock.Text = "omg he's typing again...";
+
+            CUICore.Debounce(() => messageBlock.Text = "are you done typing?", 1000);
+            CUICore.Debounce(() => messageBlock.Text = "finaly, he's gone", 3000);
           },
         };
 

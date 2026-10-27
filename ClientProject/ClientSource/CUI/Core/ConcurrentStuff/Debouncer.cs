@@ -11,21 +11,29 @@ using System.Threading.Tasks;
 
 namespace CursedUI
 {
-  // https://gist.github.com/cocowalla/5d181b82b9a986c6761585000901d1b8
   public class Debouncer
   {
-    public ConcurrentBag<Action> Pending = [];
+    private ConcurrentBag<Action> Pending = [];
+    private ConcurrentDictionary<MethodInfo, CancellationTokenSource> CancelationTokens = [];
 
-    private int counter;
-
-    public void Debouce(Action action, int delay)
+    public void Debounce(Action action, int delay)
     {
-      var current = Interlocked.Increment(ref counter);
-
-      Task.Delay(delay).ContinueWith(task =>
+      if (CancelationTokens.TryGetValue(action.Method, out var cts))
       {
-        if (current == counter) Pending.Add(action);
-      });
+        cts.Cancel();
+      }
+
+      CancelationTokens[action.Method] = new CancellationTokenSource();
+
+      Task.Delay(delay, CancelationTokens[action.Method].Token)
+        .ContinueWith(t =>
+        {
+          if (t.IsCompletedSuccessfully)
+          {
+            Pending.Add(action);
+            CancelationTokens.Remove(action.Method, out var _);
+          }
+        });
     }
 
     public void Update()

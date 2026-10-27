@@ -87,6 +87,7 @@ namespace CursedUI
 
           OnBeforeUpdate.Raise(totalTime);
 
+          Self._Debouncer.Update();
 
           Self._Input.Update(totalTime, mouse, keyboard, textInput);
           Self._EventConstructor.Construct(Self._Input);

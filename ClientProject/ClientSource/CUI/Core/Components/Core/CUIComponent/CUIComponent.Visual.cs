@@ -38,7 +38,6 @@ namespace CursedUI
       set => BackgroundSlot.Value = value;
     }
 
-    //LINK:\ClientProject\ClientSource\CUI\Core\Components\Core\CUIComponent\CUIComponent.Border.cs
     protected Borders _Border { get; } = new();
 
 

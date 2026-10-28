@@ -70,9 +70,9 @@ namespace CursedUI
     public static CUISprite VerticalGlow128 => AtIndex("VerticalGlow128", 4, 1);
     public static CUISprite VerticalGlowSolid => AtIndex("VerticalSolid", 5, 1);
 
-    public static CUISprite BluredEdges => AtIndex("BluredEdges", 0, 2);
-    public static CUISprite BluredEdgesHorizontal => AtIndex("BluredEdgesHorizontal", 1, 2);
-    public static CUISprite BluredEdgesVertical => AtIndex("BluredEdgesVertical", 2, 2);
+
+    public static CUISprite DimmedHardHorizontal => AtIndex("BluredEdgesHorizontal", 1, 2);
+    public static CUISprite DimmedHardVertical => AtIndex("BluredEdgesVertical", 2, 2);
     public static CUISprite Window => AtIndex("Window", 3, 2);
     public static CUISprite BoxWithALamp => AtIndex("BoxWithALamp", 4, 2);
 
@@ -97,7 +97,30 @@ namespace CursedUI
     public static CUISprite VerticalTrackSlider => AtIndex("VerticalTrack", 4, 5);
 
     public static CUISprite GlowingEdges => AtIndex("GlowingEdges", 0, 6);
+    public static CUISprite GlowingEdges16 => AtIndex("GlowingEdges16", 1, 6);
+    public static CUISprite GlowingEdges32 => AtIndex("GlowingEdges32", 2, 6);
+    public static CUISprite GlowingEdges64 => AtIndex("GlowingEdges64", 3, 6);
+    public static CUISprite GlowingEdges128 => AtIndex("GlowingEdges128", 4, 6);
+    public static CUISprite GlowingEdgesSolid => AtIndex("GlowingEdgesSolid", 5, 6);
 
+
+    public static CUISprite Hex
+    {
+      get
+      {
+        {
+          CUICore.TextureManager.Ensure("Hex",
+            () => CUICore.TextureManager.Get("CUI").Cut(IndexToPos(0, 7, 1, 1))
+          );
+
+          return new CUISprite(CUICore.TextureManager.Get("Hex"))
+          {
+            Name = "Hex",
+            DrawMode = CUISpriteDrawMode.StaticAbove,
+          };
+        }
+      }
+    }
 
     public static CUISprite VignetteDithered => AtIndex("VignetteDithered", 7, 7, 8, 8);
 

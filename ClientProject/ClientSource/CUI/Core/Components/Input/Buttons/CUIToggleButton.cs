@@ -89,6 +89,17 @@ namespace CursedUI
       }
     }
 
+    [CUISerializableProp]
+    public bool Vertical
+    {
+      get => OnState.Vertical;
+      set
+      {
+        OnState.Vertical = value;
+        OffState.Vertical = value;
+      }
+    }
+
     public override void DetermineColor()
     {
       if (Disabled)

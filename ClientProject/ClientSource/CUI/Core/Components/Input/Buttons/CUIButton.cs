@@ -66,6 +66,9 @@ namespace CursedUI
       }
     }
 
+    [CUISerializableProp]
+    public bool Vertical { get => TextState.Vertical; set => TextState.Vertical = value; }
+
     public Action OnClick { set { Click += value; } }
     /// <summary>
     /// This event happens when click passes, e.g. MouseDown will trigger on Disabled buttons but Click won't
@@ -134,6 +137,7 @@ namespace CursedUI
 
       yield return Border.VisualWrapper;
     }
+
 
 
     #region Forwarded to TextState

@@ -20,6 +20,11 @@ namespace CursedUI
       {
         c.Background.Color = c.Palette["panel"];
       });
+      protected override void InitStyle()
+      {
+        base.InitStyle();
+        Background.Sprite = CUISprite.DimmedVertical;
+      }
       public SolidTextBlock() : base() { }
       public SolidTextBlock(string text) : base(text) { }
     }

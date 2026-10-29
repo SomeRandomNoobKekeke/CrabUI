@@ -37,6 +37,13 @@ namespace CursedUI
     public static CUISprite CheckOffIcon => AtIconIndex("CheckOffIcon", 5, 0);
     public static CUISprite CheckOnIcon => AtIconIndex("CheckOnIcon", 6, 0);
 
+    //=======================>  5  <=======================
+    public static CUISprite BookmarkOn => AtIconIndex("BookmarkOn", 0, 5);
+    public static CUISprite BookmarkOff => AtIconIndex("BookmarkOff", 1, 5);
+    public static CUISprite StarOn => AtIconIndex("StarOn", 2, 5);
+    public static CUISprite StarOff => AtIconIndex("StarOff", 3, 5);
+
+
     public static CUISprite AngleUpIcon => AtIconIndex("AngleUpIcon", 0, 6);
     public static CUISprite AngleRightIcon => AtIconIndex("AngleRightIcon", 1, 6);
     public static CUISprite AngleDownIcon => AtIconIndex("AngleDownIcon", 2, 6);

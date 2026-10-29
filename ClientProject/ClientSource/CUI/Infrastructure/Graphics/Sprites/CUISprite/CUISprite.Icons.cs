@@ -26,6 +26,7 @@ namespace CursedUI
         )
       };
 
+    //=======================>  0  <=======================
     /// <summary>
     /// In case you want to keep component resized to icon but also make the icon invisible
     /// </summary>
@@ -37,13 +38,21 @@ namespace CursedUI
     public static CUISprite CheckOffIcon => AtIconIndex("CheckOffIcon", 5, 0);
     public static CUISprite CheckOnIcon => AtIconIndex("CheckOnIcon", 6, 0);
 
+    //=======================>  2  <=======================
+    public static CUISprite TrashCanIcon => AtIconIndex("TrashCanIcon", 0, 2);
+    public static CUISprite GearIcon => AtIconIndex("GearIcon", 1, 2);
+    public static CUISprite HomeIcon => AtIconIndex("HomeIcon", 2, 2);
+    public static CUISprite RoundArrowIcon => AtIconIndex("RoundArrowIcon", 3, 2);
+    public static CUISprite BrushAndPencilIcon => AtIconIndex("BrushAndPencilIcon", 4, 2);
+    public static CUISprite BrushAndPaletteIcon => AtIconIndex("BrushAndPaletteIcon", 5, 2);
+
     //=======================>  5  <=======================
-    public static CUISprite BookmarkOn => AtIconIndex("BookmarkOn", 0, 5);
-    public static CUISprite BookmarkOff => AtIconIndex("BookmarkOff", 1, 5);
-    public static CUISprite StarOn => AtIconIndex("StarOn", 2, 5);
-    public static CUISprite StarOff => AtIconIndex("StarOff", 3, 5);
+    public static CUISprite BookmarkOnIcon => AtIconIndex("BookmarkOnIcon", 0, 5);
+    public static CUISprite BookmarkOffIcon => AtIconIndex("BookmarkOffIcon", 1, 5);
+    public static CUISprite StarOnIcon => AtIconIndex("StarOnIcon", 2, 5);
+    public static CUISprite StarOffIcon => AtIconIndex("StarOffIcon", 3, 5);
 
-
+    //=======================>  6  <=======================
     public static CUISprite AngleUpIcon => AtIconIndex("AngleUpIcon", 0, 6);
     public static CUISprite AngleRightIcon => AtIconIndex("AngleRightIcon", 1, 6);
     public static CUISprite AngleDownIcon => AtIconIndex("AngleDownIcon", 2, 6);
@@ -57,7 +66,7 @@ namespace CursedUI
     public static CUISprite ArrowSlimDownIcon => AtIconIndex("ArrowSlimDownIcon", 10, 6);
     public static CUISprite ArrowSlimLeftIcon => AtIconIndex("ArrowSlimLeftIcon", 11, 6);
 
-
+    //=======================>  7  <=======================
     public static CUISprite AttachToTopIcon => AtIconIndex("AttachToTopIcon", 0, 7);
     public static CUISprite AttachToRightIcon => AtIconIndex("AttachToRightIcon", 1, 7);
     public static CUISprite AttachToBottomIcon => AtIconIndex("AttachToBottomIcon", 2, 7);
@@ -68,6 +77,7 @@ namespace CursedUI
     public static CUISprite BottomSideIcon => AtIconIndex("BottomSideIcon", 7, 7);
     public static CUISprite LeftSideIcon => AtIconIndex("LeftSideIcon", 8, 7);
 
+    //=======================>  8  <=======================
     public static CUISprite SpeedometerIcon => AtIconIndex("SpeedometerIcon", 0, 8);
     public static CUISprite Speedometer2Icon => AtIconIndex("Speedometer2Icon", 1, 8);
     public static CUISprite HistoryClockIcon => AtIconIndex("HistoryClockIcon", 2, 8);

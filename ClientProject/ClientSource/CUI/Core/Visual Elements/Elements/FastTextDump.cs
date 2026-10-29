@@ -27,7 +27,8 @@ namespace CursedUI
 
     public override bool Contains(Vector2 pos) => Rect.Contains(pos);
 
-
+    public int Skip { get; set; }
+    public IntRange? Range { get; set; }
     public List<Line> Lines { get; set; } = [];
 
     public void AddLine(string text, Color? color = null)
@@ -60,16 +61,17 @@ namespace CursedUI
 
     public override void Draw(CUISpriteBatch spriteBatch)
     {
-      Vector2 pos = Rect.LeftTop + Offset;
+      Vector2 pos = Rect.LeftTop + Offset + Skip * Shift;
       if (Visible)
       {
-        foreach (Line line in Lines)
+        IntRange range = Range ?? new IntRange(0, Lines.Count - 1);
+        for (int i = range.Start; i <= range.End; i++)
         {
           Font.DrawString(
             spriteBatch,
-            line.Text,
+            Lines[i].Text,
             pos,
-            line.Color,
+            Lines[i].Color,
             Rotation,
             Origin,
             Scale,

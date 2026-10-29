@@ -16,6 +16,9 @@ namespace CursedUI
   {
     public FastTextDump FastTextDump { get; } = new();
 
+
+    public int Skip { get => FastTextDump.Skip; set => FastTextDump.Skip = value; } //Useless
+    public IntRange? Range { get => FastTextDump.Range; set => FastTextDump.Range = value; } //Useless
     public List<FastTextDump.Line> Lines
     {
       get => FastTextDump.Lines;

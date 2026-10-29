@@ -14,9 +14,21 @@ namespace CursedUI
 {
   public class ReactiveList<T> : IList<T>, IList
   {
-    public event Action Changed;
+    public ReactiveList() { }
+    public ReactiveList(IEnumerable<T> initValues) => FillSilent(initValues);
 
-    private List<T> _List = new();
+    public event Action? Changed;
+    public event Action<T>? Added;
+    public event Action<T>? Removed;
+
+    protected List<T> _List = new();
+
+    public void Fill(IEnumerable<T> values)
+    {
+      _List = values.ToList();
+      Changed?.Invoke();
+    }
+
 
     public T this[int index]
     {
@@ -25,6 +37,7 @@ namespace CursedUI
       {
         _List[index] = value;
         Changed?.Invoke();
+        Added?.Invoke(value);
       }
     }
 
@@ -35,6 +48,7 @@ namespace CursedUI
       {
         _List[index] = (T)value;
         Changed?.Invoke();
+        Added?.Invoke((T)value);
       }
     }
 
@@ -48,12 +62,14 @@ namespace CursedUI
     {
       _List.Add(item);
       Changed?.Invoke();
+      Added?.Invoke(item);
     }
 
     public int Add(object? value)
     {
       _List.Add((T)value);
       Changed?.Invoke();
+      Added?.Invoke((T)value);
       return _List.Count - 1;
     }
 
@@ -81,18 +97,21 @@ namespace CursedUI
     {
       _List.Insert(index, item);
       Changed?.Invoke();
+      Added?.Invoke(item);
     }
 
     public void Insert(int index, object? value)
     {
       _List.Insert(index, (T)value);
       Changed?.Invoke();
+      Added?.Invoke((T)value);
     }
 
     public bool Remove(T item)
     {
       bool result = _List.Remove(item);
       Changed?.Invoke();
+      Removed?.Invoke(item);
       return result;
     }
 
@@ -100,14 +119,28 @@ namespace CursedUI
     {
       _List.Remove((T)value);
       Changed?.Invoke();
+      Removed?.Invoke((T)value);
     }
 
     public void RemoveAt(int index)
     {
+      T item = _List[index];
       _List.RemoveAt(index);
       Changed?.Invoke();
+      Removed?.Invoke(item);
     }
 
     IEnumerator IEnumerable.GetEnumerator() => _List.GetEnumerator();
+
+
+
+    #region Silent
+    public void FillSilent(IEnumerable<T> values) => _List = values.ToList();
+    public void AddSilent(T item) => _List.Add(item);
+    public void ClearSilent() => _List.Clear();
+    public void InsertSilent(int index, T item) => _List.Insert(index, item);
+    public bool RemoveSilent(T item) => _List.Remove(item);
+    public void RemoveAtSilent(int index) => _List.RemoveAt(index);
+    #endregion
   }
 }

@@ -25,6 +25,11 @@ namespace CursedUI
       TextPadding = new(2, 4, 2, 4);
     }
 
+    public new Action<CUITextBlock> Style
+    {
+      set => PersonalStyle = new CUIActionStyle<CUITextBlock>("personal", value);
+    }
+
     public TextBlock TextBlock { get; } = new();
 
 

@@ -18,6 +18,8 @@ namespace CursedUI
     protected virtual void HandleOpen() { }
     protected virtual void HandleClose() { }
 
+    public bool IsOpen => Parent != null;
+
     public event Action OnOpen;
     public event Action OnClose;
 
@@ -34,6 +36,5 @@ namespace CursedUI
       HandleClose();
       OnClose?.Invoke();
     }
-
   }
 }

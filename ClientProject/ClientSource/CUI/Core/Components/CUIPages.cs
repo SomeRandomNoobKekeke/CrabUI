@@ -21,11 +21,17 @@ namespace CursedUI
       }
     }
 
+    public Action<CUIComponent> OnPageOpened { set { PageOpened += value; } }
+    public event Action<CUIComponent> PageOpened;
+    public Action<CUIComponent> OnPageClosed { set { PageClosed += value; } }
+    public event Action<CUIComponent> PageClosed;
+
     public bool IsOpened(CUIComponent p) => OpenedPage == p;
     public void ClosePage()
     {
       if (Children.Count > 0 && Children[0] is CUIPage)
       {
+        PageClosed?.Invoke(Children[0] as CUIComponent);
         (Children[0] as CUIPage).RaiseOnClose();
       }
 
@@ -50,6 +56,7 @@ namespace CursedUI
       {
         (page as CUIPage).RaiseOnOpen();
       }
+      PageOpened?.Invoke(page);
     }
 
     private RoutableCommandContract? FindNearestContract()

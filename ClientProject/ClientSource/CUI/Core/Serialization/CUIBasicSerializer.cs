@@ -1,0 +1,70 @@
+using System;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Collections.Generic;
+using System.Collections.Immutable;
+using System.Linq;
+
+using Barotrauma;
+using HarmonyLib;
+using Microsoft.Xna.Framework;
+using System.IO;
+using System.Xml.Linq;
+
+namespace CursedUI
+{
+  public static class CUIBasicSerializer
+  {
+    public static XElement Serialize(CUISerializable o, IDictionary<string, object> defaultValues)
+    {
+      XElement element = new(Reflection_Extensions.GetFullName(o.GetType()));
+
+      CUISerializableInfo info = CUICore.TypeAnalysis.GetSerializableInfo(o.GetType());
+
+      foreach (var (fullName, pp) in info.SerializableProps)
+      {
+        object value = pp.GetValue(o);
+        if (defaultValues.ContainsKey(fullName) && Equals(value, defaultValues[fullName])) continue;
+
+        element.SetAttributeValue(fullName, CUICore.Parser.Serialize(value));
+      }
+
+      return element;
+    }
+
+    public static object Deserialize(XElement element, Type T)
+    {
+      object o = Activator.CreateInstance(T);
+      DeserializeProps(element, o);
+      return o;
+    }
+
+    public static void DeserializeProps(XElement element, object target)
+    {
+      if (!CUICore.TypeAnalysis.IsSerializable(target.GetType()))
+      {
+        CUI.Logger.Warning($"Couldn't deserialize [{element}] into {target}, it's not CUISerializable");
+        return;
+      }
+
+      CUISerializableInfo info = CUICore.TypeAnalysis.GetSerializableInfo(target.GetType());
+
+      foreach (XAttribute attribute in element.Attributes())
+      {
+        if (!info.SerializableProps.TryGetValue(attribute.Name.ToString(), out PropertyPath pp))
+        {
+          CUI.Logger.Warning($"Couldn't deserialize [{attribute.Name}], no such prop on [{Reflection_Extensions.GetFullName(target.GetType())}]");
+          continue;
+        }
+
+        if (!pp.CanWrite)
+        {
+          CUI.Logger.Warning($"Couldn't deserialize [{pp}] on [{Reflection_Extensions.GetFullName(target.GetType())}], it's not settable");
+          continue;
+        }
+
+        pp.SetValue(target, CUICore.Parser.Parse(attribute.Value, pp.Path.Last().PropertyType));
+      }
+    }
+  }
+}

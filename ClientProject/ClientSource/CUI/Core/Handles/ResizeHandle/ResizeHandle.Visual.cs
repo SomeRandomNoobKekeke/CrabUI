@@ -12,12 +12,19 @@ namespace CursedUI
 {
   public partial class ResizeHandle : CUIVisualComponent
   {
+    [CUISerializableProp]
     public SimpleTexture Background { get; } = new();
 
     public override bool Visible
     {
       get => Background.Visible;
       set => Background.Visible = value;
+    }
+
+    public override float Transparency
+    {
+      get => Background.Transparency;
+      set => Background.Transparency = value;
     }
 
     public override bool MouseOver => Background.MouseOver;

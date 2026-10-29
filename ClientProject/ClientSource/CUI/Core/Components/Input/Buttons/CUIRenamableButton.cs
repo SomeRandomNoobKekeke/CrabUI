@@ -24,7 +24,7 @@ namespace CursedUI
     protected override void InitStyle()
     {
       base.InitStyle();
-      Background.Sprite = CUISprite.Vignette;
+      Background.Sprite = CUISprite.DimmedVertical;
     }
 
     private string TextBeforeRenaming;
@@ -97,7 +97,7 @@ namespace CursedUI
       this["overlay"] = RenameOverlay = new CUITextInput()
       {
         Relative = new CUINullRect(0, 0, 1, 1),
-        FocusedSprite = CUISprite.GlowingEdges,
+        FocusedSprite = CUISprite.VerticalGlow,
         OnKeyPressed = (e) =>
         {
           if (e.Key == Keys.Enter) IsRenaming = false;

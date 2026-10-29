@@ -12,18 +12,20 @@ using Barotrauma.Extensions;
 
 namespace CursedUI
 {
+  //LINK:\ClientProject\Tests\CUITest\Snapshots\Tests\Components\CUIIconButton.cs
   public partial class CUIIconButton : CUIButtonBase, IComponent
   {
     public static ICUIStyle DefaultStyle => new CUIDefaultStyle<CUIIconButton>((c) =>
     {
-      c.MasterColor = c.Palette["main"];
+      c.Background.Color = c.Palette["main"];
     });
 
     protected override void InitStyle()
     {
       base.InitStyle();
       // Padding = new(2, 2, 2, 2);
-      Background.Sprite = CUISprite.Vignette;
+      Background.Sprite = CUISprite.DimmedVertical;
+      MasterColor = Color.White;
     }
 
     public new Action<CUIIconButton> Style
@@ -80,9 +82,11 @@ namespace CursedUI
 
     public override void DetermineColor()
     {
-      Background.Color = InactiveColor;
-      if (MouseOver) Background.Color = MouseOverColor;
-      if (MousePressed) Background.Color = MousePressedColor;
+      Background.Color = Disabled ? Palette["disabled"] : Palette["main"];
+
+      IconBlock.Color = InactiveColor;
+      if (MouseOver) IconBlock.Color = MouseOverColor;
+      if (MousePressed) IconBlock.Color = MousePressedColor;
     }
 
     protected override CUINullVector2 MinSizeOverride => new CUINullVector2(
@@ -107,6 +111,22 @@ namespace CursedUI
       }
     }
 
+    public override float Transparency
+    {
+      get => base.Transparency;
+      set
+      {
+        base.Transparency = value;
+        IconBlock.Transparency = value;
+      }
+    }
+
+    public Action OnClick { set { Click += value; } }
+    /// <summary>
+    /// This event happens when click passes, e.g. MouseDown will trigger on Disabled buttons but Click won't
+    /// </summary>
+    public event Action Click;
+
     public override IEnumerable<VisualUnit> VisualSplit()
     {
       if (!Displayed || CulledOut) yield break;
@@ -128,9 +148,11 @@ namespace CursedUI
 
       MouseDown += (e) =>
       {
+        if (Disabled) return;
         if (!e.Mouse.M1.Down) return;
         if (PlaySound) SoundPlayer.PlayUISound(ClickSound);
         if (Emit != null) Commands.SendUp(Emit);
+        Click?.Invoke();
       };
 
       ConsumeMouseEvents = true;

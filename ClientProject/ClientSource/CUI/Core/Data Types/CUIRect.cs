@@ -7,6 +7,7 @@ using Barotrauma;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
+using System.Diagnostics.CodeAnalysis;
 
 
 namespace CursedUI
@@ -124,6 +125,26 @@ namespace CursedUI
       Top = y;
       Width = Math.Max(0f, w);
       Height = Math.Max(0f, h);
+    }
+
+    public static bool operator ==(CUIRect rect1, CUIRect rect2)
+    {
+      return rect1.Equals(rect2);
+    }
+
+    public static bool operator !=(CUIRect rect1, CUIRect rect2)
+    {
+      return !rect1.Equals(rect2);
+    }
+    public override bool Equals(object? obj)
+    {
+      if (obj is not CUIRect other) return false;
+      return Equals(other);
+    }
+
+    public bool Equals(CUIRect other)
+    {
+      return other.Left == Left && other.Top == Top && other.Width == Width && other.Height == Height;
     }
 
     public override string ToString() => $"[{Left},{Top},{Width},{Height}]";

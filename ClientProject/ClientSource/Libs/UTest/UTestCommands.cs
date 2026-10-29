@@ -14,6 +14,8 @@ namespace CUILibs
     //THINK Why this method is the main entry point?
     public static void AddCommands()
     {
+      if (DebugConsole.Commands.Any(c => c.Names[0].Value == "utest")) return;
+
       DebugConsole.Command utestCommand = new DebugConsole.Command("utest", "", UTest_Command, UTest_Hints);
 
 #if CLIENT
@@ -25,15 +27,6 @@ namespace CUILibs
 
 #if CLIENT
       PermitCommands();
-#endif
-
-
-#if CLIENT
-      string lastCommand = ModStorage.Get<string>("lastUtestCommand");
-      if (!string.IsNullOrEmpty(lastCommand))
-      {
-        DebugConsole.ExecuteCommand(lastCommand);
-      }
 #endif
     }
 #if CLIENT
@@ -59,7 +52,7 @@ namespace CUILibs
 #endif
     //TODO remove hidden test from hints
     public static string[][] UTest_Hints()
-      => new string[][] { UTestExplorer.TestNames.Append("all").Append("none").OrderBy(s => s.Length).ToArray() };
+      => [UTestExplorer.TestNames.Append("all").Append("none").OrderBy(s => s.Length).ToArray()];
 
     public static int depth = 0;
     public static void UTest_Command(string[] args)
@@ -112,7 +105,11 @@ namespace CUILibs
 
         if (start is null)
         {
-          UTestLogger.Warning($"Can't find [{args[0]}] test");
+          if (UTestLogger.LogMissingTests)
+          {
+            UTestLogger.Warning($"Can't find [{args[0]}] test");
+          }
+
           return;
         }
 

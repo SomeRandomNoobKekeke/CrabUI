@@ -50,7 +50,7 @@ namespace CursedUI
       set
       {
         _Rect = value;
-        _ResizeStrategy.MeasureRealTextSize(Rect, Anchor, Text, Scale, Font);
+        _ResizeStrategy.MeasureRealTextSize(Rect, Anchor, Text, Scale, Font, Vertical);
       }
     }
 
@@ -60,8 +60,8 @@ namespace CursedUI
       set
       {
         _Text = value;
-        _ResizeStrategy.MeasureRawTextSize(Text, Scale, Font);
-        _ResizeStrategy.MeasureRealTextSize(Rect, Anchor, Text, Scale, Font);
+        _ResizeStrategy.MeasureRawTextSize(Text, Scale, Font, Vertical);
+        _ResizeStrategy.MeasureRealTextSize(Rect, Anchor, Text, Scale, Font, Vertical);
       }
     }
 
@@ -71,8 +71,8 @@ namespace CursedUI
       set
       {
         _Scale = Math.Max(0, value);
-        _ResizeStrategy.MeasureRawTextSize(Text, Scale, Font);
-        _ResizeStrategy.MeasureRealTextSize(Rect, Anchor, Text, Scale, Font);
+        _ResizeStrategy.MeasureRawTextSize(Text, Scale, Font, Vertical);
+        _ResizeStrategy.MeasureRealTextSize(Rect, Anchor, Text, Scale, Font, Vertical);
       }
     }
 
@@ -83,14 +83,33 @@ namespace CursedUI
       set
       {
         _ResizeStrategy = ResizeStrategyBase.FromEnum(value);
-        _ResizeStrategy.MeasureRawTextSize(Text, Scale, Font);
+        _ResizeStrategy.MeasureRawTextSize(Text, Scale, Font, Vertical);
       }
     }
 
-    public Vector2 Anchor { get; set; } = new Vector2(0.5f, 0.5f); //TODO test, shouldn't this be reacive?
+    //TODO wip, works only for Resist strategy
+    private bool _Vertical; public bool Vertical
+    {
+      get => _Vertical;
+      set
+      {
+        _Vertical = value;
+        _ResizeStrategy.MeasureRawTextSize(Text, Scale, Font, Vertical);
+        _ResizeStrategy.MeasureRealTextSize(Rect, Anchor, Text, Scale, Font, Vertical);
+      }
+    }
+
+    //TODO test, shouldn't this be reacive?
+    public Vector2 Anchor { get; set; } = new Vector2(0.5f, 0.5f);
 
 
-    public Color TextColor { get; set; } = Color.White;
+
+    private TransparentColor _TextColor = new TransparentColor(Color.White);
+    public Color TextColor
+    {
+      get => _TextColor.Value;
+      set => _TextColor.PureColor = value;
+    }
     public SpriteEffects SpriteEffects { get; set; } = SpriteEffects.None;
     public float LayerDepth { get; set; } = 0.1f;
 
@@ -103,6 +122,12 @@ namespace CursedUI
     public CUINullVector2 ForcedSize => _ResizeStrategy.ForcedSize;
     public float RealScale => _ResizeStrategy.RealScale;
 
+
+    public float Transparency
+    {
+      get => _TextColor.Transparency;
+      set => _TextColor.Transparency = value;
+    }
 
     public override void Draw(CUISpriteBatch spriteBatch)
     {

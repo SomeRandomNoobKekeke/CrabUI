@@ -38,7 +38,6 @@ namespace CursedUI
       set => BackgroundSlot.Value = value;
     }
 
-    //LINK:\ClientProject\ClientSource\CUI\Core\Components\Core\CUIComponent\CUIComponent.Border.cs
     protected Borders _Border { get; } = new();
 
 
@@ -78,6 +77,19 @@ namespace CursedUI
     {
       get => Background.Visible;
       set => Background.Visible = value;
+    }
+
+
+    public override float Transparency
+    {
+      get => Background.Transparency;
+      set
+      {
+        Background.Transparency = value;
+
+        if (LeftResizeHandle is not null) LeftResizeHandle.Transparency = value;
+        if (RightResizeHandle is not null) RightResizeHandle.Transparency = value;
+      }
     }
 
     public override IEnumerable<VisualUnit> VisualSplit()

@@ -55,6 +55,7 @@ namespace CursedUI
     {
       if (Parent is null) return;
       if (!RequireChildrenUpdate) return;
+      RequireChildrenUpdate = false;
 
       if (Parent.RowSizes.Count == 0 || Parent.ColumnSizes.Count == 0)
       {

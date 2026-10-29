@@ -14,25 +14,21 @@ namespace CursedUI
   //CRINGE but at least it's fast and not scattered all over the place
   public partial class CUIVisualComponent
   {
-    protected LayoutUpdateNotifier_Part LayoutUpdateNotifier { get; } = new();
-    protected VisualRestructureNotifier_Part VisualRestructureNotifier { get; } = new();
-
-    public class LayoutUpdateNotifier_Part : Part
+    protected void NotifyLayoutChanged()
     {
-      public void Notify()
-      {
-        if (Self.MainComponent == null) return;
-        Self.MainComponent.RequireLayoutUpdate = true;
-      }
+      if (MainComponent == null) return;
+      MainComponent.RequireLayoutUpdate = true;
     }
 
-    public class VisualRestructureNotifier_Part : Part
+    protected void NotifyTreeChanged()
     {
-      public void Notify()
-      {
-        if (Self.MainComponent == null) return;
-        Self.MainComponent.RequireVisualRestructure = true;
-      }
+      Tree.PropogateTreeChanged();
+    }
+
+    protected void NotifyVisualsRestructured()
+    {
+      if (MainComponent == null) return;
+      MainComponent.RequireVisualRestructure = true;
     }
   }
 }

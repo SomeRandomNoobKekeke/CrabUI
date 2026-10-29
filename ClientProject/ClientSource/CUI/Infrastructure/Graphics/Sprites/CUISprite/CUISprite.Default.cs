@@ -63,25 +63,24 @@ namespace CursedUI
     public static CUISprite Cross => AtIndex("Cross", 0, 0);
     public static CUISprite Angle => AtIndex("Angle", 1, 0);
 
+    public static CUISprite VerticalGlow => AtIndex("VerticalGlow", 0, 1);
+    public static CUISprite VerticalGlow16 => AtIndex("VerticalGlow16", 1, 1);
+    public static CUISprite VerticalGlow32 => AtIndex("VerticalGlow32", 2, 1);
+    public static CUISprite VerticalGlow64 => AtIndex("VerticalGlow64", 3, 1);
+    public static CUISprite VerticalGlow128 => AtIndex("VerticalGlow128", 4, 1);
+    public static CUISprite VerticalGlowSolid => AtIndex("VerticalSolid", 5, 1);
 
-    public static CUISprite CheckBoxOn => AtIndex("CheckBoxOn", 0, 1);
-    public static CUISprite CheckBoxOff => AtIndex("CheckBoxOff", 1, 1);
 
-    public static CUISprite BoxWithAShadow => AtIndex("BoxWithAShadow", 4, 1);
-
-    public static CUISprite GlowingEdges => AtIndex("GlowingEdges", 2, 1);
-    public static CUISprite BluredEdges => AtIndex("BluredEdges", 0, 2);
-    public static CUISprite BluredEdgesHorizontal => AtIndex("BluredEdgesHorizontal", 1, 2);
-    public static CUISprite BluredEdgesVertical => AtIndex("BluredEdgesVertical", 2, 2);
+    public static CUISprite DimmedHardHorizontal => AtIndex("BluredEdgesHorizontal", 1, 2);
+    public static CUISprite DimmedHardVertical => AtIndex("BluredEdgesVertical", 2, 2);
     public static CUISprite Window => AtIndex("Window", 3, 2);
     public static CUISprite BoxWithALamp => AtIndex("BoxWithALamp", 4, 2);
 
     public static CUISprite Vignette => AtIndex("Vignette", 0, 3);
     public static CUISprite DimmedHorizontal => AtIndex("DimmedHorizontal", 1, 3);
     public static CUISprite DimmedVertical => AtIndex("DimmedVertical", 2, 3);
-    public static CUISprite VignetteDithered => AtIndex("VignetteDithered", 7, 7, 8, 8);
-    public static CUISprite DimmedHorizontalLight => AtIndex("DimmedHorizontalLight", 4, 3);
-    public static CUISprite DimmedVerticalLight => AtIndex("DimmedVerticalLight", 5, 3);
+    public static CUISprite DimmedHorizontalLight => AtIndex("DimmedHorizontalLight", 3, 3);
+    public static CUISprite DimmedVerticalLight => AtIndex("DimmedVerticalLight", 4, 3);
 
 
     public static CUISprite LeftLineEnd => AtIndex("LeftLineEnd", 0, 4);
@@ -89,11 +88,41 @@ namespace CursedUI
     public static CUISprite RightLineEnd => AtIndex("RightLineEnd", 2, 4);
     public static CUISprite Handle => AtIndex("Handle", 3, 4);
     public static CUISprite LineMark => AtIndex("LineMark", 4, 4);
-
     public static CUISprite FuzzyCircle => AtIndex("FuzzyCircle", 5, 4);
 
-    public static CUISprite Hex => CutAtIndexAs("Hex", 0, 5, 2, 2);
+    public static CUISprite VerticalTrack => AtIndex("VerticalTrack", 0, 5);
+    public static CUISprite HorizontalTrack => AtIndex("VerticalTrack", 1, 5);
+    public static CUISprite VerticalTrackEnd => AtIndex("VerticalTrack", 2, 5);
+    public static CUISprite HorizontalTrackEnd => AtIndex("VerticalTrack", 3, 5);
+    public static CUISprite VerticalTrackSlider => AtIndex("VerticalTrack", 4, 5);
 
+    public static CUISprite GlowingEdges => AtIndex("GlowingEdges", 0, 6);
+    public static CUISprite GlowingEdges16 => AtIndex("GlowingEdges16", 1, 6);
+    public static CUISprite GlowingEdges32 => AtIndex("GlowingEdges32", 2, 6);
+    public static CUISprite GlowingEdges64 => AtIndex("GlowingEdges64", 3, 6);
+    public static CUISprite GlowingEdges128 => AtIndex("GlowingEdges128", 4, 6);
+    public static CUISprite GlowingEdgesSolid => AtIndex("GlowingEdgesSolid", 5, 6);
+
+
+    public static CUISprite Hex
+    {
+      get
+      {
+        {
+          CUICore.TextureManager.Ensure("Hex",
+            () => CUICore.TextureManager.Get("CUI").Cut(IndexToPos(0, 7, 1, 1))
+          );
+
+          return new CUISprite(CUICore.TextureManager.Get("Hex"))
+          {
+            Name = "Hex",
+            DrawMode = CUISpriteDrawMode.StaticAbove,
+          };
+        }
+      }
+    }
+
+    public static CUISprite VignetteDithered => AtIndex("VignetteDithered", 7, 7, 8, 8);
 
     public static CUISprite CreateRadialColorPicker(int w, int h)
     {

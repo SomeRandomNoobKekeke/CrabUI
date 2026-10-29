@@ -1,4 +1,9 @@
+
+<!-- Note: order of these assemblies actually affects plugin init order -->
 <ModConfig>
+  <!-- Executed 2nd -->
+  <Assembly Folder="%ModDir%/ClientProject/Tests" Target="Client" IsScript="true" UseInternalAccessName="false" />
+
+  <!-- Executed 1st -->
   <Assembly Folder="%ModDir%/ClientProject/ClientSource" Target="Client" IsScript="true" UseInternalAccessName="false" />
-  <Assembly Folder="%ModDir%/ClientProject/InMemory" Target="Client" IsScript="true" UseInternalAccessName="false" />
 </ModConfig>

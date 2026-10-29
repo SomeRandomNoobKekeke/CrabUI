@@ -15,6 +15,7 @@ namespace CursedUI
 
     protected virtual void InitStyle() { }
 
+    [CUISerializableProp]
     public virtual CUIPalette Palette
     {
       get => Styles.Palette;
@@ -32,12 +33,17 @@ namespace CursedUI
         Palette = value;
         foreach (CUIVisualComponent child in Children)
         {
+          if (child.DeepPaletteImmunity) continue;
           child.DeepPalette = value;
         }
       }
     }
 
+    [CUISerializableProp]
     public bool InheritPalette { get; set; } = false;
+
+    [CUISerializableProp]
+    public bool DeepPaletteImmunity { get; set; } = false;
 
     public Action<CUIVisualComponent> Style
     {
@@ -59,6 +65,8 @@ namespace CursedUI
       get => Styles.UseReactiveStyles;
       set => Styles.UseReactiveStyles = value;
     }
+
+    public CUIStylePipeline TypeSpecificStyles => Styles.TypeSpecificStyles;
 
     protected Style_Part Styles { get; } = new();
     public class Style_Part : Part

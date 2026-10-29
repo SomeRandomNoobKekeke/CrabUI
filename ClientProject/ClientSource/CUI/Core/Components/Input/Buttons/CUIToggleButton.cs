@@ -18,6 +18,7 @@ namespace CursedUI
     public static ICUIStyle DefaultStyle => new CUIDefaultStyle<CUIToggleButton>((c) =>
     {
       c.MasterColor = c.Palette["main"];
+      c.TextColor = c.Palette["text"];
     });
 
     protected override void InitStyle()
@@ -73,7 +74,7 @@ namespace CursedUI
 
         DetermineColor();
         LayoutMarker.Mark(LayoutMarker.Pattern.AbsoluteProp);
-        VisualRestructureNotifier.Notify();
+        NotifyVisualsRestructured();
       }
     }
 
@@ -88,8 +89,26 @@ namespace CursedUI
       }
     }
 
+    [CUISerializableProp]
+    public bool Vertical
+    {
+      get => OnState.Vertical;
+      set
+      {
+        OnState.Vertical = value;
+        OffState.Vertical = value;
+      }
+    }
+
     public override void DetermineColor()
     {
+      if (Disabled)
+      {
+        Background.Color = Palette["disabled"];
+        return;
+      }
+
+
       if (State)
       {
         Background.Color = OnColor;
@@ -97,7 +116,7 @@ namespace CursedUI
       else
       {
         Background.Color = OffColor;
-        if (MouseOver) Background.Color = OffColorHovered;
+        // if (MouseOver) Background.Color = OffColorHovered;
       }
     }
 
@@ -130,6 +149,17 @@ namespace CursedUI
         Background.Visible = value;
         OnState.TextBlock.Visible = value;
         OffState.TextBlock.Visible = value;
+      }
+    }
+
+    public override float Transparency
+    {
+      get => base.Transparency;
+      set
+      {
+        base.Transparency = value;
+        OnState.TextBlock.Transparency = value;
+        OffState.TextBlock.Transparency = value;
       }
     }
 
@@ -246,6 +276,7 @@ namespace CursedUI
     {
       MouseDown += (e) =>
       {
+        if (Disabled) return;
         if (!e.Mouse.M1.Down) return;
         DoToggle();
       };

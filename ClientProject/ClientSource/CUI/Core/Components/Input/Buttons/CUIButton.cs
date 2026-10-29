@@ -66,8 +66,24 @@ namespace CursedUI
       }
     }
 
+    [CUISerializableProp]
+    public bool Vertical { get => TextState.Vertical; set => TextState.Vertical = value; }
+
+    public Action OnClick { set { Click += value; } }
+    /// <summary>
+    /// This event happens when click passes, e.g. MouseDown will trigger on Disabled buttons but Click won't
+    /// </summary>
+    public event Action Click;
+
+
     public override void DetermineColor()
     {
+      if (Disabled)
+      {
+        Background.Color = Palette["disabled"];
+        return;
+      }
+
       Background.Color = InactiveColor;
       if (MouseOver) Background.Color = MouseOverColor;
       if (MousePressed) Background.Color = MousePressedColor;
@@ -93,6 +109,16 @@ namespace CursedUI
       }
     }
 
+    public override float Transparency
+    {
+      get => base.Transparency;
+      set
+      {
+        base.Transparency = value;
+        TextState.TextBlock.Transparency = value;
+      }
+    }
+
     protected override void UpdateRects()
     {
       base.UpdateRects();
@@ -111,6 +137,7 @@ namespace CursedUI
 
       yield return Border.VisualWrapper;
     }
+
 
 
     #region Forwarded to TextState
@@ -145,9 +172,11 @@ namespace CursedUI
 
       MouseDown += (e) =>
       {
+        if (Disabled) return;
         if (!e.Mouse.M1.Down) return;
         if (PlaySound) SoundPlayer.PlayUISound(ClickSound);
         if (Emit != null) Commands.SendUp(Emit, Text);
+        Click?.Invoke();
       };
 
       ConsumeMouseEvents = true;

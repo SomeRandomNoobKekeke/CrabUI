@@ -12,7 +12,7 @@ using Barotrauma.Extensions;
 
 namespace CursedUI
 {
-  //LINK:/ClientProject\InMemory\CUITest\Snapshots\Tests\Components\CUIToggleIconButton.cs
+  //LINK:/ClientProject\Tests\CUITest\Snapshots\Tests\Components\CUIToggleIconButton.cs
   public partial class CUIToggleIconButton : CUIButtonBase, IComponent
   {
     public static ICUIStyle DefaultStyle => new CUIDefaultStyle<CUIToggleIconButton>((c) =>
@@ -24,7 +24,7 @@ namespace CursedUI
     {
       base.InitStyle();
       // Padding = new(2, 2, 2, 2);
-      Background.Sprite = CUISprite.Vignette;
+      Background.Sprite = CUISprite.DimmedVertical;
     }
 
     public new Action<CUIToggleIconButton> Style
@@ -41,6 +41,18 @@ namespace CursedUI
 
     private IconBlock SelectedIconBlock;
 
+
+    public CUISprite OnIcon
+    {
+      get => OnIconBlock.Icon;
+      set => OnIconBlock.Icon = value;
+    }
+
+    public CUISprite OffIcon
+    {
+      get => OffIconBlock.Icon;
+      set => OffIconBlock.Icon = value;
+    }
 
     public CUISprite Icon
     {
@@ -106,7 +118,7 @@ namespace CursedUI
         SelectedIconBlock = value ? OnIconBlock : OffIconBlock;
         DetermineColor();
         LayoutMarker.Mark(LayoutMarker.Pattern.AbsoluteProp);
-        VisualRestructureNotifier.Notify();
+        NotifyVisualsRestructured();
       }
     }
 
@@ -115,6 +127,13 @@ namespace CursedUI
 
     public override void DetermineColor()
     {
+      if (Disabled)
+      {
+        Background.Color = Palette["disabled"];
+        return;
+      }
+
+
       if (State)
       {
         Background.Color = OnColor;
@@ -151,6 +170,17 @@ namespace CursedUI
       }
     }
 
+    public override float Transparency
+    {
+      get => base.Transparency;
+      set
+      {
+        base.Transparency = value;
+        OnIconBlock.Transparency = value;
+        OffIconBlock.Transparency = value;
+      }
+    }
+
     public override IEnumerable<VisualUnit> VisualSplit()
     {
       if (!Displayed || CulledOut) yield break;
@@ -170,6 +200,7 @@ namespace CursedUI
     {
       MouseDown += (e) =>
       {
+        if (Disabled) return;
         if (!e.Mouse.M1.Down) return;
 
         State = !State;
@@ -190,6 +221,11 @@ namespace CursedUI
     public CUIToggleIconButton(CUISprite icon) : this()
     {
       Icon = icon;
+    }
+    public CUIToggleIconButton(CUISprite onIcon, CUISprite offIcon) : this()
+    {
+      OnIconBlock.Icon = onIcon;
+      OffIconBlock.Icon = offIcon;
     }
   }
 }

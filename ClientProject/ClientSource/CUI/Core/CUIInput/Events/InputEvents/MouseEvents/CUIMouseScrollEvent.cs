@@ -17,6 +17,8 @@ namespace CursedUI
       if (consumer is IMouseEventConsumer MEConsumer)
       {
         MEConsumer.MouseScroll.Raise(this);
+        //FIXME this fixes lists being scrolled through vanilla gui but breaks scroll randomly
+        // Consumed = MEConsumer.ConsumeMouseEvents || Consumed;
       }
     }
 

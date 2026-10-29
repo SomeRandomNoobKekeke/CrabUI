@@ -12,6 +12,6 @@ namespace CursedUI
 {
   public enum CUISpriteDrawMode
   {
-    Resize, Wrap, Static, StaticDeep
+    Resize, Wrap, Static, StaticBelow, StaticAbove
   }
 }

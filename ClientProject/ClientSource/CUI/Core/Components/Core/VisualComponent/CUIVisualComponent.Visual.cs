@@ -20,7 +20,7 @@ namespace CursedUI
       {
         if (_Displayed == value) return;
         _Displayed = value;
-        VisualRestructureNotifier.Notify();
+        NotifyTreeChanged();
       }
     }
 
@@ -33,6 +33,23 @@ namespace CursedUI
 
     [CUISerializableProp]
     public abstract bool Visible { get; set; }
+
+    public abstract float Transparency { get; set; }
+
+    public bool TransparencyImmunity { get; set; }
+    public float DeepTransparency
+    {
+      get => Transparency;
+      set
+      {
+        if (!TransparencyImmunity) Transparency = value;
+
+        foreach (var child in Children)
+        {
+          child.DeepTransparency = value;
+        }
+      }
+    }
 
     /// <summary>
     /// Half assed substitution for z-index, set to CUIDirection.Reverse to draw children in reverse order

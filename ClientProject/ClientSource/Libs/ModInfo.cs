@@ -37,15 +37,14 @@ namespace CUILibs
       throw new UnreachableException();
     }
 
-    public static ContentPackage Package => GetPackageForAssembly(Assembly.GetExecutingAssembly());
+    public static ContentPackage Package => GetPackageForAssembly(Assembly.GetCallingAssembly());
 
-    // public static string AssemblyName => Assembly.GetExecutingAssembly().GetName().Name;
-    public static string HookId => Package.Name;
+    public static string HookId => GetPackageForAssembly(Assembly.GetCallingAssembly()).Name;
     public static string BarotraumaPath => Path.GetFullPath("./");
 
 
-    public static string Dir => Package.Dir;
-    public static string Version => Package.ModVersion;
-    public static string Name => Package.Name;
+    public static string Dir => GetPackageForAssembly(Assembly.GetCallingAssembly()).Dir;
+    public static string Version => GetPackageForAssembly(Assembly.GetCallingAssembly()).ModVersion;
+    public static string Name => GetPackageForAssembly(Assembly.GetCallingAssembly()).Name;
   }
 }

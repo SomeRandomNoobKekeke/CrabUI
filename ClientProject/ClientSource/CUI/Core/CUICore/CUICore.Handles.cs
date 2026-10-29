@@ -66,7 +66,7 @@ namespace CursedUI
       public void DrawBeforeGUI(CUISpriteBatch spriteBatch) => Self.LifeCycle.DrawBeforeGUI(spriteBatch);
       public void DrawAfterGUI(CUISpriteBatch spriteBatch) => Self.LifeCycle.DrawAfterGUI(spriteBatch);
 
-      public void AddAssemblyInfo(CUIAssemblyInfo assemblyInfo) => Self._Reflection.AddAssemblyInfo(assemblyInfo);
+      public void AnalyzeAssembly(Assembly assembly) => Self._TypeAnalysis.AnalyzeAssembly(assembly);
 
       public void ClearFocus() => Self.FocusHandle.ClearFocus();
     }

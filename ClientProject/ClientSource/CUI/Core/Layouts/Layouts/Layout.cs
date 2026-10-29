@@ -102,7 +102,7 @@ namespace CursedUI
           Parent.NotifyVisualsRestructured();
         }
 
-        RequireChildrenUpdate = false;
+        // RequireChildrenUpdate = false;
       }
       catch (Exception e)
       {

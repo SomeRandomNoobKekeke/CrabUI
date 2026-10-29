@@ -12,6 +12,7 @@ namespace CursedUI
 {
   public partial class ResizeHandle : CUIVisualComponent
   {
+    [CUISerializableProp]
     public Vector2 StaticPointAnchor { get; set; }
 
 
@@ -31,6 +32,8 @@ namespace CursedUI
       get => PreventMovement == new CUIBool2(true, false);
       set => PreventMovement = new CUIBool2(true, false);
     }
+
+    [CUISerializableProp]
     public CUIBool2 PreventMovement { get; set; } = new CUIBool2(false, false);
 
     private void Grab(CUIMouseEvent e)

@@ -19,7 +19,7 @@ namespace CursedUI
       set => MainComponents.GameScreenRect = value;
     }
 
-    private CUIStyleManager CUIStyleManager;
+    private CUIStyleManager _CUIStyleManager = new();
     public CUIPalettes _Palettes;
 
     public CUIMainComponent Main => MainComponents.Main;
@@ -28,11 +28,9 @@ namespace CursedUI
     private CUIInput _Input = new();
     public EventConstructor _EventConstructor;
     private AnimationPlayer _AnimationPlayer;
-    private CUIParser _CUIParser = new();
+
     private CUISerializer _CUISerializer = new();
-    private CUIAssemblyAnalyzer CUIAssemblyAnalyzer = new();
-
-
+    private CUIParser _Parser = new CUIParser();
 
 
     private bool Activated;
@@ -43,16 +41,12 @@ namespace CursedUI
 
       try
       {
-        CUIStyleManager = new(Reflection.TypeTree);
         _Palettes = new();
 
         _EventConstructor = new();
         _AnimationPlayer = new();
 
-        //CUICore analyzes itself because it needs infos for MainComponents right here
-        Reflection.AddAssemblyInfo(
-          CUIAssemblyAnalyzer.AnalyzeAssembly(typeof(CUICore).Assembly)
-        );
+        TypeAnalysis.AnalyzeAssembly(typeof(CUICore).Assembly);
 
         MainComponents.Setup();
 

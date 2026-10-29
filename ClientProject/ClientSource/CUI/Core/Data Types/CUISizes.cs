@@ -7,7 +7,7 @@ using Barotrauma;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
-
+using CUILibs;
 
 namespace CursedUI
 {
@@ -16,10 +16,11 @@ namespace CursedUI
   {
     public static CUIRect Zero { get; } = new CUIRect(0, 0, 0, 0);
 
-    public float Left;
+
     public float Top;
     public float Right;
     public float Bottom;
+    public float Left;
 
     public float FullWidth => Left + Right;
     public float FullHeigth => Top + Bottom;

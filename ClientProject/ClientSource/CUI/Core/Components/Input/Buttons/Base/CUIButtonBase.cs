@@ -28,5 +28,15 @@ namespace CursedUI
     public bool PlaySound { get; set; } = true;
     public GUISoundType ClickSound { get; set; } = GUISoundType.Select;//TODO don't reference it directly? there should be some cui sound manager
     public string Emit { get; set; }
+
+    private bool _Disabled; public bool Disabled
+    {
+      get => _Disabled;
+      set
+      {
+        _Disabled = value;
+        DetermineColor();
+      }
+    }
   }
 }

@@ -32,6 +32,15 @@ namespace CursedUI
     public override bool Visible { get; set; } = true;
     public override Layout? Layout { get; protected set; } = new CUIPlainLayout();
 
+    private float _Transparency; public override float Transparency
+    {
+      get => _Transparency;
+      set
+      {
+        _Transparency = value;
+      }
+    }
+
     public override IEnumerable<VisualUnit> VisualSplit()
     {
       yield return FlexTexture.VisualWrapper;

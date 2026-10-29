@@ -36,6 +36,16 @@ namespace CursedUI
         }
       }
 
+      public bool Vertical
+      {
+        get => TextBlock.Vertical;
+        set
+        {
+          TextBlock.Vertical = value;
+          Self.LayoutMarker.Mark(LayoutMarker.Pattern.AbsoluteProp);
+        }
+      }
+
       public string Text
       {
         get => TextBlock.Text;

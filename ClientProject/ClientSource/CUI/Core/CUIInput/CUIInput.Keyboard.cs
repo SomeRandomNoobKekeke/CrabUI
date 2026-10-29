@@ -16,7 +16,7 @@ namespace CursedUI
     {
       public KeyboardState State { get; private set; }
       public KeyboardState PrevState { get; private set; }
-      public bool SomethingHappened { get; private set; }
+      public bool SomethingHappened { get; set; }
 
       private Keys[] PrevPressedKeys = [];
 

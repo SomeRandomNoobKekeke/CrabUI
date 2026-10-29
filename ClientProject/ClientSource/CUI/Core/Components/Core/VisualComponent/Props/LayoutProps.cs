@@ -79,7 +79,7 @@ namespace CursedUI
         Pattern = LayoutMarker.Pattern.FromParentAndDown,
       };
 
-      public CUILayoutVectorProp ChildrenOffset { get; } = new()
+      public CUIBoundedVectorProp ChildrenOffset { get; } = new()
       {
         Pattern = LayoutMarker.Pattern.Down,
       };

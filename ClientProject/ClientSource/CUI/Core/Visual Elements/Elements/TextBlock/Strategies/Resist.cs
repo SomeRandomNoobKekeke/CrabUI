@@ -14,15 +14,17 @@ namespace CursedUI
   {
     public class ResistStrategy : ResizeStrategyBase
     {
-      public override void MeasureRawTextSize(string text, float scale, CUIFont font)
+      public override void MeasureRawTextSize(string text, float scale, CUIFont font, bool vertical)
       {
+        if (vertical) text = font.WrapText(text, 0).Trim('\n');
+
         RawTextSize = font.MeasureString(text) * scale;
         ForcedSize = new CUINullVector2(RawTextSize);
         RealText = text;
         RealScale = scale;
       }
 
-      public override void MeasureRealTextSize(CUIRect rect, Vector2 anchor, string text, float scale, CUIFont font)
+      public override void MeasureRealTextSize(CUIRect rect, Vector2 anchor, string text, float scale, CUIFont font, bool vertical)
       {
         TextDrawPosition = CUIAnchor.ChildPosIn(rect, anchor, RawTextSize);
       }

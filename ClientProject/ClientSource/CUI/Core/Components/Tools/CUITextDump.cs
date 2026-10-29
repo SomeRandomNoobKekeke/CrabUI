@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework;
 
 namespace CursedUI
 {
-  //Test LINK:\ClientProject\InMemory\CUITest\Snapshots\Tests\Components\CUITextDump.cs
+  //Test LINK:\ClientProject\Tests\CUITest\Snapshots\Tests\Components\CUITextDump.cs
   public class CUITextDump : CUIVerticalList
   {
     private static ConditionalWeakTable<string, CUITextDump> Dumps { get; } = new();

@@ -43,7 +43,7 @@ namespace CursedUI
         }
         Func<CUIRect, CUIBoundaries> CUIPlainLayout.Host.ChildrenBounds => Self.LayoutProps.ChildrenBounds.Value;
 
-        void Layout.Host.NotifyVisualsRestructured() => Self.VisualRestructureNotifier.Notify();
+        void Layout.Host.NotifyVisualsRestructured() => Self.NotifyVisualsRestructured();
 
         public override string ToString() => Self.ToString();
       }

@@ -56,17 +56,44 @@ namespace CursedUI
       {
         if (!Scrollable) return;
         ChildrenOffset = ChildrenOffset with { Y = value };
+        ScrollChanged?.Invoke(Scroll);
       }
     }
 
-    protected void UpdateChildrenOffsetBounds(float totalChildrenHeight)
+    //TODO Cursed, temp event that also raises when scroll is validated
+    public event Action<float> ScrollChanged;
+
+    //TODO also use TopGap, test this and sync with horizontal list
+    /// <summary>
+    /// [0..1]
+    /// </summary>
+    public float RelativeScroll
     {
+      get
+      {
+        float spaceToScroll = TotalContentHeight + BottomGap - Rect.Height;
+        if (spaceToScroll == 0) return 0;
+        return Math.Clamp(-Scroll / spaceToScroll, 0, 1);
+      }
+      set
+      {
+        float spaceToMove = TotalContentHeight + BottomGap - Rect.Height;
+        Scroll = -value * spaceToMove;
+      }
+    }
+
+    public float TotalContentHeight { get; private set; }
+
+    protected void UpdateChildrenOffsetBounds(float totalContentHeight)
+    {
+      TotalContentHeight = totalContentHeight;
+
       if (Direction == CUIDirection.Straight)
       {
         LayoutProps.ChildrenOffset.Bounds = new CUIBoundaries(
           minX: 0,
           maxX: 0,
-          minY: Math.Min(Rect.Height - totalChildrenHeight - BottomGap, 0),
+          minY: Math.Min(Rect.Height - totalContentHeight - BottomGap, 0),
           maxY: TopGap
         );
       }
@@ -76,14 +103,29 @@ namespace CursedUI
           minX: 0,
           maxX: 0,
           minY: -TopGap,
-          maxY: -Math.Min(Rect.Height - totalChildrenHeight - BottomGap, 0)
+          maxY: -Math.Min(Rect.Height - totalContentHeight - BottomGap, 0)
         );
       }
     }
 
-    private void ScrollHandle(CUIMouseScrollEvent e)
+    private void HandleScroll(CUIMouseScrollEvent e)
     {
       Scroll += e.Scroll * ScrollSpeed;
+    }
+
+    private void ValidateScroll()
+    {
+      // if (Scroll > 0) Scroll = 0;
+      if (Scroll < -TotalContentHeight - BottomGap)
+      {
+        Scroll = -TotalContentHeight;
+      }
+    }
+
+    protected override void UpdateRects()
+    {
+      base.UpdateRects();
+      ValidateScroll();
     }
 
     protected CUIVerticalListLayout ListLayout;
@@ -101,7 +143,7 @@ namespace CursedUI
 
     public CUIVerticalList() : base()
     {
-      MouseScroll += ScrollHandle;
+      MouseScroll += HandleScroll;
     }
   }
 }

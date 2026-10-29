@@ -56,15 +56,14 @@ namespace CursedUI
     public static CUICore.Singletons_Module Singletons => CUICore.Singletons;
     public static bool Started => Setup?.Started == true;
     //Akshually in MasterRunners calling this 
-    public static void Start()
-    {
-      Setup.Start(Assembly.GetCallingAssembly());
-    }
+    public static void Start() => Setup.Start();
+    public static void ScanThisAssembly() => Setup.AnalyzeAssembly(Assembly.GetCallingAssembly());
     public static void Stop() => Setup?.Stop();
 
     public static CUIMainComponent Main => Setup.Core.Main;
     public static CUIMainComponent TopMain => Setup.Core.TopMain;
     public static DebugHub DebugHub => CUICore.DebugHub;
+    public static CUIPalettes Palettes => CUICore.Palettes;
     public static CUITextureManager TextureManager => Setup.Runner.TextureManager;
 
     public static double UpdateFPS

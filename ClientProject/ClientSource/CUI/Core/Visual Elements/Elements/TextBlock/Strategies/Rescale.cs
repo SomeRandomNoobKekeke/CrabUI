@@ -14,13 +14,15 @@ namespace CursedUI
   {
     public class RescaleStrategy : ResizeStrategyBase
     {
-      public override void MeasureRawTextSize(string text, float scale, CUIFont font)
+      public override void MeasureRawTextSize(string text, float scale, CUIFont font, bool vertical)
       {
+        if (vertical) text = font.WrapText(text, 0).Trim('\n');
+
         RawTextSize = font.MeasureString(text);
         RealText = text;
       }
 
-      public override void MeasureRealTextSize(CUIRect rect, Vector2 anchor, string text, float scale, CUIFont font)
+      public override void MeasureRealTextSize(CUIRect rect, Vector2 anchor, string text, float scale, CUIFont font, bool vertical)
       {
         RealScale = scale;
 

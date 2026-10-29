@@ -1,0 +1,21 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Diagnostics;
+
+using CUICodeGenerator;
+using System.Xml.Linq;
+
+namespace CUILibs
+{
+  /// <summary>
+  /// This thing can be parsed to / from text
+  /// </summary>
+  public interface IParsable
+  {
+    public bool WrapInQuotes => true;
+    public static abstract object Parse(string raw);
+    public string ToText();
+  }
+}

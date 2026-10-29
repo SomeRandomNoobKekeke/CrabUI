@@ -11,20 +11,21 @@ using CUILibs;
 using System.Collections;
 namespace CursedUI
 {
-  public class CUIMultiSprite : CUISprite, IEnumerable<ITextureSource>
+  public partial class CUIMultiSprite : CUISprite, IEnumerable<ITextureSource>
   {
-    public List<ITextureSource> _Sources = new(); public List<ITextureSource> Sources
+    protected List<ITextureSource> _Sources = [];
+    public virtual List<ITextureSource> Sources
     {
       get => _Sources;
       set
       {
-        _Sources = value;
+        _Sources = value ?? [];
         CurrentSource = 0;
         SyncTextureSource();
       }
     }
 
-    public void Add(ITextureSource source)
+    public virtual void Add(ITextureSource source)
     {
       Sources.Add(source);
 

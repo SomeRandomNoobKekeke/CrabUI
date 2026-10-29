@@ -59,7 +59,7 @@ namespace CursedUI
 
     public static void CUIPrintComponentInfos_Command(string[] args)
     {
-      foreach (var (type, info) in CUICore.Reflection.ComponentInfos)
+      foreach (var (type, info) in CUICore.TypeAnalysis.ComponentInfos)
       {
         CUI.Logger.Log($"{type.Name}   -   {info}");
       }
@@ -67,7 +67,7 @@ namespace CursedUI
 
     public static void CUIPrintTypeTree_Command(string[] args)
     {
-      CUI.Logger.Log($"\n{CUICore.Reflection.TypeTree}");
+      CUI.Logger.Log($"\n{CUICore.TypeAnalysis.ComponentTypeTree}");
     }
 
     public static void GC_Command(string[] args)
@@ -142,7 +142,7 @@ namespace CursedUI
       foreach (MethodBase mb in Harmony.GetAllPatchedMethods())
       {
         Func<Patch, bool> selector = nolua ? (p) => !p.owner.Contains("LuaCsForBarotrauma") : (p) => true;
-        Func<Patch, string> toText = p => $"{p.owner}{(deep ? $" - {p.PatchMethod.GetFullMethodName()}" : "")}";
+        Func<Patch, string> toText = p => $"{p.owner}{(deep ? $" - {Reflection_Extensions.GetFullMethodName(p.PatchMethod)}" : "")}";
 
         bool PatchIsEmpty(Patches p) =>
           p.Prefixes.Count(selector) == 0 &&

@@ -51,6 +51,7 @@ namespace CursedUI
     {
       if (Parent is null) return;
       if (!RequireChildrenUpdate) return;
+      RequireChildrenUpdate = false;
 
       Debug_Calc.Send($"---------- Calculating children in {Parent}");
 
@@ -163,10 +164,13 @@ namespace CursedUI
           if (c.AbsoluteMax.Left.HasValue) x = Math.Min(x, c.AbsoluteMax.Left.Value);
 
           if (c.Absolute.Width.HasValue) w = c.Absolute.Width.Value;
-          if (c.AbsoluteMin.Width.HasValue) w = Math.Max(w, c.AbsoluteMin.Width.Value);
-          if (c.AbsoluteMax.Width.HasValue) w = Math.Min(w, c.AbsoluteMax.Width.Value);
+
           if (c.MinSize.X.HasValue) w = Math.Max(w, c.MinSize.X.Value);
           if (c.MaxSize.X.HasValue) w = Math.Min(w, c.MaxSize.X.Value);
+
+          if (c.AbsoluteMin.Width.HasValue) w = Math.Max(w, c.AbsoluteMin.Width.Value);
+          if (c.AbsoluteMax.Width.HasValue) w = Math.Min(w, c.AbsoluteMax.Width.Value);
+
 
           rightmostRight = Math.Max(rightmostRight, x + w + c.OutToChildDiff.FullWidth);
         }
@@ -191,10 +195,13 @@ namespace CursedUI
           if (c.AbsoluteMax.Top.HasValue) y = Math.Min(y, c.AbsoluteMax.Top.Value);
 
           if (c.Absolute.Height.HasValue) h = c.Absolute.Height.Value;
-          if (c.AbsoluteMin.Height.HasValue) h = Math.Max(h, c.AbsoluteMin.Height.Value);
-          if (c.AbsoluteMax.Height.HasValue) h = Math.Min(h, c.AbsoluteMax.Height.Value);
+
           if (c.MinSize.Y.HasValue) h = Math.Max(h, c.MinSize.Y.Value);
           if (c.MaxSize.Y.HasValue) h = Math.Min(h, c.MaxSize.Y.Value);
+
+          if (c.AbsoluteMin.Height.HasValue) h = Math.Max(h, c.AbsoluteMin.Height.Value);
+          if (c.AbsoluteMax.Height.HasValue) h = Math.Min(h, c.AbsoluteMax.Height.Value);
+
 
           bottommostBottom = Math.Max(bottommostBottom, y + h + c.OutToChildDiff.FullHeigth);
         }

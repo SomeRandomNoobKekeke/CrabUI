@@ -15,7 +15,7 @@ namespace CursedUI
 
     public bool Started { get; private set; }
 
-    public void Start(Assembly callingAssembly)
+    public void Start()
     {
       if (!Started)
       {
@@ -24,8 +24,6 @@ namespace CursedUI
         Core.Activate();
         Started = true;
       }
-
-      Runner.OnStartAttempt(callingAssembly);
     }
 
     public void Stop()
@@ -41,6 +39,11 @@ namespace CursedUI
     {
       Runner.Core = Core;
       Runner.DataSources = DataSources;
+    }
+
+    public void AnalyzeAssembly(Assembly assembly)
+    {
+      Runner.AnalyzeAssembly(assembly);
     }
   }
 }

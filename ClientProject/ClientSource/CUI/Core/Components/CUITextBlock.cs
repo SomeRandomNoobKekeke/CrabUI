@@ -21,10 +21,19 @@ namespace CursedUI
     protected override void InitStyle()
     {
       base.InitStyle();
+      TextAnchor = CUIAnchor.LeftCenter;
       TextPadding = new(2, 4, 2, 4);
     }
 
+    public new Action<CUITextBlock> Style
+    {
+      set => PersonalStyle = new CUIActionStyle<CUITextBlock>("personal", value);
+    }
+
     public TextBlock TextBlock { get; } = new();
+
+
+
 
     [CUISerializableProp]
     public string Text
@@ -33,9 +42,14 @@ namespace CursedUI
       set
       {
         TextBlock.Text = value;
+        //TODO why OnlyParent shouldn't this be Absolute?
         LayoutMarker.Mark(LayoutMarker.Pattern.OnlyParent);
       }
     }
+
+    [CUISerializableProp]
+    public bool Vertical { get => TextBlock.Vertical; set => TextBlock.Vertical = value; }
+
     [CUISerializableProp]
     public float Scale
     {
@@ -102,7 +116,15 @@ namespace CursedUI
     protected override void UpdateRects()
     {
       base.UpdateRects();
+
+      CUINullVector2 prevSize = TextBlock.ForcedSize;
+
       TextBlock.Rect = ChildrenRect - TextPadding;
+
+      if (TextBlock.ForcedSize != prevSize)
+      {
+        LayoutMarker.Mark(LayoutMarker.Pattern.AbsoluteProp);
+      }
     }
 
     [CUISerializableProp]
@@ -115,12 +137,34 @@ namespace CursedUI
         TextBlock.Visible = value;
       }
     }
+
+    public override float Transparency
+    {
+      get => base.Transparency;
+      set
+      {
+        base.Transparency = value;
+        TextBlock.Transparency = value;
+      }
+    }
+
     public override IEnumerable<VisualUnit> VisualSplit()
     {
       if (!Displayed || CulledOut) yield break;
 
       yield return Background.VisualWrapper;
-      yield return TextBlock.VisualWrapper;
+
+      if (CullChildren)
+      {
+        yield return VisualBounds.LeftBound;
+        yield return TextBlock.VisualWrapper;
+        yield return VisualBounds.RightBound;
+      }
+      else
+      {
+        yield return TextBlock.VisualWrapper;
+      }
+
       yield return Border.VisualWrapper;
     }
 

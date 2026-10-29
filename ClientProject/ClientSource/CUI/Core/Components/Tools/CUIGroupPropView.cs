@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework;
 
 namespace CursedUI
 {
-  //Test LINK:\ClientProject\InMemory\CUITest\Snapshots\Tests\Components\CUIGroupPropView.cs
+  //Test LINK:\ClientProject\Tests\CUITest\Snapshots\Tests\Components\CUIGroupPropView.cs
   public class CUIGroupPropView : CUIPage
   {
 

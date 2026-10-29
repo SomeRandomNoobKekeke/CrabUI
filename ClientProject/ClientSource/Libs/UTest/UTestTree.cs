@@ -98,11 +98,14 @@ namespace CUILibs
       }
     }
 
-    private void ScanAssembly(Assembly assembly)
+    public void ScanAssembly(Assembly assembly)
     {
-      Nodes.Clear();
-      Roots.Clear();
+      AddTestTypes(assembly);
+      FullReconnect();
+    }
 
+    private void AddTestTypes(Assembly assembly)
+    {
       foreach (Type T in assembly.GetTypes())
       {
         if (T.IsAbstract) continue;
@@ -116,6 +119,16 @@ namespace CUILibs
           Nodes[T] = new UTestTreeNode(T);
         }
       }
+    }
+
+    private void FullReconnect()
+    {
+      foreach (UTestTreeNode node in Nodes.Values)
+      {
+        node.Parent = null;
+        node.Children.Clear();
+      }
+
 
       foreach (UTestTreeNode node in Nodes.Values)
       {
@@ -141,12 +154,6 @@ namespace CUILibs
 
         if (node.Parent is null) Roots.Add(node);
       }
-    }
-
-
-    public UTestTree(Assembly targetAssembly)
-    {
-      ScanAssembly(targetAssembly);
     }
 
     public override string ToString()

@@ -24,8 +24,9 @@ namespace CursedUI
     public static XDocument LoadXDoc(string path)
       => Instance.Handles.LoadXDoc(path);
 
-    public static CUIParser Parser => Instance._CUIParser;
+
     public static CUISerializer Serializer => Instance._CUISerializer;
+    public static CUIParser Parser => Instance._Parser;
 
     public static CUIGraphicsDevice GraphicsDevice => Instance.Handles.GraphicsDevice;
     public static SamplerState SamplerState => Instance.Handles.GUI.SamplerState;
@@ -34,8 +35,8 @@ namespace CursedUI
     public static IEffectPack GraphicEffects => Instance.Handles.OtherResources.Effects;
     public static bool InputBlockingMenuOpen => Instance.Handles.InputBlockingMenuOpen;
 
-    public static Reflection_Part Reflection => Instance._Reflection;
-    public static CUIStyleManager Styles => Instance.CUIStyleManager;
+
+    public static CUIStyleManager Styles => Instance._CUIStyleManager;
     public static CUIPalettes Palettes => Instance._Palettes;
     public static AnimationPlayer AnimationPlayer => Instance._AnimationPlayer;
     public static CUIInput Input => Instance._Input;

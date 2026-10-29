@@ -40,7 +40,7 @@ namespace CursedUI
       remove => Instance.LifeCycle.OnDrawBeforeGUI.Remove(value);
     }
 
-
+    //TODO unused
     public double UpdateFPS
     {
       get => 1.0 / UpdateInterval;
@@ -87,6 +87,7 @@ namespace CursedUI
 
           OnBeforeUpdate.Raise(totalTime);
 
+          Self._Debouncer.Update();
 
           Self._Input.Update(totalTime, mouse, keyboard, textInput);
           Self._EventConstructor.Construct(Self._Input);

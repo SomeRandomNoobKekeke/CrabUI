@@ -20,15 +20,17 @@ namespace CursedUI
       /// </summary>
       public static float MinWidth = 12;
 
-      public override void MeasureRawTextSize(string text, float scale, CUIFont font)
+      public override void MeasureRawTextSize(string text, float scale, CUIFont font, bool vertical)
       {
+        if (vertical) text = font.WrapText(text, 0).Trim('\n');
+
         RawTextSize = font.MeasureString(text);
         ForcedSize = new CUINullVector2(null, RawTextSize.Y);
         RealText = text;
         RealScale = scale;
       }
 
-      public override void MeasureRealTextSize(CUIRect rect, Vector2 anchor, string text, float scale, CUIFont font)
+      public override void MeasureRealTextSize(CUIRect rect, Vector2 anchor, string text, float scale, CUIFont font, bool vertical)
       {
         Vector2 RealTextSize = RawTextSize * scale;
         RealText = text;

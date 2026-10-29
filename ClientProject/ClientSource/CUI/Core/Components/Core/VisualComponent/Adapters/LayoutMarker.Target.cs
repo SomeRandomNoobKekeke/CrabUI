@@ -29,7 +29,7 @@ namespace CursedUI
 
         public IEnumerable<LayoutMarker.Target> Children => Self.StructuralSplit().Select(c => c.Adapters.LayoutMarker);
 
-        void LayoutMarker.Target.NotifyLayoutUpdated() => Self.LayoutUpdateNotifier.Notify();
+        void LayoutMarker.Target.NotifyLayoutUpdated() => Self.NotifyLayoutChanged();
 
         public override string ToString() => Self.ToString();
       }

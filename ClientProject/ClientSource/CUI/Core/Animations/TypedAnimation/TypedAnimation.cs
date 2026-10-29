@@ -28,5 +28,7 @@ namespace CursedUI
         Changed?.Invoke(Value);
       };
     }
+
+    public override string ToString() => $"Animation<{typeof(T).Name}> Start:[{StartValue}] End:[{EndValue}] Duration:[{Duration}]";
   }
 }

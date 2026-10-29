@@ -13,7 +13,7 @@ using CUILibs;
 
 namespace CursedUI
 {
-  //LINK:/ClientProject\InMemory\CUITest\Snapshots\Tests\Components\CUIDropDown.cs
+  //LINK:/ClientProject\Tests\CUITest\Snapshots\Tests\Components\CUIDropDown.cs
   public partial class CUIDropDown : CUIComponent, IComponent
   {
     [CUISerializableProp]
@@ -102,7 +102,7 @@ namespace CursedUI
       set
       {
         _IsOpen = value;
-        VisualRestructureNotifier.Notify();
+        NotifyVisualsRestructured();
       }
     }
 

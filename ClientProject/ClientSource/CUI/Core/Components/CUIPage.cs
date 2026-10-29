@@ -13,8 +13,12 @@ namespace CursedUI
 {
   public partial class CUIPage : CUIComponent, IComponent
   {
+    // idk if this has any use
+    // protected virtual void HandleOpen(RoutableCommandContract parentContract = null) { }
     protected virtual void HandleOpen() { }
     protected virtual void HandleClose() { }
+
+    public bool IsOpen => Parent != null;
 
     public event Action OnOpen;
     public event Action OnClose;
@@ -32,6 +36,5 @@ namespace CursedUI
       HandleClose();
       OnClose?.Invoke();
     }
-
   }
 }

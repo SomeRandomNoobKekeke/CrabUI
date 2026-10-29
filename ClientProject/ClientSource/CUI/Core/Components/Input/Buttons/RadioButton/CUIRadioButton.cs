@@ -70,11 +70,11 @@ namespace CursedUI
 
     private void HandleSelect()
     {
-      SelectedTextState = OffState;
+      SelectedTextState = OffState; //TODO why is OffState used twice? it's prob a typo
       Selected?.Invoke();
       Toggled?.Invoke(true);
       DetermineColor();
-      VisualRestructureNotifier.Notify();
+      NotifyVisualsRestructured();
     }
 
     private void HandleDeselect()
@@ -83,7 +83,7 @@ namespace CursedUI
       Deselected?.Invoke();
       Toggled?.Invoke(false);
       DetermineColor();
-      VisualRestructureNotifier.Notify();
+      NotifyVisualsRestructured();
     }
 
     public Action OnSelected { set { Selected += value; } }
@@ -117,14 +117,7 @@ namespace CursedUI
       get => Group?.Current == this;
       set
       {
-        if (value)
-        {
-          Group?.Select(this);
-        }
-        else
-        {
-          Group?.Deselect(this);
-        }
+        if (value) Select(); else Deselect();
       }
     }
     public void Select() => Group?.Select(this);
@@ -145,6 +138,12 @@ namespace CursedUI
 
     public override void DetermineColor()
     {
+      if (Disabled)
+      {
+        Background.Color = Palette["disabled"];
+        return;
+      }
+
       if (IsSelected)
       {
         Background.Color = OnColor;
@@ -296,11 +295,13 @@ namespace CursedUI
 
       MouseDown += (e) =>
       {
+        if (Disabled) return;
         if (!e.Mouse.M1.Down) return;
+        if (IsSelected) return;
 
         if (PlaySound) SoundPlayer.PlayUISound(ClickSound);
         if (Emit != null) Commands.SendUp(Emit, Text);
-        IsSelectedReactive = !IsSelectedReactive;
+        IsSelectedReactive = true;
       };
 
       ConsumeMouseEvents = true;

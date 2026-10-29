@@ -31,6 +31,8 @@ namespace CursedUI
       set => SwipeHandle.Active = value;
     }
 
+    public bool IsDragged => DragHandle.Grabbed;
+
     public DragHandle DragHandle { get; } = new();
     public SwipeHandle SwipeHandle { get; } = new();
   }

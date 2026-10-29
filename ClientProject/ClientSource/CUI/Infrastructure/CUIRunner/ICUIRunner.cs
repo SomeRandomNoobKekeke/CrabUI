@@ -14,7 +14,7 @@ namespace CursedUI
     public void Connect();
     public void Disconnect();
 
-    public void OnStartAttempt(Assembly callingAssembly);
+    public void AnalyzeAssembly(Assembly assembly);
 
     public CUITextureManager TextureManager { get; }
   }

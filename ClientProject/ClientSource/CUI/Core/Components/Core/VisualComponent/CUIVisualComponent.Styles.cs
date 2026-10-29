@@ -33,7 +33,7 @@ namespace CursedUI
         Palette = value;
         foreach (CUIVisualComponent child in Children)
         {
-          if (child.PaletteImmunity) continue;
+          if (child.DeepPaletteImmunity) continue;
           child.DeepPalette = value;
         }
       }
@@ -43,7 +43,7 @@ namespace CursedUI
     public bool InheritPalette { get; set; } = false;
 
     [CUISerializableProp]
-    public bool PaletteImmunity { get; set; } = false;
+    public bool DeepPaletteImmunity { get; set; } = false;
 
     public Action<CUIVisualComponent> Style
     {

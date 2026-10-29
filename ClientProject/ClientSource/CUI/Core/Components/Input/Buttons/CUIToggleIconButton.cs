@@ -42,6 +42,18 @@ namespace CursedUI
     private IconBlock SelectedIconBlock;
 
 
+    public CUISprite OnIcon
+    {
+      get => OnIconBlock.Icon;
+      set => OnIconBlock.Icon = value;
+    }
+
+    public CUISprite OffIcon
+    {
+      get => OffIconBlock.Icon;
+      set => OffIconBlock.Icon = value;
+    }
+
     public CUISprite Icon
     {
       get => OnIconBlock.Icon;
@@ -209,6 +221,11 @@ namespace CursedUI
     public CUIToggleIconButton(CUISprite icon) : this()
     {
       Icon = icon;
+    }
+    public CUIToggleIconButton(CUISprite onIcon, CUISprite offIcon) : this()
+    {
+      OnIconBlock.Icon = onIcon;
+      OffIconBlock.Icon = offIcon;
     }
   }
 }

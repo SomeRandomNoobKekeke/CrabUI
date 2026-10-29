@@ -9,6 +9,8 @@ namespace CursedUI
 {
   public partial class CUIPalette : WeakReactiveDict<string, Color>, IParsable
   {
+    private static Dictionary<Color, CUIPalette> FromColorPalettesCache = [];
+
     public static Color UltimateBackColor => Color.Black;
 
     public static CUIPalette Darken(CUIPalette palette, float amount)
@@ -29,6 +31,16 @@ namespace CursedUI
     }
 
     public static CUIPalette FromColor(Color color)
+    {
+      if (FromColorPalettesCache.TryGetValue(color, out CUIPalette? palette))
+      {
+        return palette;
+      }
+
+      return FromColorPalettesCache[color] = CreateFromColor(color);
+    }
+
+    private static CUIPalette CreateFromColor(Color color)
     {
       Color black = new Color((byte)0, (byte)0, (byte)0, (byte)color.A);
       Color white = new Color((byte)255, (byte)255, (byte)255, (byte)color.A);

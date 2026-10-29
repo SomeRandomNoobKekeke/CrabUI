@@ -8,6 +8,7 @@ Ignore
 Test Data
 Assets/PNG/For testing
 Assets/PNG/Sources
+/ClientProject/Tests/CUITestPlugin.AddTestStuff.cs
 
 Refs/*
 !Refs/README.txt

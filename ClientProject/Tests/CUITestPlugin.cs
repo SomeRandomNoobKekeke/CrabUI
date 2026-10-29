@@ -21,15 +21,15 @@ namespace CUITests
     };
 
     public CUITest CUITest { get; set; }
-    public bool AddTestStuff { get; set; } = true;
-
     public void Initialize() => Init();
 
     public void Init()
     {
       Instance = this;
       if (ModStorage.Has("ReloadRequest")) { return; }
-      if (!AddTestStuff) return;
+
+      //CRINGE temp solution until i move this stuff in a separate mod
+      if (!(typeof(CUITestPlugin).GetProperty("AddTestStuff") == null)) return;
 
 
       Logger.Log($"Compiled somehow");

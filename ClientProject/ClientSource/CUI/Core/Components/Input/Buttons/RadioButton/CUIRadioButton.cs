@@ -297,10 +297,11 @@ namespace CursedUI
       {
         if (Disabled) return;
         if (!e.Mouse.M1.Down) return;
+        if (IsSelected) return;
 
         if (PlaySound) SoundPlayer.PlayUISound(ClickSound);
         if (Emit != null) Commands.SendUp(Emit, Text);
-        if (!IsSelectedReactive) IsSelectedReactive = true;
+        IsSelectedReactive = true;
       };
 
       ConsumeMouseEvents = true;

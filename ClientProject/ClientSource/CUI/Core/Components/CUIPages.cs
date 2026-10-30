@@ -38,6 +38,9 @@ namespace CursedUI
       Children.Clear();
     }
 
+    [CUISerializableProp]
+    public bool ResizeOpenedPage { get; set; } = true;
+
     /// <summary>
     /// Adds page as its only child
     /// </summary>
@@ -50,7 +53,10 @@ namespace CursedUI
 
       Children.Add(page);
 
-      page.Relative = new CUINullRect(0, 0, 1, 1);
+      if (ResizeOpenedPage)
+      {
+        page.Relative = new CUINullRect(0, 0, 1, 1);
+      }
 
       if (page is CUIPage)
       {

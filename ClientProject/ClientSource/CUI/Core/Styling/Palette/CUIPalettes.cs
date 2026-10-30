@@ -9,6 +9,26 @@ namespace CursedUI
   public partial class CUIPalettes
   {
     public CUIPalettes() => InitPalettes();
+    private void InitPalettes()
+    {
+      foreach (var (name, color) in DefaultColors)
+      {
+        this[name] = CUIPalette.FromColor(color);
+      }
+    }
+    public Dictionary<string, Color> DefaultColors => new Dictionary<string, Color>()
+    {
+      ["Primary"] = new Color(70, 70, 70, 255),
+      ["Secondary"] = new Color(112, 0, 0, 255),
+      ["Tertiary"] = new Color(0, 94, 91, 255),
+      ["Quaternary"] = new Color(92, 92, 92, 255),
+      ["Quinary"] = new Color(92, 92, 92, 255),
+      ["Senary"] = new Color(92, 92, 92, 255),
+      ["Septenary"] = new Color(92, 92, 92, 255),
+      ["Octonary"] = new Color(92, 92, 92, 255),
+    };
+
+
 
     public ICUIPaletteShader Shader { get; set; } = new DefaultShader();
 
@@ -55,25 +75,7 @@ namespace CursedUI
       }
     }
 
-    public Dictionary<string, Color> DefaultColors => new Dictionary<string, Color>()
-    {
-      ["Primary"] = new Color(70, 70, 70, 255),
-      ["Secondary"] = new Color(112, 0, 0, 255),
-      ["Tertiary"] = new Color(0, 94, 91, 255),
-      ["Quaternary"] = new Color(92, 92, 92, 255),
-      ["Quinary"] = new Color(92, 92, 92, 255),
-      ["Senary"] = new Color(92, 92, 92, 255),
-      ["Septenary"] = new Color(92, 92, 92, 255),
-      ["Octonary"] = new Color(92, 92, 92, 255),
-    };
 
-    private void InitPalettes()
-    {
-      foreach (var (name, color) in DefaultColors)
-      {
-        this[name] = CUIPalette.FromColor(color);
-      }
-    }
 
     private CUIPalette _Primary = new CUIPalette(); public CUIPalette Primary
     {

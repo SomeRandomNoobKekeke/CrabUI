@@ -62,8 +62,7 @@ LocalMods
 Refs/*
 !Refs/readme.txt
 
-UserBuildData.props
-
+# UserBuildData.props
 
 /Build
 Ignore

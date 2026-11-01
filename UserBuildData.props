@@ -1,0 +1,5 @@
+<Project>
+  <PropertyGroup>
+    <ModDeployDir>../Build</ModDeployDir>
+  </PropertyGroup>
+</Project>

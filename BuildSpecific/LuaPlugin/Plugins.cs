@@ -9,7 +9,26 @@ namespace CursedUI
     public void Initialize() => Init();
     public void OnLoadCompleted() { }
     public void PreInitPatching() { }
-  }
 
+    public void DisposeBuildSpecific()
+    {
+
+    }
+  }
+}
+
+namespace CUITests
+{
+  public partial class CUITestPlugin : IAssemblyPlugin
+  {
+    public void Initialize() => Init();
+    public void OnLoadCompleted() { }
+    public void PreInitPatching() { }
+
+    public void DisposeBuildSpecific()
+    {
+
+    }
+  }
 }
 

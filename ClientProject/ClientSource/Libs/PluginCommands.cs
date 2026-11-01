@@ -9,7 +9,8 @@ using Barotrauma;
 using Microsoft.Xna.Framework;
 using System.IO;
 using System.Text;
-using Barotrauma.LuaCs;
+using HarmonyLib;
+using Barotrauma.Networking;
 
 namespace CUILibs
 {
@@ -21,33 +22,29 @@ namespace CUILibs
       AddHooks();
     }
 
+    public static Harmony Harmony { get; } = new Harmony($"{ModInfo.HookId}.PluginCommands");
+
     public static List<DebugConsole.Command> AddedCommands = new List<DebugConsole.Command>();
+
+    private static bool PermitCommands(ref bool __result, Identifier command, GameClient client)
+    {
+      if (AddedCommands.Any(c => c.Names.Contains(command)))
+      {
+        __result = true;
+        return false;
+      }
+
+      return true;
+    }
 
     private static void AddHooks()
     {
-      LuaCsSetup.Instance.Hook.Add("stop", $"[{ModInfo.HookId}].RemoveCommands", (object[] args) =>
-      {
-        RemoveCommands();
-        return null;
-      });
+      Harmony.Patch(
+        original: typeof(DebugConsole).GetMethod("IsCommandPermitted", BindingFlags.NonPublic | BindingFlags.Static),
+        prefix: new HarmonyMethod(typeof(PluginCommands).GetMethod("PermitCommands", BindingFlags.NonPublic | BindingFlags.Static))
+      );
 
-      ((LuaCsSetup.Instance.EventService as EventService)
-           ._luaPatcher as LuaPatcherService)
-           .Patch($"{ModInfo.HookId}.PermitCommands",
-              typeof(DebugConsole).GetMethod("IsCommandPermitted", BindingFlags.NonPublic | BindingFlags.Static),
-              (object instance, LuaPatcherService.ParameterTable ptable) =>
-              {
-                if (AddedCommands.Any(c => c.Names.Contains(((Identifier)ptable["command"]))))
-                {
-                  ptable.ReturnValue = true;
-                  ptable.PreventExecution = true;
-                }
-
-                return null;
-              }
-        );
-
-
+      PluginLifeCycle.Stop += () => Harmony.UnpatchSelf();
     }
 
     public static void Add(string name, Action<string[]> callback, Func<string[][]> hints = null, string help = "", bool addToStart = true)

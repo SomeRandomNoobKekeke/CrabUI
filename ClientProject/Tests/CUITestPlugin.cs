@@ -5,14 +5,14 @@ using System.Reflection;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Barotrauma;
-using Barotrauma.LuaCs;
+
 using CUILibs;
 using CursedUI;
 using Microsoft.Xna.Framework;
 
 namespace CUITests
 {
-  public partial class CUITestPlugin : IAssemblyPlugin
+  public partial class CUITestPlugin
   {
     public static CUITestPlugin Instance;
     public static Logger Logger { get; set; } = new()
@@ -21,7 +21,7 @@ namespace CUITests
     };
 
     public CUITest CUITest { get; set; }
-    public void Initialize() => Init();
+
 
     public void Init()
     {
@@ -29,7 +29,7 @@ namespace CUITests
       if (ModStorage.Has("ReloadRequest")) { return; }
 
       //CRINGE temp solution until i move this stuff in a separate mod
-      if (!(typeof(CUITestPlugin).GetProperty("AddTestStuff") == null)) return;
+      if (typeof(CUITestPlugin).GetProperty("AddTestStuff") == null) return;
 
 
       Logger.Log($"Compiled somehow");
@@ -58,16 +58,13 @@ namespace CUITests
         // CUIPalette.Preview();
         // Utils.PrintAllHarmonyPatches();
 
-        CUI.Logger.Log("CUIStarterPlugin");
-
         Utils.RunWithDelay(Experiment, 500);
         //Experiment();
       }
       catch (Exception e) { Logger.Error(e); }
     }
 
-    public void OnLoadCompleted() { }
-    public void PreInitPatching() { }
+    public void OnContentLoaded() { }
 
     public void Dispose()
     {

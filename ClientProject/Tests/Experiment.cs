@@ -10,7 +10,7 @@ using CursedUI;
 using System.Xml.Linq;
 using CUICodeGenerator;
 using Microsoft.Xna.Framework;
-using Barotrauma.Plugins;
+
 
 namespace CUITests
 {
@@ -18,7 +18,7 @@ namespace CUITests
   {
     public void Experiment()
     {
-      Logger.LogVars(PluginLoader.loadedPlugins.First().Data.ContentPackage);
+
     }
   }
 }

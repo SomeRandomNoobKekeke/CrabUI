@@ -6,7 +6,6 @@ using System.Diagnostics;
 using Barotrauma;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-
 namespace CursedUI
 {
   public static class SpriteBatch_Extensions

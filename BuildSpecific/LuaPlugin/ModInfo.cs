@@ -20,6 +20,7 @@ namespace CUILibs
   /// </summary>
   public static class ModInfo
   {
+    //CRINGE it's made for old luatrauma, it can't check "native" plugins
     public static ContentPackage GetPackageForAssembly(Assembly assembly)
     {
       if (assembly == typeof(GameMain).Assembly) return null;

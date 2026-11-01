@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Barotrauma;
+using CUILibs;
 
 namespace CursedUI
 {
@@ -15,7 +16,11 @@ namespace CursedUI
     {
 
     }
-    public void Dispose() { }
+    public void Dispose()
+    {
+      PluginCommands.RemoveCommands();
+      DisposeBuildSpecific();
+    }
     public void OnContentLoaded() { }
   }
 }

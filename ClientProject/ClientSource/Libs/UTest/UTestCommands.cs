@@ -4,11 +4,16 @@ using System.Linq;
 using System.Reflection;
 using System.Diagnostics;
 using Barotrauma;
-using Barotrauma.LuaCs;
+using HarmonyLib;
+using Barotrauma.Networking;
+
 namespace CUILibs
 {
   public class UTestCommands
   {
+    public static Harmony Harmony { get; } = new Harmony($"{ModInfo.HookId}.UTestCommands");
+
+
     public static List<DebugConsole.Command> AddedCommands = new List<DebugConsole.Command>();
     //FIXME what if multiple mods have this command?
     //THINK Why this method is the main entry point?
@@ -26,28 +31,26 @@ namespace CUILibs
       DebugConsole.Commands.InsertRange(0, AddedCommands);
 
 #if CLIENT
-      PermitCommands();
+      Harmony.Patch(
+        original: typeof(DebugConsole).GetMethod("IsCommandPermitted", BindingFlags.NonPublic | BindingFlags.Static),
+        prefix: new HarmonyMethod(typeof(PluginCommands).GetMethod("PermitCommands", BindingFlags.NonPublic | BindingFlags.Static))
+      );
+
+      PluginLifeCycle.Stop += () => Harmony.UnpatchSelf();
 #endif
     }
-#if CLIENT
-    private static void PermitCommands()
-    {
-      ((LuaCsSetup.Instance.EventService as EventService)
-           ._luaPatcher as LuaPatcherService)
-           .Patch(
-              "permit utest",
-              typeof(DebugConsole).GetMethod("IsCommandPermitted", BindingFlags.NonPublic | BindingFlags.Static),
-              (object instance, LuaPatcherService.ParameterTable ptable) =>
-              {
-                if (AddedCommands.Any(command => ((Identifier)ptable["command"]).Value == command.Names[0]))
-                {
-                  ptable.ReturnValue = true;
-                  ptable.PreventExecution = true;
-                }
 
-                return null;
-              }
-      );
+
+#if CLIENT
+    private static bool PermitCommands(ref bool __result, Identifier command, GameClient client)
+    {
+      if (AddedCommands.Any(c => c.Names.Contains(command)))
+      {
+        __result = true;
+        return false;
+      }
+
+      return true;
     }
 #endif
     //TODO remove hidden test from hints

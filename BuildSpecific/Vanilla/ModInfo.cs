@@ -20,31 +20,29 @@ namespace CUILibs
   /// </summary>
   public static class ModInfo
   {
+    //https://steamcommunity.com/sharedfiles/filedetails/?id=3693624471
+    public static string LuaCsForBarotraumaPluginID = "3693624471";
+
     public static ContentPackage GetPackageForAssembly(Assembly assembly)
     {
+      if (assembly == typeof(GameMain).Assembly) return null;
 
+      // Vanilla plugins
+      foreach (var plugin in PluginLoader.LoadedPlugins)
+      {
+        if (plugin.Assembly == assembly) return plugin.Data.ContentPackage;
+      }
 
-      return default;
+      //TODO for some reason i can't check LuaCsForBarotraumaPlugins with reflection
+      // when i try game just crashes
+
+      return null;
     }
-    // public static ContentPackage GetPackageForAssembly(Assembly assembly)
-    // {
-    //   if (assembly == typeof(GameMain).Assembly) return null;
-
-    //   PluginManagementService pluginManagement = LuaCsSetup.Instance.PluginManagementService as PluginManagementService;
-
-    //   foreach (var (package, asmLoader) in pluginManagement._assemblyLoaders)
-    //   {
-    //     if (asmLoader.Assemblies.Any(asm => asm == assembly))
-    //     {
-    //       return package;
-    //     }
-    //   }
-
-    //   throw new UnreachableException();
-    // }
 
     public static ContentPackage Package => GetPackageForAssembly(Assembly.GetCallingAssembly());
 
+    // idk, should this be available in other mods that uses the CUI?
+    // GetPackageForAssembly is borked rn
     public static string HookId => GetPackageForAssembly(Assembly.GetCallingAssembly()).Name;
     public static string BarotraumaPath => Path.GetFullPath("./");
 

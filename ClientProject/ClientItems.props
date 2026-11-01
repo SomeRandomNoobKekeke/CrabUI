@@ -10,6 +10,10 @@
 
   <Import Project="..\BuildData.props" />
 
+  <ItemGroup>
+    <Compile Include="..\BuildSpecific\Vanilla\**\*.cs" />
+  </ItemGroup>
+
   <Import Project="..\SharedProject\SharedProject.projitems" Label="Shared" />
   <Import Project="..\SharedProject\SharedItems.props" />
 

@@ -58,7 +58,7 @@ namespace CUITests
         // CUIPalette.Preview();
         // Utils.PrintAllHarmonyPatches();
 
-
+        CUI.Logger.Log("CUIStarterPlugin");
 
         Utils.RunWithDelay(Experiment, 500);
         //Experiment();

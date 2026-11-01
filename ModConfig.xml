@@ -6,4 +6,5 @@
 
   <!-- Executed 1st -->
   <Assembly Folder="%ModDir%/ClientProject/ClientSource" Target="Client" IsScript="true" UseInternalAccessName="false" />
+  <Assembly Folder="%ModDir%/BuildSpecific/LuaPlugin" Target="Any" IsScript="true" />
 </ModConfig>

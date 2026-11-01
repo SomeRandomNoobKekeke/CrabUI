@@ -8,17 +8,17 @@ using Barotrauma;
 using CUILibs;
 using CursedUI;
 using System.Xml.Linq;
-using Barotrauma.LuaCs;
 using CUICodeGenerator;
 using Microsoft.Xna.Framework;
+using Barotrauma.Plugins;
 
 namespace CUITests
 {
-  public partial class CUITestPlugin : IAssemblyPlugin
+  public partial class CUITestPlugin
   {
     public void Experiment()
     {
-
+      Logger.LogVars(PluginLoader.loadedPlugins.First().Data.ContentPackage);
     }
   }
 }

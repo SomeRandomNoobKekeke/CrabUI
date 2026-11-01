@@ -9,8 +9,6 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using HarmonyLib;
 using Barotrauma;
-using Barotrauma.LuaCs.Compatibility;
-using Barotrauma.LuaCs;
 
 namespace CursedUI
 {

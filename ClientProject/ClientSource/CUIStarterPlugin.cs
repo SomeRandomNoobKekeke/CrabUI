@@ -19,6 +19,7 @@ namespace CursedUI
     public void Dispose()
     {
       PluginCommands.RemoveCommands();
+      PluginLifeCycle.RaiseStop();
       DisposeBuildSpecific();
     }
     public void OnContentLoaded() { }

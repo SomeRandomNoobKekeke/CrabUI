@@ -8,7 +8,25 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Barotrauma.ReferenceAssemblies.Libraries" Version="*" />
+    <Reference Include="Farseer.NetStandard">
+      <HintPath>..\Refs\Farseer.NetStandard.dll</HintPath>
+    </Reference>
+    <Reference Include="Lidgren.NetStandard">
+      <HintPath>..\Refs\Lidgren.NetStandard.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>..\Refs\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="MoonSharp.Interpreter">
+      <HintPath>..\Refs\MoonSharp.Interpreter.dll</HintPath>
+    </Reference>
+    <Reference Include="XNATypes">
+      <HintPath>..\Refs\XNATypes.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoGame.Framework.Windows.NetStandard">
+      <HintPath>..\Refs\MonoGame.Framework.Windows.NetStandard.dll</HintPath>
+    </Reference>
+    <!-- <PackageReference Include="Barotrauma.ReferenceAssemblies.Libraries" Version="*" /> -->
     <PackageReference Include="HarmonyX" Version="2.16.0" />
 
     <ProjectReference Include="..\ContentPackageBuilder\ContentPackageBuilder.csproj">

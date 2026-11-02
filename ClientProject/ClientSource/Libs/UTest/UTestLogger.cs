@@ -64,7 +64,12 @@ namespace CUILibs
     public static void Log(object msg, Color? cl = null)
     {
       cl ??= Color.Cyan;
-      LuaCsLogger.LogMessage($"{msg ?? "null"}", cl * 0.8f, cl);
+
+#if CLIENT
+      DebugConsole.NewMessage($"{msg ?? "null"}", cl);
+#else
+      DebugConsole.NewMessage($"{msg ?? "null"}", cl * 0.8f);
+#endif
     }
 
     public static void Warning(object msg) => Log(msg, Color.Yellow);

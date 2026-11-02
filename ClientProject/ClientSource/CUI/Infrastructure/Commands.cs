@@ -73,7 +73,7 @@ namespace CursedUI
     public static void GC_Command(string[] args)
     {
       GC.Collect();
-      CUI.Logger.Print($"Process.PrivateMemorySize64: {LuaCsPerformanceCounter.MemoryUsage}MB", Color.Lime);
+      CUI.Logger.Print($"Process.PrivateMemorySize64: {Utils.MemoryUsage}MB", Color.Lime);
     }
 
     public static string[][] CUIPrintTextures_Hints()

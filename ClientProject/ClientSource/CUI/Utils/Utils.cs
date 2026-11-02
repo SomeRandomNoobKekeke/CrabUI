@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using CUILibs;
+using System.Diagnostics;
 
 using HarmonyLib;
 
@@ -12,6 +13,18 @@ namespace CursedUI
 {
   public static partial class Utils
   {
+    public static float MemoryUsage
+    {
+      get
+      {
+        Process proc = Process.GetCurrentProcess();
+        float memory = MathF.Round(proc.PrivateMemorySize64 / (1024 * 1024), 2);
+        proc.Dispose();
+
+        return memory;
+      }
+    }
+
     public static string Lorem => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quam facilis doloribus in optio qui, explicabo sunt ratione excepturi totam dolorum natus delectus provident minus consequatur corrupti odio veniam praesentium?";
 
     public static void RunWithDelay(Action action, int delay = 100)

@@ -43,7 +43,7 @@ namespace CUILibs
 
     // idk, should this be available in other mods that uses the CUI?
     // GetPackageForAssembly is borked rn
-    public static string HookId => GetPackageForAssembly(Assembly.GetCallingAssembly()).Name;
+    public static string HookId => GetPackageForAssembly(Assembly.GetCallingAssembly())?.Name ?? "???";
     public static string BarotraumaPath => Path.GetFullPath("./");
 
 

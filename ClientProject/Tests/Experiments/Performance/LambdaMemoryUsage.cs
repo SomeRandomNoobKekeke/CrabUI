@@ -27,7 +27,7 @@ namespace CUITests
     {
       GC.Collect();
       int count = 10000000;
-      float mem1 = LuaCsPerformanceCounter.MemoryUsage;
+      float mem1 = Utils.MemoryUsage;
 
 
       List<Prop> props = Enumerable.Range(0, count).Select(i => new Prop()).ToList();
@@ -36,7 +36,7 @@ namespace CUITests
       {
         prop.Log.OnSend = (msg) => CUITestPlugin.Logger.Log(msg);
       }
-      float mem2 = LuaCsPerformanceCounter.MemoryUsage;
+      float mem2 = Utils.MemoryUsage;
       CUITestPlugin.Logger.Log($"count: {count} mem: {mem2 - mem1}MB unit: {Math.Round((mem2 - mem1) * 1024 * 1024 / count)}B");
 
       props = null;

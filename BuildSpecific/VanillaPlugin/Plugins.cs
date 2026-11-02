@@ -6,12 +6,16 @@ namespace CursedUI
 {
   public partial class CUIStarterPlugin : IBarotraumaPlugin
   {
-    // public static IContentPackageRetrievalService ContentPackageRetrievalService
-    //   = PluginServiceProvider.GetService<IContentPackageRetrievalService>();
-    // public static ContentPackage CUIPackage => ContentPackageRetrievalService.ContentPackage;
+    // public ContentPackage _CUIPackage
+    //   = PluginServiceProvider.GetService<IContentPackageRetrievalService>().ContentPackage;
+
+
+    public static ContentPackage CUIPackage => ContentPackageManager.EnabledPackages.All.First(
+      package => package.Name == "CUI"
+    );
     public void DisposeBuildSpecific()
     {
-      // ContentPackageRetrievalService = null;
+
     }
   }
 }

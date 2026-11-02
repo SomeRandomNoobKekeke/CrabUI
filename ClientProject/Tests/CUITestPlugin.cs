@@ -28,7 +28,7 @@ namespace CUITests
       Instance = this;
       if (ModStorage.Has("ReloadRequest")) { return; }
 
-      //CRINGE temp solution until i move this stuff in a separate mod
+      //CRINGE temp solution until i move this stuff to a separate mod
       if (typeof(CUITestPlugin).GetProperty("AddTestStuff") == null) return;
 
 

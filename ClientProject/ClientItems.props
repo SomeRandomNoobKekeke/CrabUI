@@ -11,7 +11,7 @@
   <Import Project="..\BuildData.props" />
 
   <ItemGroup>
-    <Compile Include="..\BuildSpecific\Vanilla\**\*.cs" />
+    <Compile Include="..\BuildSpecific\VanillaPlugin\**\*.cs" />
   </ItemGroup>
 
   <Import Project="..\SharedProject\SharedProject.projitems" Label="Shared" />

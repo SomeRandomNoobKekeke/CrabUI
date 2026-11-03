@@ -10,21 +10,19 @@ using Microsoft.Xna.Framework.Graphics;
 using CUICodeGenerator;
 using Barotrauma.Extensions;
 
-namespace CursedUI
+namespace CUITests
 {
-  public static partial class CUIDefault
+  public partial class E2ETestPack
   {
-    public class IntField : InputField
+    public partial class SimpleSettings
     {
-      public int Value
+      public class TextFieldOld : InputFieldOld
       {
-        get => int.TryParse(Input.Text, out int i) ? i : 0;
-        set => Input.Text = value.ToString();
-      }
-
-      public IntField() : base()
-      {
-        Validation = (s) => int.TryParse(s, out int _);
+        public string Value
+        {
+          get => RawValue;
+          set => RawValue = value;
+        }
       }
     }
   }

@@ -28,14 +28,14 @@ namespace CUITests
         {
           FieldList.Clear();
 
-          FieldList.Add(new CUIDefault.TextField()
+          FieldList.Add(new TextFieldOld()
           {
             Label = { AbsoluteMin = new CUINullRect(w: 100) },
             Key = "String Prop",
             Value = Settings.StringProp,
           });
 
-          FieldList.Add(new CUIDefault.IntField()
+          FieldList.Add(new IntFieldOld()
           {
             Label = { AbsoluteMin = new CUINullRect(w: 100) },
             Key = "Int Prop",
@@ -48,7 +48,7 @@ namespace CUITests
             Padding = new CUISizes(0, 0, 0, 30),
           };
 
-          NestedWrapper.Add(new CUIDefault.TextField()
+          NestedWrapper.Add(new TextFieldOld()
           {
             Label = { AbsoluteMin = new CUINullRect(w: 150) },
             Key = "Nested String Prop",
@@ -56,7 +56,7 @@ namespace CUITests
           });
 
 
-          NestedWrapper.Add(new CUIDefault.IntField()
+          NestedWrapper.Add(new IntFieldOld()
           {
             Label = { AbsoluteMin = new CUINullRect(w: 150) },
             Key = "Nested Int Prop",

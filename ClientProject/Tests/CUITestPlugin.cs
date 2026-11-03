@@ -66,6 +66,7 @@ namespace CUITests
 
     public void OnContentLoaded() { }
 
+    [MethodImpl(MethodImplOptions.NoInlining)]
     public void Dispose()
     {
       Instance = null;

@@ -122,8 +122,32 @@ namespace CursedUI
       }
     }
 
+    public bool ReactiveState
+    {
+      get => State;
+      set
+      {
+        if (State == value) return;
+
+        State = value;
+        if (PlaySound) SoundPlayer.PlayUISound(ClickSound);
+        Toggle?.Invoke(State);
+        if (Emit != null) Commands.SendUp(Emit);
+      }
+    }
+
     public Action<bool> OnToggle { set { Toggle += value; } }
     public event Action<bool> Toggle;
+
+    //CRINGE ? i didn't leave any mechanism to block events
+    public Func<bool> IsAllowedToToggle { get; set; }
+    public void DoToggle()
+    {
+      if (IsAllowedToToggle is null || IsAllowedToToggle())
+      {
+        ReactiveState = !ReactiveState;
+      }
+    }
 
     public override void DetermineColor()
     {
@@ -202,11 +226,7 @@ namespace CursedUI
       {
         if (Disabled) return;
         if (!e.Mouse.M1.Down) return;
-
-        State = !State;
-        if (PlaySound) SoundPlayer.PlayUISound(ClickSound);
-        Toggle?.Invoke(State);
-        if (Emit != null) Commands.SendUp(Emit);
+        DoToggle();
       };
 
       MouseOff += (e) => DetermineColor();

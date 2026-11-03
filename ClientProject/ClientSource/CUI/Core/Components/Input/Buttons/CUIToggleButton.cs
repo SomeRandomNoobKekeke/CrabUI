@@ -78,6 +78,32 @@ namespace CursedUI
       }
     }
 
+    public bool ReactiveState
+    {
+      get => State;
+      set
+      {
+        if (State == value) return;
+
+        State = value;
+        if (PlaySound) SoundPlayer.PlayUISound(ClickSound);
+        Toggle?.Invoke(State);
+        if (Emit != null) Commands.SendUp(Emit, Text);
+      }
+    }
+
+    public Action<bool> OnToggle { set { Toggle += value; } }
+    public event Action<bool> Toggle;
+    //CRINGE ? i didn't leave any mechanism to block events
+    public Func<bool> IsAllowedToToggle { get; set; }
+    public void DoToggle()
+    {
+      if (IsAllowedToToggle is null || IsAllowedToToggle())
+      {
+        ReactiveState = !ReactiveState;
+      }
+    }
+
     public override Color MasterColor
     {
       set
@@ -89,16 +115,6 @@ namespace CursedUI
       }
     }
 
-    [CUISerializableProp]
-    public bool Vertical
-    {
-      get => OnState.Vertical;
-      set
-      {
-        OnState.Vertical = value;
-        OffState.Vertical = value;
-      }
-    }
 
     public override void DetermineColor()
     {
@@ -120,15 +136,15 @@ namespace CursedUI
       }
     }
 
-    public Action<bool> OnToggle { set { Toggle += value; } }
-    public event Action<bool> Toggle;
-
-    public void DoToggle()
+    [CUISerializableProp]
+    public bool Vertical
     {
-      State = !State;
-      if (PlaySound) SoundPlayer.PlayUISound(ClickSound);
-      Toggle?.Invoke(State);
-      if (Emit != null) Commands.SendUp(Emit, Text);
+      get => OnState.Vertical;
+      set
+      {
+        OnState.Vertical = value;
+        OffState.Vertical = value;
+      }
     }
 
 

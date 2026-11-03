@@ -26,6 +26,10 @@
     <Reference Include="MonoGame.Framework.Windows.NetStandard">
       <HintPath>..\Refs\MonoGame.Framework.Windows.NetStandard.dll</HintPath>
     </Reference>
+    <Reference Include="LuaCsForBarotraumaPluginClient">
+      <HintPath>..\Refs\LuaCsForBarotraumaPluginClient.dll</HintPath>
+    </Reference>
+
     <!-- <PackageReference Include="Barotrauma.ReferenceAssemblies.Libraries" Version="*" /> -->
     <PackageReference Include="HarmonyX" Version="2.16.0" />
 

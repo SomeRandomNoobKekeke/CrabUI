@@ -86,9 +86,6 @@ namespace CursedUI
     }
 
 
-    public Action<float> OnMoved { set { Moved += value; } }
-    public event Action<float> Moved;
-
 
     public CUIVerticalList _ConnectedList;
     public CUIComponent ConnectedList
@@ -112,6 +109,8 @@ namespace CursedUI
     protected override void UpdateRects()
     {
       base.UpdateRects();
+
+      if (_ConnectedList is not null) _ConnectedList.RelativeScroll = prevLambda;
       Lambda = prevLambda;
     }
 

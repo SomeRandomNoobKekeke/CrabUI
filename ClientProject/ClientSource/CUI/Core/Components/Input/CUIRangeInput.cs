@@ -249,7 +249,12 @@ namespace CursedUI
         ConsumeMouseEvents = true,
       };
 
-      RectSet += (rect) => SyncHandleWithLambda();
+      RectSet += (rect) =>
+      {
+        if (!Handle.DragHandle.Grabbed) SyncHandleWithLambda();
+      };
+
+
       Handle.Dragged += (v) =>
       {
         SyncLambdaWithHandle();

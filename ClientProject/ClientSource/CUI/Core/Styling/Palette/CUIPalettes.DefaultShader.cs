@@ -8,6 +8,8 @@ namespace CursedUI
 {
   public partial class CUIPalettes
   {
+    public ICUIPaletteShader Shader { get; set; } = new DefaultShader();
+
     public class DefaultShader : ICUIPaletteShader
     {
       public CUIPalette Shade1(CUIPalette palette) => palette;

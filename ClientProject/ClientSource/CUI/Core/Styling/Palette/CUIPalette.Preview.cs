@@ -8,9 +8,9 @@ namespace CursedUI
 {
   public partial class CUIPalette
   {
-    private static CUIComponent BlockOfRandomStuff(PropertyInfo pi)
+    private static CUIComponent BlockOfRandomStuff(CUIPalettes palettes, PropertyInfo pi)
     {
-      CUIPalette palette = (CUIPalette)pi.GetValue(CUICore.Palettes);
+      CUIPalette palette = (CUIPalette)pi.GetValue(palettes);
 
       CUIHorizontalList wrapper = new CUIHorizontalList()
       {
@@ -51,7 +51,7 @@ namespace CursedUI
 
         cl = new Color(cl.R, cl.G, cl.B, (int)Math.Round(alpha * 255));
 
-        pi.SetValue(CUICore.Palettes, CUIPalette.FromColor(cl));
+        pi.SetValue(palettes, CUIPalette.FromColor(cl));
       }
 
       block["alphainput"] = new CUIRangeInput()
@@ -100,7 +100,7 @@ namespace CursedUI
     }
 
 
-    private static CUIComponent CreatePaletteBlock()
+    private static CUIComponent CreatePaletteBlock(CUIPalettes palettes)
     {
       CUIComponent panel = new CUIDefault.HorizontalBackPanel();
 
@@ -110,21 +110,23 @@ namespace CursedUI
         p.Absolute = new CUINullRect(h: 24);
       }))
       {
-        panel.Children.Add(new CUIDefault.Panel() { Palette = CUICore.Palettes.Primary });
-        panel.Children.Add(new CUIDefault.Panel() { Palette = CUICore.Palettes.Secondary });
-        panel.Children.Add(new CUIDefault.Panel() { Palette = CUICore.Palettes.Tertiary });
-        panel.Children.Add(new CUIDefault.Panel() { Palette = CUICore.Palettes.Quaternary });
-        panel.Children.Add(new CUIDefault.Panel() { Palette = CUICore.Palettes.Senary });
-        panel.Children.Add(new CUIDefault.Panel() { Palette = CUICore.Palettes.Septenary });
-        panel.Children.Add(new CUIDefault.Panel() { Palette = CUICore.Palettes.Octonary });
+        panel.Children.Add(new CUIDefault.Panel() { Palette = palettes.Primary });
+        panel.Children.Add(new CUIDefault.Panel() { Palette = palettes.Secondary });
+        panel.Children.Add(new CUIDefault.Panel() { Palette = palettes.Tertiary });
+        panel.Children.Add(new CUIDefault.Panel() { Palette = palettes.Quaternary });
+        panel.Children.Add(new CUIDefault.Panel() { Palette = palettes.Senary });
+        panel.Children.Add(new CUIDefault.Panel() { Palette = palettes.Septenary });
+        panel.Children.Add(new CUIDefault.Panel() { Palette = palettes.Octonary });
       }
 
       return panel;
 
     }
 
-    public static void Preview()
+    public static CUIFrame OpenPreview(CUIPalettes palettes = null)
     {
+      palettes ??= CUICore.Palettes;
+
       CUIFrame frame = new CUIDefault.Frame("Palette Preview")
       {
         Absolute = new CUINullRect(w: 600, h: 800),
@@ -132,20 +134,19 @@ namespace CursedUI
 
       frame.Get<CUIVerticalList>("layout").Scrollable = true;
 
-      frame["layout"]["palette"] = CreatePaletteBlock();
+      frame["layout"]["palette"] = CreatePaletteBlock(palettes);
 
-      frame["layout"]["block 1"] = BlockOfRandomStuff(typeof(CUIPalettes).GetProperty("Primary")!);
-      frame["layout"]["block 2"] = BlockOfRandomStuff(typeof(CUIPalettes).GetProperty("Secondary")!);
-      frame["layout"]["block 3"] = BlockOfRandomStuff(typeof(CUIPalettes).GetProperty("Tertiary")!);
-      frame["layout"]["block 4"] = BlockOfRandomStuff(typeof(CUIPalettes).GetProperty("Quaternary")!);
-      frame["layout"]["block 5"] = BlockOfRandomStuff(typeof(CUIPalettes).GetProperty("Quinary")!);
-      frame["layout"]["block 6"] = BlockOfRandomStuff(typeof(CUIPalettes).GetProperty("Senary")!);
-      frame["layout"]["block 7"] = BlockOfRandomStuff(typeof(CUIPalettes).GetProperty("Septenary")!);
-      frame["layout"]["block 8"] = BlockOfRandomStuff(typeof(CUIPalettes).GetProperty("Octonary")!);
-
-
+      frame["layout"]["block 1"] = BlockOfRandomStuff(palettes, typeof(CUIPalettes).GetProperty("Primary")!);
+      frame["layout"]["block 2"] = BlockOfRandomStuff(palettes, typeof(CUIPalettes).GetProperty("Secondary")!);
+      frame["layout"]["block 3"] = BlockOfRandomStuff(palettes, typeof(CUIPalettes).GetProperty("Tertiary")!);
+      frame["layout"]["block 4"] = BlockOfRandomStuff(palettes, typeof(CUIPalettes).GetProperty("Quaternary")!);
+      frame["layout"]["block 5"] = BlockOfRandomStuff(palettes, typeof(CUIPalettes).GetProperty("Quinary")!);
+      frame["layout"]["block 6"] = BlockOfRandomStuff(palettes, typeof(CUIPalettes).GetProperty("Senary")!);
+      frame["layout"]["block 7"] = BlockOfRandomStuff(palettes, typeof(CUIPalettes).GetProperty("Septenary")!);
+      frame["layout"]["block 8"] = BlockOfRandomStuff(palettes, typeof(CUIPalettes).GetProperty("Octonary")!);
 
       frame.Open();
+      return frame;
     }
   }
 }

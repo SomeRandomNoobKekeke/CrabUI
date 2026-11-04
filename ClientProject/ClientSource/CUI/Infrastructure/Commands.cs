@@ -131,7 +131,7 @@ namespace CursedUI
 
     public static void CUIPalettes_Command(string[] args)
     {
-      CUIPalette.Preview();
+      CUIPalette.OpenPreview();
     }
 
     public static void PrintHarmonyPatches_Command(string[] args)

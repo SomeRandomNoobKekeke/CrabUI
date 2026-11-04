@@ -27,7 +27,7 @@ namespace CursedUI
 
       wrapper["palettes"] = new CUIButton("Palettes")
       {
-        OnMouseDown = (e) => CUIPalette.Preview(),
+        OnMouseDown = (e) => CUIPalette.OpenPreview(),
       };
 
       wrapper["mg"] = new CUIButton("Magnifying Glass")

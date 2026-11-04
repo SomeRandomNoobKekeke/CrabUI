@@ -43,6 +43,8 @@ namespace CUILibs
 
       public static string Dictionary<TKey, TValue>(IDictionary<TKey, TValue> dict)
       {
+        if (dict is null) return "";
+
         StringBuilder sb = new StringBuilder();
 
         sb.Append("{\n");
@@ -57,6 +59,8 @@ namespace CUILibs
 
       public static string IDictionary(System.Collections.IDictionary dict)
       {
+        if (dict is null) return "";
+
         StringBuilder sb = new StringBuilder();
 
         sb.Append("{\n");

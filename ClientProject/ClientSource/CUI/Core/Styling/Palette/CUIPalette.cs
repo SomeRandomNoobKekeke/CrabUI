@@ -93,9 +93,12 @@ namespace CursedUI
 
     public string ToText()
     {
-      foreach (var (name, palette) in CUICore.Palettes.All)
+      if (CUICore.Palettes != null)
       {
-        if (palette == this) return name;
+        foreach (var (name, palette) in CUICore.Palettes.All)
+        {
+          if (palette == this) return name;
+        }
       }
 
       if (BaseColor.HasValue) return CUICore.Parser.Serialize(BaseColor.Value);

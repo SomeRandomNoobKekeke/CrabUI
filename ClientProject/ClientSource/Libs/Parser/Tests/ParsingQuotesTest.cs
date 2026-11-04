@@ -13,8 +13,6 @@ namespace CUILibs
   {
     public class ParsingQuotesTest : ParserTest
     {
-
-
       public List<UTest> Serialize()
       {
         Parser parser = CreateTestParser();

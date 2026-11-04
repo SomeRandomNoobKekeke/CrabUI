@@ -2,12 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using CUILibs;
 using Microsoft.Xna.Framework;
 
 namespace CursedUI
 {
   public partial class CUIPalettes
   {
+    public static Color DefaultColor => new Color(32, 32, 32, 255);
+
     public CUIPalettes() => InitPalettes();
     private void InitPalettes()
     {
@@ -21,16 +24,35 @@ namespace CursedUI
       ["Primary"] = new Color(70, 70, 70, 255),
       ["Secondary"] = new Color(112, 0, 0, 255),
       ["Tertiary"] = new Color(0, 94, 91, 255),
-      ["Quaternary"] = new Color(92, 92, 92, 255),
-      ["Quinary"] = new Color(92, 92, 92, 255),
-      ["Senary"] = new Color(92, 92, 92, 255),
-      ["Septenary"] = new Color(92, 92, 92, 255),
-      ["Octonary"] = new Color(92, 92, 92, 255),
+      ["Quaternary"] = DefaultColor,
+      ["Quinary"] = DefaultColor,
+      ["Senary"] = DefaultColor,
+      ["Septenary"] = DefaultColor,
+      ["Octonary"] = DefaultColor,
     };
 
 
+    public void SoftReplaceBy(CUIPalettes next)
+    {
+      foreach (FieldInfo fi in typeof(CUIPalettes).GetFields(BindingFlags.Instance | BindingFlags.NonPublic))
+      {
+        if (!fi.FieldType.IsAssignableTo(typeof(CUIPalette))) continue;
 
-    public ICUIPaletteShader Shader { get; set; } = new DefaultShader();
+        CUIPalette oldValue = (CUIPalette)fi.GetValue(this);
+        CUIPalette newValue = (CUIPalette)fi.GetValue(next);
+
+        // if you swap palette with null components that use it will explode
+        if (oldValue is not null)
+        {
+          if (newValue is not null)
+          {
+            oldValue.Swap(newValue);
+          }
+        }
+      }
+    }
+
+
 
     public CUIPalette this[string name]
     {
@@ -127,6 +149,7 @@ namespace CursedUI
       set
       {
         _Secondary.Swap(value);
+
         if (_Secondary2 is not null) _Secondary2.Swap(Shader.Shade2(Secondary));
         if (_Secondary3 is not null) _Secondary3.Swap(Shader.Shade3(Secondary));
         if (_Secondary4 is not null) _Secondary4.Swap(Shader.Shade4(Secondary));

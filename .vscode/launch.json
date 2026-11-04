@@ -8,7 +8,7 @@
       "name": "build",
       "type": "f5anything",
       "request": "launch",
-      "command": "start ./build.cmd"
+      "command": "./build.cmd"
     },
     {
       "name": "Generate Docs",

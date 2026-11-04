@@ -43,7 +43,7 @@ namespace CursedUI
       {
         TextBlock.Text = value;
         //TODO why OnlyParent shouldn't this be Absolute?
-        LayoutMarker.Mark(LayoutMarker.Pattern.OnlyParent);
+        if (Solid) LayoutMarker.Mark(LayoutMarker.Pattern.OnlyParent);
       }
     }
 
@@ -57,7 +57,8 @@ namespace CursedUI
       set
       {
         TextBlock.Scale = value;
-        LayoutMarker.Mark(LayoutMarker.Pattern.OnlyParent);
+        if (Solid) LayoutMarker.Mark(LayoutMarker.Pattern.OnlyParent);
+
       }
     }
     [CUISerializableProp]
@@ -105,13 +106,16 @@ namespace CursedUI
     public CUINullVector2 ForcedSize => TextBlock.ForcedSize;
     public float RealScale => TextBlock.RealScale;
 
+    [CUISerializableProp]
+    public bool Solid { get; set; } = true;
 
     [CUISerializableProp]
     public CUISizes TextPadding { get; set; }
-    protected override CUINullVector2 MinSizeOverride => new CUINullVector2(
+    protected override CUINullVector2 MinSizeOverride => Solid ?
+    new CUINullVector2(
       TextBlock.ForcedSize.X + TextPadding.FullWidth,
       TextBlock.ForcedSize.Y + TextPadding.FullHeigth
-    );
+    ) : new CUINullVector2();
 
     protected override void UpdateRects()
     {
@@ -121,7 +125,8 @@ namespace CursedUI
 
       TextBlock.Rect = ChildrenRect - TextPadding;
 
-      if (TextBlock.ForcedSize != prevSize)
+      //WTF is this? is this for wrap resize strat?
+      if (Solid && TextBlock.ForcedSize != prevSize)
       {
         LayoutMarker.Mark(LayoutMarker.Pattern.AbsoluteProp);
       }

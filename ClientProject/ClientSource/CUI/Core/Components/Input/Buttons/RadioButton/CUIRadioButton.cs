@@ -26,6 +26,7 @@ namespace CursedUI
       base.InitStyle();
       TextPadding = new(2, 4, 2, 4);
       Background.Sprite = CUISprite.DimmedVertical;
+      CullChildren = true;
     }
 
     public new Action<CUIRadioButton> Style

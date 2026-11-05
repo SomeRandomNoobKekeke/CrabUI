@@ -14,7 +14,7 @@ namespace CursedUI
 {
   public static partial class CUIDefault
   {
-    public class IconButtonWithLabel : HorizontalBackPanel
+    public class IconButtonField : HorizontalBackPanel
     {
       public CUIIconButton Button { get; }
       public CUITextBlock Label { get; }
@@ -32,13 +32,13 @@ namespace CursedUI
         set => Label.Text = value;
       }
 
-      public IconButtonWithLabel() : base()
+      public IconButtonField() : base()
       {
         this["button"] = Button = new CUIIconButton();
         this["label"] = Label = new CUITextBlock() { Flex = 1 };
       }
 
-      public IconButtonWithLabel(CUISprite icon, string text) : this()
+      public IconButtonField(CUISprite icon, string text) : this()
       {
         Button.Icon = icon;
         Text = text;

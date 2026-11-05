@@ -51,6 +51,7 @@ namespace CursedUI
 
     public void Toggle() { if (IsOpen) Close(); else Open(); }
 
+    public void MemorizeState() => SaveState("lastopened");
 
     public void Open(Vector2 pos, CUIComponent Host = null)
     {

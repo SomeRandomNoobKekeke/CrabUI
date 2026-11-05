@@ -11,5 +11,8 @@ using CUILibs;
 
 namespace CursedUI
 {
-  public record struct IntRange(int Start, int End);
+  public record struct IntRange(int Start, int End)
+  {
+    public int Length => End - Start;
+  }
 }

@@ -44,6 +44,23 @@ namespace CUILibs
     public static T Get<T>(string path) => DeepDictAccess.Get<T>(path, Repo);
     public static object Get(string path) => DeepDictAccess.Get(path, Repo);
     public static bool TryGetValue(string path, out object result) => DeepDictAccess.TryGetValue(path, Repo, out result);
+    public static bool TryGetValue<T>(string path, out T? value)
+    {
+      bool IsAssignableTo(object o, Type t)
+      {
+        if (o is null) return !t.IsValueType;
+        return o.GetType().IsAssignableTo(t);
+      }
+
+      value = default;
+
+      bool ok = DeepDictAccess.TryGetValue(path, Repo, out object v);
+
+      if (!ok || !IsAssignableTo(v, typeof(T))) return false;
+
+      value = (T)v;
+      return true;
+    }
   }
 }
 #endif

@@ -21,8 +21,8 @@ rename `UserBuildData.props.Example` into `UserBuildData.props`
 get `luacsforbarotrauma_refs.zip` from `https://github.com/evilfactory/LuaCsForBarotrauma/releases`
 and unzip into Refs folder
 
-subscribe to [LuaCsForBarotraumaPlugin](https://steamcommunity.com/sharedfiles/filedetails/?id=3693624471)  
-the project is referencing workshop folder
+subscribe to [LuaCsForBarotraumaPlugin](https://steamcommunity.com/sharedfiles/filedetails/?id=3693624471)   
+take `AppData\Local\Daedalic Entertainment GmbH\Barotrauma\WorkshopMods\Installed\3693624471\Windows\Client\LuaCsForBarotraumaPluginClient.dll`and throw into Refs too
 
 run `build.cmd`, it should compile it into `Build` folder  
 

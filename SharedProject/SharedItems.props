@@ -32,13 +32,14 @@
       <HintPath>..\Refs\MonoGame.Framework.Windows.NetStandard.dll</HintPath>
     </Reference>
 
-    <!-- <Reference Include="LuaCsForBarotraumaPluginClient">
-      <HintPath>..\Refs\LuaCsForBarotraumaPluginClient.dll</HintPath>
-    </Reference> -->
-
     <Reference Include="LuaCsForBarotraumaPluginClient">
-      <HintPath>$(AppDataLocalDir)\Daedalic Entertainment GmbH\Barotrauma\WorkshopMods\Installed\3693624471\Windows\Client\LuaCsForBarotraumaPluginClient.dll</HintPath>
+      <HintPath>..\Refs\LuaCsForBarotraumaPluginClient.dll</HintPath>
     </Reference>
+
+    <!-- nope, it'll try to load different Reflection.Metadata and break the build  -->
+    <!-- <Reference Include="LuaCsForBarotraumaPluginClient">
+      <HintPath>$(AppDataLocalDir)\Daedalic Entertainment GmbH\Barotrauma\WorkshopMods\Installed\3693624471\Windows\Client\LuaCsForBarotraumaPluginClient.dll</HintPath>
+    </Reference> -->
 
 
     <!-- <PackageReference Include="Barotrauma.ReferenceAssemblies.Libraries" Version="*" /> -->

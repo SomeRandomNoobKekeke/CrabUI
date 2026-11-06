@@ -62,8 +62,6 @@ LocalMods
 Refs/*
 !Refs/readme.txt
 
-# UserBuildData.props
-
 /Build
 Ignore
 Test Data
@@ -75,3 +73,5 @@ Refs/*
 !Refs/README.txt
 
 docs/*
+
+/UserBuildData.props

@@ -26,7 +26,7 @@
 
   <Target Name="CopyModFiles" AfterTargets="CopyFilesToOutputDirectory">
     <ItemGroup>
-      <ModFiles Include="$(MSBuildThisFileDirectory)filelist.xml" />
+      <!-- <ModFiles Include="$(MSBuildThisFileDirectory)filelist.xml" /> -->
       <ModFiles Include="$(MSBuildThisFileDirectory)ModConfig.xml" />
       <ModAssets Include="$(MSBuildThisFileDirectory)..\Assets\**\*.*" />
 
@@ -39,6 +39,7 @@
 
 
     <!-- Replace %ModName% with the actual mod name -->
-    <ReplaceTokenInFile FilePath="%(ModFilesDest.Identity)" Token="%ModName%" Value="$(AssemblyName)" />
+    <ReplaceTokenInFile FilePath="%(ModFilesDest.Identity)" Token="%ModName%" Value="$(ModName)" />
+    <ReplaceTokenInFile FilePath="%(ModFilesDest.Identity)" Token="%AssemblyName%" Value="$(AssemblyName)" />
   </Target>
 </Project>

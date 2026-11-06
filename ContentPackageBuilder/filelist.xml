@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="%ModName%" modversion="0.3.2.0.0" corepackage="False" steamworkshopid="3765325848">
+<contentpackage name="%ModName%" modversion="0.3.2.0.0" corepackage="False">
   <Dependency identifier="LuaCsForBarotraumaPlugin" isoptional="false" order="Below" names="LuaCsForBarotraumaPlugin" />
 </contentpackage>

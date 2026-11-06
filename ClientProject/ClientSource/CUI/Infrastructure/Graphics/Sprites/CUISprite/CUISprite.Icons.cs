@@ -38,6 +38,19 @@ namespace CursedUI
     public static CUISprite CheckOffIcon => AtIconIndex("CheckOffIcon", 5, 0);
     public static CUISprite CheckOnIcon => AtIconIndex("CheckOnIcon", 6, 0);
 
+    //=======================>  1  <=======================
+    public static CUISprite FloppyDiscIcon => AtIconIndex("FloppyDiscIcon", 0, 1);
+    public static CUISprite DownloadIcon => AtIconIndex("DownloadIcon", 1, 1);
+    public static CUISprite UploadIcon => AtIconIndex("UploadIcon", 2, 1);
+    public static CUISprite LockIcon => AtIconIndex("LockIcon", 3, 1);
+    public static CUISprite UnlockIcon => AtIconIndex("UnlockIcon", 4, 1);
+    public static CUISprite BugIcon => AtIconIndex("BugIcon", 5, 1);
+    public static CUISprite ShieldIcon => AtIconIndex("ShieldIcon", 6, 1);
+    public static CUISprite ShieldSolidIcon => AtIconIndex("ShieldSolidIcon", 7, 1);
+    public static CUISprite FlagIcon => AtIconIndex("FlagIcon", 8, 1);
+    public static CUISprite EyeIcon => AtIconIndex("EyeIcon", 9, 1);
+    public static CUISprite ClosedEyeIcon => AtIconIndex("ClosedEyeIcon", 10, 1);
+
     //=======================>  2  <=======================
     public static CUISprite TrashCanIcon => AtIconIndex("TrashCanIcon", 0, 2);
     public static CUISprite GearIcon => AtIconIndex("GearIcon", 1, 2);
@@ -45,12 +58,56 @@ namespace CursedUI
     public static CUISprite RoundArrowIcon => AtIconIndex("RoundArrowIcon", 3, 2);
     public static CUISprite BrushAndPencilIcon => AtIconIndex("BrushAndPencilIcon", 4, 2);
     public static CUISprite BrushAndPaletteIcon => AtIconIndex("BrushAndPaletteIcon", 5, 2);
+    public static CUISprite TargetIcon => AtIconIndex("TargetIcon", 6, 2);
+    public static CUISprite BombIcon => AtIconIndex("BombIcon", 7, 2);
+    public static CUISprite ExplosionIcon => AtIconIndex("ExplosionIcon", 8, 2);
+    public static CUISprite FireIcon => AtIconIndex("FireIcon", 9, 2);
+    public static CUISprite ShowflakeIcon => AtIconIndex("ShowflakeIcon", 10, 2);
+
+    //=======================>  3  <=======================
+    public static CUISprite MoveFreeIcon => AtIconIndex("MoveFreeIcon", 0, 3);
+    public static CUISprite MinimizeIcon => AtIconIndex("MinimizeIcon", 1, 3);
+    public static CUISprite MaximizeIcon => AtIconIndex("MaximizeIcon", 2, 3);
+    public static CUISprite MoveVerticalIcon => AtIconIndex("MoveVerticalIcon", 3, 3);
+    public static CUISprite MoveHorizontalIcon => AtIconIndex("MoveHorizontalIcon", 4, 3);
+    public static CUISprite ScullIcon => AtIconIndex("ScullIcon", 5, 3);
+    public static CUISprite BiohazardIcon => AtIconIndex("BiohazardIcon", 6, 3);
+    public static CUISprite RadiationIcon => AtIconIndex("RadiationIcon", 7, 3);
+    public static CUISprite ExclamationMarkIcon => AtIconIndex("ExclamationMarkIcon", 8, 3);
+    public static CUISprite WarningRoundIcon => AtIconIndex("WarningRoundIcon", 9, 3);
+    public static CUISprite WarningTriangleIcon => AtIconIndex("WarningTriangleIcon", 10, 3);
+    public static CUISprite WrenchIcon => AtIconIndex("WrenchIcon", 11, 3);
+
+    //=======================>  3  <=======================
+    public static CUISprite PlayIcon => AtIconIndex("PlayIcon", 0, 4);
+    public static CUISprite PauseIcon => AtIconIndex("PauseIcon", 1, 4);
+    public static CUISprite RewindIcon => AtIconIndex("RewindIcon", 2, 4);
+    public static CUISprite RestartIcon => AtIconIndex("RestartIcon", 3, 4);
+    public static CUISprite MagnifyingGlassIcon => AtIconIndex("MagnifyingGlassIcon", 4, 4);
+    public static CUISprite ZoomInIcon => AtIconIndex("ZoomInIcon", 5, 4);
+    public static CUISprite ZoomOutIcon => AtIconIndex("ZoomOutIcon", 6, 4);
+    public static CUISprite QuestionIcon => AtIconIndex("QuestionIcon", 7, 4);
+    public static CUISprite InfoIcon => AtIconIndex("InfoIcon", 8, 4);
+    public static CUISprite BarsIcon => AtIconIndex("BarsIcon", 9, 4);
+    public static CUISprite SettingsIcon => AtIconIndex("SettingsIcon", 10, 4);
+    public static CUISprite MainIcon => AtIconIndex("MainIcon", 11, 4);
+    public static CUISprite ShareIcon => AtIconIndex("ShareIcon", 12, 4);
+    public static CUISprite CalcIcon => AtIconIndex("CalcIcon", 13, 4);
 
     //=======================>  5  <=======================
     public static CUISprite BookmarkOnIcon => AtIconIndex("BookmarkOnIcon", 0, 5);
     public static CUISprite BookmarkOffIcon => AtIconIndex("BookmarkOffIcon", 1, 5);
     public static CUISprite StarOnIcon => AtIconIndex("StarOnIcon", 2, 5);
     public static CUISprite StarOffIcon => AtIconIndex("StarOffIcon", 3, 5);
+    public static CUISprite FolderIcon => AtIconIndex("FolderIcon", 4, 5);
+    public static CUISprite ExitIcon => AtIconIndex("ExitIcon", 5, 5);
+    public static CUISprite PencilIcon => AtIconIndex("PencilIcon", 6, 5);
+    public static CUISprite ScissorsIcon => AtIconIndex("ScissorsIcon", 7, 5);
+    public static CUISprite FilterIcon => AtIconIndex("FilterIcon", 8, 5);
+    public static CUISprite DocumentIcon => AtIconIndex("DocumentIcon", 9, 5);
+    public static CUISprite CopyIcon => AtIconIndex("CopyIcon", 10, 5);
+    public static CUISprite LoadingIcon => AtIconIndex("LoadingIcon", 11, 5);
+    public static CUISprite PinIcon => AtIconIndex("PinIcon", 12, 5);
 
     //=======================>  6  <=======================
     public static CUISprite AngleUpIcon => AtIconIndex("AngleUpIcon", 0, 6);

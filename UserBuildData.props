@@ -1,6 +1,0 @@
-<Project>
-  <PropertyGroup>
-    <!-- <ModDeployDir>../../../LocalMods</ModDeployDir> -->
-    <ModDeployDir>../Build</ModDeployDir>
-  </PropertyGroup>
-</Project>

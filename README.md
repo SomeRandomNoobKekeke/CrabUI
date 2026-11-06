@@ -1,12 +1,22 @@
 This is C# GUI library in a form of a mod for Barotrauma
 
-It can be used by other Barotrauma mods to make custom gui
+It's both LuaCsForBarotraumaPlugin "in-memory" mod and compilable BaseBaroPlugin
+It's source code for https://steamcommunity.com/sharedfiles/filedetails/?id=3834834427
 
-It's a hybrid mod, it's based on [LuaCsModTemplate](https://github.com/Luatrauma/LuaCsModTemplate) but it has `ModConfig.xml` so it can be both compiled as c# project and loaded in game as any other c# "in-memory" mod
+To use:
+- make any c# mod for LuaCsForBarotraumaPlugin, make sure it's placed below CUI ... profit
+- vanilla c# mods can't use it rn
+- if you need ide hints just add a reference to workshop folder
+```xml
+<Reference Include="CUI">
+  <HintPath>$(AppDataLocalDir)\Daedalic Entertainment GmbH\Barotrauma\WorkshopMods\Installed\3834834427\Windows\Client\CUI.dll</HintPath>
+</Reference>
+```
 
-To use either:
-- Copy paste sources from `ClientProject\ClientSource` to your mod
-- Add workshop dependency to [CUI](https://steamcommunity.com/sharedfiles/filedetails/?id=3765325848) [optionally add project ref to CUI.dll for ide hints]
+## How to compile
+hmmm.. let redownload it and try
 
-[Changelog](https://github.com/SomeRandomNoobKekeke/CrabUI/blob/main/ClientProject/ClientSource/Changelog.md)  
-[Docs](https://somerandomnoobkekeke.github.io/CrabUI/)
+[~~Changelog~~](https://github.com/SomeRandomNoobKekeke/CrabUI/blob/main/ClientProject/ClientSource/Changelog.md)
+[~~Docs~~](https://somerandomnoobkekeke.github.io/CrabUI/)
+
+outdated, don't read them

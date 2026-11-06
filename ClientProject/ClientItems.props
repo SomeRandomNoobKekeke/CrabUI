@@ -6,7 +6,7 @@
     <DefineConstants>$(DefineConstants);CLIENT</DefineConstants>
     <BuildTarget>Client</BuildTarget>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
-    <Deterministic>true</Deterministic>
+    <!-- <Deterministic>true</Deterministic> -->
   </PropertyGroup>
 
   <Import Project="..\BuildData.props" />

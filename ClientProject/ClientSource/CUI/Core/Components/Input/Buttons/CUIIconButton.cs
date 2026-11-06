@@ -82,7 +82,8 @@ namespace CursedUI
 
     public override void DetermineColor()
     {
-      Background.Color = Disabled ? Palette["disabled"] : Palette["main"];
+      //TODO 
+      // Background.Color = Disabled ? Palette["disabled"] : Palette["main"];
 
       IconBlock.Color = InactiveColor;
       if (MouseOver) IconBlock.Color = MouseOverColor;

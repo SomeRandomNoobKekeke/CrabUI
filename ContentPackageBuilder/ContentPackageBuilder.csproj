@@ -27,14 +27,18 @@
   <Target Name="CopyModFiles" AfterTargets="CopyFilesToOutputDirectory">
     <ItemGroup>
       <ModFiles Include="$(MSBuildThisFileDirectory)filelist.xml" />
-      <ModFiles Include="$(MSBuildThisFileDirectory)PluginInfo.xml" />
-      <ModContentFiles Include="$(MSBuildThisFileDirectory)Content\**\*" />
+      <ModFiles Include="$(MSBuildThisFileDirectory)ModConfig.xml" />
+      <ModContentFiles Include="$(MSBuildStartupDirectory)Assets\**\*" />
+
 
       <ModFilesDest Include="@(ModFiles->'$(ModDeployDir)\$(ModName)\%(Filename)%(Extension)')" />
     </ItemGroup>
 
     <Copy SourceFiles="@(ModFiles)" DestinationFolder="$(ModDeployDir)\$(ModName)" SkipUnchangedFiles="true" />
-    <Copy SourceFiles="@(ModContentFiles)" DestinationFiles="@(ModContentFiles->'$(ModDeployDir)\$(ModName)\Content\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+
+
+    <Copy SourceFiles="" DestinationFiles="@(ModContentFiles->'$(ModDeployDir)\$(ModName)\Assets\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+
 
     <!-- Replace %ModName% with the actual mod name -->
     <ReplaceTokenInFile FilePath="%(ModFilesDest.Identity)" Token="%ModName%" Value="$(ModName)" />

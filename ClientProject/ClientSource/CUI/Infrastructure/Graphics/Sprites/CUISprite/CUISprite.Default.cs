@@ -62,6 +62,13 @@ namespace CursedUI
 
     public static CUISprite Cross => AtIndex("Cross", 0, 0);
     public static CUISprite Angle => AtIndex("Angle", 1, 0);
+    public static CUISprite Trapezoid => AtIndex("Trapezoid", 2, 0);
+    public static CUISprite Rhombus => AtIndex("Rhombus", 3, 0);
+    public static CUISprite House => AtIndex("House", 4, 0);
+    public static CUISprite Triangle => AtIndex("Triangle", 5, 0);
+    public static CUISprite TriangleRight => AtIndex("TriangleRight", 6, 0);
+
+
 
     public static CUISprite VerticalGlow => AtIndex("VerticalGlow", 0, 1);
     public static CUISprite VerticalGlow16 => AtIndex("VerticalGlow16", 1, 1);
@@ -104,19 +111,41 @@ namespace CursedUI
     public static CUISprite GlowingEdgesSolid => AtIndex("GlowingEdgesSolid", 5, 6);
 
 
+
+    public static CUISprite FrozenVertical => AtIndex("FrozenVertical", 0, 7);
+
+
     public static CUISprite Hex
     {
       get
       {
         {
           CUICore.TextureManager.Ensure("Hex",
-            () => CUICore.TextureManager.Get("CUI").Cut(IndexToPos(0, 7, 1, 1))
+            () => CUICore.TextureManager.Get("CUI").Cut(IndexToPos(0, 11, 1, 1))
           );
 
           return new CUISprite(CUICore.TextureManager.Get("Hex"))
           {
             Name = "Hex",
-            DrawMode = CUISpriteDrawMode.StaticAbove,
+            DrawMode = CUISpriteDrawMode.Wrap,
+          };
+        }
+      }
+    }
+
+    public static CUISprite SeamlessFrost
+    {
+      get
+      {
+        {
+          CUICore.TextureManager.Ensure("SeamlessFrost",
+            () => CUICore.TextureManager.Get("CUI").Cut(IndexToPos(1, 11, 2, 2))
+          );
+
+          return new CUISprite(CUICore.TextureManager.Get("SeamlessFrost"))
+          {
+            Name = "SeamlessFrost",
+            DrawMode = CUISpriteDrawMode.Wrap,
           };
         }
       }

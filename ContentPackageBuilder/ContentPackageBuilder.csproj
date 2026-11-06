@@ -28,19 +28,17 @@
     <ItemGroup>
       <ModFiles Include="$(MSBuildThisFileDirectory)filelist.xml" />
       <ModFiles Include="$(MSBuildThisFileDirectory)ModConfig.xml" />
-      <ModContentFiles Include="$(MSBuildStartupDirectory)Assets\**\*" />
-
+      <ModAssets Include="$(MSBuildThisFileDirectory)..\Assets\**\*.*" />
 
       <ModFilesDest Include="@(ModFiles->'$(ModDeployDir)\$(ModName)\%(Filename)%(Extension)')" />
     </ItemGroup>
 
     <Copy SourceFiles="@(ModFiles)" DestinationFolder="$(ModDeployDir)\$(ModName)" SkipUnchangedFiles="true" />
 
-
-    <Copy SourceFiles="" DestinationFiles="@(ModContentFiles->'$(ModDeployDir)\$(ModName)\Assets\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(ModAssets)" DestinationFolder="$(ModDeployDir)\$(ModName)\Assets\%(RecursiveDir)" SkipUnchangedFiles="true" />
 
 
     <!-- Replace %ModName% with the actual mod name -->
-    <ReplaceTokenInFile FilePath="%(ModFilesDest.Identity)" Token="%ModName%" Value="$(ModName)" />
+    <ReplaceTokenInFile FilePath="%(ModFilesDest.Identity)" Token="%ModName%" Value="$(AssemblyName)" />
   </Target>
 </Project>

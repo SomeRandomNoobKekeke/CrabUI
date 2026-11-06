@@ -11,16 +11,18 @@
   <Import Project="..\BuildData.props" />
 
   <ItemGroup>
-    <Compile Include="..\BuildSpecific\VanillaPlugin\**\*.cs" />
+    <Compile Include="..\BuildSpecific\Omfg why LuaCsForBarotraumaPlugin is not publicized\**\*.cs" />
+    <!-- <Compile Include="..\BuildSpecific\LuaPlugin\**\*.cs" /> -->
+    <!-- <Compile Include="..\BuildSpecific\VanillaPlugin\**\*.cs" /> -->
   </ItemGroup>
 
   <Import Project="..\SharedProject\SharedProject.projitems" Label="Shared" />
   <Import Project="..\SharedProject\SharedItems.props" />
 
-  <PropertyGroup>
+  <!-- <PropertyGroup>
     <RootNamespace>$(ModName)</RootNamespace>
     <AssemblyName>$(ModName)$(BuildTarget)</AssemblyName>
-  </PropertyGroup>
+  </PropertyGroup> -->
 
   <Target Name="CopyFiles" AfterTargets="Build">
     <ItemGroup>

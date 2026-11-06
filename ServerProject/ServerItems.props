@@ -12,10 +12,10 @@
 
   <Import Project="..\SharedProject\SharedProject.projitems" Label="Shared" />
   <Import Project="..\SharedProject\SharedItems.props" />
-  <PropertyGroup>
+  <!-- <PropertyGroup>
     <RootNamespace>$(ModName)</RootNamespace>
     <AssemblyName>$(ModName)$(BuildTarget)</AssemblyName>
-  </PropertyGroup>
+  </PropertyGroup> -->
 
   <Target Name="CopyFiles" AfterTargets="Build">
     <ItemGroup>

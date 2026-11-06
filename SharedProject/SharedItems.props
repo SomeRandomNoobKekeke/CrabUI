@@ -7,6 +7,11 @@
     <PackageReference Include="Barotrauma.ReferenceAssemblies.Vanilla.Publicized" GeneratePathProperty="true" Version="*" />
   </ItemGroup>
 
+  <PropertyGroup>
+    <AppDataLocalDir>$([System.Environment]::GetFolderPath(SpecialFolder.LocalApplicationData))</AppDataLocalDir>
+  </PropertyGroup>
+
+
   <ItemGroup>
     <Reference Include="Farseer.NetStandard">
       <HintPath>..\Refs\Farseer.NetStandard.dll</HintPath>
@@ -26,9 +31,15 @@
     <Reference Include="MonoGame.Framework.Windows.NetStandard">
       <HintPath>..\Refs\MonoGame.Framework.Windows.NetStandard.dll</HintPath>
     </Reference>
-    <Reference Include="LuaCsForBarotraumaPluginClient">
+
+    <!-- <Reference Include="LuaCsForBarotraumaPluginClient">
       <HintPath>..\Refs\LuaCsForBarotraumaPluginClient.dll</HintPath>
+    </Reference> -->
+
+    <Reference Include="LuaCsForBarotraumaPluginClient">
+      <HintPath>$(AppDataLocalDir)\Daedalic Entertainment GmbH\Barotrauma\WorkshopMods\Installed\3693624471\Windows\Client\LuaCsForBarotraumaPluginClient.dll</HintPath>
     </Reference>
+
 
     <!-- <PackageReference Include="Barotrauma.ReferenceAssemblies.Libraries" Version="*" /> -->
     <PackageReference Include="HarmonyX" Version="2.16.0" />
@@ -37,6 +48,7 @@
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
   </ItemGroup>
+
 
   <Import Project="..\References.props" />
 

@@ -3,8 +3,12 @@
     <!-- 
     IMPORTANT: Don't make use of special (ie: spaces / : ; , \ < > ?) (periods "." are good) and non-english characters in the ModName.
      -->
-    <ModName>CUI</ModName>
-    <RepositoryURL></RepositoryURL>
+
+
+    <ModName>CUI [Unstable]</ModName>
+    <RootNamespace>CursedUI</RootNamespace>
+    <AssemblyName>CUI</AssemblyName>
+    <RepositoryURL>https://github.com/SomeRandomNoobKekeke/CrabUI</RepositoryURL>
 
     <!-- 
     Enables the use of Publicized assemblies in place of the standard Barotrauma assemblies, allowing access to members that were 

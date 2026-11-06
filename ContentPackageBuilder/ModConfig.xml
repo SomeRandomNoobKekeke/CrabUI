@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModConfig>
-  <Assembly File="%ModDir%/bin/Client/Linux/MyModName.dll" Target="Client" Platform="Linux" />
-  <Assembly File="%ModDir%/bin/Client/OSX/MyModName.dll" Target="Client" Platform="OSX" />
-  <Assembly File="%ModDir%/bin/Client/Windows/MyModName.dll" Target="Client" Platform="Windows" />
-  <!-- <Assembly File="%ModDir%/bin/Server/Linux/MyModName.dll" Target="Server" Platform="Linux" />
-  <Assembly File="%ModDir%/bin/Server/OSX/MyModName.dll" Target="Server" Platform="OSX" />
-  <Assembly File="%ModDir%/bin/Server/Windows/MyModName.dll" Target="Server" Platform="Windows" /> -->
+  <Assembly File="%ModDir%/Windows/Client/%ModName%.dll" Target="Client" Platform="Windows" />
+  <!-- <Assembly File="%ModDir%/Linux/Client/%ModName%.dll" Target="Client" Platform="Linux" />
+  <Assembly File="%ModDir%/OSX/Client/%ModName%.dll" Target="Client" Platform="OSX" /> -->
 </ModConfig>

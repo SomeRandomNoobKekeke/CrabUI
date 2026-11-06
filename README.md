@@ -1,6 +1,7 @@
 This is C# GUI library in a form of a mod for Barotrauma
 
-It's both LuaCsForBarotraumaPlugin "in-memory" mod and compilable BaseBaroPlugin
+It's both LuaCsForBarotraumaPlugin "in-memory" mod and compilable chimera of BaseBaroPlugin and 
+LuaCsModTemplate  
 It's source code for https://steamcommunity.com/sharedfiles/filedetails/?id=3834834427
 
 To use:

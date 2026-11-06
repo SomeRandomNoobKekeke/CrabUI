@@ -29,6 +29,7 @@ run `build.cmd`, it should compile it into `Build` folder
 ---------------------------------
 for some reason linux/osx don't want to compile from cmd, but you can compile them in VS
 
+only Windows/Client/CUI.dll is used rn
 
 
 [~~Changelog~~](https://github.com/SomeRandomNoobKekeke/CrabUI/blob/main/ClientProject/ClientSource/Changelog.md)

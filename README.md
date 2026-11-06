@@ -15,7 +15,21 @@ To use:
 ```
 
 ## How to compile
-hmmm.. let redownload it and try
+
+rename `UserBuildData.props.Example` into `UserBuildData.props`
+
+get `luacsforbarotrauma_refs.zip` from `https://github.com/evilfactory/LuaCsForBarotrauma/releases`
+and unzip into Refs folder
+
+subscribe to [LuaCsForBarotraumaPlugin](https://steamcommunity.com/sharedfiles/filedetails/?id=3693624471)  
+the project is referencing workshop folder
+
+run `build.cmd`, it should compile it into `Build` folder  
+
+---------------------------------
+for some reason linux/osx don't want to compile from cmd, but you can compile them in VS
+
+
 
 [~~Changelog~~](https://github.com/SomeRandomNoobKekeke/CrabUI/blob/main/ClientProject/ClientSource/Changelog.md)
 [~~Docs~~](https://somerandomnoobkekeke.github.io/CrabUI/)

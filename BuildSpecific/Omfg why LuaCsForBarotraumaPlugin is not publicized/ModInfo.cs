@@ -73,8 +73,6 @@ namespace CUILibs
     {
       Assembly? luaPluginAssembly = typeof(LuaCsSetup).Assembly;
 
-      // Although luaPlugin is in "LoadedPlugins" apparently it doesn't mean that lua is loaded
-      // and if you try to access Instance it'll trigger 2nd lua initialization which explodes the game
       object LuaCsSetup_Instance = luaPluginAssembly.GetType("Barotrauma.LuaCsSetup")!
         .GetField("_luaCsSetup", BindingFlags.NonPublic | BindingFlags.Static)!
         .GetValue(null)!;
@@ -83,8 +81,9 @@ namespace CUILibs
 
       RunState runState = (RunState)LuaCsSetup_Instance.GetType().GetProperty("CurrentRunState")!.GetValue(LuaCsSetup_Instance)!;
 
-      if (runState == RunState.Unloaded) return null;
-      // apparently RunState.LoadedNoExec and RunState.Running are both fine
+      //Whatever, it somehow works, i'm clueless
+      // if (runState == RunState.Unloaded) return null;
+
 
       object pluginManagement = LuaCsSetup_Instance.GetType()
         .GetProperty("PluginManagementService")!
